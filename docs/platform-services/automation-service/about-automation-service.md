@@ -54,21 +54,21 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 1. Click the **Roles** tab. 
 1. Click **Add Role** to create a new role for users of the Automation Service. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 1. Add the following capabilities:
-   * Cloud SIEM
-     * Configuration
-       * View Automations
-       * Manage Automations
-       * Execute Automations
-   * Cloud SOAR
-     * View Cloud SOAR
-     * Automation Playbooks
-       * Access
-       * Configure
-
-:::note
-To interact with most of the Automation Service features, you must have at least View Automations, View Cloud SOAR, and Access Playbooks permissions.
-:::
-
+   * **Automation Service**
+      * **Task View**
+      * **Task Access**
+      * **Task Access all**
+      * **Task Edit**
+      * **Task Reassign**
+      * **App Central Access**
+      * **App Central Export**
+      * **Integrations Access**
+      * **Integrations Configure**
+      * **Playbooks Access**
+      * **Playbooks Configure**
+      * **Bridge Monitoring Access**
+      * **Observability Access**
+      * **Observability Configure**
 
 ### Configure the connection for an integration resource
 

@@ -63,7 +63,7 @@ We have used a simple example of non-overlapping partitions all defined on `_sou
 
 ## Create a Partition
 
-As an Admin, you create Partitions by specifying their routing expression. We recommend you use `_sourceCategeory` to define your routing expressions to take full advantage of Query Rewriting.
+As an Admin, you create Partitions by specifying their routing expression. We recommend you use `_sourceCategory` to define your routing expressions to take full advantage of Query Rewriting.
 
 The following example shows the routing expression for the three custom Partitions:  
 

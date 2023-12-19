@@ -43,6 +43,7 @@ Attacks may persist without further investigation and patches, so it’s critica
 ## Pre-built apps for threat detection and investigation
 
 [Install](/docs/get-started/apps-integrations) the following apps to get dashboards, queries, and alerting for security monitoring and threat investigation.
+* [**Cloud Infrastructure Security for AWS**](/docs/integrations/amazon-aws/cloud-infrastructure-security-for-aws/). App that provides visibility into your AWS environment to give you insights into active threats, security control failures, and suspicious activity. 
 * [**Security Analytics**](/docs/integrations/sumo-apps/security-analytics/). App for alert analysis and Entity risk assessment.
 * [**Security and threat detection**](/docs/integrations/security-threat-detection/). Apps for security products, such as firewall tools, endpoint protection applications, and security automation and orchestration programs. For ex ample, the [Threat Intel Quick Analysis](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/) app comes preloaded with queries and dashboards that leverage CrowdStrike’s threat intelligence database.
 * [**Cloud security monitoring and analytics**](/docs/integrations/cloud-security-monitoring-analytics/). Apps that provide security insights for data sources such as Windows, Linux, AWS CloudTrail, AWS VPC Flows, and Palo Alto Networks Firewalls.

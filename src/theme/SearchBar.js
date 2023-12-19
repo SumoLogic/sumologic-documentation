@@ -27,3 +27,33 @@ function App() {
     </InstantSearch>
   );
 }
+
+import { Configure } from 'react-instantsearch';
+
+<Configure
+  clickAnalytics={true}
+  userToken={'user-1'}
+/>
+
+import { Hits } from 'react-instantsearch';
+
+const indexName = crawler_sumodocs;
+
+function Hit({ hit }) {
+  return (
+    <div
+      data-insights-object-id={hit.objectID}
+      data-insights-position={hit.__position}
+      data-insights-query-id={hit.__queryID}
+    >
+      {/* ... */}
+    </div>
+  );
+}
+
+// ...
+
+<div data-insights-index={indexName}>
+  {/* ... */}
+  <Hits hitComponent={Hit} />
+</div>

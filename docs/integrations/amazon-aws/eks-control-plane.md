@@ -20,7 +20,7 @@ The list of supported platforms can be found [here](https://github.com/SumoLogic
 Amazon EKS utilizes the following log types:
 * **Kubernetes API server component logs (api)**. The cluster API server is the control plane component that exposes the Kubernetes API.
 * **Audit (audit)**. Kubernetes audit logs provide a record of the individual users, administrators, or system components that have affected your cluster.
-* **Authenticator (authenticator)**. Authenticator logs are unique to Amazon EKS. These logs represent the control plane component that Amazon EKS uses for Kubernetes [Role Based Access Control](https://kubernetes.io/docs/admin/authorization/rbac/) (RBAC) authentication using IAM credentials.
+* **Authenticator (authenticator)**. Authenticator logs are unique to Amazon EKS. These logs represent the control plane component that Amazon EKS uses for Kubernetes [Role Based Access Control](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) (RBAC) authentication using IAM credentials.
 * **Controller manager (controllerManager)**. The controller manager manages the core control loops that are shipped with Kubernetes.
 * **Scheduler (scheduler)**. The scheduler component manages when and where to run pods in your cluster.
 
@@ -192,7 +192,7 @@ Use this dashboard to:
 
 ### Authenticator
 
-The **EKS - Authenticator** dashboard displays information on the Authenticator logs which are unique to Amazon EKS. Panels display logs that represent the control plane component Amazon EKS uses for Kubernetes[ Role Based Access Control](https://kubernetes.io/docs/admin/authorization/rbac/) (RBAC) authentication using IAM credentials.
+The **EKS - Authenticator** dashboard displays information on the Authenticator logs which are unique to Amazon EKS. Panels display logs that represent the control plane component Amazon EKS uses for Kubernetes [Role Based Access Control](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) (RBAC) authentication using IAM credentials. See also: [Enabling IAM principal access to your cluster](https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html).
 
 Use this dashboard to:
 * Review authentication errors.

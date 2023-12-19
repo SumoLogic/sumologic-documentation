@@ -14,6 +14,10 @@ Cloud-to-Cloud sources have several advantages, including:
 * Less overhead of maintenance and upgrades, since cloud-to-cloud sources are upgraded automatically for bug fixes.
 * Lesser cost since the old collection method is used to create multiple resources such as storage accounts, application insights, and azure functions in your account while cloud-to-cloud sources are hosted in sumo logic infra. On the other hand, a cloud-to-cloud event hub source requires you to create only an event hub in your Azure account.
 
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
 ## Step 1. Choose a migration strategy
 
 Choose a migration strategy that is more convenient for you. Migration can be done in two ways:

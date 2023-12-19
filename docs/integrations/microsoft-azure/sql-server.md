@@ -403,7 +403,7 @@ There are additional values set by the Telegraf configuration.  We recommend not
 * `component = “database”` - In the input `[[inputs.SQLserver]]` plugins section. This value is used by Sumo Logic apps to identify application components.
 * `db_system = “sqlserver”` - In the input plugins sections. This value identifies the database system.
 
-    See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
+    See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for all other parameters that can be configured in the Telegraf agent globally.
 
 After you've finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from [this doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 

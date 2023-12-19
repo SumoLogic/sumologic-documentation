@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ### Changes and Enhancements 
 * Automation Bridge: ECR docker images are now replicated in all AWS regions.
 * App Central: Introduced Tags attribute for playbooks.
-* Audit Logs: Enabled events forwarding to CIP.
+* Audit Logs: Enabled events forwarding to Log Analytics Platform.
 * Playbooks: Improved status field update and granularity.
 #### Cloud SOAR 
 * Incident closing note: It is now part of APIv3 response and available as Read Only field in Incident Overview page.

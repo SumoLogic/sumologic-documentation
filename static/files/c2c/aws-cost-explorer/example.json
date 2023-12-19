@@ -1,0 +1,25 @@
+{
+    "api.version":"v1",
+    "source":{
+      "schemaRef":{
+        "type":"AWS Cost Explorer"
+      },
+      "config":{
+        "accessID":"********",
+        "name":"billing200",
+        "description":"billing200",
+        "fields":{
+          "_siemForward":false,
+          "account":"prod"
+        },
+        "accessKey":"********",
+        "granularity":["daily","monthly"],
+        "costMetrics":["AmortizedCost","BlendedCost","NetAmortizedCost","NetUnblendedCost","UnblendedCost"],
+        "category":"aws/billing"
+      },
+      "state":{
+        "state":"Collecting"
+      },
+      "sourceType":"Universal"
+    }
+  }

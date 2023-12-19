@@ -309,7 +309,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB a
        * `component: “database”` - In the input plugins section, `[inputs.MongoDB]`, this value is used by Sumo Logic apps to identify application components.
        * `gather_perdb_stats: “true”` - When true, collect per database stats.
        * `gather_col_stats: “true”` - When true, collect per collection stats.
-     * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
+     * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
    3. Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, MongoDB metrics should start flowing into Sumo Logic.

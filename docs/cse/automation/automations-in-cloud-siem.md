@@ -36,10 +36,7 @@ The first thing you need to do is decide what actions you want to use in your pl
 
 Now that you have the names of the actions you want to use, you can add them to your playbook.
 
-1. [Create a new playbook](/docs/platform-services/automation-service/automation-service-playbooks#create-a-new-playbook). When you create a playbook, select the **Type** as **CSE** so you can run the playbook from a Cloud SIEM automation. 
-    :::tip
-    You cannot run a playbook for a Cloud SIEM automation unless it is type **CSE**. 
-    :::
+1. [Create a new playbook](/docs/platform-services/automation-service/automation-service-playbooks#create-a-new-playbook). When you create a playbook, you can select the **Type** as **CSE** to indicate that the playbook will be used for a Cloud SIEM automation. 
 1. Click **Add Node**.
 1. Choose [**Action**](/docs/platform-services/automation-service/automation-service-playbooks#add-an-action-node-to-a-playbook) as the type of node to add.
 1. In the **Action** field, select the name an action you identified in Step 1. 
@@ -95,7 +92,7 @@ The following procedure provides a brief introduction to how to create an automa
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
 1. Under **Integrations**, select **Automation**.
 1. At the top of the automations screen, click **New Automation**.  (To modify an existing automation, click on the edit icon for the corresponding automation.)<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
-1. In the **New Automation** dialog, select a **Playbook** from the drop-down list. The playbook must be defined, and its type must be set to **CSE** before associating it with an automation. (You can set the type as **CSE** when you [create a new playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook).)<br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="400"/>
+1. In the **New Automation** dialog, select a **Playbook** from the drop-down list. The playbook must be defined before associating it with an automation. <br/><img src={useBaseUrl('img/cse/automations-new.png')} alt="New Automation" width="400"/>
 1. In **Expects attributes for** select whether the playbook will run on an **Entity** or **Insight**. This defines what data payload will be sent to the playbook from Cloud SIEM. 
 1. If **Entity** is selected, in the **Type** field select one or more Entity types. The playbook will only execute on the Entity types selected. 
 1. Select one or more **Executes when** Insight triggers: **Insight Created**, **Insight Closed**, or **Manually Done**. If **Manually Done** is not selected, the automation will not appear in any **Actions** menu on Insights or **Automations** menus on Entities.

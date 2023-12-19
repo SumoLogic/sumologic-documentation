@@ -28,20 +28,11 @@ Watch this micro lesson to learn how to use App Central.
 
 -->
 
-## Permissions
-
-To use App Central, you must have the following role capabilities:
-
-* View Cloud SOAR
-   * App Central
-      * Access
-      * Export
-
-For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).
-
 ## View App Central
 
 To view App Central, [access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service) and click **App Central** in the left navigation bar. 
+
+Before you can access App Central, you must have the App Central Access role capability. For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).
 
 ## App Central UI 
 
