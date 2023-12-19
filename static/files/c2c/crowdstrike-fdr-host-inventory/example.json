@@ -1,0 +1,19 @@
+{
+    "api.version":"v1",
+    "source":{
+       "config":{
+       "name": "crowdstrike-fdr",
+       "description": "crowdstrike-fdr-inventory",
+       "region": "US-1",
+       "clientID": "client id",
+       "clientSecret": "client secret",
+          "fields":{
+             "_siemForward":false
+          }
+       },
+       "schemaRef":{
+          "type":"CrowdStrike FDR Host Inventory Source"
+       },
+       "sourceType":"Universal"
+    }
+ }

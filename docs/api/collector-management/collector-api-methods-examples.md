@@ -861,7 +861,7 @@ Request:
 
 
 ```bash
-curl -u '<accessId>:<accessKey>' -X PUT -H "Content-Type: application/json" -H "If-Match: \"f58d12c6986f80d6ca25ed8a3943daa9\"" -T updated_collector.json https://api.sumologic.net/api/v1/collectors/15
+curl -u '<accessId>:<accessKey>' -X PUT -H "Content-Type: application/json" -H "If-Match: \"f58d12c6986f80d6ca25ed8a3943daa9\"" -T updated_collector.json https://api.sumologic.com/api/v1/collectors/15
 ```
 
 

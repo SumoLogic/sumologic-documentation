@@ -32,6 +32,8 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete)**. On the Search page of the Sumo Logic user interface, the search autocomplete dropdown dialog offers suggestions to make query writing easier. Suggestions include simple logic that offers common default queries, keywords, metadata terms, and search operators. The autocomplete dialog also includes links to Help topics for more information.
 
+**[Automation Service](docs/cse/automation-service/about-automation-service)**. In Cloud SIEM, a service that automatically runs tasks such as sending notifications or adding data to records when security incidents occur. 
+
 
 ## B
 
@@ -94,6 +96,10 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)**. Sumo Logic has several pods that are assigned depending on the geographic location and the date an account is created. Sumo Logic redirects your browser to the correct login URL and also redirects Collectors to the correct endpoint. However, if you're using an API you'll need to manually direct requests to the correct API endpoint; API calls are not redirected to another endpoint.
 
+**[Enrichment](/docs/cse/integrations/enrichments-and-indicators)**. In Cloud SIEM, addition of data to records that provides more information for analysis of security incidents.
+
+**[Entity](/docs/cse/records-signals-entities-insights/view-manage-entities)**. In Cloud SIEM, a unique actor encountered in incoming messages, such as a user, IP address, or host.
+
 **[Exclude rule](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Exclude rules are a type of Processing Rule that specifies log messages that you don't want to send to Sumo Logic, think of it as an "allowlist" filter.
 
 **[Explore](/docs/dashboards/explore-view)**. Explore is an intuitive navigational framework that provides a visual map of the hierarchy of your Kubernetes environment. It allows you to easily traverse the hierarchy and filter the display to focus on deployments, nodes, services, or namespaces.
@@ -142,6 +148,8 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Ingest Budget](/docs/manage/ingestion-volume/ingest-budgets)**. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
 
+**[Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui)**. In Cloud SIEM, a group of signals clustered around a single entity that are generated when an entity’s Activity Score exceeds a threshold.
+
 **[Installed Collector](/docs/send-data/installed-collectors)**. Installed Collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
 
 **[Installation Token](/docs/manage/security/installation-tokens)**. Installation Tokens are assigned to your organization and are used to register Installed Collectors to your Sumo Logic account. They do not expire and can only be used to register Installed Collectors. You can deactivate, reactivate, or delete tokens at any time.
@@ -174,6 +182,8 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 
 ## M
+
+**[Mapper](/docs/cse/schema/create-structured-log-mapping)**. In Cloud SIEM, a script that maps message fields to record attributes.
 
 **[Markdown](/docs/dashboards-classic/get-started/markdown-syntax)**. Used in Dashboards, you can add Text Panels to include titles or text descriptions. Use Markdown syntax to add bold or italic formatting, bullet lists, code font, and other formatting. See Help for details.
 
@@ -215,6 +225,8 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Parse operator](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor)**. The parse operator (also called the parse anchor) parses strings according to specified start and stop anchors, and then labels them as fields for use in subsequent functions in the query such as sorting, grouping, or other functions. Parse options include "parse anchor" or "parse regex" for using regular expressions to form more complex parse queries. It is acceptable to use "parse" for "parse anchor", or "extract" for "parse regex".
 
+**[Parser](/docs/cse/schema/parser-editor)**. In Cloud SIEM, a script that parses logs and normalizes them into structured records. 
+
 **[Partition](/docs/manage/partitions-data-tiers)**. Sumo Logic allows you to filter a subset of the messages in an Index into a Partition. Partitioning messages in an Index improves search query performance, as the total number of messages that need to be searched is reduced. Once messages are routed to a Partition, you can limit your search to those messages using the Partition name in a search query.
 
 **[Pinned searches](/docs/get-started/library)**. The Pinned Search feature allows you to start a search, then “pin” it, so it will continue running in the background independent of the browser session. Then, you can close the Search tab or log out and find your results later in the Library on the Recent tab in a folder named Pinned Searches.
@@ -239,6 +251,8 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[RBAC](/docs/manage/users-roles)**. Sumo Logic supports Role-Based Access Control (RBAC) to allow Administrators to customize system access. With RBAC, Administrators create roles for groups of users who perform various job functions. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments can grant users permissions to access some data sets, or can restrict users from accessing types of data.
 
+**[Record](/docs/cse/records-signals-entities-insights/view-records-signal)**. In Cloud SIEM, a collection of normalized data created from a message.
+
 **[Relative expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions)**. Used in time range expressions, when setting the non-absolute time limits of a search. For example, -1d, -1d -12h, -12h -60m.
 
 **[Role](/docs/manage/users-roles/roles/create-manage-roles)**. In Sumo Logic role-based access control (RBAC), you grant users access to data and to Sumo Logic functions using roles. You assign role capabilities and a role search filter to a role, and assign one or more roles to a user.
@@ -247,6 +261,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Rollup tables](/docs/metrics/manage-metric-volume/metric-ingestion-and-storage)**. Metric data is stored in Sumo Logic as raw data points, and aggregated over one minute and one hour resolutions. The one minute and one hour aggregated metrics are referred to as rollup tables. Raw data is retained for 7 days, one-minute rollups for 30 days and one-hour rollups for 13 months.
 
+**[Rule](/docs/cse/rules/about-cse-rules)**. In Cloud SIEM, set of logic that creates signals based on information in incoming records.
 
 
 
@@ -263,6 +278,8 @@ This glossary provides an alphabetized list of technical term definitions used i
 **[Search Templates](/docs/search/get-started-with-search/build-search/search-templates)**. Search templates simplify searches for users by providing easy to select input choices. You can have search templates replace any text in a query, including fields, keywords, and arguments to operators.
 
 **[Service Allowlist Settings](/docs/manage/security/create-allowlist-ip-cidr-addresses)**. Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations.
+
+**[Signal](/docs/cse/records-signals-entities-insights/view-records-signal)**. In Cloud SIEM, an indicator of an event of interest that fires when rule conditions are met. 
 
 **[Single Value Chart](/docs/dashboards-classic/chart-panel-types/numerical-single-value-charts)**. A Single Value chart is useful for displaying the results of a query that returns only a single value or record, in order to make that value stand out at a glance. If the query returns more than one value in the Aggregation tab, only the first value is displayed in the Single Value chart.
 

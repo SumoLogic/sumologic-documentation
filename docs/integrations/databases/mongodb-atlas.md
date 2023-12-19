@@ -185,7 +185,6 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 ```bash title="Metrics collected"
 DISK_PARTITION_IOPS_READ
 DISK_PARTITION_IOPS_WRITE
-DISK_PARTITION_UTILIZATION
 DISK_PARTITION_LATENCY_READ
 DISK_PARTITION_LATENCY_WRITE
 DISK_PARTITION_SPACE_PERCENT_FREE
@@ -304,7 +303,7 @@ To configure collection for multiple projects, do the following:
 
 #### Step 3C: Configure Script-Based Collection for MongoDB Atlas
 
-This section shows you how to configure script-based log collection for the Sumo Logic MongoDB Atlas app. The _sumologic-mongodb-atlas_ script is compatible with python 3.7 and python 2.7, and has been tested on Ubuntu 18.04 LTS.
+This section shows you how to configure script-based log collection for the Sumo Logic MongoDB Atlas app. The _sumologic-mongodb-atlas_ script is compatible with python 3.11 and python 2.7, and has been tested on Ubuntu 18.04 LTS.
 
 :::note prerequisites
 This task makes the following assumptions:
@@ -323,7 +322,7 @@ This task makes the following assumptions:
    ```
 2. To deploy the script on a Linux machine, do the following:
    1. If **pip** is not already installed, follow the instructions in the [pip documentation](https://pip.pypa.io/en/stable/installing/) to download and install **pip**.
-   2. Log in to a Linux machine (compatible with either Python 3.7 or Python 2.7.
+   2. Log in to a Linux machine (compatible with either Python 3.11 or Python 2.7.
    3. Do one of the following:
       * For Python 2, run the following command:
   	  ```bash
@@ -421,7 +420,6 @@ MongoDBAtlas:
     DISK_METRICS:
       - DISK_PARTITION_IOPS_READ
       - DISK_PARTITION_IOPS_WRITE
-      - DISK_PARTITION_UTILIZATION
       - DISK_PARTITION_LATENCY_READ
       - DISK_PARTITION_LATENCY_WRITE
       - DISK_PARTITION_SPACE_PERCENT_FREE
@@ -546,8 +544,6 @@ Remove any one of the lines if you do not want to collect metric of that type.
    <td><ul>
 <li>DISK_PARTITION_IOPS_READ</li>
 <li> DISK_PARTITION_IOPS_WRITE
-</li>
-<li> DISK_PARTITION_UTILIZATION
 </li>
 <li> DISK_PARTITION_LATENCY_READ
 </li>

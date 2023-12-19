@@ -59,7 +59,7 @@ Results can be returned in two ways:
 ## Examples
 
 ```sql
-_sourcecategory = "Labs/AWS/GuardDuty_V8"
+_sourceCategory = "Labs/AWS/GuardDuty_V8"
 | json keys "region", "partition", "resource"
 | logreduce keys field=resource
 ```

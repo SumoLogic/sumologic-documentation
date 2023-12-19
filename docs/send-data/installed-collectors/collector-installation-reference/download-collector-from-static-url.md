@@ -26,7 +26,7 @@ This document provides static URLs to download our [Installed Collector](/docs/s
 
   # download the installer
 
-  Invoke-WebRequest 'https://collectors.sumologic.com/rest/download/win64' -outfile '<download_path>\SumoCollector.exe'
+  Invoke-WebRequest 'https://collectors.sumologic.com/rest/download/win64' -outfile $home\Desktop\SumoCollector.exe
   ```
 
   Replace the `<download_path>` with the location where you want to download the Collector. For example, `C:\user\download\sumouser\SumoCollector.exe`.

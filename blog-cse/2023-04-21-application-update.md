@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Automation Service
 
-Sumo Logic is excited to announce a new feature that integrates functionality previously available only in our Cloud SOAR solution directly into Cloud SIEM Enterprise (CSE). This new feature, the Automation Service, allows you to define and automate smart actions, including enrichments and notifications, enabling your security analysts to address potential security threats faster and more accurately. 
+Sumo Logic is excited to announce a new feature that integrates functionality previously available only in our Cloud SOAR solution directly into Cloud SIEM. This new feature, the Automation Service, allows you to define and automate smart actions, including enrichments and notifications, enabling your security analysts to address potential security threats faster and more accurately. 
 
 You can interact with the service through **automations**, which execute playbooks. **Playbooks** are composed of one or more actions with a workflow that can include parallel actions and logic steps. **Actions** are defined as part of **integrations**. 
 
@@ -21,7 +21,7 @@ The Automation Service includes over 350 integrations out of the box, each inclu
 
 <img src={useBaseUrl('img/release-notes/cse/automation-service-integrations.png')} alt="Automation Service Integrations"/>
 
-Many playbooks are also included, providing instant value with practically no effort - simply connect the integration to the appropriate endpoint and enable the corresponding automation in CSE. Playbooks can be automatically triggered when Insights are created or closed, or triggered manually.
+Many playbooks are also included, providing instant value with practically no effort - simply connect the integration to the appropriate endpoint and enable the corresponding automation in Cloud SIEM. Playbooks can be automatically triggered when Insights are created or closed, or triggered manually.
 
 <img src={useBaseUrl('img/release-notes/cse/automation-service-playbook1.png')} alt="Automation Service Playbook Example"/>
 
@@ -33,17 +33,17 @@ Automations (and other objects) are accessible through the **Configuration** men
 
 Automation results are accessible from Insight and Entity detail pages.
 
-**The Insight Enrichment Server and the Actions functionality in CSE, which is replaced by the Automation Service, will be deprecated on November 30, 2023.** Until then, they will continue to be fully supported and operational. To aid in migration, all current Enrichment Server examples and Actions have equivalent actions and playbooks in the Automation Service. In addition, through the Bridge, customers can execute any existing Powershell script currently connected to the Insight Enrichment Server. 
+**The Insight Enrichment Server and the Actions functionality in Cloud SIEM, which is replaced by the Automation Service, will be deprecated on November 30, 2023.** Until then, they will continue to be fully supported and operational. To aid in migration, all current Enrichment Server examples and Actions have equivalent actions and playbooks in the Automation Service. In addition, through the Bridge, customers can execute any existing Powershell script currently connected to the Insight Enrichment Server. 
 
 :::note
 The Automation Service currently has **Limited Availability**. This means that it is fully functional and supported in production environments, but not automatically deployed to every customer. If you would like it deployed to your environment, please contact Sumo Logic and we will enable it for you.
 :::
 
-There is much more information about the Automation Service and how to use it in the [online documentation](/docs/cse/automation-service/).
+There is much more information about the Automation Service and how to use it in the [online documentation](/docs/cse/automation/about-automation-service-and-cloud-siem/).
 
 ### Threat Indicators
 
-The way enrichments are displayed in CSE is also being enhanced to provide important information to security analysts when they need it, without having to look it up.
+The way enrichments are displayed in Cloud SIEM is also being enhanced to provide important information to security analysts when they need it, without having to look it up.
 
 First, the Enrichment tabs have been reorganized by Entity (instead of by Enrichment) and additional filter controls have been added:
 
@@ -55,7 +55,7 @@ This persistence can be controlled by setting an expiration date as part of the 
 
 Finally, enrichments can now set reputation indicators. These indicators will be visible anywhere in the UI that the Entity is displayed. Where there is sufficient room, a color-coded text label will be displayed (as in the example above); in other situations, an icon will be displayed instead.
 
-The reputation is not set automatically; the enrichment must pass a reputation to CSE. More information about this, and the other new features, is available in [online documentation](/docs/cse/integrations/enrichments-and-indicators/#).
+The reputation is not set automatically; the enrichment must pass a reputation to Cloud SIEM. More information about this, and the other new features, is available in [online documentation](/docs/cse/integrations/enrichments-and-indicators/#).
 
 ### Minor Changes and Enhancements
 

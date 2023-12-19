@@ -132,6 +132,8 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
    </td>
    <td>Cloud Syslog Endpoint
    </td>
+   <td>OpenTelmetry Collector Endpoint
+   </td>
   </tr>
   <tr>
    <td>AU
@@ -143,6 +145,8 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
    <td>https://collectors.au.sumologic.com
    </td>
    <td>syslog.collection.au.sumologic.com
+   </td>
+   <td>https://open-collectors.au.sumologic.com
    </td>
   </tr>
   <tr>
@@ -156,6 +160,8 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
    </td>
    <td>syslog.collection.ca.sumologic.com
    </td>
+   <td>https://open-collectors.ca.sumologic.com
+   </td>
   </tr>
   <tr>
    <td>DE
@@ -168,6 +174,8 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
    </td>
    <td>syslog.collection.de.sumologic.com
    </td>
+   <td>https://open-collectors.de.sumologic.com
+   </td>
   </tr>
   <tr>
    <td>EU
@@ -177,6 +185,8 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
    <td>https://collectors.eu.sumologic.com<br/>
    https://endpoint1.collection.eu.sumologic.com</td>
    <td>syslog.collection.eu.sumologic.com
+   </td>
+   <td>https://open-collectors.eu.sumologic.com
    </td>
   </tr>
   <tr>
@@ -188,6 +198,7 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
    </td>
    <td>https://collectors.fed.sumologic.com</td>
    <td>syslog.collection.fed.sumologic.com</td>
+   <td>https://open-collectors.fed.sumologic.com/</td>
   </tr>
   <tr>
    <td>IN
@@ -200,6 +211,8 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
    </td>
    <td>syslog.collection.in.sumologic.com
    </td>
+   <td>https://open-collectors.in.sumologic.com
+   </td>
   </tr>
   <tr>
    <td>JP
@@ -211,6 +224,8 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
    <td>https://collectors.jp.sumologic.com
    </td>
    <td>syslog.collection.jp.sumologic.com
+   </td>
+   <td>https://open-collectors.jp.sumologic.com
    </td>
   </tr>
   <tr>
@@ -227,6 +242,8 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
    https://endpoint4.collection.sumologic.com<br/>
    https://endpoint5.collection.sumologic.com</td>
    <td>syslog.collection.us1.sumologic.com
+   </td>
+   <td>https://open-collectors.sumologic.com
    </td>
   </tr>
   <tr>
@@ -247,6 +264,7 @@ https://endpoint7.collection.us2.sumologic.com<br/>
 https://endpoint8.collection.us2.sumologic.com<br/>
 https://endpoint9.collection.us2.sumologic.com/</td>
    <td>syslog.collection.us2.sumologic.com</td>
+   <td>https://open-collectors.us2.sumologic.com</td>
   </tr></small>
 </table>
 

@@ -8,7 +8,7 @@ Ingest budgets control the daily volume of log data sent to Sumo Logic. Log dat
 
 Ingest budgets automatically reset their capacity utilization tracking every 24 hours based on the time and time zone you specify. For example, you can schedule an ingest budget to refresh every day at 02:00 in the America/Los_Angeles time zone. You can manually [reset an ingest budget](#reset-ingest-budget) at any time.
 
-An ingest budget's capacity usage is logged in the Audit Index when the audit threshold is reached and continues to be logged until the budget is reset. To track and schedule alerts on ingest budget capacity-usage and resets see [audit ingest budgets](#audit-index-queries).
+An ingest budget's capacity usage is logged in the Audit Index when the audit threshold is reached and continues to be logged until the budget is reset. To track and schedule alerts on ingest budget capacity-usage and resets see [audit ingest budgets](#audit-index-budgets).
 
 ## Availability
 
@@ -203,7 +203,7 @@ To ensure the combined daily ingestion for the infrastructure components ALB, Ka
 
 ### Audit ingest budgets
 
-The [Audit Index](/docs/manage/security/audit-index) logs events when an ingest budget has reached its configured Audit Threshold percent. There are two different log formats. 
+The [Audit Index](/docs/manage/security/audit-indexes/audit-index) logs events when an ingest budget has reached its configured Audit Threshold percent. There are two different log formats. 
 
 1. Approaching or exceeding capacity
 1. Resets
@@ -288,14 +288,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this section, we'll introduce the following concepts:
 
-<div className="box-wrapper" markdown="1">
-<div className="box smallbox1 card">
+<div className="box-wrapper">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/ingestion-volume/ingest-budgets/assign-collector-ingest-budget"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Assign Collector to Ingest Budget</h4></a>
   <p>Learn how to assign a Collector to an Ingest Budget.</p>
   </div>
 </div>
-<div className="box smallbox2 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/ingestion-volume/ingest-budgets/quickstart"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Ingest Budgets Quickstart Tutorial</h4></a>
   <p>Learn how to create and use Ingest Budgets.</p>

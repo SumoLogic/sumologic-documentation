@@ -33,8 +33,8 @@ The operator can process up to 100,000 data points for a single query. It autom
 _sourceCategory=HttpServers
 | timeslice 1m
 | count by _timeslice, _sourceHost
-| filter _sourcehost in (outlier _count by _sourceHost | where _count_violation > 0)
-| transpose row _timeslice column _sourcehost
+| filter _sourceHost in (outlier _count by _sourceHost | where _count_violation > 0)
+| transpose row _timeslice column _sourceHost
 ```
 
 ### Show top two source hosts with the most messages
@@ -43,8 +43,8 @@ _sourceCategory=HttpServers
 _sourceCategory=HttpServers
 | timeslice 1m
 | count by _timeslice, _sourceHost
-| filter _sourcehost in (sum(_count) by _sourceHost | top 2 _sourceHost by _sum )
-| transpose row _timeslice column _sourcehost
+| filter _sourceHost in (sum(_count) by _sourceHost | top 2 _sourceHost by _sum )
+| transpose row _timeslice column _sourceHost
 ```
 
 ### Show top three source hosts with most outlier violations
@@ -53,6 +53,6 @@ _sourceCategory=HttpServers
 _sourceCategory=HttpServers
 | timeslice 1m
 | count by _timeslice, _sourceHost
-| filter _sourcehost in (outlier _count by _sourceHost | sum(_count_violation) by _sourcehost | top 3 _sourceHost by _sum )
-| transpose row _timeslice column _sourcehost
+| filter _sourceHost in (outlier _count by _sourceHost | sum(_count_violation) by _sourceHost | top 3 _sourceHost by _sum )
+| transpose row _timeslice column _sourceHost
 ```

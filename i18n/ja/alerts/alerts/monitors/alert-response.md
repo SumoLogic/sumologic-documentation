@@ -53,6 +53,12 @@ To open the Alert List, click the bell icon in the top menu.
 
 ![alert list page with bell and border.png](/img/monitors/alert-list-page-bell-border.png)
 
+<!--
+Kanso: To open the Alert List, click **Alerts** > **Alert List**.
+
+delete this along with the img file: ![alert list page with bell and border.png](/img/monitors/alert-list-page-bell-border.png)
+-->
+
 * Use the search bar to filter by name, severity, or status.
 
     ![search alert list.png](/img/monitors/search-alert-list.png)

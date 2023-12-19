@@ -34,43 +34,43 @@ Steps to configure a Hosted Collector:
 
 Once you've configured your Hosted Collector, the next step is to configure a Source(s). 
 
-<div className="box-wrapper" markdown="1">
-<div className="box smallbox1 card">
+<div className="box-wrapper" >
+<div className="box smallbox card">
   <div className="container">
   <img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Thumbnail icon" width="65"/>
   <h4><a href="/docs/send-data/hosted-collectors/amazon-aws">Amazon Sources</a></h4>
   <p>Collect data from a variety of AWS products.</p>
   </div>
 </div>
-<div className="box smallbox2 card">
+<div className="box smallbox card">
   <div className="container">
   <img src={useBaseUrl('img/integrations/microsoft-azure/azure.png')} alt="Thumbnail icon" width="50"/>
-  <h4><a href="/docs/send-data/hosted-collectors/ms-office-audit-source">Microsoft Sources</a></h4>
+  <h4><a href="/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source">Microsoft Sources</a></h4>
   <p>Collect data from Microsoft Office 365 Audit.</p>
   </div>
 </div>
-    <div className="box smallbox3 card">
+    <div className="box smallbox card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/google/google.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/send-data/hosted-collectors/google-source">Google Sources</a></h4>
       <p>Collect data from Google products such as GCP.</p>
       </div>
     </div>
-    <div className="box smallbox4 card">
+    <div className="box smallbox card">
       <div className="container">
       <img src={useBaseUrl('img/icons/business/cloud-ecosytem.png')} alt="Cloud icon" width="50"/>
       <h4><a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework">Cloud-to-Cloud Integration Framework Sources</a></h4>
       <p>Collect logs and events directly from your SaaS and Cloud platforms.</p>
       </div>
     </div>
-    <div className="box smallbox5 card">
+    <div className="box smallbox card">
       <div className="container">
       <img src={useBaseUrl('img/icons/cloud/cloud-systems.png')} alt="Cloud icon" width="50"/>
       <h4><a href="/docs/send-data/hosted-collectors/cloud-syslog-source">Cloud Syslog Sources</a></h4>
       <p>Configure a syslog client to send RFC 5424-compliant messages to Sumo.</p>
       </div>
     </div>
-    <div className="box smallbox6 card">
+    <div className="box smallbox card">
       <div className="container">
       <img src={useBaseUrl('img/integrations/web-servers/web-servers.png')} alt="Thumbnail icon" width="50"/>
       <h4><a href="/docs/send-data/hosted-collectors/http-source">HTTP Sources</a></h4>

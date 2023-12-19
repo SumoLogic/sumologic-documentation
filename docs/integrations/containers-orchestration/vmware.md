@@ -53,7 +53,7 @@ _sourceCategory = Labs/VMWare6.5 and ("error" or "fail" or "critical")
 ## Prerequisites
 
 * **Supported Software Versions**. The VMware App works with vCenter and vSphere 6.5, 6.7, and 7.0.
-* **Sumo Logic Scripts for VMware**. The Sumo Logic scripts required to work with the app are located here: [sumo-vsphere-ulm.zip](https://s3.amazonaws.com/appdevstore/VMWare/sumo-vsphere-ulm.zip).
+* **Sumo Logic scripts for VMware**. The Sumo Logic scripts required to work with the app are located here: [sumo-vsphere-ulm.zip](https://appdevstore.s3.amazonaws.com/VMWare/sumo-vsphere-ulm.zip).
 
 
 ## Collecting Logs and Metrics for the VMware App
@@ -204,7 +204,7 @@ SSL_CAPATH: Certificate absolute path if SSL_VERIFY is True
 
 To collect performance metrics, do the following:
 
-1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source).
+1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source). While configuring set the **Protocol** to **TCP** and **ContentType** to **Carbon2**.
 2. Edit the properties in the bundled sumo.json properties file, as necessary.
 3. Go to the directory for the Sumo Logic scripts and run the **esx_perf_metrics_6_5.py** script, which queries the vCenter Server for metrics from that location (this script queries the vCenter Server for events) with the following command:
   ```bash

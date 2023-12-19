@@ -113,7 +113,7 @@ For information on available metrics, see [GCP Metrics](https://cloud.google.com
   | Network Security | networksecurity.googleapis.com |
   | Net App | netapp.com.googleapis.com |
   | Cloudvolumes Net App | cloudvolumesgcp-api.netapp.com |
-  | VPN Access | vpcaccess.googleapis.com |
+  | VPC Access | vpcaccess.googleapis.com |
 
   </details>
 
@@ -121,7 +121,7 @@ For information on available metrics, see [GCP Metrics](https://cloud.google.com
   :::note
   Do not use quotes when entering a custom service.
   :::
-10. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices#good-and-bad-source-categories). Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/Keyword-Search-Expressions). This can be a maximum of 1,024 characters.
+10. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices#good-and-bad-source-categories). Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions). This can be a maximum of 1,024 characters.
 11. **Fields**. Click the **+Add link** to add custom log metadata [Fields](/docs/manage/fields.md), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
@@ -146,7 +146,7 @@ The scan interval defines how long Sumo Logic waits between calls to the GCP API
 
 Google reports GCP metrics at different granularities (1-minute and 5-minute intervals), so setting a scan interval that is too short could lead to excessive querying. Setting an interval that is too long can delay the update frequency of new metrics appearing in Sumo Logic.
 
-Under some circumstances, Sumo Logic automatically increases the scan interval to avoid data loss due to throttling of data by Google Cloud Platform. See [Enable and Manage the Audit Index](/docs/manage/security/audit-index.md) for details.
+Under some circumstances, Sumo Logic automatically increases the scan interval to avoid data loss due to throttling of data by Google Cloud Platform. See [Enable and Manage the Audit Index](/docs/manage/security/audit-indexes/audit-index.md) for details.
 
 ### Costs for using GCP Metric Sources  
 

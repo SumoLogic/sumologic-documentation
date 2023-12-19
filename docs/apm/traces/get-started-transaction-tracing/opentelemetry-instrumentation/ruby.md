@@ -52,7 +52,7 @@ To enable instrumentation in the application and export the telemetry data it is
 
 * Specific package instrumentation - in this example only Sinatra and Net HTTP libraries will be instrumented.
 
-   ```bash
+   ```rb
    require 'opentelemetry/sdk'
    Bundler.require
    OpenTelemetry::SDK.configure do |c|
@@ -63,7 +63,7 @@ To enable instrumentation in the application and export the telemetry data it is
 
 * "All in one" instrumentation - this configuration will instrument all available package:
 
-   ```bash
+   ```rb
    require 'opentelemetry/sdk'
    Bundler.require
    OpenTelemetry::SDK.configure do |c|
@@ -84,10 +84,10 @@ The final step is to configure the exporter host and service name. This can be d
 * Environment variable configures the endpoint where telemetry data will be sent:
 
    ```bash
-   OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelagent.sumologic:4318
+   OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_ENDPOINT:4318
    ```
 
-   In this example, the value of the variable points to the default Sumologic Kubernetes Collector. For Kubernetes environments see the [available endpoints for a direct connection](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md).
+   This should be OpenTelemetry Collector/Agent endpoint address or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). For Kubernetes environments, see the [available endpoints for a direct connection](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md).
 
 * Configure the service name. Ensure the string value represents its business logic, such as `FinanceServiceCall`.  This will appear as a tracing service name in Sumo Logic.
 
@@ -107,7 +107,7 @@ Additional information like TraceID, SpanID or operation data in the application
 
 Please see example code:
 
-```bash
+```rb
 logger = ::Logger.new(STDOUT)
 logger.formatter = proc do |severity, time, progname, msg|
   span_id = OpenTelemetry::Trace.current_span.context.hex_span_id

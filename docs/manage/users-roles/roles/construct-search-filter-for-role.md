@@ -6,7 +6,7 @@ description: Construct a role search filter to control what log data users with 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page describes how to define a search filter for a role. These instructions apply to Step 6 of the procedure detailed on the [Create a New Role](/docs/manage/users-roles/roles/create-manage-roles/) page.
+This page describes how to define an advanced search filter for a role. These instructions apply to the [**Advanced filter**](/docs/manage/users-roles/roles/rbac-for-indexes/#advanced-filter) option in Step 6 of the [Create a role](/docs/manage/users-roles/roles/create-manage-roles/#create-a-role) procedure. 
 
 
 ## Understanding search filters
@@ -22,13 +22,13 @@ This filter grants access to logs whose `_sourceCategory` begins with the string
 When a user with this filter enters a query like:
 
 ```sql
-_sourcecategory=labs/apache | parse "* --" as src_ip | count by src_ip | sort _count
+_sourceCategory=labs/apache | parse "* --" as src_ip | count by src_ip | sort _count
 ```
 
 Sumo silently (it’s transparent to the user) adds the role filter to the beginning of the query with an AND:
 
 ```sql
-_sourceCategory=labs* AND (_sourcecategory=labs/apache | parse "* --" as src_ip | count by src_ip | sort _count)
+_sourceCategory=labs* AND (_sourceCategory=labs/apache | parse "* --" as src_ip | count by src_ip | sort _count)
 ```
 
 The example above positively grants access to log data. You can do the opposite: explicitly deny access to data, with an exclamation point (!). For example:
@@ -55,7 +55,7 @@ The explanations of the behavior of each example filter assume that no other rol
 * Role filters apply to log searches, not metric searches.
 * If one or more of your FERs override the out-of-the-box metadata tags you use in your search filters for a role,  LiveTail can still provide access to data outside of the scope intended in your search filter. You should either avoid overriding out-of-the-box metadata tags in your FERs or avoid overridden tags in your search filters.
 * The [_dataTier](/docs/manage/partitions-data-tiers/searching-data-tiers/) search modifier is not supported in role filters.
-* For limitations related to the use of Scheduled Views or Partitions in a search filter, see [Using Partitions and Scheduled Views in a search filter](#using-partitions-and-scheduled-views-in-a-search-filter), below.
+* For limitations related to the use of Scheduled Views or Partitions in a search filter, refer to [Partitions](/docs/manage/partitions-data-tiers/#limitations) and [Scheduled Views](/docs/manage/scheduled-views).
 
 #### Using metadata in a search filter
 

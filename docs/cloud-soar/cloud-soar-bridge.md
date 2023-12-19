@@ -9,11 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can only run custom actions or integrations outside of the Sumo Logic cloud in an "on-premise" environment. For on-premise environments, you need to install a bridge as described below.
 
-## Requirements 
+## Requirements
 
 ### Hardware requirements
 
-* OS: 
+* OS:
    * Ubuntu (18.04/20.04)
    * CentOS 7
    * RedHat 8
@@ -30,24 +30,26 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
 | DESTINATION | PROTOCOL | PORT |
 | :-- | :-- | :-- |
 | soar-cloud-url | TCP | 443 |
-| siem-cloud-url | TCP| 443| 
-| 784093250948.dkr.ecr.eu-central-1.amazonaws.com | 	TCP| 	443| 
-| index.docker.io* | 	TCP| 	443| 
-| registry-1.docker.io* | 	TCP| 	443| 
-| auth.docker.io* | 	TCP| 	443| 
-| production.cloudflare.docker.com* | 	TCP| 	443| 
-| long-endpoint1-events.sumologic.net | 	TCP| 	443| 
+| siem-cloud-url | TCP| 443|
+| 784093250948.dkr.ecr.eu-central-1.amazonaws.com | 	TCP| 	443|
+| 784093250948.dkr.ecr.us-east-1.amazonaws.com | 	TCP| 	443|
+| 784093250948.dkr.ecr.us-west-2.amazonaws.com | 	TCP| 	443|
+| index.docker.io* | 	TCP| 	443|
+| registry-1.docker.io* | 	TCP| 	443|
+| auth.docker.io* | 	TCP| 	443|
+| production.cloudflare.docker.com* | 	TCP| 	443|
+| long-endpoint1-events.sumologic.net | 	TCP| 	443|
 
 \* Needed only to connect to docker hub.
 
 ## Install Docker
 
 1. Install Docker-CE following the [installation instructions in Docker Docs](https://docs.docker.com/engine/install/). Install at least version 20.10 (do not use nightly build).
-1. As soon as the docker daemon is installed, start it with: 
+1. As soon as the docker daemon is installed, start it with:
    ```
    systemctl start docker
    ```
-1. Enable it on boot: 
+1. Enable it on boot:
    ```
    systemctl enable docker
    ```
@@ -61,7 +63,7 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
 1. Create a file named `/etc/systemd/system/docker.service.d/http-proxy.conf`, and add:
    ```
    [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:8080\" 
+   Environment="HTTP_PROXY=http://proxy.example.com:8080\"
    Environment="HTTPS_PROXY=http://proxy.example.com:8080\"
    ```
 1. Reload the systemd daemon with:
@@ -73,28 +75,11 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
    systemctl restart docker
    ```
 
-## Get JWT token
-<!-- This section is different from the Automation Service, where it is titled "Get installation token". -->
-1. Click the gear icon at the top of the Cloud SOAR screen and select **Settings**.
-1. Add a new profile:
-   1. Select **User Management > Profiles**. 
-   1. Click the **+** button to the left of **Profiles**.
-   1. In the **Add profile** dialog, enter a **Name** for the new profile.
-   1. Click the **Settings** box.
-   1. In the **API** box select **Use**.
-   1. Click **CREATE**.
-1. Add a new user:
-   1. Select **User Management > Users**.
-   1. Click the **+** button to the left of **Users**.
-   1. In the **Add user** dialog, for **Profile** select the profile you created above. Fill out the rest of the fields.
-   1. Click **CREATE**. 
-1. Copy the JWT token for the new user:
-   1. Log in to Cloud SOAR as the new user.
-   1. Click the gear icon at the top of the Cloud SOAR screen and select **Settings**.
-   1. Select **User Management > Users**.
-   1. Select the new user.
-   1. Scroll down to the **JWT Token** section.
-   1. Copy the token. You will use this token later in the installation process.
+## Get installation token
+
+Log in to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with the name prefix `csoar-bridge-token`.
+
+<img src={useBaseUrl('img/cse/automations-bridge-installation-token.png')} alt="Installation token" width="800"/>
 
 ## Automation installation
 
@@ -127,22 +112,20 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
    ```
 
 ### Installation configuration
+1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters:
+   * `1SOAR_URL1`
+   * `1SOAR_TOKEN1`
+1. To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the **API Endpoint** column. For example: `https://api.eu.sumologic.com/api/`
 
-1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters: <!-- These parameters differ from those for the Automation Service -->
-   * `SOAR_URL`
-   * `SOAR_TOKEN`
-1. Obtain the `SOAR_URL` by clicking **?** at the top of the Cloud SOAR UI and navigating to **API Documentation**. Note the **Servers** value and remove `/v3/` from the end of the URL. The bridge cannot currently be registered to a Cloud SOAR instance with the `/v3/` API. 
-
-And you can set this optional parameter (do not include spaces): `ALIAS`
+And you can set this optional parameter (do not include spaces and must be less than 20 characters): `ALIAS`
 
 An example of a configuration file would be:
-<!-- This example differs from that for the Automation Service bridge -->
 ```
 {
-        "SOAR_URL":"https://YOUR_DOMAIN/incmansuite_ng/api", 
-        "SOAR_TOKEN":"YOUR_JWT_TOKEN",
-        "SIEM_URL":"https://YOUR_CSE_URL/sec",
-        "ALIAS": "YOUR_ALIAS_NO_SPACES"
+   "SOAR_URL":"API_ENDPOINT_FROM_FIREWALL_DOC_FOR_YOUR_REGION",
+   "SOAR_TOKEN":"TOKEN_FROM_ADMINISTRATION_-->_SECURITY_-->_INSTALLATION TOKEN",
+   "SIEM_URL":"https://YOUR_CSE_URL/sec",
+   "ALIAS":"YOUR_ALIAS_NO_SPACES_LESS_THAN_20_CHARACTERS"
 }
 ```
 
@@ -189,7 +172,7 @@ ps faux |grep automation-bridge
 
 This is an example of running `automation-bridge`:<br/><img src={useBaseUrl('img/cloud-soar/automations-bridge-example-output.png')} alt="Example of running automation-bridge" width="800"/>
 
-On the SOAR instance, the Automation Bridge Monitoring panel under **Settings > Audit and information > License information** shows a list of live bridge agents:<br/><img src={useBaseUrl('img/cloud-soar/automations-bridge-monitoring-panel.png')} alt="Automation Bridge Monitoring panel" width="600"/>
+On the SOAR instance, under **Automation > Bridge**, a list of live bridge agents will be displayed along with their status.
 
 ### Configuring the automation bridge for CyberArk
 
@@ -197,3 +180,45 @@ If you are using CyberArk, you must add the following certificates provided by C
 * `RootCA_new.crt`
 * `client_new.crt`
 * `client_new.pem`
+
+### Configuring automation bridge with Podman
+
+#### Enable Podman socket
+
+1. Run the following commands:
+   ```bash
+   systemctl enable podman.socket && systemctl start podman.socket
+   ```
+1. Create a symbolic link:
+   ```bash
+   ln -s /run/podman/podman.sock /var/run/docker.sock
+   ```
+
+#### Change automation bridge configuration
+
+Change the automation bridge configuration file `/usr/lib/systemd/system/automation-bridge-worker@.service`.
+
+```bash title="systemd"
+[Unit]
+Description=Automation-bridge worker %i
+
+[Service]
+User=root
+EnvironmentFile=/etc/opt/automation-bridge/automation-bridge.conf
+ExecStart=/opt/automation-bridge/bin/automation-bridge -f /opt/automation-bridge/etc/user-configuration.conf -n %H-%i
+ExecStop=/bin/kill -s TERM  $MAINPID
+Restart=on-failure
+TimeoutStartSec=10
+RestartSec=10
+
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+
+[Install]
+WantedBy=multi-user.target
+```
+
+:::important
+This is the current solution and it needs to run service as `root`.
+:::
