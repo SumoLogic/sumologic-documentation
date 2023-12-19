@@ -67,7 +67,7 @@ You can use JSON to configure a processing rule, use the **Forward** filterTy
 1. Type a **Name** for this rule. (Names have a maximum of 32 characters.)
 1. For **Filter**, type a regular expression that defines the messages you want to filter. The rule must match the whole message. For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with **(?s).\* **such as: `(?s).*matching text(?s).*` Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax)
 1. Select **Archive messages that match** as the rule type. This option is visible only if you have defined at least one [**AWS Archive bucket** destination](#create-an-aws-archive-destination), as described in the previous section. 
-1. Select the Destination from the dropdown menu.  <br/><img src={useBaseUrl('img/archive/archive-rule.png')} alt="Archive rule" width="600"/>
+1. Select the Destination from the dropdown menu.  <br/><img src={useBaseUrl('img/archive/archive-rule.png')} alt="Archive rule" width="450"/>
 1. (Optional) Enter a **Prefix** that matches the location to store data in the S3 bucket. The prefix has the following requirements:
    * It can not start with a forward slash `/`.
    * It needs to end with a forward slash `/`.
@@ -176,14 +176,12 @@ The Archive page provides a table of all the existing [AWS S3 Archive Sources]
 
 Click on a table row to view the Source details. This includes:
 
-* Name
-* Description
-* AWS S3 bucket
-* All ingestion jobs that are and have been created on the Source.
+* **Name**
+* **Description**
+* **AWS S3 bucket**
+* All **Ingestion jobs** that are and have been created on the Source.
     * Each ingestion job shows the name, time window, and volume of data processed by the job. Click the icon ![open in search icon.png](/img/archive/open-search-icon.png) to the right of the job name to start a Search against the data that was ingested by the job.
-    * Hover your mouse over the information icon to view who created the job and when.
-
-<img src={useBaseUrl('img/archive/archive-details-pane.png')} alt="Archive details pane" width="400"/>
+    * Hover your mouse over the information icon to view who created the job and when.<br/><img src={useBaseUrl('img/archive/archive-details-pane.png')} alt="Archive details pane" width="325"/>
 
 ## Create an ingestion job
 
@@ -197,22 +195,22 @@ An ingestion job is a request to pull data from your S3 bucket. The job begins i
 1. On the **Archive** page search and select the AWS S3 Archive Source that has access to your archived data.
 1. Click **New Ingestion Job** and a window appears where you:
     1. Define a mandatory job name that is unique to your account.
-    1. Select the date and time range of archived data to ingest. A maximum of 12 hours is supported. <br/><img src={useBaseUrl('img/archive/Archive-ingest-job.png')} alt="Archive ingest job" width="400"/>
+    1. Select the date and time range of archived data to ingest. A maximum of 12 hours is supported. <br/><img src={useBaseUrl('img/archive/Archive-ingest-job.png')} alt="Archive ingest job" width="350"/>
 1. Click **Ingest Data** to begin ingestion. The status of the job is visible in the Details pane of the Source in the Archive page.
 
 ### Job status
 
 An ingestion job will have one of the following statuses:
 
-* **Pending** - The job is queued before scanning has started.
-* **Scanning** - The job is actively scanning for objects from your S3 bucket. Your objects could be ingesting in parallel.
-* **Ingesting** - The job has completed scanning for objects and is still ingesting your objects.
-* **Failed** - The job has failed to complete. Partial data may have been ingested and is searchable.
-* **Succeeded** - The job completed ingesting and your data is searchable.
+* **Pending**. The job is queued before scanning has started.
+* **Scanning**. The job is actively scanning for objects from your S3 bucket. Your objects could be ingesting in parallel.
+* **Ingesting* The job has completed scanning for objects and is still ingesting your objects.
+* **Failed**. The job has failed to complete. Partial data may have been ingested and is searchable.
+* **Succeeded** The job completed ingesting and your data is searchable.
 
 ## Search ingested Archive data
 
-Once your Archive data is ingested with an ingestion job you can search for it as you would any other data ingested into Sumo Logic. On the Archive page find and select the Archive S3 Source that ran the ingestion job to ingest your Archive data. In the [Details pane](#details-pane) you can click the **Open in Search** link to view the data in a Search that was ingested by the job.
+Once your Archive data is ingested with an ingestion job you can search for it as you would any other data ingested into Sumo Logic. On the Archive page find and select the Archive S3 Source that ran the ingestion job to ingest your Archive data. In the [Details pane](#details-pane), you can click the **Open in Search** link to view the data in a Search that was ingested by the job.
 
 :::note
 When you search for data in the Frequent or Infrequent Tier, you must explicitly reference the partition.
@@ -220,10 +218,10 @@ When you search for data in the Frequent or Infrequent Tier, you must explicitly
 
 The metadata field `_archiveJob` is automatically created in your account and assigned to ingested Archive data. This field does not count against your Fields limit. Ingested Archive data has the following metadata assignments:
 
-| Field          | Description                                                         |
-|:----------------|:---------------------------------------------------------------------|
-| _archiveJob   | The name of the ingestion job assigned to ingest your Archive data. |
-| _archiveJobId | The unique identifier of the ingestion job.                         |
+| Field          | Description                         |
+|:----------------|:-------------------------------------|
+| `_archiveJob`   | The name of the ingestion job assigned to ingest your Archive data. |
+| `_archiveJobId` | The unique identifier of the ingestion job.                    |
 
 ## Audit ingestion job requests
 
