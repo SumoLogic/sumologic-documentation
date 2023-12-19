@@ -18,30 +18,6 @@ const searchClient = algoliasearch('2SJPGMLW1Q', 'fb2f4e1fb40f962900631121cb3655
 
 // ...
 
-const search = instantsearch({
-  // ...
-  insights: true,
-});
-
-// When a search is performed in Algolia-powered search
-algolia.search(query).then(({ hits }) => {
-  // Track the search event in Google Analytics
-  gtag('event', 'search', {
-    'search_term': query,
-    'search_results_count': hits.length
-  });
-});
-
-// When a user clicks on a search result
-function trackClickResult(result) {
-  // Track the click event in Google Analytics
-  gtag('event', 'click_result', {
-    'result_title': result.title,
-    'result_url': result.url
-  });
-}
-
-
 function App() {
   return (
     <InstantSearch searchClient={searchClient} indexName="crawler_sumodocs">
@@ -52,27 +28,54 @@ function App() {
   );
 }
 
-import debounce from 'lodash.debounce';
 
-function googleAnalyticsMiddleware() {
-  const sendEventDebounced = debounce(() => {
-    gtag('event', 'page_view', {
-      page_location: window.location.pathname + window.location.search,
-    });
-  }, 3000);
+import { Configure } from 'react-instantsearch';
 
-  return {
-    onStateChange() {
-      sendEventDebounced();
-    },
-    subscribe() {},
-    unsubscribe() {},
-  };
+<Configure
+  clickAnalytics={true}
+  userToken={'user-1'}
+/>
+
+import { Hits } from 'react-instantsearch';
+
+function Hit({ hit }) {
+  return (
+    <div
+      data-insights-object-id={hit.objectID}
+      data-insights-position={hit.__position}
+      data-insights-query-id={hit.__queryID}
+    >
+      {/* ... */}
+    </div>
+  );
 }
 
-const search = instantsearch({
-  searchClient,
-  indexName,
+// ...
+
+<div data-insights-index="crawler_sumodocs">
+  {/* ... */}
+  <Hits hitComponent={Hit} />
+</div>
+
+
+window.dataLayer.push({
+  algoliaUserToken: 'user-1',
 });
 
-search.use(googleAnalyticsMiddleware);
+aa('onUserTokenChange', (userToken) => {
+  window.dataLayer.push({
+    algoliaUserToken: userToken,
+  });
+}, { immediate: true });
+
+<InstantSearch
+  insights={{
+    onEvent(event) {
+      const { widgetType, eventType, payload, hits } = event;
+
+      if (widgetType === 'ais.hits' && eventType === 'view') {
+        dataLayer.push({ event: 'Hits Viewed' });
+      }
+    }
+  }}
+/>
