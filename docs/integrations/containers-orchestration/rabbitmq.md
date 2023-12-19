@@ -454,10 +454,10 @@ email_notifications = [
 
 ## Installing the RabbitMQ App
 
-This section demonstrates how to install the RabbitMQ App. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+This section demonstrates how to install the RabbitMQ App.
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+1. From the **App Catalog**, search for and select the RabbitMQ app.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing Apps to Your Library](/docs/get-started/apps-integrations/#installing-apps-to-your-library).
 3. To install the app, complete the following fields.
    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom RabbitMQ cluster filter. Examples:
