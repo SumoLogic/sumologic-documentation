@@ -28,7 +28,6 @@ function App() {
   );
 }
 
-
 import { Configure } from 'react-instantsearch';
 
 <Configure
