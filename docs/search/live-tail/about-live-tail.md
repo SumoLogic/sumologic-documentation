@@ -27,7 +27,7 @@ Roles-Based Access Control permissions apply to all Live Tail queries.
 
 The following image shows a Live Tail session for `_sourceCategory=Apache/Access`:
 
-![live tail](/img/search/livetail/about-live-tail/livetail.png)
+![live tail](/img/search/livetail/About-Live-Tail/LiveTail.png)
 
 Live Tail features include [multiple](multiple-live-tails.md) Live Tail sessions, opening your Live Tail session in a [new "pop-out" window](multiple-live-tails.md), [highlighting](live-tail-highlighting.md) up to eight keywords in order to make searching easier, and changing the [preferences](live-tail-preferences.md) of your Live Tail display, including line spacing, message text size, and message color. 
 
@@ -61,7 +61,7 @@ You can start a Live Tail session in several ways.
 
 1. Go to **+ New > Live Tail**.  
 
-    ![start live tail page.png](/img/search/livetail/about-live-tail/start-live-tail-page.png)
+    ![start live tail page.png](/img/search/livetail/About-Live-Tail/start-live-tail-page.png)
 
 1. The **Live Tail** page opens, and the Live Tail session starts. At the prompt, enter the name of the `_sourceCategory`, `_sourceHost`, `_sourceName`, `_source`, or `_collector` of the log you want to tail, along with any filters. Use the syntax `_sourceCategory=name`. For more information, see [Filter Live Tail](filter-live-tail.md).
 1. Click **Run** or press **Enter**.
@@ -73,7 +73,7 @@ The **Run** button changes to **Running**, and log messages fill the screen.
 1. On the **Search** page, in the search box, enter a valid query for a Source Category, Source Host, Source Name, Source, or Collector with filters, if desired. (Live Tail will take everything before the first pipe, but search operators are not supported.)
 1. Click the three-dot icon and click **Live Tail** from the provided options.    
 
-    ![live tail option png](/img/search/livetail/about-live-tail/live-tail-option.png)
+    ![live tail option png](/img/search/livetail/About-Live-Tail/live-tail-option.png)
 
 1. The **Live Tail** page opens, and the Live Tail session starts.
 
@@ -81,7 +81,7 @@ The **Run** button changes to **Running**, and log messages fill the screen.
 
 1. Go to **Home > Live Tail**.  
 
-    ![Live tail on home page.png](/img/search/livetail/about-live-tail/live-tail-on-home-page.png)
+    ![Live tail on home page.png](/img/search/livetail/About-Live-Tail/live-tail-on-home-page.png)
 
 1. The **Live Tail** page opens, and the Live Tail session starts.
 
