@@ -53,7 +53,7 @@ function Hit({ hit }) {
 
 // ...
 
-<div data-insights-index="crawler_sumodocs">
+<div data-insights-index={indexName}>
   {/* ... */}
   <Hits hitComponent={Hit} />
 </div>
