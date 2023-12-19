@@ -30,6 +30,10 @@ This source is available in the [Fed deployment](https://hub.cloudquery.io/plugi
 
 ## Setup
 
+### Vendor configuration
+
+The integration must be configured with the Access Key ID and Secret Access Key. Refer to the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for guidance to create the Access Key ID and Secret Access Key.
+
 ### Source configuration
 
 When you create an CloudQuery source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
