@@ -7,7 +7,7 @@ description: Learn how to import and monitor your existing Prometheus-formatted 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If you're using Prometheus, a popular tool for monitoring app performance, to collect metrics, it can be challenging to visualize and analyze that data in a single location. You can use our OpenTelemetry Collector to import your Prometheus-formatted metrics into Sumo Logic and create a custom dashboard for them.
+Prometheus is a popular tool for monitoring app performance. If you're using Prometheus to collect metrics, it can be challenging to visualize and analyze that data in a single location. You can use our OpenTelemetry Collector to import your Prometheus-formatted metrics into Sumo Logic and create a custom dashboard for them.
 
 This diagram shows the flow of metrics data from a custom application which has been instrumented to provide Prometheus-formatted metrics.
 
