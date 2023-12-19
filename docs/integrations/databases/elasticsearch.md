@@ -313,7 +313,7 @@ This section provides instructions for configuring logs and metrics collection f
    * Here’s an explanation for additional values set by this Telegraf configuration. If you haven’t defined a cluster in Elasticsearch, then enter `default` for `db_cluster`. There are additional values set by the Telegraf configuration, which we recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
      * `data_format - “prometheus”` In the output plugins section (`[[outputs.sumologic]]`), metrics are sent in the Prometheus format to Sumo Logic
      * `component: “database”` - In the input plugins section (`[[inputs.Elasticsearch]]`), this value is used by Sumo Logic apps to identify application components.
-     * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
+     * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
 6. After you've finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, Elasticsearch metrics should start flowing into Sumo Logic.
@@ -445,21 +445,7 @@ email_notifications = [
 
 ## Installing the Elasticsearch app
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Elasticsearch dashboards
 

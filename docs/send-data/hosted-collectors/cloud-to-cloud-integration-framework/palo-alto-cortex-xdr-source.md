@@ -29,8 +29,8 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 10 min | [Alert data](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-API-Reference/Get-Alerts) |
-| 10 min | [Incident data](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-API-Reference/Get-Incidents) |
+| 10 min | [Alert data](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Get-all-Alerts) |
+| 10 min | [Incident data](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Get-all-Incidents) |
 
 ## Setup
 
