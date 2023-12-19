@@ -71,7 +71,7 @@ Any Sumo Logic customer can leverage Sumo Logic AWS Observability solution fea
 
 ### Is there a demo of the solution?
 
-See the [Sumo Logic AWS Observability demo video](https://www.sumologic.com/video/aws-observability-demo/) for a demo of the solution.
+See the Sumo Logic AWS Observability video below for a demo of the solution.
 
 <Iframe url="https://www.youtube.com/embed/H-vRSHPzvz4?rel=0"
      width="854px"
