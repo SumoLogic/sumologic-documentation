@@ -57,3 +57,26 @@ function Hit({ hit }) {
   {/* ... */}
   <Hits hitComponent={Hit} />
 </div>
+
+
+window.dataLayer.push({
+  algoliaUserToken: 'user-1',
+});
+
+aa('onUserTokenChange', (userToken) => {
+  window.dataLayer.push({
+    algoliaUserToken: userToken,
+  });
+}, { immediate: true });
+
+<InstantSearch
+  insights={{
+    onEvent(event) {
+      const { widgetType, eventType, payload, hits } = event;
+
+      if (widgetType === 'ais.hits' && eventType === 'view') {
+        dataLayer.push({ event: 'Hits Viewed' });
+      }
+    }
+  }}
+/>
