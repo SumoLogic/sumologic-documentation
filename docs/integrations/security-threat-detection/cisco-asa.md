@@ -98,22 +98,13 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 
 </details>
 
-
-## Installing the Cisco ASA App  
-
-This section provides instructions on how to install the Cisco ASA App.
+## Installing the Cisco ASA app​
 
 {@import ../../reuse/apps/app-install.md}
 
-## Viewing Cisco ASA Dashboards
+## Viewing Cisco ASA dashboards​
 
-Once you've installed the Cisco ASA App, you can access preconfigured searches and dashboards that provide visual insights into your data.
-
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+{@import ../../reuse/filter-dashboards.md}
 
 ### Overview
 

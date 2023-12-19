@@ -96,15 +96,13 @@ Collect using JSON format.** Events are formatted into JSON that is designed to 
 
 For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/local-windows-event-log-source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/remote-windows-event-log-source).
 
-## Installing the Active Directory JSON App
+## Installing the Active Directory JSON app​
 
 {@import ../../reuse/apps/app-install.md}
 
-## Viewing Active Directory JSON Dashboards
+## Viewing Active Directory JSON dashboards​
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+{@import ../../reuse/filter-dashboards.md}
 
 ### Service Activity
 
