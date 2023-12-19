@@ -39,7 +39,6 @@ import { Hits } from 'react-instantsearch';
 
 const indexName = crawler_sumodocs;
 
-const indexName = crawler_sumodocs;
 function Hit({ hit }) {
   return (
     <div
