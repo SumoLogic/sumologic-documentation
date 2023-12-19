@@ -26,7 +26,7 @@ You need the **Manage S3 data forwarding** role capability to create an AWS Ar
 1. In Sumo Logic, select **Manage Data > Collection > Data Archiving**.
 1. Click **+** to add a new destination.
 1. Select **AWS Archive bucket** for **Destination Type**.  
-    ![destinationType.png](/img/archive/destinationType.png)
+    ![destinationType.png](/img/archive/archive-destination.png)
 1. Configure the following:
    * **Destination Name**. Enter a name to identify the destination.
    * **Bucket Name**. Enter the exact name of the S3 bucket.
@@ -39,8 +39,8 @@ You need the **Manage S3 data forwarding** role capability to create an AWS Ar
    * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in step 1, [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 
       * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
-      * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
-
+      * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
+      * For **AWS EC2 Credentials** instance profile credentials on an EC2 instance where an installed collector will be used to archive log data to S3, see https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-roles.html.
    * **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 1. Click **Save**.
 
