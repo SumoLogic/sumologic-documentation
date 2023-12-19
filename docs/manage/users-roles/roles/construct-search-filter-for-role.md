@@ -6,7 +6,7 @@ description: Construct a role search filter to control what log data users with 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page describes how to define an advanced search filter for a role. These instructions apply to the [**Advanced filter**](/docs/manage/users-roles/roles/rbac-for-indexes/#advanced-filter) option in Step 6 of the [Create a role](/docs/manage/users-roles/roles/create-manage-roles/#create-a-role) procedure. 
+This page describes how to define search filters for a role. These instructions apply to the **Search Filter** option in Step 6 of the [Create a role](/docs/manage/users-roles/roles/create-manage-roles/#create-a-role) procedure. 
 
 
 ## Understanding search filters

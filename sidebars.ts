@@ -655,7 +655,6 @@ module.exports = {
             'manage/users-roles/roles/role-capabilities',
             'manage/users-roles/roles/construct-search-filter-for-role',
             'manage/users-roles/roles/add-remove-users-role',
-            'manage/users-roles/roles/rbac-for-indexes',
           ]
         },
         {
