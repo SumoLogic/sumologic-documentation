@@ -18,6 +18,30 @@ const searchClient = algoliasearch('2SJPGMLW1Q', 'fb2f4e1fb40f962900631121cb3655
 
 // ...
 
+const search = instantsearch({
+  // ...
+  insights: true,
+});
+
+// When a search is performed in Algolia-powered search
+algolia.search(query).then(({ hits }) => {
+  // Track the search event in Google Analytics
+  gtag('event', 'search', {
+    'search_term': query,
+    'search_results_count': hits.length
+  });
+});
+
+// When a user clicks on a search result
+function trackClickResult(result) {
+  // Track the click event in Google Analytics
+  gtag('event', 'click_result', {
+    'result_title': result.title,
+    'result_url': result.url
+  });
+}
+
+
 function App() {
   return (
     <InstantSearch searchClient={searchClient} indexName="crawler_sumodocs">
@@ -27,3 +51,28 @@ function App() {
     </InstantSearch>
   );
 }
+
+import debounce from 'lodash.debounce';
+
+function googleAnalyticsMiddleware() {
+  const sendEventDebounced = debounce(() => {
+    gtag('event', 'page_view', {
+      page_location: window.location.pathname + window.location.search,
+    });
+  }, 3000);
+
+  return {
+    onStateChange() {
+      sendEventDebounced();
+    },
+    subscribe() {},
+    unsubscribe() {},
+  };
+}
+
+const search = instantsearch({
+  searchClient,
+  indexName,
+});
+
+search.use(googleAnalyticsMiddleware);
