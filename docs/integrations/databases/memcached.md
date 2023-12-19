@@ -445,18 +445,7 @@ email_notifications = [
 
 This section demonstrates how to install the Memcached app.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name or enter a name of your choice. 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but you'll see full graphs and maps in a bit of time.
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Memcached Dashboards
 
