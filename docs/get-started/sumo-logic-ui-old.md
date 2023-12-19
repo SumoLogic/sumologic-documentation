@@ -1,9 +1,9 @@
 ---
-id: sumo-logic-ui
+id: sumo-logic-ui-old
 title: Tour the Sumo Logic UI
 ---
 
-The [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
+The [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, then sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
 
 ## Using the Left Navigation Bar
 
@@ -133,8 +133,10 @@ To launch a search, metrics visualization, or live tail session, do the followin
 
 1. Go to the Sumo **Home** page.
 1. Do one of the following:
+
    * Click **+New** in the Tabs menu and choose an option from the dropdown menu. 
    * Click one of the following Home page icons:
+
      * [Log Search](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
      * [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
      * [Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
@@ -160,9 +162,16 @@ You can create a list of favorite dashboards and searches that appear in the le
 
 To view Favorites and add to the list, do the following:
 
-1. To view a list of current Favorites, click the **Star** icon at the top of the left nav bar. A list of Favorites is shown below.<br/>  ![WTS_UI_View_list-of-Favorites.png](/img/get-started/ui/WTS_UI_View_list-of-Favorites.png)
-1. To add a dashboard to the Favorites list, open the dashboard, select the **Details** icon at the top right of the menu bar and select **Favorite** from the dropdown list. <br/>  ![WTS_UI_Add-dashboard-to-Favorites.png](/img/get-started/ui/WTS_UI_Add-dashboard-to-Favorites.png)
+1. To view a list of current Favorites, click the **Star** icon at the top of the left nav bar. A list of Favorites is shown below.
+
+    ![WTS_UI_View_list-of-Favorites.png](/img/get-started/ui/WTS_UI_View_list-of-Favorites.png)
+
+1. To add a dashboard to the Favorites list, open the dashboard, select the **Details** icon at the top right of the menu bar and select **Favorite** from the dropdown list. 
+
+    ![WTS_UI_Add-dashboard-to-Favorites.png](/img/get-started/ui/WTS_UI_Add-dashboard-to-Favorites.png)
+
 1. To add a search to the Favorites list, do the following:
+
    1. [Save the search](/docs/search/get-started-with-search/search-basics/save-search) (if not already saved) by clicking **Save As**, then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
    1. Click **Save**.
    1. Click the three-dot icon and click **Favorite** from the provided options. 
@@ -205,8 +214,14 @@ To pin a search, do the following:
 
 1. Open a Search page.
 1. Enter a query in the search box and click **Start**.
-1. Click the three-dot icon and click **Pin** from the provided options.<br/> ![pin search](/img/get-started/ui/pin-search.png)
-1. A message appears telling you the location of your pinned search in the Library. The Pinned Search takes the name of the Search tab by default.<br/>  ![pinmessage.png](/img/get-started/ui/pinmessage.png)
+1. Click the three-dot icon and click **Pin** from the provided options.
+
+    ![pin search](/img/get-started/ui/pin-search.png)
+
+1. A message appears telling you the location of your pinned search in the Library. The Pinned Search takes the name of the Search tab by default.
+
+    ![pinmessage.png](/img/get-started/ui/pinmessage.png)
+
 1. To change the name of a Pinned Search, double-click the Search tab and enter a new name in the name field.
 
 For information on how to manage pinned searches, see the [Pinned Searches](/docs/get-started/library#pinned-searches) page.
@@ -218,8 +233,12 @@ You can manage your personal account settings from the **Preferences** page. T
 To manage your personal Sumo account preferences, do the following:
 
 1. At the very bottom of the Left Nav Bar, click your Account Name.
-1. In the pop-up dialog, select **Preferences**.<br/>  ![WTS_Preferences_LeftNav-option.png](/img/get-started/ui/WTS_Preferences_LeftNav-option.png)
+1. In the pop-up dialog, select **Preferences**.
+
+    ![WTS_Preferences_LeftNav-option.png](/img/get-started/ui/WTS_Preferences_LeftNav-option.png)
+
 1. In the Preferences page that appears on the right, you can modify settings in the following areas:
+
     * **My Profile**: username and password
     * **My Security Settings**: enable and disable 2-step verification
     * **My Access Keys**: add, edit, and remove access keys
@@ -252,8 +271,12 @@ Sumo Logic Administrators (Admins) are responsible for managing data collectio
 
 To manage data in Sumo Logic, do the following:
 
-1. Go to the **left nav bar** and click **Manage Data**.<br/>  ![manage-data.png](/img/get-started/ui/manage-data.png)
+1. Go to the **left nav bar** and click **Manage Data**.
+
+    ![manage-data.png](/img/get-started/ui/manage-data.png)
+
 1. Choose from the following, as needed:
+
     * **Collection.** [Manage collectors and sources](/docs/send-data/collection).
     * **Logs.** Manage [fields](/docs/manage/fields.md), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions-data-tiers), [scheduled views](/docs/manage/scheduled-views), [connections](/docs/manage/connections-integrations), and [data forwarding](/docs/manage/data-forwarding).
     * **Metrics.** Manage metrics rules, [logs-to-metrics](../metrics/logs-to-metrics.md), and [metrics transformation rules](../metrics/metrics-transformation-rules.md).
@@ -265,15 +288,19 @@ Sumo Logic administrators (admins) manage user accounts, user roles, and securi
 
 To administer Sumo Logic accounts, users, and security, do the following:
 
-1. Go to the **left nav bar** and click **Administration**.<br/> ![WTS_UI_Administration_menu-options.png](/img/get-started/ui/WTS_UI_Administration_menu-options.png)
+1. Go to the **left nav bar** and click **Administration**.
+
+![WTS_UI_Administration_menu-options.png](/img/get-started/ui/WTS_UI_Administration_menu-options.png)
+
 1. Choose from the following, as needed:
+
     * **Account.** [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
     * **Users and Roles**. [Manage users and roles](/docs/manage/users-roles).
     * **Security.** [Set password policy for your org](/docs/manage/security/set-password-policy.md), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses.md), [manage access keys](/docs/manage/security/access-keys.md), manage security polices ([audit index](/docs/manage/security/audit-indexes/audit-index.md), [support account access,](/docs/manage/security/enable-support-account.md) and [dashboard sharing](../dashboards/share-dashboard-new.md), and [set up SAML authentication](/docs/manage/security/saml).
 
 ## Become a Sumo Pro user
 
-Now that you're familiar with the layout and features in the Sumo Logic UI, you're ready to ramp up your Sumo skills with [self-paced training](https://www.sumologic.com/self-paced-training/).
+Now that you're familiar with the layout and features in the Sumo Logic user interface (UI), you're ready to ramp up your Sumo skills with [self-paced training](https://www.sumologic.com/self-paced-training/).
 
 You don't have to stop there either. You can take the next step and become Sumo Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page and click the **Certification** tab. See [Certification FAQs](/docs/get-started/faq#certification-faq) for more information.
 
