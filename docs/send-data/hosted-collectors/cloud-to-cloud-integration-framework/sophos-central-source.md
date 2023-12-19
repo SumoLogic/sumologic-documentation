@@ -9,9 +9,9 @@ description: The Sophos Central Source provides a secure endpoint to receive aut
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/sophos-central/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/sophos-central/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/sophos-central/example.tf';
+import ExampleJSON from '/files/c2c/sophos-central/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/sophos-central/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/sophos-central/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/sophos.jpeg')} alt="icon" width="60"/>
@@ -102,13 +102,13 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/sophos-central/example.json)
+[Download example](/files/c2c/sophos-central/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/sophos-central/example.tf)
+[Download example](/files/c2c/sophos-central/example.tf)
 
 ## FAQ
 

@@ -1,7 +1,7 @@
 ---
 slug: /observability/kubernetes
 title: Kubernetes Observability
-description: This guide provides and end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment.
+description: This guide describes how to deploy, manage, monitor, and administer your Sumo Logic Kubernetes environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
