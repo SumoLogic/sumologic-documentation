@@ -9,9 +9,9 @@ description: Our Netskope WebTx API integration ingests Web Transaction logs fro
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/netskope-webtx/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/netskope-webtx/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/netskope-webtx/example.tf';
+import ExampleJSON from '/files/c2c/netskope-webtx/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/netskope-webtx/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/netskope-webtx/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/>
@@ -95,13 +95,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/netskope-webtx/example.json)
+[Download example](/files/c2c/netskope-webtx/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/netskope-webtx/example.tf)
+[Download example](/files/c2c/netskope-webtx/example.tf)
 
 ## FAQ
 

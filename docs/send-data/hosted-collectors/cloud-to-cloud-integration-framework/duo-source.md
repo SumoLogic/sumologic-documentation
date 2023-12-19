@@ -9,9 +9,9 @@ description: The Duo Source provides a secure endpoint to receive authentication
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/duo/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/duo/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/duo/example.tf';
+import ExampleJSON from '/files/c2c/duo/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/duo/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/duo/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/duo.png')} alt="thumbnail icon" width="55"/>
@@ -94,13 +94,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/duo/example.json)
+[Download example](/files/c2c/duo/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/duo/example.tf)
+[Download example](/files/c2c/duo/example.tf)
 
 ## FAQ
 

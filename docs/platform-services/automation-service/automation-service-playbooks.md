@@ -82,9 +82,9 @@ Before you can add action nodes to a playbook, you must [configure the connectio
 1. Select the **Type** of action:
    * **Containment**. Performs some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall. 
    * **Custom**. Performs an action defined in a custom action YAML file. For an example of a custom action created for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
-   * **Daemon**. Performs a daemon action. Uploading an action YAML file with the daemon type allows you to not only specify daemon actions, but also define rules associated with a daemon. For more information, see [Daemon action definitions](/docs/cloud-soar/cloud-soar-integration-framework/#daemon-action-definitions).
    * **Enrichment**. Enriches data with additional information, such as adding information about a known malicious IP address.
    * **Notification**. Sends a notification, for example, an email or a post in a messaging service.
+   * **Scheduled**. Runs an action on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed. 
    :::note
    The **Type** drop-down menu shows only the action types available in the selected integration.
    :::

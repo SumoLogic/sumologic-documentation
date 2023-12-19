@@ -23,6 +23,18 @@ On the [Collection page](/docs/manage/health-events#collection-page), the Health
 
 Hover your mouse over the status icon to view a tooltip with a count of the detected errors and warnings. You can click on the status icon to open a Health Events panel with details on each detected issue.
 
+## Metadata fields
+
+**Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](https://help.sumologic.com/docs/cse/).
+
+:::note
+The checkbox only shows up if you have CSE and if the C2C already have CSE content like parsers and rules.
+:::
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemForward` | <code>(true \| false)</code> | Set to `true` when **Forward To SIEM** is checked. |
+
 ## Error Types
 
 When Sumo Logic detects an issue it is tracked by Health Events. The following table shows the three possible error types, the reason the error would occur, if the Source attempts to retry, and the name of the event log in the Health Event Index.
@@ -39,4 +51,4 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ## JSON Configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources), or [Sumo Logic Terraform Resource](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloud_to_cloud_source) if you are using Terraform,for more details.
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [How to use JSON to configure sources](/docs/send-data/use-json-configure-sources), or [Sumo Logic Terraform Resource](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/cloud_to_cloud_source) if you are using Terraform,for more details.

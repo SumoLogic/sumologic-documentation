@@ -9,9 +9,9 @@ description: Learn how to collect System Log from the Citrix Cloud and send it t
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/citrix-cloud/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/citrix-cloud/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/citrix-cloud/example.tf';
+import ExampleJSON from '/files/c2c/citrix-cloud/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/citrix-cloud/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/citrix-cloud/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/citrix-cloud-icon.png')} alt="citrix-cloud-icon" width="80"/>
@@ -127,13 +127,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/citrix-cloud/example.json)
+[Download example](/files/c2c/citrix-cloud/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/citrix-cloud/example.tf)
+[Download example](/files/c2c/citrix-cloud/example.tf)
 
 ## Troubleshooting
 
