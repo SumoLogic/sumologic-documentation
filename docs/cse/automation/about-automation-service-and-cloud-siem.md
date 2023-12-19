@@ -92,11 +92,11 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 1. Click the **Roles** tab. 
 1. Click **Add Role** to create a new role for users of Cloud SIEM automation. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 1. Add the following capabilities:
-   * Cloud SIEM
-     * Configuration
-       * View Automations
-       * Manage Automations
-       * Execute Automations
+   * **Cloud SIEM**
+     * **Configuration**
+       * **View Automations**
+       * **Manage Automations**
+       * **Execute Automations**
 1. [Add Automation Service role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities). 
 1. Follow the directions to [access the Automation Service](#access-the-automation-service-from-cloud-siem) to verify that you can see the **Automation** option in the **Configuration** menu.
 

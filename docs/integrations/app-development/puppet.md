@@ -336,23 +336,7 @@ If you encounter problems:
 
 Now that you have set up collection for Puppet, install the Sumo Logic App for Puppet to use the preconfigured searches and Dashboards that provide insight into your data.
 
-To install the app:
-
-Locate and install the app you need from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the App Catalog, search for and select the app.
-2. To install the app, click **Add to Library** and complete the following fields.
-   * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-   * **Puppet Server Log Source**. Choose Source Category, and select the Source Category that you configured for the source from the list.
-   * **Puppet Server Access Log Source**. Choose Source Category, and select the Source Category that you configured for the source from the list.
-   * **Puppet Reports Source**. Choose Source Category, and select the Source Category that you configured for the source from the list.
-3. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization. See Welcome to the New Library for information on working with the library in the new UI.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Puppet App Dashboards
 

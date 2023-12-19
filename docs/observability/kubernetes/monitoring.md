@@ -42,7 +42,6 @@ To navigate and analyze your Kubernetes environment, do the following:
 
 
 <!--
-    ![Explore_Open.png](/img/kubernetes/Explore_Open.png)
 
     The Explore navigation panel appears on the left with a collapsed view of your Kubernetes stack.
 

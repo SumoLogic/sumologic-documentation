@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/miro-logo.png')} alt="img/send-data/miro-logo.png" width="50"/>
 
-The Miro Source API integration ingests audit logs obtained from the [Audit log API](https://developers.miro.com/reference/get-logs). You will be able to collect audit logs activity from your Miro platform using our new Miro Cloud-to-Cloud Source connector.
+The Miro Source API integration ingests audit logs obtained from the [Audit log API](https://developers.miro.com/docs/rest-api-reference-guide#audit-logs). You will be able to collect audit logs activity from your Miro platform using our new Miro Cloud-to-Cloud Source connector.
 
 :::note
 This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
