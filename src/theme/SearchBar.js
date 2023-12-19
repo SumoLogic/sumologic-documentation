@@ -37,6 +37,7 @@ import { Configure } from 'react-instantsearch';
 
 import { Hits } from 'react-instantsearch';
 
+const indexName = crawler_sumodocs;
 function Hit({ hit }) {
   return (
     <div
