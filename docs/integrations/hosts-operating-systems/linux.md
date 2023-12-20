@@ -15,14 +15,13 @@ The Sumo app for Linux allows you to view information about events, logins, and 
 You may also be interested in the [Sumo Logic App for Linux Cloud Security Monitoring and Analytics](docs/integrations/cloud-security-monitoring-analytics/linux.md).
 :::
 
-
-## Collecting Logs for Linux
+## Collecting logs for Linux
 
 This procedure describes how to collect logs from Linux into Sumo Logic.
 
 Sumo apps gather data from the log messages collected from sources by collectors. The Sumo app for Linux requires specific Linux log types, which are set up during the collector and source configuration process.
 
-### Required Logs for Ubuntu
+### Required logs for Ubuntu
 
 The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with Ubuntu:
 * auth.log
@@ -31,8 +30,7 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 * dpkg.log
 * kern.log
 
-
-### Required Logs for CentOS, Amazon Linux, and Red Hat
+### Required logs for CentOS, Amazon Linux, and Red Hat
 
 The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with  CentOS, Amazon Linux, and most Red Hat forks:
 * audit/audit.log
@@ -40,17 +38,15 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 * messages
 * yum.log
 
-
 ### Configure a Collector
 
 Configure an [Installed Collector](/docs/send-data/installed-collectors).
-
 
 ### Configure a Source
 
 To configure a source for collecting Linux logs, you create a Local File Source. Following the instructions on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source). When you define a Source Category for the source, we recommend something like: prod/os/linux. For more information about Source Categories, see see [Best Practices](/docs/send-data/best-practices).
 
-### Sample Log Messages
+### Sample log messages
 
 ```bash
 Dec 16 20:26:23 ubuntu sshd[15533]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=116.31.116.50  user=root
@@ -60,12 +56,12 @@ Dec 16 20:26:23 ubuntu sshd[15533]: pam_unix(sshd:auth): authentication failure;
 2016-12-16 19:23:13 remove tomcat7:all 7.0.68-1ubuntu0.1 <none>
 ```
 
-### Sample Queries
+### Sample queries
 
 See [Suggested Searches for Linux OS](#Suggested_Searches_for_Linux_OS).
 
 
-## Installing the Linux App
+## Installing the Linux app
 
 {@import ../../reuse/apps/app-install-v2.md}
 
@@ -75,48 +71,27 @@ See [Suggested Searches for Linux OS](#Suggested_Searches_for_Linux_OS).
 
 ### Overview
 
-**Dashboard description:** See an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, a breakdown of successful and failed logins, sudo attempts, and the count of reporting hosts.
+The **Linux - Overview** dashboard provides an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, a breakdown of successful and failed logins, sudo attempts, and the count of reporting hosts.
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Overview.png')} alt="Linux dashboards" />
 
-
-#### Filtering the Overview dashboard
-
-Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of `command`, `dest_group`, `dest_hostname`, and `dest_user`.
-
-
 ### Event Sources
 
-**Dashboard description:** See information about system events, including their distribution across hosts, event counts per host by hour, and even counts by host and service.
+The **Linux - Event Sources** dashboard provides information about system events, including their distribution across hosts, event counts per host by hour, and even counts by host and service.
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/EventSources.png')} alt="Linux dashboards" />
 
-#### Filtering the Event Sources dashboard
-
-Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of `dest_hostname`, `host`, and `process_name`.
-
-
 ### Login Status
 
-**Dashboard description: **See information about logins to Linux hosts; including logins by hour; failed logins per host; the top 30 successful and failed logins; and the top 30 successful and failed remote logins.  
+The **Linux - Login Status** dashboard provides information about logins to Linux hosts; including logins by hour; failed logins per host; the top 30 successful and failed logins; and the top 30 successful and failed remote logins.  
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/LoginStatus.png')} alt="Linux dashboards" />
 
-#### Filtering the Login Status dashboard
-
-Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of `action`, `dest_hostname`, `dest_user`, and `outcome`.
-
-
 ### Security Status
 
-**Dashboard description: **See information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
+The **Linux - Security Status** dashboard provides information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/SecurityStatus.png')} alt="Linux dashboards" />
-
-#### Filtering the Security Status dashboard
-
-Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of `action`, `dest_hostname`, `dest_user`, and `outcome`.
-
 
 ## Suggested Searches for Linux OS
 
@@ -135,11 +110,9 @@ Meta field: `SourceCategory=OS/Linux/Security`
 
 These logs might have also been collected by the Collector (if selected during its installation).
 
-
 ### User Activity
 
 These searches are intended to help you understand how privileged and non-privileged users are authenticating to and using your Linux servers.
-
 
 #### Successful User Login events
 
@@ -163,8 +136,6 @@ _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("
 | count as eventCount by _timeslice, dest_host, dest_user, message, protocol, src_host, src_ip, src_user
 | sort by _timeslice, dest_host, dest_user, message, protocol, src_host, src_ip, src_user
 ```
-
-
 
 #### All Failed authentication attempts
 
