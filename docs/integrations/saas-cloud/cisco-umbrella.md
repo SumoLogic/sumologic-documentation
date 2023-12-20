@@ -66,7 +66,7 @@ For more information, see [Cisco Umbrella Documentation](https://docs.umbrella.c
 
 ## Installing the Cisco Umbrella app​
 
-{@import ../../reuse/apps/app-install.md}
+{@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Cisco Umbrella dashboards​
 
