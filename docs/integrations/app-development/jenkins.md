@@ -430,7 +430,7 @@ Use this dashboard to:
 
 ### System Monitoring
 
-The **Jenkins - System Monitoring** dashboards provids information on system activities related to master node metrics, job metrics, worker nodes, and audit activities. System Monitoring dashboards help you to monitor changes related to the Jenkins configuration, job configuration, the health of the Jenkins master, performance of the job queue and run duration, as well as the health of all worker nodes available to the Jenkins master node.
+The **Jenkins - System Monitoring** dashboards provides information on system activities related to master node metrics, job metrics, worker nodes, and audit activities. System Monitoring dashboards help you to monitor changes related to the Jenkins configuration, job configuration, the health of the Jenkins master, performance of the job queue and run duration, as well as the health of all worker nodes available to the Jenkins master node.
 
 #### Audit
 
