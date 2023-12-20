@@ -9,9 +9,9 @@ description: The Carbon Black Cloud Source provides a secure endpoint to receive
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/carbon-black-cloud/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/carbon-black-cloud/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/carbon-black-cloud/example.tf';
+import ExampleJSON from '/files/c2c/carbon-black-cloud/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/carbon-black-cloud/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/carbon-black-cloud/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="55"/>
@@ -101,13 +101,13 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/carbon-black-cloud/example.json)
+[Download example](/files/c2c/carbon-black-cloud/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/carbon-black-cloud/example.tf)
+[Download example](/files/c2c/carbon-black-cloud/example.tf)
 
 ## FAQ
 

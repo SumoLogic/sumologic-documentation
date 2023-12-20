@@ -9,9 +9,9 @@ description: The Symantec Web Security Service Source provides a secure endpoint
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/symantec-web-security-service/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/symantec-web-security-service/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/symantec-web-security-service/example.tf';
+import ExampleJSON from '/files/c2c/symantec-web-security-service/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/symantec-web-security-service/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/symantec-web-security-service/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="125"/>
@@ -106,13 +106,13 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector M
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/symantec-web-security-service/example.json)
+[Download example](/files/c2c/symantec-web-security-service/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/symantec-web-security-service/example.tf)
+[Download example](/files/c2c/symantec-web-security-service/example.tf)
 
 ## FAQ
 

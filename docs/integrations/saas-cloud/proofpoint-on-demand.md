@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Proofpoint on Demand is a cloud-based cybersecurity platform that offers a wide range of services to protect businesses against cyber threats. This includes email security, threat intelligence, information protection, and compliance solutions. The Proofpoint on Demand app for Sumo Logic provides insight into the functioning and effectiveness of your email security policies, allowing you to make informed decisions to improve security posture. This app will further provide information about the encryption status of the communication.
 
-Key features of the Proofpoint on Demand app include: 
+Key features of the Proofpoint on Demand app include:
 - **Email security monitoring**. Monitor message traffic to detect and prevent spam, phishing, and other email-borne threats.
 - **Compliance monitoring**. Monitor email communications for compliance with internal policies and external regulations such as Data Loss Prevention (DLP), Domain-based Message Authentication, Reporting and Conformance (DMARC), and other relevant regulations.
 - **Incident investigation**. Quickly investigate potential security incidents by searching and analyzing email security and compliance data. This includes identifying the source of a security threat and the extent of its impact.
@@ -154,21 +154,7 @@ To set up [Cloud to Cloud Integration Proofpoint on Demand Source](/docs/send-da
 
 This section has instructions for installing the Proofpoint on Demand app for Sumo Logic.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-1. From the **App Catalog**, search for the app and select it.
-1. Select **Add Integration** button to install the app.
-1. Configure **Proofpoint on Demand** app using the steps described in the [Proofpoint on Demand Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source/). If you already have set up your data, skip this step by clicking on **Next**.
-1. Complete the following fields:
-   1. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example, `_sourceCategory=MyCategory`.
-    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app.
-    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-1. Click **Next**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
-
-The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Proofpoint on Demand Dashboards​​
 

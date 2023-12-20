@@ -62,9 +62,9 @@ Sumo Logic supports collecting metrics using two source types:
 
   * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (recommended); or
   * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
-  
+
 **Namespace** for **Amazon Elastic Container Service (ECS) using Container Insights and CloudWatch** service is **AWS/ECS**.
-  
+
 **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic [Explore](/docs/dashboards/explore-view) view. Metrics can be queried via the `account field`.
 
 ### Collect Container Insights Metrics for Amazon ECS 
@@ -445,20 +445,7 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 
 Now that you have set up a collection for Amazon ECS with Container Insights and CloudWatch, install the Sumo Logic app for Amazon ECS with Container Insights and CloudWatch to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app. 
-2. Select the **With Container Insights and Traces** version and click **Add to Library**. 
-3. To install the app, complete the following fields.
-    * **App Name.** You can retain the existing name or enter the app's name of your choice. 
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder or another folder that you specified. From here, you can share it with your organization. 
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+{@import ../../reuse/apps/app-install.md}
 
 ## Amazon ECS CloudWatch dashboards 
 
