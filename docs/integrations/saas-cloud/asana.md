@@ -72,7 +72,7 @@ To set up [Cloud to Cloud Integration Asana Source](/docs/send-data/hosted-colle
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Asana dashboard
+## Viewing Asana dashboards
 
 {@import ../../reuse/apps/view-dashboards.md}
 
