@@ -68,7 +68,7 @@ To set up [Cloud to Cloud Integration Druva Cyber Resilience Source](/docs/send-
 
 This section has instructions for installing the Druva app for Sumo Logic.
 
-{@import ../../reuse/apps/app-install.md}
+{@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Druva Cyber Resilience dashboards​
 
