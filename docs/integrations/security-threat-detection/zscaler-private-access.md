@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Zscaler Private Access App collects logs from Zscaler using the Log Streaming Service (LSS) to populate pre-configured searches and Dashboards. The dashboards provide easy-to-access visual insights into user behaviors, security, connector status, and risk.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Zscaler Private Access uses LSS to send the following logs, as documented [here](https://help.zscaler.com/zpa/about-log-streaming-service):
 
@@ -22,7 +22,7 @@ The Sumo Logic App for Zscaler Private Access uses LSS to send the following log
 * Audit Logs: Session information for all admins accessing the ZPA Admin Portal. To learn more, see[ Audit Log Fields](https://help.zscaler.com/zpa/about-audit-log-fields) and[ About Audit Logs](https://help.zscaler.com/zpa/about-audit-logs).
 
 
-## Collect Logs for the Zscaler Private Access (ZPA) App
+## Collect logs for the Zscaler Private Access (ZPA) app
 
 Zscaler Private Access uses the Log Streaming Service (LSS), to stream logs from the Zscaler service and deliver them to the Sumo Logic Hosted collector via Syslog.
 
@@ -35,7 +35,7 @@ To collect logs for Zscaler Private Access, perform these steps, detailed in the
 3. Deploy an App Connector on a Supported Platform.
 4. Configure Log Receivers in ZPA to send logs to Sumo Logic.
 
-### Configure Sumo Logic Hosted Collector and a Cloud Syslog Source
+### Configure Sumo Logic hosted collector and a Cloud Syslog source
 
 To collect logs for ZPA, do the following in Sumo Logic:
 
