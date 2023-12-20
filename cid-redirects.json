@@ -3799,5 +3799,6 @@
   "/docs/cse/automation-service/automation-service-playbooks": "/docs/platform-services/automation-service/automation-service-playbooks",
   "/docs/cse/automation-service/automation-service-integrations": "/docs/platform-services/automation-service/automation-service-integrations",
   "/docs/cse/automation-service/automation-service-bridge": "/docs/platform-services/automation-service/automation-service-bridge",
-  "/docs/cse/automation-service/automation-service-integration-framework": "/docs/platform-services/automation-service/automation-service-integration-framework"
+  "/docs/cse/automation-service/automation-service-integration-framework": "/docs/platform-services/automation-service/automation-service-integration-framework",
+  "/docs/cloud-soar/cloud-soar-delivery-2": "/docs/cloud-soar/overview"
 }
