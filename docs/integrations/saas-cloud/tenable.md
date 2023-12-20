@@ -56,7 +56,7 @@ To set up [Cloud to Cloud Integration Tenable Source](/docs/send-data/hosted-col
 
 This section has instructions for installing the Symantec Web Security Service App for Sumo Logic.
 
-{@import ../../reuse/apps/app-install.md}
+{@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Tenable dashboards​
 
