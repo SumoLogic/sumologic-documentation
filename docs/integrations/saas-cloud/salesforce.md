@@ -389,13 +389,11 @@ Your path may be different, depending on where you deployed SumoJanus. Salesforc
 
 ## Installing the Salesforce App
 
-Now that you have set up collection, install the Sumo Logic App for Salesforce to use the preconfigured searches and dashboards that provide insight into your data.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Salesforce dashboards​
 
-## Viewing Salesforce Dashboards
-
-Salesforce generates event logs during non-peak hours, every 24 hours. This means that you may not see data fill your Dashboard Panels for at least 24 hours. If you do not see data in 48 hours, contact Salesforce customer support.
+{@import ../../reuse/filter-dashboards.md}
 
 ### Overview
 

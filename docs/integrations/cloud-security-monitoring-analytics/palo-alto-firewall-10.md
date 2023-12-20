@@ -110,13 +110,11 @@ To verify the logs in Palo Alto Networks, do the following:
 
 ## Installing the PAN Firewall 10 Security App
 
-Now that you have set up collection for the Palo Alto Firewall 10 app, you can install the app and use the preconfigured searches and dashboards that provide insight into your data.
+{@import ../../reuse/apps/app-install-v2.md}
 
-This app supports PAN-OS v10.
+## Viewing PAN Firewall 10 Security dashboards​
 
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing PAN Firewall 10 Security Dashboards
+{@import ../../reuse/filter-dashboards.md}
 
 ### Security Analytics - Communication via Critical Ports
 
