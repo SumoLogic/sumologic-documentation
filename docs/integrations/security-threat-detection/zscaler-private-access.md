@@ -30,12 +30,10 @@ LSS is deployed using two components, a log receiver and a ZPA App Connector. LS
 
 To collect logs for Zscaler Private Access, perform these steps, detailed in the following sections:
 
-1. Configure Sumo Logic Hosted Collector and a Cloud Syslog Source
-2. Configure App Connector in ZPA
-3. Deploy an App Connector on a Supported Platform
-4. Configure Log Receivers in ZPA to send logs to Sumo Logic
-
-
+1. Configure Sumo Logic Hosted Collector and a Cloud Syslog Source.
+2. Configure App Connector in ZPA.
+3. Deploy an App Connector on a Supported Platform.
+4. Configure Log Receivers in ZPA to send logs to Sumo Logic.
 
 ### Configure Sumo Logic Hosted Collector and a Cloud Syslog Source
 
@@ -55,22 +53,13 @@ For details see[ Best Practices](/docs/send-data/best-practices).
     * **Filter**: `(\<\d+\>1 - - - - - - \{)`
     * **Type**: `Mask messages that match`
     * **Mask String**: `{`
-
-
-
-
-
 5. Click **Save**.
 
-
 Copy and paste the **Token, Host and Port** in a secure location. You will need these when you configure ZPA LSS.
-
 
 ### Configure App Connector in ZPA
 
 Configure a new [App Connector](https://help.zscaler.com/zpa/configuring-connectors) in ZPA. Copy the provisioning key created/selected during App Connector configuration.
-
-
 
 ### Deploy an App Connector on a Supported Platform
 
@@ -81,7 +70,6 @@ Before you begin a deployment, read[ App Connector Deployment Prerequisites](htt
 The deployment process differs depending on the platform used for the App Connector. Zscaler recommends that App Connectors be deployed in pairs, to ensure continuous availability during software upgrades.
 
 To deploy the App Connector, see the [Deployment Guide](https://help.zscaler.com/knowledge-base-categories/supported-platforms-connectors) for your platform.
-
 
 ### Configure Log Receivers in ZPA to send logs to Sumo Logic
 
@@ -122,8 +110,6 @@ Edit the the log stream content, paste the following text in the beginning of th
 For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
 
 
-
-
 1. You can define a streaming **Policy** for the log receiver. For example, you can create a policy where the receiver will only capture logs for a specified segment group or a specific set of session status error codes. The criteria you can use is dependent upon the **Log Type** you selected. For various options to define a streaming policy, see [ZPA help](https://help.zscaler.com/zpa/configuring-log-receiver#Step2).
 2. Click **Next**.
 1. Review
@@ -144,15 +130,11 @@ For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](
 
 ## Installing the Zscaler Private Access App
 
-Now that you have set up collection for ZPA, you can install the ZPA App to use the pre-configured searches and dashboard that provide insight into your data.
-
-{@import ../../reuse/apps/app-install.md}
+{@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing ZPA Dashboards  
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+{@import ../../reuse/filter-dashboards.md}
 
 ### Overview
 
