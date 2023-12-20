@@ -140,7 +140,7 @@ Now you can access Cloud SOAR APIs documentation at the following URLs.
 
 ## Configure Slack for Cloud SOAR - Delivery 2
 
-With the Cloud SOAR Slack integration for Delivery 2, you can directly manage [User Choice](#use-the-slack-app-in-user-choice) actions within the playbooks from your Slack workspace.
+With the Cloud SOAR Slack integration for Delivery 2, you can directly manage [User Choice](#use-the-slack-app-in-user-choice) actions within the playbooks from your Slack workspace. Furthermore, for each new incident, a related conversation channel will be created within your Slack workspace, where users will correspond to investigators. Changing a user within the incident will also result in a change to the user within the conversation channel.
 
 ### Step 1: Create a Slack app
 
@@ -221,6 +221,19 @@ If your new resources are configured correctly, and Instant Messaging displays a
  If you have configured Slack as described in [Configure Slack for Cloud SOAR](#configure-slack-for-cloud-soar---delivery-2), you can set a playbook’s [User Choice](/docs/cloud-soar/automation/#user-choice) to be answered by Slack.
 
 1. Run a playbook with a User Choice action. The following example shows a simple playbook with two available answers: **Close Incident** and **Investigate**. Notice that the option **Answer By Slack** is enabled.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-playbook.png')} alt="Playbook with user choices" width="600"/>
-<br/>In this case, the Authorizer set is just a user. If a group is chosen, a Slack channel will be created and all the group members will be authorized to choose one of the **User Choice** available options. The channel will be automatically named as the incident on which the playbook is running. 
-1. When the playbook flow reaches the **User Choice**, the user or group will receive a message containing the reference to the incident, the playbook name, and the question set for the **User Choice**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice.png')} alt="Slack user choice message" width="600"/>
+<br/>In this case, the Authorizer set is just a user. If a group is chosen, a message will be sent directly from the CSOAR Bot to every available user, while if a user is not selected, and the playbook is inside an incident, the message will be sent within the relevant channel in the Slack workspace, and all the users within it will be authorized to choose one of the **User Choice** available options.
+1. When the playbook flow reaches the **User Choice**, the user will receive a message containing the reference to the incident, the playbook name, and the question set for the **User Choice**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice.png')} alt="Slack user choice message" width="600"/>
 1. After a recipient chooses one of the available options, the playbook flow will continue and a message will inform the user or the group about the choice made.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice-2.png')} alt="Selected user choice" width="600"/>
+
+### Bidirectional use cases between Slack and incident management
+
+With the Full Soar version, you can manage Slack communication channels directly by creating/editing various incidents within the CSOAR. Here are some use cases:
+
+1. Creating an incident:
+    * When an incident is created, a conversation channel will automatically be created within your Slack workspace, where the channel name will be formed like this: **incident-<incident_id>**. Furthermore, all users (owners, investigators, groups) who are part of the workspace will be added to the channel.<br/><img src={useBaseUrl('img/cloud-soar/created-incident-fs.png')} alt="Created incident" width="600"/><br/><img src={useBaseUrl('img/cloud-soar/created-slack-channel.png')} alt="Created Slack channel" width="600"/>
+1. Adding / removing users from the incident:
+    * When users (owners, investigators, groups) are added or removed from the incident, they will be managed in the same way within the channel in the workspace.
+1. Close / delete an incident:
+    * When an incident is closed / deleted, the related channel in the workspace will automatically be archived as well.<br/><img src={useBaseUrl('img/cloud-soar/archived-slack-channel.png')} alt="Archived Slack channel" width="600"/>
+1. Viewing channel history from the **War room** section:
+    * Within the war room section of an incident, it will be possible to view the history of a Slack channel.<br/><img src={useBaseUrl('img/cloud-soar/war-room-chat-section.png')} alt="Archived Slack channel" width="600"/>
