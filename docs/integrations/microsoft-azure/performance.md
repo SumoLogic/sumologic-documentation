@@ -5,21 +5,19 @@ sidebar_label: Windows Performance
 description: The Windows Performance App provides insight into your system's operation and events so that you can better manage and maintain your Windows systems.
 ---
 
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="75"/>
 
 The Windows Performance App provides insight into your system's operation and events so that you can better manage and maintain your Windows systems. The App uses predefined Dashboards and searches that provide visibility into your environment for real-time analysis of system and network performance and overall usage.
 
-## Log Types
+## Log types
 
 The Windows Performance App assumes events are coming from Windows Performance Sources.
 
 **Also, you need to configure an additional custom query for each Source.** For details, see [Collect Logs for Windows Performance App](#Collect-Logs-for-the-Windows-Performance-App).
 
-
-### Sample Log Messages
+### Sample log messages
 
 ```js
 instance of Win32_PerfFormattedData_PerfProc_Process
@@ -97,12 +95,9 @@ instance of Win32_PerfFormattedData_PerfOS_Memory
 
 
 
-### Sample Queries
+### Sample queries
 
-**Hosts with low available memory**
-
-
-```
+```sql title="Hosts with low available memory"
 _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Memory" "AvailableBytes"
 | parse regex "winbox = (?<dest_host>\S+)" nodrop
 | if (isNull(dest_host) or dest_host="",_sourceHost,dest_host) as host
@@ -115,10 +110,7 @@ _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Memory" "AvailableByt
 | where DataPoints >10 // another threshold: more than 10 minutes where the limit drops under the above threshold
 ```
 
-
-**Avg CPU Usage (%) by Host**
-
-```
+```sql title="Avg CPU Usage (%) by Host"
 _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Processor" "_Total"
 | parse regex "winbox = (?<dest_host>\S+)" nodrop
 | if (isNull(dest_host) or dest_host="",_sourceHost,dest_host) as host
@@ -127,7 +119,7 @@ _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Processor" "_Total"
 | avg(procTime) as AvgProcTime by host,_timeslice | sort - _timeslice | transpose row _timeslice column host
 ```
 
-## Collecting Logs for the Windows Performance App
+## Collecting Logs for the Windows Performance app
 
 This section provides instructions for configuring log collection for the Windows Performance App, as well as example log files and queries.
 
@@ -160,8 +152,7 @@ To complete the configuration, you'll need to edit each Windows Performance Sour
 6. Click **Save**.
 
 
-
-## Installing the Windows Performance App
+## Installing the Windows Performance app
 
 {@import ../../reuse/apps/app-install-v2.md}
 
@@ -182,7 +173,6 @@ To complete the configuration, you'll need to edit each Windows Performance Sour
 **Average Disk Time (%) by Host.** Displays the average disk time percentage for each host as a stacked column chart for the last 15 minutes. The legend lists the disk time status.
 
 **Total Bandwidth (Bytes) by Host.** Shows the average current network bandwidth by interface for each host as a stacked column chart for the last 15 minutes.
-
 
 ### CPU Performance
 
