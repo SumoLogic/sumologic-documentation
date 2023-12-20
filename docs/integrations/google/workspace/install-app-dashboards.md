@@ -12,11 +12,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This page demonstrates how to install the Google Workspace App and enable documents shared outside your organization. This page also provides descriptions, use cases, and examples for each of the Google Workspace App dashboards.
 
 ## Installing the Google Workspace App
-{@import ../../reuse/apps/app-install-v2.md}
+{@import ../../../reuse/apps/app-install-v2.md}
 
 ## Viewing Google Workspace dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+{@import ../../../reuse/apps/view-dashboards.md}
 
 ### Filters   
 
