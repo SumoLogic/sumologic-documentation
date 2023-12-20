@@ -51,7 +51,7 @@ Follow the instructions for setting up [Webhook connection](https://docs.alertlo
 
 This section has instructions for installing the Sumo Logic app for Alert Logic.
 
-{@import ../../reuse/apps/app-install.md}
+{@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Alert Logic dashboards​
 
