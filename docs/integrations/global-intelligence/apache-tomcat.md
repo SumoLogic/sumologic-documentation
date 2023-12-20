@@ -47,13 +47,6 @@ The Sumo Global Intelligence for Tomcat app provides insights into your key Tomc
 
 Follow the steps in [Sumo Logic Tomcat Logs](/docs/integrations/web-servers/apache-tomcat#Collecting-Logs-and-Metrics-for-Apache-Tomcat) to configure the collection for Global Intelligence for Tomcat App.
 
-
-## Installing the Global Intelligence for Apache Tomcat App
-
-This section has instructions for installing the Sumo Logic App for Global Intelligence for Apache Tomcat.
-
-{@import ../../reuse/apps/app-install.md}
-
 ## Concepts
 
 ### Golden Signals
@@ -68,7 +61,13 @@ Distance, between 0 and 1, is a statistical measure of how similar a given entit
 
 For each Apache Tomcat server, hourly signals for the past 7 days are used to construct the benchmark distribution for a given signal such as requests per second. A given server’s hourly readings for each day are compared with the benchmark signals to determine the daily distance from the benchmark. If a server is consistently different from the benchmark, such a server is behaving differently from the population for a given signal. Changes, such as a sudden increase in distance between days are more significant than the absolute value of distance on any given day.   
 
-## Global Intelligence for Apache Tomcat Dashboards
+
+## Installing the Global Intelligence for Apache Tomcat App
+{@import ../../reuse/apps/app-install-v2.md}
+
+## Viewing Global Intelligence for Apache Tomcat dashboards​
+
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Load Signals and Contributing Factors
 

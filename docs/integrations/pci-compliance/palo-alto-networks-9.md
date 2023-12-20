@@ -108,15 +108,11 @@ _sourceCategory=Loggen/PAN/Traffic TRAFFIC deny
 | count by _timeslice
 ```
 
-
-
 ## Install the PCI for Palo Alto Networks 9 App
+{@import ../../reuse/apps/app-install-v2.md}
 
-Now that you have set up collection for PCI for Palo Alto Networks install the Sumo Logic App for PCI for Palo Alto Networks to use the preconfigured searches and dashboards that provide insight into your data. This app supports PAN-OS v8 and v9.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing PCI for Palo Alto Networks 9 Dashboards
+## Viewing PCI for Palo Alto Networks 9 dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 
 ### PCI Req 01 - Accepted and Rejected Traffic

@@ -145,13 +145,11 @@ For Log Source Identifier field, use this format: `Deep Security Manager [token 
 Send System Events to confirm communication with Sumo Logic. There may be a 5-10 minute delay.
 
 
-## Installing the Trend Micro Deep Security App
+## Installing the Trend Micro Deep Security app
+{@import ../../reuse/apps/app-install-v2.md}
 
-This section provides instructions on how to install the Trend Micro Deep Security App, and examples of each of the dashboards. The App reconfigured searches and dashboards that provide easy-to-access visual insights into your data.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Trend Micro Dashboards
+## Viewing Trend Micro Deep Security dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 
 ### Deep Security - Overview

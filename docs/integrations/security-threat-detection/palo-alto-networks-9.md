@@ -169,22 +169,10 @@ To verify the logs in Palo Alto Networks, do the following:
 
 
 ## Install the Palo Alto Networks 9 App
+{@import ../../reuse/apps/app-install-v2.md}
 
-This section provides instructions for installing the Palo Alto Networks 9 App, along with examples of each of the dashboards that provide visual insights into your data.
-
-This app supports PAN-OS v9.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Palo Alto Networks 9 Dashboards
-
-### Dashboard filters
-
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+## Viewing Palo Alto Networks 9 dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

@@ -277,21 +277,10 @@ For more information about the CrowdStrike Falcon SIEM Connector, see the CrowdS
 :::
 
 ## Installing the CrowdStrike Falcon Endpoint Protection App
+{@import ../../reuse/apps/app-install-v2.md}
 
-This section provides instructions for installing the Sumo App for CrowdStrike Falcon Endpoint Protection, as well as examples for each of the app dashboards.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing CrowdStrike Falcon Dashboards
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
-
-### Parsers/FERs Folder
-
-The app includes a "Parsers/FERs" folder that has pre-built searches to help in your investigations. These searches parse out commonly used fields for audit activity, detection summary, incident summary and remote response session events.
-
+## Viewing CrowdStrike Falcon Endpoint Protection dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview  
 

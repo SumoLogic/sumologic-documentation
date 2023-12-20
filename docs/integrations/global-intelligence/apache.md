@@ -51,13 +51,6 @@ The following sample query is from the Average **Requests Per Second: My Server 
 
 Follow the steps in [Sumo Logic Apache Logs](/docs/integrations/web-servers/apache-tomcat#collecting-logs-and-metrics-for-apache-tomcat) to configure collection for the Global Intelligence for Apache App.
 
-## Installing the Global Intelligence for Apache App
-
-This section has instructions for installing the Global Intelligence for Apache App.
-
-{@import ../../reuse/apps/app-install.md}
-
-
 ## Concepts
 
 ### Golden Signals
@@ -73,28 +66,12 @@ issues.
 
 For each Apache server, hourly signals for the past 7 days are used to construct the benchmark distribution for a given signal such as requests per second. A given server’s hourly readings for each day are compared with the benchmark signals to determine the daily distance from the benchmark. If a server is consistently different from the benchmark, such a server is behaving differently from the population for a given signal. Changes, such as a sudden increase in distance between days, are more significant than the absolute value of distance on any given day.
 
+## Installing the Global Intelligence for Apache App
+{@import ../../reuse/apps/app-install-v2.md}
 
-## Global Intelligence for Apache App Dashboards
+## Viewing Global Intelligence for Apache dashboards​
 
-| Dashboard | Description |
-|:--|:--|
-| GI Apache - 01. Load Signals and Contributing Factors | This dashboard compares the golden signal of load (requests per second) for a company’s Apache servers to other servers. These signals are impacted by connections per second, requests per connection, the share of bot connections, and the share of HTTP POST/DELETE requests. These causal signals are also compared to the population of Apache servers. Use this dashboard to analyze unusual load spikes and the reasons for them. |
-| GI Apache - 02. Throughput Signals and Contributing Factors | This dashboard compares the golden signal of throughput (GB per second) for a company’s Apache servers to other servers. These signals are impacted by requests per second, GB per request, and error rate. These causal signals are also compared to the population of Apache servers. Use this dashboard to assess unusual throughput drops and the reasons for them such as increased errors or load spikes.  |
-| GI Apache - 03. Errors and Contributing Factors | This dashboard compares the golden signal of error rate for a company’s Apache servers to other servers. These signals are impacted by requests per second, connections per second, and GB per request. These causal signals are also compared to the population of Apache servers. Use this dashboard to assess unusual increases in error rate and the reasons for them such as increased load. |
-| GI Apache - 04. Latency Signals and Contributing Factors | This dashboard compares the golden signal of latency for a company’s Apache servers to other servers. These signals are impacted by requests per second and HTTP POST/DELETE share of requests. These causal signals are also compared to the population of Apache servers. Use this dashboard to assess unusual latency increases and the reasons for them such as increased load.  |
-| GI Apache - 05. Visitor Benchmarks | These panels compare bots and client platforms served by your company's Apache servers versus Apache servers of other companies to assess if unusual patterns in these indicators correlate with golden signals. |
-
-### Dashboard Filters  
-
-Each dashboard has a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard. See how to [filter with template variables](../../dashboards/filter-template-variables.md)
-for details.
-
-:::note
-You can use filters to drill down and examine the data on a granular level. One server must be selected for benchmark comparisons to be meaningful.
-:::
-
-![Apache app filtersimage.png](/img/global-intelligence/apache-app-filters-image.png)
-
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Load Signals and Contributing Factors
 

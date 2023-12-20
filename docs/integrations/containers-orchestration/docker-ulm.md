@@ -750,28 +750,10 @@ The example above uses a hyphen `-` character to separate variable components. S
 If a user-defined variable doesn’t exist, that portion of the metadata field will be blank.
 
 ## Installing the Docker ULM App
+{@import ../../reuse/apps/app-install-v2.md}
 
-Now that you have set up collection of Docker logs and metrics, install the Sumo Logic App for Docker ULM to use the pre-configured searches and dashboards.
-
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library**.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Docker Log Source.** Select the source category that you configured for the Docker Logs source. 
-   * **Docker Metrics Source**. Select the source category that you configured for the Docker Stats source.
-3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library) for information on working with the library.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-## Viewing the Docker ULM Dashboards
-
-This section describes the dashboards in the Sumo Logic App for Docker ULM.
+## Viewing Docker ULM dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

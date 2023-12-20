@@ -40,14 +40,11 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 * messages
 * yum.log
 
-
 ## Installing the PCI Compliance for Linux App
+{@import ../../reuse/apps/app-install-v2.md}
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Linux to use the preconfigured searches and dashboards that provide insight into your data.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing PCI Compliance for Linux Dashboards
+## Viewing PCI Compliance for Linux dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Account, User, System Monitoring
 

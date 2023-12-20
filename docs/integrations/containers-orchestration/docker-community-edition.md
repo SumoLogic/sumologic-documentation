@@ -357,12 +357,10 @@ If a user-defined variable doesn’t exist, that portion of the metadata field w
 
 
 ## Installing the Docker CE App
+{@import ../../reuse/apps/app-install-v2.md}
 
-The Sumo App for Docker provides operational insight into your Docker containers. The app includes dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.  
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Docker CE Dashboards
+## Viewing Docker CE dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

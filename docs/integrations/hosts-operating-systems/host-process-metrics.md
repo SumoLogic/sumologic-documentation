@@ -351,23 +351,13 @@ email_notifications = [
 
 If you haven’t enabled alerts or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
+## Installing the Host and Process Metrics app
+{@import ../../reuse/apps/app-install-v2.md}
 
-## Installing the Host and Process Metrics App
+## Viewing Host and Process Metrics dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
-This section demonstrates how to install the Host and Process Metrics App.
-
-Now that you have set up a log and metric collection for the Host and Process Metrics App, you can install the Sumo Logic App for Host and Processes to use the pre-configured searches and dashboards.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Host and Process Metrics Dashboards
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
-
-
-### Host Metrics - Overview
+### Overview
 
 The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
 
@@ -377,7 +367,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Overview.png')} alt="Host Metrics dashboards" />
 
 
-### Host Metrics - CPU
+### CPU
 
 The **Host Metrics - CPU** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 
@@ -388,7 +378,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-CPU.png')} alt="Host Metrics dashboards" />
 
 
-### Host Metrics - Disk
+### Disk
 
 The **Host Metrics - Disk** dashboard provides detailed information about on disk utilization and disk IO operations.You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 
@@ -400,7 +390,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Disk.png')} alt="Host Metrics dashboards" />
 
 
-### Host Metrics - Memory
+### Memory
 The **Host Metrics - Memory** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
@@ -411,7 +401,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Memory.png')} alt="Host Metrics dashboards" />
 
 
-### Host Metrics - Network
+### Network
 
 The **Host Metrics - Network** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
 
@@ -423,7 +413,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Network.png')} alt="Host Metrics dashboards" />
 
 
-### Host Metrics - TCP
+### TCP
 The **Host Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections.
 
 Use this dashboard to:

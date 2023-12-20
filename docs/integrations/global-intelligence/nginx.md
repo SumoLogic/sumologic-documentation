@@ -55,14 +55,12 @@ The following sample query is from the Average **Requests Per Second: My Company
 
 Follow the steps on the [Sumo Logic Nginx App](/docs/integrations/web-servers/nginx-legacy) to configure the log collection for Global Intelligence for Nginx App.
 
-
 ## Installing the Global Intelligence for Nginx App
+{@import ../../reuse/apps/app-install-v2.md}
 
-This section has instructions for installing the Sumo Logic App for Global Intelligence for Nginx.
+## Viewing Global Intelligence for Nginx dashboards​
 
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Global Intelligence for Nginx Dashboards
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Dashboard Filters  
 

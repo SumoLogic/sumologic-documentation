@@ -180,12 +180,10 @@ _sourceCategory=ZIA
 ```
 
 ## Install the Zscaler Internet Access app
+{@import ../../reuse/apps/app-install-v2.md}
 
-This section provides instructions on how to install the Zscaler Internet Access app, and provides examples of each of the dashboards. The preconfigured searches and dashboards provides you an easy-to-access visual insights into your data.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing ZIA dashboards
+## Viewing Zscaler Internet Access dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview  
 

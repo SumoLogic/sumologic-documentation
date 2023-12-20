@@ -81,12 +81,10 @@ For more information on local or remote Windows Event Log Source configuration, 
 
 
 ## Installing the Windows Legacy App
+{@import ../../reuse/apps/app-install-v2.md}
 
-Now that you have configured Windows logs, install the Sumo Logic App for Windows Legacy to take advantage of the pre-configured searches and dashboards to analyze your Windows data.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Windows Legacy Dashboards
+## Viewing Windows Legacy dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

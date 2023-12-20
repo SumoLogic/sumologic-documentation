@@ -328,19 +328,10 @@ The pE flag is used to specify whether the password is encrypted or not. Default
 
 
 ## Installing the VMware App
+{@import ../../reuse/apps/app-install-v2.md}
 
-This section provides instructions for installing the VMware App.
-
-Now that you have set up collection for VMWare, you can install the VMWare App to use the preconfigured searches and Dashboards that provide insight into your data.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing VMware Dashboards
-
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard.
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
+## Viewing VMware dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### vCenter Operations - Overview
 

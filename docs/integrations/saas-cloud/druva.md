@@ -76,19 +76,10 @@ _sourceCategory="druva_app"
 To set up [Cloud to Cloud Integration Druva Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source/) for the Druva App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva App is properly integrated and configured to collect and analyze your Druva data.
 
 ## Installing the Druva App​
+{@import ../../reuse/apps/app-install-v2.md}
 
-This section has instructions for installing the Druva App for Sumo Logic.
-Refer to the [Druva Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source) to create the source and use the same source category while installing the app.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Druva dashboards
-
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+## Viewing Druva dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Druva Overview dashboard
 

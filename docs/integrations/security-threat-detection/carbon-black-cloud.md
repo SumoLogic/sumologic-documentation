@@ -121,23 +121,10 @@ Please carefully evaluate this information to assure that your configuration ref
 
 
 ## Installing the Carbon Black Cloud App
+{@import ../../reuse/apps/app-install-v2.md}
 
-Now that you have set up collection for Carbon Black Cloud, install the Sumo Logic App.
-
-1. From the App Catalog, search for and select the app.  
-2. To install the app, click **Add Integration**.
-3. On the **Select Data Source for your App** page:
-    1. **Carbon Black Cloud Alert Data Source**. Enter the Source Category you assigned to the S3 source that collects alert logs.
-    2. **Carbon Black Cloud Event Data Source**. Enter the Source Category you assigned to the S3 source that collects event logs.
-    3. **Folder Name**. This field displays the name of the folder where the app will be installed. If desired, you can change the name of the folder. You can also browse to and select a parent folder where the app folder will be created.
-    4. Click **Next** to install the app in the selected location.
-
-Once the app is installed, it will appear in the folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library ](/docs/get-started/library)for information on working with the library in the new UI.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-## Viewing Carbon Black Cloud Dashboards
+## Viewing Carbon Black Cloud dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

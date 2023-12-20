@@ -249,17 +249,11 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
     7. **Scan Interval**. Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
 3. Click **Save**.
 
-
 ## Installing the Amazon Redshift ULM app
+{@import ../../reuse/apps/app-install-v2.md}
 
-Now that you have configured log and metric collection, install the Sumo Logic app for Amazon Redshift to take advantage of the pre-configured searches and dashboards.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Amazon Redshift Dashboards
-
-This section describes each of the dashboards in the Sumo Logic app for Amazon Redshift.
-
+## Viewing Amazon Redshift ULM dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

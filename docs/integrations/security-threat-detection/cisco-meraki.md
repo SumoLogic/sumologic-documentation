@@ -129,19 +129,10 @@ For more information on configuring log forwarding from Cisco Meraki, see the [C
 
 
 ## Installing the Cisco Meraki App
+{@import ../../reuse/apps/app-install-v2.md}
 
-This section provides instructions on how to install the Cisco Meraki App. The App's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
-
-{@import ../../reuse/apps/app-install.md}
-
-## View Cisco Meraki Dashboards
-
-Each dashboard has a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
+## Viewing Cisco Meraki dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

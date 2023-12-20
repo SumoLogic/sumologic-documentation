@@ -330,15 +330,11 @@ If you encounter problems:
 * Review [Script source prerequisites](#Script_source_prerequisites).
 * Review the contents of the log file that the script creates in the configured working directory.
 
-
-
 ## Installing the Puppet App
+{@import ../../reuse/apps/app-install-v2.md}
 
-Now that you have set up collection for Puppet, install the Sumo Logic App for Puppet to use the preconfigured searches and Dashboards that provide insight into your data.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Puppet App Dashboards
+## Viewing Puppet dashboards​
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 
