@@ -15,22 +15,20 @@ The Jenkins App allows you to monitor multiple Jenkins master nodes from a singl
 
 Sumo Logic Jenkins plugin is compatible with Jenkins version 2.361.1. For more information refer [Sumo Logic Jenkins Plugin WIKI](https://plugins.jenkins.io/sumologic-publisher) page.
 
-
-
-## Log and Metric Types
+## Log and metric types
 
 All logs are JSON based, with the exception of job console logs. Graphite format metrics are generated.
 
-The Jenkins App uses the following Log Types:
-* Audit Logs - Log events related to user authentication, Jenkins system and job configuration changes and Jenkins job run events.
-* Metric Data - Log events related to metric information of Jenkins Master.
-* Periodic Logs - Log events related to Jenkins nodes, master shutdown events, jobs in progress and in queue.
-* SCM Log - Log events related to Source Control Management systems like the github repository.
-* Job Status Logs - Log events related to Jenkins jobs, test results and pipeline stages.
-* Job Console Logs - Log events related to job console logs.
+The Jenkins app uses the following log types:
+* **Audit Logs**. Log events related to user authentication, Jenkins system and job configuration changes and Jenkins job run events.
+* **Metric Data**. Log events related to metric information of Jenkins Master.
+* **Periodic Logs**. Log events related to Jenkins nodes, master shutdown events, jobs in progress and in queue.
+* **SCM Log**. Log events related to Source Control Management systems like the github repository.
+* **Job Status Logs**. Log events related to Jenkins jobs, test results and pipeline stages.
+* **Job Console Logs**. Log events related to job console logs.
 
 
-### Sample Log Messages
+### Sample log messages
 
 <details><summary><strong>Click to expand.</strong> See sample log messages for log types, such as Authentication, Configuration Change, Shutdown, and Job Status.</summary>
 
@@ -265,9 +263,9 @@ The Jenkins App uses the following Log Types:
 
 </details>
 
-### Sample Query
+### Sample query
 
-This sample Query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
+This sample query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
 
 ```sql
 _sourceCategory=Labs/Jenkins/Sourabh/Logs In_Progress
@@ -284,7 +282,7 @@ _sourceCategory=Labs/Jenkins/Sourabh/Logs In_Progress
 | fields Job_Name, Job_URL, Job_Label, Node_Name, Job_Start_Time, Job_Run_Duration, Job_Number
 ```
 
-## Collecting Logs and Metrics for Jenkins
+## Collecting logs and metrics for Jenkins
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Jenkins.
 
@@ -408,7 +406,7 @@ To configure Sumo Logic Jenkins Plugin for specific projects using configuration
 
 
 
-## Installing the Jenkins App
+## Installing the Jenkins app
 
 {@import ../../reuse/apps/app-install-v2.md}
 
@@ -416,8 +414,7 @@ To configure Sumo Logic Jenkins Plugin for specific projects using configuration
 
 {@import ../../reuse/filter-dashboards.md}
 
-
-### Overview Dashboard
+### Overview
 
 The **Jenkins - Overview** dashboard shows relationships between jobs and executors (worker nodes) on a Jenkins master. This dashboard provides insights into job run durations, status, physical memory, disk memory, and unused machines.
 
@@ -431,11 +428,11 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-Overview.png')} alt="jenkins" />
 
-### System Monitoring Dashboards
+### System Monitoring
 
-System Monitoring Dashboards provide information on system activities related to master node metrics, job metrics, worker nodes, and audit activities. System Monitoring dashboards help you to monitor changes related to the Jenkins configuration, job configuration, the health of the Jenkins master, performance of the job queue and run duration, as well as the health of all worker nodes available to the Jenkins master node.
+The **Jenkins - System Monitoring** dashboards provids information on system activities related to master node metrics, job metrics, worker nodes, and audit activities. System Monitoring dashboards help you to monitor changes related to the Jenkins configuration, job configuration, the health of the Jenkins master, performance of the job queue and run duration, as well as the health of all worker nodes available to the Jenkins master node.
 
-#### Audit Dashboard
+#### Audit
 
 The **Jenkins - Audit** dashboard provides insight into user events, including configuration changes, authentication events, and job activities.
 
@@ -448,7 +445,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-Audit.png')} alt="jenkins" />
 
-#### Master Health Dashboard
+#### Master Health
 
 The **Jenkins - Master Health** dashboard provides insight into the health of Jenkins master nodes with information on shutdown events, Jenkins system logs, and metrics events such as CPU, memory, job duration,  threads, and executors.
 
@@ -462,8 +459,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-MasterHealth.png')} alt="jenkins" />
 
-
-#### Job Health Dashboard
+#### Job Health
 
 The **Jenkins - Job Health** dashboard provides insight into the health of Jenkins jobs across various master nodes with information on job counts, job run duration, queue information, and garbage collection metrics.
 
@@ -474,8 +470,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-JobHealth.png')} alt="jenkins" />
 
-
-#### Node Health Dashboard
+#### Node Health
 
 The **Jenkins - Node Health** dashboard provides insights into the health of all Jenkins master and worker nodes, with information on node details, recent builds, resource consumption, and node events.
 
@@ -486,13 +481,11 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-NodeHealth.png')} alt="jenkins" />
 
-
-### Job Monitoring Dashboards
+### Job Monitoring
 
 Job Monitoring Dashboards provide information on job activities like job run duration, job status, test results, pipeline stages, and console Logs. Job monitoring dashboards help you monitor job duration, status, failed jobs, and test cases. You can determine stack trace failures, failed stages details, source control management details, job configuration changes, and stage-wise console logs.
 
-
-#### Job Overview Dashboard
+#### Job Overview
 
 The **Jenkins - Job Overview** dashboard provides a high-level view of the job and builds status, trends, comparisons, and results.
 
@@ -506,8 +499,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-JobOverview.png')} alt="jenkins" />
 
-
-#### Job Information Dashboard
+#### Job Information
 
 The **Jenkins - Job Information** dashboard provides detailed information about a specific job. Panels show information on job URLs, duration trends, execution results, test case trends, slowest stages for pipeline jobs, console logs, and common errors.
 
@@ -521,7 +513,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-JobInformation.png')} alt="jenkins" />
 
 
-#### Build Information Dashboard
+#### Build Information
 
 The **Jenkins - Build Information** dashboard provides detailed information about a specific build. Panels show information on build parameters, source control management, commit details, test cases, pipeline stages, console logs, and configuration changes prior to a build.
 
@@ -535,7 +527,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-BuildInformation.png')} alt="jenkins" />
 
 
-#### Pipeline Stage Monitoring Dashboard
+#### Pipeline Stage Monitoring
 
 The **Jenkins - Pipeline Stage Monitoring** dashboard provides insights into pipeline performances.
 
