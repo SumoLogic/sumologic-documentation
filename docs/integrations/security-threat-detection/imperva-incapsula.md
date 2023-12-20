@@ -101,13 +101,13 @@ To configure log collection for Sumo Logic, do the following:
 
 ## Installing the Imperva-Incapsula WAF App
 
-Now that you have set up collection for Imperva Incapsula - Web Application Firewall, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Imperva-Incapsula WAF dashboards​
 
-## Viewing Imperva-Incapsula WAF Dashboards
+{@import ../../reuse/filter-dashboards.md}
 
-### WAF - Overview
+### Overview
 
 See the overview of your WAF service including the source IP address, client app, user agent, country, ADR rules, and policy type.
 
@@ -130,7 +130,7 @@ See the overview of your WAF service including the source IP address, client app
 **Top Applied ADR Rules**. See the top 10 applied ADR rules by count in the last 14 days displayed in a table.
 
 
-### WAF - Blocked Countries
+### Blocked Countries
 
 See the details of blocked countries in your WAF service including the source IP address, browser type, top countries, and user agent.
 
@@ -147,7 +147,7 @@ See the details of blocked countries in your WAF service including the source IP
 **Threat Table based on Client IP**. See the details of threats in the last 24 hours based on client IP address including the main client IP address, malicious confidence, actor, source, label name, browser type, attack type, rule name, country code, server IP, server port , client app, method, post body, URL, user agent, and count, displayed in a table.
 
 
-### WAF BOT - Access Control
+### BOT - Access Control
 
 See the details of BOT access control in your WAF service including the city, country, browser type, source IP address, and user agent.
 

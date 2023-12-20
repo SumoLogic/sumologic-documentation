@@ -98,18 +98,14 @@ For more information on local or remote Windows Event Log Source configuration, 
 
 ## Installing the Windows JSON App
 
-This section has instructions for installing the Sumo Logic JSON App for Windows and descriptions of each of the app dashboards.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Windows JSON dashboards​
 
-## Viewing Windows JSON Dashboards
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+{@import ../../reuse/filter-dashboards.md}
 
 
-### Windows - Overview
+### Overview
 
 The **Windows - Overview** dashboard provides insights into fatal or warning messages, policy changes, system restarts, and changes to administrative groups.
 
@@ -121,7 +117,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Windows_Overview.png')} alt="Windows JSON dashboards" />
 
-### Windows - Default
+### Default
 
 The **Windows - Default** dashboard provides information about the start and stop operations for Windows services, Windows events, operations events, and Errors and Warnings.
 
@@ -133,7 +129,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Windows_Default.png')} alt="Windows JSON dashboards" />
 
-### Windows - Login Status
+### Login Status
 
 The **Windows - Login Status** dashboard provides information about successful and failed logins, successful Remote Desktop Protocol (RDP) reconnects, and failed login outliers.
 
@@ -144,7 +140,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Windows_LoginStatus.png')} alt="Windows JSON dashboards" />
 
-### Windows - Event Errors
+### Event Errors
 
 The **Windows - Event Errors** dashboards provide insights into error keyword trends and outliers.
 
@@ -156,7 +152,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/microsoft-azure/Windows_EventErrors.png')} alt="Windows JSON dashboards" />
 
 
-### Windows - Application
+### Application
 
 The **Windows - Application** dashboard provides detailed information about install, uninstall, and event trends.
 

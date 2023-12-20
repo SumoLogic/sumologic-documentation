@@ -127,17 +127,11 @@ curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:
 
 ## Installing the F5 - BIG-IP LTM App
 
-This section provides instructions for installing the F5 - BIG-IP LTM App, as well as examples and explanations for each of the predefined dashboards.
+{@import ../../reuse/apps/app-install-v2.md}
 
-You can use [these instructions](/docs/get-started/library) to import the JSON into your Sumo Logic environment.
+## Viewing F5 - BIG-IP LTM dashboards​
 
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing F5 - BIG-IP LTM Dashboards    
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+{@import ../../reuse/filter-dashboards.md}
 
 ### Overview
 

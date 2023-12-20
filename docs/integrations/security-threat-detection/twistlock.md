@@ -119,16 +119,11 @@ as container_name nodrop | parse "cve=\"*\"" as cve nodrop | parse "vendor_statu
 
 ## Installing the Twistlock App
 
-This section provides instructions on how to install the Twistlock App, as well as examples of each of the dashboards. The App pre-configured searches and dashboards provide easy-to-access visual insights into your data.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Twistlock dashboards​
 
-## Viewing Twistlock Dashboards
-
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+{@import ../../reuse/filter-dashboards.md}
 
 ### Overview
 
@@ -225,11 +220,11 @@ Use this dashboard to:
 
 ## Installing the Twistlock Classic App
 
-This section provides instructions on how to install the Twistlock Classic App, as well as examples of each of the dashboards. The App pre-configured searches and dashboards provide easy-to-access visual insights into your data.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Twistlock Classic dashboards​
 
-## Viewing Twistlock Classic Dashboards
+{@import ../../reuse/filter-dashboards.md}
 
 ### Filter with template variables    
 

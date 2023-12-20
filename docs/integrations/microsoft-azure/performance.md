@@ -163,14 +163,11 @@ To complete the configuration, you'll need to edit each Windows Performance Sour
 
 ## Installing the Windows Performance App
 
-Now that you have set up collection, install the Windows Performance App to use the preconfigured searches and dashboards that provide insight into your data.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Windows Performance dashboards​
 
-## Viewing Windows Performance Dashboards
-
-The Windows Performance App allows you to analyze Windows Performance logs and gain real time and historic insights of your environment, including CPU, disk, generic IO, memory, and network performance.
-
+{@import ../../reuse/filter-dashboards.md}
 
 ### Windows Performance Overview
 

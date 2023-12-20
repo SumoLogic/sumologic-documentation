@@ -410,17 +410,11 @@ To configure Sumo Logic Jenkins Plugin for specific projects using configuration
 
 ## Installing the Jenkins App
 
-This section provides instructions for installing the Sumo Logic App for Jenkins, as well as examples and descriptions for each of the app dashboards.
+{@import ../../reuse/apps/app-install-v2.md}
 
-Now that you have set up collection for Jenkins you can install the Sumo Logic App for Jenkins, and use its pre-configured searches and dashboards.
+## Viewing Jenkins dashboards​
 
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Jenkins Dashboards
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+{@import ../../reuse/filter-dashboards.md}
 
 
 ### Overview Dashboard
