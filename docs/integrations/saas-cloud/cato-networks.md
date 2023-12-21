@@ -59,7 +59,7 @@ This app uses the Sumo Logic Cato Networks source to collect [Events Feed](https
 }
 ```
 
-## Sample Query
+## Sample query
 
 ```sql title="Total Threat Events"
 _sourceName="source" event_type  
@@ -100,7 +100,8 @@ Follow the instructions for setting up [Cato Networks](/docs/send-data/hosted-co
 
 ## Viewing Cato Networks dashboards 
 
-{@import ../../reuse/apps/view-dashboards.md}
+{@import ../../reuse/filter-dashboards.md}
+
 ### Events
 
 The **Cato Networks - Events** dashboard provides a detailed summary of the event-related metrics and insights. This dashboard provides a holistic view of event-related information, enabling users to identify trends, assess risks, and make informed decisions.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Cato-Networks-Events.png')} alt="Cato-Networks-Events" />

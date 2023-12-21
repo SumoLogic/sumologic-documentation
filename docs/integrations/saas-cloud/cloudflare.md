@@ -14,12 +14,12 @@ This application has been developed and is supported by Cloudflare. In case of t
 The Cloudflare App provides a set of dashboards that make analyzing Cloudflare logs easy, helping you to understand events and trends from your websites and applications on the Cloudflare network. Logs are gathered from all 160+ Cloudflare data centers in near real-time and can be combined with other data sources, such as your origin data, to provide unique insights and help you improve the performance and security of your websites and applications.
 
 
-## Log Types
+## Log types
 
 The Cloudflare App uses HTTP request logs in JSON format gathered from all of the 160+ Cloudflare data centers. By default, timestamps are returned as Unix nanosecond integers. We recommend using the RFC 3339 format for sending logs to Sumo Logic. For a description of the fields available in the logs see link [here](https://developers.cloudflare.com/logs/logpull-api/#fields).
 
 
-### Sample Log Message
+### Sample log message
 
 ```json
 {
@@ -35,7 +35,7 @@ The Cloudflare App uses HTTP request logs in JSON format gathered from all of th
 }
 ```
 
-### Sample Query
+### Sample query
 
 The following log query is from the ‘Total Number of Requests’ panel in the ‘Cloudflare - Snapshot’ dashboard.
 
@@ -50,7 +50,7 @@ client_request_uri, origin_response_status, edge_response_status, origin_ip, cli
 | count
 ```
 
-## Collecting Logs for Cloudflare
+## Collecting logs for Cloudflare
 
 This section shows you how to set up a Hosted Collector and specify a Sumo Logic Source.
 
@@ -96,11 +96,11 @@ Once connected, Cloudflare lists Sumo Logic as a connected service under Logs > 
 
 ## Viewing Cloudflare dashboards 
 
-{@import ../../reuse/apps/view-dashboards.md}
+{@import ../../reuse/filter-dashboards.md}
 
 ### Snapshot
 
-**Cloudflare - Snapshot Dashboard** provides an at-a-glance overview of the most important metrics from your websites and applications on the Cloudflare network. You can use dashboard filters to further slice and dice the information for granular analysis of events and trends.
+The **Cloudflare - Snapshot** dashboard provides an at-a-glance overview of the most important metrics from your websites and applications on the Cloudflare network. You can use dashboard filters to further slice and dice the information for granular analysis of events and trends.
 
 Use this dashboard to:
 * Monitor the most important web traffic metrics of your websites and applications on the Cloudflare network.
@@ -109,10 +109,9 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare-Snapshot.png')} alt="Cloudflare dashboards" />
 
 
-
 ### Reliability
 
-**Cloudflare - Reliability Dashboard** provides insights on the availability of your websites and applications. Metrics include origin response error ratio, origin response status over time, percentage of 3xx/4xx/5xx errors over time, and more.
+The **Cloudflare - Reliability** dashboard provides insights on the availability of your websites and applications. Metrics include origin response error ratio, origin response status over time, percentage of 3xx/4xx/5xx errors over time, and more.
 
 Use this dashboard to:
 
@@ -121,10 +120,9 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare_-_Reliability.png')} alt="Cloudflare dashboards" />
 
 
-
 ### Security (Overview)
 
-**Cloudflare - Security (Overview) Dashboard** provides insights on threats to your websites and applications, including number of threats stopped, threats over time, top threat countries, and more.
+The **Cloudflare - Security (Overview)** dashboard provides insights on threats to your websites and applications, including number of threats stopped, threats over time, top threat countries, and more.
 
 Use this dashboard to:
 * Monitor the most important security and threat metrics for your websites and applications.
@@ -132,10 +130,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Cloudflare-Security-Overview.png')} alt="Cloudflare dashboards" />
 
-
 ### Security (WAF)
 
-**Cloudflare - Security (WAF) Dashboard** provides insights on threat identification and mitigation by our Web Application Firewall (WAF), including events like SQL injections, XSS, and more.
+The **Cloudflare - Security (WAF)** dashboard provides insights on threat identification and mitigation by our Web Application Firewall (WAF), including events like SQL injections, XSS, and more.
 
 Use this dashboard to:
 * Understand attacks and WAF rules triggered to reveal vulnerabilities and false positives.
@@ -146,7 +143,7 @@ Use this dashboard to:
 
 ### Security (Rate Limiting)
 
-**Cloudflare - Security (Rate Limiting) Dashboard** provides insights on rate limiting protection against denial-of-service attacks, brute-force login attempts, and other types of abusive behavior targeted at your websites and applications.
+The **Cloudflare - Security (Rate Limiting)** dashboard provides insights on rate limiting protection against denial-of-service attacks, brute-force login attempts, and other types of abusive behavior targeted at your websites and applications.
 
 Use this dashboard to:
 * Investigate attacks by looking at rate limiting over time, top rate limit actions, top rate limit countries, top banned URIs, and top banned client IPs.
@@ -157,7 +154,7 @@ Use this dashboard to:
 
 ### Security (Bot Management)
 
-**Cloudflare - Security (Bot Management) Dashboard** reliably detects and mitigates bad bots to prevent credential stuffing, spam registration, content scraping, click fraud, inventory hoarding, and other malicious activities.
+The **Cloudflare - Security (Bot Management)** dashboard reliably detects and mitigates bad bots to prevent credential stuffing, spam registration, content scraping, click fraud, inventory hoarding, and other malicious activities.
 
 To get bot requests identified correctly, use only one Filter Based Firewall rule with action "Challenge (Captcha)". For more information, see the [Cloudflare documentation](https://www.cloudflare.com/apps/developer/docs/getting-started).
 
@@ -169,7 +166,7 @@ Use this dashboard to:
 
 ### Performance (Requests, Bandwidth, Cache)
 
-**Cloudflare - Performance (Requests, Bandwidth, Cache) Dashboard** identifies and addresses performance issues and caching misconfigurations. Metrics include total vs. cached bandwidth, saved bandwidth, total requests, cache ratio, top uncached requests, and more.
+The **Cloudflare - Performance (Requests, Bandwidth, Cache)** dashboard identifies and addresses performance issues and caching misconfigurations. Metrics include total vs. cached bandwidth, saved bandwidth, total requests, cache ratio, top uncached requests, and more.
 
 Use this dashboard to:
 * Monitor caching behavior and identify misconfigurations.
@@ -179,7 +176,7 @@ Use this dashboard to:
 
 ### Performance (Hostname, Content Type, Request Methods, Connection Type)
 
-**Cloudflare - Performance (Hostname, Content Type, Request Methods, Connection Type) Dashboard** provides insights into your most popular hostnames, most requested content types, breakdown of request methods, and connection type.
+The **Cloudflare - Performance (Hostname, Content Type, Request Methods, Connection Type)** dashboard provides insights into your most popular hostnames, most requested content types, breakdown of request methods, and connection type.
 
 Use this dashboard to:
 * Review the most requested content types, popular hostnames, and top triggered methods and TLS protocols.
@@ -190,7 +187,7 @@ Use this dashboard to:
 
 ### Performance (Static vs. Dynamic Content)
 
-**Cloudflare - Performance (Static vs. Dynamic Content) Dashboard** provides insights into the performance of your static and dynamic content, including slowest URLs.
+The **Cloudflare - Performance (Static vs. Dynamic Content)** dashboard provides insights into the performance of your static and dynamic content, including slowest URLs.
 
 Use this dashboard to:
 * Compare your static and dynamic content performance.
