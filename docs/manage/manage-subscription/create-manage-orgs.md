@@ -109,7 +109,7 @@ This section has information about how you can monitor credit allocations and co
 
 ### View overall credit usage by category
 
-You can view the usage by orgs in the **Overall Usuage** tab on the **Account Overview** page. Usage for the following categories is shown:
+You can view the usage by orgs in the **Overall Usage** tab on the **Account Overview** page. Usage for the following categories is shown:
 
 * **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
 * **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
@@ -129,7 +129,7 @@ You can view the usage by orgs in the **Overall Usuage** tab on the **Account Ov
 You can view the usage of individual child orgs in the **Child Orgs** tab on the **Account Overview** page. Usage for the following categories is shown:
 
 * The **Credit Allocation** tile indicates the total number of credits allocated.
-* The **Total Credit Usuage** tile shows amount of credits consumed out of the total allocated credits.
+* The **Total Credit Usage** tile shows amount of credits consumed out of the total allocated credits.
 * The **Usage Forecast** tile indicated the total consumption of the credits by the end of contract period according to the current consumption rate.
 * The **Allocated Credits** column indicates the total number of credits allocated to the selected child org.
 * The **Total Credits Used** column indicates the total amount of credits consumed for the selected child org.
