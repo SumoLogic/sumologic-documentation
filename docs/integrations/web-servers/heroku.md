@@ -197,7 +197,7 @@ These custom app **_sourceNames** will appear as values in the dashboard filter 
 {@import ../../reuse/apps/app-install-v2.md}
 
 :::note
-While using the **Sumo Add-on**, the value **_sourceCategory=heroku** should be used while installing the app.
+While using the **Sumo Add-on**, the value `_sourceCategory=heroku` should be used while installing the app.
 :::
 
 ## Viewing Heroku Dashboards
