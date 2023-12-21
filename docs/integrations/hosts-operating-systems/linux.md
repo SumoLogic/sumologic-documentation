@@ -67,7 +67,7 @@ See [Suggested Searches for Linux OS](#Suggested_Searches_for_Linux_OS).
 
 ## Viewing Linux dashboards​
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

@@ -2,7 +2,7 @@
 id: jenkins
 title: Jenkins
 sidebar_label: Jenkins
-description: The Sumo Logic App for Jenkins helps you monitor build successes, failures, and performance, ensuring that you know—before committing code to the repository—whether the code will work.
+description: The Sumo Logic app for Jenkins helps you monitor build successes, failures, and performance, ensuring that you know—before committing code to the repository—whether the code will work.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -26,7 +26,6 @@ The Jenkins app uses the following log types:
 * **SCM Log**. Log events related to Source Control Management systems like the github repository.
 * **Job Status Logs**. Log events related to Jenkins jobs, test results and pipeline stages.
 * **Job Console Logs**. Log events related to job console logs.
-
 
 ### Sample log messages
 
@@ -405,14 +404,13 @@ To configure Sumo Logic Jenkins Plugin for specific projects using configuration
 3. Click **Apply**, and then click **Save**.
 
 
-
 ## Installing the Jenkins app
 
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Jenkins dashboards​
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

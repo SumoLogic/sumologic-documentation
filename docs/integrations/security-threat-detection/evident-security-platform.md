@@ -273,7 +273,7 @@ For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-mes
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Evident.ioESP_Overview_Dashboard.png')} alt="Evident.io ESP dashboards" />
 
-**New Risks. **Displays the number of new risks in a single value chart over the previous 24 hours.
+**New Risks.** Displays the number of new risks in a single value chart over the previous 24 hours.
 
 **New Risks by Severity.** Shows the severity of new risks in a stacked column chart on a timeline for the last 24 hours.
 

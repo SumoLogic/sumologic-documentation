@@ -67,23 +67,17 @@ _sourceCategory=swssDev
 To set up [Cloud to Cloud Integration Symantec Web Security Service Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source/) for the Symantec Web Security Service App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Symantec Web Security Service Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Symantec Web Security Service app is properly integrated and configured to collect and analyze your Symantec Web Security Service data.
 
 ## Installing the Symantec Web Security Service app
-## Installing the Symantec Web Security Service app​
 
-{@import ../../reuse/apps/app-install-v2.md}
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Symantec Web Security Service dashboards
-## Viewing Symantec Web Security Service dashboards​
 
 {@import ../../reuse/apps/view-dashboards.md}
-{@import ../../reuse/filter-dashboards.md}
 
-### Security Overview
 ### Security Overview
 
 The **Symantec Web Security Service - Security Overview** dashboard provides a comprehensive view of the network security status. It includes widgets for the total number of requests, unique malware detected, geo locations of blocked requests, category statistics, top 10 blocked hosts, top 10 blocked users, top 10 blocked traffic verdicts, security concerns, malicious file type (URI extension), malware action on identification, requests over time, and virus count over time. This information helps you to monitor and manage the network security in real-time, which allows you to quickly identify and respond to potential threats.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Symantec-Web-Security-Service-Security-Overview.png')} alt="Symantec-Web-Security-Service-Security-Overview" width="800"/>
 
-### Web Activity Overview
 ### Web Activity Overview
 
 The **Symantec WWeb Security ServiceSS - Web Activity Overview** dashboard provides a comprehensive view of the web activity status through various widgets. It includes widgets for blocked websites by category, blocked user agents, number of blocked sites over time, blocked sites, bytes sent/received over time, Layer 4 result actions, requests by the user, time spent processing requests by the user, bandwidth usage by user, web activity by total hits, web activity by unique users, and top 10 URI extensions. This information helps you to monitor and manage network security in real time, which allows you to quickly identify and respond to potential threats. With Symantec Web Security Service, businesses can ensure a safe browsing experience and protect against various online threats.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Symantec-Web-Security-Service-Web-Activity-Overview.png')} alt="Symantec-Web-Security-Service-Web-Activity-Overview" width="800"/>

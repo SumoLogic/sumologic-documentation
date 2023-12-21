@@ -93,8 +93,6 @@ instance of Win32_PerfFormattedData_PerfOS_Memory
 }
 ```
 
-
-
 ### Sample queries
 
 ```sql title="Hosts with low available memory"
@@ -158,7 +156,7 @@ To complete the configuration, you'll need to edit each Windows Performance Sour
 
 ## Viewing Windows Performance dashboards​
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Windows Performance Overview
 

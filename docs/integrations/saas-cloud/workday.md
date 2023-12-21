@@ -517,7 +517,7 @@ Exception: Invalid config
 
 ## Viewing Workday dashboards​
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

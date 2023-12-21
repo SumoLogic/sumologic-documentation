@@ -165,7 +165,7 @@ _sourceCategory=observable
 
 ## Viewing Observable Networks dashboards​
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

@@ -119,7 +119,6 @@ Now, Using telemetry we will define a [Sumo Logic sink ](https://clouddocs.f5.co
 curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:application/json" -X POST -d@sumo.json https://<BIG-IP IP>:<PORT>3/mgmt/shared/telemetry/declare | python -m json.tool
 ```
 
-
 ## Installing the F5 - BIG-IP LTM app
 
 {@import ../../reuse/apps/app-install-v2.md}
