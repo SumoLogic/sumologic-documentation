@@ -21,13 +21,13 @@ The Airtable App allows you to:
 
 The Airtable App also offers a pre-built dashboard that enables you to start monitoring your Airtable audit logs right away. The Airtable App for Sumo Logic is especially useful for organizations that must comply with regulatory requirements or maintain a high level of security. With the ability to monitor user activity and track changes in real time, you can quickly identify potential issues and respond to security incidents as they occur.
 
-## Log Types
+## Log type
 
-The Sumo Logic App for Airtable consumes Audit logs from your Airtable Enterprise account. Audit Logs track user activity and record changes made to the data in the system.
+The Sumo Logic app for Airtable consumes Audit logs from your Airtable Enterprise account. Audit Logs track user activity and record changes made to the data in the system.
 
 To understand how to access detailed records of changes made to the Airtable Enterprise account, refer to the [Airtable Audit logs](https://support.airtable.com/docs/how-to-access-enterprise-audit-logs#interpreting-audit-logs) documentation. This documentation provides information on the different types of logs that are available, how to access them, and what information they contain.
 
-### Sample Log Messages
+### Sample log messagea
 
 ```json
 {
@@ -59,7 +59,7 @@ To understand how to access detailed records of changes made to the Airtable Ent
 }
 ```
 
-### Sample Queries
+### Sample query
 
 ```sql="Active Team Members"
 _sourceCategory="Labs/airtable"
@@ -70,7 +70,7 @@ _sourceCategory="Labs/airtable"
 | count_distinct (action_id)
 ```
 
-## Installing the Airtable App
+## Installing the Airtable app
 
 Before you begin, collect logs from Airtable API and ingest them into Sumo Logic. Refer to the [Airtable API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/) to create the source and use the same source category while installing the app.
 

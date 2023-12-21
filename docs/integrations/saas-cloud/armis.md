@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Armis offers enhanced visibility into both alerts and device data, making it easier to monitor and manage your device security. The app features dashboards that analyze alerts by severity, status, and type, providing a clear picture of the trend of alerts over time. Additionally, the app allows you to monitor devices by risk level, type, and category, and provides a table view of the latest devices with key information to keep your IT infrastructure secure.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Armis gathers log information from the following two sources.
 
@@ -55,13 +55,11 @@ The Sumo Logic App for Armis gathers log information from the following two sour
 | `site` | String | The site of the device. |
 
 
-### Sample Log Messages
+### Sample log messages
 
 This section contains log messages for both Alerts and Device sources. It helps in monitoring activity and resolving issues.
 
-**Sample Alerts Log Messages**
-
-```json
+```json title="Sample Alerts Log Messages"
 {
  "data": {
    "count": 10,
@@ -93,9 +91,7 @@ This section contains log messages for both Alerts and Device sources. It helps 
 }
 ```
 
-**Sample Device Log Messages**
-
-```json
+```json title="Sample Device Log Messages"
 {
    "data": {
      "count": 83,
@@ -164,7 +160,7 @@ This section contains log messages for both Alerts and Device sources. It helps 
  }
 ```
 
-### Sample Queries
+### Sample queries
 
 This section contains the sample queries of both the `Alerts` and `Device`.
 
