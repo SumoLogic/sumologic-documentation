@@ -50,11 +50,13 @@ If you want to set up Route 53 Resolver DNS Firewall, see the Amazon Developer G
 [Route 53 Resolver query log example](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html)
 
 
-## Installing the Amazon Route 53 Resolver Security App
+## Installing the Amazon Route 53 Resolver Security app
 
-{@import ../../reuse/apps/app-install.md}
+{@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Amazon Route 53 Resolver Security Dashboards
+## Viewing Amazon Route 53 Resolver Security dashboards
+
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Query Logging Overview
 

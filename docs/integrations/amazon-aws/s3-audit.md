@@ -70,13 +70,15 @@ Use the following Parse Expression:
 parse "* * [*] * * * * * \"* HTTP/1.1\" * * * * * * * \"*\" *" as bucket_owner, bucket, time, remoteIP, requester, request_ID, operation, key, request_URI, status_code, error_code, bytes_sent, object_size, total_time, turn_time, referrer, user_agent, version_ID
 ```
 
-## Installing the Amazon S3 Audit App
+## Installing the Amazon S3 Audit app
 
 Now that you have configured log collection for Amazon S3 Audit, install the Sumo Logic App for Amazon S3, and take advantage of predefined Searches and dashboards. The Sumo Logic App for Amazon S3 Audit presents details from access logs that contain information about the request type, the average response time, and the inbound and outbound data volume.
 
-{@import ../../reuse/apps/app-install.md}
+{@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Amazon S3 Audit Dashboards
+## Viewing Amazon S3 Audit dashboards
+
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 
