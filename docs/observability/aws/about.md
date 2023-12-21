@@ -5,12 +5,26 @@ sidebar_label: About AWS Observability
 description: Learn about the features, benefits, and resources created by the AWS Observability solution.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 AWS provides over 150 discrete services including compute, network, storage, database, tooling, management, security, developer tools, and analytics to name a few.
 
 Despite all of these services being a part of AWS, troubleshooting across different services can be problematic when you use separate AWS accounts to manage costs and give teams independent administrative control. Different AWS accounts often have different settings across Availability Zones or Regions, which makes it difficult to get a clear picture of overall application health.
 
 The Sumo Logic AWS Observability solution and Root Cause Explorer pull and analyze data across key AWS services and accounts, establish activity baselines, and determine causes for application incidents and high deviation events.
+
+Watch the following micro lesson to learn about the AWS Observability solution.
+
+<Iframe url="https://www.youtube.com/embed/p_LaUPAer6I?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
 
 #### AWS Observability Solution  
 
