@@ -114,14 +114,14 @@ _sourceCategory=Labs/sailpoint
 Follow the instructions for setting up [Cloud to Cloud Integration for SailPoint App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app.
 
 
-## Installing the SailPoint App
+## Installing the SailPoint app
 
-This section demonstrates how to install the SailPoint App.
-
-{@import ../../reuse/apps/app-install.md}
+{@import ../../reuse/apps/app-install-v2.md}
 
 
-## Viewing SailPoint Dashboards
+## Viewing SailPoint dashboards
+
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 
