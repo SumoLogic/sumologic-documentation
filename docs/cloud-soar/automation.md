@@ -25,7 +25,10 @@ While browsing available integrations, you can check the details and all the act
 1. Use the **Search** bar in the upper right of the **Integrations** tab to find integrations.
 1. Click **Download** in the lower left corner of the integration box.
 1. Click **Install** to install the integration. After installation is complete, **Installed** replaces the **Download** link in the corner of the integration box.
-1. **IMPORTANT**: Click **Show More** in the integration box to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
+1. Click **Show More** in the integration box to see if there are additional steps you need to follow to configure the installed integration. 
+   :::warning
+   Failure to perform these additional steps may result in the integration not working properly.
+   :::
 
 ### Update an integration from App Central 
 
