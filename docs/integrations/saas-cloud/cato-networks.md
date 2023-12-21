@@ -100,7 +100,7 @@ Follow the instructions for setting up [Cato Networks](/docs/send-data/hosted-co
 
 ## Viewing Cato Networks dashboards 
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Events
 

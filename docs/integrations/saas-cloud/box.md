@@ -402,7 +402,7 @@ The following table shows the **config** parameters for a Box Source.
 
 ## Viewing Box dashboards
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Collaborations and Shares
 

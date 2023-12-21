@@ -72,7 +72,7 @@ This section has instructions for installing the Cisco Umbrella App for Sumo Log
 
 ## Viewing the Cisco Umbrella dashboards
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Admin Activities
 

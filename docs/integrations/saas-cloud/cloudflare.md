@@ -96,7 +96,7 @@ Once connected, Cloudflare lists Sumo Logic as a connected service under Logs > 
 
 ## Viewing Cloudflare dashboards 
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Snapshot
 
