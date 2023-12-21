@@ -203,7 +203,7 @@ Use this dashboard to:
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Twistlock Classic Dashboards
+## Viewing Twistlock Classic dashboards
 
 {@import ../../reuse/apps/view-dashboards.md}
 

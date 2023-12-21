@@ -21,11 +21,11 @@ The app provides pre-built dashboards that enable you to quickly visualize your 
 
 In summary, the SentinelOne App for Sumo Logic provides security professionals with the tools they need to monitor and respond to security incidents in real-time, ensuring the protection of their organization's critical assets.
 
-## Log Types
+## Log types
 
-The Sumo Logic App for SentinelOne consumes Threats and Agents logs, refer to the [Threats](https://usea1-partners.sentinelone.net/api-doc/api-details?category=threats&api=get-threats) and [Agents](https://usea1-partners.sentinelone.net/api-doc/api-details?category=agents&api=get-agents) documentation.
+The Sumo Logic app for SentinelOne consumes Threats and Agents logs, refer to the [Threats](https://usea1-partners.sentinelone.net/api-doc/api-details?category=threats&api=get-threats) and [Agents](https://usea1-partners.sentinelone.net/api-doc/api-details?category=agents&api=get-agents) documentation.
 
-## Sample Log Messages
+## Sample log messages
 
 ```json title="Sample Threats Log Messages"
 {
@@ -312,7 +312,7 @@ The Sumo Logic App for SentinelOne consumes Threats and Agents logs, refer to th
 ```
 
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Suspicious threats detected"
 _sourceCategory=sentinelone  threatInfo

@@ -4,7 +4,6 @@ title: Windows JSON
 sidebar_label: Windows JSON
 description: The Windows JSON App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment.
 ---
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="75"/>
@@ -15,8 +14,7 @@ The Windows JSON App provides insight into your Windows system's operation and e
 You may also be interested in the [Sumo Logic App for Windows Cloud Security Monitoring and Analytics](docs/integrations/cloud-security-monitoring-analytics/windows.md).
 :::
 
-
-## Log Types
+## Log types
 
 The Windows JSON App assumes events are coming from Windows Event Log Sources in JSON format. It does not work with third party logs.
 
@@ -27,8 +25,7 @@ Standard Windows event channels include:
 
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
-
-### Sample Log Message
+### Sample log message
 
 ```json
 {
@@ -67,7 +64,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 }
 ```
 
-### Sample Query
+### Sample query
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
@@ -79,8 +76,7 @@ _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit
 | count by msg_summary | sort by _count, msg_summary asc
 ```
 
-
-## Collecting Logs for the Windows JSON App
+## Collecting Logs for the Windows JSON app
 
 This section provides instructions on configuring log collection for the Windows JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
 
@@ -95,8 +91,7 @@ To configure a collector and source, do the following:
 
 For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/local-windows-event-log-source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/remote-windows-event-log-source).
 
-
-## Installing the Windows JSON App
+## Installing the Windows JSON app
 
 This section has instructions for installing the Sumo Logic JSON App for Windows and descriptions of each of the app dashboards.
 
@@ -104,10 +99,7 @@ This section has instructions for installing the Sumo Logic JSON App for Windows
 
 ## Viewing Windows JSON Dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
-
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

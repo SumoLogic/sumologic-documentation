@@ -13,15 +13,13 @@ The Evident.io ESP App provides pre-configured searches and Dashboards that allo
 
 The Evident.io Evident Security Platform (ESP) streamlines and optimizes vulnerability and risk management. It continuously monitors the AWS cloud, automatically identifies security misconfigurations, enables rapid mitigation of risk through guided remediation and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the vulnerability and identified security misconfigurations from Evident and other data sources, you can reduce your security risk and improve your overall security posture.
 
-
-## Log Types
+## Log types
 
 The Evident.io ESP App collects monitoring alerts.
 
 For details on the log format and definitions, refer to Evident.io documentation at [http://docs.evident.io/](http://docs.evident.io/).
 
-
-### Sample Log Message
+### Sample log message
 
 <details><summary>Click to expand</summary>
 
@@ -182,7 +180,7 @@ For details on the log format and definitions, refer to Evident.io documentation
 </details>
 
 
-### Sample Query
+### Sample query
 
 
 ```sql title="Alerts by Status"
@@ -197,7 +195,7 @@ _sourceCategory=security_evident
 | count by status
 ```
 
-## Collecting Logs for the Evident.io ESP App
+## Collecting Logs for the Evident.io ESP app
 
 This page demonstrates how to configure log collection for the Evident.io ESP App, and provides an example log message and query.
 

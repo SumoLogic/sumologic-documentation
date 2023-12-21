@@ -14,10 +14,9 @@ The F5 - BIG-IP  Local Traffic Manager (LTM) App helps you optimize and secure n
 The Sumo Logic App for F5 - BIG-IP Local Traffic Manager (LTM) helps you optimize and secure network traffic patterns coming into your data center using the F5 BIG-IP platform. This App analyzes traffic flowing through the F5 Local Traffic Manager (LTM) and automatically detects threats using Sumo Logic Threat Intel. The Sumo Logic App for F5 - BIG-IP LTM provides pre-configured dashboards that allow you to monitor traffic details by application, facility, pool, active and non-responding hosts, connections, and logins. It also reports LTM CPU, disk usage, and outliers in LTM activities and traffic patterns.
 
 
-## Log Types
+## Log types
 
 The F5 - BIG-IP Local Traffic Manager (LTM) App uses event logs with payloads, as described in this [document.](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/output-example.html#ltm-request-log)
-
 
 ### Sample Log
 
@@ -37,7 +36,7 @@ The F5 - BIG-IP Local Traffic Manager (LTM) App uses event logs with payloads, a
 }
 ```
 
-### Sample Query
+### Sample query
 
 The following query sample is from the **F5 - BIG-IP LTM - Overview** Dashboard, **Pool Status** panel.
 
@@ -57,8 +56,7 @@ _sourceCategory=f5/bigip/ltm  systemInfo
 | count by virtualServer_name, pool, application, enabledState, availabilityState
 ```
 
-
-## Collecting Logs for the F5 - BIG-IP LTM App
+## Collecting Logs for the F5 - BIG-IP LTM app
 
 This section provides instructions for collecting logs for the F5 - BIG-IP LTM App, as well as a sample log message and query sample.
 
