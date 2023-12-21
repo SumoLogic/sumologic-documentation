@@ -44,7 +44,7 @@ _sourceCategory="Heroku" "Build Succeeded"
 | transpose row _timeslice column log_drain
 ```
 
-#### Metric Log Query
+#### Metric log query
 
 ```sql title="Memory Utilization (MB)"
 _sourceCategory="Heroku"
@@ -54,7 +54,7 @@ _sourceCategory="Heroku"
 | avg(memory_total) as memory_total, avg(memory_rss) as resident_memory, avg(memory_cache) as disk_cache_memory, avg(memory_swap) as swap_memory by _timeslice
 ```
 
-## Collecting Logs for Heroku
+## Collecting logs for Heroku
 
 Heroku is a cloud platform that lets companies build, deliver, monitor, and scale apps in eight programming languages namely Node.js, Ruby, Python, Java, PHP, Go, Scala, and Clojure.
 
@@ -66,7 +66,7 @@ There are two ways to send Heroku logs to Sumo Logic.
 It is recommended to attach a Heroku add-on just after creating an app or running the ```heroku create``` command to help observe Heroku logs for all events that may follow for the app.
 :::
 
-### Collecting Logs via HTTPS Log Drain
+### Collecting logs via HTTPS Log Drain
 
 A HTTPS Log Drain can be attached to a Heroku application via the CLI.
 1. Collect the **URL** of a [HTTPs logs source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) on a [hosted collector](/docs/send-data/hosted-collectors/configure-hosted-collector/) in any [Sumo Logic account](/docs/manage/manage-subscription/).
@@ -82,7 +82,7 @@ You will now be able to see Heroku logs flowing into that HTTP source in Sumo Lo
 You can also run ```heroku drains``` or ```heroku drains --json``` command in your app directory to find the name of an existing Sumo Logic http source log_drain url of an app, which can be attached to a new app.
 :::
 
-### Collecting Logs via Sumo Logic Add-on
+### Collecting logs via Sumo Logic Add-on
 
 The Sumo Logic add-on for Heroku helps you to monitor Heroku apps and harness the power of machine data with effortless log management that delivers business and operational insights within minutes.
 
@@ -192,13 +192,17 @@ d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a
 
 These custom app **_sourceNames** will appear as values in the dashboard filter variable ``log_drain`` for the Heroku app dashboards.
 
-## Installing the Heroku app
+## Installing the Heroku App
 
 {@import ../../reuse/apps/app-install-v2.md}
 
+:::note
+While using the **Sumo Add-on**, the value **_sourceCategory=heroku** should be used while installing the app.
+:::
+
 ## Viewing Heroku Dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+{@import ../../reuse/filter-dashboards.md}
 
 ### Overview
 

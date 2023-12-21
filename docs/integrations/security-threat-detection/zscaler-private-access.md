@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Zscaler Private Access App collects logs from Zscaler using the Log Streaming Service (LSS) to populate pre-configured searches and Dashboards. The dashboards provide easy-to-access visual insights into user behaviors, security, connector status, and risk.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Zscaler Private Access uses LSS to send the following logs, as documented [here](https://help.zscaler.com/zpa/about-log-streaming-service):
 
@@ -22,7 +22,7 @@ The Sumo Logic App for Zscaler Private Access uses LSS to send the following log
 * Audit Logs: Session information for all admins accessing the ZPA Admin Portal. To learn more, see[ Audit Log Fields](https://help.zscaler.com/zpa/about-audit-log-fields) and[ About Audit Logs](https://help.zscaler.com/zpa/about-audit-logs).
 
 
-## Collect Logs for the Zscaler Private Access (ZPA) App
+## Collect logs for the Zscaler Private Access (ZPA) app
 
 Zscaler Private Access uses the Log Streaming Service (LSS), to stream logs from the Zscaler service and deliver them to the Sumo Logic Hosted collector via Syslog.
 
@@ -30,14 +30,12 @@ LSS is deployed using two components, a log receiver and a ZPA App Connector. LS
 
 To collect logs for Zscaler Private Access, perform these steps, detailed in the following sections:
 
-1. Configure Sumo Logic Hosted Collector and a Cloud Syslog Source
-2. Configure App Connector in ZPA
-3. Deploy an App Connector on a Supported Platform
-4. Configure Log Receivers in ZPA to send logs to Sumo Logic
+1. Configure Sumo Logic Hosted Collector and a Cloud Syslog Source.
+2. Configure App Connector in ZPA.
+3. Deploy an App Connector on a Supported Platform.
+4. Configure Log Receivers in ZPA to send logs to Sumo Logic.
 
-
-
-### Configure Sumo Logic Hosted Collector and a Cloud Syslog Source
+### Configure Sumo Logic hosted collector and a Cloud Syslog source
 
 To collect logs for ZPA, do the following in Sumo Logic:
 
@@ -55,22 +53,13 @@ For details see[ Best Practices](/docs/send-data/best-practices).
     * **Filter**: `(\<\d+\>1 - - - - - - \{)`
     * **Type**: `Mask messages that match`
     * **Mask String**: `{`
-
-
-
-
-
 5. Click **Save**.
 
-
 Copy and paste the **Token, Host and Port** in a secure location. You will need these when you configure ZPA LSS.
-
 
 ### Configure App Connector in ZPA
 
 Configure a new [App Connector](https://help.zscaler.com/zpa/configuring-connectors) in ZPA. Copy the provisioning key created/selected during App Connector configuration.
-
-
 
 ### Deploy an App Connector on a Supported Platform
 
@@ -81,7 +70,6 @@ Before you begin a deployment, read[ App Connector Deployment Prerequisites](htt
 The deployment process differs depending on the platform used for the App Connector. Zscaler recommends that App Connectors be deployed in pairs, to ensure continuous availability during software upgrades.
 
 To deploy the App Connector, see the [Deployment Guide](https://help.zscaler.com/knowledge-base-categories/supported-platforms-connectors) for your platform.
-
 
 ### Configure Log Receivers in ZPA to send logs to Sumo Logic
 
@@ -122,8 +110,6 @@ Edit the the log stream content, paste the following text in the beginning of th
 For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
 
 
-
-
 1. You can define a streaming **Policy** for the log receiver. For example, you can create a policy where the receiver will only capture logs for a specified segment group or a specific set of session status error codes. The criteria you can use is dependent upon the **Log Type** you selected. For various options to define a streaming policy, see [ZPA help](https://help.zscaler.com/zpa/configuring-log-receiver#Step2).
 2. Click **Next**.
 1. Review
@@ -141,13 +127,14 @@ For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](
 
 1. At this point, ZPA should start sending logs to Sumo Logic.
 
-## Installing the Zscaler Private Access app
+
+## Installing the Zscaler Private Access App
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Zscaler Private Access dashboards
+## Viewing ZPA Dashboards  
 
-{@import ../../reuse/apps/view-dashboards.md}
+{@import ../../reuse/filter-dashboards.md}
 
 ### Overview
 
