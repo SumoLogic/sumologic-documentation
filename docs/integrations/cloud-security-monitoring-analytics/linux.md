@@ -14,13 +14,12 @@ The Cloud Security monitoring and Analytics app for Linux ingests any distributi
 Follow the steps in this topic to install or uninstall a collector on Linux. See Installed Collectors for information on other OSs.
 
 
-## System Requirements
+## System requirements
 
 * Linux, major distributions 64-bit, or any generic Unix capable of running Java 1.8
 * Single core, 512MB RAM
 * 8GB disk space
 * Package installers require TLS 1.2 or higher.
-
 
 ## Collecting Data for the Linux Integration
 
@@ -283,7 +282,7 @@ Now that you have set up collection, install the Sumo Logic App for PCI Complian
 
 ### Security Monitoring - Overview
 
-**Dashboard description:** This dashboard provides an overview of security statistics relevant for Linux systems. It presents information about successful and failed logins, root login successes and failures, user accounts created and deleted, sudo attempts and total Services.
+The **Security Monitoring - Overview** dashboard provides an overview of security statistics relevant for Linux systems. It presents information about successful and failed logins, root login successes and failures, user accounts created and deleted, sudo attempts and total Services.
 
 **Use case:** Use this dashboard to monitor administrative actions (create, delete users) performed by end users, ensure proper services are running on all systems, detect attempts to change the system time, and verify that critical systems are up and running.You can also monitor excessive failed login attempts to detect attempts to break into the system.
 
@@ -292,7 +291,7 @@ Now that you have set up collection, install the Sumo Logic App for PCI Complian
 
 ### Security Analytics - Login Activity
 
-**Dashboard description: **This dashboard tracks login activity. It provides information about failed and successful user logins, and failed and successful root logins.
+The **Security Analytics - Login Activity** dashboard tracks login activity. It provides information about failed and successful user logins, and failed and successful root logins.
 
 **Use case:** Use this dashboard to monitor access to the linux computing environment. You can monitor failed and successful user logins.
 
@@ -301,7 +300,7 @@ Now that you have set up collection, install the Sumo Logic App for PCI Complian
 
 ### Security Analytics - Privileged Activity
 
-**Dashboard description: **This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
+The **Security Analytics - Privileged Activity** dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case:** Use this dashboard to monitor successful and failed access attempts to systems, especially with administrative privileges. It also helps monitor actions performed by users with administrative privileges.
 
@@ -310,7 +309,7 @@ Now that you have set up collection, install the Sumo Logic App for PCI Complian
 
 ### Security Monitoring - User, Service, and System Monitoring
 
-**Dashboard description: **This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
+The **Security Monitoring - User, Service, and System Monitoring** dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case:** Use this dashboard to monitor accounts created and deleted. It also helps monitor service usage and other system activity.
 
