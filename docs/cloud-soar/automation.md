@@ -20,7 +20,17 @@ App Central allows you to unlock the full Cloud SOAR potential. From this sectio
 
 While browsing available integrations, you can check the details and all the actions available and install it.
 
-### Update integrations
+### Install an integration from App Central
+
+1. Use the **Search** bar in the upper right of the **Integrations** tab to find integrations.
+1. Click **Download** in the lower left corner of the integration box.
+1. Click **Install** to install the integration. After installation is complete, **Installed** replaces the **Download** link in the corner of the integration box.
+1. Click **Show More** in the integration box to see if there are additional steps you need to follow to configure the installed integration. 
+   :::warning
+   Failure to perform these additional steps may result in the integration not working properly.
+   :::
+
+### Update an integration from App Central 
 
 Integrations in App Central display a version number. The version indicates when there is a change to the integration. If a newer version is available, you can  update the integration from  App Central by clicking **UPDATE**.<br/><img src={useBaseUrl('img/cloud-soar/integration-update.png')} alt="Update integration" width="400"/>
 
@@ -29,6 +39,33 @@ As soon as you click **UPDATE**, the new version is present inside the Integrati
 Following is an example of integration code before updating the integration:<br/><img src={useBaseUrl('img/cloud-soar/integration-update-before.png')} alt="Before update>" width="800"/>
 
 Following is an example of integration code after updating the integration:<br/><img src={useBaseUrl('img/cloud-soar/integration-update-after.png')} alt="After update" width="800"/>
+
+### Update integrations to include all available actions
+
+The purpose of this section is to provide you the information you need to update your integrations to include all types of actions that should be present in that integration, for example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Central to make sure you don't have any integrations without useful actions.
+
+Update integrations in App Central using keywords in the bottom left corner of the integration:
+* **UPDATE**. Appears on the installed integrations if there is a new version of that integration and with a new YAML configuration file. <br/><img src={useBaseUrl('img/cloud-soar/new-integration-update.png')} alt="Update" width="300"/>
+* **INSTALLED**: Appears when the integration is installed and updated to the latest version, and with the correct actions.<br/><img src={useBaseUrl('img/cloud-soar/integration-installed.png')} alt="Installed" width="300"/>
+* **DOWNLOAD**. Appears if this integration is not yet installed.<br/><img src={useBaseUrl('img/cloud-soar/integration-download.png')} alt="Download" width="300"/>
+
+#### Update an installed integration to show all actions
+
+Here an example of updating an installed integration. 
+
+1. In the Integrations section, check the actions present on the installed integration. In the example below, the only types of actions in the integration are Enrichment and Notification. <br/><img src={useBaseUrl('img/cloud-soar/installed-integration.png')} alt="Installed integration" width="800"/>
+1. Go to App Central and search for the same integration. Click the integration. <br/><img src={useBaseUrl('img/cloud-soar/installed-detail.png')} alt="Installed integration" width="300"/>
+1. On the dialog that appears, click **INSTALL**. <br/><img src={useBaseUrl('img/cloud-soar/install-already-installed-integration.png')} alt="Already installed integration" width="400"/>
+1. Go to the Integrations section and select the same integration. As you see in the image below, the Containment action type was added to the two types of actions that were there previously. <br/><img src={useBaseUrl('img/cloud-soar/integration-with-all-actions.png')} alt="All actions installed" width="800"/>
+
+#### Update an integration with a new version to show all actions
+
+If there are two different versions between the integration installed and that in App Central, the type of operation required to update the integration is **UPDATE**.
+1. In the Integrations section, open the installed integration in code mode to view the version. <br/><img src={useBaseUrl('img/cloud-soar/integration-code-mode.png')} alt="Integration code mode" width="800"/>
+1. Go to App Central and search for the same integration. Click **UPDATE**. <br/><img src={useBaseUrl('img/cloud-soar/integration-update-version.png')} alt="Integration update version" width="300"/>
+1. On the dialog that appears, click **Update**.  <br/><img src={useBaseUrl('img/cloud-soar/integration-update-2.png')} alt="Integration update" width="400"/>
+1. Go back to the Integrations section at the end of the update operation. Open the integration and check the if the version of that integration updated. <br/><img src={useBaseUrl('img/cloud-soar/integration-update-complete.png')} alt="Integration update complete" width="700"/>
+1. Check in the integration detail to see if it shows all the types of actions we expect. <br/><img src={useBaseUrl('img/cloud-soar/integration-all-actions.png')} alt="Integration with all actions" width="600"/>
 
 ### Certified integrations
 
