@@ -198,23 +198,13 @@ _sourceCategory=*cylance* "Event Type:" AppControl
 SHA256: *" as event_name, device_name, ip_address, action, action_type, filepath, sha nodrop
 ```
 
+## Installing the Cylance app​
 
-## Installing the Cylance App
+{@import ../../reuse/apps/app-install-v2.md}
 
-This section demonstrates how to install the Cylance App, as well as providing examples of each of the dashboards. The App preconfigured searches and dashboards provide easy-to-access analytic visualizations of your data.
+## Viewing Cylance dashboards​
 
-Now that you have set up log collection for Cylance, you can install the Cylance App.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Cylance Dashboards
-
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
+{@import ../../reuse/filter-dashboards.md}
 
 ### Overview
 

@@ -64,15 +64,13 @@ By having all your logs uploaded to an S3 bucket, you can then download logs aut
 
 For more information, see [Cisco Umbrella Documentation](https://docs.umbrella.com/managed-services/docs/msc-manage-logs).
 
-## Installing Cisco Umbrella app
+## Installing the Cisco Umbrella app​
 
-This section has instructions for installing the Cisco Umbrella App for Sumo Logic.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Cisco Umbrella dashboards​
 
-## Viewing the Cisco Umbrella dashboards
-
-{@import ../../reuse/apps/view-dashboards.md}
+{@import ../../reuse/filter-dashboards.md}
 
 ### Admin Activities
 
