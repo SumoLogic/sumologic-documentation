@@ -177,7 +177,7 @@ This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapi
   "title": "jQuery Vulnerability: CVE-2015-9251"
 }
 ```
-## Sample Query
+## Sample queries
 
 ```sql title="Assets by Type"
 _sourceCategory="Rapid7" assessed_for_policies // fetches assets
@@ -214,6 +214,7 @@ To set up [Cloud to Cloud Integration Rapid7 Source](/docs/send-data/hosted-coll
 ## Viewing Rapid7 dashboards​​
 
 {@import ../../reuse/apps/view-dashboards.md}
+
 ### Assets Overview
 
 The **Rapid7 - Assets Overview** dashboard provides a detailed summary of the assets within the Rapid7 source. It presents a comprehensive view of the total asset count, highlighting the top 10 vulnerable assets based on their risk score and the number of associated vulnerabilities. Additionally, this dashboard offers valuable information about the leading operating systems among assets, the distribution of assets by type, the geographic location of assets, and a summary of recent assets based on their most recent scan time.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Rapid7-Assets-Overview.png')} alt="Rapid7-Assets-Overview" width="750"/>

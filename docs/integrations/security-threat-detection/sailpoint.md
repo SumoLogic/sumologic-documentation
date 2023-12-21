@@ -18,8 +18,7 @@ The SailPoint Source ingests:
 * Events from the [Search API Endpoint](https://developer.sailpoint.com/idn/api/v3/search).
 * Users Inventory data from the [Public Identities API Endpoint](https://developer.sailpoint.com/idn/api/v3/get-public-identities).
 
-
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {
@@ -87,7 +86,7 @@ The SailPoint Source ingests:
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Authentication Event"
 _sourceCategory=Labs/sailpoint ipAddress
@@ -100,7 +99,6 @@ _sourceCategory=Labs/sailpoint ipAddress
 | count by latitude, longitude, country_code, country_name, region, city, postal_code
 | sort _count
 ```
-
 
 ```sql title="SailPoint Event Type"
 _sourceCategory=Labs/sailpoint
