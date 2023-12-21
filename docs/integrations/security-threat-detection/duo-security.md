@@ -25,16 +25,13 @@ When you generate the Duo credentials, you should do it for the Admin API applic
 
 To collect logs from the Duo Security App, use the new [Cloud to Cloud Integration for Duo Security App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source) to create the source and use the same source category while installing the app.
 
+## Installing the Duo Security app
 
-## Installing the Duo Security App and View the Dashboards
+{@import ../../reuse/apps/app-install-v2.md}
 
-This section provides instructions on how to install the Duo Security App, as well as an example of each of the App dashboards. The App dashboards provide insight into failed and successful authentications, administrator events, and outlier events.
+## Viewing Duo Security dashboards
 
-The Duo Security App helps you monitor your Duo account’s [authentication](https://duo.com/docs/adminapi#authentication-logs), [administrator](https://duo.com/docs/adminapi#administrator-logs), and [telephony logs](https://duo.com/docs/adminapi#telephony-logs).
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing the Duo Security Dashboards
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

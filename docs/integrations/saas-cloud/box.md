@@ -404,16 +404,13 @@ The following table shows the **config** parameters for a Box Source.
 ```
 
 
-## Installing the Box App
+## Installing the Box app
 
-Now that you have set up collection for Box, install the Sumo Logic App for Box to use the preconfigured searches and [dashboards](#viewing-box-dashboards) to analyze your data.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Box dashboards
 
-The Script Source is available for Linux or Windows environments with Java Runtime Environments.
-
-
-## Viewing Box Dashboards
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Collaborations and Shares
 
