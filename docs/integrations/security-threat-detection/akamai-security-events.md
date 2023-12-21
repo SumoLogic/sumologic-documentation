@@ -93,13 +93,11 @@ To begin collecting logs for the Sumo App for Akamai Security Events:
 
 This section has instructions for installing the Sumo Logic App for Akamai Security Events.
 
-{@import ../../reuse/apps/app-install.md}
+{@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing Akamai Security Events Dashboards
+## Viewing Akamai Security Events dashboards
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
-
-Note: You can use template variables to drill down and examine the data on a granular level.
+{@import ../../reuse/apps/view-dashboards.md}
 
 
 ### Overview
