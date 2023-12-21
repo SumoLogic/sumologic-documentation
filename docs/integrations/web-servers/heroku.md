@@ -33,7 +33,7 @@ The Sumo Logic app for Heroku is a logs only app that allows you to monitor your
 
 ### Sample query
 
-#### Log Query
+#### Log query
 
 ```sql title="Successful App Build Trend"
 _sourceCategory="Heroku" "Build Succeeded"
@@ -192,7 +192,7 @@ d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a
 
 These custom app **_sourceNames** will appear as values in the dashboard filter variable ``log_drain`` for the Heroku app dashboards.
 
-## Installing the Heroku App
+## Installing the Heroku app
 
 {@import ../../reuse/apps/app-install-v2.md}
 
@@ -202,7 +202,7 @@ While using the **Sumo Add-on**, the value **_sourceCategory=heroku** should be 
 
 ## Viewing Heroku Dashboards
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

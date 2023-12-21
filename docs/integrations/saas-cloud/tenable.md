@@ -36,7 +36,7 @@ This app uses [Tenable](/docs/send-data/hosted-collectors/cloud-to-cloud-integra
 
 Refer to the Tenable API documentation for [Vulnerabilities data](https://developer.tenable.com/reference/exports-vulns-request-export) and [Audit Events](https://developer.tenable.com/reference/audit-log-events) log messages.
 
-## Sample Query
+## Sample query
 
 ```sql title="Vulnerability Events"
 (_source=Tenable fqdn)
@@ -60,7 +60,7 @@ This section has instructions for installing the Symantec Web Security Service A
 
 ## Viewing Tenable dashboards​
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

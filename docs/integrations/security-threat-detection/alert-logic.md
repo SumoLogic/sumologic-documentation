@@ -55,7 +55,7 @@ This section has instructions for installing the Sumo Logic app for Alert Logic.
 
 ## Viewing Alert Logic dashboards​
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

@@ -134,7 +134,7 @@ For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](
 
 ## Viewing ZPA Dashboards  
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 
