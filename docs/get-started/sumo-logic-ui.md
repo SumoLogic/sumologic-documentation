@@ -1,109 +1,64 @@
 ---
 id: sumo-logic-ui
 title: Tour the Sumo Logic UI
+description: Get to know the Sumo Logic user interface.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
 
-## Using the Left Navigation Bar
+## Using the left navigation bar
 
-When you first log in, you'll land on the Sumo Logic Home page. The **Left Nav Bar** menu bar is a one-stop location where you can access the following:
+When you first log in, you'll land on the Sumo Logic **Home** page, which you can return to any time by clicking the **Home** icon at the top of the left-side navigation bar. The left nav bar is where you can access all of our products and services.
+
+<img src={useBaseUrl('/img/get-started/home.png')} alt="home.png" width="400"/>
+
 
 ### Access dashboards and searches
 
-The **Left Nav Bar** provides easy access to libraries, personal collections of dashboards, searches, and folders. Click the icons at the top of the Left Nav Bar (left to right) to view:
+The left-side navigation bar provides easy access to libraries, personal collections of dashboards, searches, and folders. Click the icons at the top of the left-side navigation bar to view:
 
-* **Recent** dashboards and searches
-* A list of your **Favorites** (dashboards and searches)
-* Your **Personal** library of dashboards and searches,
-* A **Library** of shared dashboards and searches (within your organization) respectively.
+* **Recent** dashboards and searches<br/><img src={useBaseUrl('/img/get-started/recent.png')} alt="recent.png" width="350"/>
+* A list of your **Favorites** (dashboards and searches)<br/><img src={useBaseUrl('/img/get-started/favs.png')} alt="favs.png" width="350"/>
+* A **Library** containing:
+   * Your **Personal** dashboards and searches.
+   * Your own **Installed Apps** from the App Catalog.
+   * Dashboards and searches shared within your organization.<br/><img src={useBaseUrl('/img/get-started/library.png')} alt="library.png" width="350"/>
 
-![TUI_Left_Nav.png](/img/get-started/ui/TUI_Left_Nav.png)
-
+<!--
 ### Search and switch browsing modes
 
-The top of the **left nav bar** is where you can search for content and
+The top of the left-side navigation bar is where you can search for content and
 users and easily switch browsing modes. 
 
-* Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
-* Switching browsing modes—Click the **Details** icon and make a selection from the dropdown menu.
+* Searching. Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
+* Switching browsing modes. Click the **Details** icon and make a selection from the dropdown menu.
 
 ![TUI_Search_Details.png](/img/get-started/ui/TUI_Search_Details.png)
+-->
 
-### Hide and show the left nav bar
+### Hide and show the left-side navigation bar
 
-You can easily hide the **left nav bar** to enlarge the working area. Then, just as easily show it again.
+You can easily hide the left-side navigation bar to enlarge your working area. Do do this, click the hamburger menu icon.
 
-* To hide the Left Nav Bar, click the **Arrow** in the top right corner.
+<img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="hamburger.gif" width="350"/>
 
-    ![TUI_NavBar_Hide.png](/img/get-started/ui/TUI_NavBar_Hide.png)
+To unhide it, click the hamburger menu icon again.
 
-* To show a hidden Left Nave Bar, click the **Menu** icon.
 
-    ![TUI_NavBar_Show.png](/img/get-started/ui/TUI_NavBar_Show.png)
+### Customize your environment with tabs
 
-### Access Apps, Admin features, and Help
+If you'd prefer to multitask - e.g., Logs session, dashboard, App Catalog, and settings page - with multiple tasks open at once, we recommend utilizing your web browser's tab grouping functionality. By adding your Sumo tab to a tab group, any new tabs opened within the Sumo Logic platform will automatically open in the same tab group. This also allows you to collapse the tab group to reclaim valuable real estate in your browser's tab bar.
 
-In the lower section of the left nav bar, you can access the [App Catalog](apps-integrations.md), [Manage Data and Administration](/docs/manage) features, and [get help](#get-help-docs-community-and-more). 
 
-![TUI_App-Admin-Help.png](/img/get-started/ui/TUI_App-Admin-Help.png)
+## Using the top navigation bar
 
-## Working with tabs
+### Access Apps, Admin settings, and Help
 
-Every page you select opens in a new tab, and the tabs are shown at the top of the UI. You can have up to 50 tabs open at one time. Each of the following selections opens a new tab:
+In the upper right-hand corner of the top navigation bar, you can access (from left to right) our [Help](#get-help-docs-community-and-more) options, [App Catalog](apps-integrations.md), data [Configuration](/docs/send-data), [Administration](/docs/manage) settings, [Notifications](account-settings-preferences.md), and personal [Preferences](account-settings-preferences.md). 
 
-* Saved search 
-* Dashboard
-* New log search, metrics visualization or Live Tail session
-* App catalog 
-* Manage pages 
-* Account page 
-
-![WTS_UI_Tabs.png](/img/get-started/ui/WTS_UI_Tabs.png)
-
-### Rename or close a tab
-
-You can customize tabs by renaming them, then close them when they are no longer relevant.
-
-To rename or close a tab, do the following:
-
-1. To rename a tab, double-click the name field, enter the new name, and press **Return**.
-
-    ![WTS_UI_Tab-rename.png](/img/get-started/ui/WTS_UI_Tab-rename.png)
-
-1. To close a tab, hover the cursor over the tab and click the X icon on the right.
-
-    ![WTS_UI_Tab-delete.png](/img/get-started/ui/WTS_UI_Tab-delete.png)
-
-### Customize your environment with tab options
-
-Log Search, Metrics, and Live Tail tabs have additional options you can use to customize your environment. The tabs even stay open when you sign out and sign back in again, so you can start where you left off. Clicking any of the following icons opens a tabbed window.
-
-![WTS_UI_LogSearch-Metrics-LiveTail.png](/img/get-started/ui/WTS_UI_LogSearch-Metrics-LiveTail.png)
-
-To access additional Log Search, Metrics, and Live Tail options, do the following:
-
-1. Hover the cursor over the tab **Details** icon.
-
-    ![WTS_Tab-options-details.png](/img/get-started/ui/WTS_Tab-options-details.png)
-
-1. Select the tab and choose an option from the dropdown menu.
-
-    ![tab options.png](/img/get-started/ui/tab-options.png)
-
-1. Use the left (**\<**) and right (**\\>**) arrows at each end of the Tab menu bar to move back and forth through the tabs.
-
-The following table lists the options available for the Search, Metrics, and Live Tail tabs.
-
-| Option | Search tab  | Metrics tab  | Live Tail tab |
-|:--|:--|:--|:--|
-| Pin | ![check](/img/reuse/check.png) | — | — |
-| Open a New Browser Tab | — | — | ![check](/img/reuse/check.png)  |
-| Rename | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
-| Duplicate | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
-| Close | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |  ![check](/img/reuse/check.png) |
-| Close Other Tabs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
-| Close All Tabs | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)  |
+<img src={useBaseUrl('/img/get-started/admin-config.png')} alt="admin-config.png" width="350"/>
 
 ## Mastering everyday tasks
 
@@ -129,47 +84,40 @@ This section provides information on how to perform basic everyday tasks using 
 
 This section shows you how to get started working with logs and metrics. The links provided direct you to more in-depth information.
 
-To launch a search, metrics visualization, or live tail session, do the following:
+To launch a search, metrics visualization, or Live Tail session, do the following:
 
 1. Go to the Sumo **Home** page.
-1. Do one of the following:
-   * Click **+New** in the Tabs menu and choose an option from the dropdown menu. 
-   * Click one of the following Home page icons:
-     * [Log Search](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
+1. Do one of the following: 
+   * Click one of the following left-side nav menu icons:
+     * [Logs](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
      * [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
-     * [Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
-
-    ![WTS_UI_Search-Metrics-LiveTail.png](/img/get-started/ui/WTS_UI_Search-Metrics-LiveTail.png)
+     * [Logs > Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
 
 ### View recent dashboards and searches 
 
-You see the Home landing page when you first log in to Sumo Logic. The Home page provides an at-a-glance view of the following:
+You see the **Home** landing page when you first log in to Sumo Logic. The Home page provides an at-a-glance view of the following:
 
 * recently opened dashboards
 * recently run searches
 * recommended dashboards 
 * pinned searches
 
-Click the **Home** icon at the far left of the Tab menu bar to return to the Home page at any time.
-
-![WTS_UI_Home_landing-page.png](/img/get-started/ui/WTS_UI_Home_landing-page.png)
+<img src={useBaseUrl('img/get-started/dashboard-searches.png')} alt="dashboard-searches.png" />
 
 ### View Favorites and add dashboards and searches to the list
 
-You can create a list of favorite dashboards and searches that appear in the left nav bar. Your Favorites list makes it easy to access your most frequently used dashboards and searches.
+You can create a list of favorite dashboards and searches that appear in the left-side navigation bar. Your Favorites list makes it easy to access your most frequently used dashboards and searches.
 
 To view Favorites and add to the list, do the following:
 
-1. To view a list of current Favorites, click the **Star** icon at the top of the left nav bar. A list of Favorites is shown below.<br/>  ![WTS_UI_View_list-of-Favorites.png](/img/get-started/ui/WTS_UI_View_list-of-Favorites.png)
+1. To view a list of your current Favorites, click the **Favorites** icon in the left-side navigation bar.
 1. To add a dashboard to the Favorites list, open the dashboard, select the **Details** icon at the top right of the menu bar and select **Favorite** from the dropdown list. <br/>  ![WTS_UI_Add-dashboard-to-Favorites.png](/img/get-started/ui/WTS_UI_Add-dashboard-to-Favorites.png)
 1. To add a search to the Favorites list, do the following:
    1. [Save the search](/docs/search/get-started-with-search/search-basics/save-search) (if not already saved) by clicking **Save As**, then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
    1. Click **Save**.
-   1. Click the three-dot icon and click **Favorite** from the provided options. 
+   1. Click the three-dot kebab icon and click **Favorite** from the provided options. <br/> ![favorite saved search ](/img/get-started/ui/favorite-saved-search.png)
 
-![favorite saved search ](/img/get-started/ui/favorite-saved-search.png)
-
-The dashboard and search appear in the Favorites list in the Left Nav Bar.
+The dashboard and search appear in the Favorites list in the left-side navigation bar.
 
 ![WTS_UI_Additions-to-Favorites-list.png](/img/get-started/ui/WTS_UI_Additions-to-Favorites-list.png)
 
@@ -177,18 +125,16 @@ The dashboard and search appear in the Favorites list in the Left Nav Bar.
 
 You can share dashboards, searches, and folders with users and roles. You can edit the sharing permissions at any time and share or revoke permissions as needed. You can share content from the following locations:
 
-* **left nav bar.** Recommended when you are familiar with the content and need to quickly share with another user.
+* **Left-side navigation bar.** Recommended when you are familiar with the content and need to quickly share with another user.
 * **Library.** Recommended when you need a detailed view of the content, who created it, and when it was last modified.
 
 For walkthrough instructions, go to the [Share Content](/docs/manage/content-sharing) page. 
 
 ### View content that is shared with you
 
-It's easy to view dashboards, searches, and folders that have been shared with you.
+To see dashboards, searches, and folders that have been shared with you, do the following:
 
-To see content that has been shared with you, do the following:
-
-1. Click the **Clock** icon at the top of the left nav bar.
+1. Click the **Clock** icon at the top of the left-side navigation bar.
 1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.
 
 ![Dash3.png](/img/get-started/ui/Dash3.png)
@@ -213,21 +159,21 @@ For information on how to manage pinned searches, see the [Pinned Searches](/doc
 
 ### Manage your personal account preferences
 
-You can manage your personal account settings from the **Preferences** page. These settings **only apply** to your account. Changes you make to your preferences take effect the next time you sign in, not during the current session.
+You can manage your personal account settings from the **Preferences** page. These settings apply only to your account. Changes you make to your preferences take effect the next time you sign in, not during the current session.
 
-To manage your personal Sumo account preferences, do the following:
+To manage your personal Sumo account preferences:
 
-1. At the very bottom of the Left Nav Bar, click your Account Name.
-1. In the pop-up dialog, select **Preferences**.<br/>  ![WTS_Preferences_LeftNav-option.png](/img/get-started/ui/WTS_Preferences_LeftNav-option.png)
+1. From the top navigation bar, click the person icon.
+1. In the dropdown, select **Preferences**.
 1. In the Preferences page that appears on the right, you can modify settings in the following areas:
-    * **My Profile**: username and password
-    * **My Security Settings**: enable and disable 2-step verification
-    * **My Access Keys**: add, edit, and remove access keys
-    * **My Preferences**: your account session settings
+    * **My Profile**. username and password.
+    * **My Security Settings**. enable and disable 2-step verification.
+    * **My Access Keys**. add, edit, and remove access keys.
+    * **My Preferences**. your account session settings.
 
 For more information, see the [Preferences Page](account-settings-preferences.md).
 
-### Get help: docs, community, and more
+### Get Help: docs, community, and more
 
 Whenever you have a question, there are a number of ways in which you can get the answers you need:
 
@@ -252,7 +198,7 @@ Sumo Logic Administrators (Admins) are responsible for managing data collectio
 
 To manage data in Sumo Logic, do the following:
 
-1. Go to the **left nav bar** and click **Manage Data**.<br/>  ![manage-data.png](/img/get-started/ui/manage-data.png)
+1. Go to the left-side navigation bar and click **Manage Data**.<br/>  ![manage-data.png](/img/get-started/ui/manage-data.png)
 1. Choose from the following, as needed:
     * **Collection.** [Manage collectors and sources](/docs/send-data/collection).
     * **Logs.** Manage [fields](/docs/manage/fields.md), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions-data-tiers), [scheduled views](/docs/manage/scheduled-views), [connections](/docs/manage/connections-integrations), and [data forwarding](/docs/manage/data-forwarding).
@@ -265,7 +211,7 @@ Sumo Logic administrators (admins) manage user accounts, user roles, and securi
 
 To administer Sumo Logic accounts, users, and security, do the following:
 
-1. Go to the **left nav bar** and click **Administration**.<br/> ![WTS_UI_Administration_menu-options.png](/img/get-started/ui/WTS_UI_Administration_menu-options.png)
+1. Go to the top navigation bar and click **Administration**.<br/> ![WTS_UI_Administration_menu-options.png](/img/get-started/admin.png)
 1. Choose from the following, as needed:
     * **Account.** [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
     * **Users and Roles**. [Manage users and roles](/docs/manage/users-roles).
@@ -276,5 +222,3 @@ To administer Sumo Logic accounts, users, and security, do the following:
 Now that you're familiar with the layout and features in the Sumo Logic UI, you're ready to ramp up your Sumo skills with [self-paced training](https://www.sumologic.com/self-paced-training/).
 
 You don't have to stop there either. You can take the next step and become Sumo Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page and click the **Certification** tab. See [Certification FAQs](/docs/get-started/faq#certification-faq) for more information.
-
-![WTS_UI_Certification.png](/img/get-started/ui/WTS_UI_Certification.png)
