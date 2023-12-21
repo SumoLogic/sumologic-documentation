@@ -70,7 +70,7 @@ _sourceCategory="Incapsula"
 ```
 
 
-## Collecting Logs for the Imperva-Incapsula WAF App
+## Collecting Logs for the Imperva-Incapsula WAF app
 
 This section provides instructions on configuring log collection for the Imperva - Incapsula Web Application Firewall App, as well as query samples.
 
@@ -98,14 +98,13 @@ To configure log collection for Sumo Logic, do the following:
 1. Add a [Sumo Logic Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector)
 2. Configure [Amazon S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
 
+## Installing the Imperva-Incapsula WAF app
 
-## Installing the Imperva-Incapsula WAF App
+{@import ../../reuse/apps/app-install-v2.md}
 
-Now that you have set up collection for Imperva Incapsula - Web Application Firewall, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+## Viewing Imperva-Incapsula WAF dashboards
 
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Imperva-Incapsula WAF Dashboards
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### WAF - Overview
 

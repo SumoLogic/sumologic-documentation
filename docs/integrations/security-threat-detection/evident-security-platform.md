@@ -265,15 +265,13 @@ For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-mes
 4. Select the **Raw message delivery** check box.
 5. Click **Set subscription attributes.**
 
+## Installing the Evident.io ESP app
 
+{@import ../../reuse/apps/app-install-v2.md}
 
-## Installing the Evident.io ESP App
+## Viewing Evident.io ESP dashboards
 
-Now that you have configured Evident.io ESP, install the Sumo Logic App for Evident.io ESP to take advantage of the preconfigured searches and dashboards to analyze your data.
-
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Evident.io Dashboards
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Evident.io ESP - Overview
 

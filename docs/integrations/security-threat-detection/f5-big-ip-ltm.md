@@ -125,19 +125,13 @@ curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:
 ```
 
 
-## Installing the F5 - BIG-IP LTM App
+## Installing the F5 - BIG-IP LTM app
 
-This section provides instructions for installing the F5 - BIG-IP LTM App, as well as examples and explanations for each of the predefined dashboards.
+{@import ../../reuse/apps/app-install-v2.md}
 
-You can use [these instructions](/docs/get-started/library) to import the JSON into your Sumo Logic environment.
+## Viewing F5 - BIG-IP LTM dashboards
 
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing F5 - BIG-IP LTM Dashboards    
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 
@@ -153,7 +147,7 @@ Use this dashboard to:
 
 ### Threat Analysis
 
-**F5 - BIG-IP LTM - Threat Analysis **dashboard provides an overview of the number of threats, their geographic location, and a breakdown by source using the Threat Intel App. This dashboard also provides details on the severity of threats, as well as the network, user name, and country of origin.
+**F5 - BIG-IP LTM - Threat Analysis** dashboard provides an overview of the number of threats, their geographic location, and a breakdown by source using the Threat Intel App. This dashboard also provides details on the severity of threats, as well as the network, user name, and country of origin.
 
 Use this dashboard to:
 * Review details on potential threats and IOCs for incoming requests to F5 LTM.
@@ -165,7 +159,7 @@ Use this dashboard to:
 
 ### Metrics and Connections
 
-**F5 - BIG-IP LTM - Metrics and Connections **dashboard provides an at-a-glance view of TCP connections, network traffic by host, and Traffic Manager resource usage.
+**F5 - BIG-IP LTM - Metrics and Connections** dashboard provides an at-a-glance view of TCP connections, network traffic by host, and Traffic Manager resource usage.
 
 Use this dashboard to:
 * Review details of incoming TCP connection requests.
@@ -177,7 +171,7 @@ Use this dashboard to:
 
 ### Outlier Analysis
 
-**F5 - BIG-IP LTM - Outlier Analysis **dashboard provides an at-a-glance view of TCP connection and login request outliers, along with network traffic and Traffic Manager resource usage.
+**F5 - BIG-IP LTM - Outlier Analysis** dashboard provides an at-a-glance view of TCP connection and login request outliers, along with network traffic and Traffic Manager resource usage.
 
 **Use this dashboard to** find any outliers in your incoming traffic, CPU and memory usage.
 
@@ -185,7 +179,7 @@ Use this dashboard to:
 
 ### User Session Events
 
-**F5 - BIG-IP LTM - User Session Events **dashboard provides an at-a-glance view of user activity and their geographic location. This dashboard also provides information on login trends, operating systems used, user session IDs, and users by their application profile.
+**F5 - BIG-IP LTM - User Session Events** dashboard provides an at-a-glance view of user activity and their geographic location. This dashboard also provides information on login trends, operating systems used, user session IDs, and users by their application profile.
 
 Use this dashboard to:
 * View the geographic location of active users.
