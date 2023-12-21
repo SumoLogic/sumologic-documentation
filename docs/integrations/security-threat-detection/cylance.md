@@ -14,7 +14,7 @@ The Cylance App enables you to analyze Cylance security events by type, status, 
 Cylance applies artificial intelligence, algorithmic science, and machine learning to cyber security, and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the threat events data from Cylance and other data sources, you can reduce your security risk and improve your overall security posture.
 
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Cylance uses the supports the following event and log types:
 * Device (Device Mgmt - Register, Remove, Updates, SystemSecurity)
@@ -29,7 +29,7 @@ The Sumo Logic App for Cylance uses the supports the following event and log typ
 For details on the format and definitions, refer to [Cylance](https://www.cylance.com/) documentation.
 
 
-### Sample Log Message
+### Sample log message
 
 ```json
 850 <44>1 2019-02-27T04:57:20.4390000Z sysloghost CylancePROTECT - - - Event Type:
@@ -43,9 +43,7 @@ Threat Classification: Trusted - Local, Device Id: 81-89cec180584-1fede63f-46041
 Policy Name: Allowed Anywhere Internally
 ```
 
-
-
-### Sample Query
+### Sample query
 
 The following query is from the **Event Name Trend** panel of the **Cylance - AuditLog Dashboard**.
 
@@ -68,7 +66,7 @@ _sourceCategory=*cylance* "Event Type:" AuditLog
 | transpose row _timeslice column event_name
 ```
 
-## Collecting Logs for the Cylance App
+## Collecting Logs for the Cylance app
 
 This procedure demonstrates how to collect logs from Cylance into Sumo Logic. Cylance applies artificial intelligence, algorithmic science, and machine learning to cyber security, and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the threat events data from Cylance and other data sources, you can reduce your security risk and improve your overall security posture.
 
@@ -204,11 +202,11 @@ SHA256: *" as event_name, device_name, ip_address, action, action_type, filepath
 
 ## Viewing Cylance dashboards​
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 
-The **Cylance - Overview Dashboard** a high-level view of threat incidents experienced on your network. The dashboard panels provide at-a-glance graphs with details and analytics on exploit control violation types, zones, threat classifications, devices, threat file types, event types and trends, event outliers, and event time compare trends.
+The **Cylance - Overview** dashboard povides a high-level view of threat incidents experienced on your network. The dashboard panels provide at-a-glance graphs with details and analytics on exploit control violation types, zones, threat classifications, devices, threat file types, event types and trends, event outliers, and event time compare trends.
 
 Use this dashboard to:
 * Analyze summaries of each prevention component, such as script control, memory exploit protection, device control, application control, AI based threat classification, and user actions performed from Cylance Web Console.
@@ -218,7 +216,7 @@ Use this dashboard to:
 
 ### Threat
 
-The **Cylance - Threat Dashboard** provides a high-level view of the threats experienced on your network. Dashboard panels display graphs and detailed information with the number of events, top event names, status, file types, unique threats, severity, hosts with the most threats, threat origination, classification, and blocked threats.
+The **Cylance - Threat** dashboard provides a high-level view of the threats experienced on your network. Dashboard panels display graphs and detailed information with the number of events, top event names, status, file types, unique threats, severity, hosts with the most threats, threat origination, classification, and blocked threats.
 
 Use this dashboard to:
 * Determine hosts (IP Address, device names) and zones affected by various threats identified and handled in the system.
@@ -229,7 +227,7 @@ Use this dashboard to:
 
 ### Threat Classification
 
-The **Cylance - Threat Classification Dashboard** provides an insightful view of the types of threats experienced on your network. Dashboard panels are a mixture of graphs and detailed information on events, event names, threat class, subclass trends, safe files, malware files, and an event breakdown.
+The **Cylance - Threat Classification** dashboard provides an insightful view of the types of threats experienced on your network. Dashboard panels are a mixture of graphs and detailed information on events, event names, threat class, subclass trends, safe files, malware files, and an event breakdown.
 
 Use this dashboard to:
 * Determine how threats in your organization are analyzed and classified by Cylance Research Team.
@@ -241,7 +239,7 @@ Use this dashboard to:
 
 ### Memory Exploit Attempts
 
-The **Cylance - Memory Exploit Attempts Dashboard** provides a high-level view of threats on your network that attempt to exploit memory. Dashboard panels show detailed information on events, violations, blocked and terminated processes, policies, users, hosts, actions, and event trends by action.
+The **Cylance - Memory Exploit Attempts** dashboard provides a high-level view of threats on your network that attempt to exploit memory. Dashboard panels show detailed information on events, violations, blocked and terminated processes, policies, users, hosts, actions, and event trends by action.
 
 Whenever the agent detects certain hard-coded behaviors considered to be indicative of a compromise, an event is communicated to the service before the hooked API function is allowed to complete. The service then responds with an action for the agent to take, such as:
 
@@ -260,7 +258,7 @@ Use this dashboard to:
 
 ### Device
 
-The **Cylance - Device Dashboard** provides insights into the devices on your network that receive in threats. Dashboard panels provide information on unique device names, IP addresses, MAC addresses, users, hosts, operating systems, event names, and event trends.
+The **Cylance - Device** dashboard provides insights into the devices on your network that receive in threats. Dashboard panels provide information on unique device names, IP addresses, MAC addresses, users, hosts, operating systems, event names, and event trends.
 
 Use this dashboard to:
 * Analyze devices under protection by Cylance agent.
@@ -273,7 +271,7 @@ Use this dashboard to:
 
 ### Device Control
 
-The **Cylance - Device Control Dashboard** provides insights into external devices involved in threats on your network. Dashboard panels provide graphs and detailed information on events, hosts, unique external devices, event and action trends, and device control event details.
+The **Cylance - Device Control** dashboard provides insights into external devices involved in threats on your network. Dashboard panels provide graphs and detailed information on events, hosts, unique external devices, event and action trends, and device control event details.
 
 Use this dashboard to:
 * Monitor external devices (like USB mass storage device) connected to your environment.
@@ -289,7 +287,7 @@ You can set an exception for a Vendor ID. Use a Product ID and Serial Number for
 
 ### Script Control
 
-The **Cylance - Script Control Dashboard** provides insights regarding scripts on your network. Dashboard panels provide graphs and detailed information on events, devices, interpreters, users, zones, hosts, files, and event trends.
+The **Cylance - Script Control** dashboard provides insights regarding scripts on your network. Dashboard panels provide graphs and detailed information on events, devices, interpreters, users, zones, hosts, files, and event trends.
 
 Script control injects into a script interpreter (responsible for the execution of scripts). By injecting into the interpreter, the agent is able to detect the script and script path before the script is executed.
 
@@ -306,7 +304,7 @@ Use this dashboard to:
 
 ### AuditLog
 
-The **Cylance - AuditLog Dashboard** has easy to access information about audit logs for your network. Dashboard panels provide high-level graphs and detailed information showing the number of events, event names and trends, users and user geographic locations, source IPs, and a list of recent events.
+The **Cylance - AuditLog** dashboard has easy to access information about audit logs for your network. Dashboard panels provide high-level graphs and detailed information showing the number of events, event names and trends, users and user geographic locations, source IPs, and a list of recent events.
 
 Use this dashboard to:
 * Monitor user activity performed from Cylance Web Console.

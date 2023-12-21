@@ -13,7 +13,7 @@ The Sumo Logic app for Active Directory JSON (2012+) helps you monitor your Wind
 
 We recommend using the Active Directory JSON App in combination with the Windows JSON App.
 
-## Log Types
+## Log types
 
 Standard Windows event channels include:
 * Security
@@ -22,7 +22,7 @@ Standard Windows event channels include:
 
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
-### Sample Log Messages
+### Sample log message
 
 ```json
 {
@@ -64,7 +64,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 ```
 
 
-### Sample Query
+### Sample query
 
 The sample query is from **Successes Vs Failures** panel from [Active Directory Service Failures](#service-failures) dashboard.
 
@@ -78,7 +78,7 @@ _sourceCategory=Labs/windows-jsonformat
 | transpose row _timeslice column status
 ```
 
-## Collecting Logs
+## Collecting logs
 
 This section provides instructions on configuring log collection for the Active Directory JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
 
@@ -102,7 +102,7 @@ For more information on local or remote Windows Event Log Source configuration, 
 
 ## Viewing Active Directory JSON dashboards​
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Service Activity
 

@@ -16,17 +16,16 @@ The Cisco ASA App gives you insight into website visitor patterns, monitors infr
 * Denied connections
 
 
-## Log Types
+## Log types
 
 The Cisco ASA App assumes logs from the Cisco Adaptive Security Appliance (ASA) firewall product.
 
 
-### Sample Log
+### Sample log
 
 ```json
 Tue Aug 15 23:30:09 %ASA-6-302016: Teardown UDP connection 40 for outside:44.44.4.4/500 to inside:44.44.2.2/500 duration 0:02:02 bytes 1416
 ```
-
 
 ## Configuring Log Collection for the Cisco ASA App
 
@@ -104,7 +103,7 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 
 ## Viewing Cisco ASA dashboards​
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 
