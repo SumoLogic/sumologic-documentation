@@ -15,6 +15,7 @@ You may also be interested in the [Sumo Logic App for Windows Cloud Security Mon
 :::
 
 ## Log types
+## Log types
 
 The Windows JSON App assumes events are coming from Windows Event Log Sources in JSON format. It does not work with third party logs.
 
@@ -77,6 +78,7 @@ _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit
 ```
 
 ## Collecting Logs for the Windows JSON app
+## Collecting Logs for the Windows JSON app
 
 This section provides instructions on configuring log collection for the Windows JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
 
@@ -93,11 +95,9 @@ For more information on local or remote Windows Event Log Source configuration, 
 
 ## Installing the Windows JSON app
 
-This section has instructions for installing the Sumo Logic JSON App for Windows and descriptions of each of the app dashboards.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Windows JSON Dashboards
+## Viewing Windows JSON dashboards​
 
 {@import ../../reuse/apps/view-dashboards.md}
 
@@ -146,7 +146,6 @@ Use this dashboard to:
 * Monitor error trends and outliers to ensure they are within acceptable limits to decide the next step.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Windows_EventErrors.png')} alt="Windows JSON dashboards" />
-
 
 ### Application
 

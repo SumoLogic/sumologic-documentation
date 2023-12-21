@@ -182,7 +182,6 @@ For details on the log format and definitions, refer to Evident.io documentation
 
 ### Sample query
 
-
 ```sql title="Alerts by Status"
 _sourceCategory=security_evident
 | json "data.id", "data.attributes" as id, data_attrib
@@ -198,7 +197,6 @@ _sourceCategory=security_evident
 ## Collecting Logs for the Evident.io ESP app
 
 This page demonstrates how to configure log collection for the Evident.io ESP App, and provides an example log message and query.
-
 
 ### Step 1. Add a Sumo Logic Collector and Source
 
@@ -277,7 +275,7 @@ For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-mes
 
 **New Risks. **Displays the number of new risks in a single value chart over the previous 24 hours.
 
-**New Risks by Severity. **Shows the severity of new risks in a stacked column chart on a timeline for the last 24 hours.
+**New Risks by Severity.** Shows the severity of new risks in a stacked column chart on a timeline for the last 24 hours.
 
 **New High Severity Risks.** Provides details on the new high severity risks in a table chart over the last 24 hours.
 
@@ -288,7 +286,7 @@ For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-mes
 **Total Risks over Time. **Shows a trendline of all alerts over the last 14 days in a stacked area chart.
 
 
-### Evident.io ESP - Detailed Risks
+### Detailed Risks
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Evident.ioESP_DetailedRisks_Dashboard.png')} alt="Evident.io ESP dashboards" />
 

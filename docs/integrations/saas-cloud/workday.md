@@ -11,17 +11,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Workday is a cloud-based ERP system that manages the business processes and allows organizations to use a system integrated application. Workday is a coherent cloud ERP system for financial analysis, analytical solutions, HCM suites, and better business processes.
 
-The Sumo Logic App for Workday provides insights into authentication activity, user activity, and administrator activity. The pre-configured dashboards help identify events that identify compliance and incident reporting, common security events, and real-time analysis of suspicious activities.
+The Sumo Logic app for Workday provides insights into authentication activity, user activity, and administrator activity. The pre-configured dashboards help identify events that identify compliance and incident reporting, common security events, and real-time analysis of suspicious activities.
 
-
-## Log Types
+## Log types
 
 The Sumo Logic App for Workday collects all logs in JSON format. It uses the following two types of logs:
 * SignOn Logs
 * Activity Logs
 
-
-### Sample Log Messages
+### Sample log messages
 
 Workday App logs are all in JSON format. The Workday App uses two types of logs and this section provides examples of the log types.
 
@@ -60,9 +58,7 @@ Workday App logs are all in JSON format. The Workday App uses two types of logs 
 }
 ```
 
-
-
-### Sample Query
+### Sample query
 
 The query sample provided in this section is from the **Failed Login Reasons** panel of the **Workday - Login Activity** dashboard.
 
@@ -86,7 +82,7 @@ Sumo Logic collects data from the User Activity and Signon Activity Reports via 
 
 User activity data is collected through the Workday Activity Logs API. To ensure that no sensitive information is being sent to Sumo Logic via this report, please run the “User Activity” Report and check the columns (specifically the Target column). If the data contains sensitive info, you can enable data masking for the security group created in the steps outlined below by following the instructions in [this doc](https://doc.workday.com/reader/Z9lz_01hqDMDg6NSf7wCBQ/uHBXsJmAzuJ2QFVU6D3o2w).
 
-## Collecting Logs for the Workday App
+## Collecting Logs for the Workday app
 
 This section explains how to collect logs from Workday and ingest them into Sumo Logic for use with the Workday App predefined dashboards and searches.
 
@@ -515,18 +511,13 @@ Traceback (most recent call last):
 Exception: Invalid config
 ```
 
+## Installing the Workday app
 
-## Installing the Workday App
+{@import ../../reuse/apps/app-install-v2.md}
 
-This section provides instructions on how to install the Workday App, as well as examples of each of the dashboards. The App's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
+## Viewing Workday dashboards​
 
-{@import ../../reuse/apps/app-install.md}
-
-## Viewing Workday Dashboards
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+{@import ../../reuse/filter-dashboards.md}
 
 ### Overview
 
@@ -538,7 +529,6 @@ Use this dashboard to:
 * Quickly identify if users are logging in from expected locations and using supported devices.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Workday-Overview.png')} alt="workday dashboards" />
-
 
 ### Login Activity
 
@@ -561,7 +551,6 @@ Use this dashboard to:
 * Get insights into CRUD(Create/Read/Update/Delete) and download activity Quickly identify if login and user activity are originating from known malicious IP addresses.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Workday-User-Activity.png')} alt="workday dashboards" />
-
 
 ### System User Activity
 

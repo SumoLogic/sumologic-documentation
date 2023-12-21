@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Observable.png')} alt="thumbnail icon" width="75"/>
 
-The Observable Networks App allows you to monitor your Observable Networks deployment from Sumo Logic. The App Overview Dashboard provides insight to high-level data about your network.
+The Observable Networks app allows you to monitor your Observable Networks deployment from Sumo Logic. The App Overview Dashboard provides insight to high-level data about your network.
 
 From Sumo Logic, you may also set up forwarding for log monitoring and authentication logs to Observable Networks. With log monitoring, Observable Networks can notify you when it detects that a Collector is missing, exposing gaps in your log coverage. Authentication log forwarding allows for more accurate and detailed alerts, using Sumo Logic log data to provide extra richness to Observable's Dynamic Endpoint Modeling algorithms.
 
@@ -21,11 +21,11 @@ For more information, visit [Observable Networks (via Cisco)](https://www.cisco.
 Before you begin, your Observable Networks portal must be properly configured. Contact [support@obsrvbl.com](/docs/integrations/security-threat-detection/observable-networks) if you have any questions.
 :::
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Observable Networks assumes Observable Networks formatted logs, which provide one JSON message per request.
 
-## Collect Logs for the Observable Network App
+## Collect Logs for the Observable Network app
 
 This section provides instructions for configuring log collection for the Observable Network App, as well as relevant log and query samples.
 
@@ -35,11 +35,9 @@ Observable Networks is a provider of network security technology and advanced th
 
 For more information, visit [Observable Networks (via Cisco)](https://www.cisco.com/c/en/us/services/acquisitions/observable-networks.html).
 
-
 ### Prerequisites
 
 From your Observable Networks portal, click **Settings** (gear icon) > **Integrations** > **Sumo Logic** > **Settings** and enter the Access ID, Access Key, and Source URL on the Sumo Logic Settings page. Before you begin, your Observable Networks portal must be properly configured. If you have any questions, contact [support@obsrvbl.com](mailto:support@obsrvbl.com).
-
 
 ### Configure a Collector
 
@@ -50,7 +48,6 @@ Create an access key:
 1. In Sumo Logic, go to **Manage Data** > **Collection** > **Collection**.
 2. Click **Access Keys**.
 3. Add a new access key called Observable Networks, then save the new **Access ID** and **Access Key** values.
-
 
 ### Configure a Source
 
@@ -99,7 +96,7 @@ To parse authentication logs:
 2. From the **Auth.log** dropdown, select the log configuration that represents the auth.log source.
 3. Click **Save**.
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {
@@ -143,7 +140,7 @@ To parse authentication logs:
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Recent Flow Counts"
 _sourceCategory=observable | json field=_raw "obsrvbl_type", "effective_session_count" as type, session_count
@@ -164,16 +161,15 @@ _sourceCategory=observable
 
 ## Install the Observable Networks App
 
-This section provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and dashboards allow you to visually analyze your Observable Networks data at a glance.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Observable Networks dashboards​
 
-## Viewing Observable Networks Dashboards
+{@import ../../reuse/filter-dashboards.md}
 
 ### Overview
 
 The Observable Networks Overview Dashboard is intended to provide a high level at-a-glance view into your network.
-
 
 **Effective Session Count.** Displays the number of effective "flows" ("sessions") as a single value chart for the last hour.
 

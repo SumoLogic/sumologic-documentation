@@ -13,7 +13,6 @@ The F5 - BIG-IP  Local Traffic Manager (LTM) App helps you optimize and secure n
 
 The Sumo Logic App for F5 - BIG-IP Local Traffic Manager (LTM) helps you optimize and secure network traffic patterns coming into your data center using the F5 BIG-IP platform. This App analyzes traffic flowing through the F5 Local Traffic Manager (LTM) and automatically detects threats using Sumo Logic Threat Intel. The Sumo Logic App for F5 - BIG-IP LTM provides pre-configured dashboards that allow you to monitor traffic details by application, facility, pool, active and non-responding hosts, connections, and logins. It also reports LTM CPU, disk usage, and outliers in LTM activities and traffic patterns.
 
-
 ## Log types
 
 The F5 - BIG-IP Local Traffic Manager (LTM) App uses event logs with payloads, as described in this [document.](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/output-example.html#ltm-request-log)
@@ -69,9 +68,7 @@ Telemetry Streaming (TS) is a software RPM file. Installing it on BIG-IP enables
 
 Telemetry Streaming uses a declarative model, meaning you provide a JSON declaration rather than a set of imperative commands. For more information on Telemetry Streaming, see [here](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/).
 
-
-
-### Configure Log Collection for the F5 - BIG-IP LTM App
+### Configure Log Collection for the F5 - BIG-IP LTM app
 
 #### Prerequisite
 
@@ -133,7 +130,7 @@ curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:
 
 ### Overview
 
-**F5 - BIG-IP LTM - Overview** dashboard provides details on the network traffic for applications, pools, and its status. It also provides information about violations triggered and their geo-location.
+The **F5 - BIG-IP LTM - Overview** dashboard provides details on the network traffic for applications, pools, and its status. It also provides information about violations triggered and their geo-location.
 
 Use this dashboard to:
 * View geographic locations of incoming client requests.
