@@ -108,13 +108,13 @@ To verify the logs in Palo Alto Networks, do the following:
 3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source), such as: `_sourceCategory = NW/PAN/V10`.
 
 
-## Installing the PAN Firewall 10 Security App
+## Installing the PAN Firewall 10 Security app
 
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing PAN Firewall 10 Security dashboards​
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Security Analytics - Communication via Critical Ports
 

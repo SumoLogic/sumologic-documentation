@@ -387,7 +387,7 @@ Your path may be different, depending on where you deployed SumoJanus. Salesforc
 
 ## Viewing Salesforce dashboards​
 
-{@import ../../reuse/filter-dashboards.md}
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 
