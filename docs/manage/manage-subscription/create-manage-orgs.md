@@ -107,9 +107,9 @@ Provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning 
 
 This section has information about how you can monitor credit allocations and consumption across all your orgs, and for each child org.
 
-### View child credit usage by category
+### View overall credit usage by category
 
-You can view the usage by child orgs on the **Account Overview** page. Usage for the following categories is shown:
+You can view the usage by orgs in the **Overall Usuage** tab on the **Account Overview** page. Usage for the following categories is shown:
 
 * **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
 * **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
@@ -121,14 +121,45 @@ You can view the usage by child orgs on the **Account Overview** page. Usage for
 * **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier.
 * **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage).
-  <img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" />
 
-### View cross-org credits allocation and consumption
+<img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" style={{border:'1px solid black'}} />
 
-You can see what portion of your subscription credits have been allocated and consumed on the **Administration** > **Organizations** page.
-* The **Usage %** column indicates what percentage of overall subscription credits that was allocated to a child org has been consumed.
-* The **Credits Capacity** line at the bottom of the page shows the count and percentage of credits, out of your total subscription credits, that have been allocated to child orgs, and the number of allocated credits that have been consumed. 
-    ![cross-org-allocations.png](/img/subscriptions/orgs-page-5.png)
+### View child credit usage by category
+
+You can view the usage of individual child orgs in the **Child Orgs** tab on the **Account Overview** page. Usage for the following categories is shown:
+
+* The **Credit Allocation** tile indicates the total number of credits allocated.
+* The **Total Credit Usuage** tile shows amount of credits consumed out of the total allocated credits.
+* The **Usage Forecast** tile indicated the total consumption of the credits by the end of contract period according to the current consumption rate.
+* The **Allocated Credits** column indicates the total number of credits allocated to the selected child org.
+* The **Total Credits Used** column indicates the total amount of credits consumed for the selected child org.
+* The **Usage %** column indicates the percentage of overall subscription credits that was allocated to a child org has been consumed.
+* The **Forecast** column indicates the percentage of total consumption of the credits by the end of contract period according to the current consumption rate for a selected child org.
+* The **Usage % WOW** column indicates the percentage of week on week subscription credits that was allocated to a child org has been consumed.
+
+<img src={useBaseUrl('img/subscriptions/child-org.png')} alt="your description" style={{border:'1px solid black'}} />
+
+On clicking any of the selected Child Org, you can view the usage for the following categories:
+
+* **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
+* **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
+* **Infrequent Ingest**. Credits used for logs ingested into the Infrequent tier.
+* **Infrequent Scan**. Credits used to scan data for Infrequent tier searches.
+* **Tracing Ingest**. Credits used for traces ingested.
+* **Metrics Ingest**. Credits used for metrics ingested.
+* **Storage**. Credits used for log storage in the Continuous and Frequent tiers.
+* **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
+* **Infrequent Storage**. Credits used for log storage in the Infrequent tier.
+
+<img src={useBaseUrl('img/subscriptions/child-credit-usage.png')} alt="your description" style={{border:'1px solid black'}} />
+
+## Access a child org
+
+If a [custom subdomain](manage-org-settings.md#set-up-a-customsubdomain) has been configured for a child org, and you have an account in the org, you can access it from the **Organizations** UI.
+
+1. Go to **Administration** > **Organizations**.
+1. Click the row for the org you want to access.
+1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="your description" width="450"/>
 
 ### View child org credits allocation and usage
 
@@ -147,14 +178,6 @@ You can see what portion of your subscription credits have been allocated and co
      * **Usage %**. The percentage of credits allocated to the org that have been used for the Product Variable.
      * **Units**. Shows the volume of log ingest in GB or the DPM (metrics) that is equivalent to the credits used for the Product Variable.        
     ![usage-details-3.png](/img/subscriptions/usage-details-3.png)
-
-## Access a child org
-
-If a [custom subdomain](manage-org-settings.md#set-up-a-customsubdomain) has been configured for a child org, and you have an account in the org, you can access it from the **Organizations** UI.
-
-1. Go to **Administration** > **Organizations**.
-1. Click the row for the org you want to access.
-1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="your description" width="450"/>
 
 ## Audit logging for organizations
 
