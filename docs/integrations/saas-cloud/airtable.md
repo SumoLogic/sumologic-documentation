@@ -27,7 +27,7 @@ The Sumo Logic app for Airtable consumes Audit logs from your Airtable Enterpris
 
 To understand how to access detailed records of changes made to the Airtable Enterprise account, refer to the [Airtable Audit logs](https://support.airtable.com/docs/how-to-access-enterprise-audit-logs#interpreting-audit-logs) documentation. This documentation provides information on the different types of logs that are available, how to access them, and what information they contain.
 
-### Sample log messagea
+### Sample log message
 
 ```json
 {
