@@ -8,27 +8,29 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
 
-## Using the left navigation bar
+## Using the left navigation panel
 
-When you first log in, you'll land on the Sumo Logic **Home** page, which you can return to any time by clicking the **Home** icon at the top of the left-side navigation bar. The left nav bar is where you can access all of our products and services.
+The left-side navigation panel is where you can access all of our products and services.
+
+When you first log in, you'll land on the Sumo Logic **Home** page > **Home** tab.
 
 <img src={useBaseUrl('/img/get-started/home.png')} alt="home.png" width="400"/>
 
 
 ### Access dashboards and searches
 
-The left-side navigation bar provides easy access to libraries, personal collections of dashboards, searches, and folders. Click the icons at the top of the left-side navigation bar to view:
+The left nav panel provides easy access to libraries, searches, folders, and your personal collection of dashboards. Click the icons at the top of the left-side navigation panel to view:
 
-* **Recent** dashboards and searches<br/><img src={useBaseUrl('/img/get-started/recent.png')} alt="recent.png" width="350"/>
-* A list of your **Favorites** (dashboards and searches)<br/><img src={useBaseUrl('/img/get-started/favs.png')} alt="favs.png" width="350"/>
-* A **Library** containing:
+* **Recent** dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/recent.png')} alt="recent.png" width="350"/>
+* Your **Favorites** list of favorited dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/favs.png')} alt="favs.png" width="350"/>
+* **Library** containing:
    * Your **Personal** dashboards and searches.
    * Your own **Installed Apps** from the App Catalog.
    * Dashboards and searches shared within your organization.<br/><img src={useBaseUrl('/img/get-started/library.png')} alt="library.png" width="350"/>
 
 ### Search and switch browsing modes
 
-The top of the left-side navigation bar is where you can search for content and
+The top of the left-side navigation panel is where you can search for content and
 users and easily switch browsing modes. 
 
 * Searching. Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
@@ -36,9 +38,9 @@ users and easily switch browsing modes. 
 
 ![TUI_Search_Details.png](/img/get-started/TUI_Search_Details.png)
 
-### Hide and show the left-side navigation bar
+### Hide and show the left-side navigation panel
 
-You can easily hide the left-side navigation bar to enlarge your working area. Do do this, click the hamburger menu icon.
+You can enlarge your working area by hiding the left-side navigation panel. To do this, click the hamburger menu icon.
 
 <img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="hamburger.gif" width="350"/>
 
@@ -55,7 +57,7 @@ If you'd prefer to multitask with multiple tasks open at once (for example, log 
 
 ### Access Apps, Admin settings, and Help
 
-In the upper right-hand corner of the top navigation bar, you can access (from left to right) our [Help](#get-help-docs-community-and-more) options, [App Catalog](apps-integrations.md), data [Configuration](/docs/send-data), [Administration](/docs/manage) settings, [Notifications](account-settings-preferences.md), and personal [Preferences](account-settings-preferences.md). 
+From the top navigation bar, you can access (from left to right) our [Help](#get-help-docs-community-and-more) options, [App Catalog](apps-integrations.md), data [Configuration](/docs/send-data), [Administration](/docs/manage) settings, [Notifications](account-settings-preferences.md), and personal [Preferences](account-settings-preferences.md).
 
 <img src={useBaseUrl('/img/get-started/admin-config.png')} alt="admin-config.png" width="350"/>
 
@@ -65,8 +67,8 @@ You can manage your personal account settings from the **Preferences** page. T
 
 To manage your personal Sumo account preferences:
 
-1. From the top navigation bar, click the person icon, then the dropdown, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="img/get-started/acct-pref.png" width="350"/>
-1. In the Preferences page that appears on the right, you can modify settings in the following areas:
+1. From the top navigation bar, click the person icon, and then from the dropdown, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="img/get-started/acct-pref.png" width="350"/>
+1. In the Preferences page, you can modify the following settings:
     * **My Profile**. Username and password.
     * **My Access Keys**. Add, edit, and remove access keys.
     * **My Preferences**. Your account session settings.
@@ -75,7 +77,7 @@ For more information, see [Account Preferences and Credentials](account-settings
 
 ### Get Help: docs, community, and more
 
-Whenever you have a question, there are a number of places where you can get the answers you need:
+There are a number of places where you can get the answers to questions you have:
 
 * Check out our [Release Notes](/docs/release-notes)
 * Search [Sumo Docs](https://help.sumologic.com/)
@@ -88,7 +90,9 @@ Whenever you have a question, there are a number of places where you can get t
 See [Getting Help and Contacts](/docs/get-started/help) for full information.
 :::
 
-### Admin: Manage data collection, data settings, and alerts
+## Administrator tasks
+
+### Manage data collection, data settings, and alerts
 
 Sumo Logic Administrators (Admins) are responsible for managing data collection, data settings, and alerts for their organization. You must have Sumo Logic Admin role privileges to perform these tasks.
 
@@ -103,7 +107,7 @@ To manage data in Sumo Logic, do the following:
     * **Cloud SIEM Entities**.
     * **Cloud SIEM Workflow**.
 
-### Admin: Manage accounts, users, and security
+### Manage accounts, users, and security
 
 Sumo Logic administrators (admins) manage user accounts, user roles, and security. You must have Sumo Logic Admin role privileges to perform these tasks.
 
@@ -160,9 +164,9 @@ You see the **Home** landing page when you first log in to Sumo Logic. The Home 
 
 <img src={useBaseUrl('img/get-started/dashboard-searches.png')} alt="dashboard-searches.png" />
 
-### View Favorites and add dashboards and searches to the list
+### Add dashboards and searches to your Favorites
 
-You can create a list of favorite dashboards and log searches that appear in the left-side navigation bar. Your [Favorites list](#accessdashboards-and-searches) makes it easy to access your most frequently used dashboards and searches.
+You can create a list of favorite dashboards and log searches that appear in the left-side navigation panel. Your [Favorites list](#accessdashboards-and-searches) makes it easy to access your most frequently used dashboards and searches.
 
 To add a dashboard to your Favorites:
 1. Open any dashboard.
@@ -177,7 +181,7 @@ To add a log search to your Favorites:
 
 You can share dashboards, searches, and folders with users and roles. You can edit the sharing permissions at any time and share or revoke permissions as needed. You can share content from the following locations:
 
-* **Left-side navigation bar**. Recommended when you are familiar with the content and need to quickly share with another user.
+* **Left-side navigation panel**. Recommended when you are familiar with the content and need to quickly share with another user.
 * **Library**. Recommended when you need a detailed view of the content, who created it, and when it was last modified.
 
 For walkthrough instructions, go to the [Share Content](/docs/manage/content-sharing) page. 
