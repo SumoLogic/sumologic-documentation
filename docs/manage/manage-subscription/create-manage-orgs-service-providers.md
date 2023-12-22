@@ -171,7 +171,7 @@ You can view the usage of individual child orgs in the **Child Orgs** tab on the
 
 <img src={useBaseUrl('img/subscriptions/child-org.png')} alt="your description" style={{border:'1px solid black'}} />
 
-On clicking any of the selected Child Org, you can view the usage for the following categories:
+By clicking any of the selected child orgs, you can view the usage for the following categories:
 
 * **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
 * **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
