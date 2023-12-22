@@ -84,7 +84,7 @@ User activity data is collected through the Workday Activity Logs API. To ensure
 
 ## Collecting Logs for the Workday app
 
-This section explains how to collect logs from Workday and ingest them into Sumo Logic for use with the Workday App predefined dashboards and searches.
+This section explains how to collect logs from Workday and ingest them into Sumo Logic for use with the Workday app predefined dashboards and searches.
 
 These instructions assume that the Security Administrator, System Auditor, and Report Administrator security groups are assigned to the user who will be configuring data collection in the Workday portal. Make sure the account used does not belong to an employee otherwise custom reports created by the user may no longer be available when they leave the organization.
 
