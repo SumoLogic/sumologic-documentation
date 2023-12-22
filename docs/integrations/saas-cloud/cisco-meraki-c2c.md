@@ -33,7 +33,7 @@ This app uses [Cisco Meraki source](/docs/send-data/hosted-collectors/cloud-to-c
 - [Get Network Events](https://developer.cisco.com/meraki/api-v1/#!get-network-events) sample log format.
 - [Get Network Wireless Air Marshal](https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-air-marshal) sample log format.
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Total Organizations"
 _sourceCategory=cm_con2006 licensing
@@ -77,9 +77,11 @@ _sourceCategory=cm_con2006 wiredMacs
 To set up data ingestion for the Cisco Meraki - C2C app, follow the instructions provided at [Cisco Meraki Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source). These instructions will guide you through the process of creating a source using the Cisco Meraki source category, which you will need to use when installing the app. By following these steps, you can ensure that your Cisco Meraki - C2C app is properly integrated and configured to collect and analyze your Cisco Meraki data.
 
 ## Installing the Cisco Meraki - C2C app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Cisco Meraki - C2C dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 ### Organization Overview

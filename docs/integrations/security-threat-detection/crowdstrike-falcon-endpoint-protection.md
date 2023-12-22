@@ -2,29 +2,29 @@
 id: crowdstrike-falcon-endpoint-protection
 title: CrowdStrike Falcon Endpoint Protection
 sidebar_label: CrowdStrike Falcon Endpoint Protection
-description: The CrowdStrike Falcon Endpoint Protection App provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform.
+description: The CrowdStrike Falcon Endpoint Protection app provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
 
-The CrowdStrike Falcon Endpoint Protection App provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform. The app allows you to analyze indicators of compromise (IOCs) by affected users, tactic, technique, and objective, and identify hosts on your network with the highest malware detections. The dashboards in this app help identify threats and incidents, from which you can drill down to investigate further.
+The CrowdStrike Falcon Endpoint Protection app provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform. The app allows you to analyze indicators of compromise (IOCs) by affected users, tactic, technique, and objective, and identify hosts on your network with the highest malware detections. The dashboards in this app help identify threats and incidents, from which you can drill down to investigate further.
 
 The [CrowdStrike Falcon Endpoint Protection Platform](https://www.crowdstrike.com/endpoint-security-products/falcon-platform/) is a cloud-native framework that protects endpoints to stop breaches and improve performance with the robust power of the cloud combined with an intelligent, lightweight endpoint agent.
 
-This version of the CrowdStrike Falcon Endpoint Protection App and its collection process has been tested with SIEM Connector Version 2.1.0+001-siem-release-2.1.0.
+This version of the CrowdStrike Falcon Endpoint Protection app and its collection process has been tested with SIEM Connector Version 2.1.0+001-siem-release-2.1.0.
 
-## Log Types
+## Log types
 
-The CrowdStrike Falcon Endpoint Protection App uses the following log types:
+The CrowdStrike Falcon Endpoint Protection app uses the following log types:
 * Detection Event
 * Authentication Event
 * Detection Status Update Event
 
 For more information on Events, please refer to the CrowdStrike Falcon Endpoint Protection [Streaming API Event Dictionary](https://falcon.crowdstrike.com/support/documentation/62/streaming-api-event-dictionary).
 
-### Sample Logs
+### Sample logs
 
 For more information on Events, please refer to [Streaming API Event Dictionary](https://falcon.crowdstrike.com/support/documentation/62/streaming-api-event-dictionary).
 
@@ -145,7 +145,7 @@ For more information on Events, please refer to [Streaming API Event Dictionary]
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 This section provides query examples for each event type.
 
@@ -182,7 +182,7 @@ _sourceCategory=*Crowdstrike*  UserActivityAuditEvent
 ```
 
 
-## Collecting Logs for the CrowdStrike App
+## Collecting Logs for the CrowdStrike app
 
 This section shows you how to configure log collection from CrowdStrike Falcon Endpoint Protection and have them sent to Sumo Logic. CrowdStrike Falcon Endpoint Protection provides endpoint detection and response, next-gen antivirus, and threat intelligence services through the cloud. Multiple security functions are consolidated into a single lightweight agent, for visibility across using central security analytics with Sumo Logic.
 
@@ -276,10 +276,12 @@ To set up an installed collector and local file source, do the following:
 For more information about the CrowdStrike Falcon SIEM Connector, see the CrowdStrike documentation, or contact CrowdStrike Customer Support at [info@crowdstrike.com](mailto:info@crowdstrike.com).
 :::
 
-## Installing the CrowdStrike Falcon Endpoint Protection App
+## Installing the CrowdStrike Falcon Endpoint Protection app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing CrowdStrike Falcon Endpoint Protection dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview  

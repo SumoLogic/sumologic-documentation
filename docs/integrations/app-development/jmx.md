@@ -2,7 +2,7 @@
 id: jmx
 title: Java Management Extensions (JMX)
 sidebar_label: JMX
-description: The Sumo Logic App for Java Management Extensions (JMX) allows you to analyze and gain insights about Java applications.
+description: The Sumo Logic app for Java Management Extensions (JMX) allows you to analyze and gain insights about Java applications.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,12 +13,12 @@ import TabItem from '@theme/TabItem';
 
 Java Management Extensions (JMX) is a standard component of the Java Platform. JMX gives developers a standard and simple way to manage resources, including services, devices, and applications. JMX is dynamic, so you can manage and monitor resources as soon as they are created, implemented, or installed.
 
-The Sumo Logic App for **JMX** allows you to analyze and gain insights about Java applications. The dashboards provide a quick glance at various deployment metrics like memory, CPU, GC performance, and thread behavior, so you can troubleshoot unexpected behavior in your Java environment and the applications running in it.
+The Sumo Logic app for **JMX** allows you to analyze and gain insights about Java applications. The dashboards provide a quick glance at various deployment metrics like memory, CPU, GC performance, and thread behavior, so you can troubleshoot unexpected behavior in your Java environment and the applications running in it.
 
 
-## Metric Types
+## Metric types
 
-The Sumo Logic App for JMX collects Prometheus metrics from Java applications, via the [Jolokia Plugin for telegraf.](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)
+The Sumo Logic app for JMX collects Prometheus metrics from Java applications, via the [Jolokia Plugin for telegraf.](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)
 
 The following types of metrics are collected from JMX:
 
@@ -31,7 +31,7 @@ The following types of metrics are collected from JMX:
 * ClassLoader
 
 
-### Sample Query
+### Sample Q\query
 
 This query sample is from the **CPU Load Vs Current Threads** panel of **JMX - Overview** dashboard.
 
@@ -41,7 +41,7 @@ metric=java_lang_OperatingSystem_TotalMemorySize jolokia_agent_url={{Server}} | 
 ```
 
 
-## Collecting Metrics for JMX
+## Collecting metrics for JMX
 
 This section explains how to collect metrics from JMX and ingest them into Sumo Logic to use with the predefined dashboards and searches in the JMX app.
 
@@ -61,7 +61,7 @@ These metrics are then forwarded to Sumo Logic HTTP Source. The collection start
 
 ### Step 1: Metric Collection in Non-Kubernetes Environment
 
-This section provides instructions for configuring metrics collection for the Sumo Logic App for JMX. Follow the below instructions to set up the metric collection.
+This section provides instructions for configuring metrics collection for the Sumo Logic app for JMX. Follow the below instructions to set up the metric collection.
 1. **Configure metrics for JMX**. To configure JMX metrics using Jolokia, do the following:
    * Download the latest Jolokia JVM agent from [Jolokia](https://jolokia.org/download.html).
    * You can attach the Jolokia JVM agent jar as a Java Agent to your application.
@@ -261,7 +261,7 @@ annotations:
 
 
 
-### Sample Metric Names
+### Sample metric names
 
 <table>
   <tr>
@@ -303,10 +303,12 @@ annotations:
 </table>
 
 
-## Install the JMX App
+## Install the JMX app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing JMX dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview

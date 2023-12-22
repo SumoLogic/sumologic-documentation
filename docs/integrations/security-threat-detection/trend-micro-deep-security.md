@@ -2,17 +2,17 @@
 id: trend-micro-deep-security
 title: Trend Micro Deep Security
 sidebar_label: Trend Micro Deep Security
-description: The Trend Micro Deep Security App works with system and security events to monitor event history such as anti-malware, IPS, web reputation, firewall, integrity and log inspection events.
+description: The Trend Micro Deep Security app works with system and security events to monitor event history such as anti-malware, IPS, web reputation, firewall, integrity and log inspection events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src='https://upload.wikimedia.org/wikipedia/commons/f/f4/Trend_Micro_logo.svg' alt="thumbnail icon" width="100"/>
 
-The Trend Micro Deep Security App works with system and security events to monitor event history such as anti-malware, IPS, web reputation, firewall, integrity and log inspection events. The App analyzes security events from both on-premises and cloud-based Trend Micro Deep Security products.
+The Trend Micro Deep Security app works with system and security events to monitor event history such as anti-malware, IPS, web reputation, firewall, integrity and log inspection events. The app analyzes security events from both on-premises and cloud-based Trend Micro Deep Security products.
 
 
-## Log Types
+## Log types
 
 There are two types of Deep Security events:
 
@@ -22,9 +22,9 @@ There are two types of Deep Security events:
 For complete details on configuring your Deep Security system for use with Sumo Logic, see the White Paper, [“Deep Security Integration with Sumo Logic”](http://www.trendmicro.com/aws/wp-content/uploads/2016/06/Deep-Security-Sumo-Logic-Integration-Guide-FV1.62.pdf).
 
 
-## Collect on-premises logs for the Trend Micro Deep Security App
+## Collect on-premises logs for the Trend Micro Deep Security app
 
-This section provides instructions for configuring on-prem log collection for the Trend Micro Deep Security App, as well as examples of relevant log and query samples.
+This section provides instructions for configuring on-prem log collection for the Trend Micro Deep Security app, as well as examples of relevant log and query samples.
 
 
 ### Configure Collector and Sources
@@ -72,13 +72,13 @@ Now you must add the Syslog Source to your Policy configuration. Set the integra
 4. Click **Save**.
 
 
-### Sample Log Message
+### Sample log message
 
 ```json
 <142>Oct  2 16:41:16 CEF:0|Trend Micro|Deep Security Agent|9.6.3177|21|Unsolicited UDP|5|cn1=34 cn1Label=Host ID dvchost=workstation_tsiley TrendMicroDsTenant=Primary TrendMicroDsTenantId=0 act=Deny dmac=B0:B9:B9:F8:E7:8F smac=39:D2:AE:D6:1F:05 TrendMicroDsFrameType=IP src=130.202.140.130 dst=10.0.102.94 in=291 cs3= cs3Label=Fragmentation Bits proto=UDP spt=445 dpt=42 cnt=1
 ```
 
-### Query Sample
+### Query sample
 
 
 ```sql title="Top 5 Reasons For Prevented Packets"
@@ -91,7 +91,7 @@ _sourceCategory=Trendmicro dst
 
 
 
-### Collect cloud-based logs for the Trend Micro Deep Security App
+### Collect cloud-based logs for the Trend Micro Deep Security app
 
 This section has instructions for collecting logs for the Trend Micro Deep Security using a Sumo Cloud Syslog source on a hosted collector.
 
@@ -146,9 +146,11 @@ Send System Events to confirm communication with Sumo Logic. There may be a 5-10
 
 
 ## Installing the Trend Micro Deep Security app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Trend Micro Deep Security dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 
@@ -190,11 +192,11 @@ Send System Events to confirm communication with Sumo Logic. There may be a 5-10
 
 **Top 5 Reasons for Prevented Packets.** Lists the top 5 reasons why packets were prevented in a table chart by device host name and count for the last 24 hours.
 
-**Top 5 Computers for Prevented Firewall Events. **Displays the top 5 computers that had prevented firewall events in a table chart by device host name and count for the last 24 hours.
+**Top 5 Computers for Prevented Firewall Events.** Displays the top 5 computers that had prevented firewall events in a table chart by device host name and count for the last 24 hours.
 
-**Top 5 Source IDs for Prevented Firewall Events. **Shows the top 5 computers that had prevented firewall events in a table chart by source IP address and count for the last 24 hours.
+**Top 5 Source IDs for Prevented Firewall Events.** Shows the top 5 computers that had prevented firewall events in a table chart by source IP address and count for the last 24 hours.
 
-**Top 5 Destination Ports for Prevented Firewall Events. **Provides details on the top 5 destination ports that had prevented firewall events in a table chart by destination port and count for the last 24 hours.
+**Top 5 Destination Ports for Prevented Firewall Events.** Provides details on the top 5 destination ports that had prevented firewall events in a table chart by destination port and count for the last 24 hours.
 
 **Top 5 Scans Detected.** Displays the top 5 scans detected in a table chart by name and count for the last 24 hours.
 
@@ -253,7 +255,7 @@ Send System Events to confirm communication with Sumo Logic. There may be a 5-10
 
 ## Filters
 
-The Sumo Logic App for Trend Micro - Deep Security provides the following filters:
+The Sumo Logic app for Trend Micro - Deep Security provides the following filters:
 
 * file
 * severity

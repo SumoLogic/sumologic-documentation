@@ -2,30 +2,30 @@
 id: carbon-black-cloud
 title: Carbon Black Cloud
 sidebar_label: Carbon Black Cloud
-description: The Carbon Black Cloud App analyzes alert and event data from the Endpoint Standard and Enterprise EDR products. App dashboards provide visibility into threats, TTPs, devices, and more.
+description: The Carbon Black Cloud app analyzes alert and event data from the Endpoint Standard and Enterprise EDR products. app dashboards provide visibility into threats, TTPs, devices, and more.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="75"/>
 
-The Carbon Black Cloud App analyzes alert and event data from Endpoint Standard and Enterprise EDR products and provides comprehensive visibility into the security posture of your endpoints, enabling you to determine the effects of breaches in your environment. The app provides visibility into key endpoint security data with preconfigured dashboards for alerts, threats intelligence, feeds, sensors, alerts, users, hosts, processes, IOCs, devices and network status.
+The Carbon Black Cloud app analyzes alert and event data from Endpoint Standard and Enterprise EDR products and provides comprehensive visibility into the security posture of your endpoints, enabling you to determine the effects of breaches in your environment. The app provides visibility into key endpoint security data with preconfigured dashboards for alerts, threats intelligence, feeds, sensors, alerts, users, hosts, processes, IOCs, devices and network status.
 
 
-## Log Types
+## Log types
 
-The Carbon Black Cloud App uses the following Carbon Black Cloud log types, which are set to the Amazon S3 bucket sent by the [Carbon Black Cloud Forwarder](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/).
+The Carbon Black Cloud app uses the following Carbon Black Cloud log types, which are set to the Amazon S3 bucket sent by the [Carbon Black Cloud Forwarder](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/).
 
 * Alert Data
 * Event Data
 
 
-### Sample Log Messages
+### Sample log messages
 
 For sample log messages, see [Data Samples](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-data/#data-samples) section in VMware help.
 
 
-### Sample Queries  
+### Sample queries  
 
 #### Endpoint Standard
 
@@ -62,7 +62,7 @@ _sourceCategory = Labs/CarbonBlackCloudAlerts
 | json field=_raw "threat_cause_actor_name", "threat_cause_threat_category", "threat_cause_reputation", "ioc_hit" as threat_actor, threat_category, threat_reputation, ioc_hit nodrop
 ```
 
-## Collecting Logs for Carbon Black Cloud
+## Collecting logs for Carbon Black Cloud
 
 This section has instructions for configuring collection of Carbon Black Cloud event and alert logs. In the steps that follow, you'll set up two Sumo Logic S3 Sources, each of which will collect logs from an S3 bucket, and configure Carbon Black Cloud to send alert and event data to the S3 buckets.
 
@@ -96,7 +96,7 @@ Follow these steps to set up an S3 Source to collect event logs from your S3 buc
 :::note
 {@import ../../reuse/collection-should-begin-note.md}
 :::
-10. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.) Make a note of the Source Category you assign; you will need it when you install the  the Carbon Black Cloud App.
+10. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.) Make a note of the Source Category you assign; you will need it when you install the  the Carbon Black Cloud app.
 11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
     * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role.  
 
@@ -120,10 +120,12 @@ When you configure a Data Forwarder, you supply an S3 bucket name and an **S3 pr
 Please carefully evaluate this information to assure that your configuration reflects the data set you would like to send to Sumo Logic.
 
 
-## Installing the Carbon Black Cloud App
+## Installing the Carbon Black Cloud app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Carbon Black Cloud dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview

@@ -2,21 +2,21 @@
 id: cloudpassage-halo
 title: CloudPassage Halo
 sidebar_label: CloudPassage Halo
-description: The CloudPassage Halo App enables security operators and administrators to correlate security events across their Halo-managed infrastructure.
+description: The CloudPassage Halo app enables security operators and administrators to correlate security events across their Halo-managed infrastructure.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/cloudpassage.png')} alt="thumbnail icon" width="75"/>
 
-The CloudPassage Halo App helps you detect security violations and look for threats across your complex infrastructure, through the analysis of massive volumes of Halo event data. CloudPassage’s Halo platform records over eighty different types of security events about your Halo-managed infrastructure, whether you deploy into public cloud environments or your private data center. These events deliver information about your infrastructure and include critical security alerts for firewall changes, access changes, configuration changes, and file integrity changes, and more.
+The CloudPassage Halo app helps you detect security violations and look for threats across your complex infrastructure, through the analysis of massive volumes of Halo event data. CloudPassage’s Halo platform records over eighty different types of security events about your Halo-managed infrastructure, whether you deploy into public cloud environments or your private data center. These events deliver information about your infrastructure and include critical security alerts for firewall changes, access changes, configuration changes, and file integrity changes, and more.
 
-You can leverage the security visibility provided by CloudPassage's Halo platform with Sumo Logic’s correlation and visualization capabilities to deliver a security reporting and analysis tool. This App enables security operators and administrators to correlate security events across their Halo-managed infrastructure.
+You can leverage the security visibility provided by CloudPassage's Halo platform with Sumo Logic’s correlation and visualization capabilities to deliver a security reporting and analysis tool. This app enables security operators and administrators to correlate security events across their Halo-managed infrastructure.
 
 
-## Collecting Logs for the CloudPassage Halo App
+## Collecting Logs for the CloudPassage Halo app
 
-The CloudPassage Halo App uses the Halo REST API and AWS Lambda to collect Halo events.  
+The CloudPassage Halo app uses the Halo REST API and AWS Lambda to collect Halo events.  
 
 To collect CloudPassage Halo logs for Sumo Logic you need to configure:
 
@@ -66,7 +66,7 @@ You will need your CloudPassage login to set up CloudPassage Halo.
 To set up CloudPassage Halo, do the following:
 
 1. Use the official [CloudPassage documentation](https://www.cloudpassage.com/) to set up CloudPassage. You will need your CloudPassage login.
-2. Follow the instructions on how to create a [read-only API key](https://library.cloudpassage.com/help/working-with-groups#api-keys) for the App.
+2. Follow the instructions on how to create a [read-only API key](https://library.cloudpassage.com/help/working-with-groups#api-keys) for the app.
 
 
 ### AWS Configuration
@@ -169,17 +169,19 @@ Sample policy: Use a proper permission level. Below is a sample.
 22.  You are done for the first Lambda code!  You can follow the same steps to configure **Lambda for Halo_metrics_to_SumoLogic**.
 
 
-## Installing the CloudPassage Halo App
+## Installing the CloudPassage Halo app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing CloudPassage Halo dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 
 View counts of key information for you system as well as top and bottom 10 processes for Linux, top and bottom 10 services for Windows, and top and bottom 10 software vulnerabilities found by CloudPassage Halo.
 
-* **Critical Issues / Non-Critical Issues. **Number of critical and non-critical issues  (Single Number Panel with 15min time range).
+* **Critical Issues / Non-Critical Issues.** Number of critical and non-critical issues  (Single Number Panel with 15min time range).
 * **Severity(Active) Count.** Number of active workloads (Single Number Panel with 15min time range)
 * **Number of OS Types.** Number of OS types found from each and every workloads managed by Halo (Single Number Panel with 15min time range)
 * **Number of Processes.** Number of processes found from each and every workloads managed by Halo  (Single Number Panel with 15min time range)

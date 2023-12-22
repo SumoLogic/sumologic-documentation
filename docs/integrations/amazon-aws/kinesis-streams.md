@@ -99,9 +99,11 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 
 
 ## Installing the Amazon Kinesis - Streams app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Amazon Kinesis - Streams dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 ### Events
@@ -128,8 +130,6 @@ See the details of Kinesis events including the count over time, location, API c
 
 
 ### Metrics
-11
-
 
 See the details of the Kinesis metrics including the incoming bytes, incoming records, get records, put and get latency, write and read provisioned throughput exceeded, and iterator age.
 

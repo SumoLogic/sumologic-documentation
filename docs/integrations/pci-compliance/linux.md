@@ -1,19 +1,19 @@
 ---
 id: linux
 title: PCI Compliance for Linux
-dashboard: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Linux offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
+dashboard: The Sumo Logic app for Payment Card Industry (PCI) Compliance for Linux offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
 
-This guide helps you set up Sumo Logic Collectors, install the PCI Compliance for Linux App, and create dashboards from samples so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
+This guide helps you set up Sumo Logic Collectors, install the PCI Compliance for Linux app, and create dashboards from samples so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
 
-## Collect Logs for PCI Compliance for Linux
+## Collect logs for PCI Compliance for Linux
 
-The PCI Compliance for Linux App works with your existing Linux logs to identify any compliance issues.
+The PCI Compliance for Linux app works with your existing Linux logs to identify any compliance issues.
 
 To collect Linux logs, you'll need:
 
@@ -23,7 +23,7 @@ To collect Linux logs, you'll need:
     * [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source)
     * [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source)
 
-### Required Logs for Ubuntu
+### Required logs for Ubuntu
 
 The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo Logic app for Linux with Ubuntu:
 * auth.log
@@ -32,7 +32,7 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 * dpkg.log
 * kern.log
 
-### Required Logs for CentOS, Amazon Linux, and Red Hat
+### Required logs for CentOS, Amazon Linux, and Red Hat
 
 The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo Logic app for Linux with CentOS, Amazon Linux, and most Red Hat forks:
 * audit/audit.log
@@ -40,10 +40,12 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 * messages
 * yum.log
 
-## Installing the PCI Compliance for Linux App
+## Installing the PCI Compliance for Linux app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing PCI Compliance for Linux dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 ### Account, User, System Monitoring

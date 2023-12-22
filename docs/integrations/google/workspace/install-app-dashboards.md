@@ -1,6 +1,6 @@
 ---
 id: install-app-dashboards
-title: Google Workspace App and Dashboards
+title: Google Workspace app and Dashboards
 sidebar_label: App Installation and Dashboards
 description: Instructions for installing the Google Workspace app and information about each of the dashboards.
 ---
@@ -9,9 +9,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
 
-This page demonstrates how to install the Google Workspace App and enable documents shared outside your organization. This page also provides descriptions, use cases, and examples for each of the Google Workspace App dashboards.
+This page demonstrates how to install the Google Workspace app and enable documents shared outside your organization. This page also provides descriptions, use cases, and examples for each of the Google Workspace app dashboards.
 
-## Installing the Google Workspace App
+## Installing the Google Workspace app
+
 {@import ../../../reuse/apps/app-install-v2.md}
 
 ## Viewing Google Workspace dashboards​

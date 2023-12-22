@@ -1,8 +1,8 @@
 ---
 id: host-metrics
-title: Host Metrics Sumo Logic App
+title: Host Metrics Sumo Logic app
 sidebar_label: Host Metrics
-description: The Sumo Logic App for Host Metrics allows you to collect your local host metrics and display them using predefined search queries and Dashboards.
+description: The Sumo Logic app for Host Metrics allows you to collect your local host metrics and display them using predefined search queries and Dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Host Metrics app allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses the Sumo Logic installed collector for the collection of host metrics data.
 
 
-## Collecting Metrics for the Host Metrics App
+## Collecting metrics for the Host Metrics app
 
 This procedure explains how to collect metrics from a host machine and ingest them into Sumo Logic for metrics visualization.
 
@@ -23,7 +23,7 @@ Configure an [Installed Collector](/docs/send-data/installed-collectors). Collec
 
 ### Configure a Source
 
-1. Configure a [Host Metrics Source](#Collecting-Metrics-for-the-Host-Metrics-App). Choose **Add Source** and select **Host Metrics** as the source type.
+1. Configure a [Host Metrics Source](#Collecting-Metrics-for-the-Host-Metrics-app). Choose **Add Source** and select **Host Metrics** as the source type.
 2. Configure the Source Fields as follows:
     1. **Name.** Required. Description is optional. The source name is stored in a searchable field called `_sourceName`.
     2. **Source Host**. Enter the host name of the machine from which the metrics will be collected.
@@ -33,7 +33,7 @@ Configure an [Installed Collector](/docs/send-data/installed-collectors). Collec
 3. Click **Save**.
 
 
-## Metric Types
+## Metric types
 
 Available metrics include:
 * CPU
@@ -48,7 +48,7 @@ Host metrics are gathered by the open-source [SIGAR library](https://github.com/
 
 The following tables list the available host metrics.
 
-### CPU Metrics
+### CPU metrics
 
 <table>
   <tr>
@@ -244,7 +244,7 @@ Load averages are not available on Windows platform.
 </table>
 
 
-### TCP Metrics
+### TCP metrics
 
 <table>
   <tr>
@@ -329,7 +329,7 @@ Load averages are not available on Windows platform.
   </tr>
 </table>
 
-### Networking Metrics
+### Networking metrics
 
 These have two additional dimensions:
 * Interface: Name of the network interface (example: `eth0`)
@@ -380,7 +380,7 @@ Networking metrics are cumulative, so you can use the rate operator to display t
   </tr>
 </table>
 
-### Disk Metrics
+### Disk metrics
 
 Disk metrics have two additional dimensions:
 
@@ -494,10 +494,12 @@ Collectors running on AWS EC2 instances can optionally collect AWS Metadata such
 Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts.
 
 
-## Installing the Host Metrics App
+## Installing the Host Metrics app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Host Metrics dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview

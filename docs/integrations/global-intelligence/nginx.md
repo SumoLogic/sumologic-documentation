@@ -1,6 +1,6 @@
 ---
 id: nginx
-title: Global Intelligence for Nginx App
+title: Global Intelligence for Nginx app
 sidebar_label: Global Intelligence for Nginx
 description: The Global Intelligence for Nginx app provides you with information regarding Golden Signals and Visitor Benchmarks for your company's Nginx servers, and compares them to all servers from all customers.
 ---
@@ -22,11 +22,11 @@ application. It helps DevOps and infrastructure engineers to compare server, 
 | GI Nginx - 01 Golden Signals | This dashboard compares golden signals of load (requests per second), throughput (responses by type) and errors for a company’s Nginx servers compared to other servers. Unusual levels of these signals compared to benchmarks can indicate configuration or operational issues. |
 | GI Nginx - 02 Visitor Benchmarks | These panels compare unique visitor rates, bots and client platforms served by your company's Nginx servers versus Nginx servers of other companies to assess if unusual patterns in these indicators correlate with golden signals.  |
 
-## Data Sources 
+## Data sources 
 
-Global Intelligence for Nginx App uses logs data from Nginx clusters. Like the Sumo Logic App for Nginx, it assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs. [For more details](http://nginx.org/en/docs/http/ngx_http_log_module.html) on Nginx logs. 
+Global Intelligence for Nginx app uses logs data from Nginx clusters. Like the Sumo Logic app for Nginx, it assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs. [For more details](http://nginx.org/en/docs/http/ngx_http_log_module.html) on Nginx logs. 
 
-## Sample Query 
+## Sample query 
 
 The following sample query is from the Average **Requests Per Second: My Company v Benchmark** panel of **GI Nginx - 01 Golden Signals** dashboard.
 
@@ -53,24 +53,15 @@ The following sample query is from the Average **Requests Per Second: My Company
 
 ## Configuring Log Collection for Global Intelligence for Nginx
 
-Follow the steps on the [Sumo Logic Nginx App](/docs/integrations/web-servers/nginx-legacy) to configure the log collection for Global Intelligence for Nginx App.
+Follow the steps on the [Sumo Logic Nginx app](/docs/integrations/web-servers/nginx-legacy) to configure the log collection for Global Intelligence for Nginx app.
 
-## Installing the Global Intelligence for Nginx App
+## Installing the Global Intelligence for Nginx app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Global Intelligence for Nginx dashboards​
 
 {@import ../../reuse/apps/view-dashboards.md}
-
-### Dashboard Filters  
-
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard. 
-
-:::note
-You can use filters to drill down and examine the data on a granular level.  One server must be selected for benchmark comparisons to be meaningful.
-:::
-
-![](/img/global-intelligence/nginx-filter.png)
 
 ### GI Nginx - 01 Golden Signals
 

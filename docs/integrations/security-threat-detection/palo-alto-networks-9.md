@@ -2,14 +2,14 @@
 id: palo-alto-networks-9
 title: Palo Alto Networks 9
 sidebar_label: Palo Alto Networks 9
-description: The Sumo Logic App for Palo Alto Networks 9 utilizes PANOS 9 new features in predefined dashboards to provide extensive security analytics throughout your Palo Alto Networks environment.
+description: The Sumo Logic app for Palo Alto Networks 9 utilizes PANOS 9 new features in predefined dashboards to provide extensive security analytics throughout your Palo Alto Networks environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan9.png')} alt="thumbnail icon" width="100"/>
 
-The Sumo Logic App for Palo Alto Networks 9 utilizes PANOS 9 new features in predefined dashboards to provide extensive security analytics throughout your Palo Alto Networks environment. New PANOS 9 features include:
+The Sumo Logic app for Palo Alto Networks 9 utilizes PANOS 9 new features in predefined dashboards to provide extensive security analytics throughout your Palo Alto Networks environment. New PANOS 9 features include:
 * GlobalProtect
 * Panorama
 * User-ID
@@ -20,9 +20,9 @@ The Sumo Logic App for Palo Alto Networks 9 utilizes PANOS 9 new features in pre
 [Palo Alto Networks](https://www.paloaltonetworks.com/) 9 provides consistent protection across the data center, perimeter, branch, mobile and cloud networks.
 
 
-## Log Types
+## Log types
 
-The Palo Alto Networks 9 App uses the following log types:
+The Palo Alto Networks 9 app uses the following log types:
 
 * [System](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/system-log-fields.html) Logs
 * [Configuration](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/config-log-fields.html) Logs
@@ -32,7 +32,7 @@ The Palo Alto Networks 9 App uses the following log types:
 * [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields.html) Logs
 
 
-### Sample Logs
+### Sample logs
 
 ```json title="System logs"
 Oct 09 10:15:15 SumoRedfw01a 1,2019/10/09
@@ -74,7 +74,7 @@ Oct 09 10:21:11 SumPunFw07.sumotest.com 1,2019/10/09
 10.255.255.255,0,,0,,,1,,,,,,,,0,0,0,0,0,,SumPunFw07,,,,,0,,0,,N/A,code-execution,AppThreat-8189-5641,0x4,0,4294967295,,,6bbbbec9-d123-4d51-1204-6aefd221079b,0
 ```
 
-### Sample Query
+### Sample query
 
 In the **Palo Alto Networks 9 - Threat Overview** dashboard, the following query detects **Dest IPs Observing Multiple Threats**.
 
@@ -87,9 +87,9 @@ _sourceCategory=Loggen/PAN* ",THREAT," !(",file," or ",url,")
 | limit 10
 ```
 
-## Collecting Logs for the Palo Alto Networks 9 App
+## Collecting logs for the Palo Alto Networks 9 app
 
-This section provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Networks 9. You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks. Configuring log collection for Palo Alto Networks 9 includes the following tasks:
+This section provides instructions for configuring log collection for the Sumo Logic app for Palo Alto Networks 9. You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks. Configuring log collection for Palo Alto Networks 9 includes the following tasks:
 
 ### Step 1. Create a hosted collector and Cloud Syslog source
 
@@ -168,10 +168,12 @@ To verify the logs in Palo Alto Networks, do the following:
 
 
 
-## Install the Palo Alto Networks 9 App
+## Install the Palo Alto Networks 9 app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Palo Alto Networks 9 dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
@@ -188,7 +190,7 @@ The **Palo Alto Networks 9 - Overview** dashboard provides an at-a-glance view o
 
 ### Threat Overview
 
-The Palo Alto Networks 9 - Threat Overview dashboard provides insights into the types of threats on your network, threat severity, and threat comparisons over time. Panels also display information on threats impacting the most IPs, IPs receiving multiple threats, IPs generating threats, and users who are impacted by threats.
+The **Palo Alto Networks 9 - Threat Overview** dashboard provides insights into the types of threats on your network, threat severity, and threat comparisons over time. Panels also display information on threats impacting the most IPs, IPs receiving multiple threats, IPs generating threats, and users who are impacted by threats.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Threat-Overview.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -200,7 +202,7 @@ Use this dashboard to:
 
 ### Threat Analysis
 
-The Palo Alto Networks 9 - Threat Analysis dashboard provides detailed information on threats by type, severity, outliers, and trends over time. Panels also display details on non-critical and critical threat events, top source and destination IPs, as well as apps by severity, and threat categories.
+The **Palo Alto Networks 9 - Threat Analysis** dashboard provides detailed information on threats by type, severity, outliers, and trends over time. Panels also display details on non-critical and critical threat events, top source and destination IPs, as well as apps by severity, and threat categories.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Threat-Analysis.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -212,7 +214,7 @@ Use this dashboard to:
 
 ### High Severity Threats
 
-The Palo Alto Networks 9 - High Severity Threats dashboard provides visibility into high severity threats that are coming from and impacting the most hosts.
+The **Palo Alto Networks 9 - High Severity Threats** dashboard provides visibility into high severity threats that are coming from and impacting the most hosts.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-High-Severity-Threats.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -223,7 +225,7 @@ Use this dashboard to:
 
 ### Traffic Insight - File Activity
 
-The Palo Alto Networks 9 - Traffic Insight - File Activity dashboard provides visibility into file activity detected by PANOS firewall devices. Panels also display top apps, trends for events and file activity, and trends for file outlier activity.
+The **Palo Alto Networks 9 - Traffic Insight - File Activity** dashboard provides visibility into file activity detected by PANOS firewall devices. Panels also display top apps, trends for events and file activity, and trends for file outlier activity.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Traffic-Insight-File-Activity.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -235,7 +237,7 @@ Use this dashboard to:
 
 ### Traffic Insight - Web Activity
 
-The Palo Alto Networks 9 - Traffic Insight Web Activity dashboard provides insights into user web activity on your network with the number of events, activity by category, top apps, URLs, and zones. Panels also show details on content types, zones, event and web activity trends, and web activity outliers.
+The **Palo Alto Networks 9 - Traffic Insight Web Activity** dashboard provides insights into user web activity on your network with the number of events, activity by category, top apps, URLs, and zones. Panels also show details on content types, zones, event and web activity trends, and web activity outliers.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Traffic-Insight-Web-Activity.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -248,7 +250,7 @@ Use this dashboard to:
 
 ### Traffic Monitoring
 
-The Palo Alto Networks 9 - Traffic Monitoring dashboard provides insights into the traffic on your network, including protocol trends, top source and destination IPs, top app activities, geographic locations of public IPs, and top destination ports.
+The **Palo Alto Networks 9 - Traffic Monitoring** dashboard provides insights into the traffic on your network, including protocol trends, top source and destination IPs, top app activities, geographic locations of public IPs, and top destination ports.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Traffic-Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -261,7 +263,7 @@ Use this dashboard to:
 
 ### Configuration Analysis
 
-The Palo Alto Networks 9 - Configuration Analysis dashboard provides visibility into device configuration activity on your network.
+The **Palo Alto Networks 9 - Configuration Analysis** dashboard provides visibility into device configuration activity on your network.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-Configuration-Analysis.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -275,7 +277,7 @@ Use this dashboard to:
 
 ### HIPMatch Monitoring
 
-The Palo Alto Networks 9 - HIPMatch Monitoring dashboard provides visibility into the number of HIP events, HIP name, HIP type, and firewall devices accessing your network. Panels also show information on active hosts and users, as well as users and systems with multiple policy violations.
+The **Palo Alto Networks 9 - HIPMatch Monitoring** dashboard provides visibility into the number of HIP events, HIP name, HIP type, and firewall devices accessing your network. Panels also show information on active hosts and users, as well as users and systems with multiple policy violations.
 
 The [GlobalProtect Host Information Profile (HIP) matching](https://docs.paloaltonetworks.com/globalprotect/8-0/globalprotect-admin/host-information/configure-hip-based-policy-enforcement.html) collects information on the security status of the end devices accessing your network. A firewall can allow or deny access to a host based on HIP-based security rules. HIP Match logs display traffic flows that match a [HIP Object](https://docs.paloaltonetworks.com/globalprotect/8-0/globalprotect-admin/host-information/about-host-information/how-does-the-gateway-use-the-host-information-to-enforce-policy.html) or [HIP Profile](https://docs.paloaltonetworks.com/globalprotect/8-0/globalprotect-admin/host-information/about-host-information/how-does-the-gateway-use-the-host-information-to-enforce-policy.html) configured for rules.
 
@@ -289,7 +291,7 @@ Use this dashboard to:
 
 ### System Monitoring
 
-The Palo Alto Networks 9 - System Monitoring dashboard provides insights into events on your network by type, severity, and trends. Panels also display data for objects by event type and severity level, and details on recent system feeds.
+The **Palo Alto Networks 9 - System Monitoring** dashboard provides insights into events on your network by type, severity, and trends. Panels also display data for objects by event type and severity level, and details on recent system feeds.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-System-Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
@@ -301,7 +303,7 @@ Use this dashboard to:
 
 ### USERID Monitoring
 
-The Palo Alto Networks 9 - USERID Monitoring dashboard provides insights into user activity on your network, with information on authentication factor, content type, and trends for content and new user activity. Panels also show details on the top firewall devices, source IPs, active users, and users who connected from multiple IPs.
+The **Palo Alto Networks 9 - USERID Monitoring** dashboard provides insights into user activity on your network, with information on authentication factor, content type, and trends for content and new user activity. Panels also show details on the top firewall devices, source IPs, active users, and users who connected from multiple IPs.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-9-USERID-Monitoring.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 

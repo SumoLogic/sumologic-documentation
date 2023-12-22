@@ -1,21 +1,21 @@
 ---
 id: host-process-metrics
 title: Host and Process Metrics
-description: The Sumo Logic App for Host and Process Metrics allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications depend upon.
+description: The Sumo Logic app for Host and Process Metrics allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications depend upon.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/hostAndProcessMetrics.png')} alt="Thumbnail icon" width="75"/>
 
-The Sumo Logic App for Host and Process Metrics allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses Telegraf, an open-source, plugin-based collector for the collection of both host and process metrics data.
+The Sumo Logic app for Host and Process Metrics allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses Telegraf, an open-source, plugin-based collector for the collection of both host and process metrics data.
 
 This app uses Telegraf and associated input plugins to collect both host and process metrics. To use the installed collector to collect and analyze host metrics, please see the [Host Metrics app](/docs/integrations/hosts-operating-systems/host-metrics).
 
 This app has been validated on Linux(Ubuntu 20.04.2 LTS) and  Windows (Microsoft Windows Server 2019) and higher using Telegraf 1.18.2. This app is not recommended in Kubernetes environments; instead please use the [Kubernetes app](/docs/integrations/containers-orchestration/kubernetes).
 
 
-## Collecting Metrics for Host and Processes
+## Collecting metrics for Host and Processes
 
 We use the Telegraf agent for Host and Process metrics collection. Telegraf runs on the same system and uses the input plugins to obtain host and process metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic.
 
@@ -43,9 +43,9 @@ For Windows:
 * [Win_Perf_counters](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/win_perf_counters/README.md)
 
 
-### Configuring Metrics Collection
+### Configuring metrics collection
 
-This section provides instructions for configuring metrics collection for the Sumo Logic App for Host and Process metrics. Follow the below instructions to set up the metric collection for a given machine:
+This section provides instructions for configuring metrics collection for the Sumo Logic app for Host and Process metrics. Follow the below instructions to set up the metric collection for a given machine:
 
 1. Configure a Hosted Collector
 2. Configure an HTTP Logs and Metrics Source
@@ -214,7 +214,7 @@ telegraf --config telegraf.conf --test
 2. If certain metrics are not coming you may have to run the telegraf agent as root. Check [the respective plugin](#input+plugins) documentation for more information.
 
 
-### Sample Queries
+### Sample queries
 
 **CPU Utilization by Host** panel in **Host Metrics - CPU** Dashboard
 
@@ -232,7 +232,7 @@ metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.n
 
 ## Installing the Alerts
 
-The next few sections provide instructions for installing the Sumo App and Alerts for hosts and processes. These instructions assume you have already set up a collection as described in Collecting Metrics for Host and Processes.
+The next few sections provide instructions for installing the Sumo app and Alerts for hosts and processes. These instructions assume you have already set up a collection as described in Collecting Metrics for Host and Processes.
 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your hosts and processes. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
@@ -352,9 +352,11 @@ email_notifications = [
 If you haven’t enabled alerts or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
 ## Installing the Host and Process Metrics app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Host and Process Metrics dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview

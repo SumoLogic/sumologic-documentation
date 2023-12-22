@@ -2,18 +2,18 @@
 id: windows-legacy
 title: Windows Legacy
 sidebar_label: Windows (Legacy)
-description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows JSON offers dashboards to monitor system, account and user activity to ensure that login activity and privileged users are within the expected ranges.
+description: The Sumo Logic app for Payment Card Industry (PCI) Compliance for Windows JSON offers dashboards to monitor system, account and user activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="75"/>
 
-The Windows Legacy App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows Legacy App consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, and User Activity.
+The Windows Legacy app provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows Legacy app consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, and User Activity.
 
-## Log Types
+## Log types
 
-The Windows Legacy App assumes events are coming from Remote Windows Event Log Sources. It does not work with third party logs. Standard Windows event channels include:
+The Windows Legacy app assumes events are coming from Remote Windows Event Log Sources. It does not work with third party logs. Standard Windows event channels include:
 * Security
 * Application
 * System
@@ -21,7 +21,7 @@ The Windows Legacy App assumes events are coming from Remote Windows Event Log S
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
 
-### Sample Log Message
+### Sample log message
 
 
 ```bash
@@ -51,7 +51,7 @@ instance of Win32_NTLogEvent
 };
 ```
 
-### Sample Query
+### Sample query
 
 ```sql title="Recent Policy Changes"
 _sourceCategory=OS/Windows "Policy Change"
@@ -61,9 +61,9 @@ _sourceCategory=OS/Windows "Policy Change"
 ```
 
 
-## Collecting Logs for Windows Legacy
+## Collecting logs for Windows Legacy
 
-This section provides instructions on configuring log collection for the Windows Legacy App, so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic. A sample log message and example query are also provided.
+This section provides instructions on configuring log collection for the Windows Legacy app, so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic. A sample log message and example query are also provided.
 
 [Windows Performance](/docs/integrations/microsoft-azure/performance) is considered a separate data type.
 
@@ -80,10 +80,12 @@ Events retain their default text format from Windows.
 For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/local-windows-event-log-source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/remote-windows-event-log-source).
 
 
-## Installing the Windows Legacy App
+## Installing the Windows Legacy app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Windows Legacy dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview

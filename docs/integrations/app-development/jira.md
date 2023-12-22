@@ -2,19 +2,19 @@
 id: jira
 title: Jira
 sidebar_label: Jira
-description: The Sumo Logic App for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
+description: The Sumo Logic app for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="50"/>
 
-The Sumo Logic App for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events.   
+The Sumo Logic app for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events.   
 
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/jira-cloud).
+The Jira app supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud app](/docs/integrations/app-development/jira-cloud).
 
 
-## Log Types
+## Log types
 
 The Jira app uses the following log types:
 
@@ -28,7 +28,7 @@ The Jira app uses the following log types:
 
 For more information, see [Webhooks](https://developer.atlassian.com/server/jira/platform/webhooks/) in Jira help.
 
-### Sample Query
+### Sample query
 
 ```sql title="Users created"
 _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
@@ -40,7 +40,7 @@ _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
 | sort by date_time desc
 ```
 
-### Sample Log Messages
+### Sample log messages
 
 <details><summary><strong>Click to expand.</strong> See sample logs for Jira access, Jira catalina, Jira issue.</summary>
 
@@ -377,11 +377,11 @@ _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
 </details>
 
 
-## Collecting Logs for the Jira App
+## Collecting Logs for the Jira app
 
-This section has instructions for collecting logs from Jira for the Sumo App for Jira.
+This section has instructions for collecting logs from Jira for the Sumo app for Jira.
 
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/jira-cloud).
+The Jira app supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud app](/docs/integrations/app-development/jira-cloud).
 
 You will configure an installed collector on your Jira host with three local file sources, for collecting Jira access, security, and catalina logs. You also configure a hosted collector with an HTTP source for receiving webhook events from Jira.
 
@@ -432,10 +432,12 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
 
 When you configure the webhook, enter the URL for the HTTP source you created in [step 2](#Step_2:_Configure_hosted_collector_to_receive_webhooks) as the endpoint for the webhook.
 
-## Installing the Jira App
+## Installing the Jira app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Jira dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview

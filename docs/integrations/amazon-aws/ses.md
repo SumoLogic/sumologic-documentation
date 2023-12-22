@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and receiving service. The Sumo Logic App for Amazon SES helps you monitor the email platform activities. The app uses CloudTrail events and SES notifications, and provides pre-configured dashboards that provide insights on the status of the email delivery including bounced notifications, delivered notifications, and various SES CloudTrail events.
 
-## Log Types
+## Log types
 
 The Amazon SES App uses:
 * AWS CloudTrail events for SES. For more details, see [here](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail). 
@@ -19,7 +19,7 @@ The Amazon SES App uses:
 Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and receiving service. The Amazon SES App helps you monitor the email platform activities, utilizing CloudTrail events and SES notifications (via SNS).
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title="CloudTrail log"
 {
@@ -75,7 +75,7 @@ Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and rece
 ```
 
 
-### Sample Query
+### Sample query
 
 ```sql title="Top bounced email addresses"
 (_sourceCategory=aws-ses or _sourceCategory=AWS/SES/Notifications) "\"notificationType\":\"Bounce\""
@@ -92,7 +92,7 @@ Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and rece
 ```
 
 
-## Collecting Logs for the Amazon SES App
+## Collecting logs for the Amazon SES app
 
 This section provides instructions for collecting CloudTrail Event logs and SES Notifications Via SNS.
 
@@ -228,10 +228,12 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 SES sends notifications to SNS in a JSON format. Any notification sent through SNS is by default wrapped into a JSON message. This then creates a nested JSON that is a nearly unreadable message. To prevent the problem of nested JSON messages, we highly recommend configuring SNS to use [raw message ](http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html)delivery option.
 :::
 
-## Installing the Amazon SES App
+## Installing the Amazon SES app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Amazon SES dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 ### CloudTrail Events Overview
@@ -373,12 +375,12 @@ See information about complaints (a complaint occurs when a recipient reports th
 
 **Complaint Feedback Type Trend.** See the trend in the complaint feedback types in the last 24 hours on a stacked column chart.
 
-**Top Source Generating Complaints. **See the top 10 sources generating complaint notifications in the last 24 hours.
+**Top Source Generating Complaints.** See the top 10 sources generating complaint notifications in the last 24 hours.
 
-**Sending AccountId. **See the AWS Account Id of the accounts sending emails generating complaint notifications in the last 24 hours.
+**Sending AccountId.** See the AWS Account Id of the accounts sending emails generating complaint notifications in the last 24 hours.
 
-**Sending AWS Region. **See the AWS region of the accounts sending emails generating complaint notifications in the last 24 hours.
+**Sending AWS Region.** See the AWS region of the accounts sending emails generating complaint notifications in the last 24 hours.
 
-**Sending SourceIP. **See the IP addresses of the users sending emails generating complaint notifications in the last 24 hours.
+**Sending SourceIP.** See the IP addresses of the users sending emails generating complaint notifications in the last 24 hours.
 
-**Sending Identity. **See the identity of the users sending emails generating complaint notifications in the last 24 hours.
+**Sending Identity.** See the identity of the users sending emails generating complaint notifications in the last 24 hours.

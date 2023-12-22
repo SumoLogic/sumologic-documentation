@@ -1,15 +1,15 @@
 ---
 id: apache
-title: Global Intelligence for Apache App
+title: Global Intelligence for Apache app
 sidebar_label: Global Intelligence for Apache
-description: The Global Intelligence for Apache App is a companion to the Apache App and helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache servers against other Sumo Logic customer’s servers.
+description: The Global Intelligence for Apache app is a companion to the Apache app and helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache servers against other Sumo Logic customer’s servers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/web-servers/gi-apache1.png')} alt="icon" width="75"/>
 
-The Global Intelligence for Apache App is a companion to the [Apache](/docs/integrations/web-servers/apache) App and helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput, or error issues in Apache clusters and avoid operational incidents arising from sub-optimal configurations of Apache clusters.
+The Global Intelligence for Apache app is a companion to the [Apache](/docs/integrations/web-servers/apache) app and helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput, or error issues in Apache clusters and avoid operational incidents arising from sub-optimal configurations of Apache clusters.
 
 ## Availability
 
@@ -21,11 +21,11 @@ This feature is available in the following account plans.
 | Credits      | Enterprise Operations, Enterprise Suite |
 
 
-## Data Sources 
+## Data sources 
 
-The Global Intelligence for Apache App uses logs data from Apache clusters. Like the Sumo Logic App for Apache, it assumes the NCSA extended/combined log file format for Access logs and the default Apache error log file format for error logs. [For more details](http://httpd.apache.org/docs/current/mod/mod_log_config.html) on Apache logs.
+The Global Intelligence for Apache app uses logs data from Apache clusters. Like the Sumo Logic app for Apache, it assumes the NCSA extended/combined log file format for Access logs and the default Apache error log file format for error logs. [For more details](http://httpd.apache.org/docs/current/mod/mod_log_config.html) on Apache logs.
 
-## Sample Query 
+## Sample query 
 
 The following sample query is from the Average **Requests Per Second: My Server v Benchmark** panel of **GI Apache - 02. Load Signals and Contributing Factors** dashboard.
 
@@ -47,9 +47,9 @@ The following sample query is from the Average **Requests Per Second: My Server 
 | sort by date asc
 ```
 
-## Collecting Logs for the Apache App
+## Collecting logs for the Apache app
 
-Follow the steps in [Sumo Logic Apache Logs](/docs/integrations/web-servers/apache-tomcat#collecting-logs-and-metrics-for-apache-tomcat) to configure collection for the Global Intelligence for Apache App.
+Follow the steps in [Sumo Logic Apache Logs](/docs/integrations/web-servers/apache-tomcat#collecting-logs-and-metrics-for-apache-tomcat) to configure collection for the Global Intelligence for Apache app.
 
 ## Concepts
 
@@ -66,7 +66,8 @@ issues.
 
 For each Apache server, hourly signals for the past 7 days are used to construct the benchmark distribution for a given signal such as requests per second. A given server’s hourly readings for each day are compared with the benchmark signals to determine the daily distance from the benchmark. If a server is consistently different from the benchmark, such a server is behaving differently from the population for a given signal. Changes, such as a sudden increase in distance between days, are more significant than the absolute value of distance on any given day.
 
-## Installing the Global Intelligence for Apache App
+## Installing the Global Intelligence for Apache app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Global Intelligence for Apache dashboards​
@@ -111,7 +112,7 @@ The **GI Apache - 04. Latency Signals and Contributing Factors** dashboard compa
 
 Use this dashboard to:
 
-* assess unusual latency increases and the reasons for them such as increased load. Analyze the request rate and HTTP POST/DELETE mix of requests to verify if any of these factors might be the cause. To do this, first consult the Distance measurement and then the difference between a given entity and the benchmark. Sudden increases in distance coupled with sudden increases compared to benchmark values indicate entities that are either the cause of an incident or are affected by upstream issues.
+* Assess unusual latency increases and the reasons for them such as increased load. Analyze the request rate and HTTP POST/DELETE mix of requests to verify if any of these factors might be the cause. To do this, first consult the Distance measurement and then the difference between a given entity and the benchmark. Sudden increases in distance coupled with sudden increases compared to benchmark values indicate entities that are either the cause of an incident or are affected by upstream issues.
 
 ![GI-Apache-04-Latency-Signals-and-Contributing-Factors.png](/img/global-intelligence/GI-Apache-04-Latency-Signals-and-Contributing-Factors.png)
 

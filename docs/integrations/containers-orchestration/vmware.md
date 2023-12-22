@@ -2,20 +2,20 @@
 id: vmware
 title: VMware
 sidebar_label: VMware
-description: The Sumo Logic App for VMware collects unified logs and metrics from the VMware cloud computing virtualization platform, including vCenter Server, vSphere, ESX/ESXi, and individual virtual machines, for real-time display in predefined dashboards.
+description: The Sumo Logic app for VMware collects unified logs and metrics from the VMware cloud computing virtualization platform, including vCenter Server, vSphere, ESX/ESXi, and individual virtual machines, for real-time display in predefined dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="VMware dashboards" width="50" />
 
-The VMware App uses unified logs and metrics from the VMware cloud computing virtualization platform to enable monitoring of vCenter, ESXi hosts and individual virtual machines metrics with real-time date displayed in predefined dashboards.
+The VMware app uses unified logs and metrics from the VMware cloud computing virtualization platform to enable monitoring of vCenter, ESXi hosts and individual virtual machines metrics with real-time date displayed in predefined dashboards.
 
 The dashboards provide insight into key events and metrics such as VM CPU, memory, disk utilization, under-provisioned physical hosts, and idle VMs. This enables you to determine capacity constraints and troubleshoot operational issues related to over-provisioning, changes to configuration, and VM movement.
 
 See the [vSphere product page](https://www.vmware.com/products/vsphere.html) for more information on VMware hybrid cloud.
 
-## Log and Metric types  
+## Log and metric types  
 
 The Sumo Logic vCenter logs source and vCenter metrics source use the installed collector to gather the following data from VMWare:
 
@@ -34,7 +34,7 @@ vm=ubuntu16.04-b-4,,,host=8df.sumolabs.com,,,datacenter=Production3-East,,,
 computeResource=esx1.sumolabscluster.com,,,key=3553,,,chainId=3269
 ```
 
-### Sample Query
+### Sample query
 
 The following query is from the vSphere Errors Trend panel of the vCenter Errors - Analysis Dashboard.
 ```sql
@@ -52,19 +52,19 @@ _sourceCategory = Labs/VMWare6.5 and ("error" or "fail" or "critical")
 
 ## Prerequisites
 
-* **Supported Software Versions**. The VMware App works with vCenter and vSphere 6.5, 6.7, and 7.0.
+* **Supported Software Versions**. The VMware app works with vCenter and vSphere 6.5, 6.7, and 7.0.
 * **Sumo Logic scripts for VMware**. The Sumo Logic scripts required to work with the app are located here: [sumo-vsphere-ulm.zip](https://appdevstore.s3.amazonaws.com/VMWare/sumo-vsphere-ulm.zip).
 
 
-## Collecting Logs and Metrics for the VMware App
+## Collecting logs and metrics for the VMware app
 
-The VMware App collects logs and metrics from your VMware cloud computing virtualization platform, then displays the data in predefined dashboards. The App enables you to monitor vCenter, ESXi hosts and VM metrics and events.
+The VMware app collects logs and metrics from your VMware cloud computing virtualization platform, then displays the data in predefined dashboards. The app enables you to monitor vCenter, ESXi hosts and VM metrics and events.
 
 This section provides instructions for collecting logs and metrics for VMware.
 
 ### Step 1: Set up a server, host, or VM to collect data
 
-You can use the following method for setting up a server to collect data for the VMware App:
+You can use the following method for setting up a server to collect data for the VMware app:
 
 If you have an existing VM, go directly to [Installing the Sumo Logic scripts on a VM](#installing-sumo-logic-scripts-on-a-vcenter-server-another-host-or-vm) and proceed with following the instructions. Install the Sumo Logic scripts for events and metrics on a vCenter server, or another host with access to vCenter APIs.
 
@@ -92,9 +92,9 @@ An Installed Collector is a Java agent that receives logs and metrics from its S
 To install a Collector to collect logs and metrics, refer to this [link](/docs/send-data/installed-collectors) for installation instructions.
 
 
-### Step 3: Collect logs and metrics for the VMware App
+### Step 3: Collect logs and metrics for the VMware app
 
-This section explains how to set up a vCenter server, host, or VM to collect logs and metric for the Sumo Logic App for VMware.
+This section explains how to set up a vCenter server, host, or VM to collect logs and metric for the Sumo Logic app for VMware.
 
 #### Collecting event messages
 
@@ -327,10 +327,12 @@ The pE flag is used to specify whether the password is encrypted or not. Default
     * If following error is encountered: “pyVmomi.VmomiSupport.UnknownWsdlTypeError: 'ContentLibrary'”, remove TaskEvent and EventEx from the vmware_constants.py and try again.
 
 
-## Installing the VMware App
+## Installing the VMware app
+
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing VMware dashboards​
+
 {@import ../../reuse/apps/view-dashboards.md}
 
 ### vCenter Operations - Overview
