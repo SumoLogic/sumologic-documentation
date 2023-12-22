@@ -55,7 +55,7 @@ _sourceCategory=f5/bigip/ltm  systemInfo
 | count by virtualServer_name, pool, application, enabledState, availabilityState
 ```
 
-## Collecting Logs for the F5 - BIG-IP LTM app
+## Collecting logs for the F5 - BIG-IP LTM app
 
 This section provides instructions for collecting logs for the F5 - BIG-IP LTM App, as well as a sample log message and query sample.
 
