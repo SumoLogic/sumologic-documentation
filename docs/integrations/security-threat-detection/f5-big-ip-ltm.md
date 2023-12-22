@@ -68,7 +68,7 @@ Telemetry Streaming (TS) is a software RPM file. Installing it on BIG-IP enables
 
 Telemetry Streaming uses a declarative model, meaning you provide a JSON declaration rather than a set of imperative commands. For more information on Telemetry Streaming, see [here](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/).
 
-### Configure Log Collection for the F5 - BIG-IP LTM app
+### Configure log collection for the F5 - BIG-IP LTM app
 
 #### Prerequisite
 
