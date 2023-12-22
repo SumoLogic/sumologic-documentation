@@ -82,7 +82,7 @@ Sumo Logic collects data from the User Activity and Signon Activity Reports via 
 
 User activity data is collected through the Workday Activity Logs API. To ensure that no sensitive information is being sent to Sumo Logic via this report, please run the “User Activity” Report and check the columns (specifically the Target column). If the data contains sensitive info, you can enable data masking for the security group created in the steps outlined below by following the instructions in [this doc](https://doc.workday.com/reader/Z9lz_01hqDMDg6NSf7wCBQ/uHBXsJmAzuJ2QFVU6D3o2w).
 
-## Collecting Logs for the Workday app
+## Collecting logs for the Workday app
 
 This section explains how to collect logs from Workday and ingest them into Sumo Logic for use with the Workday app predefined dashboards and searches.
 
