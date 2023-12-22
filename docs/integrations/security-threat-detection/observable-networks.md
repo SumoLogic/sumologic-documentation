@@ -25,7 +25,7 @@ Before you begin, your Observable Networks portal must be properly configured. C
 
 The Sumo Logic App for Observable Networks assumes Observable Networks formatted logs, which provide one JSON message per request.
 
-## Collect Logs for the Observable Network app
+## Collect logs for the Observable Network app
 
 This section provides instructions for configuring log collection for the Observable Network App, as well as relevant log and query samples.
 
