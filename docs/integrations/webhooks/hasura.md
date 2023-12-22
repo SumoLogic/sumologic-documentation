@@ -19,8 +19,6 @@ The Sumo Logic integration for Hasura ingests events into Sumo Logic through an 
 - Delete Operation
 - Update Operation
 
-## Log types
-
 ### Sample log messages
 
 ```json
@@ -59,6 +57,7 @@ The Sumo Logic integration for Hasura ingests events into Sumo Logic through an 
 }
 ```
 ### Sample query
+
 ```sql
 _sourceCategory="webhook/hasura" 
 | json "id", "created_at", "event.op","table.name","table.schema","trigger.name" as id, created_at, operation, tableName, tableSchema, triggerName nodrop
@@ -105,7 +104,6 @@ _sourceCategory=webhook/hasura
 
 ### Installing the Hasura app
 
-
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Hasura dashboards
@@ -114,6 +112,6 @@ _sourceCategory=webhook/hasura
 
 ### Overview
 
-The ***Hasura - Overview*** dashboard offers a comprehensive snapshot of data events and schema operations, providing valuable insights for effective management. It tracks the volume of Events Generated and their distribution by Operation, including Deleted events. It provides visibility into the Target Schema and Tables and analyzes data events by Table Schema and Trigger. The dashboard also highlights events by specific tables, enabling a deep dive into data trends. With trend analysis for Table Schema, Events by Table, Trigger, and Operation, users can make informed decisions about data architecture and operations. Additionally, it keeps users up to date with concise summaries of Recent Insertions, Updates, and Deletions, ensuring a real-time understanding of the data ecosystem.
+The **Hasura - Overview** dashboard offers a comprehensive snapshot of data events and schema operations, providing valuable insights for effective management. It tracks the volume of Events Generated and their distribution by Operation, including Deleted events. It provides visibility into the Target Schema and Tables and analyzes data events by Table Schema and Trigger. The dashboard also highlights events by specific tables, enabling a deep dive into data trends. With trend analysis for Table Schema, Events by Table, Trigger, and Operation, users can make informed decisions about data architecture and operations. Additionally, it keeps users up to date with concise summaries of Recent Insertions, Updates, and Deletions, ensuring a real-time understanding of the data ecosystem.
 
 <img src={useBaseUrl('img/integrations/webhooks/hasura_overview.png')} style={{border: '1px solid black'}} alt="Hasura - Overview"/>

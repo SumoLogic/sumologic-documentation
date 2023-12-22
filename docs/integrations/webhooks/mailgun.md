@@ -16,8 +16,6 @@ Mailgun is an email delivery service for sending, receiving, and tracking emails
 
 The Sumo Logic integration for Mailgun ingests email events into Sumo Logic through an outgoing webhook available in Mailgun. For more information on supported events that are ingested through the Mailgun webhook, see the [Mailgun Documentation](https://documentation.mailgun.com/en/latest/user_manual.html#events-1).
 
-## Log types
-
 ### Sample log messages
 
 ```json
@@ -66,13 +64,16 @@ The Sumo Logic integration for Mailgun ingests email events into Sumo Logic thro
   }
 }
 ```
+
 ### Sample query
+
 ```sql
 _sourceCategory="webhook/mailgun"
 | json "event-data.id", "event-data.event", "event-data.log-level" as id, event, loglevel nodrop
 | where event matches "{{event}}" and loglevel matches "{{logLevel}}"
 | count
 ```
+
 ## Setup
 
 This section has instructions for collecting logs for the Sumo Logic Mailgun webhook collection.
@@ -110,7 +111,6 @@ Follow the below steps to configure the Mailgun webhook.
 
 ### Installing the Mailgun app
 
-
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Mailgun dashboards
@@ -119,13 +119,12 @@ Follow the below steps to configure the Mailgun webhook.
 
 ### Overview
 
-The ***Mailgun - Overview*** dashboard offers a comprehensive overview of email system performance and user interactions, featuring panels that include Log Level, Total Events, Total Error Events, Log Level Trends, Event Type, Event Trends, Top Sender, Top Recipient, Top Subject, Client OS, Client Device Type, Client Type, Client Name, Event Geolocation, and Recent Event Summary. This dashboard empowers Mailgun users to analyze and optimize email delivery by monitoring event trends, identifying errors, understanding client behavior, and tracking event geolocation data, ensuring efficient email management and enhanced user experience.
+The **Mailgun - Overview** dashboard offers a comprehensive overview of email system performance and user interactions, featuring panels that include Log Level, Total Events, Total Error Events, Log Level Trends, Event Type, Event Trends, Top Sender, Top Recipient, Top Subject, Client OS, Client Device Type, Client Type, Client Name, Event Geolocation, and Recent Event Summary. This dashboard empowers Mailgun users to analyze and optimize email delivery by monitoring event trends, identifying errors, understanding client behavior, and tracking event geolocation data, ensuring efficient email management and enhanced user experience.
 
 <img src={useBaseUrl('img/integrations/webhooks/mailgun_overview.png')} style={{border: '1px solid black'}} alt="Mailgun - Overview"/>
 
 ### Mailgun - Failed, Complained Events
 
-The ***Mailgun - Failed, Complained Events*** dashboard offers a holistic view of email system performance and user interactions, featuring panels like Failed Events, Severity, Top Failure Codes, Top Failure Reasons, Top Sender and Recipient for Failure Events, Recent Failed Events, Complained Events, Top Sender and Recipient for Complained Events, Top Subject for Complained Events, Event Geolocation, and Recent Complained Events. This dashboard equips Mailgun users to closely monitor email delivery, assess issues, understand complaint patterns, and track geographic trends in events and complaints, facilitating effective email management and optimization.
-
+The **Mailgun - Failed, Complained Events** dashboard offers a holistic view of email system performance and user interactions, featuring panels like Failed Events, Severity, Top Failure Codes, Top Failure Reasons, Top Sender and Recipient for Failure Events, Recent Failed Events, Complained Events, Top Sender and Recipient for Complained Events, Top Subject for Complained Events, Event Geolocation, and Recent Complained Events. This dashboard equips Mailgun users to closely monitor email delivery, assess issues, understand complaint patterns, and track geographic trends in events and complaints, facilitating effective email management and optimization.
 
 <img src={useBaseUrl('img/integrations/webhooks/mailgun_failedComplainedEvents.png')} style={{border: '1px solid black'}} alt="Mailgun - Failed, Complained Events"/>

@@ -27,8 +27,6 @@ The Sumo Logic integration for iLert ingests alert events into Sumo Logic throug
 - Channel attached to alert
 - Channel detached from alert
 
-## Log types
-
 ### Sample log messages
 
 ```json
@@ -66,13 +64,16 @@ The Sumo Logic integration for iLert ingests alert events into Sumo Logic throug
   ]
 }
 ```
+
 ### Sample query
+
 ```sql
 _sourceCategory="webhook/ilert"
 | json "id", "summary", "details", "reportTime", "status", "eventType", "priority", "alertSource.name", "assignedTo.username", "assignedTo.email", "responders[0].user.username", "responders[0].user.email" as id, summary, detail, reportTime, status, eventType, priority, alertSource, assignedUserName, assignedEmail, responderUserName, responderEmail nodrop
 | where id matches "{{alertId}}" and alertSource matches "{{alertSource}}" and eventType matches "{{eventType}}" and status matches "{{status}}" and  priority matches "{{priority}}"
 | count_distinct(id) 
 ```
+
 ## Setup
 
 This section has instructions for collecting logs for the Sumo Logic iLert webhook collection.
@@ -115,7 +116,6 @@ Follow the steps to configure the iLert Webhook.
 
 ### Installing the iLert app
 
-
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing iLert dashboard
@@ -124,6 +124,6 @@ Follow the steps to configure the iLert Webhook.
 
 ### Overview
 
-The ***iLert - Overview*** dashboard presents a comprehensive insight into the alert management system, featuring a range of informative panels. Starting with Unique Alert Generation statistics, it displays alerts categorized by their sources and highlights High-Priority alerts for immediate attention. The dashboard also tracks Pending and Resolved Alerts, providing a real-time overview of the alert status. Additionally, it offers a breakdown of alerts by priority, identifies the Top Active Responders, and analyses alert data based on event types and source trends. Users can efficiently spot event-type trends and review a concise summary of recent alerts.
+The **iLert - Overview** dashboard presents a comprehensive insight into the alert management system, featuring a range of informative panels. Starting with Unique Alert Generation statistics, it displays alerts categorized by their sources and highlights High-Priority alerts for immediate attention. The dashboard also tracks Pending and Resolved Alerts, providing a real-time overview of the alert status. Additionally, it offers a breakdown of alerts by priority, identifies the Top Active Responders, and analyses alert data based on event types and source trends. Users can efficiently spot event-type trends and review a concise summary of recent alerts.
 
 <img src={useBaseUrl('img/integrations/webhooks/iLert_overview.png')} style={{border: '1px solid black'}} alt="iLert-Overview"/>

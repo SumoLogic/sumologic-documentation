@@ -16,8 +16,6 @@ NeoLoad is a solution for continuous performance testing software to automate AP
 
 The Sumo Logic integration for NeoLoad ingests web events into Sumo Logic through an outgoing webhook available in NeoLoad. For more information on supported events that are ingested through the NeoLoad webhook, see the [NeoLoad Documentation](https://documentation.tricentis.com/nlweb/latest/en/content/views_and_features/events_event_types.htm).
 
-## Log types
-
 ### Sample log messages
 
 ```json
@@ -43,13 +41,16 @@ The Sumo Logic integration for NeoLoad ingests web events into Sumo Logic throug
   "image_url": "https://neoload-api.saas.neotys.com/v1\/graphs\/f568f886-32ae-4f36-b154-dcbd4fe8104d"
 }
 ```
+
 ### Sample query
+
 ```sql
 _sourceCategory="webhook/neoload"
 | json "Test Name", "Project", "Scenario", "Status", "Quality Status", "Workspace Name" as testName, project, scenario, status, qualityStatus, workspace nodrop
 | where testName matches "{{testName}}" and project matches "{{project}}" and scenario matches "{{scenario}}" and status matches "{{status}}" and qualityStatus matches "{{qualityStatus}}" and workspace matches "{{workspace}}"
 | count
 ```
+
 ## Setup
 
 This section has instructions for collecting logs for the Sumo Logic NeoLoad webhook collection.
@@ -119,7 +120,6 @@ Follow the steps to configure the NeoLoad webhook.
 
 ### Installing the NeoLoad app
 
-
 {@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing NeoLoad dashboards
@@ -128,12 +128,12 @@ Follow the steps to configure the NeoLoad webhook.
 
 ### Overview
 
-The ***NeoLoad - Overview*** dashboard offers a comprehensive view of your performance testing landscape through an array of informative panels. It provides real-time insights into test execution, showcasing Test Runs, Test Completions, and any Tests that may have been Terminated or are currently In Progress. With a focus on project and scenario management, the dashboard also tracks Targeted Projects, Targeted Tests, Scenarios, and Workspaces. Users can monitor the overall Test Status and Test Quality Status, with detailed breakdowns by Project, Scenarios, and Test Frequency, ensuring that performance testing efforts are meticulously analyzed and optimized. The dashboard further empowers project-specific analysis with Project-wise Test metrics, facilitating informed decision-making and proactive test management.
+The **NeoLoad - Overview** dashboard offers a comprehensive view of your performance testing landscape through an array of informative panels. It provides real-time insights into test execution, showcasing Test Runs, Test Completions, and any Tests that may have been Terminated or are currently In Progress. With a focus on project and scenario management, the dashboard also tracks Targeted Projects, Targeted Tests, Scenarios, and Workspaces. Users can monitor the overall Test Status and Test Quality Status, with detailed breakdowns by Project, Scenarios, and Test Frequency, ensuring that performance testing efforts are meticulously analyzed and optimized. The dashboard further empowers project-specific analysis with Project-wise Test metrics, facilitating informed decision-making and proactive test management.
 
 <img src={useBaseUrl('img/integrations/webhooks/neoload_overview.png')} style={{border: '1px solid black'}} alt="NeoLoad - Overview"/>
 
 ### Test Run Details
 
-The ***Neoload - Test Run Details*** dashboard offers a comprehensive overview of performance testing initiatives, providing insights through multiple panels. It allows tracking Test Frequency, categorizing tests by Workspace and Projects, and monitoring trends in Status, Project-wise test trends, Quality status trends, and Test Scenario trends. Additionally, it provides visibility into tests correlated with Execution Time and Max#VUs, enabling in-depth analysis of test performance and informed decision-making for optimizing the testing strategy.
+The **Neoload - Test Run Details** dashboard offers a comprehensive overview of performance testing initiatives, providing insights through multiple panels. It allows tracking Test Frequency, categorizing tests by Workspace and Projects, and monitoring trends in Status, Project-wise test trends, Quality status trends, and Test Scenario trends. Additionally, it provides visibility into tests correlated with Execution Time and Max#VUs, enabling in-depth analysis of test performance and informed decision-making for optimizing the testing strategy.
 
 <img src={useBaseUrl('img/integrations/webhooks/neoload_testRunDetails.png')} style={{border: '1px solid black'}} alt="Neoload - Test Run Details"/>
