@@ -15,7 +15,7 @@ Netskope is a Cloud Access Security Broker (CASB) hosted in the cloud. The Netsk
 
 ## Log types
 
-The Netskope App provides a collector source for pulling all the events and alerts from Netskope in real-time via API calls and ingests them into the Sumo Logic platform through our Hosted collector.
+The Netskope app provides a collector source for pulling all the events and alerts from Netskope in real-time via API calls and ingests them into the Sumo Logic platform through our Hosted collector.
 
 For more information on Netskope, refer to the Netskope [documentation](https://www.netskope.com/platform/how-it-works).
 
