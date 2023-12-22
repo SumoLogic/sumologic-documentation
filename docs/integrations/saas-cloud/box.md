@@ -13,7 +13,7 @@ The Sumo Logic App for Box provides insight into user behavior patterns, monitor
 
 ## Log types
 
-The Sumo Logic app for Box collects Box events, which are described in detail [here](https://developers.box.com/docs/#events).
+The Sumo Logic app for Box collects Box events, which are described in detail [here](https://developer.box.com/guides/events/).
 
 ### Sample log messages
 
