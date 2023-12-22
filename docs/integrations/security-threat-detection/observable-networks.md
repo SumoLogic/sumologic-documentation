@@ -159,7 +159,7 @@ _sourceCategory=observable
 | order by _count desc
 ```
 
-## Install the Observable Networks App
+## Install the Observable Networks app
 
 {@import ../../reuse/apps/app-install-v2.md}
 
