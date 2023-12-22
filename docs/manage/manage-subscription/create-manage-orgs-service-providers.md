@@ -162,7 +162,7 @@ You can view the usage of individual child orgs in the **Child Orgs** tab on the
 
 * The **Credit Allocation** tile indicates the total number of credits allocated.
 * The **Total Credit Usage** tile shows amount of credits consumed out of the total allocated credits.
-* The **Usage Forecast** tile indicated the total consumption of the credits by the end of contract period according to the current consumption rate.
+* The **Usage Forecast** tile indicates the total consumption of the credits by the end of contract period according to the current consumption rate.
 * The **Allocated Credits** column indicates the total number of credits allocated to the selected child org.
 * The **Total Credits Used** column indicates the total amount of credits consumed for the selected child org.
 * The **Usage %** column indicates the percentage of overall subscription credits that was allocated to a child org has been consumed.
