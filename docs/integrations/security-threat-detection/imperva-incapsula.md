@@ -67,7 +67,7 @@ _sourceCategory="Incapsula"
 | count by policy_type
 | top 10 policy_type by _count
 ```
-## Collecting Logs for the Imperva-Incapsula WAF app
+## Collecting logs for the Imperva-Incapsula WAF app
 
 This section provides instructions on configuring log collection for the Imperva - Incapsula Web Application Firewall App, as well as query samples.
 
