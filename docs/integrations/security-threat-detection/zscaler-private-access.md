@@ -13,7 +13,7 @@ The Zscaler Private Access App collects logs from Zscaler using the Log Streamin
 
 ## Log types
 
-The Sumo Logic App for Zscaler Private Access uses LSS to send the following logs, as documented [here](https://help.zscaler.com/zpa/about-log-streaming-service):
+The Sumo Logic app for Zscaler Private Access uses LSS to send the following logs, as documented [here](https://help.zscaler.com/zpa/about-log-streaming-service):
 
 * App Connector Status: Information related to an App Connector's availability and connection to ZPA. To learn more, see[ App Connector Status Log Fields](https://help.zscaler.com/zpa/connector-status-log-fields).
 * User Activity: Information on end user requests to Applications. To learn more, see[ User Activity Log Fields](https://help.zscaler.com/zpa/user-activity-log-fields).
