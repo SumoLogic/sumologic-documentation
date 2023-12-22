@@ -128,7 +128,7 @@ For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](
 1. At this point, ZPA should start sending logs to Sumo Logic.
 
 
-## Installing the Zscaler Private Access App
+## Installing the Zscaler Private Access app
 
 {@import ../../reuse/apps/app-install-v2.md}
 
