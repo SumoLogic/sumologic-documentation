@@ -16,7 +16,6 @@ With the Sumo Logic app for Symantec Web Security, you can:
 - **Optimize web security policies**. This app provides insights into web traffic that can help you to optimize web security policies. You can also use the app to identify areas where policies may be too restrictive or too permissive and make adjustments accordingly.
 
 ## Log types
-## Log types
 
 This App uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source) to collect [Access Logs](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/cloud-swg/help/wss-reference/accesslogformats-ref.html) from Symantec Web Security Service.
 
