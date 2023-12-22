@@ -21,7 +21,7 @@ The Sumo Logic App for Workday collects all logs in JSON format. It uses the fol
 
 ### Sample log messages
 
-Workday App logs are all in JSON format. The Workday App uses two types of logs and this section provides examples of the log types.
+Workday app logs are all in JSON format. The Workday app uses two types of logs and this section provides examples of the log types.
 
 ```txt title="SignOn Logs"
 {
