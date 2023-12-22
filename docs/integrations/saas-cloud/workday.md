@@ -15,7 +15,7 @@ The Sumo Logic app for Workday provides insights into authentication activity, u
 
 ## Log types
 
-The Sumo Logic App for Workday collects all logs in JSON format. It uses the following two types of logs:
+The Sumo Logic app for Workday collects all logs in JSON format. It uses the following two types of logs:
 * SignOn Logs
 * Activity Logs
 
