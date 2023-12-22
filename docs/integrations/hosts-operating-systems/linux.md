@@ -58,7 +58,7 @@ Dec 16 20:26:23 ubuntu sshd[15533]: pam_unix(sshd:auth): authentication failure;
 
 ### Sample queries
 
-See [Suggested Searches for Linux OS](#Suggested_Searches_for_Linux_OS).
+See [Suggested Searches for Linux OS](#suggested-searches-for-linux-os).
 
 
 ## Installing the Linux app
