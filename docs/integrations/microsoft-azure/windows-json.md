@@ -15,7 +15,6 @@ You may also be interested in the [Sumo Logic App for Windows Cloud Security Mon
 :::
 
 ## Log types
-## Log types
 
 The Windows JSON App assumes events are coming from Windows Event Log Sources in JSON format. It does not work with third party logs.
 
