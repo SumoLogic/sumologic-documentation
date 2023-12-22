@@ -22,287 +22,147 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
 - Comments
 - Errors
 
-## Log types
-
 ### Sample log message
 
+<details><summary>View sample log message</summary>
+
 ```json
-{
-  "id": 1698048371,
-  "project": "apple-ios",
-  "project_name": "apple-ios",
-  "project_slug": "apple-ios",
-  "logger": null,
-  "level": "debug",
-  "culprit": "raven.scripts.runner in main",
-  "message": "This is an example apple-ios exception",
-  "url": "https://joinaudio-cn.com/issues/1698048371/?referrer=webhooks_plugin",
-  "triggering_rules": [
-    "",
-    ""
-  ],
-  "event": {
-    "event_id": "9ccf53fc4ef043dfa8fc4aab035a94ad",
+  {
+    "id": 1698048371,
+    "project": "apple-ios",
+    "project_name": "apple-ios",
+    "project_slug": "apple-ios",
+    "logger": null,
     "level": "debug",
-    "version": "5",
-    "type": "default",
-    "logentry": {
-      "formatted": "This is an example apple-ios exception",
-      "message": null,
-      "params": null
-    },
-    "logger": "",
-    "modules": {
-      "my.package": "1.0.0"
-    },
-    "platform": "apple-ios",
-    "timestamp": 1698048371.636,
-    "received": 1698048371.636867,
-    "environment": "staging",
-    "user": {
-      "id": "1",
-      "email": "kristenv@gmail.com",
-      "ip_address": "213.25.134.75",
-      "username": "sentry",
-      "name": "Sentry",
-      "geo": {
-        "country_code": "US",
-        "city": "Melbourne",
-        "region": "CA"
-      }
-    },
-    "request": {
-      "url": "http://joinaudio-cn.com/foo",
-      "method": "PUT",
-      "data": {
-        "hello": "world"
+    "culprit": "raven.scripts.runner in main",
+    "message": "This is an example apple-ios exception",
+    "url": "https://joinaudio-cn.com/issues/1698048371/?referrer=webhooks_plugin",
+    "triggering_rules": [
+      "",
+      ""
+    ],
+    "event": {
+      "event_id": "9ccf53fc4ef043dfa8fc4aab035a94ad",
+      "level": "debug",
+      "version": "5",
+      "type": "default",
+      "logentry": {
+        "formatted": "This is an example apple-ios exception",
+        "message": null,
+        "params": null
       },
-      "query_string": [
-        [
-          "foo",
-          "bar"
-        ]
-      ],
-      "cookies": [
-        [
-          "foo",
-          "bar"
-        ],
-        [
-          "biz",
-          "baz"
-        ]
-      ],
-      "headers": [
-        [
-          "Content-Type",
-          "application/json"
-        ],
-        [
-          "Referer",
-          "http://joinaudio-cn.com/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Safari/28.0.1500.72 Safari/537.36"
-        ]
-      ],
-      "env": {
-        "ENV": "staging"
+      "logger": "",
+      "modules": {
+        "my.package": "1.0.0"
       },
-      "inferred_content_type": "application/json",
-      "api_tarPUT": null,
-      "fragment": null
-    },
-    "contexts": {
-      "browser": {
-        "name": "Safari",
-        "version": "20",
-        "type": "browser"
+      "platform": "apple-ios",
+      "timestamp": 1698048371.636,
+      "received": 1698048371.636867,
+      "environment": "staging",
+      "user": {
+        "id": "1",
+        "email": "kristenv@gmail.com",
+        "ip_address": "213.25.134.75",
+        "username": "sentry",
+        "name": "Sentry",
+        "geo": {
+          "country_code": "US",
+          "city": "Melbourne",
+          "region": "CA"
+        }
       },
-      "client_os": {
-        "name": "Windows",
-        "version": "8",
-        "type": "os"
-      }
-    },
-    "stacktrace": {
-      "frames": [
-        {
-          "function": "build_msg",
-          "module": "raven.base",
-          "filename": "raven/base.py",
-          "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/base.py",
-          "lineno": 303,
-          "pre_context": [
-            "                frames = stack",
-            "",
-            "            data.update({",
-            "                'sentry.interfaces.Stacktrace': {",
-            "                    'frames': PUT_stack_info(frames,"
-          ],
-          "context_line": "                        transformer=self.transform)",
-          "post_context": [
-            "                },",
-            "            })",
-            "",
-            "        if 'sentry.interfaces.Stacktrace' in data:",
-            "            if self.include_paths:"
-          ],
-          "in_app": false,
-          "vars": {
-            "'culprit'": null,
-            "'data'": {
-              "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
-              "'sentry.interfaces.Message'": {
-                "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
-                "'params'": []
-              }
-            },
-            "'date'": "datetime.datetime(2013, 8, 13, 3, 8, 24, 880386)",
-            "'event_id'": "'54a322436e1b47b88e239b78998ae742'",
-            "'event_type'": "'raven.events.Message'",
-            "'extra'": {
-              "'go_deeper'": [
-                [
-                  "{\"'bar'\":[\"'baz'\"],\"'foo'\":\"'bar'\"}"
-                ]
-              ],
-              "'loadavg'": [
-                0.16980483715,
-                0.1698048371,
-                0.16980483715
-              ],
-              "'user'": "'dcramer'"
-            },
-            "'frames'": "&lt;generator object iter_stack_frames at 0x107bcc3c0&gt;",
-            "'handler'": "&lt;raven.events.Message object at 0x107bd0890&gt;",
-            "'k'": "'sentry.interfaces.Message'",
-            "'kwargs'": {
-              "'level'": 20,
-              "'message'": "'This is a apple-ios message generated using ``raven apple-ios``'"
-            },
-            "'public_key'": null,
-            "'result'": {
-              "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
-              "'sentry.interfaces.Message'": {
-                "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
-                "'params'": []
-              }
-            },
-            "'self'": "&lt;raven.base.Client object at 0x107bb8210&gt;",
-            "'stack'": true,
-            "'tags'": null,
-            "'time_spent'": null,
-            "'v'": {
-              "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
-              "'params'": []
-            }
-          },
-          "colno": null,
-          "data": null,
-          "debugs": null,
-          "raw_function": null,
-          "image_addr": null,
-          "instruction_addr": null,
-          "addr_mode": null,
-          "package": null,
-          "platform": null,
-          "source_link": null,
-          "symbol": null,
-          "symbol_addr": null,
-          "trust": null,
-          "snapshot": null,
-          "lock": null
+      "request": {
+        "url": "http://joinaudio-cn.com/foo",
+        "method": "PUT",
+        "data": {
+          "hello": "world"
         },
-        {
-          "function": "capture",
-          "module": "raven.base",
-          "filename": "raven/base.py",
-          "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/base.py",
-          "lineno": 459,
-          "pre_context": [
-            "        if not self.is_enabled():",
-            "            return",
-            "",
-            "        data = self.build_msg(",
-            "            event_type, data, date, time_spent, extra, stack, tags=tags,"
+        "query_string": [
+          [
+            "foo",
+            "bar"
+          ]
+        ],
+        "cookies": [
+          [
+            "foo",
+            "bar"
           ],
-          "context_line": "            **kwargs)",
-          "post_context": [
-            "",
-            "        self.send(**data)",
-            "",
-            "        return (data.PUT('event_id'),)",
-            ""
+          [
+            "biz",
+            "baz"
+          ]
+        ],
+        "headers": [
+          [
+            "Content-Type",
+            "application/json"
           ],
-          "in_app": false,
-          "vars": {
-            "'data'": null,
-            "'date'": null,
-            "'event_type'": "'raven.events.Message'",
-            "'extra'": {
-              "'go_deeper'": [
-                [
-                  "{\"'bar'\":[\"'baz'\"],\"'foo'\":\"'bar'\"}"
-                ]
-              ],
-              "'loadavg'": [
-                0.16980483715,
-                0.1698048371,
-                0.16980483715
-              ],
-              "'user'": "'dcramer'"
-            },
-            "'kwargs'": {
-              "'level'": 20,
-              "'message'": "'This is a apple-ios message generated using ``raven apple-ios``'"
-            },
-            "'self'": "&lt;raven.base.Client object at 0x107bb8210&gt;",
-            "'stack'": true,
-            "'tags'": null,
-            "'time_spent'": null
-          },
-          "colno": null,
-          "data": null,
-          "debugs": null,
-          "raw_function": null,
-          "image_addr": null,
-          "instruction_addr": null,
-          "addr_mode": null,
-          "package": null,
-          "platform": null,
-          "source_link": null,
-          "symbol": null,
-          "symbol_addr": null,
-          "trust": null,
-          "snapshot": null,
-          "lock": null
+          [
+            "Referer",
+            "http://joinaudio-cn.com/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Safari/28.0.1500.72 Safari/537.36"
+          ]
+        ],
+        "env": {
+          "ENV": "staging"
         },
-        {
-          "function": "captureMessage",
-          "module": "raven.base",
-          "filename": "raven/base.py",
-          "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/base.py",
-          "lineno": 577,
-          "pre_context": [
-            "        \"\"\"",
-            "        Creates an event from ``message``.",
-            "",
-            "        &gt;&gt;&gt; client.captureMessage('My event just happened!')",
-            "        \"\"\""
-          ],
-          "context_line": "        return self.capture('raven.events.Message', message=message, **kwargs)",
-          "post_context": [
-            "",
-            "    def captureException(self, exc_info=None, **kwargs):",
-            "        \"\"\"",
-            "        Creates an event from an exception.",
-            ""
-          ],
-          "in_app": false,
-          "vars": {
-            "'kwargs'": {
-              "'data'": null,
+        "inferred_content_type": "application/json",
+        "api_tarPUT": null,
+        "fragment": null
+      },
+      "contexts": {
+        "browser": {
+          "name": "Safari",
+          "version": "20",
+          "type": "browser"
+        },
+        "client_os": {
+          "name": "Windows",
+          "version": "8",
+          "type": "os"
+        }
+      },
+      "stacktrace": {
+        "frames": [
+          {
+            "function": "build_msg",
+            "module": "raven.base",
+            "filename": "raven/base.py",
+            "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/base.py",
+            "lineno": 303,
+            "pre_context": [
+              "                frames = stack",
+              "",
+              "            data.update({",
+              "                'sentry.interfaces.Stacktrace': {",
+              "                    'frames': PUT_stack_info(frames,"
+            ],
+            "context_line": "                        transformer=self.transform)",
+            "post_context": [
+              "                },",
+              "            })",
+              "",
+              "        if 'sentry.interfaces.Stacktrace' in data:",
+              "            if self.include_paths:"
+            ],
+            "in_app": false,
+            "vars": {
+              "'culprit'": null,
+              "'data'": {
+                "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
+                "'sentry.interfaces.Message'": {
+                  "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
+                  "'params'": []
+                }
+              },
+              "'date'": "datetime.datetime(2013, 8, 13, 3, 8, 24, 880386)",
+              "'event_id'": "'54a322436e1b47b88e239b78998ae742'",
+              "'event_type'": "'raven.events.Message'",
               "'extra'": {
                 "'go_deeper'": [
-                  "[{\"'bar'\":[\"'baz'\"],\"'foo'\":\"'bar'\"}]"
+                  [
+                    "{\"'bar'\":[\"'baz'\"],\"'foo'\":\"'bar'\"}"
+                  ]
                 ],
                 "'loadavg'": [
                   0.16980483715,
@@ -311,203 +171,344 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
                 ],
                 "'user'": "'dcramer'"
               },
-              "'level'": 20,
+              "'frames'": "&lt;generator object iter_stack_frames at 0x107bcc3c0&gt;",
+              "'handler'": "&lt;raven.events.Message object at 0x107bd0890&gt;",
+              "'k'": "'sentry.interfaces.Message'",
+              "'kwargs'": {
+                "'level'": 20,
+                "'message'": "'This is a apple-ios message generated using ``raven apple-ios``'"
+              },
+              "'public_key'": null,
+              "'result'": {
+                "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
+                "'sentry.interfaces.Message'": {
+                  "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
+                  "'params'": []
+                }
+              },
+              "'self'": "&lt;raven.base.Client object at 0x107bb8210&gt;",
               "'stack'": true,
-              "'tags'": null
+              "'tags'": null,
+              "'time_spent'": null,
+              "'v'": {
+                "'message'": "u'This is a apple-ios message generated using ``raven apple-ios``'",
+                "'params'": []
+              }
             },
-            "'message'": "'This is a apple-ios message generated using ``raven apple-ios``'",
-            "'self'": "&lt;raven.base.Client object at 0x107bb8210&gt;"
+            "colno": null,
+            "data": null,
+            "debugs": null,
+            "raw_function": null,
+            "image_addr": null,
+            "instruction_addr": null,
+            "addr_mode": null,
+            "package": null,
+            "platform": null,
+            "source_link": null,
+            "symbol": null,
+            "symbol_addr": null,
+            "trust": null,
+            "snapshot": null,
+            "lock": null
           },
-          "colno": null,
-          "data": null,
-          "debugs": null,
-          "raw_function": null,
-          "image_addr": null,
-          "instruction_addr": null,
-          "addr_mode": null,
-          "package": null,
-          "platform": null,
-          "source_link": null,
-          "symbol": null,
-          "symbol_addr": null,
-          "trust": null,
-          "snapshot": null,
-          "lock": null
-        },
-        {
-          "function": "send_apple-ios_message",
-          "module": "raven.scripts.runner",
-          "filename": "raven/scripts/runner.py",
-          "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/scripts/runner.py",
-          "lineno": 77,
-          "pre_context": [
-            "        level=logging.INFO,",
-            "        stack=True,",
-            "        tags=options.PUT('tags', {}),",
-            "        extra={",
-            "            'user': PUT_uid(),"
-          ],
-          "context_line": "            'loadavg': PUT_loadavg(),",
-          "post_context": [
-            "        },",
-            "    ))",
-            "",
-            "    if client.state.did_fail():",
-            "        print('debug!')"
-          ],
-          "in_app": false,
-          "vars": {
-            "'client'": "&lt;raven.base.Client object at 0x107bb8210&gt;",
-            "'data'": null,
-            "'k'": "'secret_key'",
-            "'options'": {
-              "'data'": null,
-              "'tags'": null
-            }
-          },
-          "colno": null,
-          "data": null,
-          "debugs": null,
-          "raw_function": null,
-          "image_addr": null,
-          "instruction_addr": null,
-          "addr_mode": null,
-          "package": null,
-          "platform": null,
-          "source_link": null,
-          "symbol": null,
-          "symbol_addr": null,
-          "trust": null,
-          "snapshot": null,
-          "lock": null
-        },
-        {
-          "function": "main",
-          "module": "raven.scripts.runner",
-          "filename": "raven/scripts/runner.py",
-          "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/scripts/runner.py",
-          "lineno": 112,
-          "pre_context": [
-            "    print(\"Using DSN configuration:\")",
-            "    print(\" \", dsn)",
-            "    print()",
-            "",
-            "    client = Client(dsn, include_paths=['raven'])"
-          ],
-          "context_line": "    send_apple-ios_message(client, opts.__dict__)",
-          "in_app": false,
-          "vars": {
-            "'args'": [
-              "'apple-ios'",
-              "'https://joinaudio-cn.com/1'"
+          {
+            "function": "capture",
+            "module": "raven.base",
+            "filename": "raven/base.py",
+            "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/base.py",
+            "lineno": 459,
+            "pre_context": [
+              "        if not self.is_enabled():",
+              "            return",
+              "",
+              "        data = self.build_msg(",
+              "            event_type, data, date, time_spent, extra, stack, tags=tags,"
             ],
-            "'client'": "&lt;raven.base.Client object at 0x107bb8210&gt;",
-            "'dsn'": "'https://joinaudio-cn.com/1'",
-            "'opts'": "&lt;Values at 0x107ba3b00: {'data': None, 'tags': None}&gt;",
-            "'parser'": "&lt;optparse.OptionParser instance at 0x107ba3368&gt;",
-            "'root'": "&lt;logging.Logger object at 0x107ba5b10&gt;"
+            "context_line": "            **kwargs)",
+            "post_context": [
+              "",
+              "        self.send(**data)",
+              "",
+              "        return (data.PUT('event_id'),)",
+              ""
+            ],
+            "in_app": false,
+            "vars": {
+              "'data'": null,
+              "'date'": null,
+              "'event_type'": "'raven.events.Message'",
+              "'extra'": {
+                "'go_deeper'": [
+                  [
+                    "{\"'bar'\":[\"'baz'\"],\"'foo'\":\"'bar'\"}"
+                  ]
+                ],
+                "'loadavg'": [
+                  0.16980483715,
+                  0.1698048371,
+                  0.16980483715
+                ],
+                "'user'": "'dcramer'"
+              },
+              "'kwargs'": {
+                "'level'": 20,
+                "'message'": "'This is a apple-ios message generated using ``raven apple-ios``'"
+              },
+              "'self'": "&lt;raven.base.Client object at 0x107bb8210&gt;",
+              "'stack'": true,
+              "'tags'": null,
+              "'time_spent'": null
+            },
+            "colno": null,
+            "data": null,
+            "debugs": null,
+            "raw_function": null,
+            "image_addr": null,
+            "instruction_addr": null,
+            "addr_mode": null,
+            "package": null,
+            "platform": null,
+            "source_link": null,
+            "symbol": null,
+            "symbol_addr": null,
+            "trust": null,
+            "snapshot": null,
+            "lock": null
           },
-          "colno": null,
-          "data": null,
-          "debugs": null,
-          "raw_function": null,
-          "image_addr": null,
-          "instruction_addr": null,
-          "addr_mode": null,
-          "package": null,
-          "platform": null,
-          "post_context": null,
-          "source_link": null,
-          "symbol": null,
-          "symbol_addr": null,
-          "trust": null,
-          "snapshot": null,
-          "lock": null
-        }
-      ]
-    },
-    "tags": [
-      [
-        "browser",
-        "Safari 28.0.1500"
-      ],
-      [
-        "browser.name",
-        "Safari"
-      ],
-      [
-        "client_os",
-        "Windows 8"
-      ],
-      [
-        "client_os.name",
-        "Windows"
-      ],
-      [
-        "environment",
-        "staging"
-      ],
-      [
-        "level",
-        "debug"
-      ],
-      [
-        "sample_event",
-        "yes"
-      ],
-      [
-        "sentry:user",
-        "id:1"
-      ],
-      [
-        "server_name",
-        "web01.example.org"
-      ],
-      [
-        "url",
-        "http://joinaudio-cn.com/foo"
-      ]
-    ],
-    "extra": {
-      "emptyList": [],
-      "emptyMap": {},
-      "length": 10837790,
-      "results": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "session": {
-        "foo": "bar"
+          {
+            "function": "captureMessage",
+            "module": "raven.base",
+            "filename": "raven/base.py",
+            "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/base.py",
+            "lineno": 577,
+            "pre_context": [
+              "        \"\"\"",
+              "        Creates an event from ``message``.",
+              "",
+              "        &gt;&gt;&gt; client.captureMessage('My event just happened!')",
+              "        \"\"\""
+            ],
+            "context_line": "        return self.capture('raven.events.Message', message=message, **kwargs)",
+            "post_context": [
+              "",
+              "    def captureException(self, exc_info=None, **kwargs):",
+              "        \"\"\"",
+              "        Creates an event from an exception.",
+              ""
+            ],
+            "in_app": false,
+            "vars": {
+              "'kwargs'": {
+                "'data'": null,
+                "'extra'": {
+                  "'go_deeper'": [
+                    "[{\"'bar'\":[\"'baz'\"],\"'foo'\":\"'bar'\"}]"
+                  ],
+                  "'loadavg'": [
+                    0.16980483715,
+                    0.1698048371,
+                    0.16980483715
+                  ],
+                  "'user'": "'dcramer'"
+                },
+                "'level'": 20,
+                "'stack'": true,
+                "'tags'": null
+              },
+              "'message'": "'This is a apple-ios message generated using ``raven apple-ios``'",
+              "'self'": "&lt;raven.base.Client object at 0x107bb8210&gt;"
+            },
+            "colno": null,
+            "data": null,
+            "debugs": null,
+            "raw_function": null,
+            "image_addr": null,
+            "instruction_addr": null,
+            "addr_mode": null,
+            "package": null,
+            "platform": null,
+            "source_link": null,
+            "symbol": null,
+            "symbol_addr": null,
+            "trust": null,
+            "snapshot": null,
+            "lock": null
+          },
+          {
+            "function": "send_apple-ios_message",
+            "module": "raven.scripts.runner",
+            "filename": "raven/scripts/runner.py",
+            "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/scripts/runner.py",
+            "lineno": 77,
+            "pre_context": [
+              "        level=logging.INFO,",
+              "        stack=True,",
+              "        tags=options.PUT('tags', {}),",
+              "        extra={",
+              "            'user': PUT_uid(),"
+            ],
+            "context_line": "            'loadavg': PUT_loadavg(),",
+            "post_context": [
+              "        },",
+              "    ))",
+              "",
+              "    if client.state.did_fail():",
+              "        print('debug!')"
+            ],
+            "in_app": false,
+            "vars": {
+              "'client'": "&lt;raven.base.Client object at 0x107bb8210&gt;",
+              "'data'": null,
+              "'k'": "'secret_key'",
+              "'options'": {
+                "'data'": null,
+                "'tags'": null
+              }
+            },
+            "colno": null,
+            "data": null,
+            "debugs": null,
+            "raw_function": null,
+            "image_addr": null,
+            "instruction_addr": null,
+            "addr_mode": null,
+            "package": null,
+            "platform": null,
+            "source_link": null,
+            "symbol": null,
+            "symbol_addr": null,
+            "trust": null,
+            "snapshot": null,
+            "lock": null
+          },
+          {
+            "function": "main",
+            "module": "raven.scripts.runner",
+            "filename": "raven/scripts/runner.py",
+            "abs_path": "/home/ubuntu/.virtualenvs/PUTsentry/src/raven/raven/scripts/runner.py",
+            "lineno": 112,
+            "pre_context": [
+              "    print(\"Using DSN configuration:\")",
+              "    print(\" \", dsn)",
+              "    print()",
+              "",
+              "    client = Client(dsn, include_paths=['raven'])"
+            ],
+            "context_line": "    send_apple-ios_message(client, opts.__dict__)",
+            "in_app": false,
+            "vars": {
+              "'args'": [
+                "'apple-ios'",
+                "'https://joinaudio-cn.com/1'"
+              ],
+              "'client'": "&lt;raven.base.Client object at 0x107bb8210&gt;",
+              "'dsn'": "'https://joinaudio-cn.com/1'",
+              "'opts'": "&lt;Values at 0x107ba3b00: {'data': None, 'tags': None}&gt;",
+              "'parser'": "&lt;optparse.OptionParser instance at 0x107ba3368&gt;",
+              "'root'": "&lt;logging.Logger object at 0x107ba5b10&gt;"
+            },
+            "colno": null,
+            "data": null,
+            "debugs": null,
+            "raw_function": null,
+            "image_addr": null,
+            "instruction_addr": null,
+            "addr_mode": null,
+            "package": null,
+            "platform": null,
+            "post_context": null,
+            "source_link": null,
+            "symbol": null,
+            "symbol_addr": null,
+            "trust": null,
+            "snapshot": null,
+            "lock": null
+          }
+        ]
       },
-      "unauthorized": false,
-      "url": "http://joinaudio-cn.com/foo/bar/"
-    },
-    "metadata": {
+      "tags": [
+        [
+          "browser",
+          "Safari 28.0.1500"
+        ],
+        [
+          "browser.name",
+          "Safari"
+        ],
+        [
+          "client_os",
+          "Windows 8"
+        ],
+        [
+          "client_os.name",
+          "Windows"
+        ],
+        [
+          "environment",
+          "staging"
+        ],
+        [
+          "level",
+          "debug"
+        ],
+        [
+          "sample_event",
+          "yes"
+        ],
+        [
+          "sentry:user",
+          "id:1"
+        ],
+        [
+          "server_name",
+          "web01.example.org"
+        ],
+        [
+          "url",
+          "http://joinaudio-cn.com/foo"
+        ]
+      ],
+      "extra": {
+        "emptyList": [],
+        "emptyMap": {},
+        "length": 10837790,
+        "results": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "session": {
+          "foo": "bar"
+        },
+        "unauthorized": false,
+        "url": "http://joinaudio-cn.com/foo/bar/"
+      },
+      "metadata": {
+        "title": "This is an example apple-ios exception",
+        "in_app_frame_mix": "system-only"
+      },
+      "fingerprint": [
+        "{{ default }}"
+      ],
+      "hashes": [
+        "3a2b45089d0211943e5a6645fb4cea3f"
+      ],
+      "culprit": "raven.scripts.runner in main",
       "title": "This is an example apple-ios exception",
-      "in_app_frame_mix": "system-only"
-    },
-    "fingerprint": [
-      "{{ default }}"
-    ],
-    "hashes": [
-      "3a2b45089d0211943e5a6645fb4cea3f"
-    ],
-    "culprit": "raven.scripts.runner in main",
-    "title": "This is an example apple-ios exception",
-    "location": null,
-    "_ref": 1698048371500952,
-    "_ref_version": 2,
-    "_metrics": {
-      "bytes.stored.event": 8279
-    },
-    "nodestore_insert": 1698048371.44033,
-    "id": "9ccf53fc4ef043dfa8fc4aab035a94ad"
+      "location": null,
+      "_ref": 1698048371500952,
+      "_ref_version": 2,
+      "_metrics": {
+        "bytes.stored.event": 8279
+      },
+      "nodestore_insert": 1698048371.44033,
+      "id": "9ccf53fc4ef043dfa8fc4aab035a94ad"
+    }
   }
-}
 ```
+</details>
 
 ### Sample query
 
@@ -557,8 +558,7 @@ Follow the below steps to configure the Sentry Webhook.
 - For support, [contact Sentry](https://help.sentry.io/).
 :::
 
-### Installing the Sentry app
-
+## Installing the Sentry app
 
 {@import ../../reuse/apps/app-install-v2.md}
 

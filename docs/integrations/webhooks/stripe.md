@@ -16,8 +16,6 @@ Stripe is a popular online payment processing platform that enables businesses t
 
 The Sumo Logic app for Stripe ingests Stripe events into Sumo Logic through an outgoing webhook available in the Stripe. For more information on supported events that are ingested through the Stripe webhook, see the [Stripe documentation](https://stripe.com/docs/api/events/types).
 
-## Log types
-
 ### Sample log message
 
 ```json
@@ -105,7 +103,6 @@ Follow the below steps to configure the Stripe webhook.
 :::
 
 ### Installing the Stripe app
-
 
 {@import ../../reuse/apps/app-install-v2.md}
 

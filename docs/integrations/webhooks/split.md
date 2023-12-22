@@ -19,9 +19,9 @@ The Sumo Logic app for Split ingests Split events into Sumo Logic through an out
 - Admin audit logs
 - Impressions
 
-## Log types
-
 ### Sample log message
+
+<details><summary>View sample log message</summary>
 
 ```json
 {
@@ -84,6 +84,7 @@ The Sumo Logic app for Split ingests Split events into Sumo Logic through an out
    "type": "audit_log"
 }
 ```
+</details>
 
 ### Sample query
 
@@ -134,7 +135,6 @@ Follow the below steps to configure the Split webhook.
 :::
 
 ### Installing the Split app
-
 
 {@import ../../reuse/apps/app-install-v2.md}
 
