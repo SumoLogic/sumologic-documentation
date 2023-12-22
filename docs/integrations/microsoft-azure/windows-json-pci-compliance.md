@@ -37,7 +37,7 @@ _sourceCategory=OS/Windows/Events ( "Audit Policy Change" or "System audit polic
 | count by msg_summary | sort by _count, msg_summary asc
 ```
 
-## Collecting Logs for the PCI Compliance for Windows JSON app
+## Collecting logs for the PCI Compliance for Windows JSON app
 
 This section provides instructions for configuring log collection for the PCI Compliance for Windows JSON App.
 
