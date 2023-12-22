@@ -20,7 +20,6 @@ With the Sumo Logic app for Symantec Web Security, you can:
 This App uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source) to collect [Access Logs](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/cloud-swg/help/wss-reference/accesslogformats-ref.html) from Symantec Web Security Service.
 
 ## Sample log message
-## Sample log message
 
 ```json title="Access Log"
  {
