@@ -106,7 +106,7 @@ Follow the instructions for setting up [Cloud to Cloud Integration for 1Password
 
 ## Installing the 1Password app
 
-{@import ../../reuse/apps/app-install-v2.md}
+{@import ../reuse/apps/app-install-v2.md}
 
 ## Viewing 1Password dashboards
 
