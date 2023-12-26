@@ -1,5 +1,5 @@
 ---
-title: Index Filed (Search)
+title: Index Field (Search)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - search
