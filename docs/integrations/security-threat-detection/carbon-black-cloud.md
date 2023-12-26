@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Carbon Black Cloud App analyzes alert and event data from Endpoint Standard and Enterprise EDR products and provides comprehensive visibility into the security posture of your endpoints, enabling you to determine the effects of breaches in your environment. The app provides visibility into key endpoint security data with preconfigured dashboards for alerts, threats intelligence, feeds, sensors, alerts, users, hosts, processes, IOCs, devices and network status.
 
 
-## Log Types
+## Log types
 
 The Carbon Black Cloud App uses the following Carbon Black Cloud log types, which are set to the Amazon S3 bucket sent by the [Carbon Black Cloud Forwarder](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/).
 
@@ -20,12 +20,12 @@ The Carbon Black Cloud App uses the following Carbon Black Cloud log types, whic
 * Event Data
 
 
-### Sample Log Messages
+### Sample log messages
 
 For sample log messages, see [Data Samples](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-data/#data-samples) section in VMware help.
 
 
-### Sample Queries  
+### Sample queries  
 
 #### Endpoint Standard
 
@@ -62,7 +62,7 @@ _sourceCategory = Labs/CarbonBlackCloudAlerts
 | json field=_raw "threat_cause_actor_name", "threat_cause_threat_category", "threat_cause_reputation", "ioc_hit" as threat_actor, threat_category, threat_reputation, ioc_hit nodrop
 ```
 
-## Collecting Logs for Carbon Black Cloud
+## Collecting logs for Carbon Black Cloud
 
 This section has instructions for configuring collection of Carbon Black Cloud event and alert logs. In the steps that follow, you'll set up two Sumo Logic S3 Sources, each of which will collect logs from an S3 bucket, and configure Carbon Black Cloud to send alert and event data to the S3 buckets.
 
@@ -120,24 +120,13 @@ When you configure a Data Forwarder, you supply an S3 bucket name and an **S3 pr
 Please carefully evaluate this information to assure that your configuration reflects the data set you would like to send to Sumo Logic.
 
 
-## Installing the Carbon Black Cloud App
+## Installing the Carbon Black Cloud app
 
-Now that you have set up collection for Carbon Black Cloud, install the Sumo Logic App.
+{@import ../../reuse/apps/app-install-v2.md}
 
-1. From the App Catalog, search for and select the app.  
-2. To install the app, click **Add Integration**.
-3. On the **Select Data Source for your App** page:
-    1. **Carbon Black Cloud Alert Data Source**. Enter the Source Category you assigned to the S3 source that collects alert logs.
-    2. **Carbon Black Cloud Event Data Source**. Enter the Source Category you assigned to the S3 source that collects event logs.
-    3. **Folder Name**. This field displays the name of the folder where the app will be installed. If desired, you can change the name of the folder. You can also browse to and select a parent folder where the app folder will be created.
-    4. Click **Next** to install the app in the selected location.
+## Viewing Carbon Black Cloud dashboards
 
-Once the app is installed, it will appear in the folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library ](/docs/get-started/library)for information on working with the library in the new UI.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-## Viewing Carbon Black Cloud Dashboards
+{@import ../../reuse/filter-dashboards.md}
 
 ### Overview
 

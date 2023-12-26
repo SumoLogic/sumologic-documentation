@@ -11,14 +11,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 1Password is a secure and convenient password manager for documents, credit card information, and addresses. The Sumo Logic App for 1Password helps you monitor your 1Password account’s sign-in and item usage events. The dashboards provide insight into failed and successful authentications, events breakdown by client applications, type, category, users, geo-location of events, outliers, and threat analysis of sign-in events. This app helps your secure 1Password vault access by providing insights into user actions and threat intel analysis on clients accessing items in shared vaults.
 
-## Log Types  
+## Log types  
 
 The 1Password App uses following logs:
 * [Sign-in Events](https://support.1password.com/events-api-reference/#signinattemptitems-object)
 * [Item Usage](https://support.1password.com/events-api-reference/#itemusage-object)
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title="Sign-in attempt Event"
     {
@@ -74,7 +74,7 @@ The 1Password App uses following logs:
 ```
 
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Successful Sign-in"
 _sourceCategory="1pw"
@@ -104,11 +104,13 @@ _sourceCategory=1pw action
 
 Follow the instructions for setting up [Cloud to Cloud Integration for 1Password App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source) to create the source and use the same source category while installing the app.
 
-## Installing the 1Password App
+## Installing the 1Password app
 
-{@import ../reuse/apps/app-install.md}
+{@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing 1Password Dashboards
+## Viewing 1Password dashboards
+
+{@import ../../reuse/filter-dashboards.md}
 
 ### Overview
 1Password - Overview provides an overview of 1Password Events including events breakdown by type, category, geographic location, one-day time comparison of events, and failed sign-in activity.

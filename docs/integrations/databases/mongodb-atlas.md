@@ -125,13 +125,13 @@ For more information, see [https://www.mongodb.com/docs/atlas/reference/api/even
 
 </details>
 
-### Sample Metrics
+### Sample metrics
 
 This section provides examples of the metric types utilized by the MongoDB Atlas app.
 
 <details><summary>Sample process metrics and disk metrics (<strong>click here to expand</strong>)</summary>
 
-#### Process Metrics
+#### Process metrics
 
 ```bash title="Metrics Collected"
 CACHE_DIRTY_BYTES
@@ -199,7 +199,7 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 
 </details>
 
-### Sample Query
+### Sample query
 
 This sample query is from the MongoDB Atlas - Audit dashboard > Recent Audit Events panel.
 
@@ -217,7 +217,7 @@ This sample query is from the MongoDB Atlas - Audit dashboard > Recent Audit Eve
 
 </details>
 
-## Collecting Logs and Metrics for the MongoDB Atlas app
+## Collecting logs and metrics for the MongoDB Atlas app
 
 This section explains how to collect logs from MongoDB Atlas for mongo version 6.0 and ingest them into Sumo Logic for use with the MongoDB Atlas app predefined dashboards and searches. Most of the panels for this app work for logs coming in from mongo version 4.4 and 5.
 
@@ -669,21 +669,11 @@ Exception: Invalid config
 
 ## Installing the MongoDB Atlas app
 
-This section provides instructions on how to install the MongoDB Atlas app, as well as examples of each of the dashboards. The app's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing MongoDB Atlas dashboards
 
-All panels may not populate. Some tiers do not support certain types of logs. Refer atlas tier [limitation docs](https://docs.atlas.mongodb.com/reference/free-shared-limitations/#atlas-free-tier) for more details.
-
-
-## Viewing MongoDB Atlas Dashboards
-
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
+{@import ../../reuse/filter-dashboards.md}
 
 #### Overview
 

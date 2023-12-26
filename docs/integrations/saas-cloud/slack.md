@@ -13,7 +13,7 @@ The Sumo Logic App for Slack provides monitoring and data analytics for Slack us
 
 [Slack](https://slack.com/) is a cloud-based set of software tools and online services that provide for secure collaboration across teams, departments, offices, and countries.
 
-## Log Types
+## Log types
 
 Slack logs are in JSON format. The Slack App utilizes the following log types:
 
@@ -257,7 +257,7 @@ The following table provides sample log messages for the different log types.
 }
 ```
 
-### Sample Query
+### Sample query
 
 The sample query is from the **Channel Summary** panel of **Slack - Public Channels** dashboard.
 
@@ -284,24 +284,17 @@ _sourceCategory=Labs/slack
 | limit 20
 ```
 
-## Collect logs for the Slack App
+## Collect logs for the Slack app
 
 This legacy solution to pull logs from Slack to Sumo Logic has been replaced with a dedicated [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework). We recommend customers use the below [Slack Cloud-to-Cloud source](#create-slack-app-with-permissions) instead of the legacy Python collection method.
 
-## Installing the Slack App
+## Installing the Slack app
 
-This section demonstrates how to install the Slack App.
+{@import ../../reuse/filter-dashboards.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Slack dashboards
 
-## Viewing Slack Dashboards
-
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
+{@import ../../reuse/filter-dashboards.md}
 
 ### Overview
 
