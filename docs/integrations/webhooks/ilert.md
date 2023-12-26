@@ -118,7 +118,7 @@ Follow the steps to configure the iLert Webhook.
 
 {@import ../../reuse/apps/app-install-v2.md}
 
-## Viewing iLert dashboard
+## Viewing iLert dashboards
 
 {@import ../../reuse/apps/view-dashboards.md}
 
