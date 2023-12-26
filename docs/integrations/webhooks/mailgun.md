@@ -123,7 +123,7 @@ The **Mailgun - Overview** dashboard offers a comprehensive overview of email sy
 
 <img src={useBaseUrl('img/integrations/webhooks/mailgun_overview.png')} style={{border: '1px solid black'}} alt="Mailgun - Overview"/>
 
-### Mailgun - Failed, Complained Events
+### Failed, Complained Events
 
 The **Mailgun - Failed, Complained Events** dashboard offers a holistic view of email system performance and user interactions, featuring panels like Failed Events, Severity, Top Failure Codes, Top Failure Reasons, Top Sender and Recipient for Failure Events, Recent Failed Events, Complained Events, Top Sender and Recipient for Complained Events, Top Subject for Complained Events, Event Geolocation, and Recent Complained Events. This dashboard equips Mailgun users to closely monitor email delivery, assess issues, understand complaint patterns, and track geographic trends in events and complaints, facilitating effective email management and optimization.
 
