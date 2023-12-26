@@ -10,21 +10,21 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We're happy to announce an Azure Active Directory for OpenTelemetry application update. To enhance efficiency and streamline data collection, we are updating the sumo.datasource value from activedirectory to windows. This change addresses the issue of double data ingestion that occurs for customers who have installed both AD and Windows apps and set up separate OpenTelemetry collections for each.
+We're excited to announce an update for the [Active Directory JSON - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry) application to enhance the efficiency and data collection. We are updating the `sumo.datasource` value from the active directory to Windows. This change addresses the double data ingestion issue that occurs for customers who have installed both Active Directory and Windows apps and set up separate OpenTelemetry collections for each.
 
-- If you have only the Azure Active Directory for OpenTelemetry installed and decide to upgrade, you will need to update your collection configuration according to the instructions below. Please note that data collected before the upgrade will not be visible in the Active Directory app.
-Instructions for attributes update:
+:::note
+  Data collected before the upgrade will not be visible in the Active Directory application.
+:::
 
-Open the configuration file located in C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d
-and update the following attributes:
-   attributes:
+- If you have only the **[Active Directory JSON - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry)** installed and decided to upgrade it, you will need to update your collection configuration according to the instructions below. 
+
+  1. Open the configuration file located in `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`.
+  1. Update the following attributes:
       - key: sumo.datasource
-        value: windows
-        action: insert
+      - value: windows
+      - action: insert
+  1. Restart the collector, by using the following Powershell command `Restart-Service -Name OtelcolSumo`.
 
-Restart the collector e.g. by using the following Powershell command:
-“Restart-Service -Name OtelcolSumo”
+- If you have both the **[Windows - OpenTelemetry](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry)** and **[Active Directory JSON - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry)** apps installed, you should remove the Active Directory OTEL YAML configuration from your machine to prevent double data ingestion. When upgrading the Active Directory app, there's no need to set up a new collection. 
 
-- If you have both the Windows - OpenTelemetry and Azure Active Directory for OpenTelemetry apps installed, you should remove the Active Directory OTEL YAML configuration from your machine to prevent double data ingestion. When upgrading the Active Directory App, there's no need to set up a new collection. Please note that data collected before the upgrade will not be available in the Active Directory app.
-
-- There are no changes required if you have only Windows - OpenTelemetry app installed.
+- No changes required if you only have **[Windows - OpenTelemetry](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry)** installed.
