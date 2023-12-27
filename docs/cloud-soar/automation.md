@@ -125,9 +125,7 @@ A new configuration box will be displayed. Name your new playbook,
 select the **Incident Type** to associated with it, and click save to continue. [Learn more](#custom-fields).
 
 Once the new playbook has been saved, it will be displayed on the
-left-side of the screen. To begin to configure the new playbook, select
-it from the list and click the **Edit** button at the bottom of the
-screen.
+left-side of the screen. To begin to configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen.
 
 <img src={useBaseUrl('img/cloud-soar/image72.png')} alt="Empty playbook" width="800"/>
 
@@ -340,6 +338,34 @@ utilizing Cloud SOAR integrations, tasks and a variety of flow control
 decisions and other actions.
 
 **playbook** workflows can be configured to execute automatically without human intervention, or can be executed in an interactive mode, where user input is required to authorize predefined actions.
+
+### Nest playbooks
+
+To run a playbook inside another playbook:
+1. Click **+** on a node in a playbook. 
+1. In the **Add Node** dialog, select **Playbook**. <br/><img src={useBaseUrl('img/cloud-soar/add-playbook-node.png')} alt="Add a playbook node" width="400"/> 
+1. Select the nested playbook from the list of available playbooks. 
+
+#### Pass attributes to a nested playbook
+<!-- Add the following at Delivery 2:
+*(Applies only to organizations running the Delivery 1 version of Cloud SOAR.)*
+-->
+
+When you nest a child playbook within a parent playbook, you must pass parameters from the parent to the child to be utilized within the child playbook actions.
+
+1. Select the playbook (the child) you want to nest within another playbook.
+1. Click the three dots in the upper-right corner of the child playbook, select the **Nested** option, and click **Save**. This tags the playbook as a child and prevents adhoc testing against the child, since it will rely upon the parent to provide it inputs. <br/><img src={useBaseUrl('img/cloud-soar/playbook-nested-option.png')} alt="Nested option" width="500"/> 
+1. Click the **Edit** button at the bottom of the screen, then the **Edit** button on the **Start** node. <br/><img src={useBaseUrl('img/cloud-soar/playbook-start-node.png')} alt="Start node" width="100"/> 
+1. Add the parameters you would like your child playbook to receive from the parent. These can be arbitrary names and do not need to be aligned to any field schema. They will be mapped from the parent nodes. <br/><img src={useBaseUrl('img/cloud-soar/playbook-parameters.png')} alt="Add parameters" width="500"/> 
+1. It’s important that your child nodes make use of these parameters. These will be accessible by editing your relevant child nodes, selecting the cog wheel, and selecting the relevant playbook input. In the example below, we use the playbook ID input parameter that will come from the parent. <br/><img src={useBaseUrl('img/cloud-soar/playbook-edit-parameters.png')} alt="Edit parameters" width="500"/> 
+1. Save and publish your child playbook. 
+1. Navigate to your parent playbook. Add a new node. <br/><img src={useBaseUrl('img/cloud-soar/playbook-add-node.png')} alt="Add node" width="350"/> 
+1. Select **Playbook**. <br/><img src={useBaseUrl('img/cloud-soar/playbook-add-node-2.png')} alt="Select Playbook" width="150"/> 
+1. Select your child playbook. <br/><img src={useBaseUrl('img/cloud-soar/playbook-select-child-playbook.png')} alt="Select child playbook" width="500"/>
+1. You will see the parameters that you had set from your child playbook. Use the cog wheel to set these parameters based on your parent action nodes. <br/><img src={useBaseUrl('img/cloud-soar/playbook-parent-parameters.png')} alt="Parent playbook parameters" width="500"/>
+1. Save and publish your parent playbook.
+
+You will now be able to perform tests against your parent playbook, and your child playbook will receive the parameters from the parent.
 
 ## Incident Templates
 
