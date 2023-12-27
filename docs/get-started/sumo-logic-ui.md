@@ -6,28 +6,39 @@ description: Get to know the Sumo Logic user interface.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
+Our [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues. 
+
+This page will help you get to know the Sumo Logic user interface (UI).
+
+
 
 ## Using the left navigation panel
 
-The left-side navigation panel is where you can access all of our products and services.
+The left-side navigation panel is where you can access your library of dashboards as well as all of our services.
 
-When you first log in, you'll land on the Sumo Logic **Home** page > **Home** tab.
+### Home
 
-<img src={useBaseUrl('/img/get-started/home.png')} alt="home.png" width="400"/>
+When you first log in, you'll land on the Sumo Logic **Home** page > **Home** tab, which provides an at-a-glance view of the following:
 
+* Recently Opened Dashboards
+* Recently Run Searches
+* Recommended Dashboards 
+* Pinned Searches
+
+<img src={useBaseUrl('img/get-started/dashboard-searches.png')} alt="dashboard-searches.png" />
 
 ### Access dashboards and searches
 
 The left nav panel provides easy access to libraries, searches, folders, and your personal collection of dashboards. Click the icons at the top of the left-side navigation panel to view:
 
-* **Recent** dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/recent.png')} alt="recent.png" width="350"/>
-* Your **Favorites** list of favorited dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/favs.png')} alt="favs.png" width="350"/>
-* **Library** containing:
+* Your **Library**, which contains:
    * Your **Personal** dashboards and searches.
    * Your own **Installed Apps** from the App Catalog.
-   * Dashboards and searches shared within your organization.<br/><img src={useBaseUrl('/img/get-started/library.png')} alt="library.png" width="350"/>
+   * Dashboards and searches shared within your organization.<br/><img src={useBaseUrl('/img/get-started/library.png')} alt="library.png" width="500"/>
+* **Recent** dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/recent.png')} alt="recent.png" width="350"/>
+* Your **Favorites** list of favorited dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/favs.png')} alt="favs.png" width="350"/>
 
+<!--
 ### Search and switch browsing modes
 
 The top of the left-side navigation panel is where you can search for content and
@@ -37,6 +48,7 @@ users and easily switch browsing modes. 
 * Switching browsing modes. Click the **Details** icon and make a selection from the dropdown menu.
 
 ![TUI_Search_Details.png](/img/get-started/TUI_Search_Details.png)
+-->
 
 ### Hide and show the left-side navigation panel
 
@@ -46,18 +58,12 @@ You can enlarge your working area by hiding the left-side navigation panel. To 
 
 To unhide it, click the hamburger menu icon again.
 
-## Customize your environment with tabs
-
-If you'd prefer to multitask with multiple tasks open at once (for example, log search sessions, dashboards, App Catalog, and Preferences page), we recommend utilizing your own web browser's tab grouping functionality. By adding Sumo Logic tabs to a tab group, any new tabs opened within the Sumo Logic platform will automatically open in the same tab group. This will also allow you to collapse the tab group to reclaim valuable real estate in your browser's tab bar.
-
-<img src={useBaseUrl('/img/get-started/tabs.png')} alt="tabs.png" />
-
 
 ## Using the top navigation bar
 
 ### Access Apps, Admin settings, and Help
 
-From the top navigation bar, you can access (from left to right) our [Help](#get-help-docs-community-and-more) options, [App Catalog](apps-integrations.md), data [Configuration](/docs/send-data), [Administration](/docs/manage) settings, [Notifications](account-settings-preferences.md), and personal [Preferences](account-settings-preferences.md).
+From the top navigation bar, you can access (from left to right): Sumo Logic [Help](#get-help-docs-community-and-more), [App Catalog](apps-integrations.md), data [Configuration](/docs/send-data), [Administration](/docs/manage) settings, [Notifications](account-settings-preferences.md), and personal [Preferences](account-settings-preferences.md).
 
 <img src={useBaseUrl('/img/get-started/admin-config.png')} alt="admin-config.png" width="350"/>
 
@@ -75,7 +81,7 @@ To manage your personal Sumo account preferences:
 
 For more information, see [Account Preferences and Credentials](account-settings-preferences.md).
 
-### Get Help: docs, community, and more
+### Get Help: Docs, community, and more
 
 There are a number of places where you can get the answers to questions you have:
 
@@ -86,8 +92,8 @@ There are a number of places where you can get the answers to questions you hav
 * Contact [Support](https://support.sumologic.com/)
 * Join our [Sumo Logic Slack](https://sumodojo.slack.com/) channel
 
-:::sumo Getting Help
-See [Getting Help and Contacts](/docs/get-started/help) for full information.
+:::tip
+See [Help Resources and Contacts](/docs/get-started/help) for full information.
 :::
 
 ## Administrator tasks
@@ -101,7 +107,7 @@ To manage data in Sumo Logic, do the following:
 1. From the top-right navigation bar, click **Configuration**.<br/><img src={useBaseUrl('img/get-started/config.png')} alt="img/get-started/config.png" width="400"/>
 1. Choose from the following, as needed:
     * **Collection**. [Manage Collectors and Sources](/docs/send-data/collection).
-    * **Logs**. Manage [fields](/docs/manage/fields.md), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions-data-tiers), [scheduled views](/docs/manage/scheduled-views) <!--, [connections](/docs/manage/connections-integrations), and [data forwarding](/docs/manage/data-forwarding). -->
+    * **Logs**. Manage [fields](/docs/manage/fields), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions-data-tiers), [scheduled views](/docs/manage/scheduled-views) <!--, [connections](/docs/manage/connections-integrations), and [data forwarding](/docs/manage/data-forwarding). -->
     * **Metrics**. Manage metrics rules, [logs-to-metrics](../metrics/logs-to-metrics.md), and [metrics transformation rules](../metrics/metrics-transformation-rules.md).
     * **Cloud SIEM Integrations**.
     * **Cloud SIEM Entities**.
@@ -113,12 +119,19 @@ Sumo Logic administrators (admins) manage user accounts, user roles, and securi
 
 To administer Sumo Logic accounts, users, and security, do the following:
 
-1. Go to the top navigation bar and click **Administration**.<br/> <img src={useBaseUrl('img/get-started/admin.png')} alt="img/get-started/admin.png" width="400"/>
+1. From the top navigation bar and click **Administration**.<br/> <img src={useBaseUrl('img/get-started/admin.png')} alt="img/get-started/admin.png" width="400"/>
 1. Choose from the following, as needed: <!-- what does this look like for Admin users? -->
     * **Account**. [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
     * **Users and Roles**. [Manage users and roles](/docs/manage/users-roles).
-    * **Security**. [Set password policy for your org](/docs/manage/security/set-password-policy.md), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses.md), [manage access keys](/docs/manage/security/access-keys.md), manage security polices ([audit index](/docs/manage/security/audit-indexes/audit-index.md), [support account access,](/docs/manage/security/enable-support-account.md) and [dashboard sharing](../dashboards/share-dashboard-new.md), and [set up SAML authentication](/docs/manage/security/saml).
+    * **Security**. [Set password policy for your org](/docs/manage/security/set-password-policy), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses), [manage access keys](/docs/manage/security/access-keys), manage security policies ([audit index](/docs/manage/security/audit-indexes/audit-index)), [support account access](/docs/manage/security/enable-support-account), [dashboard sharing](../dashboards/share-dashboard-new), and [set up SAML authentication](/docs/manage/security/saml).
 
+## Customize your environment with tabs
+
+If you'd prefer to multitask and keep multiple tab open simultaneously (for example: log search, dashboards, App Catalog, and Preferences), we recommend utilizing your own web browser's tab grouping functionality. By adding Sumo Logic tabs to a tab group, any new tabs opened within the Sumo Logic platform will automatically open in the same tab group.
+
+<img src={useBaseUrl('/img/get-started/tabs.png')} alt="tabs.png" width="500" />
+
+This will also allow you to collapse the tab group to reclaim valuable real estate in your browser's tab bar.
 
 ## Mastering everyday tasks
 
@@ -153,16 +166,7 @@ To launch a search, metrics visualization, or Live Tail session, do the followin
      * [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
      * [Logs > Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
 
-### View recent dashboards and searches 
 
-You see the **Home** landing page when you first log in to Sumo Logic. The Home page provides an at-a-glance view of the following:
-
-* Recently Opened Dashboards
-* Recently Run Searches
-* Recommended Dashboards 
-* Pinned Searches
-
-<img src={useBaseUrl('img/get-started/dashboard-searches.png')} alt="dashboard-searches.png" />
 
 ### Add dashboards and searches to your Favorites
 
