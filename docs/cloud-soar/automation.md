@@ -346,9 +346,8 @@ To run a playbook inside another playbook:
 1. Select the nested playbook from the list of available playbooks. 
 
 #### Pass attributes to a nested playbook
-<!-- Add the following at Delivery 2:
+
 *(Applies only to organizations running the Delivery 1 version of Cloud SOAR.)*
--->
 
 When you nest a child playbook within a parent playbook, you must pass parameters from the parent to the child to be utilized within the child playbook actions.
 
