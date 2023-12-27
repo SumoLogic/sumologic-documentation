@@ -10,7 +10,7 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We're excited to announce an update for the [Active Directory JSON - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry) application to enhance the efficiency and data collection. We are updating the `sumo.datasource` value from the active directory to Windows. This change addresses the double data ingestion issue that occurs for customers who have installed both Active Directory and Windows apps and set up separate OpenTelemetry collections for each.
+We're excited to announce an update for the [Active Directory JSON - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry) application to enhance efficiency and data collection. We are updating the `sumo.datasource` value from Active Directory to Windows. This change addresses the double data ingestion issue that occurs for customers who have installed both Active Directory and Windows apps and set up separate OpenTelemetry collections for each.
 
 :::note
   Data collected before the upgrade will not be visible in the Active Directory application.
