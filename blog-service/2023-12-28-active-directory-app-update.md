@@ -16,7 +16,7 @@ We're excited to announce an update for the [Active Directory JSON - OpenTelemet
   Data collected before the upgrade will not be visible in the Active Directory application.
 :::
 
-- If you have only the **[Active Directory JSON - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry)** installed and decided to upgrade it, you will need to update your collection configuration according to the instructions below. 
+If you have only the **[Active Directory JSON - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry)** app installed and decided to upgrade it, you will need to update your collection configuration according to the instructions below. 
 
   1. Open the configuration file located in `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d`.
   1. Update the following attributes:
