@@ -44,8 +44,8 @@ The left nav panel provides easy access to libraries, searches, folders, and y
 The top of the left-side navigation panel is where you can search for content and
 users and easily switch browsing modes. 
 
-* Searching. Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
-* Switching browsing modes. Click the **Details** icon and make a selection from the dropdown menu.
+* Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
+* Switching browsing modes—Click the **Details** icon and make a selection from the dropdown menu.
 
 ![TUI_Search_Details.png](/img/get-started/TUI_Search_Details.png)
 -->
