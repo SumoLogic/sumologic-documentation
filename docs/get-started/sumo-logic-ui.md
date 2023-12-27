@@ -44,8 +44,8 @@ The left nav panel provides easy access to libraries, searches, folders, and y
 The top of the left-side navigation panel is where you can search for content and
 users and easily switch browsing modes. 
 
-* Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
-* Switching browsing modes—Click the **Details** icon and make a selection from the dropdown menu.
+* Searching. Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
+* Switching browsing modes. Click the **Details** icon and make a selection from the dropdown menu.
 
 ![TUI_Search_Details.png](/img/get-started/TUI_Search_Details.png)
 -->
@@ -119,7 +119,7 @@ Sumo Logic administrators (admins) manage user accounts, user roles, and securi
 
 To administer Sumo Logic accounts, users, and security, do the following:
 
-1. From the top navigation bar and click **Administration**.<br/> <img src={useBaseUrl('img/get-started/admin.png')} alt="img/get-started/admin.png" width="400"/>
+1. From the top navigation bar, click **Administration**.<br/> <img src={useBaseUrl('img/get-started/admin.png')} alt="img/get-started/admin.png" width="400"/>
 1. Choose from the following, as needed: <!-- what does this look like for Admin users? -->
     * **Account**. [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
     * **Users and Roles**. [Manage users and roles](/docs/manage/users-roles).
