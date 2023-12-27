@@ -8,9 +8,9 @@ tags:
 description: The Cisco Meraki Source for Sumo Logic provides a secure endpoint to receive data from the Cisco Meraki Organization.
 ---
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/cisco-meraki/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/cisco-meraki/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/cisco-meraki/example.tf';
+import ExampleJSON from '/files/c2c/cisco-meraki/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/cisco-meraki/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/cisco-meraki/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cisco Meraki Source provides a secure endpoint to receive data from the Meraki organization and networks and ingests event logs pertaining to them. It securely stores the required authentication, scheduling, and state tracking information.

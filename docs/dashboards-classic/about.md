@@ -69,7 +69,7 @@ The Sumo Logic Log Analysis QuickStart App, in the Keywords and Metadata dashboa
 Once you have installed an app, you can view the pre-configured search queries that power the dashboards by [launching a search from a panel](get-started/launch-search-data-panel.md).
 
 :::tip
-For an extended use case example, see the Sumo Logic DevOps blog, "[Building Software Release Cycle Health Dashboards in Sumo Logic](https://www.sumologic.com/blog-devops/software-release-cycle-dashboards-sumo-logic/)." 
+For an extended use case example, see the Sumo Logic DevOps blog, "[Building Software Release Cycle Health Dashboards in Sumo Logic](https://www.sumologic.com/blog/software-release-cycle-dashboards-sumo-logic/)." 
 :::
 
 ## Accessing Dashboards

@@ -32,12 +32,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/observability/aws/quickstart"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="40"/><h4>AWS Observability Quickstart</h4></a>
-  <p>Get up and running in minutes with our AWS Observability integration.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/observability/aws/deploy-use-aws-observability"><img src={useBaseUrl('img/icons/observe.png')} alt="icon" width="40"/><h4>Deploy and Use AWS Observability</h4></a>
   <p>Learn how to simplify the monitoring and troubleshooting of your AWS cloud infrastructure.</p>
   </div>

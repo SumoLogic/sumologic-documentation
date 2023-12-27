@@ -52,7 +52,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Collector.png' alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -62,7 +62,7 @@ The files are typically located in `/var/log/memcached/memcached.log`. If you're
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo
 
@@ -75,6 +75,9 @@ You can add any custom fields which you want to tag along with the data ingested
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -104,6 +107,23 @@ You can add any custom fields which you want to tag along with the data ingested
   ```
 
 </TabItem>
+<TabItem value="Chef">
+
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+
+</TabItem>
 </Tabs>
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
@@ -128,7 +148,6 @@ Following is the query from Errors panel of Memcached app's overview Dashboard:
 | timeslice by 1h 
 | sum(ERROR) as ERROR by _timeslice
 ```
-
 
 ## Viewing Memcached Dashboards
 

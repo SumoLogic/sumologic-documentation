@@ -5,6 +5,7 @@ sidebar_label: Main Menu
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
 
 Cloud SOAR is a pure web-based application which does not require an additional add-on or client to deploy. The main menu consists of all operational sections of Cloud SOAR, including Incidents, Triage (if enabled), Operations, and incoming Data Sources.
 
@@ -17,6 +18,19 @@ The Home section is where all your current tasks reside. Here you can approve, d
 <img src={useBaseUrl('img/cloud-soar/image26.png')} alt="Home page" width="800"/>
 
 ## Dashboards
+
+Watch the following micro lesson to learn about dashboards and KPI reports.
+
+<Iframe url="https://www.youtube.com/embed/NRdtAvxhuOY?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
 
 The Cloud SOAR Dashboard layout renders data for quick comprehension
 using a combination of graphics (e.g., charts, tables, graphs, and

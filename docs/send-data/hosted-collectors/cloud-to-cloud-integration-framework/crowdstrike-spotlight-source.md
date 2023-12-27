@@ -8,9 +8,9 @@ tags:
 description: Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike Spotlight platform.
 ---
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/crowdstrike-spotlight/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/crowdstrike-spotlight/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/crowdstrike-spotlight/example.tf';
+import ExampleJSON from '/files/c2c/crowdstrike-spotlight/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/crowdstrike-spotlight/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/crowdstrike-spotlight/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
@@ -52,7 +52,7 @@ To get the **CrowdStrike API Client**, follow the steps below:
 1. From the CrowdStrike Spotlight console, select the **Support and resources** option from the menu.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-support-and-resources.png')} style={{border: '1px solid black'}} alt="<crowdstrike-fspotlight-support-and-resources.png>" width="600" />
 1. In the **Resources and tools** section, select the **API clients and keys** option. You can then view existing clients or add new API clients from there.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-api-key-client.png')} style={{border: '1px solid black'}} alt="<crowdstrike-spotlight-api-key-client.png>" width="600" />
 1. Click **Add new API client**. You will be prompted to give a descriptive name and select the appropriate API scopes.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-new-client.png')} style={{border: '1px solid black'}} alt="<crowdstrike-spotlight-new-client.png>" width="600" />
-1. Provide a proper name and description and select the **spotlight-vulnerabilities:read** scope. Click on `ADD` to complete the process.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-add-client.png')} style={{border: '1px solid black'}} alt="<crowdstrike-spotlight-add-client.png>" width="600" />
+1. Provide a proper name and description and select the **spotlight-vulnerabilities:read** scope. Click on `ADD` to complete the process.
 1. After you click on `ADD` a dialogue box will appear with the **Client ID**, **Client Secret** and **Base URL**. Copy and save the Client Id, Client Secret and Base URL to a folder location because you will need them when creating the [CrowdStrike Spotlight source](#set-up-crowdstrike-spotlight-source).<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-copy-creds.png')} style={{border: '1px solid black'}} alt="<crowdstrike-spotlight-copy-creds.png>" width="600" />
 
 #### Region
@@ -114,13 +114,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/crowdstrike-spotlight/example.json)
+[Download example](/files/c2c/crowdstrike-spotlight/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/crowdstrike-spotlight/example.tf)
+[Download example](/files/c2c/crowdstrike-spotlight/example.tf)
 
 ## Troubleshooting
 

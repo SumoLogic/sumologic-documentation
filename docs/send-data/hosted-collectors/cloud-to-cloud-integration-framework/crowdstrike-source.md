@@ -8,9 +8,9 @@ tags:
 description: The CrowdStrike Source provides a secure endpoint to receive event data from the CrowdStrike Streams API.
 ---
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/crowdstrike/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/crowdstrike/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/crowdstrike/example.tf';
+import ExampleJSON from '/files/c2c/crowdstrike/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/crowdstrike/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/crowdstrike/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
@@ -48,7 +48,6 @@ A CrowdStrike Source authenticates with an OAuth2 API key. These are created in 
 * Detections
 * Event Streams
 * Hosts
-* Host Groups
 
 ### Source configuration
 
@@ -109,13 +108,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/crowdstrike/example.json)
+[Download example](/files/c2c/crowdstrike/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/crowdstrike/example.tf)
+[Download example](/files/c2c/crowdstrike/example.tf)
 
 ## FAQ
 

@@ -355,7 +355,7 @@ There are additional values set by the Telegraf configuration. We recommend not 
 * `Component - “webserver”` - In the input `[[inputs.nginx]]` plugins section. This value is used by Sumo Logic apps to identify application components.
 * `webserver_system - “nginx”` - In the input plugins sections. This value identifies the webserver system.
 
-See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
+See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for all other parameters that can be configured in the Telegraf agent globally.
 
 After you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
@@ -458,17 +458,14 @@ There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/a
 
 This section demonstrates how to install the Nginx app.
 
-First, you'll need to locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
+1. From the **App Catalog**, search for and select the Nginx app.
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.**
-        * Choose **Enter a Custom Data Filter**, and enter a custom Nginx farm filter. Examples:
-            1. For all Nginx farms, `webserver_farm=*`.
-            2. For a specific farm, `webserver_farm=nginx.dev.01`.
-            3. Farms within a specific environment, `webserver_farm=nginx.dev.01` and `environment=prod`. (This assumes you have set the optional environment tag while configuring collection).
+    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Nginx farm filter. Examples:
+       1. For all Nginx farms, `webserver_farm=*`.
+       2. For a specific farm, `webserver_farm=nginx.dev.01`.
+       3. Farms within a specific environment, `webserver_farm=nginx.dev.01` and `environment=prod`. (This assumes you have set the optional environment tag while configuring collection).
 3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 

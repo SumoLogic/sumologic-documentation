@@ -498,7 +498,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom PostgreSQL cluster filter. Examples:
-      * For all PostgreSQL clusters  `db_cluster=**`
+      * For all PostgreSQL clusters: `db_cluster=**`
       * For a specific cluster: `db_cluster=postgresql.dev.01`. 
       * Clusters within a specific environment: `db_cluster=postgresql-1 and environment=prod`. (This assumes you have set the optional environment tag while configuring collection)
    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.

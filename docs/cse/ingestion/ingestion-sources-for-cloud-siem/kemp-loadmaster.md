@@ -42,7 +42,7 @@ In this step, you configure a Syslog Source to collect Kemp LoadMaster messages.
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 
-1. The page refreshes. <br/><img src={useBaseUrl('img/cse/syslog-source.png')} alt="Syslog source" width="500"/> 
+1. The page refreshes. <br/><img src={useBaseUrl('img/cse/syslog-source.png')} alt="Syslog source" width="500"/>
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Protocol**. Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see [Choosing TCP or UDP](/docs/send-data/installed-collectors/sources/syslog-source#choosing-tcp-or-udp) on the *Syslog Source* page.
@@ -55,13 +55,13 @@ In this step, you configure a Syslog Source to collect Kemp LoadMaster messages.
 
 ## Step 2: Configure Kemp LoadMaster 
 
-Follow the instructions provided on the Kemp support site to [configure syslog logging](https://support.kemptechnologies.com/hc/en-us/articles/16491943-How-to-configure-the-LoadMaster-to-send-unexpected-reboot-event-logs-to-a-Syslog-Server).
+Follow the instructions provided on the Kemp support site to [configure syslog logging](https://support.kemptechnologies.com/hc/en-us/articles/216491943-How-to-configure-the-LoadMaster-to-send-unexpected-reboot-event-logs-to-a-Syslog-Server).
 While the linked document only focuses on unexpected reboot logs, the process for enabling other log types is the same. General instructions to Configure forwarding to Syslog Source are available in Sumo Logic help.
 
 ## Step 3: Verify Ingestion
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon at the top of the Cloud SIEM UI, and select **Log Mappings** under **Incoming Data**. <br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/> 
+1. Click the gear icon at the top of the Cloud SIEM UI, and select **Log Mappings** under **Incoming Data**. <br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>
 1. On the **Log Mappings** page search for "Kemp" and check under **Record Volume**, a list of mappers for Kemp will appear and you can see if logs are coming in. <br/><img src={useBaseUrl('img/cse/kemp-reocrd-volume.png')} alt="Kemp record volume" width="700"/>
-1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for Kemp security records. <br/><img src={useBaseUrl('img/cse/kemp-search.png')} alt="Kemp search" width="400"/> 
+1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for Kemp security records. <br/><img src={useBaseUrl('img/cse/kemp-search.png')} alt="Kemp search" width="400"/>

@@ -39,13 +39,13 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
 1. Download the CloudFormation template file which will be used later to install the Collector:
 
     ```bash
-    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/blob/main/examples/aws/ecs-ec2-deployment.yaml
+    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/ecs-ec2-deployment.yaml
     ```
 
 1. Download the Sumo Logic Distribution for OpenTelemetry Collector configuration file:
 
     ```bash
-    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/blob/main/examples/aws/config.yaml
+    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/config.yaml
     ```
 
 1. Set up the following environment variables that are needed to perform the Collector deployment.
@@ -86,13 +86,13 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
 1. Download the CloudFormation template file which will be used later to install the Collector:
 
     ```bash
-    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/blob/main/examples/aws/ecs-fargate-deployment.yaml
+    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/ecs-fargate-deployment.yaml
     ```
 
 1. Download the configuration file.
 
     ```bash
-    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/blob/main/examples/aws/config.yaml
+    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/config.yaml
     ```
 
 1. Set up the following environment variables that are needed to perform the Collector deployment:
@@ -131,7 +131,7 @@ You'll need an ECS Cluster where the Sumo Logic Distribution for OpenTelemetry C
 1. Download the CloudFormation template file which will be used later to install the Collector on your EC2 instance.
 
     ```bash
-    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/blob/main/examples/aws/ec2-deployment.yaml
+    curl -O https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/examples/aws/ec2-deployment.yaml
     ```
 
 1. Set up the following environment variables that are needed to perform a deployment.

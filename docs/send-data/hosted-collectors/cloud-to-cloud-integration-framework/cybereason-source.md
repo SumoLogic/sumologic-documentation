@@ -8,9 +8,9 @@ tags:
 description: The Cybereason Source provides a secure endpoint to receive authentication logs from the Cybereason Malops API.
 ---
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/cybereason/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/cybereason/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/cybereason/example.tf';
+import ExampleJSON from '/files/c2c/cybereason/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/cybereason/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/cybereason/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/cybereason-logo.png')} alt="icon" width="70"/>
@@ -123,13 +123,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/cybereason/example.json)
+[Download example](/files/c2c/cybereason/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/cybereason/example.tf)
+[Download example](/files/c2c/cybereason/example.tf)
 
 ## FAQ
 
