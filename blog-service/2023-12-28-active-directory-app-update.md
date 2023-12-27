@@ -25,6 +25,6 @@ If you have only the **[Active Directory JSON - OpenTelemetry](/docs/integration
       - action: `insert`
   1. Restart the collector by using the following Powershell command `Restart-Service -Name OtelcolSumo`.
 
-- If you have both the **[Windows - OpenTelemetry](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry)** and **[Active Directory JSON - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry)** apps installed, you should remove the Active Directory OTEL YAML configuration from your machine to prevent double data ingestion. When upgrading the Active Directory app, there's no need to set up a new collection. 
+If you have both the **[Windows - OpenTelemetry](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry)** and **[Active Directory JSON - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry)** apps installed, you should remove the Active Directory OTEL YAML configuration from your machine to prevent double data ingestion. When upgrading the Active Directory app, there's no need to set up a new collection. 
 
 No changes are required if you only have **[Windows - OpenTelemetry](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry)** installed.
