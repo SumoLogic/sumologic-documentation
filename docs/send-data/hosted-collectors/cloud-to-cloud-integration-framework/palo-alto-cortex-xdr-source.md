@@ -8,9 +8,9 @@ description: The Cortex Cloud-to-Cloud Source Integration allows you to ingest a
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/palo-alto-cortex-xdr/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/palo-alto-cortex-xdr/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/palo-alto-cortex-xdr/example.tf';
+import ExampleJSON from '/files/c2c/palo-alto-cortex-xdr/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/palo-alto-cortex-xdr/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/palo-alto-cortex-xdr/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="100"/>
@@ -29,8 +29,8 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 10 min | [Alert data](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-API-Reference/Get-Alerts) |
-| 10 min | [Incident data](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-API-Reference/Get-Incidents) |
+| 10 min | [Alert data](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Get-all-Alerts) |
+| 10 min | [Incident data](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Get-all-Incidents) |
 
 ## Setup
 
@@ -137,13 +137,13 @@ The following table shows theÂ **config** parameters for a Palo Alto Cortex XDRÂ
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/palo-alto-cortex-xdr/example.json)
+[Download example](/files/c2c/palo-alto-cortex-xdr/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/palo-alto-cortex-xdr/example.tf)
+[Download example](/files/c2c/palo-alto-cortex-xdr/example.tf)
 
 ## FAQ
 

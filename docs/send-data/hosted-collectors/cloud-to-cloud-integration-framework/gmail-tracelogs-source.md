@@ -9,9 +9,9 @@ description: The Sumo Logic Gmail Trace Logs source pulls the Gmail log from the
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/gmail-tracelogs/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/gmail-tracelogs/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/gmail-tracelogs/example.tf';
+import ExampleJSON from '/files/c2c/gmail-tracelogs/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/gmail-tracelogs/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/gmail-tracelogs/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/gmail-trace-logs-icon.svg')} alt="Gmail" width="50"/>
@@ -110,13 +110,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/gmail-tracelogs/example.json)
+[Download example](/files/c2c/gmail-tracelogs/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/gmail-tracelogs/example.tf)
+[Download example](/files/c2c/gmail-tracelogs/example.tf)
 
 ## FAQ
 

@@ -9,9 +9,9 @@ description: Learn how to configure the KnowBe4 Cloud-to-Cloud source setup usin
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/knowbe4-api/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/knowbe4-api/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/knowbe4-api/example.tf';
+import ExampleJSON from '/files/c2c/knowbe4-api/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/knowbe4-api/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/knowbe4-api/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/knowbe4.png')} alt="icon" width="100"/>
@@ -119,13 +119,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/knowbe4-api/example.json)
+[Download example](/files/c2c/knowbe4-api/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/knowbe4-api/example.tf)
+[Download example](/files/c2c/knowbe4-api/example.tf)
 
 ## Limitations
 

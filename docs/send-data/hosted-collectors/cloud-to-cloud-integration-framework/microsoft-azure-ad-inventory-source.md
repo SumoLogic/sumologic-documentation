@@ -9,9 +9,9 @@ description: The Microsoft Azure AD Inventory Source collects user and device
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/microsoft-azure-ad-inventory/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/microsoft-azure-ad-inventory/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/microsoft-azure-ad-inventory/example.tf';
+import ExampleJSON from '/files/c2c/microsoft-azure-ad-inventory/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/microsoft-azure-ad-inventory/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/microsoft-azure-ad-inventory/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="55"/>
@@ -134,13 +134,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/microsoft-azure-ad-inventory/example.json)
+[Download example](/files/c2c/microsoft-azure-ad-inventory/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/microsoft-azure-ad-inventory/example.tf)
+[Download example](/files/c2c/microsoft-azure-ad-inventory/example.tf)
 
 ## FAQ
 

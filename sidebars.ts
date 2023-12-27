@@ -115,6 +115,7 @@ module.exports = {
                 'send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference',
               ]
             },
+            'send-data/opentelemetry-collector/auto-discovery',
             'send-data/opentelemetry-collector/performance-benchmarks',
             'send-data/opentelemetry-collector/data-transformations',
             'send-data/opentelemetry-collector/troubleshooting',
@@ -1705,7 +1706,6 @@ module.exports = {
           link: {type: 'doc', id: 'observability/aws/index'},
           items: [
             'observability/aws/about',
-            'observability/aws/quickstart',
             {
               type: 'category',
               label: 'Deploy and Use AWS Observability',

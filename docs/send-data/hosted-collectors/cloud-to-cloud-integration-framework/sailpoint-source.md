@@ -8,9 +8,9 @@ tags:
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/sailpoint/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/sailpoint/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/sailpoint/example.tf';
+import ExampleJSON from '/files/c2c/sailpoint/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/sailpoint/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/sailpoint/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} width="100"/>
@@ -107,13 +107,13 @@ See how to [create processing rules using JSON](/docs/send-data/use-json-config
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/sailpoint/example.json)
+[Download example](/files/c2c/sailpoint/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/sailpoint/example.tf)
+[Download example](/files/c2c/sailpoint/example.tf)
 
 ## FAQ
 

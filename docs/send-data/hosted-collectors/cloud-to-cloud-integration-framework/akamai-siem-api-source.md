@@ -9,9 +9,9 @@ description: The Akamai SIEM API Source provides a secure endpoint to receive se
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/akamai-siem-api/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/akamai-siem-api/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/akamai-siem-api/example.tf';
+import ExampleJSON from '/files/c2c/akamai-siem-api/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/akamai-siem-api/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/akamai-siem-api/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="Thumbnail icon" width="90"/>
@@ -306,13 +306,13 @@ The following table shows the **config** parameters for a Akamai SIEM API Sour
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/akamai-siem-api/example.json)
+[Download example](/files/c2c/akamai-siem-api/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/akamai-siem-api/example.tf)
+[Download example](/files/c2c/akamai-siem-api/example.tf)
 
 ## FAQ
 

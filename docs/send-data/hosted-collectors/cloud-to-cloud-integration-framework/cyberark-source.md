@@ -8,9 +8,9 @@ tags:
 description: This integration accesses CyberArk EPMs API to retrieve administrative audit events from every Set in the environment.
 ---
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/img/c2c/cyberark/example.json';
-import MyComponentSource from '!!raw-loader!/img/c2c/cyberark/example.json';
-import TerraformExample from '!!raw-loader!/img/c2c/cyberark/example.tf';
+import ExampleJSON from '/files/c2c/cyberark/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/cyberark/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/cyberark/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/cyberark.png')} alt="icon" width="50"/>
@@ -119,13 +119,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
-[Download example](/img/c2c/cyberark/example.json)
+[Download example](/files/c2c/cyberark/example.json)
 
 ### Terraform example
 
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
-[Download example](/img/c2c/cyberark/example.tf)
+[Download example](/files/c2c/cyberark/example.tf)
 
 ## API Limitations
 
