@@ -124,8 +124,7 @@ left-side of the page. Click **+** to add a new playbook.
 A new configuration box will be displayed. Name your new playbook,
 select the **Incident Type** to associated with it, and click save to continue. [Learn more](#custom-fields).
 
-Once the new playbook has been saved, it will be displayed on the
-left-side of the screen. To begin to configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen.
+Once the new playbook has been saved, it will be displayed on the left side of the screen. To begin to configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen.
 
 <img src={useBaseUrl('img/cloud-soar/image72.png')} alt="Empty playbook" width="800"/>
 
