@@ -12,4 +12,4 @@ authors:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We're excited to include the **Index** field as metadata at the bottom of every message row, along with other metadata. This allows you to modify the search query by clicking the index name or view surrounding messages by clicking on the dropdown. [learn more](/docs/search/get-started-with-search/search-basics/built-in-metadata)<br/><img src={useBaseUrl('img/search/get-started-search/search-page/index-filter.png')} alt="index-filter" width="650" style={{border: '1px solid black'}}/>
+We're excited to include the **Index** field as metadata at the bottom of every message row, along with other metadata. This allows you to modify the search query by clicking the index name or view surrounding messages by clicking on the dropdown. [Learn more].(/docs/search/get-started-with-search/search-basics/built-in-metadata)<br/><img src={useBaseUrl('img/search/get-started-search/search-page/index-filter.png')} alt="index-filter" width="650" style={{border: '1px solid black'}}/>
