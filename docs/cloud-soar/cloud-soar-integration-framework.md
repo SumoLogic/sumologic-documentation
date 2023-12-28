@@ -655,7 +655,7 @@ The name of the button will correspond to the name of the trigger defined inside
 
 <img src={useBaseUrl('img/cloud-soar/custom-trigger-button.png')} alt="Custom trigger button definition" width="800"/>
 
-Clicking the button in the UI runs the triger:
+Clicking the button in the UI runs the trigger:
 
 <img src={useBaseUrl('img/cloud-soar/custom-trigger-button-in-ui.png')} alt="Custom trigger button" width="300"/>
 
