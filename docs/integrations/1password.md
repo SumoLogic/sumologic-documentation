@@ -106,7 +106,7 @@ Follow the instructions for setting up [Cloud to Cloud Integration for 1Password
 
 ## Viewing 1Password Dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+{@import ../reuse/apps/view-dashboards.md}
 
 ### Overview
 
