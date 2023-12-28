@@ -516,7 +516,7 @@ Field notes:
 
 ### Trigger action definitions
 
-Triggers allow you to extend Cloud SOAR functionality with custom logic using OIF actions. Triggers are invoked based on specific events that can manually be invoked by Cloud SOAR users, or invoked automatically by interacting with the appropriate endpoint of the API. For example, you can activate a trigger when a button is pressed, a field value is updated in an incident, or when new objects are created. 
+Triggers run when users perform specific actions, or can be invoked automatically by interacting with the appropriate endpoint of the API. For example, a trigger can run when a field value is updated in an incident, new objects are created, or when a button is pressed. 
 
 #### Define a trigger action
 
@@ -527,7 +527,7 @@ To create a new trigger action, you must define a trigger action YAML file with 
 Depending on the logic that you want to implement in your triggers, specify a list of one or more [hooks](#trigger-hooks) in the trigger YAML file. Each hook represents a manual event or API endpoint that can invoke the trigger. For example, by specifying the hook `updateIncident` inside a trigger, the trigger will fire whenever the field of any incident is updated either manually from the GUI or via the API.
 
 Triggers function as individual actions, executed in the backend, without the capability to review
-the execution output in the GUI except for triggers on entities (observables). If a trigger fails, error logs printed on the stderr of the trigger are exported in the audit trail (system log verbosity must be set to `ALL` to review trigger audit logs). Triggers cannot receive manual input, except for triggers with the `incidentCustomActions` and `taskCustomActions` hooks that accept a text input.
+the execution output in the GUI except for triggers on entities (observables). If a trigger fails, error logs printed on the `stderr` output of the trigger are exported in the audit trail (system log verbosity must be set to `ALL` to review trigger audit logs). Triggers cannot receive manual input, except for [triggers with the `incidentCustomActions` and `taskCustomActions`hooks](#trigger-incidentcustomaction-and-taskcustomaction) that accept a text input.
 
 #### Examples of trigger definition files
 
@@ -645,15 +645,11 @@ opt_12: <value>,
 
 ##### External hooks
 
-Use the `webhook` hook for external events. For more information, see [Define a webhook trigger](#define-a-trigger-action). 
+Use the `webhook` hook for external events. For more information, see [Define a webhook trigger](#define-a-webhook-trigger). 
 
 #### Trigger incidentCustomAction and taskCustomAction
 
 It is possible to create a GUI shortcut (button) to a trigger in the incident or task details by defining the hooks `incidentCustomAction` or `taskCustomAction`. 
-
-For example YAML files, see:
-* [Trigger taskCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-taskcustomaction-definition-file-incident-tools)
-* [Trigger incidentCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-definition-file-incident-tools)
 
 The name of the button will correspond to the name of the trigger defined inside the YAML:
 
@@ -712,6 +708,10 @@ hook:
 null
 ```
 
+For other example YAML files, see:
+* [Trigger taskCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-taskcustomaction-definition-file-incident-tools)
+* [Trigger incidentCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-definition-file-incident-tools)
+
 #### check_not_null_field
 
 Specifying the YAML field `check_not_null_field : <field ID>` inside a trigger, you can ensure that the trigger is only executed (or displayed in case of custom actions buttons) when a specific incident field is populated.
@@ -732,9 +732,7 @@ webhook endpoint:
 
 <img src={useBaseUrl('img/cloud-soar/webook-trigger-api.png')} alt="Webhook API" width="800"/>
 
-For an example trigger YAML file, see [Trigger webhook definition file](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-webhook-definition-file).
-
-Following is another example, in which a trigger ingests the JSON payload posted to the webhook endpoint, and writes its content in the description widget of a specific incident (ID 1743):
+In the following example, a trigger ingests the JSON payload posted to the webhook endpoint, and writes its content in the description widget of a specific incident (ID 1743):
 
 ```json
 type: Trigger
@@ -778,6 +776,8 @@ incidentid=incidentID)
 hook:
  - webhook
 ```
+
+For another example YAML file of a webhook trigger, see [Trigger webhook definition file](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-webhook-definition-file).
 
 ##  Example files
 
