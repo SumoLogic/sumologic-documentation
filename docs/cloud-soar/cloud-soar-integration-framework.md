@@ -132,6 +132,9 @@ Both the integration definition file and the action definition file are YAML fil
      * `sha256`
      * `url`
      * `userdetail`
+  :::note
+  Cloud SOAR automatically extracts observables from incidents content and converts them to entities (domain, email, file, IP address, hash values, URL, and user details). However, usernames are automatically converted into entities only if the input of an automatic action for users contains the **observables** statement and is also specified as `userdetail`.
+  :::
 * **output* **: Expected fields from results.
    * **path* ** [String]:  JSON path for each field which may be returned by the action, using the following JSON as an example:
    ```
