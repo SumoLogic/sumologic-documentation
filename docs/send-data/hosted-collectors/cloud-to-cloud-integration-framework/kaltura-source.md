@@ -14,7 +14,7 @@ import MyComponentSource from '!!raw-loader!/files/c2c/kaltura/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/kaltura/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/kaltura.png')} alt="icon" width="100"/>
+<img src={useBaseUrl('img/send-data/kaltura-logo.png')} alt="icon" width="70"/>
 
 Kaltura is a video platform for modular systems that exposes different web-services and that may be deployed in several deployment modes to support different levels of scale. Kaltura’s platform comes in different editions, including the Kaltura-hosted SaaS edition, managed by Kaltura for single publishers and Value Added Resellers (VARs), as well as in several licensing modes of the, self-hosted, Kaltura On-Prem edition: Kaltura Community Edition, Kaltura On-Prem for Publishers and Kaltura OnPrem for OEMs. Kaltura source collects audit trail events and base entry events data and sends it to Sumo Logic.
 
@@ -29,32 +29,32 @@ Kaltura is a video platform for modular systems that exposes different web-servi
 
 ### Vendor configuration
 
-In this configuration, you will create a new [Kaltura App Token](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html) in [Kaltura Develops Portal](https://developer.kaltura.com/api-docs/service/appToken/action/add) or via your own hosted api portal and generate a App token and App Id. 
+In this configuration, you will create a new [Kaltura App Token](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html) in the [Kaltura Develops Portal](https://developer.kaltura.com/api-docs/service/appToken/action/add) or via your own hosted API portal to generate a App token and App Id. 
 
 #### Create a New App Token
 
 A Kaltura App Token with specific permissions is required for Sumo Logic to access Audit Trail and Base Entry Events from Kaltura. Follow the below instructions to create a new App Token.
 
 1. Start a [Kalutra session](https://developer.kaltura.com/api-docs/service/session/action/start) using an admin account.
-2. Fill out the following parameter: 
-    - **secret**. The API Secret Keys are generated when you create an account.
+1. Enter the following parameter in the body:
+    - **secret**. The API Secret Keys that are generated when you create an account.
     - **expiry**. 86400 - KS (Kaltura Session) expiry time in seconds.
     - **Partnerid**. A unique identifier allocated to every Kaltura account. The partner ID can be retrieved from the KMC Integration Settings tab.
-    - **privileges**. disableentitlement - Session privileges allows applications to limit the user to perform only specific actions.
-    - **type**. ADMIN [2] - The type of kaltura session (admin or user)
+    - **privileges**. disableentitlement - Session privileges that allows you to limit the applications to perform only specific actions.
+    - **type**. ADMIN [2] - The type of Kaltura session (admin or user).
     - **userId**. The Unique ID of the user who is performing the API call. This ID is the end-user’s ID on the publisher’s system.
-3. Click Send Request
-4. Copy and save the KS (Kaltura Session).
-5. Add a new [App Token](https://developer.kaltura.com/api-docs/service/appToken/action/add)
-6. Fill out the following global parameters: 
-    - **ks**. Paste in the KS (Kaltura Session) from previous step.
-    - **format**. JSON[1] - format of the response
-7. Fill out the following body appToken parameters:
-    - **description** Provide a description to identify what the Token will be used for.
+1. Click on the **Send Request**.
+1. Copy and save the Kaltura Session.
+1. Add a new [App Token](https://developer.kaltura.com/api-docs/service/appToken/action/add).
+1. Enter the following global parameters: 
+    - **ks**. Paste the KS (Kaltura Session) copied from the previous step.
+    - **format**. JSON[1] - format of the response.
+1. Enter the following body appToken parameters:
+    - **description**. Provide a description to identify what the Token will be used for.   
     - **hashType**. SHA1[SHA1] - Kaltura App Token Hash Type.
-    - **sessionType**. ADMIN[2] - Type of KS (Kaltura Session) that will be created using the current token.
-8. Click Send Request
-9. Copy and save the App Token,App Token ID, partnerId from the response.
+    - **sessionType**. ADMIN[2] - Type of Kaltura Session that will be created using the current token.
+1. Click on the **Send Request**.
+1. Copy and save the **App Token**, **App Token ID**, and **Partner Id** from the response.
 
 ### Source configuration
 
@@ -70,9 +70,9 @@ To configure an Kaltura source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Base URL**. Enter the API **Base URL**.
-1. **Partner ID**. Enter the **Partner ID** collected from the [New App Token](#create-a-new-app-token).
-1. **App Token ID**. Enter the **App Token ID** collected from the [New App Token](#create-a-new-app-token).
-1. **App Token**. Enter the **App Token** collected from the [New App Token](#create-a-new-app-token).
+1. **Partner ID**. Enter the **Partner ID** collected from the [Vendor congiguration](#create-a-new-app-token).
+1. **App Token ID**. Enter the **App Token ID** collected from the [Vendor congiguration](#create-a-new-app-token).
+1. **App Token**. Enter the **App Token** collected from the [Vendor congiguration](#create-a-new-app-token).
 1. **Select Base Entry Types for Base Entry Logs**. You have the option to **Collect all types** or **Select types**, where you can specify the exact event categories you would like to collect from the base entry logs. Must select from the pre-defined list.
 1. **Polling Interval** You have the option to select how often to poll for base entry events. Default is 24 hours.
 1. When you are finished configuring the Source, click **Save**.

@@ -272,8 +272,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/kaltura-source"><img src={useBaseUrl('img/send-data/kaltura.png')} alt="icon" width="120"/><h4>Kaltura Source</h4></a>
-  <p>Collects Audit Trail and Base Entry events from Kaltura platform.</p>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/kaltura-source"><img src={useBaseUrl('img/send-data/kaltura-logo.png')} alt="icon" width="75"/><h4>Kaltura Source</h4></a>
+  <p>Learn how to collect Audit Trail and Base Entry events from Kaltura platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
