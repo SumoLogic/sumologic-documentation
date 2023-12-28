@@ -70,9 +70,9 @@ To configure an Kaltura source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Base URL**. Enter the API **Base URL**.
-1. **Partner ID**. Enter the **Partner ID** collected from the [Vendor congiguration](#create-a-new-app-token).
-1. **App Token ID**. Enter the **App Token ID** collected from the [Vendor congiguration](#create-a-new-app-token).
-1. **App Token**. Enter the **App Token** collected from the [Vendor congiguration](#create-a-new-app-token).
+1. **Partner ID**. Enter the **Partner ID** collected from the [Vendor configuration](#create-a-new-app-token).
+1. **App Token ID**. Enter the **App Token ID** collected from the [Vendor configuration](#create-a-new-app-token).
+1. **App Token**. Enter the **App Token** collected from the [Vendor configuration](#create-a-new-app-token).
 1. **Select Base Entry Types for Base Entry Logs**. You have the option to **Collect all types** or **Select types**, where you can specify the exact event categories you would like to collect from the base entry logs. Must select from the pre-defined list.
 1. **Polling Interval** You have the option to select how often to poll for base entry events. Default is 24 hours.
 1. When you are finished configuring the Source, click **Save**.
@@ -95,7 +95,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| apiBaseUrl | String | Yes | `null` | API URL of your Kaltura enviorment. |  |
+| apiBaseUrl | String | Yes | `null` | API URL of your Kaltura environment. |  |
 | partnerId | String | Yes | `null` | Partneter Id of the customers Kaltura account from where you want to collect the event from. |  |
 | tokenId | String | Yes | `null` | Client ID of the Kaltura App Token created for Sumo Logic. |  |
 | token | String | Yes | `null` | Client Token of the Kaltura App Token created for Sumo Logic. |  |

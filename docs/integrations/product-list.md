@@ -333,6 +333,7 @@ Types of integrations:
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('/img/integrations/containers-orchestration/kafka.png')} alt="Thumbnail icon" width="85"/>   |  [Kafka](https://kafka.apache.org/) | Apps: <br/>- [Kafka](/docs/integrations/containers-orchestration/kafka/)	<br/>- [Kafka - OpenTelemetry](/docs/integrations/containers-orchestration/opentelemetry/kafka-opentelemetry/)	 |
+|  <img src={useBaseUrl('/img/send-data/kaltura-logo.png')} alt="Thumbnail icon" width="55"/>   |  [Kaltura](https://corp.kaltura.com/) | Collector: [Kaltura - Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/kaltura-source/)	 |
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/keeper.png')} alt="Thumbnail icon" width="75"/>   |  [Keeper Security](https://www.keepersecurity.com/) | App: [Keeper Security](/docs/integrations/security-threat-detection/keeper-security/)	 |
 |  <img src={useBaseUrl('img/integrations/misc/kemp-logo.png')} alt="Thumbnail icon" width="100"/>   |  [Kemp LoadMaster](https://kemptechnologies.com/) | Collector: [Kemp LoadMaster - Cloud SIEM](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/kemp-loadmaster/)	 |
 |  <img src={useBaseUrl('img/send-data/knowbe4.png')} alt="Thumbnail icon" width="75"/>   | [KnowBe4](https://www.knowbe4.com/)  | App: [KnowBe4](/docs/integrations/saas-cloud/knowbe4/) <br/>Collector: [KnowBe4 API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source/)	 |
