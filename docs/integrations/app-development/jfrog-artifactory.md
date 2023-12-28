@@ -9,20 +9,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/app-development/jfrog-Artifactory.png')} alt="Thumbnail icon" width="100"/>
 
-The Sumo Logic App for Artifactory provides insight into your JFrog Artifactory binary repository. The App provides preconfigured Dashboards that include an Overview of your system, Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity.
+The Sumo Logic app for Artifactory provides insight into your JFrog Artifactory binary repository. The app provides preconfigured Dashboards that include an Overview of your system, Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity.
 
-The Sumo Logic App for Artifactory only supports Artifactory On-Premise. It does not work with Artifactory Online. The [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-integrations/jfrog-artifactory.md) supports both Artifactory On-Premise and Artifactory Online.
+The Sumo Logic app for Artifactory only supports Artifactory On-Premise. It does not work with Artifactory Online. The [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-integrations/jfrog-artifactory.md) supports both Artifactory On-Premise and Artifactory Online.
 
 :::note
 * If you _do not_ have a Sumo Logic account, the [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-integrations/jfrog-artifactory.md) is the most convenient way to start using Sumo Logic directly from Artifactory.
-* If you _do_ have a Sumo Logic account, you can still use use the integration, but this will create a secondary Sumo Logic account. If you choose to use your current account, you can do so by installing the Sumo Logic App for Artifactory and access your Artifactory data from Sumo Logic, instead of from your Artifactory instance.  
+* If you _do_ have a Sumo Logic account, you can still use use the integration, but this will create a secondary Sumo Logic account. If you choose to use your current account, you can do so by installing the Sumo Logic app for Artifactory and access your Artifactory data from Sumo Logic, instead of from your Artifactory instance.  
 :::
 
 ## Artifactory
 
-### Log Types
+### Log types
 
-The Sumo Logic App for Artifactory collects data from the following logs:
+The Sumo Logic app for Artifactory collects data from the following logs:
 
 * **artifactory.log**. The main Artifactory log file that contains data on Artifactory server activity.
 * **access.log**. The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
@@ -37,8 +37,7 @@ Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
 * `request.log`
 * `traffic.*.log`
 
-
-### Sample Logs
+### Sample logs
 
 ```json
 20170113185444|17|REQUEST|1.1.1.1|anonymous|GET|/cloudera-repos/org/slf4j/slf4j-log4j12/1.7.5/slf4j-log4j12-1.7.5.jar|HTTP/1.1|200|8869
@@ -52,7 +51,7 @@ Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
 2017-01-13 18:54:12,121 [ACCEPTED DEPLOY] pypi-remote-cache:.pypi/test.html for billythekid/1.1.1.1.
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Data Transfer Over Time"
 _sourceCategory=*artifactory*
@@ -87,7 +86,7 @@ _sourceCategory=*artifactory* "ACCEPTED DEPLOY" "-cache"
 ```
 
 
-### Collecting Logs
+### Collecting logs
 
 This section demonstrates how to collect logs from JFrog Artifactory into Sumo Logic.
 
@@ -205,7 +204,7 @@ _sourceCategory=*artifactory*
 This procedure documents how to collect logs from JFrog Artifactory 7 into Sumo Logic.
 
 
-### Log Types
+### Log types
 
 For each JFrog service, you will find its active log files in the `$JFROG_HOME/<product>/var/log` directory. For consistency, each log file is prefixed by its service name and a dash, `<service-name>-service.log`. For example, artifactory-service.log and router-request.log.
 
@@ -217,7 +216,7 @@ For each JFrog service, you will find its active log files in the `$JFROG_HOME/<
 For more information about Artifactory logs, see JFrog's [Artifactory Log Files,](https://www.jfrog.com/confluence/display/JFROG/Logging) [Access Logs](https://www.jfrog.com/confluence/display/JFROG/Access+Log).
 
 
-### Sample Logs
+### Sample logs
 
 ```json title="Traffic"
 20201322001341|d29f485ce89ehh3i|0|DOWNLOAD|167.208.229.190
@@ -236,7 +235,7 @@ admin/149.5.95.40.
 ```
 
 
-### Sample Queries
+### Sample qqueries
 
 ```bash title="Requests by Repo"
 _sourceCategory = Labs/artifactory/*
@@ -270,7 +269,7 @@ _sourceCategory = Labs/artifactory/*
 | sort by actions | limit 10
 ```
 
-### Collecting Logs
+### Collecting logs
 
 #### Step 1: Activate the traffic.log file
 
@@ -356,13 +355,13 @@ For complete instructions, see [Local File Source](/docs/send-data/installed-col
    * **Multi-line Parsing**. Detect Messages Spanning Multiple Lines, Infer Boundaries
 4. Click **Save**.
 
-## Installing the Artifactory App
+## Installing the Artifactory app
 
-Now that you have set up collection, install the Sumo Logic App for Artifactory to use the pre-configured searches and Dashboards that provide insight into your data.
+{@import ../../reuse/apps/app-install-v2.md}
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing JFrog Artifactory dashboards
 
-## Viewing JFrog Artifactory Dashboards
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 
