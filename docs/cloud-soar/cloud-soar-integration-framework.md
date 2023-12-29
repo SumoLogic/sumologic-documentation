@@ -524,7 +524,7 @@ To create a new trigger action, you must define a trigger action YAML file with 
 
 <img src={useBaseUrl('img/cloud-soar/trigger-code-example.png')} alt="Trigger action" width="800"/>
 
-Depending on the logic that you want to implement in your triggers, specify a list of one or more [hooks](#trigger-hooks) in the trigger YAML file. Each hook represents a manual event or API endpoint that can invoke the trigger. For example, by specifying the hook `updateIncident` inside a trigger, the trigger will fire whenever the field of any incident is updated either manually from the GUI or via the API.
+Depending on the logic that you want to implement in your triggers, specify a list of one or more [hooks](#trigger-hooks) in the trigger YAML file. Each hook represents a manual event or API endpoint that can invoke the trigger. For example, by specifying the hook `updateIncident` inside a trigger, the trigger will fire whenever the field of any incident is updated either manually from the UI or via the API.
 
 Triggers function as individual actions, executed in the backend, without the capability to review
 the execution output in the GUI except for triggers on entities (observables). If a trigger fails, error logs printed on the `stderr` output of the trigger are exported in the audit trail (system log verbosity must be set to `ALL` to review trigger audit logs). Triggers cannot receive manual input, except for [triggers with the `incidentCustomActions` and `taskCustomActions`hooks](#trigger-incidentcustomaction-and-taskcustomaction) that accept a text input.
