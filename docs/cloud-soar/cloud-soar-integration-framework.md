@@ -725,8 +725,7 @@ hook:
 
 #### Define a webhook trigger
 
-Triggers with the hook `webhook` specified can interact with the payload that is posted on your 
-webhook endpoint:
+Triggers with the hook `webhook` specified can interact with the payload that is posted on your webhook endpoint:
 
 <img src={useBaseUrl('img/cloud-soar/webook-trigger-api.png')} alt="Webhook API" width="800"/>
 
