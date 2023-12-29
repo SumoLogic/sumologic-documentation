@@ -236,7 +236,7 @@ module.exports = {
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
     announcementBar: {
       id: 'announcementBar',
-      content: `Our systems will undergo maintenance on Jan 10, beginning at 12 a.m. PST, and ending Jan 11. Access to certain portions of Sumo Logic may be temporarily unavailable. Follow our <a href="https://status.sumologic.com">status page</a> for updates.`,
+      content: `Our systems will undergo maintenance on Jan 10, beginning at 12 a.m. PST, and ending Jan 11. During this time, you may experience minor service disruption. Follow our <a href="https://status.sumologic.com">status page</a> for updates.`,
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
