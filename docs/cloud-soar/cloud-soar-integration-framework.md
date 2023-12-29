@@ -715,8 +715,7 @@ For other example YAML files, see:
 
 Specifying the YAML field `check_not_null_field : <field ID>` inside a trigger, you can ensure that the trigger is only executed (or displayed in case of custom actions buttons) when a specific incident field is populated.
 
-For example, if we want to display our custom action trigger button only when our custom field with
-field ID `opt_15` is populated, inside the YAML file you can set:
+For example, if we want to display our custom action trigger button only when our custom field with field ID `opt_15` is populated, inside the YAML file you can set:
 
 ```json
 check_not_null_field: 'opt_15'
