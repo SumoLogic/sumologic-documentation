@@ -400,6 +400,17 @@ module.exports = {
                 'send-data/kubernetes/v4/install-helm-chart',
               ],
             },
+            {
+              type: 'category',
+              label: 'v4 Upgrade guide',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'send-data/kubernetes/v4-upgrade-guide/important-changes',
+                'send-data/kubernetes/v4-upgrade-guide/how-to-upgrade',
+                'send-data/kubernetes/v4-upgrade-guide/full-list-of-changes',
+              ],
+            },
           ],
         },
         {
