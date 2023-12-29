@@ -234,6 +234,10 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
+    announcementBar: {
+      id: 'announcementBar',
+      content: `Sumo Logic will be down for maintenance beginning Jan 10, 2024 12 a.m. PST. Follow our <a href="https://status.sumologic.com">status page</a> for updates.`,
+    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
