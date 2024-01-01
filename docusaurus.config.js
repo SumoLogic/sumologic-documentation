@@ -237,7 +237,7 @@ module.exports = {
     announcementBar: {
       id: 'announcementBar',
       backgroundColor: '#f7f1c8',
-      content: `Sumo Logic will undergo maintenance Jan 10 @ 12 a.m. PST, ending Jan 11. During this time, you may experience minor service disruptions. Follow our <a href="https://status.sumologic.com">status page</a> for updates.`,
+      content: `Sumo Logic will undergo maintenance Jan 10 @ 12 a.m. PST, ending Jan 11. During this time, you may experience intermittent service disruptions. Follow our <a href="https://status.sumologic.com">status page</a> for updates.`,
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
