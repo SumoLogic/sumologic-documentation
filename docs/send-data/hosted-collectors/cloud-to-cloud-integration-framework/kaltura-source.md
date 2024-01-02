@@ -60,7 +60,7 @@ A Kaltura App Token with specific permissions is required for Sumo Logic to acce
 
 When you create an Kaltura source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure an Kaltura source:
+To configure a Kaltura source:
 1. In Sumo Logic, select **Manage Data > Collection > Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Kaltura**.
