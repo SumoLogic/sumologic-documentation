@@ -157,7 +157,6 @@ To work around this, you need to delete the existing collector registration and 
    1. Sign in to Sumo Logic platform.
    1. Navigate to **Manage Data** > **Collection** > **OpenTelemetry Collection**.
    1. Find your collector.
-   1. Delete the local collector registration file in `~/.sumologic-otel-collector/` and wait for 10 minutes for the collector to get offline.
 
 After that, the collector will register on the next run.
 
