@@ -152,12 +152,12 @@ After running the collector for the first time, changes to collector properties 
 
 To work around this, you need to delete the existing collector registration and register the collector again. To do this, you need to do two things:
 
-1. Remove the collector in Sumo Logic UI.
+1. Delete local collector registration file in `~/.sumologic-otel-collector/` and wait 10 mins for collector to get offline.
+2. Remove the collector in Sumo Logic UI.
    1. Log in to Sumo Logic.
-   1. Go to `Manage Data` - `Collection`.
+   1. Go to `Manage Data` - `OpenTelemetry Collection`.
    1. Find your collector.
    1. Click `Delete` on the right-hand side of the collector.
-2. Delete local collector registration file in `~/.sumologic-otel-collector/`.
 
 After that, the collector will register on next run.
 
