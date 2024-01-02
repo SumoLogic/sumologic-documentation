@@ -21,6 +21,11 @@ Entities presented in the dashboards are normalized from log sources into [AWS E
 
 Use Sumo Logic’s [monitoring](/docs/alerts/monitors/) to receive alerts from the solution. To see monitors for the solution, go to **Manage Data > Monitoring** and select the **Cloud Infrastructure Security for AWS** folder. 
 
+:::note
+* After initial installation, data collection may be delayed.
+* If you have already installed the [Amazon Security Quickstart](/docs/integrations/amazon-aws/security-quickstart/), collectors may be duplicated to collect from the same sources. To prevent this, use the existing source category for collection. 
+:::
+
 Watch the following micro lesson to learn about Cloud Infrastructure Security for AWS.
 
 <Iframe url="https://www.youtube.com/embed/JD9tNfCW7uo?rel=0"
