@@ -29,7 +29,7 @@ Kaltura is a video platform for modular systems that exposes different web servi
 
 ### Vendor configuration
 
-In this configuration, you will create a new [Kaltura App Token](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html) in the [Kaltura Develops Portal](https://developer.kaltura.com/api-docs/service/appToken/action/add) or via your own hosted API portal to generate a App token and App Id. 
+In this configuration, you will create a new [Kaltura App Token](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html) in the [Kaltura Developer Portal](https://developer.kaltura.com/api-docs/service/appToken/action/add) or via your own hosted API portal to generate an App Token and App ID. 
 
 #### Create a New App Token
 
