@@ -36,7 +36,7 @@ In this configuration, you will create a new [Kaltura App Token](https://develop
 A Kaltura App Token with specific permissions is required for Sumo Logic to access Audit Trail and Base Entry Events from Kaltura. Follow the below instructions to create a new App Token.
 
 1. Start a [Kalutra session](https://developer.kaltura.com/api-docs/service/session/action/start) using an admin account.
-1. Enter the following parameter in the body:
+1. Enter the following parameters in the body:
     - **secret**. The API Secret Keys that are generated when you create an account.
     - **expiry**. 86400 - KS (Kaltura Session) expiry time in seconds.
     - **Partnerid**. A unique identifier allocated to every Kaltura account. The partner ID can be retrieved from the KMC Integration Settings tab.
