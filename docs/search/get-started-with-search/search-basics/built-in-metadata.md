@@ -4,7 +4,6 @@ title: Built-in Metadata
 description: Metadata tags are attached to your log messages at ingest, which is very useful when you're searching log data.
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic has several metadata fields that are automatically tagged to ingested data. These metadata fields are referenced by the service in
 many ways, such as the user interface when managing Collection, and can be referenced in search queries.
@@ -65,12 +64,10 @@ This table shows some examples and a description of each metadata type.
 | `_sourceCategory=*apache*`<br/>`_sourceCategory="Security Logs"` | Returns results from one or more Sources depending on whether the tag was applied to a single Source or a series of Sources. Entered when a Source is configured.  |
 | `_sourceHost=hostname`<br/>`_sourceHost=*RAS*` | Usually returns results from one Source, unless a value is entered at the Collector level for a Collector with more than one Source.<br/><br/>If the field is left blank when a Source is configured, the value for Source Host is taken from the host system value. A custom value can be entered at the Source or Collector configuration. Metadata values entered at Source level override Collector values.  |
 | `_sourceName=path/to/file/`<br/>`_sourceName=*path*` | Returns results from one or more Source paths. Entered when a Source is configured. Note that the metadata field `_sourceName` is not the name of the Source, but the file path.  |
-| `_view=sumologic_default`| Returns results more quickly and efficiently because the search runs against a smaller data set. This is a  separate subsets of data in your account where you put your special kind data.|
-
 
 In the **Messages** tab, each message displays its metadata tags:  
 
-<img src={useBaseUrl('img/search/get-started-search/search-basics/msg-with-metadata.png')} style={{border:'1px solid black'}} alt="msg-with-metadata" width="800"/>
+![](/img/search/get-started-search/search-basics/msg-with-metadata.png)
 
 ## Search different values of a metadata field in the same query
 
