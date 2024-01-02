@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/kaltura-logo.png')} alt="icon" width="70"/>
 
-Kaltura is a video platform for modular systems that exposes different web-services and that may be deployed in several deployment modes to support different levels of scale. Kaltura’s platform comes in different editions, including the Kaltura-hosted SaaS edition, managed by Kaltura for single publishers and Value Added Resellers (VARs), as well as in several licensing modes of the, self-hosted, Kaltura On-Prem edition: Kaltura Community Edition, Kaltura On-Prem for Publishers and Kaltura OnPrem for OEMs. Kaltura source collects audit trail events and base entry events data and sends it to Sumo Logic.
+Kaltura is a video platform for modular systems that exposes different web services that may be deployed in several deployment modes to support different levels of scale. Kaltura’s platform comes in different editions, including the Kaltura-hosted SaaS edition, managed by Kaltura for single publishers and Value Added Resellers (VARs). Kaltura also offers several licensing modes of the self-hosted Kaltura On-Prem edition: Kaltura Community Edition, Kaltura On-Prem for Publishers, and Kaltura OnPrem for OEMs. Kaltura source collects audit trail events and base entry events data and sends it to Sumo Logic.
 
 ## Data collected
 
