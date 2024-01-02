@@ -67,7 +67,6 @@ This table shows some examples and a description of each metadata type.
 | `_sourceName=path/to/file/`<br/>`_sourceName=*path*` | Returns results from one or more Source paths. Entered when a Source is configured. Note that the metadata field `_sourceName` is not the name of the Source, but the file path.  |
 | `_view=sumologic_default`| Returns results more quickly and efficiently because the search runs against a smaller data set. This is a  separate subsets of data in your account where you put your special kind data.|
 
-
 In the **Messages** tab, each message displays its metadata tags:  
 
 <img src={useBaseUrl('img/search/get-started-search/search-basics/msg-with-metadata.png')} style={{border:'1px solid black'}} alt="msg-with-metadata" width="800"/>
