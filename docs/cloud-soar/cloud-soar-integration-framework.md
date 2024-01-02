@@ -163,27 +163,27 @@ Both the integration definition file and the action definition file are YAML fil
    * **value* ** [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
    * **type* ** [String]: Type of value which is only possible to specify if the value should be shown as a link.
 * **use_in_triage** [Boolean]: Action should be manually executable in triage event (default False). 
-* **hook** [List]: List of hooks. Fields valid only for trigger actions. Possible values are:
-   * `addObservableArtifact`
-   * `addObservableDomain`
-   * `addObservableIp`
-   * `addObservableMail`
-   * `addObservableUrl`
-   * `addObservableUserDetail`
-   * `approveTask`
-   * `closeIncident`
-   * `closeTask`
-   * `createTask`
-   * `discardEvent`
-   * `grabEvent`
-   * `incidentCustomAction`
-   * `newIncident`
-   * `reassignEvent`
-   * `reassignTask`
-   * `taskCustomAction`
-   * `updateIncident`
-   * `updateTask`
-   * `webhook`
+* **hook** [List]: A list of hooks used to fire trigger actions to interact with Cloud SOAR elements. For more information, see [Trigger hooks](#trigger-hooks). Valid values are:
+     * `addObservableArtifact`
+     * `addObservableDomain`
+     * `addObservableIp`
+     * `addObservableMail`
+     * `addObservableUrl`
+     * `addObservableUserDetail`
+     * `approveTask`
+     * `closeTask`
+     * `createTask`
+     * `reassignTask`
+     * `taskCustomAction`
+     * `updateTask`
+     * `discardEvent`
+     * `grabEvent`
+     * `reassignEvent`
+     * `closeIncident`
+     * `incidentCustomAction`
+     * `newIncident`
+     * `updateIncident`
+     * `webhook`
 * **check_not_null_field** [String]: For actions with the hook `incidentCustomAction` and `taskCustomAction`, specifies the internal name of the element field. It should be not null to show the button in the UI.
 * **src_doc* ** [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed. 
 * **url_preview* ** [String]: Result path to show in html5 iframe sandboxed.
@@ -513,6 +513,268 @@ Field notes:
      * d => DAYS
      * h => HOURS
      * m => MINUTES
+
+### Trigger action definitions
+
+Triggers run when users perform specific actions, or can be invoked automatically by interacting with the appropriate endpoint of the API. For example, a trigger can run when a field value is updated in an incident, new objects are created, or when a button is pressed. 
+
+#### Define a trigger action
+
+To create a new trigger action, you must define a trigger action YAML file with the value `type` set to `Trigger`:
+
+<img src={useBaseUrl('img/cloud-soar/trigger-code-example.png')} alt="Trigger action" width="800"/>
+
+Depending on the logic that you want to implement in your triggers, specify a list of one or more [hooks](#trigger-hooks) in the trigger YAML file. Each hook represents a manual event or API endpoint that can invoke the trigger. For example, by specifying the hook `updateIncident` inside a trigger, the trigger will fire whenever the field of any incident is updated either manually from the UI or via the API.
+
+Triggers function as individual actions, executed in the backend, without the capability to review the execution output in the GUI except for triggers on entities (observables). If a trigger fails, error logs printed on the `stderr` output of the trigger are exported in the audit trail (system log verbosity must be set to `ALL` to review trigger audit logs). Triggers cannot receive manual input, except for [triggers with the `incidentCustomActions` and `taskCustomActions`hooks](#trigger-incidentcustomaction-and-taskcustomaction) that accept a text input.
+
+#### Examples of trigger definition files
+
+See the following examples of trigger definition files:
+* [Trigger definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-definition-file-incident-tools)
+* [Trigger taskCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-taskcustomaction-definition-file-incident-tools)
+* [Trigger incidentCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-definition-file-incident-tools)
+* [Trigger webhook definition file](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-webhook-definition-file)
+
+#### Trigger hooks
+
+Specify `hook` values in a `Trigger` type [action definition file](/docs/cloud-soar/cloud-soar-integration-framework/#action-definition-file-format) to run the trigger action in specific situations. For example, to automatically run a trigger action when a task is closed, specify the `closeTask` hook. 
+
+The following sections describe the valid hook values to use in a trigger definition file.
+
+##### Entities hooks
+
+Following are the hooks for [entities](/docs/cloud-soar/main-menu/#entities) (observables) events that run when objects are created:
+* `addObservableArtifact`. When an artifact entity is created.
+* `addObservableDomain`. When a domain entity is created.
+* `addObservableIp`. When an IP address entity is created.
+* `addObservableMail`. When an email entity is created.
+* `addObservableUrl`. When a URL entity is created.
+* `addObservableUserDetail`. When a user detail entity is created.
+
+##### Task hooks
+
+Following are the hooks for [task](/docs/cloud-soar/incidents-triage/#tasks) events:
+* `approveTask`. When task is approved. Param passed to script `tasksDetail`.
+* `closeTask`. When task is closed. Param passed to script `tasksDetail`.
+* `createTask`. When task is created. Param passed to script `tasksDetail`.
+* `reassignTask`. When task is reassigned. Param passed to script `tasksDetail`.
+* `taskCustomAction`. Custom trigger. Param passed to script `text`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
+* `updateTask`. When task is updated. Param is passed to scripts `tasksBeforeUpdate` and `tasksAfterUpdate`. 
+
+Params `tasksDetail`, `tasksBeforeUpdate`, and `tasksAfterUpdate` are JSON strings with the form:
+```json 
+{
+reminder_time: <value>,
+report_time: <value>,
+assigned_to: <value>,
+priority: <value>,
+status: <value>,
+title: <value>,
+end_time: <value>,
+hours: <value>,
+opt_3: <value>,
+opt_6: <value>,
+opt_7: <value>,
+opt_8: <value>,
+opt_9: <value>,
+opt_10: <value>,
+opt_12: <value>,
+[....]
+}
+```
+
+##### Triage hooks
+
+Following are hooks for [triage](/docs/cloud-soar/incidents-triage/#triage) events:
+* `discardEvent`. When event is discarded. Param passed to script `triage_eventsDetail`.
+* `grabEvent`. When event is grabbed. Param passed to script `triage_eventsDetail`.
+* `reassignEvent`. When event is reassigned. Param passed to script `triage_eventsDetail`.
+
+Param `triage_eventsDetail` is a JSON string with the form:
+
+```json
+{
+id: <value>,
+status: <value>,
+operator: <value>,
+username: <value>,
+type: <value>,
+opt_1: <value>,
+opt_3: <value>,
+opt_4: <value>,
+opt_5: <value>,
+opt_7: <value>,
+opt_8: <value>,
+opt_11: <value>
+}
+```
+
+##### Incident hooks
+
+Following are hooks for [incident](/docs/cloud-soar/incidents-triage/) events:
+* `closeIncident`. When incident is closed. Param passed to script `incidentsBeforeUpdate` and  `incidentsAfterUpdate`.
+* `incidentCustomAction`. Custom trigger. Param passed to script `text`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
+* `newIncident`. When incident is created. Param passed to script `incidentsDetail`.
+* `updateIncident`. When incident is updated. Param passed to script `incidentsBeforeUpdate` and `incidentsAfterUpdate`.
+
+Params `incidentsDetail`, `incidentsBeforeUpdate`, and `incidentsAfterUpdate` are JSON strings with the form:
+
+```json
+{
+id: <value>,
+additional_info: <value>,
+status: <value>,
+investigation_number: <value>,
+starttime: <value>,
+type: [<value>],
+incident_kind: <value>,
+incident_category: [<value>],
+[...]
+opt_3: <value>,
+opt_6: <value>,
+opt_7: <value>,
+opt_8: <value>,
+opt_9: <value>,
+opt_10: <value>,
+opt_12: <value>,
+[....]
+}
+```
+
+##### External hooks
+
+Use the `webhook` hook for external events. For more information, see [Define a webhook trigger](#define-a-webhook-trigger). 
+
+#### Trigger incidentCustomAction and taskCustomAction
+
+It is possible to create a GUI shortcut (button) to a trigger in the incident or task details by defining the hooks `incidentCustomAction` or `taskCustomAction`. 
+
+The name of the button will correspond to the name of the trigger defined inside the YAML:
+
+<img src={useBaseUrl('img/cloud-soar/custom-trigger-button.png')} alt="Custom trigger button definition" width="800"/>
+
+Clicking the button in the UI runs the trigger:
+
+<img src={useBaseUrl('img/cloud-soar/custom-trigger-button-in-ui.png')} alt="Custom trigger button" width="300"/>
+
+When users interact with the custom action trigger button, they can provide a textual input that can be elaborated by the trigger. To elaborate the input of a custom action trigger, use the `text` param inside the code:
+
+```json
+integration: 'Incident Tools'
+name: 'Custom trigger button'
+type: Trigger
+script:
+ code: |
+   import json
+   import argparse
+   import requests
+   import sys
+   parser = argparse.ArgumentParser()
+   parser.add_argument('--incidentsDetail', help='incident before update', required=False) #param inherited by
+ hook defined in the yaml
+   parser.add_argument('--token', help='JWT token , REQUIRED', required=True)
+   parser.add_argument('--incmanurl', help='IncMan URL , REQUIRED', required=True)
+   parser.add_argument('--text', help='text', required=False) #param inherited by hook defined in the yaml
+   args, unknown = parser.parse_known_args()
+   inc_det_after = json.loads(args.incidentsDetail)
+   incidentID = inc_det_after.get('id')
+   headers = {
+      'Accept': 'application/json;charset=UTF-8',
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Authorization': 'Bearer ' + args.token
+   }
+   end_point = '{incmanurl}/api/v2/incidents/{incidentid}'.format(incmanurl=args.incmanurl, incidentid=incidentID)
+   session = requests.Session()
+   session.verify = False
+   additional_info = inc_det_after.get('additional_info')
+   new_text = "<br>" + str(args.text if args.text else '')
+   additional_info += new_text
+   payload = {
+      "additional_info": additional_info,
+   }
+   incident = session.put(end_point, headers=headers, data=payload, proxies=None, timeout=(5, 60))
+   try:
+   incident.raise_for_status()
+   except Exception as e:
+   sys.stderr.write(str(e))
+   exit(0)
+
+check_not_null_field: 'opt_92' #specify that the custom field with internal id “opt_92” should be populated in
+order to display this button in the GUI.
+hook:
+ - incidentCustomAction #hook that generates a custom button in the incident tombstone when field opt_92 is not
+null
+```
+
+For other example YAML files, see:
+* [Trigger taskCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-taskcustomaction-definition-file-incident-tools)
+* [Trigger incidentCustomAction definition file (Incident Tools)](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-definition-file-incident-tools)
+
+#### check_not_null_field
+
+Specifying the YAML field `check_not_null_field : <field ID>` inside a trigger, you can ensure that the trigger is only executed (or displayed in case of custom actions buttons) when a specific incident field is populated.
+
+For example, if we want to display our custom action trigger button only when our custom field with field ID `opt_15` is populated, inside the YAML file you can set:
+
+```json
+check_not_null_field: 'opt_15'
+hook:
+ - incidentCustomAction
+```
+
+#### Define a webhook trigger
+
+Triggers with the hook `webhook` specified can interact with the payload that is posted on your webhook endpoint:
+
+<img src={useBaseUrl('img/cloud-soar/webook-trigger-api.png')} alt="Webhook API" width="800"/>
+
+In the following example, a trigger ingests the JSON payload posted to the webhook endpoint, and writes its content in the description widget of a specific incident (ID 1743):
+
+```json
+type: Trigger
+script:
+ code: |
+   import json
+   import argparse
+   from datetime import datetime
+   import sys
+   import requests
+   import time
+   parser = argparse.ArgumentParser()
+   parser.add_argument('--payload', help='WebHook payload , REQUIRED', required=True)
+   parser.add_argument('--token', help='JWT token , REQUIRED', required=True)
+   parser.add_argument('--incmanurl', help='IncMan URL , REQUIRED', required=True)
+   args, unknown = parser.parse_known_args()
+   payload = json.dumps(args.payload)
+   incidentID = 1743
+   headers = {
+      'Accept': 'application/json;charset=UTF-8',
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Authorization': 'Bearer ' + args.token
+   }
+   end_point = '{incmanurl}/api/v2/incidents/{incidentid}'.format(incmanurl=args.incmanurl,
+incidentid=incidentID)
+   session = requests.Session()
+   session.verify = False
+   additional_info = json.loads(payload)
+   payload = {
+      "additional_info": additional_info,
+   }
+   incident = session.put(end_point, headers=headers, data=payload, proxies=None, timeout=(5,60))
+   sys.stderr.write(str(incident.content))
+   try:
+      incident.raise_for_status()
+   except Exception as e:
+      sys.stderr.write("Error updating incident Severity: ")
+      sys.stderr.write(str(e))
+   # sys.stderr.write(str(json.dumps(args.triage_eventsDetail)))
+   exit(0)
+hook:
+ - webhook
+```
+
+For another example YAML file of a webhook trigger, see [Trigger webhook definition file](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-webhook-definition-file).
 
 ##  Example files
 
