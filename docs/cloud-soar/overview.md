@@ -4,46 +4,45 @@ title: Cloud SOAR Overview
 sidebar_label: Overview
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 ## Why Cloud SOAR?
 
 Cloud SOAR is a modern security operations technology platform that empowers MSSPs, SOCs, and security teams by providing collaborative and automated real-time incident management and threat response. Make quick and insightful decisions during security response with workflow automation.
 
-### All-in-one platform for minimizing the response time
+* **All-in-one platform for minimizing the response time**
+   * Integrates disparate technologies focusing analysts on real threats.
+   * Makes the most of automation, orchestrating several tools in Standard Operating Procedures (SOPs).
+   * Measures success and improves communication.
+* **Better collaboration**
+<br/>Cloud SOAR’s native orchestration capabilities boost the collaboration within the SOC team, ensuring efficient synergy during each phase of incident response. Automation of the full incident lifecycle eases the burden on security analysts, while helping to successfully pinpoint real threats and coordinate an effective response across tools and team members.
+* **Customizable reports**
+<br/>Quickly assemble highly customizable reports and dashboards to easily navigate and assess your security intelligence portfolio. Use relevant templates to capture workflow processes, job functions, and response timeframes, including critical indicators of compromise (IOC) and corrective actions taken. Use reports to create greater visibility for KPIs and make collective improvements across the SOC team.
+* **Speed incident response**
+<br/>Cloud SOAR improves incident response time with flexible workflow automation across tools and teams. Machine learning distinguishes real threats from false positives to reduce alert fatigue.
+* **Connect disparate tools**
+<br/>Cloud SOAR acts as the connective tissue between your existing tools to automate processes across the SOC and derive relevant insights throughout your security portfolio.
+* **Close the skill gap**
+<br/>Automated workflow processes help analysts function at an optimal level and reduce the skills gap that exists from the lack of qualified cybersecurity professionals.
+* **Comprehensive security portfolio**
+<br/>Cloud SOAR comprises both the Automation Service, which allows our Cloud SIEM to leverage the power of automated playbooks, and the full Cloud SOAR. Cloud SOAR combines automation with case management, among many other capabilities aimed at helping your organization modernize security operations.
 
-* Integrates disparate technologies focusing analysts on real threats
-* Makes the most of automation, orchestrating several tools in Standard Operating Procedures (SOPs)
-* Measures success and improves communication
+## Incident generation process
 
+ [Incidents](/docs/cloud-soar/incidents-triage/) are at the heart of Cloud SOAR. Incidents are events that require investigation and remediation. Cloud SOAR generates incidents with an automated process:
+ 1. An alert is received by Cloud SOAR via an integration.
+ 1. [Automation rules](/docs/cloud-soar/automation/#creating-incidents-from-automation-rules) process the alert. Behind the scenes, parsing rules break out the data into artifacts to be used as arguments in playbooks, such as IP addresses, usernames, host names, and so on.
+ 1. The data is fed into an [incident template](/docs/cloud-soar/automation/#incident-templates).
+ 1. [Playbooks](/docs/cloud-soar/automation/#playbook) run against the data.
+ 1.  Cloud SOAR generates an [incident](/docs/cloud-soar/incidents-triage/#working-with-incidents).
 
-### Better collaboration
+<img src={useBaseUrl('img/cloud-soar/cloud-soar-automation-flow.png')} alt="Cloud SOAR automation flow" style={{border: '1px solid black'}} width="800" />
 
-Cloud SOAR’s native orchestration capabilities boost the collaboration within the SOC team, ensuring efficient synergy during each phase of incident response.
-
-Automation of the full incident lifecycle eases the burden on security analysts, while helping to successfully pinpoint real threats and coordinate an effective response across tools and team members.
-
-### Customizable reports
-
-Quickly assemble highly customizable reports and dashboards to easily navigate and assess your security intelligence portfolio. Use relevant templates to capture workflow processes, job functions, and response timeframes, including critical indicators of compromise (IOC) and corrective actions taken. Use reports to create greater visibility for KPIs and make collective improvements across the SOC team.
-
-### Speed incident response
-Cloud SOAR improves incident response time with flexible workflow automation across tools and teams. Machine learning distinguishes real threats from false positives to reduce alert fatigue.
-
-### Connect disparate tools
-Cloud SOAR acts as the connective tissue between your existing tools to automate processes across the SOC and derive relevant insights throughout your security portfolio.
-
-### Close the skill gap
-Automated workflow processes help analysts function at an optimal level and reduce the skills gap that exists from the lack of qualified cybersecurity professionals.
-
-### Comprehensive security portfolio
-Cloud SOAR comprises both the Automation Service, which allows our Cloud SIEM to leverage the power of automated playbooks, and the full Cloud SOAR. Cloud SOAR combines automation with case management, among many other capabilities aimed at helping your organization modernize security operations.
-
-## Support and compliance
-
-### Data retention
+## Data retention
 
 This section lists the retention period for each type of data generated. 
 
-#### Default retention periods by data type
+### Default retention periods by data type
 
 Sumo Logic automatically deletes the following customer data according to the table retention period below, except for customers required to ensure HIPAA compliance (see second table).
 
@@ -67,7 +66,7 @@ If you need to follow HIPAA compliance, it is important to explicitly communicat
 | Entities | 7 years |
 | Playbook and action executions | 7 years |
 
-#### Custom retention periods
+### Custom retention periods
 
 You can request retention period times different from those declared in the tables above, as long as the retention period requested is greater than 1 day yet less than 5000 days.
 
