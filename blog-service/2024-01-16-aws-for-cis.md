@@ -24,6 +24,6 @@ Here are some of the key features the new solution offers:
 To learn how you can set up and use Cloud Infrastructure Security for AWS, check out our [technical documentation](/docs/integrations/amazon-aws/cloud-infrastructure-security-for-aws). 
 
 
-:::note
+:::note Action Required
 To use the solution, you are required to sign up and activate Amazon GuardDuty and AWS Security Hub.
 :::
