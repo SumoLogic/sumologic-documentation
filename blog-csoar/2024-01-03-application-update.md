@@ -12,11 +12,11 @@ image: https://help.sumologic.com/img/sumo-square.png
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Bug fixes 
-* Fixed black screen when opening a Cloud SOAR or Automation Service url with invalid session.
+* Fixed black screen when opening a Cloud SOAR or Automation Service URL with invalid session.
 * Playbooks:
-  * Fixed: Parameters not being passed to Nested Playbooks.
-  * Fixed configuration loss after being installed from App Central.
-  * Placeholder TextArea with "<" and ">" that were converted in "spaces" - HTML.
+  * Fixed: Parameters not being passed to nested playbooks.
+  * Fixed: Configuration loss after being installed from App Central.
+  * Placeholder TextArea with "<" and ">" that were converted in "spaces" in HTML.
 
 #### Cloud SOAR
 * Groups: Fixed member removal that could result in broken requests.
@@ -25,4 +25,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   * Incident ID placeholder available in node configuration.
 
 #### Automation Service 
-  * Playbooks: Start node parameters: Fixed using a “.” or a "space" in parameter name that were converted into “_”
+  * Playbooks: Start node parameters fixed by using a “.” or a "space" in parameter names that were converted into “_” .
