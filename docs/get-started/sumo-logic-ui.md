@@ -123,7 +123,7 @@ To administer Sumo Logic accounts, users, and security, do the following:
 1. Choose from the following, as needed: <!-- what does this look like for Admin users? -->
     * **Account**. [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
     * **Users and Roles**. [Manage users and roles](/docs/manage/users-roles).
-    * **Security**. [Set password policy for your org](/docs/manage/security/set-password-policy), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses), [manage access keys](/docs/manage/security/access-keys), manage security policies ([audit index](/docs/manage/security/audit-indexes/audit-index)), [support account access](/docs/manage/security/enable-support-account), [dashboard sharing](../dashboards/share-dashboard-new), and [set up SAML authentication](/docs/manage/security/saml).
+    * **Security**. [Set password policy for your org](/docs/manage/security/set-password-policy), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses), [manage access keys](/docs/manage/security/access-keys), manage security policies ([audit index](/docs/manage/security/audit-indexes/audit-index)), [support account access](/docs/manage/security/enable-support-account), [dashboard sharing](/docs/get-started/dashboards/share-dashboard-new/), and [set up SAML authentication](/docs/manage/security/saml).
 
 ## Customize your environment with tabs
 
