@@ -21,7 +21,8 @@ Here are some of the key features the new solution offers:
 * **Misconfigurations**. See areas in your environment that need to be addressed because they fail best practice security controls.
 * **Suspicious activity assessment**. See suspicious activity across users, web interactions, networks, and Identity Access Management (IAM).
 
-To learn how you can set up and use Cloud Infrastructure Security for AWS, check out our technical documentation [here](/docs/integrations/amazon-aws/cloud-infrastructure-security-for-aws). 
+To learn how you can set up and use Cloud Infrastructure Security for AWS, check out our [technical documentation](/docs/integrations/amazon-aws/cloud-infrastructure-security-for-aws). 
+
 
 :::note
 To use the solution, you are required to sign up and activate Amazon GuardDuty and AWS Security Hub.
