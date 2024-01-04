@@ -27,6 +27,40 @@ Cloud SOAR is a modern security operations technology platform that empowers MSS
 * **Comprehensive security portfolio**
 <br/>Cloud SOAR comprises both the Automation Service, which allows our Cloud SIEM to leverage the power of automated playbooks, and the full Cloud SOAR. Cloud SOAR combines automation with case management, among many other capabilities aimed at helping your organization modernize security operations.
 
+## Cloud SOAR highlights
+
+Cloud SOAR helps secure operations and automate incident response through integrations with leading third-party threat intelligence vendors. Following are some of the highlights. 
+
+### Triage
+
+Cloud SOAr provides automated investigation of indicators of compromise (IoCs) for cyber and non-cyber use cases. For more information, see [Triage](/docs/cloud-soar/incidents-triage/#triage).
+
+<img src={useBaseUrl('img/cloud-soar/overview-advanced-triage.png')} alt="Advanced triage" style={{border: '1px solid black'}} width="800" />
+
+### War Room
+
+The War Room provides a complete, chronological, and detailed picture of a specific incident process. It also enables security analysts to work simultaneously on incidents with granular role-based access control (RBAC) for general and incident profiles. For more information, see [War Room](http://localhost:3000/docs/cloud-soar/incidents-triage/#war-room).
+
+<img src={useBaseUrl('img/cloud-soar/overview-case-management.png')} alt="Case Management" style={{border: '1px solid black'}} width="800" />
+
+### Playbooks
+
+Playbooks orchestrate your security operation center (SOC) team’s security stack and automate time-consuming tasks to improve your standard operating procedures (SOPs) and minimize response time. For more information, see [Playbooks](/docs/cloud-soar/automation/#playbook).
+
+<img src={useBaseUrl('img/cloud-soar/overview-automated-sop.png')} alt="Automated SOPs" style={{border: '1px solid black'}} width="800" />
+
+### Dashboards and reports
+
+Gain complete insight into incident response performance with customizable dashboards and reports. Keep track of your most important KPIs with real-time data on each phase of the incident response life cycle. For more information, see [Dashboards](/docs/cloud-soar/main-menu/#dashboards).
+
+<img src={useBaseUrl('img/cloud-soar/overview-customized-reports.png')} alt="KPI dashboards" style={{border: '1px solid black'}} width="800" />
+
+### Open Integration Framework (OIF)
+
+Choose from hundreds of out-of-the-box actions and playbooks or ask the Sumo Logic team to develop the connectors you need. Anyone can access the API code to quickly integrate tools without any coding experience required. For more information, see [Integrations](//docs/cloud-soar/automation/#integrations). 
+
+<img src={useBaseUrl('img/cloud-soar/overview-openI-itegration.png')} alt="Integrations" style={{border: '1px solid black'}} width="800" />
+
 ## Incident generation process
 
  [Incidents](/docs/cloud-soar/incidents-triage/) are at the heart of Cloud SOAR. Incidents are events that require investigation and remediation. Cloud SOAR generates incidents with an automated process:
