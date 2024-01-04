@@ -274,7 +274,7 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
   <tr>
     <td>Notable Event Count Queries</td>
     <td>S3_EnablePublicAccess</td>
-    <td>Counts S3 events related to enabling public ingress</td>
+    <td>Counts S3 events related to enabling public ingress.</td>
   </tr>
   <tr>
     <td>Notable Event Count Queries</td>
