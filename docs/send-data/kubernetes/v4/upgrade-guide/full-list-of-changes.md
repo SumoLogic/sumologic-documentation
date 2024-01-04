@@ -1,6 +1,6 @@
 ---
 id: full-list-of-changes
-title: Full list of changes
+title: Kubernetes Collection v4.0.0 - Full List of changes
 sidebar_label: Full list of changes
 description: This page describes full list of changes in Kubernetes Collection v4.
 ---
