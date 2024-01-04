@@ -1,8 +1,8 @@
 ---
 id: how-to-upgrade
 title: Kubernetes Collection v4.0.0 - How to Upgrade
-sidebar_label: How to upgrade
-description: This page describes how to upgrade Kubernetes Collection to v4
+sidebar_label: How to Upgrade
+description: This page describes how to upgrade Kubernetes Collection to v4.
 ---
 
 ## Requirements
