@@ -269,7 +269,7 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
   <tr>
     <td>Notable Event Count Queries</td>
     <td>S3_DisableMfaDeleteOrBucketVersionioningOrAccessLogging</td>
-    <td>Counts S3 events related to disabling MFA delete, bucket versioning or access logging</td>
+    <td>Counts S3 events related to disabling MFA delete, bucket versioning or access logging.</td>
   </tr>
   <tr>
     <td>Notable Event Count Queries</td>
