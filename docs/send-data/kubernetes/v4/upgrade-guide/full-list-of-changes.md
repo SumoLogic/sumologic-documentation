@@ -2,13 +2,12 @@
 id: full-list-of-changes
 title: Full list of changes
 sidebar_label: Full list of changes
-description: This page describes full list of changes in Kubernetes Collection v4
+description: This page describes full list of changes in Kubernetes Collection v4.
 ---
 
 - Drop Prometheus recording rule metrics
 
-  OpenTelemetry can't collect Prometheus recording rule metrics. The new version therefore stops collecting the following recording rule
-  metrics
+  OpenTelemetry can't collect Prometheus recording rule metrics. The new version therefore stops collecting the following recording rule metrics.
 
   - kube_pod_info_node_count
   - node_cpu_saturation_load1
@@ -76,7 +75,6 @@ description: This page describes full list of changes in Kubernetes Collection v
 
   This has been changed in order to make the behaviour consistent with the logs pipeline. Now, the extra processors should use [translated versions of some attributes][attribute_translation].
 
-- Enabling autoscaling for logs metadata, metrics metadata, metrics collector, otelcol instrumentation,and traces gateway by default. It is
-  done by adding the `sumologic.autoscaling.enabled` parameter.
+- Enabling autoscaling for logs metadata, metrics metadata, metrics collector, otelcol instrumentation,and traces gateway by default. It is done by adding the `sumologic.autoscaling.enabled` parameter.
 
   [attribute_translation]: https://github.com/SumoLogic/sumologic-otel-collector/tree/v0.90.1-sumo-0/pkg/processor/sumologicschemaprocessor#attribute-translation
