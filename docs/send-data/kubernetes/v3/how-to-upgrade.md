@@ -29,8 +29,7 @@ You can get your current configuration from the cluster by running:
 helm get values --namespace "${NAMESPACE}" --output yaml "${HELM_RELEASE_NAME}" > user-values.yaml
 ```
 
-Afterwards, you can download the migration tool and run it directly. Set the OS and ARCH variables to your operating system and
-architecture.
+Afterwards, you can download the migration tool and run it directly. Set the OS and ARCH variables to your operating system and architecture.
 
 ```bash
 OS=linux ARCH=amd64; curl -L "https://github.com/SumoLogic/sumologic-kubernetes-tools/releases/download/v2.22.0/update-collection-v3-sumo-${OS}_${ARCH}" -o update-collection-v3
@@ -48,10 +47,9 @@ docker run \
   update-collection-v3 -in /values/user-values.yaml -out /values/new-values.yaml
 ```
 
-You should have `new-values.yaml` in your working directory which can be used for the upgrade. Pay attention to the migration script
-output - it may notify you of additional manual steps you need to carry out.
+You should have `new-values.yaml` in your working directory which can be used for the upgrade. Pay attention to the migration script output - it may notify you of additional manual steps you need to carry out.
 
-Before you run the upgrade command, please review the manual steps below, and carry out the ones relevant to your use case.
+Before you run the upgrade command, review the manual steps below and carry out the ones relevant to your use case.
 
 ## Metrics migration
 
@@ -131,7 +129,7 @@ otherwise you'll get an error:
 Error: UPGRADE FAILED: cannot patch "collection-prometheus-node-exporter" with kind DaemonSet: DaemonSet.apps "collection-prometheus-node-exporter" is invalid: spec.selector: Invalid value: v1.LabelSelector{MatchLabels:map[string]string{"app.kubernetes.io/instance":"collection", "app.kubernetes.io/name":"prometheus-node-exporter"}, MatchExpressions:[]v1.LabelSelectorRequirement(nil)}: field is immutable
 ```
 
-- If you overrode any of the `repository` keys under the `kube-prometheus-stack` key, please follow the `kube-prometheus-stack` [migration doc][kube-prometheus-stack-image-migration] on that.
+- If you overrode any of the `repository` keys under the `kube-prometheus-stack` key, follow the `kube-prometheus-stack` [migration doc][kube-prometheus-stack-image-migration] on that.
 
 ### Otelcol StatefulSet
 
@@ -143,8 +141,7 @@ Run the following command to manually delete otelcol StatefulSets:
 kubectl delete sts --namespace=${NAMESPACE} --cascade=orphan -lapp=${HELM_RELEASE_NAME}-sumologic-otelcol-metrics
 ```
 
-The reason this is necessary is that the Service name for this StatefulSet has changed, and Kubernetes forbids modification of this value on
-existing StatefulSets.
+The reason this is necessary is that the Service name for this StatefulSet has changed, and Kubernetes forbids modification of this value on existing StatefulSets.
 
 ### Additional Service Monitors
 
@@ -250,8 +247,7 @@ Run the following command to manually delete otelcol StatefulSets:
 kubectl delete sts --namespace=${NAMESPACE} --cascade=orphan -lapp=${HELM_RELEASE_NAME}-sumologic-otelcol-logs
 ```
 
-The reason this is necessary is that the Service name for this StatefulSet has changed, and Kubernetes forbids modification of this value on
-existing StatefulSets.
+The reason this is necessary is that the Service name for this StatefulSet has changed, and Kubernetes forbids modification of this value on existing StatefulSets.
 
 ### Custom logs filtering and processing
 
@@ -290,8 +286,7 @@ The mechanism to replace special configuration values for traces marked by the '
 - `processors.source.exclude_host_regex.replace`
 - `processors.resource.cluster.replace`
 
-The above special configuration values can be replaced either to direct values or be set as reference to other parameters from
-`values.yaml`.
+The above special configuration values can be replaced either to direct values or be set as reference to other parameters from `values.yaml`.
 
 ### OpenTelemetry Collector Deployments
 
@@ -342,8 +337,7 @@ Once you've taken care of any manual steps necessary for your configuration, run
 helm upgrade --namespace "${NAMESPACE}" "${HELM_RELEASE_NAME}" sumologic/sumologic --version=3.0.0 -f new-values.yaml
 ```
 
-After you're done, please review the [full list of changes](full-list-of-changes.md), as some of them may impact you even if they don't
-require additional action.
+After you're done, please review the [full list of changes](full-list-of-changes.md), as some of them may impact you even if they don't require additional action.
 
 ## Known issues
 

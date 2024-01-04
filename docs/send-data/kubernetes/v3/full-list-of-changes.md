@@ -7,23 +7,19 @@ description: This page describes full list of changes in Kubernetes Collection v
 
 - Upgrading kube-prometheus stack
 
-  We are updating Kube-prometheus-stack to newest available version. Major feature related to that change is upgrading kube-state-metrics to
-  v2
+  We are updating Kube-prometheus-stack to newest available version. Major feature related to that change is upgrading kube-state-metrics to v2
 
 - Removing mechanism to replace values in configuration for traces marked by 'replace' suffix
 - Moving direct configuration of OpenTelemetry Collector for log metadata
 
-  Removed explicit configuration for otelcol under `metadata.logs.config`. Added option to merge configuration under
-  `metadata.logs.config.merge` or overwrite default configuration `metadata.logs.config.override`
+  Removed explicit configuration for otelcol under `metadata.logs.config`. Added option to merge configuration under `metadata.logs.config.merge` or overwrite default configuration `metadata.logs.config.override`
 
 - Moving direct configuration of OpenTelemetry Collector for metrics metadata
 
-  Removed explicit configuration for otelcol under `metadata.metrics.config`. Added option to merge configuration under
-  `metadata.metrics.config.merge` or overwrite default configuration `metadata.metrics.config.override`
+  Removed explicit configuration for otelcol under `metadata.metrics.config`. Added option to merge configuration under `metadata.metrics.config.merge` or overwrite default configuration `metadata.metrics.config.override`
 
 - Removing support for `sumologic.cluster.load_config_file`. Leaving this configuration will result in setup job failure.
-- Upgrading Falco helm chart to `v2.4.2` which changed their configuration: Please validate and adjust your configuration to new version
-  according to [Falco documentation]
+- Upgrading Falco helm chart to `v2.4.2` which changed their configuration: Please validate and adjust your configuration to new version according to [Falco documentation]
 
 - Moved parameters from `fluentd.logs.containers` to `sumologic.logs.container`
 
@@ -73,16 +69,13 @@ description: This page describes full list of changes in Kubernetes Collection v
   - moved `fluentd.logs.default.excludePriorityRegex` to `sumologic.logs.defaultFluentd.excludePriorityRegex`
   - moved `fluentd.logs.default.excludeUnitRegex` to `sumologic.logs.defaultFluentd.excludeUnitRegex`
 
-- Upgrading Metrics Server to `6.2.4`. In case of changing `metrics-server.*` configuration please see [upgrading section of chart's
-  documentation][metrics-server-upgrade].
+- Upgrading Metrics Server to `6.2.4`. In case of changing `metrics-server.*` configuration, see [upgrading section of chart's documentation][metrics-server-upgrade].
 
 - Upgrading Tailing Sidecar Operator helm chart to v0.5.5. There is no breaking change if using annotations only.
 
 - OpenTelemetry Logs Collector will read from end of file now.
 
-  See
-  [OpenTelemetry Collector doesn't read logs from the beginning of files](how-to-upgrade.md/#opentelemetry-collector-doesnt-read-logs-from-the-beginning-of-files)
-  if you want to keep old behavior.
+  See [OpenTelemetry Collector doesn't read logs from the beginning of files](how-to-upgrade.md/#opentelemetry-collector-doesnt-read-logs-from-the-beginning-of-files) if you want to keep old behavior.
 
 - Changed `otelagent` from `DaemonSet` to `StatefulSet`
 
@@ -96,8 +89,7 @@ description: This page describes full list of changes in Kubernetes Collection v
 
   - changed parameter `sumologic.traces.enabled` default value from `false` to `true`
 
-- Adding `sumologic.metrics.serviceMonitors` to avoid copying values for `kube-prometheus-stack.prometheus.additionalServiceMonitors`
-  configuration
+- Adding `sumologic.metrics.serviceMonitors` to avoid copying values for `kube-prometheus-stack.prometheus.additionalServiceMonitors` configuration
 
 - Adding `sumologic.metrics.otelcol.extraProcessors` to make metrics modification easy
 
