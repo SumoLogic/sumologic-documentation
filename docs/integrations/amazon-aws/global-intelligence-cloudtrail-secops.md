@@ -279,7 +279,7 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
   <tr>
     <td>Notable Event Count Queries</td>
     <td>S3_ListBuckets</td>
-    <td>Counts S3 events related to listing buckets</td>
+    <td>Counts S3 events related to listing buckets.</td>
   </tr>
 </small></table>
 
