@@ -575,7 +575,7 @@ The **Workday - API Activity** dashboard gives you insight into all analytics fo
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Workday-APIActivity1.png')} alt="workday dashboards" />
 
-API activity dashboard populates if there is any API activity happening on in their tenant, may be there isn't any Workday Rest APIs (not SOAP) they are using. They can verify this by going to the User Activity report in their workday tenant and running the report with following filters.
+API activity dashboard populates if there is any API activity happening on in their tenant, may be there isn't any workday rest apis (not SOAP) they are using. They can verify this by going to the User Activity report in their workday tenant and running the report with following filters
 
 Task contains api/ and System Account not equal to SumoLogic_ISU.
 
