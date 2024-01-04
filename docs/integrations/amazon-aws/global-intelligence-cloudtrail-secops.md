@@ -259,7 +259,7 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
   <tr>
     <td>Notable Event Count Queries</td>
     <td>S3_AccessDeniedOrBucketConfigChecksFromPublicIp</td>
-    <td>Counts S3 events related to access denied errors or configuration checks from public IP addresses</td>
+    <td>Counts S3 events related to access denied errors or configuration checks from public IP addresses.</td>
   </tr>
   <tr>
     <td>Notable Event Count Queries</td>
