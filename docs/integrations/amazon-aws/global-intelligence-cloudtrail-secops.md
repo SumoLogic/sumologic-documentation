@@ -93,7 +93,7 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
   </tr>
   <tr>
     <td>Event Resource Count Queries</td>
-    <td>EC2_DescribeInstanceUserData_CountEventResourcesa</td>
+    <td>EC2_DescribeInstanceUserData_CountEventResources</td>
     <td>Counts the number of EC2 instances affected by signals describing EC2 instance metadata.</td>
   </tr>
   <tr>
