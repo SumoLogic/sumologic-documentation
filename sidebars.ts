@@ -2663,11 +2663,11 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'cse/sensors/index'},
           items: [
+            'cse/sensors/ingest-zeek-logs',
             'cse/sensors/sensor-download-locations',
             'cse/sensors/network-sensor-deployment-guide',
             'cse/sensors/network-sensor-troubleshooting',
             'cse/sensors/log-sensor-troubleshooting',
-            'cse/sensors/ingest-zeek-logs',
           ],
         },
         {
