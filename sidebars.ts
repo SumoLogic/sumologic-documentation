@@ -390,25 +390,17 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'send-data/kubernetes/index'},
           items: [
+            'send-data/kubernetes/helm-chart-overview',
+            'send-data/kubernetes/install-helm-chart',
             {
               type: 'category',
-              label: 'v4 (latest)',
+              label: 'v3 Upgrade Guide',
               collapsible: true,
               collapsed: true,
               items: [
-                'send-data/kubernetes/v4/helm-chart-overview',
-                'send-data/kubernetes/v4/install-helm-chart',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'v3 Upgrade guide',
-              collapsible: true,
-              collapsed: true,
-              items: [
-                'send-data/kubernetes/v3-upgrade-guide/v3-important-changes',
-                'send-data/kubernetes/v3-upgrade-guide/v3-how-to-upgrade',
-                'send-data/kubernetes/v3-upgrade-guide/v3-full-list-of-changes',
+                'send-data/kubernetes/v3/important-changes',
+                'send-data/kubernetes/v3/how-to-upgrade',
+                'send-data/kubernetes/v3/full-list-of-changes',
               ],
             },
           ],

@@ -1,11 +1,9 @@
 ---
-id: v3-full-list-of-changes
-title: Full list of changes
-sidebar_label: Full list of changes
+id: full-list-of-changes
+title: Kubernetes Collection v3.0.0 - Full list of Changes
+sidebar_label: Full List of Changes
 description: This page describes full list of changes in Kubernetes Collection v3
 ---
-
-## Full list of changes
 
 - Upgrading kube-prometheus stack
 
