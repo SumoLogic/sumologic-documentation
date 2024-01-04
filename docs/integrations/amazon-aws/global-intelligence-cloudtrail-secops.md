@@ -214,7 +214,7 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
   <tr>
     <td>Notable Event Count Queries</td>
     <td>EC2_Events</td>
-    <td>Counts events related to DisableTerminationProtection,DescribeRouteTables, AuthorizeSecurityGroupIngressToPublic, ListAMIs, ListInstances, ListSecurityGroups, TrafficMirroring)</td>
+    <td>Counts events related to DisableTerminationProtection, DescribeRouteTables, AuthorizeSecurityGroupIngressToPublic, ListAMIs, ListInstances, ListSecurityGroups, TrafficMirroring)</td>
   </tr>
   <tr>
     <td>Notable Event Count Queries</td>
