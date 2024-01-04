@@ -59,7 +59,7 @@ Here’s what the example tuning expression looks like in the Cloud SIEM UI.
 ## Create a tuning expression
 
 1. Select **Rule Tuning** from the **Content** menu.
-    <br/><img src={useBaseUrl('img/cse/rule-tuning-option.png')} alt="Rule tuning option" width="800"/>
+    <br/><img src={useBaseUrl('img/cse/rule-tuning-option.png')} alt="Rule tuning option" width="300"/>
 1. On the **Rule Tuning** page, click **Create**.
     <br/><img src={useBaseUrl('img/cse/rule-tuning-page.png')} alt="Rule tuning page" width="800"/>
 1. The **New Rule Tuning Expression** page appears.
