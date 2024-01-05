@@ -2757,6 +2757,7 @@ integrations: [
         'cloud-soar/cloud-soar-integration-framework',
         'cloud-soar/cloud-soar-apis',
         'cloud-soar/audit-event-index',
+        'cloud-soar/app-central-integrations-reference',
       ],
     },
   ],

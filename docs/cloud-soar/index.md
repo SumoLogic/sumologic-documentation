@@ -75,4 +75,10 @@ Navigate the evolving threat landscape with our best-in-class security orchestra
   <p>Learn how to search the Audit Event Index for CSOAR log events.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/cloud-soar/app-central-integrations-reference"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>App Central Integrations Reference</h4></a>
+  <p>See a list of all integrations available in App Central.</p>
+  </div>
+</div>
 </div>
