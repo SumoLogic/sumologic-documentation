@@ -42,7 +42,7 @@ Log:
 
 Such log will be stored as the following set of data at Sumo Logic:
 
-```json
+```yml
 Fields:
   "indexed-field": "some value"
 
