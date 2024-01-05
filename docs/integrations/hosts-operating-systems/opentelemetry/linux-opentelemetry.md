@@ -64,6 +64,7 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 - `Messages`
 - `yum.log`
 
+<<<<<<< HEAD
 :::note 
 By default, the path for Linux log files required for all the distros are pre-populated in the UI. Not all of the files might be available on your Linux distribution. Optionally, you can remove unwanted file paths from the list. OpenTelemetry collection will still work properly even if not all of the files are present on your system. If in doubt, you can leave the default file paths values.
 :::
@@ -81,6 +82,15 @@ Click the **Enable process metric collection** checkbox to collect (process leve
 
 :::note 
 If the process list needs to be edited in the future, you can edit it manually in the OTEL config yaml by adding/removing in the names list under process scrapper.
+=======
+Click on the **Download YAML File** button to get the yaml file.<br/><img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+
+:::note Note
+
+By default, the path for linux log files required for all the distros are pre populated in the UI. Not all of the files might be available on your Linux distribution and unwanted file paths can be removed from the list. This is an optional step and the collection will work properly even if not all of the files are present on your system. If in doubt, you can leave the default file paths values.  
+
+By default, the collector will be sending process metrics to Sumo Logic. Since the number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM). If you would like to narrow down the list of processes being monitored, this can be done by adding the following entry under the process section of the downloaded yaml.
+>>>>>>> origin
 ```sh
 process:
   include:
@@ -97,11 +107,45 @@ Click on the **Download YAML File** button to get the yaml file.<br/><img src='i
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Linux instance which needs to be monitored.
+<Tabs
+  className="unique-tabs"
+  defaultValue="Linux"
+  values={[
+    {label: 'Linux', value: 'Linux'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
+  ]}>
+
+<TabItem value="Linux">
+
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Artifactory instance that needs to be monitored.
 2. Restart the collector using:
   ```sh
-  sudo systemctl restart otelcol-sumo
+  sudo systemctl restart otelcol-sumo
   ```
+
+</TabItem>
+
+<TabItem value="Chef">
+
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+
+</TabItem>
+
+</Tabs>
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 

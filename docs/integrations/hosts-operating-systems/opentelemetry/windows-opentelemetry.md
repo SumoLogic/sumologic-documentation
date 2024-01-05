@@ -44,7 +44,7 @@ Standard Windows event channels include:
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Collector.png' alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -80,15 +80,48 @@ Click on the **Download YAML File** button to get the yaml file.<br/><img src='i
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
-1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+<Tabs
+  className="unique-tabs"
+  defaultValue="Windows"
+  values={[
+    {label: 'Windows', value: 'Windows'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
+  ]}>
+
+<TabItem value="Windows">
+
+1. Copy the yaml file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine that needs to be monitored.
 2. Restart the collector using:
   ```sh
   Restart-Service -Name OtelcolSumo
   ```
 
+</TabItem>
+
+<TabItem value="Chef">
+
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+
+</TabItem>
+</Tabs>
+
 {@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
-## Sample Metrics Message
+## Sample metrics message
 
 ```sql
 {
@@ -117,7 +150,7 @@ Click on the **Download YAML File** button to get the yaml file.<br/><img src='i
 }
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample metrics query is from the **Host Metric - CPU** dashboard > **CPU User Time** panel.
 
@@ -136,8 +169,7 @@ This sample log query is from the **Windows - Overview** dashboard > **System Re
 | count as Restarts
 ```
 
-
-## Sample Logs
+## Sample logs
 
 ```json
 {
@@ -156,7 +188,7 @@ This sample log query is from the **Windows - Overview** dashboard > **System Re
 }
 ```
 
-## Viewing Windows Event Log-Based Dashboards
+## Viewing Windows Event Log-Based dashboards
 
 ### Windows - Overview
 

@@ -35,7 +35,7 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-Collector.png' alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -71,15 +71,48 @@ Click on the **Download YAML File** button to get the yaml file.<br/><img src='i
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
+<Tabs
+  className="unique-tabs"
+  defaultValue="macOS"
+  values={[
+    {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
+  ]}>
+
+<TabItem value="macOS">
+
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the macOS instance which needs to be monitored.
 2. Restart the otelcol-sumo process using the below command 
-  ```sh
-  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-  ```
+
+	```sh
+	 otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+	```
+</TabItem>
+
+<TabItem value="Chef">
+
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+
+</TabItem>
+</Tabs>
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
-## Sample Queries
+## Sample query
 
 Metrics query from the File System Utilization panel.
 
@@ -87,7 +120,7 @@ Metrics query from the File System Utilization panel.
 sumo.datasource=mac host.name=* device=* metric=system.filesystem.utilization | sum by host.name, device, type, mountpoint
 ```
 
-## Sample OTel Metrics
+## Sample OTel metrics
 
 ```json
 {
@@ -115,7 +148,7 @@ sumo.datasource=mac host.name=* device=* metric=system.filesystem.utilization | 
 }
 ```
 
-## Viewing Linux Dashboards
+## Viewing Linux dashboards
 
 ### Host Metrics - Overview
 
