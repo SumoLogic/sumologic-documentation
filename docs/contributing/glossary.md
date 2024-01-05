@@ -67,7 +67,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Dashboard](/docs/dashboards)**. Dashboards contain a collection of real time Panels that provide a graphical representation of your organization's data. Panels are created by running search queries. From the resulting data in the Search page's Aggregates tab, you can display that data using different types of charts. Once Panels are created, they are saved to a Dashboard.
 
-**[Dashboard Theme](/docs/dashboards-classic/edit-dashboards/manage-dashboards)**. In Dashboards, you can toggle the background color scheme from Light mode to Dark mode.
+**[Dashboard Theme](/docs/dashboards)**. In Dashboards, you can toggle the background color scheme from Light mode to Dark mode.
 
 **[Data access level](/docs/dashboards/set-data-access-level)**. The data access level for a dashboard determines what data a user with whom the dashboard is shared can view in the dashboard.
 
@@ -185,7 +185,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Mapper](/docs/cse/schema/create-structured-log-mapping)**. In Cloud SIEM, a script that maps message fields to record attributes.
 
-**[Markdown](/docs/dashboards-classic/get-started/markdown-syntax)**. Used in Dashboards, you can add Text Panels to include titles or text descriptions. Use Markdown syntax to add bold or italic formatting, bullet lists, code font, and other formatting. See Help for details.
+**[Markdown](/docs/dashboards/panels/markdown-syntax)**. Used in Dashboards, you can add Text Panels to include titles or text descriptions. Use Markdown syntax to add bold or italic formatting, bullet lists, code font, and other formatting. See Help for details.
 
 **[Mask rule](/docs/send-data/collection/processing-rules/mask-rules)**. Mask rules are a type of Processing Rule that replaces an expression with a mask string that you can customize—another option to protect data, such as passwords, that you wouldn't normally track.
 
@@ -294,7 +294,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 ## T
 
-**[Text Panels](/docs/dashboards-classic/get-started/add-text-panel)**. Used in Dashboards, you can add Text Panels to include titles or text descriptions. See also Markdown.
+**[Text Panels](/docs/dashboards/panels/#text-panel)**. Used in Dashboards, you can add Text Panels to include titles or text descriptions. See also Markdown.
 
 **[Throttling](/docs/manage/ingestion-volume/log-ingestion)**. Slows the rate of ingestion across all Collectors in an account to not exceed the allowable rate.
 
