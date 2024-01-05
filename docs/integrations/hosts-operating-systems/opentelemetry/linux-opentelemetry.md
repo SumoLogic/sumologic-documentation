@@ -70,28 +70,9 @@ By default, the path for Linux log files required for all the distros are pre-po
 
 #### Enable process metric collection (Optional)
 
-By default, the collector will not send process metrics to Sumo Logic. This is because the number of processes running on a host can be very large, which would result in a significant increase in Data Points per Minute (DPM).
+{@import ../../../reuse/apps/opentelemetry/process-metric-collection.md}
 
-Click the **Enable process metric collection** checkbox to collect (process level metric)[https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/hostmetricsreceiver/internal/scraper/processscraper/documentation.md].
-- **Name of process**. Add the list of process names.
-- **Include/Exclude the above pattern**. Signifies if you want to exclude or include the metrics for the processes listed previously.
-- **Match type for process name**. Select if the process name given should be considered for a strict match with the host machine processes or if it should be considered as regex when matching.
-
-<img src='img/integrations/hosts-operating-systems/process-metric-collection.png' alt="process-metric-collection" width="400"/>
-
-:::note 
-If the process list needs to be edited in the future, you can edit it manually in the OTEL config yaml by adding/removing in the names list under process scrapper.
-```sh
-process:
-  include:
-    names: [ <process name1>, <process name2> ... ]
-    match_type: <strict|regexp>
-```
-:::
-
-<img src='img/integrations/hosts-operating-systems/Linux-YAML.png' alt="Linux-YAML" width="400"/>
-
-Click on the **Download YAML File** button to get the yaml file.<br/><img src='img/integrations/hosts-operating-systems/Linux-YAML.png' alt="Linux-YAML" width="600"/>
+Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Linux-YAML.png')} alt="Linux-YAML" width="600"/>
 
 ### Step 3: Send logs and metrics to Sumo Logic
 
@@ -304,4 +285,3 @@ The **Linux - Login Status** dashboard provides information about logins to Linu
 The **Linux - Security Status** dashboard provides information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Security-Status.png' alt="Linux - Security Status" />
-

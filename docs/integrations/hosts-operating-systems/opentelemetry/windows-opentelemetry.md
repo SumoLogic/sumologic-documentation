@@ -54,27 +54,9 @@ Any custom fields can be tagged along with the data in this step.
 
 #### Enable process metric collection (Optional)
 
-By default, the collector will not send process metrics to Sumo Logic. This is because the number of processes running on a host can be very large, which would result in a significant increase in Data Points per Minute (DPM).
+{@import ../../../reuse/apps/opentelemetry/process-metric-collection.md}
 
-Click the **Enable process metric collection** checkbox to collect (process level metric)[https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/hostmetricsreceiver/internal/scraper/processscraper/documentation.md].
-- **Name of process**. Add the list of process names.
-- **Include/Exclude the above pattern**. Signifies if you want to exclude or include the metrics for the processes listed previously.
-- **Match type for process name**. Select if the process name given should be considered for a strict match with the host machine processes or if it should be considered as regex when matching.
-
-<img src='img/integrations/hosts-operating-systems/process-metric-collection.png' alt="process-metric-collection" width="400"/>
-
-:::note
-If the process list needs to be edited in the future, you can edit it manually in the OTEL config yaml by adding/removing in the names list under process scrapper.
-
-```sh
-process:
-  include:
-    names: [ <process name1>, <process name2> ... ]
-    match_type: <strict|regexp>
-```
-:::
-
-Click on the **Download YAML File** button to get the yaml file.<br/><img src='img/integrations/hosts-operating-systems/Windows-YAML.png' alt="Windows-YAML" width="600"/>
+Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Windows-YAML.png')} alt="Windows-YAML" width="600"/>
 
 ### Step 3: Send logs to Sumo
 
@@ -326,7 +308,7 @@ The **Process Metrics - Overview** dashboard gives you an at-a-glance view of al
 
 User this dashboard to :
 - Process wise distribution of CPU and memory usage
-- Process wise read/write operations 
+- Process wise read/write operations
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Process-Metrics-Overview.png' alt="Process Metrics - Overview" />
 
