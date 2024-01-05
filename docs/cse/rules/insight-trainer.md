@@ -65,7 +65,13 @@ Use the fields at the top of the page to filter the kinds of recommendations you
    * **Rules with severity recommendations**. Provide recommendations only for those rules with suggested changes to their severity.
 1. **deployment**. The deployment whose rules you want recommendations for. 
 1. **domain**. The domain whose rules you want recommendations for.
-1. **Date Range**. Once a week, the Insight Trainer provides fresh recommendations. The date range displayed is the model training period and is read-only. Model retraining is weekly based on a rolling history of your Insights data. The funnel shows the number of Insights eligible for recommendations. For example, in the image above, 24 Insights out of 30 are eligible for recommendations. In many cases, Insights are eligible for recommendations because they originate from rules that have a static severity that can be updated.  
+1. **Date Range**. Once a week, the Insight Trainer provides fresh recommendations. The date range displayed is the model training period and is read-only. Model retraining is weekly, based on a rolling history of your Insights data. The funnel shows the number of Insights eligible for recommendations. For example, in the image above, 24 Insights out of 30 are eligible for recommendations. In many cases, Insights are eligible for recommendations because they originate from rules that have a static severity that can be updated.
+The funnel depicts algorithmic Insights that remain after filtering Insights based on:
+   * Date range
+   * Insights containing dynamic severity rules
+   * Non-algorithmic detection (that is, rule and user Insights)
+   * Duplicate Insights
+   * Data completeness 
 1. **Insight Source**. The primary source of Insights (for example, by algorithm, rule, or user).
 
 ### Recommendations Summary
