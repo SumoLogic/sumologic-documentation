@@ -69,16 +69,13 @@ Click on the **Download YAML File** button to get the yaml file.<br/><img src='h
 :::note Note
 
 By default, the path for linux log files required for all the distros are pre populated in the UI. Not all of the files might be available on your Linux distribution and unwanted file paths can be removed from the list. This is an optional step and the collection will work properly even if not all of the files are present on your system. If in doubt, you can leave the default file paths values.  
-
-By default, the collector will be sending process metrics to Sumo Logic. Since the number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM). If you would like to narrow down the list of processes being monitored, this can be done by adding the following entry under the process section of the downloaded yaml.
-```sh
-process:
-  include:
-    names: [ <process name1>, <process name2> ... ]
-    match_type: <strict|regexp>
-```
-
 :::
+
+#### Process Metric Collection
+Collector uses [process hostmetric scrapper](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/hostmetricsreceiver/internal/scraper/processscraper/documentation.md) to get the process metrics. The number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM), because of which by default process metric are not enabled. You can enable process metric collection by checking "Enable process metric collection" checkbox. You get the following options : 
+1. Name of process : You can specify the list of process here
+2. Include/Exclude : You can specify if you want to include or exlude the collection process metric given in the above list
+3. Match Type : You can specify if the process name given in the above list should be considered for strict match or regular expression.
 
 ### Step 3: Send logs and metrics to Sumo
 
