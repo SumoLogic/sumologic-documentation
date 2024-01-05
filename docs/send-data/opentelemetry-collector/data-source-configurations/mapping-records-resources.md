@@ -12,7 +12,11 @@ OpenTelemetry has a [rich data model](https://github.com/open-telemetry/opentele
 
 * **Resource**. Includes attributes describing the resource from which given set of data comes from. Should follow [resource semantic conventions](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/resource/semantic_conventions).
 * **Instrumentation Scope**. Additional information about the scope of data. For example, instrumentation library name.
-* **Record**. Refers to a specific entry of data, such as a Log, Span, or Metric. Each Record has its own set of attributes, which may include key/value pairs that are specific to the context of the Record. Some Record types may follow certain conventions for signal types, such as [trace](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/trace/semantic_conventions), [metrics](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/metrics/semantic_conventions), or [logs](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/logs/semantic_conventions). Logs, in particular, can also include attributes in the body of the Record.
+* **Record**. Refers to a specific entry of data, such as a Log, Span, or Metric.
+:::note
+For logs, this is usually called a _Record_; for traces, it's usually called a _Span_; and for metrics, a _Datapoint_ (or _sample_, if Prometheus is used). In this documentation, we'll use _Record_ for all of these.
+:::
+Each Record has its own set of attributes, which may include key/value pairs that are specific to the context of the Record. Logs, in particular, can also include attributes in the body of the Record. Some Record types may follow certain conventions for signal types, such as [trace](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/trace/semantic_conventions), [metrics](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/metrics/semantic_conventions), or [logs](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/logs/semantic_conventions).
 
 As can be observed, while attributes can be present at both **Resource** and **Record-level** currently, they are not created equal and should be interpreted separately. The Resource-Level attribute context is much broader, and they identify where data comes from, whereas Record-Level attributes concern just one record, often with many keys and values.
 
