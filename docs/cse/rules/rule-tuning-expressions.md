@@ -59,12 +59,13 @@ Here’s what the example tuning expression looks like in the Cloud SIEM UI.
 ## Create a tuning expression
 
 1. Select **Rule Tuning** from the **Content** menu.
-    <br/><img src={useBaseUrl('img/cse/rule-tuning-option.png')} alt="Rule tuning option" width="800"/>
+    <br/><img src={useBaseUrl('img/cse/rule-tuning-option.png')} alt="Rule tuning option" width="300"/>
 1. On the **Rule Tuning** page, click **Create**.
     <br/><img src={useBaseUrl('img/cse/rule-tuning-page.png')} alt="Rule tuning page" width="800"/>
 1. The **New Rule Tuning Expression** page appears.
     <br/><img src={useBaseUrl('img/cse/annotated-expression.png')} alt="Annotated expression" width="800"/>
 1. **Name**. Enter a name for the tuning expression. 
+1. **Description**. Enter a description of the tuning expression.
 1. In the **Tune [selected|all] Rules** section: 
    * To apply the expression to all rules, choose **all**.
    * To apply the expression to some but not all rules, choose **selected**. In the **Type to add a rule area**, enter a search string that matches Rule names or Rule IDs. To search by Rule name, you can enter a string that the Rule name contains. To search by Rule ID, you can enter the complete ID, or a subset of the ID, starting with the leading character.  The name and ID of rules that match will appear on the page..
