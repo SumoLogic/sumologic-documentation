@@ -64,7 +64,7 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 - `Messages`
 - `yum.log`
 
-:::note 
+:::note
 By default, the path for Linux log files required for all the distros are pre-populated in the UI. Not all of the files might be available on your Linux distribution. Optionally, you can remove unwanted file paths from the list. OpenTelemetry collection will still work properly even if not all of the files are present on your system. If in doubt, you can leave the default file paths values.
 :::
 
