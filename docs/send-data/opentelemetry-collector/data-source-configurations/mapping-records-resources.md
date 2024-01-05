@@ -23,7 +23,7 @@ Looking from the OpenTelemetry standpoint, [Fields](/docs/manage/fields) are a g
 All **Resource-level** attributes are stored as fields, and any attributes that don't match a defined field will be skipped. You can check the list of ignored fields using the [dropped fields view](/docs/manage/fields/#view-dropped-fields). When a log contains attributes at the **Record-level**, they are stored as JSON, and if there is a body, it will be stored under the `log` key.
 
 :::info
-If your log record has any **Record-level** attributes, Sumo will interpret this as a _structured log_, and display it in JSON. If the log does not have any **Record-level** attributes, Sumo will be treat as _unstructured_ and display the body. **Resource-level** attributes are interpreted as fields.
+If your log record has any **Record-level** attributes, Sumo will interpret this as a _structured log_, and display it in JSON. If the log does not have any **Record-level** attributes, Sumo will treat it as _unstructured_ and display the body. **Resource-level** attributes are interpreted as fields.
 :::
 
 ## Example: Log with both Resource-level and Record-level attributes
