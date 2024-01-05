@@ -75,4 +75,4 @@ Fields:
 _raw: "Sample body"
 ```
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-attributes-only.png')} alt="resource attributes only in Sumo Logic" />
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-attributes-only.png')} alt="resource attributes only in Sumo Logic" style={{border: '1px solid black'}} />
