@@ -395,6 +395,8 @@ All available actions are:
 
 #### Scheduled action definitions
 
+Scheduled actions represent a particular type of action when the execution is iterated until a specific exit condition is met. This type of action permits you to create loops in a playbook.
+
 YAML example:
 
 ```
