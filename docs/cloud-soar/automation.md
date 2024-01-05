@@ -77,17 +77,17 @@ Following is an example of a certified action.<br/><img src={useBaseUrl('img/clo
 
 You can add one or more resources to the certified integration (as explained in [Integrations](/docs/cloud-soar/automation#integrations)), or you use it as-is. 
 
-### Clone an integration
+### Duplicate an integration
 
-To modify an integration's resource code and actions code, you must first clone the integration and make your modifications in the cloned version. When you click the **Clone integration** button, a new integration will be created in the integrations list with an incremented name. <br/><img src={useBaseUrl('img/cloud-soar/integration-duplicate.png')} alt="Clone certified integration" width="600"/>
+To modify an integration's resource code and actions code, you must first duplicate the integration and make your modifications in the duplicated version. When you click the **Duplicate integration** button, a new integration will be created in the integrations list with an incremented name. <br/><img src={useBaseUrl('img/cloud-soar/integration-duplicate.png')} alt="Duplicate certified integration" width="600"/>
 
-Following is a cloned integration:<br/><img src={useBaseUrl('img/cloud-soar/integration-duplicated.png')} alt="Cloned integration" width="250"/>
+Following is a duplicated integration:<br/><img src={useBaseUrl('img/cloud-soar/integration-duplicated.png')} alt="Duplicated integration" width="250"/>
 
-If the certified integration resource was configured before the cloning process, all the settings will be saved and replicated inside the cloned integration. There is no need to reset the cloned integration.
+If the certified integration resource was configured before the duplication process, all the settings will be saved and replicated inside the duplicated integration. There is no need to reset the duplicated integration.
 
-In the following example, the integration resource received an incremented name, but not the actions available for that integration. This facilitates the automation process and helps prevent confusion.<br/><img src={useBaseUrl('img/cloud-soar/integration-duplicated-resources-actions.png')} alt="No changes to cloned resource actions" width="600"/>
+In the following example, the integration resource received an incremented name, but not the actions available for that integration. This facilitates the automation process and helps prevent confusion.<br/><img src={useBaseUrl('img/cloud-soar/integration-duplicated-resources-actions.png')} alt="No changes to duplicated resource actions" width="600"/>
 
-Since only the cloned integration can be modified, the actions name represents the activity that the action will perform, whether it is modified or not. While building playbooks, you can choose which resource you want to use. If the cloned resource is chosen, the actions available will be the ones belonging to the cloned resource.
+Since only the duplicated integration can be modified, the actions name represents the activity that the action will perform, whether it is modified or not. While building playbooks, you can choose which resource you want to use. If the duplicated resource is chosen, the actions available will be the ones belonging to the duplicated resource.
 
 Following is an example of selecting the action’s resource while building a playbook. The selected action is **Add Comment To Issue**.<br/><img src={useBaseUrl('img/cloud-soar/integration-add-comment-to-issue.png')} alt="Add comment to issue" width="600"/>
 
