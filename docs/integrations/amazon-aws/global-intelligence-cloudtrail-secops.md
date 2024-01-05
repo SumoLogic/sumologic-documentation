@@ -79,7 +79,7 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
   <tr>
     <td>Event Priority Computation Query</td>
     <td>Event_Priority_Computation</td>
-    <td>Compute event priority and saves to a file called "/shared/CloudTrailGIS/EventPriority"</td>
+    <td>Compute event priority and saves to a file called "/shared/CloudTrailGIS/EventPriority".</td>
   </tr>
   <tr>
     <td>Event Resource Count Queries</td>
@@ -214,7 +214,7 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
   <tr>
     <td>Notable Event Count Queries</td>
     <td>EC2_Events</td>
-    <td>Counts events related to DisableTerminationProtection, DescribeRouteTables, AuthorizeSecurityGroupIngressToPublic, ListAMIs, ListInstances, ListSecurityGroups, TrafficMirroring)</td>
+    <td>Counts events related to DisableTerminationProtection, DescribeRouteTables, AuthorizeSecurityGroupIngressToPublic, ListAMIs, ListInstances, ListSecurityGroups, TrafficMirroring.</td>
   </tr>
   <tr>
     <td>Notable Event Count Queries</td>
