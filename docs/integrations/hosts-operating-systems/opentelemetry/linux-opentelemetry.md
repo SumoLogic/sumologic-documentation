@@ -2,7 +2,7 @@
 id: linux-opentelemetry
 title: Linux - OpenTelemetry Collector
 sidebar_label: Linux - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Linux.
+description: Learn about the Sumo Logic OpenTelemetry app for Linux.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for Linux allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon. In addition to that, it allows you to view information about events, logins, and the security status of your Linux system using Linux system logs.
+The Sumo Logic app for Linux allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon. In addition to that, it allows you to view information about events, logins, and the security status of your Linux system using Linux system logs.
 
 The app consists of predefined searches and dashboards that provide visibility into your environment for real-time or historical analysis. Our dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses OpenTelemetry, an open-source collector for the collection of both metrics and log data.
 
@@ -21,7 +21,7 @@ We use the Sumo Logic Distribution for OpenTelemetry Collector to collect Linux 
 
 ## Fields Created in Sumo Logic for Linux
 
-Following are the [fields](/docs/manage/fields) that will be created as part of Linux App install if not already present. 
+Following are the [fields](/docs/manage/fields) that will be created as part of Linux app install if not already present. 
 
 ### Across apps
 
@@ -39,7 +39,7 @@ You can skip this section if you have already set up the logs collection through
 
 {@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png' alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -93,7 +93,7 @@ process:
 
 Click on the **Download YAML File** button to get the yaml file.<br/><img src='img/integrations/hosts-operating-systems/Linux-YAML.png' alt="Linux-YAML" width="600"/>
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
@@ -143,7 +143,7 @@ Dec 13 04:44:00 <1> [zypper++] Summary.cc(readPool):133 I_TsU(27372)Mesa-libGL1-
 }
 ```
 
-## Sample Queries
+## Sample queries
 
 ### Log query
 
