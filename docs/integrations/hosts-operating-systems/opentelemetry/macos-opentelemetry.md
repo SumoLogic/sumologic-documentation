@@ -2,7 +2,7 @@
 id: macos-opentelemetry
 title: macos - OpenTelemetry Collector
 sidebar_label: macOS - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for MacOS.
+description: Learn about the Sumo Logic OpenTelemetry app for MacOS.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/mac-apple-icon.png')} alt="Thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for macOS allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon.
+The Sumo Logic app for macOS allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon.
 
 The app consists of predefined searches and dashboards that provide visibility into your environment for real-time or historical analysis. Our dashboards provide insight into CPU load, memory, network, file descriptors, page faults, and TCP connectors. This app uses OpenTelemetry, an open-source collector for metrics.
 
@@ -89,6 +89,7 @@ Click on the **Download YAML File** button to get the yaml file.<br/><img src='i
 	```sh
 	 otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 	```
+
 </TabItem>
 
 <TabItem value="Chef">
@@ -108,6 +109,7 @@ Click on the **Download YAML File** button to get the yaml file.<br/><img src='i
 {@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
 
 </TabItem>
+
 </Tabs>
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}

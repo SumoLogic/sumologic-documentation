@@ -2,7 +2,7 @@
 id: windows-opentelemetry
 title: Windows - OpenTelemetry Collector
 sidebar_label: Windows - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Windows.
+description: Learn about the Sumo Logic OpenTelemetry app for Windows.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for Windows allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon. In addition to that, our Windows App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment.
+The Sumo Logic app for Windows allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon. In addition to that, our Windows app provides insight into your Windows system's operation and events so that you can better manage and maintain your environment.
 
-The Windows App, which is based on the Windows event log format, consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and Applications. Our dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors.
+The Windows app, which is based on the Windows event log format, consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and applications. Our dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors.
 
 * Windows event logs are sent to Sumo Logic through OpenTelemetry [Event Log receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver).
 * Windows Host metrics are sent to Sumo Logic through OpenTelemetry [Host Metrics receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver).
@@ -22,19 +22,19 @@ The Windows App, which is based on the Windows event log format, consists of pre
 
 ## Fields Created in Sumo Logic for Windows
 
-Following are the [fields](/docs/manage/fields/) which will be created as part of Windows App install if not already present. 
+Following are the [fields](/docs/manage/fields/) which will be created as part of Windows app install if not already present. 
 
 - **`sumo.datasource`**. Has a fixed value of **windows**.
 
-## Log Types
+## Log types
 
-The Windows App assumes events are coming from Windows Event Log receiver in JSON format. It does not work with third party logs.
+The Windows app assumes events are coming from Windows Event Log receiver in JSON format. It does not work with third party logs.
 
 Standard Windows event channels include:
 
 - Security
 - System
-- Application
+- application
 
 ## Collection configuration and app installation
 
