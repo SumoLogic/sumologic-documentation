@@ -30,7 +30,7 @@ If your log record has any **Record-level** attributes, Sumo will interpret this
 
 Consider the following input log:
 
-```json
+```yml
 Resource:
   Attributes:
     "indexed-field": "some value"
