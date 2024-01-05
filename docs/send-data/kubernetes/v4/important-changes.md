@@ -1,7 +1,7 @@
 ---
 id: important-changes
-title: Kubernetes Collection v4.0.0 - Important changes
-sidebar_label: Important changes
+title: Kubernetes Collection v4.0.0 - Important Changes
+sidebar_label: Important Changes
 description: This page describes the major changes and the necessary migration steps.
 ---
 
