@@ -52,7 +52,7 @@ _raw (JSON): {
 }
 ```
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-and-record-level-attributes.png')} alt="resource and record attributes in Sumo Logic" />
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-and-record-level-attributes.png')} alt="resource and record attributes in Sumo Logic" style={{border: '1px solid black'}} />
 
 ## Example: Log with Resource-level attributes only
 
