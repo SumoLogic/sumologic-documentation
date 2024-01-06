@@ -11,7 +11,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Metrics Query API lets you execute Metrics queries from third-party scripts and applications so that you can reformat the results as desired.
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
+
+<ApiIntro/>
 
 ## Before You Begin
 
@@ -31,11 +33,15 @@ An `HTTP 301 Moved` error suggests that the wrong endpoint was specified.
 
 ## Rate limiting
 
-{@import ../reuse/api-rate-limit.md}
+import RateLimit from '../reuse/api-rate-limit.md';
+
+<RateLimit/>
 
 ## Errors
 
-{@import ../reuse/api-errors.md}
+import ApiErrors from '../reuse/api-errors.md';
+
+<ApiErrors/>
 
 ## API details
 
@@ -50,7 +56,9 @@ To execute a metrics query, send a JSON request to the endpoint.
 <details>
 <summary>Which API endpoint should I use?</summary>
 
-{@import ../reuse/api-endpoints.md}
+import ApiEndpoints from '../reuse/api-endpoints.md';
+
+<ApiEndpoints/>
 
 </details>
 

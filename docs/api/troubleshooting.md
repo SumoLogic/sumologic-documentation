@@ -17,7 +17,9 @@ This guide provides information to help you troubleshoot errors you may find whe
 <details>
 <summary>Which API endpoint should I use?</summary>
 
-{@import ../reuse/api-endpoints.md}
+import ApiEndpoints from '../reuse/api-endpoints.md';
+
+<ApiEndpoints/>
 
 </details>
 
@@ -40,7 +42,9 @@ The initial request to the Sumo Logic APIs returns the following error message. 
 
 The likely answer is that the API endpoint in the request did not include the correct deployment. The endpoints in `us1` begin `api.sumologic.com`... but the endpoints in other deployments — `us2`, `eu`, `au` — begin api.YOUR_DEPLOYMENT.sumologic.com.
 
-{@import ../reuse/api-endpoints.md}
+import ApiEndpoints from '../reuse/api-endpoints.md';
+
+<ApiEndpoints/>
 
 
 ## API - 401 Error - Credential could not be verified

@@ -27,7 +27,9 @@ See the following topics for additional information:
 
 There is a community-supported script available on GitHub that allows you to conduct bulk actions to Collectors. See [Collector Management Script](https://github.com/SumoLogic/collector-management-client).
 
-{@import ../../reuse/api-endpoints.md}
+import ApiEndpoints from '../../reuse/api-endpoints.md';
+
+<ApiEndpoints/>
 
 
 ## Collector API Methods and Examples
@@ -36,7 +38,9 @@ The Collector Management API allows you to manage Collectors and Sources from an
 
 ## Rate limiting
 
-{@import ../../reuse/api-rate-limit.md}
+import RateLimit from '../../reuse/api-rate-limit.md';
+
+<RateLimit/>
 
 ## Response fields  
 

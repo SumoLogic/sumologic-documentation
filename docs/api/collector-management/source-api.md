@@ -14,7 +14,9 @@ Collector Management APIs are not yet built with OpenAPI specifications and ther
 
 ## Rate limiting
 
-{@import ../../reuse/api-rate-limit.md}
+import RateLimit from '../../reuse/api-rate-limit.md';
+
+<RateLimit/>
 
 ## Response fields
 

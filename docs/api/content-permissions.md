@@ -12,7 +12,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Content Permissions API allows you to share your folders, searches, and dashboards with specific users or roles from HTTP endpoints. For more information, see [Share Content](https://help.sumologic.com/?cid=8675309).
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
+
+<ApiIntro/>
 
 <table>
   <tr>

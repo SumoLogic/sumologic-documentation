@@ -12,7 +12,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Dashboard Management API allows you to create, retrieve, update, and delete dashboards created with the [Dashboard](/docs/dashboards/) platform from HTTP endpoints to organize your content.
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
+
+<ApiIntro/>
 
 <table>
   <tr>

@@ -6,18 +6,19 @@ description: Learn how to access Cloud SOAR APIs and API documentation.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
 
 <!-- Add this once all customers are moved to Cloud SOAR Delivery 2, and remove all the documentation below for "incmansuite_ng:
 
 The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR features.
 
-{@import ../reuse/api-intro.md}
+<ApiIntro/>
 
 {@import ../reuse/csoar-api-table.md}
 
 -->
 
-### API documentation 
+### API documentation
 
 API documentation is available through your Cloud SOAR instance at the following URL:
 

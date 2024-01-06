@@ -15,7 +15,9 @@ The Search Job API provides third-party scripts and applications access to your 
 Search Job APIs are not yet built with OpenAPI specifications and therefore not documented with the rest of the APIs. Instead, refer to the instructions below for details.
 :::
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
+
+<ApiIntro/>
 
 ## Before You Begin
 
@@ -103,7 +105,9 @@ If you need more results you'll need to break up your search into several search
 
 ## Rate limit throttling  
 
-{@import ../reuse/api-rate-limit.md}
+import RateLimit from '../reuse/api-rate-limit.md';
+
+<RateLimit/>
 
 A limit of 200 active concurrent search jobs applies to your organization.
 
@@ -408,7 +412,9 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
 <details>
 <summary>Which API endpoint should I use?</summary>
 
-{@import ../reuse/api-endpoints.md}
+import ApiEndpoints from '../reuse/api-endpoints.md';
+
+<ApiEndpoints/>
 
 </details>
 
@@ -604,7 +610,9 @@ curl -b cookies.txt -c cookies.txt -H 'Content-type: application/json'
 <details>
 <summary>Which API endpoint should I use?</summary>
 
-{@import ../reuse/api-endpoints.md}
+import ApiEndpoints from '../reuse/api-endpoints.md';
+
+<ApiEndpoints/>
 
 </details>
 
@@ -638,7 +646,9 @@ Use the search job ID to obtain the current status of a search job (step 4 in th
 <details>
 <summary>Which API endpoint should I use?</summary>
 
-{@import ../reuse/api-endpoints.md}
+import ApiEndpoints from '../reuse/api-endpoints.md';
+
+<ApiEndpoints/>
 
 </details>
 
@@ -686,7 +696,9 @@ curl -v --trace-ascii - -b cookies.txt -c cookies.txt -H 'Accept: application/js
 <details>
 <summary>Which API endpoint should I use?</summary>
 
-{@import ../reuse/api-endpoints.md}
+import ApiEndpoints from '../reuse/api-endpoints.md';
+
+<ApiEndpoints/>
 
 </details>
 
@@ -725,14 +737,14 @@ This is the formatted result document:
 Notice that the state of the sample search job is DONE GATHERING RESULTS. The following table includes possible states.
 
 | State | Description |
-| :-- | :-- | 
-| NOT STARTED	| Search job has not been started yet.| 
-| GATHERING RESULTS	| Search job is still gathering more results, however results might already be available.| 
+| :-- | :-- |
+| NOT STARTED	| Search job has not been started yet.|
+| GATHERING RESULTS	| Search job is still gathering more results, however results might already be available.|
 | GATHERING RESULTS FROM SUBQUERIES | Search job is gathering results from the subqueries, before executing the main query.|
-| FORCE PAUSED	| Query that is paused by the system. It is true only for non-aggregate queries that are paused at the limit of 100k. This limit is dynamic and may vary from customer to customer.| 
-| DONE GATHERING RESULTS	| Search job is done gathering results; the entire specified time range has been covered.| 
+| FORCE PAUSED	| Query that is paused by the system. It is true only for non-aggregate queries that are paused at the limit of 100k. This limit is dynamic and may vary from customer to customer.|
+| DONE GATHERING RESULTS	| Search job is done gathering results; the entire specified time range has been covered.|
 | DONE GATHERING HISTOGRAM | Search job is done gathering results needed to build a histogram; the entire specified time range needed to build the histogram has been covered. |
-| CANCELLED	| The search job has been canceled. Note the spelling has two L letters.| 
+| CANCELLED	| The search job has been canceled. Note the spelling has two L letters.|
 
 #### More about results
 
@@ -761,7 +773,9 @@ The search job status informs the user about the number of found messages. The m
 <details>
 <summary>Which API endpoint should I use?</summary>
 
-{@import ../reuse/api-endpoints.md}
+import ApiEndpoints from '../reuse/api-endpoints.md';
+
+<ApiEndpoints/>
 
 </details>
 
@@ -822,7 +836,9 @@ curl -b cookies.txt -c cookies.txt -H 'Accept: application/json'
 <details>
 <summary>Which API endpoint should I use?</summary>
 
-{@import ../reuse/api-endpoints.md}
+import ApiEndpoints from '../reuse/api-endpoints.md';
+
+<ApiEndpoints/>
 
 </details>
 
@@ -980,7 +996,9 @@ The search job status informs the user as to the number of produced records, if 
 <details>
 <summary>Which API endpoint should I use?</summary>
 
-{@import ../reuse/api-endpoints.md}
+import ApiEndpoints from '../reuse/api-endpoints.md';
+
+<ApiEndpoints/>
 
 </details>
 
@@ -1083,7 +1101,9 @@ Although search jobs ultimately time out in the Sumo Logic backend, it's a good 
 <details>
 <summary>Which API endpoint should I use?</summary>
 
-{@import ../reuse/api-endpoints.md}
+import ApiEndpoints from '../reuse/api-endpoints.md';
+
+<ApiEndpoints/>
 
 </details>
 
@@ -1123,7 +1143,9 @@ https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80
 <details>
 <summary>Which API endpoint should I use?</summary>
 
-{@import ../reuse/api-endpoints.md}
+import ApiEndpoints from '../reuse/api-endpoints.md';
+
+<ApiEndpoints/>
 
 </details>
 

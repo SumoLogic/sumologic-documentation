@@ -24,7 +24,9 @@ Collector Management APIs for Installed and Hosted collectors are not yet built 
 
 This API manages your OpenTelemetry collectors.
 
-{@import ../../reuse/api-intro.md}
+import ApiIntro from '../../reuse/api-intro.md';
+
+<ApiIntro/>
 
 | Deployment | Documentation URL |
 |:---|:---|
