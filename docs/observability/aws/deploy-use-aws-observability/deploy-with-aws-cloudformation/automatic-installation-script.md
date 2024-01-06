@@ -21,12 +21,14 @@ AWS CLI should be pre-installed on the system where the script is supposed to be
 * [Configure AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) to use AWS profiles.
 * Select/Change the enabled [AWS region](https://docs.aws.amazon.com/cli/latest/reference/configure/set.html) where you want to deploy the solution.
 
-    <details><summary>Example: How to change your default AWS region to us-west-1</summary>
+    <details>
+    <summary>Example: How to change your default AWS region to us-west-1</summary>
     Run the following command with AWS region as us-west-1:
 
-    ```
+    ```sh
     aws configure set region us-west-1
     ```
+
     </details>
 
 

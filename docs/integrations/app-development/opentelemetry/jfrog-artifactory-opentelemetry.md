@@ -181,7 +181,7 @@ This sample Query is from the **Artifactory - Cached Deployment Activity** > **A
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Overview.png' alt="Artifactory-Overview" />
 
-import JfrogOv from '../../reuse/apps/jfrog/artifactory-overview.md';
+import JfrogOv from '../../../reuse/apps/jfrog/artifactory-overview.md';
 
 <JfrogOv/>
 
@@ -189,7 +189,7 @@ import JfrogOv from '../../reuse/apps/jfrog/artifactory-overview.md';
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Cached-Deployment-Activity.png' alt="Artifactory-Cached-Deployment-Activity" />
 
-import JfrogCache from '../../reuse/apps/jfrog/artifactory-cached.md';
+import JfrogCache from '../../../reuse/apps/jfrog/artifactory-cached.md';
 
 <JfrogCache/>
 
@@ -197,7 +197,7 @@ import JfrogCache from '../../reuse/apps/jfrog/artifactory-cached.md';
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Download-Activity.png' alt="Artifactory-Download-Activity" />
 
-import JfrogDl from '../../reuse/apps/jfrog/artifactory-download.md';
+import JfrogDl from '../../../reuse/apps/jfrog/artifactory-download.md';
 
 <JfrogDl/>
 
@@ -205,7 +205,7 @@ import JfrogDl from '../../reuse/apps/jfrog/artifactory-download.md';
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Non-Cached-Deployment-Activity.png' alt="Artifactory-Non-Cached-Deployment-Activity" />
 
-import JfrogNon from '../../reuse/apps/jfrog/artifactory-noncached.md';
+import JfrogNon from '../../../reuse/apps/jfrog/artifactory-noncached.md';
 
 <JfrogNon/>
 
@@ -213,7 +213,7 @@ import JfrogNon from '../../reuse/apps/jfrog/artifactory-noncached.md';
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Request-and-Access.png' alt="Artifactory-Request-and-Access" />
 
-import JfrogReq from '../../reuse/apps/jfrog/artifactory-request-access.md';
+import JfrogReq from '../../../reuse/apps/jfrog/artifactory-request-access.md';
 
 <JfrogReq/>
 
@@ -221,6 +221,6 @@ import JfrogReq from '../../reuse/apps/jfrog/artifactory-request-access.md';
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Traffic.png' alt="Artifactory-Traffic" />
 
-import JfrogTr from '../../reuse/apps/jfrog/artifactory-traffic.md';
+import JfrogTr from '../../../reuse/apps/jfrog/artifactory-traffic.md';
 
 <JfrogTr/>

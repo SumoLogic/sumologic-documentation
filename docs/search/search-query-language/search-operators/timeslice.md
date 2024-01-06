@@ -4,7 +4,7 @@ title: timeslice Search Operator
 sidebar_label: timeslice
 ---
 
-import AlertsTimeslice from '../../reuse/alerts-timeslice.md';
+import AlertsTimeslice from '../../../reuse/alerts-timeslice.md';
 
 The `timeslice` operator aggregates data by time period, so you can create bucketed results based on a fixed interval (for example, five-minute buckets). Timeslice also supports creating a fixed-target number of buckets, for example, 150 buckets over the last 60 minutes.
 

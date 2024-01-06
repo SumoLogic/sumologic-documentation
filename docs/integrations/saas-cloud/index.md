@@ -13,8 +13,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/acquia">
-  <img src={useBaseUrl('img/integrations/saas-cloud/acquia.png')} alt="icon" width="120"/><h4>Acquia</h4></a>
+  <a href="/docs/integrations/saas-cloud/acquia"><img src={useBaseUrl('img/integrations/saas-cloud/acquia.png')} alt="icon" width="120"/><h4>Acquia</h4></a>
   <p>Gain visibility into your key Acquia platform components.</p>
   </div>
 </div>
@@ -42,7 +41,7 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/integrations/saas-cloud/armis">
-  <img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="90" /><h4>Armis</h4></a>
+  <img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="90"/><h4>Armis</h4></a>
   <p>Monitor and manage your device security.</p>
   </div>
 </div>

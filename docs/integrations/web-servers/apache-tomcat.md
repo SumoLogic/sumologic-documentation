@@ -605,11 +605,12 @@ Log format description: [https://stackoverflow.com/questions/4468546/explanation
   * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
   * **Source Category.** Enter any string to tag the output collected from this Source, such as **Tomcat/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
   * **Fields.** Set the following fields:
+    ```sh
     * component = websystem
     * webserver_system = tomcat
     * webserver_farm = <Your_Tomcat_Farm_Name>
-    * environment = <Environment_Name>, such as Dev, QA or Prod.
-
+    * environment = <Environment_Name> #such as Dev, QA or Prod.
+    ```
 1. Configure the **Advanced** section:
 * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
 * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Tomcat Server’s time zone.

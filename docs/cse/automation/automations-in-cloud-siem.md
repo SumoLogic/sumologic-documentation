@@ -77,9 +77,11 @@ If you configured the automation to [run manually](#run-an-automation-manually),
    1. Select an option under **Entity Automation**.
 
 :::note
+
 import ActionLimit from '../../reuse/action-limits.md';
 
 <ActionLimit/>
+
 :::
 
 ## View automations

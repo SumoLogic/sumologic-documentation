@@ -62,7 +62,7 @@ These configuration instructions apply to log collection from all AWS Source typ
     * **SNS Subscription Endpoint (recommended option)**. New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file. We highly recommend using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](/docs/alerts). Click the box below to open instructions:
 
     <details>
-<summary>Set up SNS in AWS</summary>
+    <summary>Set up SNS in AWS</summary>
 
     The following steps use the Amazon SNS Console. Alternatively, you can  instead use AWS CloudFormation (see [Using CloudFormation to Set Up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#set-up-an-sns-subscription-endpoint)).
 

@@ -15,11 +15,11 @@ The Zscaler Private Access App collects logs from Zscaler using the Log Streamin
 
 The Sumo Logic App for Zscaler Private Access uses LSS to send the following logs, as documented [here](https://help.zscaler.com/zpa/about-log-streaming-service):
 
-* App Connector Status: Information related to an App Connector's availability and connection to ZPA. To learn more, see[ App Connector Status Log Fields](https://help.zscaler.com/zpa/connector-status-log-fields).
-* User Activity: Information on end user requests to Applications. To learn more, see[ User Activity Log Fields](https://help.zscaler.com/zpa/user-activity-log-fields).
-* User Status: Information related to an end user's availability and connection to ZPA. To learn more, see[ User Status Log Fields](https://help.zscaler.com/zpa/user-status-log-fields).
-* Browser Access Logs: HTTP log information related to Browser Access. To learn more, see[ Browser Access Log Fields](https://help.zscaler.com/zpa/browser-access-log-fields) and[ About Browser Access](https://help.zscaler.com/zpa/about-BrowserAccess).
-* Audit Logs: Session information for all admins accessing the ZPA Admin Portal. To learn more, see[ Audit Log Fields](https://help.zscaler.com/zpa/about-audit-log-fields) and[ About Audit Logs](https://help.zscaler.com/zpa/about-audit-logs).
+* App Connector Status: Information related to an App Connector's availability and connection to ZPA. To learn more, see [App Connector Status Log Fields](https://help.zscaler.com/zpa/connector-status-log-fields).
+* User Activity: Information on end user requests to Applications. To learn more, see [User Activity Log Fields](https://help.zscaler.com/zpa/user-activity-log-fields).
+* User Status: Information related to an end user's availability and connection to ZPA. To learn more, see [User Status Log Fields](https://help.zscaler.com/zpa/user-status-log-fields).
+* Browser Access Logs: HTTP log information related to Browser Access. To learn more, see[ Browser Access Log Fields](https://help.zscaler.com/zpa/browser-access-log-fields) and [About Browser Access](https://help.zscaler.com/zpa/about-BrowserAccess).
+* Audit Logs: Session information for all admins accessing the ZPA Admin Portal. To learn more, see [Audit Log Fields](https://help.zscaler.com/zpa/about-audit-log-fields) and [About Audit Logs](https://help.zscaler.com/zpa/about-audit-logs).
 
 
 ## Collect Logs for the Zscaler Private Access (ZPA) App
@@ -76,7 +76,7 @@ Configure a new [App Connector](https://help.zscaler.com/zpa/configuring-connect
 
 After you add an [App Connector](https://help.zscaler.com/zpa/about-connectorprovisioningwizard), you must deploy it. Deployment consists of installing the App Connector and also enrolling the App Connector, which allows the App Connector to obtain a TLS client certificate that it must use to authenticate itself to the ZPA cloud. After deployment, the App Connector is ready to send logs to Sumo Logic.
 
-Before you begin a deployment, read[ App Connector Deployment Prerequisites](https://help.zscaler.com/zpa/connector-deployment-prerequisites) which provides detailed information on VM image sizing and scalability, supported platform requirements, deployment best practices, and other essential guidelines.
+Before you begin a deployment, read [App Connector Deployment Prerequisites](https://help.zscaler.com/zpa/connector-deployment-prerequisites) which provides detailed information on VM image sizing and scalability, supported platform requirements, deployment best practices, and other essential guidelines.
 
 The deployment process differs depending on the platform used for the App Connector. Zscaler recommends that App Connectors be deployed in pairs, to ensure continuous availability during software upgrades.
 
@@ -94,8 +94,7 @@ Once you have deployed the App Connector, configure log receivers to send logs t
     1. [Log Receiver](https://help.zscaler.com/zpa/configuring-log-receiver#Step1)
 
 
-
-1. **Name**: Enter a name for the log receiver. The name cannot contain special characters, with the exception of periods (.), hyphens (-), and underscores ( _ ).
+1. **Name**: Enter a name for the log receiver. The name cannot contain special characters, with the exception of periods (.), hyphens (-), and underscores (`_`).
 2. **Description**: (Optional) Enter a description.
 3. **Domain or IP Address**: Enter the Domain name from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source).
 4. **TCP Port**: Enter the TCP port number from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). Default: 6514
@@ -112,17 +111,13 @@ Once you have deployed the App Connector, configure log receivers to send logs t
     2. In the **Log Template** field, select **JSON.**
     3. The default **Log Stream Content **that is displayed will change based on the **Log Type** and **Log Template** you selected in previous steps.
 
-You can also edit the log stream content within the text field in order to capture specific fields and create a **Custom **log template. To learn more, see[ Understanding the Log Stream Content Format](https://help.zscaler.com/zpa/understanding-log-stream-content-format).
+You can also edit the log stream content within the text field in order to capture specific fields and create a **Custom **log template. To learn more, see [Understanding the Log Stream Content Format](https://help.zscaler.com/zpa/understanding-log-stream-content-format).
 
 Edit the the log stream content, paste the following text in the beginning of the template:
 
-    <165>1 - - - - - - <Syslog Token>
-
+`<165>1 - - - - - - <Syslog Token>`
 
 For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
-
-
-
 
 1. You can define a streaming **Policy** for the log receiver. For example, you can create a policy where the receiver will only capture logs for a specified segment group or a specific set of session status error codes. The criteria you can use is dependent upon the **Log Type** you selected. For various options to define a streaming policy, see [ZPA help](https://help.zscaler.com/zpa/configuring-log-receiver#Step2).
 2. Click **Next**.

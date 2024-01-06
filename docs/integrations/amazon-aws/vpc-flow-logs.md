@@ -93,9 +93,7 @@ If you define the environment variables below, do it for both of the Lambda func
   </tr>
   <tr>
    <td><code>VPC_CIDR_PREFIX</code></td>
-   <td>Comma-separated list of IP prefixes for filtering out internal traffic. For example <code>vpcCIDRprefix= 10.8.0.0,10.9.0.0</code> filters out logs whose <code>destinationIP</code> and <code>sourceIP</code> matches any of the two prefixes <code>10.8.0.0</code> and <code>10.9.0.0</code>.
-   <p><code>"Ex if VPC_CIDR_PREFIX = "10.0." then all the IP's with 10.0.*.* will match the prefix"</code></p>
-   </td>
+   <td>Comma-separated list of IP prefixes for filtering out internal traffic. For example <code>vpcCIDRprefix= 10.8.0.0,10.9.0.0</code> filters out logs whose <code>destinationIP</code> and <code>sourceIP</code> matches any of the two prefixes <code>10.8.0.0</code> and <code>10.9.0.0</code>.<p><code>"Ex if VPC_CIDR_PREFIX = "10.0." then all the IP's with 10.0.*.* will match the prefix"</code></p></td>
   </tr>
 </table>
 

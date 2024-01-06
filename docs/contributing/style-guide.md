@@ -499,27 +499,28 @@ To link to a downloadable asset file, such as a `.yaml`, `.json`, or `.xml`:
 
 1. Drag and drop your file to the `static/files` folder. In this example, we'll drop in a file called `domainCollector.ps1`.<br/><img src={useBaseUrl('img/contributing/static-file.png')} alt="header sizes" width="250"/>
 1. Go to your doc in progress and use the following syntax to link the file:
-  <Tabs
-    className="unique-tabs"
-    defaultValue="Markdown"
-    values={[
-      {label: 'Markdown', value: 'Markdown'},
-      {label: 'Result', value: 'Result'},
-    ]}>
 
-  <TabItem value="Markdown">
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
 
-  ```md
-  <a href="https://help.sumologic.com/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
-  ```
+<TabItem value="Markdown">
 
-  </TabItem>
-  <TabItem value="Result">
+```md
+<a href="https://help.sumologic.com/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+```
 
-  <a href="https://help.sumologic.com/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+</TabItem>
+<TabItem value="Result">
 
-  </TabItem>
-  </Tabs>
+<a href="https://help.sumologic.com/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+
+</TabItem>
+</Tabs>
 
 Nearly all file formats are supported. For more information, see [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets).
 

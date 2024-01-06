@@ -145,7 +145,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
     * **SNS Subscription Endpoint (Highly Recommended**). New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file. Click the box below to open instructions:
 
     <details>
-<summary>Set up SNS in AWS</summary>
+    <summary>Set up SNS in AWS</summary>
 
     The following steps use the Amazon SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#set-up-an-sns-subscription-endpoint).
 

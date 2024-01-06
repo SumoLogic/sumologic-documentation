@@ -258,11 +258,11 @@ To collect logs directly from your Nginx machine, use an Installed Collector and
    * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
    * **Source Category**. Enter any string to tag the output collected from this Source, such as Nginx/Access or Nginx/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
    * **Fields.** Add the following fields, as shown in the screenshot below.
-​​    ```
+    ```bash
     component = webserver
     webserver_system = nginx
-    webserver_farm = <Your_nginx_farm_Name>--Use Default if you do not have one.
-    environment = <Your_Environment_Name>--i.e., Dev, QA, or Prod
+    webserver_farm = <Your_nginx_farm_Name> #Use Default if you do not have one.
+    environment = <Your_Environment_Name> #i.e., Dev, QA, or Prod
     ```
 3. Configure the Advanced section:
     * Enable Timestamp Parsing. Select Extract timestamp information from log file entries.

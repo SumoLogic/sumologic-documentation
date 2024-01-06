@@ -23,7 +23,7 @@ The examples use this sample Access log message where applicable:
 | Look for general authorization failures excluding router messages. | `(fail* OR error?) NOT _source=routers` |
 
 :::sumo More Info
-For more information, see [Keyword Search Expression](../get-started-with-search/build-search/keyword-search-expressions.md)
+For more information, see [Keyword Search Expressions](../get-started-with-search/build-search/keyword-search-expressions.md).
 :::
 
 ## Parse, Count, and Top Operators
@@ -31,8 +31,8 @@ For more information, see [Keyword Search Expression](../get-started-with-searc
 | Use Case | Sumo Logic Query Example |
 | :-- | :-- |
 | Extract "from" and "to" fields using a simple wild card. For example, if a raw event contains "From: Jane To: John", then from=Jane and to=John.  `* | parse "From: * To: *" as from, to` |
-| Extract IP address using a regex pattern.	 | `* | parse regex "(?<c_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" ` |
-| Identify pages visited, extracted as the "cs_uri_stem" field.	 | `_source=IIS | parse "GET * " as cs_uri_stem ` |
+| Extract IP address using a regex pattern.	 | `* | parse regex "(?<c_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"` |
+| Identify pages visited, extracted as the "cs_uri_stem" field.	 | `_source=IIS | parse "GET * " as cs_uri_stem` |
 | Identify messages with status code “200” and extract the sc_substatus, sc_win32_status, and sc_bytes fields.  | `_source=IIS | parse " 200 * * * " as sc_substatus, sc_win32_status, sc_bytes` |
 
 The following examples assume you used the parsing from above:
@@ -79,4 +79,4 @@ For more information, see [Where](/docs/search/search-query-language/search-oper
 :::
 
 For any query, you can increase specificity by adding metadata fields to the keyword expression. Metadata fields include `_sourceCategory`,
-`_sourceHost `, and `_sourceName`. Edit Source metadata in the **Collection** tab. For details see [Search Metadata.](/docs/search/get-started-with-search/search-basics/built-in-metadata) 
+`_sourceHost`, and `_sourceName`. Edit Source metadata in the **Collection** tab. For details see [Search Metadata.](/docs/search/get-started-with-search/search-basics/built-in-metadata) 
