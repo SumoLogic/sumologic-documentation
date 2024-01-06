@@ -498,7 +498,9 @@ email_notifications = [
 
 Now that you have set up collection for MongoDB, install the Sumo Logic app for MongoDB to use the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing MongoDB Dashboards
 

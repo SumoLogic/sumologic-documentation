@@ -123,7 +123,9 @@ Follow the instructions for setting up the [Cloud-to-Cloud Integration for Micro
 
 This section has instructions for installing the Microsoft Graph Security app for Sumo Logic.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Microsoft Graph Security dashboards​​
 

@@ -73,7 +73,9 @@ When the Sumo collector accesses a log file to read its content, the collector o
      * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example`-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m). When updating the **Collection should begin** setting you will need to restart the Collector. 
      
      :::note
-     {@import ../../../reuse/collection-should-begin-note.md}
+     import CollBegin from '../../../reuse/collection-should-begin-note.md';
+
+<CollBegin/>
      :::
 
    * **Source Host.** The hostname assigned by the operating system is used by default. The Source Host value is tagged to each log and stored in a searchable metadata field called _sourceHost. Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 128 characters.

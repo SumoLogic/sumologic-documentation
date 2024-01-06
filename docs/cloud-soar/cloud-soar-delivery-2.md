@@ -135,7 +135,9 @@ Now you can access Cloud SOAR APIs documentation at the following URLs.
 <ApiIntro/>
 :::
 
-{@import ../reuse/csoar-api-table.md}
+import CloudSoarApi from '../reuse/csoar-api-table.md';
+
+<CloudSoarApi/>
 
 <!-- Also at Delivery 2 GA, add this reuse API content to the "Cloud SOAR APIs" article at https://help.sumologic.com/docs/cloud-soar/cloud-soar-apis/. Also in that article, update the references to the old "incmansuite_ng" in URLs as needed to align with the new API URLs. -->
 

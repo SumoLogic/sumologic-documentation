@@ -40,7 +40,9 @@ You'll need the following:
     <img src={useBaseUrl('img/traces/lambda-java2.png')} alt="Layers" style={{border: '1px solid black'}} width="800" />
 
     :::note
-    {@import ../../../../../reuse/apm-traces-layer-order.md}
+    import ApmTrace from '../../../../../reuse/apm-traces-layer-order.md';
+
+    <ApmTrace/>
     :::
 
 1. Navigate to the **Configuration > Environment variables** section and set up the following **required** environment variables:

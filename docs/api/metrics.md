@@ -67,22 +67,16 @@ import ApiEndpoints from '../reuse/api-endpoints.md';
 
 <table>
   <tr>
-   <td><strong>Header</strong>
-   </td>
-   <td><strong>Value</strong>
-   </td>
+   <td><strong>Header</strong></td>
+   <td><strong>Value</strong></td>
   </tr>
   <tr>
-   <td>Content-Type
-   </td>
-   <td>application/json
-   </td>
+   <td>Content-Type</td>
+   <td>application/json</td>
   </tr>
   <tr>
-   <td>Accept
-   </td>
-   <td>application/json
-   </td>
+   <td>Accept</td>
+   <td>application/json</td>
   </tr>
 </table>
 
@@ -92,24 +86,16 @@ import ApiEndpoints from '../reuse/api-endpoints.md';
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>query
-   </td>
-   <td>[QueryWithRowId]
-   </td>
-   <td>Yes
-   </td>
-   <td>The actual query expressions.
-   </td>
+   <td>query</td>
+   <td>[QueryWithRowId]</td>
+   <td>Yes</td>
+   <td>The actual query expressions.</td>
   </tr>
   <tr>
    <td>startTime

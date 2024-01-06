@@ -176,7 +176,9 @@ Now that you have set up collection for AKS, you can install the Sumo Logic app 
 
 All the dashboards are linked to the Explore tab so they can be easily accessed by clicking the Cluster in the navigation pane of the Explore tab.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing the AKS Control Plane dashboards
 

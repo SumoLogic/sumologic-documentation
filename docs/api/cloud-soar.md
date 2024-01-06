@@ -18,7 +18,9 @@ import ApiIntro from '../reuse/api-intro.md';
 
 <ApiIntro/>
 
-{@import ../reuse/csoar-api-table.md}
+import CloudSoarApi from '../reuse/csoar-api-table.md';
+
+<CloudSoarApi/>
 
 -->
 

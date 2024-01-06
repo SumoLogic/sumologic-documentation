@@ -360,7 +360,9 @@ For complete instructions, see [Local File Source](/docs/send-data/installed-col
 
 Now that you have set up collection, install the Sumo Logic App for Artifactory to use the pre-configured searches and Dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing JFrog Artifactory Dashboards
 
@@ -368,34 +370,46 @@ Now that you have set up collection, install the Sumo Logic App for Artifactory 
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Overview.png')} alt="JFROG artifactory" />
 
-{@import ../../reuse/apps/jfrog/artifactory-overview.md}
+import JfrogOv from '../../reuse/apps/jfrog/artifactory-overview.md';
+
+<JfrogOv/>
 
 ### Traffic
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Traffic.png')} alt="JFROG artifactory" />
 
-{@import ../../reuse/apps/jfrog/artifactory-traffic.md}
+import JfrogTr from '../../reuse/apps/jfrog/artifactory-traffic.md';
+
+<JfrogTr/>
 
 ### Request and Access
 
 <img src={useBaseUrl('img/integrations/app-development/artifactory_app_request_access.png')} alt="JFROG artifactory" />
 
-{@import ../../reuse/apps/jfrog/artifactory-request-access.md}
+import JfrogReq from '../../reuse/apps/jfrog/artifactory-request-access.md';
+
+<JfrogReq/>
 
 ### Download Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Download.png')} alt="JFROG artifactory" />
 
-{@import ../../reuse/apps/jfrog/artifactory-download.md}
+import JfrogDl from '../../reuse/apps/jfrog/artifactory-download.md';
+
+<JfrogDl/>
 
 ### Cached Deployment Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Cached.png')} alt="JFROG artifactory" />
 
-{@import ../../reuse/apps/jfrog/artifactory-cached.md}
+import JfrogCache from '../../reuse/apps/jfrog/artifactory-cached.md';
+
+<JfrogCache/>
 
 ### Non-Cached Deployment Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Non-Cached.png')} alt="JFROG artifactory" />
 
-{@import ../../reuse/apps/jfrog/artifactory-noncached.md}
+import JfrogNon from '../../reuse/apps/jfrog/artifactory-noncached.md';
+
+<JfrogNon/>

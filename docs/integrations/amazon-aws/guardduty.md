@@ -211,7 +211,7 @@ In this step, you deploy the events processor. This will create the AWS resource
 #### Configure optional environment variables
 
 1. Go to the AWS Lambda console.
-2. Search for the "aws-serverless-repository-CloudWatchEventFunction-<_suffix_>"" function and click it.
+2. Search for the `"aws-serverless-repository-CloudWatchEventFunction-<_suffix_>"` function and click it.
 3. Scroll down to the **Environment variables** section. You can set any of the following optional variables:
     * `ENCODING` (optional). Encoding to use when decoding CloudWatch log events. Default is utf-8.
     * `SOURCE_CATEGORY_OVERRIDE` (optional). Override `_sourceCategory` value configured for the HTTP source.
@@ -223,7 +223,9 @@ In this step, you deploy the events processor. This will create the AWS resource
 
 Now that you have set up collection for Amazon GuardDuty, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Amazon GuardDuty Dashboards
 

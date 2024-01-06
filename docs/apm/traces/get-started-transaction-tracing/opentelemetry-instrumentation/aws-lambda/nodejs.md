@@ -41,7 +41,10 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
      <img src={useBaseUrl('img/traces/lambda-nodejs2.png')} alt="Layers section" style={{border: '1px solid black'}} width="800" />
 
     :::note
-    {@import ../../../../../reuse/apm-traces-layer-order.md}
+    import ApmTrace from '../../../../../reuse/apm-traces-layer-order.md';
+
+    <ApmTrace/>
+
     :::
 
 1. Navigate to the **Configuration > Environment variables** section and set up the following environment variables (the first are three **required**):

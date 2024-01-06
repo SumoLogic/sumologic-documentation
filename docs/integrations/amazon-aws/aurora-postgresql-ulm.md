@@ -210,7 +210,9 @@ To collect Aurora CloudWatch metrics, do the following:
 
 Now that you have set up log and metric collection for Amazon Aurora PostgreSQL, you can install the Sumo Logic app for Aurora PostgreSQL ULM, and use its pre-configured searches and dashboards.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Aurora PostgreSQL ULM Dashboards
 

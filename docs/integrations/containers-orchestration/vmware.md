@@ -335,7 +335,9 @@ This section provides instructions for installing the VMware App.
 
 Now that you have set up collection for VMWare, you can install the VMWare App to use the preconfigured searches and Dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing VMware Dashboards
 

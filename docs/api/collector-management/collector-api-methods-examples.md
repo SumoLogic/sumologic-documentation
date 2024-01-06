@@ -90,200 +90,118 @@ The following table lists the API response fields for installed and hosted Colle
    </td>
   </tr>
   <tr>
-   <td>collectorType
-   </td>
-   <td>String
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>The Collector type: <code>Installable</code> or <code>Hosted</code>
-   </td>
-   <td>Not modifiable
-   </td>
+   <td>collectorType</td>
+   <td>String</td>
+   <td></td>
+   <td></td>
+   <td>The Collector type: <code>Installable</code> or <code>Hosted</code></td>
+   <td>Not modifiable</td>
   </tr>
   <tr>
-   <td>collectorVersion
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
+   <td>collectorVersion</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td></td>
+   <td>Version of the Collector software installed.</td>
+   <td>Transient</td>
+  </tr>
+  <tr>
+   <td>cutoffRelativeTime</td>
+   <td>String</td>
+   <td>No</td>
+   <td> </td>
+   <td>Can be specified instead of <code>cutoffTimestamp</code> to provide a relative offset with respect to the current time. Example: use <code>"-1h"</code>, <code>"-1d"</code>, or <code>"-1w"</code> to collect data that's less than one hour, one day, or one week old, respectively. (Note that if you set this property to a relative time that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.)</td>
+   <td>Not modifiable</td>
+  </tr>
+  <tr>
+   <td>cutoffTimestamp</td>
+   <td>Long</td>
+   <td>No</td>
+   <td>0 (collects all data)</td>
+   <td>Only collect data from files with a modified date more recent than this timestamp, specified as milliseconds since epoch. (Note that if you set this property to a timestamp that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.)</td>
+   <td>Modifiable</td>
+  </tr>
+  <tr>
+   <td>description</td>
+   <td>String</td>
+   <td>No</td>
+   <td>Null</td>
+   <td>Description of the Collector.</td>
+   <td>Modifiable</td>
+  </tr>
+  <tr>
+   <td>ephemeral</td>
+   <td>Boolean</td>
+   <td>Yes</td>
    <td>
    </td>
-   <td>Version of the Collector software installed.
-   </td>
-   <td>Transient
-   </td>
+   <td>When true, the collector will be deleted after 12 hours of inactivity. For more information, see <a href="/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral">Setting a Collector as Ephemeral</a>.</td>
+   <td>Modifiable</td>
   </tr>
   <tr>
-   <td>cutoffRelativeTime
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>
-   </td>
-   <td>Can be specified instead of <code>cutoffTimestamp</code> to provide a relative offset with respect to the current time. Example: use <code>"-1h"</code>, <code>"-1d"</code>, or <code>"-1w"</code> to collect data that's less than one hour, one day, or one week old, respectively. (Note that if you set this property to a relative time that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.)
-   </td>
-   <td>Not modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>cutoffTimestamp
-   </td>
-   <td>Long
-   </td>
-   <td>No
-   </td>
-   <td>0 (collects all data)
-   </td>
-   <td>Only collect data from files with a modified date more recent than this timestamp, specified as milliseconds since epoch. (Note that if you set this property to a timestamp that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.)  
-   </td>
-   <td>Modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>description
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>Null
-   </td>
-   <td>Description of the Collector.
-   </td>
-   <td>Modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>ephemeral
-   </td>
-   <td>Boolean
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>When true, the collector will be deleted after 12 hours of inactivity. For more information, see <a href="/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral">Setting a Collector as Ephemeral</a>.
-   </td>
-   <td>Modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>fields
-   </td>
-   <td>JSON Object
-   </td>
-   <td>No
-   </td>
-   <td>
-   </td>
+   <td>fields</td>
+   <td>JSON Object</td>
+   <td>No</td>
+   <td> </td>
    <td>JSON map of key-value <a href="/docs/manage/fields">fields</a> (metadata) to apply to the Collector. To assign an <a href="/docs/manage/ingestion-volume/ingest-budgets">Ingest Budget</a> to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:
-   <p><code>fields=_budget=Dev_20GB</code></p>
-   </td>
+   <p><code>fields=_budget=Dev_20GB</code></p></td>
+   <td>Modifiable</td>
+  </tr>
+  <tr>
+   <td>hostName</td>
+   <td>String</td>
+   <td>No</td>
+   <td>Null</td>
+   <td>Host name of the Collector. The hostname can be a maximum of 128 characters.</td>
+   <td>Modifiable</td>
+  </tr>
+  <tr>
+   <td>id</td>
+   <td>Long</td>
+   <td>Yes</td>
+   <td></td>
+   <td>Identifier</td>
+   <td>Not modifiable</td>
+  </tr>
+  <tr>
+   <td>lastSeenAlive</td>
+   <td>Long</td>
+   <td>No</td>
+   <td> </td>
+   <td>The last time the Sumo Logic service received an active heartbeat from the Collector, specified as milliseconds since epoch.</td>
+   <td>Transient</td>
+  </tr>
+  <tr>
+   <td>name</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td> </td>
+   <td>Name of the Collector. It must be unique on your account.</td>
+   <td>Modifiable</td>
+  </tr>
+  <tr>
+   <td>sourceSyncMode</td>
+   <td>String</td>
+   <td>No</td>
+   <td>UI</td>
+   <td>For installed Collectors, whether the Collector is using local source configuration management (using a <code>JSON</code> file), or cloud management (using the <code>UI</code>)</td>
    <td>Modifiable
-   </td>
+   <p>To assign to <code>JSON</code>, <a href="/docs/send-data/use-json-configure-sources/local-configuration-file-management/existing-collectors-and-sources">learn more</a>.</p></td>
   </tr>
   <tr>
-   <td>hostName
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>Null
-   </td>
-   <td>Host name of the Collector. The hostname can be a maximum of 128 characters.
-   </td>
-   <td>Modifiable
-   </td>
+   <td>timeZone</td>
+   <td>String</td>
+   <td>No</td>
+   <td>Null</td>
+   <td>Time zone of the Collector. For a list of possible values, refer to the "TZ" column in <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">this Wikipedia article</a>.</td>
+   <td>Modifiable</td>
   </tr>
   <tr>
-   <td>id
-   </td>
-   <td>Long
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>Identifier
-   </td>
-   <td>Not modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>lastSeenAlive
-   </td>
-   <td>Long
-   </td>
-   <td>No
-   </td>
-   <td>
-   </td>
-   <td>The last time the Sumo Logic service received an active heartbeat from the Collector, specified as milliseconds since epoch.
-   </td>
-   <td>Transient
-   </td>
-  </tr>
-  <tr>
-   <td>name
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>Name of the Collector. It must be unique on your account.
-   </td>
-   <td>Modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>sourceSyncMode
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>UI
-   </td>
-   <td>For installed Collectors, whether the Collector is using local source configuration management (using a <code>JSON</code> file), or cloud management (using the <code>UI</code>)
-   </td>
-   <td>Modifiable
-   <p>To assign to <code>JSON</code>, <a href="/docs/send-data/use-json-configure-sources/local-configuration-file-management/existing-collectors-and-sources">learn more</a>.</p>
-   </td>
-  </tr>
-  <tr>
-   <td>timeZone
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>Null
-   </td>
-   <td>Time zone of the Collector. For a list of possible values, refer to the "TZ" column in <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">this Wikipedia article</a>.
-   </td>
-   <td>Modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>targetCpu
-   </td>
-   <td>Long
-   </td>
-   <td>No
-   </td>
-   <td>Null
-   </td>
-   <td>When CPU utilization exceeds this threshold, the Collector will slow down its rate of ingestion to lower its CPU utilization. Currently only Local and Remote File Sources are supported. The value must be expressed as a whole number percentage. The collector will adjust resources to attempt to limit the CPU usage to at most 20%. For more information, see <a href="/docs/send-data/collection/set-collector-cpu-usage-target">Set the Collector CPU Usage Target</a>.
-   </td>
+   <td>targetCpu</td>
+   <td>Long</td>
+   <td>No</td>
+   <td>Null</td>
+   <td>When CPU utilization exceeds this threshold, the Collector will slow down its rate of ingestion to lower its CPU utilization. Currently only Local and Remote File Sources are supported. The value must be expressed as a whole number percentage. The collector will adjust resources to attempt to limit the CPU usage to at most 20%. For more information, see <a href="/docs/send-data/collection/set-collector-cpu-usage-target">Set the Collector CPU Usage Target</a>.</td>
    <td>Modifiable</td>
   </tr>
 </table>
@@ -292,64 +210,41 @@ The following table lists additional response fields for Installed Collectors on
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Description</strong></td>
    <td><strong>Access</strong>
    </td>
   </tr>
   <tr>
-   <td>osName
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>Name of OS that Collector is installed on.
-   </td>
-   <td>Not modifiable
-   </td>
+   <td>osName</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>Name of OS that Collector is installed on.</td>
+   <td>Not modifiable</td>
   </tr>
   <tr>
-   <td>osVersion
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>Version of the OS that Collector is installed on.
-   </td>
-   <td>Not modifiable
-   </td>
+   <td>osVersion</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>Version of the OS that Collector is installed on.</td>
+   <td>Not modifiable</td>
   </tr>
   <tr>
-   <td>osArch
-   </td>
+   <td>osArch</td>
    <td>
    </td>
-   <td>Yes
-   </td>
-   <td>Architecture of the OS that Collector is installed on.
-   </td>
-   <td>Not modifiable
-   </td>
+   <td>Yes</td>
+   <td>Architecture of the OS that Collector is installed on.</td>
+   <td>Not modifiable</td>
   </tr>
   <tr>
-   <td>osTime
-   </td>
-   <td>Long
-   </td>
-   <td>Yes
-   </td>
-   <td>Time that the Collector has been running, in milliseconds.
-   </td>
-   <td>Not modifiable
-   </td>
+   <td>osTime</td>
+   <td>Long</td>
+   <td>Yes</td>
+   <td>Time that the Collector has been running, in milliseconds.</td>
+   <td>Not modifiable</td>
   </tr>
 </table>
 

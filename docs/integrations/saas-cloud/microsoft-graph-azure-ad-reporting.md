@@ -297,7 +297,9 @@ Follow the instructions for setting up [Microsoft Graph Azure AD Reporting](/doc
 
 This section has instructions for installing the Microsoft Graph Azure AD Reporting app for Sumo Logic.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Microsoft Graph Azure AD Reporting dashboards​​
 

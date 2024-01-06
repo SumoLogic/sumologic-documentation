@@ -292,7 +292,9 @@ This legacy solution to pull logs from Slack to Sumo Logic has been replaced wit
 
 This section demonstrates how to install the Slack App.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Slack Dashboards
 

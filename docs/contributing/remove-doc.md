@@ -16,7 +16,9 @@ To keep our docs site healthy, follow these steps.
 
 ## Prerequisites
 
-{@import ../reuse/doc-prerequisites.md}
+import DocPrereq from '../reuse/doc-prerequisites.md';
+
+<DocPrereq/>
 
 ## Step 1: Create a 301 redirect
 

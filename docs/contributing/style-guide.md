@@ -487,7 +487,7 @@ Place long lists or lots of content in this section. The reader can expand/colla
 
 ## Contractions
 
-Using contractions contributes to our goals of striking a conversational, friendly tone. 
+Using contractions contributes to our goals of striking a conversational, friendly tone.
 
 It's okay to use common contractions like “I'm”, “they're”, and “you’ll”. Spell out all negative contractions (for example: use "cannot", not "can't"), as they can be easily mistaken for the opposite meaning.
 
@@ -529,7 +529,9 @@ If your file is available in another public Sumo Logic repo, provide the standar
 
 Not all UI elements have an intuitive name. It's the very nature of working with a constantly evolving product. Here are some examples:
 
-{@import ../reuse/ui-elements.md}
+import UiElements from '../reuse/ui-elements.md';
+
+<UiElements/>
 
 When providing instructions that involve multiple UI elements, list them sequentially and in cascading order. For example: Click **More Actions** > **Delete**.
 
@@ -1203,9 +1205,11 @@ To add release notes with images:
 For repeatable content (like an identical section that appears in several docs), you can save a lot of time by creating one instance of that content in the `/docs/reuse` folder and then import that snippet to other docs.
 
 1. Create a new markdown file and save it to the [`/docs/reuse`](https://github.com/SumoLogic/sumologic-documentation/tree/main/docs/reuse) folder.
-1. Import that content to another doc by adding this snippet (substitute the file path with your own).
+1. Import that content to another doc by adding this snippet (substitute the file path and object name with your own).
    ```bash
-   {@import ../../reuse/filename.md}
+   import RestartC2C from '../reuse/restart-c2c-source.md';
+
+   <RestartC2C/>
    ```
 
 Headings in the reuse folder will not appear in the right-side nav in docs where they're imported. For this reason, unless the headers are H4 or below, reuse the content only but retain headings in the other docs.
@@ -1225,14 +1229,19 @@ Example: the content under the Cloud-to-Cloud source docs > Restarting Your Sour
 ```md
 ### Restarting your source
 
-{@import ../reuse/restart-c2c-source.md}
+import RestartC2C from '../reuse/restart-c2c-source.md';
+
+<RestartC2C/>
+
 ```
 </TabItem>
 <TabItem value="Result">
 
 ### Restarting your source
 
-{@import ../reuse/restart-c2c-source.md}
+import RestartC2C from '../reuse/restart-c2c-source.md';
+
+<RestartC2C/>
 
 </TabItem>
 </Tabs>

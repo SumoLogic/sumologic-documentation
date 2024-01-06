@@ -272,7 +272,9 @@ For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-mes
 
 Now that you have configured Evident.io ESP, install the Sumo Logic App for Evident.io ESP to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Evident.io Dashboards
 

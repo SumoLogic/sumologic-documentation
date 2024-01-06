@@ -377,7 +377,9 @@ Note: There are limits to how many alerts can be enabled - please see the [Alert
 
 This section has instructions for installing the Sumo app for Nginx Plus. The instructions assume you have already set up the collection as described above.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Nginx Plus Dashboards
 

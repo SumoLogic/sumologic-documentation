@@ -69,7 +69,7 @@ module.exports = {
             //https://www.npmjs.com/package/remark-code-import
             require('remark-code-import'),
             //https://www.npmjs.com/package/remark-import-partial
-            // snippet support {@import ./my-name.md} relative filepath to md file
+            //snippet support (import Abc from '../reuse/abc.md'; <Abc/> relative filepath to .md file)
             require('remark-import-partial'),
           ],
           showLastUpdateAuthor: true,

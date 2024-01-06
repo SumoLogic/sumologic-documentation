@@ -73,7 +73,9 @@ To configure a remote Windows Event Log Source:
        :::
     
        :::note
-       {@import ../../../reuse/collection-should-begin-note.md}
+       import CollBegin from '../../../reuse/collection-should-begin-note.md';
+
+<CollBegin/>
        :::
 
    * **Security Identifier**. Collectors on version 19.182 or later can map [security identifiers](https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/security-identifiers-in-windows) (SIDs) to usernames. During collection, the `Security ``ID` field in your log `message` (if you selected **Complete Message**) is translated into the format of your choice. Choose:

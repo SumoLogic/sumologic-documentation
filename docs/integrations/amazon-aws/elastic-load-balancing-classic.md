@@ -59,7 +59,9 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 ### Configure an ELB Source
 
-{@import ../../reuse/apps/create-aws-s3-source.md}
+import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
+
+<Aws3/>
 
 ### Field Extraction Rules
 
@@ -94,7 +96,9 @@ _sourceCategory=elb*
 
 Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancer - Classic to use the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 <details>
 <summary>What if data isn't displaying in all Panels?</summary>

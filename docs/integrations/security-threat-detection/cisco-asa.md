@@ -104,7 +104,9 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 
 This section provides instructions on how to install the Cisco ASA App.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Cisco ASA Dashboards
 

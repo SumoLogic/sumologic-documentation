@@ -184,7 +184,9 @@ There are limits to how many alerts can be enabled - please see the[ Alerts FAQ]
 
 ## Installing the Nginx Plus Ingress app
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Nginx Plus Ingress Dashboards
 

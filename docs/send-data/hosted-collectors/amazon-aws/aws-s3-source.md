@@ -43,7 +43,9 @@ When you create an Amazon Source, you add it to a Hosted Collector. Before creat
 
 * If you're editing the `Collection should begin` date on a Source the new date must be after the current `Collection should begin` date. 
  :::note
- {@import ../../../reuse/collection-should-begin-note.md}
+ import CollBegin from '../../../reuse/collection-should-begin-note.md';
+
+<CollBegin/>
  :::
 * Sumo Logic supports log files (S3 objects) that do NOT change after they are uploaded to S3. Support is not provided if your logging approach relies on updating files stored in an S3 bucket. S3 does not have a concept of updating existing files, you can only overwrite an existing file. When this overwrite happens, S3 considers it as a new file object, or a new version of the file, and that file object gets its own unique version ID.
 
@@ -112,7 +114,9 @@ import Iframe from 'react-iframe';
     :::
 
     :::note
-    {@import ../../../reuse/collection-should-begin-note.md}
+    import CollBegin from '../../../reuse/collection-should-begin-note.md';
+
+<CollBegin/>
     :::
 
 1. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.)

@@ -543,7 +543,9 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
 
 This section demonstrates how to install the SQL Server App.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Microsoft SQL Server Dashboards
 

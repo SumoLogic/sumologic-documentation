@@ -32,7 +32,9 @@ To configure a Remote File Source:
      * Choose a predefined value from dropdown list, ranging from “Now” to “24 hours ago” to “All Time”.
      * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example “-1w”. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m).
      :::note
-     {@import ../../../../reuse/collection-should-begin-note.md}
+     import CollBegin from '../../../../reuse/collection-should-begin-note.md';
+
+     <CollBegin/>
      :::
    * **Source Category.** Type any string to tag the logs collected from this Source with searchable metadata. For example, type firewall to tag all entries from this Source in a field called _sourceCategory. See our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below.
 

@@ -143,11 +143,15 @@ For metric collection in Sumo Logic use [GCP Metric source](https://help.sumolog
 
 Now that you have set up the collection for Google Cloud SQL, install the Sumo Logic App Google Cloud SQL to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Google Cloud SQL dashboards
 
-{@import ../../reuse/filter-dashboards.md}
+import FilterDashboards from '../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
 
 ### Audit Logs
 

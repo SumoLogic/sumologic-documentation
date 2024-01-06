@@ -955,7 +955,9 @@ oracle_script/sumooracle>python3 oracle-perf-monitor.py
 
 This section demonstrates how to install the Oracle app.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Oracle Dashboards
 

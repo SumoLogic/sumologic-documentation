@@ -111,7 +111,7 @@ Once you have deployed the App Connector, configure log receivers to send logs t
         5. **Audit Logs**: Session information for all admins accessing the ZPA Admin Portal. To learn more, see[ About Audit Log Fields](https://help.zscaler.com/zpa/about-audit-log-fields) and[ About Audit Logs](https://help.zscaler.com/zpa/about-audit-logs).
     2. In the **Log Template** field, select **JSON.**
     3. The default **Log Stream Content **that is displayed will change based on the **Log Type** and **Log Template** you selected in previous steps.
-       
+
 You can also edit the log stream content within the text field in order to capture specific fields and create a **Custom **log template. To learn more, see[ Understanding the Log Stream Content Format](https://help.zscaler.com/zpa/understanding-log-stream-content-format).
 
 Edit the the log stream content, paste the following text in the beginning of the template:
@@ -143,11 +143,15 @@ For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](
 
 ## Installing the Zscaler Private Access app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Zscaler Private Access dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDash from '../../reuse/apps/view-dashboards.md';
+
+<ViewDash/>
 
 ### Overview
 

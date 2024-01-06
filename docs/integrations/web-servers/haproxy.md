@@ -551,7 +551,9 @@ email_notifications = [
 
 Now that you have set up collection for HAProxy, you can install the HAProxy app to use the pre-configured searches and dashboard that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing HAProxy Dashboards
 

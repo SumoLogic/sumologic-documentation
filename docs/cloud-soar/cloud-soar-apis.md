@@ -14,7 +14,9 @@ The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR 
 
 <ApiIntro/>
 
-{@import ../reuse/csoar-api-table.md}
+import CloudSoarApi from '../reuse/csoar-api-table.md';
+
+<CloudSoarApi/>
 
 -->
 

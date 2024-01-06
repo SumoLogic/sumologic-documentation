@@ -445,7 +445,9 @@ email_notifications = [
 
 This section demonstrates how to install the Memcached app.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Memcached Dashboards
 

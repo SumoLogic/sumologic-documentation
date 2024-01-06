@@ -445,7 +445,9 @@ email_notifications = [
 
 ## Installing the Elasticsearch app
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Elasticsearch dashboards
 

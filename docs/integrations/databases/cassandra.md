@@ -621,7 +621,9 @@ This step is not needed if you are using the [Application Components Solution](/
 
 This section demonstrates how to install the Cassandra app.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Cassandra dashboards
 

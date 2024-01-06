@@ -373,7 +373,9 @@ To configure log collection for Global Intelligence for AWS CloudTrail, follow t
 
 ## Installing the GI for AWS CloudTrail SecOps App
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing GI CloudTrail Dashboards
 

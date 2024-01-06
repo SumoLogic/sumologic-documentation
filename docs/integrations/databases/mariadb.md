@@ -295,7 +295,9 @@ This section demonstrates how to configure a Local File Source for MariaDB Error
    3. **File Path** (Required). Enter the path to your mariadb-error.log. The files are typically located in /var/log/mariadb/mariadb-error.log. If you're using a customized path, check the server.cnf file for this information
    4. **Collection should begin**. Set this for how far back historically you want to start collecting.
    :::note
-   {@import ../../reuse/collection-should-begin-note.md}
+   import CollBegin from '../../reuse/collection-should-begin-note.md';
+
+<CollBegin/>
    :::
    5. **Source Host** (Optional). Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
    6. **Source Category** (Recommended). DB/MariaDB/ErrorLogs_._

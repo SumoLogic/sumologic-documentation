@@ -62,7 +62,7 @@ Example: [Split source configuration](/docs/integrations/webhooks/split/#source-
 
 #### Metadata fields (If any)
 
-\Insert meta deta fields in the Sumo Logic UI. Update the below table accordingly.\
+\Insert metadata fields in the Sumo Logic UI. Update the below table accordingly.\
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
@@ -70,11 +70,15 @@ Example: [Split source configuration](/docs/integrations/webhooks/split/#source-
 
 ## Installing the Split app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Split dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDash from '../../reuse/apps/view-dashboards.md';
+
+<ViewDash/>
 
 ### Dashboard 1 (example: Overview)
 

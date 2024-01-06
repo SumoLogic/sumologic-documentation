@@ -193,7 +193,9 @@ This section has instructions for installing the Microsoft Graph Security app fo
 
 Locate and install the app you need from the App Catalog. If you want to see a preview of the dashboard included with the app before installing, click **Preview Dashboards**.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Microsoft Graph Security Dashboards​
 

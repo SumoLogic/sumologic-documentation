@@ -10,7 +10,9 @@ Found an error in a doc? Here's how to submit a fix.
 
 ## Prerequisites
 
-{@import ../reuse/doc-prerequisites.md}
+import DocPrereq from '../reuse/doc-prerequisites.md';
+
+<DocPrereq/>
 
 ## Minor edits
 

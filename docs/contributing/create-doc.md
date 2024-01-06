@@ -10,7 +10,9 @@ Here's a high-level overview of how to create a new Sumo Logic doc.
 
 ## Prerequisites
 
-{@import ../reuse/doc-prerequisites.md}
+import DocPrereq from '../reuse/doc-prerequisites.md';
+
+<DocPrereq/>
 
 ## Step 1: Fork the Sumo Docs repository
 

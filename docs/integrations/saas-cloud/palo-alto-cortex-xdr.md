@@ -167,7 +167,9 @@ Prior to installing the Palo Alto Cortex XDR app, you'll first need to set up th
 
 This section has instructions for installing the Sumo Logic app for Palo Alto Cortex XDR.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Palo Alto Cortex XDR dashboards​
 

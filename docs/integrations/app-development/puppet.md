@@ -337,7 +337,9 @@ If you encounter problems:
 
 Now that you have set up collection for Puppet, install the Sumo Logic App for Puppet to use the preconfigured searches and Dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Puppet App Dashboards
 

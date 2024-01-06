@@ -226,7 +226,9 @@ This section provides instructions for installing the Palo Alto Networks 8 App, 
 
 This app supports PAN-OS v7 and v8.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Palo Alto Networks 8 Dashboards
 
