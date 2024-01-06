@@ -76,13 +76,11 @@ If you configured the automation to [run manually](#run-an-automation-manually),
    1. Click **Automations** under the Entity's name.
    1. Select an option under **Entity Automation**.
 
-:::note
+   :::note
+   import ActionLimit from '../../reuse/action-limits.md';
 
-import ActionLimit from '../../reuse/action-limits.md';
-
-<ActionLimit/>
-
-:::
+   <ActionLimit/>
+   :::
 
 ## View automations
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.

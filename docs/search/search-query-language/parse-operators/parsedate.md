@@ -29,7 +29,8 @@ Given the date `2019-11-18T19:00:00.000-08:00` you'd specify the `dateFormat`
 
 Given a log message such as:
 
-`instance of Win32_NTLogEvent
+```
+instance of Win32_NTLogEvent
 {
     EventIdentifier = 100;
     Logfile = "Application";
@@ -38,12 +39,14 @@ Given a log message such as:
     TimeGenerated = "20170720000030.000000-000";
     TimeWritten = "20170720000030.000000-000";
     Type = "Error";
-    ...`
+    ...
+}
+```
 
 The following query returns TimeGenerated as a timestamp in milliseconds, in this example 1500534030000.
 
 `| parse "TimeGenerated = \"*.000000-000" as dd
-| parseDate(dd, "yyyyMMddHHmmss") as milliseconds`
+ | parseDate(dd, "yyyyMMddHHmmss") as milliseconds`
 
 To specify a time zone:
 

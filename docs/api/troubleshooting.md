@@ -7,6 +7,7 @@ hide_table_of_contents: true
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiEndpoints from '../reuse/api-endpoints.md';
 
 <img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Thumbnail icon" width="50"/>
 
@@ -15,9 +16,8 @@ This guide provides information to help you troubleshoot errors you may find whe
 ## Deployments and Sumo Logic Endpoints
 
 <details>
-<summary>Which API endpoint should I use?</summary>
 
-import ApiEndpoints from '../reuse/api-endpoints.md';
+<summary>Which API endpoint should I use?</summary>
 
 <ApiEndpoints/>
 
@@ -41,8 +41,6 @@ The initial request to the Sumo Logic APIs returns the following error message. 
 #### Answer
 
 The likely answer is that the API endpoint in the request did not include the correct deployment. The endpoints in `us1` begin `api.sumologic.com`... but the endpoints in other deployments — `us2`, `eu`, `au` — begin api.YOUR_DEPLOYMENT.sumologic.com.
-
-import ApiEndpoints from '../reuse/api-endpoints.md';
 
 <ApiEndpoints/>
 

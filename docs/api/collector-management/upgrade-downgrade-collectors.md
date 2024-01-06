@@ -33,22 +33,16 @@ Sends a request to get Collectors you can upgrade.
 
 <table>
   <tr>
-   <td><strong>Key</strong>
-   </td>
-   <td><strong>Value</strong>
-   </td>
+   <td><strong>Key</strong></td>
+   <td><strong>Value</strong></td>
   </tr>
   <tr>
-   <td>Content-Type
-   </td>
-   <td><code>application/json</code>
-   </td>
+   <td>Content-Type</td>
+   <td><code>application/json</code></td>
   </tr>
   <tr>
-   <td>Accept
-   </td>
-   <td><code>application/json</code>
-   </td>
+   <td>Accept</td>
+   <td><code>application/json</code></td>
   </tr>
 </table>
 
@@ -58,52 +52,32 @@ Sends a request to get Collectors you can upgrade.
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>toVersion
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>Latest Version
-   </td>
-   <td>Collector build to upgrade (or downgrade) to. If not specified, upgrades to the latest version.
-   </td>
+   <td>toVersion</td>
+   <td>String</td>
+   <td>No</td>
+   <td>Latest Version</td>
+   <td>Collector build to upgrade (or downgrade) to. If not specified, upgrades to the latest version.</td>
   </tr>
   <tr>
-   <td>offset
-   </td>
-   <td>Int
-   </td>
-   <td>No
-   </td>
-   <td>0
-   </td>
-   <td>Offset into the list of Collectors.
-   </td>
+   <td>offset</td>
+   <td>Int</td>
+   <td>No</td>
+   <td>0</td>
+   <td>Offset into the list of Collectors.</td>
   </tr>
   <tr>
-   <td>limit
-   </td>
-   <td>Int
-   </td>
-   <td>No
-   </td>
-   <td>50
-   </td>
-   <td>Maximum number of Collectors to return.
-   </td>
+   <td>limit</td>
+   <td>Int</td>
+   <td>No</td>
+   <td>50</td>
+   <td>Maximum number of Collectors to return.</td>
   </tr>
 </table>
 
@@ -113,36 +87,24 @@ Sends a request to get Collectors you can upgrade.
 
 <table>
   <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Text</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Code</strong></td>
+   <td><strong>Text</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>200
-   </td>
-   <td>OK
-   </td>
-   <td>Upgradable Collectors were retrieved and provided in the response payload.
-   </td>
+   <td>200</td>
+   <td>OK</td>
+   <td>Upgradable Collectors were retrieved and provided in the response payload.</td>
   </tr>
   <tr>
-   <td>415
-   </td>
-   <td>Unsupported Media Type
-   </td>
-   <td>Content-Type wasn't set to <code>application/json</code>.
-   </td>
+   <td>415</td>
+   <td>Unsupported Media Type</td>
+   <td>Content-Type wasn't set to <code>application/json</code>.</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>Bad Request
-   </td>
-   <td>A parameter wasn't valid.
-   </td>
+   <td>400</td>
+   <td>Bad Request</td>
+   <td>A parameter wasn't valid.</td>
   </tr>
 </table>
 
@@ -205,22 +167,16 @@ Sample response:
 
 <table>
   <tr>
-   <td><strong>Key</strong>
-   </td>
-   <td><strong>Value</strong>
-   </td>
+   <td><strong>Key</strong></td>
+   <td><strong>Value</strong></td>
   </tr>
   <tr>
-   <td>Content-Type
-   </td>
-   <td><code>application/json</code>
-   </td>
+   <td>Content-Type</td>
+   <td><code>application/json</code></td>
   </tr>
   <tr>
-   <td>Accept
-   </td>
-   <td><code>application/json</code>
-   </td>
+   <td>Accept</td>
+   <td><code>application/json</code></td>
   </tr>
 </table>
 
@@ -233,28 +189,19 @@ None
 
 <table>
   <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Text</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Code</strong></td>
+   <td><strong>Text</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>200
-   </td>
-   <td>OK
-   </td>
-   <td>The build information has been returned in the response payload.
-   </td>
+   <td>200</td>
+   <td>OK</td>
+   <td>The build information has been returned in the response payload.</td>
   </tr>
   <tr>
-   <td>415
-   </td>
-   <td>Unsupported Media Type
-   </td>
-   <td>Content-Type wasn't set to <code>application/json</code>.
-   </td>
+   <td>415</td>
+   <td>Unsupported Media Type</td>
+   <td>Content-Type wasn't set to <code>application/json</code>.</td>
   </tr>
 </table>
 
@@ -266,22 +213,16 @@ A JSON document containing the versions of collector builds, which includes the 
 
 <table>
   <tr>
-   <td><strong>Field</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Field</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>version
-   </td>
-   <td>(string) Version of the collector build.
-   </td>
+   <td>version</td>
+   <td>(string) Version of the collector build.</td>
   </tr>
   <tr>
-   <td>latest
-   </td>
-   <td>(boolean) Whether it's the latest version.
-   </td>
+   <td>latest</td>
+   <td>(boolean) Whether it's the latest version.</td>
   </tr>
 </table>
 
@@ -329,22 +270,16 @@ After obtaining the upgrade job ID, you can obtain the status of the upgrade tas
 
 <table>
   <tr>
-   <td><strong>Key</strong>
-   </td>
-   <td><strong>Value</strong>
-   </td>
+   <td><strong>Key</strong></td>
+   <td><strong>Value</strong></td>
   </tr>
   <tr>
-   <td>Content-Type
-   </td>
-   <td><code>application/json</code>
-   </td>
+   <td>Content-Type</td>
+   <td><code>application/json</code></td>
   </tr>
   <tr>
-   <td>Accept
-   </td>
-   <td><code>application/json</code>
-   </td>
+   <td>Accept</td>
+   <td><code>application/json</code></td>
   </tr>
 </table>
 
@@ -354,24 +289,16 @@ After obtaining the upgrade job ID, you can obtain the status of the upgrade tas
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>upgradeTaskID
-   </td>
-   <td>Long
-   </td>
-   <td>Yes
-   </td>
-   <td>Task ID from the upgrade task.
-   </td>
+   <td>upgradeTaskID</td>
+   <td>Long</td>
+   <td>Yes</td>
+   <td>Task ID from the upgrade task.</td>
   </tr>
 </table>
 
@@ -381,36 +308,24 @@ After obtaining the upgrade job ID, you can obtain the status of the upgrade tas
 
 <table>
   <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Text</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Code</strong></td>
+   <td><strong>Text</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>200
-   </td>
-   <td>OK
-   </td>
-   <td>The upgrade task status has been returned in the response.
-   </td>
+   <td>200</td>
+   <td>OK</td>
+   <td>The upgrade task status has been returned in the response.</td>
   </tr>
   <tr>
-   <td>415
-   </td>
-   <td>Unsupported Media Type
-   </td>
-   <td>Content-Type wasn't set to <code>application/json</code>.
-   </td>
+   <td>415</td>
+   <td>Unsupported Media Type</td>
+   <td>Content-Type wasn't set to <code>application/json</code>.</td>
   </tr>
   <tr>
-   <td>404
-   </td>
-   <td>Not found
-   </td>
-   <td>The upgrade task ID was not found.
-   </td>
+   <td>404</td>
+   <td>Not found</td>
+   <td>The upgrade task ID was not found.</td>
   </tr>
 </table>
 
@@ -422,50 +337,28 @@ A success result generates a JSON document containing the upgrade task status, i
 
 <table>
   <tr>
-   <td><strong>Field</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Field</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>collectorId
-   </td>
-   <td>Collector ID of this upgrade task (long).
-   </td>
+   <td>collectorId</td>
+   <td>Collector ID of this upgrade task (long).</td>
   </tr>
   <tr>
-   <td>toVersion
-   </td>
-   <td>Target version of this upgrade task (string).
-   </td>
+   <td>toVersion</td>
+   <td>Target version of this upgrade task (string).</td>
   </tr>
   <tr>
-   <td>requestedTime
-   </td>
-   <td>UNIX timestamp when the upgrade task is requested (long).
-   </td>
+   <td>requestedTime</td>
+   <td>UNIX timestamp when the upgrade task is requested (long).</td>
   </tr>
   <tr>
-   <td>status
-   </td>
-   <td>Status code for the upgrade task (integer):
-
-0 - not started
-
-1 - pending, the upgrade is issued awaiting a response from the Collector.
-
-2 - succeeded
-
-3 - failed
-
-6 - Progressing, the upgrade is running on the Collector.
-   </td>
+   <td>status</td>
+   <td>Status code for the upgrade task (integer):<br/>0 - not started <br/>1 - pending, the upgrade is issued awaiting a response from the Collector.<br/>2 - succeeded<br/>3 - failed<br/>6 - Progressing, the upgrade is running on the Collector.</td>
   </tr>
   <tr>
-   <td>message
-   </td>
-   <td>Any additional message, normally a failed reason (string).
-   </td>
+   <td>message</td>
+   <td>Any additional message, normally a failed reason (string).</td>
   </tr>
 </table>
 
@@ -510,22 +403,16 @@ Sample response:
 
 <table>
   <tr>
-   <td><strong>Key</strong>
-   </td>
-   <td><strong>Value</strong>
-   </td>
+   <td><strong>Key</strong></td>
+   <td><strong>Value</strong></td>
   </tr>
   <tr>
-   <td>Content-Type
-   </td>
-   <td><code>application/json</code>
-   </td>
+   <td>Content-Type</td>
+   <td><code>application/json</code></td>
   </tr>
   <tr>
-   <td>Accept
-   </td>
-   <td><code>application/json</code>
-   </td>
+   <td>Accept</td>
+   <td><code>application/json</code></td>
   </tr>
 </table>
 
@@ -539,40 +426,25 @@ None
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>collectorId
-   </td>
-   <td>Long
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>Identifier of the Collector to upgrade (or downgrade).
-   </td>
+   <td>collectorId</td>
+   <td>Long</td>
+   <td>Yes</td>
+   <td></td>
+   <td>Identifier of the Collector to upgrade (or downgrade).</td>
   </tr>
   <tr>
-   <td>toVersion
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>Latest version
-   </td>
-   <td>Collector build to upgrade (or downgrade) to. If not specified, upgrades to the latest version.
-   </td>
+   <td>toVersion</td>
+   <td>String</td>
+   <td>No</td>
+   <td>Latest version</td>
+   <td>Collector build to upgrade (or downgrade) to. If not specified, upgrades to the latest version.</td>
   </tr>
 </table>
 
@@ -582,36 +454,24 @@ None
 
 <table>
   <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Text</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Code</strong></td>
+   <td><strong>Text</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>202
-   </td>
-   <td>Accepted
-   </td>
-   <td>The upgrade task has been created successfully.
-   </td>
+   <td>202</td>
+   <td>Accepted</td>
+   <td>The upgrade task has been created successfully.</td>
   </tr>
   <tr>
-   <td>415
-   </td>
-   <td>Unsupported Media Type
-   </td>
-   <td><code>Content-Type</code> wasn't set to <code>application/json</code>.
-   </td>
+   <td>415</td>
+   <td>Unsupported Media Type</td>
+   <td><code>Content-Type</code> wasn't set to <code>application/json</code>.</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>Bad Request
-   </td>
-   <td>Generic request error by the client.
-   </td>
+   <td>400</td>
+   <td>Bad Request</td>
+   <td>Generic request error by the client.</td>
   </tr>
 </table>
 
@@ -627,40 +487,28 @@ A status code 400 will be returned with following error codes.
 
 <table>
   <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Code</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>collector.invalid
-   </td>
-   <td>The Collector ID was not provided, doesn't exist, or the user doesn't have permission to use it.
-   </td>
+   <td>collector.invalid</td>
+   <td>The Collector ID was not provided, doesn't exist, or the user doesn't have permission to use it.</td>
   </tr>
   <tr>
-   <td>collector.type.invalid
-   </td>
-   <td>The Collector is not an Installed Collector (it is a Hosted Collector).
-   </td>
+   <td>collector.type.invalid</td>
+   <td>The Collector is not an Installed Collector (it is a Hosted Collector).</td>
   </tr>
   <tr>
-   <td>collector.not.alive
-   </td>
-   <td>The Collector is not running.
-   </td>
+   <td>collector.not.alive</td>
+   <td>The Collector is not running.</td>
   </tr>
   <tr>
-   <td>collector.in.upgrading
-   </td>
-   <td>The Collector is currently being upgraded.
-   </td>
+   <td>collector.in.upgrading</td>
+   <td>The Collector is currently being upgraded.</td>
   </tr>
   <tr>
-   <td>collector.version.invalid
-   </td>
-   <td>The upgrade version was not provided, or the version is not valid.
-   </td>
+   <td>collector.version.invalid</td>
+   <td>The upgrade version was not provided, or the version is not valid.</td>
   </tr>
 </table>
 

@@ -98,141 +98,89 @@ import ApiEndpoints from '../reuse/api-endpoints.md';
    <td>The actual query expressions.</td>
   </tr>
   <tr>
-   <td>startTime
-   </td>
-   <td>long
-   </td>
-   <td>Yes
-   </td>
-   <td>Start of the query time range, in milliseconds since epoch.
-   </td>
+   <td>startTime</td>
+   <td>long</td>
+   <td>Yes</td>
+   <td>Start of the query time range, in milliseconds since epoch.</td>
   </tr>
   <tr>
-   <td>endTime
-   </td>
-   <td>long
-   </td>
-   <td>Yes
-   </td>
-   <td>End of the query time range, in milliseconds since epoch.
-   </td>
+   <td>endTime</td>
+   <td>long</td>
+   <td>Yes</td>
+   <td>End of the query time range, in milliseconds since epoch.</td>
   </tr>
   <tr>
-   <td>requestedDataPoints
-   </td>
-   <td>int
-   </td>
-   <td>No
-   </td>
-   <td>Desired number of data points returned per series.
-   </td>
+   <td>requestedDataPoints</td>
+   <td>int</td>
+   <td>No</td>
+   <td>Desired number of data points returned per series.</td>
   </tr>
   <tr>
-   <td>maxDataPoints
-   </td>
-   <td>Int
-   </td>
-   <td>No
-   </td>
-   <td>Upper bound on number of data points returned per series
-   </td>
+   <td>maxDataPoints</td>
+   <td>Int</td>
+   <td>No</td>
+   <td>Upper bound on number of data points returned per series</td>
   </tr>
   <tr>
-   <td>maxTotalDataPoints
-   </td>
-   <td>Int
-   </td>
-   <td>No
-   </td>
-   <td>Upper bound on sum total number of data points returned across all series.
-   </td>
+   <td>maxTotalDataPoints</td>
+   <td>Int</td>
+   <td>No</td>
+   <td>Upper bound on sum total number of data points returned across all series.</td>
   </tr>
   <tr>
-   <td>desiredQuantizationInSec
-   </td>
-   <td>Int
-   </td>
-   <td>No
-   </td>
-   <td>Desired granularity of temporal quantization in seconds. Note that this may be overridden by the backend in order to satisfy constraints on the number of data points returned.
-   </td>
+   <td>desiredQuantizationInSec</td>
+   <td>Int</td>
+   <td>No</td>
+   <td>Desired granularity of temporal quantization in seconds. Note that this may be overridden by the backend in order to satisfy constraints on the number of data points returned.</td>
   </tr>
 </table>
-
-
 
 ### QueryWithRowId object
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>query
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>The actual metrics search expression.
-   </td>
+   <td>query</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>The actual metrics search expression.</td>
   </tr>
   <tr>
-   <td>rowId
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>Name or alias for this “row” of the query.
-   </td>
+   <td>rowId</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>Name or alias for this “row” of the query.</td>
   </tr>
 </table>
-
-
 
 
 ### Status codes
 
 <table>
   <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Text</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Code</strong></td>
+   <td><strong>Text</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>200
-   </td>
-   <td>Success
-   </td>
-   <td>The query has been successfully executed.
-   </td>
+   <td>200</td>
+   <td>Success</td>
+   <td>The query has been successfully executed.</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>Bad Request
-   </td>
-   <td>Generic request error by the client.
-   </td>
+   <td>400</td>
+   <td>Bad Request</td>
+   <td>Generic request error by the client.</td>
   </tr>
   <tr>
-   <td>415
-   </td>
-   <td>Unsupported Media Type
-   </td>
-   <td>Content-Type wasn't set to application/json.
-   </td>
+   <td>415</td>
+   <td>Unsupported Media Type</td>
+   <td>Content-Type wasn't set to application/json.</td>
   </tr>
 </table>
 
@@ -242,28 +190,19 @@ The result will be a JSON document containing results (or an error) for each que
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>response
-   </td>
-   <td>[MetricsErrorsOrResults]
-   </td>
-   <td>Results (or error) for each row-query.
-   </td>
+   <td>response</td>
+   <td>[MetricsErrorsOrResults]</td>
+   <td>Results (or error) for each row-query.</td>
   </tr>
   <tr>
-   <td>queryInfo
-   </td>
-   <td>MetricsQueryInfo
-   </td>
-   <td>Information about the original user query.
-   </td>
+   <td>queryInfo</td>
+   <td>MetricsQueryInfo</td>
+   <td>Information about the original user query.</td>
   </tr>
 </table>
 
@@ -272,47 +211,29 @@ The result will be a JSON document containing results (or an error) for each que
 
 <table>
   <tr>
-   <td>
-    <strong>Parameter</strong>
-   </td>
-   <td>
-    <strong>Type</strong>
-   </td>
-   <td>
-    <strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>startTime
-   </td>
-   <td>long
-   </td>
-   <td>Start of the query time range, in milliseconds since epoch.
-   </td>
+   <td>startTime</td>
+   <td>long</td>
+   <td>Start of the query time range, in milliseconds since epoch.</td>
   </tr>
   <tr>
-   <td>endTime
-   </td>
-   <td>long
-   </td>
-   <td>End of the query time range, in milliseconds since epoch.
-   </td>
+   <td>endTime</td>
+   <td>long</td>
+   <td>End of the query time range, in milliseconds since epoch.</td>
   </tr>
   <tr>
-   <td>desiredQuantizationInSecs
-   </td>
-   <td>int
-   </td>
-   <td>Original user-supplied desired granularity of temporal <a href="/docs/metrics/metric-charts/interacting-metric-charts#Adjust_the_quantization_interval">quantization</a> (if supplied).
-   </td>
+   <td>desiredQuantizationInSecs</td>
+   <td>int</td>
+   <td>Original user-supplied desired granularity of temporal <a href="/docs/metrics/metric-charts/interacting-metric-charts#Adjust_the_quantization_interval">quantization</a> (if supplied).</td>
   </tr>
   <tr>
-   <td>actualQuantizationInSecs
-   </td>
-   <td>int
-   </td>
-   <td>Actual granularity of temporal quantization used by the back-end for query.
-   </td>
+   <td>actualQuantizationInSecs</td>
+   <td>int</td>
+   <td>Actual granularity of temporal quantization used by the back-end for query.</td>
   </tr>
 </table>
 
@@ -324,36 +245,24 @@ The result will be a JSON document containing results (or an error) for each que
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>rowId
-   </td>
-   <td>String
-   </td>
-   <td>Name or alias for this “row” of the query.
-   </td>
+   <td>rowId</td>
+   <td>String</td>
+   <td>Name or alias for this “row” of the query.</td>
   </tr>
   <tr>
-   <td>messageType
-   </td>
-   <td>String
-   </td>
-   <td>Error type.
-   </td>
+   <td>messageType</td>
+   <td>String</td>
+   <td>Error type.</td>
   </tr>
   <tr>
-   <td>message
-   </td>
-   <td>String
-   </td>
-   <td>Error message.
-   </td>
+   <td>message</td>
+   <td>String</td>
+   <td>Error message.</td>
   </tr>
 </table>
 
@@ -365,28 +274,19 @@ The result will be a JSON document containing results (or an error) for each que
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>rowId
-   </td>
-   <td>String
-   </td>
-   <td>Name or alias for this “row” of the query.
-   </td>
+   <td>rowId</td>
+   <td>String</td>
+   <td>Name or alias for this “row” of the query.</td>
   </tr>
   <tr>
-   <td>results
-   </td>
-   <td>[MetricsRowResult]
-   </td>
-   <td>Actual retrieved and computed values for series returned by this row’s query.
-   </td>
+   <td>results</td>
+   <td>[MetricsRowResult]</td>
+   <td>Actual retrieved and computed values for series returned by this row’s query.</td>
   </tr>
 </table>
 
@@ -395,28 +295,19 @@ The result will be a JSON document containing results (or an error) for each que
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>metric
-   </td>
-   <td>MetricDef
-   </td>
-   <td>Full metric definition for this result.
-   </td>
+   <td>metric</td>
+   <td>MetricDef</td>
+   <td>Full metric definition for this result.</td>
   </tr>
   <tr>
-   <td>datapoints
-   </td>
-   <td>MetricsDataPoints
-   </td>
-   <td>The actual results.
-   </td>
+   <td>datapoints</td>
+   <td>MetricsDataPoints</td>
+   <td>The actual results.</td>
   </tr>
 </table>
 
@@ -425,28 +316,19 @@ The result will be a JSON document containing results (or an error) for each que
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>dimensions
-   </td>
-   <td>[MetricDim]
-   </td>
-   <td>Identifying dimensions for this metric.
-   </td>
+   <td>dimensions</td>
+   <td>[MetricDim]</td>
+   <td>Identifying dimensions for this metric.</td>
   </tr>
   <tr>
-   <td>algoId
-   </td>
-   <td>long
-   </td>
-   <td>Internal identifier for the outlier detection algorithm used in these results.
-   </td>
+   <td>algoId</td>
+   <td>long</td>
+   <td>Internal identifier for the outlier detection algorithm used in these results.</td>
   </tr>
 </table>
 
@@ -456,28 +338,19 @@ The result will be a JSON document containing results (or an error) for each que
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>key
-   </td>
-   <td>string
-   </td>
-   <td>Key name for this dimension.
-   </td>
+   <td>key</td>
+   <td>string</td>
+   <td>Key name for this dimension.</td>
   </tr>
   <tr>
-   <td>value
-   </td>
-   <td>string
-   </td>
-   <td>Associated value for this key.
-   </td>
+   <td>value</td>
+   <td>string</td>
+   <td>Associated value for this key.</td>
   </tr>
 </table>
 
@@ -487,68 +360,44 @@ The result will be a JSON document containing results (or an error) for each que
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>timestamp
-   </td>
-   <td>[long]
-   </td>
-   <td>Timestamps (milliseconds since epoch) for each data point.
-   </td>
+   <td>timestamp</td>
+   <td>[long]</td>
+   <td>Timestamps (milliseconds since epoch) for each data point.</td>
   </tr>
   <tr>
-   <td>value
-   </td>
-   <td>[float]
-   </td>
-   <td>Actual numerical values for reach data point.
-   </td>
+   <td>value</td>
+   <td>[float]</td>
+   <td>Actual numerical values for reach data point.</td>
   </tr>
   <tr>
-   <td>outlierParams
-   </td>
-   <td>
-   </td>
-   <td>Internal parameters for outlier detection.
-   </td>
+   <td>outlierParams</td>
+   <td></td>
+   <td>Internal parameters for outlier detection.</td>
   </tr>
   <tr>
-   <td>Max
-   </td>
-   <td>[float]
-   </td>
-   <td>Maximum aggregate.
-   </td>
+   <td>Max</td>
+   <td>[float]</td>
+   <td>Maximum aggregate.</td>
   </tr>
   <tr>
-   <td>Min
-   </td>
-   <td>[float]
-   </td>
-   <td>Minimum aggregate.
-   </td>
+   <td>Min</td>
+   <td>[float]</td>
+   <td>Minimum aggregate.</td>
   </tr>
   <tr>
-   <td>Avg
-   </td>
-   <td>[float]
-   </td>
-   <td>Average aggregate.
-   </td>
+   <td>Avg</td>
+   <td>[float]</td>
+   <td>Average aggregate.</td>
   </tr>
   <tr>
-   <td>Count
-   </td>
-   <td>[int]
-   </td>
-   <td>Count of raw observations
-   </td>
+   <td>Count</td>
+   <td>[int]</td>
+   <td>Count of raw observations</td>
   </tr>
 </table>
 

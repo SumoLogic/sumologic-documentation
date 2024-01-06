@@ -116,44 +116,29 @@ The following suffixes are required. For example, you could use `_sourceCategory
 
 <table><small>
   <tr>
-   <td><strong>Log source</strong>
-   </td>
-   <td><strong>File Path</strong>
-   </td>
-   <td><strong>Source Category</strong>
-   </td>
+   <td><strong>Log source</strong>   </td>
+   <td><strong>File Path</strong> </td>
+   <td><strong>Source Category</strong>   </td>
   </tr>
   <tr>
-   <td>Artifactory Server
-   </td>
-   <td>/var/opt/jfrog/artifactory/logs/artifactory.log
-   </td>
-   <td>artifactory/console
-   </td>
+   <td>Artifactory Server </td>
+   <td>/var/opt/jfrog/artifactory/logs/artifactory.log </td>
+   <td>artifactory/console   </td>
   </tr>
   <tr>
-   <td>Access
-   </td>
-   <td>/var/opt/jfrog/artifactory/logs/access.log
-   </td>
-   <td>artifactory/access
-   </td>
+   <td>Access   </td>
+   <td>/var/opt/jfrog/artifactory/logs/access.log   </td>
+   <td>artifactory/access   </td>
   </tr>
   <tr>
-   <td>Request
-   </td>
-   <td>/var/opt/jfrog/artifactory/logs/request.log
-   </td>
-   <td>artifactory/request
-   </td>
+   <td>Request   </td>
+   <td>/var/opt/jfrog/artifactory/logs/request.log   </td>
+   <td>artifactory/request </td>
   </tr>
   <tr>
-   <td>Traffic
-   </td>
-   <td>/var/opt/jfrog/artifactory/logs/traffic.*.log
-   </td>
-   <td>artifactory/traffic
-   </td>
+   <td>Traffic   </td>
+   <td>/var/opt/jfrog/artifactory/logs/traffic.*.log  </td>
+   <td>artifactory/traffic   </td>
   </tr></small>
 </table>
 
@@ -296,44 +281,29 @@ The following suffixes are required. For example, you could use `_sourceCategory
 
 <table><small>
   <tr>
-   <td><strong>Log source</strong>
-   </td>
-   <td><strong>File Path</strong>
-   </td>
-   <td><strong>Source Category</strong>
-   </td>
+   <td><strong>Log source</strong>   </td>
+   <td><strong>File Path</strong>   </td>
+   <td><strong>Source Category</strong>   </td>
   </tr>
   <tr>
-   <td>Artifactory Server and other microservices
-   </td>
-   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-service.log
-   </td>
-   <td>artifactory/console
-   </td>
+   <td>Artifactory Server and other microservices   </td>
+   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-service.log </td>
+   <td>artifactory/console   </td>
   </tr>
   <tr>
-   <td>Access
-   </td>
-   <td>$JFROG_HOME/artifactory/var/artifactory/log/artifactory-access.log.
-   </td>
-   <td>artifactory/access
-   </td>
+   <td>Access </td>
+   <td>$JFROG_HOME/artifactory/var/artifactory/log/artifactory-access.log.   </td>
+   <td>artifactory/access   </td>
   </tr>
   <tr>
-   <td>Request
-   </td>
-   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-request.log
-   </td>
-   <td>artifactory/request
-   </td>
+   <td>Request   </td>
+   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-request.log   </td>
+   <td>artifactory/request   </td>
   </tr>
   <tr>
-   <td>Traffic
-   </td>
-   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-traffic.*.log
-   </td>
-   <td>artifactory/traffic
-   </td>
+   <td>Traffic</td>
+   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-traffic.*.log   </td>
+   <td>artifactory/traffic   </td>
   </tr></small>
 </table>
 

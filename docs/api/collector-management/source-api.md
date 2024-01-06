@@ -36,40 +36,25 @@ Gets information about all Sources for a specified Collector.
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>collectorId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Collector identifier.
-   </td>
+   <td>collectorId</td>
+   <td>integer</td>
+   <td>Yes</td>
+   <td>NA</td>
+   <td>Unique Collector identifier.</td>
   </tr>
   <tr>
-   <td>download
-   </td>
-   <td>boolean
-   </td>
-   <td>No
-   </td>
-   <td>false
-   </td>
-   <td>When set to <code>true</code>, the response will be a JSON array of Sources that can be used to register a new Collector.
-   </td>
+   <td>download</td>
+   <td>boolean</td>
+   <td>No</td>
+   <td>false</td>
+   <td>When set to <code>true</code>, the response will be a JSON array of Sources that can be used to register a new Collector.</td>
   </tr>
 </table>
 
@@ -165,52 +150,32 @@ Gets information about a specified Collector and Source.
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>collectorId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Collector identifier.
-   </td>
+   <td>collectorId</td>
+   <td>integer</td>
+   <td>Yes</td>
+   <td>NA</td>
+   <td>Unique Collector identifier.</td>
   </tr>
   <tr>
-   <td>sourceId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Source identifier.
-   </td>
+   <td>sourceId</td>
+   <td>integer</td>
+   <td>Yes</td>
+   <td>NA</td>
+   <td>Unique Source identifier.</td>
   </tr>
   <tr>
-   <td>download
-   </td>
-   <td>boolean
-   </td>
-   <td>No
-   </td>
-   <td>false
-   </td>
-   <td>When set to <code>true</code>, the response will be a JSON Source object that can be used to create a new Source.
-   </td>
+   <td>download</td>
+   <td>boolean</td>
+   <td>No</td>
+  <td>false</td>
+   <td>When set to <code>true</code>, the response will be a JSON Source object that can be used to create a new Source.</td>
   </tr>
 </table>
 
@@ -305,28 +270,18 @@ Creates a new Source for a Collector. See [Use JSON to Configure Sources](/docs/
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>collectorId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Collector identifier.
-   </td>
+   <td>collectorId</td>
+   <td>integer</td>
+   <td>Yes</td>
+   <td>NA</td>
+   <td>Unique Collector identifier.</td>
   </tr>
 </table>
 
@@ -422,40 +377,25 @@ Updating a Source also requires the "If-Match" header to be specified with the "
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>collectorId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Collector identifier.
-   </td>
+   <td>collectorId</td>
+   <td>integer</td>
+   <td>Yes</td>
+   <td>NA</td>
+   <td>Unique Collector identifier.</td>
   </tr>
   <tr>
-   <td>sourceId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Source identifier.
-   </td>
+   <td>sourceId</td>
+   <td>integer</td>
+   <td>Yes</td>
+   <td>NA</td>
+   <td>Unique Source identifier.</td>
   </tr>
 </table>
 
@@ -590,40 +530,25 @@ Requests to delete Sources from the [Cloud-to-Cloud Integration Framework](/docs
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>collectorId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Collector identifier.
-   </td>
+   <td>collectorId</td>
+   <td>integer</td>
+   <td>Yes</td>
+   <td>NA</td>
+   <td>Unique Collector identifier.</td>
   </tr>
   <tr>
-   <td>sourceId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Source identifier.
-   </td>
+   <td>sourceId</td>
+   <td>integer</td>
+   <td>Yes</td>
+   <td>NA</td>
+   <td>Unique Source identifier.</td>
   </tr>
 </table>
 
@@ -647,57 +572,39 @@ Response: There will be no response body, only a 200 OK response code.
 
 <table>
   <tr>
-   <td>Code
-   </td>
-   <td>Message
-   </td>
+   <td>Code</td>
+   <td>Message</td>
   </tr>
   <tr>
-   <td>BadRequestBladeId
-   </td>
-   <td>Request body contains an invalid Source ID.
-   </td>
+   <td>BadRequestBladeId</td>
+   <td>Request body contains an invalid Source ID.</td>
   </tr>
   <tr>
-   <td>CannotModifySources
-   </td>
-   <td>Collector is in JSON mode, user cannot create, delete, or update sources using the API.
-   </td>
+   <td>CannotModifySources</td>
+   <td>Collector is in JSON mode, user cannot create, delete, or update sources using the API.</td>
   </tr>
   <tr>
-   <td>CollectorDescriptionTooLong
-   </td>
-   <td>Maximum description length is 1024 characters.
-   </td>
+   <td>CollectorDescriptionTooLong</td>
+   <td>Maximum description length is 1024 characters.</td>
   </tr>
   <tr>
-   <td>CollectorNameTooLong
-   </td>
-   <td>Maximum name length is 128 characters.
-   </td>
+   <td>CollectorNameTooLong</td>
+   <td>Maximum name length is 128 characters.</td>
   </tr>
   <tr>
-   <td>createValidationError
-   </td>
-   <td>The specified ID is invalid.
-   </td>
+   <td>createValidationError</td>
+   <td>The specified ID is invalid.</td>
   </tr>
   <tr>
-   <td>DuplicateResourceName
-   </td>
-   <td>A resource with the same name already exists.
-   </td>
+   <td>DuplicateResourceName</td>
+   <td>A resource with the same name already exists.</td>
   </tr>
   <tr>
-   <td>EmptySourceType
-   </td>
-   <td>Need to specify a source type.
-   </td>
+   <td>EmptySourceType</td>
+   <td>Need to specify a source type.</td>
   </tr>
   <tr>
-   <td>InvalidSourceType
-   </td>
-   <td>Invalid Source type for the requested operation.
-   </td>
+   <td>InvalidSourceType</td>
+   <td>Invalid Source type for the requested operation.</td>
   </tr>
 </table>

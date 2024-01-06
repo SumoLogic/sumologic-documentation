@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 | Polling Interval | Data |
 | :--- | :--- |
-| {{Polling time in minutes}} | {{Data sources}} |
+| `{{Polling time in minutes}}` | `{{Data sources}}` |
 
 Example:
 | Polling Interval | Data |
@@ -66,7 +66,7 @@ Example: [Split source configuration](/docs/integrations/webhooks/split/#source-
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
-| {{`field`}} | {{value}} | {{Description}} |
+| `{{field}}` | `{{value}}` | `{{Description}}` |
 
 ## Installing the Split app
 

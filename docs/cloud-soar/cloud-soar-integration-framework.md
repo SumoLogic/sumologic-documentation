@@ -48,7 +48,7 @@ Both the integration definition file and the action definition file are YAML fil
    * **testable_connection* ** [Boolean]: Is test code present (true/false).
    * **require_proxy_config* ** [Boolean]: True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter `proxy_url` will be passed to the code on execution as an environment variable.
    * **data_attributes* **: Fields required for configuration.
-      * **<field_name>* ** [String]: Name of field which will be passed to code as environment variable. One `<field_name>` attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The `<field_name>` parameters will be passed to the code on execution.
+      * **`<field_name>`* ** [String]: Name of field which will be passed to code as environment variable. One `<field_name>` attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The `<field_name>` parameters will be passed to the code on execution.
          * **label* ** [String]: Label displayed in the UI.
          * **type* ** [String]: Type of field. Acceptable values are:
            * `checkbox`
@@ -70,7 +70,7 @@ Both the integration definition file and the action definition file are YAML fil
            * `ip: IP Address`
            * `url: URL`<br/>In this example, if a user selected IP Address from the dropdown list, the value `ip` would be passed to the parameter at runtime as an environment variable.
    * **listing_attributes** Configuration fields to show in the resource table.
-      * **<field_name>* ** [String]: Name of field which will be shown in the table.
+      * **`<field_name>`* ** [String]: Name of field which will be shown in the table.
       * **name* ** [String]: Name displayed in the column header.
 * **signature** [String]: Signature to indicate integration is the original one written by Sumo Logic.
 

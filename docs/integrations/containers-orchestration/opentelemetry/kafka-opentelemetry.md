@@ -139,29 +139,6 @@ import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md
 <PuppetNoEnv/>
 
 </TabItem>
-<TabItem value="Chef">
-
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
-
-</TabItem>
 </Tabs>
 
 import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';

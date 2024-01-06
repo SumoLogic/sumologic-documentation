@@ -3,6 +3,7 @@ id: add-dashboard-link
 title: Add a Dashboard Link
 ---
 
+<!--
 You can use the [tourl](/docs/search/search-query-language/search-operators/tourl) operator to link values in a dashboard to any other dashboard where you have View permissions. You can also pass dynamic values to these dashboards and searches based on a table entry.
 
 These in-query links provide convenient drill down capabilities for problem solving. For example, if you track user activity on your website in a dashboard, you can have a panel that provides summary statistics for each user, such as number of logins, as well as links to details that open searches or other dashboards with specific search and dashboard usage statistics.
@@ -137,3 +138,4 @@ All this information can help your users investigate security incidents quickly 
 | tourl(url, threatName) as threatName
 | fields -query,url
 ```
+-->
