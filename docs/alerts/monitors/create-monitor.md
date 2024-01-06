@@ -125,7 +125,7 @@ You can set the trigger based on the following:
 |:--|:--|
 | Threshold type | How you want the value compared. Select either **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
 | Threshold | The value against which the trigger will be evaluated. You can specify any valid numeric value up to **1,000**. |
-| Time range | The duration of time to evaluate. Select either **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, **6 hours**, **12 hours**, or **24 hours**. |
+| Time range | The duration of time to evaluate. Select either **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, **3 hours**, **6 hours**, **12 hours**, or **24 hours**. |
 
 **Recover**
 
@@ -176,7 +176,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 | Parameter | Description |
 |:--|:--|
-| Time range | The time span of data to evaluate. Select either 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 6 hours, 12 hours, or 24 hours. |
+| Time range | The time span of data to evaluate. Select either 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 3 hours, 6 hours, 12 hours, or 24 hours. |
 
 Recover
 
@@ -194,7 +194,7 @@ Recover
 
 | Parameter | Description |
 |:--|:--|
-| Detection Window | The duration of time to watch for anomalies. Select either 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 6 hours, 12 hours, or 24 hours.  |
+| Detection Window | The duration of time to watch for anomalies. Select either 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 3 hours, 6 hours, 12 hours, or 24 hours.  |
 | Detector Sensitivity | Tunes the number of anomalous data points detected per day compared to the predicted baseline for the detection window. High sensitivity will result in more alerts and vice versa. |
 | Minimum Anomaly Count | The minimum number of anomalies to detect during the detection window before triggering an alert. For example, if the Detection Window is set to 5 minutes, and the Minimum Anomaly Count is set to 1, then an alert is triggered if 1 anomaly appears within a 5 minute timeframe. |
 
@@ -223,7 +223,7 @@ Recover
 | Threshold type | How you want the value compared. Select either **greater than**, **greater than or equal**, **less than or equal**, or **less than**. |
 | Threshold | The value against which the trigger will be evaluated. You can specify any valid numeric value. |
 | Occurrence type | The time condition you want for the trigger. Select either **at any time within** or **at all times within**. <br/><br/>Choose **at all times within** if you want all the data points for the given metric to meet threshold conditions in a given time range, before triggering an alert. Alternatively, choose **at any time within** if you want to generate an alert when at least one single data point meets the threshold condition for the given time range. |
-| Time range | The duration of time to evaluate. Select either **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, or **1 hour**. |
+| Time range | The duration of time to evaluate. Select either **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, **3 hours**, **6 hours**, **12 hours**, or **24 hours**. |
 
 **Recover**
 
@@ -270,7 +270,7 @@ This setting only works when you choose `at all times within` as the type of occ
 | Parameter | Description |
 |:--|:--|
 | Threshold  | The number of standard deviations for calculating violations. The default is 3.0. |
-| Time range | The duration of time to evaluate. Select either **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, or **24 hours**. |
+| Time range | The duration of time to evaluate. Select either **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, **3 hours**, **6 hours**, **12 hours**, or **24 hours**. |
 
 **Recover**
 
@@ -286,7 +286,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 | Parameter | Description |
 |:--|:--|
 | Occurrence type  | The time condition you want for the trigger. Choose either **for all** or **for any**.<br/><br/>If you choose all you will get notified when all of the metrics meeting the query condition are not sending data in the given time range.<br/><br/>Alternatively, you can choose any if you want to get notified when one of the metrics does not receive any data in the given time range. *This option requires at least one initial data point and expires after 24 hours once triggered.* |
-| Time range | The duration of time to evaluate. Select either **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, or **1 hour**. |
+| Time range | The duration of time to evaluate. Select either **5 minutes**, **10 minutes**, **15 minutes**, **30 minutes**, **1 hour**, **3 hours**, **6 hours**, **12 hours**, or **24 hours**. |
 
 **Recover**
 

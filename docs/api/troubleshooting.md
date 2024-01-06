@@ -117,12 +117,12 @@ curl -b cookies.txt -c cookies.txt -H 'Content-type: application/json' -H 'Accep
 curl -v --trace-ascii - -b cookies.txt -c cookies.txt -H 'Accept: application/json' --user <ACCESSID>:<ACCESSKEY> https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>
 ```
 
-The [Search Job API documentation](https://github.com/SumoLogic/sumo-api-doc/wiki/search-job-api%20) provides an example of how to use the API (and does specify that cookies are to be supplied). Better error messaging around this type of error is under review and should be provided in a future release.
+The [Search Job API documentation](/docs/api/search-job) provides an example of how to use the API (and does specify that cookies are to be supplied). Better error messaging around this type of error is under review and should be provided in a future release.
 
 
 ## Search Job API Results into formatted JSON file
 
-When getting current Search Job API results using Sumo Logic's [Search Job API](https://github.com/SumoLogic/sumo-api-doc/wiki/Search-Job-API) ([https://github.com/SumoLogic/sumo-ap...Search-Job-API](https://github.com/SumoLogic/sumo-api-doc/wiki/Search-Job-API)) the results can be nicely formatted into a JSON file.
+When getting current Search Job API results using Sumo Logic's [Search Job API](/docs/api/search-job) ([https://github.com/SumoLogic/sumo-ap...Search-Job-API](https://github.com/SumoLogic/sumo-api-doc/wiki/Search-Job-API)) the results can be nicely formatted into a JSON file.
 
 Using an open source Python tool called mjson that comes with the standard Python libraries you can put your results in an easier to read format. You can reference the tool at the following links:
 * [https://pypi.python.org/pypi/mjson](https://pypi.python.org/pypi/mjson)

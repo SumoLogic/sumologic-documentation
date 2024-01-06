@@ -627,7 +627,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
      * `component - “proxy”` - In the input `[[inputs.snmp]]` plugins section. This value is used by Sumo Logic apps to identify application components.
      * `proxy_system - “squidproxy”` - In the input plugins sections. This value identifies the proxy system.
 
-  See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
+  See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for all other parameters that can be configured in the Telegraf agent globally.
 
   After you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 

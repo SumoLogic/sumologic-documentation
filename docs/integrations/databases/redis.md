@@ -533,16 +533,14 @@ email_notifications = [
 
 This section demonstrates how to install the Redis ULM app.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
 1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    2. **Data Source.**  Choose **Enter a Custom Data Filter** and enter a custom Redis cluster filter. Examples:
-     * For all Redis clusters: `db_cluster=*`
-     * For a specific cluster: `db_cluster=redis.dev.01`. 
-     * Clusters within a specific environment: `db_cluster=redis-1 and environment=prod`. (This assumes you have set the optional environment tag while configuring collection)
+      * For all Redis clusters: `db_cluster=*`
+      * For a specific cluster: `db_cluster=redis.dev.01`
+      * Clusters within a specific environment: `db_cluster=redis-1 and environment=prod`. (This assumes you have set the optional environment tag while configuring collection).
    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 

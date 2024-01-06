@@ -436,7 +436,7 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
 </table>
 
 
-#### Query parameters
+#### Request parameters
 
 <table>
   <tr>
@@ -643,7 +643,7 @@ Use the search job ID to obtain the current status of a search job (step 4 in th
 </details>
 
 
-#### Query parameters
+#### Request parameters
 
 
 <table>
@@ -765,7 +765,7 @@ The search job status informs the user about the number of found messages. The m
 
 </details>
 
-#### Query parameters
+#### Request parameters
 
 <table>
   <tr>
@@ -984,7 +984,7 @@ The search job status informs the user as to the number of produced records, if 
 
 </details>
 
-#### Query parameters
+#### Request parameters
 
 
 <table>
@@ -1087,7 +1087,7 @@ Although search jobs ultimately time out in the Sumo Logic backend, it's a good 
 
 </details>
 
-#### Query parameters
+#### Request parameters
 
 <table>
   <tr>

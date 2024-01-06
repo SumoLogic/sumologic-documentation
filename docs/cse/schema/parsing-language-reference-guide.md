@@ -30,7 +30,7 @@ execution time.
 For historic reasons, the named groups in the regex of many parsers still uses Python-style notation, for instance `(?P<syslog_timestamp>[^ ]+ +[^ ]+ [^ ]+)`. When you write new regular expressions, you can omit P.
 :::
 
-You can find a regex debugger at [https://regoio.herokuapp.com/](https://regoio.herokuapp.com/).
+You can find a regex debugger at [https://www.debuggex.com](https://www.debuggex.com).
 
 :::note
 This debugger uses the GoLang RE2 library, but all RE2 libraries are based on the same codebase and it is a sufficient test mechanism.
