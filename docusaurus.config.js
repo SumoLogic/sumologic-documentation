@@ -6,8 +6,9 @@
 
 const fs = require('fs')
 
-const lightCodeTheme = require('./src/utils/prismLight');
-const darkCodeTheme = require('./src/utils/prismDark');
+const {themes} = require('prism-react-renderer');
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString())
 
@@ -262,7 +263,7 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
     },
       navbar: {
         logo: {
