@@ -35,7 +35,7 @@ An aggregation function can't take another function (such as a math function). 
 ... | avg(x + y) as average
 ```
 
-Instead use separate steps:  
+Instead, use separate steps:  
 
 ```sql
 ... | x + y as z | avg(z) as average

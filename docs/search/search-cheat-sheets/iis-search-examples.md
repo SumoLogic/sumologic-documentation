@@ -10,9 +10,7 @@ The IIS Search Examples cheat sheet provides examples of useful IIS search queri
 
 The examples use this sample Access log message where applicable:
 
-```json
-2015-06-03 00:02:48 GET /myurl dp=mysearch 8200 10.1.1.1 Windows-RSS-Platform/2.0+(IE+11.0;+Windows+NT+6.2) - - abcd.com 200 0 0 2583 271 15
-```
+`2015-06-03 00:02:48 GET /myurl dp=mysearch 8200 10.1.1.1 Windows-RSS-Platform/2.0+(IE+11.0;+Windows+NT+6.2) - - abcd.com 200 0 0 2583 271 15`
 
 ## Keyword Expressions
 
@@ -23,31 +21,81 @@ The examples use this sample Access log message where applicable:
 | Look for general authorization failures excluding router messages. | `(fail* OR error?) NOT _source=routers` |
 
 :::sumo More Info
-For more information, see [Keyword Search Expression](../get-started-with-search/build-search/keyword-search-expressions.md)
+For more information, see [Keyword Search expressions](../get-started-with-search/build-search/keyword-search-expressions.md).
 :::
 
 ## Parse, Count, and Top Operators
 
-| Use Case | Sumo Logic Query Example |
-| :-- | :-- |
-| Extract "from" and "to" fields using a simple wild card. For example, if a raw event contains "From: Jane To: John", then from=Jane and to=John.  `* | parse "From: * To: *" as from, to` |
-| Extract IP address using a regex pattern.	 | `* | parse regex "(?<c_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" ` |
-| Identify pages visited, extracted as the "cs_uri_stem" field.	 | `_source=IIS | parse "GET * " as cs_uri_stem ` |
-| Identify messages with status code “200” and extract the sc_substatus, sc_win32_status, and sc_bytes fields.  | `_source=IIS | parse " 200 * * * " as sc_substatus, sc_win32_status, sc_bytes` |
-
-The following examples assume you used the parsing from above:
-
-| Use Case | Sumo Logic Query Example |
-| :-- | :-- |
-| Calculate the total number of bytes transferred to each client IP address. | &#124; count, sum(sc_bytes) by c_ip |  
-|Calculate the average size of successful HTTP responses. | &#124; avg(sc_bytes) |
-| If the "sc_substatus" field is missing don't exclude those messages (nodrop)…otherwise non-matches would be filtered out.| &#124; parse " 200 \* " as sc_substatusnodrop |
-|Calculate the number of times a page has been visited. | &#124; count by cs_uri_stem |  
-| Calculate the total number of pages by client IP addresses. | &#124; count by c_ip |
-| Calculate the total number of pages by client IP address, sort them highest to lowest. | &#124; count by c_ip &#124; sort by _countdesc |
-| Identify the top 10 pages. |   &#124; count by cs_uri_stem &#124; top 10 cs_uri_stem by _count |
-| Identify the top 10 client IP addresses by bandwidth usage.|  &#124; sum(sc_bytes) as total_bytes by c_ip  &#124; top 10 c_ip by total_bytes |  
-| Identify the top 100 client IP addresses by number of hits.| &#124; count by c_ip &#124; top 100 c_ip by _count |  
+<table>
+  <tr>
+   <td><strong>Use Case</strong></td>
+   <td><strong>Sumo Logic Query Example</strong></td>
+  </tr>
+  <tr>
+   <td>Extract "from" and "to" fields using a simple wild card. For example, if a raw event contains "From: Jane To: John", then from=Jane and to=John.</td>
+   <td><code>* | parse "From: * To: *" as from, to</code></td>
+  </tr>
+  <tr>
+   <td>Extract IP address using a regex pattern.</td>
+   <td><code>* | parse regex&nbsp;<br/> &quot;(?&lt;c_ip&gt;\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})&quot;</code></td>
+  </tr>
+  <tr>
+   <td>Identify pages visited, extracted as the "cs_uri_stem" field.</td>
+   <td><code>_source=IIS </code>
+   <p><code>| parse "GET * " as cs_uri_stem</code></p></td>
+  </tr>
+  <tr>
+   <td>Identify messages with status code “200” and extract the sc_substatus, sc_win32_status, and sc_bytes fields.</td>
+   <td><code>_source=IIS</code>
+   <p><code>| parse " 200 * * * " as sc_substatus, sc_win32_status, sc_bytes</code></p></td>
+  </tr>
+  <tr>
+   <td> </td>
+   <td><strong>Examples below assume the parsing used above</strong></td>
+  </tr>
+  <tr>
+   <td>Calculate the total number of bytes transferred to each client IP address.</td>
+   <td><code>| count, sum(sc_bytes) by c_ip</code></td>
+  </tr>
+  <tr>
+   <td>Calculate the average size of successful HTTP responses.</td>
+   <td><code>| avg(sc_bytes)</code></td>
+  </tr>
+  <tr>
+   <td>If the "sc_substatus" field is missing don’t exclude those messages (nodrop)…otherwise non-matches would be filtered out.</td>
+   <td><code>| parse " 200 * " as sc_substatus nodrop</code>
+   </td>
+  </tr>
+  <tr>
+   <td>Calculate the number of times a page has been visited.</td>
+   <td><code>| count by cs_uri_stem</code></td>
+  </tr>
+  <tr>
+   <td>Calculate the total number of pages by client IP addresses.</td>
+   <td><code>| count by c_ip</code></td>
+  </tr>
+  <tr>
+   <td>Calculate the total number of pages by client IP address, sort them highest to lowest.</td>
+   <td><code>| count by c_ip </code>
+   <p><code>| sort by _count desc</code></p></td>
+  </tr>
+  <tr>
+   <td>Identify the top 10 pages.</td>
+   <td><code>| count by cs_uri_stem </code>
+   <p><code>| top 10 cs_uri_stem by _count</code></p></td>
+  </tr>
+  <tr>
+   <td>Identify the top 10 client IP addresses by bandwidth usage.</td>
+   <td><code>| sum(sc_bytes) as total_bytes by c_ip</code>
+   <p><code>| top 10 c_ip by total_bytes</code></p></td>
+  </tr>
+  <tr>
+   <td>Identify the top 100 client IP addresses by number of hits.
+   </td>
+   <td><code>| count by c_ip </code>
+   <p><code>| top 100 c_ip by _count</code></p></td>
+  </tr>
+</table>
 
 :::sumo More Info
 For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent), and [Top](/docs/search/search-query-language/search-operators/top).
