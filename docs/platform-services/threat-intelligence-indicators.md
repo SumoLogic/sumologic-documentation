@@ -33,9 +33,14 @@ Add the following capabilities:
 
 <!-- At GA, add these role capabilities to the "Role Capabilities" article. -->
 
-### STIX/TAXII 2.0 collector
+### Ingest threat intelligence indicators
 
-To use threat intelligence indicators, you must first install and configure the [STIX/TAXII 2.0 collector](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/). This collector helps correlate data from logs to threat intelligence indicators. <!-- Add the link to the collector once it is available. -->
+To search logs that contain correlations to threat intelligence indicators, you must first ingest the indicators. You can ingest indicators using:
+* **The Threat Intelligence tab**. See [Add indicators in the Threat Intelligence tab](#add-indicators-in-the-threat-intelligence-tab).
+* **The API**. See the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource for upload APIs. 
+* **Collectors**. You can install the following collectors to ingest indicators (see [Cloud-to-Cloud Integration Framework Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/)):
+   * STIX/TAXII 2.0
+   * STIX/TAXII 2.1
 
 ## Threat Intelligence tab
 
@@ -45,14 +50,18 @@ To access the **Threat Intelligence** tab, go to **Manage Data > Logs > Threat I
 
 <img src={useBaseUrl('img/platform-services/threat-intelligence-tab.png')} alt="Threat Intelligence tab" style={{border: '1px solid black'}} width="800" />
 
-1. **Add Indicators**. Click to upload files that [add threat intelligence indicators](#add-threat-intelligence-indicators).
+1. **Add Indicators**. Click to upload files that [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab).
 1. **Actions**. Select to perform additional actions:
     * **Edit Retention Period**. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180.
-1. **Source Name**. The source of the threat intelligence indicator file.
+1. **Source Name**. The source of the threat intelligence indicator file. (Spaces are not allowed in the source name. For example, the actual name of the CrowdStrike source is “s_CrowdStrike”.)
 1. **Storage Consumed**. The amount of storage consumed by the threat intelligence indicator file.
 1. **Indicators**. The number of threat intelligence indicators included in the file. 
 
-### Add threat intelligence indicators
+:::note
+The “CrowdStrike provided by Sumo Logic (s_CrowdStrike)” source is a default source and cannot be changed or deleted.
+:::
+
+### Add indicators in the Threat Intelligence tab
 
 To add threat intelligence indicators, you must upload files containing the indicators in a format that can be consumed by Sumo Logic.
 
@@ -60,32 +69,32 @@ To add threat intelligence indicators, you must upload files containing the indi
 1. Click **Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid black'}} width="500" />
 1. Select the format of the file to be uploaded:
     * **Normalized JSON**. A normalized JSON file. <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) for information about the attributes to use. Your file must include the following attributes:
-       * `confidence`
        * `id`
-       * `imported`
        * `indicator`
-       * `source`
-       * `threatType`
        * `type`
-       * `validFrom`
-    * **CSV**. A comma-separated value (CSV) file. <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators) for information about the attributes to use. Your file must include the following attributes:
-       * `confidence`
-       * `id`
+       * `source`
        * `imported`
-       * `source`
+       * `validFrom`
+       * `confidence`
        * `threatType`
+    * **CSV**. A comma-separated value (CSV) file. <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators) for information about the attributes to use. Your file must include the following attributes:
+       * `id`
+       * `value`
        * `type`
+       * `source`
+       * `imported`
        * `validFrom`
        * `validUntil`
-       * `value`
+       * `confidence`
+       * `threatType`
     * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. (Note that if you want to upload indicators from multiple sources, you cannot use STIX but instead should use **Sumo normalized JSON**.) <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) for information about the attributes to use. Your file must include the following attributes:
-       * `created`
+       * `type`
+       * `spec_version`
        * `id`
+       * `created`
        * `modified`
        * `pattern`
        * `pattern_type`
-       * `spec_version`
-       * `type`
        * `valid_from`
 1. Click **Upload** to upload the file.
 1. Click **Import**. 
@@ -96,23 +105,23 @@ To add threat intelligence indicators, you must upload files containing the indi
 1. Click **Delete Indicators**. The following dialog appears. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid black'}} width="500" />
 1. Select indicators to delete from the source:
    * **Delete all indicators**. Remove all indicators from the source. 
-   * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the files uploaded in [Add threat intelligence indicators](#add-threat-intelligence-indicators) above.
+   * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the files uploaded in [Add indicators in the threat intelligence tab](#add-indicators-in-the-threat-intelligence-tab) above.
 1. Click **Delete**. 
 
 ## Search for threats
 
-Once you [add threat intelligence indicators](#add-threat-intelligence-indicators), you can perform searches to find matches to data in the indicators using:
-* [`threat_lookup` search operator](#threat_lookup)
+Once you [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab), you can perform searches to find matches to data in the indicators using:
+* [`threatLookup` search operator](#threatlookup-search-operator)
 * [`hasThreatMatch` Cloud SIEM rules language function](#hasthreatmatch)
 
-### threat_lookup search operator
+### threatLookup search operator
 
-The `threat_lookup` search operator allows you to search logs for matches in threat intelligence indicators. Note that you can also use the [`threatIP`](/docs/search/search-query-language/search-operators/threatip/) search operator to search CrowdStrike's threat intelligence data based on IP addresses. For other search operators, see [Search Operators](/docs/search/search-query-language/search-operators).
+The `threatLookup` search operator allows you to search logs for matches in threat intelligence indicators. Note that you can also use the [`threatIP`](/docs/search/search-query-language/search-operators/threatip/) search operator to search CrowdStrike's threat intelligence data based on IP addresses. For other search operators, see [Search Operators](/docs/search/search-query-language/search-operators).
 
 #### Syntax
 
 ```
-threat_lookup [source=<source_value>] [include=<all|active|expired>] <indicator_value_field> [,<optional_indicator_value_field_2>, …]
+threatLookup [source=<source_value>] [include=<all|active|expired>] <indicator_value_field> [,<optional_indicator_value_field_2>, …]
 ```
 
 Response fields:
@@ -130,37 +139,37 @@ Response fields:
 #### Examples
 
 ```
-_index=sec_record* objectType=NetworkProxy 
-| threat_lookup dstDevice_ip 
-| where _threatLookup.confidence > 50 
-| timeslice 1h 
+_index=sec_record* 
+| threatLookup dstDevice_ip
+| where _threatLookup.confidence > 50
+| timeslice 1h
 | count by _timeslice
 ```
 ```
-_index=sec_record* objectType=NetworkProxy 
-| threat_lookup source=FreeTAXII dstDevice_ip 
-| where _threatLookup.confidence > 50 
-| timeslice 1h 
+_index=sec_record* 
+| threatLookup source=s_CrowdStrike dstDevice_ip
+| where _threatLookup.confidence > 50
+| timeslice 1h
 | count by _timeslice
 ```
 ```
-_index=sec_record* objectType=NetworkProxy 
-| threat_lookup dstDevice_ip, srcDevice_ip 
-| where _threatLookup.confidence > 50 
-| timeslice 1h 
+_index=sec_record* 
+| threatLookup dstDevice_ip, srcDevice_ip
+| where _threatLookup.confidence > 50
+| timeslice 1h
 | count by _timeslice
 ```
 ```
-_index=sec_record* objectType=NetworkProxy 
-| threat_lookup source=FreeTAXII dstDevice_ip, srcDevice_ip 
-| where _threatLookup.confidence > 50 
-| timeslice 1h 
+_index=sec_record* 
+| threatLookup  source=s_CrowdStrike dstDevice_ip, srcDevice_ip
+| where _threatLookup.confidence > 50
+| timeslice 1h
 | count by _timeslice
 ```
 
 ```
-_index=sec_record* objectType=NetworkProxy 
-| threatlookup source=FreeTAXII include=active dstDevice_ip, srcDevice_ip 
+_index=sec_record* 
+| threatLookup  source=s_CrowdStrike include=active dstDevice_ip, srcDevice_ip 
 | where _threatLookup.confidence > 50 
 | timeslice 1h 
 | count by _timeslice
@@ -189,5 +198,5 @@ Parameters:
 * `hasThreatMatch([srcDevice_ip], confidence > 50)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50 AND source=”FreeTAXII”)`
 * `hasThreatMatch([srcDevice_ip], source=”s1” OR (source=”s2” confidence > 50 AND))`
-* `hasThreatMatch([srcDevice_ip], active_indicators)`
+* `hasThreatMatch([srcDevice_ip], expired_indicators)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
