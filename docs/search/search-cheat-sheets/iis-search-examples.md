@@ -92,7 +92,7 @@ For more information, see [Keyword Search expressions](../get-started-with-sear
   <tr>
    <td>Identify the top 100 client IP addresses by number of hits.
    </td>
-   <td><code>| count by c_ip </code>
+   <td><code>| count by c_ip</code>
    <p><code>| top 100 c_ip by _count</code></p></td>
   </tr>
 </table>
@@ -127,4 +127,4 @@ For more information, see [Where](/docs/search/search-query-language/search-oper
 :::
 
 For any query, you can increase specificity by adding metadata fields to the keyword expression. Metadata fields include `_sourceCategory`,
-`_sourceHost `, and `_sourceName`. Edit Source metadata in the **Collection** tab. For details see [Search Metadata.](/docs/search/get-started-with-search/search-basics/built-in-metadata) 
+`_sourceHost `, and `_sourceName`. Edit Source metadata in the **Collection** tab. For details, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
