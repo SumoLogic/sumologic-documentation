@@ -2,7 +2,7 @@
 id: macos-opentelemetry
 title: macos - OpenTelemetry Collector
 sidebar_label: macOS - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for MacOS.
+description: Learn about the Sumo Logic OpenTelemetry app for MacOS.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/mac-apple-icon.png')} alt="Thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for macOS allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon.
+The Sumo Logic app for macOS allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon.
 
 The app consists of predefined searches and dashboards that provide visibility into your environment for real-time or historical analysis. Our dashboards provide insight into CPU load, memory, network, file descriptors, page faults, and TCP connectors. This app uses OpenTelemetry, an open-source collector for metrics.
 
@@ -41,10 +41,13 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 
 In this step, you will configure the yaml required for macOS Collection.
 
-1. (Optional) You can add a custom tag, if desired. (There are no parameters required for the macOS app to install.)
-2. Click on the **Download YAML File** button to get the yaml file.
+(Optional) You can add a custom tag, if desired. (There are no parameters required for the macOS app to install.)
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Mac-OpenTelemetry/Mac-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+#### Enable process metric collection (Optional)
+
+{@import ../../../reuse/apps/opentelemetry/process-metric-collection.md}
+
+Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Mac-YAML.png')} alt="Mac-YAML" style={{border:'1px solid black'}} width="800"/>
 
 ### Step 3: Send metrics to Sumo
 
@@ -64,9 +67,10 @@ In this step, you will configure the yaml required for macOS Collection.
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the macOS instance which needs to be monitored.
 2. Restart the otelcol-sumo process using the below command 
-  ```sh
-  otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
-  ```
+
+	```sh
+	 otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+	```
 
 </TabItem>
 
@@ -87,11 +91,12 @@ In this step, you will configure the yaml required for macOS Collection.
 {@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
 
 </TabItem>
+
 </Tabs>
 
 {@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
-## Sample Queries
+## Sample query
 
 Metrics query from the File System Utilization panel.
 
@@ -99,7 +104,7 @@ Metrics query from the File System Utilization panel.
 sumo.datasource=mac host.name=* device=* metric=system.filesystem.utilization | sum by host.name, device, type, mountpoint
 ```
 
-## Sample OTel Metrics
+## Sample OTel metrics
 
 ```json
 {
@@ -127,7 +132,7 @@ sumo.datasource=mac host.name=* device=* metric=system.filesystem.utilization | 
 }
 ```
 
-## Viewing Linux Dashboards
+## Viewing Linux dashboards
 
 ### Host Metrics - Overview
 
