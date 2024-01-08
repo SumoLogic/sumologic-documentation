@@ -14,9 +14,7 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@babel/core": "7.23.7",
-    "@babel/helpers": "7.23.7",
-    "@babel/plugin-proposal-decorators": "^7.23.0",
+    "@babel/plugin-proposal-decorators": "^7.23.7",
     "@braintree/sanitize-url": "^6.0.1",
     "@docusaurus/core": "^3.1.0",
     "@docusaurus/cssnano-preset": "3.1.0",
