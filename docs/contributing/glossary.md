@@ -294,7 +294,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 ## T
 
-**[Text Panels](/docs/dashboards/panels/#text-panel)**. Used in Dashboards, you can add Text Panels to include titles or text descriptions. See also Markdown.
+**[Text Panel](/docs/dashboards/panels/#text-panel)**. Used in Dashboards, you can add Text Panels to include titles or text descriptions. See also Markdown.
 
 **[Throttling](/docs/manage/ingestion-volume/log-ingestion)**. Slows the rate of ingestion across all Collectors in an account to not exceed the allowable rate.
 
