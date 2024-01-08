@@ -66,8 +66,8 @@ Following are the capabilities you can assign when you [create roles](create-ma
 
 | Capability | Description |
 | :-- | :-- |
-| Share Dashboards With The World	| [Share dashboards](/docs/dashboards/share-dashboard-outside-org) in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.|
-| Share Washboards With The Allowlist	| [Share dashboards](/docs/dashboards/share-dashboard-new/) in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your [service allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses).|
+| Share Dashboards with the world	| [Share dashboards](/docs/dashboards/share-dashboard-outside-org) in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.|
+| Share Dashboards with your allowlist	| [Share dashboards](/docs/dashboards/share-dashboard-new/) in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your [service allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses).|
 
 
 ## User Management
