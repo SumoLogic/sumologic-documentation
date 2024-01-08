@@ -130,37 +130,37 @@ Response fields:
 #### Examples
 
 ```
-index=sec_record* objectType=NetworkProxy 
+_index=sec_record* objectType=NetworkProxy 
 | threat_lookup dstDevice_ip 
 | where _threatLookup.confidence > 50 
 | timeslice 1h 
 | count by _timeslice
 ```
 ```
-index=sec_record* objectType=NetworkProxy 
+_index=sec_record* objectType=NetworkProxy 
 | threat_lookup source=FreeTAXII dstDevice_ip 
 | where _threatLookup.confidence > 50 
 | timeslice 1h 
 | count by _timeslice
 ```
 ```
-index=sec_record* objectType=NetworkProxy 
+_index=sec_record* objectType=NetworkProxy 
 | threat_lookup dstDevice_ip, srcDevice_ip 
 | where _threatLookup.confidence > 50 
 | timeslice 1h 
 | count by _timeslice
 ```
 ```
-index=sec_record* objectType=NetworkProxy 
-| threat_lookup  source=FreeTAXII dstDevice_ip, srcDevice_ip 
+_index=sec_record* objectType=NetworkProxy 
+| threat_lookup source=FreeTAXII dstDevice_ip, srcDevice_ip 
 | where _threatLookup.confidence > 50 
 | timeslice 1h 
 | count by _timeslice
 ```
 
 ```
-index=sec_record* objectType=NetworkProxy 
-| threatlookup  source=FreeTAXII  include=active dstDevice_ip, srcDevice_ip 
+_index=sec_record* objectType=NetworkProxy 
+| threatlookup source=FreeTAXII include=active dstDevice_ip, srcDevice_ip 
 | where _threatLookup.confidence > 50 
 | timeslice 1h 
 | count by _timeslice
