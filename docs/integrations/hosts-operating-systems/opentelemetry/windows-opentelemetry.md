@@ -56,7 +56,7 @@ Any custom fields can be tagged along with the data in this step.
 
 {@import ../../../reuse/apps/opentelemetry/process-metric-collection.md}
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Windows-YAML.png')} alt="Windows-YAML" width="600"/>
+Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Windows-YAML.png')} alt="Windows-YAML" style={{border:'1px solid black'}} width="800"/>
 
 ### Step 3: Send logs to Sumo
 

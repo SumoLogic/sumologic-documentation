@@ -72,7 +72,7 @@ By default, the path for Linux log files required for all the distros are pre-po
 
 {@import ../../../reuse/apps/opentelemetry/process-metric-collection.md}
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Linux-YAML.png')} alt="Linux-YAML" width="600"/>
+Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Linux-YAML.png')} alt="Linux-YAML" style={{border:'1px solid black'}} width="800"/>
 
 ### Step 3: Send logs and metrics to Sumo Logic
 

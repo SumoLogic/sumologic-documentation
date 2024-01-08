@@ -47,7 +47,7 @@ In this step, you will configure the yaml required for macOS Collection.
 
 {@import ../../../reuse/apps/opentelemetry/process-metric-collection.md}
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Mac-YAML.png')} alt="Mac-YAML" width="600"/>
+Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Mac-YAML.png')} alt="Mac-YAML" style={{border:'1px solid black'}} width="800"/>
 
 ### Step 3: Send metrics to Sumo
 
