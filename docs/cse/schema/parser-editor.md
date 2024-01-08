@@ -19,6 +19,19 @@ See additional articles for more information about the Sumo Logic Cloud SIEM par
 The instructions that follow assume that you have already written your parser code.
 :::
 
+Watch the following micro lesson to learn how to apply parsers to Cloud SIEM data sets. 
+
+<Iframe url="https://www.youtube.com/embed/CVaoD96Mhok?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
+
 ## Check parser code for mapping hints
 
 Your parser code must contain statements that tell Cloud SIEM what log mapping to use when creating Records from the field dictionary the parser creates for log messages. 
