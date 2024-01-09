@@ -5,7 +5,6 @@ sidebar_label: IIS Search Examples
 description: The IIS Search Examples cheat sheet provides examples of useful IIS search queries for different use cases.
 ---
 
-
 The IIS Search Examples cheat sheet provides examples of useful IIS search queries for different use cases.
 
 The examples use this sample Access log message where applicable:
@@ -42,12 +41,12 @@ For more information, see [Keyword Search expressions](../get-started-with-sear
   <tr>
    <td>Identify pages visited, extracted as the "cs_uri_stem" field.</td>
    <td><code>_source=IIS </code>
-   <p><code>| parse "GET * " as cs_uri_stem</code></p></td>
+   <br/><code>| parse "GET * " as cs_uri_stem</code></td>
   </tr>
   <tr>
    <td>Identify messages with status code “200” and extract the sc_substatus, sc_win32_status, and sc_bytes fields.</td>
    <td><code>_source=IIS</code>
-   <p><code>| parse " 200 * * * " as sc_substatus, sc_win32_status, sc_bytes</code></p></td>
+   <br/><code>| parse " 200 * * * " as sc_substatus, sc_win32_status, sc_bytes</code></td>
   </tr>
   <tr>
    <td> </td>
@@ -76,24 +75,19 @@ For more information, see [Keyword Search expressions](../get-started-with-sear
   </tr>
   <tr>
    <td>Calculate the total number of pages by client IP address, sort them highest to lowest.</td>
-   <td><code>| count by c_ip </code>
-   <p><code>| sort by _count desc</code></p></td>
+   <td><code>| count by c_ip </code><br/><code>| sort by _count desc</code></td>
   </tr>
   <tr>
    <td>Identify the top 10 pages.</td>
-   <td><code>| count by cs_uri_stem </code>
-   <p><code>| top 10 cs_uri_stem by _count</code></p></td>
+   <td><code>| count by cs_uri_stem </code><br/><code>| top 10 cs_uri_stem by _count</code></td>
   </tr>
   <tr>
    <td>Identify the top 10 client IP addresses by bandwidth usage.</td>
-   <td><code>| sum(sc_bytes) as total_bytes by c_ip</code>
-   <p><code>| top 10 c_ip by total_bytes</code></p></td>
+   <td><code>| sum(sc_bytes) as total_bytes by c_ip</code><br/><code>| top 10 c_ip by total_bytes</code></td>
   </tr>
   <tr>
-   <td>Identify the top 100 client IP addresses by number of hits.
-   </td>
-   <td><code>| count by c_ip</code>
-   <p><code>| top 100 c_ip by _count</code></p></td>
+   <td>Identify the top 100 client IP addresses by number of hits.</td>
+   <td><code>| count by c_ip</code><br/><code>| top 100 c_ip by _count</code></td>
   </tr>
 </table>
 
@@ -103,10 +97,23 @@ For more information, see [Parsing](/docs/search/search-query-language/parse-op
 
 ## Timeslice and Transpose
 
-| Use Case | Sumo Logic Query Example |
-| :-- | :-- |
-| For the host / domain "abcd.com", count by sc_status with a timeslice of 15m | source=IIS  &#124; parse "abcd.com \* " as sc_status &#124; timeslice 15m &#124; count by _timeslice, sc_status |
-| Pivot the results so that time is on the X axis and sc_status is on the Y axis (values can be displayed in legend) | &#124; transpose row _timeslice column sc_status |
+<table>
+  <tr>
+   <td><strong>Use Case</strong></td>
+   <td><strong>Sumo Logic Query Example</strong></td>
+  </tr>
+  <tr>
+   <td>For the host / domain "abcd.com", count by sc_status with a timeslice of 15m</td>
+   <td><code>source=IIS</code><br/>
+   <code>| parse "abcd.com * " as sc_status</code><br/>
+   <code>| timeslice 15m</code><br/>
+   <code>| count by _timeslice, sc_status</code></td>
+  </tr>
+  <tr>
+   <td>Pivot the results so that time is on the X axis and sc_status is on the Y axis (values can be displayed in legend)</td>
+   <td><code>| transpose row _timeslice column sc_status</code></td>
+  </tr>
+</table>
 
 :::info
 For more information, see [Timeslice](/docs/search/search-query-language/search-operators/timeslice) and [Transpose](/docs/search/search-query-language/search-operators/transpose).
@@ -114,13 +121,43 @@ For more information, see [Timeslice](/docs/search/search-query-language/search
 
 ## Conditional Operators
 
-| Use Case | Sumo Logic Query Example |
-| :-- | :-- |
-| For the source "IIS", find all messages with a client error status code (40\*) | `_source=IIS 40*`  `| parse "abcd.com * " as sc_status`  `| where sc_status matches "40*"` |
-| For the source "IIS/Access", count hits by browser | `source=IIS/Access  | parse “* * * * * * * * “ as date, time, csmethod, cs_uri_stem, cs_uri_query, s_port, c_ip, cs_UserAgent  | if (cs_UserAgent matches "*MSIE*",1,0) as ie  | if (cs_UserAgent matches "*Firefox*",1,0) as firefox  | if (cs_UserAgent matches "*Safari*",1,0) as safari | if (cs_UserAgent matches "*Chrome*",1,0) as chrome  | sum(ie) as ie, sum(firefox) as firefox, sum(safari) as safari, sum(chrome) as chrome` |
-| Use the where operator to match only weekend days. | `* | parse "day=*:" as day_of_week  | where day_of_week in ("Saturday","Sunday")` |
-| Identify all URLs that contain the subdirectory "Courses" in the path. | `* | parse "GET * " as cs_uri_stem  | where cs_uri_stem matches "*Courses*"` |
-| Find version numbers that match numeric values 2, 3 or 1. Use the num operator to change the string into a number. | `* | parse "Version=*." as number  | num(number) | where number in (2,3,6)` |
+<table>
+  <tr>
+   <td><strong>Use Case</strong></td>
+   <td><strong>Sumo Logic Query Example</strong></td>
+  </tr>
+  <tr>
+   <td>For the source "IIS", find all messages with a client error status code (40*)</td>
+   <td><code>_source=IIS 40*</code><br/>
+   <code>| parse "abcd.com * " as sc_status</code><br/>
+   <code>| where sc_status matches "40*"</code></td>
+  </tr>
+  <tr>
+   <td>For the source "IIS/Access", count hits by browser</td>
+   <td><code>source=IIS/Access </code><br/>
+   <code>| parse "* * * * * * * * " as date, time, csmethod, cs_uri_stem, cs_uri_query, s_port, c_ip, cs_UserAgent </code><br/>
+   <code>| if (cs_UserAgent matches "*MSIE*",1,0) as ie </code><br/>
+   <code>| if (cs_UserAgent matches "*Firefox*",1,0) as firefox </code><br/>
+   <code>| if (cs_UserAgent matches "*Safari*",1,0) as safari</code><br/>
+   <code>| if (cs_UserAgent matches "*Chrome*",1,0) as chrome</code><br/>
+   <code>| sum(ie) as ie, sum(firefox) as firefox, sum(safari) as safari, sum(chrome) as chrome</code></td>
+  </tr>
+  <tr>
+   <td>Use the where operator to match only weekend days.</td>
+   <td><code>* | parse "day=*:" as day_of_week </code><br/>
+   <code>| where day_of_week in ("Saturday","Sunday")</code></td>
+  </tr>
+  <tr>
+   <td>Identify all URLs that contain the subdirectory "Courses" in the path.</td>
+   <td><code>* | parse "GET * " as cs_uri_stem </code><br/>
+   <code>| where cs_uri_stem matches "*Courses*"</code></td>
+  </tr>
+  <tr>
+   <td>Find version numbers that match numeric values 2, 3 or 6. Use the num operator to change the string into a number.</td>
+   <td><code>* | parse "Version=*." as number </code><br/>
+   <code>| num(number) | where number in (2,3,6)</code></td>
+  </tr>
+</table>
 
 :::sumo More Info
 For more information, see [Where](/docs/search/search-query-language/search-operators/where) and [If](/docs/search/search-query-language/search-operators/if). 
