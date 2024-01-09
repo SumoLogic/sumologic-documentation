@@ -16,7 +16,7 @@ This feature is available in the following account plans.
 
 This page shows you how to intuitively navigate through your AWS environment and [Explore](/docs/dashboards/explore-view) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
 
-You can also easy navigation to all features and functions of the AWS Observability solution in one place. Refer to [AWS Observability Hub](docs/observability/aws/index) page to know more about the centralized page to access the AWS Observability solution.
+You can also easily navigate to all features and functions of the AWS Observability solution in one place. Refer to the [AWS Observability Hub](/docs/observability/aws) page to know more about the centralized page to access the AWS Observability solution.
 
 ## Working with Explore View
 
