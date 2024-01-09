@@ -93,7 +93,9 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 #### Configure an ELB Source
 
-{@import ../../reuse/apps/create-aws-s3-source.md}
+import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
+
+<Aws3/>
 
 ### Field in Field Schema
 
@@ -117,7 +119,9 @@ parse "* * * * * * * * * * * * \"*\" \"*\" * * * \"*\"" as Type, DateTime, loadb
 
 Now that you have set up collection for AWS Application Load Balancer, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing AWS Application Load Balancer Dashboards
 

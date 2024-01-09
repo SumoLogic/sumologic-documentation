@@ -23,7 +23,9 @@ This app contains generic regex expressions and thus may not perform well at ver
 
 This section provides instructions on how to install the Threat Intel Quick Analysis App, and examples of each of dashboards. The preconfigured searches and dashboards provide easy-to-access visual insights into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Threat Intel Optimization
 
@@ -534,149 +536,98 @@ Once an indicator has been marked with a malicious confidence level, it continue
 **Data Type:** string<br/>
 **Description:** The Intel Indicators API provides additional context around an indicator via the labels list. Some of these labels, such as `malicious_confidence` are accessible via the top-level data structure. All labels, including their associated timestamps, will be accessible via the labels list. The url string will look like: `https://intelapi.crowdstrike.com/indicator/v1/search/labels?equal=DomainType/DynamicDNS`.
 
-<table><small>
-  <tr>
-   <td>
-<strong>IOC Type</strong>
-   </td>
-   <td><strong>Values</strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>DomainType</strong>
-   </td>
-   <td>
-<ul>
 
-<li>DomainType/ActorControlled—It is believed the malicious actor is still in control of this domain.</li>
-
-<li>DomainType/DGA—Domain is the result of malware utilizing a domain generation algorithm.</li>
-
-<li>DomainType/DynamicDNS—Domain is owned or used by a dynamic DNS service.</li>
-
-<li>DomainType/DynamicDNS/Afraid—Domain is owned or used by the Afraid.org dynamic DNS service.</li>
-
-<li>DomainType/DynamicDNS/DYN—Domain is owned or used by the DYN dynamic DNS service.</li>
-
-<li>DomainType/DynamicDNS/Hostinger—Domain is owned or used by the Hostinger dynamic DNS service.</li>
-
-<li>DomainType/DynamicDNS/noIP—Domain is owned or used by the NoIP dynamic DNS service.</li>
-
-<li>DomainType/DynamicDNS/Oray—Domain is owned or used by the Oray dynamic DNS service.</li>
-
-<li>DomainType/KnownGood—Domain itself (or the domain portion of a URL) is known to be legitimate, despite having been associated with malware or malicious activity.</li>
-
-<li>DomainType/LegitimateCompromised—Domain does not typically pose a threat but has been compromised by a malicious actor and may be serving malicious content.</li>
-
-<li>DomainType/PhishingDomain—Domain has been observed to be part of a phishing campaign.</li>
-
-<li>DomainType/Sinkholed—Domain is being sinkholed, likely by a security research team. This indicates that, while traffic to the domain likely has a malicious source, the IP address to which it is resolving is controlled by a legitimate 3rd party. It is no longer believed to be under the control of the actor.</li>
-
-<li>DomainType/StrategicWebCompromise—While similar to the DomainType/LegitimateCompromised label, this label indicates that the activity is of a more targeted nature. Often, targeted attackers will compromise a legitimate domain that they know to be a watering hole frequently visited by the users at the organizations they are looking to attack.</li>
-
-<li>DomainType/Unregistered—Domain is not currently registered with any registrars.</li>
-</ul>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>EmailAddressType</strong>
-   </td>
-   <td>EmailAddressType/DomainRegistrant—Email address has been supplied in the registration information for known malicious domains.
-<p>EmailAddressType/SpearphishSender—Email address has been used to send spearphishing emails.</p>
-   </td>
-  </tr>
-  <tr>
-   <td>
-   </td>
-   <td><strong>IntelNews</strong>: The Intel Flash Report ID an indicator is associated with (For example, IntelNews/NEWS-060520151900).
-   </td>
-  </tr>
-  <tr>
-   <td><strong>IPAddressType</strong>
-   </td>
-   <td>
-<ul>
-<li>IPAddressType/HtranDestinationNode—An IP address with this label is being used as a destination address with the HTran Proxy Tool.</li>
-
-<li>IPAddressType/HtranProxy—An IP address with this label is being used as a relay or proxy node with the HTran Proxy Tool.</li>
-
-<li>IPAddressType/LegitimateCompromised—It is suspected an IP address with this label is compromised by malicious actors.</li>
-
-<li>IPAddressType/Parking—IP address is likely being used as parking IP address.</li>
-
-<li>IPAddressType/PopularSite—IP address could be utilized for a variety of purposes and may appear more frequently than other IPs.</li>
-
-<li>IPAddressType/SharedWebHost—IP address may be hosting more than one website.</li>
-
-<li>IPAddressType/Sinkhole—IP address is likely a sinkhole being operated by a security researcher or vendor.</li>
-
-<li>IPAddressType/TorProxy—IP address is acting as a TOR (The Onion Router) Proxy Malware/PoisonIvy Malware/Zeus Malware/DarkComet
-</li>
-</ul></td>
-  </tr>
-  <tr>
-   <td><strong>Status</strong></td>
-   <td>
-<ul>
-
-<li>Status/ConfirmedActive—Indicator is likely to be currently supporting malicious activity</li>
-<li>Status/ConfirmedInactive—Indicator is no longer used for malicious purposes.</li>
-</ul>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Target</strong>
-   </td>
-   <td>The activity associated with this indicator is known to target the indicated vertical sector, which could be any of the following:
-<ul>
-<li>Target/Aerospace Target/Agricultural Target/Chemical</li>
-<li>Target/Defense</li>
-<li>Target/Dissident</li>
-<li>Target/Energy</li>
-<li>Target/Extractive</li>
-<li>Target/Financial</li>
-<li>Target/Government</li>
-<li>Target/Healthcare</li>
-<li>Target/Insurance</li>
-<li>Target/InternationalOrganizations</li>
-<li>Target/Legal</li>
-<li>Target/Manufacturing</li>
-<li>Target/Media</li>
-<li>Target/NGO</li>
-<li>Target/Pharmaceutical</li>
-<li>Target/Research</li>
-<li>Target/Retail</li>
-<li>Target/Shipping</li>
-<li>Target/Technology</li>
-<li>Target/Telecom</li>
-<li>Target/Transportation</li>
-<li>Target/Universities</li>
-</ul>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>ThreatType</strong>
-   </td>
-   <td>
-<ul>
-<li>ThreatType/ClickFraud—Indicator is used by actors engaging in click or ad fraud.</li>
-<li>ThreatType/Commodity—Indicator is used with commodity type malware such as Zeus or Pony Downloader.</li>
-<li>ThreatType/PointOfSale—Indicator is associated with activity known to target point-of-sale machines such as AlinaPoS or BlackPoS.</li>
-<li>ThreatType/Ransomware—Indicator is associated with ransomware malware such as Crytolocker or Cryptowall.</li>
-<li>ThreatType/Suspicious—Indicator is not currently associated with a known threat type but should be considered suspicious.</li>
-<li>ThreatType/Targeted—Indicator is associated with a known actor suspected to associated with a nation-state such as DEEP PANDA or ENERGETIC BEAR.</li>
-<li>ThreatType/TargetedCrimeware—Indicator is associated with a known actor suspected to be engaging in criminal activity such as WICKED SPIDER.
-</li>
-</ul>
-   </td>
-  </tr>
-  <tr>
-   <td><strong>Vulnerability</strong>
-   </td>
-   <td>The CVE-XXXX-XXX vulnerability the indicator is associated with (e.g., <a href="https://intelapi.crowdstrike.com/indicator/v1/search/labels?equal=vulnerability/CVE-2012-0158">https://intelapi.crowdstrike.com/ind.../CVE-2012-0158</a>)</td>
-  </tr></small>
+<table class="mt-responsive-table">
+    <thead>
+        <tr>
+            <th class="mt-column-width-20" scope="col"><strong>IOC Type</strong></th>
+            <th class="mt-column-width-80" scope="col"><strong>Values</strong></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>DomainType</strong></td><td class="mt-column-width-80" data-th="Values">
+            <ul><li>DomainType/ActorControlled&mdash;It is believed the malicious actor is still in control of this domain.</li>
+                <li>DomainType/DGA&mdash;Domain is the result of malware utilizing a domain generation algorithm.</li>
+                <li>DomainType/DynamicDNS&mdash;Domain is owned or used by a dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/Afraid&mdash;Domain is owned or used by the Afraid.org dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/DYN&mdash;Domain is owned or used by the DYN dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/Hostinger&mdash;Domain is owned or used by the Hostinger dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/noIP&mdash;Domain is owned or used by the NoIP dynamic DNS service.</li>
+                <li>DomainType/DynamicDNS/Oray&mdash;Domain is owned or used by the Oray dynamic DNS service.</li>
+                <li>DomainType/KnownGood&mdash;Domain itself (or the domain portion of a URL) is known to be legitimate, despite having been associated with malware or malicious activity.</li>
+                <li>DomainType/LegitimateCompromised&mdash;Domain does not typically pose a threat but has been compromised by a malicious actor and may be serving malicious content.</li>
+                <li>DomainType/PhishingDomain&mdash;Domain has been observed to be part of a phishing campaign.</li>
+                <li>DomainType/Sinkholed&mdash;Domain is being sinkholed, likely by a security research team. This indicates that, while traffic to the domain likely has a malicious source, the IP address to which it is resolving is controlled by a legitimate 3rd party. It is no longer believed to be under the control of the actor.</li>
+                <li>DomainType/StrategicWebCompromise&mdash;While similar to the DomainType/LegitimateCompromised label, this label indicates that the activity is of a more targeted nature. Often, targeted attackers will compromise a legitimate domain that they know to be a watering hole frequently visited by the users at the organizations they are looking to attack.</li>
+                <li>DomainType/Unregistered&mdash;Domain is not currently registered with any registrars.</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>EmailAddressType</strong></td><td class="mt-column-width-80" data-th="Values">
+            <p>EmailAddressType/DomainRegistrant&mdash;Email address has been supplied in the registration information for known malicious domains.</p>
+            <p>EmailAddressType/SpearphishSender&mdash;Email address has been used to send spearphishing emails.</p></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type">&nbsp;</td>
+            <td class="mt-column-width-80" data-th="Values"><strong>IntelNews</strong>: The Intel Flash Report ID an indicator is associated with (For example, IntelNews/NEWS-060520151900).</td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type">            <p><strong>IPAddressType</strong></p></td>
+            <td class="mt-column-width-80" data-th="Values"><ul><li>IPAddressType/HtranDestinationNode&mdash;An IP address with this label is being used as a destination address with the HTran Proxy Tool.</li>
+                <li>IPAddressType/HtranProxy&mdash;An IP address with this label is being used as a relay or proxy node with the HTran Proxy Tool.</li>
+                <li>IPAddressType/LegitimateCompromised&mdash;It is suspected an IP address with this label is compromised by malicious actors.</li>
+                <li>IPAddressType/Parking&mdash;IP address is likely being used as parking IP address.</li>
+                <li>IPAddressType/PopularSite&mdash;IP address could be utilized for a variety of purposes and may appear more frequently than other IPs.</li>
+                <li>IPAddressType/SharedWebHost&mdash;IP address may be hosting more than one website.</li>
+                <li>IPAddressType/Sinkhole&mdash;IP address is likely a sinkhole being operated by a security researcher or vendor.</li>
+                <li>IPAddressType/TorProxy&mdash;IP address is acting as a TOR (The Onion Router) Proxy Malware/PoisonIvy Malware/Zeus Malware/DarkComet</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>Status</strong></td>
+            <td class="mt-column-width-80" data-th="Values"><ul><li>Status/ConfirmedActive&mdash;Indicator is likely to be currently supporting malicious activity</li><li>Status/ConfirmedInactive&mdash;Indicator is no longer used for malicious purposes.</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>Target</strong></td>
+            <td class="mt-column-width-80" data-th="Values"><p>The activity associated with this indicator is known to target the indicated vertical sector, which could be any of the following:</p>
+            <ul><li>Target/Aerospace Target/Agricultural Target/Chemical</li>
+                <li>Target/Defense</li>
+                <li>Target/Dissident</li>
+                <li>Target/Energy</li>
+                <li>Target/Extractive</li>
+                <li>Target/Financial</li>
+                <li>Target/Government</li>
+                <li>Target/Healthcare</li>
+                <li>Target/Insurance</li>
+                <li>Target/InternationalOrganizations</li>
+                <li>Target/Legal</li>
+                <li>Target/Manufacturing</li>
+                <li>Target/Media</li>
+                <li>Target/NGO</li>
+                <li>Target/Pharmaceutical</li>
+                <li>Target/Research</li>
+                <li>Target/Retail</li>
+                <li>Target/Shipping</li>
+                <li>Target/Technology</li>
+                <li>Target/Telecom</li>
+                <li>Target/Transportation</li>
+                <li>Target/Universities</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><strong>ThreatType</strong></td><td class="mt-column-width-80" data-th="Values">
+            <ul><li>ThreatType/ClickFraud&mdash;Indicator is used by actors engaging in click or ad fraud.</li>
+                <li>ThreatType/Commodity&mdash;Indicator is used with commodity type malware such as Zeus or Pony Downloader.</li>
+                <li>ThreatType/PointOfSale&mdash;Indicator is associated with activity known to target point-of-sale machines such as AlinaPoS or BlackPoS.</li>
+                <li>ThreatType/Ransomware&mdash;Indicator is associated with ransomware malware such as Crytolocker or Cryptowall.</li>
+                <li>ThreatType/Suspicious&mdash;Indicator is not currently associated with a known threat type but should be considered suspicious.</li>
+                <li>ThreatType/Targeted&mdash;Indicator is associated with a known actor suspected to associated with a nation-state such as DEEP PANDA or ENERGETIC BEAR.</li>
+                <li>ThreatType/TargetedCrimeware&mdash;Indicator is associated with a known actor suspected to be engaging in criminal activity such as WICKED SPIDER.</li></ul></td>
+        </tr>
+        <tr>
+            <td class="mt-column-width-20" data-th="IOC Type"><br/><strong>Vulnerability</strong></td>
+            <td class="mt-column-width-80" data-th="Values"><br/>The CVE-XXXX-XXX vulnerability the indicator is associated with (e.g. <a href="https://intelapi.crowdstrike.com/indicator/v1/search/labels?equal=vulnerability/CVE-2012-0158" rel="freelink" title="https://intelapi.crowdstrike.com/indicator/v1/search/labels?equal=vulnerability/CVE-2012-0158">https://intelapi.crowdstrike.com/ind.../CVE-2012-0158</a> )</td>
+        </tr>
+    </tbody>
 </table>
-
 
 ## Viewing Threat Intel Quick Analysis Dashboards
 

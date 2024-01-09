@@ -37,7 +37,7 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 | option+d       | Popout to new browser tab (dashboard only)                    |
 | option+h       | Switch to Home                                                |
 | option+b       | Switch to Library                                             |
-| option+<1-9>  | Switch to tab 1, 2, ... 9                                     |
+| `option+<1-9>`  | Switch to tab 1, 2, ... 9                                     |
 | option+0       | Switch to the last tab                                        |
 | option+[      | Switch to the tab to the left of the current tab              |
 | option+]      | Switch to the tab to the right of the current tab             |

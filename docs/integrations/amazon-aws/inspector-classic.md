@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/inspector-classic.png')} alt="Thumbnail icon" width="50"/>
 
-:::caution Newer version available
+:::warning Newer version available
 You're viewing legacy documentation. For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see [Amazon Inspector](/docs/integrations/amazon-aws/inspector.md).
 :::
 
@@ -175,7 +175,9 @@ Details are provided in the following sections.
 
 Now that you have set up collection for Amazon Inspector, install the Sumo Logic App for Amazon Inspector to use the pre-configured Searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Inspector Classic Dashboards
 

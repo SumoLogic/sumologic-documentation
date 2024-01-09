@@ -58,16 +58,16 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | Manage Support Account Access	| Enable management of the Sumo Logic [support account](/docs/manage/security/enable-support-account) for your organization.|
 | Manage Audit Data Feed	| Enable and manage the [Audit Index](/docs/manage/security/audit-indexes/audit-index), which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.|
 | Manage SAML	| Provision and manage [SAML](/docs/manage/security/saml) for single sign-on to your Sumo Logic accounts.|
-| Manage Share Dashboards Outside of Organization	| [Share a dashboard](/docs/dashboards-classic/share-dashboard-outside-org) with users who don't have access to Sumo Logic.|
+| Manage Share Dashboards Outside of Organization	| [Share a dashboard](/docs/dashboards/share-dashboard-outside-org/) with users who don't have access to Sumo Logic.|
 | Manage Organization Settings	| Configure a [concurrent user sessions limit](/docs/manage/security/set-limit-user-concurrent-sessions) and enable the [Data Access Level for Shared Dashboards](/docs/manage/security/data-access-level-shared-dashboards/) security policy.|
-| Change Data Access Level	| Change the [data access level of dashboards](/docs/dashboards-classic/get-started/set-data-access-level-dashboard) or scheduled searches to which they have edit or manage permission.|
+| Change Data Access Level	| Change the [data access level of dashboards](/docs/dashboards/set-data-access-level/) or scheduled searches to which they have edit or manage permission.|
 
 ## Dashboards
 
 | Capability | Description |
 | :-- | :-- |
-| Share Dashboards With The World	| [Share dashboards](/docs/dashboards-classic/share-dashboard-outside-org) in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.|
-| Share Washboards With The Allowlist	| [Share dashboards](/docs/dashboards-classic/share-dashboard-inside-org) in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your [service allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses).|
+| Share Dashboards with the world	| [Share dashboards](/docs/dashboards/share-dashboard-outside-org) in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in.|
+| Share Dashboards with your allowlist	| [Share dashboards](/docs/dashboards/share-dashboard-new/) in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your [service allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses).|
 
 
 ## User Management

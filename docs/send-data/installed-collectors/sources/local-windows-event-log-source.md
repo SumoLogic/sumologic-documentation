@@ -4,7 +4,7 @@ title: Local Windows Event Log Source
 description: You can collect local events from the Windows Events Viewer.
 ---
 
-
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 Set up a Local Windows Event Log Source to collect local events you would normally see in the Windows Event Viewer. Setting up a Local Windows Event Source is a quick process. There are no prerequisites for setting up the Source, and you'll begin collecting logs within a minute or so.
 
@@ -33,7 +33,7 @@ To configure a Local Windows Event Log Source:
 1. Set the following:
    * **Name.** Type the name you'd like to display for the new Source. 
      :::note
-     Hostname values are parsed and applied to your event logs as `\_sourceHost` metadata automatically. The value is parsed from the field `Computer` in your event logs. `Channel` or `LogFile` values are parsed and applied as `_sourceName` metadata automatically. The `_sourceHost` and `_sourceName` metadata fields are supported in log search but not LiveTail. 
+     Hostname values are parsed and applied to your event logs as `_sourceHost` metadata automatically. The value is parsed from the field `Computer` in your event logs. `Channel` or `LogFile` values are parsed and applied as `_sourceName` metadata automatically. The `_sourceHost` and `_sourceName` metadata fields are supported in log search, but not LiveTail.
      :::
    * **Description** is optional.
    * **Source Category.** Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing `web_apps` tags all the logs from this Source in the sourceCategory field, so running a search on `_sourceCategory=web_apps` would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](#configuring-sourcecategory-using-variables) below.
@@ -82,9 +82,9 @@ To configure a Local Windows Event Log Source:
        :::note   
        When updating the **Collection should begin** setting you will need to restart the Collector.
        :::
-    
+
        :::note
-       {@import ../../../reuse/collection-should-begin-note.md}
+       <CollBegin/>
        :::
 
    * **Security Identifier**. Collectors on version 19.182-17 or later can map [security identifiers](https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/security-identifiers-in-windows) (SIDs) to usernames. During collection, the `Security ``ID` field in your log `message` (if you selected **Complete Message**) is translated into the format of your choice. Choose:

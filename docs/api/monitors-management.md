@@ -12,7 +12,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Monitors Management API allows you to manage Monitors from HTTP endpoints. Monitors continuously query your data to monitor and send notifications when specific events occur. For more information, see [Monitors](https://help.sumologic.com/?cid=10020).
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
+
+<ApiIntro/>
 
 | Deployment | Documentation URL                                                 |
 |:------------|:-------------------------------------------------------------------|

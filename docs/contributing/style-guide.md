@@ -160,7 +160,7 @@ This is some vital information.
 This action is dangerous and could result in data loss.
 :::
 
-:::caution
+:::warning
 This could note important and problematic information.
 :::
 
@@ -189,7 +189,7 @@ This is some vital information.
 This action is dangerous and could result in data loss.
 :::
 
-:::caution
+:::warning
 This could note important and problematic information.
 :::
 
@@ -445,7 +445,8 @@ You can use an [expander](https://docusaurus.io/docs/next/markdown-features#deta
 You can include markdown content in expanders including code samples, embedded videos, bulleted lists, and more.
 
 ```html title="Copy and fill out for expanders"
-<details><summary>Title for the expander</summary>
+<details>
+<summary>Title for the expander</summary>
 
 Place long lists or lots of content in this section. The reader can expand/collapse as needed.
 
@@ -486,7 +487,7 @@ Place long lists or lots of content in this section. The reader can expand/colla
 
 ## Contractions
 
-Using contractions contributes to our goals of striking a conversational, friendly tone. 
+Using contractions contributes to our goals of striking a conversational, friendly tone.
 
 It's okay to use common contractions like “I'm”, “they're”, and “you’ll”. Spell out all negative contractions (for example: use "cannot", not "can't"), as they can be easily mistaken for the opposite meaning.
 
@@ -498,27 +499,28 @@ To link to a downloadable asset file, such as a `.yaml`, `.json`, or `.xml`:
 
 1. Drag and drop your file to the `static/files` folder. In this example, we'll drop in a file called `domainCollector.ps1`.<br/><img src={useBaseUrl('img/contributing/static-file.png')} alt="header sizes" width="250"/>
 1. Go to your doc in progress and use the following syntax to link the file:
-  <Tabs
-    className="unique-tabs"
-    defaultValue="Markdown"
-    values={[
-      {label: 'Markdown', value: 'Markdown'},
-      {label: 'Result', value: 'Result'},
-    ]}>
 
-  <TabItem value="Markdown">
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
 
-  ```md
-  <a href="https://help.sumologic.com/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
-  ```
+<TabItem value="Markdown">
 
-  </TabItem>
-  <TabItem value="Result">
+```md
+<a href="https://help.sumologic.com/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+```
 
-  <a href="https://help.sumologic.com/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+</TabItem>
+<TabItem value="Result">
 
-  </TabItem>
-  </Tabs>
+<a href="https://help.sumologic.com/files/domainCollector.ps1" target="_blank">domainCollector.ps1</a>
+
+</TabItem>
+</Tabs>
 
 Nearly all file formats are supported. For more information, see [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets).
 
@@ -528,7 +530,9 @@ If your file is available in another public Sumo Logic repo, provide the standar
 
 Not all UI elements have an intuitive name. It's the very nature of working with a constantly evolving product. Here are some examples:
 
-{@import ../reuse/ui-elements.md}
+import UiElements from '../reuse/ui-elements.md';
+
+<UiElements/>
 
 When providing instructions that involve multiple UI elements, list them sequentially and in cascading order. For example: Click **More Actions** > **Delete**.
 
@@ -699,7 +703,8 @@ You can use a link to a file embedding the entire file, or embed a range of code
    :::
 1. Add alt text for your image (for example, `"Image properties dialog"` or `"Sumo Logic logo"`). This is a brief description of what the image is meant to show. Alt text is a label, not a caption, and doesn't need to describe all details of an image. If you are editing and you come across an image without `alt text`, add it!
 
-  <details><summary>More about <code>alt text</code></summary>
+  <details>
+<summary>More about <code>alt text</code></summary>
 
   Alt text is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download. Alt text is required under [US Government GSA Section 508](https://www.section508.gov/) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
 
@@ -996,7 +1001,8 @@ Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/ma
 * To add an index for a section, create an index.md page in the folder. Give it a `slug: name` where the name is the folder for the entire section like contribution-guide. In the category, use a link line with the folder name and index for example: `link: {type: 'doc', id: 'contributing/index'},`.
 * To add a new page, make note of the file path and id. For example, this document is located in the folder `contributing` with an id of `create-document`. When adding this file to the sidebar, it would be added to the `contributing/create-document`.
 
-<details><summary>Example: add <code>contribution/create-document</code> to sidebars.ts</summary>
+<details>
+<summary>Example: add <code>contribution/create-document</code> to sidebars.ts</summary>
 
 ```js title="sidebars.ts"
 //Contribution guide for documentation
@@ -1029,7 +1035,8 @@ Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/ma
 
 * To add a category, or dropdown list of documentation, use the following format:
 
-<details><summary>Example: add sidebar category example with additional section</summary>
+<details>
+<summary>Example: add sidebar category example with additional section</summary>
 
 ```js title="sidebars.ts"
     {
@@ -1060,7 +1067,8 @@ Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/ma
 
 * To add a dedicated sidebar, use the following format:
 
-<details><summary>Example: adding a dedicated sidebar for a guide</summary>
+<details>
+<summary>Example: adding a dedicated sidebar for a guide</summary>
 
 ```js title="sidebars.ts"
 module.exports = {
@@ -1198,9 +1206,11 @@ To add release notes with images:
 For repeatable content (like an identical section that appears in several docs), you can save a lot of time by creating one instance of that content in the `/docs/reuse` folder and then import that snippet to other docs.
 
 1. Create a new markdown file and save it to the [`/docs/reuse`](https://github.com/SumoLogic/sumologic-documentation/tree/main/docs/reuse) folder.
-1. Import that content to another doc by adding this snippet (substitute the file path with your own).
+1. Import that content to another doc by adding this snippet (substitute the file path and object name with your own).
    ```bash
-   {@import ../../reuse/filename.md}
+   import RestartC2C from '../reuse/restart-c2c-source.md';
+
+   <RestartC2C/>
    ```
 
 Headings in the reuse folder will not appear in the right-side nav in docs where they're imported. For this reason, unless the headers are H4 or below, reuse the content only but retain headings in the other docs.
@@ -1220,14 +1230,19 @@ Example: the content under the Cloud-to-Cloud source docs > Restarting Your Sour
 ```md
 ### Restarting your source
 
-{@import ../reuse/restart-c2c-source.md}
+import RestartC2C from '../reuse/restart-c2c-source.md';
+
+<RestartC2C/>
+
 ```
 </TabItem>
 <TabItem value="Result">
 
 ### Restarting your source
 
-{@import ../reuse/restart-c2c-source.md}
+import RestartC2C from '../reuse/restart-c2c-source.md';
+
+<RestartC2C/>
 
 </TabItem>
 </Tabs>
