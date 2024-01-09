@@ -3,7 +3,7 @@ id: create-dashboard
 title: Create a Dashboard
 ---
 
-:::caution
+:::warning
 We strongly recommend using our upgraded [Dashboards](/docs/dashboards), which allows you to analyze metrics and log data on the same dashboard in a streamlined user experience. Sumo Logic will cease updates and support for Classic Dashboards.
 :::
 

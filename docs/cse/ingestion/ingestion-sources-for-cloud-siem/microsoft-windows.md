@@ -51,7 +51,9 @@ In this step, you configure a Local Windows Event Log Source to collect Microsof
 1. **Security Identifier**. You **may** specify how you want the Security Identifier (SID) to appear in the log message, **Username Only** is the default option.
 1. **Collection should begin**. Specify when you want the log collection to start.
 :::note
-{@import ../../../reuse/collection-should-begin-note.md}
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
+
+<CollBegin/>
 :::
 1. Click **Save**.
 

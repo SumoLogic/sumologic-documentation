@@ -25,22 +25,19 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs"><img src={useBaseUrl('img/icons/logs.png')} alt="Thumbnail icon" width="40"/>
-  <h4>Upload Logs to HTTP Source</h4></a>
+  <a href="/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-logs"><img src={useBaseUrl('img/icons/logs.png')} alt="Thumbnail icon" width="40"/><h4>Upload Logs to HTTP Source</h4></a>
   <p>This guide provides instructions on uploading logs to an HTTP Source.</p>
   </div>
 </div>
   <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics"><img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/>
-  <h4>Upload Metrics to HTTP Source</h4></a>
+  <a href="/docs/send-data/hosted-collectors/http-source/logs-metrics/upload-metrics"><img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/><h4>Upload Metrics to HTTP Source</h4></a>
   <p>This guide provides instructions on uploading metrics to an HTTP Source.</p>
   </div>
 </div>
   <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/http-source/generate-new-url"><img src={useBaseUrl('img/icons/logs.png')} alt="Thumbnail icon" width="40"/>
-  <h4>Generate HTTP Source URL</h4></a>
+  <a href="/docs/send-data/hosted-collectors/http-source/generate-new-url"><img src={useBaseUrl('img/icons/logs.png')} alt="Thumbnail icon" width="40"/><h4>Generate HTTP Source URL</h4></a>
   <p>You can generate a new URL for an HTTP Source at any time. Generating a new URL completely invalidates the old URL.</p>
   </div>
 </div>
@@ -52,15 +49,13 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/apm/real-user-monitoring/configure-data-collection"><img src={useBaseUrl('img/send-data/http-rum.png')} alt="Thumbnail icon" width="40"/>
-  <h4>RUM HTTP Traces Source</h4></a>
+  <a href="/docs/apm/real-user-monitoring/configure-data-collection"><img src={useBaseUrl('img/send-data/http-rum.png')} alt="Thumbnail icon" width="40"/><h4>RUM HTTP Traces Source</h4></a>
   <p>Learn how to configure a RUM HTTP Traces Source.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/http-source/troubleshooting"><img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Thumbnail icon" width="40"/>
-  <h4>HTTP Source Troubleshooting</h4></a>
+  <a href="/docs/send-data/hosted-collectors/http-source/troubleshooting"><img src={useBaseUrl('img/icons/operations/troubleshoot.png')} alt="Thumbnail icon" width="40"/><h4>HTTP Source Troubleshooting</h4></a>
   <p>Check the HTTP status codes.</p>
   </div>
 </div>

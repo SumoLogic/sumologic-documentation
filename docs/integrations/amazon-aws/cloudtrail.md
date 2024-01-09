@@ -139,11 +139,14 @@ Your search results should look similar to:
 
 Now that you have set up collection for AWS CloudTrail, install the Sumo Logic App for CloudTrail to use the pre-configured searches and dashboards that provide visibility into your environment.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 :::info
 
-<details><summary><strong>What if my data isn't displaying in all Panels?</strong></summary>
+<details>
+<summary><strong>What if my data isn't displaying in all Panels?</strong></summary>
 
 ### Scan interval issues
 
