@@ -238,7 +238,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td>The diff operator calculates the rate of change in a field between consecutive rows. To produce results, diff requires that a specified field contain numeric data; any non-numerical values are removed from the search results.</td>
    <td>_diff</td>
    <td>Can be used in Dashboard Panels, but in the search they must be included after the first <code>group-by</code> phrase.</td>
-   <td><code>* | parse "bytes transmited: '*'" as bytes<br/>| timeslice 1m<br/>| sum(bytes) as bytes by _timeslice<br/>| sort _timeslice<br/>| diff bytes as diff_bytes</code></td>
+   <td><code>* | parse "bytes transmitted: '*'" as bytes<br/>| timeslice 1m<br/>| sum(bytes) as bytes by _timeslice<br/>| sort _timeslice<br/>| diff bytes as diff_bytes</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/fields_operator">fields</a></td>
