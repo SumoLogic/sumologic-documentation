@@ -539,12 +539,12 @@ Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors
 
 | Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
 |---|---|---|---|---|---|
-| Metrics | Elasticsearch - Cluster Red | This alert fires when Elasticsearch Cluster status is RED | Critical | > =3 | <3 |
-| Metrics | Elasticsearch - Cluster Yellow | This alert fires when Elasticsearch Cluster status is YELLOW | Warning | > =2 | <2 |
+| Metrics | Elasticsearch - Cluster Red | This alert fires when Elasticsearch Cluster status is RED | Critical | `>=`3 | `<`3 |
+| Metrics | Elasticsearch - Cluster Yellow | This alert fires when Elasticsearch Cluster status is YELLOW | Warning | `>=`2 | `<`2 |
 | Metrics | Elasticsearch - Disk Out of Space | This alert fires when the disk usage is over 90% | Critical | >90 | < =90 |
 | Metrics | Elasticsearch - Disk Space Low | This alert fires when the disk usage is over 80% | Warning | >80 | < = 80 |
-| Metrics | Elasticsearch - Healthy Data Nodes | This alert fires when there missing data node in Elasticsearch cluster | Critical | <3 | > =3 |
-| Metrics | Elasticsearch - Healthy Nodes | This alert fires when there is missing node in Elasticsearch cluster | Critical | <3 | > =3 |
+| Metrics | Elasticsearch - Healthy Data Nodes | This alert fires when there missing data node in Elasticsearch cluster | Critical | `<`3 | `>=`3 |
+| Metrics | Elasticsearch - Healthy Nodes | This alert fires when there is missing node in Elasticsearch cluster | Critical | `<`3 | `>=`3 |
 | Metrics | Elasticsearch - Heap Usage Too High | This alert fires when the heap usage is over 90% | Critical | >90 | < =90 |
 | Metrics | Elasticsearch - Heap Usage Warning | This alert fires when the heap usage is over 80% | Warning | >80 | < =80 |
 | Metrics | Elasticsearch - Initializing Shards Too Long | This alert fires when elasticsearch has been initializing shards for 5 min | Warning | >0 | < =0 |
