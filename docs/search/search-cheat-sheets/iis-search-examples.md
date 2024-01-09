@@ -20,7 +20,7 @@ The examples use this sample Access log message where applicable:
 | Look for general authorization failures excluding router messages. | `(fail* OR error?) NOT _source=routers` |
 
 :::sumo More Info
-For more information, see [Keyword Search expressions](../get-started-with-search/build-search/keyword-search-expressions.md).
+For more information, see [Keyword Search Expressions](../get-started-with-search/build-search/keyword-search-expressions.md).
 :::
 
 ## Parse, Count, and Top Operators
