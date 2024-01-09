@@ -8,10 +8,6 @@ tags:
 description: The Qualys VMDR Source tracks errors, reports its health, and start-up progress.
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/qualys-vmdr/example.json';
-import MyComponentSource from '!!raw-loader!/files/c2c/qualys-vmdr/example.json';
-import TerraformExample from '!!raw-loader!/files/c2c/qualys-vmdr/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/qualys-icon.png')} alt="qualys-icon.png" width="120" />

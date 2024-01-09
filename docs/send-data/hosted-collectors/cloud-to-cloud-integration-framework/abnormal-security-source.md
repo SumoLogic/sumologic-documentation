@@ -9,7 +9,6 @@ description: Learn how to collect abnormal threat logs from the Abnormal Securit
 ---
 
 import CodeBlock from '@theme/CodeBlock';
-import ExampleJSON from '/files/c2c/abormal-security/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/abnormal-security/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/abnormal-security/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
