@@ -68,9 +68,9 @@ To add threat intelligence indicators, you must upload files containing the indi
 1. In Sumo Logic, go to **Manage Data > Logs > Threat Intelligence**.
 1. Click **Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid black'}} width="500" />
 1. Select the format of the file to be uploaded:
-    * **Normalized JSON**. A normalized JSON file. <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) for information about the attributes to use. Your file must include the following attributes:
+    * **Normalized JSON**. A normalized JSON file. You can use this to load indicators from multiple sources. (For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v). Also see the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) resource.) <br/>Your file must include the following attributes:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
-       * **indicator** (string). Value of the indicator, such as an IP address, file name, email address, etc. For example, `182.158.1.1`.
+       * **indicator** (string). Value of the indicator, such as an IP address, file name, email address, etc. For example, `192.0.2.0`.
        * **type** (string). Type of the indicator. Following are valid values: 
           * `domain-name:value`
           * `email-addr:value`
@@ -82,8 +82,8 @@ To add threat intelligence indicators, you must upload files containing the indi
           * `user-account:user_id` (maps to `user-account:account_login` in Cloud SIEM)
        * **source** (string). User-provided text to identify the source of the indicator. For example, `FreeTAXII`. 
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
-       * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest. For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). Following are valid values:
+       * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest (as [defined by the confidence scale in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_1v6elyto0uqg)). For example, `75`.
+       * **threatType** (string). Type of indicator (as [defined by indicator_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). Following are valid values:
          * `anomalous-activity`. Unexpected, or unusual activity that may not necessarily be malicious or indicate compromise. This type of activity may include reconnaissance-like behavior such as port scans or version identification, network behavior anomalies, and asset and/or user behavioral anomalies.
          * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
          * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
@@ -91,9 +91,9 @@ To add threat intelligence indicators, you must upload files containing the indi
          * `malicious-activity`. Patterns of suspected malicious objects and/or activity.
          * `attribution`. Patterns of behavior that indicate attribution to a particular Threat Actor or Campaign.
          * `unknown`. There is not enough information available to determine the type of indicator. 
-    * **CSV**. A comma-separated value (CSV) file. <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators) for information about the attributes to use. Your file must include the following attributes:
+    * **CSV**. A comma-separated value (CSV) file. (For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v). Also see the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.) <br/>Your file must include the following attributes:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
-       * **value** (string). Value of the indicator, such as an IP address, file name, email address, etc. For example, `182.158.1.1`.
+       * **value** (string). Value of the indicator, such as an IP address, file name, email address, etc. For example, `192.0.2.0`.
        * **type** (string). Type of the indicator. Following are valid values: 
           * `domain-name:value`
           * `email-addr:value`
@@ -107,7 +107,7 @@ To add threat intelligence indicators, you must upload files containing the indi
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest. For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). Following are valid values:
+       * **threatType** (string). Type of indicator (as [defined by indicator_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). Following are valid values:
          * `anomalous-activity`. Unexpected, or unusual activity that may not necessarily be malicious or indicate compromise. This type of activity may include reconnaissance-like behavior such as port scans or version identification, network behavior anomalies, and asset and/or user behavioral anomalies.
          * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
          * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
@@ -115,15 +115,21 @@ To add threat intelligence indicators, you must upload files containing the indi
          * `malicious-activity`. Patterns of suspected malicious objects and/or activity.
          * `attribution`. Patterns of behavior that indicate attribution to a particular Threat Actor or Campaign.
          * `unknown`. There is not enough information available to determine the type of indicator. 
-    * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. (Note that if you want to upload indicators from multiple sources, you cannot use STIX but instead should use **Sumo normalized JSON**.) <br/>In the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource, see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) for information about the attributes to use. Your file must include the following attributes (per the [STIX 2.1 standard](https://docs.oasis-open.org/cti/stix/v2.1/stix-v2.1.html)):
-       * `type`
-       * `spec_version`
-       * `id`
-       * `created`
-       * `modified`
-       * `pattern`
-       * `pattern_type`
-       * `valid_from`
+    * **STIX 2.1 JSON**. A JSON file in [STIX 2.1 format](https://oasis-open.github.io/cti-documentation/stix/intro). (For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v). Also see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource. Note that if you want to upload indicators from multiple sources, you cannot use STIX but instead should use **Normalized JSON**.)<br/>Your file must include the following attributes:
+       * **type** 
+       * **spec_version** 
+       * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
+       * **created** (string [date-time]). The time at which the object was originally created. Timestamp in UTC in RFC3339 format. For example, `2016-05-01T06:13:14.000Z`.
+       * **modified** (string [date-time]). When the object is modified. Timestamp in UTC in RFC3339 format. For example, `2023-05-01T06:13:14.000Z`. This property is only used by STIX Objects that support versioning and represents the time that this particular version of the object was last modified. 
+       * **pattern** (string). The pattern of this indicator (as defined by [pattern in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_me3pzm77qfnf)). For example, `[ file:hashes.'SHA-256' = '4bac27393bdd9777ce02453256c5577cd02275510b2227f473d03f533924f877' ]`. 
+       * **pattern_type** (string). The pattern language used in this indicator (as defined by [pattern_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_9lfdvxnyofxw)). Following are valid values:
+          * `stix`. Specifies the [STIX](https://oasis-open.github.io/cti-documentation/stix/intro) pattern language.
+          * `pcre`. Specifies the [PCRE](https://www.pcre.org/) language.
+          * `sigma`. Specifies the [SIGMA](https://sigmahq.io/) language.
+          * `snort`. Specifies the [SNORT](https://www.snort.org/) language.
+          * `suricata`. Specifies the [SURICATA](https://suricata-ids.org/) language.
+          * `yara`. Specifies the [YARA](https://virustotal.github.io/yara/) language.
+       * **valid_from** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
 1. Click **Upload** to upload the file.
 1. Click **Import**. 
 
@@ -194,13 +200,22 @@ _index=sec_record*
 | timeslice 1h
 | count by _timeslice
 ```
-
 ```
 _index=sec_record* 
 | threatLookup  source=s_CrowdStrike include=active dstDevice_ip, srcDevice_ip 
 | where _threatLookup.confidence > 50 
 | timeslice 1h 
 | count by _timeslice
+```
+
+#### Run threatLookup with the cat search operator
+
+You can run the `threatLookup` search operator with the [cat search operator](https://help.sumologic.com/docs/search/search-query-language/search-operators/cat/) by using the `sumo://threat-intel` path. This lets you search the entire store of threat intelligence indicators, or just a portion. For example:
+```
+cat sumo://threat-intel  | where _threatlookup.indicator = "192.0.2.0"
+```
+```
+cat sumo://threat-intel  | where _threatlookup.source = "s_CrowdStrike" and _threatlookup.indicator = "192.0.2.0"
 ```
 
 ### hasThreatMatch Cloud SIEM rules language function
