@@ -135,7 +135,7 @@ Provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning 
 
 <img src={useBaseUrl('img/cse/status.png')} alt="status" />
 
-## Monitor credits quota and usage
+## Monitor credits allocation and usage
 
 This section has information about how you can monitor credit allocations and consumption across all your orgs, and for each child org.
 
@@ -143,6 +143,9 @@ This section has information about how you can monitor credit allocations and co
 
 You can view the usage by orgs in the **Overall Usage** tab on the **Account Overview** page. Usage for the following categories is shown:
 
+* The **Credit Allocation** tile indicates the total number of credits allocated.
+* The **Total Credit Usage** tile shows amount of credits consumed out of the total allocated credits.
+* The **Usage Forecast** tile indicates the total consumption of the credits by the end of contract period according to the current consumption rate.
 * **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
 * **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
 * **Infrequent Ingest**. Credits used for logs ingested into the Infrequent tier.
@@ -167,11 +170,11 @@ You can view the usage of individual child orgs in the **Child Orgs** tab on the
 * The **Total Credits Used** column indicates the total amount of credits consumed for the selected child org.
 * The **Usage %** column indicates the percentage of overall subscription credits that was allocated to a child org has been consumed.
 * The **Forecast** column indicates the percentage of total consumption of the credits by the end of contract period according to the current consumption rate for a selected child org.
-* The **Usage % WOW** column indicates the percentage of week on week subscription credits that was allocated to a child org has been consumed.
+* The **Usage % Change** column indicates the difference in credit usage by your child organisations over time. For example, if you choose the date from Jan 1 to Jan 7, it will show the usage difference between Dec 25 to Dec 31 and Jan 1 to Jan 7 for each child organisation.
 
 <img src={useBaseUrl('img/subscriptions/child-org.png')} alt="your description" style={{border:'1px solid black'}} />
 
-By clicking any of the selected child orgs, you can view the usage for the following categories:
+By clicking any of the selected child orgs, a side panel opens up in which you can view the individual usage for the following categories:
 
 * **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
 * **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
@@ -192,23 +195,6 @@ If a [custom subdomain](create-manage-orgs.md) has been configured for a child o
 1. Go to **Administration** > **Organizations**.
 1. Click the row for the org you want to access.
 1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="access org" width="450"/>
-
-### View child org credits allocation and usage
-
-1. Go to **Administration** > **Organizations**.
-1. Click an org in the list of orgs.
-1. A pane with details about the org appears on the right side of the page. <br/> <img src={useBaseUrl('img/subscriptions/credits-usage.png')} alt="usage" width="450"/>  
-1. The **Credits Usage section** of the pane shows the number and percentage of the credits allocated to the org that have been consumed, along with the total credits that are allocated.
-2. Click **View Details** for more information.
-3. The **Credits Usage Details** popup displays the following information. This information is for the current contract subscription period.
-    * **Allocated Credits**. The total number of credits allocated to the org.
-    * **Credits Used**. The number and percentage of allocated credits that have been used.
-    * For each Product Variable, the following information is shown.
-      * **Credits Used**. Number of allocated credits that have been used for the Product Variable.
-      * **Deployment Charge**. The number of credits associated with the Deployment Charge (as applicable), if the child org is in a different deployment than the parent org.
-      * **Credits Deducted**. This column if the parent org is on a subscription to which cross-geo charging applies to the org. If the parent org is on Global Credits, deployment charges don’t apply and this column won't appear. **Credits Deducted** is the sum of **Credits Used** and the **Deployment Charge**.
-      * **Usage %**. The percentage of credits allocated to the org that have been used for the Product Variable.
-      * **Units**. Shows the volume of log ingest in GB or the DPM (metrics) that is equivalent to the credits used for the Product Variable. <br/> ![sp-usage.png](/img/subscriptions/usage-details-2.png)
 
 ## Audit logging for organizations
 
