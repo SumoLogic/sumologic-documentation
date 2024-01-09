@@ -27,5 +27,5 @@ By default, the OpenTelemetry Collector is now used for metrics collection inste
 
 This Helm Chart automatically creates the necessary Collector and Sources in Sumo. Up until this point, these were generic HTTP sources accepting data in different formats. As Sumo now has native support for the OTLP protocol used by OpenTelemetry, we've decided to switch to using these new sources by default. This is a completely transparent change **unless** you use the `_sourceName` or `_source` fields in your Sumo queries.
 
-[v3_migration_guide]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md
+[v3_migration_guide]: https://help.sumologic.com/docs/send-data/kubernetes/v3/how-to-upgrade/
 [scraped_metrics_aggregations]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/scraped-metrics.md#aggregations-removed
