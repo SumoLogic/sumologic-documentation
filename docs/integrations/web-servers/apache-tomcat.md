@@ -684,35 +684,25 @@ The Terraform script installs the alerts without any scope filters, if you would
 
 <table>
   <tr>
-   <td>To configure alerts for:
-   </td>
-   <td>Set <code>apachetomcat_data_source</code> to something like:
-   </td>
+   <td>To configure alerts for:   </td>
+   <td>Set <code>apachetomcat_data_source</code> to something like:   </td>
   </tr>
   <tr>
-   <td>A specific webserver farm
-   </td>
-   <td><code>webserver_farm=tomcat.prod.01</code>
-   </td>
+   <td>A specific webserver farm   </td>
+   <td><code>webserver_farm=tomcat.prod.01</code>   </td>
   </tr>
   <tr>
-   <td>All clusters in an environment
-   </td>
-   <td><code>environment=prod</code>
-   </td>
+   <td>All clusters in an environment   </td>
+   <td><code>environment=prod</code>   </td>
   </tr>
   <tr>
-   <td>Multiple webserver farms using a wildcard
-   </td>
-   <td><code>webserver_farm=tomcat-prod*</code>
-   </td>
+   <td>Multiple webserver farms using a wildcard   </td>
+   <td><code>webserver_farm=tomcat-prod*</code>   </td>
   </tr>
   <tr>
-   <td>A specific webserver farms within a specific environment
-   </td>
+   <td>A specific webserver farms within a specific environment </td>
    <td><code>webserver_farm=tomcat-1</code> and <code>environment=prod</code>
-<p>This assumes you have configured and applied Fields as described in Step 1: Configure Fields of the <em>Sumo Logic of the Collect Logs and Metrics for Apache Tomcat</em> topic.</p>
-   </td>
+<p>This assumes you have configured and applied Fields as described in Step 1: Configure Fields of the <em>Sumo Logic of the Collect Logs and Metrics for Apache Tomcat</em> topic.</p> </td>
   </tr>
 </table>
 
@@ -942,63 +932,39 @@ The alerts are built based on metrics datasets and have preset thresholds.
 
 <table>
   <tr>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
+   <td>Alert Name </td>
+   <td>Alert Description   </td>
+   <td>Alert Condition   </td>
+   <td>Recover Condition   </td>
   </tr>
   <tr>
-   <td>Apache Tomcat - Access from Highly Malicious Sources
-   </td>
-   <td>This alert fires when a Tomcat is accessed from highly malicious IP addresses.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>&#60; &#61; 0
-   </td>
+   <td>Apache Tomcat - Access from Highly Malicious Sources   </td>
+   <td>This alert fires when a Tomcat is accessed from highly malicious IP addresses.   </td>
+   <td> &#62; 0   </td>
+   <td>&#60; &#61; 0   </td>
   </tr>
   <tr>
-   <td>Apache Tomcat - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
+   <td>Apache Tomcat - High Client (HTTP 4xx) Error Rate   </td>
+   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.   </td>
+   <td> &#62; 0   </td>
+   <td>0   </td>
   </tr>
   <tr>
-   <td>Apache Tomcat - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
+   <td>Apache Tomcat - High Server (HTTP 5xx) Error Rate   </td>
+   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.   </td>
+   <td> &#62; 0   </td>
+   <td>0   </td>
   </tr>
   <tr>
-   <td>Apache Tomcat - High Memory Usage
-   </td>
-   <td>This alert fires when the memory usage is more than 80 %.
-   </td>
-   <td> &#62; 80 %
-   </td>
-   <td>&#60; &#61;80%
-   </td>
+   <td>Apache Tomcat - High Memory Usage   </td>
+   <td>This alert fires when the memory usage is more than 80 %.   </td>
+   <td> &#62; 80 %   </td>
+   <td>&#60; &#61;80%   </td>
   </tr>
   <tr>
-   <td>Apache Tomcat - Error
-   </td>
-   <td>This alert fires when error count is greater than 0.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> 0
-   </td>
+   <td>Apache Tomcat - Error   </td>
+   <td>This alert fires when error count is greater than 0.   </td>
+   <td> &#62; 0   </td>
+   <td> 0   </td>
   </tr>
 </table>

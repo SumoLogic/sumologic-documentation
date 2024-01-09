@@ -864,75 +864,9 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 
 **Sumo Logic provides the following out-of-the-box alerts**:
 
-<table>
-  <tr>
-   <td>Alert Type (Metrics/Logs)
-   </td>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Squid Proxy - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Squid Proxy - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Squid Proxy - High Latency
-   </td>
-   <td>This alert fires when latency on a node in a Squid Proxy cluster is higher than 3 seconds.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;&#61;3
-   </td>
-   <td>&#60;3
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Squid Proxy - High Denied Request
-   </td>
-   <td>This alert fires when there are too many HTTP denied requests (>5%)
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-</table>
+| Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|:---|:---|
+| Logs | Squid Proxy - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | Critical | > 0 | `<=`0 |
+| Logs | Squid Proxy - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Critical | >0 | `<=`0 |
+| Metrics | Squid Proxy - High Latency | This alert fires when latency on a node in a Squid Proxy cluster is higher than 3 seconds. | Critical | `>=`3 | `<`3 |
+| Logs | Squid Proxy - High Denied Request | This alert fires when there are too many HTTP denied requests (>5%) | Critical | >0 | `<=`0 |

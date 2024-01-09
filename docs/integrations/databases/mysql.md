@@ -742,29 +742,20 @@ This section describes the monitors provided with the MySQL app. These monitors 
 
 <table>
   <tr>
-   <td>Monitor name
-   </td>
-   <td>Monitor description
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recovery Condition
-   </td>
+   <td>Monitor name </td>
+   <td>Monitor description   </td>
+   <td>Alert Condition   </td>
+   <td>Recovery Condition   </td>
   </tr>
   <tr>
-   <td>MySQL - Connection refused
-   </td>
-   <td>This alert fires when connections are refused when the limit of maximum connections is reached within 5 minute time interval.
-   </td>
+   <td>MySQL - Connection refused   </td>
+   <td>This alert fires when connections are refused when the limit of maximum connections is reached within 5 minute time interval.   </td>
    <td> &#60;&#61; 1 </td>
-   <td>&#62; 1
-   </td>
+   <td>&#62; 1   </td>
   </tr>
   <tr>
-   <td>MySQL - High average query run time
-   </td>
-   <td>This alert fires when the average run time of SQL queries for a given schema is greater than or equal to one second within a time interval of 5 minutes.
-   </td>
+   <td>MySQL - High average query run time   </td>
+   <td>This alert fires when the average run time of SQL queries for a given schema is greater than or equal to one second within a time interval of 5 minutes.   </td>
    <td>&#62;&#61; 1 </td>
    <td> &#60; 1 </td>
   </tr>
@@ -775,93 +766,58 @@ This section describes the monitors provided with the MySQL app. These monitors 
    <td> &#60; 90 </td>
   </tr>
   <tr>
-   <td>MySQL - Large number of aborted connections
-   </td>
-   <td>This alert fires when we detect that there are 5 or more aborted connections identified within a time interval of 5 minutes.
-   </td>
-   <td>&#62;&#61; 5
-   </td>
-   <td> &#60; 5
-   </td>
+   <td>MySQL - Large number of aborted connections   </td>
+   <td>This alert fires when we detect that there are 5 or more aborted connections identified within a time interval of 5 minutes.   </td>
+   <td>&#62;&#61; 5   </td>
+   <td> &#60; 5   </td>
   </tr>
   <tr>
-   <td>MySQL - Large number of internal connection errors
-   </td>
-   <td>This alert fires when we detect that there are 5 or more internal connection errors within a time interval of 5 minutes.
-   </td>
+   <td>MySQL - Large number of internal connection errors   </td>
+   <td>This alert fires when we detect that there are 5 or more internal connection errors within a time interval of 5 minutes.   </td>
    <td>&#62;&#61; 5 </td>
-   <td> &#60; 5
-   </td>
+   <td> &#60; 5 </td>
   </tr>
   <tr>
-   <td>MySQL - Large number of slow queries
-   </td>
-   <td>This alert fires when we detect that there are 5 or more slow queries within a 5 minute time interval.
-   </td>
-   <td>&#62;&#61; 5
-   </td>
-   <td> &#60; 5
-   </td>
+   <td>MySQL - Large number of slow queries   </td>
+   <td>This alert fires when we detect that there are 5 or more slow queries within a 5 minute time interval.   </td>
+   <td>&#62;&#61; 5   </td>
+   <td> &#60; 5   </td>
   </tr>
   <tr>
-   <td>MySQL - Large number of statement errors
-   </td>
-   <td>This alert fires when we detect that there are 5 or more statement errors within a 5 minute time interval.
-   </td>
-   <td>&#62;&#61; 5
-   </td>
-   <td> &#60; 5
-   </td>
+   <td>MySQL - Large number of statement errors </td>
+   <td>This alert fires when we detect that there are 5 or more statement errors within a 5 minute time interval.   </td>
+   <td>&#62;&#61; 5   </td>
+   <td> &#60; 5   </td>
   </tr>
   <tr>
-   <td>MySQL - Large number of statement warnings
-   </td>
-   <td>This alert fires when we detect that there are 20 or more statement warnings within a 5 minute time interval.
-   </td>
-   <td>&#62;&#61; 20
-   </td>
-   <td> &#60; 20
-   </td>
+   <td>MySQL - Large number of statement warnings   </td>
+   <td>This alert fires when we detect that there are 20 or more statement warnings within a 5 minute time interval.   </td>
+   <td>&#62;&#61; 20   </td>
+   <td> &#60; 20   </td>
   </tr>
   <tr>
-   <td>MySQL - No index used in the SQL statements
-   </td>
-   <td>This alert fires when we detect that there are 5 or more statements not using an index in the sql query within a 5 minute time interval.
-   </td>
-   <td>&#62;&#61; 5
-   </td>
-   <td> &#60; 5
-   </td>
+   <td>MySQL - No index used in the SQL statements   </td>
+   <td>This alert fires when we detect that there are 5 or more statements not using an index in the sql query within a 5 minute time interval.   </td>
+   <td>&#62;&#61; 5   </td>
+   <td> &#60; 5   </td>
   </tr>
   <tr>
-   <td>MySQL - Excessive Slow Query Detected
-   </td>
-   <td>This alert fires when we detect the average time to execute a query is more than 5 seconds over a 24 hour time-period
-   </td>
-   <td>&#62;&#61;1
-   </td>
-   <td> &#60; 1
-   </td>
+   <td>MySQL - Excessive Slow Query Detected   </td>
+   <td>This alert fires when we detect the average time to execute a query is more than 5 seconds over a 24 hour time-period   </td>
+   <td>&#62;&#61;1   </td>
+   <td> &#60; 1   </td>
   </tr>
   <tr>
-   <td>MySQL - Follower replication lag detected
-   </td>
-   <td>This alert fires when we detect that the average replication lag is greater than or equal to 900 seconds within a 5 minute time interval.
-   </td>
-   <td>&#62;&#61; 900
-   </td>
-   <td> &#60; 900
-   </td>
+   <td>MySQL - Follower replication lag detected   </td>
+   <td>This alert fires when we detect that the average replication lag is greater than or equal to 900 seconds within a 5 minute time interval.   </td>
+   <td>&#62;&#61; 900 </td>
+   <td> &#60; 900   </td>
   </tr>
   <tr>
-   <td>MySQL - Instance down
-   </td>
-   <td>This alert fires when we detect that a MySQL instance is down within last 5 minutes interval.
-   </td>
-   <td>&#62;&#61;1
-   </td>
-   <td> &#60; 1
-   </td>
+   <td>MySQL - Instance down </td>
+   <td>This alert fires when we detect that a MySQL instance is down within last 5 minutes interval.   </td>
+   <td>&#62;&#61;1   </td>
+   <td> &#60; 1</td>
   </tr>
 </table>
 
@@ -870,210 +826,106 @@ This section describes the monitors provided with the MySQL app. These monitors 
 
 Here are the Telegraf metrics for MySQL collected by the MySQL app.
 
-<table>
+<table><small>
   <tr>
-   <td><small>
-mysql_aborted_clients
-<br/>
-mysql_aborted_connects
-<br/>
-mysql_bytes_received
-<br/>
-mysql_bytes_sent
-<br/>
-mysql_commands_delete
-<br/>
-mysql_commands_insert
-<br/>
-mysql_commands_select
-<br/>
-mysql_commands_update
-<br/>
-mysql_connection_errors_internal
-<br/>
-mysql_connection_errors_max_connections
-<br/>
-mysql_connections
-<br/>
-mysql_created_tmp_disk_tables
-<br/>
-mysql_created_tmp_files
-<br/>
-mysql_created_tmp_tables
-<br/>
-mysql_innodb_buffer_pool_pages_free
-<br/>
-mysql_innodb_buffer_pool_pages_total
-<br/>
-mysql_innodb_buffer_pool_read_requests
-<br/>
-mysql_innodb_buffer_pool_reads
-<br/>
-mysql_innodb_buffer_pool_wait_free
-<br/>
-mysql_innodb_data_fsyncs
-<br/>
-mysql_innodb_data_read
-<br/>
-mysql_innodb_data_writes
-<br/>
-mysql_innodb_log_waits
-<br/>
-mysql_innodb_row_lock_current_waits
-<br/>
-mysql_innodb_row_lock_waits
-<br/>
-mysql_innodb_rows_deleted
-<br/>
-mysql_innodb_rows_inserted
-<br/>
-mysql_innodb_rows_read
-<br/>
-mysql_innodb_rows_updated
-<br/>
-mysql_locked_connects
-<br/>
-mysql_mysqlx_connections_accepted
-<br/>
-mysql_mysqlx_connections_closed
-<br/>
-mysql_mysqlx_connections_rejected
-<br/>
-mysql_mysqlx_worker_threads
-<br/>
-mysql_mysqlx_worker_threads_active
-<br/>
-mysql_opened_files
-<br/>
-mysql_opened_tables
-<br/>
-mysql_perf_schema_events_statements_errors_total
-<br/>
-mysql_perf_schema_events_statements_no_index_used_total
-<br/>
-mysql_perf_schema_events_statements_rows_affected_total
-<br/>
-mysql_perf_schema_events_statements_rows_examined_total
-<br/>
-mysql_perf_schema_events_statements_rows_sent_total
-<br/>
-mysql_perf_schema_events_statements_seconds_total
-<br/>
-mysql_perf_schema_events_statements_sort_merge_passes_total
-<br/>
-mysql_perf_schema_events_statements_sort_rows_total
-<br/>
-mysql_perf_schema_events_statements_tmp_disk_tables_total
-<br/>
-mysql_perf_schema_events_statements_tmp_tables_total
-<br/>
-mysql_perf_schema_events_statements_total
-<br/>
-mysql_perf_schema_events_statements_warnings_total
-<br/>
-mysql_perf_schema_index_io_waits_seconds_total_delete
-</small>
-</td>
-
-<td><small>
-mysql_perf_schema_index_io_waits_seconds_total_fetch
-<br/>
-mysql_perf_schema_index_io_waits_seconds_total_insert
-<br/>
-mysql_perf_schema_index_io_waits_seconds_total_update
-<br/>
-mysql_perf_schema_index_io_waits_total_delete
-<br/>
-mysql_perf_schema_index_io_waits_total_fetch
-<br/>
-mysql_perf_schema_index_io_waits_total_insert
-<br/>
-mysql_perf_schema_index_io_waits_total_update
-<br/>
-mysql_perf_schema_read
-<br/>
-mysql_perf_schema_read_high_priority
-<br/>
-mysql_perf_schema_read_no_insert
-<br/>
-mysql_perf_schema_read_normal
-<br/>
-mysql_perf_schema_read_with_shared_locks
-<br/>
-mysql_perf_schema_table_io_waits_seconds_total_delete
-<br/>
-mysql_perf_schema_table_io_waits_seconds_total_fetch
-<br/>
-mysql_perf_schema_table_io_waits_seconds_total_insert
-<br/>
-mysql_perf_schema_table_io_waits_seconds_total_update
-<br/>
-mysql_perf_schema_table_io_waits_total_delete
-<br/>
-mysql_perf_schema_table_io_waits_total_fetch
-<br/>
-mysql_perf_schema_table_io_waits_total_insert
-<br/>
-mysql_perf_schema_table_io_waits_total_update
-<br/>
-mysql_perf_schema_write
-<br/>
-mysql_perf_schema_write_allow_write
-<br/>
-mysql_perf_schema_write_concurrent_insert
-<br/>
-mysql_perf_schema_write_low_priority
-<br/>
-mysql_perf_schema_write_normal
-<br/>
-mysql_qcache_hits
-<br/>
-mysql_qcache_inserts
-<br/>
-mysql_queries
-<br/>
-mysql_questions
-<br/>
-mysql_select_full_join
-<br/>
-mysql_select_full_range_join
-<br/>
-mysql_select_range
-<br/>
-mysql_select_range_check
-<br/>
-mysql_select_scan
-<br/>
-mysql_slow_queries
-<br/>
-mysql_sort_merge_passes
-<br/>
-mysql_sort_range
-<br/>
-mysql_sort_rows
-<br/>
-mysql_sort_scan
-<br/>
-mysql_table_locks_immediate
-<br/>
-mysql_table_locks_waited
-<br/>
-mysql_table_open_cache_hits
-<br/>
-mysql_table_open_cache_misses
-<br/>
-mysql_table_open_cache_overflows
-<br/>
-mysql_threads_cached
-<br/>
-mysql_threads_connected
-<br/>
-mysql_threads_created
-<br/>
-mysql_threads_running
-<br/>
-mysql_uptime
-</small>
-   </td>
-  </tr>
+   <td>mysql_aborted_clients<br/>
+mysql_aborted_connects<br/>
+mysql_bytes_received<br/>
+mysql_bytes_sent<br/>
+mysql_commands_delete<br/>
+mysql_commands_insert<br/>
+mysql_commands_select<br/>
+mysql_commands_update<br/>
+mysql_connection_errors_internal<br/>
+mysql_connection_errors_max_connections<br/>
+mysql_connections<br/>
+mysql_created_tmp_disk_tables<br/>
+mysql_created_tmp_files<br/>
+mysql_created_tmp_tables<br/>
+mysql_innodb_buffer_pool_pages_free<br/>
+mysql_innodb_buffer_pool_pages_total<br/>
+mysql_innodb_buffer_pool_read_requests<br/>
+mysql_innodb_buffer_pool_reads<br/>
+mysql_innodb_buffer_pool_wait_free<br/>
+mysql_innodb_data_fsyncs<br/>
+mysql_innodb_data_read<br/>
+mysql_innodb_data_writes<br/>
+mysql_innodb_log_waits<br/>
+mysql_innodb_row_lock_current_waits<br/>
+mysql_innodb_row_lock_waits<br/>
+mysql_innodb_rows_deleted<br/>
+mysql_innodb_rows_inserted<br/>
+mysql_innodb_rows_read<br/>
+mysql_innodb_rows_updated<br/>
+mysql_locked_connects<br/>
+mysql_mysqlx_connections_accepted<br/>
+mysql_mysqlx_connections_closed<br/>
+mysql_mysqlx_connections_rejected<br/>
+mysql_mysqlx_worker_threads<br/>
+mysql_mysqlx_worker_threads_active<br/>
+mysql_opened_files<br/>
+mysql_opened_tables<br/>
+mysql_perf_schema_events_statements_errors_total<br/>
+mysql_perf_schema_events_statements_no_index_used_total<br/>
+mysql_perf_schema_events_statements_rows_affected_total<br/>
+mysql_perf_schema_events_statements_rows_examined_total<br/>
+mysql_perf_schema_events_statements_rows_sent_total<br/>
+mysql_perf_schema_events_statements_seconds_total<br/>
+mysql_perf_schema_events_statements_sort_merge_passes_total<br/>
+mysql_perf_schema_events_statements_sort_rows_total<br/>
+mysql_perf_schema_events_statements_tmp_disk_tables_total<br/>
+mysql_perf_schema_events_statements_tmp_tables_total<br/>
+mysql_perf_schema_events_statements_total<br/>
+mysql_perf_schema_events_statements_warnings_total<br/>
+mysql_perf_schema_index_io_waits_seconds_total_delete</td>
+<td>mysql_perf_schema_index_io_waits_seconds_total_fetch<br/>
+mysql_perf_schema_index_io_waits_seconds_total_insert<br/>
+mysql_perf_schema_index_io_waits_seconds_total_update<br/>
+mysql_perf_schema_index_io_waits_total_delete<br/>
+mysql_perf_schema_index_io_waits_total_fetch<br/>
+mysql_perf_schema_index_io_waits_total_insert<br/>
+mysql_perf_schema_index_io_waits_total_update<br/>
+mysql_perf_schema_read<br/>
+mysql_perf_schema_read_high_priority<br/>
+mysql_perf_schema_read_no_insert<br/>
+mysql_perf_schema_read_normal<br/>
+mysql_perf_schema_read_with_shared_locks<br/>
+mysql_perf_schema_table_io_waits_seconds_total_delete<br/>
+mysql_perf_schema_table_io_waits_seconds_total_fetch<br/>
+mysql_perf_schema_table_io_waits_seconds_total_insert<br/>
+mysql_perf_schema_table_io_waits_seconds_total_update<br/>
+mysql_perf_schema_table_io_waits_total_delete<br/>
+mysql_perf_schema_table_io_waits_total_fetch<br/>
+mysql_perf_schema_table_io_waits_total_insert<br/>
+mysql_perf_schema_table_io_waits_total_update<br/>
+mysql_perf_schema_write<br/>
+mysql_perf_schema_write_allow_write<br/>
+mysql_perf_schema_write_concurrent_insert<br/>
+mysql_perf_schema_write_low_priority<br/>
+mysql_perf_schema_write_normal<br/>
+mysql_qcache_hits<br/>
+mysql_qcache_inserts<br/>
+mysql_queries<br/>
+mysql_questions<br/>
+mysql_select_full_join<br/>
+mysql_select_full_range_join<br/>
+mysql_select_range<br/>
+mysql_select_range_check<br/>
+mysql_select_scan<br/>
+mysql_slow_queries<br/>
+mysql_sort_merge_passes<br/>
+mysql_sort_range<br/>
+mysql_sort_rows<br/>
+mysql_sort_scan<br/>
+mysql_table_locks_immediate<br/>
+mysql_table_locks_waited<br/>
+mysql_table_open_cache_hits<br/>
+mysql_table_open_cache_misses<br/>
+mysql_table_open_cache_overflows<br/>
+mysql_threads_cached<br/>
+mysql_threads_connected<br/>
+mysql_threads_created<br/>
+mysql_threads_running<br/>
+mysql_uptime</td>
+  </tr></small>
 </table>

@@ -749,1235 +749,1232 @@ Use this dashboard to:
 
 Here's a list of available Kafka metrics.
 
-<table><small>
-  <tr>
-   <td>kafka_broker_disk_free
-   </td>
-   <td>kafka_replica_manager_FailedIsrUpdatesPerSec_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_disk_inodes_total
-   </td>
-   <td>kafka_replica_manager_FailedIsrUpdatesPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_disk_inodes_used
-   </td>
-   <td>kafka_replica_manager_FailedIsrUpdatesPerSec_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_disk_total
-   </td>
-   <td>kafka_replica_manager_IsrExpandsPerSec_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_disk_used_percent
-   </td>
-   <td>kafka_replica_manager_IsrExpandsPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_diskio_io_time
-   </td>
-   <td>kafka_replica_manager_IsrExpandsPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_diskio_iops_in_progress
-   </td>
-   <td>kafka_replica_manager_IsrShrinksPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_diskio_merged_reads
-   </td>
-   <td>kafka_replica_manager_LeaderCount_Value
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_diskio_merged_writes
-   </td>
-   <td>kafka_replica_manager_PartitionCount_Value
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_diskio_read_bytes
-   </td>
-   <td>kafka_replica_manager_ReassigningPartitions_Value
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_diskio_read_time
-   </td>
-   <td>kafka_replica_manager_UnderMinIsrPartitionCount_Value
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_diskio_reads
-   </td>
-   <td>kafka_replica_manager_UnderReplicatedPartitions_Value
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_diskio_weighted_io_time
-   </td>
-   <td>kafka_request_handlers_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_diskio_write_bytes
-   </td>
-   <td>kafka_request_LocalTimeMs_50thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_diskio_write_time
-   </td>
-   <td>kafka_request_LocalTimeMs_75thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_broker_diskio_writes
-   </td>
-   <td>kafka_request_LocalTimeMs_95thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ActiveControllerCount_Value
-   </td>
-   <td>kafka_request_LocalTimeMs_98thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_AutoLeaderBalanceRateAndTimeMs_50thPercentile
-   </td>
-   <td>kafka_request_LocalTimeMs_999thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_AutoLeaderBalanceRateAndTimeMs_75thPercentile
-   </td>
-   <td>kafka_request_LocalTimeMs_99thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_AutoLeaderBalanceRateAndTimeMs_98thPercentile
-   </td>
-   <td>kafka_request_LocalTimeMs_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_AutoLeaderBalanceRateAndTimeMs_99thPercentile
-   </td>
-   <td>kafka_request_LocalTimeMs_Max
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_AutoLeaderBalanceRateAndTimeMs_Count
-   </td>
-   <td>kafka_request_LocalTimeMs_Mean
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_AutoLeaderBalanceRateAndTimeMs_FifteenMinuteRate
-   </td>
-   <td>kafka_request_LocalTimeMs_Min
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_AutoLeaderBalanceRateAndTimeMs_Max
-   </td>
-   <td>kafka_request_LocalTimeMs_StdDev
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_AutoLeaderBalanceRateAndTimeMs_Mean
-   </td>
-   <td>kafka_request_MessageConversionsTimeMs_50thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_AutoLeaderBalanceRateAndTimeMs_Min
-   </td>
-   <td>kafka_request_MessageConversionsTimeMs_75thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_AutoLeaderBalanceRateAndTimeMs_StdDev
-   </td>
-   <td>kafka_request_MessageConversionsTimeMs_95thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControlledShutdownRateAndTimeMs_99thPercentile
-   </td>
-   <td>kafka_request_MessageConversionsTimeMs_98thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControlledShutdownRateAndTimeMs_FiveMinuteRate
-   </td>
-   <td>kafka_request_MessageConversionsTimeMs_99thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControlledShutdownRateAndTimeMs_Min
-   </td>
-   <td>kafka_request_MessageConversionsTimeMs_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControllerChangeRateAndTimeMs_50thPercentile
-   </td>
-   <td>kafka_request_MessageConversionsTimeMs_Max
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControllerChangeRateAndTimeMs_75thPercentile
-   </td>
-   <td>kafka_request_MessageConversionsTimeMs_Min
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControllerChangeRateAndTimeMs_98thPercentile
-   </td>
-   <td>kafka_request_RemoteTimeMs_50thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControllerChangeRateAndTimeMs_99thPercentile
-   </td>
-   <td>kafka_request_RemoteTimeMs_75thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControllerChangeRateAndTimeMs_Max
-   </td>
-   <td>kafka_request_RemoteTimeMs_95thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControllerChangeRateAndTimeMs_MeanRate
-   </td>
-   <td>kafka_request_RemoteTimeMs_98thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControllerChangeRateAndTimeMs_StdDev
-   </td>
-   <td>kafka_request_RemoteTimeMs_999thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControllerShutdownRateAndTimeMs_50thPercentile
-   </td>
-   <td>kafka_request_RemoteTimeMs_99thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControllerShutdownRateAndTimeMs_75thPercentile
-   </td>
-   <td>kafka_request_RemoteTimeMs_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControllerShutdownRateAndTimeMs_99thPercentile
-   </td>
-   <td>kafka_request_RemoteTimeMs_Max
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControllerShutdownRateAndTimeMs_Count
-   </td>
-   <td>kafka_request_RemoteTimeMs_Mean
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControllerShutdownRateAndTimeMs_FifteenMinuteRate
-   </td>
-   <td>kafka_request_RemoteTimeMs_Min
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControllerShutdownRateAndTimeMs_Min
-   </td>
-   <td>kafka_request_RemoteTimeMs_StdDev
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ControllerShutdownRateAndTimeMs_StdDev
-   </td>
-   <td>kafka_request_RequestBytes_50thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_EventQueueSize_Value
-   </td>
-   <td>kafka_request_RequestBytes_75thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_EventQueueTimeMs_95thPercentile
-   </td>
-   <td>kafka_request_RequestBytes_95thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_EventQueueTimeMs_98thPercentile
-   </td>
-   <td>kafka_request_RequestBytes_98thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_EventQueueTimeMs_999thPercentile
-   </td>
-   <td>kafka_request_RequestBytes_999thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_EventQueueTimeMs_Min
-   </td>
-   <td>kafka_request_RequestBytes_99thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_GlobalPartitionCount_Value
-   </td>
-   <td>kafka_request_RequestBytes_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_GlobalTopicCount_Value
-   </td>
-   <td>kafka_request_RequestBytes_Max
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_IsrChangeRateAndTimeMs_50thPercentile
-   </td>
-   <td>kafka_request_RequestBytes_Mean
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_IsrChangeRateAndTimeMs_75thPercentile
-   </td>
-   <td>kafka_request_RequestBytes_Min
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_IsrChangeRateAndTimeMs_95thPercentile
-   </td>
-   <td>kafka_request_RequestBytes_StdDev
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_IsrChangeRateAndTimeMs_98thPercentile
-   </td>
-   <td>kafka_request_RequestQueueTimeMs_50thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_IsrChangeRateAndTimeMs_99thPercentile
-   </td>
-   <td>kafka_request_RequestQueueTimeMs_75thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_IsrChangeRateAndTimeMs_Count
-   </td>
-   <td>kafka_request_RequestQueueTimeMs_95thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_IsrChangeRateAndTimeMs_FifteenMinuteRate
-   </td>
-   <td>kafka_request_RequestQueueTimeMs_98thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_IsrChangeRateAndTimeMs_FiveMinuteRate
-   </td>
-   <td>kafka_request_RequestQueueTimeMs_999thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_75thPercentile
-   </td>
-   <td>kafka_request_RequestQueueTimeMs_99thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_95thPercentile
-   </td>
-   <td>kafka_request_RequestQueueTimeMs_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_FiveMinuteRate
-   </td>
-   <td>kafka_request_RequestQueueTimeMs_Max
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_MeanRate
-   </td>
-   <td>kafka_request_RequestQueueTimeMs_Mean
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_Min
-   </td>
-   <td>kafka_request_RequestQueueTimeMs_Min
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_OneMinuteRate
-   </td>
-   <td>kafka_request_RequestQueueTimeMs_StdDev
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LeaderElectionRateAndTimeMs_95thPercentile
-   </td>
-   <td>kafka_request_ResponseQueueTimeMs_50thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LeaderElectionRateAndTimeMs_999thPercentile
-   </td>
-   <td>kafka_request_ResponseQueueTimeMs_75thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LeaderElectionRateAndTimeMs_FifteenMinuteRate
-   </td>
-   <td>kafka_request_ResponseQueueTimeMs_95thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LeaderElectionRateAndTimeMs_Max
-   </td>
-   <td>kafka_request_ResponseQueueTimeMs_98thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LeaderElectionRateAndTimeMs_Min
-   </td>
-   <td>kafka_request_ResponseQueueTimeMs_999thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ListPartitionReassignmentRateAndTimeMs_50thPercentile
-   </td>
-   <td>kafka_request_ResponseQueueTimeMs_99thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ListPartitionReassignmentRateAndTimeMs_95thPercentile
-   </td>
-   <td>kafka_request_ResponseQueueTimeMs_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ListPartitionReassignmentRateAndTimeMs_999thPercentile
-   </td>
-   <td>kafka_request_ResponseQueueTimeMs_Max
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ListPartitionReassignmentRateAndTimeMs_Mean
-   </td>
-   <td>kafka_request_ResponseQueueTimeMs_Mean
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ListPartitionReassignmentRateAndTimeMs_Min
-   </td>
-   <td>kafka_request_ResponseQueueTimeMs_Min
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ListPartitionReassignmentRateAndTimeMs_OneMinuteRate
-   </td>
-   <td>kafka_request_ResponseQueueTimeMs_StdDev
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LogDirChangeRateAndTimeMs_75thPercentile
-   </td>
-   <td>kafka_request_ResponseSendTimeMs_50thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LogDirChangeRateAndTimeMs_999thPercentile
-   </td>
-   <td>kafka_request_ResponseSendTimeMs_75thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LogDirChangeRateAndTimeMs_99thPercentile
-   </td>
-   <td>kafka_request_ResponseSendTimeMs_95thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LogDirChangeRateAndTimeMs_Count
-   </td>
-   <td>kafka_request_ResponseSendTimeMs_98thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_LogDirChangeRateAndTimeMs_FifteenMinuteRate
-   </td>
-   <td>kafka_request_ResponseSendTimeMs_999thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ManualLeaderBalanceRateAndTimeMs_50thPercentile
-   </td>
-   <td>kafka_request_ResponseSendTimeMs_99thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ManualLeaderBalanceRateAndTimeMs_75thPercentile
-   </td>
-   <td>kafka_request_ResponseSendTimeMs_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ManualLeaderBalanceRateAndTimeMs_98thPercentile
-   </td>
-   <td>kafka_request_ResponseSendTimeMs_Max
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ManualLeaderBalanceRateAndTimeMs_999thPercentile
-   </td>
-   <td>kafka_request_ResponseSendTimeMs_Mean
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ManualLeaderBalanceRateAndTimeMs_FiveMinuteRate
-   </td>
-   <td>kafka_request_ResponseSendTimeMs_Min
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ManualLeaderBalanceRateAndTimeMs_Mean
-   </td>
-   <td>kafka_request_ResponseSendTimeMs_StdDev
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ManualLeaderBalanceRateAndTimeMs_Min
-   </td>
-   <td>kafka_request_TemporaryMemoryBytes_75thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ManualLeaderBalanceRateAndTimeMs_OneMinuteRate
-   </td>
-   <td>kafka_request_TemporaryMemoryBytes_98thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_PartitionReassignmentRateAndTimeMs_50thPercentile
-   </td>
-   <td>kafka_request_TemporaryMemoryBytes_999thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_PartitionReassignmentRateAndTimeMs_75thPercentile
-   </td>
-   <td>kafka_request_TemporaryMemoryBytes_99thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_PartitionReassignmentRateAndTimeMs_98thPercentile
-   </td>
-   <td>kafka_request_TemporaryMemoryBytes_Max
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_PartitionReassignmentRateAndTimeMs_999thPercentile
-   </td>
-   <td>kafka_request_TemporaryMemoryBytes_Mean
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_PartitionReassignmentRateAndTimeMs_99thPercentile
-   </td>
-   <td>kafka_request_TemporaryMemoryBytes_Min
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_PartitionReassignmentRateAndTimeMs_Count
-   </td>
-   <td>kafka_request_TemporaryMemoryBytes_StdDev
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_PartitionReassignmentRateAndTimeMs_FiveMinuteRate
-   </td>
-   <td>kafka_request_ThrottleTimeMs_50thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_PartitionReassignmentRateAndTimeMs_Max
-   </td>
-   <td>kafka_request_ThrottleTimeMs_75thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_PartitionReassignmentRateAndTimeMs_Mean
-   </td>
-   <td>kafka_request_ThrottleTimeMs_95thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_PartitionReassignmentRateAndTimeMs_MeanRate
-   </td>
-   <td>kafka_request_ThrottleTimeMs_98thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_PartitionReassignmentRateAndTimeMs_OneMinuteRate
-   </td>
-   <td>kafka_request_ThrottleTimeMs_999thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_PreferredReplicaImbalanceCount_Value
-   </td>
-   <td>kafka_request_ThrottleTimeMs_99thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_ReplicasIneligibleToDeleteCount_Value
-   </td>
-   <td>kafka_request_ThrottleTimeMs_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicChangeRateAndTimeMs_99thPercentile
-   </td>
-   <td>kafka_request_ThrottleTimeMs_Max
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicChangeRateAndTimeMs_Count
-   </td>
-   <td>kafka_request_ThrottleTimeMs_Mean
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicChangeRateAndTimeMs_FiveMinuteRate
-   </td>
-   <td>kafka_request_ThrottleTimeMs_Min
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicChangeRateAndTimeMs_Mean
-   </td>
-   <td>kafka_request_ThrottleTimeMs_StdDev
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicChangeRateAndTimeMs_MeanRate
-   </td>
-   <td>kafka_request_TotalTimeMs_50thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicChangeRateAndTimeMs_Min
-   </td>
-   <td>kafka_request_TotalTimeMs_75thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicChangeRateAndTimeMs_StdDev
-   </td>
-   <td>kafka_request_TotalTimeMs_95thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicDeletionRateAndTimeMs_75thPercentile
-   </td>
-   <td>kafka_request_TotalTimeMs_98thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicDeletionRateAndTimeMs_95thPercentile
-   </td>
-   <td>kafka_request_TotalTimeMs_999thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicDeletionRateAndTimeMs_98thPercentile
-   </td>
-   <td>kafka_request_TotalTimeMs_99thPercentile
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicDeletionRateAndTimeMs_Count
-   </td>
-   <td>kafka_request_TotalTimeMs_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicDeletionRateAndTimeMs_FifteenMinuteRate
-   </td>
-   <td>kafka_request_TotalTimeMs_Max
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicDeletionRateAndTimeMs_Max
-   </td>
-   <td>kafka_request_TotalTimeMs_Mean
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicDeletionRateAndTimeMs_OneMinuteRate
-   </td>
-   <td>kafka_request_TotalTimeMs_Min
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicsToDeleteCount_Value
-   </td>
-   <td>kafka_request_TotalTimeMs_StdDev
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicUncleanLeaderElectionEnableRateAndTimeMs_98thPercentile
-   </td>
-   <td>kafka_topic_BytesInPerSec_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicUncleanLeaderElectionEnableRateAndTimeMs_999thPercentile
-   </td>
-   <td>kafka_topic_BytesInPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicUncleanLeaderElectionEnableRateAndTimeMs_Count
-   </td>
-   <td>kafka_topic_BytesInPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TopicUncleanLeaderElectionEnableRateAndTimeMs_FifteenMinuteRate
-   </td>
-   <td>kafka_topic_BytesInPerSec_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_TotalQueueSize_Value
-   </td>
-   <td>kafka_topic_BytesOutPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_50thPercentile
-   </td>
-   <td>kafka_topic_BytesOutPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_75thPercentile
-   </td>
-   <td>kafka_topic_MessagesInPerSec_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_95thPercentile
-   </td>
-   <td>kafka_topic_TotalFetchRequestsPerSec_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_98thPercentile
-   </td>
-   <td>kafka_topic_TotalFetchRequestsPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_Count
-   </td>
-   <td>kafka_topic_TotalFetchRequestsPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_FifteenMinuteRate
-   </td>
-   <td>kafka_topic_TotalFetchRequestsPerSec_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_FiveMinuteRate
-   </td>
-   <td>kafka_topic_TotalProduceRequestsPerSec_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_MeanRate
-   </td>
-   <td>kafka_topic_TotalProduceRequestsPerSec_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_Min
-   </td>
-   <td>kafka_topic_TotalProduceRequestsPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_UncleanLeaderElectionsPerSec_FifteenMinuteRate
-   </td>
-   <td>kafka_topic_TotalProduceRequestsPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_UpdateFeaturesRateAndTimeMs_MeanRate
-   </td>
-   <td>kafka_topics_BytesInPerSec_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_controller_UpdateFeaturesRateAndTimeMs_StdDev
-   </td>
-   <td>kafka_topics_BytesInPerSec_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_CollectionCount
-   </td>
-   <td>kafka_topics_BytesInPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_CollectionTime
-   </td>
-   <td>kafka_topics_BytesInPerSec_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_endTime
-   </td>
-   <td>kafka_topics_BytesOutPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_GcThreadCount
-   </td>
-   <td>kafka_topics_BytesOutPerSec_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_id
-   </td>
-   <td>kafka_topics_BytesRejectedPerSec_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_Code_Cache_max
-   </td>
-   <td>kafka_topics_BytesRejectedPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_Code_Cache_used
-   </td>
-   <td>kafka_topics_BytesRejectedPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_CodeHeap__non_nmethods__init
-   </td>
-   <td>kafka_topics_FailedFetchRequestsPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_CodeHeap__non_profiled_nmethods__used
-   </td>
-   <td>kafka_topics_FailedProduceRequestsPerSec_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_Compressed_Class_Space_init
-   </td>
-   <td>kafka_topics_FailedProduceRequestsPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Eden_Space_committed
-   </td>
-   <td>kafka_topics_FailedProduceRequestsPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Eden_Space_init
-   </td>
-   <td>kafka_topics_FailedProduceRequestsPerSec_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Eden_Space_max
-   </td>
-   <td>kafka_topics_InvalidMagicNumberRecordsPerSec_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Old_Gen_committed
-   </td>
-   <td>kafka_topics_InvalidMagicNumberRecordsPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Old_Gen_used
-   </td>
-   <td>kafka_topics_InvalidMagicNumberRecordsPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Survivor_Space_init
-   </td>
-   <td>kafka_topics_InvalidMessageCrcRecordsPerSec_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Survivor_Space_used
-   </td>
-   <td>kafka_topics_InvalidOffsetOrSequenceRecordsPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_Code_Cache_init
-   </td>
-   <td>kafka_topics_InvalidOffsetOrSequenceRecordsPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_Code_Cache_max
-   </td>
-   <td>kafka_topics_InvalidOffsetOrSequenceRecordsPerSec_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_CodeHeap__non_nmethods__committed
-   </td>
-   <td>kafka_topics_MessagesInPerSec_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_CodeHeap__profiled_nmethods__used
-   </td>
-   <td>kafka_topics_MessagesInPerSec_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_Compressed_Class_Space_used
-   </td>
-   <td>kafka_topics_MessagesInPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Eden_Space_committed
-   </td>
-   <td>kafka_topics_NoKeyCompactedTopicRecordsPerSec_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Eden_Space_init
-   </td>
-   <td>kafka_topics_NoKeyCompactedTopicRecordsPerSec_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Eden_Space_max
-   </td>
-   <td>kafka_topics_NoKeyCompactedTopicRecordsPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Old_Gen_committed
-   </td>
-   <td>kafka_topics_NoKeyCompactedTopicRecordsPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Old_Gen_init
-   </td>
-   <td>kafka_topics_ProduceMessageConversionsPerSec_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Old_Gen_used
-   </td>
-   <td>kafka_topics_ProduceMessageConversionsPerSec_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Survivor_Space_max
-   </td>
-   <td>kafka_topics_ReassignmentBytesInPerSec_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_Metaspace_used
-   </td>
-   <td>kafka_topics_ReassignmentBytesInPerSec_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_GarbageCollector_LastGcInfo_startTime
-   </td>
-   <td>kafka_topics_ReassignmentBytesInPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_Memory_HeapMemoryUsage_committed
-   </td>
-   <td>kafka_topics_ReassignmentBytesInPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_Memory_HeapMemoryUsage_init
-   </td>
-   <td>kafka_topics_ReassignmentBytesInPerSec_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_Memory_HeapMemoryUsage_used
-   </td>
-   <td>kafka_topics_ReassignmentBytesOutPerSec_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_MemoryPool_CollectionUsage_committed
-   </td>
-   <td>kafka_topics_ReassignmentBytesOutPerSec_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_MemoryPool_CollectionUsage_init
-   </td>
-   <td>kafka_topics_ReassignmentBytesOutPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_MemoryPool_CollectionUsage_max
-   </td>
-   <td>kafka_topics_ReassignmentBytesOutPerSec_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_MemoryPool_CollectionUsage_used
-   </td>
-   <td>kafka_topics_ReplicationBytesInPerSec_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_MemoryPool_CollectionUsageThresholdSupported
-   </td>
-   <td>kafka_topics_ReplicationBytesInPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_MemoryPool_PeakUsage_committed
-   </td>
-   <td>kafka_topics_ReplicationBytesOutPerSec_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_MemoryPool_PeakUsage_init
-   </td>
-   <td>kafka_topics_ReplicationBytesOutPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_MemoryPool_PeakUsage_max
-   </td>
-   <td>kafka_topics_ReplicationBytesOutPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_MemoryPool_PeakUsage_used
-   </td>
-   <td>kafka_topics_ReplicationBytesOutPerSec_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_MemoryPool_Usage_committed
-   </td>
-   <td>kafka_topics_TotalFetchRequestsPerSec_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_MemoryPool_Usage_init
-   </td>
-   <td>kafka_topics_TotalFetchRequestsPerSec_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_MemoryPool_Usage_max
-   </td>
-   <td>kafka_topics_TotalFetchRequestsPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_MemoryPool_Usage_used
-   </td>
-   <td>kafka_topics_TotalFetchRequestsPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_MemoryPool_UsageThresholdSupported
-   </td>
-   <td>kafka_topics_TotalProduceRequestsPerSec_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_OperatingSystem_CommittedVirtualMemorySize
-   </td>
-   <td>kafka_topics_TotalProduceRequestsPerSec_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_OperatingSystem_FreePhysicalMemorySize
-   </td>
-   <td>kafka_topics_TotalProduceRequestsPerSec_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_OperatingSystem_MaxFileDescriptorCount
-   </td>
-   <td>kafka_zookeeper_auth_failures_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_OperatingSystem_ProcessCpuTime
-   </td>
-   <td>kafka_zookeeper_auth_failures_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_OperatingSystem_TotalSwapSpaceSize
-   </td>
-   <td>kafka_zookeeper_authentications_Count
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_Runtime_BootClassPathSupported
-   </td>
-   <td>kafka_zookeeper_authentications_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_Threading_CurrentThreadCpuTime
-   </td>
-   <td>kafka_zookeeper_disconnects_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_Threading_SynchronizerUsageSupported
-   </td>
-   <td>kafka_zookeeper_expires_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_Threading_ThreadAllocatedMemoryEnabled
-   </td>
-   <td>kafka_zookeeper_expires_FiveMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_Threading_ThreadAllocatedMemorySupported
-   </td>
-   <td>kafka_zookeeper_expires_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_java_lang_Threading_ThreadCpuTimeEnabled
-   </td>
-   <td>kafka_zookeeper_expires_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_network_ResponseQueueSizeValue
-   </td>
-   <td>kafka_zookeeper_readonly_connects_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_partition_LogEndOffset
-   </td>
-   <td>kafka_zookeeper_readonly_connects_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_partition_LogStartOffset
-   </td>
-   <td>kafka_zookeeper_sync_connects_FifteenMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_partition_NumLogSegments
-   </td>
-   <td>kafka_zookeeper_sync_connects_MeanRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_partition_Size
-   </td>
-   <td>kafka_zookeeper_sync_connects_OneMinuteRate
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_partition_UnderReplicatedPartitions
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_purgatory_Heartbeat_NumDelayedOperations
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_purgatory_Produce_NumDelayedOperations
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_purgatory_Produce_PurgatorySize
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_purgatory_Rebalance_NumDelayedOperations
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_purgatory_topic_NumDelayedOperations
-   </td>
-   <td>
-   </td>
-  </tr>
-  <tr>
-   <td>kafka_purgatory_topic_PurgatorySize
-   </td>
-   <td>
-   </td>
-  </tr></small>
+d
+
+<table cellpadding="0" cellspacing="0" class="mt-responsive-table" dir="ltr">
+    <colgroup>
+        <col width="685" />
+    </colgroup>
+    <thead>
+        <tr>
+            <th data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_disk_free&quot;}" scope="col">Kafka Metrics List</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_disk_free&quot;}" data-th="Kafka Metrics List">kafka_broker_disk_free</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_disk_inodes_total&quot;}" data-th="Kafka Metrics List">kafka_broker_disk_inodes_total</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_disk_inodes_used&quot;}" data-th="Kafka Metrics List">kafka_broker_disk_inodes_used</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_disk_total&quot;}" data-th="Kafka Metrics List">kafka_broker_disk_total</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_disk_used_percent&quot;}" data-th="Kafka Metrics List">kafka_broker_disk_used_percent</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_diskio_io_time&quot;}" data-th="Kafka Metrics List">kafka_broker_diskio_io_time</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_diskio_iops_in_progress&quot;}" data-th="Kafka Metrics List">kafka_broker_diskio_iops_in_progress</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_diskio_merged_reads&quot;}" data-th="Kafka Metrics List">kafka_broker_diskio_merged_reads</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_diskio_merged_writes&quot;}" data-th="Kafka Metrics List">kafka_broker_diskio_merged_writes</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_diskio_read_bytes&quot;}" data-th="Kafka Metrics List">kafka_broker_diskio_read_bytes</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_diskio_read_time&quot;}" data-th="Kafka Metrics List">kafka_broker_diskio_read_time</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_diskio_reads&quot;}" data-th="Kafka Metrics List">kafka_broker_diskio_reads</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_diskio_weighted_io_time&quot;}" data-th="Kafka Metrics List">kafka_broker_diskio_weighted_io_time</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_diskio_write_bytes&quot;}" data-th="Kafka Metrics List">kafka_broker_diskio_write_bytes</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_diskio_write_time&quot;}" data-th="Kafka Metrics List">kafka_broker_diskio_write_time</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_broker_diskio_writes&quot;}" data-th="Kafka Metrics List">kafka_broker_diskio_writes</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ActiveControllerCount_Value&quot;}" data-th="Kafka Metrics List">kafka_controller_ActiveControllerCount_Value</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_AutoLeaderBalanceRateAndTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_AutoLeaderBalanceRateAndTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_AutoLeaderBalanceRateAndTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_AutoLeaderBalanceRateAndTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_AutoLeaderBalanceRateAndTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_AutoLeaderBalanceRateAndTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_AutoLeaderBalanceRateAndTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_AutoLeaderBalanceRateAndTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_AutoLeaderBalanceRateAndTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_controller_AutoLeaderBalanceRateAndTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_AutoLeaderBalanceRateAndTimeMs_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_AutoLeaderBalanceRateAndTimeMs_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_AutoLeaderBalanceRateAndTimeMs_Max&quot;}" data-th="Kafka Metrics List">kafka_controller_AutoLeaderBalanceRateAndTimeMs_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_AutoLeaderBalanceRateAndTimeMs_Mean&quot;}" data-th="Kafka Metrics List">kafka_controller_AutoLeaderBalanceRateAndTimeMs_Mean</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_AutoLeaderBalanceRateAndTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_controller_AutoLeaderBalanceRateAndTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_AutoLeaderBalanceRateAndTimeMs_StdDev&quot;}" data-th="Kafka Metrics List">kafka_controller_AutoLeaderBalanceRateAndTimeMs_StdDev</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControlledShutdownRateAndTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ControlledShutdownRateAndTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControlledShutdownRateAndTimeMs_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_ControlledShutdownRateAndTimeMs_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControlledShutdownRateAndTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_controller_ControlledShutdownRateAndTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControllerChangeRateAndTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ControllerChangeRateAndTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControllerChangeRateAndTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ControllerChangeRateAndTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControllerChangeRateAndTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ControllerChangeRateAndTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControllerChangeRateAndTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ControllerChangeRateAndTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControllerChangeRateAndTimeMs_Max&quot;}" data-th="Kafka Metrics List">kafka_controller_ControllerChangeRateAndTimeMs_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControllerChangeRateAndTimeMs_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_controller_ControllerChangeRateAndTimeMs_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControllerChangeRateAndTimeMs_StdDev&quot;}" data-th="Kafka Metrics List">kafka_controller_ControllerChangeRateAndTimeMs_StdDev</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControllerShutdownRateAndTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ControllerShutdownRateAndTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControllerShutdownRateAndTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ControllerShutdownRateAndTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControllerShutdownRateAndTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ControllerShutdownRateAndTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControllerShutdownRateAndTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_controller_ControllerShutdownRateAndTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControllerShutdownRateAndTimeMs_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_ControllerShutdownRateAndTimeMs_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControllerShutdownRateAndTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_controller_ControllerShutdownRateAndTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ControllerShutdownRateAndTimeMs_StdDev&quot;}" data-th="Kafka Metrics List">kafka_controller_ControllerShutdownRateAndTimeMs_StdDev</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_EventQueueSize_Value&quot;}" data-th="Kafka Metrics List">kafka_controller_EventQueueSize_Value</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_EventQueueTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_EventQueueTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_EventQueueTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_EventQueueTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_EventQueueTimeMs_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_EventQueueTimeMs_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_EventQueueTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_controller_EventQueueTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_GlobalPartitionCount_Value&quot;}" data-th="Kafka Metrics List">kafka_controller_GlobalPartitionCount_Value</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_GlobalTopicCount_Value&quot;}" data-th="Kafka Metrics List">kafka_controller_GlobalTopicCount_Value</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_IsrChangeRateAndTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_IsrChangeRateAndTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_IsrChangeRateAndTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_IsrChangeRateAndTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_IsrChangeRateAndTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_IsrChangeRateAndTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_IsrChangeRateAndTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_IsrChangeRateAndTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_IsrChangeRateAndTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_IsrChangeRateAndTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_IsrChangeRateAndTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_controller_IsrChangeRateAndTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_IsrChangeRateAndTimeMs_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_IsrChangeRateAndTimeMs_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_IsrChangeRateAndTimeMs_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_IsrChangeRateAndTimeMs_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_LeaderAndIsrResponseReceivedRateAndTimeMs_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LeaderElectionRateAndTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_LeaderElectionRateAndTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LeaderElectionRateAndTimeMs_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_LeaderElectionRateAndTimeMs_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LeaderElectionRateAndTimeMs_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_LeaderElectionRateAndTimeMs_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LeaderElectionRateAndTimeMs_Max&quot;}" data-th="Kafka Metrics List">kafka_controller_LeaderElectionRateAndTimeMs_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LeaderElectionRateAndTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_controller_LeaderElectionRateAndTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ListPartitionReassignmentRateAndTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ListPartitionReassignmentRateAndTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ListPartitionReassignmentRateAndTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ListPartitionReassignmentRateAndTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ListPartitionReassignmentRateAndTimeMs_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ListPartitionReassignmentRateAndTimeMs_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ListPartitionReassignmentRateAndTimeMs_Mean&quot;}" data-th="Kafka Metrics List">kafka_controller_ListPartitionReassignmentRateAndTimeMs_Mean</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ListPartitionReassignmentRateAndTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_controller_ListPartitionReassignmentRateAndTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ListPartitionReassignmentRateAndTimeMs_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_ListPartitionReassignmentRateAndTimeMs_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LogDirChangeRateAndTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_LogDirChangeRateAndTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LogDirChangeRateAndTimeMs_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_LogDirChangeRateAndTimeMs_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LogDirChangeRateAndTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_LogDirChangeRateAndTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LogDirChangeRateAndTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_controller_LogDirChangeRateAndTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_LogDirChangeRateAndTimeMs_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_LogDirChangeRateAndTimeMs_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ManualLeaderBalanceRateAndTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ManualLeaderBalanceRateAndTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ManualLeaderBalanceRateAndTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ManualLeaderBalanceRateAndTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ManualLeaderBalanceRateAndTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ManualLeaderBalanceRateAndTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ManualLeaderBalanceRateAndTimeMs_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_ManualLeaderBalanceRateAndTimeMs_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ManualLeaderBalanceRateAndTimeMs_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_ManualLeaderBalanceRateAndTimeMs_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ManualLeaderBalanceRateAndTimeMs_Mean&quot;}" data-th="Kafka Metrics List">kafka_controller_ManualLeaderBalanceRateAndTimeMs_Mean</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ManualLeaderBalanceRateAndTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_controller_ManualLeaderBalanceRateAndTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ManualLeaderBalanceRateAndTimeMs_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_ManualLeaderBalanceRateAndTimeMs_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_PartitionReassignmentRateAndTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_PartitionReassignmentRateAndTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_PartitionReassignmentRateAndTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_PartitionReassignmentRateAndTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_PartitionReassignmentRateAndTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_PartitionReassignmentRateAndTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_PartitionReassignmentRateAndTimeMs_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_PartitionReassignmentRateAndTimeMs_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_PartitionReassignmentRateAndTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_PartitionReassignmentRateAndTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_PartitionReassignmentRateAndTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_controller_PartitionReassignmentRateAndTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_PartitionReassignmentRateAndTimeMs_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_PartitionReassignmentRateAndTimeMs_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_PartitionReassignmentRateAndTimeMs_Max&quot;}" data-th="Kafka Metrics List">kafka_controller_PartitionReassignmentRateAndTimeMs_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_PartitionReassignmentRateAndTimeMs_Mean&quot;}" data-th="Kafka Metrics List">kafka_controller_PartitionReassignmentRateAndTimeMs_Mean</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_PartitionReassignmentRateAndTimeMs_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_controller_PartitionReassignmentRateAndTimeMs_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_PartitionReassignmentRateAndTimeMs_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_PartitionReassignmentRateAndTimeMs_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_PreferredReplicaImbalanceCount_Value&quot;}" data-th="Kafka Metrics List">kafka_controller_PreferredReplicaImbalanceCount_Value</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_ReplicasIneligibleToDeleteCount_Value&quot;}" data-th="Kafka Metrics List">kafka_controller_ReplicasIneligibleToDeleteCount_Value</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicChangeRateAndTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicChangeRateAndTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicChangeRateAndTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicChangeRateAndTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicChangeRateAndTimeMs_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicChangeRateAndTimeMs_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicChangeRateAndTimeMs_Mean&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicChangeRateAndTimeMs_Mean</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicChangeRateAndTimeMs_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicChangeRateAndTimeMs_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicChangeRateAndTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicChangeRateAndTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicChangeRateAndTimeMs_StdDev&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicChangeRateAndTimeMs_StdDev</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicDeletionRateAndTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicDeletionRateAndTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicDeletionRateAndTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicDeletionRateAndTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicDeletionRateAndTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicDeletionRateAndTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicDeletionRateAndTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicDeletionRateAndTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicDeletionRateAndTimeMs_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicDeletionRateAndTimeMs_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicDeletionRateAndTimeMs_Max&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicDeletionRateAndTimeMs_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicDeletionRateAndTimeMs_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicDeletionRateAndTimeMs_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicsToDeleteCount_Value&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicsToDeleteCount_Value</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicUncleanLeaderElectionEnableRateAndTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicUncleanLeaderElectionEnableRateAndTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicUncleanLeaderElectionEnableRateAndTimeMs_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicUncleanLeaderElectionEnableRateAndTimeMs_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicUncleanLeaderElectionEnableRateAndTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicUncleanLeaderElectionEnableRateAndTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TopicUncleanLeaderElectionEnableRateAndTimeMs_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_TopicUncleanLeaderElectionEnableRateAndTimeMs_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_TotalQueueSize_Value&quot;}" data-th="Kafka Metrics List">kafka_controller_TotalQueueSize_Value</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_controller_UncleanLeaderElectionEnableRateAndTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_UncleanLeaderElectionsPerSec_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_controller_UncleanLeaderElectionsPerSec_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_UpdateFeaturesRateAndTimeMs_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_controller_UpdateFeaturesRateAndTimeMs_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_controller_UpdateFeaturesRateAndTimeMs_StdDev&quot;}" data-th="Kafka Metrics List">kafka_controller_UpdateFeaturesRateAndTimeMs_StdDev</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_CollectionCount&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_CollectionCount</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_CollectionTime&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_CollectionTime</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_endTime&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_endTime</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_GcThreadCount&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_GcThreadCount</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_id&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_id</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_Code_Cache_max&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_Code_Cache_max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_Code_Cache_used&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_Code_Cache_used</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_CodeHeap__non_nmethods__init&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_CodeHeap__non_nmethods__init</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_CodeHeap__non_profiled_nmethods__used&quot;}" data-th="Kafka Metrics List">
+            <p>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_CodeHeap__non_profiled_nmethods__used</p>
+            </td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_Compressed_Class_Space_init&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_Compressed_Class_Space_init</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Eden_Space_committed&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Eden_Space_committed</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Eden_Space_init&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Eden_Space_init</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Eden_Space_max&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Eden_Space_max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Old_Gen_committed&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Old_Gen_committed</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Old_Gen_used&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Old_Gen_used</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Survivor_Space_init&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Survivor_Space_init</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Survivor_Space_used&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageAfterGc_G1_Survivor_Space_used</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_Code_Cache_init&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_Code_Cache_init</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_Code_Cache_max&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_Code_Cache_max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_CodeHeap__non_nmethods__committed&quot;}" data-th="Kafka Metrics List">
+            <p>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_CodeHeap__non_nmethods__committed</p>
+            </td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_CodeHeap__profiled_nmethods__used&quot;}" data-th="Kafka Metrics List">
+            <p>kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_CodeHeap__profiled_nmethods__used</p>
+            </td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_Compressed_Class_Space_used&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_Compressed_Class_Space_used</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Eden_Space_committed&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Eden_Space_committed</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Eden_Space_init&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Eden_Space_init</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Eden_Space_max&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Eden_Space_max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Old_Gen_committed&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Old_Gen_committed</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Old_Gen_init&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Old_Gen_init</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Old_Gen_used&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Old_Gen_used</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Survivor_Space_max&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_G1_Survivor_Space_max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_Metaspace_used&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_memoryUsageBeforeGc_Metaspace_used</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_GarbageCollector_LastGcInfo_startTime&quot;}" data-th="Kafka Metrics List">kafka_java_lang_GarbageCollector_LastGcInfo_startTime</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_Memory_HeapMemoryUsage_committed&quot;}" data-th="Kafka Metrics List">kafka_java_lang_Memory_HeapMemoryUsage_committed</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_Memory_HeapMemoryUsage_init&quot;}" data-th="Kafka Metrics List">kafka_java_lang_Memory_HeapMemoryUsage_init</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_Memory_HeapMemoryUsage_used&quot;}" data-th="Kafka Metrics List">kafka_java_lang_Memory_HeapMemoryUsage_used</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_MemoryPool_CollectionUsage_committed&quot;}" data-th="Kafka Metrics List">kafka_java_lang_MemoryPool_CollectionUsage_committed</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_MemoryPool_CollectionUsage_init&quot;}" data-th="Kafka Metrics List">kafka_java_lang_MemoryPool_CollectionUsage_init</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_MemoryPool_CollectionUsage_max&quot;}" data-th="Kafka Metrics List">kafka_java_lang_MemoryPool_CollectionUsage_max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_MemoryPool_CollectionUsage_used&quot;}" data-th="Kafka Metrics List">kafka_java_lang_MemoryPool_CollectionUsage_used</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_MemoryPool_CollectionUsageThresholdSupported&quot;}" data-th="Kafka Metrics List">kafka_java_lang_MemoryPool_CollectionUsageThresholdSupported</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_MemoryPool_PeakUsage_committed&quot;}" data-th="Kafka Metrics List">kafka_java_lang_MemoryPool_PeakUsage_committed</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_MemoryPool_PeakUsage_init&quot;}" data-th="Kafka Metrics List">kafka_java_lang_MemoryPool_PeakUsage_init</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_MemoryPool_PeakUsage_max&quot;}" data-th="Kafka Metrics List">kafka_java_lang_MemoryPool_PeakUsage_max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_MemoryPool_PeakUsage_used&quot;}" data-th="Kafka Metrics List">kafka_java_lang_MemoryPool_PeakUsage_used</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_MemoryPool_Usage_committed&quot;}" data-th="Kafka Metrics List">kafka_java_lang_MemoryPool_Usage_committed</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_MemoryPool_Usage_init&quot;}" data-th="Kafka Metrics List">kafka_java_lang_MemoryPool_Usage_init</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_MemoryPool_Usage_max&quot;}" data-th="Kafka Metrics List">kafka_java_lang_MemoryPool_Usage_max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_MemoryPool_Usage_used&quot;}" data-th="Kafka Metrics List">kafka_java_lang_MemoryPool_Usage_used</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_MemoryPool_UsageThresholdSupported&quot;}" data-th="Kafka Metrics List">kafka_java_lang_MemoryPool_UsageThresholdSupported</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_OperatingSystem_CommittedVirtualMemorySize&quot;}" data-th="Kafka Metrics List">kafka_java_lang_OperatingSystem_CommittedVirtualMemorySize</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_OperatingSystem_FreePhysicalMemorySize&quot;}" data-th="Kafka Metrics List">kafka_java_lang_OperatingSystem_FreePhysicalMemorySize</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_OperatingSystem_MaxFileDescriptorCount&quot;}" data-th="Kafka Metrics List">kafka_java_lang_OperatingSystem_MaxFileDescriptorCount</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_OperatingSystem_ProcessCpuTime&quot;}" data-th="Kafka Metrics List">kafka_java_lang_OperatingSystem_ProcessCpuTime</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_OperatingSystem_TotalSwapSpaceSize&quot;}" data-th="Kafka Metrics List">kafka_java_lang_OperatingSystem_TotalSwapSpaceSize</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_Runtime_BootClassPathSupported&quot;}" data-th="Kafka Metrics List">kafka_java_lang_Runtime_BootClassPathSupported</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_Threading_CurrentThreadCpuTime&quot;}" data-th="Kafka Metrics List">kafka_java_lang_Threading_CurrentThreadCpuTime</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_Threading_SynchronizerUsageSupported&quot;}" data-th="Kafka Metrics List">kafka_java_lang_Threading_SynchronizerUsageSupported</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_Threading_ThreadAllocatedMemoryEnabled&quot;}" data-th="Kafka Metrics List">kafka_java_lang_Threading_ThreadAllocatedMemoryEnabled</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_Threading_ThreadAllocatedMemorySupported&quot;}" data-th="Kafka Metrics List">kafka_java_lang_Threading_ThreadAllocatedMemorySupported</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_java_lang_Threading_ThreadCpuTimeEnabled&quot;}" data-th="Kafka Metrics List">kafka_java_lang_Threading_ThreadCpuTimeEnabled</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_network_ResponseQueueSizeValue&quot;}" data-th="Kafka Metrics List">kafka_network_ResponseQueueSizeValue</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_partition_LogEndOffset&quot;}" data-th="Kafka Metrics List">kafka_partition_LogEndOffset</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_partition_LogStartOffset&quot;}" data-th="Kafka Metrics List">kafka_partition_LogStartOffset</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_partition_NumLogSegments&quot;}" data-th="Kafka Metrics List">kafka_partition_NumLogSegments</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_partition_Size&quot;}" data-th="Kafka Metrics List">kafka_partition_Size</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_partition_UnderReplicatedPartitions&quot;}" data-th="Kafka Metrics List">kafka_partition_UnderReplicatedPartitions</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_purgatory_Heartbeat_NumDelayedOperations&quot;}" data-th="Kafka Metrics List">kafka_purgatory_Heartbeat_NumDelayedOperations</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_purgatory_Produce_NumDelayedOperations&quot;}" data-th="Kafka Metrics List">kafka_purgatory_Produce_NumDelayedOperations</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_purgatory_Produce_PurgatorySize&quot;}" data-th="Kafka Metrics List">kafka_purgatory_Produce_PurgatorySize</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_purgatory_Rebalance_NumDelayedOperations&quot;}" data-th="Kafka Metrics List">kafka_purgatory_Rebalance_NumDelayedOperations</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_purgatory_topic_NumDelayedOperations&quot;}" data-th="Kafka Metrics List">kafka_purgatory_topic_NumDelayedOperations</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_purgatory_topic_PurgatorySize&quot;}" data-th="Kafka Metrics List">kafka_purgatory_topic_PurgatorySize</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_replica_manager_FailedIsrUpdatesPerSec_Count&quot;}" data-th="Kafka Metrics List">kafka_replica_manager_FailedIsrUpdatesPerSec_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_replica_manager_FailedIsrUpdatesPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_replica_manager_FailedIsrUpdatesPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_replica_manager_FailedIsrUpdatesPerSec_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_replica_manager_FailedIsrUpdatesPerSec_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_replica_manager_IsrExpandsPerSec_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_replica_manager_IsrExpandsPerSec_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_replica_manager_IsrExpandsPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_replica_manager_IsrExpandsPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_replica_manager_IsrExpandsPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_replica_manager_IsrExpandsPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_replica_manager_IsrShrinksPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_replica_manager_IsrShrinksPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_replica_manager_LeaderCount_Value&quot;}" data-th="Kafka Metrics List">kafka_replica_manager_LeaderCount_Value</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_replica_manager_PartitionCount_Value&quot;}" data-th="Kafka Metrics List">kafka_replica_manager_PartitionCount_Value</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_replica_manager_ReassigningPartitions_Value&quot;}" data-th="Kafka Metrics List">kafka_replica_manager_ReassigningPartitions_Value</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_replica_manager_UnderMinIsrPartitionCount_Value&quot;}" data-th="Kafka Metrics List">kafka_replica_manager_UnderMinIsrPartitionCount_Value</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_replica_manager_UnderReplicatedPartitions_Value&quot;}" data-th="Kafka Metrics List">kafka_replica_manager_UnderReplicatedPartitions_Value</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_handlers_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_request_handlers_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_LocalTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_LocalTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_LocalTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_LocalTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_LocalTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_LocalTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_LocalTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_LocalTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_LocalTimeMs_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_LocalTimeMs_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_LocalTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_LocalTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_LocalTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_request_LocalTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_LocalTimeMs_Max&quot;}" data-th="Kafka Metrics List">kafka_request_LocalTimeMs_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_LocalTimeMs_Mean&quot;}" data-th="Kafka Metrics List">kafka_request_LocalTimeMs_Mean</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_LocalTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_request_LocalTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_LocalTimeMs_StdDev&quot;}" data-th="Kafka Metrics List">kafka_request_LocalTimeMs_StdDev</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_MessageConversionsTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_MessageConversionsTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_MessageConversionsTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_MessageConversionsTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_MessageConversionsTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_MessageConversionsTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_MessageConversionsTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_MessageConversionsTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_MessageConversionsTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_MessageConversionsTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_MessageConversionsTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_request_MessageConversionsTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_MessageConversionsTimeMs_Max&quot;}" data-th="Kafka Metrics List">kafka_request_MessageConversionsTimeMs_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_MessageConversionsTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_request_MessageConversionsTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RemoteTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RemoteTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RemoteTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RemoteTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RemoteTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RemoteTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RemoteTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RemoteTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RemoteTimeMs_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RemoteTimeMs_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RemoteTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RemoteTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RemoteTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_request_RemoteTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RemoteTimeMs_Max&quot;}" data-th="Kafka Metrics List">kafka_request_RemoteTimeMs_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RemoteTimeMs_Mean&quot;}" data-th="Kafka Metrics List">kafka_request_RemoteTimeMs_Mean</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RemoteTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_request_RemoteTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RemoteTimeMs_StdDev&quot;}" data-th="Kafka Metrics List">kafka_request_RemoteTimeMs_StdDev</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestBytes_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RequestBytes_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestBytes_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RequestBytes_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestBytes_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RequestBytes_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestBytes_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RequestBytes_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestBytes_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RequestBytes_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestBytes_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RequestBytes_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestBytes_Count&quot;}" data-th="Kafka Metrics List">kafka_request_RequestBytes_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestBytes_Max&quot;}" data-th="Kafka Metrics List">kafka_request_RequestBytes_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestBytes_Mean&quot;}" data-th="Kafka Metrics List">kafka_request_RequestBytes_Mean</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestBytes_Min&quot;}" data-th="Kafka Metrics List">kafka_request_RequestBytes_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestBytes_StdDev&quot;}" data-th="Kafka Metrics List">kafka_request_RequestBytes_StdDev</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestQueueTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RequestQueueTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestQueueTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RequestQueueTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestQueueTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RequestQueueTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestQueueTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RequestQueueTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestQueueTimeMs_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RequestQueueTimeMs_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestQueueTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_RequestQueueTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestQueueTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_request_RequestQueueTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestQueueTimeMs_Max&quot;}" data-th="Kafka Metrics List">kafka_request_RequestQueueTimeMs_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestQueueTimeMs_Mean&quot;}" data-th="Kafka Metrics List">kafka_request_RequestQueueTimeMs_Mean</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestQueueTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_request_RequestQueueTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_RequestQueueTimeMs_StdDev&quot;}" data-th="Kafka Metrics List">kafka_request_RequestQueueTimeMs_StdDev</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseQueueTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseQueueTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseQueueTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseQueueTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseQueueTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseQueueTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseQueueTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseQueueTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseQueueTimeMs_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseQueueTimeMs_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseQueueTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseQueueTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseQueueTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseQueueTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseQueueTimeMs_Max&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseQueueTimeMs_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseQueueTimeMs_Mean&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseQueueTimeMs_Mean</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseQueueTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseQueueTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseQueueTimeMs_StdDev&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseQueueTimeMs_StdDev</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseSendTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseSendTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseSendTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseSendTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseSendTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseSendTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseSendTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseSendTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseSendTimeMs_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseSendTimeMs_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseSendTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseSendTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseSendTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseSendTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseSendTimeMs_Max&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseSendTimeMs_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseSendTimeMs_Mean&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseSendTimeMs_Mean</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseSendTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseSendTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ResponseSendTimeMs_StdDev&quot;}" data-th="Kafka Metrics List">kafka_request_ResponseSendTimeMs_StdDev</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TemporaryMemoryBytes_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_TemporaryMemoryBytes_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TemporaryMemoryBytes_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_TemporaryMemoryBytes_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TemporaryMemoryBytes_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_TemporaryMemoryBytes_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TemporaryMemoryBytes_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_TemporaryMemoryBytes_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TemporaryMemoryBytes_Max&quot;}" data-th="Kafka Metrics List">kafka_request_TemporaryMemoryBytes_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TemporaryMemoryBytes_Mean&quot;}" data-th="Kafka Metrics List">kafka_request_TemporaryMemoryBytes_Mean</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TemporaryMemoryBytes_Min&quot;}" data-th="Kafka Metrics List">kafka_request_TemporaryMemoryBytes_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TemporaryMemoryBytes_StdDev&quot;}" data-th="Kafka Metrics List">kafka_request_TemporaryMemoryBytes_StdDev</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ThrottleTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ThrottleTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ThrottleTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ThrottleTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ThrottleTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ThrottleTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ThrottleTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ThrottleTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ThrottleTimeMs_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ThrottleTimeMs_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ThrottleTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_ThrottleTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ThrottleTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_request_ThrottleTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ThrottleTimeMs_Max&quot;}" data-th="Kafka Metrics List">kafka_request_ThrottleTimeMs_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ThrottleTimeMs_Mean&quot;}" data-th="Kafka Metrics List">kafka_request_ThrottleTimeMs_Mean</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ThrottleTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_request_ThrottleTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_ThrottleTimeMs_StdDev&quot;}" data-th="Kafka Metrics List">kafka_request_ThrottleTimeMs_StdDev</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TotalTimeMs_50thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_TotalTimeMs_50thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TotalTimeMs_75thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_TotalTimeMs_75thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TotalTimeMs_95thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_TotalTimeMs_95thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TotalTimeMs_98thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_TotalTimeMs_98thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TotalTimeMs_999thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_TotalTimeMs_999thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TotalTimeMs_99thPercentile&quot;}" data-th="Kafka Metrics List">kafka_request_TotalTimeMs_99thPercentile</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TotalTimeMs_Count&quot;}" data-th="Kafka Metrics List">kafka_request_TotalTimeMs_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TotalTimeMs_Max&quot;}" data-th="Kafka Metrics List">kafka_request_TotalTimeMs_Max</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TotalTimeMs_Mean&quot;}" data-th="Kafka Metrics List">kafka_request_TotalTimeMs_Mean</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TotalTimeMs_Min&quot;}" data-th="Kafka Metrics List">kafka_request_TotalTimeMs_Min</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_request_TotalTimeMs_StdDev&quot;}" data-th="Kafka Metrics List">kafka_request_TotalTimeMs_StdDev</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_BytesInPerSec_Count&quot;}" data-th="Kafka Metrics List">kafka_topic_BytesInPerSec_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_BytesInPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topic_BytesInPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_BytesInPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topic_BytesInPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_BytesInPerSec_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topic_BytesInPerSec_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_BytesOutPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topic_BytesOutPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_BytesOutPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topic_BytesOutPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_MessagesInPerSec_Count&quot;}" data-th="Kafka Metrics List">kafka_topic_MessagesInPerSec_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_TotalFetchRequestsPerSec_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topic_TotalFetchRequestsPerSec_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_TotalFetchRequestsPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topic_TotalFetchRequestsPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_TotalFetchRequestsPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topic_TotalFetchRequestsPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_TotalFetchRequestsPerSec_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topic_TotalFetchRequestsPerSec_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_TotalProduceRequestsPerSec_Count&quot;}" data-th="Kafka Metrics List">kafka_topic_TotalProduceRequestsPerSec_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_TotalProduceRequestsPerSec_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topic_TotalProduceRequestsPerSec_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_TotalProduceRequestsPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topic_TotalProduceRequestsPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topic_TotalProduceRequestsPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topic_TotalProduceRequestsPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_BytesInPerSec_Count&quot;}" data-th="Kafka Metrics List">kafka_topics_BytesInPerSec_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_BytesInPerSec_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_BytesInPerSec_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_BytesInPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topics_BytesInPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_BytesInPerSec_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_BytesInPerSec_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_BytesOutPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topics_BytesOutPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_BytesOutPerSec_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_BytesOutPerSec_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_BytesRejectedPerSec_Count&quot;}" data-th="Kafka Metrics List">kafka_topics_BytesRejectedPerSec_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_BytesRejectedPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_BytesRejectedPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_BytesRejectedPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topics_BytesRejectedPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_FailedFetchRequestsPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topics_FailedFetchRequestsPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_FailedProduceRequestsPerSec_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_FailedProduceRequestsPerSec_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_FailedProduceRequestsPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_FailedProduceRequestsPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_FailedProduceRequestsPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topics_FailedProduceRequestsPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_FailedProduceRequestsPerSec_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_FailedProduceRequestsPerSec_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_InvalidMagicNumberRecordsPerSec_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_InvalidMagicNumberRecordsPerSec_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_InvalidMagicNumberRecordsPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_InvalidMagicNumberRecordsPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_InvalidMagicNumberRecordsPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topics_InvalidMagicNumberRecordsPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_InvalidMessageCrcRecordsPerSec_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_InvalidMessageCrcRecordsPerSec_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_InvalidOffsetOrSequenceRecordsPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_InvalidOffsetOrSequenceRecordsPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_InvalidOffsetOrSequenceRecordsPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topics_InvalidOffsetOrSequenceRecordsPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_InvalidOffsetOrSequenceRecordsPerSec_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_InvalidOffsetOrSequenceRecordsPerSec_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_MessagesInPerSec_Count&quot;}" data-th="Kafka Metrics List">kafka_topics_MessagesInPerSec_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_MessagesInPerSec_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_MessagesInPerSec_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_MessagesInPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_MessagesInPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_NoKeyCompactedTopicRecordsPerSec_Count&quot;}" data-th="Kafka Metrics List">kafka_topics_NoKeyCompactedTopicRecordsPerSec_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_NoKeyCompactedTopicRecordsPerSec_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_NoKeyCompactedTopicRecordsPerSec_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_NoKeyCompactedTopicRecordsPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_NoKeyCompactedTopicRecordsPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_NoKeyCompactedTopicRecordsPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topics_NoKeyCompactedTopicRecordsPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ProduceMessageConversionsPerSec_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_ProduceMessageConversionsPerSec_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ProduceMessageConversionsPerSec_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_ProduceMessageConversionsPerSec_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReassignmentBytesInPerSec_Count&quot;}" data-th="Kafka Metrics List">kafka_topics_ReassignmentBytesInPerSec_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReassignmentBytesInPerSec_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_ReassignmentBytesInPerSec_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReassignmentBytesInPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_ReassignmentBytesInPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReassignmentBytesInPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topics_ReassignmentBytesInPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReassignmentBytesInPerSec_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_ReassignmentBytesInPerSec_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReassignmentBytesOutPerSec_Count&quot;}" data-th="Kafka Metrics List">kafka_topics_ReassignmentBytesOutPerSec_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReassignmentBytesOutPerSec_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_ReassignmentBytesOutPerSec_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReassignmentBytesOutPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topics_ReassignmentBytesOutPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReassignmentBytesOutPerSec_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_ReassignmentBytesOutPerSec_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReplicationBytesInPerSec_Count&quot;}" data-th="Kafka Metrics List">kafka_topics_ReplicationBytesInPerSec_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReplicationBytesInPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topics_ReplicationBytesInPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReplicationBytesOutPerSec_Count&quot;}" data-th="Kafka Metrics List">kafka_topics_ReplicationBytesOutPerSec_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReplicationBytesOutPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_ReplicationBytesOutPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReplicationBytesOutPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topics_ReplicationBytesOutPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_ReplicationBytesOutPerSec_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_ReplicationBytesOutPerSec_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_TotalFetchRequestsPerSec_Count&quot;}" data-th="Kafka Metrics List">kafka_topics_TotalFetchRequestsPerSec_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_TotalFetchRequestsPerSec_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_TotalFetchRequestsPerSec_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_TotalFetchRequestsPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_TotalFetchRequestsPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_TotalFetchRequestsPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topics_TotalFetchRequestsPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_TotalProduceRequestsPerSec_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_TotalProduceRequestsPerSec_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_TotalProduceRequestsPerSec_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_topics_TotalProduceRequestsPerSec_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_topics_TotalProduceRequestsPerSec_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_topics_TotalProduceRequestsPerSec_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_zookeeper_auth_failures_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_zookeeper_auth_failures_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_zookeeper_auth_failures_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_zookeeper_auth_failures_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_zookeeper_authentications_Count&quot;}" data-th="Kafka Metrics List">kafka_zookeeper_authentications_Count</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_zookeeper_authentications_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_zookeeper_authentications_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_zookeeper_disconnects_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_zookeeper_disconnects_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_zookeeper_expires_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_zookeeper_expires_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_zookeeper_expires_FiveMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_zookeeper_expires_FiveMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_zookeeper_expires_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_zookeeper_expires_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_zookeeper_expires_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_zookeeper_expires_OneMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_zookeeper_readonly_connects_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_zookeeper_readonly_connects_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_zookeeper_readonly_connects_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_zookeeper_readonly_connects_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_zookeeper_sync_connects_FifteenMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_zookeeper_sync_connects_FifteenMinuteRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_zookeeper_sync_connects_MeanRate&quot;}" data-th="Kafka Metrics List">kafka_zookeeper_sync_connects_MeanRate</td>
+        </tr>
+        <tr>
+            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;kafka_zookeeper_sync_connects_OneMinuteRate&quot;}" data-th="Kafka Metrics List">kafka_zookeeper_sync_connects_OneMinuteRate</td>
+        </tr>
+    </tbody>
 </table>

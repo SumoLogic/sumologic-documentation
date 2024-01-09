@@ -560,105 +560,15 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the IIS server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
 
-<table>
-  <tr>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - Access from Highly Malicious Sources
-   </td>
-   <td>This alert fires when an IIS server is accessed from highly malicious IP addresses.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a 4xx response code.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a 5xx response code.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - Error Events
-   </td>
-   <td>This alert fires when an error in the IIS logs is detected.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - Slow Response Time
-   </td>
-   <td>This alert fires when the response time for a given IIS server is greater than one second.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - ASP.NET Application Errors
-   </td>
-   <td>This alert fires when we detect an error in the ASP.NET applications running on an IIS server.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - Blocked Async IO Requests
-   </td>
-   <td>This alert fires when we detect that there are blocked async I/O requests on an IIS server.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-</table>
-
+| Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|:---|
+| IIS - Access from Highly Malicious Sources | This alert fires when an IIS server is accessed from highly malicious IP addresses. | Critical | > 0 | < = 0 |
+| IIS - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a 4xx response code. | Critical | > 0 | 0 |
+| IIS - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a 5xx response code. | Critical | > 0 | 0 |
+| IIS - Error Events | This alert fires when an error in the IIS logs is detected. | Critical | > 0 | 0 |
+| IIS - Slow Response Time | This alert fires when the response time for a given IIS server is greater than one second. | Warning | > 0 | 0 |
+| IIS - ASP.NET Application Errors | This alert fires when we detect an error in the ASP.NET applications running on an IIS server. | Warning | >0 | < = 0 |
+| IIS - Blocked Async IO Requests | This alert fires when we detect that there are blocked async I/O requests on an IIS server. | Warning | >0 | < = 0 |
 
 ## Viewing IIS Dashboards
 

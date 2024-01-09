@@ -611,188 +611,142 @@ Here are the metrics available for PostgreSQL.
 
 <table><small>
   <tr>
-   <td>PostgreSQL Metrics List
-   </td>
+   <td>PostgreSQL Metrics List</td>
   </tr>
   <tr>
-   <td>postgresql_numbackends
-   </td>
+   <td>postgresql_numbackends</td>
   </tr>
   <tr>
-   <td>postgresql_xact_commit
-   </td>
+   <td>postgresql_xact_commit</td>
   </tr>
   <tr>
-   <td>postgresql_xact_rollback
-   </td>
+   <td>postgresql_xact_rollback</td>
   </tr>
   <tr>
-   <td>postgresql_blks_read
-   </td>
+   <td>postgresql_blks_read   </td>
   </tr>
   <tr>
-   <td>postgresql_blks_hit
-   </td>
+   <td>postgresql_blks_hit   </td>
   </tr>
   <tr>
-   <td>postgresql_tup_inserted
-   </td>
+   <td>postgresql_tup_inserted   </td>
   </tr>
   <tr>
-   <td>postgresql_tup_updated
-   </td>
+   <td>postgresql_tup_updated   </td>
   </tr>
   <tr>
-   <td>postgresql_tup_deleted
-   </td>
+   <td>postgresql_tup_deleted   </td>
   </tr>
   <tr>
-   <td>postgresql_deadlocks
-   </td>
+   <td>postgresql_deadlocks   </td>
   </tr>
   <tr>
-   <td>postgresql_tup_fetched
-   </td>
+   <td>postgresql_tup_fetched   </td>
   </tr>
   <tr>
-   <td>postgresql_tup_returned
-   </td>
+   <td>postgresql_tup_returned   </td>
   </tr>
   <tr>
-   <td>postgresql_checkpoints_timed
-   </td>
+   <td>postgresql_checkpoints_timed   </td>
   </tr>
   <tr>
-   <td>postgresql_checkpoints_req
-   </td>
+   <td>postgresql_checkpoints_req   </td>
   </tr>
   <tr>
-   <td>postgresql_buffers_checkpoint
-   </td>
+   <td>postgresql_buffers_checkpoint   </td>
   </tr>
   <tr>
-   <td>postgresql_buffers_clean
-   </td>
+   <td>postgresql_buffers_clean   </td>
   </tr>
   <tr>
-   <td>postgresql_buffers_backend
-   </td>
+   <td>postgresql_buffers_backend   </td>
   </tr>
   <tr>
-   <td>postgresql_stat_ssl_compression_count
-   </td>
+   <td>postgresql_stat_ssl_compression_count   </td>
   </tr>
   <tr>
-   <td>postgresql_replication_delay
-   </td>
+   <td>postgresql_replication_delay   </td>
   </tr>
   <tr>
-   <td>postgresql_replication_lag
-   </td>
+   <td>postgresql_replication_lag   </td>
   </tr>
   <tr>
-   <td>postgresql_replay_lag
-   </td>
+   <td>postgresql_replay_lag   </td>
   </tr>
   <tr>
-   <td>postgresql_flush_lag
-   </td>
+   <td>postgresql_flush_lag   </td>
   </tr>
   <tr>
-   <td>postgresql_write_lag
-   </td>
+   <td>postgresql_write_lag   </td>
   </tr>
   <tr>
-   <td>postgresql_db_size
-   </td>
+   <td>postgresql_db_size   </td>
   </tr>
   <tr>
-   <td>postgresql_num_locks
-   </td>
+   <td>postgresql_num_locks </td>
   </tr>
   <tr>
-   <td>postgresql_seq_scan
-   </td>
+   <td>postgresql_seq_scan   </td>
   </tr>
   <tr>
-   <td>postgresql_seq_tup_read
-   </td>
+   <td>postgresql_seq_tup_read   </td>
   </tr>
   <tr>
-   <td>postgresql_idx_scan
-   </td>
+   <td>postgresql_idx_scan   </td>
   </tr>
   <tr>
-   <td>postgresql_idx_tup_fetch
-   </td>
+   <td>postgresql_idx_tup_fetch   </td>
   </tr>
   <tr>
-   <td>postgresql_n_tup_ins
-   </td>
+   <td>postgresql_n_tup_ins   </td>
   </tr>
   <tr>
-   <td>postgresql_n_tup_upd
-   </td>
+   <td>postgresql_n_tup_upd   </td>
   </tr>
   <tr>
-   <td>postgresql_n_tup_del
-   </td>
+   <td>postgresql_n_tup_del   </td>
   </tr>
   <tr>
-   <td>postgresql_n_tup_hot_upd
-   </td>
+   <td>postgresql_n_tup_hot_upd   </td>
   </tr>
   <tr>
-   <td>postgresql_n_live_tup
-   </td>
+   <td>postgresql_n_live_tup   </td>
   </tr>
   <tr>
-   <td>postgresql_n_dead_tup
-   </td>
+   <td>postgresql_n_dead_tup</td>
   </tr>
   <tr>
-   <td>postgresql_idx_scan
-   </td>
+   <td>postgresql_idx_scan   </td>
   </tr>
   <tr>
-   <td>postgresql_idx_tup_read
-   </td>
+   <td>postgresql_idx_tup_read   </td>
   </tr>
   <tr>
-   <td>postgresql_idx_tup_fetch
-   </td>
+   <td>postgresql_idx_tup_fetch   </td>
   </tr>
   <tr>
-   <td>postgresql_idx_blks_read
-   </td>
+   <td>postgresql_idx_blks_read </td>
   </tr>
   <tr>
-   <td>postgresql_idx_blks_hit
-   </td>
+   <td>postgresql_idx_blks_hit   </td>
   </tr>
   <tr>
-   <td>postgresql_heap_blks_read
-   </td>
+   <td>postgresql_heap_blks_read   </td>
   </tr>
   <tr>
-   <td>postgresql_heap_blks_hit
-   </td>
+   <td>postgresql_heap_blks_hit   </td>
   </tr>
   <tr>
-   <td>postgresql_idx_blks_read
-   </td>
+   <td>postgresql_idx_blks_read   </td>
   </tr>
   <tr>
-   <td>postgresql_idx_blks_hit
-   </td>
+   <td>postgresql_idx_blks_hit   </td>
   </tr>
   <tr>
-   <td>postgresql_index_size
-   </td>
+   <td>postgresql_index_size   </td>
   </tr>
   <tr>
-   <td>postgresql_table_size
-   </td>
+   <td>postgresql_table_size   </td>
   </tr></small>
 </table>
 

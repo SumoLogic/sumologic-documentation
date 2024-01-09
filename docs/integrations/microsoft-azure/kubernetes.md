@@ -19,22 +19,16 @@ The following are the minimum supported requirements for this application:
 
 <table>
   <tr>
-   <td>Name
-   </td>
-   <td>Supported versions
-   </td>
+   <td>Name </td>
+   <td>Supported versions </td>
   </tr>
   <tr>
-   <td>Kubernetes
-   </td>
-   <td>1.10 and later
-   </td>
+   <td>Kubernetes </td>
+   <td>1.10 and later </td>
   </tr>
   <tr>
-   <td>AKS
-   </td>
-   <td>1.12.8
-   </td>
+   <td>AKS   </td>
+   <td>1.12.8   </td>
   </tr>
 </table>
 
@@ -150,7 +144,7 @@ This section walks you through the process of configuring a pipeline to send log
 
 1. Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
 
-	- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended) 
+	- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended)
 	- Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection)
 
 	When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AKS/ControlPlane/Logs`.

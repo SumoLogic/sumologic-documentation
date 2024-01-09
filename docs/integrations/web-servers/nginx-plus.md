@@ -578,65 +578,10 @@ Use this dashboard to:
 
 Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Nginx Plus server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
 
-<table>
-  <tr>
-   <td><strong>Name</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Alert Condition</strong>
-   </td>
-   <td><strong>Recover Condition</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus - Dropped Connections
-   </td>
-   <td>This alert fires when we detect dropped connections for a given Nginx Plus server.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus - Critical Error Messages
-   </td>
-   <td>This alert fires when we detect critical error messages for a given Nginx Plus server.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus - Access from Highly Malicious Sources
-   </td>
-   <td>This alert fires when an Nginx Plus is accessed from highly malicious IP addresses.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-</table>
+| Name | Description | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|
+| Nginx Plus - Dropped Connections | This alert fires when we detect dropped connections for a given Nginx Plus server. | > 0 | < = 0 |
+| Nginx Plus - Critical Error Messages | This alert fires when we detect critical error messages for a given Nginx Plus server. | > 0 | < = 0 |
+| Nginx Plus - Access from Highly Malicious Sources | This alert fires when an Nginx Plus is accessed from highly malicious IP addresses. | > 0 | < = 0 |
+| Nginx Plus - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | > 0 | < = 0 |
+| Nginx Plus - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | > 0 | < = 0 |

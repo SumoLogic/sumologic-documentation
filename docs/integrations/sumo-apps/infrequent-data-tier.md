@@ -66,16 +66,12 @@ Sumo Logic Infrequent Data Tier App is only available for Enterprise Suite custo
 
 <table>
   <tr>
-   <td>Account Type
-   </td>
-   <td>Account Level
-   </td>
+   <td>Account Type </td>
+   <td>Account Level   </td>
   </tr>
   <tr>
-   <td>Credits
-   </td>
-   <td>Enterprise Suite
-   </td>
+   <td>Credits </td>
+   <td>Enterprise Suite </td>
   </tr>
 </table>
 

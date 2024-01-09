@@ -612,134 +612,82 @@ Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors
 
 <table>
   <tr>
-   <td><strong>Alert Name</strong>
-   </td>
-   <td><strong>Alert Description and conditions</strong>
-   </td>
-   <td><strong>Alert Condition</strong>
-   </td>
-   <td><strong>Recover Condition</strong>
-   </td>
+   <td><strong>Alert Name</strong>   </td>
+   <td><strong>Alert Description and conditions</strong>   </td>
+   <td><strong>Alert Condition</strong>   </td>
+   <td><strong>Recover Condition</strong>   </td>
   </tr>
   <tr>
-   <td>Redis - Instance Down
-   </td>
-   <td>This alert fires when we detect that the Redis instance is down for 5 minutes.
-   </td>
-   <td>&#61;&#61; 0
-   </td>
-   <td> &#62;0
-   </td>
+   <td>Redis - Instance Down   </td>
+   <td>This alert fires when we detect that the Redis instance is down for 5 minutes.   </td>
+   <td>&#61;&#61; 0   </td>
+   <td> &#62;0   </td>
   </tr>
   <tr>
-   <td>Redis - Missing Master
-   </td>
-   <td>This alert fires when we detect that a Redis cluster has no node marked as master for 5 minutes.
-   </td>
-   <td> &#60;&#61;0
-   </td>
-   <td> &#62;0
-   </td>
+   <td>Redis - Missing Master   </td>
+   <td>This alert fires when we detect that a Redis cluster has no node marked as master for 5 minutes.   </td>
+   <td> &#60;&#61;0   </td>
+   <td> &#62;0   </td>
   </tr>
   <tr>
-   <td>Redis - Replication Broken
-   </td>
-   <td>This alert fires when we detect that a Redis instance has lost a slave.
-   </td>
-   <td> &#60;0
-   </td>
-   <td> &#62;&#61;0
-   </td>
+   <td>Redis - Replication Broken   </td>
+   <td>This alert fires when we detect that a Redis instance has lost a slave.   </td>
+   <td> &#60;0 </td>
+   <td> &#62;&#61;0 </td>
   </tr>
   <tr>
-   <td>Redis - Too Many Connections
-   </td>
-   <td>This alert fires when we detect a given Redis server has too many connections (over 100).
-   </td>
-   <td> &#62;100
-   </td>
-   <td> &#60;&#61;100
-   </td>
+   <td>Redis - Too Many Connections   </td>
+   <td>This alert fires when we detect a given Redis server has too many connections (over 100).   </td>
+   <td> &#62;100   </td>
+   <td> &#60;&#61;100   </td>
   </tr>
   <tr>
-   <td>Redis - Rejected Connections
-   </td>
-   <td>This alert fires when we detect that some connections to a Redis cluster have been rejected.
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60;&#61;0
-   </td>
+   <td>Redis - Rejected Connections   </td>
+   <td>This alert fires when we detect that some connections to a Redis cluster have been rejected.   </td>
+   <td> &#62;0   </td>
+   <td> &#60;&#61;0   </td>
   </tr>
   <tr>
-   <td>Redis - High Memory Fragmentation Ratio
-   </td>
+   <td>Redis - High Memory Fragmentation Ratio   </td>
    <td>This alert fires when the ratio of Redis memory usage to Linux virtual memory pages (mapped to physical memory chunks) is higher than 1.5.
-<p>A high ratio will lead to swapping and can adversely affect performance.</p>
-   </td>
-   <td> &#62;&#61;1.5
-   </td>
-   <td> &#60;1.5
-   </td>
+<p>A high ratio will lead to swapping and can adversely affect performance.</p></td>
+   <td> &#62;&#61;1.5   </td>
+   <td> &#60;1.5   </td>
   </tr>
   <tr>
-   <td>Redis - Potential Master-Slave Communication Failure
-   </td>
-   <td>This alert fires when we detect that communication between the Redis master and slave nodes has not occurred for the past 60 seconds or more.
-   </td>
-   <td> &#62;&#61;60
-   </td>
-   <td> &#60;60
-   </td>
+   <td>Redis - Potential Master-Slave Communication Failure </td>
+   <td>This alert fires when we detect that communication between the Redis master and slave nodes has not occurred for the past 60 seconds or more.   </td>
+   <td> &#62;&#61;60   </td>
+   <td> &#60;60 </td>
   </tr>
   <tr>
-   <td>Redis - Replica Lag
-   </td>
-   <td>This alert fires when we detect that the replica lag for a given Redis cluster is greater than 60 seconds. Please review how replication has been configured.
-   </td>
-   <td> &#62;60
-   </td>
-   <td> &#60;&#61;60
-   </td>
+   <td>Redis - Replica Lag </td>
+   <td>This alert fires when we detect that the replica lag for a given Redis cluster is greater than 60 seconds. Please review how replication has been configured. </td>
+   <td> &#62;60   </td>
+   <td> &#60;&#61;60   </td>
   </tr>
   <tr>
-   <td>Redis - Replication Broken
-   </td>
-   <td>This alert fires when we detect that a Redis instance has lost all slaves. This will affect the redundancy of data stored in Redis. Please review how replication has been configured.
-   </td>
-   <td> &#60;0
-   </td>
-   <td> &#62;&#61;0
-   </td>
+   <td>Redis - Replication Broken   </td>
+   <td>This alert fires when we detect that a Redis instance has lost all slaves. This will affect the redundancy of data stored in Redis. Please review how replication has been configured.   </td>
+   <td> &#60;0   </td>
+   <td> &#62;&#61;0   </td>
   </tr>
   <tr>
-   <td>Redis - Replication Offset
-   </td>
-   <td>This alert fires when the replication offset in a given Redis cluster is greater than 1 MB for the last five minutes. Please review how replication has been configured.
-   </td>
-   <td> &#62;&#61;1
-   </td>
-   <td> &#60;1
-   </td>
+   <td>Redis - Replication Offset   </td>
+   <td>This alert fires when the replication offset in a given Redis cluster is greater than 1 MB for the last five minutes. Please review how replication has been configured.   </td>
+   <td> &#62;&#61;1 </td>
+   <td> &#60;1   </td>
   </tr>
   <tr>
-   <td>Redis - Out of Memory
-   </td>
-   <td>This alert fires when we detect that a Redis node is running out of memory (> 90%).
-   </td>
-   <td> &#62; 90%
-   </td>
-   <td> &#60; 90%
-   </td>
+   <td>Redis - Out of Memory </td>
+   <td>This alert fires when we detect that a Redis node is running out of memory (> 90%). </td>
+   <td> &#62; 90%   </td>
+   <td> &#60; 90%   </td>
   </tr>
   <tr>
-   <td>Redis - High CPU Usage
-   </td>
-   <td>This alert is fired if user and system cpu usage for a host exceeds 80%.
-   </td>
-   <td> &#62; 80%
-   </td>
-   <td> &#60; 80%
-   </td>
+   <td>Redis - High CPU Usage   </td>
+   <td>This alert is fired if user and system cpu usage for a host exceeds 80%.   </td>
+   <td> &#62; 80%   </td>
+   <td> &#60; 80%   </td>
   </tr>
 </table>

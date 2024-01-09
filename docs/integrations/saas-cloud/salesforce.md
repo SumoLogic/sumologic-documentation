@@ -173,7 +173,7 @@ This section only applies for a new SumoJanus installation.
   [salesforce]
   url = <Salesforce Instance URL>
   token_file_path = ${path}/data/salesforce.token
-  record_file_path = ${path}/data/sf_readfiles.dat 
+  record_file_path = ${path}/data/sf_readfiles.dat
   # If you're using a SFDC sandbox environment, set the following to true
   sandbox = false
   interval = daily
@@ -188,76 +188,49 @@ In the file `conf/sumologic.properties`, the following properties are supported.
 
 <table>
   <tr>
-   <td>Property
-   </td>
-   <td>Required or Default
-   </td>
-   <td>Description
-   </td>
+   <td>Property   </td>
+   <td>Required or Default   </td>
+   <td>Description   </td>
   </tr>
   <tr>
-   <td><code>url</code>
-   </td>
-   <td>Required
-   </td>
-   <td>Instance URL (for example, <code>https://na31.salesforce.com/</code>
-   </td>
+   <td><code>url</code>   </td>
+   <td>Required   </td>
+   <td>Instance URL (for example, <code>https://na31.salesforce.com/</code>   </td>
   </tr>
   <tr>
-   <td><code>token_file_path</code>
-   </td>
-   <td>Required
-   </td>
-   <td>Path to access token file to authenticate with SFDC API.
-   </td>
+   <td><code>token_file_path</code>   </td>
+   <td>Required   </td>
+   <td>Path to access token file to authenticate with SFDC API.   </td>
   </tr>
   <tr>
-   <td><code>convert_csv_to_json</code>
-   </td>
-   <td>Not required, default: <code>true</code>
-   </td>
-   <td>Set to <code>true</code> if output should be in JSON. This is because raw event logs from SF are in CSV format.
-   </td>
+   <td><code>convert_csv_to_json</code>   </td>
+   <td>Not required, default: <code>true</code>   </td>
+   <td>Set to <code>true</code> if output should be in JSON. This is because raw event logs from SF are in CSV format.   </td>
   </tr>
   <tr>
-   <td><code>record_file_path</code>
-   </td>
-   <td>Not required, default: <code>$&#123;path&#125;/sf_readfiles.dat</code>
-   </td>
-   <td>Path to store list of log event files read successfully.
-   </td>
+   <td><code>record_file_path</code>   </td>
+   <td>Not required, default: <code>$&#123;path&#125;/sf_readfiles.dat</code>   </td>
+   <td>Path to store list of log event files read successfully.   </td>
   </tr>
   <tr>
-   <td><code>sandbox</code>
-   </td>
-   <td>Not required, default: <code>false</code>
-   </td>
-   <td>Set to <code>true</code> if the URL points to a sandbox instance.
-   </td>
+   <td><code>sandbox</code>   </td>
+   <td>Not required, default: <code>false</code> </td>
+   <td>Set to <code>true</code> if the URL points to a sandbox instance.   </td>
   </tr>
   <tr>
-   <td><code>start_time</code>
-   </td>
-   <td>Not required, default: 2 days ago
-   </td>
-   <td>Milliseconds since the epoch to begin collecting (for example, 1450137600000).
-   </td>
+   <td><code>start_time</code>   </td>
+   <td>Not required, default: 2 days ago   </td>
+   <td>Milliseconds since the epoch to begin collecting (for example, 1450137600000).   </td>
   </tr>
   <tr>
-   <td><code>end_time</code>
-   </td>
-   <td>Not required, default: now
-   </td>
-   <td>Milliseconds since the epoch to stop collecting.
-   </td>
+   <td><code>end_time</code>   </td>
+   <td>Not required, default: now   </td>
+   <td>Milliseconds since the epoch to stop collecting.   </td>
   </tr>
   <tr>
-   <td><code>interval</code>
-   </td>
-   <td>Not required, default: <code>daily</code>
-   </td>
-   <td>Set to <code>daily</code> or <code>hourly</code> for corresponding log files.
-   </td>
+   <td><code>interval</code> </td>
+   <td>Not required, default: <code>daily</code>   </td>
+   <td>Set to <code>daily</code> or <code>hourly</code> for corresponding log files.   </td>
   </tr>
 </table>
 

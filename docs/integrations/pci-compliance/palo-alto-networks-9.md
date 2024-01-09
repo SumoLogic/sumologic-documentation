@@ -14,24 +14,16 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Netw
 
 <table>
   <tr>
-   <td><strong>Log type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Supported log format</strong>
-   </td>
-   <td><strong>For more information</strong>
-   </td>
+   <td><strong>Log type</strong>   </td>
+   <td><strong>Description</strong> </td>
+   <td><strong>Supported log format</strong> </td>
+   <td><strong>For more information</strong> </td>
   </tr>
   <tr>
-   <td>Traffic
-   </td>
-   <td>Entries for the start and end of each session, including date and time; source and destination zones, addresses and ports; application name; security rule applied to the traffic flow; rule action (allow, deny, or drop); ingress and egress interface; number of bytes; and session end reason.
-   </td>
-   <td>Syslog
-   </td>
-   <td><a href="https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/view-and-manage-logs/log-types-and-severity-levels/traffic-logs">Traffic Logs</a>
-   </td>
+   <td>Traffic </td>
+   <td>Entries for the start and end of each session, including date and time; source and destination zones, addresses and ports; application name; security rule applied to the traffic flow; rule action (allow, deny, or drop); ingress and egress interface; number of bytes; and session end reason. </td>
+   <td>Syslog   </td>
+   <td><a href="https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/view-and-manage-logs/log-types-and-severity-levels/traffic-logs">Traffic Logs</a> </td>
   </tr>
 </table>
 

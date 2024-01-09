@@ -603,115 +603,67 @@ Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors
 
 <table>
   <tr>
-   <td>Alert Type (Metrics/Logs)
-   </td>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
+   <td>Alert Type (Metrics/Logs) </td>
+   <td>Alert Name </td>
+   <td>Alert Description   </td>
+   <td>Trigger Type (Critical / Warning) </td>
+   <td>Alert Condition   </td>
+   <td>Recover Condition   </td>
   </tr>
   <tr>
-   <td>Logs
-   </td>
-   <td>Couchbase - Bucket Not Ready
-   </td>
-   <td>This alert fires when a bucket in the Couchbase cluster is not ready.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#60; 0
-   </td>
-   <td>&#60; &#61;0
-   </td>
+   <td>Logs   </td>
+   <td>Couchbase - Bucket Not Ready   </td>
+   <td>This alert fires when a bucket in the Couchbase cluster is not ready.   </td>
+   <td>Critical   </td>
+   <td> &#60; 0   </td>
+   <td>&#60; &#61;0   </td>
   </tr>
   <tr>
-   <td>Logs
-   </td>
-   <td>Couchbase - Node Down
-   </td>
-   <td>This alert fires when a node in the Couchbase cluster is down.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62;
-   </td>
-   <td>&#60; &#61;0
-   </td>
+   <td>Logs   </td>
+   <td>Couchbase - Node Down   </td>
+   <td>This alert fires when a node in the Couchbase cluster is down.   </td>
+   <td>Critical   </td>
+   <td>&#62;   </td>
+   <td>&#60; &#61;0   </td>
   </tr>
   <tr>
-   <td>Logs
-   </td>
-   <td>Couchbase - Node Not Respond
-   </td>
-   <td>This alert fires when a node in the Couchbase cluster does not respond too many times.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 10
-   </td>
-   <td>&#60; 10
-   </td>
+   <td>Logs   </td>
+   <td>Couchbase - Node Not Respond   </td>
+   <td>This alert fires when a node in the Couchbase cluster does not respond too many times.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 10 </td>
+   <td>&#60; 10   </td>
   </tr>
   <tr>
-   <td>Logs
-   </td>
-   <td>Couchbase - Too Many Error Queries on Buckets
-   </td>
-   <td>This alert fires when there are too many errors queries on a bucket in a Couchbase cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1000
-   </td>
-   <td>&#60; 1000
-   </td>
+   <td>Logs   </td>
+   <td>Couchbase - Too Many Error Queries on Buckets   </td>
+   <td>This alert fires when there are too many errors queries on a bucket in a Couchbase cluster.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1000   </td>
+   <td>&#60; 1000   </td>
   </tr>
   <tr>
-   <td>Logs
-   </td>
-   <td>Couchbase - Too Many Login Failures
-   </td>
-   <td>This alert fires when there are too many login failures to a node in a Couchbase cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1000
-   </td>
-   <td>&#60; 1000
-   </td>
+   <td>Logs   </td>
+   <td>Couchbase - Too Many Login Failures   </td>
+   <td>This alert fires when there are too many login failures to a node in a Couchbase cluster. </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1000   </td>
+   <td>&#60; 1000   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>Couchbase - High CPU Usage
-   </td>
-   <td>This alert fires when CPU usage on a node in a Couchbase cluster is high.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>Metrics   </td>
+   <td>Couchbase - High CPU Usage   </td>
+   <td>This alert fires when CPU usage on a node in a Couchbase cluster is high.  </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>Couchbase - High Memory Usage
-   </td>
-   <td>This alert fires when memory usage on a node in a Couchbase cluster is high.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>Metrics   </td>
+   <td>Couchbase - High Memory Usage   </td>
+   <td>This alert fires when memory usage on a node in a Couchbase cluster is high.  </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80 </td>
   </tr>
 </table>

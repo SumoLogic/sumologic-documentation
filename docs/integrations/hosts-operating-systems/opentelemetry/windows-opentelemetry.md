@@ -58,7 +58,9 @@ Any custom fields can be tagged along with the data in this step.
 
 #### Enable process metric collection (Optional)
 
-{@import ../../../reuse/apps/opentelemetry/process-metric-collection.md}
+import ProcMetrics from '../../../reuse/apps/opentelemetry/process-metric-collection.md';
+
+<ProcMetrics/>
 
 Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Windows-YAML.png')} alt="Windows-YAML" style={{border:'1px solid black'}} width="800"/>
 

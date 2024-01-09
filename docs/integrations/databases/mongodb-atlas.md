@@ -203,7 +203,7 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 
 ### Sample Query
 
-This sample query is from the MongoDB Atlas - Audit dashboard > Recent Audit Events panel.
+This sample query is from the MongoDB Atlas Audit dashboard > Recent Audit Events panel.
 
 <details>
 <summary>Sample query (<strong>click here to expand</strong>)</summary>
@@ -374,59 +374,59 @@ MongoDBAtlas:
   PRIVATE_KEY: <Paste the Private Key from step 1.>
   PUBLIC_KEY: <Paste the Public Key from step 1.>
   LOG_TYPES:
-    - DATABASE
-    - AUDIT
-    - EVENTS_PROJECT
-    - EVENTS_ORG
-    - ALERTS
+    DATABASE
+    AUDIT
+    EVENTS_PROJECT
+    EVENTS_ORG
+    ALERTS
 
   METRIC_TYPES:
     PROCESS_METRICS:
-      - CACHE_DIRTY_BYTES
-      - CACHE_USED_BYTES
-      - CONNECTIONS
-      - CURSORS_TOTAL_OPEN
-      - CURSORS_TOTAL_TIMED_OUT
-      - DATABASE_AVERAGE_OBJECT_SIZE
-      - DB_STORAGE_TOTAL
-      - DB_DATA_SIZE_TOTAL
-      - EXTRA_INFO_PAGE_FAULTS
-      - GLOBAL_LOCK_CURRENT_QUEUE_TOTAL
-      - MEMORY_RESIDENT
-      - MEMORY_VIRTUAL
-      - MEMORY_MAPPED
-      - NETWORK_BYTES_IN
-      - NETWORK_BYTES_OUT
-      - NETWORK_NUM_REQUESTS
-      - OPCOUNTER_CMD
-      - OPCOUNTER_QUERY
-      - OPCOUNTER_UPDATE
-      - OPCOUNTER_DELETE
-      - OPCOUNTER_GETMORE
-      - OPCOUNTER_INSERT
-      - OP_EXECUTION_TIME_READS
-      - OP_EXECUTION_TIME_WRITES
-      - OP_EXECUTION_TIME_COMMANDS
-      - OPLOG_MASTER_LAG_TIME_DIFF
-      - OPLOG_SLAVE_LAG_MASTER_TIME
-      - QUERY_EXECUTOR_SCANNED
-      - QUERY_EXECUTOR_SCANNED_OBJECTS
-      - QUERY_TARGETING_SCANNED_PER_RETURNED
-      - QUERY_TARGETING_SCANNED_OBJECTS_PER_RETURNED
-      - SYSTEM_NORMALIZED_CPU_USER
-      - SYSTEM_NORMALIZED_CPU_KERNEL
-      - SYSTEM_NORMALIZED_CPU_IOWAIT
-      - PROCESS_CPU_USER
-      - PROCESS_CPU_KERNEL
-      - SYSTEM_NORMALIZED_CPU_STEAL
+      CACHE_DIRTY_BYTES
+      CACHE_USED_BYTES
+      CONNECTIONS
+      CURSORS_TOTAL_OPEN
+      CURSORS_TOTAL_TIMED_OUT
+      DATABASE_AVERAGE_OBJECT_SIZE
+      DB_STORAGE_TOTAL
+      DB_DATA_SIZE_TOTAL
+      EXTRA_INFO_PAGE_FAULTS
+      GLOBAL_LOCK_CURRENT_QUEUE_TOTAL
+      MEMORY_RESIDENT
+      MEMORY_VIRTUAL
+      MEMORY_MAPPED
+      NETWORK_BYTES_IN
+      NETWORK_BYTES_OUT
+      NETWORK_NUM_REQUESTS
+      OPCOUNTER_CMD
+      OPCOUNTER_QUERY
+      OPCOUNTER_UPDATE
+      OPCOUNTER_DELETE
+      OPCOUNTER_GETMORE
+      OPCOUNTER_INSERT
+      OP_EXECUTION_TIME_READS
+      OP_EXECUTION_TIME_WRITES
+      OP_EXECUTION_TIME_COMMANDS
+      OPLOG_MASTER_LAG_TIME_DIFF
+      OPLOG_SLAVE_LAG_MASTER_TIME
+      QUERY_EXECUTOR_SCANNED
+      QUERY_EXECUTOR_SCANNED_OBJECTS
+      QUERY_TARGETING_SCANNED_PER_RETURNED
+      QUERY_TARGETING_SCANNED_OBJECTS_PER_RETURNED
+      SYSTEM_NORMALIZED_CPU_USER
+      SYSTEM_NORMALIZED_CPU_KERNEL
+      SYSTEM_NORMALIZED_CPU_IOWAIT
+      PROCESS_CPU_USER
+      PROCESS_CPU_KERNEL
+      SYSTEM_NORMALIZED_CPU_STEAL
 
     DISK_METRICS:
-      - DISK_PARTITION_IOPS_READ
-      - DISK_PARTITION_IOPS_WRITE
-      - DISK_PARTITION_LATENCY_READ
-      - DISK_PARTITION_LATENCY_WRITE
-      - DISK_PARTITION_SPACE_PERCENT_FREE
-      - DISK_PARTITION_SPACE_PERCENT_USED
+      DISK_PARTITION_IOPS_READ
+      DISK_PARTITION_IOPS_WRITE
+      DISK_PARTITION_LATENCY_READ
+      DISK_PARTITION_LATENCY_WRITE
+      DISK_PARTITION_SPACE_PERCENT_FREE
+      DISK_PARTITION_SPACE_PERCENT_USED
 
 Collection:
   DBNAME: "newmongodbatlas"
@@ -447,194 +447,121 @@ This section is common for both [AWS Lambda-based collection](#Deploy_the_Sumo_L
 <details>
 <summary>This table lists MongoDB Atlas variables that you can optionally define in the configuration file (<strong>click to expand</strong>).</summary>
 
-<table><small>
+<table>
   <tr>
-   <td>Variable
-   </td>
-   <td>Usage
-   </td>
+   <td><strong>Variable </strong> </td>
+   <td><strong>Usage</strong> </td>
   </tr>
   <tr>
-   <td>LOG_TYPES in MongoDBAtlas Section
-   </td>
-   <td><ul><li>DATABASE</li>
- <li> AUDIT</li>
- <li> EVENTS_PROJECT</li>
- <li> EVENTS_ORG</li>
- <li> ALERTS</li></ul>
+   <td>LOG_TYPES<br/>
+in MongoDBAtlas Section </td>
+   <td>DATABASE
+<br/>AUDIT
+<br/>EVENTS_PROJECT
+<br/>EVENTS_ORG
+<br/>ALERTS
+<br/>Remove any one of the lines if you do not want to collect metric of that type.</td>
+  </tr>
+  <tr>
+   <td>PROCESS_METRICS<br/>in MongoDBAtlas Section</td>
+   <td>CACHE_DIRTY_BYTES<br/>
+CACHE_USED_BYTES<br/>
+CONNECTIONS<br/>
+CURSORS_TOTAL_OPEN<br/>
+CURSORS_TOTAL_TIMED_OUT<br/>
+DB_STORAGE_TOTAL<br/>
+DB_DATA_SIZE_TOTAL<br/>
+DATABASE_AVERAGE_OBJECT_SIZE<br/>
+EXTRA_INFO_PAGE_FAULTS<br/>
+GLOBAL_LOCK_CURRENT_QUEUE_TOTAL<br/>
+MEMORY_RESIDENT<br/>
+MEMORY_VIRTUAL<br/>
+MEMORY_MAPPED<br/>
+NETWORK_BYTES_IN<br/>
+NETWORK_BYTES_OUT<br/>
+NETWORK_NUM_REQUESTS<br/>
+OPCOUNTER_CMD<br/>
+OPCOUNTER_QUERY<br/>
+OPCOUNTER_UPDATE<br/>
+OPCOUNTER_DELETE<br/>
+OPCOUNTER_GETMORE<br/>
+OPCOUNTER_INSERT<br/>
+OP_EXECUTION_TIME_READS<br/>
+OP_EXECUTION_TIME_WRITES<br/>
+OP_EXECUTION_TIME_COMMANDS<br/>
+QUERY_EXECUTOR_SCANNED<br/>
+QUERY_EXECUTOR_SCANNED_OBJECTS<br/>
+QUERY_TARGETING_SCANNED_PER_RETURNED<br/>
+QUERY_TARGETING_SCANNED_OBJECTS_PER_RETURNED<br/>
+SYSTEM_NORMALIZED_CPU_USER<br/>
+SYSTEM_NORMALIZED_CPU_KERNEL<br/>
+SYSTEM_NORMALIZED_CPU_IOWAIT<br/>
+PROCESS_CPU_USER<br/>
+PROCESS_CPU_KERNEL<br/>
+SYSTEM_NORMALIZED_CPU_STEAL<br/>Remove any one of the lines if you do not want to collect metric of that type. </td>
+  </tr>
+  <tr>
+   <td>DISK_METRICS<br/>in MongoDBAtlas Section</td>
+   <td>DISK_PARTITION_IOPS_READ<br/>
+DISK_PARTITION_IOPS_WRITE<br/>
+DISK_PARTITION_UTILIZATION<br/>
+DISK_PARTITION_LATENCY_READ<br/>
+DISK_PARTITION_LATENCY_WRITE<br/>
+DISK_PARTITION_SPACE_FREE<br/>
+DISK_PARTITION_SPACE_USED<br/>
 Remove any one of the lines if you do not want to collect metric of that type.</td>
   </tr>
   <tr>
-   <td>PROCESS_METRICS in MongoDBAtlas Section
-   </td>
-   <td><ul><li>CACHE_DIRTY_BYTES</li>
-<li> CACHE_USED_BYTES
-</li>
-<li> CONNECTIONS
-</li>
-<li> CURSORS_TOTAL_OPEN
-</li>
-<li> CURSORS_TOTAL_TIMED_OUT
-</li>
-<li> DB_STORAGE_TOTAL
-</li>
-<li> DATABASE_AVERAGE_OBJECT_SIZE
-</li>
-<li> EXTRA_INFO_PAGE_FAULTS
-</li>
-<li> EXTRA_INFO_PAGE_FAULTS
-</li>
-<li> GLOBAL_LOCK_CURRENT_QUEUE_TOTAL
-</li>
-<li> MEMORY_RESIDENT
-</li>
-<li> MEMORY_VIRTUAL
-</li>
-<li> MEMORY_MAPPED
-</li>
-<li> NETWORK_BYTES_IN
-</li>
-<li> NETWORK_BYTES_OUT
-</li>
-<li> NETWORK_NUM_REQUESTS
-</li>
-<li> OPCOUNTER_CMD
-</li>
-<li> OPCOUNTER_QUERY
-</li>
-<li> OPCOUNTER_UPDATE
-</li>
-<li> OPCOUNTER_DELETE
-</li>
-<li> OPCOUNTER_GETMORE
-</li>
-<li> OPCOUNTER_INSERT
-</li>
-<li> OP_EXECUTION_TIME_READS
-</li>
-<li> OP_EXECUTION_TIME_WRITES
-</li>
-<li> OP_EXECUTION_TIME_COMMANDS
-</li>
-<li> OPLOG_MASTER_LAG_TIME_DIFF
-</li>
-<li> OPLOG_SLAVE_LAG_MASTER_TIME
-</li>
-<li> QUERY_EXECUTOR_SCANNED
-</li>
-<li> QUERY_EXECUTOR_SCANNED_OBJECTS
-</li>
-<li> QUERY_TARGETING_SCANNED_PER_RETURNED
-</li>
-<li> QUERY_TARGETING_SCANNED_OBJECTS_PER_RETURNED
-</li>
-<li> SYSTEM_NORMALIZED_CPU_USER
-</li>
-<li> SYSTEM_NORMALIZED_CPU_KERNEL
-</li>
-<li> SYSTEM_NORMALIZED_CPU_IOWAIT
-</li>
-<li> PROCESS_CPU_USER
-</li>
-<li> PROCESS_CPU_KERNEL
-</li>
-<li> SYSTEM_NORMALIZED_CPU_STEAL</li></ul>
-Remove any one of the lines if you do not want to collect metric of that type.
-   </td>
+   <td>BACKFILL_DAYS<br/>in Collection Section</td>
+   <td>Number of days before the event collection will start. If the value is 1,
+then events are fetched from yesterday to today.</td>
   </tr>
   <tr>
-   <td>DISK_METRICS in MongoDBAtlas Section
-   </td>
-   <td><ul>
-<li>DISK_PARTITION_IOPS_READ</li>
-<li> DISK_PARTITION_IOPS_WRITE
-</li>
-<li> DISK_PARTITION_LATENCY_READ
-</li>
-<li> DISK_PARTITION_LATENCY_WRITE
-</li>
-<li> DISK_PARTITION_SPACE_FREE
-</li>
-<li> DISK_PARTITION_SPACE_USED
-</li>  
-<li> DISK_PARTITION_SPACE_PERCENT_FREE
-</li>
-<li> DISK_PARTITION_SPACE_PERCENT_USED
-</li></ul>
-Remove any one of the lines if you do not want to collect metric of that type.</td>
+   <td>PAGINATION_LIMIT<br/>in Collection Section</td>
+   <td>Number of events to fetch in a single API call.</td>
   </tr>
   <tr>
-   <td>BACKFILL_DAYS in Collection Section
-   </td>
-   <td>Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today.
-   </td>
+   <td>LOG_FORMAT<br/>in Logging Section </td>
+   <td>Log format used by the python logging module to write logs in a file. </td>
   </tr>
   <tr>
-   <td>PAGINATION_LIMIT in Collection Section
-   </td>
-   <td>Number of events to fetch in a single API call.
-   </td>
+   <td>ENABLE_LOGFILE<br/>in Logging Section </td>
+   <td>Set to TRUE to write all logs and errors to a log file. </td>
   </tr>
   <tr>
-   <td>LOG_FORMAT in Logging Section
-   </td>
-   <td>Log format used by the python logging module to write logs in a file.
-   </td>
+   <td>ENABLE_CONSOLE_LOG<br/>in Logging Section </td>
+   <td>Enables printing logs in a console. </td>
   </tr>
   <tr>
-   <td>ENABLE_LOGFILE in Logging Section
-   </td>
-   <td>Set to TRUE to write all logs and errors to a log file.
-   </td>
+   <td>LOG_FILEPATH<br/>in Logging Section </td>
+   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE. </td>
   </tr>
   <tr>
-   <td>ENABLE_CONSOLE_LOG in Logging Section
-   </td>
-   <td>Enables printing logs in a console.
-   </td>
+   <td>NUM_WORKERS<br/>in Collection Section   </td>
+   <td>Number of threads to spawn for API calls. </td>
   </tr>
   <tr>
-   <td>LOG_FILEPATH in Logging Section
-   </td>
-   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE.
-   </td>
+   <td>MAX_RETRY<br/>in Collection Section </td>
+   <td>Number of retries to attempt in case of request failure.   </td>
   </tr>
   <tr>
-   <td>NUM_WORKERS in Collection Section
-   </td>
-   <td>Number of threads to spawn for API calls.
-   </td>
+   <td>BACKOFF_FACTOR<br/>in Collection Section   </td>
+   <td>A backoff factor to apply between attempts after the second try. If the
+backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...]
+between retries. </td>
   </tr>
   <tr>
-   <td>MAX_RETRY in Collection Section
-   </td>
-   <td>Number of retries to attempt in case of request failure.
-   </td>
+   <td>TIMEOUT<br/>in Collection Section   </td>
+   <td>Request time out used by the requests library.   </td>
   </tr>
   <tr>
-   <td>BACKOFF_FACTOR in Collection Section
-   </td>
-   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries.
-   </td>
+   <td>LOGS_SUMO_ENDPOINT<br/>in MongoDBAtlas section   </td>
+   <td>HTTP source endpoint url created in Sumo Logic for ingesting Logs.   </td>
   </tr>
   <tr>
-   <td>TIMEOUT in Collection Section
-   </td>
-   <td>Request time out used by the requests library.
-   </td>
+   <td>METRICS_SUMO_ENDPOINT<br/>In MongoDBAtlas section   </td>
+   <td>HTTP source endpoint url created in Sumo Logic for ingesting Metrics.   </td>
   </tr>
-  <tr>
-   <td>LOGS_SUMO_ENDPOINT in MongoDBAtlas section
-   </td>
-   <td>HTTP source endpoint url created in Sumo Logic for ingesting Logs.
-   </td>
-  </tr>
-  <tr>
-   <td>METRICS_SUMO_ENDPOINT in MongoDBAtlas section
-   </td>
-   <td>HTTP source endpoint url created in Sumo Logic for ingesting Metrics.
-   </td>
-  </tr></small>
 </table>
 
 </details>
@@ -693,7 +620,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 #### Overview
 
-The **MongoDB Atlas - Overview** dashboard provides an at-a-glance overview of server availability, messages, and commands. Panels display information on messages by severity and component, trends in messages by component and severity, as well as trends for database (DB) commands and create, read, update, and delete (**CRUD**) function commands.
+The **MongoDB Atlas Overview** dashboard provides an at-a-glance overview of server availability, messages, and commands. Panels display information on messages by severity and component, trends in messages by component and severity, as well as trends for database (DB) commands and create, read, update, and delete (**CRUD**) function commands.
 
 Use this dashboard to:
 * Identify key operational metrics. You can drill down for granular data by clicking any of the first row panels. Monitor recent events and alerts. Click on the ID links to drill-down into the MongoDB Atlas console for more details.
@@ -708,7 +635,7 @@ The MongoDB Atlas Security dashboards aim to provide a comprehensive view of Atl
 
 #### Events
 
-The **MongoDB Atlas - Events** dashboard provides information on Atlas project and organization-level changes. Panels show information on the type, number, location and recent events.
+The **MongoDB Atlas Events** dashboard provides information on Atlas project and organization-level changes. Panels show information on the type, number, location and recent events.
 
 Use this dashboard to:
 * Monitor most recent and past Atlas change events to ensure that the number and type of events are in line with expectations.
@@ -718,7 +645,7 @@ Use this dashboard to:
 
 #### Alerts
 
-The **MongoDB Atlas - Alerts** dashboard provides an at-a-glance view view of alerts triggered in your Atlas environment. Panels show information around the total number and number of  open alerts, recent alerts, alert types and status.
+The **MongoDB Atlas Alerts** dashboard provides an at-a-glance view view of alerts triggered in your Atlas environment. Panels show information around the total number and number of  open alerts, recent alerts, alert types and status.
 
 Use this dashboard to:
 * Identify and address all open and recent alerts.
@@ -728,7 +655,7 @@ Use this dashboard to:
 
 #### Audit
 
-The **MongoDB Atlas - Audit** dashboard provides information around security events in your Atlas environment such as failed authentication, authorization and audit events, audit event trends, and originating geographic locations. Panels also display details on audit events by action type and user, and recent audit events by created and deleted resources.
+The **MongoDB Atlas Audit** dashboard provides information around security events in your Atlas environment such as failed authentication, authorization and audit events, audit event trends, and originating geographic locations. Panels also display details on audit events by action type and user, and recent audit events by created and deleted resources.
 
 Use this dashboard to:
 * Identify unusually high number of eventsfailed eventby analyzing trend graphs.
@@ -746,7 +673,7 @@ Performance dashboards provide visual representations of key MongoDB Atlas metri
 #### Cluster Metrics
 
 
-The **MongoDB Atlas - Cluster Metrics** dashboard provides a high-level view of cluster performance, disk and cache usage. Panel graphs show details for read and write operations and their execution times, network traffic, connections, data sizes, and disk read and write IOPs.
+The **MongoDB Atlas Cluster Metrics** dashboard provides a high-level view of cluster performance, disk and cache usage. Panel graphs show details for read and write operations and their execution times, network traffic, connections, data sizes, and disk read and write IOPs.
 
 Use this dashboard to:
 * Identify anomalous changes in database metrics.
@@ -756,7 +683,7 @@ Use this dashboard to:
 
 #### Metrics
 
-The **MongoDB Atlas - Metrics** dashboard provides an at-a-glance view of database performance with graphs showing memory availability, data size, cache in bytes, and returned document ratios.
+The **MongoDB Atlas Metrics** dashboard provides an at-a-glance view of database performance with graphs showing memory availability, data size, cache in bytes, and returned document ratios.
 
 Use this dashboard to:
 * Determine node health based on page faults, cache dirty bytes, replication headroom, queued operations, and  disk write latency.
@@ -767,7 +694,7 @@ Use this dashboard to:
 
 #### Slow Queries
 
-The **MongoDB Atlas - Slow Queries** dashboard provides details on the number of slow queries by type,trends, and slow server status.
+The **MongoDB Atlas Slow Queries** dashboard provides details on the number of slow queries by type,trends, and slow server status.
 
 Use this dashboard to:
 * Identify and fix slow queries.
@@ -783,7 +710,7 @@ The Operations dashboards monitor database operations, such as indexing, shardin
 
 #### Errors and Warnings
 
-The **MongoDB Atlas - Errors and Warnings** dashboard provides information on errors, warnings by component, severity and type.. Panels also show information on daily error and warning summaries, socket exceptions, timeout events, and MongoDB exit events.
+The **MongoDB Atlas Errors and Warnings** dashboard provides information on errors, warnings by component, severity and type.. Panels also show information on daily error and warning summaries, socket exceptions, timeout events, and MongoDB exit events.
 
 Use this dashboard to:
 * Identify and fix errors and warnings.
@@ -794,7 +721,7 @@ Use this dashboard to:
 
 #### Logins and Connections
 
-The **MongoDB Atlas - Logins and Connections** dashboard provides a high-level view of the geographic locations of client connection requests, logins from malicious remote IPS, and geographic locations of failed logins. Panels also display information on overall failed login attempts, threat intel by remote IP, and failed logins by user.
+The **MongoDB Atlas Logins and Connections** dashboard provides a high-level view of the geographic locations of client connection requests, logins from malicious remote IPS, and geographic locations of failed logins. Panels also display information on overall failed login attempts, threat intel by remote IP, and failed logins by user.
 
 Use this dashboard to:
 * Identify requests coming in malicious remote IPs and their geographic locations and use this information to fix your firewall or WAF devices.
@@ -804,7 +731,7 @@ Use this dashboard to:
 
 #### Replication
 
-The **MongoDB Atlas - Replication** dashboard provides information on changes in replication configurations. Panels display details on replication errors, warnings, events, as well as information around primary and secondary nodes.
+The **MongoDB Atlas Replication** dashboard provides information on changes in replication configurations. Panels display details on replication errors, warnings, events, as well as information around primary and secondary nodes.
 
 Use this dashboard to:
 * Identify and fix replication and availability errors.
@@ -814,7 +741,7 @@ Use this dashboard to:
 
 #### Sharding
 
-The **MongoDB Atlas - Sharding** dashboard provides information on Atlas cluster sharding. Panels show details on warnings, errors, chunk split failures, balancer failures, chunks moving by collection, and chunks moving between shards.
+The **MongoDB Atlas Sharding** dashboard provides information on Atlas cluster sharding. Panels show details on warnings, errors, chunk split failures, balancer failures, chunks moving by collection, and chunks moving between shards.
 
 Use this dashboard to:
 * Identify and fix sharding and balancing related errors and warnings.
