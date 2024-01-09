@@ -1,5 +1,4 @@
-<details>
-<summary>How does a <a href="/docs/search/search-query-language/search-operators/timeslice"><code>timeslice</code></a> affect a monitor?</summary>
+<details><summary>How does a <a href="/docs/search/search-query-language/search-operators/timeslice"><code>timeslice</code></a> affect a monitor?</summary>
 
 Monitor query output is matched with the configured threshold during its evaluation. If it matches, the alert triggers. If there are multiple rows in the search query output because of [`timeslice`](/docs/search/search-query-language/search-operators/timeslice) or any other reason (such as a [`group by`](/docs/search/search-query-language/group-aggregate-operators) operator), it would match each row with the monitor threshold and if it matches for any row, it would trigger the alert.<br/>
 

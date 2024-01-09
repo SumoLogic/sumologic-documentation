@@ -12,9 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Folder Management API allows you to add folders and subfolders to the [Library](/docs/get-started/library) from HTTP endpoints to organize your content.
 
-import ApiIntro from '../reuse/api-intro.md';
-
-<ApiIntro/>
+{@import ../reuse/api-intro.md}
 
 | Deployment | Documentation URL                                        |
 |:------------|:--------------------------------------------------------|

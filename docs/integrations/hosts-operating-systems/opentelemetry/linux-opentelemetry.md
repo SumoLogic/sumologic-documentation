@@ -33,15 +33,11 @@ Following are the [fields](/docs/manage/fields) that will be created as part of 
 You can skip this section if you have already set up the logs collection through [Linux PCI](/docs/integrations/pci-compliance/opentelemetry/linux-opentelemetry) or [Linux - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
-
-<ConfigAppInstall/>
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
-
-<SetupColl/>
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
@@ -74,17 +70,13 @@ By default, the path for Linux log files required for all the distros are pre-po
 
 #### Enable process metric collection (Optional)
 
-import ProcMetrics from '../../../reuse/apps/opentelemetry/process-metric-collection.md';
-
-<ProcMetrics/>
+{@import ../../../reuse/apps/opentelemetry/process-metric-collection.md}
 
 Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Linux-YAML.png')} alt="Linux-YAML" style={{border:'1px solid black'}} width="800"/>
 
 ### Step 3: Send logs and metrics to Sumo Logic
 
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
-
-<LogsIntro/>
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -108,33 +100,25 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
 <TabItem value="Chef">
 
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
 
 </TabItem>
 
 </Tabs>
 
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Log Messages
 

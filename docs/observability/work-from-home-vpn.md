@@ -28,8 +28,7 @@ You can use Sumo Logic to monitor traffic, user activity, successful and failed 
 
 To configure data collection, you'll first need to decide on the Work From Home app you want to install, as it will determine need to set up an Installed Collector or Hosted Collector.
 
-<details>
-<summary>What are Collectors?</summary>
+<details><summary>What are Collectors?</summary>
 
 * [Installed Collectors](/docs/send-data/installed-collectors) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
 * [Hosted Collectors](/docs/send-data/hosted-collectors) reside in the Cloud, allowing for seamless collection from cloud sources.

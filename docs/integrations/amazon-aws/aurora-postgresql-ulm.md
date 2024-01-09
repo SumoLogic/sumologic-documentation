@@ -27,8 +27,7 @@ Below are example logs and metrics collected from your Aurora PostgreSQL databas
 
 ### Sample log
 
-<details>
-<summary>Click to expand. The following is an example of an <strong>AWS Cloud Trail</strong> log.</summary>
+<details><summary>Click to expand. The following is an example of an <strong>AWS Cloud Trail</strong> log.</summary>
 
 ```json
 {
@@ -210,9 +209,7 @@ To collect Aurora CloudWatch metrics, do the following:
 
 Now that you have set up log and metric collection for Amazon Aurora PostgreSQL, you can install the Sumo Logic app for Aurora PostgreSQL ULM, and use its pre-configured searches and dashboards.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Aurora PostgreSQL ULM Dashboards
 

@@ -6,7 +6,7 @@ description: Learn how to properly remove a Sumo Logic doc.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::danger
+:::warning
 Deleting a doc results a 404 error. Follow the below instructions to learn how to create a 301 redirect.
 :::
 
@@ -16,9 +16,7 @@ To keep our docs site healthy, follow these steps.
 
 ## Prerequisites
 
-import DocPrereq from '../reuse/doc-prerequisites.md';
-
-<DocPrereq/>
+{@import ../reuse/doc-prerequisites.md}
 
 ## Step 1: Create a 301 redirect
 
@@ -38,7 +36,7 @@ In your GitHub authoring tool, run a search for the URL you're removing. In this
 
 <img src={useBaseUrl('img/contributing/old-url.png')} alt="header sizes" />
 
-:::warning
+:::caution
 Never do a Find All > Replace All, as this can break unrelated items like image paths. Replace each URL on a one-by-one basis.
 :::
 

@@ -113,6 +113,4 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
 ## Create multiple SAML configurations
 
-import Saml from '../../../reuse/saml.md';
-
-<Saml/>
+{@import ../../../reuse/saml.md}

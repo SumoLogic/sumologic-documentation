@@ -102,9 +102,7 @@ Sumo Logic needs to understand the event type for incoming events. To enable thi
 ## Installing the GitLab App
 
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 
 ### Troubleshooting

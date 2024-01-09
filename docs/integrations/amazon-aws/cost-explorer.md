@@ -75,17 +75,13 @@ Create a Field Extraction Rule (FER) for AWS Cost Explorer Logs. Learn how to cr
 
 ## Configure an AWS Cost Explorer Source
 
-import AwsCost from '../../reuse/aws-cost-explorer.md';
-
-<AwsCost/>
+{@import ../../reuse/aws-cost-explorer.md}
 
 ## Installing the AWS Cost Explorer App
 
 Now that you have set up a collection for AWS Cost Explorer, install the Sumo Logic App to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing AWS Cost Explorer Dashboards
 

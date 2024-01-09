@@ -205,9 +205,7 @@ This section demonstrates how to install the Cylance App, as well as providing e
 
 Now that you have set up log collection for Cylance, you can install the Cylance App.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Cylance Dashboards
 

@@ -28,8 +28,7 @@ This app uses Sumo Logic's Microsoft Graph Security Source to collect v2 [Alerts
 
 ### Sample log message
 
-<details>
-<summary>Sample Alert Log (click to expand)</summary>
+<details><summary>Sample Alert Log (click to expand)</summary>
 
 ```json title="Sample Alert Log"
 {
@@ -193,9 +192,7 @@ This section has instructions for installing the Microsoft Graph Security app fo
 
 Locate and install the app you need from the App Catalog. If you want to see a preview of the dashboard included with the app before installing, click **Preview Dashboards**.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Microsoft Graph Security Dashboards​
 

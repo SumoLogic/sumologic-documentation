@@ -111,8 +111,7 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
 <img src={useBaseUrl('/img/send-data/Azure_Blob_create-table.png')} alt="Azure_Blob_create-table" width="900"/>
 
-<details>
-<summary>Example: Push NSG flow logs from a Network Security Group to Azure Blob Storage</summary>
+<details><summary>Example: Push NSG flow logs from a Network Security Group to Azure Blob Storage</summary>
 This section describes how to push logs from a network security group into Azure Blob Storage by configuring nsg flow Logs. The instructions use a network security group as an example.
 <ol>
     <li>Login to the Azure Portal.</li>

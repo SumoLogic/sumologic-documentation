@@ -37,25 +37,29 @@ Watch this tutorial to learn how to use the App Catalog.
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/product-list/"><img src={useBaseUrl('img/icons/integrations.png')} alt="Thumbnail icon" width="65"/><h4>Product List</h4></a>
+  <a href="/docs/integrations/product-list/"><img src={useBaseUrl('img/icons/integrations.png')} alt="Thumbnail icon" width="65"/>
+  <h4>Product List</h4></a>
   <p>A list of all the products that Sumo Logic integrates with.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/amazon-aws/"><img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Thumbnail icon" width="65"/><h4>Amazon/AWS</h4></a>
+  <a href="/docs/integrations/amazon-aws/"><img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Thumbnail icon" width="65"/>
+  <h4>Amazon/AWS</h4></a>
   <p>A guide to Sumo Logic apps for Amazon and AWS products.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/microsoft-azure/"><img src={useBaseUrl('img/integrations/microsoft-azure/azure.png')} alt="Thumbnail icon" width="50"/><h4>Microsoft/Azure</h4></a>
+  <a href="/docs/integrations/microsoft-azure/"><img src={useBaseUrl('img/integrations/microsoft-azure/azure.png')} alt="Thumbnail icon" width="50"/>
+  <h4>Microsoft/Azure</h4></a>
   <p>A guide to Sumo Logic apps for Microsoft and Azure.</p>
   </div>
 </div>
   <div className="box smallbox card">
     <div className="container">
-    <a href="/docs/integrations/google/"><img src={useBaseUrl('img/integrations/google/google.png')} alt="Thumbnail icon" width="40"/><h4>Google</h4></a>
+    <a href="/docs/integrations/google/"><img src={useBaseUrl('img/integrations/google/google.png')} alt="Thumbnail icon" width="40"/>
+    <h4>Google</h4></a>
     <p>A guide to Sumo Logic apps for Google products, such as Workspace.</p>
   </div>
 </div>
@@ -67,7 +71,8 @@ Watch this tutorial to learn how to use the App Catalog.
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/containers-orchestration"><img src={useBaseUrl('img/integrations/containers-orchestration/containers.png')} alt="Thumbnail icon" width="50"/><h4>Containers</h4></a>
+  <a href="/docs/integrations/containers-orchestration"><img src={useBaseUrl('img/integrations/containers-orchestration/containers.png')} alt="Thumbnail icon" width="50"/>
+  <h4>Containers</h4></a>
   <p>A guide to Sumo Logic apps for container management, such as Kubernetes and Docker.</p>
   </div>
 </div>
@@ -79,7 +84,8 @@ Watch this tutorial to learn how to use the App Catalog.
 </div>
 <div className="box smallbox card">
     <div className="container">
-    <a href="/docs/integrations/databases"><img src={useBaseUrl('img/integrations/databases/databases-icon.png')} alt="Thumbnail icon" width="55"/><h4>Database Servers</h4></a>
+    <a href="/docs/integrations/databases"><img src={useBaseUrl('img/integrations/databases/databases-icon.png')} alt="Thumbnail icon" width="55"/>
+    <h4>Database Servers</h4></a>
     <p>A guide to Sumo Logic apps for database servers, such as Oracle and MongoDB.</p>
   </div>
 </div>

@@ -21,8 +21,7 @@ The Amazon RDS app uses the following logs and metrics:
 
 ### Sample CloudTrail log message
 
-<details>
-<summary>Click to expand</summary>
+<details><summary>Click to expand</summary>
 
 ```json title="CloudTrail"
 {
@@ -111,8 +110,7 @@ The Amazon RDS app uses the following logs and metrics:
 
 ### Sample Database CloudWatch logs
 
-<details>
-<summary>Click to expand</summary>
+<details><summary>Click to expand</summary>
 
 ```json title="Recent Warning Events (Error Logs)"
 {
@@ -373,9 +371,7 @@ Save it
 
 Now that you have set up a collection for **Amazon RDS**, install the Sumo Logic app to use the pre-configured [dashboards](#viewing-the-rds-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing the RDS dashboards  
 

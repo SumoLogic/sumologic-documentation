@@ -40,18 +40,14 @@ In this step, you'll configure an AWS Elastic Load Balancing source to receive l
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 
 
-import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
-
-<Aws3/>
+{@import ../../reuse/apps/create-aws-s3-source.md}
 
 
 ## Installing the AWS ELB Application
 
 Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancer to use the pre-configured searches and dashboards that provide visibility into your environment.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing AWS ELB Dashboards
 

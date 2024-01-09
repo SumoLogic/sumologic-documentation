@@ -163,9 +163,7 @@ _sourceCategory="docusign_src"
 
 Before you begin, collect logs from DocuSign API and ingest them into Sumo Logic. Refer to the [DocuSign API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source/) to create the source and use the same source category while installing the app.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing the DocuSign Dashboards
 

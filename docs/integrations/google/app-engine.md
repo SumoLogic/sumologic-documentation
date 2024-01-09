@@ -19,8 +19,7 @@ The App uses:
 
 ### Sample Log Message
 
-<details>
-<summary>Click to expand</summary>
+<details><summary>Click to expand</summary>
 
 ```json
 {
@@ -320,9 +319,7 @@ This section provides instructions for installing the Google App Engine App, as 
 
 Now that you have set up collection for Google App Engine, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Google App Engine Dashboards
 

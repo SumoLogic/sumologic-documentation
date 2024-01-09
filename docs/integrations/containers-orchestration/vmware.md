@@ -109,8 +109,7 @@ To configure logs to be collected, do the following:
 
 1. To test the events.py script that queries the vCenter Server for events and sends the events to Sumo Logic, go to the directory for the Sumo Logic scripts and run the **events.py** script with the following command. Review the examples for the different source types.
 
-<details>
-<summary>Click to expand</summary>
+<details><summary>Click to expand</summary>
 
 Sample username format is **username@vsphere.local** or **domain/username**.
 
@@ -212,8 +211,7 @@ To collect performance metrics, do the following:
   python3 esx_perf_metrics_6_5.py -u [username] -p [password] -s [vcenter server] -t [target server] -to [target port] -cf [config filename]
   ```
 
-<details>
-<summary>View examples (click to expand)</summary>
+<details><summary>View examples (click to expand)</summary>
 **Example 1: Using metrics streaming source and specific log directory with a specific log file prefix.**
 
 ```bash
@@ -335,9 +333,7 @@ This section provides instructions for installing the VMware App.
 
 Now that you have set up collection for VMWare, you can install the VMWare App to use the preconfigured searches and Dashboards that provide insight into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing VMware Dashboards
 

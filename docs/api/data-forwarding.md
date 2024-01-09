@@ -12,9 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Data Forwarding Management API allows you to forward log data from a Partition or Scheduled View to an S3 bucket. For more information, see [Forwarding Data to S3](/docs/manage/data-forwarding/amazon-s3-bucket).
 
-import ApiIntro from '../reuse/api-intro.md';
-
-<ApiIntro/>
+{@import ../reuse/api-intro.md}
 
 | Deployment | Documentation URL                                                |
 |:------------|:------------------------------------------------------------------|

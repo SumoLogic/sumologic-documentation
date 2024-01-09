@@ -265,28 +265,40 @@ annotations:
 
 <table>
   <tr>
-   <td>Metric Type   </td>
-   <td>Sample   </td>
+   <td>Metric Type
+   </td>
+   <td>Sample
+   </td>
   </tr>
   <tr>
-   <td>CPU   </td>
-   <td>java_lang_OperatingSystem_ProcessCpuLoad   </td>
+   <td>CPU
+   </td>
+   <td>java_lang_OperatingSystem_ProcessCpuLoad
+   </td>
   </tr>
   <tr>
-   <td>GC </td>
-   <td>java_lang_GarbageCollector_LastGcInfo_duration   </td>
+   <td>GC
+   </td>
+   <td>java_lang_GarbageCollector_LastGcInfo_duration
+   </td>
   </tr>
   <tr>
-   <td>Memory   </td>
-   <td>java_lang_Memory_NonHeapMemoryUsage_committed </td>
+   <td>Memory
+   </td>
+   <td>java_lang_Memory_NonHeapMemoryUsage_committed
+   </td>
   </tr>
   <tr>
-   <td>Threads   </td>
-   <td>java_lang_Threading_ThreadCount   </td>
+   <td>Threads
+   </td>
+   <td>java_lang_Threading_ThreadCount
+   </td>
   </tr>
   <tr>
-   <td>ClassLoader   </td>
-   <td>java_lang_ClassLoading_LoadedClassCount   </td>
+   <td>ClassLoader
+   </td>
+   <td>java_lang_ClassLoading_LoadedClassCount
+   </td>
   </tr>
 </table>
 
@@ -295,9 +307,7 @@ annotations:
 
 This section has instructions for installing the Sumo App for JMX.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing JMX Dashboards
 

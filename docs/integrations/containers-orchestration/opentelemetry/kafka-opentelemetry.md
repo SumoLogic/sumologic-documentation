@@ -44,15 +44,11 @@ Configure logging in Kafka: By default, Kafka logs (`server.log` and `controller
 
 ## Collection configuration and app installation
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
-
-<ConfigAppInstall/>
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up OpenTelemetry Collector
 
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
-
-<SetupColl/>
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
@@ -73,9 +69,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Send logs and metrics to Sumo
 
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
-
-<LogsIntro/>
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -118,32 +112,41 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 </TabItem>
 <TabItem value="Chef">
 
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
 
-<PuppetNoEnv/>
+</TabItem>
+<TabItem value="Chef">
+
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
 
 </TabItem>
 </Tabs>
 
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 
 ## Sample Log Messages

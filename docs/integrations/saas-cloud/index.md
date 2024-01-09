@@ -13,55 +13,64 @@ Learn about the Sumo Logic apps for SaaS and Cloud applications.
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/acquia"><img src={useBaseUrl('img/integrations/saas-cloud/acquia.png')} alt="icon" width="120"/><h4>Acquia</h4></a>
+  <a href="/docs/integrations/saas-cloud/acquia">
+  <img src={useBaseUrl('img/integrations/saas-cloud/acquia.png')} alt="icon" width="120"/><h4>Acquia</h4></a>
   <p>Gain visibility into your key Acquia platform components.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/acquia"><img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="airtable-icon.png" width="40"/><h4>Airtable</h4></a>
+  <a href="/docs/integrations/saas-cloud/acquia">
+  <img src={useBaseUrl('img/send-data/airtable-icon.png')} alt="airtable-icon.png" width="40" /><h4>Airtable</h4></a>
   <p>Monitor and analyze your Airtable audit logs.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/akamai-cloud-monitor"><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="icon" width="85"/><h4>Akamai Cloud Monitor</h4></a>
+  <a href="/docs/integrations/saas-cloud/akamai-cloud-monitor">
+  <img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="icon" width="85"/><h4>Akamai Cloud Monitor</h4></a>
   <p>Analyze and correlate Akamai data with origin data.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/akamai-datastream"><img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="icon" width="85"/><h4>Akamai DataStream</h4></a>
+  <a href="/docs/integrations/saas-cloud/akamai-datastream">
+  <img src={useBaseUrl('img/integrations/saas-cloud/akamai.svg')} alt="icon" width="85"/><h4>Akamai DataStream</h4></a>
   <p>Monitor and analyze the performance of Akamai Edge server</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/armis"><img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="90"/><h4>Armis</h4></a>
+  <a href="/docs/integrations/saas-cloud/armis">
+  <img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="90" /><h4>Armis</h4></a>
   <p>Monitor and manage your device security.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/asana"><img src={useBaseUrl('img/send-data/asana-icon.png')} alt="asana-icon.png" width="60" /><h4>Asana</h4></a>
+  <a href="/docs/integrations/saas-cloud/asana">
+  <img src={useBaseUrl('img/send-data/asana-icon.png')} alt="asana-icon.png" width="60" /><h4>Asana</h4></a>
   <p>Monitor and analyze the Asana data to detect potential security threats related to user activity.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/box"><img src={useBaseUrl('img/integrations/saas-cloud/box.png')} alt="icon" width="80"/><h4>Box</h4></a>
+  <a href="/docs/integrations/saas-cloud/box">
+  <img src={useBaseUrl('img/integrations/saas-cloud/box.png')} alt="icon" width="80"/><h4>Box</h4></a>
   <p>Gain insight into user behavior patterns and resources.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/cato-networks"><img src={useBaseUrl('/img/send-data/cato-logo.png')} alt="icon" width="80"/><h4>Cato Networks</h4></a>
+  <a href="/docs/integrations/saas-cloud/cato-networks">
+  <img src={useBaseUrl('/img/send-data/cato-logo.png')} alt="icon" width="80"/><h4>Cato Networks</h4></a>
   <p>Gain insight into the events and identify potential security threats with admin activities.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/saas-cloud/cisco-meraki-c2c"><img src={useBaseUrl('/img/integrations/security-threat-detection/ciscomeraki.png')} alt="icon" width="70"/><h4>Cisco Meraki - C2C</h4></a>
+  <a href="/docs/integrations/saas-cloud/cisco-meraki-c2c">
+  <img src={useBaseUrl('/img/integrations/security-threat-detection/ciscomeraki.png')} alt="icon" width="70"/><h4>Cisco Meraki - C2C</h4></a>
   <p>Gain insights into the events and identify potential network events along with admin activities.</p>
   </div>
 </div>

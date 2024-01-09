@@ -80,9 +80,7 @@ To set up data ingestion for the Cisco Meraki - C2C app, follow the instructions
 
 This section provides instructions on how to install the Cisco Meraki - C2C app, as well as examples of each of the dashboards. The App pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Cisco Meraki - C2C dashboards
 

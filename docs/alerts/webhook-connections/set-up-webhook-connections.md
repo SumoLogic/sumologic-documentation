@@ -101,8 +101,7 @@ Recovery will have either `ResolvedCritical`, `ResolvedWarning`, or `ResolvedMis
 | `{{AlertResponseUrl}}` | When your Monitor is triggered it will generate a URL and provide it as the value of this variable where you can use it to open Alert Response. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 
 
-<details>
-<summary>Legacy variables</summary>
+<details><summary>Legacy variables</summary>
 
 This section provides the old variables available for alert notifications from Metrics Monitors and Scheduled Searches. The following table shows where the old variables are supported.
 

@@ -303,8 +303,7 @@ Both the methods require the Jolokia agent to collect metrics. The steps to conf
 
 Below we have defined both the ways in which collection can be configured.
 
-<details>
-<summary>Method A: Using Telegraf and Installed Collector</summary>
+<details><summary>Method A: Using Telegraf and Installed Collector</summary>
 
 We use the Telegraf operator for Cassandra metric collection and Sumo Logic Installed Collector for collecting Cassandra logs. The diagram below illustrates the components of the Cassandra collection in a non-Kubernetes environment. Telegraf runs on the same system as Cassandra, and uses the [Jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to obtain Cassandra metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Cassandra on the other hand are sent to a Sumo Logic Local File source.
 
@@ -490,8 +489,7 @@ At this point, Cassandra logs should start flowing into Sumo Logic.
 
 </details>
 
-<details>
-<summary>Method B: Using OpenTelemetry</summary>
+<details><summary>Method B: Using OpenTelemetry</summary>
 
 We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](https://github.com/SumoLogic/sumologic-otel-collector) for Cassandra metric collection and filelog receiver for collecting Cassandra logs. Sumo Logic OT distro runs on the same system as Cassandra, and uses the Cassandra Jolokia input plugin for Telegraf to obtain Cassandra metrics, and the Sumo Logic exporter to send the metrics to Sumo Logic.
 
@@ -621,9 +619,7 @@ This step is not needed if you are using the [Application Components Solution](/
 
 This section demonstrates how to install the Cassandra app.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Cassandra dashboards
 
@@ -750,14 +746,14 @@ Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors
 
 | Alert Name         | Alert Description         | Alert Condition | Recover Condition |
 |:-----------|:--------------|:-----------|:------------|
-| Cassandra - Increase in Authentication Failures              | This alert fires when there is an increase of Cassandra authentication failures.                                                                          | >5              | `<=` 5              |
-| Cassandra - Cache Hit Rate below 85 Percent                  | This alert fires when the cache key hit rate is below 85%.         | `<`85             | `>=` 85             |
-| Cassandra - High Commitlog Pending Tasks                     | This alert fires when there are more than 15 Commitlog tasks that are pending.                                                                            | >15             | `<=` 15             |
-| Cassandra - High Number of Compaction Executor Blocked Tasks | This alert fires when there are more than 15 compaction executor tasks blocked for more than 5 minutes.                                                   | >15             | `<=` 15             |
-| Cassandra - Compaction Task Pending                          | This alert fires when there are many Cassandra compaction tasks that are pending. You might need to increase I/O capacity by adding nodes to the cluster. | >100            | `<=` 100            |
-| Cassandra - High Number of Flush Writer Blocked Tasks        | This alert fires when there is a high number of flush writer tasks which are blocked.                                                                     | >15             | `<=` 15             |
-| Cassandra - Many Compaction Tasks Are Pending                | Many Cassandra compaction tasks are pending                                                                                                               | >100            | `<=` 100            |
-| Cassandra - Node Down                                        | This alert fires when one or more Cassandra nodes are down                                                                                                | >0              | `<=` 0              |
-| Cassandra - Blocked Repair Tasks                             | This alert fires when the repair tasks are blocked                                                                                                        | >2              | `<=` 2              |
-| Cassandra - Repair Tasks Pending                             | This alert fires when repair tasks are pending.                                                                                                           | >2              | `<=` 2              |
-| Cassandra - High Tombstone Scanning                          | This alert fires when tombstone scanning is very high (>1000 99th Percentile) in queries.                                                                 | >1000           | `<=` 1000           |
+| Cassandra - Increase in Authentication Failures              | This alert fires when there is an increase of Cassandra authentication failures.                                                                          | >5              | <= 5              |
+| Cassandra - Cache Hit Rate below 85 Percent                  | This alert fires when the cache key hit rate is below 85%.                                                                                                | <85             | >= 85             |
+| Cassandra - High Commitlog Pending Tasks                     | This alert fires when there are more than 15 Commitlog tasks that are pending.                                                                            | >15             | <= 15             |
+| Cassandra - High Number of Compaction Executor Blocked Tasks | This alert fires when there are more than 15 compaction executor tasks blocked for more than 5 minutes.                                                   | >15             | <= 15             |
+| Cassandra - Compaction Task Pending                          | This alert fires when there are many Cassandra compaction tasks that are pending. You might need to increase I/O capacity by adding nodes to the cluster. | >100            | <= 100            |
+| Cassandra - High Number of Flush Writer Blocked Tasks        | This alert fires when there is a high number of flush writer tasks which are blocked.                                                                     | >15             | <= 15             |
+| Cassandra - Many Compaction Tasks Are Pending                | Many Cassandra compaction tasks are pending                                                                                                               | >100            | <= 100            |
+| Cassandra - Node Down                                        | This alert fires when one or more Cassandra nodes are down                                                                                                | >0              | <= 0              |
+| Cassandra - Blocked Repair Tasks                             | This alert fires when the repair tasks are blocked                                                                                                        | >2              | <= 2              |
+| Cassandra - Repair Tasks Pending                             | This alert fires when repair tasks are pending.                                                                                                           | >2              | <= 2              |
+| Cassandra - High Tombstone Scanning                          | This alert fires when tombstone scanning is very high (>1000 99th Percentile) in queries.                                                                 | >1000           | <= 1000           |

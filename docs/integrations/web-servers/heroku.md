@@ -194,15 +194,11 @@ These custom app **_sourceNames** will appear as values in the dashboard filter 
 
 ## Installing the Heroku app
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
-
-<AppInstall2/>
+{@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Heroku Dashboards
 
-import ViewDash from '../../reuse/apps/view-dashboards.md';
-
-<ViewDash/>
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 

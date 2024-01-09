@@ -445,9 +445,7 @@ email_notifications = [
 
 This section demonstrates how to install the Memcached app.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Memcached Dashboards
 
@@ -491,66 +489,111 @@ Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors
 
 <table>
   <tr>
-   <td>Alert Name </td>
-   <td>Alert Description   </td>
-   <td>Trigger Type (Critical / Warning)   </td>
-   <td>Alert Condition </td>
-   <td>Recover Condition   </td>
+   <td>Alert Name
+   </td>
+   <td>Alert Description
+   </td>
+   <td>Trigger Type (Critical / Warning)
+   </td>
+   <td>Alert Condition
+   </td>
+   <td>Recover Condition
+   </td>
   </tr>
   <tr>
-   <td>Memcached - Commands Error </td>
-   <td>This alert fires when we detect command errors.   </td>
-   <td>Critical   </td>
-   <td> &#62; 0   </td>
-   <td> &#60;&#61; 0 </td>
+   <td>Memcached - Commands Error
+   </td>
+   <td>This alert fires when we detect command errors.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62; 0
+   </td>
+   <td> &#60;&#61; 0
+   </td>
   </tr>
   <tr>
-   <td>Memcached - Authentication Error   </td>
-   <td>This alert fires when we detect authentication errors continuously for 5 mins </td>
-   <td>Warning   </td>
-   <td> &#62;0   </td>
-   <td> &#60;&#61; 0   </td>
+   <td>Memcached - Authentication Error
+   </td>
+   <td>This alert fires when we detect authentication errors continuously for 5 mins
+   </td>
+   <td>Warning
+   </td>
+   <td> &#62;0
+   </td>
+   <td> &#60;&#61; 0
+   </td>
   </tr>
   <tr>
-   <td>Memcached - Connection Yields   </td>
-   <td>This alert fires when we detect yielded connections continuously for 5 mins   </td>
-   <td>Warning   </td>
-   <td> &#62;5   </td>
-   <td> &#60;&#61; 5   </td>
+   <td>Memcached - Connection Yields
+   </td>
+   <td>This alert fires when we detect yielded connections continuously for 5 mins
+   </td>
+   <td>Warning
+   </td>
+   <td> &#62;5
+   </td>
+   <td> &#60;&#61; 5
+   </td>
   </tr>
   <tr>
-   <td>Memcached - High Memory Usage </td>
-   <td>This alert fires when the memory usage is more than 80%. </td>
-   <td>Warning   </td>
-   <td> &#62;80 </td>
-   <td> &#60;&#61; 80   </td>
+   <td>Memcached - High Memory Usage
+   </td>
+   <td>This alert fires when the memory usage is more than 80%.
+   </td>
+   <td>Warning
+   </td>
+   <td> &#62;80
+   </td>
+   <td> &#60;&#61; 80
+   </td>
   </tr>
   <tr>
-   <td>Memcached - Listen Disabled   </td>
-   <td>This alert fires when new queued connections per minute > 5   </td>
-   <td>Warning </td>
-   <td> &#62;5   </td>
-   <td> &#60;&#61;5   </td>
+   <td>Memcached - Listen Disabled
+   </td>
+   <td>This alert fires when new queued connections per minute > 5
+   </td>
+   <td>Warning
+   </td>
+   <td> &#62;5
+   </td>
+   <td> &#60;&#61;5
+   </td>
   </tr>
   <tr>
-   <td>Memcached - Cache Hit Ratio   </td>
-   <td>The hit rate is one of the most important indicators of Memcached performance. A high hit rate means faster responses to your users. If the hit rate is falling, you need quick visibility into why. This alert gets fired low cache hit ratio is less than 50%   </td>
-   <td>Critical </td>
-   <td> &#60;&#61;0.5   </td>
-   <td> &#62;0.5   </td>
+   <td>Memcached - Cache Hit Ratio
+   </td>
+   <td>The hit rate is one of the most important indicators of Memcached performance. A high hit rate means faster responses to your users. If the hit rate is falling, you need quick visibility into why. This alert gets fired low cache hit ratio is less than 50%
+   </td>
+   <td>Critical
+   </td>
+   <td> &#60;&#61;0.5
+   </td>
+   <td> &#62;0.5
+   </td>
   </tr>
   <tr>
-   <td>Memcached - Current Connections   </td>
-   <td>This alert gets fired when number of connected clients are 0. If current connections are none then something is wrong.   </td>
-   <td>Critical </td>
-   <td> &#60;&#61;0 </td>
-   <td> &#62;0 </td>
+   <td>Memcached - Current Connections
+   </td>
+   <td>This alert gets fired when number of connected clients are 0. If current connections are none then something is wrong.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#60;&#61;0
+   </td>
+   <td> &#62;0
+   </td>
   </tr>
   <tr>
-   <td>Memcached - Uptime </td>
-   <td>This alert gets fires when uptime is &#60; 180. You can use this to detect respawns. </td>
-   <td>Critical </td>
-   <td> &#60;&#61;180 </td>
-   <td> &#62;180</td>
+   <td>Memcached - Uptime
+   </td>
+   <td>This alert gets fires when uptime is &#60; 180. You can use this to detect respawns.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#60;&#61;180
+   </td>
+   <td> &#62;180
+   </td>
   </tr>
 </table>

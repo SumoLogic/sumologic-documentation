@@ -19,7 +19,7 @@ Fields can hold a null value for the following reasons:
 
 ## When to use isNull, isEmpty, isBlank
 
-### isNull(`<string>`)
+### isNull(<`string`>)
 
 Checks if the `<string>` value is "null".
 
@@ -31,7 +31,7 @@ Checks if the `<string>` value is "null".
 
 Returns `true` if the string is null.
 
-### isEmpty(`<string>`)
+### isEmpty(<`string`>)
 
 Checks if the `<string>` value is an empty string containing no characters or whitespace.
 
@@ -43,7 +43,7 @@ Checks if the `<string>` value is an empty string containing no characters or wh
 
 Returns `true` if the string is null or empty.
 
-### isBlank(`<string>`)
+### isBlank(<`string`>)
 
 Checks if the value is null, empty, or contains only whitespace characters.
 

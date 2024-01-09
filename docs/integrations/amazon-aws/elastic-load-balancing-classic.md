@@ -59,9 +59,7 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 ### Configure an ELB Source
 
-import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
-
-<Aws3/>
+{@import ../../reuse/apps/create-aws-s3-source.md}
 
 ### Field Extraction Rules
 
@@ -96,12 +94,9 @@ _sourceCategory=elb*
 
 Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancer - Classic to use the preconfigured searches and dashboards to analyze your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+{@import ../../reuse/apps/app-install.md}
 
-<AppInstall/>
-
-<details>
-<summary>What if data isn't displaying in all Panels?</summary>
+<details><summary>What if data isn't displaying in all Panels?</summary>
 
 Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS Elastic Load Balancing logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
 

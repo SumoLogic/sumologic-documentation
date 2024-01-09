@@ -28,8 +28,7 @@ To collect logs from the Netskope platform, use the [new Cloud to Cloud Integrat
 
 ### Sample Log message
 
-<details>
-<summary>Click to expand</summary>
+<details><summary>Click to expand</summary>
 
 ```json
 {
@@ -110,9 +109,7 @@ This section demonstrates how to install the Netskope App, and provides examples
 * **Application Usage:** Insights into application usage; specifically by devices, users, users and traffic patterns.
 * **Security Alerts:** Visibility into Netskope security alerts and violations and the ability to identify effects of a breach.  
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Netskope Dashboards
 

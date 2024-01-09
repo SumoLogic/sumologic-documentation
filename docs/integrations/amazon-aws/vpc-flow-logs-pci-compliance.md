@@ -42,9 +42,7 @@ json "logStream", "logGroup", "message", "direction" as logStream, logGroup, msg
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance For Amazon VPC Flow App to use the preconfigured searches and dashboards that provide insight into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing the PCI VPC Dashboards
 

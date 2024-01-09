@@ -12,9 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Lookup Management API allows you to manage [Lookup Tables](/docs/search/lookup-tables) from HTTP endpoints.
 
-import ApiIntro from '../reuse/api-intro.md';
-
-<ApiIntro/>
+{@import ../reuse/api-intro.md}
 
 | Deployment | Documentation URL                                        |
 |:------------|:----------------------------------------------------------|

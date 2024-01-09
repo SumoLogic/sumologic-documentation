@@ -247,14 +247,15 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
 ### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/host_process_metrics/host_process_metrics.json) describing all the monitors.
-    1. The JSON contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all hosts, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific hosts or environments, update the JSON file by replacing the text `$$hostmetrics_data_source` with `<your sourceCategory>`.
-
+    1. The JSON contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all hosts, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific hosts or environments, update the JSON file by replacing the text **$$hostmetrics_data_source** with <your sourceCategory>.
+ \
 SourceCategory examples:
-        1. For alerts applicable only to a specific cluster of hosts, your custom filter could be:  `'_sourceCategory=yourclustername/metrics'`.
-        2. For alerts applicable to all hosts that start with ec2hosts-prod, your custom filter could be: `'_sourceCategory=ec2hosts-prod*/metrics'`.
-        3. For alerts applicable to a specific cluster within a production environment, your custom filter could be: `'_sourceCategory=prod/yourclustername/metrics'`
+        1. For alerts applicable only to a specific cluster of hosts, your custom filter could be:  **<code>'_sourceCategory=yourclustername/metrics'</code>.</strong>
+        2. For alerts applicable to all hosts that start with ec2hosts-prod, your custom filter could be: <strong><code>'_sourceCategory=ec2hosts-prod*/metrics'</code></strong>.
+        3. For alerts applicable to a specific cluster within a production environment, your custom filter could be: <strong><code>'_sourceCategory=prod/yourclustername/metrics'</code></strong>
 2. Go to Manage Data > Alerts > Monitors.
-3. Click Add.
+3. Click <strong>Add</strong>: \
+
 4. Click Import to import monitors from the JSON above.
 
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Host and Process Metrics folder under Monitors to configure them. See [this](/docs/alerts/monitors) document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in [Alert Configuration](#Alert_Configuration) of this [document](/docs/alerts/monitors#add-a-monitor).
@@ -357,9 +358,7 @@ This section demonstrates how to install the Host and Process Metrics App.
 
 Now that you have set up a log and metric collection for the Host and Process Metrics App, you can install the Sumo Logic App for Host and Processes to use the pre-configured searches and dashboards.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Host and Process Metrics Dashboards
 
@@ -476,16 +475,16 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 
 | Alert Name                                    | Alert Description                                                                                                                        | Alert Condition | Recover Condition |
 |:-----------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
-| Host Metrics - High CPU Utilization           | This alert fires when host CPU utilization is over 80%.                                                                                  | > 80 %          | `<=` 80 %           |
-| Host Metrics - High Network Errors            | This alert fires when a host has encountered network errors in the last five minutes.                                                    | > 1%            | `<=` 1%             |
-| Host Metrics - Unusual network throughput in  | This alert fires when host network interfaces are receiving an unusually high amount of data (> 100 MB/s) over a 5-minute time interval. | > 100 MB/sec    | `<=` 100 MB/sec     |
-| Host Metrics - Unusual network throughput out | This alert fires when host network interfaces are sending an unusually high amount of data (> 100 MB/s) over a 5-minute time interval.   | > 100 MB/sec    | `<=` 100 MB/sec     |
-| Host Metrics - Host out of memory             | This alert fires when memory utilization is over 90%.                                                                                    | > 90 %          | `<=` 90 %           |
-| Host Metrics - Host out of inodes             | This alert fires when a host's filesystem is close to running out of available iNodes (> 90% used).                                      | > 90 %          | `<=` 90 %           |
-| Host Metrics - Host swap is filling up        | This alert fires when swap utilization is over 80%.                                                                                    | > 80 %          | `<=` 80 %           |
-| Host Metrics - Host out of disk space         | This alert fires when disk utilization is over 90%.                                                                                      | > 90 %          | `<=` 90 %           |
-| Host Metrics - Unusual disk read rate         | This alert fires when the disk is reading an unusually high amount of data (> 50 MB/s) over a 5-minute time interval.                    | > 50 MB/sec     | `<=` 50 MB/sec      |
-| Host Metrics - Unusual disk write rate        | This alert fires when the Disk is writing an unusually high amount of data (> 50 MB/s) over a 5-minute time interval.                    | > 50 MB/sec     | `<=` 50 MB/sec      |
+| Host Metrics - High CPU Utilization           | This alert fires when host CPU utilization is over 80%.                                                                                  | > 80 %          | <= 80 %           |
+| Host Metrics - High Network Errors            | This alert fires when a host has encountered network errors in the last five minutes.                                                    | > 1%            | <= 1%             |
+| Host Metrics - Unusual network throughput in  | This alert fires when host network interfaces are receiving an unusually high amount of data (> 100 MB/s) over a 5-minute time interval. | > 100 MB/sec    | <= 100 MB/sec     |
+| Host Metrics - Unusual network throughput out | This alert fires when host network interfaces are sending an unusually high amount of data (> 100 MB/s) over a 5-minute time interval.   | > 100 MB/sec    | <= 100 MB/sec     |
+| Host Metrics - Host out of memory             | This alert fires when memory utilization is over 90%.                                                                                    | > 90 %          | <= 90 %           |
+| Host Metrics - Host out of inodes             | This alert fires when a host's filesystem is close to running out of available iNodes (> 90% used).                                      | > 90 %          | <= 90 %           |
+| Host Metrics - Host swap is filling up        | This alert fires when swap utilization is over 80%.                                                                                    | > 80 %          | <= 80 %           |
+| Host Metrics - Host out of disk space         | This alert fires when disk utilization is over 90%.                                                                                      | > 90 %          | <= 90 %           |
+| Host Metrics - Unusual disk read rate         | This alert fires when the disk is reading an unusually high amount of data (> 50 MB/s) over a 5-minute time interval.                    | > 50 MB/sec     | <= 50 MB/sec      |
+| Host Metrics - Unusual disk write rate        | This alert fires when the Disk is writing an unusually high amount of data (> 50 MB/s) over a 5-minute time interval.                    | > 50 MB/sec     | <= 50 MB/sec      |
 
 
 ### For Process Metrics
@@ -494,9 +493,9 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 
 | Alert Name                                   | Alert Description                                                                                                      | Alert Condition | Recover Condition |
 |:----------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|:-----------------|:-------------------|
-| Process Metrics - High CPU Usage             | This alert fires when the CPU utilization of a process is over 80% of the system CPU.                                  | > 80 %          | `<=` 80 %           |
-| Process Metrics - High Read Rate             | This alert fires when a process is reading an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 50 MB/sec     | `<=` 50 MB/sec      |
-| Process Metrics - High Write Rate            | This alert fires when a process is writing an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 50 MB/sec     | `<=` 50 MB/sec      |
-| Process Metrics - High Page Faults           | This alert fires when the rate of page faults is high (> 1000).                                                        | > 1000          | `<=` 1000           |
-| Process Metrics - High Memory Usage          | This alert fires when the memory used by a process is over 80% of system memory.                                       | > 80 %          | `<=` 80 %           |
-| Process Metrics - High Open file descriptors | This alert fires when the number of file descriptors used by a process is more than 1000.                              | > 1000          | `<=` 1000           |
+| Process Metrics - High CPU Usage             | This alert fires when the CPU utilization of a process is over 80% of the system CPU.                                  | > 80 %          | <= 80 %           |
+| Process Metrics - High Read Rate             | This alert fires when a process is reading an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 50 MB/sec     | <= 50 MB/sec      |
+| Process Metrics - High Write Rate            | This alert fires when a process is writing an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 50 MB/sec     | <= 50 MB/sec      |
+| Process Metrics - High Page Faults           | This alert fires when the rate of page faults is high (> 1000).                                                        | > 1000          | <= 1000           |
+| Process Metrics - High Memory Usage          | This alert fires when the memory used by a process is over 80% of system memory.                                       | > 80 %          | <= 80 %           |
+| Process Metrics - High Open file descriptors | This alert fires when the number of file descriptors used by a process is more than 1000.                              | > 1000          | <= 1000           |

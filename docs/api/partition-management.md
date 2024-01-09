@@ -12,9 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Partition Management API allows you to improve search performance by searching over a smaller number of messages. For more information, see [Manage Partitions](https://help.sumologic.com/?cid=5231).
 
-import ApiIntro from '../reuse/api-intro.md';
-
-<ApiIntro/>
+{@import ../reuse/api-intro.md}
 
 | Deployment | Documentation URL                                           |
 |:------------|:-------------------------------------------------------------|
