@@ -4,6 +4,7 @@ title: Remote Windows Event Log Source
 description: Collect Windows event logs from a remote machine.
 ---
 
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 Set up a Remote Windows Event Log Source to use a single Sumo Logic Collector to collect Windows event log entries from multiple remote systems.
 
@@ -38,7 +39,7 @@ To configure a remote Windows Event Log Source:
    * **Description.** Optional description.
    * **Windows host(s).** Enter one or more hostnames for the Windows machines from which you want to collect Windows Events. If you'd like to collect from more than one remote host, separate the hostnames with a comma. (If you enter more than one hostname, each host must allow event log access from the same domain user. See the [prerequisites](preconfigure-machine-collect-remote-windows-events.md) for more information.) The hostname can be a maximum of 128 characters.
      :::note
-     The hostname values are parsed and applied to your event logs as `_sourceHost` [metadata](remote-windows-event-log-source.md) automatically. The value is parsed from the field `Computer` in your event logs. `Channel` or `LogFile` values are parsed and applied as `_sourceName` metadata automatically. The `_sourceHost` and `_sourceName` metadata fields are supported in log search but not LiveTail. 
+     The hostname values are parsed and applied to your event logs as `_sourceHost` [metadata](remote-windows-event-log-source.md) automatically. The value is parsed from the field `Computer` in your event logs. `Channel` or `LogFile` values are parsed and applied as `_sourceName` metadata automatically. The `_sourceHost` and `_sourceName` metadata fields are supported in log search but not LiveTail.
      :::
    * **Source Category.** Enter a string to tag the logs collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](#configuring-sourcecategory-using-variables) below.
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
@@ -73,9 +74,6 @@ To configure a remote Windows Event Log Source:
        :::
 
        :::note
-
-       import CollBegin from '../../../reuse/collection-should-begin-note.md';
-
        <CollBegin/>
        :::
 

@@ -108,4 +108,4 @@ Use this dashboard to:
 
 ## Support
 
-This application has been developed and is supported by {app-owner-name}. In case of any technical queries, contact support at `support contact`.
+This application has been developed and is supported by `{app-owner-name}`. In case of any technical queries, contact support at `support contact`.
