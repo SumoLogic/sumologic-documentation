@@ -21,8 +21,7 @@ This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-
 
 ## Sample log messages
 
-<details>
-<summary>View Sample Log Message</summary>
+<details><summary>View Sample Log Message</summary>
 
 ```json title="Alert Message"
 {
@@ -132,8 +131,7 @@ This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-
 
 ## Sample Query
 
-<details>
-<summary>View sample queries</summary>
+<details><summary>View sample queries</summary>
 
 ```sql title="Alerts Triggered"
 _sourceCategory="palo_alto_cortex_xdr" "alert_id" "is_whitelisted"
@@ -167,9 +165,7 @@ Prior to installing the Palo Alto Cortex XDR app, you'll first need to set up th
 
 This section has instructions for installing the Sumo Logic app for Palo Alto Cortex XDR.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Palo Alto Cortex XDR dashboards​
 

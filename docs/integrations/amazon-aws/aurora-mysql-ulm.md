@@ -277,9 +277,7 @@ To collect Aurora CloudWatch metrics, do the following:
 
 Now that you've set up logs and metrics collection for Amazon Aurora MySQL, you can install the Sumo Logic app for Aurora MySQL ULM and use its pre-configured searches and [dashboards](#viewing-aurora-mysql-ulm-dashboards).
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 
 ## Viewing Aurora MySQL ULM Dashboards

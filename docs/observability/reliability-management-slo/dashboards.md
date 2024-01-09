@@ -25,28 +25,44 @@ Each SLO dashboard contains the following information:<br/><img src={useBaseUrl(
 
 <table>
   <tr>
-   <td><strong>A</strong> </td>
-   <td>General information, including the SLO name/description and SLI information:<ul><li><strong>Signal Type</strong>: Latency, Error, Availability, Throughput, Other</li>
-<li><strong>Evaluation Type</strong>: Windows-based, Request-based</li></ul></td>
+   <td><strong>A</strong>
+   </td>
+   <td>General information, including the SLO name/description and SLI information:
+<ul>
+<li><strong>Signal Type</strong>: Latency, Error, Availability, Throughput, Other</li>
+<li><strong>Evaluation Type</strong>: Windows-based, Request-based</li>
+</ul>
+   </td>
   </tr>
   <tr>
-   <td><strong>B</strong> </td>
-   <td>Panels showing:<ul><li><strong>Current SLI</strong>: Calculated currently tracked SLI using the configured SLI, SLO, and queries</li>
+   <td><strong>B</strong>
+   </td>
+   <td>Panels showing:
+<ul>
+<li><strong>Current SLI</strong>: Calculated currently tracked SLI using the configured SLI, SLO, and queries</li>
 <li><strong>Target</strong>: Configured SLO target</li>
 <li><strong>Error Budget Remaining (relative and absolute)</strong>: The calculated remaining budget from the configured maximum. If this value is negative, that means you've gone over your error budget limit. For example, a value of <code>0% (-2h)</code> means 2 hours more downtime than what was allowed.</li>
-<li><strong>Compliance</strong>: The configured compliance as Rolling or Calendar and selected window</li></ul></td>
+<li><strong>Compliance</strong>: The configured compliance as Rolling or Calendar and selected window</li>
+</ul>
+   </td>
   </tr>
   <tr>
-   <td><strong>C</strong> </td>
-   <td><strong>Error Budget Burndown</strong>: Chart tracking amount of error budget and the events that consumed it within the compliance period. Hover over any timeline to receive more information. </td>
+   <td><strong>C</strong>
+   </td>
+   <td><strong>Error Budget Burndown</strong>: Chart tracking amount of error budget and the events that consumed it within the compliance period. Hover over any timeline to receive more information.
+   </td>
   </tr>
   <tr>
-   <td><strong>D</strong> </td>
-   <td><strong>Event History</strong>: Tracked events that occurred during the compliance period as successful (good) and unsuccessful (bad) events. Hover over the chart to learn more about the total number of good or bad events, timeframe, and more. </td>
+   <td><strong>D</strong>
+   </td>
+   <td><strong>Event History</strong>: Tracked events that occurred during the compliance period as successful (good) and unsuccessful (bad) events. Hover over the chart to learn more about the total number of good or bad events, timeframe, and more.
+   </td>
   </tr>
   <tr>
-   <td><strong>E</strong>   </td>
-   <td><strong>Compliance History/Historical Data</strong>: Displays SLI and SLO for up to 30 compliance periods.   </td>
+   <td><strong>E</strong>
+   </td>
+   <td><strong>Compliance History/Historical Data</strong>: Displays SLI and SLO for up to 30 compliance periods.
+   </td>
   </tr>
 </table>
 
@@ -93,8 +109,8 @@ It has the following schema:
    * Changing <strong>Source</strong> of the SLO. Example: changing <strong>Query Based</strong> to <strong>Monitor Based</strong>.
    * Changing <strong>Evaluation Type</strong>. Example: changing <strong>Request-based</strong> to <strong>Window-based</strong> or changing <strong>Window size</strong> of SLO.
    * Any changes to SLO Queries. This includes modifying the queries, changing <strong>Query Type</strong>, changing the <strong>Use values from</strong> and changing the <strong>Success Criteria</strong>.
-   * Changing <strong>Timezone</strong> of SLO.
-
+   * Changing <strong>Timezone</strong> of SLO. 
+  
   Likewise, `sloVersion` does NOT change on modifications to fields like **Name**, **Description**, **Target**, **Compliance Type**, **Compliance Period**, **Tags**, and **Signal Type**.
 
 :::note

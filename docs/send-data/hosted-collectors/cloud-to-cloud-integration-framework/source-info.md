@@ -47,9 +47,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ## Restarting your Source
 
-import RestartC2C from '../../../reuse/restart-c2c-source.md';
-
-<RestartC2C/>
+{@import ../../../reuse/restart-c2c-source.md}
 
 ## JSON Configuration
 

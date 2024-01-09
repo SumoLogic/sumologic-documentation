@@ -216,9 +216,7 @@ See [Workday Cloud-to-Cloud Collector Source](/docs/send-data/hosted-collectors/
 
 This section provides instructions on how to install the Workday app, as well as examples of each of the dashboards. The app's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Workday dashboards
 

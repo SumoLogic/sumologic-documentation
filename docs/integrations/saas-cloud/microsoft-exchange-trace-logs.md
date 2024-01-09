@@ -94,9 +94,7 @@ This section explains how to collect logs from Microsoft Exchange Trace logs Api
 
 ## Installing the Microsoft Exchange Trace Logs app
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Microsoft Exchange Trace Logs Dashboards
 

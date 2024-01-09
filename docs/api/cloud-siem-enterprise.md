@@ -12,10 +12,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The [Cloud SIEM](/docs/cse) API allows you to create and manage Entities, Custom Insights, log mappings, Match Lists, Network Blocks and other Cloud SIEM features.
 
-import ApiIntro from '../reuse/api-intro.md';
+{@import ../reuse/api-intro.md}
 
-<ApiIntro/>
-
-import CseTable from '../reuse/cse-api-table.md';
-
-<CseTable/>
+{@import ../reuse/cse-api-table.md}

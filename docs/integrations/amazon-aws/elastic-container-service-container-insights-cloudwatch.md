@@ -166,8 +166,7 @@ To set up collection for traces:
 
 ### Sample log message
 
-<details>
-<summary>Click to expand.</summary>
+<details><summary>Click to expand.</summary>
 
 ```json
 {
@@ -446,9 +445,7 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 
 Now that you have set up a collection for Amazon ECS with Container Insights and CloudWatch, install the Sumo Logic app for Amazon ECS with Container Insights and CloudWatch to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Amazon ECS CloudWatch dashboards 
 

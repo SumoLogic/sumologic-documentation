@@ -83,8 +83,7 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 
 ### Sample Log Message
 
-<details>
-<summary>Click to expand</summary>
+<details><summary>Click to expand</summary>
 
 ```json
 {

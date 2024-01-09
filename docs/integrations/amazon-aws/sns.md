@@ -158,9 +158,7 @@ In case, you have a centralized collection of CloudTrail logs and are ingesting 
 
 Now that you have set up collection for Amazon SNS, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Amazon SNS dashboards
 

@@ -23,8 +23,7 @@ For details on the log format and definitions, refer to Evident.io documentation
 
 ### Sample Log Message
 
-<details>
-<summary>Click to expand</summary>
+<details><summary>Click to expand</summary>
 
 ```json
 {
@@ -272,9 +271,7 @@ For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-mes
 
 Now that you have configured Evident.io ESP, install the Sumo Logic App for Evident.io ESP to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Evident.io Dashboards
 

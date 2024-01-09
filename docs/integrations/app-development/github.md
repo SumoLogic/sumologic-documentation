@@ -167,9 +167,7 @@ Sumo Logic needs to understand the event type for incoming events. To enable thi
 
 Now that you have set up collector GitHub, install the Sumo Logic App for GitHub to use the preconfigured searches and dashboards to analyze your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 #### Troubleshooting
 

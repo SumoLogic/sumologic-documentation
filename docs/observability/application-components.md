@@ -11,7 +11,7 @@ Pre-configured dashboards available for application components solve many common
 * Reviewing the overall health of specific components to quickly narrow down the scope of troubleshooting.
 * Minimizing the troubleshooting time by providing all relevant information in the right context.
 
-:::warning Limitations
+:::caution Limitations
 This solution is currently supported for the following apps only:
 * [Couchbase](/docs/integrations/databases/couchbase)
 * [Cassandra](/docs/integrations/databases/cassandra)

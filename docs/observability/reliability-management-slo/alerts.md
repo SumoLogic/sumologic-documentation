@@ -42,16 +42,98 @@ When you click **Save and Create Monitor**, a New Monitor dialog loads:
 
 SLO Monitors in a triggered state can auto-resolve. See the following table for details.
 
-| EvaluationType | ComplianceType | MonitorConditionType | Auto-resolves |
-|---|---|---|---|
-| Window | Calendar | SLITrigger | No. SLI never recovers within the same compliance period as the triggered alert, but it can recover in a different compliance period. So the Monitor can auto-resolve then. New alert is created for each compliance period. Monitor status is based on latest compliance period’s alert status. |
-| Window | Calendar | ErrorBudgetTrigger | Yes, if the error budget consumed is less than the alert threshold for a complete detection window. Resolution behavior is same as log monitors. |
-| Window | Rolling | SLITrigger | Same as “Window-Calendar”. Separate alert is triggered for each compliance period. |
-| Window | Rolling | ErrorBudgetTrigger | Same as “Window-Calendar”. |
-| Request | Calendar | SLITrigger | Yes, when SLI value goes above alert threshold. A new alert is created for each compliance period. Monitor status is based on the latest compliance period’s alert status. |
-| Request | Calendar | ErrorBudgetTrigger | Same as “Window-Calendar”. |
-| Request | Rolling | SLITrigger | Same as “Request-Calendar”. Separate alert for each compliance period. |
-| Request | Rolling | ErrorBudgetTrigger | Same as “Window-Calendar”. |
+<table><small>
+  <tr>
+   <td>EvaluationType
+   </td>
+   <td>ComplianceType
+   </td>
+   <td>MonitorConditionType
+   </td>
+   <td>Auto-resolves
+   </td>
+  </tr>
+  <tr>
+   <td>Window
+   </td>
+   <td>Calendar
+   </td>
+   <td>SLITrigger
+   </td>
+   <td>No. SLI never recovers within the same compliance period as the triggered alert, but it can recover in a different compliance period. So the Monitor can auto-resolve then. New alert is created for each compliance period. Monitor status is based on latest compliance period’s alert status.
+   </td>
+  </tr>
+  <tr>
+   <td>Window
+   </td>
+   <td>Calendar
+   </td>
+   <td>ErrorBudgetTrigger
+   </td>
+   <td>Yes, if the error budget consumed is less than the alert threshold for a complete detection window. Resolution behavior is same as log monitors.
+   </td>
+  </tr>
+  <tr>
+   <td>Window
+   </td>
+   <td>Rolling
+   </td>
+   <td>SLITrigger
+   </td>
+   <td>Same as “Window-Calendar”. Separate alert is triggered for each compliance period.
+   </td>
+  </tr>
+  <tr>
+   <td>Window
+   </td>
+   <td>Rolling
+   </td>
+   <td>ErrorBudgetTrigger
+   </td>
+   <td>Same as “Window-Calendar”.
+   </td>
+  </tr>
+  <tr>
+   <td>Request
+   </td>
+   <td>Calendar
+   </td>
+   <td>SLITrigger
+   </td>
+   <td>Yes, when SLI value goes above alert threshold. A new alert is created for each compliance period. Monitor status is based on the latest compliance period’s alert status.
+   </td>
+  </tr>
+  <tr>
+   <td>Request
+   </td>
+   <td>Calendar
+   </td>
+   <td>ErrorBudgetTrigger
+   </td>
+   <td>Same as “Window-Calendar”.
+   </td>
+  </tr>
+  <tr>
+   <td>Request
+   </td>
+   <td>Rolling
+   </td>
+   <td>SLITrigger
+   </td>
+   <td>Same as “Request-Calendar”. Separate alert for each compliance period.
+   </td>
+  </tr>
+  <tr>
+   <td>Request
+   </td>
+   <td>Rolling
+   </td>
+   <td>ErrorBudgetTrigger
+   </td>
+   <td>Same as “Window-Calendar”.
+   </td>
+  </tr></small>
+</table>
 
 ### Notification Example
 

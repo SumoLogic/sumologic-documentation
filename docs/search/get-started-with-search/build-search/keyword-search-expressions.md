@@ -121,8 +121,7 @@ Let’s understand the following terms:
 
 :::tip Java convention of whitespace characters
 
-<details>
-<summary>A character is a Java whitespace character if and only if it satisfies one of the following criteria (click to expand):</summary>
+<details><summary>A character is a Java whitespace character if and only if it satisfies one of the following criteria (click to expand):</summary>
 
 It is a Unicode space character (SPACE_SEPARATOR, LINE_SEPARATOR, or PARAGRAPH_SEPARATOR) but is not also a non-breaking space ('\u00A0', '\u2007', '\u202F').
 ```

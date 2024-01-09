@@ -13,7 +13,6 @@ import ExampleJSON from '/files/c2c/workday/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/workday/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/workday/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="50"/>
 
@@ -63,7 +62,7 @@ To configure a Workday Source, follow the steps below:
 15. **REST API URL**. Take the Workday Rest API endpoint copied in [Step 1.3](/docs/integrations/saas-cloud/workday.md#step-13-register-the-api-client) and modify it to match the format `https://<host>/ccx/api/privacy/v1/<tenant>/activityLogging`. Provide the modified URL here.
 16. **Collection Should begin** (Optional). Select the time range for how far back you want this source to start collecting data from Workday. This is set to **24 Hours ago** by default.
   :::note
-  <CollBegin/>
+  {@import ../../../reuse/collection-should-begin-note.md}
   :::
 17. **Polling Interval** (Optional). Select how often you want the Source to collect data from Workday. This is set to 10 minutes by default.
 18. When you are finished configuring the Source, click **Save**.

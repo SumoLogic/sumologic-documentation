@@ -12,9 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Field Management API allows you to configure fields from HTTP endpoints. Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. For more information, see [Fields](https://help.sumologic.com/?cid=10116).
 
-import ApiIntro from '../reuse/api-intro.md';
-
-<ApiIntro/>
+{@import ../reuse/api-intro.md}
 
 | Deployment | Documentation URL                                         |
 |:------------|:-----------------------------------------------------------|

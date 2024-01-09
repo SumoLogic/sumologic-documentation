@@ -43,7 +43,7 @@ Download this or other versions of this template from [Change Log](../changelog.
 To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.1.0 or greater and follow the instructions in the (#modify-the-collector-name-and-source-categories) section.
 :::
 1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
-    :::danger
+    :::warning
     This step is critical: if you do not select the correct region, you will deploy the solution in the wrong region.
     :::
 1. Proceed to [Step 2](#step-2-sumo-logic-access-configuration), below.

@@ -12,9 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The User Management API allows you to [manage user accounts](/docs/manage/users-roles/users) from HTTP endpoints. To manage users, you must have the administrator role or your role must have been assigned the manage users and roles capability. For more information, see [Manage Users](https://help.sumologic.com/?cid=1006).
 
-import ApiIntro from '../reuse/api-intro.md';
-
-<ApiIntro/>
+{@import ../reuse/api-intro.md}
 
 | Deployment | Documentation URL                                      |
 |:------------|:--------------------------------------------------------|

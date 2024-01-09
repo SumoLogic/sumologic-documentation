@@ -56,18 +56,29 @@ Follow the instructions below based on the query type:
 
 <table>
   <tr>
-   <td>Metrics: Ratio-based</td>
-   <td>Metrics: Threshold-based   </td>
+   <td>Metrics: Ratio-based
+   </td>
+   <td>Metrics: Threshold-based
+   </td>
   </tr>
   <tr>
-   <td>For <strong>Ratio-based</strong> definition, define queries for the successful or unsuccessful events to calculate against total events:<ol><li>Specify Total Events query.</li>
+   <td>For <strong>Ratio-based</strong> definition, define queries for the successful or unsuccessful events to calculate against total events:
+<ol>
+<li>Specify Total Events query.</li>
 <li>Build a query using metrics and filters. See <a href="/docs/metrics/introduction">Overview of Metrics in Sumo</a>.</li>
 <li>Select the values to use from <strong>Number of data points </strong>or <strong>Metric value</strong>.</li>
-<li>Configure the Total Events, including a query and values, to use <strong>Number of data points</strong> or <strong>Metric value</strong>. You can copy and paste the previous query, removing filters to get the total.</li></ol></td>
-   <td>For <strong>Threshold-based</strong> definitions, which calculate against success criteria:<ol><li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
+<li>Configure the Total Events, including a query and values, to use <strong>Number of data points</strong> or <strong>Metric value</strong>. You can copy and paste the previous query, removing filters to get the total.</li>
+</ol>
+   </td>
+   <td>
+    For <strong>Threshold-based</strong> definitions, which calculate against success criteria:
+<ol>
+<li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
 <li>Build a query using metrics and filters. See <a href="/docs/metrics/introduction">Overview of Metrics in Sumo</a> for more information.</li>
 <li>For <strong>Use values from</strong>, it always uses the Metric value.</li>
-<li>For <strong>Success Criteria</strong> for <strong>Avg</strong>, <strong>Min</strong>, <strong>Max</strong>, or <strong>Sum</strong> of the selected signal type (such as latency) which must be <strong>greater than</strong>, <strong>greater than or equal to</strong>, <strong>less than</strong>, or <strong>less than equal to</strong> an amount you enter (positive or negative number).</li></ol></td>
+<li>For <strong>Success Criteria</strong> for <strong>Avg</strong>, <strong>Min</strong>, <strong>Max</strong>, or <strong>Sum</strong> of the selected signal type (such as latency) which must be <strong>greater than</strong>, <strong>greater than or equal to</strong>, <strong>less than</strong>, or <strong>less than equal to</strong> an amount you enter (positive or negative number).</li>
+</ol>
+   </td>
   </tr>
 </table>
 
@@ -75,18 +86,26 @@ Follow the instructions below based on the query type:
 
 <table>
   <tr>
-   <td>Logs: Ratio-based   </td>
-   <td>Logs: Threshold-based   </td>
+   <td>Logs: Ratio-based
+   </td>
+   <td>Logs: Threshold-based
+   </td>
   </tr>
   <tr>
-   <td>For <strong>Ratio-based</strong> definitions, which calculate successful or unsuccessful events against total events:<ol><li>Specify Total Events query.</li>
+   <td>For <strong>Ratio-based</strong> definitions, which calculate successful or unsuccessful events against total events:
+<ol><li>Specify Total Events query.</li>
 <li>Search logs selecting and entering a log query. See <a href="/docs/search/get-started-with-search/search-basics/about-search-basics">About Search Basics</a> for more information.</li>
 <li>For <strong>Use values from</strong>, select the numeric value available for that query to pull data from.</li>
-<li>Then configure the <strong>Total Events</strong>, including a query and values. You can copy and paste the previous query, perhaps with filters removed to get the total.</li></ol></td>
-   <td>For <strong>Threshold-based</strong> definitions, which calculate against success criteria:<ol><li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
+<li>Then configure the <strong>Total Events</strong>, including a query and values. You can copy and paste the previous query, perhaps with filters removed to get the total.</li>
+</ol>
+   </td>
+   <td>For <strong>Threshold-based</strong> definitions, which calculate against success criteria:
+<ol><li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
 <li>Search logs selecting and entering a log query. See <a href="/docs/search/get-started-with-search/search-basics/about-search-basics">About Search Basics</a> for more information.</li>
 <li>For <strong>Use values from</strong>, it always uses the Metric value.</li>
-<li>For <strong>Success Criteria</strong> for <strong>Avg</strong>, <strong>Min</strong>, <strong>Max</strong>, or <strong>Sum</strong> of the selected signal type (such as latency), which must be <strong>greater than</strong>, <strong>greater than or equal to</strong>, <strong>less than</strong>, or <strong>less than equal to</strong> an amount you enter (positive or negative number).</li></ol></td>
+<li>For <strong>Success Criteria</strong> for <strong>Avg</strong>, <strong>Min</strong>, <strong>Max</strong>, or <strong>Sum</strong> of the selected signal type (such as latency), which must be <strong>greater than</strong>, <strong>greater than or equal to</strong>, <strong>less than</strong>, or <strong>less than equal to</strong> an amount you enter (positive or negative number).</li>
+</ol>
+   </td>
   </tr>
 </table>
 
@@ -134,7 +153,7 @@ Critical Monitors are great candidates to convert to SLOs. From the **Monitors**
 
 As an example, say you have an existing Monitor that fires a **Critical** alert if the latency of a customer-critical service exceeds 500ms. By creating an SLO directly through this specific Monitor, those thresholds will automatically carry over into the new SLO, saving you time and effort.
 
-:::warning Prerequisite
+:::caution Prerequisite
 Your Monitor must be in an **active** state.
 :::
 

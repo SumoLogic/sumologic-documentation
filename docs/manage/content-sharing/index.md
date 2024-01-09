@@ -63,9 +63,7 @@ To share content from the left navigation bar or the Library:
 
 Sumo provides a few ways to navigate your content based on what you want to view.
 
-import UiElements from '../../reuse/ui-elements.md';
-
-<UiElements/>
+{@import ../../reuse/ui-elements.md}
 
 ## Available Permission Levels
 

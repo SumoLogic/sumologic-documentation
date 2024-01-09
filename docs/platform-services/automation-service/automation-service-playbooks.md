@@ -14,9 +14,7 @@ Playbooks can be configured to execute automatically without user intervention, 
 To run a playbook, add it to an automation. For places in Sumo Logic where you can use add playbooks to automations, see [Where you can run automations](/docs/platform-services/automation-service/about-automation-service/#where-you-can-run-automations).  
 
 :::note
-import ActionLimit from '../../reuse/action-limits.md';
-
-<ActionLimit/>
+{@import ../../reuse/action-limits.md}
 :::
 
 ## View playbooks

@@ -14,16 +14,17 @@ https://<endpoint>/ui/#/search/create?query=<urlEncodedQuery>&parameters=<param1
 
 * `<endpoint>` is your Sumo Logic service endpoint. See [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the endpoint URLs.
 * `<urlEncodedQuery>` is the text of your log search query in URL encoded format.
-* `<param1:value1,param2:value2,param3=value3,...,paramN=valueN>` is the query parameter part of a templatized query and the corresponding value for the query parameter.
+* `<param1:value1,param2:value2,param3=value3,...,paramN=valueN>` is the query parameter part of a templatized query and the corresponding value for the query parameter. 
 * `<start>` is the start of your log query time range, the value can be either:
 
     * in milliseconds since epoch.
-    * a [relative time range expression](/docs/search/get-started-with-search/search-basics/time-range-expressions).
+    * a [relative time range
+        expression](../search-basics/time-range-expressions.md).
 
 * `<end>` is the end of your log query time range, the value can be either:
 
     * in milliseconds since epoch.
-    * a [relative time range expression](/docs/search/get-started-with-search/search-basics/time-range-expressions). You can omit the `<end>` value and the current time (`now`) is assumed.
+    * a [relative time range expression](../search-basics/time-range-expressions.md).  You can omit the `<end>` value and the current time (`now`) is assumed.
 
 ## Examples
 
@@ -48,7 +49,7 @@ Create a URL for the following log query, using a relative time range expressio
 {{app_name}} error | count
 ```
 
-Assuming that user selects `billing` app from the list of apps, the final query is :
+Assuming that user selects `billing` app from the list of apps, the final query is : 
 
 ```sql
 billing error | count

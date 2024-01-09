@@ -44,7 +44,7 @@ In this step, you configure a Syslog Source to collect Corelight Zeek log messag
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 
-1. The page refreshes.<br/><img src={useBaseUrl('img/cse/syslog-source.png')} alt="Syslog source" width="500"/>
+1. The page refreshes.<br/><img src={useBaseUrl('img/cse/syslog-source.png')} alt="Syslog source" width="500"/> 
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Protocol**. Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see [Choosing TCP or UDP](/docs/send-data/installed-collectors/sources/syslog-source#choosing-tcp-or-udp) on the *Syslog Source* page.
@@ -65,8 +65,8 @@ In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the so
 1. On the **Sumo Logic Ingest Mappings** page, click **Create**.<br/><img src={useBaseUrl('img/cse/ingest-mappipngs.png')} alt="Sumo Logic ingest mappings" width="800"/>
 1. On the **Create Sumo Logic Mapping** popup:
     1. **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configure-collection). 
-    1. **Format**. Enter *Bro/Zeek JSON*.  
-    1. **Event ID**. *`{_path}`*.<br/><img src={useBaseUrl('img/cse/corelight-edit-mapping.png')} alt="Corelight edit mappings" width="400"/> 
+    1. **Format**. Enter *Bro/Zeek JSON.*  
+    1. **Event ID**. *{_path}.* <br/><img src={useBaseUrl('img/cse/corelight-edit-mapping.png')} alt="Corelight edit mappings" width="400"/> 
 1. Click **Create** to save the mapping.
 
 ## Step 4: Verify Ingestion

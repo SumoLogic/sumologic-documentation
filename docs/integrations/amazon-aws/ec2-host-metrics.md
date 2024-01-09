@@ -119,9 +119,7 @@ Collectors running on AWS EC2 instances can optionally collect AWS Metadata such
 
 Now that you have set up the collection for Host Metrics (EC2) metrics, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing EC2 Host Metrics Dashboards
 

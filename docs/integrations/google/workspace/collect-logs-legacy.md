@@ -159,8 +159,10 @@ This section provides a list of environment variables for Google Workspace Alert
 
 <table><small>
   <tr>
-   <td>Environment Variable </td>
-   <td>Usage </td>
+   <td>Environment Variable
+   </td>
+   <td>Usage
+   </td>
   </tr>
   <tr>
    <td><code>ALERT_TYPES</code></td>
@@ -194,39 +196,53 @@ This section provides a list of environment variables for Google Workspace Alert
   </tr>
   <tr>
    <td><code>LOG_FORMAT</code></td>
-   <td>Log format used by the python logging module to write logs in a file.   </td>
+   <td>Log format used by the python logging module to write logs in a file.
+   </td>
   </tr>
   <tr>
    <td><code>ENABLE_LOGFILE</code></td>
-   <td>Set to TRUE to write all logs and errors to a log file. </td>
+   <td>Set to TRUE to write all logs and errors to a log file.
+   </td>
   </tr>
   <tr>
    <td><code>ENABLE_CONSOLE_LOG</code></td>
-   <td>Enables printing logs in a console.   </td>
+   <td>Enables printing logs in a console.
+   </td>
   </tr>
   <tr>
    <td><code>LOG_FILEPATH</code></td>
-   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE.   </td>
+   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE.
+   </td>
   </tr>
   <tr>
-   <td><code>NUM_WORKERS</code> </td>
-   <td>Number of threads to spawn for API calls.   </td>
+   <td><code>NUM_WORKERS</code>
+   </td>
+   <td>Number of threads to spawn for API calls.
+   </td>
   </tr>
   <tr>
-   <td><code>MAX_RETRY</code>   </td>
-   <td>Number of retries to attempt in case of request failure.   </td>
+   <td><code>MAX_RETRY</code>
+   </td>
+   <td>Number of retries to attempt in case of request failure.
+   </td>
   </tr>
   <tr>
-   <td><code>BACKOFF_FACTOR</code> </td>
-   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries. </td>
+   <td><code>BACKOFF_FACTOR</code>
+   </td>
+   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries.
+   </td>
   </tr>
   <tr>
-   <td><code>TIMEOUT</code></td>
-   <td>Request time out used by the requests library. </td>
+   <td><code>TIMEOUT</code>
+   </td>
+   <td>Request time out used by the requests library.
+   </td>
   </tr>
   <tr>
-   <td><code>SUMO_ENDPOINT</code>   </td>
-   <td>HTTP source endpoint url created in Sumo Logic. </td>
+   <td><code>SUMO_ENDPOINT</code>
+   </td>
+   <td>HTTP source endpoint url created in Sumo Logic.
+   </td>
   </tr></small>
 </table>
 
@@ -300,11 +316,14 @@ For information on how to set these environment variables, refer to this [Google
 
 <table><small>
   <tr>
-   <td>Environment Variable</td>
-   <td>Usage </td>
+   <td>Environment Variable
+   </td>
+   <td>Usage
+   </td>
   </tr>
   <tr>
-   <td><code>ALERT_TYPES</code></td>
+   <td><code>ALERT_TYPES</code>
+   </td>
    <td>"Customer takeout initiated"
 <p>"Misconfigured whitelist"</p>
 <p>"User reported phishing"</p>
@@ -323,51 +342,74 @@ For information on how to set these environment variables, refer to this [Google
 <p>"Google Operations"</p>
 <p>"Government attack warning"</p>
 <p>"Device compromised"</p>
-<p>"Suspicious activity"</p> </td>
+<p>"Suspicious activity"</p>
+   </td>
   </tr>
   <tr>
-   <td><code>BACKFILL_DAYS</code> </td>
-   <td>Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today.   </td>
+   <td><code>BACKFILL_DAYS</code>
+   </td>
+   <td>Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today.
+   </td>
   </tr>
   <tr>
-   <td><code>PAGINATION_LIMIT</code>   </td>
-   <td>Number of events to fetch in a single API call.   </td>
+   <td><code>PAGINATION_LIMIT</code>
+   </td>
+   <td>Number of events to fetch in a single API call.
+   </td>
   </tr>
   <tr>
-   <td><code>LOG_FORMAT</code>   </td>
-   <td>Log format used by the python logging module to write logs in a file.   </td>
+   <td><code>LOG_FORMAT</code>
+   </td>
+   <td>Log format used by the python logging module to write logs in a file.
+   </td>
   </tr>
   <tr>
-   <td><code>ENABLE_LOGFILE</code>   </td>
-   <td>Set to TRUE to write all logs and errors to a log file.   </td>
+   <td><code>ENABLE_LOGFILE</code>
+   </td>
+   <td>Set to TRUE to write all logs and errors to a log file.
+   </td>
   </tr>
   <tr>
-   <td><code>ENABLE_CONSOLE_LOG</code>   </td>
-   <td>Enables printing logs in a console.   </td>
+   <td><code>ENABLE_CONSOLE_LOG</code>
+   </td>
+   <td>Enables printing logs in a console.
+   </td>
   </tr>
   <tr>
-   <td><code>LOG_FILEPATH</code>   </td>
-   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE.   </td>
+   <td><code>LOG_FILEPATH</code>
+   </td>
+   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE.
+   </td>
   </tr>
   <tr>
-   <td><code>NUM_WORKERS</code>   </td>
-   <td>Number of threads to spawn for API calls.   </td>
+   <td><code>NUM_WORKERS</code>
+   </td>
+   <td>Number of threads to spawn for API calls.
+   </td>
   </tr>
   <tr>
-   <td><code>MAX_RETRY</code>   </td>
-   <td>Number of retries to attempt in case of request failure.   </td>
+   <td><code>MAX_RETRY</code>
+   </td>
+   <td>Number of retries to attempt in case of request failure.
+   </td>
   </tr>
   <tr>
-   <td><code>BACKOFF_FACTOR</code>   </td>
-   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries. </td>
+   <td><code>BACKOFF_FACTOR</code>
+   </td>
+   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries.
+   </td>
   </tr>
   <tr>
-   <td><code>TIMEOUT</code> </td>
-   <td>Request time out used by the requests library.</td>
+   <td><code>TIMEOUT</code>
+   </td>
+   <td>Request time out used by the requests library.
+   </td>
   </tr>
   <tr>
-   <td><code>SUMO_ENDPOINT</code> </td>
-   <td>HTTP source endpoint url created in Sumo Logic.</td>
+   <td><code>SUMO_ENDPOINT</code>
+   </td>
+   <td>HTTP source endpoint url created in Sumo Logic.
+   </td>
   </tr></small>
 </table>
 

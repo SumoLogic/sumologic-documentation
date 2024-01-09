@@ -62,9 +62,7 @@ To collect logs for Microsoft Teams, please configure an Office 365 Audit Source
 
 This section shows you how to install the Sumo Logic App for Microsoft Teams.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Microsoft Teams Dashboards  
 

@@ -76,9 +76,7 @@ If logs are not flowing into Sumo Logic, see [Troubleshooting Log Collection](/d
 
 Now that you have set up collection for the Azure Active Directory, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 
 

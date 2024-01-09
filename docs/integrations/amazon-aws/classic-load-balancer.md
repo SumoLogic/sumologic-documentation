@@ -94,9 +94,7 @@ Before you can begin to use the AWS Elastic Load Balancing (ELB) Application App
 
 #### Configure an ELB Source
 
-import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
-
-<Aws3/>
+{@import ../../reuse/apps/create-aws-s3-source.md}
 
 ### Field in Field Schema
 
@@ -130,9 +128,7 @@ Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/
 
 Now that you have set up a collection for AWS Classic Load Balancer, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing the AWS Classic Load Balancer Dashboards
 

@@ -56,7 +56,7 @@ You can copy and paste the file with a file explorer. We also recommend adding a
   ```bash
   npm run build
   ```
-  :::warning
+  :::caution
   In development, you can only use one locale at a same time.
   :::
 

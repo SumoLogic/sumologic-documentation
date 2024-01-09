@@ -171,9 +171,7 @@ When you configure the Webhook, enter the URL for the HTTP source you created in
 
 This section demonstrates how to install the Jira Cloud App.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Jira Cloud Dashboards
 

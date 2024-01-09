@@ -142,9 +142,7 @@ This section provides instructions for setting up [Cloud-to-Cloud-Integration fo
 
 ## Installing the Gmail Trace Logs app
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Gmail Trace Logs Dashboards
 

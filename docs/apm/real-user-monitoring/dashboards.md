@@ -14,8 +14,7 @@ Once Sumo Logic detects data coming from user browsers, the RUM app will be ins
 
 The data will populate in your organization's **Sumo Logic RUM - default** dashboards, located inside of your **Admin Recommended** folder. Do not modify or delete content in this folder, as it's maintained and updated automatically.
 
-<details>
-<summary>If your RUM app is removed accidentally, here's how to install it manually (<strong>click to expand</strong>).</summary>
+<details><summary>If your RUM app is removed accidentally, here's how to install it manually (<strong>click to expand</strong>).</summary>
 
 1. Go to the **App Catalog**, then search for and select the **Real User Monitoring** app. 
 1. Click **Add to Library**.

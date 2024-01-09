@@ -12,9 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Password Policy Management API allows you to manage the [password policy](/docs/manage/security/set-password-policy.md) for your Sumo Logic users.
 
-import ApiIntro from '../reuse/api-intro.md';
-
-<ApiIntro/>
+{@import ../reuse/api-intro.md}
 
 | Deployment | Documentation URL                                      |
 |:------------|:--------------------------------------------------------|

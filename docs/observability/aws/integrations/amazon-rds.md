@@ -22,8 +22,7 @@ The Amazon RDS app uses the following logs and metrics:
 
 ### Sample CloudTrail log message
 
-<details>
-<summary>Click to expand</summary>
+<details><summary>Click to expand</summary>
 
 ```json title="CloudTrail"
 {
@@ -112,8 +111,7 @@ The Amazon RDS app uses the following logs and metrics:
 
 ### Sample Database CloudWatch logs
 
-<details>
-<summary>Click to expand</summary>
+<details><summary>Click to expand</summary>
 
 ```json title="Recent Warning Events (Error Logs)"
 {

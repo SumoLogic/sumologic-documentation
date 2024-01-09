@@ -38,6 +38,6 @@ The following general rules apply to time ranges:
 * The timezone offset is also displayed in the **Time** column of the **Messages** tab in search results.
 * The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.
 
-For more information about entering time ranges, see [Time Range Expressions](/docs/search/get-started-with-search/search-basics/time-range-expressions).
+For more information about entering time ranges, see [Time Range Expressions](../search-basics/time-range-expressions.md).
 
 Time range options can vary depending on the type of account your organization has. Sumo Logic Free accounts allow time ranges up to seven days.

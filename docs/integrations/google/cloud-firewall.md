@@ -154,9 +154,7 @@ The section provides instructions for installing the Google Cloud Firewall App, 
 
 Now that you have set up log collection, you can install the Google Cloud Firewall App to access the pre-configured Searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Google Cloud Firewall Dashboards
 

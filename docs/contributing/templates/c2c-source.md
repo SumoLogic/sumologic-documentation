@@ -18,9 +18,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('path-to-your-icon.png')} alt="Thumbnail icon" width="45"/>
 
-\Introduction\
+\Itroduction\
 
-The `{{source name}}` collects `{{data/event types}}` from `{{source of origin}}`. `{{What the app does}}`.
+The {{source name}} collects {{data/event types}} from {{source of origin}}. {{What the app does}}.
 
 Example: The Microsoft Graph Security API Source provides a secure endpoint to consume alerts from the Microsoft Graph Security API endpoint. It securely stores the required authentication, scheduling, and state tracking information. One threat event is reported for each affected device.
 
@@ -36,11 +36,11 @@ This source is **not** yet available in the [Fed deployment](https://help.sumolo
 
 | Polling Interval | Data |
 | :--- | :--- |
-| `{{Polling time in minutes}}` | `{{Data sources}}` |
+| {{Polling time in minutes}} | {{Data sources}} |
 
 Example:
 | Polling Interval | Data |
-| ;--- | :--- |
+| --- | --- |
 | 5 min |  [Team Events](https://www.dropbox.com/developers/documentation/http/teams#team_log-get_events)
 
 ## Setup
@@ -69,7 +69,7 @@ Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cl
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
-| `{{field}}` | `{{value}}` | `{{Description}}` |
+| {{`field`}} | {{value}} | {{Description}} |
 
 ## JSON schema
 
@@ -91,7 +91,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| `{{Parameter}}` | `{{Type}}` | `{{Yes/No}}` | `null` | `{{Description}}` |  `{{Example}}` |
+| {{`Parameter`}} | {{Type}} | {{Yes/No}} | `null` | {{Description}} |  {{Example}} |
 
 ### JSON example
 
@@ -112,5 +112,5 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ## FAQ
 
 :::info
-Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
+Click [here](/docs/c2c/info) for more information about Cloud to Cloud sources.
 :::

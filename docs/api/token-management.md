@@ -12,9 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Tokens Management API allows you to manage [Installation Tokens](/docs/manage/security/installation-tokens) from HTTP endpoints to organize your content.
 
-import ApiIntro from '../reuse/api-intro.md';
-
-<ApiIntro/>
+{@import ../reuse/api-intro.md}
 
 | Deployment | Documentation URL                                               |
 |:------------|:-----------------------------------------------------------------|

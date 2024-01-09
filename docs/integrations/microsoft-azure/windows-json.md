@@ -100,9 +100,7 @@ For more information on local or remote Windows Event Log Source configuration, 
 
 This section has instructions for installing the Sumo Logic JSON App for Windows and descriptions of each of the app dashboards.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Windows JSON Dashboards
 

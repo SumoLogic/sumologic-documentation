@@ -9,7 +9,7 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-Effective today, Sumo Logic has removed the ability to create or copy Classic Dashboards from within Sumo Logic. We understand that you may have existing classic dashboards that you may still need to access and use. To make this transition as seamless as possible, we have implemented the following:
+Effective today, Sumo Logic has removed the ability to create or copy [Classic Dashboards](/docs/dashboards-classic) from within Sumo Logic. We understand that you may have existing classic dashboards that you may still need to access and use. To make this transition as seamless as possible, we have implemented the following:
 
 - **Automatic Migration**. If you have edit permissions to a classic dashboard, when you open the dashboard we will automatically create a new copy of the dashboard.
 - **Choice of Version**. Once your classic dashboard has been migrated, when opening a classic dashboard we will provide you the option to open the new version of the dashboard or continue with the classic version.  

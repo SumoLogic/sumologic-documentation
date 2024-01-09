@@ -42,9 +42,7 @@ The ERRORLOG is typically in UTF-16LE encoding, however, be sure to verify the f
 
 ## Collection configuration and app installation
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
-
-<ConfigAppInstall/>
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
@@ -68,9 +66,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 ### Step 3: Send logs to Sumo Logic
 
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
-
-<LogsIntro/>
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -94,32 +90,24 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
 <TabItem value="Chef">
 
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
 
 </TabItem>
 </Tabs>
 
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample log
 

@@ -71,9 +71,7 @@ To configure Gmail Trace Logs Source:
 1. **Token URI**. Enter the token URI used for generating the token. You can find this from the Google Cloud Console.
 1. The **Collection should begin** is set to **24 Hours ago** by default. You can adjust it based on your needs.
 :::note
-import CollBegin from '../../../reuse/collection-should-begin-note.md';
-
-<CollBegin/>
+{@import ../../../reuse/collection-should-begin-note.md}
 :::
 1. **(Optional) Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.

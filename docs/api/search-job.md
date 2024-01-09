@@ -6,19 +6,16 @@ description: The Search Job API provides access to resources and log data from t
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import ApiEndpoints from '../reuse/api-endpoints.md';
 
 <img src={useBaseUrl('img/icons/search.png')} alt="Thumbnail icon" width="55"/>
 
 The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication.
 
-:::warning
+:::caution
 Search Job APIs are not yet built with OpenAPI specifications and therefore not documented with the rest of the APIs. Instead, refer to the instructions below for details.
 :::
 
-import ApiIntro from '../reuse/api-intro.md';
-
-<ApiIntro/>
+{@import ../reuse/api-intro.md}
 
 ## Before You Begin
 
@@ -26,16 +23,22 @@ The Search Job API is available to Enterprise accounts.
 
 <table>
   <tr>
-   <td>Account Type</td>
-   <td>Account Level </td>
+   <td>Account Type
+   </td>
+   <td>Account Level
+   </td>
   </tr>
   <tr>
-   <td>Cloud Flex </td>
-   <td>Enterprise </td>
+   <td>Cloud Flex
+   </td>
+   <td>Enterprise
+   </td>
   </tr>
   <tr>
-   <td>Cloud Flex Credits</td>
-   <td>Trial, Enterprise Operations, Enterprise Security, Enterprise Suite</td>
+   <td>Cloud Flex Credits
+   </td>
+   <td>Trial, Enterprise Operations, Enterprise Security, Enterprise Suite
+   </td>
   </tr>
 </table>
 
@@ -69,20 +72,28 @@ You can start requesting results asynchronously while the job is running and pag
 
 <table>
   <tr>
-   <td>Data Tier</td>
-   <td>Non-aggregate Search (messages)</td>
+   <td>Data Tier
+   </td>
+   <td>Non-aggregate Search (messages)
+   </td>
   </tr>
   <tr>
-   <td>Continuous</td>
-   <td>Can return up to 10 million records per search.</td>
+   <td>Continuous
+   </td>
+   <td>Can return up to 10 million records per search.
+   </td>
   </tr>
   <tr>
-   <td>Frequent</td>
-   <td>Can return up to 10 million records per search.</td>
+   <td>Frequent
+   </td>
+   <td>Can return up to 10 million records per search.
+   </td>
   </tr>
   <tr>
-   <td>Infrequent</td>
-   <td>Can return up to 10 million records per search.</td>
+   <td>Infrequent
+   </td>
+   <td>Can return up to 10 million records per search.
+   </td>
   </tr>
 </table>
 
@@ -92,9 +103,7 @@ If you need more results you'll need to break up your search into several search
 
 ## Rate limit throttling  
 
-import RateLimit from '../reuse/api-rate-limit.md';
-
-<RateLimit/>
+{@import ../reuse/api-rate-limit.md}
 
 A limit of 200 active concurrent search jobs applies to your organization.
 
@@ -126,54 +135,84 @@ The status includes the current state of the search job (gathering results, done
 
 <table>
   <tr>
-   <td><strong>Code</strong> </td>
-   <td><strong>Error</strong> </td>
-   <td><strong>Description</strong> </td>
+   <td><strong>Code</strong>
+   </td>
+   <td><strong>Error</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
   </tr>
   <tr>
-   <td>301</td>
-   <td>moved</td>
-   <td>The requested resource SHOULD be accessed through returned URI in Location Header.</td>
+   <td>301
+   </td>
+   <td>moved
+   </td>
+   <td>The requested resource SHOULD be accessed through returned URI in Location Header.
+   </td>
   </tr>
   <tr>
-   <td>401</td>
-   <td>unauthorized</td>
-   <td>Credential could not be verified.</td>
+   <td>401
+   </td>
+   <td>unauthorized
+   </td>
+   <td>Credential could not be verified.
+   </td>
   </tr>
   <tr>
-   <td>403</td>
-   <td>forbidden</td>
-   <td>This operation is not allowed for your account type.</td>
+   <td>403
+   </td>
+   <td>forbidden
+   </td>
+   <td>This operation is not allowed for your account type.
+   </td>
   </tr>
   <tr>
-   <td>404</td>
-   <td>notfound</td>
-   <td>Requested resource could not be found.</td>
+   <td>404
+   </td>
+   <td>notfound
+   </td>
+   <td>Requested resource could not be found.
+   </td>
   </tr>
   <tr>
-   <td>405</td>
-   <td>method.unsupported</td>
-   <td>Unsupported method for URL.</td>
+   <td>405
+   </td>
+   <td>method.unsupported
+   </td>
+   <td>Unsupported method for URL.
+   </td>
   </tr>
   <tr>
-   <td>415</td>
-   <td>contenttype.invalid</td>
-   <td>Invalid content type.</td>
+   <td>415
+   </td>
+   <td>contenttype.invalid
+   </td>
+   <td>Invalid content type.
+   </td>
   </tr>
   <tr>
-   <td>429</td>
-   <td>rate.limit.exceeded</td>
-   <td>The API request rate is higher than 4 request per second or your organization has exceeded the 200 active concurrent search job limit.</td>
+   <td>429
+   </td>
+   <td>rate.limit.exceeded
+   </td>
+   <td>The API request rate is higher than 4 request per second or your organization has exceeded the 200 active concurrent search job limit.
+   </td>
   </tr>
   <tr>
-   <td>500</td>
-   <td>internal.error</td>
-   <td>Internal server error.</td>
+   <td>500
+   </td>
+   <td>internal.error
+   </td>
+   <td>Internal server error.
+   </td>
   </tr>
   <tr>
-   <td>503</td>
-   <td>service.unavailable</td>
-   <td>Service is currently unavailable.</td>
+   <td>503
+   </td>
+   <td>service.unavailable
+   </td>
+   <td>Service is currently unavailable.
+   </td>
   </tr>
 </table>
 
@@ -182,54 +221,84 @@ The status includes the current state of the search job (gathering results, done
 
 <table>
   <tr>
-   <td><strong>Code</strong></td>
-   <td><strong>Error</strong> </td>
-   <td><strong>Description</strong></td>
+   <td><strong>Code</strong>
+   </td>
+   <td><strong>Error</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>generic</td>
-   <td>Generic error.</td>
+   <td>400
+   </td>
+   <td>generic
+   </td>
+   <td>Generic error.
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>invalid.timestamp.to</td>
-   <td>The 'to' field contains an invalid time.</td>
+   <td>400
+   </td>
+   <td>invalid.timestamp.to
+   </td>
+   <td>The 'to' field contains an invalid time.
+   </td>
   </tr>
   <tr>
-   <td>400 </td>
-   <td>invalid.timestamp.from</td>
-   <td>The 'from' field contains an invalid time. </td>
+   <td>400
+   </td>
+   <td>invalid.timestamp.from
+   </td>
+   <td>The 'from' field contains an invalid time.
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>to.smaller.than.from</td>
-   <td>The 'from' time cannot be larger than the 'to' time.</td>
+   <td>400
+   </td>
+   <td>to.smaller.than.from
+   </td>
+   <td>The 'from' time cannot be larger than the 'to' time.
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>unknown.timezone</td>
-   <td>The 'timezone' value is not a known time zone. See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes.</td>
+   <td>400
+   </td>
+   <td>unknown.timezone
+   </td>
+   <td>The 'timezone' value is not a known time zone. See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes.
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>empty.timezone</td>
-   <td>The 'timezone' cannot be blank.</td>
+   <td>400
+   </td>
+   <td>empty.timezone
+   </td>
+   <td>The 'timezone' cannot be blank.
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>no.query</td>
-   <td>No 'query' parameter was provided.</td>
+   <td>400
+   </td>
+   <td>no.query
+   </td>
+   <td>No 'query' parameter was provided.
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>unknown.time.type</td>
-   <td>Time type is not correct.</td>
+   <td>400
+   </td>
+   <td>unknown.time.type
+   </td>
+   <td>Time type is not correct.
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>parse.error</td>
-   <td>Unable to parse query.</td>
+   <td>400
+   </td>
+   <td>parse.error
+   </td>
+   <td>Unable to parse query.
+   </td>
   </tr>
 </table>
 
@@ -239,14 +308,20 @@ The status includes the current state of the search job (gathering results, done
 
 <table>
   <tr>
-   <td><strong>Code</strong></td>
-   <td><strong>Error</strong></td>
-   <td><strong>Description</strong></td>
+   <td><strong>Code</strong>
+   </td>
+   <td><strong>Error</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
   </tr>
   <tr>
-   <td>404</td>
-   <td>"jobid.invalid" </td>
-   <td>"Job ID is invalid."</td>
+   <td>404
+   </td>
+   <td>"jobid.invalid"
+   </td>
+   <td>"Job ID is invalid."
+   </td>
   </tr>
 </table>
 
@@ -254,44 +329,68 @@ The status includes the current state of the search job (gathering results, done
 
 <table>
   <tr>
-   <td><strong>Code</strong> </td>
-   <td><strong>Error</strong></td>
-   <td><strong>Description</strong></td>
+   <td><strong>Code</strong>
+   </td>
+   <td><strong>Error</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>"jobid.invalid"</td>
-   <td>"Job ID is invalid."</td>
+   <td>400
+   </td>
+   <td>"jobid.invalid"
+   </td>
+   <td>"Job ID is invalid."
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>"offset.missing"</td>
-   <td>"Offset is missing."</td>
+   <td>400
+   </td>
+   <td>"offset.missing"
+   </td>
+   <td>"Offset is missing."
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>"offset.negative"</td>
-   <td>"Offset cannot be negative."</td>
+   <td>400
+   </td>
+   <td>"offset.negative"
+   </td>
+   <td>"Offset cannot be negative."
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>"limit.missing"</td>
-   <td>"Limit is missing."</td>
+   <td>400
+   </td>
+   <td>"limit.missing"
+   </td>
+   <td>"Limit is missing."
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>"limit.zero"</td>
-   <td>"Limit cannot be 0."</td>
+   <td>400
+   </td>
+   <td>"limit.zero"
+   </td>
+   <td>"Limit cannot be 0."
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>"limit.negative"</td>
-   <td>"Limit cannot be negative."</td>
+   <td>400
+   </td>
+   <td>"limit.negative"
+   </td>
+   <td>"Limit cannot be negative."
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>"no.records.not.an.aggregation.query"</td>
-   <td>"No records; query is not an aggregation"</td>
+   <td>400
+   </td>
+   <td>"no.records.not.an.aggregation.query"
+   </td>
+   <td>"No records; query is not an aggregation"
+   </td>
   </tr>
 </table>
 
@@ -306,10 +405,9 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
 **Method**: `POST` <br/>
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs`
 
-<details>
-<summary>Which API endpoint should I use?</summary>
+<details><summary>Which API endpoint should I use?</summary>
 
-<ApiEndpoints/>
+{@import ../reuse/api-endpoints.md}
 
 </details>
 
@@ -317,16 +415,22 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
 
 <table>
   <tr>
-   <td><strong>Header</strong></td>
-   <td><strong>Value</strong></td>
+   <td><strong>Header</strong>
+   </td>
+   <td><strong>Value</strong>
+   </td>
   </tr>
   <tr>
-   <td>Content-Type</td>
-   <td>application/json</td>
+   <td>Content-Type
+   </td>
+   <td>application/json
+   </td>
   </tr>
   <tr>
-   <td>Accept</td>
-   <td>application/json</td>
+   <td>Accept
+   </td>
+   <td>application/json
+   </td>
   </tr>
 </table>
 
@@ -335,47 +439,79 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
 
 <table>
   <tr>
-   <td><strong>Parameter</strong></td>
-   <td><strong>Type</strong></td>
-   <td><strong>Required</strong></td>
-   <td><strong>Description</strong></td>
+   <td><strong>Parameter</strong>
+   </td>
+   <td><strong>Type</strong>
+   </td>
+   <td><strong>Required</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
   </tr>
   <tr>
-   <td>query</td>
-   <td>String </td>
-   <td>Yes</td>
-   <td>The actual search expression. Make sure your query is valid JSON format following <a href="https://tools.ietf.org/html/rfc8259">RFC 8259</a>, you may need to escape certain characters.</td>
+   <td>query
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>The actual search expression. Make sure your query is valid JSON format following <a href="https://tools.ietf.org/html/rfc8259">RFC 8259</a>, you may need to escape certain characters.
+   </td>
   </tr>
   <tr>
-   <td>from </td>
-   <td>String</td>
-   <td>Yes</td>
-   <td>The <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601</a> date and time of the time range to start the search. <p>For example, to specify July 16, 2017, use the form <code>YYYY-MM-DDTHH:mm:ss</code>, or <code>2017-07-16T00:00:00</code>.</p>
-<p>Can also be milliseconds since epoch.</p></td>
+   <td>from
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>The <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601</a> date and time of the time range to start the search.
+<p>For example, to specify July 16, 2017, use the form <code>YYYY-MM-DDTHH:mm:ss</code>, or <code>2017-07-16T00:00:00</code>.</p>
+<p>Can also be milliseconds since epoch.</p>
+   </td>
   </tr>
   <tr>
-   <td>to</td>
-   <td>String</td>
-   <td>Yes</td>
-   <td>The <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601</a> date and time of the time range to end the search.<p>For example, to specify July 26, 2017, use the form <code>YYYY-MM-DDTHH:mm:ss</code>, or <code>2017-07-26T00:00:00</code>.</p><p>Can also be milliseconds since epoch.</p></td>
+   <td>to
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>The <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601</a> date and time of the time range to end the search.
+<p>For example, to specify July 26, 2017, use the form <code>YYYY-MM-DDTHH:mm:ss</code>, or <code>2017-07-26T00:00:00</code>.</p>
+<p>Can also be milliseconds since epoch.</p>
+   </td>
   </tr>
   <tr>
-   <td>timeZone </td>
-   <td>String </td>
-   <td>Yes</td>
-   <td>The time zone if from/to is not in milliseconds.  See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes. <br/><br/><p><strong>Note</strong> Alternatively, you can use the parameter timezone instead of timeZone.</p></td>
+   <td>timeZone
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>The time zone if from/to is not in milliseconds.  See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes. <br/><br/>
+<p><strong>Note</strong> Alternatively, you can use the parameter timezone instead of timeZone.</p>
+   </td>
   </tr>
   <tr>
-   <td>byReceiptTime</td>
-   <td>Boolean</td>
-   <td>No </td>
-   <td>Define as <code>true</code> to run the search using<a href="/docs/search/get-started-with-search/build-search/use-receipt-time"> receipt time</a>. By default, searches do not run by receipt time. </td>
+   <td>byReceiptTime
+   </td>
+   <td>Boolean
+   </td>
+   <td>No
+   </td>
+   <td>Define as <code>true</code> to run the search using<a href="/docs/search/get-started-with-search/build-search/use-receipt-time"> receipt time</a>. By default, searches do not run by receipt time.
+   </td>
   </tr>
   <tr>
-   <td>autoParsingMode </td>
-   <td>String </td>
-   <td>No</td>
-   <td>This enables <a href="/docs/search/get-started-with-search/build-search/dynamic-parsing">dynamic parsing</a>. Values are: <br/><br/><code>AutoParse</code> - Sumo Logic will perform field extraction on JSON log messages when you run a search.<br/><br/><code>Manual</code> - (Default value) Sumo Logic will not autoparse JSON logs at search time. <br/><br/><strong>Note</strong> Previously, the supported values for this parameter were <code>performance</code>, <code>intelligent</code>, and <code>verbose</code>. These values still function, but are deprecated. Sumo Logic recommends the use of the new supported values: <code>AutoParse</code> and <code>Manual</code>. </td>
+   <td>autoParsingMode
+   </td>
+   <td>String
+   </td>
+   <td>No
+   </td>
+   <td>This enables <a href="/docs/search/get-started-with-search/build-search/dynamic-parsing">dynamic parsing</a>. Values are: <br/><br/><code>AutoParse</code> - Sumo Logic will perform field extraction on JSON log messages when you run a search.<br/><br/><code>Manual</code> - (Default value) Sumo Logic will not autoparse JSON logs at search time. <br/><br/><strong>Note</strong> Previously, the supported values for this parameter were <code>performance</code>, <code>intelligent</code>, and <code>verbose</code>. These values still function, but are deprecated. Sumo Logic recommends the use of the new supported values: <code>AutoParse</code> and <code>Manual</code>.
+   </td>
   </tr>
 </table>
 
@@ -385,24 +521,36 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
 
 <table>
   <tr>
-   <td><strong>Code</strong> </td>
-   <td><strong>Text</strong></td>
-   <td><strong>Description</strong></td>
+   <td><strong>Code</strong>
+   </td>
+   <td><strong>Text</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
   </tr>
   <tr>
-   <td>202</td>
-   <td>Accepted</td>
-   <td>The search job has been successfully created.</td>
+   <td>202
+   </td>
+   <td>Accepted
+   </td>
+   <td>The search job has been successfully created.
+   </td>
   </tr>
   <tr>
-   <td>400</td>
-   <td>Bad Request</td>
-   <td>Generic request error by the client. </td>
+   <td>400
+   </td>
+   <td>Bad Request
+   </td>
+   <td>Generic request error by the client.
+   </td>
   </tr>
   <tr>
-   <td>415</td>
-   <td>Unsupported Media Type</td>
-   <td>Content-Type wasn't set to application/json.</td>
+   <td>415
+   </td>
+   <td>Unsupported Media Type
+   </td>
+   <td>Content-Type wasn't set to application/json.
+   </td>
   </tr>
 </table>
 
@@ -412,12 +560,16 @@ To create a search job (step 1 in the [process flow](#process-flow)), send a JSO
 
 <table>
   <tr>
-   <td>Header</td>
-   <td>Value</td>
+   <td>Header
+   </td>
+   <td>Value
+   </td>
   </tr>
   <tr>
-   <td>Location</td>
-   <td> <code>https://api.sumologic.com/api/v1/search/jobs/&#60;SEARCH_JOB_ID&#62;</code></td>
+   <td>Location
+   </td>
+   <td> <code>https://api.sumologic.com/api/v1/search/jobs/&#60;SEARCH_JOB_ID&#62;</code>
+   </td>
   </tr>
 </table>
 
@@ -448,10 +600,9 @@ curl -b cookies.txt -c cookies.txt -H 'Content-type: application/json'
 --user <ACCESSID>:<ACCESSKEY> https://api.sumologic.com/api/v1/search/jobs
 ```
 
-<details>
-<summary>Which API endpoint should I use?</summary>
+<details><summary>Which API endpoint should I use?</summary>
 
-<ApiEndpoints/>
+{@import ../reuse/api-endpoints.md}
 
 </details>
 
@@ -482,10 +633,9 @@ Use the search job ID to obtain the current status of a search job (step 4 in th
 **Method:** `GET` <br/>
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>`
 
-<details>
-<summary>Which API endpoint should I use?</summary>
+<details><summary>Which API endpoint should I use?</summary>
 
-<ApiEndpoints/>
+{@import ../reuse/api-endpoints.md}
 
 </details>
 
@@ -495,16 +645,24 @@ Use the search job ID to obtain the current status of a search job (step 4 in th
 
 <table>
   <tr>
-   <td><strong>Parameter</strong></td>
-   <td><strong>Type</strong></td>
-   <td><strong>Required</strong></td>
-   <td><strong>Description</strong></td>
+   <td><strong>Parameter</strong>
+   </td>
+   <td><strong>Type</strong>
+   </td>
+   <td><strong>Required</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
   </tr>
   <tr>
-   <td>searchJobId</td>
-   <td>String</td>
-   <td>Yes</td>
-   <td>The ID of the search job.</td>
+   <td>searchJobId
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>The ID of the search job.
+   </td>
   </tr>
 </table>
 
@@ -522,10 +680,9 @@ curl -v --trace-ascii - -b cookies.txt -c cookies.txt -H 'Accept: application/js
 --user <ACCESSID>:<ACCESSKEY> https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80
 ```
 
-<details>
-<summary>Which API endpoint should I use?</summary>
+<details><summary>Which API endpoint should I use?</summary>
 
-<ApiEndpoints/>
+{@import ../reuse/api-endpoints.md}
 
 </details>
 
@@ -564,14 +721,14 @@ This is the formatted result document:
 Notice that the state of the sample search job is DONE GATHERING RESULTS. The following table includes possible states.
 
 | State | Description |
-| :-- | :-- |
-| NOT STARTED	| Search job has not been started yet.|
-| GATHERING RESULTS	| Search job is still gathering more results, however results might already be available.|
+| :-- | :-- | 
+| NOT STARTED	| Search job has not been started yet.| 
+| GATHERING RESULTS	| Search job is still gathering more results, however results might already be available.| 
 | GATHERING RESULTS FROM SUBQUERIES | Search job is gathering results from the subqueries, before executing the main query.|
-| FORCE PAUSED	| Query that is paused by the system. It is true only for non-aggregate queries that are paused at the limit of 100k. This limit is dynamic and may vary from customer to customer.|
-| DONE GATHERING RESULTS	| Search job is done gathering results; the entire specified time range has been covered.|
+| FORCE PAUSED	| Query that is paused by the system. It is true only for non-aggregate queries that are paused at the limit of 100k. This limit is dynamic and may vary from customer to customer.| 
+| DONE GATHERING RESULTS	| Search job is done gathering results; the entire specified time range has been covered.| 
 | DONE GATHERING HISTOGRAM | Search job is done gathering results needed to build a histogram; the entire specified time range needed to build the histogram has been covered. |
-| CANCELLED	| The search job has been canceled. Note the spelling has two L letters.|
+| CANCELLED	| The search job has been canceled. Note the spelling has two L letters.| 
 
 #### More about results
 
@@ -597,11 +754,9 @@ The search job status informs the user about the number of found messages. The m
 **Method:** `GET`  <br/>
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>/messages?offset=<OFFSET>&limit=<LIMIT>`
 
-<details>
+<details><summary>Which API endpoint should I use?</summary>
 
-<summary>Which API endpoint should I use?</summary>
-
-<ApiEndpoints/>
+{@import ../reuse/api-endpoints.md}
 
 </details>
 
@@ -609,28 +764,44 @@ The search job status informs the user about the number of found messages. The m
 
 <table>
   <tr>
-   <td><strong>Parameter</strong></td>
-   <td><strong>Type</strong></td>
-   <td><strong>Required</strong></td>
-   <td><strong>Description</strong></td>
+   <td><strong>Parameter</strong>
+   </td>
+   <td><strong>Type</strong>
+   </td>
+   <td><strong>Required</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
   </tr>
   <tr>
-   <td>searchJobId</td>
-   <td>String</td>
-   <td>Yes</td>
-   <td>The ID of the search job.</td>
+   <td>searchJobId
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>The ID of the search job.
+   </td>
   </tr>
   <tr>
-   <td>offset </td>
-   <td>Int</td>
-   <td>Yes</td>
-   <td>Return message starting at this offset.</td>
+   <td>offset
+   </td>
+   <td>Int
+   </td>
+   <td>Yes
+   </td>
+   <td>Return message starting at this offset.
+   </td>
   </tr>
   <tr>
-   <td>limit</td>
-   <td>Int</td>
-   <td>Yes</td>
-   <td>The number of messages starting at offset to return. The maximum value for limit is 10,000 messages or 100 MB in total message size, which means the query may return less than 10,000 messages if you exceed the size limit. </td>
+   <td>limit
+   </td>
+   <td>Int
+   </td>
+   <td>Yes
+   </td>
+   <td>The number of messages starting at offset to return. The maximum value for limit is 10,000 messages or 100 MB in total message size, which means the query may return less than 10,000 messages if you exceed the size limit.
+   </td>
   </tr>
 </table>
 
@@ -643,15 +814,13 @@ curl -b cookies.txt -c cookies.txt -H 'Accept: application/json'
 --user <ACCESSID>:<ACCESSKEY> 'https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80/messages?offset=0&limit=10'
 ```
 
-<details>
-<summary>Which API endpoint should I use?</summary>
+<details><summary>Which API endpoint should I use?</summary>
 
-<ApiEndpoints/>
+{@import ../reuse/api-endpoints.md}
 
 </details>
 
-<details>
-<summary>This is the formatted result document (click to expand)</summary>
+<details><summary>This is the formatted result document (click to expand)</summary>
 
 ```json
 {
@@ -801,10 +970,9 @@ The search job status informs the user as to the number of produced records, if 
 **Method: `GET`** <br/>
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>/records?offset=<OFFSET>&limit=<LIMIT>`
 
-<details>
-<summary>Which API endpoint should I use?</summary>
+<details><summary>Which API endpoint should I use?</summary>
 
-<ApiEndpoints/>
+{@import ../reuse/api-endpoints.md}
 
 </details>
 
@@ -813,28 +981,44 @@ The search job status informs the user as to the number of produced records, if 
 
 <table>
   <tr>
-   <td><strong>Parameter</strong></td>
-   <td><strong>Type</strong></td>
-   <td><strong>Required</strong></td>
-   <td><strong>Description</strong></td>
+   <td><strong>Parameter</strong>
+   </td>
+   <td><strong>Type</strong>
+   </td>
+   <td><strong>Required</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
   </tr>
   <tr>
-   <td>searchJobId</td>
-   <td>String</td>
-   <td>Yes</td>
-   <td>The ID of the search job.</td>
+   <td>searchJobId
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>The ID of the search job.
+   </td>
   </tr>
   <tr>
-   <td>offset</td>
-   <td>Int</td>
-   <td>Yes</td>
-   <td>Return records starting at this offset.</td>
+   <td>offset
+   </td>
+   <td>Int
+   </td>
+   <td>Yes
+   </td>
+   <td>Return records starting at this offset.
+   </td>
   </tr>
   <tr>
-   <td>limit</td>
-   <td>Int</td>
-   <td>Yes</td>
-   <td>The number of records starting at offset to return. The maximum value for limit is 10,000 records. </td>
+   <td>limit
+   </td>
+   <td>Int
+   </td>
+   <td>Yes
+   </td>
+   <td>The number of records starting at offset to return. The maximum value for limit is 10,000 records.
+   </td>
   </tr>
 </table>
 
@@ -888,10 +1072,9 @@ Although search jobs ultimately time out in the Sumo Logic backend, it's a good 
 **Method:** `DELETE` <br/>
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>`
 
-<details>
-<summary>Which API endpoint should I use?</summary>
+<details><summary>Which API endpoint should I use?</summary>
 
-<ApiEndpoints/>
+{@import ../reuse/api-endpoints.md}
 
 </details>
 
@@ -899,16 +1082,24 @@ Although search jobs ultimately time out in the Sumo Logic backend, it's a good 
 
 <table>
   <tr>
-   <td><strong>Parameter</strong></td>
-   <td><strong>Type</strong></td>
-   <td><strong>Required</strong> </td>
-   <td><strong>Description</strong></td>
+   <td><strong>Parameter</strong>
+   </td>
+   <td><strong>Type</strong>
+   </td>
+   <td><strong>Required</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
   </tr>
   <tr>
-   <td>searchJobId</td>
-   <td>String</td>
-   <td>Yes</td>
-   <td>The ID of the search job. </td>
+   <td>searchJobId
+   </td>
+   <td>String
+   </td>
+   <td>Yes
+   </td>
+   <td>The ID of the search job.
+   </td>
   </tr>
 </table>
 
@@ -920,10 +1111,9 @@ curl -b cookies.txt -c cookies.txt -X DELETE
 https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80
 ```
 
-<details>
-<summary>Which API endpoint should I use?</summary>
+<details><summary>Which API endpoint should I use?</summary>
 
-<ApiEndpoints/>
+{@import ../reuse/api-endpoints.md}
 
 </details>
 
