@@ -196,6 +196,14 @@ If a [custom subdomain](create-manage-orgs.md) has been configured for a child o
 1. Click the row for the org you want to access.
 1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="access org" width="450"/>
 
+## View baselines
+
+Your estimates of ingest capacity required for each product variable are called as baselines. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates, you can access it from the **Organizations** UI.
+
+1. Go to **Administration** > **Organizations**.
+1. Click the row for the org you want to check the baselines.
+1. Click **View the organization baselines here** at the bottom of the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/baselines_1.png')} alt="baselines_1" style={{border:'1px solid black'}}  width="450"/> <br/> <img src={useBaseUrl('img/subscriptions/baselines_2.png')} alt="baselines_2" style={{border:'1px solid black'}} width="450"/>
+
 ## Audit logging for organizations
 
 This section has examples of the messages Sumo Logic writes to the Audit Event Index when you create, deactivate, and update an org.  
