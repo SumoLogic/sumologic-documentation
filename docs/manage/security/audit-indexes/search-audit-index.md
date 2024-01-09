@@ -80,6 +80,7 @@ The table below shows the possible values for the `query_type` field.
 
 | query_type value | Description |
 |:--|:--|
+| Alert | Search queries run by users accessing the [Alert Response Page](/docs//alerts/monitors/alert-response/). |
 | Search API | Search queries run by users using the [Search Job API](/docs/api/search-job) only. |
 | Interactive Search | Search queries run from the Search tab in the UI only. |
 | Interactive Dashboard | Search queries run from dashboards in the UI only. |
