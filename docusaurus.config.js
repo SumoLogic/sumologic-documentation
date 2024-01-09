@@ -6,9 +6,8 @@
 
 const fs = require('fs')
 
-import {themes as prismThemes} from 'prism-react-renderer';
-const lightCodeTheme = prismThemes.github;
-const darkCodeTheme = prismThemes.dracula;
+const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
+const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
 const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString())
 
@@ -75,6 +74,7 @@ module.exports = {
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           admonitions: {
+            tag: ':::',
             keywords: [
               'sumo',
               'secondary',
