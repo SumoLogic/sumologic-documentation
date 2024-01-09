@@ -336,10 +336,89 @@ Use this dashboard to:
 
 Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Nginx server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
 
-| Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
-|:---|:---|:---|:---|:---|:---|
-| Logs | Nginx Ingress - Access from Highly Malicious Sources | This alert fires when an Nginx Ingress server is accessed from highly malicious IP addresses. | Critical | > 0 | < = 0 |
-| Logs | Nginx Ingress - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | Critical | > 0 | 0 |
-| Logs | Nginx Ingress - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Critical | > 0 | 0 |
-| Logs | Nginx Ingress - Critical Error Messages | This alert fires when we detect critical error messages for a given Nginx Ingress server. | Critical | > 0 | 0 |
-| Metrics | Nginx Ingress - Dropped Connections | This alert fires when we detect dropped connections for a given Nginx Ingress server. | Critical | > 0 | 0 |
+<table>
+  <tr>
+   <td>Alert Type (Metrics/Logs)
+   </td>
+   <td>Alert Name
+   </td>
+   <td>Alert Description
+   </td>
+   <td>Trigger Type (Critical / Warning)
+   </td>
+   <td>Alert Condition
+   </td>
+   <td>Recover Condition
+   </td>
+  </tr>
+  <tr>
+   <td>Logs
+   </td>
+   <td>Nginx Ingress - Access from Highly Malicious Sources
+   </td>
+   <td>This alert fires when an Nginx Ingress server is accessed from highly malicious IP addresses.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62; 0
+   </td>
+   <td> &#60; &#61; 0
+   </td>
+  </tr>
+  <tr>
+   <td>Logs
+   </td>
+   <td>Nginx Ingress - High Client (HTTP 4xx) Error Rate
+   </td>
+   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62; 0
+   </td>
+   <td>0
+   </td>
+  </tr>
+  <tr>
+   <td>Logs
+   </td>
+   <td>Nginx Ingress - High Server (HTTP 5xx) Error Rate
+   </td>
+   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62; 0
+   </td>
+   <td>0
+   </td>
+  </tr>
+  <tr>
+   <td>Logs
+   </td>
+   <td>Nginx Ingress - Critical Error Messages
+   </td>
+   <td>This alert fires when we detect critical error messages for a given Nginx Ingress server.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62; 0
+   </td>
+   <td>0
+   </td>
+  </tr>
+  <tr>
+   <td>Metrics
+   </td>
+   <td>Nginx Ingress - Dropped Connections
+   </td>
+   <td>This alert fires when we detect dropped connections for a given Nginx Ingress server.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62; 0
+   </td>
+   <td>0
+   </td>
+  </tr>
+</table>

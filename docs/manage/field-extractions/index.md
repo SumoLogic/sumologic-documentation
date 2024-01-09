@@ -42,9 +42,7 @@ On the **Manage Data** > **Logs** > **Field Extraction Rules** page you can:
 
 ## Limitations
 
-import FerLimit from '../../reuse/fer-limitations.md';
-
-<FerLimit/>
+{@import ../../reuse/fer-limitations.md}
 
 ## Micro Lesson: Field Extraction Rules Basics
 

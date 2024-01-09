@@ -678,7 +678,7 @@ Creates a field with an associated value. If the field already exists, SET overw
 
 `SET:<field> = <string>`
 
-The field name is treated as a Mustache template if it contains two curly braces `{{`. The template can access any field dictionary fields that have been parsed prior to this instruction. 
+The field name is treated as a Mustache template if it contains two curly braces ‘{{‘. The template can access any field dictionary fields that have been parsed prior to this instruction. 
 
 **Default**
 

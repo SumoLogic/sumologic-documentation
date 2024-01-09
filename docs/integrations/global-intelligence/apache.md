@@ -55,9 +55,7 @@ Follow the steps in [Sumo Logic Apache Logs](/docs/integrations/web-servers/apac
 
 This section has instructions for installing the Global Intelligence for Apache App.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 
 ## Concepts

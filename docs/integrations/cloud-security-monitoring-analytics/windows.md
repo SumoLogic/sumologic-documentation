@@ -91,9 +91,7 @@ This section provides instructions for installing the Cloud Security Monitoring 
 
 Now that you have set up collection, install the Cloud Security Monitoring & Analytics for Windows App to use the pre-configured searches and dashboards that provide insight into your data.  
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Windows Security Dashboards
 

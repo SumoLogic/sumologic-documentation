@@ -37,8 +37,7 @@ Download the collector in either of the following ways:
 
 Choose one of these methods to install the Collector:
 
-<details>
-<summary>Install Using the UI Installer</summary>
+<details><summary>Install Using the UI Installer</summary>
 
 Run the installer on your server with root or Administrator privileges. If you are not logged in as root or Administrator, you might be prompted to reauthenticate to your system when you start the UI Installer.
 
@@ -57,8 +56,7 @@ Run the installer on your server with root or Administrator privileges. If you a
 
 </details>
 
-<details>
-<summary>Install Using the Command-Line Installer</summary>
+<details><summary>Install Using the Command-Line Installer</summary>
 
 1. Add execution permissions to the downloaded Collector file (.sh):
  ```bash
@@ -86,8 +84,7 @@ sudo ./SumoCollector.sh -q -Vsumo.accessid=<accessId> -Vsumo.accesskey=<accessKe
 
 </details>
 
-<details>
-<summary>Install Using the RPM or Debian Package</summary>
+<details><summary>Install Using the RPM or Debian Package</summary>
 
 You can use the RPM or Debian package to install a Collector on a Linux 64-bit system.
 
@@ -135,8 +132,7 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit s
 </details>
 
 
-<details>
-<summary>Install using the Binary Package</summary>
+<details><summary>Install using the Binary Package</summary>
 
 1. Install the version of JRE you want to use from the following location. (The collector requires Java 8 or higher). The binary installation process does not include JRE installation.
 [https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)
@@ -212,8 +208,7 @@ Uninstalling a collector requires the following two steps:
 
 1. **Uninstall the collector from the Linux system using any of these methods**:
 
-<details>
-<summary>Uninstall using the UI Installer</summary>
+<details><summary>Uninstall using the UI Installer</summary>
 
 1. On your system, in the Applications folder, find the Sumo Logic Collector folder.
 2. Double-click the file Sumo Logic Collector Uninstaller.
@@ -224,8 +219,7 @@ Uninstalling a collector requires the following two steps:
 
 </details>
 
-<details>
-<summary>Uninstall using the Command Line</summary>
+<details><summary>Uninstall using the Command Line</summary>
 
 1. In a terminal prompt, change the directory to the collector installation directory. By default, the collector will be installed in either /opt/SumoCollector or /usr/local/SumoCollector.
 ```bash
@@ -238,8 +232,7 @@ sudo ./uninstall -q
 
 </details>
 
-<details>
-<summary>Uninstall using the RPM/Debian packages</summary>
+<details><summary>Uninstall using the RPM/Debian packages</summary>
 
 For the RPM package, use the command:
 ```bash
@@ -252,8 +245,7 @@ sudo dpkg -r SumoCollector
 
 </details>
 
-<details>
-<summary>Uninstall using the binary package</summary>
+<details><summary>Uninstall using the binary package</summary>
 
 1. Uninstall the collector service.
 ```bash
@@ -283,9 +275,7 @@ A success message is displayed and the collector is removed from the list.
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Linux to use the preconfigured searches and Dashboards that provide insight into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Linux Security Monitoring Dashboards
 

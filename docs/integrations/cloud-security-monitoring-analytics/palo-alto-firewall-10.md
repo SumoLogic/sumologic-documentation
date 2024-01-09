@@ -114,9 +114,7 @@ Now that you have set up collection for the Palo Alto Firewall 10 app, you can i
 
 This app supports PAN-OS v10.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing PAN Firewall 10 Security Dashboards
 

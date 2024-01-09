@@ -90,8 +90,7 @@ state=hashArgs%23%2Frepositories%2Ftravellogic%3Aproducts&isauthcode=true",
 
 ### Sample Query
 
-<details>
-<summary>Click to expand.<br/>This sample query is from the <strong>Lambda Configuration: My Company v. Others (Categorical)</strong> panel of <strong>GI CloudTrail DevOps - 05. Configuration Benchmarks</strong>.</summary>
+<details><summary>Click to expand.<br/>This sample query is from the <strong>Lambda Configuration: My Company v. Others (Categorical)</strong> panel of <strong>GI CloudTrail DevOps - 05. Configuration Benchmarks</strong>.</summary>
 
 ```sql
 // id=@config_lambda_categorical_values
@@ -168,9 +167,7 @@ To configure log collection for Global Intelligence for AWS CloudTrail, follow t
 
 ## Installing the Global Intelligence for AWS CloudTrail DevOps App
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing GI CloudTrail DevOps Dashboards
 

@@ -14,9 +14,7 @@ Roles determine the functions that users are able to perform in Sumo Logic. The 
 
 To manage roles, you must have an administrator role or your role must have been assigned the manage users and roles capability. For more information, see [Manage Roles](https://help.sumologic.com/?cid=5234).
 
-import ApiIntro from '../reuse/api-intro.md';
-
-<ApiIntro/>
+{@import ../reuse/api-intro.md}
 
 | Deployment | Documentation URL                                      |
 |:------------|:--------------------------------------------------------|

@@ -543,9 +543,7 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
 
 This section demonstrates how to install the SQL Server App.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Microsoft SQL Server Dashboards
 
@@ -649,130 +647,215 @@ Sumo Logic provideds out-of-the-box alerts available via [Sumo Logic monitors](/
 
 <table>
   <tr>
-   <td>Alert Name </td>
-   <td>Alert Description </td>
-   <td>Trigger Type (Critical / Warning) </td>
-   <td>Alert Condition </td>
-   <td>Recover Condition </td>
+   <td>Alert Name
+   </td>
+   <td>Alert Description
+   </td>
+   <td>Trigger Type (Critical / Warning)
+   </td>
+   <td>Alert Condition
+   </td>
+   <td>Recover Condition
+   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Instance Down </td>
-   <td rowspan="2" >This alert fires when we detect that the SQL Server instance is down for 5 minutes. </td>
-   <td>Critical   </td>
-   <td> &#62;0   </td>
-   <td> &#60;&#61;0   </td>
+   <td rowspan="2" >SQL Server - Instance Down
+   </td>
+   <td rowspan="2" >This alert fires when we detect that the SQL Server instance is down for 5 minutes.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62;0
+   </td>
+   <td> &#60;&#61;0
+   </td>
   </tr>
   <tr>
-   <td>Warning   </td>
-   <td>   </td>
-   <td>   </td>
+   <td>Warning
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - AppDomain   </td>
-   <td rowspan="2" >This alert fires when we detect AppDomain related issues in your SQL Server instance.   </td>
-   <td>Critical   </td>
-   <td>   </td>
-   <td>   </td>
+   <td rowspan="2" >SQL Server - AppDomain
+   </td>
+   <td rowspan="2" >This alert fires when we detect AppDomain related issues in your SQL Server instance.
+   </td>
+   <td>Critical
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
   </tr>
   <tr>
-   <td>Warning   </td>
-   <td> &#62;&#61;1   </td>
-   <td> &#60;1   </td>
+   <td>Warning
+   </td>
+   <td> &#62;&#61;1
+   </td>
+   <td> &#60;1
+   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Backup Fail   </td>
-   <td rowspan="2" >This alert fires when we detect that the SQL Server backup failed. </td>
-   <td>Critical   </td>
-   <td>   </td>
-   <td>   </td>
+   <td rowspan="2" >SQL Server - Backup Fail
+   </td>
+   <td rowspan="2" >This alert fires when we detect that the SQL Server backup failed.
+   </td>
+   <td>Critical
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
   </tr>
   <tr>
-   <td>Warning   </td>
-   <td> &#62;&#61;1   </td>
-   <td> &#60;1   </td>
+   <td>Warning
+   </td>
+   <td> &#62;&#61;1
+   </td>
+   <td> &#60;1
+   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Cpu High Usage </td>
-   <td rowspan="2" >This alert fires when the CPU usage within a 5 minute interval for an SQL Server instance is high (70% - 80% for Warning and >=80% for Critical). </td>
-   <td>Critical </td>
-   <td> &#62;&#61;80   </td>
-   <td> &#60;80   </td>
+   <td rowspan="2" >SQL Server - Cpu High Usage
+   </td>
+   <td rowspan="2" >This alert fires when the CPU usage within a 5 minute interval for an SQL Server instance is high (70% - 80% for Warning and >=80% for Critical).
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62;&#61;80
+   </td>
+   <td> &#60;80
+   </td>
   </tr>
   <tr>
-   <td>Warning   </td>
-   <td> &#62;&#61;70   </td>
-   <td> &#60;70   </td>
+   <td>Warning
+   </td>
+   <td> &#62;&#61;70
+   </td>
+   <td> &#60;70
+   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Deadlock   </td>
-   <td rowspan="2" >This alert fires when we detect deadlocks in a SQL Server instance.   </td>
-   <td>Critical   </td>
-   <td>   </td>
-   <td>   </td>
+   <td rowspan="2" >SQL Server - Deadlock
+   </td>
+   <td rowspan="2" >This alert fires when we detect deadlocks in a SQL Server instance.
+   </td>
+   <td>Critical
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
   </tr>
   <tr>
-   <td>Warning   </td>
-   <td> &#62;5   </td>
-   <td> &#60;&#61;5   </td>
+   <td>Warning
+   </td>
+   <td> &#62;5
+   </td>
+   <td> &#60;&#61;5
+   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Disk Usage   </td>
-   <td rowspan="2" >This alert fires when the Disk usage within a 5 minute interval for an SQL Server instance is high (70% - 80% for Warning and >&#61;80% for Critical).   </td>
-   <td>Critical   </td>
-   <td> &#62;&#61;80   </td>
-   <td> &#60;80   </td>
+   <td rowspan="2" >SQL Server - Disk Usage
+   </td>
+   <td rowspan="2" >This alert fires when the Disk usage within a 5 minute interval for an SQL Server instance is high (70% - 80% for Warning and >&#61;80% for Critical).
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62;&#61;80
+   </td>
+   <td> &#60;80
+   </td>
   </tr>
   <tr>
-   <td>Warning   </td>
-   <td> &#62;&#61;70   </td>
-   <td> &#60;70   </td>
+   <td>Warning
+   </td>
+   <td> &#62;&#61;70
+   </td>
+   <td> &#60;70
+   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Insufficient Space </td>
-   <td rowspan="2" >This alert fires when SQL Server instance could not allocate a new page for database because of insufficient disk space in filegroup.   </td>
-   <td>Critical   </td>
-   <td>   </td>
-   <td>   </td>
+   <td rowspan="2" >SQL Server - Insufficient Space
+   </td>
+   <td rowspan="2" >This alert fires when SQL Server instance could not allocate a new page for database because of insufficient disk space in filegroup.
+   </td>
+   <td>Critical
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
   </tr>
   <tr>
-   <td>Warning   </td>
-   <td> &#62;0   </td>
-   <td> &#60;&#61;0   </td>
+   <td>Warning
+   </td>
+   <td> &#62;0
+   </td>
+   <td> &#60;&#61;0
+   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Login Fail   </td>
-   <td rowspan="2" >This alert fires when we detect that the user cannot login to SQL Server.   </td>
-   <td>Critical   </td>
-   <td>   </td>
-   <td>   </td>
+   <td rowspan="2" >SQL Server - Login Fail
+   </td>
+   <td rowspan="2" >This alert fires when we detect that the user cannot login to SQL Server.
+   </td>
+   <td>Critical
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
   </tr>
   <tr>
-   <td>Warning   </td>
-   <td> &#62;&#61;1   </td>
-   <td> &#60;1   </td>
+   <td>Warning
+   </td>
+   <td> &#62;&#61;1
+   </td>
+   <td> &#60;1
+   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Mirroring Error   </td>
-   <td rowspan="2" >This alert fires when we detect that the SQL Server mirroring has error.   </td>
-   <td>Critical   </td>
-   <td> &#62;&#61;1   </td>
-   <td> &#60;1   </td>
+   <td rowspan="2" >SQL Server - Mirroring Error
+   </td>
+   <td rowspan="2" >This alert fires when we detect that the SQL Server mirroring has error.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62;&#61;1
+   </td>
+   <td> &#60;1
+   </td>
   </tr>
   <tr>
-   <td>Warning   </td>
-   <td>   </td>
-   <td>   </td>
+   <td>Warning
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Processes Blocked   </td>
-   <td rowspan="2" >This alert fires when we detect that SQL Server has blocked processes.   </td>
-   <td>Critical </td>
-   <td> </td>
-   <td>   </td>
+   <td rowspan="2" >SQL Server - Processes Blocked
+   </td>
+   <td rowspan="2" >This alert fires when we detect that SQL Server has blocked processes.
+   </td>
+   <td>Critical
+   </td>
+   <td>
+   </td>
+   <td>
+   </td>
   </tr>
   <tr>
-   <td>Warning   </td>
-   <td> &#62;0   </td>
-   <td> &#60;&#61;0 </td>
+   <td>Warning
+   </td>
+   <td> &#62;0
+   </td>
+   <td> &#60;&#61;0
+   </td>
   </tr>
 </table>

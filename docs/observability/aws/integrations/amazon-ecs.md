@@ -16,8 +16,7 @@ The Amazon ECS app uses the following logs and metrics:
 
 ### Sample CloudTrail Log Message
 
-<details>
-<summary>Click to expand log message</summary>
+<details><summary>Click to expand log message</summary>
 
 ```json
 {

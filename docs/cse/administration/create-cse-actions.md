@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has instructions for configuring Cloud SIEM Actions.
 
-:::warning
+:::caution
 Cloud SIEM Actions are deprecated. Instead, use the Automation Service. For more information, see [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
 :::
 

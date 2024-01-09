@@ -116,29 +116,44 @@ The following suffixes are required. For example, you could use `_sourceCategory
 
 <table><small>
   <tr>
-   <td><strong>Log source</strong>   </td>
-   <td><strong>File Path</strong> </td>
-   <td><strong>Source Category</strong>   </td>
+   <td><strong>Log source</strong>
+   </td>
+   <td><strong>File Path</strong>
+   </td>
+   <td><strong>Source Category</strong>
+   </td>
   </tr>
   <tr>
-   <td>Artifactory Server </td>
-   <td>/var/opt/jfrog/artifactory/logs/artifactory.log </td>
-   <td>artifactory/console   </td>
+   <td>Artifactory Server
+   </td>
+   <td>/var/opt/jfrog/artifactory/logs/artifactory.log
+   </td>
+   <td>artifactory/console
+   </td>
   </tr>
   <tr>
-   <td>Access   </td>
-   <td>/var/opt/jfrog/artifactory/logs/access.log   </td>
-   <td>artifactory/access   </td>
+   <td>Access
+   </td>
+   <td>/var/opt/jfrog/artifactory/logs/access.log
+   </td>
+   <td>artifactory/access
+   </td>
   </tr>
   <tr>
-   <td>Request   </td>
-   <td>/var/opt/jfrog/artifactory/logs/request.log   </td>
-   <td>artifactory/request </td>
+   <td>Request
+   </td>
+   <td>/var/opt/jfrog/artifactory/logs/request.log
+   </td>
+   <td>artifactory/request
+   </td>
   </tr>
   <tr>
-   <td>Traffic   </td>
-   <td>/var/opt/jfrog/artifactory/logs/traffic.*.log  </td>
-   <td>artifactory/traffic   </td>
+   <td>Traffic
+   </td>
+   <td>/var/opt/jfrog/artifactory/logs/traffic.*.log
+   </td>
+   <td>artifactory/traffic
+   </td>
   </tr></small>
 </table>
 
@@ -281,29 +296,44 @@ The following suffixes are required. For example, you could use `_sourceCategory
 
 <table><small>
   <tr>
-   <td><strong>Log source</strong>   </td>
-   <td><strong>File Path</strong>   </td>
-   <td><strong>Source Category</strong>   </td>
+   <td><strong>Log source</strong>
+   </td>
+   <td><strong>File Path</strong>
+   </td>
+   <td><strong>Source Category</strong>
+   </td>
   </tr>
   <tr>
-   <td>Artifactory Server and other microservices   </td>
-   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-service.log </td>
-   <td>artifactory/console   </td>
+   <td>Artifactory Server and other microservices
+   </td>
+   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-service.log
+   </td>
+   <td>artifactory/console
+   </td>
   </tr>
   <tr>
-   <td>Access </td>
-   <td>$JFROG_HOME/artifactory/var/artifactory/log/artifactory-access.log.   </td>
-   <td>artifactory/access   </td>
+   <td>Access
+   </td>
+   <td>$JFROG_HOME/artifactory/var/artifactory/log/artifactory-access.log.
+   </td>
+   <td>artifactory/access
+   </td>
   </tr>
   <tr>
-   <td>Request   </td>
-   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-request.log   </td>
-   <td>artifactory/request   </td>
+   <td>Request
+   </td>
+   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-request.log
+   </td>
+   <td>artifactory/request
+   </td>
   </tr>
   <tr>
-   <td>Traffic</td>
-   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-traffic.*.log   </td>
-   <td>artifactory/traffic   </td>
+   <td>Traffic
+   </td>
+   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-traffic.*.log
+   </td>
+   <td>artifactory/traffic
+   </td>
   </tr></small>
 </table>
 
@@ -330,9 +360,7 @@ For complete instructions, see [Local File Source](/docs/send-data/installed-col
 
 Now that you have set up collection, install the Sumo Logic App for Artifactory to use the pre-configured searches and Dashboards that provide insight into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing JFrog Artifactory Dashboards
 
@@ -340,46 +368,34 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Overview.png')} alt="JFROG artifactory" />
 
-import JfrogOv from '../../reuse/apps/jfrog/artifactory-overview.md';
-
-<JfrogOv/>
+{@import ../../reuse/apps/jfrog/artifactory-overview.md}
 
 ### Traffic
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Traffic.png')} alt="JFROG artifactory" />
 
-import JfrogTr from '../../reuse/apps/jfrog/artifactory-traffic.md';
-
-<JfrogTr/>
+{@import ../../reuse/apps/jfrog/artifactory-traffic.md}
 
 ### Request and Access
 
 <img src={useBaseUrl('img/integrations/app-development/artifactory_app_request_access.png')} alt="JFROG artifactory" />
 
-import JfrogReq from '../../reuse/apps/jfrog/artifactory-request-access.md';
-
-<JfrogReq/>
+{@import ../../reuse/apps/jfrog/artifactory-request-access.md}
 
 ### Download Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Download.png')} alt="JFROG artifactory" />
 
-import JfrogDl from '../../reuse/apps/jfrog/artifactory-download.md';
-
-<JfrogDl/>
+{@import ../../reuse/apps/jfrog/artifactory-download.md}
 
 ### Cached Deployment Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Cached.png')} alt="JFROG artifactory" />
 
-import JfrogCache from '../../reuse/apps/jfrog/artifactory-cached.md';
-
-<JfrogCache/>
+{@import ../../reuse/apps/jfrog/artifactory-cached.md}
 
 ### Non-Cached Deployment Activity
 
 <img src={useBaseUrl('img/integrations/app-development/Art-Non-Cached.png')} alt="JFROG artifactory" />
 
-import JfrogNon from '../../reuse/apps/jfrog/artifactory-noncached.md';
-
-<JfrogNon/>
+{@import ../../reuse/apps/jfrog/artifactory-noncached.md}

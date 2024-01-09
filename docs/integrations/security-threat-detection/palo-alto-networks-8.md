@@ -17,21 +17,28 @@ Parsing in the Sumo Logic app for PAN 8 is based on the [PAN-OS Syslog Integrati
 
 <table>
   <tr>
-   <td><strong>Log type</strong>   </td>
-   <td><strong>Description</strong>   </td>
-   <td><strong>Supported log format</strong> </td>
-   <td><strong>For more information</strong></td>
+   <td><strong>Log type</strong>
+   </td>
+   <td><strong>Description</strong>
+   </td>
+   <td><strong>Supported log format</strong>
+   </td>
+   <td><strong>For more information</strong>
+   </td>
   </tr>
   <tr>
-   <td>Traffic</td>
-   <td>Entries for the start and end of each session, including date and time; source and destination zones, addresses and ports; application name; security rule applied to the traffic flow; rule action (allow, deny, or drop); ingress and egress interface; number of bytes; and session end reason. </td>
+   <td>Traffic
+   </td>
+   <td>Entries for the start and end of each session, including date and time; source and destination zones, addresses and ports; application name; security rule applied to the traffic flow; rule action (allow, deny, or drop); ingress and egress interface; number of bytes; and session end reason.
+   </td>
    <td>Syslog</td>
    <td><a href="https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/view-and-manage-logs/log-types-and-severity-levels/traffic-logs">Traffic Logs</a></td>
   </tr>
   <tr>
    <td>Threat</td>
    <td>Events logged when traffic matches one of the Security Profiles attached to a security rule on the firewall.</td>
-   <td>Syslog</td>
+   <td>Syslog
+   </td>
    <td><a href="https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/view-and-manage-logs/log-types-and-severity-levels/threat-logs">Threat Logs</a></td>
   </tr>
   <tr>
@@ -56,7 +63,8 @@ Parsing in the Sumo Logic app for PAN 8 is based on the [PAN-OS Syslog Integrati
    <td>TrapsV4</td>
    <td>Events logged by the Traps Endpoint Security component.</td>
    <td>Common Event Format (CEF)</td>
-   <td><a href="https://www.paloaltonetworks.com/documentation/traps/4-2/traps-endpoint-security-manager-admin/reports-and-logging/forward-logs-to-an-external-logging-platform/cef-format#traps-admin-rpts-cef">CEF Format</a> </td>
+   <td><a href="https://www.paloaltonetworks.com/documentation/traps/4-2/traps-endpoint-security-manager-admin/reports-and-logging/forward-logs-to-an-external-logging-platform/cef-format#traps-admin-rpts-cef">CEF Format</a>
+   </td>
   </tr>
 </table>
 
@@ -218,9 +226,7 @@ This section provides instructions for installing the Palo Alto Networks 8 App, 
 
 This app supports PAN-OS v7 and v8.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Palo Alto Networks 8 Dashboards
 

@@ -59,9 +59,7 @@ Applications can be installed only by users with a Sumo Logic Professional or a
 
 ## Installing Apps to your Library
 
-import AppInstall from '../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../reuse/apps/app-install.md}
 
 ## Install Apps in Multiple Environments
 

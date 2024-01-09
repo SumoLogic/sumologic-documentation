@@ -560,13 +560,131 @@ Use this dashboard to:
 
 Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Varnish cache is available and performing as expected.
 
-| Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
-|:---|:---|:---|:---|:---|:---|
-| Metrics | Varnish - Backend Busy | This alert fires when the Varnish backend is busy for more than 5 minutes and is unable to serve requests. | Warning | >0 | < =0 |
-| Metrics | Varnish - Backend Connection Retries | This alert fires when there a more than 5 backend connection retries, which can indicate misconfiguration. | Warning | >5 | < =5 |
-| Metrics | Varnish - Backend Failed Connections | This alert fires when there are failed connections to the backend. | Warning | >0 | < =0 |
-| Metrics | Varnish - Unhealthy Backend | This alert fires when we detect that a backend server is unhealthy for more than 5 minutes. | Critical | >0 | < =0 |
-| Metrics | Varnish - Thread creation failed | This alert fires when Varnish is unable to create threads, which indicates either under-provisioning or misconfiguration. | Warning | >0 | < =0 |
-| Logs | Varnish - Access from Highly Malicious Sources | This alert fires when Varnish is accessed from highly malicious IP addresses. | Critical | >0 | < =0 |
-| Logs | Varnish - High 4XX Error Rate | This alert fires when too many HTTP requests (>5%) with a response status of 4xx. | Critical | >5 | < =5 |
-| Logs | Varnish - High 5XX Error Rate | This alert fires when too many HTTP requests (>5%) with a response status of 5xx. | Critical | >5 | < =5 |
+<table>
+  <tr>
+   <td>Alert Type (Metrics/Logs)
+   </td>
+   <td>Alert Name
+   </td>
+   <td>Alert Description
+   </td>
+   <td>Trigger Type (Critical / Warning)
+   </td>
+   <td>Alert Condition
+   </td>
+   <td>Recover Condition
+   </td>
+  </tr>
+  <tr>
+   <td>Metrics
+   </td>
+   <td>Varnish - Backend Busy
+   </td>
+   <td>This alert fires when the Varnish backend is busy for more than 5 minutes and is unable to serve requests.
+   </td>
+   <td>Warning
+   </td>
+   <td> &#62;0
+   </td>
+   <td> &#60; &#61;0
+   </td>
+  </tr>
+  <tr>
+   <td>Metrics
+   </td>
+   <td>Varnish - Backend Connection Retries
+   </td>
+   <td>This alert fires when there a more than 5 backend connection retries, which can indicate misconfiguration.
+   </td>
+   <td>Warning
+   </td>
+   <td> &#62;5
+   </td>
+   <td> &#60; &#61;5
+   </td>
+  </tr>
+  <tr>
+   <td>Metrics
+   </td>
+   <td>Varnish - Backend Failed Connections
+   </td>
+   <td>This alert fires when there are failed connections to the backend.
+   </td>
+   <td>Warning
+   </td>
+   <td> &#62;0
+   </td>
+   <td> &#60; &#61;0
+   </td>
+  </tr>
+  <tr>
+   <td>Metrics
+   </td>
+   <td>Varnish - Unhealthy Backend
+   </td>
+   <td>This alert fires when we detect that a backend server is unhealthy for more than 5 minutes.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62;0
+   </td>
+   <td> &#60; &#61;0
+   </td>
+  </tr>
+  <tr>
+   <td>Metrics
+   </td>
+   <td>Varnish - Thread creation failed
+   </td>
+   <td>This alert fires when Varnish is unable to create threads, which indicates either under-provisioning or misconfiguration.
+   </td>
+   <td>Warning
+   </td>
+   <td> &#62;0
+   </td>
+   <td> &#60; &#61;0
+   </td>
+  </tr>
+  <tr>
+   <td>Logs
+   </td>
+   <td>Varnish - Access from Highly Malicious Sources
+   </td>
+   <td>This alert fires when Varnish is accessed from highly malicious IP addresses.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62;0
+   </td>
+   <td> &#60; &#61;0
+   </td>
+  </tr>
+  <tr>
+   <td>Logs
+   </td>
+   <td>Varnish - High 4XX Error Rate
+   </td>
+   <td>This alert fires when too many HTTP requests (>5%) with a response status of 4xx.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62;5
+   </td>
+   <td> &#60; &#61;5
+   </td>
+  </tr>
+  <tr>
+   <td>Logs
+   </td>
+   <td>Varnish - High 5XX Error Rate
+   </td>
+   <td>This alert fires when too many HTTP requests (>5%) with a response status of 5xx.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62;5
+   </td>
+   <td> &#60; &#61;5
+   </td>
+  </tr>
+</table>

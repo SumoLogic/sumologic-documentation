@@ -47,7 +47,7 @@ The following expression divides `error_count` by `user_count`.
 
 ## /*  */
 
-The forward slash and asterisk characters (/*  */) comment out lines.
+The forward slash and asterisk characters (/*  */) comment out lines. 
 
 For Cloud SIEM rules, two forward slashes (//) are *not* supported for commenting out lines. Two forward slashes are allowed in Sumo Logic core platform, however, for [comments in search queries](/docs/search/get-started-with-search/search-basics/comments-search-queries/).
 
@@ -59,9 +59,9 @@ For Cloud SIEM rules, two forward slashes (//) are *not* supported for commentin
 
 `/* This is a comment. */`
 
-## `<`
+## <
 
-The less than (`<`) character returns “true” if the expression is less than the other expression.
+The less than (<) character returns “true” if the expression is less than the other expression.
 
 **Syntax**
 
@@ -77,9 +77,9 @@ The less than (`<`) character returns “true” if the expression is less than 
 
 `null < null  // false`
 
-## `<=`
+## <=
 
-The is less than or equal to (`<=`) character returns true if the expression is less than or equal to the other expression.
+The is less than or equal to (<=) character returns true if the expression is less than or equal to the other expression.
 
 **Syntax**
 
@@ -750,7 +750,7 @@ attribute.
 **Syntax notes**
 
 * In Sumo Logic core platform, you can use the `json` operator without specifying a field to parse, in which case the operation is performed against the `_raw` field.
-
+ 
 :::note
 Currently, to use the `json` operator in Cloud SIEM you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in Cloud SIEM.
 :::

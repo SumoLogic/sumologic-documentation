@@ -98,9 +98,7 @@ Follow the instructions for setting up [Cato Networks](/docs/send-data/hosted-co
 
 This section has instructions for installing the Sumo Logic app for Cato Networks. Refer to the [Cato Networks Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cato-networks-source/) to create the source and use the same source category while installing the app.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Cato Networks dashboards​​
 

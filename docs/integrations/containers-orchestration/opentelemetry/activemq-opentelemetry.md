@@ -96,15 +96,11 @@ If process metrics are enabled it will also create [fields for JMX metrics](/doc
 
 ## Collection configuration and app installation
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
-
-<ConfigAppInstall/>
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up OpenTelemetry Collector
 
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
-
-<SetupColl/>
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
@@ -133,9 +129,7 @@ Click on the **Download YAML File** button to get the YAML file.
 
 ### Step 3: Send logs and metrics to Sumo
 
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
-
-<LogsIntro/>
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -178,32 +172,24 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 </TabItem>
 <TabItem value="Chef">
 
-import ChefEnv from '../../../reuse/apps/opentelemetry/chef-with-env.md';
-
-<ChefEnv/>
+{@import ../../../reuse/apps/opentelemetry/chef-with-env.md}
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-import AnsEnv from '../../../reuse/apps/opentelemetry/ansible-with-env.md';
-
-<AnsEnv/>
+{@import ../../../reuse/apps/opentelemetry/ansible-with-env.md}
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-import PuppetEnv from '../../../reuse/apps/opentelemetry/puppet-with-env.md';
-
-<PuppetEnv/>
+{@import ../../../reuse/apps/opentelemetry/puppet-with-env.md}
 
 </TabItem>
 </Tabs>
 
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 
 ## Sample log messages
@@ -339,3 +325,4 @@ Use this dashboard to:
 * Quickly determine patterns across all audit logs in a given ActiveMQ cluster.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-Audit.png' alt="ActiveMQ dashboards" />
+

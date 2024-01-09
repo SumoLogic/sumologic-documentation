@@ -13,31 +13,36 @@ Sumo Logic provides a variety of apps for security products and platforms, from 
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/akamai-security-events"><img src={useBaseUrl('img/integrations/security-threat-detection/Akamai_logo.png')} alt="icon" width="90"/><h4>Akamai Security Events</h4></a>
+  <a href="/docs/integrations/security-threat-detection/akamai-security-events">
+  <img src={useBaseUrl('img/integrations/security-threat-detection/Akamai_logo.png')} alt="icon" width="90"/><h4>Akamai Security Events</h4></a>
   <p>A guide to the Sumo Logic app for Akamai Security Events.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/alert-logic"><img src={useBaseUrl('img/integrations/security-threat-detection/alert-logic-logo.jpg')} alt="icon" width="150"/><h4>Alert Logic</h4></a>
+  <a href="/docs/integrations/security-threat-detection/alert-logic">
+  <img src={useBaseUrl('img/integrations/security-threat-detection/alert-logic-logo.jpg')} alt="icon" width="150"/><h4>Alert Logic</h4></a>
   <p>A guide to the Sumo Logic app for Alert Logic.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/barracuda-waf"><img src={useBaseUrl('img/integrations/security-threat-detection/barracuda.png')} alt="icon" width="80"/><h4>Barracuda WAF</h4></a>
+  <a href="/docs/integrations/security-threat-detection/barracuda-waf">
+  <img src={useBaseUrl('img/integrations/security-threat-detection/barracuda.png')} alt="icon" width="80"/><h4>Barracuda WAF</h4></a>
   <p>A guide to the Sumo Logic app for Barracuda WAF.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/carbon-black-cloud"><img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="icon" width="40"/><h4>Carbon Black Cloud</h4></a>
+  <a href="/docs/integrations/security-threat-detection/carbon-black-cloud">
+  <img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="icon" width="40"/><h4>Carbon Black Cloud</h4></a>
   <p>A guide to the Sumo Logic app for Carbon Black Cloud.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/cisco-asa"><img src={useBaseUrl('img/integrations/security-threat-detection/cisco.png')} alt="icon" width="70"/><h4>Cisco ASA</h4></a>
+  <a href="/docs/integrations/security-threat-detection/cisco-asa">
+  <img src={useBaseUrl('img/integrations/security-threat-detection/cisco.png')} alt="icon" width="70"/><h4>Cisco ASA</h4></a>
   <p>A guide to the Sumo Logic app for Cisco ASA.</p>
   </div>
 </div>

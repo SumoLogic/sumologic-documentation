@@ -355,20 +355,28 @@ When you configure the sources, plan your source categories to ease the querying
 
 <table>
   <tr>
-   <td>Source</td>
-   <td>Example Source Category </td>
+   <td>Source
+   </td>
+   <td>Example Source Category
+   </td>
   </tr>
   <tr>
-   <td>Alert Logs</td>
-   <td>DB/Oracle/Alert </td>
+   <td>Alert Logs
+   </td>
+   <td>DB/Oracle/Alert
+   </td>
   </tr>
   <tr>
-   <td>Listener Logs</td>
-   <td>DB/Oracle/Listener   </td>
+   <td>Listener Logs
+   </td>
+   <td>DB/Oracle/Listener
+   </td>
   </tr>
   <tr>
-   <td>Audit   </td>
-   <td>DB/Oracle/Audit   </td>
+   <td>Audit
+   </td>
+   <td>DB/Oracle/Audit
+   </td>
   </tr>
 </table>
 
@@ -497,19 +505,19 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 
 | Alert Type (Metrics/Logs) | Alert Name       | Alert Description    | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
 |:---------------------------|:-------------------------|:----------------|:-----------------|:-----------------|:-------------------|
-| Logs                      | Oracle - Admin Restricted Command Execution | This alert fires when the Listener is unable to resolve a command.                                                           | Warning                           | > 0             | `<=` 0              |
-| Logs                      | Oracle - Archival Log Creation              | This alert fires when there is an archive log creation error.                                                                | Warning                           | > 0             | `<=` 0              |
-| Logs                      | Oracle - Block Corruption                   | This alert fires when we detect corrupted data blocks.                                                                       | Warning                           | > 0             | `<=` 0              |
-| Logs                      | Oracle - Database Crash                     | This alert fires when the database crashes.                                                                                  | Critical                          | >0              | `<=` 0              |
-| Logs                      | Oracle - Deadlock                           | This alert fires when deadlocks are detected.                                                                                | Warning                           | >5              | `<=` 0              |
-| Logs                      | Oracle - Fatal NI Connect Error             | This alert fires when we detect a "Fatal NI connect error".                                                                  | Warning                           | >0              | `<=` 0              |
-| Logs                      | Oracle - Internal Errors                    | This alert fires when internal errors are detected.                                                                          | Warning                           | >0              | `<=` 0              |
-| Logs                      | Oracle - Login Fail                         | This alert fires when we detect that a user cannot login.                                                                    | Warning                           | >0              | `<=` 0              |
-| Logs                      | Oracle - Possible Inappropriate Activity    | This alert fires when we detect possible inappropriate activity.                                                             | Warning                           | >0              | `<=` 0              |
-| Logs                      | Oracle - TNS Error                          | This alert fires when we detect TNS operations errors.                                                                       | Critical                          | >0              | `<=` 0              |
-| Logs                      | Oracle - Unable To Extend Tablespace        | This alert fires when we detect that we are unable to extend tablespaces.                                                    | Warning                           | >0              | `<=` 0              |
-| Logs                      | Oracle - Unauthorized Command Execution     | This alert fires when we detect that a user is not authorized to execute a requested listener command in an Oracle instance. | Warning                           | >0              | `<=` 0              |
-| Metrics                   | Oracle - Database Down                      | This alert fires when we detect that the Oracle database is down.                                                            | Critical                          | >0              | `<=` 0              |
+| Logs                      | Oracle - Admin Restricted Command Execution | This alert fires when the Listener is unable to resolve a command.                                                           | Warning                           | > 0             | <= 0              |
+| Logs                      | Oracle - Archival Log Creation              | This alert fires when there is an archive log creation error.                                                                | Warning                           | > 0             | <= 0              |
+| Logs                      | Oracle - Block Corruption                   | This alert fires when we detect corrupted data blocks.                                                                       | Warning                           | > 0             | <= 0              |
+| Logs                      | Oracle - Database Crash                     | This alert fires when the database crashes.                                                                                  | Critical                          | >0              | <= 0              |
+| Logs                      | Oracle - Deadlock                           | This alert fires when deadlocks are detected.                                                                                | Warning                           | >5              | <= 0              |
+| Logs                      | Oracle - Fatal NI Connect Error             | This alert fires when we detect a "Fatal NI connect error".                                                                  | Warning                           | >0              | <= 0              |
+| Logs                      | Oracle - Internal Errors                    | This alert fires when internal errors are detected.                                                                          | Warning                           | >0              | <= 0              |
+| Logs                      | Oracle - Login Fail                         | This alert fires when we detect that a user cannot login.                                                                    | Warning                           | >0              | <= 0              |
+| Logs                      | Oracle - Possible Inappropriate Activity    | This alert fires when we detect possible inappropriate activity.                                                             | Warning                           | >0              | <= 0              |
+| Logs                      | Oracle - TNS Error                          | This alert fires when we detect TNS operations errors.                                                                       | Critical                          | >0              | <= 0              |
+| Logs                      | Oracle - Unable To Extend Tablespace        | This alert fires when we detect that we are unable to extend tablespaces.                                                    | Warning                           | >0              | <= 0              |
+| Logs                      | Oracle - Unauthorized Command Execution     | This alert fires when we detect that a user is not authorized to execute a requested listener command in an Oracle instance. | Warning                           | >0              | <= 0              |
+| Metrics                   | Oracle - Database Down                      | This alert fires when we detect that the Oracle database is down.                                                            | Critical                          | >0              | <= 0              |
 | Metrics                   | Oracle - High CPU Usage                     | This alert fires when CPU usage on a node in an Oracle cluster is high.                                                      | Critical                          | >=80            | < 80              |
 | Metrics                   | Oracle - Process Limit Critical             | This alert fires when process CPU utilization is over 90%                                                                    | Critical                          | >=90            | < 90              |
 | Metrics                   | Oracle - Process Limit Warning              | This alert fires when processes CPU utilization is over 80%                                                                  | Warning                           | >=80            | < 80              |
@@ -626,20 +634,24 @@ The database user that you use to run the SQL queries should have permission to 
 
 <table>
   <tr>
-   <td><strong>Query </strong> </td>
-   <td><strong>SQL Command to Grant Permissions</strong></td>
+   <td><strong>Query </strong>
+   </td>
+   <td><strong>SQL Command to Grant Permissions</strong>
+  </td>
   </tr>
   <tr>
    <td>For Queries 1 through 3</td>
    <td><p><code>SQL> grant select on sys.v_$tablespace to &#60;username&#62;;</code></p>
 <p><code>SQL> grant select on sys.dba_free_space to &#60;username&#62;;</code></p>
 <p><code>SQL> grant select on sys.v_$datafile to &#60;username&#62;;</code></p>
-<p><code>SQL> grant select on v_$sysstat to &#60;username&#62;;</code></p></td>
+<p><code>SQL> grant select on v_$sysstat to &#60;username&#62;;</code></p>
+   </td>
   </tr>
   <tr>
    <td>For Query 4</td>
    <td><p><code>SQL> grant select on sys.v_$session to &#60;username&#62;;</code></p>
-<p><code>SQL> grant select on sys.v_$process to &#60;username&#62;;</code></p></td>
+<p><code>SQL> grant select on sys.v_$process to &#60;username&#62;;</code></p>
+   </td>
   </tr>
   <tr>
    <td>For Queries 5 and 6</td>
@@ -943,9 +955,7 @@ oracle_script/sumooracle>python3 oracle-perf-monitor.py
 
 This section demonstrates how to install the Oracle app.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Oracle Dashboards
 

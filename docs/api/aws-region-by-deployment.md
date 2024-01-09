@@ -5,6 +5,4 @@ sidebar_label: AWS Regions by Deployment
 description: This guide contains information about API authentication and the Sumo Logic endpoints to use for your API client.
 ---
 
-import AwsRegion from '../reuse/aws-region-by-sumo-deployment.md';
-
-<AwsRegion/>
+{@import ../reuse/aws-region-by-sumo-deployment.md}

@@ -34,7 +34,7 @@ The Tanuki wrapper that starts the Collector application uses ports 31000 - 3200
 
 To solve the problem, update the firewall settings or update the port range to a different unused port range as follows.
 
-1. Edit `<sumo_install_dir>/config/wrapper.conf` add the following lines to the end of the file:
+1. Edit <sumo_install_dir>/config/wrapper.conf add the following lines to the end of the file:
 
     ```
     wrapper.jvm.port.min=<min_port_number>  # default 31000

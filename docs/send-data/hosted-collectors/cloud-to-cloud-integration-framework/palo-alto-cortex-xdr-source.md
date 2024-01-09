@@ -103,7 +103,7 @@ To ensure accurate and effective display of all alerts, we recommend enabling du
 | `_siemVendor` | `Palo Alto ` | Set when **Forward To SIEM** is checked. |
 | `_siemProduct` | `Cortex` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
-| `_siemEventID` | `<category>` | Alert logs and associated event logs use `{category}` while incident logs use the static text `incident` |
+| `_siemEventID` | `<category>` | Alert logs and associated event logs use {category} while incident logs use the static text `incident` |
 
 ## JSON schema
 

@@ -738,7 +738,7 @@ You can use general mathematical expressions on numerical data extracted from lo
   <tr>
    <td><a href="/docs/search/search-query-language/math-expressions/acos">acos</a></td>
    <td>Inverse cosine; result is in radians.</td>
-   <td><code>| acos(x)\ </code></td>
+   <td><code>| acos(x)\</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/math-expressions/atan">atan</a></td>

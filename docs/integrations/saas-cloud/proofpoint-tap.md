@@ -163,9 +163,7 @@ To set up [Cloud to Cloud Integration Proofpoint TAP Source](/docs/send-data/hos
 
 This section provides instructions on how to install the Proofpoint TAP app, as well as examples of each of the dashboards. The app pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Proofpoint TAP dashboards
 

@@ -19,9 +19,7 @@ See [Collecting Logs for the Amazon GuardDuty App](/docs/integrations/amazon-aws
 
 Now that you have set up the collection for Amazon GuardDuty, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing the Amazon GuardDuty Dashboards
 

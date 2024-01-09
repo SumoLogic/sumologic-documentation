@@ -22,8 +22,7 @@ The app uses Mimecast Source to collect [SIEM](https://integrations.mimecast.com
 
 ## Sample log message
 
-<details>
-<summary>View Sample Log Message</summary>
+<details><summary>View Sample Log Message</summary>
 
 ```json title="SIEM Log"
 {
@@ -70,8 +69,7 @@ The app uses Mimecast Source to collect [SIEM](https://integrations.mimecast.com
 
 ## Sample Query
 
-<details>
-<summary>View Sample Queries</summary>
+<details><summary>View Sample Queries</summary>
 
 ```sql title="Messages Delivered Without TLS"
 _sourceCategory="mimecast_app" Delivered Dir

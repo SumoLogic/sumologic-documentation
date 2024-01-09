@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 | Polling Interval | Data |
 | :--- | :--- |
-| `{{Polling time in minutes}}` | `{{Data sources}}` |
+| {{Polling time in minutes}} | {{Data sources}} |
 
 Example:
 | Polling Interval | Data |
@@ -62,23 +62,19 @@ Example: [Split source configuration](/docs/integrations/webhooks/split/#source-
 
 #### Metadata fields (If any)
 
-\Insert metadata fields in the Sumo Logic UI. Update the below table accordingly.\
+\Insert meta deta fields in the Sumo Logic UI. Update the below table accordingly.\
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
-| `{{field}}` | `{{value}}` | `{{Description}}` |
+| {{`field`}} | {{value}} | {{Description}} |
 
 ## Installing the Split app
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';
-
-<AppInstall2/>
+{@import ../../reuse/apps/app-install-v2.md}
 
 ## Viewing Split dashboards
 
-import ViewDash from '../../reuse/apps/view-dashboards.md';
-
-<ViewDash/>
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Dashboard 1 (example: Overview)
 

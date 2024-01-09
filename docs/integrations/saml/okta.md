@@ -18,8 +18,7 @@ The Sumo Logic Collector uses Okta System Log API to get the logs of Okta System
 
 ### Sample Log message
 
-<details>
-<summary>Click to expand</summary>
+<details><summary>Click to expand</summary>
 
 ```json
 {
@@ -197,9 +196,7 @@ The Okta Log Collection configuration via SumoJanus is no longer applicable and 
 
 Now that you have set up collection for Okta, install the Sumo Logic App for Okta to use the preconfigured searches and dashboards that provide insight into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+{@import ../../reuse/apps/app-install.md}
 
 ## Viewing Okta Dashboards
 

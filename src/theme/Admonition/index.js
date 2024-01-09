@@ -43,7 +43,7 @@ function InfoIcon() {
     </svg>
   );
 }
-function WarningIcon() {
+function CautionIcon() {
   return (
     <svg viewBox="0 0 16 16">
       <path
@@ -115,14 +115,14 @@ const AdmonitionConfigs = {
       </Translate>
     ),
   },
-  warning: {
+  caution: {
     infimaClassName: 'warning',
-    iconComponent: WarningIcon,
+    iconComponent: CautionIcon,
     label: (
       <Translate
-        id="theme.admonition.warning"
-        description="The default label used for the Warning admonition (:::warning)">
-        warning
+        id="theme.admonition.caution"
+        description="The default label used for the Caution admonition (:::caution)">
+        caution
       </Translate>
     ),
   },

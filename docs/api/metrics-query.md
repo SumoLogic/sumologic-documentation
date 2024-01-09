@@ -39,9 +39,7 @@ A metric query consists of a metric, one or more filters, and optionally, one or
 
 ## Documentation
 
-import ApiIntro from '../reuse/api-intro.md';
-
-<ApiIntro/>
+{@import ../reuse/api-intro.md}
 
 | Deployment | Documentation URL                                    |
 |:------------|:------------------------------------------------------|

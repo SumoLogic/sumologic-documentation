@@ -50,15 +50,11 @@ A restart is required for traffic collection to take effect.
 
 ## Collection configuration and app installation
 
-import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
-
-<ConfigAppInstall/>
+{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
 
 ### Step 1: Set up Collector
 
-import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
-
-<SetupColl/>
+{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Collector.png' style={{border:'1px solid black'}} alt="Artifactory-Collector" />
 
@@ -81,9 +77,7 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Send logs to Sumo Logic
 
-import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
-
-<LogsIntro/>
+{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
 
 <Tabs
   className="unique-tabs"
@@ -127,33 +121,25 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
 <TabItem value="Chef">
 
-import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
-
-<ChefNoEnv/>
+{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
-
-<AnsibleNoEnv/>
+{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
-
-<PuppetNoEnv/>
+{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
 
 </TabItem>
 
 </Tabs>
 
-import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
-
-<LogsOutro/>
+{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
 
 ## Sample Log Messages
 
@@ -181,46 +167,34 @@ This sample Query is from the **Artifactory - Cached Deployment Activity** > **A
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Overview.png' alt="Artifactory-Overview" />
 
-import JfrogOv from '../../../reuse/apps/jfrog/artifactory-overview.md';
-
-<JfrogOv/>
+{@import ../../../reuse/apps/jfrog/artifactory-overview.md}
 
 ### Artifactory - Cached Deployment Activity
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Cached-Deployment-Activity.png' alt="Artifactory-Cached-Deployment-Activity" />
 
-import JfrogCache from '../../../reuse/apps/jfrog/artifactory-cached.md';
-
-<JfrogCache/>
+{@import ../../../reuse/apps/jfrog/artifactory-cached.md}
 
 ### Artifactory - Download Activity
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Download-Activity.png' alt="Artifactory-Download-Activity" />
 
-import JfrogDl from '../../../reuse/apps/jfrog/artifactory-download.md';
-
-<JfrogDl/>
+{@import ../../../reuse/apps/jfrog/artifactory-download.md}
 
 ### Artifactory - Non-Cached Deployment Activity
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Non-Cached-Deployment-Activity.png' alt="Artifactory-Non-Cached-Deployment-Activity" />
 
-import JfrogNon from '../../../reuse/apps/jfrog/artifactory-noncached.md';
-
-<JfrogNon/>
+{@import ../../../reuse/apps/jfrog/artifactory-noncached.md}
 
 ### Artifactory - Request and Access
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Request-and-Access.png' alt="Artifactory-Request-and-Access" />
 
-import JfrogReq from '../../../reuse/apps/jfrog/artifactory-request-access.md';
-
-<JfrogReq/>
+{@import ../../../reuse/apps/jfrog/artifactory-request-access.md}
 
 ### Artifactory - Traffic
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Traffic.png' alt="Artifactory-Traffic" />
 
-import JfrogTr from '../../../reuse/apps/jfrog/artifactory-traffic.md';
-
-<JfrogTr/>
+{@import ../../../reuse/apps/jfrog/artifactory-traffic.md}

@@ -105,6 +105,4 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
  
 ## Create multiple SAML configurations
 
-import Saml from '../../../reuse/saml.md';
-
-<Saml/>
+{@import ../../../reuse/saml.md}
