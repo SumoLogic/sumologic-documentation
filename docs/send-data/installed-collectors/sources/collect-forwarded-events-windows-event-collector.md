@@ -4,6 +4,8 @@ title: Collect Forwarded Events from a Windows Event Collector
 description: Use a Windows Event Source to collect forwarded events from a Windows Event Collector.
 ---
 
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
+
 A Sumo Logic Windows Event Log Source can track and collect forwarded events from a [Windows Event Collector](https://docs.microsoft.com/en-us/windows/win32/wec/windows-event-collector). A Windows Event Collector receives forwarded events from other remote Windows computers.
 
 To collect forwarded events from a Windows Event Collector you need to create a dedicated Windows Event Log Source on the same local machine as the Windows Event Collector. When configuring the Windows Event Log Source in Sumo Logic you'll only select **Forwarded Events** from the checkbox options for **Windows Event Types**. If you have custom Forwarded Event Channels you can additionally specify them in the Custom Event Channels textbox.
@@ -100,9 +102,6 @@ To configure a Windows Event Log Source:
        :::
 
        :::note
-       
-       import CollBegin from '../../../reuse/collection-should-begin-note.md';
-
        <CollBegin/>
        :::
 

@@ -8,6 +8,7 @@ description: The Sumo Logic app for MariaDB is a unified logs and metrics app th
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CollBegin from '../../reuse/collection-should-begin-note.md';
 
 <img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="Thumbnail icon" width="80"/>
 
@@ -295,7 +296,6 @@ This section demonstrates how to configure a Local File Source for MariaDB Error
    3. **File Path** (Required). Enter the path to your mariadb-error.log. The files are typically located in /var/log/mariadb/mariadb-error.log. If you're using a customized path, check the server.cnf file for this information
    4. **Collection should begin**. Set this for how far back historically you want to start collecting.
    :::note
-   import CollBegin from '../../reuse/collection-should-begin-note.md';
    <CollBegin/>
    :::
    5. **Source Host** (Optional). Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname

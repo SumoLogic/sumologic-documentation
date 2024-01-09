@@ -130,7 +130,7 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
 
 1. **(Recommended Method) Add labels on your Elasticsearch pods to capture logs from standard output on Kubernetes**.
    1. Apply the following labels to the Elasticsearch pods:
-    ```sql
+    ```sh
     environment = "dev_CHANGE_ME"
     component = "database"
     db_system = "elasticsearch"
@@ -537,251 +537,21 @@ The **ElasticSearch - Queries** dashboard shows Elasticsearch provides analytics
 
 Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Elasticsearch database cluster is available and performing as expected.
 
-
-<table cellpadding="0" cellspacing="0" dir="ltr" style="table-layout: fixed;">
-    <colgroup>
-        <col width="100" />
-        <col width="285" />
-        <col width="352" />
-        <col width="100" />
-        <col width="100" />
-        <col width="100" />
-        <col width="100" />
-    </colgroup>
-    <thead>
-        <tr>
-            <th data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Alert Type (Metrics/Logs)&quot;}" scope="col">Alert Type (Metrics/Logs)</th>
-            <th data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Alert Name&quot;}" scope="col">Alert Name</th>
-            <th data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Alert Description&quot;}" scope="col">Alert Description</th>
-            <th data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Trigger Type (Critical / Warning)&quot;}" scope="col">Trigger Type (Critical / Warning)</th>
-            <th data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Alert Condition&quot;}" scope="col">Alert Condition</th>
-            <th data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Recover Condition&quot;}" scope="col">Recover Condition</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Metrics&quot;}" rowspan="1">
-            <p>Metrics</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Cluster Red&quot;}" rowspan="1">
-            <p>Elasticsearch - Cluster Red</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when Elasticsearch Cluster status is RED&quot;}" rowspan="1">
-            <p>This alert fires when Elasticsearch Cluster status is RED</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Critical&quot;}">Critical</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;=3&quot;}">&gt;=3</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;3&quot;}">&lt;3</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Metrics&quot;}" rowspan="1">
-            <p>Metrics</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Cluster Yellow&quot;}" rowspan="1">
-            <p>Elasticsearch - Cluster Yellow</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when Elasticsearch Cluster status is YELLOW&quot;}" rowspan="1">
-            <p>This alert fires when Elasticsearch Cluster status is YELLOW</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Warning&quot;}">Warning</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;=2&quot;}">&gt;=2</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;2&quot;}">&lt;2</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Metrics&quot;}" rowspan="1">
-            <p>Metrics</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Disk Out of Space&quot;}" rowspan="1">
-            <p>Elasticsearch - Disk Out of Space</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when the disk usage is over 90%&quot;}" rowspan="1">
-            <p>This alert fires when the disk usage is over 90%</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Critical&quot;}">Critical</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;90&quot;}">&gt;90</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;=90&quot;}">&lt;=90</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Metrics&quot;}" rowspan="1">
-            <p>Metrics</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Disk Space Low&quot;}" rowspan="1">
-            <p>Elasticsearch - Disk Space Low</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when the disk usage is over 80%&quot;}" rowspan="1">
-            <p>This alert fires when the disk usage is over 80%</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Warning&quot;}">Warning</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;80&quot;}">&gt;80</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;= 80&quot;}">&lt;= 80</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Metrics&quot;}" rowspan="1">
-            <p>Metrics</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Healthy Data Nodes&quot;}" rowspan="1">
-            <p>Elasticsearch - Healthy Data Nodes</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when there missing data node in Elasticsearch cluster&quot;}" rowspan="1">
-            <p>This alert fires when there missing data node in Elasticsearch cluster</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Critical&quot;}">Critical</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;3&quot;}">&lt;3</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;=3&quot;}">&gt;=3</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Metrics&quot;}" rowspan="1">
-            <p>Metrics</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Healthy Nodes&quot;}" rowspan="1">
-            <p>Elasticsearch - Healthy Nodes</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when there is missing node in Elasticsearch cluster&quot;}" rowspan="1">
-            <p>This alert fires when there is missing node in Elasticsearch cluster</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Critical&quot;}">Critical</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;3&quot;}">&lt;3</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;=3&quot;}">&gt;=3</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Metrics&quot;}" rowspan="1">
-            <p>Metrics</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Heap Usage Too High&quot;}" rowspan="1">
-            <p>Elasticsearch - Heap Usage Too High</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when the heap usage is over 90%&quot;}" rowspan="1">
-            <p>This alert fires when the heap usage is over 90%</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Critical&quot;}">Critical</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;90&quot;}">&gt;90</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;=90&quot;}">&lt;=90</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Metrics&quot;}" rowspan="1">
-            <p>Metrics</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Heap Usage Warning&quot;}" rowspan="1">
-            <p>Elasticsearch - Heap Usage Warning</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when the heap usage is over 80%&quot;}" rowspan="1">
-            <p>This alert fires when the heap usage is over 80%</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Warning&quot;}">Warning</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;80&quot;}">&gt;80</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;=80&quot;}">&lt;=80</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Metrics&quot;}" rowspan="1">
-            <p>Metrics</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Initializing Shards Too Long&quot;}" rowspan="1">
-            <p>Elasticsearch - Initializing Shards Too Long</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when elasticsearch has been initializing shards for 5 min&quot;}" rowspan="1">
-            <p>This alert fires when elasticsearch has been initializing shards for 5 min</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Warning&quot;}">Warning</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;0&quot;}">&gt;0</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;=0&quot;}">&lt;=0</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Metrics&quot;}" rowspan="1">
-            <p>Metrics</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Pending Tasks&quot;}" rowspan="1">
-            <p>Elasticsearch - Pending Tasks</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when elasticsearch has pending tasks.&quot;}" rowspan="1">
-            <p>This alert fires when elasticsearch has pending tasks.</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Warning&quot;}">Warning</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;0&quot;}">&gt;0</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;=0&quot;}">&lt;=0</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Metrics&quot;}" rowspan="1">
-            <p>Metrics</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Relocating Shards Too Long&quot;}" rowspan="1">
-            <p>Elasticsearch - Relocating Shards Too Long</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when elasticsearch has been relocating shards for 5min&quot;}" rowspan="1">
-            <p>This alert fires when elasticsearch has been relocating shards for 5min</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Warning&quot;}">Warning</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;0&quot;}">&gt;0</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;=0&quot;}">&lt;=0</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Metrics&quot;}" rowspan="1">
-            <p>Metrics</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Unassigned Shards&quot;}" rowspan="1">
-            <p>Elasticsearch - Unassigned Shards</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when Elasticsearch has unassigned shards&quot;}" rowspan="1">
-            <p>This alert fires when Elasticsearch has unassigned shards</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Critical&quot;}">Critical</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;0&quot;}">&gt;0</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;=0&quot;}">&lt;=0</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Logs&quot;}" rowspan="1">
-            <p>Logs</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Query Time Too Slow&quot;}" rowspan="1">
-            <p>Elasticsearch - Query Time Too Slow</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when queries are slow to execute&quot;}" rowspan="1">
-            <p>This alert fires when queries are slow to execute</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Critical&quot;}">Critical</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;0&quot;}">&gt;0</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;=0&quot;}">&lt;=0</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Logs&quot;}" rowspan="1">
-            <p>Logs</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Query Time Slow&quot;}" rowspan="1">
-            <p>Elasticsearch - Query Time Slow</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when query time is greater than 5 ms&quot;}" rowspan="1">
-            <p>This alert fires when query time is greater than 5 ms</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Warning&quot;}">Warning</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;0&quot;}">&gt;0</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;=0&quot;}">&lt;=0</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Logs&quot;}" rowspan="1">
-            <p>Logs</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Too Many Slow Query&quot;}" rowspan="1">
-            <p>Elasticsearch - Too Many Slow Query</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;This alert fires when there aret oo Many Slow Query in 5 minutes&quot;}" rowspan="1">
-            <p>This alert fires when there aret oo Many Slow Query in 5 minutes</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Warning&quot;}">Warning</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;100&quot;}">&gt;100</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;=100&quot;}">&lt;=100</td>
-        </tr>
-        <tr>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Logs&quot;}" rowspan="1">
-            <p>Logs</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Elasticsearch - Error Log Too Many&quot;}" rowspan="1">
-            <p>Elasticsearch - Error Log Too Many</p>
-            </td>
-            <td colspan="1" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Error Log Too Many&quot;}" rowspan="1">
-            <p>Error Log Too Many</p>
-            </td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Critical&quot;}">Critical</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&gt;1000&quot;}">&gt;1000</td>
-            <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;&lt;=1000&quot;}">&lt;=1000</td>
-        </tr>
-    </tbody>
-</table>
+| Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|---|---|---|---|---|---|
+| Metrics | Elasticsearch - Cluster Red | This alert fires when Elasticsearch Cluster status is RED | Critical | > =3 | <3 |
+| Metrics | Elasticsearch - Cluster Yellow | This alert fires when Elasticsearch Cluster status is YELLOW | Warning | > =2 | <2 |
+| Metrics | Elasticsearch - Disk Out of Space | This alert fires when the disk usage is over 90% | Critical | >90 | < =90 |
+| Metrics | Elasticsearch - Disk Space Low | This alert fires when the disk usage is over 80% | Warning | >80 | < = 80 |
+| Metrics | Elasticsearch - Healthy Data Nodes | This alert fires when there missing data node in Elasticsearch cluster | Critical | <3 | > =3 |
+| Metrics | Elasticsearch - Healthy Nodes | This alert fires when there is missing node in Elasticsearch cluster | Critical | <3 | > =3 |
+| Metrics | Elasticsearch - Heap Usage Too High | This alert fires when the heap usage is over 90% | Critical | >90 | < =90 |
+| Metrics | Elasticsearch - Heap Usage Warning | This alert fires when the heap usage is over 80% | Warning | >80 | < =80 |
+| Metrics | Elasticsearch - Initializing Shards Too Long | This alert fires when elasticsearch has been initializing shards for 5 min | Warning | >0 | < =0 |
+| Metrics | Elasticsearch - Pending Tasks | This alert fires when elasticsearch has pending tasks. | Warning | >0 | < =0 |
+| Metrics | Elasticsearch - Relocating Shards Too Long | This alert fires when elasticsearch has been relocating shards for 5min | Warning | >0 | < =0 |
+| Metrics | Elasticsearch - Unassigned Shards | This alert fires when Elasticsearch has unassigned shards | Critical | >0 | < =0 |
+| Logs | Elasticsearch - Query Time Too Slow | This alert fires when queries are slow to execute | Critical | >0 | < =0 |
+| Logs | Elasticsearch - Query Time Slow | This alert fires when query time is greater than 5 ms | Warning | >0 | < =0 |
+| Logs | Elasticsearch - Too Many Slow Query | This alert fires when there aret oo Many Slow Query in 5 minutes | Warning | >100 | < =100 |
+| Logs | Elasticsearch - Error Log Too Many | Error Log Too Many | Critical | >1000 | < =1000 |

@@ -23,7 +23,7 @@ Copy this file and edit it for your App integration.
 
 ## Log types and metrics
 
-The {AppName} App uses...
+The `{AppName}` App uses...
 
 \Enter a list of log types, usually hyperlinked to vendor docs.\
 
@@ -75,13 +75,13 @@ The {AppName} App uses...
 
 \step description\
 
-## Install the {AppName} app
+## Install the `{AppName}` app
 
 import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing the {ppName} dashboards
+## Viewing the `{AppName}` dashboards
 
 import FilterDashboards from '../../reuse/filter-dashboards.md';
 

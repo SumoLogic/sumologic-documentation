@@ -12,6 +12,7 @@ import ExampleJSON from '/files/c2c/salesforce/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/salesforce/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/salesforce/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Thumbnail icon" width="75"/>
 
@@ -86,9 +87,7 @@ To configure a Salesforce Source:
 1. **Build In Memory Lookup.** Keep this checked. This will resolve IDs to human-readable names.
 1. **Collection Should begin.** Select the time range for how far back you want this source to start collecting data from Salesforce. Options available are: Now, 24 hours ago.
  :::note
- import CollBegin from '../../../reuse/collection-should-begin-note.md';
-
-<CollBegin/>
+ <CollBegin/>
  :::
 1. When you are finished configuring the Source, click **Submit**.
 

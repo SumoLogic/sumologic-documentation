@@ -6,6 +6,7 @@ description: Learn how to install and configure OpenTelemetry distributed tracin
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApmTrace from '../../../../../reuse/apm-traces-layer-order.md';
 
 This document covers how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions based on Java and send the data to Sumo Logic.
 
@@ -35,15 +36,11 @@ You'll need the following:
 
     <img src={useBaseUrl('img/traces/lambda-java1.png')} alt="Choose a layer" style={{border: '1px solid black'}} width="800" />
 
-1. Ensure the AWS Distro layer is present in the Layers section:
+1. Ensure the AWS Distro layer is present in the Layers section:<br/><img src={useBaseUrl('img/traces/lambda-java2.png')} alt="Layers" style={{border: '1px solid black'}} width="800" />
 
-    <img src={useBaseUrl('img/traces/lambda-java2.png')} alt="Layers" style={{border: '1px solid black'}} width="800" />
-
-    :::note
-    import ApmTrace from '../../../../../reuse/apm-traces-layer-order.md';
-
-    <ApmTrace/>
-    :::
+:::note
+<ApmTrace/>
+:::
 
 1. Navigate to the **Configuration > Environment variables** section and set up the following **required** environment variables:
 

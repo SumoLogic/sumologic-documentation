@@ -6,6 +6,7 @@ description: Add an Amazon S3 Source to upload messages to Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="40"/>
 
@@ -44,8 +45,6 @@ When you create an Amazon Source, you add it to a Hosted Collector. Before creat
 * If you're editing the `Collection should begin` date on a Source the new date must be after the current `Collection should begin` date.
 
  :::note
-
- import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
  <CollBegin/>
 
@@ -118,9 +117,6 @@ import Iframe from 'react-iframe';
     :::
 
     :::note
-
-    import CollBegin from '../../../reuse/collection-should-begin-note.md';
-
     <CollBegin/>
     :::
 

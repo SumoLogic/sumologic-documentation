@@ -103,7 +103,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 * Download the latest version of the Jolokia war file from: [https://jolokia.org/download.html](https://jolokia.org/download.html).
 * Rename the file from jolokia-war-X.X.X.war to jolokia.war
 * Create a configMap **jolokia** from the binary file `kubectl create configmap jolokia --from-file=jolokia.jar`
-* Create volume mount the jolokia.war file to ${TOMCAT_HOME}/webapps.
+* Create volume mount the jolokia.war file to `${TOMCAT_HOME}/webapps`.
 ```yml
 spec:
   volumes:
@@ -354,10 +354,10 @@ This section provides instructions for configuring metrics collection for the Su
 1. **Download and setup Jolokia on each Apache Tomcat node**.** As part of collecting metrics data from Telegraf, we will use the [Jolokia input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
   * Download the latest version of the Jolokia JVM-Agent from [Jolokia](https://jolokia.org/download.html).
   * Rename downloaded Jar file to jolokia.jar.
-  * Save the file jolokia.jar on your apache tomcat server in ${TOMCAT_HOME}/webapps.
+  * Save the file jolokia.jar on your apache tomcat server in `${TOMCAT_HOME}/webapps`.
   * Configure Apache Tomcat to use Jolokia.
-      1. Add following to tomcat-users.xml \
-      <role rolename="**role-CHANGEME**" /> \
+      1. Add following to tomcat-users.xml
+      <role rolename="**role-CHANGEME**" /> 
       <user name="**username-CHANGEME**" password="**password-CHANGEME**" roles="**role-CHANGEME**" />
       2. Start or Restart Apache Tomcat Service
       3. Verify the Jolokia agent installation by curl-ing this URL: `http://<tomcat_address>:<tomcat_port>/jolokia/version`.
