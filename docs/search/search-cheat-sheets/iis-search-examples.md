@@ -62,8 +62,7 @@ For more information, see [Keyword Search Expressions](../get-started-with-sear
   </tr>
   <tr>
    <td>If the "sc_substatus" field is missing don’t exclude those messages (nodrop)…otherwise non-matches would be filtered out.</td>
-   <td><code>| parse " 200 * " as sc_substatus nodrop</code>
-   </td>
+   <td><code>| parse " 200 * " as sc_substatus nodrop</code></td>
   </tr>
   <tr>
    <td>Calculate the number of times a page has been visited.</td>
