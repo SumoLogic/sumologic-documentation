@@ -170,7 +170,9 @@ Enter a parse expression to create an `account` field that maps to the alias you
 
 Now that you have set up a collection for the **AWS API gateway**, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing AWS API Gateway dashboards
 

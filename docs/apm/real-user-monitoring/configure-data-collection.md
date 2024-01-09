@@ -67,13 +67,16 @@ To configure a RUM HTTP Traces source:
    * **Ignore urls** (optional): Add a list of URLs not to collect trace data from. Supports regex. Make sure provided URLs are valid JavaScript flavor regexes. For example: `/^https:\/\/www.tracker.com\/.*/, /^https:\/\/api.mydomain.com\/log\/.*/`
    * **Custom Tags** (optional): Click **+Add** and enter a key and value for each **Custom Tags** to show in spans from instrumented browsers. As an example, you could enter a key of `internal.version` with a value of `0.1.21`. This information is saved in the script for `name_of_your_web_service`.
    * **Propagate Trace Header Cors Urls** (recommended): Add a list of URLs or URL patterns that pass tracing context to construct traces end-to-end. This information is saved in the script for `list_of_urls_to_receive_trace_context`. Make sure provided URLs are valid JavaScript flavor regexes. Some examples are `/^https:\/\/api.mydomain.com\/apiv3\/.*/` and `/^https:\/\/www.3rdparty.com\/.*/.`
-    :::caution **Propagate Trace Header Cors Urls**
-    Sumo Logic cannot perform configuration validation of services of other origins. You should always enable context propagation and CORS configuration changes in a test environment before setting it up in production.
-    <details><summary><strong>Click here</strong> to review our recommendations</summary>
-    This list is empty by default, which means trace context propagation&#8212;allowing creation of end to and front end to backend traces for cross-origin requests&#8212;is not enabled because of browser CORS security restrictions. To connect your front-end and back-end traces, make sure your environment supports <a href="https://www.w3.org/TR/trace-context">W3C Trace Context</a> HTTP headers. <br/><br/>To propagate tracing context to create front-end to back-end traces, set domain(s) to propagate W3C tracing context to. You must also configure your servers/APIs to accept and return following CORS headers in its response - for example: <code>Access-Control-Allow-Headers: traceparent, tracestate</code>.
-    Valid cross-origin resources must include the prefix <code>http://</code> or <code>https://</code> and the domain name. The port number is not required unless it differs from the default for HTTP (port 80) or HTTPS (port 443).
-    </details>
-    :::
+:::warning **Propagate Trace Header Cors Urls**
+Sumo Logic cannot perform configuration validation of services of other origins. You should always enable context propagation and CORS configuration changes in a test environment before setting it up in production.
+
+<details>
+<summary><strong>Click here</strong> to review our recommendations</summary>
+This list is empty by default, which means trace context propagation&#8212;allowing creation of end to and front end to backend traces for cross-origin requests&#8212;is not enabled because of browser CORS security restrictions. To connect your front-end and back-end traces, make sure your environment supports <a href="https://www.w3.org/TR/trace-context">W3C Trace Context</a> HTTP headers. <br/><br/>To propagate tracing context to create front-end to back-end traces, set domain(s) to propagate W3C tracing context to. You must also configure your servers/APIs to accept and return following CORS headers in its response - for example: <code>Access-Control-Allow-Headers: traceparent, tracestate</code>.
+Valid cross-origin resources must include the prefix <code>http://</code> or <code>https://</code> and the domain name. The port number is not required unless it differs from the default for HTTP (port 80) or HTTPS (port 443).
+</details>
+:::
+
    * **Geolocation recognition**: Select a **Geolocation recognition** option to automatically recognize geographical locations of your end clients from:
      * The country down to state (recommended for global websites)
      * A single country down to city level (recommended for local, country specific websites)

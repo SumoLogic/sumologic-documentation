@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Microsoft Graph Security V1 enables you to identify security threats by analyzing alert logs and helps you to improve web security posture, proactively detect and mitigate potential security risks, and improve compliance with security policies and regulations.
 
-:::caution
+:::warning
 This version of the app uses alerts from Microsoft Graph API (https://learn.microsoft.com/en-us/graph/api/alert-list?view=graph-rest-1.0&tabs=http) and continues to be supported for existing customers who are bringing in alerts from that source. If you are setting up a new cloud-to-cloud source, it will use API V2 (https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) which is covered by the [Microsoft Graph Security V2 app](/docs/integrations/saas-cloud/microsoft-graph-security-v2).
 :::
 
@@ -123,7 +123,9 @@ Follow the instructions for setting up the [Cloud-to-Cloud Integration for Micro
 
 This section has instructions for installing the Microsoft Graph Security app for Sumo Logic.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Microsoft Graph Security dashboards​​
 

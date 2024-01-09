@@ -10,7 +10,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Following are examples that show you how to create Cloud SIEM automations using the [Automation Service](/docs/platform-services/automation-service/). The examples, which are listed in order from simple (performing a basic automation using an out-of-the-box integration) to advanced (creating a custom integration), illustrate many of the tasks you’ll perform on a regular basis when you create your own automations. 
 
 :::note
-{@import ../../reuse/action-limits.md}
+import ActionLimit from '../../reuse/action-limits.md';
+
+<ActionLimit/>
 :::
  
 ## Simple example: Configure an enrichment

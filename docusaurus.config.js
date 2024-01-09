@@ -6,8 +6,9 @@
 
 const fs = require('fs')
 
-const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
-const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
+import {themes as prismThemes} from 'prism-react-renderer';
+const lightCodeTheme = prismThemes.github;
+const darkCodeTheme = prismThemes.dracula;
 
 const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString())
 
@@ -68,13 +69,12 @@ module.exports = {
             //https://www.npmjs.com/package/remark-code-import
             require('remark-code-import'),
             //https://www.npmjs.com/package/remark-import-partial
-            // snippet support {@import ./my-name.md} relative filepath to md file
+            //snippet support (import Abc from '../reuse/abc.md'; <Abc/> relative filepath to .md file)
             require('remark-import-partial'),
           ],
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           admonitions: {
-            tag: ':::',
             keywords: [
               'sumo',
               'secondary',
@@ -85,7 +85,6 @@ module.exports = {
               'tip',
               'warning',
               'important',
-              'caution',
             ],
           },
         },
@@ -237,7 +236,7 @@ module.exports = {
     announcementBar: {
       id: 'announcementBar',
       backgroundColor: '#f7f1c8',
-      content: `Sumo Logic will undergo maintenance Jan 10 @ 12 a.m. PST, ending Jan 11. During this time, you may experience intermittent service disruptions. Follow our <a href="https://status.sumologic.com">status page</a> for updates.`,
+      content: `Sumo will undergo maintenance Jan 10 @ 12am PST, ending Jan 11. You may experience intermittent service disruptions. Follow our <a href="https://status.sumologic.com">status page</a> for updates.`,
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
@@ -264,7 +263,7 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
     },
       navbar: {
         logo: {
@@ -506,3 +505,19 @@ module.exports = {
       },
     }),
 };
+
+
+
+// Attempt to fix Docusaurus v3 MDX/Mermaid breaking changes
+
+//export default {
+  //markdown: {
+  //  format: 'detect',
+  //  mermaid: true,
+  //  mdx1Compat: {
+  //    comments: true,
+  //    admonitions: true,
+  //    headingIds: true,
+  //  },
+  //},
+//};

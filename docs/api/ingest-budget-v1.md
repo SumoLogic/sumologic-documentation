@@ -21,8 +21,9 @@ To manage ingest budgets, you must have the **Manage Ingest Budgets** [role capa
 | CloudFlex    | Enterprise      |
 | Credits      | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
+import ApiIntro from '../reuse/api-intro.md';
 
-{@import ../reuse/api-intro.md}
+<ApiIntro/>
 
 | Deployment | Documentation URL                                                |
 |:------------|:-------------------------------------|

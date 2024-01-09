@@ -46,7 +46,9 @@ Follow the steps on the [Sumo Logic Kubernetes Deployment guide](https://github.
 
 Below are the instructions for installing the Sumo App for Kubernetes DevOps.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing GI Kubernetes DevOps Dashboards
 
