@@ -241,14 +241,14 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>* | parse "bytes transmitted: '*'" as bytes<br/>| timeslice 1m<br/>| sum(bytes) as bytes by _timeslice<br/>| sort _timeslice<br/>| diff bytes as diff_bytes</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/fields_operator">fields</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/fields">fields</a></td>
    <td>The fields operator allows you to choose which fields are displayed in the results of a query. Use a fields operator to reduce the "clutter" of a search output that contains fields that aren't completely relevant to your query.</td>
    <td></td>
    <td></td>
    <td><code>_sourceCategory=access_logs <br/>| parse "[status=*]" as status_code <br/>| fields method, status_code</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/filter-operator">filter</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/filter">filter</a></td>
    <td>The filter operator can filter the output of a search using the results of a different search based on the filtering criteria of a subquery. The filter operator keeps only the records that match the filter criteria, allowing you to restrict search results to the most relevant information.</td>
    <td></td>
    <td>The operator can process up to 100,000 data points for a single query. It automatically drops the data points that exceed the limit and issues a warning.</td>
@@ -269,7 +269,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>* | formatDate(now(), "YYYY-MM-dd") as today</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/Geo-Lookup">geo lookup</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/geo-lookup-map">geo lookup</a></td>
    <td>Sumo Logic can match a parsed IPv4 or IPv6 address to its geographical location on a map. To create the map the lookup operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated.</td>
    <td>latitude<br/>longitude<br/>_count<br/>continent<br/>country_code<br/>country_name<br/>region<br/>city<br/>state<br/>postal_code<br/>connection_type<br/>country_cf<br/>state_cf<br/>city_cf</td>
    <td></td>
@@ -290,14 +290,14 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>| hexToDec("0000000000001337") as V</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/if-operator-and">if</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/if">if</a></td>
    <td>There are two forms of ternary expression you can use in Sumo Logic queries: one is constructed using the IF operator, and the other uses the question mark (?) operator. These expressions are used to evaluate a condition as either true or false, with values assigned for each outcome. It is a shorthand way to express an if-else condition.</td>
    <td></td>
    <td></td>
    <td><code>| if(status_code matches "5*", 1, 0) as server_error<br/>Or<br/>| status_code matches "5*" ? 1 : 0 as server_error</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/in-operator">in</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/in">in</a></td>
    <td>The In operator returns a Boolean value: true if the specified property is in the specified object, or false if it is not.</td>
    <td></td>
    <td></td>
@@ -311,21 +311,21 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>_sourceCategory=service remote_ip<br/>| parse "[remote_ip=*]" as ip<br/>| ipv4ToNumber(ip) as num<br/>| fields ip, num</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/isNull,-isEmpty,-isBlank">isBlank</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/isnull-isempty-isblank">isBlank</a></td>
    <td>The isBlank operator checks to see that a string contains text. Specifically, it checks to see if a character sequence is whitespace, empty ("") ,or null. It takes a single parameter and returns a Boolean value: true if the variable is indeed blank, or false if the variable contains a value other than whitespace, empty, or null.</td>
    <td></td>
    <td></td>
    <td><code>| where isBlank(user)</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/isNull,-isEmpty,-isBlank">isEmpty</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/isnull-isempty-isblank">isEmpty</a></td>
    <td>The isEmpty operator checks to see that a string contains text. Specifically, it checks to see whether a character sequence is empty ("") or null. It takes a single parameter and return a Boolean value: true if the variable is indeed empty, or false if the variable contains a value other than empty or null.</td>
    <td></td>
    <td></td>
    <td><code>| if(isEmpty(src_ip),1,0) as null_ip_counts</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/isNull,-isEmpty,-isBlank">isNull</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/isnull-isempty-isblank">isNull</a></td>
    <td>The isNull operator takes a single parameter and returns a Boolean value: True if the variable is indeed null, or false if the variable contains a value other than null.</td>
    <td></td>
    <td></td>
@@ -546,7 +546,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>| timeslice 1h<br/>//You can further aggregate your data by these time groupings<br/>| count by _timeslice</code></td>
   </tr>
   <tr>
-   <td><a href="/docs/search/search-query-language/search-operators/toLowerCase-and-toUpperCase">toLowerCase and toUpperCase</a></td>
+   <td><a href="/docs/search/search-query-language/search-operators/tolowercase-touppercase">toLowerCase and toUpperCase</a></td>
    <td>As the name implies, the toLowerCase operator takes a string and converts it to all lower case letters. The toUpperCase operator takes a string and converts it to all upper case letters.</td>
    <td></td>
    <td></td>
@@ -581,7 +581,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><code>| trace "ID=( [0-9a-fA-F] {4} )" "7F92"</code></td>
   </tr>
   <tr>
-   <td><a href="https://www.tutorialspoint.com/Search-Query-Language/Transaction-Analytics">transaction</a></td>
+   <td><a href="/docs/search/search-query-language/transaction-analytics/transaction-operator">transaction</a></td>
    <td>The transaction operator is used to analyze related sequences of logs. No matter what type of data you're analyzing, from tracking web site sign ups, to e-commerce data, to watching system activity across a distributed system, the transaction operator can be used in a variety of use cases.</td>
    <td>_start_time<br/>_end_time</td>
    <td>Tables generated with unordered data can be added to Dashboards, but Flow Diagrams cannot be added to Dashboards.<br/>Transaction by flow can't be used with Dashboards.</td>
