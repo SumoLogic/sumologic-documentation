@@ -7,7 +7,7 @@ description: Configure collection of Windows Event Log messages and send them to
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CollBegin from '../../../reuse/collection-should-begin-note.md';
-
+ 
 ## Step 1: Configure collection
 
 In this step, you configure a Local Windows Event Log Source to collect Microsoft Windows Event Log messages. You can configure the source on an existing Installed Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure a Local Windows Event Log Source](#configure-a-local-windows-event-log-source) below. Otherwise, create a new collector as described in [Configure an Installed collector](#configure-an-installed-collector) below, and then create the Local Windows Event Log Source on the collector.
