@@ -10,7 +10,7 @@ This page describes how to map your OpenTelemetry attributes like Resources, Rec
 
 OpenTelemetry has a [rich data model](https://github.com/open-telemetry/opentelemetry-proto/tree/main/opentelemetry/proto) that is internally constructed out of several layers. For all signals, these can be broken down into following:
 
-* **Resource**. Includes attributes describing the resource from which given set of data comes from. Should follow [resource semantic conventions](https://github.com/open-telemetry/opentelemetry-specification/tree/main/specification/resource/semantic_conventions).
+* **Resource**. Includes attributes describing the resource from which given set of data comes from. Should follow [resource semantic conventions](https://github.com/open-telemetry/semantic-conventions).
 * **Instrumentation Scope**. Additional information about the scope of data. For example, instrumentation library name.
 * **Record**. Refers to a specific entry of data, such as a Log, Span, or Metric.
 :::note
