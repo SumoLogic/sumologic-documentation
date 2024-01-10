@@ -32,6 +32,14 @@ module.exports = {
       async: true,
     },
     {
+      src: 'https://www.googletagmanager.com/ns.html?id=GTM-58ZK7D',
+      async: true,
+    },
+    {
+      src: './src/helper/google-tag-manager.js',
+      async: true,
+    },
+    {
       src: './src/helper/google-analytics.js',
       async: true,
     },
