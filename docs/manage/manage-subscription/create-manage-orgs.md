@@ -105,15 +105,16 @@ Provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning 
 
 ## Monitor credits allocation and usage
 
-This section has information about how you can monitor credit allocations and consumption across all your orgs, and for each child org.
+This section has information about how you can monitor credit allocations and consumption across all your orgs, and for each child org. You can view the usage by orgs and child orgs on the **Account Overview** page.
+
+* The **Credit Allocation** tile indicates the total number of credits allocated.
+* The **Total Credit Usage** tile shows amount of credits consumed out of the total allocated credits.
+* The **Usage Forecast** tile indicates the total consumption of the credits by the end of contract period according to the current consumption rate.
 
 ### View overall credit usage by category
 
 You can view the usage by orgs in the **Overall Usage** tab on the **Account Overview** page. Usage for the following categories is shown:
 
-* The **Credit Allocation** tile indicates the total number of credits allocated.
-* The **Total Credit Usage** tile shows amount of credits consumed out of the total allocated credits.
-* The **Usage Forecast** tile indicates the total consumption of the credits by the end of contract period according to the current consumption rate.
 * **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
 * **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
 * **Infrequent Ingest**. Credits used for logs ingested into the Infrequent tier.
@@ -125,15 +126,14 @@ You can view the usage by orgs in the **Overall Usage** tab on the **Account Ove
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier.
 * **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage).
 
+By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting.
+
 <img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" style={{border:'1px solid black'}} />
 
 ### View child credit usage by category
 
 You can view the usage of individual child orgs in the **Child Orgs** tab on the **Account Overview** page. Usage for the following categories is shown:
 
-* The **Credit Allocation** tile indicates the total number of credits allocated.
-* The **Total Credit Usage** tile shows amount of credits consumed out of the total allocated credits.
-* The **Usage Forecast** tile indicates the total consumption of the credits by the end of contract period according to the current consumption rate.
 * The **Allocated Credits** column indicates the total number of credits allocated to the selected child org.
 * The **Total Credits Used** column indicates the total amount of credits consumed for the selected child org.
 * The **Usage %** column indicates the percentage of overall subscription credits that was allocated to a child org has been consumed.
@@ -144,15 +144,17 @@ You can view the usage of individual child orgs in the **Child Orgs** tab on the
 
 By clicking any of the selected child orgs, a side panel opens up in which you can view the individual usage for the following categories:
 
-* **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
-* **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
-* **Infrequent Ingest**. Credits used for logs ingested into the Infrequent tier.
+* **Continuous Ingest**. Credits used for logs ingested into the Continuous tier for the selected child org.
+* **Frequent Ingest**. Credits used for logs ingested into the Frequent tier for the selected child org.
+* **Infrequent Ingest**. Credits used for logs ingested into the Infrequent tier for the selected child org.
 * **Infrequent Scan**. Credits used to scan data for Infrequent tier searches.
-* **Tracing Ingest**. Credits used for traces ingested.
-* **Metrics Ingest**. Credits used for metrics ingested.
-* **Storage**. Credits used for log storage in the Continuous and Frequent tiers.
-* **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
-* **Infrequent Storage**. Credits used for log storage in the Infrequent tier.
+* **Tracing Ingest**. Credits used for traces ingested for the selected child org.
+* **Metrics Ingest**. Credits used for metrics ingested for the selected child org.
+* **Storage**. Credits used for log storage in the Continuous and Frequent tiers for the selected child org.
+* **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM for the selected child org.
+* **Infrequent Storage**. Credits used for log storage in the Infrequent tier for the selected child org.
+
+By clicking the **Download Report** button, you can download the child org usage data in csv format for further analysis and reporting.
 
 <img src={useBaseUrl('img/subscriptions/child-credit-usage.png')} alt="your description" style={{border:'1px solid black'}} />
 
