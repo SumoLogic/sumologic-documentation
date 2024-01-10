@@ -67,13 +67,13 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Dashboard](/docs/dashboards)**. Dashboards contain a collection of real time Panels that provide a graphical representation of your organization's data. Panels are created by running search queries. From the resulting data in the Search page's Aggregates tab, you can display that data using different types of charts. Once Panels are created, they are saved to a Dashboard.
 
-**[Dashboard Theme](/docs/dashboards-classic/edit-dashboards/manage-dashboards)**. In Dashboards, you can toggle the background color scheme from Light mode to Dark mode.
+**[Dashboard Theme](/docs/dashboards)**. In Dashboards, you can toggle the background color scheme from Light mode to Dark mode.
 
-**[Data access level](/docs/dashboards-classic/get-started/set-data-access-level-dashboard)**. The data access level for a dashboard determines what data a user with whom the dashboard is shared can view in the dashboard.
+**[Data access level](/docs/dashboards/set-data-access-level)**. The data access level for a dashboard determines what data a user with whom the dashboard is shared can view in the dashboard.
 
 **[Data Forwarding](/docs/manage/data-forwarding)**. When enabled, the Data Forwarding feature allows Sumo Logic to upload data to an Amazon S3 bucket that belongs to your organization. Log messages are saved as CSV files in compressed gzip files. They are accumulated and returned right after being ingested by Sumo Logic.
 
-**[Data Panel](/docs/dashboards-classic/chart-panel-types)**. Panels are placed on Dashboards and provide a graphical representation of your organization's data. Data Panels are created by running search queries. From the resulting data in the Search page's Aggregates tab, you can display that data using different types of charts. Once Panels are created, they are saved to a Dashboard. See also, Text Panel.
+**[Data Panel](/docs/dashboards/panels)**. Panels are placed on Dashboards and provide a graphical representation of your organization's data. Data Panels are created by running search queries. From the resulting data in the Search page's Aggregates tab, you can display that data using different types of charts. Once Panels are created, they are saved to a Dashboard. See also, Text Panel.
 
 **[Data Type](/docs/get-started/faq)**. A Data Type is a specific type of log used with a Sumo Logic Source or App, such as Apache, MySQL, or Windows IIS. You can also use a custom Data Type for a custom application.
 
@@ -185,7 +185,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Mapper](/docs/cse/schema/create-structured-log-mapping)**. In Cloud SIEM, a script that maps message fields to record attributes.
 
-**[Markdown](/docs/dashboards-classic/get-started/markdown-syntax)**. Used in Dashboards, you can add Text Panels to include titles or text descriptions. Use Markdown syntax to add bold or italic formatting, bullet lists, code font, and other formatting. See Help for details.
+**[Markdown](/docs/dashboards/panels/markdown-syntax)**. Used in Dashboards, you can add Text Panels to include titles or text descriptions. Use Markdown syntax to add bold or italic formatting, bullet lists, code font, and other formatting. See Help for details.
 
 **[Mask rule](/docs/send-data/collection/processing-rules/mask-rules)**. Mask rules are a type of Processing Rule that replaces an expression with a mask string that you can customize—another option to protect data, such as passwords, that you wouldn't normally track.
 
@@ -221,7 +221,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 ## P
 
-**[Panel](/docs/dashboards-classic/chart-panel-types)**. Formerly Monitors. Real-time Panels provide a graphical representation of your organization's data. Data Panels are created by running search queries. From the resulting data in the Search page's Aggregates tab, you can display that data using different types of charts. Once Panels are created, they are saved to a Dashboard.
+**[Panel](/docs/dashboards/panels)**. Formerly Monitors. Real-time Panels provide a graphical representation of your organization's data. Data Panels are created by running search queries. From the resulting data in the Search page's Aggregates tab, you can display that data using different types of charts. Once Panels are created, they are saved to a Dashboard.
 
 **[Parse operator](/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor)**. The parse operator (also called the parse anchor) parses strings according to specified start and stop anchors, and then labels them as fields for use in subsequent functions in the query such as sorting, grouping, or other functions. Parse options include "parse anchor" or "parse regex" for using regular expressions to form more complex parse queries. It is acceptable to use "parse" for "parse anchor", or "extract" for "parse regex".
 
@@ -281,7 +281,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Signal](/docs/cse/records-signals-entities-insights/view-records-signal)**. In Cloud SIEM, an indicator of an event of interest that fires when rule conditions are met. 
 
-**[Single Value Chart](/docs/dashboards-classic/chart-panel-types/numerical-single-value-charts)**. A Single Value chart is useful for displaying the results of a query that returns only a single value or record, in order to make that value stand out at a glance. If the query returns more than one value in the Aggregation tab, only the first value is displayed in the Single Value chart.
+**[Single Value Chart](/docs/dashboards/panels/single-value-charts)**. A Single Value chart is useful for displaying the results of a query that returns only a single value or record, in order to make that value stand out at a glance. If the query returns more than one value in the Aggregation tab, only the first value is displayed in the Single Value chart.
 
 **[Sources](/docs/send-data)**. Sources are configured on Sumo Logic Collectors and collect customer data.
 
@@ -294,7 +294,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 ## T
 
-**[Text Panels](/docs/dashboards-classic/get-started/add-text-panel)**. Used in Dashboards, you can add Text Panels to include titles or text descriptions. See also Markdown.
+**[Text Panel](/docs/dashboards/panels/#text-panel)**. Used in Dashboards, you can add Text Panels to include titles or text descriptions. See also Markdown.
 
 **[Throttling](/docs/manage/ingestion-volume/log-ingestion)**. Slows the rate of ingestion across all Collectors in an account to not exceed the allowable rate.
 
