@@ -10,11 +10,9 @@ Our [Quickstart](/docs/get-started/quickstart) introduced you to the process of 
 
 This page will help you get to know the Sumo Logic user interface (UI).
 
-
-
 ## Using the left navigation panel
 
-The left-side navigation panel is where you can access your library of dashboards as well as all of our services.
+The left-side navigation panel is where you can access your dashboard library as well as all of our services, such as Metrics, Logs, Cloud SIEM, and more.
 
 ### Home
 
@@ -23,9 +21,7 @@ When you first log in, you'll land on the Sumo Logic **Home** page > **Home** ta
 * Recently Opened Dashboards
 * Recently Run Searches
 * Recommended Dashboards 
-* Pinned Searches
-
-<img src={useBaseUrl('img/get-started/dashboard-searches.png')} alt="dashboard-searches.png" />
+* Pinned Searches<br/><img src={useBaseUrl('img/get-started/dashboard-searches.png')} alt="dashboard-searches.png" />
 
 ### Access dashboards and searches
 
@@ -38,19 +34,11 @@ The left nav panel provides easy access to libraries, searches, folders, and y
 * **Recent** dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/recent.png')} alt="recent.png" width="350"/>
 * Your **Favorites** list of favorited dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/favs.png')} alt="favs.png" width="350"/>
 
-<!--
-### Search and switch browsing modes
+:::tip
+Use the **Library** search bar to find content quickly.<br/><img src={useBaseUrl('img/get-started/library-search.png')} alt="library-search.png" width="550"/>
+:::
 
-The top of the left-side navigation panel is where you can search for content and
-users and easily switch browsing modes. 
-
-* Searching. Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
-* Switching browsing modes. Click the **Details** icon and make a selection from the dropdown menu.
-
-![TUI_Search_Details.png](/img/get-started/TUI_Search_Details.png)
--->
-
-### Hide and show the left-side navigation panel
+### Hide and show the left nav
 
 You can enlarge your working area by hiding the left-side navigation panel. To do this, click the hamburger menu icon.
 
@@ -119,11 +107,15 @@ Sumo Logic administrators (admins) manage user accounts, user roles, and securi
 
 To administer Sumo Logic accounts, users, and security, do the following:
 
-1. From the top navigation bar, click **Administration**.<br/> <img src={useBaseUrl('img/get-started/admin.png')} alt="img/get-started/admin.png" width="400"/>
-1. Choose from the following, as needed: <!-- what does this look like for Admin users? -->
+1. From the top navigation bar, click **Administration**.<br/><img src={useBaseUrl('img/get-started/admin.png')} alt="img/get-started/admin.png" width="400"/>
+1. Choose from any of the following:
     * **Account**. [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
     * **Users and Roles**. [Manage users and roles](/docs/manage/users-roles).
-    * **Security**. [Set password policy for your org](/docs/manage/security/set-password-policy), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses), [manage access keys](/docs/manage/security/access-keys), manage security policies ([audit index](/docs/manage/security/audit-indexes/audit-index)), [support account access](/docs/manage/security/enable-support-account), [dashboard sharing](/docs/dashboards/share-dashboard-new/), and [set up SAML authentication](/docs/manage/security/saml).
+    * **Account Security Settings**. [Set password policy for your org](/docs/manage/security/set-password-policy), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses), [manage access keys](/docs/manage/security/access-keys), manage security policies ([audit index](/docs/manage/security/audit-indexes/audit-index)), [support account access](/docs/manage/security/enable-support-account), [dashboard sharing](/docs/dashboards/share-dashboard-new/), and [set up SAML authentication](/docs/manage/security/saml).<br/><img src={useBaseUrl('img/get-started/admin.png')} alt="img/get-started/admin-expanded.png" width="400"/>
+
+### Search Library
+
+Administrators can switch to the **Content Administrator** Library content browsing mode by going to **Library** and clicking the **View as** dropdown.
 
 ## Customize your environment with tabs
 
