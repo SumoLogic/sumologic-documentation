@@ -109,6 +109,7 @@ module.exports = {
               collapsed: true,
               link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-configurations/index'},
               items:[
+                'send-data/opentelemetry-collector/data-source-configurations/mapping-records-resources',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-traces',
