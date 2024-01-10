@@ -94,12 +94,12 @@ To manage data in Sumo Logic, do the following:
 
 1. From the top-right navigation bar, click **Configuration**.<br/><img src={useBaseUrl('img/get-started/config.png')} alt="img/get-started/config.png" width="400"/>
 1. Choose from the following, as needed:
-    * **Collection**. [Manage Collectors and Sources](/docs/send-data/collection).
-    * **Logs**. Manage [fields](/docs/manage/fields), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions-data-tiers), [scheduled views](/docs/manage/scheduled-views) <!--, [connections](/docs/manage/connections-integrations), and [data forwarding](/docs/manage/data-forwarding). -->
-    * **Metrics**. Manage metrics rules, [logs-to-metrics](../metrics/logs-to-metrics.md), and [metrics transformation rules](../metrics/metrics-transformation-rules.md).
-    * **Cloud SIEM Integrations**.
-    * **Cloud SIEM Entities**.
-    * **Cloud SIEM Workflow**.
+    * **Collection**. Manage [Collectors and Sources](/docs/send-data/collection), [OpenTelemetry Collection](/docs/send-data/opentelemetry-collector), [Data Collection Status](/docs/manage/ingestion-volume/collection-status-page), [Ingest Budget](/docs/manage/ingestion-volume/ingest-budgets), Archive, and [Data Archiving](/docs/manage/data-archiving).
+    * **Logs**. Manage [fields](/docs/manage/fields), [field extraction rules](/docs/manage/field-extractions), [parsers](/docs/search/search-query-language/parse-operators), [partitions](/docs/manage/partitions-data-tiers), [scheduled views](/docs/manage/scheduled-views), and [data forwarding](/docs/manage/data-forwarding).
+    * **Metrics**. Manage [metrics rules](/docs/metrics/metric-rules-editor), [logs-to-metrics](../metrics/logs-to-metrics.md), and [metrics transformation rules](../metrics/metrics-transformation-rules.md).
+    * **Cloud SIEM Integrations**. Manage [Ingest Mappings](/docs/cse/ingestion/sumo-logic-ingest-mapping), [Log Mappings](/docs/cse/schema/create-structured-log-mapping), [Context Actions](/docs/cse/administration/create-cse-context-actions), [Actions](/docs/cse/administration/create-cse-actions), [Enrichment](/docs/cse/integrations/enrichments-and-indicators), [Automation](/docs/cse/automation).
+    * **Cloud SIEM Entities**. Manage [Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group), [Normalization](/docs/cse/schema/username-and-hostname-normalization), [Custom Types](/docs/cse/records-signals-entities-insights/create-custom-entity-type), and [Criticality](/docs/cse/records-signals-entities-insights/entity-criticality).
+    * **Cloud SIEM Workflow**. Manage [Insight Detection](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold), [Insight Statuses](/docs/cse/administration/manage-custom-insight-statuses), [Insight Resolutions](/docs/cse/administration/manage-custom-insight-resolutions), and [Tag Schemas](/docs/cse/administration/create-a-custom-tag-schema).
 
 ### Manage accounts, users, and security
 
