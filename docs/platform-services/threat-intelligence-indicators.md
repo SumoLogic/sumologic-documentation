@@ -96,7 +96,7 @@ To add threat intelligence indicators, you must upload files containing the indi
          * `unknown`. There is not enough information available to determine the type of indicator. 
     * **CSV**. A comma-separated value (CSV) file. (For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v). Also see the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.) <br/>Your file must include the following attributes:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
-       * **value** (string). Value of the indicator, such as an IP address, file name, email address, etc. For example, `192.0.2.0`.
+       * **indicator** (string). Value of the indicator, such as an IP address, file name, email address, etc. For example, `192.0.2.0`.
        * **type** (string). Type of the indicator. Following are valid values: 
          * `domain-name:value`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr:value`. Email address. (Entity type in Cloud SIEM is `_email`.)
