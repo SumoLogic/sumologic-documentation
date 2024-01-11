@@ -126,12 +126,19 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 | Upgrade Trial Organizations	| Upgrade trial organizations. (For Sumo Logic Service Providers only.)|
 | Deactivate Organizations	| Deactivate trial organizations. (For Sumo Logic Service Providers only.)|
 
+## Threat Intel
+<!-- At GA, link "threat intelligence indicators" to /docs/platform-services/threat-intelligence-indicators -->
+| Capability | Description |
+| :-- | :-- |
+| View Threat Intel Data Store | Search log data using threat intelligence indicators. |
+| Manage Threat Intel Data Store | Create, edit, and delete threat intelligence indicators. |
+
 ## Cloud SOAR
 
 [Cloud SOAR](/docs/cloud-soar/) capabilities appear in the Roles UI only if Cloud SOAR has been enabled for your account.
 
-| Capability category | Capability | Description |
-| :-- | :-- | :-- |
+| Capability | Description |
+| :-- | :-- | 
 | View Cloud SOAR | Users with a role that grants this capability will see a **Cloud SOAR** link in the left-nav bar of the Sumo Logic UI. |
 | Settings General | Access Cloud SOAR settings. |
 | Configure | Configure Cloud SOAR. |
