@@ -113,7 +113,7 @@ This section has information about how you can monitor credit allocations and co
 
 ### View overall credit usage by category
 
-You can view the usage by orgs in the **Overall Usage** tab on the **Account Overview** page. Usage for the following categories is shown:
+You can view the aggreagte usage for all child orgs across usage category in the **Overall Usage** tab on the **Account Overview** page. Usage for the following categories is shown:
 
 * **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
 * **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
@@ -126,7 +126,7 @@ You can view the usage by orgs in the **Overall Usage** tab on the **Account Ove
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier.
 * **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage).
 
-By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting.
+By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking the **Download Detail Credit Usages** from the kebab icon next to the Download Report button.
 
 <img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" style={{border:'1px solid black'}} />
 
@@ -139,6 +139,8 @@ You can view the usage of individual child orgs in the **Child Orgs** tab on the
 * The **Usage %** column indicates the percentage of overall subscription credits that was allocated to a child org has been consumed.
 * The **Forecast** column indicates the percentage of total consumption of the credits by the end of contract period according to the current consumption rate for a selected child org.
 * The **Usage % Change** column indicates the difference in credit usage by your child organisations over time. For example, if you choose the date from Jan 1 to Jan 7, it will show the usage difference between Dec 25 to Dec 31 and Jan 1 to Jan 7 for each child organisation.
+
+By clicking the **Download Report** button, you can download the child org usage data in csv format for further analysis and reporting.
 
 <img src={useBaseUrl('img/subscriptions/child-org.png')} alt="your description" style={{border:'1px solid black'}} />
 
@@ -154,7 +156,7 @@ By clicking any of the selected child orgs, a side panel opens up in which you c
 * **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM for the selected child org.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier for the selected child org.
 
-By clicking the **Download Report** button, you can download the child org usage data in csv format for further analysis and reporting.
+By clicking the **Download Report** button, you can download the selected child org usage data in csv format for further analysis and reporting.
 
 <img src={useBaseUrl('img/subscriptions/child-credit-usage.png')} alt="your description" style={{border:'1px solid black'}} />
 
