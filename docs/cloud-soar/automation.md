@@ -341,7 +341,7 @@ A list of available integrations within the organization can be found to the lef
 <img src={useBaseUrl('img/cloud-soar/image63.png')} alt="Configure integration" width="800"/> 
 
 
-A product overview screen will be displayed with what actions a product can perform and a link to configure the integration. These actions are categorized into five separate types: **Enrichment, Containment, Custom, Daemon, and Notification** actions. Each selection will list its associated actions and if there are required fields which need to be configured for Cloud SOAR to utilize its functionality within its Playbooks.
+A product overview screen will be displayed with what actions a product can perform and a link to configure the integration. These actions are categorized into five separate types: **Enrichment**, **Containment**, **Custom**, **Daemon**, and **Notification** actions. Each selection will list its associated actions and if there are required fields which need to be configured for Cloud SOAR to utilize its functionality within its Playbooks.
 
 To add a new integration resource, click the **+ Resources** button in the upper left-hand corner of the integrations screen. To edit an existing integration resource, hover over the resource and click the pencil icon to the far right of the resource name in the resource list.          
 
