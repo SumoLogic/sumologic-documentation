@@ -33,7 +33,7 @@ Cloud SOAR helps secure operations and automate incident response through integr
 
 ### Triage
 
-Cloud SOAr provides automated investigation of indicators of compromise (IoCs) for cyber and non-cyber use cases. For more information, see [Triage](/docs/cloud-soar/incidents-triage/#triage).
+Cloud SOAR provides automated investigation of indicators of compromise (IoCs) for cyber and non-cyber use cases. For more information, see [Triage](/docs/cloud-soar/incidents-triage/#triage).
 
 <img src={useBaseUrl('img/cloud-soar/overview-advanced-triage.png')} alt="Advanced triage" style={{border: '1px solid black'}} width="800" />
 
