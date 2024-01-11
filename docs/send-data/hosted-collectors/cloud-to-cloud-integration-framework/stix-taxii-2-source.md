@@ -59,7 +59,7 @@ To configure an TAXII 2 Client Source:
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. Select the STIX TAXII version the vendor is using. (2.0 or 2.1)
+1. Select the STIX TAXII version the vendor is using (2.0 or 2.1).
 1. Enter the TAXII Discovery URL provide by the vendor
 1. If HTTP basic authentication is required, check **Use Basic Auth** and provide your vendor username and password
 1. When you are finished configuring the Source, click **Save**.
