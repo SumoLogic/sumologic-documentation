@@ -353,8 +353,7 @@ To test the configuration, click save and reopen the Integration. Once the Integ
 
 Additionally, some integration types also allow users to use a pre-configured general proxy or define a specific one for its integration with Cloud SOAR. To configure a proxy for an integration, open the integration and click the Proxy dropdown. Select **Use different proxy** and add the corresponding proxy information.
 
-Once the information has been added, click save to commit the integration. Open the integration up again and click the Test button to test the new configuration settings. A successful connection attempt will be displayed at the bottom right-side of the screen. Once the proxy test is successful, click save again to commit the final configuration
-settings for the integration.
+Once the information has been added, click save to commit the integration. Next, open up the integratio again and click the **Test** button to test the new configuration settings. A successful connection attempt will be displayed at the bottom right-side of the screen. Once the proxy test is successful, click save again to commit the final configuration settings for the integration.
 
 #### Deleted bookmark
 
