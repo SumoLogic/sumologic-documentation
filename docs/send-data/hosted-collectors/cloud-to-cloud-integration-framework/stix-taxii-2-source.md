@@ -1,5 +1,5 @@
 ---
-id: taxii-2-source
+id: taxii-2-client-source
 title: TAXII 2 Client
 sidebar_label: TAXII 2 Client
 tags:
