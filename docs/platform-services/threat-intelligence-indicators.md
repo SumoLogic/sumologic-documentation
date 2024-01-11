@@ -21,7 +21,7 @@ Threat intelligence indicators can help security analysts leverage a large body 
 
 ### Role capabilities
 
-To use threat intelligence indicators, you must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/). 
+To use threat intelligence indicators, you must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#threat-intel). 
 
 1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
 1. Click the **Roles** tab.
@@ -36,7 +36,7 @@ Add the following capabilities:
 To search logs that contain correlations to threat intelligence indicators, you must first ingest the indicators. You can ingest indicators using:
 * **The Threat Intelligence tab**. See [Add indicators in the Threat Intelligence tab](#add-indicators-in-the-threat-intelligence-tab).
 * **The API**. See the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource for upload APIs. 
-* **Collectors**. Install the STIX/TAXII 2.0 collector. For more information about collectors, see [Cloud-to-Cloud Integration Framework Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/).
+* **A collector**. See [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source). 
 
 ## Threat Intelligence tab
 
