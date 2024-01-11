@@ -41,7 +41,7 @@ The threat intel vendor must follow the STIX TAXII 2.0 or 2.1 standard.
 
 1. Identify a vendor who uses the STIX TAXII 2.0 or 2.1 standard for sharing threat intelligence indicators
 1. Follow their documentation to obtain the following information:
-  * The STIX TAXII version they provide 2.0 or 2.1
+  * The STIX TAXII version they provide (either 2.0 or 2.1)
   * The TAXII Discovery URL
   * Your authentication credentials if required
 
