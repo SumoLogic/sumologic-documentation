@@ -1,6 +1,6 @@
 ---
 id: taxii-2-client-source
-title: TAXII 2 Client
+title: TAXII 2 Client Source
 sidebar_label: TAXII 2 Client
 tags:
   - cloud-to-cloud
