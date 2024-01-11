@@ -100,6 +100,7 @@ To manage data in Sumo Logic, do the following:
     * **Cloud SIEM Integrations**. Manage [Ingest Mappings](/docs/cse/ingestion/sumo-logic-ingest-mapping), [Log Mappings](/docs/cse/schema/create-structured-log-mapping), [Context Actions](/docs/cse/administration/create-cse-context-actions), [Actions](/docs/cse/administration/create-cse-actions), [Enrichment](/docs/cse/integrations/enrichments-and-indicators), [Automation](/docs/cse/automation).
     * **Cloud SIEM Entities**. Manage [Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group), [Normalization](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/), [Custom Types](/docs/cse/records-signals-entities-insights/create-custom-entity-type), and [Criticality](/docs/cse/records-signals-entities-insights/entity-criticality).
     * **Cloud SIEM Workflow**. Manage [Insight Detection](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold), [Insight Statuses](/docs/cse/administration/manage-custom-insight-statuses), [Insight Resolutions](/docs/cse/administration/manage-custom-insight-resolutions), and [Tag Schemas](/docs/cse/administration/create-a-custom-tag-schema).
+    * **Cloud SOAR Configurations**. Manage [Incidents](/docs/cloud-soar/incidents-triage/), [Fields](/docs/cloud-soar/incidents-triage/#custom-fields), and [Incident Labels](/docs/cloud-soar/global-functions-menu/#incident-label).
 
 ### Manage accounts, users, and security
 
