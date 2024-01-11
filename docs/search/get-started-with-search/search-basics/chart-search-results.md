@@ -25,9 +25,9 @@ For this example, you can see a bar chart, but you can pick from any of the avai
 
 ### New Visualizations
 
-By clicking the **New Visualizations** button present in this page, new visualizations for your log search will be enabled and will help you to customize each chart by modifying the available settings and provides a unified experience across the Sumo Logic platforms. 
+Clicking the **New Visualizations** button will enable the new visualizations for your log search chart, also helping you to customize each chart by modifying the available settings and providing a unified experience across the Sumo Logic platforms.
 
-By default, charts will be displayed with classic visualization but when you switch to new visualisation your preference will be saved and other subsequent search in the same or new tab will always render with new visualisation.
+Charts will appear in classic visualization style by default. However, if you choose a new visualization, your selection will be remembered, and any further searches in the same or new tab will always render with the new visualization.
 
 <img src={useBaseUrl('img/search/get-started-search/search-page/new-visualizations.png')} alt="new-visualizations" style={{border:'1px solid black'}} width="800" />
 
