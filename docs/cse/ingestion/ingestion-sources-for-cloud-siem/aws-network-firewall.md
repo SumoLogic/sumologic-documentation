@@ -2,12 +2,12 @@
 id: aws-network-firewall
 title: AWS Network Firewall - Cloud SIEM
 sidebar_label: AWS Network Firewall
-description: Configure collection and ingestion of AWS Network Firewall log messages from an S3 bucket to be parsed by CSE's AWS Network Firewall system parser.
+description: Configure collection and ingestion of AWS Network Firewall log messages from an S3 bucket to be parsed by Cloud SIEM's AWS Network Firewall system parser.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This section has instructions for collecting AWS Network Firewall log messages from AWS S3 and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting AWS Network Firewall log messages from AWS S3 and sending them to Sumo Logic to be ingested by Cloud SIEM.
 
 ## Step 1: Enable AWS Network Firewall logs
 
@@ -28,11 +28,11 @@ In this step, you configure an HTTP Source to collect AWS Network Firewall messa
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
 1. **Fields**. 
-    1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
+    1. If you are planning that all the sources you add to this collector will forward log messages to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to Cloud SIEM.
     1. If all sources in this collector will be AWS Network Firewall sources, add an additional field with key `_parser` and value `/Parsers/System/AWS/AWS Network Firewall`.
 
 :::note
-It’s also possible to configure individual sources to forward to CSE, as described in the following section.
+It’s also possible to configure individual sources to forward to Cloud SIEM, as described in the following section.
 :::
 
 ### Configure an AWS S3 Source
@@ -49,7 +49,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 1. **Path Expression**. The path expression of the log file(s) in S3, can contain wildcards to include multiple log files.
 1. **Source Category**. Enter a string to tag the output collected from  the source. The string that you supply will be saved in a metadata field called `_sourceCategory`.
 1. **Fields**.
-    1. If you are not forwarding all sources in the hosted collector to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to CSE.
+    1. If you are not forwarding all sources in the hosted collector to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to Cloud SIEM.
     1. If you are not parsing all sources in the hosted collector with the same parser, add an additional field named `_parser` with value */Parsers/System/AWS/AWS Network Firewall*.
 1. **AWS Access**. For AWS Access you have two Access Method options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. Sumo Logic access to AWS (instructions are provided above in [Step 1](#step-1-enable-aws-network-firewall-logs)) is a prerequisite for role-based access.
     -   **Role-based access**. Enter the Role ARN that was provided by AWS after creating the role.<br/><img src={useBaseUrl('img/cse/role-arn.png')} alt="Role ARN" width="600"/>
@@ -59,7 +59,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 
 ## Step 3: Verify ingestion
 
-In this step, you verify that your logs are successfully making it into CSE. 
+In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
 1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>  
 1. On the **Log Mappings** page search for "AWS Network Firewall " and check under **Record Volume**.<br/><img src={useBaseUrl('img/cse/AWS-network-firewall-record-volume.png')} alt="AWS Network Firewall record volume" width="600"/>

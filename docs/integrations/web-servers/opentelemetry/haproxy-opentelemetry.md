@@ -77,13 +77,17 @@ All logging settings are located in [Haproxy.conf](https://www.haproxy.com/blog/
 
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -93,11 +97,13 @@ The path of the log file configured to capture haproxy logs is needed to be give
 
 The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the haproxy.conf file for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -105,6 +111,9 @@ The files are typically located in `/var/log/haproxy*.log`. If you're using a cu
   values={[
     {label: 'Linux', value: 'Linux'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -125,9 +134,34 @@ The files are typically located in `/var/log/haproxy*.log`. If you're using a cu
   ```
 
 </TabItem>
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 ## Sample Log Messages
 

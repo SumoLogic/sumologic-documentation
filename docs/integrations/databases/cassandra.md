@@ -303,7 +303,8 @@ Both the methods require the Jolokia agent to collect metrics. The steps to conf
 
 Below we have defined both the ways in which collection can be configured.
 
-<details><summary>Method A: Using Telegraf and Installed Collector</summary>
+<details>
+<summary>Method A: Using Telegraf and Installed Collector</summary>
 
 We use the Telegraf operator for Cassandra metric collection and Sumo Logic Installed Collector for collecting Cassandra logs. The diagram below illustrates the components of the Cassandra collection in a non-Kubernetes environment. Telegraf runs on the same system as Cassandra, and uses the [Jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to obtain Cassandra metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Cassandra on the other hand are sent to a Sumo Logic Local File source.
 
@@ -423,7 +424,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra
     * `data_format - “prometheus”` In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic
     * `db_system: “cassandra”` - In the input plugins section:  This value identifies the database system.
     * `component: “database”` - In the input plugins section: This value identifies application components.
-* For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more properties that can be configured in the Telegraf agent globally.
+* For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service). At this point, Cassandra metrics should start flowing into Sumo Logic.
 
@@ -489,7 +490,8 @@ At this point, Cassandra logs should start flowing into Sumo Logic.
 
 </details>
 
-<details><summary>Method B: Using OpenTelemetry</summary>
+<details>
+<summary>Method B: Using OpenTelemetry</summary>
 
 We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](https://github.com/SumoLogic/sumologic-otel-collector) for Cassandra metric collection and filelog receiver for collecting Cassandra logs. Sumo Logic OT distro runs on the same system as Cassandra, and uses the Cassandra Jolokia input plugin for Telegraf to obtain Cassandra metrics, and the Sumo Logic exporter to send the metrics to Sumo Logic.
 
@@ -512,7 +514,7 @@ We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](http
      * `data_format - “prometheus”` In the output plugins section, which is `[[outputs.sumologic]]`  Metrics are sent in the Prometheus format to Sumo Logic
      * `db_system: “cassandra”` - In the input plugins section:  This value identifies the database system.
      * `component: “database”` - In the input plugins section: This value identifies application components.
-   * For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more properties that can be configured in the Telegraf agent globally.
+   * For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more properties that can be configured in the Telegraf agent globally.
 3. Run the Sumo Logic OT Distro using the below command
   ```bash
   otelcol-sumo --config config.yaml
@@ -619,18 +621,9 @@ This step is not needed if you are using the [Application Components Solution](/
 
 This section demonstrates how to install the Cassandra app.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-1. From the **App Catalog**, search and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the [Install the apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Advanced**. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
-4. Click Add to Library.
-
-Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 ## Viewing Cassandra dashboards
 
@@ -757,14 +750,14 @@ Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors
 
 | Alert Name         | Alert Description         | Alert Condition | Recover Condition |
 |:-----------|:--------------|:-----------|:------------|
-| Cassandra - Increase in Authentication Failures              | This alert fires when there is an increase of Cassandra authentication failures.                                                                          | >5              | <= 5              |
-| Cassandra - Cache Hit Rate below 85 Percent                  | This alert fires when the cache key hit rate is below 85%.                                                                                                | <85             | >= 85             |
-| Cassandra - High Commitlog Pending Tasks                     | This alert fires when there are more than 15 Commitlog tasks that are pending.                                                                            | >15             | <= 15             |
-| Cassandra - High Number of Compaction Executor Blocked Tasks | This alert fires when there are more than 15 compaction executor tasks blocked for more than 5 minutes.                                                   | >15             | <= 15             |
-| Cassandra - Compaction Task Pending                          | This alert fires when there are many Cassandra compaction tasks that are pending. You might need to increase I/O capacity by adding nodes to the cluster. | >100            | <= 100            |
-| Cassandra - High Number of Flush Writer Blocked Tasks        | This alert fires when there is a high number of flush writer tasks which are blocked.                                                                     | >15             | <= 15             |
-| Cassandra - Many Compaction Tasks Are Pending                | Many Cassandra compaction tasks are pending                                                                                                               | >100            | <= 100            |
-| Cassandra - Node Down                                        | This alert fires when one or more Cassandra nodes are down                                                                                                | >0              | <= 0              |
-| Cassandra - Blocked Repair Tasks                             | This alert fires when the repair tasks are blocked                                                                                                        | >2              | <= 2              |
-| Cassandra - Repair Tasks Pending                             | This alert fires when repair tasks are pending.                                                                                                           | >2              | <= 2              |
-| Cassandra - High Tombstone Scanning                          | This alert fires when tombstone scanning is very high (>1000 99th Percentile) in queries.                                                                 | >1000           | <= 1000           |
+| Cassandra - Increase in Authentication Failures              | This alert fires when there is an increase of Cassandra authentication failures.                                                                          | >5              | `<=` 5              |
+| Cassandra - Cache Hit Rate below 85 Percent                  | This alert fires when the cache key hit rate is below 85%.         | `<`85             | `>=` 85             |
+| Cassandra - High Commitlog Pending Tasks                     | This alert fires when there are more than 15 Commitlog tasks that are pending.                                                                            | >15             | `<=` 15             |
+| Cassandra - High Number of Compaction Executor Blocked Tasks | This alert fires when there are more than 15 compaction executor tasks blocked for more than 5 minutes.                                                   | >15             | `<=` 15             |
+| Cassandra - Compaction Task Pending                          | This alert fires when there are many Cassandra compaction tasks that are pending. You might need to increase I/O capacity by adding nodes to the cluster. | >100            | `<=` 100            |
+| Cassandra - High Number of Flush Writer Blocked Tasks        | This alert fires when there is a high number of flush writer tasks which are blocked.                                                                     | >15             | `<=` 15             |
+| Cassandra - Many Compaction Tasks Are Pending                | Many Cassandra compaction tasks are pending                                                                                                               | >100            | `<=` 100            |
+| Cassandra - Node Down                                        | This alert fires when one or more Cassandra nodes are down                                                                                                | >0              | `<=` 0              |
+| Cassandra - Blocked Repair Tasks                             | This alert fires when the repair tasks are blocked                                                                                                        | >2              | `<=` 2              |
+| Cassandra - Repair Tasks Pending                             | This alert fires when repair tasks are pending.                                                                                                           | >2              | `<=` 2              |
+| Cassandra - High Tombstone Scanning                          | This alert fires when tombstone scanning is very high (>1000 99th Percentile) in queries.                                                                 | >1000           | `<=` 1000           |

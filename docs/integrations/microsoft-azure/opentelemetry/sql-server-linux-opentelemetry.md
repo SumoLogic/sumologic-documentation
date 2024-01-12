@@ -6,6 +6,8 @@ description: Learn about the Sumo Logic OpenTelemetry app for Microsoft SQL Serv
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
@@ -38,13 +40,17 @@ The ERRORLOG is typically in UTF-16LE encoding, however, be sure to verify the f
 
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -58,7 +64,21 @@ You can add any custom fields which you want to tag along with the data ingested
 
 ### Step 3: Send logs to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Linux"
+  values={[
+    {label: 'Linux', value: 'Linux'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
+  ]}>
+
+<TabItem value="Linux">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the SQL Server instance which needs to be monitored.
 1. Restart the collector using:
@@ -66,7 +86,36 @@ You can add any custom fields which you want to tag along with the data ingested
   sudo systemctl restart otelcol-sumo
   ```
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+</TabItem>
+
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
+</Tabs>
+
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 ## Sample log
 

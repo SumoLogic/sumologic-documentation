@@ -209,7 +209,9 @@ This section provides instructions for installing the Google Cloud Audit App, as
 
 Now that you have set up collection for Google Cloud Audit, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Google Cloud Audit Dashboards
 

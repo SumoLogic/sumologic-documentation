@@ -6,14 +6,16 @@ description: Learn about the Sumo Logic OpenTelemetry app for Docker.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/docker-icon.png')} alt="Thumbnail icon" width="120"/>
 
 The Sumo Logic app for Docker is a unified logs and metrics app that enables you to monitor Docker deployments. The app provides preconfigured dashboards that include information about container state and resource usage, including information on CPU, memory, block I/O, and network.
 
-The Sumo Logic OpenTelemetry collector will run on the same host as Docker and collects Docker metric and container event logs. 
+The Sumo Logic OpenTelemetry collector will run on the same host as Docker and collects Docker metric and container event logs.
 
-- Docker metrics are collected using the [Docker receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/dockerstatsreceiver) and sent to Sumo Logic through the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter). 
+- Docker metrics are collected using the [Docker receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/dockerstatsreceiver) and sent to Sumo Logic through the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter).
 - Docker container event logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 :::info
@@ -43,17 +45,21 @@ To collect the Docker container event logs, the following command needs to be ex
 ```
 docker events docker events -f 'type=container' --format '{{json .}}' > <PATH_TO_JSON> & disown
 ```
-Path to this JSON file will be required in the [next step](#step-2-configure-integration), where events are sent to Sumo Logic through a filelog receiver and seen as part of the **Docker - Overview** dashboard. Also, you can add additional parameters to this command to send events for specific containers. [Learn more](https://docs.docker.com/engine/reference/commandline/events/). 
+Path to this JSON file will be required in the [next step](#step-2-configure-integration), where events are sent to Sumo Logic through a filelog receiver and seen as part of the **Docker - Overview** dashboard. Also, you can add additional parameters to this command to send events for specific containers. [Learn more](https://docs.docker.com/engine/reference/commandline/events/).
 
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-collector.png')} alt="Docker-collector"/>
+<SetupColl/>
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-collector.png')} style={{border:'1px solid black'}} alt="Docker-collector"/>
 
 ### Step 2: Configure integration
 
@@ -66,11 +72,25 @@ You can add any custom fields which you want to tag along with the data ingested
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-YAML.png')} alt="Docker-YAML"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-YAML.png')} style={{border:'1px solid black'}} alt="Docker-YAML"/>
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Linux"
+  values={[
+    {label: 'Linux', value: 'Linux'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
+  ]}>
+
+<TabItem value="Linux">
 
 1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Docker instance that needs to be monitored.
 1. Place `Env` file in the `/etc/otelcol-sumo/env/` directory.
@@ -79,7 +99,35 @@ Click on the **Download YAML File** button to get the yaml file.
   sudo systemctl restart otelcol-sumo
   ```
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+</TabItem>
+<TabItem value="Chef">
+
+import ChefEnv from '../../../reuse/apps/opentelemetry/chef-with-env.md';
+
+<ChefEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsEnv from '../../../reuse/apps/opentelemetry/ansible-with-env.md';
+
+<AnsEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetEnv from '../../../reuse/apps/opentelemetry/puppet-with-env.md';
+
+<PuppetEnv/>
+
+</TabItem>
+</Tabs>
+
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 ## Sample Log and Metrics messages
 
@@ -163,8 +211,8 @@ sumo.datasource=docker
 This sample Query is from the **Docker - Overview** > **Top 5 Containers by CPU Usage** panel.
 
 ```sql title="Metric query"
-sumo.datasource=docker container.image.name={{container.image.name}} container.name={{container.name}}  metric=container.cpu.usage.total 
-| avg by container.name 
+sumo.datasource=docker container.image.name={{container.image.name}} container.name={{container.name}}  metric=container.cpu.usage.total
+| avg by container.name
 | topk(5,avg)
 ```
 

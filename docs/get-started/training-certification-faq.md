@@ -25,7 +25,8 @@ We offer courses online (live and on-demand) and in-person **for free**. Customi
 1. From the **Home** page, click the **Certification** tab.
 1. Click **Get Certified**. You'll be redirected to the portal page, where you can access all courses and certifications.
 
-<details><summary><strong>Get Certified</strong> link not working? Make sure to verify your email address.</summary>
+<details>
+<summary><strong>Get Certified</strong> link not working? Make sure to verify your email address.</summary>
 
 For security reasons, you must must [verify your email address](#how-do-i-verify-my-email-address) in order to access [third-party services within Sumo Logic](#how-do-i-obtain-third-party-service-access). If you have a working Sumo Logic username and password, then your email address is considered verified.
 
@@ -183,7 +184,7 @@ Certified users become technical experts on setting up, managing and optimizing 
 -->
 
 
-**Sumo Logic Certified - Cloud Security Analytics**: Learn how our Threat Intelligence can help you stay on top of your environment by matching IOCs like IP address, domain names, email addresses, and MD5 hashes. Also learn how to analyze AWS data to monitor account usage and monitor security groups effectively.
+**Sumo Logic Certified - Cloud Infrastructure Security**: Learn how our Threat Intelligence can help you stay on top of your environment by matching IOCs like IP address, domain names, email addresses, and MD5 hashes. Also learn how to analyze AWS data to monitor account usage and monitor security groups effectively.
 
 <!--
 In this course, you'll create starter SOC queries as dashboard panels. These advanced operator queries help you monitor user activity across the globe, failed logins, land speed violations, brute force attacks, and more. You will create parameterized lookup tables for easy panel or dashboard pivots. You will learn how to export the starter SOC dashboard you created for use in your own environment. Lastly, you will be able to detect and investigate IOCs with the use of our embedded CrowdStrike database, which monitors malicious IPs addresses, and apply scheduled views as a best practice.

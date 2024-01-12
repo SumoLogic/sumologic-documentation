@@ -8,6 +8,7 @@ description: The Sumo Logic app for MariaDB is a unified logs and metrics app th
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CollBegin from '../../reuse/collection-should-begin-note.md';
 
 <img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="Thumbnail icon" width="80"/>
 
@@ -245,7 +246,8 @@ Sumo Logic supports collecting logs both via Syslog and a local log file. Utiliz
 
 Based on your infrastructure and networking setup choose one of these methods to collect MariaDB logs and follow the instructions below to set up log collection:
 
-<details><summary>Method A: Configure MariaDB to log to a local file.</summary>
+<details>
+<summary>Method A: Configure MariaDB to log to a local file.</summary>
 
 MariaDB logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector.
 
@@ -271,13 +273,15 @@ long_query_time=2
 
 </details>
 
-<details><summary>Method B: Configure a Sumo Logic Collector</summary>
+<details>
+<summary>Method B: Configure a Sumo Logic Collector</summary>
 
 To collect logs directly from the MariaDB machine, configure an [Installed Collector](/docs/send-data/installed-collectors).
 
 </details>
 
-<details><summary>Method C: Configure a Source</summary>
+<details>
+<summary>Method C: Configure a Source</summary>
 
 This section demonstrates how to configure sources for Error Logs and Slow Query Logs.
 
@@ -292,7 +296,7 @@ This section demonstrates how to configure a Local File Source for MariaDB Error
    3. **File Path** (Required). Enter the path to your mariadb-error.log. The files are typically located in /var/log/mariadb/mariadb-error.log. If you're using a customized path, check the server.cnf file for this information
    4. **Collection should begin**. Set this for how far back historically you want to start collecting.
    :::note
-   {@import ../../reuse/collection-should-begin-note.md}
+   <CollBegin/>
    :::
    5. **Source Host** (Optional). Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
    6. **Source Category** (Recommended). DB/MariaDB/ErrorLogs_._
@@ -423,7 +427,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
       * `data_format=“prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
       * `component=“database”` - In the input `[[inputs.mysql]]` plugins section. This value is used by Sumo Logic apps to identify application components.
       * `db_system=“mariadb”` - In the input plugins sections. This value identifies the database system.
-   * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
+   * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for all other parameters that can be configured in the Telegraf agent globally.
    4. After you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from this [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, Telegraf should start collecting the MariaDB metrics and forward them to the Sumo Logic HTTP Source.
@@ -461,12 +465,11 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html)** or later.
 3. **Download the Sumo Logic Terraform package for MariaDB alerts.** The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/MariaDB). You can either download it through the “git clone” command or as a zip file.
 4. **Alert Configuration.** After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/MariaDB/`. Edit the **MariaDB.auto.tfvars** file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1.
-   ```bash
+  ```bash
   access_id   = "<SUMOLOGIC ACCESS ID>"
   access_key  = "<SUMOLOGIC ACCESS KEY>"
   environment = "<SUMOLOGIC DEPLOYMENT>"
   ```
-
   The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `mariadb_data_source`. Custom filter examples:
     * For a specific cluster, your custom filter would be `db_cluster=mariadb.prod.01`
     * For all clusters in an environment, your custom filter would be `environment=prod`
@@ -654,16 +657,16 @@ Sumo Logic provides the following out-of-the-box alerts:
 
 | Alert Type (Metrics/Logs) | Alert Name                                           | Alert Description                                                                                                                                        | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
 |:---------------------------|:------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------|:-----------------|:-------------------|
-| Logs                      | MariaDB - Excessive Slow Query Detected              | This alert fires when the average time to execute a query is more than 15 seconds for a 5 minute time interval.                                          | Critical                          | >=1             | <1                |
-| Logs                      | MariaDB - Instance down                              | This alert fires when we detect that a MariaDB instance is down                                                                                          | Critical                          | >=1             | <1                |
-| Metrics                   | MariaDB - Connection refused                         | This alert fires when connections are refused when the limit of maximum connections is reached.                                                          | Critical                          | >=1             | <1                |
-| Metrics                   | MariaDB - Follower replication lag detected          | This alert fires when we detect that the average replication lag within a 5 minute time interval is greater than or equal to 900 seconds .               | Critical                          | >=900           | <900              |
-| Metrics                   | MariaDB - High average query run time                | This alert fires when the average run time of MariaDB queries within a 5 minute time interval for a given schema is greater than or equal to one second. | Critical                          | >=1             | <1                |
-| Metrics                   | MariaDB - High Innodb buffer pool utilization        | This alert fires when the InnoDB buffer pool utilization is high (>=90%) within a 5 minute time interval.                                                | Critical                          | >=90            | <90               |
-| Metrics                   | MariaDB - Large number of aborted connections        | This alert fires when there are 5 or more aborted connections detected within a 5 minute time interval.                                                  | Critical                          | >=5             | <5                |
-| Metrics                   | MariaDB - Large number of internal connection errors | This alert fires when there are 5 or more internal connection errors within a 5 minute time interval.                                                    | Critical                          | >=5             | <5                |
-| Metrics                   | MariaDB - Large number of slow queries               | This alert fires when there are 5 or more slow queries within a 5 minute time interval.                                                                  | Critical                          | >=5             | <5                |
-| Metrics                   | MariaDB - Large number of statement errors           | This alert fires when there are 5 or more statement errors within a 5 minute time interval.                                                              | Critical                          | >=5             | <5                |
-| Metrics                   | MariaDB - Large number of statement warnings         | This alert fires when there are 20 or more statement warnings within a 5 minute time interval.                                                           | Critical                          | >=20            | <20               |
-| Metrics                   | MariaDB - No index used in the SQL statements        | This alert fires when there are 5 or more statements not using an index in the SQL query within a 5 minute time interval.                                | Critical                          | >=5             | <5                |
-| Metrics                   | MariaDB - Slave Server Error                         | This alert fires when there are slave server errors within a 5 minute time interval.                                                                     | Critical                          | >0              | <=0               |
+| Logs                      | MariaDB - Excessive Slow Query Detected              | This alert fires when the average time to execute a query is more than 15 seconds for a 5 minute time interval.                                          | Critical                          | `>=`1             | `<`1                |
+| Logs                      | MariaDB - Instance down                              | This alert fires when we detect that a MariaDB instance is down                                                                                          | Critical                          | `>=`1             | `<`1                |
+| Metrics                   | MariaDB - Connection refused                         | This alert fires when connections are refused when the limit of maximum connections is reached.                                                          | Critical                          | `>=`1             | `<`1                |
+| Metrics                   | MariaDB - Follower replication lag detected          | This alert fires when we detect that the average replication lag within a 5 minute time interval is greater than or equal to 900 seconds .               | Critical                          | `>=`900           | `<`900              |
+| Metrics                   | MariaDB - High average query run time                | This alert fires when the average run time of MariaDB queries within a 5 minute time interval for a given schema is greater than or equal to one second. | Critical                          | `>=`1             | `<`1                |
+| Metrics                   | MariaDB - High Innodb buffer pool utilization        | This alert fires when the InnoDB buffer pool utilization is high (`>=`90%) within a 5 minute time interval.                                                | Critical                          | `>=`90            | `<`90               |
+| Metrics                   | MariaDB - Large number of aborted connections        | This alert fires when there are 5 or more aborted connections detected within a 5 minute time interval.                                                  | Critical                          | `>=`5             | `<`5                |
+| Metrics                   | MariaDB - Large number of internal connection errors | This alert fires when there are 5 or more internal connection errors within a 5 minute time interval.                                                    | Critical                          | `>=`5             | `<`5                |
+| Metrics                   | MariaDB - Large number of slow queries               | This alert fires when there are 5 or more slow queries within a 5 minute time interval.                                                                  | Critical                          | `>=`5             | `<`5                |
+| Metrics                   | MariaDB - Large number of statement errors           | This alert fires when there are 5 or more statement errors within a 5 minute time interval.                                                              | Critical                          | `>=`5             | `<`5                |
+| Metrics                   | MariaDB - Large number of statement warnings         | This alert fires when there are 20 or more statement warnings within a 5 minute time interval.                                                           | Critical                          | `>=`20            | `<`20               |
+| Metrics                   | MariaDB - No index used in the SQL statements        | This alert fires when there are 5 or more statements not using an index in the SQL query within a 5 minute time interval.                                | Critical                          | `>=`5             | `<`5                |
+| Metrics                   | MariaDB - Slave Server Error                         | This alert fires when there are slave server errors within a 5 minute time interval.                                                                     | Critical                          | >0              | `<`=0               |

@@ -11,7 +11,7 @@ This topic has instructions for creating and using tuning expressions for Rules.
 
 ## What’s a rule tuning expression?
 
-Every CSE rule has a rule expression, to which incoming Records are compared. When a Record matches a rule expression, and other rule criteria are satisfied, the rule generates a Signal. A rule tuning expression allows you to extend a rule expression. A rule tuning expression is combined with a rule expression—either with a logical AND or NOT—and the rule will only generate a Signal if a Record matches the combined expression.  
+Every Cloud SIEM rule has a rule expression, to which incoming Records are compared. When a Record matches a rule expression, and other rule criteria are satisfied, the rule generates a Signal. A rule tuning expression allows you to extend a rule expression. A rule tuning expression is combined with a rule expression—either with a logical AND or NOT—and the rule will only generate a Signal if a Record matches the combined expression.  
 
 As an example, consider the following rule expression, which detects that an attempt was made to clear the Windows Security Event Log.
 
@@ -23,10 +23,10 @@ If you don’t want the rule to generate a Signal if the person performing the a
 
 `user_userId = "jdoe"`
 
-Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when CSE updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
+Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when Cloud SIEM updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
 
 :::tip
-There is another benefit of using tuning built-in rules instead of writing custom rules: you get the benefit of CSE's [Global Confidence](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights) model. This feature leverages crowd-sourced learning to help security analysts triage and prioritize Insights. 
+There is another benefit of using tuning built-in rules instead of writing custom rules: you get the benefit of Cloud SIEM's [Global Confidence](/docs/cse/records-signals-entities-insights/global-intelligence-security-insights) model. This feature leverages crowd-sourced learning to help security analysts triage and prioritize Insights. 
 :::
 
 You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules.
@@ -48,23 +48,24 @@ import Iframe from 'react-iframe'; 
 
 ## Writing a tuning expression
 
-Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and CSE [rules language](/docs/cse/rules/cse-rules-syntax) functions. For more information, see [About rule expressions](/docs/cse/rules/about-cse-rules#About_rule_expressions).
+Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and Cloud SIEM [rules language](/docs/cse/rules/cse-rules-syntax) functions. For more information, see [About rule expressions](/docs/cse/rules/about-cse-rules#About_rule_expressions).
 
 ## Example tuning expression
 
-Here’s what the example tuning expression looks like in the CSE UI.
+Here’s what the example tuning expression looks like in the Cloud SIEM UI.
 
 <img src={useBaseUrl('img/cse/example-expression.png')} alt="Example expression" width="800"/>
 
 ## Create a tuning expression
 
 1. Select **Rule Tuning** from the **Content** menu.
-    <br/><img src={useBaseUrl('img/cse/rule-tuning-option.png')} alt="Rule tuning option" width="800"/>
+    <br/><img src={useBaseUrl('img/cse/rule-tuning-option.png')} alt="Rule tuning option" width="300"/>
 1. On the **Rule Tuning** page, click **Create**.
     <br/><img src={useBaseUrl('img/cse/rule-tuning-page.png')} alt="Rule tuning page" width="800"/>
 1. The **New Rule Tuning Expression** page appears.
     <br/><img src={useBaseUrl('img/cse/annotated-expression.png')} alt="Annotated expression" width="800"/>
 1. **Name**. Enter a name for the tuning expression. 
+1. **Description**. Enter a description of the tuning expression.
 1. In the **Tune [selected|all] Rules** section: 
    * To apply the expression to all rules, choose **all**.
    * To apply the expression to some but not all rules, choose **selected**. In the **Type to add a rule area**, enter a search string that matches Rule names or Rule IDs. To search by Rule name, you can enter a string that the Rule name contains. To search by Rule ID, you can enter the complete ID, or a subset of the ID, starting with the leading character.  The name and ID of rules that match will appear on the page..

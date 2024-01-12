@@ -34,7 +34,7 @@ Once a request has been submitted, a support ticket is automatically opened. A r
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/integrations/sumo-apps/cse"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Cloud SIEM</h4></a>
-  <p>Gives visibility into what’s going on in your Cloud SIEM Enterprise.</p>
+  <p>Gives visibility into what’s going on in your Cloud SIEM.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -57,15 +57,13 @@ Once a request has been submitted, a support ticket is automatically opened. A r
     </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href="/docs/integrations/sumo-apps/infrequent-data-tier"><img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="40"/>
-      <h4>Infrequent Data Tier</h4></a>
+      <a href="/docs/integrations/sumo-apps/infrequent-data-tier"><img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="40"/><h4>Infrequent Data Tier</h4></a>
       <p>A guide to the Sumo Logic Infrequent Data Tier app.</p>
       </div>
     </div>
     <div className="box smallbox card">
       <div className="container">
-      <a href="/docs/integrations/sumo-apps/security-analytics"><img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics.png')} alt="Thumbnail icon" width="40"/>
-      <h4>Security Analytics</h4></a>
+      <a href="/docs/integrations/sumo-apps/security-analytics"><img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics.png')} alt="Thumbnail icon" width="40"/><h4>Security Analytics</h4></a>
       <p>A guide to the Sumo Logic app for Security Analytics.</p>
       </div>
     </div>

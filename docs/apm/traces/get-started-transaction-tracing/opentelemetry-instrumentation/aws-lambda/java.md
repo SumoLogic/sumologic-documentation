@@ -6,6 +6,7 @@ description: Learn how to install and configure OpenTelemetry distributed tracin
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApmTrace from '../../../../../reuse/apm-traces-layer-order.md';
 
 This document covers how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions based on Java and send the data to Sumo Logic.
 
@@ -18,14 +19,14 @@ To obtain tracing data from AWS Lambda functions developed in Java, you can use 
 
 ## Sumo Logic Distribution for OpenTelemetry Lambda layer
 
-You can instrument your AWS Java Lambda function using the [Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.24.0](https://github.com/SumoLogic/sumologic-otel-lambda/tree/release-java-v1.24.0/java). By default, calls to the Lambda function and AWS Services are instrumented, see the [Manual Instrumentation](#optional-manual-instrumentation) section below if your function is performing some other calls like HTTP requests or database calls.
+You can instrument your AWS Java Lambda function using the [Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.30.1](https://github.com/SumoLogic/sumologic-otel-lambda/tree/release-java-v1.30.1/java). By default, calls to the Lambda function and AWS Services are instrumented, see the [Manual Instrumentation](#optional-manual-instrumentation) section below if your function is performing some other calls like HTTP requests or database calls.
 
 ### Lambda function requirements
 
 You'll need the following:
 * Java8 (Corretto) or Java11 (Corretto)
 * Lambda layers add permissions
-* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md).
+* Sumo Logic OTLP/HTTP Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
 
 1. Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 
@@ -33,11 +34,13 @@ You'll need the following:
 
 1. In the **Choose a layer** menu, select **Specify an ARN** and paste the ARN ID for your Lambda function AWS Region. Reference the [amd64](#amd64-architecture) and [arm64](#arm64-architecture) tables for the ARN ID.  
 
-    ![lambda-java1.png](/img/traces/lambda-java1.png)
+    <img src={useBaseUrl('img/traces/lambda-java1.png')} alt="Choose a layer" style={{border: '1px solid black'}} width="800" />
 
-1. Ensure the AWS Distro layer is present in the Layers section:
+1. Ensure the AWS Distro layer is present in the Layers section:<br/><img src={useBaseUrl('img/traces/lambda-java2.png')} alt="Layers" style={{border: '1px solid black'}} width="800" />
 
-    ![lambda-java2.png](/img/traces/lambda-java2.png)
+:::note
+<ApmTrace/>
+:::
 
 1. Navigate to the **Configuration > Environment variables** section and set up the following **required** environment variables:
 
@@ -56,11 +59,14 @@ You'll need the following:
 
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
-   * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](/docs/apm/traces/get-started-transaction-tracing/http-traces-source.md). You can use an existing Source or create a new one, if needed.
+   * `SUMO_OTLP_HTTP_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). You can use an existing Source or create a new one, if needed.
+    :::note
+    The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces Source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
+    :::
 
-    ![img](/img/traces/lambda-java3.png)
+    <img src={useBaseUrl('img/traces/lambda-java3.png')} alt="Environment variables" style={{border: '1px solid black'}} width="800" />
 
-1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces.md).
+1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces).
 
 ### Optional manual instrumentation
 
@@ -96,27 +102,27 @@ The following are the Sumo Logic OTel Lambda layers for AWS Region amd64 (x86_64
 
 | AWS Region | ARN |
 |:--|:--|
-|   af-south-1       |   arn:aws:lambda:af-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1       |
-|   ap-east-1        |   arn:aws:lambda:ap-east-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   ap-northeast-1   |   arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1   |
-|   ap-northeast-2   |   arn:aws:lambda:ap-northeast-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1   |
-|   ap-northeast-3   |   arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1   |
-|   ap-south-1       |   arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1       |
-|   ap-southeast-1   |   arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1   |
-|   ap-southeast-2   |   arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1   |
-|   ca-central-1     |   arn:aws:lambda:ca-central-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1     |
-|   eu-central-1     |   arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1     |
-|   eu-north-1       |   arn:aws:lambda:eu-north-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1       |
-|   eu-south-1       |   arn:aws:lambda:eu-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1       |
-|   eu-west-1        |   arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   eu-west-2        |   arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   eu-west-3        |   arn:aws:lambda:eu-west-3:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   me-south-1       |   arn:aws:lambda:me-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1       |
-|   sa-east-1        |   arn:aws:lambda:sa-east-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   us-east-1        |   arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   us-east-2        |   arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   us-west-1        |   arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
-|   us-west-2        |   arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-24-0:1        |
+|   af-south-1       |   arn:aws:lambda:af-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2       |
+|   ap-east-1        |   arn:aws:lambda:ap-east-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   ap-northeast-1   |   arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
+|   ap-northeast-2   |   arn:aws:lambda:ap-northeast-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
+|   ap-northeast-3   |   arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
+|   ap-south-1       |   arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2       |
+|   ap-southeast-1   |   arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
+|   ap-southeast-2   |   arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2   |
+|   ca-central-1     |   arn:aws:lambda:ca-central-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2     |
+|   eu-central-1     |   arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2     |
+|   eu-north-1       |   arn:aws:lambda:eu-north-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2       |
+|   eu-south-1       |   arn:aws:lambda:eu-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2       |
+|   eu-west-1        |   arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   eu-west-2        |   arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   eu-west-3        |   arn:aws:lambda:eu-west-3:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   me-south-1       |   arn:aws:lambda:me-south-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2       |
+|   sa-east-1        |   arn:aws:lambda:sa-east-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   us-east-1        |   arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   us-east-2        |   arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   us-west-1        |   arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
+|   us-west-2        |   arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-java-x86_64-v1-30-1:2        |
 
 ### Sumo Logic Distro Lambda layers for AWS Region - arm64 (arm) architecture
 
@@ -124,21 +130,21 @@ The following are the Sumo Logic OTel Lambda layers for AWS Region arm64 archit
 
 | AWS Region | ARN |
 |:--|:--|
-|   ap-northeast-1   |   arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1   |
-|   ap-northeast-3   |   arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1   |
-|   ap-south-1       |   arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1       |
-|   ap-southeast-1   |   arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1   |
-|   ap-southeast-2   |   arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1   |
-|   eu-central-1     |   arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1     |
-|   eu-west-1        |   arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1        |
-|   eu-west-2        |   arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1        |
-|   us-east-1        |   arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1        |
-|   us-east-2        |   arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1        |
-|   us-west-2        |   arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-24-0:1        |
+|   ap-northeast-1   |   arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2   |
+|   ap-northeast-3   |   arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2   |
+|   ap-south-1       |   arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2       |
+|   ap-southeast-1   |   arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2   |
+|   ap-southeast-2   |   arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2   |
+|   eu-central-1     |   arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2     |
+|   eu-west-1        |   arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2        |
+|   eu-west-2        |   arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2        |
+|   us-east-1        |   arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2        |
+|   us-east-2        |   arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2        |
+|   us-west-2        |   arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-lambda-java-arm64-v1-30-1:2        |
 
 ## Sumo Logic OTel Lambda container instrumentation
 
-[Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.24.0](https://github.com/SumoLogic/sumologic-otel-lambda/tree/release-java-v1.24.0/java) also provides packed [OpenTelemetry Java](https://github.com/open-telemetry/opentelemetry-java) libraries for container-based Lambda functions.
+[Sumo Logic Distribution for OpenTelemetry Lambda Layer version 1.30.1](https://github.com/SumoLogic/sumologic-otel-lambda/tree/release-java-v1.30.1/java) also provides packed [OpenTelemetry Java](https://github.com/open-telemetry/opentelemetry-java) libraries for container-based Lambda functions.
 
 :::note
 The instructions below support only [AWS Base Images for Lambda](https://docs.aws.amazon.com/lambda/latest/dg/runtimes-images.html).
@@ -150,11 +156,11 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
 
 * Docker
 * Java 1.8+
-* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic, you'll need an endpoint URL from an [HTTP Traces Source](/docs/apm/traces/get-started-transaction-tracing/http-traces-source).
+* Sumo Logic OTLP/HTTP Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
 
 ### Lambda function image changes
 
-1. Download and extract Sumo Logic AWS OTel Lambda archive with instrumentation packages specific for your architecture,  [amd64 (x86_64)](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/java-v1.24.0/opentelemetry-java-wrapper-amd64.zip) or [arm64](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/java-v1.24.0/opentelemetry-java-wrapper-arm64.zip).
+1. Download and extract Sumo Logic Distribution for OpenTelemetry Java Lambda Layer archive with instrumentation packages specific for your architecture,  [amd64 (x86_64)](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/java-v1.30.1/opentelemetry-java-wrapper-amd64.zip) or [arm64](https://github.com/SumoLogic/sumologic-otel-lambda/releases/download/java-v1.30.1/opentelemetry-java-wrapper-arm64.zip).
 
 1. Extracted instrumentation libraries have to be added to the image in /opt directory. See the Dockerfile example:
 
@@ -188,5 +194,10 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
    * `OTEL_RESOURCE_ATTRIBUTES` - Sets OpenTelemetry resources. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. (For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels)). Tracing `application` and `cloud.account.id` are set with the `OTEL_RESOURCE_ATTRIBUTES` environment variable:
      * `application=YOUR_APPLICATION_NAME` - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
      * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID` - set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data. All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
-   * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](/docs/apm/traces/get-started-transaction-tracing/http-traces-source#view-the-endpoint-url). You can use an existing Source or create a new one if needed. <br/><img src={useBaseUrl('img/traces/image2.png')} alt="otel" />
+   * `SUMO_OTLP_HTTP_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). You can use an existing Source or create a new one, if needed.
+    :::note
+    The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces Source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
+    :::
+
+    <br/><img src={useBaseUrl('img/traces/image2.png')} alt="otel" />
 4. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces). The instructions above instrument only requests related to the handler function. To instrument other calls like HTTP calls, DB calls additional libraries have to be added to the Docker image. See [supported libraries, frameworks and application servers](https://github.com/open-telemetry/opentelemetry-java-instrumentation#supported-libraries-frameworks-and-application-servers).

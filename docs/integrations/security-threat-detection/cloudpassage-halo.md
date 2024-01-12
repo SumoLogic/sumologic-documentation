@@ -173,7 +173,9 @@ Sample policy: Use a proper permission level. Below is a sample.
 
 Now that you have configured CloudPassage Halo, install the Sumo Logic App for CloudPassage Halo to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing CloudPassage Dashboards
 

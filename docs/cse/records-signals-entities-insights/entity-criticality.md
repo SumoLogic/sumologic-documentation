@@ -7,7 +7,7 @@ description: You can use Entity Criticality to adjust the severity of Signals fo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page describes CSE’s Entity Criticality feature and how to use it.
+This page describes Cloud SIEM’s Entity Criticality feature and how to use it.
 
 You can use Entity Criticality to adjust the severity of Signals for specific Entities based on some risk factor or other consideration. For example, an executive’s laptop is likely to contain important data, so Signals related to that Entity should have a higher severity. To allow for this, you define a Criticality, which is a single arithmetic expression that will be used to adjust the severity of Signals on Entities the Criticality is assigned to. For example:
 
@@ -21,7 +21,7 @@ If the formula you specify results in a number that isn’t whole, the value is 
 
 ## About Criticality and Insight generation
 
-The maximum severity that can be assigned to a CSE rule is 10, so normally, Signal severity is also limited to 1. Note however that CSE doesn’t impose a maximum value on the severity that results from a Criticality, although the minimum value will always be 0. 
+The maximum severity that can be assigned to a Cloud SIEM rule is 10, so normally, Signal severity is also limited to 1. Note however that Cloud SIEM doesn’t impose a maximum value on the severity that results from a Criticality, although the minimum value will always be 0. 
 
 As described in the [Insight Generation](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) topic, an Insight is generated on an Entity based on the cumulative severity of the unique Signals that have fired on it over the previous two weeks, unless a different period is configured. The cumulative
 severity is referred to as the Entity’s Activity Score. Keep in mind that higher Signal severities will increase an Entity’s Active Score and result in Insight’s being generated sooner. 
@@ -41,7 +41,7 @@ You can configure both the detection window and the threshold Activity Score for
 
 You can associate a Criticality with one or more Entities. 
 
-1. Click **Entities** at the top of the CSE UI.<br/><br/><img src={useBaseUrl('img/cse/entities-icon.png')} alt="Entities icon" width="800"/>
+1. Click **Entities** at the top of the Cloud SIEM UI.<br/><br/><img src={useBaseUrl('img/cse/entities-icon.png')} alt="Entities icon" width="800"/>
 1. Navigate to the Entity you want to assign a Criticality and click on it to display the **Entity Details** page. 
 2. On the **Entity Details** page, click the **Criticality** field to display a list of Criticalities. <br/><img src={useBaseUrl('img/cse/entity-details-criticality.png')} alt="Entity criticality details" width="400"/>
 3. Click a Criticality to apply it to the Entity.

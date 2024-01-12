@@ -102,14 +102,14 @@ This section provides instructions for configuring log collection for the Micros
 To collect logs for the Microsoft Office 365 App, do the following:
 
 1. One [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. One [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/ms-office-audit-source.md) for each content type you want to collect logs for. For example:
+2. One [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source.md) for each content type you want to collect logs for. For example:
     * Office 365 Azure AD logs
     * Office 365 Exchange logs
     * Office 365 SharePoint logs
     * Office 365 General logs
     * Office 365 Data Loss Prevention (DLP) event logs
 
-For complete details, see [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/ms-office-audit-source.md).
+For complete details, see [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source.md).
 
 We recommend the following Source Category naming convention:
 * **Azure AD:** O365/Azure
@@ -125,13 +125,11 @@ Now that you have configured Office 365, install the Sumo Logic App for Microsof
 
 To install the app:
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**
-
 1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter `_sourceCategory=O365/*`
+    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter `_sourceCategory=O365/*`.
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 

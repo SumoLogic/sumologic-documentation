@@ -29,65 +29,44 @@ To install the app:
 
 ## Set up Burndown Rates for Consumables
 
-Burndown rate is the ratio for the number of Credits consumed per 1 GB of ingested data. This ratio is different for each tier. Similarly, CSE ingest, Metrics and Tracing have their own burndown rates.
+Burndown rate is the ratio for the number of Credits consumed per 1 GB of ingested data. This ratio is different for each tier. Similarly, Cloud SIEM ingest, Metrics and Tracing have their own burndown rates.
 
 
 <table>
   <tr>
-   <td><strong>Credit Variable</strong>
-   </td>
-   <td><strong>Unit</strong>
-   </td>
-   <td><strong>Default Credits per Unit</strong>
-   </td>
+   <td><strong>Credit Variable</strong></td>
+   <td><strong>Unit</strong></td>
+   <td><strong>Default Credits per Unit</strong></td>
   </tr>
   <tr>
-   <td>Cloud SIEM Enterprise
-   </td>
-   <td>1 GB
-   </td>
-   <td>25
-   </td>
+   <td>Cloud SIEM</td>
+   <td>1 GB</td>
+   <td>25</td>
   </tr>
   <tr>
-   <td>Logs - Continuous Analytics
-   </td>
-   <td>1 GB
-   </td>
-   <td>20
-   </td>
+   <td>Logs - Continuous Analytics</td>
+   <td>1 GB</td>
+   <td>20</td>
   </tr>
   <tr>
-   <td>Logs - Frequent Analytics
-   </td>
-   <td>1 GB
-   </td>
-   <td>9
-   </td>
+   <td>Logs - Frequent Analytics</td>
+   <td>1 GB</td>
+   <td>9</td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>1,000 DPM
-   </td>
-   <td>3
-   </td>
+   <td>Metrics</td>
+   <td>1,000 DPM</td>
+   <td>3</td>
   </tr>
   <tr>
-   <td>Logs - Infrequent Ingest
-   </td>
-   <td>1 GB
-   </td>
-   <td>0.4
-   </td>
+   <td>Logs - Infrequent Ingest</td>
+   <td>1 GB</td>
+   <td>0.4</td>
   </tr>
   <tr>
-   <td>Tracing- Ingest
-   </td>
-   <td>1 GB
-   </td>
-   <td>14
-   </td>
+   <td>Tracing- Ingest</td>
+   <td>1 GB</td>
+   <td>14</td>
   </tr>
 </table>
 

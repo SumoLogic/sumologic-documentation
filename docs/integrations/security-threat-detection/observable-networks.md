@@ -15,9 +15,9 @@ From Sumo Logic, you may also set up forwarding for log monitoring and authentic
 
 Observable Networks is a provider of network security technology and advanced threat detection services that identify compromised and misused networked devices. Observable's Dynamic Endpoint Modeling technology includes a cloud-based service platform incorporating automated security analytics and real-time traffic sensors to continuously model all devices on a network. Endpoint modeling is based on network traffic flow metadata and is indifferent to encryption. Observable makes it easy to readily understand normal and abnormal device behaviors, helping to identify compromised devices and facilitate faster remediation.
 
-For more information, please visit [http://www.observable.net/](http://www.observable.net/).
+For more information, visit [Observable Networks (via Cisco)](https://www.cisco.com/c/en/us/services/acquisitions/observable-networks.html).
 
-:::caution
+:::warning
 Before you begin, your Observable Networks portal must be properly configured. Contact [support@obsrvbl.com](/docs/integrations/security-threat-detection/observable-networks) if you have any questions.
 :::
 
@@ -33,7 +33,7 @@ The Observable Networks App allows you to monitor your Observable Networks deplo
 
 Observable Networks is a provider of network security technology and advanced threat detection services that identify compromised and misused networked devices. Observable's Dynamic Endpoint Modeling technology includes a cloud-based service platform incorporating automated security analytics and real-time traffic sensors to continuously model all devices on a network. Endpoint modeling is based on network traffic flow metadata and is indifferent to encryption. Observable makes it easy to readily understand normal and abnormal device behaviors, helping to identify compromised devices and facilitate faster remediation.
 
-For more information, see [http://www.observable.net/](http://www.observable.net/).
+For more information, visit [Observable Networks (via Cisco)](https://www.cisco.com/c/en/us/services/acquisitions/observable-networks.html).
 
 
 ### Prerequisites
@@ -166,7 +166,9 @@ _sourceCategory=observable
 
 This section provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and dashboards allow you to visually analyze your Observable Networks data at a glance.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Observable Networks Dashboards
 

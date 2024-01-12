@@ -9,13 +9,35 @@ This section provides details on the available versions of the AWS Observability
 
 To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Selecting a stack template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for more information.
 
+## v2.7.0, 25-Oct-2023
+
+AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.7.0/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+
+New Feature:
+* RDS app - Added support to analyze MySQL and AuroraMySQL Databases CloudWatch logs.
+
+Updates:
+* All python lambda runtimes have been updated to python3.11 along with libraries updated.
+* All nodeJS lambda runtimes have been update to NodeJS18.x along with libraries updated.
+* The solution is updated to use AWS terraform provider version v5.
+* Updated SAM apps used in solution.
+  * sumologic-s3-logging-auto-enable - Semantic v1.0.6
+  * sumologic-loggroup-connector - Semantic v1.0.9
+
+Bug Fixes:
+* AWS Lambda app updated - Consistent handling of time-out error messages.
+* AWS Application Load Balancer app - Updated metric panel queries to precisely handle available dimensions.
+
+
 ## v2.6.1, 18-July-2023
 
-AWS Observability Solution (S3 Link for cloudformation template):`https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.1/sumologic_observability.master.template.yaml`
+AWS Observability Solution (S3 Link for CloudFormation template):`https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.1/sumologic_observability.master.template.yaml`
 
-AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
 
-Security Fixes and Updates: 
+Security Fixes and Updates:
  * Security fixes ([CVE-2022-23491](https://nvd.nist.gov/vuln/detail/CVE-2022-23491) and [CVE-2021-33503](https://nvd.nist.gov/vuln/detail/CVE-2021-33503)) for following.
    * SAM: sumologic-s3-logging-auto-enable - Semantic v1.0.5
    * SAM: sumologic-loggroup-connector - Semantic v1.0.7
@@ -25,9 +47,9 @@ Security Fixes and Updates:
 
 ## v2.6.0, 25-April-2023
 
-AWS Observability Solution (S3 Link for cloudformation template):`https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml`
+AWS Observability Solution (S3 Link for CloudFormation template):`https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.6.0/sumologic_observability.master.template.yaml`
 
-AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
 
 New Feature:
 * Support for Amazon SQS service.
@@ -44,9 +66,9 @@ Bug Fixes:
 
 ## v2.5.1, 27-Sept-2022
 
-AWS Observability Solution (S3 Link for cloudformation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.5.1/sumologic_observability.master.template.yaml`
+AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.5.1/sumologic_observability.master.template.yaml`
 
-AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
 
 Updates:
 * Updated runtime of nodeJS 12.x lambdas to nodeJS 16.x.
@@ -57,9 +79,9 @@ Bug Fixes:
 
 ## v2.5.0, 29-July-2022
 
-AWS Observability Solution (S3 Link for cloudformation template):`https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.5.0/sumologic_observability.master.template.yaml`
+AWS Observability Solution (S3 Link for CloudFormation template):`https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.5.0/sumologic_observability.master.template.yaml`
 
-AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates)
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates)
 
 New Features:
 * Support for Amazon EC2 CloudWatch Metric.
@@ -84,10 +106,10 @@ Removals:
 * RCE Dashboards are deprecated from the AWS Observability solution.
 
 ## v2.4.0, 30-March-2022
-AWS Observability Solution (S3 Link for cloudformation template):
+AWS Observability Solution (S3 Link for CloudFormation template):
 https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.4.0/sumologic_observability.master.template.yaml
 
-AWS Observability Solution (Terraform based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates)
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates)
 
 New Features:
 * Select the install location for the AWS Observability app folder. **Personal** is the default location.
@@ -162,4 +184,4 @@ Updates:
 
 ## v1.0.0, 31-Aug-2020
 
-First version of the solution
+First version of the solution.

@@ -88,7 +88,9 @@ To configure log collection for the Opsgenie App, do the following:
 
 This section provides instructions for installing the Opsgenie App, as well as examples of each of the app dashboards.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing OpsGenie Dashboards
 

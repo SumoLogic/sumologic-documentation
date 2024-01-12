@@ -17,7 +17,9 @@ See also: [Span Analytics APIs](/docs/api/span-analytics) and [Service Map APIs]
 Tracing APIs give you the ability to browse and execute queries for traces and span analytics, and request a service map of your application environment.
 :::
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
+
+<ApiIntro/>
 
 ## Endpoints for API access  
 
@@ -33,11 +35,15 @@ While the trace search query is running you need to request the query status bas
 
 ## Errors  
 
-{@import ../reuse/api-errors.md}
+import ApiErrors from '../reuse/api-errors.md';
+
+<ApiErrors/>
 
 ## Rate limit throttling  
 
-{@import ../reuse/api-rate-limit.md}
+import RateLimit from '../reuse/api-rate-limit.md';
+
+<RateLimit/>
 
 A limit of 10 active concurrent trace search requests applies to your organization. Bear in mind that a single API request can consist of multiple queries and each query is treated as a separate trace search.
 

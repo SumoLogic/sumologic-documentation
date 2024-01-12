@@ -34,7 +34,7 @@ Due to the fact that vital metadata (information about the host and its OS) is a
 
 ### Step 1 - Generating OTLP/HTTP Endpoint
 
-Create new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp.md).
+Create new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp).
 
 ### Step 2 - Prepare config file
 
@@ -79,7 +79,7 @@ public.ecr.aws/sumologic/sumologic-otel-collector:0.85.0-sumo-0 \
 
 #### Option 2: Non-containerized environments
 
-For non-containerized environments, a binary can be downloaded from the project repository available under <https://github.com/SumoLogic/sumologic-otel-collector/releases> and run on a given node with the appropriate config, such as:
+For non-containerized environments, a binary can be downloaded from the project repository available under [https://github.com/SumoLogic/sumologic-otel-collector/releases](https://github.com/SumoLogic/sumologic-otel-collector/releases) and run on a given node with the appropriate config, such as:
 
 ```bash
 otelcol-sumo-0.85.0-sumo-0-darwin_amd64 --config=config.yaml
@@ -95,7 +95,7 @@ OpenTelemetry tracing client libraries need to point spans accordingly to the pr
 * OTLP (gRPC): `http://HOSTNAME:4317`
 * Jaeger GRPC: `http://HOSTNAME:14250`
 * Jaeger Thrift HTTP: `http://HOSTNAME:14268`
-* Jaeger Thrift Compact (UDP): HOSTNAME:6831
+* Jaeger Thrift Compact (UDP): `HOSTNAME:6831`
 * Zipkin: `http://HOSTNAME:9411/api/v2/traces`
 * OpenCensus: `http://HOSTNAME:55678`
 
@@ -133,7 +133,7 @@ public.ecr.aws/sumologic/sumologic-otel-collector:0.85.0-sumo-0 \
 
 #### Option 2: Non-containerized environments
 
-For non-containerized environments, a binary can be downloaded from the project repository available under <https://github.com/SumoLogic/sumologic-otel-collector/releases/> and run on a given node with the appropriate config, such as:
+For non-containerized environments, a binary can be downloaded from the project repository available under [https://github.com/SumoLogic/sumologic-otel-collector/releases/](https://github.com/SumoLogic/sumologic-otel-collector/releases/) and run on a given node with the appropriate config, such as:
 
 ```bash
 otelcol-sumo-0.85.0-sumo-0-darwin_amd64 --config agent-config.yaml
@@ -149,7 +149,7 @@ Tracing client libraries need to point spans accordingly to the protocol used:
 * OTLP (gRPC): http://AGENT_HOSTNAME:4317
 * Jaeger GRPC: http://AGENT_HOSTNAME:14250
 * Jaeger Thrift HTTP: http://AGENT_HOSTNAME:14268
-* Jaeger Thrift Compact (UDP): AGENT_HOSTNAME:6831
+* Jaeger Thrift Compact (UDP): `AGENT_HOSTNAME:6831`
 * Zipkin: http://AGENT_HOSTNAME:9411/api/v2/traces
 * OpenCensus: http://AGENT_HOSTNAME:55678
 

@@ -304,7 +304,7 @@ Here’s an explanation for additional values set by this Telegraf configuration
 * `component: “messaging”` - In the input plugins section, which is `[[inputs.RabbitMQ]]`. This value is used by Sumo Logic apps to identify application components.
 * `messaging_system: “rabbitmq”` - In the input plugins sections.In other words, this value identifies the messaging system
 
-For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
@@ -454,10 +454,10 @@ email_notifications = [
 
 ## Installing the RabbitMQ App
 
-This section demonstrates how to install the RabbitMQ App. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+This section demonstrates how to install the RabbitMQ App.
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+1. From the **App Catalog**, search for and select the RabbitMQ app.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing Apps to Your Library](/docs/get-started/apps-integrations/#installing-apps-to-your-library).
 3. To install the app, complete the following fields.
    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom RabbitMQ cluster filter. Examples:
@@ -554,111 +554,66 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 
 <table>
   <tr>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
+   <td>Alert Name</td>
+   <td>Alert Description</td>
+   <td>Trigger Type (Critical / Warning)</td>
+   <td>Alert Condition   </td>
+   <td>Recover Condition   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - High Memory Usage
-   </td>
-   <td>This alert fires when memory usage on a node in a RabbitMQ cluster is high.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>RabbitMQ - High Memory Usage   </td>
+   <td>This alert fires when memory usage on a node in a RabbitMQ cluster is high.   </td>
+   <td>Critical </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - No Consumers
-   </td>
-   <td>This alert fires when a RabbitMQ queue has no consumers.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#60; 1
-   </td>
-   <td>&#62; &#61; 1
-   </td>
+   <td>RabbitMQ - No Consumers   </td>
+   <td>This alert fires when a RabbitMQ queue has no consumers.   </td>
+   <td>Critical   </td>
+   <td>&#60; 1   </td>
+   <td>&#62; &#61; 1   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - High Disk Usage
-   </td>
-   <td>This alert fires when there is high disk usage on a node in a RabbitMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>RabbitMQ - High Disk Usage   </td>
+   <td>This alert fires when there is high disk usage on a node in a RabbitMQ cluster.  </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - High Number of File Descriptors in use
-   </td>
-   <td>This alert fires when the percentage of file descriptors used by a node in a RabbitMQ cluster is high.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 90
-   </td>
-   <td>&#60; 90
-   </td>
+   <td>RabbitMQ - High Number of File Descriptors in use </td>
+   <td>This alert fires when the percentage of file descriptors used by a node in a RabbitMQ cluster is high.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 90   </td>
+   <td>&#60; 90   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - Node Down
-   </td>
-   <td>This alert fires when a node in the RabbitMQ cluster is down.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1
-   </td>
-   <td>&#60; 1
-   </td>
+   <td>RabbitMQ - Node Down   </td>
+   <td>This alert fires when a node in the RabbitMQ cluster is down.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1   </td>
+   <td>&#60; 1   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - Too Many Connections
-   </td>
-   <td>This alert fires when there are too many connections to a node in a RabbitMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1000
-   </td>
-   <td>&#60; 1000
-   </td>
+   <td>RabbitMQ - Too Many Connections   </td>
+   <td>This alert fires when there are too many connections to a node in a RabbitMQ cluster. </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1000   </td>
+   <td>&#60; 1000   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - Too Many Un-acknowledged Messages
-   </td>
-   <td>This alert fires when we detect that there are too many un-acknowledged messages on a node in a RabbitMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1000
-   </td>
-   <td>&#60; 1000
-   </td>
+   <td>RabbitMQ - Too Many Un-acknowledged Messages   </td>
+   <td>This alert fires when we detect that there are too many un-acknowledged messages on a node in a RabbitMQ cluster. </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1000   </td>
+   <td>&#60; 1000   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - Un-routable Messages
-   </td>
-   <td>This alert fires when we detect that a node in the RabbitMQ cluster has un-routable messages
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; &#61; 1
-   </td>
-   <td>&#60; 1
-   </td>
+   <td>RabbitMQ - Un-routable Messages   </td>
+   <td>This alert fires when we detect that a node in the RabbitMQ cluster has un-routable messages </td>
+   <td>Critical   </td>
+   <td> &#62; &#61; 1   </td>
+   <td>&#60; 1   </td>
   </tr>
 </table>

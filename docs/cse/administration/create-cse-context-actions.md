@@ -98,15 +98,23 @@ To create a URL to be sent to an external service, enter the URL in the format r
 
 Examples:
 
-**Run a google search on the action target**
+#### Run a google search on the action target
 
 `https://www.google.com?q={{value}}`
 
-**Check for the action target on AbuseIPDB**
+#### Check for the action target on AbuseIPDB
 
 `https://www.abuseipdb.com/check/{{value}}`
 
-The only required parameter in the URL is `{{value}}`. Depending on your use case, you can use other template parameters to insert timestamps in the action URL. For more information, see the following section. 
+The only required parameter in the URL is `{{value}}`. Depending on your use case, you can use other template parameters to insert timestamps in the action URL. For more information, see [Template parameters for Context Actions](#template-parameters-for-context-actions). 
+
+#### Open the Criminal IP lookup page for an IP address
+
+`https://www.criminalip.io/asset/report/{{value}}`
+
+For example:
+
+<img src={useBaseUrl('img/cse/context-action-criminal-ip-example.png')} alt="Criminal IP context action example" width="500"/>
 
 ## Template parameters for Context Actions
 

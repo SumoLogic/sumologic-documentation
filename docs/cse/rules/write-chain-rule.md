@@ -7,10 +7,10 @@ description: Learn how to write a Chain rule.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has information about Chain rules and how to create them in the CSE UI.
+This topic has information about Chain rules and how to create them in the Cloud SIEM UI.
 
 :::note
-If you are new to writing rules, see [About CSE Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
+If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
 :::
 
 ## About Chain rules
@@ -51,10 +51,10 @@ import Iframe from 'react-iframe'; 
    * **exact** if matches must occur in the same order as you have ordered the rule expressions. If you choose this option, you can only have two rule expressions.
 
 ## Test your rule expression
-After creating a rule expression, you can test it against existing Records in CSE.
+After creating a rule expression, you can test it against existing Records in Cloud SIEM.
 
 1. Click **Test Rule** above the rule expression.
-1. The **If Triggered** section expands, and CSE searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message.
+1. The **If Triggered** section expands, and Cloud SIEM searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message.
 1. If no matches were returned, try changing the time range.
 
 :::note
@@ -63,11 +63,13 @@ If you use the Test Rule feature on a rule that has one or more [Rule Tuning Exp
 
 ## Configure “Then Create a Signal” settings
 
-1. **On Entity**. Define the Entity field — for example, an IP address, hostname, and so on — in the Record that the resulting Signal should be associated with. (In CSE, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
+1. **On Entity**. Define the Entity field — for example, an IP address, hostname, and so on — in the Record that the resulting Signal should be associated with. (In Cloud SIEM, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
 1. **with the summary.** Enter a brief summary describing what causes the Rule to create a Signal.
 1. **with the description**. Enter a description for the Signal. The Signal description should be a good indication of what the rule looks for.
 :::note
-{@import ../../reuse/cse-rule-description-links.md}
+import CseRule from '../../reuse/cse-rule-description-links.md';
+
+<CseRule/>
 :::
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest).
 1. **with tags**. If desired, you can add metadata tags to your rule. Tags are useful for adding context to items like Rules, Insights, Signals, Entities. You can also search for and filter items by tag. For more information, see [Using Tags with Insights, Signals, Entities, and Rules](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules).
@@ -80,4 +82,4 @@ To make the rule a prototype, click the box next to **Save this rule as a protot
 ### Duplicate Signals?
 If you determine that a Threshold, Chain, or Aggregation rule is firing identical Signals for the same conditions during the same time interval, there’s a likely explanation. This situation can arise due to how these rule types are processed: they are evaluated differently than Match rules, because they support time duration conditions. For example, a Threshold rule fires when its rule expression is matched at least a certain number of times during a specified length of time.
 
-To successfully apply a rule across a sliding time window, CSE evaluates Records across overlapping time spans. Consider a rule that requires three matches across five minutes. With non-overlapping windows, we could detect one match at the end of one time window, and two more in the following time window. This should cause the rule to fire a Signal, but would not, because the required five minute span is split between two evaluation windows. Overlapping evaluation windows solves this problem. In some cases though, it can also result in duplicate Signals. However, as long as you don’t run the rule as a prototype, duplicate Signals will be suppressed, as described in [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression).
+To successfully apply a rule across a sliding time window, Cloud SIEM evaluates Records across overlapping time spans. Consider a rule that requires three matches across five minutes. With non-overlapping windows, we could detect one match at the end of one time window, and two more in the following time window. This should cause the rule to fire a Signal, but would not, because the required five minute span is split between two evaluation windows. Overlapping evaluation windows solves this problem. In some cases though, it can also result in duplicate Signals. However, as long as you don’t run the rule as a prototype, duplicate Signals will be suppressed, as described in [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression).
