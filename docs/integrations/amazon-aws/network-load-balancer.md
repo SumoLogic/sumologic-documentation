@@ -57,7 +57,9 @@ This section has instructions for installing the Sumo Logic App for **AWS Networ
 
 Now that you have set up a collection for **AWS Network Load Balancer**, install the Sumo Logic App to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing AWS Network Load Balancer Dashboards
 

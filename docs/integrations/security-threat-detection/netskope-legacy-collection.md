@@ -132,59 +132,46 @@ The following table explains the configuration file parameters and their usage.
   <tr>
    <td>EVENT_TYPES</td>
    <td>List of events to fetch from Netskope:
-<ul>
-<li>page</li>
+<ul><li>page</li>
 <li>application</li>
 <li>audit</li>
-<li>infrastructure</li>
-</ul>
-   </td>
+<li>infrastructure</li></ul></td>
   </tr>
   <tr>
    <td>ALERT_TYPES</td>
    <td>List of alerts to fetch from Netskope:
-<ul>
-<li>Malware</li>
+<ul><li>Malware</li>
 <li>Malsite</li>
 <li>Compromised Credential</li>
 <li>Anomaly</li>
 <li>DLP</li>
 <li>Watchlist</li>
 <li>Quarantine</li>
-<li>Policy</li>
-</ul>
-   </td>
+<li>Policy</li></ul></td>
   </tr>
   <tr>
-   <td>BACKFILL_DAYS
-   </td>
-   <td>Number of days <em>before</em> the event collection will start. If the value is 1, then events are fetched from yesterday to today.
-   </td>
+   <td>BACKFILL_DAYS </td>
+   <td>Number of days <em>before</em> the event collection will start. If the value is 1, then events are fetched from yesterday to today. </td>
   </tr>
   <tr>
    <td>PAGINATION_LIMIT</td>
-   <td>Number of events to fetch in a single API call
-   </td>
+   <td>Number of events to fetch in a single API call </td>
   </tr>
   <tr>
    <td>LOG_FORMAT</td>
-   <td>Log format used by the python logging module to write logs in a file
-   </td>
+   <td>Log format used by the python logging module to write logs in a file </td>
   </tr>
   <tr>
    <td>ENABLE_LOGFILE</td>
-   <td>Set to TRUE to write all logs and errors to a log file
-   </td>
+   <td>Set to TRUE to write all logs and errors to a log file   </td>
   </tr>
   <tr>
    <td>ENABLE_CONSOLE_LOG</td>
-   <td>Enables printing logs in a console
-   </td>
+   <td>Enables printing logs in a console </td>
   </tr>
   <tr>
    <td>LOG_FILEPATH</td>
-   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE
-   </td>
+   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE   </td>
   </tr>
   <tr>
    <td>NUM_WORKERS</td>
@@ -192,13 +179,11 @@ The following table explains the configuration file parameters and their usage.
   </tr>
   <tr>
    <td>MAX_RETRY</td>
-   <td>Number of retries to attempt in case of request failure
-   </td>
+   <td>Number of retries to attempt in case of request failure </td>
   </tr>
   <tr>
    <td>BACKOFF_FACTOR</td>
-   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries.
-   </td>
+   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries. </td>
   </tr>
   <tr>
    <td>TIMEOUT</td>
@@ -210,15 +195,15 @@ The following table explains the configuration file parameters and their usage.
   </tr>
   <tr>
    <td>SUMO_ENDPOINT</td>
-   <td>HTTP source endpoint url created in Sumo Logic
-   </td>
+   <td>HTTP source endpoint url created in Sumo Logic </td>
   </tr>
 </table>
 
 
 ### Sample Log message
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -300,7 +285,9 @@ This section demonstrates how to install the Netskope App, and provides examples
 * **Application Usage.** Insights into application usage; specifically by devices, users, users and traffic patterns.
 * **Security Alerts.** Visibility into Netskope security alerts and violations and the ability to identify effects of a breach.  
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Netskope Dashboards
 

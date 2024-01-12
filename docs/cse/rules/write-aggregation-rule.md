@@ -55,11 +55,11 @@ import Iframe from 'react-iframe'; 
 ## Create an Aggregation rule
 
 1. Select **Rules** from the Content menu.
-1. On the **Create a Rule** page, click **Create** in the **Aggregation** card. 
+1. On the **Create a Rule** page, click **Create** in the **Aggregation** card.
 1. In the rules editor:
    1. **Name**. At the top of the Rules Editor, enter a name for the rule. Signals fired by the rule will have the same name as the rule.
    1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.  
-   
+
 ## Configure “If Triggered” settings
 
 On the left side of the Rules Editor, in the **If Triggered** section, you configure a filter that determines the Records to which the rule will be applied, and the conditions under which you want the rule to fire a Signal. Here’s the UI before any entries have been made: <br/><img src={useBaseUrl('img/cse/agg-rule-if-triggered.png')} alt="agg-rule-if-triggered.png" width="400"/>
@@ -98,7 +98,9 @@ On the right side of the Rules Editor, in the **Then Create a Signal** section, 
 1. **with the summary**. Enter a brief summary describing what causes the Rule to create a Signal.
 1. **with the description**. Enter a description for the Signal. The Signal description should be a good indication of what the rule looks for.
 :::note
-{@import ../../reuse/cse-rule-description-links.md}
+import CseRule from '../../reuse/cse-rule-description-links.md';
+
+<CseRule/>
 :::
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity:
    * **Constant**. Every Signal that the rule fires will have the same severity,

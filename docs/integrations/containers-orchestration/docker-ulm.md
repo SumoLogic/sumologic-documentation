@@ -128,520 +128,329 @@ There will be no **Network** metrics if you use the `host` network mode for the 
 
 <table><small>
   <tr>
-   <td><strong>Metrics Name</strong>
-   </td>
-   <td><strong>Unit</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Metrics Name</strong></td>
+   <td><strong>Unit</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td colspan="3" ><strong>CPU</strong>
-   </td>
+   <td colspan="3" ><strong>CPU</strong></td>
   </tr>
   <tr>
-   <td>cpu_percentage
-   </td>
-   <td>Percent
-   </td>
-   <td>Percentage of CPU used
-   </td>
+  <td>cpu_percentage</td>
+   <td>Percent</td>
+   <td>Percentage of CPU used</td>
   </tr>
   <tr>
-   <td>online_cpus
-   </td>
-   <td>Count
-   </td>
-   <td>Number of CPUs online (only available on API v1.27 or higher)
-   </td>
+   <td>online_cpus</td>
+   <td>Count</td>
+   <td>Number of CPUs online (only available on API v1.27 or higher)</td>
   </tr>
   <tr>
-   <td>system_cpu_usage
-   </td>
-   <td>Nanoseconds
-   </td>
-   <td>Host’s cumulative CPU usage
-   </td>
+   <td>system_cpu_usage</td>
+   <td>Nanoseconds</td>
+   <td>Host’s cumulative CPU usage</td>
   </tr>
   <tr>
-   <td>cpu_usage.percpu_usage
-   </td>
-   <td>Nanoseconds
-   </td>
-   <td>Respective usage for every CPU (scalable with cpu=[0..x])
-   </td>
+   <td>cpu_usage.percpu_usage</td>
+   <td>Nanoseconds</td>
+   <td>Respective usage for every CPU (scalable with cpu=[0..x])</td>
   </tr>
   <tr>
-   <td>cpu_usage.total_usage
-   </td>
-   <td>Nanoseconds on Linux 100's of nanoseconds on Windows
-   </td>
-   <td>Total CPU time consumed
-   </td>
+   <td>cpu_usage.total_usage </td>
+   <td>Nanoseconds on Linux 100's of nanoseconds on Windows</td>
+   <td>Total CPU time consumed</td>
   </tr>
   <tr>
-   <td>cpu_usage.usage_in_kernelmode
-   </td>
-   <td>Nanoseconds
-   </td>
-   <td>CPU usage in the kernel mode
-   </td>
+   <td>cpu_usage.usage_in_kernelmode</td>
+   <td>Nanoseconds</td>
+   <td>CPU usage in the kernel mode</td>
   </tr>
   <tr>
-   <td>cpu_usage.usage_in_usermode
-   </td>
-   <td>Nanoseconds
-   </td>
-   <td>CPU usage in the user mode
-   </td>
+   <td>cpu_usage.usage_in_usermode</td>
+   <td>Nanoseconds</td>
+   <td>CPU usage in the user mode</td>
   </tr>
   <tr>
-   <td>throttling_data.periods
-   </td>
-   <td>Count
-   </td>
-   <td>Number of enforcement intervals that have elapsed
-   </td>
+   <td>throttling_data.periods</td>
+   <td>Count</td>
+   <td>Number of enforcement intervals that have elapsed</td>
   </tr>
   <tr>
-   <td>throttling_data.throttled_periods
-   </td>
-   <td>Count
-   </td>
-   <td>Number of enforcement intervals that have been throttled
-   </td>
+   <td>throttling_data.throttled_periods</td>
+   <td>Count</td>
+   <td>Number of enforcement intervals that have been throttled </td>
   </tr>
   <tr>
-   <td>throttling_data.throttled_time
-   </td>
-   <td>Nanoseconds
-   </td>
-   <td>Total CPU time has been throttled
-   </td>
+   <td>throttling_data.throttled_time   </td>
+   <td>Nanoseconds   </td>
+   <td>Total CPU time has been throttled   </td>
   </tr>
   <tr>
-   <td colspan="3" ><strong>Memory</strong>
-   </td>
+   <td colspan="3" ><strong>Memory</strong>   </td>
   </tr>
   <tr>
-   <td>failcnt
-   </td>
-   <td>Count
-   </td>
-   <td>Times of memory usage hit the limits
-   </td>
+   <td>failcnt   </td>
+   <td>Count </td>
+   <td>Times of memory usage hit the limits </td>
   </tr>
   <tr>
-   <td>limit
-   </td>
-   <td>Bytes
-   </td>
-   <td>Memory limit set on the container (or on the host if it's not set on container)
-   </td>
+   <td>limit   </td>
+   <td>Bytes   </td>
+   <td>Memory limit set on the container (or on the host if it's not set on container)   </td>
   </tr>
   <tr>
-   <td>max_usage
-   </td>
-   <td>Bytes
-   </td>
-   <td>Maximum of memory usage
-   </td>
+   <td>max_usage   </td>
+   <td>Bytes   </td>
+   <td>Maximum of memory usage   </td>
   </tr>
   <tr>
-   <td>memory_percentage
-   </td>
-   <td>Percent
-   </td>
-   <td>Percentage of memory used
-   </td>
+   <td>memory_percentage   </td>
+   <td>Percent   </td>
+   <td>Percentage of memory used   </td>
   </tr>
   <tr>
-   <td>usage
-   </td>
-   <td>Bytes
-   </td>
-   <td>Current memory usage
-   </td>
+   <td>usage</td>
+   <td>Bytes   </td>
+   <td>Current memory usage   </td>
   </tr>
   <tr>
-   <td>stats.active_anon
-   </td>
-   <td>Bytes
-   </td>
-   <td>The anonymous memory that has been identified as active by the kernel
-   </td>
+   <td>stats.active_anon </td>
+   <td>Bytes   </td>
+   <td>The anonymous memory that has been identified as active by the kernel   </td>
   </tr>
   <tr>
-   <td>stats.active_file
-   </td>
-   <td>Bytes
-   </td>
-   <td>The file cache memory that has been identified as active by the kernel
-   </td>
+   <td>stats.active_file   </td>
+   <td>Bytes   </td>
+   <td>The file cache memory that has been identified as active by the kernel   </td>
   </tr>
   <tr>
-   <td>stats.cache
-   </td>
-   <td>Bytes
-   </td>
-   <td>The memory used by the processes of this cgroup that can be associated precisely with a block on a block device
-   </td>
+   <td>stats.cache   </td>
+   <td>Bytes   </td>
+   <td>The memory used by the processes of this cgroup that can be associated precisely with a block on a block device   </td>
   </tr>
   <tr>
-   <td>stats.hierarchical_memory_limit
-   </td>
-   <td>Bytes
-   </td>
-   <td>The hierarchical memory limit
-   </td>
+   <td>stats.hierarchical_memory_limit   </td>
+   <td>Bytes   </td>
+   <td>The hierarchical memory limit   </td>
   </tr>
   <tr>
-   <td>stats.inactive_anon
-   </td>
-   <td>Bytes
-   </td>
-   <td>he anonymous memory that has been identified as inactive by the kernel
-   </td>
+   <td>stats.inactive_anon   </td>
+   <td>Bytes   </td>
+   <td>he anonymous memory that has been identified as inactive by the kernel   </td>
   </tr>
   <tr>
-   <td>stats.inactive_file
-   </td>
-   <td>Bytes
-   </td>
-   <td>The file cache memory that has been identified as inactive by the kernel
-   </td>
+   <td>stats.inactive_file   </td>
+   <td>Bytes   </td>
+   <td>The file cache memory that has been identified as inactive by the kernel   </td>
   </tr>
   <tr>
-   <td>stats.mapped_file
-   </td>
-   <td>Bytes
-   </td>
-   <td>The cache memory mapped by the processes in the cgroup
-   </td>
+   <td>stats.mapped_file   </td>
+   <td>Bytes   </td>
+   <td>The cache memory mapped by the processes in the cgroup   </td>
   </tr>
   <tr>
-   <td>stats.pgfault
-   </td>
-   <td>Count
-   </td>
-   <td>The number of times that a process of the cgroup triggered a 'page fault'
-   </td>
+   <td>stats.pgfault   </td>
+   <td>Count   </td>
+   <td>The number of times that a process of the cgroup triggered a 'page fault'   </td>
   </tr>
   <tr>
-   <td>stats.pgmajfault
-   </td>
-   <td>Count
-   </td>
-   <td>The number of times that a process of the cgroup triggered a “major fault”
-   </td>
+   <td>stats.pgmajfault   </td>
+   <td>Count   </td>
+   <td>The number of times that a process of the cgroup triggered a “major fault” </td>
   </tr>
   <tr>
-   <td>stats.pgpgin
-   </td>
-   <td>Count
-   </td>
-   <td>The number of times that the system has paged in from disk
-   </td>
+   <td>stats.pgpgin </td>
+   <td>Count </td>
+   <td>The number of times that the system has paged in from disk   </td>
   </tr>
   <tr>
-   <td>stats.pgpgout
-   </td>
-   <td>Count
-   </td>
-   <td>The number of times that the system has paged out to disk
-   </td>
+   <td>stats.pgpgout   </td>
+   <td>Count   </td>
+   <td>The number of times that the system has paged out to disk   </td>
   </tr>
   <tr>
-   <td>stats.rss
-   </td>
-   <td>Bytes
-   </td>
-   <td>The memory that does not correspond to anything on disk: stacks, heaps, or anonymous memory maps
-   </td>
+   <td>stats.rss   </td>
+   <td>Bytes   </td>
+   <td>The memory that does not correspond to anything on disk: stacks, heaps, or anonymous memory maps   </td>
   </tr>
   <tr>
-   <td>stats.rss_huge
-   </td>
-   <td>Bytes
-   </td>
-   <td>The anonymous memory transparent hugepages
-   </td>
+   <td>stats.rss_huge   </td>
+   <td>Bytes   </td>
+   <td>The anonymous memory transparent hugepages   </td>
   </tr>
   <tr>
-   <td>stats.unevictable
-   </td>
-   <td>Bytes
-   </td>
-   <td>The memory that cannot be reclaimed
-   </td>
+   <td>stats.unevictable   </td>
+   <td>Bytes   </td>
+   <td>The memory that cannot be reclaimed   </td>
   </tr>
   <tr>
-   <td>stats.writeback
-   </td>
-   <td>Bytes
-   </td>
-   <td>File anonymous cache that are queued for syncing to disk
-   </td>
+   <td>stats.writeback   </td>
+   <td>Bytes   </td>
+   <td>File anonymous cache that are queued for syncing to disk   </td>
   </tr>
   <tr>
-   <td>stats.total_active_anon
-   </td>
-   <td>Bytes
-   </td>
-   <td>The anonymous memory that has been identified has respectively active by the kernel (includes sub-cgroups)
-   </td>
+   <td>stats.total_active_anon   </td>
+   <td>Bytes   </td>
+   <td>The anonymous memory that has been identified has respectively active by the kernel (includes sub-cgroups)   </td>
   </tr>
   <tr>
-   <td>stats.total_active_file
-   </td>
-   <td>Bytes
-   </td>
-   <td>The file cache memory that has been identified has respectively active by the kernel (includes sub-cgroups)
-   </td>
+   <td>stats.total_active_file </td>
+   <td>Bytes   </td>
+   <td>The file cache memory that has been identified has respectively active by the kernel (includes sub-cgroups)   </td>
   </tr>
   <tr>
-   <td>stats.total_cache
-   </td>
-   <td>Bytes
-   </td>
-   <td>The memory used by the processes of this cgroup that can be associated precisely with a block on a block device (includes sub-cgroups)
-   </td>
+   <td>stats.total_cache   </td>
+   <td>Bytes   </td>
+   <td>The memory used by the processes of this cgroup that can be associated precisely with a block on a block device (includes sub-cgroups)   </td>
   </tr>
   <tr>
-   <td>stats.total_inactive_anon
-   </td>
-   <td>Bytes
-   </td>
-   <td>The anonymous memory that has been identified has respectively inactive by the kernel (includes sub-cgroups)
-   </td>
+   <td>stats.total_inactive_anon   </td>
+   <td>Bytes   </td>
+   <td>The anonymous memory that has been identified has respectively inactive by the kernel (includes sub-cgroups)   </td>
   </tr>
   <tr>
-   <td>stats.total_inactive_file
-   </td>
-   <td>Bytes
-   </td>
-   <td>The file cache memory that has been identified has respectively inactive by the kernel (includes sub-cgroups)
-   </td>
+   <td>stats.total_inactive_file   </td>
+   <td>Bytes   </td>
+   <td>The file cache memory that has been identified has respectively inactive by the kernel (includes sub-cgroups)   </td>
   </tr>
   <tr>
-   <td>stats.total_mapped_file
-   </td>
-   <td>Bytes
-   </td>
-   <td>The cache memory mapped by the processes in the control group (includes sub-cgroups)
-   </td>
+   <td>stats.total_mapped_file   </td>
+   <td>Bytes   </td>
+   <td>The cache memory mapped by the processes in the control group (includes sub-cgroups)   </td>
   </tr>
   <tr>
-   <td>stats.total_pgfault
-   </td>
-   <td>Count
-   </td>
-   <td>The number of times that a process of the cgroup triggered a 'page fault' (includes sub-cgroups)
-   </td>
+   <td>stats.total_pgfault   </td>
+   <td>Count   </td>
+   <td>The number of times that a process of the cgroup triggered a 'page fault' (includes sub-cgroups)   </td>
   </tr>
   <tr>
-   <td>stats.total_pgmajfault
-   </td>
-   <td>Count
-   </td>
-   <td>The number of times that a process of the cgroup triggered a “major fault” (includes sub-cgroups)
-   </td>
+   <td>stats.total_pgmajfault </td>
+   <td>Count   </td>
+   <td>The number of times that a process of the cgroup triggered a “major fault” (includes sub-cgroups) </td>
   </tr>
   <tr>
-   <td>stats.total_pgpgin
-   </td>
-   <td>Count
-   </td>
-   <td>The number of times that the system has paged in from disk (includes sub-cgroups)
-   </td>
+   <td>stats.total_pgpgin   </td>
+   <td>Count </td>
+   <td>The number of times that the system has paged in from disk (includes sub-cgroups)   </td>
   </tr>
   <tr>
-   <td>stats.total_pgpgout
-   </td>
-   <td>Count
-   </td>
-   <td>The number of times that the system has paged out to disk (includes sub-cgroups)
-   </td>
+   <td>stats.total_pgpgout   </td>
+   <td>Count   </td>
+   <td>The number of times that the system has paged out to disk (includes sub-cgroups)   </td>
   </tr>
   <tr>
-   <td>stats.total_rss
-   </td>
-   <td>Bytes
-   </td>
-   <td>The memory that doesn’t correspond to anything on disk: stacks, heaps, and anonymous memory maps (includes sub-cgroups)
-   </td>
+   <td>stats.total_rss   </td>
+   <td>Bytes   </td>
+   <td>The memory that doesn’t correspond to anything on disk: stacks, heaps, and anonymous memory maps (includes sub-cgroups)   </td>
   </tr>
   <tr>
-   <td>stats.total_rss_huge
-   </td>
-   <td>Bytes
-   </td>
-   <td>The anonymous memory transparent hugepages (includes sub-cgroups)
-   </td>
+   <td>stats.total_rss_huge   </td>
+   <td>Bytes   </td>
+   <td>The anonymous memory transparent hugepages (includes sub-cgroups)   </td>
   </tr>
   <tr>
-   <td>stats.total_unevictable
-   </td>
-   <td>Bytes
-   </td>
-   <td>The memory that cannot be reclaimed (includes sub-cgroups)
-   </td>
+   <td>stats.total_unevictable   </td>
+   <td>Bytes </td>
+   <td>The memory that cannot be reclaimed (includes sub-cgroups) </td>
   </tr>
   <tr>
-   <td>stats.total_writeback
-   </td>
-   <td>Bytes
-   </td>
-   <td>File anonymous cache that are queued for syncing to disk (includes sub-cgroups)
-   </td>
+   <td>stats.total_writeback   </td>
+   <td>Bytes   </td>
+   <td>File anonymous cache that are queued for syncing to disk (includes sub-cgroups)  </td>
   </tr>
   <tr>
-   <td colspan="3" ><strong>Network - Scalable on API v1.21 or higher, with dimension "interface"</strong>
-   </td>
+   <td colspan="3" ><strong>Network - Scalable on API v1.21 or higher, with dimension "interface"</strong>   </td>
   </tr>
   <tr>
-   <td>rx_bytes
-   </td>
-   <td>Bytes
-   </td>
-   <td>Data volume (received)
-   </td>
+   <td>rx_bytes </td>
+   <td>Bytes   </td>
+   <td>Data volume (received)   </td>
   </tr>
   <tr>
-   <td>rx_dropped
-   </td>
-   <td>Count
-   </td>
-   <td>Number of dropped packets (received)
-   </td>
+   <td>rx_dropped </td>
+   <td>Count   </td>
+   <td>Number of dropped packets (received)   </td>
   </tr>
   <tr>
-   <td>rx_errors
-   </td>
-   <td>Count
-   </td>
-   <td>Number of error packets (received)
-   </td>
+   <td>rx_errors   </td>
+   <td>Count   </td>
+   <td>Number of error packets (received)   </td>
   </tr>
   <tr>
-   <td>rx_packets
-   </td>
-   <td>Count
-   </td>
-   <td>Number of total packets (received)
-   </td>
+   <td>rx_packets   </td>
+   <td>Count   </td>
+   <td>Number of total packets (received)   </td>
   </tr>
   <tr>
-   <td>tx_bytes
-   </td>
-   <td>Bytes
-   </td>
-   <td>Data volume (transmitted)
-   </td>
+   <td>tx_bytes   </td>
+   <td>Bytes   </td>
+   <td>Data volume (transmitted)   </td>
   </tr>
   <tr>
-   <td>tx_dropped
-   </td>
-   <td>Count
-   </td>
-   <td>Number of dropped packets (transmitted)
-   </td>
+   <td>tx_dropped </td>
+   <td>Count   </td>
+   <td>Number of dropped packets (transmitted)   </td>
   </tr>
   <tr>
-   <td>tx_errors
-   </td>
-   <td>Count
-   </td>
-   <td>Number of error packets (transmitted)
-   </td>
+   <td>tx_errors   </td>
+   <td>Count   </td>
+   <td>Number of error packets (transmitted)   </td>
   </tr>
   <tr>
-   <td>tx_packets
-   </td>
-   <td>Count
-   </td>
-   <td>Number of total packets (transmitted)
-   </td>
+   <td>tx_packets   </td>
+   <td>Count   </td>
+   <td>Number of total packets (transmitted)   </td>
   </tr>
   <tr>
-   <td colspan="3" ><strong>BlockIO - Scalable with "major" and "minor" id of devices</strong>
-   </td>
+   <td colspan="3" ><strong>BlockIO - Scalable with "major" and "minor" id of devices</strong>   </td>
   </tr>
   <tr>
-   <td>io_merged_recursive
-   </td>
-   <td>Count
-   </td>
-   <td>Number of bios/requests merged into requests belonging to all the descendant cgroups
-   </td>
+   <td>io_merged_recursive   </td>
+   <td>Count   </td>
+   <td>Number of bios/requests merged into requests belonging to all the descendant cgroups   </td>
   </tr>
   <tr>
-   <td>io_queue_recursive
-   </td>
-   <td>Count
-   </td>
-   <td>Number of requests queued up at any given instant from all the descendant cgroups
-   </td>
+   <td>io_queue_recursive   </td>
+   <td>Count   </td>
+   <td>Number of requests queued up at any given instant from all the descendant cgroups   </td>
   </tr>
   <tr>
-   <td>io_service_bytes_recursive
-   </td>
-   <td>Bytes
-   </td>
-   <td>Number of bytes transferred to/from the disk from all the descendant cgroups
-   </td>
+   <td>io_service_bytes_recursive   </td>
+   <td>Bytes   </td>
+   <td>Number of bytes transferred to/from the disk from all the descendant cgroups   </td>
   </tr>
   <tr>
-   <td>io_service_time_recursive
-   </td>
-   <td>Milliseconds
-   </td>
-   <td>Amount of time between request dispatch and request completion from all the descendant cgroups
-   </td>
+   <td>io_service_time_recursive   </td>
+   <td>Milliseconds   </td>
+   <td>Amount of time between request dispatch and request completion from all the descendant cgroups   </td>
   </tr>
   <tr>
-   <td>io_serviced_recursive
-   </td>
-   <td>Count
-   </td>
-   <td>Total number of block I/O requests serviced in that container
-   </td>
+   <td>io_serviced_recursive   </td>
+   <td>Count   </td>
+   <td>Total number of block I/O requests serviced in that container   </td>
   </tr>
   <tr>
-   <td>io_time_recursive
-   </td>
-   <td>Milliseconds
-   </td>
-   <td>Disk time allocated to all devices from all the descendant cgroups
-   </td>
+   <td>io_time_recursive   </td>
+   <td>Milliseconds   </td>
+   <td>Disk time allocated to all devices from all the descendant cgroups   </td>
   </tr>
   <tr>
-   <td>io_wait_time_recursive
-   </td>
-   <td>Milliseconds
-   </td>
-   <td>Amount of time the IOs for this cgroup spent waiting in the scheduler queues for service from all the descendant cgroups
-   </td>
+   <td>io_wait_time_recursive   </td>
+   <td>Milliseconds   </td>
+   <td>Amount of time the IOs for this cgroup spent waiting in the scheduler queues for service from all the descendant cgroups </td>
   </tr>
   <tr>
-   <td>sectors_recursive
-   </td>
-   <td>Count
-   </td>
-   <td>Number of sectors transferred to/from disk bys from all the descendant cgroups
-   </td>
+   <td>sectors_recursive   </td>
+   <td>Count   </td>
+   <td>Number of sectors transferred to/from disk bys from all the descendant cgroups   </td>
   </tr>
   <tr>
-   <td colspan="3" ><strong>PIDs</strong>
-   </td>
+   <td colspan="3" ><strong>PIDs</strong>   </td>
   </tr>
   <tr>
-   <td>current
-   </td>
-   <td>Count
-   </td>
-   <td>Number of PIDs (Not available on Windows)
-   </td>
+   <td>current </td>
+   <td>Count </td>
+   <td>Number of PIDs (Not available on Windows) </td>
   </tr></small>
 </table>
 
@@ -684,46 +493,34 @@ Docker engine event log data doesn't support the tagging with metadata.
 
 <table><small>
   <tr>
-   <td><strong>Namespace/VAR_TYPE</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>VAR_NAME</strong>
-   </td>
+   <td><strong>Namespace/VAR_TYPE</strong> </td>
+   <td><strong>Description</strong> </td>
+   <td><strong>VAR_NAME</strong>   </td>
   </tr>
   <tr>
-   <td><code>container</code>
-   </td>
+   <td><code>container</code> </td>
    <td>Container metadata fields provided by Docker for use in the <code>--log-opt</code> tag option.
-<p>These are automatically added to data points.</p>
-<p>For more information, see <a href="https://docs.docker.com/engine/admin/logging/log_tags/">Log tags for logging driver</a> in Docker help.</p>
-   </td>
+<br/>These are automatically added to data points.
+<br/>For more information, see <a href="https://docs.docker.com/engine/admin/logging/log_tags/">Log tags for logging driver</a> in Docker help.</td>
    <td><code>ID</code> The first 12 characters of the container ID.
-<p><code>FullID</code> The full container ID.</p>
-<p><code>Name</code> The container name.</p>
-<p><code>ImageID</code> The first 12 characters of the container’s image ID.</p>
-<p><code>ImageFullID</code> The container’s full image ID.</p>
-<p><code>ImageName</code> The name of the image used by the container.</p>
-   </td>
+<br/><code>FullID</code> The full container ID.
+<br/><code>Name</code> The container name.
+<br/><code>ImageID</code> The first 12 characters of the container’s image ID.
+<br/><code>ImageFullID</code> The container’s full image ID.
+<br/><code>ImageName</code> The name of the image used by the container. </td>
   </tr>
   <tr>
-   <td><code>label</code>
-   </td>
+   <td><code>label</code> </td>
    <td>User-defined labels, supplied with the  <code>--label flag</code> when starting a Docker container.
-<p>This is automatically added to data points.</p>
-   </td>
+<br/>This is automatically added to data points. </td>
    <td>The name of the variable.
-<p>Dot characters (<code>.</code>) are not supported.</p>
-   </td>
+<br/>Dot characters (<code>.</code>) are not supported. </td>
   </tr>
   <tr>
-   <td><code>env</code>
-   </td>
-   <td>User-defined container environment variables that are set with <code>--env|-e</code> flags when starting a container.
-   </td>
+   <td><code>env</code>   </td>
+   <td>User-defined container environment variables that are set with <code>--env|-e</code> flags when starting a container. </td>
    <td>The name of the variable.
-<p>Dot characters (<code>.</code>) are not supported.</p>
-   </td>
+<br/>Dot characters (<code>.</code>) are not supported. </td>
   </tr></small>
 </table>
 
