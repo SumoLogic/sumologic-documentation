@@ -87,7 +87,6 @@ You can also export Dashboards to an Excel spreadsheet or PDF document to includ
 
 ### Create a dashboard
 
-{@import ../reuse/csoar-delivery-2.md}
 
 You can create dashboards in Cloud SOAR similar to dashboards in the core Sumo Logic platform. You can also [create widgets](#create-widgets-for-dashboards-or-reports) to use in the dashboards that display text, graphs, and charts containing details about incidents and other aspects of Cloud SOAR.
 
