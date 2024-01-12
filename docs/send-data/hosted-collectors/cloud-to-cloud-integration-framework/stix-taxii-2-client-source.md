@@ -50,7 +50,7 @@ The threat intel vendor must follow the STIX/TAXII 2.0 or 2.1 standard.
 
 When you create an TAXII 2 Client Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure an TAXII 2 Client Source:
+To configure a TAXII 2 Client Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **TAXII 2 Client**.
