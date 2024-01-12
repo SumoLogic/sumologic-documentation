@@ -176,7 +176,9 @@ In case you have a centralized collection of CloudTrail logs and are ingesting t
 
 Now that you have set up collection for Amazon SQS, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Amazon SQS dashboards
 

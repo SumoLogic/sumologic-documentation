@@ -306,7 +306,9 @@ To uninstall the Cloud Infrastructure Security solution:
 
 ## Cloud Infrastructure Security for AWS dashboards​
 
-{@import ../../reuse/filter-dashboards.md}
+import FilterDashboards from '../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
 
 ### Risk Overview dashboard
 
