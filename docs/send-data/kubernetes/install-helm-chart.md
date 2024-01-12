@@ -147,8 +147,7 @@ An alternative would be to host Sumo Logic container images in one's container r
 
 ### Using FIPS compliant OpenTelemetry Collector
 
-Refer to [FIPS compliant binaries section](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/security-best-practices.md#fips-compliant-binaries) in
-[Advanced Configuration / Security Best Practices document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/security-best-practices.md).
+Refer to the [FIPS compliant binaries](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/security-best-practices.md#fips-compliant-binaries) section in the [Advanced Configuration / Security Best Practices](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/security-best-practices.md) document.
 
 ### Proxy
 
