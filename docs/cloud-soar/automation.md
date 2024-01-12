@@ -383,7 +383,6 @@ See [Integration Framework](#integration-framework) for more details on utilizin
 
 ### Integration Builder
 
-{@import ../reuse/csoar-delivery-2.md}
 
 You can build basic integrations without having to provide custom YAML files. 
 
