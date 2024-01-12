@@ -70,7 +70,9 @@ sourceCategory="citrixCloudSource"
 
 Before you begin, collect logs from Citrix Cloud API and ingest them into Sumo Logic. Refer to the [Citrix Cloud API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source/) to create the source and use the same source category while installing the app.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing the Citrix Cloud Dashboards
 

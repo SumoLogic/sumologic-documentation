@@ -43,7 +43,9 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
 
 Now that you have set up collection from the Azure Activity Log (previously known as Azure Audit logs), install the Azure Audit app to use the preconfigured searches and dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Azure Audit Dashboards
 

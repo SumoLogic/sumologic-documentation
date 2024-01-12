@@ -28,7 +28,9 @@ An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
 
 ## Errors  
 
-{@import ../reuse/api-errors.md}
+import ApiErrors from '../reuse/api-errors.md';
+
+<ApiErrors/>
 
 ## Documentation   
 

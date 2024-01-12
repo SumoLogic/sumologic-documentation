@@ -17,7 +17,7 @@ Observable Networks is a provider of network security technology and advanced th
 
 For more information, visit [Observable Networks (via Cisco)](https://www.cisco.com/c/en/us/services/acquisitions/observable-networks.html).
 
-:::caution
+:::warning
 Before you begin, your Observable Networks portal must be properly configured. Contact [support@obsrvbl.com](/docs/integrations/security-threat-detection/observable-networks) if you have any questions.
 :::
 
@@ -166,7 +166,9 @@ _sourceCategory=observable
 
 This section provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and dashboards allow you to visually analyze your Observable Networks data at a glance.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Observable Networks Dashboards
 

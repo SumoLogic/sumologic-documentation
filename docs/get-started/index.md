@@ -62,8 +62,7 @@ Let's get started!
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/get-started/library"><img src={useBaseUrl('img/icons/general/training.png')} alt="icon" width="50"/>
-  <img src={useBaseUrl('img/icons/general/certification.png')} alt="icon" width="50"/><h4>Training</h4></a>
+  <a href="/docs/get-started/library"><img src={useBaseUrl('img/icons/general/training.png')} alt="icon" width="50"/><img src={useBaseUrl('img/icons/general/certification.png')} alt="icon" width="50"/><h4>Training</h4></a>
   <p>Sumo Logic Training and Certification offerings.</p>
   </div>
 </div>
