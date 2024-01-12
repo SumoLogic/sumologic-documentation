@@ -140,7 +140,6 @@ the API manual for additional details.
 
 ### Create widgets for dashboards or reports
 
-{@import ../reuse/csoar-delivery-2.md}
 
 You can create widgets as needed to help analysts and administrators quickly get the information they need. Widgets are reusable pieces that display information in different forms, such as text, pie chart, bar chart, graph, or table. You can use the same widgets in both dashboards and reports. 
 
