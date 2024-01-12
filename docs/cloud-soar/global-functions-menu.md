@@ -431,7 +431,6 @@ The **Automation Bridge Monitoring** section displays the status of the automati
 
 ## Report
 
-{@import ../reuse/csoar-delivery-2.md}
 
 You can create reports on incidents to share with others. You can also [create widgets](/docs/cloud-soar/main-menu#create-widgets-for-dashboards-or-reports) to use in the report that display text, graphs, and charts containing details about incidents and other aspects of Cloud SOAR.
 
