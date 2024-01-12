@@ -100,8 +100,7 @@ More configuration examples (i.e. OpenShift) can found seen in [this document](h
 
 ## Viewing Data In Sumo Logic
 
-Once you have completed installation, you can [install the Kubernetes App and view the dashboards][sumo-k8s-app-dashboards] or [open a new
-Explore tab] in Sumo Logic. If you do not see data in Sumo Logic, you can review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docstroubleshoot-collection.md).
+Once you have completed installation, you can [install the Kubernetes App and view the dashboards][sumo-k8s-app-dashboards] or [open a new Explore tab] in Sumo Logic. If you do not see data in Sumo Logic, you can review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md).
 
 <img src={useBaseUrl('img/kubernetes/K8s_Cluster_Overview.png')} />
 
@@ -144,6 +143,10 @@ An alternative would be to host Sumo Logic container images in one's container r
 
 [aws-public-ecr-docs]: https://aws.amazon.com/blogs/aws/amazon-ecr-public-a-new-public-container-registry/
 [aws-ecr-pricing]: https://aws.amazon.com/ecr/pricing/
+
+### Using FIPS compliant OpenTelemetry Collector
+
+Refer to the [FIPS compliant binaries](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/security-best-practices.md#fips-compliant-binaries) section in the [Advanced Configuration / Security Best Practices](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/security-best-practices.md) document.
 
 ### Proxy
 

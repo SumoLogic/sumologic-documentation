@@ -77,6 +77,14 @@ kube-prometheus-stack:
             sourceLabels: [__name__]
 ```
 
+#### Apply missing Custom Resource Definition for OpenTelemetry Operator
+
+**When??** If you already use OpenTelemetry Operator in a version below `0.42.0`, apply the following command on your cluster:
+
+```shell
+kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.44.0/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml
+```
+
 ### How to revert to the v3 defaults
 
 Set the following in your configuration:
@@ -169,4 +177,4 @@ After you're done, please review the [full list of changes](full-list-of-changes
 [application_metrics_annotation]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-application-metrics.md#application-metrics-are-exposed-one-endpoint-scenario
 [kubernetes_metrics_v3]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v3/docs/collecting-kubernetes-metrics.md#collecting-kubernetes-metrics
 [otel_metrics_filter]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-application-metrics.md#filtering-metrics
-[v3_migration_guide]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md
+[v3_migration_guide]: https://help.sumologic.com/docs/send-data/kubernetes/v3/important-changes/

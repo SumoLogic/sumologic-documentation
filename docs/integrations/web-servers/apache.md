@@ -216,7 +216,7 @@ annotations:
          * `environment`: This is the deployment environment where the Apache webserver farm identified by the value of `urls` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
          * `webserver_farm`: Enter a name to uniquely identify this Apache Webserver farm. This Apache webserver farm name will be shown in the Sumo Logic dashboards.
 
-   :::caution **Do not modify the other values**
+   :::warning **Do not modify the other values**
    Modifying these values will cause the Sumo Logic apps to function incorrectly
    * `telegraf.influxdata.com/class: sumologic-prometheus`: Instructs the Telegraf operator what output to use.
    * `prometheus.io/scrape: "true"`: Ensures our Prometheus will scrape the metrics.
@@ -251,7 +251,7 @@ This section explains the steps to collect Apache logs from a Kubernetes environ
       * `environment`: This is the deployment environment where the Apache webserver farm identified by the value of `urls` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `webserver_farm`: Enter a name to identify this Apache webserver farm. This Apache webserver farm name will be shown in the Sumo Logic dashboards.
 
-   :::caution **Do not modify the other values**
+   :::warning **Do not modify the other values**
    Modifying these values will cause the Sumo Logic apps to function incorrectly
    * `component: “webserver”`: This value is used by Sumo Logic apps to identify application components.
    * `webserver_system: “apache”`: This value identifies the webserver system.
@@ -359,7 +359,7 @@ This section provides instructions for configuring metrics collection for the Su
         * `url`: This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
       * In the `[agent]` section, set `interval` and `flush_interval` to `“60s”` to collect metric every 60 seconds.
 
-      :::caution **Do not modify the other values**
+      :::warning **Do not modify the other values**
       Modifying these values will cause the Sumo Logic apps to function incorrectly
       * `data_format = “prometheus”`, In the output plugins section, Metrics are sent in the Prometheus format to Sumo Logic
       * `component = “webserver”`: In the input plugins section, This value is used by Sumo Logic apps to identify application components.
@@ -683,80 +683,57 @@ Use this dashboard to:
 
 Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
-<details><summary>Click to expand. Here are the alerts available for Apache.</summary>
+<details>
+<summary>Click to expand. Here are the alerts available for Apache.</summary>
 
 <table>
   <tr>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
+   <td>Alert Name   </td>
+   <td>Alert Description   </td>
+   <td>Alert Condition   </td>
+   <td>Recover Condition   </td>
   </tr>
   <tr>
-   <td rowspan="2" >Apache - Critical Error Messages
-   </td>
-   <td rowspan="2" >This alert fires when we detect critical error messages for a given Apache server.
-   </td>
-   <td rowspan="2" >&#62; 0
-   </td>
-   <td rowspan="2" >0
-   </td>
+   <td rowspan="2" >Apache - Critical Error Messages   </td>
+   <td rowspan="2" >This alert fires when we detect critical error messages for a given Apache server.</td>
+   <td rowspan="2" >&#62; 0 </td>
+   <td rowspan="2" >0 </td>
   </tr>
   <tr>
   </tr>
   <tr>
-   <td rowspan="2" >Apache - Access from Highly Malicious Sources
-   </td>
-   <td rowspan="2" >This alert fires when an Apache is accessed from highly malicious IP addresses.
-   </td>
-   <td rowspan="2" >&#62; 0
-   </td>
-   <td rowspan="2" >0
-   </td>
+   <td rowspan="2" >Apache - Access from Highly Malicious Sources </td>
+   <td rowspan="2" >This alert fires when an Apache is accessed from highly malicious IP addresses.   </td>
+   <td rowspan="2" >&#62; 0   </td>
+   <td rowspan="2" >0   </td>
   </tr>
   <tr>
   </tr>
   <tr>
-   <td rowspan="2" >Apache - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td rowspan="2" >This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td rowspan="2" > &#62; 0
-   </td>
-   <td rowspan="2" >0
-   </td>
+   <td rowspan="2" >Apache - High Client (HTTP 4xx) Error Rate </td>
+   <td rowspan="2" >This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.   </td>
+   <td rowspan="2" > &#62; 0   </td>
+   <td rowspan="2" >0   </td>
   </tr>
   <tr>
   </tr>
   <tr>
-   <td rowspan="2" >Apache - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td rowspan="2" >This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td rowspan="2" > &#62;0
-   </td>
-   <td rowspan="2" >0
-   </td>
+   <td rowspan="2" >Apache - High Server (HTTP 5xx) Error Rate   </td>
+   <td rowspan="2" >This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.   </td>
+   <td rowspan="2" > &#62;0 </td>
+   <td rowspan="2" >0   </td>
   </tr>
   <tr>
   </tr>
   <tr>
-   <td>Apache - High CPU Utilization
-   </td>
-   <td>This alert fires when the average CPU utilization within a 5 minute interval for an Apache Webserver farm instance is high (&#62;&#61;85%).
-   </td>
+   <td>Apache - High CPU Utilization   </td>
+   <td>This alert fires when the average CPU utilization within a 5 minute interval for an Apache Webserver farm instance is high (&#62;&#61;85%).   </td>
    <td> &#62;&#61;85 </td>
-   <td>&#60;85
-   </td>
+   <td>&#60;85   </td>
   </tr>
   <tr>
    <td>Apache - Server Restarted</td>
-   <td>This alert fires when we detect low uptime (&#60; &#61; 10 minutes) for a given Apache server within a 5 minute interval.
-   </td>
+   <td>This alert fires when we detect low uptime (&#60; &#61; 10 minutes) for a given Apache server within a 5 minute interval.   </td>
    <td> &#60;&#61;600</td>
    <td> &#62;600</td>
   </tr>
@@ -767,139 +744,108 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 
 ## Apache Metrics
 
-<details><summary>Click to expand. Here are the metrics available for Apache.</summary>
+<details>
+<summary>Click to expand. Here are the metrics available for Apache.</summary>
 
 <table><small>
   <tr>
    <td><strong>List of Apache Telegraf metrics</strong></td>
   </tr>
   <tr>
-   <td><code>apache_BusyWorkers</code>
-   </td>
+   <td><code>apache_BusyWorkers</code> </td>
   </tr>
   <tr>
-   <td><code>apache_BytesPerReq</code>
-   </td>
+   <td><code>apache_BytesPerReq</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_BytesPerSec</code>
-   </td>
+   <td><code>apache_BytesPerSec</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_CPUChildrenSystem</code>
-   </td>
+   <td><code>apache_CPUChildrenSystem</code> </td>
   </tr>
   <tr>
-   <td><code>apache_CPUChildrenUser</code>
-   </td>
+   <td><code>apache_CPUChildrenUser</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_CPULoad</code>
-   </td>
+   <td><code>apache_CPULoad</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_CPUSystem</code>
-   </td>
+   <td><code>apache_CPUSystem</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_CPUUser</code>
-   </td>
+   <td><code>apache_CPUUser</code> </td>
   </tr>
   <tr>
-   <td><code>apache_DurationPerReq</code>
-   </td>
+   <td><code>apache_DurationPerReq</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_IdleWorkers</code>
-   </td>
+   <td><code>apache_IdleWorkers</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_Load1</code>
-   </td>
+   <td><code>apache_Load1</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_Load5</code>
-   </td>
+   <td><code>apache_Load5</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_Load15</code>
-   </td>
+   <td><code>apache_Load15</code> </td>
   </tr>
   <tr>
-   <td><code>apache_ParentServerConfigGeneration</code>
-   </td>
+   <td><code>apache_ParentServerConfigGeneration</code> </td>
   </tr>
   <tr>
-   <td><code>apache_ParentServerMPMGeneration</code>
-   </td>
+   <td><code>apache_ParentServerMPMGeneration</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_ReqPerSec</code>
-   </td>
+   <td><code>apache_ReqPerSec</code> </td>
   </tr>
   <tr>
-   <td><code>apache_ServerUptimeSeconds</code>
-   </td>
+   <td><code>apache_ServerUptimeSeconds</code> </td>
   </tr>
   <tr>
-   <td><code>apache_TotalAccesses</code>
-   </td>
+   <td><code>apache_TotalAccesses</code> </td>
   </tr>
   <tr>
-   <td><code>apache_TotalDuration</code>
-   </td>
+   <td><code>apache_TotalDuration</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_TotalkBytes</code>
-   </td>
+   <td><code>apache_TotalkBytes</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_Uptime</code>
-   </td>
+   <td><code>apache_Uptime</code> </td>
   </tr>
   <tr>
-   <td><code>apache_scboard_closing</code>
-   </td>
+   <td><code>apache_scboard_closing</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_scboard_dnslookup</code>
-   </td>
+   <td><code>apache_scboard_dnslookup</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_scboard_finishing</code>
-   </td>
+   <td><code>apache_scboard_finishing</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_scboard_idle_cleanup</code>
-   </td>
+   <td><code>apache_scboard_idle_cleanup</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_scboard_keepalive</code>
-   </td>
+   <td><code>apache_scboard_keepalive</code> </td>
   </tr>
   <tr>
-   <td><code>apache_scboard_logging</code>
-   </td>
+   <td><code>apache_scboard_logging</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_scboard_open</code>
-   </td>
+   <td><code>apache_scboard_open</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_scboard_reading</code>
-   </td>
+   <td><code>apache_scboard_reading</code> </td>
   </tr>
   <tr>
-   <td><code>apache_scboard_sending</code>
-   </td>
+   <td><code>apache_scboard_sending</code> </td>
   </tr>
   <tr>
-   <td><code>apache_scboard_starting</code>
-   </td>
+   <td><code>apache_scboard_starting</code>   </td>
   </tr>
   <tr>
-   <td><code>apache_scboard_waiting</code>
-   </td>
+   <td><code>apache_scboard_waiting</code>   </td>
   </tr></small>
 </table>
 

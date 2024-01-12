@@ -36,7 +36,9 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 
 ## Budget assignment​
 
-{@import ../../../reuse/budget-assignment.md}
+import BudgetAssn from '../../../reuse/budget-assignment.md';
+
+<BudgetAssn/>
 
 ## Source-type behavior​
 

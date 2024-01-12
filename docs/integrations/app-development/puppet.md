@@ -231,7 +231,8 @@ The script requires Ruby on the host machine.
 9. **Command**. Leave the default value, `/bin/sh`, selected.
 10. **Script**. Choose **Type the script to execute** and copy/paste the below script in the text box:
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```
 MaxFileSize=20
@@ -336,7 +337,9 @@ If you encounter problems:
 
 Now that you have set up collection for Puppet, install the Sumo Logic App for Puppet to use the preconfigured searches and Dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Puppet App Dashboards
 

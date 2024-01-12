@@ -5,6 +5,7 @@ description: Create a Local File Source to collect log messages from the same ma
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 To collect log messages from files on the same machine where a Collector is installed, create a Local File Source.
 
@@ -56,10 +57,10 @@ When the Sumo collector accesses a log file to read its content, the collector o
    * **File Path**. List the full path to the file you want to collect. For files on Windows systems (not including [Windows Events](local-windows-event-log-source.md)), enter the absolute path including the drive letter. Escape special characters with a backslash (\\). If you are collecting from Windows using CIFS/SMB, see [Prerequisites for Remote Windows Event Log Collection](remote-file-source/prerequisites-windows-remote-file-collection.md). Use a single asterisk wildcard \[\*\] for file or folder names \[var/foo/\*.log\]. Use two asterisks \[\*\*\] to recurse within directories and subdirectories \[var/\*\*/\*.log\]. File paths in both Linux and Windows are case sensitive.
 
     :::note
-    You can have up to 32 nested symbolic links within a path expression. 
+    You can have up to 32 nested symbolic links within a path expression.
     :::
 
-   * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. This setting applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set this to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the **collection should begin** timestamp. 
+   * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. This setting applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set this to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the **collection should begin** timestamp.
 
     :::note
     Processing rules could be used to filter logs as needed. This is done in step 6 of this document.
@@ -70,10 +71,10 @@ When the Sumo collector accesses a log file to read its content, the collector o
     You can either:
 
      * Choose a predefined value from the dropdown list, ranging from "Now" to “72 hours ago” to “All Time”.
-     * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example`-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m). When updating the **Collection should begin** setting you will need to restart the Collector. 
-     
+     * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example, `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m). When updating the **Collection should begin** setting, you will need to restart the Collector.
+
      :::note
-     {@import ../../../reuse/collection-should-begin-note.md}
+     <CollBegin/>
      :::
 
    * **Source Host.** The hostname assigned by the operating system is used by default. The Source Host value is tagged to each log and stored in a searchable metadata field called _sourceHost. Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 128 characters.
@@ -184,4 +185,4 @@ To resolve these issues you can adjust the fingerprint size to match your needs.
 1. Stop the current Collector service/process.
 1. Locate the following Collector configuration file, `/<sumo_install_dir>/config/collector.properties`
 1. Add the following parameter to change the default fingerprint size for all Sources on the Collector. The number represents bytes: `collector.wildcard.fpSize=2048`
-1. Restart the Collector process/service
+1. Restart the Collector process/service.

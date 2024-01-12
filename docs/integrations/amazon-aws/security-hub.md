@@ -166,7 +166,7 @@ In the case of a problem, perform the following tasks to discover the cause.
   ```json
   _view=sumologic_audit "Scheduled search alert triggered" <webhook_name>
   ```
-4. Check the CloudWatch logs for the Lambda function. Sumo saves Lambda function logs to CloudWatch in a log group: **/aws/lambda/<function_name>**. Check this log for any errors during lambda execution.
+4. Check the CloudWatch logs for the Lambda function. Sumo saves Lambda function logs to CloudWatch in a log group: `/aws/lambda/<function_name>`. Check this log for any errors during lambda execution.
 
 
 ## Collecting Findings for the AWS Security Hub App
@@ -274,7 +274,9 @@ To deploy an AWS Security Hub App collector:
 
 Now that you have set up ingestion and collected findings for AWS Security Hub, you can install the Sumo Logic App for AWS Security Hub and use the preconfigured searches and dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing AWS Security Hub Dashboards
 

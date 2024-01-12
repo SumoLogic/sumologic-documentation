@@ -158,7 +158,9 @@ Now that you have set up a collection for **Amazon DynamoDB**, install the Sumo 
 
 To install the app:
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 
 ## Viewing Amazon DynamoDB dashboards
