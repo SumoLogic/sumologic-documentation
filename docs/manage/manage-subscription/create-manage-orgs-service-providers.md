@@ -158,7 +158,7 @@ You can view the aggreagte usage for all child orgs across usage category in the
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier.
 * **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage).
 
-By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking the **Download Detail Credit Usages** from the kebab icon next to the Download Report button.
+By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking the **Download Detailed Credit Usages** from the kebab icon next to the Download Report button.
 
 <img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" style={{border:'1px solid black'}} />
 
