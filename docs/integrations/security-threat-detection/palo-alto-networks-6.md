@@ -83,7 +83,9 @@ misc,threatID,cat,severity,direction,seqNum,action_flags,src_loc,dest_loc,f4,con
 
 Now that you have set up collection for Palo Alto Networks, install the Sumo Logic App for Palo Alto Networks to use the preconfigured searches and dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing PAN 6 Dashboards
 

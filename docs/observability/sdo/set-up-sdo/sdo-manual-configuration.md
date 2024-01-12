@@ -51,7 +51,9 @@ When you copy the scope, replace the `$$<toolname>` variable with the source ca
 
 Install the Sumo Logic App for Software Development Optimization to use the pre-configured searches and [dashboards](../install-sdo-app-view-dashboards.md) that provide you insights and visibility into your DevOps phases and pipelines.
 
-{@import ../../../reuse/apps/app-install.md}
+import AppInstall from '../../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Complete Post-Setup Configurations
 

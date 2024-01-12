@@ -42,7 +42,9 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 
 ### Add an AWS Source
 
-{@import ../../reuse/apps/create-aws-s3-source.md}
+import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
+
+<Aws3/>
 
 ### Multiline Processing Boundary Regex Example
 
@@ -60,7 +62,9 @@ You could use this Boundary Regex:
 
 Now that you have set up collection for CloudFront, install the Sumo Logic app for Amazon CloudFront to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Amazon CloudFront dashboards
 

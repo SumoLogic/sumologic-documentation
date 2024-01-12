@@ -54,11 +54,15 @@ To set up [Cloud to Cloud Integration Tenable Source](/docs/send-data/hosted-col
 
 ## Installing the Tenable app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Tenable dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDash from '../../reuse/apps/view-dashboards.md';
+
+<ViewDash/>
 
 ### Overview
 

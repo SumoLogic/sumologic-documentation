@@ -48,7 +48,8 @@ When this app is initially installed, the dashboards appear with empty panels un
 
 This application relies on 45 Scheduled Searches that Save to two different Indexes and one Lookup Table. As a result, they will consume the related quotas for your account.
 
-<details><summary>View the list of Scheduled Searches (<strong>click to expand</strong>)</summary>
+<details>
+<summary>View the list of Scheduled Searches (<strong>click to expand</strong>)</summary>
 
 <table><small>
   <tr>
@@ -372,7 +373,9 @@ To configure log collection for Global Intelligence for AWS CloudTrail, follow t
 
 ## Installing the GI for AWS CloudTrail SecOps App
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing GI CloudTrail Dashboards
 

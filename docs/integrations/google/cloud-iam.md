@@ -200,7 +200,9 @@ This section provides instructions for installing the Google Cloud IAM App, and 
 
 Now that you have set up collection for Google Cloud IAM, you can install the Sumo Logic App for easy access to the pre-configured searches and dashboards.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Google Cloud IAM Dashboards
 

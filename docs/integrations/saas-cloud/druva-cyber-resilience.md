@@ -66,11 +66,15 @@ To set up [Cloud to Cloud Integration Druva Cyber Resilience Source](/docs/send-
 
 ## Installing the Druva Cyber Resilience app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Druva Cyber Resilience dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDash from '../../reuse/apps/view-dashboards.md';
+
+<ViewDash/>
 
 ### Overview
 

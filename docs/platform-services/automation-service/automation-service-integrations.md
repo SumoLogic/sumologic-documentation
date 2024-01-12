@@ -16,7 +16,9 @@ Before you can use actions from an integration resource, you must [configure the
 :::
 
 :::note
-{@import ../../reuse/action-limits.md}
+import ActionLimit from '../../reuse/action-limits.md';
+
+<ActionLimit/>
 :::
 
 ## View integrations
