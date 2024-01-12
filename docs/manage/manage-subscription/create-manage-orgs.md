@@ -60,21 +60,23 @@ After you create a child org, you can’t delete it.
     :::note
     The **Credits Usage** portion of the pane shows information you’ll want to know when you assign credits to the new org: **Total Credits Quota** is the total number of credits for your subscription; **Available Credits** is the number of credits that have not yet been allocated to child orgs.
     :::
-1. **Organization Name**. Enter a unique name for the org.
-1. **Account Owner Email**. Enter the name of the account owner.
-1. **Account Owner First Name**. Enter the account owner’s first name.
-1. **Account Owner Last Name**. Enter the account owner’s last name.
-1. **Deployment**. Select a Sumo Logic deployment from the list.
-    :::note
-    Depending on your Sumo Logic subscription type, creating an org in a different deployment than the parent may result in a deployment charge being applied.
-    :::
-1. **Plan Type**. Select your organization's plan type. 
-1. Click **Allocate Credits**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/credits-calculator.png')} alt="calculator" width="450" />
-1. **Continuous Tier**. Enter estimated daily ingestion to the Continuous tier.
-1. **Frequent Tier.** Enter estimated daily ingestion to the Frequent tier.
-1. **Infrequent Tier.** Enter estimated daily ingestion to the Infrequent tier.
-1. **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
-1. **Tracing**. Enter estimated daily ingestion of traces.
+   Enter the following:
+      * **Organization Name**. Enter a unique name for the org.
+      * **Account Owner Email**. Enter the name of the account owner.
+      * **Account Owner First Name**. Enter the account owner’s first name.
+      * **Account Owner Last Name**. Enter the account owner’s last name.
+      * **Deployment**. Select a Sumo Logic deployment from the list.
+        :::note
+        Depending on your Sumo Logic subscription type, creating an org in a different deployment than the parent may result in a deployment charge being applied.
+        :::
+      * **Plan Type**. Select your organization's plan type. 
+1. Click **Allocate Credits**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/credits-calculator.png')} alt="calculator" width="450" /> 
+1. Enter the following:
+      * **Continuous Tier**. Enter estimated daily ingestion to the Continuous tier.
+      * **Frequent Tier.** Enter estimated daily ingestion to the Frequent tier.
+      * **Infrequent Tier.** Enter estimated daily ingestion to the Infrequent tier.
+      * **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
+      * **Tracing**. Enter estimated daily ingestion of traces.
 1. **Cloud SIEM**. Click the checkbox to enable Cloud SIEM.
    1. If you enable Cloud SIEM, the Cloud SIEM Log Ingest field appears.
    1. Enter a value in GB.
