@@ -25,7 +25,7 @@ Given that we use an account alias, we recommend you use StackSets to automati
     If you would like to download or inspect this or other versions of this template, see the [Changelog](../changelog.md).
     :::
 1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
-    :::warning
+    :::danger
     This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
     :::
 1. Proceed to [Step 2](#step-2-sumo-logic-access-configuration) below.

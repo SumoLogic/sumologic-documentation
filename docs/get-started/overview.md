@@ -63,7 +63,8 @@ Sumo Logic helps in transforming daily operations into intelligent business deci
 
 :::tip Data Collection strategies
 
-<details><summary>Learn about local collection, centralized collection, and data collection best practices (click to expand).</summary>
+<details>
+<summary>Learn about local collection, centralized collection, and data collection best practices (click to expand).</summary>
 
 [Basics](/docs/send-data/best-practices#local-and-centralized-data-collection). Review the installed collector and its basic concepts. This is a software agent that can be installed on a machine (physical or virtual) to collect logs. The installed collector can be used to collect logs and metrics from the host machine, or from those within the same network as the host machine.
 
