@@ -7,6 +7,7 @@ hide_table_of_contents: true
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CloudSoarApi from '../reuse/csoar-api-table.md';
 
 <img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="60"/>
 
@@ -15,8 +16,6 @@ The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR 
 import ApiIntro from '../reuse/api-intro.md';
 
 <ApiIntro/>
-
-import CloudSoarApi from '../reuse/csoar-api-table.md';
 
 <CloudSoarApi/>
 

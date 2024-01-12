@@ -7,6 +7,7 @@ description: Configuration tools for Cloud SOAR automation and orchestration fea
 
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CloudSoarDelivery2 from '../reuse/csoar-delivery-2.md';
 
 The **Automation** section contains the configuration tools for Cloud SOAR's automation and orchestration features. These tools include Cloud SOAR's Open Integration Framework (OIF), automation rules sets, and playbook editor as well as incoming event details.
 
@@ -383,6 +384,7 @@ See [Integration Framework](#integration-framework) for more details on utilizin
 
 ### Integration Builder
 
+<CloudSoarDelivery2/>
 
 You can build basic integrations without having to provide custom YAML files. 
 
@@ -415,6 +417,7 @@ You can build basic integrations without having to provide custom YAML files.
 
 ### Cloud or Bridge execution
 
+<CloudSoarDelivery2/>
 
 You can set integrations, and their related action execution, to be executed in the cloud or through the Bridge. Only certified integrations can be executed in the cloud, while custom integrations must be executed through the [Bridge](/docs/cloud-soar/cloud-soar-bridge/).
 
