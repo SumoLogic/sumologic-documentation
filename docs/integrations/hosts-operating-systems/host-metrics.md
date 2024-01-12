@@ -50,112 +50,20 @@ The following tables list the available host metrics.
 
 ### CPU Metrics
 
-<table>
-  <tr>
-   <td><strong>Metric</strong>
-   </td>
-   <td><strong>Units</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>CPU_User
-   </td>
-   <td>%
-   </td>
-   <td>Total system cpu user time
-   </td>
-  </tr>
-  <tr>
-   <td>CPU_Sys
-   </td>
-   <td>%
-   </td>
-   <td>Total system cpu kernel time
-   </td>
-  </tr>
-  <tr>
-   <td>CPU_Nice
-   </td>
-   <td>%
-   </td>
-   <td>Total system cpu nice time
-   </td>
-  </tr>
-  <tr>
-   <td>CPU_Idle
-   </td>
-   <td>%
-   </td>
-   <td>Total system cpu idle time
-   </td>
-  </tr>
-  <tr>
-   <td>CPU_IOWait
-   </td>
-   <td>%
-   </td>
-   <td>Total system cpu IO wait time
-   </td>
-  </tr>
-  <tr>
-   <td>CPU_Irq
-   </td>
-   <td>%
-   </td>
-   <td>Total system cpu time servicing interrupts
-   </td>
-  </tr>
-  <tr>
-   <td>CPU_SoftIrq
-   </td>
-   <td>%
-   </td>
-   <td>Total system cpu time servicing softirqs
-   </td>
-  </tr>
-  <tr>
-   <td>CPU_Stolen
-   </td>
-   <td>%
-   </td>
-   <td>Total system cpu involuntary wait time
-   </td>
-  </tr>
-  <tr>
-   <td>CPU_LoadAvg_1min*
-   </td>
-   <td>Average
-   </td>
-   <td>System load average for past 1 minute
-   </td>
-  </tr>
-  <tr>
-   <td>CPU_LoadAvg_5min*
-   </td>
-   <td>Average
-   </td>
-   <td>System load average for past 5 minutes
-   </td>
-  </tr>
-  <tr>
-   <td>CPU_LoadAvg_15min*
-   </td>
-   <td>Average
-   </td>
-   <td>System load average for past 15 minutes
-   </td>
-  </tr>
-  <tr>
-   <td>CPU_Total
-   </td>
-   <td>%
-   </td>
-   <td>Total system CPU usage time
-   </td>
-  </tr>
-</table>
+| Metric | Units | Description |
+|---|---|---|
+| CPU_User | % | Total system cpu user time |
+| CPU_Sys | % | Total system cpu kernel time |
+| CPU_Nice | % | Total system cpu nice time |
+| CPU_Idle | % | Total system cpu idle time |
+| CPU_IOWait | % | Total system cpu IO wait time |
+| CPU_Irq | % | Total system cpu time servicing interrupts |
+| CPU_SoftIrq | % | Total system cpu time servicing softirqs |
+| CPU_Stolen | % | Total system cpu involuntary wait time |
+| CPU_LoadAvg_1min* | Average | System load average for past 1 minute |
+| CPU_LoadAvg_5min* | Average | System load average for past 5 minutes |
+| CPU_LoadAvg_15min* | Average | System load average for past 15 minutes |
+| CPU_Total | % | Total system CPU usage time |
 
 Load averages are not available on Windows platform.
 
@@ -164,170 +72,72 @@ Load averages are not available on Windows platform.
 
 <table>
   <tr>
-   <td><strong>Metric</strong>
-   </td>
-   <td><strong>Units</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Metric</strong> </td>
+   <td><strong>Units</strong>   </td>
+   <td><strong>Description</strong>   </td>
   </tr>
   <tr>
-   <td>Mem_Total
-   </td>
-   <td>Bytes
-   </td>
-   <td>Total amount of physical RAM
-   </td>
+   <td>Mem_Total </td>
+   <td>Bytes   </td>
+   <td>Total amount of physical RAM   </td>
   </tr>
   <tr>
-   <td>Mem_Free
-   </td>
-   <td>Bytes
-   </td>
-   <td>The amount of physical RAM left unused by the system
-   </td>
+   <td>Mem_Free </td>
+   <td>Bytes   </td>
+   <td>The amount of physical RAM left unused by the system</td>
   </tr>
   <tr>
-   <td>Mem_Used
-   </td>
-   <td>Bytes
-   </td>
+   <td>Mem_Used   </td>
+   <td>Bytes </td>
    <td>Total used system memory, calculated as
-<p><code>MemTotal - MemFree</code></p>
-<p>This metric includes the space allocated in buffers and in the <a href="https://en.wikipedia.org/wiki/Page_cache">Page Cache</a>, which can make it appear that a larger portion of physical RAM is being consumed than is actually in use.  See <code>Mem_ActualUsed</code> below.</p>
-   </td>
+   <p><code>MemTotal - MemFree</code></p>
+   <p>This metric includes the space allocated in buffers and in the <a href="https://en.wikipedia.org/wiki/Page_cache">Page Cache</a>, which can make it appear that a larger portion of physical RAM is being consumed than is actually in use.  See <code>Mem_ActualUsed</code> below.</p> </td>
   </tr>
   <tr>
-   <td>Mem_ActualFree
-   </td>
-   <td>Bytes
-   </td>
+   <td>Mem_ActualFree </td>
+   <td>Bytes </td>
    <td>Actual total free system memory calculated as:
 <p><code>Mem_Free + Buffers + Cached</code></p>
 <p>Where</p>
 <p><code>Buffers</code> = The amount of physical RAM used for file buffers</p>
-<p><code>Cached</code> = The amount of physical RAM used as cache memory</p>
-   </td>
+<p><code>Cached</code> = The amount of physical RAM used as cache memory</p>   </td>
   </tr>
   <tr>
-   <td>Mem_ActualUsed
-   </td>
-   <td>Bytes
-   </td>
-   <td>Actual total used system memory calculated as: <code>Mem_Total - Mem_Actual_Free</code><br/>This metric better represents the amount of physical RAM in use than <code>Mem_Used</code>.
-   </td>
+   <td>Mem_ActualUsed   </td>
+   <td>Bytes   </td>
+   <td>Actual total used system memory calculated as: <code>Mem_Total - Mem_Actual_Free</code><br/>This metric better represents the amount of physical RAM in use than <code>Mem_Used</code>.   </td>
   </tr>
   <tr>
-   <td>Mem_UsedPercent
-   </td>
-   <td>%
-   </td>
-   <td>Percent total used system memory calculated as: <code>(Mem_Total - Mem_Actual_Free) / Mem_total</code>
-   </td>
+   <td>Mem_UsedPercent </td>
+   <td>%   </td>
+   <td>Percent total used system memory calculated as: <code>(Mem_Total - Mem_Actual_Free) / Mem_total</code>   </td>
   </tr>
   <tr>
-   <td>Mem_FreePercent
-   </td>
-   <td>%
-   </td>
-   <td>Percent total free system memory
-   </td>
+   <td>Mem_FreePercent   </td>
+   <td>%   </td>
+   <td>Percent total free system memory   </td>
   </tr>
   <tr>
-   <td>Mem_PhysicalRam
-   </td>
-   <td>Bytes
-   </td>
-   <td>System random access memory
-   </td>
+   <td>Mem_PhysicalRam </td>
+   <td>Bytes   </td>
+   <td>System random access memory   </td>
   </tr>
 </table>
 
 
 ### TCP Metrics
 
-<table>
-  <tr>
-   <td><strong>Metric</strong>
-   </td>
-   <td><strong>Units</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>TCP_InboundTotal
-   </td>
-   <td>Count
-   </td>
-   <td>TCP inbound connection count
-   </td>
-  </tr>
-  <tr>
-   <td>TCP_OutboundTotal
-   </td>
-   <td>Count
-   </td>
-   <td>TCP outbound connection count
-   </td>
-  </tr>
-  <tr>
-   <td>TCP_Established
-   </td>
-   <td>Count
-   </td>
-   <td>TCP established connection count
-   </td>
-  </tr>
-  <tr>
-   <td>TCP_Listen
-   </td>
-   <td>Count
-   </td>
-   <td>TCP listen connection count
-   </td>
-  </tr>
-  <tr>
-   <td>TCP_Idle
-   </td>
-   <td>Count
-   </td>
-   <td>TCP idle connection count
-   </td>
-  </tr>
-  <tr>
-   <td>TCP_Closing
-   </td>
-   <td>Count
-   </td>
-   <td>TCP closing connection count
-   </td>
-  </tr>
-  <tr>
-   <td>TCP_CloseWait
-   </td>
-   <td>Count
-   </td>
-   <td>TCP close_wait connection count
-   </td>
-  </tr>
-  <tr>
-   <td>TCP_Close
-   </td>
-   <td>Count
-   </td>
-   <td>TCP close connection count
-   </td>
-  </tr>
-  <tr>
-   <td>TCP_TimeWait
-   </td>
-   <td>Count
-   </td>
-   <td>TCP time_wait connection count
-   </td>
-  </tr>
-</table>
+| Metric | Units | Description |
+|---|---|---|
+| TCP_InboundTotal | Count | TCP inbound connection count |
+| TCP_OutboundTotal | Count | TCP outbound connection count |
+| TCP_Established | Count | TCP established connection count |
+| TCP_Listen | Count | TCP listen connection count |
+| TCP_Idle | Count | TCP idle connection count |
+| TCP_Closing | Count | TCP closing connection count |
+| TCP_CloseWait | Count | TCP close_wait connection count |
+| TCP_Close | Count | TCP close connection count |
+| TCP_TimeWait | Count | TCP time_wait connection count |
 
 ### Networking Metrics
 
@@ -337,48 +147,13 @@ These have two additional dimensions:
 
 Networking metrics are cumulative, so you can use the rate operator to display these metrics as a rate per second. For example: `metric=Net_InBytes Interface=eth0 | rate`.
 
-<table>
-  <tr>
-   <td><strong>Metric</strong>
-   </td>
-   <td><strong>Units</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Net_InPackets
-   </td>
-   <td>Packets
-   </td>
-   <td>Number of received packets
-   </td>
-  </tr>
-  <tr>
-   <td>Net_OutPackets
-   </td>
-   <td>Packets
-   </td>
-   <td>Number of sent packets
-   </td>
-  </tr>
-  <tr>
-   <td>Net_InBytes
-   </td>
-   <td>Bytes
-   </td>
-   <td>Number of received bytes
-   </td>
-  </tr>
-  <tr>
-   <td>Net_OutBytes
-   </td>
-   <td>Bytes
-   </td>
-   <td>Number of sent bytes
-   </td>
-  </tr>
-</table>
+| Metric | Units | Description |
+|---|---|---|
+| Net_InPackets | Packets | Number of received packets |
+| Net_OutPackets | Packets | Number of sent packets |
+| Net_InBytes | Bytes | Number of received bytes |
+| Net_OutBytes | Bytes | Number of sent bytes |
+
 
 ### Disk Metrics
 
@@ -389,88 +164,17 @@ Disk metrics have two additional dimensions:
 
 `Disk_Reads`, `Disk_Writes`, `Disk_ReadBytes`, and `Disk_WriteBytes` are cumulative, so you can use the rate operator to display these metrics as a rate per second. For example: `metric=Disk_WriteBytes | rate`.
 
-<table>
-  <tr>
-   <td><strong>Metric</strong>
-   </td>
-   <td><strong>Units</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Disk_Reads
-   </td>
-   <td>Operations
-   </td>
-   <td>Number of physical disk reads
-   </td>
-  </tr>
-  <tr>
-   <td>Disk_ReadBytes
-   </td>
-   <td>Bytes
-   </td>
-   <td>Number of physical disk bytes read
-   </td>
-  </tr>
-  <tr>
-   <td>Disk_Writes
-   </td>
-   <td>Operations
-   </td>
-   <td>Number of physical disk writes
-   </td>
-  </tr>
-  <tr>
-   <td>Disk_WriteBytes
-   </td>
-   <td>Bytes
-   </td>
-   <td>Number of physical disk bytes written
-   </td>
-  </tr>
-  <tr>
-   <td>Disk_Queue
-   </td>
-   <td>Operations
-   </td>
-   <td>Number of disk queue operations
-   </td>
-  </tr>
-  <tr>
-   <td>Disk_InodesAvailable*
-   </td>
-   <td>Nodes
-   </td>
-   <td>Number of free file nodes
-   </td>
-  </tr>
-  <tr>
-   <td>Disk_Used
-   </td>
-   <td>Bytes
-   </td>
-   <td>Total used bytes on filesystem
-   </td>
-  </tr>
-  <tr>
-   <td>Disk_UsedPercent
-   </td>
-   <td>%
-   </td>
-   <td>Percentage of filesystem space used
-   </td>
-  </tr>
-  <tr>
-   <td>Disk_Available
-   </td>
-   <td>Bytes
-   </td>
-   <td>Total available bytes on filesystem
-   </td>
-  </tr>
-</table>
+| Metric | Units | Description |
+|---|---|---|
+| Disk_Reads | Operations | Number of physical disk reads |
+| Disk_ReadBytes | Bytes | Number of physical disk bytes read |
+| Disk_Writes | Operations | Number of physical disk writes |
+| Disk_WriteBytes | Bytes | Number of physical disk bytes written |
+| Disk_Queue | Operations | Number of disk queue operations |
+| Disk_InodesAvailable* | Nodes | Number of free file nodes |
+| Disk_Used | Bytes | Total used bytes on filesystem |
+| Disk_UsedPercent | % | Percentage of filesystem space used |
+| Disk_Available | Bytes | Total available bytes on filesystem |
 
 `Disk_InodesAvailable` is not available on Windows platform.
 
@@ -498,7 +202,9 @@ Only one AWS Metadata Source for Metrics is required to collect EC2 tags from mu
 
 Now that you have configured Host Metrics, install the Sumo Logic App for Host Metrics to take advantage of the preconfigured searches and dashboards to analyze your Host Metrics data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Host Metrics Dashboards
 

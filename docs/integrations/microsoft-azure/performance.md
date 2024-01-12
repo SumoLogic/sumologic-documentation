@@ -165,7 +165,9 @@ To complete the configuration, you'll need to edit each Windows Performance Sour
 
 Now that you have set up collection, install the Windows Performance App to use the preconfigured searches and dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Windows Performance Dashboards
 

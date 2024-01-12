@@ -47,7 +47,7 @@ The following expression divides `error_count` by `user_count`.
 
 ## /*  */
 
-The forward slash and asterisk characters (/*  */) comment out lines. 
+The forward slash and asterisk characters (/*  */) comment out lines.
 
 For Cloud SIEM rules, two forward slashes (//) are *not* supported for commenting out lines. Two forward slashes are allowed in Sumo Logic core platform, however, for [comments in search queries](/docs/search/get-started-with-search/search-basics/comments-search-queries/).
 
@@ -59,9 +59,9 @@ For Cloud SIEM rules, two forward slashes (//) are *not* supported for commentin
 
 `/* This is a comment. */`
 
-## <
+## `<`
 
-The less than (<) character returns “true” if the expression is less than the other expression.
+The less than (`<`) character returns “true” if the expression is less than the other expression.
 
 **Syntax**
 
@@ -77,9 +77,9 @@ The less than (<) character returns “true” if the expression is less than th
 
 `null < null  // false`
 
-## <=
+## `<=`
 
-The is less than or equal to (<=) character returns true if the expression is less than or equal to the other expression.
+The is less than or equal to (`<=`) character returns true if the expression is less than or equal to the other expression.
 
 **Syntax**
 
@@ -575,11 +575,13 @@ Returns “true” if the value of an expression exists within the specified lis
 
 `expr IN ("value1", [, <value2>, ...])`
 
-**Example**
+**Examples**
 
-`srcDevice_ip IN ("1.2.3.4", "2.3.4.5", "3.4.5.6") // true if the value of srcDevice_ip is "1.2.3.4" or any of the other specified values
-http_response_statusCode in (400, 500)   // true if the value of http_response_code equals 400 or 500
-null IN ("value1", "value2", "value3") // false`
+`srcDevice_ip IN ("1.2.3.4", "2.3.4.5", "3.4.5.6") // true if the value of srcDevice_ip is "1.2.3.4" or any of the other specified values`
+
+`http_response_statusCode in (400, 500) // true if the value of http_response_code equals 400 or 500`
+
+`null IN ("value1", "value2", "value3") // false`
 
 ## ipv4ToNumber
 
@@ -750,7 +752,7 @@ attribute.
 **Syntax notes**
 
 * In Sumo Logic core platform, you can use the `json` operator without specifying a field to parse, in which case the operation is performed against the `_raw` field.
- 
+
 :::note
 Currently, to use the `json` operator in Cloud SIEM you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in Cloud SIEM.
 :::
