@@ -415,7 +415,6 @@ You can build basic integrations without having to provide custom YAML files.
 
 ### Cloud or Bridge execution
 
-{@import ../reuse/csoar-delivery-2.md}
 
 You can set integrations, and their related action execution, to be executed in the cloud or through the Bridge. Only certified integrations can be executed in the cloud, while custom integrations must be executed through the [Bridge](/docs/cloud-soar/cloud-soar-bridge/).
 
