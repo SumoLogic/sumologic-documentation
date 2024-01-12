@@ -77,7 +77,9 @@ Follow the instructions for setting up [HTTP Integration for Zoom source](/docs/
 
 Now that you have set up collection for the Zoom events, install the Sumo Logic App for Zoom to use the pre-configured dashboards that provide visibility into your environment.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Zoom Dashboards
 

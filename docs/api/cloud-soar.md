@@ -14,9 +14,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR features.
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
 
-{@import ../reuse/csoar-api-table.md}
+<ApiIntro/>
+
+import CloudSoarApi from '../reuse/csoar-api-table.md';
+
+<CloudSoarApi/>
 
 -->
 

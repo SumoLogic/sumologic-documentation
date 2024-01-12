@@ -91,7 +91,9 @@ In some cases, your query results may show `"HIDDEN_DUE_TO_SECURITY_REASONS"` as
 
 Now that you have set up collection, install the Amazon CloudTrail - Cloud Security Monitoring and Analytics app to use the preconfigured searches and Dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing AWS CloudTrail Dashboards
 

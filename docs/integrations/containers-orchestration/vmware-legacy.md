@@ -350,13 +350,15 @@ Once you are satisfied with the time it takes for collecting data for a segment,
 
 ## Install the VMware (Legacy) App
 
-:::caution
+:::warning
 A newer app, [VMware ULM](/docs/integrations/containers-orchestration/vmware), is available. The App on this page is based on the vMA technology running on legacy vSphere versions 6.0 and prior. The vMA technology is no longer supported by VMware.
 :::
 
 Now that you have set up collection, install the Sumo Logic App for VMware to use the preconfigured searches and dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing VMware Dashboards
 

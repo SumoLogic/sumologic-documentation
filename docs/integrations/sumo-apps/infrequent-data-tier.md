@@ -66,16 +66,12 @@ Sumo Logic Infrequent Data Tier App is only available for Enterprise Suite custo
 
 <table>
   <tr>
-   <td>Account Type
-   </td>
-   <td>Account Level
-   </td>
+   <td>Account Type </td>
+   <td>Account Level   </td>
   </tr>
   <tr>
-   <td>Credits
-   </td>
-   <td>Enterprise Suite
-   </td>
+   <td>Credits </td>
+   <td>Enterprise Suite </td>
   </tr>
 </table>
 
@@ -103,7 +99,9 @@ Complete the following instructions to install the Sumo Logic Infrequent Data Ti
 Before installing the Infrequent Data Tier App, you need to enable the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index), which is currently in beta. Please reach out to your account executive or Sumo Logic support to get the Search Audit index enabled.
 :::
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Infrequent Data Tier Dashboards
 

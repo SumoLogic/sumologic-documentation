@@ -52,7 +52,9 @@ If you want to set up Route 53 Resolver DNS Firewall, see the Amazon Developer G
 
 ## Installing the Amazon Route 53 Resolver Security App
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Amazon Route 53 Resolver Security Dashboards
 

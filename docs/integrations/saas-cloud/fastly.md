@@ -59,7 +59,8 @@ When you configure the Sumo Logic endpoint in Fastly:
 1. **Name**. Enter a name for the connection. For example, “Prod Fastly”.
 2. **Log format**. Use this format string, which generates the necessary JSON output:
 
-  <details><summary>Click to expand snippet</summary>
+  <details>
+<summary>Click to expand snippet</summary>
 
    ```
    {
@@ -145,7 +146,8 @@ If you have Fastly's Web Application Firewall (WAF), perform these steps to upda
 
 1. Use the JSON object below into the Log format field instead of the one specified in [Configure endpoint in Fastly for CDN logs](#Step_2._Configure_endpoint_in_Fastly_for_CDN_logs).
 
-  <details><summary>Click to expand snippet</summary>
+  <details>
+<summary>Click to expand snippet</summary>
 
   ```
   {
@@ -301,7 +303,8 @@ If you have Fastly's Web Application Firewall (WAF), perform these steps to add 
 1. Configure another [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for debug logs and set its source category. For example, fastly/debug. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
 2. Create another logging endpoint in Fastly following the instructions [Step 2](#Step_2._Configure_Sumo_logging_endpoint_in_Fastly), but enter the JSON below in the **Log format** field.
 
-  <details><summary>Click to expand snippet</summary>
+  <details>
+<summary>Click to expand snippet</summary>
 
   ```
   {
