@@ -185,7 +185,13 @@ To resolve this:
 - An invalid hostname is provided in the token or Activity Logs URL. For example, `wd5-impl-services1.workday.com` instead of `wd2-impl-services1.workday.com`.
 
 To resolve this:
-1. Provide the correct "tenant name" and "hostname".                  
+1. Provide the correct "tenant name" and "hostname".
+
+#### Error | received sign-on report log time outside time filter window. create a custom sign on report as per the setup instructions
+- Custom sign on report is not created as per the instructions
+
+To resolve this:
+1. Follow the steps provided [here](/docs/integrations/saas-cloud/workday/#step-15-create-a-custom-sign-on-report) to "Create Custom sign on report" and configure the source accordingly.
 
 ## FAQ
 
