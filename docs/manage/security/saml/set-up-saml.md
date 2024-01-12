@@ -143,7 +143,9 @@ Configure a logout page if you would like to point Sumo users to a particular UR
 
 ## Create multiple SAML configurations
 
-{@import ../../../reuse/saml.md}
+import Saml from '../../../reuse/saml.md';
+
+<Saml/>
 
 ## Download metadata XML
 
@@ -151,7 +153,7 @@ Sometimes, you may have a need to download the metadata XML from one of your SAM
 
 ### Download metadata XML with Download Metadata XML button
 
-Click the **Download Metadata XML** button while you [review a SAML configuration](#review-saml-configuration) to download the XML as a file named `metadata.xml`. 
+Click the **Download Metadata XML** button while you [review a SAML configuration](#review-saml-configuration) to download the XML as a file named `metadata.xml`.
 
 <img src={useBaseUrl('img/security/download-metadata-xml-button.png')} alt="View Metadata XML button" style={{border: '1px solid black'}} width="400" />
 

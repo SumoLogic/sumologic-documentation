@@ -103,7 +103,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 * Download the latest version of the Jolokia war file from: [https://jolokia.org/download.html](https://jolokia.org/download.html).
 * Rename the file from jolokia-war-X.X.X.war to jolokia.war
 * Create a configMap **jolokia** from the binary file `kubectl create configmap jolokia --from-file=jolokia.jar`
-* Create volume mount the jolokia.war file to ${TOMCAT_HOME}/webapps.
+* Create volume mount the jolokia.war file to `${TOMCAT_HOME}/webapps`.
 ```yml
 spec:
   volumes:
@@ -354,10 +354,10 @@ This section provides instructions for configuring metrics collection for the Su
 1. **Download and setup Jolokia on each Apache Tomcat node**.** As part of collecting metrics data from Telegraf, we will use the [Jolokia input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
   * Download the latest version of the Jolokia JVM-Agent from [Jolokia](https://jolokia.org/download.html).
   * Rename downloaded Jar file to jolokia.jar.
-  * Save the file jolokia.jar on your apache tomcat server in ${TOMCAT_HOME}/webapps.
+  * Save the file jolokia.jar on your apache tomcat server in `${TOMCAT_HOME}/webapps`.
   * Configure Apache Tomcat to use Jolokia.
-      1. Add following to tomcat-users.xml \
-      <role rolename="**role-CHANGEME**" /> \
+      1. Add following to tomcat-users.xml
+      <role rolename="**role-CHANGEME**" /> 
       <user name="**username-CHANGEME**" password="**password-CHANGEME**" roles="**role-CHANGEME**" />
       2. Start or Restart Apache Tomcat Service
       3. Verify the Jolokia agent installation by curl-ing this URL: `http://<tomcat_address>:<tomcat_port>/jolokia/version`.
@@ -605,11 +605,12 @@ Log format description: [https://stackoverflow.com/questions/4468546/explanation
   * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
   * **Source Category.** Enter any string to tag the output collected from this Source, such as **Tomcat/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
   * **Fields.** Set the following fields:
+    ```sh
     * component = websystem
     * webserver_system = tomcat
     * webserver_farm = <Your_Tomcat_Farm_Name>
-    * environment = <Environment_Name>, such as Dev, QA or Prod.
-
+    * environment = <Environment_Name> #such as Dev, QA or Prod.
+    ```
 1. Configure the **Advanced** section:
 * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
 * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Tomcat Server’s time zone.
@@ -683,35 +684,25 @@ The Terraform script installs the alerts without any scope filters, if you would
 
 <table>
   <tr>
-   <td>To configure alerts for:
-   </td>
-   <td>Set <code>apachetomcat_data_source</code> to something like:
-   </td>
+   <td>To configure alerts for:   </td>
+   <td>Set <code>apachetomcat_data_source</code> to something like:   </td>
   </tr>
   <tr>
-   <td>A specific webserver farm
-   </td>
-   <td><code>webserver_farm=tomcat.prod.01</code>
-   </td>
+   <td>A specific webserver farm   </td>
+   <td><code>webserver_farm=tomcat.prod.01</code>   </td>
   </tr>
   <tr>
-   <td>All clusters in an environment
-   </td>
-   <td><code>environment=prod</code>
-   </td>
+   <td>All clusters in an environment   </td>
+   <td><code>environment=prod</code>   </td>
   </tr>
   <tr>
-   <td>Multiple webserver farms using a wildcard
-   </td>
-   <td><code>webserver_farm=tomcat-prod*</code>
-   </td>
+   <td>Multiple webserver farms using a wildcard   </td>
+   <td><code>webserver_farm=tomcat-prod*</code>   </td>
   </tr>
   <tr>
-   <td>A specific webserver farms within a specific environment
-   </td>
+   <td>A specific webserver farms within a specific environment </td>
    <td><code>webserver_farm=tomcat-1</code> and <code>environment=prod</code>
-<p>This assumes you have configured and applied Fields as described in Step 1: Configure Fields of the <em>Sumo Logic of the Collect Logs and Metrics for Apache Tomcat</em> topic.</p>
-   </td>
+<p>This assumes you have configured and applied Fields as described in Step 1: Configure Fields of the <em>Sumo Logic of the Collect Logs and Metrics for Apache Tomcat</em> topic.</p> </td>
   </tr>
 </table>
 
@@ -941,63 +932,39 @@ The alerts are built based on metrics datasets and have preset thresholds.
 
 <table>
   <tr>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
+   <td>Alert Name </td>
+   <td>Alert Description   </td>
+   <td>Alert Condition   </td>
+   <td>Recover Condition   </td>
   </tr>
   <tr>
-   <td>Apache Tomcat - Access from Highly Malicious Sources
-   </td>
-   <td>This alert fires when a Tomcat is accessed from highly malicious IP addresses.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>&#60; &#61; 0
-   </td>
+   <td>Apache Tomcat - Access from Highly Malicious Sources   </td>
+   <td>This alert fires when a Tomcat is accessed from highly malicious IP addresses.   </td>
+   <td> &#62; 0   </td>
+   <td>&#60; &#61; 0   </td>
   </tr>
   <tr>
-   <td>Apache Tomcat - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
+   <td>Apache Tomcat - High Client (HTTP 4xx) Error Rate   </td>
+   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.   </td>
+   <td> &#62; 0   </td>
+   <td>0   </td>
   </tr>
   <tr>
-   <td>Apache Tomcat - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
+   <td>Apache Tomcat - High Server (HTTP 5xx) Error Rate   </td>
+   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.   </td>
+   <td> &#62; 0   </td>
+   <td>0   </td>
   </tr>
   <tr>
-   <td>Apache Tomcat - High Memory Usage
-   </td>
-   <td>This alert fires when the memory usage is more than 80 %.
-   </td>
-   <td> &#62; 80 %
-   </td>
-   <td>&#60; &#61;80%
-   </td>
+   <td>Apache Tomcat - High Memory Usage   </td>
+   <td>This alert fires when the memory usage is more than 80 %.   </td>
+   <td> &#62; 80 %   </td>
+   <td>&#60; &#61;80%   </td>
   </tr>
   <tr>
-   <td>Apache Tomcat - Error
-   </td>
-   <td>This alert fires when error count is greater than 0.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> 0
-   </td>
+   <td>Apache Tomcat - Error   </td>
+   <td>This alert fires when error count is greater than 0.   </td>
+   <td> &#62; 0   </td>
+   <td> 0   </td>
   </tr>
 </table>

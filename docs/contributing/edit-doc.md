@@ -10,7 +10,9 @@ Found an error in a doc? Here's how to submit a fix.
 
 ## Prerequisites
 
-{@import ../reuse/doc-prerequisites.md}
+import DocPrereq from '../reuse/doc-prerequisites.md';
+
+<DocPrereq/>
 
 ## Minor edits
 
@@ -58,7 +60,8 @@ In your new branch, edit the doc markdown file. See our [Style Guide](/docs/cont
 
 :::tip Recommended authoring tools
 
-<details><summary>If you're new to GitHub and/or writing Markdown, we recommend using the following apps (click to expand):</summary>
+<details>
+<summary>If you're new to GitHub and/or writing Markdown, we recommend using the following apps (click to expand):</summary>
 
 * [GitHub Desktop](https://desktop.github.com/): Easy-to-use interface to update your local machine clone, create branches, push to GitHub, and more.
 * [VS Code](https://code.visualstudio.com/): Development application to open the repo, edit and create files, and preview pages as you write. We recommend the following extensions:

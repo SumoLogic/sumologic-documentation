@@ -25,7 +25,8 @@ We offer courses online (live and on-demand) and in-person **for free**. Customi
 1. From the **Home** page, click the **Certification** tab.
 1. Click **Get Certified**. You'll be redirected to the portal page, where you can access all courses and certifications.
 
-<details><summary><strong>Get Certified</strong> link not working? Make sure to verify your email address.</summary>
+<details>
+<summary><strong>Get Certified</strong> link not working? Make sure to verify your email address.</summary>
 
 For security reasons, you must must [verify your email address](#how-do-i-verify-my-email-address) in order to access [third-party services within Sumo Logic](#how-do-i-obtain-third-party-service-access). If you have a working Sumo Logic username and password, then your email address is considered verified.
 
