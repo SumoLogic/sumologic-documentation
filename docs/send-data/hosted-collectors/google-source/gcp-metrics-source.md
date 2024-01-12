@@ -76,7 +76,8 @@ For information on available metrics, see [GCP Metrics](https://cloud.google.com
   :::
 8. **Services**. Select one or more of the following Services.
 
-  <details><summary><strong>Click to expand.</strong></summary>
+  <details>
+<summary><strong>Click to expand.</strong></summary>
 
   | App name |
   |:---|:---|

@@ -123,7 +123,9 @@ _sourceCategory=onelogin
 
 Now that you have set up collection for OneLogin, install the Sumo Logic App for OneLogin to use the preconfigured searches and dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing OneLogin Dashboards
 

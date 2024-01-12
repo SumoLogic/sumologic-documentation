@@ -44,7 +44,8 @@ This Field Extraction Rule (FER) is provided as an example to help you reduce yo
 
 There is a 200 field name limit for Field Extraction Rules (FER) and once a field is persisted using a FER, it can’t be removed. You can assign different targets to the name, but do not create overlapping messages and source categories.
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```
 | parse regex "(?<protocol>TCP|tcp|UDP|udp|ICMP|icmp)" nodrop
@@ -103,7 +104,9 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 
 This section provides instructions on how to install the Cisco ASA App.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Cisco ASA Dashboards
 

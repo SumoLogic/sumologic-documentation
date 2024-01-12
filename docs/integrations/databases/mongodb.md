@@ -498,7 +498,9 @@ email_notifications = [
 
 Now that you have set up collection for MongoDB, install the Sumo Logic app for MongoDB to use the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing MongoDB Dashboards
 
@@ -584,15 +586,15 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 |:----------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------|:------------------|:--------------------|
 | MongoDB - Too Many Cursors Timeouts          | This alert fires when we detect that there are too many cursors (100) timing out on a MongoDB server within a 5 minute time interval.                     | Warning      | >= 100           | < 100              |
 | MongoDB - Too Many Cursors Open              | This alert fires when we detect that there are too many cursors (>10K) opened by MongoDB.                                                                 | Warning      | >= 10000         | < 10000            |
-| MongoDB - Missing Primary                    | This alert fires when we detect that a MongoDB cluster has no node marked as primary.                                                                     | Critical     | <= 0             | > 0                |
+| MongoDB - Missing Primary                    | This alert fires when we detect that a MongoDB cluster has no node marked as primary.    | Critical     | `<=` 0      | > 0                |
 | MongoDB - Instance Down                      | This alert fires when we detect that the MongoDB instance is down.                                                                                        | Missing Data | :--               | :--                 |
-| MongoDB - Replication Lag                    | This alert fires when we detect that the replica lag for a given MongoDB cluster is greater than 60 seconds. Please review the replication configuration. | Warning      | > 60             | <= 60              |
-| MongoDB - Replication Heartbeat Error        | This alert fires when we detect that the MongoDB Replication Heartbeat request has errors, which indicates replication is not working as expected.        | Warning      | > 0              | <= 0               |
+| MongoDB - Replication Lag                    | This alert fires when we detect that the replica lag for a given MongoDB cluster is greater than 60 seconds. Please review the replication configuration. | Warning      | > 60             | `<=` 60              |
+| MongoDB - Replication Heartbeat Error        | This alert fires when we detect that the MongoDB Replication Heartbeat request has errors, which indicates replication is not working as expected.        | Warning      | > 0              | `<=` 0               |
 | MongoDB - Too Many Connections               | This alert fires when we detect a given MongoDB server has too many connections (over 80% of capacity).                                                   | Warning      | >= 80            | < 80               |
-| MongoDB - Secondary Node Replication Failure | This alert fires when we detect that a MongoDB secondary node is out of sync for replication.                                                             | Warning      | > 0              | <= 0               |
-| MongoDB - Slow Queries                       | This alert fires when we detect that a MongoDB cluster is executing slow queries.                                                                         | Warning      | > 0              | <= 0               |
-| MongoDB - Sharding Warning                   | This alert fires when we detect warnings in MongoDB sharding operations.                                                                                  | Warning      | > 0              | <= 0               |
-| MongoDB - Sharding Chunk Split Failure       | This alert fires when we detect that a MongoDB chunk not been split during sharding.                                                                      | Warning      | > 0              | <= 0               |
-| MongoDB - Sharding Error                     | This alert fires when we detect errors in MongoDB sharding operations.                                                                                    | Critical     | > 0              | <= 0               |
-| MongoDB - Replication Error                  | This alert fires when we detect errors in MongoDB replication operations.                                                                                 | Warning      | > 0              | <= 0               |
-| MongoDB - Sharding Balancer Failure          | This alert fires when we detect that data balancing failed on a MongoDB Cluster with 1 mongos instance and 3 mongod instances.                            | Warning      | > 0              | <= 0               |
+| MongoDB - Secondary Node Replication Failure | This alert fires when we detect that a MongoDB secondary node is out of sync for replication.                                                             | Warning      | > 0              | `<=` 0               |
+| MongoDB - Slow Queries                       | This alert fires when we detect that a MongoDB cluster is executing slow queries.                                                                         | Warning      | > 0              | `<=` 0               |
+| MongoDB - Sharding Warning                   | This alert fires when we detect warnings in MongoDB sharding operations.                                                                                  | Warning      | > 0              | `<=` 0               |
+| MongoDB - Sharding Chunk Split Failure       | This alert fires when we detect that a MongoDB chunk not been split during sharding.                                                                      | Warning      | > 0              | `<=` 0               |
+| MongoDB - Sharding Error                     | This alert fires when we detect errors in MongoDB sharding operations.                                                                                    | Critical     | > 0              | `<=` 0               |
+| MongoDB - Replication Error                  | This alert fires when we detect errors in MongoDB replication operations.                                                                                 | Warning      | > 0              | `<=` 0               |
+| MongoDB - Sharding Balancer Failure          | This alert fires when we detect that data balancing failed on a MongoDB Cluster with 1 mongos instance and 3 mongod instances.                            | Warning      | > 0              | `<=` 0               |

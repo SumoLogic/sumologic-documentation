@@ -22,7 +22,8 @@ The App uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https:
 
 ## Sample Log Message
 
-<details><summary>View Sample Log Message</summary>
+<details>
+<summary>View Sample Log Message</summary>
 
 ```json title="Audit Activity Message"
 {
@@ -245,7 +246,8 @@ The App uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https:
 
 ## Sample Query
 
-<details><summary>View Sample Queries</summary>
+<details>
+<summary>View Sample Queries</summary>
 
 ```sql title="Audis by Resource Categories (Audit Activity)"
 _sourceCategory="azure_ad_reporting" "activityDisplayName" "operationType"
@@ -295,7 +297,9 @@ Follow the instructions for setting up [Microsoft Graph Azure AD Reporting](/doc
 
 This section has instructions for installing the Microsoft Graph Azure AD Reporting app for Sumo Logic.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Microsoft Graph Azure AD Reporting dashboards​​
 

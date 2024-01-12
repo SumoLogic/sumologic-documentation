@@ -49,7 +49,8 @@ In this section, you'll create a new [installation token](/docs/manage/security/
 
 ### Step 3: Install the collector on the target machine
 
-<details><summary>What's a collector?</summary>
+<details>
+<summary>What's a collector?</summary>
 A collector is an executable program that collects and sends observability data. It typically runs directly on the node that is being monitored (this is the OTel agent).
 </details>
 
@@ -96,7 +97,8 @@ receivers:
           - logging
 ```
 
-<details><summary>What are <code>receivers</code>, <code>exporters</code>, and <code>services</code>?</summary>
+<details>
+<summary>What are <code>receivers</code>, <code>exporters</code>, and <code>services</code>?</summary>
 
 The [`receivers` section](https://opentelemetry.io/docs/collector/configuration/#receivers) describes the sources from which we will collect observability data. The receiver is a component within the collector that understands how to receive data from a particular source. This will have custom code for understanding various types of services to derive metrics from (like Nginx or PostgreSQL). In this case, we’re going to be using the `hostmetrics` receiver, which can collect CPU, disk, and memory information from the host machine that the collector is running on. In that stanza, we specify that we want the collector to scrape information once every 5 seconds, and that we want to run the `memory` scraper. To learn more about `hostmetrics` receiver, check out the docs.
 

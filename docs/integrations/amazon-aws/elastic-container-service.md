@@ -21,7 +21,8 @@ The app collects ECS logs and metrics for:
 
 ### Sample log message
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -344,7 +345,9 @@ In this step, you set up an [AWS CloudTrail Source](/docs/send-data/hosted-colle
 
 Now that you have set up collection for Amazon ECS, install the Sumo Logic app for Amazon ECS to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing the Amazon ECS dashboards
 

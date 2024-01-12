@@ -131,35 +131,24 @@ To configure a Box Source:
 1. **Forward to SIEM**. Check the checkbox to forward your data to [Cloud SIEM](/docs/cse).<br/>When configured with the **Forward to SIEM** option, the following metadata fields are set:
 <table>
   <tr>
-   <td>
-Field Name
-   </td>
-   <td>Value
-   </td>
+   <td>Field Name   </td>
+   <td>Value   </td>
   </tr>
   <tr>
-   <td><code>_siemVendor</code>
-   </td>
-   <td>Box
-   </td>
+   <td><code>_siemVendor</code>   </td>
+   <td>Box   </td>
   </tr>
   <tr>
-   <td><code>_siemProduct</code>
-   </td>
-   <td>Enterprise Events
-   </td>
+   <td><code>_siemProduct</code>   </td>
+   <td>Enterprise Events   </td>
   </tr>
   <tr>
-   <td><code>_siemFormat</code>
-   </td>
-   <td>JSON
-   </td>
+   <td><code>_siemFormat</code>   </td>
+   <td>JSON   </td>
   </tr>
   <tr>
-   <td><code>_siemEventID</code>
-   </td>
-   <td>&#123;event_type&#125;
-   </td>
+   <td><code>_siemEventID</code>   </td>
+   <td>&#123;event_type&#125;   </td>
   </tr>
 </table>
 1. (Optional) **Fields**. Click the **+Add** link to add custom log metadata [Fields](/docs/manage/fields).
@@ -176,52 +165,32 @@ When Sumo Logic detects an issue it is tracked by [Health Events](/docs/manage/h
 
 <table>
   <tr>
-   <td>Type
-   </td>
-   <td>Reason
-   </td>
-   <td>Retries
-   </td>
-   <td>Retry Behavior
-   </td>
-   <td>Health Event Name
-   </td>
+   <td>Type   </td>
+   <td>Reason   </td>
+   <td>Retries   </td>
+   <td>Retry Behavior   </td>
+   <td>Health Event Name   </td>
   </tr>
   <tr>
-   <td>ThirdPartyConfig
-   </td>
-   <td>Normally due to an invalid configuration. You'll need to review your Source configuration and make an update.
-   </td>
-   <td>No retries are attempted until the Source is updated.
-   </td>
-   <td>Not applicable
-   </td>
-   <td>ThirdPartyConfigError
-   </td>
+   <td>ThirdPartyConfig   </td>
+   <td>Normally due to an invalid configuration. You'll need to review your Source configuration and make an update.   </td>
+   <td>No retries are attempted until the Source is updated.   </td>
+   <td>Not applicable   </td>
+   <td>ThirdPartyConfigError </td>
   </tr>
   <tr>
-   <td>ThirdPartyGeneric
-   </td>
-   <td>Normally due to an error communicating with the third party service APIs.
-   </td>
-   <td>Yes
-   </td>
-   <td>The Source will retry for up to 90 minutes, after which it quits.
-   </td>
-   <td>ThirdPartyGenericError
-   </td>
+   <td>ThirdPartyGeneric   </td>
+   <td>Normally due to an error communicating with the third party service APIs.   </td>
+   <td>Yes   </td>
+   <td>The Source will retry for up to 90 minutes, after which it quits.   </td>
+   <td>ThirdPartyGenericError   </td>
   </tr>
   <tr>
-   <td>FirstPartyGeneric
-   </td>
-   <td>Normally due to an error communicating with the internal Sumo Logic APIs.
-   </td>
-   <td>Yes
-   </td>
-   <td>The Source will retry for up to 90 minutes, after which it quits.
-   </td>
-   <td>FirstPartyGenericError
-   </td>
+   <td>FirstPartyGeneric </td>
+   <td>Normally due to an error communicating with the internal Sumo Logic APIs.   </td>
+   <td>Yes   </td>
+   <td>The Source will retry for up to 90 minutes, after which it quits.   </td>
+   <td>FirstPartyGenericError   </td>
   </tr>
 </table>
 
@@ -231,52 +200,32 @@ Sources can be configured using UTF-8 encoded JSON files with the [Collector Man
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Access</strong>
-   </td>
+   <td><strong>Parameter</strong>   </td>
+   <td><strong>Type</strong> </td>
+   <td><strong>Required?</strong>   </td>
+   <td><strong>Description</strong>   </td>
+   <td><strong>Access</strong>   </td>
   </tr>
   <tr>
-   <td>config
-   </td>
-   <td>JSON Object
-   </td>
-   <td>Yes
-   </td>
-   <td>Contains the<a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source#configParameters"> configuration parameters</a> for the Source.
-   </td>
-   <td>
-   </td>
+   <td>config </td>
+   <td>JSON Object   </td>
+   <td>Yes   </td>
+   <td>Contains the<a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/box-source#configParameters"> configuration parameters</a> for the Source.  </td>
+   <td> </td>
   </tr>
   <tr>
-   <td>schemaRef
-   </td>
-   <td>JSON Object
-   </td>
-   <td>Yes
-   </td>
-   <td>Use <code>&#123;"type":"Box"&#125;</code> for a Box Source.
-   </td>
-   <td>not modifiable
-   </td>
+   <td>schemaRef </td>
+   <td>JSON Object </td>
+   <td>Yes   </td>
+   <td>Use <code>&#123;"type":"Box"&#125;</code> for a Box Source.   </td>
+   <td>not modifiable   </td>
   </tr>
   <tr>
-   <td>sourceType
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>Use <code>Universal</code> for a Box Source.
-   </td>
-   <td>not modifiable
-   </td>
+   <td>sourceType </td>
+   <td>String </td>
+   <td>Yes </td>
+   <td>Use <code>Universal</code> for a Box Source. </td>
+   <td>not modifiable </td>
   </tr>
 </table>
 
@@ -285,88 +234,52 @@ The following table shows the **config** parameters for a Box Source.
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Access</strong>
-   </td>
+   <td><strong>Parameter</strong> </td>
+   <td><strong>Type</strong>   </td>
+   <td><strong>Required</strong>   </td>
+   <td><strong>Default</strong>   </td>
+   <td><strong>Description</strong>   </td>
+   <td><strong>Access</strong>   </td>
   </tr>
   <tr>
-   <td>name
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata</a> field <code>_source</code>.
-   </td>
-   <td>modifiable
-   </td>
+   <td>name   </td>
+   <td>String   </td>
+   <td>Yes   </td>
+   <td>   </td>
+   <td>Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata</a> field <code>_source</code>.   </td>
+   <td>modifiable </td>
   </tr>
   <tr>
-   <td>description
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>null
-   </td>
-   <td>Type a description of the Source.
-   </td>
-   <td>modifiable
-   </td>
+   <td>description   </td>
+   <td>String   </td>
+   <td>No   </td>
+   <td>null   </td>
+   <td>Type a description of the Source.   </td>
+   <td>modifiable   </td>
   </tr>
   <tr>
-   <td>category
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>null
-   </td>
-   <td>Type the category of the source. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/send-data/best-practices#good-and-bad-source-categories">best practices</a> for details.
-   </td>
-   <td>modifiable
-   </td>
+   <td>category </td>
+   <td>String   </td>
+   <td>No   </td>
+   <td>null   </td>
+   <td>Type the category of the source. This value is assigned to the <a href="/docs/search/get-started-with-search/search-basics/built-in-metadata">metadata</a> field <code>_sourceCategory</code>. See <a href="/docs/send-data/best-practices#good-and-bad-source-categories">best practices</a> for details.   </td>
+   <td>modifiable </td>
   </tr>
   <tr>
-   <td>fields
-   </td>
-   <td>JSON Object
-   </td>
-   <td>No
-   </td>
-   <td>
-   </td>
-   <td>JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field <code>_siemForward</code> to enable forwarding to SIEM.
-   </td>
-   <td>modifiable
-   </td>
+   <td>fields   </td>
+   <td>JSON Object   </td>
+   <td>No   </td>
+   <td>   </td>
+   <td>JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field <code>_siemForward</code> to enable forwarding to SIEM.   </td>
+   <td>modifiable   </td>
   </tr>
   <tr>
-   <td>credentialsJson
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>Its the authentication credentials to access Box platform.
-   </td>
-   <td>modifiable
-   </td>
+   <td>credentialsJson   </td>
+   <td>String   </td>
+   <td>Yes   </td>
+   <td>   </td>
+   <td>Its the authentication credentials to access Box platform.   </td>
+   <td>modifiable   </td>
   </tr>
 </table>
 
@@ -398,7 +311,9 @@ The following table shows the **config** parameters for a Box Source.
 
 Now that you have set up collection for Box, install the Sumo Logic App for Box to use the preconfigured searches and [dashboards](#viewing-box-dashboards) to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 The Script Source is available for Linux or Windows environments with Java Runtime Environments.
 
