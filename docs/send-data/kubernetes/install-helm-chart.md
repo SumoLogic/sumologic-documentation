@@ -145,6 +145,11 @@ An alternative would be to host Sumo Logic container images in one's container r
 [aws-public-ecr-docs]: https://aws.amazon.com/blogs/aws/amazon-ecr-public-a-new-public-container-registry/
 [aws-ecr-pricing]: https://aws.amazon.com/ecr/pricing/
 
+### Using FIPS compliant OpenTelemetry Collector
+
+Refer to [FIPS compliant binaries section](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/security-best-practices.md#fips-compliant-binaries) in
+[Advanced Configuration / Security Best Practices document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/security-best-practices.md).
+
 ### Proxy
 
 If you are installing the collection in a cluster that requires proxying outbound requests, please see the following
