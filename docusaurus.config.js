@@ -33,6 +33,14 @@ module.exports = {
       async: true,
     },
     {
+      src: 'https://www.googletagmanager.com/ns.html?id=GTM-58ZK7D',
+      async: true,
+    },
+    {
+      src: './src/helper/google-tag-manager.js',
+      async: true,
+    },
+    {
       src: './src/helper/google-analytics.js',
       async: true,
     },
@@ -88,13 +96,10 @@ module.exports = {
           },
         },
         gtag: {
-          trackingID: [
-            'G-CVH19TBVSL',
-            'UA-16579649-3',
-          ],
+          trackingID: 'G-CVH19TBVSL',
         },
-        googleAnalytics: {
-          trackingID: 'UA-16579649-3',
+        googleTagManager: {
+          containerId: 'GTM-58ZK7D',
         },
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
@@ -230,11 +235,6 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
-    announcementBar: {
-      id: 'announcementBar',
-      backgroundColor: '#f7f1c8',
-      content: `Sumo will undergo maintenance Jan 10 @ 12am PST, ending Jan 11. You may experience intermittent service disruptions. Follow our <a href="https://status.sumologic.com">status page</a> for updates.`,
-    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
