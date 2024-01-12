@@ -17,7 +17,7 @@ With the Sumo Logic App for Miro, security teams can stay on top of potential se
 
 ## Log Types
 
-This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://developers.miro.com/reference/log-object) from Miro.
+This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://developers.miro.com/v1.0/reference/get-logs) from Miro.
 
 ## Sample Log Message
 
@@ -73,7 +73,9 @@ Follow the instructions for setting up [Cloud-to-Cloud Integration for Miro](/do
 
 This section has instructions for installing the Miro App for Sumo Logic.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 1. From the **App Catalog**, search for and select the app. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. Click **Add Integration**.

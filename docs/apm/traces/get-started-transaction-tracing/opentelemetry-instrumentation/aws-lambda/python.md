@@ -6,8 +6,9 @@ description: Learn how to install and configure OpenTelemetry distributed tracin
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApmTrace from '../../../../../reuse/apm-traces-layer-order.md';
 
-This document covers how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions written in Python and send data to Sumo Logic. To obtain telemetry data from AWS Lambda functions developed in Python language you can use the [Sumo Logic Distribution for OpenTelemetry Python Lambda](https://github.com/SumoLogic-Labs/sumo-opentelemetry-lambda/tree/main/python).
+This document covers how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions written in Python and send data to Sumo Logic. To obtain telemetry data from AWS Lambda functions developed in Python language you can use the [Sumo Logic Distribution for OpenTelemetry Python Lambda](https://github.com/SumoLogic/sumologic-otel-lambda/tree/main/python).
 
 Sumo Logic OTel Python Lambda layer supports:
 
@@ -30,10 +31,10 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
 
 1. Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 1. Navigate to the **Layers** section and click **Add a layer**.
-1. In the **Choose a layer** menu, select **Specify an ARN** and paste the ARN ID for your Lambda function AWS Region. Reference the table in the section _Sumo Logic AWS Distro Lambda layers for AWS Region - amd64 (x86_64) architecture_ for the ARN ID.  <br/><img src={useBaseUrl('img/traces/lambda-python1.png')} alt="Choose a layer" style={{border: '1px solid black'}} width="800" /> 
-1. Ensure the AWS Distro layer is present in the Layers section: <br/><img src={useBaseUrl('img/traces/lambda-python2.png')} alt="Layers" style={{border: '1px solid black'}} width="800" /> 
+1. In the **Choose a layer** menu, select **Specify an ARN** and paste the ARN ID for your Lambda function AWS Region. Reference the table in the section _Sumo Logic AWS Distro Lambda layers for AWS Region - amd64 (x86_64) architecture_ for the ARN ID.  <br/><img src={useBaseUrl('img/traces/lambda-python1.png')} alt="Choose a layer" style={{border: '1px solid black'}} width="800" />
+1. Ensure the AWS Distro layer is present in the Layers section: <br/><img src={useBaseUrl('img/traces/lambda-python2.png')} alt="Layers" style={{border: '1px solid black'}} width="800" />
    :::note
-   {@import ../../../../../reuse/apm-traces-layer-order.md}
+   <ApmTrace/>
    :::
 1. Navigate to the **Configuration** > **Environment variables** section and set up the following environment variables:
    * `AWS_LAMBDA_EXEC_WRAPPER= /opt/otel-instrument` - Enables auto-instrumentation.
@@ -48,7 +49,7 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
     The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces Source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
     :::
 
-     <img src={useBaseUrl('img/traces/lambda-python3.png')} alt="Environment variables" style={{border: '1px solid black'}} width="800" /> 
+     <img src={useBaseUrl('img/traces/lambda-python3.png')} alt="Environment variables" style={{border: '1px solid black'}} width="800" />
 
 1. Make sure you have **X-Ray Tracing** disabled in Lambda API Stage. Navigate to [AWS API Gateway console](https://console.aws.amazon.com/apigateway/main/apis), find your API and go to Stages. In the **Logs/Tracing** tab uncheck **Enable X-Ray Tracing** option.
 :::note
@@ -160,8 +161,8 @@ Instrumentation of container based AWS Lambda function requires some changes in 
     The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces Source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
     :::
 
-      <img src={useBaseUrl('img/traces/lambda-python4.png')} alt="Environment variables" style={{border: '1px solid black'}} width="800" /> 
-     
+      <img src={useBaseUrl('img/traces/lambda-python4.png')} alt="Environment variables" style={{border: '1px solid black'}} width="800" />
+
 1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces).
 
 ### Context propagation

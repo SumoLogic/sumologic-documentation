@@ -29,8 +29,8 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 10 min | [Alert data](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-API-Reference/Get-Alerts) |
-| 10 min | [Incident data](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR/Cortex-XDR-API-Reference/Get-Incidents) |
+| 10 min | [Alert data](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Get-all-Alerts) |
+| 10 min | [Incident data](https://docs-cortex.paloaltonetworks.com/r/Cortex-XDR-REST-API/Get-all-Incidents) |
 
 ## Setup
 
@@ -103,7 +103,7 @@ To ensure accurate and effective display of all alerts, we recommend enabling du
 | `_siemVendor` | `Palo Alto ` | Set when **Forward To SIEM** is checked. |
 | `_siemProduct` | `Cortex` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
-| `_siemEventID` | `<category>` | Alert logs and associated event logs use {category} while incident logs use the static text `incident` |
+| `_siemEventID` | `<category>` | Alert logs and associated event logs use `{category}` while incident logs use the static text `incident` |
 
 ## JSON schema
 

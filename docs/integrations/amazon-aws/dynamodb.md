@@ -158,17 +158,9 @@ Now that you have set up a collection for **Amazon DynamoDB**, install the Sumo 
 
 To install the app:
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library** and complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-3. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 
 ## Viewing Amazon DynamoDB dashboards

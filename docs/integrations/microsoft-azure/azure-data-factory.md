@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-data-factory.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Data Factory](https://learn.microsoft.com/en-gb/azure/data-factory/data-factory-overview) is the cloud-based ETL and data integration service that allows you to create data-driven workflows for orchestrating data movement and transforming data at scale. This integration helps in monitoring the scheduled activities and pipelines for success and failure rates.
+[Azure Data Factory](https://learn.microsoft.com/en-gb/azure/data-factory/introduction) is the cloud-based ETL and data integration service that allows you to create data-driven workflows for orchestrating data movement and transforming data at scale. This integration helps in monitoring the scheduled activities and pipelines for success and failure rates.
 
 ## Log and Metric types
 

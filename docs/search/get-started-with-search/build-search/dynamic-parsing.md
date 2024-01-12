@@ -68,7 +68,7 @@ The two modes available are:
 
 * **Auto Parse Mode**
     * Parses out all fields detected in your JSON data source, irrespective of whether you are using them in your query or not.
-    * Supported in classic dashboards and aggregate scheduled searches. This mode is only applicable when searching JSON data sources that have been properly set up in a Run Time FER.
+    * Supported in aggregate scheduled searches. This mode is only applicable when searching JSON data sources that have been properly set up in a Run Time FER.
 * **Manual Mode** (when Auto Parse Mode is disabled)
     * Fields will not be parsed out automatically unless defined in an Ingest Time FER. Users have to manually specify further parsing logic.
     * This mode is for advanced users who are interested in the best performance and know how to parse out the fields they need.

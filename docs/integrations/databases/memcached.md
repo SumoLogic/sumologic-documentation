@@ -288,7 +288,7 @@ This section provides instructions for configuring logs and metrics collection f
    * Here’s an explanation for additional values set by this Telegraf configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
      * `data_format - “prometheus”` in the output plugins section. Metrics are sent in the Prometheus format to Sumo Logic
      * `component: “database”` in the input plugins section. This value is used by Sumo Logic apps to identify application components.
-   * For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
+   * For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
 6. Once you have finalized your `telegraf.conf` file, you can start or reload the Telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, Memcached metrics should start flowing into Sumo Logic.
@@ -445,18 +445,9 @@ email_notifications = [
 
 This section demonstrates how to install the Memcached app.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name or enter a name of your choice. 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but you'll see full graphs and maps in a bit of time.
+<AppInstall/>
 
 ## Viewing Memcached Dashboards
 
@@ -500,111 +491,66 @@ Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors
 
 <table>
   <tr>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
+   <td>Alert Name </td>
+   <td>Alert Description   </td>
+   <td>Trigger Type (Critical / Warning)   </td>
+   <td>Alert Condition </td>
+   <td>Recover Condition   </td>
   </tr>
   <tr>
-   <td>Memcached - Commands Error
-   </td>
-   <td>This alert fires when we detect command errors.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60;&#61; 0
-   </td>
+   <td>Memcached - Commands Error </td>
+   <td>This alert fires when we detect command errors.   </td>
+   <td>Critical   </td>
+   <td> &#62; 0   </td>
+   <td> &#60;&#61; 0 </td>
   </tr>
   <tr>
-   <td>Memcached - Authentication Error
-   </td>
-   <td>This alert fires when we detect authentication errors continuously for 5 mins
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60;&#61; 0
-   </td>
+   <td>Memcached - Authentication Error   </td>
+   <td>This alert fires when we detect authentication errors continuously for 5 mins </td>
+   <td>Warning   </td>
+   <td> &#62;0   </td>
+   <td> &#60;&#61; 0   </td>
   </tr>
   <tr>
-   <td>Memcached - Connection Yields
-   </td>
-   <td>This alert fires when we detect yielded connections continuously for 5 mins
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;5
-   </td>
-   <td> &#60;&#61; 5
-   </td>
+   <td>Memcached - Connection Yields   </td>
+   <td>This alert fires when we detect yielded connections continuously for 5 mins   </td>
+   <td>Warning   </td>
+   <td> &#62;5   </td>
+   <td> &#60;&#61; 5   </td>
   </tr>
   <tr>
-   <td>Memcached - High Memory Usage
-   </td>
-   <td>This alert fires when the memory usage is more than 80%.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;80
-   </td>
-   <td> &#60;&#61; 80
-   </td>
+   <td>Memcached - High Memory Usage </td>
+   <td>This alert fires when the memory usage is more than 80%. </td>
+   <td>Warning   </td>
+   <td> &#62;80 </td>
+   <td> &#60;&#61; 80   </td>
   </tr>
   <tr>
-   <td>Memcached - Listen Disabled
-   </td>
-   <td>This alert fires when new queued connections per minute > 5
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;5
-   </td>
-   <td> &#60;&#61;5
-   </td>
+   <td>Memcached - Listen Disabled   </td>
+   <td>This alert fires when new queued connections per minute > 5   </td>
+   <td>Warning </td>
+   <td> &#62;5   </td>
+   <td> &#60;&#61;5   </td>
   </tr>
   <tr>
-   <td>Memcached - Cache Hit Ratio
-   </td>
-   <td>The hit rate is one of the most important indicators of Memcached performance. A high hit rate means faster responses to your users. If the hit rate is falling, you need quick visibility into why. This alert gets fired low cache hit ratio is less than 50%
-   </td>
-   <td>Critical
-   </td>
-   <td> &#60;&#61;0.5
-   </td>
-   <td> &#62;0.5
-   </td>
+   <td>Memcached - Cache Hit Ratio   </td>
+   <td>The hit rate is one of the most important indicators of Memcached performance. A high hit rate means faster responses to your users. If the hit rate is falling, you need quick visibility into why. This alert gets fired low cache hit ratio is less than 50%   </td>
+   <td>Critical </td>
+   <td> &#60;&#61;0.5   </td>
+   <td> &#62;0.5   </td>
   </tr>
   <tr>
-   <td>Memcached - Current Connections
-   </td>
-   <td>This alert gets fired when number of connected clients are 0. If current connections are none then something is wrong.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#60;&#61;0
-   </td>
-   <td> &#62;0
-   </td>
+   <td>Memcached - Current Connections   </td>
+   <td>This alert gets fired when number of connected clients are 0. If current connections are none then something is wrong.   </td>
+   <td>Critical </td>
+   <td> &#60;&#61;0 </td>
+   <td> &#62;0 </td>
   </tr>
   <tr>
-   <td>Memcached - Uptime
-   </td>
-   <td>This alert gets fires when uptime is &#60; 180. You can use this to detect respawns.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#60;&#61;180
-   </td>
-   <td> &#62;180
-   </td>
+   <td>Memcached - Uptime </td>
+   <td>This alert gets fires when uptime is &#60; 180. You can use this to detect respawns. </td>
+   <td>Critical </td>
+   <td> &#60;&#61;180 </td>
+   <td> &#62;180</td>
   </tr>
 </table>

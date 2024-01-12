@@ -91,7 +91,7 @@ You can **view your data with predefined searches and dashboards** that facilita
 
 ## Step 4: Share your findings with your team
 
-You have downloaded an app and analyzed your data with searches and dashboards. You may even have [modified your dashboards](/docs/dashboards-classic/edit-dashboards/manage-dashboards), and now you want to share your findings with your team. You can easily share a dashboard by clicking the share icon in the top menu bar.
+You have downloaded an app and analyzed your data with searches and dashboards. You may even have [modified your dashboards](/docs/dashboards/panels/modify-chart), and now you want to share your findings with your team. You can easily share a dashboard by clicking the share icon in the top menu bar.
 
 ![Share Dashboard](/img/get-started/WTS_Share-dashboard.png)
 
@@ -124,7 +124,6 @@ Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a su
 :::
 
 * [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source/)
-* [AWS Observability Quickstart](/docs/observability/aws/quickstart). This guide will walk you through setting up the Sumo Logic AWS Observability integration.
 * [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart). Get up and running with the Sumo Logic Kubernetes solution in minutes.
 * [Traces Quickstart](/docs/apm/traces#quickstart). This guide demonstrates how to measure application microservice performance.
 * [Ingest Budgets Quickstart](/docs/manage/ingestion-volume/ingest-budgets/quickstart). Learn how to create and use Ingest Budgets.

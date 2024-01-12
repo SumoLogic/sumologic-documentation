@@ -32,7 +32,8 @@ dir="ltr">authenticated |Mon, 21 May 2018 01:38:01:601|::ffff:127.0.0.1 |32828 |
 '2018-05-21T06:20:09Z UTC [ db=dev user=himanshu pid=64458 userid=35 xid=5143208 ]' LOG: drop user testuser3
 ```
 
-<details><summary><strong>Click to expand</strong>. Amazon CloudTrail Redshift Log Sample.</summary>
+<details>
+<summary><strong>Click to expand</strong>. Amazon CloudTrail Redshift Log Sample.</summary>
 
 ```json title="Amazon CloudTrail Redshift Log Sample"
 {
@@ -254,7 +255,9 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
 
 Now that you have configured log and metric collection, install the Sumo Logic app for Amazon Redshift to take advantage of the pre-configured searches and dashboards.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Amazon Redshift Dashboards
 

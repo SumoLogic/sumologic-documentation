@@ -7,12 +7,13 @@ hide_table_of_contents: true
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiIntro from '../reuse/api-intro.md';
 
 <img src={useBaseUrl('img/icons/manage.png')} alt="icon" width="50"/>
 
 The Account Management API allows you to manage the custom subdomain for the URL used to access your Sumo Logic account. For more information, see [Manage Organization](/docs/manage/manage-subscription/manage-org-settings#Change-account-subdomain).
 
-{@import ../reuse/api-intro.md}
+<ApiIntro/>
 
 | Deployment | Documentation URL                                         |
 |:------------|:-----------------------------------------------------------|

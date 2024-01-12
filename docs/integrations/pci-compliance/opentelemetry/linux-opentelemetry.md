@@ -5,6 +5,8 @@ dashboard: The Sumo Logic app for Payment Card Industry (PCI) Compliance for Lin
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
 
@@ -28,11 +30,15 @@ Following tag will be created as part of Linux app installation, if not already 
 You can skip this section if you have already set up the logs collection through [Linux](/docs/integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry/) or [Linux - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+
+<SetupColl/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Collector.png' alt="Linux-Collector" style={{border: '1px solid black'}} />
 
@@ -57,11 +63,11 @@ The following logs, located in the `/var/log` folder, are required for using the
 - audit/audit.log
 - secure
 - Messages
-- yum.log 
+- yum.log
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-YAML.png' alt="Linux-YAML.png" style={{border: '1px solid black'}}/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Linux-YAML.png' alt="Linux-YAML.png" style={{border: '1px solid black'}}/>
 
 :::note
 By default, the path for Linux log files required for all the distros are pre-populated in the UI. (Optional) Unwanted file paths can be removed from the list if the files are not available on your Linux distribution. The collection will work even if not all the files are present in your system.
@@ -69,7 +75,21 @@ By default, the path for Linux log files required for all the distros are pre-po
 
 ### Step 3: Send logs to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Linux"
+  values={[
+    {label: 'Linux', value: 'Linux'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
+  ]}>
+
+<TabItem value="Linux">
 
 1.  Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the Linux instance which needs to be monitored.
 2.  Restart the collector using:
@@ -77,7 +97,37 @@ By default, the path for Linux log files required for all the distros are pre-po
     sudo systemctl restart otelcol-sumo
     ```
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+</TabItem>
+
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
+
+</Tabs>
+
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 ## Sample log message
 
@@ -106,7 +156,9 @@ sumo.datasource=linux deployment.environment=* host.group=* host.name=* "useradd
 
 ## Viewing PCI Compliance for Linux dashboards
 
-{@import ../../../reuse/filter-dashboards.md}
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
 
 ### Account, User, System Monitoring
 

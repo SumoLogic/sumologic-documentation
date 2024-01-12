@@ -150,16 +150,11 @@ To configure Amazon CloudWatch log collection, do the following:
 
 Now that you have set up collection for EKS, install the Sumo Logic app for EKS - Control Plane to use the pre-configured Kubernetes dashboards that provide visibility into your EKS environment.
 
-To install the app, do the following:
-1. Locate and install the app from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-2. From the App Catalog, search for **EKS** and select the app.
-3. To install the app, click **Add to Library** and complete the following fields.
-    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.**  For **EKS Log Source,** leave Source Category selected, and enter the value of source category which you used while configuring the Sumo Logic HTTP Source.
-    3. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
-4. Click **Add to Library**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-All the dashboards are linked to the Explore tab so they can be easily accessed by clicking on Cluster from side navigation of Explore tab.
+<AppInstall/>
+
+All the dashboards are linked to the Explore tab so they can be easily accessed by going to the **Explore** tab side navigation and clicking **Cluster**.
 
 
 ## Viewing Dashboards for Amazon EKS - Control Plane

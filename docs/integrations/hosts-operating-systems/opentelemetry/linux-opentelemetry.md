@@ -2,7 +2,7 @@
 id: linux-opentelemetry
 title: Linux - OpenTelemetry Collector
 sidebar_label: Linux - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Linux.
+description: Learn about the Sumo Logic OpenTelemetry app for Linux.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for Linux allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon. In addition to that, it allows you to view information about events, logins, and the security status of your Linux system using Linux system logs.
+The Sumo Logic app for Linux allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon. In addition to that, it allows you to view information about events, logins, and the security status of your Linux system using Linux system logs.
 
 The app consists of predefined searches and dashboards that provide visibility into your environment for real-time or historical analysis. Our dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses OpenTelemetry, an open-source collector for the collection of both metrics and log data.
 
@@ -21,7 +21,7 @@ We use the Sumo Logic Distribution for OpenTelemetry Collector to collect Linux 
 
 ## Fields Created in Sumo Logic for Linux
 
-Following are the [fields](/docs/manage/fields) that will be created as part of Linux App install if not already present. 
+Following are the [fields](/docs/manage/fields) that will be created as part of Linux app install if not already present. 
 
 ### Across apps
 
@@ -33,13 +33,17 @@ Following are the [fields](/docs/manage/fields) that will be created as part of 
 You can skip this section if you have already set up the logs collection through [Linux PCI](/docs/integrations/pci-compliance/opentelemetry/linux-opentelemetry) or [Linux - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -64,44 +68,73 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 - `Messages`
 - `yum.log`
 
-:::note 
+:::note
 By default, the path for Linux log files required for all the distros are pre-populated in the UI. Not all of the files might be available on your Linux distribution. Optionally, you can remove unwanted file paths from the list. OpenTelemetry collection will still work properly even if not all of the files are present on your system. If in doubt, you can leave the default file paths values.
 :::
 
 #### Enable process metric collection (Optional)
 
-By default, the collector will not send process metrics to Sumo Logic. This is because the number of processes running on a host can be very large, which would result in a significant increase in Data Points per Minute (DPM).
+import ProcMetrics from '../../../reuse/apps/opentelemetry/process-metric-collection.md';
 
-Click the **Enable process metric collection** checkbox to collect (process level metric)[https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/hostmetricsreceiver/internal/scraper/processscraper/documentation.md].
-- **Name of process**. Add the list of process names.
-- **Include/Exclude the above pattern**. Signifies if you want to exclude or include the metrics for the processes listed previously.
-- **Match type for process name**. Select if the process name given should be considered for a strict match with the host machine processes or if it should be considered as regex when matching.
-
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/process-metric-collection.png')} style={{border:'1px solid black'}} alt="process-metric-collection" width="550"/>
-
-:::note 
-If the process list needs to be edited in the future, you can edit it manually in the OTEL config yaml by adding/removing in the names list under process scrapper.
-```sh
-process:
-  include:
-    names: [ <process name1>, <process name2> ... ]
-    match_type: <strict|regexp>
-```
-:::
+<ProcMetrics/>
 
 Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Linux-YAML.png')} alt="Linux-YAML" style={{border:'1px solid black'}} width="800"/>
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
-1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Linux instance which needs to be monitored.
+<LogsIntro/>
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Linux"
+  values={[
+    {label: 'Linux', value: 'Linux'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
+  ]}>
+
+<TabItem value="Linux">
+
+1. Copy the yaml file to `/etc/otelcol-sumo/conf.d/` folder in the Artifactory instance that needs to be monitored.
 2. Restart the collector using:
   ```sh
-  sudo systemctl restart otelcol-sumo
+  sudo systemctl restart otelcol-sumo
   ```
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+</TabItem>
+
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
+
+</Tabs>
+
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 ## Sample Log Messages
 
@@ -141,7 +174,7 @@ Dec 13 04:44:00 <1> [zypper++] Summary.cc(readPool):133 I_TsU(27372)Mesa-libGL1-
 }
 ```
 
-## Sample Queries
+## Sample queries
 
 ### Log query
 
@@ -268,4 +301,3 @@ The **Linux - Login Status** dashboard provides information about logins to Linu
 The **Linux - Security Status** dashboard provides information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Security-Status.png' alt="Linux - Security Status" />
-

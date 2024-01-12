@@ -136,7 +136,8 @@ To add a hosted collector and HTTP source:
 
 This section covers the various ways in which to collect logs from JFrog Xray and send them to Sumo Logic. The logs are then shown in dashboards as part of the JFrog Xray App. You can configure a Sumo Logic collector for JFrog Xray in Amazon Web Services (AWS) using AWS Lambda service, or use a script on a Linux machine with a cron job. Choose the method that best suits your environment:
 
-<details><summary>Method A: Sumo Logic JFrog Xray SAM application</summary>
+<details>
+<summary>Method A: Sumo Logic JFrog Xray SAM application</summary>
 
 In this collection method, you deploy the SAM application, which creates the necessary resources in your AWS account.
 
@@ -166,7 +167,8 @@ To configure collection for multiple JFrog Xray instances, do the following:
 
 </details>
 
-<details><summary>Method B: Sumo Logic JFrog Xray Script-based collection</summary>
+<details>
+<summary>Method B: Sumo Logic JFrog Xray Script-based collection</summary>
 
 This section provides instructions for configuring script based collection for the Sumo Logic JFrog Xray App.
 
@@ -228,70 +230,48 @@ This section provides a list of variables for Jfrog Xray that you can define in 
 
 <table><small>
   <tr>
-   <td>Variable
-   </td>
-   <td>Usage
-   </td>
+   <td>Variable   </td>
+   <td>Usage   </td>
   </tr>
   <tr>
-   <td>BACKFILL_DAYS in Collection Section
-   </td>
-   <td>Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today.
-   </td>
+   <td>BACKFILL_DAYS in Collection Section   </td>
+   <td>Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today.   </td>
   </tr>
   <tr>
-   <td>LOG_FORMAT in Logging Section
-   </td>
-   <td>Log format used by the python logging module to write logs in a file.
-   </td>
+   <td>LOG_FORMAT in Logging Section   </td>
+   <td>Log format used by the python logging module to write logs in a file.   </td>
   </tr>
   <tr>
-   <td>ENABLE_LOGFILE in Logging Section
-   </td>
-   <td>Set to TRUE to write all logs and errors to a log file.
-   </td>
+   <td>ENABLE_LOGFILE in Logging Section   </td>
+   <td>Set to TRUE to write all logs and errors to a log file.   </td>
   </tr>
   <tr>
-   <td>ENABLE_CONSOLE_LOG  in Logging Section
-   </td>
-   <td>Enables printing logs in a console.
-   </td>
+   <td>ENABLE_CONSOLE_LOG  in Logging Section   </td>
+   <td>Enables printing logs in a console.   </td>
   </tr>
   <tr>
-   <td>LOG_FILEPATH in Logging Section
-   </td>
-   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE.
-   </td>
+   <td>LOG_FILEPATH in Logging Section   </td>
+   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE.   </td>
   </tr>
   <tr>
-   <td>NUM_WORKERS in Collection Section
-   </td>
-   <td>Number of threads to spawn for API calls.
-   </td>
+   <td>NUM_WORKERS in Collection Section   </td>
+   <td>Number of threads to spawn for API calls.   </td>
   </tr>
   <tr>
-   <td>MAX_RETRY in Collection Section
-   </td>
-   <td>Number of retries to attempt in case of request failure.
-   </td>
+   <td>MAX_RETRY in Collection Section   </td>
+   <td>Number of retries to attempt in case of request failure.   </td>
   </tr>
   <tr>
-   <td>BACKOFF_FACTOR in Collection Section
-   </td>
-   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries.
-   </td>
+   <td>BACKOFF_FACTOR in Collection Section   </td>
+   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries.   </td>
   </tr>
   <tr>
-   <td>TIMEOUT in Collection Section
-   </td>
-   <td>Request time out used by the requests library.
-   </td>
+   <td>TIMEOUT in Collection Section   </td>
+   <td>Request time out used by the requests library.   </td>
   </tr>
   <tr>
-   <td>HTTP_LOGS_ENDPOINT in SumoLogic section
-   </td>
-   <td>HTTP source endpoint url created in Sumo Logic for ingesting Logs.
-   </td>
+   <td>HTTP_LOGS_ENDPOINT in SumoLogic sectio   </td>
+   <td>HTTP source endpoint url created in Sumo Logic for ingesting Logs.   </td>
   </tr></small>
 </table>
 
