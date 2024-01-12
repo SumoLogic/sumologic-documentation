@@ -21,7 +21,7 @@ Threat intelligence indicators can help security analysts leverage a large body 
 
 ### Role capabilities
 
-To use threat intelligence indicators, you must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/). 
+To use threat intelligence indicators, you must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#threat-intel). 
 
 1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
 1. Click the **Roles** tab.
@@ -31,16 +31,12 @@ Add the following capabilities:
        * **View Threat Intel Data Store**
        * **Manage Threat Intel Data Store**
 
-<!-- At GA, add these role capabilities to the "Role Capabilities" article. -->
-
 ### Ingest threat intelligence indicators
 
 To search logs that contain correlations to threat intelligence indicators, you must first ingest the indicators. You can ingest indicators using:
 * **The Threat Intelligence tab**. See [Add indicators in the Threat Intelligence tab](#add-indicators-in-the-threat-intelligence-tab).
 * **The API**. See the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource for upload APIs. 
-* **Collectors**. You can install the following collectors to ingest indicators (see [Cloud-to-Cloud Integration Framework Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/)):
-   * STIX/TAXII 2.0
-   * STIX/TAXII 2.1
+* **A collector**. See [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source). 
 
 ## Threat Intelligence tab
 
@@ -63,7 +59,11 @@ The “CrowdStrike provided by Sumo Logic (s_CrowdStrike)” source is a default
 
 ### Add indicators in the Threat Intelligence tab
 
-To add threat intelligence indicators, you must upload files containing the indicators in a format that can be consumed by Sumo Logic.
+To add threat intelligence indicators in the Threat Intelligence tab, you must upload files containing the indicators in a format that can be consumed by Sumo Logic.
+
+:::tip
+You can also add threat intelligence indicators using the API or a collector. See [Ingest threat intelligence indicators](#ingest-threat-intelligence-indicators).
+:::
 
 1. In Sumo Logic, go to **Manage Data > Logs > Threat Intelligence**.
 1. Click **Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid black'}} width="500" />
@@ -152,7 +152,7 @@ To add threat intelligence indicators, you must upload files containing the indi
 
 Once you [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab), you can perform searches to find matches to data in the indicators using:
 * [`threatlookup` search operator](#threatlookup-search-operator)
-* [`hasThreatMatch` Cloud SIEM rules language function](#hasthreatmatch)
+* [`hasThreatMatch` Cloud SIEM rules language function](#hasthreatmatch-cloud-siem-rules-language-function)
 
 ### threatlookup search operator
 
