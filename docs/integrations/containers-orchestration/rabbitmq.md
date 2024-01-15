@@ -554,111 +554,66 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 
 <table>
   <tr>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
+   <td>Alert Name</td>
+   <td>Alert Description</td>
+   <td>Trigger Type (Critical / Warning)</td>
+   <td>Alert Condition   </td>
+   <td>Recover Condition   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - High Memory Usage
-   </td>
-   <td>This alert fires when memory usage on a node in a RabbitMQ cluster is high.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>RabbitMQ - High Memory Usage   </td>
+   <td>This alert fires when memory usage on a node in a RabbitMQ cluster is high.   </td>
+   <td>Critical </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - No Consumers
-   </td>
-   <td>This alert fires when a RabbitMQ queue has no consumers.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#60; 1
-   </td>
-   <td>&#62; &#61; 1
-   </td>
+   <td>RabbitMQ - No Consumers   </td>
+   <td>This alert fires when a RabbitMQ queue has no consumers.   </td>
+   <td>Critical   </td>
+   <td>&#60; 1   </td>
+   <td>&#62; &#61; 1   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - High Disk Usage
-   </td>
-   <td>This alert fires when there is high disk usage on a node in a RabbitMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>RabbitMQ - High Disk Usage   </td>
+   <td>This alert fires when there is high disk usage on a node in a RabbitMQ cluster.  </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - High Number of File Descriptors in use
-   </td>
-   <td>This alert fires when the percentage of file descriptors used by a node in a RabbitMQ cluster is high.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 90
-   </td>
-   <td>&#60; 90
-   </td>
+   <td>RabbitMQ - High Number of File Descriptors in use </td>
+   <td>This alert fires when the percentage of file descriptors used by a node in a RabbitMQ cluster is high.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 90   </td>
+   <td>&#60; 90   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - Node Down
-   </td>
-   <td>This alert fires when a node in the RabbitMQ cluster is down.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1
-   </td>
-   <td>&#60; 1
-   </td>
+   <td>RabbitMQ - Node Down   </td>
+   <td>This alert fires when a node in the RabbitMQ cluster is down.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1   </td>
+   <td>&#60; 1   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - Too Many Connections
-   </td>
-   <td>This alert fires when there are too many connections to a node in a RabbitMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1000
-   </td>
-   <td>&#60; 1000
-   </td>
+   <td>RabbitMQ - Too Many Connections   </td>
+   <td>This alert fires when there are too many connections to a node in a RabbitMQ cluster. </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1000   </td>
+   <td>&#60; 1000   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - Too Many Un-acknowledged Messages
-   </td>
-   <td>This alert fires when we detect that there are too many un-acknowledged messages on a node in a RabbitMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1000
-   </td>
-   <td>&#60; 1000
-   </td>
+   <td>RabbitMQ - Too Many Un-acknowledged Messages   </td>
+   <td>This alert fires when we detect that there are too many un-acknowledged messages on a node in a RabbitMQ cluster. </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1000   </td>
+   <td>&#60; 1000   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - Un-routable Messages
-   </td>
-   <td>This alert fires when we detect that a node in the RabbitMQ cluster has un-routable messages
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; &#61; 1
-   </td>
-   <td>&#60; 1
-   </td>
+   <td>RabbitMQ - Un-routable Messages   </td>
+   <td>This alert fires when we detect that a node in the RabbitMQ cluster has un-routable messages </td>
+   <td>Critical   </td>
+   <td> &#62; &#61; 1   </td>
+   <td>&#60; 1   </td>
   </tr>
 </table>

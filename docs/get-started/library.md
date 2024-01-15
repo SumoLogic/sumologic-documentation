@@ -184,7 +184,7 @@ the following prefixes:
 * **type:dashboard** - Finds all Dashboards.
 * **type:dashboard keyword** - Lists all Dashboards that match the keyword.
 
-:::caution Limitations
+:::warning Limitations
 * Library Search is only supported in the **Personal** and **Org** folders.
 * Content type search is only supported in the **Personal** folder. 
 * Leading wildcards (`*ab`) are not supported.
@@ -308,7 +308,7 @@ In the **Library**, you can export content as JSON, including whole folders with
 
 The Export and Import functions are provided in order for you to transfer data immediately. The Sumo Logic JSON format may change without notice. There is no guarantee that you will be able to import the JSON in the future.
 
-:::caution limitations
+:::warning limitations
 * Recent Searches, Favorites, Scheduled Views, Partitions, Field Extraction Rules (FERs), and lookups are not supported.
 * For content that is shared, only the content is imported, not the Shared state. You can [share](/docs/dashboards) it again as necessary.
 * All content names must be unique within a folder in the Library.

@@ -23,7 +23,9 @@ Even with these methods, you need to ensure you are following our [best practice
 
 With metadata tags assigned to your logs you can reference them in the [scope (keyword search expression)](get-started-with-search/build-search/keyword-search-expressions.md) of queries to drastically increase search performance.
 
-{@import ../reuse/metadata-data-enrichment.md}
+import MetadataEn from '../reuse/metadata-data-enrichment.md';
+
+<MetadataEn/>
 
 ## Search optimization process
 
