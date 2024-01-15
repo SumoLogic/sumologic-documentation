@@ -190,8 +190,7 @@ To resolve this:
 #### Error | received sign-on report log time outside time filter window. create a custom sign on report as per the setup instructions
 - Custom sign on report is not created as per the instructions
 
-To resolve this:
-1. [Create a Custom Sign on Report](/docs/integrations/saas-cloud/workday/#step-15-create-a-custom-sign-on-report) and configure the source accordingly. 
+To resolve this, [Create a Custom Sign on Report](/docs/integrations/saas-cloud/workday/#step-15-create-a-custom-sign-on-report) and configure the source accordingly. 
 
 ## FAQ
 
