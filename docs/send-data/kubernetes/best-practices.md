@@ -163,7 +163,7 @@ To solve this problem, `pvcCleaner` can be used to remove unused PVCs:
   ```
 
   This will create `cronJobs` that will run the [pvcCleaner script][pvcCleaner-script] regularly. The schedule is by default set to 15
-  minutes, but it can be overriden:
+  minutes, but it can be overridden:
 
   ```yaml
   pvcCleaner:
@@ -903,7 +903,7 @@ information about node selectors can be found here][k8s-node-selector].
 | `falco`                  | `falco.nodeSelector`                                           |
 | `telegraf-operator`      | `telegraf-operator.nodeSelector`                               |
 
-In the main `sumologic` chart, value specified in `sumologic.nodeSelector` can be overriden for the following pods:
+In the main `sumologic` chart, value specified in `sumologic.nodeSelector` can be overridden for the following pods:
 
 | component                | key                                                |
 | ------------------------ | -------------------------------------------------- |
@@ -935,7 +935,7 @@ about node selectors can be found here][k8s-tolerations].
 | `falco`                  | `falco.tolerations`                                           |
 | `telegraf-operator`      | `telegraf-operator.tolerations`                               |
 
-In the main `sumologic` chart, value specified in `sumologic.tolerations` can be overriden for the following pods:
+In the main `sumologic` chart, value specified in `sumologic.tolerations` can be overridden for the following pods:
 
 | component                | key                                               |
 | ------------------------ | ------------------------------------------------- |
@@ -967,7 +967,7 @@ These options allow you to set affinity for whole subcharts. The values under th
 | `falco`                  | `falco.affinity`                                           |
 | `telegraf-operator`      | `telegraf-operator.affinity`                               |
 
-In the main `sumologic` chart, value specified in `sumologic.affinity` can be overriden for the following pods:
+In the main `sumologic` chart, value specified in `sumologic.affinity` can be overridden for the following pods:
 
 | component                | key                                            |
 | ------------------------ | ---------------------------------------------- |
