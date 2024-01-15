@@ -110,7 +110,7 @@ The Amazon RDS app uses the following logs and metrics:
 ```
 </details>
 
-### Sample Database CloudWatch logs
+### Sample CloudWatch log messages
 
 <details>
 <summary>Click to expand</summary>

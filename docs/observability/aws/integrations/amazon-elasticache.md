@@ -9,7 +9,7 @@ Amazon ElastiCache allows you to set up, run, and scale popular open-source comp
 
 The Amazon ElastiCache dashboards provide visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues. Use the preconfigured dashboards for at-a-glance analysis of event status trends, locations, successes and failures, as well as system health and performance metrics. The dashboards also have additional performance insights for Redis clusters.
 
-## Logs and metrics types
+## Log and metrics types
 
 The Amazon ElastiCache app uses the following logs and metrics:
 

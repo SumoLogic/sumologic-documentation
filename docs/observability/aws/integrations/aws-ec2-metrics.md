@@ -8,8 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage. The Sumo Logic App for AWS EC2 allows you to display your EC2 instance metrics (CloudWatch) using predefined dashboards. The App provides dashboards that analyze EC2 instance metrics for CPU, Disk, Network, EBS, and Health Status Checks, and detailed insights into all CloudTrail audit events associated with EC2 instances. It specifically helps identify changes, errors, and user activities.
 
-## Log and metrics Types 
+## Log and metrics types 
 
+- [CloudTrail Amazon EC2 Data Events](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-with-cloudtrail.html)
 - [AWS EC2 metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html)
 
 ### Sample log message

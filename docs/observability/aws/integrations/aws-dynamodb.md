@@ -13,8 +13,6 @@ latency and help you plan the capacity of DynamoDB instances in your environmen
 
 ## Log and metrics types
 
-The app collects DynamoDB logs and metrics for the following:
-
 * [DynamoDB CloudWatch Metrics](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html)
 * [DynamoDB operations using AWS CloudTrail](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/logging-using-cloudtrail.html)
 
@@ -56,7 +54,7 @@ The app collects DynamoDB logs and metrics for the following:
 }
 ```
 
-### Query sample
+### Sample query
 
 ```sql title="All IP Threat Count"
 _sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynamodb.amazonaws.com\""

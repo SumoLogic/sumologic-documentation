@@ -72,7 +72,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\
 account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicname}} metric=NumberOfMessagesPublished Statistic=Sum | sum
 ```
 
-## Viewing Amazon SNS Dashboards
+## Viewing Amazon SNS dashboards
 
 import FilterDashboards from '../../../reuse/filter-dashboards.md';
 

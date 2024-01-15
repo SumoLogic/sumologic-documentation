@@ -9,7 +9,7 @@ description: The Sumo Logic AWS Observability Lambda integration utilizes Lambda
 
 The AWS Observability Lambda utilizes Lambda Logs and Metrics from CloudWatch, as well as CloudTrail Lambda Data Events. Preconfigured dashboards provide insights into executions, such as memory and duration usage by function versions or aliases, as well as performance metrics such as errors, throttles, invocations, and concurrent executions.
 
-## Log and metric types
+## Log and metrics types
 
 The AWS Lambda ULM app uses the following logs and metrics:
 
@@ -95,7 +95,7 @@ import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
 <FilterDashboards/>
 
-## About measurements
+#### About measurements
 
 This section explains some of the measurements and calculations underlying the information presented in dashboard panels.
 
@@ -107,7 +107,7 @@ This section explains some of the measurements and calculations underlying the i
 * **Unused Memory.** This is Memory Size - Max Memory Used = Unused Memory. Because you are billed based on Memory Size (which you allocate), this is an indicator of not allocating appropriately.
 * **IteratorAge.** This AWS Lambda CloudWatch metric is emitted for stream-based invocations (functions triggered by an Amazon DynamoDB stream or Kinesis stream). Measures, in milliseconds, the age of the last record for each batch of records processed. Age is the difference between the time Lambda received the batch, and the time the last record in the batch was written to the stream.
 
-## AWS Lambda - Overview
+### AWS Lambda - Overview
 
 The **AWS Lambda - Overview** dashboard provides intuitive insights with CloudWatch Lambda metrics, CloudTrail audit logs for Lambda, as well as  Lambda logs to give you an at-a-glance view of actions, performance, and health of your AWS Lambda functions.
 

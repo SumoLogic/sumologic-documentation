@@ -63,7 +63,7 @@ The AWS API Gateway ULM app uses the following logs and metrics:
 }
 ```
 
-### Sample Query
+### Sample query
 
 ```sql title="Average Latency by API Name (Metric based)"
 _sourceCategory=Labs/AWS/APIGateway/Metric Namespace=aws/apigateway metric=Latency statistic=Average
