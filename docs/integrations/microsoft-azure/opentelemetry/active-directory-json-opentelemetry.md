@@ -39,7 +39,10 @@ Standard Windows event channels include:
 :::note
 You can skip this section if you have already set up the logs collection through [Windows PCI](/docs/integrations/pci-compliance/opentelemetry/windows-json-opentelemetry), [Windows - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry), or [Windows](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
