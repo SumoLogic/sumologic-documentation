@@ -11,13 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Box provides insight into user behavior patterns, monitors resources, and even tracks administrative activities. The app consists of three predefined Dashboards, providing visibility into your environment for real time analysis.
 
+## Log types
 
-## Log Types
+The Sumo Logic app for Box collects Box events, which are described in detail [here](https://developer.box.com/guides/events/).
 
-The Sumo Logic App for Box collects Box events, which are described in detail [here](https://developer.box.com/guides/events/).
-
-
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {
@@ -67,7 +65,7 @@ The Sumo Logic App for Box collects Box events, which are described in detail [h
 }
 ```
 
-### Sample Query
+### Sample query
 
 ```sql title="Top 10 Failed Logins"
 _sourceCategory=box  type "event_type" login
@@ -77,13 +75,11 @@ _sourceCategory=box  type "event_type" login
 | count as EventCount by src_user,src_login,src_ip | top 10 src_user,src_login,src_ip by EventCount
 ```
 
-
 ## Collecting Events for Box
 
 This section provides instructions for setting up event collection from Box for analysis in Sumo Logic. Before you begin setting up log collection, review the required prerequisites and process overview described in the following sections.
 
 The Box API integration ingests events from the [Get Events API](https://developer.box.com/reference/get-events/). It securely stores the required authentication, scheduling, and state tracking information.
-
 
 ### Authentication
 
@@ -118,7 +114,7 @@ You can click the text in the Health column, such as **Error**, to open the issu
 
 Hover your mouse over the status icon to view a tooltip with details on the detected issue.<br/><img src={useBaseUrl('img/send-data/health-error-generic.png')} alt="Box" />
 
-### Create a Box Source
+### Create a Box source
 
 When you create a Box Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors#Create_a_Hosted_Collector).
 
@@ -307,17 +303,21 @@ The following table shows the **config** parameters for a Box Source.
 }
 ```
 
-## Installing the Box App
+## Installing the Box app
 
 Now that you have set up collection for Box, install the Sumo Logic App for Box to use the preconfigured searches and [dashboards](#viewing-box-dashboards) to analyze your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
 The Script Source is available for Linux or Windows environments with Java Runtime Environments.
 
-## Viewing Box Dashboards
+## Viewing Box dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Collaborations and Shares
 
