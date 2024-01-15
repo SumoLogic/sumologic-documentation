@@ -60,7 +60,9 @@ The log level of a log line is stored under the `_loglevel` field. You can overr
 
 ### Events
 
-Events are a special type of logs that captures any action that can change the state of the system. These events can be used to identify and mitigate the outages in your system. You can view the indication for the events in the histogram, and clicking on this will provide details like **Event start time**, **Event type**, **Event Source**, and **Kubernetes Event Details**.
+Events are actions that can change the state of the system. These could be code deployments, feature flag changes, infrastructure changes and so on. They can be used to identify and mitigate outages in your system.
+
+Sumo Logic intelligently detects and surfaces related events when you run log searches. You can view the indication for the events in the histogram and the aggregate chart below. By clicking on the event, you can view details like **Event start time**, **Event type**, **Event Source** and other metadata associated with the event etc..
 
 <img src={useBaseUrl('img/search/get-started-search/search-page/event-analytics.png')} alt="event-analytics" style={{border:'1px solid black'}} width="800"/>
 
