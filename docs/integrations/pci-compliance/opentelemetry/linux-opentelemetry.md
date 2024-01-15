@@ -30,11 +30,15 @@ Following tag will be created as part of Linux app installation, if not already 
 You can skip this section if you have already set up the logs collection through [Linux](/docs/integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry/) or [Linux - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/linux-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+
+<SetupColl/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Collector.png' alt="Linux-Collector" style={{border: '1px solid black'}} />
 
@@ -71,7 +75,9 @@ By default, the path for Linux log files required for all the distros are pre-po
 
 ### Step 3: Send logs to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -95,25 +101,33 @@ By default, the path for Linux log files required for all the distros are pre-po
 
 <TabItem value="Chef">
 
-{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
 
 </TabItem>
 
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 ## Sample log message
 
@@ -142,7 +156,9 @@ sumo.datasource=linux deployment.environment=* host.group=* host.name=* "useradd
 
 ## Viewing PCI Compliance for Linux dashboards
 
-{@import ../../../reuse/filter-dashboards.md}
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
 
 ### Account, User, System Monitoring
 

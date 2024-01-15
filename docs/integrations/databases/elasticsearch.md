@@ -130,7 +130,7 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
 
 1. **(Recommended Method) Add labels on your Elasticsearch pods to capture logs from standard output on Kubernetes**.
    1. Apply the following labels to the Elasticsearch pods:
-    ```sql
+    ```sh
     environment = "dev_CHANGE_ME"
     component = "database"
     db_system = "elasticsearch"
@@ -445,7 +445,9 @@ email_notifications = [
 
 ## Installing the Elasticsearch app
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Elasticsearch dashboards
 
@@ -535,244 +537,21 @@ The **ElasticSearch - Queries** dashboard shows Elasticsearch provides analytics
 
 Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Elasticsearch database cluster is available and performing as expected.
 
-
-<table>
-  <tr>
-   <td>Alert Type (Metrics/Logs)
-   </td>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Cluster Red
-   </td>
-   <td>This alert fires when Elasticsearch Cluster status is RED
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61;3
-   </td>
-   <td> &#60;3
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Cluster Yellow
-   </td>
-   <td>This alert fires when Elasticsearch Cluster status is YELLOW
-   </td>
-   <td>Warning
-   </td>
-   <td>&#62; &#61;2
-   </td>
-   <td> &#60;2
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Disk Out of Space
-   </td>
-   <td>This alert fires when the disk usage is over 90%
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;90
-   </td>
-   <td>&#60; &#61;90
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Disk Space Low
-   </td>
-   <td>This alert fires when the disk usage is over 80%
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;80
-   </td>
-   <td>&#60; &#61; 80
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Healthy Data Nodes
-   </td>
-   <td>This alert fires when there missing data node in Elasticsearch cluster
-   </td>
-   <td>Critical
-   </td>
-   <td> &#60;3
-   </td>
-   <td>&#62; &#61;3
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Healthy Nodes
-   </td>
-   <td>This alert fires when there is missing node in Elasticsearch cluster
-   </td>
-   <td>Critical
-   </td>
-   <td> &#60;3
-   </td>
-   <td>&#62; &#61;3
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Heap Usage Too High
-   </td>
-   <td>This alert fires when the heap usage is over 90%
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;90
-   </td>
-   <td>&#60; &#61;90
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Heap Usage Warning
-   </td>
-   <td>This alert fires when the heap usage is over 80%
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;80
-   </td>
-   <td>&#60; &#61;80
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Initializing Shards Too Long
-   </td>
-   <td>This alert fires when elasticsearch has been initializing shards for 5 min
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Pending Tasks
-   </td>
-   <td>This alert fires when elasticsearch has pending tasks.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Relocating Shards Too Long
-   </td>
-   <td>This alert fires when elasticsearch has been relocating shards for 5min
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Unassigned Shards
-   </td>
-   <td>This alert fires when Elasticsearch has unassigned shards
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Elasticsearch - Query Time Too Slow
-   </td>
-   <td>This alert fires when queries are slow to execute
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Elasticsearch - Query Time Slow
-   </td>
-   <td>This alert fires when query time is greater than 5 ms
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Elasticsearch - Too Many Slow Query
-   </td>
-   <td>This alert fires when there aret oo Many Slow Query in 5 minutes
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;100
-   </td>
-   <td>&#60; &#61;100
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Elasticsearch - Error Log Too Many
-   </td>
-   <td>Error Log Too Many
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;1000
-   </td>
-   <td>&#60; &#61;1000
-   </td>
-  </tr>
-</table>
+| Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|---|---|---|---|---|---|
+| Metrics | Elasticsearch - Cluster Red | This alert fires when Elasticsearch Cluster status is RED | Critical | `>=`3 | `<`3 |
+| Metrics | Elasticsearch - Cluster Yellow | This alert fires when Elasticsearch Cluster status is YELLOW | Warning | `>=`2 | `<`2 |
+| Metrics | Elasticsearch - Disk Out of Space | This alert fires when the disk usage is over 90% | Critical | >90 | < =90 |
+| Metrics | Elasticsearch - Disk Space Low | This alert fires when the disk usage is over 80% | Warning | >80 | < = 80 |
+| Metrics | Elasticsearch - Healthy Data Nodes | This alert fires when there missing data node in Elasticsearch cluster | Critical | `<`3 | `>=`3 |
+| Metrics | Elasticsearch - Healthy Nodes | This alert fires when there is missing node in Elasticsearch cluster | Critical | `<`3 | `>=`3 |
+| Metrics | Elasticsearch - Heap Usage Too High | This alert fires when the heap usage is over 90% | Critical | >90 | < =90 |
+| Metrics | Elasticsearch - Heap Usage Warning | This alert fires when the heap usage is over 80% | Warning | >80 | < =80 |
+| Metrics | Elasticsearch - Initializing Shards Too Long | This alert fires when elasticsearch has been initializing shards for 5 min | Warning | >0 | < =0 |
+| Metrics | Elasticsearch - Pending Tasks | This alert fires when elasticsearch has pending tasks. | Warning | >0 | < =0 |
+| Metrics | Elasticsearch - Relocating Shards Too Long | This alert fires when elasticsearch has been relocating shards for 5min | Warning | >0 | < =0 |
+| Metrics | Elasticsearch - Unassigned Shards | This alert fires when Elasticsearch has unassigned shards | Critical | >0 | < =0 |
+| Logs | Elasticsearch - Query Time Too Slow | This alert fires when queries are slow to execute | Critical | >0 | < =0 |
+| Logs | Elasticsearch - Query Time Slow | This alert fires when query time is greater than 5 ms | Warning | >0 | < =0 |
+| Logs | Elasticsearch - Too Many Slow Query | This alert fires when there aret oo Many Slow Query in 5 minutes | Warning | >100 | < =100 |
+| Logs | Elasticsearch - Error Log Too Many | Error Log Too Many | Critical | >1000 | < =1000 |

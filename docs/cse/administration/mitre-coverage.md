@@ -47,11 +47,11 @@ To open the MITRE ATT&CK Coverage page, select **Content > MITRE ATT&CK Coverage
 1. [**MITRE TTP**](#mitre-ttp-filter). Click to filter on MITRE tactics, techniques, and sub-techniques. 
 1. [**Vendor/Product**](#vendorproduct-filter). Click to filter on vendors and products that provide data sources. Select particular vendors to help you evaluate their coverage. 
 1. **Coverage**. Click to filter on coverage provided:
-   * High (17 or more rules) 
-   * Medium (14-16 rules)
-   * Low (11-13 rules)
-   * None (10 or fewer rules)
-   * Not detectable (no rules found)
+   * High (7 or more rules) 
+   * Medium (4-6 rules)
+   * Low (1-3 rules)
+   * None (no rules)
+   * Not detectable (by a SIEM)
 1. Filter text in the tiles:
    * **Show Rule Count**. Shows the number of rules covering the technique.
    * **Show Technique ID**. Shows the technique ID. 
@@ -60,11 +60,11 @@ To open the MITRE ATT&CK Coverage page, select **Content > MITRE ATT&CK Coverage
 1. **Technique Coverage**. The number of techniques covered. Note that it is impossible to get 100% coverage, because some techniques are undetectable by their very nature.
 1. **Sub-Technique Coverage**. The number of sub-techniques covered.
 1. **Coverage Type**. Key to the colors indicating coverage:
-   * High (17 or more rules) 
-   * Medium (14-16 rules)
-   * Low (11-13 rules)
-   * None (10 or fewer rules)
-   * Not detectable (no rules found)
+   * High (7 or more rules) 
+   * Medium (4-6 rules)
+   * Low (1-3 rules)
+   * None (no rules)
+   * Not detectable (by a SIEM)
    * Filter not applied
 1. **Matrix**. The techniques from the [MITRE Enterprise matrix](https://attack.mitre.org/matrices/enterprise/). When you click a square, a panel appears with [details](#technique-details) showing your coverage for that technique.
 

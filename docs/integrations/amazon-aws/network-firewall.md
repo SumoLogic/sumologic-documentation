@@ -124,7 +124,9 @@ _sourceCategory=aws/vanta/*
 
 This section provides instructions for installing the Sumo Logic App for AWS Network Firewall.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing AWS Network Firewall Dashboards
 

@@ -102,7 +102,9 @@ parse "* * *:* *:* * * * * * * * \"* *://*:*/* HTTP" as datetime, ELB_Server, cl
 
 Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancing to use the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ### What if data isn't displaying in all Panels?
 

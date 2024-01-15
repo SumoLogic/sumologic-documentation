@@ -84,7 +84,9 @@ In Step 1, you create an HTTP source. When you configure the, plan your source c
 
 This section provides instructions on how to install the Azure Web Apps app, and shows examples of each of the preconfigured dashboards you can use to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Azure Web Apps dashboards
 
