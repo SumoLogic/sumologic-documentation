@@ -14,7 +14,7 @@ The Sumo Logic App for Acquia provides visibility into the key components of the
 Sumo Logic provides instant visibility across the critical components of the Acquia Platform, helping organizations become more proactive in their site monitoring as well as reducing the mean time to identify and resolve issues.
 
 
-## Log Types
+## Log types
 
 Sumo Logic analyzes the following required Acquia data for more efficient monitoring:
 * [Apache access logs](https://docs.acquia.com/acquia-cloud/monitor/logs/apache-access/)
@@ -27,7 +27,7 @@ Sumo Logic analyzes the following required Acquia data for more efficient monito
 * [Varnish request logs](https://docs.acquia.com/acquia-cloud/monitor/logs/varnish-request/)
 
 
-### Log Samples
+### Log samples
 
 This section provides sample log messages for the following log types that are required Acquia data for more efficient monitoring.
 
@@ -103,9 +103,7 @@ request_id="v-0000zzzz-d2b4-0000-b3a4-129zzzzd8266"
 }
 ```
 
-
-
-### Sample Queries
+### Sample queries
 
 This section provides examples for Drupal request, Apache access, and PHP error queries.
 
@@ -245,17 +243,19 @@ In order to start ingesting Acquia Cloud logs you must setup log forwarding in A
 
 To configure Acquia log forwarding, follow the instructions in the Acquia [documentation](https://docs.acquia.com/acquia-cloud/monitor/logs/forwarding/).
 
-
-
-## Installing the Acquia App
+## Installing the Acquia app
 
 This section provides instructions on how to install the Acquia App, as well as examples of each of the dashboards. The app's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Viewing Acquia Dashboards
+## Viewing Acquia dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -282,7 +282,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Acquia_Errors_Overview.png')} alt="Dashboard" />
 
-
 ### FPM Overview
 
 The **Acquia - FPM Overview** dashboard provides insights for analysis of the performance of FPM ([FastCGI Process Manager](https://php-fpm.org/)) in the Acqauia environment, including memory and CPU usage, status codes and response time outliers.
@@ -296,7 +295,7 @@ Use this dashboard to:
 
 ### Drupal Request Overview
 
-The **Acquia - Drupal Requests Overview **dashboard provides insights for analysis of the performance of the Drupal platform. The panels show response time anomalies, response codes and breakdowns of slow urls and queries.
+The **Acquia - Drupal Requests Overview** dashboard provides insights for analysis of the performance of the Drupal platform. The panels show response time anomalies, response codes and breakdowns of slow urls and queries.
 
 Use this dashboard to:
 * Review trends for slow URLs and slow queries
