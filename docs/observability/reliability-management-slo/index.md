@@ -49,28 +49,19 @@ Reliability is essentially the uptime of systems and services. This includes the
 
 <table>
   <tr>
-   <td>
-   </td>
-   <td>Logs-based SLO
-   </td>
-   <td>Metrics-based SLO
-   </td>
+   <td> </td>
+   <td>Logs-based SLO </td>
+   <td>Metrics-based SLO </td>
   </tr>
   <tr>
-   <td>Maximum compliance period
-   </td>
-   <td>Rolling compliance: 90d. Calendar compliance: 1 Quarter
-   </td>
-   <td>Rolling compliance: 90d. Calendar compliance: 1 Quarter
-   </td>
+   <td>Maximum compliance period </td>
+   <td>Rolling compliance: 90d. Calendar compliance: 1 Quarter </td>
+   <td>Rolling compliance: 90d. Calendar compliance: 1 Quarter   </td>
   </tr>
   <tr>
-   <td>Threshold-based SLO definition
-   </td>
-   <td>Supported for window- and request-based evaluation
-   </td>
-   <td>Supported for window-based evaluation only
-   </td>
+   <td>Threshold-based SLO definition   </td>
+   <td>Supported for window- and request-based evaluation   </td>
+   <td>Supported for window-based evaluation only   </td>
   </tr>
 </table>
 

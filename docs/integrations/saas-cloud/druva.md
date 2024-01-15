@@ -80,7 +80,9 @@ To set up [Cloud to Cloud Integration Druva Source](/docs/send-data/hosted-colle
 This section has instructions for installing the Druva App for Sumo Logic.
 Refer to the [Druva Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source) to create the source and use the same source category while installing the app.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Druva dashboards
 

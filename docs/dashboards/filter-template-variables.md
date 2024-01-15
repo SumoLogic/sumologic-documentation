@@ -139,4 +139,4 @@ To use a metrics variable in a query working with the structured query builder
 To use a metrics variable in a query working in advanced query mode, do the following:
 
 1. Locate the name of the variable you'd like to use in the dropdown list and copy it.
-1. Go to your metrics query and insert *{{ var_name }}* in the query, substituting `var_name` with the actual name of the variable.
+1. Go to your metrics query and insert *`{{ var_name }}`* in the query, substituting `var_name` with the actual name of the variable.

@@ -68,7 +68,9 @@ To set up [Cloud to Cloud Integration Symantec Web Security Service Source](/doc
 
 This section has instructions for installing the Symantec Web Security Service App for Sumo Logic.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Symantec Web Security Service Dashboards​
 

@@ -64,11 +64,13 @@ By having all your logs uploaded to an S3 bucket, you can then download logs aut
 
 For more information, see [Cisco Umbrella Documentation](https://docs.umbrella.com/managed-services/docs/msc-manage-logs).
 
-## Installing the Cisco Umbrella app​
+## Installing the Cisco Umbrella app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall from '../../reuse/apps/app-install.md';
 
-## Viewing Cisco Umbrella dashboards​
+<AppInstall/>
+
+## Viewing Cisco Umbrella dashboards
 
 {@import ../../reuse/filter-dashboards.md}
 

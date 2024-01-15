@@ -98,7 +98,9 @@ For more information on local or remote Windows Event Log Source configuration, 
 
 ## Installing the Active Directory JSON app​
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Active Directory JSON dashboards​
 

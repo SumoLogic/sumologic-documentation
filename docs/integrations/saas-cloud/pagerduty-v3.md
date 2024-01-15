@@ -97,7 +97,9 @@ This section provides instructions for installing the Sumo App for PagerDuty V3.
 
 Now that you have set up a log and metric collection, you can install the Sumo Logic App for PagerDuty V3, and use its pre-configured searches and dashboards.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing PagerDuty V3 Dashboards
 

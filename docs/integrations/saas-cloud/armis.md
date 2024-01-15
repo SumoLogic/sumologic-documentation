@@ -189,9 +189,11 @@ This section explains how to collect logs from Armis API and ingest them into Su
 
 ## Installing the Armis app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall from '../../reuse/apps/app-install.md';
 
-## Viewing the Armis dashboards​
+<AppInstall/>
+
+## Viewing the Armis dashboards
 
 {@import ../../reuse/apps/view-dashboards.md}
 

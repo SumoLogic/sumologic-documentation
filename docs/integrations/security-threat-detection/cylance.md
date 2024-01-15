@@ -196,11 +196,13 @@ _sourceCategory=*cylance* "Event Type:" AppControl
 SHA256: *" as event_name, device_name, ip_address, action, action_type, filepath, sha nodrop
 ```
 
-## Installing the Cylance app​
+## Installing the Cylance app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall from '../../reuse/apps/app-install.md';
 
-## Viewing Cylance dashboards​
+<AppInstall/>
+
+## Viewing Cylance dashboards
 
 {@import ../../reuse/apps/view-dashboards.md}
 

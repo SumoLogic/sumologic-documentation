@@ -96,7 +96,9 @@ Follow the instructions for setting up [Cato Networks](/docs/send-data/hosted-co
 
 ## Installing the Cato Networks app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Cato Networks dashboards 
 

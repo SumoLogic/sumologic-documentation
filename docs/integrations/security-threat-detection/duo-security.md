@@ -27,11 +27,15 @@ To collect logs from the Duo Security App, use the new [Cloud to Cloud Integrati
 
 ## Installing the Duo Security app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Duo Security dashboards
 
 {@import ../../reuse/apps/view-dashboards.md}
+
+The Duo Security app helps you monitor your Duo account’s [authentication](https://duo.com/docs/adminapi#authentication-logs), [administrator](https://duo.com/docs/adminapi#administrator-logs), and [telephony logs](https://duo.com/docs/adminapi#telephony-logs).
 
 ### Overview
 
