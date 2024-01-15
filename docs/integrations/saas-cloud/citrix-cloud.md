@@ -68,13 +68,15 @@ sourceCategory="citrixCloudSource"
 
 ## Installing the Citrix Cloud app
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
 ## Viewing Citrix Cloud dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Administrator Overview
 

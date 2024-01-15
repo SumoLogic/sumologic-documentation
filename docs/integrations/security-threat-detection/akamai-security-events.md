@@ -89,13 +89,15 @@ To begin collecting logs for the Sumo app for Akamai Security Events:
 
 This section has instructions for installing the Sumo Logic app for Akamai Security Events.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
 ## Viewing Akamai Security Events dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

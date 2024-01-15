@@ -66,13 +66,15 @@ For more information, see [Cisco Umbrella Documentation](https://docs.umbrella.c
 
 ## Installing the Cisco Umbrella app
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
 ## Viewing Cisco Umbrella dashboards
 
-{@import ../../reuse/filter-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Admin Activities
 
