@@ -151,7 +151,7 @@ To get started, open a new **Explore** tab in Sumo Logic and view your Kubernete
 
 If you're looking to monitor specific aspects of Kubernetes control plane provided by different cloud vendors (such as GKE, AKS, EKS), you'll need to install those [Sumo Logic Kubernetes Apps](/docs/observability/kubernetes/apps).
 
-If you don't see data in Sumo Logic, review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md).
+If you don't see data in Sumo Logic, review our [troubleshooting guide](/docs/send-data/kubernetes/troubleshoot-collection).
 
 ## Additional Resources
 
