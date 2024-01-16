@@ -33,7 +33,7 @@ Both the integration definition file and the action definition file are YAML fil
 `*` Required fields
 
 * **name** `*` [String]: Name of integration displayed in the UI. It must match the `integration` field of each action definition file added to the integration. 
-* **official_name** `*` [String]: To modify the display name of an integration in the SOAR UI while ensuring the actions YAML remains valid, set official_name=OLD-NAME and name=NEW-NAME
+* **official_name** `*` [String]: To modify the display name of an integration in the Cloud SOAR UI while ensuring the actions YAML remains valid, set `official_name=OLD-NAME` and `name=NEW-NAME`.
 * **version** `*` [String]: File version number.
 * **icon** `*` [Base64 String]: Integration logo.
 * **script** `*`:
