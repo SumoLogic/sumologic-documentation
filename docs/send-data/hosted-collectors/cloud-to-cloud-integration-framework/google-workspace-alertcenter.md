@@ -47,14 +47,14 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
 1. JSON for the service account is automatically downloaded. To see what the JSON looks like, and how the JSON fields map to the fields you'll configure, see the [Service account JSON](#example-of-service-account-json) example below.
 1. Add domain-wide delegation to your service account using the client ID generated in step 5.
 1. From the Google admin console, add your OAuth scope to the service account using the instructions [here](https://developers.google.com/workspace/guides/create-credentials#optional_set_up_domain-wide_delegation_for_a_service_account) and select it in the input form. The OAuth scope for alert API is:
-  ```
-  https://www.googleapis.com/auth/apps.alerts
-  ```
-  :::note
+   ```
+   https://www.googleapis.com/auth/apps.alerts
+   ```
+   :::note
    If you don't add an OAuth scope to your Google Workspace service account, you won't be authorized to fetch alert details. Learn more about OAuth scopes:
    * [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2)
    * [Setting up OAuth 2.0](https://support.google.com/cloud/answer/6158849?hl=en)
-  :::
+   :::
 1. For delegated user email, you need to add the email of the user whom you want to delegate for API calls.
 
 ### Source configuration
@@ -69,12 +69,12 @@ Follow the below steps to create Google Workspace AlertCenter service account cr
 1. **Fields.** (Optional) Click **+Add Field** to define the fields you want to associate, each field needs a name (key) and value. For more information, see [Fields](/docs/manage/fields.md).
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored (i.e., dropped).
-1. **Delegated User Email.** Enter the admin email address for the domain.
+1. **Delegated User Email.** Enter the admin email address for the domain. This email should be the address that is configured for the specific service account in the Google Cloud console.
 1. **Google Workspace AlertCenter Credentials**. You can authenticate your service account credentials directly by uploading a JSON file credentials instead of breaking down the file into different sections for the UI schema. Click **Upload** and select the JSON file that you downloaded in the [Service Account Credentials section](#vendor-configuration).
 1. **Exclude Alert Types**. (Optional) Enter the data alert types and scope that you don't want to send to Sumo Logic.
-:::note
-All alert types are selected by default unless you exclude some of the alert types in the config JSON schema.
-:::
+   :::note
+   All alert types are selected by default unless you exclude some of the alert types in the config JSON schema.
+   :::
 1. **Processing Rules for Logs**. (Optional) Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 
