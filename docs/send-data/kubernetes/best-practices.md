@@ -132,34 +132,28 @@ When autoscaling is enabled, new Persistent Volume Claims (PVCs) will be created
 To solve this problem, `pvcCleaner` can be used to remove unused PVCs:
 
 - For log metadata enrichment
-
   ```yaml
   pvcCleaner:
     logs:
       enabled: true
   ```
-
 - For metrics metadata enrichment
-
   ```yaml
   pvcCleaner:
     metrics:
       enabled: true
   ```
-
   This will create `cronJobs` that will run the [pvcCleaner script][pvcCleaner-script] regularly. The schedule is by default set to 15 minutes, but it can be overridden:
-
   ```yaml
   pvcCleaner:
     job:
       schedule: "*/10 * * * *"
   ```
-
   The schedule is written in [Cron] format.
 
-  :::note
-  It is recommended to enable `pvcCleaner` only for the types of telemetry which are autoscaled to avoid creating unnecessary `cronJobs`.
-  :::
+:::note
+It is recommended to enable `pvcCleaner` only for the types of telemetry which are autoscaled to avoid creating unnecessary `cronJobs`.
+:::
 
 [pvcCleaner-script]: https://github.com/SumoLogic/sumologic-kubernetes-tools/blob/v2.15.0/src/commands/pvc-cleaner
 [Cron]: https://en.wikipedia.org/wiki/Cron
@@ -174,16 +168,10 @@ The persistent storage is implemented from the Kubernetes perspective by adding 
 
 For logs and metrics, use the following properties to configure the PVC templates:
 
-- `metadata.persistence.accessMode: ReadWriteOnce` defines the
-  [access mode](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) used in the `PersistentVolumeClaim` resources.
+- `metadata.persistence.accessMode: ReadWriteOnce` defines the [access mode](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) used in the `PersistentVolumeClaim` resources.
 - `metadata.persistence.pvcLabels: {}` allows to set additional labels on the `PersistentVolumeClaim` resources
 - `metadata.persistence.size: 10Gi` defines the requested volume size
-- `metadata.persistence.storageClass: null` defines the
-  [storage class](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1) name to use in the volume claim template. This
-  property is not set by default, which means that the `storageClassName` will not be set in the `PersistentVolumeClaim` resources and the
-  default storage class will be used (assuming the
-  [DefaultStorageClass](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#defaultstorageclass) admission
-  controller is enabled on the Kubernetes API server).
+- `metadata.persistence.storageClass: null` defines the [storage class](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1) name to use in the volume claim template. This property is not set by default, which means that the `storageClassName` will not be set in the `PersistentVolumeClaim` resources and the default storage class will be used (assuming the [DefaultStorageClass](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#defaultstorageclass) admission controller is enabled on the Kubernetes API server).
 
 For events, use the following properties:
 
@@ -423,8 +411,8 @@ The following Kubernetes metadata is available for string templating:
 | String template  | Description                                             |
 | :--------------- | :------------------------------------------------------ |
 | `%{namespace}`   | Namespace name                                          |
-| `%{pod}`         | Full pod name (e.g. `travel-products-4136654265-zpovl`) |
-| `%{pod_name}`    | Friendly pod name (e.g. `travel-products`)              |
+| `%{pod}`         | Full pod name (e.g., `travel-products-4136654265-zpovl`) |
+| `%{pod_name}`    | Friendly pod name (e.g., `travel-products`)              |
 | `%{pod_id}`      | The pod's uid (a UUID)                                  |
 | `%{container}`   | Container name                                          |
 | `%{source_host}` | Host                                                    |
@@ -758,7 +746,7 @@ Due to breaking changes, we do not support the latest [Kube Prometheus Stack][ku
 
 1. Prepare `values.yaml` for Kube Prometheus Stack.
    - copy content of `kube-prometheus-stack` from [values.yaml][values.yaml], e.g., for Sumologic Kubernetes Collection v3.9 you need to copy [these][kube-prometheus-stack-3.9] lines
-   - remove configuration for images for Kube Prometheus Stack to use newer versions, e.g. for Sumologic Kubernetes Collection v3.9 you need to remove [tag][kube-state-metrics-tag] for kube-state-metrics
+   - remove configuration for images for Kube Prometheus Stack to use newer versions, e.g., for Sumologic Kubernetes Collection v3.9 you need to remove [tag][kube-state-metrics-tag] for kube-state-metrics
    - add your custom configuration
 1. Upgrade sumologic chart without Kube Prometheus Stack by adding the following configuration to your `values.yaml`:
    ```yaml
