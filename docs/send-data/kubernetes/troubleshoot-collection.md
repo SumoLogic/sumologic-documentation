@@ -38,10 +38,7 @@ This is a one-time setup per Sumo Logic account.
 
 ### Error: timed out waiting for the condition
 
-If `helm upgrade --install` hangs, it usually means the pre-install setup job is failing and is in a retry loop. Due to a Helm limitation,
-errors from the setup job cannot be fed back to the `helm upgrade --install` command. Kubernetes schedules the job in a pod, so you can look
-at logs from the pod to see why the job is failing. First find the pod name in the namespace where the Helm chart was deployed. The pod name
-will contain `-setup` in the name.
+If `helm upgrade --install` hangs, it usually means the pre-install setup job is failing and is in a retry loop. Due to a Helm limitation, errors from the setup job cannot be fed back to the `helm upgrade --install` command. Kubernetes schedules the job in a pod, so you can look at logs from the pod to see why the job is failing. First find the pod name in the namespace where the Helm chart was deployed. The pod name will contain `-setup` in the name.
 
 ```sh
 kubectl get pods
@@ -85,8 +82,7 @@ If the OpenTelemetry Collector Pods are in `CreateContainerConfigError` it can m
 the `sumologic.setupEnable` parameter is set to `true`. Then wait for the setup pod to complete and the issue should resolve itself. The
 setup job creates a secret and the error simply means the secret is not there yet. This usually resolves itself automatically.
 
-If the issue does not solve resolve automatically, you will need to look at the logs for the setup pod. Kubernetes schedules the job in a
-pod, so you can look at logs from the pod to see why the job is failing. First find the pod name in the namespace where you installed the rendered YAML. The pod name will contain `-setup` in the name.
+If the issue does not solve resolve automatically, you will need to look at the logs for the setup pod. Kubernetes schedules the job in a pod, so you can look at logs from the pod to see why the job is failing. First find the pod name in the namespace where you installed the rendered YAML. The pod name will contain `-setup` in the name.
 
 ```sh
 kubectl get pods
@@ -139,8 +135,7 @@ Run:
 kubectl get pods
 ```
 
-to get a list of running pods. If any of them are not in the `Status: running` state, something is wrong. To get the logs for that pod, you
-can either:
+to get a list of running pods. If any of them are not in the `Status: running` state, something is wrong. To get the logs for that pod, you can either:
 
 Stream the logs to `stdout`:
 
@@ -378,12 +373,9 @@ You can also check `prometheus_remote_storage_.*` metrics to look for success/fa
 
 ### Missing metrics for ArgoCD installation
 
-There is known issue with Argo CD and metrics collection. If you override `spec.source.helm.releaseName` in the `Application` or
-`ApplicationSet`, which are used to configure your application in Argo CD, then Kube State and Node metrics are not collected due to the
-following:
+There is known issue with Argo CD and metrics collection. If you override `spec.source.helm.releaseName` in the `Application` or `ApplicationSet`, which are used to configure your application in Argo CD, then Kube State and Node metrics are not collected due to the following:
 
-Service Monitor is looking for service labeled with `app.kubernetes.io/instance: <spec.source.helm.releaseName>`, but the label is actually
-`app.kubernetes.io/instance: <metadata.name>`.
+Service Monitor is looking for service labeled with `app.kubernetes.io/instance: <spec.source.helm.releaseName>`, but the label is actually `app.kubernetes.io/instance: <metadata.name>`.
 
 In order to fix it, you need to ensure that the labels are matching and you can do it by adding the following to `user-values.yaml`:
 
@@ -436,8 +428,7 @@ you have an unhealthy node. Killing the node should resolve this issue.
 
 ### Missing `kubelet` metrics
 
-Navigate to the `kubelet` targets using the steps above. You may see that the targets are down with 401 errors. If so, there are two known
-workarounds you can try.
+Navigate to the `kubelet` targets using the steps above. You may see that the targets are down with 401 errors. If so, there are two known workarounds you can try.
 
 #### 1. Enable the `authenticationTokenWebhook` flag in the cluster
 
@@ -486,9 +477,7 @@ helm upgrade collection sumologic/sumologic --reuse-values --version=<RELEASE-VE
 
 ### Missing `kube-controller-manager` or `kube-scheduler` metrics
 
-There’s an issue with backwards compatibility in the current version of the kube-prometheus-stack helm chart that requires us to override
-the selectors for kube-scheduler and kube-controller-manager in order to see metrics from them. If you are not seeing metrics from these two
-targets, you can use the following config.
+There’s an issue with backwards compatibility in the current version of the kube-prometheus-stack helm chart that requires us to override the selectors for kube-scheduler and kube-controller-manager in order to see metrics from them. If you are not seeing metrics from these two targets, you can use the following config.
 
 ```yaml
 kube-prometheus-stack:
@@ -508,20 +497,13 @@ Delete the pod forcefully by adding `--force --grace-period=0` to the `kubectl d
 
 ### Rancher
 
-If you are running the out of the box rancher monitoring setup, you cannot run our Prometheus operator alongside it. The Rancher Prometheus
-Operator setup will actually kill and permanently terminate our Prometheus Operator instance and will prevent the metrics system from coming up. If you have the Rancher prometheus operator setup running, they will have to use the UI to disable it before they can install our
-collection process.
+If you are running the out of the box rancher monitoring setup, you cannot run our Prometheus operator alongside it. The Rancher Prometheus Operator setup will actually kill and permanently terminate our Prometheus Operator instance and will prevent the metrics system from coming up. If you have the Rancher prometheus operator setup running, they will have to use the UI to disable it before they can install our collection process.
 
 ### Falco and Google Kubernetes Engine (GKE)
 
-`Google Kubernetes Engine (GKE)` uses Container-Optimized OS (COS) as the default operating system for its worker node pools. COS is a
-security-enhanced operating system that limits access to certain parts of the underlying OS. Because of this security constraint, Falco
-cannot insert its kernel module to process events for system calls. However, COS provides the ability to use extended Berkeley Packet Filter
-(eBPF) to supply the stream of system calls to the Falco engine. eBPF is currently only supported on GKE and COS. For more information see
-[Falco documentation](https://falco.org/docs/getting-started/third-party/#gke).
+`Google Kubernetes Engine (GKE)` uses Container-Optimized OS (COS) as the default operating system for its worker node pools. COS is a security-enhanced operating system that limits access to certain parts of the underlying OS. Because of this security constraint, Falco cannot insert its kernel module to process events for system calls. However, COS provides the ability to use extended Berkeley Packet Filter (eBPF) to supply the stream of system calls to the Falco engine. eBPF is currently only supported on GKE and COS. For more information, see [Falco documentation](https://falco.org/docs/getting-started/third-party/#gke).
 
-To install on `GKE`, use the provided override file to customize your configuration and uncomment the following lines in the `values.yaml`
-file referenced below:
+To install on `GKE`, use the provided override file to customize your configuration and uncomment the following lines in the `values.yaml` file referenced below:
 
 ```yaml
   #driver:
@@ -530,8 +512,7 @@ file referenced below:
 
 ### Falco and OpenShift
 
-Falco does not provide modules for all kernels. When Falco module is not available for particular kernel, Falco tries to build it. Building
-a module requires `kernel-devel` package installed on nodes.
+Falco does not provide modules for all kernels. When Falco module is not available for particular kernel, Falco tries to build it. Building a module requires `kernel-devel` package installed on nodes.
 
 For OpenShift, installation of `kernel-devel` on nodes is provided through MachineConfig used by [Machine Config operator](https://github.com/openshift/machine-config-operator). When update of machine configuration is needed machine is rebooted, see the [documentation](https://github.com/openshift/machine-config-operator/blob/master/docs/MachineConfigDaemon.md#coordinating-updates). The process of changing nodes configuration may require long time during which Pods scheduled on unchanged nodes are in `Init` state.
 
