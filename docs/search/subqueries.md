@@ -206,12 +206,12 @@ Combine the two queries into a subquery to allow the parent query to harness the
 
 With keywords, you can replace the IP address (243.63.233.30) from the parent query with a child query.  
 
-```sql {2-6}
+```sql
 _sourceCategory=reinvent/travel/checkout
 [subquery:_sourceCategory=reinvent/travel/nginx
-     | count by src_ip
-     | topk(1,_count)
-     | compose src_ip keywords
+    | count by src_ip
+    | topk(1,_count)
+    | compose src_ip keywords
 ]
 | json field=_raw "funcName"
 | where funcname in ("process_cart","charge")
@@ -227,7 +227,7 @@ Since we only want to pass the IP address back as a keyword we specified the 
 
 If the parent query had the IP address specified with a field, such as `src_ip=243.63.233.30`, where `src_ip` is the field name, you can also replace it in the parent query with the child query.  
 
-```sql {2-6}
+```sql
 _sourceCategory=reinvent/travel/checkout
 [subquery:_sourceCategory=reinvent/travel/nginx
      | count by src_ip
@@ -250,7 +250,7 @@ A query using a filter operator like `where` may take longer to run than a query
 
 Once the parent query is ready and recognizes the same field name, in this case `src_ip`, simply place the child query in the query as the where filter expression. As mentioned in the syntax section, `keywords` is not supported with where operations.
 
-```sql {5-7}
+```sql
 _sourceCategory=reinvent/travel/checkout
 | json field=_raw "source_ip" as src_ip
 | json field=_raw "funcName"
@@ -276,7 +276,7 @@ Once the parent query is ready and recognizes the same field name, in this case 
 
 The following will create a field named `boolean` that is returned as true or false based on if our most active user's IP address is found. The subquery will return `(src_ip="243.63.233.30")` and the if operator checks it against the logs from the parent query, in this case, true if the src_ip is the same as the log evaluated from the parent query.
 
-```sql {5-7}
+```sql
 _sourceCategory=reinvent/travel/checkout
 | json field=_raw "source_ip" as src_ip
 | json field=_raw "funcName"
