@@ -33,6 +33,7 @@ Both the integration definition file and the action definition file are YAML fil
 **\* ** Required fields
 
 * **name* ** [String]: Name of integration displayed in the UI. It must match the `integration` field of each action definition file added to the integration. 
+* **official_name* ** [String]: To modify the display name of an integration in the SOAR UI while ensuring the actions YAML remains valid, set official_name=<OLD NAME> and name=<NEW NAME>
 * **version* ** [String]: File version number.
 * **icon* ** [Base64 String]: Integration logo.
 * **script* **: 
@@ -476,6 +477,58 @@ configuration:
         required: true
 ```
 
+### Integration definition file to change integration name from VirusTotal to VirusTotalNew
+
+```
+name: 'VirusTotalNew'
+official_name: 'VirusTotal'
+version: '1.0'
+icon:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAAA8RnWXAAAABmJLR0...[snip...]QMq1BbQK47AAAAAASUVORK5CYII=
+script:
+    type: python
+    test_connection_code: |
+            import json
+            import argparse
+            import requests
+            import sys
+            try:
+      
+                class EnvDefault(argparse.Action):
+                  def __init__(self, required=True, default=None, **kwargs):
+                    envvar = kwargs.get("dest")
+                    default = os.environ.get(envvar, default) if envvar in os.environ else default
+                    required = False if required and default else required
+                    super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
+                  def __call__(self, parser, namespace, values, option_string=None):
+                    setattr(namespace, self.dest, values)
+      
+                parser = argparse.ArgumentParser()
+                parser.add_argument('--api_key', help='api_key , REQUIRED', required=True, action=EnvDefault)
+                parser.add_argument('--proxy_url', help='proxy_url', required=False, action=EnvDefault)
+                args, unknown = parser.parse_known_args()
+                params = {"apikey": args.api_key, 'url': 'google.com'}
+                end_point = "https://www.virustotal.com/vtapi/v2/url/scan"
+                session = requests.Session()
+                if args.proxy_url is not None:
+                   proxies = {'http': args.proxy_url, 'https': args.proxy_url}
+                else:
+                   proxies = None
+                r = session.post(end_point, data=params, proxies=proxies, timeout=(5, 60))
+                r.raise_for_status()
+                exit(0)
+            except Exception as e:
+                sys.stderr.write(str(e))
+                exit(-1)
+docker_repo_tag: 'virustotal:latest'
+configuration:
+  testable_connection: true
+  require_proxy_config: true
+  data_attributes:
+     api_key:
+        label: 'api key'
+        type: 'password'
+        required: true
+```
 ### Action definition file (VirusTotal)
 
 ```
