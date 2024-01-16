@@ -11,14 +11,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 1Password is a secure and convenient password manager for documents, credit card information, and addresses. The Sumo Logic App for 1Password helps you monitor your 1Password account’s sign-in and item usage events. The dashboards provide insight into failed and successful authentications, events breakdown by client applications, type, category, users, geo-location of events, outliers, and threat analysis of sign-in events. This app helps your secure 1Password vault access by providing insights into user actions and threat intel analysis on clients accessing items in shared vaults.
 
-## Log Types  
+## Log types  
 
 The 1Password App uses following logs:
 * [Sign-in Events](https://support.1password.com/events-api-reference/#signinattemptitems-object)
 * [Item Usage](https://support.1password.com/events-api-reference/#itemusage-object)
 
-
-### Sample Log Messages
+### Sample log messages
 
 ```json title="Sign-in attempt Event"
     {
@@ -73,8 +72,7 @@ The 1Password App uses following logs:
     }
 ```
 
-
-### Sample Queries
+### Sample queries
 
 ```sql title="Successful Sign-in"
 _sourceCategory="1pw"
@@ -84,7 +82,6 @@ _sourceCategory="1pw"
 | count by timestamp, target_user_name, type, category, details,client_app_name, client_app_version, client_platform, client_os, client_os_version, client_ip, country, region, city
 ```
 
-
 ```sql title="Failed Sign-in"
 _sourceCategory="1pw"
 | json "type", "category", "timestamp",  "details", "target_user.name", "target_user.email", "client.app_name", "client.app_version", "client.platform_name", "client.os_name", "client.os_version", "client.ip_address", "location.country", "location.region", "location.city" as type, category, timestamp, details, target_user_name, target_user_email, client_app_name, client_app_version, client_platform, client_os, client_os_version, client_ip, country, region, city
@@ -93,46 +90,54 @@ _sourceCategory="1pw"
 | count by timestamp, target_user_name, type, category, details,client_app_name, client_app_version, client_platform, client_os, client_os_version, client_ip, country, region, city
 ```
 
-
 ```sql title="Item Usage"
 _sourceCategory=1pw action
 | json "timestamp", "user.name", "client.app_name", "client.platform_name", "client.platform_version", "client.os_name", "client.os_version", "client.ip_address", "location.country", "location.region", "location.city", "action", "vault_uuid", "item_uuid" as timestamp, user_name, client_app_name, client_platform, client_platform_version, client_os, client_os_version, client_ip, country, region, city, action, vault_uuid, item_uuid
 | count by timestamp, user_name, client_app_name, client_platform, client_platform_version, client_os, client_os_version, client_ip, country, region, city, action, vault_uuid, item_uuid
 ```
 
-## Collecting Logs for 1Password
+## Collecting logs for 1Password
 
 Follow the instructions for setting up [Cloud to Cloud Integration for 1Password App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source) to create the source and use the same source category while installing the app.
 
-## Installing the 1Password App
+## Installing the 1Password app
 
-import AppInstall from '../reuse/apps/app-install.md';
+import AppInstall from '../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Viewing 1Password Dashboards
+## Viewing 1Password dashboards
+
+import ViewDashboards from '../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
-1Password - Overview provides an overview of 1Password Events including events breakdown by type, category, geographic location, one-day time comparison of events, and failed sign-in activity.
+
+The **1Password - Overview** provides an overview of 1Password Events including events breakdown by type, category, geographic location, one-day time comparison of events, and failed sign-in activity.
 
 <img src={useBaseUrl('img/integrations/1password/1Password-Overview.png')} alt="1Password-Overview" />
 
 ### Successful Sign-ins
-1Password - Successful Sign-ins dashboard provides geographic location of successful sign-in events, one-day time comparison of events, breakdown of events by Category, Type, Users, Country, State, and City.
+
+The **1Password - Successful Sign-ins** dashboard provides geographic location of successful sign-in events, one-day time comparison of events, breakdown of events by Category, Type, Users, Country, State, and City.
 
 <img src={useBaseUrl('img/integrations/1password/1Password-Successful-Sign-ins.png')} alt="1Password-Successful-Sign-ins" />
 
 ### Failed Sign-ins
-1Password - Failed Sign-ins dashboard provides geographic location of failed events, one-day time comparison of events, breakdown of events by Category, Type, Users, Country, State, and City.
+
+The **1Password - Failed Sign-ins** dashboard provides geographic location of failed events, one-day time comparison of events, breakdown of events by Category, Type, Users, Country, State, and City.
 
 <img src={useBaseUrl('img/integrations/1password/1Password-Failed-Sign-ins.png')} alt="1Password-Failed-Sign-ins" />
 
 ### Threat Intel
-1Password - Threat Intel dashboard provides high-level views of threats throughout your 1Password Service. Dashboard panels display visual graphs and detailed information on Threats by the client, target user, source app, platform, threats by actors, and threats by malicious confidence.
+
+The **1Password - Threat Intel** dashboard provides high-level views of threats throughout your 1Password Service. Dashboard panels display visual graphs and detailed information on Threats by the client, target user, source app, platform, threats by actors, and threats by malicious confidence.
 
 <img src={useBaseUrl('img/integrations/1password/1Password-Threat-Intel.png')} alt="1Password-Threat-Intel" />
 
 ### Item Usage
-1Password - Item Usage dashboard shows information about items in shared vaults that have been modified, accessed, or used. This dashboard provides you geo-locations of clients who accessed items in the shared vault, it also provides threat intel analysis of client IPs to secure your vault access.
+
+The **1Password - Item Usage** dashboard shows information about items in shared vaults that have been modified, accessed, or used. This dashboard provides you geo-locations of clients who accessed items in the shared vault, it also provides threat intel analysis of client IPs to secure your vault access.
 
 <img src={useBaseUrl('img/integrations/1password/1Password-Item-Usage.png')} alt="1Password-Item-Usage" />

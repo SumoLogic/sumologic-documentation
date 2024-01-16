@@ -60,33 +60,33 @@ After you create a child org, you can’t delete it.
     :::note
     The **Credits Usage** portion of the pane shows information you’ll want to know when you assign credits to the new org: **Total Credits Quota** is the total number of credits for your subscription; **Available Credits** is the number of credits that have not yet been allocated to child orgs.
     :::
-1. **Organization Name**. Enter a unique name for the org.
-1. **Account Owner Email**. Enter the name of the account owner.
-1. **Account Owner First Name**. Enter the account owner’s first name.
-1. **Account Owner Last Name**. Enter the account owner’s last name.
-1. **Deployment**. Select a Sumo Logic deployment from the list.
-    :::note
-    Depending on your Sumo Logic subscription type, creating an org in a different deployment than the parent may result in a deployment charge being applied.
-    :::
-1. **Plan Type**. Select your organization's plan type. 
-1. Click **Allocate Credits**.
-   The **Credits Calculator** appears.
-    <img src={useBaseUrl('img/subscriptions/credits-calculator.png')} alt="calculator" width="450" />
-2. **Continuous Tier**. Enter estimated daily ingestion to the Continuous tier.
-3. **Frequent Tier.** Enter estimated daily ingestion to the Frequent tier.
-4. **Infrequent Tier.** Enter estimated daily ingestion to the Infrequent tier.
-5. **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
-6. **Tracing**. Enter estimated daily ingestion of traces.
-7. **Cloud SIEM**. Click the checkbox to enable Cloud SIEM.
+   Enter the following:
+      * **Organization Name**. Enter a unique name for the org.
+      * **Account Owner Email**. Enter the name of the account owner.
+      * **Account Owner First Name**. Enter the account owner’s first name.
+      * **Account Owner Last Name**. Enter the account owner’s last name.
+      * **Deployment**. Select a Sumo Logic deployment from the list.
+        :::note
+        Depending on your Sumo Logic subscription type, creating an org in a different deployment than the parent may result in a deployment charge being applied.
+        :::
+      * **Plan Type**. Select your organization's plan type. 
+1. Click **Allocate Credits**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/credits-calculator.png')} alt="calculator" width="450" /> 
+1. Enter the following:
+      * **Continuous Tier**. Enter estimated daily ingestion to the Continuous tier.
+      * **Frequent Tier.** Enter estimated daily ingestion to the Frequent tier.
+      * **Infrequent Tier.** Enter estimated daily ingestion to the Infrequent tier.
+      * **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
+      * **Tracing**. Enter estimated daily ingestion of traces.
+1. **Cloud SIEM**. Click the checkbox to enable Cloud SIEM.
    1. If you enable Cloud SIEM, the Cloud SIEM Log Ingest field appears.
    1. Enter a value in GB.
       :::note
       Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cse-provisioning), below.
       :::
 1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.<br/> <img src={useBaseUrl('img/subscriptions/calculator1.png')} alt="calculator" width="450"/>
-2. To see a breakdown of the required credits, click **View Breakdown**. <br/> <img src={useBaseUrl('img/subscriptions/calculator2.png')} alt="calculator" width="450"/>
-3.  The calculator now shows how many credits are associated with the ingestion volume and, as applicable, how many are due to the deployment factor—the upcharge based on the deployment where the org is located.
-4.  Click **Use This Allocation**.
+1. To see a breakdown of the required credits, click **View Breakdown**. <br/> <img src={useBaseUrl('img/subscriptions/calculator2.png')} alt="calculator" width="450"/>
+1.  The calculator now shows how many credits are associated with the ingestion volume and, as applicable, how many are due to the deployment factor—the upcharge based on the deployment where the org is located.
+1.  Click **Use This Allocation**.
 
 ## Update an org's credits allocation
 
@@ -126,7 +126,7 @@ You can view the aggreagte usage for all child orgs across usage category in the
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier.
 * **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage).
 
-By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking the **Download Detail Credit Usages** from the kebab icon next to the Download Report button.
+By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking **Download Detailed Credit Usages** from the kebab icon next to the Download Report button.
 
 <img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" style={{border:'1px solid black'}} />
 
