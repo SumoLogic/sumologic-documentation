@@ -393,7 +393,9 @@ module.exports = {
           items: [
             'send-data/kubernetes/helm-chart-overview',
             'send-data/kubernetes/install-helm-chart',
+            'send-data/kubernetes/best-practices',
             'send-data/kubernetes/security-best-practices',
+            'send-data/kubernetes/troubleshoot-collection',
             {
               type: 'category',
               label: 'v4 Upgrade Guide',

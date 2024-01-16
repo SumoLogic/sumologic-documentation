@@ -29,33 +29,33 @@ Both the integration definition file and the action definition file are YAML fil
 
 ### Integration definition file format
 
-**\* ** Required fields
+`*` Required fields
 
-* **name* ** [String]: Name displayed in the UI. It must match the `integration` field of each action definition file added to the integration.
-* **version* ** [String]: File version number.
-* **icon* ** [Base64 String]: Integration logo.
-* **script* **:
-   * **type* ** [String]: Indicates which code parser should be used to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are:
+* **name** `*` [String]: Name displayed in the UI. It must match the `integration` field of each action definition file added to the integration.
+* **version** `*` [String]: File version number.
+* **icon** `*` [Base64 String]: Integration logo.
+* **script** `*`:
+   * **type** `*` [String]: Indicates which code parser should be used to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are:
      * `bash`
      * `perl`
      * `powershell`
      * `python`
-   * **test_connection_code* ** [String]: Code which can be used to test the integration through the UI by clicking on Test Saved Settings. Exiting with a value of `0` indicates success, while any other value will indicate failure.
-* **docker_repo_tag* ** [String]: Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server.
-* **configuration* **:
-   * **testable_connection* ** [Boolean]: Is test code present (true/false).
-   * **require_proxy_config* ** [Boolean]: True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter `proxy_url` will be passed to the code on execution as an environment variable.
-   * **data_attributes* **: Fields required for configuration.
-      * **`<field_name>`* ** [String]: Name of field which will be passed to code as environment variable. One `<field_name>` attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The `<field_name>` parameters will be passed to the code on execution.
-         * **label* ** [String]: Label displayed in the UI.
-         * **type* ** [String]: Type of field. Acceptable values are:
+   * **test_connection_code** `*` [String]: Code which can be used to test the integration through the UI by clicking on Test Saved Settings. Exiting with a value of `0` indicates success, while any other value will indicate failure.
+* **docker_repo_tag** `*` [String]: Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server.
+* **configuration** `*`:
+   * **testable_connection** `*` [Boolean]: Is test code present (true/false).
+   * **require_proxy_config** `*` [Boolean]: True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter `proxy_url` will be passed to the code on execution as an environment variable.
+   * **data_attributes** `*`: Fields required for configuration.
+      * **`<field_name>`** `*` [String]: Name of field which will be passed to code as environment variable. One `<field_name>` attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The `<field_name>` parameters will be passed to the code on execution.
+         * **label** `*` [String]: Label displayed in the UI.
+         * **type** `*` [String]: Type of field. Acceptable values are:
            * `checkbox`
             * `list`
             * `number`
             * `password`
             * `text`
             * `textarea`
-         * **required* ** [Boolean]: Is the field required (true/false).
+         * **required** `*` [Boolean]: Is the field required (true/false).
          * **validator** [String]: Input validator type. Acceptable values are:
            * `host`
            * `integer`
@@ -68,26 +68,26 @@ Both the integration definition file and the action definition file are YAML fil
            * `ip: IP Address`
            * `url: URL`<br/>In this example, if a user selected IP Address from the dropdown list, the value `ip` would be passed to the parameter at runtime as an environment variable.
    * **listing_attributes** Configuration fields to show in the resource table.
-      * **`<field_name>`* ** [String]: Name of field which will be shown in the table.
-      * **name* ** [String]: Name displayed in the column header.
+      * **`<field_name>`** `*` [String]: Name of field which will be shown in the table.
+      * **name** `*` [String]: Name displayed in the column header.
 * **signature** [String]: Signature to indicate integration is the original one written by Sumo Logic.
 
 ### Action definition file format
 
-**\* ** Required fields
+`*` Required fields
 
-* **integration* ** [String]: Name of integration. This should match the `name` field of the integration definition file for the integration.
-* **name* ** [String]: Name of action which will be displayed in the UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as `ip reputation` or `system info`.
-* **type* ** [String]: Type of action being performed. Acceptable values are:
+* **integration** `*` [String]: Name of integration. This should match the `name` field of the integration definition file for the integration.
+* **name** `*` [String]: Name of action which will be displayed in the UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as `ip reputation` or `system info`.
+* **type** `*` [String]: Type of action being performed. Acceptable values are:
    * `Custom`
    * `Enrichment`
    * `Notification`
-* **script* **:
-   * **code* ** [String]: Action code.
-* **fields* **:
-   * **id* ** [String]: Name of field. One ID attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution.
-   * **label* ** [String]: Label displayed in the UI.
-   * **type* ** [String]: Type of field. Acceptable values are:
+* **script** `*`:
+   * **code** `*` [String]: Action code.
+* **fields** `*`:
+   * **id** `*` [String]: Name of field. One ID attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution.
+   * **label** `*` [String]: Label displayed in the UI.
+   * **type** `*` [String]: Type of field. Acceptable values are:
      * `checkbox`
       * `datetime`
       * `fileDetonate`
@@ -98,8 +98,8 @@ Both the integration definition file and the action definition file are YAML fil
       * `text`
       * `textarea`
       * `upload`
-   * **required* ** [Boolean]: Is the field required (true/false).
-   * **validator* ** [String]: Input validator type. Acceptable values are:  
+   * **required** `*` [Boolean]: Is the field required (true/false).
+   * **validator** `*` [String]: Input validator type. Acceptable values are:  
      * `datetime`
      * `domain`
      * `e-mail`
@@ -118,8 +118,8 @@ Both the integration definition file and the action definition file are YAML fil
      * `ip: IP Address`
      * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime.
    * **incident_artifacts** [Boolean]: Allow use of incident artifact values for the field (true/false). When set to `true`, incident artifact values such as `sourceAddress` can be used as inputs for the field.
-* **output* **: Expected fields from results.
-   * **path* ** [String]: JSON path for each field which may be returned by the action, using the following JSON as an example:
+* **output** `*`: Expected fields from results.
+   * **path** `*` [String]: JSON path for each field which may be returned by the action, using the following JSON as an example:
    ```
    { country: "US",
    response_code: 1,
@@ -135,14 +135,14 @@ Both the integration definition file and the action definition file are YAML fil
      * `as_owner`
      * `detected_urls.[].url`
      * `detected_urls.[].positives`
-     * **type* ** [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
-* **table_view* **: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
-   * **display_name* ** [String]: Column name.
-   * **value* ** [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
-   * **type* ** [String]: Type of value which is only possible to specify if the value should be shown as a link.
-* **src_doc* ** [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed.
-* **url_preview* ** [String]: Result path to show in html5 iframe sandboxed.
-* **image_base64_png(jpg)* ** [String]: Result path of a base64 image png or jpg format.
+     * **type** `*` [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
+* **table_view** `*`: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
+   * **display_name** `*` [String]: Column name.
+   * **value** `*` [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
+   * **type** `*` [String]: Type of value which is only possible to specify if the value should be shown as a link.
+* **src_doc** `*` [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed.
+* **url_preview** `*` [String]: Result path to show in html5 iframe sandboxed.
+* **image_base64_png(jpg)** `*` [String]: Result path of a base64 image png or jpg format.
 * **signature** [String]: Signature to indicate action is the original one written by Sumo Logic. Not to be set by user.
 
 ## Action parameters
