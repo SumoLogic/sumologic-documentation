@@ -30,6 +30,7 @@ Where:
 * Only fully-formed URLs (for example, `https://google.com`) are supported as values for `url_column_name`.
 * For the link to be clickable your query needs to aggregate by the returned field.
 * You can only specify a single URL. `tourl` does not support merging multiple outputs into a single field.
+* If you have double-quotes in `url_column_name` replace them with the ASCII code `%22` eg `tourl("https://google.com?foo=%22bar%22","bar")`.
 
 #### Tabs
 
