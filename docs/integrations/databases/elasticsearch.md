@@ -130,7 +130,7 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
 
 1. **(Recommended Method) Add labels on your Elasticsearch pods to capture logs from standard output on Kubernetes**.
    1. Apply the following labels to the Elasticsearch pods:
-    ```sql
+    ```sh
     environment = "dev_CHANGE_ME"
     component = "database"
     db_system = "elasticsearch"
@@ -313,7 +313,7 @@ This section provides instructions for configuring logs and metrics collection f
    * Here’s an explanation for additional values set by this Telegraf configuration. If you haven’t defined a cluster in Elasticsearch, then enter `default` for `db_cluster`. There are additional values set by the Telegraf configuration, which we recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
      * `data_format - “prometheus”` In the output plugins section (`[[outputs.sumologic]]`), metrics are sent in the Prometheus format to Sumo Logic
      * `component: “database”` - In the input plugins section (`[[inputs.Elasticsearch]]`), this value is used by Sumo Logic apps to identify application components.
-     * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
+     * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
 6. After you've finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, Elasticsearch metrics should start flowing into Sumo Logic.
@@ -445,21 +445,9 @@ email_notifications = [
 
 ## Installing the Elasticsearch app
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-1. From the **App Catalog**, search and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 ## Viewing Elasticsearch dashboards
 
@@ -549,244 +537,21 @@ The **ElasticSearch - Queries** dashboard shows Elasticsearch provides analytics
 
 Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Elasticsearch database cluster is available and performing as expected.
 
-
-<table>
-  <tr>
-   <td>Alert Type (Metrics/Logs)
-   </td>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Cluster Red
-   </td>
-   <td>This alert fires when Elasticsearch Cluster status is RED
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61;3
-   </td>
-   <td> &#60;3
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Cluster Yellow
-   </td>
-   <td>This alert fires when Elasticsearch Cluster status is YELLOW
-   </td>
-   <td>Warning
-   </td>
-   <td>&#62; &#61;2
-   </td>
-   <td> &#60;2
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Disk Out of Space
-   </td>
-   <td>This alert fires when the disk usage is over 90%
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;90
-   </td>
-   <td>&#60; &#61;90
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Disk Space Low
-   </td>
-   <td>This alert fires when the disk usage is over 80%
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;80
-   </td>
-   <td>&#60; &#61; 80
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Healthy Data Nodes
-   </td>
-   <td>This alert fires when there missing data node in Elasticsearch cluster
-   </td>
-   <td>Critical
-   </td>
-   <td> &#60;3
-   </td>
-   <td>&#62; &#61;3
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Healthy Nodes
-   </td>
-   <td>This alert fires when there is missing node in Elasticsearch cluster
-   </td>
-   <td>Critical
-   </td>
-   <td> &#60;3
-   </td>
-   <td>&#62; &#61;3
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Heap Usage Too High
-   </td>
-   <td>This alert fires when the heap usage is over 90%
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;90
-   </td>
-   <td>&#60; &#61;90
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Heap Usage Warning
-   </td>
-   <td>This alert fires when the heap usage is over 80%
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;80
-   </td>
-   <td>&#60; &#61;80
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Initializing Shards Too Long
-   </td>
-   <td>This alert fires when elasticsearch has been initializing shards for 5 min
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Pending Tasks
-   </td>
-   <td>This alert fires when elasticsearch has pending tasks.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Relocating Shards Too Long
-   </td>
-   <td>This alert fires when elasticsearch has been relocating shards for 5min
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Unassigned Shards
-   </td>
-   <td>This alert fires when Elasticsearch has unassigned shards
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Elasticsearch - Query Time Too Slow
-   </td>
-   <td>This alert fires when queries are slow to execute
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Elasticsearch - Query Time Slow
-   </td>
-   <td>This alert fires when query time is greater than 5 ms
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Elasticsearch - Too Many Slow Query
-   </td>
-   <td>This alert fires when there aret oo Many Slow Query in 5 minutes
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;100
-   </td>
-   <td>&#60; &#61;100
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Elasticsearch - Error Log Too Many
-   </td>
-   <td>Error Log Too Many
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;1000
-   </td>
-   <td>&#60; &#61;1000
-   </td>
-  </tr>
-</table>
+| Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|---|---|---|---|---|---|
+| Metrics | Elasticsearch - Cluster Red | This alert fires when Elasticsearch Cluster status is RED | Critical | `>=`3 | `<`3 |
+| Metrics | Elasticsearch - Cluster Yellow | This alert fires when Elasticsearch Cluster status is YELLOW | Warning | `>=`2 | `<`2 |
+| Metrics | Elasticsearch - Disk Out of Space | This alert fires when the disk usage is over 90% | Critical | >90 | < =90 |
+| Metrics | Elasticsearch - Disk Space Low | This alert fires when the disk usage is over 80% | Warning | >80 | < = 80 |
+| Metrics | Elasticsearch - Healthy Data Nodes | This alert fires when there missing data node in Elasticsearch cluster | Critical | `<`3 | `>=`3 |
+| Metrics | Elasticsearch - Healthy Nodes | This alert fires when there is missing node in Elasticsearch cluster | Critical | `<`3 | `>=`3 |
+| Metrics | Elasticsearch - Heap Usage Too High | This alert fires when the heap usage is over 90% | Critical | >90 | < =90 |
+| Metrics | Elasticsearch - Heap Usage Warning | This alert fires when the heap usage is over 80% | Warning | >80 | < =80 |
+| Metrics | Elasticsearch - Initializing Shards Too Long | This alert fires when elasticsearch has been initializing shards for 5 min | Warning | >0 | < =0 |
+| Metrics | Elasticsearch - Pending Tasks | This alert fires when elasticsearch has pending tasks. | Warning | >0 | < =0 |
+| Metrics | Elasticsearch - Relocating Shards Too Long | This alert fires when elasticsearch has been relocating shards for 5min | Warning | >0 | < =0 |
+| Metrics | Elasticsearch - Unassigned Shards | This alert fires when Elasticsearch has unassigned shards | Critical | >0 | < =0 |
+| Logs | Elasticsearch - Query Time Too Slow | This alert fires when queries are slow to execute | Critical | >0 | < =0 |
+| Logs | Elasticsearch - Query Time Slow | This alert fires when query time is greater than 5 ms | Warning | >0 | < =0 |
+| Logs | Elasticsearch - Too Many Slow Query | This alert fires when there aret oo Many Slow Query in 5 minutes | Warning | >100 | < =100 |
+| Logs | Elasticsearch - Error Log Too Many | Error Log Too Many | Critical | >1000 | < =1000 |

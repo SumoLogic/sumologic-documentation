@@ -166,7 +166,7 @@ annotations:
         * `environment`. This is the deployment environment where the HAProxy cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `proxy_cluster`. Enter a name to identify this HAProxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-    :::caution Do not modify the other values
+    :::warning Do not modify the other values
     Modifying these values will cause the Sumo Logic apps to function incorrectly
      * `telegraf.influxdata.com/class: sumologic-prometheus` - Instructs the Telegraf operator what output to use.
      * `prometheus.io/scrape: "true"` - Ensures our Prometheus will scrape the metrics.
@@ -197,7 +197,7 @@ This section explains the steps to collect HAProxy logs from a Kubernetes enviro
    * `environment`. This is the deployment environment where the HAProxy cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
    * `proxy_cluster`. Enter a name to identify this HAProxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-   :::caution Do not modify the other values
+   :::warning Do not modify the other values
    Do not modify the other values
    Modifying these values will cause the Sumo Logic apps to function incorrectly
     * `component: “proxy”`. This value is used by Sumo Logic apps to identify application components.
@@ -293,7 +293,7 @@ Please enter values for the following parameters (marked `CHANGEME` above):
 * `proxy_system: “haproxy”` - In the input plugins section: `[[inputs.Haproxy]]` - This value identifies the proxy system.
 * `component: “proxy”` - In the input plugins section: This value identifies application components.
 
-For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
@@ -551,7 +551,9 @@ email_notifications = [
 
 Now that you have set up collection for HAProxy, you can install the HAProxy app to use the pre-configured searches and dashboard that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing HAProxy Dashboards
 
@@ -662,201 +664,18 @@ Use this dashboard to:
 
 ## HAProxy Alerts
 
-<table>
-  <tr>
-   <td>Alert Type (Metrics/Logs)
-   </td>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>HAProxy - Access from Highly Malicious Sources
-   </td>
-   <td>This alert fires when an HAProxy is accessed from highly malicious IP addresses.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>HAProxy - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>HAProxy - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>HAProxy - Backend Error
-   </td>
-   <td>This alert fires when we detect backend server errors.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>HAProxy - Backend Server Down
-   </td>
-   <td>This alert fires when we detect a backend server for a given HAProxy server is down.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>HAProxy - High Active Backend Server Sessions
-   </td>
-   <td>when the percent of backend server connections are high.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;80
-   </td>
-   <td> &#60; &#61; 80
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>HAProxy - Frontend Security Blocked Requests
-   </td>
-   <td>HAProxy is blocking requests for security reasons
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;10
-   </td>
-   <td> &#60; &#61; 10
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>HAProxy - Has No Alive Backends
-   </td>
-   <td>HAProxy has no alive active or backup backend servers
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>HAProxy - Slow Response Time
-   </td>
-   <td>the HAProxy response times are greater than one second.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;1
-   </td>
-   <td> &#60; &#61; 1
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>HAProxy - Pending Requests
-   </td>
-   <td>HAProxy requests are pending
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>HAProxy - Retry High
-   </td>
-   <td>there is a high retry rate
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>HAProxy - High Server Connection Errors
-   </td>
-   <td>there are too many connection errors to backend servers.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;100
-   </td>
-   <td> &#60; &#61; 100
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>HAProxy - Server Healthcheck Failure
-   </td>
-   <td>server healthchecks are failing.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-</table>
+| Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|:---|:---|
+| Logs | HAProxy - Access from Highly Malicious Sources | This alert fires when an HAProxy is accessed from highly malicious IP addresses. | Critical | > 0 | < = 0 |
+| Logs | HAProxy - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | Critical | > 0 | 0 |
+| Logs | HAProxy - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Critical | > 0 | 0 |
+| Logs | HAProxy - Backend Error | This alert fires when we detect backend server errors. | Critical | >0 | < = 0 |
+| Logs | HAProxy - Backend Server Down | This alert fires when we detect a backend server for a given HAProxy server is down. | Critical | >0 | < = 0 |
+| Metrics | HAProxy - High Active Backend Server Sessions | when the percent of backend server connections are high. | Warning | >80 | < = 80 |
+| Metrics | HAProxy - Frontend Security Blocked Requests | HAProxy is blocking requests for security reasons | Warning | >10 | < = 10 |
+| Metrics | HAProxy - Has No Alive Backends | HAProxy has no alive active or backup backend servers | Critical | >0 | < = 0 |
+| Metrics | HAProxy - Slow Response Time | the HAProxy response times are greater than one second. | Critical | >1 | < = 1 |
+| Metrics | HAProxy - Pending Requests | HAProxy requests are pending | Warning | >0 | < = 0 |
+| Metrics | HAProxy - Retry High | there is a high retry rate | Warning | >0 | < = 0 |
+| Metrics | HAProxy - High Server Connection Errors | there are too many connection errors to backend servers. | Warning | >100 | < = 100 |
+| Metrics | HAProxy - Server Healthcheck Failure | server healthchecks are failing. | Warning | >0 | < = 0 |

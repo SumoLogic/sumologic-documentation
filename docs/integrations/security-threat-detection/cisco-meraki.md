@@ -23,7 +23,7 @@ The Cisco Meraki App is dependent on the following logs:
 For more information on log types, see these topics in Cisco Meraki documentation:
 * [Event Types and Log Samples](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Event_Types_and_Log_Samples)
 * [MS Event Log Entries and Definitions](https://documentation.meraki.com/MS/Monitoring_and_Reporting/MS_Event_Log_Entries_and_Definitions)
-* [Navigating the Event Logs](https://documentation.meraki.com/MR/Monitoring_and_Reporting/Navigating_the_Event_Log#Filtering_by_Event_Type)
+* [Navigating the Event Logs](https://documentation.meraki.com/General_Administration/Cross-Platform_Content/Meraki_Event_Log#Filtering_by_Event_Type)
 * [Syslog Server Overview and Configuration](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Server_Overview_and_Configuration)
 
 
@@ -132,7 +132,9 @@ For more information on configuring log forwarding from Cisco Meraki, see the [C
 
 This section provides instructions on how to install the Cisco Meraki App. The App's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## View Cisco Meraki Dashboards
 

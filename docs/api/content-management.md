@@ -12,7 +12,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Content Management API allows you to manage content in your organization’s [Library](/docs/get-started/library) from HTTP endpoints.
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
+
+<ApiIntro/>
 
 | Deployment | Documentation URL                                          |
 |:------------|:------------------------------------------------------------|

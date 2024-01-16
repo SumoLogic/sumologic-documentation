@@ -129,7 +129,9 @@ Now that you have set up collection for the Palo Alto Networks Firewall 9 app, y
 
 This app supports PAN-OS v8 and v9.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Palo Alto 9 Security Dashboards
 

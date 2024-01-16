@@ -5,13 +5,30 @@ sidebar_label: Slack
 description: Install the Slack Source for Sumo Logic.
 ---
 
+import CodeBlock from '@theme/CodeBlock';
+import ExampleJSON from '/files/c2c/slack/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/slack/example.json';
+import TerraformExample from '!!raw-loader!/files/c2c/slack/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="60"/>
 
 This topic describes the Slack Source, part of Sumo Logic's [Cloud-to-Cloud Integration Framework](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework).
 
-## Data Sources
+:::note
+This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+:::
+
+## Data collected
+
+| Polling Interval | Data |
+| :--- | :--- |
+| 24 hours | Web Team Info |
+| 24 hours | Web Users List |
+| 24 hours | Conversations List |
+| 5 mins | Web Team Access Logs |
+| 5 mins | Messages |
+| 5 mins | Audit Logs |
 
 The Slack Source uses the following Slack APIs to ingest web and audit events.
 
@@ -35,10 +52,10 @@ The source collects the following API endpoints and routes.
 
 Each Slack API endpoint specifies a [tier rate limit](https://api.slack.com/docs/rate-limits) limiting the C2C in the number of calls it can make to Slack.
 
-## Metadata Fields
-The **SIEM forward** option, which causes collected information to be forwarded to Cloud SIEM, is not currently supported.
+## Setup
 
-## Setup and Configuration Overview
+### Vendor configuration
+
 The Slack source can collect data from Slack's [Web API](https://api.slack.com/web) and
 [Audit API](https://api.slack.com/admins/audit-logs). The Web API is used to collect standard channel, user, and message information from a specific workspace. The Audit API is used to collect security audit events across the entire account
 including all workspaces, but it requires a Slack Enterprise Grid license. Each  API collects different information; collect from both if you have a Slack Enterprise Grid license.
@@ -51,7 +68,7 @@ We recommend creating a Slack App for each Slack Workspace you want to monitor. 
 2. Install the Slack app on a specific workspace to monitor Web API logs or install the app on the Enterprise Grid to monitor Audit API logs.
 3. Install the Sumo Logic Slack C2C using your credentials from the installed Slack App.
 
-### Create Slack App with Permissions
+#### Create Slack App with Permissions
 1. Navigate to the [Slack Apps](https://api.slack.com/apps) page.
 2. Click **Create New App**. <br/><img src={useBaseUrl('img/send-data/slack-create-app-button.png')} alt="Create a new Slack app button]" width="<insert-pixel-number>"/>
 3. Select **From scratch** if asked how you would like to configure your Slack app. <br/><img src={useBaseUrl('img/send-data/slack-create-app-from-scratch.png')} alt="From Scratch App]" width="450"/>
@@ -73,7 +90,7 @@ Use the table below to reference the required scope permissions you need to add 
 | Web API   | Enterprise Grid Plan | admin, team:read, users:read, users:read.email, channels:read, channels:history                 |
 | Audit API | Enterprise Grid Plan |  auditlogs:read |
 
-### Install the Slack App on a Workspace for Web API Logs
+#### Install the Slack App on a Workspace for Web API Logs
 Only follow these steps if you are installing a Slack App on a specific workspace to monitor Web API logs. Please ensure
 you have followed the prior steps for creating the Slack app with the appropriate permissions before continuing to this
 section.
@@ -82,7 +99,7 @@ section.
 2. Allow your new Slack App to monitor your workspace. <br/><img src={useBaseUrl('img/send-data/slack-app-allow.png')} alt="Allow App to Monitor Workspace" width="450"/>
 3. Save the generated access token. This will be used by the Sumo Logic  configuration for access. <br/><img src={useBaseUrl('img/send-data/slack-copy-user-token.png')} alt="Copy Token" width="500"/>
 
-### Install the Slack App on the Enterprise Grid for Audit API Logs
+#### Install the Slack App on the Enterprise Grid for Audit API Logs
 Only follow these steps if you are installing a Slack App on the Enterprise to monitor Audit API logs. Make sure you have followed the prior steps for creating the Slack app with the appropriate permissions before continuing to this
 section. A Slack Enterprise Grid account is required.
 
@@ -101,24 +118,35 @@ and `<CLIENT_SECRET>` variables in the following URL. <br/> `https://slack.com/a
 11. Open a new browser tab and paste the URL from the previous step into the URL field, then press Enter.
 12. From the response, save the token value from the field `access_token` as it will be used for the Sumo source.
 
-```json
-{
-  "ok": true,
-  "access_token": "xoxp-1236544616-Example-Access-Token5bf71298dad60d941f2a44b371",
-  "scope": "admin,identify,channels:history,groups:history,im:history,channels:read,team:read,users:read,users:read.email,auditlogs:read",
-  "user_id": "WA7PQK3U5",
-  "team_id": "EFSFVS",
-  "enterprise_id": "EASFEF",
-  "team_name": "Test Slack App"
-}
-```
+### Source configuration
 
-### Install and Configure the Sumo Logic Slack C2C
-1. Add a new source on a Sumo Hosted Collector
-2. Search for and select Slack for the source
-3. Provide a name for the source
-4. Select the Slack collection API you want to collect logs from (Web or Audit)
-5. Paste your Slack App access token from the previous steps
+When you create a SailPoint Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+
+To configure a Duo Source:
+
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. On the Collectors page, click **Add Source** next to a Hosted Collector.
+1. Search for and select **Slack**.
+1. Enter a **Name** for the Source. The **Description** is optional.
+1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
+1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
+   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+1. **API Auth Bearer Token**. Enter the Slack App access token from the previous steps.
+1. **Slack API Collection**. Select the Slack collection API you want to collect logs from (Web or Audit).
+1. **Polling Interval in Minutes**. Enter the frequency in minutes for collecting the data. Default is 5 mins. 
+
+### JSON example
+
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
+
+[Download example](/files/c2c/slack/example.json)
+
+### Terraform example
+
+<CodeBlock language="json">{TerraformExample}</CodeBlock>
+
+[Download example](/files/c2c/slack/example.tf)
 
 ## Troubleshoot
 
@@ -129,3 +157,9 @@ The C2C is limited in the number of API calls it can make to the Slack API docum
 This means if you have 1000 active Slack channels, it will take the C2C a minimum of 20 minutes to iterate through all the channels checking for new messages. The poll cycle will not start again until last one finishes. Let's say the poll cycle starts at 10:00 and does not complete until 10:20, then the next poll cycle will start immediately at 10:20. Additionally more time may be added if the C2C has to paginate to gather more than 1000 Slack messages from a single channel. 
 
 Each page adds to the overall number of API calls needed and adds time due to the Slack API rate limits. Sumo Logic recommends you archive any Slack channels no longer used. This will prevent the C2C from checking for new messages in channels without activity.
+
+## FAQ
+
+:::info
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
+:::

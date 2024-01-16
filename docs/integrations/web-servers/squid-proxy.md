@@ -100,7 +100,8 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
   ```
 3. Add annotations on your Squid Proxy pods.
 
-<details><summary><strong>Click to expand.</strong> On your Squid Proxy Pods, add the following annotations:</summary>
+<details>
+<summary><strong>Click to expand.</strong> On your Squid Proxy Pods, add the following annotations:</summary>
 
 ```sql
 annotations:
@@ -366,7 +367,8 @@ Squid Proxy app supports the default access logs and cache logs format.
    2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 4. **Configure a local file source**. Choose a method:
 
-<details><summary>For an Installed Collector</summary>
+<details>
+<summary>For an Installed Collector</summary>
 
 To collect logs directly from your Squid Proxy machine, use an Installed Collector and a Local File Source.  
 
@@ -396,7 +398,8 @@ environment = <Your_Environment_Name> #For example, Dev, QA, or Prod
 
 </details>
 
-<details><summary>For a Hosted Collector</summary>
+<details>
+<summary>For a Hosted Collector</summary>
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
@@ -441,7 +444,8 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
    1. Install Telegraf if you haven’t already, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
    2. Configure and start Telegraf: as part of collecting metrics data from Telegraf, we'll use the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
-<details><summary><strong>Click to expand</strong>. Create or modify `telegraf.conf` and copy and paste the text below:</summary>
+<details>
+<summary><strong>Click to expand</strong>. Create or modify `telegraf.conf` and copy and paste the text below:</summary>
 
 ```sql
 [[inputs.snmp]]]
@@ -623,7 +627,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
      * `component - “proxy”` - In the input `[[inputs.snmp]]` plugins section. This value is used by Sumo Logic apps to identify application components.
      * `proxy_system - “squidproxy”` - In the input plugins sections. This value identifies the proxy system.
 
-  See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
+  See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for all other parameters that can be configured in the Telegraf agent globally.
 
   After you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
@@ -860,75 +864,9 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 
 **Sumo Logic provides the following out-of-the-box alerts**:
 
-<table>
-  <tr>
-   <td>Alert Type (Metrics/Logs)
-   </td>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Squid Proxy - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Squid Proxy - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Squid Proxy - High Latency
-   </td>
-   <td>This alert fires when latency on a node in a Squid Proxy cluster is higher than 3 seconds.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;&#61;3
-   </td>
-   <td>&#60;3
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Squid Proxy - High Denied Request
-   </td>
-   <td>This alert fires when there are too many HTTP denied requests (>5%)
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-</table>
+| Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|:---|:---|
+| Logs | Squid Proxy - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | Critical | > 0 | `<=`0 |
+| Logs | Squid Proxy - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Critical | >0 | `<=`0 |
+| Metrics | Squid Proxy - High Latency | This alert fires when latency on a node in a Squid Proxy cluster is higher than 3 seconds. | Critical | `>=`3 | `<`3 |
+| Logs | Squid Proxy - High Denied Request | This alert fires when there are too many HTTP denied requests (>5%) | Critical | >0 | `<=`0 |

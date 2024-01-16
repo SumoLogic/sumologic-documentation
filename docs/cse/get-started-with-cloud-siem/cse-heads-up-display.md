@@ -61,7 +61,7 @@ If you use an [HTTP POST V2 Action](/docs/cse/administration/create-cse-actions
 
 ## 6. Insights by Status 
 
-The **Insights by Status** section provides a quick view of what analysts are working on. The counts are a breakdown by current status of the Insights created during the currently selected time range. Note that the count labeled **Custom** includes all Insights that have a [custom status](/docs/cse/administration/manage-custom-insight-statuses/).
+The **Insights by Status** section provides a quick view of what analysts are working on. The counts are a breakdown by current status of the Insights created during the currently selected time range. To create new statuses, see [Managing Custom Insight Statuses](/docs/cse/administration/manage-custom-insight-statuses/).
 
 ## 7. Insights created and closed
 

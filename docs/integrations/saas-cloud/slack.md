@@ -25,82 +25,13 @@ Slack logs are in JSON format. The Slack App utilizes the following log types:
 
 Sumo Logic’s Slack collector enhances the logs by adding a few metadata fields so the raw logs from Slack APIs might differ in format. The availability of all types of logs is determined by the [slack plans](https://get.slack.help/hc/en-us/articles/115003205446-Slack-plans-and-features-).
 
-<table>
-  <tr>
-   <td><strong>Log Type</strong>
-   </td>
-   <td><strong>Free plan</strong>
-   </td>
-   <td><strong>Standard plan</strong>
-   </td>
-   <td><strong> Plus plan</strong>
-   </td>
-   <td><strong>Enterprise plan</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>User logs
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-  </tr>
-  <tr>
-   <td>Public Channel logs
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-  </tr>
-  <tr>
-   <td>Public Message logs
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-  </tr>
-  <tr>
-   <td>Access logs
-   </td>
-   <td>
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-  </tr>
-  <tr>
-   <td>Audit logs
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>✓
-   </td>
-  </tr>
-</table>
-
-
+| Log Type | Free plan | Standard plan | Plus plan | Enterprise plan |
+|:---|:---|:---|:---|:---|
+| User logs | ✓ | ✓ | ✓ | ✓ |
+| Public Channel logs | ✓ | ✓ | ✓ | ✓ |
+| Public Message logs | ✓ | ✓ | ✓ | ✓ |
+| Access logs |  | ✓ | ✓ | ✓ |
+| Audit logs |  |  |  | ✓ |
 
 ### Sample log messages
 
@@ -142,7 +73,7 @@ The following table provides sample log messages for the different log types.
 }
 ```
 
-[Public Message logs](https://api.slack.com/methods/channels.history)
+[Public Message logs](https://api.slack.com/methods)
 ```json
 {
   "type": "message",
@@ -180,7 +111,7 @@ The following table provides sample log messages for the different log types.
 }
 ```
 
-[Access logs	](https://api.slack.com/methods/team.accessLogs)
+[Access logs](https://api.slack.com/methods/team.accessLogs)
 ```json
 {
   "user_id": "e65b0476",
@@ -292,7 +223,9 @@ This legacy solution to pull logs from Slack to Sumo Logic has been replaced wit
 
 This section demonstrates how to install the Slack App.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Slack Dashboards
 

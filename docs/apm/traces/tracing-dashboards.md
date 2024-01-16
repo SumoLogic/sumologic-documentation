@@ -43,7 +43,6 @@ Do not modify or delete content in the **Admin Recommended** folder as it is mai
 To install the app, do the following:
 
 1. From the **App Catalog**, search for and select the **Tracing - Application Services Health** app.<br/> ![install-tracing-app.png](/img/traces/install-tracing-app.png)
-    If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 2. To install the app, click the **Add to Library** button and complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Advanced**. Select the **Location in Library** (the default is the Personal folder), or click **New Folder** to add a new folder.<br/> ![Trace app two.png](/img/traces/Trace-app-two.png)

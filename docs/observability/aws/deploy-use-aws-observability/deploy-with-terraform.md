@@ -70,7 +70,7 @@ Before you run the Terraform script, perform the following actions on a server m
     ```bash
     curl --version
     ```
-1. Install [Python](https://www.python.org/) version 3.7 or later.
+1. Install [Python](https://www.python.org/) version 3.11 or later.
 1. Install the latest version of [jq](https://github.com/stedolan/jq/wiki/Installation) command-line JSON parser. This is required for running the `fields.sh` batch file. To check the installed jq version, run the following command:
     ```bash
     jq --version
@@ -1243,7 +1243,7 @@ auto_enable_logs_subscription="New"
 
 ```json
 {
- "filter": "lambda"
+ "filter": "lambda|rds"
 }
 ```
 
@@ -1674,8 +1674,7 @@ Navigate to the location where you have installed the AWS Observability Terrafor
 1. Go to `cd .terraform/modules/collection-module.classic_lb_module/aws/elasticloadbalancing/elb.tf`
 2. Replace the code with the code give below.
   ```sql
-  resource "aws_serverlessapplicationrepository_cloudformation_stack" 
-    "auto_enable_access_logs" {
+  resource "aws_serverlessapplicationrepository_cloudformation_stack" "auto_enable_access_logs" {
     for_each = toset(local.auto_enable_access_logs ? ["auto_enable_access_logs"] : [])
 
     name             = "Auto-Enable-Access-Logs-${var.auto_enable_access_logs_options.auto_enable_logging}-${random_string.aws_random.id}"
@@ -1700,8 +1699,7 @@ Navigate to the location where you have installed the AWS Observability Terrafor
 3. Go to `cd .terraform/modules/collection-module.elb_module/aws/elb/elb.tf`
 4. Replace the code with the code provided below.
   ```sql
-  resource "aws_serverlessapplicationrepository_cloudformation_stack" 
-  "auto_enable_access_logs" {
+  resource "aws_serverlessapplicationrepository_cloudformation_stack" "auto_enable_access_logs" {
     for_each = toset(local.auto_enable_access_logs ? ["auto_enable_access_logs"] : [])
 
     name             = "Auto-Enable-Access-Logs-Elb-${random_string.aws_random.id}"

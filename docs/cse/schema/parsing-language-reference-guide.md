@@ -30,7 +30,7 @@ execution time.
 For historic reasons, the named groups in the regex of many parsers still uses Python-style notation, for instance `(?P<syslog_timestamp>[^ ]+ +[^ ]+ [^ ]+)`. When you write new regular expressions, you can omit P.
 :::
 
-You can find a regex debugger at [https://regoio.herokuapp.com/](https://regoio.herokuapp.com/).
+You can find a regex debugger at [https://www.debuggex.com](https://www.debuggex.com).
 
 :::note
 This debugger uses the GoLang RE2 library, but all RE2 libraries are based on the same codebase and it is a sufficient test mechanism.
@@ -678,7 +678,7 @@ Creates a field with an associated value. If the field already exists, SET overw
 
 `SET:<field> = <string>`
 
-The field name is treated as a Mustache template if it contains two curly braces ‘{{‘. The template can access any field dictionary fields that have been parsed prior to this instruction. 
+The field name is treated as a Mustache template if it contains two curly braces `{{`. The template can access any field dictionary fields that have been parsed prior to this instruction. 
 
 **Default**
 

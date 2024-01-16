@@ -16,7 +16,9 @@ The Archive Ingestion Management API allows you to ingest data from Archive dest
 You need the [Manage or View Collectors role capability](/docs/manage/users-roles/roles/role-capabilities/#data-management) to manage or view ingestion jobs. For more information, see [Archive](/docs/manage/data-archiving/archive).
 :::
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
+
+<ApiIntro/>
 
 | Deployment | Documentation URL                                         |
 |:------------|:-----------------------------------------------------------|

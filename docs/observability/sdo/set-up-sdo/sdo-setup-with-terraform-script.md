@@ -307,7 +307,7 @@ Configure these parameters in **sumologic.auto.tfvars**.
 | install_pagerduty | Install [Sumo Logic Application and WebHooks for Pagerduty](/docs/integrations/saas-cloud/PagerDuty-V2). Options: app, collection, fer, all, and none. | all |
 | install_pagerduty_version | Lets you install either v2 or v3 alertFER/app version. | v3  |
 | install_jenkins | Install [Sumo Logic Application for Jenkins](/docs/integrations/app-development/jenkins). Options: app, collection, fer, all, and none. The Terraform script does not configure the Jenkins Sumo Logic plugin, choosing `collection` will create http source in Sumo Logic for Jenkins and will configure the Jenkins FERs. | all |
-| install_sdo |  Install [Sumo Logic Application for Software Development Optimization](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-observability-terraform). Options: app or none. | app |
+| install_sdo |  Install [Sumo Logic Application for Software Development Optimization](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/software-development-optimization-terraform). Options: app or none. | app |
 | install_circleci | Install Sumo Logic Application for CircleCI. Options: app, collection, all, and none. | all |
 | install_circleci_SDO_plugin | Install Sumo Logic Collection and FER for CircleCI SDO integration. | all |
 | install_sumo_to_opsgenie_webhook | Install[ Sumo Logic to Opsgenie WebHook](/docs/alerts/webhook-connections/opsgenie.md). install_opsgenie should be true for this option to be true. | true |
