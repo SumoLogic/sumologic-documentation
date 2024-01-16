@@ -2,43 +2,31 @@
 id: security-best-practices
 title: Security Best Practices
 sidebar_label: Security Best Practices
-description: This page explains the basic requirements for the collection solution in terms of network and security policies
+description: This page explains the basic requirements for the collection solution in terms of network and security policies.
 ---
 
 ## Minimal required capabilities
 
-This section explains the basic requirements for the collection solution in terms of network and security policies. It is intended to serve
-as a guide for running collection in highly locked-down environments.
+This section explains the basic requirements for the collection solution in terms of network and security policies. It is intended to serve as a guide for running collection in highly locked-down environments.
 
-Pipelines for the three different data types collection supports - logs, metrics and traces - are completely independent in this respect, so
-we're going to discuss each one separately. If a particular data type is not enabled in the configuration, there is no need to do anything,
-as the respective components will simply not be started.
+Pipelines for the three different data types collection supports - logs, metrics and traces - are completely independent in this respect, so we're going to discuss each one separately. If a particular data type is not enabled in the configuration, there is no need to do anything, as the respective components will simply not be started.
 
-Logically, the pipeline for a data type is composed of the following components
-
+Logically, the pipeline for a data type is composed of the following components:
 ```
 Collector -> Metadata Enrichment -> Sumologic Backend
 ```
 
-Different applications may serve the same role here - for example, OpenTelemetry Collector is currently used for metadata enrichment for
-both logs and metrics, but it used to be Fluentd in v2 of the Chart. Nonetheless, the required capabilities are only based on the role, not
-the specific application.
+Different applications may serve the same role here - for example, OpenTelemetry Collector is currently used for metadata enrichment for both logs and metrics, but it used to be Fluentd in v2 of the Chart. Nonetheless, the required capabilities are only based on the role, not the specific application.
 
 ### Logs
 
-Log collection is done by a node agent, which reads them directly from the node by having the right directories \- `/var/log/containers` for
-container logs and `/var/log/journal` for journald logs - mounted as volumes in the agent container. In order to read them, the agent
-container needs to run as a user with the right permissions.
+Log collection is done by a node agent, which reads them directly from the node by having the right directories - `/var/log/containers` for container logs and `/var/log/journal` for journald logs - mounted as volumes in the agent container. In order to read them, the agent container needs to run as a user with the right permissions.
 
-As Kubernetes distributions have different ACLs set for these directories, the log collector runs as the root user by default for maximum
-out-of-the-box compatibility. This can be set to any user or group id with permission to read log files in the aforementioned directories on
-the node. In terms of collection configuration, the value to modify is `otellogs.daemonset.securityContext` for the log collector.
+As Kubernetes distributions have different ACLs set for these directories, the log collector runs as the root user by default for maximum out-of-the-box compatibility. This can be set to any user or group id with permission to read log files in the aforementioned directories on the node. In terms of collection configuration, the value to modify is `otellogs.daemonset.securityContext` for the log collector.
 
-The log collector needs to be able to talk to the log metadata enrichment service. It does not need to do any other requests over the
-network.
+The log collector needs to be able to talk to the log metadata enrichment service. It does not need to do any other requests over the network.
 
-The log metadata enrichment service needs to be able to talk to the Sumo Logic backend receiver endpoints. It also needs to be able to
-access the Kubernetes API Server to obtain metadata.
+The log metadata enrichment service needs to be able to talk to the Sumo Logic backend receiver endpoints. It also needs to be able to access the Kubernetes API Server to obtain metadata.
 
 Example Kubernetes Network Policies restricting all but the necessary traffic for the logs pipeline:
 
@@ -108,11 +96,9 @@ spec:
 
 ### Metrics
 
-Metrics collection is done via the Prometheus protocol, which means that the metrics collector needs to be able to reach any service it
-needs to collect metadata from over the network. This includes the metrics enrichment service.
+Metrics collection is done via the Prometheus protocol, which means that the metrics collector needs to be able to reach any service it needs to collect metadata from over the network. This includes the metrics enrichment service.
 
-The metrics metadata enrichment service needs to be able to talk to the Sumo Logic backend receiver endpoints. It also needs to be able to
-access the Kubernetes API Server to obtain metadata.
+The metrics metadata enrichment service needs to be able to talk to the Sumo Logic backend receiver endpoints. It also needs to be able to access the Kubernetes API Server to obtain metadata.
 
 Example Kubernetes Network Policies restricting all but the necessary traffic for the metrics pipeline:
 
@@ -187,16 +173,13 @@ spec:
     - {}
 ```
 
-The above configuration is very permissive for Prometheus egress. You're encouraged to make it more restrictive based on your specific
-requirements.
+The above configuration is very permissive for Prometheus egress. You're encouraged to make it more restrictive based on your specific requirements.
 
 ### Tracing
 
-Traces are sent to the collector by applications themselves, so any application needing to publish traces needs to be able to reach the
-collector over the network.
+Traces are sent to the collector by applications themselves, so any application needing to publish traces needs to be able to reach the collector over the network.
 
-The tracing collector and metadata enrichment are currently done by the same service. As such, this service needs to be able to talk to the
-Sumo Logic backend receiver endpoints, and the Kubernetes API Server.
+The tracing collector and metadata enrichment are currently done by the same service. As such, this service needs to be able to talk to the Sumo Logic backend receiver endpoints, and the Kubernetes API Server.
 
 Example Kubernetes Network Policies restricting all but the necessary traffic for the traces pipeline:
 
@@ -238,9 +221,7 @@ spec:
     - {}
 ```
 
-You should only leave the ports for the protocol you're actually using to deliver spans to the receiver in the above definition. As with
-Prometheus, the above configuration is very permissive for ingress. You're encouraged to make it more restrictive based on your specific
-requirements.
+You should only leave the ports for the protocol you're actually using to deliver spans to the receiver in the above definition. As with Prometheus, the above configuration is very permissive for ingress. You're encouraged to make it more restrictive based on your specific requirements.
 
 ## Hardening OpenTelemetry Collector StatefulSets with `securityContext`
 
@@ -284,19 +265,16 @@ metadata:
 
 ## Using a custom root CA for TLS interception
 
-Unfortunately, there isn't a uniform way of adding root certificates to application containers. Generally speaking, this can be done in two
-ways:
+Unfortunately, there isn't a uniform way of adding root certificates to application containers. Generally speaking, this can be done in two ways:
 
 - At container image build time, making use of the underlying OS certificate management facilities
 - At Pod start time, using `initContainers` and `extraVolumes`, also making use of the underlying OS certificate management facilities
 
 ### Adding a custom root CA certificate by rebuilding container images
 
-Adding certificates during container build using the underlying Linux distribution's management facilities tends to be straightforward.
-There are three different base distributions among container images used by the collection Helm Chart: `debian`, `alpine` and `scratch`.
+Adding certificates during container build using the underlying Linux distribution's management facilities tends to be straightforward. There are three different base distributions among container images used by the collection Helm Chart: `debian`, `alpine` and `scratch`.
 
-For Debian and Alpine Linux, please consult the documentation of these distributions. For example, assuming `cert.pem` is the certificate
-file, the following suffices for Alpine Linux and `scratch`:
+For Debian and Alpine Linux, please consult the documentation of these distributions. For example, assuming `cert.pem` is the certificate file, the following suffices for Alpine Linux and `scratch`:
 
 ```Dockerfile
 COPY cert.pem /usr/local/share/ca-certificates/cert.crt
@@ -307,11 +285,9 @@ Keep in mind that this needs to be done as the root user, and then the user shou
 
 ### Adding a custom root CA certificate using `initContainers`
 
-It's customary for Helm Charts to allow customizing a Pod's `initContainers` and Volumes, in part to allow changes like this one. In effect,
-what we do here is identical to what we'd do at build time, but it takes place during Pod initialization instead.
+It's customary for Helm Charts to allow customizing a Pod's `initContainers` and Volumes, in part to allow changes like this one. In effect, what we do here is identical to what we'd do at build time, but it takes place during Pod initialization instead.
 
-Here's an example configuration of a root certificate being added to a OpenTelemetry Collector StatefulSet this way. This assumes the
-certificate is contained in the `root-ca-cert` Secret, under the `cert.pem` key:
+Here's an example configuration of a root certificate being added to a OpenTelemetry Collector StatefulSet this way. This assumes the certificate is contained in the `root-ca-cert` Secret, under the `cert.pem` key:
 
 ```yaml
 metadata:
@@ -346,8 +322,7 @@ metadata:
         readOnly: true
 ```
 
-Note that if you embed all the necessary certificates in the Secret, you can skip copying them from the `curl-busybox` image in the example
-and just mount the Secret directly to `/etc/ssl/certs/`. In that case, we can skip the `initContainers`:
+Note that if you embed all the necessary certificates in the Secret, you can skip copying them from the `curl-busybox` image in the example and just mount the Secret directly to `/etc/ssl/certs/`. In that case, we can skip the `initContainers`:
 
 ```yaml
 metadata:
@@ -366,13 +341,11 @@ metadata:
 
 We provide FIPS compliant **OpenTelemetry Collector** binaries for your data collection and enrichment.
 
-You can find them in our [ECR Public Gallery](https://gallery.ecr.aws/sumologic/sumologic-otel-collector). FIPS compliant image tags end
-with `-fips`.
+You can find them in our [ECR Public Gallery](https://gallery.ecr.aws/sumologic/sumologic-otel-collector). FIPS compliant image tags end with `-fips`.
 
 ### Helm Chart v3 and newer versions
 
-Starting with Helm Chart v3 **OpenTelemetry Collector** is a default method of collecting data (except for Prometheus) but still you need
-set the FIPS compliant images.
+Starting with Helm Chart v3 **OpenTelemetry Collector** is a default method of collecting data (except for Prometheus) but still you need set the FIPS compliant images.
 
 To automatically use FIPS-compliant images for all components, set:
 
@@ -382,12 +355,12 @@ sumologic:
     addFipsSuffix: true
 ```
 
-> **Note** This only adds a `-fips` suffix to the image tag. If you're customizing the tag and repository (for example by using a custom
-> registry), please make sure to preserve this naming convention if you want to use this feature.
+:::note
+This only adds a `-fips` suffix to the image tag. If you're customizing the tag and repository (for example by using a custom registry), make sure to preserve this naming convention if you want to use this feature.
+:::
 
 ### Troubleshooting
 
 #### OpenTelemetry: dial tcp: lookup collection-sumologic-metadata-logs.sumologic.svc.cluster.local.: device or resource busy
 
-Refer to
-[Troubleshooting Collection document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md#opentelemetry-dial-tcp-lookup-collection-sumologic-metadata-logssumologicsvcclusterlocal-device-or-resource-busy).
+Refer to [Troubleshooting Collection document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md#opentelemetry-dial-tcp-lookup-collection-sumologic-metadata-logssumologicsvcclusterlocal-device-or-resource-busy).
