@@ -127,7 +127,7 @@ We documented some common customizations below:
 ### Overriding names of resources
 
 If you want to override the names of the resources created by the chart, see
-[Overriding chart resource names with `fullnameOverride`](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/best-practices.md#overriding-chart-resource-names-with-fullnameoverride).
+[Overriding chart resource names with `fullnameOverride`](/docs/send-data/kubernetes/best-practices#overriding-chart-resource-names-with-fullnameoverride).
 
 ### Using a custom container registry
 
