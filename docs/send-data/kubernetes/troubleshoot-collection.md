@@ -53,7 +53,7 @@ kubectl get pods
 
 Get the logs from that pod:
 
-```
+```sh
 kubectl logs POD_NAME -f
 ```
 
@@ -61,7 +61,7 @@ kubectl logs POD_NAME -f
 
 If you get
 
-```
+```sh
 Error: collector with name 'sumologic' does not exist
 sumologic_http_source.default_metrics_source: Importing from ID
 ```
@@ -97,7 +97,7 @@ kubectl get pods
 
 Get the logs from that pod:
 
-```
+```sh
 kubectl logs POD_NAME -f
 ```
 
@@ -142,7 +142,7 @@ If it is, there will be `budget.exceeded` messages from Sumo in OpenTelemetry Co
 
 Run:
 
-```
+```sh
 kubectl get pods
 ```
 
@@ -151,19 +151,19 @@ can either:
 
 Stream the logs to `stdout`:
 
-```
+```sh
 kubectl logs POD_NAME -f
 ```
 
 Or write the current logs to a file:
 
-```
+```sh
 kubectl logs POD_NAME > pod_name.log
 ```
 
 To get a snapshot of the current state of the pod, you can run
 
-```
+```sh
 kubectl describe pods POD_NAME
 ```
 
@@ -346,7 +346,7 @@ Let's assume that you are looking for `serviceMonitor/sumologic/receiver-mock/0`
 "sumologic/collection-sumologic-otelcol-logs-0"
 ```
 
-If all informations are correct, please refer to the following sections to continue investigation:
+If all information are correct, please refer to the following sections to continue investigation:
 
 - [Check the `/metrics` endpoint](#check-the-metrics-endpoint)
 - [Check the `/metrics` endpoint for Kubernetes services](#check-the-metrics-endpoint-for-kubernetes-services)
@@ -355,7 +355,7 @@ If all informations are correct, please refer to the following sections to conti
 
 In order to print metrics and their labels on stdout, the following configuration has to be applied:
 
-```
+```yaml
 otellogs:
   config:
     merge:
@@ -402,7 +402,7 @@ Service Monitor is looking for service labeled with `app.kubernetes.io/instance:
 
 In order to fix it, you need to ensure that the labels are matching and you can do it by adding the following to `user-values.yaml`:
 
-```
+```yaml
 kube-prometheus-stack:
   kube-state-metrics:
     prometheus:
@@ -429,7 +429,7 @@ Prometheus pod is not running.
 
 One can verify that by using the following command:
 
-```
+```sh
 $ kubectl get pod -n <NAMESPACE> -l app.kubernetes.io/name=prometheus
 NAME                                 READY   STATUS    RESTARTS   AGE
 prometheus-<NAMESPACE>-prometheus-0  2/2     Running   1          4d20h
@@ -437,7 +437,7 @@ prometheus-<NAMESPACE>-prometheus-0  2/2     Running   1          4d20h
 
 In case it is not running one can check prometheus-operator logs for any related issues:
 
-```
+```sh
 kubectl logs -n <NAMESPACE> -l app=kube-prometheus-stack-operator
 ```
 
@@ -445,7 +445,7 @@ kubectl logs -n <NAMESPACE> -l app=kube-prometheus-stack-operator
 
 If you are seeing a pod stuck in the `ContainerCreating` state and seeing logs like
 
-```
+```sh
 Warning  FailedCreatePodSandBox  29s   kubelet, ip-172-20-87-45.us-west-1.compute.internal  Failed create pod sandbox: rpc error: code = DeadlineExceeded desc = context deadline exceeded
 ```
 
@@ -460,13 +460,13 @@ workarounds you can try.
 
 The goal is to set the flag `--authentication-token-webhook=true` for `kubelet`. One way to do this is:
 
-```
+```sh
 kops get cluster -o yaml > NAME_OF_CLUSTER-cluster.yaml
 ```
 
 Then in that file make the following change:
 
-```
+```yaml
 spec:
   kubelet:
     anonymousAuth: false
@@ -475,7 +475,7 @@ spec:
 
 Then run
 
-```
+```sh
 kops replace -f NAME_OF_CLUSTER-cluster.yaml
 kops update cluster --yes
 kops rolling-update cluster --yes
@@ -487,7 +487,7 @@ The goal is to set the flag `kubelet.serviceMonitor.https=false` when deploying 
 
 Add the following lines to the `kube-prometheus-stack` section of your `user-values.yaml` file:
 
-```
+```yaml
 kube-prometheus-stack:
   ...
   kubelet:
@@ -497,7 +497,7 @@ kube-prometheus-stack:
 
 and upgrade the helm chart:
 
-```
+```sh
 helm upgrade collection sumologic/sumologic --reuse-values --version=<RELEASE-VERSION> -f user-values.yaml
 ```
 
@@ -541,7 +541,7 @@ cannot insert its kernel module to process events for system calls. However, COS
 To install on `GKE`, use the provided override file to customize your configuration and uncomment the following lines in the `values.yaml`
 file referenced below:
 
-```
+```yaml
   #driver:
   #  kind: ebpf
 ```
