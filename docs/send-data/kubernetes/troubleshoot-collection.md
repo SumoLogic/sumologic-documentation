@@ -5,11 +5,11 @@ sidebar_label: Troubleshooting Collection
 description: Troubleshooting Collection
 ---
 
-## Troubleshooting Installation
+## Troubleshooting installation
 
 ### Installation fails with error `function "dig" not defined`
 
-You need to use a more recent version of Helm. See [Minimum Requirements](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/README.md#minimum-requirements).
+You'll need to use a more recent version of Helm. See [Minimum Requirements](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/README.md#minimum-requirements).
 
 If you are using ArgoCD or another tool that uses Helm under the hood, make sure that tool uses the required version of Helm.
 
@@ -30,12 +30,11 @@ Sumo Logic Apps for Kubernetes and Explore require below listed fields to be add
 
 This is normally done in the setup job when `sumologic.setupEnabled` is set to `true` (default behavior).
 
-In an unlikely scenario that this fails please create them manually by visiting
-[Fields#Manage_fields](https://help.sumologic.com/docs/manage/fields/#manage-fields) in Sumo Logic UI.
+In an unlikely scenario that this fails, create them manually by visiting [Fields#Manage_fields](/docs/manage/fields/#manage-fields) in Sumo Logic UI.
 
 This is to ensure your logs are tagged with relevant metadata.
 
-This is a one time setup per Sumo Logic account.
+This is a one-time setup per Sumo Logic account.
 
 ### Error: timed out waiting for the condition
 
@@ -48,8 +47,9 @@ will contain `-setup` in the name.
 kubectl get pods
 ```
 
-> **Tip**: If the pod does not exist, it is possible it has been evicted. Re-run the `helm upgrade --install` to recreate it and while that
-> command is running, use another shell to get the name of the pod.
+:::tip
+If the pod does not exist, it is possible it has been evicted. Re-run the `helm upgrade --install` to recreate it and while that command is running, use another shell to get the name of the pod.
+:::
 
 Get the logs from that pod:
 
@@ -59,16 +59,14 @@ kubectl logs POD_NAME -f
 
 #### Error: collector with name 'sumologic' does not exist
 
-If you get
+If you get:
 
 ```sh
 Error: collector with name 'sumologic' does not exist
 sumologic_http_source.default_metrics_source: Importing from ID
 ```
 
-you can safely ignore it and the installation should complete successfully. The installation process creates new
-[HTTP endpoints](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source) in your Sumo Logic account, that are used to send
-data to Sumo. This error occurs if the endpoints had already been created by an earlier run of the installation process.
+...you can safely ignore it, and the installation should complete successfully. The installation process creates new [HTTP endpoints](/docs/send-data/hosted-collectors/http-source) in your Sumo Logic account, that are used to send data to Sumo. This error occurs if the endpoints had already been created by an earlier run of the installation process.
 
 #### Secret 'sumologic::sumologic' exists, abort
 
@@ -88,8 +86,7 @@ the `sumologic.setupEnable` parameter is set to `true`. Then wait for the setup 
 setup job creates a secret and the error simply means the secret is not there yet. This usually resolves itself automatically.
 
 If the issue does not solve resolve automatically, you will need to look at the logs for the setup pod. Kubernetes schedules the job in a
-pod, so you can look at logs from the pod to see why the job is failing. First find the pod name in the namespace where you installed the
-rendered YAML. The pod name will contain `-setup` in the name.
+pod, so you can look at logs from the pod to see why the job is failing. First find the pod name in the namespace where you installed the rendered YAML. The pod name will contain `-setup` in the name.
 
 ```sh
 kubectl get pods
@@ -120,23 +117,19 @@ If you cannot see logs in Sumo that you expect to be there, here are the things 
 
 ### Check log throttling
 
-Check if [log throttling][log_throttling] is happening.
+Check if [log throttling](/docs/manage/ingestion-volume/log-ingestion#log-throttling) is happening.
 
 If it is, there will be messages like `HTTP ERROR 429 You have temporarily exceeded your Sumo Logic quota` in OpenTelemetry Collector logs.
 
-[log_throttling]: https://help.sumologic.com/docs/manage/ingestion-volume/log-ingestion#log-throttling
-
 ### Check ingest budget limits
 
-Check if an [ingest budget][ingest_budgets] limit is hit.
+Check if an [ingest budget](/docs/manage/ingestion-volume/ingest-budgets) limit is hit.
 
 If it is, there will be `budget.exceeded` messages from Sumo in OpenTelemetry Collector logs, similar to the following:
 
 ```console
 2022-04-12 13:47:17 +0000 [warn]: #0 There was an issue sending data: id: KMZJI-FCDPN-4KHKD, code: budget.exceeded, status: 200, message: Message(s) in the request dropped due to exceeded budget.
 ```
-
-[ingest_budgets]: https://help.sumologic.com/docs/manage/ingestion-volume/ingest-budgets
 
 ### Check if collection pods are in a healthy state
 
@@ -179,7 +172,7 @@ Where `collection` is the `helm` release name.
 
 ### OpenTelemetry Logs Collector is being CPU throttled
 
-If OpenTelemtry Logs Collector is being throttled, you should increase CPU request to higher value, for example:
+If OpenTelemetry Logs Collector is being throttled, you should increase CPU request to higher value, for example:
 
 ```yaml
 otellogs:
@@ -219,8 +212,7 @@ otellogs:
                     - IntenseLogGeneration
 ```
 
-For more information look at the `Setting different resources on different nodes for logs collector` section in
-[Advanced Configuration / Best Practices](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/best-practices.md#setting-different-resources-on-different-nodes-for-logs-collector)
+For more information look at the `Setting different resources on different nodes for logs collector` section in [Advanced Configuration / Best Practices](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/best-practices.md#setting-different-resources-on-different-nodes-for-logs-collector)
 document.
 
 ## Collecting metrics
@@ -239,9 +231,8 @@ Then, in your browser, go to `http://localhost:8080/metrics`. You should see Pro
 
 For kubernetes services you can use the following way:
 
-1. Create `sumologic-debug` pod
-
-   ```bash
+1. Create `sumologic-debug` pod.
+   ```yml
    cat << EOF | kubectl apply -f -
    apiVersion: v1
    kind: Pod
@@ -258,16 +249,11 @@ For kubernetes services you can use the following way:
      serviceAccountName: <service account name used by prometheus (e.g. collection-kube-prometheus-prometheus)>
    EOF
    ```
-
 2. Go into the container:
-
    ```bash
    kubectl exec -it sumologic-debug -n <namespace> bash
-
    ```
-
-3. Talk with API directly like prometheus does, e.g.
-
+3. Talk with API directly like prometheus does, for example:
    ```bash
    curl https://10.0.2.15:10250/metrics/cadvisor --insecure --cacert /var/run/secrets kubernetes.io/serviceaccount/ca.crt -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)"
    ```
@@ -289,11 +275,9 @@ Then, in your browser, go to `localhost:8080`. You should be in the Prometheus U
 
 From here you can start typing the expected name of a metric to see if Prometheus auto-completes the entry.
 
-If you can't find the expected metrics, ensure that prometheus configuration is correct and up to date. In the top menu, navigate to section
-`Status > Configuration` or go to the `http://localhost:8080/config`. Review the configuration.
+If you can't find the expected metrics, ensure that prometheus configuration is correct and up to date. In the top menu, navigate to section `Status > Configuration` or go to the `http://localhost:8080/config`. Review the configuration.
 
-Next, you can check if Prometheus is successfully scraping the `/metrics` endpoints. In the top menu, navigate to section `Status > Targets`
-or go to the `http://localhost:8080/targets`. Check if any targets are down or have errors.
+Next, you can check if Prometheus is successfully scraping the `/metrics` endpoints. In the top menu, navigate to section `Status > Targets` or go to the `http://localhost:8080/targets`. Check if any targets are down or have errors.
 
 ### Check Scrape Configs for Open Telemetry Operator
 
@@ -333,10 +317,9 @@ Check if expected Service Monitor is on the list:
 ]
 ```
 
-Now you can list all target associated with this Service Monitor. Built URL using the following template:
-`http://localhost:9090/jobs/<HTML encoded service monitor name>/targets`.
+Now, you can list all target associated with this Service Monitor. Built URL using the following template: `http://localhost:9090/jobs/<HTML encoded service monitor name>/targets`.
 
-Let's assume that you are looking for `serviceMonitor/sumologic/receiver-mock/0`. In that case you need to check the following endpoint:
+Let's assume that you are looking for `serviceMonitor/sumologic/receiver-mock/0`. In that case, you need to check the following endpoint:
 `http://localhost:9090/jobs/serviceMonitor%2Fsumologic%2Fcollection-sumologic-otelcol-logs%2F0/targets`
 
 ```sh
@@ -346,7 +329,7 @@ Let's assume that you are looking for `serviceMonitor/sumologic/receiver-mock/0`
 "sumologic/collection-sumologic-otelcol-logs-0"
 ```
 
-If all information are correct, please refer to the following sections to continue investigation:
+If all information are correct, refer to the following sections to continue investigation:
 
 - [Check the `/metrics` endpoint](#check-the-metrics-endpoint)
 - [Check the `/metrics` endpoint for Kubernetes services](#check-the-metrics-endpoint-for-kubernetes-services)
@@ -380,7 +363,9 @@ metadata:
 
 This configuration ensures that all metrics are printed to stdout and they are not collected by logs collector to keep your ingest low.
 
-**NOTE:** This configuration is prepared for OTLP source, as it doesn't use routing processor and multiple exporters in the pipeline
+:::note
+This configuration is prepared for OTLP source, as it doesn't use routing processor and multiple exporters in the pipeline.
+:::
 
 ### Check Prometheus Remote Storage
 
@@ -417,17 +402,15 @@ kube-prometheus-stack:
           app.kubernetes.io/name: prometheus-node-exporter
 ```
 
-where `metadata.name` is value from Argo Application manifest
+where `metadata.name` is the value from Argo Application manifest.
 
 ## Common Issues
 
 ### Missing metrics - cannot see cluster in Explore
 
-If you are not seeing metrics coming in to Sumo or/and your cluster is not showing up in
-[Explore](https://help.sumologic.com/docs/observability/kubernetes/monitoring#open-explore) it is most likely due to the fact that
-Prometheus pod is not running.
+If you are not seeing metrics coming in to Sumo or/and your cluster is not showing up in [Explore](/docs/observability/kubernetes/monitoring#open-explore) it is most likely due to the fact that Prometheus pod is not running.
 
-One can verify that by using the following command:
+You can verify that by using the following command:
 
 ```sh
 $ kubectl get pod -n <NAMESPACE> -l app.kubernetes.io/name=prometheus
@@ -443,7 +426,7 @@ kubectl logs -n <NAMESPACE> -l app=kube-prometheus-stack-operator
 
 ### Pod stuck in `ContainerCreating` state
 
-If you are seeing a pod stuck in the `ContainerCreating` state and seeing logs like
+If you are seeing a pod stuck in the `ContainerCreating` state and seeing logs like this:
 
 ```sh
 Warning  FailedCreatePodSandBox  29s   kubelet, ip-172-20-87-45.us-west-1.compute.internal  Failed create pod sandbox: rpc error: code = DeadlineExceeded desc = context deadline exceeded
@@ -464,7 +447,7 @@ The goal is to set the flag `--authentication-token-webhook=true` for `kubelet`.
 kops get cluster -o yaml > NAME_OF_CLUSTER-cluster.yaml
 ```
 
-Then in that file make the following change:
+Then, make the following change in that file:
 
 ```yaml
 spec:
@@ -526,8 +509,7 @@ Delete the pod forcefully by adding `--force --grace-period=0` to the `kubectl d
 ### Rancher
 
 If you are running the out of the box rancher monitoring setup, you cannot run our Prometheus operator alongside it. The Rancher Prometheus
-Operator setup will actually kill and permanently terminate our Prometheus Operator instance and will prevent the metrics system from coming
-up. If you have the Rancher prometheus operator setup running, they will have to use the UI to disable it before they can install our
+Operator setup will actually kill and permanently terminate our Prometheus Operator instance and will prevent the metrics system from coming up. If you have the Rancher prometheus operator setup running, they will have to use the UI to disable it before they can install our
 collection process.
 
 ### Falco and Google Kubernetes Engine (GKE)
@@ -551,11 +533,7 @@ file referenced below:
 Falco does not provide modules for all kernels. When Falco module is not available for particular kernel, Falco tries to build it. Building
 a module requires `kernel-devel` package installed on nodes.
 
-For OpenShift, installation of `kernel-devel` on nodes is provided through MachineConfig used by
-[Machine Config operator](https://github.com/openshift/machine-config-operator). When update of machine configuration is needed machine is
-rebooted, please see
-[documentation](https://github.com/openshift/machine-config-operator/blob/master/docs/MachineConfigDaemon.md#coordinating-updates). The
-process of changing nodes configuration may require long time during which Pods scheduled on unchanged nodes are in `Init` state.
+For OpenShift, installation of `kernel-devel` on nodes is provided through MachineConfig used by [Machine Config operator](https://github.com/openshift/machine-config-operator). When update of machine configuration is needed machine is rebooted, see the [documentation](https://github.com/openshift/machine-config-operator/blob/master/docs/MachineConfigDaemon.md#coordinating-updates). The process of changing nodes configuration may require long time during which Pods scheduled on unchanged nodes are in `Init` state.
 
 Node configuration can be verified by following annotations:
 
@@ -563,7 +541,7 @@ Node configuration can be verified by following annotations:
 - `machineconfiguration.openshift.io/desiredConfig`
 - `machineconfiguration.openshift.io/state`
 
-After that, please remove Otelcol pods and associated PVC-s.
+After that, remove Otelcol pods and associated PVC-s.
 
 For example, if the namespace where the collection is installed is `collection`, run the following set of commands:
 
@@ -577,14 +555,12 @@ for POD_NAME in $(kubectl get pods --template '{{range .items}}{{.metadata.name}
 done
 ```
 
-The duplicated pod deletion command is there to make sure the pod is not stuck in `Pending` state with event
-`persistentvolumeclaim "file-storage-sumologic-otelcol-logs-1" not found`.
+The duplicated pod deletion command is there to make sure the pod is not stuck in `Pending` state with event `persistentvolumeclaim "file-storage-sumologic-otelcol-logs-1" not found`.
 
 ### Out of memory (OOM) failures for Prometheus Pod
 
 If you observe that Prometheus Pod needs more and more resources (out of memory failures - OOM killed Prometheus) and you are not able to
-increase them then you may need to horizontally scale Prometheus. For details please refer to -
-[Prometheus sharding](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/prometheus.md#horizontal-scaling-sharding).
+increase them then you may need to horizontally scale Prometheus. For details, refer to [Prometheus sharding](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/prometheus.md#horizontal-scaling-sharding).
 
 ### Prometheus: server returned HTTP status 404 Not Found: 404 page not found
 
@@ -594,14 +570,14 @@ If you see the following error in Prometheus logs:
 ts=2023-01-30T16:39:27.436Z caller=dedupe.go:112 component=remote level=error remote_name=2b2fa9 url=http://sumologic-sumologic-remote-write-proxy.sumologic.svc.cluster.local:9888/prometheus.metrics msg="non-recoverable error" count=194 exemplarCount=0 err="server returned HTTP status 404 Not Found: 404 page not found"
 ```
 
-please change the following configurations:
+you'll need to change the following configurations:
 
 - `kube-prometheus-stack.prometheus.prometheusSpec.remoteWrite`
 - `kube-prometheus-stack.prometheus.prometheusSpec.additionalRemoteWrite`
 
 so `url` starts with `http://$(METADATA_METRICS_SVC).$(NAMESPACE).svc.cluster.local.:9888`.
 
-Please see the following example:
+See the following example:
 
 ```yaml
 kube-prometheus-stack:
@@ -612,9 +588,7 @@ kube-prometheus-stack:
           ...
 ```
 
-Alternatively you can add `/prometheus.metrics` to `metadata.metrics.config.additionalEndpoints`
-
-Please see the following example:
+Alternatively, you can add `/prometheus.metrics` to `metadata.metrics.config.additionalEndpoints`. See the following example:
 
 ```yaml
 metadata:
@@ -640,7 +614,7 @@ extraEnvVars:
     value: netdns=go
 ```
 
-For example for OpenTelemetry Logs Collector:
+For example, for OpenTelemetry Logs Collector:
 
 ```yaml
 otellogs:
@@ -658,10 +632,8 @@ If the OpenTelemetry Operator is restarting after upgrade, and the following err
 {"level":"error","ts":"2024-01-10T09:32:24Z","logger":"controller-runtime.source.EventHandler","msg":"if kind is a CRD, it should be installed before calling Start","kind":"OpAMPBridge.opentelemetry.io","error":"no matches for kind \"OpAMPBridge\" in version \"opentelemetry.io/v1alpha1\"","stacktrace":"sigs.k8s.io/controller-runtime/pkg/internal/source.(*Kind).Start.func1.1\n\t/home/runner/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.16.3/pkg/internal/source/kind.go:63\nk8s.io/apimachinery/pkg/util/wait.loopConditionUntilContext.func2\n\t/home/runner/go/pkg/mod/k8s.io/apimachinery@v0.28.4/pkg/util/wait/loop.go:73\nk8s.io/apimachinery/pkg/util/wait.loopConditionUntilContext\n\t/home/runner/go/pkg/mod/k8s.io/apimachinery@v0.28.4/pkg/util/wait/loop.go:74\nk8s.io/apimachinery/pkg/util/wait.PollUntilContextCancel\n\t/home/runner/go/pkg/mod/k8s.io/apimachinery@v0.28.4/pkg/util/wait/poll.go:33\nsigs.k8s.io/controller-runtime/pkg/internal/source.(*Kind).Start.func1\n\t/home/runner/go/pkg/mod/sigs.k8s.io/controller-runtime@v0.16.3/pkg/internal/source/kind.go:56"}
 ```
 
-It means that Custom Resource Definition has not been applied by Helm. It is [Helm known issue], and it has to be applied manually:
+It means that Custom Resource Definition has not been applied by Helm. It is [Helm known issue](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/#some-caveats-and-explanations), and it has to be applied manually:
 
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.44.0/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml
 ```
-
-[Helm known issue]: https://helm.sh/docs/chart_best_practices/custom_resource_definitions/#some-caveats-and-explanations
