@@ -11,4 +11,4 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-We're excited to announce our new **Events Analytics** feature in the log search histogram, which helps you to easily identify and mitigate the outages in your system. [Learn more](/docs/search/get-started-with-search/search-page/log-level/#events).
+We're excited to announce our new **Events Analytics** feature for the log search query, which helps you to easily identify and mitigate the outages in your system. [Learn more](/docs/search/get-started-with-search/search-page/event-analytics/).
