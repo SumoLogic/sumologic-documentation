@@ -57,7 +57,7 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
     1. **Event bub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
     1. **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
     1. Select **RootManageSharedAccessKey** from **Select Event hub policy name** dropdown.
-    1. Select the checkbox for log types under **Categories** which you want to ingest.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-web-apps.png')} style={{border: '1px solid black'}} alt="diagnostic-setting-web-apps" width="800"/>
+    1. Select the checkbox for log types under **Categories** which you want to ingest.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-web-apps.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting-web-apps" width="800"/>
     1. Click **Save**.
 
 ## Collecting Metrics for Azure Web Apps (Optional)

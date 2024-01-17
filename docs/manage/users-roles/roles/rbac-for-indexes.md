@@ -22,12 +22,12 @@ Follow this process to restrict access using advanced filters and indexes:
 When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), an advanced filter allows access only to the logs that match the search filter.
 
 1. Go to **Administration > Users and Roles > Roles**.
-1. Click **+ Add Role** on the upper right side of the page. The **Create New Role** pane displays.<br/><img src={useBaseUrl('img/users-roles/create-new-role-index-based-boxed.png')} alt="Create a new role" style={{border: '1px solid black'}} width="400"/>
+1. Click **+ Add Role** on the upper right side of the page. The **Create New Role** pane displays.<br/><img src={useBaseUrl('img/users-roles/create-new-role-index-based-boxed.png')} alt="Create a new role" style={{border: '1px solid gray'}} width="400"/>
 1. Select one of the following to create a filter that allows access to only the logs that match the defined conditions. You can create only one filter for each.
    * **Log Analytics data filter**. This filter applies to all the [partitions](/docs/manage/partitions-data-tiers/run-search-against-partition/) and [LiveTail](/docs/search/live-tail/). 
    * **Audit data filter**. This filter applies to all the logs in [Audit Indexes](/docs/manage/security/audit-indexes/audit-index/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_audit_events`, `sumologic_search_events`, `sumologic_search_usage_per_query`, or `sumologic_system_events`, to name a few.
    * **Security data filter**. This filter applies on all logs in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo#partitions-for-cse-records).
-1. Enter search criteria in the box provided. For examples, see [Understanding search filters](/docs/manage/users-roles/roles/construct-search-filter-for-role#understanding-search-filters).<br/><img src={useBaseUrl('img/users-roles/advanced-filter.png')} alt="Advanced filter" style={{border: '1px solid black'}} width="400"/>
+1. Enter search criteria in the box provided. For examples, see [Understanding search filters](/docs/manage/users-roles/roles/construct-search-filter-for-role#understanding-search-filters).<br/><img src={useBaseUrl('img/users-roles/advanced-filter.png')} alt="Advanced filter" style={{border: '1px solid gray'}} width="400"/>
 
 ### Advanced filter examples
 
@@ -47,7 +47,7 @@ An index filter allows or denies access to [search indexes](/docs/manage/partiti
    * **All indexes**. Allow access to all indexes.
    * **Allow few indexes**. Allow access to only the selected indexes. 
    * **Deny few indexes**. Deny access to the selected indexes. 
-1. If you choose **Allow few indexes** or **Deny few indexes**, choose the indexes in the **Select Indexes** box that appear.<br/><img src={useBaseUrl('img/users-roles/index-based-filter.png')} alt="Index filter" style={{border: '1px solid black'}} width="400"/>
+1. If you choose **Allow few indexes** or **Deny few indexes**, choose the indexes in the **Select Indexes** box that appear.<br/><img src={useBaseUrl('img/users-roles/index-based-filter.png')} alt="Index filter" style={{border: '1px solid gray'}} width="400"/>
    
 ### Index filter example
 
@@ -57,5 +57,5 @@ For example, let’s say you want to deny access to partition and security index
 
 1. Go to **Administration** > **Users and Roles** > **Roles**. 
 1. Select a role with search filtering defined. 
-1. Click **Emulate log search**. The search will be emulated for the search filters defined in the role. (In the example below, an index search filter is defined.)<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-index-based.png')} alt="Emulate log search for index filter" style={{border: '1px solid black'}} width="400"/>
-1. Enter your search parameters in the log search emulation window. The search will return only what is allowed by search filters defined in the role.<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-window.png')} alt="Emulate log search window" style={{border: '1px solid black'}} width="800"/>
+1. Click **Emulate log search**. The search will be emulated for the search filters defined in the role. (In the example below, an index search filter is defined.)<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-index-based.png')} alt="Emulate log search for index filter" style={{border: '1px solid gray'}} width="400"/>
+1. Enter your search parameters in the log search emulation window. The search will return only what is allowed by search filters defined in the role.<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-window.png')} alt="Emulate log search window" style={{border: '1px solid gray'}} width="800"/>

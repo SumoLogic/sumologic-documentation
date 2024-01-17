@@ -233,7 +233,7 @@ Use this dashboard to:
 * Quickly identify problems in resource utilization.
 * Monitor databases performance insights such as relative CPU load, non-CPU load, and overall database load.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview.png')} alt="Amazon RDS dashboard" style={{border: '1px solid black'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} />
 
 ### 2. Amazon RDS CloudTrail Audit Events
 
