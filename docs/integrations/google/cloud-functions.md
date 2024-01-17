@@ -155,22 +155,22 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 
 The **Google Cloud Functions - Performance Overview** dashboard uses the cloud function metrics. This dashboard provides an overview of Google Cloud Function performance including - active functions, number of function executions, number of errors, function distribution by trigger type and number of errors, execution count by project/region, trigger type, and error status. This dashboard also lists the function by average time execution and memory consumption.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Functions/Google-Cloud-Functions-Performance-Overview.png')} style={{border: '1px solid black'}} alt="Google Cloud Functions - Performance Overview" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Functions/Google-Cloud-Functions-Performance-Overview.png')} style={{border: '1px solid gray'}} alt="Google Cloud Functions - Performance Overview" width="800"/>
 
 ### Audit Logs
 
 The **Google Cloud Functions - Audit Logs** dashboard uses the Google Cloud Admin activity [audit logs of cloud function](https://cloud.google.com/functions/docs/monitoring/audit-logging). The panels here list the recent audit log events, unauthorized audit events, audit events over time, and error audit events with error codes and error messages.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Functions/Google-Cloud-Functions-Audit-Logs.png')} style={{border: '1px solid black'}} alt="Google Cloud Functions - Audit Events" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Functions/Google-Cloud-Functions-Audit-Logs.png')} style={{border: '1px solid gray'}} alt="Google Cloud Functions - Audit Events" width="800"/>
 
 ### Performance Details
 
 The **Google Cloud Functions - Performance Details** dashboard is based on cloud function metrics. See trends over time for instance count (active and idle), number of executions, execution time, User memory, and outgoing traffic along with execution distribution, with status and timeshift comparison of execution time and number of executions.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Functions/Google-Cloud-Functions-Performance-Details.png')} style={{border: '1px solid black'}} alt="Google Cloud Functions - Performance Details" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Functions/Google-Cloud-Functions-Performance-Details.png')} style={{border: '1px solid gray'}} alt="Google Cloud Functions - Performance Details" width="800"/>
 
 ### Platform Logs
 
 The **Google Cloud Functions - Platform Logs** dashboard uses Google Cloud platform logs of cloud function, which writes logs to the stream that indicate the start and end of execution, as well as the stdout and stderr from those executions. Based on these logs, we have panels giving insights into - execution status, listing top functions with a number of executions, average latency, error status, and recent failures.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Functions/Google-Cloud-Functions-Platform-Logs.png')} style={{border: '1px solid black'}} alt="Google Cloud Functions - Platform Logs" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Functions/Google-Cloud-Functions-Platform-Logs.png')} style={{border: '1px solid gray'}} alt="Google Cloud Functions - Platform Logs" width="800"/>

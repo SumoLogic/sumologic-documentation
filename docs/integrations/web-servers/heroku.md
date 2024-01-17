@@ -212,7 +212,7 @@ The **Heroku - Overview** dashboard demonstrates the use cases for Heroku reques
 
 * **application_name**. Denotes an application name from the Heroku platform. It works on all panels of the dashboard except the **Errors Overview** panels, **the Dyno Load Average(15 min)** panel and the **Dyno Memory(MB)** panel.
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-overview.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-overview.png')} style={{border: '1px solid gray'}} alt="Heroku dashboards" />
 
 - **Total Request Count**. Shows the number of unique requests from a client to a heroku app backend.
 - **Average Connection Time**. Shows the average time in milliseconds spent establishing a connection to a backend web process.
@@ -241,7 +241,7 @@ This **Heroku - Dyno** demonstrates the use cases for successful, completed, and
 
 * **log_drain**. Denotes the drain identifier Heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-dyno.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-dyno.png')} style={{border: '1px solid gray'}} alt="Heroku dashboards" />
 
 - **Dynos**. Shows the list the current running dynos.
 - **Successful Dyno Launches**. Shows the count of dynos that have successfully started and are now running in a healthy state.
@@ -262,7 +262,7 @@ The **Heroku - Application** dashboard demonstrates the use cases for Heroku app
 
 * **log_drain**. Denotes the drain identifier Heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-application.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-application.png')} style={{border: '1px solid gray'}} alt="Heroku dashboards" />
 
 
 - **Total App Builds**. Shows the count of total application builds in Heroku.
@@ -284,7 +284,7 @@ The **Heroku - Memory Metrics** dashboard demonstrates the use cases for the met
 
 * **log_drain**. Denotes the drain identifier heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-memory-metrics.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-memory-metrics.png')} style={{border: '1px solid gray'}} alt="Heroku dashboards" />
 
 - **Resident Memory (memory_rss)**. The portion of the dyno’s memory (megabytes) held in RAM.
 - **Disk Cache Memory (memory_cache)**. The portion of the dyno’s memory (megabytes) used as disk cache.
@@ -302,7 +302,7 @@ The **Heroku - CPU Load Metrics** dashboard demonstrates the use cases for the m
 
 * **log_drain**. denotes the drain identifier Heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-cpu-load-metrics.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-cpu-load-metrics.png')} style={{border: '1px solid gray'}} alt="Heroku dashboards" />
 
 - **Load Average 1m (load_avg_1m)**. The load average for the dyno in the last 1 minute. This reflects the number of CPU tasks that are in the ready queue or waiting to be processed.
 - **Load Average 5m (load_avg_5m)**. The load average for the dyno in the last 5 minutes. Computed in the same manner as 1m load average.
@@ -318,7 +318,7 @@ The **Heroku - Infrastructure Errors** dashboard demonstrates the use cases for 
 
 The panels of this dashboard try to cover a few error cases from the list of errors present [here](https://devcenter.heroku.com/articles/error-codes).
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-infrastructure-errors.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-infrastructure-errors.png')} style={{border: '1px solid gray'}} alt="Heroku dashboards" />
 
 ### Application Errors
 
@@ -326,7 +326,7 @@ The **Heroku - Application Errors** dashboard demonstrates the use cases for Her
 
 * **log_drain**. Denotes the drain identifier Heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
-<img src={useBaseUrl('img/integrations/web-servers/heroku-application-errors.png')} style={{border: '1px solid black'}} alt="Heroku dashboards" />
+<img src={useBaseUrl('img/integrations/web-servers/heroku-application-errors.png')} style={{border: '1px solid gray'}} alt="Heroku dashboards" />
 
 - **Total App Errors**. Shows the count of total heroku application errors.
 - **App Release Errors**. Shows the count of total heroku application errors that occurred during application releases.
