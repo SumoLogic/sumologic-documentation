@@ -686,13 +686,6 @@ You can use a link to a file embedding the entire file, or embed a range of code
   ```
 1. Copy the below code snippet and paste it where you want your image to appear.
    ```
-   <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" width="<insert-pixel-number>"/>
-   ```
-   Or
-
-   Use the following code to add a border to the image.
-
-  ```
    <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" style={{border: '1px solid gray'}} width="<insert-pixel-number>" />
    ```
 1. Replace with file path above with your own image file path. The file path must start with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
@@ -704,7 +697,7 @@ You can use a link to a file embedding the entire file, or embed a range of code
 1. Add alt text for your image (for example, `"Image properties dialog"` or `"Sumo Logic logo"`). This is a brief description of what the image is meant to show. Alt text is a label, not a caption, and doesn't need to describe all details of an image. If you are editing and you come across an image without `alt text`, add it!
 
   <details>
-<summary>More about <code>alt text</code></summary>
+  <summary>More about <code>alt text</code></summary>
 
   Alt text is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download. Alt text is required under [US Government GSA Section 508](https://www.section508.gov/) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
 
@@ -723,13 +716,13 @@ You can use a link to a file embedding the entire file, or embed a range of code
   <TabItem value="Markdown">
 
   ```md
-  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" width="150"/>
+  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
   ```
 
   </TabItem>
   <TabItem value="Result">
 
-  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" width="150"/>
+  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" style={{border: '1px solid gray'}} width="150"/>
 
   </TabItem>
   </Tabs>
@@ -1149,7 +1142,7 @@ We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orang
 
 Keep release notes concise with links to documentation and images for updated UI elements. You're welcome to add [frontmatter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog) such as tags and keywords.
 
-Add your release note in the appropriate blog folder ([blog-collector](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-collector), [blog-cse](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-cse), [blog-developer](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-developer), [blog-service](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-service)) found at the top level of [sumologic-documentation](https://github.com/SumoLogic/sumologic-documentation). Those folders correspond to the different release note sections:<br/><img src={useBaseUrl('img/contributing/release-notes-dropdown-menu.png')} alt="Release notes menu" width="200"/>
+Add your release note in the appropriate blog folder ([blog-collector](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-collector), [blog-cse](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-cse), [blog-developer](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-developer), [blog-service](https://github.com/SumoLogic/sumologic-documentation/tree/main/blog-service)) found at the top level of [sumologic-documentation](https://github.com/SumoLogic/sumologic-documentation). Those folders correspond to the different release note sections:<br/><img src={useBaseUrl('img/contributing/release-notes-dropdown-menu.png')} alt="Release notes menu" style={{border: '1px solid gray'}} width="200"/>
 
 
 ### Text only
