@@ -86,7 +86,7 @@ _sourceCategory=Labs/AWS/CloudTrail/APIGateway "apigateway.amazonaws.com" Namesp
 
 ## Viewing AWS API Gateway dashboards
 
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of our AWS Observability solution.
 
 import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
