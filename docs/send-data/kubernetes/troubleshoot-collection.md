@@ -208,7 +208,6 @@ otellogs:
 ```
 
 For more information, see [Setting different resources on different nodes for logs collector](/docs/send-data/kubernetes/best-practices/#setting-different-resources-on-different-nodes-for-logs-collector).
-document.
 
 ## Collecting metrics
 
