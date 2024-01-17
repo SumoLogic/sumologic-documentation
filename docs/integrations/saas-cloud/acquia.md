@@ -150,7 +150,7 @@ This section walks you through the process of creating a new Sumo Logic hosted c
 
 To create a new Sumo Logic hosted collector, do the following:
 
-1. In Sumo Logic select** Manage Data > Collection > Collection**.
+1. In Sumo Logic select **Manage Data > Collection > Collection**.
 2. Click **Add Collector**.
 3. Click **Hosted **Collector.
 4. Provide a **Name** for the Collector.

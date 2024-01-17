@@ -166,7 +166,7 @@ To configure a local file source for HTTP Error Logs, do the following:
     4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
     5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
     6. **Source Category** (Required). For example, Webserver/IIS/Error.
-    7. **Fields. **Set the following fields**: \
+    7. **Fields.** Set the following fields: \
 `component = webserver \
 webserver_system = iis \
 webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one.
@@ -202,7 +202,7 @@ To configure a Source for IIS Performance Logs, do the following:
     * **Source Category** (Required). For example, Webserver/IIS/PerfCounter.
     * **Frequency**: **Every Minute** (you may custom choose frequency)
     * **Description**. (Optional)
-    * **Fields. **Set the following fields**: \
+    * **Fields.** Set the following fields:
 `component = webserver \
 webserver_system = iis \
 webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one.
@@ -236,7 +236,7 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 
 #### Set up Telegraf
 
-1. **Install Telegraf if you haven’t already. **Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
+1. **Install Telegraf if you haven’t already.** Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 2. **Configure and start Telegraf.** As part of collecting metrics data from Telegraf, we will use the[ Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
 <details>

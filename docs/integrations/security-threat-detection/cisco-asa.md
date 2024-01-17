@@ -115,7 +115,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Denied Connections by Location.** Uses a geolocation query to track the number of denied connections and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search **to see more details of the query results.
 
-**Total Denied Sources. **Displays the total number of denied Sources as a single value chart for the last hour.
+**Total Denied Sources.** Displays the total number of denied Sources as a single value chart for the last hour.
 
 **Bandwidth Served.** Shows the amount of bandwidth served as a single value chart for the last hour.
 
@@ -149,7 +149,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Count of ASA Logs by LogLevel.** Displays the logs by LogLevel and Severity.
 
-**Count by Severity Code. **Displays the logs by Severity Code.
+**Count by Severity Code.** Displays the logs by Severity Code.
 
 **Parameterized Search.** Log Details with counts.
 

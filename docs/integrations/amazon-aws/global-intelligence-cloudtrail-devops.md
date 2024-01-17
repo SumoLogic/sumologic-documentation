@@ -285,7 +285,7 @@ The **GI CloudTrail DevOps - 05. Configuration Benchmarks** dashboard provides i
 
 Three types of configurations are benchmarked to help users understand the common values of each setting in the Sumo Logic population for a given AWS service:
 
-1. **Categorical Configuration. **Users pick a setting from a list of values, for example, database engine brand for RDS. For categorical configurations, the benchmark is the average number of resources with a given setting computed across all resources of a given service. For example, RDS engine type (for example, MySQL) is computed as the percentage of RDS instances across all customers that use MySQL in a given AWS region.  
+1. **Categorical Configuration.** Users pick a setting from a list of values, for example, database engine brand for RDS. For categorical configurations, the benchmark is the average number of resources with a given setting computed across all resources of a given service. For example, RDS engine type (for example, MySQL) is computed as the percentage of RDS instances across all customers that use MySQL in a given AWS region.  
 2. **Numerical Configuration.** Users set a numerical value, for example, memory size for an AWS Lambda function. Numerical configurations are expressed as p99 and max values of the setting across all resources of a given service. For example, timeout value is represented as the p99 and max across all Lambda functions discovered by Global Intelligence.
 3. **Boolean Configuration.** Users turn a setting on or off, for example, multiAZ setting for RDS. Similar to categorical configuration, this is represented by the percentage of resources with true (or false) value for a given setting.
 
@@ -380,7 +380,7 @@ The following [categorical configurations](https://docs.aws.amazon.com/AmazonEla
 * **Engine.** redis | memcached
 * **EngineVersion.** version of redis | memcached in use
 * **CacheNodeType.** The compute and memory capacity of the nodes in the node group (shard). For more information, see [Choosing Your Node Size](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes-select-size.html#CacheNodes.SelectSize).
-* **AZMode. **Specifies whether the nodes in this Memcached cluster are created in a single Availability Zone or created across multiple Availability Zones in the cluster's region.
+* **AZMode.** Specifies whether the nodes in this Memcached cluster are created in a single Availability Zone or created across multiple Availability Zones in the cluster's region.
 
 The following numerical configurations are benchmarked:
 

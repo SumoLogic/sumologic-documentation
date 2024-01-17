@@ -22,7 +22,7 @@ To install the app:
 
 1. From **App Catalog**, search for the **Data Volume** app.
 2. Click **Data Volume**.
-3. Select the version and click **Add to Library. **This opens a new window. Within the window, click on **Advanced** and choose a location to install the app.<br/><img src={useBaseUrl('img/integrations/sumo-apps/app.png')} alt="Data volume" />
+3. Select the version and click **Add to Library.** This opens a new window. Within the window, click on **Advanced** and choose a location to install the app.<br/><img src={useBaseUrl('img/integrations/sumo-apps/app.png')} alt="Data volume" />
 4. Choose a location for Data Volume in your **Personal** folder.
 5. Click **Add to Library**. A dialog will confirm the app is installed successfully.
 

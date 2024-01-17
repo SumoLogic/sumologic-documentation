@@ -338,7 +338,7 @@ This section provides instructions for configuring log collection for Kafka runn
      * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
      * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Kafka Server’s time zone.
      * **Timestamp Format.** The timestamp format is automatically detected.
-     * **Encoding. **Select** **UTF-8 (Default).
+     * **Encoding.** Select UTF-8 (Default).
      * **Enable Multiline Processing.** Detect messages spanning multiple lines
      * Select Infer Boundaries - Detect message boundaries automatically
     4. Click **Save**.
@@ -595,9 +595,9 @@ The **Kafka - Request-Response** **Times** dashboard helps you get insight into 
 
 Use this dashboard to:
 * Monitor request time metrics - The Request Metrics metric group contains information regarding different types of request to and from the cluster. Important request metrics to monitor:
-    1. **Fetch Consumer Request Total Time **- The Fetch Consumer Request Total Time metric shows the maximum and mean amount of time taken for processing, and the number of requests from consumers to get new data. Reasons for increased time taken could be: increased load on the node (creating processing delays), or perhaps requests are being held in purgatory for a long time (determined by fetch.min.bytes and fetch.wait.max.ms metrics).
+    1. **Fetch Consumer Request Total Time** - The Fetch Consumer Request Total Time metric shows the maximum and mean amount of time taken for processing, and the number of requests from consumers to get new data. Reasons for increased time taken could be: increased load on the node (creating processing delays), or perhaps requests are being held in purgatory for a long time (determined by fetch.min.bytes and fetch.wait.max.ms metrics).
     2. **Fetch Follower Request Total Time** - The Fetch Follower Request Total Time metric displays the maximum and mean amount of time taken while processing, and the number of requests to get new data from Kafka brokers that are followers of a partition. Common causes of increased time taken are increased load on the node causing delays in processing requests, or that some partition replicas may be overloaded or temporarily unavailable.
-    3. **Produce Request Total Time **- The Produce Request Total Time metric displays the maximum and mean amount of time taken for processing, and the number of requests from producers to send data. Some reasons for increased time taken could be: increased load on the node causing delays in processing the requests, or perhaps requests are being held in purgatory for a long time (if the `requests.required.acks` metrics is equal to '1' or all).
+    3. **Produce Request Total Time**- The Produce Request Total Time metric displays the maximum and mean amount of time taken for processing, and the number of requests from producers to send data. Some reasons for increased time taken could be: increased load on the node causing delays in processing the requests, or perhaps requests are being held in purgatory for a long time (if the `requests.required.acks` metrics is equal to '1' or all).
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Request-Response-Times.png')} alt="Kafka dashboards" />
 

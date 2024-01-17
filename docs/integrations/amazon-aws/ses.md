@@ -113,7 +113,7 @@ Before you configure the log sources for the Amazon SES app, decide on the sourc
 
 ### Step 3: Collect Amazon SES events using CloudTrail
 
-1. In Sumo Logic select** Manage Data > Collection > Collection**.
+1. In Sumo Logic select **Manage Data > Collection > Collection**.
 2. On the **Collectors** page, click **Add Source** next to a Hosted** **Collector, either an existing Hosted Collector, or one you have created for this purpose.
 3. Select AWS CloudTrail as your AWS Source type.
 4. Enter a name for the new Source. A description is optional.
@@ -184,7 +184,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
   * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
     * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
     * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
-* **Enable Multiline Processing. **See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
+* **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
     * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
     * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
 14. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the AWS Source.
@@ -365,11 +365,11 @@ See the details of bounced notifications by email addresses, domains, bounce typ
 
 **Bounce Type Trend.** See the trend in the bounce types in the last 24 hours on a stacked column chart.
 
-**Transient Bounce. **MailBox Full. See the top 10 bounced email addresses of transient bounce type, and mailbox full bounce subtype, by count in the last 24 hours.
+**Transient Bounce.** MailBox Full. See the top 10 bounced email addresses of transient bounce type, and mailbox full bounce subtype, by count in the last 24 hours.
 
 **Transient Bounce**. Content Rejected. See the top 10 bounced email addresses of transient bounce type, and content rejected bounce subtype, by count in the last 24 hours.
 
-**Transient Bounce. **General. See the top 10 bounced email addresses of transient bounce type, and general subtype, by count in the last 24 hours.
+**Transient Bounce.** General. See the top 10 bounced email addresses of transient bounce type, and general subtype, by count in the last 24 hours.
 
 **Transient Bounce**. SubType Breakup. See the count of transient bounce type for each subtype in the last 24 hours on a pie chart.
 
@@ -379,9 +379,9 @@ See the details of bounced notifications by email addresses, domains, bounce typ
 
 **Transient Bounce.** Sub Type Trend. See the trend in the transient bounce type by subtype on a stacked column chart in the last 24 hours.
 
-**Permanent Bounce. ** Sub Type Trend. See the trend in the permanent bounce type by subtype on a stacked column chart in the last 24 hours.
+**Permanent Bounce.**  Sub Type Trend. See the trend in the permanent bounce type by subtype on a stacked column chart in the last 24 hours.
 
-**Undetermined Bounce. **Sub Type Trend. See the trend in the undetermined bounce type by subtype on a stacked column chart in the last 24 hours.
+**Undetermined Bounce.** Sub Type Trend. See the trend in the undetermined bounce type by subtype on a stacked column chart in the last 24 hours.
 
 
 ### Complaint Notifications
@@ -398,12 +398,12 @@ See information about complaints (a complaint occurs when a recipient reports th
 
 **Complaint Feedback Type Trend.** See the trend in the complaint feedback types in the last 24 hours on a stacked column chart.
 
-**Top Source Generating Complaints. **See the top 10 sources generating complaint notifications in the last 24 hours.
+**Top Source Generating Complaints.** See the top 10 sources generating complaint notifications in the last 24 hours.
 
-**Sending AccountId. **See the AWS Account Id of the accounts sending emails generating complaint notifications in the last 24 hours.
+**Sending AccountId.** See the AWS Account Id of the accounts sending emails generating complaint notifications in the last 24 hours.
 
-**Sending AWS Region. **See the AWS region of the accounts sending emails generating complaint notifications in the last 24 hours.
+**Sending AWS Region.** See the AWS region of the accounts sending emails generating complaint notifications in the last 24 hours.
 
-**Sending SourceIP. **See the IP addresses of the users sending emails generating complaint notifications in the last 24 hours.
+**Sending SourceIP.** See the IP addresses of the users sending emails generating complaint notifications in the last 24 hours.
 
-**Sending Identity. **See the identity of the users sending emails generating complaint notifications in the last 24 hours.
+**Sending Identity.** See the identity of the users sending emails generating complaint notifications in the last 24 hours.

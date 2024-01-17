@@ -350,7 +350,7 @@ Logs from the RabbitMQ log file can be collected via a Sumo Logic [Installed col
       * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
       * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your RabbitMQ Server’s time zone.
       * **Timestamp Format.** The timestamp format is automatically detected.
-      * **Encoding. **Select** **UTF-8 (Default).
+      * **Encoding.** Select UTF-8 (Default).
       * **Enable Multiline Processing.** Detect messages spanning multiple lines
       * Infer Boundaries - Detect message boundaries automatically
    4. Click **Save**.

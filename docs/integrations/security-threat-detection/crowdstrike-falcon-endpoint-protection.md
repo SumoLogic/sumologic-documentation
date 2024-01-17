@@ -244,7 +244,7 @@ To configure CrowdStrike SIEM Connector, do the following:
    * **client_id - **Add your recorded API Client ID
    * **client_secret - **Add your recorded API Client Secret
    * Make sure **output_format** is set to **json**
-   * For **EventTypeCollection **section - Enable all events:
+   * For **EventTypeCollection** section - Enable all events:
      * DetectionSummaryEvent = true
      * AuthActivityAuditEvent = true
      * UserActivityAuditEvent = true

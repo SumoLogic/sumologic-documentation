@@ -376,13 +376,13 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Salesforce-Overview.png')} alt="SalesForce dashboards" />
 
-**Logins by Location. **Uses a geo lookup operation to display login activity on a map of the world for the last two days.
+**Logins by Location.** Uses a geo lookup operation to display login activity on a map of the world for the last two days.
 
-**Top 10 Active Users. **Lists the top 10 active users in a table chart including user name and count for the last two days.
+**Top 10 Active Users.** Lists the top 10 active users in a table chart including user name and count for the last two days.
 
 **Most Viewed Reports.** Displays the most viewed reports in a pie chart for the last two days.
 
-**Most Downloaded Documents. **Provides details on the most downloaded documents in a table chart with information on file name and count for the last two days.
+**Most Downloaded Documents.** Provides details on the most downloaded documents in a table chart with information on file name and count for the last two days.
 
 **REST API Calls by URI.** Shows all REST API calls by URI in a pie chart for the last two days.  
 
@@ -397,11 +397,11 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 
 **Slowest Classes in APEX SOAP Calls.** Provides details on the slowest classes in APEX SOAP calls in a table chart, including information on the class name and the average run time for the last 24 hours.
 
-**SOQL Run Time by URI. **Displays the SOQL run time by URI in a table chart including details on the query, URL, count, and average run time for the last 24 hours.
+**SOQL Run Time by URI.** Displays the SOQL run time by URI in a table chart including details on the query, URL, count, and average run time for the last 24 hours.
 
 **Slowest Pages in APEX Calls.** Provides information on the slowest pages in APEX calls in a table chart including details on the URL and average run time for the last 24 hours.
 
-**Non-REST API Actions by Client. **Shows the non-REST API actions by client in a stacked column chart for the last 24 hours.
+**Non-REST API Actions by Client.** Shows the non-REST API actions by client in a stacked column chart for the last 24 hours.
 
 **REST API Calls Over Time.** Displays REST API calls over time in a stacked column chart on a timeline for the last 24 hours.
 
@@ -416,15 +416,15 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 
 **Logins by Status Over Time.** Displays successes and failures in a column chart on a timeline for the last two days.
 
-**LoginAs by Source User. **Provides details on LoginAs actions by source user in a stacked column chart for the last two days.
+**LoginAs by Source User.** Provides details on LoginAs actions by source user in a stacked column chart for the last two days.
 
-**Logins by External Users. **Shows the number of logins by external users by user name on a column chart for the last two days.
+**Logins by External Users.** Shows the number of logins by external users by user name on a column chart for the last two days.
 
-**Login Attempt Outlier. **Performs an outlier operation to display login attempts on a timeline for the last two days.
+**Login Attempt Outlier.** Performs an outlier operation to display login attempts on a timeline for the last two days.
 
-**Most Active Users. **Displays the most active users in a table chart including details on the user name and count for the last two days.
+**Most Active Users.** Displays the most active users in a table chart including details on the user name and count for the last two days.
 
-**Failed Logins by Client IP. **Shows details of failed logins by client IP address including information on the client IP address and the count for the last two days.
+**Failed Logins by Client IP.** Shows details of failed logins by client IP address including information on the client IP address and the count for the last two days.
 
 **Most Active Client IPs.** Displays the most active client IP addresses in a table chart including details on the client IP address and count for the last two days.
 
@@ -433,20 +433,20 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 
 <img src={useBaseUrl('img/integrations/saas-cloud/ReportPerformance.png')} alt="SalesForce dashboards" />
 
-**Report Run Count and Average Run Time (ms). **Displays the report run count (bar chart) and the average run time (line chart) in milliseconds in a combo chart on a timeline for the last 24 hours.
+**Report Run Count and Average Run Time (ms).** Displays the report run count (bar chart) and the average run time (line chart) in milliseconds in a combo chart on a timeline for the last 24 hours.
 
 **Top 10 Slowest Reports.** Shows the top 10 slowest reports by count and report ID on a column chart for the last 24 hours.
 
 **Most Viewed Reports.** Provides details on the most viewed reports by count and report ID in a bar chart for the last 24 hours.
 
-**Most Active Report Viewers. **Displays the most active report viewed by count and user ID on a column chart for the last 24 hours.
+**Most Active Report Viewers.** Displays the most active report viewed by count and user ID on a column chart for the last 24 hours.
 
 
 ### Setup Audit Activity
 
 <img src={useBaseUrl('img/integrations/saas-cloud/SetupAuditActivity.png')} alt="SalesForce dashboards" />
 
-**Setup Audit Activity by Section. **Displays setup audit activity by section in a pie chart for the last two days.
+**Setup Audit Activity by Section.** Displays setup audit activity by section in a pie chart for the last two days.
 
 **Recent Security Control Activities.** Provides details on recent security control activities in a table chart including information on the source user, display, action, and time for the last two days.
 
@@ -463,17 +463,17 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 
 **Most Accessed Dashboards.** Displays the Dashboards most often accessed by users in a pie chart for the last two days.
 
-**Non-Login Activities. **Performs a geo lookup operation and displays the IP address location of non-login activities on a map of the world for the last two days.
+**Non-Login Activities.** Performs a geo lookup operation and displays the IP address location of non-login activities on a map of the world for the last two days.
 
 **Content Document Sharing.** Provides details on documents shared by users in a table chart including information on the source user, action, destination user, document ID and count for the last two days.
 
-**Most Accessed Reports. **Shows the reports most often accessed by users and the count in a column chart for the last two days.
+**Most Accessed Reports.** Shows the reports most often accessed by users and the count in a column chart for the last two days.
 
-**Most Exported Reports. **Displays details on the reports most exported by users in a column chart by report name and count for the last two days.
+**Most Exported Reports.** Displays details on the reports most exported by users in a column chart by report name and count for the last two days.
 
-**Most Document Attachment Downloads. **Displays information on the documents with attachments that were most often downloaded by users in a column chart by attachment name, type, and count for the last two days.
+**Most Document Attachment Downloads.** Displays information on the documents with attachments that were most often downloaded by users in a column chart by attachment name, type, and count for the last two days.
 
-**Most Accessed Documents. **Provides details on the documents most accessed by users in a bar chart by count for the last two days.
+**Most Accessed Documents.** Provides details on the documents most accessed by users in a bar chart by count for the last two days.
 
 **Activities by User.** Shows information on activities by user in a stacked column chart for the last two days.
 
@@ -484,15 +484,15 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 
 <img src={useBaseUrl('img/integrations/saas-cloud/UserActivityMonitoring.png')} alt="SalesForce dashboards" />
 
-**Last login by User. **Displays the details of last logins by user in the last two days including the user name and last login time.
+**Last login by User.** Displays the details of last logins by user in the last two days including the user name and last login time.
 
 **Reports Exported by User.** Shows the count of reports exported by user including the user name, user ID, and report name in the last 14 days on a pie chart.
 
 **Data, Users, Security Changes by Admin.** Displays the details of data, user, and security changes performed by admin in the last 14 days including the user ID, section, and action performed.
 
-**User Document Downloads. **Shows the details of user documents downloaded in the last 14 days including the user ID, and file name.
+**User Document Downloads.** Shows the details of user documents downloaded in the last 14 days including the user ID, and file name.
 
-**Created Users. **Displays the details of users created in the last 30 days including the source user ID and the description of the action performed.
+**Created Users.** Displays the details of users created in the last 30 days including the source user ID and the description of the action performed.
 
 **Password Changes**. Displays the details of password changes in the last 14 days including the source user ID and the description of the action performed.
 
@@ -503,9 +503,9 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 
 <img src={useBaseUrl('img/integrations/saas-cloud/UserAgent.png')} alt="SalesForce dashboards" />
 
-**Platform Distribution. **Displays the distribution of operating system type used by users in a pie chart for the last seven days.
+**Platform Distribution.** Displays the distribution of operating system type used by users in a pie chart for the last seven days.
 
-**Browser Distribution. **Provides information on the web browser distribution used by users in a pie chart for the last seven days.
+**Browser Distribution.** Provides information on the web browser distribution used by users in a pie chart for the last seven days.
 
 **Browser Trend.** Shows the number and type of web browsers used to login in a stacked column chart on a timeline for the last seven days.
 

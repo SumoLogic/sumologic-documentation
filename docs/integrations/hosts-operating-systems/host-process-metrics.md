@@ -341,7 +341,7 @@ email_notifications = [
 
 #### Install the Alerts
 
-1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/host_process_metrics/` and run **terraform init. **This will initialize Terraform and will download the required components.
+1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/host_process_metrics/` and run **terraform init.** This will initialize Terraform and will download the required components.
 2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
 3. Run **terraform apply**.
 

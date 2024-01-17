@@ -38,14 +38,14 @@ If this is the first time you are creating an HTTPS collector, review how to cre
 3. In **Add Hosted Collector** enter:
    * **Name.** Halo_Lambda_Ingestor.
    * **Description.** Halo Events Collector.
-   * **Category. **CP_Halo.
+   * **Category.** CP_Halo.
    * And click **Save**.
 4. Click OK to add a source to your collector.
 5. Select **HTTP** as the source type.
 6. Enter the information as below for **Halo Security Events**.
    * **Name.** CP_Halo_Workload_Security_Events_Collector.
    * **Description.** Halo Security Events Collector.
-   * **Source Host. **CP_Halo.
+   * **Source Host.** CP_Halo.
    * **Source Category.** halo/workload/security/events
 7. Click **Save.** Be sure to note the endpoint URL provided for this collection. You will need it later.
 8. Create a second source.
@@ -54,7 +54,7 @@ If this is the first time you are creating an HTTPS collector, review how to cre
 11. Enter the information as below for **Halo Metric Events**.
    * **Name.** CP_Halo_Metrics_Collector.
    * **Description.** Halo key metrics collector.
-   * **Source Host. **CP_Halo.
+   * **Source Host.** CP_Halo.
    * **Source Category.** halo/metrics.
 12. When you are done, you should have two collections **CP_Halo_Metrics_Collector** and  **CP_Halo_Workload_Security_Events_Collector** set up under a single collector **Halo_Lambda_Ingestor**.
 
@@ -183,14 +183,14 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 View counts of key information for you system as well as top and bottom 10 processes for Linux, top and bottom 10 services for Windows, and top and bottom 10 software vulnerabilities found by CloudPassage Halo.
 
-* **Critical Issues / Non-Critical Issues. **Number of critical and non-critical issues  (Single Number Panel with 15min time range).
+* **Critical Issues / Non-Critical Issues.** Number of critical and non-critical issues  (Single Number Panel with 15min time range).
 * **Severity(Active) Count.** Number of active workloads (Single Number Panel with 15min time range)
 * **Number of OS Types.** Number of OS types found from each and every workloads managed by Halo (Single Number Panel with 15min time range)
 * **Number of Processes.** Number of processes found from each and every workloads managed by Halo  (Single Number Panel with 15min time range)
 * **Number of User Accounts**. Number of user accounts found from each and every workloads managed by Halo (Single Number Panel with 15min time range.
 * **Number of SWs.** Number of SW packages found from each and every workloads managed by Halo (Single Number Panel with 15min time range)
-* **Halo Related Security Events and Metrics. **This is a line graphs for Halo related events and metrics from the account (Line graph with running average with 24hrs time range)
-* **Top 10 Linux Processes / Bottom 10 Linux Processes. **Top & Bottom 10 Linux processes found from the workloads managed by Halo (Table panel with 7min time range)
+* **Halo Related Security Events and Metrics.** This is a line graphs for Halo related events and metrics from the account (Line graph with running average with 24hrs time range)
+* **Top 10 Linux Processes / Bottom 10 Linux Processes.** Top & Bottom 10 Linux processes found from the workloads managed by Halo (Table panel with 7min time range)
 * **Top 10 Windows Services / Bottom 10 Windows Services**. Top & Bottom 10 Windows services found from the workloads managed by Halo (Table panel with 7min time range
 * **Top 10 SW Vulnerabilities / Bottom 10 SW Vulnerabilities.** Top & Bottom 10 software vulnerabilities found from the workloads managed by Halo (Table panel with 7min time range)
 

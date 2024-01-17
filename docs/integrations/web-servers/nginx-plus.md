@@ -191,10 +191,10 @@ To collect logs directly from your Nginx Plus machine, use an Installed Collecto
     * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
     * **Time Zone.** Automatically detect.
     * **Timestamp Format.** The timestamp format is automatically detected.
-    * **Encoding. **Select** **UTF-8 (Default).
+    * **Encoding.** Select UTF-8 (Default).
     * **Enable Multiline Processing.**
-        * **Error** **logs. **Select **Detect messages spanning multiple lines** and **Infer Boundaries - Detect message boundaries automatically**.
-        * **Access** **logs. **These are single-line logs, uncheck **Detect messages spanning multiple lines**.
+        * **Error logs.** Select **Detect messages spanning multiple lines** and **Infer Boundaries - Detect message boundaries automatically**.
+        * **Access logs.** These are single-line logs, uncheck **Detect messages spanning multiple lines**.
 4. Click **Save**.
 
 </details>

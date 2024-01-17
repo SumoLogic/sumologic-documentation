@@ -401,7 +401,7 @@ See information about database user account events, including database user data
 
 **Create User Events**. Shows an aggregation table with user creation events in the last 24 hours, along with time, command, database name, username, port id, x id, sql statement, and a count of events.
 
-**Drop User Events. **Shows an aggregation table with drop user events in the last 24 hours, along with time, command, database name, username, port id, x id, sql statement, and a count of events.
+**Drop User Events.** Shows an aggregation table with drop user events in the last 24 hours, along with time, command, database name, username, port id, x id, sql statement, and a count of events.
 
 **Alter User Events**. Shows an aggregation table with alter user events in the last 24 hours, along with time, command, database name, username, port id, x id, sql statement, and a count of events.
 

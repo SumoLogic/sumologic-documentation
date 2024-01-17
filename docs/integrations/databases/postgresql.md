@@ -358,7 +358,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQ
     * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
     * **Time Zone.** Use **the timezone from log file **option.
     * **Timestamp Format.** The timestamp format is automatically detected.
-    * **Encoding. **Select** **UTF-8 (Default).
+    * **Encoding.** Select UTF-8 (Default).
     * **Enable Multiline Processing.** Detect messages spanning multiple lines
         * Select Infer Boundaries - Detect message boundaries automatically
    5. Click **Save**.

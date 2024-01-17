@@ -56,7 +56,7 @@ noun. Initial cap for “continuous” only applies when it starts a sentence.
 **Drill down**. Drill down, as in a menu, or other filtering feature is two words, not one.
 
 **Dropdown**.
-   * Use drop-down (Adjective). Example: Choose your favorite model from a *drop-down* menu. 
+   * Use drop-down (Adjective). Example: Choose your favorite model from a *drop-down* menu.
    * Use dropdown (Noun). Example: Select a source category from the *dropdown*. Do not use drop down (two words).
 
 :::info
@@ -117,7 +117,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Markdown**. Used in Text Panels. Capitalize Markdown.
 
-**MB and Mbit. **MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
+**MB and Mbit.** MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
 
 **Menu**. When referring to a menu in the UI, use the word menu alone. Don't use dropdown menu, list, or selector.
 
@@ -161,7 +161,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Saved search**. Saved search is not capitalized.
 
-**Scheduled search. **Scheduled search is not capitalized.
+**Scheduled search.** Scheduled search is not capitalized.
 
 **Search**. Search is not capitalized, unless you are referring to the Search page.
 
@@ -204,10 +204,10 @@ Hosted Collectors can use:
 
 **Time range**. Time range is two words, not one.
 
-**Time series. **Time series is two words, not one.
+**Time series.** Time series is two words, not one.
 
 **Time slice**. Time slice is two words, not one.
- 
+
 **Timestamp**. Timestamp is one word.
 
 **Time zone**. Time zone is two words, not one.

@@ -195,25 +195,25 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 **Finding Severity by Template.** Displays the severity of findings by template in a bar chart for the last seven days.
 
-**Trend of Findings by RulesPackage. **Shows the trend of findings by RulesPackage in a trend line chart on a timeline for the last seven days.
+**Trend of Findings by RulesPackage.** Shows the trend of findings by RulesPackage in a trend line chart on a timeline for the last seven days.
 
-**Last Run by Template. **Shows the last run by template in a table chart, including details on the template, lastrun, lastevent, and timestamp for the last seven days.
+**Last Run by Template.** Shows the last run by template in a table chart, including details on the template, lastrun, lastevent, and timestamp for the last seven days.
 
-**Trend of Findings by Template. **Shows the trend of findings by template in a trend line chart on a timeline for the last seven days.
+**Trend of Findings by Template.** Shows the trend of findings by template in a trend line chart on a timeline for the last seven days.
 
 
 ### Findings
 
 <img src={useBaseUrl('img/integrations/amazon-aws/amazon_inspector_findings.png')} alt="amazon_inspector_findings" />
 
-**Finding Severity Over Time. **Shows the finding severity over time in a stacked column chart on a timeline for the last seven days.
+**Finding Severity Over Time.** Shows the finding severity over time in a stacked column chart on a timeline for the last seven days.
 
-**Outlier Indicator of Non-Information Findings. **Displays the indicator of non-informational findings in an outlier chart for the last seven days.
+**Outlier Indicator of Non-Information Findings.** Displays the indicator of non-informational findings in an outlier chart for the last seven days.
 
 **Templates Not Run in a Day.** Provides information on templates that have not been run in a day in a table chart, including details on the template, last event, and last event date for the last seven days.
 
 **Finding Details.** Displays complete finding details in a table chart, including information on the finding title, description, create date, template, run, and finding severity for the last seven days.
 
-**Finding Severity by Template and Run. **Shows the details of finding severity by template and run in a table chart including information on the template, run, create date, and medium or informational severity for the last seven days.
+**Finding Severity by Template and Run.** Shows the details of finding severity by template and run in a table chart including information on the template, run, create date, and medium or informational severity for the last seven days.
 
 **Persistent Findings.** Displays persistent findings in a table chart, including details on the finding title, template, finding severity, and number of runs for the last seven days.

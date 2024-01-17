@@ -179,11 +179,11 @@ See information about request activity in Google Cloud Load Balancing, including
 
 **KBs Sent, received by Number of Requests.** A combination chart showing a bar chart of request counts, and a line chart showing data received and data sent over the last 24 hours.
 
-**Requests by Load Balancer Over Time. **A line chart showing the count of requests by load balancer over the last 24 hours.
+**Requests by Load Balancer Over Time.** A line chart showing the count of requests by load balancer over the last 24 hours.
 
 **Number of Requests - Outlier**. Shows instances where the count of requests was significantly significant, more than three standard deviations from the running average over the last 24 hours.
 
-**Total Requests by Load Balancer. **A bar chart that shows the total count of requests by load balancer over the last 24 hours.
+**Total Requests by Load Balancer.** A bar chart that shows the total count of requests by load balancer over the last 24 hours.
 
 
 ### Status Analysis
@@ -204,7 +204,7 @@ See information about the status of requests in Google Cloud Load Balancing, inc
 
 **5xx  Status Code Locations.** A world map that shows the locations of 5xx status codes over the last 24 hours.
 
-**5xx Status Code Per Load Balancer. **A stacked column chart that shows the count of 5xx status codes by load balancer over the last 24 hours.
+**5xx Status Code Per Load Balancer.** A stacked column chart that shows the count of 5xx status codes by load balancer over the last 24 hours.
 
 **4xx Status Codes Locations**. A world map that shows the locations of 4xx status codes over the last 24 hours.
 

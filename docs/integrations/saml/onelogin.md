@@ -140,7 +140,7 @@ The Sumo Logic App for OneLogin helps you monitor the overall health of your One
 
 **Logins by Country.** See the count of number of logins by country name displayed in a table to get an idea of your visitor traffic by country in the last 24 hours.
 
-**Event Outlier Over Time. **See the events that fall outside the normal range for the last 24 hours.
+**Event Outlier Over Time.** See the events that fall outside the normal range for the last 24 hours.
 
 **Failed Login Outlier.** See any logins over the last 24 hours that fall outside the specified failed login threshold.
 
@@ -155,7 +155,7 @@ The Sumo Logic App for OneLogin helps you monitor the overall health of your One
 
 **Event Distribution by App.** See the percentage of events by application in the last 24 hours as a pie chart to identify the event distribution by apps having the most events recently.
 
-**Event Distribution by Event ID. **See the percentage of each user action by Event ID for the last 24 hours as a pie chart to identify the apps having the most activity recently.
+**Event Distribution by Event ID.** See the percentage of each user action by Event ID for the last 24 hours as a pie chart to identify the apps having the most activity recently.
 
 **Logins by App.** See the percentage of logins by application in the last 24 hours as a pie chart to identify the apps having the most events recently.
 
@@ -172,14 +172,14 @@ The Sumo Logic App for OneLogin helps you monitor the overall health of your One
 
 **Logins by Country.** View the count of the logins by country in the last 24 hours to identify any unusual activity by country.
 
-**Users Created in Apps. **See the number of users created in applications in the last 24 hours as a column chart. You can filter by app name to track the count of a particular app.
+**Users Created in Apps.** See the number of users created in applications in the last 24 hours as a column chart. You can filter by app name to track the count of a particular app.
 
-**Assumed Users. **View the details such as the timestamp, destination user, notes, source user, and count for the event when one user acted as another user in the last 24 hours.
+**Assumed Users.** View the details such as the timestamp, destination user, notes, source user, and count for the event when one user acted as another user in the last 24 hours.
 
 **Failed Logins.** See the number of login failures by username in the last 24 hours on a bar chart to identify any unusual activity. You can filter by username as needed.
 
 **Successful Logins.** See the number of successful logins by username in the last 24 hours to identify any unusual activity. You can filter by username as needed.
 
-**User Modifications. **See user modifications by timestamp, destination user, source user, notes, and error description for the last 24 hours displayed in  table. You can filter by time, user name, source user, or error description as needed to track unusual behavior.
+**User Modifications.** See user modifications by timestamp, destination user, source user, notes, and error description for the last 24 hours displayed in  table. You can filter by time, user name, source user, or error description as needed to track unusual behavior.
 
 <img src={useBaseUrl('img/integrations/saml/OneLoginSecurity.png')} alt="OneLogin" />
