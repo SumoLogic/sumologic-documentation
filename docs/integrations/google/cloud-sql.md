@@ -143,44 +143,48 @@ For metric collection in Sumo Logic use [GCP Metric source](https://help.sumolog
 
 Now that you have set up the collection for Google Cloud SQL, install the Sumo Logic App Google Cloud SQL to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Google Cloud SQL dashboards
 
-{@import ../../reuse/filter-dashboards.md}
+import FilterDashboards from '../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
 
 ### Audit Logs
 
 The **Google Cloud SQL - Audit Logs** dashboard works with Cloud SQL audit logs. These audit logs include admin activity as well as Data access audit logs. [Here](https://cloud.google.com/sql/docs/audit-logging#audited_operations) is the list of operations tracked using audit log for Cloud SQL. This dashboard includes panels for geolocation of activity, operation by instance, created/deleted resources over time, messages with severity over time, Authorization failure, and recent error audit operations.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-Audit-Logs.png')} style={{border: '1px solid black'}} alt="Google Cloud SQL - Audit Logs" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-Audit-Logs.png')} style={{border: '1px solid gray'}} alt="Google Cloud SQL - Audit Logs" width="800"/>
 
 ### DB Instance
 
 The **Google Cloud SQL - DB Instance** dashboard works with Google Cloud SQL metrics. This dashboard provides critical performance metrics for your cloud SQL instance, like CPU/memory/disk utilization, number of connections, received and sent bytes, CPU usage time, and memory utilization distribution trend. You can filter the data for respective database instance performance using the **database_id** filter.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-DB-Instance.png')} style={{border: '1px solid black'}} alt="Google Cloud SQL - DB Instance" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-DB-Instance.png')} style={{border: '1px solid gray'}} alt="Google Cloud SQL - DB Instance" width="800"/>
 
 ### MySQL - Error Logs
 
 The **Google Cloud SQL - MySQL - Error Logs** is a MySQL-specific instance dashboard which works with Google Cloud SQL MySQL instance error logs. You can monitor failed authorization attempts with details, user location for failed authorization attempts, host info for failed authorization attempts, crash recovery attempts, server start/shutdown events over time, stopped server details, top warnings, and log-level trends.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-MySQL-Error-Logs.png')} style={{border: '1px solid black'}} alt="Google Cloud SQL - MySQL - Error Logs" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-MySQL-Error-Logs.png')} style={{border: '1px solid gray'}} alt="Google Cloud SQL - MySQL - Error Logs" width="800"/>
 
 ### MySQL - Slow Query Logs
 
 The **Google Cloud SQL - MySQL - Slow Query Logs** is a MySQL-specific instance dashboard which works with Google Cloud SQL MySQL instance slow query logs. This dashboard helps you to monitor the number of slow queries, average execution time, slow query trend, slow query by command type, slow query by host, and top SQL command causing slow queries.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-MySQL-Slow-Query-Logs.png')} style={{border: '1px solid black'}} alt="Google Cloud SQL - MySQL - Slow Query Logs" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-MySQL-Slow-Query-Logs.png')} style={{border: '1px solid gray'}} alt="Google Cloud SQL - MySQL - Slow Query Logs" width="800"/>
 
 ### MySQL Performance
 
 The **Google Cloud SQL - MySQL Performance** dashboard works with Google Cloud SQL metrics for the MySQL database. This dashboard provides an overview of a number of queries, the number of questions, InnoDB data syncs, open tables, replica lag, sent and received bytes, and other InnoDB and replication-related MySQL metrics. 
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-MySQL-Performance.png')} style={{border: '1px solid black'}} alt="Google Cloud SQL - MySQL Performance" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-MySQL-Performance.png')} style={{border: '1px solid gray'}} alt="Google Cloud SQL - MySQL Performance" width="800"/>
 
 ### Performance Overview
 
 The **Google Cloud SQL - Performance Overview** dashboard works with Google Cloud SQL metrics. This dashboard provides an overview of the average disk/CPU/memory utilization across all Cloud SQL instances, the number of connections, disk input/output operations count, and memory used along with the database status.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-Performance-Overview.png')} style={{border: '1px solid black'}} alt="Google Cloud SQL - Performance Overview" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-SQL/Google-Cloud-SQL-Performance-Overview.png')} style={{border: '1px solid gray'}} alt="Google Cloud SQL - Performance Overview" width="800"/>

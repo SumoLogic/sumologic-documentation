@@ -19,22 +19,16 @@ The following are the minimum supported requirements for this application:
 
 <table>
   <tr>
-   <td>Name
-   </td>
-   <td>Supported versions
-   </td>
+   <td>Name </td>
+   <td>Supported versions </td>
   </tr>
   <tr>
-   <td>Kubernetes
-   </td>
-   <td>1.10 and later
-   </td>
+   <td>Kubernetes </td>
+   <td>1.10 and later </td>
   </tr>
   <tr>
-   <td>AKS
-   </td>
-   <td>1.12.8
-   </td>
+   <td>AKS   </td>
+   <td>1.12.8   </td>
   </tr>
 </table>
 
@@ -150,7 +144,7 @@ This section walks you through the process of configuring a pipeline to send log
 
 1. Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
 
-	- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended) 
+	- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended)
 	- Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection)
 
 	When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AKS/ControlPlane/Logs`.
@@ -167,7 +161,7 @@ This section walks you through the process of configuring a pipeline to send log
 	7. **Event bub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
 	8. **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
 	9. Select **RootManageSharedAccessKey** from **Select event hub policy name** dropdown.
-	10. Select the checkbox for log types under **Categories** which you want to ingest.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-kuberetes.png')} style={{border: '1px solid black'}} alt="diagnostic-setting-kuberetes" width="800"/>
+	10. Select the checkbox for log types under **Categories** which you want to ingest.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-kuberetes.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting-kuberetes" width="800"/>
 	11. Click **Save**.
 
 ## Installing the AKS Control Plane app
@@ -176,7 +170,9 @@ Now that you have set up collection for AKS, you can install the Sumo Logic app 
 
 All the dashboards are linked to the Explore tab so they can be easily accessed by clicking the Cluster in the navigation pane of the Explore tab.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing the AKS Control Plane dashboards
 

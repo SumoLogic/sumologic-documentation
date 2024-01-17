@@ -77,6 +77,14 @@ kube-prometheus-stack:
             sourceLabels: [__name__]
 ```
 
+#### Apply missing Custom Resource Definition for OpenTelemetry Operator
+
+**When??** If you already use OpenTelemetry Operator in a version below `0.42.0`, apply the following command on your cluster:
+
+```shell
+kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.44.0/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml
+```
+
 ### How to revert to the v3 defaults
 
 Set the following in your configuration:

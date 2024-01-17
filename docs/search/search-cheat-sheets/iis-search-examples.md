@@ -62,8 +62,7 @@ For more information, see [Keyword Search Expressions](../get-started-with-sear
   </tr>
   <tr>
    <td>If the "sc_substatus" field is missing don’t exclude those messages (nodrop)…otherwise non-matches would be filtered out.</td>
-   <td><code>| parse " 200 * " as sc_substatus nodrop</code>
-   </td>
+   <td><code>| parse " 200 * " as sc_substatus nodrop</code></td>
   </tr>
   <tr>
    <td>Calculate the number of times a page has been visited.</td>
@@ -163,5 +162,4 @@ For more information, see [Timeslice](/docs/search/search-query-language/search
 For more information, see [Where](/docs/search/search-query-language/search-operators/where) and [If](/docs/search/search-query-language/search-operators/if). 
 :::
 
-For any query, you can increase specificity by adding metadata fields to the keyword expression. Metadata fields include `_sourceCategory`,
-`_sourceHost `, and `_sourceName`. Edit Source metadata in the **Collection** tab. For details, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
+For any query, you can increase specificity by adding metadata fields to the keyword expression. Metadata fields include `_sourceCategory`, `_sourceHost `, and `_sourceName`. Edit Source metadata in the **Collection** tab. For details, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).

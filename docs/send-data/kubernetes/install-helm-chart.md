@@ -100,8 +100,7 @@ More configuration examples (i.e. OpenShift) can found seen in [this document](h
 
 ## Viewing Data In Sumo Logic
 
-Once you have completed installation, you can [install the Kubernetes App and view the dashboards][sumo-k8s-app-dashboards] or [open a new
-Explore tab] in Sumo Logic. If you do not see data in Sumo Logic, you can review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docstroubleshoot-collection.md).
+Once you have completed installation, you can [install the Kubernetes App and view the dashboards][sumo-k8s-app-dashboards] or [open a new Explore tab] in Sumo Logic. If you do not see data in Sumo Logic, you can review our [troubleshooting guide](/docs/send-data/kubernetes/troubleshoot-collection).
 
 <img src={useBaseUrl('img/kubernetes/K8s_Cluster_Overview.png')} />
 
@@ -128,7 +127,7 @@ We documented some common customizations below:
 ### Overriding names of resources
 
 If you want to override the names of the resources created by the chart, see
-[Overriding chart resource names with `fullnameOverride`](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/best-practices.md#overriding-chart-resource-names-with-fullnameoverride).
+[Overriding chart resource names with `fullnameOverride`](/docs/send-data/kubernetes/best-practices#overriding-chart-resource-names-with-fullnameoverride).
 
 ### Using a custom container registry
 
@@ -144,6 +143,10 @@ An alternative would be to host Sumo Logic container images in one's container r
 
 [aws-public-ecr-docs]: https://aws.amazon.com/blogs/aws/amazon-ecr-public-a-new-public-container-registry/
 [aws-ecr-pricing]: https://aws.amazon.com/ecr/pricing/
+
+### Using FIPS compliant OpenTelemetry Collector
+
+Refer to the [FIPS compliant binaries](security-best-practices.md#fips-compliant-binaries) section in the [Advanced Configuration / Security Best Practices](security-best-practices.md) document.
 
 ### Proxy
 
@@ -230,7 +233,7 @@ and the associated hosted collector can be deleted in the Sumo Logic UI.
 
 ## Troubleshooting Installation
 
-See the [Troubleshooting document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md#troubleshooting-installation).
+See the [Troubleshooting document](/docs/send-data/kubernetes/troubleshoot-collection#troubleshooting-installation).
 
 ## Installing in OpenShift platform
 

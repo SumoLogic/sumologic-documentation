@@ -49,14 +49,18 @@ Follow the instructions for setting up [Webhook connection](https://docs.alertlo
 
 ## Installing the Alert Logic app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Alert Logic dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDash from '../../reuse/apps/view-dashboards.md';
+
+<ViewDash/>
 
 ### Overview
 
 The **Alert Logic - Overview** dashboard provides a holistic view of your organization's cybersecurity landscape crafted to elevate your security operations. This dashboard empowers you with comprehensive insights into incidents, enabling the detection of potential threats and the execution of efficient responses to security incidents.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Alert-Logic/Alert-Logic-Incident-Overview.png')} style={{border: '1px solid black'}} alt="Alert Logic-Overview" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Alert-Logic/Alert-Logic-Incident-Overview.png')} style={{border: '1px solid gray'}} alt="Alert Logic-Overview" width="800"/>

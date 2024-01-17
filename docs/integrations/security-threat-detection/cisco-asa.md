@@ -16,17 +16,16 @@ The Cisco ASA App gives you insight into website visitor patterns, monitors infr
 * Denied connections
 
 
-## Log Types
+## Log types
 
 The Cisco ASA App assumes logs from the Cisco Adaptive Security Appliance (ASA) firewall product.
 
 
-### Sample Log
+### Sample log
 
 ```json
 Tue Aug 15 23:30:09 %ASA-6-302016: Teardown UDP connection 40 for outside:44.44.4.4/500 to inside:44.44.2.2/500 duration 0:02:02 bytes 1416
 ```
-
 
 ## Configuring Log Collection for the Cisco ASA App
 
@@ -44,7 +43,8 @@ This Field Extraction Rule (FER) is provided as an example to help you reduce yo
 
 There is a 200 field name limit for Field Extraction Rules (FER) and once a field is persisted using a FER, it can’t be removed. You can assign different targets to the name, but do not create overlapping messages and source categories.
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```
 | parse regex "(?<protocol>TCP|tcp|UDP|udp|ICMP|icmp)" nodrop
@@ -95,25 +95,19 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 | parse regex "msgid\s*=\s*(?<msgid>[^,\s\)]+)" nodrop
 | parse regex "[Oo]utbound\s+\S+\s+connection\s+\d+\s+for\s+\S+\s*:\s*(?<dest_ip>[^\s\/\(]+)(?:\/(?<dest_port>\w+))?(?:\((?<dest_user>\S+)\))?\s*\(?(?<dest_translated_ip>[^\s\/\(]+)?\/?(?<dest_translated_port>\d+)?\)?\s+to\s+[^:]+:\s*(?<src_ip>[^\s\/\(]+)(?:\/(?<src_port>\w+))?(?:\((?<src_user>\S+)\))?\s*\(?(?<src_translated_ip>[^\s\/\(]+)?\/?(?<src_translated_port>\d+)?\)?"
 ```
-
 </details>
 
+## Installing the Cisco ASA app  
 
-## Installing the Cisco ASA App  
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
-This section provides instructions on how to install the Cisco ASA App.
+<AppInstall/>
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Cisco ASA dashboards
 
-## Viewing Cisco ASA Dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-Once you've installed the Cisco ASA App, you can access preconfigured searches and dashboards that provide visual insights into your data.
-
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<ViewDashboards/>
 
 ### Overview
 

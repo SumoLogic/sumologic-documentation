@@ -2,7 +2,7 @@
 id: cloud-soar-integration-framework
 title: Cloud SOAR Integration Framework
 sidebar_label: Integration Framework
-description: Learn about the framework used for integrations. 
+description: Learn about the framework used for integrations.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,13 +12,13 @@ The Integration Framework allows you to develop and extend integrations using a 
 
 Integrations are defined using two types of text files. The first type, the integration definition file, is used to define the properties of the product which the integration connects. This includes information such as the name, logo, connection parameters, test code, and the Docker container used to execute the actions. One integration definition file is required for each integration and serves as a container for all the actions that the integration will perform.
 
-The second type of file is an action definition file, which is used to define a single action that will be performed using the integration. Each integration action is defined in a separate action definition file, which will be associated with the appropriate integration definition. Action definition files are the files which contain the actual code which will be executed to perform the action. Supported languages include Perl, Python, PowerShell, and Bash. In addition to the action code, action definition files also contain information such as the name, required and optional fields, and the format in which the resulting information will be displayed. 
+The second type of file is an action definition file, which is used to define a single action that will be performed using the integration. Each integration action is defined in a separate action definition file, which will be associated with the appropriate integration definition. Action definition files are the files which contain the actual code which will be executed to perform the action. Supported languages include Perl, Python, PowerShell, and Bash. In addition to the action code, action definition files also contain information such as the name, required and optional fields, and the format in which the resulting information will be displayed.
 
 The following diagram shows the integration file hierarchy:
 
 <img src={useBaseUrl('img/cloud-soar/integration-framework-container.png')} alt="Integraton framework container" width="700"/>
 
-Defining integrations at the action level allows users have greater flexibility in customizing existing integrations and sharing new actions with other users. For example, you may choose to extend the existing RSA NetWitness integration to include an additional action which retrieves all network connections for a given host. Once you create this new action, you can easily add it to the existing RSA Netwitness integration by uploading the new integration action file. 
+Defining integrations at the action level allows users have greater flexibility in customizing existing integrations and sharing new actions with other users. For example, you may choose to extend the existing RSA NetWitness integration to include an additional action which retrieves all network connections for a given host. Once you create this new action, you can easily add it to the existing RSA Netwitness integration by uploading the new integration action file.
 
 You can also share this new action and use it to extend the functionality of the integration for others. The following diagram shows action file portability:
 
@@ -30,35 +30,36 @@ Both the integration definition file and the action definition file are YAML fil
 
 ### Integration definition file format
 
-**\* ** Required fields
+`*` Required fields
 
-* **name* ** [String]: Name of integration displayed in the UI. It must match the `integration` field of each action definition file added to the integration. 
-* **version* ** [String]: File version number.
-* **icon* ** [Base64 String]: Integration logo.
-* **script* **: 
-   * **type* ** [String]: Indicates which code parser should be used to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are: 
+* **name** `*` [String]: Name of integration displayed in the UI. It must match the `integration` field of each action definition file added to the integration. 
+* **official_name** `*` [String]: To modify the display name of an integration in the Cloud SOAR UI while ensuring the actions YAML remains valid, set `official_name=OLD-NAME` and `name=NEW-NAME`.
+* **version** `*` [String]: File version number.
+* **icon** `*` [Base64 String]: Integration logo.
+* **script** `*`:
+   * **type** `*` [String]: Indicates which code parser should be used to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are:
      * `bash`
      * `perl`
      * `powershell`
      * `python`
-   * **test_connection_code* ** [String]: Code which can be used to test the integration through the UI by clicking on Test Saved Settings. Exiting with a value of `0` indicates success, while any other value will indicate failure. 
-* **docker_repo_tag* ** [String]: Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server. 
+   * **test_connection_code** `*` [String]: Code which can be used to test the integration through the UI by clicking on Test Saved Settings. Exiting with a value of `0` indicates success, while any other value will indicate failure.
+* **docker_repo_tag** `*` [String]: Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server.
 * **local_repo** [Boolean]: Indicates that the Docker image is a local one and not one present in the repository.
-* **configuration* **: 
-   * **testable_connection* ** [Boolean]: Is test code present (true/false).
-   * **require_proxy_config* ** [Boolean]: True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter `proxy_url` will be passed to the code on execution as an environment variable. 
-   * **data_attributes* **: Fields required for configuration. 
-      * **<field_name>* ** [String]: Name of field which will be passed to code as environment variable. One <field_name> attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The <field_name> parameters will be passed to the code on execution. 
-         * **label* ** [String]: Label displayed in the UI.
-         * **type* ** [String]: Type of field. Acceptable values are:
+* **configuration** `*`:
+   * **testable_connection** `*` [Boolean]: Is test code present (true/false).
+   * **require_proxy_config** `*` [Boolean]: True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter `proxy_url` will be passed to the code on execution as an environment variable.
+   * **data_attributes** `*`: Fields required for configuration.
+      * **`<field_name>`** `*` [String]: Name of field which will be passed to code as environment variable. One `<field_name>` attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The `<field_name>` parameters will be passed to the code on execution.
+         * **label** `*` [String]: Label displayed in the UI.
+         * **type** `*` [String]: Type of field. Acceptable values are:
            * `checkbox`
            * `list`
            * `number`
            * `password`
            * `text`
            * `textarea`
-         * **required* ** [Boolean]: Is the field required (true/false).
-         * **validator** [String]: Input validator type. Acceptable values are: 
+         * **required** `*` [Boolean]: Is the field required (true/false).
+         * **validator** [String]: Input validator type. Acceptable values are:
            * `host`
            * `integer`
            * `ip`
@@ -66,32 +67,32 @@ Both the integration definition file and the action definition file are YAML fil
            * `url`
          * **default** [String]: Default field value.
          * **values** [String]: List of possible values for a list field in key:value format, where the key will be used as the input parameter and the value is what will be shown in the list. For example:
-           * `domain: Domain`
-           * `ip: IP Address`
-           * `url: URL`<br/>In this example, if a user selected IP Address from the dropdown list, the value `ip` would be passed to the parameter at runtime as an environment variable. 
+             * `domain: Domain`
+             * `ip: IP Address`
+             * `url: URL`<br/>In this example, if a user selected IP Address from the dropdown list, the value `ip` would be passed to the parameter at runtime as an environment variable.
    * **listing_attributes** Configuration fields to show in the resource table.
-      * **<field_name>* ** [String]: Name of field which will be shown in the table.
-      * **name* ** [String]: Name displayed in the column header.
+      * **`<field_name>`** `*` [String]: Name of field which will be shown in the table.
+      * **name** `*` [String]: Name displayed in the column header.
 * **signature** [String]: Signature to indicate integration is the original one written by Sumo Logic.
 
 ### Action definition file format
 
-**\* ** Required fields
+`*` Required fields
 
-* **integration* ** [String]: Name of integration. This should match the `name` field of the integration definition file for the integration. 
-* **name* ** [String]: Name of action which will be displayed in the UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as `ban hash` or `system info`. 
-* **type* ** [String]: Type of action being performed. Acceptable values are:
+* **integration** `*` [String]: Name of integration. This should match the `name` field of the integration definition file for the integration.
+* **name** `*` [String]: Name of action which will be displayed in the UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as `ban hash` or `system info`.
+* **type** `*` [String]: Type of action being performed. Acceptable values are:
    * `Containment`
    * `Custom`
    * `Daemon`
    * `Notification`
    * `Trigger`
-* **script* **:
+* **script** `*`:
    * **code* ** [String]: Action code.
-* **fields* **:
-   * **id* ** [String]: Name of field which will be passed to code at runtime as an environment variable. One ID attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution. 
-   * **label* ** [String]: Label displayed in the UI.
-   * **type* ** [String]: Type of field. Acceptable values are: 
+* **fields** `*`:
+   * **id** `*` [String]: Name of field which will be passed to code at runtime as an environment variable. One ID attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution.
+   * **label** `*` [String]: Label displayed in the UI.
+   * **type** `*` [String]: Type of field. Acceptable values are:
      * `checkbox`
      * `datetime`
      * `fileDetonate`
@@ -102,8 +103,8 @@ Both the integration definition file and the action definition file are YAML fil
      * `text`
      * `textarea`
      * `upload`
-   * **required* ** [Boolean]: Is the field required (true/false).
-   * **validator* ** [String]: Input validator type. Acceptable values are:  
+   * **required** `*` [Boolean]: Is the field required (true/false).
+   * **validator** `*` [String]: Input validator type. Acceptable values are:  
      * `datetime`
      * `domain`
      * `e-mail`
@@ -118,10 +119,10 @@ Both the integration definition file and the action definition file are YAML fil
      * `url`
    * **default** [String]: Default field value.
    * **values** [String]: List of possible values for a list field in key:value format, where the key will be used as the input parameter and the value will be shown in the list. For example:
-   * `domain: Domain`
-   * `ip: IP Address`
-   * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime. 
-   * **incident_artifacts** [Boolean]: Allow use of incident artifact values for the field (true/false). When set to `true`, incident artifact values such as `sourceAddress` can be used as inputs for the field. 
+     * `domain: Domain`
+     * `ip: IP Address`
+     * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime.
+   * **incident_artifacts** [Boolean]: Allow use of incident artifact values for the field (true/false). When set to `true`, incident artifact values such as `sourceAddress` can be used as inputs for the field.
    * **observables** [String]: This field defines the link between the action and the observables section. Specifying an observable type here will cause the action to be displayed in the **Actions** menu for the specified observable type. Acceptable values are:
      * `domain`
      * `email`
@@ -135,10 +136,10 @@ Both the integration definition file and the action definition file are YAML fil
   :::note
   Cloud SOAR automatically extracts observables from incidents content and converts them to entities (domain, email, file, IP address, hash values, URL, and user details). However, usernames are automatically converted into entities only if the input of an automatic action for users contains the **observables** statement and is also specified as `userdetail`.
   :::
-* **output* **: Expected fields from results.
-   * **path* ** [String]:  JSON path for each field which may be returned by the action, using the following JSON as an example:
+* **output** `*`: Expected fields from results.
+   * **path** `*` [String]:  JSON path for each field which may be returned by the action, using the following JSON as an example:
    ```
-   { 
+   {
        country: "US",
        response_code: 1,
        as_owner: "CloudFlare, Inc.",
@@ -157,12 +158,12 @@ Both the integration definition file and the action definition file are YAML fil
      * `detected_urls.[].url`
      * `detected_urls.[].positives`
      * `detected_urls.[0].positives`(you can also specify array index)
-* **type* ** [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
+* **type** `*` [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
 * **table_view* **: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
-   * **display_name* ** [String]: Column name. 
+   * **display_name** `*` [String]: Column name.
    * **value* ** [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
-   * **type* ** [String]: Type of value which is only possible to specify if the value should be shown as a link.
-* **use_in_triage** [Boolean]: Action should be manually executable in triage event (default False). 
+   * **type** `*` [String]: Type of value which is only possible to specify if the value should be shown as a link.
+* **use_in_triage** [Boolean]: Action should be manually executable in triage event (default False).
 * **hook** [List]: A list of hooks used to fire trigger actions to interact with Cloud SOAR elements. For more information, see [Trigger hooks](#trigger-hooks). Valid values are:
      * `addObservableArtifact`
      * `addObservableDomain`
@@ -185,20 +186,20 @@ Both the integration definition file and the action definition file are YAML fil
      * `updateIncident`
      * `webhook`
 * **check_not_null_field** [String]: For actions with the hook `incidentCustomAction` and `taskCustomAction`, specifies the internal name of the element field. It should be not null to show the button in the UI.
-* **src_doc* ** [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed. 
-* **url_preview* ** [String]: Result path to show in html5 iframe sandboxed.
-* **image_base64_png(jpg)* ** [String]: Result path of a base64 image png or jpg format.
+* **src_doc** `*` [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed.
+* **url_preview** `*` [String]: Result path to show in html5 iframe sandboxed.
+* **image_base64_png(jpg)** `*` [String]: Result path of a base64 image png or jpg format.
 * **signature** [String]: Signature to indicate action is the original one written by Sumo Logic.
 * **exit_condition**: Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions.
-   * **path* ** [String]: Result path where to search in JSON structure as `table_view` section or specify an action's input i.e. input.path.
-   * **string* ** [String\List[String]]: Result path of string to check if is equal to result value or an array of string or specify an action's input, for example, `input.matchString`. 
-* **re-execution* ** [String] (force): By default if previous action run is not yet finished, next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container. 
+   * **path** `*` [String]: Result path where to search in JSON structure as `table_view` section or specify an action's input i.e. input.path.
+   * **string** `*` [String\List[String]]: Result path of string to check if is equal to result value or an array of string or specify an action's input, for example, `input.matchString`.
+* **re-execution** `*` [String] (force): By default if previous action run is not yet finished, next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container.
 * **scheduled**:
-   * **every* ** [String] format <int\><interval type\>: Time interval between one run and the next one (for example, 10m, 5d, etc.) or specify an action's input i.e. input.every:
+   * **every** `*` [String] format `<int><interval type>`: Time interval between one run and the next one (for example, 10m, 5d, etc.) or specify an action's input i.e. input.every:
      * d: DAYS
      * h: HOURS
      * m: MINUTES
-   * **expire* ** [String] format <int\><interval type\>: Time after the first run to stop scheduling or specify an action's input, for example, `input.expire`. The last result will be kept :
+   * **expire** `*` [String] format `<int><interval type>`: Time after the first run to stop scheduling or specify an action's input, for example, `input.expire`. The last result will be kept :
      * d: DAYS
      * h: HOURS
      * m: MINUTES
@@ -293,7 +294,7 @@ type: Enrichment
 script:
  code: |
     [....]
-    art = ''' 
+    art = '''
           <html>
             <head></head>
             <body>
@@ -395,6 +396,8 @@ All available actions are:
 
 #### Scheduled action definitions
 
+A _Scheduled action_ represents a particular type of action when the execution is iterated until a specific exit condition is met. This type of action permits you to create loops in a playbook.
+
 YAML example:
 
 ```
@@ -408,7 +411,7 @@ YAML example:
    - path: 'exit_condition'
      string: 'false'
  re-execution: 'force'  
- scheduled: 
+ scheduled:
      - every: '10s'
        expire: '120s'
  output:
@@ -426,12 +429,12 @@ Or using strings array:
         [......]
  exit_condition:
    - path: 'exit_condition'
-     string: 
+     string:
         - 'Open'
         - 'Pending'
         - 'Waiting'
  re-execution: 'force'  
- scheduled: 
+ scheduled:
      - every: '10s'
        expire: '120s'
  output:
@@ -516,7 +519,7 @@ Field notes:
 
 ### Trigger action definitions
 
-Triggers run when users perform specific actions, or can be invoked automatically by interacting with the appropriate endpoint of the API. For example, a trigger can run when a field value is updated in an incident, new objects are created, or when a button is pressed. 
+Triggers run when users perform specific actions, or can be invoked automatically by interacting with the appropriate endpoint of the API. For example, a trigger can run when a field value is updated in an incident, new objects are created, or when a button is pressed.
 
 #### Define a trigger action
 
@@ -538,7 +541,7 @@ See the following examples of trigger definition files:
 
 #### Trigger hooks
 
-Specify `hook` values in a `Trigger` type [action definition file](/docs/cloud-soar/cloud-soar-integration-framework/#action-definition-file-format) to run the trigger action in specific situations. For example, to automatically run a trigger action when a task is closed, specify the `closeTask` hook. 
+Specify `hook` values in a `Trigger` type [action definition file](/docs/cloud-soar/cloud-soar-integration-framework/#action-definition-file-format) to run the trigger action in specific situations. For example, to automatically run a trigger action when a task is closed, specify the `closeTask` hook.
 
 The following sections describe the valid hook values to use in a trigger definition file.
 
@@ -560,10 +563,10 @@ Following are the hooks for [task](/docs/cloud-soar/incidents-triage/#tasks) eve
 * `createTask`. When task is created. Param passed to script `tasksDetail`.
 * `reassignTask`. When task is reassigned. Param passed to script `tasksDetail`.
 * `taskCustomAction`. Custom trigger. Param passed to script `text`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
-* `updateTask`. When task is updated. Param is passed to scripts `tasksBeforeUpdate` and `tasksAfterUpdate`. 
+* `updateTask`. When task is updated. Param is passed to scripts `tasksBeforeUpdate` and `tasksAfterUpdate`.
 
 Params `tasksDetail`, `tasksBeforeUpdate`, and `tasksAfterUpdate` are JSON strings with the form:
-```json 
+```json
 {
 reminder_time: <value>,
 report_time: <value>,
@@ -644,11 +647,11 @@ opt_12: <value>,
 
 ##### External hooks
 
-Use the `webhook` hook for external events. For more information, see [Define a webhook trigger](#define-a-webhook-trigger). 
+Use the `webhook` hook for external events. For more information, see [Define a webhook trigger](#define-a-webhook-trigger).
 
 #### Trigger incidentCustomAction and taskCustomAction
 
-It is possible to create a GUI shortcut (button) to a trigger in the incident or task details by defining the hooks `incidentCustomAction` or `taskCustomAction`. 
+It is possible to create a GUI shortcut (button) to a trigger in the incident or task details by defining the hooks `incidentCustomAction` or `taskCustomAction`.
 
 The name of the button will correspond to the name of the trigger defined inside the YAML:
 
@@ -792,6 +795,59 @@ script:
             import requests
             import sys
             try:
+
+                class EnvDefault(argparse.Action):
+                  def __init__(self, required=True, default=None, **kwargs):
+                    envvar = kwargs.get("dest")
+                    default = os.environ.get(envvar, default) if envvar in os.environ else default
+                    required = False if required and default else required
+                    super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
+                  def __call__(self, parser, namespace, values, option_string=None):
+                    setattr(namespace, self.dest, values)
+
+                parser = argparse.ArgumentParser()
+                parser.add_argument('--api_key', help='api_key , REQUIRED', required=True, action=EnvDefault)
+                parser.add_argument('--proxy_url', help='proxy_url', required=False, action=EnvDefault)
+                args, unknown = parser.parse_known_args()
+                params = {"apikey": args.api_key, 'url': 'google.com'}
+                end_point = "https://www.virustotal.com/vtapi/v2/url/scan"
+                session = requests.Session()
+                if args.proxy_url is not None:
+                   proxies = {'http': args.proxy_url, 'https': args.proxy_url}
+                else:
+                   proxies = None
+                r = session.post(end_point, data=params, proxies=proxies, timeout=(5, 60))
+                r.raise_for_status()
+                exit(0)
+            except Exception as e:
+                sys.stderr.write(str(e))
+                exit(-1)
+docker_repo_tag: 'virustotal:latest'
+configuration:
+  testable_connection: true
+  require_proxy_config: true
+  data_attributes:
+     api_key:
+        label: 'api key'
+        type: 'password'
+        required: true
+```
+
+### Integration definition file to change integration name from VirusTotal to VirusTotalNew
+
+```
+name: 'VirusTotalNew'
+official_name: 'VirusTotal'
+version: '1.0'
+icon:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAAA8RnWXAAAABmJLR0...[snip...]QMq1BbQK47AAAAAASUVORK5CYII=
+script:
+    type: python
+    test_connection_code: |
+            import json
+            import argparse
+            import requests
+            import sys
+            try:
       
                 class EnvDefault(argparse.Action):
                   def __init__(self, required=True, default=None, **kwargs):
@@ -844,7 +900,7 @@ code: |
             import subprocess
             import os from os.path import isfile, join
             try:
-  
+
                 class EnvDefault(argparse.Action):
                   def __init__(self, required=True, default=None, **kwargs):
                     envvar = kwargs.get("dest")
@@ -862,15 +918,15 @@ code: |
                  report.join()
                  assert report.done == True
                  result = {
-                     'Resource UID': report.id, 
-                     'Scan UID': report.scan_id, 
+                     'Resource UID': report.id,
+                     'Scan UID': report.scan_id,
                      'Permalink': report.permalink,
-                     'Resource SHA1': report.sha1, 
+                     'Resource SHA1': report.sha1,
                      'Resource SHA256': report.sha256,
                      'Resource MD5': report.md5,
-                     'Resource status': report.status, 
+                     'Resource status': report.status,
                      'Antivirus total': report.total,
-                     'Antivirus positives': report.positives, 
+                     'Antivirus positives': report.positives,
                      'Malware': []
                  }
                  for antivirus, malware in report:
@@ -1305,7 +1361,7 @@ code:
     print(json.dumps(dictionary, default=lambda val: str(val)))
 exit_condition:
   - path: 'exit_condition'
-    string: 
+    string:
      - 'false'
      - 'null'
      - 'waiting'
@@ -1465,7 +1521,7 @@ hook:
     - webHook
 script:
  code: |
-    import json 
+    import json
     import argparse
     from datetime import datetime
     import sys
@@ -1479,7 +1535,7 @@ script:
             super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
         def __call__(self, parser, namespace, values, option_string=None):
             setattr(namespace, self.dest, values)
-                    
+
     parser = argparse.ArgumentParser()
     parser.add_argument('--payload', help='payload', required=True, action=EnvDefault)
     args, unknown = parser.parse_known_args()
@@ -1505,7 +1561,7 @@ Now you can perform a `POST` request to the [Cloud SOAR API](/docs/cloud-soar/cl
   "status": 776,
   "assigned_to": 3,
   "additional_info": "lorem ipsum additional info text"
-} 
+}
 ```
 
 Your script will print `(print(payload.get("title")))` tests. (Cloud SOAR saves log-only action errors, but doesn’t save webhook trigger results.)
@@ -1516,7 +1572,7 @@ if payload.get("title") == "test":
    print("OK")
 else:
    return
-``` 
+```
 
 ## Using a custom Docker image
 
@@ -1625,7 +1681,7 @@ docker system df
 
 ```
     [
-        { 
+        {
             "_id": "5fda1d0faa3f39c44361b84e",
             "index": 0,
             "days": days,

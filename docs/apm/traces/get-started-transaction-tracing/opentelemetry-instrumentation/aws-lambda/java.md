@@ -6,6 +6,7 @@ description: Learn how to install and configure OpenTelemetry distributed tracin
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApmTrace from '../../../../../reuse/apm-traces-layer-order.md';
 
 This document covers how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions based on Java and send the data to Sumo Logic.
 
@@ -33,15 +34,13 @@ You'll need the following:
 
 1. In the **Choose a layer** menu, select **Specify an ARN** and paste the ARN ID for your Lambda function AWS Region. Reference the [amd64](#amd64-architecture) and [arm64](#arm64-architecture) tables for the ARN ID.  
 
-    <img src={useBaseUrl('img/traces/lambda-java1.png')} alt="Choose a layer" style={{border: '1px solid black'}} width="800" />
+    <img src={useBaseUrl('img/traces/lambda-java1.png')} alt="Choose a layer" style={{border: '1px solid gray'}} width="800" />
 
-1. Ensure the AWS Distro layer is present in the Layers section:
+1. Ensure the AWS Distro layer is present in the Layers section:<br/><img src={useBaseUrl('img/traces/lambda-java2.png')} alt="Layers" style={{border: '1px solid gray'}} width="800" />
 
-    <img src={useBaseUrl('img/traces/lambda-java2.png')} alt="Layers" style={{border: '1px solid black'}} width="800" />
-
-    :::note
-    {@import ../../../../../reuse/apm-traces-layer-order.md}
-    :::
+:::note
+<ApmTrace/>
+:::
 
 1. Navigate to the **Configuration > Environment variables** section and set up the following **required** environment variables:
 
@@ -65,7 +64,7 @@ You'll need the following:
     The `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` environment variable is deprecated. You'll need to switch from the HTTP Traces Source to [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp) and use the `SUMO_OTLP_HTTP_ENDPOINT_URL` environment variable instead.
     :::
 
-    <img src={useBaseUrl('img/traces/lambda-java3.png')} alt="Environment variables" style={{border: '1px solid black'}} width="800" />
+    <img src={useBaseUrl('img/traces/lambda-java3.png')} alt="Environment variables" style={{border: '1px solid gray'}} width="800" />
 
 1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces).
 

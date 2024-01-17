@@ -55,7 +55,7 @@ For common deployment errors refer to the following [doc](https://docs.microsoft
 1. Select **Rule Based Scaling**.
 1. Add your rules based scaling configuration as defined in [Create your first autoscale setting](https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started#create-your-first-autoscale-setting).
 
-<img src={useBaseUrl('img/send-data/autoscalling.png')} alt="autoscalling" style={{border: '1px solid black'}} width="800" />
+<img src={useBaseUrl('img/send-data/autoscalling.png')} alt="autoscalling" style={{border: '1px solid gray'}} width="800" />
 
 ## Verify configurations
 
