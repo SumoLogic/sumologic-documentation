@@ -66,7 +66,7 @@ account=dev region=us-east-1 namespace=aws/elasticache metric=CacheHitRate stati
 
 Top 10 ReplicationGroupId's:
 
-```sql title="CloudTrail Log based"
+```sql title="CloudTrail log-based"
 account=dev region=us-east-1 namespace=aws/elasticache "\"eventSource\":\"elasticache.amazonaws.com\"" replicationGroupId
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message nodrop
 | where event_source = "elasticache.amazonaws.com"
