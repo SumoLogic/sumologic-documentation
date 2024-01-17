@@ -113,8 +113,8 @@ For complete details, see [Microsoft Office 365 Audit Source](/docs/send-data/ho
 
 We recommend the following Source Category naming convention:
 * **Azure AD:** O365/Azure
-* **Exchange: **O365/Exchange
-* **SharePoint: **O365/SharePoint
+* **Exchange:** O365/Exchange
+* **SharePoint:** O365/SharePoint
 * **General:** O365/SharePoint
 * **DLP**: O365/DLP
 
@@ -153,15 +153,15 @@ Shows details of Office 365 successful and failed activities, and SharePoint, Ex
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365Overview.png')} alt="Microsoft Office 365 dashboards" />
 
-**Successful Activity by Workload. **Compare your overall Office 365 workload activity by service as an area chart on a timeline for the last 24 hours.
+**Successful Activity by Workload.** Compare your overall Office 365 workload activity by service as an area chart on a timeline for the last 24 hours.
 
-**Failed Activity by Workload. **See any failed activity by Office 365 workload as a column chart on a timeline for the last three days.
+**Failed Activity by Workload.** See any failed activity by Office 365 workload as a column chart on a timeline for the last three days.
 
-**SharePoint Operations. **See the number of all SharePoint operations by name  as a line chart for the last 24 hours.
+**SharePoint Operations.** See the number of all SharePoint operations by name  as a line chart for the last 24 hours.
 
-**Exchange Operations. **See the Exchange operations activity by name and count on a stacked bar chart for the last 24 hours.
+**Exchange Operations.** See the Exchange operations activity by name and count on a stacked bar chart for the last 24 hours.
 
-**Azure AD Operations Trends. **See the Azure AD operations activity by action and count as a stacked column chart on a timeline for the last 24 hours.
+**Azure AD Operations Trends.** See the Azure AD operations activity by action and count as a stacked column chart on a timeline for the last 24 hours.
 
 
 ### General

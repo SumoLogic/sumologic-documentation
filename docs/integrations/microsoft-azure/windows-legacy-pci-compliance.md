@@ -93,7 +93,7 @@ Track your user accounts and recent system changes.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-Legacy/Windows-PCI-Req-02-08-10-Account-User-System-Monitoring.png')} alt="Windows - PCI Req 02, 08, 10 - Account, User, System Monitoring" />
 
-* **User Account Created. **Aggregation table of the number of user accounts created in the last 24 hours.
+* **User Account Created.** Aggregation table of the number of user accounts created in the last 24 hours.
 * **User Account Deleted.** Aggregation table of the number of user accounts deleted in the last 24 hours.
 * **User Account Enabled.** Aggregation table of the number of user accounts enabled in the last 24 hours.
 * **User Account Disabled.** Aggregation table of the number of user accounts disabled in the last 24 hours.
@@ -119,7 +119,7 @@ Track login successes and failures.
 * **Successful logins.** Total number of successful logins over the last 24 hours. Compare to Failed Logins to determine if the number of failed logins to successful logins is consistent with normal behavior or indicative of an attack.
 * **Successful logins.** Aggregation table of successful logins, including date, time, event code, error code, and count.
 
-* **Default Login-Failure. **Aggregation table of failed default logins.
+* **Default Login-Failure.** Aggregation table of failed default logins.
 * **Default Login-Success.** Aggregation table of successful default logins.
 
 
@@ -130,8 +130,8 @@ Track user activities such as password changes, password resets, excessive faile
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-Legacy/Windows-PCI-Req-08-Other-User-Activity.png')} alt="Windows - PCI Req 08 - Other User Activity" />
 
-* **User Account Password Changes. **Displays an aggregation table of the times passwords were changed, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
-* **User Account Password Reset. **Displays an aggregation table of the times passwords were reset, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
+* **User Account Password Changes.** Displays an aggregation table of the times passwords were changed, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
+* **User Account Password Reset.** Displays an aggregation table of the times passwords were reset, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **Excessive Failed Access Attempts.** Displays an aggregation table of the excessive failed access attempts, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **User Account Unlocked.** Displays an aggregation table of the times a user account was unlocked  the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **User Account Disabled but not deleted.** Displays an aggregation table of the times a user account was unlocked,  the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
@@ -146,5 +146,5 @@ Track your Windows Update activities.
 * **All Windows Updates.** Aggregation table displaying all updated hosts in the past 24 hours, success/failure of that update, and any relevant error codes.
 * **Recent Windows Update Failures.** Aggregation table displaying all update failures in the last 7 days, update that failed, time of failure, and current status.
 * **Windows Update Trend.** Bar chart that displays 7-day trend of updates success and failure time sliced by hour.
-* **Windows Update Summary by Host. **Aggregation table of the hosts and a count of that host’s update success or failure for the past 7 days.
+* **Windows Update Summary by Host.** Aggregation table of the hosts and a count of that host’s update success or failure for the past 7 days.
 * **Windows Update Summary.** Aggregation table of the latest Windows updates for the last 7 days and a count of their successes and failures
