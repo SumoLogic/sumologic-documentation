@@ -27,7 +27,7 @@ You need the **Manage S3 data forwarding** role capability to create an AWS Ar
 1. Follow the instructions on Grant Access to an AWS Product to grant Sumo permission to send data to the destination S3 bucket.
 1. In Sumo Logic, select **Manage Data > Collection > Data Archiving**.
 1. Click **+** to add a new destination.
-1. Select **AWS Archive bucket** for **Destination Type**.  <br/><img src={useBaseUrl('img/archive/archive-destination.png')} alt="Create a New Destination dialog" style={{border: '1px solid black'}} width="400"/>
+1. Select **AWS Archive bucket** for **Destination Type**.  <br/><img src={useBaseUrl('img/archive/archive-destination.png')} alt="Create a New Destination dialog" style={{border: '1px solid gray'}} width="400"/>
 1. Configure the following:
    * **Destination Name**. Enter a name to identify the destination.
    * **Bucket Name**. Enter the exact name of the S3 bucket.

@@ -103,7 +103,7 @@ This dashboard displays a high level view of Insight activity in your environmen
 
 This dashboard shows breakdowns of cloud SIEM parsing and mapping troubleshooting.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-parsing-and-mapping-troubleshooting.png')} style={{border: '1px solid black'}} alt="Cloud SIEM Parsing and Mapping Troubleshooting"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-parsing-and-mapping-troubleshooting.png')} style={{border: '1px solid gray'}} alt="Cloud SIEM Parsing and Mapping Troubleshooting"/>
 
 ### Rules and Mapping Changes
 
@@ -193,16 +193,16 @@ This dashboard shows breakdowns of Signal by product and vendor.
 
 This dashboard shows breakdowns of SOC insights.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-SOC-insights.png')} style={{border: '1px solid black'}} alt="Cloud SIEM SOC Insights"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-SOC-insights.png')} style={{border: '1px solid gray'}} alt="Cloud SIEM SOC Insights"/>
 
 ### SOC Standup Overview
 
 This dashboard provides an overview of total alerts, infrequent alerts breakdown, trending alerts breakdown, and detailed daily alerts breakdow.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-SOC-standup-overview.png')} style={{border: '1px solid black'}} alt="Cloud SIEM SOC Standup Overview"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-SOC-standup-overview.png')} style={{border: '1px solid gray'}} alt="Cloud SIEM SOC Standup Overview"/>
 
 ### User Telemetry
 
 This dashboard shows breakdowns of Cloud SIEM user telemetry.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-user-telemetry.png')} style={{border: '1px solid black'}} alt="Cloud SIEM User Telemetry"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/cloud-SIEM-user-telemetry.png')} style={{border: '1px solid gray'}} alt="Cloud SIEM User Telemetry"/>

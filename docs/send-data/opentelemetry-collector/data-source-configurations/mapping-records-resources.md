@@ -56,7 +56,7 @@ _raw (JSON): {
 }
 ```
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-and-record-level-attributes.png')} alt="resource and record attributes in Sumo Logic" style={{border: '1px solid black'}} />
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-and-record-level-attributes.png')} alt="resource and record attributes in Sumo Logic" style={{border: '1px solid gray'}} />
 
 ## Example: Log with Resource-level attributes only
 
@@ -79,4 +79,4 @@ Fields:
 _raw: "Sample body"
 ```
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-attributes-only.png')} alt="resource attributes only in Sumo Logic" style={{border: '1px solid black'}} />
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-attributes-only.png')} alt="resource attributes only in Sumo Logic" style={{border: '1px solid gray'}} />
