@@ -15,7 +15,7 @@ The AWS Classic Load Balancer ULM app uses the following log and metric types:
 
 * Metrics included in the AWS/ELB namespace. For more details, see this [*AWS Services help*](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html) page. 
 
-* The logs are stored in a `.gzip` format in the specified S3 bucket and contain these fields in this order: timestamp, elb client:port, backend:port, request_processing_time, backend_processing_time, response_processing_time, elb_status_code, backend_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol. For more details on the Classic Load Balancer Access log, see the  [Classic Load Balancer Access Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html).
+* The logs are stored in a `.gzip` format in the specified S3 bucket and contain these fields in this order: timestamp, elb client:port, backend:port, request_processing_time, backend_processing_time, response_processing_time, elb_status_code, backend_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol. For more details on the Classic Load Balancer Access log, see [Classic Load Balancer Access Logs](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html).
 
 ### Sample log message
 
