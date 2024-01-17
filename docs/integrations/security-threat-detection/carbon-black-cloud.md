@@ -78,7 +78,7 @@ Follow these steps to set up an S3 Source to collect event logs from your S3 buc
 
 
 1. In Sumo Logic select **Manage Data > Collection > Collection**.
-2. On the **Collectors** page, click **Add Source** next to a Hosted** **Collector, either an existing Hosted Collector, or one you have created for this purpose.
+2. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
 3. Select **Amazon S3**.
 4. Enter a name for the new Source. A description is optional.
 5. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.

@@ -523,7 +523,7 @@ email_notifications = [
 
 6. Install the Monitors.
    1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**redis**/ and run **terraform init.** This will initialize Terraform and will download the required components.
-   2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
+   2. Run **terraform plan** to view the monitors which will be created/modified by Terraform.
    3. Run **terraform apply**.
 
 7. Post Installation. If you haven’t enabled alerts and/or configured notifications via the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Add a Monitor](/docs/alerts/monitors#add-a-monitor).

@@ -239,10 +239,10 @@ To configure CrowdStrike SIEM Connector, do the following:
 1. In the Falcon console go to [Support > API Clients & Keys](https://falcon.crowdstrike.com/support/api-clients-and-keys).
 2. [Create an API client](https://falcon.crowdstrike.com/support/documentation/1/crowdstrike-api-introduction#auth_apiclient) to use with the SIEM connector, and record its API client ID and API client secret. In the the **Edit API client** dialog, ONLY select the **Event streams** option, and then click **Save**.
    1. Open the **/opt/crowdstrike/etc/cs.falconhoseclient.cfg** file in a text editor.
-   2. Edit the following lines in the **cs.falconhoseclient.cfg ** file:
+   2. Edit the following lines in the **cs.falconhoseclient.cfg** file:
    * Change **app_id** to **SIEM-Connector.**
-   * **client_id - **Add your recorded API Client ID
-   * **client_secret - **Add your recorded API Client Secret
+   * **client_id** - Add your recorded API Client ID
+   * **client_secret** - Add your recorded API Client Secret
    * Make sure **output_format** is set to **json**
    * For **EventTypeCollection** section - Enable all events:
      * DetectionSummaryEvent = true
@@ -266,8 +266,8 @@ To set up an installed collector and local file source, do the following:
 
 1. Install a Sumo Logic collector on the same host as the SIEM Connector. Follow the instructions for your operating system as described in [Installed Collectors](/docs/send-data/installed-collectors).
 2. Add a local file source to the collector for Streaming API Events. Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), with these additional changes:
-* Set the **Filepath** to**:**  **/var/log/crowdstrike/falconhoseclient/output**
-* Set the **Source Category** to: c**rowdstrike/falcon**
+* Set the **Filepath** to: `/var/log/crowdstrike/falconhoseclient/output`
+* Set the **Source Category** to: `crowdstrike/falcon`
 * Under **Enable Multiline Processing**, check  **Boundary Regex**  and enter the following regex: `^\{.*`.
 3. Click **Save**.
 

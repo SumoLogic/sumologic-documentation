@@ -21,9 +21,9 @@ The Sumo Logic Audit App uses Sumo Logic audit index events to present informati
 Install the Sumo Logic Audit app to use our dashboards that give you an overview of your Sumo Logic account's audit events, including user login activity, admin activity, and details on scheduled searches.
 
 To install the app, do the following:
-1. In the **App Catalog, **search for "Audit**"** and select the **Audit **app.
+1. In the **App Catalog, **search for "Audit**"** and select the **Audit** app.
 4. Click **Add to Library**.<br/><img src={useBaseUrl('img/integrations/sumo-apps/audit-app-catalog.png')} alt="test" />
-3. To save the app to a new folder in your personal folder, click **+ New Folder **and select a name and location for your folder.
+3. To save the app to a new folder in your personal folder, click **+ New Folder** and select a name and location for your folder.
 4. Click **Add to Library** to install the app. A confirmation dialog will appear and then you can start viewing your  dashboards.
 
 
@@ -99,7 +99,7 @@ See information about permissions added or removed to Library content scheduled 
 
 ### Library Content - Admin Mode
 
-See information about  content management actions made in Admin mode to Library content** **searches, dashboards/reports, and folders). The dashboard shows information about  content changes, include the deletion, whitelisting, and sharing of content; and the addition or removal of permissions.
+See information about  content management actions made in Admin mode to Library content searches, dashboards/reports, and folders). The dashboard shows information about  content changes, include the deletion, whitelisting, and sharing of content; and the addition or removal of permissions.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/audit-library-content-admin-mode.png')} alt="test" />
 

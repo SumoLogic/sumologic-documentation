@@ -105,7 +105,7 @@ Sample policy: Be sure to use the proper permission level.
 **Runtime.** Python 2.7.
 
 
-5. Change **Code entry Type **to **Upload a .ZIP** file.  And upload the **Halo_events_to_SumoLogic.zip** file.  Then enter in the environment variables with proper values (refer to the steps above).
+5. Change **Code entry Type** to **Upload a .ZIP** file.  And upload the **Halo_events_to_SumoLogic.zip** file.  Then enter in the environment variables with proper values (refer to the steps above).
 
 
 6. Fill in the information to match the screenshot below.  Enter **halo_events_to_sumologic.lambda_handler** for **Handler**.  Then select “Create a custom role” for **Role**.
@@ -161,7 +161,7 @@ Sample policy: Use a proper permission level. Below is a sample.
 
 19. Then click on the blank square to bring out the pulldown menu.  Select **CloudWatch Events - Schedule**.
 
-20. Fill in the information and make sure you set the** Schedule expression **as **rate(5 minutes)**.
+20. Fill in the information and make sure you set the **Schedule expression** as **rate(5 minutes)**.
 
 
 21. A successfully configured trigger will have a success message and appear similar to the trigger below.

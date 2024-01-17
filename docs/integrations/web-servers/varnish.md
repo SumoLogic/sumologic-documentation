@@ -347,7 +347,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 3. Go to **Manage Data > Alerts > Monitors**.
 4. Click **Add**.
 5. Click **Import.**
-6. On the** Import Content popup**, enter **Varnish** in the Name field, paste the JSON into the popup, and click **Import**.
+6. On the **Import Content** popup, enter **Varnish** in the **Name** field, paste the JSON into the popup, and click **Import**.
 7. The monitors are created in a "Varnish" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 ### Method B: Using a Terraform script

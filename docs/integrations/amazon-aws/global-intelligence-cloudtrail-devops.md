@@ -193,7 +193,7 @@ Use this dashboard to:
 
 ### 02. My Company’s Throttling Errors
 
-The** GI CloudTrail DevOps - 02. My Company’s Throttling Errors** dashboard predicts throttling errors per minute based on API requests per minute, for a given AWS API. The panels compare your throttling errors per minute to the predicted value of such errors to assess if throttling is the root cause of application errors. You can select the awsRegion and recipientAccountId to view results by region and account.
+The **GI CloudTrail DevOps - 02. My Company’s Throttling Errors** dashboard predicts throttling errors per minute based on API requests per minute, for a given AWS API. The panels compare your throttling errors per minute to the predicted value of such errors to assess if throttling is the root cause of application errors. You can select the awsRegion and recipientAccountId to view results by region and account.
 
 Throttling ensures that calls to the AWS API do not exceed the maximum allowed API request limits. AWS may throttle your AWS usage just when your application experiences load and make additional API requests, leading to an incident.
 

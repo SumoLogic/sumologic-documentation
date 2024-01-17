@@ -20,7 +20,7 @@ To use this feature, you'll need to enable access to your OneLogin logs and inge
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-account.md) at any time.
 
-* **OneLogin Enterprise** or **Unlimited **plan subscription.
+* **OneLogin Enterprise** or **Unlimited** plan subscription.
 * **Configure an Event Broadcaster**
    * Add a Sumo Logic [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) to your Sumo Logic Org.
    * Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for your OneLogin data. Make sure to set the **Source Category** when configuring the OneLogin source. For example, onelogin.

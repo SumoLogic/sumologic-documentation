@@ -300,7 +300,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ### Linux - Security Analytics - Login Activity
 
-**Dashboard description: **This dashboard tracks login activity. It provides information about failed and successful user logins, and failed and successful root logins.
+**Dashboard description:** This dashboard tracks login activity. It provides information about failed and successful user logins, and failed and successful root logins.
 
 **Use case:** Use this dashboard to monitor access to the linux computing environment. You can monitor failed and successful user logins.
 
@@ -309,7 +309,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ### Linux - Security Analytics - Privileged Activity
 
-**Dashboard description: **This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
+**Dashboard description:** This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case:** Use this dashboard to monitor successful and failed access attempts to systems, especially with administrative privileges. It also helps monitor actions performed by users with administrative privileges.
 
@@ -318,7 +318,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ### Linux - Security Monitoring - User, Service, and System Monitoring
 
-**Dashboard description: **This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
+**Dashboard description:** This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case:** Use this dashboard to monitor accounts created and deleted. It also helps monitor service usage and other system activity.
 

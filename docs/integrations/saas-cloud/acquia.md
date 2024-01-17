@@ -152,7 +152,7 @@ To create a new Sumo Logic hosted collector, do the following:
 
 1. In Sumo Logic select **Manage Data > Collection > Collection**.
 2. Click **Add Collector**.
-3. Click **Hosted **Collector.
+3. Click **Hosted Collector**.
 4. Provide a **Name** for the Collector.
 5. A **description** is optional.
 6. **Category**. Enter any string to tag the logs collected from this Collector. This Source Category value is stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices).

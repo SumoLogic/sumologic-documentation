@@ -99,8 +99,8 @@ Details are provided in the following sections.
 
 1. Log in to the Amazon Console.
 2. Click Services. In the dropdown go to **Application Integration > Simple Notification Service** (SNS).
-3. On the **SNS Dashboard**, select  **Topics **on the left side.
-4. A new window opens, select **Create** **topic **button.
+3. On the **SNS Dashboard**, select  **Topics** on the left side.
+4. A new window opens, select **Create topic** button.
 5. In the new window, enter the following details:
     * **Name**: Enter a topic name.
     * **Access Policy:** Select Advance.
@@ -131,7 +131,7 @@ Details are provided in the following sections.
 
 1. In the Amazon Console, click Services. In the opened dropdown, go to **Security, Identity & Compliance > Inspector**.
 2. Select assessment templates on the left side.
-3. A new window opens, select **each **assessment template you want to monitor.
+3. A new window opens, select *each* assessment template you want to monitor.
 4. Expand each row and find the section called **SNS topics**.
 5. Click the **Edit** icon and select the SNS topic you created in the previous section.
 6. Click **Save**.
@@ -140,12 +140,12 @@ Details are provided in the following sections.
 #### Step 5: Create a Role
 
 1. In the Amazon Console, click Services. In the opened dropdown, go to **Security, Identity & Compliance > IAM**.
-2. Select **Roles **on the left side. A new window open, click the **Create role** button.
-3. Select **Lambda **and then click **Next: Permissions** button.
+2. Select **Roles** on the left side. A new window open, click the **Create role** button.
+3. Select **Lambda** and then click **Next: Permissions** button.
 4. In the **Attach permissions policy** section, search and select **AWSLambdaBasicExecutionRole** and **AmazonInspectorReadOnlyAccess** policies.
 5. Select **Next: Tags** button.
 6. Select **Next: Review** button.
-7. In the **Review** section, Enter the role name **Lambda-Inspector **and click the **Create role** button.
+7. In the **Review** section, Enter the role name **Lambda-Inspector** and click the **Create role** button.
 
 #### Step 6: Create a Lambda Function
 
@@ -164,7 +164,7 @@ Details are provided in the following sections.
 8. Go to [https://raw.githubusercontent.com/SumoLogic/sumologic-aws-lambda/main/inspector/python/inspector.py](https://raw.githubusercontent.com/SumoLogic/sumologic-aws-lambda/main/inspector/python/inspector.py) and copy-paste the code in the editor.
 9. Edit the code to enter the URL of the Sumo Logic endpoint ( line 14) that will receive data from the HTTP Source.
 10. Click **Save** at the top.
-11. Scroll down and go to **Edit basic settings **and configure the rest of the settings as follows:
+11. Scroll down and go to **Edit basic settings** and configure the rest of the settings as follows:
     * **Handler:** lambda_function.sumo_inspector_handler
     * **Memory (MB):** 128
     * **Timeout:** 10 minutes

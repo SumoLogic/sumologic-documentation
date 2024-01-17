@@ -1061,7 +1061,7 @@ See information about database connections established by privileged users, conn
 
 **Unauthorized Command Execution**. The count of database commands that resulted in TNS-01190 errors over the previous 24 hours.
 
-**Possible InAppropriate Activity. **The count of lsnrctl commands the resulted in errors of the following types over the previous 24 hours: TNS-01169, TNS-01189, TNS-01190, "TNS-12508",  ORA-12525, ORA-28040, or ORA-12170.
+**Possible InAppropriate Activity**. The count of lsnrctl commands the resulted in errors of the following types over the previous 24 hours: TNS-01169, TNS-01189, TNS-01190, "TNS-12508",  ORA-12525, ORA-28040, or ORA-12170.
 
 **Connections By Privileged Users**. A donut chart that shows the breakdown of connections from privileged user accounts, such as root and administrator, over the previous 24 hours.
 

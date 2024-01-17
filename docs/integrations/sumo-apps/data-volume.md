@@ -138,7 +138,7 @@ Use this dashboard to:
 
 ### Capacity Utilization
 
-The **Data Volume - Capacity Utilization **dashboard provides views of subscribed, actual, and percentage capacity utilization for logs and metrics.
+The **Data Volume - Capacity Utilization** dashboard provides views of subscribed, actual, and percentage capacity utilization for logs and metrics.
 
 Use this dashboard to:
 * Identify the log and metrics ingestion capacity of your subscription. You must configure the "Daily_Log_Ingest_Capacity" and “Metric_DPM_Ingest_Capacity” variables based on your plan with Sumo Logic. If you have a Credit-based plan, please check with your account executive to determine these values for your account. Otherwise, see **Administration > Account > Account Overview** to view the log ingest capacity value and metric DPM ingest capacity value.

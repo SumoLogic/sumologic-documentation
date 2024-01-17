@@ -407,7 +407,7 @@ Focus in on Origin Host performance to check latencies, slow URLs and error-caus
 
 * **90%-ile Latency (millisecs) by Origin Host.** Displays the 90th percentile of the data center response time latency as a line chart on a timeline for the last hour, using timeslices of one minute.
 * **Median Latency (millisecs) by Origin Host**. Displays the median latency time as a line chart for the past hour.
-* **Slowest URLs (millisecs) **Lists the top 10 slowest URLs, including the path and the maximum latency metric for the last hour, in an aggregation table.
+* **Slowest URLs (millisecs)** Lists the top 10 slowest URLs, including the path and the maximum latency metric for the last hour, in an aggregation table.
 * **Origin Content Download Time (millisecs) Histogram.** Displays download times for origin content for the number of requests and the response time in a column chart for the last hour.
 * **Error Rate 4xx by Code.** Displays the number of 4xx error events by code in a stacked column chart on a timeline using timeslices of 10 minutes for the past 24 hours.
 * **Top 5xx Error-Causing URLs.** Displays the URLs that have produced the most errors in the last 15 minutes and counts the errors in a bar chart.

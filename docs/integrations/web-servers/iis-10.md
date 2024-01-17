@@ -100,7 +100,7 @@ For more information about IIS log format and log configuration refer [link](htt
    2. Under the \W3SVC1 directory, you should see one or more files with a .log extension. If the file is present, you can collect it.
 * **Enable HTTP Error Logs on your Windows Server** Perform the following task to enable HTTP Error Logs on your Windows Server, that is hosting the IIS Server.
 
-**To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:
+To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:
 
 1. To configure HTTP Error Logging, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/configuring-http-server-api-error-logging).
 2. To understand HTTP Error Log format, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/format-of-the-http-server-api-error-logs). HTTP Error Log files are generated as local files. The default HTTP Error log file location is: `C:\Windows\System32\LogFiles\HTTPERR`
@@ -229,7 +229,7 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
     2. Select **HTTP Logs & Metrics_._**
         1. **Name.** (Required). Enter a name for the source.
         2. **Description.** (Optional).
-        3. **Source Category** (Required)**. For example,  `Prod/Webserver/IIS/Metrics`.
+        3. **Source Category** (Required). For example,  `Prod/Webserver/IIS/Metrics`.
     3. Select **Save**.
     4. Take note of the URL provided once you click **Save**. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 
@@ -599,7 +599,7 @@ Use this dashboard to:
 
 ### Performance Snapshot
 
-The **IIS - Performance Snapshot **dashboard provides detailed information on your IIS infrastructure integrity and performance. Dashboard panels show details on Web Service uptime, active connections, requests, user activity, and total bytes transferred. Panels also provide HTTP Service Request Queues details, such as arrivals, queue size, cache hit rate, and rejection rate.
+The **IIS - Performance Snapshot** dashboard provides detailed information on your IIS infrastructure integrity and performance. Dashboard panels show details on Web Service uptime, active connections, requests, user activity, and total bytes transferred. Panels also provide HTTP Service Request Queues details, such as arrivals, queue size, cache hit rate, and rejection rate.
 
 Use this dashboard to:
 * Monitor incoming request traffic, along with queue size and rejection rate to identify any bottlenecks.

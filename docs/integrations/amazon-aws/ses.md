@@ -114,7 +114,7 @@ Before you configure the log sources for the Amazon SES app, decide on the sourc
 ### Step 3: Collect Amazon SES events using CloudTrail
 
 1. In Sumo Logic select **Manage Data > Collection > Collection**.
-2. On the **Collectors** page, click **Add Source** next to a Hosted** **Collector, either an existing Hosted Collector, or one you have created for this purpose.
+2. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
 3. Select AWS CloudTrail as your AWS Source type.
 4. Enter a name for the new Source. A description is optional.
 5. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
@@ -125,7 +125,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 
 6. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example:
 
-7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one **wildcard (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions) for details.
+7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use *one wildcard* (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions) for details.
 8. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
     * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
     * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m). If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
@@ -195,14 +195,14 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Configure an  [HTTP](/docs/send-data/hosted-collectors/http-source/logs-metrics) source.
-* **Name—**Enter a name to display for the new Source.
-* **Description—**Enter an optional description.
-* **Source Category—**Enter a source category, such as: AWS/SES/Events/Notifications
+* **Name** — Enter a name to display for the new Source.
+* **Description** — Enter an optional description.
+* **Source Category** — Enter a source category, such as: AWS/SES/Events/Notifications
 * **Timestamp Parsing Settings**:
-    * **Enable Timestamp Parsing—**True
-    * **Timezone—**Logs are sent in UTC by default and can be auto detected
-    * **Timestamp Format—**Auto Detect
-* Deselect checkbox—Enable Multiline Processing
+    * **Enable Timestamp Parsing** — True
+    * **Timezone** — Logs are sent in UTC by default and can be auto detected
+    * **Timestamp Format** — Auto Detect
+* **Deselect checkbox** — Enable Multiline Processing
 * **Enable** — One Message Per Request
 3. Click **Save.**
 

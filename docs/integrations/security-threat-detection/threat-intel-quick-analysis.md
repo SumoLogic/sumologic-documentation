@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/threatintel.png')} alt="thumbnail icon" width="75"/>
 
-The Threat Intel Quick Analysis App correlates [CrowdStrike's](https://www.crowdstrike.com/sumologic/) threat intelligence data with your own log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. The Threat Intel Quick Analysis App scans selected logs for threats based on **IP**, **URL**, **domain, Hash 256,** and** email**.
+The Threat Intel Quick Analysis App correlates [CrowdStrike's](https://www.crowdstrike.com/sumologic/) threat intelligence data with your own log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. The Threat Intel Quick Analysis App scans selected logs for threats based on **IP**, **URL**, **domain, Hash 256,** and **email**.
 
 
 ## Log Types
@@ -507,14 +507,14 @@ Once an indicator has been marked with a malicious confidence level, it continue
 ---
 #### `last_updated`
 
-**Data Type: **Timestamp in standard Unix time, UTC.<br/>
-**Description: **This is the date the indicator was last updated in CrowdStrike internal database.
+**Data Type**: Timestamp in standard Unix time, UTC.<br/>
+**Description**: This is the date the indicator was last updated in CrowdStrike internal database.
 
 ---
 #### `malware_family`
 
-**Data Type:** string<br/>
-**Description: **Indicates the malware family an indicator has been associated with. An indicator may be associated with more than one malware family. The malware family list is also represented under the labels list in the JSON data structure.
+**Data Type**: string<br/>
+**Description**: Indicates the malware family an indicator has been associated with. An indicator may be associated with more than one malware family. The malware family list is also represented under the labels list in the JSON data structure.
 
 ---
 #### `kill_chain`

@@ -55,7 +55,7 @@ If you create and manage all service accounts in one project which is different 
 2. Click **+Add**.
 <img src={useBaseUrl('img/send-data/add-principal.png')} alt="add-principal.png" />
 1. Enter the email for the Service Account to add as a principal, for example: `server@example.gsserviceaccount.com`.
-2. **Select a role **from the list, or click +Add Another Role as needed.
+2. **Select a role** from the list, or click +Add Another Role as needed.
 3. Click **Save**.
 4. You will need to make one change in the service account JSON if you have added a Principal. Change the project ID in the downloaded service account key to the projectId value where Sumo Logic will collect the metrics, not the project where the service account was created.
 
@@ -118,7 +118,7 @@ For information on available metrics, see [GCP Metrics](https://cloud.google.com
 
   </details>
 
-9. **Custom Services** (Optional). A Custom Service for collecting custom metrics. Click the **+Add **link to add a custom service using a name (key) and value. For example, enter `service1` and `custom.googleapis.com/my_cumulative_metric1;custom.googleapis.com/my_cumulative_metric2;`.<br/><img src={useBaseUrl('img/send-data/gcp-custom-services.png')} alt="gcp-custom-services.png" />
+9. **Custom Services** (Optional). A Custom Service for collecting custom metrics. Click the **+Add** link to add a custom service using a name (key) and value. For example, enter `service1` and `custom.googleapis.com/my_cumulative_metric1;custom.googleapis.com/my_cumulative_metric2;`.<br/><img src={useBaseUrl('img/send-data/gcp-custom-services.png')} alt="gcp-custom-services.png" />
   :::note
   Do not use quotes when entering a custom service.
   :::

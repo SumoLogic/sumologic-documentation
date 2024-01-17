@@ -113,7 +113,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Outbound Destinations.** A geolocation query tracks the number of outbound connection and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search** to see more details of the query results.
 
-**Denied Connections by Location.** Uses a geolocation query to track the number of denied connections and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search **to see more details of the query results.
+**Denied Connections by Location.** Uses a geolocation query to track the number of denied connections and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search** to see more details of the query results.
 
 **Total Denied Sources.** Displays the total number of denied Sources as a single value chart for the last hour.
 
@@ -137,7 +137,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Outbound Connections to High Risk Countries.** Displays the number of outbound connections by country to countries considered high risk over the last hour in five-minute increments.
 
-**Denied Connections by Location.** Uses a geolocation query to track the number of denied connections, and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search **to see more details of the query results.
+**Denied Connections by Location.** Uses a geolocation query to track the number of denied connections, and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search** to see more details of the query results.
 
 **Top Denied Sources.** Lists the top five denied sources by IP address over the last hour.
 

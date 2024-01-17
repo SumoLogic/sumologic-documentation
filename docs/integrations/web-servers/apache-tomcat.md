@@ -130,7 +130,7 @@ spec:
 </tomcat-users>
 ```
 
-**Verification Step: **You can ssh to Tomcat pod and run following commands to make sure Telegraf (and Jolokia) is scraping metrics from your Tomcat Pod:
+**Verification Step**: You can ssh to Tomcat pod and run following commands to make sure Telegraf (and Jolokia) is scraping metrics from your Tomcat Pod:
 ```bash
 curl localhost:9273/metrics
 ```
@@ -651,7 +651,7 @@ Custom filter examples:
 1. Go to **Manage Data > Alerts > Monitors**.
 2. Click **Add**.
 3. Click **Import**.
-4. On the** Import Content popup**, enter **Apache Tomcat** in the Name field, paste in the JSON into the popup, and click **Import**.
+4. On the **Import Content popup**, enter **Apache Tomcat** in the Name field, paste in the JSON into the popup, and click **Import**.
 5. The monitors are created in a "Apache Tomcat" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 ### Method B: Using a Terraform script

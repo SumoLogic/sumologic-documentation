@@ -236,7 +236,7 @@ In the file `conf/sumologic.properties`, the following properties are supported.
 
 #### Step 5: Configure the JRE path (DEPRECATED)
 
-To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/release-notes-collector). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under **`config/wrapper.conf`, and look for the variable `wrapper.java.command`.
+To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/release-notes-collector). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under `config/wrapper.conf`, and look for the variable `wrapper.java.command`.
 
 * **On Windows, update SumoJanus_SF.bat**. Navigate to the folder where you installed SumoJanus, and open SumoJanus_SF.bat  in a text editor. Line 3 of the script sets `JAVAPATH` to `C:\Program Files\Sumo Logic Collector\jre\bin` as shown below:
 ```bash
@@ -321,7 +321,7 @@ If the browser does not connect to the salesforce instance and you are using Chr
 
 In Sumo Logic, configure a Script Source using the instructions in [Script Source](/docs/send-data/installed-collectors/sources/script-source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
 
-To allow Script Sources you need to set the Collector parameter **`enableScriptSource=true` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
+To allow Script Sources you need to set the Collector parameter `enableScriptSource=true` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 
 For the Sumo Logic App for Salesforce, use the following configuration settings:
 
@@ -334,7 +334,7 @@ For the Sumo Logic App for Salesforce, use the following configuration settings:
 * **Command:** /bin/bash
     * On Unix-like systems:` /bin/bash`
     * On Windows: Windows Script
-* **Type the full path to the script to execute, **for example
+* **Type the full path to the script to execute**. For example
     * On Unix-like systems:` /opt/SumoCollector/sumojanus/bin/SumoJanus_SF.bash`
     * On Windows: `c:\Program Files\SumoCollector\sumojanus\bin\SumoJanus_SF.bat`
 * **Update the Working Directory**. For Working Directory set the full path to the sumojanus folder, for example:

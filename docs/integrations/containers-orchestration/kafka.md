@@ -552,7 +552,7 @@ The **Kafka -Zookeeper** dashboard provides an at-a-glance view of the state of 
 Use this dashboard to monitor key Zookeeper metrics such as:
 * **Zookeeper disconnect rate** - This metric indicates if a Zookeeper node has lostits connection to a Kafka broker.
 * **Authentication Failures** - This metric indicates a Kafka Broker is unable to connect to its Zookeeper node.
-* **Session Expiration **- When a Kafka broker - Zookeeper node session expires, leader changes can occur and the broker can be assigned a new controller. If this metric is increasing we recommend you:
+* **Session Expiration** - When a Kafka broker - Zookeeper node session expires, leader changes can occur and the broker can be assigned a new controller. If this metric is increasing we recommend you:
     1. Check the health of your network.
     2. Check for garbage collection issues and tune your JVMs accordingly.
 * Connection Rate.
@@ -574,7 +574,7 @@ Use this dashboard to:
 
 ### Kafka - Failures and Delayed Operations
 
-The **Kafka - Failures and Delayed Operations **dashboard gives you insight into all failures and delayed operations associated with your Kafka clusters.
+The **Kafka - Failures and Delayed Operations** dashboard gives you insight into all failures and delayed operations associated with your Kafka clusters.
 
 Use this dashboard to:
 * Analyze failed produce requests -  A failed produce request occurs when a problem is encountered when processing a produce request. This could be for a variety of reasons, however some common reasons are:

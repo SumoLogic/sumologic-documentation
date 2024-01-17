@@ -113,8 +113,8 @@ For complete details, see [Microsoft Office 365 Audit Source](/docs/send-data/ho
 
 We recommend the following Source Category naming convention:
 * **Azure AD:** O365/Azure
-* **Exchange: **O365/Exchange
-* **SharePoint: **O365/SharePoint
+* **Exchange:** O365/Exchange
+* **SharePoint:** O365/SharePoint
 * **General:** O365/SharePoint
 * **DLP**: O365/DLP
 
