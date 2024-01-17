@@ -7,9 +7,7 @@ description: The Sumo app for AWS Observability DynamoDB is a unified logs and m
 
 [AWS DynamoDB](https://aws.amazon.com/dynamodb/) is a fast and flexible NoSQL database service that provides consistent, single-digit millisecond latency at any scale. 
 
-The Sumo Logic app for AWS Observability DynamoDB is a unified logs and metrics (ULM) app that provides operational insights into DynamoDB
-instances across your infrastructure. Preconfigured app dashboards allow you to monitor key metrics, view the throttle events, errors,
-latency and help you plan the capacity of DynamoDB instances in your environment.
+The Sumo Logic app for AWS Observability DynamoDB is a unified logs and metrics (ULM) app that provides operational insights into DynamoDB instances across your infrastructure. Preconfigured app dashboards allow you to monitor key metrics, view the throttle events, errors, latency and help you plan the capacity of DynamoDB instances in your environment.
 
 ## Log and metrics types
 
