@@ -130,7 +130,7 @@ To install the app:
 3. To install the app, complete the following fields.
     1.**App Name.** You can retain the existing name, or enter a name of your choice for the app.
     2.**Data Source.** Choose **Enter a Custom Data Filter**, and enter `_sourceCategory=O365/*`.
-    3.** Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+    3.**Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
