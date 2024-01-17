@@ -29,7 +29,7 @@ To see data volume, you'll need to enable [Audit Index](/docs/manage/security/a
 
 Navigate to **Manage Data > Metrics > Metrics DPM**.
 
- <img src={useBaseUrl('img/metrics/metrics-dpm.png')} alt="Metrics DPM screen" style={{border: '1px solid black'}} width="800" />
+ <img src={useBaseUrl('img/metrics/metrics-dpm.png')} alt="Metrics DPM screen" style={{border: '1px solid gray'}} width="800" />
 
 1. **Date and time**. Select a time to see the metrics gathered for the previous hour. 
 1. **Total Ingest Data Points**. The total number of data points ingested during the previous hour. The green up arrow indicates the total is higher than the previous hour, and a red down arrow indicates the total is lower than the previous hour. This lets you see at a glance whether volume rates are rising or falling.

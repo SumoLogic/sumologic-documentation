@@ -194,6 +194,9 @@ html[data-theme='light'] {
   article .card:hover {
       border-color: var(--ifm-pagination-nav-color-hover);
   }
+  .theme-code-block-highlighted-line {
+    background-color: var(--ifm-table-head-background);
+  }
   .docusaurus-highlight-code-line {
     background-color: rgb(0, 139, 178,.1);
   }

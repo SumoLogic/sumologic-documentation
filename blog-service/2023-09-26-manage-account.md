@@ -18,6 +18,6 @@ We're excited to introduce a new addition to Sumo Logic account management. Org 
 ## How to export detailed child usages
 
 1. In the left navigation bar, select **Administration > Account**. The Account Overview tab is shown by default.
-1. Click on the kebab button and select **Download Detailed Child Usages**, to export/dowload the detailed child usages.<br/><img src={useBaseUrl('img/account/download-detailed-child-usages.png')} alt="download-detailed-child-usages" width="650" style={{border: '1px solid black'}}/>
+1. Click on the kebab button and select **Download Detailed Child Usages**, to export/dowload the detailed child usages.<br/><img src={useBaseUrl('img/account/download-detailed-child-usages.png')} alt="download-detailed-child-usages" width="650" style={{border: '1px solid gray'}}/>
 
 

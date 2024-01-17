@@ -370,7 +370,7 @@ Integrations are defined using two types of YAML text files. The first type, the
 
 The second type of file is an action definition file, which is used to define a single action that will be performed using the integration. Each integration action is defined in a separate action definition file, which will be associated by Cloud SOAR with the appropriate integration definition. Action definition files are the files which contain the actual code which will be executed to perform the action. Supported languages include Perl, Python, PowerShell and Bash. In addition to the action code, action definition files also contain information such as the name, required and optional fields and the format in which the resulting information will be displayed.
 
-<img src={useBaseUrl('img/cloud-soar/image65.png')} alt="Integration definition" style={{border: '1px solid black'}} width="600"/> 
+<img src={useBaseUrl('img/cloud-soar/image65.png')} alt="Integration definition" style={{border: '1px solid gray'}} width="600"/> 
 
 ### Integration File Hierarchy
 
@@ -378,7 +378,7 @@ Defining integrations at the **action** level allows users greater flexibility i
 
 Once the user has created this new action, it can easily be added to the existing RSA Netwitness integration by uploading the new integration action file. This new action can also be shared between customers and used to extend the functionality of the integration in other customer instances as well.
 
-<img src={useBaseUrl('img/cloud-soar/image66.png')} alt="New action" style={{border: '1px solid black'}} width="600"/> 
+<img src={useBaseUrl('img/cloud-soar/image66.png')} alt="New action" style={{border: '1px solid gray'}} width="600"/> 
 
 See [Integration Framework](#integration-framework) for more details on utilizing the integration framework within Cloud SOAR.
 
