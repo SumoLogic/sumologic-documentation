@@ -66,12 +66,6 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/get-started-with-search/search-page/event-analyticsl"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Event Analytics</h4></a>
-  <p>Learn more about events in histogram and aggregate charts for your search results.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="docs/search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="40"/><h4>Field Browser</h4></a>
   <p>Explore specific fields of interest in a search by displaying or hiding selected fields without having to parse them.</p>
   </div>

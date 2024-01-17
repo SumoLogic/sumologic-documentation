@@ -5,6 +5,12 @@ sidebar: Event Analytics
 description: Learn more about events in histogram and aggregate charts for your search results.
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Events are actions that can change the state of the system. These could be code deployments, feature flag changes, infrastructure changes and so on. They can be used to identify and mitigate outages in your system.
@@ -24,7 +30,7 @@ In the below example, an event is captured due to the code deployment. Following
 - You can only view the events in the Line chart, Column chart, and Area Chart. 
 - Make sure that you have switched to **[New Visualizations](/docs/search/get-started-with-search/search-basics/chart-search-results)** to view the events in charts.
 
-## Hide Events
+## Hide events
 
 By default, you can view the events in the histogram and aggregate chart. If you prefer to hide the events from the histogram, you can do so by clicking on the **Hide Events button**.
 
