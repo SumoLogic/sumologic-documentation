@@ -39,14 +39,14 @@ Log-Level pattern detection is automatic, meaning you do not need to parse log l
 
 <img src={useBaseUrl('img/search/get-started-search/search-page/log-level-legend.png')} width="950" alt="log-level-legend" />
 
-| Element | Description |
-| :-- | :--  |
-| A | Histogram with stacked bars representing log level distribution over your search timeframe.  |
-| B | Interactive Histogram legend showing the log level that each color represents. Click on any label to isolate it in the Histogram and corresponding messages beneath that. To select multiple log levels, use **shift + click**. In this example, the **ERROR** and **INFO** label have been selected, so you'll see only error and info logs reflected.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/log-level-error-filter.png')} width="850" alt="log-level-error-filter.png" /> |
-| C | [Field Browser](/docs/search/get-started-with-search/search-page/field-browser) **_loglevel** filter. You can use this reserved field in your queries to perform advanced operations. |
-| D | Log level for this log message. Quickly identify the log level of each log message using the color-coded Histogram legend for each message. |
-| E | Distribution of log levels under **_loglevel** field in the field browser. |
-| F | **Hide Log Levels**. Click this to hide log levels from the Histogram chart, however, the **_loglevel** field will still show in the Messages table, however, log level color coding from individual messages will be removed. To enable it again, just click **Show Log Levels**. |
+| Element | Description
+| :-- | :--
+| A | Histogram with stacked bars representing log level distribution over your search timeframe.
+| B | Interactive Histogram legend showing the log level that each color represents. Click on any label to isolate it in the Histogram and corresponding messages beneath that. To select multiple log levels, use **shift + click**. In the following example, the **ERROR** and **INFO** label have been selected, so you'll see only error and info logs reflected. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/log-level-error-filter.png')} width="850" alt="log-level-error-filter.png" /> |
+| C | [Field Browser](/docs/search/get-started-with-search/search-page/field-browser) **_loglevel** filter. You can use this reserved field in your queries to perform advanced operations.
+| D | Log level for this log message. Quickly identify the log level of each log message using the color-coded Histogram legend for each message.
+| E | Distribution of log levels under **_loglevel** field in the field browser.
+| F | **Hide Log Levels**. Click this to hide log levels from the Histogram chart, however, the **_loglevel** field will still show in the Messages table, however, log level color coding from individual messages will be removed. To enable it again, just click **Show Log Levels**.
 
 The <strong>_loglevel</strong> field value for log messages with the log level <code>""</code> in the Histogram is <code>null</code>. To query these messages, you can run:
 

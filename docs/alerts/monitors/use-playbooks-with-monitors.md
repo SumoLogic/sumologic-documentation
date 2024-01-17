@@ -48,7 +48,7 @@ For more information, see [View playbooks for an alert](/docs/alerts/monitors/us
 1. Perform [Step 1](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), [Step 2](/docs/alerts/monitors/create-monitor/#step-2-advanced-settings-optional), and [Step 3](/docs/alerts/monitors/create-monitor/#step-3-notifications-optional) in the **New Monitor** window.
 1. In [Step 4](/docs/alerts/monitors/create-monitor/#step-4-monitor-details) of the **New Monitor** window, select one of the following:
    *  **Insert custom playbook**. Insert your own playbook, which is a set of  instructions to the on-call incident responder about how to resolve the alert. 
-   * **Select automated playbook**. In the field provided, select a playbook from [playbooks in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/). <br/><img src={useBaseUrl('img/monitors/monitor-playbooks-ui.png')} alt="Add a playbook to a monitor" style={{border: '1px solid black'}} width="800" />
+   * **Select automated playbook**. In the field provided, select a playbook from [playbooks in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/). <br/><img src={useBaseUrl('img/monitors/monitor-playbooks-ui.png')} alt="Add a playbook to a monitor" style={{border: '1px solid gray'}} width="800" />
 1.  (Optional) Click **Manage Playbooks** to open playbooks previously authored in the Automation Service. From here, you can view the selected playbook and look at its actions to determine if they are the ones you want to run when the alert is triggered. You can also edit the playbook, or if you want, create a new playbook to use in the monitor.  
 1. Click **Save** to save the monitor settings.
 
@@ -59,7 +59,7 @@ When the monitor triggers an alert, the selected playbook(s) run automatically.
 Once a monitor triggers an alert with one or more attached playbooks, you can view the playbooks for the alert. 
 
 1. On the [alert page](/docs/alerts/monitors/alert-response/#alert-page), open an alert that has attached playbooks.
-1. Click the **Playbook** button. The attached playbooks are displayed. <br/><img src={useBaseUrl('img/monitors/view-playbooks-on-alert.png')} alt="View playbooks for an alert" style={{border: '1px solid black'}} width="800" />
+1. Click the **Playbook** button. The attached playbooks are displayed. <br/><img src={useBaseUrl('img/monitors/view-playbooks-on-alert.png')} alt="View playbooks for an alert" style={{border: '1px solid gray'}} width="800" />
 1. Hover your mouse over the icon to the right of the playbook name to view the status of the playbooks:
 
    | Icon | Description |
@@ -86,7 +86,7 @@ To create a monitor that generates smart alerts:
 1. [Open the **New Monitor** window](/docs/alerts/monitors/create-monitor/#open-the-new-monitor-window).
 1. Go to [Step 1: Trigger Conditions](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions) in the **New Monitor** window.
 1. Select the **Logs** monitor type.
-1. Select **Anomaly** under **Detection Method**. <br/> <img src={useBaseUrl('img/monitors/new-monitor-anomaly-detection-method.png')} alt="Anomaly detection method" style={{border: '1px solid black'}} width="800" />
+1. Select **Anomaly** under **Detection Method**. <br/> <img src={useBaseUrl('img/monitors/new-monitor-anomaly-detection-method.png')} alt="Anomaly detection method" style={{border: '1px solid gray'}} width="800" />
 1. In **Query**, [provide a query](/docs/alerts/monitors/create-monitor/#provide-a-query-logs-and-metrics-only) for the logs to be monitored for anomalous behavior.
 1. In the **Critical** tab under **Trigger Type**, select the parameters for the alert trigger:
    * **Detection Window**. Select the duration of time to watch for anomalies (either 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 6 hours, 12 hours, or 24 hours). Ensure that the detection window is 5-10 times longer than the timeslice used in the log query. 
@@ -94,7 +94,7 @@ To create a monitor that generates smart alerts:
    * **Minimum Anomaly Count**. Enter the minimum number of anomalies to detect during the detection window before triggering an alert. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the Detection Window is set to 5 minutes, and the Minimum Anomaly Count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period. 
 1. Perform [Step 2: Advanced Settings](/docs/alerts/monitors/create-monitor/#step-2-advanced-settings-optional) and [Step 3: Notifications](/docs/alerts/monitors/create-monitor/#step-3-notifications-optional) in the **New Monitor** window. 
 1. In [Step 4: Monitor Details](/docs/alerts/monitors/create-monitor/#step-4-monitor-details), click **Select automated playbooks**.
-1. Click in the field provided to select one or more playbooks that run when the monitor triggers an alert.  <br/><img src={useBaseUrl('img/monitors/monitor-playbooks-ui.png')} alt="Add a playbook to a monitor" style={{border: '1px solid black'}} width="800" />
+1. Click in the field provided to select one or more playbooks that run when the monitor triggers an alert.  <br/><img src={useBaseUrl('img/monitors/monitor-playbooks-ui.png')} alt="Add a playbook to a monitor" style={{border: '1px solid gray'}} width="800" />
 1. Click **Save** to save the monitor with the attached playbooks.
 
 When the monitor detects anomalous activity, it triggers an alert that runs the selected playbooks automatically. In this way, the system can respond autonomously to suspicious behavior exposed in logs.
