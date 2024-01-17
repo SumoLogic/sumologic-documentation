@@ -207,7 +207,7 @@ otellogs:
                     - IntenseLogGeneration
 ```
 
-For more information look at the `Setting different resources on different nodes for logs collector` section in [Advanced Configuration / Best Practices](best-practices.md#setting-different-resources-on-different-nodes-for-logs-collector)
+For more information, see [Setting different resources on different nodes for logs collector](/docs/send-data/kubernetes/best-practices/#setting-different-resources-on-different-nodes-for-logs-collector).
 document.
 
 ## Collecting metrics
