@@ -70,7 +70,7 @@ _sourceCategory=Labs/AWS/APIGateway/Metric Namespace=aws/apigateway metric=Laten
 account=* region=* entity=* | avg by region, entity
 ```
 
-```sql title="CloudTrail Log based"
+```sql title="CloudTrail log-based"
 _sourceCategory=Labs/AWS/CloudTrail/APIGateway "apigateway.amazonaws.com" Namespace={{namespace}}
 | json "awsRegion", "eventSource", "eventName" nodrop
 | json "requestParameters.basePath" as basePath nodrop
