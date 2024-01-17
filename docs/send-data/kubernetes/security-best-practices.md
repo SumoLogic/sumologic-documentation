@@ -363,4 +363,4 @@ This only adds a `-fips` suffix to the image tag. If you're customizing the tag 
 
 #### OpenTelemetry: dial tcp: lookup collection-sumologic-metadata-logs.sumologic.svc.cluster.local.: device or resource busy
 
-Refer to [Troubleshooting Collection document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md#opentelemetry-dial-tcp-lookup-collection-sumologic-metadata-logssumologicsvcclusterlocal-device-or-resource-busy).
+Refer to [Troubleshooting Collection document](troubleshoot-collection.md#opentelemetry-dial-tcp-lookup-collection-sumologic-metadata-logssumologicsvcclusterlocal-device-or-resource-busy).
