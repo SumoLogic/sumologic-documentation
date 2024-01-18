@@ -133,17 +133,7 @@ This section describes prerequisites and guidelines for deploying Sumo Logic’s
   * Data Management
      * View Collectors
      * Manage Collectors
-     * View Field Extraction Rules
-     * View Fields
-     * Manage Fields
-     * Manage Field Extraction Rules
      * Manage Content
-     * Manage Connections
-     * View Account Overview
-  * Entity Management
-     * Manage Entity Type Configs
-  * Metrics
-     * Manage Metrics Rules
   * Security
      * Create access keys
   * Alerting
@@ -247,7 +237,7 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
    1. For firewall configuration:
       * Under **7.1 AWS Firewall Manager Policy Regions Configuration**, in **AWS WAF Policy Regions**, enter regions from which AWS WAF data should be sent. On the AWS side, [configure Network Firewall](https://docs.aws.amazon.com/network-firewall/latest/developerguide/logging-s3.html) to deliver log files from multiple Regions to a single S3 bucket for a single account, and use that S3 bucket in section **7.4 Firewall Manager - S3 Bucket Configuration**. 
       * **AWS Network Firewall Policy Regions**. Enter regions from which AWS Network Firewall data should be sent.
-      * Under **7.2 Firewall Manager Details - Kinesis Firehose Delivery Stream Source WAF Configuration**, in **Create a Kinesis Firehose Delivery Stream Source for WAF**, select **Yes** if you do not already have a Kinesis Delivery Stream Source for WAF. Select **No** if you already have a source. If Sumo Logic’s Kinesis Firehose source is created by the Cloud Infrastructure Security solution, then make sure on AWS side that same Sumo Logic Kinesis HTTP URL is used while configuring the [WAF Logging Kinesis destination](https://docs.aws.amazon.com/waf/latest/developerguide/logging-destinations.html). (Configure WAF in each region to send logs to [Kinesis data firehose destination](https://docs.aws.amazon.com/waf/latest/developerguide/logging-destinations.html), and from there, use the same [Sumo Logic Kinesis HTTP URL](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/) in Firehose configuration to send logs to Sumo Logic.)
+      * Under **7.2 Firewall Manager Details - Kinesis Firehose Delivery Stream Source WAF Configuration**, in **Create a Kinesis Firehose Delivery Stream Source for WAF**, select **Yes** if you do not already have a Kinesis Delivery Stream Source for WAF. Select **No** if you already have a source. Configure WAF in each region to send logs to [Kinesis data firehose destination](https://docs.aws.amazon.com/waf/latest/developerguide/logging-destinations.html), and from there, use the same [Sumo Logic Kinesis HTTP URL](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/) in Firehose configuration to send logs to Sumo Logic as shown below in the Kinesis Firehose configuration: <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-firehose-url.png')} alt="Firehose URL" style={{border: '1px solid gray'}} width="500"/> <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-firehose-url2.png')} alt="Firehose URL" style={{border: '1px solid gray'}} width="500"/> 
       * **Sumo Logic AWS Kinesis Firehose Logs WAF Source Category Name**. Enter the name if a source category from Sumo Logic if it already exists. To create a new source category, use the default name provided.
       * **Amazon Kinesis Data Firehose delivery stream name**. Enter the Amazon Kinesis Data Firehose (Kinesis Data Firehose) delivery stream name.
       * Under **7.3 Firewall Manager Details - S3 Source Network Firewall Configuration**, in **Create Sumo Logic Amazon S3 Logs Source for Network Firewall**, select **Yes** if you do not already have a Sumo Logic Amazon S3 Log Source with the provided bucket name. Select **No** if you already have a source.
