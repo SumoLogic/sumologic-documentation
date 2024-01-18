@@ -159,11 +159,11 @@ Refer to [Collecting Container Logs document](https://github.com/SumoLogic/sumol
 
 ### Collecting application metrics
 
-Refer to [Collecting Application Metrics document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-application-metrics.md#collecting-application-metrics)
+Refer to [Collecting Application Metrics document](/docs/send-data/kubernetes/collecting-application-metrics#collecting-application-metrics)
 
 ### Collecting Kubernetes metrics
 
-Refer to [Collecting Kubernetes Metrics document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-kubernetes-metrics.md#collecting-kubernetes-metrics)
+Refer to [Collecting Kubernetes Metrics document](/docs/send-data/kubernetes/collecting-kubernetes-metrics/)
 
 ### Collecting Kubernetes events
 

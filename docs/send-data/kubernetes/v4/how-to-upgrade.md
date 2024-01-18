@@ -174,7 +174,7 @@ helm upgrade --namespace "${NAMESPACE}" "${HELM_RELEASE_NAME}" sumologic/sumolog
 
 After you're done, please review the [full list of changes](full-list-of-changes.md), as some of them may impact you even if they don't require additional action.
 
-[application_metrics_annotation]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-application-metrics.md#application-metrics-are-exposed-one-endpoint-scenario
+[application_metrics_annotation]: /docs/send-data/kubernetes/collecting-application-metrics#application-metrics-are-exposed-one-endpoint-scenario
 [kubernetes_metrics_v3]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v3/docs/collecting-kubernetes-metrics.md#collecting-kubernetes-metrics
-[otel_metrics_filter]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-application-metrics.md#filtering-metrics
-[v3_migration_guide]: https://help.sumologic.com/docs/send-data/kubernetes/v3/important-changes/
+[otel_metrics_filter]: /docs/send-data/kubernetes/collecting-application-metrics#filtering-metrics
+[v3_migration_guide]: /docs/send-data/kubernetes/v3/important-changes/

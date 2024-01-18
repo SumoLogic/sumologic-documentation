@@ -394,6 +394,8 @@ module.exports = {
             'send-data/kubernetes/helm-chart-overview',
             'send-data/kubernetes/install-helm-chart',
             'send-data/kubernetes/best-practices',
+            'send-data/kubernetes/collecting-application-metrics',
+            'send-data/kubernetes/collecting-kubernetes-metrics',
             'send-data/kubernetes/security-best-practices',
             'send-data/kubernetes/troubleshoot-collection',
             {
