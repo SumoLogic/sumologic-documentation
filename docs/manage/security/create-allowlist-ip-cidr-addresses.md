@@ -20,7 +20,7 @@ The IP is generally your host IP address. But if your request is coming through 
 
 1. Go to **Administration > Security**.
 1. Select the **Service Allowlist Settings** tab.
-1. Under** Service Allowlist Settings**, select the **Enable Login / API Allowlist** check box.
+1. Under **Service Allowlist Settings**, select the **Enable Login / API Allowlist** check box.
 
     ![service-allow-list-1.png](/img/security/service-allow-list-1.png)
 
@@ -32,7 +32,7 @@ The IP is generally your host IP address. But if your request is coming through 
 
 1. Go to **Administration > Security**.
 1. Select the **Service Allowlist Settings** tab.
-1. Under** Service Allowlist Settings**, select the **Enable Dashboard Allowlist** check box.
+1. Under **Service Allowlist Settings**, select the **Enable Dashboard Allowlist** check box.
 
     ![service-allow-list-2.png](/img/security/service-allow-list-2.png)
 
