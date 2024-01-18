@@ -393,6 +393,7 @@ module.exports = {
           items: [
             'send-data/kubernetes/helm-chart-overview',
             'send-data/kubernetes/install-helm-chart',
+            'send-data/kubernetes/logs',
             'send-data/kubernetes/best-practices',
             'send-data/kubernetes/collecting-metrics',
             'send-data/kubernetes/collecting-kubernetes-events',
