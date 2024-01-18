@@ -308,7 +308,7 @@ By default, Varnish logs are stored in a log file. Sumo Logic supports collectin
      * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in **/var/log/varnish/varnishncsa.log**.
      * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
      * **Source Category.** Enter any string to tag the output collected from this Source, such as **Varnish/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices.md).)
-     * **Fields. **Set the following fields:
+     * **Fields.** Set the following fields:
        * `component = cache`
        * `cache_system = varnish`
        * `cache_cluster = <Your_Varnish_Cluster_Name>`
@@ -317,7 +317,7 @@ By default, Varnish logs are stored in a log file. Sumo Logic supports collectin
      * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
      * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Varnish Server’s time zone.
      * **Timestamp Format.** The timestamp format is automatically detected.
-     * **Encoding. **Select** **UTF-8 (Default).
+     * **Encoding.** Select UTF-8 (Default).
      * **Enable Multiline Processing.** Detect messages spanning multiple lines
     * Infer Boundaries - Detect message boundaries automatically
    4. Click **Save**.
@@ -347,7 +347,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 3. Go to **Manage Data > Alerts > Monitors**.
 4. Click **Add**.
 5. Click **Import.**
-6. On the** Import Content popup**, enter **Varnish** in the Name field, paste the JSON into the popup, and click **Import**.
+6. On the **Import Content** popup, enter **Varnish** in the **Name** field, paste the JSON into the popup, and click **Import**.
 7. The monitors are created in a "Varnish" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 ### Method B: Using a Terraform script

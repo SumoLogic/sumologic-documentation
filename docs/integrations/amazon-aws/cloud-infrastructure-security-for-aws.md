@@ -185,34 +185,34 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
     :::important
     This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
     :::
-   1. **Deploy AWS**. Click the **Deploy AWS Security** button.  <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="Deploy Cloud Infrastructure for AWS screen" style={{border: '1px solid black'}} width="700"/>
+   1. **Deploy AWS**. Click the **Deploy AWS Security** button.  <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="Deploy Cloud Infrastructure for AWS screen" style={{border: '1px solid gray'}} width="700"/>
 1. Sign in the [AWS Console](https://console.aws.amazon.com/console/). 
 1. In **Quick Create Stack**, fill out the fields to create the stack from the CloudFormation template.
-   1. In **Stack Name**, enter a name for the stack. The stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-quick-create-stack.png')} alt="Create stack" style={{border: '1px solid black'}} width="700"/> 
+   1. In **Stack Name**, enter a name for the stack. The stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-quick-create-stack.png')} alt="Create stack" style={{border: '1px solid gray'}} width="700"/> 
    1. Scroll down to the **Parameters** section. 
    1. In **1. Sumo Logic Configuration**, fill out the following:
       * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, or fed.
       * **Sumo Logic access ID**. Enter the Sumo Logic console access ID, which you received when you created the [access key](/docs/manage/security/access-keys/).
       * **Sumo Logic access key**. Enter your Sumo Logic access key. Retrieve this from your Sumo Logic account.
       * **Sumo Logic organization ID**. Enter your Sumo Logic organization ID, which you can find in the Sumo Logic console, under [Account](/docs/get-started/account-settings-preferences).
-      * **Delete Sumo Logic resources when stack is deleted**. Choose **false** if you do not want to remove the collector and sources when the stack is deleted. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-1.png')} alt="Sumo Logic configuration" style={{border: '1px solid black'}} width="700"/> 
+      * **Delete Sumo Logic resources when stack is deleted**. Choose **false** if you do not want to remove the collector and sources when the stack is deleted. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-1.png')} alt="Sumo Logic configuration" style={{border: '1px solid gray'}} width="700"/> 
    1. In **2. AWS Organization configuration**, fill out the following:
       * **Security-tooling account ID**. Enter your security-tooling account ID. This is used to set up the AWS CloudWatch, Lambda, Kinesis, S3 bucket, and SNS topic for collecting AWS GuardDuty, Security Hub, WAF, and Network Firewall data.
       * **Log-archiving account ID**. Enter your log-archiving account ID. This is used to set up an S3 bucket and SNS topic for collecting the AWS CloudTrail data.
       * **Security-tooling and log-archiving account Region**. Enter your security-tooling and log-archiving account Region if it's different from the default.
-      * **AWS Organization root ID**. Enter the ID for your organization root. This string requires `r-` followed by from 4 to 32 lowercase letters or digits.<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-2.png')} alt="AWS organization configuration" style={{border: '1px solid black'}} width="700"/> 
+      * **AWS Organization root ID**. Enter the ID for your organization root. This string requires `r-` followed by from 4 to 32 lowercase letters or digits.<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-2.png')} alt="AWS organization configuration" style={{border: '1px solid gray'}} width="700"/> 
       
-      You can find the values in the **Organizational structure** section of your [AWS accounts](https://console.aws.amazon.com/organizations/v2/home/accounts) page. Sign in to the AWS console, click on your profile in the top-right corner, and select **Organization**. For more information about organizations, see [AWS documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-organizations.png')} alt="AWS organizational structure" style={{border: '1px solid black'}} width="700"/> 
+      You can find the values in the **Organizational structure** section of your [AWS accounts](https://console.aws.amazon.com/organizations/v2/home/accounts) page. Sign in to the AWS console, click on your profile in the top-right corner, and select **Organization**. For more information about organizations, see [AWS documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-organizations.png')} alt="AWS organizational structure" style={{border: '1px solid gray'}} width="700"/> 
    1. In **3. AWS Service configuration**, fill out the following:
       * **Publish AWS GuardDuty data to Sumo**. Ensure AWS GuardDuty Service is enabled. 
       * **Publish AWS CloudTrail data to Sumo**. Ensure AWS CloudTrail Service is enabled. 
       * **Publish AWS Security Hub data to Sumo**. Ensure AWS Security Hub Service is enabled. 
       * **Publish AWS WAF data to Sumo**. Ensure AWS WAF Service is enabled. 
-      * **Publish AWS Network Firewall data to Sumo**. Ensure AWS Network Firewall Service is enabled. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-3.png')} alt="AWS service configuration" style={{border: '1px solid black'}} width="700"/> 
+      * **Publish AWS Network Firewall data to Sumo**. Ensure AWS Network Firewall Service is enabled. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-3.png')} alt="AWS service configuration" style={{border: '1px solid gray'}} width="700"/> 
    1. For GuardDuty configuration:
       * Under **4.1 GuardDuty service configuration**, for **GuardDuty Regions** enter regions from which GuardDuty Data should be sent.
       * Under **4.2 GuardDuty Sumo log source configuration**, in **Create Sumo Logic HTTP logs source**, select **Yes** if you do not already have an HTTP logs source to collect GuardDuty logs. Select **No** if you already have a source.
-      * **Sumo Logic HTTP logs source category name**. If you selected **No** above in the field for creating a logs source, provide an existing source category name for the GuardDuty logs. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-4.png')} alt="GuardDuty configuration" style={{border: '1px solid black'}} width="700"/> 
+      * **Sumo Logic HTTP logs source category name**. If you selected **No** above in the field for creating a logs source, provide an existing source category name for the GuardDuty logs. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-4.png')} alt="GuardDuty configuration" style={{border: '1px solid gray'}} width="700"/> 
    1. For CloudTrail configuration:
       * Under **5.1 CloudTrail service configuration**, in **CloudTrail Regions**, enter regions from which CloudTrail Data should be sent.
       * Under **5.2 CloudTrail Sumo log source configuration**, under **Create Sumo Logic S3 logs source for CloudTrail**, select **Yes** if you do not already have a Sumo Logic S3 log source to collect CloudTrail logs. Select **No** if you already have a source.
@@ -220,11 +220,11 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
       * **Sumo Logic CloudTrail logs source category name**. If you selected **No** in the preceding field for creating an S3 log source, provide the name of an existing Sumo Logic source category that's collecting CloudTrail logs.
       * Under **5.3 CloudTrail S3 bucket configuration**, in **Create an S3 bucket for CloudTrail logs**, select **Yes** if you do not already have an S3 bucket for CloudTrail logs. Select **No** if you already have a bucket. (We recommend you use an existing bucket if possible.)
       * **Name of existing S3 bucket that contains the CloudTrail logs**. If you selected **No** in the preceding field for creating an S3 bucket, provide the name of an existing S3 bucket that contains CloudTrail logs. The existing bucket must be in same AWS Region as the log-archiving account. 
-      * **Delivery bucket prefix**. Enter the log delivery S3 bucket prefix. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-5.png')} alt="CloudTrail configuration" style={{border: '1px solid black'}} width="700"/> 
+      * **Delivery bucket prefix**. Enter the log delivery S3 bucket prefix. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-5.png')} alt="CloudTrail configuration" style={{border: '1px solid gray'}} width="700"/> 
    1. For Security Hub configuration:
       * Under **6.1 Security Hub Service Configuration**, in **Security Hub Regions**, enter regions from which Security Hub data should be sent.
       * Under **6.2 Security Hub Sumo Log Source configuration**, in **Create Sumo Logic HTTP logs source**, select **Yes** if you do not already have a Sumo Logic HTTP logs source to collect Security Hub logs. Select **No** if you already have a logs source.
-      * **Sumo Logic HTTP logs source category name**. If you selected **No** in the preceding field for creating a logs source, provide an existing source category name from the Security Hub logs.  <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-6.png')} alt="Security Hub configuration" style={{border: '1px solid black'}} width="700"/> 
+      * **Sumo Logic HTTP logs source category name**. If you selected **No** in the preceding field for creating a logs source, provide an existing source category name from the Security Hub logs.  <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-6.png')} alt="Security Hub configuration" style={{border: '1px solid gray'}} width="700"/> 
    1. For firewall configuration:
       * Under **7.1 AWS Firewall Manager Policy Regions Configuration**, in **AWS WAF Policy Regions**, enter regions from which AWS WAF data should be sent.
       * **AWS Network Firewall Policy Regions**. Enter regions from which AWS Network Firewall data should be sent.
@@ -235,12 +235,12 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
       * **Sumo Logic Amazon S3 Logs Source Category Name for Network Firewall**. Enter the name of a source category from Sumo Logic if it already exists. To create a new source category, use the default name provided.
       * Under **7.4 Firewall Manager - S3 Bucket Configuration**, in **Create AWS S3 Bucket**, select **Yes** if you do not already have an S3 bucket in AWS S3. Select **No** to use an existing S3 bucket from AWS S3 which has Network Firewall Logs.
       * **Network Firewall Delivery Bucket Prefix**. Enter the Network Firewall Log Delivery S3 bucket prefix.
-      * **Name of existing S3 Bucket which contains the Network Firewall Logs**. If you selected **No** in the preceding field for creating an S3 bucket, provide an existing S3 Bucket name which contains Network Firewall Logs. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-7.png')} alt="Firewall configuration" style={{border: '1px solid black'}} width="700"/> 
-   1. Under **Permissions**, in **IAM role - optional**, choose the IAM role for CloudFormation to use for all operations performed on the stack. The role must have permissions to set up the necessary Lambdas, S3 buckets, Kenesis streams, and other objects needed in the CloudFormation template, as well as access to the appropriate logs. If your AWS role does not have the necessary permissions, see the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html) for information on configuring a policy to provide permissions. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions.png')} alt="Create Stack button" style={{border: '1px solid black'}} width="700"/> 
+      * **Name of existing S3 Bucket which contains the Network Firewall Logs**. If you selected **No** in the preceding field for creating an S3 bucket, provide an existing S3 Bucket name which contains Network Firewall Logs. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-7.png')} alt="Firewall configuration" style={{border: '1px solid gray'}} width="700"/> 
+   1. Under **Permissions**, in **IAM role - optional**, choose the IAM role for CloudFormation to use for all operations performed on the stack. The role must have permissions to set up the necessary Lambdas, S3 buckets, Kenesis streams, and other objects needed in the CloudFormation template, as well as access to the appropriate logs. If your AWS role does not have the necessary permissions, see the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html) for information on configuring a policy to provide permissions. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions.png')} alt="Create Stack button" style={{border: '1px solid gray'}} width="700"/> 
    1. Under **Capabilities and transforms**, select the acknowledgement boxes.
    1. Click **Create Stack**. The stack is created, and the solution is installed.
-1. Click **Start Using Sumo**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-start-using-sumo.png')} alt="Start Using Sumo button" style={{border: '1px solid black'}} width="400"/>
-1. Select an option to start using the solution. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-finish-installation.png')} alt="App hub page" style={{border: '1px solid black'}} width="800"/>
+1. Click **Start Using Sumo**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-start-using-sumo.png')} alt="Start Using Sumo button" style={{border: '1px solid gray'}} width="400"/>
+1. Select an option to start using the solution. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-finish-installation.png')} alt="App hub page" style={{border: '1px solid gray'}} width="800"/>
    
 ### Troubleshoot installation
 
@@ -252,11 +252,11 @@ This section walks you through the process of troubleshooting an AWS CloudForma
 
 To debug an AWS CloudFormation installation failure, do the following:
 
-1. After the stack rollback is complete and the status is `ROLLBACK_COMPLETE`, go to the parent stack. In the parent stack, look for the first failure as shown in the following example. The failure can be a direct reason or can point to a nested stack. <br/><img src={useBaseUrl('img/observability/Troubleshooting_1.png')} alt="Troubleshooting 1" style={{border: '1px solid black'}} width="800"/>
-1. Look for direct reasons for the failure that is available in the parent stack, as shown in the following example. <br/><img src={useBaseUrl('img/observability/Troubleshooting_2.png')} alt="Troubleshooting 2" style={{border: '1px solid black'}} width="800"/>
-1. To find indirect reasons for the failure, go to the nested stack mentioned in the status reason, as shown in the following example. Take a note of the resources mentioned in the reason. <br/><img src={useBaseUrl('img/observability/Troubleshooting_3.png')} alt="Troubleshooting 3" style={{border: '1px solid black'}} width="800"/>
-1. Select the deleted option to find the nested stacks, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_4.png')} alt="Troubleshooting 4" style={{border: '1px solid black'}} width="400"/>
-1. Go to the nested stack and look for the resource mentioned in the previous step to identify the reason, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_5.png')} alt="Troubleshooting 5" style={{border: '1px solid black'}} width="800"/>
+1. After the stack rollback is complete and the status is `ROLLBACK_COMPLETE`, go to the parent stack. In the parent stack, look for the first failure as shown in the following example. The failure can be a direct reason or can point to a nested stack. <br/><img src={useBaseUrl('img/observability/Troubleshooting_1.png')} alt="Troubleshooting 1" style={{border: '1px solid gray'}} width="800"/>
+1. Look for direct reasons for the failure that is available in the parent stack, as shown in the following example. <br/><img src={useBaseUrl('img/observability/Troubleshooting_2.png')} alt="Troubleshooting 2" style={{border: '1px solid gray'}} width="800"/>
+1. To find indirect reasons for the failure, go to the nested stack mentioned in the status reason, as shown in the following example. Take a note of the resources mentioned in the reason. <br/><img src={useBaseUrl('img/observability/Troubleshooting_3.png')} alt="Troubleshooting 3" style={{border: '1px solid gray'}} width="800"/>
+1. Select the deleted option to find the nested stacks, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_4.png')} alt="Troubleshooting 4" style={{border: '1px solid gray'}} width="400"/>
+1. Go to the nested stack and look for the resource mentioned in the previous step to identify the reason, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_5.png')} alt="Troubleshooting 5" style={{border: '1px solid gray'}} width="800"/>
 
 #### Optimize CloudTrail log ingest
 
@@ -302,7 +302,7 @@ To uninstall the Cloud Infrastructure Security solution:
 
 1. Log in to your AWS account and go to [CloudFormation](https://console.aws.amazon.com/cloudformation/home).
 1. Select the main stack you want to delete.
-1. Select **Delete**.<br/><img src={useBaseUrl('img/observability/CFT_Uninstall.png')} alt="Delete stack" style={{border: '1px solid black'}} width="800"/>
+1. Select **Delete**.<br/><img src={useBaseUrl('img/observability/CFT_Uninstall.png')} alt="Delete stack" style={{border: '1px solid gray'}} width="800"/>
 
 ## Cloud Infrastructure Security for AWS dashboards​
 

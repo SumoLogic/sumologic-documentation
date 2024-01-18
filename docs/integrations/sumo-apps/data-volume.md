@@ -22,7 +22,7 @@ To install the app:
 
 1. From **App Catalog**, search for the **Data Volume** app.
 2. Click **Data Volume**.
-3. Select the version and click **Add to Library. **This opens a new window. Within the window, click on **Advanced** and choose a location to install the app.<br/><img src={useBaseUrl('img/integrations/sumo-apps/app.png')} alt="Data volume" />
+3. Select the version and click **Add to Library.** This opens a new window. Within the window, click on **Advanced** and choose a location to install the app.<br/><img src={useBaseUrl('img/integrations/sumo-apps/app.png')} alt="Data volume" />
 4. Choose a location for Data Volume in your **Personal** folder.
 5. Click **Add to Library**. A dialog will confirm the app is installed successfully.
 
@@ -138,7 +138,7 @@ Use this dashboard to:
 
 ### Capacity Utilization
 
-The **Data Volume - Capacity Utilization **dashboard provides views of subscribed, actual, and percentage capacity utilization for logs and metrics.
+The **Data Volume - Capacity Utilization** dashboard provides views of subscribed, actual, and percentage capacity utilization for logs and metrics.
 
 Use this dashboard to:
 * Identify the log and metrics ingestion capacity of your subscription. You must configure the "Daily_Log_Ingest_Capacity" and “Metric_DPM_Ingest_Capacity” variables based on your plan with Sumo Logic. If you have a Credit-based plan, please check with your account executive to determine these values for your account. Otherwise, see **Administration > Account > Account Overview** to view the log ingest capacity value and metric DPM ingest capacity value.

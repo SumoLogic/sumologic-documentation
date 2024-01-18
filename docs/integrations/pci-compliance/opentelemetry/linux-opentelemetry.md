@@ -16,7 +16,7 @@ The PCI Compliance for Linux - OpenTelemetry is a unified log app that sends Lin
 The PCI Compliance for Linux app covers PCI requirements 02, 07, 08, and 10.
 :::
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Schematics.png' alt="Linux-Schematics" style={{border: '1px solid black'}} />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Schematics.png' alt="Linux-Schematics" style={{border: '1px solid gray'}} />
 
 ## Fields created in Sumo Logic for Linux PCI Compliance
 
@@ -40,7 +40,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Collector.png' alt="Linux-Collector" style={{border: '1px solid black'}} />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Collector.png' alt="Linux-Collector" style={{border: '1px solid gray'}} />
 
 ### Step 2: Configure integration
 
@@ -67,7 +67,7 @@ The following logs, located in the `/var/log` folder, are required for using the
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Linux-YAML.png' alt="Linux-YAML.png" style={{border: '1px solid black'}}/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Linux-YAML.png' alt="Linux-YAML.png" style={{border: '1px solid gray'}}/>
 
 :::note
 By default, the path for Linux log files required for all the distros are pre-populated in the UI. (Optional) Unwanted file paths can be removed from the list if the files are not available on your Linux distribution. The collection will work even if not all the files are present in your system.
@@ -171,7 +171,7 @@ Use this dashboard to:
 - Detect attempts to change the system time.
 - Verify the status of critical systems.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Compliance-Req-02-07%2C08%2C10.png')} alt="PCI Compliance for Linux dashboards" style={{border: '1px solid black'}}/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Compliance-Req-02-07%2C08%2C10.png')} alt="PCI Compliance for Linux dashboards" style={{border: '1px solid gray'}}/>
 
 ### Login Activity
 
@@ -182,7 +182,7 @@ Use this dashboard to:
 - Monitor access to the cardholder data environment.
 - Monitor failed and successful user logins.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Compliance-Req-02-10.png')} alt="PCI Compliance for Linux dashboards" style={{border: '1px solid black'}}/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Compliance-Req-02-10.png')} alt="PCI Compliance for Linux dashboards" style={{border: '1px solid gray'}}/>
 
 
 ### Privileged Activity
@@ -193,4 +193,4 @@ Use this dashboard to:
 - Monitor successful and failed access attempts to systems with administrative privileges. 
 - Monitor actions performed by users with administrative privileges.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Compliance-Req-10.png')} alt="PCI Compliance for Linux dashboards" style={{border: '1px solid black'}}/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Compliance-Req-10.png')} alt="PCI Compliance for Linux dashboards" style={{border: '1px solid gray'}}/>
