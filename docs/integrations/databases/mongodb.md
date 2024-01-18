@@ -384,7 +384,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB a
          * **Protocol**: UDP
          * **Port**: 514 (as entered while configuring logging in Step b.)
          * **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
-         * **Fields. **Set the following fields:
+         * **Fields.** Set the following fields:
            * `component = database`
            * `db_system = MongoDB`
            * `db_cluster = <Your_MongoDB_Cluster_Name>`

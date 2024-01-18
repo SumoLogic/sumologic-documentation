@@ -170,8 +170,8 @@ Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automati
 1. In Sumo Logic, go to **Manage Data > Logs > Field Extractions** and click **Add**.
 2. Configure the following fields:
     * **Rule Name.** Required (for example, Akamai Cloud Monitor).
-    * **Scope. **Use the Source Category you created for your HTTP Source (for example, akamai_cloud_monitor).
-    * **Parse Expression. **Select the template **Akamai Cloud Monitor** and click **Use Template**. The full parse statement is below.
+    * **Scope.** Use the Source Category you created for your HTTP Source (for example, akamai_cloud_monitor).
+    * **Parse Expression.** Select the template **Akamai Cloud Monitor** and click **Use Template**. The full parse statement is below.
 3. Click **Add**.
 
 ```sql title="FER for Akamai Cloud Monitor"
