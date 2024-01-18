@@ -401,7 +401,7 @@ After fix, we can see that Prometheus can read metrics from the Pod now:
 
 ![Prometheus targets without error](/img/send-data/kubernetes-helm-chart/metrics/prometheus-targets-ok.png)
 
-:::NOTE
+:::note
 This example was simple as it was just simple misconfiguration. There can be much complicated cases, eg. Prometheus cannot authenticate to the metrics endpoints, or cannot access it due to network configuration.
 :::
 

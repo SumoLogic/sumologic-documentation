@@ -52,7 +52,7 @@ You can use the method described in
 
 ## Metrics modifications
 
-See the relevant section in [Collecting application metrics](/docs/send-data/kubetnetes/collecting-application-metrics#metrics-modifications).
+See the relevant section in [Collecting application metrics](/docs/send-data/kubernetes/collecting-application-metrics#metrics-modifications).
 
 ## Investigation
 
