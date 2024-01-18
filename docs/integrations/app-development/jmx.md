@@ -179,7 +179,7 @@ The following steps assume you are collecting JMX metrics from a Kubernetes envi
 1. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md)
 2. On your Pods, add the following annotations to configure Telegraf.
 
-Ensure that Prometheus passes all metrics to Sumo Logic. If you use the below annotations to configure Telegraf, it should work correctly, otherwise, refer to this [doc](/docs/send-data/kubernetes/collecting-application-metrics).
+Ensure that Prometheus passes all metrics to Sumo Logic. If you use the below annotations to configure Telegraf, it should work correctly; otherwise, refer to [Collecting Application Metrics](/docs/send-data/kubernetes/collecting-application-metrics).
 
 ```sql
 annotations:
