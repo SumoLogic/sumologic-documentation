@@ -97,7 +97,7 @@ You need to configure a Pub/Sub Topic in GCP and add a subscription to the Sourc
 
 1. Create a Pub/Sub Topic in GCP. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
 2. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
-   * Use a **Push Delivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the** Collection** page in Sumo Logic and click **Show URL**.
+   * Use a **Push Delivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the **Collection** page in Sumo Logic and click **Show URL**.
 
 
 ### Limitations
@@ -179,11 +179,11 @@ See information about request activity in Google Cloud Load Balancing, including
 
 **KBs Sent, received by Number of Requests.** A combination chart showing a bar chart of request counts, and a line chart showing data received and data sent over the last 24 hours.
 
-**Requests by Load Balancer Over Time. **A line chart showing the count of requests by load balancer over the last 24 hours.
+**Requests by Load Balancer Over Time.** A line chart showing the count of requests by load balancer over the last 24 hours.
 
 **Number of Requests - Outlier**. Shows instances where the count of requests was significantly significant, more than three standard deviations from the running average over the last 24 hours.
 
-**Total Requests by Load Balancer. **A bar chart that shows the total count of requests by load balancer over the last 24 hours.
+**Total Requests by Load Balancer.** A bar chart that shows the total count of requests by load balancer over the last 24 hours.
 
 
 ### Status Analysis
@@ -204,8 +204,8 @@ See information about the status of requests in Google Cloud Load Balancing, inc
 
 **5xx  Status Code Locations.** A world map that shows the locations of 5xx status codes over the last 24 hours.
 
-**5xx Status Code Per Load Balancer. **A stacked column chart that shows the count of 5xx status codes by load balancer over the last 24 hours.
+**5xx Status Code Per Load Balancer.** A stacked column chart that shows the count of 5xx status codes by load balancer over the last 24 hours.
 
 **4xx Status Codes Locations**. A world map that shows the locations of 4xx status codes over the last 24 hours.
 
-**4xx Status Code Per Load Balancer.  A stacked column chart that shows the count of 4xx status codes by load balancer over the last 24 hours.
+**4xx Status Code Per Load Balancer**.  A stacked column chart that shows the count of 4xx status codes by load balancer over the last 24 hours.

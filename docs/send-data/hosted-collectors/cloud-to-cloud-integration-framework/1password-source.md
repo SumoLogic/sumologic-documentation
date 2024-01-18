@@ -8,7 +8,6 @@ tags:
   - 1password
 description: The 1Password Source provides a secure endpoint to receive Sign-in Attempts and Item Usage from the 1Password Event API.
 ---
-
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/1password/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/1password/example.json';
@@ -76,7 +75,7 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for more details.
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for more details. 
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|

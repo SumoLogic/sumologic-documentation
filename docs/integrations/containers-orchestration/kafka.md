@@ -338,7 +338,7 @@ This section provides instructions for configuring log collection for Kafka runn
      * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
      * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Kafka Server’s time zone.
      * **Timestamp Format.** The timestamp format is automatically detected.
-     * **Encoding. **Select** **UTF-8 (Default).
+     * **Encoding.** Select UTF-8 (Default).
      * **Enable Multiline Processing.** Detect messages spanning multiple lines
      * Select Infer Boundaries - Detect message boundaries automatically
     4. Click **Save**.
@@ -552,7 +552,7 @@ The **Kafka -Zookeeper** dashboard provides an at-a-glance view of the state of 
 Use this dashboard to monitor key Zookeeper metrics such as:
 * **Zookeeper disconnect rate** - This metric indicates if a Zookeeper node has lostits connection to a Kafka broker.
 * **Authentication Failures** - This metric indicates a Kafka Broker is unable to connect to its Zookeeper node.
-* **Session Expiration **- When a Kafka broker - Zookeeper node session expires, leader changes can occur and the broker can be assigned a new controller. If this metric is increasing we recommend you:
+* **Session Expiration** - When a Kafka broker - Zookeeper node session expires, leader changes can occur and the broker can be assigned a new controller. If this metric is increasing we recommend you:
     1. Check the health of your network.
     2. Check for garbage collection issues and tune your JVMs accordingly.
 * Connection Rate.
@@ -574,7 +574,7 @@ Use this dashboard to:
 
 ### Kafka - Failures and Delayed Operations
 
-The **Kafka - Failures and Delayed Operations **dashboard gives you insight into all failures and delayed operations associated with your Kafka clusters.
+The **Kafka - Failures and Delayed Operations** dashboard gives you insight into all failures and delayed operations associated with your Kafka clusters.
 
 Use this dashboard to:
 * Analyze failed produce requests -  A failed produce request occurs when a problem is encountered when processing a produce request. This could be for a variety of reasons, however some common reasons are:
@@ -595,9 +595,9 @@ The **Kafka - Request-Response** **Times** dashboard helps you get insight into 
 
 Use this dashboard to:
 * Monitor request time metrics - The Request Metrics metric group contains information regarding different types of request to and from the cluster. Important request metrics to monitor:
-    1. **Fetch Consumer Request Total Time **- The Fetch Consumer Request Total Time metric shows the maximum and mean amount of time taken for processing, and the number of requests from consumers to get new data. Reasons for increased time taken could be: increased load on the node (creating processing delays), or perhaps requests are being held in purgatory for a long time (determined by fetch.min.bytes and fetch.wait.max.ms metrics).
+    1. **Fetch Consumer Request Total Time** - The Fetch Consumer Request Total Time metric shows the maximum and mean amount of time taken for processing, and the number of requests from consumers to get new data. Reasons for increased time taken could be: increased load on the node (creating processing delays), or perhaps requests are being held in purgatory for a long time (determined by fetch.min.bytes and fetch.wait.max.ms metrics).
     2. **Fetch Follower Request Total Time** - The Fetch Follower Request Total Time metric displays the maximum and mean amount of time taken while processing, and the number of requests to get new data from Kafka brokers that are followers of a partition. Common causes of increased time taken are increased load on the node causing delays in processing requests, or that some partition replicas may be overloaded or temporarily unavailable.
-    3. **Produce Request Total Time **- The Produce Request Total Time metric displays the maximum and mean amount of time taken for processing, and the number of requests from producers to send data. Some reasons for increased time taken could be: increased load on the node causing delays in processing the requests, or perhaps requests are being held in purgatory for a long time (if the `requests.required.acks` metrics is equal to '1' or all).
+    3. **Produce Request Total Time**- The Produce Request Total Time metric displays the maximum and mean amount of time taken for processing, and the number of requests from producers to send data. Some reasons for increased time taken could be: increased load on the node causing delays in processing the requests, or perhaps requests are being held in purgatory for a long time (if the `requests.required.acks` metrics is equal to '1' or all).
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Request-Response-Times.png')} alt="Kafka dashboards" />
 

@@ -310,7 +310,7 @@ This section provides instructions for configuring log collection for SQL Server
    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
    * **Time Zone.** Choose the option, **Ignore time zone from the log file and instead use**, and then select your SQL Server Server’s time zone.
    * **Timestamp Format.** The timestamp format is automatically detected.
-   * **Encoding. **Select the encoding of the `ERRORLOG` you found in step 1, which will typically be **UTF-16LE**.
+   * **Encoding.** Select the encoding of the `ERRORLOG` you found in step 1, which will typically be **UTF-16LE**.
    * **Enable Multiline Processing.** Detect messages spanning multiple lines
      * **Infer Boundaries** - Detect message boundaries automatically
 5. Click **Save**.
@@ -453,7 +453,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this [ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
-**Step 2: [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later **
+**Step 2: [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**
 
 **Step 3: Download the Sumo Logic Terraform package for SQL Server alerts**
 
@@ -528,8 +528,8 @@ email_notifications = [
 
 **Step 6: Install the Alerts**
 
-1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**SQLServer**/ and run **terraform init. **This will initialize Terraform and will download the required components.
-2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
+1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**SQLServer**/ and run **terraform init.** This will initialize Terraform and will download the required components.
+2. Run **terraform plan** to view the monitors which will be created/modified by Terraform.
 3. Run **terraform apply**.
 
 **Step 7: Post Installation**

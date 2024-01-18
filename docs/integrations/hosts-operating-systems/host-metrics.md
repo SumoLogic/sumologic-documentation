@@ -273,15 +273,15 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/host_metrics_app_memory.png')} alt="Host Metrics dashboards" />
 
-**Total Memory per Host. **Displays total memory per host in a line chart on a timeline for the last hour.
+**Total Memory per Host.** Displays total memory per host in a line chart on a timeline for the last hour.
 
 **Percent Memory Used per Host.** Shows percent memory used per host in a line chart on a timeline for the last hour.
 
 **Total Free, Buffers, and Cached Memory per Host.** Provides details on the total free, buffers, and cached memory per host (from a metric called ActualFree) in a line chart on a timeline for the last hour.
 
-**Total Used, Less Buffers, and Cached Memory per Host. **Displays the total used, buffers, and cached memory (from a metric called ActualUsed) in a line chart on a timeline for the last hour.
+**Total Used, Less Buffers, and Cached Memory per Host.** Displays the total used, buffers, and cached memory (from a metric called ActualUsed) in a line chart on a timeline for the last hour.
 
-**Total Free Memory per Host. **Shows the amount of total free memory per host available in a line chart on a timeline for the last hour.
+**Total Free Memory per Host.** Shows the amount of total free memory per host available in a line chart on a timeline for the last hour.
 
 **Total Used System Memory per Host.** Provides details on the total system memory per host used in a line chart on a timeline for the last hour.
 
@@ -303,9 +303,9 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/host_metrics_app_tcp.png')} alt="Host Metrics dashboards" />
 
-**Inbound Connections per Host. **Displays inbound connections per host in a line chart on a timeline for the last hour.
+**Inbound Connections per Host.** Displays inbound connections per host in a line chart on a timeline for the last hour.
 
-**Outbound Connections per Host. **Shows outbound connections per host in a line chart on a timeline for the last hour.
+**Outbound Connections per Host.** Shows outbound connections per host in a line chart on a timeline for the last hour.
 
 **Listen Connections per Host.** Provides details on listen connections per host in a line chart on a timeline for the last hour.
 

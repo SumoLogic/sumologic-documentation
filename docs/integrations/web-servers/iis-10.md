@@ -100,7 +100,7 @@ For more information about IIS log format and log configuration refer [link](htt
    2. Under the \W3SVC1 directory, you should see one or more files with a .log extension. If the file is present, you can collect it.
 * **Enable HTTP Error Logs on your Windows Server** Perform the following task to enable HTTP Error Logs on your Windows Server, that is hosting the IIS Server.
 
-**To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:
+To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:
 
 1. To configure HTTP Error Logging, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/configuring-http-server-api-error-logging).
 2. To understand HTTP Error Log format, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/format-of-the-http-server-api-error-logs). HTTP Error Log files are generated as local files. The default HTTP Error log file location is: `C:\Windows\System32\LogFiles\HTTPERR`
@@ -166,7 +166,7 @@ To configure a local file source for HTTP Error Logs, do the following:
     4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
     5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
     6. **Source Category** (Required). For example, Webserver/IIS/Error.
-    7. **Fields. **Set the following fields**: \
+    7. **Fields.** Set the following fields: \
 `component = webserver \
 webserver_system = iis \
 webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one.
@@ -202,7 +202,7 @@ To configure a Source for IIS Performance Logs, do the following:
     * **Source Category** (Required). For example, Webserver/IIS/PerfCounter.
     * **Frequency**: **Every Minute** (you may custom choose frequency)
     * **Description**. (Optional)
-    * **Fields. **Set the following fields**: \
+    * **Fields.** Set the following fields:
 `component = webserver \
 webserver_system = iis \
 webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one.
@@ -229,14 +229,14 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
     2. Select **HTTP Logs & Metrics_._**
         1. **Name.** (Required). Enter a name for the source.
         2. **Description.** (Optional).
-        3. **Source Category** (Required)**. For example,  `Prod/Webserver/IIS/Metrics`.
+        3. **Source Category** (Required). For example,  `Prod/Webserver/IIS/Metrics`.
     3. Select **Save**.
     4. Take note of the URL provided once you click **Save**. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 
 
 #### Set up Telegraf
 
-1. **Install Telegraf if you haven’t already. **Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
+1. **Install Telegraf if you haven’t already.** Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 2. **Configure and start Telegraf.** As part of collecting metrics data from Telegraf, we will use the[ Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
 <details>
@@ -599,7 +599,7 @@ Use this dashboard to:
 
 ### Performance Snapshot
 
-The **IIS - Performance Snapshot **dashboard provides detailed information on your IIS infrastructure integrity and performance. Dashboard panels show details on Web Service uptime, active connections, requests, user activity, and total bytes transferred. Panels also provide HTTP Service Request Queues details, such as arrivals, queue size, cache hit rate, and rejection rate.
+The **IIS - Performance Snapshot** dashboard provides detailed information on your IIS infrastructure integrity and performance. Dashboard panels show details on Web Service uptime, active connections, requests, user activity, and total bytes transferred. Panels also provide HTTP Service Request Queues details, such as arrivals, queue size, cache hit rate, and rejection rate.
 
 Use this dashboard to:
 * Monitor incoming request traffic, along with queue size and rejection rate to identify any bottlenecks.

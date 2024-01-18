@@ -261,8 +261,7 @@ See the details of GuardDuty CloudTrail threats including the count, title, the 
 <img src={useBaseUrl('img/integrations/amazon-aws/CloudTrailDetails.png')} alt="Amazon GuardDuty dashboards" />
 
 
-
-**CloudTrail Threats. **See the count of CloudTrail threats in the last 24 hours.
+**CloudTrail Threats.** See the count of CloudTrail threats in the last 24 hours.
 
 **CloudTrail Threats by Title Trend**. See the count of CloudTrail threats by title in the last 24 hours on a pie chart.
 
@@ -307,4 +306,4 @@ See the details of GuardDuty threats by VPC, security group, and subnet ID.
 
 **Severity Count by SubnetID**. See the count of severity in the last 24 hours by Subnet ID on a bar chart.
 
-**VPC, Subnet, and Security Group Threat Table. ** See the details of severity in the last 24 hours including the account ID, severity, region, VPC ID, Subnet ID,  security group name and ID,  threat purpose, resource type, threat name, and count, displayed in a table.
+**VPC, Subnet, and Security Group Threat Table.**  See the details of severity in the last 24 hours including the account ID, severity, region, VPC ID, Subnet ID,  security group name and ID,  threat purpose, resource type, threat name, and count, displayed in a table.
