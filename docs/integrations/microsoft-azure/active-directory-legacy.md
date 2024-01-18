@@ -155,8 +155,8 @@ If your Domain Controllers are in the same domain, then you can just run the scr
 
 To configure a script source, do the following:
 
-1. In Sumo Logic, select** Manage Data > Collection > Collection**.
-2. Find the name of the installed collector to which you'd like to add a Source. Click **Add...** then choose** Add Source **from the pop-up menu.
+1. In Sumo Logic, select **Manage Data > Collection > Collection**.
+2. Find the name of the installed collector to which you'd like to add a Source. Click **Add...** then choose **Add Source** from the pop-up menu.
 3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. Enter **DomainCollector** or **ADObjects**, depending on which script you are configuring. Description is optional.
 5. **Source Host** (optional). Enter the hostname or the IP address of the machine. The hostname is stored in a searchable field called `_sourceHost`. The hostname can be a maximum of 128 characters.

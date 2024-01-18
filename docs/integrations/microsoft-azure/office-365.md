@@ -112,6 +112,7 @@ To collect logs for the Microsoft Office 365 App, do the following:
 For complete details, see [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source.md).
 
 We recommend the following Source Category naming convention:
+
 * **Azure AD.** O365/Azure
 * **Exchange.** O365/Exchange
 * **SharePoint.** O365/SharePoint

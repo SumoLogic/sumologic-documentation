@@ -53,7 +53,7 @@ Run the installer on your server with root or Administrator privileges. If you a
    * Installation Token: The [Setup Wizard](/docs/send-data/setup-wizard) has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
    * Setup Wizard Token: If the Setup Wizard has provided you with a token for the UI Installer, click **Next**, enter the token, and click **Next**. The Setup Wizard Token is a one-time use token, available for one hour after it is generated, then it expires. This token authenticates the user. It is designed to be used for only one Collector. The token cannot be used with the API, and it cannot be disabled.
 8. Click **Finish** to complete the setup.
-9. In Sumo Logic select** Manage Data > Collection > Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the Error Codes list to help troubleshoot.
+9. In Sumo Logic select **Manage Data > Collection > Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the Error Codes list to help troubleshoot.
 
 </details>
 
@@ -300,7 +300,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ### Linux - Security Analytics - Login Activity
 
-**Dashboard description: **This dashboard tracks login activity. It provides information about failed and successful user logins, and failed and successful root logins.
+**Dashboard description:** This dashboard tracks login activity. It provides information about failed and successful user logins, and failed and successful root logins.
 
 **Use case:** Use this dashboard to monitor access to the linux computing environment. You can monitor failed and successful user logins.
 
@@ -309,7 +309,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ### Linux - Security Analytics - Privileged Activity
 
-**Dashboard description: **This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
+**Dashboard description:** This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case:** Use this dashboard to monitor successful and failed access attempts to systems, especially with administrative privileges. It also helps monitor actions performed by users with administrative privileges.
 
@@ -318,7 +318,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ### Linux - Security Monitoring - User, Service, and System Monitoring
 
-**Dashboard description: **This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
+**Dashboard description:** This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case:** Use this dashboard to monitor accounts created and deleted. It also helps monitor service usage and other system activity.
 

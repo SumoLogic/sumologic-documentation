@@ -408,7 +408,7 @@ For error logs, following directives are to be noted:
    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
    * **Time Zone.** Select Use time zone form log file, if none is detected use “Use Collector Default”
    * **Timestamp Format.** Select Automatically detect the format.
-   * **Encoding. **Select** **UTF-8 (Default).
+   * **Encoding.** Select UTF-8 (Default).
    * Apache Access logs are single-line logs, uncheck **Detect messages spanning multiple lines.**
    3. Click **Save**. At this point, Apache access logs should start flowing into Sumo Logic.
 4. **Configure a Local File Source for Apache error logs**. To add a Local File Source for Apache error log do the following
@@ -522,7 +522,7 @@ email_notifications = [
 ```
 6. Install the Alerts.
    1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**apache**/ and run **terraform init.** This will initialize Terraform and will download the required components.
-   2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
+   2. Run **terraform plan** to view the monitors which will be created/modified by Terraform.
    3. Run **terraform apply**.
 
 ## Installing the Apache app
