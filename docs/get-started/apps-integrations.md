@@ -1,7 +1,7 @@
 ---
 id: apps-integrations
-title: Installing Apps and Integrations
-sidebar_label: Installing Apps
+title: Installing apps and Integrations
+sidebar_label: Installing apps
 description: Learn how to install apps to your Library and to multiple environments.
 ---
 
@@ -9,11 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/cloud/apps.png')} alt="icon" width="50"/>
 
-Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you. In this doc, you'll learn how to install apps from the App Catalog to your Library and how to manage them in multiple environments.
+Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you. In this doc, you'll learn how to install apps from the app Catalog to your Library and how to manage them in multiple environments.
 
 <a href="/docs/integrations"><img src={useBaseUrl('img/get-started/library/App-Catalog.png')} alt="app catalog" /></a>
 
-Sumo Logic Apps address these common use cases:
+Sumo Logic apps address these common use cases:
 
 * **Increase availability and performance.** Sumo Logic enables issues to be identified before they impact the application and customer. Precise, proactive analytics quickly uncover hidden root causes across all layers of the application and infrastructure stack.
 * **Provide real-time insights.** With Sumo Logic enterprises easily extract machine data insights to provide greater intelligence around their customers, products, and application usage. These insights provide a more accurate and complete analysis for business users.
@@ -27,9 +27,9 @@ In our **App Catalog**, you'll find two categories of apps: Next-Gen and Classic
 
 ### Next-Gen Apps
 
-Our Next-Gen Apps, which simplify the management and maintenance of apps, are designed to help you get started using the [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) agent. For a limited time, you can still continue to send data through the Sumo Logic Installed Collector and Hosted Collector.
+Our Next-Gen apps, which simplify the management and maintenance of apps, are designed to help you get started using the [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) agent. For a limited time, you can still continue to send data through the Sumo Logic Installed Collector and Hosted Collector.
 
-What makes Next-Gen different from Classic Apps?
+What makes Next-Gen different from Classic apps?
 
 * Installation and updates must be performed by an administrator or a user with the **Manage Apps** role capability.
 * App icons will display a badge indicating if it's been installed within your org.
@@ -39,10 +39,17 @@ What makes Next-Gen different from Classic Apps?
 * Upon app installation, content is installed into a shared **Installed Apps** folder that's visible to your entire org, making it easier to locate and upgrade, when needed.
 * Installed app content is immutable, which ensure that any apps upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
 
+import AppInstall from '../reuse/apps/app-install-v2.md';
+
+<AppInstall/>
+
 ### Classic Apps (Legacy)
 
-All of our existing Classic Apps will be converted to Next-Gen. In the meantime, our Classic Apps will remain available to you within the Application Catalog.
+All of our existing Classic apps will be converted to Next-Gen. In the meantime, our Classic apps will remain available to you within the Application Catalog.
 
+import ClassicAppInstall from '../reuse/apps/app-install.md';
+
+<ClassicAppInstall/>
 
 ## Prerequisites
 
@@ -54,28 +61,22 @@ All of our existing Classic Apps will be converted to Next-Gen. In the meantime,
 Certain apps have specific installation requirements. Be sure to check the instructions for your application for specific instructions.
 
 :::important
-Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic Apps.
+Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic apps.
 :::
 
-## Installing Apps to your Library
+## Install apps in Multiple Environments
 
-import AppInstall from '../reuse/apps/app-install.md';
+If you have multiple environments generating data that you want to monitor using Sumo Logic apps — for example, environments for production, development, and testing — you’ll need to perform the following steps in each environment:
 
-<AppInstall/>
+1. Set up Sumo Logic Collectors and Sources for each environment. Make sure that Source Hosts and Source Categories are named correctly in order to clearly indicate the environment name to the apps when they are installed.
+1. Perform any prerequisites required for the particular Sumo Logic app in that environment. Each Sumo Logic app has unique requirements, so make sure to follow the specific instructions for that app.
+1. Install an instance of the Sumo Logic app for each environment, configure it to accept data from that environment, and rename the app to reflecting the deployed environment.
 
-## Install Apps in Multiple Environments
+Your data comes in from each of your environments (like production, development, testing) into the corresponding installed Sumo Logic app. The environment data and its Sources are identified by Host Names and Source Categories as configured by you or your administrators.
 
-If you have multiple environments generating data that you want to monitor using Sumo Logic Apps — for example, environments for production, development, and testing — you’ll need to perform the following steps in each environment:
+### Installation example
 
-1. Set up Sumo Logic Collectors and Sources for each environment. Make sure that Source Hosts and Source Categories are named correctly in order to clearly indicate the environment name to the Apps when they are installed.
-1. Perform any prerequisites required for the particular Sumo Logic App in that environment. Each Sumo Logic App has unique requirements, so make sure to follow the specific instructions for that App.
-1. Install an instance of the Sumo Logic App for each environment, configure it to accept data from that environment, and rename the App to reflecting the deployed environment.
-
-Your data comes in from each of your environments (like production, development, testing) into the corresponding installed Sumo Logic App. The environment data and its Sources are identified by Host Names and Source Categories as configured by you or your administrators.
-
-### Example Installation
-
-In this example, a company has three environments: qa, prod, and perf. You will configure the Sumo Logic Collectors and Sources to identify each environment correctly, perform any necessary prerequisites for the Sumo Logic App, then finally install an instance of the App for each of your environments.
+In this example, a company has three environments: qa, prod, and perf. You will configure the Sumo Logic Collectors and Sources to identify each environment correctly, perform any necessary prerequisites for the Sumo Logic app, then finally install an instance of the app for each of your environments.
 
 #### Set up Sumo Logic Collectors and Sources
 
@@ -83,22 +84,22 @@ Before installing any applications, define your Collectors in each environment s
 
 Optionally, you can set a Source Category to indicate these names as well, depending on how Sumo Logic is architected at your company.
 
-#### Perform any Prerequisites required for the Sumo Logic App
+#### Perform any Prerequisites required for the Sumo Logic app
 
-Each Sumo Logic App has unique requirements, so make sure to follow the specific instructions for that App. For details, see Sumo Logic Apps.
+Each Sumo Logic app has unique requirements, so make sure to follow the specific instructions for that app. For details, see Sumo Logic apps.
 
-#### Install an Instance of the Sumo Logic App for each Environment
+#### Install an Instance of the Sumo Logic app for each Environment
 
-1. Install an instance of the Sumo Logic App for the first environment, **qa**.
+1. Install an instance of the Sumo Logic app for the first environment, **qa**.
    * If you have used Source Host to identify the environment, in the **Install Application** dialog, you can configure the app with a custom data filter using `_sourceHost=qa`.
    * If you have used a Source Category to delineate the deployment, when installing the app, you could configure it using the Source Category `_sourceCategory=qa-abc`.
-   * Rename the title of the App to denote the environment it is configured for, for example, **Windows-QA**.
+   * Rename the title of the app to denote the environment it is configured for, for example, **Windows-QA**.
 1. Next, install an instance of the Sumo Logic app for the **prod** environment.
    * In the **Install Application** dialog, indicate the name of the environment in the Source Host, such as `_sourceHost=prod`.
-   * Rename the title of the App to denote the environment it is configured for, for example, **Windows-Prod**.
+   * Rename the title of the app to denote the environment it is configured for, for example, **Windows-Prod**.
 1. Finally, install an instance of the Sumo Logic app for the **perf** environment.
    * In the **Install Application** dialog, indicate the name of the environment in the Source Host, such as `_sourceHost=perf`.
-   * Rename the title of the App to denote the environment it is configured for, for example, **Windows-Perf**.
+   * Rename the title of the app to denote the environment it is configured for, for example, **Windows-Perf**.
 
 ## Certified by Sumo Logic
 
@@ -110,7 +111,7 @@ These apps have gone through code and functional review with the Sumo Logic app 
 
 ## Troubleshooting
 
-If you've installed a Sumo Logic App and no data appears in its Dashboards, you may have chosen the wrong Source Category.
+If you've installed a Sumo Logic app and no data appears in its Dashboards, you may have chosen the wrong Source Category.
 
 Apps are dependent on the Source Category [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) associated with your logs. This metadata is established when Collectors and Sources are configured. Because each organization uses their own metadata methodology check with your Sumo Logic account's Administrator to get a better idea of which Source Category would be the best fit for a given app.
 
@@ -120,23 +121,23 @@ To change the Source Category used by an app, you can simply reinstall the same 
 
 For more information, see [Custom Data Filters](#custom-data-filters).
 
-## Run Searches from Sumo Logic Apps
+## Run Searches from Sumo Logic apps
 
-Sumo Logic Apps provide a host of pre-built saved searches for popular data Sources that you can run against your data without installing the App itself. This way, you can try the searches in a Sumo Logic App against your data before you decide to install it. Or you can run the searches to see how good example queries are written.
+Sumo Logic apps provide a host of pre-built saved searches for popular data Sources that you can run against your data without installing the app itself. This way, you can try the searches in a Sumo Logic app against your data before you decide to install it. Or you can run the searches to see how good example queries are written.
 
-To run a saved search from a Sumo Logic App, just find the search you want to run in the Library, click it, and select a Source Category or a custom data filter to run the search against. The Search page opens and runs the search in a new tab automatically using the query's time range.
+To run a saved search from a Sumo Logic app, just find the search you want to run in the Library, click it, and select a Source Category or a custom data filter to run the search against. The Search page opens and runs the search in a new tab automatically using the query's time range.
 
-In order to run a search from an App, you would first need to have data ingested in your system that the search query would find. For example, before you can run a search from the Sumo Logic App for Apache, you must set up a Collector and Source to ingest your Apache data. If you don't have data that matches the requirements of the search query, or if you select the incorrect Source Category or data filter, you will either get no results, or bad results.
+In order to run a search from an app, you would first need to have data ingested in your system that the search query would find. For example, before you can run a search from the Sumo Logic app for Apache, you must set up a Collector and Source to ingest your Apache data. If you don't have data that matches the requirements of the search query, or if you select the incorrect Source Category or data filter, you will either get no results, or bad results.
 
 After the search has run, you can [save the search](/docs/search/get-started-with-search/search-basics/save-search) to use it again in the future from the Library.
 
 :::important
-Searches from Enterprise Apps, which require a paid Professional Services contract, are not included.
+Searches from Enterprise apps, which require a paid Professional Services contract, are not included.
 :::
 
-To run a search from a Sumo Logic App:
+To run a search from a Sumo Logic app:
 
-1. Find the Sumo Logic App for the data Source you would like to search in the **App Catalog**. For example, we've picked Cloud Passage Halo's **Outlier in Critical Issues**.<br/>  ![Outlier in critical issues](/img/get-started/library/FindSearchInApp.png)
+1. Find the Sumo Logic app for the data Source you would like to search in the **App Catalog**. For example, we've picked Cloud Passage Halo's **Outlier in Critical Issues**.<br/>  ![Outlier in critical issues](/img/get-started/library/FindSearchInApp.png)
 1. Find the search you want to run and click it.
 1. In the **Run Search** dialog, select a **Source Category** or enter a **Custom data filter** to run the search against.<br/>  ![Run a Search from an app](/img/get-started/library/RunSearch.png)
 1. Click **Run Search**.
@@ -146,7 +147,7 @@ The **Search** page opens, the search populates a new tab, and the search runs
 If you don't have data that matches the requirements of the search query, or if you select the incorrect Source Category or data filter, you will either get no results, or bad results.
 
 :::note
-Searches included with the [Sumo Logic App for Data Volume](/docs/integrations/sumo-apps/data-volume "Data Volume App") do not require you to select a Source Category.
+Searches included with the [Sumo Logic app for Data Volume](/docs/integrations/sumo-apps/data-volume "Data Volume app") do not require you to select a Source Category.
 :::
 
 ### Custom Data Filters
@@ -177,9 +178,9 @@ The table below has examples of custom data filters.
 
 
 
-## Log Analysis QuickStart App
+## Log Analysis QuickStart app
 
-The Log Analysis QuickStart App, created for new users of Sumo Logic, includes searches to extract important information from your log files, independent of where they get generated.
+The Log Analysis QuickStart app, created for new users of Sumo Logic, includes searches to extract important information from your log files, independent of where they get generated.
 
 Whether you're new to log management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics capabilities.
 
