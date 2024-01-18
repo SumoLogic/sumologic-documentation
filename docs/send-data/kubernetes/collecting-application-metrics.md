@@ -17,7 +17,7 @@ There are two major sections:
 This section describes how to scrape metrics from your applications. The following scenarios are covered:
 
 - [Application metrics are exposed (one endpoint scenario)](#application-metrics-are-exposed-one-endpoint-scenario)
-- [Application metrics are exposed (multiple enpoints scenario)](#application-metrics-are-exposed-multiple-enpoints-scenario)
+- [Application metrics are exposed (multiple endpoints scenario)](#application-metrics-are-exposed-multiple-enpoints-scenario)
 - [Application metrics are not exposed](#application-metrics-are-not-exposed)
 
 ### Application metrics are exposed (one endpoint scenario)
@@ -35,7 +35,7 @@ annotations:
 
 **NOTE:** If you add more than one annotation with the same name, only the last one will be used.
 
-### Application metrics are exposed (multiple enpoints scenario)
+### Application metrics are exposed (multiple endpoints scenario)
 
 :::note  
 Use `sumologic.metrics.additionalServiceMonitors` instead of `kube-prometheus-stack.prometheus.additionalServiceMonitors`. They have identical behaviour and can even be used in tandem, but the latter only works if Prometheus is enabled, and won't work with the Otel metrics collector which is the default in v4 of the Chart.
@@ -177,11 +177,11 @@ After restart, the Pod should have an additional `telegraf` container.
 To scrape and forward exposed metrics to Sumo Logic, please follow one of the following scenarios:
 
 - [Application metrics are exposed (one endpoint scenario)](#application-metrics-are-exposed-one-endpoint-scenario)
-- [Application metrics are exposed (multiple enpoints scenario)](#application-metrics-are-exposed-multiple-enpoints-scenario)
+- [Application metrics are exposed (multiple endpoints scenario)](#application-metrics-are-exposed-multiple-enpoints-scenario)
 
 ## Metrics modifications
 
-This section coverts the following metrics modifications:
+This section covers the following metrics modifications:
 
 - [Filtering metrics](#filtering-metrics)
 - [Renaming metric](#renaming-metric)
@@ -201,7 +201,7 @@ By default, the following attributes should be available:
 | \_origin                  | Sumo Logic origin metadata ("kubernetes")                  |
 | \_sourceCategory          | Sumo Logic source category                                 |
 | \_sourceHost              | Sumo Logic source host                                     |
-| \_sourceName              | Sumo Logic source Nmae                                     |
+| \_sourceName              | Sumo Logic source Name                                     |
 | cluster                   | Cluster Name                                               |
 | endpoint                  | Metrics endpoint                                           |
 | http_listener_v2_path     | Path used to receive data from Prometheus                  |
@@ -277,7 +277,7 @@ If you do not see your metrics in Sumo Logic, please check the following stages:
 - [Collecting Application Metrics](collecting-application-metrics.md)
   - [Scraping metrics](#scraping-metrics)
     - [Application metrics are exposed (one endpoint scenario)](#application-metrics-are-exposed-one-endpoint-scenario)
-    - [Application metrics are exposed (multiple enpoints scenario)](#application-metrics-are-exposed-multiple-enpoints-scenario)
+    - [Application metrics are exposed (multiple endpoints scenario)](#application-metrics-are-exposed-multiple-enpoints-scenario)
       - [Example](#example)
     - [Application metrics are not exposed](#application-metrics-are-not-exposed)
   - [Metrics modifications](#metrics-modifications)
