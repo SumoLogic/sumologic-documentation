@@ -17,7 +17,7 @@ There are two major sections:
 This section describes how to scrape metrics from your applications. The following scenarios are covered:
 
 - [Application metrics are exposed (one endpoint scenario)](#application-metrics-are-exposed-one-endpoint-scenario)
-- [Application metrics are exposed (multiple endpoints scenario)](#application-metrics-are-exposed-multiple-enpoints-scenario)
+- [Application metrics are exposed (multiple endpoints scenario)](#application-metrics-are-exposed-multiple-endpoints-scenario)
 - [Application metrics are not exposed](#application-metrics-are-not-exposed)
 
 ### Application metrics are exposed (one endpoint scenario)
