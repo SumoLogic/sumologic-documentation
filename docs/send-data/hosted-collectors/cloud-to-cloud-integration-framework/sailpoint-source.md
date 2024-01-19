@@ -101,7 +101,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | client_secret | String | Yes | `null` | Provide the SailPoint secret you want to use to authenticate collection requests.|	 |
 | supported_apis | Array of strings | Yes | `null` | Define one or more of the available APIs to collect: Events, and Users.<br/>For example, for both you'd use: `["Events","Users"]` |  |
 
-See [How to create processing rules using JSON](/docs/send-data/use-json-configure-sources).
+See [Create processing rules using JSON](/docs/send-data/use-json-configure-sources/#creating-processing-rules-using-json).
 
 ### JSON example
 
