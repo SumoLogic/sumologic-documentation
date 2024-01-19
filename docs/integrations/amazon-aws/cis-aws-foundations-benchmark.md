@@ -58,7 +58,7 @@ This Change Control Dashboard includes filters that you can use in Interactive M
 
 **Route Table Changes.** Shows the count of Route Table changes done by each user for the last 24 hours.
 
-**Network ACL Changes. **Shows the count of Network ACL changes done by each user for the last 24 hours.
+**Network ACL Changes.** Shows the count of Network ACL changes done by each user for the last 24 hours.
 
 **Security Group Changes.** Shows the count of Security Group changes done by each user for the last 24 hours.
 

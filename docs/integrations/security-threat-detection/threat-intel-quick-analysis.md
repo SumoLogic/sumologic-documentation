@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/threatintel.png')} alt="thumbnail icon" width="75"/>
 
-The Threat Intel Quick Analysis App correlates [CrowdStrike's](https://www.crowdstrike.com/sumologic/) threat intelligence data with your own log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. The Threat Intel Quick Analysis App scans selected logs for threats based on **IP**, **URL**, **domain, Hash 256,** and** email**.
+The Threat Intel Quick Analysis App correlates [CrowdStrike's](https://www.crowdstrike.com/sumologic/) threat intelligence data with your own log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. The Threat Intel Quick Analysis App scans selected logs for threats based on **IP**, **URL**, **domain, Hash 256,** and **email**.
 
 
 ## Log Types
@@ -507,14 +507,14 @@ Once an indicator has been marked with a malicious confidence level, it continue
 ---
 #### `last_updated`
 
-**Data Type: **Timestamp in standard Unix time, UTC.<br/>
-**Description: **This is the date the indicator was last updated in CrowdStrike internal database.
+**Data Type**: Timestamp in standard Unix time, UTC.<br/>
+**Description**: This is the date the indicator was last updated in CrowdStrike internal database.
 
 ---
 #### `malware_family`
 
-**Data Type:** string<br/>
-**Description: **Indicates the malware family an indicator has been associated with. An indicator may be associated with more than one malware family. The malware family list is also represented under the labels list in the JSON data structure.
+**Data Type**: string<br/>
+**Description**: Indicates the malware family an indicator has been associated with. An indicator may be associated with more than one malware family. The malware family list is also represented under the labels list in the JSON data structure.
 
 ---
 #### `kill_chain`
@@ -645,10 +645,10 @@ See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, 
 * **Number of Log Lines (Events) Scanned for Threats.** Count of log lines scanned across all selected sources for the last 15 minutes.  
 * **IP Threat Count.** Count of threats related to malicious IPs, for the last 15 minutes.
 * **File Name Threat Count.** Count of threats related to malicious file names, for the last 15 minutes.  
-* **URL Threat Count. **Count of threats related to malicious URLs, for the last 15 minutes.  
+* **URL Threat Count.** Count of threats related to malicious URLs, for the last 15 minutes.  
 * **Email Threat Count.** Count of threats related to malicious email addresses, for the last 15 minutes.  
-* **Domain Threat Count. **Count of threats related to malicious domains, for the last 15 minutes.  
-* **Threats by Malicious Confidence. ** Qualifies all threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.
+* **Domain Threat Count.** Count of threats related to malicious domains, for the last 15 minutes.  
+* **Threats by Malicious Confidence.**  Qualifies all threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.
 
 
 ### Domain
@@ -662,7 +662,7 @@ See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, 
 * **Threats by Actor.** Count of threats related to malicious domains, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.
 * **Threats by Sources.** Count of threats related to malicious domains, broken by Sources, for the last 15 minutes.  
 * **Threats Over Time.** Trends of domain threats over time for the last 60 minutes.  
-* **Threats Over Time by Sources. **Trends of domain threats over time, broken by Sources for the last 60 minutes.  
+* **Threats Over Time by Sources.** Trends of domain threats over time, broken by Sources for the last 60 minutes.  
 * **Threats Table.** Listing of all domain threats, including Malicious Confidence, Actors and Sources.   
 
 ### Email
@@ -675,8 +675,8 @@ See the frequency of Email threats by Actor, Log Source, Malicious Confidence, a
 * **Threats by Malicious Confidence.** Qualifies email address threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.  
 * **Threat Breakdown by Sources.** Count of threats related to malicious email addresses, broken by Sources, for the last 15 minutes.  
 * **Threats Over Time.** Trends of email address threats over time for the last 60 minutes.  
-* **Threats Over Time by Sources. **Trends of email address threats over time, broken by Sources for the last 60 minutes.  
-* **Threats by Actor. **Count of threats related to malicious email addresses, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.
+* **Threats Over Time by Sources.** Trends of email address threats over time, broken by Sources for the last 60 minutes.  
+* **Threats by Actor.** Count of threats related to malicious email addresses, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.
 * **Threats Table.** Listing of all domain threats, including Malicious Confidence, Actors and Sources.
 
 
@@ -688,12 +688,12 @@ See the frequency of IP threats by Actor, Log Source, Malicious Confidence, and 
 
 * **Threat Count.** Count of threats related to malicious IPs, for the last 15 minutes.  
 * **Threats by Geo Location.** Count of threats related to malicious IPs, broken by geo location, for the last 15 minutes.
-* **Threat Breakdown by Sources. **Count of threats related to malicious IPs, broken by Sources, for the last 15 minutes.  
+* **Threat Breakdown by Sources.** Count of threats related to malicious IPs, broken by Sources, for the last 15 minutes.  
 * **Threats by Malicious Confidence.** Qualifies IP threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.  
-* **Threats by Actors. **Count of threats related to malicious IPs, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.  
+* **Threats by Actors.** Count of threats related to malicious IPs, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.  
 * **Threats Over Time.** Trends of IP threats over time for the last 60 minutes.  
 * **Threats Table.** Listing of all IP threats, including Malicious Confidence, Actors and Sources.  
-* **Threats Over Time by Sources. **Trends of IP threats over time, broken by Sources for the last 60 minutes.
+* **Threats Over Time by Sources.** Trends of IP threats over time, broken by Sources for the last 60 minutes.
 
 
 ### URL
@@ -703,12 +703,12 @@ See the frequency of URL threats by Actor, Log Source, Malicious Confidence, and
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_URL_Dashboard.png')} alt="Threat Intel Dashboard" />
 
 * **Threat Count.** Count of threats related to malicious URLs, for the last 15 minutes.  
-* **Threats by Sources. **Count of threats related to malicious URLs, broken by Sources, for the last 15 minutes.
-* **Threats by Actors. **Count of threats related to malicious URLs, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.
+* **Threats by Sources.** Count of threats related to malicious URLs, broken by Sources, for the last 15 minutes.
+* **Threats by Actors.** Count of threats related to malicious URLs, broken by Actors, for the last 15 minutes. [Actors](https://www.crowdstrike.com/blog/meet-the-adversaries/) are identified individuals, groups or nation-states associated to threats.
 * **Threats by Malicious Confidence.** Qualifies URLP threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.
 * **Threats Over Time.** Trends of URL threats over time for the last 60 minutes.
 * **Threats Over Time by Sources.** Trends of URL threats over time, broken by Sources for the last 60 minutes.
-* **Threat Table. **Listing of threats identified by URL, including information on Malicious Confidence, Actors, Source, and count.
+* **Threat Table.** Listing of threats identified by URL, including information on Malicious Confidence, Actors, Source, and count.
 
 
 ### Hash 256

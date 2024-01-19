@@ -16,7 +16,7 @@ The PCI Compliance for Windows JSON - OpenTelemetry is a log app that sends Wind
 The PCI Compliance for Windows JSON app covers PCI requirements 02, 06, 08, and 10.
 :::
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-WIndows-JSON-Schematics.png' alt="PCI-Windows-JSON-Schematics" style={{border: '1px solid black'}} />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-WIndows-JSON-Schematics.png' alt="PCI-Windows-JSON-Schematics" style={{border: '1px solid gray'}} />
 
 ## Fields created in Sumo Logic for PCI Compliance Windows JSON App
 

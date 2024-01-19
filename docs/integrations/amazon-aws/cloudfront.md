@@ -72,7 +72,7 @@ Amazon CloudFront is a content delivery network (CDN) that allows an easy way fo
 
 ### Overview
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudfront-Overview.png')} style={{border: '1px solid black'}} alt="Amazon CloudFront" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudfront-Overview.png')} style={{border: '1px solid gray'}} alt="Amazon CloudFront" />
 
 - **Client Geo Distribution.** Performs a geo lookup search and displays visitor's client distribution for the last 24 hours on a map of the world.
 - **Cache Hit and Miss.** Displays the cache's hits and misses over time in timeslices of five minutes for the last three hours in a pie chart.
@@ -83,7 +83,7 @@ Amazon CloudFront is a content delivery network (CDN) that allows an easy way fo
 
 ### Latency Monitoring
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudFront-Latency-Monitoring.png')} style={{border: '1px solid black'}} alt="Amazon CloudFront" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudFront-Latency-Monitoring.png')} style={{border: '1px solid gray'}} alt="Amazon CloudFront" />
 
 - **Longest Latency by GeoLocation**. See the locations with long latency in the last hour on a world map.
 - **90th 95th 99th Pct Time_taken Trend**. See the trend of 90th, 95th, and 99th percentiles of time taken in the last 24 hours on a line chart.
@@ -95,7 +95,7 @@ Amazon CloudFront is a content delivery network (CDN) that allows an easy way fo
 
 ### Visitor Statistics
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-CloudFront-VisitorStatistics.png')} style={{border: '1px solid black'}} alt="Amazon CloudFront" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-CloudFront-VisitorStatistics.png')} style={{border: '1px solid gray'}} alt="Amazon CloudFront" />
 
 - **Client Geo Distribution.** Performs a geo lookup search and displays visitor's client distribution for the last 24 hours on a map of the world.
 - **Requests Served by Edge Location.** Displays visitor requests served by edge location sorted by count for the last three hours in a pie chart.
@@ -106,7 +106,7 @@ Amazon CloudFront is a content delivery network (CDN) that allows an easy way fo
 
 ### Web Operations
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-CloudFront-WebOperations.png')} style={{border: '1px solid black'}} alt="Amazon CloudFront" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-CloudFront-WebOperations.png')} style={{border: '1px solid gray'}} alt="Amazon CloudFront" />
 
 - **Edge Result.** Displays edge results by count and sorted by type for the last three hours in a pie chart.
 - **Client and Server Errors Over Time.** Shows client and server errors over time in timeslices of five minutes for the last three hours in a column chart.

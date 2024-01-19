@@ -418,7 +418,7 @@ After determining the location of conf file, modify the **redis.conf** configura
       * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
       * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Redis Server’s time zone.
       * **Timestamp Format.** The timestamp format is automatically detected.
-      * **Encoding. **Select** **UTF-8 (Default).
+      * **Encoding.** Select UTF-8 (Default).
       * **Enable Multiline Processing.** Detect messages spanning multiple lines. Select Infer Boundaries - Detect message boundaries automatically.
    5. Click **Save**.
 5. Verify logs are flowing into Sumo Logic by running the following logs query:
@@ -522,8 +522,8 @@ email_notifications = [
 ```
 
 6. Install the Monitors.
-   1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**redis**/ and run **terraform init. **This will initialize Terraform and will download the required components.
-   2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
+   1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**redis**/ and run **terraform init.** This will initialize Terraform and will download the required components.
+   2. Run **terraform plan** to view the monitors which will be created/modified by Terraform.
    3. Run **terraform apply**.
 
 7. Post Installation. If you haven’t enabled alerts and/or configured notifications via the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Add a Monitor](/docs/alerts/monitors#add-a-monitor).

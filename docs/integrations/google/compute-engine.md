@@ -153,46 +153,46 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 
 The **Google Cloud Compute Engine - Audit Logs** dashboard works with Compute Engine audit logs. These audit logs include admin activity operation and data access audit logs. [Here](https://cloud.google.com/sql/docs/audit-logging#audited_operations) is the list of operations tracked using the audit log for Compute Engine. The dashboard includes panels for event location, operation distribution, severity distribution, top users, recent error activities, start/stop events, and instance insert/deletion events. 
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Audit-Logs.png')} style={{border: '1px solid black'}} alt="Google Cloud Compute Engine - Audit Logs" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Audit-Logs.png')} style={{border: '1px solid gray'}} alt="Google Cloud Compute Engine - Audit Logs" width="800"/>
 
 ### CPU
 
 The **Google Cloud Compute Engine - CPU** dashboard provides the CPU-related metric for compute instances like CPU utilization - with comparison to one-day and one-week time shifts, along with CPU usage time, and CPU scheduling wait time. 
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-CPU.png')} style={{border: '1px solid black'}} alt="Google Cloud Compute Engine - CPU" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-CPU.png')} style={{border: '1px solid gray'}} alt="Google Cloud Compute Engine - CPU" width="800"/>
 
 ### Disk
 
 The **Google Cloud Compute Engine - Disk** dashboard is used to monitor metrics related to different disks attached to respective compute instances. Filters for both disk and instance are available in this dashboard. This dashboard helps to monitor the read/write operation count, read/write byte count along with trends for it, average disk IO latency, and IO queue depth.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Disk.png')} style={{border: '1px solid black'}} alt="Google Cloud Compute Engine - Disk" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Disk.png')} style={{border: '1px solid gray'}} alt="Google Cloud Compute Engine - Disk" width="800"/>
 
 ### Guest Performance
 
 The **Google Cloud Compute Engine - Guest Performance** dashboard works on Guest metrics. For collecting guest metrics for GCE instance, you must enable the [Container-Optimized OS Health Monitoring](https://cloud.google.com/container-optimized-os/docs/how-to/monitoring) feature; for more information, see [Container-Optimized OS](https://cloud.google.com/container-optimized-os/docs). You can monitor - disk queue length, CPU usage time, memory bytes used, CPU load - 1m/5m/15m, Bytes for the file system, Memory bytes, operation count (read/write) along with CPU details like - runnable task count and visible vCPU. 
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Guest-Performance.png')} style={{border: '1px solid black'}} alt="Google Cloud Compute Engine - Guest Performance" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Guest-Performance.png')} style={{border: '1px solid gray'}} alt="Google Cloud Compute Engine - Guest Performance" width="800"/>
 
 ### Network
 
 The **Google Cloud Compute Engine - Network** dashboard helps you monitor the network-related metrics like send bytes, received bytes, sent packets, and received packets with respective trends. Along with this, you can also monitor firewall bytes dropped trend and packets dropped by the firewall.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Network.png')} style={{border: '1px solid black'}} alt="Google Cloud Compute Engine - Network" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Network.png')} style={{border: '1px solid gray'}} alt="Google Cloud Compute Engine - Network" width="800"/>
 
 ### Performance Overview
 
 The **Google Cloud Compute Engine - Performance Overview** dashboard provides information about the general performance of running compute instances in your Google Cloud. This dashboard provides insights into the average CPU utilization, number of active instances, sent/received bytes, sent/received packets, CPU utilization by instance, bytes dropped by firewall by instance, CPU details, and disk read/write operation.  
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Performance-Overview.png')} style={{border: '1px solid black'}} alt="Google Cloud Compute Engine - Performance Overview" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Performance-Overview.png')} style={{border: '1px solid gray'}} alt="Google Cloud Compute Engine - Performance Overview" width="800"/>
 
 ### Platform Logs
 
 The **Google Cloud Compute Engine - Platform Logs** dashboard is based on Compute Engine Platform logs. With this dashboard, you can track the recent error messages and recent warning messages, along with top error/warning messages. You can also monitor platform log severity distribution along with severity trends.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Platform-Logs.png')} style={{border: '1px solid black'}} alt="Google Cloud Compute Engine - Platform Logs" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Platform-Logs.png')} style={{border: '1px solid gray'}} alt="Google Cloud Compute Engine - Platform Logs" width="800"/>
 
 ### Quota Overview
 
 The **Google Cloud Compute Engine - Quota Overview** dashboard is based on significant quota-related metrics for the Compute engine. This dashboard provides insights into VPC-related quotas like instance usage, IP aliases, subnet range, and static route per VPC as well as aggregated. You can also monitor other quotas like regional concurrent operation, global concurrent operation, and inter-region egress bandwidth.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Quota-Overview.png')} style={{border: '1px solid black'}} alt="Google Cloud Compute Engine - Quota Overview" width="800"/>
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Google-Cloud-Compute-Engine/Google-Cloud-Compute-Engine-Quota-Overview.png')} style={{border: '1px solid gray'}} alt="Google Cloud Compute Engine - Quota Overview" width="800"/>

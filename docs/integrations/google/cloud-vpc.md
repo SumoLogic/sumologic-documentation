@@ -161,7 +161,7 @@ You need to configure a Pub/Sub Topic in GCP and add a subscription to the Sourc
 
 1. Create a Pub/Sub Topic in GCP. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
 2. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
-   * Use a **Push Delivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the** Collection** page in Sumo Logic and click **Show URL**.
+   * Use a **Push Delivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the **Collection** page in Sumo Logic and click **Show URL**.
 
 
 ### Limitations
@@ -225,19 +225,19 @@ See an overview of the top 10 IPs, ports, and VMs; along with trends in traffic 
 
 **Top 10 Internal Destination Ports by VPC Flows**. Shows the top 10 internal destination ports by VPC flows in the last 24 hours on a horizontal bar graph.
 
-**Top 10 Source VMs by Traffic (MiB). **Shows the top 10 source VMs by Traffic (MiB) in the last 24 hours on a horizontal bar graph.
+**Top 10 Source VMs by Traffic (MiB).** Shows the top 10 source VMs by Traffic (MiB) in the last 24 hours on a horizontal bar graph.
 
-**Top 10 Destination VMs by Traffic (MiB). **Shows the top 10 Destination VMs by Traffic (MiB) in the last 24 hours on a horizontal bar graph.
+**Top 10 Destination VMs by Traffic (MiB).** Shows the top 10 Destination VMs by Traffic (MiB) in the last 24 hours on a horizontal bar graph.
 
-**Traffic (MiB) by Subnetwork. **Shows trends in traffic in the last 24 hours by Subnetwork on a line graph with two lines.
+**Traffic (MiB) by Subnetwork.** Shows trends in traffic in the last 24 hours by Subnetwork on a line graph with two lines.
 
-**Traffic (MiB) by Project. **Shows trends in traffic in the last 24 hours by Project on a line graph.
+**Traffic (MiB) by Project.** Shows trends in traffic in the last 24 hours by Project on a line graph.
 
-**Traffic (MiB) by VPC. **Shows trends in traffic in the last 24 hours by VPC on a line graph.
+**Traffic (MiB) by VPC.** Shows trends in traffic in the last 24 hours by VPC on a line graph.
 
-**Top 10 Source VMs per VPC by Traffic (MiB). **Shows the top 10 Source VMs per VPC by Traffic (MiB) in the last 24 hours on a column graph.
+**Top 10 Source VMs per VPC by Traffic (MiB).** Shows the top 10 Source VMs per VPC by Traffic (MiB) in the last 24 hours on a column graph.
 
-**Top 10 Destination VMs per VPC by Traffic (MiB). **Show the top 10 Destination VMs per VPC by Traffic (MiB) in the last 24 hours on a column graph.
+**Top 10 Destination VMs per VPC by Traffic (MiB).** Show the top 10 Destination VMs per VPC by Traffic (MiB) in the last 24 hours on a column graph.
 
 **VPC Flows per Protocol by Hour**. See the VPC flows per protocol by hour in the last 24 hours on a column graph.
 
@@ -249,23 +249,23 @@ See the details of your Google Cloud VPC activity including the trends of traffi
 
 <img src={useBaseUrl('img/integrations/google/cloud-vpc-activity.png')} alt="Google Cloud VPC dashboards" />
 
-**Traffic (MiB) by Subnetwork ID. **Shows trends in traffic by Subnetwork ID in the last hour on a line graph.
+**Traffic (MiB) by Subnetwork ID.** Shows trends in traffic by Subnetwork ID in the last hour on a line graph.
 
 **Traffic (MiB) by Source VM Over Time.** Shows trends in traffic by Source VM over time in the last hour on a column graph.
 
-**Traffic (MiB) by Destination VM Over Time. **Shows trends in traffic by Destination VM over time in the last hour on a column graph.
+**Traffic (MiB) by Destination VM Over Time.** Shows trends in traffic by Destination VM over time in the last hour on a column graph.
 
-**Packets by Subnetwork ID. **Shows trends in packets by Subnetwork ID in the last hour on a line graph.
+**Packets by Subnetwork ID.** Shows trends in packets by Subnetwork ID in the last hour on a line graph.
 
-**Packets by Source VM Over Time. **Shows packets by Source VM over time in last hour on a column graph.
+**Packets by Source VM Over Time.** Shows packets by Source VM over time in last hour on a column graph.
 
-**Packets by Destination VM Over Time. **Shows packets by Destination VM over time in last hour on a column graph.
+**Packets by Destination VM Over Time.** Shows packets by Destination VM over time in last hour on a column graph.
 
-**Average Latency (ms) by Subnetwork ID. **Shows the average latency by Subnetwork ID in the last hour on a line graph.
+**Average Latency (ms) by Subnetwork ID.** Shows the average latency by Subnetwork ID in the last hour on a line graph.
 
-**Average Latency (ms) by Source VPC. **Shows the average latency by Source VPC in the last hour on a line graph.
+**Average Latency (ms) by Source VPC.** Shows the average latency by Source VPC in the last hour on a line graph.
 
-**Average Latency (ms) by Destination VPC. **Shows the average latency by Destination VPC in the last hour on a line graph.
+**Average Latency (ms) by Destination VPC.** Shows the average latency by Destination VPC in the last hour on a line graph.
 
 **VPC Flows by Source Address**. Shows the count of VPC flows by source IP address in the last hour on a pie chart.
 
@@ -292,7 +292,7 @@ See the details of your Google Cloud VPC traffic including the trend and outlier
 
 **MBs per Minute - Trend**. Shows trends in total bytes per minute sent over the last hour on a scatter plot graph along with the predicted values.
 
-**MBs Box Plot. **Shows a box plot of the MBs sent in the last hour with the maximum, upper quartile, median, lower quartile, and minimum values.
+**MBs Box Plot.** Shows a box plot of the MBs sent in the last hour with the maximum, upper quartile, median, lower quartile, and minimum values.
 
 **Packets per Minute - Outlier**. Shows outliers in the total packets sent per minute over the last hour on a line graph showing threshold.
 
@@ -300,8 +300,8 @@ See the details of your Google Cloud VPC traffic including the trend and outlier
 
 **Packets Box Plot**. Shows a box plot of the packets sent in the last hour with the maximum, upper quartile, median, lower quartile, and minimum values.
 
-**Average Latency (ms) per Minute - Outlier. **Shows the outliers in average latency per minute in the last hour on a line graph with threshold.
+**Average Latency (ms) per Minute - Outlier.** Shows the outliers in average latency per minute in the last hour on a line graph with threshold.
 
-**Average Latency (ms) per Minute - Trend. **Shows the trend in average latency per minute in the last hour on a scatter plot graph.
+**Average Latency (ms) per Minute - Trend.** Shows the trend in average latency per minute in the last hour on a scatter plot graph.
 
-**Latency (ms) Box Plot. **Shows a box plot of the latency in the last hour with the maximum, upper quartile, median, lower quartile, and minimum values.
+**Latency (ms) Box Plot.** Shows a box plot of the latency in the last hour with the maximum, upper quartile, median, lower quartile, and minimum values.
