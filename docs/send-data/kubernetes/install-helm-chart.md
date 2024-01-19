@@ -163,7 +163,7 @@ Refer to [Collecting Application Metrics](/docs/send-data/kubernetes/collecting-
 
 ### Collecting Kubernetes metrics
 
-Refer to [Collecting Kubernetes Metrics document](/docs/send-data/kubernetes/collecting-kubernetes-metrics/)
+Refer to [Collecting Kubernetes Metrics](/docs/send-data/kubernetes/collecting-kubernetes-metrics/).
 
 ### Collecting Kubernetes events
 
