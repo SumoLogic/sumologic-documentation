@@ -35,12 +35,10 @@ Install a single Active Directory Source to collect inventory data from the enti
 To configure a Windows Active Directory Inventory Source:
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
-1. Find the Installed Collector you'd like to add the Source to. Click **Add** and then choose** Add Source** from the pop-up menu.
+1. Find the Installed Collector you'd like to add the Source to. Click **Add** and then choose **Add Source** from the pop-up menu.
 1. Click **Windows Active Directory Inventory**.<br/><img src={useBaseUrl('/img/send-data/windows-ad-inventory-source-icon.png')} alt="Windows Active Directory Inventory icon" width="125"/>
 1. Set the following:   
-
-  ![windows ad source input.png](/img/send-data/windows-ad-source-input.png)
-
+   ![windows ad source input.png](/img/send-data/windows-ad-source-input.png)
    * **Name.** Type the name for the new Source. 
    * **Description** is optional.
    * **Fetch Interval**. By default, Active Directory is queried for data every 24 hours (86400 seconds). You can select a more frequent interval, but it shouldn't be more frequent than every 10 hours (36000 seconds).

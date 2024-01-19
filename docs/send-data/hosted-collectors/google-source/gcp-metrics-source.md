@@ -52,8 +52,7 @@ For more information, see [Service account credentials](https://developers.googl
 If you create and manage all service accounts in one project which is different than the project Sumo Logic will collect metrics from, you need to add the Principal to the project you will collect GCP metrics.
 
 1. In the project, select **IAM** in the left navigation.
-2. Click **+Add**.
-<img src={useBaseUrl('img/send-data/add-principal.png')} alt="add-principal.png" />
+2. Click **+Add**. <br/><img src={useBaseUrl('img/send-data/add-principal.png')} alt="add-principal.png" />
 1. Enter the email for the Service Account to add as a principal, for example: `server@example.gsserviceaccount.com`.
 2. **Select a role** from the list, or click +Add Another Role as needed.
 3. Click **Save**.
