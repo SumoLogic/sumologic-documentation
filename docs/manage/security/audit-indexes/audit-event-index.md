@@ -43,9 +43,9 @@ Searching the Audit Event Index is the same as running a normal search against y
 For example, to search for user action events:
 
 1. In the Search page, enter the following: `_index=sumologic_audit_events`  
-  :::important
-  Make sure to enter the query exactly as shown. Changing any part of the query renders it ineffective.
-  :::
+     :::important
+     Make sure to enter the query exactly as shown. Changing any part of the query renders it ineffective.
+     :::
 1. Choose the time range for the incidents that you'd like to review.
 1. Click **Start** to run the search.
 

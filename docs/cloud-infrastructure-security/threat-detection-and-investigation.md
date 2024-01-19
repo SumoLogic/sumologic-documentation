@@ -130,8 +130,8 @@ You can add more flexibility to your queries and dashboard outputs by using temp
    | where event_type matches "{{event_type}}"
    | where actor matches "{{actor}}"
    ```
- Your query should now look something like this:<br/><img src={useBaseUrl('img/csa/new-query.png')} alt="Revised query" style={{border: '1px solid gray'}} width="400"/>
- 1. Click the **Update Dashboard** button. <br/>You can test these changes by selecting different **event_types** and **actors** from the template fields in the dashboard bar. As you select different values you will see the dashboard panel change automatically. Select the ** * ** option as a variable to see all options.  When you are done testing, ensure both **event_type** and **actor** template variables are set to * before continuing.
+    Your query should now look something like this:<br/><img src={useBaseUrl('img/csa/new-query.png')} alt="Revised query" style={{border: '1px solid gray'}} width="400"/>
+ 1. Click the **Update Dashboard** button. <br/>You can test these changes by selecting different **event_types** and **actors** from the template fields in the dashboard bar. As you select different values you will see the dashboard panel change automatically. Select the * option as a variable to see all options.  When you are done testing, ensure both **event_type** and **actor** template variables are set to * before continuing.
 
 ### Step 3: Monitor geolocation of console logins
 
