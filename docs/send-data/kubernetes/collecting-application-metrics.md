@@ -171,8 +171,9 @@ annotations:
 `sumologic-prometheus` defines the way telegraf operator will expose the metrics. They are going to be exposed in prometheus format on port
 `9273` and `/metrics` path.
 
-**NOTE** If you apply annotations on Pod which is owned by another object, e.g. DaemonSet, it won't take affect. In such case, the
-annotation should be added to Pod specification in DaemonSet template.
+:::note
+If you apply annotations on Pod which is owned by another object, for example DaemonSet, it won't take affect. In such case, the annotation should be added to Pod specification in DaemonSet template.
+:::
 
 After restart, the Pod should have an additional `telegraf` container.
 
