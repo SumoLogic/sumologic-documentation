@@ -280,7 +280,7 @@ If you do not see your metrics in Sumo Logic, please check the following stages:
 - [Collecting Application Metrics](collecting-application-metrics.md)
   - [Scraping metrics](#scraping-metrics)
     - [Application metrics are exposed (one endpoint scenario)](#application-metrics-are-exposed-one-endpoint-scenario)
-    - [Application metrics are exposed (multiple endpoints scenario)](#application-metrics-are-exposed-multiple-enpoints-scenario)
+    - [Application metrics are exposed (multiple endpoints scenario)](#application-metrics-are-exposed-multiple-endpoints-scenario)
       - [Example](#example)
     - [Application metrics are not exposed](#application-metrics-are-not-exposed)
   - [Metrics modifications](#metrics-modifications)
