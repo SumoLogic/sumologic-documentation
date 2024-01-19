@@ -11,16 +11,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic AWS API Gateway  ULM app provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
 
-## Log and Metric Types 
+## Log and metrics types 
 
 The AWS API Gateway ULM app uses the following logs and metrics:
 
 * [Amazon API Gateway metrics](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html)
-* [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events)
+* [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html)
 
-### Sample CloudTrail Log Message
+### Sample log message
 
-```json
+```json ttle="CloudTrail"
 {
 	"eventVersion":"1.05",
 	"userIdentity":{
@@ -63,18 +63,14 @@ The AWS API Gateway ULM app uses the following logs and metrics:
 }
 ```
 
-### Sample Query (Metric based)
+### Sample query
 
-Average Latency by API Name:
-
-```sql
+```sql title="Average Latency by API Name (Metric based)"
 _sourceCategory=Labs/AWS/APIGateway/Metric Namespace=aws/apigateway metric=Latency statistic=Average
 account=* region=* entity=* | avg by region, entity
 ```
 
-### Sample Query (CloudTrail Log based)
-
-```sql
+```sql title="CloudTrail log-based"
 _sourceCategory=Labs/AWS/CloudTrail/APIGateway "apigateway.amazonaws.com" Namespace={{namespace}}
 | json "awsRegion", "eventSource", "eventName" nodrop
 | json "requestParameters.basePath" as basePath nodrop
@@ -88,47 +84,13 @@ _sourceCategory=Labs/AWS/CloudTrail/APIGateway "apigateway.amazonaws.com" Namesp
 | sort by _count, eventName asc
 ```
 
-## Collect Metrics for AWS API Gateway  
+## Viewing AWS API Gateway dashboards
 
-1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics).
-   * **Name**. Enter a name to display for the new Source.
-   * **Description**. Enter an optional description.
-   * **Regions**. Select your Amazon Regions for DynamoDB.
-   * **Namespaces**. Select AWS/DynamoDB.
-   * **Source** **Category**. Enter dynamodb_metrics.
-   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
-   * **Scan Interval**. Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
-3. Click **Save**.
+We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of our AWS Observability solution.
 
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
-## Collect AWS API Gateway Events using CloudTrail
-
-1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source).
-   * **Name**. Enter a name to display for the new Source.
-   * **Description**. Enter an optional description.
-   * **S3 Region**. Select the Amazon Region for your DynamoDB S3 bucket.
-   * **Bucket Name**. Enter the exact name of your DynamoDB S3 bucket.
-   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-   * **Source Category**. Enter `dynamodb_event`.
-   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
-   * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-   * **Enable Timestamp Parsing**. Select the check box.
-   * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-   * **Timestamp Format.** Select Automatically detect the format.
-   * **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
-2. Click **Save**.
-
-
-## AWS API Gateway Dashboards
-
-This page provides examples and descriptions for each of the AWS Observability API Gateway pre-configured dashboards.
-
-The [Amazon API Gateway](https://aws.amazon.com/api-gateway/) service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
-
-The Sumo Logic AWS Observability API Gateway dashboards provide insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization, and access control, throttling, monitoring, and API version management.
-
-We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-dashboards.md) of the AWS Observability solution.
+<FilterDashboards/>
 
 ### Overview
 

@@ -95,7 +95,7 @@ After you create a child org, you can’t delete it.
 1. In the edit pane, click **Plan Type**, and choose the Enterprise plan that appears as an option.<br/> ![upgrade-plan.png](/img/subscriptions/upgrade-plan.png)
 2. A warning message is shown that says you won’t be able to downgrade the org once you upgrade it.<br/> ![plan-selected.png](/img/subscriptions/plan-selected.png)
 3. Click **Allocate Credits**.
-4. The Credits Calculator appears.<br/> <img src={useBaseUrl('static/img/subscriptions/calculator.png')} alt="calculator" />
+4. The Credits Calculator appears.<br/> <img src={useBaseUrl('/img/subscriptions/calculator.png')} alt="calculator" style={{border: '1px solid gray'}} width="400" />
 1. **Continuous Log Ingest**. Enter estimated daily ingestion to the Continuous tier.
 2. **Frequent Log Ingest**. Enter estimated daily ingestion to the Frequent tier.
 3. **Infrequent Log Ingest**. Enter estimated daily ingestion to the Infrequent tier.
