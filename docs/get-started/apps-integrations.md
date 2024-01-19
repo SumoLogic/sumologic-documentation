@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you. In this doc, you'll learn how to install apps from the app Catalog to your Library and how to manage them in multiple environments.
 
-<a href="/docs/integrations"><img src={useBaseUrl('img/get-started/library/App-Catalog.png')} alt="app catalog" /></a>
+<img src={useBaseUrl('img/get-started/library/App-Catalog.png')} alt="app catalog" style={{border:'1px solid gray'}} width="800"/>
 
 Sumo Logic apps address these common use cases:
 
