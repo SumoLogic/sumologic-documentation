@@ -88,7 +88,7 @@ The Sumo Logic App for Amazon SNS collects CloudTrail logs and CloudWatch metric
 The **Amazon SNS - Overview** dashboard provides insights across CloudTrail events and metrics.
 
 Use this dashboard to:
-* Monitor events by status, type, topic names and  users.** **
+* Monitor events by status, type, topic names and  users.
 * Monitor number of messages and messages by publish size.
 * Monitor delivered and failed notifications.
 
@@ -101,7 +101,7 @@ The **Amazon SNS - Audit Events** dashboard provides insights across CloudTrail 
 Use this dashboard to:
 
 * Monitor successful and failed events by location.
-* Get trends of events by status, type.** **
+* Get trends of events by status, type.
 * Monitor successful and error events with error code in detail.
 * Get details of active topic names and users of both successful and error events.
 
