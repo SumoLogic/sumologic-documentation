@@ -33,7 +33,9 @@ annotations:
   prometheus.io/path: "/metrics" # Path which metrics should be scraped from
 ```
 
-**NOTE:** If you add more than one annotation with the same name, only the last one will be used.
+:::note
+If you add more than one annotation with the same name, only the last one will be used.
+:::
 
 ### Application metrics are exposed (multiple endpoints scenario)
 
