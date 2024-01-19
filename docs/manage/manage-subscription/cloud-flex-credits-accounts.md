@@ -13,7 +13,7 @@ This page provides information on the Cloud Flex Credits account types you can c
 
 You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise Security, or Enterprise Suite Cloud Flex Credits accounts.
 
-* **Free** accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for log, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](upgrade-cloud-flex-account.md) to Sumo Logic paid service agreements in the Sumo Logic UI.
+* **Free** accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for logs, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](upgrade-cloud-flex-account.md) to Sumo Logic paid service agreements in the Sumo Logic UI.
   :::note
   [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management), which you can find under **Administration** > **Account**, is not available for Free accounts (Trial and paid accounts only).
   :::
