@@ -17,7 +17,7 @@ By default, we collect selected metrics from the following Kubernetes components
 - `Prometheus Node Exporter` configured with `kube-prometheus-stack.prometheus-node-exporter.prometheus.monitor`
 
 If you want to forward additional metric from one of these services, you need to edit the corresponding Service Monitor definition. Service
-Monitor tells Prometheus which metrics it should take from the service.
+Monitor tells the OpenTelemetry Collector which metrics it should take from the service.
 
 ## Example
 
