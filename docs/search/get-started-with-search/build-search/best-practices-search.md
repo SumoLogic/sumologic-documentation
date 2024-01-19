@@ -14,8 +14,7 @@ If possible, also use one or more keywords to limit the scope.
 
 ## Limit search time range
 
-Use the smallest [time range](set-time-range.md) required for your use case. When reviewing data over long time ranges, build and
-test your search against a shorter time range first, then extend the time range once the search is finalized.
+Use the smallest [time range](set-time-range.md) required for your use case. When reviewing data over long time ranges, build and test your search against a shorter time range first, then extend the time range once the search is finalized.
 
 ## Use fields extracted by FERs and avoid the where operator
 
@@ -143,5 +142,4 @@ _sourceCategory=Apache/Access and GET
 
 ## Pin searches with long time ranges
 
-A query with a longer time range can run past the default time window for Sumo Logic. To protect against an interruption in a query with a
-significant time range, [pin it](/docs/get-started/library#pinned-searches). A pinned search can run in the background for up to 24 hours.
+A query with a longer time range can run past the default time window for Sumo Logic. To protect against an interruption in a query with a significant time range, [pin it](/docs/get-started/library#pinned-searches). A pinned search can run in the background for up to 24 hours.
