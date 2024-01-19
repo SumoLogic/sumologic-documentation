@@ -60,9 +60,9 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 
 1. After you’ve obtained sample messages using one of the methods above, click **Parse Logs**.
 1. If all of the sample messages are parsed successfully, you’ll see results like those shown below in the **Parsed Messages** section of the editor. The **Event Details** section shows the key-value pairs that were parsed from the raw message. If your results indicate that there were warnings, unparsed, or dropped messages, see [Understanding parsing failures and warnings](#understanding-parsing-failures-and-warnings).<br/><img src={useBaseUrl('img/cse/successsful-blurred.png')} alt="Successful parsing" width="800"/>
-  :::note
-  One of the two messages that was parsed was cut out of the screenshot to make the image shorter. 
-  :::
+    :::note
+    One of the two messages that was parsed was cut out of the screenshot to make the image shorter. 
+    :::
 1. Once your new parser is working, and you want to start using it, follow the instructions in [Configuring a source to use a parser](#configure-and-test-a-custom-parser).
 
 ## Get sample messages

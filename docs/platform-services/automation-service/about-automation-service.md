@@ -42,8 +42,7 @@ Before you can access the Automation Service, you must first [configure role cap
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
 1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/><br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
 1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
-1. The Automation Service screen opens on the **Playbook** tab.
-<img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
+1. The Automation Service screen opens on the **Playbook** tab. <br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
 
 ## Prerequisites
 

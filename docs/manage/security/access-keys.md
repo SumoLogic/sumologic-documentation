@@ -42,18 +42,16 @@ To create your own access keys:
 
 1. In Sumo Logic, click your name in the left-nav and open the **Preferences** page.
 1. In the **My Access Keys** section, click **+ Add Access Key**.<img src={useBaseUrl('/img/security/access-key-preferences-page-2.png')} alt="Add Access Key" width="800"/>
-1. The **Create a Sumo Logic Access Key** window appears.
-<img src={useBaseUrl('/img/security/create-access-key.png')} alt="Create an Access Key" width="600"/>
+1. The **Create a Sumo Logic Access Key** window appears. <br/><img src={useBaseUrl('/img/security/create-access-key.png')} alt="Create an Access Key" width="600"/>
 1. Enter a name for the access key in the **Name** field. If you don’t want to create an allowlist of domains from which the access key can be used to access Sumo APIs, go to step 7 below.
 1. (Optional) In this step, you can define one or more domains that may use the access key to access Sumo APIs.
-  :::note
-  Enter a domain in the **Allowlisted CORS Domains** field and click **Add**. Enter the domains in the [Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) format described in Mozilla help. The URL pattern must include the HTTPS protocol and a domain name, a port is optional.
-  :::
-  <img src={useBaseUrl('/img/security/create-access-key-2.png')} alt="Add a domain for an access key" width="600"/>
+    :::note
+    Enter a domain in the **Allowlisted CORS Domains** field and click **Add**. Enter the domains in the [Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) format described in Mozilla help. The URL pattern must include the HTTPS protocol and a domain name, a port is optional.
+    ::: 
+    <img src={useBaseUrl('/img/security/create-access-key-2.png')} alt="Add a domain for an access key" width="600"/>
 1. The window updates, and displays the domain you added.Repeat steps 5 and 6 to add additional domains to the allowlist.
 1. Click **Create Key** to generate the key. 
-1. The window displays the generated Access ID and Access Key. Copy both before clicking **Done**. After you press **Done**, you will not be able to recover the Access ID and Access Key.
-<img src={useBaseUrl('/img/security/generated-access-key.png')} alt="Access key successfully created" width="600"/>
+1. The window displays the generated Access ID and Access Key. Copy both before clicking **Done**. After you press **Done**, you will not be able to recover the Access ID and Access Key. <br/><img src={useBaseUrl('/img/security/generated-access-key.png')} alt="Access key successfully created" width="600"/>
 
 ### CORS support
 
@@ -113,8 +111,7 @@ If you have the [**Manage Access Keys** role capability](/docs/manage/users-role
 
 ### Generate an access key 
 
-1. Go to **Administration** > **Security** > **Access Keys**.
-<img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Add Access Key" width="800"/>
+1. Go to **Administration** > **Security** > **Access Keys**. <br/><img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Add Access Key" width="800"/>
 1. At the top right of the table, click **+ Add Access Key**.
 1. Follow the steps to create your own access keys [from the Preferences page](#from-the-preferences-page) above, starting with step 3.
 
