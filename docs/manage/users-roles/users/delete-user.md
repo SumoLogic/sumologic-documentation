@@ -26,11 +26,9 @@ Before you begin, perform the steps in [Offboard a User.](offboard-user.md) The
 * The deleted user’s Access Keys are removed and cannot be restored.
 * If you chose to transfer the deleted user’s folder, it is moved to the folder of the new owner. The new owner will have **Manage** access to the transferred content. Note that the transfer of content to the new owner has no impact on other users that have access to the deleted user's content. For example, assume you delete User A and transfer User A’s content to User B. If User C previously had permissions to some of User A’s content, User C will still have the same access to that content. 
 * Content created by the deleted user in shared folders is not transferred to the new owner.
-
-:::note
-If the user account that created a scheduled search in a shared folder is deleted, the scheduled search will no longer be executed. The owner of the scheduled search will appear as "deleted user" in the Sumo Logic UI. To reinstate the scheduled search you must export the search, and import it back into the Library. 
-:::
-
+   :::note
+   If the user account that created a scheduled search in a shared folder is deleted, the scheduled search will no longer be executed. The owner of the scheduled search will appear as "deleted user" in the Sumo Logic UI. To reinstate the scheduled search you must export the search, and import it back into the Library. 
+   :::
 * Any saved content—saved searches, scheduled searches, dashboards, monitors, and so on—that depend on a Lookup Table created by the user being deleted may no longer run correctly. Note however that Lookup Tables that have been saved in the Admin Recommended folder will not be affected by deletion of a user.
 * If a user owns content that was moved to the Admin Recommended folder, when you delete the user and transfer the user's content to another user, the content in Admin Recommended will remain.
 * For dashboards, scheduled searches, scheduled views, and monitors for which the deleted user was the run-as user, the new owner becomes the run-as user. So, the transferred dashboards, scheduled searches, scheduled views, and monitors will run with the same data access level as the new owner. This might affect the data seen in the dashboards, scheduled searches, scheduled views, and monitors if the data access level of the owner is different from that of the deleted user. The new owner must have the **Manage Scheduled View** [role capability](../roles/role-capabilities.md) for scheduled views to be successfully transferred.

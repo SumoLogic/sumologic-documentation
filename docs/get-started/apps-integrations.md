@@ -190,9 +190,9 @@ To install the app:
 1. From **App Catalog**, search for and select the **Log Analysis QuickStart** app.
 1. Click **Add Integration**.<br/> ![log-quickstart-analysis.png](/img/get-started/library/log-quickstart-analysis.png)
 1. Select from **Source Category** values. Choose an existing `_sourceCategory` present in your account used for your Sumo Logic data.
-  :::info
-  If you do not select the correct `_sourceCategory`, data will not be loaded into the app. If you don't know which `_sourceCategory` to select, ask your administrator who configured the Source.
-  :::
+    :::info
+    If you do not select the correct `_sourceCategory`, data will not be loaded into the app. If you don't know which `_sourceCategory` to select, ask your administrator who configured the Source.
+    :::
 1. Leave the app in the default folder location (**Personal** folder in your **Library**) or choose a different location. You can also click **New Folder** to add it to a new folder.
 1. Click **Next**. A dialog will confirm the app is installed successfully.
 

@@ -54,7 +54,7 @@ After signing in to Sumo Logic, you can disable 2-Step Verification if it is opt
 
 To disable 2-Step Verification:
 
-1. Click **your name** in the left nav, then go to** Preferences**.
+1. Click **your name** in the left nav, then go to **Preferences**.
 1. Click **Disable 2-Step Verification**.
 1. Enter your Sumo Logic password.
 1. Click **Save**.

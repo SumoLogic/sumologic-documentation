@@ -36,12 +36,12 @@ AWS Observability integrates with Explore by populating metadata and only shows
 1. Choose an option to invoke AWS CloudFormation Template:
    * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.7.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
    * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.7.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.<br/>
-:::note
-Download this or other versions of this template from [Change Log](../changelog.md). 
-:::
-:::note
-To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.1.0 or greater and follow the instructions in the (#modify-the-collector-name-and-source-categories) section.
-:::
+     :::note
+     Download this or other versions of this template from [Change Log](../changelog.md). 
+     :::
+     :::note
+     To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.1.0 or greater and follow the instructions in the (#modify-the-collector-name-and-source-categories) section.
+     :::
 1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
     :::danger
     This step is critical: if you do not select the correct region, you will deploy the solution in the wrong region.
@@ -123,10 +123,10 @@ The below tables displays the response for each text box in this section.
 | Existing Sumo Logic Lambda CloudWatch Logs Source API URL | Required you already collect AWS Lambda CloudWatch logs. Provide the existing Sumo Logic AWS Lambda CloudWatch Source API URL. The account, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md). |
 | Subscribe log groups to Sumo Logic Lambda Forwarder | <ul><li>**New** - Automatically subscribes new AWS Lambda log groups to Lambda, to send logs to Sumo Logic.</li><li>**Existing** - Automatically subscribes existing log groups to Lambda, to send logs to Sumo Logic.</li><li>**Both** - Automatically subscribes new and existing log groups.</li><li>**None** - Skips Automatic subscription of log groups.</li></ul> |
 | Regex for AWS Log Groups | Default Value: <b>lambda\|rds</b> <br/> With default value, log group names matching with lambda or rds will be subscribed and ingesting cloudwatch logs into sumo logic.<br/> Enter a regex for matching log group names. For more information, see [Configuring parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination.md) in the *Auto-Subscribe AWS Log Groups to a Lambda Function topic*.<br/>
-:::note
+ :::note
   * Don't use forward slashes (`/`) to encapsulate the regex. While normally they are needed for raw code, it's not necessary here.
   * Use regex `.*` for auto-subscribing all log groups.
-::: |
+ ::: 
 
 
 ## Step 9: Sumo Logic Root Cause Explorer Sources
@@ -238,7 +238,7 @@ Below are some common errors that can occur while using the CloudFormation templ
 
 | Error | Description | Resolution |
 |:--|:--|:--|
-| The API rate limit for this user has been exceeded. | This error indicates that AWS CloudFormation execution has exceeded the API rate limit set on the Sumo Logic side. It can occur if you install the AWS CloudFormation template in multiple regions or accounts using the same Access Key and Access ID. | Do not install the AWS CloudFormation template in multiple regions or accounts with the same Access Key and Access ID. |
+| The API rate limit for this user has been exceeded. | This error indicates that AWS CloudFormation execution has exceeded the API rate limit set on the Sumo Logic side. It can occur if you install the AWS CloudFormation template in multiple regions or accounts using the same Access Key and Access ID. | - Re-deploy the deployment stack without updating the stack in the template. Re-running will detect the drift and create remaining resources. <br/> - If the throttling problem persists, try to break down the multi-region deployment into parts and use distinct access IDs and access keys for each part. |
 | S3 Bucket already exists. | The error can occur if:<br/>- An S3 bucket with the same name exists in S3, or<br/>- The S3 Bucket is not present in S3 but is referenced by some other AWS CloudFormation stack which created it. | - Remove the S3 bucket from S3 or select “No” in the AWS Cloudformation template for S3 bucket creation. <br/>- Remove the AWS CloudFormation Stack which references the S3 bucket. |
 | The S3 bucket you tried to delete is not empty. | The error can occur when deleting the stack with a non-empty S3 bucket. | Delete the S3 bucket manually if you do not need the bucket or its content in the future. |
 
