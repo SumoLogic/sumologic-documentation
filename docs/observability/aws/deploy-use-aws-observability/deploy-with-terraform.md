@@ -654,7 +654,7 @@ Options available are:
 * "Kinesis Firehose Metrics Source" (Recommended). Creates a Sumo Logic AWS Kinesis Firehose for Metrics Source. This new source has cost and performance benefits over the CloudWatch Metrics Source and is therefore recommended.
 * "None". Skips the Installation of both the Sumo Logic Metric Sources.
 
-**Default Value: **
+**Default Value:**
 
 ```bash
 "Kinesis Firehose Metrics Source"
@@ -1596,13 +1596,13 @@ Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumolog
 #### Solution
 Delete existing hierarchy and a create new one:<br/>
 1. Get Hierarchy-id list of existing hierarchies and keep it noted.<br/>
-  ```sql
-  curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
-  ```
+   ```sql
+   curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
+   ```
 1. Delete the existing Hierarchy. Learn [more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint.<br/>
-  ```sql
-  curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X DELETE https://<apiendpoint>/api/v1/entities/hierarchies/<hierarchyid>`
-  ```
+   ```sql
+   curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X DELETE https://<apiendpoint>/api/v1/entities/hierarchies/<hierarchyid>`
+   ```
 
 ### Cannot import name 'SumoLogic' from 'sumologic'
 #### Error Message

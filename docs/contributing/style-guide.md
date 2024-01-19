@@ -681,9 +681,9 @@ You can use a link to a file embedding the entire file, or embed a range of code
    * When updating existing images (like if there's a Sumo UI change), do not add a new version; always replace existing images. Image files take up a lot of room and can slow build times.
    * File format be .png or .gif.
 1. Add the import line to the top of your doc, underneath the [front matter header](#metadata-frontmatter), if it's not already there.
-  ```
-  import useBaseUrl from '@docusaurus/useBaseUrl';
-  ```
+   ```
+   import useBaseUrl from '@docusaurus/useBaseUrl';
+   ```
 1. Copy the below code snippet and paste it where you want your image to appear.
    ```
    <img src={useBaseUrl('img/<your-image-file-path>.png')} alt="<your image description>" style={{border: '1px solid gray'}} width="<insert-pixel-number>" />
@@ -695,14 +695,12 @@ You can use a link to a file embedding the entire file, or embed a range of code
    * &#10060; Don't: `<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Catalina.png')} alt="Catalina" />`   
    :::
 1. Add alt text for your image (for example, `"Image properties dialog"` or `"Sumo Logic logo"`). This is a brief description of what the image is meant to show. Alt text is a label, not a caption, and doesn't need to describe all details of an image. If you are editing and you come across an image without `alt text`, add it!
+   <details>
+   <summary>More about <code>alt text</code></summary>
 
-  <details>
-  <summary>More about <code>alt text</code></summary>
+   Alt text is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download. Alt text is required under [US Government GSA Section 508](https://www.section508.gov/) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
 
-  Alt text is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download. Alt text is required under [US Government GSA Section 508](https://www.section508.gov/) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
-
-  </details>
-
+   </details>
 1. Use the `width` to resize oversized and/or pixelated images, if needed.
 
   <Tabs
@@ -993,126 +991,119 @@ Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/ma
 * To add a section within a section, use a category section with page links in it (see below example).
 * To add an index for a section, create an index.md page in the folder. Give it a `slug: name` where the name is the folder for the entire section like contribution-guide. In the category, use a link line with the folder name and index for example: `link: {type: 'doc', id: 'contributing/index'},`.
 * To add a new page, make note of the file path and id. For example, this document is located in the folder `contributing` with an id of `create-document`. When adding this file to the sidebar, it would be added to the `contributing/create-document`.
+   <details>
+   <summary>Example: add <code>contribution/create-document</code> to sidebars.ts</summary>
 
-<details>
-<summary>Example: add <code>contribution/create-document</code> to sidebars.ts</summary>
-
-```js title="sidebars.ts"
-//Contribution guide for documentation
-  contributing: [
-    {
-      type: 'category',
-      label: 'Contribution Guide',
-      collapsible: true,
-      collapsed: false,
-      link: {type: 'doc', id: 'contributing/index'},
-      items: [
-        'contributing/create-document',
-        'contributing/build-deploy',
-        'contributing/translations',
-        {
-          type: 'category',
-          label: 'Templates',
-          collapsible: true,
-          collapsed: false,
-          items: [
-            'contributing/templates/partner-app-doc'
-          ]
-        }
-      ],
-    },
-  ],
-```
-
-</details>
-
+   ```js title="sidebars.ts"
+   //Contribution guide for documentation
+     contributing: [
+       {
+         type: 'category',
+         label: 'Contribution Guide',
+         collapsible: true,
+         collapsed: false,
+         link: {type: 'doc', id: 'contributing/index'},
+         items: [
+           'contributing/create-document',
+           'contributing/build-deploy',
+           'contributing/translations',
+           {
+             type: 'category',
+             label: 'Templates',
+             collapsible: true,
+             collapsed: false,
+             items: [
+               'contributing/templates/partner-app-doc'
+             ]
+           }
+         ],
+       },
+     ],
+   ```
+   </details>
 * To add a category, or dropdown list of documentation, use the following format:
+   <details>
+   <summary>Example: add sidebar category example with additional section</summary>
 
-<details>
-<summary>Example: add sidebar category example with additional section</summary>
-
-```js title="sidebars.ts"
-    {
-      type: 'category',
-      label: 'Name of Guide',
-      collapsible: true,
-      collapsed: false,
-      link: {type: 'doc', id: 'foldername/id-first-page'},
-      items: [
-        'foldername/doc-id1',
-        'foldername/doc-id2',
-        {
-          type: 'category',
-          label: 'Section in Guide',
-          collapsible: true,
-          collapsed: false,
-          link: {type: 'doc', id: 'foldername/id-section'},
-          items: [
-            'foldername/doc-id3',
-            'foldername/doc-id4',
-          ]
-        }
-      ],
-    },
-```
-
-</details>
-
+   ```js title="sidebars.ts"
+       {
+         type: 'category',
+         label: 'Name of Guide',
+         collapsible: true,
+         collapsed: false,
+         link: {type: 'doc', id: 'foldername/id-first-page'},
+         items: [
+           'foldername/doc-id1',
+           'foldername/doc-id2',
+           {
+             type: 'category',
+             label: 'Section in Guide',
+             collapsible: true,
+             collapsed: false,
+             link: {type: 'doc', id: 'foldername/id-section'},
+             items: [
+               'foldername/doc-id3',
+               'foldername/doc-id4',
+             ]
+           }
+         ],
+       },
+   ```
+   </details>
 * To add a dedicated sidebar, use the following format:
-
-<details>
-<summary>Example: adding a dedicated sidebar for a guide</summary>
-
-```js title="sidebars.ts"
-module.exports = {
-  sectionName: [
-    {
-      type: 'category',
-      label: 'Name of Guide',
-      collapsible: true,
-      collapsed: false,
-      link: {type: 'doc', id: 'foldername/id-first-page'},
-      items: [
-        'foldername/doc-id1',
-        'foldername/doc-id2',
-        {
-          type: 'category',
-          label: 'Section in Guide',
-          collapsible: true,
-          collapsed: false,
-          link: {type: 'doc', id: 'foldername/id-section'},
-          items: [
-            'foldername/doc-id3',
-            'foldername/doc-id4',
-          ]
-        }
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Name of Another Guide',
-      collapsible: true,
-      collapsed: false,
-      link: {type: 'doc', id: 'otherfoldername/id-first-page'},
-      items: [
-        'otherfoldername/doc-id1',
-        'otherfoldername/doc-id2',
-        {
-          type: 'category',
-          label: 'Section in Another Guide',
-          collapsible: true,
-          collapsed: false,
-          link: {type: 'doc', id: 'otherfoldername/id-section'},
-          items: [
-            'otherfoldername/doc-id3',
-            'otherfoldername/doc-id4',
-          ]
-        }
-      ],
-    },
-  ]
-```
-</details>
+   <details>
+   <summary>Example: adding a dedicated sidebar for a guide</summary>
+   
+   ```js title="sidebars.ts"
+   module.exports = {
+     sectionName: [
+       {
+         type: 'category',
+         label: 'Name of Guide',
+         collapsible: true,
+         collapsed: false,
+         link: {type: 'doc', id: 'foldername/id-first-page'},
+         items: [
+           'foldername/doc-id1',
+           'foldername/doc-id2',
+           {
+             type: 'category',
+             label: 'Section in Guide',
+             collapsible: true,
+             collapsed: false,
+             link: {type: 'doc', id: 'foldername/id-section'},
+             items: [
+               'foldername/doc-id3',
+               'foldername/doc-id4',
+             ]
+           }
+         ],
+       },
+       {
+         type: 'category',
+         label: 'Name of Another Guide',
+         collapsible: true,
+         collapsed: false,
+         link: {type: 'doc', id: 'otherfoldername/id-first-page'},
+         items: [
+           'otherfoldername/doc-id1',
+           'otherfoldername/doc-id2',
+           {
+             type: 'category',
+             label: 'Section in Another Guide',
+             collapsible: true,
+             collapsed: false,
+             link: {type: 'doc', id: 'otherfoldername/id-section'},
+             items: [
+               'otherfoldername/doc-id3',
+               'otherfoldername/doc-id4',
+             ]
+           }
+         ],
+       },
+     ]
+   ```
+   </details>
 
 ## Patents and trademarks
 
@@ -1164,9 +1155,9 @@ To add release notes without images:
     ---
     ```
     * `title`. Title for release note.
-    :::note
-    For Service Release Notes only, append the title with the category name in parenthesis (example: `Automatic Log Level Detection (Search)`). See previous Service Release Notes for category names.
-    :::
+       :::note
+       For Service Release Notes only, append the title with the category name in parenthesis (example: `Automatic Log Level Detection (Search)`). See previous Service Release Notes for category names.
+       :::
     * `tags`. Add a comma-separated list of existing tags.
     * `hide-table-of-contents`. Hide the TOC on the page, keeping the notes clean and wide on the page.
 1. Document the release notes. Add links, bullets, and images as needed.

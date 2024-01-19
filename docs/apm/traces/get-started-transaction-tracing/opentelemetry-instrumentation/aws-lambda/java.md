@@ -38,9 +38,9 @@ You'll need the following:
 
 1. Ensure the AWS Distro layer is present in the Layers section:<br/><img src={useBaseUrl('img/traces/lambda-java2.png')} alt="Layers" style={{border: '1px solid gray'}} width="800" />
 
-:::note
-<ApmTrace/>
-:::
+   :::note
+   <ApmTrace/>
+   :::
 
 1. Navigate to the **Configuration > Environment variables** section and set up the following **required** environment variables:
 
@@ -164,19 +164,19 @@ Instrumentation of container-based AWS Lambda function requires some changes in 
 
 1. Extracted instrumentation libraries have to be added to the image in /opt directory. See the Dockerfile example:
 
-  ```bash
-  FROM public.ecr.aws/lambda/java:11-arm64
-  # Lambda Function Code
-  COPY lambda-function-.jar /opt/java/lib/
-  # Copy OT Instrumentation
-  COPY collector-config/ /opt/collector-config/
-  COPY extensions/ /opt/extensions/
-  COPY java/ /opt/java/
-  COPY otel-handler /opt/
-  COPY otel-proxy-handler /opt/
-  COPY otel-stream-handler /opt/
-  CMD ["your.lambda.function.RequestHandler::lambdaHandler"]
-  ```
+   ```bash
+   FROM public.ecr.aws/lambda/java:11-arm64
+   # Lambda Function Code
+   COPY lambda-function-.jar /opt/java/lib/
+   # Copy OT Instrumentation
+   COPY collector-config/ /opt/collector-config/
+   COPY extensions/ /opt/extensions/
+   COPY java/ /opt/java/
+   COPY otel-handler /opt/
+   COPY otel-proxy-handler /opt/
+   COPY otel-stream-handler /opt/
+   CMD ["your.lambda.function.RequestHandler::lambdaHandler"]
+   ```
 
 1. Rebuild the Docker image.
 
