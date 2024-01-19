@@ -157,9 +157,13 @@ If you are installing the collection in a cluster that requires proxying outboun
 
 Refer to [Collecting Container Logs document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-container-logs.md#collecting-container-logs)
 
-### Collecting metrics
+### Collecting application metrics
 
-Refer to [Collecting Metrics](/docs/send-data/kubernetes/collecting-metrics/).
+Refer to [Collecting Application Metrics document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-application-metrics.md#collecting-application-metrics)
+
+### Collecting Kubernetes metrics
+
+Refer to [Collecting Kubernetes Metrics document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-kubernetes-metrics.md#collecting-kubernetes-metrics)
 
 ### Collecting Kubernetes events
 

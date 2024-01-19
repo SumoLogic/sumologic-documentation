@@ -7,7 +7,8 @@ description: This page lists the Kubernetes metrics that are collected when you 
 This page lists the Kubernetes metrics that are collected when you deploy the collection solution described in
 [sumologic-kubernetes-collection deployment guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
 
-Information about filtering and relabeling metrics, and how to send custom Prometheus metrics to Sumo Logic, can be found in [Collecting Application Metrics](/docs/send-data/kubernetes/collecting-metrics).
+Information about filtering and relabeling metrics, and how to send custom Prometheus metrics to Sumo Logic can be found in
+[Collecting Application Metrics guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-application-metrics.md).
 
 ## Kube state metrics (kube-state-metrics)
 
