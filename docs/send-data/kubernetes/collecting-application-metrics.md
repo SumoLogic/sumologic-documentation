@@ -250,7 +250,7 @@ sumologic:
 
 ### Adding or renaming metadata
 
-If you want to add or rename metadata, the [transformprocessor] can be use. Please look at the following snippet:
+If you want to add or rename metadata, the [transformprocessor] can be used. Please look at the following snippet:
 
 ```yaml
 sumologic:
