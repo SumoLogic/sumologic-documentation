@@ -13,7 +13,7 @@ description: Learn more about events in histogram and aggregate charts for your 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Events are actions that can change the state of the system. These could be code deployments, feature flag changes, infrastructure changes and so on. They can be used to identify and mitigate outages in your system.
+Events are actions that can change the state of the system. These could be code deployments, feature flag changes, infrastructure changes and so on. They can be used to identify and mitigate outages in your system. Currently, we only support to deploy events from the [Kubernetes](/docs/observability/kubernetes/).
 
 Sumo Logic intelligently detects and surfaces related events when you run log searches. You can view the indication for the events in the histogram and the aggregate chart below. By clicking on the event, you can view details like **Event start time**, **Event type**, **Event Source** and other metadata associated with the event.
 
