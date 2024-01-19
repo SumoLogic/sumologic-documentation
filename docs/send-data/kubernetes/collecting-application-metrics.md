@@ -233,7 +233,7 @@ Before ingestion to Sumo Logic, attributes are renamed according to the [sumolog
 
 ### Renaming metric
 
-In order to rename metrics, the [transformprocessor] can be use. Please look at the following snippet:
+In order to rename metrics, the [transformprocessor] can be used. Please look at the following snippet:
 
 ```yaml
 sumologic:
