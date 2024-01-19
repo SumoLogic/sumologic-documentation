@@ -56,6 +56,4 @@ See the [Metrics modifications](/docs/send-data/kubernetes/collecting-applicatio
 
 ## Investigation
 
-For investigation you may want to look at the
-[Collecting application metrics](/docs/send-data/kubernetes/collecting-application-metrics#metrics-modifications) and
-[Troubleshooting Collection document](/docs/send-data/kubernetes/troubleshoot-collection.md#collecting-metrics)
+For investigation you may want to look at [Collecting Application Metrics](/docs/send-data/kubernetes/collecting-application-metrics#metrics-modifications) and [Troubleshooting Collection](/docs/send-data/kubernetes/troubleshoot-collection.md#collecting-metrics).
