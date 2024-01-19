@@ -9,7 +9,7 @@ This document covers multiple different use cases related to scraping custom app
 
 There are two major sections:
 
-- [Scraping metrics](#scraping-metrics) which describes how to send your application metrics to sumo
+- [Scraping metrics](#scraping-metrics) which describes how to send your application metrics to Sumo Logic
 - [Metrics modifications](#metrics-modifications) which describes how to filter metrics and rename both metrics and metric metadata
 
 ## Scraping metrics
