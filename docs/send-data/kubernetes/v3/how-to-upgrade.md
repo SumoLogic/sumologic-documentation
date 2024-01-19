@@ -167,7 +167,7 @@ In addition please ensure that `url` for all `remoteWrite` configurations starts
 
 If you're adding extra configuration to fluentd metrics, you will likely want to do analogous modifications in OpenTelemetry.
 
-See [Metrics modifications](/docs/send-data/kubernetes/collecting-metrics#metrics-modifications).
+Please look at the [Metrics modifications](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-application-metrics.md#metrics-modifications) doc.
 
 ## Logs migration
 
