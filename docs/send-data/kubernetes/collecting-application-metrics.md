@@ -180,7 +180,7 @@ After restart, the Pod should have an additional `telegraf` container.
 To scrape and forward exposed metrics to Sumo Logic, please follow one of the following scenarios:
 
 - [Application metrics are exposed (one endpoint scenario)](#application-metrics-are-exposed-one-endpoint-scenario)
-- [Application metrics are exposed (multiple endpoints scenario)](#application-metrics-are-exposed-multiple-enpoints-scenario)
+- [Application metrics are exposed (multiple endpoints scenario)](#application-metrics-are-exposed-multiple-endpoints-scenario)
 
 ## Metrics modifications
 
