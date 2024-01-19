@@ -43,8 +43,7 @@ Tutorial: Set up an AWS CloudTrail Source.
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. Select the hosted Collector for which you want to add the Source, and click **Add Source**. To create a new hosted collector, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. Select **AWS CloudTrail**.
-1. The page refreshes.
-    ![cloudtrail-source.png](/img/cse/cloudtrail-source.png)
+1. The page refreshes. <br/> ![cloudtrail-source.png](/img/cse/cloudtrail-source.png)
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **S3 Region**. Choose the AWS Region the S3 bucket resides in.
