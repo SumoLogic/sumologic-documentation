@@ -159,7 +159,7 @@ Refer to [Collecting Container Logs document](https://github.com/SumoLogic/sumol
 
 ### Collecting application metrics
 
-Refer to [Collecting Application Metrics document](/docs/send-data/kubernetes/collecting-application-metrics#collecting-application-metrics)
+Refer to [Collecting Application Metrics](/docs/send-data/kubernetes/collecting-application-metrics#collecting-application-metrics).
 
 ### Collecting Kubernetes metrics
 
