@@ -152,8 +152,7 @@ sumologic:
 
 ### Application metrics are not exposed
 
-In case you want to scrape metrics from an application which does not expose a Prometheus endpoint, you can use telegraf operator. It will
-scrape metrics according to configuration and expose them on port `9273` so Prometheus will be able to scrape them.
+In case you want to scrape metrics from an application which does not expose a Prometheus endpoint, you can use telegraf operator. It will scrape metrics according to configuration and expose them on port `9273` so Prometheus will be able to scrape them.
 
 For example to expose metrics from nginx Pod, you can use the following annotations:
 
