@@ -25,9 +25,9 @@ If the baseline query does not finish within two hours, it will timeout.
 
 ### Compare vs. LogCompare
 
-The [compare](/docs/search/time-compare) and logcompare operators are very similar in syntax and functionality, but they handle different types of data:
+The [`compare`](/docs/search/time-compare) and `logcompare` operators are very similar in syntax and functionality, but they handle different types of data:
 
-* **compare** is used for aggregated numeric data, such as analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators like count, sum, and avg.
+* **compare** is used for aggregated numeric data, such as analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators like `count`, `sum`, and `avg`.
 * **logcompare** is used for log signature counts based on your raw log data.
 
 
@@ -44,7 +44,9 @@ First, run a non-aggregate search, then the **LogCompare** button in the **Mes
 
 Once clicked, a new search is opened with the `logcompare` operator and the specified `timeshift` added to your query, for example:
 
-`* | logcompare timeshift -24h`
+```sql
+* | logcompare timeshift -24h
+```
 
 A new tab labeled **Signatures** is provided with the compared results.
 
@@ -60,17 +62,15 @@ In the **Custom LogCompare** dialog, you can specify the target and baseline q
 
 ![LogCompare custom](/img/search/logcompare/logcompare-custom.png)
 
-*   **Baseline Query** is your historical query.
-*   **Time Shift** is the Time Shift of the Baseline Query, and it controls when the Baseline Query runs. If the Time Shift is -2d, that means that it will run for the exact Time Range duration (1 minute, in this query), but two days in the past.
-
-:::note
-The Time Shift can take a single value, such as -2d, or it can take a range. It must be a valid range, with a start date older or smaller than the end date.
-:::
-
-*   **Target Query.** Originally, the Target Query is the same as the Baseline Query. But you can edit it to compare against a new target. Here we’ve added `_sourceCategory=analysis` to compare it to `_sourceCategory=stream`.
-*   **Time Range.** The Time Range pertains to both the Target Query and the Baseline Query. You can enter a preconfigured, relative, or absolute time range, similar to the time range on the Search page. The Time Range can be specified by timeshift (start_time = now - timeshift) or (start_time + end_time).
-    *   For the target, if the end_time is not specified, it is implicitly set to now if not specified.
-    *   For the baseline, if the end_time is not specified, it is implicitly set as: (`end_time = start_time + range_length`). The (`range_length = end_time - start_time`) using the target times.
+* **Baseline Query** is your historical query.
+* **Time Shift** is the Time Shift of the Baseline Query, and it controls when the Baseline Query runs. If the Time Shift is -2d, that means that it will run for the exact Time Range duration (1 minute, in this query), but two days in the past.
+   :::note
+   The Time Shift can take a single value, such as -2d, or it can take a range. It must be a valid range, with a start date older or smaller than the end date.
+   :::
+* **Target Query.** Originally, the Target Query is the same as the Baseline Query. But you can edit it to compare against a new target. Here we’ve added `_sourceCategory=analysis` to compare it to `_sourceCategory=stream`.
+* **Time Range.** The Time Range pertains to both the Target Query and the Baseline Query. You can enter a preconfigured, relative, or absolute time range, similar to the time range on the Search page. The Time Range can be specified by timeshift (start_time = now - timeshift) or (start_time + end_time).
+    * For the target, if the end_time is not specified, it is implicitly set to now if not specified.
+    * For the baseline, if the end_time is not specified, it is implicitly set as: (`end_time = start_time + range_length`). The (`range_length = end_time - start_time`) using the target times.
 
 :::note
 See the [Time Shift versus Time Range example](#time-shift-versus-time-range-example) for a table showing how these settings affect the Target and Baseline queries.
@@ -92,9 +92,9 @@ The LogCompare operator is used the same as a search operator. This section exp
 
 where
 
-*  `<target query>` is the target (current) query.
-*  `<time>` is the time shift you want for the baseline query.
-*  `<baseline query>` is the baseline (historical) query.
+* `<target query>` is the target (current) query.
+* `<time>` is the time shift you want for the baseline query.
+* `<baseline query>` is the baseline (historical) query.
 
 A few examples:
 

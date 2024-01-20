@@ -93,7 +93,7 @@ Go to Service Bus Service from the Azure portal and click on `SUMOBRTaskQueueNam
 
 ![service-bus-metrics.png](/img/send-data/service-bus-metrics.png)
 
-## Verify with LiveTail
+## Verify with Live Tail
 
 In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving events. Search by the source category you assigned to the HTTP Source that receives the log data, for example: `_sourceCategory="azure/ad"`  
 
