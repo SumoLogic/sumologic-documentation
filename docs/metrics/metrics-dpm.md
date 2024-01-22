@@ -27,7 +27,7 @@ To see data volume, you'll need to enable [Audit Index](/docs/manage/security/a
  
 ## View Metrics DPM
 
-Navigate to **Manage Data > Metrics > Metrics DPM**.
+Navigate to **Administration > Account > Metrics DPM**.
 
  <img src={useBaseUrl('img/metrics/metrics-dpm.png')} alt="Metrics DPM screen" style={{border: '1px solid gray'}} width="800" />
 
