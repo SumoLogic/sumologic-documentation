@@ -88,7 +88,7 @@ Both the integration definition file and the action definition file are YAML fil
    * `Notification`
    * `Trigger`
 * **script** `*`:
-   * **code* ** [String]: Action code.
+   * **code** [String]: Action code.
 * **fields** `*`:
    * **id** `*` [String]: Name of field which will be passed to code at runtime as an environment variable. One ID attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution.
    * **label** `*` [String]: Label displayed in the UI.
@@ -133,35 +133,62 @@ Both the integration definition file and the action definition file are YAML fil
      * `sha256`
      * `url`
      * `userdetail`
-  :::note
-  Cloud SOAR automatically extracts observables from incidents content and converts them to entities (domain, email, file, IP address, hash values, URL, and user details). However, usernames are automatically converted into entities only if the input of an automatic action for users contains the **observables** statement and is also specified as `userdetail`.
-  :::
+     :::note
+     Cloud SOAR automatically extracts observables from incidents content and converts them to entities (domain, email, file, IP address, hash values, URL, and user details). However, usernames are automatically converted into entities only if the input of an automatic action for users contains the **observables** statement and is also specified as `userdetail`.
+     :::
 * **output** `*`: Expected fields from results.
-   * **path** `*` [String]:  JSON path for each field which may be returned by the action, using the following JSON as an example:
-   ```
-   {
-       country: "US",
-       response_code: 1,
-       as_owner: "CloudFlare, Inc.",
-       detected_urls: [
-          {
-             url: "http://google.com/",
-             positives: 2
-          }
-      ]
-  }
-   ```
-   The following `output:path` attributes should be added:
-     * `country`
-     * `response_code`
-     * `as_owner`
-     * `detected_urls.[].url`
-     * `detected_urls.[].positives`
-     * `detected_urls.[0].positives`(you can also specify array index)
+   * **path** `*` [String]:  JSON path for each field which may be returned by the action. 
+   
+   *Example* <br/>Using the following JSON as an example:
+     ```
+     {
+         country: "US",
+         response_code: 1,
+         as_owner: "CloudFlare, Inc.",
+         detected_urls: [
+            {
+               url: "http://google.com/",
+               positives: 2
+            }
+        ]
+     }
+     ```
+     The following `output:path` attributes should be added:
+       * `country`
+       * `response_code`
+       * `as_owner`
+       * `detected_urls.[].url`
+       * `detected_urls.[].positives`
+       * `detected_urls.[0].positives` (you can also specify array index)
+  
+     *Example with special characters* <br/>Use quotation marks [““] when there is a text with special character like a hyphen. Consider the following example JSON:   
+     ```
+     {
+       "payload": {
+         "headers": {
+           "MIME-Version": "1.0",
+           "From": "Joe Smith <joe.smith@example.com>",
+           "Message-ID": "<193853.example.com>",
+           "Subject": "Account Verification Required",
+           "To": "verify@example.com",
+           "Content-Type": "multipart/mixed; boundary=\"0000008\""
+         }
+       }
+     }
+     ```
+
+     To correctly parse `"MIME-Version"` in the example, use one of the following formats:
+     * `payload.headers."MIME-Version"`
+     * `payload.headers.["MIME-Version"]`
+
+     In addition to using quotation marks to enclose text with special characters, you must separate nested output fields with a period (**.**). Note that these formats will not parse correctly:
+     * `payload.headers["MIME-Version"]`
+     * `payload.headers[MIME-Version]`
+
 * **type** `*` [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
-* **table_view* **: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
+* **table_view**: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
    * **display_name** `*` [String]: Column name.
-   * **value* ** [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
+   * **value** [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
    * **type** `*` [String]: Type of value which is only possible to specify if the value should be shown as a link.
 * **use_in_triage** [Boolean]: Action should be manually executable in triage event (default False).
 * **hook** [List]: A list of hooks used to fire trigger actions to interact with Cloud SOAR elements. For more information, see [Trigger hooks](#trigger-hooks). Valid values are:
