@@ -67,9 +67,9 @@ The **API security token** is used to authenticate with Citrix Cloud API. After 
 To get the **Citrix Cloud API token**, follow the steps below:
 1. From the Citrix Cloud Console, navigate to the <img src={useBaseUrl('img/send-data/navigation-button.png')} alt="<navigation-button.png>" width="30" /> menu icon.
 1. Select the **Identity and Access Management** option from the menu.<br/><img src={useBaseUrl('img/send-data/access-management.png')} alt="<access-management.png>" width="650" />
-  :::note
-  If this option does not appear, you may not have adequate permissions to create an API client. Contact your administrator to get the required permissions.
-  :::
+    :::note
+    If this option does not appear, you may not have adequate permissions to create an API client. Contact your administrator to get the required permissions.
+    :::
 1. Select the **API Access** tab.<br/><img src={useBaseUrl('img/send-data/api-access.png')} alt="<api-access.png>" width="650" />
 1. Give a name to your Secure Client, and click **Create Client**.<br/><img src={useBaseUrl('img/send-data/create-client.png')} alt="<create-client.png>" width="650" />
 1. A dialogue box will appear notifying you that your **Client ID** and **Secret key** have been successfully created. You can download or copy and paste the Client Id and Secret key to a folder location because you will need them when creating the [Citrix Cloud-to-Cloud Source](#set-up-citrix-cloud-source). <br/><img src={useBaseUrl('img/send-data/successful-credentials.png')} alt="<successful-credentials.png>" width="450" />

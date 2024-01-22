@@ -110,7 +110,7 @@ First, make sure that the resources you created above were successfully created.
     ![azure-resources.png](/img/send-data/azure-resources.png)
 
 1. From the left pane of Azure Portal, Click **AppServices**, search for “SumoAzureApp”. You should find the `“SumoAzureApp<random-string>”` Function App. Click it. 
-1. On the** Function Apps** blade, click **Integrate**. Verify that the **Triggers** field value is “Azure Event Hubs” and the **Outputs** field value is “Azure Blob Storage”. 
+1. On the **Function Apps** blade, click **Integrate**. Verify that the **Triggers** field value is “Azure Event Hubs” and the **Outputs** field value is “Azure Blob Storage”. 
 
     ![triggers.png](/img/send-data/azure-triggers.png)
 

@@ -42,7 +42,7 @@ When the Sumo collector accesses a log file to read its content, the collector o
 ## Configure a Local File Source
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
-1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose** Add **Source from the pop-up menu.
+1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose **Add Source** from the pop-up menu.
 
     ![img](/img/send-data/add-source.png)    
 1. Select **Local File** for the Source type.
