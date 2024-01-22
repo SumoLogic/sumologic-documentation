@@ -25,9 +25,7 @@ The web interface autocomplete feature for log search variables has the follow
 
 ## Show and hide variables option
 
-In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.
-
-![Show and Hide filters.png](/img/dashboards-new/filter-template-variables/Show-and-Hide-filters.png)
+In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/Show-and-Hide-filters.png')} alt="Show and Hide filters" style={{border: '1px solid gray'}} width="400" />
 
 ## Create a template variable
 
