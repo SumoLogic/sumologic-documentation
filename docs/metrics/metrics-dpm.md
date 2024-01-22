@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Data volume for metrics is measured in data points per minute (DPM). A data point is an individual piece of data. The total number of data points being sent in a given time can give you a good idea of where the load is heaviest. For example, let's say you want to find out how much data is being sent to metrics from a certain source, host, or source category. You can look at the actual number of individual data points per minute being sent from these to determine whether they are consuming too much metrics bandwidth. Knowing the DPM for these and other kinds of data allows you to monitor your consumption rates.
 
-You can view your data volume for metrics by navigating to **Manage Data > Metrics > Metrics DPM**. The screen provides a granular breakdown of your metrics ingestion and credits used. You can track DPM consumption by individual metric names, or by specific dimensions like cluster, host, source, and so on. With this data, you can see which sources and metrics contribute most to your credit consumption, and take necessary actions. 
+You can view your data volume for metrics by navigating to **Administration > Account > Metrics DPM**. The screen provides a granular breakdown of your metrics ingestion and credits used. You can track DPM consumption by individual metric names, or by specific dimensions like cluster, host, source, and so on. With this data, you can see which sources and metrics contribute most to your credit consumption, and take necessary actions. 
 
 Understanding the volume of metrics that you are ingesting is important because when you exceed the DPM limit, data is cached on the host and the source is throttled, reducing query performance and accuracy. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics/).
 
@@ -27,7 +27,7 @@ To see data volume, you'll need to enable [Audit Index](/docs/manage/security/a
  
 ## View Metrics DPM
 
-Navigate to **Manage Data > Metrics > Metrics DPM**.
+Navigate to **Administration > Account > Metrics DPM**.
 
  <img src={useBaseUrl('img/metrics/metrics-dpm.png')} alt="Metrics DPM screen" style={{border: '1px solid gray'}} width="800" />
 
