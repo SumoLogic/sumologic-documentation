@@ -19,7 +19,7 @@ To configure a remote Windows Event Log Source:
 
 1. Complete the prerequisites for collecting remote events.
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
-1. Find the name of the installed collector to which you'd like to add a source. Click **Add** and then choose** Add Source** from the pop-up menu.
+1. Find the name of the installed collector to which you'd like to add a source. Click **Add** and then choose **Add Source** from the pop-up menu.
 
     ![add source from collection page.png](/img/send-data/add-source-from-collection-page.png)
 
@@ -95,7 +95,7 @@ To configure a remote Windows Event Log Source:
 
         If we would have chosen Security Identifier Only, the `Security ID` field would be `S-1-5-18`.
         If we would have chosen Username Only, the `Security ID` field would be `NT AUTHORITY\SYSTEM`.
- * Create any Processing Rules you'd like for the new Source.
+     * Create any Processing Rules you'd like for the new Source.
 
 1. Click **Save**.
 
