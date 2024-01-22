@@ -9,9 +9,9 @@ This document covers multiple different use cases related to scraping custom app
 
 There are three major sections:
 
-- [Scraping metrics](#scraping-metrics) which describes how to send your application metrics to Sumo Logic
-- [Metrics modifications](#metrics-modifications) which describes how to filter metrics and rename both metrics and metric metadata
-- [Kubernetes metrics](#kubernetes-metrics) describes which metrics do we collect from the Kubernetes components
+- [Scraping metrics](#scraping-metrics). Describes how to send your application metrics to Sumo Logic.
+- [Metrics modifications](#metrics-modifications). Describes how to filter metrics and rename both metrics and metric metadata.
+- [Kubernetes metrics](#kubernetes-metrics). Describes the metrics we collect from the Kubernetes components.
 
 ## Scraping metrics
 
@@ -23,8 +23,7 @@ This section describes how to scrape metrics from your applications. The followi
 
 ### Application metrics are exposed (one endpoint scenario)
 
-If there is only one endpoint in the Pod you want to scrape metrics from, you can use annotations. Add the following annotations to your Pod
-definition:
+If there is only one endpoint in the Pod you want to scrape metrics from, you can use annotations. Add the following annotations to your Pod definition:
 
 ```yaml
 # ...
@@ -41,11 +40,10 @@ If you add more than one annotation with the same name, only the last one will b
 ### Application metrics are exposed (multiple endpoints scenario)
 
 :::note  
-Use `sumologic.metrics.additionalServiceMonitors` instead of `kube-prometheus-stack.prometheus.additionalServiceMonitors`. They have identical behaviour and can even be used in tandem, but the latter only works if Prometheus is enabled, and won't work with the Otel metrics collector which is the default in v4 of the Chart.
+Use `sumologic.metrics.additionalServiceMonitors` instead of `kube-prometheus-stack.prometheus.additionalServiceMonitors`. They have identical behavior and can even be used in tandem, but the latter only works if Prometheus is enabled, and won't work with the Otel metrics collector which is the default in v4 of the Chart.
 :::
 
-If you want to scrape metrics from multiple endpoints in a single Pod, you need a Service which points to the Pod and also to configure
-`sumologic.metrics.additionalServiceMonitors` in your `user-values.yaml`:
+If you want to scrape metrics from multiple endpoints in a single Pod, you need a Service which points to the Pod and also to configure `sumologic.metrics.additionalServiceMonitors` in your `user-values.yaml`:
 
 ```yaml
 sumologic:
@@ -65,24 +63,23 @@ sumologic:
 ```
 
 :::note
-For advanced serviceMonitor configuration, please look at the [Prometheus documentation][prometheus_service_monitors]
+For advanced serviceMonitor configuration, see [Prometheus documentation][prometheus_service_monitors]
 :::
 
-[prometheus_service_monitors]:
-  https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#monitoring.coreos.com/v1.ServiceMonitor
+[prometheus_service_monitors]: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#monitoring.coreos.com/v1.ServiceMonitor
 
 #### Example
 
-Let's consider a Pod which exposes the following metrics:
+Let's consider a Pod that exposes the following metrics:
 
-```txt
+```sh
 my_metric_cpu
 my_metric_memory
 ```
 
 on the following endpoints:
 
-```txt
+```sh
 :3000/metrics
 :3001/custom-endpoint
 ```
@@ -155,10 +152,9 @@ sumologic:
 
 ### Application metrics are not exposed
 
-In case you want to scrape metrics from an application which does not expose a Prometheus endpoint, you can use telegraf operator. It will
-scrape metrics according to configuration and expose them on port `9273` so Prometheus will be able to scrape them.
+In case you want to scrape metrics from an application which does not expose a Prometheus endpoint, you can use telegraf operator. It will scrape metrics according to configuration and expose them on port `9273` so Prometheus will be able to scrape them.
 
-For example to expose metrics from nginx Pod, you can use the following annotations:
+For example, to expose metrics from nginx Pod, you can use the following annotations:
 
 ```yaml
 annotations:
@@ -169,16 +165,15 @@ annotations:
   telegraf.influxdata.com/limits-cpu: '750m'
 ```
 
-`sumologic-prometheus` defines the way telegraf operator will expose the metrics. They are going to be exposed in prometheus format on port
-`9273` and `/metrics` path.
+`sumologic-prometheus` defines how telegraf operator will expose the metrics. They are going to be exposed in prometheus format on port `9273` and `/metrics` path.
 
 :::note
-If you apply annotations on Pod which is owned by another object, for example DaemonSet, it won't take affect. In such case, the annotation should be added to Pod specification in DaemonSet template.
+If you apply annotations on a Pod that's owned by another object, for example DaemonSet, it won't take effect. In such case, the annotation should be added to Pod specification in DaemonSet template.
 :::
 
 After restart, the Pod should have an additional `telegraf` container.
 
-To scrape and forward exposed metrics to Sumo Logic, please follow one of the following scenarios:
+To scrape and forward exposed metrics to Sumo Logic, follow one of the following scenarios:
 
 - [Application metrics are exposed (one endpoint scenario)](#application-metrics-are-exposed-one-endpoint-scenario)
 - [Application metrics are exposed (multiple endpoints scenario)](#application-metrics-are-exposed-multiple-endpoints-scenario)
@@ -193,14 +188,14 @@ This section covers the following metrics modifications:
 
 ### Filtering metrics
 
-Please see [the doc about filtering data](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/filtering.md#metrics).
+See [the doc about filtering data](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/filtering.md#metrics).
 
 #### Default attributes
 
 By default, the following attributes should be available:
 
 | Attribute name            | Description                                                |
-| ------------------------- | ---------------------------------------------------------- |
+| :------------------------- | :---------------------------------------------------------- |
 | \_collector               | Sumo Logic collector name                                  |
 | \_origin                  | Sumo Logic origin metadata ("kubernetes")                  |
 | \_sourceCategory          | Sumo Logic source category                                 |
@@ -229,12 +224,11 @@ By default, the following attributes should be available:
 Before ingestion to Sumo Logic, attributes are renamed according to the [sumologicschemaprocessor documentation][sumologicschema]
 :::
 
-[sumologicschema]:
-  https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/sumologicschemaprocessor#attribute-translation
+[sumologicschema]: https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/sumologicschemaprocessor#attribute-translation
 
 ### Renaming metric
 
-In order to rename metrics, the [transformprocessor] can be used. Please look at the following snippet:
+To rename metrics, you can use the [transformprocessor]. Look at the following snippet:
 
 ```yaml
 sumologic:
@@ -251,7 +245,7 @@ sumologic:
 
 ### Adding or renaming metadata
 
-If you want to add or rename metadata, the [transformprocessor] can be used. Please look at the following snippet:
+To add or rename metadata, you can use the [transformprocessor]. Look at the following snippet:
 
 ```yaml
 sumologic:
@@ -270,7 +264,9 @@ sumologic:
                   - delete_key(attributes, "<old_name>")
 ```
 
-**Note:** See [Default attributes](#default-attributes) for more information about attributes.
+:::note
+See [Default attributes](#default-attributes) for more information about attributes.
+:::
 
 [transformprocessor]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/transformprocessor
 

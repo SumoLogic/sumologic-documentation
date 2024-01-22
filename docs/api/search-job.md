@@ -112,7 +112,7 @@ The following figure shows the process flow for search jobs.
 
 1. **Request.** You request a search job, giving the query and time range.
 2. **Response.** Sumo responds with a job ID. If there’s a problem with the request, an error code is provided (see the list of error codes following the figure).
-3. **Request. **Use the job ID to request search status. This needs to be done at least every 20-30 seconds so the search session is not canceled due to inactivity.
+3. **Request.** Use the job ID to request search status. This needs to be done at least every 20-30 seconds so the search session is not canceled due to inactivity.
 4. **Response.** Sumo responds with job status. An error code (404) is returned if the request could not be completed.
 The status includes the current state of the search job (gathering results, done executing, etc.). It also includes the message and record counts based on how many results have already been found while executing the search. For non-aggregation queries, only the number of messages is reported. For aggregation queries, the number of records produced is also reported. The search job status provides access to an implicitly generated histogram of the distribution of found messages over the time range specified for the search job. During and after execution, the API can be used to request available messages and records in a paging fashion.
 5. **Request.** You request results. It’s not necessary for the search to be complete for the user to request results; the process works asynchronously. You can repeat the request as often as needed to keep seeing updated results, keeping in mind the rate limits. The Search Job API can return up to 10 million records per search query.
