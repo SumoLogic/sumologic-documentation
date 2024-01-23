@@ -86,9 +86,9 @@ You can also create and manage Match Lists with Cloud SIEM's REST [API](/docs/cs
     1. **Description**. Enter a description for the list. Descriptions for standard Match Lists can be found in [Standard Match Lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists#standard-match-lists).
     1. **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire.
     1. **Target Column**. The type of message field to which items on the list should be compared. The **Target Column** for standard Match Lists can be found in [Standard Match Lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists#standard-match-lists). <br/>
-     :::note
-     Once you create a Match List, it's not possible to change its **Target Column**.
-     :::
+        :::note
+        Once you create a Match List, it's not possible to change its **Target Column**.
+        :::
     1. Click **Create**.<br/><img src={useBaseUrl('img/cse/new-match-list.png')} alt="New match list" width="400"/>
 1. The Match List now appears on the **Match Lists** page. <br/><img src={useBaseUrl('img/cse/match-list-added.png')} alt="Match list added" width="800"/>
 1. Click the name of the Match List to open it.

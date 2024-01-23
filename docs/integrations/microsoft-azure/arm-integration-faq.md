@@ -51,7 +51,7 @@ For Event Hub, do the following:
 
 For Blob Storage, do the following:
 1. Go to the **BlockTaskConsumer** function created by the ARM template.
-2. Enable Edit Mode and edit the **getsourceCategory** function to set the source category based on the metadata(url ,containerName ,blobName ,storageName ,resourceGroupName ,subscriptionId ) present in **serviceBusTask.
+2. Enable Edit Mode and edit the **getsourceCategory** function to set the source category based on the metadata(url ,containerName ,blobName ,storageName ,resourceGroupName ,subscriptionId ) present in **serviceBusTask**.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_BlobStorage_Logs.png')} alt="Azure ARM FAQs" />
 

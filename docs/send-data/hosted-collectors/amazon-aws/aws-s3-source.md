@@ -128,7 +128,7 @@ import Iframe from 'react-iframe';
 
 1. For **AWS** **Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md). If you're collecting from a Cisco Umbrella bucket you must use **Key access**.
 
-   * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role. 
+   * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role. 
 
         ![Role based access input roleARN.png](/img/send-data/Role-based-access-input-roleARN.png)
 

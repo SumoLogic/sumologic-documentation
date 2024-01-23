@@ -28,7 +28,7 @@ The following general rules apply to time ranges:
 * For all time expressions with only one start time entered, the default assumed end-time is "now".
 * If you enter two times, the first is assumed to be the start time, and the second is assumed to be the end time for the time range.
 * When entering hours, you can use a 24-hour format, such as 17:32:00, or a 12-hour format, such as 5:32pm.
-* To enter dates, always use a slash ("/") between month, day, and year in this format: mm/dd/yyyy. Sumo Logic does not support dates entered in yyyy/mm/dd notation or yy/mm/dd notation.
+* To enter dates, always use a slash (`/`) between month, day, and year in this format: mm/dd/yyyy. Sumo Logic does not support dates entered in yyyy/mm/dd notation or yy/mm/dd notation.
 * Abbreviations for custom time are h=hours, d=days, w=weeks, m=months.
 * If you enter a date, the assumed time for the date is midnight of that day. (00:00:00).
 * For relative time, use these shorthand entries: d=day, h=hour, m=minute, and s=second.

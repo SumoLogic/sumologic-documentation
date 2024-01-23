@@ -210,7 +210,7 @@ This page demonstrates how to configure log collection for the Evident.io ESP Ap
     1. **Name.** Enter Evident.io SNS Integration.  
     2. **Source Category.** Enter security_evident.
 3. In the **Advanced** section, configure:
-    1. **Enable Timestamp Parsing. **Activate the check box Extract timestamp information from log files.
+    1. **Enable Timestamp Parsing.** Activate the check box Extract timestamp information from log files.
     1. **Time Zone.** Select Ignore time zone from log file, and select (UTC) Etc/UTC
 4. **Processing Rules.** Create the following [Mask Rule](/docs/send-data/collection/processing-rules/mask-rules):
     1. **Name.** Enable proper timestamp parsing.
@@ -282,9 +282,9 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Evident.ioESP_Overview_Dashboard.png')} alt="Evident.io ESP dashboards" />
 
-**New Risks. **Displays the number of new risks in a single value chart over the previous 24 hours.
+**New Risks.** Displays the number of new risks in a single value chart over the previous 24 hours.
 
-**New Risks by Severity. **Shows the severity of new risks in a stacked column chart on a timeline for the last 24 hours.
+**New Risks by Severity.** Shows the severity of new risks in a stacked column chart on a timeline for the last 24 hours.
 
 **New High Severity Risks.** Provides details on the new high severity risks in a table chart over the last 24 hours.
 
@@ -292,14 +292,14 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 **Resolved Risks.** Shows which risks have been resolved over the last 24 hours in a table chart.
 
-**Total Risks over Time. **Shows a trendline of all alerts over the last 14 days in a stacked area chart.
+**Total Risks over Time.** Shows a trendline of all alerts over the last 14 days in a stacked area chart.
 
 
 ### Evident.io ESP - Detailed Risks
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Evident.ioESP_DetailedRisks_Dashboard.png')} alt="Evident.io ESP dashboards" />
 
-**Total Risks. **Shows the number of total risks in a single value chart over the last 24 hours
+**Total Risks.** Shows the number of total risks in a single value chart over the last 24 hours
 
 **New Risks.** Displays the number of new risks for the last 24 hours in a single value chart.
 
@@ -307,6 +307,6 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 **Risks by Region.** Displays the total number of risks by region over the last 24 hours in a donut chart.
 
-**Risks by Signature. **Provides details on risks by signature name and identifier over the last 24 hours in a table chart.
+**Risks by Signature.** Provides details on risks by signature name and identifier over the last 24 hours in a table chart.
 
 **Risks by Account.** Displays the total number of risks by account name over the last 24 hours in a column chart.

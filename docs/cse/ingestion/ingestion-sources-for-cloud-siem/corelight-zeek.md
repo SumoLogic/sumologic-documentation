@@ -13,7 +13,8 @@ These instructions are for Corelight Zeek logs sent as JSON over syslog.
 
 :::note
 The [Cloud SIEM Network Sensor](/docs/cse/sensors/network-sensor-deployment-guide/) also utilizes Zeek, so If you're using the sensor, using Corelight Zeek would be redundant.
-::: 
+:::
+
 
 ## Step 1: Configure collection
 

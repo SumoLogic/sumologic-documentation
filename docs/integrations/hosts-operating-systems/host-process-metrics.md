@@ -222,7 +222,7 @@ telegraf --config telegraf.conf --test
 host.name=*  cpu=cpu-total  metric=(host_cpu_usage_user OR host_cpu_usage_system OR host_cpu_usage_iowait OR host_cpu_usage_steal OR host_cpu_usage_softirq OR host_cpu_usage_irq OR host_cpu_usage_nice) | sum by host.name
 ```
 
-**CPU Usage** panel in ** Process Metrics Details** Dashboard
+**CPU Usage** panel in **Process Metrics Details** Dashboard
 
 ```sql
 metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.name, process.executable.name | outlier
@@ -302,7 +302,7 @@ If you would like the alerts to send email or connection notifications, configur
 
 #### Email and Connection Notification Configuration Examples
 
-To** configure notifications, m**odify the file `host_process_metrics_notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
+To configure notifications, modify the file `host_process_metrics_notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/alerts/webhook-connections/set-up-webhook-connections) for creating payloads with other connection types.
 
 
 ```sql title="Pagerduty Connection Example:"
@@ -341,8 +341,8 @@ email_notifications = [
 
 #### Install the Alerts
 
-1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/host_process_metrics/` and run **terraform init. **This will initialize Terraform and will download the required components.
-2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
+1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/host_process_metrics/` and run **terraform init.** This will initialize Terraform and will download the required components.
+2. Run **terraform plan** to view the monitors which will be created/modified by Terraform.
 3. Run **terraform apply**.
 
 

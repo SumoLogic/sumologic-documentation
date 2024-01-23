@@ -18,7 +18,7 @@ The Merge operator reduces a stream of events to a single event using a specifie
 
     Merge [_raw](/docs/search/get-started-with-search/search-basics/built-in-metadata) values and separate them with newlines. Adds a Time field containing the earliest timestamp.
 
-* `merge <field> `   
+* `merge <field>`   
 
     Merge values of the named field and separate them with newlines.
 
@@ -32,7 +32,7 @@ The Merge operator reduces a stream of events to a single event using a specifie
 
 ## Limitation
 
-* The [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field _messageTime can only use strategies takeFirst and takeLast.
+* The [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_messageTime` can only use strategies takeFirst and takeLast.
 
 ## Examples
 
@@ -47,7 +47,7 @@ produces a result something like this:
 
 ![example](/img/reuse/query-search/merge_join_result.png)
 
-A common case for using the merge operator with the [Transactionize](transactionize-operator.md) operator is when all log messages have a common field, such as **transaction_id** or **request_id**. Using the merge operator with transactionize merges all the messages with the common fields, for example:
+A common case for using the merge operator with the [`transactionize`](transactionize-operator.md) operator is when all log messages have a common field, such as **`transaction_id`** or **`request_id`**. Using the `merge` operator with `transactionize` merges all the messages with the common fields, for example:
 
 ```sql
 _sourceCategory=travelweb
@@ -58,5 +58,3 @@ _sourceCategory=travelweb
 Which provides results like the following. Notice that all the logs from the same IP are now grouped in one record.
 
 ![example](/img/reuse/query-search/merge_transactionize_example.png)
-
- 
