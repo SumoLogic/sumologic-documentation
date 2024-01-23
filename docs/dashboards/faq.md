@@ -56,7 +56,7 @@ The types of charts you will find in the time series panel include:
 
 ## How do I overlay logs and metrics on one panel?
 
-One of the valuable features in dashboards is that you can graph data on to the same panel across data sources very easily. Inside of each dashboard panel, you have the option of having up to 6 metrics and 6 logs query rows. To create a panel with both logs and metrics derived data, press the **Add a Panel** button, select **Time Series**, and you will launch the panel builder.<br/><img src={useBaseUrl('/img/dashboards-new/dashboard-new-faqs/Add-a-panel-button.png')} alt="Add a panel button" style={{border: '1px solid gray'}} width="400" />
+One of the valuable features in dashboards is that you can graph data on to the same panel across data sources very easily. Inside of each dashboard panel, you have the option of having up to 6 metrics and 6 logs query rows. To create a panel with both logs and metrics derived data, press the **Add a Panel** button, select **Time Series**, and you will launch the panel builder.<br/><img src={useBaseUrl('/img/dashboards-new/dashboard-new-faqs/Add-a-panel-button.png')} alt="Add a panel button" style={{border: '1px solid gray'}} width="600" />
 
 To switch between a metrics query row and a logs query row, you just have to select the Logs query dropdown after the **#A** and change it to Metrics. To add multiple logs or metrics rows, hover over the last query row and press the + button.<br/><img src={useBaseUrl('/img/dashboards-new/dashboard-new-faqs/Logs-and-metrics-query-options.png')} alt="Logs and metrics query options" style={{border: '1px solid gray'}} width="600" />
 
