@@ -414,8 +414,8 @@ To create a new Sumo Logic hosted collector, perform the steps in the [Configure
     1. **Name** (Required). Enter a name for the source.
     2. **Description**(Optional).
     3. **Source Category** (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be Prod/DB/Oracle/Metrics.
-3. Select** Save.**
-4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL **next to the source on the Collection Management screen.
+3. Select **Save.**
+4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 
 
 #### Set up Telegraf

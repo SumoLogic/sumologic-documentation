@@ -366,7 +366,7 @@ The **JFrog Xray - Vulnerable Containers** dashboard provides information on vul
 
 ### Threat Analysis
 
-The **JFrog Xray - Threat Analysis ** dashboard provides insight into threats and indicators of compromise of all vulnerable artifacts detected by Xray by correlating  Artifactory logs with Xray logs.
+The **JFrog Xray - Threat Analysis** dashboard provides insight into threats and indicators of compromise of all vulnerable artifacts detected by Xray by correlating  Artifactory logs with Xray logs.
 
 Use this dashboard to:
 * Identify all vulnerable artifacts that are downloaded or uploaded on Artifactory via Sumo Logic Threat intel.

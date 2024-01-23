@@ -239,7 +239,7 @@ Use this dashboard to:
 
 ### Host Performance Details
 
-**The Amazon ElastiCache - Host Performance Details ** dashboard shows an overview of the resource utilization for a given ElastiCache cluster across its nodes and also showcases trends around CPU, memory, swap usage and network traffic.  
+The **Amazon ElastiCache - Host Performance Details** dashboard shows an overview of the resource utilization for a given ElastiCache cluster across its nodes and also showcases trends around CPU, memory, swap usage and network traffic.  
 
 Use this dashboard to:
 * Get an at-a-glance view of the performance of all nodes within a given ElastiCache cluster
@@ -249,7 +249,7 @@ Use this dashboard to:
 
 ### Redis Performance Details
 
-**The Amazon ElastiCache - Redis Performance Details ** dashboard provides detailed insights into cache hits, keys, replication, connections and failures of Redis ElastiCache clusters.
+The **Amazon ElastiCache - Redis Performance Details** dashboard provides detailed insights into cache hits, keys, replication, connections and failures of Redis ElastiCache clusters.
 
 Use this dashboard to:
 * Monitor trends around cache hits and misses to determine if Redis clusters need to be tuned
@@ -260,7 +260,7 @@ Use this dashboard to:
 
 ### Redis Command Latency
 
-**The Amazon ElastiCache - Redis Command Latency ** dashboard provides detailed insights into latency of various Redis commands.
+The **Amazon ElastiCache - Redis Command Latency** dashboard provides detailed insights into latency of various Redis commands.
 
 Use this dashboard to:
 * To optimize performance of your Redis clusters by monitoring latency observed across get/set operations. Latency can be high due to high CPU usage, swapping or removing cached items. Performance optimizations can therefore be made either via resource allocation or by optimizing on caching.
@@ -269,7 +269,7 @@ Use this dashboard to:
 
 ### Redis Command Stats
 
-**The Amazon ElastiCache - Redis Command Stats ** dashboard provides detailed insights into the number of commands being performed.
+The **Amazon ElastiCache - Redis Command Stats** dashboard provides detailed insights into the number of commands being performed.
 
 Use this dashboard to:
 * Monitor various Get and Set commands received by your ElastiCache clusters and nodes

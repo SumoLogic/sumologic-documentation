@@ -192,7 +192,7 @@ Use this dashboard to:
 
 ### Latency and Errors
 
-**AWS DynamoDB - Latency and Errors ** dashboard provides insights across your infrastructure for DynamoDB errors and latency including failed requests, and latency.
+**AWS DynamoDB - Latency and Errors** dashboard provides insights across your infrastructure for DynamoDB errors and latency including failed requests, and latency.
 
 Use this dashboard to:
 * Identify high get and put latencies for DynamoDB tables
@@ -203,7 +203,7 @@ Use this dashboard to:
 
 ### Events
 
-The **AWS DynamoDB - Events ** dashboard provides insights across your infrastructure for DynamoDB events including trends, users, errors, updates, creations and deletions to tables.
+The **AWS DynamoDB - Events** dashboard provides insights across your infrastructure for DynamoDB events including trends, users, errors, updates, creations and deletions to tables.
 
 Use this dashboard to:
 

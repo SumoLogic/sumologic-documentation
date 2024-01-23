@@ -290,15 +290,15 @@ See information about S3 public objects and buckets, including counts of new pub
 
 **New Public Objects**. Shows a count of new public objects for the last 24 hours.
 
-**New Public Objects by Object-Bucket. **Displays new public objects per object on a timeline using the `timeslices` of one hour as a stacked column chart for the last 24 hours.
+**New Public Objects by Object-Bucket.** Displays new public objects per object on a timeline using the `timeslices` of one hour as a stacked column chart for the last 24 hours.
 
-**New Public Objects Table. **Displays a table with new public objects in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
+**New Public Objects Table.** Displays a table with new public objects in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
 
 **Public Buckets**. Shows a count of public buckets for the last 24 hours.
 
 **Public Buckets**. Displays public buckets on a timeline using the `timeslices` of one hour as a stacked column chart for the last 24 hours.
 
-**Public Buckets Table. **Displays a table with public buckets in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
+**Public Buckets Table.** Displays a table with public buckets in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
 
 **Modified Public Objects**. Shows a count of public objects that have been modified in the last 24 hours.
 
