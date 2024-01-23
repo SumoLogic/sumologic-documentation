@@ -141,7 +141,7 @@ Use this dashboard to:
 
 ### Deployments
 
-The **GitLab - Deployments **dashboard provides users with a high-level view of activities such as deployments failed or success.
+The **GitLab - Deployments** dashboard provides users with a high-level view of activities such as deployments failed or success.
 
 Use this dashboard to:
 * Understand the number of deployments that failed or succeeded.
@@ -155,7 +155,7 @@ Use this dashboard to:
 
 ### Builds
 
-The **GitLab - Builds **dashboard provides users with a high-level view of activities such as builds failed or success.
+The **GitLab - Builds** dashboard provides users with a high-level view of activities such as builds failed or success.
 
 Use this dashboard to:
 * Understand the number of builds that failed or succeeded.
@@ -168,7 +168,7 @@ Use this dashboard to:
 
 ### Pipeline
 
-The **GitLab - Pipeline **dashboard provides users with a high-level view of activities such as builds failed or success.
+The **GitLab - Pipeline** dashboard provides users with a high-level view of activities such as builds failed or success.
 
 Use this dashboard to:
 * Understand the number of pipelines that failed or succeeded.
@@ -183,7 +183,7 @@ Use this dashboard to:
 
 ### Merge Requests
 
-The **GitLab - Merge Requests **dashboard provides users with a high-level view of activities such as Merge Requests opened, closed, and merged.
+The **GitLab - Merge Requests** dashboard provides users with a high-level view of activities such as Merge Requests opened, closed, and merged.
 
 Use this dashboard to:
 * Understand the number of merge requests being opened, closed, and merged.
@@ -199,7 +199,7 @@ Use this dashboard to:
 
 ### Commits
 
-The **GitLab - Commits **dashboard provides users with a high-level view of activities such as files modified, added, and removed by commit.
+The **GitLab - Commits** dashboard provides users with a high-level view of activities such as files modified, added, and removed by commit.
 
 Use this dashboard to:
 * Get insight into the total number of commits by branch, project, repository, and user.

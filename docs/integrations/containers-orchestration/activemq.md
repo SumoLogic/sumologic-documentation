@@ -500,7 +500,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
     environment = "<SUMOLOGIC DEPLOYMENT>"
     ```
   The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `'activemq_data_source'`. Custom filter examples:
-    * A specific cluster **`'messaging_cluster=activemq.prod.01'`
+    * A specific cluster `'messaging_cluster=activemq.prod.01'`
     * All clusters in an environment `'environment=prod'`
     * For alerts applicable to all clusters that start with activemq-prod, your custom filter would be: `'messaging_cluster=activemq-prod*'`
     * For alerts applicable to a specific cluster within a production environment, your custom filter would be:`activemq_cluster=activemq-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)

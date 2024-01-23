@@ -580,7 +580,7 @@ To run the function manually, do the following:
 	 ```bash
 	 python3 -m sumomongodbatlascollector.main
 	 ```
-2. Check the automatically generated logs in  **/tmp/sumoapiclient.log **to verify whether the function is getting triggered or not.
+2. Check the automatically generated logs in **/tmp/sumoapiclient.log** to verify whether the function is getting triggered or not.
 3. If you installed the collector as `root` user and then run it as a normal user, you will see an error message similar to the following. This is because the config is not present in the home directory of the user that is running the collector. Switch to `root` user and run the script again.
 
 You can also avoid this error by running the script with config file path as first argument.

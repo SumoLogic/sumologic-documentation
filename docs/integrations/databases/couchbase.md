@@ -400,7 +400,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Couchbase/couchbase.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Couchbase clusters, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=couchbase` with `<Your Custom Filter>`. Custom filter examples:
    1. For alerts applicable only to a specific cluster, your custom filter would be, `'db_cluster=couchbase-standalone.01'`.
    2. For alerts applicable to all cluster that start with couchbase-standalone, your custom filter would be,`db_cluster=couchbase-standalone*`.
-   3. For alerts applicable to a specific cluster within a production environment, your custom filter would be**,`db_cluster=couchbase-1`** and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
+   3. For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=couchbase-1` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
 3. Go to Manage Data > Alerts > Monitors.
 4. Click **Add**:
 5. Click Import and then copy-paste the above JSON to import monitors.

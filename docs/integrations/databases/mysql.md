@@ -577,7 +577,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 3. Go to **Manage Data > Alerts > Monitors**.
 4. Click **Add**.
 5. Click **Import.**
-6. On the** Import Content popup**, enter "MySQL" in the Name field, paste in the JSON into the the popup, and click **Import**.  
+6. On the **Import Content popup**, enter "MySQL" in the Name field, paste in the JSON into the the popup, and click **Import**.  
 7. The monitors are created in a "MySQL" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 
@@ -659,7 +659,7 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 ### Overview  
 
-The** MySQL - Overview** dashboard gives you an at-a-glance view of the state of your database clusters by monitoring key cluster information such as errors, failed logins, errors, queries executed, slow queries, lock waits, uptime and more.
+The **MySQL - Overview** dashboard gives you an at-a-glance view of the state of your database clusters by monitoring key cluster information such as errors, failed logins, errors, queries executed, slow queries, lock waits, uptime and more.
 
 Use this dashboard to:
 * Quickly identify the state of a given database cluster.

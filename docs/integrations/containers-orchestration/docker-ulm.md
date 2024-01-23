@@ -86,7 +86,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
    * **Enable Multiline Processing.** TheDetect messages spanning multiple lines option is checked by default. See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options.
    * **Infer Boundaries**. This option is checked by default.
    * **Boundary Regex**. If multiple processing is enabled, and **Infer Boundaries** is disabled, enter a regular expression for message boundaries.
-6. Configure processing rules. For more information, see** **[Processing Rules](/docs/send-data/collection/processing-rules).
+6. Configure processing rules. For more information, see [Processing Rules](/docs/send-data/collection/processing-rules).
 
 
 ### Add a Docker Stats Source

@@ -291,7 +291,7 @@ To run the function manually, do the following:
    ```bash
    python3 -m sumojfrogxray.main
    ```
-2. The script generates logs in **/tmp/sumoapiclient.log **by default. Check these logs to verify whether the script is getting triggered or not.
+2. The script generates logs in **/tmp/sumoapiclient.log** by default. Check these logs to verify whether the script is getting triggered or not.
 3. If you get an error such as unable to execute `'gcc': No such file or directory, error: command 'gcc' failed with exit status 1`, go to your AWS EC2 instance and run the following commands:
 ```bash
 sudo yum -y install gcc
@@ -366,7 +366,7 @@ The **JFrog Xray - Vulnerable Containers** dashboard provides information on vul
 
 ### Threat Analysis
 
-The **JFrog Xray - Threat Analysis **dashboard provides insight into threats and indicators of compromise of all vulnerable artifacts detected by Xray by correlating  Artifactory logs with Xray logs.
+The **JFrog Xray - Threat Analysis** dashboard provides insight into threats and indicators of compromise of all vulnerable artifacts detected by Xray by correlating  Artifactory logs with Xray logs.
 
 Use this dashboard to:
 * Identify all vulnerable artifacts that are downloaded or uploaded on Artifactory via Sumo Logic Threat intel.

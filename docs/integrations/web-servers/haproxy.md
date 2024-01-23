@@ -480,7 +480,7 @@ However, if you would like to restrict these alerts to specific clusters or envi
 1. Go to **Manage Data > Alerts > Monitors**.
 2. Click **Add**.
 3. Click Import.
-4. On the** Import Content popup**, enter **HAProxy **in the Name field, paste in the JSON into the the popup, and click **Import**.
+4. On the **Import Content popup**, enter **HAProxy** in the Name field, paste in the JSON into the the popup, and click **Import**.
 5. The monitors are created in a "HAProxy" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 ### Method 2: Use a Terraform script

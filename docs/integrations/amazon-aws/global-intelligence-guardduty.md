@@ -201,7 +201,7 @@ Use this dashboard to:
 
 ### 02. Your Company v. Global Baseline
 
-**GI GuardDuty - 02. Your Company v. Global Baseline **dashboard compares your AWS environment against all Sumo Logic customers. The threat score (0=LOW RISK, 100=HIGH RISK) is a composite view of risk associated with GuardDuty findings and is impacted by severity, number of findings, deviation from global baseline and rarity of threats within Sumo Logic customers. In addition to the latest score, the trend line panel shows the 7 day trend of the threat score. My Prioritized Action Plan lists the change management actions in order of impact on GuardDuty security posture.
+**GI GuardDuty - 02. Your Company v. Global Baseline** dashboard compares your AWS environment against all Sumo Logic customers. The threat score (0=LOW RISK, 100=HIGH RISK) is a composite view of risk associated with GuardDuty findings and is impacted by severity, number of findings, deviation from global baseline and rarity of threats within Sumo Logic customers. In addition to the latest score, the trend line panel shows the 7 day trend of the threat score. My Prioritized Action Plan lists the change management actions in order of impact on GuardDuty security posture.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/GI_GuardDuty_Your_Company_v_Baseline.png')} alt="GI GuardDuty" />
 
