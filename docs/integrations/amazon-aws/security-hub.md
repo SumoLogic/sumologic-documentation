@@ -119,10 +119,10 @@ _sourceCategory=Labs/AWS/VPC ACCEPT (3306 or 5439 or 5432 or 1433 or 2638 or 598
 To write a query and create a scheduled search, do the following:
 
 1. Write a search query that contains following mandatory fields, as described in the [AWS Security Hub documentation](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html):
-  ```
-  "finding_time", "resource_type", "resource_id", "title"
-  ```
-   * The "`finding_time`" field  can be either the `_messageTime` or `_timeslice` field in Sumo Logic.
+   ```
+   "finding_time", "resource_type", "resource_id", "title"
+   ```
+   The "`finding_time`" field  can be either the `_messageTime` or `_timeslice` field in Sumo Logic.
 1. Create a scheduled search, as described in [this document](/docs/alerts/scheduled-searches/schedule-search), and configure the following settings:
    * Alert condition is set to “Greater than >” and Number of Results is set to 0.
    * Alert Type is set to “Webhook”.
