@@ -73,7 +73,7 @@ Sumo Logic supports collecting metrics using two source types
 
 Namespace for **AWS Classic Load Balancer** Service is **AWS/ELB**.
 
-* ​​​​**Metadata: **Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+* ​​​​**Metadata:** Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
 
 ### Collecting Access Logs for AWS Classic Load Balancer

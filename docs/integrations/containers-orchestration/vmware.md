@@ -254,7 +254,7 @@ python3 $SCRIPT_PATH/esx_perf_metrics_6_5.py -s 192.168.124.29 -t sumologic_host
 
 #### Collecting historical events
 
-By default, the first time** events.py** is called, events from the past 24 hours are collected. Each time the script is called, it writes the timestamp of the last read event in a file named **.timelog_events** for the next call to pick up.
+By default, the first time **events.py** is called, events from the past 24 hours are collected. Each time the script is called, it writes the timestamp of the last read event in a file named **.timelog_events** for the next call to pick up.
 
 To collect events older than the past 24 hours, before setting up the CRON job for **cron_vcenter_events.sh**, run the script as following:
 
@@ -362,7 +362,7 @@ Use this dashboard to:
 
 ### vCenter Errors - Analysis
 
-The** VMware - vCenter Errors - Analysis** dashboard provides detailed information about the errors across cluster and hosts. You can easily review error trends, top error events, and most recent error events.
+The **VMware - vCenter Errors - Analysis** dashboard provides detailed information about the errors across cluster and hosts. You can easily review error trends, top error events, and most recent error events.
 
 Use this dashboard to:
 * Review 7 day error trends.
@@ -374,7 +374,7 @@ Use this dashboard to:
 
 ### Virtual Machine Errors - Analysis
 
-The **VMware - Virtual Machine Errors - Analysis **dashboard provides an at-a-glance analysis of VM errors, including MAC address and UUID conflicts, upgrade and VM failures by host, fault tolerance errors, VM power failures, and general VM errors.
+The **VMware - Virtual Machine Errors - Analysis** dashboard provides an at-a-glance analysis of VM errors, including MAC address and UUID conflicts, upgrade and VM failures by host, fault tolerance errors, VM power failures, and general VM errors.
 
 Use this dashboard to:
 * Monitor faulty VMs with performance or other issues.
@@ -398,7 +398,7 @@ Use this dashboard to:
 
 ### Network
 
-The **VMware -** **Network **dashboard** **keeps track of the data in and data out of the ESXi hosts and virtual machines. This dashboard provides an at-a-glance analysis of network usage per ESXi host and VM, network InPacket rate per ESXi host and VM, network OutPacket rate per ESXi host and VM, and network 1 day comparison by host.
+The **VMware - Network** dashboard keeps track of the data in and data out of the ESXi hosts and virtual machines. This dashboard provides an at-a-glance analysis of network usage per ESXi host and VM, network InPacket rate per ESXi host and VM, network OutPacket rate per ESXi host and VM, and network 1 day comparison by host.
 
 Use this dashboard to:
 * Identify excessing packet traffic in or out.

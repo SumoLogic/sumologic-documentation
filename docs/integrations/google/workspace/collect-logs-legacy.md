@@ -138,7 +138,7 @@ If you're using the [Configure Script-Based Collection for Google Workspace Aler
 
 To configure Google Workspace Alert Center:
 1. Go to your G Suite domain's Admin console (see instructions on [signing in to your Admin console](https://support.google.com/a/answer/182076)), go to **Security > Access and data control > API Controls**.<br/><img src={useBaseUrl('img/integrations/google/gw.png')} alt="google workspace" width="200"/>
-1. In the newly opened window, click **Manage Domain-wide Delegation **at the bottom.<br/><img src={useBaseUrl('img/integrations/google/GSuite_Step3.png')} alt="google workspace" />
+1. In the newly opened window, click **Manage Domain-wide Delegation** at the bottom.<br/><img src={useBaseUrl('img/integrations/google/GSuite_Step3.png')} alt="google workspace" />
 1. Click **Add new** button on the top.<br/><img src={useBaseUrl('img/integrations/google/GSuite_Step4.png')} alt="google workspace" />
 1. Enter the **Client ID** for the service account copied in Step 2, then in the **OAuth Scopes** field enter the following: [https://www.googleapis.com/auth/apps.alerts](https://www.googleapis.com/auth/apps.alerts). <br/><img src={useBaseUrl('img/integrations/google/GSuite_Step5.png')} alt="google workspace" width="400"/>
 1. Click **Authorise**.

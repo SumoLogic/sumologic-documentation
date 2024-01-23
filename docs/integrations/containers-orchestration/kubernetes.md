@@ -232,7 +232,7 @@ Use this dashboard to:
 
 ### Node Overview   
 
-The **Kubernetes - Node Overview**dashboard provides a high-level view of a node, along with details on all the related components and resources.
+The **Kubernetes - Node Overview** dashboard provides a high-level view of a node, along with details on all the related components and resources.
 
 Use this dashboard to:  
 * Get quick insights into the health of the node.  
@@ -413,7 +413,7 @@ Use this dashboard to:
 
 The Horizontal Pod Autoscaler automatically scales the number of Pods in a replication controller, deployment, replica set or stateful set based on observed CPU utilization.
 
-The **Kubernetes - HPA**dashboard provides visibility into the health and performance of HPA.  
+The **Kubernetes - HPA** dashboard provides visibility into the health and performance of HPA.  
 
 Use this dashboard to:  
 * Identify whether the required replica level has been achieved or not.

@@ -151,7 +151,7 @@ To collect logs from IIS 7, use an Installed Collector and a Local File Source. 
 2. Configure the Local File Source Fields as follows:
     1. **Name**: Required (for example, "IIS")
     2. **Description**. (Optional)
-    3. **File Path **(Required).`C:\inetpub\Logs\LogFiles\W3SVC1\*.log`
+    3. **File Path**(Required).`C:\inetpub\Logs\LogFiles\W3SVC1\*.log`
     4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
     5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
     6. **Source Category** (Required). For example, "IIS_prod". (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
@@ -215,7 +215,7 @@ The **IIS 7 - Server Operation - Requests and Response Time Dashboard** provides
 
 ### Traffic Insights - Apps and Requests
 
-The **IIS 7 - Traffic Insights - Apps and Requests Dashboard** provides information on the requests made by each application, the top 10 applications and the number of requests received, the top 10 users making requests, cumulative user request percentiles, the top 10 clients by IP address and the number of requests made, and cumulative client request percentiles**.**
+The **IIS 7 - Traffic Insights - Apps and Requests Dashboard** provides information on the requests made by each application, the top 10 applications and the number of requests received, the top 10 users making requests, cumulative user request percentiles, the top 10 clients by IP address and the number of requests made, and cumulative client request percentiles.
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-7-Traffic-Insights-Apps-and-Requests.png')} alt="Traffic Insights - Apps and Requests" />
 

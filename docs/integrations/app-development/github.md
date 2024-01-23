@@ -191,7 +191,7 @@ Use this dashboard to:
 
 ### Branch Overview
 
-The **GitHub - Branch Overview **dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
+The **GitHub - Branch Overview** dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
 
 Use this dashboard to:
 
@@ -226,7 +226,7 @@ Use this dashboard to:
 
 ### Security
 
-The **GitHub - Security **dashboard provides detailed information on the security events and repositories.
+The **GitHub - Security** dashboard provides detailed information on the security events and repositories.
 
 Use this dashboard to:
 * Manage users.

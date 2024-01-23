@@ -89,11 +89,11 @@ This section has instructions for collecting logs and metrics for the Azure SQL 
 
 ### Collect diagnostic logs from Azure Monitor by streaming to EventHub
 
-In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub. 
+In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
 1. Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
 
-	- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended) 
+	- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended)
 	- Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection)
 
 	When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DB/SQL/Logs`.
@@ -101,7 +101,7 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
 2. Push logs from Azure Monitor to Event Hub. Various Azure Services connect to Azure Monitor to send monitoring data to an Event Hub. For more information, see [Azure Monitor: Send monitoring data to an event hub](https://azure.microsoft.com/en-us/blog/azure-monitor-send-monitoring-data-to-an-event-hub/) and How do I set up [Azure platform monitoring data to be streamed to an event hub?](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs#how-do-i-set-up-azure-platform-monitoring-data-to-be-streamed-to-an-event-hub) in Azure help.
 	1. Sign in to [Azure Portal](https://portal.azure.com/).
 	2. Click **Azure SQL**. Select the SQL database from which you want to collect logs.
-	3. In the Monitoring Section, the** Diagnostic Settings** blade displays any existing settings. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one. You can have a maximum of three settings.
+	3. In the Monitoring Section, the **Diagnostic Settings** blade displays any existing settings. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one. You can have a maximum of three settings.
 	4. Enter a name.
 	5. Check the **Stream to an event hub** box and click **Event hub / Configure**.
 	6. Select an Azure subscription.
@@ -115,12 +115,11 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
 
 In this step, you configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. The pipeline is described on [Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md).
 1. Perform Steps 1 and Step 2 of [Collect Metrics from Azure Monitor.](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md)   
-In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: \
-`Azure/DB/SQL/Metrics`
+In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DB/SQL/Metrics`
 2. Push metrics from Azure Monitor to Event Hub.
    1. From the left pane, select **ALL Services**.
    1. Search for and select **Monitor**.
-   1. In the **Monitor** pane, select **Diagnostic Settings **under **Settings**.
+   1. In the **Monitor** pane, select **Diagnostic Settings** under **Settings**.
    1. Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings**.
    1. Once diagnostics are enabled, click **Add a diagnostic setting**.
    1. The **Diagnostic Settings** page appears.

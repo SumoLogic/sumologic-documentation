@@ -13,7 +13,7 @@ Amazon Simple Storage Service (S3) provides a simple web services interface that
 
 ## Log Types
 
-Amazon S3 Audit uses Server Access Logs (activity logs). For more information on the log format, see: [http://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html](http://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html).
+Amazon S3 Audit uses Server Access Logs (activity logs). For more information, see [Amazon S3 server access log format](http://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html).
 
 
 ### Sample Log Message

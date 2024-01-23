@@ -361,7 +361,7 @@ Use this dashboard to:
 
 ### Error Analysis
 
-The** AWS Lambda - Error Analysis** dashboard provides insights on errors and warnings in your AWS Lambda functions.
+The **AWS Lambda - Error Analysis** dashboard provides insights on errors and warnings in your AWS Lambda functions.
 
 Use this dashboard to:
 * Quickly identify the top errors and warnings across a Lambda function and its version.
@@ -375,7 +375,7 @@ Use this dashboard to:
 
 ### Resource Usage
 
-**AWS Lambda - Resource Usage **dashboard provides insights on recent AWS Lambda request details, memory usage trends, function duration, and compute usage.
+**AWS Lambda - Resource Usage** dashboard provides insights on recent AWS Lambda request details, memory usage trends, function duration, and compute usage.
 
 Use this dashboard to:
 * Monitor the memory usage pattern of a Lambda function during its execution.
@@ -387,7 +387,7 @@ Use this dashboard to:
 
 ### Performance Trends
 
-**AWS Lambda - Performance Trends **dashboard displays log data analytics to provide insights on memory usage, function duration, recent request details, and compute usage.
+**AWS Lambda - Performance Trends** dashboard displays log data analytics to provide insights on memory usage, function duration, recent request details, and compute usage.
 
 Use this dashboard to:
 * Monitor concurrent executions of an AWS Lambda function and understand trends over time.

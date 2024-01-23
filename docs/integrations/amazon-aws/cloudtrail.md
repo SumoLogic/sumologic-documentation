@@ -277,7 +277,7 @@ See information about CloudTrail console logins, including location of users, lo
 
 **Outlier - Success Login**. Shows outliers in count of successful logins on a line chart with threshold for the last 24 hours.
 
-**Login Results - One Day Time Compare. **Shows the number of login successes and failures in an aggregation table, that compares the current count with the count from one day ago.
+**Login Results - One Day Time Compare.** Shows the number of login successes and failures in an aggregation table, that compares the current count with the count from one day ago.
 
 **Outlier - Failed Login**. Shows outliers in count of failed login attempts on a line chart with threshold for the last 24 hours.
 

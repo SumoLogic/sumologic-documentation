@@ -308,7 +308,7 @@ To create a new HTTP logs and metric source:
 You must have Admin privileges to perform any of the following installation procedures. This section walks you through the ways in which you can install the Jenkins plugin.
 
 :::note
-Beginning with Jenkins 2.357 (released on June 28, 2022) and the forthcoming 2.361.1 LTS release, Jenkins requires Java 11 or newer. The latest Sumo Logic Jenkins plugin works with Jenkins versions greater than 2.261.1 and Java 11. 
+Beginning with Jenkins 2.357 (released on June 28, 2022) and the forthcoming 2.361.1 LTS release, Jenkins requires Java 11 or newer. The latest Sumo Logic Jenkins plugin works with Jenkins versions greater than 2.261.1 and Java 11.
 To install the plugin with Java 8 and older version of Jenkins, use the old release [(2.2.1)](https://repo.jenkins-ci.org/artifactory/releases/org/jenkins-ci/plugins/sumologic-publisher/2.2.1/sumologic-publisher-2.2.1.hpi) of Sumo Logic plugin.
 :::
 
@@ -380,9 +380,9 @@ To configure the Jenkins Plugin, do the following:
 6. Jenkins plugin can be configured with an HTTP proxy. Once this is configured all the logs which are being sent from the Jenkins plugin will go through the proxy before getting ingested in sumo logic. Following are the parameters which are introduced to support the same:
    * **Enable Proxy Setting (checkbox):** Check to Enable proxy setting
    * **Proxy Host:** User to input the proxy server host-name here.
-   * **Proxy port: **Specify the port of the proxy server.
+   * **Proxy port:** Specify the port of the proxy server.
    * **Enable Proxy Authentication(checkbox):** Check to enable Authentication for the proxy. This can be used if the proxy is configured with authentication.
-   * **Username: **Username to be used for the proxy Authentication.
+   * **Username:** Username to be used for the proxy Authentication.
    * **Password**: Password to be used for proxy authentication.
 7. Click **Apply**, and then click **Save**.
 

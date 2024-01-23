@@ -308,7 +308,7 @@ Use this dashboard to:
 
 ### Audit Overview Dashboard
 
-The **Slack - Audit Overview **dashboard provides details around  Slack audit actions, and trends.
+The **Slack - Audit Overview ** dashboard provides details around  Slack audit actions, and trends.
 
 Use this dashboard to:
 * Review audit actions and determine which are not approved or need to be corrected

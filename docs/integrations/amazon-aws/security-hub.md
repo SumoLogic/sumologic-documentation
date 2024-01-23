@@ -207,8 +207,8 @@ The **AWS Security Hub App collector** transforms the received events and sends 
 To deploy an AWS Security Hub App collector:
 1. Open a browser window and enter the following URL: [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications)
 2. In the Serverless Application Repository, search for **sumologic**.
-3. Select **Show apps that create custom IAM roles or resource policies **check box.
-4. Click the **sumologic-securityhub-collector **link, and then click **Deploy**.
+3. Select **Show apps that create custom IAM roles or resource policies** check box.
+4. Click the **sumologic-securityhub-collector** link, and then click **Deploy**.
 5. In the **AWS Lambda > Functions > Application Settings** panel, enter the name of the **S3SourceBucketName** for the bucket you configured (when you defined the S3 source).
 6. Scroll to the bottom of the window and click **Deploy**.
 
