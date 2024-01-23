@@ -13,7 +13,7 @@ import ApiEndpoints from '../reuse/api-endpoints.md';
 The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication.
 
 :::warning
-Search Job APIs are not yet built with OpenAPI specifications and therefore not documented with the rest of the APIs. Instead, refer to the instructions below for details.
+Search Job APIs are not yet built with OpenAPI specifications and therefore not included in our [Swagger docs](https://api.sumologic.com/docs). Instead, refer to the below documentation.
 :::
 
 import ApiIntro from '../reuse/api-intro.md';

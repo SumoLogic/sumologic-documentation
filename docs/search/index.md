@@ -54,7 +54,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/search/live-tail"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>LiveTail</h4></a>
+  <a href="/docs/search/live-tail"><img src={useBaseUrl('img/icons/search.png')} alt="icon" width="35"/><h4>Live Tail</h4></a>
   <p>Real-time live feed of log events associated with a Source or Collector.</p>
   </div>
 </div>

@@ -38,7 +38,7 @@ You can easily hide the **left nav bar** to enlarge the working area. Then, jus
 
     ![TUI_NavBar_Hide.png](/img/get-started/ui/TUI_NavBar_Hide.png)
 
-* To show a hidden Left Nave Bar, click the **Menu** icon.
+* To show a hidden Left Nav Bar, click the **Menu** icon.
 
     ![TUI_NavBar_Show.png](/img/get-started/ui/TUI_NavBar_Show.png)
 
@@ -91,7 +91,7 @@ To access additional Log Search, Metrics, and Live Tail options, do the followin
 
     ![tab options.png](/img/get-started/ui/tab-options.png)
 
-1. Use the left (**\<**) and right (**\\>**) arrows at each end of the Tab menu bar to move back and forth through the tabs.
+1. Use the left (`<`) and right (`>`) arrows at each end of the Tab menu bar to move back and forth through the tabs.
 
 The following table lists the options available for the Search, Metrics, and Live Tail tabs.
 

@@ -75,8 +75,8 @@ avg(abs_latency_ms) as avg_latency_ms
 
 ```sql title="Count by user"
 status AND down 
-| parse regex "user=(\<use\>.*?)"
-| parse regex "host=(\<msg_hos\>.*?)"
+| parse regex "user=(?<user>.*?)"
+| parse regex "host=(?<msg_host>.*?)"
 | count by user
 ```
 

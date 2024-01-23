@@ -10,7 +10,7 @@ The following searches were built for use with the Apache Access Parser. Copy an
 
 To obtain the best results, be sure to make the following modifications to the example queries:
 
-* Use a specific keyword expression or metadata search to limit the initial results to Apache logs. (Replace _the metadata search expression` "sourceName=*error_log* AND _sourceCategory=*apache*"` in the examples.)
+* Use a specific keyword expression or metadata search to limit the initial results to Apache logs. (Replace the metadata search expression `"sourceName=*error_log* AND _sourceCategory=*apache*"` in the examples.)
 * Change the time range and the timeslice values to tailor the results to your needs.
 
 ## Understanding Incoming Requests
@@ -113,7 +113,11 @@ This search returns the top 100 IP addresses that cause the most hits to the web
 
 * Suggested Time Range: -1d up to -7d
 
-`_sourceName=*access_log* AND _sourceCategory=*apache* | parse using public/apache/access | count_frequent src_ip`
+```sql
+_sourceName=*access_log* AND _sourceCategory=*apache*
+| parse using public/apache/access
+| count_frequent src_ip
+```
 
 ### Top browsers
 
@@ -155,7 +159,7 @@ This is assuming that the **%T/%D** logging directive is added to the access l
 ```sql
 _sourceName=*access_log* AND _sourceCategory=*apache*
 | parse using public/apache/access
-| extract " (\<second\>\d+)/(\<microsecond\>\d+)$"
+| extract " (?<seconds>\d+)/(?<microseconds>\d+)$"
 | toLong(microseconds/(1000000*60)) as minutes
 ```
 
