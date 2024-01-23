@@ -15,9 +15,8 @@ Even with these methods, you need to ensure you are following our [best practice
 
 ## Index-based methods
 
-[**Partitions**](/docs/manage/partitions-data-tiers) route unstructured data into an index. See how to [Optimize Your Search with Partitions](/docs/search/optimize-search-partitions).
-
-[**Scheduled Views**](/docs/manage/scheduled-views) pre-aggregate data and then index it.
+* [**Partitions**](/docs/manage/partitions-data-tiers) route unstructured data into an index (see also: [How to Optimize Your Search with Partitions](/docs/search/optimize-search-partitions))
+* [**Scheduled Views**](/docs/manage/scheduled-views) pre-aggregate data and then index it
 
 ## Metadata methods
 
@@ -33,14 +32,12 @@ When data enters Sumo Logic, search optimization is done in the
 following order:
 
 1. Metadata is applied to your data as [Fields](/docs/manage/fields). The order of precedence for field assignment from highest to lowest is. 
-
     * Field Extraction Rule (FER)
     * Amazon EC2 resource tags
     * Amazon EC2 instance information
     * HTTP Header
     * Source
     * Collector
-
 1. Partitions and Scheduled Views are applied. If both Partitions and Scheduled Views are defined, the Partitions are applied first.
 1. The data is indexed.
 1. The optimized and indexed data is available for use with other Sumo Logic features.

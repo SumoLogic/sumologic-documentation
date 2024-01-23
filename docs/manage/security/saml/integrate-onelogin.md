@@ -91,7 +91,7 @@ This section has instructions for configuring SAML in Sumo Logic.
 v**Logout Page**. When a Sumo user logs out of Sumo Logic or if the user’s session times out, they will be redirected to the page you specify. If you want users to be redirected to your OneLogin portal page, enter `https``://your-domain.onelogin.com/portal/` where `your-domain` is your company's OneLogin domain.
 1. Click **Add**. 
 1. To view the details of your configuration, select it the **Configuration List**.
-1. Copy the **Assertion Consumer** and **Entity ID** from the details pane**.** You'll paste these into the OneLogin **Configuration** page, as described in the following section.   
+1. Copy the **Assertion Consumer** and **Entity ID** from the details pane. You'll paste these into the OneLogin **Configuration** page, as described in the following section.   
 
     ![configuration-list.png](/img/security/configuration-list.png)
 

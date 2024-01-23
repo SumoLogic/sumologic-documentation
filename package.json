@@ -61,6 +61,7 @@
     "nth-check": "^2.0.1",
     "prism-react-renderer": "^2.1.0",
     "prismjs": "^1.27.0",
+    "punycode": "^2.3.1",
     "raw-loader": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -1,5 +1,5 @@
 ---
-title: Cloud Infrastructure Security for AWS (Apps)
+title: Cloud Infrastructure Security for AWS - Preview (Apps)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - apps

@@ -14,7 +14,7 @@ This topic shows you how to create a monitor.
 
 <!-- At "smart alerts" GA, add a screenshot that shows the "Anomaly" detection method to the right of "Static" and "Outlier". -->
 
- <img src={useBaseUrl('img/monitors/new-monitor-dialog.png')} alt="New Monitor dialog" style={{border: '1px solid black'}} width="800"/>
+ <img src={useBaseUrl('img/monitors/new-monitor-dialog.png')} alt="New Monitor dialog" style={{border: '1px solid gray'}} width="800"/>
 
  </details>
 
@@ -64,7 +64,7 @@ The first step when you create a new monitor is to set the trigger conditions.
 
 <!-- At "smart alerts" GA, add a screenshot that shows the "Anomaly" detection method to the right of "Static" and "Outlier". -->
 
-<img src={useBaseUrl('img/monitors/new-monitor-set-trigger-conditions.png')} alt="Set trigger conditions" style={{border: '1px solid black'}} width="800"/>
+<img src={useBaseUrl('img/monitors/new-monitor-set-trigger-conditions.png')} alt="Set trigger conditions" style={{border: '1px solid gray'}} width="800"/>
 
 ### Select monitor type and detection method
 
@@ -190,7 +190,7 @@ Recover
 
 **Logs Trigger Type: Critical** (for **Anomaly** detection type only)
 
- <img src={useBaseUrl('img/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid black'}} width="800" />
+ <img src={useBaseUrl('img/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid gray'}} width="800" />
 
 | Parameter | Description |
 |:--|:--|
@@ -301,7 +301,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 The second step when you create a new monitor is to configure advanced settings.
 
 <img src={useBaseUrl('img/monitors/new-monitor-advanced-settings.png')} alt="
-Advanced settings" style={{border: '1px solid black'}} width="800"/>
+Advanced settings" style={{border: '1px solid gray'}} width="800"/>
 
 ### Alert Name
 Alert Name allows you to customize the name that appears on the Alert Page. By default, the Alert name is the monitor name, but you may want to create a custom name based on your use case. You can include any of the available alert variables, except `{{AlertName}}`, `Playbook`, `{{AlertResponseURL}}`, and `{{ResultsJson}}`, in the name such as the type of monitor or trigger condition. You can check the alert variables list for details.
@@ -315,7 +315,7 @@ Collection delays may occur due to your environment and it takes a couple of min
 The third step when you create a new monitor is to configure notifications.
 
 <img src={useBaseUrl('img/monitors/new-monitor-notifications.png')} alt="
-Notifications" style={{border: '1px solid black'}} width="800"/>
+Notifications" style={{border: '1px solid gray'}} width="800"/>
 
 When a trigger condition is met, you can send notifications to other people and services. Metrics monitors have an option to send notifications either as a group or separately. **Group Notifications** define whether you want single notifications per time series that match the Monitor query or you want group notifications where you receive a single notification for the entire Monitor. Log monitors always group notifications.
 
@@ -336,7 +336,7 @@ The fourth step when you create a new monitor is to configure details.
 <!-- At "smart alerts" GA, add a screenshot that shows the new playbook UI elements (radio buttons "Insert custom playbook" and "Select automated playbook", and the "Manage Playbooks" button). -->
 
 <img src={useBaseUrl('img/monitors/new-monitor-details.png')} alt="
-Monitor details" style={{border: '1px solid black'}} width="800"/>
+Monitor details" style={{border: '1px solid gray'}} width="800"/>
 
 1. Enter a **Monitor Name** and the **Location** where you want to save it.
 1. (Optional) Add one or more **Tags**. [Learn more here](/docs/alerts/monitors/settings#tags).

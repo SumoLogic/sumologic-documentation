@@ -104,7 +104,7 @@ Track login successes and failures.
 * **Failed Logins.** Aggregation table of the date,
 * **Successful logins.** Total number of successful logins over the last 24 hours. Compare to Failed Logins to determine if the number of failed logins to successful logins is consistent with normal behavior or indicative of an attack.
 * **Successful logins.** Aggregation table of successful logins, including date, time, event code, error code, and count.
-* **Default Login-Failure. **Aggregation table of failed default logins.
+* **Default Login-Failure.** Aggregation table of failed default logins.
 * **Default Login-Success.** Aggregation table of successful default logins.
 
 
@@ -130,5 +130,5 @@ Track your Windows Update activities.
 * **All Windows Updates.** Aggregation table displaying all updated hosts in the past 24 hours, success/failure of that update, and any relevant error codes.
 * **Recent Windows Update Failures.** Aggregation table displaying all update failures in the last 7 days, update that failed, time of failure, and current status.
 * **Windows Update Trend.** Bar chart that displays 7-day trend of updates success and failure time sliced by hour.
-* **Windows Update Summary by Host. **Aggregation table of the hosts and a count of that host’s update success or failure for the past 7 days.
+* **Windows Update Summary by Host.** Aggregation table of the hosts and a count of that host’s update success or failure for the past 7 days.
 * **Windows Update Summary.** Aggregation table of the latest Windows updates for the last 7 days and a count of their successes and failures

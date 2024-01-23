@@ -30,34 +30,35 @@ Both the integration definition file and the action definition file are YAML fil
 
 ### Integration definition file format
 
-**\* ** Required fields
+`*` Required fields
 
-* **name* ** [String]: Name of integration displayed in the UI. It must match the `integration` field of each action definition file added to the integration.
-* **version* ** [String]: File version number.
-* **icon* ** [Base64 String]: Integration logo.
-* **script* **:
-   * **type* ** [String]: Indicates which code parser should be used to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are:
+* **name** `*` [String]: Name of integration displayed in the UI. It must match the `integration` field of each action definition file added to the integration. 
+* **official_name** `*` [String]: To modify the display name of an integration in the Cloud SOAR UI while ensuring the actions YAML remains valid, set `official_name=OLD-NAME` and `name=NEW-NAME`.
+* **version** `*` [String]: File version number.
+* **icon** `*` [Base64 String]: Integration logo.
+* **script** `*`:
+   * **type** `*` [String]: Indicates which code parser should be used to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are:
      * `bash`
      * `perl`
      * `powershell`
      * `python`
-   * **test_connection_code* ** [String]: Code which can be used to test the integration through the UI by clicking on Test Saved Settings. Exiting with a value of `0` indicates success, while any other value will indicate failure.
-* **docker_repo_tag* ** [String]: Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server.
+   * **test_connection_code** `*` [String]: Code which can be used to test the integration through the UI by clicking on Test Saved Settings. Exiting with a value of `0` indicates success, while any other value will indicate failure.
+* **docker_repo_tag** `*` [String]: Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server.
 * **local_repo** [Boolean]: Indicates that the Docker image is a local one and not one present in the repository.
-* **configuration* **:
-   * **testable_connection* ** [Boolean]: Is test code present (true/false).
-   * **require_proxy_config* ** [Boolean]: True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter `proxy_url` will be passed to the code on execution as an environment variable.
-   * **data_attributes* **: Fields required for configuration.
-      * **`<field_name>`* ** [String]: Name of field which will be passed to code as environment variable. One `<field_name>` attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The `<field_name>` parameters will be passed to the code on execution.
-         * **label* ** [String]: Label displayed in the UI.
-         * **type* ** [String]: Type of field. Acceptable values are:
+* **configuration** `*`:
+   * **testable_connection** `*` [Boolean]: Is test code present (true/false).
+   * **require_proxy_config** `*` [Boolean]: True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter `proxy_url` will be passed to the code on execution as an environment variable.
+   * **data_attributes** `*`: Fields required for configuration.
+      * **`<field_name>`** `*` [String]: Name of field which will be passed to code as environment variable. One `<field_name>` attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The `<field_name>` parameters will be passed to the code on execution.
+         * **label** `*` [String]: Label displayed in the UI.
+         * **type** `*` [String]: Type of field. Acceptable values are:
            * `checkbox`
            * `list`
            * `number`
            * `password`
            * `text`
            * `textarea`
-         * **required* ** [Boolean]: Is the field required (true/false).
+         * **required** `*` [Boolean]: Is the field required (true/false).
          * **validator** [String]: Input validator type. Acceptable values are:
            * `host`
            * `integer`
@@ -66,32 +67,32 @@ Both the integration definition file and the action definition file are YAML fil
            * `url`
          * **default** [String]: Default field value.
          * **values** [String]: List of possible values for a list field in key:value format, where the key will be used as the input parameter and the value is what will be shown in the list. For example:
-           * `domain: Domain`
-           * `ip: IP Address`
-           * `url: URL`<br/>In this example, if a user selected IP Address from the dropdown list, the value `ip` would be passed to the parameter at runtime as an environment variable.
+             * `domain: Domain`
+             * `ip: IP Address`
+             * `url: URL`<br/>In this example, if a user selected IP Address from the dropdown list, the value `ip` would be passed to the parameter at runtime as an environment variable.
    * **listing_attributes** Configuration fields to show in the resource table.
-      * **`<field_name>`* ** [String]: Name of field which will be shown in the table.
-      * **name* ** [String]: Name displayed in the column header.
+      * **`<field_name>`** `*` [String]: Name of field which will be shown in the table.
+      * **name** `*` [String]: Name displayed in the column header.
 * **signature** [String]: Signature to indicate integration is the original one written by Sumo Logic.
 
 ### Action definition file format
 
-**\* ** Required fields
+`*` Required fields
 
-* **integration* ** [String]: Name of integration. This should match the `name` field of the integration definition file for the integration.
-* **name* ** [String]: Name of action which will be displayed in the UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as `ban hash` or `system info`.
-* **type* ** [String]: Type of action being performed. Acceptable values are:
+* **integration** `*` [String]: Name of integration. This should match the `name` field of the integration definition file for the integration.
+* **name** `*` [String]: Name of action which will be displayed in the UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as `ban hash` or `system info`.
+* **type** `*` [String]: Type of action being performed. Acceptable values are:
    * `Containment`
    * `Custom`
    * `Daemon`
    * `Notification`
    * `Trigger`
-* **script* **:
-   * **code* ** [String]: Action code.
-* **fields* **:
-   * **id* ** [String]: Name of field which will be passed to code at runtime as an environment variable. One ID attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution.
-   * **label* ** [String]: Label displayed in the UI.
-   * **type* ** [String]: Type of field. Acceptable values are:
+* **script** `*`:
+   * **code** [String]: Action code.
+* **fields** `*`:
+   * **id** `*` [String]: Name of field which will be passed to code at runtime as an environment variable. One ID attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution.
+   * **label** `*` [String]: Label displayed in the UI.
+   * **type** `*` [String]: Type of field. Acceptable values are:
      * `checkbox`
      * `datetime`
      * `fileDetonate`
@@ -102,8 +103,8 @@ Both the integration definition file and the action definition file are YAML fil
      * `text`
      * `textarea`
      * `upload`
-   * **required* ** [Boolean]: Is the field required (true/false).
-   * **validator* ** [String]: Input validator type. Acceptable values are:  
+   * **required** `*` [Boolean]: Is the field required (true/false).
+   * **validator** `*` [String]: Input validator type. Acceptable values are:  
      * `datetime`
      * `domain`
      * `e-mail`
@@ -118,9 +119,9 @@ Both the integration definition file and the action definition file are YAML fil
      * `url`
    * **default** [String]: Default field value.
    * **values** [String]: List of possible values for a list field in key:value format, where the key will be used as the input parameter and the value will be shown in the list. For example:
-   * `domain: Domain`
-   * `ip: IP Address`
-   * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime.
+     * `domain: Domain`
+     * `ip: IP Address`
+     * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime.
    * **incident_artifacts** [Boolean]: Allow use of incident artifact values for the field (true/false). When set to `true`, incident artifact values such as `sourceAddress` can be used as inputs for the field.
    * **observables** [String]: This field defines the link between the action and the observables section. Specifying an observable type here will cause the action to be displayed in the **Actions** menu for the specified observable type. Acceptable values are:
      * `domain`
@@ -132,36 +133,63 @@ Both the integration definition file and the action definition file are YAML fil
      * `sha256`
      * `url`
      * `userdetail`
-  :::note
-  Cloud SOAR automatically extracts observables from incidents content and converts them to entities (domain, email, file, IP address, hash values, URL, and user details). However, usernames are automatically converted into entities only if the input of an automatic action for users contains the **observables** statement and is also specified as `userdetail`.
-  :::
-* **output* **: Expected fields from results.
-   * **path* ** [String]:  JSON path for each field which may be returned by the action, using the following JSON as an example:
-   ```
-   {
-       country: "US",
-       response_code: 1,
-       as_owner: "CloudFlare, Inc.",
-       detected_urls: [
-          {
-             url: "http://google.com/",
-             positives: 2
-          }
-      ]
-  }
-   ```
-   The following `output:path` attributes should be added:
-     * `country`
-     * `response_code`
-     * `as_owner`
-     * `detected_urls.[].url`
-     * `detected_urls.[].positives`
-     * `detected_urls.[0].positives`(you can also specify array index)
-* **type* ** [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
-* **table_view* **: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
-   * **display_name* ** [String]: Column name.
-   * **value* ** [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
-   * **type* ** [String]: Type of value which is only possible to specify if the value should be shown as a link.
+     :::note
+     Cloud SOAR automatically extracts observables from incidents content and converts them to entities (domain, email, file, IP address, hash values, URL, and user details). However, usernames are automatically converted into entities only if the input of an automatic action for users contains the **observables** statement and is also specified as `userdetail`.
+     :::
+* **output** `*`: Expected fields from results.
+   * **path** `*` [String]:  JSON path for each field which may be returned by the action. 
+   
+   *Example* <br/>Using the following JSON as an example:
+     ```
+     {
+         country: "US",
+         response_code: 1,
+         as_owner: "CloudFlare, Inc.",
+         detected_urls: [
+            {
+               url: "http://google.com/",
+               positives: 2
+            }
+        ]
+     }
+     ```
+     The following `output:path` attributes should be added:
+       * `country`
+       * `response_code`
+       * `as_owner`
+       * `detected_urls.[].url`
+       * `detected_urls.[].positives`
+       * `detected_urls.[0].positives` (you can also specify array index)
+  
+     *Example with special characters* <br/>Use quotation marks [““] when there is a text with special character like a hyphen. Consider the following example JSON:   
+     ```
+     {
+       "payload": {
+         "headers": {
+           "MIME-Version": "1.0",
+           "From": "Joe Smith <joe.smith@example.com>",
+           "Message-ID": "<193853.example.com>",
+           "Subject": "Account Verification Required",
+           "To": "verify@example.com",
+           "Content-Type": "multipart/mixed; boundary=\"0000008\""
+         }
+       }
+     }
+     ```
+
+     To correctly parse `"MIME-Version"` in the example, use one of the following formats:
+     * `payload.headers."MIME-Version"`
+     * `payload.headers.["MIME-Version"]`
+
+     In addition to using quotation marks to enclose text with special characters, you must separate nested output fields with a period (**.**). Note that these formats will not parse correctly:
+     * `payload.headers["MIME-Version"]`
+     * `payload.headers[MIME-Version]`
+
+* **type** `*` [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
+* **table_view**: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
+   * **display_name** `*` [String]: Column name.
+   * **value** [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
+   * **type** `*` [String]: Type of value which is only possible to specify if the value should be shown as a link.
 * **use_in_triage** [Boolean]: Action should be manually executable in triage event (default False).
 * **hook** [List]: A list of hooks used to fire trigger actions to interact with Cloud SOAR elements. For more information, see [Trigger hooks](#trigger-hooks). Valid values are:
      * `addObservableArtifact`
@@ -185,20 +213,20 @@ Both the integration definition file and the action definition file are YAML fil
      * `updateIncident`
      * `webhook`
 * **check_not_null_field** [String]: For actions with the hook `incidentCustomAction` and `taskCustomAction`, specifies the internal name of the element field. It should be not null to show the button in the UI.
-* **src_doc* ** [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed.
-* **url_preview* ** [String]: Result path to show in html5 iframe sandboxed.
-* **image_base64_png(jpg)* ** [String]: Result path of a base64 image png or jpg format.
+* **src_doc** `*` [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed.
+* **url_preview** `*` [String]: Result path to show in html5 iframe sandboxed.
+* **image_base64_png(jpg)** `*` [String]: Result path of a base64 image png or jpg format.
 * **signature** [String]: Signature to indicate action is the original one written by Sumo Logic.
 * **exit_condition**: Specify what condition system has to evaluate to decide if continue with next execution or to stop scheduled action and continue with playbook next actions.
-   * **path* ** [String]: Result path where to search in JSON structure as `table_view` section or specify an action's input i.e. input.path.
-   * **string* ** [String\List[String]]: Result path of string to check if is equal to result value or an array of string or specify an action's input, for example, `input.matchString`.
-* **re-execution* ** [String] (force): By default if previous action run is not yet finished, next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container.
+   * **path** `*` [String]: Result path where to search in JSON structure as `table_view` section or specify an action's input i.e. input.path.
+   * **string** `*` [String\List[String]]: Result path of string to check if is equal to result value or an array of string or specify an action's input, for example, `input.matchString`.
+* **re-execution** `*` [String] (force): By default if previous action run is not yet finished, next scheduled run is skipped. If you set `re-execution: 'force'`, the previous run will be killed, stopping the Docker container.
 * **scheduled**:
-   * **every* ** [String] format `<int><interval type>`: Time interval between one run and the next one (for example, 10m, 5d, etc.) or specify an action's input i.e. input.every:
+   * **every** `*` [String] format `<int><interval type>`: Time interval between one run and the next one (for example, 10m, 5d, etc.) or specify an action's input i.e. input.every:
      * d: DAYS
      * h: HOURS
      * m: MINUTES
-   * **expire* ** [String] format `<int><interval type>`: Time after the first run to stop scheduling or specify an action's input, for example, `input.expire`. The last result will be kept :
+   * **expire** `*` [String] format `<int><interval type>`: Time after the first run to stop scheduling or specify an action's input, for example, `input.expire`. The last result will be kept :
      * d: DAYS
      * h: HOURS
      * m: MINUTES
@@ -804,6 +832,59 @@ script:
                   def __call__(self, parser, namespace, values, option_string=None):
                     setattr(namespace, self.dest, values)
 
+                parser = argparse.ArgumentParser()
+                parser.add_argument('--api_key', help='api_key , REQUIRED', required=True, action=EnvDefault)
+                parser.add_argument('--proxy_url', help='proxy_url', required=False, action=EnvDefault)
+                args, unknown = parser.parse_known_args()
+                params = {"apikey": args.api_key, 'url': 'google.com'}
+                end_point = "https://www.virustotal.com/vtapi/v2/url/scan"
+                session = requests.Session()
+                if args.proxy_url is not None:
+                   proxies = {'http': args.proxy_url, 'https': args.proxy_url}
+                else:
+                   proxies = None
+                r = session.post(end_point, data=params, proxies=proxies, timeout=(5, 60))
+                r.raise_for_status()
+                exit(0)
+            except Exception as e:
+                sys.stderr.write(str(e))
+                exit(-1)
+docker_repo_tag: 'virustotal:latest'
+configuration:
+  testable_connection: true
+  require_proxy_config: true
+  data_attributes:
+     api_key:
+        label: 'api key'
+        type: 'password'
+        required: true
+```
+
+### Integration definition file to change integration name from VirusTotal to VirusTotalNew
+
+```
+name: 'VirusTotalNew'
+official_name: 'VirusTotal'
+version: '1.0'
+icon:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAAA8RnWXAAAABmJLR0...[snip...]QMq1BbQK47AAAAAASUVORK5CYII=
+script:
+    type: python
+    test_connection_code: |
+            import json
+            import argparse
+            import requests
+            import sys
+            try:
+      
+                class EnvDefault(argparse.Action):
+                  def __init__(self, required=True, default=None, **kwargs):
+                    envvar = kwargs.get("dest")
+                    default = os.environ.get(envvar, default) if envvar in os.environ else default
+                    required = False if required and default else required
+                    super(EnvDefault, self).__init__(default=default, required=required,**kwargs)
+                  def __call__(self, parser, namespace, values, option_string=None):
+                    setattr(namespace, self.dest, values)
+      
                 parser = argparse.ArgumentParser()
                 parser.add_argument('--api_key', help='api_key , REQUIRED', required=True, action=EnvDefault)
                 parser.add_argument('--proxy_url', help='proxy_url', required=False, action=EnvDefault)
@@ -1528,16 +1609,11 @@ You can execute all the actions of an integration in a container built from a cu
 
 1. Go to the **Integrations** page.
 1. Look for the integration for which you need to create a custom Docker image and click on it.
-1. Next to the name of the integration, you will see two buttons. Click on the one that is on the far right and has the Docker logo on it.
-<br/><img src={useBaseUrl('img/cloud-soar/integration-framework-custom-docker-image.png')} alt="Custom Docker image" width="700"/>
-<br/>This will open the custom Docker editor:
-<br/><img src={useBaseUrl('img/cloud-soar/integration-framework-docker-editor.png')} alt="Docker editor" width="700"/>
+1. Next to the name of the integration, you will see two buttons. Click on the one that is on the far right and has the Docker logo on it. <br/><img src={useBaseUrl('img/cloud-soar/integration-framework-custom-docker-image.png')} alt="Custom Docker image" width="700"/> <br/>This will open the custom Docker editor: <br/><img src={useBaseUrl('img/cloud-soar/integration-framework-docker-editor.png')} alt="Docker editor" width="700"/>
 1. Type a name for your custom image in the **Docker image tag** field. This is a required field.
-1. When you are creating a new custom Docker image, you will see the **Last update** field is showing **Never edited before**. The text area below allows you to write a Dockerfile with the instructions to build your custom image:
-<br/><img src={useBaseUrl('img/cloud-soar/integration-framework-docker-editor-2.png')} alt="Docker custom image" width="700"/>
+1. When you are creating a new custom Docker image, you will see the **Last update** field is showing **Never edited before**. The text area below allows you to write a Dockerfile with the instructions to build your custom image: <br/><img src={useBaseUrl('img/cloud-soar/integration-framework-docker-editor-2.png')} alt="Docker custom image" width="700"/>
 1. Proceed to write your custom Dockerfile as you would normally do. If you need tips on how to do this, refer to [Useful Docker commands](#useful-docker-commands) or check the Docker official documentation. Keep in mind that the following statements are not currently available, which means they will be ignored when building the image: `COPY`, `WORKDIR`, `EXPOSE`, `ADD`, `ENTRYPOINT`, `USER`, `ARG`, and `STOPSIGNAL`.
-1. In the editor you will see there is a dropdown menu above the text area that reads **Valid Instructions**. This dropdown menu enumerates in a descriptive way a set of instructions that you can use in your Dockerfile. If you choose them from the dropdown menu, a new line will be added to your Dockerfile with the keyword to start the statement, so you can pick up from there. The use of this dropdown menu is completely optional and you can write your Dockerfile directly in the text area.
-<br/><img src={useBaseUrl('img/cloud-soar/integration-framework-docker-editor-3.png')} alt="Docker instructions" width="600"/>
+1. In the editor you will see there is a dropdown menu above the text area that reads **Valid Instructions**. This dropdown menu enumerates in a descriptive way a set of instructions that you can use in your Dockerfile. If you choose them from the dropdown menu, a new line will be added to your Dockerfile with the keyword to start the statement, so you can pick up from there. The use of this dropdown menu is completely optional and you can write your Dockerfile directly in the text area. <br/><img src={useBaseUrl('img/cloud-soar/integration-framework-docker-editor-3.png')} alt="Docker instructions" width="600"/>
 1. As soon as you change something in your Dockerfile, a **Save** button will appear next to the Docker editor button. Click on it if you are ready to save your custom Dockerfile.
 
 Once you have saved a custom Dockerfile, the integration will be executed on a container built from the relative custom Docker image.
@@ -1546,10 +1622,7 @@ Once you have saved a custom Dockerfile, the integration will be executed on a c
 
 We strongly suggest that you test your custom images as soon as you create or modify them. If by any chance you save a faulty custom Dockerfile, when the actions from that integration are triggered, their execution will fail because the Docker image will fail as well.
 
-1. To test your custom images, click where it says **TEST IMAGE** at the bottom right corner of the editor.
-<br/><img src={useBaseUrl('img/cloud-soar/integration-framework-test-docker-image.png')} alt="Test Docker image" width="6700"/>
-<br/>The system will try to build an image from your Dockerfile. While this happens, a spinner will appear in the editor. Consider this may take a few moments, depending on the instructions used in your Dockerfile.
-<br/><img src={useBaseUrl('img/cloud-soar/integration-framework-test-docker-image-2.png')} alt="Docker image tested" width="700"/>
+1. To test your custom images, click where it says **TEST IMAGE** at the bottom right corner of the editor. <br/><img src={useBaseUrl('img/cloud-soar/integration-framework-test-docker-image.png')} alt="Test Docker image" width="6700"/> <br/>The system will try to build an image from your Dockerfile. While this happens, a spinner will appear in the editor. Consider this may take a few moments, depending on the instructions used in your Dockerfile. <br/><img src={useBaseUrl('img/cloud-soar/integration-framework-test-docker-image-2.png')} alt="Docker image tested" width="700"/>
 1. If your custom Docker image was built without error, a success message will pop up in your screen. Otherwise, if a proper image cannot be built from your custom Dockerfile, an error message will pop up, containing details on what went wrong. In that case, it is very important that you correct your Dockerfile and test it again until an image is built successfully. As an alternative, you can always revert to the original Docker image used by the integration, by clicking on Reset Default Image at the bottom of the editor.
 
 ### Deleting your custom Docker image and reverting to the original one

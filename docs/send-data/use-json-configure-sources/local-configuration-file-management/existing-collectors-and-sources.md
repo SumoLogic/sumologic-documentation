@@ -39,13 +39,11 @@ Prior to version 19.137, the Collector used the `sumo.conf` file for Source c
 
 **To add the syncSources parameter**
 
-1. Open or create the `user.properties` file located at \<CollectorInstallationFolde\>/config`.  
+1. Open or create the `user.properties` file located at `<CollectorInstallationFolder>/config`.
 1. Add the `syncSources` parameter and set the path to the JSON. Like these example  
-
-   * On \*nix, to point to a JSON **file** that defines Sources for a Collector: ` =/path/to/sources.json`  
-   * On \*nix, to point to a **folder** that contains JSON files that define Sources for a Collector: `syncSources=/path/to/sources-folder`
+   * On `*nix`, to point to a JSON **file** that defines Sources for a Collector: ` =/path/to/sources.json`  
+   * On `*nix`, to point to a **folder** that contains JSON files that define Sources for a Collector: `syncSources=/path/to/sources-folder`
    * On Windows (note the escaped backslashes), to point to a folder that contains JSON files that define Sources for a Collector: `syncSources=C:\\path\\to\\sources-folder\\`
-
 1. Save and close the file.
 
 ## Step 3. Make the switch

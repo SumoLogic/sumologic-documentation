@@ -37,9 +37,9 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 The Abnormal Security source requires you to provide an authentication token. To obtain the token, follow the steps below.
 1. Sign in to the [Abnormal Security](https://portal.abnormalsecurity.com/) platform.
 1. In the **Manage** section, click on the **Settings** option.
-1. In the **Settings** section, click on the **Integrations** option.<br/><img src={useBaseUrl('img/send-data/abnormal-settings.png')} alt="abnormal-settings" style={{border: '1px solid black'}} width="300" />
-1. Scroll down to the **Additional Integrations** section and click **+ Connect** on the **Abnormal REST API** card to display an integration page for your organization.<br/><img src={useBaseUrl('img/send-data/additional-integrations.png')} alt="additional-integrations" style={{border: '1px solid black'}} width="200" />
-1. In the **IP Safelist** field, enter the [IP addresses](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/#static-ip-addresses) for your deployment.<br/><img src={useBaseUrl('img/send-data/integrations.png')} alt="integrations" style={{border: '1px solid black'}} width="800" />
+1. In the **Settings** section, click on the **Integrations** option.<br/><img src={useBaseUrl('img/send-data/abnormal-settings.png')} alt="abnormal-settings" style={{border: '1px solid gray'}} width="300" />
+1. Scroll down to the **Additional Integrations** section and click **+ Connect** on the **Abnormal REST API** card to display an integration page for your organization.<br/><img src={useBaseUrl('img/send-data/additional-integrations.png')} alt="additional-integrations" style={{border: '1px solid gray'}} width="200" />
+1. In the **IP Safelist** field, enter the [IP addresses](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/#static-ip-addresses) for your deployment.<br/><img src={useBaseUrl('img/send-data/integrations.png')} alt="integrations" style={{border: '1px solid gray'}} width="800" />
 1. Copy and save the **Access token**.
 
 ### Source configuration

@@ -12,6 +12,7 @@ import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/gmail-tracelogs/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/gmail-tracelogs/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/gmail-tracelogs/example.tf';
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/gmail-trace-logs-icon.svg')} alt="Gmail" width="50"/>
@@ -70,11 +71,9 @@ To configure Gmail Trace Logs Source:
 1. **Client Email**. Enter the user email collected from the Google Cloud Console.
 1. **Token URI**. Enter the token URI used for generating the token. You can find this from the Google Cloud Console.
 1. The **Collection should begin** is set to **24 Hours ago** by default. You can adjust it based on your needs.
-:::note
-import CollBegin from '../../../reuse/collection-should-begin-note.md';
-
-<CollBegin/>
-:::
+   :::note
+   <CollBegin/>
+   :::
 1. **(Optional) Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Save**.
 

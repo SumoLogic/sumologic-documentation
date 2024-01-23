@@ -17,7 +17,7 @@ To access this section, click the cog icon (<img src={useBaseUrl('img/cloud-soar
 
 App Central allows you to unlock the full Cloud SOAR potential. From this section, you can search and add new integrations, new playbooks, and even complete use cases with all the components needed (automation rules, integrations and playbooks) in one place.
 
-<img src={useBaseUrl('img/cloud-soar/appcentral.png')} alt="App Central" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/appcentral.png')} alt="App Central" style={{border: '1px solid gray'}} width="800"/>
 
 While browsing available integrations, you can check the details and all the actions available and install it.
 
@@ -370,7 +370,7 @@ Integrations are defined using two types of YAML text files. The first type, the
 
 The second type of file is an action definition file, which is used to define a single action that will be performed using the integration. Each integration action is defined in a separate action definition file, which will be associated by Cloud SOAR with the appropriate integration definition. Action definition files are the files which contain the actual code which will be executed to perform the action. Supported languages include Perl, Python, PowerShell and Bash. In addition to the action code, action definition files also contain information such as the name, required and optional fields and the format in which the resulting information will be displayed.
 
-<img src={useBaseUrl('img/cloud-soar/image65.png')} alt="Integration definition" style={{border: '1px solid black'}} width="600"/> 
+<img src={useBaseUrl('img/cloud-soar/image65.png')} alt="Integration definition" style={{border: '1px solid gray'}} width="600"/> 
 
 ### Integration File Hierarchy
 
@@ -378,7 +378,7 @@ Defining integrations at the **action** level allows users greater flexibility i
 
 Once the user has created this new action, it can easily be added to the existing RSA Netwitness integration by uploading the new integration action file. This new action can also be shared between customers and used to extend the functionality of the integration in other customer instances as well.
 
-<img src={useBaseUrl('img/cloud-soar/image66.png')} alt="New action" style={{border: '1px solid black'}} width="600"/> 
+<img src={useBaseUrl('img/cloud-soar/image66.png')} alt="New action" style={{border: '1px solid gray'}} width="600"/> 
 
 See [Integration Framework](#integration-framework) for more details on utilizing the integration framework within Cloud SOAR.
 
@@ -494,10 +494,8 @@ After you create a Slack app, you must add the appropriate permissions for use w
 1. Verify that scopes are set up correctly:
    * Here are the Bot Token scopes after configuration:<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-bot-token.png')} alt="Bot token" width="600"/>
    * Here are the User Token scopes after configuration:<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-user-token.png')} alt="User token" width="600"/>
-1. Click **Install to Workspace** to make the app available for use. 
-<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-install-to-workspace.png')} alt="Install the app" width="600"/>
-1. Installation generates a User OAuth Token and a Bot User OAuth Token. Copy the tokens and keep them in a secure location for use in the next step. 
-<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-oauth-token.png')} alt="Oauth tokens" width="600"/>
+1. Click **Install to Workspace** to make the app available for use. <br/><img src={useBaseUrl('img/cloud-soar/integration-slack-install-to-workspace.png')} alt="Install the app" width="600"/>
+1. Installation generates a User OAuth Token and a Bot User OAuth Token. Copy the tokens and keep them in a secure location for use in the next step. <br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-oauth-token.png')} alt="Oauth tokens" width="600"/>
 
 #### Step 4: Configure the Slack integration in Cloud SOAR
 
@@ -515,9 +513,9 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
    1. Repeat the steps to create a "Bot User OAuth Access Token", and paste your previously saved Bot User OAuth Token into the **Bot/User OAuth Token** field.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-2.png')} alt="Bot resource" width="400"/>
    1. Ensure that both new resources are configured properly by using **TEST SAVED SETTINGS**. Following is an example of a successful configuration message.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-edit-resource.png')} alt="Successful configuration message" width="400"/><br/>Here is how the Resources look after configuration.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-resource-2.png')} alt="Resources after configuration" width="600"/>
 1. Set up instant messaging:
-:::note
-Only set this up if you want to be able to use the Slack App in User Choice responses or enable Slack Chat Integration. This is outlined below.
-:::
+   :::note
+   Only set this up if you want to be able to use the Slack App in User Choice responses or enable Slack Chat Integration. This is outlined below.
+   :::
    1. Navigate to the [Slack API page](https://api.slack.com/apps). 
    1. Place your instance URL in the **Event Subscriptions** page.<br/><img src={useBaseUrl('img/cloud-soar/integration-event-subscriptions.png')} alt="Event subscriptions" width="600"/>
    1. Place your instance URL in the **Interactivity & Shortcuts** page.<br/><img src={useBaseUrl('img/cloud-soar/integrations-interactivity.png')} alt="Event subscriptions" width="600"/>
