@@ -10,9 +10,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) is a managed database service, optimized to run in the cloud. The RDS Amazon Web Service (AWS) simplifies the setup, operation, and scaling of relational database instances for use in applications throughout your infrastructure.
 
-The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s) including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards helps you monitor database errors, slow queries, audit sql queries and generic activities. PostgreSQL Logs dashboard help you monitor database errors, slow queries, database security and query execution timings.
+The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s) including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards helps you monitor database errors, slow queries, audit sql queries and generic activities. PostgreSQL logs dashboard help you to monitor database errors, slow queries, database security, and query execution timings.
 
-## Log and Metrics types  
+## Log and metrics types  
 
 The Amazon RDS app uses the following logs and metrics:
 * [RDS CloudWatch Instance Level Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-metrics.html#rds-cw-metrics-instance), [RDS CloudWatch Aurora Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.AuroraMySQL.Monitoring.Metrics.html), and [Amazon CloudWatch metrics for Performance Insights](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.Cloudwatch.html).
@@ -282,6 +282,7 @@ Sumo Logic supports collecting metrics using two source types:
 ### Collect Amazon RDS CloudWatch logs
 
 Make sure you enable the following parameters before collecting the Amazon RDS CloudWatch Logs.
+
 #### MySQL
 - Amazon RDS [MySQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.MySQL.html#USER_LogAccess.MySQLDB.PublishtoCloudWatchLogs) supports [publishing the following MySQL logs to CloudWatch](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQLDB.PublishtoCloudWatchLogs.html):
    - Error (enabled by default)
@@ -301,9 +302,10 @@ Make sure you enable the following parameters before collecting the Amazon RDS C
    - `server_audit_events`
 
 #### PostgreSQL
+
 - Amazon RDS [PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.PostgreSQL.html) supports [publishing the following PostgreSQL logs to CloudWatch](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.PostgreSQL.html#USER_LogAccess.Concepts.PostgreSQL.PublishtoCloudWatchLogs):
    - postgresql.log
-- You can enable the following additional parameters at [DB parameter group](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_WorkingWithDBInstanceParamGroups.html) or [DB Cluster Parameter group](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_WorkingWithParamGroups.html) for slow query, connection and query execution timing related logs.
+- You can enable the following additional parameters at [DB parameter group](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_WorkingWithDBInstanceParamGroups.html) or [DB Cluster Parameter group](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_WorkingWithParamGroups.html) for slow query, connection, and query execution timing related logs.
    - `log_connections`
    - `log_duration`
    - `log_min_duration_statement` to a value (in milliseconds) over which statement will be logged for any query taking more time then give value.
@@ -311,7 +313,8 @@ Make sure you enable the following parameters before collecting the Amazon RDS C
 We recommend not to set `log_statement` to any value other then none(default value). Since it will interfere with slow query logs and ingestion will increase significantly.
 :::
 
-Sumo supports several methods for collecting logs from Amazon CloudWatch. You can choose either of them to collect logs:
+Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. You can choose either of them to collect logs:
+
 - **AWS Kinesis Firehose for Logs**. Configure an [AWS Kinesis Firehose for Logs](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#create-an-aws-kinesis-firehose-for-logssource) (Recommended); or
 - **Lambda Log Forwarder**. Configure a collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo Logic provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/) or configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function/).<br/>
 
@@ -590,7 +593,7 @@ Use this dashboard to:
 The **Amazon RDS - MySQL Logs - Generic Log Analysis** dashboard provides details for general logs, including command types and trends, user activity and management, host activity, connections, and SQL statements. This dashboard works on General Query logs which need to be [enabled](#collect-amazon-rds-cloudwatch-logs) and ingested into Sumo Logic.
 
 Use this dashboard to:
-* Identify successful or failed  client connection attempts along with the type of connection.
+* Identify successful or failed client connection attempts along with the type of connection.
 * Identify user and client hosts being used to connect but are facing authentication failures along with reason. Monitor failed attempts to total attempts and track anomalies.
 * Monitor why certain things are failing by checking what exactly client sent to the server to execute.
 * Monitor the type of SQL statements/queries (DML, DDL, DCL, TCL, and others) being sent by the client to execute.
@@ -598,65 +601,71 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-General-Log-Analysis.png')} alt="Amazon RDS dashboard" />
 
 ### 12. Amazon RDS - PostgreSQL Logs - Overview 
-The **Amazon RDS - PostgreSQL Logs - Overview** dashboard provides a high level analysis of database activity with details on errors, slow logs and authentication using RDS CloudWatch logs.
+
+The **Amazon RDS - PostgreSQL Logs - Overview** dashboard provides a high level analysis of database activity with details on errors, slow logs, and authentication using RDS CloudWatch logs.
 
 Use this dashboard to:
-* Identify Failed/Successful authentication count and geo location
-* Get Log severity distribution and trend.
-* Get user activity and query execution by database
-* Get slow queries count and distribution based on user, command type and host. 
+* Identify successful or failed authentication count and geo location.
+* Obtain log severity distribution and trend.
+* Obtain user activity and query execution by database.
+* Obtain slow queries count and distribution based on user, command type, and host. 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Overview.png')} alt="Amazon RDS dashboard" />
 
 ### 13. Amazon RDS - PostgreSQL Logs - Errors
-The **Amazon RDS - PostgreSQL Logs - Errors** dashboard provide details on error occuring on your postgreSQL instance by keeping track of log severity using postgresql.log.
+
+The **Amazon RDS - PostgreSQL Logs - Errors** dashboard provide details on error occuring on your PostgreSQL instance by keeping track of log severity using `postgresql.log`.
 
 Use this dashboard to:
-* Get postgreSQL log severity distribution along with error log log ditribution by database,user and host
-* Identify postgreSQL log severity over time by user,host along with error event (fatal/error log level) outlier
-* Get recent and top fatal and error events
-* Get recent queries running into error with error message.
+* Obtain PostgreSQL log severity distribution along with error log log ditribution by database, user, and host.
+* Identify PostgreSQL log severity over time by user, host along with error event (fatal/error log level) outlier.
+* Obtain recent and top fatal and error events.
+* Obtain recent queries running into error with error message.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Errors.png')} alt="Amazon RDS dashboard" />
 
 ### 14. Amazon RDS - PostgreSQL Logs - Slow Query Overview
-The **Amazon RDS - PostgreSQL Logs - Slow Query Overview** dashboard gives an overview of the slow query logs. AWS Rds will report slow logs with statement taking more then threshold value given through log_min_duration_statement. The dashboard can be filtered with different values for query execution time through slow_query_latency_ms.
+
+The **Amazon RDS - PostgreSQL Logs - Slow Query Overview** dashboard provides an overview of the slow query logs. AWS RDS will report slow logs with statement taking more than threshold value given through `log_min_duration_statement`. This dashboard can be filtered with different values for query execution time through `slow_query_latency_ms`.
 
 Use this dashboard to : 
-* Get count of slow queries and unique slow queries
-* Identify number of Slow queries by user,host and command type along with slow queries over time by user and database
-* Monitor average execution time by sql command 
-* Get unique slow queries along with execution time, analysing minimim,maximum,average etc.
-* Get time comparison of number slow queries and there execution time over 1 day and 1 week.
+* Obtain count of slow queries and unique slow queries.
+* Identify number of Slow queries by user,host and command type along with slow queries over time by user and database.
+* Monitor average execution time by SQL command.
+* Obtain unique slow queries along with execution time, analysing minimim, maximum, average, and many more.
+* Obtain time comparison between number of slow queries and their execution time over 1 day or 1 week.
+  
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Slow-Query-Overview.png')} alt="Amazon RDS dashboard" />
 
 ### 15. Amazon RDS - PostgreSQL Logs - Slow Query Details
-The **Amazon RDS - PostgreSQL Logs - Slow Query Details** dashboard gives details on slow log query. Showing distribution of the slow queries along parameters like database and query type.
+
+The **Amazon RDS - PostgreSQL Logs - Slow Query Details** dashboard provides details on slow log query. Also, this dashboards displays the distribution of slow queries along with parameters like database and query type.
 
 Use this dashboard to : 
-* Monitor distribution of number slow queries on command type and database
-* Get frequently fired slow queries
-* MOnitor recent DML,DDL and TCL statement which lead to slow queries.
+* Monitor the distribution of number of slow queries on command type and database.
+* Obtain the frequently fired slow queries.
+* Monitor the recent DML, DDL, and TCL statement which lead to slow queries.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Slow-Query-Details.png')} alt="Amazon RDS dashboard" />
 
 ### 16. Amazon RDS - PostgreSQL Logs - Security
-The **Amazon RDS - PostgreSQL Logs - Security** dashboard gives details with respect to login failures, threat intel along with activity by default user.
+
+The **Amazon RDS - PostgreSQL Logs - Security** dashboard provides details with respect to login failures and threat intel along with activity by default user.
 
 Use this dashboard to : 
-* Get failed and successful authentication's count and geo location
-* Monitor failed authentication details by user,host and database over time.
-* Monitor database shut down and System up events
+* Obtain failed and successful authentication's count and geo location.
+* Monitor failed authentication details by user, host, and database over time.
+* Monitor database shut down and system up events.
 * Identify default user's authentication and generic activities.
-
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Security.png')} alt="Amazon RDS dashboard" />
 
 ### 17. Amazon RDS - PostgreSQL Logs - Query Execution Time
-The **Amazon RDS - PostgreSQL Logs - Query Execution Time** dashboard gives details around time its taking to execute queries on your postgreSQL instance. 
+
+The **Amazon RDS - PostgreSQL Logs - Query Execution Time** dashboard provides details around the time its taking to execute queries on your PostgreSQL instance. 
 
 Use this dashboard to : 
-* Get number of queries executed and average query execution time by database 
-* Monitor time comparison for number of queries executed and query execution time
+* Obtain number of queries executed and average query execution time by database.
+* Monitor time comparison for number of queries executed and query execution time.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Query-Execution-Time.png')} alt="Amazon RDS dashboard" />
