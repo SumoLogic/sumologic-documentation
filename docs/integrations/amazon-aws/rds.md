@@ -614,10 +614,10 @@ Use this dashboard to:
 
 ### 13. Amazon RDS - PostgreSQL Logs - Errors
 
-The **Amazon RDS - PostgreSQL Logs - Errors** dashboard provide details on error occuring on your PostgreSQL instance by keeping track of log severity using `postgresql.log`.
+The **Amazon RDS - PostgreSQL Logs - Errors** dashboard provide details on error occurring on your PostgreSQL instance by keeping track of log severity using `postgresql.log`.
 
 Use this dashboard to:
-* Obtain PostgreSQL log severity distribution along with error log log ditribution by database, user, and host.
+* Obtain PostgreSQL log severity distribution along with error log log distribution by database, user, and host.
 * Identify PostgreSQL log severity over time by user, host along with error event (fatal/error log level) outlier.
 * Obtain recent and top fatal and error events.
 * Obtain recent queries running into error with error message.
@@ -632,7 +632,7 @@ Use this dashboard to :
 * Obtain count of slow queries and unique slow queries.
 * Identify number of Slow queries by user,host and command type along with slow queries over time by user and database.
 * Monitor average execution time by SQL command.
-* Obtain unique slow queries along with execution time, analysing minimim, maximum, average, and many more.
+* Obtain unique slow queries along with execution time, analysing minimum, maximum, average, and many more.
 * Obtain time comparison between number of slow queries and their execution time over 1 day or 1 week.
   
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Slow-Query-Overview.png')} alt="Amazon RDS dashboard" />
