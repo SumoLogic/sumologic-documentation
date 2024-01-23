@@ -23,23 +23,14 @@ To map your data you can: 
 To add a panel with a Cluster or Heatmap:
 
 1. Create or open a Dashboard and click on **Add Panel > Map**. <br/><img src={useBaseUrl('img/dashboards-new/panels/map-charts/map-panel-option.png')} alt="map-panel-option" style={{border: '1px solid gray'}} width="600" /> 
-1. Provide a [Geo Lookup](/docs/search/search-query-language/search-operators/geo-lookup-map) query and press **Enter** for it to run.
-
-    ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
-
+1. Provide a [Geo Lookup](/docs/search/search-query-language/search-operators/geo-lookup-map) query and press **Enter** for it to run.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Add-log-query.png')} alt="Add log query" style={{border: '1px solid gray'}} width="600" /> 
 1. A map chart is available in two types, **Cluster** or **Heatmap**.<br/><img src={useBaseUrl('img/dashboards-new/panels/map-charts/cluster.png')} alt="cluster" style={{border: '1px solid gray'}} width="800"/> <br/><img src={useBaseUrl('img/dashboards-new/panels/map-charts/heatmap.png')} alt="heatmap" style={{border: '1px solid gray'}} width="800"/>
-
 1. [Modify the chart](/docs/dashboards/panels/modify-chart) as desired.
+1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300"/>
 
-1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.  
-
-    ![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)
-
-
-:::note limitations
+### Limitations
 * Map charts have a display limit of 10,000 results.
 * Colors of map markers cannot be changed.
-:::
 
 ## Missile map
 
