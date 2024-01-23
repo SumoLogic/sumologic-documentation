@@ -68,7 +68,7 @@ Make sure that the resources you created in the [Collect Logs from Azure Blob S
    * An Event Hubs Namespace.
    * A Storage account.
 1. In the left pane of the Azure Portal, click **AppServices**, and search for “SUMOBRTaskConsumer”. You should find the `“SUMOBRTaskConsumer\<random-string\>”` Function App. Click it. 
-1. Click the **Application settings** link. Check that the value of the ** SumoLogEndpoint** field matches the HTTP source URL. 
+1. Click the **Application settings** link. Check that the value of the **SumoLogEndpoint** field matches the HTTP source URL. 
 
 ## Verify Block Blob Create Events are getting published
 
