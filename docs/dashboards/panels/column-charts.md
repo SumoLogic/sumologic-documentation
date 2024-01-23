@@ -31,7 +31,7 @@ To create a stacked column chart, use a query that uses a multiple series that c
 
 ```sql
 _sourceCategory=Apache/Access
-| parse regex "(\<client_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+| parse regex "(?<client_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | lookup latitude, longitude, country_code, country_name, region, city, postal_code from geo://location on ip = client_ip
 | where !isNull(country_name) AND country_name !=""
 | timeslice 5m

@@ -42,8 +42,8 @@ To group data by (M) month you can use the formatDate operator to format _timesl
 * The timeslice operator is commonly used in conjunction with the transpose operator. After you’ve timesliced the data into buckets, the transpose operator allows you to plot aggregated data in a time series.
 * The timeslice operator must be used with an aggregating operator such as **count by** or **group by**.
 * The number of buckets in your query is a target or maximum, not necessarily the exact number of buckets that will be returned. For example, if your query specifies 150 buckets, Sumo Logic will find a reasonable clock-aligned resolution to return approximately 150 buckets in the query results.
-* If you use timeslice with the compare or outlier operators, **don't** alias timeslice. They expect _timeslice.
-* If no time period or bucket is specified it defaults to the time range of the Search.
+* If you use timeslice with the compare or outlier operators, **don't** alias timeslice. They expect `_timeslice`.
+* If no time period or bucket is specified, it defaults to the time range of the Search.
 
 ## Examples
 

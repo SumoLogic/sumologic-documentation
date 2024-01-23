@@ -41,7 +41,7 @@ Before you can access App Central, you must have the App Central Access role cap
 1. **Playbooks**. Click to view [playbooks in App Central](#playbooks-in-app-central) that are available to install.
 1. **Integrations**. Click to view [integrations in App Central](#integrations-in-app-central) that are available to install.
 1. **Search**. Search for integrations or playbooks to install. 
-1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization. The actions limit is set to 50 per hour by default to prevent abuse of system resources or runaway processes. For more information, see [Actions limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit).
+1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization. The actions limit is set to 200 per hour by default to prevent abuse of system resources or runaway processes. For more information, see [Actions limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit).
 1. **Download**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](#install-a-playbook-from-app-central). 
 
 ## Integrations in App Central
