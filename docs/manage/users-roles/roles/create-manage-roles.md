@@ -22,7 +22,7 @@ To create a role:
 
 1. Go to **Administration** > **Users and Roles** > **Roles**.
 1. Click **+ Add Role** on the upper right side of the page.
-1. The **Create New Role** pane appears on the right side of the page.<br/><img src={useBaseUrl('img/users-roles/create-new-role.png')} alt="Create a new role" style={{border: '1px solid black'}} width="400"/>
+1. The **Create New Role** pane appears on the right side of the page.<br/><img src={useBaseUrl('img/users-roles/create-new-role.png')} alt="Create a new role" style={{border: '1px solid gray'}} width="400"/>
 1. **Name**. Enter a name for the role. 
 1. **Description**. Enter a description of the role to help other Administrators understand the purpose or limitations of the role.
 1. **Search Filter**. Select one of the following to create a filter that allows access to only the logs that match the defined conditions. Only one is allowed for each. For examples, see [Search Filter and Index Access examples](#search-filter-and-index-access-examples) below. (For general guidance on creating search filters, see see [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role/).)

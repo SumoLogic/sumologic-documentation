@@ -18,7 +18,7 @@ To configure a Remote File Source:
 
 1. First see [Prerequisites for Windows Remote File Collection](prerequisites-windows-remote-file-collection.md).
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
-1. Find the name of the installed Collector here you'd like to add a Source. Click **Add** and then choose** Add **Source from the pop-up menu.
+1. Find the name of the installed Collector here you'd like to add a Source. Click **Add** and then choose **Add Source** from the pop-up menu.
 1. Select **Remote File** for the Source type.   
 
     ![Remote File Source icon.png](/img/send-data/Remote-File-Source-icon.png) 

@@ -21,7 +21,7 @@ Threat intelligence indicators can help security analysts leverage a large body 
 
 ### Role capabilities
 
-To use threat intelligence indicators, you must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/). 
+To use threat intelligence indicators, you must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#threat-intel). 
 
 1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
 1. Click the **Roles** tab.
@@ -31,16 +31,12 @@ Add the following capabilities:
        * **View Threat Intel Data Store**
        * **Manage Threat Intel Data Store**
 
-<!-- At GA, add these role capabilities to the "Role Capabilities" article. -->
-
 ### Ingest threat intelligence indicators
 
 To search logs that contain correlations to threat intelligence indicators, you must first ingest the indicators. You can ingest indicators using:
 * **The Threat Intelligence tab**. See [Add indicators in the Threat Intelligence tab](#add-indicators-in-the-threat-intelligence-tab).
 * **The API**. See the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource for upload APIs. 
-* **Collectors**. You can install the following collectors to ingest indicators (see [Cloud-to-Cloud Integration Framework Sources](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/)):
-   * STIX/TAXII 2.0
-   * STIX/TAXII 2.1
+* **A collector**. See [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source). 
 
 ## Threat Intelligence tab
 
@@ -48,7 +44,7 @@ Use the **Threat Intelligence** tab to add and manage threat intelligence indica
 
 To access the **Threat Intelligence** tab, go to **Manage Data > Logs > Threat Intelligence**.
 
-<img src={useBaseUrl('img/platform-services/threat-intelligence-tab.png')} alt="Threat Intelligence tab" style={{border: '1px solid black'}} width="800" />
+<img src={useBaseUrl('img/platform-services/threat-intelligence-tab.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
 
 1. **Add Indicators**. Click to upload files that [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab).
 1. **Actions**. Select to perform additional actions:
@@ -63,10 +59,14 @@ The “CrowdStrike provided by Sumo Logic (s_CrowdStrike)” source is a default
 
 ### Add indicators in the Threat Intelligence tab
 
-To add threat intelligence indicators, you must upload files containing the indicators in a format that can be consumed by Sumo Logic.
+To add threat intelligence indicators in the Threat Intelligence tab, you must upload files containing the indicators in a format that can be consumed by Sumo Logic.
+
+:::tip
+You can also add threat intelligence indicators using the API or a collector. See [Ingest threat intelligence indicators](#ingest-threat-intelligence-indicators).
+:::
 
 1. In Sumo Logic, go to **Manage Data > Logs > Threat Intelligence**.
-1. Click **Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid black'}} width="500" />
+1. Click **Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
 1. Select the format of the file to be uploaded:
     * **Normalized JSON**. A normalized JSON file. You can use this to load indicators from multiple sources. (For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v). Also see the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) resource.) <br/>Your file must include the following attributes:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
@@ -142,7 +142,7 @@ To add threat intelligence indicators, you must upload files containing the indi
 ### Delete threat intelligence indicators
 
 1. Select a source. Details of the source appear in a sidebar.
-1. Click **Delete Indicators**. The following dialog appears. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid black'}} width="500" />
+1. Click **Delete Indicators**. The following dialog appears. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
 1. Select indicators to delete from the source:
    * **Delete all indicators**. Remove all indicators from the source. 
    * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the files uploaded in [Add indicators in the threat intelligence tab](#add-indicators-in-the-threat-intelligence-tab) above.
@@ -152,7 +152,7 @@ To add threat intelligence indicators, you must upload files containing the indi
 
 Once you [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab), you can perform searches to find matches to data in the indicators using:
 * [`threatlookup` search operator](#threatlookup-search-operator)
-* [`hasThreatMatch` Cloud SIEM rules language function](#hasthreatmatch)
+* [`hasThreatMatch` Cloud SIEM rules language function](#hasthreatmatch-cloud-siem-rules-language-function)
 
 ### threatlookup search operator
 

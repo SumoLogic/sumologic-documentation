@@ -42,8 +42,7 @@ Before you can access the Automation Service, you must first [configure role cap
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
 1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/><br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
 1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
-1. The Automation Service screen opens on the **Playbook** tab.
-<img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
+1. The Automation Service screen opens on the **Playbook** tab. <br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
 
 ## Prerequisites
 
@@ -81,4 +80,4 @@ To use [integrations](/docs/platform-services/automation-service/automation-serv
 
 ## Actions limit
 
-To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 50 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/platform-services/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.
+To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 200 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/platform-services/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.

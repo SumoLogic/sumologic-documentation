@@ -16,17 +16,16 @@ The Cisco ASA App gives you insight into website visitor patterns, monitors infr
 * Denied connections
 
 
-## Log Types
+## Log types
 
 The Cisco ASA App assumes logs from the Cisco Adaptive Security Appliance (ASA) firewall product.
 
 
-### Sample Log
+### Sample log
 
 ```json
 Tue Aug 15 23:30:09 %ASA-6-302016: Teardown UDP connection 40 for outside:44.44.4.4/500 to inside:44.44.2.2/500 duration 0:02:02 bytes 1416
 ```
-
 
 ## Configuring Log Collection for the Cisco ASA App
 
@@ -96,35 +95,27 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 | parse regex "msgid\s*=\s*(?<msgid>[^,\s\)]+)" nodrop
 | parse regex "[Oo]utbound\s+\S+\s+connection\s+\d+\s+for\s+\S+\s*:\s*(?<dest_ip>[^\s\/\(]+)(?:\/(?<dest_port>\w+))?(?:\((?<dest_user>\S+)\))?\s*\(?(?<dest_translated_ip>[^\s\/\(]+)?\/?(?<dest_translated_port>\d+)?\)?\s+to\s+[^:]+:\s*(?<src_ip>[^\s\/\(]+)(?:\/(?<src_port>\w+))?(?:\((?<src_user>\S+)\))?\s*\(?(?<src_translated_ip>[^\s\/\(]+)?\/?(?<src_translated_port>\d+)?\)?"
 ```
-
 </details>
 
+## Installing the Cisco ASA app  
 
-## Installing the Cisco ASA App  
-
-This section provides instructions on how to install the Cisco ASA App.
-
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Viewing Cisco ASA Dashboards
+## Viewing Cisco ASA dashboards
 
-Once you've installed the Cisco ASA App, you can access preconfigured searches and dashboards that provide visual insights into your data.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<ViewDashboards/>
 
 ### Overview
 
 **Outbound Destinations.** A geolocation query tracks the number of outbound connection and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search** to see more details of the query results.
 
-**Denied Connections by Location.** Uses a geolocation query to track the number of denied connections and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search **to see more details of the query results.
+**Denied Connections by Location.** Uses a geolocation query to track the number of denied connections and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search** to see more details of the query results.
 
-**Total Denied Sources. **Displays the total number of denied Sources as a single value chart for the last hour.
+**Total Denied Sources.** Displays the total number of denied Sources as a single value chart for the last hour.
 
 **Bandwidth Served.** Shows the amount of bandwidth served as a single value chart for the last hour.
 
@@ -146,7 +137,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 **Outbound Connections to High Risk Countries.** Displays the number of outbound connections by country to countries considered high risk over the last hour in five-minute increments.
 
-**Denied Connections by Location.** Uses a geolocation query to track the number of denied connections, and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search **to see more details of the query results.
+**Denied Connections by Location.** Uses a geolocation query to track the number of denied connections, and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search** to see more details of the query results.
 
 **Top Denied Sources.** Lists the top five denied sources by IP address over the last hour.
 
@@ -158,7 +149,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 **Count of ASA Logs by LogLevel.** Displays the logs by LogLevel and Severity.
 
-**Count by Severity Code. **Displays the logs by Severity Code.
+**Count by Severity Code.** Displays the logs by Severity Code.
 
 **Parameterized Search.** Log Details with counts.
 

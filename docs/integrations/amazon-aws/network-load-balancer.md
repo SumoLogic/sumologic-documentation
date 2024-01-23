@@ -1,7 +1,7 @@
 ---
 id: network-load-balancer
 title: AWS Network Load Balancer
-description: The Sumo Logic App for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy, and to quickly identify errors.
+description: The Sumo Logic app for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy, and to quickly identify errors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,20 +10,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS Network Load Balancer service is distributed in OSI Layer 4 (the network layer) traffic (TCP, UDP, TLS) and can handle over a million requests per second.
 
-The Sumo Logic App for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy, and to quickly identify errors.
+The Sumo Logic app for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy, and to quickly identify errors.
 
-## Log and Metric Types  
+## Metric types  
+
 The AWS Network Load Balancer app uses AWS Network Load Balancer metrics.
 
-### Sample Query
+### Sample query
 
 ```sql title="Active Flows (Connections) by Load Balancer (Metric-based)"
 account=* region=* LoadBalancer=* Namespace=aws/NetworkELB metric=ActiveFlowCount Statistic=Sum | sum by account, region, namespace, LoadBalancer
 ```
 
-## Collecting Metrics for AWS Network Load Balancer App
+## Collecting Metrics for AWS Network Load Balancer app
 
 Sumo Logic supports collecting metrics using two source types:
+
 * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended); or
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
@@ -49,13 +51,11 @@ Tag sequence: $LoadBalancer._1
 Save it
 ```
 
+## Installing the AWS Network Load Balancer app
 
+This section has instructions for installing the Sumo Logic app for **AWS Network Load Balancer** and descriptions of each of the app dashboards along with associated use cases.
 
-## Installing the AWS Network Load Balancer App
-
-This section has instructions for installing the Sumo Logic App for **AWS Network Load Balancer** and descriptions of each of the app dashboards along with associated use cases.
-
-Now that you have set up a collection for **AWS Network Load Balancer**, install the Sumo Logic App to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for **AWS Network Load Balancer**, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 import AppInstall from '../../reuse/apps/app-install.md';
 
@@ -63,12 +63,9 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ## Viewing AWS Network Load Balancer Dashboards
 
-**App description:**
+import FilterDashboards from '../../reuse/filter-dashboards.md';
 
-AWS Network Load Balancer service is distributed in OSI Layer 4 (i.e., network) traffic (e.g., TCP, UDP, TLS) and can handle over a million requests per second.
-
-The Sumo Logic App for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy and to quickly identify errors.
-
+<FilterDashboards/>
 
 ### Overview
 

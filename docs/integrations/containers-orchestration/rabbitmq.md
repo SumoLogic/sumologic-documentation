@@ -350,7 +350,7 @@ Logs from the RabbitMQ log file can be collected via a Sumo Logic [Installed col
       * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
       * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your RabbitMQ Server’s time zone.
       * **Timestamp Format.** The timestamp format is automatically detected.
-      * **Encoding. **Select** **UTF-8 (Default).
+      * **Encoding.** Select UTF-8 (Default).
       * **Enable Multiline Processing.** Detect messages spanning multiple lines
       * Infer Boundaries - Detect message boundaries automatically
    4. Click **Save**.
@@ -376,14 +376,14 @@ There are limits to how many alerts can be enabled. For more information, see [M
 #### Method A: Install Monitors by importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/RabbitMQ/rabbitmq.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/RabbitMQ/rabbitmq.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all RabbitMQ clusters, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text messaging_cluster=*** with `<Your Custom Filter>`. Custom filter examples:
+2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/RabbitMQ/rabbitmq.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all RabbitMQ clusters, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `messaging_cluster=*` with `<Your Custom Filter>`. Custom filter examples:
    * For alerts applicable only to a specific cluster, your custom filter would be: `messaging_cluster=dev-rabbitmq01`
    * For alerts applicable to all clusters that start with RabbitMQ-prod, your custom filter would be: `messaging_cluster=RabbitMQ-prod*`
    * For alerts applicable to a specific cluster within a production environment, your custom filter would be: `messaging_cluster=dev-rabbitmq01 AND environment=prod` (This assumes you have set the optional environment tag while configuring collection)
 3. Go to **Manage Data > Alerts > Monitors**.
 4. Click **Add**.
-5. Click **Import.
-6. On the** Import Content popup**, enter **RabbitMQ** in the Name field, paste in the JSON into the the popup, and click **Import**.
+5. Click **Import**.
+6. On the **Import Content popup**, enter **RabbitMQ** in the Name field, paste in the JSON into the the popup, and click **Import**.
 7. The monitors are created in a "RabbitMQ" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 #### Method B: Install Monitors using a Terraform script
@@ -482,7 +482,7 @@ Template variables provide dynamic dashboards that rescope data on the fly. As y
 
 The RabbitMQ - Overview dashboard gives you an at-a-glance view of your RabbitMQ deployment across brokers, queues, exchanges, and messages.
 
-Use this dashboard to **:
+Use this dashboard to:
 * Analyze Memory and disk utilization.
 * Gain insights into pushing messages for your RabbitMQ server.
 * Gain insights into delivery messages for your RabbitMQ server.

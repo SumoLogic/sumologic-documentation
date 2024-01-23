@@ -11,6 +11,12 @@ image: https://help.sumologic.com/img/sumo-square.png
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+### Changes and Enhancements
+* Playbooks: UserChoice nodes can be handled now from Slack workspace (see [documentation](https://help.sumologic.com/docs/cloud-soar/cloud-soar-delivery-2/#configure-slack-for-cloud-soar---delivery-2)).
+
+#### Cloud SOAR
+* New privilege "Api Admin": Enabling this privilege in Log Analytics Platform will allow user to handle incident operations without being involved directly as investigator.
+
 ### Bug fixes
 * Fixed black screen when opening a Cloud SOAR or Automation Service URL with invalid session.
 * Playbooks:
