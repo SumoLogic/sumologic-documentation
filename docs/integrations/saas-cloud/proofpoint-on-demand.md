@@ -16,11 +16,11 @@ Key features of the Proofpoint on Demand app include:
 - **Incident investigation**. Quickly investigate potential security incidents by searching and analyzing email security and compliance data. This includes identifying the source of a security threat and the extent of its impact.
 - **User behavior monitoring**. Monitor behavior related to email communication to identify potential insider threats or unauthorized access.
 
-## Log Types
+## Log types
 
 This app uses Proofpoint on Demand source to collect the data from Proofpoint on Demand (PoD) Log Service and uses the secure WebSocket (WSS) protocol, which securely stores the required authentication, scheduling, and state tracking information.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Message log"
  {
@@ -129,7 +129,7 @@ This app uses Proofpoint on Demand source to collect the data from Proofpoint on
  }
 }
 ```
-## Sample Query
+## Sample queries
 
 ```sql title="Unique Inbound Domains"
 _sourceCategory="pod_src"

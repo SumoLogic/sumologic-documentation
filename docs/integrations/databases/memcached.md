@@ -15,7 +15,7 @@ The Memcached app is a unified logs and metrics app that helps you monitor the a
 
 The Sumo Logic app for Memcached is tested for Version: 1.4.15.
 
-## Sample Log Messages
+## Sample log messages
 
 <Tabs
   groupId="k8s-nonk8s"

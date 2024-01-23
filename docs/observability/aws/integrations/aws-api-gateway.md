@@ -18,7 +18,7 @@ The AWS API Gateway ULM app uses the following logs and metrics:
 * [Amazon API Gateway metrics](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html)
 * [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html)
 
-### Sample log message
+### Sample log messages
 
 ```json ttle="CloudTrail"
 {
@@ -63,7 +63,7 @@ The AWS API Gateway ULM app uses the following logs and metrics:
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Average Latency by API Name (Metric based)"
 _sourceCategory=Labs/AWS/APIGateway/Metric Namespace=aws/apigateway metric=Latency statistic=Average

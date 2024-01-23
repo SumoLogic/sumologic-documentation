@@ -182,7 +182,7 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Error Stream - Google Cloud Logging"
 _source="GKE Cloud Logs" error

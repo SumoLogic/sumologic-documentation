@@ -13,7 +13,7 @@ Zoom unifies cloud video and audio conferencing, simple online meetings, and gro
 
 The Sumo Logic App for Zoom provides visibility into how Zoom is being used across your organization, displaying analytics on performance, availability, security, and user activity. The app aggregates and reports on data so you can correlate and investigate trends and respond to incidents across all of your IT tools in a consistent and timely manner.
 
-## Log Types
+## Log types
 
 Zoom uses Webhook events, that are documented in full on this [Zoom web page](https://marketplace.zoom.us/docs/api-reference/webhook-reference).
 
@@ -26,7 +26,7 @@ The Webhook events are grouped into the following core event types:
 * User Events
 * Account Events
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -53,7 +53,7 @@ The Webhook events are grouped into the following core event types:
 }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql
 _sourceCategory=zoom

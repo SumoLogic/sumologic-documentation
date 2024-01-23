@@ -14,7 +14,7 @@ This application has been developed and is supported by [Keeper Security](https:
 Keeper is the leading secure password manager and digital vault for businesses and individuals. The Keeper Security App for Sumo Logic helps you monitor admin actions, user activities and security risks. The App consists of dashboards and queries that allow you to monitor events logged by Keeper to Sumo Logic.
 
 
-## Log Types
+## Log types
 
 The Keeper Security App uses Keeper Audit logs in JSON format pushed to Sumo HTTP Log Source by Keeper. For a description of the information available in the logs see [Keeper Audit Event List](https://docs.keeper.io/enterprise-guide/event-reporting#event-list).
 

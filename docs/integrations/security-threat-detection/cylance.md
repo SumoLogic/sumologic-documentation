@@ -29,7 +29,7 @@ The Sumo Logic App for Cylance uses the supports the following event and log typ
 For details on the format and definitions, refer to [Cylance](https://www.cylance.com/) documentation.
 
 
-### Sample log message
+### Sample log messages
 
 ```json
 850 <44>1 2019-02-27T04:57:20.4390000Z sysloghost CylancePROTECT - - - Event Type:
@@ -43,7 +43,7 @@ Threat Classification: Trusted - Local, Device Id: 81-89cec180584-1fede63f-46041
 Policy Name: Allowed Anywhere Internally
 ```
 
-### Sample query
+### Sample queries
 
 The following query is from the **Event Name Trend** panel of the **Cylance - AuditLog Dashboard**.
 

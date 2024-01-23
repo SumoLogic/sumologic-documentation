@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Threat Intel Quick Analysis App correlates [CrowdStrike's](https://www.crowdstrike.com/sumologic/) threat intelligence data with your own log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. The Threat Intel Quick Analysis App scans selected logs for threats based on **IP**, **URL**, **domain, Hash 256,** and **email**.
 
 
-## Log Types
+## Log types
 
 The Threat Intel Quick Analysis App can be used for any type of logs, regardless of format. Ideal log sources should include **IP**, **URL**, **domain**, **Hash 256**, and/or **email** information.
 

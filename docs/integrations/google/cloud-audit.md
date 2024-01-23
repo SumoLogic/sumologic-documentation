@@ -11,13 +11,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Google Cloud Audit App helps you with audit and compliance by enabling you to monitor activities and track the actions of administrators in your Google Cloud Platform projects. The preconfigured dashboards provide insight into the network, security, operations, and users of your Google Cloud Platform projects.
 
-## Log Types
+## Log types
 
 The Google Cloud Audit App uses the following logs:
 * [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/). These logs track events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Compute Engine, IAM and App Engine.
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -68,7 +68,7 @@ The Google Cloud Audit App uses the following logs:
 ```
 
 
-### Sample Query
+### Sample queries
 
 **Recent firewall changes**
 

@@ -70,7 +70,7 @@ HTTP/1.1", host: "example.com", referrer: "https://abc.example.com/"
 </TabItem>
 </Tabs>
 
-### Sample Query
+### Sample queries
 
 This sample query is from the [Nginx Plus - Overview](#overview) dashboard > **Responses Over Time** panel.
 

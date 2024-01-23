@@ -21,7 +21,7 @@ The Amazon ElastiCache app uses the following logs and metrics:
 * [CloudTrail Amazon ElastiCache Data Event](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/logging-using-cloudtrail.html)
 
 
-### Sample log message
+### Sample log messages
 
 ```json title="Sample CloudTrail Log Message"
 {

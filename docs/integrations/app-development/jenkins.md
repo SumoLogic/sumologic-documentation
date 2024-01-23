@@ -30,7 +30,7 @@ The Jenkins App uses the following Log Types:
 * Job Console Logs - Log events related to job console logs.
 
 
-### Sample Log Messages
+### Sample log messages
 
 <details>
 <summary><strong>Click to expand.</strong> See sample log messages for log types, such as Authentication, Configuration Change, Shutdown, and Job Status.</summary>
@@ -266,7 +266,7 @@ The Jenkins App uses the following Log Types:
 
 </details>
 
-### Sample Query
+### Sample queries
 
 This sample Query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
 

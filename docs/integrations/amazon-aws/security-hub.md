@@ -21,7 +21,7 @@ The Sumo Logic integration with AWS Security Hub extends compliance checks to ot
 
 For more information on AWS Security Hub, refer to the [Amazon AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html) documentation.
 
-## Log Types
+## Log types
 
 The AWS Security Hub utilizes the following log types:
 * [Amazon findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html)
@@ -254,7 +254,7 @@ To deploy an AWS Security Hub App collector:
 ```
 
 
-### Sample Query
+### Sample queries
 
 ```sql title="Findings by resource type and severity query"
 (_sourceCategory="securityhub_findings" OR _sourceCategory="Labs/AWS/SecurityHub")

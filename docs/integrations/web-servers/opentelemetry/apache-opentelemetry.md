@@ -147,7 +147,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Log Messages
+## Sample log messages
 
 ```sh title="Access Logs"
 192.168.29.177 - - [26/Apr/2021:12:18:32 +0530]  "GET /server-status HTTP/1.1"  404  196

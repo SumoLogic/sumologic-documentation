@@ -15,7 +15,7 @@ The [CrowdStrike Falcon Endpoint Protection Platform](https://www.crowdstrike.co
 
 This version of the CrowdStrike Falcon Endpoint Protection App and its collection process has been tested with SIEM Connector Version 2.1.0+001-siem-release-2.1.0.
 
-## Log Types
+## Log types
 
 The CrowdStrike Falcon Endpoint Protection App uses the following log types:
 * Detection Event

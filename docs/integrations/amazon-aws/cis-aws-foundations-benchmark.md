@@ -14,7 +14,7 @@ The CIS AWS Foundations Benchmark is a set of security configuration best practi
 
 The Sumo Logic for CIS AWS Foundations Benchmark App maps to Section 3 (Monitoring) of the [CIS AWS Benchmarks Foundation ](https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf)recommendations. Using the pre-configured alerts and dashboards, customers are able to alert on and gain operational visibility into their AWS security posture.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for CIS AWS Foundations Benchmark uses [CloudTrail](/docs/integrations/amazon-aws/cloudtrail.md) logs. For details on the specifics of which attributes are used, refer to Section 3 (Monitoring) of the [CIS AWS Benchmarks Foundation](https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf).
 

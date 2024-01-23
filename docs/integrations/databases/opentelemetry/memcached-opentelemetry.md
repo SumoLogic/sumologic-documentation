@@ -143,14 +143,14 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 <LogsOutro/>
 
 
-## Sample Log Message
+## Sample log messages
 
 ```
 Jun 23 07:35:01 node03 memcached: \
 <31 set GFcIh47CswfCnwk3JkmJ 0 0 4096
 ```
 
-## Sample Query
+## Sample queries
 
 Following is the query from Errors panel of Memcached app's overview Dashboard:
 

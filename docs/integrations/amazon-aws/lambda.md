@@ -43,7 +43,7 @@ AWS Lambda automatically monitors functions on your behalf, reporting [AWS Lambd
 
 The Sumo Logic App for AWS Lambda provide insights into the Lambda Functions invocations, IteratorAge for stream-based invocations, Errors, Dead Letter Errors, Concurrent Executions, Unreserved Concurrent Executions, Duration, Throttles by Function and Time based Comparison.
 
-### Sample Log Messages
+### Sample log messages
 This section provides sample Amazon CloudWatch Log and CloudTrail Lambda Data Events log messages.
 
 ```json title="Amazon CloudWatch Log"

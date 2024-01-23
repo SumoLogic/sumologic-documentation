@@ -33,7 +33,7 @@ To configure an AWS CloudTrail Source, perform these steps:
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can upgrade your account at any time.
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -72,7 +72,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 | parse "\"userName\":\"*\"" as user
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Created and Deleted Network and Security Events"
 _sourceCategory=AWS_EAGLE (*Security* OR *Network*)

@@ -123,7 +123,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 2023-01-09 13:23:31.276 Logon Login succeeded for user 'NT SERVICE\SQLSERVERAGENT'. Connection made using Windows authentication. [CLIENT: ]
 ```
 
-## Sample Query
+## Sample queries
 
 Following is the query from **Error and warning count** panel from the **SQL Server app - Overview** dashboard:
 

@@ -59,7 +59,7 @@ Workday App logs are all in JSON format. The Workday App uses two types of logs 
 }
 ```
 
-### Sample query
+### Sample queries
 
 The query sample provided in this section is from the **Failed Login Reasons** panel of the **Workday - Login Activity** dashboard.
 
