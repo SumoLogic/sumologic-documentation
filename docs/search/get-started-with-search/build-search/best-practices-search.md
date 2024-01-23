@@ -46,7 +46,7 @@ _sourceCategory=foo
 
 ## Filter your data before aggregation
 
-When filtering data, make the result set you are working with as small as possible before conducting [aggregate](/docs/search/search-query-language/group-aggregate-operators) operations like sum, min, max, and average. According to [Be specific with search scope](#be-specific-with-search-scope), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Use fields extracted by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator).
+When filtering data, make the result set you are working with as small as possible before conducting [aggregate](/docs/search/search-query-language/group-aggregate-operators) operations like sum, min, max, and average. According to [Be specific with search scope](#be-specificwith-search-scope), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Use fields extracted by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator).
 
 **Best approach:**
 
@@ -71,24 +71,18 @@ According to [Use fields extracts by FERs and avoid the where operator](#use-fie
 
 ## When using parse regex avoid expensive tokens
 
-If you need to use parse regex, avoid the use of expensive operations like `.*`. Just as [Be specific with search scope](#be-specific-with-search-scope) states for your search scope, be as specific as you can with your regular expressions as well.
+If you need to use parse regex, avoid the use of expensive operations like `.*`. Just as [Be specific with search scope](#be-specificwith-search-scope) states for your search scope, be as specific as you can with your regular expressions as well.
 
-**Example log message:**
-
-```sql
+```json title="Example log message"
 52.87.131.109 - - [2016-09-12 20:13:52.870 +0000] "GET /blog/index.php HTTP/1.1" 304 8932
 ```
 
-**Best approach:**
-
-```sql
-| parse regex "(\<client_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s"
+```sql title="Best approach"
+| parse regex "(?<client_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\s"
 ```
 
-**Least preferred approach:**
-
-```sql
-| parse regex "(\<client_i\>.*)\s-"
+```sql title="Least preferred approach"
+| parse regex "(?<client_ip>.*)\s-"
 ```
 
 ## Use partitions and scheduled views

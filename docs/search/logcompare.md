@@ -27,8 +27,8 @@ If the baseline query does not finish within two hours, it will timeout.
 
 The [`compare`](/docs/search/time-compare) and `logcompare` operators are very similar in syntax and functionality, but they handle different types of data:
 
-* **compare** is used for aggregated numeric data, such as analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators like `count`, `sum`, and `avg`.
-* **logcompare** is used for log signature counts based on your raw log data.
+* `compare` is used for aggregated numeric data, such as analyzing results from a [group by](/docs/search/search-query-language/group-aggregate-operators) query or a query with aggregation operators like `count`, `sum`, and `avg`.
+* `logcompare` is used for log signature counts based on your raw log data.
 
 
 ## Use LogCompare

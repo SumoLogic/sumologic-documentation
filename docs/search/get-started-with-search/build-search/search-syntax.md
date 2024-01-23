@@ -46,7 +46,7 @@ You can parse or extract values and assign them to an alias, known as a field,
 
 * Field names can contain alphanumeric characters, hyphens, and underscores, but should always start and end with an alphanumeric character. Sumo Logic built-in fields and default aliases always begin with an underscore, such as `_sourceCategory`, `_sourceHost`, or `_count_distinct`. Here are two examples of queries that generate a field called `src_IP`:
 
-    * `* | parse regex "(\<src_I\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"`
+    * `* | parse regex "(?<src_IP>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"`
     * `_sourceCategory=apache | parse "* " as src_IP`
 
 * Multiple fields can be extracted and named within a single query. For example, the query below creates fields "type" and "user":

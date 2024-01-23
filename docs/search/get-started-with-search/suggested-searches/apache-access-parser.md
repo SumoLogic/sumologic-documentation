@@ -159,7 +159,7 @@ This is assuming that the **%T/%D** logging directive is added to the access l
 ```sql
 _sourceName=*access_log* AND _sourceCategory=*apache*
 | parse using public/apache/access
-| extract " (\<second\>\d+)/(\<microsecond\>\d+)$"
+| extract " (?<seconds>\d+)/(?<microseconds>\d+)$"
 | toLong(microseconds/(1000000*60)) as minutes
 ```
 
