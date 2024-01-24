@@ -652,7 +652,7 @@ Use this dashboard to :
 
 The **Amazon RDS - PostgreSQL Logs - Security** dashboard provides details with respect to login failures and threat intel along with activity by default user.
 
-Use this dashboard to : 
+Use this dashboard to: 
 * Obtain failed and successful authentication's count and geo location.
 * Monitor failed authentication details by user, host, and database over time.
 * Monitor database shut down and system up events.
