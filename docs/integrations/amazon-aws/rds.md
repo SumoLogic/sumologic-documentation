@@ -641,7 +641,7 @@ Use this dashboard to :
 
 The **Amazon RDS - PostgreSQL Logs - Slow Query Details** dashboard provides details on slow log query. Also, this dashboards displays the distribution of slow queries along with parameters like database and query type.
 
-Use this dashboard to : 
+Use this dashboard to: 
 * Monitor the distribution of number of slow queries on command type and database.
 * Obtain the frequently fired slow queries.
 * Monitor the recent DML, DDL, and TCL statement which lead to slow queries.
