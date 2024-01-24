@@ -168,11 +168,11 @@ annotations:
 
     :::warning Do not modify the other values
     Modifying these values will cause the Sumo Logic apps to function incorrectly
-     * `telegraf.influxdata.com/class: sumologic-prometheus` - Instructs the Telegraf operator what output to use.
-     * `prometheus.io/scrape: "true"` - Ensures our Prometheus will scrape the metrics.
+     * `telegraf.influxdata.com/class: sumologic-prometheus`. Instructs the Telegraf operator what output to use.
+     * `prometheus.io/scrape: "true"`. Ensures our Prometheus will scrape the metrics.
      * `prometheus.io/port: "9273"`  - Tells prometheus what ports to scrape on.
-     * `telegraf.influxdata.com/inputs` - In the tags section, for example: `[inputs.haproxy.tags]`
-     * `component: “proxy”` - Used by Sumo Logic apps to identify application components.
+     * `telegraf.influxdata.com/inputs`. In the tags section, for example: `[inputs.haproxy.tags]`
+     * `component: “proxy”`.  Used by Sumo Logic apps to identify application components.
      * `proxy_system: “haproxy”` - Identifies the proxy system.
     :::
 
@@ -282,16 +282,16 @@ Please enter values for the following parameters (marked `CHANGEME` above):
 * In the input plugins section, that is `[[inputs.haproxy]]`:
     * `servers` - The URL to the HAProxy server. This can be a comma-separated list to connect to multiple HAProxy servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/haproxy) for more information on additional parameters for configuring the HAProxy input plugin for Telegraf.
     * In the tags section, `[inputs.haproxy.tags]`:
-        * `environment` - This is the deployment environment where the HAProxy server identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * `proxy_cluster` - Enter a name to identify this HAProxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. This is the deployment environment where the HAProxy server identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `proxy_cluster`. Enter a name to identify this HAProxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * In the output plugins section, which is `[[outputs.sumologic]]`:
     * **`url`** - This is the HTTP source URL created in step 2. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
-    Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
+    **Do not modify** the following values set by this Telegraf configuration as it will cause the Sumo Logic app to not function correctly.
 
 * `data_format - “prometheus”` In the output plugins section, that is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic.
 * `proxy_system: “haproxy”` - In the input plugins section: `[[inputs.Haproxy]]` - This value identifies the proxy system.
-* `component: “proxy”` - In the input plugins section: This value identifies application components.
+* `component: “proxy”`.  In the input plugins section: This value identifies application components.
 
 For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
@@ -458,7 +458,7 @@ However, if you would like to restrict these alerts to specific clusters or envi
 
 1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
-3. Download the Sumo Logic Terraform package for HAProxy monitors. The alerts package is available in the [Sumo Logic github repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages). You can either download it using the git clone command or as a zip file.
+3. Download the Sumo Logic Terraform package for HAProxy monitors. The alerts package is available in the [Sumo Logic GitHub repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration. After extracting the package, navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/haproxy/ directory. Edit the haproxy.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 ```sql
 access_id   = "<SUMOLOGIC ACCESS ID>"

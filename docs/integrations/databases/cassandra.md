@@ -168,21 +168,21 @@ annotations:
   tag_keys = ["name"] field_prefix = "$1_"
 ```
 Enter in values for the following parameters (marked ENV_TO_BE_CHANGED above):
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Cassandra Input plugin. Please refer to [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Cassandra input plugin for Telegraf. As Telegraf will be run as a sidecar, the host should always be localhost.
+* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf Cassandra Input plugin. Please refer to [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Cassandra input plugin for Telegraf. As Telegraf will be run as a sidecar, the host should always be localhost.
    * In the input plugins section (`[[inputs.jolokia2_agent]]`):
       * `urls` - The URL to the Cassandra server. This can be a comma-separated list to connect to multiple Cassandra servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Cassandra input plugin for Telegraf.
    * In the tags section (`[[inputs.jolokia2_agent]]`):
-      * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `db_cluster` - Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `environment`. This is the deployment environment where the Cassandra cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `db_cluster`. Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
       * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
       * `db_cluster_port` - Enter the database port. If not provided, a default port will be used
 
 
-Here’s an explanation for additional values set by this configuration that we request you  do not modify, as they will cause the Sumo Logic apps to not function correctly.
+**Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
 
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrap: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrap: "true"`. This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
 * `telegraf.influxdata.com/inputs`
     * In the tags section (`[inputs.jolokia2_agent.tags]`):
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
@@ -219,7 +219,7 @@ This section explains the steps to collect Cassandra logs from a Kubernetes envi
      db_cluster_port: <database port>
      ```
      Please enter values for the following parameters:
-     * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+     * `environment`. This is the deployment environment where the Cassandra cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
      * `db_cluster`- Enter a name to identify the Cassandra cluster. The cluster name will be shown in the Sumo Logic dashboards.
 
     **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly.
@@ -395,12 +395,12 @@ Please enter values for the following parameters:
 * In the input plugins section, which is `[[inputs. jolokia2_agent]]`:
     * `urls` - The URL to the jolokia server. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Cassandra input plugin for Telegraf.
 * In the tags section, which is `[inputs.Cassandra.tags]`:
-    * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-    * `db_cluster` - Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
+    * `environment`. This is the deployment environment where the Cassandra cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+    * `db_cluster`. Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
     * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 
-Here’s an explanation for additional values set by this configuration that we request you do not modify, as they will cause the Sumo Logic apps to not function correctly.
+**Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
 * In the tags section (`[inputs.jolokia2_agent.tags]`):
     * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
     * `db_system: “cassandra”` - This value identifies the database system.
@@ -506,8 +506,8 @@ We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](http
    * In the input plugins section, that is `[[inputs.jolokia2_agent]]`:
      * **`urls`** - The URL to the jolokia server. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Cassandra input plugin for Telegraf.
    * In the tags section, which is `[inputs.Cassandra.tags]` and filelog section
-      * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `db_cluster` - Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `environment`. This is the deployment environment where the Cassandra cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `db_cluster`. Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
    * In the exporter plugins section :
       * Enter details like `source_category` and `source_host`. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
    * **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly.
@@ -558,7 +558,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later and install it.
-3. Download the Sumo Logic Terraform package for Cassandra monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Memcached). You can either download it using the git clone command or as a zip file.
+3. Download the Sumo Logic Terraform package for Cassandra monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Memcached). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration. After extracting the package, navigate to the  `terraform-sumologic-sumo-logic-monitor/monitor_packages/Cassandra/` directory.
 5. Edit the Cassandra.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 ```bash

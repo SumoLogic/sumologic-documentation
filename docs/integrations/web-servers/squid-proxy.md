@@ -277,19 +277,19 @@ annotations:
 If you haven’t defined a farm in Squid Proxy, then enter ‘**default**’ for `proxy_cluster`.
 
 Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf SNMP Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SNMP input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf SNMP Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SNMP input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
   * In the tags section, which is `[inputs.snmp.tags]`
-    * `environment` - This is the deployment environment where the Squid Proxy cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-    * `proxy_cluster` - Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards.  
+    * `environment`. This is the deployment environment where the Squid Proxy cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+    * `proxy_cluster`. Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards.  
 
-Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
+**Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
 
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
 * `telegraf.influxdata.com/inputs`
   * In the tags section, which is `[inputs.snmp.tags]`
-    * `component: “proxy”` - This value is used by Sumo Logic apps to identify application components.
+    * `component: “proxy”`.  This value is used by Sumo Logic apps to identify application components.
     * `proxy_system: “squidproxy”` - This value identifies the proxy system.
 
   For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
@@ -309,13 +309,12 @@ This section explains the steps to collect Squid Proxy logs from a Kubernetes en
     proxy_system="squidproxy"
     proxy_cluster="<cluster_CHANGEME>"
     ```
+   Enter in values for the following parameters (marked **CHANGE_ME** above):
+    * `environment`. This is the deployment environment where the Squid Proxy cluster identified by the value of `servers`  resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `proxy_cluster`. Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
 
-   Enter in values for the following parameters (marked in **bold and CHANGE_ME** above):
-    * `environment` - This is the deployment environment where the Squid Proxy cluster identified by the value of `servers`  resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
-    * `proxy_cluster` - Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
-
-   Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
-    * `component: “proxy”` - This value is used by Sumo Logic apps to identify application components.
+   **Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
+    * `component: “proxy”`.  This value is used by Sumo Logic apps to identify application components.
     * `proxy_system: “squidproxy”` - This value identifies the proxy system.
 
 For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
@@ -435,13 +434,13 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
     3. Select **Save**.
     4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 2. **Enable SNMP agent on Squid Proxy**. By default, the [SNMP agent](https://wiki.squid-cache.org/Features/Snmp) will be disabled on squid proxy. You have to enable it. To enable the SNMP agent on squid, edit the configuration file of the squid proxy (squid.conf) and add the following section:
-  ```bash
-  acl snmppublic snmp_community public
-  snmp_port 3401
-  snmp_access allow snmppublic localhost
-  ```
+   ```bash
+   acl snmppublic snmp_community public
+   snmp_port 3401
+   snmp_access allow snmppublic localhost
+   ```
 3. **Set up Telegraf**.
-   1. Install Telegraf if you haven’t already, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
+   1. Install Telegraf if you haven’t already, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
    2. Configure and start Telegraf: as part of collecting metrics data from Telegraf, we'll use the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
 <details>
@@ -618,20 +617,20 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
      * Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`< >`) in your final configuration.
      * In the tags section, which is `[inputs.snmp.tags]`:
-     * `environment` - This is the deployment environment where the Squid Proxy server identified by the value of servers resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
-     * `proxy_cluster` - Enter a name to identify this Squid Proxy cluster. This cluster name will be shown in our dashboards.
+     * `environment`. This is the deployment environment where the Squid Proxy server identified by the value of servers resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
+     * `proxy_cluster`. Enter a name to identify this Squid Proxy cluster. This cluster name will be shown in our dashboards.
      * In the output plugins section, which is `[[outputs.sumologic]]`:
      * `URL` - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
-     * Here’s an explanation for additional values set by this Telegraf configuration. We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly. If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
-     * `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
-     * `component - “proxy”` - In the input `[[inputs.snmp]]` plugins section. This value is used by Sumo Logic apps to identify application components.
-     * `proxy_system - “squidproxy”` - In the input plugins sections. This value identifies the proxy system.
+     * **Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly. If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
+       * `data_format: “prometheus”`. In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
+       * `component - “proxy”`. In the input `[[inputs.snmp]]` plugins section. This value is used by Sumo Logic apps to identify application components.
+       * `proxy_system - “squidproxy”`. In the input plugins sections. This value identifies the proxy system.
 
-  See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for all other parameters that can be configured in the Telegraf agent globally.
+     See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for all other parameters that can be configured in the Telegraf agent globally.
 
-  After you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
+     After you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
-  At this point, Telegraf should start collecting the Squid Proxy metrics and forward them to the Sumo Logic HTTP Source.
+     At this point, Telegraf should start collecting the Squid Proxy metrics and forward them to the Sumo Logic HTTP Source.
 
 4. Enter the following options:
    * **Rule Name**. Enter the name as **App Observability - Proxy**.
@@ -678,7 +677,7 @@ Custom filter examples:
 
 1. For alerts applicable only to a specific farm, your custom filter would be ‘`proxy_cluster=squidproxy-standalone.01`‘.
 2. For alerts applicable to all cluster that start with squidproxy-standalone, your custom filter would be '`proxy_cluster=squidproxy-standalone*`'.
-3. **For alerts applicable to a specific farm within a production environment, your custom filter would be `proxy_cluster=squidproxy-1`** and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
+3. For alerts applicable to a specific farm within a production environment, your custom filter would be `proxy_cluster=squidproxy-1` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
 4. Go to Manage Data > Alerts > Monitors.
 5. Click **Add**.
 6. Click Import and then copy-paste the above JSON to import monitors.
@@ -702,7 +701,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
      * A specific cluster `squidproxy_cluster=squidproxy.standalone.01`.
      * All clusters in an environment `environment=standalone`.
      * For alerts applicable to all cluster that start with squidproxy-standalone, your custom filter would be `proxy_cluster=squidproxy-standalone*`.
-     * For alerts applicable to a specific farm within a production environment, your custom filter would be, `proxy_system=squidproxy` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
+     * For alerts applicable to a specific farm within a production environment, your custom filter would be `proxy_system=squidproxy` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
    3. All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
    4. By default, the monitors are configured in a monitor **folder** called “**SquidProxy**”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at `squidproxy.auto.tfvars` file.
 5. If you would like the alerts to send email or connection notifications, modify the file `squidproxy_notifications.auto.tfvars` and populate `connection_notifications` and `email_notifications` as per below examples.
@@ -723,7 +722,6 @@ connection_notifications = [
     }
   ]
 ```
-
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
 For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
@@ -740,7 +738,6 @@ email_notifications = [
     }
   ]
 ```
-
 6. Install the Alerts:
     1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**SquidProxy**/ and run `terraform init`. This will initialize Terraform and will download the required components.
     2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.

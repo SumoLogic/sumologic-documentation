@@ -205,11 +205,11 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
        paths    = ["hitCount","lookupCount"]
        tag_keys = ["context","host"]
    ```
-   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Tomcat Input plugin. Refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Tomcat input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
+   * `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf Tomcat Input plugin. Refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Tomcat input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
    * In the input plugins section, which is `[[inputs.Tomcat]]`:
         * `servers` - The URL to the Tomcat server. This can be a comma-separated list to connect to multiple Tomcat servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/tomcat) for more information on additional parameters for configuring the Tomcat input plugin for Telegraf.
    * In the tags section, which is `[inputs.Tomcat.tags]`:
-        * `environment` - This is the deployment environment where the Tomcat farm identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `environment`. This is the deployment environment where the Tomcat farm identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `webserver_farm` - Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.
    * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
         * `urls` - The URL to the tomcat server. This can be a comma-separated list to connect to multiple tomcat servers. See [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Tomcat input plugin for Telegraf.
@@ -217,9 +217,9 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
         * `environment`. This is the deployment environment where the Tomcat farm identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `webserver_farm`. Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.
     * **Do not modify** additional values set by this configuration as they will cause the Sumo Logic apps to not function correctly.
-        * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-      * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-      * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+        * `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+      * `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+      * `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
       * `telegraf.influxdata.com/inputs`
           * In the tags section, which is [inputs.Tomcat.tags]
               * `component: “webserver”` - This value is used by Sumo Logic apps to identify application components.
@@ -245,7 +245,7 @@ This section explains the steps to collect Apache Tomcat logs from a Kubernetes 
            webserver_farm: "tomcat_prod__CHANGEME"
    ```
    * Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
-     * `environment` - This is the deployment environment where the Tomcat farm identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+     * `environment`. This is the deployment environment where the Tomcat farm identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
      * `Webserver_farm` - Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.
    * **Do not modify** additional values set by this configuration as they will cause the Sumo Logic apps to not function correctly.
      * `component: “webserver”` - This value is used by Sumo Logic apps to identify application components.
@@ -515,12 +515,12 @@ Enter values for the following parameters (marked `CHANGEME` above):
 * In the input plugins section, which is `[[inputs.tomcat]]`:
     * `servers` - The URL to the Tomcat server. This can be a comma-separated list to connect to multiple Tomcat servers. See [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/tomcat) for more information on additional parameters for configuring the Tomcat input plugin for Telegraf.
     * In the tags section, which is `[inputs.tomcat.tags]`
-        * `environment` - This is the deployment environment where the Tomcat farm identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `environment`. This is the deployment environment where the Tomcat farm identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `Webserver_farm` - Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.
 * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
     * `servers` - The URL to the Tomcat server. This can be a comma-separated list to connect to multiple Tomcat servers. See [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Tomcat input plugin for Telegraf.
     * In the tags section, which is `[inputs.jolokia2_agent.tags]`:
-        * `environment` - This is the deployment environment where the Tomcat farm identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `environment`. This is the deployment environment where the Tomcat farm identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `webserver_farm`- Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.
 * In the output plugins section, which is `[[outputs.sumologic]]`:
     * `url` - This is the HTTP source URL created in step 3. See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
@@ -633,7 +633,7 @@ Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and
 
 Step 3: Download the Sumo Logic Terraform package for Apache Tomcat monitors
 
-The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/ApacheTomcat). You can either download it using the git clone command or as a zip file.
+The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/ApacheTomcat). You can either download it using the git clone command or as a zip file.
 
 Step 4: Alert Configuration  
 

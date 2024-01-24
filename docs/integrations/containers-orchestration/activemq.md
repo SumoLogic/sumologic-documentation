@@ -198,22 +198,22 @@ This section explains the steps to collect ActiveMQ metrics from a Kubernetes en
 ```
 
 Enter values for the following parameters (marked `CHANGE_ME` above):
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf ActiveMQ Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the ActiveMQ input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf ActiveMQ Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the ActiveMQ input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
    * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
       * `url` - The URL of the ActiveMQ server for [JMX MBeans](https://activemq.apache.org/jmx)  HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2_agent/examples/activemq.conf) for more information on additional parameters for configuring the Jolokia2 input plugin for Telegraf.
-      * `username`: The Username of ActiveMQ’s admin account . The default is “admin”.
-      * `password`:  The password of ActiveMQ's admin account. The default is “admin”.
+      * `username`. The Username of ActiveMQ’s admin account. The default is “admin”.
+      * `password`. The password of ActiveMQ's admin account. The default is “admin”.
    * In the tags section, `[inputs.jolokia2_agent.tags]`:
-      * `environment` - This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `messaging_cluster` - Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `environment`. This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `messaging_cluster`. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
   :::warning Do not modify these values
 
   Modifying these values will cause the Sumo Logic apps to not function correctly.
 
-  * `telegraf.influxdata.com/class: sumologic-prometheus` - Instructs the Telegraf operator what output to use.
-  * `prometheus.io/scrape: "true"` - Ensures our Prometheus will scrape the metrics.
-  * `prometheus.io/port: "9273"` - Tells prometheus what ports to scrape on.
+  * `telegraf.influxdata.com/class: sumologic-prometheus`. Instructs the Telegraf operator what output to use.
+  * `prometheus.io/scrape: "true"`. Ensures our Prometheus will scrape the metrics.
+  * `prometheus.io/port: "9273"`. Tells prometheus what ports to scrape on.
     * `telegraf.influxdata.com/inputs`
       * In the tags section, `[inputs.jolokia2_agent.tags]`:
         * `component: “messaging”` - Used by Sumo Logic apps to identify application components.
@@ -390,11 +390,11 @@ This section provides instructions for configuring metrics collection for the Su
 * Enter values for the following parameters (marked in `CHANGE_ME` above):
   * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
     * `url` - The URL of the ActiveMQ server for [JMX MBeans](https://activemq.apache.org/jmx) HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2_agent/examples/activemq.conf) for more information on additional parameters for configuring the Jolokia2 input plugin for Telegraf.
-    * `username`: The Username of ActiveMQ’s admin account . The default is “admin”.
-    * `password`:  The password of ActiveMQ's admin account. The default is “admin”.
+    * `username`. The Username of ActiveMQ’s admin account . The default is “admin”.
+    * `password`.  The password of ActiveMQ's admin account. The default is “admin”.
   * In the tags section, which is `[inputs.jolokia2_agent.tags]`
-    * `environment` - This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-    * `messaging_cluster` - Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
+    * `environment`. This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+    * `messaging_cluster`. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
   * In the output plugins section, which is `[[outputs.sumologic]]`:
     * `url` - This is the HTTP source URL created in step 3 (Install Telegraf). Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 

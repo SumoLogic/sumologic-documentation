@@ -377,7 +377,7 @@ If you haven’t defined a farm in IIS Server, then enter ‘**default**’ for 
 * Input plugins section, which is `[[inputs.win_perf_counters]]`:
     Configure the Windows Performance Counters Input Plugin for Telegraf see[ this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/win_perf_counters#windows-performance-counters-input-plugin).
 * In the tags section, which is `[inputs.win_perf_counters.tags]`:
-    * `environment` - This is the deployment environment where the IIS Server farm identified by the value of **servers** resides. For example; dev or QA. While this value is optional we highly recommend setting it.
+    * `environment`. This is the deployment environment where the IIS Server farm identified by the value of **servers** resides. For example; dev or QA. While this value is optional we highly recommend setting it.
     * `webserver_farm` - Enter a name to identify this IIS Server farm This farm name will be shown in our dashboards. Use “`default`” if none is present.
 * In the output plugins section, which is `[[outputs.sumologic]]`:
     * **`URL`** - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
@@ -387,7 +387,7 @@ If you haven’t defined a farm in IIS Server, then enter ‘**default**’ for 
 If you haven’t defined a farm in IIS Server, then enter ‘**default**’ for `webserver_farm`.
 
 There are additional values set by the Telegraf configuration.  We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
-* `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
+* `data_format: “prometheus”`. In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
 * `component - “webserver”` - In the input `[[inputs.win_perf_counters]]` plugins section. This value is used by Sumo Logic apps to identify application components.
 * `webserver_system - “iis”` - In the input plugins sections. This value identifies the webserver system.
 

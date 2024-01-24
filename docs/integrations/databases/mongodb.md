@@ -156,12 +156,12 @@ annotations:
     db_cluster_port = "ENV_TO_BE_CHANGED"
 ```
 3. Please enter values for the following parameters (marked `ENV_TO_BE_CHANGED` above):
-   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf MongoDB Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MongoDB input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+   * `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf MongoDB Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MongoDB input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
      * In the input plugins section (`[inputs.MongoDB]`):
         * `servers` - The URL to the MongoDB server. This can be a comma-separated list to connect to multiple MongoDB servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) for more information on additional parameters for configuring the MongoDB input plugin for Telegraf.
      * In the tags section (`[inputs.MongoDB.tags])`:
-        * `environment` - This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * `db_cluster` - Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `db_cluster`. Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
 				* `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
 				* `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 :::note
@@ -174,9 +174,9 @@ If your application connects directly to a given mongodb node, rather than the w
 Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB address” Entities.
 :::
    * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
-     * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-     * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-     * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+     * `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+     * `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+     * `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
      * `telegraf.influxdata.com/inputs`
        * In the tags section (`[inputs.mongodb.tags]`):
          * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
@@ -289,8 +289,8 @@ This section provides instructions for configuring metrics collection for the Su
      * In the input plugins section, `[inputs.mongodb]`:
        * `servers` - The URL to the MongoDB server. This can be a comma-separated list to connect to multiple MongoDB servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) for more information on additional parameters for configuring the MongoDB input plugin for Telegraf.
      * In the tags section, `[inputs.mongodb.tags]`
-       * `environment` - This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-       * `db_cluster` - Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
+       * `environment`. This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+       * `db_cluster`. Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
 			 * db_cluster_address - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
 			 * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 :::note
@@ -439,7 +439,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
-3. Download the Sumo Logic Terraform package for MongoDB monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/MongoDB). You can either download it using the `git clone` command or as a zip file.
+3. Download the Sumo Logic Terraform package for MongoDB monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/MongoDB). You can either download it using the `git clone` command or as a zip file.
 4. Alert Configuration. After extracting the package , navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/MongoDB/` directory. Edit the `MongoDB.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
   ```bash
   access_id   = "<SUMOLOGIC ACCESS ID>"

@@ -132,12 +132,12 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
       db_cluster_port = "ENV_TO_BE_CHANGED"
   ```
   Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` in the snippet above):
-  * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf SQL Server Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SQL Server input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+  * `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf SQL Server Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SQL Server input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
   * In the input plugins section, which is `[[inputs.sqlserver]]`:
       * `servers` - The URL to the SQLserver server. This can be a comma-separated list to connect to multiple SQLserver servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) for more information on additional parameters for configuring the SQLserver input plugin for Telegraf.
   * In the tags section, which is `[inputs.sqlserver.tags]`
-      * `environment` - This is the deployment environment where the SQLserver cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `db_cluster` - Enter a name to identify this SQLserver cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `environment`. This is the deployment environment where the SQLserver cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `db_cluster`. Enter a name to identify this SQLserver cluster. This cluster name will be shown in the Sumo Logic dashboards.
       * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
       * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 
@@ -152,10 +152,10 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
       :::
 
 **Do not modify the following values,** as they will cause the Sumo Logic apps to not function correctly.
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
-* `telegraf.influxdata.com/inputs` - In the tags section, which is `[inputs.sqlserver.tags]`:
+* `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/inputs`. In the tags section, which is `[inputs.sqlserver.tags]`:
    * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
    * `db_system: “sqlserver”` - This value identifies the database system.
 
@@ -179,10 +179,10 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
    db_cluster: "SQLserver_prod_CHANGE_ME"
    ```
    Enter in values for the following parameters (marked **CHANGE_ME** above):
-   * `environment` - This is the deployment environment where the SQL server cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-   * `db_cluster` - Enter a name to identify this SQL server cluster. This cluster name will be shown in the Sumo Logic dashboards.
+   * `environment`. This is the deployment environment where the SQL server cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+   * `db_cluster`. Enter a name to identify this SQL server cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-        Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
+        **Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
 
    * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
    * `db_system: “SQLserver”` - This value identifies the database system.
@@ -376,8 +376,8 @@ Enter values for fields annotated with `<ENV_TO_BE_CHANGED>` to the appropriate 
 * Input plugins section, which is `[[inputs.sqlserver]]`:
     * `servers` - The URL to the SQL server. For more information on additional parameters to configure the SQL Server input plugin for Telegraf see[ this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver).
 * In the tags section, which is `[inputs.sqlserver.tags]`:
-    * `environment` - This is the deployment environment where the SQL Server cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
-    * `db_cluster` - Enter a name to identify this SQLserver cluster. This cluster name will be shown in our dashboards.
+    * `environment`. This is the deployment environment where the SQL Server cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `db_cluster`. Enter a name to identify this SQLserver cluster. This cluster name will be shown in our dashboards.
     * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 
@@ -399,7 +399,7 @@ Enter values for fields annotated with `<ENV_TO_BE_CHANGED>` to the appropriate 
 If you haven’t defined a cluster in SQL Server, then enter `default` for `db_cluster`.
 
 There are additional values set by the Telegraf configuration.  We recommend not to modify  these values as they might cause the Sumo Logic app to not function correctly.
-* `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
+* `data_format: “prometheus”`. In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
 * `component = “database”` - In the input `[[inputs.SQLserver]]` plugins section. This value is used by Sumo Logic apps to identify application components.
 * `db_system = “sqlserver”` - In the input plugins sections. This value identifies the database system.
 
@@ -457,7 +457,7 @@ Generate an access key and access ID for a user that has the Manage Monitors rol
 
 **Step 3: Download the Sumo Logic Terraform package for SQL Server alerts**
 
-The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/SQLServer). You can either download it through the “git clone” command or as a zip file.
+The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/SQLServer). You can either download it through the “git clone” command or as a zip file.
 
 **Step 4: Alert Configuration**
 

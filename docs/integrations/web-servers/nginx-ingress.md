@@ -65,10 +65,10 @@ It’s assumed that you are using the latest helm chart version if not please up
     webserver_farm="<farm_CHANGEME>"
   ```
   Enter in values for the following parameters (marked in bold and **`CHANGE_ME`** above):
-     * `environment` - This is the deployment environment where the Nginx Ingress farm identified by the value of servers resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
+     * `environment`. This is the deployment environment where the Nginx Ingress farm identified by the value of servers resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
      * `webserver_farm` - Enter a name to identify this Nginx Ingress farm. This farm name will be shown in the Sumo Logic dashboards. If you haven’t defined a farm in Nginx Ingress, then enter ‘default’ for `webserver_farm`.
 
-  Here’s an explanation for additional values set by this configuration that we request you do not modify as they will cause the Sumo Logic apps to not function correctly.
+  **Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
      * `component: “webserver”`. This value is used by Sumo Logic apps to identify application components.
      * `webserver_system: “nginx_ingress”`. This value identifies the database system.
 4. **Add an FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
@@ -172,7 +172,7 @@ email_notifications = [
 ```
 
 6. **Install the Alerts**
-    1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**Nginx Ingress**/ and run **terraform init**. This will initialize Terraform and will download the required components.
+    1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**Nginx Ingress**/ and run `terraform init`. This will initialize Terraform and will download the required components.
     2. Run **terraform plan** to view the monitors which will be created/modified by Terraform.
     3. Run **terraform apply**.
 7. **Post Installation** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).

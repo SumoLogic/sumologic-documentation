@@ -159,12 +159,12 @@ Ensure that you are monitoring your Kubernetes clusters with the Telegraf operat
       db_cluster_port = "ENV_TO_BE_CHANGED"
   ```
 2. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` in the snippet above):
-   * `telegraf.influxdata.com/inputs` - As telegraf will be run as a sidecar the host should always be localhost.
+   * `telegraf.influxdata.com/inputs`. As telegraf will be run as a sidecar the host should always be localhost.
      * In the input plugins section i.e.:
         * `servers` - The URL to the Redis server. This can be a comma-separated list to connect to multiple Redis servers.
      * In the tags section, `[inputs.redis.tags]`:
-        * `environment` - This is the deployment environment where the Redis cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * `db_cluster` - Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. This is the deployment environment where the Redis cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `db_cluster`. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
         * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
         * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 :::note
@@ -177,11 +177,11 @@ If your application connects directly to a given redis node, rather than the who
 Pivoting to Tracing data from Entity Inspector is possible only for “Redis address” Entities.
 :::
    * **Do not modify the following values**, as they will cause the Sumo Logic apps to not function correctly.
-      * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-      * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-      * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+      * `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+      * `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+      * `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
       * `telegraf.influxdata.com/inputs`
-        * In the tags section, that is`[inputs.redis.tags]`
+        * In the tags section, that is `[inputs.redis.tags]`
         * `component: "database"` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: "redis"` - This value identifies the database system.
    * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
@@ -208,8 +208,8 @@ This section explains the steps to collect Redis logs from a Kubernetes environm
    db_cluster_port = "ENV_TO_BE_CHANGED"
    ```
    2. Enter in values for the following parameters (marked ENV_TO_BE_CHANGED above):
-     * `environment` - This is the deployment environment where the Redis cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-     * `db_cluster` - Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
+     * `environment`. This is the deployment environment where the Redis cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+     * `db_cluster`. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
      * db_cluster_address - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 :::note
@@ -298,8 +298,8 @@ This section provides instructions for configuring metrics collection for the Su
      * For the input plugins section:
         * `servers` - The URL to the Redis server. This can be a comma-separated list to connect to multiple Redis servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on additional parameters for configuring the Redis input plugin for Telegraf.
      * For tags section (`[inputs.redis.tags]`):
-        * `environment` - This is the deployment environment where the Redis cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * `db_cluster` - Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. This is the deployment environment where the Redis cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `db_cluster`. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
         * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
         * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 :::note

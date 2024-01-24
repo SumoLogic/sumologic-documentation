@@ -125,14 +125,14 @@ Follow these steps to collect metrics from a Kubernetes environment:
 
     2. In the tags sections(`[inputs.jolokia2_agent.tags]` and `[inputs.disk.tags]`), enter in values for the parameters marked with `<<CLUSTER_NAME>>,<<ENVIRONMENT>>` in the yaml file:
 
-        * `environment` - Replace `<<ENVIRONMENT>>` with the deployment environment where the Kafka cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * `messaging_cluster` - Replace `<<CLUSTER_NAME>>` with a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. Replace `<<ENVIRONMENT>>` with the deployment environment where the Kafka cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `messaging_cluster`. Replace `<<CLUSTER_NAME>>` with a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
         **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
 
-        * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-        * `prometheus.io/scrape: "true"` - This ensures our Prometheus plugin will scrape the metrics.
-        * `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape metrics from. This should not be changed.
+        * `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+        * `prometheus.io/scrape: "true"`. This ensures our Prometheus plugin will scrape the metrics.
+        * `prometheus.io/port: "9273"`. This tells Prometheus what ports to scrape metrics from. This should not be changed.
         * In the tags sections(`[inputs.jolokia2_agent.tags]` and `[inputs.disk.tags]`)
           * `component: “messaging”` - This value is used by Sumo Logic apps to identify application components.
           * `messaging_system: “kafka”` - This value identifies the database system.
@@ -150,8 +150,8 @@ If your Kafka helm chart/pod is writing the logs to standard output then the [Su
 1. **Add labels on your Kafka pods**
    1. Open **kafka-metrics-sumologic-telegraf.yaml** in any editor and go to **spec -> kafka -> template -> pod -> metadata -> labels** section.
    2. Enter in values for the parameters marked with `<<CLUSTER_NAME>>,<<ENVIRONMENT>>` in the yaml file:
-      * `environment` - Replace `<<ENVIRONMENT>>` with the deployment environment where the Kafka cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `messaging_cluster` - Replace `<<CLUSTER_NAME>>` with a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `environment`. Replace `<<ENVIRONMENT>>` with the deployment environment where the Kafka cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `messaging_cluster`. Replace `<<CLUSTER_NAME>>` with a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
       * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
         * `component: “messaging”` - This value is used by Sumo Logic apps to identify application components.
