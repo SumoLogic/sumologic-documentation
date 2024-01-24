@@ -71,9 +71,7 @@ sumologic:
 
 ### Customizing persistence
 
-By default, the event collector provisions and uses a Kubernetes PersistentVolume to persist some information over service restarts. In
-particular, the collector remembers the most recently processed Event this way, thus avoiding having to reprocess past Events after restart.
-The Persistent Volume is also used to buffer Event data if the remote destination is inaccessible.
+By default, the event collector provisions and uses a Kubernetes PersistentVolume to persist some information over service restarts. In particular, the collector remembers the most recently processed Event this way, thus avoiding having to reprocess past Events after restart. The Persistent Volume is also used to buffer Event data if the remote destination is inaccessible.
 
 Persistence can be customized via the `sumologic.events.persistence` section:
 
