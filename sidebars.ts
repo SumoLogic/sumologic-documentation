@@ -109,6 +109,7 @@ module.exports = {
               collapsed: true,
               link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-configurations/index'},
               items: [
+                'send-data/opentelemetry-collector/data-source-configurations/mapping-records-resources',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-traces',
@@ -392,6 +393,10 @@ module.exports = {
           items: [
             'send-data/kubernetes/helm-chart-overview',
             'send-data/kubernetes/install-helm-chart',
+            'send-data/kubernetes/best-practices',
+            'send-data/kubernetes/collecting-metrics',
+            'send-data/kubernetes/security-best-practices',
+            'send-data/kubernetes/troubleshoot-collection',
             {
               type: 'category',
               label: 'v4 Upgrade Guide',
