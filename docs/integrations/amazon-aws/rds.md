@@ -150,7 +150,7 @@ The Amazon RDS app uses the following logs and metrics:
 }
 ```
 
-```json title ="Authentication Failure (Postgresql Log)"
+```json title ="Authentication Failure (PostgreSQL Log)"
 {"timestamp":1705859815000,
 "message":"2024-01-21 17:56:55 UTC:3.92.54.14(57164):postgresql@postgresql:[43627]:FATAL:  password authentication failed for user \"postgresql\""
 }
