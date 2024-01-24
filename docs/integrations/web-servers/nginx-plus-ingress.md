@@ -34,7 +34,7 @@ The Sumo Logic app for Nginx Plus Ingress assumes Prometheus format Metrics for 
 {"timestamp":1619792989032,"log":"2021/04/29 13:26:05 [error] 190#190: *8248713 open() \"/usr/share/nginx/html/favicon.ico\" failed (2: No such file or directory), client: 10.244.0.132, server: , request: \"GET /favicon.ico HTTP/1.1\", host: \"example.com\", referrer: \"https://example.com/dashboard.html\"","stream":"stderr","time":"2021-04-29T13:26:05.074748065Z"}
 ```
 
-### Sample Query
+### Sample queries
 
 This sample query is from the **Visitor Locations** panel of the **Nginx Plus Ingress - Overview** dashboard.
 

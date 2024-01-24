@@ -21,7 +21,7 @@ The Sumo Logic app for Google Cloud Functions uses the following logs and metric
 * [Google Compute Engine Metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-compute)
 
 
-### Sample log query
+### Sample queries
 
 ```bash title="Top 10 User"
 _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp

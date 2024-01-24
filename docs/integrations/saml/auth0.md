@@ -65,7 +65,7 @@ Format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z' \
 Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_id"`
 
 
-## Sample Log Messages
+## Sample log messages
 
 ```json title="Example 1"
 {

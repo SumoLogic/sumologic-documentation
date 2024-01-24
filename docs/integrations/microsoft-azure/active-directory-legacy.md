@@ -13,12 +13,12 @@ The Sumo Logic app for Active Directory Legacy (2008+) allows you to analyze Win
 
 We recommend using the Active Directory App in combination with the Windows App.
 
-## Log Types
+## Log types
 
 Active Directory diagnostic log files are described in more detail in [Microsoft help](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10)).
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title="Domain Controller"
 DomainController DName=="DC=local" DomainName=="local" Forest=="local" NetBIOSName=="LOCAL" ControllerHostName=="HOST1DC01.local" IP=="102.240.30.12" Site=="DC1"
@@ -61,7 +61,7 @@ This event is generated when a logon session is destroyed. It may be positively 
 ```
 
 
-## Sample Query
+## Sample queries
 
 ```sql title="Directory Service Object Changes (from Active Directory App)"
 _sourceCategory=delete_test _sourceName=Security "Directory Service Changes"

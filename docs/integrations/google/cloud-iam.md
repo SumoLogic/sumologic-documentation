@@ -11,11 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Google Cloud Identity and Access Management (Cloud IAM) allows you to create and manage permissions for Google Cloud Platform resources. The Google Cloud IAM App gives you visibility into the activities in Cloud IAM. The preconfigured dashboards allow you to monitor the IAM project activities, operations, role activities, and policy changes.
 
-## Log Types
+## Log types
 
 The Google Cloud IAM App uses [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) which track events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Compute Engine, IAM, and App Engine.
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {

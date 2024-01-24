@@ -25,7 +25,7 @@ This feature is available in the following account plans.
 
 The Global Intelligence for Apache App uses logs data from Apache clusters. Like the Sumo Logic App for Apache, it assumes the NCSA extended/combined log file format for Access logs and the default Apache error log file format for error logs. [For more details](http://httpd.apache.org/docs/current/mod/mod_log_config.html) on Apache logs.
 
-## Sample Query 
+## Sample queries 
 
 The following sample query is from the Average **Requests Per Second: My Server v Benchmark** panel of **GI Apache - 02. Load Signals and Contributing Factors** dashboard.
 

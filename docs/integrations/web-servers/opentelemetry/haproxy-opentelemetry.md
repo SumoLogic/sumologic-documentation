@@ -163,7 +163,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Log Messages
+## Sample log messages
 
 ```bash
 May 13 08:24:43 localhost haproxy[21813]:

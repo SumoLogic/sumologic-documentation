@@ -18,7 +18,7 @@ The Sumo Logic App for Akamai Cloud Monitor assumes Akamai formatted logs, which
 For information about Akamai Cloud Monitor log formats, contact [Akamai Support](https://www.akamai.com/us/en/support/) and request the document “Akamai Log Delivery User Guide.” Refer to “Appendix A: Log Formats and Examples."
 
 
-### Sample log message
+### Sample log messages
 
 ```json
 {

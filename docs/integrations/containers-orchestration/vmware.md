@@ -24,7 +24,7 @@ The Sumo Logic vCenter logs source and vCenter metrics source use the installed 
 
 The dashboards provide real-time monitoring with visual data displays, allowing you to analyze events and performance metrics for efficient detection and troubleshooting.
 
-### Sample log message
+### Sample log messages
 
 ```json
 2018-11-15 17:39:09.569 +0530 ,,, message=Error detected for sumo-win2k8-a-4 on xx1.sumolabs.com
@@ -34,7 +34,7 @@ vm=ubuntu16.04-b-4,,,host=8df.sumolabs.com,,,datacenter=Production3-East,,,
 computeResource=esx1.sumolabscluster.com,,,key=3553,,,chainId=3269
 ```
 
-### Sample Query
+### Sample queries
 
 The following query is from the vSphere Errors Trend panel of the vCenter Errors - Analysis Dashboard.
 ```sql

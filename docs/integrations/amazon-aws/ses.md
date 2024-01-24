@@ -11,7 +11,7 @@ import CollBegin from '../../reuse/collection-should-begin-note.md';
 
 Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and receiving service. The Sumo Logic App for Amazon SES helps you monitor the email platform activities. The app uses CloudTrail events and SES notifications, and provides pre-configured dashboards that provide insights on the status of the email delivery including bounced notifications, delivered notifications, and various SES CloudTrail events.
 
-## Log Types
+## Log types
 
 The Amazon SES App uses:
 * AWS CloudTrail events for SES. For more details, see [here](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail). 
@@ -20,7 +20,7 @@ The Amazon SES App uses:
 Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and receiving service. The Amazon SES App helps you monitor the email platform activities, utilizing CloudTrail events and SES notifications (via SNS).
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title="CloudTrail log"
 {
@@ -76,7 +76,7 @@ Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and rece
 ```
 
 
-### Sample Query
+### Sample queries
 
 ```sql title="Top bounced email addresses"
 (_sourceCategory=aws-ses or _sourceCategory=AWS/SES/Notifications) "\"notificationType\":\"Bounce\""

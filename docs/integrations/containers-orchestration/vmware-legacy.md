@@ -31,14 +31,14 @@ For vSphere 6.5 and later please use [Sumo Logic App for VMware ULM](/docs/integ
 Because vSphere CLI 5.1 has known issues with resxtop and SSL certifications, be sure to use vMA 5.1 Patch 1 (5.1.0.1). (The known issues in 5.1 are documented in the [Release Notes](https://www.vmware.com/support/developer/vcli/vcli51/vsp5_51_vcli_relnotes.html#knownissues).)
 
 
-## Log Types
+## Log types
 
 The Sumo Logic App for VMware collects logs from vCenter Servers to analyze vCenter Server Events and Performance Data in real time to enable monitoring and detect important events within your virtual environment.
 
 For information on collecting unified logs and metrics for VMware, see [VMware ULM](/docs/integrations/containers-orchestration/vmware).
 
 
-## Sample Log Message
+## Sample log messages
 
 ```json
 2017-09-25 22:09:45.123 +0000 2013-11-19T10:03:35.042999Z ,,, message=Task: Delete virtual machine,,,user=SUMO\USER,,,vm=VMNAME,,,host=HOSTNAME.sumolab.org

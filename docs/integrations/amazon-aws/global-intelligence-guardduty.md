@@ -32,7 +32,7 @@ This feature is available in the following account plans.
 | Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
 
 
-## Log Types
+## Log types
 
 The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on [GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
 
@@ -106,7 +106,7 @@ The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be
 ```
 
 
-### Sample Query
+### Sample queries
 
 The following query is from the threat score trend line in the **GI GuardDuty: Your Company v. Global Baseline** dashboard.
 

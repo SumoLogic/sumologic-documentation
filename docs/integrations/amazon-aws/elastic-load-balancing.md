@@ -16,7 +16,7 @@ For information on unified logs and metrics for AWS Elastic Load Balancing App, 
 If you are just beginning with AWS ELB, for background see the Sumo Logic DevOps blog, AWS Elastic Load Balancing: Load Balancer Best Practices.
 :::
 
-## Log Types
+## Log types
 
 ELB logs are stored as .log files in the buckets you specify when you enable logging. The process to enable collection for these logs is described in [AWS ELB Enable Access Logs](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html). The logs themselves contain these fields in this order:
 ```bash
@@ -26,7 +26,7 @@ datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Res
 For information on unified logs and metrics for AWS Elastic Load Balancing App, see the [AWS Elastic Load Balancing ULM Application](/docs/integrations/amazon-aws/application-load-balancer).
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 2017-01-20T23:00:26.059475Z elb-shop-com 10.15.120.181:80 10.34.7.122:80 0.000026
@@ -35,7 +35,7 @@ For information on unified logs and metrics for AWS Elastic Load Balancing App, 
 Mobile Safari/517.35+"
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Name - Request by Geolocation"
 _sourceCategory=elb*

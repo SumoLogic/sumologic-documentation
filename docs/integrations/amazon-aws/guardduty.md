@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon GuardDuty is a continuous security monitoring service that analyzes and processes VPC Flow Logs and AWS CloudTrail event logs. The Sumo Logic App for Amazon GuardDuty provides insights into the activities in your AWS account based on the findings from Amazon GuardDuty. The App includes preconfigured dashboards that allow you to detect unexpected and potentially malicious activities in your AWS account by providing details on threats by severity, VPC, IP, account ID, region, and resource type.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on GuardDuty findings, see [here](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
 
-### Sample Log Message
+### Sample log messages
 
 <details>
 <summary>Click to expand</summary>
@@ -150,7 +150,7 @@ The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be se
 
 </details>
 
-### Sample Query
+### Sample queries
 
 <details>
 <summary>Click to expand</summary>

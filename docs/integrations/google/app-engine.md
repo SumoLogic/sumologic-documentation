@@ -11,13 +11,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Google App Engine is a platform to build web and mobile apps that scale automatically. The Sumo Logic App for Google App Engine helps you monitor the activities in your App Engine. The pre-configured dashboards provide insight into the requests, applications, HTTP status codes, latency, and response time in your App Engine.
 
-## Log Types
+## Log types
 
 The App uses:
 * Google Cloud Audit Logs — These logs track events on multiple GCP services, including Compute Engine, IAM and App Engine
 * App Engine Request Logs — These logs provide information about each request in App Engine, including the external IP address making the request
 
-### Sample Log Message
+### Sample log messages
 
 <details>
 <summary>Click to expand</summary>
@@ -199,7 +199,7 @@ The App uses:
 
 </details>
 
-### Sample Query
+### Sample queries
 
 ```bash title="Status codes over time"
 _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp

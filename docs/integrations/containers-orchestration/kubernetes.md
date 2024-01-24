@@ -38,7 +38,7 @@ The Sumo Logic app for Kubernetes uses logs and metrics.
 
 For more information, see [this page](https://github.com/SumoLogic/sumologic-kubernetes-collection). Metrics are collected using [Prometheus](https://prometheus.io/) with [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) used for metadata enrichment.
 
-### Sample Log Message
+### Sample log messages
 
 ```json title="Application Logs"
 {"timestamp":1561534865020,"log":"E0626 07:41:05.020255       1
@@ -48,7 +48,7 @@ Post http://192.168.190.54:10255/stats/container/: dial tcp 192.168.190.54:10255
 getsockopt: connection refused"}
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Message Breakdown by Container from the Dashboard Container Logs"
  cluster = * and namespace = * and pod = * and container = *

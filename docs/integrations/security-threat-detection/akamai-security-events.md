@@ -14,7 +14,7 @@ Akamai Security Events App allows you to visualize security events generated on 
 
 The Akamai Security Events App uses security events generated on the Akamai platform by leveraging the [V1 SIEM API](https://developer.akamai.com/api/cloud_security/siem/v1.html) and Sumo Logic’s [Akamai SIEM API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source).
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -64,7 +64,7 @@ The Akamai Security Events App uses security events generated on the Akamai plat
 }
 ```
 
-## Sample query  
+## Sample queries  
 
 ```sql
 _sourceCategory=<akamai-foo>

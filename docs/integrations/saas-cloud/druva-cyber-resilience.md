@@ -18,11 +18,11 @@ Key features of the Druva Cyber Resilience app include:
 - Detects and mitigates potential ransomware recovery events.
 - Identifies anomalies and suspicious behaviours related to unusual data usage.
 
-## Log Types
+## Log types
 
 The Druva Cyber Resilience App utilizes Sumo Logic's Druva Cyber Resilience Source to gather [Events](https://developer.druva.com/reference/listeventsbytracker) from Cyber Resilience.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Sample Event"
 {
@@ -45,7 +45,7 @@ The Druva Cyber Resilience App utilizes Sumo Logic's Druva Cyber Resilience Sour
     }
 ```
 
-## Sample Query
+## Sample queries
 
 ```sql title="Events Count"
 _source="Milan_Druva_Cyber_Resilience_v0.0.1"

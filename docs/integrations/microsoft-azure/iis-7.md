@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The IIS 7 App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. Additionally, you can monitor customer paths and interactions to learn how customers are using your product. The app consists of predefined searches and Dashboards, which provide visibility into your environment for real time or historical analysis.
 
 
-## Log Types
+## Log types
 
 IIS 7 Logs (IIS 7.5 logs are used) are generated as local files and written to this directory by default: `C:\inetpub\Logs\LogFiles\W3SVC1`. The App assumes the following format:
 ```
@@ -43,7 +43,7 @@ Sumo Logic expects W3C format with these fields for our Field Extraction Rules a
 For more information about the IIS 7 log (IIS 7.5 logs are used) format, see [https://www.iis.net/learn/manage/provisioning-and-managing-iis/configure-logging-in-iis](https://www.iis.net/learn/manage/provisioning-and-managing-iis/configure-logging-in-iis).
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 2016-11-17 22:34:34 10.0.0.167 GET /favicon.ico - 80 - 12.177.21.34 Mozilla/5.0+(Macintosh;+Intel+Mac+OS+X+10_7_5)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/27.0.1453.110+Safari/537.36 404 0 2 1405 547 78

@@ -1,6 +1,7 @@
 ---
 id: windows-json-opentelemetry
 title: PCI Compliance for Windows JSON - OpenTelemetry
+sidebar_label: Windows JSON - OTel Collector
 dashboard: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
@@ -26,7 +27,7 @@ Following tags will be created as part of PCI Compliance Windows JSON app instal
 - `host.group`: user configured tag which signifies a group of hosts for the operating system.
 - `deployment.environment`: user configured tag which identifies the environment where the windows system resides. For example: dev, prod or qa.
 
-## Log Types
+## Log types
 
 The Windows App assumes events are coming from Windows Event Log receiver in JSON format. It does not work with third party logs.
 
