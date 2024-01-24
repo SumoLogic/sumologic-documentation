@@ -86,9 +86,7 @@ sumologic:
 
 #### Disabling persistence
 
-Persistence can be disabled by setting `sumologic.events.persistence.enabled` to `false`. Keep in mind that doing so will cause either
-duplication or data loss whenever the collector is restarted. By default, the collector reads Events 1 minute into the past from its start
-time.
+Persistence can be disabled by setting `sumologic.events.persistence.enabled` to `false`. Keep in mind that doing so will cause either duplication or data loss whenever the collector is restarted. By default, the collector reads Events 1 minute into the past from its start time.
 
 ## Disabling Kubernetes events collection
 
