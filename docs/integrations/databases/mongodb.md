@@ -173,7 +173,7 @@ If your application connects directly to a given mongodb node, rather than the w
 
 Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB address” Entities.
 :::
-   * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+   * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
      * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
      * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
      * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
@@ -304,7 +304,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB a
 :::
      * In the output plugins section, `[outputs.sumologic]`:
        * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
-     * Here’s an explanation for additional values set by this Telegraf configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+     * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
        * `data_format - “prometheus”` In the output plugins section, `[outputs.sumologic]`, metrics are sent in the Prometheus format to Sumo Logic
        * `component: “database”` - In the input plugins section, `[inputs.MongoDB]`, this value is used by Sumo Logic apps to identify application components.
        * `gather_perdb_stats: “true”` - When true, collect per database stats.

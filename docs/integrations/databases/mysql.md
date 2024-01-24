@@ -266,7 +266,7 @@ If your application connects directly to a given MySQL node, rather than the who
 
 Pivoting to Tracing data from Entity Inspector is possible only for “MySQL address” Entities.
 :::
-    * **DO NOT MODIFY** these configuration options; changing them will prevent the MySQL app from functioning correctly.
+    * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
       * `telegraf.influxdata.com/class: sumologic-prometheus` instructs the Telegraf operator what output to use.
       * `prometheus.io/scrape: "true"` ensures Prometheus will scrape the metrics.
       * `prometheus.io/port: "9273"` tells Prometheus what ports to scrape on.

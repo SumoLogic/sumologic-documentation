@@ -243,7 +243,7 @@ This section explains the steps to collect Elasticsearch metrics from a Kubernet
 
      Pivoting to Tracing data from Entity Inspector is possible only for “Elasticsearch address” Entities.
      :::
-   * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+   * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
      * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
      * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
      * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.

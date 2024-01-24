@@ -194,7 +194,7 @@ This section explains the steps to collect Memcached logs from a Kubernetes envi
 
     Pivoting to Tracing data from Entity Inspector is possible only for “Memcached address” Entities.
     :::
-    * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+    * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
       * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
       * `db_system: “memcached”` - This value identifies the database system.
       * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
@@ -285,7 +285,7 @@ This section provides instructions for configuring logs and metrics collection f
         :::
   * In the output plugins section (`[[outputs.sumologic]]`):
      * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
-   * Here’s an explanation for additional values set by this Telegraf configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+   * **Do not modify the following values** set by this Telegraf configuration as it will cause the Sumo Logic app to not function correctly.
      * `data_format - “prometheus”` in the output plugins section. Metrics are sent in the Prometheus format to Sumo Logic
      * `component: “database”` in the input plugins section. This value is used by Sumo Logic apps to identify application components.
    * For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.

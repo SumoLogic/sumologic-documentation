@@ -185,7 +185,8 @@ Enter in values for the following parameters (marked `CHANGE_ME` above):
 * `environment`. This is the deployment environment where the RabbitMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
 * `messaging_cluster`. Enter a name to identify this RabbitMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-    Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+**Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
+
 
 * `component: “messaging”`. This value is used by Sumo Logic apps to identify application components.
 * `messaging_system: “rabbitmq”`. This value identifies the messaging system.

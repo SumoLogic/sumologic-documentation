@@ -139,7 +139,7 @@ Follow these steps to collect metrics from a Kubernetes environment:
         * `environment` - This is the deployment environment where the Kafka cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `messaging_cluster` - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-Here’s an explanation for additional values set by this configuration that we request you **do not modify** these values as they will cause the Sumo Logic apps to not function correctly.
+**Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
 
 * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
 * `prometheus.io/scrape: "true"` - This ensures our Prometheus plugin will scrape the metrics.
@@ -207,7 +207,7 @@ This section explains the steps to collect Kafka logs from a Kubernetes environm
    2. Enter in values for the following parameters (marked in bold and `CHANGE_ME` above):
       * `environment` - This is the deployment environment where the Kafka cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `messaging_cluster` - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
-      * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+      * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
       * `component: “messaging”` - This value is used by Sumo Logic apps to identify application components.
       * `messaging_system: “kafka”` - This value identifies the messaging system.
       * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) for more parameters that can be configured in the Telegraf agent globally.
