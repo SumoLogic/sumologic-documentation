@@ -628,7 +628,7 @@ Use this dashboard to:
 
 The **Amazon RDS - PostgreSQL Logs - Slow Query Overview** dashboard provides an overview of the slow query logs. AWS RDS will report slow logs with statement taking more than threshold value given through `log_min_duration_statement`. This dashboard can be filtered with different values for query execution time through `slow_query_latency_ms`.
 
-Use this dashboard to : 
+Use this dashboard to: 
 * Obtain count of slow queries and unique slow queries.
 * Identify number of Slow queries by user,host and command type along with slow queries over time by user and database.
 * Monitor average execution time by SQL command.
