@@ -156,7 +156,7 @@ The Amazon RDS app uses the following logs and metrics:
 }
 ```
 
-```json title ="Slow Queries (Postgresql Log)"
+```json title ="Slow Queries (PostgreSQL Log)"
 {"timestamp":1705670443000,
 "message":"2024-01-19 13:20:43 UTC:223.233.86.169(31944):postgresql@postgres:[3075]:LOG:  duration: 2001.036 ms  statement: SELECT * from large_table"}
 ```
