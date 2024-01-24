@@ -34,7 +34,9 @@ The CIS AWS Foundation Benchmark App ingests [AWS CloudTrail](/docs/integrations
 
 Now that you have configured CIS AWS Foundation Benchmark, install the Sumo Logic App for CIS AWS Foundation Benchmark to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 For context regarding the CIS AWS Foundation Benchmark App, check out this [blog](https://www.sumologic.com/blog/cis-aws-foundations-benchmark-monitoring/) where we describe the monitoring controls.
 
@@ -56,7 +58,7 @@ This Change Control Dashboard includes filters that you can use in Interactive M
 
 **Route Table Changes.** Shows the count of Route Table changes done by each user for the last 24 hours.
 
-**Network ACL Changes. **Shows the count of Network ACL changes done by each user for the last 24 hours.
+**Network ACL Changes.** Shows the count of Network ACL changes done by each user for the last 24 hours.
 
 **Security Group Changes.** Shows the count of Security Group changes done by each user for the last 24 hours.
 

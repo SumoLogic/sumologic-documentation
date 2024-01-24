@@ -21,7 +21,8 @@ The Amazon RDS app uses the following logs and metrics:
 
 ### Sample CloudTrail log message
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json title="CloudTrail"
 {
@@ -110,7 +111,8 @@ The Amazon RDS app uses the following logs and metrics:
 
 ### Sample Database CloudWatch logs
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json title="Recent Warning Events (Error Logs)"
 {
@@ -371,7 +373,9 @@ Save it
 
 Now that you have set up a collection for **Amazon RDS**, install the Sumo Logic app to use the pre-configured [dashboards](#viewing-the-rds-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing the RDS dashboards  
 
@@ -424,7 +428,7 @@ Use this dashboard to:
 
 ### 02. Amazon RDS Performance Insights   
 
-The** Amazon RDS Performance Insights** dashboard provides intuitive performance data from throughout your RDS infrastructure across CPU load, non-CPU load, active sessions, and performance trends.
+The **Amazon RDS Performance Insights** dashboard provides intuitive performance data from throughout your RDS infrastructure across CPU load, non-CPU load, active sessions, and performance trends.
 
 Use this dashboard to:
 * Monitor Amazon RDS DB instance loads to analyze and troubleshoot database performance.

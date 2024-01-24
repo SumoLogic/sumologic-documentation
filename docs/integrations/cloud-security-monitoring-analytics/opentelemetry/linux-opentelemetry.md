@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 Linux - Cloud Security Monitoring and Analytics - OpenTelemetry is a unified log app that ingests distribution of Linux data to Sumo Logic via OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). The app's preconfigured dashboards provide insight into user, service, systems, login, and privilege activity, providing a better understanding of your production environments and surface relevant insights by tuning out-of-the-box content to align with your security team's focus.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Schematics.png' alt="Linux-Schematics" style={{border: '1px solid black'}} />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Schematics.png' alt="Linux-Schematics" style={{border: '1px solid gray'}} />
 
 ## Fields created in Sumo Logic for Linux - Security Analytics
 
@@ -27,13 +27,17 @@ The following tag will be created as part of Linux app installation, if not alre
 You can skip this section if you have already set up the logs collection through [Linux](/docs/integrations/hosts-operating-systems/opentelemetry/linux-opentelemetry/) or [Linux PCI](/docs/integrations/pci-compliance/opentelemetry/linux-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Collector.png' alt="Linux-Collector" style={{border: '1px solid black'}} />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Collector.png' alt="Linux-Collector" style={{border: '1px solid gray'}} />
 
 ### Step 2: Configure integration
 
@@ -60,7 +64,7 @@ The following logs, located in the `/var/log` folder, are required for using the
 
 Click on the **Download YAML File** button to get the YAML file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Linux-YAML.png' style={{border:'1px solid black'}} alt="Linux-YAML.png" style={{border: '1px solid black'}}/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Linux-YAML.png' style={{border:'1px solid black'}} alt="Linux-YAML.png" style={{border: '1px solid gray'}}/>
 
 :::note
 By default, the path for Linux log files required for all the distros are pre-populated in the UI. (Optional) Unwanted file paths can be removed from the list if the files are not available on your Linux distribution. The collection will work even if not all the files are present in your system.
@@ -68,7 +72,9 @@ By default, the path for Linux log files required for all the distros are pre-po
 
 ### Step 3: Send logs to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -92,26 +98,34 @@ By default, the path for Linux log files required for all the distros are pre-po
 
 <TabItem value="Chef">
 
-{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
 
 </TabItem>
 
 </Tabs>
 
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 ## Sample log message
 
@@ -138,7 +152,9 @@ sumo.datasource=linux deployment.environment=* host.group=* host.name=*
 
 ## Viewing Linux - Cloud Security Monitoring and Analytics dashboards
 
-{@import ../../../reuse/filter-dashboards.md}
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
 
 ### Overview
 
@@ -152,7 +168,7 @@ Use this dashboard to:
 - Verify the status of critical systems.
 - Monitor excessive failed login attempts and detect total number of attempts to break into the system.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Monitoring-Overview.png' style={{border: '1px solid black'}} alt="Linux-Security-Monitoring-Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Monitoring-Overview.png' style={{border: '1px solid gray'}} alt="Linux-Security-Monitoring-Overview" />
 
 ### Login Activity
 
@@ -162,7 +178,7 @@ Use this dashboard to:
 - Monitor access to the Linux computing environment.
 - Monitor failed and successful user logins.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-Login-Activity.png' style={{border: '1px solid black'}} alt="Linux-Security-Analytics-Login-Activity" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-Login-Activity.png' style={{border: '1px solid gray'}} alt="Linux-Security-Analytics-Login-Activity" />
 
 ### Privileged Activity
 
@@ -172,7 +188,7 @@ Use this dashboard to:
 - Monitor successful and failed access attempts to systemswith administrative privileges. 
 - Monitor actions performed by users with administrative privileges.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-Privileged-Activity.png' style={{border: '1px solid black'}} alt="Linux-Security-Analytics-Privileged-Activity" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-Privileged-Activity.png' style={{border: '1px solid gray'}} alt="Linux-Security-Analytics-Privileged-Activity" />
 
 
 ### User, Service, and System Monitoring
@@ -183,5 +199,5 @@ Use this dashboard to:
 - Monitor accounts created and deleted. 
 - Monitor service usage and other system activity.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-User-Service-and-System-Monitoring.png' style={{border: '1px solid black'}} alt="Linux-Security-Analytics-User-Service-and-System-Monitoring" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-User-Service-and-System-Monitoring.png' style={{border: '1px solid gray'}} alt="Linux-Security-Analytics-User-Service-and-System-Monitoring" />
 

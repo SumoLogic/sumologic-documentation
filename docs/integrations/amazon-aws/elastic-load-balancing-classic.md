@@ -59,7 +59,9 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 ### Configure an ELB Source
 
-{@import ../../reuse/apps/create-aws-s3-source.md}
+import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
+
+<Aws3/>
 
 ### Field Extraction Rules
 
@@ -94,9 +96,12 @@ _sourceCategory=elb*
 
 Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancer - Classic to use the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
 
-<details><summary>What if data isn't displaying in all Panels?</summary>
+<AppInstall/>
+
+<details>
+<summary>What if data isn't displaying in all Panels?</summary>
 
 Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS Elastic Load Balancing logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
 
@@ -115,9 +120,9 @@ Track your Elastic Load Balancer activity at a glance to identify areas for furt
 
 * **Requests by Geolocation.** Uses a geolocation query to display a map of the IP addresses used by clients accessing your apps for the last three hours.
 * **Browsers and Operating Systems.** See requests by browser used, broken down by  operating system for the last three hours.
-* **Requests by SSL Protocol and Cipher. **See which version of TSL or SSL is being used by requests, broken down by which cryptographic cipher was used for the last three hours.
+* **Requests by SSL Protocol and Cipher.** See which version of TSL or SSL is being used by requests, broken down by which cryptographic cipher was used for the last three hours.
 * **Requests by Load Balancer.** See how many requests are hitting a load balancer for the last three hours.
-* **Data Sent and Received in MB. **Compare the data being sent and received by client IP in a bar chart for the last three hours.
+* **Data Sent and Received in MB.** Compare the data being sent and received by client IP in a bar chart for the last three hours.
 * **4XX and 5XX Status Codes by Backend Instance and ELB.** Charts the number of 4XX and 5XX status codes for each backend instance and ELB in a bar chart over the last 24 hours.
 * **Average Req and Resp Processing Time by ELB.** Compare the request and response time for each ELB for the last three hours.
 * **Latency by Load Balancer.** See the latency of each load balancer in AWS in a stacked column chart for the last three hours.
@@ -126,14 +131,14 @@ Track your Elastic Load Balancer activity at a glance to identify areas for furt
 
 ### Latency Analysis
 
-* **Definitions Panel. **Understand the definitions of request, response, and backend processing times. You can close this panel once you have a good grasp of the terms defined.
+* **Definitions Panel.** Understand the definitions of request, response, and backend processing times. You can close this panel once you have a good grasp of the terms defined.
 * **Latency by Domain.** See the latency of each domain in your EC2 deployment for the last 24 hours.
-* **Total Processing TIme Latency 90th, 95th pct. **Compare the highest latencies by percentile over the last 24 hours.
-* **Latency by ELB Server. **Compare the latencies of ELB servers over the last 24 hours.
+* **Total Processing Time Latency 90th, 95th pct.** Compare the highest latencies by percentile over the last 24 hours.
+* **Latency by ELB Server.** Compare the latencies of ELB servers over the last 24 hours.
 * **Average Request Processing Time by ELB Server.** Compare the average request processing times of ELB servers as a line chart for the last 24 hours.
 * **Request Processing Time by ELB Server.** See the min, max, and average request processing times for each server for the last 24 hours as a bar chart.
 * **Average Response Processing Time by ELB Server.** See the average response processing time for each ELB server for the last 24 hours as a line chart.
-* **Response Processing Time by ELB Server. ** See the min, max, and average request processing times for each server for the last 24 hours as a bar chart.
+* **Response Processing Time by ELB Server.**  See the min, max, and average request processing times for each server for the last 24 hours as a bar chart.
 * **Average Backend Processing Time by Backend.** Compare average processing times by backend servers over the last 24 hours to find any unusual spikes of activity on a particular backend.
 * **Backend Processing Time by Backend.** View the average, min, and max processing times for your backend systems for the last 24 hours, broken down by backends.
 * **Top 20 Latencies Paths.** View the paths of the top 20 latencies in your system for the last 3 hours.
@@ -158,7 +163,7 @@ See the geolocation of requests by geolocation, data volume, load balancer, and 
 * **ELB Status Over Time.** Compare 4xx and 5xx ELB status codes over the last 24 hours.
 * **ELB Backend Status Over Time.** Compare 4xx and 5xx backend status codes over the last 24 hours.
 * **4XX ELB Status by Location.** See the geolocation of your ELB 4xx statuses over the last 24 hours.
-* **5XX ELB Status by Location. **See the geolocation of your ELB 5xx statuses over the last 24 hours.
+* **5XX ELB Status by Location.** See the geolocation of your ELB 5xx statuses over the last 24 hours.
 * **4XX Backend Status by Location.** See the geolocation of your backend 4xx statuses over the last 24 hours.
 * **5XX ELB Status by Location.** See the geolocation of your backend 5xx status codes over the last 24 hours.
 * **ELB Status by ELB Server.** Compare the 4xx and 5xx codes of your ELB servers for the last 24 hours with a bar chart.
@@ -178,7 +183,7 @@ See failed dispatches broken down by geolocation, outliers, backend, count, clie
 * **Failed Dispatches.** Read this informational panel on what failure means. You can close it when you understand the reasons for -1.
 * **Failed Dispatch Outlier.** See if any dispatch failures fall outside the designated threshold for the last 24 hours.
 * **Failed Dispatches by Backend.** See the dispatch failures that occur by backend IP address for the last 24 hours, time sliced by 15 minutes. This panel can help you isolate a failure at a particular time or see patterns over time.
-* **Failed Dispatch Count. **See a count of the total failed dispatches over the last 24 hours time sliced by 15 minutes.
+* **Failed Dispatch Count.** See a count of the total failed dispatches over the last 24 hours time sliced by 15 minutes.
 * **Failed Dispatches by Client.** See the count of total dispatch failures for the last 24 hours broken down by client IP address.
 * **Failed Dispatches by Domain.** See the failed dispatches for the last 24 hours broken down by domain and time sliced by 15 minutes. This panel can help you isolate a failure at a particular time or see patterns over time.
 

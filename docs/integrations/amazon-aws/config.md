@@ -125,7 +125,7 @@ Copy the **HTTP Source Address URL** and use it in the following section.
 
 Once the Hosted Collector and HTTP Source are configured, you can subscribe to AWS Config’s SNS Notifications.
 
-1. In the** **AWS Management Console, go to **SNS > Topics**.
+1. In the **AWS Management Console**, go to **SNS > Topics**.
 2. Select the check box for the topic you created when you enabled SNS notifications.
 3. Under **Amazon SNS**, in the **Actions** menu, select **Subscribe to Topic**.
 4. Under **Protocol**, select **HTTPS**, and paste the Sumo Logic HTTP Source URL into the **Endpoint** field.
@@ -154,7 +154,9 @@ To create a partition, follow the instructions to [Create a Partition](/docs/man
 
 Now that you have configured AWS Config, install the Sumo Logic App for AWS Config to take advantage of the pre-configured searches and dashboards to analyze your AWS Config data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing AWS Config Dashboards
 

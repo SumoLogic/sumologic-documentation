@@ -6,6 +6,7 @@ description: Learn about playbooks. A playbook is a predefined set of actions an
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ActionLimit from '../../reuse/action-limits.md';
 
 A playbook is a predefined set of actions and conditional statements that run in an automated workflow to respond to a certain event or incident type. Playbooks can allow your organization's teams to respond to an incident in a consistent, focused, and repeatable fashion.
 
@@ -14,7 +15,7 @@ Playbooks can be configured to execute automatically without user intervention, 
 To run a playbook, add it to an automation. For places in Sumo Logic where you can use add playbooks to automations, see [Where you can run automations](/docs/platform-services/automation-service/about-automation-service/#where-you-can-run-automations).  
 
 :::note
-{@import ../../reuse/action-limits.md}
+<ActionLimit/>
 :::
 
 ## View playbooks

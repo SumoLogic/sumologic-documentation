@@ -100,7 +100,7 @@ For more information about IIS log format and log configuration refer [link](htt
    2. Under the \W3SVC1 directory, you should see one or more files with a .log extension. If the file is present, you can collect it.
 * **Enable HTTP Error Logs on your Windows Server** Perform the following task to enable HTTP Error Logs on your Windows Server, that is hosting the IIS Server.
 
-**To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:
+To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:
 
 1. To configure HTTP Error Logging, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/configuring-http-server-api-error-logging).
 2. To understand HTTP Error Log format, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/format-of-the-http-server-api-error-logs). HTTP Error Log files are generated as local files. The default HTTP Error log file location is: `C:\Windows\System32\LogFiles\HTTPERR`
@@ -127,7 +127,7 @@ To configure a local file source for IIS Access Logs, do the following:
 2. Specify Local File Source Fields as follows:
     1. **Name**: Required (for example, "IIS")
     2. **Description**. (Optional)
-    3. **File Path** (Required). C:\inetpub\Logs\LogFiles\W3SVC*\*.log
+    3. **File Path** (Required). `C:\inetpub\Logs\LogFiles\W3SVC1\*.log`
     4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
     5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
     6. **Source Category** (Required). For example, Webserver/IIS/Access.
@@ -166,7 +166,7 @@ To configure a local file source for HTTP Error Logs, do the following:
     4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
     5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
     6. **Source Category** (Required). For example, Webserver/IIS/Error.
-    7. **Fields. **Set the following fields**: \
+    7. **Fields.** Set the following fields: \
 `component = webserver \
 webserver_system = iis \
 webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one.
@@ -202,7 +202,7 @@ To configure a Source for IIS Performance Logs, do the following:
     * **Source Category** (Required). For example, Webserver/IIS/PerfCounter.
     * **Frequency**: **Every Minute** (you may custom choose frequency)
     * **Description**. (Optional)
-    * **Fields. **Set the following fields**: \
+    * **Fields.** Set the following fields:
 `component = webserver \
 webserver_system = iis \
 webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one.
@@ -229,17 +229,18 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
     2. Select **HTTP Logs & Metrics_._**
         1. **Name.** (Required). Enter a name for the source.
         2. **Description.** (Optional).
-        3. **Source Category** (Required)**. For example,  `Prod/Webserver/IIS/Metrics`.
+        3. **Source Category** (Required). For example,  `Prod/Webserver/IIS/Metrics`.
     3. Select **Save**.
     4. Take note of the URL provided once you click **Save**. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 
 
 #### Set up Telegraf
 
-1. **Install Telegraf if you haven’t already. **Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
+1. **Install Telegraf if you haven’t already.** Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 2. **Configure and start Telegraf.** As part of collecting metrics data from Telegraf, we will use the[ Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
-<details><summary><strong>Click to expand.</strong><br/>Create or modify `telegraf.conf` and copy and paste the text below.</summary>
+<details>
+<summary><strong>Click to expand.</strong><br/>Create or modify `telegraf.conf` and copy and paste the text below.</summary>
 
 ```sql
 [[inputs.win_perf_counters]]
@@ -559,105 +560,15 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the IIS server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
 
-<table>
-  <tr>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - Access from Highly Malicious Sources
-   </td>
-   <td>This alert fires when an IIS server is accessed from highly malicious IP addresses.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a 4xx response code.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a 5xx response code.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - Error Events
-   </td>
-   <td>This alert fires when an error in the IIS logs is detected.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - Slow Response Time
-   </td>
-   <td>This alert fires when the response time for a given IIS server is greater than one second.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - ASP.NET Application Errors
-   </td>
-   <td>This alert fires when we detect an error in the ASP.NET applications running on an IIS server.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - Blocked Async IO Requests
-   </td>
-   <td>This alert fires when we detect that there are blocked async I/O requests on an IIS server.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-</table>
-
+| Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|:---|
+| IIS - Access from Highly Malicious Sources | This alert fires when an IIS server is accessed from highly malicious IP addresses. | Critical | > 0 | < = 0 |
+| IIS - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a 4xx response code. | Critical | > 0 | 0 |
+| IIS - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a 5xx response code. | Critical | > 0 | 0 |
+| IIS - Error Events | This alert fires when an error in the IIS logs is detected. | Critical | > 0 | 0 |
+| IIS - Slow Response Time | This alert fires when the response time for a given IIS server is greater than one second. | Warning | > 0 | 0 |
+| IIS - ASP.NET Application Errors | This alert fires when we detect an error in the ASP.NET applications running on an IIS server. | Warning | >0 | < = 0 |
+| IIS - Blocked Async IO Requests | This alert fires when we detect that there are blocked async I/O requests on an IIS server. | Warning | >0 | < = 0 |
 
 ## Viewing IIS Dashboards
 
@@ -688,7 +599,7 @@ Use this dashboard to:
 
 ### Performance Snapshot
 
-The **IIS - Performance Snapshot **dashboard provides detailed information on your IIS infrastructure integrity and performance. Dashboard panels show details on Web Service uptime, active connections, requests, user activity, and total bytes transferred. Panels also provide HTTP Service Request Queues details, such as arrivals, queue size, cache hit rate, and rejection rate.
+The **IIS - Performance Snapshot** dashboard provides detailed information on your IIS infrastructure integrity and performance. Dashboard panels show details on Web Service uptime, active connections, requests, user activity, and total bytes transferred. Panels also provide HTTP Service Request Queues details, such as arrivals, queue size, cache hit rate, and rejection rate.
 
 Use this dashboard to:
 * Monitor incoming request traffic, along with queue size and rejection rate to identify any bottlenecks.

@@ -10,7 +10,9 @@ Here's a high-level overview of how to create a new Sumo Logic doc.
 
 ## Prerequisites
 
-{@import ../reuse/doc-prerequisites.md}
+import DocPrereq from '../reuse/doc-prerequisites.md';
+
+<DocPrereq/>
 
 ## Step 1: Fork the Sumo Docs repository
 
@@ -42,7 +44,8 @@ In your IDE, write the body of your doc.
 
 :::tip Recommended authoring tools
 
-<details><summary>If you're new to GitHub and/or writing Markdown, we recommend using the following apps (click to expand):</summary>
+<details>
+<summary>If you're new to GitHub and/or writing Markdown, we recommend using the following apps (click to expand):</summary>
 
 * [VS Code](https://code.visualstudio.com/): Development application to open the repo, edit and create files, and preview pages as you write. We recommend the following extensions:
    * Markdown All in One
@@ -101,11 +104,11 @@ We use Yarn for all installs and builds. Never use NPM commands for installing o
 ## Step 9: Submit your request
 
 1. Commit your changes to the branch with a meaningful message.<br/>![pull request](/img/contributing/commit.png) Use descriptive commit messages (and issue or ticket numbers, if applicable) detailing the content updates you are entering for content. One-line messages are fine for small changes, but bigger changes should look like this:
-  ```bash
-  $ git commit -m "A brief summary of the commit
-  >
-  > A paragraph describing what changed and its impact."
-  ```
+    ```bash
+    $ git commit -m "A brief summary of the commit
+    >
+    > A paragraph describing what changed and its impact."
+    ```
 1. Set permissions to allow maintainers to edit and update the PR ([learn more](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork)).
 1. Push your branch to the forked repo.
 1. Visit [our repo](https://github.com/SumoLogic/sumologic-documentation) after pushing your branch. If you see an option to **Compare & pull request** for your branch, click this.<br/>![compare](/img/contributing/compare-pr.png)

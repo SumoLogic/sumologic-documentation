@@ -36,11 +36,11 @@ To schedule a dashboard email report, do the following:
    * **Subject.** Enter a subject for the email.
    * **Message.** Enter the body of the email.
 
-:::note
+### Limitations
+
 * You can schedule only one export per dashboard.
 * Altering the queries or template variables will not update the scheduled report.
 * You can enter up to 20 email addresses to which you want to send the dashboard.
-:::
 
 ## Edit a Scheduled Report
 

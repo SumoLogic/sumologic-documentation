@@ -18,7 +18,8 @@ The Sumo Logic Collector uses Okta System Log API to get the logs of Okta System
 
 ### Sample Log message
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -196,7 +197,9 @@ The Okta Log Collection configuration via SumoJanus is no longer applicable and 
 
 Now that you have set up collection for Okta, install the Sumo Logic App for Okta to use the preconfigured searches and dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Okta Dashboards
 
@@ -221,7 +224,7 @@ Shows the details of administrative actions such as the geolocation of applicati
 
 **Okta Admin Access**. See the user ID, city, display message, outcome result, and count of the Okta Admin Access in the last 24 hours displayed in a table.
 
-**Connect AD Agent to Okta. **See the details of connect AD agent to Okta such as the Okta user ID, outcome result, display message, and count, in the last 24 hours.
+**Connect AD Agent to Okta.** See the details of connect AD agent to Okta such as the Okta user ID, outcome result, display message, and count, in the last 24 hours.
 
 <img src={useBaseUrl('img/integrations/saml/Okta-AdministrativeActions.png')} alt="Okta-AdministrativeActions" />
 

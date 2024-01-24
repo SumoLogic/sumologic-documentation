@@ -91,7 +91,9 @@ In some cases, your query results may show `"HIDDEN_DUE_TO_SECURITY_REASONS"` as
 
 Now that you have set up collection, install the Amazon CloudTrail - Cloud Security Monitoring and Analytics app to use the preconfigured searches and Dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing AWS CloudTrail Dashboards
 
@@ -107,7 +109,7 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 
 ### Security Analytics - Access Monitoring
 
-**Description: **See the details of security group activities and all AWS activities divided by read only and non read only.
+**Description:** See the details of security group activities and all AWS activities divided by read only and non read only.
 
 **Use Case:** Provides analysis of group activity events including revoking and authorizing access, creating and deleting groups, and other events.
 
@@ -125,7 +127,7 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 
 ### Security Monitoring - Account and System Monitoring
 
-**Description: **See the details of identity and access management for users, roles, access keys and other aspects of identity.
+**Description:** See the details of identity and access management for users, roles, access keys and other aspects of identity.
 
 **Use Case:** Provides analysis of IAM activity. Analysis of created and deleted users as well as a summary of IAM events. Created and deleted roles are evidenced. An additional set of analysis looks into password management, user changes in groups and other events.
 
@@ -142,7 +144,7 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 
 ### AWS CloudTrail - Security Analytics - Privileged Activity
 
-**Description: **Provides analytics on events that require elevated privileges.
+**Description:** Provides analytics on events that require elevated privileges.
 
 **Use Case:** Provides top events, trending and outliers on configuration changes, security group events, and security policy changes.
 
@@ -152,6 +154,6 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 
 **Description:** Review this dashboard for details on potential threats and IOCs for AWS CloudTrail.
 
-**Use Case: **Provides analysis on Threats Associated with CloudTrail Events, Threats By Actor, Threats by Events and I.P, Threats by Events and Result, Threats by Geo Location, Threats Over Time by Result.
+**Use Case:** Provides analysis on Threats Associated with CloudTrail Events, Threats By Actor, Threats by Events and I.P, Threats by Events and Result, Threats by Geo Location, Threats Over Time by Result.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Monitoring-Threat-Intelligence.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />

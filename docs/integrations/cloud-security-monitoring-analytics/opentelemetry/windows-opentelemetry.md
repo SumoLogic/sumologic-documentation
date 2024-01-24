@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 Windows - Cloud Security Monitoring and Analytics - OpenTelemetry is a unified log app that ingests distribution of Windows data to Sumo Logic via OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver). The app's preconfigured dashboards provide insight into user accounts, login activity, and Windows updates.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-WIndows-JSON-Schematics.png' alt="PCI-Windows-JSON-Schematics" style={{border: '1px solid black'}} />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-WIndows-JSON-Schematics.png' alt="PCI-Windows-JSON-Schematics" style={{border: '1px solid gray'}} />
 
 ## Fields created in Sumo Logic for Windows
 
@@ -34,16 +34,20 @@ Standard Windows event channels include:
 ## Collection configuration and app installation
 
 :::note
-You can skip this section if you have already set up the logs collection through [Windows](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry/). Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
+- You can skip this section if you have already set up the logs collection through [Windows PCI](/docs/integrations/pci-compliance/opentelemetry/windows-json-opentelemetry) or  [Windows](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry) or [Active Directory](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Collector.png' alt="Linux-Collector" style={{border: '1px solid black'}} />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/Linux-Collector.png' alt="Linux-Collector" style={{border: '1px solid gray'}} />
 
 ### Step 2: Configure integration
 
@@ -53,11 +57,13 @@ Any custom fields can be tagged along with the data in this step.
 
 Once the details are filled in, click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-YAML.png' style={{border: '1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-YAML.png' style={{border: '1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -81,24 +87,32 @@ Once the details are filled in, click on the **Download YAML File** button to ge
 
 <TabItem value="Chef">
 
-{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
 
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 ## Sample log message
 
@@ -228,64 +242,66 @@ sumo.datasource=windows "Microsoft-Windows-Security-Auditing" ("4770" OR "4771" 
 
 ## Viewing Windows - Cloud Security Monitoring and Analytics dashboards
 
-{@import ../../../reuse/filter-dashboards.md}
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
 
 ### Default Accounts Usage​
 
 The **Windows - Security Analytics - Default Accounts Usage** dashboard displays analytics of default account usage including Administrator, Guest, System, and Root accounts.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-Default-Accounts-Usage.png' style={{border: '1px solid black'}} alt="Windows-Security-Analytics-Default-Accounts-Usage" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-Default-Accounts-Usage.png' style={{border: '1px solid gray'}} alt="Windows-Security-Analytics-Default-Accounts-Usage" />
 
 ### TLS Certificates and Secure Channels​
 
 The **Windows - Security Analytics - TLS Certificates and Secure Channels** dashboard provides security analytics on TLS and Schannel events.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-TLS-Certificates-and-Secure-Channels.png' style={{border: '1px solid black'}} alt="Windows-Security-Analytics-TLS-Certificates-and-Secure-Channels" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-TLS-Certificates-and-Secure-Channels.png' style={{border: '1px solid gray'}} alt="Windows-Security-Analytics-TLS-Certificates-and-Secure-Channels" />
 
 ### User Account Changes​
 
 The **Windows - Security Analytics - User Account Changes** dashboard provides analytics on user account changes and events.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-User-Account-Changes.png' style={{border: '1px solid black'}} alt="Windows-Security-Analytics-User-Account-Changes" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-User-Account-Changes.png' style={{border: '1px solid gray'}} alt="Windows-Security-Analytics-User-Account-Changes" />
 
 ### User Authentication​
 
 The **Windows - Security Analytics - User Authentication** dashboard provides security analytics on successful and failed account logins.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-User-Authentication.png' style={{border: '1px solid black'}} alt="Windows-Security-Analytics-User-Authentication" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-User-Authentication.png' style={{border: '1px solid gray'}} alt="Windows-Security-Analytics-User-Authentication" />
 
 ### User Group Updates
 
 The **Windows - Security Analytics - User Group Updates** dashboard provides security analytics on user group updates.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-User-Group-Updates.png' style={{border: '1px solid black'}} alt="Windows-Security-Analytics-User-Group-Updates" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-User-Group-Updates.png' style={{border: '1px solid gray'}} alt="Windows-Security-Analytics-User-Group-Updates" />
 
 ### Windows Defender
 
 The **Windows - Security Analytics - User Authentication** dashboard provides security analytics on Windows Defender events.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-Windows-Defender.png' style={{border: '1px solid black'}} alt="Windows-Security-Analytics-Windows-Defender" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-Windows-Defender.png' style={{border: '1px solid gray'}} alt="Windows-Security-Analytics-Windows-Defender" />
 
 ### Windows Firewall
 
 The **Windows - Security Analytics - Windows Firewall** dashboard provides security analytics on Windows Firewall events.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-Windows-Firewall.png' style={{border: '1px solid black'}} alt="Windows-Security-Analytics-Windows-Firewall" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-Windows-Firewall.png' style={{border: '1px solid gray'}} alt="Windows-Security-Analytics-Windows-Firewall" />
 
 ### Windows Updates
 
 The **Windows - Security Analytics - Windows Updates** dashboard provides security Windows Updates events.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-Windows-Updates.png' style={{border: '1px solid black'}} alt="Windows-Security-Analytics-Windows-Updates" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Analytics-Windows-Updates.png' style={{border: '1px solid gray'}} alt="Windows-Security-Analytics-Windows-Updates" />
 
 ### Critical Events​
 
 The **WWindows - Security Monitoring - Critical Events** dashboard provides analysis of critical security events related to services stopped, audit logs tampered, and logging ingestion delays.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Monitoring-Critical-Events.png' style={{border: '1px solid black'}} alt="Windows-Security-Monitoring-Critical-Events" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Monitoring-Critical-Events.png' style={{border: '1px solid gray'}} alt="Windows-Security-Monitoring-Critical-Events" />
 
 ### Inventory​
 
 The **Windows - Security Monitoring - Inventory** dashboard helps you to monitor windows events provided by computer, channel, and provider. This dashboard also provides additional information on computer reboots.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Monitoring-Inventory.png' style={{border: '1px solid black'}} alt="Windows-Security-Monitoring-Inventory" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-Cloud-Security-Monitoring-and-Analytics/OpenTelemetry/Windows-Security-Monitoring-Inventory.png' style={{border: '1px solid gray'}} alt="Windows-Security-Monitoring-Inventory" />

@@ -69,7 +69,9 @@ See [Suggested Searches for Linux OS](#Suggested_Searches_for_Linux_OS).
 
 Now that you have set up collection for Linux, install the Sumo Logic App for Linux to use the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Linux Dashboards
 
@@ -98,7 +100,7 @@ Click the funnel icon in the upper left of the dashboard to display filtering op
 
 ### Login Status
 
-**Dashboard description: **See information about logins to Linux hosts; including logins by hour; failed logins per host; the top 30 successful and failed logins; and the top 30 successful and failed remote logins.  
+**Dashboard description:** See information about logins to Linux hosts; including logins by hour; failed logins per host; the top 30 successful and failed logins; and the top 30 successful and failed remote logins.  
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/LoginStatus.png')} alt="Linux dashboards" />
 
@@ -109,7 +111,7 @@ Click the funnel icon in the upper left of the dashboard to display filtering op
 
 ### Security Status
 
-**Dashboard description: **See information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
+**Dashboard description:** See information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/SecurityStatus.png')} alt="Linux dashboards" />
 

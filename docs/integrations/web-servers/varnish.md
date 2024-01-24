@@ -271,8 +271,8 @@ Please enter values for the following parameters (marked `CHANGEME` above):
     * `use_sudo` - If running as a restricted user, prepend sudo for additional access.
     * **`stats`** - Stats may also be set to ["*"], which will collect all stats. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) for more information on additional parameters for configuring the Varnish input plugin for Telegraf.
     * In the tags section, which is `[inputs.varnish.tags]`
-        * `environment` - This is the deployment environment where the Varnish cluster identified by the value of **servers** resides. For example; dev, prod or qa. While this value is optional we highly recommend setting it.
-        * **`cache_cluster` **- Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. This is the deployment environment where the Varnish cluster identified by the value of **servers** resides. For example; dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `cache_cluster`. Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * In the output plugins section, which is `[[outputs.sumologic]]`
     * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
@@ -308,7 +308,7 @@ By default, Varnish logs are stored in a log file. Sumo Logic supports collectin
      * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in **/var/log/varnish/varnishncsa.log**.
      * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
      * **Source Category.** Enter any string to tag the output collected from this Source, such as **Varnish/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices.md).)
-     * **Fields. **Set the following fields:
+     * **Fields.** Set the following fields:
        * `component = cache`
        * `cache_system = varnish`
        * `cache_cluster = <Your_Varnish_Cluster_Name>`
@@ -317,7 +317,7 @@ By default, Varnish logs are stored in a log file. Sumo Logic supports collectin
      * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
      * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Varnish Server’s time zone.
      * **Timestamp Format.** The timestamp format is automatically detected.
-     * **Encoding. **Select** **UTF-8 (Default).
+     * **Encoding.** Select UTF-8 (Default).
      * **Enable Multiline Processing.** Detect messages spanning multiple lines
     * Infer Boundaries - Detect message boundaries automatically
    4. Click **Save**.
@@ -347,7 +347,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 3. Go to **Manage Data > Alerts > Monitors**.
 4. Click **Add**.
 5. Click **Import.**
-6. On the** Import Content popup**, enter **Varnish** in the Name field, paste the JSON into the popup, and click **Import**.
+6. On the **Import Content** popup, enter **Varnish** in the **Name** field, paste the JSON into the popup, and click **Import**.
 7. The monitors are created in a "Varnish" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 ### Method B: Using a Terraform script
@@ -560,131 +560,13 @@ Use this dashboard to:
 
 Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Varnish cache is available and performing as expected.
 
-<table>
-  <tr>
-   <td>Alert Type (Metrics/Logs)
-   </td>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Varnish - Backend Busy
-   </td>
-   <td>This alert fires when the Varnish backend is busy for more than 5 minutes and is unable to serve requests.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Varnish - Backend Connection Retries
-   </td>
-   <td>This alert fires when there a more than 5 backend connection retries, which can indicate misconfiguration.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;5
-   </td>
-   <td> &#60; &#61;5
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Varnish - Backend Failed Connections
-   </td>
-   <td>This alert fires when there are failed connections to the backend.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Varnish - Unhealthy Backend
-   </td>
-   <td>This alert fires when we detect that a backend server is unhealthy for more than 5 minutes.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Varnish - Thread creation failed
-   </td>
-   <td>This alert fires when Varnish is unable to create threads, which indicates either under-provisioning or misconfiguration.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Varnish - Access from Highly Malicious Sources
-   </td>
-   <td>This alert fires when Varnish is accessed from highly malicious IP addresses.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Varnish - High 4XX Error Rate
-   </td>
-   <td>This alert fires when too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;5
-   </td>
-   <td> &#60; &#61;5
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Varnish - High 5XX Error Rate
-   </td>
-   <td>This alert fires when too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;5
-   </td>
-   <td> &#60; &#61;5
-   </td>
-  </tr>
-</table>
+| Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|:---|:---|
+| Metrics | Varnish - Backend Busy | This alert fires when the Varnish backend is busy for more than 5 minutes and is unable to serve requests. | Warning | >0 | < =0 |
+| Metrics | Varnish - Backend Connection Retries | This alert fires when there a more than 5 backend connection retries, which can indicate misconfiguration. | Warning | >5 | < =5 |
+| Metrics | Varnish - Backend Failed Connections | This alert fires when there are failed connections to the backend. | Warning | >0 | < =0 |
+| Metrics | Varnish - Unhealthy Backend | This alert fires when we detect that a backend server is unhealthy for more than 5 minutes. | Critical | >0 | < =0 |
+| Metrics | Varnish - Thread creation failed | This alert fires when Varnish is unable to create threads, which indicates either under-provisioning or misconfiguration. | Warning | >0 | < =0 |
+| Logs | Varnish - Access from Highly Malicious Sources | This alert fires when Varnish is accessed from highly malicious IP addresses. | Critical | >0 | < =0 |
+| Logs | Varnish - High 4XX Error Rate | This alert fires when too many HTTP requests (>5%) with a response status of 4xx. | Critical | >5 | < =5 |
+| Logs | Varnish - High 5XX Error Rate | This alert fires when too many HTTP requests (>5%) with a response status of 5xx. | Critical | >5 | < =5 |

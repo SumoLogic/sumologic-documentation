@@ -33,7 +33,9 @@ While the span analytics query is running you need to request the query status b
 
 ## Errors
 
-{@import ../reuse/api-errors.md}
+import ApiErrors from '../reuse/api-errors.md';
+
+<ApiErrors/>
 
 ## Documentation   
 

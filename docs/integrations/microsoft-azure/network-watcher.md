@@ -93,7 +93,7 @@ To configure an Azure storage account, do the following:
    * Select **Blobs** under **Blob Service**.
       * Select **+ Container**,
       * Enter the Name
-      * Select** Private** for the Public Access Level.
+      * Select **Private** for the Public Access Level.
       * Click **OK**.
 
 Make a note of the container name. You will need to supply it later.
@@ -137,7 +137,7 @@ This template uses Consumption Plan which does not support VNet integration. For
     :::
 1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deployment" width="400" />
 1. Verify the deployment was successful by looking at **Notifications** at top right corner of Azure Portal.
-1. (Optional) In the same window, click** Go to resource group** to verify the all resources were successfully created, such as shown in the following example:
+1. (Optional) In the same window, click **Go to resource group** to verify the all resources were successfully created, such as shown in the following example:
 1. Go to **Storage accounts** and search for **sumobrlogs**, then select `sumobrlogs<random-string>`.
 1. In the **Data Storage** menu, do the following:
     1. Click **Tables**.
@@ -159,7 +159,9 @@ If logs don't start flowing into Sumo Logic after you perform the configuration 
 
 Now that you have configured Azure Network Watcher, install the Sumo Logic app for Azure Network Watcher to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Azure Network Watcher dashboards
 

@@ -6,6 +6,7 @@ description: Learn how integrations are connectors to applications from industry
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ActionLimit from '../../reuse/action-limits.md';
 
 Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.      
 
@@ -16,7 +17,7 @@ Before you can use actions from an integration resource, you must [configure the
 :::
 
 :::note
-{@import ../../reuse/action-limits.md}
+<ActionLimit/>
 :::
 
 ## View integrations

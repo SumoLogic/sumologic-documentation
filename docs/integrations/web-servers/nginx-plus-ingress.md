@@ -36,7 +36,7 @@ The Sumo Logic app for Nginx Plus Ingress assumes Prometheus format Metrics for 
 
 ### Sample Query
 
-This sample query is from the **Visitor Locations **panel of the **Nginx Plus Ingress - Overview** dashboard.
+This sample query is from the **Visitor Locations** panel of the **Nginx Plus Ingress - Overview** dashboard.
 
 ```
 Cluster={{Cluster}} Namespace={{Namespace}} Deployment={{Deployment}} Pod={{Pod}} _sourceCategory = *ingress*
@@ -124,11 +124,11 @@ The monitors are disabled by default. Once you have installed the alerts via thi
 ### Method B: Using a Terraform script
 
 1. Generate a Sumo Logic [access key](/docs/manage/security/access-keys#create-an-access-keyon-preferences-page) and access ID for a user that has the[ Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html)** or later.
+2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for Nginx Ingress alerts: The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus-ingress). You can either download it via the “git clone” command or as a zip file.
 4. Alert Configuration: After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/**. Edit the **nginxplusingress.auto.tfvars** file as per below instructions:
    1. Add the Sumo Logic Access Key, Access Id, Deployment from Step 1.
-   ```sql
+   ```sh
    access_id   = "<YOUR SUMO ACCESS ID>"
    access_key  = "<YOUR SUMO ACCESS KEY>"
    environment = "<DEPLOYMENT>"
@@ -174,7 +174,7 @@ email_notifications = [
 ```
 
 6. Install the Alerts:
-   1. Navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/** and run **terraform init. **This will initialize Terraform and will download the required components.
+   1. Navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/** and run **terraform init.** This will initialize Terraform and will download the required components.
    2. Run `terraform plan` to view the monitors resources which will be created/modified by Terraform.
    3. Run `terraform apply`.
 7. Post Installation steps: If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Step 4](/docs/alerts/monitors#add-a-monitor).
@@ -184,7 +184,9 @@ There are limits to how many alerts can be enabled - please see the[ Alerts FAQ]
 
 ## Installing the Nginx Plus Ingress app
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Nginx Plus Ingress Dashboards
 
@@ -369,65 +371,10 @@ Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors
 
 Sumo Logic provides the following out-of-the-box alerts:
 
-<table>
-  <tr>
-   <td><strong>Alert Name</strong>
-   </td>
-   <td><strong>Alert Description</strong>
-   </td>
-   <td><strong>Alert Condition</strong>
-   </td>
-   <td><strong>Recover Condition</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus Ingress - Dropped Connections
-   </td>
-   <td>This alert fires when we detect dropped connections for a given Nginx Plus server.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60;&#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus Ingress - Critical Error Messages
-   </td>
-   <td>This alert fires when we detect critical error messages for a given Nginx Plus server.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60;&#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus Ingress - Access from Highly Malicious Sources
-   </td>
-   <td>This alert fires when an Nginx is accessed from highly malicious IP addresses.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60;&#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus Ingress - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60;&#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus Ingress - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60;&#61;0
-   </td>
-  </tr>
-</table>
+| Alert Name | Alert Description | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|
+| Nginx Plus Ingress - Dropped Connections | This alert fires when we detect dropped connections for a given Nginx Plus server. | > 0 | `<=`0 |
+| Nginx Plus Ingress - Critical Error Messages | This alert fires when we detect critical error messages for a given Nginx Plus server. | > 0 | `<=`0 |
+| Nginx Plus Ingress - Access from Highly Malicious Sources | This alert fires when an Nginx is accessed from highly malicious IP addresses. | > 0 | `<=`0 |
+| Nginx Plus Ingress - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | > 0 | `<=`0 |
+| Nginx Plus Ingress - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | > 0 | `<=`0 |

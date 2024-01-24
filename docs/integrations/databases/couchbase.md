@@ -239,7 +239,8 @@ The Sumo Logic Couchbase app supports the audit log, query log, error log, acces
    2. If you're using a service like Fluentd, or you would like to upload your logs manually, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. **Configure a local file source**. Choose one of the options:
 
-<details><summary>4A. <strong>For an Installed Collector</strong> (click to expand)</summary>
+<details>
+<summary>4A. <strong>For an Installed Collector</strong> (click to expand)</summary>
 
 To collect logs directly from your Couchbase machine, use an Installed Collector and Multi Local File Source. Repeat the below steps for each log source: audit log, query log, error log, access log.
 
@@ -281,7 +282,8 @@ To collect logs directly from your Couchbase machine, use an Installed Collector
 
 </details>
 
-<details><summary>4B. <strong>For a Hosted Collector</strong> (click to expand)</summary>
+<details>
+<summary>4B. <strong>For a Hosted Collector</strong> (click to expand)</summary>
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
@@ -398,7 +400,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Couchbase/couchbase.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Couchbase clusters, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=couchbase` with `<Your Custom Filter>`. Custom filter examples:
    1. For alerts applicable only to a specific cluster, your custom filter would be, `'db_cluster=couchbase-standalone.01'`.
    2. For alerts applicable to all cluster that start with couchbase-standalone, your custom filter would be,`db_cluster=couchbase-standalone*`.
-   3. For alerts applicable to a specific cluster within a production environment, your custom filter would be**,`db_cluster=couchbase-1`** and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
+   3. For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=couchbase-1` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
 3. Go to Manage Data > Alerts > Monitors.
 4. Click **Add**:
 5. Click Import and then copy-paste the above JSON to import monitors.
@@ -601,115 +603,67 @@ Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors
 
 <table>
   <tr>
-   <td>Alert Type (Metrics/Logs)
-   </td>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
+   <td>Alert Type (Metrics/Logs) </td>
+   <td>Alert Name </td>
+   <td>Alert Description   </td>
+   <td>Trigger Type (Critical / Warning) </td>
+   <td>Alert Condition   </td>
+   <td>Recover Condition   </td>
   </tr>
   <tr>
-   <td>Logs
-   </td>
-   <td>Couchbase - Bucket Not Ready
-   </td>
-   <td>This alert fires when a bucket in the Couchbase cluster is not ready.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#60; 0
-   </td>
-   <td>&#60; &#61;0
-   </td>
+   <td>Logs   </td>
+   <td>Couchbase - Bucket Not Ready   </td>
+   <td>This alert fires when a bucket in the Couchbase cluster is not ready.   </td>
+   <td>Critical   </td>
+   <td> &#60; 0   </td>
+   <td>&#60; &#61;0   </td>
   </tr>
   <tr>
-   <td>Logs
-   </td>
-   <td>Couchbase - Node Down
-   </td>
-   <td>This alert fires when a node in the Couchbase cluster is down.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62;
-   </td>
-   <td>&#60; &#61;0
-   </td>
+   <td>Logs   </td>
+   <td>Couchbase - Node Down   </td>
+   <td>This alert fires when a node in the Couchbase cluster is down.   </td>
+   <td>Critical   </td>
+   <td>&#62;   </td>
+   <td>&#60; &#61;0   </td>
   </tr>
   <tr>
-   <td>Logs
-   </td>
-   <td>Couchbase - Node Not Respond
-   </td>
-   <td>This alert fires when a node in the Couchbase cluster does not respond too many times.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 10
-   </td>
-   <td>&#60; 10
-   </td>
+   <td>Logs   </td>
+   <td>Couchbase - Node Not Respond   </td>
+   <td>This alert fires when a node in the Couchbase cluster does not respond too many times.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 10 </td>
+   <td>&#60; 10   </td>
   </tr>
   <tr>
-   <td>Logs
-   </td>
-   <td>Couchbase - Too Many Error Queries on Buckets
-   </td>
-   <td>This alert fires when there are too many errors queries on a bucket in a Couchbase cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1000
-   </td>
-   <td>&#60; 1000
-   </td>
+   <td>Logs   </td>
+   <td>Couchbase - Too Many Error Queries on Buckets   </td>
+   <td>This alert fires when there are too many errors queries on a bucket in a Couchbase cluster.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1000   </td>
+   <td>&#60; 1000   </td>
   </tr>
   <tr>
-   <td>Logs
-   </td>
-   <td>Couchbase - Too Many Login Failures
-   </td>
-   <td>This alert fires when there are too many login failures to a node in a Couchbase cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1000
-   </td>
-   <td>&#60; 1000
-   </td>
+   <td>Logs   </td>
+   <td>Couchbase - Too Many Login Failures   </td>
+   <td>This alert fires when there are too many login failures to a node in a Couchbase cluster. </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1000   </td>
+   <td>&#60; 1000   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>Couchbase - High CPU Usage
-   </td>
-   <td>This alert fires when CPU usage on a node in a Couchbase cluster is high.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>Metrics   </td>
+   <td>Couchbase - High CPU Usage   </td>
+   <td>This alert fires when CPU usage on a node in a Couchbase cluster is high.  </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>Couchbase - High Memory Usage
-   </td>
-   <td>This alert fires when memory usage on a node in a Couchbase cluster is high.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>Metrics   </td>
+   <td>Couchbase - High Memory Usage   </td>
+   <td>This alert fires when memory usage on a node in a Couchbase cluster is high.  </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80 </td>
   </tr>
 </table>

@@ -167,7 +167,9 @@ Sumo Logic needs to understand the event type for incoming events. To enable thi
 
 Now that you have set up collector GitHub, install the Sumo Logic App for GitHub to use the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 #### Troubleshooting
 
@@ -189,7 +191,7 @@ Use this dashboard to:
 
 ### Branch Overview
 
-The **GitHub - Branch Overview **dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
+The **GitHub - Branch Overview** dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
 
 Use this dashboard to:
 
@@ -224,7 +226,7 @@ Use this dashboard to:
 
 ### Security
 
-The **GitHub - Security **dashboard provides detailed information on the security events and repositories.
+The **GitHub - Security** dashboard provides detailed information on the security events and repositories.
 
 Use this dashboard to:
 * Manage users.

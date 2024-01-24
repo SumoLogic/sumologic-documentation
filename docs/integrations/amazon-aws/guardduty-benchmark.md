@@ -83,7 +83,8 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 
 ### Sample Log Message
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -279,7 +280,7 @@ Use this dashboard to:
 
 ### 4. My Company v. Global Baseline: Rare Threats
 
-The** My Company v. Global Baseline: Rare Threats** dashboard compares your company against Sumo Logic customers with respect to rare threats, defined as threats that account for less than 0.2% of total GuardDuty findings.
+The **My Company v. Global Baseline: Rare Threats** dashboard compares your company against Sumo Logic customers with respect to rare threats, defined as threats that account for less than 0.2% of total GuardDuty findings.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/GDB_My_Company_v_Global_Baseline_Rare_Threats.png')} alt="Amazon GuardDuty Benchmark" />
 

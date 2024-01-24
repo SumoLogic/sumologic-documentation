@@ -13,7 +13,7 @@ Amazon Simple Storage Service (S3) provides a simple web services interface that
 
 ## Log Types
 
-Amazon S3 Audit uses Server Access Logs (activity logs). For more information on the log format, see: [http://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html](http://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html).
+Amazon S3 Audit uses Server Access Logs (activity logs). For more information, see [Amazon S3 server access log format](http://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html).
 
 
 ### Sample Log Message
@@ -58,7 +58,9 @@ In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/
 
 ### Configure an S3 Audit Source
 
-{@import ../../reuse/apps/create-aws-s3-source.md}
+import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
+
+<Aws3/>
 
 ### Field Extraction Rules
 
@@ -74,7 +76,9 @@ parse "* * [*] * * * * * \"* HTTP/1.1\" * * * * * * * \"*\" *" as bucket_owner, 
 
 Now that you have configured log collection for Amazon S3 Audit, install the Sumo Logic App for Amazon S3, and take advantage of predefined Searches and dashboards. The Sumo Logic App for Amazon S3 Audit presents details from access logs that contain information about the request type, the average response time, and the inbound and outbound data volume.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Amazon S3 Audit Dashboards
 

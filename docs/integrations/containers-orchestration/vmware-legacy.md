@@ -232,7 +232,7 @@ vcenter03.company.com "domain_name\user_name"
 4. Run **/usr/lib/vmware-vcli/apps/general/credstore_admin.pl list** to get a list of all the vCenter Servers you have already configured for authentication. 
 5. Edit the following in the **cron_vcenter_perf.sh** script:
     * Change the **SCRIPT_PATH** variable to reflect the absolute path where the script resides.
-    * Select the method you'd like to use to collect performance data. Then, uncomment the line that calls**$SCRIPT_PATH/getserver_perf.pl**. For more information, see Segmenting Collection.
+    * Select the method you'd like to use to collect performance data. Then, uncomment the line that calls **$SCRIPT_PATH/getserver_perf.pl**. For more information, see Segmenting Collection.
 
 Test the command used in the cron script before testing the cron command and enabling it as described in [Troubleshooting and Manual Testing](#Troubleshooting_and_Manual_Testing).
 ```bash
@@ -297,7 +297,7 @@ Because the above information is logged into /var/log/message for cron jobs, it'
 
 ### Collect Historical Events
 
-By default, the first time** query_vCenter.pl** is called, events from the past 24 hours are collected. Each time the script is called, it writes the timestamp of the last read event in a file named **.timelog** for the next call to pick up.
+By default, the first time **query_vCenter.pl** is called, events from the past 24 hours are collected. Each time the script is called, it writes the timestamp of the last read event in a file named **.timelog** for the next call to pick up.
 
 If you want to collect events older than the past 24 hours, before setting up the CRON job for **cron_vcenter_events.sh**, do the following on the VMA machine.
 
@@ -350,13 +350,15 @@ Once you are satisfied with the time it takes for collecting data for a segment,
 
 ## Install the VMware (Legacy) App
 
-:::caution
+:::warning
 A newer app, [VMware ULM](/docs/integrations/containers-orchestration/vmware), is available. The App on this page is based on the vMA technology running on legacy vSphere versions 6.0 and prior. The vMA technology is no longer supported by VMware.
 :::
 
 Now that you have set up collection, install the Sumo Logic App for VMware to use the preconfigured searches and dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing VMware Dashboards
 

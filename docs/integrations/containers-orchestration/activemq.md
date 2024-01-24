@@ -207,7 +207,7 @@ Enter values for the following parameters (marked `CHANGE_ME` above):
       * `environment` - This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `messaging_cluster` - Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-  :::caution Do not modify these values
+  :::warning Do not modify these values
 
   Modifying these values will cause the Sumo Logic apps to not function correctly.
 
@@ -243,7 +243,7 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
      * `environment`. This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
      * `messaging_cluster`. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-   :::caution Do not modify these values
+   :::warning Do not modify these values
 
    Modifying these values will cause the Sumo Logic apps to not function correctly.
 
@@ -398,7 +398,7 @@ This section provides instructions for configuring metrics collection for the Su
   * In the output plugins section, which is `[[outputs.sumologic]]`:
     * `url` - This is the HTTP source URL created in step 3 (Install Telegraf). Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
-  :::caution Do not modify these values
+  :::warning Do not modify these values
 
   Modifying these values set by this Telegraf configuration will cause the Sumo Logic apps to not function correctly.   
   * `data_format - "prometheus"` In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic.
@@ -500,7 +500,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
     environment = "<SUMOLOGIC DEPLOYMENT>"
     ```
   The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `'activemq_data_source'`. Custom filter examples:
-    * A specific cluster **`'messaging_cluster=activemq.prod.01'`
+    * A specific cluster `'messaging_cluster=activemq.prod.01'`
     * All clusters in an environment `'environment=prod'`
     * For alerts applicable to all clusters that start with activemq-prod, your custom filter would be: `'messaging_cluster=activemq-prod*'`
     * For alerts applicable to a specific cluster within a production environment, your custom filter would be:`activemq_cluster=activemq-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)
@@ -582,214 +582,124 @@ Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors
 
 <table>
   <tr>
-   <td>Alert Type (Metrics/Logs)
-   </td>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
+   <td>Alert Type (Metrics/Logs)   </td>
+   <td>Alert Name   </td>
+   <td>Alert Description   </td>
+   <td>Trigger Type (Critical / Warning)   </td>
+   <td>Alert Condition   </td>
+   <td>Recover Condition   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>ActiveMQ - High CPU Usage
-   </td>
-   <td>This alert fires when CPU usage on a node in a ActiveMQ cluster is high.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; &#61; 80
-   </td>
-   <td> &#60; 80
-   </td>
+   <td>Metrics   </td>
+   <td>ActiveMQ - High CPU Usage   </td>
+   <td>This alert fires when CPU usage on a node in a ActiveMQ cluster is high.   </td>
+   <td>Critical   </td>
+   <td> &#62; &#61; 80   </td>
+   <td> &#60; 80   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>ActiveMQ - High Host Disk Usage
-   </td>
-   <td>This alert fires when there is high disk usage on a node in an ActiveMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>Metrics   </td>
+   <td>ActiveMQ - High Host Disk Usage   </td>
+   <td>This alert fires when there is high disk usage on a node in an ActiveMQ cluster.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>ActiveMQ - High Memory Usage
-   </td>
-   <td>This alert fires when memory usage on a node in an ActiveMQ cluster is high.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>Metrics   </td>
+   <td>ActiveMQ - High Memory Usage   </td>
+   <td>This alert fires when memory usage on a node in an ActiveMQ cluster is high.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>ActiveMQ - High Number of File Descriptors in use
-   </td>
-   <td>This alert fires when the percentage of file descriptors used by a node in an ActiveMQ cluster is high.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>Metrics   </td>
+   <td>ActiveMQ - High Number of File Descriptors in use.   </td>
+   <td>This alert fires when the percentage of file descriptors used by a node in an ActiveMQ cluster is high.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>ActiveMQ - High Storage Used
-   </td>
-   <td>This alert fires when there is storage usage on a node that is high in an ActiveMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>Metrics   </td>
+   <td>ActiveMQ - High Storage Used   </td>
+   <td>This alert fires when there is storage usage on a node that is high in an ActiveMQ cluster.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>ActiveMQ - High Temp Usage
-   </td>
-   <td>This alert fires when there is high temp usage on a node in an ActiveMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>Metrics   </td>
+   <td>ActiveMQ - High Temp Usage   </td>
+   <td>This alert fires when there is high temp usage on a node in an ActiveMQ cluster.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80   </td>
   </tr>
   <tr>
-   <td>Logs
-   </td>
-   <td>ActiveMQ - Maximum Connection
-   </td>
-   <td>This alert fires when one node in ActiveMQ cluster exceeds the maximum allowed client connection limit.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1
-   </td>
-   <td>&#60; 1
-   </td>
+   <td>Logs   </td>
+   <td>ActiveMQ - Maximum Connection   </td>
+   <td>This alert fires when one node in ActiveMQ cluster exceeds the maximum allowed client connection limit. </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1   </td>
+   <td>&#60; 1   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>ActiveMQ - No Consumers on Queues
-   </td>
-   <td>This alert fires when an ActiveMQ queue has no consumers.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#60; 1
-   </td>
-   <td>&#62; &#61; 1
-   </td>
+   <td>Metrics   </td>
+   <td>ActiveMQ - No Consumers on Queues   </td>
+   <td>This alert fires when an ActiveMQ queue has no consumers.   </td>
+   <td>Critical   </td>
+   <td>&#60; 1   </td>
+   <td>&#62; &#61; 1   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>ActiveMQ - No Consumers on Topics
-   </td>
-   <td>This alert fires when an ActiveMQ topic has no consumers.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#60; 1
-   </td>
-   <td>&#62; &#61; 1
-   </td>
+   <td>Metrics   </td>
+   <td>ActiveMQ - No Consumers on Topics   </td>
+   <td>This alert fires when an ActiveMQ topic has no consumers.   </td>
+   <td>Critical   </td>
+   <td>&#60; 1   </td>
+   <td>&#62; &#61; 1   </td>
   </tr>
   <tr>
-   <td>Logs
-   </td>
-   <td>ActiveMQ - Node Down
-   </td>
-   <td>This alert fires when a node in the ActiveMQ cluster is down.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1
-   </td>
-   <td>&#60; 1
-   </td>
+   <td>Logs   </td>
+   <td>ActiveMQ - Node Down   </td>
+   <td>This alert fires when a node in the ActiveMQ cluster is down.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1 </td>
+   <td>&#60; 1   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>ActiveMQ - Too Many Connections
-   </td>
-   <td>This alert fires when there are too many connections to a node in an ActiveMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1000
-   </td>
-   <td>&#60; 1000
-   </td>
+   <td>Metrics   </td>
+   <td>ActiveMQ - Too Many Connections   </td>
+   <td>This alert fires when there are too many connections to a node in an ActiveMQ cluster.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1000 </td>
+   <td>&#60; 1000 </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>ActiveMQ - Too Many Expired Messages on Queues
-   </td>
-   <td>This alert fires when there are too many expired messages on a queue in an ActiveMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1000
-   </td>
-   <td>&#60; 1000
-   </td>
+   <td>Metrics   </td>
+   <td>ActiveMQ - Too Many Expired Messages on Queues   </td>
+   <td>This alert fires when there are too many expired messages on a queue in an ActiveMQ cluster.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1000   </td>
+   <td>&#60; 1000   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>ActiveMQ - Too Many Expired Messages on Topics
-   </td>
-   <td>This alert fires when there are too many expired messages on a topic in an ActiveMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1000
-   </td>
-   <td>&#60; 1000
-   </td>
+   <td>Metrics   </td>
+   <td>ActiveMQ - Too Many Expired Messages on Topics   </td>
+   <td>This alert fires when there are too many expired messages on a topic in an ActiveMQ cluster.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1000   </td>
+   <td>&#60; 1000   </td>
   </tr>
   <tr>
-   <td>Metrics
-   </td>
-   <td>ActiveMQ - Too Many Unacknowledged Messages
-   </td>
-   <td>This alert fires when there are too many unacknowledged messages on a node in an ActiveMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1000
-   </td>
-   <td>&#60; 1000
-   </td>
+   <td>Metrics   </td>
+   <td>ActiveMQ - Too Many Unacknowledged Messages   </td>
+   <td>This alert fires when there are too many unacknowledged messages on a node in an ActiveMQ cluster.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1000 </td>
+   <td>&#60; 1000   </td>
   </tr>
 </table>
 

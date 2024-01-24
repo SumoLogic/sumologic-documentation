@@ -33,9 +33,9 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 ### Vendor configuration
 
 1. Login into the [Box Account](https://app.box.com/login).
-2. Create and register a new app from the [App Console](https://app.box.com/developers/console). To register the App with Box follow [these](https://developer.box.com/guides/authentication/jwt/jwt-setup/#app-creation-steps) steps. Select **Server Authentication (with JWT) **as the authentication method. Note that use of a key pair requires  2-step verification to be enabled on Box.
+2. Create and register a new app from the [App Console](https://app.box.com/developers/console). To register the App with Box follow [these](https://developer.box.com/guides/authentication/jwt/jwt-setup/#app-creation-steps) steps. Select **Server Authentication (with JWT)** as the authentication method. Note that use of a key pair requires  2-step verification to be enabled on Box.
 3. Generate `public private key pair` as described in the following steps [Key Pair](https://developer.box.com/guides/authentication/jwt/jwt-setup/#public-and-private-key-pair) and download the JSON file.
-4. Go to the **Configuration** and change **App Access Level** to **App + Enterprise Access** and enable **Manage Enterprise properties** in **Application Scopes** and save changes as shown below.<br/><img src={useBaseUrl('img/send-data/box-source4.png')} alt="Box" style={{border: '1px solid black'}} /><br/><img src={useBaseUrl('img/send-data/box-source5.png')} alt="Box" style={{border: '1px solid black'}} /><br/><img src={useBaseUrl('img/send-data/box-source6.png')} alt="Box" style={{border: '1px solid black'}} />
+4. Go to the **Configuration** and change **App Access Level** to **App + Enterprise Access** and enable **Manage Enterprise properties** in **Application Scopes** and save changes as shown below.<br/><img src={useBaseUrl('img/send-data/box-source4.png')} alt="Box" style={{border: '1px solid gray'}} /><br/><img src={useBaseUrl('img/send-data/box-source5.png')} alt="Box" style={{border: '1px solid gray'}} /><br/><img src={useBaseUrl('img/send-data/box-source6.png')} alt="Box" style={{border: '1px solid gray'}} />
 5. Authorize your app by following the steps in [App Authorization](https://developer.box.com/guides/authentication/jwt/jwt-setup/#app-authorization).
 
 ### Source configuration
@@ -43,7 +43,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 When you create a Box Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors#Create_a_Hosted_Collector).
 
 To configure a Box Source:
-1. In Sumo Logic, navigate to** Manage Data > Collection** and open the **Collection** tab.
+1. In Sumo Logic, navigate to **Manage Data > Collection** and open the **Collection** tab.
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Box**.
 1. Enter a **Name** for the Source. The **description** is optional.

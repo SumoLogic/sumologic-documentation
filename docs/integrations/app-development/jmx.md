@@ -179,7 +179,7 @@ The following steps assume you are collecting JMX metrics from a Kubernetes envi
 1. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md)
 2. On your Pods, add the following annotations to configure Telegraf.
 
-Ensure that Prometheus passes all metrics to Sumo Logic. If you use the below annotations to configure Telegraf, it should work correctly, otherwise, refer to this [doc](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-application-metrics.md).
+Ensure that Prometheus passes all metrics to Sumo Logic. If you use the below annotations to configure Telegraf, it should work correctly; otherwise, refer to [Collecting Application Metrics](/docs/send-data/kubernetes/collecting-metrics).
 
 ```sql
 annotations:
@@ -265,40 +265,28 @@ annotations:
 
 <table>
   <tr>
-   <td>Metric Type
-   </td>
-   <td>Sample
-   </td>
+   <td>Metric Type   </td>
+   <td>Sample   </td>
   </tr>
   <tr>
-   <td>CPU
-   </td>
-   <td>java_lang_OperatingSystem_ProcessCpuLoad
-   </td>
+   <td>CPU   </td>
+   <td>java_lang_OperatingSystem_ProcessCpuLoad   </td>
   </tr>
   <tr>
-   <td>GC
-   </td>
-   <td>java_lang_GarbageCollector_LastGcInfo_duration
-   </td>
+   <td>GC </td>
+   <td>java_lang_GarbageCollector_LastGcInfo_duration   </td>
   </tr>
   <tr>
-   <td>Memory
-   </td>
-   <td>java_lang_Memory_NonHeapMemoryUsage_committed
-   </td>
+   <td>Memory   </td>
+   <td>java_lang_Memory_NonHeapMemoryUsage_committed </td>
   </tr>
   <tr>
-   <td>Threads
-   </td>
-   <td>java_lang_Threading_ThreadCount
-   </td>
+   <td>Threads   </td>
+   <td>java_lang_Threading_ThreadCount   </td>
   </tr>
   <tr>
-   <td>ClassLoader
-   </td>
-   <td>java_lang_ClassLoading_LoadedClassCount
-   </td>
+   <td>ClassLoader   </td>
+   <td>java_lang_ClassLoading_LoadedClassCount   </td>
   </tr>
 </table>
 
@@ -307,7 +295,9 @@ annotations:
 
 This section has instructions for installing the Sumo App for JMX.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing JMX Dashboards
 
@@ -378,7 +368,7 @@ Use this dashboard to:
 
 ### Memory Pool
 
-The **JMX - Memory Pool **dashboard provides key information about the memory pool usage, peak usage, collection usage, garbage collection across various memory pools of your Java virtual machine.
+The **JMX - Memory Pool** dashboard provides key information about the memory pool usage, peak usage, collection usage, garbage collection across various memory pools of your Java virtual machine.
 
 Use this dashboard to:
 * Gain insights into memory usage across different memory pools.

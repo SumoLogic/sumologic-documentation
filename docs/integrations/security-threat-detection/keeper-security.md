@@ -78,7 +78,9 @@ This section provides instructions for installing the Keeper Security App, as we
 
 Now that you have set up collection for Keeper, install the app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Keeper Security Dashboards
 
@@ -95,7 +97,7 @@ This is a general dashboard that shows the geographic locations of user activity
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Keeper_Overview.png')} alt="Keeper_Security dashboards" />
 
-**Use this dashboard to analyze the following data:
+Use this dashboard to analyze the following data:
 
 * **Activity locations**. See the number of application events across the world on a map in the last 24 hours.
 * **Activity by platform**. See the the number of application events by the client or platform in the last 24 hours.
@@ -116,7 +118,7 @@ Provides detailed information on user activity, highlighting access and related 
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Keeper_Activity.png')} alt="Keeper_Security dashboards" />
 
-**Use this dashboard to analyze the following data:**
+Use this dashboard to analyze the following data:
 
 * **Throttled logins**. If a Keeper user tries to log in repeatedly with an incorrect password, this user logins become “throttled” for some time. This panel shows such login attempts for the last 24 hours, which can be an indication that somebody tries to hack this specific user.
 * **Failed logins**. See the time, event type, username, client version for all login failures (vault, console, 2fa) in the last 24 hours.
@@ -126,15 +128,14 @@ Provides detailed information on user activity, highlighting access and related 
 * **Movement**. See the users who logged in from multiple locations that are far from each other in the last 24 hours. Note: while this report would show hacking attempts from foreign countries, users who used both VPN and non-VPN access, can also fall into this category.
 
 
-
-
 ### Policy and Share
 
 Shows details about user management, team and role management, permission management, sharing information, failed logins, and risk related information.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Keeper-Policy-and-Share.png')} alt="Keeper_Security dashboards" />
 
-**Use this dashboard to analyze the following data:
+Use this dashboard to analyze the following data:
+
 * **User management**. See the users who were created, removed, locked or unlocked in the last 7 days.
 * **Team and Role management**. See the users who were added to a role or a team in the last 7 days. (**Note**: Keeper cannot obtain the names of a role and as such cannot log them to Sumo. If you’re interested in the particular role to which the user was added, try adding a test user to roles. Then, compare the ID for the test user role to the ID in which you are interested in.
 * **Enforcements management**. See the permissions that were granted or removed from roles in the last 7 days.

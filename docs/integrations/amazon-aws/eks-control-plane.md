@@ -150,18 +150,18 @@ To configure Amazon CloudWatch log collection, do the following:
 
 Now that you have set up collection for EKS, install the Sumo Logic app for EKS - Control Plane to use the pre-configured Kubernetes dashboards that provide visibility into your EKS environment.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 All the dashboards are linked to the Explore tab so they can be easily accessed by going to the **Explore** tab side navigation and clicking **Cluster**.
 
 
 ## Viewing Dashboards for Amazon EKS - Control Plane
 
-Filter with template variables    
-
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
-
-You can use template variables to drill down and examine the data on a granular level.
+:::note Filter with template variables    
+Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
+:::
 
 ### API Server Audit
 

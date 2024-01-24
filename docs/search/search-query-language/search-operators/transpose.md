@@ -6,7 +6,7 @@ sidebar_label: transpose
 
 Similar to a Pivot Table in Excel, the `transpose` operator allows you to take a list and turn it into a table in the Aggregates tab, as shown by the examples below. You can define what data makes the rows and columns.
 
-**Without transpose, the following query renders factual but not a useful table below:**
+Without `transpose`, the following query renders a factual, but not useful table below:
 
 ```sql
 _sourceCategory=Labs/Apache/Access
@@ -16,7 +16,7 @@ _sourceCategory=Labs/Apache/Access
 
 ![Table without transpose](/img/search/searchquerylanguage/search-operators/transpose/TableWithoutTranspose.png)
 
-**With transpose, you can use your query to define your rows as the timeslice and the columns as the status code:**
+With `transpose`, you can use your query to define your rows as the `timeslice` and the columns as the status code:
 
 ```sql {4}
 _sourceCategory=Labs/Apache/Access
@@ -31,11 +31,11 @@ To make this information present as a table, transpose dynamically creates colum
 
 For example, the screenshots below represent the same data from the same time range, but the second screenshot is generated from a query using the transpose operator.
 
-**Without transpose, the data is represented according to timeslice, but not aggregated by status code:**
+Without transpose, the data is represented according to timeslice, but not aggregated by status code:
 
 ![Without transpose](/img/search/searchquerylanguage/search-operators/transpose/WithoutTranspose.png)
 
-**With transpose, the results display in an easy-to-read manner status codes by timeslice:**
+With transpose, the results display in an easy-to-read manner status codes by timeslice:
 
 ![With transpose](/img/search/searchquerylanguage/search-operators/transpose/WithTranpose.png)
 
@@ -53,10 +53,10 @@ Results can be influenced in three ways:
 
 1. By using a comma-separated list of variable names (such as "a, b"), only the specified output fields appear in the output table.
 1. By using a comma-separated list of variable names, followed by a comma and a star (such as "a, b,\*"), the specified output fields appear in the output table, followed by dynamic fields.
-1. By including a single star ("\*") all dynamic fields appear in the output. Use this option when you want to add all your fields to the resulting table.
+1. By including a single star (`*`) all dynamic fields appear in the output. Use this option when you want to add all your fields to the resulting table.
 1. To reference the fields after 'transpose' you need to specify the field names as output fields.
 
-As a reminder, if a field name contains a special character (such as -) the character must be quoted in **%""**, as in %"test-zz-1". Because column names computed from data tend to include special characters, this is especially important to keep in mind when using a transpose operator.
+As a reminder, if a field name contains a special character (such as `-`) the character must be quoted in `%""`, as in `%"test-zz-1"`. Because column names computed from data tend to include special characters, this is especially important to keep in mind when using a transpose operator.
 
 ## Rules
 

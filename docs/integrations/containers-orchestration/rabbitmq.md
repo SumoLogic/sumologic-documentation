@@ -350,7 +350,7 @@ Logs from the RabbitMQ log file can be collected via a Sumo Logic [Installed col
       * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
       * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your RabbitMQ Server’s time zone.
       * **Timestamp Format.** The timestamp format is automatically detected.
-      * **Encoding. **Select** **UTF-8 (Default).
+      * **Encoding.** Select UTF-8 (Default).
       * **Enable Multiline Processing.** Detect messages spanning multiple lines
       * Infer Boundaries - Detect message boundaries automatically
    4. Click **Save**.
@@ -376,14 +376,14 @@ There are limits to how many alerts can be enabled. For more information, see [M
 #### Method A: Install Monitors by importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/RabbitMQ/rabbitmq.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/RabbitMQ/rabbitmq.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all RabbitMQ clusters, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text messaging_cluster=*** with `<Your Custom Filter>`. Custom filter examples:
+2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/RabbitMQ/rabbitmq.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all RabbitMQ clusters, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `messaging_cluster=*` with `<Your Custom Filter>`. Custom filter examples:
    * For alerts applicable only to a specific cluster, your custom filter would be: `messaging_cluster=dev-rabbitmq01`
    * For alerts applicable to all clusters that start with RabbitMQ-prod, your custom filter would be: `messaging_cluster=RabbitMQ-prod*`
    * For alerts applicable to a specific cluster within a production environment, your custom filter would be: `messaging_cluster=dev-rabbitmq01 AND environment=prod` (This assumes you have set the optional environment tag while configuring collection)
 3. Go to **Manage Data > Alerts > Monitors**.
 4. Click **Add**.
-5. Click **Import.
-6. On the** Import Content popup**, enter **RabbitMQ** in the Name field, paste in the JSON into the the popup, and click **Import**.
+5. Click **Import**.
+6. On the **Import Content popup**, enter **RabbitMQ** in the Name field, paste in the JSON into the the popup, and click **Import**.
 7. The monitors are created in a "RabbitMQ" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 #### Method B: Install Monitors using a Terraform script
@@ -482,7 +482,7 @@ Template variables provide dynamic dashboards that rescope data on the fly. As y
 
 The RabbitMQ - Overview dashboard gives you an at-a-glance view of your RabbitMQ deployment across brokers, queues, exchanges, and messages.
 
-Use this dashboard to **:
+Use this dashboard to:
 * Analyze Memory and disk utilization.
 * Gain insights into pushing messages for your RabbitMQ server.
 * Gain insights into delivery messages for your RabbitMQ server.
@@ -554,111 +554,66 @@ Sumo Logic provides out-of-the-box alerts available via [Sumo Logic monitors](/d
 
 <table>
   <tr>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
+   <td>Alert Name</td>
+   <td>Alert Description</td>
+   <td>Trigger Type (Critical / Warning)</td>
+   <td>Alert Condition   </td>
+   <td>Recover Condition   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - High Memory Usage
-   </td>
-   <td>This alert fires when memory usage on a node in a RabbitMQ cluster is high.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>RabbitMQ - High Memory Usage   </td>
+   <td>This alert fires when memory usage on a node in a RabbitMQ cluster is high.   </td>
+   <td>Critical </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - No Consumers
-   </td>
-   <td>This alert fires when a RabbitMQ queue has no consumers.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#60; 1
-   </td>
-   <td>&#62; &#61; 1
-   </td>
+   <td>RabbitMQ - No Consumers   </td>
+   <td>This alert fires when a RabbitMQ queue has no consumers.   </td>
+   <td>Critical   </td>
+   <td>&#60; 1   </td>
+   <td>&#62; &#61; 1   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - High Disk Usage
-   </td>
-   <td>This alert fires when there is high disk usage on a node in a RabbitMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 80
-   </td>
-   <td>&#60; 80
-   </td>
+   <td>RabbitMQ - High Disk Usage   </td>
+   <td>This alert fires when there is high disk usage on a node in a RabbitMQ cluster.  </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 80   </td>
+   <td>&#60; 80   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - High Number of File Descriptors in use
-   </td>
-   <td>This alert fires when the percentage of file descriptors used by a node in a RabbitMQ cluster is high.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 90
-   </td>
-   <td>&#60; 90
-   </td>
+   <td>RabbitMQ - High Number of File Descriptors in use </td>
+   <td>This alert fires when the percentage of file descriptors used by a node in a RabbitMQ cluster is high.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 90   </td>
+   <td>&#60; 90   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - Node Down
-   </td>
-   <td>This alert fires when a node in the RabbitMQ cluster is down.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1
-   </td>
-   <td>&#60; 1
-   </td>
+   <td>RabbitMQ - Node Down   </td>
+   <td>This alert fires when a node in the RabbitMQ cluster is down.   </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1   </td>
+   <td>&#60; 1   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - Too Many Connections
-   </td>
-   <td>This alert fires when there are too many connections to a node in a RabbitMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1000
-   </td>
-   <td>&#60; 1000
-   </td>
+   <td>RabbitMQ - Too Many Connections   </td>
+   <td>This alert fires when there are too many connections to a node in a RabbitMQ cluster. </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1000   </td>
+   <td>&#60; 1000   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - Too Many Un-acknowledged Messages
-   </td>
-   <td>This alert fires when we detect that there are too many un-acknowledged messages on a node in a RabbitMQ cluster.
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61; 1000
-   </td>
-   <td>&#60; 1000
-   </td>
+   <td>RabbitMQ - Too Many Un-acknowledged Messages   </td>
+   <td>This alert fires when we detect that there are too many un-acknowledged messages on a node in a RabbitMQ cluster. </td>
+   <td>Critical   </td>
+   <td>&#62; &#61; 1000   </td>
+   <td>&#60; 1000   </td>
   </tr>
   <tr>
-   <td>RabbitMQ - Un-routable Messages
-   </td>
-   <td>This alert fires when we detect that a node in the RabbitMQ cluster has un-routable messages
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; &#61; 1
-   </td>
-   <td>&#60; 1
-   </td>
+   <td>RabbitMQ - Un-routable Messages   </td>
+   <td>This alert fires when we detect that a node in the RabbitMQ cluster has un-routable messages </td>
+   <td>Critical   </td>
+   <td> &#62; &#61; 1   </td>
+   <td>&#60; 1   </td>
   </tr>
 </table>

@@ -59,7 +59,8 @@ When you configure the Sumo Logic endpoint in Fastly:
 1. **Name**. Enter a name for the connection. For example, “Prod Fastly”.
 2. **Log format**. Use this format string, which generates the necessary JSON output:
 
-  <details><summary>Click to expand snippet</summary>
+  <details>
+<summary>Click to expand snippet</summary>
 
    ```
    {
@@ -145,7 +146,8 @@ If you have Fastly's Web Application Firewall (WAF), perform these steps to upda
 
 1. Use the JSON object below into the Log format field instead of the one specified in [Configure endpoint in Fastly for CDN logs](#Step_2._Configure_endpoint_in_Fastly_for_CDN_logs).
 
-  <details><summary>Click to expand snippet</summary>
+  <details>
+<summary>Click to expand snippet</summary>
 
   ```
   {
@@ -301,7 +303,8 @@ If you have Fastly's Web Application Firewall (WAF), perform these steps to add 
 1. Configure another [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for debug logs and set its source category. For example, fastly/debug. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
 2. Create another logging endpoint in Fastly following the instructions [Step 2](#Step_2._Configure_Sumo_logging_endpoint_in_Fastly), but enter the JSON below in the **Log format** field.
 
-  <details><summary>Click to expand snippet</summary>
+  <details>
+<summary>Click to expand snippet</summary>
 
   ```
   {
@@ -391,7 +394,7 @@ The overview dashboard provides a high-level view of your Fastly traffic and ide
 * **Download Performance Hotspots** **- Avg Download Above 300ms by Country.** Uses a geolocation operation to display performance download time hotspots on a map of the world by IP addresses, lets you see a count of hits per location over the last 60 minutes.
 * **Visitor Countries.** Displays the originating country of visitors to your site by IP address over the last three hours in a pie chart. Hover over a section of the pie chart to display more details.
 * **Top 404-Causing URLs.** Displays the top 25  URLs that have produced a 404 error in the last 60 minutes and counts the errors in a bar chart.
-* **Top Server Error-Causing URLs. **Lists the servers with error-causing URLs for the last 60 minutes.
+* **Top Server Error-Causing URLs.** Lists the servers with error-causing URLs for the last 60 minutes.
 * **Origin Download 90%-ile Latency (Microsecs).** Line chart of the number of origin downloads with 90th percentile latency over the last 60 minutes.
 * **Cache Hit Percentage Over Time.** Line chart of the cache hit percentage over the last 60 minutes.
 
@@ -402,9 +405,9 @@ Focus in on Origin Host performance to check latencies, slow URLs and error-caus
 
 <img src={useBaseUrl('img/integrations/saas-cloud/FastlyCDNOriginPerformancepng.png')} alt="Fastly dashboards" />
 
-* **90%-ile Latency (millisecs) by Origin Host. **Displays the 90th percentile of the data center response time latency as a line chart on a timeline for the last hour, using timeslices of one minute.
+* **90%-ile Latency (millisecs) by Origin Host.** Displays the 90th percentile of the data center response time latency as a line chart on a timeline for the last hour, using timeslices of one minute.
 * **Median Latency (millisecs) by Origin Host**. Displays the median latency time as a line chart for the past hour.
-* **Slowest URLs (millisecs) **Lists the top 10 slowest URLs, including the path and the maximum latency metric for the last hour, in an aggregation table.
+* **Slowest URLs (millisecs)** Lists the top 10 slowest URLs, including the path and the maximum latency metric for the last hour, in an aggregation table.
 * **Origin Content Download Time (millisecs) Histogram.** Displays download times for origin content for the number of requests and the response time in a column chart for the last hour.
 * **Error Rate 4xx by Code.** Displays the number of 4xx error events by code in a stacked column chart on a timeline using timeslices of 10 minutes for the past 24 hours.
 * **Top 5xx Error-Causing URLs.** Displays the URLs that have produced the most errors in the last 15 minutes and counts the errors in a bar chart.
@@ -424,7 +427,7 @@ See where quality of service is below minimum thresholds such as download times,
 * **Overall Content Download Time (millisecs) Histogram.** Bar chart of response time to requests over the last hour.
 * **Cacheable Content Download Time (millisecs) Histogram.** Shows download times for cached content for the number of requests and the response time in a column chart for the last hour.
 * **Performance (millisecs) Stats by Country.** Provides an aggregation table of performance statistics by IP address per country code for the last hour.
-* **Performance (millisecs) Stats by Data Center. **Provides an aggregation table of performance statistics by IP address per data center for the last hour.
+* **Performance (millisecs) Stats by Data Center.** Provides an aggregation table of performance statistics by IP address per data center for the last hour.
 
 
 ### CDN - Visitors
@@ -438,14 +441,14 @@ See where you're getting the most traffic and from where.
 * **Requests by DataCenter.** Percentage of requests by datacenter, see the percentage of requests in a pie chart.
 * **Requests by Content Type.** Pie chart displaying the percentage of requests by content type.
 * **TLS Usage.** Binary view of the percentage of users connecting using TLS versus non-TLS to track use of the protocol.
-* **HTTP2 Usage. **Binary view of the percentage of users connecting using HTTP2 versus non-HTTP2 to track use of the protocol.
+* **HTTP2 Usage.** Binary view of the percentage of users connecting using HTTP2 versus non-HTTP2 to track use of the protocol.
 * **Requests by User Agent.** Pie chart of the percentage of requests by user agent for the last 60 minutes.
 * **Overall Request Volume.** Shows the number of requests made in a column chart on a timeline using timeslices of five minutes over the last three hours.
 * **Total Request Size Over Time.** Line chart of request sizes for the last day.
 * **Total Response Size over time**. Line chart of response sizes for the last day.
 * **Top 10 Referrers.** Displays top ten referrer requests as a bar chart for the last hour.
 * **Top Requests**. Displays the top requests by path and count in a bar chart for the last hour.
-* **Bot Traffic Over Time. ** Displays bot traffic by volume for the last hour as a line chart.
+* **Bot Traffic Over Time.**  Displays bot traffic by volume for the last hour as a line chart.
 
 
 ### WAF - Overview
@@ -455,19 +458,19 @@ See the overview of Fastly WAF including the states, hits, and threat intel on w
 <img src={useBaseUrl('img/integrations/saas-cloud/WAF-Overview.png')} alt="Fastly dashboards" />
 
 * **WAF Analysis**
-    * **WAF States. **See the count of requests that triggered WAF. It shows if the request triggered a rule(s) but passed to origin (warn), was blocked (bad), went through WAF and triggered no rules (good), cause an error (failure) for the last 24 hour as a line chart.
-    * **Daily Hits. **See the count of requests that triggered WAF in the last 7 days on a bar chart.
+    * **WAF States.** See the count of requests that triggered WAF. It shows if the request triggered a rule(s) but passed to origin (warn), was blocked (bad), went through WAF and triggered no rules (good), cause an error (failure) for the last 24 hour as a line chart.
+    * **Daily Hits.** See the count of requests that triggered WAF in the last 7 days on a bar chart.
 
 The following panels are grouped as blocking and warning (which triggered a rule but passed to origin) events.
 
 * **Threat Intelligence - Warn Events**
     * **Top URLs (Warn).** See the count of top URLs for warning events in the last 24 hours in a table.
-    * **Rule Count (Warn). **See the details of rules for warning events including the WAF rule ID,  WAF message, count of distinct IPs, and total count, in the last 24 hours displayed in a table.
-    * **Top Messages (Warn). **See the count and percentage of WAF messages for warning events in the last 24 hours on a pie chart.
+    * **Rule Count (Warn).** See the details of rules for warning events including the WAF rule ID,  WAF message, count of distinct IPs, and total count, in the last 24 hours displayed in a table.
+    * **Top Messages (Warn).** See the count and percentage of WAF messages for warning events in the last 24 hours on a pie chart.
 * **Threat Intelligence - Blocked Events**
-    * **Top URLs (Blocked). **See the count and status of top URLs for blocked events in the last 24 hours in a table.
-    * **Rule Count (Blocked). **See the details of rules for blocked events including the WAF rule ID,  WAF message, count of distinct IPs, and total count, in the last 24 hours displayed in a table.
-    * **Top Messages (Blocked). **See the count and percentage of WAF messages for blocked events in the last 24 hours on a pie chart.
+    * **Top URLs (Blocked).** See the count and status of top URLs for blocked events in the last 24 hours in a table.
+    * **Rule Count (Blocked).** See the details of rules for blocked events including the WAF rule ID,  WAF message, count of distinct IPs, and total count, in the last 24 hours displayed in a table.
+    * **Top Messages (Blocked).** See the count and percentage of WAF messages for blocked events in the last 24 hours on a pie chart.
 
 
 ### WAF - Offenders
@@ -476,19 +479,19 @@ See the details on WAF offenders including the location, client IP addresses for
 
 <img src={useBaseUrl('img/integrations/saas-cloud/fastly-waf-offenders.png')} alt="Fastly dashboards" />
 
-* **Geo Location of All Users. **See the count and user location where WAF was executed in the last 24 hours on a world map.
-* **Top Clients affected by Threats. **See the top 10 client IP addresses by count that are affected by threats in the last 24 hours.
-* **Client IP (Warn). **See the count of IP addresses for warning events in the last 24 hours on a column chart.
-* **Client IP (Blocked). **See the count of IP addresses for blocked events in the last seven days on a column chart.
+* **Geo Location of All Users.** See the count and user location where WAF was executed in the last 24 hours on a world map.
+* **Top Clients affected by Threats.** See the top 10 client IP addresses by count that are affected by threats in the last 24 hours.
+* **Client IP (Warn).** See the count of IP addresses for warning events in the last 24 hours on a column chart.
+* **Client IP (Blocked).** See the count of IP addresses for blocked events in the last seven days on a column chart.
 * **OWASP Top Offenders**. The following panels show the top 10 client IP addresses that trigger WAF in block and monitor mode in different attack categories and the threshold exceptions.
-    * **Overall Threat Trends. **See the trend in the overall threats in the last 24 hours on a stacked column chart.
-    * **Threshold Exceptions. **See the top 10 IP addresses by count triggering the threshold exception rule in the last 24 hours displayed in a table.
-    * **HTTP. **See the top 10 IP addresses by count triggering HTTP exception rule in the last 24 hours.
-    * **Session Fixation. **See the top 10 IP addresses by count triggering the session fixation rule in the last 24 hours.
-    * **PHP Injection. **See the top 10 IP addresses by count triggering the PHP injection rule in the last 24 hours.
-    * **SQL Injection. **See the top 10 IP addresses by count triggering the SQL injection rule in the last 24 hours.
-    * **XSS. **See the top 10 IP addresses by count triggering the XSS rule in the last 24 hours.
-    * **LFI-RCE-RFI. **See the top 10 IP addresses by count triggering the local file inclusion, remote file inclusion, and remote code execution rules in the last 24 hours.
+    * **Overall Threat Trends.** See the trend in the overall threats in the last 24 hours on a stacked column chart.
+    * **Threshold Exceptions.** See the top 10 IP addresses by count triggering the threshold exception rule in the last 24 hours displayed in a table.
+    * **HTTP.** See the top 10 IP addresses by count triggering HTTP exception rule in the last 24 hours.
+    * **Session Fixation.** See the top 10 IP addresses by count triggering the session fixation rule in the last 24 hours.
+    * **PHP Injection.** See the top 10 IP addresses by count triggering the PHP injection rule in the last 24 hours.
+    * **SQL Injection.** See the top 10 IP addresses by count triggering the SQL injection rule in the last 24 hours.
+    * **XSS.** See the top 10 IP addresses by count triggering the XSS rule in the last 24 hours.
+    * **LFI-RCE-RFI.** See the top 10 IP addresses by count triggering the local file inclusion, remote file inclusion, and remote code execution rules in the last 24 hours.
 
 
 ### WAF - OWASP

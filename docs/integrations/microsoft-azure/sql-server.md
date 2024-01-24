@@ -310,7 +310,7 @@ This section provides instructions for configuring log collection for SQL Server
    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
    * **Time Zone.** Choose the option, **Ignore time zone from the log file and instead use**, and then select your SQL Server Server’s time zone.
    * **Timestamp Format.** The timestamp format is automatically detected.
-   * **Encoding. **Select the encoding of the `ERRORLOG` you found in step 1, which will typically be **UTF-16LE**.
+   * **Encoding.** Select the encoding of the `ERRORLOG` you found in step 1, which will typically be **UTF-16LE**.
    * **Enable Multiline Processing.** Detect messages spanning multiple lines
      * **Infer Boundaries** - Detect message boundaries automatically
 5. Click **Save**.
@@ -453,7 +453,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this [ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
-**Step 2: [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later **
+**Step 2: [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**
 
 **Step 3: Download the Sumo Logic Terraform package for SQL Server alerts**
 
@@ -528,8 +528,8 @@ email_notifications = [
 
 **Step 6: Install the Alerts**
 
-1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**SQLServer**/ and run **terraform init. **This will initialize Terraform and will download the required components.
-2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
+1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**SQLServer**/ and run **terraform init.** This will initialize Terraform and will download the required components.
+2. Run **terraform plan** to view the monitors which will be created/modified by Terraform.
 3. Run **terraform apply**.
 
 **Step 7: Post Installation**
@@ -543,7 +543,9 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
 
 This section demonstrates how to install the SQL Server App.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Microsoft SQL Server Dashboards
 
@@ -647,215 +649,130 @@ Sumo Logic provideds out-of-the-box alerts available via [Sumo Logic monitors](/
 
 <table>
   <tr>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
+   <td>Alert Name </td>
+   <td>Alert Description </td>
+   <td>Trigger Type (Critical / Warning) </td>
+   <td>Alert Condition </td>
+   <td>Recover Condition </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Instance Down
-   </td>
-   <td rowspan="2" >This alert fires when we detect that the SQL Server instance is down for 5 minutes.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60;&#61;0
-   </td>
+   <td rowspan="2" >SQL Server - Instance Down </td>
+   <td rowspan="2" >This alert fires when we detect that the SQL Server instance is down for 5 minutes. </td>
+   <td>Critical   </td>
+   <td> &#62;0   </td>
+   <td> &#60;&#61;0   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td>Warning   </td>
+   <td>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - AppDomain
-   </td>
-   <td rowspan="2" >This alert fires when we detect AppDomain related issues in your SQL Server instance.
-   </td>
-   <td>Critical
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td rowspan="2" >SQL Server - AppDomain   </td>
+   <td rowspan="2" >This alert fires when we detect AppDomain related issues in your SQL Server instance.   </td>
+   <td>Critical   </td>
+   <td>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;&#61;1
-   </td>
-   <td> &#60;1
-   </td>
+   <td>Warning   </td>
+   <td> &#62;&#61;1   </td>
+   <td> &#60;1   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Backup Fail
-   </td>
-   <td rowspan="2" >This alert fires when we detect that the SQL Server backup failed.
-   </td>
-   <td>Critical
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td rowspan="2" >SQL Server - Backup Fail   </td>
+   <td rowspan="2" >This alert fires when we detect that the SQL Server backup failed. </td>
+   <td>Critical   </td>
+   <td>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;&#61;1
-   </td>
-   <td> &#60;1
-   </td>
+   <td>Warning   </td>
+   <td> &#62;&#61;1   </td>
+   <td> &#60;1   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Cpu High Usage
-   </td>
-   <td rowspan="2" >This alert fires when the CPU usage within a 5 minute interval for an SQL Server instance is high (70% - 80% for Warning and >=80% for Critical).
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;&#61;80
-   </td>
-   <td> &#60;80
-   </td>
+   <td rowspan="2" >SQL Server - Cpu High Usage </td>
+   <td rowspan="2" >This alert fires when the CPU usage within a 5 minute interval for an SQL Server instance is high (70% - 80% for Warning and >=80% for Critical). </td>
+   <td>Critical </td>
+   <td> &#62;&#61;80   </td>
+   <td> &#60;80   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;&#61;70
-   </td>
-   <td> &#60;70
-   </td>
+   <td>Warning   </td>
+   <td> &#62;&#61;70   </td>
+   <td> &#60;70   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Deadlock
-   </td>
-   <td rowspan="2" >This alert fires when we detect deadlocks in a SQL Server instance.
-   </td>
-   <td>Critical
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td rowspan="2" >SQL Server - Deadlock   </td>
+   <td rowspan="2" >This alert fires when we detect deadlocks in a SQL Server instance.   </td>
+   <td>Critical   </td>
+   <td>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;5
-   </td>
-   <td> &#60;&#61;5
-   </td>
+   <td>Warning   </td>
+   <td> &#62;5   </td>
+   <td> &#60;&#61;5   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Disk Usage
-   </td>
-   <td rowspan="2" >This alert fires when the Disk usage within a 5 minute interval for an SQL Server instance is high (70% - 80% for Warning and >&#61;80% for Critical).
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;&#61;80
-   </td>
-   <td> &#60;80
-   </td>
+   <td rowspan="2" >SQL Server - Disk Usage   </td>
+   <td rowspan="2" >This alert fires when the Disk usage within a 5 minute interval for an SQL Server instance is high (70% - 80% for Warning and >&#61;80% for Critical).   </td>
+   <td>Critical   </td>
+   <td> &#62;&#61;80   </td>
+   <td> &#60;80   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;&#61;70
-   </td>
-   <td> &#60;70
-   </td>
+   <td>Warning   </td>
+   <td> &#62;&#61;70   </td>
+   <td> &#60;70   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Insufficient Space
-   </td>
-   <td rowspan="2" >This alert fires when SQL Server instance could not allocate a new page for database because of insufficient disk space in filegroup.
-   </td>
-   <td>Critical
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td rowspan="2" >SQL Server - Insufficient Space </td>
+   <td rowspan="2" >This alert fires when SQL Server instance could not allocate a new page for database because of insufficient disk space in filegroup.   </td>
+   <td>Critical   </td>
+   <td>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60;&#61;0
-   </td>
+   <td>Warning   </td>
+   <td> &#62;0   </td>
+   <td> &#60;&#61;0   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Login Fail
-   </td>
-   <td rowspan="2" >This alert fires when we detect that the user cannot login to SQL Server.
-   </td>
-   <td>Critical
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td rowspan="2" >SQL Server - Login Fail   </td>
+   <td rowspan="2" >This alert fires when we detect that the user cannot login to SQL Server.   </td>
+   <td>Critical   </td>
+   <td>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;&#61;1
-   </td>
-   <td> &#60;1
-   </td>
+   <td>Warning   </td>
+   <td> &#62;&#61;1   </td>
+   <td> &#60;1   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Mirroring Error
-   </td>
-   <td rowspan="2" >This alert fires when we detect that the SQL Server mirroring has error.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;&#61;1
-   </td>
-   <td> &#60;1
-   </td>
+   <td rowspan="2" >SQL Server - Mirroring Error   </td>
+   <td rowspan="2" >This alert fires when we detect that the SQL Server mirroring has error.   </td>
+   <td>Critical   </td>
+   <td> &#62;&#61;1   </td>
+   <td> &#60;1   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td>Warning   </td>
+   <td>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Processes Blocked
-   </td>
-   <td rowspan="2" >This alert fires when we detect that SQL Server has blocked processes.
-   </td>
-   <td>Critical
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td rowspan="2" >SQL Server - Processes Blocked   </td>
+   <td rowspan="2" >This alert fires when we detect that SQL Server has blocked processes.   </td>
+   <td>Critical </td>
+   <td> </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60;&#61;0
-   </td>
+   <td>Warning   </td>
+   <td> &#62;0   </td>
+   <td> &#60;&#61;0 </td>
   </tr>
 </table>
