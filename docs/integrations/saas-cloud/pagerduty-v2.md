@@ -86,7 +86,7 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 ### Overview
 
-**PagerDuty V2 - Overview Dashboard **provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
+**PagerDuty V2 - Overview Dashboard** provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
 
 Use this dashboard to:
 * Review the services, incidents and policies that are causing the most alerts.

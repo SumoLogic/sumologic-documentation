@@ -53,7 +53,7 @@ _sourceCategory = Labs/pagerduty_v3 "incident.triggered"
 
 ### Configure a Sumo Logic Collector and Source
 
-A** Hosted Collector **is not installed on a local system in your deployment. Instead, Sumo Logic hosts the Collector and its Sources in AWS. With a Hosted Collector, you can create Sources to collect data from various services. A single Hosted Collector can be configured with any number of  Sources.
+A **Hosted Collector** is not installed on a local system in your deployment. Instead, Sumo Logic hosts the Collector and its Sources in AWS. With a Hosted Collector, you can create Sources to collect data from various services. A single Hosted Collector can be configured with any number of  Sources.
 
 An **HTTP Source** is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 
@@ -79,7 +79,7 @@ To create a PagerDuty V3 Webhook, do the following:
 3. Click **New Webhook**.
 4. Configure your webhook:
     1. Enter the **HTTP Source Address URL** as the Webhook URL.
-    2. For** Scope Type**, select Service, Team or Account based on your preferences.
+    2. For **Scope Type**, select Service, Team or Account based on your preferences.
     3. For **Scope**, select the desired service or team.
     4. Enter a **Description**.
     5. For **Event Subscription**, select which events you want to send a webhook.
@@ -109,7 +109,7 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 ### Overview
 
-**PagerDuty V3 - Overview Dashboard **provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
+**PagerDuty V3 - Overview Dashboard** provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
 
 Use this dashboard to:
 

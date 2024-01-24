@@ -361,7 +361,7 @@ Please keep the **port(514)** handy as we will use it in next steps.
     Follow the steps below to enable HAProxy logs to go to log files :
 
 
-1. You can enable HAProxy logs to syslog by adding the following line in the **global** section of **/etc/haproxy/haproxy.cfg **file. This means that HAProxy will send its messages to rsyslog on 127.0.0.1.
+1. You can enable HAProxy logs to syslog by adding the following line in the **global** section of **/etc/haproxy/haproxy.cfg** file. This means that HAProxy will send its messages to rsyslog on 127.0.0.1.
 
 
 ```bash

@@ -115,7 +115,7 @@ For Log Source Identifier field, use this format: `Deep Security Manager [token 
 1. In the Deep Security Manager console, select **Policies > Common Objects.**
 2. Expand the **Other** node in the left pane.
 3. Select **Syslog Configurations**.
-4. Select the **New **button to create a new configuration.
+4. Select the **New** button to create a new configuration.
     1. **Log Source Identifier**. Enter a three word label, for example “Deep Security Manager” or “My Log Source”, followed by value that was shown in the **Token** field on the **Cloud Syslog Source Token** page (when you configured the Cloud Syslog Source above), surrounded by square brackets like this: `Deep Security Manager [token from Cloud Syslog source]`. It's important that you use this format. `Deep Security Manager` followed by the `token` (for the Cloud Syslog Source) in square brackets like this:
      ```
      Deep Security Manager [token from Cloud Syslog source]

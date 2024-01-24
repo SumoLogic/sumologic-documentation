@@ -87,38 +87,34 @@ To configure a source, do the following:
 This section shows you how to configure logging in Barracuda WAF for use with the preconfigured searches and dashboards of the Sumo Logic App for Barracuda WAF.
 
 To configure logging in Barracuda WAF, do the following:
+
 1. Log in to your Barracuda account and go to **ADVANCED > Export Logs.**
-1. Go to the **Add Export Log Server.**
+1. Go to the **Add Export Log Server**.
 1. In the **Add Export Log Server** window, specify values for the following:
-    1. **Name - **Enter a name for the SumoLogic service.
-    2. **Log Server Type - ** Select Cloud Syslog Service.
-    3. **IP Address or Hostname -** Enter the IP address or hostname of the SumoLogic service. For example: `syslog.collection.your_deployment.sumologic.com`
-    4. **Port - **Enter the port associated with the IP address of the SumoLogic service. The default Port is 6514.
-    5. **Token - **Enter the token for Sumo Logic service, such as: `9HFxoa6+lXBmvSM9koPjGzvTaxXDQvJ4POE/ExAMpleTOkenForTAsk3mSEKxPl0Q@41123`, where the number `41123` is the sumo PEN and is included as part of the customer token.
-    6. **Log Timestamp and Hostname -** Click **Yes** to log the date and time of the event, and the hostname configured in the BASIC > IP Configuration > Domain Configuration section.
-    7. **Comment -** (Optional) Enter a comment describing the setting.
-
-
-
+    * **Name**. Enter a name for the SumoLogic service.
+    * **Log Server Type**. Select Cloud Syslog Service.
+    * **IP Address or Hostname**. Enter the IP address or hostname of the SumoLogic service. For example: `syslog.collection.your_deployment.sumologic.com`
+    * **Port**. Enter the port associated with the IP address of the SumoLogic service. The default Port is 6514.
+    * **Token**. Enter the token for Sumo Logic service, such as: `9HFxoa6+lXBmvSM9koPjGzvTaxXDQvJ4POE/ExAMpleTOkenForTAsk3mSEKxPl0Q@41123`, where the number `41123` is the sumo PEN and is included as part of the customer token.
+    * **Log Timestamp and Hostname**. Click **Yes** to log the date and time of the event, and the hostname configured in the BASIC > IP Configuration > Domain Configuration section.
+    * **Comment**. (Optional) Enter a comment describing the setting.
 1. Click **Add**.
-2. Go to **ADVANCED** > **Export Logs.**
-3. To send all logs to sumologic, in the **export log setting**, change the settings as shown in the following screenshot.
-    1. **Export Log Settings - **Every Log should be marked as **Enable.**
-    2. **Export Log Filters - **Select the severity as per the Logs that need to send. For example - if is set to 5-Notice, then logs with 0-5 are sent to the syslog server i.e, 0-Emergency, 1-Alert, 2-Critical, 3-Error, 4-Warning, 5-Notice
-* 0-Emergency: System is unusable (highest priority)
-* 1-Alert: Response must be taken immediately
-* 2-Critical: Critical conditions
-* 3-Error: Error conditions
-* 4-Warning: Warning conditions
-* 5-Notice: Normal but significant condition
-* 6-Information: Informational messages (on ACL configuration changes)
-* 7-Debug: Debug level messages (lowest priority)
-1. **Syslog Settings - **Keep as default.
-
-
+1. Go to **ADVANCED** > **Export Logs.**
+1. To send all logs to sumologic, in the **export log setting**, change the settings as shown in the following screenshot.
+    * **Export Log Settings**. Every Log should be marked as **Enable.**
+    * **Export Log Filters**. Select the severity as per the Logs that need to send. For example, if set to 5-Notice, then logs with 0-5 are sent to the syslog server i.e, 0-Emergency, 1-Alert, 2-Critical, 3-Error, 4-Warning, 5-Notice
+       * 0-Emergency: System is unusable (highest priority)
+       * 1-Alert: Response must be taken immediately
+       * 2-Critical: Critical conditions
+       * 3-Error: Error conditions
+       * 4-Warning: Warning conditions
+       * 5-Notice: Normal but significant condition
+       * 6-Information: Informational messages (on ACL configuration changes)
+       * 7-Debug: Debug level messages (lowest priority)
+1. **Syslog Settings**. Keep as default.
 1. Click **Save**.
-2. Go to **ADVANCED** > **Export Logs.**
-3. In the **Logs Format** tab, make sure every Log format is set to **default** as the app support Default log formats.
+1. Go to **ADVANCED** > **Export Logs**.
+1. In the **Logs Format** tab, make sure every Log format is set to **default** as the app support Default log formats.
 
 
 ### Field Extraction Rules
@@ -160,7 +156,7 @@ import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Viewing Barracuda WAF dashboards 
+## Viewing Barracuda WAF dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
