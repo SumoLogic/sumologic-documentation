@@ -9,9 +9,7 @@ You can collect Kubernetes events from the Kubernetes API server and send them t
 
 This feature is enabled by default. To disable it, set the `sumologic.events.enabled` property to `false`.
 
-The event collector collects events by requesting all Kubernetes events from the Kubernetes API server. Note that the resource API used is
-[core v1][event_v1_core] and not [events.k8s.io/v1][event_events_k8s_io]. The events are sent as logs in their original JSON format to Sumo
-Logic.
+The event collector collects events by requesting all Kubernetes events from the Kubernetes API server. Note that the resource API used is [core v1][event_v1_core] and not [events.k8s.io/v1][event_events_k8s_io]. The events are sent as logs in their original JSON format to Sumo Logic.
 
 Example Kubernetes event:
 
