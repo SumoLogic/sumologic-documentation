@@ -79,8 +79,8 @@ Telemetry Streaming uses a declarative model, meaning you provide a JSON declara
 
 1. Install [AS3 RPM](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/userguide/installation.html). The [Application Services 3 (AS3)](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/) extension is a mechanism for declaratively configuring application-specific resources on a BIG-IP system. This involves posting a JSON declaration to the system’s API endpoint, `https://< BIG-IP>/mgmt/shared/appsvcs/declare`.
 2. Install Telemetry Streaming RPM (download from [here](https://github.com/F5Networks/f5-telemetry-streaming/releases)).
-  * Login to F5 (user admin, password from the above output), navigate to the Main tab, **iApps > Package Management LX > Import.**
-  * Select the downloaded file and click **Upload **to upload Telemetry Streaming RPM. For more information on installing TS RPM, see [here](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/installation.html).
+  * Login to F5 (user admin, password from the above output), navigate to the Main tab, **iApps > Package Management LX > Import**.
+  * Select the downloaded file and click **Upload** to upload Telemetry Streaming RPM. For more information on installing TS RPM, see [here](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/installation.html).
 3. Enable AVR. To enable the AVR, follow the steps below:
    * Go to **System > Resource Provisioning.**
    * Enable Application Visibility and Reporting (AVR)

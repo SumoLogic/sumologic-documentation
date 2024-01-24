@@ -75,7 +75,7 @@ Here’s an explanation for additional values set by this configuration that we 
 * `webserver_system: “nginx_ingress”` - This value identifies the database system.
 4. **Add an FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
    1. Go to **Manage Data > Logs > Field Extraction Rules**.
-   2. Click the + **Add **button on the top right of the table.
+   2. Click the **+ Add** button on the top right of the table.
    3. The **Add Field Extraction Rule** form will appear. Enter the following options:
      * **Rule Name**. Enter the name as **App Observability - Webserver**.
      * **Applied At.** Choose **Ingest Time.**
@@ -107,7 +107,7 @@ There are limits to how many alerts can be enabled - for details, see the [Alert
 2. The JSON file contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Nginx Ingress farms, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `webserver_system=nginx_ingress` with `<Your Custom Filter>`. Custom filter examples:
    * For alerts applicable only to a specific farm, your custom filter would be:  ‘`webserver_farm=nginx-ingress.01`‘
    * For alerts applicable to all farms that start with `nginx-ingress`, your custom filter would be: `webserver_system=nginx-ingress*`
-   * For alerts applicable to a specific farm within a production environment, your custom filter would be: `webserver_farm=nginx-ingress-1`** AND `environment=dev` (This assumes you have set the optional environment tag while configuring collection)
+   * For alerts applicable to a specific farm within a production environment, your custom filter would be: `webserver_farm=nginx-ingress-1` AND `environment=dev` (This assumes you have set the optional environment tag while configuring collection)
 3. Go to Manage Data > Alerts > Monitors.
 4. Click **Add**.
 5. Click Import and then copy-paste the above JSON to import monitors.
@@ -120,7 +120,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 1. Generate a Sumo Logic access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for Nginx Ingress alerts: The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Nginx%20Ingress). You can either download it through the “git clone” command or as a zip file.
-4. Alert Configuration: After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/Nginx Ingress.
+4. Alert Configuration: After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/Nginx Ingress.
    1. Edit the **nginx_ingress.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
     ```sql
     access_id   = "<SUMOLOGIC ACCESS ID>"
@@ -175,7 +175,7 @@ email_notifications = [
 
 6. **Install the Alerts**
     1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**Nginx Ingress**/ and run **terraform init**. This will initialize Terraform and will download the required components.
-    2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
+    2. Run **terraform plan** to view the monitors which will be created/modified by Terraform.
     3. Run **terraform apply**.
 7. **Post Installation** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 

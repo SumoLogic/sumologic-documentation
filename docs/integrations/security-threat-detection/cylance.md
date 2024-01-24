@@ -99,11 +99,9 @@ Copy and paste the **token** in a secure location. You will need this when you c
 Before your can configure Sumo Logic to ingest logs, you must set up remote log streaming on Cylance. For instructions, refer to the following documentation:
 
 1. In Cylance, go to **Settings > Application**.
-
-2. In the **Integrations **section, activate the **Syslog/SIEM** check box.  
+2. In the **Integrations** section, activate the **Syslog/SIEM** check box.  
 3. Under **Event Types**, activate the checkboxes for all events.  
-4. For **SIEM,** select **Sumo Logic** as the destination.
-
+4. For **SIEM**, select **Sumo Logic** as the destination.
 5. For **Protocol,** select TCP.
 6. Activate the check box **TLS/SSL**.
 7. Enter your **IP/Domain**.

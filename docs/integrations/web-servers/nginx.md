@@ -395,7 +395,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**
 3. **Download the Sumo Logic Terraform package for Nginx alerts** The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Nginx). You can either download it through the “git clone” command or as a zip file.
 4. **Alert Configuration** After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Nginx/`.
-   * **Edit the **nginx.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
+   * Edit the **nginx.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
    ```sql
    access_id   = "<SUMOLOGIC ACCESS ID>" \
    access_key  = "<SUMOLOGIC ACCESS KEY>" \
