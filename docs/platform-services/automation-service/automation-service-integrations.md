@@ -61,4 +61,4 @@ Note that in the following example a **(2)** follows the duplicated integration'
 
 ## Available integrations
 
-For a complete list of integrations that are available to install, see the [**Integrations** tab in App Central](/docs/platform-services/automation-service/automation-service-app-central/#integrations-in-app-central). 
+For a complete list of integrations that are available to install, see [Integrations](/docs/platform-services/automation-service/app-central/integrations). 

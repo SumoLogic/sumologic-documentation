@@ -20,6 +20,9 @@ App Central allows you to unlock the full Cloud SOAR potential. From this sectio
 
 While browsing available integrations, you can check the details and all the actions available and install it.
 
+For a complete list of integrations and their documentation, see [Integrations](/docs/platform-services/automation-service/app-central/integrations)
+
+
 ### Install an integration from App Central
 
 1. Use the **Search** bar in the upper right of the **Integrations** tab to find integrations.
