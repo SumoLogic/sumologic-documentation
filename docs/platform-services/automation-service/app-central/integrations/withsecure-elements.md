@@ -15,7 +15,7 @@ WithSecure Elements is a single, modular solution consisting of a complete range
 
 * **List Devices** *(Enrichment)* - For given organization retrieves devices matching all filters, that are used in query.
 * **List Organizations** *(Enrichment)* - List organizations that belong to given organization (including itself, if type matches).
-* **Retrieve Organization ID** *(Enrichment)* - To retrive the Organization ID of your profile.
+* **Retrieve Organization ID** *(Enrichment)* - To retrieve the Organization ID of your profile.
 * **WithSecure Elements Security Events Daemon** *(Daemon)* - List security events within specified time frame for given organization in specified order.
 
 ## WithSecure Elements configuration

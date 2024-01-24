@@ -69,7 +69,7 @@ The client secret, known also as an application password, is a string value of y
 2. Select API permissions > Add a permission
 3. Delegated permissions are selected by default. Delegated permissions are appropriate for client apps that access an API as the signed-in user, and whose access should be restricted to the permissions you select in the next step.
 4. Application permissions are for service- or daemon-type applications that need to access API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your API.
-5. Select Add a permission, and add the following premissions (as we can see from picutre)
+5. Select Add a permission, and add the following permissions (as we can see from picutre)
 
 ![](/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-5.png)
 

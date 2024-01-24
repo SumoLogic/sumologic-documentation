@@ -21,7 +21,7 @@ Updated: Jul 06, 2023
 
 ## Cribl Configuration
 
-To obtain your Token follow the steps described in the [link]('https://$lt;teamname$gt;.coralogix.com/#/integration/apikey'). 
+To obtain your Token follow the steps described in the [link](https://docs.cribl.io/stream/api-tutorials/#criblcloud-free-tier). 
 
 ## Cribl in Automation Service and Cloud SOAR
 

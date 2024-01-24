@@ -40,5 +40,5 @@ You can retrieve the Access Token from your IPinfo account here [https://ipinfo.
 * June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
 * November 24, 2023 (v1.2)
 	+ Enabled Incident Artifacts feature flag for IP Address field
-	+ Added integer validator and placehoder for Connection Timeout resource field
+	+ Added integer validator and placeholder for Connection Timeout resource field
 	+ Removed trailing/leading spaces

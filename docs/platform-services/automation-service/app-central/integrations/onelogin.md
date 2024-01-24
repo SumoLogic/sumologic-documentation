@@ -15,7 +15,7 @@ OneLogin provides a free OTP app for smartphones that displays a generated, shor
 
 * **List Users** (*Enrichment)* - Get users list
 * **List Events** (*Enrichment)* - Get list of events
-* **List Groupes** (*Enrichment)* - Get list of groups
+* **List Groups** (*Enrichment)* - Get list of groups
 * **List Roles** (*Enrichment)* - Get list of roles
 * **List Apps** (*Enrichment)* - Get list of Apps
 * **Create User** (*Containment)* - Add a new user

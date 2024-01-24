@@ -14,7 +14,7 @@ Mandiant Threat Intelligence is a comprehensive and powerful SaaS platform that 
 ## Actions
 
 * **Get Indicator By Value** *(Enrichment)* - For given organization retrieves devices matching all filters, that are used in query.
-* **Serch** *(Enrichment)* - List organizations that belong to given organization (including itself, if type matches).
+* **Search** *(Enrichment)* - List organizations that belong to given organization (including itself, if type matches).
 
 ## Mandiant Threat Intelligence configuration
 

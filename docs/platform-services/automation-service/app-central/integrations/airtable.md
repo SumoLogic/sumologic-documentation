@@ -26,7 +26,7 @@ Login to Airtable with your email and password and refer to the Developer hub pa
 
 ![](/img/platform-services/automation-service/app-central/integrations/airtable/airtable-1.png)
 
-Create your toke.
+Create your token.
 
 ## Airtable in Automation Service and Cloud SOAR
 
