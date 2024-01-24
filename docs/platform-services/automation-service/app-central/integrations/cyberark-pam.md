@@ -42,7 +42,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate all the required fields (\*) and then click Save.
 
 * Label: The desired name for the resource
-* API URL: https://<IIS\_Server\_Ip> For example: `https://services-uscentral.skytap.com:<Port>`
+* API URL: For example: `https://services-uscentral.skytap.com:<Port>`
 * Username: The name of the user who is logging in to the Vault
 * Password: The password used by the user to log in to the Vault
 * Certificate: Certificate (client.crt) in (Base64 encoded) format

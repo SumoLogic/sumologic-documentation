@@ -22,7 +22,7 @@ Updated: Jul 18, 2023
 
 Login to **Lansweeper** with your email and password and follow the link for configuration.
 
-Configuration link: https://docs.lansweeper.com/docs/api/authenticate#personal-application
+Configuration link: [https://docs.lansweeper.com/docs/api/authenticate#personal-application](https://docs.lansweeper.com/docs/api/authenticate#personal-application)
 
 ![](/img/platform-services/automation-service/app-central/integrations/lansweeper/lansweeper-1.png)
 
@@ -44,7 +44,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*) and then click Save.
 
-* URL: default value for API URL is https://api.lansweeper.com
+* URL: default value for API URL is 'https://api.lansweeper.com'
 * Token : the Token you copied earlier
 
 ![](/img/platform-services/automation-service/app-central/integrations/lansweeper/lansweeper-5.png)

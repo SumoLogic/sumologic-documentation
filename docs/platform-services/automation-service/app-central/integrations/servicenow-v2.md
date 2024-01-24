@@ -38,7 +38,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*):
 
-* URL: ServiceNow URL in the format &lt;https://company.service-now.com/&gt;
+* URL: ServiceNow URL in the format 'https://company.service-now.com/'
 * Username: your ServiceNow username
 * Password: your ServiceNow password
 
@@ -96,7 +96,7 @@ JSON Query filed needs to be populated with JSON, field names and values of all 
 
 For more info on building JSON Query check REST API Explorer. 
 
-For example: JSON Query = {"active":"true","assigned\_to":"966e021","number":"INC002135","state":""}
+For example: `JSON Query = {"active":"true","assigned\_to":"966e021","number":"INC002135","state":""}`
 
 **Update Ticket** 
 
@@ -104,7 +104,7 @@ JSON Query filed needs to be populated with JSON, field names and new value for 
 
 For more info on building Json Query check REST API Explorer. 
 
-For example: JSON Query = {active":"false","state":"2"}
+For example: `JSON Query = {active":"false","state":"2"}`
 
 ## Category
 

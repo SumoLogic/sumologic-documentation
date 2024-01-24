@@ -38,7 +38,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate all the required fields (\*):
 
 * Label - Name of the resource
-* URL: URL of Mattermost (Example ’https://xxx.yyy.mattermost.com’ is already provided)
+* URL: URL of Mattermost (Example ’'https://xxx.yyy.mattermost.com'’ is already provided)
 * User Email
 * Password
 

@@ -24,7 +24,7 @@ VMware Carbon Black Cloud Enterprise EDR Integration Interact with watchlists, f
 
 ## VMware Carbon Black Cloud Enterprise EDR Configuration
 
-Login into the CBC Console (<https://defense.conferdeploy.net>)
+Login into the CBC Console [https://defense.conferdeploy.net](https://defense.conferdeploy.net)
 
 Navigate to the **Settings**  menu, and then click on  **API Access.**
 
@@ -63,7 +63,7 @@ After the list of the integrations appears, search/look for the VMware Carbon Bl
 Populate all the required fields (\*) and then click Save.
 
 * Label: The name of the resource
-* API URL: URL to the API of the VMware Carbon Black Cloud Enterprise EDR instance (https://defense.conferdeploy.net)
+* API URL: URL to the API of the VMware Carbon Black Cloud Enterprise EDR instance `https://defense.conferdeploy.net`
 * Organization Key: the Organization Key you copied earlier
 * API ID: The API ID that you copied earlier
 * API Secret Key: The API Secret Key that you copied earlier

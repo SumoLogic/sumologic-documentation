@@ -20,17 +20,17 @@ IPinfo is an IP data provider specialized in IP address geolocation, ASN, IP add
 
 The API returns all the data the token has access to for the target IP address.
 
-Please visit <https://ipinfo.io/developers/data-types#geolocation-data> for more info.
+Please visit [https://ipinfo.io/developers/data-types#geolocation-data](https://ipinfo.io/developers/data-types#geolocation-data) for more info.
 
 (2) Available in: Business, and Enterprise. 
 
-Please visit <https://ipinfo.io/developers/hosted-domains> for more info.
+Please visit [https://ipinfo.io/developers/hosted-domains](https://ipinfo.io/developers/hosted-domains) for more info.
 
 ## IPinfo Configuration
 
 This integration requires an IPinfo Access Token.
 
-You can retrieve the Access Token from your IPinfo account here <https://ipinfo.io/account/token> 
+You can retrieve the Access Token from your IPinfo account here [https://ipinfo.io/account/token](https://ipinfo.io/account/token)> 
 
 ![](/img/platform-services/automation-service/app-central/integrations/ipinfo/ipinfo-1.png)
 

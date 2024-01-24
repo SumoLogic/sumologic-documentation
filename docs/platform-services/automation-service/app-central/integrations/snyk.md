@@ -36,7 +36,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*)
 
-* API URL: default (*https://api.snyk.io/*)
+* API URL: default 'https://api.snyk.io'/
 * Token : Insert the Token
 
 Click Save.

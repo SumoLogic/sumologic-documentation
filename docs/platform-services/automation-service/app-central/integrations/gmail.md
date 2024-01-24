@@ -34,14 +34,14 @@ Interact with filters, mail messages and attachments in Google Mail.
 
 ## Gmail Configuration
 
-1) Create a new Project in the Developer Console <https://console.developers.google.com/>
+1) Create a new Project in the Developer Console [https://console.developers.google.com/](https://console.developers.google.com/)
 
-2) In the APIs & Services section, navigate to Credentials and select Create Credentials: <https://console.cloud.google.com/apis/api>
+2) In the APIs & Services section, navigate to Credentials and select Create Credentials: [https://console.cloud.google.com/apis/api](https://console.cloud.google.com/apis/api)
 
 3) Select OAuth Client ID as the credential type and set the following inputs:
 
 * Application Type: Web Application
-* Authorized redirect URIs > Add URI: http://localhost/
+* Authorized redirect URIs > Add URI: 'http://localhost/'
 * Note: Will only be used to generate a refresh token.
 
 4) Copy the resulting Client ID and Client Secret Key values, as these will be used later.
@@ -56,14 +56,14 @@ Interact with filters, mail messages and attachments in Google Mail.
 
 6) The following Scopes are needed:
 
-* <https://mail.google.com>
-* <https://www.googleapis.com/auth/gmail.modify>
-* <https://www.googleapis.com/auth/gmail.readonly>
-* <https://www.googleapis.com/auth/admin.directory.user>
-* <https://www.googleapis.com/auth/gmail.compose>
-* <https://www.googleapis.com/auth/gmail.send>
-* <https://www.googleapis.com/auth/gmail.settings.basic>
-* <https://www.googleapis.com/auth/gmail.settings.sharing>
+* 'https://mail.google.com'
+* 'https://www.googleapis.com/auth/gmail.modify'
+* 'https://www.googleapis.com/auth/gmail.readonly'
+* 'https://www.googleapis.com/auth/admin.directory.user'
+* 'https://www.googleapis.com/auth/gmail.compose'
+* 'https://www.googleapis.com/auth/gmail.send'
+* 'https://www.googleapis.com/auth/gmail.settings.basic'
+* 'https://www.googleapis.com/auth/gmail.settings.sharing'
 
 7) In Cloud SOAR, navigate to Settings > Integrations > Gmail, add a new Resource and provide the following inputs:
 
@@ -86,7 +86,7 @@ Interact with filters, mail messages and attachments in Google Mail.
 
 13) Within this URL, copy the code nested in this URL: 
 
-http://localhost/?code=4/0AbUR2VXXXXFe8kuMTUE4Dkxts4J8mo3\_BkZKxXAcdzXXXXtd9lrjai00pEuG0YXWtWjimg&scope=https://mail.google.com/%20https://www.googleapis.com/auth/gmail.settings.basic
+'http://localhost/?code=4/0AbUR2VXXXXFe8kuMTUE4Dkxts4J8mo3\_BkZKxXAcdzXXXXtd9lrjai00pEuG0YXWtWjimg&scope=https://mail.google.com/%20https://www.googleapis.com/auth/gmail.settings.basic'
 
 ![](/img/platform-services/automation-service/app-central/integrations/gmail/gmail-4.png)
 

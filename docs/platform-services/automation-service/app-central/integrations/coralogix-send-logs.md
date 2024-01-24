@@ -19,7 +19,7 @@ Coralogix is rebuilding the path to observability using a real-time streaming an
 
 Generate and then copy the API Key for sending data.
 
-[https://<*teamname*>.coralogix.com/#/integration/apikey](https://sumo.coralogix.com/#/integration/apikey)
+'https://$lt;teamname$gt;.coralogix.com/#/integration/apikey'
 
 ![](/img/platform-services/automation-service/app-central/integrations/coralogix-send-logs/coralogix-send-logs-1.png)
 

@@ -61,7 +61,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate all the required fields (\*) and then click Save.
 
 * Label: The name of the resource
-* Sumo Logic API URL: URL to the API of the instance (more info on the URL here: <https://help.sumologic.com/APIs>)
+* Sumo Logic API URL: URL to the API of the instance (more info on the URL here: [https://help.sumologic.com/APIs](https://help.sumologic.com/APIs))
 * Access ID: The access ID that you copied earlier
 * Access Key: The access key that you copied earlier
 

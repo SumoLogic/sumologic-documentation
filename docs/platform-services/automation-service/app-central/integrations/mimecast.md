@@ -22,7 +22,7 @@ Mimecast protects an enterprise's email infrastructure from viruses, malware, ph
 
 ## Mimecast Configuration
 
-<https://integrations.mimecast.com/documentation/api-overview/global-base-urls/>
+[https://integrations.mimecast.com/documentation/api-overview/global-base-urls/](https://integrations.mimecast.com/documentation/api-overview/global-base-urls/)
 
 ## Change Log
 

@@ -88,8 +88,8 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate the resource fields as indicated.
 
 * Label: The name of the resource
-* Sumo Logic API URL: URL to the API of the CSE instance (<https://api.sumologic.com>)
-* Sumo Logic CSE URL: URL to the CSE instance (<https://service.sumologic.com/sec>)
+* Sumo Logic API URL: URL to the API of the CSE instance `https://api.sumologic.com`
+* Sumo Logic CSE URL: URL to the CSE instance `https://service.sumologic.com/sec`
 * Access ID: The access ID that you copied earlier
 * Access Key: The access key that you copied earlier
 
@@ -105,7 +105,7 @@ You should receive a successful notification in the bottom right corner.
 
 ![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-10.png)
 
-For detailed API documentation visit <https://help.sumologic.com/APIs> 
+For detailed API documentation visit [https://help.sumologic.com/APIs](https://help.sumologic.com/APIs) 
 
 ## Category
 

@@ -57,7 +57,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate all the required fields (\*) and then click Save.
 
 * **Label**: the name for the resource
-* **URL**: the base API URL for WithSecure Elements. Default: <https://api.connect.withsecure.com/>
+* **URL**: the base API URL for WithSecure Elements. Default: `https://api.connect.withsecure.com/`
 * **Client ID**: your previously retrieved Client ID
 * **Client Secret**: your previously retrieved Client Secret
 

@@ -20,7 +20,7 @@ Discovers every IP-connected device, auto-classifies it, and assesses its compli
 
 ## Forescout eyeSight Configuration
 
-To configure Web API follow this link <https://docs.forescout.com/bundle/web-api-1-5-3-h/page/web-api-1-5-3-h.Configure-Web-API-Plugin.html> or contact **Forescout eyeSight** team for more information on configuration.
+To configure Web API follow this [link](https://docs.forescout.com/bundle/web-api-1-5-3-h/page/web-api-1-5-3-h.Configure-Web-API-Plugin.html) or contact **Forescout eyeSight** team for more information on configuration.
 
 ## Forescout eyeSight in Automation Service and Cloud SOAR
 

@@ -24,7 +24,7 @@ Google Alert Center relies on the Google Workspace Alert Center API which empowe
 
 To create a Service Account in Google Workspace and generate the JSON file needed to configure the Google Alert Center integration, follow these steps:
 
-1. Log in to the Google Cloud portal at <https://console.cloud.google.com>
+1. Log in to the Google Cloud portal at [https://console.cloud.google.com](https://console.cloud.google.com)
 2. Select a Google Cloud project (or create a new one)
 3. Go to the **API&Services** > **Credentials** page
 4. Click **CREATE CREDENTIALS** and select **Service Account**   
@@ -45,10 +45,10 @@ To create a Service Account in Google Workspace and generate the JSON file neede
   
 ![](/img/platform-services/automation-service/app-central/integrations/google-alert-center/google-alert-center-5.png)
 11. The JSON file is downloaded. Make sure you save it in a safe place
-12. Enable the Google Workspace Alert Center API for the project at <https://console.cloud.google.com/apis/library/alertcenter.googleapis.com>   
+12. Enable the Google Workspace Alert Center API for the project at [https://console.cloud.google.com/apis/library/alertcenter.googleapis.com](https://console.cloud.google.com/apis/library/alertcenter.googleapis.com)   
   
 ![](/img/platform-services/automation-service/app-central/integrations/google-alert-center/google-alert-center-6.png)
-13. Go to <https://admin.google.com/ac/owl/domainwidedelegation> to open the Domain-Wide delegation settings in the Google Admin portal
+13. Go to [https://admin.google.com/ac/owl/domainwidedelegation](https://admin.google.com/ac/owl/domainwidedelegation) to open the Domain-Wide delegation settings in the Google Admin portal
 14. Click on Add new   
   
   
@@ -59,7 +59,7 @@ To create a Service Account in Google Workspace and generate the JSON file neede
   
 ![](/img/platform-services/automation-service/app-central/integrations/google-alert-center/google-alert-center-9.png)
 16. In the OAuth scopes (comma-delimited) field, provide the following scopes:
-	1. https://www.googleapis.com/auth/apps.alerts
+	1. 'https://www.googleapis.com/auth/apps.alerts'
 17. Click Authorize   
   
 ![](/img/platform-services/automation-service/app-central/integrations/google-alert-center/google-alert-center-10.png)

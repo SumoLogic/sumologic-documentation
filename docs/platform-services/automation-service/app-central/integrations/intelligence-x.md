@@ -23,7 +23,7 @@ Intelligence X is a search engine and data archive. The search works with select
 
 Please follow these steps to get your API Key and URL from Intelligence X:
 
-Step 1 - Log in or Sign up <https://intelx.io/>
+Step 1 - Log in or Sign up [https://intelx.io/](https://intelx.io/)
 
 Step 2 - Click on Account
 

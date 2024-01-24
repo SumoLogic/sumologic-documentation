@@ -19,7 +19,7 @@ Farsight Security DNSDB® is the world’s largest DNS intelligence database tha
 
 ## Farsight Security DNSDB configuration
 
-Request your API Key from <https://www.farsightsecurity.com/solutions/dnsdb/> 
+Request your API Key from [https://www.farsightsecurity.com/solutions/dnsdb](https://www.farsightsecurity.com/solutions/dnsdb) 
 
 ## Farsight Security DNSDB in Automation Service and Cloud SOAR
 

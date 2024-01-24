@@ -47,7 +47,7 @@ Populate all the required fields (\*):
 
 • Label: The name of the resource
 
-• URL: URL of BitSight API (default URL <https://api.bitsighttech.com> is already provided)
+• URL: URL of BitSight API (default URL [https://api.bitsighttech.com](<https://www.alphamountain.ai/contact/>) is already provided)
 
 • API Token
 

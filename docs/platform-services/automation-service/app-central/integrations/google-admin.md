@@ -19,7 +19,7 @@ Google Admin relies on the Admin SDK API, which empowers administrators to effic
 
 To create a Service Account in Google Workspace and generate the JSON file needed to configure the Google Admin integration, follow these steps:
 
-1. Log in to the Google Cloud portal at <https://console.cloud.google.com>
+1. Log in to the Google Cloud portal at [https://console.cloud.google.com](https://console.cloud.google.com)
 2. Select a Google Cloud project (or create a new one)
 3. Go to the **API&Services** > **Credentials** page
 4. Click **CREATE CREDENTIALS** and select **Service Account**   
@@ -40,8 +40,8 @@ To create a Service Account in Google Workspace and generate the JSON file neede
   
 ![](/img/platform-services/automation-service/app-central/integrations/google-admin/google-admin-5.png)
 11. The JSON file is downloaded. Make sure you save it in a safe place
-12. Enable the Admin SDK API for the project at <https://console.cloud.google.com/flows/enableapi?apiid=admin.googleapis.com>
-13. Go to <https://admin.google.com/ac/owl/domainwidedelegation> to open the Domain-Wide delegation settings in the Google Admin portal
+12. Enable the Admin SDK API for the project at [https://console.cloud.google.com/flows/enableapi?apiid=admin.googleapis.com](https://console.cloud.google.com/flows/enableapi?apiid=admin.googleapis.com)
+13. Go to [https://admin.google.com/ac/owl/domainwidedelegation](https://admin.google.com/ac/owl/domainwidedelegation) open the Domain-Wide delegation settings in the Google Admin portal
 14. Click on Add new   
   
   
@@ -52,7 +52,7 @@ To create a Service Account in Google Workspace and generate the JSON file neede
   
 ![](/img/platform-services/automation-service/app-central/integrations/google-admin/google-admin-8.png)
 16. In the OAuth scopes (comma-delimited) field, provide the following scopes:
-	1. https://www.googleapis.com/auth/admin.reports.audit.readonly
+	1. 'https://www.googleapis.com/auth/admin.reports.audit.readonly'
 17. Click Authorize
 
 ![](/img/platform-services/automation-service/app-central/integrations/google-admin/google-admin-9.png)

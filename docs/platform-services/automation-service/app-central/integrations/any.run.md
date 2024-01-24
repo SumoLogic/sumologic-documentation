@@ -40,7 +40,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*):
 
-* URL: https://api.any.run
+* URL: 'https://api.any.run'
 * API Key: the API Key you copied earlier.
 
 Click SAVE.

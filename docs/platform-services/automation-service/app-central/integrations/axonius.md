@@ -65,7 +65,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate the resource fields as indicated.
 
 * Label: The name of the resource
-* Axonius URL: URL to Axonius instance (e.g https://your-axonius-instance.axonius.com)
+* Axonius URL: URL to Axonius instance (e.g 'https://your-axonius-instance.axonius.com')
 * API Key : The API Key that you copied earlier
 * API Secret: The API Secret that you copied earlier
 

@@ -56,7 +56,7 @@ Populate all the required fields (\*) and then click Save.
 Populate all the required fields:   
  • Label: The name of the resource
 
- • Host: https://apitest.vectracloudlab.com/api/v2.2/   
+ • Host: 'https://apitest.vectracloudlab.com/api/v2.2/'   
  • Token: API Token copied earlier.
 
 Then click Save. 

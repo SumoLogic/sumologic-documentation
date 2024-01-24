@@ -21,7 +21,7 @@ alphaMountain provides up-to-date domain and IP intelligence for cybersecurity i
 
 ## alphaMountain Configuration
 
-In order to get a free trial please visit <https://www.alphamountain.ai/contact/> to get your license key.
+In order to get a free trial please visit [https://www.alphamountain.ai/contact/](https://www.alphamountain.ai/contact/) to get your license key.
 
 ## alphaMountain in Automation Service and Cloud SOAR
 
@@ -41,7 +41,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*)
 
-* URL: alphaMountain API URL. Default: [https://api.alphamountain.ai](https://api.alphamountain.ai/)
+* URL: alphaMountain API URL. Default: 'https://api.alphamountain.ai'
 * License Key : your License Key for alphaMountain
 
 Click Save.

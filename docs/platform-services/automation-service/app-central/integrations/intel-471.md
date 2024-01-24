@@ -42,7 +42,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*)
 
-* URL: https://api.intel471.com/
+* URL: 'https://api.intel471.com'/
 * Email Address: your email address
 * API Key: Insert the previously copied key
 

@@ -31,7 +31,7 @@ The Zoom API uses OAuth 2.0 to authenticate and authorize users to make requests
 
 Please follow these steps to create a Server-to-Server OAuth app:
 
-1. Sign in to Zoom Marketplace : <https://marketplace.zoom.us/>. From the Develop menu, choose Build App.
+1. Sign in to Zoom Marketplace : [https://marketplace.zoom.us/](https://marketplace.zoom.us/). From the Develop menu, choose Build App.
 2. Choose the Server-to-Server OAuth app type.   
   
 ![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-2.png)
@@ -82,11 +82,11 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate all the required fields (\*)
 
 * Label: The resource name
-* OAuth Token URL: The default OAuth Token url is <https://zoom.us/>
-* Api URL: The default API url is <https://api.zoom.us/>
-* Client ID: Your Client ID for your application listed on <https://marketplace.zoom.us/user/build>
-* Client Secret: Your Client Secret for your application listed on <https://marketplace.zoom.us/user/build>
-* Account ID: Your Account ID for your application listed on <https://marketplace.zoom.us/user/build>
+* OAuth Token URL: The default OAuth Token url is 'https://zoom.us/'
+* Api URL: The default API url is 'https://api.zoom.us/'
+* Client ID: Your Client ID for your application listed on 'https://marketplace.zoom.us/user/build'
+* Client Secret: Your Client Secret for your application listed on 'https://marketplace.zoom.us/user/build'
+* Account ID: Your Account ID for your application listed on 'https://marketplace.zoom.us/user/build'
 
 Click Save.
 

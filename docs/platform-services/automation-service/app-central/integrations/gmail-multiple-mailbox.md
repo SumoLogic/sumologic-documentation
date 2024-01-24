@@ -32,7 +32,7 @@ Interact with multiple Gmail mailboxes.
 
 ## Gmail Multiple Mailbox Configuration
 
-1) Create/view a Project here at <https://console.developers.google.com/>
+1) Create/view a Project here at [https://console.developers.google.com/](https://console.developers.google.com/)
 
 2) Access your Google Service Account.
 
@@ -52,7 +52,7 @@ Interact with multiple Gmail mailboxes.
 
 9) From the Service account details page you must Enable the G Suite Domain-wide Delegation.
 
-10) At this link <http://admin.google.com/ac/owl/domainwidedelegation> , you have to add the following Scopes
+10) At this link [http://admin.google.com/ac/owl/domainwidedelegation](http://admin.google.com/ac/owl/domainwidedelegation), you have to add the following Scopes
 
 * [*https://mail.google.com/*](https://mail.google.com/)
 * [*https://www.googleapis.com/auth/gmail.settings.basic*](https://www.googleapis.com/auth/gmail.settings.basic)
@@ -66,7 +66,7 @@ Interact with multiple Gmail mailboxes.
 
 12) You have also to Enable the Gmail API
 
-* <https://console.developers.google.com/apis/api/gmail.googleapis.com/overview>
+* [https://console.developers.google.com/apis/api/gmail.googleapis.com/overview](https://console.developers.google.com/apis/api/gmail.googleapis.com/overview)
 
 If the API has been recently enabled, wait a few minutes for the action to propagate to the systems and retry.
 

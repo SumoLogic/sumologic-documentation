@@ -37,7 +37,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*) and then click Save.
 
-* URL: the Telegram URL <https://api.telegram.org/>
+* URL: the Telegram URL `https://api.telegram.org/`
 * API Token: the API Token you copied earlier when creating your bot.
 
 ![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-4.png)
@@ -56,10 +56,10 @@ You should receive a successful notification in the bottom right corner.
 ![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-7.png)
 
   
-Note: 
+## Note
 
 * The bot must be Administrator of the chat to send your message.
-* The chat ID will be send without writing it as parameter in Chat field if there are chat updates in 24 hours. Otherwise, needs to be send a message to the chat in Telegram application to continue. Other possible way to obtain chat ID is also from Telegram application following the steps: go on the group of choice, add @rose bot, type the command /id and chat ID will be sent. Use that value in parameter for Chat.
+* The chat ID will be sent without writing it as parameter in Chat field if there are chat updates in 24 hours. Otherwise, needs to be send a message to the chat in Telegram application to continue. Other possible way to obtain chat ID is also from Telegram application following the steps: go on the group of choice, add @rose bot, type the command /id and chat ID will be sent. Use that value in parameter for Chat.
 
 ## Change Log
 

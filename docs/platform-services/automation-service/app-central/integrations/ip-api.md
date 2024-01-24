@@ -46,7 +46,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate all the required fields (\*) and then click Save:
 
 * Label: the name of the resource
-* Host: https://pro.ip-api.com/
+* Host: 'https://pro.ip-api.com'/
 * API Key: the API Key copied earlier
 
 ![](/img/platform-services/automation-service/app-central/integrations/ip-api/ip-api-6.png)

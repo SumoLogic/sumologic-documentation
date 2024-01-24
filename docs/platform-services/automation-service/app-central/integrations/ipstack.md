@@ -17,9 +17,9 @@ Ipstack API services enable you to locate and identify website visitors at a sta
 
 ## Ipstack configuration
 
-Visit <https://ipstack.com/product> and Sign Up to get an API key.
+Visit [https://ipstack.com/product](https://ipstack.com/product) and Sign Up to get an API key.
 
-Once you're logged in you can also copy the API Key from here: <https://ipstack.com/dashboard> 
+Once you're logged in you can also copy the API Key from here: [https://ipstack.com/dashboard](https://ipstack.com/dashboard) 
 
 ## Ipstack in Automation Service and Cloud SOAR
 
@@ -40,7 +40,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate all the required fields (\*) and then click Save.
 
 * Label: the desired name for the resource
-* API URL: by default the url is: <http://api.ipstack.com>
+* API URL: by default the url is: 'http://api.ipstack.com'
 * API Key: the API Access Key you copied earlier
 
 To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.

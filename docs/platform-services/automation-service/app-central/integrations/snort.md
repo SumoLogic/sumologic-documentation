@@ -33,7 +33,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*) and then click Save.
 
-* URL: https://www.snort.org
+* URL: 'https://www.snort.org'
 
 ![](/img/platform-services/automation-service/app-central/integrations/snort/snort-4.png)
 

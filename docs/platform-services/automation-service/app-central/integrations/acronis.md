@@ -56,7 +56,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate all the required fields (\*)
 
 * Label: The desired name for the resource
-* URL: Your Acronis Data Center URL you copied earlier from Acronis. Default: <https://cloud.acronis.com/>
+* URL: Your Acronis Data Center URL you copied earlier from Acronis. Default: 'https://cloud.acronis.com'/
 * Client ID: Your Acronis Client ID you copied earlier from Acronis
 * Client Secret: Your Acronis Secret you copied earlier from Acronis
 

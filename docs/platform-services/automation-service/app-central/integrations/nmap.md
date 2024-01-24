@@ -37,7 +37,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*)
 
-* URL: Your URL default (*https://api.nmap.online/*)
+* URL: Your URL default ('https://api.nmap.online'/)
 * Api Key : Insert the API Key
 
 Click Save.

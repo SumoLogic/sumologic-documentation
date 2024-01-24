@@ -38,7 +38,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*)
 
-* API URL: default (*https://api.github.com*)
+* API URL: default 'https://api.github.com'
 * Token : Insert the Token
 
 Click Save.

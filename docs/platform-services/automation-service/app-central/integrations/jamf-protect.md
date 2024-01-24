@@ -50,7 +50,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*)
 
-* API URL: https://your-tenant.protect.jamfcloud.com
+* API URL: 'https://your-tenant.protect.jamfcloud.com'
 * Client ID: Insert copied Client ID
 * Password: Insert copied Password
 

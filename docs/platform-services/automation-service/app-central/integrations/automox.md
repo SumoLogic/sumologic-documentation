@@ -61,7 +61,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*) and then click Save.
 
-* URL: the Automox URL. Default: <https://console.automox.com>
+* URL: the Automox URL. Default: 'https://console.automox.com'
 * API Key: the API Key you copied earlier
 
 ![](/img/platform-services/automation-service/app-central/integrations/automox/automox-8.png)

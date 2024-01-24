@@ -36,7 +36,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate all the required fields (\*) and then click Save.
 
 * Label: the name for the resource
-* URL API: https://my.imperva.com/
+* URL API: 'https://my.imperva.com'/
 * API ID
 * API Key
 

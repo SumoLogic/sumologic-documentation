@@ -49,7 +49,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*)
 
-* URL: <https://techp-as.awmdm.com/API>
+* URL: `https://techp-as.awmdm.com/API`
 * Username: Workspace ONE Login Username
 * Password: Workspace ONE Login Password
 * API Key: The previous generated API Key

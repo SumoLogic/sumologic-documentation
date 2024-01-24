@@ -46,7 +46,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*) and then click Save.
 
-* URL: default value for API URL is https://api.airtable.com
+* URL: default value for API URL is 'https://api.airtable.com'
 * Token : the Token you copied earlier
 
 ![](/img/platform-services/automation-service/app-central/integrations/airtable/airtable-5.png)

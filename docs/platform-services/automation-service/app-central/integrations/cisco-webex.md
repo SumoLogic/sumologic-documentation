@@ -45,7 +45,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate all the required fields (\*)
 
 * Label: The resource name
-* URL: The default url is <https://webexapis.com/>
+* URL: The default url is 'https://webexapis.com'/
 * Token: Your Cisco Webex token
 
 Click Save.

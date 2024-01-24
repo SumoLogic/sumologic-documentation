@@ -47,7 +47,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate all the required fields (\*) and then click Save.
 
 * **Label**: the name for the resource
-* **URL**: the base API URL for WithSecure Elements. Default: <https://api.intelligence.mandiant.com>
+* **URL**: the base API URL for WithSecure Elements. Default: 'https://api.intelligence.mandiant.com'
 * **Public Key**: the public key previously obtained.
 * **Private Key**: the private key previously obtained.
 

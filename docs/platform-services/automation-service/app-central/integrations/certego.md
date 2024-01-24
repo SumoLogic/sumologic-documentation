@@ -37,7 +37,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate all the required fields (\*) and then click Save.
 
 * Label: the name for the resource
-* URL API: Certego URL API. Default: https://panoptikon.certego.net/
+* URL API: Certego URL API. Default: 'https://panoptikon.certego.net'/
 * Username: your Certego username
 * Password: your Certego password
 

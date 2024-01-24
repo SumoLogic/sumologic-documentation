@@ -52,7 +52,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*) and then click Save.
 
-* URL: default value for API URL is https://downdetectorapi.com
+* URL: default value for API URL is 'https://downdetectorapi.com'
 * Username: the client ID that you copied as username
 * Password: the Client Secret that you copied as password
 

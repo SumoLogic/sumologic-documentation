@@ -1,7 +1,7 @@
 ---
 title: Abnormal Security
 description: ''
-tags: []
+tags: [ ]
 ---
 
 ![](/img/platform-services/automation-service/app-central/logos/abnormal-security.png)
@@ -9,8 +9,8 @@ tags: []
 Version: 1.2  
 Updated: Jun 21, 2023
 
-Abnormal Security provides advanced email security to prevent credential phishing, business email compromise, account takeover, and more.   
-
+Abnormal Security provides advanced email security to prevent credential phishing, business email compromise, account
+takeover, and more.
 
 ## Actions
 
@@ -25,10 +25,10 @@ Abnormal Security provides advanced email security to prevent credential phishin
 * **Get Employee Identity Analysis** *(Enrichment)* - Get employee identity analysis (Genome) data.
 * **Get Employee Information** *(Enrichment)* - Get employee information.
 
-  
 ## Abnormal Security in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+To configure the integration, log into the application, expand the configuration menu in the top right corner by
+hovering over the gear icon and click Automation.
 
 ![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-1.png)
 
@@ -45,7 +45,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate all the required fields (\*) and then click Save.
 
 * Label: the name for the resource
-* URL API: Abnormal Security URL API. Default: <https://api.abnormalplatform.com>
+* URL API: Abnormal Security URL API. Default: 'https://api.abnormalplatform.com'
 * Token: retrieved from Abnormal Security
 
 ![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-4.png)
@@ -56,8 +56,7 @@ To make sure the resource is working, hover over the resource and then click the
 
 Click Test Saved Settings.
 
-![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-6.png)   
- 
+![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-6.png)
 
 You should receive a successful notification in the bottom right corner.
 
@@ -71,5 +70,5 @@ Email Security
 
 * October 21, 2022 - First upload
 * May 18, 2023 (v1.1)
-	+ Updated integration: (Updated the integration Fields with Environmental Variables and improved error handling)
+    + Updated integration: (Updated the integration Fields with Environmental Variables and improved error handling)
 * June 21, 2023 (v1.2) - Removed trailing spaces from integration

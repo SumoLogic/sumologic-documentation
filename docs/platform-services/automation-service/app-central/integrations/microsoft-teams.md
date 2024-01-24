@@ -461,7 +461,7 @@ Please add two different resources for Application and Delegated context.
 Populate the resource fields as indicated.
 
 * Label: The resource name
-* API URL: The default Microsoft Graph API URL is<https://graph.microsoft.com/v1.0>
+* API URL: The default Microsoft Graph API URL is 'https://graph.microsoft.com/v1.0'
 * Tenant ID: Directory (Tenant) ID (You can check from you app registration page)
 * Authentication Grant Type: you can choose any value from the following according to the permissions you add to your App:
 	+ Password (Delegated Context)
@@ -470,7 +470,7 @@ Populate the resource fields as indicated.
 * Client Secret: Application (Client) Secret, Required for both Authentication Grant Type (Client Secret that you copied earlier)
 * Username: Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context)
 * Password: Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context)
-* Cloud SOAR URL: Provide the SOAR URL in format https://your-cloud-soar-host/incmansuite\_ng (this field is only required and use in Triggers)
+* Cloud SOAR URL: Provide the SOAR URL in format 'https://your-cloud-soar-host/incmansuite\_ng' (this field is only required and use in Triggers)
 * Cloud SOAR JWT Token: provide your SOAR JWT which you can copy from your profile section (this field is only required and use in Triggers)
 * Team Incident Internal Field Name: To save Team ID in Incident Field, Required only for Triggers, For Example: opt\_1
 

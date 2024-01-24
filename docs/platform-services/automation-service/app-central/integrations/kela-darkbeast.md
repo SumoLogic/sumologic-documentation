@@ -9,7 +9,7 @@ tags: []
 Version: 1.1  
 Updated: Jul 05, 2023
 
-Kela Darkbeastprovides incident responders, threat hunters, investigators, and intelligence analysts with a robust technology to dive into the cybercrime underground and investigate. 
+Kela Darkbeast provides incident responders, threat hunters, investigators, and intelligence analysts with a robust technology to dive into the cybercrime underground and investigate. 
 
 ## Actions
 
@@ -43,7 +43,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*)
 
-* URL: <https://darkbeast.ke-la.com/api/v1/>
+* URL: 'https://darkbeast.ke-la.com/api/v1/'
 * API Token: Insert the previously copied token
 
 Click Save.

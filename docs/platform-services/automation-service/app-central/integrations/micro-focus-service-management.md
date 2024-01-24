@@ -34,7 +34,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 Populate all the required fields (\*) in the resource 
 
 * Label: the name for the resource
-* API URL: the API URL <https://us1-smax.saas.microfocus.com>
+* API URL: the API URL 'https://us1-smax.saas.microfocus.com'
 * Username: the Micro Focus account username
 * Password: the Micro Focus account password
 * Tenant ID: the Micro Focus tenant ID

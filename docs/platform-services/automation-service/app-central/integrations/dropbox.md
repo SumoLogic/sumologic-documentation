@@ -19,7 +19,7 @@ Updated: Jan 30, 2023
 
 ## Dropbox Configuration
 
-Follow the link <https://www.dropbox.com/developers/reference/getting-started#app%20console> and create a Dropbox app with full Dropbox access. The Permissions tab allows you to enable and disable specific scopes for your app. Next, generate access token and copy the token.
+Follow the [link](https://www.dropbox.com/developers/reference/getting-started#app%20console) and create a Dropbox app with full Dropbox access. The Permissions tab allows you to enable and disable specific scopes for your app. Next, generate access token and copy the token.
 
 ## Dropbox in Automation Service and Cloud SOAR
 
@@ -39,7 +39,7 @@ The integration details will appear. Click on the "+" button to add new Resource
 
 Populate all the required fields (\*)
 
-* API URL: https://api.dropboxapi.com
+* API URL: 'https://api.dropboxapi.com'
 * Token: Insert copied token
 
 Click Save.
