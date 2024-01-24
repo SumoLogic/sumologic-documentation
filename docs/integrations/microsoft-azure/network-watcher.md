@@ -20,7 +20,7 @@ The Sumo Logic App for Azure Network Watcher uses Network Security Group (NSG) f
 * 5-tuple information with respect to flow (Source/Destination IP and Port, Protocol)
 * Allowed/Denied traffic flow.
 
-### Sample log message
+### Sample log messages
 
 ```json
     {  
@@ -41,7 +41,7 @@ The Sumo Logic App for Azure Network Watcher uses Network Security Group (NSG) f
     }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Denied Traffic Flow by Source Location"
 _sourceCategory="security/flowlogs"

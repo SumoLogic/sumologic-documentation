@@ -57,7 +57,7 @@ May 13 08:24:43 localhost haproxy[21813]: \
 </Tabs>
 
 
-### Sample Query
+### Sample queries
 
 This query example is from the [**HAProxy - Overview** dashboard](#overview) > **Top 5 Clients causing Errors** panels.
 ```sql

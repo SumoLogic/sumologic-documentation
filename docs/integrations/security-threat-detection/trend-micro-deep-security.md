@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Trend Micro Deep Security App works with system and security events to monitor event history such as anti-malware, IPS, web reputation, firewall, integrity and log inspection events. The App analyzes security events from both on-premises and cloud-based Trend Micro Deep Security products.
 
 
-## Log Types
+## Log types
 
 There are two types of Deep Security events:
 
@@ -72,7 +72,7 @@ Now you must add the Syslog Source to your Policy configuration. Set the integra
 4. Click **Save**.
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 <142>Oct  2 16:41:16 CEF:0|Trend Micro|Deep Security Agent|9.6.3177|21|Unsolicited UDP|5|cn1=34 cn1Label=Host ID dvchost=workstation_tsiley TrendMicroDsTenant=Primary TrendMicroDsTenantId=0 act=Deny dmac=B0:B9:B9:F8:E7:8F smac=39:D2:AE:D6:1F:05 TrendMicroDsFrameType=IP src=130.202.140.130 dst=10.0.102.94 in=291 cs3= cs3Label=Fragmentation Bits proto=UDP spt=445 dpt=42 cnt=1

@@ -20,7 +20,7 @@ The Sumo Logic App for Artifactory only supports Artifactory On-Premise. It does
 
 ## Artifactory
 
-### Log Types
+### Log types
 
 The Sumo Logic App for Artifactory collects data from the following logs:
 
@@ -190,7 +190,7 @@ _sourceCategory=*artifactory*
 This procedure documents how to collect logs from JFrog Artifactory 7 into Sumo Logic.
 
 
-### Log Types
+### Log types
 
 For each JFrog service, you will find its active log files in the `$JFROG_HOME/<product>/var/log` directory. For consistency, each log file is prefixed by its service name and a dash, `<service-name>-service.log`. For example, artifactory-service.log and router-request.log.
 

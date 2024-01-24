@@ -30,7 +30,7 @@ The following types of metrics are collected from JMX:
 
 For more information on different metrics collected, refer to the [JMX receiver docs](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/jvm.md).
 
-### Sample query
+### Sample queries
 
 ```sql
 sumo.datasource=jmx metric=jvm.memory.heap.used

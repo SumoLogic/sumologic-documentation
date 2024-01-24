@@ -129,13 +129,13 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-### Sample Log Messages in Non-Kubernetes environments
+### Sample log messages in Non-Kubernetes environments
 
 ```sql
 1674483805.439 44 192.168.100.40 TCP_REFRESH_MODIFIED/301 514 GET http://openstack.org/ - HIER_DIRECT/192.168.100.40 text/html
 ```
 
-### Sample Query
+### Sample queries
 
 This sample Query is from the **Squid Proxy - HTTP Response Analysis** > **URLs Experiencing Redirections** panel.
 

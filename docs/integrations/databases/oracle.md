@@ -16,7 +16,7 @@ This app is tested with the following Oracle versions:
 * Non-Kubernetes: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production - Version 19.3.0.0.0
 * Kubernetes: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production - Version 19.3.0.0.0
 
-## Log Types
+## Log types
 
 * Alert Logs
 * Listener Logs

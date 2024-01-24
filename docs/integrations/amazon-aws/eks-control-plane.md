@@ -105,7 +105,7 @@ please apply your changes to the latest version and try again"}
 scheduler.go:197] Failed to schedule pod: hello-app/frontend-56f7975f44-8sgj7"}
 ```
 
-### Sample Query
+### Sample queries
 
 The following query sample is taken from the **Top 10 URLs with Problem Status Codes** panel on the **EKS - API Server Audit Overview** dashboard.
 

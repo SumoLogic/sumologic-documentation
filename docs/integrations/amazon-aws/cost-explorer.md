@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for AWS Cost Explorer lets you visualize, understand, and manage your AWS costs and usage over time.
 
-## Log Types
+## Log types
 
 The **AWS Cost Explorer** App uses the JSON formatted logs collected using **AWS Cost Explorer** source.
 
@@ -34,7 +34,7 @@ The **AWS Cost Explorer** App uses the JSON formatted logs collected using **AWS
 }
 ```
 
-### Sample Query
+### Sample queries
 
 The following query sample was taken from the **Cost by Region** panel on the **AWS Cost Explorer - Account** dashboard.
 

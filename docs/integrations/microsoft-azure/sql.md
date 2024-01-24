@@ -72,7 +72,7 @@ For details on Azure SQL logs and metrics, see [Enable logging](https://docs.mic
 }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Top 10 Errors"
 _sourceCategory=Azure/DB/SQL/Logs ErrorEvent "\"operationName\":\"ErrorEvent\""

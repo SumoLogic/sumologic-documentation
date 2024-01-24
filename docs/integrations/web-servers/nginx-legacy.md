@@ -37,7 +37,7 @@ failed (2: No such file or directory), client: 101.1.1.1, server: _, request: "G
 HTTP/1.1", host: "example.com", referrer: "https://abc.example.com/"
 ```
 
-### Sample Query
+### Sample queries
 
 This sample query is from the **Requests by Clients** panel of the **Nginx (Legacy) - Overview** dashboard.
 

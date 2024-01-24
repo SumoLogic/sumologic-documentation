@@ -11,18 +11,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Google Cloud Load Balancing is Google’s load balancing service for Google Cloud Platform. The Sumo Logic App for Google Cloud Load Balancing helps you monitor load balancing activity.  The preconfigured dashboards provide insight into request locations and volume, response codes, and request and response data by load balancer.
 
-## Log Types
+## Log types
 
 The app uses the following log type:
 * [Cloud Load Balancing Request Logs](https://cloud.google.com/compute/docs/load-balancing/http/#logging)
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {"remoteIp":"98.243.249.133","requestUrl":"http:\/\/35.201.123.100\/","requestMethod":"POST","serverIp":"10.128.0.9","responseSize":"415","userAgent":"Mozilla\/5.0 (Windows NT 6.3; WOW64; Trident\/7.0; rv:11.0) like Gecko","requestSize":"1347","status":501}
 ```
 
-### Sample Query
+### Sample queries
 
 ```bash title="Status codes per load balancer"
 _sourceCategory=*gcp* data logName resource "\"type\":\"http_load_balancer\""

@@ -22,7 +22,7 @@ This section explains how to collect logs from Google Workspace Alert Center and
 All the alerts are in JSON format. Most of the alerts have few common fields like alertId, customerId, createTime, source, type and data. The differences are in the data section of the JSON where the alert type specific details are recorded. For more information about different alert types refer this Google Workspace [Alert document](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types).
 
 
-## Sample Log Message
+## Sample log messages
 
 This section provides a sample Google Workspace Alert Center log message.
 
@@ -51,7 +51,7 @@ This section provides a sample Google Workspace Alert Center log message.
 ```
 
 
-## Sample Query
+## Sample queries
 
 The query sample provided in this section is from the **Google Workspace Activity by Users with Compromised Credentials** panel of the **Google Workspace - Alert Center - Investigations** Dashboard.
 

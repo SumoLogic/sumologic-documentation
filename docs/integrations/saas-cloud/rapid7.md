@@ -17,7 +17,7 @@ Rapid7 app provides vital information, including asset count, distribution of as
 
 This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapid7.com/insightvm/en-us/api/integrations.html#tag/Asset) and [vulnerabilities](https://help.rapid7.com/insightvm/en-us/api/integrations.html#tag/Vulnerability) from Rapid7.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Asset Log"
  {
@@ -177,7 +177,7 @@ This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapi
   "title": "jQuery Vulnerability: CVE-2015-9251"
 }
 ```
-## Sample Query
+## Sample queries
 
 ```sql title="Assets by Type"
 _sourceCategory="Rapid7" assessed_for_policies // fetches assets

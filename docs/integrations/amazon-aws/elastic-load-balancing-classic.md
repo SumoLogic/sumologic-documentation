@@ -14,7 +14,7 @@ For example, you can use the Sumo Logic App to analyze raw Elastic Load Balancin
 
 If you are just beginning with AWS ELB, for background see the Sumo Logic DevOps blog, ["AWS Elastic Load Balancing: Load Balancer Best Practices"](https://www.sumologic.com/blog-devops/aws-elastic-load-balancer-best-practices/).
 
-## Log Types
+## Log types
 
 ELB logs are stored as .log files in the buckets you specify when you enable logging.
 
@@ -72,7 +72,7 @@ parse "* * *:* *:* * * * * * * * \"* *://*:*/* HTTP" as datetime, ELB_Server, cl
 ```
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 2017-01-20T23:00:26.059475Z elb-shop-com 10.15.120.181:80 10.34.7.122:80 0.000026
@@ -81,7 +81,7 @@ parse "* * *:* *:* * * * * * * * \"* *://*:*/* HTTP" as datetime, ELB_Server, cl
 Mobile Safari/517.35+"
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Name - Request by Geolocation"
 _sourceCategory=elb*

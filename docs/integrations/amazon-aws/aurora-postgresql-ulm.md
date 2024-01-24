@@ -124,7 +124,7 @@ Below are example logs and metrics collected from your Aurora PostgreSQL databas
 </details>
 
 
-### Sample log query
+### Sample queries
 
 The following log query is from the **Event Status Trend** panel of the **CloudTrail Event - Overview dashboard**.
 

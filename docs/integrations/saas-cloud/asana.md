@@ -17,11 +17,11 @@ Key features of the Asana app include:
 - **Real-time monitoring**. By providing real-time monitoring of Asana data, this tool enables you to keep track of the most recent developments and trends in your team's work.
 - **Integration with other sources**. This app can be used in conjunction with other Sumo Logic apps, which enables you to gain a more holistic view of the data.
 
-## Log Types
+## Log types
 
 This app uses Asana Source to collect [Audit Logs](https://developers.asana.com/reference/audit-log-api) from Asana.
 
-### Sample log message
+### Sample log messages
 
 ```json title="Audit Log"
 {
@@ -53,7 +53,7 @@ This app uses Asana Source to collect [Audit Logs](https://developers.asana.com/
 }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Events by App Authorization"
 _sourceCategory="asana-app"

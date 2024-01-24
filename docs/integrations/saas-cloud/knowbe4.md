@@ -1,6 +1,6 @@
 ---
 id: knowbe4
-title: Sumo Logic App for KnowBe4
+title: KnowBe4
 sidebar_label: KnowBe4
 description: The Sumo Logic App for KnowBe4 offers functionality for monitoring and analyzing KnowBe4 Phishing Security logs.
 ---
@@ -15,11 +15,11 @@ The distribution of **Phishing Security Tests** by difficulty and long-running *
 
 The **Geo Location of Failed Users** dashboard panel provides geographic insights into where failed users are located. The **Phishing Security Tests Summary** and **Phish Failures Summary** dashboard panels provide high-level summaries of the organization's testing performance. Finally, the **Top Failed Users** panel identifies users who have failed multiple tests and may require additional training.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for KnowBe4 consumes Phishing Security logs. Refer to the [KnowBe4 Phishing Security Tests](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get) and [Recipient Results](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests~1{pst_id}~1recipients/get) documentation.
 
-## Sample Log Messages
+## Sample log messages
 
 ```json title="Sample Phishing Security Tests Log"
 {

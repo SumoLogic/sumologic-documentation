@@ -14,7 +14,7 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Netw
 
 You must have Palo Alto Networks Web administrative user permissions to successfully set up collection.
 
-## Log Types
+## Log types
 
 <table>
   <tr>
@@ -108,7 +108,7 @@ Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09 10:19:15,001234567890002,TR
 
 
 
-### Sample Query
+### Sample queries
 
 This example query is from the **Allowed Network Activity by Direction** panel of the **Accepted and Rejected Traffic** dashboard.
 

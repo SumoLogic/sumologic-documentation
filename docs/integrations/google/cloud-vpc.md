@@ -11,13 +11,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Google Cloud Platform (GCP) [Virtual Private Cloud](https://cloud.google.com/vpc/docs/)(VPC) provides networking functionality to [Compute Engine](https://cloud.google.com/compute/docs/) virtual machine (VM) instances, [Kubernetes Engine](https://cloud.google.com/kubernetes-engine/docs/) containers and [App Engine Flex](https://cloud.google.com/appengine/docs/flexible/). The Sumo Logic App for Google Cloud VPC provides visibility into the activities, traffic, and VPC flow in your GCP. The preconfigured dashboards provide you details on the VPC flows, source and destination IP addresses, ports, protocols, and messages.
 
-## Log Types
+## Log types
 
 The App uses:
 * **Compute Engine VPC Flow Logs**. These logs provide information from Compute Engine ​VMs ​for ​network ​operations ​such ​as ​Network ​monitoring, ​forensics, ​real-time security ​analysis ​and ​expense ​optimization.
 
 
-### Sample Log Message  
+### Sample log messages  
 
 ```json
 {
@@ -81,7 +81,7 @@ The App uses:
 }
 ```
 
-### Sample Query
+### Sample queries
 
 ```bash title="Average latency (ms) by subnet ID"
 _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp

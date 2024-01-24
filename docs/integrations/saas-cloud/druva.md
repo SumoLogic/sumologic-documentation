@@ -23,11 +23,11 @@ The Druva App offers the following capabilities:
 
 The Sumo Logic Druva App is a powerful tool for monitoring and protecting your data backups and archives. Organizations may gain important insights into their data security posture and respond quickly and efficiently to possible security events by leveraging Sumo Logic's Events API and advanced analytics capabilities.
 
-## Log Types
+## Log types
 
 The Druva App utilizes Sumo Logic's Druva Source to gather [Audit Events](https://developer.druva.com/docs/event-apis) from Druva. For more information on the fields of inSync events, refer to the [inSync events fields](https://developer.druva.com/docs/event-apis#obtain-events-api-response-in-syslog-format) documentation.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Audit Event log"
 {
@@ -52,7 +52,7 @@ The Druva App utilizes Sumo Logic's Druva Source to gather [Audit Events](https:
  }
 ```
 
-## Sample Query
+## Sample queries
 
 ```sql title="Number of Users"
 _sourceCategory="druva_app"
