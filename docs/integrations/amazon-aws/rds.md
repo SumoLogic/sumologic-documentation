@@ -664,7 +664,7 @@ Use this dashboard to :
 
 The **Amazon RDS - PostgreSQL Logs - Query Execution Time** dashboard provides details around the time its taking to execute queries on your PostgreSQL instance. 
 
-Use this dashboard to : 
+Use this dashboard to: 
 * Obtain number of queries executed and average query execution time by database.
 * Monitor time comparison for number of queries executed and query execution time.
 
