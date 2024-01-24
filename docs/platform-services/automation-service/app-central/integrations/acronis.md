@@ -19,62 +19,37 @@ Acronis develops on-premises and cloud software with integration of backup, disa
 
 Please follow these steps to get your API key from Arconis:
 
-Step 1 - Select Manage account from the dashboard
+1. Select Manage account from the dashboard. <br/>![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-1.png)
+1. From Settings choose API clients. <br/>![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-2.png)
 
-Step 2 - From Settings choose API clients
+1. Select Create API Client and enter a name. <br/>![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-3.png) <br/>![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-4.png)
 
- ![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-2.png)
-
-Step 3 - Select Create API Client and enter a name
-
- ![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-3.png)
-
-![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-4.png)
-
-Step 4 - Copy and save the Client ID, Secret, and Data center URL
-
- ![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-5.png)
+1. Copy and save the Client ID, Secret, and Data center URL. <br/>![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-5.png)
 
 ## Acronis in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-6.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-6.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-7.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-7.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-8.png)
 
-After the list of the integrations appears, search for the integration and click on the row.
+1. Populate all the required fields (\*):
+   * Label: The desired name for the resource.
+   * URL: Your Acronis Data Center URL you copied earlier from Acronis. Default: 'https://cloud.acronis.com'/ .
+   * Client ID: Your Acronis Client ID you copied earlier from Acronis.
+   * Client Secret: Your Acronis Secret you copied earlier from Acronis. 
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. Click Save. <br/>![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-9.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-8.png)
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-10.png)
 
-Populate all the required fields (\*)
+1. Click Test. <br/>![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-11.png) 
 
-* Label: The desired name for the resource
-* URL: Your Acronis Data Center URL you copied earlier from Acronis. Default: 'https://cloud.acronis.com'/
-* Client ID: Your Acronis Client ID you copied earlier from Acronis
-* Client Secret: Your Acronis Secret you copied earlier from Acronis
-
-Click Save.
-
-![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-9.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-10.png)
-
-Click Test.
-
-![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-11.png) 
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-12.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/acronis/acronis-12.png)
 
 ## Change Log
 

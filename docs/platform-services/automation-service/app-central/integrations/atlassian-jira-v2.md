@@ -33,52 +33,36 @@ Jira is a proprietary issue tracking product developed by Atlassian that allows 
 ## Atlassian Jira V2 configuration
 
 1. Sign in Jira with your Atlassian account.
-2. On the left menu, search for Security and in API token click Create and manage API tokens.
-3. Create your API token with your label.
-4. Make sure you copy your new API token. You won’t be able to see this token again.
+1. On the left menu, search for Security and in API token click Create and manage API tokens.
+1. Create your API token with your label.
+1. Make sure you copy your new API token. You won’t be able to see this token again.
 
 ## Atlassian Jira V2 in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-1.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-2.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search/look for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-2.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-3.png)
 
-After the list of the integrations appears, search/look for the integration and click on the row.
+1. Label and Populate all the required fields (\*). 
+   * URL API: https://your-atlassian-site.atlassian.net/
+   * Username: your email address.
+   * API Token: Insert the previously copied token. <br/>![](/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-4.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. Optional fields in the resource are used for actions.
+   * Populate Jira Project Name when using 'Issues Jira Daemon' action.
+   * Populate Cloud SOAR URL and Cloud SOAR JWT (token) when using '**Add Issue Attachment To Incident**' action.
 
-![](/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-3.png)
+1. Click Save.
 
-Label and Populate all the required fields (\*)
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-4.png)
+1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-6.png)
 
-* URL API: https://your-atlassian-site.atlassian.net/
-* Username: your email address
-* API Token: Insert the previously copied token
-
-Optional fields in the resource are used for actions.
-
-* Populate Jira Project Name when using 'Issues Jira Daemon' action.
-* Populate Cloud SOAR URL and Cloud SOAR JWT (token) when using '**Add Issue Attachment To Incident**' action.
-
-Click Save.
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-5.png)
-
-Click Test Saved Settings.
-
-![](/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-6.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-7.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/atlassian-jira-v2/atlassian-jira-v2-7.png)
 
 ## Category
 

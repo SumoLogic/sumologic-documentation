@@ -27,40 +27,24 @@ takeover, and more.
 
 ## Abnormal Security in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by
-hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-1.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-2.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-2.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-3.png)
 
-After the list of the integrations appears, search for the integration and click on the row.
+1. Populate all the required fields (\*) and then click Save.
+   * Label: the name for the resource
+   * URL API: Abnormal Security URL API. Default: 'https://api.abnormalplatform.com'
+   * Token: retrieved from Abnormal Security <br/>!(/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-4.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-5.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-3.png)
+1. Click Test Saved Settings.<br/>![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-6.png)
 
-Populate all the required fields (\*) and then click Save.
-
-* Label: the name for the resource
-* URL API: Abnormal Security URL API. Default: 'https://api.abnormalplatform.com'
-* Token: retrieved from Abnormal Security
-
-![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-4.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-5.png)
-
-Click Test Saved Settings.
-
-![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-6.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-7.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-7.png)
 
 ## Category
 

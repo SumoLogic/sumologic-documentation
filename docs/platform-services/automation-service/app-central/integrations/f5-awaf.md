@@ -28,45 +28,29 @@ F5 AWAF protects apps with behavioural analytics, proactive bot defence, and app
 
 ## F5 AWAF configuration
 
-![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-1.png)
+1. To configure F5 AWAF, install the product and use BIG-IP Registration key(s). Might need help from system administrator. Then sign in to BIG-IP with username and password. <br/>![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-1.png)
 
-To configure F5 AWAF, install the product and use BIG-IP Registration key(s). Might need help from system administrator. Then sign in to BIG-IP with username and password.
+1. In the main page, click on the section System, License. <br/>![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-2.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-2.png)
-
-In the main page, click on the section System, License.
-
-In Summary check your Licence and in the tab Module Allocation locate the Advanced Firewall (AFM) and change Provisioning to Nominal. Then click Submit. After submission in Security Tab Network Firewall will appear.
+1. In Summary check your Licence and in the tab Module Allocation locate the Advanced Firewall (AFM) and change Provisioning to Nominal. Then click Submit. After submission in Security Tab Network Firewall will appear.
 
 ## F5 AWAF in Automation Service and Cloud SOAR
 
-![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-3.png)
+1. To configure the Sumo Logic SOAR, login to application, expand the configuration menu in the top right corner by hovering over it and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-3.png)
 
-To configure the Sumo Logic SOAR, login to application, expand the configuration menu in the top right corner by hovering over it and click Automation.
+1. In the Automation section, in the top left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-4.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-4.png)
+1. After the list of the integrations appears search/look for the F5 AWAF integration and click on the row. <br/>![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-5.png)
 
-In the Automation section, in the top left menu, click Integrations.
+1. The integration details will appear. Click on the "+" button to add new Resource.   
+   * Host: IP where F5 AWAF is installed   
+   * Username and Password <br/>![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-6.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-5.png)
+1. Then click save. Now you can use the resource.
 
-After the list of the integrations appears search/look for the F5 AWAF integration and click on the row. The integration details will appear. Click on the "+" button to add new Resource.   
+1. To make sure the resource is working, hover over the resource and then click edit (pencil icon) on the right of the row. <br/>![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-7.png)
 
-
- • Host: IP where F5 AWAF is installed   
- • Username and Password
-
-![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-6.png)
-
-Then click save. Now you can use the resource.
-
-To make sure the resource is working, hover over the resource and then click edit (pencil icon) on the right of the row.
-
-![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-7.png)
-
-Then click test saved settings. You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-8.png)
+1. Then click test saved settings. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/f5-awaf/f5-awaf-8.png)
 
 ## Change Log
 

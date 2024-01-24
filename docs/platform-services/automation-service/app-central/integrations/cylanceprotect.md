@@ -32,7 +32,7 @@ Query CylanceProtect, enrich data and contain threats through devices, zones, po
 
 ## CylanceProtect Configuration
 
-To retrieve the API Credentials, please refer to the following [guide](https://docs.blackberry.com/en/unified-endpoint-security/blackberry-ues/Cylance-API-user-guide/Application_Management/To_Add_an_Application).
+To retrieve the API Credentials, please refer to the following [guide](https://docs.blackberry.com/en/unified-endpoint-security/blackberry-ues/Cylance-API-user-guide/Application_Management/To_Add_an_Application). 
 
 ![](/img/platform-services/automation-service/app-central/integrations/cylanceprotect/cylanceprotect-1.png)
 

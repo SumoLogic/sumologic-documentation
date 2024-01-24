@@ -24,52 +24,32 @@ Updated: Jul 06, 2023
 
 ## Downdetector Configuration
 
-Login to Downdetector with your username and password. On the left menu click on API. 
+1. Login to Downdetector with your username and password. On the left menu click on API. <br/>![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-1.png)
+1. Under + sign create your token (Client Secret). 
 
-Under + sign create your token (Client Secret). 
-
-Make sure to cope the Client ID and the Client Secret.
-
-![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-2.png)
+1. Make sure to cope the Client ID and the Client Secret. <br/>![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-2.png)
 
 ## Downdetector in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-3.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-3.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-4.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-4.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-5.png)
 
-After the list of the integrations appears, search for the integration and click on the row.
+1. Populate all the required fields (\*) and then click Save.
+   * URL: default value for API URL is 'https://downdetectorapi.com'
+   * Username: the client ID that you copied as username
+   * Password: the Client Secret that you copied as password <br/>![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-6.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-7.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-5.png)
+1. Click Test. <br/>![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-8.png)   
 
-Populate all the required fields (\*) and then click Save.
-
-* URL: default value for API URL is 'https://downdetectorapi.com'
-* Username: the client ID that you copied as username
-* Password: the Client Secret that you copied as password
-
-![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-6.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-7.png)
-
-Click Test.
-
-![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-8.png)   
-
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-9.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/downdetector/downdetector-9.png)
 
   
  

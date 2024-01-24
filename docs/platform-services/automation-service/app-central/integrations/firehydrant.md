@@ -28,47 +28,29 @@ Updated: Jul 18, 2023
 
 ## FireHydrant Configuration
 
-Login to **FireHydrant** with your email and password and refer to the Bot users page.
+1. Login to **FireHydrant** with your email and password and refer to the Bot users page. <br/>![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-1.png)
-
-Create your token and use as API Key. Make sure you click to copy the token, it will not be shown again.
+1. Create your token and use as API Key. Make sure you click to copy the token, it will not be shown again.
 
 ## FireHydrant in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-2.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-2.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-3.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-3.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-4.png)
 
-After the list of the integrations appears, search for the integration and click on the row.
+1. Populate all the required fields (\*) and then click Save.
+   * URL: default value for API URL is 'https://api.firehydrant.io'
+   * API Key: the API Key you copied earlier <br/>![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-5.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-6.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-4.png)
+1. Click Test. <br/>![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-7.png)   
 
-Populate all the required fields (\*) and then click Save.
-
-* URL: default value for API URL is 'https://api.firehydrant.io'
-* API Key: the API Key you copied earlier
-
-![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-5.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-6.png)
-
-Click Test.
-
-![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-7.png)   
-
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-8.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/firehydrant/firehydrant-8.png)
 
   
  

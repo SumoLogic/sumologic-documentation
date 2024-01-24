@@ -47,43 +47,28 @@ Tip: Record your API client secret somewhere safe. After the credential window i
 
 ## CrowdStrike Falcon Intelligence in Automation Service and Cloud SOAR
 
-To configure the integration in Sumo Logic Cloud SOAR, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration in Sumo Logic Cloud SOAR, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-3.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-3.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-4.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for **CrowdStrike Falcon Intelligence** integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-4.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-5.png)
 
-After the list of the integrations appears, search for **CrowdStrike Falcon Intelligence** integration and click on the row.
+1. Populate the resource fields as indicated.
+   * Label: The resource name
+   * API URL: The default Crowdstrike API URL is [https://api.crowdstrike.com](https://api.crowdstrike.com/).
+   * Client ID: The unique identifier of the API client. The client ID is visible from the API clients table in the Falcon console.
+   * Client Secret: A secret code for an API client, equivalent to a password. The secret is only visible to you at the time the API client is created. After that, it is not retrievable. If your client secret is ever lost, you can reset it to generate a new one.
+   * Member CID: For MSSP Master CIDs, optionally lock the token to act on behalf of this member CID.
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. Click Save. <br/>![](/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-6.png)
 
- ![](/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-5.png)
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-7.png)
 
-Populate the resource fields as indicated.
+1. Click **Test saved settings** to test the integration connector. <br/>![](/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-8.png)
 
-* Label: The resource name
-* API URL: The default Crowdstrike API URL is [https://api.crowdstrike.com](https://api.crowdstrike.com/)
-* Client ID: The unique identifier of the API client. The client ID is visible from the API clients table in the Falcon console
-* Client Secret: A secret code for an API client, equivalent to a password. The secret is only visible to you at the time the API client is created. After that, it is not retrievable. If your client secret is ever lost, you can reset it to generate a new one
-* Member CID: For MSSP Master CIDs, optionally lock the token to act on behalf of this member CID
-
-Click Save.
-
- ![](/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-6.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-7.png)
-
-Click **Test saved settings** to test the integration connector.
-
- ![](/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-8.png)
-
-You should receive a successful notification in the bottom right corner if resource was tested successfully.
-
-![](/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-9.png)
+1. You should receive a successful notification in the bottom right corner if resource was tested successfully. <br/>![](/img/platform-services/automation-service/app-central/integrations/crowdstrike-falcon-intelligence/crowdstrike-falcon-intelligence-9.png)
 
 ## Change Log
 

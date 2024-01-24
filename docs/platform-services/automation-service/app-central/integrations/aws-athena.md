@@ -12,8 +12,6 @@ Updated: Jun 15, 2023
 Amazon Athenais a cloud-based service that enables you to run SQL queries on data stored in Amazon S3 without the need to set up any infrastructure. It is a serverless, pay-per-query service that makes it easy to analyze large amounts of data.
 
   
-
-
 * **Run Query** *(Enrichment)* - The action runs the SQL query statements contained in the Query and retrieve the results from the query
 * **Start Query** *(Enrichment)* - Start a query execution
 * **Get Query Execution** (*Enrichment*) - Returns the details of a single query execution or a list of up to 50 query executions
@@ -34,40 +32,25 @@ Amazon Athenais a cloud-based service that enables you to run SQL queries on dat
 
 ## Amazon Athena in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-1.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-2.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-2.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-3.png)
 
-After the list of the integrations appears, search for the integration and click on the row.
+1. Populate all the required fields (\*) and then click Save.
+   * Label: The desired name for the resource.
+   * AWS Region: your AWS region. (Default: us-east-2)
+   * Access Key ID: your Access Key ID.
+   * Secret Access Key: your Secret Access Key. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-4.png) 
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-5.png)
 
- ![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-3.png)
+1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-6.png)
 
-Populate all the required fields (\*) and then click Save.
-
-* Label: The desired name for the resource
-* AWS Region: your AWS region. (Default: us-east-2)
-* Access Key ID: your Access Key ID
-* Secret Access Key: your Secret Access Key
-
-![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-4.png) 
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-5.png)
-
-Click Test Saved Settings.
-
-![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-6.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-7.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-7.png)
 
 ## External Libraries
 

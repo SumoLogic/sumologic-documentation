@@ -25,43 +25,28 @@ Updated: Jun 15, 2023
 
 ## Cyberark PAM in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-1.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-2.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-2.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-3.png)
 
-After the list of the integrations appears, search for the integration and click on the row.
+1. Populate all the required fields (\*) and then click Save.
+   * Label: The desired name for the resource
+   * API URL: For example: `https://services-uscentral.skytap.com:<Port>`
+   * Username: The name of the user who is logging in to the Vault
+   * Password: The password used by the user to log in to the Vault
+   * Certificate: Certificate (client.crt) in (Base64 encoded) format
+   * Certificate Key: Certificate (client.pem) in (Base64 encoded) format
+   * Certificate Root: Certificate (RootCA.crt) in (Base64 encoded) format <br/>![](/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-4.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-5.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-3.png)
+1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-6.png)
 
-Populate all the required fields (\*) and then click Save.
-
-* Label: The desired name for the resource
-* API URL: For example: `https://services-uscentral.skytap.com:<Port>`
-* Username: The name of the user who is logging in to the Vault
-* Password: The password used by the user to log in to the Vault
-* Certificate: Certificate (client.crt) in (Base64 encoded) format
-* Certificate Key: Certificate (client.pem) in (Base64 encoded) format
-* Certificate Root: Certificate (RootCA.crt) in (Base64 encoded) format
-
- ![](/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-4.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-5.png)
-
-Click Test Saved Settings.
-
-![](/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-6.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-7.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/cyberark-pam/cyberark-pam-7.png)
 
 ## Note
 It is necessary to encode the certificates in Base64 format.

@@ -32,49 +32,27 @@ Freshservice is a cloud-based IT Help Desk and service management solution that 
 
 ## Freshservice configuration
 
-Login to your Freshservice Support Portal.   
-
-
-![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-1.png)   
+1. Login to your Freshservice Support Portal. <br/>![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-1.png)   
  
-
-Go to Profile settings Page.   
-Your API key will be available below the change password section to your right. Copy the API KEY.
-
-  
-![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-2.png) 
+1. Go to Profile settings Page. Your API key will be available below the change password section to your right. Copy the API KEY. <br/>![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-2.png) 
 
 ## Freshservice in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-3.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-3.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-4.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search/look for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-4.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-5.png)
 
-After the list of the integrations appears, search/look for the integration and click on the row.
+1. Populate all the required fields (\*) then click SAVE SETTINGS. <br/>![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-6.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-7.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-5.png)
+1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-8.png)
 
-Populate all the required fields (\*) then click SAVE SETTINGS.
-
-![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-6.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-7.png)
-
-Click Test Saved Settings.
-
-![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-8.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-9.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/freshservice/freshservice-9.png)
 
 ## Category
 
