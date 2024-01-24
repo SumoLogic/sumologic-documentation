@@ -108,7 +108,7 @@ This section provides instructions for configuring log and metric collection for
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Nginx Plus in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
-<br/><img src={useBaseUrl('img/integrations/web-servers/nginxk8s.png')} alt="Web servers" />
+<img src={useBaseUrl('img/integrations/web-servers/nginxk8s.png')} alt="Web servers" />
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Nginx Plus. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Nginx Plus input plugin to obtain metrics. For simplicity, the diagram doesn’t show the input plugins.
 The injection of the Telegraf sidecar container is done by the Telegraf Operator.
@@ -148,7 +148,6 @@ The following steps assume you are collecting Nginx Plus metrics from a Kubernet
         prometheus.io/scrape: "true"
         prometheus.io/port: "9273"
    ```
-
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Nginx Plus Input plugin. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) for more information on configuring the Nginx input plugin for Telegraf. Note since telegraf will be run as a sidecar the host should always be localhost
 * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
 * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
@@ -370,7 +369,7 @@ email_notifications = [
    3. Run **terraform apply**.
 7. Post Installation steps: If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Step 4](/docs/alerts/monitors#add-a-monitor).
 
-Note: There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts).
+There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts).
 
 
 ## Installing the Ngnix Plus app

@@ -15,7 +15,7 @@ The dashboards provide insight into key events and metrics such as VM CPU, memor
 
 See the [vSphere product page](https://www.vmware.com/products/vsphere.html) for more information on VMware hybrid cloud.
 
-## Log and Metric types  
+## Log and metric types  
 
 The Sumo Logic vCenter logs source and vCenter metrics source use the installed collector to gather the following data from VMWare:
 

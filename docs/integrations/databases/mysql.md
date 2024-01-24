@@ -142,7 +142,7 @@ Configuring log and metric collection for the MySQL app includes the following t
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -486,7 +486,7 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
       * **Description**. (Optional)
       * **File Path** (Required). Enter the path to your error.log. The files are typically located in `/var/log/mysql/error.log`. If you're using a customized path, check the `my.cnf` file for this information.
       * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host nameSource Category. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
-      * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields.md).
+      * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields).
       * `component = database`
       * `db_system = mysql`
       * `db_cluster = <your_mysql_cluster_name>`
@@ -525,7 +525,7 @@ At this point, MySQL error logs should start flowing into Sumo Logic.
       * **File Path** (Required). Enter the path to your `mysql-slow.log`. The file is typically located in `/var/log/mysql/mysql-slow.log`. If you're using a customized path, check `my.cnf` file for this information.
       * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
       * **Source Category**. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
-      * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields.md).
+      * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields).
         * `component = database`
         * `db_system = mysql`
         * `db_cluster = <your_mysql_cluster_name>`

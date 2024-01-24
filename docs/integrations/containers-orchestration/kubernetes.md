@@ -346,7 +346,7 @@ Use this dashboard to:
 ### Security Overview
 
 :::note
-This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco:enabled` as `"true"` in values.yaml, as described [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
+This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco:enabled` as `"true"` in values.yaml, as described [here](/docs/send-data/kubernetes/install-helm-chart).
 :::
 
 This dashboard provides high level details around anomalous container, application, host, and network activity detected by Falco.

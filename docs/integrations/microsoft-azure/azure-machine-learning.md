@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning) is a cloud service for accelerating and managing the machine learning project lifecycle which includes training, deploying, and monitoring models. This integration helps in monitoring the training runs, model deployments, and resource utilization of your nodes present in your workspace.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Machine Learning, you can collect the following logs and metrics:
 
-* **Resource logs**. These logs contains information about clusters, nodes, jobs, deployments, models, and pipeline events. To know more about the different [log category types](https://learn.microsoft.com/en-us/azure/machine-learning/monitor-azure-machine-learning?view=azureml-api-2#analyzing-logs) and [schemas](https://learn.microsoft.com/en-us/azure/machine-learning/monitor-resource-reference?view=azureml-api-2#schemas) collected for Azure Machine Learning, refer to the documentation.
+* **Resource logs**. These logs contains information about clusters, nodes, jobs, deployments, models, and pipeline events. To learn more about the different [log category types](https://learn.microsoft.com/en-us/azure/machine-learning/monitor-azure-machine-learning?view=azureml-api-2#analyzing-logs) and [schemas](https://learn.microsoft.com/en-us/azure/machine-learning/monitor-resource-reference?view=azureml-api-2#schemas) collected for Azure Machine Learning, refer to the documentation.
 * **Platform Metrics for Azure Machine Learning**. These metrics are available in [Microsoft.MachineLearningServices/workspaces](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-machinelearningservices-workspaces-metrics) namespace.
 For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/machine-learning/monitor-resource-reference?view=azureml-api-2#metrics).
 

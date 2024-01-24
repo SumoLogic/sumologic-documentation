@@ -77,7 +77,7 @@ Before configuring the collection you will require below items
 
 3. Generate the Sumo Logic access ids and access keys in the Sumo Logic [portal](/docs/manage/security/access-keys/#generate-an-access-key).
 
-4. Install the Sumo Logic Kubernetes Collection using **sumologic_values_eks.yaml** file (in folder) by following the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md). Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator enabled. If you are not, then follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf/) to do so. The below command enables traces and telegraf operators using the credentials generated in the previous step and deploys the 2.10.0 helm chart version.
+4. Install the Sumo Logic Kubernetes Collection using **sumologic_values_eks.yaml** file (in folder) by following the instructions [here](/docs/send-data/kubernetes/install-helm-chart). Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator enabled. If you are not, then follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf/) to do so. The below command enables traces and telegraf operators using the credentials generated in the previous step and deploys the 2.10.0 helm chart version.
 
   ```bash
   helm upgrade --install sumologic sumologic/sumologic \
@@ -111,9 +111,9 @@ Follow these steps to collect metrics from a Kubernetes environment:
 
         Example:
 
-        ```bash
-          docker build --platform linux/amd64 -t "kafka:kafka-3.4.0" .
-          docker tag "kafka:kafka-3.4.0" public.ecr.aws/g0d6f4n6/strimzi-kafka-jolokia:kafka-3.4.0
+        ```
+        docker build --platform linux/amd64 -t "kafka:kafka-3.4.0" .
+        docker tag "kafka:kafka-3.4.0" public.ecr.aws/g0d6f4n6/strimzi-kafka-jolokia:kafka-3.4.0
         ```
     5. Push the images in your container repository. Strimzi supports both private container registries as well as public registries.You can either configure image pull secrets at the [Cluster operator level](https://strimzi.io/docs/operators/latest/full/using.html#ref-operator-cluster-str) or in the [PodTemplate section](https://strimzi.io/docs/operators/latest/full/using.html#type-PodTemplate-reference).
 
@@ -173,7 +173,7 @@ If your Kafka helm chart/pod is writing the logs to standard output then the [Su
 
 3. **Configure Fields in Sumo Logic**
 
-    Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+    Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
     * `pod_labels_component`
     * `pod_labels_environment`
@@ -274,7 +274,10 @@ This section demonstrates how to install the Strimzi Kafka App.
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**.
+   :::note
+   Version selection is not available for all apps.
+   :::
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Kafka cluster filter. Examples:

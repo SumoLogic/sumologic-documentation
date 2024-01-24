@@ -116,7 +116,7 @@ This section provides instructions for configuring log and metrics collection fo
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -398,7 +398,7 @@ For error logs, following directives are to be noted:
    * **File Path (Required).** Enter the path to your apache access logs. The files are typically located in `/var/log/apache2/access_log`. If you're using a customized path, check the httpd.conf file for this information.
    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Access**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
-   * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
+   * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
     * `component = webserver`
     * `webserver_system = apache`
     * `webserver_farm = <your_apache_webserver_farmname>`
@@ -419,7 +419,7 @@ For error logs, following directives are to be noted:
     * **File Path (Required).** Enter the path to your error_log. The files are typically located in `/var/log/apache2/error_log`. If you're using a customized path, check the httpd.conf file for this information.
     * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
     * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
-    * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
+    * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
     ```sql
     component = webserver
     webserver_system = apache

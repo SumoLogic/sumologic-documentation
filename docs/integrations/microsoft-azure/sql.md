@@ -31,24 +31,24 @@ For details on Azure SQL logs and metrics, see [Enable logging](https://docs.mic
 
 ```json title="Error Event"
 {
-	"LogicalServerName":"npande-test-db-server",
-	"SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a",
-	"ResourceGroup":"npandeTestDBResGrp",
-	"time":"2018-07-09T05:08:32.679Z",
-	"resourceId":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB2",
-	"category":"Errors",
-	"operationName":"ErrorEvent",
-	"properties":{
-		"ElasticPoolName":"",
-		"DatabaseName":"npandeTestDB2",
-		"query_hash":"0",
-		"query_plan_hash":"0",
-		"message":"Invalid object name 'inventory123'.",
-		"error_number":208,
-		"severity":16,
-		"user_defined":false,
-		"state":1
-	}
+  "LogicalServerName":"npande-test-db-server",
+  "SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a",
+  "ResourceGroup":"npandeTestDBResGrp",
+  "time":"2018-07-09T05:08:32.679Z",
+  "resourceId":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB2",
+  "category":"Errors",
+  "operationName":"ErrorEvent",
+  "properties":{
+    "ElasticPoolName":"",
+    "DatabaseName":"npandeTestDB2",
+    "query_hash":"0",
+    "query_plan_hash":"0",
+    "message":"Invalid object name 'inventory123'.",
+    "error_number":208,
+    "severity":16,
+    "user_defined":false,
+    "state":1
+  }
 }
 ```
 

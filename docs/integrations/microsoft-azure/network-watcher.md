@@ -108,10 +108,10 @@ This section demonstrates how to configure an HTTP source to receive logs from t
 
 To configure an HTTP source for Azure, do the following:
 1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the URL for the source, you will need it in the next step. I
-3. In **Advanced Options for Logs**, under **Timestamp Format**, click Specify a format and enter the following:
-* Specify Format as epoch
-* Specify Timestamp locator as `\"time\": (.*),`
+2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the URL for the source, you will need it in the next step.
+3. In **Advanced Options for Logs**, under **Timestamp Format**, click **Specify a format** and enter the following:
+   * Specify Format as epoch
+   * Specify Timestamp locator as `\"time\": (.*),`
 
 ### Step 3: Configure Azure Resources using ARM template
 

@@ -73,7 +73,7 @@ This section provides instructions for configuring log and metric collection for
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 :::note
 This step is not needed if you are using the application components solution terraform script.
@@ -400,7 +400,7 @@ After determining the location of conf file, modify the **redis.conf** configura
       * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/redis/redis-server.log. If you're using a customized path, check the redis.conf file for this information.
       * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
       * **Source Category.** Enter any string to tag the output collected from this Source, such as **Redis/Logs**. The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).
-   3. Fields. Set the following fields. For more information on fields, see [Sumo Logic Fields](/docs/manage/fields.md):
+   3. Fields. Set the following fields. For more information on fields, see [Sumo Logic Fields](/docs/manage/fields):
       * `component = database`
       * `db_system = redis`
       * `db_cluster = <Your_Redis_Cluster_Name>`
@@ -534,7 +534,10 @@ email_notifications = [
 This section demonstrates how to install the Redis ULM app.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**.
+:::note
+Version selection is not available for all apps.
+:::
 3. To install the app, complete the following fields.
    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    2. **Data Source.**  Choose **Enter a Custom Data Filter** and enter a custom Redis cluster filter. Examples:

@@ -21,7 +21,7 @@ The Sumo Logic app for MongoDB Atlas allows you to monitor database operations, 
 
 The MongoDB Atlas app supports MongoDB Version 3.4 and above.
 
-## Log and Metric types
+## Log and metric types
 
 MongoDB Atlas uses logs and metrics. MongoDB Atlas logs are in JSON format and metrics are in Carbon 2.0 format. The Sumo Logic app for MongoDB Atlas uses five types of logs and two types of metrics.
 

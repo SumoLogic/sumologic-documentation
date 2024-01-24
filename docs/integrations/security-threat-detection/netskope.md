@@ -23,7 +23,7 @@ For more information on Netskope, refer to the Netskope [documentation](https://
 
 ## Collect Logs for Netskope
 
-To collect logs from the Netskope platform, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app. You can view the Netskope legacy collection method [here](/docs/integrations/security-threat-detection/netskope-legacy-collection/).
+To collect logs from the Netskope platform, use the [new Cloud-to-Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app. You can view the Netskope legacy collection method [here](/docs/integrations/security-threat-detection/netskope-legacy-collection/).
 
 
 ### Sample Log message
