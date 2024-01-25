@@ -74,24 +74,25 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
 Follow these steps to export metrics for a resource to Event Hub.
 
-1. In the Resource Group window, search for “SMNamespace” in “Resources” Tab. Click on `“SMNamespace<random-string>”`.
-1. From the left pane, select **Diagnostic Settings** under **Monitoring**.
+1. Go to the the Resource whose metrics you want to collect.
+1. From the left pane, select **Diagnostic settings** under **Monitoring**.
 1. Click **Add diagnostic setting**.
    ![adddiagnosticsetting.png](/img/send-data/azure-metrics/adddiagnosticsetting.png)
-1. The **Diagnostic Settings** page appears.
+1. The **Diagnostic settings** page appears.
 
-    In the left pane(Logs/Metrics):
-        * Enter a name for the diagnostic setting.
-        * Check the checkbox as per required Categories.
+    Diagnostic setting name: Enter a name for the diagnostic setting.
+        
+    In the left panel under Metrics section:
+        * Choose the metrics you want to collect or you can choose AllMetrics which enables collection for all the metrics. Do not select anything under Logs since logs and metrics needs to be exported in separate event hubs.
 
-    In the right pane(Destination details):
+    In the right panel under Destination details section:
         * Click the  **Stream to an event hub** checkbox.
         * Choose a **Subscription**.
-        * Select `SumoMetricsNamespace<UniqueSuffix>` as the Event hub namespace.
+        * Select `SMNamespace<UniqueSuffix>` as the Event hub namespace.
         * Select **insights-metrics-pt1m** as the event hub name.
         * Select an event hub policy name. You can use the default policy **RootManageSharedAccessKey**.
     
-    Save the **Diagnostics Setting**.
+    Save the **Diagnostic settings**.
     ![diagnosticsetting.png](/img/send-data/azure-metrics/diagnosticsetting.png)
 
 ### Troubleshooting metrics collection
@@ -102,9 +103,9 @@ If metrics are not flowing into Sumo Logic, follow the steps below to investigat
 
 First, make sure that the resources you created above were successfully created.
 
-1. Go to **Resource groups**, and select the resource group you created or selected in [Step 2. Configure Azure resources using ARM Template](#step-2-configure-azure-resources-using-arm-template). You should see the five resources you created: an App Service plan, an App Service, an Event Hubs Namespace, and two Storage accounts.
+1. Go to **Resource groups**, and select the resource group you created or selected in [Step 2. Configure Azure resources using ARM Template](#step-2-configure-azure-resources-using-arm-template). You should see the seven resources you created: an App Service plan, an App Service, an Event Hubs Namespace, Application Insights and two Storage accounts.
 
-    ![azure-resources.png](/img/send-data/azure-resources.png)
+    ![resource.png](/img/send-data/azure-metrics/resource.png)
 
 1. From the left pane of Azure Portal, Click **AppServices**, search for “SumoAzureApp”. You should find the `“SumoAzureApp<random-string>”` Function App. Click it. 
 1. On the **Function Apps** blade, click **Integrate**. Verify that the **Triggers** field value is “Azure Event Hubs” and the **Outputs** field value is “Azure Blob Storage”. 
