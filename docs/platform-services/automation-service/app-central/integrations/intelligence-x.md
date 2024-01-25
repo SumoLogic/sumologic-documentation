@@ -23,54 +23,35 @@ Intelligence X is a search engine and data archive. The search works with select
 
 Please follow these steps to get your API Key and URL from Intelligence X:
 
-Step 1 - Log in or Sign up [https://intelx.io/](https://intelx.io/)
+1. Log in or Sign up [https://intelx.io/](https://intelx.io/).
 
-Step 2 - Click on Account
+1. Click on Account. <br/>![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-1.png)
+1. Click on the Developer tab.
 
-Step 3 - Click on the Developer tab
-
-Step 4 - Copy the API Key
-
- ![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-2.png)
+1. Copy the API Key. <br/>![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-2.png)
 
 ## Intelligence X in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-3.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-3.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-4.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-4.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-5.png)
 
-After the list of the integrations appears, search for the integration and click on the row.
+1. Populate all the required fields (\*).
+   * Label: The desired name for the resource
+   * API key: Your Intelligence X API Key you copied earlier from Intelligence X
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. Click Save. <br/>![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-6.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-5.png)
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-7.png)
 
-Populate all the required fields (\*)
+1. Click Test. <br/>![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-8.png)
 
-* Label: The desired name for the resource
-* API key: Your Intelligence X API Key you copied earlier from Intelligence X
-
-Click Save.
-
-![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-6.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-7.png)
-
-Click Test.
-
-![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-8.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-9.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/intelligence-x/intelligence-x-9.png)
 
 ## Change Log
 

@@ -18,29 +18,20 @@ Set of scripts for HTTP to sends a HTTP POST/GET Requests.
 
 ## HTTP Tools in Automation Service and Cloud SOAR
 
-To configure HTTP Tools in Sumo Logic Cloud SOAR, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure HTTP Tools in Sumo Logic Cloud SOAR, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/http-tools/http-tools-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/http-tools/http-tools-1.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/http-tools/http-tools-2.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search/look for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/http-tools/http-tools-2.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/http-tools/http-tools-3.png)
 
-After the list of the integrations appears, search/look for the integration and click on the row.
-
-The integration details will appear. Click on the "+" button to add new Resource.
-
-![](/img/platform-services/automation-service/app-central/integrations/http-tools/http-tools-3.png)
-
-Populate all the required fields(\*) and click Save.
-
-* Label - Name of the resource for HTTP Tools
-* HTTP API URL: The URL to send the POST/GET to.
-* Username: The username to use to access the URL.
-* Password: The password to use to access the URL.
-* Extra Headers. Additional HTTP headers to send with the POST/GET e.g. (key1:value1, key2:value2)
-
-![](/img/platform-services/automation-service/app-central/integrations/http-tools/http-tools-4.png)
+1. Populate all the required fields(\*) and click Save.
+   * Label - Name of the resource for HTTP Tools
+   * HTTP API URL: The URL to send the POST/GET to.
+   * Username: The username to use to access the URL.
+   * Password: The password to use to access the URL.
+   * Extra Headers. Additional HTTP headers to send with the POST/GET e.g. (key1:value1, key2:value2). <br/>![](/img/platform-services/automation-service/app-central/integrations/http-tools/http-tools-4.png)
 
 ## Change Log
 

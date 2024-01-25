@@ -30,37 +30,24 @@ To obtain an API Key visit your [profile page](https://www.hybrid-analysis.com/m
 
 ## Hybrid Analysis in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-2.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-2.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-3.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search/look for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-3.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-4.png)
 
-After the list of the integrations appears, search/look for the integration and click on the row.
+1. Populate all the required fields (\*) and then click Save.
+   * Label: the name of the resource
+   * Server URL: https://www.hybrid-analysis.com
+   * API Key: Insert the previously copied key. <br/>![](/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-5.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-6.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-4.png)
+1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-7.png)
 
-Populate all the required fields (\*) and then click Save.
-
-* Label: the name of the resource
-* Server URL: https://www.hybrid-analysis.com
-* API Key: Insert the previously copied key
-
-![](/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-5.png)To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-6.png)
-
-Click Test Saved Settings.
-
-![](/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-7.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-8.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/hybrid-analysis/hybrid-analysis-8.png)
 
 ## Category
 
