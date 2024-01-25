@@ -120,7 +120,7 @@ In this step, you configure a pipeline for shipping metrics from Azure Monitor t
 3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure SQL Database that you want to monitor.
    * Choose `Stream to an event hub` as destination.
    * Select all the metric types under `Metrics` section.
-   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. This should be same as configured in the Integration -> Trigger settings of the Sumo Logic Function App.
+   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. This should be same as configured in the Sumo Logic Function App **Integration** > **Trigger** settings.
 
    ![diagnosticsetting.png](/img/send-data/azuresqldatabasediagnosticsetting.png)
 
