@@ -201,7 +201,7 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 
 </details>
 
-### Sample Query
+### Sample queries
 
 This sample query is from the MongoDB Atlas Audit dashboard > Recent Audit Events panel.
 

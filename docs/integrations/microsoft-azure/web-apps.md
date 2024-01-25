@@ -19,7 +19,7 @@ The Azure Web Apps app supports:
 * **Web Server Logging.** Information about HTTP transactions using the [W3C extended log file format](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx). This is useful when determining overall site metrics such as the number of requests handled or how many requests are from a specific IP address.
 * **Application Diagnostics Logs.** Application diagnostics allows you to capture information produced by a web application. ASP.NET applications can use the [System.Diagnostics.Trace](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx) class to log information to the application diagnostics log.
 
-### Sample log message
+### Sample log messages
 
 ```json
 2017-09-25 23:27:36 eShopCart GET / X-ARR-LOG-ID=9b3056e8-21d5-43f7-8fd7-4aec6b29525e
@@ -29,7 +29,7 @@ The Azure Web Apps app supports:
 eShopCart.azurewebsites.net 200 0 0 3098 1008 1000
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Traffic over time outlier"
 _sourceCategory=Azure/Web-app

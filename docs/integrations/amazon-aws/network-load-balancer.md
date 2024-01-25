@@ -16,7 +16,7 @@ The Sumo Logic app for AWS Network Load Balancer is using metrics to provide ins
 
 The AWS Network Load Balancer app uses AWS Network Load Balancer metrics.
 
-### Sample query
+### Sample queries
 
 ```sql title="Active Flows (Connections) by Load Balancer (Metric-based)"
 account=* region=* LoadBalancer=* Namespace=aws/NetworkELB metric=ActiveFlowCount Statistic=Sum | sum by account, region, namespace, LoadBalancer

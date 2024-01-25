@@ -73,7 +73,7 @@ The AWS Lambda ULM app uses the following logs and metrics:
 }
 ```
 
-### Sample query 
+### Sample queries 
 
 ```sql title="Top Functions by Duration"
 _sourceCategory=Labs/AWS/Lambda

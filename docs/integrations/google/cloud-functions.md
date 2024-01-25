@@ -19,7 +19,7 @@ The Sumo Logic app for Google Cloud Functions uses the following logs and metric
 * [Google Cloud Function metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-cloudfunctions)
 
 
-### Sample log query
+### Sample queries
 
 ```sql title="Created Resources Over Time"
 _sourceCategory=*gcp* logName textPayload "\"type\":\"cloud_function\"" "\"textPayload\":\"Function execution took"

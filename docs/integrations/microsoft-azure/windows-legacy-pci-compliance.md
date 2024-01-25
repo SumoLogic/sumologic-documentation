@@ -11,11 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This guide helps you set up Sumo Logic Collectors, and install the PCI Compliance for Windows Legacy application, so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
-## Log Types
+## Log types
 
 The PCI Compliance For Windows Legacy App uses Windows Security Event and System Event logs. It does not work with third-party logs.
 
-### Sample Log Message
+### Sample log messages
 
 ```
 instance of Win32_NTLogEvent
@@ -45,7 +45,7 @@ instance of Win32_NTLogEvent
 ```
 
 
-### Sample Query
+### Sample queries
 
 ```sql title="Recent Policy Changes"
 _sourceCategory=OS/Windows/Events "Policy Change"

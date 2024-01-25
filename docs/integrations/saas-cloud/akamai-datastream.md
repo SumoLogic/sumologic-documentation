@@ -17,7 +17,7 @@ Akamai DataStream app provides pre-built queries that allow you to analyze your 
 
 This App uses Akamai Source to collect [DataStream 2 Logs](https://techdocs.akamai.com/datastream2/docs/log-format-1#sample-log-lines) for Akamai DataStream.
 
-### Sample log message
+### Sample log messages
 
 ```json title="DataStream 2"
 {
@@ -71,7 +71,7 @@ This App uses Akamai Source to collect [DataStream 2 Logs](https://techdocs.akam
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="akamai"

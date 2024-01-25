@@ -26,7 +26,7 @@ application. It helps DevOps and infrastructure engineers to compare server, 
 
 Global Intelligence for Nginx App uses logs data from Nginx clusters. Like the Sumo Logic App for Nginx, it assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs. [For more details](http://nginx.org/en/docs/http/ngx_http_log_module.html) on Nginx logs. 
 
-## Sample Query 
+## Sample queries 
 
 The following sample query is from the Average **Requests Per Second: My Company v Benchmark** panel of **GI Nginx - 01 Golden Signals** dashboard.
 

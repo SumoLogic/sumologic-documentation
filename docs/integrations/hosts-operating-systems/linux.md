@@ -50,7 +50,7 @@ Configure an [Installed Collector](/docs/send-data/installed-collectors).
 
 To configure a source for collecting Linux logs, you create a Local File Source. Following the instructions on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source). When you define a Source Category for the source, we recommend something like: prod/os/linux. For more information about Source Categories, see see [Best Practices](/docs/send-data/best-practices).
 
-### Sample Log Messages
+### Sample log messages
 
 ```bash
 Dec 16 20:26:23 ubuntu sshd[15533]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=116.31.116.50  user=root

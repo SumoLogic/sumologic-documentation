@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Amazon Web Services (AWS) CloudTrail](https://aws.amazon.com/cloudtrail/) records API calls made to AWS. The Sumo Logic App for CloudTrail ingests these logs, providing greater visibility into events that, in turn, allows for security and operations forensics. For example, you can use the Sumo Logic App for CloudTrail to analyze raw CloudTrail data to investigate user behavior patterns. Or, by correlating CloudTrail data with other data sets, you can get a broader understanding of events from operating systems, intrusion detection systems, or even application logs.
 
-## Sample Log Message
+## Sample log messages
 
 ```json
 {  
@@ -42,7 +42,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ```
 
 
-## Sample Query
+## Sample queries
 
 ```sql title="Created and Deleted Network and Security Events"
 _sourceCategory=AWS_EAGLE (*Security* OR *Network*)

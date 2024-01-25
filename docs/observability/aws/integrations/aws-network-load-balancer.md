@@ -15,7 +15,7 @@ The AWS Network Load Balancer app uses the following logs and metrics:
 
 * [AWS Network Load Balancer metrics](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-cloudwatch-metrics.html)
 
-### Sample query  
+### Sample queries  
 
 ```sql title="Active Flows (Connections) by Load Balancer (Metric based)"
 Namespace=aws/NetworkELB metric=ActiveFlowCount Statistic=Sum account=dev region=us-east-1 LoadBalancer=* | sum by account, region, namespace, LoadBalancer

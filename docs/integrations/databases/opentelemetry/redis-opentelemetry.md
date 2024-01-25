@@ -19,7 +19,7 @@ Redis logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Redis-OpenTelemetry/Redis-Schematics.png' alt="Redis Schematics" />
 
-## Log Types
+## Log types
 
 This app supports logs for Redis in Cluster mode or Standalone mode. The Redis logs are generated in files as configured in the cluster node configuration files in `/etc/redis/redis.conf`. For more details on Redis logs, [click here](https://redislabs.com/ebook/part-2-core-concepts/chapter-5-using-redis-for-application-support/5-1-logging-to-redis/).
 
@@ -137,13 +137,13 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Log Message
+## Sample log messages
 
 Here's a sample log message in a non-Kubernetes environment.
 
 `5275:S 17 Mar 2021  19:13:38.138 * MASTER <-> REPLICA sync: Finished with success`
 
-## Sample Query
+## Sample queries
 
 This sample query is from the **Redis - Logs** dashboard > Logs panel.
 

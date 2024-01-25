@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Windows Legacy App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows Legacy App consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, and User Activity.
 
-## Log Types
+## Log types
 
 The Windows Legacy App assumes events are coming from Remote Windows Event Log Sources. It does not work with third party logs. Standard Windows event channels include:
 * Security
@@ -21,7 +21,7 @@ The Windows Legacy App assumes events are coming from Remote Windows Event Log S
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
 
-### Sample Log Message
+### Sample log messages
 
 
 ```bash
@@ -51,7 +51,7 @@ instance of Win32_NTLogEvent
 };
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Recent Policy Changes"
 _sourceCategory=OS/Windows "Policy Change"

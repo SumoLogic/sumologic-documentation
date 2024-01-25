@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Zscaler Private Access App collects logs from Zscaler using the Log Streaming Service (LSS) to populate pre-configured searches and Dashboards. The dashboards provide easy-to-access visual insights into user behaviors, security, connector status, and risk.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Zscaler Private Access uses LSS to send the following logs, as documented [here](https://help.zscaler.com/zpa/about-log-streaming-service):
 

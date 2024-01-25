@@ -17,7 +17,7 @@ The app uses SQS logs and metrics for:
 * SQS operations using AWS CloudTrail. For details, [see here](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-logging-using-cloudtrail.html).
 
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -64,7 +64,7 @@ The app uses SQS logs and metrics for:
 }
 ```
 
-### Sample query
+### Sample queries
 
 **Messages Received (Metrics-based)**
 

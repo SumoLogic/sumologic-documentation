@@ -31,7 +31,7 @@ The following types of metrics are collected from JMX:
 * ClassLoader
 
 
-### Sample Query
+### Sample queries
 
 This query sample is from the **CPU Load Vs Current Threads** panel of **JMX - Overview** dashboard.
 

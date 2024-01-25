@@ -27,7 +27,7 @@ The Barracuda WAF App uses the following log types:
 For more information on Log formats, visit [Barracuda Log Types](https://campus.barracuda.com/product/webapplicationfirewall/doc/4259935/how-to-configure-syslog-and-other-logs/) page.
 
 
-### Sample log message
+### Sample log messages
 
 The following table shows sample log messages for the corresponding log types.
 
@@ -39,7 +39,7 @@ The following table shows sample log messages for the corresponding log types.
 | Audit Log   | `<13>1 2019-04-16T12:55:10+00:00 ip-10-0-1-200 2019-04-16 - 05:55:10.006 -0700 WAF12 AUDIT sourabh GUI 111.93.54.106 55035 CONFIG 86 config SET user_system_ip Siteminder Session Sync user_system_ip_log "Off" "On"` []                                                                        |
 | Network Firewall Log | `<13>1 2019-04-19T06:10:58+00:00 ip-10-0-1-200 2019-04-18 - 23:10:58.647 -0700 WAF12 NF INFO TCP 37.204.127.164 39410 10.0.1.20 22 ALLOW SSH MGMT/LAN/WAN interface traffic:allow           `                 
 
-### Sample query
+### Sample queries
 
 Sample Query is from **Top Clients by Bandwidth** panel of the **Barracuda WAF - Client Traffic** dashboard.
 

@@ -119,13 +119,13 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-### Sample Log Messages in Non-Kubernetes environments
+### Sample log messages in Non-Kubernetes environments
 
 ```sql
 175.120.107.250 - - [24/Jan/2023:14:37:44 +0530] "POST /_media/resource_thumb_video_my_v2_homepage.jpg HTTP/1.1" 404 99737883 "http://yahoo.com/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25"
 ```
 
-### Sample Query
+### Sample queries
 
 This sample query is from the **Varnish Overview - Traffic Volume** dashboard > **MB Served Over Time** panel.
 
