@@ -32,22 +32,18 @@ The Zoom API uses OAuth 2.0 to authenticate and authorize users to make requests
 Please follow these steps to create a Server-to-Server OAuth app:
 
 1. Sign in to Zoom Marketplace : [https://marketplace.zoom.us/](https://marketplace.zoom.us/). From the Develop menu, choose Build App.
-2. Choose the Server-to-Server OAuth app type.   
-  
-![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-2.png)
-3. Add a name for your app.   
-  
-![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-3.png)
-4. App credentials - View your Account ID, Client ID and Client Secret.   
-  
-![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-4.png)
-5. Information - Add information about your app, such as a short description and developer contact information (name and email address is required for activation).
-6. Define the API methods this app is allowed to call - Add Scopes.   
-  
-![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-5.png)   
-  
-Choose the appropriate scopes according to the scope required by each Zoom action:   
 
+1. Choose the Server-to-Server OAuth app type.   <br/>![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-2.png)
+
+1. Add a name for your app.   <br/>![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-3.png)
+
+1. App credentials - View your Account ID, Client ID and Client Secret.   <br/>![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-4.png)
+
+1. Information - Add information about your app, such as a short description and developer contact information (name and email address is required for activation).
+
+1. Define the API methods this app is allowed to call - Add Scopes.  <br/>![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-5.png)   
+
+1. Choose the appropriate scopes according to the scope required by each Zoom action:   
 	* Delete Meeting - meeting:write:admin, meeting:write
 	* Get Meeting Invitation - meeting:read:admin, meeting:read
 	* Get User - user:read:admin, user:read, user\_info:read
@@ -57,48 +53,34 @@ Choose the appropriate scopes according to the scope required by each Zoom actio
 	* Update Meeting - meeting:write:admin, meeting:write
 	* Update User - user:write:admin, user:write
 	* Update User Settings - user:write:admin, user:write
-7. Activate your app. If you see errors that prevent activation, please address them. You will not be able to generate an access token to make API calls unless your app is activated. If your app is deactivated, existing tokens will no longer work. You can also choose to Deactivate your app in this section.   
-  
-![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-6.png)
 
-The optional parameter timezone in the actions Update Meeting and Update User can be chosen form the table Timezones in the following [Abbreviation Lists](https://marketplace.zoom.us/docs/api-reference/other-references/abbreviation-lists/#timezones).
+1. Activate your app. If you see errors that prevent activation, please address them. You will not be able to generate an access token to make API calls unless your app is activated. If your app is deactivated, existing tokens will no longer work. You can also choose to Deactivate your app in this section.   <br/>![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-6.png)
+
+1. The optional parameter timezone in the actions Update Meeting and Update User can be chosen form the table Timezones in the following [Abbreviation Lists](https://marketplace.zoom.us/docs/api-reference/other-references/abbreviation-lists/#timezones).
 
 ## Zoom in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-7.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-7.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-8.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-8.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-9.png)
 
-After the list of the integrations appears, search for the integration and click on the row.
+1. Populate all the required fields (\*)
+   * Label: The resource name
+   * OAuth Token URL: The default OAuth Token url is 'https://zoom.us/'
+   * Api URL: The default API url is 'https://api.zoom.us/'
+   * Client ID: Your Client ID for your application listed on 'https://marketplace.zoom.us/user/build'
+   * Client Secret: Your Client Secret for your application listed on 'https://marketplace.zoom.us/user/build'
+   * Account ID: Your Account ID for your application listed on 'https://marketplace.zoom.us/user/build'
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. Click Save. <br/>![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-10.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-9.png)
+1. Click Test. <br/>![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-11.png)
 
-Populate all the required fields (\*)
-
-* Label: The resource name
-* OAuth Token URL: The default OAuth Token url is 'https://zoom.us/'
-* Api URL: The default API url is 'https://api.zoom.us/'
-* Client ID: Your Client ID for your application listed on 'https://marketplace.zoom.us/user/build'
-* Client Secret: Your Client Secret for your application listed on 'https://marketplace.zoom.us/user/build'
-* Account ID: Your Account ID for your application listed on 'https://marketplace.zoom.us/user/build'
-
-Click Save.
-
-![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-10.png)
-
-Click Test.
-
-![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-11.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-12.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/zoom/zoom-12.png)
 
 ## Category
 

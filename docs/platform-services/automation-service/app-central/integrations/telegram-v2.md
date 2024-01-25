@@ -21,45 +21,28 @@ In Telegram application, create new bot sending a message /newbot to Botfather. 
 
 ## Telegram V2 in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-1.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-2.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-2.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-3.png)
 
-After the list of the integrations appears, search for the integration and click on the row.
+1. Populate all the required fields (\*) and then click Save.
+   * URL: the Telegram URL `https://api.telegram.org/`
+   * API Token: the API Token you copied earlier when creating your bot. <br/>![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-4.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-5.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-3.png)
+1. Click Test. <br/>![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-6.png)   
 
-Populate all the required fields (\*) and then click Save.
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-7.png)
 
-* URL: the Telegram URL `https://api.telegram.org/`
-* API Token: the API Token you copied earlier when creating your bot.
-
-![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-4.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-5.png)
-
-Click Test.
-
-![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-6.png)   
-
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/telegram-v2/telegram-v2-7.png)
-
-  
-## Note
-
+:::note
 * The bot must be Administrator of the chat to send your message.
 * The chat ID will be sent without writing it as parameter in Chat field if there are chat updates in 24 hours. Otherwise, needs to be send a message to the chat in Telegram application to continue. Other possible way to obtain chat ID is also from Telegram application following the steps: go on the group of choice, add @rose bot, type the command /id and chat ID will be sent. Use that value in parameter for Chat.
+:::
 
 ## Change Log
 

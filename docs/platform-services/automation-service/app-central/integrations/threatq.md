@@ -30,24 +30,21 @@ The ThreatQ threat intelligence platform, automates the aggregation, operational
 
 ## ThreatQ configuration
 
-To configure ThreatQ, login in Threat Q with username and password.
+1. To configure ThreatQ, login in Threat Q with username and password.
 
-In the main page, click on the up-right corner in My Account. It opens a page where you can find your **API Credentials - Client ID**.
+1. In the main page, click on the up-right corner in My Account. It opens a page where you can find your **API Credentials - Client ID**.
 
 ## ThreatQ in Sumo Logic SOAR
 
-To configure in the Sumo Logic SOAR, login to application, expand the configuration menu in the top right corner by hovering over it and click Automation.
+1. To configure in the Sumo Logic SOAR, login to application, expand the configuration menu in the top right corner by hovering over it and click Automation.
 
-In the Automation section, in the top left menu, click Integrations.
+1. In the Automation section, in the top left menu, click Integrations.
 
-After the list of the integrations appears search/look for the ThreatQ integration and click on the row. The integration details will appear. Click on the "+" button to add new Resource.
+1. After the list of the integrations appears search/look for the ThreatQ integration and click on the row. The integration details will appear. Click on the "+" button to add new Resource.
 
-Populate all the required fields:   
+1. Populate all the required fields:   <br/>![](/img/platform-services/automation-service/app-central/integrations/threatq/threatq-3.png)
 
-
-![](/img/platform-services/automation-service/app-central/integrations/threatq/threatq-3.png)
-
-To make sure the resource is working, hover over the resource and then click edit (pencil icon) on the right of the row. Then click test saved settings. You should receive a successful notification in the bottom right corner.
+1. To make sure the resource is working, hover over the resource and then click edit (pencil icon) on the right of the row. Then click test saved settings. You should receive a successful notification in the bottom right corner.
 
 ## Change Log
 

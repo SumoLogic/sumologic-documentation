@@ -21,40 +21,22 @@ WHOIS API service provides the registration details, also known as the WHOIS rec
 
 ## WhoisXML in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.   
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.    <br/>![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-1.png)
 
+1. In the Automation section, on the left menu, click Integrations.   <br/>![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-2.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-1.png)
+1. After the list of the integrations appears, search/look for the integration and click on the row. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-3.png)
 
-In the Automation section, on the left menu, click Integrations.   
-  
-![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-2.png)
+1. Populate all the required fields (\*) and then click Save. 
+   * Label: The desired name for the resource.
+   * URL: WhoisXML API URL.
+   * API Key: Your WhoisXML API Key. <br/>![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-4.png)
 
-After the list of the integrations appears, search/look for the integration and click on the row. The integration details will appear.Click on the "+" button to add new Resource   
- 
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-5.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-3.png)
+1. Click Test Saved Settings.   <br/>![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-6.png)
 
-Populate all the required fields (\*) and then click Save. 
-
-* Label: The desired name for the resource
-* URL: WhoisXML API URL
-* API Key: Your WhoisXML API Key
-
-![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-4.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-5.png)
-
-Click Test Saved Settings.   
- 
-
-![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-6.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-7.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-7.png)
 
 ## Change Log
 

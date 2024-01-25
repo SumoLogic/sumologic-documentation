@@ -22,41 +22,23 @@ Wittra is hardware and software provider with patented solutions for business in
 
 ## Wittra in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/wittra/wittra-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/wittra/wittra-1.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/wittra/wittra-2.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/wittra/wittra-2.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/wittra/wittra-3.png)
 
-After the list of the integrations appears, search for the integration and click on the row.
+1. Populate all the required fields (\*) and then click Save.
+   * Label: The desired name for the resource.
+   * URL: Your Wittra URL.
+   * API Key: Your Wittra API Key you copied earlier from Wittra.
+   * Organization ID: Your Organization ID you copied earlier from Wittra. <br/>![](/img/platform-services/automation-service/app-central/integrations/wittra/wittra-4.png) <br/>![](/img/platform-services/automation-service/app-central/integrations/wittra/wittra-5.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/wittra/wittra-6.png)
 
- ![](/img/platform-services/automation-service/app-central/integrations/wittra/wittra-3.png)
-
-Populate all the required fields (\*) and then click Save.
-
-* Label: The desired name for the resource
-* URL: Your Wittra URL
-* API Key: Your Wittra API Key you copied earlier from Wittra
-* Organization ID: Your Organization ID you copied earlier from Wittra
-
-![](/img/platform-services/automation-service/app-central/integrations/wittra/wittra-4.png)
-
-  
-
-
-![](/img/platform-services/automation-service/app-central/integrations/wittra/wittra-5.png)
-
-Click Test Saved Settings.
-
-![](/img/platform-services/automation-service/app-central/integrations/wittra/wittra-6.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/wittra/wittra-7.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/wittra/wittra-7.png)
 
 ## Change Log
 

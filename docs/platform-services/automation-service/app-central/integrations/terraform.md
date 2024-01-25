@@ -32,53 +32,33 @@ Terraform is an open-source infrastructure as code software tool that provides a
 
 ## Terraform configuration
 
-Login to Terraform. Click on your profile picture on the top right corner.
+1. Login to Terraform. Click on your profile picture on the top right corner.
 
-Click user settings.
+1. Click user settings.
 
-In the left menu, under Tokens, click Create an API token button.
+1. In the left menu, under Tokens, click Create an API token button. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-1.png)  
 
-![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-1.png)  
+1. Then add a description and create your API token. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-2.png)
 
-Then add a description and create your API token.
-
-![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-2.png)
-
-Use the copy button to save your token.
-
-This token **will not be displayed again**, so make sure to save it to a safe place.
+1. Use the copy button to save your token. This token **will not be displayed again**, so make sure to save it to a safe place.
 
 ## Terraform in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-3.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-3.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-4.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search/look for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-4.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-5.png)
 
-After the list of the integrations appears, search/look for the integration and click on the row.
+1. Populate all the required fields (\*) then click SAVE SETTINGS. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-6.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-7.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-5.png)
+1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-8.png)
 
-Populate all the required fields (\*) then click SAVE SETTINGS.
-
-![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-6.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-7.png)
-
-Click Test Saved Settings.
-
-![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-8.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-9.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-9.png)
 
 ## Change Log
 

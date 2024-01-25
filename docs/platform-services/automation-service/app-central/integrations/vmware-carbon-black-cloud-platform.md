@@ -43,63 +43,38 @@ VMware Carbon Black Cloud Platform Integration transform your security with inte
 
 ## VMware Carbon Black Cloud Platform Configuration
 
-Login into the CBC Console [https://defense.conferdeploy.net](https://defense.conferdeploy.net)
+1. Login into the CBC Console [https://defense.conferdeploy.net](https://defense.conferdeploy.net).
 
-Navigate to the **Settings** menu, and then click on **API Access.**
+1. Navigate to the **Settings** menu, and then click on **API Access**. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-1.png)
+1. From the **API ACCESS** page, click on Add API Key.  <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-2.png)
 
-From the**API ACCESS** page, click on Add API Key
+1. Populate the name, Access Level type, and click the Save button. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-3.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-2.png)
+1. Copy the API Credentials (API ID and API Secret Key). <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-4.png)
 
-Populate the name, Access Level type, and click the Save button
-
-![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-3.png)
-
-Copy the API Credentials (API ID and API Secret Key)
-
-![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-4.png)
-
-Also you will see the ORG KEY from**API Access,** you need to copy it.
-
-![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-5.png)
+1. Also you will see the ORG KEY from **API Access**. You need to copy it. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-5.png)
 
 ## VMware Carbon Black Cloud Platform in Automation Service and Cloud SOAR
 
-For configuring VMware Carbon Black Cloud Platform integration in the Sumo Logic Cloud SOAR, login into the application, expand the configuration menu in the top right corner by hovering over the gear icon, and click Automation.
+1. For configuring VMware Carbon Black Cloud Platform integration in the Sumo Logic Cloud SOAR, login into the application, expand the configuration menu in the top right corner by hovering over the gear icon, and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-6.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-6.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-7.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search/look for the VMware Carbon Black Cloud Platform integration and click on it. The integration details will appear. Click on the "+" button to add a new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-8.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-7.png)
+1. Populate all the required fields (\*) and then click Save.
+   * Label: The name of the resource
+   * API URL: URL to the API of the VMware Carbon Black Cloud Platform instance `https://defense.conferdeploy.net`
+   * Organization Key: the Organization Key you copied earlier
+   * API ID / Connector ID: The API ID that you copied earlier
+   * API Secret Key: The API Secret Key that you copied earlier. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-9.png)
 
-After the list of the integrations appears, search/look for the VMware Carbon Black Cloud Platform integration and click on it. The integration details will appear. Click on the "+" button to add a new Resource.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-10.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-8.png)
+1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-11.png)
 
-Populate all the required fields (\*) and then click Save.
-
-* Label: The name of the resource
-* API URL: URL to the API of the VMware Carbon Black Cloud Platform instance `https://defense.conferdeploy.net`
-* Organization Key: the Organization Key you copied earlier
-* API ID / Connector ID: The API ID that you copied earlier
-* API Secret Key: The API Secret Key that you copied earlier.
-
-![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-9.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-10.png)
-
-Click Test Saved Settings.
-
-![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-11.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-12.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-12.png)
 
 ## External Libraries
 
