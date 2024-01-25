@@ -24,44 +24,29 @@ KnowBe4 KMSAT is a security platform for security awareness training and simulat
 
 ## KnowBe4 KMSAT - User Events in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-1.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-2.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-2.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-3.png)
 
-After the list of the integrations appears, search for the integration and click on the row.
+1. Populate all the required fields (\*) and then click Save.
+  * Label: The desired name for the resource
+  * URL: Server that is closer to your geo location
+	  * US server - https://api.events.knowbe4.com
+	  * EU server - https://api.events.knowbe4.com
+	  * CA server - https://api-ca.events.knowbe4.com
+	  * UK server - https://api-uk.events.knowbe4.com
+	  * DE server - https://api-de.events.knowbe4.com
+   * API Key: Your KnowBe4 KMSAT API Key you copied earlier from KnowBe4 KMSAT. <br/>![](/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-4.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-5.png)
 
- ![](/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-3.png)
+1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-6.png)
 
-Populate all the required fields (\*) and then click Save.
-
-* Label: The desired name for the resource
-* URL: Server that is closer to your geo location
-	+ US server - https://api.events.knowbe4.com
-	+ EU server - https://api.events.knowbe4.com
-	+ CA server - https://api-ca.events.knowbe4.com
-	+ UK server - https://api-uk.events.knowbe4.com
-	+ DE server - https://api-de.events.knowbe4.com
-* API Key: Your KnowBe4 KMSAT API Key you copied earlier from KnowBe4 KMSAT
-
-![](/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-4.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-5.png)
-
-Click Test Saved Settings.
-
-![](/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-6.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-7.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/knowbe4-kmsat-user-events/knowbe4-kmsat-user-events-7.png)
 
 ## Change Log
 

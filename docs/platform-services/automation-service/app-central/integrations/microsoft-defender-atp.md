@@ -35,70 +35,40 @@ Microsoft Defender Advanced Threat Protection (ATP) is a product that enables pr
 
 ## Microsoft Defender ATP configuration
 
-Please log in to Azure with a user that has the Global Administrator role. Navigate to Azure Active Directory > App registrations > New registration.
+1. Please log in to Azure with a user that has the Global Administrator role. Navigate to Azure Active Directory > App registrations > New registration. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-1.png)
+1. Next, choose a name for your application, and then select Register. To enable your app to access Defender for Endpoint and assign it 'Read all alerts' permission, on your application page, select API Permissions > Add permission > APIs my organization uses >, type WindowsDefenderATP, and then select WindowsDefenderATP. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-2.png)
 
-Next, choose a name for your application, and then select Register. To enable your app to access Defender for Endpoint and assign it 'Read all alerts' permission, on your application page, select API Permissions > Add permission > APIs my organization uses >, type WindowsDefenderATP, and then select WindowsDefenderATP.
+1. Select the relevant permissions. For example, 'Read All Alerts'. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-3.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-2.png)
+1. Select Grant consent. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-4.png)
 
-Select the relevant permissions. For example, 'Read All Alerts'.
+1. Next, add a secret to the application.Select Certificates & secrets, add a description to the secret, and then select Add. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-5.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-3.png)
-
-Select Grant consent.
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-4.png)
-
-Next, add a secret to the application.Select Certificates & secrets, add a description to the secret, and then select Add.
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-5.png)
-
-The next step is to write your application ID and your tenant ID.To do this, on your application page, go to Overview and copy the following.
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-6.png)
+1. The next step is to write your application ID and your tenant ID.To do this, on your application page, go to Overview and copy the following. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-6.png)
 
 ## Microsoft Defender ATP in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-7.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-7.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-8.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-8.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-9.png)
 
-After the list of the integrations appears, search for the integration and click on the row.
+1. Populate all the required fields (\*) and then click Save.
+   * Label: The desired name for the resource
+   * API URL: Server that is closer to your geo location
+	  * api-us.securitycenter.microsoft.com
+	  * api-eu.securitycenter.microsoft.com
+	  * api-uk.securitycenter.microsoft.com
+   * Directory (Tenant ID): Your Tenant ID you copied earlier
+   * Application (Client ID): Your Client ID you copied earlier <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-10.png) <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-11.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-12.png)
 
- ![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-9.png)
-
-Populate all the required fields (\*) and then click Save.
-
-* Label: The desired name for the resource
-* API URL: Server that is closer to your geo location
-	+ api-us.securitycenter.microsoft.com
-	+ api-eu.securitycenter.microsoft.com
-	+ api-uk.securitycenter.microsoft.com
-* Directory (Tenant ID): Your Tenant ID you copied earlier
-* Application (Client ID): Your Client ID you copied earlier
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-10.png)
-
-  
-
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-11.png)
-
-Click Test Saved Settings.
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-12.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-13.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-defender-atp/microsoft-defender-atp-13.png)
 
 ## Change Log
 

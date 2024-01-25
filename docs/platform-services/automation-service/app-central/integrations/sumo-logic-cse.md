@@ -50,60 +50,38 @@ Utilize CSE entities to correlate Signals and Insights through Sumo Logic CSE in
 
 ## Sumo Logic CSE Configuration
 
-To configure the Sumo Logic CSE, log into the application, expand the user info from the bottom left menu and click Preferences.
+1. To configure the Sumo Logic CSE, log into the application, expand the user info from the bottom left menu and click Preferences. <br/>![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-1.png)
+1. From the preferences screen, in the section My Access Keys, click on Add Access Key. <br/>![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-2.png)
 
-From the preferences screen, in the section My Access Keys, click on Add Access Key
+1. Populate the name and click Create Key. <br/>![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-3.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-2.png)
+1. Copy the Access ID and Access Key and store them (temporally) into a text editor.   
 
-Populate the name and click Create Key
-
-![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-3.png)
-
-Copy the Access ID and Access Key and store them (temporally) into a text editor.   
-
-
-Click Done after you copied the Access ID and Access Key
-
-![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-4.png)
+1. Click Done after you copied the Access ID and Access Key. <br/>![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-4.png)
 
 ## Sumo Logic CSE in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-5.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-5.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-6.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search/look for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-6.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-7.png)
 
-After the list of the integrations appears, search/look for the integration and click on the row.
+1. Populate the resource fields as indicated.
+   * Label: The name of the resource
+   * Sumo Logic API URL: URL to the API of the CSE instance `https://api.sumologic.com`
+   * Sumo Logic CSE URL: URL to the CSE instance `https://service.sumologic.com/sec`
+   * Access ID: The access ID that you copied earlier
+   * Access Key: The access key that you copied earlier
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-8.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-7.png)
+1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-9.png)
 
-Populate the resource fields as indicated.
-
-* Label: The name of the resource
-* Sumo Logic API URL: URL to the API of the CSE instance `https://api.sumologic.com`
-* Sumo Logic CSE URL: URL to the CSE instance `https://service.sumologic.com/sec`
-* Access ID: The access ID that you copied earlier
-* Access Key: The access key that you copied earlier
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-8.png)
-
-Click Test Saved Settings.
-
-![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-9.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-10.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-10.png)
 
 For detailed API documentation visit [https://help.sumologic.com/APIs](https://help.sumologic.com/APIs) 
 

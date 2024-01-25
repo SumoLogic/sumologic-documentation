@@ -27,42 +27,24 @@ To view your API Key from the Configuration Console, click Configure > Security 
 
 ## Neurons ITSM in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-1.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-2.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-2.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-3.png)
 
-After the list of the integrations appears, search for the integration and click on the row.
+1. Populate all the required fields (\*) and then click Save.
+   * Tenant URL: your tenant url
+   * API Key: the API Key you copied earlier. <br/>![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-4.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-5.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-3.png)
+1. Click Test. <br/>![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-6.png)   
 
-Populate all the required fields (\*) and then click Save.
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-7.png)
 
-* Tenant URL: your tenant url
-* API Key: the API Key you copied earlier.
-
-![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-4.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-5.png)
-
-Click Test.
-
-![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-6.png)   
-
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-7.png)
-
-  
- 
 
 ## Change Log
 

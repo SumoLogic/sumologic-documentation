@@ -30,29 +30,30 @@ Registering your application establishes a trust relationship between your app a
 
 Follow these steps to create the app registration:
 
-1. Sign in to the [Azure portal](https://portal.azure.com/)
+1. Sign in to the [Azure portal](https://portal.azure.com/).
 2. If you have access to multiple tenants, use the Directory + subscription filter ![](/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-1.png) in the top menu to select the tenant in which you want to register an application.
 3. Search for and select the Azure Active Directory.
 4. Under Manage, select App registrations > New registration.
 5. Enter a Name for your application. Users of your app might see this name, and you can change it later.
 6. Select Register to complete the initial app registration.
-7. Don't enter anything for Redirect URI (optional)
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-2.png)
+7. Don't enter anything for Redirect URI (optional). <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-2.png)
 
 When registration completes, the Azure portal displays the app registration's Overview pane, which includes its Application (client) ID. Also referred to as just client ID, this value uniquely identifies your application in the Microsoft identity platform.   
+
 The client ID as one aspect in validating the security tokens it receives from the identity platform.
 
 ![](/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-3.png)
 
-**Add credentials**   
+**Add credentials**  
+
 Credentials are used by confidential client applications that access an API. Examples of confidential clients are web apps, or service- and daemon-type applications. Credentials allow your application to authenticate as itself, requiring no interaction from a user at runtime.   
+
 You can add client secrets (a string) as credentials to your confidential client app registration.   
- 
 
 ![](/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-4.png)
 
 **Add a client secret**   
+
 The client secret, known also as an application password, is a string value of your app.
 
 1. Select your application in App registrations in the Azure portal.
@@ -63,15 +64,12 @@ The client secret, known also as an application password, is a string value of y
 6. Record the secret's value for use in your client application code - it's never displayed again after you leave this page.
 
 **Add permissions to API**   
- 
 
 1. Select your application in App registrations in the Azure portal.
 2. Select API permissions > Add a permission
 3. Delegated permissions are selected by default. Delegated permissions are appropriate for client apps that access an API as the signed-in user, and whose access should be restricted to the permissions you select in the next step.
 4. Application permissions are for service- or daemon-type applications that need to access API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your API.
-5. Select Add a permission, and add the following permissions (as we can see from picutre)
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-5.png)
+5. Select Add a permission, and add the following permissions (as we can see from the picture). <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-ews-daemon/microsoft-ews-daemon-5.png)
 
 **EWS API need to be configure these permissions**   
 Applications are authorized to call APIs when they are granted permissions by users/admins as part of the consent process. The list of configured permissions should include all the permissions the application needs.

@@ -20,9 +20,11 @@ Runs commands on a Local or Remote Window Host and returns all output from the c
 * **VMware Carbon Black Enrichment** (Enrichment) - This enrichment queries the Carbon Black Device API for an IP address and returns host information
 * **CrowdStrike Falcon Enrichment** (Enrichment) - This enrichment queries the CrowdStrike Device API for an IP address and returns host information
 * **GreyNoise Enrichment** (Enrichment) - GreyNoise helps security teams reduce noise and prioritize signal-targeted attacks against their organization. This enrichment queries GreyNoise to see what it knows about the IP address
-* **SentinelOne Enrichment** (Enrichment) - The SentinelOne enrichment queries IP addresses or hostnames using the SentinelOne API and returns the information SentinelOne knows about the host
+* **SentinelOne Enrichment** (Enrichment) - The SentinelOne enrichment queries IP addresses or hostnames using the SentinelOne API and returns the information SentinelOne knows about the host.
 
-**PowerShell Tools Configuration on Window Server (Domain Controller)** 
+## Configuration
+
+### PowerShell Tools Configuration on Window Server (Domain Controller)
 
 **Note**: PowerShell Tools was tested on **Windows Server 2016 and 2008**, PowerShell Remoting is using **WinRM**, So it's strongly suggested to test this integration on test environments before testing it on production environments. In this configuration guide, you will be directed on how to prepare a environment for testing on a window host but this guide is only related to the environment we tested on it, so it may differ in case you are using a different window server/host version
 
@@ -37,389 +39,182 @@ PowerShell remoting must be enabled on the remote/local computer. The remoting f
 To configure PowerShell to receive remote commands:
 
 1. Start PowerShell with the Run as administrator option
-2. At the command prompt, type: `Enable-PSRemoting`
+2. At the command prompt, type: `Enable-PSRemoting` <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-1.png)
+   The *Enable-PSRemoting* cmdlet performs the following operations:
 
-The *Enable-PSRemoting* cmdlet performs the following operations:
+   * Runs the [Set-WSManQuickConfig](https://learn.microsoft.com/en-us/powershell/module/microsoft.wsman.management/set-wsmanquickconfig?view=powershell-7.3) cmdlet, which performs the following tasks:
+	   + Starts the WinRM service.
+	   + Sets the startup type on the WinRM service to Automatic.
+	   + Creates a listener to accept requests on any IP address.
+	   + Enables a firewall exception for WS-Management communications.
+	   + Creates the simple and long name session endpoint configurations if needed.
+	   + Enables all session configurations.
+	   + Changes the security descriptor of all session configurations to allow remote access.
+   * Restarts the WinRM service to make the preceding changes effective.
 
-* Runs the [Set-WSManQuickConfig](https://learn.microsoft.com/en-us/powershell/module/microsoft.wsman.management/set-wsmanquickconfig?view=powershell-7.3) cmdlet, which performs the following tasks:
-	+ Starts the WinRM service.
-	+ Sets the startup type on the WinRM service to Automatic.
-	+ Creates a listener to accept requests on any IP address.
-	+ Enables a firewall exception for WS-Management communications.
-	+ Creates the simple and long name session endpoint configurations if needed.
-	+ Enables all session configurations.
-	+ Changes the security descriptor of all session configurations to allow remote access.
-* Restarts the WinRM service to make the preceding changes effective.
+1. To verify that remoting is configured correctly, run a test command such as the following command, which creates a remote session on the local computer.
+   ```
+   New-PSSession
+   ```
+   If remoting is configured correctly, the command will create a session on the local computer and return an object that represents the session. The output should resemble the following sample output: <b/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-2.png)
 
-To verify that remoting is configured correctly, run a test command such as the following command, which creates a remote session on the local computer.
+   If the command fails, for assistance, see [about\_Remote\_Troubleshooting](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting?view=powershell-7.2).
 
-
-```
-New-PSSession
-```
-If remoting is configured correctly, the command will create a session on the local computer and return an object that represents the session. The output should resemble the following sample output:
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-2.png)
-
-If the command fails, for assistance, see [about\_Remote\_Troubleshooting](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting?view=powershell-7.2).
-
-From the same Administrative command line run following commands:
-
-
-```
-
-winrm set winrm/config/client '@{TrustedHosts="*"}'
-winrm set winrm/config/client/auth '@{Basic="true"}'
-winrm set winrm/config/service/auth '@{Basic="true"}'
-winrm set winrm/config/service '@{AllowUnencrypted="true"}'
-winrm set winrm/config/client '@{AllowUnencrypted="true"}'
-```
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-3.png)
+1. From the same Administrative command line run following commands:
+   ```
+   winrm set winrm/config/client '@{TrustedHosts="*"}'
+   winrm set winrm/config/client/auth '@{Basic="true"}'
+   winrm set winrm/config/service/auth '@{Basic="true"}'
+   winrm set winrm/config/service '@{AllowUnencrypted="true"}'
+   winrm set winrm/config/client '@{AllowUnencrypted="true"}'
+   ``` <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-3.png)
 
 **Basic Authentication Limitations:**
 
-Basic Authentication over HTTP is not supported. Basic Authentication can be used over HTTPS by installing a certificate on the target server. The certificate must have a CN name that matches the hostname, is not expired or revoked. A self-signed certificate may be used for testing purposes. See [How To: Configure WINRM for HTTPS](https://support.microsoft.com/help/2019527/how-to-configure-winrm-for-https) for additional details
+Basic Authentication over HTTP is not supported. Basic Authentication can be used over HTTPS by installing a certificate on the target server. The certificate must have a CN name that matches the hostname, is not expired or revoked. A self-signed certificate may be used for testing purposes. See [How To: Configure WINRM for HTTPS](https://support.microsoft.com/help/2019527/how-to-configure-winrm-for-https) for additional details.
 
-**Configuration on Domain Controller for WinRM over HTTPS**
+### Configuration on Domain Controller for WinRM over HTTPS
 
- Open **Server Manager** on Window Server (Domain Controller)  
+1. Open **Server Manager** on Window Server (Domain Controller).  <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-4.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-4.png)
+1. The **Active Directory Certificate Services** role with the **Certification Authority** sub-role should already installed and configured on your Domain Controller. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-5.png) 
 
- 
+ 1. If **Active Directory Certificate** **Services** role is not already installed, please follow this [Docs](https://learn.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/server-certs/install-the-certification-authority).
 
-The **Active Directory Certificate Services** role with the **Certification Authority** sub-role should already installed and configured on your Domain Controller
+1. Open **Certification Authority** through **Server Manager** - **Tools** menu. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-6.png)    
 
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-5.png) 
+1. You should observe all these directories associated with **Certification Authority** including **Certificate Templates**.  <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-7.png) 
 
- 
+1. As a First step, you need to create a customized WinRM SSL Certificate Template, which will be used for WinRM over HTTPS.
 
- If **Active Directory Certificate** **Services** role is not already installed, please follow this [Docs](https://learn.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/server-certs/install-the-certification-authority)
+1. Right-click on the **Certificate Template** and select **Manage**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-8.png) 
 
-  
+1. Right-click on the **Web Server** and choose **Duplicate Template**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-9.png) 
 
-Open **Certification Authority** through **Server Manager** - **Tools** menu 
+1. Go to the **General** Tab and set the **Template Name** and **Display Name**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-10.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-6.png)    
+1. Go to the **Subject Name** Tab and choose **Build from this Active Directory information**  From the drop-down list, choose **Common name** as the **Subject name format**. Uncheck the User Principal Name (UPN) and only check the **DNS name**.  <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-11.png)
 
-You should observe all these directories associated with **Certification Authority** including **Certificate Templates**  
+1. Go to the **Security** tab, add the group that you want to be able to request the certificate template and grant them **Read**, **Enroll**, and **Autoenroll** permissions. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-12.png)          
 
- ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-7.png) 
+1. Click **Apply** to save the changes made to your new template   Within the **Certification Authority**, select **Certificate Templates** > **New** > **Certificate Template to Issue**.    <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-13.png)   
 
-  
+1. Choose the recently created template from the list and click OK.  <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-14.png)
 
-As a First step, you need to create a customized WinRM SSL Certificate Template, which will be used for WinRM over HTTPS 
+1. You will see your new certificate template. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-15.png)
 
- 
+### Configure Group Policy Management
 
-Right-click on the **Certificate Template** and select **Manage** 
+1. For automatic enrollment of computers, set up **Group Policy Objects (GPO)** on the domain or organizational units (OU).
 
- ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-8.png) 
+1. Open **Group Policy Management** from the **Server Manager** Tools menu. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-16.png)  
 
- 
+1. To create new **Group Policy Object** (GPO), Right-click on **Group Policy Objects** and select **New**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-17.png)
 
-Right-click on the **Web Server** and choose **Duplicate Template**
+1. Provide a new name for your **Group Policy Object (GPO)** and click OK. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-18.png).  
 
- 
+1. Right-Click on your newly Created GPO and Click on Edit. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-19.png)    
 
- ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-9.png) 
+1. This window will be displayed. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-20.png)
 
-  
+1. You need to configure client certificate auto-enrollment settings. Go to **Computer Configuration** > **Policies** > **Windows Settings** > **Security Settings** > **Public Key Policies** > **Certificate Services Client - Auto-Enrollment**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-21.png)   
 
-Go to the **General** Tab and set the **Template Name** and **Display Name**
+1. Double-click on **Certificate Services Client - Auto-Enrollment**, choose **Enabled**, and check both checkboxes. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-22.png)       
 
- 
+1. Click Apply and OK.
 
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-10.png)
+1. Set the **Windows Remote Management service** to Automatic.  
 
- 
+1. In the **Group Policy Management** console, go to **Computer Configuration** > **Policies** > **Windows Settings** > **Security Settings** > **System Services**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-23.png)            
 
-Go to the **Subject Name** Tab and choose **Build from this Active Directory information**  From the drop-down list, choose **Common name** as the **Subject name format**. Uncheck the User Principal Name (UPN) and only check the **DNS name** 
+1. Double click on **Windows Remote Management (WS-Management)**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-24.png) 
 
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-11.png)
+1. Check the box to **define the policy setting** and configure the startup mode of the WinRM service to **Automatic**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-25.png) <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-26.png) 
 
- 
+1. In the **Group Policy Management** console, go to **Computer Configuration** > **Policies** > **Administrative Templates:** > **Windows Components** > **Windows Remote Management (WinRM)** > **WinRM Service**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-27.png)  <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-28.png)          
 
-Go to the **Security** tab, add the group that you want to be able to request the certificate template and grant them **Read**, **Enroll**, and **Autoenroll** permissions 
+1. Double click on **Allow remote server management through WinRM**.
 
- 
+1. Choose **Enabled** and specify the **IP address** of your automation bridge (Cloud SOAR). <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-29.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-12.png)          
+1. Within the same **WinRM Service** console, double-click on **Allow Basic Authentication**. This policy setting enables you to control whether the Windows Remote Management (WinRM) service accepts Basic authentication from Cloud SOAR. <br/> ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-30.png) 
 
-Click **Apply** to save the changes made to your new template   Within the **Certification Authority**, select **Certificate Templates** -&gt; **New** -&gt; **Certificate Template to Issue**    
+1. Select **Enabled** and click **OK**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-31.png) 
 
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-13.png)   
+1 Next, create a firewall rule to allow traffic on WinRM over HTTPs port ***5986***.
 
-Choose the recently created template from the list and click OK  
+1. Within the **Group Policy Management** console, go to **Computer Configuration** > **Policies** > **Windows Settings** > **Security Settings** > **Windows Firewall with Advanced Security**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-32.png) 
 
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-14.png)
+1. Right-click on **Inbound Rule** and select **New Rule**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-33.png)
 
- 
+1. Select **Port** for New Rule and click next. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-34.png)
 
-You will see your new certificate template
+1. Select **TCP** and set the Port number **5986**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-35.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-15.png)
+1. Select only **Domain** and click next. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-36.png)
 
- 
+1. Provide a name for the rule and click Finish.   <br/>**![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-37.png)**  
 
-**Configure Group Policy Management**
+1. You can now **Link** the **GPO** with the **Domain or Organizational Unit** (OU) as per your requirements.  
 
- 
+1. It is recommended to create a new Organizational Unit (OU). Access **Active Directory Users and Computers** through the **Server Manager's** Tools menu. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-38.png)
 
- 
+1. Create a new **Organizational Unit (OU)** by right-clicking on the **Domain**, choosing **New**, and then selecting **Organizational Unit**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-39.png)   
 
-For automatic enrollment of computers, set up **Group Policy Objects (GPO)** on the domain or organizational units(OU) 
+1. Access the **Group Policy Management** through the Server Manager Tools menu. 
 
-Open **Group Policy Management** from the **Server Manager** Tools menu 
+1. Right-Click on your **Organizational Unit (OU)** and click on Link an Existing **GPO**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-40.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-16.png)  
+1. Select **Group Policy Object** that you just created and click OK. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-41.png)  
 
- 
+1. You will notice the linkage of the **Group Policy Object (GPO)** to the **Organizational Unit (OU)**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-42.png)  
 
-To create new **Group Policy Object** (GPO), Right-click on **Group Policy Objects** and select **New**  
+1. Execute this command from the command line interface (CLI): 
+   ```
+   gpresult /r -scope computer
+   ```
+1. The **Group Policy Object (GPO)** you created should appear in **COMPUTER SETTINGS** within the Applied **Group Policy Objects**. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-43.png)
 
- ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-17.png)
+1. If you cannot see the Group Policy Object (GPO), verify the Organizational Unit (OU) and confirm that the computer account is located within that OU.
 
-  
+1. Execute the the below command from the host's command line interface (CLI). 
+   ```
+   gpupdate /force
+   ```
+1. Use Windows PowerShell (Run as Administrator) to run the following command on the host where you plan to configure WinRM with HTTPS. 
+   ```
+   winrmquickconfig -transport:https
+   ``` 
+   <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-44.png)
 
-Provide a new name for your **Group Policy Object (GPO)** and click OK 
+ 1. You need to verify the Certificate on Domain Controller Open Certification Authority from Tools of Server Manager. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-45.png)   
 
- 
+1. Click on **Issued Certificates**.  <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-46.png)
 
- ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-18.png)   
+1. You will see a new certificate issued by Certificate template you created for WinRm for all hosts. 
 
-Right-Click on your newly Created GPO and Click on Edit
+1. You will observe a newly issued certificate with Certificate template you created for WinRM for the hosts. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-47.png) 
 
- 
+1. Validate your WinRM HTTPs Listener to ensure correctness. You will see results if it's configured properly. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-48.png)     
 
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-19.png)    
+1. If really needed, you can delete your previous WinRM HTTPs Listener and add new certificate.
+   ```
+   winrmdeletewinrm/config/Listener?Address=\*+Transport=HTTPS
+   ```
 
-This window will be displayed 
+1. After deletion (**or** In the absence of a Certificate Authority in your domain/host, you have the option to use self-signed certificates by running the following command).
 
- 
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-20.png)
-
- 
-
-You need to configure client certificate auto-enrollment settings 
-
- 
-
- 
-
-Go to **Computer Configuration** -&gt; **Policies** -&gt; **Windows Settings** -&gt; **Security Settings** -&gt; **Public Key Policies** -&gt; **Certificate Services Client - Auto-Enrollment**  
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-21.png)   
-
-Double-click on **Certificate Services Client - Auto-Enrollment**, choose **Enabled**, and check both checkboxes   
-
- ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-22.png)       
-
-Click Apply and ok
-
- 
-
- 
-
-Set the **Windows Remote Management service** to Automatic  
-
-In the **Group Policy Management** console, go to **Computer Configuration** -&gt; **Policies** -&gt; **Windows Settings** -&gt; **Security Settings** -&gt; **System Services**
-
- 
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-23.png)            
-
-Double click on **Windows Remote Management (WS-Management)**   
-
- ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-24.png) 
-
-Check the box to **define the policy setting** and configure the startup mode of the WinRM service to **Automatic** 
-
- 
-
- ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-25.png) 
-
- 
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-26.png) 
-
-In the **Group Policy Management** console, go to **Computer Configuration** -&gt; **Policies** -&gt; **Administrative Templates:** -&gt; **Windows Components** -&gt; **Windows Remote Management (WinRM)** -&gt; **WinRM Service**
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-27.png)           ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-28.png)          
-
- 
-
-Double click on **Allow remote server management through WinRM**
-
-Choose **Enabled** and specify the **IP address** of your automation bridge (Cloud SOAR)
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-29.png)
-
- Within the same **WinRM Service** console, double-click on **Allow Basic Authentication**. This policy setting enables you to control whether the Windows Remote Management (WinRM) service accepts Basic authentication from Cloud SOAR ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-30.png) 
-
- Select **Enabled** andclick **ok**
-
- 
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-31.png) 
-
- 
-
-Next, create a firewall rule to allow traffic on WinRM over HTTPs port ***5986***  
-
-Within the **Group Policy Management** console, go to **Computer Configuration** -&gt; **Policies** -&gt; **Windows Settings** -&gt; **Security Settings** -&gt; **Windows Firewall with Advanced Security**  
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-32.png) 
-
-Right-click on **Inbound Rule** and select **New Rule**
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-33.png)
-
-Select **Port** for New Rule and click next
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-34.png)
-
-Select **TCP** and set the Port number **5986**
-
-**![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-35.png)**
-
-Select only **Domain** and click next
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-36.png)
-
-Provide a name for the rule and click Finish 
-
-**![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-37.png)**  
-
-You can now **Link** the **GPO** with the **Domain or Organizational Unit** (OU) as per your requirements 
-
- 
-
-**It is recommended to create a new Organizational Unit (OU)**
-
-  
-
-Access **Active Directory Users and Computers** through the **Server Manager's** Tools menu 
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-38.png)
-
-Create a new **Organizational Unit (OU)** by right-clicking on the **Domain**, choosing **New**, and then selecting **Organizational Unit** 
-
-   ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-39.png)   
-
-Access the **Group Policy Management** through the Server Manager Tools menu 
-
-Right-Click on your **Organizational Unit (OU)** and click on Link an Existing **GPO**
-
-**![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-40.png)**
-
-Select **Group Policy Object** that you just created and click ok
-
- ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-41.png)  
-
-You will notice the linkage of the **Group Policy Object (GPO)** to the **Organizational Unit (OU)**
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-42.png)  
-
-Execute this command from the command line interface (CLI) 
-
- 
-
-***gpresult /r -scope computer***
-
- 
-
-The **Group Policy Object (GPO)** you created should appear in **COMPUTER SETTINGS** within the Applied **Group Policy Objects**
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-43.png)
-
- 
-
-If you cannot see the Group Policy Object (GPO), verify the Organizational Unit (OU) and confirm that the computer account is located within that OU
-
- 
-
-Execute the the below command from the host's command line interface (CLI) 
-
- 
-
-*gpupdate /force*
-
- 
-
-Use Windows PowerShell (Run as Administrator) to run the following command on the host where you plan to configure WinRM with HTTPS. 
-
- 
-
- *winrm**quickconfig**-transport:https*
-
- 
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-44.png)
-
- 
-
- 
-
-You need to verify the Certificate on Domain Controller Open Certification Authority from Tools of Server Manager
-
- ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-45.png)   
-
-Click on **Issued Certificates**
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-46.png)
-
-  
-
-You will see a new certificate issued by Certificate template you created for WinRm for all hosts
-
- You will observe a newly issued certificate with Certificate template you created for WinRM for the hosts. 
-
- 
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-47.png) 
-
- 
-
-**Validate your WinRM HTTPs Listener to ensure correctness, you will see results if it's configured properly**
-
- ![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-48.png)     
-
- 
-
-If really needed, you can delete your previous WinRM HTTPs Listener and add new certificate
-
-   ***winrm******delete******winrm/config/Listener?Address=\*+Transport=HTTPS*** 
-
-After deletion (**or** In the absence of a Certificate Authority in your domain/host, you have the option to use self-signed certificates by running the following command)
-
- 
-
-You can configure WinRM for HTTPS listener manually (ensure to set it with your accurate hostname and CertificateThumbprint)  
-
-
-```
-
+1. You can configure WinRM for HTTPS listener manually (ensure to set it with your accurate hostname and CertificateThumbprint).  
+   ```
     $hostinfo = '@{Hostname="&lt;DNS_NAME&gt;"; CertificateThumbprint="&lt;THUMBPRINT&gt;"}'
-    winrm create winrm/config/Listener?Address=*+Transport=HTTPS $hostinfo
-                
-```
-Run below command  from command line interface (CLI) to see if the host is listening on correct port
-
- 
-
-netstat -na
-
- 
-
-For example:
-
- 
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-49.png)   
+    winrm create winrm/config/Listener?Address=*+Transport=HTTPS $hostinfo         
+   ```
+1. Run below command  from command line interface (CLI) to see if the host is listening on correct port.
+   ```
+   netstat -na
+   ```
+   For example: <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-49.png)   
 
 
 **Whois Action Configuration:**
@@ -436,43 +231,26 @@ Remarks:
 * If you don't specify a user using the &lt;username&gt;, &lt;sessionname&gt;, or sessionID parameters, a list of all users who are logged on to the server is returned. Alternatively, you can also use the query session command to display a list of all sessions on a server.
 * When query user returns information, a greater than (&gt;) symbol is displayed before the current session
 
- 
-
 ## PowerShell Tools in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-50.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-50.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-51.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search/look for PowerShell Tools integration and click on the row. The integration details will appear. Click on the "+" button to add new Resource.
 
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-51.png)
+1. Populate all the required fields (\*) and then click Save.
+   * Label: The desired name for the resource
+   * Domain Name (PowerShell Window Host): Specify Domain Name (Hostname) for Window Server e.g 192.168.1.10 or my-computer.csoar.local
+   * Username: Username of your window host
+   * Password: Password of your window host
+   * Hostname (To Resolve in Docker): Hostname (To Resolve in Docker) e.g 10.0.0.24 test.local <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-52.png)
 
-After the list of the integrations appears, search/look for PowerShell Tools integration and click on the row. The integration details will appear. Click on the "+" button to add new Resource
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-53.png)
 
-Populate all the required fields (\*) and then click Save.
+1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-54.png)
 
-* Label: The desired name for the resource
-* Domain Name (PowerShell Window Host): Specify Domain Name (Hostname) for Window Server e.g 192.168.1.10 or my-computer.csoar.local
-* Username: Username of your window host
-* Password: Password of your window host
-* Hostname (To Resolve in Docker): Hostname (To Resolve in Docker) e.g 10.0.0.24 test.local
-
- 
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-52.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-53.png)
-
-Click Test Saved Settings.
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-54.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-55.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/powershell-tools/powershell-tools-55.png)
 
 ## Change Log
 

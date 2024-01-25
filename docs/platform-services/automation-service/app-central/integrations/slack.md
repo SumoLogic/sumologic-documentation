@@ -33,217 +33,99 @@ Create a public or private channel, Send messages or Files to channels or Users 
 
 ## Slack Configuration
 
-First you need to create a Slack App on your workspace. 
+1. First you need to create a Slack App on your workspace. Click on this [link](https://api.slack.com/apps).
 
-Click on this [link](https://api.slack.com/apps)
+1. Click on Create an App button. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-1.png)
 
-Click on Create an App button.
+1. Choose From scratch. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-2.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-1.png)
+1. Insert a a name for the app and select the workspace. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-3.png)
 
-Choose From scratch
+1. Once you created your App, you have to add Permissions. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-4.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-2.png)
+1. Alternatively you can see OAuth & Permissions from this page. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-5.png)
 
-Inserta a name for the app and select the workspace.
+1. Now you have to add the Scopes for User Token and Bot Token. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-6.png)
+   * Tokens
+      * Bot tokens let your app act independently.
+      * User tokens allow you to work directly on behalf of users, based on the OAuth scopes that installing users' awards to your app.
+   * Actions <br/>All the Actions required scopes depend on the type of channel-like object you're working with. To use the Actions, you'll need at least one of the channels:, groups:, im: or mpim: scopes corresponding to the conversation type you're working with.
+      * Send Message Action   <br/>BOT users can't post to a direct message conversation between two users using Send Message Action.   If your app was involved in the conversation, then it would be a multi-person direct message instead.   Apps can post to direct message conversations between users when a shortcut or slash command belonging to that app is used in the conversation.
+      * Get User Action   <br/>This Action returns information about a member of a workspace.   If you want to search for users it's possible to manage it with an Exact match or without an Exact match.   Also this action will return on the field name users\_ids in JSON, which you can use in Playbook, if you want to invite many users to the channel.
+      * Delete Action   <br/>When used with a typical user token, may only delete messages posted by that user. When used with a bot user's token, may delete only messages posted by that bot user.
+      * Invite To Channel Action   <br/>This action invites 1-1000 users to a public or private channel. The calling user must be a member of the channel. And also the invites must not be the owner of the channel.   
+      * Create Channel Action  <br/>At least one user needs to be invited when creating a public or private conversation.   Otherwise, workspace apps could create invisible channels, which might cause a few problems. 
+	  * Deactivate Account Action  <br/>This Admin API removes a user from a workspace. This app can not be installed on a workspace. Apps with this feature are only available to Enterprise customers.
+	  * Archive Channel Action   <br/>This Action archives a conversation. Not all types of conversations can be archived.   
+      :::note
+	  Limits for workspace apps   <br/>Because workspace apps can't act on behalf of users, they don't have the power to archive conversations, except when they're the owner/creator of the conversation.
+	  :::
+1. Now for each action of Slack Integration, you need different scopes to be added to the BOT or User.
+   * **Actions: List Channels / Get Channel / Get Members**<br/>Bot Token and User Token need the same scopes:
+      * `channels:read`. View basic information about public channels in a workspace.
+      * `groups:read`. View basic information about private channels that your Slack app has been added to.
+      * `im:read`. View basic information about direct messages that your Slack app has been added to.
+      * `mpim:read`. View basic information about group direct messages that your Slack app has been added to.
+    * **Actions: Create channel / Invite To Channel / Remove User From Channel / Archive Channel**
+       * Bot Token:
+          * `channels:manage`. Manage public channels that your Slack app has been added to and create new ones.
+       * User Token:
+          * `channels:write`. Manage a user’s public channels and create new ones on a user’s behalf.
+       * These scopes are the same for Bot and User tokens:
+          * `groups:write`. Manage private channels that your Slack app has been added to and create new ones.
+          * `im:write`. Start direct messages with people.
+          * `mpim:write`. Start group direct messages with people.
+    * **Actions: List Users / Get User**<br/>Bot Token and User Token need the same scopes:
+      * `users:read`. View people in a workspace.
+      * `users:read.email`. View email addresses of people in a workspace.
+    * **Actions: List Conversations History**<br/>Bot Token and User Token need the same scopes:
+      * `channels:history`. View messages and other content in public channels that your Slack app has been added to.
+      * `groups:history`. View messages and other content in private channels that your Slack app has been added to.
+      * `im:history`. View messages and other content in direct messages that your Slack app has been added to.
+      * `mpim:history`. View messages and other content in group direct messages that your Slack app has been added to.
+    * **Actions: Send Message / Delete Message**<br/>Bot Token and User Token need the same scopes:
+       * `chat:write`. Post messages in approved channels and conversations.
+    * **Actions: Deactivate Account**
+      * User Token:
+          * `admin.users:write`. Modify account information.
+    * **Actions: Search into Conversations**
+      * User Token:
+          * `search:read`. Search a workspace’s content.
+    * **Actions: Send File**<br/>Bot Token and User Token need the same scopes:
+      * `files:write`. Upload, edit, and delete files as your Slack app. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-7.png) <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-8.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-3.png)
+1. Now you need to Install the APP in the workspace. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-9.png)
 
-Once you created your App, you have to add Permissions.
-
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-4.png)
-
-Alternatively you can see OAuth & Permissions from this page.
-
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-5.png)
-
-Now you have to add the Scopes for User Token and Bot Token.
-
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-6.png)
-
-Bot tokens let your app act independently.
-
-User tokens allow you to work directly on behalf of users, based on the OAuth scopes that installing users' awards to your app.
-
-All the Actions required scopes depend on the type of channel-like object you're working with. 
-
-To use the Actions, you'll need at least one of the channels:, groups:, im: or mpim: scopes corresponding to the conversation type you're working with.
-
-Now for each action of Slack Integration, you need different scopes to be added to the BOT or User.
-
-Actions: List Channels / Get Channel / Get Members
-
-For these actions you will need the below scopes.
-
-BOT Token and USER Token needs the same scopes.
-
-* channels:read (View basic information about public channels in a workspace)
-* groups:read (View basic information about private channels that your slack app has been added to)
-* im:read (View basic information about direct messages that your slack app has been added to)
-* mpim:read (View basic information about group direct messages that your slack app has been added to)
-
-Actions: Create channel / Invite To Channel / Remove User From Channel / Archive Channel
-
-for above actions you will need the following scopes: 
-
-BOT Token
-
-* channels:manage (Manage public channels that your slack app has been added to and create new ones)
-
-User Token
-
-* channels:write (Manage a user’s public channels and create new ones on a user’s behalf)
-
-These scopes are the same for BOT and USER token:
-
-* groups:write (Manage private channels that your slack app has been added to and create new ones)
-* im:write (Start direct messages with people)
-* mpim:write (Start group direct messages with people)
-
-Actions: List Users / Get User
-
-BOT Token and USER Token needs the same scopes.
-
-* users:read (View people in a workspace)
-* users:read.email (View email addresses of people in a workspace)
-
-Actions: List Conversations History
-
-BOT Token and USER Token needs the same scopes.
-
-* channels:history (View messages and other content in public channels that your slack app has been added to)
-* groups:history (View messages and other content in private channels that your slack app has been added to)
-* im:history (View messages and other content in direct messages that your slack app has been added to)
-* mpim:history (View messages and other content in group direct messages that your slack app has been added to)
-
-Actions: Send Message / Delete Message
-
-BOT Token
-
-* chat:write (Post messages in approved channels & conversations)
-
-User Token
-
-* chat:write:user (Send messages on a user’s behalf)
-* chat:write (Post messages in approved channels & conversations)
-* chat:write:bot (Send messages as your slack app)
-
-Actions: Deactivate Account 
-
-For this action you will need the below scope but it only works with USER Token but not with BOT Token
-
-User Token
-
-* admin.users:write (Modify account information)
-
-Actions: Search into Conversations 
-
-(this action you will need the only one scope and it only works with USER Token but not with BOT Token) 
-
-User Token
-
-* search:read (Search a workspace’s content)
-
-Actions: Send File 
-
-BOT Token
-
-* files:write (Upload, edit, and delete files as your slack app)
-
-User Token
-
-* files:write:user (Upload, edit, and delete files as your slack app)
-* files:write (Upload, edit, and delete files as your slack app)
-
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-7.png)
-
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-8.png)
-
-Now you need to Install the APP in the workspace.
-
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-9.png)
-
-After installing the App now, you have two Tokens, these tokens are automatically generated when you installed the app. 
-
-You will need these two tokens later.
-
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-10.png)
+1. After installing the App now, you have two Tokens, these tokens are automatically generated when you installed the app. You will need these two tokens later. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-10.png)
 
 ## Slack in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-11.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-11.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-12.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search/look for the integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-12.png)
+1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-13.png)
 
-After the list of the integrations appears, search/look for the integration and click on the row.
+1. Create a new resource for the User.
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. Copy the User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
 
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-13.png)
+1. Once you have filled in all the required fields, click Save. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-14.png)
 
-Create a new resource for the User.
+1. Create another resource for the Bot User.
 
-Copy the User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
+1. Copy the Bot User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
 
-Once you have filled in all the required fields, click Save.
+1. Once you have filled in all the required fields, click Save. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-15.png) <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-16.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-14.png)
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-17.png)
 
-Create another resource for the Bot User.
+1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-18.png)
 
-Copy the Bot User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-19.png)
 
-Once you have filled in all the required fields, click Save.
-
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-15.png)
-
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-16.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-17.png)
-
-Click Test Saved Settings.
-
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-18.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/slack/slack-19.png)
-
-  
-
-
-* Send Message Action   
-BOT users can't post to a direct message conversation between two users using Send Message Action.   
-If your app was involved in the conversation, then it would be a multi-person direct message instead.   
-Apps can post to direct message conversations between users when a shortcut or slash command belonging to that app is used in the conversation.
-* Get User Action   
-This Action returns information about a member of a workspace.   
-If you want to search for users it's possible to manage it with an Exact match or without an Exact match.   
-Also this action will return on the field name users\_ids in JSON, which you can use in Playbook, if you want to invite many users to the channel.
-* Delete Action   
-When used with a typical user token, may only delete messages posted by that user. When used with a bot user's token, may delete only messages posted by that bot user.
-* Invite To Channel Action   
-This action invites 1-1000 users to a public or private channel. The calling user must be a member of the channel. And also the invites must not be the owner of the channel.   
-  
-Limits for workspace apps   
-Because workspace apps can't act on behalf of users, they don't have the power to invite users to conversations, except when they're the owner/creator of the conversation.
-* Create Channel Action   
-Limits for workspace apps   
-At least one user needs to be invited when creating a public or private conversation.   
-Otherwise, workspace apps could create invisible channels, which might cause a few problems.
-* Archive Channel Action   
-This Action archives a conversation. Not all types of conversations can be archived.   
-  
-Limits for workspace apps   
-Because workspace apps can't act on behalf of users, they don't have the power to archive conversations, except when they're the owner/creator of the conversation.
-* Deactivate Account Action   
-This Admin API removes a user from a workspace. This app can not be installed on a workspace. Apps with this feature are only available to Enterprise customers.
 
 ## Change Log
 

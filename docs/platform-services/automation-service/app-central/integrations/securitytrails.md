@@ -17,38 +17,22 @@ SecurityTrails is a total inventory that curates comprehensive domain and IP add
 
 ## SecurityTrails in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.   
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.  <br/>![](/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-1.png)
 
+1. In the Automation section, on the left menu, click Integrations.   <br/>![](/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-2.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-1.png)
-
-In the Automation section, on the left menu, click Integrations.   
-  
-![](/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-2.png)
-
-After the list of the integrations appears, search/look for the integration and click on the row. The integration details will appear.Click on the "+" button to add new Resource   
+1. After the list of the integrations appears, search/look for the integration and click on the row. The integration details will appear.Click on the "+" button to add new Resource.
  
+1. Populate all the required fields (\*) and then click Save.  
+   * Label: The desired name for the resource.
+   * URL: the SecurityTrails API URL. Default: https://api.securitytrails.com
+   * API Key: your SecurityTrails API Key. <br/>![](/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-3.png)
 
-Populate all the required fields (\*) and then click Save.  
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-4.png)
 
-* Label: The desired name for the resource
-* URL: the SecurityTrails API URL. Default: https://api.securitytrails.com
-* API Key: your SecurityTrails API Key
+1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-5.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-3.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-4.png)
-
-Click Test Saved Settings.   
- 
-
-![](/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-5.png)
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-6.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/securitytrails/securitytrails-6.png)
 
 ## Change Log
 

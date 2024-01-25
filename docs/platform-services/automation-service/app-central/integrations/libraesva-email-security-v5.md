@@ -29,44 +29,26 @@ Libraesva Email Security V5 is active defense against phishing, 0-day malware, i
 
 ## Libraesva Email Security V5 in Automation Service and Cloud SOAR
 
-To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-1.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-1.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-2.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for the integration and click on the row. <br/>The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-3.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-2.png)
+1. Populate all the required fields (\*) and then click Save.
+   * URL API
+   * User
+   * Password
+   * Libraesva Token: the generated token obtained from Generate Token action (follow the instructions below)
+   * Impersonate User: for some actions admin privileges are required
+   * Cloud SOAR URL: i.e : https://your-cloud-soar-host/incmansuite\_ng
+   * Cloud SOAR User JWT Token <br/>![](/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-4.png)
 
-After the list of the integrations appears, search for the integration and click on the row.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-5.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. Click Test. <br/>![](/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-6.png)   
 
-![](/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-3.png)
-
-Populate all the required fields (\*) and then click Save.
-
-* URL API
-* User
-* Password
-* Libraesva Token: the generated token obtained from Generate Token action (follow the instructions below)
-* Impersonate User: for some actions admin privileges are required
-* Cloud SOAR URL: i.e : https://your-cloud-soar-host/incmansuite\_ng
-* Cloud SOAR User JWT Token'
-
-![](/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-4.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-5.png)
-
-Click Test.
-
-![](/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-6.png)   
-
-
-You should receive a successful notification in the bottom right corner.
-
-![](/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-7.png)
+1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/libraesva-email-security-v5/libraesva-email-security-v5-7.png)
 
 **Token**
 

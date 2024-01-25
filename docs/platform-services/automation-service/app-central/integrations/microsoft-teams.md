@@ -44,18 +44,16 @@ Registering your application establishes a trust relationship between your app a
 
 Follow these steps to create the app registration:
 
-* Sign in to the [Azure portal](https://portal.azure.com/).
-* If you have access to multiple tenants, use the **Directory + subscription** filter ![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-1.png) in the top menu to select the tenant in which you want to register an application.
-* Search for and select the **Azure Active Directory.**
-* Under Manage, select **App registrations** > **New registration**.
-* Enter a **Name** for your application. Users of your app might see this name, and you can change it later.
-* Select **Register** to complete the initial app registration.
+1. Sign in to the [Azure portal](https://portal.azure.com/).
+1.  If you have access to multiple tenants, use the **Directory + subscription** filter ![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-1.png) in the top menu to select the tenant in which you want to register an application.
+1. Search for and select the **Azure Active Directory.**
+1. Under Manage, select **App registrations** > **New registration**.
+1. Enter a **Name** for your application. Users of your app might see this name, and you can change it later.
+1. Select **Register** to complete the initial app registration. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-2.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-2.png)
+1. Don't enter anything for Redirect URI (optional)
 
-* Don't enter anything for Redirect URI (optional)
-
-When registration completes, the Azure portal displays the app registration's Overview pane, which includes its **Application (client) ID**. Also referred to as just *client ID*, this value uniquely identifies your application in the Microsoft identity platform.
+1. When registration completes, the Azure portal displays the app registration's Overview pane, which includes its **Application (client) ID**. Also referred to as just *client ID*, this value uniquely identifies your application in the Microsoft identity platform.
 
 The client ID as one aspect in validating the security tokens it receives from the identity platform.
 
@@ -73,20 +71,20 @@ You can add client secrets (a string) as credentials to your confidential client
 
 The client secret, known also as an *application password*, is a string value of your app.
 
-* Select your application in **App registrations** in the Azure portal.
-* Select **Certificates & secrets** > **New client secret.**
-* Add a description for your client secret.
-* Select a duration.
-* Select **Add**.
-* **Record the secret's** value for use in your client application resource - it's *never displayed again* after you leave this page.
+1. Select your application in **App registrations** in the Azure portal.
+1. Select **Certificates & secrets** > **New client secret.**
+1. Add a description for your client secret.
+1. Select a duration.
+1. Select **Add**.
+1. **Record the secret's** value for use in your client application resource - it's *never displayed again* after you leave this page.
 
  **Add Permissions to API**
 
-* Select your application in **App registrations** in the Azure portal.
-* Select **API permissions** > **Add a permission**
-* **Delegated permissions** are selected by default. Delegated permissions are appropriate for client apps that access an API as the signed-in user, and whose access should be restricted to the permissions you select in the next step.
-* **Application permissions** are for service- or daemon-type applications that need to access API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your API.
-* Select **Add a permission,** and ***below are the permissions to be added to the application you just created.***
+1. Select your application in **App registrations** in the Azure portal.
+1. Select **API permissions** > **Add a permission**
+1. **Delegated permissions** are selected by default. Delegated permissions are appropriate for client apps that access an API as the signed-in user, and whose access should be restricted to the permissions you select in the next step.
+1. **Application permissions** are for service- or daemon-type applications that need to access API as themselves, without user interaction for sign-in or consent. Unless you've defined application roles for your API.
+1. Select **Add a permission,** and ***below are the permissions to be added to the application you just created.***
 
 **Microsoft Teams Test connector:**
 
@@ -285,7 +283,9 @@ One of the following permissions is required to call this Action.
 | Delegated (work or school account) | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
 | Application |  Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
 
-**Note**: This API supports admin permissions. Global admins and Microsoft Teams service admins can access teams that they are not a member of.**List Team Members Action:**
+:::note
+This API supports admin permissions. Global admins and Microsoft Teams service admins can access teams that they are not a member of **List Team Members Action**.
+:::
 
 One of the following permissions is required to call this Action.
 
@@ -442,53 +442,38 @@ For detailed API documentation visit [**https://docs.microsoft.com/en-us/graph/a
 
 ## Microsoft Teams in Automation Service and Cloud SOAR
 
-To configure the integration in Sumo Logic Cloud SOAR, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.
+1. To configure the integration in Sumo Logic Cloud SOAR, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-5.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-5.png)
+1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-6.png)
 
-In the Automation section, on the left menu, click Integrations.
+1. After the list of the integrations appears, search for Microsoft Teams integration and click on the row.
 
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-6.png)
+1. The integration details will appear. Click on the "+" button to add new Resource.
 
-After the list of the integrations appears, search for Microsoft Teams integration and click on the row.
+1. Please add two different resources for Application and Delegated context. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-7.png)
 
-The integration details will appear. Click on the "+" button to add new Resource.
+1. Populate the resource fields as indicated.
+   * Label: The resource name
+   * API URL: The default Microsoft Graph API URL is 'https://graph.microsoft.com/v1.0'
+   * Tenant ID: Directory (Tenant) ID (You can check from you app registration page)
+   * Authentication Grant Type: you can choose any value from the following according to the permissions you add to your App:
+	  * Password (Delegated Context)
+	  * Client Credentials (Application Context)
+   * Client ID: Application (Client) ID, Required for both Authentication Grant Type (You can check from you app registration page)
+   * Client Secret: Application (Client) Secret, Required for both Authentication Grant Type (Client Secret that you copied earlier)
+   * Username: Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context)
+   * Password: Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context)
+   * Cloud SOAR URL: Provide the SOAR URL in format 'https://your-cloud-soar-host/incmansuite\_ng' (this field is only required and use in Triggers)
+   * Cloud SOAR JWT Token: provide your SOAR JWT which you can copy from your profile section (this field is only required and use in Triggers)
+   * Team Incident Internal Field Name: To save Team ID in Incident Field, Required only for Triggers, For Example: opt\_1
 
-Please add two different resources for Application and Delegated context.
+1. Click Save. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-8.png)
 
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-7.png)
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-9.png)
 
-Populate the resource fields as indicated.
+1. Click Test to test the integration connector. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-10.png)
 
-* Label: The resource name
-* API URL: The default Microsoft Graph API URL is 'https://graph.microsoft.com/v1.0'
-* Tenant ID: Directory (Tenant) ID (You can check from you app registration page)
-* Authentication Grant Type: you can choose any value from the following according to the permissions you add to your App:
-	+ Password (Delegated Context)
-	+ Client Credentials (Application Context)
-* Client ID: Application (Client) ID, Required for both Authentication Grant Type (You can check from you app registration page)
-* Client Secret: Application (Client) Secret, Required for both Authentication Grant Type (Client Secret that you copied earlier)
-* Username: Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context)
-* Password: Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context)
-* Cloud SOAR URL: Provide the SOAR URL in format 'https://your-cloud-soar-host/incmansuite\_ng' (this field is only required and use in Triggers)
-* Cloud SOAR JWT Token: provide your SOAR JWT which you can copy from your profile section (this field is only required and use in Triggers)
-* Team Incident Internal Field Name: To save Team ID in Incident Field, Required only for Triggers, For Example: opt\_1
-
-Click Save.
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-8.png)
-
-To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-9.png)
-
-Click Test to test the integration connector.
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-10.png)
-
-You should receive a successful notification in the bottom right corner if resource was tested successfully.
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-11.png)
+1. You should receive a successful notification in the bottom right corner if resource was tested successfully. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-11.png)
 
 ## Change Log
 

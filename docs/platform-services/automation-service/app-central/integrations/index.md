@@ -2,6 +2,7 @@
 slug: /platform-services/automation-service/app-central/integrations
 title: Available Integrations
 sidebar_label: Available Integrations
+sidebar_position: 1
 description: This article lists all the integrations available in App Central.
 ---
 
