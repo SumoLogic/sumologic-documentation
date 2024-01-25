@@ -53,8 +53,8 @@ Cloud SIEM Signals are stored in the following partition:
 
 Cloud SIEM Insight activity is written to these Audit Event Index partitions:
 
-* sumologic_audit_events — User actions performed on Insights
-* sumologic_system_events — System actions performed on Insights are logged
+* sumologic_audit_events. User actions performed on Insights
+* sumologic_system_events, System actions performed on Insights are logged
 
 Logs written to either of the partitions above are assigned the source category cseinsight. Note that the Audit Event Index contains logs for a variety of Sumo Logic subsystems, so when searching either partition for Insights, include the source category in your search scope.
 

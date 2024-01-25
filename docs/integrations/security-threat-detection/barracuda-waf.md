@@ -75,9 +75,9 @@ To configure a source, do the following:
     1. **Name**. (Required) Enter a name. The description is optional.
     2. **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/barracuda/waf**. For more information, see [Best Practices](/docs/send-data/best-practices).
 2. In the Advanced section, specify the following configurations:
-    3. **Enable Timestamp Parsing**. True
-    4. **Time Zone**. Logs are in UTC by default
-    5. **Timestamp Format**. Auto Detect
+    1. **Enable Timestamp Parsing**. True
+    1. **Time Zone**. Logs are in UTC by default
+    1. **Timestamp Format**. Auto Detect
 3. Click **Save**.
 4. Copy and paste the **token** in a secure location. You will need this when you configure Barracuda Cloud Syslog Settings.
 

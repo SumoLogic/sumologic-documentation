@@ -57,14 +57,14 @@ Perform the following task, if logging on your IIS Server is not already enabled
 
 1. Open IIS Manager.
 1. Select the site or server in the Connections pane, then double-click Logging.
-  :::note
-  Enhanced logging is only available for site-level logging. If you select the server in the Connections pane, then the Custom Fields section of the W3C Logging Fields dialog is disabled.
-  :::
+   :::note
+   Enhanced logging is only available for site-level logging. If you select the server in the Connections pane, then the Custom Fields section of the W3C Logging Fields dialog is disabled.
+   :::
 1. In the Format field under Log File, select W3C and then click Select Fields. IIS App works on default fields selection.
 1. Select following fields, if not already selected. Sumo Logic expects these fields in IIS logs for the IIS App to work by default:
-  ```sh
-  date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
-  ```
+   ```sh
+   date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+   ```
 
 For more information about IIS log format and log configuration refer to this [link](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-85/enhanced-logging-for-iis85).
 
@@ -118,7 +118,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
     ```sh
     Restart-Service -Name OtelcolSumo
     ```
-    
+
 </TabItem>
 
 <TabItem value="Chef">
