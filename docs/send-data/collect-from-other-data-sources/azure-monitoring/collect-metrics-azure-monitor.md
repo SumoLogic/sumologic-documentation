@@ -74,27 +74,25 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
 Follow these steps to export metrics for a resource to Event Hub.
 
-1. From the left pane, select **ALL Services.**
-1. Search for and select "Monitor".
-1. In the **Monitor** pane, select **Diagnostic Settings** under **Settings**.
-1. Select the resource for which you want to export metrics. If **diagnostics** is not enabled, click **Turn on Diagnostics Settings.**
-1. Once diagnostics are enabled, click **Add a diagnostic setting**.
+1. In the Resource Group window, search for “SMNamespace” in “Resources” Tab. Click on `“SMNamespace<random-string>”`.
+1. From the left pane, select **Diagnostic Settings** under **Monitoring**.
+1. Click **Add diagnostic setting**.
+   ![adddiagnosticsetting.png](/img/send-data/azure-metrics/adddiagnosticsetting.png)
 1. The **Diagnostic Settings** page appears.
 
-    In the left pane:
+    In the left pane(Logs/Metrics):
+        * Enter a name for the diagnostic setting.
+        * Check the checkbox as per required Categories.
 
-      * Enter a name for the diagnostic setting.
-      * Click the  **Stream to an event hub** checkbox.
-      * Select **Configure event hub.** The right pane appears.
-
-    In the right pane:
-
-      * Choose a **Subscription**.
-      * Select `SumoMetricsNamespace<UniqueSuffix>` as the event hub namespace.
-      * Select **insights-metrics-pt1m** as the event hub name.
-      * Select an event hub policy name. You can use the default policy **RootManageSharedAccessKey**.
-      * Click **OK**.
-      * Save the **Diagnostics Setting**.
+    In the right pane(Destination details):
+        * Click the  **Stream to an event hub** checkbox.
+        * Choose a **Subscription**.
+        * Select `SumoMetricsNamespace<UniqueSuffix>` as the Event hub namespace.
+        * Select **insights-metrics-pt1m** as the event hub name.
+        * Select an event hub policy name. You can use the default policy **RootManageSharedAccessKey**.
+    
+    Save the **Diagnostics Setting**.
+    ![diagnosticsetting.png](/img/send-data/azure-metrics/diagnosticsetting.png)
 
 ### Troubleshooting metrics collection
 
