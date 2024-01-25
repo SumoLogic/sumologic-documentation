@@ -35,39 +35,38 @@ In this step, you configure an HTTP source to receive logs from the Azure functi
 In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to create an Event Hub, an Azure function and two Storage Accounts. The Azure function is triggered by Event Hub. Two storage accounts are used to store log messages from the Azure function and failover data from Event Hub. 
 
 1. Download the [azuredeploy_metrics.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/EventHubs/src/azuredeploy_metrics.json) ARM template.
-1. Go to **Template deployment** in the Azure Portal.
-    **Template deployment (deploy using custom templates)** under **Marketplace**
+1. Go to azure portal and search for **template deployment** in the search bar. Select **Template deployment (deploy using custom templates)** under **Marketplace**
     ![azure-template-deploy.png](/img/send-data/azure-metrics/azure-template-deploy.png)
 
 1. On the **Custom deployment** blade, click **Build your own template in the editor.**
     ![custom-deployemnt.png](/img/send-data/azure-metrics/custom-deployemnt.png)
 
-1. Copy the contents of `azuredeploy_metrics.json` and paste it into the editor window, and click **Save**.
+1. On the "Edit template" page, select "load file" and upload the json file downloaded in previous step.
 
     ![azure-template-deploy.png](/img/send-data/azure-metrics/azure-template-deploy2.png)
 
 1. Now you are back on the **Custom deployment** blade.
 
    1. Create a new Resource Group (recommended) or select an existing one.
-   1. Choose **Region**.
+   1. Choose **Region**. The event hub namespace needs to be in the same region as the resource being monitored if the resource is regional.
    1. For the **Sumo Endpoint URL** supply the URL for  HTTP source you defined in [Step 1](#step-1-configure-an-http-source). 
    1. Click **Review+Create**.
 
     ![pipeline-custom-deployment.png](/img/send-data/azure-metrics/pipeline-custom-deployment.png)
 
-1. Verify the deployment was successful by looking at **Deployment** in **Resource Group - Overview** on Azure Portal.
+1. Verify the deployment was successful by looking at Notifications at top right corner of Azure Portal.
 
-    ![deployment_successed.png](/img/send-data/azure-metrics/deployment_successed.png)
+    ![notification.png](/img/send-data/azure-metrics/notification.png)
 
-1. (Optional) In the same window, you can click Go to resource group to verify all resources have been created successfully. You will see something like this:
+1. (Optional) After clicking on create, you will land to the deployment page, you should see the **Your deployment is complete** message after deployment is finished:
 
-    ![resource.png](/img/send-data/azure-metrics/resource.png)
+    ![microsofttemplate_resource.png](/img/send-data/azure-metrics/microsofttemplate_resource.png)
 
-1. Go to Storage accounts and search for “smfaillogs”. Click on `“smfaillogs<random-string>”`.
+1. In the Resource Group window, search for “smfaillogs” in “Resources” Tab. Click on `“smfaillogs<random-string>”`.
 
     ![storageaccount.png](/img/send-data/azure-metrics/storageaccount.png)
 
-1. Under **Blob Service,** click **Containers**, then **click + Container**, enter the **Name** "smfaillogs". Click **OK**.
+1. Under **Data Storage**, click **Containers**, then **click + Container**, enter the **Name** "smfaillogs". Click **OK**.
 
     ![containers.png](/img/send-data/azure-metrics/containers.png)
 
