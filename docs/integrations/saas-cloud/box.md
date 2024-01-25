@@ -65,7 +65,7 @@ The Sumo Logic app for Box collects Box events, which are described in detail [h
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Top 10 Failed Logins"
 _sourceCategory=box  type "event_type" login

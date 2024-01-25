@@ -29,7 +29,7 @@ This app uses Sumo Logic’s Microsoft Graph Security Source to collect [Alerts]
 Learn more about [fields of alert](https://learn.microsoft.com/en-us/graph/api/resources/alert?view=graph-rest-1.0).
 :::
 
-## Sample log message
+## Sample log messages
 
 ```json title="Sample Alert Log"
  {
@@ -105,7 +105,7 @@ Learn more about [fields of alert](https://learn.microsoft.com/en-us/graph/api/r
        }
 ```
 
-## Sample Query
+## Sample queries
 
 ```sql title="Alerts Count"
 _sourceCategory="ms_graph"

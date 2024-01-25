@@ -27,7 +27,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
    * From OneLogin, configure a broadcaster that points to this endpoint using the instructions in the [OneLogin documentation](https://onelogin.service-now.com/support?id=kb_article&sys_id=43f95543db109700d5505eea4b961959). You must use SIEM (NDJSON) format. Use the Sumo Logic HTTP Source URL as the Listener URL, and custom header is not needed.
 
 
-## Log Types and Sample Log Message
+## Log types and Sample Log Message
 
 The Sumo Logic App for OneLogin uses event logs in NDJSON format. Each event is a single-line JSON, containing information such as:
 
@@ -107,7 +107,7 @@ The Sumo Logic App for OneLogin uses event logs in NDJSON format. Each event is 
 }
 ```
 
-## Sample Query
+## Sample queries
 
 
 ```sql title="Name - Events by User"

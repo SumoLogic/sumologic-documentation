@@ -21,7 +21,7 @@ For more information, visit [Observable Networks (via Cisco)](https://www.cisco.
 Before you begin, your Observable Networks portal must be properly configured. Contact [support@obsrvbl.com](/docs/integrations/security-threat-detection/observable-networks) if you have any questions.
 :::
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Observable Networks assumes Observable Networks formatted logs, which provide one JSON message per request.
 
@@ -99,7 +99,7 @@ To parse authentication logs:
 2. From the **Auth.log** dropdown, select the log configuration that represents the auth.log source.
 3. Click **Save**.
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {

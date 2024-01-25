@@ -32,11 +32,11 @@ Key features of the Tenable app include:
 
 This app uses [Tenable](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source/) source to collect [Vulnerabilities data](https://developer.tenable.com/reference/exports-vulns-request-export) and [Audit Events](https://developer.tenable.com/reference/audit-log-events) from the Tenable platform.
 
-## Sample log message
+## Sample log messages
 
 Refer to the Tenable API documentation for [Vulnerabilities data](https://developer.tenable.com/reference/exports-vulns-request-export) and [Audit Events](https://developer.tenable.com/reference/audit-log-events) log messages.
 
-## Sample Query
+## Sample queries
 
 ```sql title="Vulnerability Events"
 (_source=Tenable fqdn)

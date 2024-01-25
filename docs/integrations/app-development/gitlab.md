@@ -31,7 +31,7 @@ For information on GitLab events, refer to [GitLab documentation](https://docs.g
 For more information about log messages, see [GitLab documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html).
 
 
-### Sample Query
+### Sample queries
 
 This section provides a sample query from the **Opened Merge Requests** panel on the **GitLab - Merge Requests** dashboard.
 

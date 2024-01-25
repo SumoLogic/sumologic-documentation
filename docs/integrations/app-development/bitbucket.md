@@ -68,7 +68,7 @@ For log samples, refer to [Bitbucket Event Documentation](https://confluence.atl
 ```
 
 
-### Sample Query
+### Sample queries
 
 This section provides a sample from the **Failed Deployments** panel on the **Bitbucket Deployment** dashboard.
 

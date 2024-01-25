@@ -18,7 +18,7 @@ The App uses:
 * [Google Cloud SQL Platform Logs](https://cloud.google.com/logging/docs/api/platform-logs#cloud_sql) - Logs errors on databases.
 * [Google Cloud SQL metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-cloudsql) - Metric related to cloud sql
 
-### Sample log query
+### Sample queries
 
 ```bash title="Created Resources Over Time"
 _sourceCategory=*gcp* data "type":"cloudsql_database" methodName

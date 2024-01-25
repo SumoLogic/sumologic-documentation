@@ -134,7 +134,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Log Messages
+## Sample log messages
 
 Here's a sample log message you'd find in Non-Kubernetes environments.
 

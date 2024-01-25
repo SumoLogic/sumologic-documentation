@@ -50,14 +50,14 @@ If you're just getting started with GitHub Events, see the Sumo Logic DevOps blo
 :::
 
 
-## Log Types
+## Log types
 
 The Sumo Logic App for GitHub gathers statistics and events from the GitHub Remote API on each host.
 
 First, configure a Collector and Source in Sumo Logic, then configure a GitHub Webhook using the HTTP Source Address created in Sumo Logic.
 
 
-### Sample Log Messages
+### Sample log messages
 
 GitHub sends all fields in the payload, documented according to [Event Type](https://developer.github.com/v3/activity/events/types/).
 

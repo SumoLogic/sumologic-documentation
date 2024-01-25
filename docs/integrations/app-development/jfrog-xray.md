@@ -15,7 +15,7 @@ The JFrog Xray app provides visibility into the state of artifacts and component
 The Sumo Logic app for JFrog Xray and collection are tested on JFrog Xray 2.9.0 version.
 
 
-## Log Types
+## Log types
 
 The JFrog Xray app uses the following log types:
 
@@ -25,7 +25,7 @@ The JFrog Xray app uses the following log types:
 
 
 
-### Sample Log Message
+### Sample log messages
 
 
 ```json

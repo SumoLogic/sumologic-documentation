@@ -35,7 +35,7 @@ For more information on the incident messages supported in Webhooks V3, see the 
 For examples of incident.triggered, incident.acknowledged and incident.resolved log messages, see the [PagerDuty Webhooks V3 Examples](https://developer.pagerduty.com/docs/ZG9jOjQ1MTg4ODQ0-overview#webhook-payload) page.
 
 
-### Sample Query
+### Sample queries
 
 The following Top Altering Services query is shown on the PagerDuty V3 - Overview dashboard.
 

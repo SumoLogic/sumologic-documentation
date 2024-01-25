@@ -17,7 +17,7 @@ The Sumo Logic App for VMware Carbon Black provides visibility into key endpoint
 * **VMware ​​​​​​​Carbon Black Endpoint Standard** is a next-generation antivirus (NGAV) solution available through MSSPs or directly as software as a service through VMware Carbon Black’s Predictive Security Cloud (PSC).
 
 
-## Log Types
+## Log types
 
 Sumo Logic analyzes the following required VMware Carbon Black events for more efficient monitoring:
 * VMware Carbon Black EDR Events
@@ -132,7 +132,7 @@ _sourceCategory="cb_edr_events" or _sourceCategory="cb_endpoint_standard_events"
 For more information, see [Live Tail](/docs/search/live-tail).
 
 
-### Sample Log Messages
+### Sample log messages
 
 This section provides examples of JSON and LEEF log messages.
 
@@ -262,7 +262,7 @@ alliance_data_bit9endpointvisibility='74ccc9e8-ffc6-4e0b-ba88-0e947cf7b146' alli
 
 
 
-### Sample Query
+### Sample queries
 
 This section provides a sample query from the **Top Processes** panel of the **Carbon Black - EDR - Processes** dashboard.
 

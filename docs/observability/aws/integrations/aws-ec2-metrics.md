@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 - [CloudTrail Amazon EC2 Data Events](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-with-cloudtrail.html)
 - [AWS EC2 metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html)
 
-### Sample log message
+### Sample log messages
 
 ```json title="Sample CloudTrail log for EC2"
 {
@@ -56,7 +56,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
     }
 }
 ```
-### Sample query
+### Sample queries
 
 ```sql title="CPU utilization (Cloudwatch metric)"
 account=* region=* namespace=aws/ec2 instanceid=* metric=CPUUtilization Statistic=average | avg

@@ -188,7 +188,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
   "count":28
 }
 ```
-## Sample Query
+## Sample queries
 
 ### Log query
 

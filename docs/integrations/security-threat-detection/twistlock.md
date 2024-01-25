@@ -17,7 +17,7 @@ If you're using Kubernetes, we recommend installing the Twistlock App.
 
 If you're not using Kubernetes, we recommend installing the Twistlock Classic App.
 
-## Log Types
+## Log types
 
 The Twistlock Apps work on logs from:
 
@@ -64,7 +64,7 @@ This step shows you how to configure Twistlock to send logs to the Sumo Logic sy
 
 
 
-### Sample Log Messages
+### Sample log messages
 
 
 ```json title="Console log sample"
@@ -92,7 +92,7 @@ compliance="0"
 ```
 
 
-### Sample Query
+### Sample queries
 
 
 The following query sample is from the **Vulnerability Scan Events by Severity** panel in the **Twistlock - Overview** dashboard.
