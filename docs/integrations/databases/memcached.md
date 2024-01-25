@@ -15,7 +15,7 @@ The Memcached app is a unified logs and metrics app that helps you monitor the a
 
 The Sumo Logic app for Memcached is tested for Version: 1.4.15.
 
-## Sample Log Messages
+## Sample log messages
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -375,7 +375,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 3. Go to **Manage Data > Alerts > Monitors**.
 4. Click **Add**.
 4. Click **Import.**
-6. On the** Import Content popup**, enter **Memcached** in the Name field, paste the JSON into the popup, and click **Import**.
+6. On the **Import Content popup**, enter **Memcached** in the Name field, paste the JSON into the popup, and click **Import**.
 7. The monitors are created in "Memcached" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 

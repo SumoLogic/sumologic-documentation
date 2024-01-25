@@ -59,7 +59,7 @@ This app uses the Sumo Logic Cato Networks source to collect [Events Feed](https
 }
 ```
 
-## Sample query
+## Sample queries
 
 ```sql title="Total Threat Events"
 _sourceName="source" event_type  

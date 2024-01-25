@@ -4,8 +4,6 @@ title: Filter Live Tail
 description: To find specific information, you can filter by keyword.
 ---
 
-
-
 To find specific logs, you can filter with keywords. You may use keywords after providing at least one metadata field to the Live Tail query and click Run or press Enter.
 
 The search is rerun with the new keyword filter and added to incoming messages only. The screen clears, and new results automatically scroll.
@@ -24,7 +22,7 @@ Wildcards are supported in keywords and at the beginning and end of metadata fi
 
 ## Filter Live Tail
 
-1. After your Source Category, Source Host, Source Name, Source, or Collector, enter the keyword you’d like to filter for. For example, enter "OS Process Data".  Use quotes to find a specific phrase, otherwise the AND operator is implicit.
+1. After your Source Category, Source Host, Source Name, Source, or Collector, enter the keyword you’d like to filter for. For example, enter "OS Process Data". Use quotes to find a specific phrase, otherwise the AND operator is implicit.
 1. Click **Run** or press **Enter**.
 
 The **Run** button changes to **Running**, the new query runs, and the screen automatically scrolls with the results.

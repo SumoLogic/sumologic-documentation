@@ -29,7 +29,7 @@ The Sumo Logic App for Cylance uses the supports the following event and log typ
 For details on the format and definitions, refer to [Cylance](https://www.cylance.com/) documentation.
 
 
-### Sample log message
+### Sample log messages
 
 ```json
 850 <44>1 2019-02-27T04:57:20.4390000Z sysloghost CylancePROTECT - - - Event Type:
@@ -43,7 +43,7 @@ Threat Classification: Trusted - Local, Device Id: 81-89cec180584-1fede63f-46041
 Policy Name: Allowed Anywhere Internally
 ```
 
-### Sample query
+### Sample queries
 
 The following query is from the **Event Name Trend** panel of the **Cylance - AuditLog Dashboard**.
 
@@ -99,11 +99,9 @@ Copy and paste the **token** in a secure location. You will need this when you c
 Before your can configure Sumo Logic to ingest logs, you must set up remote log streaming on Cylance. For instructions, refer to the following documentation:
 
 1. In Cylance, go to **Settings > Application**.
-
-2. In the **Integrations **section, activate the **Syslog/SIEM** check box.  
+2. In the **Integrations** section, activate the **Syslog/SIEM** check box.  
 3. Under **Event Types**, activate the checkboxes for all events.  
-4. For **SIEM,** select **Sumo Logic** as the destination.
-
+4. For **SIEM**, select **Sumo Logic** as the destination.
 5. For **Protocol,** select TCP.
 6. Activate the check box **TLS/SSL**.
 7. Enter your **IP/Domain**.

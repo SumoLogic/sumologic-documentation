@@ -21,7 +21,7 @@ The Sumo Logic app for Google Cloud Functions uses the following logs and metric
 * [Google Compute Engine Metrics](https://cloud.google.com/monitoring/api/metrics_gcp#gcp-compute)
 
 
-### Sample log query
+### Sample queries
 
 ```bash title="Top 10 User"
 _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
@@ -99,7 +99,7 @@ You need to configure a Pub/Sub Topic in GCP and add a subscription to the Sourc
 
 1. Create a Pub/Sub Topic in GCP. Refer to the [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
 1. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
-   * Use a **Push Delivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the** Collection** page in Sumo Logic and click **Show URL**.
+   * Use a **Push Delivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the **Collection** page in Sumo Logic and click **Show URL**.
 
 ##### Limitations
 

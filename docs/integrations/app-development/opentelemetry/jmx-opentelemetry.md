@@ -30,7 +30,7 @@ The following types of metrics are collected from JMX:
 
 For more information on different metrics collected, refer to the [JMX receiver docs](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/docs/target-systems/jvm.md).
 
-### Sample query
+### Sample queries
 
 ```sql
 sumo.datasource=jmx metric=jvm.memory.heap.used
@@ -233,7 +233,7 @@ Use this dashboard to:
 
 ### Memory Pool
 
-The **JMX - Memory Pool **dashboard provides key information about the memory pool usage, peak usage, collection usage, garbage collection across various memory pools of your Java virtual machine.
+The **JMX - Memory Pool** dashboard provides key information about the memory pool usage, peak usage, collection usage, garbage collection across various memory pools of your Java virtual machine.
 
 Use this dashboard to:
 * Gain insights into memory usage across different memory pools.

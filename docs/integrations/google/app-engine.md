@@ -11,13 +11,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Google App Engine is a platform to build web and mobile apps that scale automatically. The Sumo Logic App for Google App Engine helps you monitor the activities in your App Engine. The pre-configured dashboards provide insight into the requests, applications, HTTP status codes, latency, and response time in your App Engine.
 
-## Log Types
+## Log types
 
 The App uses:
 * Google Cloud Audit Logs — These logs track events on multiple GCP services, including Compute Engine, IAM and App Engine
 * App Engine Request Logs — These logs provide information about each request in App Engine, including the external IP address making the request
 
-### Sample Log Message
+### Sample log messages
 
 <details>
 <summary>Click to expand</summary>
@@ -199,7 +199,7 @@ The App uses:
 
 </details>
 
-### Sample Query
+### Sample queries
 
 ```bash title="Status codes over time"
 _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
@@ -279,7 +279,7 @@ You need to configure a Pub/Sub Topic in GCP and add a subscription to the Sourc
 
 1. Create a Pub/Sub Topic in GCP. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
 2. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
-   * Use a **Push Delivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the** Collection** page in Sumo Logic and click **Show URL**.
+   * Use a **Push Delivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the **Collection** page in Sumo Logic and click **Show URL**.
 
 
 ### Limitations

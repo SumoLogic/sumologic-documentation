@@ -6,7 +6,7 @@ description: Construct a role search filter to control what log data users with 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page describes how to define an advanced search filter for a role. These instructions apply to the [**Advanced filter**](/docs/manage/users-roles/roles/rbac-for-indexes/#advanced-filter) option in Step 6 of the [Create a role](/docs/manage/users-roles/roles/create-manage-roles/#create-a-role) procedure. 
+This page describes how to define an advanced search filter for a role. These instructions apply to the [**Advanced filter**](/docs/manage/users-roles/roles/rbac-for-indexes/#advanced-filter) option in Step 6 of the [Create a role](/docs/manage/users-roles/roles/create-manage-roles/#create-a-role) procedure.
 
 
 ## Understanding search filters
@@ -51,9 +51,9 @@ The explanations of the behavior of each example filter assume that no other rol
 
 #### Search filter limitations
 
-* Role filters cannot include vertical pipes (\|).
+* Role filters cannot include vertical pipes (`|`).
 * Role filters apply to log searches, not metric searches.
-* If one or more of your FERs override the out-of-the-box metadata tags you use in your search filters for a role,  LiveTail can still provide access to data outside of the scope intended in your search filter. You should either avoid overriding out-of-the-box metadata tags in your FERs or avoid overridden tags in your search filters.
+* If one or more of your FERs override the out-of-the-box metadata tags you use in your search filters for a role, Live Tail can still provide access to data outside of the scope intended in your search filter. You should either avoid overriding out-of-the-box metadata tags in your FERs or avoid overridden tags in your search filters.
 * The [_dataTier](/docs/manage/partitions-data-tiers/searching-data-tiers/) search modifier is not supported in role filters.
 * For limitations related to the use of Scheduled Views or Partitions in a search filter, refer to [Partitions](/docs/manage/partitions-data-tiers/#limitations) and [Scheduled Views](/docs/manage/scheduled-views).
 

@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Zscaler Private Access App collects logs from Zscaler using the Log Streaming Service (LSS) to populate pre-configured searches and Dashboards. The dashboards provide easy-to-access visual insights into user behaviors, security, connector status, and risk.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Zscaler Private Access uses LSS to send the following logs, as documented [here](https://help.zscaler.com/zpa/about-log-streaming-service):
 
@@ -44,8 +44,7 @@ To collect logs for ZPA, do the following in Sumo Logic:
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors).
 2. Perform the steps in[ Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     * **Name**. (Required) A name is required. Description is optional.
-    * **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources.
-For details see[ Best Practices](/docs/send-data/best-practices).
+    * **Source Category**. (Required) [Provide a realistic Source Category example for this data type]. The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).
 3. In the Advanced section, specify the following configurations:
     * **Enable Timestamp Parsing**. True
     * **Time Zone**. Use time zone from log file. If none is detected use: Use Collector Default.
@@ -55,11 +54,6 @@ For details see[ Best Practices](/docs/send-data/best-practices).
     * **Filter**: `(\<\d+\>1 - - - - - - \{)`
     * **Type**: `Mask messages that match`
     * **Mask String**: `{`
-
-
-
-
-
 5. Click **Save**.
 
 
@@ -95,12 +89,12 @@ Once you have deployed the App Connector, configure log receivers to send logs t
 
 
 1. **Name**: Enter a name for the log receiver. The name cannot contain special characters, with the exception of periods (.), hyphens (-), and underscores (`_`).
-2. **Description**: (Optional) Enter a description.
-3. **Domain or IP Address**: Enter the Domain name from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source).
-4. **TCP Port**: Enter the TCP port number from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). Default: 6514
-5. **TLS Encryption**: Select Enabled.
-6. **Connector Groups**: Choose the App Connector groups that can forward logs to the receiver, and click **Done**. You can search for a specific group, click **Select All** to apply all groups, or click **Clear Selection** to remove all selections.
-7. Click **Next**.
+1. **Description**: (Optional) Enter a description.
+1. **Domain or IP Address**: Enter the Domain name from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source).
+1. **TCP Port**: Enter the TCP port number from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). Default: 6514
+1. **TLS Encryption**: Select Enabled.
+1. **Connector Groups**: Choose the App Connector groups that can forward logs to the receiver, and click **Done**. You can search for a specific group, click **Select All** to apply all groups, or click **Clear Selection** to remove all selections.
+1. Click **Next**.
 1. [Log Stream](https://help.zscaler.com/zpa/configuring-log-receiver#Step2)
     1. In the **Log Stream** tab, select a **Log Type** from the dropdown menu:
         1. **User Activity**: Information on end user requests to applications. To learn more, see[ User Activity Log Fields](https://help.zscaler.com/zpa/user-activity-log-fields).
@@ -109,13 +103,15 @@ Once you have deployed the App Connector, configure log receivers to send logs t
         4. **Browser Access**: HTTP log information related to Browser Access. To learn more, see[ Browser Access Log Fields](https://help.zscaler.com/zpa/http-log-fields) and[ About Browser Access](https://help.zscaler.com/zpa/about-BrowserAccess).
         5. **Audit Logs**: Session information for all admins accessing the ZPA Admin Portal. To learn more, see[ About Audit Log Fields](https://help.zscaler.com/zpa/about-audit-log-fields) and[ About Audit Logs](https://help.zscaler.com/zpa/about-audit-logs).
     2. In the **Log Template** field, select **JSON.**
-    3. The default **Log Stream Content **that is displayed will change based on the **Log Type** and **Log Template** you selected in previous steps.
+    3. The default **Log Stream Content** that is displayed will change based on the **Log Type** and **Log Template** you selected in previous steps.
 
-You can also edit the log stream content within the text field in order to capture specific fields and create a **Custom **log template. To learn more, see [Understanding the Log Stream Content Format](https://help.zscaler.com/zpa/understanding-log-stream-content-format).
+You can also edit the log stream content within the text field in order to capture specific fields and create a **Custom** log template. To learn more, see [Understanding the Log Stream Content Format](https://help.zscaler.com/zpa/understanding-log-stream-content-format).
 
 Edit the the log stream content, paste the following text in the beginning of the template:
 
-`<165>1 - - - - - - <Syslog Token>`
+```
+<165>1 - - - - - - <Syslog Token>
+```
 
 For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
 

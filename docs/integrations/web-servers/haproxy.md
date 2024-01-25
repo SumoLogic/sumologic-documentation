@@ -57,7 +57,7 @@ May 13 08:24:43 localhost haproxy[21813]: \
 </Tabs>
 
 
-### Sample Query
+### Sample queries
 
 This query example is from the [**HAProxy - Overview** dashboard](#overview) > **Top 5 Clients causing Errors** panels.
 ```sql
@@ -361,7 +361,7 @@ Please keep the **port(514)** handy as we will use it in next steps.
     Follow the steps below to enable HAProxy logs to go to log files :
 
 
-1. You can enable HAProxy logs to syslog by adding the following line in the **global** section of **/etc/haproxy/haproxy.cfg **file. This means that HAProxy will send its messages to rsyslog on 127.0.0.1.
+1. You can enable HAProxy logs to syslog by adding the following line in the **global** section of **/etc/haproxy/haproxy.cfg** file. This means that HAProxy will send its messages to rsyslog on 127.0.0.1.
 
 
 ```bash
@@ -480,7 +480,7 @@ However, if you would like to restrict these alerts to specific clusters or envi
 1. Go to **Manage Data > Alerts > Monitors**.
 2. Click **Add**.
 3. Click Import.
-4. On the** Import Content popup**, enter **HAProxy **in the Name field, paste in the JSON into the the popup, and click **Import**.
+4. On the **Import Content popup**, enter **HAProxy** in the Name field, paste in the JSON into the the popup, and click **Import**.
 5. The monitors are created in a "HAProxy" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 ### Method 2: Use a Terraform script

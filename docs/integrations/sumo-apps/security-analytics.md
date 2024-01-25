@@ -25,9 +25,9 @@ This data is collected from your Collectors and Sources for instant analysis of 
 
 <img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics_SecurityOperations_Dashboard.png')} alt="test" />
 
-**Network Incidents.** Displays the number of incidents detected over the last 24 hours in a single value chart. Click the chart to drill down to the **Network Overview Dashboard **for more information.
+**Network Incidents.** Displays the number of incidents detected over the last 24 hours in a single value chart. Click the chart to drill down to the **Network Overview Dashboard** for more information.
 
-**Vulnerability.** Provides the incident count by severity High or Critical for the past 24 hours in a single value chart. Click the chart to drill down to the **Vulnerabilities on Endpoints **Dashboard for more information.
+**Vulnerability.** Provides the incident count by severity High or Critical for the past 24 hours in a single value chart. Click the chart to drill down to the **Vulnerabilities on Endpoints** Dashboard for more information.
 
 **System Incidents.** Shows the number of system incidents over the last 24 hours in a single value chart. Click the chart to drill down to the **System and Change** Dashboard for more information.
 
@@ -159,7 +159,7 @@ In the Security Analytics App, on the Network Status Dashboard, the Incident Cou
 
 **To see incident details in the Messages tab:**
 
-1. Click the **Incidents for Review Panel **to open the query in the Search page.
+1. Click the **Incidents for Review Panel** to open the query in the Search page.
 2. Click the **Messages** tab.
 3. More details for the incident are included in the Message field.
 

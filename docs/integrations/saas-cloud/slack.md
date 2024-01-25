@@ -13,7 +13,7 @@ The Sumo Logic App for Slack provides monitoring and data analytics for Slack us
 
 [Slack](https://slack.com/) is a cloud-based set of software tools and online services that provide for secure collaboration across teams, departments, offices, and countries.
 
-## Log Types
+## Log types
 
 Slack logs are in JSON format. The Slack App utilizes the following log types:
 
@@ -188,7 +188,7 @@ The following table provides sample log messages for the different log types.
 }
 ```
 
-### Sample Query
+### Sample queries
 
 The sample query is from the **Channel Summary** panel of **Slack - Public Channels** dashboard.
 
@@ -308,7 +308,7 @@ Use this dashboard to:
 
 ### Audit Overview Dashboard
 
-The **Slack - Audit Overview **dashboard provides details around  Slack audit actions, and trends.
+The **Slack - Audit Overview** dashboard provides details around  Slack audit actions, and trends.
 
 Use this dashboard to:
 * Review audit actions and determine which are not approved or need to be corrected

@@ -118,7 +118,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
   INFO [ScheduledTasks:1] 2023-01-08 09:18:47,347 StatusLogger.java:101 - system.schema_aggregates
 ```
 
-## Sample Query 
+## Sample queries 
 
 Following is the query from Cassandra App's overview Dashboard's Nodes Up Panel:
 

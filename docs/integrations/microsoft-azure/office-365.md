@@ -11,11 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Microsoft Office 365 App ingests Microsoft Office 365 Audit logs for Azure Active Directory, Exchange, and SharePoint. Preconfigured Dashboards allow you to monitor and analyze your complete Office 365 system for administrator and user activity.
 
-## Log Types
+## Log types
 
 For information on Microsoft APIs and message types, see Microsoft Office 365 Audit Source.
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {  

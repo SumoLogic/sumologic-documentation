@@ -24,7 +24,7 @@ For more information on the incident messages supported in Webhooks V2, see the 
 For examples of incident.trigger, incident.acknowledge, incident.resolve, and incident.assign log messages, see the [PagerDuty Webhooks V2 Examples](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview#examples) page.
 
 
-### Sample Query
+### Sample queries
 
 The following Top Altering Services query is shown on the PagerDuty V2 - Overview dashboard.
 
@@ -86,7 +86,7 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 ### Overview
 
-**PagerDuty V2 - Overview Dashboard **provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
+**PagerDuty V2 - Overview Dashboard** provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
 
 Use this dashboard to:
 * Review the services, incidents and policies that are causing the most alerts.

@@ -14,7 +14,7 @@ The Amazon ECS app uses the following logs and metrics:
 * [Amazon ECS metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html)
 * [CloudTrail Amazon ECS Data Event](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html)
 
-### Sample log message
+### Sample log messages
 
 <details>
 <summary>Click to expand log message</summary>

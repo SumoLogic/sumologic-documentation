@@ -356,7 +356,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQ
    3. Ensure that the `db_cluster` and `environment` values are the same as they were configured in the [Configure and start telegraf section](#configure-and-start-telegraf).
    4. Configure the **Advanced** section:
     * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
-    * **Time Zone.** Use **the timezone from log file **option.
+    * **Time Zone.** Use **the timezone from log file** option.
     * **Timestamp Format.** The timestamp format is automatically detected.
     * **Encoding.** Select UTF-8 (Default).
     * **Enable Multiline Processing.** Detect messages spanning multiple lines

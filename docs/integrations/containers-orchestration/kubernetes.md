@@ -38,7 +38,7 @@ The Sumo Logic app for Kubernetes uses logs and metrics.
 
 For more information, see [this page](https://github.com/SumoLogic/sumologic-kubernetes-collection). Metrics are collected using [Prometheus](https://prometheus.io/) with [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) used for metadata enrichment.
 
-### Sample Log Message
+### Sample log messages
 
 ```json title="Application Logs"
 {"timestamp":1561534865020,"log":"E0626 07:41:05.020255       1
@@ -48,7 +48,7 @@ Post http://192.168.190.54:10255/stats/container/: dial tcp 192.168.190.54:10255
 getsockopt: connection refused"}
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Message Breakdown by Container from the Dashboard Container Logs"
  cluster = * and namespace = * and pod = * and container = *
@@ -119,53 +119,53 @@ The monitors are disabled by default. Once you have installed the alerts using t
 ### Method B: Using a Terraform script
 
 1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys). There, you'll need to identify which deployment your Sumo Logic account is in ([learn more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)).
-2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for Kubernetes alerts. The alerts package is available in the [Sumo Logic github repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/kubernetes). You can either download it through the `git clone` command or as a zip file.
-4. **Alert Configuration**. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/`.
+1. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
+1. Download the Sumo Logic Terraform package for Kubernetes alerts. The alerts package is available in the [Sumo Logic github repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/kubernetes). You can either download it through the `git clone` command or as a zip file.
+1. **Alert Configuration**. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/`.
    1. Edit the kubernetes.auto.tfvars file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
     ```bash
     access_id   = "<SUMOLOGIC ACCESS ID>"
     access_key  = "<SUMOLOGIC ACCESS KEY>"
     environment = "<SUMOLOGIC DEPLOYMENT>"
     ```
-   2. The alerts should be restricted to specific clusters and/or namespaces to prevent the monitors hitting the cardinality limits. To limit the alerts, update the variable `kubernetes_data_source` with your `<Your Custom Filter>`. For example: `cluster=k8s.prod.01`.
-   3. All monitors are disabled by default on installation. If you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
-  4. By default, the monitors are configured in a monitor folder called **Kubernetes**, if you would like to change the name of the folder, update the monitor folder name in this file.
-5. If you would like the alerts to send email or connection notifications, modify the file **kubernetes_notifications.auto.tfvars** and populate `connection_notifications_critical`, `connection_notifications_warnings`, `connection_notifications_missingdata` and `email_notifications_critical`, `email_notifications_warnings`, `email_notifications_missingdata` as per the below examples.
-  ```sql title="Pagerduty Connection Example"
-  connection_notifications_critical = [
-      {
-        connection_type       = "PagerDuty",
-        connection_id         = "<CONNECTION_ID>",
-        payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
+   1. The alerts should be restricted to specific clusters and/or namespaces to prevent the monitors hitting the cardinality limits. To limit the alerts, update the variable `kubernetes_data_source` with your `<Your Custom Filter>`. For example: `cluster=k8s.prod.01`.
+   1. All monitors are disabled by default on installation. If you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
+  1. By default, the monitors are configured in a monitor folder called **Kubernetes**, if you would like to change the name of the folder, update the monitor folder name in this file.
+1. If you would like the alerts to send email or connection notifications, modify the file **kubernetes_notifications.auto.tfvars** and populate `connection_notifications_critical`, `connection_notifications_warnings`, `connection_notifications_missingdata` and `email_notifications_critical`, `email_notifications_warnings`, `email_notifications_missingdata` as per the below examples.
+   ```sql title="Pagerduty Connection Example"
+   connection_notifications_critical = [
+       {
+         connection_type       = "PagerDuty",
+         connection_id         = "<CONNECTION_ID>",
+         payload_override      = "{\"service_key\":  \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
         run_for_trigger_types = ["Critical", "ResolvedCritical"]
-      },
-      {
-        connection_type       = "Webhook",
-        connection_id         = "<CONNECTION_ID>",
-        payload_override      = "",
-        run_for_trigger_types = ["Critical", "ResolvedCritical"]
-      }
-    ]
-  ```
-  Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/docs/api/monitors-management). For information on overriding payload for different connection types, refer to [this document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-  ```sql title="Email Notifications Example"
-  email_notifications_critiical = [
-      {
-        connection_type       = "Email",
-        recipients            = ["abc@example.com"],
-        subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-        time_zone             = "PST",
-        message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-          run_for_trigger_types = ["Critical", "ResolvedCritical"]
-      }
-    ]
-  ```
-6. **Install the Alerts**:
+       },
+       {
+         connection_type       = "Webhook",
+         connection_id         = "<CONNECTION_ID>",
+         payload_override      = "",
+         run_for_trigger_types = ["Critical", "ResolvedCritical"]
+       }
+     ]
+   ```
+   Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/docs/api/monitors-management). For information on overriding payload for different connection types, refer to [this document](/docs/alerts/webhook-connections/set-up-webhook-connections).
+   ```sql title="Email Notifications Example"
+   email_notifications_critiical = [
+       {
+         connection_type       = "Email",
+         recipients            = ["abc@example.com"],
+         subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
+         time_zone             = "PST",
+         message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
+           run_for_trigger_types = ["Critical", "ResolvedCritical"]
+       }
+     ]
+   ```
+1. **Install the Alerts**:
    1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/` and run `terraform init`. This will initialize Terraform and will download the required components.
    1. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
    1. Run `terraform apply`.
-7. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. See Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+1. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. See Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
 :::note
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts).
@@ -232,7 +232,7 @@ Use this dashboard to:
 
 ### Node Overview   
 
-The **Kubernetes - Node Overview**dashboard provides a high-level view of a node, along with details on all the related components and resources.
+The **Kubernetes - Node Overview** dashboard provides a high-level view of a node, along with details on all the related components and resources.
 
 Use this dashboard to:  
 * Get quick insights into the health of the node.  
@@ -413,7 +413,7 @@ Use this dashboard to:
 
 The Horizontal Pod Autoscaler automatically scales the number of Pods in a replication controller, deployment, replica set or stateful set based on observed CPU utilization.
 
-The **Kubernetes - HPA**dashboard provides visibility into the health and performance of HPA.  
+The **Kubernetes - HPA** dashboard provides visibility into the health and performance of HPA.  
 
 Use this dashboard to:  
 * Identify whether the required replica level has been achieved or not.

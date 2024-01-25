@@ -20,7 +20,7 @@ The Sumo Logic App for Azure Network Watcher uses Network Security Group (NSG) f
 * 5-tuple information with respect to flow (Source/Destination IP and Port, Protocol)
 * Allowed/Denied traffic flow.
 
-### Sample log message
+### Sample log messages
 
 ```json
     {  
@@ -41,7 +41,7 @@ The Sumo Logic App for Azure Network Watcher uses Network Security Group (NSG) f
     }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Denied Traffic Flow by Source Location"
 _sourceCategory="security/flowlogs"
@@ -93,7 +93,7 @@ To configure an Azure storage account, do the following:
    * Select **Blobs** under **Blob Service**.
       * Select **+ Container**,
       * Enter the Name
-      * Select** Private** for the Public Access Level.
+      * Select **Private** for the Public Access Level.
       * Click **OK**.
 
 Make a note of the container name. You will need to supply it later.
@@ -137,7 +137,7 @@ This template uses Consumption Plan which does not support VNet integration. For
     :::
 1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deployment" width="400" />
 1. Verify the deployment was successful by looking at **Notifications** at top right corner of Azure Portal.
-1. (Optional) In the same window, click** Go to resource group** to verify the all resources were successfully created, such as shown in the following example:
+1. (Optional) In the same window, click **Go to resource group** to verify the all resources were successfully created, such as shown in the following example:
 1. Go to **Storage accounts** and search for **sumobrlogs**, then select `sumobrlogs<random-string>`.
 1. In the **Data Storage** menu, do the following:
     1. Click **Tables**.

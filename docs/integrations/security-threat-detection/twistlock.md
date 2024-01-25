@@ -13,19 +13,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Twistlock provides a comprehensive monitoring and analysis solution for detecting vulnerabilities and potential threats within your Kubernetes and containerized environments.
 
+If you're using Kubernetes, we recommend installing the Twistlock App.
 
-## Log Types
+If you're not using Kubernetes, we recommend installing the Twistlock Classic App.
+
+## Log types
 
 The Twistlock Apps work on logs from:
 
-* Twistlock Console: Console logs typically include image scan, host scan, container scan, registry scan, scan summary, management audits, compliance violations, and vulnerability issues events.
-* Twistlock Defender: Defender logs typically include container/host runtime audits, process activity audits, and incident events
+* Twistlock Console. Console logs typically include image scan, host scan, container scan, registry scan, scan summary, management audits, compliance violations, and vulnerability issues events.
+* Twistlock Defender. Defender logs typically include container/host runtime audits, process activity audits, and incident events
 
 For more information on Twistlock events, refer to the [Twistlock Documentation](https://docs.twistlock.com/docs/latest/audit/logging.html#events).
-
-For Kubernetes customers, we recommend installing the Twistlock App.
-
-For non-Kubernetes customers, we recommend installing the Twistlock Classic App.
 
 
 ## Collecting Logs for the Twistlock App
@@ -42,33 +41,30 @@ In this step you configure an installed collector with a Syslog source that will
 
 1. Configure an [Installed Collector for each Twistlock Console instance](/docs/send-data/installed-collectors).
 2. Add a [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) to the Installed Collector, and specify the following:
-1. **Name**. (Required) A name is required.
-2. **Description.** Optional.
-3. **Protocol**. UDP or TCP.  Choose the protocol you configured in Twistlock Console for Syslog forwarding.
-4. **Port**. Port number. Choose the port you configured in Twistlock Console for Syslog forwarding.
-5. **Source Category**. (Required) Provide a Source Category for this data type. For example: **prod/twistlock**. For more information, see [Best Practices](/docs/send-data/best-practices).
-6. For Kubernetes customers, we recommend adding a [custom field](/docs/manage/fields.md) to the Syslog Source so you can reference it in the [Sumo Explorer view](/docs/observability/kubernetes). Each field contains a key-value pair, where the field name is the key. To add a field click the **+Add Field** link in the **Fields** section. You could add a field named **cluster** where you set the name of the cluster to tag to the logs. For example, **cluster** = **k8s.dev.sumo.sumologic.net**.
+   1. **Name**. (Required) A name is required.
+   2. **Description.** Optional.
+   3. **Protocol**. UDP or TCP.  Choose the protocol you configured in Twistlock Console for Syslog forwarding.
+   4. **Port**. Port number. Choose the port you configured in Twistlock Console for Syslog forwarding.
+   5. **Source Category**. (Required) Provide a Source Category for this data type. For example: **prod/twistlock**. For more information, see [Best Practices](/docs/send-data/best-practices).
+1. For Kubernetes customers, we recommend adding a [custom field](/docs/manage/fields.md) to the Syslog Source so you can reference it in the [Sumo Explorer view](/docs/observability/kubernetes). Each field contains a key-value pair, where the field name is the key. To add a field click the **+Add Field** link in the **Fields** section. You could add a field named **cluster** where you set the name of the cluster to tag to the logs. For example, **cluster** = **k8s.dev.sumo.sumologic.net**.
 1. Click **Save**.
 
 
 ### Step 2: Send Twistlock logs to Sumo Logic
 
-
 This step shows you how to configure Twistlock to send logs to the Sumo Logic syslog source.
 
-
-
 1. Login to the Twistlock console.
-2. Go to **Manage > System > Logging.**
+2. Go to **Manage > System > Logging**.
 3. Enable **Syslog**.
 4. Enable both options under **verbose syslog output**.
 5. Edit **Send syslog messages over the network to** with the syslog endpoint that you configured on Sumo Syslog Source in [Step 1](#Step_1._Configure_a_Sumo_Logic_syslog_source) above.
-* Format to specify the endpoint:** ** `<protocol>://<server>:<port>`
-* Example: `tcp://192.168.125.200:514`
+   * Format to specify the endpoint: `<protocol>://<server>:<port>`
+   * Example: `tcp://192.168.125.200:514`
 
 
 
-### Sample Log Messages
+### Sample log messages
 
 
 ```json title="Console log sample"
@@ -96,7 +92,7 @@ compliance="0"
 ```
 
 
-### Sample Query
+### Sample queries
 
 
 The following query sample is from the **Vulnerability Scan Events by Severity** panel in the **Twistlock - Overview** dashboard.
@@ -127,7 +123,6 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ## Viewing Twistlock Dashboards
 
-
 :::tip Filter with template variables    
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
@@ -145,14 +140,11 @@ Use this dashboard to:
 * Monitor trends for vulnerabilities and compliance issues detected.
 
 
-
 ### Scans
 
 The **Twistlock - Scans** dashboard provides insights into scan events. Panels show scan summaries, vulnerability information and container compliance violations.
 
-
 <img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-scans.png')} alt="Twistlock Dashboard" />
-
 
 Use this dashboard to:
 
@@ -160,12 +152,9 @@ Use this dashboard to:
 * Identify and remediate the most vulnerable hosts, images, and compliance violations.
 
 
-
 ### Detected Vulnerabilities
 
-
 The **Twistlock - Detected Vulnerabilities** dashboard provides detailed information on detected vulnerabilities in the registry, image, and host.
-
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-detected-vulnernabilities.png')} alt="Twistlock Dashboard" />
 
@@ -175,19 +164,15 @@ Use this dashboard to:
 * Identify top rules triggered by Twistlock to understand how to optimize or add new rules going forward.
 * Use "Twistlock - CVE Status" dashboard to work on a specific host, image, and registry, based on Twistlock's recommendation.
 
-
-
 ### CVE Status
 
 The **Twistlock - CVE Status** dashboard combines high-level views of common vulnerabilities and exposures (CVE) along with detailed information. Panels display at-a-glance views for host, image, and registry scans, and available fixes.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-cve-status-dashboard.png')} alt="Twistlock Dashboard" />
 
-
 Use this dashboard to:
 * Quickly identify, prioritize, and remediate CVE’s in your environment, for which documented fixes are available.
 * Monitor trends of vulnerabilities detected within the last 2 days.
-
 
 ### Compliance Violations
 
@@ -200,18 +185,15 @@ Use this dashboard to:
 * Identify Twistlock rules that trigger violations and optimize them as needed.
 * Monitor compliance finding. These finding messages are generated as a byproduct of container scans, image scans, host scans, and registry scans.
 
-
-
 ### Defender Incidents
 
-The **Twistlock - Defender** **Incidents** dashboard combines high-level and detailed information for defender incidents, which are logical groupings of events related by context that reveal known attack patterns, defender incidents, and process activity.
+The **Twistlock - Defender Incidents** dashboard combines high-level and detailed information for defender incidents, which are logical groupings of events related by context that reveal known attack patterns, defender incidents, and process activity.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-defender-incidents.png')} alt="Twistlock Dashboard" />
 
-**Use this dashboard to monitor:
+Use this dashboard to monitor:
 * Known attack patterns. Incidents are logical groupings of events, related by context, that reveal known attack patterns.
 * Processes activity in a container. Look into whether the process was spawned from a shell session.
-
 
 
 ### Runtime
@@ -238,7 +220,6 @@ This section provides instructions on how to install the Twistlock Classic App, 
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
 
 You can use template variables to drill down and examine the data on a granular level.
-
 
 ### Overview
 
@@ -301,7 +282,7 @@ Use this dashboard to:
 
 ### Defender Incidents
 
-The **Twistlock - Defender** **Incidents** dashboard combines high-level and detailed information for defender incidents, which are logical groupings of events related by context that reveal known attack patterns, defender incidents, and process activity.
+The **Twistlock - Defender Incidents** dashboard combines high-level and detailed information for defender incidents, which are logical groupings of events related by context that reveal known attack patterns, defender incidents, and process activity.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TwistlockClassic_Defender_Incidents.png')} alt="Twistlock Dashboard" />
 

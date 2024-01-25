@@ -26,7 +26,7 @@ In addition to the fields found in your logs, the Field Browser shows **Time** (
 1. Indicates the field contains numerical data.
 1. Click to save the settings for this search.
 1. Displays the count of a field. Available for non-aggregate queries only.
-1. Tilde (\~) in front of a count value indicates that the value is approximate. If the number of parsed messages is less than or equal to 2500, an exact value is shown in the Field Browser. If the number of parsed messages exceeds 2500, an approximation is shown.
+1. Tilde (`~`) in front of a count value indicates that the value is approximate. If the number of parsed messages is less than or equal to 2500, an exact value is shown in the Field Browser. If the number of parsed messages exceeds 2500, an approximation is shown.
 
 ## Search for fields
 

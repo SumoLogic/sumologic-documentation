@@ -27,7 +27,7 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 
 This section provides instructions for configuring log collection for Active Directory running on a non-Kubernetes environment for the Sumo Logic App for Active Directory.
 
-#### Log Types
+#### Log types
 
 Standard Windows event channels include:
 -   **Security**
@@ -154,7 +154,7 @@ level:"Information"
 }
 ```
 
-## Sample Query
+## Sample queries
 
 This sample Query is from the Active Directory - Active Directory Service Activity > Top 10 Messages panel.
 

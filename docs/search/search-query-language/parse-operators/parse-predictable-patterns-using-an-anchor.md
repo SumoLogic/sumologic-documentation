@@ -103,7 +103,7 @@ For example, this query will allow you to parse the phrase "Class ID", including
 
 Special characters in field names are not permitted with Regex parsing. You must rename the field after parsing.
 
-Example: `extract "\[Classification:(\<class_i\>.*)\]" | class_id as %"Class ID"`
+Example: `extract "\[Classification:(?<class_id>.*)\]" | class_id as %"Class ID"`
 
 ### Use Line Breaks as an Anchor
 

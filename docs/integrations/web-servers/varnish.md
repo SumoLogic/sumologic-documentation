@@ -271,8 +271,8 @@ Please enter values for the following parameters (marked `CHANGEME` above):
     * `use_sudo` - If running as a restricted user, prepend sudo for additional access.
     * **`stats`** - Stats may also be set to ["*"], which will collect all stats. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) for more information on additional parameters for configuring the Varnish input plugin for Telegraf.
     * In the tags section, which is `[inputs.varnish.tags]`
-        * `environment` - This is the deployment environment where the Varnish cluster identified by the value of **servers** resides. For example; dev, prod or qa. While this value is optional we highly recommend setting it.
-        * **`cache_cluster` **- Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. This is the deployment environment where the Varnish cluster identified by the value of **servers** resides. For example; dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `cache_cluster`. Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * In the output plugins section, which is `[[outputs.sumologic]]`
     * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
