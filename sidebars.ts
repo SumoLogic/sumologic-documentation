@@ -2792,7 +2792,7 @@ integrations: [
               items: [
                 {
                   type: 'category',
-                  label: 'Integrations',
+                  label: 'Integrations in App Central',
                   collapsible: true,
                   collapsed: true,
                   link: {type: 'doc', id: 'platform-services/automation-service/app-central/integrations/index'},
