@@ -396,6 +396,7 @@ module.exports = {
             'send-data/kubernetes/best-practices',
             'send-data/kubernetes/collecting-metrics',
             'send-data/kubernetes/collecting-kubernetes-events',
+            'send-data/kubernetes/configuration',
             'send-data/kubernetes/security-best-practices',
             'send-data/kubernetes/troubleshoot-collection',
             {
