@@ -32,10 +32,7 @@ Configuration specific to container logs is located under the `sumologic.logs.co
 
 ### Multiline log parsing
 
-By default, each line output by an application is treated as a separate log record. However, some applications can actually output logs
-split into multiple lines - this is often the case for stack traces, for example. If we want such a multiline log to appear in Sumo Logic as
-a single record, we need to tell the collector how to distinguish between lines which start a new record and ones which continue an existing
-record.
+By default, each line output by an application is treated as a separate log record. However, some applications can actually output logs split into multiple lines - this is often the case for stack traces, for example. If we want such a multiline log to appear in Sumo Logic as a single record, we need to tell the collector how to distinguish between lines which start a new record and ones which continue an existing record.
 
 Multiline log parsing can be configured using the `sumologic.logs.multiline` section in `user-values.yaml`.
 
@@ -78,8 +75,7 @@ sumologic:
         # ...
 ```
 
-In that case `first_line_regex` of **first** matching condition is applied, and `sumologic.logs.multiline.first_line_regex` is used as
-expression for logs which don't match any of the condition.
+In that case `first_line_regex` of **first** matching condition is applied, and `sumologic.logs.multiline.first_line_regex` is used as expression for logs which don't match any of the condition.
 
 Conditions have to be valid [Open Telemetry Expression][expr].
 
@@ -92,7 +88,7 @@ The following variables may be used in the condition:
 - `attributes["log.file.path"]` - log path on the node (`/var/log/pods/...`)
 - `attributes["stream"]` - may be either `stdout` or `stderr`
 
-Please consider the following example:
+Consider the following example:
 
 ```yaml
 sumologic:
@@ -184,8 +180,7 @@ If the log line contains json, as log line 2 does, it will be displayed as a nes
 
 #### `json_merge` log format
 
-`json_merge` is identical to `fields` for non-JSON logs, but behaves differently for JSON logs. If the log is JSON, it gets merged into the
-top-level object.
+`json_merge` is identical to `fields` for non-JSON logs, but behaves differently for JSON logs. If the log is JSON, it gets merged into the top-level object.
 
 Log line 1 will show up the same way as it did for `fields`:
 
@@ -231,13 +226,11 @@ Whereas log line 2 will be displayed as JSON:
 }
 ```
 
-If you want to send metadata along with an unstructured log record, you have to use resource level attributes, because record level attributes are going to be
-removed before sending log to Sumo Logic. Please see [Mapping OpenTelemetry concepts to Sumo Logic][mapping] for more details.
+If you want to send metadata along with an unstructured log record, you have to use resource level attributes, because record level attributes are going to be removed before sending log to Sumo Logic. See [Mapping OpenTelemetry concepts to Sumo Logic][mapping] for more details.
 
 ## Systemd Logs
 
-Configuration specific to systemd logs is located under the `sumologic.logs.systemd` key. Most configuration options for systemd logs are shared with container
-logs, and are documented under [Modification and filtering](#modification-and-filtering).
+Configuration specific to systemd logs is located under the `sumologic.logs.systemd` key. Most configuration options for systemd logs are shared with container logs, and are documented under [Modification and filtering](#modification-and-filtering).
 
 ### Selecting systemd units to collect logs from
 
@@ -306,8 +299,7 @@ The default is:
 
 ## Kubelet Logs
 
-Kubelet logs are a subset of systemd logs, but can be configured separately due to their particular significance for Kubernetes observability. Configuration specific to kubelet logs is located under the `sumologic.logs.kubelet` key. Most configuration options for kubelet logs are shared with container
-logs, and are documented under [Modification and filtering](#modification-and-filtering).
+Kubelet logs are a subset of systemd logs, but can be configured separately due to their particular significance for Kubernetes observability. Configuration specific to kubelet logs is located under the `sumologic.logs.kubelet` key. Most configuration options for kubelet logs are shared with container logs, and are documented under [Modification and filtering](#modification-and-filtering).
 
 ## Modification and filtering
 
@@ -333,8 +325,7 @@ sumologic:
       sourceCategoryReplaceDash: "/"
 ```
 
-As can be seen in the above example, these fields can contain templates of the form `%{field_name}`, where `field_name` is the name of a
-resource attribute. Available resource attributes include the values of `sumologic.logs.fields`, which by default are:
+As can be seen in the above example, these fields can contain templates of the form `%{field_name}`, where `field_name` is the name of a resource attribute. Available resource attributes include the values of `sumologic.logs.fields`, which by default are:
 
 - `cluster`
 - `container`
@@ -435,8 +426,7 @@ sumologic:
                   value: hardcoded-value
 ```
 
-To add a custom field named `k8s_app` with a value that comes from e.g. the pod label `app.kubernetes.io/name`, use the following
-configuration:
+To add a custom field named `k8s_app` with a value that comes from e.g. the pod label `app.kubernetes.io/name`, use the following configuration:
 
 ```yaml
 sumologic:
@@ -457,11 +447,9 @@ Make sure the field is [added in Sumo Logic][sumo_add_fields].
 
 ## Persistence
 
-By default, the metadata enrichment service provisions and uses a Kubernetes PersistentVolume as an on-disk queue that guarantees durability
-across Pod restarts and buffering in case of exporting problems.
+By default, the metadata enrichment service provisions and uses a Kubernetes PersistentVolume as an on-disk queue that guarantees durability across Pod restarts and buffering in case of exporting problems.
 
-This feature is enabled by default, but it only works if you have a correctly configured default `storageClass` in your cluster. Cloud
-providers will do this for you when provisioning the cluster. The only alternative is disabling persistence altogether.
+This feature is enabled by default, but it only works if you have a correctly configured default `storageClass` in your cluster. Cloud providers will do this for you when provisioning the cluster. The only alternative is disabling persistence altogether.
 
 Persistence can be customized via the `metadata.logs.persistence` section:
 
@@ -487,18 +475,11 @@ be required.
 
 ### Direct configuration
 
-There are two ways of directly configuring OpenTelemetry Collector for both log collection and metadata enrichment. These are both advanced
-features requiring a good understanding of this chart's architecture and OpenTelemetry Collector configuration.
+There are two ways of directly configuring OpenTelemetry Collector for both log collection and metadata enrichment. These are both advanced features requiring a good understanding of this chart's architecture and OpenTelemetry Collector configuration.
 
-The `metadata.logs.config.merge` and `otellogs.config.merge` keys can be used to provide configuration that will be merged with the Helm
-Chart's default configuration. It should be noted that this field is not subject to normal backwards compatibility guarantees, the default
-configuration can change even in minor versions while preserving the same end-to-end behaviour. Use of this field is discouraged - ideally
-the necessary customizations should be able to be achieved without touching the otel configuration directly. Please open an issue if your
-use case requires the use of this field.
+The `metadata.logs.config.merge` and `otellogs.config.merge` keys can be used to provide configuration that will be merged with the Helm Chart's default configuration. It should be noted that this field is not subject to normal backwards compatibility guarantees, the default configuration can change even in minor versions while preserving the same end-to-end behaviour. Use of this field is discouraged - ideally the necessary customizations should be able to be achieved without touching the otel configuration directly. Please open an issue if your use case requires the use of this field.
 
-The `metadata.logs.config.override` and `otellogs.config.override` keys can be used to provide configuration that will be completely replace
-the default configuration. As above, care must be taken not to depend on implementation details that may change between minor releases of
-this Chart.
+The `metadata.logs.config.override` and `otellogs.config.override` keys can be used to provide configuration that will be completely replace the default configuration. As above, care must be taken not to depend on implementation details that may change between minor releases of this Chart.
 
 See [Sumologic OpenTelemetry Collector configuration][configuration] for more information.
 
@@ -515,10 +496,7 @@ sumologic:
 
 ### Multiline unstructured logs with HTTP sources
 
-By default, the Helm Chart sends data to Sumo using the OpenTelemetry Protocol (OTLP), and therefore uses the [OTLP Source][otlp_source].
-However, if you've chosen to use a [plain Http Source][http_source] by setting `sumologic.logs.source_type` to `http`, be aware that
-this source does not support client-side multiline parsing for logs in `text` format. You'll need to do multiline detection in the source
-itself. This can be set up in the Helm Chart configuration the following way:
+By default, the Helm Chart sends data to Sumo using the OpenTelemetry Protocol (OTLP), and therefore uses the [OTLP Source][otlp_source]. However, if you've chosen to use a [plain Http Source][http_source] by setting `sumologic.logs.source_type` to `http`, be aware that this source does not support client-side multiline parsing for logs in `text` format. You'll need to do multiline detection in the source itself. This can be set up in the Helm Chart configuration the following way:
 
 ```yaml
 sumologic:
@@ -540,12 +518,9 @@ sumologic:
 [values]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/helm/sumologic/values.yaml
 [source_name]: /docs/send-data/reference-information/metadata-naming-conventions.md#Source_Name
 [opentelemetry_processors]: https://opentelemetry.io/docs/collector/configuration/#processors
-[attributes_processor_docs]:
-  https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/attributesprocessor/README.md
-[resource_processor_docs]:
-  https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/resourceprocessor/README.md
-[transform_processor_docs]:
-  https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/transformprocessor/README.md
+[attributes_processor_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/attributesprocessor/README.md
+[resource_processor_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/resourceprocessor/README.md
+[transform_processor_docs]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/transformprocessor/README.md
 [sumo_fields]: /docs/manage/fields/
 [sumo_add_fields]: /docs/manage/fields.md#add-field
 [mapping]: /docs/send-data/opentelemetry-collector/data-source-configurations/mapping-records-resources.md
