@@ -31,10 +31,8 @@ Select the documentation link for your deployment:
 | US2 | https://service.us2.sumologic.com/audit/docs/csoar |
 
 <!--
-
 // Add FED as soon as available
 | FED | https://service.fed.sumologic.com/audit/docs/csoar | 
-
 -->
 
 ## Search the Audit Event Index
