@@ -1,7 +1,7 @@
 ---
-id: collecting-kubernetes-events
+id: collecting-events
 title: Collecting Kubernetes Events
-sidebar_label: Collecting Kubernetes Events
+sidebar_label: Collecting Events
 description: This document explain how to collect Kubernetes events from the Kubernetes API server and send them to Sumo Logic as logs.
 ---
 
