@@ -341,7 +341,7 @@ Logs from the RabbitMQ log file can be collected via a Sumo Logic [Installed col
      * **Description.** (Optional)
      * **File Path (Required).** Enter the path to your rabbitmq.log. The files are typically located in /var/log/rabbitmq/rabbitmq.log. If you're using a customized path, check the RabbitMQ.conf file for this information.
      * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-     * **Source Category.** Enter any string to tag the output collected from this Source, such as **RabbitMQ/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
+     * **Source Category.** Enter any string to tag the output collected from this Source, such as **RabbitMQ/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
      * **Fields**. Set the following fields:
        * `component = messaging`
        * `messaging_system = rabbitmq`

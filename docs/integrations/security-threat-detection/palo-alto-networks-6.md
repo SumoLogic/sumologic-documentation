@@ -58,7 +58,7 @@ For Syslog, configure the Source fields:
 2. **Description.** Optional.
 3. **Protocol**. UDP or TCP
 4. **Port**. Port number.
-5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).
+5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).
 6. Click **Save**.
 
 For a Hosted source, use advanced settings as necessary, but save the endpoint URL associated in order to configure Palo Alto Networks.

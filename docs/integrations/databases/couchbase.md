@@ -240,7 +240,7 @@ The Sumo Logic Couchbase app supports the audit log, query log, error log, acces
 3. **Configure a local file source**. Choose one of the options:
 
 <details>
-<summary>4A. <strong>For an Installed Collector</strong> (click to expand)</summary>
+<summary>3A. <strong>For an Installed Collector</strong> (click to expand)</summary>
 
 To collect logs directly from your Couchbase machine, use an Installed Collector and Multi Local File Source. Repeat the below steps for each log source: audit log, query log, error log, access log.
 
@@ -254,7 +254,7 @@ To collect logs directly from your Couchbase machine, use an Installed Collector
     * For Access Log: /opt/couchbase/var/lib/couchbase/logs/http_access.log
     * For Query Log: /opt/couchbase/var/lib/couchbase/logs/query.log
   * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-  * **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+  * **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
   * **Fields.** Set the following fields
      ```sql
      component = database
@@ -283,7 +283,7 @@ To collect logs directly from your Couchbase machine, use an Installed Collector
 </details>
 
 <details>
-<summary>4B. <strong>For a Hosted Collector</strong> (click to expand)</summary>
+<summary>3B. <strong>For a Hosted Collector</strong> (click to expand)</summary>
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
@@ -292,7 +292,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 * **Name**. (Required)
 * **Description**. (Optional)
 * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-* **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+* **Source Category**. Enter any string to tag the output collected from this Source, such as Couchbase/AccessLog for access log. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
 * Fields. Set the following fields:
    * `component = database`
    * `db_system = couchbase`

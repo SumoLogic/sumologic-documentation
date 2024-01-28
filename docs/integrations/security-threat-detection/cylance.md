@@ -84,7 +84,7 @@ To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a H
     1. **Name**. (Required) A name is required. Description is optional.
     2. **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources.
 Example: **prod/web/apache/access**.
-For details see [Best Practices](/docs/send-data/best-practices).
+For details, see [Best Practices](/docs/send-data/best-practices).
 2. In the Advanced section, specify the following configurations:
     3. **Enable Timestamp Parsing**. True
     4. **Time Zone**. Logs are in UTC by default
