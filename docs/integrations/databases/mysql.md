@@ -142,7 +142,7 @@ Configuring log and metric collection for the MySQL app includes the following t
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -266,7 +266,7 @@ If your application connects directly to a given MySQL node, rather than the who
 
 Pivoting to Tracing data from Entity Inspector is possible only for “MySQL address” Entities.
 :::
-    * **DO NOT MODIFY** these configuration options; changing them will prevent the MySQL app from functioning correctly.
+    * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
       * `telegraf.influxdata.com/class: sumologic-prometheus` instructs the Telegraf operator what output to use.
       * `prometheus.io/scrape: "true"` ensures Prometheus will scrape the metrics.
       * `prometheus.io/port: "9273"` tells Prometheus what ports to scrape on.
@@ -431,8 +431,8 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
      gather_perf_events_statements = true
     ```
    * In the `[inputs.mysql.tags]` section:
-      * `environment` - Specify the deployment environment where the MySQL cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `db_cluster` - Enter a name to uniquely identify the MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `environment`. Specify the deployment environment where the MySQL cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `db_cluster`. Enter a name to uniquely identify the MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
       * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
       * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 :::note
@@ -486,7 +486,7 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
       * **Description**. (Optional)
       * **File Path** (Required). Enter the path to your error.log. The files are typically located in `/var/log/mysql/error.log`. If you're using a customized path, check the `my.cnf` file for this information.
       * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host nameSource Category. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
-      * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields.md).
+      * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields).
       * `component = database`
       * `db_system = mysql`
       * `db_cluster = <your_mysql_cluster_name>`
@@ -525,7 +525,7 @@ At this point, MySQL error logs should start flowing into Sumo Logic.
       * **File Path** (Required). Enter the path to your `mysql-slow.log`. The file is typically located in `/var/log/mysql/mysql-slow.log`. If you're using a customized path, check `my.cnf` file for this information.
       * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
       * **Source Category**. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
-      * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields.md).
+      * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields).
         * `component = database`
         * `db_system = mysql`
         * `db_cluster = <your_mysql_cluster_name>`
@@ -585,7 +585,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
-3. Download the Sumo Logic Terraform package for MySQL monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the `git clone` command or as a zip file.
+3. Download the Sumo Logic Terraform package for MySQL monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the `git clone` command or as a zip file.
 4. Alert Configuration: After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/mysql/` directory.
    1. Edit the `mysql.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
     ```sql

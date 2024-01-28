@@ -25,7 +25,7 @@ The Jenkins App uses the following Log Types:
 * Audit Logs - Log events related to user authentication, Jenkins system and job configuration changes and Jenkins job run events.
 * Metric Data - Log events related to metric information of Jenkins Master.
 * Periodic Logs - Log events related to Jenkins nodes, master shutdown events, jobs in progress and in queue.
-* SCM Log - Log events related to Source Control Management systems like the github repository.
+* SCM Log - Log events related to Source Control Management systems like the GitHub repository.
 * Job Status Logs - Log events related to Jenkins jobs, test results and pipeline stages.
 * Job Console Logs - Log events related to job console logs.
 

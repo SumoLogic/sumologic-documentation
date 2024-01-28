@@ -97,7 +97,7 @@ Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collec
 * In the output plugins section which is `[[outputs.sumologic]]`:
     * URL - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
-    Here’s an explanation for additional values set by this Telegraf configuration that we request you to please **do not** modify these values as they will cause the Sumo Logic apps to not function correctly.
+    **Do not modify** the following values set by this Telegraf configuration as it will cause the Sumo Logic app to not function correctly.
 
 * data_format = “carbon2” In the output plugins section which is `[[outputs.sumologic]]`  This indicates that metrics should be sent in the carbon2 format to Sumo Logic
 

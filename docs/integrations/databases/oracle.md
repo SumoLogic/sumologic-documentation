@@ -28,7 +28,7 @@ This section provides instructions for configuring logs and metrics collection f
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 :::note
 This step is not needed if you are using the application components solution terraform script.
@@ -108,7 +108,7 @@ Follow the below instructions to set up the metric collection:
     3. Collecting Oracle Logs from a Log file.
 
 :::note Prerequisites
-It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
 #### Configure Metrics Collection
@@ -169,12 +169,12 @@ annotations:
 
 * If you haven’t defined a cluster in Oracle, enter `default` for `db_cluster`.
 * Enter values for the parameters marked `ENV_TO_BE_CHANGED` in the snippet above:
-   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Oracle input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+   * `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Oracle input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
    * In the input plugins section:
       * **commands** - The [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) plugin executes all the commands in parallel on every interval and parses metrics from their output in any one of the accepted [Input Data Formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md).
    * In the tags section `[inputs.exec.tags]`:
-      * `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards.  
+      * `environment`. This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `db_cluster`. Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards.  
       * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
       * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
       :::note
@@ -187,9 +187,9 @@ annotations:
       Pivoting to Tracing data from Entity Inspector is possible only for “Oracle address” Entities.
       :::
    * **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly:
-      * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-      * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-      * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+      * `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+      * `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+      * `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
       * `telegraf.influxdata.com/inputs`
       * In the tags section [inputs.exec.tags]:
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
@@ -218,8 +218,8 @@ labels:
 
 Enter in values for the following parameters (marked in **ENV_TO_BE_CHANGED** above):
 
-* `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
-* `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `db_cluster`.
+* `environment`. This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
+* `db_cluster`. Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `db_cluster`.
 * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
 * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 
@@ -456,8 +456,8 @@ Enter values for fields annotated with `<ENV_TO_BE_CHANGED>` to the appropriate 
 * Input plugins section, which is `[[inputs.exec]]`:
     * **commands**- The [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) plugin executes all the commands in parallel on every interval and parses metrics from their output in any one of the accepted [Input Data Formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md).
 * In the tags section, which is `[inputs.exec.tags]`:
-    * `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
-    * `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in our dashboards.
+    * `environment`. This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `db_cluster`. Enter a name to identify this Oracle cluster. This cluster name will be shown in our dashboards.
     * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
     :::note
@@ -534,7 +534,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 
 Custom filter examples:
 
-1. For alerts applicable only to a specific cluster, your custom filter would be, `db_cluster=oracle-prod.01`.
+1. For alerts applicable only to a specific cluster, your custom filter would be `db_cluster=oracle-prod.01`.
 2. For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be,`db_cluster=oracle-prod*`.
 3. For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=oracle-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
 4. Go to **Manage Data** > **Alerts** > **Monitors**.

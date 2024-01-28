@@ -73,23 +73,21 @@ parse "Event Type: *, Event Name: *, Device Name: *, IP Address: (*, *), File Na
 Use scheduled views with the Threat Lookup operator to find threats. Scheduled View reduces aggregate data down to the bare minimum, so they contain only the raw results that you need to generate your data. Queries that run against Scheduled Views return search results much faster because the data is pre-aggregated before the query is run. And a Scheduled View query runs continuously, once per minute.
 
 1. Create a scheduled view. For example, for Cylance, create a scheduled view, **cylance_threat**:
-```
-_sourceCategory=cylance | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip \
-| json field=raw "labels[*].name" as label_name \
-| replace(label_name, "\\/","->") as label_name \
-| replace(label_name, "\""," ") as label_name \
-| where  type="ip_address" and !isNull(malicious_confidence) \
-| if (isEmpty(actor), "Unassigned", actor) as Actor \
-| lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = src_ip \
-| count as threat_count by src_ip, malicious_confidence, Actor,  _source, label_name, city, country_name, raw
-```
-
+   ```
+   _sourceCategory=cylance | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=src_ip
+   | json field=raw "labels[*].name" as label_name
+   | replace(label_name, "\\/","->") as label_name
+   | replace(label_name, "\""," ") as label_name
+   | where  type="ip_address" and !isNull(malicious_confidence)
+   | if (isEmpty(actor), "Unassigned", actor) as Actor
+   | lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = src_ip
+   | count as threat_count by src_ip, malicious_confidence, Actor,  _source,  label_name, city, country_name, raw
+   ```
 2. Now, you can run your Threat Intel query on top of this view:
-```sql
-_view=cylance_threat \
-| count by src_ip
-```
-
+  ```sql
+  _view=cylance_threat
+  | count by src_ip
+  ```
 
 ## Threat Intel FAQ
 

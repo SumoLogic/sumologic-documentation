@@ -96,7 +96,7 @@ actions on a server machine of your choice:
         ```
 
 :::note
-The following Terraform providers with mentioned versions are automatically installed during the **terraform init** phase as described below:
+The following Terraform providers with mentioned versions are automatically installed during the `terraform init` phase as described below:
 
 * [Template](https://www.terraform.io/docs/providers/template/index.html) version 2.1 and above.
 * [Null](https://www.terraform.io/docs/providers/null/index.html) version 2.1 and above.
@@ -113,7 +113,7 @@ The following Terraform providers with mentioned versions are automatically inst
   ```
   $ git clone https://github.com/SumoLogic/sumologic-solution-templates
   ```
-1. Initialize the Terraform working directory by navigating to the directory **sumologic-solution-templates/software-development-optimization-terraform.** and running **terraform init**. This will install the required Terraform providers: [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [Template](https://www.terraform.io/docs/providers/template/index.html), [Null](https://www.terraform.io/docs/providers/null/index.html), [BitBucket Terraform Provider](https://www.terraform.io/docs/providers/bitbucket/index.html), [GitHub Terraform Provider](https://www.terraform.io/docs/providers/github/index.html), [GitLab Terraform](https://registry.terraform.io/providers/gitlabhq/gitlab/3.6.0) [Provider](https://registry.terraform.io/providers/gitlabhq/gitlab/3.6.0), and [Pagerduty Terraform Provider](https://www.terraform.io/docs/providers/pagerduty/index.html).
+1. Initialize the Terraform working directory by navigating to the directory **sumologic-solution-templates/software-development-optimization-terraform.** and running `terraform init`. This will install the required Terraform providers: [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [Template](https://www.terraform.io/docs/providers/template/index.html), [Null](https://www.terraform.io/docs/providers/null/index.html), [BitBucket Terraform Provider](https://www.terraform.io/docs/providers/bitbucket/index.html), [GitHub Terraform Provider](https://www.terraform.io/docs/providers/github/index.html), [GitLab Terraform](https://registry.terraform.io/providers/gitlabhq/gitlab/3.6.0) [Provider](https://registry.terraform.io/providers/gitlabhq/gitlab/3.6.0), and [Pagerduty Terraform Provider](https://www.terraform.io/docs/providers/pagerduty/index.html).
 1. Choose which Sumo Logic Applications to configure by updating the values of the following variables in the **sumologic.auto.tfvars** file:
    * install_jira_cloud
    * nstall_jira_server

@@ -26,12 +26,22 @@ The Sumo Logic app for Nginx Plus Ingress assumes Prometheus format Metrics for 
 
 ### Sample log messages
 
-```bash title="Access Log Example"
-{"timestamp":1621602688004,"log":"146.158.30.43 - - [21/May/2021:13:11:25 +0000] \"GET /nxp/demo-index.html HTTP/1.1\" 200 5099 \"https://example.com/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36\" \"-\"","stream":"stdout","time":"2021-05-21T13:11:25.355302489Z"}
+```json title="Access Log Example"
+{
+  "timestamp":1621602688004,
+  "log":"146.158.30.43 - - [21/May/2021:13:11:25 +0000] \"GET /nxp/demo-index.html HTTP/1.1\" 200 5099 \"https://example.com/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36\" \"-\"",
+  "stream":"stdout",
+  "time":"2021-05-21T13:11:25.355302489Z"
+}
 ```
 
-```bash title="Error Log Example"
-{"timestamp":1619792989032,"log":"2021/04/29 13:26:05 [error] 190#190: *8248713 open() \"/usr/share/nginx/html/favicon.ico\" failed (2: No such file or directory), client: 10.244.0.132, server: , request: \"GET /favicon.ico HTTP/1.1\", host: \"example.com\", referrer: \"https://example.com/dashboard.html\"","stream":"stderr","time":"2021-04-29T13:26:05.074748065Z"}
+```json title="Error Log Example"
+{
+  "timestamp":1619792989032,
+  "log":"2021/04/29 13:26:05 [error] 190#190: *8248713 open() \"/usr/share/nginx/html/favicon.ico\" failed (2: No such file or directory), client: 10.244.0.132, server: , request: \"GET /favicon.ico HTTP/1.1\", host: \"example.com\", referrer: \"https://example.com/dashboard.html\"",
+  "stream":"stderr",
+  "time":"2021-04-29T13:26:05.074748065Z"
+}
 ```
 
 ### Sample queries
@@ -57,10 +67,10 @@ This section provides instructions for configuring log and metric collection for
 
 In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this [here](/docs/observability/kubernetes/collection-setup).
 
-1. **Enable Logging in Nginx Plus Ingress**: Logging is enabled by default to standard output “**stdout**” and standard error “**stderr**”. If you need additional logging - all nginx logs must be redirected to **stdout** and **stderr**.
+1. **Enable Logging in Nginx Plus Ingress**: Logging is enabled by default to standard output “**stdout**” and standard error “**stderr**”. If you need additional logging, all nginx logs must be redirected to **stdout** and **stderr**.
 2. **Enable Metrics in Nginx Plus Ingress**: Before you configure Sumo Logic to ingest metrics, you must enable the Prometheus metrics in the Nginx Ingress controller and annotate the Nginx pods, so Prometheus can find the Nginx metrics.
    * For instructions on Nginx, refer to [this Nginx documentation](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/)
-3. **Deployment of Sumologic Kubernetes Collection**: Ensure you have deployed the [Sumologic-Kubernetes-Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection), to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md). Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx pods, based on the annotations set in Step 2, for the metrics. Logs and Metrics will automatically be sent to the respective [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) instances, which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
+3. **Deployment of Sumologic Kubernetes Collection**: Ensure you have deployed the [Sumologic-Kubernetes-Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection), to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](/docs/send-data/kubernetes/install-helm-chart). Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx pods, based on the annotations set in Step 2, for the metrics. Logs and Metrics will automatically be sent to the respective [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) instances, which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
 
 ### Field Extraction Rules
 
@@ -112,20 +122,20 @@ Alerts can be installed by either importing them via a JSON or via a Terraform s
 
 ### Method A: Importing a JSON file
 
-1. Download the[ JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx-plus-ingress/nginxplusingress.json) describing all the monitors.
+1. Download [this JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx-plus-ingress/nginxplusingress.json) describing all the monitors.
 2. Replace **$$logs_data_source** with logs data source.
-    * For example, _sourceCategory=Labs/NginxIngress/Logs
+    * For example, `_sourceCategory=Labs/NginxIngress/Logs`
 3. Go to Manage Data > Alerts > Monitors.
 4. Click **Add**.
 1. Click **Import** to import monitors from the JSON above.
 
-The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx** **Ingress** folder under **Monitors** to configure them. Refer[ document](/docs/alerts/monitors#add-a-monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
+The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx** **Ingress** folder under **Monitors** to configure them. See [Add a Monitor](/docs/alerts/monitors#add-a-monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
 
 ### Method B: Using a Terraform script
 
 1. Generate a Sumo Logic [access key](/docs/manage/security/access-keys#create-an-access-keyon-preferences-page) and access ID for a user that has the[ Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for Nginx Ingress alerts: The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus-ingress). You can either download it via the “git clone” command or as a zip file.
+3. Download the Sumo Logic Terraform package for Nginx Ingress alerts: The alerts package is available in the [Sumo Logic GitHub repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus-ingress). You can either download it via the `git clone` command or as a zip file.
 4. Alert Configuration: After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/**. Edit the **nginxplusingress.auto.tfvars** file as per below instructions:
    1. Add the Sumo Logic Access Key, Access Id, Deployment from Step 1.
    ```sh
@@ -155,9 +165,9 @@ connection_notifications = [
   ]
 ```
 
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved via calling the[ Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
+Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved via calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this[ document](/docs/alerts/webhook-connections/set-up-webhook-connections).
+For overriding payload for different connection types, refer to [this document](/docs/alerts/webhook-connections/set-up-webhook-connections).
 
 ```bash title="Email Notifications Example:"
 email_notifications = [
@@ -174,12 +184,12 @@ email_notifications = [
 ```
 
 6. Install the Alerts:
-   1. Navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/** and run **terraform init.** This will initialize Terraform and will download the required components.
+   1. Navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/** and run `terraform init`. This will initialize Terraform and will download the required components.
    2. Run `terraform plan` to view the monitors resources which will be created/modified by Terraform.
    3. Run `terraform apply`.
 7. Post Installation steps: If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Step 4](/docs/alerts/monitors#add-a-monitor).
 
-There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
+There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
 ## Installing the Nginx Plus Ingress app
@@ -271,7 +281,7 @@ These insights can be useful for planning in which browsers, platforms, and oper
 
 ### Visitor Locations
 
-The **Nginx Plus Ingress - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by  US region over time.
+The **Nginx Plus Ingress - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by US region over time.
 
 Use this dashboard to:
 * Gain insights into geographic locations of your user base.  This is useful for resource planning in different regions across the globe.

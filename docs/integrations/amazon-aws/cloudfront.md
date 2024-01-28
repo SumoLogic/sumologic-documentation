@@ -117,7 +117,7 @@ Amazon CloudFront is a content delivery network (CDN) that allows an easy way fo
 
 ## Additional logs and metrics collection (Optional)
 
-### Log and Metric types
+### Log and metric types
 
 * [CloudWatch Metrics](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/monitoring-using-cloudwatch.html)
 * [Real-time logs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html)

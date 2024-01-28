@@ -15,7 +15,7 @@ The Sumo Logic app for Aurora MySQL ULM includes predefined searches and dashboa
 
 This guide provides an overview of the Aurora MySQL ULM app pre-defined queries and dashboards, as well as instructions for collecting logs and metrics from Aurora MySQL, and installing the app.
 
-## Log and Metric types
+## Log and metric types
 
 The Sumo Logic app for Aurora MySQL ULM uses the following logs and metrics. Click the link for more information about the log type:
 

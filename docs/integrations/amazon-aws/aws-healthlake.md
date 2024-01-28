@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS HealthLake is a HIPAA eligible service for clinical data ingestion, storage, and analysis utilizing the Healthcare Interoperability FHIR (R4) specification. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/healthlake/latest/devguide/what-is-amazon-health-lake.html).
 
-## Log and Metric types
+## Log and metric types
 * [CloudWatch Metrics](https://docs.aws.amazon.com/healthlake/latest/devguide/monitoring-cloudwatch.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/healthlake/latest/devguide/logging-using-cloudtrail.html)
 

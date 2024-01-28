@@ -73,7 +73,7 @@ To set up CloudPassage Halo, do the following:
 
 If this is the first time you are using the SQS, it is strongly recommended to go through [Quick start with SQS](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-getting-started.html) first.
 
-**SQS (Simple Queue Service)**: This queue stores one message at any given time.  It contains “the last time (in Zulu format)” the script ran to collect the events from Halo.  The message is then deleted and new one (with the current time in Zulu format) is added into the queue.
+**SQS (Simple Queue Service)**. This queue stores one message at any given time.  It contains “the last time (in Zulu format)” the script ran to collect the events from Halo.  The message is then deleted and new one (with the current time in Zulu format) is added into the queue.
 
 The queue is automatically created the first time you run the **Halo_events_to_SumoLogic** Lambda code.
 
@@ -87,8 +87,8 @@ If this is the first time you are using the Lambda, it is strongly recommended t
 
 Download the Python code from the following two zip file links:
 
-* [Halo_events_to_SumoLogic.zip](https://github.com/cloudpassage/halo-sumologic/raw/master/Halo_events_to_SumoLogic.zip) - Python Lambda code to collect Halo events and forward them to Sumo Logic. This Python Lambda code would use Halo’s API to collect the security events reported by the agents installed in your workloads.  It takes the “last time” the Lambda code ran from the SQS.  Then initiate API call(s) to request any events that has been reported between the “last time” the Lambda code ran and the current time. It uses the SQS to store the “last time” the event was collected.
-* [Halo_metrics_to_SumoLogic.zip](https://github.com/cloudpassage/halo-sumologic/raw/master/Halo_metrics_to_SumoLogic.zip) - Python Lambda code to collect Halo metrics and forward them to Sumo Logic. This Python Lambda code would use Halo’s API to collect the key stats from your Halo account.   
+* [Halo_events_to_SumoLogic.zip](https://github.com/cloudpassage/halo-sumologic/raw/master/Halo_events_to_SumoLogic.zip). Python Lambda code to collect Halo events and forward them to Sumo Logic. This Python Lambda code would use Halo’s API to collect the security events reported by the agents installed in your workloads.  It takes the “last time” the Lambda code ran from the SQS.  Then initiate API call(s) to request any events that has been reported between the “last time” the Lambda code ran and the current time. It uses the SQS to store the “last time” the event was collected.
+* [Halo_metrics_to_SumoLogic.zip](https://github.com/cloudpassage/halo-sumologic/raw/master/Halo_metrics_to_SumoLogic.zip). Python Lambda code to collect Halo metrics and forward them to Sumo Logic. This Python Lambda code would use Halo’s API to collect the key stats from your Halo account.   
 
 
 #### Configure AWS Lambda for Halo_events_to_SumoLogic
@@ -96,32 +96,20 @@ Download the Python code from the following two zip file links:
 Sample policy: Be sure to use the proper permission level.
 
 1. Configure Lambda.
-
 2. Click **Blank Function**.
-
 3. Click **Next.**
-4. Fill in **Configure Function** with: \
-**Name.** halo_events_to_sumologic.
-**Runtime.** Python 2.7.
-
-
-5. Change **Code entry Type** to **Upload a .ZIP** file.  And upload the **Halo_events_to_SumoLogic.zip** file.  Then enter in the environment variables with proper values (refer to the steps above).
-
-
-6. Fill in the information to match the screenshot below.  Enter **halo_events_to_sumologic.lambda_handler** for **Handler**.  Then select “Create a custom role” for **Role**.
-
-
+4. Fill in **Configure Function** with:
+   * **Name.** halo_events_to_sumologic.
+   * **Runtime.** Python 2.7.
+5. Change **Code entry Type** to **Upload a .ZIP** file. And upload the **Halo_events_to_SumoLogic.zip** file. Then enter in the environment variables with proper values (refer to the steps above).
+6. Fill in the information to match the screenshot below. Enter **halo_events_to_sumologic.lambda_handler** for **Handler**. Then select “Create a custom role” for **Role**.
 7. Fill in the information to match the screenshot below.  Select “Choose a new IAM Role” for IAM Role and **lambda_basic_execution** for **Role Name**.
-
 8. Change the **Timeout** to **4 minutes** under **Advanced Settings**.
-9. Verify all the information is entered correctly. Then click **Create Function** to proceed.
-
-The screenshot does not have values for the Environment Variables.  But you should have entered it with your information.
+9. Verify all the information is entered correctly. Then click **Create Function** to proceed. The screenshot does not have values for the Environment Variables.  But you should have entered it with your information.
 10. Now we need to create an IAM role. Select **IAM**.
 11. Select **lamda_basic_execution** role that was created in the previous step.
 12. Select **AmazonSQSFullAccess** and **AWSLambdaBasicExecutionRole** for the policies. If you don’t have these policies, refer to the AWS manual and next few steps to create them.
-13. Here is the sample policy for the **AmazonSQSFullAccess**.  Make sure you change the permission to meet your security requirements.
-Sample policy: Use a proper permission level. Below is a sample.
+13. Here is the sample policy for the **AmazonSQSFullAccess**. Make sure you change the permission to meet your security requirements. Sample policy: Use a proper permission level. Below is a sample.
 ```
 {
   "Version": "2012-10-17",
@@ -136,7 +124,6 @@ Sample policy: Use a proper permission level. Below is a sample.
    ]
 }
 ```
-
 14. Here is the sample policy for **AWSLambdaBasicExecutionRole**. Make sure you change the permission to meet your security requirements.
 ```json
 {
@@ -154,19 +141,12 @@ Sample policy: Use a proper permission level. Below is a sample.
 ```
 15. Let’s test the Lambda code. Click on **Test** and then **Save** and test to start the code.
 16. If it is configured properly, it should create the SQS queue for you.  And the outcome should look something similar to below.  Result should show you the time in Zulu format and Log Output should include [create_queue].
-
-
 17. If you check the SQS dashboard, you will see the new queue, **last_time_scan**, has been created for you automatically.
-18. Let's create a trigger for our Lambda code.  I want this code to run every 5 minutes. Select Triggers from the tab.  Then click **Add trigger**.
-
+18. Let's create a trigger for our Lambda code. I want this code to run every 5 minutes. Select Triggers from the tab. Then click **Add trigger**.
 19. Then click on the blank square to bring out the pulldown menu.  Select **CloudWatch Events - Schedule**.
-
 20. Fill in the information and make sure you set the **Schedule expression** as **rate(5 minutes)**.
-
-
 21. A successfully configured trigger will have a success message and appear similar to the trigger below.
-
-22.  You are done for the first Lambda code!  You can follow the same steps to configure **Lambda for Halo_metrics_to_SumoLogic**.
+22. You are done for the first Lambda code! You can follow the same steps to configure **Lambda for Halo_metrics_to_SumoLogic**.
 
 
 ## Installing the CloudPassage Halo App
