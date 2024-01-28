@@ -60,7 +60,7 @@ Dec 16 20:26:23 ubuntu sshd[15533]: pam_unix(sshd:auth): authentication failure;
 2016-12-16 19:23:13 remove tomcat7:all 7.0.68-1ubuntu0.1 <none>
 ```
 
-### Sample Queries
+### Sample queries
 
 See [Suggested Searches for Linux OS](#Suggested_Searches_for_Linux_OS).
 

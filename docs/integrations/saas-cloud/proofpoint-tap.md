@@ -127,7 +127,7 @@ This app uses [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to
 }
 ```
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Sample Message Events Query (Number of Messages)"
 _sourceCategory="milan_proofpoint_tap" ("MESSAGE_BLOCKED" OR "MESSAGE_DELIVERED")

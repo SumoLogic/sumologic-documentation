@@ -193,7 +193,7 @@ Verify metrics in Sumo Logic.
 
 This section explains the steps to collect Oracle logs from a Kubernetes environment.
 
-1. **(Recommended Method) Add labels on your Oracle pods to capture logs from standard output.** Make sure that the logs from Oracle are sent to stdout. Follow the instructions below to capture Oracle logs from stdout on Kubernetes.
+1. **(Recommended Method) Add labels on your Oracle pods to capture logs from standard output**. Make sure that the logs from Oracle are sent to stdout. Follow the instructions below to capture Oracle logs from stdout on Kubernetes.
 1. Apply following labels to the Oracle pod:    
 ```bash
 labels:
@@ -255,12 +255,12 @@ annotations:
 **Add an FER to normalize the fields in Kubernetes environments**
 
 This step is not needed if you're using application components solution terraform script. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-1. Go to **Manage Data > Logs > Field Extraction Rules.**
+1. Go to **Manage Data > Logs > Field Extraction Rules**.
 1. Click the **+Add** button on the top right of the table.
 1. The **Add Field Extraction Rule** form will appear. Enter the following options:
    1. **Rule Name**. Enter the name as **App Observability - database**.
-   2. **Applied At.** Choose **Ingest Time.**
-   3. **Scope**. Select **Specific Data.**
+   2. **Applied At**. Choose **Ingest Time**.
+   3. **Scope**. Select **Specific Data**.
    4. **Scope**: Enter the following keyword search expression.
    ```sql
    pod_labels_environment=* pod_labels_component=database pod_labels_db_cluster=* pod_labels_db_system=*
@@ -308,7 +308,7 @@ If logging is not currently enabled for the following logs, enable it.
     lsnrctl command [listener_name]
     lsnrctl set log_status on
     ```
-* **Audit Log.** Follow [this](https://docs.oracle.com/cd/E11882_01/server.112/e10575/tdpsg_auditing.htm#TDPSG50000) guide to enable Audit Logs.
+* **Audit Log**. Follow [this](https://docs.oracle.com/cd/E11882_01/server.112/e10575/tdpsg_auditing.htm#TDPSG50000) guide to enable Audit Logs.
 
 **Step 2. Verify Local logs file directories and Path**
 
@@ -343,7 +343,7 @@ When you configure the sources, plan your source categories to ease the querying
 
 Add Following **Fields** on each Local File Source:
 
-* **Fields.** Set the following fields:
+* **Fields**. Set the following fields:
     * `component = database`.
     * `db_system = oracle`.
     * `db_cluster = <Your_Oracle_Cluster_Name>`. Enter **Default** if you do not have one.
@@ -374,11 +374,11 @@ The instructions for setting up the Oracle performance metrics script vary by op
    1. Configure a Hosted Collector for Metrics. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
 2. **Configure an HTTP Logs & Metrics source**.
    1. On the created Hosted Collector on the Collection Management screen, select Add Source.
-   2. Select **HTTP Logs & Metrics.**
+   2. Select **HTTP Logs & Metrics**.
       1. **Name** (Required). Enter a name for the source.
       2. **Description** (Optional).
       3. **Source Category** (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/best-practices). A recommended Source Category may be Prod/DB/Oracle/Metrics.
-   3. Select **Save.**
+   3. Select **Save**.
    4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 3. **Set up Telegraf**.
    1. **Install Telegraf**, if you haven’t already, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
@@ -499,10 +499,10 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method B: Using a Terraform script
 
-1. **Generate a Sumo Logic access key and ID.** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.**
-3. **Download the Sumo Logic Terraform package for Oracle alerts.** The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Oracle). You can either download it through the “git clone” command or as a zip file.
-4. **Alert Configuration.** After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/Oracle/**. Edit the **Oracle.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
+1. **Generate a Sumo Logic access key and ID**. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**.
+3. **Download the Sumo Logic Terraform package for Oracle alerts**. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Oracle). You can either download it through the “git clone” command or as a zip file.
+4. **Alert Configuration**. After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/Oracle/**. Edit the **Oracle.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
    ```bash
    access_id   = "<SUMOLOGIC ACCESS ID>"
    access_key  = "<SUMOLOGIC ACCESS KEY>"
@@ -553,11 +553,11 @@ email_notifications = [
     }
   ]
 ```
-6. **Install the Alerts.**
-    1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Oracle/` and run **terraform init.** This will initialize Terraform and will download the required components.
-    2. Run **terraform plan** to view the monitors which will be created/modified by Terraform.
-    3. Run **terraform apply**.
-7. **Post Installation.** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+6. **Install the Alerts**.
+    1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Oracle/` and run `terraform init`. This will initialize Terraform and will download the required components.
+    2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
+    3. Run `terraform apply`.
+7. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
 There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
 
@@ -741,12 +741,12 @@ $ python3 oracle-perf-monitor.py
 #### Configure the Sumo Logic Script Source
 
 1. In Sumo Logic, go to **Manage Data** > **Collection** > **Collection**.
-2. Find the name of the installed collector to which you'd like to add a Source. Click **Add.** Then choose **Add Source** from the pop-up menu.
+2. Find the name of the installed collector to which you'd like to add a Source. Click **Add**. Then choose **Add Source** from the pop-up menu.
 3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources, you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts) the Collector.
    1. For **Name** enter any name you like, for instance, Oracle Server Script
    2. The **Description** is optional.
    3. For **Source Category**, enter the desired category. It can be any value you like, for example, `DB/Oracle/DBQueryScript`.
-   4. **Fields.** Set the following fields:
+   4. **Fields**. Set the following fields:
       * `component = database`
       * `db_system = oracle`
       * `db_cluster = <Your_Oracle_Cluster_Name>`. Enter **Default** if you do not have one.
@@ -877,14 +877,14 @@ oracle_script/sumooracle>python3 oracle-perf-monitor.py
 #### Configure the Sumo Logic Script Source
 
 1. In Sumo Logic, go to **Manage Data** > **Collection** > **Collection**.
-2. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add.** Then choose **Add Source** from the pop-up menu.
+2. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add**. Then choose **Add Source** from the pop-up menu.
 3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts) the Collector.
-    * For **Name** enter any name you like, for instance, **Oracle Server Script.**
+    * For **Name** enter any name you like, for instance, **Oracle Server Script**.
     * The **Description** is optional.
     * For **Source Category**, enter the desired category. It can be any value you like, for example, `DB/Oracle/DBQueryScript`.
     * For **Frequency**, select desired frequency, for instance, 5 minutes.
     * For **Specify a timeout for your command**, select a value that is long enough that long-running queries can complete, for instance, 30 sec.
-    * For **Command**, select **Windows Script.**
+    * For **Command**, select **Windows Script**.
     * For **Script**, select **Type a path to the script to execute**, then enter: for instance `oracle_script/sumooracle\oracle-perf-monitor.py`.
     * For **Working Directory**, enter: for instance `oracle_script/sumooracle`
     * Click **Save**.
@@ -1124,7 +1124,7 @@ See database usage information obtained by the Oracle script source, including t
 
 **Maximum Wait Time (sec) by User**. A line chart that shows, for each user, the session wait times for each 5 minute timeslice over the last 60 minutes.
 
-**Top Session Wait Time Events.** A table that shows the top 10 event types associated with session waits, and the count of each event type.
+**Top Session Wait Time Events**. A table that shows the top 10 event types associated with session waits, and the count of each event type.
 
 **Recent Jobs in the database**. A table of information about recent database jobs, including when each job ran, low long it ran, and when it will next run.
 

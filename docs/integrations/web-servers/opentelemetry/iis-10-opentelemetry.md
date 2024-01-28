@@ -156,7 +156,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 2023-01-13 10:56:55 10.0.0.111 GET / ProgramID=236 443 - 207.235.176.5 Mozilla/5.0+(compatible;+Nimbostratus-Bot/v1.3.2;+http://cloudsystemnetworks.com) http://www.google.com/url?sa=t&rct=j&q=anomaly%20detection&source=web&cd=4 304 11 1236 70
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample Query is from the **IIS - Overview** > **Visitor Location** panel.
 

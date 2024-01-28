@@ -50,7 +50,7 @@ For more information about the IIS 7 log (IIS 7.5 logs are used) format, see [ht
 2016-11-17 22:34:34 10.0.0.98 GET /Trade/Images/VS-ConfigWeb.png - 80 - 156.74.250.7 Mozilla/5.0+(Windows+NT+6.1;+WOW64;+rv:14.0)+Gecko/20100101+Firefox/14.0.1 304 0 0 209 748 7
 ```
 
-### Sample Queries
+### Sample queries
 
 The following query samples are taken from the IIS 7 App.
 

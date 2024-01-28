@@ -153,7 +153,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 started (kafka.server.KafkaServer)
 ```
 
-## Sample Queries
+## Sample queries
 
 ### Log query
 

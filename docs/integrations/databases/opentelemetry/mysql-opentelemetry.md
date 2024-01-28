@@ -203,7 +203,7 @@ log:"2022-10-14T09:16:02.430542Z 63707 [Note] [MY-010926] [Server] Access denied
 {"queryId":"A","_source":"sumo_hosted_collector_otel_mysql","operation":"deleted","metric":"mysql.row_operations","db.cluster.name":"sumoCluster_otel","_collectorId":"000000000C59BB2E","deployment.environment":"sumodev_otel","_sourceId":"0000000000000000","unit":"1","db.system":"mysql","_sourceHost":"sumoOtelMysql","_collector":"sumo_hosted_collector_otel_mysql","max":0,"min":0,"avg":0,"sum":0,"latest":0,"count":4}
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample query is from the **Top 10 Slow Queries by Average Execution Time** panel.
 

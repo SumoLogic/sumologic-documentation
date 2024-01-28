@@ -312,7 +312,7 @@ The Sumo Logic App for SentinelOne consumes Threats and Agents logs, refer to th
 ```
 
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Suspicious threats detected"
 _sourceCategory=sentinelone  threatInfo

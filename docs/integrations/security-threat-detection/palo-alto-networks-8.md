@@ -93,7 +93,7 @@ Sep 05 12:30:15 Host CEF:0|Palo Alto Networks|Traps Agent|3.4.3.19949|Client Lic
 
 
 
-### Sample Queries
+### Sample queries
 
 
 ```sql title="Virus Threats"

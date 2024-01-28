@@ -137,7 +137,7 @@ The Sumo Logic Collector uses Okta System Log API to get the logs of Okta System
 </details>
 
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Details of Applications Deleted"
 _sourceCategory = "okta" "application.lifecycle.delete"

@@ -154,7 +154,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 2023-01-09*04:51:04 0 [ERROR] mysqld: Event Scheduler: An error occurred when initializing system tables. Disabling the Event Scheduler.
 ```
 
-## Sample Queries
+## Sample queries
 
 Following query is from the "Errors" panel of the overview dashboard in Mariadb app: 
 
