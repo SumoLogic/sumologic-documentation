@@ -386,7 +386,7 @@ Follow the steps below to enable HAProxy logs to go to log files:
           * **Description.** (Optional)
           * **Protocol.** UDP
           * **Port.** 514 (as entered while configuring logging in Step b.)
-          * **Source Category.** Enter any string to tag the output collected from this Source, such as **Haproxy/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
+          * **Source Category.** Enter any string to tag the output collected from this Source, such as **Haproxy/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
           * **Fields.** Set the following fields:
               * `component = proxy`
               * `proxy_system = haproxy`
@@ -405,7 +405,7 @@ Follow the steps below to enable HAProxy logs to go to log files:
           * **Description.** (Optional)
           * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/haproxy*.log. If you're using a customized path, check the haproxy.conf file for this information.
           * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name.
-          * **Source Category.** Enter any string to tag the output collected from this Source, such as **Haproxy/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
+          * **Source Category.** Enter any string to tag the output collected from this Source, such as **Haproxy/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
           * **Fields.** Set the following fields:
               * `component = proxy`
               * `proxy_system = haproxy`

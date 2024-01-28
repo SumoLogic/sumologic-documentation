@@ -99,7 +99,7 @@ Follow the steps listed below to collect Cassandra metrics from a Kubernetes env
 
 1. Set up your [Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf).
 2. On your Cassandra Pods, add the following annotations:
-```sql
+```
 annotations:
  telegraf.influxdata.com/class: sumologic-prometheus
  prometheus.io/scrape: "true"
@@ -174,8 +174,8 @@ Enter in values for the following parameters (marked ENV_TO_BE_CHANGED above):
    * In the tags section (`[[inputs.jolokia2_agent]]`):
       * `environment`. This is the deployment environment where the Cassandra cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `db_cluster`. Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
-      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
-      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used
+      * `db_cluster_address`. Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port`. Enter the database port. If not provided, a default port will be used
 
 
 **Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
@@ -201,6 +201,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra
 :::
 
   See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+
 3. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 4. Verify metrics in Sumo Logic.
 
@@ -223,13 +224,13 @@ This section explains the steps to collect Cassandra logs from a Kubernetes envi
      * `db_cluster`- Enter a name to identify the Cassandra cluster. The cluster name will be shown in the Sumo Logic dashboards.
 
     **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly.
-    * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
-    * `db_system: “Cassandra”` - This value identifies the database system.
-    * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
-    * `db_cluster_port` - Enter the database port. If not provided, a default port will be used
+    * `component: “database”`. This value is used by Sumo Logic apps to identify application components.
+    * `db_system: “Cassandra”`. This value identifies the database system.
+    * `db_cluster_address`. Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+    * `db_cluster_port`. Enter the database port. If not provided, a default port will be used
 
 :::note
-db_cluster_address and db_cluster_port should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+`db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
 
 For example, if your application uses `“cassandra-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows:
 `db_cluster_address=cassandra-prod.sumologic.com
@@ -286,22 +287,16 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra
 </TabItem>
 <TabItem value="non-k8s">
 
-Cassandra metrics collection setup can be done in two ways.
-* Using Telegraf and Installed Collector
-* Using OpenTelemetry Collection
-
-Both the methods require the Jolokia agent to collect metrics. The steps to configure Jolokia JVM Agent in Cassandra are as below:
-
-1. Download the latest Jolokia JVM agent jar file (example: `jolokia-jvm-1.3.3-agent.jar`) from [here](https://jolokia.org/download.html).
-2. Copy the downloaded jar file to Cassandra’s lib folder (example: `/usr/share/cassandra/lib`).
-3. In `cassandra-env.sh` file, enable/add the following lines:
- ```bash
- # Jolokia javaagent
- JVM_OPTS="$JVM_OPTS -javaagent:$CASSANDRA_HOME/lib/jolokia-jvm-1.3.3-agent.jar"
- ```
-4. Restart Cassandra service.
-
-Below we have defined both the ways in which collection can be configured.
+1. Configure Jolokia JVM Agent in Cassandra to collect metrics:
+   1. Download the latest Jolokia JVM agent jar file (example: `jolokia-jvm-1.3.3-agent.jar`) from [here](https://jolokia.org/download.html).
+   2. Copy the downloaded jar file to Cassandra’s lib folder (example: `/usr/share/cassandra/lib`).
+   3. In `cassandra-env.sh` file, enable/add the following lines:
+    ```bash
+    # Jolokia javaagent
+    JVM_OPTS="$JVM_OPTS -javaagent:$CASSANDRA_HOME/lib/jolokia-jvm-1.3.3-agent.jar"
+    ```
+   4. Restart Cassandra service.
+2. Choose one of the two methods below to configure Casssandra metrics collection:
 
 <details>
 <summary>Method A: Using Telegraf and Installed Collector</summary>
@@ -469,7 +464,7 @@ Based on your infrastructure and networking setup choose one of these methods to
       * **Description.** (Optional)
       * **File Path (Required).** Enter the path to your log files. The files are typically located in `/var/log/cassandra/system.log`. If you are using a customized path, check the `logback.xml` file for this information.
       * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-      * **Source Category.** Enter any string to tag the output collected from this Source, such as **Cassandra/Logs**. The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices#good-and-bad-source-categories).
+      * **Source Category.** Enter any string to tag the output collected from this Source, such as **Cassandra/Logs**. The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices#good-and-bad-source-categories).
        * **Fields**. Set the following fields:
        * `component = database`
        * `db_system = cassandra`
@@ -544,10 +539,10 @@ There are limits to how many alerts can be enabled. For more information, see [M
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Memcached/Memcached.json) that describes the monitors.
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Memcached/Memcached.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Cassandra clusters, the data for which has been collected via the instructions in the previous sections.  
 
-  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_cluster=*` with `<Your Custom Filter>`. Custom filter examples:
-    * For alerts applicable only to a specific cluster, your custom filter would be: `db_cluster=dev-cassandra-01`.
-    * For alerts applicable to all clusters that start with `cassandra-prod`, your custom filter would be: `db_cluster=cassandra-prod*`.
-    * For alerts applicable to specific clusters, within a production environment, your custom filter would be:`db_cluster=dev-cassandra-01` AND `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
+   However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_cluster=*` with `<Your Custom Filter>`. Custom filter examples:
+     * For alerts applicable only to a specific cluster, your custom filter would be: `db_cluster=dev-cassandra-01`.
+     * For alerts applicable to all clusters that start with `cassandra-prod`, your custom filter would be: `db_cluster=cassandra-prod*`.
+     * For alerts applicable to specific clusters, within a production environment, your custom filter would be:`db_cluster=dev-cassandra-01` AND `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
 3. Go to **Manage Data > Alerts > Monitors**.
 4. Click **Add**.
 5. Click **Import**.

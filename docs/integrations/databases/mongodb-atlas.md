@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 
 The Sumo Logic app for MongoDB Atlas allows you to monitor database operations, performance KPIs and provides visibility into the security posture of your clusters with the following dashboard types:  
 
-* **Operations** Dashboard: For monitoring database operations and cluster health.
-* **Performance** Dashboard: For insights into slow queries, database and hardware metrics.
-* **Security** Dashboard: For visibility into user logins, audit events, project and organizational activity, incoming threats, and IOCs.
+* **Operations** Dashboard. For monitoring database operations and cluster health.
+* **Performance** Dashboard. For insights into slow queries, database and hardware metrics.
+* **Security** Dashboard. For visibility into user logins, audit events, project and organizational activity, incoming threats, and IOCs.
 
 [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) is a global cloud database service designed specifically for cloud-based applications. MongoDB Atlas runs in AWS, Azure, or GCP environments, with guaranteed availability, scalability, and compliance with data security and privacy standards.
 
@@ -34,87 +34,107 @@ The Sumo Logic `mongodbatlas` collector enhances logs by adding a few metadata f
 Some logs are not available for some cluster tier. Check the [MongoDB docs](https://docs.atlas.mongodb.com/reference/free-shared-limitations/). Some log types like for mongos instances are available for shared cluster only.
 
 <details>
-<summary>Sample database log, audit log, alerts log, organization events log, and project events log (<strong>click here to expand</strong>)</summary>
+<summary>Sample Logs (Database, Audit, Alerts, Organization Events, Project Events (<strong>click here to expand</strong>)</summary>
 
 ```json title="Database Log"
 {
-	"t": {"$date": "2022-07-27T17:04:49.286+00:00"}, "s": "I", "c": "REPL_HB", "id": 23974, "ctx": "ReplCoord-432", "msg": "Heartbeat failed after max retries", "attr": {"target": "atlas-11varv-shard-00-02.uv8kc.mongodb.net:27017", "maxHeartbeatRetries": 2, "error": {"code": 6, "codeName": "HostUnreachable", "errmsg": "Error connecting to atlas-11varv-shard-00-02.uv8kc.mongodb.net:27017 (192.168.253.14:27017) :: caused by :: Connection refused"}}, "project_id": "62dea24636af817c353dafa4", "hostname": "mongo6cluster-shard-00-01.uv8kc.mongodb.net", "cluster_name": "mongo6cluster", "created": "2022-07-27T17:04:49.286+00:00"
+  "t":{
+    "$date":"2022-07-27T17:04:49.286+00:00"
+  },
+  "s":"I",
+  "c":"REPL_HB",
+  "id":23974,
+  "ctx":"ReplCoord-432",
+  "msg":"Heartbeat failed after max retries",
+  "attr":{
+    "target":"atlas-11varv-shard-00-02.uv8kc.mongodb.net:27017",
+    "maxHeartbeatRetries":2,
+    "error":{
+      "code":6,
+      "codeName":"HostUnreachable",
+      "errmsg":"Error connecting to atlas-11varv-shard-00-02.uv8kc.mongodb.net:27017 (192.168.253.14:27017) :: caused by :: Connection refused"
+    }
+  },
+  "project_id":"62dea24636af817c353dafa4",
+  "hostname":"mongo6cluster-shard-00-01.uv8kc.mongodb.net",
+  "cluster_name":"mongo6cluster",
+  "created":"2022-07-27T17:04:49.286+00:00"
 }
 ```
 
-For more information, see https://docs.mongodb.com/manual/reference/log-messages.
+For more information, see [MongoDB Atlas Administration API docs](https://docs.mongodb.com/manual/reference/log-messages).
 
 ```json title="Audit Log"
 {
-	"atype":"authenticate",
-	"ts":{
-		"$date":"2019-07-03T16:08:50.256+0000"
-	},
-	"local":{
-		"ip":"192.168.253.201",
-		"port":27017
-	},
-	"remote":{
-		"ip":"192.168.254.91",
-		"port":49592
-	},
-	"users":[
-		{
-			"user":"mms-monitoring-agent",
-			"db":"admin"
-		}
-	],
-	"roles":[
-		{
-			"role":"clusterMonitor",
-			"db":"admin"
-		}
-	],
-	"param":{
-		"user":"mms-monitoring-agent",
-		"db":"admin",
-		"mechanism":"SCRAM-SHA-1"
-	},
-	"result":0,
-	"project_id":"5cd0343ff2a30b3880beddb0",
-	"hostname":"m10awstestcluster-shard-01-02-snvkl.mongodb.net",
-	"cluster_name":"m10awstestcluster",
-	"created":"2019-07-03T16:08:50.256+0000"
+  "atype":"authenticate",
+  "ts":{
+    "$date":"2019-07-03T16:08:50.256+0000"
+  },
+  "local":{
+    "ip":"192.168.253.201",
+    "port":27017
+  },
+  "remote":{
+    "ip":"192.168.254.91",
+    "port":49592
+  },
+  "users":[
+    {
+      "user":"mms-monitoring-agent",
+      "db":"admin"
+    }
+  ],
+  "roles":[
+    {
+      "role":"clusterMonitor",
+      "db":"admin"
+    }
+  ],
+  "param":{
+    "user":"mms-monitoring-agent",
+    "db":"admin",
+    "mechanism":"SCRAM-SHA-1"
+  },
+  "result":0,
+  "project_id":"5cd0343ff2a30b3880beddb0",
+  "hostname":"m10awstestcluster-shard-01-02-snvkl.mongodb.net",
+  "cluster_name":"m10awstestcluster",
+  "created":"2019-07-03T16:08:50.256+0000"
 }
 ```
 
-For more information, see https://docs.mongodb.com/manual/reference/audit-message.
+For more information, see [MongoDB Atlas Administration API docs](https://docs.mongodb.com/manual/reference/audit-message).
 
 ```json title="Alerts log"
 {
-	"alertConfigId":"5cf9c324f2a30b3783a1dd28",
-	"clusterName":"M10AWSTestCluster",
-	"created":"2019-06-07T01:52:28Z",
-	"currentValue":{
-		"number":5.142857142857142,
-		"units":"RAW"
-	},
-	"eventTypeName":"OUTSIDE_METRIC_THRESHOLD",
-	"groupId":"5cd0343ff2a30b3880beddb0",
-	"hostnameAndPort":"m10awstestcluster-shard-00-01-snvkl.mongodb.net:27017",
-	"id":"5cf9c35cd5ec1376c01e81e5",
-	"lastNotified":"2019-06-07T02:28:38Z",
-	"links":[
-		{
-			"href":"https://cloud.mongodb.com/api/public/v1.0/groups/5cd0343ff2a30b3880beddb0/alerts/5cf9c35cd5ec1376c01e81e5",
-			"rel":"self"
-		}
-	],
-	"metricName":"CONNECTIONS_PERCENT",
-	"replicaSetName":"M10AWSTestCluster-shard-0",
-	"resolved":"2019-06-07T02:28:29Z",
-	"status":"CLOSED",
-	"typeName":"HOST_METRIC",
-	"updated":"2019-06-07T02:28:29Z"
+  "alertConfigId":"5cf9c324f2a30b3783a1dd28",
+  "clusterName":"M10AWSTestCluster",
+  "created":"2019-06-07T01:52:28Z",
+  "currentValue":{
+    "number":5.142857142857142,
+    "units":"RAW"
+  },
+  "eventTypeName":"OUTSIDE_METRIC_THRESHOLD",
+  "groupId":"5cd0343ff2a30b3880beddb0",
+  "hostnameAndPort":"m10awstestcluster-shard-00-01-snvkl.mongodb.net:27017",
+  "id":"5cf9c35cd5ec1376c01e81e5",
+  "lastNotified":"2019-06-07T02:28:38Z",
+  "links":[
+    {
+      "href":"https://cloud.mongodb.com/api/public/v1.0/groups/5cd0343ff2a30b3880beddb0/alerts/5cf9c35cd5ec1376c01e81e5",
+      "rel":"self"
+    }
+  ],
+  "metricName":"CONNECTIONS_PERCENT",
+  "replicaSetName":"M10AWSTestCluster-shard-0",
+  "resolved":"2019-06-07T02:28:29Z",
+  "status":"CLOSED",
+  "typeName":"HOST_METRIC",
+  "updated":"2019-06-07T02:28:29Z"
 }
 ```
 
-For more information, see https://docs.atlas.mongodb.com/reference/api/alerts-get-all-alerts/.
+For more information, see [MongoDB Atlas Administration API docs](https://docs.atlas.mongodb.com/reference/api/alerts-get-all-alerts/).
 
 ```json
 {"clusterName": "Mongo6Cluster", "created": "2022-07-25T14:17:22Z", "eventTypeName": "CLUSTER_READY", "groupId": "62dea24636af817c353dafa4", "id": "62dea5f2eeed4a46dc259c7c", "isGlobalAdmin": false, "links": [{"href": "https://cloud.mongodb.com/api/atlas/v1.0/groups/62dea24636af817c353dafa4/events/62dea5f2eeed4a46dc259c7c", "rel": "self"}]}
@@ -122,13 +142,13 @@ For more information, see https://docs.atlas.mongodb.com/reference/api/alerts-ge
 {"created": "2022-07-25T14:16:31Z", "eventTypeName": "ADD_HOST_AUDIT", "groupId": "62dea24636af817c353dafa4", "hostname": "atlas-11varv-shard-00-00.uv8kc.mongodb.net", "id": "62dea5bf3ed8bc7aac32e072", "isGlobalAdmin": false, "links": [{"href": "https://cloud.mongodb.com/api/atlas/v1.0/groups/62dea24636af817c353dafa4/events/62dea5bf3ed8bc7aac32e072", "rel": "self"}], "port": 27016, "userAlias": "mongo6cluster-shard-00-00.uv8kc.mongodb.net"}
 ```
 
-For more information, see [https://www.mongodb.com/docs/atlas/reference/api/events/?_ga=2.201008366.1967805223.1659594117-928530545.1653893441#events](https://www.mongodb.com/docs/atlas/reference/api/events/?_ga=2.201008366.1967805223.1659594117-928530545.1653893441#events).
+For more information, see [MongoDB Atlas Administration API docs](https://www.mongodb.com/docs/atlas/reference/api/events/?_ga=2.201008366.1967805223.1659594117-928530545.1653893441#events).
 
 </details>
 
-### Sample Metrics
+### Sample metrics
 
-This section provides examples of the metric types utilized by the MongoDB Atlas app.
+Here are some examples of the metric types utilized by the MongoDB Atlas app.
 
 <details>
 <summary>Sample process metrics and disk metrics (<strong>click here to expand</strong>)</summary>
@@ -205,9 +225,6 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 
 This sample query is from the MongoDB Atlas Audit dashboard > Recent Audit Events panel.
 
-<details>
-<summary>Sample query (<strong>click here to expand</strong>)</summary>
-
 ```sql
 (_sourceCategory="Labs/mongodbatlas6/logs" ) | json "atype", "local.ip", "remote.ip", "users","result", "project_id", "hostname", "cluster_name", "param" as atype, local_ip, remote_ip, users, result, project_id, hostname, cluster_name, param
 | json field=param "db", "ns" as database1, database2 nodrop
@@ -218,7 +235,6 @@ This sample query is from the MongoDB Atlas Audit dashboard > Recent Audit Event
 | sort by latest_event_date
 ```
 
-</details>
 
 ## Collecting Logs and Metrics for the MongoDB Atlas app
 
@@ -260,10 +276,10 @@ This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs
 ### Step 3: Configure Collection for MongoDB Atlas
 
 In this section, we explore various mechanisms to collect database logs, events, metrics and alerts from MongoDB Atlas and send them to Sumo Logic, where they are shown in dashboards as part of the MongoDB Atlas app. You can configure Sumo Logic’s MongoDB Atlas collector in Amazon Web Services (AWS) using the AWS Lambda service, or by running a script on a Linux machine as a cron job. Choose the method that is best suited for you:
-* [AWS Lambda-based collection](#Deploy_the_Sumo_Logic_mongodb-atlas_SAM_Application) via a Serverless Application Model (SAM) application
-* [Script-based collection](#Configure_script_based_collection_for_mongodb-atlas) from a Linux machine
+* [AWS Lambda-based collection](#step-3a-deploy-the-sumo-logic-mongodb-atlas-sam-application) via a Serverless Application Model (SAM) application
+* [Script-based collection](#step-3c-configure-script-based-collection-for-mongodb-atlas) from a Linux machine
 
-A single instance of the collector is responsible for collecting logs from a single project. Refer to [Configure Collection for Multiple Projects](#Configure_collection_for_multiple_projects) if you have multiple projects.
+A single instance of the collector is responsible for collecting logs from a single project. Refer to [Configure Collection for Multiple Projects](#step-3b-configure-collection-for-multiple-projects-optional) if you have multiple projects.
 
 
 #### Step 3A: Deploy the Sumo Logic MongoDB Atlas SAM application
@@ -281,17 +297,32 @@ In this section, you deploy the SAM application, which creates the necessary res
    * **Public API Key**: Copy and paste the Public Key from [Step 1](#step-1-acquire-authentication-info-from-mongodb-atlas-portal).
 5. Click **Deploy**.
 6. Search for Lambda in the AWS console, select Functions tab and open the function just created.
-7. Go to the Configuration>Permissions tab of the function, and click on the Execution role name link to open up the IAM window containing all the permission policies.
-8. Click on Add permissions > Create inline policy. Choose JSON and copy this policy statement:
- ```json
- { "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Action": [ "ec2:DescribeNetworkInterfaces", "ec2:CreateNetworkInterface", "ec2:DeleteNetworkInterface", "ec2:DescribeInstances", "ec2:AttachNetworkInterface" ], "Resource": "*" } ] }
- ```
-  Click on Review policy, and provide an appropriate name. Then click on Create policy. Some users might already have these permissions enabled.
-9. We then [follow these steps](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/generate-a-static-outbound-ip-address-using-a-lambda-function-amazon-vpc-and-a-serverless-architecture.html) to create elastic IP/IPs for the lambda function and add a VPC to our function. We note down the elastic IPs.
-10. We go to the mongo console, click on Organization Access>Access Manager > API Keys, and click on ‘...’ of the API Key as mentioned in step 2. Then click on Edit Permissions.
-11. Click Next > Add Access List Entry. Enter the elastic IPs noted above and, then click Save to save the elastic IPs, and click on Done to apply the settings.
+7. Go to the **Configuration** > **Permissions** tab of the function, and click on the Execution role name link to open up the IAM window containing all the permission policies.
+8. Click on **Add permissions** > **Create inline policy**. Choose JSON and copy this policy statement:
+   ```json
+   {
+     "Version":"2012-10-17",
+     "Statement":[
+       {
+         "Effect":"Allow",
+         "Action":[
+           "ec2:DescribeNetworkInterfaces",
+           "ec2:CreateNetworkInterface",
+           "ec2:DeleteNetworkInterface",
+           "ec2:DescribeInstances",
+           "ec2:AttachNetworkInterface"
+         ],
+         "Resource":"*"
+       }
+     ]
+   }
+   ```
+9. Click on **Review policy**, and provide an appropriate name. Then click on Create policy. Some users might already have these permissions enabled.
+10. We then [follow these steps](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/generate-a-static-outbound-ip-address-using-a-lambda-function-amazon-vpc-and-a-serverless-architecture.html) to create elastic IP/IPs for the lambda function and add a VPC to our function. We note down the elastic IPs.
+11. We go to the mongo console, click on **Organization Access** > **Access Manager** > **API Keys**, and click on ‘...’ of the API Key as mentioned in step 2. Then click on Edit Permissions.
+12. Click **Next** > **Add Access List Entry**. Enter the elastic IPs noted above and, then click Save to save the elastic IPs, and click on Done to apply the settings.
 
-The lambda function should be working now in sending logs to Sumo. You can check the CloudWatch logs in Monitor > Logs to see the logs of the function.
+The lambda function should be working now in sending logs to Sumo. You can check the CloudWatch logs in **Monitor** > **Logs** to see the logs of the function.
 
 #### Step 3B: Configure Collection for Multiple Projects (optional)
 
@@ -300,7 +331,7 @@ This section shows you how to configure collection for multiple projects, assumi
 * Change the `DBNAME` so that state (keys) maintained (bookkeeping) in the database (key value store) are not in conflict.
 
 To configure collection for multiple projects, do the following:
-1. [Deploy the MongoDB Atlas SAM application](#Deploy_the_Sumo_Logic_mongodb-atlas_SAM_Application) with the configuration for a new project.
+1. [Deploy the MongoDB Atlas SAM application](#step-3a-deploy-the-sumo-logic-mongodb-atlas-sam-application) with the configuration for a new project.
 2. After the deployment is complete, change the database name by adding environment variable (`DBNAME`) in [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html), as shown in the following example.
 3. From the Lambda console, go to the **mongodbatlas.yaml** file and comment out `EVENTS_ORG`, as shown in the following example. This prevents the collection of org events, because they are already being collected by the first collector.
 
@@ -315,26 +346,26 @@ This task makes the following assumptions:
 :::
 
 1. Configure/install the script on a Linux machine.
-  * For Python 3, use:
-   ```bash
-   pip3 install sumologic-mongodb-atlas
-   ```
-  * For operating systems where the default python is not Python 3, use:
-   ```bash
-   /usr/bin/python3 -m sumomongodbatlascollector.main
-   ```
+   * For Python 3, use:
+     ```bash
+     pip3 install sumologic-mongodb-atlas
+     ```
+   * For operating systems where the default python is not Python 3, use:
+     ```bash
+     /usr/bin/python3 -m sumomongodbatlascollector.main
+     ```
 2. To deploy the script on a Linux machine, do the following:
    1. If **pip** is not already installed, follow the instructions in the [pip documentation](https://pip.pypa.io/en/stable/installing/) to download and install **pip**.
    2. Log in to a Linux machine (compatible with either Python 3.11 or Python 2.7.
    3. Do one of the following:
       * For Python 2, run the following command:
-  	  ```bash
-   	 pip install sumologic-mongodb-atlas
-  	  ```
+  	    ```bash
+        pip install sumologic-mongodb-atlas
+  	    ```
       * For Python 3, run the following command:
-	    ```bash
-	    pip3 install sumologic-mongodb-atlas
-	    ```
+	     ```bash
+	     pip3 install sumologic-mongodb-atlas
+	     ```
 3. Create a `mongodbatlas.yaml` configuration file in the home directory and fill in the parameters as shown in the following example.
 ```bash title="mongodbatlas.yaml"
 SumoLogic:
@@ -348,101 +379,99 @@ MongoDBAtlas:
   PUBLIC_API_KEY: <Paste the Public Key from step 1.>
 ```
 4. Create a cron job to run the collector every 5 minutes, (use the `crontab -e` option). Do one of the following:
-  * **For Python 2**, add the following line to your crontab:
-  ```bash
-  */5 * * * *  /usr/bin/python -m sumomongodbatlascollector.main > /dev/null 2>&1
-  ```
-  * **For Python 3**, add the following line to your crontab:
-  ```bash
-  */5 * * * *  /usr/bin/python3 -m sumomongodbatlascollector.main > /dev/null 2>&1
-  ```
+   * **For Python 2**, add the following line to your crontab:
+   ```bash
+   */5 * * * *  /usr/bin/python -m sumomongodbatlascollector.main > /dev/null 2>&1
+   ```
+   * **For Python 3**, add the following line to your crontab:
+   ```bash
+   */5 * * * *  /usr/bin/python3 -m sumomongodbatlascollector.main > /dev/null 2>&1
+   ```
 5. Configuring collection for multiple projects (assuming you are already collecting Atlas data for one project). This task requires that you do the following:
-  * Stop the collection of OrgEvents in the second SAM app deployment because these events are global and are already captured by first collector.
-  * Change the `DBNAME` so that state (keys) maintained (bookkeeping) in the database (key value store) are not in conflict.
+   * Stop the collection of OrgEvents in the second SAM app deployment because these events are global and are already captured by first collector.
+   * Change the `DBNAME` so that state (keys) maintained (bookkeeping) in the database (key value store) are not in conflict.
+	 * [Configure the script on a Linux machine](#Configure_the_script_on_a_Linux_machine), then go to your configuration file.
+	 * Change the `DB_NAME` and comment out `EVENTS_ORG` as shown in the following example.
+    ```
+    SumoLogic:
+      LOGS_SUMO_ENDPOINT: <Paste the URL for the HTTP Logs source from step 2.>
+      METRICS_SUMO_ENDPOINT: <Paste the URL for the HTTP Metrics source from step 2.>
 
-  1. [Configure the script on a Linux machine](#Configure_the_script_on_a_Linux_machine), then go to your configuration file.
-  2. Change the `DB_NAME` and comment out `EVENTS_ORG` as shown in the following example.
+    MongoDBAtlas:
+      ORGANIZATION_ID: <Paste the Organization ID from step 1.>
+      PROJECT_ID: <Paste the Project ID from step 1.>
+      PRIVATE_KEY: <Paste the Private Key from step 1.>
+      PUBLIC_KEY: <Paste the Public Key from step 1.>
+      LOG_TYPES:
+        DATABASE
+        AUDIT
+        EVENTS_PROJECT
+        EVENTS_ORG
+        ALERTS
 
-```
-SumoLogic:
-  LOGS_SUMO_ENDPOINT: <Paste the URL for the HTTP Logs source from step 2.>
-  METRICS_SUMO_ENDPOINT: <Paste the URL for the HTTP Metrics source from step 2.>
+      METRIC_TYPES:
+        PROCESS_METRICS:
+          CACHE_DIRTY_BYTES
+          CACHE_USED_BYTES
+          CONNECTIONS
+          CURSORS_TOTAL_OPEN
+          CURSORS_TOTAL_TIMED_OUT
+          DATABASE_AVERAGE_OBJECT_SIZE
+          DB_STORAGE_TOTAL
+          DB_DATA_SIZE_TOTAL
+          EXTRA_INFO_PAGE_FAULTS
+          GLOBAL_LOCK_CURRENT_QUEUE_TOTAL
+          MEMORY_RESIDENT
+          MEMORY_VIRTUAL
+          MEMORY_MAPPED
+          NETWORK_BYTES_IN
+          NETWORK_BYTES_OUT
+          NETWORK_NUM_REQUESTS
+          OPCOUNTER_CMD
+          OPCOUNTER_QUERY
+          OPCOUNTER_UPDATE
+          OPCOUNTER_DELETE
+          OPCOUNTER_GETMORE
+          OPCOUNTER_INSERT
+          OP_EXECUTION_TIME_READS
+          OP_EXECUTION_TIME_WRITES
+          OP_EXECUTION_TIME_COMMANDS
+          OPLOG_MASTER_LAG_TIME_DIFF
+          OPLOG_SLAVE_LAG_MASTER_TIME
+          QUERY_EXECUTOR_SCANNED
+          QUERY_EXECUTOR_SCANNED_OBJECTS
+          QUERY_TARGETING_SCANNED_PER_RETURNED
+          QUERY_TARGETING_SCANNED_OBJECTS_PER_RETURNED
+          SYSTEM_NORMALIZED_CPU_USER
+          SYSTEM_NORMALIZED_CPU_KERNEL
+          SYSTEM_NORMALIZED_CPU_IOWAIT
+          PROCESS_CPU_USER
+          PROCESS_CPU_KERNEL
+          SYSTEM_NORMALIZED_CPU_STEAL
 
-MongoDBAtlas:
-  ORGANIZATION_ID: <Paste the Organization ID from step 1.>
-  PROJECT_ID: <Paste the Project ID from step 1.>
-  PRIVATE_KEY: <Paste the Private Key from step 1.>
-  PUBLIC_KEY: <Paste the Public Key from step 1.>
-  LOG_TYPES:
-    DATABASE
-    AUDIT
-    EVENTS_PROJECT
-    EVENTS_ORG
-    ALERTS
+        DISK_METRICS:
+          DISK_PARTITION_IOPS_READ
+          DISK_PARTITION_IOPS_WRITE
+          DISK_PARTITION_LATENCY_READ
+          DISK_PARTITION_LATENCY_WRITE
+          DISK_PARTITION_SPACE_PERCENT_FREE
+          DISK_PARTITION_SPACE_PERCENT_USED
 
-  METRIC_TYPES:
-    PROCESS_METRICS:
-      CACHE_DIRTY_BYTES
-      CACHE_USED_BYTES
-      CONNECTIONS
-      CURSORS_TOTAL_OPEN
-      CURSORS_TOTAL_TIMED_OUT
-      DATABASE_AVERAGE_OBJECT_SIZE
-      DB_STORAGE_TOTAL
-      DB_DATA_SIZE_TOTAL
-      EXTRA_INFO_PAGE_FAULTS
-      GLOBAL_LOCK_CURRENT_QUEUE_TOTAL
-      MEMORY_RESIDENT
-      MEMORY_VIRTUAL
-      MEMORY_MAPPED
-      NETWORK_BYTES_IN
-      NETWORK_BYTES_OUT
-      NETWORK_NUM_REQUESTS
-      OPCOUNTER_CMD
-      OPCOUNTER_QUERY
-      OPCOUNTER_UPDATE
-      OPCOUNTER_DELETE
-      OPCOUNTER_GETMORE
-      OPCOUNTER_INSERT
-      OP_EXECUTION_TIME_READS
-      OP_EXECUTION_TIME_WRITES
-      OP_EXECUTION_TIME_COMMANDS
-      OPLOG_MASTER_LAG_TIME_DIFF
-      OPLOG_SLAVE_LAG_MASTER_TIME
-      QUERY_EXECUTOR_SCANNED
-      QUERY_EXECUTOR_SCANNED_OBJECTS
-      QUERY_TARGETING_SCANNED_PER_RETURNED
-      QUERY_TARGETING_SCANNED_OBJECTS_PER_RETURNED
-      SYSTEM_NORMALIZED_CPU_USER
-      SYSTEM_NORMALIZED_CPU_KERNEL
-      SYSTEM_NORMALIZED_CPU_IOWAIT
-      PROCESS_CPU_USER
-      PROCESS_CPU_KERNEL
-      SYSTEM_NORMALIZED_CPU_STEAL
-
-    DISK_METRICS:
-      DISK_PARTITION_IOPS_READ
-      DISK_PARTITION_IOPS_WRITE
-      DISK_PARTITION_LATENCY_READ
-      DISK_PARTITION_LATENCY_WRITE
-      DISK_PARTITION_SPACE_PERCENT_FREE
-      DISK_PARTITION_SPACE_PERCENT_USED
-
-Collection:
-  DBNAME: "newmongodbatlas"
-```
+    Collection:
+      DBNAME: "newmongodbatlas"
+    ```
 Example execution of second yaml file: `/usr/bin/python3 -m sumomongodbatlascollector.main <path-of-second-yaml-file>`
 
 ### Step 4: Configure Webhooks for Alerts Collection
 
 You configure Webhooks for real-time alerts. This section explains how to configure alert collection using Webhooks.
 1. Go to the **MongoDBAtlas** console and select **Project Integrations.** Click **Configure** under **Webhook Settings**.
-2. Copy and paste the Logs endpoint from [Step](#Add_a_Hosted_Collector_and_HTTP_Source) to set up Webhook.
+2. Copy and paste the Logs endpoint from [Step 2](#step-2-add-a-hosted-collector-and-http-source) to set up Webhook.
 3. When configuring an alert, specify the **Webhook** as shown in the following example, and then click **Save**.
 
 ### Advanced Configuration
 
-This section is common for both [AWS Lambda-based collection](#Deploy_the_Sumo_Logic_mongodb-atlas_SAM_Application) and [script-based collection](#Configure_script_based_collection_for_mongodb-atlas).
+This section is common for both [AWS Lambda-based collection](#step-3a-deploy-the-sumo-logic-mongodb-atlas-sam-application) and [script-based collection](#step-3c-configure-script-based-collection-for-mongodb-atlas).
 
 <details>
 <summary>This table lists MongoDB Atlas variables that you can optionally define in the configuration file (<strong>click to expand</strong>).</summary>

@@ -16,7 +16,7 @@ Okta provides secure connections between people and your applications on any dev
 The Sumo Logic Collector uses Okta System Log API to get the logs of Okta System. The log types include authentication, events, and actions. For more information on the Okta log API, see [here](https://developer.okta.com/docs/api/resources/system_log.html).
 
 
-### Sample Log message
+### Sample log message
 
 <details>
 <summary>Click to expand</summary>

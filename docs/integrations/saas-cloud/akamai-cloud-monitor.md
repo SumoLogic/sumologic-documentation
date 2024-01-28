@@ -135,7 +135,7 @@ In Sumo Logic, create a new [Hosted Collector](/docs/send-data/hosted-collectors
 1. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 2. Configure the Source Fields as follows:
     1. **Name.** Required. For example, use Akamai.
-    2. **Source Category.** Required. For example, use akamai_cloud_monitor. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+    2. **Source Category.** Required. For example, use akamai_cloud_monitor. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced** section:
     1. Check **Extract timestamp information from log file entries**.
     2. **Timezone.** Use time zone from log file. If none is present, use UTC.
