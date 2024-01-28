@@ -163,7 +163,7 @@ Refer to [Collecting Metrics](/docs/send-data/kubernetes/collecting-metrics/).
 
 ### Collecting Kubernetes events
 
-Refer to [Collecting Kubernetes Events document](/docs/send-data/kubernetes/collecting-kubernetes-events/)
+Refer to [Collecting Kubernetes Events document](/docs/send-data/kubernetes/collecting-events/)
 
 ## Upgrading Sumo Logic Collection
 
