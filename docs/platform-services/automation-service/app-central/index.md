@@ -38,21 +38,21 @@ Before you can access App Central, you must have the App Central Access role cap
 <img src={useBaseUrl('img/cse/automation-service-app-central.png')} alt="App Central" width="800"/>
 
 1. **Playbooks**. Click to view [playbooks in App Central](#playbooks-in-app-central) that are available to install.
-1. **Integrations**. Click to view [integrations in App Central](#integrations-in-app-central) that are available to install.
+1. **Integrations**. Click to view [integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) that are available to install.
 1. **Search**. Search for integrations or playbooks to install. 
 1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization. The actions limit is set to 50 per hour by default to prevent abuse of system resources or runaway processes. For more information, see [Actions limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit).
 1. **Download**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](#install-a-playbook-from-app-central). 
 
-## Integrations in App Central
+## Work with integrations in App Central
 
-Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While [Integrations](/docs/platform-services/automation-service/automation-service-integrations/) in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Central shows you additional integrations you can install.
+Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu item in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Central shows you [integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) that you can install.
 
 ### Install an integration from App Central
 
 1. Use the **Search** bar in the upper right of the **Integrations** tab to find integrations.
 1. Click **Download** in the lower left corner of the integration box.
 1. Click **Install** to install the integration. After installation is complete, **Installed** replaces the **Download** link in the corner of the integration box.
-1. **IMPORTANT**: Click **Show More** in the integration box to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
+1. **IMPORTANT**: Find the article for the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
 
 ### Update an integration from App Central
 

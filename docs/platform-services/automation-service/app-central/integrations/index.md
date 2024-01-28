@@ -1,9 +1,8 @@
 ---
 slug: /platform-services/automation-service/app-central/integrations
-title: Available Integrations
-sidebar_label: Available Integrations
+title: Integrations in App Central
 sidebar_position: 1
-description: This article lists all the integrations available in App Central.
+description: ''
 ---
 
 Our Automation Service and Cloud SOAR offer a comprehensive suite of integrations designed to enhance your automation and orchestration capabilities. This section includes the complete catalog of currently supported integrations available in [App Central](/docs/platform-services/automation-service/app-central).
