@@ -2457,6 +2457,7 @@ integrations: [
       link: {type: 'doc', id: 'cse/index'},
       items: [
         'cse/introduction-to-cloud-siem',
+        'cse/cloud-siem-content-catalog',
       {
           type: 'category',
           label: 'Get Started with Cloud SIEM',
