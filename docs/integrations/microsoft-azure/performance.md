@@ -97,7 +97,7 @@ instance of Win32_PerfFormattedData_PerfOS_Memory
 
 
 
-### Sample Queries
+### Sample queries
 
 **Hosts with low available memory**
 

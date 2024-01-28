@@ -80,7 +80,7 @@ The MySQL app dashboards dependent on error logs are based on the message types 
 </TabItem>
 </Tabs>
 
-### Sample Queries
+### Sample queries
 
 This sample query is from the MySQL - Logs dashboard > Logs panel.
 

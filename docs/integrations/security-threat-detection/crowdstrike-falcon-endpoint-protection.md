@@ -145,7 +145,7 @@ For more information on Events, please refer to [Streaming API Event Dictionary]
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 This section provides query examples for each event type.
 

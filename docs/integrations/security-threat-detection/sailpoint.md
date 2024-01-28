@@ -87,7 +87,7 @@ The SailPoint Source ingests:
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Authentication Event"
 _sourceCategory=Labs/sailpoint ipAddress

@@ -170,7 +170,7 @@ May 13 08:24:43 localhost haproxy[21813]:
 27.2.81.92:64274 [13/May/2021:08:24:43.921] web-edupia.vn-4
 ```
 
-## Sample Queries
+## Sample queries
 
 This query example is from the **HAProxy - Overview** dashboard > **Top 5 URLs with Errors** panel:
 

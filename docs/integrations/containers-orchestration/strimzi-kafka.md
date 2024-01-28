@@ -33,7 +33,7 @@ This App has been tested with following Kafka versions:
 }
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample query string is from the Logs panel of the **Kafka - Logs** dashboard.
 

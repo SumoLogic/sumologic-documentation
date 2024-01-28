@@ -123,7 +123,7 @@ For details, see the [Schema for Gmail logs in BigQuery](https://support.google.
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Gmail messages classifications"
 _sourceCategory=Labs/GmailTraceLogs

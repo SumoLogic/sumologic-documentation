@@ -44,7 +44,7 @@ For information on collecting unified logs and metrics for VMware, see [VMware U
 2017-09-25 22:09:45.123 +0000 2013-11-19T10:03:35.042999Z ,,, message=Task: Delete virtual machine,,,user=SUMO\USER,,,vm=VMNAME,,,host=HOSTNAME.sumolab.org
 ```
 
-## Sample Queries
+## Sample queries
 
 ```sql title="vCenter User Activity"
  _sourceCategory=esx_perf OR _sourceCategory=vcenter_log "message=User "

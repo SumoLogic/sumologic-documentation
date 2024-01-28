@@ -249,7 +249,7 @@ Sample Log Message in Non-Kubernetes environment:
 TNS-12514: TNS:listener does not currently know of service requested in connect descriptor
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample Query is from the **Oracle - Overview** dashboard > **DB Connection** panel.
 
