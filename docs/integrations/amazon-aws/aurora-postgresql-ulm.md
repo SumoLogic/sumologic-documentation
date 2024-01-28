@@ -17,7 +17,7 @@ Amazon Aurora PostgreSQL is a relational database service built for the cloud. F
 
 This guide provides an overview of the Aurora PostgreSQL ULM app pre-defined queries and dashboards, as well as instructions for collecting logs and metrics from Aurora PostgreSQL, and installing the app.
 
-## Log and Metric types
+## Log and metric types
 
 The Sumo Logic app for Aurora PostgreSQL ULM uses the following logs and metrics:
 * [AWS Cloud Trail](https://aws.amazon.com/cloudtrail/features/)

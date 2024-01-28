@@ -73,7 +73,7 @@ This section provides instructions for configuring log and metric collection for
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 :::note
 This step is not needed if you are using the application components solution terraform script.
@@ -159,12 +159,12 @@ Ensure that you are monitoring your Kubernetes clusters with the Telegraf operat
       db_cluster_port = "ENV_TO_BE_CHANGED"
   ```
 2. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` in the snippet above):
-   * `telegraf.influxdata.com/inputs` - As telegraf will be run as a sidecar the host should always be localhost.
+   * `telegraf.influxdata.com/inputs`. As telegraf will be run as a sidecar the host should always be localhost.
      * In the input plugins section i.e.:
         * `servers` - The URL to the Redis server. This can be a comma-separated list to connect to multiple Redis servers.
      * In the tags section, `[inputs.redis.tags]`:
-        * `environment` - This is the deployment environment where the Redis cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * `db_cluster` - Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. This is the deployment environment where the Redis cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `db_cluster`. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
         * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
         * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 :::note
@@ -177,11 +177,11 @@ If your application connects directly to a given redis node, rather than the who
 Pivoting to Tracing data from Entity Inspector is possible only for “Redis address” Entities.
 :::
    * **Do not modify the following values**, as they will cause the Sumo Logic apps to not function correctly.
-      * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-      * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-      * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+      * `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+      * `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+      * `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
       * `telegraf.influxdata.com/inputs`
-        * In the tags section, that is`[inputs.redis.tags]`
+        * In the tags section, that is `[inputs.redis.tags]`
         * `component: "database"` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: "redis"` - This value identifies the database system.
    * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
@@ -208,8 +208,8 @@ This section explains the steps to collect Redis logs from a Kubernetes environm
    db_cluster_port = "ENV_TO_BE_CHANGED"
    ```
    2. Enter in values for the following parameters (marked ENV_TO_BE_CHANGED above):
-     * `environment` - This is the deployment environment where the Redis cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-     * `db_cluster` - Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
+     * `environment`. This is the deployment environment where the Redis cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+     * `db_cluster`. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
      * db_cluster_address - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 :::note
@@ -298,8 +298,8 @@ This section provides instructions for configuring metrics collection for the Su
      * For the input plugins section:
         * `servers` - The URL to the Redis server. This can be a comma-separated list to connect to multiple Redis servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on additional parameters for configuring the Redis input plugin for Telegraf.
      * For tags section (`[inputs.redis.tags]`):
-        * `environment` - This is the deployment environment where the Redis cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * `db_cluster` - Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. This is the deployment environment where the Redis cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `db_cluster`. Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
         * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
         * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 :::note
@@ -400,7 +400,7 @@ After determining the location of conf file, modify the **redis.conf** configura
       * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/redis/redis-server.log. If you're using a customized path, check the redis.conf file for this information.
       * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
       * **Source Category.** Enter any string to tag the output collected from this Source, such as **Redis/Logs**. The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).
-   3. Fields. Set the following fields. For more information on fields, see [Sumo Logic Fields](/docs/manage/fields.md):
+   3. Fields. Set the following fields. For more information on fields, see [Sumo Logic Fields](/docs/manage/fields):
       * `component = database`
       * `db_system = redis`
       * `db_cluster = <Your_Redis_Cluster_Name>`
@@ -534,7 +534,10 @@ email_notifications = [
 This section demonstrates how to install the Redis ULM app.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**.
+:::note
+Version selection is not available for all apps.
+:::
 3. To install the app, complete the following fields.
    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    2. **Data Source.**  Choose **Enter a Custom Data Filter** and enter a custom Redis cluster filter. Examples:
