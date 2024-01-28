@@ -2457,6 +2457,7 @@ integrations: [
       link: {type: 'doc', id: 'cse/index'},
       items: [
         'cse/introduction-to-cloud-siem',
+        'cse/cloud-siem-content-catalog',
       {
           type: 'category',
           label: 'Get Started with Cloud SIEM',
@@ -2792,7 +2793,7 @@ integrations: [
               items: [
                 {
                   type: 'category',
-                  label: 'Integrations',
+                  label: 'Integrations in App Central',
                   collapsible: true,
                   collapsed: true,
                   link: {type: 'doc', id: 'platform-services/automation-service/app-central/integrations/index'},
