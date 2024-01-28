@@ -240,7 +240,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB a
    3. The **Add Field Extraction Rule** form will appear:
    4. Enter the following options:
      * **Rule Name**. Enter the name as **App Observability - Database**.
-     * **Applied At.** Choose **Ingest Time**
+     * **Applied At**. Choose **Ingest Time**
      * **Scope**. Select **Specific Data**
      * **Scope**: Enter the following keyword search expression:
       ```sql
@@ -319,39 +319,37 @@ At this point, MongoDB metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for MongoDB running on a non-Kubernetes environment for the Sumo Logic app for MongoDB. By default, MongoDB logs are stored in a log file. MongoDB also supports forwarding logs via Syslog.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/cloud-syslog-source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/cloud-syslog-source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For more information, see [Installed Collector Requirements](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect MongoDB logs and follow the instructions below to set up log collection:
 
 1. **Configure logging in MongoDB**. MongoDB supports logging via the following methods: syslog, local text log files and stdout. MongoDB logs have four levels of verbosity. All logging settings are located in [MongoDB.conf](https://docs.mongodb.com/manual/reference/method/db.setLogLevel/). To select a level, set `loglevel` to one of:
    * 0 is the MongoDB's default log verbosity level, to include [Informational](https://docs.mongodb.com/manual/reference/log-messages/#std-label-log-severity-levels) messages.
    * 1 to 5 increases the verbosity level to include[ Debug](https://docs.mongodb.com/manual/reference/log-messages/#std-label-log-severity-levels) messages.
-2. Configure MongoDB to log to a Local file or syslog
-   * **Configuring MongoDB logs to go to log files**. By default, MongoDB logs are stored in **/var/log/mongodb/mongodb.log**. The default directory for log files is listed in the MongoDB.conf file. To configure the log output destination to a log file, use one of the following settings, either in the [configuration file](https://docs.mongodb.com/manual/reference/configuration-options/) or command-line:
+2. Configure MongoDB to log to a Local file or syslog.
+   * **Configuring MongoDB logs to go to log files**. By default, MongoDB logs are stored in **/var/log/mongodb/mongodb.log**. The default directory for log files is listed in the MongoDB.conf file. To configure the log output destination to a log file, use one of the following settings, either in the [configuration file](https://docs.mongodb.com/manual/reference/configuration-options/) or command line:
      * Configuration file: The [systemLog.destination](https://docs.mongodb.com/manual/reference/configuration-options/#mongodb-setting-systemLog.destination) option for _file_.
-     * Command-line:
+     * Command line:
 		   * The [`--logpath`](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--logpath) option for [mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for _file_.
        * The [`--logpath`](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--logpath) option for [mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for _file_.
-
-    Logs from the MongoDB log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/installed-collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) as explained in the next section.
-   * **Configuring MongoDB logs to stream via syslog**. To configure the log output destination to syslog, use one of the following settings, either in the[ configuration file](https://docs.mongodb.com/manual/reference/configuration-options/) or command-line:
+			 Logs from the MongoDB log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/installed-collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) as explained in the next section.
+   * **Configuring MongoDB logs to stream via syslog**. To configure the log output destination to syslog, use one of the following settings, either in the[ configuration file](https://docs.mongodb.com/manual/reference/configuration-options/) or command line:
      * **Configuration file**: the [systemLog.destination](https://docs.mongodb.com/manual/reference/configuration-options/#mongodb-setting-systemLog.destination) option for _syslog_.
-     * **Command-line:**
+     * **Command line:**
 		   * the [`--syslog`](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--syslog) option for[ mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for _syslog_.
        * the [`--syslog`](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--syslog) option for[ mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for _syslog_.
 
     To capture MongoDB logs using syslog, configure a [syslog source](/docs/send-data/installed-collectors/sources/syslog-source) on an [Installed collector](/docs/send-data/installed-collectors) as explained in the next section.
-
 3. **Configuring a Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector](/docs/send-data/installed-collectors).
 4. **Configuring a Source**. To collect logs directly from your MongoDB machine, use a Local File Source and an Installed Collector.
    1. To add a Local File Source source for MongoDB, do the following:
       1. Add a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
       2. Configure the Local File Source fields as follows:
-         * **Name.** (Required)
-         * **Description.** (Optional)
-         * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/mongodb/mongodb.log. If you're using a customized path, check the MongoDB.conf file for this information.
-         * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-         * **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
+         * **Name**. (Required)
+         * **Description**. (Optional)
+         * **File Path (Required)**. Enter the path to your error.log or access.log. The files are typically located in /var/log/mongodb/mongodb.log. If you're using a customized path, check the MongoDB.conf file for this information.
+         * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
+         * **Source Category**. Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
          * **Fields**. Set the following fields:
            * `component = database`
            * `db_system = mongodb`
@@ -359,52 +357,52 @@ Based on your infrastructure and networking setup choose one of these methods to
            * `environment = <Environment_Name>`, such as Dev, QA or Prod
 					 * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
 					 * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
-:::note
-`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+         :::note
+         `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
-For example, if your application uses “mongodb-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=mongodb-prod.sumologic.com db_cluster_port=3306`
+         For example, if your application uses “mongodb-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=mongodb-prod.sumologic.com db_cluster_port=3306`
 
-If your application connects directly to a given MongoDB node, rather than the whole cluster, use the application connection string to override the value of the `“host”` field in the Telegraf configuration: `host=mongodb-prod.sumologic.com`
+         If your application connects directly to a given MongoDB node, rather than the whole cluster, use the application connection string to override the value of the `“host”` field in the Telegraf configuration: `host=mongodb-prod.sumologic.com`
 
-Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB address” Entities
-:::
+         Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB address” Entities
+         :::
       3. Configure the **Advanced** section:
-         * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
-         * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your MongoDB Server’s time zone.
-         * **Timestamp Format.** The timestamp format is automatically detected.
+         * **Enable Timestamp Parsing**. Select Extract timestamp information from log file entries.
+         * **Time Zone**. Choose the option, **Ignore time zone from log file and instead use**, and then select your MongoDB Server’s time zone.
+         * **Timestamp Format**. The timestamp format is automatically detected.
          * **Encoding** Select UTF-8 (Default).
-         * **Enable Multiline Processing.** Detect messages spanning multiple lines
+         * **Enable Multiline Processing**. Detect messages spanning multiple lines
          * Infer Boundaries - Detect message boundaries automatically
       4. Click **Save**.
    2. To add a Syslog Source source for MongoDB, do the following:
       1. Add a [Syslog source](/docs/send-data/installed-collectors/sources/syslog-source) in the installed collector configured in the previous step.
       2. Configure the Syslog Source fields as follows:
-         * **Name.** (Required)
-         * **Description.** (Optional)
+         * **Name**. (Required)
+         * **Description**. (Optional)
          * **Protocol**: UDP
          * **Port**: 514 (as entered while configuring logging in Step b.)
-         * **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
-         * **Fields.** Set the following fields:
+         * **Source Category**. Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
+         * **Fields**. Set the following fields:
            * `component = database`
            * `db_system = MongoDB`
            * `db_cluster = <Your_MongoDB_Cluster_Name>`
            * `environment = <Environment_Name>`, such as Dev, QA or Prod
 					 * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
 					 * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
-:::note
-`db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+        :::note
+        `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
 
-For example, if your application uses “mongodb-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=mongodb-prod.sumologic.com db_cluster_port=3306`
+        For example, if your application uses “mongodb-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=mongodb-prod.sumologic.com db_cluster_port=3306`
 
-If your application connects directly to a given MongoDB node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mongodb-prod.sumologic.com`
+        If your application connects directly to a given MongoDB node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mongodb-prod.sumologic.com`
 
-Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB address” Entities.
-:::
+        Pivoting to Tracing data from Entity Inspector is possible only for “MongoDB address” Entities.
+        :::
       3. Configure the **Advanced** section:
-         * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
-         * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your MongoDB Server’s time zone.
-         * **Timestamp Format.** The timestamp format is automatically detected.
-           * **Encoding.** Select UTF-8 (Default).
+         * **Enable Timestamp Parsing**. Select Extract timestamp information from log file entries.
+         * **Time Zone**. Choose the option, **Ignore time zone from log file and instead use**, and then select your MongoDB Server’s time zone.
+         * **Timestamp Format**. The timestamp format is automatically detected.
+           * **Encoding**. Select UTF-8 (Default).
       4. Click **Save**.
 
 At this point, MongoDB logs should start flowing into Sumo Logic.

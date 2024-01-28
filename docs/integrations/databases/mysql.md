@@ -63,10 +63,10 @@ The MySQL app dashboards dependent on error logs are based on the message types 
 
 ```json
 {
-	"timestamp":1617810938497,
-	"log":"2021-04-07T15:55:34.261220Z 0 [System] [MY-010931] [Server] /opt/bitnami/mysql/bin/mysqld: ready for connections. Version: '8.0.23'  socket: '/opt/bitnami/mysql/tmp/mysql.sock'  port: 3306  Source distribution.",
-	"stream":"stdout",
-	"time":"2021-04-07T15:55:34.261397194Z"
+  "timestamp":1617810938497,
+  "log":"2021-04-07T15:55:34.261220Z 0 [System] [MY-010931] [Server] /opt/bitnami/mysql/bin/mysqld: ready for connections. Version: '8.0.23'  socket: '/opt/bitnami/mysql/tmp/mysql.sock'  port: 3306  Source distribution.",
+  "stream":"stdout",
+  "time":"2021-04-07T15:55:34.261397194Z"
 }
 ```
 
@@ -485,7 +485,7 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
       * **Name.** (Required)
       * **Description**. (Optional)
       * **File Path** (Required). Enter the path to your error.log. The files are typically located in `/var/log/mysql/error.log`. If you're using a customized path, check the `my.cnf` file for this information.
-      * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host nameSource Category. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+      * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host nameSource Category. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
       * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields).
       * `component = database`
       * `db_system = mysql`
@@ -524,7 +524,7 @@ At this point, MySQL error logs should start flowing into Sumo Logic.
       * **Description**. (Optional)
       * **File Path** (Required). Enter the path to your `mysql-slow.log`. The file is typically located in `/var/log/mysql/mysql-slow.log`. If you're using a customized path, check `my.cnf` file for this information.
       * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-      * **Source Category**. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+      * **Source Category**. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
       * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields).
         * `component = database`
         * `db_system = mysql`

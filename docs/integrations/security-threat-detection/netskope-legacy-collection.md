@@ -197,7 +197,7 @@ The following table explains the configuration file parameters and their usage.
 </table>
 
 
-## Sample Log message
+## Sample log message
 
 <details>
 <summary>Click to expand</summary>
