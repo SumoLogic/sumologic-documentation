@@ -42,7 +42,7 @@ See more [budget assignment examples](#budget-assignment-examples) below and re
 There are two versions of ingest budgets:
 
 * V1 ingest budgets are older and have a **Field Value** for Collector assignment. They are shown with a **V1** in the **Name** cell.<br/> ![v1 budget tag.png](/img/ingestion-volume/v1-budget-tag.png)
-* V2 ingest budgets provide you the ability to assign budgets to your log data by either [Fields](/docs/manage/fields.md) or the following [built in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
+* V2 ingest budgets provide you the ability to assign budgets to your log data by either [Fields](/docs/manage/fields) or the following [built in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
 
 :::important
 You can edit an existing **V1** budget by providing a **scope** to change it to a **V2** budget that is metadata based. V2 budgets are manageable with the Ingest Budget Management API **V2**.

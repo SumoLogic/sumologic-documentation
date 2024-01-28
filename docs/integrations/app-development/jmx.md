@@ -251,10 +251,10 @@ annotations:
           prometheus.io/port: "9273"
 ```
 
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Jolokia Input plugin. Please refer [to this doc ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)for more information on configuring the Jolokia input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf Jolokia Input plugin. Please refer [to this doc ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)for more information on configuring the Jolokia input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
+* `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"`. This tells Prometheus what ports to scrape on. This should not be changed.
 
 </TabItem>
 </Tabs>

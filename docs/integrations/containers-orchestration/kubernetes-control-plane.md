@@ -215,7 +215,7 @@ Use this dashboard to:
 
 ### Security Audit Events
 
-This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `"falco:enabled"` as `"true"` in values.yaml as described [on this page](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
+This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `"falco:enabled"` as `"true"` in values.yaml as described [on this page](/docs/send-data/kubernetes/install-helm-chart).
 
 The **Kubernetes - Security Audit** Events dashboard provides insights into Kubernetes audit events collected by Falco.
 

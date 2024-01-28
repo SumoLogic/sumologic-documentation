@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Service Bus](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview) is a fully managed enterprise message broker with message queues and publish-subscribe topics (in a namespace) used for decoupling applications and services from each other. This integration helps in monitoring incoming/outgoing messages, connections, throttled requests, and resource usage of your Service Bus namespace.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Service Bus, you can collect the following logs and metrics:
 
-* **Resource logs**. To know more about the different resource log category types and schemas collected for Azure Service Bus, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/service-bus-messaging/monitor-service-bus-reference#resource-logs).
+* **Resource logs**. To learn more about the different resource log category types and schemas collected for Azure Service Bus, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/service-bus-messaging/monitor-service-bus-reference#resource-logs).
 * **Platform Metrics for Azure Service Bus**. These metrics are available in [Microsoft.ServiceBus/namespaces](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-servicebus-namespaces-metrics) namespace. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/service-bus-messaging/monitor-service-bus-reference#metrics).
 
 ## Setup

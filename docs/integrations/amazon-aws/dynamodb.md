@@ -15,7 +15,7 @@ The Sumo app for Amazon DynamoDB uses both logs and metrics to is a unified logs
 
 ## Collect Logs and Metrics for the Amazon DynamoDB app
 
-### Log and Metric types  
+### Log and metric types  
 
 The AWS DynamoDB app uses the following logs and metrics:
 

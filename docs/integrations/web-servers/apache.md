@@ -116,7 +116,7 @@ This section provides instructions for configuring log and metrics collection fo
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -398,7 +398,7 @@ For error logs, following directives are to be noted:
    * **File Path (Required).** Enter the path to your apache access logs. The files are typically located in `/var/log/apache2/access_log`. If you're using a customized path, check the httpd.conf file for this information.
    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Access**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
-   * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
+   * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
     * `component = webserver`
     * `webserver_system = apache`
     * `webserver_farm = <your_apache_webserver_farmname>`
@@ -419,7 +419,7 @@ For error logs, following directives are to be noted:
     * **File Path (Required).** Enter the path to your error_log. The files are typically located in `/var/log/apache2/error_log`. If you're using a customized path, check the httpd.conf file for this information.
     * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
     * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
-    * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
+    * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
     ```sql
     component = webserver
     webserver_system = apache
@@ -467,7 +467,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this[ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for Apache alerts. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/apache). You can either download it through the “git clone” command or as a zip file.
+3. Download the Sumo Logic Terraform package for Apache alerts. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/apache). You can either download it through the “git clone” command or as a zip file.
 4. Alert Configuration. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/apache/`.
    1. Edit the **apache.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
     ```bash

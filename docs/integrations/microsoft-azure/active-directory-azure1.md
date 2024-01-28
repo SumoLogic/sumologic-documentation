@@ -39,7 +39,7 @@ Only global administrators, security administrators, security readers, and repor
 
 This section has instructions for setting up the ingestion pipeline from Azure Active Directory to Sumo Logic.
 
-The sections below are either for FedRamp Sumo Logic deployments or if you have been advised by the Sumo Logic support team to not use the Cloud to Cloud Integration based on your Azure environments.
+The sections below are either for FedRamp Sumo Logic deployments or if you have been advised by the Sumo Logic support team to not use the Cloud-to-Cloud Integration based on your Azure environments.
 
 ### Configure an HTTP Source
 
