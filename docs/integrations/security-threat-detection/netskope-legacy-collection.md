@@ -1,7 +1,6 @@
 ---
 id: netskope-legacy-collection
-title: Netskope Legacy Collection
-sidebar_label: Netskope Legacy Collection
+title: Netskope (Legacy)
 description: The Netskope App created by Sumo Logic provides visibility into security posture for your applications, as well as allowing you to determine the overall usage of software and SaaS applications in your environment.
 ---
 
