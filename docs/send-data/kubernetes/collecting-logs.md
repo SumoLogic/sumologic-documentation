@@ -1,11 +1,9 @@
 ---
-id: logs
+id: collecting-logs
 title: Sumo Logic Kubernetes Helm Chart Log Collection
-sidebar_label: Log Collection
+sidebar_label: Collecting Logs
 description: Learn about collecting logs using the Sumo Logic Kubernetes Helm Chart.
 ---
-
-# Collecting Logs
 
 By default, log collection is enabled. This includes both container logs and systemd logs.
 
@@ -13,10 +11,9 @@ Container logs are read and parsed directly from the Node filesystem, where the 
 
 Systemd logs are read and parsed directly from the Node journal.
 
-They are then sent to a metadata enrichment service which takes care of adding Kubernetes metadata, custom processing, filtering, and
-finally sending the data to Sumo Logic. Both the collection and the metadata enrichment are done by the OpenTelemetry Collector.
+They are then sent to a metadata enrichment service which takes care of adding Kubernetes metadata, custom processing, filtering, and finally sending the data to Sumo Logic. Both the collection and the metadata enrichment are done by the OpenTelemetry Collector.
 
-See the [Solution Overview diagram](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#log-collection) for a visualisation.
+See the [Solution Overview diagram](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#log-collection) for a visualization.
 
 ## Configuration
 
@@ -77,16 +74,16 @@ sumologic:
 
 In that case `first_line_regex` of **first** matching condition is applied, and `sumologic.logs.multiline.first_line_regex` is used as expression for logs which don't match any of the condition.
 
-Conditions have to be valid [Open Telemetry Expression][expr].
+Conditions have to be valid [OpenTelemetry Expression](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.90.1/pkg/stanza/docs/types/expression.md).
 
 The following variables may be used in the condition:
 
-- `body` - body of a log
+- `body`. body of a log
 - `attributes["k8s.namespace.name"]`
 - `attributes["k8s.pod.name"]`
 - `attributes["k8s.container.name"]`
-- `attributes["log.file.path"]` - log path on the node (`/var/log/pods/...`)
-- `attributes["stream"]` - may be either `stdout` or `stderr`
+- `attributes["log.file.path"]`. log path on the node (`/var/log/pods/...`)
+- `attributes["stream"]`. may be either `stdout` or `stderr`
 
 Consider the following example:
 
@@ -116,8 +113,6 @@ It is going to:
 Logs which match multiple conditions are processed only by the first match.
 :::
 
-[expr]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.90.1/pkg/stanza/docs/types/expression.md
-
 ### Container Log format
 
 There are three log formats available: `fields`, `json_merge` and `text`. `fields` is the default.
@@ -133,23 +128,18 @@ sumologic:
 
 We're going to demonstrate the differences between them on two example log lines:
 
-1. A plain text log
-
+* A plain text log
    ```text
    2007-03-01T13:00:00Z I am a log line
    ```
-
-1. A JSON log
-
+* A JSON log
    ```json
    { "log_property": "value", "text": "I am a json log" }
    ```
 
 #### `json` log format
 
-`json` log format is an alias for `fields` log format.
-
-See [`fields` log format](#fields-log-format)
+`json` log format is an alias for the [`fields` log format](#fields-log-format).
 
 #### `fields` log format
 
@@ -477,7 +467,7 @@ be required.
 
 There are two ways of directly configuring OpenTelemetry Collector for both log collection and metadata enrichment. These are both advanced features requiring a good understanding of this chart's architecture and OpenTelemetry Collector configuration.
 
-The `metadata.logs.config.merge` and `otellogs.config.merge` keys can be used to provide configuration that will be merged with the Helm Chart's default configuration. It should be noted that this field is not subject to normal backwards compatibility guarantees, the default configuration can change even in minor versions while preserving the same end-to-end behaviour. Use of this field is discouraged - ideally the necessary customizations should be able to be achieved without touching the otel configuration directly. Please open an issue if your use case requires the use of this field.
+The `metadata.logs.config.merge` and `otellogs.config.merge` keys can be used to provide configuration that will be merged with the Helm Chart's default configuration. It should be noted that this field is not subject to normal backwards compatibility guarantees, the default configuration can change even in minor versions while preserving the same end-to-end behavior. Use of this field is discouraged - ideally the necessary customizations should be able to be achieved without touching the otel configuration directly. Please open an issue if your use case requires the use of this field.
 
 The `metadata.logs.config.override` and `otellogs.config.override` keys can be used to provide configuration that will be completely replace the default configuration. As above, care must be taken not to depend on implementation details that may change between minor releases of this Chart.
 
@@ -496,7 +486,7 @@ sumologic:
 
 ### Multiline unstructured logs with HTTP sources
 
-By default, the Helm Chart sends data to Sumo using the OpenTelemetry Protocol (OTLP), and therefore uses the [OTLP Source][otlp_source]. However, if you've chosen to use a [plain Http Source][http_source] by setting `sumologic.logs.source_type` to `http`, be aware that this source does not support client-side multiline parsing for logs in `text` format. You'll need to do multiline detection in the source itself. This can be set up in the Helm Chart configuration the following way:
+By default, the Helm Chart sends data to Sumo using the OpenTelemetry Protocol (OTLP), and therefore uses the [OTLP Source][otlp_source]. However, if you've chosen to use a [plain HTTP Source][http_source] by setting `sumologic.logs.source_type` to `http`, be aware that this source does not support client-side multiline parsing for logs in `text` format. You'll need to do multiline detection in the source itself. This can be set up in the Helm Chart configuration the following way:
 
 ```yaml
 sumologic:
