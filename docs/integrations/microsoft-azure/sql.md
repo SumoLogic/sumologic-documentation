@@ -114,27 +114,15 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
 ### Collect metrics from Azure Monitor by streaming to EventHub
 
 In this step, you configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. The pipeline is described on [Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md).
-1. Perform Steps 1 and Step 2 of [Collect Metrics from Azure Monitor.](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md)   
-In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DB/SQL/Metrics`
-2. Push metrics from Azure Monitor to Event Hub.
-   1. From the left pane, select **ALL Services**.
-   1. Search for and select **Monitor**.
-   1. In the **Monitor** pane, select **Diagnostic Settings** under **Settings**.
-   1. Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings**.
-   1. Once diagnostics are enabled, click **Add a diagnostic setting**.
-   1. The **Diagnostic Settings** page appears.
-   1. In the left pane:
-      1. Enter a name for the diagnostic setting.
-      1. Click the **Stream to an event hub** checkbox.
-      1. Select **Configure event hub.** The right pane appears.
-   1. In the right pane:
-      1. Choose a **Subscription**.
-      1. Select `SumoMetricsNamespace_<UniqueSuffix>` as the event hub namespace.
-      1. Select **insights-metrics-pt1m** as the event hub name.
-      1. Select an event hub policy name. You can use the default policy **RootManageSharedAccessKey**.
-   1. Check the **AllMetrics** box.
-   1. Click **OK**.
-   1. Save the **Diagnostics Setting**.
+
+1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source). Plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DB/SQL/Metrics`
+2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
+3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure SQL Database that you want to monitor.
+   * Choose `Stream to an event hub` as destination.
+   * Select all the metric types under `Metrics` section.
+   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. This should be same as configured in the Sumo Logic Function App **Integration** > **Trigger** settings.
+
+   ![diagnosticsetting.png](/img/send-data/azuresqldatabasediagnosticsetting.png)
 
 ## Installing the Azure SQL app
 
