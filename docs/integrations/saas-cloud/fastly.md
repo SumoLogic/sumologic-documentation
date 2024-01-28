@@ -19,7 +19,7 @@ The Fastly app uses the following log types:
 * Fastly WAF Request and Debug logs. For information about WAF, logging see [Fastly WAF logging](https://docs.fastly.com/guides/web-application-firewall/fastly-waf-logging).
 
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Top Error-causing URLs"
 _sourceCategory=fastly 50? | parse "\"reqPath\":\"*\"" as path, "\"status\":\"*\"" as status | urldecode(path) as path | where status > 499 | where status < 600 | count as errors by path | sort by errors

@@ -52,7 +52,7 @@ started (kafka.server.KafkaServer)
 </Tabs>
 
 
-## Sample Queries
+## Sample queries
 
 This sample query string is from the Logs panel of the **Kafka - Logs** dashboard.
 

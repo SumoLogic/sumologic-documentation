@@ -100,7 +100,7 @@ This section provides sample Amazon CloudWatch Log and CloudTrail Lambda Data Ev
 ```
 
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Requests by Function Versions (Based on CloudWatch logs)"
 account={{account}} region={{region}} Namespace={{namespace}}

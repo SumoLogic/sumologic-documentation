@@ -78,7 +78,7 @@ This section contains log messages for both `Risky Users` and `Risk detections` 
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 This section contains the sample queries of both the `Risky Users` and `Risk detections`.
 

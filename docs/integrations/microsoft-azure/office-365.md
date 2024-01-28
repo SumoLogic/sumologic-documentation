@@ -75,7 +75,7 @@ For information on Microsoft APIs and message types, see Microsoft Office 365 Au
   }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="SharePoint Operations"
 _sourceCategory=O365* CreationTime Workload ("\"Workload\":\"SharePoint\"" or "\"Workload\":\"OneDrive\"")

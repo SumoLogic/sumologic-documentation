@@ -125,7 +125,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Queries
+## Sample queries
 
 This sample log query is from the **Windows - PCI Req 02, 08, 10 - Account, User, System Monitoring** dashboard > **User Account Created** panel.
 

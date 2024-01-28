@@ -103,7 +103,7 @@ The Sumo Logic App for KnowBe4 consumes Phishing Security logs. Refer to the [Kn
 ```
 
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Total Phishing Security Tests"
 _sourceCategory="knowbe4nfr" campaign_id

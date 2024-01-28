@@ -176,7 +176,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 2021-04-01 08:30:20.002 UTC [11916] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample query is from the **PostgreSQL - Overview** dashboard, **Fatal Errors** panel.
 
