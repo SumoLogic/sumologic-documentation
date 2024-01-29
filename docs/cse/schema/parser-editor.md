@@ -10,6 +10,8 @@ import Iframe from 'react-iframe';
 
 This topic has instructions for using the Sumo Logic parser editor. You can use the editor to customize system parsers, and to create your own custom parsers. We provide [parser templates](#parser-templates) that you can use as a starting point for creating custom parsers.
 
+For a complete list of standard parsers, see [Parsers](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog).
+
 See additional articles for more information about the Sumo Logic Cloud SIEM parsers:
 * [Parsing Language Reference Guide](/docs/cse/schema/parsing-language-reference-guide)
 * [Parsing Patterns](/docs/cse/schema/parsing-patterns)
@@ -201,7 +203,7 @@ This section explains how to configure a Sumo Logic core platform source to send
 
 ## Parser templates
 
-We provide a number of parsers to extract data for normalization. However, you might need to create custom parsers for data sources not included in the parsers we offer. For this reason, we provide parser templates to aid in creating your own custom parsers.
+We provide a number of parsers to extract data for normalization (see [Parsers](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog)). However, you might need to create custom parsers for data sources not included in the parsers we offer. For this reason, we provide parser templates to aid in creating your own custom parsers.
 
 ### Access parser templates
 

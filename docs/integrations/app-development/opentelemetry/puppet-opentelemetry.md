@@ -218,7 +218,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 <LogsOutro/>
 
 
-## Sample Log Messages
+## Sample log messages
 
 This is a sample log message for non-Kubernetes environments.
 
@@ -226,7 +226,7 @@ This is a sample log message for non-Kubernetes environments.
 5.35.225.115 - - [2023-01-16 06:49:18.751 +0000] "POST /puppet/v3/file_content/plugins/facter/sources_dir_exists_win.rb?environment=production& HTTP/1.1" 500 4484 "-" "Puppet/5.5.2 Ruby/2.4.4-p296 (x86_64-linux)" 5
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample query is from the **Puppet - Overview** dashboard > **Node Requests Summary Over Time** panel.
 

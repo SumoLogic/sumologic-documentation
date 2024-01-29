@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic App for Jira Cloud provides insights into how your Jira projects and issues are being managed so as to enable you to be more effective and manage work across multiple teams. This guide provides instructions for installing and configuring the Jira Cloud App, as well as offering examples and descriptions of the app pre-configured dashboards.
 
 
-## Log Types
+## Log types
 
 The Jira Cloud App uses the following types of logs:
 
@@ -25,12 +25,12 @@ The Jira Cloud App uses the following types of logs:
 For more information, see [Webhooks](https://developer.atlassian.com/cloud/jira/platform/webhooks/) in Jira help
 
 
-### Sample Log Messages
+### Sample log messages
 
 For more information about log messages, see [Sample Log for Jira Cloud](https://developer.atlassian.com/cloud/jira/platform/rest/v2/).
 
 
-### Sample Query
+### Sample queries
 
 This section provides a sample query from the **Unassigned Issues** panel on the **Jira Cloud - Issue Details** dashboard.
 

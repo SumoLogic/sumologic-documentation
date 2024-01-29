@@ -182,7 +182,7 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Error Stream - Google Cloud Logging"
 _source="GKE Cloud Logs" error
@@ -236,13 +236,13 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 
 The GCP source receives log data from Google Pub/Sub. The GCP source will only be usable for log data formatted as data coming from Google Pub/Sub.
 
-To configure a Google Platform Source**, follow the instructions in [this document](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
+To configure a Google Platform Source, follow the instructions in [this document](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
 
 ### Configure a Pub/Sub topic for GCP
 
 Once you configure the Pub/Sub, you can export data from Google to the Pub/Sub.
 
-To configure a Pub/Sub topic for GCP**,  follow the instructions in [this document](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
+To configure a Pub/Sub topic for GCP, follow the instructions in [this document](/docs/send-data/hosted-collectors/google-source/google-cloud-platform-source).
 
 ### Create an export of Google Kubernetes Engine logs from Logging
 

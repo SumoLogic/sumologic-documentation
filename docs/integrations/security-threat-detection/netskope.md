@@ -14,7 +14,7 @@ The Netskope App provides visibility into the security posture of your applicati
 Netskope is a Cloud Access Security Broker (CASB) hosted in the cloud. The Netskope product is primarily used for enforcing security policies for cloud-based resources, such as Box and Microsoft Office 365. Customers purchase a CASB to address cloud service risks, enforce security policies, and comply with regulations, even when cloud services are beyond their perimeter and out of their direct control.
 
 
-## Log Types
+## Log types
 
 The Netskope App provides a collector source for pulling all the events and alerts from Netskope in real-time via API calls and ingests them into the Sumo Logic platform through our Hosted collector.
 
@@ -23,10 +23,10 @@ For more information on Netskope, refer to the Netskope [documentation](https://
 
 ## Collect Logs for Netskope
 
-To collect logs from the Netskope platform, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app. You can view the Netskope legacy collection method [here](/docs/integrations/security-threat-detection/netskope-legacy-collection/).
+To collect logs from the Netskope platform, use the [new Cloud-to-Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app. You can view the Netskope legacy collection method [here](/docs/integrations/security-threat-detection/netskope-legacy-collection/).
 
 
-### Sample Log message
+### Sample log message
 
 <details>
 <summary>Click to expand</summary>
@@ -86,7 +86,7 @@ To collect logs from the Netskope platform, use the [new Cloud to Cloud Integrat
 
 </details>
 
-### Sample Query  
+### Sample queries  
 
 The following query sample was is from the Total Sessions panel of the Application Overview Dashboard.
 

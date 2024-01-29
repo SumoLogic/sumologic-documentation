@@ -15,11 +15,11 @@ With the Sumo Logic app for Symantec Web Security, you can:
 - **Identify and block suspicious web activity**. You can use the app to monitor suspicious web activity, such as requests to known malicious sites.
 - **Optimize web security policies**. This app provides insights into web traffic that can help you to optimize web security policies. You can also use the app to identify areas where policies may be too restrictive or too permissive and make adjustments accordingly.
 
-## Log Types
+## Log types
 
 This App uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source) to collect [Access Logs](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/cloud-swg/help/wss-reference/accesslogformats-ref.html) from Symantec Web Security Service.
 
-## Sample Log Message
+## Sample log messages
 
 ```json title="Access Log"
  {
@@ -50,7 +50,7 @@ This App uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/
     ]
 }
 ```
-## Sample Query
+## Sample queries
 
 ```sql title="Unique Inbound Domains"
 _sourceCategory=swssDev
@@ -62,7 +62,7 @@ _sourceCategory=swssDev
 
 ## Set up collection
 
-To set up [Cloud to Cloud Integration Symantec Web Security Service Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source/) for the Symantec Web Security Service App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Symantec Web Security Service Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Symantec Web Security Service app is properly integrated and configured to collect and analyze your Symantec Web Security Service data.
+To set up [Cloud-to-Cloud Integration Symantec Web Security Service Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source/) for the Symantec Web Security Service App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Symantec Web Security Service Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Symantec Web Security Service app is properly integrated and configured to collect and analyze your Symantec Web Security Service data.
 
 ## Installing the Symantec Web Security Service App​
 

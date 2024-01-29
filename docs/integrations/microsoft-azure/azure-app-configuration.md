@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure App Configuration](https://learn.microsoft.com/en-us/azure/azure-app-configuration/overview) provides a service to centrally manage application settings and feature flags. This integration helps in monitoring resource usage, such as the total number of requests, number of throttled requests, and request duration per configuration store.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure App Configuration, you can collect the following logs and metrics:
 
-* **Resource logs**. To know more about the different resource log category types and schemas collected for Azure App Configuration, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-app-configuration/monitor-app-configuration-reference#resourcelogs).
+* **Resource logs**. To learn more about the different resource log category types and schemas collected for Azure App Configuration, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-app-configuration/monitor-app-configuration-reference#resourcelogs).
 * **Platform Metrics for Azure App Configuration**. These metrics are available in [Microsoft.AppConfiguration/configurationStores](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-appconfiguration-configurationstores-metrics) namespace. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-app-configuration/monitor-app-configuration-reference#metrics).
 
 ## Setup

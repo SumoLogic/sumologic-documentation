@@ -14,7 +14,7 @@ The Infrequent Data Tier App provides visibility into the On-demand Search usage
 With growing adoption of modern application stacks that leverage micro-services and distributed architectures, organizations are generating more and more machine data. A large part of this data is not required for every day mission-critical operations. However, organizations still need to retain and analyze this data, as it can provide value across multiple groups within a digital enterprise. A cost efficient solution that manages infrequently used data is currently lacking in the market place, forcing customers to either not retain the data or build home-grown solutions that are difficult to maintain, secure, and don’t provide easy access to insights when enterprise needs it.
 
 
-## Log Types
+## Log types
 
 The Search Audit Index for Infrequent Data Tier App has the following fields:
 
@@ -44,7 +44,7 @@ analytics_tier="Infrequent"
 ```
 
 
-### Sample Query
+### Sample queries
 
 The following query is from the **Data Scanned Over Time** panel of the **Infrequent Cost** dashboard.
 

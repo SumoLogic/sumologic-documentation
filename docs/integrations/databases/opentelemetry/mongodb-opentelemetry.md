@@ -17,7 +17,7 @@ MongoDB logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](htt
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Schematics.png' alt="Schematics" />
 
-## Log Types
+## Log types
 
 The MongoDB logs are generated in files as configured in the configuration file `/var/log/mongodb/mongodb.log`. For more details on MongoDB logs, see [this](https://docs.mongodb.com/manual/reference/log-messages/) link.
 
@@ -139,7 +139,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Log Message
+## Sample log messages
 
 ```sql
 {
@@ -173,7 +173,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 }
 ```
 
-## Sample Query
+## Sample queries
 
 Dashboard: MongoDB - Errors and Warnings, Panel: Errors by Component
 

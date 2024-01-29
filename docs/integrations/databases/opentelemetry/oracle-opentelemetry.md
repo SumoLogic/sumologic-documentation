@@ -21,7 +21,7 @@ Oracle logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](http
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Schematics.png' alt="Schematics" />
 
-## Log Types
+## Log types
 
 - Alert Logs
 - Listener Logs
@@ -239,7 +239,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Log Messages
+## Sample log messages
 
 Sample Log Message in Non-Kubernetes environment:
 
@@ -249,7 +249,7 @@ Sample Log Message in Non-Kubernetes environment:
 TNS-12514: TNS:listener does not currently know of service requested in connect descriptor
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample Query is from the **Oracle - Overview** dashboard > **DB Connection** panel.
 

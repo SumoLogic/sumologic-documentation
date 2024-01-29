@@ -33,7 +33,7 @@ This app uses Sumo Logic’s Alert Logic webhook to collect [Incident Events](ht
 
 Refer to [Alert Logic guide](https://docs.alertlogic.com/configure/connections/templated/incident.htm) for sample Incident Payload.
 
-## Sample query
+## Sample queries
 
 ```sql title="Events Count"
 _sourceCategory=alertlogic

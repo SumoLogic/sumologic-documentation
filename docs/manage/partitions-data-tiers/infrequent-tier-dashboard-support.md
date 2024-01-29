@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Previously, dashboards were only supported in Sumo Logic's Continuous data tier. This support enables you to also set up dashboard panels to include data from the Infrequent tier.
 
-## Sample Queries
+## Sample queries
 
 To use data from the Infrequent tier in your dashboard panels, you can use the following sample queries.
 

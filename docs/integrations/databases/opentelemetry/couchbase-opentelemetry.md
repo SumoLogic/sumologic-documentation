@@ -148,7 +148,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 _time=09/Jan/2023:04:50:03 +0000+07:00 _level=ERROR _msg=Failed to perform INSERT on key <ud>key1</ud> for Keyspace default:beer-sample.inventory.hotel. Error - <ud>Duplicate Key key1</ud>
 ```
 
-## Sample Queries
+## Sample queries
 
 Following query is from **Average Latency of All HTTP Requests** panel from Couchbase Overview dashboard:
 

@@ -40,7 +40,7 @@ In Sumo Logic, scheduled searches send alerts to other tools via webhook connect
 ## Create a Webhook Connection
 
 :::note
-You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 :::
 
 This section demonstrates how to create a webhook connection from Sumo Logic to Opsgenie.

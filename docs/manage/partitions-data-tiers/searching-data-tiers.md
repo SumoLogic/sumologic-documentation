@@ -65,7 +65,7 @@ The `_dataTier` search modifier is not supported in:
 * In scheduled searches, setting `_dataTier` to All, Frequent, or Infrequent is not supported.
 * Searches against Cloud SIEM data in Sumo Logic. Don't use `_dataTier` when searching Cloud SIEM data. Instead, use `_index` to specify the security partition or partitions you want to access, as described in [Searching for Cloud SIEM Records in Sumo Logic](docs/cse/records-signals-entities-insights/search-cse-records-in-sumo.md).
 
-In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](/docs/manage/fields.md) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
+In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](/docs/manage/fields) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
 
 ## Best practices
 
