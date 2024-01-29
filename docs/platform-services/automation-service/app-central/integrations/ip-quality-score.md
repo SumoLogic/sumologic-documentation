@@ -7,7 +7,7 @@ tags: [ ]
 <img src="/img/platform-services/automation-service/app-central/logos/ip-quality-score.png" width="200"/>
 
 Version: 1.2  
-Updated: January 29, 2024
+Updated: Jan 29, 2024
 
 Perform threat intelligence evidence gathering with IP Quality Score.
 
