@@ -87,14 +87,16 @@ You can also add threat intelligence indicators using the API or a collector. Se
 1. Click **Delete Indicators**. The following dialog appears. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
 1. Select indicators to delete from the source:
    * **Delete all indicators**. Remove all indicators from the source. 
-   * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the files uploaded in [Add indicators in the threat intelligence tab](#add-indicators-in-the-threat-intelligence-tab) above.
+   * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the indicators.
 1. Click **Delete**. 
 
-## Search for threats
+## Find threats
 
 Once you [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab), you can perform searches to find matches to data in the indicators using:
 * [`threatlookup` search operator](#threatlookup-search-operator)
 * [`hasThreatMatch` Cloud SIEM rules language function](#hasthreatmatch-cloud-siem-rules-language-function)
+
+You can also see threat indicators displayed on Entitties in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#threat-indicators-in-the-cloud-siem-ui).
 
 ### threatlookup search operator
 
@@ -176,11 +178,11 @@ The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Clou
 
 #### Syntax
 
-`hasThreatMatch([<fields>], <optional_filtering_predicate>, <indicators>)`
+`hasThreatMatch([<fields>], <filters>, <indicators>)`
 
 Parameters:
 * `<fields>` is a list of comma separated Entity field names. At least one field name is required.
-* `<optional_filtering_predicate>` is an optional simple boolean expression on the threat indicator fields. Allowed are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`.
+* `<filters>` is a logical expression using indicator attributes. (Allowed are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`.)
 * `<indicators>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
    * `active_indicators`. Match active indicators only (default).
    * `expired_indicators`. Match expired indicators only.
@@ -195,6 +197,25 @@ Parameters:
 * `hasThreatMatch([srcDevice_ip], source=”s1” OR (source=”s2” confidence > 50 AND))`
 * `hasThreatMatch([srcDevice_ip], expired_indicators)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
+
+### Threat indicators in the Cloud SIEM UI
+
+If an Entity has a known indicator with a `threatType` associated with it, then anywhere the Entity is displayed in the Cloud SIEM UI, a [threat indicator icon or label](/docs/cse/integrations/enrichments-and-indicators/#threat-indicators) will be displayed showing the Entity's "reputation" corresponding to that threat type:
+| threatType value | Label in the Cloud SIEM UI |
+| :-- | :-- | 
+| `anomalous-activity` | **Suspicious** |
+| `anonymization` |  **Suspicious** | 
+| `benign` |  **Not Flagged** | 
+| `compromised` |  **Malicious** | 
+| `malicious-activity` | **Malicious** | 
+| `attribution` |  (None) | 
+| `unknown` (or not set) |  **Suspicious** | 
+
+Note that if the mapping produces a threat indicator level of **Malicious**, but the confidence is less than 60, the Entity's reputation will be set to **Suspicious** instead. If there are multiple reputation values for a given Entity (potentially from threat intel and enrichment), Cloud SIEM will show the most severe indicator.
+
+Since different sources can report different reputations, each source has a reputation icon on its row in the Cloud SIEM UI. In the following example, the indicator from the Unit 42 source returned a reputation of Malicious, hence the red icon. The link to the right would open a log search window showing the matching indicators in detail.
+
+<img src={useBaseUrl('img/platform-services/threat-indicators-in-cloud-siem-ui.png')} alt="Threat indicators in the Cloud SIEM UI" style={{border: '1px solid gray'}} width="400" />
 
 ## Upload formats
 
@@ -269,8 +290,15 @@ The following attributes are required:
        * **source** (string). User-provided text to identify the source of the indicator. For example, `FreeTAXII`. 
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest (as [defined by the confidence scale in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_1v6elyto0uqg)). For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined by indicator_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `indicator`.
-       * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor1,actor2`. This attribute is frequently used in the s_CrowdStrike source. 
+       * **threatType** (string). Type of indicator (as [defined by indicator_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to Entities in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
+          * `anomalous-activity`. Unexpected or unusual activity that may not necessarily be malicious or indicate compromise.
+          * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
+          * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
+          * `compromised`. Assets that are suspected to be compromised.
+          * `malicious-activity`. Patterns of suspected malicious objects and/or activity.
+          * `attribution`. Patterns of behavior that indicate attribution to a particular threat actor or campaign.
+          * `unknown` (or not set). There is not enough information available to determine the threat type.
+       * **actor** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor1`. This attribute is frequently used in the s_CrowdStrike source. 
 
 ### CSV format
 
@@ -317,9 +345,15 @@ Columns for the following attributes are required in the upload file:
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest. For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined by indicator_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`.
+       * **threatType** (string). Type of indicator (as [defined by indicator_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to Entities in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
+          * `anomalous-activity`. Unexpected or unusual activity that may not necessarily be malicious or indicate compromise.
+          * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
+          * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
+          * `compromised`. Assets that are suspected to be compromised.
+          * `malicious-activity`. Patterns of suspected malicious objects and/or activity.
+          * `attribution`. Patterns of behavior that indicate attribution to a particular threat actor or campaign.
+          * `unknown` (or not set). There is not enough information available to determine the threat type.
        * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor1`. This attribute is frequently used in the s_CrowdStrike source. Note if you don’t provide a value for `actors`, you still must provide the empty column at the end of the row with an extra comma, as shown in the examples above.
-
 
 ### STIX 2.1 JSON format
 
@@ -331,7 +365,7 @@ Note that if you want to upload indicators from multiple sources, you cannot use
 
 Following is an example threat indicator file in STIX 2.1 JSON format. 
 
-As shown in the following example, if uploading via the API you must add the source attribute outside of the indicators object, since the source is not part of the STIX standard. However, if you are uploading via the UI, do not include the source value in the file, since the UI prompts for the source value when you [add the indicator](/docs/platform-services/threat-intelligence-indicators#add-indicators-in-the-threat-intelligence-tab).
+As shown in the following example, if uploading via the API you must add the `source` attribute outside of the indicators object, since the source is not part of the STIX standard. However, if you are uploading via the UI, do not include the `source` value in the file, since the UI prompts for the source value when you [add the indicator](/docs/platform-services/threat-intelligence-indicators#add-indicators-in-the-threat-intelligence-tab).
 
 (For another example for uploading via the API, see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)).
 
