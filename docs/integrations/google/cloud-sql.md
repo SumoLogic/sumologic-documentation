@@ -39,7 +39,7 @@ _sourceCategory=*gcp* data "type":"cloudsql_database" methodName
 project_id=* region=* cloud.platform=gcp_cloudsql database_id=* metric=database/cpu/utilization  statistic=average | eval _value*100 | avg 
 ```
 
-## Collecting logs for Google Cloud SQL
+## Collecting logs for the Google Cloud SQL
 
 This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud SQL.
 
@@ -133,7 +133,8 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 By default, GCP logs are stored within Cloud Logging, but you can configure Log Router to exclude them as detailed [here](https://cloud.google.com/logging/docs/exclusions#overview) without affecting the export to Sumo Logic as outlined above.
 :::
 
-## Collecting metric for the Google Cloud Functions app
+## Collecting metrics for the Google Cloud Functions app
+
 For metric collection in Sumo Logic use [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
 
 1. Setup the [Google Service Account](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
