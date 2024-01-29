@@ -13,7 +13,7 @@ description: Learn more about events in histogram and aggregate charts for your 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Events are actions that can change the state of the system. These could be code deployments, feature flag changes, infrastructure changes and so on. They can be used to identify and mitigate outages in your system. 
+Events are actions that can change the state of the system. These could be code deployments, feature flag changes, infrastructure changes, and so on. They can be used to identify and mitigate outages in your system. 
 
 :::note
 Currently, we only support code deploy events from [Kubernetes](/docs/observability/kubernetes/).
