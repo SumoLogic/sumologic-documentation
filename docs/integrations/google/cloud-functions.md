@@ -33,11 +33,12 @@ _sourceCategory=*gcp* logName textPayload "\"type\":\"cloud_function\"" "\"textP
 ```
 
 ### Sample metric query
+
 ```sql title="Number of Errors"
 cloud.provider=gcp project_id=* region=* cloud.platform=gcp_cloudfunctions function_name=* metric=function/execution_count statistic=average !status=ok | sum
 ```
 
-## Collecting Logs for the Google Cloud Functions App
+## Collecting logs for the Google Cloud Functions App
 
 This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for configuring log collection for the Google Cloud Functions App.
 
@@ -97,7 +98,7 @@ You need to configure a Pub/Sub Topic in GCP and add a subscription to the Sourc
 1. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
     * Use a **Push Delivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the **Collection** page in Sumo Logic and click **Show URL**.
 
-### Limitations
+#### Limitations
 
 Google limits the volume of data sent from a Topic. Our testing resulted in the following data limits:
 
@@ -130,7 +131,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 By default, GCP logs are stored within Cloud Logging, but you can configure Log Router to exclude them as detailed [here](https://cloud.google.com/logging/docs/exclusions#overview) without affecting the export to Sumo Logic as outlined above.
 :::
 
-## Collecting Metric for the Google Cloud Functions app
+## Collecting metrics for the Google Cloud Functions app
 
 For metric collection in Sumo Logic use [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
 
