@@ -63,6 +63,12 @@ The credits associated with the trial org allocations don’t impact the parent 
 
 You can upgrade a trial org by editing the org and changing the Plan Type. When you upgrade a POV Trial org, if the org is in a different Sumo Logic deployment from the parent org, the Credits çalculator may add a deployment factor, which is a percentage upcharge that varies by deployment.
 
+The plan gets downgraded to **Free** once the 45-day POV trial period is over. The data will be deleted post seven days after your POV trial expiration date, which can create issues when you request a re-activation. So, to overcome this issue, Sumo Logic now alerts you in three different places as shown below on the platform about the expiration date.
+
+- **Add Organizations**. While creating the New organization, you can view a information about downgrading your plan when the selected **Plan Type** is **POV Trail**.
+- **View details for the selected organizations**. You can see the **Plan Expiry** date with a information about the downgrading of your plan in the view details side panel for the selected organizations. This tooltip is different for CSV and Non-CSV provisioned child org.
+- **Child org table**. If the number of days left for expiry is less than 14, a warning icon with the expiry date will be shown against the respective organizations, and the information about downgrading your plan will turn into a warning with the same message.
+
 For more information, see [Upgrade a POV Trial org](#upgrade-a-pov-trial-org) below.
 
 ## Create a POV Trial org
