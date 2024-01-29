@@ -33,8 +33,8 @@ To set up the SDO solution manually, configure collection and install apps for 
 * [GitHub](/docs/integrations/app-development/github)
 * [Bitbucket App](/docs/integrations/app-development/bitbucket)
 * [Jenkins](/docs/integrations/app-development/jenkins)
-* [PagerDuty](/docs/integrations/saas-cloud/PagerDuty-V2)
-* [Opsgenie](/docs/integrations/saas-cloud/Opsgenie)
+* [PagerDuty](/docs/integrations/saas-cloud/pagerduty-v2)
+* [Opsgenie](/docs/integrations/saas-cloud/opsgenie)
 * [GitLab](/docs/integrations/app-development/gitlab)
 * [CircleCI](https://circleci.com/docs/sumo-logic-integration/)
 
@@ -51,26 +51,9 @@ When you copy the scope, replace the `$$<toolname>` variable with the source ca
 
 Install the Sumo Logic App for Software Development Optimization to use the pre-configured searches and [dashboards](../install-sdo-app-view-dashboards.md) that provide you insights and visibility into your DevOps phases and pipelines.
 
-To install the app:
+import AppInstall from '../../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the App Catalog, search for and select the app.
-1. Select the version of the service you're using and click Add to Library.
-    :::note
-    Version selection is applicable only to a few apps currently. For more information, see the Install the Apps from the Library.
-    :::
-1. To install the app, complete the following fields.
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    * **Data Source.** Select either of these options for the data source.
-        * Choose **Source Category**, and select a source category from the list.
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`).
-    * **Advanced.** Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-1. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 ## Complete Post-Setup Configurations
 
@@ -106,14 +89,16 @@ If you're using CircleCI for Build and Deploy, do the following:
 1. Access the Sumo Logic Platform and navigate to **Manage Data** > **Collection** page.
 1. [Configure a hosted collector](/docs/send-data/hosted-collectors) to ingest CircleCI data into Sumo and call it `Software Development Optimization`.
 1. Under this collector, create the following two [http sources](/docs/send-data/hosted-collectors/http-source/logs-metrics):
-   * `_sourcecategory=circleci/job-collector`
-   * `_sourcecategory="circleci/workflow-collector"`
+   * `_sourceCategory=circleci/job-collector`
+   * `_sourceCategory="circleci/workflow-collector"`
+
+   Sumo Logic sources, by default, have [multiline processing](https://help.sumologic.com/docs/send-data/reference-information/collect-multiline-logs/) enabled. You'll need to disable it here in order to collect structured logs for CircleCI.
 1. Copy and save displayed URLs associated with the sources. You will use this information to upload data.
 1. We navigate to the CircleCI project environment. We need to create three [environment variables](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project) in project settings of the environment:
    * `CIRCLE_TOKEN = <API personal token created in CircleCi>`
    * `JOB_HTTP_SOURCE = <url of job-collector source created above in step 3>`
    * `WORKFLOW_HTTP_SOURCE = <url of workflow-collector source created above in step 3>`
-1. Add the [sumo orb](https://circleci.com/developer/orbs/orb/sumologic/sumologic) in the configuration file of the project to send custom-data elements to Sumo. You can find a sample config.yml file [here](https://sumologic-app-data.s3.amazonaws.com/SDO/config.yml.zip).
+1. Add the [sumo orb](https://circleci.com/developer/orbs/orb/sumologic/sumologic) in the configuration file of the project to send custom-data elements to Sumo. You can find a sample config.yml file [here](https://github.com/SumoLogic/sumologic-orb/blob/main/src/examples/workflow-collector.yml).
 1. Navigate to **Manage Data** > **Logs** page. We select the Field Extraction Rules tab.
 1. [Create two FERs](/docs/manage/field-extractions/create-field-extraction-rule.md) for CircleCI build and deploy events. The parse expression and the scope of the FERs is available [here](https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
 

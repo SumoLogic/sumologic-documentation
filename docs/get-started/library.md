@@ -184,7 +184,7 @@ the following prefixes:
 * **type:dashboard** - Finds all Dashboards.
 * **type:dashboard keyword** - Lists all Dashboards that match the keyword.
 
-:::caution Limitations
+:::warning Limitations
 * Library Search is only supported in the **Personal** and **Org** folders.
 * Content type search is only supported in the **Personal** folder. 
 * Leading wildcards (`*ab`) are not supported.
@@ -308,7 +308,7 @@ In the **Library**, you can export content as JSON, including whole folders with
 
 The Export and Import functions are provided in order for you to transfer data immediately. The Sumo Logic JSON format may change without notice. There is no guarantee that you will be able to import the JSON in the future.
 
-:::caution limitations
+:::warning limitations
 * Recent Searches, Favorites, Scheduled Views, Partitions, Field Extraction Rules (FERs), and lookups are not supported.
 * For content that is shared, only the content is imported, not the Shared state. You can [share](/docs/dashboards) it again as necessary.
 * All content names must be unique within a folder in the Library.
@@ -322,7 +322,7 @@ The Export and Import functions are provided in order for you to transfer data i
 1. In the **Library**, do either:
     * To export an item, navigate to it, click the details icon for that item, and select **Export**.
     * To export a whole folder (with any subfolders), click the details icon for that folder select **Export**.
-1. In the **Export** **Item **dialog, do either:
+1. In the **Export** **Item** dialog, do either:
     * Click **Copy** to send it to the clipboard.
     * Click **Download** to download the content as a JSON file.
 1. Click **DONE** to close the window.
@@ -334,8 +334,8 @@ If you modify your JSON manually after export, we recommend that you use [JSONLi
 
 1. Navigate to the folder into which you want to import the library item.
 2. Select **Import** from the options menu.
-3. In the **Content Import **dialog, enter **Name.** The item name must be unique with a folder. **Check your JSON before importing to make sure that there is no organization-specific content.** All content names in an organization must be unique. If the name is not unique, you will get an error that prevents you from importing the content.
-4. Paste the JSON you copied from the** JSON** dialog to the clipboard, or from the JSON file you downloaded.
+3. In the **Content Import** dialog, enter **Name.** The item name must be unique with a folder. **Check your JSON before importing to make sure that there is no organization-specific content.** All content names in an organization must be unique. If the name is not unique, you will get an error that prevents you from importing the content.
+4. Paste the JSON you copied from the **JSON** dialog to the clipboard, or from the JSON file you downloaded.
 5. Click **Import**. The Import button is only available if you have pasted in a valid JSON.
 
 ## Library Filters

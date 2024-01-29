@@ -14,13 +14,15 @@ OTEL_RESOURCE_ATTRIBUTES="service.name=Accounts"
 OTEL_RESOURCE_ATTRIBUTES="application=OnlineBanking,exampleKey=exampleValue"
 ```
 
+Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels).
+
 ## Custom tags configuration through your code
 
 If the default tags are not providing enough relevant data you can add custom tags or attributes into spans. Follow these steps:
 
 ## Step 1: Satisfy project dependencies
 
-Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-sdk/1.16.0) library.
+Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-sdk/1.26.0) library.
 
 * Maven projects
 
@@ -29,7 +31,7 @@ Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/
     <dependency>
         <groupId>io.opentelemetry</groupId>
         <artifactId>opentelemetry-sdk</artifactId>
-        <version>1.16.0</version>
+        <version>1.26.0</version>
     </dependency>
     ```
 
@@ -37,7 +39,7 @@ Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/
 
     ```
     dependencies {
-    compile 'io.opentelemetry:opentelemetry-sdk:1.16.0'
+    compile 'io.opentelemetry:opentelemetry-sdk:1.26.0'
     }
     ```
 

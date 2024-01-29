@@ -53,12 +53,11 @@ To create an AWS Kinesis Firehose for Logs Source:
 
 1. (Optional) For **Source Host **and** Source Category**, enter any string to tag the output collected from the Source. (Category metadata is stored in a searchable field called _sourceCategory.)    
 
-1. **SIEM Processing**. Check the checkbox to forward your data to Cloud SIEM Enterprise.    
+1. **SIEM Processing**. Check the checkbox to forward your data to Cloud SIEM.    
 
 1.  **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
-
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.         
+     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
+     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.         
 
 1. Set any of the following options under **Advanced**. Advanced options do *not* apply to uploaded metrics.
 
@@ -100,3 +99,27 @@ When you [Specify a stack name and parameters](https://docs.aws.amazon.com/AWS
 * Stack name
 * Sumo Logic Source endpoint URL provided when you created the AWS Kinesis Firehose for Logs Source.
 * S3 path prefix (this is the prefix under which all failed logs will go in the S3 bucket).
+
+### Subscribe AWS Kinesis Firehose to CloudWatch Log Groups
+
+Follow the instructions in the sections below to subscribe the AWS Kinesis Firehose stream that was created in the above steps to CloudWatch Log Groups.
+
+#### Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group
+
+If you only need to collect logs from a few additional CloudWatch Log groups, you can manually subscribe the AWS Kinesis Firehose subscripton to an existing CloudWatch Log Group using the instructions below.
+
+1. Log in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
+2. Under **Management Tools**, select CloudWatch, then click **Logs** in the left- hand navigation menu.
+3. To select the CloudWatch Log Group that you want to stream to Sumo Logic, click **Actions** > **Subscription Filters** > **Create Kinesis Firehose subscription filter**.
+4. In the Create Kinesis Firehose subscription filter page, go to the **Choose Destination** section and select the Current account. Then select the Kinesis Firehose delivery stream that was created in the above steps.
+5. Under **Grant permissions**, select the existing role that was created in the above steps that grants CloudWatch Logs permission to put data into your Kinesis Data Firehose delivery stream. If you used the Cloudformation template, then the role name will contain the cloudformation name followed by `-KinesisLogsRole-`.
+6. In the **Configure log format and filters** section, select a Log format and enter a Subscription filter pattern (Optional) and Subscription filter name.
+    :::info
+    - If no subscription filter pattern is provided it will stream all the logs present in the log group.
+    - Sometimes log format will be specified in the Sumo Logic app specific collection page, so use that specific format otherwise dashboards may not light up.
+    :::
+7. (Optional) In the **Test Pattern** section, select the log data to test, then click **Test pattern**. If test results look fine, then click **Start Streaming**.
+
+#### Auto-subscribe other log groups to SumoCWLogsLambda function
+
+If you want to collect logs from multiple Log Groups, you can use Sumo’s LogGroup Lambda Connector to subscribe additional Log Groups to the AWS Kinesis Firehose. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a AWS Kinesis Firehose stream](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination). When you edit the connector parameters, set the `DestinationArnType` parameter to Kinesis, the `DestinationArnValue` parameter to the AWS Kinesis Firehose stream ARN, and the `ARNRole` parameter to the role that was created in the above steps that grants CloudWatch Logs permission to put data into your Kinesis Data Firehose delivery stream. If you used the Cloudformation template, then the role name will contain the cloudformation name followed by `-KinesisLogsRole-`.

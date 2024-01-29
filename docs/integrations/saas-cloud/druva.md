@@ -23,11 +23,11 @@ The Druva App offers the following capabilities:
 
 The Sumo Logic Druva App is a powerful tool for monitoring and protecting your data backups and archives. Organizations may gain important insights into their data security posture and respond quickly and efficiently to possible security events by leveraging Sumo Logic's Events API and advanced analytics capabilities.
 
-## Log Types
+## Log types
 
 The Druva App utilizes Sumo Logic's Druva Source to gather [Audit Events](https://developer.druva.com/docs/event-apis) from Druva. For more information on the fields of inSync events, refer to the [inSync events fields](https://developer.druva.com/docs/event-apis#obtain-events-api-response-in-syslog-format) documentation.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Audit Event log"
 {
@@ -52,7 +52,7 @@ The Druva App utilizes Sumo Logic's Druva Source to gather [Audit Events](https:
  }
 ```
 
-## Sample Query
+## Sample queries
 
 ```sql title="Number of Users"
 _sourceCategory="druva_app"
@@ -73,28 +73,16 @@ _sourceCategory="druva_app"
 
 ## Set up collection
 
-To set up [Cloud to Cloud Integration Druva Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source/) for the Druva App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva App is properly integrated and configured to collect and analyze your Druva data.
+To set up [Cloud-to-Cloud Integration Druva Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source/) for the Druva App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva App is properly integrated and configured to collect and analyze your Druva data.
 
 ## Installing the Druva App​
 
-This section has instructions for installing the Druva App for Sumo Logic and descriptions of each of the dashboards.
+This section has instructions for installing the Druva App for Sumo Logic.
+Refer to the [Druva Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source) to create the source and use the same source category while installing the app.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-1. From the **App Catalog**, search for the app and select it.
-1. Select **Add Integration** button to install the app.
-1. Configure **Druva App** using the steps described in the [Citrix Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source/). If you already have set up your data, skip this step by clicking on **Next**.
-1. Complete the following fields:
-   1. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For example, `_sourceCategory=MyCategory`.
-   2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app. 
-   3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-1. Click **Next**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
-
-The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
+<AppInstall/>
 
 ## Viewing Druva dashboards
 

@@ -17,7 +17,7 @@ Rapid7 app provides vital information, including asset count, distribution of as
 
 This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapid7.com/insightvm/en-us/api/integrations.html#tag/Asset) and [vulnerabilities](https://help.rapid7.com/insightvm/en-us/api/integrations.html#tag/Vulnerability) from Rapid7.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Asset Log"
  {
@@ -176,8 +176,8 @@ This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapi
   "severity_score": 4,
   "title": "jQuery Vulnerability: CVE-2015-9251"
 }
-``` 
-## Sample Query
+```
+## Sample queries
 
 ```sql title="Assets by Type"
 _sourceCategory="Rapid7" assessed_for_policies // fetches assets
@@ -191,7 +191,7 @@ _sourceCategory="Rapid7" assessed_for_policies // fetches assets
 ```
 
 ```sql title="Top 10 Vulnerabilities"
-_sourceCategory="Rapid7" (cvss_v2_access_complexity or asset_id) 
+_sourceCategory="Rapid7" (cvss_v2_access_complexity or asset_id)
 | join
 (json "id","severity","risk_score" as id, severity,risk_score) as vulnerability,
 (json "vulnerability_id","asset_id","finding_status" as vulnerability_id, asset_id, finding_status) as asset_vulnerability
@@ -205,11 +205,11 @@ on vulnerability.id=asset_vulnerability.vulnerability_id // get information of a
 
 ## Set up collection
 
-To set up [Cloud to Cloud Integration Rapid7 Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source) for the Rapid7 app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Rapid7 Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Rapid7 app is properly integrated and configured to collect and analyze your Rapid7 data.
+To set up [Cloud-to-Cloud Integration Rapid7 Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source) for the Rapid7 app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Rapid7 Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Rapid7 app is properly integrated and configured to collect and analyze your Rapid7 data.
 
 ## Installing the Rapid7 app​
 
-This section has instructions for installing the Sumo Logic app for Rapid7 and descriptions of each of the dashboards.
+This section has instructions for installing the Sumo Logic app for Rapid7.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. From the **App Catalog**, search for the app and select it.

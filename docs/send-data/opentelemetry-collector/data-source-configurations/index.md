@@ -10,33 +10,37 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Data sources or Source in Sumo refers to a specific application/infrastructure component from which the collector can collect telemetry (Logs, Metrics, and Traces). The sources include all configuration including protocol, receivers, processors, and exporters required to collect telemetry data from a given source. MySQL, Nginx, Kafka, Cassandra, and JMX are all examples of sources from where Sumo Logic collector can collect and send data. 
 
 
-### Configuration
+### Configuration 
 To collect data from a source the OpenTelemetry collector requires **source configuration**, that instructs the collector how to collect the data. [Learn More](https://opentelemetry.io/docs/collector/configuration/) about OpenTelemetry Collector configuration. 
+
+
+### How the OpenTelemetry Collector sends data to Sumo Logic
+Our OpenTelemetry Collector starts sending data to the Sumo Logic service as soon as it is available from the Sources configured on the Collector. Before sending the data, a Collector compresses (by a factor of 10x) and encrypts the data. A Collector sends data to the Sumo service over HTTPS using the SumoLogic Exporter.
 
 ## Guides
 
 In this section, we'll introduce the following concepts:
 
-<div class="box-wrapper" markdown="1">
-<div class="box smallbox1 card">
+<div class="box-wrapper" >
+<div class="box smallbox card">
   <div class="container">
   <a href="/docs/send-data/opentelemetry-collector/data-source-configurations/collect-logs"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Collect Logs</h4></a>
   <p>Instructions for collecting logs with the OpenTelemetry collector.</p>
   </div>
 </div>
-<div class="box smallbox2 card">
+<div class="box smallbox card">
   <div class="container">
   <a href="/docs/send-data/opentelemetry-collector/data-source-configurations/collect-metrics"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Collect Metrics</h4></a>
   <p>Instructions for collecting metrics with the OpenTelemetry collector.</p>
   </div>
 </div>
-<div class="box smallbox3 card">
+<div class="box smallbox card">
   <div class="container">
   <a href="/docs/send-data/opentelemetry-collector/data-source-configurations/collect-traces"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Collect Traces</h4></a>
   <p>Instructions for collecting tracing data with the OpenTelemetry collector.</p>
   </div>
 </div>
-<div class="box smallbox4 card">
+<div class="box smallbox card">
   <div class="container">
   <a href="/docs/send-data/opentelemetry-collector/data-source-configurations/additional-configurations-reference"><img src={useBaseUrl('img/icons/operations/data-collection.png')} alt="icon" width="40" /><h4>Additional Configurations</h4></a>
   <p>More OpenTelemetry collector configurations.</p>

@@ -15,11 +15,11 @@ SailPoint is an identity management solution that helps organizations manage emp
 
 The SailPoint Source ingests:
 
-* Events from the [Search API Endpoint](https://developer.sailpoint.com/apis/v3/#operation/search).
-* Users Inventory data from the [Public Identities API Endpoint](https://developer.sailpoint.com/apis/v3/#operation/getPublicIdentities).
+* Events from the [Search API Endpoint](https://developer.sailpoint.com/idn/api/v3/search).
+* Users Inventory data from the [Public Identities API Endpoint](https://developer.sailpoint.com/idn/api/v3/get-public-identities).
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {
@@ -87,7 +87,7 @@ The SailPoint Source ingests:
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Authentication Event"
 _sourceCategory=Labs/sailpoint ipAddress
@@ -111,14 +111,16 @@ _sourceCategory=Labs/sailpoint
 
 ## Set up collection
 
-Follow the instructions for setting up [Cloud to Cloud Integration for SailPoint App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app.
+Follow the instructions for setting up [Cloud-to-Cloud Integration for SailPoint App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app.
 
 
 ## Installing the SailPoint App
 
 This section demonstrates how to install the SailPoint App.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 
 ## Viewing SailPoint Dashboards

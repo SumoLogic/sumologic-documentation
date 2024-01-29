@@ -9,13 +9,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="150"/>
 
-The Sumo Logic App for Docker Community edition (CE) provides operational insight into your Docker containers. The App includes Dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.
+:::note
+The Docker app will be fully functional with Docker setup using [cgroup v1](https://docs.docker.com/config/containers/runmetrics/#control-groups).
+:::
 
-## Log Types
+The Sumo Logic app for Docker Community Edition (CE) provides operational insight into your Docker containers. This app includes dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.
+
+## Log types
 
 This Docker App monitors Docker container logs and metrics (stats) in log format only.
 
-If your system handles metrics, choose one of the following Sumo Logic apps: [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm) or [Docker EE](/docs/integrations/containers-orchestration/docker-enterprise-edition).
+If your system handles metrics, use the Sumo Logic app for [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm).
 
 ### Sample Event Log Messages  
 
@@ -37,7 +41,8 @@ If your system handles metrics, choose one of the following Sumo Logic apps: [Do
 }
 ```
 
-<details><summary>Docker stats message (click to expand)</summary>
+<details>
+<summary>Docker stats message (click to expand)</summary>
 
 ```json title="Docker stats message"
 {
@@ -129,7 +134,7 @@ If your system handles metrics, choose one of the following Sumo Logic apps: [Do
 
 </details>
 
-### Sample Query
+### Sample queries
 
 ```sql title="Containers created or started"
 _sourceCategory=docker  ("\"status\":\"create\"" or "\"status\":\"start\"")  id from
@@ -356,7 +361,9 @@ If a user-defined variable doesn’t exist, that portion of the metadata field w
 
 The Sumo App for Docker provides operational insight into your Docker containers. The app includes dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.  
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Docker CE Dashboards
 

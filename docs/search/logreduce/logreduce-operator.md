@@ -1,7 +1,7 @@
 ---
 id: logreduce-operator
 title: LogReduce Operator
-description: Allows you to quickly assess activity patterns for things like a range of devices or traffic on a website.
+description: The LogReduce Operator allows you to quickly assess activity patterns for things like a range of devices or traffic on a website.
 ---
 
 :::important
@@ -41,7 +41,7 @@ When you've already run a search query with non-aggregate results, you can use t
 | `field` | The field to group by similarity. If no field is provided the raw message is used. |
 | `byField` | Field to group signatures by. Results are returned aggregated. |
 | `limit` | Limits the number of signatures returned. The total number of signatures involved in a search query can be overwhelming, making final results hard to digest and comprehend. Use this parameter to limit the number of returned signatures. |
-| `criteria` | By default, LogReduce tries to find the most anomalous signatures. The criteria parameter can override the default criteria to either of the following values:<ul><li>`mostcommon`: Signatures that appear most frequently, having the highest counts.<li></li>`leastcommon`: Signatures that appear least frequently, having the lowest counts.</li></ul> |
+| `criteria` | By default, LogReduce tries to find the most anomalous signatures. The criteria parameter can override the default criteria to either of the following values:<ul><li>`mostcommon`: Signatures that appear most frequently, having the highest counts.</li><li>`leastcommon`: Signatures that appear least frequently, having the lowest counts.</li></ul> |
 
 ### Details option
 
@@ -56,7 +56,7 @@ After running a LogReduce operation, from the **Signatures** tab, you can view
 
 Details option syntax:
 
-`... | logreduce | details\<signatureI\>`
+<code>... | logreduce | details &lt;signatureId&gt;</code><br/>
 
 :::important
 Once a LogReduce query has run with the details operator, you can't use that query again, for example, in a separate Search tab.
@@ -100,7 +100,7 @@ _sourceCategory=kubernetes-audit
 1. First optimization:
 
     ```sql
-    _sourcecategory = "Labs/AWS/GuardDuty_V8"
+    _sourceCategory = "Labs/AWS/GuardDuty_V8"
     | json keys "resource", "partition", "region"
     | logreduce
     ```
@@ -108,15 +108,15 @@ _sourceCategory=kubernetes-audit
 1. Next LogReduce by region:
 
     ```sql
-    _sourcecategory = "Labs/AWS/GuardDuty_V8"
+    _sourceCategory = "Labs/AWS/GuardDuty_V8"
     | json keys "resource", "partition", "region"
     | logreduce(partition) by region limit=5,criteria=mostcommon
     ```
      
-1. The LogReduce operator can act as an aggregate operator, supporting grouping by `_timeslice` as well as by other dimensions, such as `_sourcehost`.  
+1. The LogReduce operator can act as an aggregate operator, supporting grouping by `_timeslice` as well as by other dimensions, such as `_sourceHost`.  
 
     ```sql
-    ...     | logreduce by _sourcehost
+    ...     | logreduce by _sourceHost
     ```
 
     By grouping by `timeslice`, you can determine how signature counts
@@ -141,5 +141,5 @@ _sourceCategory=kubernetes-audit
     ```sql
     _sourceCategory=MyApp`  
     | logreduce by _sourceHost limit=5,criteria=mostcommon
-    | transpose row _sourcehost column signature
+    | transpose row _sourceHost column signature
     ```

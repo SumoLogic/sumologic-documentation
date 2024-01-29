@@ -12,32 +12,48 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-This topic has information about Outlier rules and how to create them in the CSE UI.
+This topic has information about Outlier rules and how to create them in the Cloud SIEM UI.
 
 :::tip
-If you are new to writing rules, see [About CSE Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
+If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
 :::
 
 ## About Outlier rules
-Outlier rules allow you to generate a Signal when behavior by an Entity (such as a user) is encountered that deviates from its baseline activity. For example, an Outlier rule might look for the events like the following:
+
+Outlier rules allow you to generate a Signal when behavior by an Entity (such as a user) is encountered that deviates from its baseline activity. 
+
+For each Outlier rule, you create a filter condition to look for out-of-the-ordinary behavior that could indicate risk. For example, an Outlier rule might look for the events like the following:
 
 * Spike in login failures from a user
 * Abnormal number of high severity endpoint alerts
 * Spike in EC2 instance creation
 * Abnormal volume of data sent to third-party storage
 
-An Outlier rule is different from other CSE rule types in that the threshold for firing a signal is learned from the baseline. The rule expression in an Outlier rule is simply a filter condition that defines what incoming Records the rule will apply to. For each Outlier rule, CSE automatically creates a baseline model of normal behavior evidenced by Records that match the Rule Expression and the aggregate function for a specific time window. After the baseline learning period is completed, activity that deviates from the mean (normal baseline behavior) creates a Signal.
+When you create the rule, you can set the amount of time Cloud SIEM analyzes data to create a baseline model of behavior, with the default period being 30 days. You can set the rule to build data hourly or daily, depending on how frequently you believe events of interest will occur, and how much data you want to gather. Data for the baseline is retained by default for 90 days. In the rule, you set the model sensitivity threshold to calculate outlier activity based on the number of standard deviations from the mean (z‑score). 
 
-For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, CSE builds a baseline model of counts of authentication failures that are associated with a user over time. Once the baselining period is complete, CSE creates a Signal for every deviation from the mean observed in the time windows and incrementally add to the baseline.
+After the baseline period completes, Cloud SIEM tracks aggregates of count, sum, min, max, and averages of Record values, and creates a Signal when deviations from the mean occurs. For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, Cloud SIEM builds a baseline model of counts of authentication failures that are associated with a user over time, and creates a Signal when outlier behavior is detected:
+
+<img src={useBaseUrl('img/cse/outlier-signal-example.png')} alt="Outlier signal example" width="600"/>
+
+After your rule starts generating Signals, evaluate them to determine if they truly represent outliers of concern, and adjust the rule settings as needed. For example, if too many Signals are being generated, the baseline model is too sensitive, and you need to set the model sensitivity threshold higher on the rule; if too few Signals are generated, set the threshold lower. Among other things, also evaluate if the Signals from outliers are generating enough Insights. To [generate an Insight](/docs/cse/get-started-with-cloud-siem/insight-generation-process/), by default the combined severity scores of Signals need to be 12 or higher. Change the severity level in the Outlier rule to ensure that it is high enough to generate enough Signals to trigger Insights for investigation.
+
+Watch this micro lesson to learn more about Outlier rules.
+
+<Iframe url="https://www.youtube.com/embed/1HEUPWpDA_o?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe'; 
 
 ## Example rule
-The screenshot below shows an Outlier rule in the CSE rules editor. For an explanation of the configuration options, see [Configure an Outlier rule](#configure-an-outlier-rule), below.
+The screenshot below shows an Outlier rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Configure an Outlier rule](#configure-an-outlier-rule), below.
 
 <img src={useBaseUrl('img/cse/outlier-rule.png')} alt="Example Outlier Rule Definition"/>
 
@@ -45,8 +61,8 @@ The screenshot below shows an Outlier rule in the CSE rules editor. For an expla
 ## Configure an Outlier rule
 This section has instructions for configuring an Outlier rule.
 
-### If triggered
-The settings in the **If triggered** section are divided into two subsections, one for providing Baseline configuration, and the other for Outlier model configuration.
+### If Triggered
+The settings in the **If Triggered** section are divided into two subsections, one for providing Baseline configuration, and the other for Outlier model configuration.
 
 **Baseline Configuration**
 1. **For the records matching the expression**. Enter an expression that matches the Records that you want to rule to apply to.
@@ -61,12 +77,12 @@ The settings in the **If triggered** section are divided into two subsections, o
 
 **Outlier Model Configuration**
 1. **Detect an outlier for**. Select the aggregate function that applies to the field in the matched Records to build a normal behavior baseline on.
-1. **of the Record field**. Select one or more Record fields to build a baseline on and detect an Outlier Signal.
-1. **Advanced Expression** (optional). When selected, disables the record field selector and allows defining Record fields within the field window.
+1. **of the record field**. Select one or more Record fields to build a baseline on and detect an Outlier Signal.
+1. **Advanced Expression** (optional). When selected, disables the **of the record field** selector and allows defining Record fields within the field window. For the expression, you can use the syntax described in [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/). <br/>For example, in the out-of-the-box **Spike in PowerShell Command Line Length From Host** outlier rule, the **Advanced Expression** field is set to `length(commandLine)` to calculate when you see very long command lines out of the ordinary. 
 1. **Model Sensitivity Threshold** (1-5). Select the sensitivity of the model defined above. This is the number of standard deviations from the mean that the outlier model should consider for creating a Signal. Lower threshold corresponds to a more sensitive model resulting in more Signals.
 1. **Minimum Count Value** (default value 1). Enter the absolute minimum value below which an Outlier Signal will not be generated.
 
-### Then create a Signal
+### Then Create a Signal
 
 For instructions, see [Configure “Then Create a Signal” settings](/docs/cse/rules/write-match-rule/#configure-then-create-a-signal-settings) section of the Match Rule topic.
 
@@ -75,6 +91,17 @@ Sumo Logic ensures that Rule processing does not impact the reliability of produ
 
 On the Rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
 :::
+
+## When the baseline is reset for an Outlier rule
+
+The baseline learning period begins again when the following fields on the rule are updated or overridden:
+* **Baseline Configuration**:
+   * **For the records matching the expression**
+   * **build a daily/hourly baseline**
+   * **for the entity(ies)**
+* **Outlier Model Configuration**:
+   * **Detect an outlier for**
+   * **of the Record field**
 
 ## Use case for a spike in failed logins from a user
 

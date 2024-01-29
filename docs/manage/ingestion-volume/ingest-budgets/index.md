@@ -2,21 +2,20 @@
 slug: /manage/ingestion-volume/ingest-budgets
 title: Ingest Budgets
 description: Control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
-
 ---
-
-## Availability
-
-| Account Type | Account Level |
-|:--------------|:---------------------------------------------------------------------|
-| CloudFlex | Enterprise |
-| Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
 Ingest budgets control the daily volume of log data sent to Sumo Logic. Log data can be assigned to an ingest budget that defines a daily log capacity limit. The capacity is tracked based on the combined volume from all sources of log data. When an ingest budget's capacity is reached you can have Sumo Logic stop collecting the log data assigned to it to control costs.
 
 Ingest budgets automatically reset their capacity utilization tracking every 24 hours based on the time and time zone you specify. For example, you can schedule an ingest budget to refresh every day at 02:00 in the America/Los_Angeles time zone. You can manually [reset an ingest budget](#reset-ingest-budget) at any time.
 
-An ingest budget's capacity usage is logged in the Audit Index when the audit threshold is reached and continues to be logged until the budget is reset. To track and schedule alerts on ingest budget capacity-usage and resets see [audit ingest budgets](#audit-index-queries).
+An ingest budget's capacity usage is logged in the Audit Index when the audit threshold is reached and continues to be logged until the budget is reset. To track and schedule alerts on ingest budget capacity-usage and resets see [audit ingest budgets](#audit-index-budgets).
+
+## Availability
+
+| Account Type | Account Level |
+|:--------------|:--------------------------------------|
+| CloudFlex | Enterprise |
+| Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
 ## Rules
 
@@ -30,28 +29,20 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 * Data is not automatically recovered or ingested later once the capacity tracking is reset.
 * In the **scope**, do not wrap values in quotes, unless the value explicitly has quotes. For example, if you want to assign the scope with `_collector` and the name of the Collector is `CloudTrail`, you would assign the scope as `_collector=CloudTrail` instead of `_collector="CloudTrail"`.
 
-### Budget assignment
+## Budget assignment
 
-The **scope** supports the option to assign ingest budgets to your log data by either:
+import BudgetAssn from '../../../reuse/budget-assignment.md';
 
-* A Field that is enabled in the [Fields table](/docs/manage/fields.md). Fields are created in many ways, see [Fields](/docs/manage/fields.md) for details.
-* One of the following built-in metadata fields: `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, or `_sourceName`.
-
-The value supports a single wildcard, such as `_sourceCategory=prod*payment`.
-
-For example, a **scope** expression like `_sourceCategory=/dev/catalog/*` implies that all incoming logs ingested into Sumo Logic with a matching _sourceCategory will fall under the scope of the given budget.
+<BudgetAssn/>
 
 See more [budget assignment examples](#budget-assignment-examples) below and review the [rules](#rules) above.
 
-### Versions
+## Versions
 
 There are two versions of ingest budgets:
 
-* V1 ingest budgets are older and have a **Field Value** for Collector assignment. They are shown with a **V1** in the **Name** cell
-
-    ![v1 budget tag.png](/img/ingestion-volume/v1-budget-tag.png)
-
-* V2 ingest budgets provide you the ability to assign budgets to your log data by either [Fields](/docs/manage/fields.md) or the following [built in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
+* V1 ingest budgets are older and have a **Field Value** for Collector assignment. They are shown with a **V1** in the **Name** cell.<br/> ![v1 budget tag.png](/img/ingestion-volume/v1-budget-tag.png)
+* V2 ingest budgets provide you the ability to assign budgets to your log data by either [Fields](/docs/manage/fields) or the following [built in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
 
 :::important
 You can edit an existing **V1** budget by providing a **scope** to change it to a **V2** budget that is metadata based. V2 budgets are manageable with the Ingest Budget Management API **V2**.
@@ -64,11 +55,11 @@ Stopping collection differences:
 * First version ingest budgets take around 30 seconds to stop collecting when capacity is reached. We recommend setting a soft limit that is lower than your needed hard limit.
 * Second version ingest budgets drop data instantly once capacity is reached.
 
-### Source type behavior
+## Source type behavior
 
-A few Sources on Hosted Collectors behave differently when instructed tostop collecting data.
+A few Sources on Hosted Collectors behave differently when instructed to stop collecting data.
 
-* HTTP Sources will drop data requests yet still return a 200 response.
+* HTTP Sources will drop data requests, yet still return a `200 OK` response.
 * AWS S3 based Sources will skip objects. 
 * Cloud Syslog Sources will keep the connection open yet drop incoming syslog messages.
 
@@ -78,9 +69,9 @@ A few Sources on Hosted Collectors behave differently when instructed tostop col
 * [Ingest Budget Management API V1](/docs/api/ingest-budget-v2.md)
 * Terraform provider: [sumologic_ingest_budget_v2](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/ingest_budget_v2)
 
-### Manage ingest budgets
+## Manage ingest budgets
 
-Use the **Ingest Budgets** page to manage your ingest budgets. Toaccess the page go to **Manage Data** > **Collection** > **Ingest Budgets**.
+Use the **Ingest Budgets** page to manage your ingest budgets. To access the page go to **Manage Data** > **Collection** > **Ingest Budgets**.
 
 ![metadata ingest budgetspage.png](/img/ingestion-volume/metadata-ingest-budgets-page.png)
 
@@ -163,7 +154,7 @@ You can manually reset a budget at any time to set its capacity utilization tra
 
 #### Control ingest by team or service
 
-You can assign Collectors and Sources with [fields](/docs/manage/fields.md based on teams and services. For example, a field could be `team=<name of the team>` or `service=<name of the service>`. With these fields assigned, you can create a budget with the scope `team=<name of the team>` to achieve team based budgets. You can leverage Source fields for finer control over the scope of the budget. You can map a model of your deployment or organization to metadata fields and then create ingest budgets with a scope referencing them.
+You can assign Collectors and Sources with [fields](/docs/manage/fields) based on teams and services. For example, a field could be `team=<name of the team>` or `service=<name of the service>`. With these fields assigned, you can create a budget with the scope `team=<name of the team>` to achieve team based budgets. You can leverage Source fields for finer control over the scope of the budget. You can map a model of your deployment or organization to metadata fields and then create ingest budgets with a scope referencing them.
 
 #### Match against multiple budgets
 
@@ -181,7 +172,7 @@ Log messages can match against multiple budgets if two or more budgets have ove
     * Action = "stop collecting"  
     * Capacity= 2 GB
 
-In this case, all log messages ingested with `_sourceCategory=/service/payment/component/oracle` will match against both budget #1 and budget #1. This will consume capacity from both budgets. As expected, if either budget reaches its capacity, data will stop being collected since both budgets are set to stop collecting data.
+In this case, all log messages ingested with `_sourceCategory=/service/payment/component/oracle` will match against both budget #1 and budget #2. This will consume capacity from both budgets. As expected, if either budget reaches its capacity, data will stop being collected since both budgets are set to stop collecting data.
 
 This concept can be used to manage your ingestion with sub-budgets. Let’s understand this better with an example,
 
@@ -214,7 +205,7 @@ To ensure the combined daily ingestion for the infrastructure components ALB, Ka
 
 ### Audit ingest budgets
 
-The [Audit Index](/docs/manage/security/audit-index) logs events when an ingest budget has reached its configured Audit Threshold percent. There are two different log formats. 
+The [Audit Index](/docs/manage/security/audit-indexes/audit-index) logs events when an ingest budget has reached its configured Audit Threshold percent. There are two different log formats. 
 
 1. Approaching or exceeding capacity
 1. Resets
@@ -299,14 +290,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this section, we'll introduce the following concepts:
 
-<div className="box-wrapper" markdown="1">
-<div className="box smallbox1 card">
+<div className="box-wrapper">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/ingestion-volume/ingest-budgets/assign-collector-ingest-budget"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Assign Collector to Ingest Budget</h4></a>
   <p>Learn how to assign a Collector to an Ingest Budget.</p>
   </div>
 </div>
-<div className="box smallbox2 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/ingestion-volume/ingest-budgets/quickstart"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Ingest Budgets Quickstart Tutorial</h4></a>
   <p>Learn how to create and use Ingest Budgets.</p>

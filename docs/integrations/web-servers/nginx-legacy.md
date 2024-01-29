@@ -2,7 +2,7 @@
 id: nginx-legacy
 title: Nginx (Legacy)
 sidebar_label: Nginx (Legacy)
-description: The Sumo Logic App for Nginx (Legacy) helps you monitor webserver activity in Nginx.
+description: The Sumo Logic app for Nginx (Legacy) helps you monitor webserver activity in Nginx.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,22 +11,20 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/nginx-ingress.png')} alt="Thumbnail icon" width="75"/>
 
-Nginx (Legacy) is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
+Nginx (Legacy) is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache. The Sumo Logic app for Nginx (Legacy) support logs for Open Source Nginx, Nginx Plus, as well as Metrics for Open Source Nginx.
 
-The Sumo Logic App for Nginx (Legacy) support logs for Open Source Nginx, Nginx Plus, as well as Metrics for Open Source Nginx.
-
-The Sumo Logic App for Nginx (Legacy) helps you monitor webserver activity in Nginx. The preconfigured dashboards provide information about site visitors, including the location of visitors, devices/operating systems, and browsers used; and information about server activity, including bots observed and error information.
+The Sumo Logic app for Nginx (Legacy) helps you monitor webserver activity in Nginx. The preconfigured dashboards provide information about site visitors, including the location of visitors, devices/operating systems, and browsers used; and information about server activity, including bots observed and error information.
 
 ## Log and Metrics Types
 
-The Sumo Logic App for Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
+The Sumo Logic app for Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
-All Dashboards (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two. For more details on Nginx logs, see https://nginx.org/en/docs/http/ngx_http_log_module.html.
+All Dashboards (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two. For more details on Nginx logs, see [Module ngx_http_log_module](https://nginx.org/en/docs/http/ngx_http_log_module.html).
 
-The Sumo Logic App for Nginx assumes Prometheus format Metrics for Requests and Connections. For Nginx Server metrics, Stub_Status Module from Nginx Configuration is used. For more details on Nginx Metrics, see https://nginx.org/libxslt/en/docs/http/ngx_http_stub_status_module.html.
+The Sumo Logic app for Nginx assumes Prometheus format Metrics for Requests and Connections. For Nginx Server metrics, Stub_Status Module from Nginx Configuration is used. For more details on Nginx Metrics, see https://nginx.org/libxslt/en/docs/http/ngx_http_stub_status_module.html.
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```txt title="Access Log Example"
 50.1.1.1 - example [23/Sep/2016:19:00:00 +0000] "POST /api/is_individual HTTP/1.1" 200 58 "-"
@@ -39,9 +37,9 @@ failed (2: No such file or directory), client: 101.1.1.1, server: _, request: "G
 HTTP/1.1", host: "example.com", referrer: "https://abc.example.com/"
 ```
 
-### Sample Queries
+### Sample queries
 
-This sample Query is from the **Requests by Clients** panel of the **Nginx (Legacy) - Overview** dashboard.
+This sample query is from the **Requests by Clients** panel of the **Nginx (Legacy) - Overview** dashboard.
 
 ```
 _sourceCategory = Labs/Nginx/Logs
@@ -54,26 +52,24 @@ _sourceCategory = Labs/Nginx/Logs
 | sort count
 ```
 
-
 ## Collecting Logs and Metrics for Nginx (Legacy)
 
-This section provides instructions for configuring log and metrics collection for the Sumo Logic App for Nginx (Legacy), which is for non-Kubernetes environment.
+This section provides instructions for configuring log and metrics collection for the Sumo Logic app for Nginx (Legacy), which is for non-Kubernetes environment.
 
 ### Collecting Logs
 
 Nginx (Legacy) app supports the default access logs and error logs format.
 
-
 #### Step 1. Configure logging in Nginx
 
-Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following documentation: [https://www.nginx.com/resources/admin-guide/logging-and-monitoring/](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/).
+Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to [this documentation](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/).
 
 #### Step 2. Configure a Collector
 
 Use one of the following Sumo Logic Collector options:
 
 1. To collect logs directly from the Nginx machine, configure an [Installed Collector](/docs/send-data/installed-collectors).
-2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
+2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 
 #### Step 3. Configure a Source
@@ -96,7 +92,7 @@ To collect logs directly from your Nginx machine, use an Installed Collector and
     * **Description.** (Optional)
     * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/nginx/error.log. If you're using a customized path, check the nginx.conf file for this information. If you're using Passenger, you may have instructed Passenger to log to a specific log using the passenger_log_file option.
     * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced** section:
     * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
     * **Time Zone.** Automatically detect.
@@ -117,7 +113,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
     * **Name.** (Required)
     * **Description.** (Optional)
     * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced** section:
     * **Enable Timestamp Parsing.** Select **Extract timestamp information from log file entries**.
     * **Time Zone.** For Access logs, use the time zone from the log file. For Error logs, make sure to select the correct time zone.
@@ -130,7 +126,6 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
 </TabItem>
 </Tabs>
-
 
 ### Field Extraction Rules
 
@@ -160,17 +155,18 @@ For **FER for Error Logs**, use the following Parse Expression:
 \"*\"" as Client_Ip, Server, Method, URL, Host nodrop
 ```
 
+## Installing the Nginx (Legacy) app
 
-## Installing the Nginx (Legacy) App
+This section has instructions for installing the Sumo app for Nginx (Legacy). These instructions assume you have already set up the collection as described above.
 
-This section has instructions for installing the Sumo App for Nginx (Legacy). These instructions assume you have already set up the collection as described above.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-{@import ../../reuse/apps/app-install.md}
+<AppInstall/>
 
 ## Viewing Nginx (Legacy) Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables).
 :::
 
 ### Overview
@@ -270,65 +266,10 @@ Use this dashboard to:
 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Nginx server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
 
-<table>
-  <tr>
-   <td><strong>Alert Name</strong>
-   </td>
-   <td><strong>Alert Description</strong>
-   </td>
-   <td><strong>Alert Condition</strong>
-   </td>
-   <td><strong>Recover Condition</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx - Dropped Connections
-   </td>
-   <td>This alert fires when we detect dropped connections for a given Nginx server.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx - Critical Error Messages
-   </td>
-   <td>This alert fires when we detect critical error messages for a given Nginx server.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx - Access from Highly Malicious Sources
-   </td>
-   <td>This alert fires when an Nginx is accessed from highly malicious IP addresses.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-</table>
+| Alert Name | Alert Description | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|
+| Nginx - Dropped Connections | This alert fires when we detect dropped connections for a given Nginx server. | > 0 | < = 0 |
+| Nginx - Critical Error Messages | This alert fires when we detect critical error messages for a given Nginx server. | > 0 | < = 0 |
+| Nginx - Access from Highly Malicious Sources | This alert fires when an Nginx is accessed from highly malicious IP addresses. | > 0 | < = 0 |
+| Nginx - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | > 0 | < = 0 |
+| Nginx - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | > 0 | < = 0 |

@@ -30,7 +30,7 @@ If you have a Sumo Logic Enterprise Suite account, you can take advantage of th
     ![create-new-partition.png](/img/partitions-data-tiers/create-new-partition.png)
 1. **Name**. Enter a name for the Partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores ( `_` ). However, a Partition name cannot start with `sumologic_` or an underscore `_`.
 1. **Data Tier.** (Enterprise Suite accounts only) Click the radio button for the tier where you want the Partition to reside.
-1. **Routing Expression**. Enter a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the Partition, using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) or [custom metadata fields](/docs/manage/fields.md). If you have an Enterprise Suite account, and are going to assign the Partition to the Infrequent Tier, see the information in the [Assigning Data to a Data Tier](/docs/manage/partitions-data-tiers/data-tiers#assigning-data-to-a-data-tier) section of the [Data Tiers](/docs/manage/partitions-data-tiers/data-tiers) page.
+1. **Routing Expression**. Enter a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the Partition, using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) or [custom metadata fields](/docs/manage/fields). If you have an Enterprise Suite account, and are going to assign the Partition to the Infrequent Tier, see the information in the [Assigning Data to a Data Tier](/docs/manage/partitions-data-tiers/data-tiers#assigning-data-to-a-data-tier) section of the [Data Tiers](/docs/manage/partitions-data-tiers/data-tiers) page.
     :::note
     The [_dataTier](searching-data-tiers.md) search modifier is not supported in Partition routing expressions.
     :::
@@ -79,7 +79,7 @@ By default, Sumo Logic internal partitions, like `sumologic_audit_events`, `sumo
 :::
 * You can change the data forwarding configuration.
 * You cannot change the name of partition, reuse a partition name, or change the target Data Tier.  
-* Security partitions can’t be edited. Sumo Logic stores CSE Records in seven partitions, one for each CSE Record type. The names of the Sumo Logic partitions that contain CSE Records begin with the string `sec_record_`.  If you have a role that grants you the **View Partitions** capability, you can view the security partitions in the Sumo Logic UI. Note however, that no user can edit or remove a security partition.
+* Security partitions can’t be edited. Sumo Logic stores Cloud SIEM Records in seven partitions, one for each Cloud SIEM Record type. The names of the Sumo Logic partitions that contain Cloud SIEM Records begin with the string `sec_record_`.  If you have a role that grants you the **View Partitions** capability, you can view the security partitions in the Sumo Logic UI. Note however, that no user can edit or remove a security partition.
 
 ### Changing a partition's routing expression
 
@@ -93,7 +93,7 @@ Before changing the routing expression for a partition, consider the impact of t
 1. Click the row with the partition you want to edit.
 1. The partition details are displayed on the right side of the page.
 1. Click **Edit **to open the pane for editing.<br/> ![edit-partition-pane.png](/img/partitions-data-tiers/edit-partition-pane.png)
-1. **Routing Expression**. Enter a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the partition, using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) or [custom metadata fields](/docs/manage/fields.md).
+1. **Routing Expression**. Enter a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the partition, using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) or [custom metadata fields](/docs/manage/fields).
 1. **Retention Period.** Enter the number of days you wish to retain the data in the partition, or click **Apply the retention period of the Default Continuous Index**.
 1. **Data Forwarding**. You can configure Data Forwarding, or if Data Forwarding is already configured, modify the configuration. For more information, see [Data Forwarding](/docs/manage/data-forwarding).
 

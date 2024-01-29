@@ -9,18 +9,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/ecs.png')} alt="Thumbnail icon" width="50"/>
 
-Amazon Elastic Container Service (Amazon ECS) is a container management service that allows you to manage Docker containers on a cluster of Amazon EC2 instances. The Sumo Logic App for Amazon ECS provides preconfigured searches and Dashboards that allow you to monitor various metrics (CPU and Memory Utilization, CPU and Memory Reservation) across ECS clusters and services. The App also monitors API calls made by or on behalf of Amazon ECS in your AWS account.
+Amazon Elastic Container Service (Amazon ECS) is a container management service that allows you to manage Docker containers on a cluster of Amazon EC2 instances. The Sumo Logic app for Amazon ECS provides preconfigured searches and Dashboards that allow you to monitor various metrics (CPU and Memory Utilization, CPU and Memory Reservation) across ECS clusters and services. The app also monitors API calls made by or on behalf of Amazon ECS in your AWS account.
 
-## Log and Metrics Types
-The App collects ECS logs and metrics for:
+## Log and Metrics types
+
+The app collects ECS logs and metrics for:
 * [ECS CloudWatch Metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html).
 * [ECS Events using AWS CloudTrail](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html).
    * All Amazon ECS actions are logged by CloudTrail and documented in the [Amazon Elastic Container Service API Reference](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Operations.html).
 
 
-### Sample Log Message
+### Sample log messages
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -273,7 +275,7 @@ The App collects ECS logs and metrics for:
 
 </details>
 
-### Sample Query
+### Sample queries
 
 ```sql title="Deleted Resources Over Time"
 _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInstance or DeregisterTaskDefinition or StopTask) and !(InternalFailure)
@@ -289,8 +291,7 @@ _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInsta
 
 ## Collect Logs and Metrics for Amazon ECS
 
-This section has instructions for collecting logs and metrics for the Amazon ECS App.
-
+This section has instructions for collecting logs and metrics for the Amazon ECS app.
 
 ### Collect Metrics for Amazon ECS
 
@@ -333,37 +334,22 @@ In this step, you set up an [AWS CloudTrail Source](/docs/send-data/hosted-colle
         * Role-based access. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).  For Role-based access enter the Role ARN that was provided by AWS after creating the role.  \
         * For Key access enter the Access Key ID and Secret Access Key. For more information, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in AWS help.
     * **Scan Interval.** Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-    * **Enable Timestamp Parsing.** Select the check box.
-    * **Time Zone.** Select **Ignore time zone from log file and instead use**, and select **UTC**.
-    * **Timestamp Format.** Select **Automatically detect the format**.
-    * **Enable Multiline Processing.** Select the check box, and select** Infer Boundaries**.
+   * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+   * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+   * **Timestamp Format.** Select **Automatically detect the format**.
+   * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 12. Click **Save**.
 
 
+## Installing the Amazon ECS app
 
-## Installing the Amazon ECS App
+Now that you have set up collection for Amazon ECS, install the Sumo Logic app for Amazon ECS to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-Now that you have set up collection for Amazon ECS, install the Sumo Logic App for Amazon ECS to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-To install the app:
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+<AppInstall/>
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    * **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-## Viewing the Amazon ECS Dashboards
+## Viewing the Amazon ECS dashboards
 
 ### Overview
 
@@ -381,7 +367,7 @@ Panels include:
 ### CPU and Memory Reservation - Cluster
 
 Definitions:
-* **CPU Reservation. **The percentage of CPU units that are reserved by running tasks/services in the cluster.
+* **CPU Reservation.** The percentage of CPU units that are reserved by running tasks/services in the cluster.
 * **Memory Reservation.** The percentage of memory that is reserved by running tasks/services in the cluster.
 
 For more information, see [http://docs.aws.amazon.com/AmazonECS...ce_utilization](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#service_utilization)
@@ -431,9 +417,9 @@ Panels include:
 
 
 ### Events
-**Events by Type. **Displays events by type in a table chart including details on event name and count for the last 24 hours.
+**Events by Type.** Displays events by type in a table chart including details on event name and count for the last 24 hours.
 
-**ECS Events Over Time. **Shows ECS events over time in a line chart on a timeline for the last 24 hours.
+**ECS Events Over Time.** Shows ECS events over time in a line chart on a timeline for the last 24 hours.
 
 **Location of Events.** Performs a geo lookup operation and displays the location of ECS events on a map of the world for the last 24 hours.
 
@@ -441,7 +427,7 @@ Panels include:
 
 **Deleted Resources.** Displays details about deleted resources in a column chart for the last 24 hours.
 
-**Resource Creation Over Time. **Shows information on resources created in a column chart for the last 24 hours.
+**Resource Creation Over Time.** Shows information on resources created in a column chart for the last 24 hours.
 
 **Deleted Resources Over Time.** Displays deleted resources in a column chart for the last 24 hours.
 

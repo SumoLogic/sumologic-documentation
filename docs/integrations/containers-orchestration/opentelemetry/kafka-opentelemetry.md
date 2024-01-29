@@ -21,7 +21,7 @@ The diagram below illustrates the components of the Kafka collection for each Ka
 
 This App has been tested with following Kafka versions: 2.6.0, 2.7.0 and 3.1.2.
 
-## Log Types and Metrics
+## Log types and Metrics
 
 The Sumo Logic App for Kafka assumes:
 
@@ -42,15 +42,19 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 Configure logging in Kafka: By default, Kafka logs (`server.log` and `controller.log`) are stored in the directory called `/opt/Kafka/kafka_<VERSION>/logs`. Make a note of this logs directory.
 
-## Collecting Logs, Metrics and Installing App for Kafka
+## Collection configuration and app installation
 
-The process to set up collection for Kafka data is done through the following steps.
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up OpenTelemetry Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -65,11 +69,13 @@ Below is the input required:
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -78,6 +84,9 @@ Click on the **Download YAML File** button to get the yaml file.
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -107,19 +116,44 @@ Click on the **Download YAML File** button to get the yaml file.
   ```
 
 </TabItem>
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 
-## Sample Log Messages
+## Sample log messages
 
 ```
 [2021-03-10 20:12:28,742] INFO [KafkaServer id=0]
 started (kafka.server.KafkaServer)
 ```
 
-## Sample Queries
+## Sample queries
 
 ### Log query
 
@@ -156,7 +190,7 @@ sumo.datasource=kafka  metric=kafka.topic.partitions messaging.cluster.name={{m
 
 ## Viewing Kafka Dashboards
 
-**Filters with Template Variables**: Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables/).
+**Filters with Template Variables**: Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables/).
 
 ### Kafka - Overview
 

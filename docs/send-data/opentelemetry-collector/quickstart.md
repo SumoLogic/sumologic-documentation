@@ -4,6 +4,7 @@ title: OpenTelemetry Collector Quickstart
 sidebar_label: Quickstart
 description: Get up and running quickly with the Sumo Logic OpenTelemetry Collector.
 ---
+<!-- temporarily pulled from docs -->
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -25,7 +26,7 @@ We'll show a simple example of running a single collector, on a single machine, 
 ## Before you begin
 
 * You'll need a Sumo Logic account. If you don't have one, [start a free trial](/docs/get-started/sign-up/#sign-up-through-sumo-logic).
-* Review [What's the difference between OpenTelemetry and the Sumo Logic Distribution for OpenTelemetry?](/docs/send-data/opentelemetry-collector/troubleshooting-faq/#whats-the-difference-between-opentelemetry-and-the-sumo-logic-distribution-for-opentelemetry)
+* Review [What's the difference between OpenTelemetry and the Sumo Logic Distribution for OpenTelemetry?](/docs/send-data/opentelemetry-collector/troubleshooting/#whats-the-difference-between-opentelemetry-and-the-sumo-logic-distribution-for-opentelemetry)
 
 
 ## Installation
@@ -48,7 +49,8 @@ In this section, you'll create a new [installation token](/docs/manage/security/
 
 ### Step 3: Install the collector on the target machine
 
-<details><summary>What's a collector?</summary>
+<details>
+<summary>What's a collector?</summary>
 A collector is an executable program that collects and sends observability data. It typically runs directly on the node that is being monitored (this is the OTel agent).
 </details>
 
@@ -60,7 +62,7 @@ We've created a one-step installation script to make it easier to install the co
    ```
 1. Next, run the install script. You’ll need to use `sudo` here, so ensure you run this from an account with admin privileges.
    ```bash
-   curl -s https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/scripts/install.sh | sudo -E bash -s -- --installation-token "${SUMOLOGIC_INSTALL_TOKEN}"
+   curl -s https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- --installation-token "${SUMOLOGIC_INSTALL_TOKEN}"
    ```
 1. After running the install script, you should see the following files installed:
    - `/usr/local/bin/otelcol-sumo`. The collector executable. This should be on your `PATH`.
@@ -95,7 +97,8 @@ receivers:
           - logging
 ```
 
-<details><summary>What are <code>receivers</code>, <code>exporters</code>, and <code>services</code>?</summary>
+<details>
+<summary>What are <code>receivers</code>, <code>exporters</code>, and <code>services</code>?</summary>
 
 The [`receivers` section](https://opentelemetry.io/docs/collector/configuration/#receivers) describes the sources from which we will collect observability data. The receiver is a component within the collector that understands how to receive data from a particular source. This will have custom code for understanding various types of services to derive metrics from (like Nginx or PostgreSQL). In this case, we’re going to be using the `hostmetrics` receiver, which can collect CPU, disk, and memory information from the host machine that the collector is running on. In that stanza, we specify that we want the collector to scrape information once every 5 seconds, and that we want to run the `memory` scraper. To learn more about `hostmetrics` receiver, check out the docs.
 

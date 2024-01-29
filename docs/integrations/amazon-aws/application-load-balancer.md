@@ -12,7 +12,7 @@ The AWS Application Load Balancer functions at the application layer, receives r
 
 The Sumo Logic App for AWS Application Load Balancing uses logs and metrics to give you visibility into the health of your Application Load Balancer and target groups. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group.
 
-## Log Types
+## Log types
 
 This app uses:
 * The metrics are included in the AWS/Application ELB namespace. For more details, see [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/elb-metricscollected.html#load-balancer-metrics-alb).
@@ -35,13 +35,13 @@ The log format is described in [AWS Application Load Balancer Access Log Collect
 
 For details on the metrics of AWS Application Load Balancing, see [here](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-cloudwatch-metrics.html).
 
-### Sample Log message
+### Sample log message
 
 ```json
 https 2017-11-20T22:05:36 long-bill-lb 77.222.19.149:41148 10.168.203.134:23662 0.000201 0.401924 0.772005 500 200 262 455 "GET https://elmagek.no-ip.org:443/json/v1/collector/histogram/100105037?startTimestamp=1405571270000&endTimestamp=1405574870000&bucketCount=60&_=1405574870206 HTTP/1.1" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.4) Gecko/2008102920 Firefox/3.0.4" DH-RSA-AES256-GCM-SHA384 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:104030218370:targetgroup/Prod-frontend/92e3199b1rc814fe9 "Root=1-58337364-23a8c76965a2ef7629b185e134"
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Access-Log-Based"
 account="account" region="region" namespace="AWS/ApplicationELB"
@@ -93,7 +93,9 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 #### Configure an ELB Source
 
-{@import ../../reuse/apps/create-aws-s3-source.md}
+import Aws3 from '../../reuse/apps/create-aws-s3-source.md';
+
+<Aws3/>
 
 ### Field in Field Schema
 
@@ -117,19 +119,9 @@ parse "* * * * * * * * * * * * \"*\" \"*\" * * * \"*\"" as Type, DateTime, loadb
 
 Now that you have set up collection for AWS Application Load Balancer, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library** and complete the following fields.
-    * **App Name**. You can retain the existing name, or enter a name of your choice for the app.
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    * Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 ## Viewing AWS Application Load Balancer Dashboards
 

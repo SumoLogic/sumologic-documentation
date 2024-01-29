@@ -10,7 +10,7 @@ The Data Volume Index gives you visibility into how much data you are sending to
 
 The Data Volume Index provides data for logs and metrics:
 
-* **Logs and Tracing.** Ingest volume in bytes and the number of log messages. Tracing ingest volume in billed bytes and spans count. See [Log Ingest Data Volume Index](log-tracing-data-volume-index.md) and [Tracing Ingest Data Volume Index](metrics-data-volume-index.md) for details.
+* **Logs and Tracing.** Ingest volume in bytes and the number of log messages. Tracing ingest volume in billed bytes and spans count. See [Log and Tracing Data Volume Index](log-tracing-data-volume-index.md) for details.
 * **Metrics.** Ingest volume measured in data points. See [Metrics Ingest Data Volume Index](metrics-data-volume-index.md) for details.
 
 The Data Volume Index must be manually enabled by an administrator. The index then begins populating. A set of messages within the index is created every five minutes. The data does not backfill and is provided to the index only when the option is enabled.
@@ -43,13 +43,13 @@ A message confirms that the feature is enabled.
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper" markdown="1">
-<div className="box smallbox1 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Log and Tracing Data Volume Index</h4></a>
   <p>Get to know how much data your account is ingesting.</p>
   </div>
 </div>
-<div className="box smallbox2 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index"><img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="40"/><h4>Metrics Data Volume Index</h4></a>
   <p>Get to know the volume of metric data points your account is ingesting.</p>

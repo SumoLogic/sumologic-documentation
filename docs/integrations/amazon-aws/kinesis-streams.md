@@ -1,24 +1,24 @@
 ---
 id: kinesis-streams
 title: Amazon Kinesis - Streams
-description: The Sumo Logic App for Amazon Kinesis - Streams is a unified logs and metrics (ULM) App which provides information on the events and metrics. The preconfigured dashboards help you monitor the events, API calls, errors, incoming and outgoing records, latencies, and throughput of Kinesis.
+description: The Sumo Logic app for Amazon Kinesis - Streams is a unified logs and metrics (ULM) app which provides information on the events and metrics. The preconfigured dashboards help you monitor the events, API calls, errors, incoming and outgoing records, latencies, and throughput of Kinesis.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/kinesis.png')} alt="Thumbnail icon" width="50"/>
 
-Amazon Kinesis is a platform for streaming data on AWS. It makes it easy to load and analyze streaming data, and it provides the ability for you to build custom streaming data applications for your needs. Amazon Kinesis Streams is used to collect and process large streams of data records in real time. The Sumo Logic App for Amazon Kinesis - Streams is a unified logs and metrics (ULM) App which provides information on the events and metrics. The preconfigured dashboards help you monitor the events, API calls, errors, incoming and outgoing records, latencies, and throughput of Kinesis Streams.
+Amazon Kinesis is a platform for streaming data on AWS. It makes it easy to load and analyze streaming data, and it provides the ability for you to build custom streaming data applications for your needs. Amazon Kinesis Streams is used to collect and process large streams of data records in real time. The Sumo Logic app for Amazon Kinesis - Streams is a unified logs and metrics (ULM) app which provides information on the events and metrics. The preconfigured dashboards help you monitor the events, API calls, errors, incoming and outgoing records, latencies, and throughput of Kinesis Streams.
 
-## Log and Metrics Types
+## Log and Metrics types
 For more information on Amazon Kinesis - Streams, see [here](https://aws.amazon.com/kinesis/).
 
-The App uses Kinesis logs and metrics for:
+The app uses Kinesis logs and metrics for:
 * Kinesis CloudWatch Metrics. For details, see [here](http://docs.aws.amazon.com/streams/latest/dev/monitoring-with-cloudwatch.html).
 * Kinesis operations using AWS CloudTrail. For details, see [here](http://docs.aws.amazon.com/streams/latest/dev/logging-using-cloudtrail.html).
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
  {  
@@ -50,7 +50,7 @@ The App uses Kinesis logs and metrics for:
  }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Details of errors in events"
 _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
@@ -64,7 +64,7 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 | count by error_code, error_msg, eventName, userName, sourceIPAddress
 ```
 
-## Collecting Logs and Metrics for the Amazon Kinesis - Streams App
+## Collecting Logs and Metrics for the Amazon Kinesis - Streams app
 
 ### Collecting Metrics
 
@@ -91,20 +91,22 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
     * **Source Category**. Enter a source category. For example, kinesis_event.
     * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
     * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-    * **Enable Timestamp Parsing**. Select the check box.
-    * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-    * **Timestamp Format.** Select Automatically detect the format.
-    * **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+    * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+    * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+    * **Timestamp Format.** Select **Automatically detect the format**.
+    * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 2. Click **Save**.
 
 
-## Installing the Amazon Kinesis - Streams App
+## Installing the Amazon Kinesis - Streams app
 
-Now that you have set up collection for Amazon Kinesis, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon Kinesis, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
 
-## Viewing Amazon Kinesis Streams Dashboards
+<AppInstall/>
+
+## Viewing Amazon Kinesis Streams dashboards
 
 ### Events
 

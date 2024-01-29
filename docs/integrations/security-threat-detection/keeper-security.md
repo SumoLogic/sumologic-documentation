@@ -13,17 +13,13 @@ This application has been developed and is supported by [Keeper Security](https:
 
 Keeper is the leading secure password manager and digital vault for businesses and individuals. The Keeper Security App for Sumo Logic helps you monitor admin actions, user activities and security risks. The App consists of dashboards and queries that allow you to monitor events logged by Keeper to Sumo Logic.
 
-
-## Log Types
+## Log types
 
 The Keeper Security App uses Keeper Audit logs in JSON format pushed to Sumo HTTP Log Source by Keeper. For a description of the information available in the logs see [Keeper Audit Event List](https://docs.keeper.io/enterprise-guide/event-reporting#event-list).
 
-
 ## Collecting Logs for Keeper Security
 
-This application has been developed and is supported by [Keeper Security](https://keepersecurity.com/). For more information about Keeper please visit [https://keepersecurity.com](https://keepersecurity.com/) or email **business.support@keepersecurity.com** for help.
-
-This section provides instructions for collecting logs for the Keeper Security App for Sumo Logic. This process is as follows:
+This section provides instructions for collecting logs for the Keeper Security App for Sumo Logic. This process is as follows.
 
 ### Step 1: Configure a collector
 
@@ -34,11 +30,11 @@ To configure a collector for Keeper Security, follow the instructions in the [Ho
 You can configure sources for collectors that are hosted in Amazon Web Services (AWS), Microsoft, or other hosting services.
 
 To configure an HTTP source for Keeper, do the following:
+
 1. Go to the [Sources for Hosted Collectors](/docs/send-data/hosted-collectors/) page.
 2. Select the hosting service appropriate for your environment.
 3. Follow the instructions for adding an **HTTP Log Source**, using the default options.
-
-1. Copy the **HTTP Source Address** when prompted.
+4. Copy the **HTTP Source Address** when prompted.
 
 
 ### Step 3: Send Keeper logs to Sumo Logic
@@ -51,7 +47,7 @@ To send Keeper logs to Sumo Logic, do the following:
 2. Select the **External Logging** tab.
 3. Click the Sumo Logic **Setup** button.
 4. In the Sync Settings dialog, enter the **HTTP Source Address** from [step 4](#HTTP-Source-Address) of the previous task.
-1. Continue with [verifying logging](#Step_4:_Verify_logging).
+5. Continue with [verifying logging](#Step_4:_Verify_logging).
 
 
 ### Step 4: Verify logging
@@ -78,7 +74,9 @@ This section provides instructions for installing the Keeper Security App, as we
 
 Now that you have set up collection for Keeper, install the app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Keeper Security Dashboards
 
@@ -95,7 +93,7 @@ This is a general dashboard that shows the geographic locations of user activity
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Keeper_Overview.png')} alt="Keeper_Security dashboards" />
 
-**Use this dashboard to analyze the following data:
+Use this dashboard to analyze the following data:
 
 * **Activity locations**. See the number of application events across the world on a map in the last 24 hours.
 * **Activity by platform**. See the the number of application events by the client or platform in the last 24 hours.
@@ -116,7 +114,7 @@ Provides detailed information on user activity, highlighting access and related 
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Keeper_Activity.png')} alt="Keeper_Security dashboards" />
 
-**Use this dashboard to analyze the following data:**
+Use this dashboard to analyze the following data:
 
 * **Throttled logins**. If a Keeper user tries to log in repeatedly with an incorrect password, this user logins become “throttled” for some time. This panel shows such login attempts for the last 24 hours, which can be an indication that somebody tries to hack this specific user.
 * **Failed logins**. See the time, event type, username, client version for all login failures (vault, console, 2fa) in the last 24 hours.
@@ -126,15 +124,14 @@ Provides detailed information on user activity, highlighting access and related 
 * **Movement**. See the users who logged in from multiple locations that are far from each other in the last 24 hours. Note: while this report would show hacking attempts from foreign countries, users who used both VPN and non-VPN access, can also fall into this category.
 
 
-
-
 ### Policy and Share
 
 Shows details about user management, team and role management, permission management, sharing information, failed logins, and risk related information.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Keeper-Policy-and-Share.png')} alt="Keeper_Security dashboards" />
 
-**Use this dashboard to analyze the following data:
+Use this dashboard to analyze the following data:
+
 * **User management**. See the users who were created, removed, locked or unlocked in the last 7 days.
 * **Team and Role management**. See the users who were added to a role or a team in the last 7 days. (**Note**: Keeper cannot obtain the names of a role and as such cannot log them to Sumo. If you’re interested in the particular role to which the user was added, try adding a test user to roles. Then, compare the ID for the test user role to the ID in which you are interested in.
 * **Enforcements management**. See the permissions that were granted or removed from roles in the last 7 days.

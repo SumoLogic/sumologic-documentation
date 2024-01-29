@@ -30,15 +30,15 @@ The metadata field and filter must be enclosed in quotes.
 :::
 
 1. Review the [README file](https://github.com/sumologic/livetail-cli). 
-1. Download your platform-specific binaries from [Releases](https://github.com/SumoLogic/livetail-cli/release) to a location where you have read, write, and execute permissions.
+1. Download your platform-specific binaries from [Releases](https://github.com/SumoLogic/livetail-cli/releases) to a location where you have read, write, and execute permissions.
 1. In the command prompt, navigate to the directory where the files are saved.
 1. Enter `./livetail -h`
 1. When you run livetail the first time you need to provide the [deployment](/docs/api/troubleshooting#Deployments-and-Sumo-Logic-Endpoints) of the account and [access ID/key](/docs/manage/security/access-keys.md) to authenticate.<br/>  ![session start](/img/search/livetail/cli-live-tail-sessions-start.png)
    * A **config.json** file is created in the same directory as the livetail binary that stores this authentication information so you only need to enter your deployment, access ID, and access key once. But if you prefer to clear your access ID and access key and log in again each time, you can use the `-c` argument to clear them.
 1. To start a Live Tail session with a filter, enter for example:
-  ```bash
-  .livetail "_sourceCategory=Apache/Access error"
-  ```
+   ```bash
+   .livetail "_sourceCategory=Apache/Access error"
+   ```
 1. To stop the Live Tail session, enter **Ctrl-C** or **Ctrl-D**.
 
 ### Search

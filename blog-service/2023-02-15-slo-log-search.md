@@ -1,5 +1,5 @@
 ---
-title: February 15, 2023 (Reliability Management)
+title: Log Search from SLO Dashboards (Reliability Management)
 image: https://www.sumologic.com/img/logo.svg
 keywords:
   - log search

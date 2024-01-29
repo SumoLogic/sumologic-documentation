@@ -12,7 +12,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level, and ingests GitHub events through a webhook. These events populate the pre-configured Dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 
 :::note
-The Sumo App for GitHub supports GitHub.com, GitHub Advanced Analytics, not GitHub Enterprise.
+If you want to collect audit logs for [GitHub Enterprise](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/audit-log-events-for-your-enterprise):
+
+1. Follow the instructions on [how to stream GitHub Enterprise Audit Logs to an Amazon S3 bucket](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise#setting-up-streaming-to-amazon-s3) or [Azure Event Hubs](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise#setting-up-streaming-to-azure-event-hubs).
+1. Use an [Amazon S3 source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) or [Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source) to send those logs to Sumo Logic. This app will work with [global webhook for Github enterprise](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-a-global-webhook-for-a-github-enterprise), [organization webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-an-organization-webhook) or [repository webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-a-repository-webhook).
+
+Make sure not to select the same webhook event type at multiple levels (i.e., enterprise, organization, or repository) to avoid ingesting duplicate data.
 :::
 
 This app includes dashboards for GHAS, but to be able to ingest GHAS events you must have a separate GHAS license.
@@ -45,14 +50,14 @@ If you're just getting started with GitHub Events, see the Sumo Logic DevOps blo
 :::
 
 
-## Log Types
+## Log types
 
 The Sumo Logic App for GitHub gathers statistics and events from the GitHub Remote API on each host.
 
 First, configure a Collector and Source in Sumo Logic, then configure a GitHub Webhook using the HTTP Source Address created in Sumo Logic.
 
 
-### Sample Log Messages
+### Sample log messages
 
 GitHub sends all fields in the payload, documented according to [Event Type](https://developer.github.com/v3/activity/events/types/).
 
@@ -83,7 +88,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Commits Over Time"
 "commits" "https://api.github.com/repos"
@@ -162,7 +167,9 @@ Sumo Logic needs to understand the event type for incoming events. To enable thi
 
 Now that you have set up collector GitHub, install the Sumo Logic App for GitHub to use the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 #### Troubleshooting
 
@@ -184,7 +191,7 @@ Use this dashboard to:
 
 ### Branch Overview
 
-The **GitHub - Branch Overview **dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
+The **GitHub - Branch Overview** dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
 
 Use this dashboard to:
 
@@ -219,7 +226,7 @@ Use this dashboard to:
 
 ### Security
 
-The **GitHub - Security **dashboard provides detailed information on the security events and repositories.
+The **GitHub - Security** dashboard provides detailed information on the security events and repositories.
 
 Use this dashboard to:
 * Manage users.

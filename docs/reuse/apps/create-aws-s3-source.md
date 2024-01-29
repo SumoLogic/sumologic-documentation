@@ -2,7 +2,7 @@ When you create an AWS Source, you'll need to identify the Hosted Collector you 
 
 #### Rules
 
-* If you're editing the `Collection should begin` date on a Source, the new date must be after the current `Collection should begin` date.
+* If you're editing the `Collection should begin` date on a Source, the new date must be after the current `Collection should begin` date. (Note that if you set this property to a collection time that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.)
 * Sumo Logic supports log files (S3 objects) that do NOT change after they are uploaded to S3. Support is not provided if your logging approach relies on updating files stored in an S3 bucket. S3 does not have a concept of updating existing files, you can only overwrite an existing file. When this overwrite happens, S3 considers it as a new file object, or a new version of the file, and that file object gets its own unique version ID.
 * Sumo Logic scans an S3 bucket based on the path expression supplied, or receives an SNS notification when a new file object is created. As part of this, we receive a file name (key) and the object's ID. It's compared against a list of file objects already ingested. If a matching file ID is not found the contents of the file are ingested in full.
 * When you overwrite a file in S3, the file object gets a new version ID and as a result, Sumo Logic sees it as a new file and ingests all of it. If with each version you post to S3 you are simply adding to the end of the file, then this will lead to duplicate messages ingested, one message for each version of the file you created in S3.
@@ -23,9 +23,7 @@ You can adjust the configuration of when and how AWS handles communication attem
 
 :::sumo Micro Lesson
 
-This video covers the Sumo Logic S3 event notifications integration, which combines scan based discovery and event based discovery into a unified integration that gives you the ability to maintain a low latency integration for new content and provide assurances that no data was missed or dropped.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2vtjPfHQK1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[Watch this micro lesson video](https://www.youtube.com/embed/2vtjPfHQK1Q?rel=0) to learn more about our S3 event notifications integration, which combines scan based discovery and event-based discovery into a unified integration that gives you the ability to maintain a low latency integration for new content and provide assurances that no data was missed or dropped.
 
 :::
 
@@ -46,6 +44,9 @@ These configuration instructions apply to log collection from all AWS Source typ
 8. **Collection should begin**. Choose or enter how far back you'd like to begin collecting historical logs. You can either:
    * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
    * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m). If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
+   :::note
+   If you set **Collection should begin** to a collection time that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.
+   :::
 9. For **Source Category**, enter any string to tag the output collected from this Source. Category metadata is stored in a searchable field called `_sourceCategory`. Some examples: `_sourceCategory: aws/observability/alb/logs` or `_sourceCategory: aws/observability/clb/logs`.
 10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields). Define the fields you want to associate, each field needs a name (key) and value. The following **Fields** are to be added in the source:
     * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
@@ -60,7 +61,8 @@ These configuration instructions apply to log collection from all AWS Source typ
     * **Scan Interval.** Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-scan-interval-sources).
     * **SNS Subscription Endpoint (recommended option)**. New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file. We highly recommend using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](/docs/alerts). Click the box below to open instructions:
 
-    <details><summary>Set up SNS in AWS</summary>
+    <details>
+    <summary>Set up SNS in AWS</summary>
 
     The following steps use the Amazon SNS Console. Alternatively, you can  instead use AWS CloudFormation (see [Using CloudFormation to Set Up an SNS Subscription Endpoint](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#set-up-an-sns-subscription-endpoint)).
 
@@ -96,7 +98,7 @@ These configuration instructions apply to log collection from all AWS Source typ
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
-   * **Enable Multiline Processing. **See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
+   * **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
       * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
       * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
 14. [Create any Processing Rules](/docs/send-data/collection/processing-rules/create-processing-rule) you'd like for the AWS Source.

@@ -18,7 +18,7 @@ Puppet is a software configuration management tool. Puppet can provision infrast
 * Find out how often resources have changed, skipped, failed to update, or are out-of-sync.
 * Find out the root cause of issues by correlating puppet runs with metrics from other components in your infrastructure.
 
-## Log Types
+## Log types
 
 Sumo’s Puppet Logs source and Puppet Reports source use an installed collector to gather the following data from Puppet:
 
@@ -135,7 +135,7 @@ metrics:
 </Tabs>
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title=" Puppet Server"
 2018-08-22 00:03:14,141 INFO  [qtp839286351-63] [puppetserver] Puppet Compiled catalog for puppet-node-1 in environment production in 0.18 seconds
@@ -147,7 +147,7 @@ metrics:
 10.1.3.83 - - [28/Aug/2018:06:44:18 +0000] "GET /puppet/v3/node/puppet-node-3?environment=production&configured_environment=production&transaction_uuid=f95ce8bd-f97e-4d99-9a72-3b010a50ceb1&fail_on_404=true HTTP/1.1" 200 11394 "-" "Puppet/5.5.3 Ruby/2.4.4-p296 (x86_64-linux)" 77
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Failed Resources"
 _sourceCategory=prod/web/puppet/reports
@@ -231,7 +231,8 @@ The script requires Ruby on the host machine.
 9. **Command**. Leave the default value, `/bin/sh`, selected.
 10. **Script**. Choose **Type the script to execute** and copy/paste the below script in the text box:
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```
 MaxFileSize=20
@@ -336,23 +337,9 @@ If you encounter problems:
 
 Now that you have set up collection for Puppet, install the Sumo Logic App for Puppet to use the preconfigured searches and Dashboards that provide insight into your data.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the App Catalog, search for and select the app.
-2. To install the app, click **Add to Library** and complete the following fields.
-3. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-4. **Puppet Server Log Source**. Choose Source Category, and select the Source Category that you configured for the source from the list.
-5. **Puppet Server Access Log Source**. Choose Source Category, and select the Source Category that you configured for the source from the list.
-6. **Puppet Reports Source**. Choose Source Category, and select the Source Category that you configured for the source from the list.
-7. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-8. Click **Add to Library**.
-
-Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization. See Welcome to the New Library for information on working with the library in the new UI.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+<AppInstall/>
 
 ## Viewing Puppet App Dashboards
 

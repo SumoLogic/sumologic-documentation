@@ -4,7 +4,7 @@ title: Local Windows Event Log Source
 description: You can collect local events from the Windows Events Viewer.
 ---
 
-
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 Set up a Local Windows Event Log Source to collect local events you would normally see in the Windows Event Viewer. Setting up a Local Windows Event Source is a quick process. There are no prerequisites for setting up the Source, and you'll begin collecting logs within a minute or so.
 
@@ -18,7 +18,7 @@ To configure a Local Windows Event Log Source:
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 
-1. Find the name of the installed collector to which you'd like to add a Source. Click **Add** and then choose** Add Source** from the pop-up menu.
+1. Find the name of the installed collector to which you'd like to add a Source. Click **Add** and then choose **Add Source** from the pop-up menu.
 
     ![add source from collection page.png](/img/send-data/add-source-from-collection-page.png)
 
@@ -31,12 +31,10 @@ To configure a Local Windows Event Log Source:
     ![type of windows event log source.png](/img/send-data/type-windows-event-log-source.png)
 
 1. Set the following:
-
-    :::note
-    Hostname values are parsed and applied to your event logs as \_sourceHost [metadata](remote-windows-event-log-source.md) automatically. The value is parsed from the field `Computer` in your event logs.
-    :::
-
    * **Name.** Type the name you'd like to display for the new Source. 
+     :::note
+     Hostname values are parsed and applied to your event logs as `_sourceHost` metadata automatically. The value is parsed from the field `Computer` in your event logs. `Channel` or `LogFile` values are parsed and applied as `_sourceName` metadata automatically. The `_sourceHost` and `_sourceName` metadata fields are supported in log search, but not Live Tail.
+     :::
    * **Description** is optional.
    * **Source Category.** Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing `web_apps` tags all the logs from this Source in the sourceCategory field, so running a search on `_sourceCategory=web_apps` would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](#configuring-sourcecategory-using-variables) below.
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
@@ -57,7 +55,7 @@ To configure a Local Windows Event Log Source:
         ![windows events types 2021 June.png](/img/send-data/windows-events-types.png)
 
      * **Standard Event Channels**. Select the main check box for all types, or individual check boxes for specific types (Security, Application, and/or System).
-     * **Forwarded Events**. See how to [Collect Forwarded Events from a Windows Event Collector.](collect-forwarded-events-windows-event-collector.md)
+     * **Forwarded Events**. See how to [Collect Forwarded Events from a Windows Event Collector](collect-forwarded-events-windows-event-collector.md). Note that this box is not selectable when **Standard Event Channels** is checked.
      * **Custom Event Channels** to specify, in a comma-separated list, the channels you'd like to collect from. If you need help finding channels on the machine where the Source is installed, see [Windows Event Source Custom Channels](local-windows-event-log-source.md).  To collect from custom event channels in a Local Event Source, the Collector must have version 19.118 or later installed.
 
    * Depending on the **Event Format** selected, you'll have different options.
@@ -78,12 +76,16 @@ To configure a Local Windows Event Log Source:
 
    * **Collection should begin**. Choose or enter how far back you'd like to begin collecting historical logs. You can either:
 
-        
-        When updating the **Collection should begin** setting you will need to restart the Collector.
-       
-
      * Choose a predefined value from dropdown list, ranging from “Now” to “24 hours ago” to “All Time”.
      * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example “-1w”. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m).
+
+       :::note   
+       When updating the **Collection should begin** setting you will need to restart the Collector.
+       :::
+
+       :::note
+       <CollBegin/>
+       :::
 
    * **Security Identifier**. Collectors on version 19.182-17 or later can map [security identifiers](https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/security-identifiers-in-windows) (SIDs) to usernames. During collection, the `Security ``ID` field in your log `message` (if you selected **Complete Message**) is translated into the format of your choice. Choose:
 

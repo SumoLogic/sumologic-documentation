@@ -11,12 +11,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This guide helps you set up Sumo Logic Collectors, and install the PCI Compliance for Windows JSON application, so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
-## Log Types
+## Log types
 
 The PCI Compliance For Windows JSON App uses Windows Security Event and System Event logs. It does not work with third-party logs.
 
 
-### Sample Log Messages  
+### Sample log messages  
 
 ```json
 {"TimeCreated":"2020-10-12T07:31:14+000039800Z","EventID":"1102","Task":104,"Correlation":"","Keywords":"Audit
@@ -26,7 +26,7 @@ Success","Channel":"Security","Opcode":"Info","Security":"","Provider":{"Guid":"
 "SubjectUserName":"Administrator","SubjectDomainName":"WIN-6D5CO5AB123","SubjectLogonId":"0x1971888","SubjectUserSid":"S-1-5-21-2020-10-12T07:31:14-203418232-2020-10-12T07:31:14-500"}},"Message":"The audit log was cleared.\r\nSubject:\r\n\tSecurity ID:\tWIN-6D5CO5AB123\\Administrator\r\n\tAccount Name:\tAdministrator\r\n\tDomain Name:\tWIN-6D5CO5AB123\r\n\tLogon ID:\t0x1971888"}
 ```
 
-### Sample Query
+### Sample queries
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
@@ -63,12 +63,14 @@ This section provides instructions for installing the PCI Compliance for Windows
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows JSON App to use the pre-configured searches and dashboards that provide insight into your data.  
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing PCI Compliance for Windows JSON Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 
@@ -76,9 +78,9 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 Track your user accounts and recent system changes.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows/Windows-PCI-Req-02%2C-08%2C-10-Account%2C-User%2C-System-Monitoring-5.png')} alt="Windows JSON PCI Compliance dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/Windows-PCI-Req-02-08-10-Account-User-System-Monitoring.png')} alt="Windows JSON PCI Compliance dashboards" />
 
-* **User Account Created. **Aggregation table of the number of user accounts created in the last 24 hours.
+* **User Account Created.** Aggregation table of the number of user accounts created in the last 24 hours.
 * **User Account Deleted.** Aggregation table of the number of user accounts deleted in the last 24 hours.
 * **User Account Enabled.** Aggregation table of the number of user accounts enabled in the last 24 hours.
 * **User Account Disabled.** Aggregation table of the number of user accounts disabled in the last 24 hours.
@@ -96,13 +98,13 @@ Track your user accounts and recent system changes.
 
 Track login successes and failures.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows/Windows-PCI-Req-02%2C-10-Login-Activity-2.png')} alt="Windows JSON PCI Compliance dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/Windows-PCI-Req-02-10-Login-Activity.png')} alt="Windows JSON PCI Compliance dashboards" />
 
 * **Failed Logins.** Count of failed logins over the last 24 hours.
 * **Failed Logins.** Aggregation table of the date,
 * **Successful logins.** Total number of successful logins over the last 24 hours. Compare to Failed Logins to determine if the number of failed logins to successful logins is consistent with normal behavior or indicative of an attack.
 * **Successful logins.** Aggregation table of successful logins, including date, time, event code, error code, and count.
-* **Default Login-Failure. **Aggregation table of failed default logins.
+* **Default Login-Failure.** Aggregation table of failed default logins.
 * **Default Login-Success.** Aggregation table of successful default logins.
 
 
@@ -110,10 +112,10 @@ Track login successes and failures.
 
 Track user activities such as password changes, password resets, excessive failed access attempts, unlocked accounts, and disabled accounts.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows/Windows-PCI-Req-08-Other-User-Activity.png')} alt="Windows JSON PCI Compliance dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/Windows-PCI-Req-08-Other-User-Activity.png')} alt="Windows JSON PCI Compliance dashboards" />
 
-* **User Account Password Changes. **Displays an aggregation table of the times passwords were changed, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
-* **User Account Password Reset. **Displays an aggregation table of the times passwords were reset, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
+* **User Account Password Changes.** Displays an aggregation table of the times passwords were changed, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
+* **User Account Password Reset.** Displays an aggregation table of the times passwords were reset, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **Excessive Failed Access Attempts.** Displays an aggregation table of the excessive failed access attempts, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **User Account Unlocked.** Displays an aggregation table of the times a user account was unlocked  the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **User Account Disabled but not deleted.** Displays an aggregation table of the times a user account was unlocked,  the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
@@ -123,10 +125,10 @@ Track user activities such as password changes, password resets, excessive faile
 
 Track your Windows Update activities.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows/Windows-PCI-Req-06-Windows-Updates-Activity.png')} alt="Windows JSON PCI Compliance dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/Windows-PCI-Req-06-Windows-Updates-Activity.png')} alt="Windows JSON PCI Compliance dashboards" />
 
 * **All Windows Updates.** Aggregation table displaying all updated hosts in the past 24 hours, success/failure of that update, and any relevant error codes.
 * **Recent Windows Update Failures.** Aggregation table displaying all update failures in the last 7 days, update that failed, time of failure, and current status.
 * **Windows Update Trend.** Bar chart that displays 7-day trend of updates success and failure time sliced by hour.
-* **Windows Update Summary by Host. **Aggregation table of the hosts and a count of that host’s update success or failure for the past 7 days.
+* **Windows Update Summary by Host.** Aggregation table of the hosts and a count of that host’s update success or failure for the past 7 days.
 * **Windows Update Summary.** Aggregation table of the latest Windows updates for the last 7 days and a count of their successes and failures

@@ -1,17 +1,24 @@
 ---
 id: remove-doc
-title: How to Remove a Sumo Doc
-sidebar_label: Remove a Doc
+title: Delete a Doc
 description: Learn how to properly remove a Sumo Logic doc.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Never delete a doc without a plan in place!
+:::danger
+Deleting a doc results a 404 error. Follow the below instructions to learn how to create a 301 redirect.
+:::
 
 When you delete a doc, you're also deleting a URL. The old URL, when visited, will return a `404 - Page Not Found` error, which is not the customer experience we want. Additionally, this damages our SEO.
 
 To keep our docs site healthy, follow these steps.
+
+## Prerequisites
+
+import DocPrereq from '../reuse/doc-prerequisites.md';
+
+<DocPrereq/>
 
 ## Step 1: Create a 301 redirect
 
@@ -31,7 +38,7 @@ In your GitHub authoring tool, run a search for the URL you're removing. In this
 
 <img src={useBaseUrl('img/contributing/old-url.png')} alt="header sizes" />
 
-:::caution
+:::warning
 Never do a Find All > Replace All, as this can break unrelated items like image paths. Replace each URL on a one-by-one basis.
 :::
 
@@ -45,7 +52,7 @@ Remove the doc from the navigation menu ([sidebars.ts](https://github.com/SumoLo
 
 ## Step 5: Add deprecation note (optional)
 
-If you're deprecating one solution in favor of another (like in our **Nginx** and **Nginx (Legacy)** example), you may also want to [add a note](/docs/contributing/style-guide/#notes-and-admonitions) in the new doc stating the legacy solution has been deprecated. Check with a SME to be sure.
+If you're deprecating one solution in favor of another (like in our **Nginx** and **Nginx (Legacy)** example), you may also want to [add a note](/docs/contributing/style-guide#admonitions) in the new doc stating the legacy solution has been deprecated. Check with a SME to be sure.
 
 
 ## Step 6: Hide from Google results (optional)

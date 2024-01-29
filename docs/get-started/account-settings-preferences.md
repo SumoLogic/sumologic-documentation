@@ -92,7 +92,7 @@ Select from the following international date format options:
 * DD/MM/YYYY (22/04/2015
 * YYYY/MM/DD (2015/04/22)
 
-:::warning
+:::danger
 If you change the date format option, it will affect your saved searches in the Library. Any saved searches that use absolute dates for their time range must be modified to use the new date format. Scheduled searches will continue to run properly. You would need to modify the date format only if you rescheduled the search.
 :::
 

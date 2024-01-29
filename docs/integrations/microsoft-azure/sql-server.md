@@ -23,7 +23,7 @@ This section provides instructions for configuring a local file source to collec
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -91,7 +91,7 @@ Follow the below instructions to set up the metric collection:
 
 **Prerequisites**
 
-It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 
 
 #### Step 1: Configure Metrics Collection
@@ -132,12 +132,12 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
       db_cluster_port = "ENV_TO_BE_CHANGED"
   ```
   Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` in the snippet above):
-  * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf SQL Server Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SQL Server input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+  * `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf SQL Server Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SQL Server input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
   * In the input plugins section, which is `[[inputs.sqlserver]]`:
       * `servers` - The URL to the SQLserver server. This can be a comma-separated list to connect to multiple SQLserver servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) for more information on additional parameters for configuring the SQLserver input plugin for Telegraf.
   * In the tags section, which is `[inputs.sqlserver.tags]`
-      * `environment` - This is the deployment environment where the SQLserver cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `db_cluster` - Enter a name to identify this SQLserver cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `environment`. This is the deployment environment where the SQLserver cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `db_cluster`. Enter a name to identify this SQLserver cluster. This cluster name will be shown in the Sumo Logic dashboards.
       * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
       * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 
@@ -152,10 +152,10 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
       :::
 
 **Do not modify the following values,** as they will cause the Sumo Logic apps to not function correctly.
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
-* `telegraf.influxdata.com/inputs` - In the tags section, which is `[inputs.sqlserver.tags]`:
+* `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/inputs`. In the tags section, which is `[inputs.sqlserver.tags]`:
    * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
    * `db_system: “sqlserver”` - This value identifies the database system.
 
@@ -179,10 +179,10 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
    db_cluster: "SQLserver_prod_CHANGE_ME"
    ```
    Enter in values for the following parameters (marked **CHANGE_ME** above):
-   * `environment` - This is the deployment environment where the SQL server cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-   * `db_cluster` - Enter a name to identify this SQL server cluster. This cluster name will be shown in the Sumo Logic dashboards.
+   * `environment`. This is the deployment environment where the SQL server cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+   * `db_cluster`. Enter a name to identify this SQL server cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-        Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
+        **Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
 
    * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
    * `db_system: “SQLserver”` - This value identifies the database system.
@@ -310,7 +310,7 @@ This section provides instructions for configuring log collection for SQL Server
    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
    * **Time Zone.** Choose the option, **Ignore time zone from the log file and instead use**, and then select your SQL Server Server’s time zone.
    * **Timestamp Format.** The timestamp format is automatically detected.
-   * **Encoding. **Select the encoding of the `ERRORLOG` you found in step 1, which will typically be **UTF-16LE**.
+   * **Encoding.** Select the encoding of the `ERRORLOG` you found in step 1, which will typically be **UTF-16LE**.
    * **Enable Multiline Processing.** Detect messages spanning multiple lines
      * **Infer Boundaries** - Detect message boundaries automatically
 5. Click **Save**.
@@ -376,8 +376,8 @@ Enter values for fields annotated with `<ENV_TO_BE_CHANGED>` to the appropriate 
 * Input plugins section, which is `[[inputs.sqlserver]]`:
     * `servers` - The URL to the SQL server. For more information on additional parameters to configure the SQL Server input plugin for Telegraf see[ this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver).
 * In the tags section, which is `[inputs.sqlserver.tags]`:
-    * `environment` - This is the deployment environment where the SQL Server cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
-    * `db_cluster` - Enter a name to identify this SQLserver cluster. This cluster name will be shown in our dashboards.
+    * `environment`. This is the deployment environment where the SQL Server cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `db_cluster`. Enter a name to identify this SQLserver cluster. This cluster name will be shown in our dashboards.
     * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 
@@ -399,11 +399,11 @@ Enter values for fields annotated with `<ENV_TO_BE_CHANGED>` to the appropriate 
 If you haven’t defined a cluster in SQL Server, then enter `default` for `db_cluster`.
 
 There are additional values set by the Telegraf configuration.  We recommend not to modify  these values as they might cause the Sumo Logic app to not function correctly.
-* `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
+* `data_format: “prometheus”`. In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
 * `component = “database”` - In the input `[[inputs.SQLserver]]` plugins section. This value is used by Sumo Logic apps to identify application components.
 * `db_system = “sqlserver”` - In the input plugins sections. This value identifies the database system.
 
-    See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
+    See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for all other parameters that can be configured in the Telegraf agent globally.
 
 After you've finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from [this doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
@@ -453,11 +453,11 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this [ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
-**Step 2: [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later **
+**Step 2: [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**
 
 **Step 3: Download the Sumo Logic Terraform package for SQL Server alerts**
 
-The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/SQLServer). You can either download it through the “git clone” command or as a zip file.
+The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/SQLServer). You can either download it through the “git clone” command or as a zip file.
 
 **Step 4: Alert Configuration**
 
@@ -528,9 +528,9 @@ email_notifications = [
 
 **Step 6: Install the Alerts**
 
-1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**SQLServer**/ and run **terraform init. **This will initialize Terraform and will download the required components.
-2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
-3. Run **terraform apply**.
+1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**SQLServer**/ and run **terraform init.** This will initialize Terraform and will download the required components.
+2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
+3. Run `terraform apply`.
 
 **Step 7: Post Installation**
 
@@ -543,26 +543,14 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
 
 This section demonstrates how to install the SQL Server App.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the service version you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields:
-   * App Name. You can retain the existing name or enter the app's name of your choice. 
-   * **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or the folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+<AppInstall/>
 
 ## Viewing Microsoft SQL Server Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Overview
@@ -661,215 +649,130 @@ Sumo Logic provideds out-of-the-box alerts available via [Sumo Logic monitors](/
 
 <table>
   <tr>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
+   <td>Alert Name </td>
+   <td>Alert Description </td>
+   <td>Trigger Type (Critical / Warning) </td>
+   <td>Alert Condition </td>
+   <td>Recover Condition </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Instance Down
-   </td>
-   <td rowspan="2" >This alert fires when we detect that the SQL Server instance is down for 5 minutes.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60;&#61;0
-   </td>
+   <td rowspan="2" >SQL Server - Instance Down </td>
+   <td rowspan="2" >This alert fires when we detect that the SQL Server instance is down for 5 minutes. </td>
+   <td>Critical   </td>
+   <td> &#62;0   </td>
+   <td> &#60;&#61;0   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td>Warning   </td>
+   <td>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - AppDomain
-   </td>
-   <td rowspan="2" >This alert fires when we detect AppDomain related issues in your SQL Server instance.
-   </td>
-   <td>Critical
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td rowspan="2" >SQL Server - AppDomain   </td>
+   <td rowspan="2" >This alert fires when we detect AppDomain related issues in your SQL Server instance.   </td>
+   <td>Critical   </td>
+   <td>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;&#61;1
-   </td>
-   <td> &#60;1
-   </td>
+   <td>Warning   </td>
+   <td> &#62;&#61;1   </td>
+   <td> &#60;1   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Backup Fail
-   </td>
-   <td rowspan="2" >This alert fires when we detect that the SQL Server backup failed.
-   </td>
-   <td>Critical
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td rowspan="2" >SQL Server - Backup Fail   </td>
+   <td rowspan="2" >This alert fires when we detect that the SQL Server backup failed. </td>
+   <td>Critical   </td>
+   <td>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;&#61;1
-   </td>
-   <td> &#60;1
-   </td>
+   <td>Warning   </td>
+   <td> &#62;&#61;1   </td>
+   <td> &#60;1   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Cpu High Usage
-   </td>
-   <td rowspan="2" >This alert fires when the CPU usage within a 5 minute interval for an SQL Server instance is high (70% - 80% for Warning and >=80% for Critical).
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;&#61;80
-   </td>
-   <td> &#60;80
-   </td>
+   <td rowspan="2" >SQL Server - Cpu High Usage </td>
+   <td rowspan="2" >This alert fires when the CPU usage within a 5 minute interval for an SQL Server instance is high (70% - 80% for Warning and >=80% for Critical). </td>
+   <td>Critical </td>
+   <td> &#62;&#61;80   </td>
+   <td> &#60;80   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;&#61;70
-   </td>
-   <td> &#60;70
-   </td>
+   <td>Warning   </td>
+   <td> &#62;&#61;70   </td>
+   <td> &#60;70   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Deadlock
-   </td>
-   <td rowspan="2" >This alert fires when we detect deadlocks in a SQL Server instance.
-   </td>
-   <td>Critical
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td rowspan="2" >SQL Server - Deadlock   </td>
+   <td rowspan="2" >This alert fires when we detect deadlocks in a SQL Server instance.   </td>
+   <td>Critical   </td>
+   <td>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;5
-   </td>
-   <td> &#60;&#61;5
-   </td>
+   <td>Warning   </td>
+   <td> &#62;5   </td>
+   <td> &#60;&#61;5   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Disk Usage
-   </td>
-   <td rowspan="2" >This alert fires when the Disk usage within a 5 minute interval for an SQL Server instance is high (70% - 80% for Warning and >&#61;80% for Critical).
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;&#61;80
-   </td>
-   <td> &#60;80
-   </td>
+   <td rowspan="2" >SQL Server - Disk Usage   </td>
+   <td rowspan="2" >This alert fires when the Disk usage within a 5 minute interval for an SQL Server instance is high (70% - 80% for Warning and >&#61;80% for Critical).   </td>
+   <td>Critical   </td>
+   <td> &#62;&#61;80   </td>
+   <td> &#60;80   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;&#61;70
-   </td>
-   <td> &#60;70
-   </td>
+   <td>Warning   </td>
+   <td> &#62;&#61;70   </td>
+   <td> &#60;70   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Insufficient Space
-   </td>
-   <td rowspan="2" >This alert fires when SQL Server instance could not allocate a new page for database because of insufficient disk space in filegroup.
-   </td>
-   <td>Critical
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td rowspan="2" >SQL Server - Insufficient Space </td>
+   <td rowspan="2" >This alert fires when SQL Server instance could not allocate a new page for database because of insufficient disk space in filegroup.   </td>
+   <td>Critical   </td>
+   <td>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60;&#61;0
-   </td>
+   <td>Warning   </td>
+   <td> &#62;0   </td>
+   <td> &#60;&#61;0   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Login Fail
-   </td>
-   <td rowspan="2" >This alert fires when we detect that the user cannot login to SQL Server.
-   </td>
-   <td>Critical
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td rowspan="2" >SQL Server - Login Fail   </td>
+   <td rowspan="2" >This alert fires when we detect that the user cannot login to SQL Server.   </td>
+   <td>Critical   </td>
+   <td>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;&#61;1
-   </td>
-   <td> &#60;1
-   </td>
+   <td>Warning   </td>
+   <td> &#62;&#61;1   </td>
+   <td> &#60;1   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Mirroring Error
-   </td>
-   <td rowspan="2" >This alert fires when we detect that the SQL Server mirroring has error.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;&#61;1
-   </td>
-   <td> &#60;1
-   </td>
+   <td rowspan="2" >SQL Server - Mirroring Error   </td>
+   <td rowspan="2" >This alert fires when we detect that the SQL Server mirroring has error.   </td>
+   <td>Critical   </td>
+   <td> &#62;&#61;1   </td>
+   <td> &#60;1   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td>Warning   </td>
+   <td>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td rowspan="2" >SQL Server - Processes Blocked
-   </td>
-   <td rowspan="2" >This alert fires when we detect that SQL Server has blocked processes.
-   </td>
-   <td>Critical
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
+   <td rowspan="2" >SQL Server - Processes Blocked   </td>
+   <td rowspan="2" >This alert fires when we detect that SQL Server has blocked processes.   </td>
+   <td>Critical </td>
+   <td> </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60;&#61;0
-   </td>
+   <td>Warning   </td>
+   <td> &#62;0   </td>
+   <td> &#60;&#61;0 </td>
   </tr>
 </table>

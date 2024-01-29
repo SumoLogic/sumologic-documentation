@@ -8,8 +8,7 @@ title: Performance Benchmarks
 The following benchmark has been compiled on an Amazon `m4.large`
 instance, which has 2 CPU cores and 8 GB of memory available.
 
-It can be used when estimating the required CPU resources for logs collection
-using [`filelogreceiver`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
+CPU benchmarking was done using [`filelogreceiver`](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 
 ## CPU usage guidelines
@@ -38,10 +37,9 @@ Events Per Second (EPS) achieved for a particular average message size and CPU u
 |        **5%**         | 2000  | 1100  | 1000 | 150  | 200  |
 |        **10%**        | 3500  | 2100  | 1500 | 450  | 300  |
 |        **20%**        | 6500  | 4100  | 3000 | 1200 | 700  |
-|        **50%**        | 14000 | 10100 | 8500 |  -<sup>*</sup>  |  -<sup>*</sup>  |
-|        **90%**        |  -<sup>*</sup>   | 19100 |  -<sup>*</sup>  |  -<sup>*</sup>  |  -<sup>*</sup>  |
+|        **50%**        | 14000 | 10100 | 8500 |  -  |  -  |
+|        **90%**        |  -   | 19100 |  -  |  -  |  -  |
 
-<sup>*</sup> Cells without a resulting EPS come from the fact that the CPU utilization didn't reach the designated CPU utilization during the benchmark run.<br/><br/>
 
 Using the information from the above table, if you had an average CPU usage of 5%:
 * 10 KB logs can be ingested at 200 logs/sec (2000 KB/sec).

@@ -23,12 +23,31 @@ To collect Linux logs, you'll need:
     * [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source)
     * [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source)
 
+### Required Logs for Ubuntu
+
+The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo Logic app for Linux with Ubuntu:
+* auth.log
+* syslog
+* daemon.log
+* dpkg.log
+* kern.log
+
+### Required Logs for CentOS, Amazon Linux, and Red Hat
+
+The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo Logic app for Linux with CentOS, Amazon Linux, and most Red Hat forks:
+* audit/audit.log
+* secure
+* messages
+* yum.log
+
 
 ## Installing the PCI Compliance for Linux App
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Linux to use the preconfigured searches and dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing PCI Compliance for Linux Dashboards
 
@@ -36,25 +55,23 @@ Now that you have set up collection, install the Sumo Logic App for PCI Complian
 
 **Dashboard description:** This dashboard meets PCI Requirements 02, 07, 08 and 10 by monitoring user accounts and services. It presents information about user accounts created and deleted, stopped services, running services active services over time, unique services running, and running services, and more.
 
-**Use case:** Use this dashboard to monitor administrative actions (create, delete users) performed by end users, ensure proper services are running on all systems, detect attempts to change the system time, and verify that critical systems are up and running.You can also monitor excessive failed login attempts to detect attempts to break into the system.
+**Use case.** Use this dashboard to monitor administrative actions (create, delete users) performed by end users, ensure proper services are running on all systems, detect attempts to change the system time, and verify that critical systems are up and running.You can also monitor excessive failed login attempts to detect attempts to break into the system.
 
-<img src={useBaseUrl('img/integrations/pci-compliance/PCILinuxAccountUserSystem.png')} alt="PCI Compliance for Linux dashboards" />
-
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/PCI-Compliance-For-Linux-PCI-Req-02-07-08-10-Account-User-System-Monitoring.png')} alt="PCI Compliance for Linux dashboards" />
 
 ### Login Activity
 
-**Dashboard description: **This dashboard meets PCI Requirements 02 and 10 by tracking login activity. It provides information about failed and successful user logins, and failed and successful super-user logins.
+**Dashboard description:** This dashboard meets PCI Requirements 02 and 10 by tracking login activity. It provides information about failed and successful user logins, and failed and successful super-user logins.
 
 **Use case:** Use this dashboard to monitor access to the cardholder data environment. You can monitor failed and successful user logins.
 
-<img src={useBaseUrl('img/integrations/pci-compliance/PCIComplianceLinuxLoginActivity.png')} alt="PCI Compliance for Linux dashboards" />
-
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/PCI-Compliance-For-Linux-PCI-Req-02-10-Login-Activity.png')} alt="PCI Compliance for Linux dashboards" />
 
 
 ### Privileged Activity
 
-**Dashboard description: **This dashboard meets PCI Requirement 10. It provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
+**Dashboard description:** This dashboard meets PCI Requirement 10. It provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
-**Use case:** Use this dashboard to monitor successful and failed access attempts to systems, especially with administrative privileges. It also helps monitor actions performed by users with administrative privileges.
+**Use case.** Use this dashboard to monitor successful and failed access attempts to systems, especially with administrative privileges. It also helps you to monitor actions performed by users with administrative privileges.
 
-<img src={useBaseUrl('img/integrations/pci-compliance/PCIComplianceLinuxpa.png')} alt="PCI Compliance for Linux dashboards" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/PCI-Compliance-For-Linux-PCI-Req-10-Privileged-Activity.png')} alt="PCI Compliance for Linux dashboards" />

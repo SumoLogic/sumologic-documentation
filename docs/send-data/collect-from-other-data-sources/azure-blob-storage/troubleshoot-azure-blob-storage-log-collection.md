@@ -4,8 +4,9 @@ title: Troubleshoot Azure Blob Storage Log Collection
 sidebar_label: Troubleshooting
 description: Follow these steps to learn why log data is not flowing into Sumo from Azure Blob Storage.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If logs don't start flowing into Sumo Logic after you perform the [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md) procedure, see the troubleshooting tips below.
+If logs don't start flowing into Sumo Logic after you perform the [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md) procedure, see the troubleshooting tips below.
 
 ## Error while deploying the ARM template
 
@@ -47,6 +48,15 @@ If you get namespace invalid error make sure it follows the naming convention sp
 
 For common deployment errors refer to the following [doc](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/common-deployment-errors). 
 
+## AutoScaling producer function to handle huge load on creating tasks for consumer function
+
+1. Go to the Producer function app.
+1. Under **Settings** blade, select **Scale out (App Service plan)**.
+1. Select **Rule Based Scaling**.
+1. Add your rules based scaling configuration as defined in [Create your first autoscale setting](https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started#create-your-first-autoscale-setting).
+
+<img src={useBaseUrl('img/send-data/autoscalling.png')} alt="autoscalling" style={{border: '1px solid gray'}} width="800" />
+
 ## Verify configurations
 
 Make sure that the resources you created in the [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md) procedure were successfully created.
@@ -58,7 +68,7 @@ Make sure that the resources you created in the [Collect Logs from Azure Blob S
    * An Event Hubs Namespace.
    * A Storage account.
 1. In the left pane of the Azure Portal, click **AppServices**, and search for “SUMOBRTaskConsumer”. You should find the `“SUMOBRTaskConsumer\<random-string\>”` Function App. Click it. 
-1. Click the **Application settings** link. Check that the value of the ** SumoLogEndpoint** field matches the HTTP source URL. 
+1. Click the **Application settings** link. Check that the value of the **SumoLogEndpoint** field matches the HTTP source URL. 
 
 ## Verify Block Blob Create Events are getting published
 
@@ -83,11 +93,11 @@ Go to Service Bus Service from the Azure portal and click on `SUMOBRTaskQueueNam
 
 ![service-bus-metrics.png](/img/send-data/service-bus-metrics.png)
 
-## Verify with LiveTail
+## Verify with Live Tail
 
 In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving events. Search by the source category you assigned to the HTTP Source that receives the log data, for example: `_sourceCategory="azure/ad"`  
 
-For more information about using Live Tail, see [Live Tail](/docs/search/Live-Tail). 
+For more information about using Live Tail, see [Live Tail](/docs/search/live-tail). 
 
 ### Verify Azure Function is not getting Failed
 
@@ -145,7 +155,7 @@ If the error still persists, then
             },
     .
     ```
-2. If you want to collect only logs from Azure Monitor, we recommend switching to new [Cloud to Cloud collection for Event hub](../../hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md)
+2. If you want to collect only logs from Azure Monitor, we recommend switching to new [Cloud-to-Cloud collection for Event hub](../../hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md)
 
 `Exception while executing function:  Functions.BlobTaskProducer
 StorageError: The table specified does not exists 

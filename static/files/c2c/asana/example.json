@@ -1,0 +1,16 @@
+{
+	"api.version":"v1",
+	"source":{
+		"config":{
+			"name":"Asana",
+			"description":"Test Source",
+			"category":"source_category",
+			"personalAccessToken":"****************************",
+			"workspaceID":"1204094735693514"
+		},
+		"schemaRef":{
+			"type":"Asana"
+		},
+		"sourceType":"Security"
+	}
+}

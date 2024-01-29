@@ -68,7 +68,7 @@ For log samples, refer to [Bitbucket Event Documentation](https://confluence.atl
 ```
 
 
-### Sample Query
+### Sample queries
 
 This section provides a sample from the **Failed Deployments** panel on the **Bitbucket Deployment** dashboard.
 
@@ -154,14 +154,16 @@ Sumo Logic needs to understand the event type for incoming events (for example, 
 
 This section provides instructions for installing the Bitbucket app.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Bitbucket Dashboards
 
 This section provides descriptions and examples for each of the pre-configured app dashboards.
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Overview

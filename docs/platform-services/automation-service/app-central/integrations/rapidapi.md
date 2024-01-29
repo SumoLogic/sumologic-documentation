@@ -1,0 +1,25 @@
+---
+title: RapidAPI
+description: ''
+tags: []
+---
+
+![](/img/platform-services/automation-service/app-central/logos/rapidapi.png)
+
+Version: 1.1  
+Updated: Jul 07, 2023
+
+RapidAPI is an API Hub that enables developers and enterprises to find, connect to, and manage thousands of APIs.
+
+## Actions
+
+* **Ipregistry Single IP Address Lookup** *(Enrichment)* - Get Single IP Address Lookup
+* **FraudSentinel IP Reputation** *(Enrichment) -* Get IP reputation
+* **Neutrino API IP Blocklist** *(Enrichment)* - Detect potentially malicious or dangerous IP addresses
+* **Email Checker Email Verifier** *(Enrichment)* - Validate email addresses in real-time. Make sure a mailbox really exist
+
+## Change Log
+
+* October 29, 2021 - First upload
+* March 11, 2022 - Description
+* July 7, 2023 (v1.1) - Updated the integration with Environmental Variables

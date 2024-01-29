@@ -33,7 +33,7 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **Collector**. When referring to a Collector or Collectors, the term is capitalized. When referring to "collecting events" or "data collection", the terms are not capitalized.
 
-**Color palette**. Use the [official Sumo color palette](https://sites.google.com/sumologic.com/sumo-logic-brand/color) when creating diagrams.
+**Color palette**. Use the [official Sumo Logic color palette](https://sites.google.com/sumologic.com/sumo-logic-brand/color) when creating diagrams.
 
 **Column**. When referring to a column in a Dashboard, the term is not capitalized unless it's the only word in a line of UI (for example, in the Add to Dashboard dialog box "Column" is capitalized). The word "column" doesn't appear in the main Dashboard UI.
 
@@ -56,16 +56,16 @@ noun. Initial cap for “continuous” only applies when it starts a sentence.
 **Drill down**. Drill down, as in a menu, or other filtering feature is two words, not one.
 
 **Dropdown**.
-   * Use drop-down (Adjective). Example: Choose your favorite model from a *drop-down* menu. 
+   * Use drop-down (Adjective). Example: Choose your favorite model from a *drop-down* menu.
    * Use dropdown (Noun). Example: Select a source category from the *dropdown*. Do not use drop down (two words).
 
 :::info
-If we are not clear on its usage, the term shouldn’t be used at all: Don't use 'drop-down'; use menu or list. We should keep our target audience in mind, i.e., developers or engineers. For e.g., Select a source from the list. Developers or Engineers already know they have to select the source from the dropdown only.
+If we are not clear on its usage, the term shouldn’t be used at all: Don't use 'drop-down'; use menu or list. We should keep our target audience in mind, that is, developers or engineers. For example, "Select a source from the list". Developers or Engineers already know they have to select the source from the dropdown only.
 :::
 
 ## E
 
-**E.g., i.e., and etc.,** These abbreviations are parenthetical, which means they take a comma after.
+**E.g., i.e., and etc.,** These abbreviations are parenthetical, which means they take a comma after. [Avoid using these abbreviations](/docs/contributing/style-guide/#abbreviations).
 
 **Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
 
@@ -80,7 +80,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Geolocation**. Geolocation is one word. It is not capitalized unless used at the beginning of a sentence.
 
-**Geo lookup operator**. geo lookup is two words.
+**Geo lookup operator**. Geo lookup is two words.
 
 
 ## H
@@ -117,7 +117,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Markdown**. Used in Text Panels. Capitalize Markdown.
 
-**MB and Mbit. **MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
+**MB and Mbit.** MB is the acronym for megabytes. Mbit or Mb is the acronym for megabits. Make sure to capitalize correctly. Don't use a space between the acronym and the number. (Example: 10MB or 15Mbit.)
 
 **Menu**. When referring to a menu in the UI, use the word menu alone. Don't use dropdown menu, list, or selector.
 
@@ -161,7 +161,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Saved search**. Saved search is not capitalized.
 
-**Scheduled search. **Scheduled search is not capitalized.
+**Scheduled search.** Scheduled search is not capitalized.
 
 **Search**. Search is not capitalized, unless you are referring to the Search page.
 
@@ -204,7 +204,7 @@ Hosted Collectors can use:
 
 **Time range**. Time range is two words, not one.
 
-**Time series. **Time series is two words, not one.
+**Time series.** Time series is two words, not one.
 
 **Time slice**. Time slice is two words, not one.
 
@@ -215,7 +215,7 @@ Hosted Collectors can use:
 
 ## W
 
-**Web Application**. Avoid using where possible. "Sumo" or "our product" should be sufficient. If you need to refer to our web application to distinguish from API, do so. Don't capitalize.
+**Web Application**. Avoid using where possible. "Sumo Logic" or "our product" should be sufficient. If you need to refer to our web application to distinguish from API, do so. Don't capitalize.
 
 **Website**. Website or websites is one word.
 

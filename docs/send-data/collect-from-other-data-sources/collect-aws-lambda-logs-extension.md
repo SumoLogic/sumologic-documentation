@@ -50,9 +50,7 @@ For AWS Lambda functions created using Zip files, blueprint or serverless applic
 
 To add the Sumo Logic Lambda Extension to your AWS Lambda function, please follow the steps below:
 
-1. In the AWS Management Console, navigate to the definition of your Lambda function, Select **Layers** and click **Add a Layer**.
-
-  ![Add_Layer.png](/img/send-data/Add_Layer.png)
+1. In the AWS Management Console, navigate to the definition of your Lambda function, Select **Layers** and click **Add a Layer**. <br/> ![Add_Layer.png](/img/send-data/Add_Layer.png)
 
 1. Select **Specify an ARN**.
 
@@ -86,39 +84,37 @@ To package the Sumo Logic Lambda Extension with the AWS Lambda function created 
 
    * For functions based on the x86_64 architecture:
 
-    ```bash
-    wget
-    https://github.com/SumoLogic/sumologic-lambda-extensions/releases/latest/download/sumologic-extension-amd64.tar.gz
-    ```
+     ```bash
+     wget
+     https://github.com/SumoLogic/sumologic-lambda-extensions/releases/latest/download/sumologic-extension-amd64.tar.gz
+     ```
 
    * For functions based on the ARM 64 architecture:
 
-    ```bash
-    wget
-    https://github.com/SumoLogic/sumologic-lambda-extensions/releases/latest/download/sumologic-extension-arm64.tar.gz
-    ```
+     ```bash
+     wget
+     https://github.com/SumoLogic/sumologic-lambda-extensions/releases/latest/download/sumologic-extension-arm64.tar.gz
+     ```
 
 1. In your AWS Lambda container image Dockerfile, add the command below.
 
-  ```bash
-  ADD <Location-where-you-downloaded-the-tar-file>/sumologic-extension-<architecture>.tar.gz /opt/
-  ```
+   ```bash
+   ADD <Location-where-you-downloaded-the-tar-file>/sumologic-extension-<architecture>.tar.gz /opt/
+   ```
 
 1. Validate if the extension is added to the directory and execute the below command.
 
-  ```bash
-  docker run -it --entrypoint sh <ImageName>:<ImageTag>
-  ```
+   ```bash
+   docker run -it --entrypoint sh <ImageName>:<ImageTag>
+   ```
 
-1. Execute the command `ls -R /opt/` to see the directory structure. It should look as per the screenshot below.
-
-  ![Container_Images.png](/img/send-data/Container_Images.png)
+1. Execute the command `ls -R /opt/` to see the directory structure. It should look as per the screenshot below. <br/> ![Container_Images.png](/img/send-data/Container_Images.png)
 
 1. Deploy your AWS Lambda function using the container images.
 
-  :::note
-  The command will extract the Sumo Logic Lambda extension binary file into the folder structure as `/opt/extensions`. **Do not change the directory structure** as it is required by AWS Lambda to identify all the external extensions.
-  :::
+   :::note
+   The command will extract the Sumo Logic Lambda extension binary file into the folder structure as `/opt/extensions`. **Do not change the directory structure** as it is required by AWS Lambda to identify all the external extensions.
+   :::
 
 ## Step 3: Adding the Environment variables
 
@@ -127,7 +123,7 @@ Add the following environment variables to your Lambda function:
 | Variable Name | Description | Type |
 |:--|:--|:--|
 | `SUMO_HTTP_ENDPOINT` | This is the URL of the Sumo Logic HTTP source created in Step 1. | Required |
-| `SUMO_LOG_TYPES` | Please provide a comma-separated list of values that are one or more "platform", "function" or "extension" to indicate which AWS Lambda logs you want to send to Sumo Logic. By default, all of these three values are assumed. | Optional
+| `SUMO_LOG_TYPES` | Provide a comma-separated list of values that are one or more "platform", "function" or "extension" to indicate which AWS Lambda logs you want to send to Sumo Logic. By default, all of these three values are assumed. | Optional
 | `SUMO_ENABLE_FAILOVER` | Set to True to failover in case you would like the extension to send logs to an Amazon S3 bucket. In the case of throttling or, exceptions the default value assumed is False. | Optional
 | `SUMO_S3_BUCKET_NAME` | The name of an Amazon S3 bucket. | Optional |
 | `SUMO_S3_BUCKET_REGION` | The Region where the above Amazon S3 bucket is located. | Optional |
@@ -135,6 +131,7 @@ Add the following environment variables to your Lambda function:
 | `SUMO_LOG_LEVEL` | Log level, which can be one of info, error, or debug. The default value is info. | Optional |
 | `SOURCE_CATEGORY_OVERRIDE` | The Source Category for all incoming data is set to that of the HTTP endpoint by default. You can however override it with this parameter | Optional |
 | `SUMO_SPAN_DROP` | Set to true in case you would like the extension to drop spans from ingested into Sumo Logic. The default value assumed is false. | Optional |
+| `SUMO_ENHANCE_JSON_LOGS` | Ingest the logs in JSON format with a message key containing raw log message and other metadata such as `loggroup`, `isColdStart`, and `logStream`. Default is true. | Optional |
 
 1. Once you have set your parameters, execute your AWS Lambda function, and validate that the logs are coming into Sumo Logic. 
 1. If you have enabled failover, do the following:

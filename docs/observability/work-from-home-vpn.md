@@ -13,7 +13,7 @@ Enable quick, safe, and reliable work-from-home monitoring with our Work from Ho
 This solution provides support in all areas of remote work management for your enterprise, including:
 
 * **SSO**: [Auth0](/docs/integrations/saml/auth0), [Duo Security](/docs/integrations/security-threat-detection/duo-security), [Okta](/docs/integrations/saml/okta), [One Login](/docs/integrations/saml/onelogin), [Azure Active Directory](/docs/integrations/microsoft-azure/active-directory-azure)
-* **Remote Access**: [Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki), [Zscaler Web Security](/docs/integrations/security-threat-detection/zscaler-web-security)
+* **Remote Access**: [Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki)
 * **Productivity Apps**: [Google Workspace](/docs/integrations/google/workspace), [Office 365](/docs/integrations/app-development/jira), [Salesforce](/docs/integrations/saas-cloud/salesforce), [Sailpoint](/docs/integrations/security-threat-detection/sailpoint), [Slack](/docs/integrations/saas-cloud/slack), [Microsoft Teams](/docs/integrations/microsoft-azure/teams), [Workday](/docs/integrations/saas-cloud/workday), [Zoom](/docs/integrations/saas-cloud/zoom)
 * **Endpoint Security:** [Crowdstrike Falcon Endpoint Protection](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection), [Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black), [Cylance](/docs/integrations/security-threat-detection/cylance)
 
@@ -28,7 +28,8 @@ You can use Sumo Logic to monitor traffic, user activity, successful and failed 
 
 To configure data collection, you'll first need to decide on the Work From Home app you want to install, as it will determine need to set up an Installed Collector or Hosted Collector.
 
-<details><summary>What are Collectors?</summary>
+<details>
+<summary>What are Collectors?</summary>
 
 * [Installed Collectors](/docs/send-data/installed-collectors) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
 * [Hosted Collectors](/docs/send-data/hosted-collectors) reside in the Cloud, allowing for seamless collection from cloud sources.
@@ -68,7 +69,7 @@ To find our Work from Home apps, go to the **App Catalog** > **Work from Home So
 To install any of these apps, follow their directions by clicking on an app link below:
 
 * **SSO**: [Auth0](/docs/integrations/saml/auth0), [Duo Security](/docs/integrations/security-threat-detection/duo-security), [Okta](/docs/integrations/saml/okta), [One Login](/docs/integrations/saml/onelogin), [Azure Active Directory](/docs/integrations/microsoft-azure/active-directory-azure)
-* **Remote Access**: [Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki), [Zscaler Web Security](/docs/integrations/security-threat-detection/zscaler-web-security)
+* **Remote Access**: [Cisco Meraki](/docs/integrations/security-threat-detection/cisco-meraki)
 * **Productivity Apps**: [Google Workspace](/docs/integrations/google/workspace), [Office 365](/docs/integrations/app-development/jira), [Salesforce](/docs/integrations/saas-cloud/salesforce), [Sailpoint](/docs/integrations/security-threat-detection/sailpoint), [Slack](/docs/integrations/saas-cloud/slack), [Microsoft Teams](/docs/integrations/microsoft-azure/teams), [Workday](/docs/integrations/saas-cloud/workday), [Zoom](/docs/integrations/saas-cloud/zoom)
 * **Endpoint Security:** [Crowdstrike Falcon Endpoint Protection](/docs/integrations/security-threat-detection/crowdstrike-falcon-endpoint-protection), [Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black), [Cylance](/docs/integrations/security-threat-detection/cylance)
 
@@ -112,7 +113,7 @@ When you build your own searches and dashboards consider these VPN monitoring be
 
 ## Community Resources
 
-The Work from Home Solution includes Remote Access apps for Cisco Meraki, Zscaler Web Security, and Zoom. In addition, the following VPN solutions are now also available on our GitHub repository:
+The Work from Home Solution includes Remote Access apps for Cisco Meraki, Zscaler Internet Access, Zscaler Private Access, and Zoom. In addition, the following VPN solutions are now also available on our GitHub repository:
 
 * [Palo Alto Networks GlobalProtect VPN Monitoring](https://github.com/SumoLogic/sumologic-content/tree/master/Palo_Alto_Networks/GlobalProtect)
 * [Cisco AnyConnect VPN Monitoring](https://github.com/SumoLogic/sumologic-content/tree/master/Cisco/ASA)

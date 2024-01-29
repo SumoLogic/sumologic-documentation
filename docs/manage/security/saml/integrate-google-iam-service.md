@@ -24,7 +24,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 1. Log into the Google Admin Console.  
 1. Select **Apps > SAML Apps**.
 1. Select a new SAML app to be configured, or click the **+** at the bottom of the page.
-1. On the **Enable SSO for SAML Application** page, select **Setup my own Custom App** at the bottom of the page**.
+1. On the **Enable SSO for SAML Application** page, select **Setup my own Custom App** at the bottom of the page.
 
     ![img](/img/security/ga_saml_enable_sso.png)
 
@@ -113,4 +113,6 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
 ## Create multiple SAML configurations
 
-{@import ../../../reuse/saml.md}
+import Saml from '../../../reuse/saml.md';
+
+<Saml/>

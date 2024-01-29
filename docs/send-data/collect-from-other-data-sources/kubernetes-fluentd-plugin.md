@@ -4,7 +4,7 @@ title: Kubernetes Fluentd plugin
 description: Information on using the Sumo Kubernetes Fluentd plugin to collect logs from Kubernetes.
 ---
 
-:::warning solution deprecated
+:::danger solution deprecated
 The configuration described on this page is deprecated. We recommend using our [comprehensive Kubernetes solution](/docs/observability/kubernetes) instead.  
 :::
 
@@ -92,7 +92,7 @@ Environment variables may not apply to all Fluentd sources. See the table follow
 | `EXCLUDE_FACILITY_REGEX` | A regular expression for syslog facilities. Matching facilities will be excluded from Sumo. The logs will still be sent to Fluentd. |
 | `EXCLUDE_HOST_REGEX`  | A regular expression for hosts. Matching hosts will be excluded from Sumo. The logs will still be sent to Fluentd. |
 | `EXCLUDE_NAMESPACE_REGEX` | A regular expression for namespaces. Matching namespaces will be excluded from Sumo. The logs will still be sent to Fluentd. |
-| `EXCLUDE_PATH` | Files matching this pattern will be ignored by the in_tail plugin, and will not be sent to Kubernetes or Sumo. This can be a comma-separated list as well. See [in_tail](https://docs.fluentd.org/v0.12/articles/in_tail#excludepath) documentation for more information. For example, defining `EXCLUDE_PATH` as shown below excludes all files matching `/var/log/containers/*.log`. See the example below the table. |
+| `EXCLUDE_PATH` | Files matching this pattern will be ignored by the in_tail plugin, and will not be sent to Kubernetes or Sumo. This can be a comma-separated list as well. See [in_tail](https://docs.fluentd.org/input/tail#excludepath) documentation for more information. For example, defining `EXCLUDE_PATH` as shown below excludes all files matching `/var/log/containers/*.log`. See the example below the table. |
 | `EXCLUDE_POD_REGEX` | A regular expression for pods. Matching pods will be excluded from Sumo. The logs will still be sent to Fluentd. |
 | `EXCLUDE_PRIORITY_REGEX` | A regular expression for syslog priorities. Matching priorities will be excluded from Sumo. The logs will still be sent to Fluentd. |
 | `EXCLUDE_UNIT_REGEX` | A regular expression for systemd units. Matching units will be excluded from Sumo. The logs will still be sent to Fluentd. |
@@ -125,7 +125,7 @@ env:
 The following table show which environment variables affect which
 Fluentd sources.
 
-| **Environment Variable** | **Containers** | **Docker    ** | **Kubernetes** | **Systemd** |
+| **Environment Variable** | **Containers** | **Docker** | **Kubernetes** | **Systemd** |
 |:--------------------------|:----------------|:----------------|:----------------|:-------------|
 | `EXCLUDE_CONTAINER_REGEX`  | ![check](/img/reuse/check.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) |
 | `EXCLUDE_FACILITY_REGEX`   | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![check](/img/reuse/check.png) |

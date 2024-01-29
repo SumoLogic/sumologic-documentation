@@ -16,7 +16,7 @@ For example, instead of creating one monitor to alert on CPU utilization, you co
 
 ## Why does my monitor get automatically disabled? 
 
-Sumo Logic will automatically disable a Monitor if it violates specific limitations. You can check the reason it was disabled with the [Audit Event Index](/docs/manage/security/audit-event-index.md). The following query will search the Audit Event Index for the reason:  
+Sumo Logic will automatically disable a Monitor if it violates specific limitations. You can check the reason it was disabled with the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index.md). The following query will search the Audit Event Index for the reason:  
 
 ```sql
 _index=sumologic_system_events MonitorSystemDisabled <monitorId>
@@ -48,6 +48,12 @@ deployment=acme region=us-east1 metric=container_cpu_usage_seconds_total | rate 
 
 And so on.
 
+## Is there a limit to the number of monitors I can have?
+
+See [Sumo Logic Pricing](https://www.sumologic.com/pricing) to learn the number of monitors (active and inactive) you can run simultaneously. You can increase the monitor limit up to 5000 by reaching out to our support team.
+
+For the best experience, we recommend being mindful of the number of monitors you create. Having a manageable volume of alerts will allow your team to better respond to critical issues.
+
 ## Can I reference my monitor configuration in the notification?
 
 Yes, you can use [Alert Variables](/docs/alerts/monitors/alert-variables) to reference various monitor configurations in your custom payload.
@@ -70,9 +76,4 @@ then selecting **Duplicate**. If your monitor still doesn't work, we recommend
 
 ## Can I disable a Monitor during scheduled maintenance or upgrade window?
 
-The Monitors page allows you to disable a Monitor so you're not alerted during specific times like scheduled maintenance or upgrade windows. Follow the below steps to disable a monitor. 
-
-1. Find and select the Monitor in the Monitors table. A three-dot icon appears on the right of the row.<br/> ![menu-option.png](/img/monitors/menu-option.png)
-1. Click the three-dot icon to view the menu options. You can select to Enable or Disable the monitor.
-
-Currently, you can only manually disable or enable a Monitor. You can't disable and enable based on a schedule.
+Yes. See [Muting Schedules](/docs/alerts/monitors/muting-schedules) to learn how to pause alert notifications from monitors according to a schedule defined by you.

@@ -6,11 +6,12 @@ description: Learn how to write an Aggregation rule.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CseRule from '../../reuse/cse-rule-description-links.md';
 
-This topic has information about CSE Aggregation rules and how to write them.
+This topic has information about Cloud SIEM Aggregation rules and how to write them.
 
 :::tip
-If you are new to writing your own CSE rules, see [Before You Write a Custom Rule](before-writing-custom-rule.md) for tips and techniques that are useful for getting started.
+If you are new to writing your own Cloud SIEM rules, see [Before You Write a Custom Rule](/docs/cse/rules/before-writing-custom-rule) for tips and techniques that are useful for getting started.
 :::
 
 ## About Aggregation rules
@@ -34,7 +35,7 @@ The table below summarizes the rule configuration. Each row corresponds to an el
 
 The screenshot below shows the **If Triggered** configuration for the example rule in the Rules Editor. 
 
-<img src={useBaseUrl('img/cse/agg-rule.png')} alt="agg-rule.png" width="400"/>
+<img src={useBaseUrl('img/cse/agg-rule.png')} alt="Aggregate rule" width="400"/>
 
 Watch this micro lesson to learn how to create an Aggregation rule.
 
@@ -55,11 +56,11 @@ import Iframe from 'react-iframe'; 
 ## Create an Aggregation rule
 
 1. Select **Rules** from the Content menu.
-1. On the **Create a Rule** page, click **Create** in the **Aggregation** card. 
+1. On the **Create a Rule** page, click **Create** in the **Aggregation** card.
 1. In the rules editor:
    1. **Name**. At the top of the Rules Editor, enter a name for the rule. Signals fired by the rule will have the same name as the rule.
    1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.  
-   
+
 ## Configure “If Triggered” settings
 
 On the left side of the Rules Editor, in the **If Triggered** section, you configure a filter that determines the Records to which the rule will be applied, and the conditions under which you want the rule to fire a Signal. Here’s the UI before any entries have been made: <br/><img src={useBaseUrl('img/cse/agg-rule-if-triggered.png')} alt="agg-rule-if-triggered.png" width="400"/>
@@ -78,14 +79,14 @@ On the left side of the Rules Editor, in the **If Triggered** section, you confi
 1. **that match the following condition**. Enter one or more boolean expressions, based on the results of the configured aggregations, which when true will cause the rule to fire a Signal. For example, given the following expression, a rule will fire a Signal when the sum of `Aggregation-1` and `Aggregation-2` is greater than 1.  `Aggregation-1 + Aggregation-2 > 1`
 
 ## Test your rule expression
-After creating a rule expression, you can test it against existing Records in CSE.
+After creating a rule expression, you can test it against existing Records in Cloud SIEM.
 
 1. Click **Test Rule** above the rule expression.
-1. The **If Triggered** section expands, and CSE searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message.
+1. The **If Triggered** section expands, and Cloud SIEM searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message.
 1. If no matches were returned, try changing the time range.
 
 :::note
-If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](rule-tuning-expressions.md), you can test it without the tuning expressions, or with selected tuning expressions.
+If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions), you can test it without the tuning expressions, or with selected tuning expressions.
 :::
 
 ### Configure “Then Create a Signal” settings
@@ -95,8 +96,11 @@ On the right side of the Rules Editor, in the **Then Create a Signal** section, 
 <img src={useBaseUrl('img/cse/then-create-a-signal.png')} alt="then-create-a-signal.png" width="400"/>
 
 1. **On Entity**. Use the pull-down list to select one or more Entity fields, for example, an IP address, MAC address, hostname, and so on. When the rule is triggered, it will fire a Signal on each of the Entity fields you select.  
-1. **with the summary**. 
+1. **with the summary**. Enter a brief summary describing what causes the Rule to create a Signal.
 1. **with the description**. Enter a description for the Signal. The Signal description should be a good indication of what the rule looks for.
+   :::note
+   <CseRule/>
+   :::
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity:
    * **Constant**. Every Signal that the rule fires will have the same severity,
    * **Dynamic**. Severity is based on the value of a field in the Record.
@@ -131,4 +135,4 @@ Click **Submit** to save the rule.
 ### Duplicate Signals?
 If you determine that a Threshold, Chain, or Aggregation rule is firing identical Signals for the same conditions during the same time interval, there’s a likely explanation. This situation can arise due to how these rule types are processed: they are evaluated differently than Match rules, because they support time duration conditions. For example, a Threshold rule fires when its rule expression is matched at least a certain number of times during a specified length of time.
 
-To successfully apply a rule across a sliding time window, CSE evaluates Records across overlapping time spans. Consider a rule that requires three matches across five minutes. With non-overlapping windows, we could detect one match at the end of one time window, and two more in the following time window. This should cause the rule to fire a Signal, but would not, because the required five minute span is split between two evaluation windows. Overlapping evaluation windows solves this problem. In some cases though, it can also result in duplicate Signals. However, as long as you don’t run the rule as a prototype, duplicate Signals will be suppressed, as described in [About Signal Suppression](../records-signals-entities-insights/about-signal-suppression.md).
+To successfully apply a rule across a sliding time window, Cloud SIEM evaluates Records across overlapping time spans. Consider a rule that requires three matches across five minutes. With non-overlapping windows, we could detect one match at the end of one time window, and two more in the following time window. This should cause the rule to fire a Signal, but would not, because the required five minute span is split between two evaluation windows. Overlapping evaluation windows solves this problem. In some cases though, it can also result in duplicate Signals. However, as long as you don’t run the rule as a prototype, duplicate Signals will be suppressed, as described in [About Signal Suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression).

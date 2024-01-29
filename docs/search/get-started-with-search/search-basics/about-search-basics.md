@@ -47,7 +47,7 @@ All queries begin with a keyword or string search. Wildcards are allowed includi
 
 Here's an example:
 
-`_sourcecategory=apache | parse "* --" as src_ip | count by src_ip | sort _count`
+`_sourceCategory=apache | parse "* --" as src_ip | count by src_ip | sort _count`
 
 This query means:
 
@@ -56,7 +56,7 @@ This query means:
 As queries get longer and more complex, it is a best practice to format your queries by using a soft return before the pipes, such as:
 
 ```sql
-_sourcecategory=apache
+_sourceCategory=apache
 | parse "* --" as src_ip
 | count by src_ip | sort _count
 ```
@@ -71,6 +71,6 @@ Searches can be long and complex, but they are limited to a maximum of 15,000 ch
 
 * Learn more about [How to Build a Search](/docs/search/get-started-with-search/build-search).
 * Expand the complexity of your search queries with Sumo Logic [search operators](/docs/search/search-query-language/group-aggregate-operators).
-* [Save a search](save-search.md) to re-use later or to run as regularly [scheduled searches](/docs/alerts/scheduled-searches/schedule-search) that can be delivered to your email address.
+* [Save a search](save-search.md) to reuse later or to run as regularly [scheduled searches](/docs/alerts/scheduled-searches/schedule-search) that can be delivered to your email address.
 * [Share a link](share-link-to-search.md) to the results of a search query, depending on each user's permissions. To share a link to a search, after your query has run, click **Share** beneath the search query box. This link will be available for three years after it is created. 
 * See [Best Practices: Search Rules to Live By](/docs/search/get-started-with-search/build-search/best-practices-search) for types on writing efficient searches.

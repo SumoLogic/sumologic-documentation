@@ -13,7 +13,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Jenkins App allows you to monitor multiple Jenkins master nodes from a single-pane of glass. The app supports freestyle and pipeline jobs as well as pipeline, maven  and multi-branch pipeline projects.
 
-Sumo Logic Jenkins plugin is compatible with Jenkins version 2.60.1 and above. For more information refer [Sumo Logic Jenkins Plugin WIKI](https://plugins.jenkins.io/sumologic-publisher) page.
+Sumo Logic Jenkins plugin is compatible with Jenkins version 2.361.1. For more information refer [Sumo Logic Jenkins Plugin WIKI](https://plugins.jenkins.io/sumologic-publisher) page.
+
 
 
 ## Log and Metric Types
@@ -24,14 +25,15 @@ The Jenkins App uses the following Log Types:
 * Audit Logs - Log events related to user authentication, Jenkins system and job configuration changes and Jenkins job run events.
 * Metric Data - Log events related to metric information of Jenkins Master.
 * Periodic Logs - Log events related to Jenkins nodes, master shutdown events, jobs in progress and in queue.
-* SCM Log - Log events related to Source Control Management systems like the github repository.
+* SCM Log - Log events related to Source Control Management systems like the GitHub repository.
 * Job Status Logs - Log events related to Jenkins jobs, test results and pipeline stages.
 * Job Console Logs - Log events related to job console logs.
 
 
-### Sample Log Messages
+### Sample log messages
 
-<details><summary><strong>Click to expand.</strong> See sample log messages for log types, such as Authentication, Configuration Change, Shutdown, and Job Status.</summary>
+<details>
+<summary><strong>Click to expand.</strong> See sample log messages for log types, such as Authentication, Configuration Change, Shutdown, and Job Status.</summary>
 
 ```json title="Authentication"
 {
@@ -264,7 +266,7 @@ The Jenkins App uses the following Log Types:
 
 </details>
 
-### Sample Query
+### Sample queries
 
 This sample Query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
 
@@ -305,7 +307,13 @@ To create a new HTTP logs and metric source:
 
 You must have Admin privileges to perform any of the following installation procedures. This section walks you through the ways in which you can install the Jenkins plugin.
 
-<details><summary><strong>Updating the Jenkins plugin</strong>: use this method if the Jenkins plugin is already installed on your system and you want to update the version.</summary>
+:::note
+Beginning with Jenkins 2.357 (released on June 28, 2022) and the forthcoming 2.361.1 LTS release, Jenkins requires Java 11 or newer. The latest Sumo Logic Jenkins plugin works with Jenkins versions greater than 2.261.1 and Java 11.
+To install the plugin with Java 8 and older version of Jenkins, use the old release [(2.2.1)](https://repo.jenkins-ci.org/artifactory/releases/org/jenkins-ci/plugins/sumologic-publisher/2.2.1/sumologic-publisher-2.2.1.hpi) of Sumo Logic plugin.
+:::
+
+<details>
+<summary><strong>Updating the Jenkins plugin</strong>: use this method if the Jenkins plugin is already installed on your system and you want to update the version.</summary>
 
 This section shows you how to update the version of the Jenkins plugin you have running on your system.
 
@@ -316,7 +324,8 @@ This section shows you how to update the version of the Jenkins plugin you have 
 
 </details>
 
-<details><summary><strong>Installing with the sumologic publisher</strong>: use this method if you're using the sumologic publisher for the first time.</summary>
+<details>
+<summary><strong>Installing with the sumologic publisher</strong>: use this method if you're using the sumologic publisher for the first time.</summary>
 
 This section shows you how to install the Jenkins plugin, if this is your first time using sumologic publisher.
 
@@ -329,7 +338,8 @@ To perform a first time installation, do the following:
 
 </details>
 
-<details><summary><strong>Manually installing the Jenkins plugin</strong>: use this method if there's a restriction on installing the plugin directly through the Jenkins plugin update center.</summary>
+<details>
+<summary><strong>Manually installing the Jenkins plugin</strong>: use this method if there's a restriction on installing the plugin directly through the Jenkins plugin update center.</summary>
 
 This section shows you how to manually install the Jenkins plugin.
 
@@ -370,9 +380,9 @@ To configure the Jenkins Plugin, do the following:
 6. Jenkins plugin can be configured with an HTTP proxy. Once this is configured all the logs which are being sent from the Jenkins plugin will go through the proxy before getting ingested in sumo logic. Following are the parameters which are introduced to support the same:
    * **Enable Proxy Setting (checkbox):** Check to Enable proxy setting
    * **Proxy Host:** User to input the proxy server host-name here.
-   * **Proxy port: **Specify the port of the proxy server.
+   * **Proxy port:** Specify the port of the proxy server.
    * **Enable Proxy Authentication(checkbox):** Check to enable Authentication for the proxy. This can be used if the proxy is configured with authentication.
-   * **Username: **Username to be used for the proxy Authentication.
+   * **Username:** Username to be used for the proxy Authentication.
    * **Password**: Password to be used for proxy authentication.
 7. Click **Apply**, and then click **Save**.
 
@@ -408,12 +418,14 @@ This section provides instructions for installing the Sumo Logic App for Jenkins
 
 Now that you have set up collection for Jenkins you can install the Sumo Logic App for Jenkins, and use its pre-configured searches and dashboards.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Jenkins Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 

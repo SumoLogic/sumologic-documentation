@@ -31,15 +31,19 @@ Varnish logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](htt
   ```
 * Configure Varnish to log to a local file. By default, any installation of varnishd will not write any request logs to disk. Instead, Varnish has an in-memory log, and supplies tools to tap into this log and write to disk. To configure logging to a local file, follow the steps on [this](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#enable-varnishncsa-logging) page. By default, Varnish logs are stored in /var/log/varnish/varnishncsa.log. For customized options please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1).
 
-## Collection Configuration and App installation
+## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -49,11 +53,13 @@ In this step, you will configure the yaml required for Varnish Collection. You'l
 
 The files are located in `/var/log/varnish/varnishncsa.log` by default. For more details, refer the the [Prerequisites](#prerequisites) section of this page. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Varnish-OpenTelemetry/Varnish-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -61,6 +67,9 @@ The files are located in `/var/log/varnish/varnishncsa.log` by default. For more
   values={[
     {label: 'Linux', value: 'Linux'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -81,17 +90,42 @@ The files are located in `/var/log/varnish/varnishncsa.log` by default. For more
   ```
 
 </TabItem>
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-### Sample Log Messages in Non-Kubernetes environments
+<LogsOutro/>
+
+### Sample log messages in Non-Kubernetes environments
 
 ```sql
 175.120.107.250 - - [24/Jan/2023:14:37:44 +0530] "POST /_media/resource_thumb_video_my_v2_homepage.jpg HTTP/1.1" 404 99737883 "http://yahoo.com/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25"
 ```
 
-### Sample Query
+### Sample queries
 
 This sample query is from the **Varnish Overview - Traffic Volume** dashboard > **MB Served Over Time** panel.
 

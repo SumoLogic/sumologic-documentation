@@ -8,7 +8,7 @@ tags: [get started, getting started]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="50"/>
+<img src={useBaseUrl('img/icons/business/mission.png')} alt="icon" width="35"/>
 
 Sumo Logic provides extensive features and options to gather, monitor, and analyze data, manage your infrastructure, integrate with third-party applications, and so much more!
 
@@ -22,13 +22,7 @@ What you'll learn:
 
 ## Before you begin
 
-You'll need a Sumo Logic account to proceed. You can sign up for a free trial [here](/docs/get-started/sign-up).
-
-## Your Sumo Logic Journey
-
-Sumo Logic puts the power of data analytics at the fingertips of everyone on your team. Sumo's pre-configured searches and at-a-glance visual dashboards make it easy to search, filter, and analyze your data. Visual displays of up-to-date data allow you to monitor the health and fitness of your application and network, providing insights for troubleshooting and timely resolutions.
-
-Let's get started!
+You'll need a Sumo Logic account. Sign up for a free trial [here](/docs/get-started/sign-up).
 
 ## Step 1: Get your data into Sumo
 
@@ -45,9 +39,9 @@ OpenTelemetry is our preferred collector unless you're configuring security data
 1. Log in to Sumo Logic.
 1. Go to **App Catalog** and click the app you'd like to install.
 1. Click the **Add a New Collector** option during app installation.
-  :::note
-  Only V2 apps have the **Add a New Collector** option.
-  :::
+   :::note
+   Only V2 apps have the **Add a New Collector** option.
+   :::
 1. After you've installed the collector, you'll be prompted with instructions to set up the source.
 
 #### Installed and Hosted Collector
@@ -97,7 +91,7 @@ You can **view your data with predefined searches and dashboards** that facilita
 
 ## Step 4: Share your findings with your team
 
-You have downloaded an app and analyzed your data with searches and dashboards. You may even have [modified your dashboards](/docs/dashboards/edit-dashboards/manage-dashboards), and now you want to share your findings with your team. You can easily share a dashboard by clicking the share icon in the top menu bar.
+You have downloaded an app and analyzed your data with searches and dashboards. You may even have [modified your dashboards](/docs/dashboards/panels/modify-chart), and now you want to share your findings with your team. You can easily share a dashboard by clicking the share icon in the top menu bar.
 
 ![Share Dashboard](/img/get-started/WTS_Share-dashboard.png)
 
@@ -118,7 +112,7 @@ From the Sumo Logic Home page, click the **Learn** tab to access:
 - Getting Started tutorials
 - Sumo docs, support, community, and training
 
-![Welcome Learn](/img/get-started/Welcome_learn.png)
+<img src={useBaseUrl('img/get-started/Welcome_learn.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="800" />
 
 Don't just learn it - master it! Get recognized as a Sumo Logic expert by completing the courses in the [Sumo Logic Certification Program](/docs/get-started/training-certification-faq/#what-certifications-does-sumo-logic-offer). We’re happy to help you get certified right from the product.
 
@@ -130,7 +124,6 @@ Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a su
 :::
 
 * [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source/)
-* [AWS Observability Quickstart](/docs/observability/aws/quickstart). This guide will walk you through setting up the Sumo Logic AWS Observability integration.
 * [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart). Get up and running with the Sumo Logic Kubernetes solution in minutes.
 * [Traces Quickstart](/docs/apm/traces#quickstart). This guide demonstrates how to measure application microservice performance.
 * [Ingest Budgets Quickstart](/docs/manage/ingestion-volume/ingest-budgets/quickstart). Learn how to create and use Ingest Budgets.

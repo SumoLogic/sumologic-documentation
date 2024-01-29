@@ -33,7 +33,7 @@ To configure an AWS CloudTrail Source, perform these steps:
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can upgrade your account at any time.
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -72,7 +72,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 | parse "\"userName\":\"*\"" as user
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Created and Deleted Network and Security Events"
 _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
@@ -91,24 +91,9 @@ In some cases, your query results may show `"HIDDEN_DUE_TO_SECURITY_REASONS"` as
 
 Now that you have set up collection, install the Amazon CloudTrail - Cloud Security Monitoring and Analytics app to use the preconfigured searches and Dashboards that provide insight into your data.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the Install the Apps from the Library.
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-      * Choose **Source Category**, and select a source category from the list. 
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+<AppInstall/>
 
 ## Viewing AWS CloudTrail Dashboards
 
@@ -124,7 +109,7 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 
 ### Security Analytics - Access Monitoring
 
-**Description: **See the details of security group activities and all AWS activities divided by read only and non read only.
+**Description:** See the details of security group activities and all AWS activities divided by read only and non read only.
 
 **Use Case:** Provides analysis of group activity events including revoking and authorizing access, creating and deleting groups, and other events.
 
@@ -142,7 +127,7 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 
 ### Security Monitoring - Account and System Monitoring
 
-**Description: **See the details of identity and access management for users, roles, access keys and other aspects of identity.
+**Description:** See the details of identity and access management for users, roles, access keys and other aspects of identity.
 
 **Use Case:** Provides analysis of IAM activity. Analysis of created and deleted users as well as a summary of IAM events. Created and deleted roles are evidenced. An additional set of analysis looks into password management, user changes in groups and other events.
 
@@ -159,7 +144,7 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 
 ### AWS CloudTrail - Security Analytics - Privileged Activity
 
-**Description: **Provides analytics on events that require elevated privileges.
+**Description:** Provides analytics on events that require elevated privileges.
 
 **Use Case:** Provides top events, trending and outliers on configuration changes, security group events, and security policy changes.
 
@@ -169,6 +154,6 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 
 **Description:** Review this dashboard for details on potential threats and IOCs for AWS CloudTrail.
 
-**Use Case: **Provides analysis on Threats Associated with CloudTrail Events, Threats By Actor, Threats by Events and I.P, Threats by Events and Result, Threats by Geo Location, Threats Over Time by Result.
+**Use Case:** Provides analysis on Threats Associated with CloudTrail Events, Threats By Actor, Threats by Events and I.P, Threats by Events and Result, Threats by Geo Location, Threats Over Time by Result.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Monitoring-Threat-Intelligence.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />

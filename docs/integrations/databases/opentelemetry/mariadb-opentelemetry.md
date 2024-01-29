@@ -53,13 +53,19 @@ MariaDB logs written to a log file can be collected via the Filelog receiver of 
 4. Save the `server.cnf` file.
 5. Restart the MariaDB server: `systemctl restart mariadb`
 
-## Configure MariaDB Logs Collection
+## Collection configuration and app installation
+
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -67,7 +73,7 @@ In this step, you will configure the yaml required for MariaDB Collection. Path 
 
 The files are typically located in `/var/log/mariadb/`. If you're using a customized path, check the respective conf file (default location: `/etc/my.cnf`) for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo
 
@@ -80,6 +86,9 @@ Once you have the yaml file downloaded in step 2, you can copy the same to the m
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -109,9 +118,35 @@ Once you have the yaml file downloaded in step 2, you can copy the same to the m
   ```
 
 </TabItem>
+
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 ## Sample Logs
 
@@ -119,7 +154,7 @@ Once you have the yaml file downloaded in step 2, you can copy the same to the m
 2023-01-09*04:51:04 0 [ERROR] mysqld: Event Scheduler: An error occurred when initializing system tables. Disabling the Event Scheduler.
 ```
 
-## Sample Queries
+## Sample queries
 
 Following query is from the "Errors" panel of the overview dashboard in Mariadb app: 
 
