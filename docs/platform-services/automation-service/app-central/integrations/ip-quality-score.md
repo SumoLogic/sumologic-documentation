@@ -4,7 +4,7 @@ description: ''
 tags: [ ]
 ---
 
-<img src="/img/platform-services/automation-service/app-central/logos/ip-quality-score.png" width="200"/>
+![](/img/platform-services/automation-service/app-central/logos/ip-quality-score.png)
 
 Version: 1.2  
 Updated: Jan 29, 2024
