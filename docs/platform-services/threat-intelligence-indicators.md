@@ -75,7 +75,7 @@ You can also add threat intelligence indicators using the API or a collector. Se
 1. Select the format of the file to be uploaded:
     * **Normalized JSON**. A normalized JSON file. 
     * **CSV**. A comma-separated value (CSV) file. 
-    * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. 
+    * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. When choosing this format, you must enter the name of the source in the **Source** field provided. 
 
    See [Upload formats](#upload-formats) for the format to use in the file.
 1. Click **Upload** to upload the file. 
@@ -213,47 +213,39 @@ Normalized JSON format is a standardized method to present JSON data. You can us
 Following is an example threat indicator file in normalized JSON format. (For another example, see the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators)).
 
 ```
-{"indicators":[
-  {
-    "id": "0004",
-    "indicator": "192.0.2.0",
-    "type": "ipv4-addr",
-    "source": "pmn-13-dec",
-    "imported": "2023-03-21T12:00:00.000Z",
-    "updated": "2023-03-21T12:00:00.000Z",
-    "validFrom": "2023-03-21T12:00:00.000Z",
-    "validUntil": "2024-11-27T12:00:00.000Z",
-    "confidence": 1,
-    "threatType": "indicator",
-    "fields": {}
-  },
-  {
-    "id": "0005",
-    "indicator": "192.0.2.2",
-    "type": "ipv4-addr",
-    "source": "FreeTAXII",
-    "imported": "2023-03-21T12:00:00.000Z",
-    "updated": "2023-03-21T12:00:00.000Z",
-    "validFrom": "2023-03-21T12:00:00.000Z",
-    "validUntil": "2024-08-15T12:00:00.000Z",
-    "confidence": 1,
-    "threatType": "indicator",
-    "fields": {}
-  },
-  {
-    "id": "00010",
-    "indicator": "192.0.2.4",
-    "type": "ipv4-addr",
-    "source": "TestFeed",
-    "imported": "2023-03-21T12:00:00.000Z",
-    "updated": "2023-03-21T12:00:00.000Z",
-    "validFrom": "2023-03-21T12:00:00.000Z",
-    "validUntil": "2023-08-15T12:00:00.000Z",
-    "confidence": 1,
-    "threatType": "indicator",
-    "fields": {}
-  }
-]
+{
+ "indicators": [
+   {
+     "id": "0001",
+     "indicator": "192.0.2.0",
+     "type": "ipv4-addr",
+     "source": "FreeTAXII",
+     "validFrom": "2023-03-21T12:00:00.000Z",
+     "validUntil": "2025-03-21T12:00:00.000Z",
+     "confidence": 30,
+     "threatType": "malicious-activity",
+     "actor": "",
+     "fields": {
+       "property1": "string",
+       "property2": "string"
+     }
+   },
+   {
+     "id": "0002",
+     "indicator": "192.0.2.1",
+     "type": "ipv4-addr",
+     "source": "FreeTAXII",
+     "validFrom": "2023-03-21T12:00:00.000Z",
+     "validUntil": "2025-03-21T12:00:00.000Z",
+     "confidence": 30,
+     "threatType": "malicious-activity",
+     "actor": "",
+     "fields": {
+       "property1": "string",
+       "property2": "string"
+     }
+   }
+ ]
 }
 ```
 
@@ -284,15 +276,25 @@ The following attributes are required:
 
 Comma-separated value (CSV) is a standard format for data upload.
 
-#### Example file
+#### Example files
 
-Following is an example threat indicator file in CSV format. (For another example, see the [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators)).
+If uploading a CSV file from the UI, the format should be the same as used for a standard CSV file:
+
+```
+0001,192.0.2.0,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,
+0002,192.0.2.1,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,
+```
+
+If uploading a CSV file using the API, the file should be contained in a JSON object like this:
 
 ```
 {
-  "csv": "0001,192.0.2.0,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2023-05-21T12:00:00.00Z,3,indicator,actor1,\n"
+ "blob": "0001,192.0.2.0,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,\n
+0002,192.0.2.1,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,\n"
 }
 ```
+
+For other examples for uploading CSV files using the API, see the [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators) and the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators).
 
 #### Required attributes
 
@@ -300,7 +302,7 @@ For information about the attributes to use, see ["Indicator" in the STIX 2.1 sp
 
 Columns for the following attributes are required in the upload file:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
-       * **value** (string). Value of the indicator, such as an IP address, file name, email address, etc. For example, `192.0.2.0`.
+       * **indicator** (string). Value of the indicator, such as an IP address, file name, email address, etc. For example, `192.0.2.0`.
        * **type** (string). Type of the indicator. Following are valid values: 
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
@@ -315,8 +317,9 @@ Columns for the following attributes are required in the upload file:
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest. For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined by indicator_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `indicator`.
-       * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor1,actor2`. This attribute is frequently used in the s_CrowdStrike source.
+       * **threatType** (string). Type of indicator (as [defined by indicator_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`.
+       * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor1`. This attribute is frequently used in the s_CrowdStrike source. Note if you don’t provide a value for `actors`, you still must provide the empty column at the end of the row with an extra comma, as shown in the examples above.
+
 
 ### STIX 2.1 JSON format
 
@@ -326,49 +329,61 @@ Note that if you want to upload indicators from multiple sources, you cannot use
 
 #### Example file
 
-Following is an example threat indicator file in STIX 2.1 JSON format. (For another example, see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)).
+Following is an example threat indicator file in STIX 2.1 JSON format. 
+
+As shown in the following example, if uploading via the API you must add the source attribute outside of the indicators object, since the source is not part of the STIX standard. However, if you are uploading via the UI, do not include the source value in the file, since the UI prompts for the source value when you [add the indicator](/docs/platform-services/threat-intelligence-indicators#add-indicators-in-the-threat-intelligence-tab).
+
+(For another example for uploading via the API, see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)).
 
 ```
 {
-  "source": "MyTest2",
-  "imported": "2024-01-24T12:00:00.000Z",
-  "indicators": [
-    {
-      "type": "indicator",
-      "spec_version": "2.1",
-      "id": "acme:indicator-bf8bc5d5-c7e6-46b0-8d44",
-      "created": "2023-03-21T12:00:00.000Z",
-      "modified": "2023-03-21T12:00:00.000Z",
-      "confidence": "1",
-      "pattern": "[ipv4-addr:value = '192.0.2.0']",
-      "pattern_type": "stix",
-      "valid_from": "2023-03-21T12:00:00.000Z",
-      "valid_until": "2023-03-21T12:00:00.000Z",
-      "revoked": true
-    },
-    {
-      "id": "indicator--9e27e556-166f-44a6-a6b4",
-       "spec_version": "2.1",
-       "type": "indicator"
-       "confidence": 75,
-       "created": "2024-01-01T12:00:00.000Z",
-       "modified": "2024-01-01T12:00:00.000Z",
-       "pattern": "[ipv4-addr:value = '192.0.2.2']",
-       "pattern_type": "ipv4-addr:value",
-       "valid_from": "2024-01-01T12:00:00.000Z"
-    },
-    {
-       "id": "indicator--9e27e556-166f-44a6-a6c6",
-       "spec_version": "2.1",
-       "type": "indicator",
-       "confidence": 75,
-       "created": "2024-01-01T12:00:00.000Z",
-       "modified": "2024-01-01T12:00:00.000Z",
-       "pattern": "[ipv4-addr:value = '192.0.2.4']",
-       "pattern_type": "ipv4-addr:value",
-       "valid_from": "2024-01-01T12:00:00.000Z"
-    }
-  ]
+ "source": "FreeTAXII",
+ "indicators": [
+   {
+     "type": "indicator",
+     "spec_version": "2.1",
+     "id": "0001",
+     "created": "2023-03-21T12:00:00.000Z",
+     "modified": "2023-03-21T12:00:00.000Z",
+     "confidence": 30,
+     "pattern": “[ipv4-addr:value = ‘192.0.2.0’]”,
+     "pattern_type": “ipv4-addr:value”,
+     "pattern_version": "string",
+     "valid_from": “2023-03-21T12:00:00.000Z”,
+     "valid_until": “2025-03-21T12:00:00.000Z”,
+     "indicator_types": [
+       "malicious-activity"
+     ],
+     "kill_chain_phases": [
+       {
+         "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+         "phase_name": "reconnaissance"
+       }
+     ]
+   },
+   {
+     "type": "indicator",
+     "spec_version": "2.1",
+     "id": "0002",
+     "created": "2023-03-21T12:00:00.000Z",
+     "modified": "2023-03-21T12:00:00.000Z",
+     "confidence": 30,
+     "pattern": “[ipv4-addr:value = ‘192.0.2.1’]”,
+     "pattern_type": “ipv4-addr:value”,
+     "pattern_version": "string",
+     "valid_from": “2023-03-21T12:00:00.000Z”,
+     "valid_until": “2025-03-21T12:00:00.000Z”,
+     "indicator_types": [
+       "malicious-activity"
+     ],
+     "kill_chain_phases": [
+       {
+         "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+         "phase_name": "reconnaissance"
+       }
+     ]
+   }
+ ]
 }
 ```
 #### Required attributes
