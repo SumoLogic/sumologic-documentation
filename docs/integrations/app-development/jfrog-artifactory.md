@@ -52,7 +52,7 @@ Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
 2017-01-13 18:54:12,121 [ACCEPTED DEPLOY] pypi-remote-cache:.pypi/test.html for billythekid/1.1.1.1.
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Data Transfer Over Time"
 _sourceCategory=*artifactory*
@@ -221,7 +221,7 @@ admin/149.5.95.40.
 ```
 
 
-### Sample Queries
+### Sample queries
 
 ```bash title="Requests by Repo"
 _sourceCategory = Labs/artifactory/*

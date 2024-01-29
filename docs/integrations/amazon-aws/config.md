@@ -35,7 +35,7 @@ Amazon Web Services (AWS) Config provides a simple web services interface that c
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Latest Resource Modifications (from App)"
 _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification

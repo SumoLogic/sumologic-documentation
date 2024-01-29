@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Functions](https://learn.microsoft.com/en-us/azure/azure-functions/functions-overview) is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. This integration helps in monitoring the health, tracking executions, and estimating cost of your function apps.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Functions, you can collect the following logs and metrics:
 

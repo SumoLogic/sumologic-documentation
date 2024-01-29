@@ -127,7 +127,7 @@ The DocuSign App for Sumo Logic uses [Events](https://developers.docusign.com/do
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 This section contains the sample queries of both the `Events` and `Alerts`.
 

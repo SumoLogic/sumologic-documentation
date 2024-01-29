@@ -17,7 +17,7 @@ Amazon Aurora PostgreSQL is a relational database service built for the cloud. F
 
 This guide provides an overview of the Aurora PostgreSQL ULM app pre-defined queries and dashboards, as well as instructions for collecting logs and metrics from Aurora PostgreSQL, and installing the app.
 
-## Log and Metric types
+## Log and metric types
 
 The Sumo Logic app for Aurora PostgreSQL ULM uses the following logs and metrics:
 * [AWS Cloud Trail](https://aws.amazon.com/cloudtrail/features/)
@@ -174,7 +174,7 @@ This section provides instructions for setting up AWS CloudTrail Source to colle
 To collect AWS CloudTrail events, do the following:
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to the Hosted Collector, providing the following information:
+2. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source) to the Hosted Collector, providing the following information:
    * **Name**. Enter a name to display for the new Source.
    * **Description**. Enter an optional description.
    * **S3 Region**. Select the Amazon Region for your CloudTrail Aurora S3 bucket.

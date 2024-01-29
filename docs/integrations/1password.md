@@ -98,7 +98,7 @@ _sourceCategory=1pw action
 
 ## Collecting logs for 1Password
 
-Follow the instructions for setting up [Cloud to Cloud Integration for 1Password App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source) to create the source and use the same source category while installing the app.
+Follow the instructions for setting up [Cloud-to-Cloud Integration for 1Password App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source) to create the source and use the same source category while installing the app.
 
 ## Installing the 1Password app
 

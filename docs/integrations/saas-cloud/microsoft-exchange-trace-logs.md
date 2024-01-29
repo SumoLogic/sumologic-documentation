@@ -72,7 +72,7 @@ The Sumo Logic App for Microsoft Exchange Trace Logs uses the [MessageTrace repo
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Message Delivery Status"
 _sourceCategory="o365dummy"

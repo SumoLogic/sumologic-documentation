@@ -88,7 +88,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Commits Over Time"
 "commits" "https://api.github.com/repos"

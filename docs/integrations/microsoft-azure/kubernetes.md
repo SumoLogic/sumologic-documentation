@@ -90,7 +90,7 @@ The AKS - Control Plane app collects logs for the following [Azure Kubernetes Se
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="kube-apiserver"
 _sourceCategory="azure/aks" "kube-apiserver"

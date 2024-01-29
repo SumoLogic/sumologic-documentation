@@ -50,7 +50,7 @@ For more information about the IIS 7 log (IIS 7.5 logs are used) format, see [ht
 2016-11-17 22:34:34 10.0.0.98 GET /Trade/Images/VS-ConfigWeb.png - 80 - 156.74.250.7 Mozilla/5.0+(Windows+NT+6.1;+WOW64;+rv:14.0)+Gecko/20100101+Firefox/14.0.1 304 0 0 209 748 7
 ```
 
-### Sample Queries
+### Sample queries
 
 The following query samples are taken from the IIS 7 App.
 
@@ -154,7 +154,7 @@ To collect logs from IIS 7, use an Installed Collector and a Local File Source. 
     3. **File Path** (Required).`C:\inetpub\Logs\LogFiles\W3SVC1\*.log`
     4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
     5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
-    6. **Source Category** (Required). For example, "IIS_prod". (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+    6. **Source Category** (Required). For example, "IIS_prod". (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced** section:
     7. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
     8. **Enable Timestamp Parsing**: Select **Extract timestamp information from log file entries**.

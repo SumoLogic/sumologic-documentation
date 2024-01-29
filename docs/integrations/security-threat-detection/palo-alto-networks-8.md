@@ -93,7 +93,7 @@ Sep 05 12:30:15 Host CEF:0|Palo Alto Networks|Traps Agent|3.4.3.19949|Client Lic
 
 
 
-### Sample Queries
+### Sample queries
 
 
 ```sql title="Virus Threats"
@@ -134,7 +134,7 @@ In this step you configure a installed collector with a Syslog source that will 
     2. **Description.** Optional.
     3. **Protocol**. UDP or TCP.  Choose the protocol you configured in Palo Alto Networks 8 for Syslog monitoring.
     4. **Port**. Port number. Choose the port you configured in Palo Alto Networks 8 for Syslog monitoring.
-    5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).
+    5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).
     6. Click **Save**.
 
 

@@ -36,7 +36,7 @@ ECDHE-RSA-CAMELLIA256-SHA384 TLSv1.2
 ```
 
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Response Codes Distribution by Domain and URI (Access Log Based)"
 account={{account}} region={{region}} namespace={{namespace}}

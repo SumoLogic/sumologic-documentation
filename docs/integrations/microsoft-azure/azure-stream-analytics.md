@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Stream Analytics](https://learn.microsoft.com/en-us/azure/stream-analytics/stream-analytics-introduction) is a fully managed stream processing engine that is designed to analyze and process large volumes of streaming data with sub-millisecond latencies. This integration helps in monitoring and troubleshooting your query and job performance.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Stream Analytics, you can collect the following logs and metrics:
 
@@ -18,7 +18,7 @@ For Azure Stream Analytics, you can collect the following logs and metrics:
   * **Authoring**. These log events that are related to job authoring operations, such as job creation, and starting or stopping the job.
   * **Execution**. These events are related to job execution such as connectivity and data processing errors.
 
-To know more about the different resource log category types and schemas collected for Azure Stream Analytics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/stream-analytics/stream-analytics-job-diagnostic-logs#resource-log-categories).
+To learn more about the different resource log category types and schemas collected for Azure Stream Analytics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/stream-analytics/stream-analytics-job-diagnostic-logs#resource-log-categories).
 
 * **Platform Metrics for Azure Stream Analytics**. These metrics are available in [Microsoft.StreamAnalytics/streamingjobs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-streamanalytics-streamingjobs-metrics) namespace. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/stream-analytics/monitor-azure-stream-analytics-reference#metrics).
 
