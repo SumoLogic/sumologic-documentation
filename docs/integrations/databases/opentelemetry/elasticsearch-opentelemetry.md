@@ -194,7 +194,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 }
 ```
 
-## Sample Queries
+## Sample queries
 
 ### Logs
 

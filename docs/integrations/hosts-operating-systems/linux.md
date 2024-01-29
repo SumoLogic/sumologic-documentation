@@ -7,7 +7,7 @@ description: Allows you to view the events, logins, and security status of your 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="45"/>
 
 The Sumo app for Linux allows you to view information about events, logins, and the security status of your Linux system. The app consists of predefined searches and three dashboards that provide visibility into your environment for real-time or historical analysis.
 
@@ -48,7 +48,7 @@ Configure an [Installed Collector](/docs/send-data/installed-collectors).
 
 ### Configure a Source
 
-To configure a source for collecting Linux logs, you create a Local File Source. Following the instructions on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source). When you define a Source Category for the source, we recommend something like: prod/os/linux. For more information about Source Categories, see see [Best Practices](/docs/send-data/best-practices).
+To configure a source for collecting Linux logs, you create a Local File Source. Following the instructions on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source). When you define a Source Category for the source, we recommend something like: `prod/os/linux`. For more information about Source Categories, see [Best Practices](/docs/send-data/best-practices).
 
 ### Sample log messages
 
@@ -60,7 +60,7 @@ Dec 16 20:26:23 ubuntu sshd[15533]: pam_unix(sshd:auth): authentication failure;
 2016-12-16 19:23:13 remove tomcat7:all 7.0.68-1ubuntu0.1 <none>
 ```
 
-### Sample Queries
+### Sample queries
 
 See [Suggested Searches for Linux OS](#Suggested_Searches_for_Linux_OS).
 

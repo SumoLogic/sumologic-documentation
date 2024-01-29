@@ -120,7 +120,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys). There, you'll need to identify which deployment your Sumo Logic account is in ([learn more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)).
 1. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-1. Download the Sumo Logic Terraform package for Kubernetes alerts. The alerts package is available in the [Sumo Logic github repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/kubernetes). You can either download it through the `git clone` command or as a zip file.
+1. Download the Sumo Logic Terraform package for Kubernetes alerts. The alerts package is available in the [Sumo Logic GitHub repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/kubernetes). You can either download it through the `git clone` command or as a zip file.
 1. **Alert Configuration**. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/`.
    1. Edit the kubernetes.auto.tfvars file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
     ```bash
@@ -346,7 +346,7 @@ Use this dashboard to:
 ### Security Overview
 
 :::note
-This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco:enabled` as `"true"` in values.yaml, as described [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
+This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco:enabled` as `"true"` in values.yaml, as described [here](/docs/send-data/kubernetes/install-helm-chart).
 :::
 
 This dashboard provides high level details around anomalous container, application, host, and network activity detected by Falco.

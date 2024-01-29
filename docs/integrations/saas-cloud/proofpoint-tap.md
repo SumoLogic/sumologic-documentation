@@ -127,7 +127,7 @@ This app uses [Proofpoint TAP source](/docs/send-data/hosted-collectors/cloud-to
 }
 ```
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Sample Message Events Query (Number of Messages)"
 _sourceCategory="milan_proofpoint_tap" ("MESSAGE_BLOCKED" OR "MESSAGE_DELIVERED")
@@ -157,7 +157,7 @@ _sourceCategory="milan_proofpoint_tap" ("CLICK_PERMITTED" or "CLICK_BLOCKED")
 
 ## Set up collection
 
-To set up [Cloud to Cloud Integration Proofpoint TAP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) for the Proofpoint TAP app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Proofpoint TAP source category, which you will need to use when installing the app. By following these steps, you can ensure that your Proofpoint TAP app is properly integrated and configured to collect and analyze your Proofpoint TAP data.
+To set up [Cloud-to-Cloud Integration Proofpoint TAP Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source/) for the Proofpoint TAP app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Proofpoint TAP source category, which you will need to use when installing the app. By following these steps, you can ensure that your Proofpoint TAP app is properly integrated and configured to collect and analyze your Proofpoint TAP data.
 
 ## Installing the Proofpoint TAP app
 

@@ -13,9 +13,6 @@ The [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) 
 Audit logging for the Automation Service uses the same logging as Cloud SOAR, since the Automation Service is based on core functionality in Cloud SOAR. See [Automation Service Audit Logging](/docs/platform-services/automation-service/automation-service-audit-logging/).
 :::
 
-<!--
-// Uncomment this part as soon as it is available.
-
 ## Documentation
 
 All available audited events are documented for your reference. This documentation is hosted on each deployment, instead of on this document. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security") if you are unsure.
@@ -28,11 +25,14 @@ Select the documentation link for your deployment:
 | CA | https://service.ca.sumologic.com/audit/docs/csoar  |
 | DE | https://service.de.sumologic.com/audit/docs/csoar  |
 | EU | https://service.eu.sumologic.com/audit/docs/csoar  |
-| FED | https://service.fed.sumologic.com/audit/docs/csoar |
 | IN | https://service.in.sumologic.com/audit/docs/csoar  |
 | JP | https://service.jp.sumologic.com/audit/docs/csoar  |
 | US1 | https://service.sumologic.com/audit/docs/csoar     |
 | US2 | https://service.us2.sumologic.com/audit/docs/csoar |
+
+<!--
+// Add FED as soon as available
+| FED | https://service.fed.sumologic.com/audit/docs/csoar | 
 -->
 
 ## Search the Audit Event Index

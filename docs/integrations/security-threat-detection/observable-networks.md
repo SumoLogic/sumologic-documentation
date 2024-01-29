@@ -143,7 +143,7 @@ To parse authentication logs:
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Recent Flow Counts"
 _sourceCategory=observable | json field=_raw "obsrvbl_type", "effective_session_count" as type, session_count

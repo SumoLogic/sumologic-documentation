@@ -157,7 +157,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 [Mon Apr 26 09:52:58.188858 2021]  [core:notice]  [pid 530] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
 ```
 
-## Sample Queries
+## Sample queries
 
 ### Logs
 

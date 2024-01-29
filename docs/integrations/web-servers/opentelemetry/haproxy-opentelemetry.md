@@ -39,41 +39,41 @@ This section provides instructions for configuring log collection for HAProxy ru
 
 By default, HAProxy logs are forwarded to Syslog. This needs to be changed to send the logs to files. Configuration in the file `/etc/haproxy/haproxy.cfg` is needed to be modified to send logs to files.
 
-HAProxy logs have several levels of verbosity. To select a level, set your loglevel to one of the following:
+1. HAProxy logs have several levels of verbosity. To select a level, set your loglevel to one of the following:
+   - **emerg**. Errors such as running out of operating system file descriptors.
+   - **alert**. Some rare cases where something unexpected has happened, such as being unable to cache a response.
+   - **info**. TCP connection and http request details and errors.
+   - **err**. Errors such as being unable to parse a map file, being unable to parse the HAProxy configuration file, and when an operation on a stick table fails.
+   - **warning**. Certain important, but non-critical, errors such as failing to set a request header or failing to connect to a DNS nameserver.
+   - **notice**. Changes to a server's state, such as being UP or DOWN or when a server is disabled. Other events at startup, such as starting proxies and loading modules are also included. Health check logging, if enabled, also uses this level.
+   - **debug**. Complete information, useful for development/testing.
 
-- emerg - Errors such as running out of operating system file descriptors.
-- alert - Some rare cases where something unexpected has happened, such as being unable to cache a response.
-- info - TCP connection and http request details and errors.
-- err - Errors such as being unable to parse a map file, being unable to parse the HAProxy configuration file, and when an operation on a stick table fails.
-- warning - Certain important, but non-critical, errors such as failing to set a request header or failing to connect to a DNS nameserver.
-- notice - Changes to a server's state, such as being UP or DOWN or when a server is disabled. Other events at startup, such as starting proxies and loading modules are also included. Health check logging, if enabled, also uses this level.
-- debug - Complete information, useful for development/testing.
-
-All logging settings are located in [Haproxy.conf](https://www.haproxy.com/blog/introduction-to-haproxy-logging/). For the dashboards to work properly, you'll need to set the log format.
-
-```bash
-%ci:%cp\ [%tr]\ %ft\ %b/%s\ %TR/%Tw/%Tc/%Tr/%Ta\ %ST\ %B\ %CC\ %CS\ %tsc\ %ac/%fc/%bc/%sc/%rc\ %sq/%bq\ %hr\ %hs\ %{+Q}r
-```
+   All logging settings are located in [Haproxy.conf](https://www.haproxy.com/blog/introduction-to-haproxy-logging/). For the dashboards to work properly, you'll need to set the log format.
+   ```bash
+   %ci:%cp\ [%tr]\ %ft\ %b/%s\ %TR/%Tw/%Tc/%Tr/%Ta\ %ST\ %B\ %CC\ %CS\ %tsc\ %ac/%fc/%bc/%sc/%rc\ %sq/%bq\ %hr\ %hs\ %{+Q}r
+   ```
 
 1. You can enable HAProxy logs to syslog by adding the following line in the global section of `/etc/haproxy/haproxy.cfg` file. This means that HAProxy will send its messages to rsyslog on 127.0.0.1.
-  ```bash
-  global
-     log 127.0.0.1  local2
-  ```
+   ```bash
+   global
+     log 127.0.0.1  local2
+   ```
+
 1. Create an `etc/rsyslog.d/haproxy.conf` file containing below lines.
-  ```bash
-  local2.*    /var/log/haproxy.log
-  ```
+   ```bash
+   local2.*    /var/log/haproxy.log
+   ```
    * You can, of course, be more specific and create separate log files according to the level of messages:
     ```bash
     local2.=info   /var/log/haproxy-info.log
     local2.=notice   /var/log/haproxy-notice.log
     ```
+
 1. Restart HAProxy and rsyslog server to enforce configuration changes.
-  ```bash
-  sudo service rsyslog restart
-  sudo service haproxy reload
-  ```
+   ```bash
+   sudo service rsyslog restart
+   sudo service haproxy reload
+   ```
 
 ## Collection configuration and app installation
 
@@ -170,7 +170,7 @@ May 13 08:24:43 localhost haproxy[21813]:
 27.2.81.92:64274 [13/May/2021:08:24:43.921] web-edupia.vn-4
 ```
 
-## Sample Queries
+## Sample queries
 
 This query example is from the **HAProxy - Overview** dashboard > **Top 5 URLs with Errors** panel:
 

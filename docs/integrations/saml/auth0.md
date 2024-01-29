@@ -108,7 +108,7 @@ Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_
 
 
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Logins by Client per Day"
 _collector="productionappauth0Logs_Collector"

@@ -79,7 +79,7 @@ _sourceCategory=<akamai-foo>
 
 To begin collecting logs for the Sumo app for Akamai Security Events:
 
-1. Create an Akamai SIEM API Source as described [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source#create-an%C2%A0akamai-siem-api%C2%A0source)
+1. Create an Akamai SIEM API Source as described [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source/#source-configuration).
 2. Enable both Parsing options while creating the Akamai SIEM API Source. Parsing options:
    * Decode httpMessage fields
    * Duplicate Events once for each rule associated with the event

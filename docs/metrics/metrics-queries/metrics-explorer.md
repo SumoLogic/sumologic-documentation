@@ -37,7 +37,7 @@ When converted, the filters convert allowing you to select and modify, make diff
 ## Switch to the Classic metrics UI
 
 :::info Classic Metrics Deprecation
-In late 2023, we're deprecating Classic Metrics and Classic Dashboards in favor of our newer [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) interface. No action is required on your part.
+Effective January 2024, we're deprecated Classic Metrics (and Classic Dashboards) in favor of our newer [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) interface. No action is required on your part.
 :::
 
 If you prefer to use the Classic metrics UI, you can switch to it, and switch back the Metrics Explorer interface at any point. To switch to Classic metrics, click the three-dot icon near the upper right corner of the page and click **Switch to Classic Metrics**. 

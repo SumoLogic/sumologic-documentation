@@ -82,7 +82,7 @@ Configure an [AWS Elastic Load Balancing Source](/docs/send-data/hosted-collecto
 * Source fields:
     * **Bucket Name**. (Required) ELB, for example.
     * **Path Expression**. For example, `my-bucket/prefix/AWSLogs/123456789012/*.log`
-    * **Source Category**. (Required) ELB_Prod, for example. For details see [Best Practices](/docs/send-data/best-practices).
+    * **Source Category**. (Required) ELB_Prod, for example. For details, see [Best Practices](/docs/send-data/best-practices).
 * Advanced:
     * **Enable Timestamp Parsing**. True
     * **Time Zone**. Logs are in UTC by default
