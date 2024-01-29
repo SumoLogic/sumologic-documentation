@@ -74,7 +74,7 @@ One solution is to add additional selectors to your query to reduce the number 
 
 #### Join data limit
 
-When a cross-row calculation (e.g. #A+#B) produces more than 1000 time series, Sumo Logic will limit the number of output from this cross-row calculation to 1000, and present a message as follows:
+When a cross-row calculation (e.g., #A+#B) produces more than 1000 time series, Sumo Logic will limit the number of output from this cross-row calculation to 1000, and present a message as follows:
 
 `The cross-row calculation resulted in too many time-series. Limiting results to 1000 series.`
 
