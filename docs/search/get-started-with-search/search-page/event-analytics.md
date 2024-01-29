@@ -13,7 +13,11 @@ description: Learn more about events in histogram and aggregate charts for your 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Events are actions that can change the state of the system. These could be code deployments, feature flag changes, infrastructure changes and so on. They can be used to identify and mitigate outages in your system. Currently, we only support code deploy events from [Kubernetes](/docs/observability/kubernetes/).
+Events are actions that can change the state of the system. These could be code deployments, feature flag changes, infrastructure changes and so on. They can be used to identify and mitigate outages in your system. 
+
+:::note
+Currently, we only support code deploy events from [Kubernetes](/docs/observability/kubernetes/).
+:::
 
 Sumo Logic intelligently detects and surfaces related events when you run log searches. You can view the indication for the events in the histogram and the aggregate chart below. By clicking on the event, you can view details like **Event start time**, **Event type**, **Event Source** and other metadata associated with the event.
 
@@ -30,8 +34,16 @@ In the below example, an event is captured due to the code deployment. Following
 - You can only view the events in the Line chart, Column chart, and Area Chart. 
 - Make sure that you have switched to **[New Visualizations](/docs/search/get-started-with-search/search-basics/chart-search-results)** to view the events in charts.
 
-## Hide events
+## Fine-Tuning Event Overlay
 
-By default, you can view the events in the histogram and aggregate chart. If you prefer to hide the events from the histogram, you can do so by clicking on the **Hide Events button**.
+**Gathering Events** icon is displayed below the histogram to indicate event identification is in progress.
+
+<img src={useBaseUrl('img/search/get-started-search/search-page/gathering_events.png')} alt="hide_events" style={{border:'1px solid black'}} width="800"/>
+
+**Hide Events** button below the histogram will be greyed out if there are no events identified for the particular log search.
+
+<img src={useBaseUrl('img/search/get-started-search/search-page/hide_events_grey.png')} alt="hide_events_grey" style={{border:'1px solid black'}} width="800"/>
+
+The **Hide Events/Show Events** button below the histogram is used to hide the events from the histogram, and vice versa if you want to view the events. By default, events will be displayed in the histogram and aggregate chart.
 
 <img src={useBaseUrl('img/search/get-started-search/search-page/hide_events.png')} alt="hide_events" style={{border:'1px solid black'}} width="800"/>
