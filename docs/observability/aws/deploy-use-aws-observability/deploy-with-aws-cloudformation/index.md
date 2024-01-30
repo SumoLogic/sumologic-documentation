@@ -177,7 +177,7 @@ Do not update the source names as created by CloudFormation template in Sumo Log
 Follow the steps below to change the default collector name and source categories
 
 1. Download the template version 2.1.0 or later from the [change log](../changelog.md) page.
-1. Modify the collector name and source categories in the Mapping section of the CloudFormation template.<br/><img src={useBaseUrl('img/observability/mappings.png')} style={{border: '1px solid gray'}} alt="mappings" width="600"/>
+1. Modify the collector name and source categories in the `Mappings` section of the CloudFormation template.<br/><img src={useBaseUrl('img/observability/mappings.png')} style={{border: '1px solid gray'}} alt="mappings" width="600"/>
 1. Deploy the CloudFormation template.
 
 ## Troubleshooting
