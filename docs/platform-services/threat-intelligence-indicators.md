@@ -168,6 +168,12 @@ cat sumo://threat-intel  | where _threatlookup.indicator = "192.0.2.0"
 cat sumo://threat-intel  | where _threatlookup.source = "FreeTAXII" and _threatlookup.indicator = "192.0.2.0"
 ```
 
+In the cat output, timestamp fields (like `valid_until`) will appear as integers. You can use the `formatDate()` function to convert them back to timestamps. For example:
+
+```
+cat sumo://threat-intel | formatDate(toLong(_threatlookup.valid_until), "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", "UTC") as valid_until 
+```
+
 :::note
 You cannot use the cat search operator with the `s_crowdstrike` source.
 :::
@@ -239,31 +245,31 @@ Following is an example threat indicator file in normalized JSON format. (For an
    {
      "id": "0001",
      "indicator": "192.0.2.0",
-     "type": "ipv4-addr",
+     "type": "ipv4-addr:value",
      "source": "FreeTAXII",
      "validFrom": "2023-03-21T12:00:00.000Z",
      "validUntil": "2025-03-21T12:00:00.000Z",
      "confidence": 30,
      "threatType": "malicious-activity",
-     "actor": "",
+     "actors": "actor1,actor2",
      "fields": {
-       "property1": "string",
-       "property2": "string"
+       "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+       "kill_chain_phase": "reconnaissance"
      }
    },
    {
      "id": "0002",
      "indicator": "192.0.2.1",
-     "type": "ipv4-addr",
+     "type": "ipv4-addr:value",
      "source": "FreeTAXII",
      "validFrom": "2023-03-21T12:00:00.000Z",
      "validUntil": "2025-03-21T12:00:00.000Z",
      "confidence": 30,
      "threatType": "malicious-activity",
-     "actor": "",
+     "actors": "actor3,actor4",
      "fields": {
-       "property1": "string",
-       "property2": "string"
+       "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+       "kill_chain_phase": "reconnaissance"
      }
    }
  ]
@@ -298,7 +304,7 @@ The following attributes are required:
           * `malicious-activity`. Patterns of suspected malicious objects and/or activity.
           * `attribution`. Patterns of behavior that indicate attribution to a particular threat actor or campaign.
           * `unknown` (or not set). There is not enough information available to determine the threat type.
-       * **actor** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor1`. This attribute is frequently used in the s_CrowdStrike source. 
+       * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor1`. This attribute is frequently used in the s_CrowdStrike source. 
 
 ### CSV format
 
@@ -306,20 +312,23 @@ Comma-separated value (CSV) is a standard format for data upload.
 
 #### Example files
 
-If uploading a CSV file from the UI, the format should be the same as used for a standard CSV file:
+##### Upload with the UI
+
+If uploading a CSV file with the UI, the format should be the same as used for a standard CSV file:
 
 ```
 0001,192.0.2.0,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,
-0002,192.0.2.1,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,
+0002,192.0.2.1,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3
 ```
+
+##### Upload with the API
 
 If uploading a CSV file using the API, the file should be contained in a JSON object like this:
 
 ```
 {
- "csv": 
- "0001,192.0.2.0,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,\n
- 0002,192.0.2.1,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,\n"
+ "csv": "0001,192.0.2.0,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,\n
+0002,192.0.2.1,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,actor3\n"
 }
 ```
 
@@ -354,7 +363,7 @@ Columns for the following attributes are required in the upload file:
           * `malicious-activity`. Patterns of suspected malicious objects and/or activity.
           * `attribution`. Patterns of behavior that indicate attribution to a particular threat actor or campaign.
           * `unknown` (or not set). There is not enough information available to determine the threat type.
-       * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor1`. This attribute is frequently used in the s_CrowdStrike source. Note if you don’t provide a value for `actors`, you still must provide the empty column at the end of the row with an extra comma, as shown in the examples above.
+       * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor3`. This attribute is frequently used in the s_CrowdStrike source. Note if you don’t provide a value for `actors`, you still must provide the empty column at the end of the row with an extra comma, as shown in the examples above.
 
 ### STIX 2.1 JSON format
 
@@ -362,18 +371,36 @@ STIX 2.1 JSON format is a method to present JSON data according to the STIX 2.1 
 
 Note that if you want to upload indicators from multiple sources, you cannot use this format but instead should use the [Normalized JSON format](#normalized-json-format).
 
-#### Example file
-
-Following is an example threat indicator file in STIX 2.1 JSON format. 
-
-As shown in the following example, if uploading via the API you must add the `source` attribute outside of the indicators object, since the source is not part of the STIX standard. However, if you are uploading via the UI, do not include the `source` value in the file, since the UI prompts for the source value when you [add the indicator](/docs/platform-services/threat-intelligence-indicators#add-indicators-in-the-threat-intelligence-tab).
-
-(For another example for uploading via the API, see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)).
+Also note that if your STIX file includes lines like these at the top...
 
 ```
 {
- "source": "FreeTAXII",
- "indicators": [
+  "type": "bundle",
+  "id": "bundle--cf20f99b-3ed2-4a9f-b4f1-d660a7fc8241",
+  "objects": [
+  {
+    "type": "indicator", 
+```
+
+...you should remove them before uploading the file, and leave only the objects array like this:
+
+```
+[
+  {
+    "type": "indicator", 
+```
+
+
+#### Example files
+
+##### Upload with the UI
+
+Following is an example threat indicator file in STIX 2.1 JSON format if you're uploading a file with the UI. 
+
+If you are uploading via the UI, do not include the `source` value in the file, since the UI prompts for the source value when you [add the indicator](/docs/platform-services/threat-intelligence-indicators#add-indicators-in-the-threat-intelligence-tab).
+
+```
+[
    {
      "type": "indicator",
      "spec_version": "2.1",
@@ -382,7 +409,7 @@ As shown in the following example, if uploading via the API you must add the `so
      "modified": "2023-03-21T12:00:00.000Z",
      "confidence": 30,
      "pattern": "[ipv4-addr:value = '192.0.2.0']",
-     "pattern_type": "ipv4-addr:value",
+     "pattern_type": "stix",
      "pattern_version": "string",
      "valid_from": "2023-03-21T12:00:00.000Z",
      "valid_until": "2025-03-21T12:00:00.000Z",
@@ -404,7 +431,64 @@ As shown in the following example, if uploading via the API you must add the `so
      "modified": "2023-03-21T12:00:00.000Z",
      "confidence": 30,
      "pattern": "[ipv4-addr:value = '192.0.2.1']",
-     "pattern_type": "ipv4-addr:value",
+     "pattern_type": "stix",
+     "pattern_version": "string",
+     "valid_from": "2023-03-21T12:00:00.000Z",
+     "valid_until": "2025-03-21T12:00:00.000Z",
+     "indicator_types": [
+       "malicious-activity"
+     ],
+     "kill_chain_phases": [
+       {
+         "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+         "phase_name": "reconnaissance"
+       }
+     ]
+   }
+ ]
+ ```
+
+##### Upload with the API
+
+Following is an example threat indicator file in STIX 2.1 JSON format if you're uploading a file with the API. 
+
+As shown in the following example, if uploading via the API you must add the `source` attribute outside of the indicators object, since the source is not part of the STIX standard. You must also include an `indicators` array field. (For another example for uploading via the API, see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)).
+
+```
+{
+ "source": "FreeTAXII",
+ "indicators": [
+   {
+     "type": "indicator",
+     "spec_version": "2.1",
+     "id": "0001",
+     "created": "2023-03-21T12:00:00.000Z",
+     "modified": "2023-03-21T12:00:00.000Z",
+     "confidence": 30,
+     "pattern": "[ipv4-addr:value = '192.0.2.0']",
+     "pattern_type": "stix",
+     "pattern_version": "string",
+     "valid_from": "2023-03-21T12:00:00.000Z",
+     "valid_until": "2025-03-21T12:00:00.000Z",
+     "indicator_types": [
+       "malicious-activity"
+     ],
+     "kill_chain_phases": [
+       {
+         "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+         "phase_name": "reconnaissance"
+       }
+     ]
+   },
+   {
+     "type": "indicator",
+     "spec_version": "2.1",
+     "id": "0002",
+     "created": "2023-03-21T12:00:00.000Z",
+     "modified": "2023-03-21T12:00:00.000Z",
+     "confidence": 30,
+     "pattern": "[ipv4-addr:value = '192.0.2.1']",
+     "pattern_type": "stix",
      "pattern_version": "string",
      "valid_from": "2023-03-21T12:00:00.000Z",
      "valid_until": "2025-03-21T12:00:00.000Z",
@@ -421,6 +505,7 @@ As shown in the following example, if uploading via the API you must add the `so
  ]
 }
 ```
+
 #### Required attributes
 
 For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource. 
