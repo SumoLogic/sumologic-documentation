@@ -65,12 +65,12 @@ You can upgrade a trial org by editing the org and changing the Plan Type. When 
 
 The plan gets downgraded to [**Free** plan with limitations](/docs/manage/manage-subscription/cloud-flex-credits-accounts/#cloud-flex-credits---account-types) once the 45-day POV trial period is over. To prevent this from happening, Sumo Logic provides indicators about the expiration date in two different places on the platform.
 
+- **View details for the selected organizations**. You can see the **Plan Expiry** date with information about the downgrading of your plan in the view details side panel for the selected organizations. This tooltip is different for CSV and Non-CSV provisioned child org.
+- **Child org table**. If the number of days left for expiry is less than 14, a warning icon with the expiry date will be shown against the respective organizations, and the information about downgrading your plan will turn into a warning with the same message.
+
 :::info
 If your CSE POV trial plan is downgraded to the free plan, your CSE access will be disabled and your data will be erased after seven days.
 :::
-
-- **View details for the selected organizations**. You can see the **Plan Expiry** date with information about the downgrading of your plan in the view details side panel for the selected organizations. This tooltip is different for CSV and Non-CSV provisioned child org.
-- **Child org table**. If the number of days left for expiry is less than 14, a warning icon with the expiry date will be shown against the respective organizations, and the information about downgrading your plan will turn into a warning with the same message.
 
 For more information, see [Upgrade a POV Trial org](#upgrade-a-pov-trial-org) below.
 
