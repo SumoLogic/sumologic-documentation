@@ -161,7 +161,7 @@ The below tables displays the response for each text box in this section.
 
 ## Step 12: Create stack
 
-1. In **Capabilities and transforms** click each checkbox.<br/><img src={useBaseUrl('img/observability/CFT_Capabilities_Transforms.png')} style={{border: '1px solid gray'}} alt="CFT_Capabilities_Transforms" width="800"/>
+1. Under **Capabilities and transforms**, click each checkbox.<br/><img src={useBaseUrl('img/observability/CFT_Capabilities_Transforms.png')} style={{border: '1px solid gray'}} alt="CFT_Capabilities_Transforms" width="800"/>
 1. Click **Create Stack**.
 1. Verify that the AWS CloudFormation template has executed successfully in a CREATE_COMPLETE status.  This indicates that all the resources have been created successfully in both Sumo Logic and AWS.
 1. If the AWS CloudFormation template has not run successfully, identify and fix any permission errors till the stack completes with a CREATE_COMPLETE status. See [Troubleshooting](#troubleshooting) for assistance with how to resolve these errors.
