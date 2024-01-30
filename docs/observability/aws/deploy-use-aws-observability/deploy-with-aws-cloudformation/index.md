@@ -240,8 +240,7 @@ To uninstall the AWS Observability Solution:
 
 1. Log in to your AWS account and go to CloudFormation.
 1. Select the main stack you want to delete.
-1. Select **Delete**.
-<img src={useBaseUrl('img/observability/CFT_Uninstall.png')} style={{border: '1px solid gray'}} alt="CFT_Uninstall" width="800"/>
+1. Select **Delete**.<br/><img src={useBaseUrl('img/observability/CFT_Uninstall.png')} style={{border: '1px solid gray'}} alt="CFT_Uninstall" width="800"/>
 
 ### Remove the account from AWS Observability hierarchy
 
