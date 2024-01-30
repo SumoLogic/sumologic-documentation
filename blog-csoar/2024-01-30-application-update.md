@@ -12,8 +12,8 @@ image: https://help.sumologic.com/img/sumo-square.png
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Changes and Enhancements
-* Public Help Document for Supported Integrations [released](https://help.sumologic.com/docs/platform-services/automation-service/app-central/integrations/).
-* Integrations: added possibility to rename an integration keeping original reference in yaml.
+* Added public help document for supported integrations. See [Integrations in App Central](https://help.sumologic.com/docs/platform-services/automation-service/app-central/integrations/).
+* Integrations: Added possibility to rename an integration keeping original reference in YAML.
 * Playbooks:
   * List view set as default. View changes are saved in user preferences.
   * Deprecated Nested attribute.
