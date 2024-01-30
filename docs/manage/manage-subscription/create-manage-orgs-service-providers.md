@@ -63,7 +63,7 @@ The credits associated with the trial org allocations don’t impact the parent 
 
 You can upgrade a trial org by editing the org and changing the Plan Type. When you upgrade a POV Trial org, if the org is in a different Sumo Logic deployment from the parent org, the Credits çalculator may add a deployment factor, which is a percentage upcharge that varies by deployment.
 
-The plan gets downgraded to [**Free** plan with limitations](/docs/manage/manage-subscription/cloud-flex-credits-accounts/#cloud-flex-credits---account-types) once the 45-day POV trial period is over. To prevent this from happening, Sumo Logic alerts you about the expiration date in two different places on the platform.
+The plan gets downgraded to [**Free** plan with limitations](/docs/manage/manage-subscription/cloud-flex-credits-accounts/#cloud-flex-credits---account-types) once the 45-day POV trial period is over. To prevent this from happening, Sumo Logic provides indicators about the expiration date in two different places on the platform.
 
 :::info
 If your CSE POV trial plan is downgraded to the free plan, your CSE access will be disabled and your data will be erased after seven days.
