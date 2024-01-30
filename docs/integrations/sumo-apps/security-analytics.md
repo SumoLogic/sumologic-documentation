@@ -145,7 +145,7 @@ This data is collected from your Collectors and Sources for instant analysis of 
 
 ## Using the Sumo Logic App for Security Analytics
 
-This App is available for Sumo Logic Enterprise accounts only, and requires a paid Professional Services contract to install and configure. You may upgrade your account at any time. If you'd like more information on this App, please request it by clicking the [Request](/docs/integrations/sumo-apps/Security-Analytics#Using-the-Sumo-Logic-App-for-Security-Analytics) button in the Apps section of the Library, or contact your Sumo Logic sales representative at sales@sumologic.com.
+This App is available for Sumo Logic Enterprise accounts only, and requires a paid Professional Services contract to install and configure. You may upgrade your account at any time. If you'd like more information on this App, please request it by clicking the [Request](/docs/integrations/sumo-apps/security-analytics/#using-the-sumo-logic-app-for-security-analytics) button in the Apps section of the Library, or contact your Sumo Logic sales representative at sales@sumologic.com.
 
 
 The Sumo Logic app for Security Analytics provides Dashboards that allow you to easily see and manage your system's status, including a security operations overview, network, system and change, user monitoring, and vulnerabilities on endpoints. This data is collected from your Collectors and Sources, and Sumo Logic Anomaly Detection is applied to it, for instant analysis of any events.
