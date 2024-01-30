@@ -59,7 +59,7 @@ To access the **Threat Intelligence** tab, go to **Manage Data > Logs > Threat I
 1. **Indicators**. The number of threat intelligence indicators included in the file. 
 
 :::note
-The “CrowdStrike provided by Sumo Logic (s_CrowdStrike)” source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name.
+The "CrowdStrike provided by Sumo Logic (s_CrowdStrike)" source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name.
 :::
 
 ### Add indicators in the Threat Intelligence tab
@@ -193,8 +193,8 @@ Parameters:
 * `hasThreatMatch([srcDevice_ip])`
 * `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
 * `hasThreatMatch([srcDevice_ip], confidence > 50)`
-* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source=”FreeTAXII”)`
-* `hasThreatMatch([srcDevice_ip], source=”s1” OR (source=”s2” confidence > 50 AND))`
+* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source="FreeTAXII")`
+* `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" confidence > 50 AND))`
 * `hasThreatMatch([srcDevice_ip], expired_indicators)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
 
@@ -381,11 +381,11 @@ As shown in the following example, if uploading via the API you must add the `so
      "created": "2023-03-21T12:00:00.000Z",
      "modified": "2023-03-21T12:00:00.000Z",
      "confidence": 30,
-     "pattern": “[ipv4-addr:value = ‘192.0.2.0’]”,
-     "pattern_type": “ipv4-addr:value”,
+     "pattern": "[ipv4-addr:value = '192.0.2.0']",
+     "pattern_type": "ipv4-addr:value",
      "pattern_version": "string",
-     "valid_from": “2023-03-21T12:00:00.000Z”,
-     "valid_until": “2025-03-21T12:00:00.000Z”,
+     "valid_from": "2023-03-21T12:00:00.000Z",
+     "valid_until": "2025-03-21T12:00:00.000Z",
      "indicator_types": [
        "malicious-activity"
      ],
@@ -403,11 +403,11 @@ As shown in the following example, if uploading via the API you must add the `so
      "created": "2023-03-21T12:00:00.000Z",
      "modified": "2023-03-21T12:00:00.000Z",
      "confidence": 30,
-     "pattern": “[ipv4-addr:value = ‘192.0.2.1’]”,
-     "pattern_type": “ipv4-addr:value”,
+     "pattern": "[ipv4-addr:value = '192.0.2.1']",
+     "pattern_type": "ipv4-addr:value",
      "pattern_version": "string",
-     "valid_from": “2023-03-21T12:00:00.000Z”,
-     "valid_until": “2025-03-21T12:00:00.000Z”,
+     "valid_from": "2023-03-21T12:00:00.000Z",
+     "valid_until": "2025-03-21T12:00:00.000Z",
      "indicator_types": [
        "malicious-activity"
      ],
