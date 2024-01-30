@@ -28,13 +28,13 @@ Example:
 
 ## Log types
 
-### Sample log message
+### Sample log messages
 
 ```json
 Your json message goes here
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 Your query goes here

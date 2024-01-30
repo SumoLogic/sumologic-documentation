@@ -134,7 +134,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Log Messages
+## Sample log messages
 
 Here's a sample log message you'd find in Non-Kubernetes environments.
 
@@ -142,7 +142,7 @@ Here's a sample log message you'd find in Non-Kubernetes environments.
 2023-01-16 05:53:44.858 [info] <0.44.0> Application cowboy exited with reason: stopped
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample Query is from the **RabbitMQ - Logs dashboard** > **Events** by Severity panel.
 

@@ -52,7 +52,7 @@ This Citrix Cloud App uses [SystemLog](https://developer.cloud.com/citrix-cloud/
        }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql="Active Team Members"
 sourceCategory="citrixCloudSource"

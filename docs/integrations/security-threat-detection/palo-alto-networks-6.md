@@ -11,12 +11,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Palo Alto Networks 6 App provides four dashboards, giving you several ways to discover threats, consumption, traffic patterns, and other security-driven issues, providing additional insight for investigations.
 
-## Log Types
+## Log types
 
 Parsing in the Palo Alto Networks 6 App for PAN 6 is based on the [PAN-OS Syslog integration](https://live.paloaltonetworks.com/t5/forums/searchpage/tab/message?q=PAN-OS+Syslog+integration&filter=labels&search_type=thread).
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 <12>Dec 22 13:22:14 PA-5050 1,2016/12/22 13:22:14,002201002211,THREAT,vulnerability,1,2016/12/22 13:22:14,77.200.181.165,208.74.205.51,0.0.0.0,0.0.0.0,Alert Logging,,,web-browsing,vsys1,IDS,IDS,ethernet1/21,ethernet1/21,Sumo_Logic,2016/12/22 13:22:14,34403128,1,59305,80,0,0,0x80000000,tcp,alert,"1794",HTTP SQL Injection Attempt(38195),any,medium,client-to-server,128764886,0x0,NL,US,0,,1345817091864062106,,,1,,,,,,,,0
@@ -27,7 +27,7 @@ Parsing in the Palo Alto Networks 6 App for PAN 6 is based on the [PAN-OS Syslog
 
 
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Threat Type by Severity"
 _sourceCategory=palo_alto_network | parse "*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*" as f1,recvTime,serialNum,type,subtype,f2,genTime,src_ip,dest_ip,natsrc_ip,natdest_ip,ruleName,src_user,dest_user,app,vsys,src_zone,dest_zone,ingress_if,egress_if,logProfile,f3,sessionID,repeatCnt,src_port,dest_port,natsrc_port,natdest_port,flags,protocol,action,misc,threatID,cat,severity,direction,seqNum,action_flags,src_loc,dest_loc,f4,content_type | count as count by subtype,severity | transpose row severity column subtype
@@ -58,7 +58,7 @@ For Syslog, configure the Source fields:
 2. **Description.** Optional.
 3. **Protocol**. UDP or TCP
 4. **Port**. Port number.
-5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).
+5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).
 6. Click **Save**.
 
 For a Hosted source, use advanced settings as necessary, but save the endpoint URL associated in order to configure Palo Alto Networks.

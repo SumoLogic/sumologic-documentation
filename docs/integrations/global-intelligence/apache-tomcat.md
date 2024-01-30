@@ -15,7 +15,7 @@ Global Intelligence for Apache Tomcat App is a companion to the Apache Tomcat a
 
 Global Intelligence for Apache Tomcat App uses logs data from Apache Tomcat clusters. Like the Sumo Logic App for Apache Tomcat, it assumes the NCSA extended/combined log file format for Access logs and the default Apache Tomcat error log file format for error logs. For more details on custom log formats, see [Apache Tomcat Module mod_log_config](https://httpd.apache.org/docs/current/mod/mod_log_config.html).
 
-## Sample Query 
+## Sample queries 
 
 The following sample query is from the **Average Requests Per Second: My Server v Benchmark** panel of the **GI Tomcat - 02. Load Signals and Contributing Factors** dashboard.
 

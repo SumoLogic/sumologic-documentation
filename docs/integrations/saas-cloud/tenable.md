@@ -32,11 +32,11 @@ Key features of the Tenable app include:
 
 This app uses [Tenable](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source/) source to collect [Vulnerabilities data](https://developer.tenable.com/reference/exports-vulns-request-export) and [Audit Events](https://developer.tenable.com/reference/audit-log-events) from the Tenable platform.
 
-## Sample log message
+## Sample log messages
 
 Refer to the Tenable API documentation for [Vulnerabilities data](https://developer.tenable.com/reference/exports-vulns-request-export) and [Audit Events](https://developer.tenable.com/reference/audit-log-events) log messages.
 
-## Sample Query
+## Sample queries
 
 ```sql title="Vulnerability Events"
 (_source=Tenable fqdn)
@@ -50,7 +50,7 @@ _sourceCategory=Tenable
 
 ## Set up collection
 
-To set up [Cloud to Cloud Integration Tenable Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source/) for the Tenable app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Tenable source category, which you will need to use when installing the app. By following these steps, you can ensure that your Tenable app is properly integrated and configured to collect and analyze your Tenable data.
+To set up [Cloud-to-Cloud Integration Tenable Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source/) for the Tenable app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Tenable source category, which you will need to use when installing the app. By following these steps, you can ensure that your Tenable app is properly integrated and configured to collect and analyze your Tenable data.
 
 ## Installing the Tenable app
 

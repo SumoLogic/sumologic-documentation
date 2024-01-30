@@ -10,7 +10,7 @@ import ActionLimit from '../../reuse/action-limits.md';
 
 Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.      
 
-Integrations that are already installed to your environment appear in the **Integrations** menu in the Automation Service. 
+Integrations that are already installed to your environment appear in the **Integrations** menu in the Automation Service (see [View Integrations](#view-integrations)). Integrations that are available for installation appear in App Central (see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/)).
 
 :::info
 Before you can use actions from an integration resource, you must [configure the connection for the resource](/docs/platform-services/automation-service/about-automation-service/#configure-the-connection-for-an-integration-resource) to work with the Automation Service.
@@ -62,4 +62,4 @@ Note that in the following example a **(2)** follows the duplicated integration'
 
 ## Available integrations
 
-For a complete list of integrations that are available to install, see the [**Integrations** tab in App Central](/docs/platform-services/automation-service/automation-service-app-central/#integrations-in-app-central). 
+For a complete list of integrations that are available to install, see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/). 

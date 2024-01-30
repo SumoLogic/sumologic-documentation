@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Palo Alto Networks (PAN) 8 provides a next generation firewall and the Traps Endpoint Security Manager. The Palo Alto Networks 8 App gives you visibility into firewall and traps activity, including information about firewall configuration changes, details about rejected and accepted firewall traffic, traffic events that match the Correlation Objects and Security Profiles you have configured in PAN, and events logged by the Traps Endpoint Security Manager.
 
-## Log Types
+## Log types
 
 Parsing in the Sumo Logic app for PAN 8 is based on the [PAN-OS Syslog Integration](https://live.paloaltonetworks.com/t5/Tech-Note-Articles/PAN-OS-Syslog-Integration/ta-p/55323) and uses the following log types:
 
@@ -61,7 +61,7 @@ Parsing in the Sumo Logic app for PAN 8 is based on the [PAN-OS Syslog Integrati
 </table>
 
 
-### Sample Log Messages
+### Sample log messages
 
 
 ```json title="Config Log Sample"
@@ -93,7 +93,7 @@ Sep 05 12:30:15 Host CEF:0|Palo Alto Networks|Traps Agent|3.4.3.19949|Client Lic
 
 
 
-### Sample Queries
+### Sample queries
 
 
 ```sql title="Virus Threats"
@@ -134,7 +134,7 @@ In this step you configure a installed collector with a Syslog source that will 
     2. **Description.** Optional.
     3. **Protocol**. UDP or TCP.  Choose the protocol you configured in Palo Alto Networks 8 for Syslog monitoring.
     4. **Port**. Port number. Choose the port you configured in Palo Alto Networks 8 for Syslog monitoring.
-    5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).
+    5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).
     6. Click **Save**.
 
 

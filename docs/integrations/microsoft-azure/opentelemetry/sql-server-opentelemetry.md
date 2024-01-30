@@ -157,7 +157,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
   }
 ```
 
-## Sample log query
+## Sample queries
 
 Following is the query from **Error and warning count** panel from the **SQL Server App - Overview** dashboard:
 

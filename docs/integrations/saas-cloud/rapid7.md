@@ -17,7 +17,7 @@ Rapid7 app provides vital information, including asset count, distribution of as
 
 This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapid7.com/insightvm/en-us/api/integrations.html#tag/Asset) and [vulnerabilities](https://help.rapid7.com/insightvm/en-us/api/integrations.html#tag/Vulnerability) from Rapid7.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Asset Log"
  {
@@ -177,7 +177,7 @@ This app uses Sumo Logic’s Rapid7 Source to collect [assets](https://help.rapi
   "title": "jQuery Vulnerability: CVE-2015-9251"
 }
 ```
-## Sample Query
+## Sample queries
 
 ```sql title="Assets by Type"
 _sourceCategory="Rapid7" assessed_for_policies // fetches assets
@@ -205,7 +205,7 @@ on vulnerability.id=asset_vulnerability.vulnerability_id // get information of a
 
 ## Set up collection
 
-To set up [Cloud to Cloud Integration Rapid7 Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source) for the Rapid7 app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Rapid7 Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Rapid7 app is properly integrated and configured to collect and analyze your Rapid7 data.
+To set up [Cloud-to-Cloud Integration Rapid7 Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source) for the Rapid7 app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Rapid7 Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Rapid7 app is properly integrated and configured to collect and analyze your Rapid7 data.
 
 ## Installing the Rapid7 app​
 

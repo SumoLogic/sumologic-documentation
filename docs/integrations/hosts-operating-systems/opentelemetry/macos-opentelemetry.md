@@ -112,7 +112,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample query
+## Sample queries
 
 Metrics query from the File System Utilization panel.
 

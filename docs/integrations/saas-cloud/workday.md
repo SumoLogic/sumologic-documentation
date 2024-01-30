@@ -59,7 +59,7 @@ Workday App logs are all in JSON format. The Workday App uses two types of logs 
 }
 ```
 
-### Sample query
+### Sample queries
 
 The query sample provided in this section is from the **Failed Login Reasons** panel of the **Workday - Login Activity** dashboard.
 
@@ -166,12 +166,12 @@ This section demonstrates how to configure the Workday portal to integrate with 
 
 ### Step 1.5: Create a Custom sign on report
 
-For customers that do not make use of the Recruiting Functional Area, the standard Candidate Signon report may not be available. The alternative is to create a new custom report with **Data Source = “All System Account Signons”** and **Data Source Filter **= **“Workday System Account Signons in Range”**. You can configure the fields using [Excel](https://appdev-readme-resources.s3.amazonaws.com/Workday/Signons_and_Attempted_Signons_-_Copy.xlsx).
+For customers that do not make use of the Recruiting Functional Area, the standard Candidate Signon report may not be available. The alternative is to create a new custom report with **Data Source = “All System Account Signons”** and **Data Source Filter** = **“Workday System Account Signons in Range”**. You can configure the fields using [Excel](https://appdev-readme-resources.s3.amazonaws.com/Workday/Signons_and_Attempted_Signons_-_Copy.xlsx).
 
 1. Go to **Copy Standard Report to Custom Report** task to create a Customs SignOn Report.
 2. Select **Candidate Signons and Attempted Signons** in **Standard Report** **Name** dropdown and click **OK**.
-3. In the new window, select **Optimized for Performance **checkbox, edit the report **Name** to **Custom Signons and Attempted Signons Report** and click **OK**.
-4. In the next window, edit the **Data Source Filter **field and select **Workday System Account Signons in Range** filter.
+3. In the new window, select **Optimized for Performance** checkbox, edit the report **Name** to **Custom Signons and Attempted Signons Report** and click **OK**.
+4. In the next window, edit the **Data Source Filter** field and select **Workday System Account Signons in Range** filter.
 5. Go to the **Columns** tab and click the **+** button to add the following new fields:
     * Operating System
     * Password Changed

@@ -130,7 +130,7 @@ This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-
 
 </details>
 
-## Sample Query
+## Sample queries
 
 <details>
 <summary>View sample queries</summary>

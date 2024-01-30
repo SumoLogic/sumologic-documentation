@@ -14,7 +14,7 @@ The Sumo Logic app for AWS Elastic Load Balancer - Application ingests the logs 
 For information on collecting unified logs and metrics for AWS Elastic Load Balancer Application, see the AWS Elastic Load Balancing ULM Application.
 :::
 
-## Log Types
+## Log types
 
 The [Application Load Balancer Access Log](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) introduces two new fields in addition to the fields contained in Classic ELB Access log:
 

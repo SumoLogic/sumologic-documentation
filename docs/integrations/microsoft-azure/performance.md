@@ -12,14 +12,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Windows Performance App provides insight into your system's operation and events so that you can better manage and maintain your Windows systems. The App uses predefined Dashboards and searches that provide visibility into your environment for real-time analysis of system and network performance and overall usage.
 
-## Log Types
+## Log types
 
 The Windows Performance App assumes events are coming from Windows Performance Sources.
 
 **Also, you need to configure an additional custom query for each Source.** For details, see [Collect Logs for Windows Performance App](#Collect-Logs-for-the-Windows-Performance-App).
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```js
 instance of Win32_PerfFormattedData_PerfProc_Process
@@ -97,7 +97,7 @@ instance of Win32_PerfFormattedData_PerfOS_Memory
 
 
 
-### Sample Queries
+### Sample queries
 
 **Hosts with low available memory**
 

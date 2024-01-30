@@ -29,7 +29,7 @@ Keyword search expressions are often referred to as the **scope** of a query.
 * Supports boolean operators `NOT`, `AND`, `OR`. The precedence of boolean operators is `NOT`, `AND`, `OR`. Parentheses will override the precedence.
 * A wildcard `*` represents zero or more characters.
 * Supports built-in metadata fields created during configuration of Collectors and Sources, like `_sourceHost`, `_sourceCategory`, and `_sourceName`.
-* Supports custom [log metadata fields](/docs/manage/fields.md).
+* Supports custom [log metadata fields](/docs/manage/fields).
 * Punctuation characters are allowed (`-`, `_`, `:`, `/`, `.`, `+`, `@`, `#`, `$`, `%`, `^`).
 * Expressions containing spaces or special characters must be enclosed in quotes (`" "`).
 * Keyword expressions are case-insensitive.

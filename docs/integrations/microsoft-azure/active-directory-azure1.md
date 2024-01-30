@@ -28,7 +28,7 @@ The Sumo Logic App for Azure helps you monitor activity in the Azure Active Dire
 * An Azure subscription must be associated (attached) to AAD. For more information, see this [Azure Active Directory documentation](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory).
 * To export Azure Activity logs to reports, be sure you have met the [Azure Active Directory requirements](https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-activity-logs-azure-monitor).
 
-## Log Types
+## Log types
 
 The app uses the following log types:
 * Audit and Sign-in logs
@@ -39,7 +39,7 @@ Only global administrators, security administrators, security readers, and repor
 
 This section has instructions for setting up the ingestion pipeline from Azure Active Directory to Sumo Logic.
 
-The sections below are either for FedRamp Sumo Logic deployments or if you have been advised by the Sumo Logic support team to not use the Cloud to Cloud Integration based on your Azure environments.
+The sections below are either for FedRamp Sumo Logic deployments or if you have been advised by the Sumo Logic support team to not use the Cloud-to-Cloud Integration based on your Azure environments.
 
 ### Configure an HTTP Source
 

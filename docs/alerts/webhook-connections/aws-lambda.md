@@ -27,7 +27,7 @@ Secure your Lambda Function URL or API Gateway method by selecting **AWS_IAM** f
 Have your webhook URL handy by copying and pasting it to a notepad. You'll need it to configure your webhook connection in the next section.
 :::
 
-To authenticate the Sumo Logic backend and allow webhook calls, you'll need to create in your AWS Account an IAM User account with very restricted privileges. Creating Lambda Function URL you need to create your own policy while building an API Gateway you can use AWS managed policy. In the following sections, you'll find detailed steps for both cases. 
+To authenticate the Sumo Logic backend and allow webhook calls, you'll need to create in your AWS Account an IAM User account with very restricted privileges. Creating Lambda Function URL you need to create your own policy while building an API Gateway you can use AWS managed policy. In the following sections, you'll find detailed steps for both cases.
 
 ### Lambda Function URL
 
@@ -64,7 +64,7 @@ If you're building an API Gateway to expose a Lambda function, you'll need to:
 ## Create a Webhook connection
 
 :::note
-You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 :::
 
 Configure the webhook connection to trigger the AWS Lambda function.
