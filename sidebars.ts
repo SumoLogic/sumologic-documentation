@@ -3,7 +3,7 @@
  Add content to the following sections in this sidebar Navigation file:
 
   Manage: Admin level options, collection, connections, etc
-  Dashboards & Visuals: New and Classic Dashboards, Library of Dashboards, Alerts, Monitors, Alerts, Monitors, SLOs, Health Events, Connections
+  Dashboards & Visuals: NDashboards, Library of Dashboards, Alerts, Monitors, Alerts, Monitors, SLOs, Health Events, Connections
   Searches & Logs: Log Search, All Log Searches, Livetail, Lookup, Log Config
   Metrics & Logs: Metrics Search, All Metrics Searches, Config
   Infrastructure Monitoring: Kubernetes, AWS Observability, Root Cause Explorer,
