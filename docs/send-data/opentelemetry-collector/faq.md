@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This document contains frequently asked questions about OpenTelemetry Collector.
+This document contains frequently asked questions about our OpenTelemetry Collector.
 
 
 ## Accessing the collector's configuration
