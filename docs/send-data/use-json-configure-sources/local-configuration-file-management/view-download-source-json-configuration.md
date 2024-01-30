@@ -6,8 +6,8 @@ description: View and copy the Source JSON configuration for a Collector or Sour
 
 You can view and copy the Source JSON configuration for a Collector or Source from Sumo Logic:
 
-* **Collectors**. the JSON file defines the set of Sources on the selected Collector.
-* **Sources**. the JSON file defines a single Source to use when managing a folder of multiple Sources or when uploading a new Source using the API.
+* **Collectors**. The JSON file defines the set of Sources on the selected Collector.
+* **Sources**. The JSON file defines a single Source to use when managing a folder of multiple Sources or when uploading a new Source using the API.
 
 Source JSON configurations allow you to configure Sources or to store Source configurations as backups. See [Local Configuration File Management for Existing Collectors and Sources](existing-collectors-and-sources.md) for information on using JSON configuration files.
 

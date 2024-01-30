@@ -46,7 +46,7 @@ If you get namespace invalid error make sure it follows the naming convention sp
  ]
 ```
 
-For common deployment errors refer to the following [doc](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/common-deployment-errors). 
+For common deployment errors, refer to [Troubleshoot common Azure deployment errors](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/common-deployment-errors). 
 
 ## AutoScaling producer function to handle huge load on creating tasks for consumer function
 
@@ -67,7 +67,7 @@ Make sure that the resources you created in the [Collect Logs from Azure Blob S
    * A Service Bus Namespace.
    * An Event Hubs Namespace.
    * A Storage account.
-1. In the left pane of the Azure Portal, click **AppServices**, and search for “SUMOBRTaskConsumer”. You should find the `“SUMOBRTaskConsumer\<random-string\>”` Function App. Click it. 
+1. In the left pane of the Azure Portal, click **AppServices**, and search for “SUMOBRTaskConsumer”. You should find the `“SUMOBRTaskConsumer\<random-string\>”` Function App and click that. 
 1. Click the **Application settings** link. Check that the value of the **SumoLogEndpoint** field matches the HTTP source URL. 
 
 ## Verify Block Blob Create Events are getting published
@@ -83,7 +83,7 @@ Make sure that the resources you created in the [Collect Logs from Azure Blob S
 To verify that events are appearing in your event hub:
 
 1. In the left pane of Azure Portal, Click **Eventhub**.
-1. Search for `“SUMOBREventHubNamespace”`. You should find the `“SUMOBREventHubNamespace\<random-string>”` Event Hub Namespace. Click it. 
+1. Search for `“SUMOBREventHubNamespace”`. You should find the `“SUMOBREventHubNamespace\<random-string>”` Event Hub Namespace, and click that. 
 1. Click the **Messages** link.
 1. Message summary information appears below the chart. Check that the **Incoming Messages** count is greater than zero.<br/>  ![eventhub-messages-metrics.png](/img/send-data/eventhub-messages-metrics.png)
 
@@ -127,39 +127,41 @@ If you're using this function for quite some time then we recommend redeploying 
 If the error still persists, then
 
 1. If you want to collect metrics only  you can migrate from Consumption plan to Premium plan by making changes in the ARM template.
-    ```
-    {
-                "type": "Microsoft.Web/serverfarms",
-                "kind": "app",
-                "name": "[parameters('serverfarms_SumoAzureLogsAppServicePlan_name')]",
-                "apiVersion": "2018-02-01",
-                "location": "[resourceGroup().location]",
-                "sku": {
-                    "name": "P1v2",
-                    "tier": "PremiumV2",
-                    "size": "P1v2",
-                    "family": "Pv2",
-                    "capacity": 2
-                },
-                "properties": {
-                    "maximumElasticWorkerCount": 1,
-                    "perSiteScaling": false,
-                    "targetWorkerCount": 0,
-                    "targetWorkerSizeId": 0,
-                    "reserved": false,
-                    "isSpot": false,
-                    "isXenon": false,
-                    "hyperV": false
-                },
-                "dependsOn": []
-            },
-    .
-    ```
+```json
+{
+  "type":"Microsoft.Web/serverfarms",
+  "kind":"app",
+  "name":"[parameters('serverfarms_SumoAzureLogsAppServicePlan_name')]",
+  "apiVersion":"2018-02-01",
+  "location":"[resourceGroup().location]",
+  "sku":{
+    "name":"P1v2",
+    "tier":"PremiumV2",
+    "size":"P1v2",
+    "family":"Pv2",
+    "capacity":2
+  },
+  "properties":{
+    "maximumElasticWorkerCount":1,
+    "perSiteScaling":false,
+    "targetWorkerCount":0,
+    "targetWorkerSizeId":0,
+    "reserved":false,
+    "isSpot":false,
+    "isXenon":false,
+    "hyperV":false
+  },
+  "dependsOn":[
+
+  ]
+}
+```
 2. If you want to collect only logs from Azure Monitor, we recommend switching to new [Cloud-to-Cloud collection for Event hub](../../hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md)
+  ```
+  Exception while executing function: Functions.BlobTaskProducer
+  StorageError: The table specified does not exists 
 
-`Exception while executing function:  Functions.BlobTaskProducer
-StorageError: The table specified does not exists 
-
-RequestId: 87039a85-e002-0042-252ddb36f8000000 Time:2021-02-12T21:12:23`
+  RequestId: 87039a85-e002-0042-252ddb36f8000000 Time:2021-02-12T21:12:23
+  ```
 
 This error occurs when the FileOffsetMap table is not created inside Table service.
