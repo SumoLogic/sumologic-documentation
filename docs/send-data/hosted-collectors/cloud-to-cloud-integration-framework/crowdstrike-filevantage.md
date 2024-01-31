@@ -39,7 +39,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 **Prerequisites**
 
-To collect file integrity monitoring data from the CrowdStrike platform, you must have an authorized CrowdStrike account. CrowdStrike APIs use an OAuth 2.0 authorization token to make authorized API calls. CrowdStrike API Client is required to get the OAuth 2.0 authorization token. To define a CrowdStrike API client, you must be designated as a `CrowdStrike Falcon Administrator` role.
+To collect file integrity monitoring data from the CrowdStrike platform, you must have an authorized CrowdStrike account. CrowdStrike APIs use an OAuth 2.0 authorization token to make authorized API calls. The CrowdStrike API client is required to get the OAuth 2.0 authorization token. To define a CrowdStrike API client, you must be designated as a `CrowdStrike Falcon Administrator` role.
 
 In this configuration, you will set up the CrowdStrike Spotlight and configure it to be authorized and authenticated to collect logs from the FileVantage API. To obtain the auth token, you will need the following parameters.
 
