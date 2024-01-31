@@ -75,7 +75,7 @@ description: This page describes full list of changes in Kubernetes Collection v
 
 - OpenTelemetry Logs Collector will read from end of file now.
 
-  See [OpenTelemetry Collector doesn't read logs from the beginning of files](how-to-upgrade.md/#opentelemetry-collector-doesnt-read-logs-from-the-beginning-of-files) if you want to keep old behavior.
+  See [OpenTelemetry Collector doesn't read logs from the beginning of files](/docs/send-data/kubernetes/v3/how-to-upgrade.md#opentelemetry-collector-doesnt-read-logs-from-the-beginning-of-files) if you want to keep old behavior.
 
 - Changed `otelagent` from `DaemonSet` to `StatefulSet`
 

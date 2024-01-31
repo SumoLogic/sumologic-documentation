@@ -215,15 +215,15 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 
 1. Log in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
 1. Under **Management Tools**, select CloudWatch, then click **Logs** in the left- hand navigation menu.
-1. Select the CloudWatch Log Group that you want to stream to Sumo Logic, click **Actions** > **Subscription Filters** > **Create Lambda subscription filter**.<br/><img src={useBaseUrl('img/send-data/create-lambda-subscription-filter.png')} style={{border: '1px solid black'}} alt="create-lambda-subscription-filter" width="700"/>
+1. Select the CloudWatch Log Group that you want to stream to Sumo Logic, click **Actions** > **Subscription Filters** > **Create Lambda subscription filter**.<br/><img src={useBaseUrl('img/send-data/create-lambda-subscription-filter.png')} style={{border: '1px solid gray'}} alt="create-lambda-subscription-filter" width="700"/>
 1. In the Create Lambda subscription filter page, go to **Choose Destination** section and select the Lambda function that begins with `SumoCWLogsLambda`.
 1. In the **Configure log format and filters** section, select a Log format and enter a Subscription filter pattern (Optional) and Subscription filter name.
     :::info
     - If no subscription filter pattern is provided it will stream all the logs present in the log group.
     - Sometimes log format will be specified in the Sumo Logic app specific collection page, so use that specific format otherwise dashboards may not light up.
     :::
-    <br/><img src={useBaseUrl('img/send-data/create-destination.png')} style={{border: '1px solid black'}} alt="create-destination" width="700"/>
-1. (Optional) In the **Test Pattern** section, select the log data to test, then click **Test pattern**. If test results look fine, then click **Start Streaming**.<br/><img src={useBaseUrl('img/send-data/test-pattern.png')} style={{border: '1px solid black'}} alt="test-pattern" width="700"/>
+    <br/><img src={useBaseUrl('img/send-data/create-destination.png')} style={{border: '1px solid gray'}} alt="create-destination" width="700"/>
+1. (Optional) In the **Test Pattern** section, select the log data to test, then click **Test pattern**. If test results look fine, then click **Start Streaming**.<br/><img src={useBaseUrl('img/send-data/test-pattern.png')} style={{border: '1px solid gray'}} alt="test-pattern" width="700"/>
 
 ### Auto-subscribe other log groups to SumoCWLogsLambda function
 

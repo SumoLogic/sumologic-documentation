@@ -25,7 +25,7 @@ This feature is available in the following account plans.
 
 The Global Intelligence for Apache App uses logs data from Apache clusters. Like the Sumo Logic App for Apache, it assumes the NCSA extended/combined log file format for Access logs and the default Apache error log file format for error logs. [For more details](http://httpd.apache.org/docs/current/mod/mod_log_config.html) on Apache logs.
 
-## Sample Query 
+## Sample queries 
 
 The following sample query is from the Average **Requests Per Second: My Server v Benchmark** panel of **GI Apache - 02. Load Signals and Contributing Factors** dashboard.
 
@@ -55,7 +55,9 @@ Follow the steps in [Sumo Logic Apache Logs](/docs/integrations/web-servers/apac
 
 This section has instructions for installing the Global Intelligence for Apache App.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 
 ## Concepts
@@ -146,8 +148,8 @@ Use this dashboard to:
 
 * Assess if your mix of client platforms, bots, and media types served are significantly different for a given Apache server compared to other servers.
 * Assess if bot activity is unusual for your company compared to others in the benchmark. Unusual bots compared to benchmarks could impact your site reliability or [compromise](https://nocinit.com/blog/bad-bots-blocking-apache-nginx-csf-tutorial/) security.
-* Assess if media types served are very different for your Apache servers. This can be helpful to understand correlations with GB per request in **GI Apache - 01. Load Signals and Contributing Factors. **
-* Understand your mix of clients (desktop versus mobile, desktop OS versions, mobile OS versions) to diagnose unusual levels of certain error codes observed in **GI Apache - 01. Load Signals and Contributing Factors. See [this](https://stackoverflow.com/questions/27828200/why-does-nginx-give-a-502-error-only-for-mobile-devices) example.
+* Assess if media types served are very different for your Apache servers. This can be helpful to understand correlations with GB per request in **GI Apache - 01. Load Signals and Contributing Factors.**
+* Understand your mix of clients (desktop versus mobile, desktop OS versions, mobile OS versions) to diagnose unusual levels of certain error codes observed in **GI Apache - 01. Load Signals and Contributing Factors**. See [this](https://stackoverflow.com/questions/27828200/why-does-nginx-give-a-502-error-only-for-mobile-devices) example.
 * Diagnose deviations of your company compared to the benchmark by using the trend line panels for your company’s Apache servers.
 
 ![GI-Apache-05-Visitor-Benchmarks.png](/img/global-intelligence/GI-Apache-05-Visitor-Benchmarks.png)

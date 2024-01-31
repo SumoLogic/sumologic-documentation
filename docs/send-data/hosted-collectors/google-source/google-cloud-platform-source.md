@@ -49,7 +49,7 @@ You'll need to configure a Pub/Sub Topic in GCP and add a subscription to the So
 1. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
    * Use a **PushDelivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the **Collection** page in Sumo Logic and click **Show URL**. 
 
-:::caution
+:::warning
 Pub/subs are subject to Google Cloud [quotas and limits](https://cloud.google.com/pubsub/quotas#quotas). Evaluate the number of logs against these limitations. If they are higher then the limit/quota, Sumo Logic recommends you split your logs over several topics.
 :::
 

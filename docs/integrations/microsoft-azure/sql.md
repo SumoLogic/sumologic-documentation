@@ -31,24 +31,24 @@ For details on Azure SQL logs and metrics, see [Enable logging](https://docs.mic
 
 ```json title="Error Event"
 {
-	"LogicalServerName":"npande-test-db-server",
-	"SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a",
-	"ResourceGroup":"npandeTestDBResGrp",
-	"time":"2018-07-09T05:08:32.679Z",
-	"resourceId":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB2",
-	"category":"Errors",
-	"operationName":"ErrorEvent",
-	"properties":{
-		"ElasticPoolName":"",
-		"DatabaseName":"npandeTestDB2",
-		"query_hash":"0",
-		"query_plan_hash":"0",
-		"message":"Invalid object name 'inventory123'.",
-		"error_number":208,
-		"severity":16,
-		"user_defined":false,
-		"state":1
-	}
+  "LogicalServerName":"npande-test-db-server",
+  "SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a",
+  "ResourceGroup":"npandeTestDBResGrp",
+  "time":"2018-07-09T05:08:32.679Z",
+  "resourceId":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB2",
+  "category":"Errors",
+  "operationName":"ErrorEvent",
+  "properties":{
+    "ElasticPoolName":"",
+    "DatabaseName":"npandeTestDB2",
+    "query_hash":"0",
+    "query_plan_hash":"0",
+    "message":"Invalid object name 'inventory123'.",
+    "error_number":208,
+    "severity":16,
+    "user_defined":false,
+    "state":1
+  }
 }
 ```
 
@@ -72,7 +72,7 @@ For details on Azure SQL logs and metrics, see [Enable logging](https://docs.mic
 }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Top 10 Errors"
 _sourceCategory=Azure/DB/SQL/Logs ErrorEvent "\"operationName\":\"ErrorEvent\""
@@ -89,11 +89,11 @@ This section has instructions for collecting logs and metrics for the Azure SQL 
 
 ### Collect diagnostic logs from Azure Monitor by streaming to EventHub
 
-In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub. 
+In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
 1. Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
 
-	- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended) 
+	- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended)
 	- Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection)
 
 	When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DB/SQL/Logs`.
@@ -101,7 +101,7 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
 2. Push logs from Azure Monitor to Event Hub. Various Azure Services connect to Azure Monitor to send monitoring data to an Event Hub. For more information, see [Azure Monitor: Send monitoring data to an event hub](https://azure.microsoft.com/en-us/blog/azure-monitor-send-monitoring-data-to-an-event-hub/) and How do I set up [Azure platform monitoring data to be streamed to an event hub?](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs#how-do-i-set-up-azure-platform-monitoring-data-to-be-streamed-to-an-event-hub) in Azure help.
 	1. Sign in to [Azure Portal](https://portal.azure.com/).
 	2. Click **Azure SQL**. Select the SQL database from which you want to collect logs.
-	3. In the Monitoring Section, the** Diagnostic Settings** blade displays any existing settings. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one. You can have a maximum of three settings.
+	3. In the Monitoring Section, the **Diagnostic Settings** blade displays any existing settings. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one. You can have a maximum of three settings.
 	4. Enter a name.
 	5. Check the **Stream to an event hub** box and click **Event hub / Configure**.
 	6. Select an Azure subscription.
@@ -114,34 +114,23 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
 ### Collect metrics from Azure Monitor by streaming to EventHub
 
 In this step, you configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. The pipeline is described on [Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md).
-1. Perform Steps 1 and Step 2 of [Collect Metrics from Azure Monitor.](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md)   
-In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: \
-`Azure/DB/SQL/Metrics`
-2. Push metrics from Azure Monitor to Event Hub.
-   1. From the left pane, select **ALL Services**.
-   1. Search for and select **Monitor**.
-   1. In the **Monitor** pane, select **Diagnostic Settings **under **Settings**.
-   1. Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings**.
-   1. Once diagnostics are enabled, click **Add a diagnostic setting**.
-   1. The **Diagnostic Settings** page appears.
-   1. In the left pane:
-      1. Enter a name for the diagnostic setting.
-      1. Click the **Stream to an event hub** checkbox.
-      1. Select **Configure event hub.** The right pane appears.
-   1. In the right pane:
-      1. Choose a **Subscription**.
-      1. Select `SumoMetricsNamespace_<UniqueSuffix>` as the event hub namespace.
-      1. Select **insights-metrics-pt1m** as the event hub name.
-      1. Select an event hub policy name. You can use the default policy **RootManageSharedAccessKey**.
-   1. Check the **AllMetrics** box.
-   1. Click **OK**.
-   1. Save the **Diagnostics Setting**.
+
+1. [Configure an HTTP Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-1-configure-an-http-source). Plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DB/SQL/Metrics`
+2. [Configure and deploy the ARM Template](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-2-configure-azure-resources-using-arm-template).
+3. [Export metrics to Event Hub](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor/#step-3-export-metrics-for-a-particular-resource-to-event-hub). Perform below steps for each Azure SQL Database that you want to monitor.
+   * Choose `Stream to an event hub` as destination.
+   * Select all the metric types under `Metrics` section.
+   * Use the Event hub namespace created by the ARM template in Step 2 above. You can create a new Event hub or use the one created by ARM template. You can use the default policy `RootManageSharedAccessKey` as the policy name. This should be same as configured in the Sumo Logic Function App **Integration** > **Trigger** settings.
+
+   ![diagnosticsetting.png](/img/send-data/azuresqldatabasediagnosticsetting.png)
 
 ## Installing the Azure SQL app
 
 This section provides instructions on how to install the Azure SQL app, and shows examples of each of the preconfigured dashboards you can use to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing the Azure SQL dashboards
 

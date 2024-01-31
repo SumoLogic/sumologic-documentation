@@ -16,7 +16,7 @@ This feature is available in the following account plans.
 
 This page shows you how to intuitively navigate through your AWS environment and [Explore](/docs/dashboards/explore-view) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
 
-You can also easily navigate to all features and functions of the AWS Observability solution in one place. Refer to the [AWS Observability Hub](/docs/observability/aws) page to know more about the centralized page to access the AWS Observability solution.
+You can also easily navigate to all features and functions of the AWS Observability solution in one place. Refer to the [AWS Observability Hub](/docs/observability/aws) page to learn more about the centralized page to access the AWS Observability solution.
 
 ## Working with Explore View
 
@@ -98,7 +98,7 @@ Click a link for information on the individual app dashboards:
 * [AWS API Gateway Dashboards](../integrations/aws-api-gateway.md)
 * [AWS Application Load Balancer Dashboards](../integrations/aws-application-load-balancer.md)
 * [AWS DynamoDB Dashboards](../integrations/aws-dynamodb.md)
-* [AWS EC2 Host Metrics Dashboards](../integrations/aws-ec2-host-metrics.md/)
+* [AWS EC2 Host Metrics Dashboards](../integrations/aws-ec2-host-metrics.md)
 * [AWS EC2 Metrics Dashboards](../integrations/aws-ec2-metrics.md)
 * [AWS Lambda Dashboards](../integrations/aws-lambda.md)
 * [Amazon RDS Dashboards](../integrations/amazon-rds.md)

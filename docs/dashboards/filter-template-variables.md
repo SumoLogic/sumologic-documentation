@@ -25,9 +25,7 @@ The web interface autocomplete feature for log search variables has the follow
 
 ## Show and hide variables option
 
-In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.
-
-![Show and Hide filters.png](/img/dashboards-new/filter-template-variables/Show-and-Hide-filters.png)
+In the Dashboard top menu bar, click the filter icon to show the variables option. The filter icon allows you to toggle if the variables option is displayed or hidden.<br/><img src={useBaseUrl('/img/dashboards-new/filter-template-variables/Show-and-Hide-filters.png')} alt="Show and Hide filters" style={{border: '1px solid gray'}} width="400" />
 
 ## Create a template variable
 
@@ -112,11 +110,11 @@ The variable must already exist on the dashboard to add a query with a variable.
 To use a variable in a logs query, do the following:
 
 1. Go to your logs query.
-1. Add the variable name wrapped in double brackets `{\<variable_nam\>}}` to your query. In the following example `cluster` is the name of the variable.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/Logs_variable_query_example.png')} style={{border:'1px solid black'}} alt="Logs_variable_query_example" width="600"/><br/> At run time, the value inside the curly braces is replaced with the value of the variable you specified from the variable dropdown list.
+1. Add the variable name wrapped in double brackets `{{<variable_name>}}` to your query. In the following example `cluster` is the name of the variable.<br/><img src={useBaseUrl('img/dashboards-new/filter-template-variables/Logs_variable_query_example.png')} style={{border:'1px solid black'}} alt="Logs_variable_query_example" width="600"/><br/> At run time, the value inside the curly braces is replaced with the value of the variable you specified from the variable dropdown list.
 
 #### String literal
 
-Wrap string literal variables in quotes `"{\<variable_nam\>}}"`. If your values are text you need to wrap the variable in quotes.
+Wrap string literal variables in quotes `"{{<variable_name>}}"`. If your values are text you need to wrap the variable in quotes.
 
 `*` will not do an "all" filter, it will filter against the literal asterisk "\*" string.
 
@@ -139,4 +137,4 @@ To use a metrics variable in a query working with the structured query builder
 To use a metrics variable in a query working in advanced query mode, do the following:
 
 1. Locate the name of the variable you'd like to use in the dropdown list and copy it.
-1. Go to your metrics query and insert *{{ var_name }}* in the query, substituting `var_name` with the actual name of the variable.
+1. Go to your metrics query and insert *`{{ var_name }}`* in the query, substituting `var_name` with the actual name of the variable.

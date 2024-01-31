@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for AWS Cost Explorer lets you visualize, understand, and manage your AWS costs and usage over time.
 
-## Log Types
+## Log types
 
 The **AWS Cost Explorer** App uses the JSON formatted logs collected using **AWS Cost Explorer** source.
 
@@ -34,7 +34,7 @@ The **AWS Cost Explorer** App uses the JSON formatted logs collected using **AWS
 }
 ```
 
-### Sample Query
+### Sample queries
 
 The following query sample was taken from the **Cost by Region** panel on the **AWS Cost Explorer - Account** dashboard.
 
@@ -75,13 +75,17 @@ Create a Field Extraction Rule (FER) for AWS Cost Explorer Logs. Learn how to cr
 
 ## Configure an AWS Cost Explorer Source
 
-{@import ../../reuse/aws-cost-explorer.md}
+import AwsCost from '../../reuse/aws-cost-explorer.md';
+
+<AwsCost/>
 
 ## Installing the AWS Cost Explorer App
 
 Now that you have set up a collection for AWS Cost Explorer, install the Sumo Logic App to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing AWS Cost Explorer Dashboards
 

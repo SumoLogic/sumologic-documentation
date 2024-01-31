@@ -3,7 +3,7 @@
  Add content to the following sections in this sidebar Navigation file:
 
   Manage: Admin level options, collection, connections, etc
-  Dashboards & Visuals: New and Classic Dashboards, Library of Dashboards, Alerts, Monitors, Alerts, Monitors, SLOs, Health Events, Connections
+  Dashboards & Visuals: NDashboards, Library of Dashboards, Alerts, Monitors, Alerts, Monitors, SLOs, Health Events, Connections
   Searches & Logs: Log Search, All Log Searches, Livetail, Lookup, Log Config
   Metrics & Logs: Metrics Search, All Metrics Searches, Config
   Infrastructure Monitoring: Kubernetes, AWS Observability, Root Cause Explorer,
@@ -109,6 +109,7 @@ module.exports = {
               collapsed: true,
               link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-configurations/index'},
               items:[
+                'send-data/opentelemetry-collector/data-source-configurations/mapping-records-resources',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-traces',
@@ -392,6 +393,12 @@ module.exports = {
           items: [
             'send-data/kubernetes/helm-chart-overview',
             'send-data/kubernetes/install-helm-chart',
+            'send-data/kubernetes/best-practices',
+            'send-data/kubernetes/collecting-logs',
+            'send-data/kubernetes/collecting-metrics',
+            'send-data/kubernetes/collecting-events',
+            'send-data/kubernetes/security-best-practices',
+            'send-data/kubernetes/troubleshoot-collection',
             {
               type: 'category',
               label: 'v4 Upgrade Guide',
@@ -1003,79 +1010,6 @@ module.exports = {
         },
         'dashboards/advanced',
         'dashboards/faq',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Dashboards (Classic)',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'dashboards-classic/index'},
-      items: [
-        'dashboards-classic/about',
-        {
-          type: 'category',
-          label: 'Get Started',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'dashboards-classic/get-started/index'},
-          items: [
-            'dashboards-classic/get-started/create-dashboard',
-            'dashboards-classic/get-started/add-dashboard-link',
-            'dashboards-classic/get-started/add-links-text-panels',
-            'dashboards-classic/get-started/add-text-panel',
-            'dashboards-classic/get-started/dashboard-optimization',
-            'dashboards-classic/get-started/delete-dashboard',
-            'dashboards-classic/get-started/launch-search-data-panel',
-            'dashboards-classic/get-started/markdown-syntax',
-            'dashboards-classic/get-started/move-panel-dashboard',
-            'dashboards-classic/get-started/pause-panel',
-            'dashboards-classic/get-started/resize-panel',
-            'dashboards-classic/get-started/set-data-access-level-dashboard',
-            'dashboards-classic/get-started/title-panels',
-            'dashboards-classic/get-started/zoom-panel',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Chart Panel Types',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'dashboards-classic/chart-panel-types/index'},
-          items: [
-            'dashboards-classic/chart-panel-types/area-charts',
-            'dashboards-classic/chart-panel-types/bar-charts',
-            'dashboards-classic/chart-panel-types/boolean-single-value-charts',
-            'dashboards-classic/chart-panel-types/box-plot-charts',
-            'dashboards-classic/chart-panel-types/column-charts',
-            'dashboards-classic/chart-panel-types/combo-charts',
-            'dashboards-classic/chart-panel-types/donut-pie-charts',
-            'dashboards-classic/chart-panel-types/line-charts',
-            'dashboards-classic/chart-panel-types/map-charts',
-            'dashboards-classic/chart-panel-types/numerical-single-value-charts',
-            'dashboards-classic/chart-panel-types/string-single-value-charts',
-            'dashboards-classic/chart-panel-types/table-charts',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Edit Dashboards and Panels',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'dashboards-classic/edit-dashboards/index'},
-          items: [
-            'dashboards-classic/edit-dashboards/manage-dashboards',
-            'dashboards-classic/edit-dashboards/manage-charts',
-            'dashboards-classic/edit-dashboards/manage-panels',
-            'dashboards-classic/edit-dashboards/manage-axis',
-            'dashboards-classic/edit-dashboards/set-time-range-dashboards',
-            'dashboards-classic/edit-dashboards/use-filters-dashboards',
-          ],
-        },
-        'dashboards-classic/share-dashboard-inside-org',
-        'dashboards-classic/share-dashboard-outside-org',
-        'dashboards-classic/restricted-operators-dashboards',
-        'dashboards-classic/troubleshoot-dashboards',
       ],
     },
   ],
@@ -2524,6 +2458,7 @@ integrations: [
       link: {type: 'doc', id: 'cse/index'},
       items: [
         'cse/introduction-to-cloud-siem',
+        'cse/cloud-siem-content-catalog',
       {
           type: 'category',
           label: 'Get Started with Cloud SIEM',
@@ -2850,8 +2785,29 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'platform-services/automation-service/index'},
           items: [
+            {
+              type: 'category',
+              label: 'App Central',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platform-services/automation-service/app-central/index'},
+              items: [
+                {
+                  type: 'category',
+                  label: 'Integrations in App Central',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'platform-services/automation-service/app-central/integrations/index'},
+                  items: [
+                    {
+                      type: 'autogenerated',
+                      dirName: 'platform-services/automation-service/app-central/integrations'
+                    }
+                  ],
+                }
+              ],
+            },
             'platform-services/automation-service/about-automation-service',
-            'platform-services/automation-service/automation-service-app-central',
             'platform-services/automation-service/automation-service-playbooks',
             'platform-services/automation-service/automation-service-integrations',
             'platform-services/automation-service/automation-service-audit-logging',

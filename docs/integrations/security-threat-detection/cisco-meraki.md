@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cisco Meraki app provides a single-pane-of-glass for monitoring and troubleshooting network security, end-to-end performance, switch port management, and device management of your Cisco Meraki wireless infrastructure management platform.  
 
-## Log Types  
+## Log types  
 
 The Cisco Meraki App is dependent on the following logs:
 * flows
@@ -27,7 +27,7 @@ For more information on log types, see these topics in Cisco Meraki documentatio
 * [Syslog Server Overview and Configuration](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Server_Overview_and_Configuration)
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title="security_event log sample"
 <134>1 1563249630.774247467 remote_DC1_appliance security_event ids_alerted signature=1:41944:2 priority=1 timestamp=TIMESTAMPEPOCH.647461
@@ -81,7 +81,7 @@ into slot 1
 ```
 
 
-### Sample Query
+### Sample queries
 
 The following query is from the High Severity Threats panel of the Cisco Meraki - Overview dashboard.
 
@@ -132,7 +132,9 @@ For more information on configuring log forwarding from Cisco Meraki, see the [C
 
 This section provides instructions on how to install the Cisco Meraki App. The App's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## View Cisco Meraki Dashboards
 

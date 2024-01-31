@@ -36,7 +36,9 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 
 ## Budget assignment​
 
-{@import ../../../reuse/budget-assignment.md}
+import BudgetAssn from '../../../reuse/budget-assignment.md';
+
+<BudgetAssn/>
 
 ## Source-type behavior​
 
@@ -51,7 +53,7 @@ A few Sources on Hosted Collectors will behave differently when instructed to st
 
 1. Select **Manage Data** > **Collection** > **Ingest Budgets**.
 1. Click the **+ Add Budget** button on the top right of the table.
-1.  A panel named **Create Ingest Budget** will appear to the right of the **Ingest Budgets** table.<br/><img src={useBaseUrl('img/ingestion-volume/create-ingest-budget.png')} alt="create-ingest-budget" style={{border: '1px solid black'}} width="300" />
+1.  A panel named **Create Ingest Budget** will appear to the right of the **Ingest Budgets** table.<br/><img src={useBaseUrl('img/ingestion-volume/create-ingest-budget.png')} alt="create-ingest-budget" style={{border: '1px solid gray'}} width="300" />
 1. Under **Create Ingest Budget**, provide the following information.
    * **Name**. Enter the name you'd like to assign to the new ingest budget.
    * **Description** is optional.

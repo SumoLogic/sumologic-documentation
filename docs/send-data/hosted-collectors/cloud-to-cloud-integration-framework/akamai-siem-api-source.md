@@ -18,8 +18,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Akamai SIEM API Source provides a secure endpoint to receive security events generated on the Akamai platform by leveraging the [V1 SIEM API](https://developer.akamai.com/api/cloud_security/siem/v1.html). It securely stores the required authentication, scheduling, and state tracking information.
 
-:::note
-This source has a maximum ingest rate of 1 TB/day as measured by the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). Contact Sumo Logic support for alternative collection techniques if your Source exceeds this rate.
+:::info
+This source has a maximum ingest rate of 1 TB/day as measured by the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). If your Source exceeds this rate, [contact Sumo Logic support](https://support.sumologic.com) for alternative collection techniques.
 :::
 
 :::note

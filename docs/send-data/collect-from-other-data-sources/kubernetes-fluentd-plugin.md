@@ -4,7 +4,7 @@ title: Kubernetes Fluentd plugin
 description: Information on using the Sumo Kubernetes Fluentd plugin to collect logs from Kubernetes.
 ---
 
-:::warning solution deprecated
+:::danger solution deprecated
 The configuration described on this page is deprecated. We recommend using our [comprehensive Kubernetes solution](/docs/observability/kubernetes) instead.  
 :::
 
@@ -125,7 +125,7 @@ env:
 The following table show which environment variables affect which
 Fluentd sources.
 
-| **Environment Variable** | **Containers** | **Docker    ** | **Kubernetes** | **Systemd** |
+| **Environment Variable** | **Containers** | **Docker** | **Kubernetes** | **Systemd** |
 |:--------------------------|:----------------|:----------------|:----------------|:-------------|
 | `EXCLUDE_CONTAINER_REGEX`  | ![check](/img/reuse/check.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) |
 | `EXCLUDE_FACILITY_REGEX`   | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![x](/img/reuse/x.png) | ![check](/img/reuse/check.png) |

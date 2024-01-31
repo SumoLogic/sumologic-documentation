@@ -25,7 +25,7 @@ Installation is the same as for the official [Sumo Logic Kubernetes Collection](
 In the following installation steps, we use the release name `collection` and the namespace name `sumologic`. You can use any names you want, however, you'll need to adjust your installation commands to use your names since these names impact the OpenTelemetry Collector endpoint name.
 
 :::note
- If you're upgrading from Sumo Logic Kubernetes Collection `v2.x` to `v3.x`, see [Sumo Logic Kubernetes Collection Migration Guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
+ If you're upgrading from Sumo Logic Kubernetes Collection `v2.x` to `v3.x`, see [Sumo Logic Kubernetes Collection Migration Guide](/docs/send-data/kubernetes).
 :::
 
 ### Collection architecture

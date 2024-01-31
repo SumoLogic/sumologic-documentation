@@ -24,7 +24,7 @@ IIS app and integration are supported only on Windows.
 This section provides instructions for configuring log and metric collection for the Sumo Logic app for IIS.
 
 ### Configure Fields in Sumo Logic
-Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 * `component`
 * `environment`
 * `webserver_system`
@@ -45,7 +45,7 @@ Sumo Logic supports the collection of logs and metrics data from IIS server in s
     * Configure an HTTP Logs and Metrics Source
     * Configure a Hosted Collector
     * Install Telegraf
-    * Configure Telegraf (telegraf.conf), and start it.
+    * Configure Telegraf (telegraf.conf), and start it
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-flow.png')} alt="Collect Internet Information Services (IIS) Logs and Metrics for Standalone environments" />
 
@@ -56,41 +56,34 @@ Sumo Logic uses the Telegraf operator for IIS metric collection and the [Install
 
 This section provides instructions for configuring log collection for IIS running on a standalone environment for the Sumo Logic app for IIS.
 
-1. **Log Types**
+1. **Log Types**. This section covers the following default log formats for IIS 10 and IIS 8.5:
+   * IIS Access Logs (W3C format)
+   * HTTP Error Logs
+   * Performance Logs
+   Default log formats are used by IIS app. IIS allows you to choose which fields to log in IIS access logs. To understand the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
 
-This section covers the following default log formats for IIS 10 and IIS 8.5:
+   IIS Log files are generated as local files. For a standard Windows Server, the default log location is as follows: `%SystemDrive%\inetpub\logs\LogFiles`. For example: `c:\inetpub\logs\LogFiles\`.
 
-* IIS Access Logs (W3C format)
-* HTTP Error Logs
-* Performance Logs
+   Within the folder, you will find subfolders for each site configured with IIS. The logs are stored in folders that follow a naming pattern like W3SVC1, W3SVC2, W3SVC3, etc. The number at the end of the folder name corresponds to your site ID. For example, W3SVC2 is for site ID 2.
 
-Default log formats are used by IIS app. IIS allows you to choose which fields to log in IIS access logs. To understand the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
-
-IIS Log files are generated as local files. For a standard Windows Server, the default log location is as follows: `%SystemDrive%\inetpub\logs\LogFiles`. For example: `c:\inetpub\logs\LogFiles\`.
-
-Within the folder, you will find subfolders for each site configured with IIS. The logs are stored in folders that follow a naming pattern like W3SVC1, W3SVC2, W3SVC3, etc. The number at the end of the folder name corresponds to your site ID. For example, W3SVC2 is for site ID 2.
-
-* **IIS Access Logs (W3C default format)** Sumo Logic expects logs in [W3C](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging) format with following fields:
-```
-#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
-```
-* IIS allows you to choose fields to log in IIS access logs. For explanations on the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
-* **HTTP Error Logs** Sumo Logic expects Error logs in following format :
-```
-#Fields: date time c-ip c-port s-ip s-port protocol_version verb cookedurl_query protocol_status siteId Reason_Phrase Queue_Name
-```
-For information on how to configure HTTP Error Logs, and for explanations on the various HTTP Error Log fields and their significance see this [link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
-* **Performance Logs** These logs are output of Perfmon queries which will be configured at Installed Collector, "**Windows Performance**" Source.
+   * **IIS Access Logs (W3C default format)** Sumo Logic expects logs in [W3C](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging) format with following fields:
+   ```
+   #Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+   ```
+   * IIS allows you to choose fields to log in IIS access logs. For explanations on the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
+   * **HTTP Error Logs** Sumo Logic expects Error logs in following format :
+   ```
+   #Fields: date time c-ip c-port s-ip s-port protocol_version verb cookedurl_query protocol_status siteId Reason_Phrase Queue_Name
+   ```
+   For information on how to configure HTTP Error Logs, and for explanations on the various HTTP Error Log fields and their significance see this [link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
+   * **Performance Logs** These logs are output of Perfmon queries which will be configured at Installed Collector, "**Windows Performance**" Source.
 1. **Make sure logging is turned on in IIS Server.**
-* **Enable logging on your IIS Server**. Perform the following task, if logging on your IIS Server is not already enabled.
+   * **Enable logging on your IIS Server**. Perform the following task, if logging on your IIS Server is not already enabled.
 To enable logging on your IIS Server, do the following:
 1. Open IIS Manager.
-2. Select the site or server in the **Connections** pane, then double-click **Logging**.
-
-Enhanced logging is only available for site-level logging. If you select the server in the Connections pane, then the Custom Fields section of the W3C Logging Fields dialog is disabled.
-
+1. Select the site or server in the **Connections** pane, then double-click **Logging**. Enhanced logging is only available for site-level logging. If you select the server in the Connections pane, then the Custom Fields section of the W3C Logging Fields dialog is disabled.
 1. In the Format field under Log File, select **W3C** and then click Select Fields. IIS app works on default fields selection.
-2. Select following fields, if not already selected. Sumo Logic expects these fields in IIS logs for the IIS app to work by default:
+1. Select following fields, if not already selected. Sumo Logic expects these fields in IIS logs for the IIS app to work by default:
 ```
 date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
 ```
@@ -100,57 +93,20 @@ For more information about IIS log format and log configuration refer [link](htt
    2. Under the \W3SVC1 directory, you should see one or more files with a .log extension. If the file is present, you can collect it.
 * **Enable HTTP Error Logs on your Windows Server** Perform the following task to enable HTTP Error Logs on your Windows Server, that is hosting the IIS Server.
 
-**To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:
+To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:
 
 1. To configure HTTP Error Logging, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/configuring-http-server-api-error-logging).
-2. To understand HTTP Error Log format, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/format-of-the-http-server-api-error-logs). HTTP Error Log files are generated as local files. The default HTTP Error log file location is: `C:\Windows\System32\LogFiles\HTTPERR`
-1. **Configure an Installed Collector.**
+1. To understand HTTP Error Log format, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/format-of-the-http-server-api-error-logs). HTTP Error Log files are generated as local files. The default HTTP Error log file location is: `C:\Windows\System32\LogFiles\HTTPERR`
+1. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
+1. **Configure Sources.** This section demonstrates how to configure sources for the following log types:
+   * IIS Access Logs
+   * HTTP Error Logs
+   * IIS Performance (Perfmon) Logs.
+   * **Configure Source for IIS Access Logs**. This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/web-servers/iis-10). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex.
 
-If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
+   Sumo Logic recommends using a Local File Source whenever possible.
 
-1. **Configure Sources.**
 
-This section demonstrates how to configure sources for the following log types:
-
-* IIS Access Logs
-* HTTP Error Logs
-* IIS Performance (Perfmon) Logs
-* **Configure Source for IIS Access Logs**
-
-This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/web-servers/iis-10). You may configure a [Remote File Source](/docs/send-data/installed-collectors/sources/remote-file-source), but the configuration is more complex.
-
-Sumo Logic recommends using a Local File Source whenever possible.
-
-To configure a local file source for IIS Access Logs, do the following:
-
-1. Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
-2. Specify Local File Source Fields as follows:
-    1. **Name**: Required (for example, "IIS")
-    2. **Description**. (Optional)
-    3. **File Path** (Required). C:\inetpub\Logs\LogFiles\W3SVC*\*.log
-    4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
-    5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
-    6. **Source Category** (Required). For example, Webserver/IIS/Access.
-    7. **Fields.** Set the following fields:
-    ```
-    component = webserver
-    webserver_system = iis
-    webserver_farm = <Your_IISserver_farm_Name>. Enter Default if you do not have one
-    environment = <Your_Environment_Name> (for example, Dev, QA, or Prod)
-    ```
-
-  <img src={useBaseUrl('img/integrations/web-servers/IIS-access-logs.png')} alt="IIS-access-logs" width="500"/>
-
-3. Configure the Advanced section:
-    8. Timestamp Parsing Settings: Make sure the setting matches the timezone on the log files.
-    9. Enable Timestamp Parsing: Select Extract timestamp information from log file entries.
-    10. Time Zone: Select the option to Use time zone from log file. If none is present use: and set the timezone to UTC.
-    11. Timestamp Format: Select the option to Automatically detect the format.
-    12. Encoding. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.
-    13. Enable Multiline Processing. Uncheck the box to Detect messages spanning multiple lines. Since IIS Error logs are single line log files, disabling this option will ensure that your messages are collected correctly.
-4. Click Save.
-
-After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS log files to the Sumo Logic service.
 
 * Configure Source for HTTP Error Logs
 This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/web-servers/iis-10).
@@ -162,52 +118,49 @@ To configure a local file source for HTTP Error Logs, do the following:
 2. Specify the Local File Source Fields as follows:
     1. **Name**: Required (for example, "HTTP Error Logs")
     2. **Description**. (Optional)
-    3. **File Path** (Required). C:\Windows\System32\LogFiles\HTTPERR\*.*
+    3. **File Path** (Required). `C:\Windows\System32\LogFiles\HTTPERR\*.*`
     4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
     5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
     6. **Source Category** (Required). For example, Webserver/IIS/Error.
-    7. **Fields. **Set the following fields**: \
-`component = webserver \
-webserver_system = iis \
-webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one.
-`environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod) \
-
-<img src={useBaseUrl('img/integrations/web-servers/IIS-http-logs.png')} alt="IIS-access-logs" width="500"/>
-
+    7. **Fields.** Set the following fields:
+       * `component = webserver`
+       * `webserver_system = iis`
+       * `webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one.
+       * `environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod)<br/><img src={useBaseUrl('img/integrations/web-servers/IIS-http-logs.png')} alt="IIS-access-logs" width="500"/>
 3. Configure the Advanced section:
-    8. Timestamp Parsing Settings: Make sure the setting matches the timezone on the log files.
-    9. Enable Timestamp Parsing: Select Extract timestamp information from log file entries.
-    10. Time Zone: Select the option to Use time zone from log file. If none is present use: and set the timezone to UTC.
-    11. Timestamp Format: Select the option to Automatically detect the format.
-    12. Encoding. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.
-    13. Enable Multiline Processing. Uncheck the box to Detect messages spanning multiple lines. Since IIS Error logs are single line log files, disabling this option will ensure that your messages are collected correctly.
+    * Timestamp Parsing Settings: Make sure the setting matches the timezone on the log files.
+    * Enable Timestamp Parsing: Select Extract timestamp information from log file entries.
+    * Time Zone: Select the option to Use time zone from log file. If none is present use: and set the timezone to UTC.
+    * Timestamp Format: Select the option to Automatically detect the format.
+    * Encoding. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.
+    * Enable Multiline Processing. Uncheck the box to Detect messages spanning multiple lines. Since IIS Error logs are single line log files, disabling this option will ensure that your messages are collected correctly.
 4. Click Save.
+
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS HTTP Error log files to the Sumo Logic service.
+
 * Configure Source for IIS Performance (Perfmon) Logs
 
 This section demonstrates how to configure a Windows Performance Source, for use with an [Installed Collector](/docs/integrations/web-servers/iis-10).
 
-
 Sumo Logic recommends using a Local Windows Performance source whenever possible.
 
 Use the appropriate source for your environment:
-* [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source.md)
-* [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/remote-windows-performance-monitor-log-source.md)
+* [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source)
+* [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/remote-windows-performance-monitor-log-source)
 
 To configure a Source for IIS Performance Logs, do the following:
 
-1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source.md).
+1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source).
 2. Configure the Local Windows Performance Source Fields as follows:
     * **Name**: Required (for example, "IIS Performance")
     * **Source Category** (Required). For example, Webserver/IIS/PerfCounter.
     * **Frequency**: **Every Minute** (you may custom choose frequency)
     * **Description**. (Optional)
-    * **Fields. **Set the following fields**: \
-`component = webserver \
-webserver_system = iis \
-webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one.
-`environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod) \
-
+    * **Fields.** Set the following fields:
+       * component = webserver
+       * `webserver_system = iis `
+       * `webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one.
+       * `environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod)
 3. Under Perfmon Queries Click Add Query.
 4. Add the following two queries:
     * Query 1:
@@ -223,23 +176,24 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 
 #### Set up a Sumo Logic HTTP Source
 
-1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md) documentation.
+1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) documentation.
 2. **Configure an HTTP Logs & Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
-    2. Select **HTTP Logs & Metrics_._**
+    2. Select **HTTP Logs & Metrics.**
         1. **Name.** (Required). Enter a name for the source.
         2. **Description.** (Optional).
-        3. **Source Category** (Required)**. For example,  `Prod/Webserver/IIS/Metrics`.
+        3. **Source Category** (Required). For example, `Prod/Webserver/IIS/Metrics`.
     3. Select **Save**.
     4. Take note of the URL provided once you click **Save**. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 
 
 #### Set up Telegraf
 
-1. **Install Telegraf if you haven’t already. **Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
+1. **Install Telegraf if you haven’t already.** Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
 2. **Configure and start Telegraf.** As part of collecting metrics data from Telegraf, we will use the[ Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
-<details><summary><strong>Click to expand.</strong><br/>Create or modify `telegraf.conf` and copy and paste the text below.</summary>
+<details>
+<summary><strong>Click to expand.</strong><br/>Create or modify `telegraf.conf` and copy and paste the text below.</summary>
 
 ```sql
 [[inputs.win_perf_counters]]
@@ -423,7 +377,7 @@ If you haven’t defined a farm in IIS Server, then enter ‘**default**’ for 
 * Input plugins section, which is `[[inputs.win_perf_counters]]`:
     Configure the Windows Performance Counters Input Plugin for Telegraf see[ this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/win_perf_counters#windows-performance-counters-input-plugin).
 * In the tags section, which is `[inputs.win_perf_counters.tags]`:
-    * `environment` - This is the deployment environment where the IIS Server farm identified by the value of **servers** resides. For example; dev or QA. While this value is optional we highly recommend setting it.
+    * `environment`. This is the deployment environment where the IIS Server farm identified by the value of **servers** resides. For example; dev or QA. While this value is optional we highly recommend setting it.
     * `webserver_farm` - Enter a name to identify this IIS Server farm This farm name will be shown in our dashboards. Use “`default`” if none is present.
 * In the output plugins section, which is `[[outputs.sumologic]]`:
     * **`URL`** - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
@@ -433,7 +387,7 @@ If you haven’t defined a farm in IIS Server, then enter ‘**default**’ for 
 If you haven’t defined a farm in IIS Server, then enter ‘**default**’ for `webserver_farm`.
 
 There are additional values set by the Telegraf configuration.  We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
-* `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
+* `data_format: “prometheus”`. In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
 * `component - “webserver”` - In the input `[[inputs.win_perf_counters]]` plugins section. This value is used by Sumo Logic apps to identify application components.
 * `webserver_system - “iis”` - In the input plugins sections. This value identifies the webserver system.
 
@@ -448,7 +402,7 @@ At this point, Telegraf should start collecting the IIS Server metrics and forwa
 
 To install these alerts, you need to have the Manage Monitors role capability. Alerts can be installed by either importing a JSON file or a Terraform script.
 
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
+There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
 
 ### Method A: Importing a JSON file
 
@@ -529,7 +483,7 @@ email_notifications = [
     3. Run `terraform apply`.
 7. Post Installation: If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
+There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
 
 
 ## Installing the IIS app
@@ -541,7 +495,10 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**.
+:::note
+Version selection is not available for all apps.
+:::
 3. To install the app, complete the following fields.
    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom IIS Server farm filter. Examples:
@@ -559,105 +516,15 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 Sumo Logic provides out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the IIS server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
 
-<table>
-  <tr>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - Access from Highly Malicious Sources
-   </td>
-   <td>This alert fires when an IIS server is accessed from highly malicious IP addresses.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a 4xx response code.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a 5xx response code.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - Error Events
-   </td>
-   <td>This alert fires when an error in the IIS logs is detected.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - Slow Response Time
-   </td>
-   <td>This alert fires when the response time for a given IIS server is greater than one second.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62; 0
-   </td>
-   <td>0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - ASP.NET Application Errors
-   </td>
-   <td>This alert fires when we detect an error in the ASP.NET applications running on an IIS server.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>IIS - Blocked Async IO Requests
-   </td>
-   <td>This alert fires when we detect that there are blocked async I/O requests on an IIS server.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-</table>
-
+| Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|:---|
+| IIS - Access from Highly Malicious Sources | This alert fires when an IIS server is accessed from highly malicious IP addresses. | Critical | > 0 | < = 0 |
+| IIS - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a 4xx response code. | Critical | > 0 | 0 |
+| IIS - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a 5xx response code. | Critical | > 0 | 0 |
+| IIS - Error Events | This alert fires when an error in the IIS logs is detected. | Critical | > 0 | 0 |
+| IIS - Slow Response Time | This alert fires when the response time for a given IIS server is greater than one second. | Warning | > 0 | 0 |
+| IIS - ASP.NET Application Errors | This alert fires when we detect an error in the ASP.NET applications running on an IIS server. | Warning | >0 | < = 0 |
+| IIS - Blocked Async IO Requests | This alert fires when we detect that there are blocked async I/O requests on an IIS server. | Warning | >0 | < = 0 |
 
 ## Viewing IIS Dashboards
 
@@ -688,7 +555,7 @@ Use this dashboard to:
 
 ### Performance Snapshot
 
-The **IIS - Performance Snapshot **dashboard provides detailed information on your IIS infrastructure integrity and performance. Dashboard panels show details on Web Service uptime, active connections, requests, user activity, and total bytes transferred. Panels also provide HTTP Service Request Queues details, such as arrivals, queue size, cache hit rate, and rejection rate.
+The **IIS - Performance Snapshot** dashboard provides detailed information on your IIS infrastructure integrity and performance. Dashboard panels show details on Web Service uptime, active connections, requests, user activity, and total bytes transferred. Panels also provide HTTP Service Request Queues details, such as arrivals, queue size, cache hit rate, and rejection rate.
 
 Use this dashboard to:
 * Monitor incoming request traffic, along with queue size and rejection rate to identify any bottlenecks.

@@ -13,7 +13,7 @@ Gmail Trace Logs is a new Sumo Logic app based on the Gmail BigQuery Cloud-to-Cl
 
 The Sumo Logic App for Gmail Trace Logs helps monitor spam messages, malware, dropped messages and rejected messages. It allows you to view messages with objectionable content, messages detected by your **Security Sandbox**, and messages flagged by the Walled Garden Rule.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Gmail Trace Logs uses [Gmail Logs via BigQuery](https://support.google.com/a/topic/7233311?hl=en&ref_topic=2683886).
 
@@ -123,7 +123,7 @@ For details, see the [Schema for Gmail logs in BigQuery](https://support.google.
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Gmail messages classifications"
 _sourceCategory=Labs/GmailTraceLogs
@@ -142,7 +142,9 @@ This section provides instructions for setting up [Cloud-to-Cloud-Integration fo
 
 ## Installing the Gmail Trace Logs app
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Gmail Trace Logs Dashboards
 

@@ -206,7 +206,7 @@ Once a search is pinned, it cannot be unpinned, but you can remove it from the *
 
 For more information, see [Pinned Searches](/docs/get-started/library#pinned-searches).
 
-## Become a Sumo Pro user
+## Become a Sumo Logic Pro user
 
 Now that you're familiar with the layout and features in the Sumo Logic UI, you're ready to ramp up your Sumo skills with [self-paced training](https://www.sumologic.com/self-paced-training/).
 
