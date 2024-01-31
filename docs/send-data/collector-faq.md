@@ -31,14 +31,14 @@ This warning indicates that a brief lapse in network connectivity between your C
 Here are a few troubleshooting steps to try when your Collector is consistently unable to connect to the Service:
 
 1. Test DNS resolution and connectivity to the Sumo servers: 
- ```bash
- curl -i https://collectors.sumologic.com
- # you should see the word "Tweep" returned
- ```
+     ```bash
+     curl -i https://collectors.sumologic.com
+     # you should see the word "Tweep" returned
+     ```
 1. Check whether there is a significant delay in performing the DNS lookup:
- ```bash
- time nslookup collectors.sumologic.com
- ```
+     ```bash
+     time nslookup collectors.sumologic.com
+     ```
 1. Rule out dropped packets due to jumbo frames being unsupported by your network end points. For example, MTU being set to 9001 bytes vs. the age old default of 1500 bytes. In newer AWS EC2 VPC's, the MTU is set to 9001 by default. This is referred to as using [jumbo frames](https://en.wikipedia.org/wiki/Jumbo_frame) and can cause packet loss since not all devices on the internet support large packet sizes. [Path MTU Discovery](https://en.wikipedia.org/wiki/Path_MTU_Discovery) is responsible for ensuring that packets of the correct size are sent to each end point by first checking whether the end point can handle jumbo frames, and then resending the packet in smaller chunks until it's successfully sent. Packets will be dropped in cases where ICMP *Unreachable* messages are disabled on the receiving end since [Path MTU Discovery](https://en.wikipedia.org/wiki/Path_MTU_Discovery) relies on these messages to determine the correct packet size.
 
 #### Setting the default MTU on a Linux Operating System
@@ -300,9 +300,9 @@ To increase the maximum Java Heap size:
 1. On the computer running the Collector, open `install_directory/config/user.properties`.
 1. Add or locate the following parameter:
 
-  ```
-  wrapper.java.maxmemory=128
-  ```
+     ```
+     wrapper.java.maxmemory=128
+     ```
 
 1. Increase the `wrapper.java.maxmemory` value, based on the number of files you expect to collect from.
 

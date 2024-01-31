@@ -16,7 +16,7 @@ Understanding the volume of metrics that you are ingesting is important because 
 While you can also see metrics DPM breakdown in the [**Metrics** dashboard](/docs/integrations/sumo-apps/data-volume/#metrics) of the Data Volume app, the dashboard only shows volume usage at a source category or source host level. Use the Metrics DPM screen to get more detailed information.
 
 :::note
-To see data volume, you'll need to enable [Audit Index](/docs/manage/security/audit-indexes/audit-event-index).
+To see data volume, you'll need to enable [Audit Index](/docs/manage/security/audit-indexes/audit-index).
 :::
  
 ## View Metrics DPM

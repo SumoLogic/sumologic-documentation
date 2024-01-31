@@ -4,8 +4,6 @@ title: Search Templates
 description: Search templates narrow down your queries into a few parameters that other users can edit to find the data they need.
 ---
 
-
-
 Search templates can help you simplify searches for your users by giving them a few easy input choices. You can have search templates  replace any text in a query, including fields, keywords, and arguments to operators. You can also determine what type of information is valid such as text, strings, and keywords.
 
 Behind the scenes, selecting the parts of your query to use in the template is also pretty easy.  You can select which parts of your search should be available and click **Create Parameter**.
@@ -17,45 +15,26 @@ Search templates work with [lookup (classic)](/docs/search/search-query-langu
 From any query you create, or an existing one you manage, you can create a search template and specify parameters.
 
 1. Open your query.
-1. Highlight the field, argument, or operator you want to replace and click **Create a parameter** or **alt+v** if you want to use the keyboard shortcut.  
-
-    ![template variable selection](/img/search/get-started-search/build-search/search-templates/template-variable-selection.png)
-
-    :::note
-    You can create a maximum of 10 parameters inside a search.
-    :::
-
-1. From the **Manage Parameter Settings** dialog, provide the name, available values separated by commas, data type, and a brief description.
-
-There are four data types to choose, based on how you want to define a valid parameter:
-
-| Data Type | Description |
-| :-- | :-- |
-| Number | Numbers only. |
-| String | Considers as a single phrase and will wrap in double-quotes. For example “system errors”. |
-| Any | All characters. Best for substituting texts in paths. |
-| Keyword | Any Sumo Logic keyword. There are some performance benefits to using Sumo Logic keywords so this is a great option to choose if you can. |
-
-Optional. You can set autocomplete values for your parameter by selecting **Set Values for Parameter.**
-
-Select a format:
-
-1. Optional. Select the available values.
+1. Highlight the field, argument, or operator you want to replace and click **Create a parameter** or **alt+v** if you want to use the keyboard shortcut.  <br/>  ![template variable selection](/img/search/get-started-search/build-search/search-templates/template-variable-selection.png)
+   :::note
+   You can create a maximum of 10 parameters inside a search.
+   :::
+1. From the **Manage Parameter Settings** dialog, provide the name, available values separated by commas, data type, and a brief description. There are four data types to choose, based on how you want to define a valid parameter:
+   | Data Type | Description |
+   | :-- | :-- |
+   | Number | Numbers only. |
+   | String | Considers as a single phrase and will wrap in double-quotes. For example “system errors”. |
+   | Any | All characters. Best for substituting texts in paths. |
+   | Keyword | Any Sumo Logic keyword. There are some performance benefits to using Sumo Logic keywords so this is a great option to choose if you can. |
+1. Optionally, you can set autocomplete values for your parameter by selecting **Set Values for Parameter**. Select a format:
     1. For text entries, enter each value on a separate line. Do not use commas to separate values as they will be marked invalid. If the string needs a comma, use quotes in the text entry, such as “abc,xyz”.
-    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you're using a Lookup make sure that you are using a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file because the system will reject any lookup file path that it can't validate.  
-
-        ![label-value-pairs.png](/img/search/get-started-search/build-search/search-templates/label-value-pairs.png)
-
+    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you're using a Lookup make sure that you are using a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file because the system will reject any lookup file path that it can't validate.<br/>  ![label-value-pairs.png](/img/search/get-started-search/build-search/search-templates/label-value-pairs.png)
         1. Select the appropriate values for the field, such as user ID. 
         1. Select values for the corresponding label, such as name. Both **Text** entries and **Label-value** pairs allow amaximum of 10,000 entries. A lookup file can have a maximum of 40,000 entries.
     1. For a lookup file, you must enter a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file that you have [saved](/docs/search/search-query-language/search-operators/save-classic). 
         1. Under **Select a format**, select **Lookup**.
-        1. Enter in a valid lookup file or select a shared lookup file
-            from the dropdown. 
-        1. Select values for the corresponding label, such as name.  
-
-            ![autocomplete-values.png](/img/search/get-started-search/build-search/search-templates/autocomplete-values.png)
-
+        1. Enter in a valid lookup file or select a shared lookup file from the dropdown. 
+        1. Select values for the corresponding label, such as name. <br/>  ![autocomplete-values.png](/img/search/get-started-search/build-search/search-templates/autocomplete-values.png)
 1. Click **Save.**
 1. Share your search with any new users by clicking **Share** underneath your query window.
 1. Grant **Edit** access to the users and roles that should use this search template.
@@ -88,13 +67,9 @@ _sourceCategory=service "Successful login from UI"
 | count by latitude, longitude, user
 ```
 
-Next, specify the `user_name` parameter as a lookup that already has the association between our user names and our user IDs, in this case
-`/shared/angad/user_info_lookup`:
+Next, specify the `user_name` parameter as a lookup that already has the association between our user names and our user IDs, in this case `/shared/angad/user_info_lookup`:
 
-1. Enter in a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file that you have [saved](/docs/search/search-query-language/search-operators/save-classic) with the save operator.  
-
-    ![lookup.png](/img/search/get-started-search/build-search/search-templates/lookup.png)
-
+1. Enter in a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file that you have [saved](/docs/search/search-query-language/search-operators/save-classic) with the save operator.  <br/>  ![lookup.png](/img/search/get-started-search/build-search/search-templates/lookup.png)
 1. Select the appropriate values for the field, such as user ID.
 1. Select values for the corresponding label, such as name.
 1. Click **Save**.
@@ -134,14 +109,11 @@ _sourceCategory=apache_error
 
 ![SearchTemplates.png](/img/search/get-started-search/build-search/search-templates/searchtemplates.png)
 
-**Save**. You now have a parameter for your search that allows users to
-just pick the timeslice from a list of values you feel is appropriate
-for the query.
+**Save**. You now have a parameter for your search that allows users to just pick the timeslice from a list of values you feel is appropriate for the query.
 
 ## Rename a parameter
 
-If you need to rename a parameter, you can do that from the Manage
-Parameters Settings dialog.
+If you need to rename a parameter, you can do that from the Manage Parameters Settings dialog.
 
 1. Click the details icon for the parameter setting and select **Manage Parameter Settings**.
 1. From the **Manage Parameter Settings** dialog, edit the Parameter Name field. You must specify a valid name with no spaces or special characters, except for underscores.
@@ -154,8 +126,7 @@ If you want to delete a search template, delete the existing parameters. When yo
 1. Select the details icon of your last parameter.
 1. Select **Delete Parameter**.
 
-When you delete a String parameter, the default value is substituted back into the query in double-quotes. For example “user_name”. If you
-did not specify a default value for this parameter, you must specify one now before re-running the query. You may also need to remove the quotes.
+When you delete a String parameter, the default value is substituted back into the query in double-quotes. For example “user_name”. If you did not specify a default value for this parameter, you must specify one now before re-running the query. You may also need to remove the quotes.
 
 ## Best Practices
 
@@ -187,7 +158,6 @@ If you have an existing autocomplete, we will give you warning message. For exam
 To create a dashboard from a Search Template:
 
 1. Run your search template and wait for results.
-
 1. Click **Add to Dashboard**.
 1. Choose an existing dashboard for this panel, or create a new one.
 

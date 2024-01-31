@@ -96,7 +96,7 @@ actions on a server machine of your choice:
         ```
 
 :::note
-The following Terraform providers with mentioned versions are automatically installed during the **terraform init** phase as described below:
+The following Terraform providers with mentioned versions are automatically installed during the `terraform init` phase as described below:
 
 * [Template](https://www.terraform.io/docs/providers/template/index.html) version 2.1 and above.
 * [Null](https://www.terraform.io/docs/providers/null/index.html) version 2.1 and above.
@@ -113,7 +113,7 @@ The following Terraform providers with mentioned versions are automatically inst
   ```
   $ git clone https://github.com/SumoLogic/sumologic-solution-templates
   ```
-1. Initialize the Terraform working directory by navigating to the directory **sumologic-solution-templates/software-development-optimization-terraform.** and running **terraform init**. This will install the required Terraform providers: [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [Template](https://www.terraform.io/docs/providers/template/index.html), [Null](https://www.terraform.io/docs/providers/null/index.html), [BitBucket Terraform Provider](https://www.terraform.io/docs/providers/bitbucket/index.html), [GitHub Terraform Provider](https://www.terraform.io/docs/providers/github/index.html), [GitLab Terraform](https://registry.terraform.io/providers/gitlabhq/gitlab/3.6.0) [Provider](https://registry.terraform.io/providers/gitlabhq/gitlab/3.6.0), and [Pagerduty Terraform Provider](https://www.terraform.io/docs/providers/pagerduty/index.html).
+1. Initialize the Terraform working directory by navigating to the directory **sumologic-solution-templates/software-development-optimization-terraform.** and running `terraform init`. This will install the required Terraform providers: [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [Template](https://www.terraform.io/docs/providers/template/index.html), [Null](https://www.terraform.io/docs/providers/null/index.html), [BitBucket Terraform Provider](https://www.terraform.io/docs/providers/bitbucket/index.html), [GitHub Terraform Provider](https://www.terraform.io/docs/providers/github/index.html), [GitLab Terraform](https://registry.terraform.io/providers/gitlabhq/gitlab/3.6.0) [Provider](https://registry.terraform.io/providers/gitlabhq/gitlab/3.6.0), and [Pagerduty Terraform Provider](https://www.terraform.io/docs/providers/pagerduty/index.html).
 1. Choose which Sumo Logic Applications to configure by updating the values of the following variables in the **sumologic.auto.tfvars** file:
    * install_jira_cloud
    * nstall_jira_server
@@ -304,7 +304,7 @@ Configure these parameters in **sumologic.auto.tfvars**.
 | install_opsgenie | Install [Sumo Logic Application and WebHooks for Opsgenie](/docs/integrations/saas-cloud/opsgenie). Options: app, collection, fer, all, and none. | all |
 | install_github | Install [Sumo Logic Application and WebHooks for GitHub](/docs/integrations/app-development/github). Options: app, collection, fer, all, and none.  If you do not wish to install the GitHub collection or application, rename the file github.tf to github.tf_backup. | all |
 | install_gitlab | Install [Sumo Logic Application and WebHooks for GitLab](/docs/integrations/app-development/gitlab). Options: app, collection, fer, all, and none.  If you do not wish to install the GitLab collection or application, rename the file gitlab.tf to gitlab.tf_backup. | all |
-| install_pagerduty | Install [Sumo Logic Application and WebHooks for Pagerduty](/docs/integrations/saas-cloud/PagerDuty-V2). Options: app, collection, fer, all, and none. | all |
+| install_pagerduty | Install [Sumo Logic Application and WebHooks for Pagerduty](/docs/integrations/saas-cloud/pagerduty-v2). Options: app, collection, fer, all, and none. | all |
 | install_pagerduty_version | Lets you install either v2 or v3 alertFER/app version. | v3  |
 | install_jenkins | Install [Sumo Logic Application for Jenkins](/docs/integrations/app-development/jenkins). Options: app, collection, fer, all, and none. The Terraform script does not configure the Jenkins Sumo Logic plugin, choosing `collection` will create http source in Sumo Logic for Jenkins and will configure the Jenkins FERs. | all |
 | install_sdo |  Install [Sumo Logic Application for Software Development Optimization](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/software-development-optimization-terraform). Options: app or none. | app |

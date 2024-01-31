@@ -33,7 +33,7 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 | option+m       | Open a new Metrics tab                                        |
 | option+f       | Open a new Dashboard tab                                      |
 | option+a       | Open a new Traces tab                                         |
-| option+l       | Open a new LiveTail tab                                       |
+| option+l       | Open a new Live Tail tab                                       |
 | option+d       | Popout to new browser tab (dashboard only)                    |
 | option+h       | Switch to Home                                                |
 | option+b       | Switch to Library                                             |
@@ -65,7 +65,7 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 | alt+shift+t | Duplicate current time range in a new tab (search only)         |
 | alt+shift+p | Pause a running search (current tab only)                       |
 | g m         | Open a new Metrics tab                                          |
-| g l         | Open a new LiveTail tab                                         |
+| g l         | Open a new Live Tail tab                                         |
 | g d         | Popout to new browser tab (dashboard only)                      |
 | g h         | Switch to Home                                                  |
 | g b         | Switch to Library                                               |

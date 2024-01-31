@@ -14,7 +14,7 @@ The Sumo Logic app for AWS Elastic Load Balancer - Application ingests the logs 
 For information on collecting unified logs and metrics for AWS Elastic Load Balancer Application, see the AWS Elastic Load Balancing ULM Application.
 :::
 
-## Log Types
+## Log types
 
 The [Application Load Balancer Access Log](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) introduces two new fields in addition to the fields contained in Classic ELB Access log:
 
@@ -62,8 +62,8 @@ import AppInstall from '../../reuse/apps/app-install.md';
 * **Requests by Geolocation**. Uses a geolocation query to display a map of the IP addresses used by clients accessing your apps for the last fifteen minutes.
 * **Browsers and Operating Systems.** Reports the breakdown of the client’s browser by operating system in a stacked column chart for the last fifteen minutes.
 * **Requests by SSL Protocol and Cipher.** Reports the breakdown of ciphers used by protocol in a stacked column chart for the last fifteen minutes.
-* **Requests by Load Balancer. **Displays a bar chart of how many requests are hitting a load balancer for the last fifteen minutes.
-* **Data Sent and Received in MB. **Displays the data being sent and received by client IP in a pie chart for the last fifteen minutes.
+* **Requests by Load Balancer.** Displays a bar chart of how many requests are hitting a load balancer for the last fifteen minutes.
+* **Data Sent and Received in MB.** Displays the data being sent and received by client IP in a pie chart for the last fifteen minutes.
 * **Target Group Utilization.** Counts the requests by target group in the last fifteen minutes.
 * **4XX and 5XX Status Codes by Backend Instance and ALB.** Charts the number of 4XX and 5XX status codes for each backend instance and ALB in a bar chart over the last fifteen minutes.
 * **Average Req and Response Time by ELB.** Displays the latency of each load balancer in AWS in a stacked column chart for the last fifteen minutes.
@@ -90,8 +90,8 @@ import AppInstall from '../../reuse/apps/app-install.md';
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Application-Request-Analysis.png')} alt="AWS Elastic Load Balancer - Application" />
 
 * **Requests by Geolocation.** Uses a geolocation query to display a map of the IP addresses used by clients accessing your apps for the last fifteen minutes.
-* **Requests by Target Group Over Time. **Shows the trend of requests by Target Group over time for the last fifteen minutes.
-* **Requests by Protocol Over Time. **Shows the trend of requests by protocol over time for the last fifteen minutes.
+* **Requests by Target Group Over Time.** Shows the trend of requests by Target Group over time for the last fifteen minutes.
+* **Requests by Protocol Over Time.** Shows the trend of requests by protocol over time for the last fifteen minutes.
 * **Requests by Load Balancer Over Time.** Displays a line chart of how many requests are hitting a load balancer on a timeline over the last fifteen minutes.
 * **Total Requests by Load Balancer.** Show the requests per load balancer over time in a bar chart for the last fifteen minutes.
 * **Total Requests and Data Volume.** Displays the data being sent and received by client IP in a line chart on a timeline for the last fifteen minutes.
@@ -101,12 +101,12 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-ELB-Application-Status-Codes-Analysis.png')} alt="AWS Elastic Load Balancer - Application" />
 
-* **ELB Status Over Time. **Displays a bar chart representing the application status over a specified time period.
-* **Target Status Over Time. **Displays a bar chart representing the status of the target over a specified time period.
-* **4XX ELB Status by Location. **Charts the number and geographic location of 4XX ELB errors.
+* **ELB Status Over Time.** Displays a bar chart representing the application status over a specified time period.
+* **Target Status Over Time.** Displays a bar chart representing the status of the target over a specified time period.
+* **4XX ELB Status by Location.** Charts the number and geographic location of 4XX ELB errors.
 * **5XX ELB Status by Location.** Charts the number and geographic location of 5XX ELB errors.
 * **5XX Target Status by Location.** Charts the number and geographic locations of errors for 5XX targets.
-* **4XX Target Status by Location. **Charts the number and geographic locations of errors for 4XX targets.
+* **4XX Target Status by Location.** Charts the number and geographic locations of errors for 4XX targets.
 * **Target Status by Target Group.** Shows a bar chart comparing errors by target group: 4XX and 5XX.
 * **ELB Status by ELB Server.** Shows a bar chart comparing errors on each server by target: 4XX and 5XX.
 * **Target Status by Domain.** Shows the number of errors that occurred in a domain by target: 4XX and 5XX.
@@ -121,7 +121,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 * **Failed Dispatch Outlier.** Shows the number of failed dispatches, the threshold for “normal” failures and identifies any outliers outside that threshold.  
 * **Failed Dispatches by Backend.** Identifies the failed dispatches by backend time sliced by 30 minutes over a 24 hour period.
 * **Failed Dispatches by Target Group.** Identifies the failed dispatches by target group time sliced by 30 minutes over a 24 hour period.
-* **Failed Dispatches by Client. ** Aggregation table of clients and the number of their failures for the last 24 hours.
+* **Failed Dispatches by Client.**  Aggregation table of clients and the number of their failures for the last 24 hours.
 * **Failed Dispatches Count.** Total number of failed dispatches.
 * **Failed Dispatches by URI.** Aggregation table of the top ten URIs with dispatches failed.
 * **Failed Dispatches by Host.** Identifies the failed dispatches by host domain time sliced by 30 minutes over a 24 hour period.

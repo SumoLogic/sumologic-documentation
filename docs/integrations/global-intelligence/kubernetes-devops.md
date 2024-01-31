@@ -24,7 +24,7 @@ This feature is available in the following account plans.
 
 Global Intelligence for Kubernetes DevOps App uses metrics data from Kubernetes clusters. 
 
-## Sample Query 
+## Sample queries 
 
 The following sample query is from the **Deployment Count** panel of **GI Kubernetes DevOps - 01. Adoption Stats** dashboard.
 

@@ -98,9 +98,9 @@ You can use the RPM or Debian package to install a Collector on a Linux
    sudo dpkg -i SumoCollector-19.XXX-XX.x86_64.deb
    #Replace XXX-XX with the version number of the package you downloaded.
    ```
-:::note
-Replace _XXX-XX_ in the command above with the version number of the package you downloaded.
-:::
+   :::note
+   Replace _XXX-XX_ in the command above with the version number of the package you downloaded.
+   :::
    The RPM and Debian packages install the collector in the `/opt/SumoCollector` directory. By default, the Collector is installed as a system service, but not yet started.
 1. Configure the Collector `user.properties` file in the `/opt/SumoCollector/config/` directory. The Collector uses the settings defined in `user.properties` to register and start. See [user.properties](collector-installation-reference/user-properties.md) for a full list of all the supported parameters.
 

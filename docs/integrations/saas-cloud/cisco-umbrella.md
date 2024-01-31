@@ -11,18 +11,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Cisco Umbrella provides analytics and visibility into DNS, Proxy, and Admin activity. It gives insights into Geolocation of traffic sources, blocked clients, top categories, and more. It also analyzes traffic passing through Umbrella SWG and selective proxy, and provides information on client requests, malware, AV detections, and traffic summary. The Admin Activity dashboard provides snapshots of changes made in Umbrella's settings.
 
-## Log Types
+## Log types
 
 Sumo Logic app for Cisco Umbrella uses the following log types:
 * [DNS Logs](https://docs.umbrella.com/deployment-umbrella/docs/log-formats-and-versioning#dns)
 * [Proxy Logs](https://docs.umbrella.com/deployment-umbrella/docs/log-formats-and-versioning#proxy)
 * [Admin Audit Logs](https://docs.umbrella.com/deployment-umbrella/docs/log-formats-and-versioning#audit)
 
-### Sample Log Messages
+### Sample log messages
 
 To know about the Sample Logs and Schema for Cisco Umbrella logs, [click here](https://docs.umbrella.com/deployment-umbrella/docs/log-formats-and-versioning#format).
 
-### Sample Query
+### Sample queries
 
 ```sql title="DNS Logs"
 _sourceCategory=Labs/cisco_umbrella
@@ -64,21 +64,17 @@ By having all your logs uploaded to an S3 bucket, you can then download logs aut
 
 For more information, see [Cisco Umbrella Documentation](https://docs.umbrella.com/managed-services/docs/msc-manage-logs).
 
-## Installing Cisco Umbrella App
+## Installing the Cisco Umbrella app
 
-This section has instructions for installing the Cisco Umbrella App for Sumo Logic.
-
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-## Viewing the Cisco Umbrella Dashboards
+## Viewing Cisco Umbrella dashboards
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<ViewDashboards/>
 
 ### Admin Activities
 

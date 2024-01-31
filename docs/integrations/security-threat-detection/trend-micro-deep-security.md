@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Trend Micro Deep Security App works with system and security events to monitor event history such as anti-malware, IPS, web reputation, firewall, integrity and log inspection events. The App analyzes security events from both on-premises and cloud-based Trend Micro Deep Security products.
 
 
-## Log Types
+## Log types
 
 There are two types of Deep Security events:
 
@@ -46,9 +46,9 @@ To forward Deep Security system events to Sumo Logic, do the following:
 
 1. In Deep Security, go to **Administration > System Settings > SIEM**.
 2. Configure **SIEM**:
-    1. **Forward System Events to a remote computer (via Syslog). **Activate this check box.
+    1. **Forward System Events to a remote computer (via Syslog).** Activate this check box.
     2. **Hostname or IP address to which events should be sent.** This is the hostname or IP address of the Sumo Logic Installed Collector.
-    3. **UDP port to which events should be sent. ** Enter 514.
+    3. **UDP port to which events should be sent.** Enter 514.
     4. **Syslog Facility.** Select Local 0.
     5. **Syslog Format.** Select Common Event Format.
 3. Save your changes.
@@ -60,19 +60,19 @@ Now you must add the Syslog Source to your Policy configuration. Set the integra
 
 1. Go to **Settings > SIEM**.
 2. For **Anti-Malware Event Forwarding**, select **Forward Events To:** and **Relay via the Manager**.
-    1. **Hostname or IP address to which events should be sent. **This is the hostname or IP address of the Sumo Logic Installed Collector.
-    1. **UPD port to which events should be sent. ** Enter **514**.
-    1. **Syslog Facility. **Select **Local 1**.
+    1. **Hostname or IP address to which events should be sent.** This is the hostname or IP address of the Sumo Logic Installed Collector.
+    1. **UPD port to which events should be sent.**  Enter **514**.
+    1. **Syslog Facility.** Select **Local 1**.
     1. **Syslog Format.** Select **Common Event Format**.
 3. For **Web Reputation Event Forwarding**, select **Forward Events To:** and **Relay via the Manager**.
-    1. **Hostname or IP address to which events should be sent. **This is the hostname or IP address of the Sumo Logic Installed Collector.
+    1. **Hostname or IP address to which events should be sent.** This is the hostname or IP address of the Sumo Logic Installed Collector.
     1. **UPD port to which events should be sent.**  Enter **514**.
     1. **Syslog Facility.** Select **Local 1**.
     1. **Syslog Format.** Select **Common Event Format**.
 4. Click **Save**.
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 <142>Oct  2 16:41:16 CEF:0|Trend Micro|Deep Security Agent|9.6.3177|21|Unsolicited UDP|5|cn1=34 cn1Label=Host ID dvchost=workstation_tsiley TrendMicroDsTenant=Primary TrendMicroDsTenantId=0 act=Deny dmac=B0:B9:B9:F8:E7:8F smac=39:D2:AE:D6:1F:05 TrendMicroDsFrameType=IP src=130.202.140.130 dst=10.0.102.94 in=291 cs3= cs3Label=Fragmentation Bits proto=UDP spt=445 dpt=42 cnt=1
@@ -115,7 +115,7 @@ For Log Source Identifier field, use this format: `Deep Security Manager [token 
 1. In the Deep Security Manager console, select **Policies > Common Objects.**
 2. Expand the **Other** node in the left pane.
 3. Select **Syslog Configurations**.
-4. Select the **New **button to create a new configuration.
+4. Select the **New** button to create a new configuration.
     1. **Log Source Identifier**. Enter a three word label, for example “Deep Security Manager” or “My Log Source”, followed by value that was shown in the **Token** field on the **Cloud Syslog Source Token** page (when you configured the Cloud Syslog Source above), surrounded by square brackets like this: `Deep Security Manager [token from Cloud Syslog source]`. It's important that you use this format. `Deep Security Manager` followed by the `token` (for the Cloud Syslog Source) in square brackets like this:
      ```
      Deep Security Manager [token from Cloud Syslog source]
@@ -194,11 +194,11 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 **Top 5 Reasons for Prevented Packets.** Lists the top 5 reasons why packets were prevented in a table chart by device host name and count for the last 24 hours.
 
-**Top 5 Computers for Prevented Firewall Events. **Displays the top 5 computers that had prevented firewall events in a table chart by device host name and count for the last 24 hours.
+**Top 5 Computers for Prevented Firewall Events.** Displays the top 5 computers that had prevented firewall events in a table chart by device host name and count for the last 24 hours.
 
-**Top 5 Source IDs for Prevented Firewall Events. **Shows the top 5 computers that had prevented firewall events in a table chart by source IP address and count for the last 24 hours.
+**Top 5 Source IDs for Prevented Firewall Events.** Shows the top 5 computers that had prevented firewall events in a table chart by source IP address and count for the last 24 hours.
 
-**Top 5 Destination Ports for Prevented Firewall Events. **Provides details on the top 5 destination ports that had prevented firewall events in a table chart by destination port and count for the last 24 hours.
+**Top 5 Destination Ports for Prevented Firewall Events.** Provides details on the top 5 destination ports that had prevented firewall events in a table chart by destination port and count for the last 24 hours.
 
 **Top 5 Scans Detected.** Displays the top 5 scans detected in a table chart by name and count for the last 24 hours.
 
@@ -209,7 +209,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TMDS_IntegrityMonitoring_Dashboard.png')} alt="Trendmicro Dashboard" />
 
-**Integrity Monitoring Event History. **Displays the number and type of integrity monitoring events in a column chart on a timeline for the last 24 hours.
+**Integrity Monitoring Event History.** Displays the number and type of integrity monitoring events in a column chart on a timeline for the last 24 hours.
 
 **Top 5 Computers for Integrity Monitoring Events.** Shows the top 5 computers that had integrity monitoring events in a table chart by device host name and count for the last 24 hours.
 
@@ -222,9 +222,9 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TMDS_IntrusionPrevention_Dashboard.png')} alt="Trendmicro Dashboard" />
 
-**IPS Event History. **Displays the number and type of intrusion prevention events in a column chart on a timeline for the last 24 hours.
+**IPS Event History.** Displays the number and type of intrusion prevention events in a column chart on a timeline for the last 24 hours.
 
-**Top 5 Source IPs for Detected IPS Events. **Lists the top 5 Source IPs for detected intrusion prevention events in a table chart by source IP and count for the last 24 hours.  
+**Top 5 Source IPs for Detected IPS Events.** Lists the top 5 Source IPs for detected intrusion prevention events in a table chart by source IP and count for the last 24 hours.  
 
 **Top Hosts for Prevented IPS Events.** Shows the top 5 hosts for prevented intrusion events in a table chart by device host name and count for the last 24 hours.
 
@@ -237,7 +237,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 **Log Inspection Events History.** Displays the number and type of log inspection events in a column chart on a timeline for the last 24 hours.
 
-**Top 5 Computers for Log Inspection Events. **Lists the top 5 computers for log inspection events in a table chart by device host name and count for the last 24 hours.
+**Top 5 Computers for Log Inspection Events.** Lists the top 5 computers for log inspection events in a table chart by device host name and count for the last 24 hours.
 
 **Top 5 Reasons for Log Inspection Events.** Shows the top 5 reasons for log inspection events in a table chart by device host name and count for the last 24 hours.
 

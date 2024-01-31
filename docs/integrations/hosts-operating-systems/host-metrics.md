@@ -27,7 +27,7 @@ Configure an [Installed Collector](/docs/send-data/installed-collectors). Collec
 2. Configure the Source Fields as follows:
     1. **Name.** Required. Description is optional. The source name is stored in a searchable field called `_sourceName`.
     2. **Source Host**. Enter the host name of the machine from which the metrics will be collected.
-    3. **Source Category.** Required. The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).
+    3. **Source Category.** Required. The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).
     4. **Scan Interval**. Select the frequency for the Source to scan for hostmetrics data. Selecting a short interval will increase the message volume and could cause your deployment to incur additional charges. The default is 1 minute.
     5. **Metrics**. Select check boxes for the metrics to collect. By default, all CPU and memory metrics are collected. Select the top level check box to select all metrics in that category. A blue checkmark icon indicates that the category is selected. To select individual metrics, click the right-facing arrow to expand the category and select the individual metrics. The icon changes to <img src={useBaseUrl('img/integrations/hosts-operating-systems/icon_blue_minus.png')} alt="icon_blue_minus" />, as shown below.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/host_metrics_config_window.png')} alt="host_metrics_config_window" />
 3. Click **Save**.
@@ -273,15 +273,15 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/host_metrics_app_memory.png')} alt="Host Metrics dashboards" />
 
-**Total Memory per Host. **Displays total memory per host in a line chart on a timeline for the last hour.
+**Total Memory per Host.** Displays total memory per host in a line chart on a timeline for the last hour.
 
 **Percent Memory Used per Host.** Shows percent memory used per host in a line chart on a timeline for the last hour.
 
 **Total Free, Buffers, and Cached Memory per Host.** Provides details on the total free, buffers, and cached memory per host (from a metric called ActualFree) in a line chart on a timeline for the last hour.
 
-**Total Used, Less Buffers, and Cached Memory per Host. **Displays the total used, buffers, and cached memory (from a metric called ActualUsed) in a line chart on a timeline for the last hour.
+**Total Used, Less Buffers, and Cached Memory per Host.** Displays the total used, buffers, and cached memory (from a metric called ActualUsed) in a line chart on a timeline for the last hour.
 
-**Total Free Memory per Host. **Shows the amount of total free memory per host available in a line chart on a timeline for the last hour.
+**Total Free Memory per Host.** Shows the amount of total free memory per host available in a line chart on a timeline for the last hour.
 
 **Total Used System Memory per Host.** Provides details on the total system memory per host used in a line chart on a timeline for the last hour.
 
@@ -303,9 +303,9 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/host_metrics_app_tcp.png')} alt="Host Metrics dashboards" />
 
-**Inbound Connections per Host. **Displays inbound connections per host in a line chart on a timeline for the last hour.
+**Inbound Connections per Host.** Displays inbound connections per host in a line chart on a timeline for the last hour.
 
-**Outbound Connections per Host. **Shows outbound connections per host in a line chart on a timeline for the last hour.
+**Outbound Connections per Host.** Shows outbound connections per host in a line chart on a timeline for the last hour.
 
 **Listen Connections per Host.** Provides details on listen connections per host in a line chart on a timeline for the last hour.
 

@@ -61,7 +61,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ### Login Activity
 
-**Dashboard description: **This dashboard meets PCI Requirements 02 and 10 by tracking login activity. It provides information about failed and successful user logins, and failed and successful super-user logins.
+**Dashboard description:** This dashboard meets PCI Requirements 02 and 10 by tracking login activity. It provides information about failed and successful user logins, and failed and successful super-user logins.
 
 **Use case:** Use this dashboard to monitor access to the cardholder data environment. You can monitor failed and successful user logins.
 
@@ -70,7 +70,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ### Privileged Activity
 
-**Dashboard description: **This dashboard meets PCI Requirement 10. It provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
+**Dashboard description:** This dashboard meets PCI Requirement 10. It provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case.** Use this dashboard to monitor successful and failed access attempts to systems, especially with administrative privileges. It also helps you to monitor actions performed by users with administrative privileges.
 

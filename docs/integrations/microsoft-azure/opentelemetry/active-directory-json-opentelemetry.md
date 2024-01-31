@@ -27,7 +27,7 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 
 This section provides instructions for configuring log collection for Active Directory running on a non-Kubernetes environment for the Sumo Logic App for Active Directory.
 
-#### Log Types
+#### Log types
 
 Standard Windows event channels include:
 -   **Security**
@@ -35,6 +35,10 @@ Standard Windows event channels include:
 -   **Application**
 
 ## Collection configuration and app installation
+
+:::note
+You can skip this section if you have already set up the logs collection through [Windows PCI](/docs/integrations/pci-compliance/opentelemetry/windows-json-opentelemetry), [Windows - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry), or [Windows](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
+:::
 
 import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
 
@@ -150,7 +154,7 @@ level:"Information"
 }
 ```
 
-## Sample Query
+## Sample queries
 
 This sample Query is from the Active Directory - Active Directory Service Activity > Top 10 Messages panel.
 

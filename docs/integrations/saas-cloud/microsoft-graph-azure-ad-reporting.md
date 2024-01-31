@@ -16,11 +16,11 @@ Key features of the Microsoft Graph Azure AD Reporting app include:
 - **Identify Suspicious Activities**. Identify suspicious activity, such as sign-ins from unfamiliar/risky locations or multiple sign-in attempts.
 - **Analyze Provisioning Activities**. Provides distribution of provisioning activities by status, actions, and initiators. It also shows the most frequent service principals used while provisioning.
 
-## Log Types
+## Log types
 
 The App uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https://learn.microsoft.com/en-us/graph/api/resources/directoryaudit?view=graph-rest-1.0), [Sign-in](https://learn.microsoft.com/en-us/graph/api/resources/signin?view=graph-rest-1.0), and [Provisioning](https://learn.microsoft.com/en-us/graph/api/resources/provisioningobjectsummary?view=graph-rest-1.0) activities.
 
-## Sample Log Message
+## Sample log messages
 
 <details>
 <summary>View Sample Log Message</summary>
@@ -244,7 +244,7 @@ The App uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https:
 ```
 </details>
 
-## Sample Query
+## Sample queries
 
 <details>
 <summary>View Sample Queries</summary>

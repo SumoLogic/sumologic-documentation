@@ -21,8 +21,7 @@ This tutorial is only relevant for V1 Ingest Budgets. V2 Ingest Budgets assign b
 
 API requests require authentication with an access id and key. In the following steps, the requests have the argument \<accessid:accesskey\> where you need to specify these. See [API authentication](/docs/api/getting-started#authentication) for details.
 
-In addition, you need to specify the correct endpoint to send your API requests. The following steps have the
-argument `<your deployment>` where you need to specify either us1, us2, eu, de, jp, or au. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+In addition, you need to specify the correct endpoint to send your API requests. The following steps have the argument `<your deployment>` where you need to specify either us1, us2, eu, de, jp, or au. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 ## Ingest Budgets API Documentation
 
@@ -94,18 +93,20 @@ curl -u '<accessid:accesskey>' --header 'Content-Type: application/json' --reque
 which returns
 
 ```json
-{"name":"Demo Budget 1",
-"fieldValue":"dev_30_gb",
-"capacityBytes":1000,"timezone":"America/Los_Angeles",
-"resetTime":"23:30",
-"description": "A simple small demo budget",
-"action":"stopCollecting",
-"createdAt":"2018-12-19T22:29:15.938Z",
-"createdBy":"0000000000B20202",
-"modifiedAt":"2018-12-19T22:29:15.938Z",
-"modifiedBy":"0000000000B20202",
-"id":"0000000000000064",
-"usageBytes":0,"usageStatus":"Normal"}
+{
+  "name":"Demo Budget 1",
+  "fieldValue":"dev_30_gb",
+  "capacityBytes":1000,"timezone":"America/Los_Angeles",
+  "resetTime":"23:30",
+  "description": "A simple small demo budget",
+  "action":"stopCollecting",
+  "createdAt":"2018-12-19T22:29:15.938Z",
+  "createdBy":"0000000000B20202",
+  "modifiedAt":"2018-12-19T22:29:15.938Z",
+  "modifiedBy":"0000000000B20202",
+  "id":"0000000000000064",
+  "usageBytes":0,"usageStatus":"Normal"
+}
 ```
 
 :::note
@@ -114,8 +115,7 @@ You will use the `id` value in the next request. This example's value is `00000
 
 ## Step 2: Confirm the Budget was Created
 
-Use a GET request to confirm its creation. See the [API documentation for Ingest Budgets](#ingest-budgets-api-documentation)
-for further details.
+Use a GET request to confirm its creation. See the [API documentation for Ingest Budgets](#ingest-budgets-api-documentation) for further details.
 
 :::note
 Customize `<accessid:accesskey>` and `<your deployment>`. Replace the value `0000000000000064` with the `id` value of your ingest budget.
@@ -152,8 +152,7 @@ The following steps can be referenced in [Assign Collector to Ingest Budget](ass
 
 ### Use Collection page
 
-On the **Manage Data** > **Collection** > **[Collection](/docs/send-data/collection)** page when editing an
-existing Collector or creating a new Hosted Collector there is a new option, **Assign to a Budget**, that allows you to assign an ingest budget to a Collector.
+On the **Manage Data** > **Collection** > **[Collection](/docs/send-data/collection)** page when editing an existing Collector or creating a new Hosted Collector there is a new option, **Assign to a Budget**, that allows you to assign an ingest budget to a Collector.
 
 ![assign to a budget dropdown option.png](/img/ingestion-volume/assign-budget-dropdown-option.png)
 
@@ -271,8 +270,8 @@ Use a PUT request with the [Collector Management API](/docs/api/collector-manag
 Customize `<accessid:accesskey>`, `a2c82c407ea4ae70ac4f6425b50942a1`, `updated_collector.json`, `<your deployment>`, and id like `150905330`.
 :::
 
-```bash
-curl -u \<accessid:accesske\>'  -X PUT -H "Content-Type: application/json" -H "If-Match: \"a2c82c407ea4ae70ac4f6425b50942a1\"" -T updated_collector.json https://api\<your deploymen\>.sumologic.com/api/v1/collectors/150905330`
+```
+curl -u '<accessid:accesskey>'  -X PUT -H "Content-Type: application/json" -H "If-Match: \"a2c82c407ea4ae70ac4f6425b50942a1\"" -T updated_collector.json https://api.<your deployment>.sumologic.com/api/v1/collectors/150905330
 ```
 
 ## Step 6: Verify Collector is assigned to Budget
