@@ -113,6 +113,7 @@ To administer Sumo Logic accounts, users, and security, do the following:
     * **Account**. [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
     * **Users and Roles**. [Manage users and roles](/docs/manage/users-roles).
     * **Account Security Settings**. [Set password policy for your org](/docs/manage/security/set-password-policy), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses), [manage access keys](/docs/manage/security/access-keys), manage security policies ([audit index](/docs/manage/security/audit-indexes/audit-index)), [support account access](/docs/manage/security/enable-support-account), [dashboard sharing](/docs/dashboards/share-dashboard-new/), and [set up SAML authentication](/docs/manage/security/saml).<br/><img src={useBaseUrl('img/get-started/admin.png')} alt="img/get-started/admin-expanded.png" width="400"/>
+    * **Cloud SOAR Settings**. Manage [general settings](/docs/cloud-soar/global-functions-menu/#general-settings), [Notifications](/docs/cloud-soar/global-functions-menu/#notifications), and [Groups](/docs/cloud-soar/global-functions-menu/#groups).
 
 ### Search Library
 
