@@ -286,6 +286,17 @@ When you nest a child playbook within a parent playbook, you must pass parameter
 
 You will now be able to perform tests against your parent playbook, and your child playbook will receive the parameters from the parent.
 
+### Import/Export playbooks
+With the new playbook import/export mechanism, it will be possible to move a playbook, along with all its configurations, from one instance to another. The file should be in tar.gz format and adhere to naming conventions.
+
+To do this:
+
+1. Click on the export icon located next to the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/export-playbook.png')} alt="Export Playbook" width="500"/>
+1. Upon clicking, the tar.gz archive download will be initiated.
+1. At this point, you can open the archive, modify the configuration data, recreate a tar.gz archive, and upload it. Alternatively, you can directly upload the downloaded file. To do this, click on the import icon, select the desired file, and click import.<br/><img src={useBaseUrl('img/cloud-soar/import-playbook.png')} alt="Import Playbook" width="500"/><br/><img src={useBaseUrl('img/cloud-soar/import-playbook-modal.png')} alt="Import Playbook modal" width="500"/>
+
+It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
+
 ## Incident Templates
 
 Incident Templates define the way in which incidents will be created for a specific alert, incident type or event. They allow you to define a certain number of incident attributes (e.g., incident type, severity, assignment, and any other default or custom incident parameters) that will automatically be set each time an incident is generated, based on the template. This may include type, classification, incident assignment, playbooks, Playbooks, knowledge base articles, or any other incident attribute. As rules are created for generating incidents based on syslog messages, email, SIEM integrations or other data sources, it is the Incident Templates that will define how the initial incident will be created.
