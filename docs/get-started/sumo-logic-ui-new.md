@@ -1,5 +1,5 @@
 ---
-id: sumo-logic-ui
+id: sumo-logic-ui-new
 title: Tour the Sumo Logic UI
 description: Get to know the Sumo Logic user interface.
 ---

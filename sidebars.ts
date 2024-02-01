@@ -29,7 +29,7 @@ module.exports = {
         'get-started/account-settings-preferences',
         'get-started/apps-integrations',
         'get-started/library',
-        'get-started/sumo-logic-ui',
+        'get-started/sumo-logic-ui-new',
         'get-started/system-requirements',
         'get-started/keyboard-shortcuts',
         'get-started/training-certification-faq',
