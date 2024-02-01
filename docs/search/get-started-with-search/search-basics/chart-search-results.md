@@ -25,17 +25,13 @@ For this example, you can see a bar chart, but you can pick from any of the avai
 
 ### New Visualizations
 
-Clicking the **New Visualizations** button will enable the new visualizations for your log search chart, also helping you to customize each chart by modifying the available settings and providing a unified experience across the Sumo Logic platforms.
-
-Charts will appear in classic visualization style by default. However, if you choose a new visualization, your selection will be remembered, and any further searches in the same or new tab will always render with the new visualization.
-
-<img src={useBaseUrl('img/search/get-started-search/search-page/new-visualizations.png')} alt="new-visualizations" style={{border:'1px solid black'}} width="800" />
+New Visualizations will enable the new chart visualizations for your log search, also helping you to customize each chart by modifying the available settings and providing a unified experience across the Sumo Logic platforms.
 
 **Data** represents the data that has been used to plot chart, **Round data point** toggle button is used to turn ON/OFF the round off to the value in tooltip, and the **Visual Settings** options allow you to customize your chart. The other customizing properties include **[Display Overrides](/docs/dashboards/panels/modify-chart/#overridedashboard-displays)**, **[Axes](/docs/dashboards/panels/modify-chart/#modifychart-axes)**, **[Legend](/docs/dashboards/panels/modify-chart/#modifychart-legend)**, **Thresholds**, and **[JSON](/docs/dashboards/panels/modify-chart/#modifychart-legend)**.
 
 <img src={useBaseUrl('img/search/get-started-search/search-basics/log-query-charts-properties.png')} alt="log-query-charts-properties" style={{border:'1px solid black'}} width="800" />
 
-If you prefer to use the classic visualizations UI, you can do so by clicking the **Classic Visualizations** button. You'll be asked to confirm your choice, Click **Switch to Classic Visualizations** to proceed.
+Charts will appear in new visualization style by default. If you prefer to use the classic visualizations UI, you can do so by clicking the **Classic Visualizations** button. You'll be asked to confirm your choice, Click **Switch to Classic Visualizations** to proceed.  However, if you choose a classic visualization, your selection will be remembered, and any further searches in the same or new tab will always render with the classic visualization.
 
 <img src={useBaseUrl('img/search/get-started-search/search-basics/switch-to-classic-visualizations.png')} alt="switch-to-classic-visualizations" style={{border:'1px solid black'}} width="400" />
 
