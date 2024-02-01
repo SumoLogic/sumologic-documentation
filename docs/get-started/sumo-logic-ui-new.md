@@ -4,7 +4,10 @@ title: Tour the Sumo Logic UI
 description: Get to know the Sumo Logic platform user interface.
 ---
 
-<!-- When GA'd (est. July 2024), remove no-index, beta badge, rename this 'sumo-logic-ui', retire the Classic UI version -->
+<!-- 
+When Open Beta'd (est. May 2024), remove no-index, place in sidebars.ts.
+When GA'd (est. July 2024), remove beta badge, rename this 'sumo-logic-ui', retire the Classic UI version.
+-->
 
 <head>
   <meta name="robots" content="noindex" />
