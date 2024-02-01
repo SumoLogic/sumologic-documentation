@@ -32,7 +32,11 @@ The **New Visualization** feature enables the new chart visualizations for your 
 
 <img src={useBaseUrl('img/search/get-started-search/search-basics/log-query-charts-properties.png')} alt="log-query-charts-properties" style={{border:'1px solid black'}} width="800" />
 
-Charts will appear in new visualization style by default. If you prefer to use the classic visualizations UI, you can do so by clicking the **Classic Visualizations** button. You'll be asked to confirm your choice, Click **Switch to Classic Visualizations** to proceed.  However, if you choose a classic visualization, your selection will be remembered, and any further searches in the same or new tab will always render with the classic visualization.
+Charts will appear in **New Visualization** style by default. If you prefer to use the **Classic Visualization** UI, click the **Classic Visualizations** button, then in the popup window, click **Switch to Classic Visualizations** to proceed.  
+
+:::tip
+If you choose **Classic Visualization**, your selection will be remembered, and any further searches in the same or new tab will always render with the classic visualization.
+:::
 
 <img src={useBaseUrl('img/search/get-started-search/search-basics/switch-to-classic-visualizations.png')} alt="switch-to-classic-visualizations" style={{border:'1px solid black'}} width="400" />
 
