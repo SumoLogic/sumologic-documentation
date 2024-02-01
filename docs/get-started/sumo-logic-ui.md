@@ -1,7 +1,6 @@
 ---
 id: sumo-logic-ui
 title: Tour the Sumo Logic UI
-description: Get to know the Sumo Logic platform user interface.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -31,7 +30,7 @@ users and easily switch browsing modes. 
 * Searching—Enter text in the **Search** field to quickly find apps, dashboards, searches, and users. 
 * Switching browsing modes—Click the **Details** icon and make a selection from the dropdown menu.
 
-![Search Details](/img/get-started/ui/TUI-Search-Details.png)
+![TUI_Search_Details.png](/img/get-started/ui/TUI_Search_Details.png)
 
 ### Hide and show the left nav bar
 
