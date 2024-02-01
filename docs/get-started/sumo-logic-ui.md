@@ -1,6 +1,7 @@
 ---
 id: sumo-logic-ui
 title: Tour the Sumo Logic UI
+description: Get to know the Sumo Logic platform user interface.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
