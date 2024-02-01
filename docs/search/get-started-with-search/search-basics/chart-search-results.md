@@ -28,7 +28,7 @@ For this example, you can see a bar chart, but you can pick from any of the avai
 The **New Visualization** feature enables the new chart visualizations for your log search, allowing you customize each chart by modifying the available settings and providing a unified experience across the Sumo Logic platforms.
 
 * **Data**. This section represents the data that has been used to plot the chart. Toggle the **Round data point** ON/OFF the round off to the value in tooltip,.
-* **Visual Settings**. These options allow you to further customize your chart: **Color Palette**, **Fill Opacity**, **Marker Type**, and **Dimensions** (x, y, and z).
+* **Visual Settings**. These options allow you to further customize your chart: [**Color Palette**](/docs/dashboards/panels/modify-chart/#modifydisplay-settings), [**Fill Opacity**](/docs/dashboards/panels/modify-chart/#modifydisplay-settings), [**Marker Type**](/docs/dashboards/panels/modify-chart/#modifydisplay-settings), and [**Dimensions**](/docs/dashboards/panels/modify-chart/#modifychart-axes) (x, y, and z).
 
 <img src={useBaseUrl('img/search/get-started-search/search-basics/log-query-charts-properties.png')} alt="log-query-charts-properties" style={{border:'1px solid black'}} width="800" />
 
