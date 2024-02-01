@@ -4,6 +4,10 @@ title: Tour the Sumo Logic UI
 description: Get to know the Sumo Logic platform user interface.
 ---
 
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Our [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues. 
