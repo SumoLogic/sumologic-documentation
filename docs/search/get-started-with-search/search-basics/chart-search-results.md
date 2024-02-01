@@ -30,7 +30,7 @@ The **New Visualization** feature enables the new chart visualizations for your 
 * **Data**. This section represents the data that has been used to plot the chart. Toggle the **Round data point** ON/OFF the round off to the value in tooltip,.
 * **Visual Settings**. These options allow you to further customize your chart: **Color Palette**, **Fill Opacity**, **Marker Type**, and **Dimensions** (x, y, and z).
 
-<! -- insert New Visualizations screenshot -->
+<img src={useBaseUrl('img/search/get-started-search/search-basics/log-query-charts-properties.png')} alt="log-query-charts-properties" style={{border:'1px solid black'}} width="800" />
 
 Charts will appear in new visualization style by default. If you prefer to use the classic visualizations UI, you can do so by clicking the **Classic Visualizations** button. You'll be asked to confirm your choice, Click **Switch to Classic Visualizations** to proceed.  However, if you choose a classic visualization, your selection will be remembered, and any further searches in the same or new tab will always render with the classic visualization.
 
