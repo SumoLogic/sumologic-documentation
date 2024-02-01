@@ -5,7 +5,7 @@ sidebar_label: CrowdStrike FileVantage
 tags:
   - cloud-to-cloud
   - crowdstrike-filevantage
-description: Learn how to collect file integrity monitoring logs from the CrowdStrike Spotlight platform.
+description: Learn how to collect file integrity monitoring logs from the CrowdStrike FileVantage platform.
 ---
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/crowdstrike-filevantage/example.json';
@@ -41,11 +41,11 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 To collect file integrity monitoring data from the CrowdStrike platform, you must have an authorized CrowdStrike account. CrowdStrike APIs use an OAuth 2.0 authorization token to make authorized API calls. The CrowdStrike API client is required to get the OAuth 2.0 authorization token. To define a CrowdStrike API client, you must be designated as a `CrowdStrike Falcon Administrator` role.
 
-In this configuration, you will set up the CrowdStrike Spotlight and configure it to be authorized and authenticated to collect logs from the FileVantage API. To obtain the auth token, you will need the following parameters.
+In this configuration, you will set up the CrowdStrike FileVantage and configure it to be authorized and authenticated to collect logs from the FileVantage API. To obtain the auth token, you will need the following parameters.
 
 #### API Client and API Secret
 
-The **API security token** is used to authenticate with CrowdStrike Spotlight API. After successfully creating the API client, you will get the **Client Id**, **Client Secret**, and **Base URL**.
+The **API security token** is used to authenticate with CrowdStrike FileVantage API. After successfully creating the API client, you will get the **Client Id**, **Client Secret**, and **Base URL**.
 
 To get the **CrowdStrike API Client**, follow the steps below:
 1. Access the [CrowdStrike Platform](https://falcon.crowdstrike.com/login/).
@@ -54,11 +54,11 @@ To get the **CrowdStrike API Client**, follow the steps below:
 1. In the **Resources and tools** section, select the **API clients and keys** option. You can then view existing clients or add new API clients from there.
 1. Click **Add new API client**. You will be prompted to give a descriptive name and select the appropriate API scopes.
 1. Provide a proper name and description and select the **Falcon FileVantage:read** scope. Click on `ADD` to complete the process.
-1. After you click on `ADD` a dialogue box will appear with the **Client ID**, **Client Secret** and **Base URL**. Copy and save the Client Id, Client Secret and Base URL to a folder location because you will need them when creating the [CrowdStrike FileVantage source](#set-up-crowdstrike-filevantage-source).
+1. After you click on `ADD` a dialogue box will appear with the **Client ID**, **Client Secret** and **Base URL**. Copy and save the Client Id, Client Secret and Base URL to a folder location because you will need them when creating the [CrowdStrike FileVantage source](#source-configuration).
 
 #### Region
 
-1. Identify your **Region** based on your **Base URL**. The region can be selected from the list below.
+Identify your **Region** based on your **Base URL**. The region can be selected from the list below.
 
    | Region | Base URL                    |
    | :------ | :-------------------------- |
@@ -69,9 +69,9 @@ To get the **CrowdStrike API Client**, follow the steps below:
 
 ### Source configuration
 
-When you create a CrowdStrike Spotlight Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a CrowdStrike FileVantage Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure the CrowdStrike Spotlight Source:
+To configure the CrowdStrike FileVantage Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CrowdStrike FileVantage** icon.
