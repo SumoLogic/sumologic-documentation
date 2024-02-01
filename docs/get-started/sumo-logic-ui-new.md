@@ -5,7 +5,7 @@ description: Get to know the Sumo Logic platform user interface.
 ---
 
 <!-- 
-When Open Beta'd (est. May 2024), remove no-index, place in sidebars.ts.
+When Open Beta'd (est. May 2024), remove no-index, place doc in sidebars.ts and call this "New" and rename the old one "Classic", add announcement banner.
 When GA'd (est. July 2024), remove beta badge, rename this 'sumo-logic-ui', retire the Classic UI version.
 -->
 
