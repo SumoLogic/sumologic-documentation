@@ -3247,6 +3247,7 @@
   "/docs/releasenotes/developer": "/release-notes-developer",
   "/docs/releasenotes/service": "/release-notes-service",
   "/release-notes-service/welcome": "/release-notes-service",
+  "/release-notes-service/2023/11/27/cis-for-aws": "/release-notes-service/2023/12/31/#november-27-2023-apps",
   "/Send-Data/Applications-and-Other-Data-Sources/Azure-Audit/02Collect-Logs-for-Azure-Audit-from-Event-Hub": "/docs/integrations/microsoft-azure/audit",
   "/Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor": "/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor",
   "/Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Metrics_from_Azure_Monitor": "/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor",

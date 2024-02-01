@@ -4,7 +4,7 @@ description: ''
 tags: []
 ---
 
-![](/img/platform-services/automation-service/app-central/logos/google-safe-browsing.png)
+![](/img/platform-services/automation-service/app-central/logos/google.png)
 
 Version: 1.4  
 Updated: Jul 25, 2023
