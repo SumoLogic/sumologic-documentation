@@ -23,7 +23,7 @@ Follow the below instructions to chart aggregate the results:
 
 For this example, you can see a bar chart, but you can pick from any of the available charting options, see [Chart Panel Types](/docs/dashboards/panels) for details.
 
-### New Visualizations
+### New Visualization
 
 The **New Visualization** feature enables the new chart visualizations for your log search, allowing you customize each chart by modifying the available settings and providing a unified experience across the Sumo Logic platforms.
 
