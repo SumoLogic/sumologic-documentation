@@ -17,7 +17,7 @@ Observable Networks is a provider of network security technology and advanced th
 
 For more information, visit [Observable Networks (via Cisco)](https://www.cisco.com/c/en/us/services/acquisitions/observable-networks.html).
 
-:::caution
+:::warning
 Before you begin, your Observable Networks portal must be properly configured. Contact [support@obsrvbl.com](/docs/integrations/security-threat-detection/observable-networks) if you have any questions.
 :::
 
@@ -161,11 +161,15 @@ _sourceCategory=observable
 
 ## Install the Observable Networks app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Observable Networks dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -175,11 +179,11 @@ The Observable Networks Overview Dashboard is intended to provide a high level a
 
 **Roles.** Provides a breakdown of the types of endpoints currently on the network in a pie chart for the last hour. Endpoint types could be WebServer, iOS, Printer, etc. Roles are published every hour, so this Panels displays the latest role distribution on your network.
 
-**Recent Alert Updates. **Shows a list of recently updated alerts in a table with a URL link to their alert detail page on the Observable Networks portal for the last six hours. Click the links for more details about an alert. If this Panel is empty, that means there have been no alerts for the last six hours.
+**Recent Alert Updates.** Shows a list of recently updated alerts in a table with a URL link to their alert detail page on the Observable Networks portal for the last six hours. Click the links for more details about an alert. If this Panel is empty, that means there have been no alerts for the last six hours.
 
 **Observation Origins.** Displays observations that relate to activity with external endpoints (e.g., "New External Server") on a map of the world for the last six hours.
 
-**Recent Observations. **Lists the latest observations on the system and their counts in a table for the last six hours. Observations are notable events about your network, which are the building blocks for alerts.
+**Recent Observations.** Lists the latest observations on the system and their counts in a table for the last six hours. Observations are notable events about your network, which are the building blocks for alerts.
 
 **Observations by Time.** Displays the frequency of each observation type as an area chart on a timeline for the last six hours.
 

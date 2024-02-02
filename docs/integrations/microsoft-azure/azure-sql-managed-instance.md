@@ -10,12 +10,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure SQL Managed Instance](https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview) is a scalable cloud database service that's always running on the latest stable version of the Microsoft SQL Server database engine and a patched OS with 99.99% built-in high availability, offering close to 100% feature compatibility with SQL Server. This integration helps in monitoring resource usage and tracking database events of your managed instances.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure SQL Managed Instance, you can collect the following logs and metrics:
 
-* **Resource Usage Statistics**. To know more about the different [log category types](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?tabs=azure-portal&view=azuresql#instances-in-azure-sql-managed-instance) and [schemas](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?tabs=azure-portal&view=azuresql#resource-usage-stats-for-managed-instances) collected for Azure SQL Managed Instances, refer to the Azure documentation.
-* **Audit Logs**. These logs include database events and Microsoft Support operations for your instances. To know more about the log schema, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/audit-log-format?view=azuresql#subheading-1).
+* **Resource Usage Statistics**. To learn more about the different [log category types](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?tabs=azure-portal&view=azuresql#instances-in-azure-sql-managed-instance) and [schemas](https://learn.microsoft.com/en-us/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?tabs=azure-portal&view=azuresql#resource-usage-stats-for-managed-instances) collected for Azure SQL Managed Instances, refer to the Azure documentation.
+* **Audit Logs**. These logs include database events and Microsoft Support operations for your instances. To learn more about the log schema, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-sql/database/audit-log-format?view=azuresql#subheading-1).
 
 ## Setup
 

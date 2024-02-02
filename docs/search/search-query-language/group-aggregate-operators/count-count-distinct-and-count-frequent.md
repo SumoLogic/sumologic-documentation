@@ -7,7 +7,7 @@ sidebar_label: count, count_distinct, count_frequent
 
 Aggregating (group-by) functions are used in conjunction with the group operator and a field name.
 
-Only the word **by** is required to represent the group operator. The count function is also an operator in its own right, and therefore can be used with or without the word **by**.
+Only the word `by` is required to represent the group operator. The count function is also an operator in its own right, and therefore can be used with or without the word `by`.
 
 ## count
 
@@ -106,7 +106,7 @@ _sourceCategory=PaloAltoNetworks
 
 The count_frequent function can be used in cases where you want to identify the most common values for aggregations with over 10,000 distinct groups. This query returns the highest-count 10,000 results in sorted order. The resulting count field is called `_approxcount` because it is only an *estimate* of the true count; the estimate may be incorrect, but can only be over (it will never be under).
 
-The count_frequent function is followed immediately by one or more field names.
+The `count_frequent` function is followed immediately by one or more field names.
 
 You can use the count_frequent operator in Dashboard queries, but the number of results returned is limited to the top 100 most frequent results. All results are available when the search is run on the **Search** page, but only the top 100 are displayed in the Panel.
 

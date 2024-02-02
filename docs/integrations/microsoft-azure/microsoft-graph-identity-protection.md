@@ -25,7 +25,7 @@ The App uses Microsoft Graph Identity Protection Source to collect [Risky Users]
 
 To learn about the Microsoft Graph Identity Protection API fields, see the [Risky Users](https://learn.microsoft.com/en-us/graph/api/resources/riskyuser?view=graph-rest-1.0#properties) and [Risk Detections](https://learn.microsoft.com/en-us/graph/api/resources/riskdetection?view=graph-rest-1.0#properties) documentation.
 
-### Sample Log Messages
+### Sample log messages
 
 This section contains log messages for both `Risky Users` and `Risk detections` sources.
 
@@ -78,7 +78,7 @@ This section contains log messages for both `Risky Users` and `Risk detections` 
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 This section contains the sample queries of both the `Risky Users` and `Risk detections`.
 
@@ -127,7 +127,9 @@ This section explains how to collect logs from Microsoft Graph Identity Protecti
 
 ## Installing the Microsoft Graph Identity Protection App
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Microsoft Graph Identity Protection Dashboards
 

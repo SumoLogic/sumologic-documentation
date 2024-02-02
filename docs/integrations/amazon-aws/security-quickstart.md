@@ -27,13 +27,6 @@ The Sumo Logic Security Integrations for AWS Organizations solution is based on 
 * AWS WAF - Cloud Security Monitoring and Analytics
 
 
-### Security Quick Start Setup Guide
-
-This Quick Start was created in collaboration with Amazon Web Services (AWS). Quick Start guides are automated reference deployments that use AWS CloudFormation templates to deploy key technologies on AWS. Click the following link to go to the guide:
-
-[Sumo Logic Security Quick Start for AWS Organizations](https://aws.amazon.com/quickstart/architecture/sumo-logic-for-aws-organizations/)
-
-
 ## Sumo Logic Security Integrations for a Single AWS Account
 
 The Sumo Logic AWS Security Quick Start solution helps you automate the collection of security events from AWS security services and the installation and configuration of 16 Sumo Logic apps designed for AWS Security including:
@@ -55,8 +48,8 @@ The Sumo Logic AWS Security Quick Start solution helps you automate the collecti
 * AWS Network Firewall
 
 
-### Security Quick Start Setup Guide
+## Security Quick Start Setup Guide
 
-This Quick Start was created in collaboration with Amazon Web Services (AWS). Quick Start guides are automated reference deployments that use AWS CloudFormation templates to deploy key technologies on AWS. Click the following link to go to the guide:
+This Quick Start was created in collaboration with Amazon Web Services (AWS). Quick Start guides are automated reference deployments that use AWS CloudFormation templates to deploy key technologies on AWS.
 
-[Sumo Logic Security Integrations on AWS](https://aws.amazon.com/quickstart/architecture/sumo-logic/)
+Click here to go to the guide: [Sumo Logic Security Integrations on AWS](https://aws.amazon.com/quickstart/architecture/sumo-logic/)

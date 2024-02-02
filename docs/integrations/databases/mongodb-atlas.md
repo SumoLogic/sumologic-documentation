@@ -13,15 +13,15 @@ import TabItem from '@theme/TabItem';
 
 The Sumo Logic app for MongoDB Atlas allows you to monitor database operations, performance KPIs and provides visibility into the security posture of your clusters with the following dashboard types:  
 
-* **Operations** Dashboard: For monitoring database operations and cluster health.
-* **Performance** Dashboard: For insights into slow queries, database and hardware metrics.
-* **Security** Dashboard: For visibility into user logins, audit events, project and organizational activity, incoming threats, and IOCs.
+* **Operations** Dashboard. For monitoring database operations and cluster health.
+* **Performance** Dashboard. For insights into slow queries, database and hardware metrics.
+* **Security** Dashboard. For visibility into user logins, audit events, project and organizational activity, incoming threats, and IOCs.
 
 [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) is a global cloud database service designed specifically for cloud-based applications. MongoDB Atlas runs in AWS, Azure, or GCP environments, with guaranteed availability, scalability, and compliance with data security and privacy standards.
 
 The MongoDB Atlas app supports MongoDB Version 3.4 and above.
 
-## Log and Metric types
+## Log and metric types
 
 MongoDB Atlas uses logs and metrics. MongoDB Atlas logs are in JSON format and metrics are in Carbon 2.0 format. The Sumo Logic app for MongoDB Atlas uses five types of logs and two types of metrics.
 
@@ -33,87 +33,108 @@ The Sumo Logic `mongodbatlas` collector enhances logs by adding a few metadata f
 
 Some logs are not available for some cluster tier. Check the [MongoDB docs](https://docs.atlas.mongodb.com/reference/free-shared-limitations/). Some log types like for mongos instances are available for shared cluster only.
 
-<details><summary>Sample database log, audit log, alerts log, organization events log, and project events log (<strong>click here to expand</strong>)</summary>
+<details>
+<summary>Sample Logs (Database, Audit, Alerts, Organization Events, Project Events (<strong>click here to expand</strong>)</summary>
 
 ```json title="Database Log"
 {
-	"t": {"$date": "2022-07-27T17:04:49.286+00:00"}, "s": "I", "c": "REPL_HB", "id": 23974, "ctx": "ReplCoord-432", "msg": "Heartbeat failed after max retries", "attr": {"target": "atlas-11varv-shard-00-02.uv8kc.mongodb.net:27017", "maxHeartbeatRetries": 2, "error": {"code": 6, "codeName": "HostUnreachable", "errmsg": "Error connecting to atlas-11varv-shard-00-02.uv8kc.mongodb.net:27017 (192.168.253.14:27017) :: caused by :: Connection refused"}}, "project_id": "62dea24636af817c353dafa4", "hostname": "mongo6cluster-shard-00-01.uv8kc.mongodb.net", "cluster_name": "mongo6cluster", "created": "2022-07-27T17:04:49.286+00:00"
+  "t":{
+    "$date":"2022-07-27T17:04:49.286+00:00"
+  },
+  "s":"I",
+  "c":"REPL_HB",
+  "id":23974,
+  "ctx":"ReplCoord-432",
+  "msg":"Heartbeat failed after max retries",
+  "attr":{
+    "target":"atlas-11varv-shard-00-02.uv8kc.mongodb.net:27017",
+    "maxHeartbeatRetries":2,
+    "error":{
+      "code":6,
+      "codeName":"HostUnreachable",
+      "errmsg":"Error connecting to atlas-11varv-shard-00-02.uv8kc.mongodb.net:27017 (192.168.253.14:27017) :: caused by :: Connection refused"
+    }
+  },
+  "project_id":"62dea24636af817c353dafa4",
+  "hostname":"mongo6cluster-shard-00-01.uv8kc.mongodb.net",
+  "cluster_name":"mongo6cluster",
+  "created":"2022-07-27T17:04:49.286+00:00"
 }
 ```
 
-For more information, see https://docs.mongodb.com/manual/reference/log-messages.
+For more information, see [MongoDB Atlas Administration API docs](https://docs.mongodb.com/manual/reference/log-messages).
 
 ```json title="Audit Log"
 {
-	"atype":"authenticate",
-	"ts":{
-		"$date":"2019-07-03T16:08:50.256+0000"
-	},
-	"local":{
-		"ip":"192.168.253.201",
-		"port":27017
-	},
-	"remote":{
-		"ip":"192.168.254.91",
-		"port":49592
-	},
-	"users":[
-		{
-			"user":"mms-monitoring-agent",
-			"db":"admin"
-		}
-	],
-	"roles":[
-		{
-			"role":"clusterMonitor",
-			"db":"admin"
-		}
-	],
-	"param":{
-		"user":"mms-monitoring-agent",
-		"db":"admin",
-		"mechanism":"SCRAM-SHA-1"
-	},
-	"result":0,
-	"project_id":"5cd0343ff2a30b3880beddb0",
-	"hostname":"m10awstestcluster-shard-01-02-snvkl.mongodb.net",
-	"cluster_name":"m10awstestcluster",
-	"created":"2019-07-03T16:08:50.256+0000"
+  "atype":"authenticate",
+  "ts":{
+    "$date":"2019-07-03T16:08:50.256+0000"
+  },
+  "local":{
+    "ip":"192.168.253.201",
+    "port":27017
+  },
+  "remote":{
+    "ip":"192.168.254.91",
+    "port":49592
+  },
+  "users":[
+    {
+      "user":"mms-monitoring-agent",
+      "db":"admin"
+    }
+  ],
+  "roles":[
+    {
+      "role":"clusterMonitor",
+      "db":"admin"
+    }
+  ],
+  "param":{
+    "user":"mms-monitoring-agent",
+    "db":"admin",
+    "mechanism":"SCRAM-SHA-1"
+  },
+  "result":0,
+  "project_id":"5cd0343ff2a30b3880beddb0",
+  "hostname":"m10awstestcluster-shard-01-02-snvkl.mongodb.net",
+  "cluster_name":"m10awstestcluster",
+  "created":"2019-07-03T16:08:50.256+0000"
 }
 ```
 
-For more information, see https://docs.mongodb.com/manual/reference/audit-message.
+For more information, see [MongoDB Atlas Administration API docs](https://docs.mongodb.com/manual/reference/audit-message).
 
 ```json title="Alerts log"
 {
-	"alertConfigId":"5cf9c324f2a30b3783a1dd28",
-	"clusterName":"M10AWSTestCluster",
-	"created":"2019-06-07T01:52:28Z",
-	"currentValue":{
-		"number":5.142857142857142,
-		"units":"RAW"
-	},
-	"eventTypeName":"OUTSIDE_METRIC_THRESHOLD",
-	"groupId":"5cd0343ff2a30b3880beddb0",
-	"hostnameAndPort":"m10awstestcluster-shard-00-01-snvkl.mongodb.net:27017",
-	"id":"5cf9c35cd5ec1376c01e81e5",
-	"lastNotified":"2019-06-07T02:28:38Z",
-	"links":[
-		{
-			"href":"https://cloud.mongodb.com/api/public/v1.0/groups/5cd0343ff2a30b3880beddb0/alerts/5cf9c35cd5ec1376c01e81e5",
-			"rel":"self"
-		}
-	],
-	"metricName":"CONNECTIONS_PERCENT",
-	"replicaSetName":"M10AWSTestCluster-shard-0",
-	"resolved":"2019-06-07T02:28:29Z",
-	"status":"CLOSED",
-	"typeName":"HOST_METRIC",
-	"updated":"2019-06-07T02:28:29Z"
+  "alertConfigId":"5cf9c324f2a30b3783a1dd28",
+  "clusterName":"M10AWSTestCluster",
+  "created":"2019-06-07T01:52:28Z",
+  "currentValue":{
+    "number":5.142857142857142,
+    "units":"RAW"
+  },
+  "eventTypeName":"OUTSIDE_METRIC_THRESHOLD",
+  "groupId":"5cd0343ff2a30b3880beddb0",
+  "hostnameAndPort":"m10awstestcluster-shard-00-01-snvkl.mongodb.net:27017",
+  "id":"5cf9c35cd5ec1376c01e81e5",
+  "lastNotified":"2019-06-07T02:28:38Z",
+  "links":[
+    {
+      "href":"https://cloud.mongodb.com/api/public/v1.0/groups/5cd0343ff2a30b3880beddb0/alerts/5cf9c35cd5ec1376c01e81e5",
+      "rel":"self"
+    }
+  ],
+  "metricName":"CONNECTIONS_PERCENT",
+  "replicaSetName":"M10AWSTestCluster-shard-0",
+  "resolved":"2019-06-07T02:28:29Z",
+  "status":"CLOSED",
+  "typeName":"HOST_METRIC",
+  "updated":"2019-06-07T02:28:29Z"
 }
 ```
 
-For more information, see https://docs.atlas.mongodb.com/reference/api/alerts-get-all-alerts/.
+For more information, see [MongoDB Atlas Administration API docs](https://docs.atlas.mongodb.com/reference/api/alerts-get-all-alerts/).
 
 ```json
 {"clusterName": "Mongo6Cluster", "created": "2022-07-25T14:17:22Z", "eventTypeName": "CLUSTER_READY", "groupId": "62dea24636af817c353dafa4", "id": "62dea5f2eeed4a46dc259c7c", "isGlobalAdmin": false, "links": [{"href": "https://cloud.mongodb.com/api/atlas/v1.0/groups/62dea24636af817c353dafa4/events/62dea5f2eeed4a46dc259c7c", "rel": "self"}]}
@@ -121,15 +142,16 @@ For more information, see https://docs.atlas.mongodb.com/reference/api/alerts-ge
 {"created": "2022-07-25T14:16:31Z", "eventTypeName": "ADD_HOST_AUDIT", "groupId": "62dea24636af817c353dafa4", "hostname": "atlas-11varv-shard-00-00.uv8kc.mongodb.net", "id": "62dea5bf3ed8bc7aac32e072", "isGlobalAdmin": false, "links": [{"href": "https://cloud.mongodb.com/api/atlas/v1.0/groups/62dea24636af817c353dafa4/events/62dea5bf3ed8bc7aac32e072", "rel": "self"}], "port": 27016, "userAlias": "mongo6cluster-shard-00-00.uv8kc.mongodb.net"}
 ```
 
-For more information, see [https://www.mongodb.com/docs/atlas/reference/api/events/?_ga=2.201008366.1967805223.1659594117-928530545.1653893441#events](https://www.mongodb.com/docs/atlas/reference/api/events/?_ga=2.201008366.1967805223.1659594117-928530545.1653893441#events).
+For more information, see [MongoDB Atlas Administration API docs](https://www.mongodb.com/docs/atlas/reference/api/events/?_ga=2.201008366.1967805223.1659594117-928530545.1653893441#events).
 
 </details>
 
 ### Sample metrics
 
-This section provides examples of the metric types utilized by the MongoDB Atlas app.
+Here are some examples of the metric types utilized by the MongoDB Atlas app.
 
-<details><summary>Sample process metrics and disk metrics (<strong>click here to expand</strong>)</summary>
+<details>
+<summary>Sample process metrics and disk metrics (<strong>click here to expand</strong>)</summary>
 
 #### Process metrics
 
@@ -199,11 +221,9 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 
 </details>
 
-### Sample query
+### Sample queries
 
-This sample query is from the MongoDB Atlas - Audit dashboard > Recent Audit Events panel.
-
-<details><summary>Sample query (<strong>click here to expand</strong>)</summary>
+This sample query is from the MongoDB Atlas Audit dashboard > Recent Audit Events panel.
 
 ```sql
 (_sourceCategory="Labs/mongodbatlas6/logs" ) | json "atype", "local.ip", "remote.ip", "users","result", "project_id", "hostname", "cluster_name", "param" as atype, local_ip, remote_ip, users, result, project_id, hostname, cluster_name, param
@@ -215,7 +235,6 @@ This sample query is from the MongoDB Atlas - Audit dashboard > Recent Audit Eve
 | sort by latest_event_date
 ```
 
-</details>
 
 ## Collecting logs and metrics for the MongoDB Atlas app
 
@@ -257,10 +276,10 @@ This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs
 ### Step 3: Configure Collection for MongoDB Atlas
 
 In this section, we explore various mechanisms to collect database logs, events, metrics and alerts from MongoDB Atlas and send them to Sumo Logic, where they are shown in dashboards as part of the MongoDB Atlas app. You can configure Sumo Logic’s MongoDB Atlas collector in Amazon Web Services (AWS) using the AWS Lambda service, or by running a script on a Linux machine as a cron job. Choose the method that is best suited for you:
-* [AWS Lambda-based collection](#Deploy_the_Sumo_Logic_mongodb-atlas_SAM_Application) via a Serverless Application Model (SAM) application
-* [Script-based collection](#Configure_script_based_collection_for_mongodb-atlas) from a Linux machine
+* [AWS Lambda-based collection](#step-3a-deploy-the-sumo-logic-mongodb-atlas-sam-application) via a Serverless Application Model (SAM) application
+* [Script-based collection](#step-3c-configure-script-based-collection-for-mongodb-atlas) from a Linux machine
 
-A single instance of the collector is responsible for collecting logs from a single project. Refer to [Configure Collection for Multiple Projects](#Configure_collection_for_multiple_projects) if you have multiple projects.
+A single instance of the collector is responsible for collecting logs from a single project. Refer to [Configure Collection for Multiple Projects](#step-3b-configure-collection-for-multiple-projects-optional) if you have multiple projects.
 
 
 #### Step 3A: Deploy the Sumo Logic MongoDB Atlas SAM application
@@ -278,17 +297,32 @@ In this section, you deploy the SAM application, which creates the necessary res
    * **Public API Key**: Copy and paste the Public Key from [Step 1](#step-1-acquire-authentication-info-from-mongodb-atlas-portal).
 5. Click **Deploy**.
 6. Search for Lambda in the AWS console, select Functions tab and open the function just created.
-7. Go to the Configuration>Permissions tab of the function, and click on the Execution role name link to open up the IAM window containing all the permission policies.
-8. Click on Add permissions > Create inline policy. Choose JSON and copy this policy statement:
- ```json
- { "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Action": [ "ec2:DescribeNetworkInterfaces", "ec2:CreateNetworkInterface", "ec2:DeleteNetworkInterface", "ec2:DescribeInstances", "ec2:AttachNetworkInterface" ], "Resource": "*" } ] }
- ```
-  Click on Review policy, and provide an appropriate name. Then click on Create policy. Some users might already have these permissions enabled.
-9. We then [follow these steps](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/generate-a-static-outbound-ip-address-using-a-lambda-function-amazon-vpc-and-a-serverless-architecture.html) to create elastic IP/IPs for the lambda function and add a VPC to our function. We note down the elastic IPs.
-10. We go to the mongo console, click on Organization Access>Access Manager > API Keys, and click on ‘...’ of the API Key as mentioned in step 2. Then click on Edit Permissions.
-11. Click Next > Add Access List Entry. Enter the elastic IPs noted above and, then click Save to save the elastic IPs, and click on Done to apply the settings.
+7. Go to the **Configuration** > **Permissions** tab of the function, and click on the Execution role name link to open up the IAM window containing all the permission policies.
+8. Click on **Add permissions** > **Create inline policy**. Choose JSON and copy this policy statement:
+   ```json
+   {
+     "Version":"2012-10-17",
+     "Statement":[
+       {
+         "Effect":"Allow",
+         "Action":[
+           "ec2:DescribeNetworkInterfaces",
+           "ec2:CreateNetworkInterface",
+           "ec2:DeleteNetworkInterface",
+           "ec2:DescribeInstances",
+           "ec2:AttachNetworkInterface"
+         ],
+         "Resource":"*"
+       }
+     ]
+   }
+   ```
+9. Click on **Review policy**, and provide an appropriate name. Then click on Create policy. Some users might already have these permissions enabled.
+10. We then [follow these steps](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/generate-a-static-outbound-ip-address-using-a-lambda-function-amazon-vpc-and-a-serverless-architecture.html) to create elastic IP/IPs for the lambda function and add a VPC to our function. We note down the elastic IPs.
+11. We go to the mongo console, click on **Organization Access** > **Access Manager** > **API Keys**, and click on ‘...’ of the API Key as mentioned in step 2. Then click on Edit Permissions.
+12. Click **Next** > **Add Access List Entry**. Enter the elastic IPs noted above and, then click Save to save the elastic IPs, and click on Done to apply the settings.
 
-The lambda function should be working now in sending logs to Sumo. You can check the CloudWatch logs in Monitor > Logs to see the logs of the function.
+The lambda function should be working now in sending logs to Sumo. You can check the CloudWatch logs in **Monitor** > **Logs** to see the logs of the function.
 
 #### Step 3B: Configure Collection for Multiple Projects (optional)
 
@@ -297,7 +331,7 @@ This section shows you how to configure collection for multiple projects, assumi
 * Change the `DBNAME` so that state (keys) maintained (bookkeeping) in the database (key value store) are not in conflict.
 
 To configure collection for multiple projects, do the following:
-1. [Deploy the MongoDB Atlas SAM application](#Deploy_the_Sumo_Logic_mongodb-atlas_SAM_Application) with the configuration for a new project.
+1. [Deploy the MongoDB Atlas SAM application](#step-3a-deploy-the-sumo-logic-mongodb-atlas-sam-application) with the configuration for a new project.
 2. After the deployment is complete, change the database name by adding environment variable (`DBNAME`) in [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html), as shown in the following example.
 3. From the Lambda console, go to the **mongodbatlas.yaml** file and comment out `EVENTS_ORG`, as shown in the following example. This prevents the collection of org events, because they are already being collected by the first collector.
 
@@ -312,26 +346,26 @@ This task makes the following assumptions:
 :::
 
 1. Configure/install the script on a Linux machine.
-  * For Python 3, use:
-   ```bash
-   pip3 install sumologic-mongodb-atlas
-   ```
-  * For operating systems where the default python is not Python 3, use:
-   ```bash
-   /usr/bin/python3 -m sumomongodbatlascollector.main
-   ```
+   * For Python 3, use:
+     ```bash
+     pip3 install sumologic-mongodb-atlas
+     ```
+   * For operating systems where the default python is not Python 3, use:
+     ```bash
+     /usr/bin/python3 -m sumomongodbatlascollector.main
+     ```
 2. To deploy the script on a Linux machine, do the following:
    1. If **pip** is not already installed, follow the instructions in the [pip documentation](https://pip.pypa.io/en/stable/installing/) to download and install **pip**.
    2. Log in to a Linux machine (compatible with either Python 3.11 or Python 2.7.
    3. Do one of the following:
       * For Python 2, run the following command:
-  	  ```bash
-   	 pip install sumologic-mongodb-atlas
-  	  ```
+  	    ```bash
+        pip install sumologic-mongodb-atlas
+  	    ```
       * For Python 3, run the following command:
-	    ```bash
-	    pip3 install sumologic-mongodb-atlas
-	    ```
+	     ```bash
+	     pip3 install sumologic-mongodb-atlas
+	     ```
 3. Create a `mongodbatlas.yaml` configuration file in the home directory and fill in the parameters as shown in the following example.
 ```bash title="mongodbatlas.yaml"
 SumoLogic:
@@ -345,292 +379,218 @@ MongoDBAtlas:
   PUBLIC_API_KEY: <Paste the Public Key from step 1.>
 ```
 4. Create a cron job to run the collector every 5 minutes, (use the `crontab -e` option). Do one of the following:
-  * **For Python 2**, add the following line to your crontab:
-  ```bash
-  */5 * * * *  /usr/bin/python -m sumomongodbatlascollector.main > /dev/null 2>&1
-  ```
-  * **For Python 3**, add the following line to your crontab:
-  ```bash
-  */5 * * * *  /usr/bin/python3 -m sumomongodbatlascollector.main > /dev/null 2>&1
-  ```
+   * **For Python 2**, add the following line to your crontab:
+   ```bash
+   */5 * * * *  /usr/bin/python -m sumomongodbatlascollector.main > /dev/null 2>&1
+   ```
+   * **For Python 3**, add the following line to your crontab:
+   ```bash
+   */5 * * * *  /usr/bin/python3 -m sumomongodbatlascollector.main > /dev/null 2>&1
+   ```
 5. Configuring collection for multiple projects (assuming you are already collecting Atlas data for one project). This task requires that you do the following:
-  * Stop the collection of OrgEvents in the second SAM app deployment because these events are global and are already captured by first collector.
-  * Change the `DBNAME` so that state (keys) maintained (bookkeeping) in the database (key value store) are not in conflict.
+   * Stop the collection of OrgEvents in the second SAM app deployment because these events are global and are already captured by first collector.
+   * Change the `DBNAME` so that state (keys) maintained (bookkeeping) in the database (key value store) are not in conflict.
+	 * [Configure the script on a Linux machine](#Configure_the_script_on_a_Linux_machine), then go to your configuration file.
+	 * Change the `DB_NAME` and comment out `EVENTS_ORG` as shown in the following example.
+    ```
+    SumoLogic:
+      LOGS_SUMO_ENDPOINT: <Paste the URL for the HTTP Logs source from step 2.>
+      METRICS_SUMO_ENDPOINT: <Paste the URL for the HTTP Metrics source from step 2.>
 
-  1. [Configure the script on a Linux machine](#Configure_the_script_on_a_Linux_machine), then go to your configuration file.
-  2. Change the `DB_NAME` and comment out `EVENTS_ORG` as shown in the following example.
+    MongoDBAtlas:
+      ORGANIZATION_ID: <Paste the Organization ID from step 1.>
+      PROJECT_ID: <Paste the Project ID from step 1.>
+      PRIVATE_KEY: <Paste the Private Key from step 1.>
+      PUBLIC_KEY: <Paste the Public Key from step 1.>
+      LOG_TYPES:
+        DATABASE
+        AUDIT
+        EVENTS_PROJECT
+        EVENTS_ORG
+        ALERTS
 
-```
-SumoLogic:
-  LOGS_SUMO_ENDPOINT: <Paste the URL for the HTTP Logs source from step 2.>
-  METRICS_SUMO_ENDPOINT: <Paste the URL for the HTTP Metrics source from step 2.>
+      METRIC_TYPES:
+        PROCESS_METRICS:
+          CACHE_DIRTY_BYTES
+          CACHE_USED_BYTES
+          CONNECTIONS
+          CURSORS_TOTAL_OPEN
+          CURSORS_TOTAL_TIMED_OUT
+          DATABASE_AVERAGE_OBJECT_SIZE
+          DB_STORAGE_TOTAL
+          DB_DATA_SIZE_TOTAL
+          EXTRA_INFO_PAGE_FAULTS
+          GLOBAL_LOCK_CURRENT_QUEUE_TOTAL
+          MEMORY_RESIDENT
+          MEMORY_VIRTUAL
+          MEMORY_MAPPED
+          NETWORK_BYTES_IN
+          NETWORK_BYTES_OUT
+          NETWORK_NUM_REQUESTS
+          OPCOUNTER_CMD
+          OPCOUNTER_QUERY
+          OPCOUNTER_UPDATE
+          OPCOUNTER_DELETE
+          OPCOUNTER_GETMORE
+          OPCOUNTER_INSERT
+          OP_EXECUTION_TIME_READS
+          OP_EXECUTION_TIME_WRITES
+          OP_EXECUTION_TIME_COMMANDS
+          OPLOG_MASTER_LAG_TIME_DIFF
+          OPLOG_SLAVE_LAG_MASTER_TIME
+          QUERY_EXECUTOR_SCANNED
+          QUERY_EXECUTOR_SCANNED_OBJECTS
+          QUERY_TARGETING_SCANNED_PER_RETURNED
+          QUERY_TARGETING_SCANNED_OBJECTS_PER_RETURNED
+          SYSTEM_NORMALIZED_CPU_USER
+          SYSTEM_NORMALIZED_CPU_KERNEL
+          SYSTEM_NORMALIZED_CPU_IOWAIT
+          PROCESS_CPU_USER
+          PROCESS_CPU_KERNEL
+          SYSTEM_NORMALIZED_CPU_STEAL
 
-MongoDBAtlas:
-  ORGANIZATION_ID: <Paste the Organization ID from step 1.>
-  PROJECT_ID: <Paste the Project ID from step 1.>
-  PRIVATE_KEY: <Paste the Private Key from step 1.>
-  PUBLIC_KEY: <Paste the Public Key from step 1.>
-  LOG_TYPES:
-    - DATABASE
-    - AUDIT
-    - EVENTS_PROJECT
-    - EVENTS_ORG
-    - ALERTS
+        DISK_METRICS:
+          DISK_PARTITION_IOPS_READ
+          DISK_PARTITION_IOPS_WRITE
+          DISK_PARTITION_LATENCY_READ
+          DISK_PARTITION_LATENCY_WRITE
+          DISK_PARTITION_SPACE_PERCENT_FREE
+          DISK_PARTITION_SPACE_PERCENT_USED
 
-  METRIC_TYPES:
-    PROCESS_METRICS:
-      - CACHE_DIRTY_BYTES
-      - CACHE_USED_BYTES
-      - CONNECTIONS
-      - CURSORS_TOTAL_OPEN
-      - CURSORS_TOTAL_TIMED_OUT
-      - DATABASE_AVERAGE_OBJECT_SIZE
-      - DB_STORAGE_TOTAL
-      - DB_DATA_SIZE_TOTAL
-      - EXTRA_INFO_PAGE_FAULTS
-      - GLOBAL_LOCK_CURRENT_QUEUE_TOTAL
-      - MEMORY_RESIDENT
-      - MEMORY_VIRTUAL
-      - MEMORY_MAPPED
-      - NETWORK_BYTES_IN
-      - NETWORK_BYTES_OUT
-      - NETWORK_NUM_REQUESTS
-      - OPCOUNTER_CMD
-      - OPCOUNTER_QUERY
-      - OPCOUNTER_UPDATE
-      - OPCOUNTER_DELETE
-      - OPCOUNTER_GETMORE
-      - OPCOUNTER_INSERT
-      - OP_EXECUTION_TIME_READS
-      - OP_EXECUTION_TIME_WRITES
-      - OP_EXECUTION_TIME_COMMANDS
-      - OPLOG_MASTER_LAG_TIME_DIFF
-      - OPLOG_SLAVE_LAG_MASTER_TIME
-      - QUERY_EXECUTOR_SCANNED
-      - QUERY_EXECUTOR_SCANNED_OBJECTS
-      - QUERY_TARGETING_SCANNED_PER_RETURNED
-      - QUERY_TARGETING_SCANNED_OBJECTS_PER_RETURNED
-      - SYSTEM_NORMALIZED_CPU_USER
-      - SYSTEM_NORMALIZED_CPU_KERNEL
-      - SYSTEM_NORMALIZED_CPU_IOWAIT
-      - PROCESS_CPU_USER
-      - PROCESS_CPU_KERNEL
-      - SYSTEM_NORMALIZED_CPU_STEAL
-
-    DISK_METRICS:
-      - DISK_PARTITION_IOPS_READ
-      - DISK_PARTITION_IOPS_WRITE
-      - DISK_PARTITION_LATENCY_READ
-      - DISK_PARTITION_LATENCY_WRITE
-      - DISK_PARTITION_SPACE_PERCENT_FREE
-      - DISK_PARTITION_SPACE_PERCENT_USED
-
-Collection:
-  DBNAME: "newmongodbatlas"
-```
+    Collection:
+      DBNAME: "newmongodbatlas"
+    ```
 Example execution of second yaml file: `/usr/bin/python3 -m sumomongodbatlascollector.main <path-of-second-yaml-file>`
 
 ### Step 4: Configure Webhooks for Alerts Collection
 
 You configure Webhooks for real-time alerts. This section explains how to configure alert collection using Webhooks.
 1. Go to the **MongoDBAtlas** console and select **Project Integrations.** Click **Configure** under **Webhook Settings**.
-2. Copy and paste the Logs endpoint from [Step](#Add_a_Hosted_Collector_and_HTTP_Source) to set up Webhook.
+2. Copy and paste the Logs endpoint from [Step 2](#step-2-add-a-hosted-collector-and-http-source) to set up Webhook.
 3. When configuring an alert, specify the **Webhook** as shown in the following example, and then click **Save**.
 
 ### Advanced Configuration
 
-This section is common for both [AWS Lambda-based collection](#Deploy_the_Sumo_Logic_mongodb-atlas_SAM_Application) and [script-based collection](#Configure_script_based_collection_for_mongodb-atlas).
+This section is common for both [AWS Lambda-based collection](#step-3a-deploy-the-sumo-logic-mongodb-atlas-sam-application) and [script-based collection](#step-3c-configure-script-based-collection-for-mongodb-atlas).
 
-<details><summary>This table lists MongoDB Atlas variables that you can optionally define in the configuration file (<strong>click to expand</strong>).</summary>
+<details>
+<summary>This table lists MongoDB Atlas variables that you can optionally define in the configuration file (<strong>click to expand</strong>).</summary>
 
-<table><small>
+<table>
   <tr>
-   <td>Variable
-   </td>
-   <td>Usage
-   </td>
+   <td><strong>Variable </strong> </td>
+   <td><strong>Usage</strong> </td>
   </tr>
   <tr>
-   <td>LOG_TYPES in MongoDBAtlas Section
-   </td>
-   <td><ul><li>DATABASE</li>
- <li> AUDIT</li>
- <li> EVENTS_PROJECT</li>
- <li> EVENTS_ORG</li>
- <li> ALERTS</li></ul>
+   <td>LOG_TYPES<br/>
+in MongoDBAtlas Section </td>
+   <td>DATABASE
+<br/>AUDIT
+<br/>EVENTS_PROJECT
+<br/>EVENTS_ORG
+<br/>ALERTS
+<br/>Remove any one of the lines if you do not want to collect metric of that type.</td>
+  </tr>
+  <tr>
+   <td>PROCESS_METRICS<br/>in MongoDBAtlas Section</td>
+   <td>CACHE_DIRTY_BYTES<br/>
+CACHE_USED_BYTES<br/>
+CONNECTIONS<br/>
+CURSORS_TOTAL_OPEN<br/>
+CURSORS_TOTAL_TIMED_OUT<br/>
+DB_STORAGE_TOTAL<br/>
+DB_DATA_SIZE_TOTAL<br/>
+DATABASE_AVERAGE_OBJECT_SIZE<br/>
+EXTRA_INFO_PAGE_FAULTS<br/>
+GLOBAL_LOCK_CURRENT_QUEUE_TOTAL<br/>
+MEMORY_RESIDENT<br/>
+MEMORY_VIRTUAL<br/>
+MEMORY_MAPPED<br/>
+NETWORK_BYTES_IN<br/>
+NETWORK_BYTES_OUT<br/>
+NETWORK_NUM_REQUESTS<br/>
+OPCOUNTER_CMD<br/>
+OPCOUNTER_QUERY<br/>
+OPCOUNTER_UPDATE<br/>
+OPCOUNTER_DELETE<br/>
+OPCOUNTER_GETMORE<br/>
+OPCOUNTER_INSERT<br/>
+OP_EXECUTION_TIME_READS<br/>
+OP_EXECUTION_TIME_WRITES<br/>
+OP_EXECUTION_TIME_COMMANDS<br/>
+QUERY_EXECUTOR_SCANNED<br/>
+QUERY_EXECUTOR_SCANNED_OBJECTS<br/>
+QUERY_TARGETING_SCANNED_PER_RETURNED<br/>
+QUERY_TARGETING_SCANNED_OBJECTS_PER_RETURNED<br/>
+SYSTEM_NORMALIZED_CPU_USER<br/>
+SYSTEM_NORMALIZED_CPU_KERNEL<br/>
+SYSTEM_NORMALIZED_CPU_IOWAIT<br/>
+PROCESS_CPU_USER<br/>
+PROCESS_CPU_KERNEL<br/>
+SYSTEM_NORMALIZED_CPU_STEAL<br/>Remove any one of the lines if you do not want to collect metric of that type. </td>
+  </tr>
+  <tr>
+   <td>DISK_METRICS<br/>in MongoDBAtlas Section</td>
+   <td>DISK_PARTITION_IOPS_READ<br/>
+DISK_PARTITION_IOPS_WRITE<br/>
+DISK_PARTITION_UTILIZATION<br/>
+DISK_PARTITION_LATENCY_READ<br/>
+DISK_PARTITION_LATENCY_WRITE<br/>
+DISK_PARTITION_SPACE_FREE<br/>
+DISK_PARTITION_SPACE_USED<br/>
 Remove any one of the lines if you do not want to collect metric of that type.</td>
   </tr>
   <tr>
-   <td>PROCESS_METRICS in MongoDBAtlas Section
-   </td>
-   <td><ul><li>CACHE_DIRTY_BYTES</li>
-<li> CACHE_USED_BYTES
-</li>
-<li> CONNECTIONS
-</li>
-<li> CURSORS_TOTAL_OPEN
-</li>
-<li> CURSORS_TOTAL_TIMED_OUT
-</li>
-<li> DB_STORAGE_TOTAL
-</li>
-<li> DATABASE_AVERAGE_OBJECT_SIZE
-</li>
-<li> EXTRA_INFO_PAGE_FAULTS
-</li>
-<li> EXTRA_INFO_PAGE_FAULTS
-</li>
-<li> GLOBAL_LOCK_CURRENT_QUEUE_TOTAL
-</li>
-<li> MEMORY_RESIDENT
-</li>
-<li> MEMORY_VIRTUAL
-</li>
-<li> MEMORY_MAPPED
-</li>
-<li> NETWORK_BYTES_IN
-</li>
-<li> NETWORK_BYTES_OUT
-</li>
-<li> NETWORK_NUM_REQUESTS
-</li>
-<li> OPCOUNTER_CMD
-</li>
-<li> OPCOUNTER_QUERY
-</li>
-<li> OPCOUNTER_UPDATE
-</li>
-<li> OPCOUNTER_DELETE
-</li>
-<li> OPCOUNTER_GETMORE
-</li>
-<li> OPCOUNTER_INSERT
-</li>
-<li> OP_EXECUTION_TIME_READS
-</li>
-<li> OP_EXECUTION_TIME_WRITES
-</li>
-<li> OP_EXECUTION_TIME_COMMANDS
-</li>
-<li> OPLOG_MASTER_LAG_TIME_DIFF
-</li>
-<li> OPLOG_SLAVE_LAG_MASTER_TIME
-</li>
-<li> QUERY_EXECUTOR_SCANNED
-</li>
-<li> QUERY_EXECUTOR_SCANNED_OBJECTS
-</li>
-<li> QUERY_TARGETING_SCANNED_PER_RETURNED
-</li>
-<li> QUERY_TARGETING_SCANNED_OBJECTS_PER_RETURNED
-</li>
-<li> SYSTEM_NORMALIZED_CPU_USER
-</li>
-<li> SYSTEM_NORMALIZED_CPU_KERNEL
-</li>
-<li> SYSTEM_NORMALIZED_CPU_IOWAIT
-</li>
-<li> PROCESS_CPU_USER
-</li>
-<li> PROCESS_CPU_KERNEL
-</li>
-<li> SYSTEM_NORMALIZED_CPU_STEAL</li></ul>
-Remove any one of the lines if you do not want to collect metric of that type.
-   </td>
+   <td>BACKFILL_DAYS<br/>in Collection Section</td>
+   <td>Number of days before the event collection will start. If the value is 1,
+then events are fetched from yesterday to today.</td>
   </tr>
   <tr>
-   <td>DISK_METRICS in MongoDBAtlas Section
-   </td>
-   <td><ul>
-<li>DISK_PARTITION_IOPS_READ</li>
-<li> DISK_PARTITION_IOPS_WRITE
-</li>
-<li> DISK_PARTITION_LATENCY_READ
-</li>
-<li> DISK_PARTITION_LATENCY_WRITE
-</li>
-<li> DISK_PARTITION_SPACE_FREE
-</li>
-<li> DISK_PARTITION_SPACE_USED
-</li>  
-<li> DISK_PARTITION_SPACE_PERCENT_FREE
-</li>
-<li> DISK_PARTITION_SPACE_PERCENT_USED
-</li></ul>
-Remove any one of the lines if you do not want to collect metric of that type.</td>
+   <td>PAGINATION_LIMIT<br/>in Collection Section</td>
+   <td>Number of events to fetch in a single API call.</td>
   </tr>
   <tr>
-   <td>BACKFILL_DAYS in Collection Section
-   </td>
-   <td>Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today.
-   </td>
+   <td>LOG_FORMAT<br/>in Logging Section </td>
+   <td>Log format used by the python logging module to write logs in a file. </td>
   </tr>
   <tr>
-   <td>PAGINATION_LIMIT in Collection Section
-   </td>
-   <td>Number of events to fetch in a single API call.
-   </td>
+   <td>ENABLE_LOGFILE<br/>in Logging Section </td>
+   <td>Set to TRUE to write all logs and errors to a log file. </td>
   </tr>
   <tr>
-   <td>LOG_FORMAT in Logging Section
-   </td>
-   <td>Log format used by the python logging module to write logs in a file.
-   </td>
+   <td>ENABLE_CONSOLE_LOG<br/>in Logging Section </td>
+   <td>Enables printing logs in a console. </td>
   </tr>
   <tr>
-   <td>ENABLE_LOGFILE in Logging Section
-   </td>
-   <td>Set to TRUE to write all logs and errors to a log file.
-   </td>
+   <td>LOG_FILEPATH<br/>in Logging Section </td>
+   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE. </td>
   </tr>
   <tr>
-   <td>ENABLE_CONSOLE_LOG in Logging Section
-   </td>
-   <td>Enables printing logs in a console.
-   </td>
+   <td>NUM_WORKERS<br/>in Collection Section   </td>
+   <td>Number of threads to spawn for API calls. </td>
   </tr>
   <tr>
-   <td>LOG_FILEPATH in Logging Section
-   </td>
-   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE.
-   </td>
+   <td>MAX_RETRY<br/>in Collection Section </td>
+   <td>Number of retries to attempt in case of request failure.   </td>
   </tr>
   <tr>
-   <td>NUM_WORKERS in Collection Section
-   </td>
-   <td>Number of threads to spawn for API calls.
-   </td>
+   <td>BACKOFF_FACTOR<br/>in Collection Section   </td>
+   <td>A backoff factor to apply between attempts after the second try. If the
+backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...]
+between retries. </td>
   </tr>
   <tr>
-   <td>MAX_RETRY in Collection Section
-   </td>
-   <td>Number of retries to attempt in case of request failure.
-   </td>
+   <td>TIMEOUT<br/>in Collection Section   </td>
+   <td>Request time out used by the requests library.   </td>
   </tr>
   <tr>
-   <td>BACKOFF_FACTOR in Collection Section
-   </td>
-   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries.
-   </td>
+   <td>LOGS_SUMO_ENDPOINT<br/>in MongoDBAtlas section   </td>
+   <td>HTTP source endpoint url created in Sumo Logic for ingesting Logs.   </td>
   </tr>
   <tr>
-   <td>TIMEOUT in Collection Section
-   </td>
-   <td>Request time out used by the requests library.
-   </td>
+   <td>METRICS_SUMO_ENDPOINT<br/>In MongoDBAtlas section   </td>
+   <td>HTTP source endpoint url created in Sumo Logic for ingesting Metrics.   </td>
   </tr>
-  <tr>
-   <td>LOGS_SUMO_ENDPOINT in MongoDBAtlas section
-   </td>
-   <td>HTTP source endpoint url created in Sumo Logic for ingesting Logs.
-   </td>
-  </tr>
-  <tr>
-   <td>METRICS_SUMO_ENDPOINT in MongoDBAtlas section
-   </td>
-   <td>HTTP source endpoint url created in Sumo Logic for ingesting Metrics.
-   </td>
-  </tr></small>
 </table>
 
 </details>
@@ -649,7 +609,7 @@ To run the function manually, do the following:
 	 ```bash
 	 python3 -m sumomongodbatlascollector.main
 	 ```
-2. Check the automatically generated logs in  **/tmp/sumoapiclient.log **to verify whether the function is getting triggered or not.
+2. Check the automatically generated logs in **/tmp/sumoapiclient.log** to verify whether the function is getting triggered or not.
 3. If you installed the collector as `root` user and then run it as a normal user, you will see an error message similar to the following. This is because the config is not present in the home directory of the user that is running the collector. Switch to `root` user and run the script again.
 
 You can also avoid this error by running the script with config file path as first argument.
@@ -669,15 +629,19 @@ Exception: Invalid config
 
 ## Installing the MongoDB Atlas app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall/>
 
 ## Viewing MongoDB Atlas dashboards
 
-{@import ../../reuse/filter-dashboards.md}
+import FilterDashboards from '../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
 
 #### Overview
 
-The **MongoDB Atlas - Overview** dashboard provides an at-a-glance overview of server availability, messages, and commands. Panels display information on messages by severity and component, trends in messages by component and severity, as well as trends for database (DB) commands and create, read, update, and delete (**CRUD**) function commands.
+The **MongoDB Atlas Overview** dashboard provides an at-a-glance overview of server availability, messages, and commands. Panels display information on messages by severity and component, trends in messages by component and severity, as well as trends for database (DB) commands and create, read, update, and delete (**CRUD**) function commands.
 
 Use this dashboard to:
 * Identify key operational metrics. You can drill down for granular data by clicking any of the first row panels. Monitor recent events and alerts. Click on the ID links to drill-down into the MongoDB Atlas console for more details.
@@ -691,7 +655,7 @@ The MongoDB Atlas Security dashboards aim to provide a comprehensive view of Atl
 
 #### Events
 
-The **MongoDB Atlas - Events** dashboard provides information on Atlas project and organization-level changes. Panels show information on the type, number, location and recent events.
+The **MongoDB Atlas Events** dashboard provides information on Atlas project and organization-level changes. Panels show information on the type, number, location and recent events.
 
 Use this dashboard to:
 * Monitor most recent and past Atlas change events to ensure that the number and type of events are in line with expectations.
@@ -701,7 +665,7 @@ Use this dashboard to:
 
 #### Alerts
 
-The **MongoDB Atlas - Alerts** dashboard provides an at-a-glance view view of alerts triggered in your Atlas environment. Panels show information around the total number and number of  open alerts, recent alerts, alert types and status.
+The **MongoDB Atlas Alerts** dashboard provides an at-a-glance view view of alerts triggered in your Atlas environment. Panels show information around the total number and number of  open alerts, recent alerts, alert types and status.
 
 Use this dashboard to:
 * Identify and address all open and recent alerts.
@@ -711,7 +675,7 @@ Use this dashboard to:
 
 #### Audit
 
-The **MongoDB Atlas - Audit** dashboard provides information around security events in your Atlas environment such as failed authentication, authorization and audit events, audit event trends, and originating geographic locations. Panels also display details on audit events by action type and user, and recent audit events by created and deleted resources.
+The **MongoDB Atlas Audit** dashboard provides information around security events in your Atlas environment such as failed authentication, authorization and audit events, audit event trends, and originating geographic locations. Panels also display details on audit events by action type and user, and recent audit events by created and deleted resources.
 
 Use this dashboard to:
 * Identify unusually high number of eventsfailed eventby analyzing trend graphs.
@@ -737,7 +701,7 @@ Use this dashboard to:
 
 #### Metrics
 
-The **MongoDB Atlas - Metrics** dashboard provides an at-a-glance view of database performance with graphs showing memory availability, data size, cache in bytes, and returned document ratios.
+The **MongoDB Atlas Metrics** dashboard provides an at-a-glance view of database performance with graphs showing memory availability, data size, cache in bytes, and returned document ratios.
 
 Use this dashboard to:
 * Determine node health based on page faults, cache dirty bytes, replication headroom, queued operations, and  disk write latency.
@@ -748,7 +712,7 @@ Use this dashboard to:
 
 #### Slow Queries
 
-The **MongoDB Atlas - Slow Queries** dashboard provides details on the number of slow queries by type,trends, and slow server status.
+The **MongoDB Atlas Slow Queries** dashboard provides details on the number of slow queries by type,trends, and slow server status.
 
 Use this dashboard to:
 * Identify and fix slow queries.
@@ -764,7 +728,7 @@ The Operations dashboards monitor database operations, such as indexing, shardin
 
 #### Errors and Warnings
 
-The **MongoDB Atlas - Errors and Warnings** dashboard provides information on errors, warnings by component, severity and type.. Panels also show information on daily error and warning summaries, socket exceptions, timeout events, and MongoDB exit events.
+The **MongoDB Atlas Errors and Warnings** dashboard provides information on errors, warnings by component, severity and type.. Panels also show information on daily error and warning summaries, socket exceptions, timeout events, and MongoDB exit events.
 
 Use this dashboard to:
 * Identify and fix errors and warnings.
@@ -775,7 +739,7 @@ Use this dashboard to:
 
 #### Logins and Connections
 
-The **MongoDB Atlas - Logins and Connections** dashboard provides a high-level view of the geographic locations of client connection requests, logins from malicious remote IPS, and geographic locations of failed logins. Panels also display information on overall failed login attempts, threat intel by remote IP, and failed logins by user.
+The **MongoDB Atlas Logins and Connections** dashboard provides a high-level view of the geographic locations of client connection requests, logins from malicious remote IPS, and geographic locations of failed logins. Panels also display information on overall failed login attempts, threat intel by remote IP, and failed logins by user.
 
 Use this dashboard to:
 * Identify requests coming in malicious remote IPs and their geographic locations and use this information to fix your firewall or WAF devices.
@@ -785,7 +749,7 @@ Use this dashboard to:
 
 #### Replication
 
-The **MongoDB Atlas - Replication** dashboard provides information on changes in replication configurations. Panels display details on replication errors, warnings, events, as well as information around primary and secondary nodes.
+The **MongoDB Atlas Replication** dashboard provides information on changes in replication configurations. Panels display details on replication errors, warnings, events, as well as information around primary and secondary nodes.
 
 Use this dashboard to:
 * Identify and fix replication and availability errors.
@@ -795,7 +759,7 @@ Use this dashboard to:
 
 #### Sharding
 
-The **MongoDB Atlas - Sharding** dashboard provides information on Atlas cluster sharding. Panels show details on warnings, errors, chunk split failures, balancer failures, chunks moving by collection, and chunks moving between shards.
+The **MongoDB Atlas Sharding** dashboard provides information on Atlas cluster sharding. Panels show details on warnings, errors, chunk split failures, balancer failures, chunks moving by collection, and chunks moving between shards.
 
 Use this dashboard to:
 * Identify and fix sharding and balancing related errors and warnings.

@@ -20,18 +20,18 @@ To use this feature, you'll need to enable access to your OneLogin logs and inge
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-account.md) at any time.
 
-* **OneLogin Enterprise** or **Unlimited **plan subscription.
+* **OneLogin Enterprise** or **Unlimited** plan subscription.
 * **Configure an Event Broadcaster**
    * Add a Sumo Logic [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) to your Sumo Logic Org.
    * Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for your OneLogin data. Make sure to set the **Source Category** when configuring the OneLogin source. For example, onelogin.
    * From OneLogin, configure a broadcaster that points to this endpoint using the instructions in the [OneLogin documentation](https://onelogin.service-now.com/support?id=kb_article&sys_id=43f95543db109700d5505eea4b961959). You must use SIEM (NDJSON) format. Use the Sumo Logic HTTP Source URL as the Listener URL, and custom header is not needed.
 
 
-## Log types and 
+## Log types
 
-The Sumo Logic app for OneLogin uses event logs in NDJSON format. 
+The Sumo Logic app for OneLogin uses event logs in NDJSON format.
 
-### Sample log message
+## Sample log messages
 
 Each event is a single-line JSON, containing information such as:
 
@@ -111,7 +111,8 @@ Each event is a single-line JSON, containing information such as:
 }
 ```
 
-## Sample query
+## Sample queries
+
 
 ```sql title="Name - Events by User"
 _sourceCategory=onelogin
@@ -123,11 +124,15 @@ _sourceCategory=onelogin
 
 ## Installing the OneLogin app
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing OneLogin dashboards
 
-{@import ../../reuse/filter-dashboards.md}
+import FilterDashboards from '../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
 
 ### Overview
 

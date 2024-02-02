@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Front Door](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview) is Microsoft’s modern cloud Content Delivery Network (CDN) that provides fast, reliable, and secure access between your users and your applications’ static and dynamic web content across the globe. This integration helps in monitoring your application, track requests, and identify performance bottlenecks in your CDN.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Front Door, you can collect the following logs and metrics:
 
@@ -18,18 +18,16 @@ For Azure Front Door, you can collect the following logs and metrics:
 * **Web application firewall (WAF) logs**. These can be used to detect potential attacks and false positive detections, which indicates legitimate requests that the WAF blocked. For more information on the WAF logs, see Azure Web Application Firewall monitoring and logging.
 * **Health probe logs**. These can be used to identify origins that are unhealthy or that don't respond to requests from some of Front Door's geographically distributed PoPs.
 
-For more information on logs schema, refer to the below documentations:
-
+For more information on logs schema, refer to the below documentation:
 * [Standard/Premium tier](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-standard-premium#logs)
 * [Classic](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-classic#diagnostic-logging)
 
-* **Metrics**. Usage metrics from your CDN endpoint are in below namespaces:
-  * [Microsoft.Network/frontdoors](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-frontdoors-metrics)
+For more information on metrics, refer to the below documentation. Usage metrics from your CDN endpoint are in below namespaces:
+* [Microsoft.Network/frontdoors](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-frontdoors-metrics)
 
-For more information on supported dimensions, refer to the below documentations:
-
-* [Standard/Premium tier](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-standard-premium#metrics).
-* [Classic](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-classic#metrics).
+For more information on supported dimensions, refer to the below documentation:
+* [Standard/Premium tier](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-standard-premium#metrics)
+* [Classic](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-classic#metrics)
 
 ## Setup
 

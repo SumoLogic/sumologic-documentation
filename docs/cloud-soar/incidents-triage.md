@@ -452,7 +452,7 @@ Within the CyberArk fields you need to enter the name of the Properties present 
 Pay attention to uppercase and lowercase letters.
 :::
 
-<img src={useBaseUrl('img/cloud-soar/CyberArk4.png')} alt="Property names" style={{border: '1px solid black'}} width="400"/>
+<img src={useBaseUrl('img/cloud-soar/CyberArk4.png')} alt="Property names" style={{border: '1px solid gray'}} width="400"/>
 
 Through the name of the Properties, (in the above case **MB3**) during the execution of the resource, it will be replaced with the value present on CyberArk for that resource, in our case **84ca4444-9082-40b7-**.
 

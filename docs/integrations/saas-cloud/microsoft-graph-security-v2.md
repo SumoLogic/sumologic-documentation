@@ -22,13 +22,14 @@ With the Microsoft Graph Security  V2 app, you can:
 
 Overall, the Sumo Logic app for Microsoft Graph Security V2 is designed to help organizations improve their web security posture and protect their users and assets from potential threats. The app enables security teams to proactively detect and mitigate potential security risks, and improve compliance with security policies and regulations.
 
-## Log Types
+## Log types
 
 This app uses Sumo Logic's Microsoft Graph Security Source to collect v2 [Alerts](https://learn.microsoft.com/en-us/graph/api/security-list-alerts_v2?view=graph-rest-1.0&tabs=http) from the Microsoft Graph Security API endpoint. Refer to [this document](https://learn.microsoft.com/en-us/graph/api/resources/security-alert?view=graph-rest-1.0) for alert fields. 
 
-### Sample log message
+### Sample log messages
 
-<details><summary>Sample Alert Log (click to expand)</summary>
+<details>
+<summary>Sample Alert Log (click to expand)</summary>
 
 ```json title="Sample Alert Log"
 {
@@ -171,7 +172,7 @@ This app uses Sumo Logic's Microsoft Graph Security Source to collect v2 [Alerts
 
 </details>
 
-### Sample Query     
+### Sample queries     
 
 ```sql title="Total Alerts"
 _sourceCategory="ms_alerts"
@@ -192,7 +193,9 @@ This section has instructions for installing the Microsoft Graph Security app fo
 
 Locate and install the app you need from the App Catalog. If you want to see a preview of the dashboard included with the app before installing, click **Preview Dashboards**.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Microsoft Graph Security Dashboards​
 

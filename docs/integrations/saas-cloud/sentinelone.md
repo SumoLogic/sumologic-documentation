@@ -1,6 +1,6 @@
 ---
 id: sentinelone
-title: Sumo Logic App for SentinelOne
+title: SentinelOne
 sidebar_label: SentinelOne
 description: The Sumo Logic App for SentinelOne offers functionality for monitoring and analyzing your organization's SentinelOne Threats and Agents logs.
 ---
@@ -339,11 +339,15 @@ _sourceCategory=sentinelone  uuid
 
 ## Installing the SentinelOne app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing SentinelOne dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Agent Overview
 

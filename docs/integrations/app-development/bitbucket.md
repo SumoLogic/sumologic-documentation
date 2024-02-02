@@ -68,7 +68,7 @@ For log samples, refer to [Bitbucket Event Documentation](https://confluence.atl
 ```
 
 
-### Sample Query
+### Sample queries
 
 This section provides a sample from the **Failed Deployments** panel on the **Bitbucket Deployment** dashboard.
 
@@ -154,7 +154,9 @@ Sumo Logic needs to understand the event type for incoming events (for example, 
 
 This section provides instructions for installing the Bitbucket app.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Bitbucket Dashboards
 

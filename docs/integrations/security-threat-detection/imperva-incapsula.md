@@ -17,6 +17,7 @@ The Sumo Logic app for Imperva Incapsula - Web Application Firewall (WAF) helps 
 
 The Imperva Incapsula - Web Application Firewall App uses security and access logs. For more details, see [here](https://docs.incapsula.com/Content/management-console-and-settings/log-integration.htm?Highlight=siem#Overview).
 
+
 ### Sample queries
 
 ```sql title="Parse Command for all CEF items in Imperva Incapsula"
@@ -97,10 +98,15 @@ To configure log collection for Sumo Logic, do the following:
 
 ## Installing the Imperva-Incapsula WAF app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Imperva-Incapsula WAF dashboards​
-{@import ../../reuse/apps/view-dashboards.md}
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

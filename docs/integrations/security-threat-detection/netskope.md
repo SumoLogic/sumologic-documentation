@@ -22,12 +22,13 @@ For more information on Netskope, refer to the Netskope [documentation](https://
 
 ## Collect logs for Netskope
 
-To collect logs from the Netskope platform, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app. You can view the Netskope legacy collection method [here](/docs/integrations/security-threat-detection/netskope-legacy-collection/).
+To collect logs from the Netskope platform, use the [new Cloud-to-Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app. You can view the Netskope legacy collection method [here](/docs/integrations/security-threat-detection/netskope-legacy-collection/).
 
 
 ### Sample log message
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -84,7 +85,7 @@ To collect logs from the Netskope platform, use the [new Cloud to Cloud Integrat
 
 </details>
 
-### Sample query  
+### Sample queries  
 
 The following query sample was is from the Total Sessions panel of the Application Overview Dashboard.
 
@@ -108,7 +109,9 @@ This section demonstrates how to install the Netskope app, and provides examples
 * **Application Usage**. Insights into application usage; specifically by devices, users, users and traffic patterns.
 * **Security Alerts**. Visibility into Netskope security alerts and violations and the ability to identify effects of a breach.  
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Netskope dashboards
 
@@ -117,7 +120,9 @@ The Netskope dashboards are grouped by their component in the following two cate
 * Application Usage
 * Security Alerts
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Application Overview
 

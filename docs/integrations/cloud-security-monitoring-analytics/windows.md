@@ -57,7 +57,7 @@ The Windows - Cloud Security Monitoring and Analytics App uses Windows Security 
 }
 ```
 
-### Sample query
+### Sample queries
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
@@ -87,11 +87,15 @@ For more information on local or remote Windows Event Log Source configuration, 
 
 ## Installing the Windows Cloud Security app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Windows Cloud Security dashboards​
 
-{@import ../../reuse/filter-dashboards.md}
+import FilterDashboards from '../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
 
 ### Security Monitoring - Inventory
 

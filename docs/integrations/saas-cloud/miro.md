@@ -1,6 +1,6 @@
 ---
 id: miro
-title: Sumo Logic App for Miro
+title: Miro
 sidebar_label: Miro
 description: The Sumo Logic App for Miro offers functionality for monitoring and investigating potential security threats.
 ---
@@ -19,7 +19,7 @@ With the Sumo Logic App for Miro, security teams can stay on top of potential se
 
 This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://developers.miro.com/v1.0/reference/get-logs) from Miro.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Audit Log"
 {
@@ -54,7 +54,7 @@ This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://develop
       "id": "450256789"
 }
 ```
-## Sample query
+## Sample queries
 
 ```sql title="Total Phishing Security Tests"
 _sourceCategory=miro
@@ -71,11 +71,15 @@ Follow the instructions for setting up [Cloud-to-Cloud Integration for Miro](/do
 
 ## Installing the Miro app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Miro dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

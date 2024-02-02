@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure IoT Hub](https://learn.microsoft.com/en-us/azure/iot-hub/iot-concepts-and-iot-hub) is a managed service hosted in the cloud that acts as a central message hub for communication between an IoT application and its attached devices. This integration helps in monitoring the device creation, device connections, device operations, device data usage, and device failures.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure IoT Hub, you can collect the following logs and metrics:
 
-* **Resource logs**. To know more about the different resource log category types and schemas collected for Azure IoT Hub, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/iot-hub/monitor-iot-hub-reference#resource-logs).
+* **Resource logs**. To learn more about the different resource log category types and schemas collected for Azure IoT Hub, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/iot-hub/monitor-iot-hub-reference#resource-logs).
 * **Platform Metrics for Azure IoT Hub**. These metrics are available in [Microsoft.Devices/IotHubs](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-devices-iothubs-metrics) namespace.
 For more information on supported metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/iot-hub/monitor-iot-hub-reference#metrics).
 

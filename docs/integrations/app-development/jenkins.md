@@ -29,7 +29,8 @@ The Jenkins app uses the following log types:
 
 ### Sample log messages
 
-<details><summary><strong>Click to expand.</strong> See sample log messages for log types, such as Authentication, Configuration Change, Shutdown, and Job Status.</summary>
+<details>
+<summary><strong>Click to expand.</strong> See sample log messages for log types, such as Authentication, Configuration Change, Shutdown, and Job Status.</summary>
 
 ```json title="Authentication"
 {
@@ -262,7 +263,7 @@ The Jenkins app uses the following log types:
 
 </details>
 
-### Sample query
+### Sample queries
 
 This sample query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
 
@@ -304,11 +305,12 @@ To create a new HTTP logs and metric source:
 You must have Admin privileges to perform any of the following installation procedures. This section walks you through the ways in which you can install the Jenkins plugin.
 
 :::note
-Beginning with Jenkins 2.357 (released on June 28, 2022) and the forthcoming 2.361.1 LTS release, Jenkins requires Java 11 or newer. The latest Sumo Logic Jenkins plugin works with Jenkins versions greater than 2.261.1 and Java 11. 
+Beginning with Jenkins 2.357 (released on June 28, 2022) and the forthcoming 2.361.1 LTS release, Jenkins requires Java 11 or newer. The latest Sumo Logic Jenkins plugin works with Jenkins versions greater than 2.261.1 and Java 11.
 To install the plugin with Java 8 and older version of Jenkins, use the old release [(2.2.1)](https://repo.jenkins-ci.org/artifactory/releases/org/jenkins-ci/plugins/sumologic-publisher/2.2.1/sumologic-publisher-2.2.1.hpi) of Sumo Logic plugin.
 :::
 
-<details><summary><strong>Updating the Jenkins plugin</strong>: use this method if the Jenkins plugin is already installed on your system and you want to update the version.</summary>
+<details>
+<summary><strong>Updating the Jenkins plugin</strong>: use this method if the Jenkins plugin is already installed on your system and you want to update the version.</summary>
 
 This section shows you how to update the version of the Jenkins plugin you have running on your system.
 
@@ -319,7 +321,8 @@ This section shows you how to update the version of the Jenkins plugin you have 
 
 </details>
 
-<details><summary><strong>Installing with the sumologic publisher</strong>: use this method if you're using the sumologic publisher for the first time.</summary>
+<details>
+<summary><strong>Installing with the sumologic publisher</strong>: use this method if you're using the sumologic publisher for the first time.</summary>
 
 This section shows you how to install the Jenkins plugin, if this is your first time using sumologic publisher.
 
@@ -332,7 +335,8 @@ To perform a first time installation, do the following:
 
 </details>
 
-<details><summary><strong>Manually installing the Jenkins plugin</strong>: use this method if there's a restriction on installing the plugin directly through the Jenkins plugin update center.</summary>
+<details>
+<summary><strong>Manually installing the Jenkins plugin</strong>: use this method if there's a restriction on installing the plugin directly through the Jenkins plugin update center.</summary>
 
 This section shows you how to manually install the Jenkins plugin.
 
@@ -373,9 +377,9 @@ To configure the Jenkins Plugin, do the following:
 6. Jenkins plugin can be configured with an HTTP proxy. Once this is configured all the logs which are being sent from the Jenkins plugin will go through the proxy before getting ingested in sumo logic. Following are the parameters which are introduced to support the same:
    * **Enable Proxy Setting (checkbox):** Check to Enable proxy setting
    * **Proxy Host:** User to input the proxy server host-name here.
-   * **Proxy port: **Specify the port of the proxy server.
+   * **Proxy port:** Specify the port of the proxy server.
    * **Enable Proxy Authentication(checkbox):** Check to enable Authentication for the proxy. This can be used if the proxy is configured with authentication.
-   * **Username: **Username to be used for the proxy Authentication.
+   * **Username:** Username to be used for the proxy Authentication.
    * **Password**: Password to be used for proxy authentication.
 7. Click **Apply**, and then click **Save**.
 
@@ -406,11 +410,15 @@ To configure Sumo Logic Jenkins Plugin for specific projects using configuration
 
 ## Installing the Jenkins app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Jenkins dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

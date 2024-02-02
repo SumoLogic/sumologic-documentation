@@ -17,6 +17,7 @@ The Windows Performance App assumes events are coming from Windows Performance S
 
 **Also, you need to configure an additional custom query for each Source.** For details, see [Collect Logs for Windows Performance App](#Collect-Logs-for-the-Windows-Performance-App).
 
+
 ### Sample log messages
 
 ```js
@@ -152,11 +153,15 @@ To complete the configuration, you'll need to edit each Windows Performance Sour
 
 ## Installing the Windows Performance app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Windows Performance dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Windows Performance Overview
 

@@ -1,6 +1,6 @@
 ---
 id: airtable
-title: Sumo Logic App for Airtable
+title: Airtable
 sidebar_label: Airtable
 description: The Sumo Logic App for the Airtable App offers functionality for monitoring and analyzing your organization's Airtable audit logs.
 ---
@@ -21,13 +21,13 @@ The Airtable App allows you to:
 
 The Airtable App also offers a pre-built dashboard that enables you to start monitoring your Airtable audit logs right away. The Airtable App for Sumo Logic is especially useful for organizations that must comply with regulatory requirements or maintain a high level of security. With the ability to monitor user activity and track changes in real time, you can quickly identify potential issues and respond to security incidents as they occur.
 
-## Log Types
+## Log type
 
-The Sumo Logic App for Airtable consumes Audit logs from your Airtable Enterprise account. Audit Logs track user activity and record changes made to the data in the system.
+The Sumo Logic app for Airtable consumes Audit logs from your Airtable Enterprise account. Audit Logs track user activity and record changes made to the data in the system.
 
 To understand how to access detailed records of changes made to the Airtable Enterprise account, refer to the [Airtable Audit logs](https://support.airtable.com/docs/how-to-access-enterprise-audit-logs#interpreting-audit-logs) documentation. This documentation provides information on the different types of logs that are available, how to access them, and what information they contain.
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {
@@ -59,7 +59,7 @@ To understand how to access detailed records of changes made to the Airtable Ent
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql="Active Team Members"
 _sourceCategory="Labs/airtable"
@@ -70,20 +70,20 @@ _sourceCategory="Labs/airtable"
 | count_distinct (action_id)
 ```
 
-## Installing the Airtable App
+## Installing the Airtable app
 
 Before you begin, collect logs from Airtable API and ingest them into Sumo Logic. Refer to the [Airtable API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source/) to create the source and use the same source category while installing the app.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
-## Viewing Airtable Dashboards​
+<AppInstall/>
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+## Viewing Airtable dashboards​
 
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<ViewDashboards/>
 
-### Overview Dashboard
+### Overview
 
 **Airtable - Overview** dashboard provides a high-level view of key metrics related to Airtable platform user activity, audits, and execution. It contains widgets that display data such as total audit logs and failed executions, action distribution, and top-performing actions and users. The dashboard also provides information on activity trends over time and user locations. The Audit Log Summary widget provides a quick overview of all platform activity. Overall, the dashboard helps users quickly understand how the platform is used and identify areas for improvement.<br/><img src={useBaseUrl('img/integrations/saas-cloud/airtable-overview.png')} alt="airtable-overview.png" width="600"/>

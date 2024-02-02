@@ -16,13 +16,14 @@ Key features of the Microsoft Graph Azure AD Reporting app include:
 - **Identify Suspicious Activities**. Identify suspicious activity, such as sign-ins from unfamiliar/risky locations or multiple sign-in attempts.
 - **Analyze Provisioning Activities**. Provides distribution of provisioning activities by status, actions, and initiators. It also shows the most frequent service principals used while provisioning.
 
-## Log Types
+## Log types
 
 The App uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https://learn.microsoft.com/en-us/graph/api/resources/directoryaudit?view=graph-rest-1.0), [Sign-in](https://learn.microsoft.com/en-us/graph/api/resources/signin?view=graph-rest-1.0), and [Provisioning](https://learn.microsoft.com/en-us/graph/api/resources/provisioningobjectsummary?view=graph-rest-1.0) activities.
 
-## Sample Log Message
+## Sample log messages
 
-<details><summary>View Sample Log Message</summary>
+<details>
+<summary>View Sample Log Message</summary>
 
 ```json title="Audit Activity Message"
 {
@@ -243,9 +244,10 @@ The App uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https:
 ```
 </details>
 
-## Sample Query
+## Sample queries
 
-<details><summary>View Sample Queries</summary>
+<details>
+<summary>View Sample Queries</summary>
 
 ```sql title="Audis by Resource Categories (Audit Activity)"
 _sourceCategory="azure_ad_reporting" "activityDisplayName" "operationType"
@@ -295,7 +297,9 @@ Follow the instructions for setting up [Microsoft Graph Azure AD Reporting](/doc
 
 This section has instructions for installing the Microsoft Graph Azure AD Reporting app for Sumo Logic.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Microsoft Graph Azure AD Reporting dashboards​​
 

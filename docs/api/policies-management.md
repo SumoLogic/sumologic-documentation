@@ -12,7 +12,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Policies Management API allows you to control the security and share settings of your organization. For more information, see [Security](https://help.sumologic.com/?cid=4041).
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
+
+<ApiIntro/>
 
 
 | Deployment | Documentation URL                                          |

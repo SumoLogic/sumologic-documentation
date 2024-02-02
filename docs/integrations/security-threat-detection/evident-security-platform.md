@@ -13,15 +13,18 @@ The Evident.io ESP App provides pre-configured searches and Dashboards that allo
 
 The Evident.io Evident Security Platform (ESP) streamlines and optimizes vulnerability and risk management. It continuously monitors the AWS cloud, automatically identifies security misconfigurations, enables rapid mitigation of risk through guided remediation and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the vulnerability and identified security misconfigurations from Evident and other data sources, you can reduce your security risk and improve your overall security posture.
 
+
 ## Log types
 
 The Evident.io ESP App collects monitoring alerts.
 
 For details on the log format and definitions, refer to Evident.io documentation at [http://docs.evident.io/](http://docs.evident.io/).
 
-### Sample log message
 
-<details><summary>Click to expand</summary>
+### Sample log messages
+
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -180,7 +183,8 @@ For details on the log format and definitions, refer to Evident.io documentation
 </details>
 
 
-### Sample query
+### Sample queries
+
 
 ```sql title="Alerts by Status"
 _sourceCategory=security_evident
@@ -205,7 +209,7 @@ This page demonstrates how to configure log collection for the Evident.io ESP Ap
     1. **Name.** Enter Evident.io SNS Integration.  
     2. **Source Category.** Enter security_evident.
 3. In the **Advanced** section, configure:
-    1. **Enable Timestamp Parsing. **Activate the check box Extract timestamp information from log files.
+    1. **Enable Timestamp Parsing.** Activate the check box Extract timestamp information from log files.
     1. **Time Zone.** Select Ignore time zone from log file, and select (UTC) Etc/UTC
 4. **Processing Rules.** Create the following [Mask Rule](/docs/send-data/collection/processing-rules/mask-rules):
     1. **Name.** Enable proper timestamp parsing.
@@ -263,11 +267,15 @@ For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-mes
 
 ## Installing the Evident.io ESP app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Evident.io ESP dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Evident.io ESP - Overview
 
@@ -283,14 +291,14 @@ For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-mes
 
 **Resolved Risks.** Shows which risks have been resolved over the last 24 hours in a table chart.
 
-**Total Risks over Time. **Shows a trendline of all alerts over the last 14 days in a stacked area chart.
+**Total Risks over Time.** Shows a trendline of all alerts over the last 14 days in a stacked area chart.
 
 
 ### Detailed Risks
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Evident.ioESP_DetailedRisks_Dashboard.png')} alt="Evident.io ESP dashboards" />
 
-**Total Risks. **Shows the number of total risks in a single value chart over the last 24 hours
+**Total Risks.** Shows the number of total risks in a single value chart over the last 24 hours
 
 **New Risks.** Displays the number of new risks for the last 24 hours in a single value chart.
 
@@ -298,6 +306,6 @@ For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-mes
 
 **Risks by Region.** Displays the total number of risks by region over the last 24 hours in a donut chart.
 
-**Risks by Signature. **Provides details on risks by signature name and identifier over the last 24 hours in a table chart.
+**Risks by Signature.** Provides details on risks by signature name and identifier over the last 24 hours in a table chart.
 
 **Risks by Account.** Displays the total number of risks by account name over the last 24 hours in a column chart.

@@ -14,6 +14,7 @@ The Windows JSON App provides insight into your Windows system's operation and e
 You may also be interested in the [Sumo Logic App for Windows Cloud Security Monitoring and Analytics](docs/integrations/cloud-security-monitoring-analytics/windows.md).
 :::
 
+
 ## Log types
 
 The Windows JSON App assumes events are coming from Windows Event Log Sources in JSON format. It does not work with third party logs.
@@ -25,7 +26,8 @@ Standard Windows event channels include:
 
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
-### Sample log message
+
+### Sample log messages
 
 ```json
 {
@@ -64,7 +66,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 }
 ```
 
-### Sample query
+### Sample queries
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
@@ -93,11 +95,15 @@ For more information on local or remote Windows Event Log Source configuration, 
 
 ## Installing the Windows JSON app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Windows JSON dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

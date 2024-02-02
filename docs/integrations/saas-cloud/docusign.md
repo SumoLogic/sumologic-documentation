@@ -1,6 +1,6 @@
 ---
 id: docusign
-title: Sumo Logic App for DocuSign
+title: DocuSign
 sidebar_label: DocuSign
 description: The DocuSign App for Sumo Logic helps you monitor and secure your DocuSign account by providing real-time insights into critical events, alerts, and user activity.
 ---
@@ -161,11 +161,15 @@ _sourceCategory="docusign_src"
 
 ## Installing the DocuSign app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing DocuSign dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
