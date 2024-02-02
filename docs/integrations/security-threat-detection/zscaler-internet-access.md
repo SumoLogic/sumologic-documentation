@@ -166,7 +166,7 @@ If you are not able to use Zscaler Cloud NSS, you can collect logs for the ZIA a
 }
 ```
 
-#### Sample query
+#### Sample queries
 
 
 ```sql title="Top 10 Blocked Base URLs"
