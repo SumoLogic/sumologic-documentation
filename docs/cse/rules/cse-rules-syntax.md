@@ -1340,7 +1340,7 @@ Encodes the URL into an ASCII character set.
 
 **Example**
 
-The following expression returns ""http%3A%2F%2Fyourmainserver-city55555.org%2Ffunctions%2Fmain.php%3Fgk%3DGk45MgHJhEYx8bPYvGfiWS7o3KLdfg90%26"
+The following expression returns "http%3A%2F%2Fyourmainserver-city55555.org%2Ffunctions%2Fmain.php%3Fgk%3DGk45MgHJhEYx8bPYvGfiWS7o3KLdfg90%26"
 
 `urlencode("http://yourmainserver-city55555.org/...iWS7o3KLdfg90&")`
 
