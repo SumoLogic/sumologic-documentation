@@ -44,7 +44,8 @@ The Sumo Logic app for Squadcast ingests events into Sumo Logic through an outgo
 
 ### Sample log message
 
-<details><summary>View sample log message</summary>
+<details>
+<summary>View sample log message</summary>
 
 ```json
 {

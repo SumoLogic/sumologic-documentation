@@ -21,7 +21,8 @@ The Sumo Logic app for Split ingests Split events into Sumo Logic through an out
 
 ### Sample log message
 
-<details><summary>View sample log message</summary>
+<details>
+<summary>View sample log message</summary>
 
 ```json
 {
@@ -94,7 +95,7 @@ _sourceCategory=webhook/split type auditLogType
 | where type matches "{{type}}" and auditLogType matches "{{auditLogType}}"
 | where !isBlank(auditLogType)
 | count by auditLogType
-| sort by _count, auditLogType asc 
+| sort by _count, auditLogType asc
 ```
 
 ## Setup

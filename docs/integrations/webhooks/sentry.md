@@ -24,7 +24,8 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
 
 ### Sample log message
 
-<details><summary>View sample log message</summary>
+<details>
+<summary>View sample log message</summary>
 
 ```json
   {
@@ -513,12 +514,12 @@ The Sumo Logic app for Sentry ingests Sentry events into Sumo Logic through an o
 ### Sample query
 
 ```sql
-_sourceCategory="webhook/sentry" "project_slug" 
+_sourceCategory="webhook/sentry" "project_slug"
 | json "event.contexts.client_os.name", "event.contexts.client_os.version", "event.contexts.browser.name", "event.contexts.browser.version", "event.environment", "level" as clientOs, clientVersion, browserName, browserVersion, environment, level nodrop
 | concat(browserName, " - ", browserVersion) as browserName
 | concat(clientOs, " - ", clientVersion) as clientOs
 | where browserName matches "{{browserName}}" and clientOs matches "{{clientOS}}" and level matches "{{logLevel}}" and environment matches "{{environment}}"
-| count 
+| count
 ```
 
 ## Setup

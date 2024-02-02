@@ -17,7 +17,8 @@ The Sumo Logic app for Netlify ingests site deployment events into Sumo Logic th
 
 ### Sample log message
 
-<details><summary>View sample log message</summary>
+<details>
+<summary>View sample log message</summary>
 
 ```json
 {
@@ -36,10 +37,10 @@ The Sumo Logic app for Netlify ingests site deployment events into Sumo Logic th
   "user_id": "6523cd133",
   "error_message": null,
   "required": [
-    
+
   ],
   "required_functions": [
-    
+
   ],
   "commit_ref": "21cad587a3c5dbef9e0f548d",
   "review_id": null,
@@ -62,7 +63,7 @@ The Sumo Logic app for Netlify ingests site deployment events into Sumo Logic th
   "context": "production",
   "deploy_time": 5,
   "available_functions": [
-    
+
   ],
   "screenshot_url": null,
   "site_capabilities": {
@@ -102,7 +103,7 @@ The Sumo Logic app for Netlify ingests site deployment events into Sumo Logic th
   "entry_path": null,
   "views_count": null,
   "function_schedules": [
-    
+
   ],
   "public_repo": false,
   "pending_review_reason": null,
@@ -119,7 +120,7 @@ The Sumo Logic app for Netlify ingests site deployment events into Sumo Logic th
 _sourceCategory="webhook/netlify" "name"
 | json "id", "state", "name", "created_at", "updated_at", "user_id", "build_id", "error_message", "branch", "locked", "title", "commit_message", "context", "deploy_time", "manual_deploy", "public_repo", "committer", "published_at" as id, state, name, createdAt, updatedAt, userId, buildId, errorMessage, branch, locked, title, commitMessage, context, deployTime, manualDeploy, publicRepo, committer, publishedAt nodrop
 | where name matches "{{siteName}}" and branch matches "{{branch}}" and context matches "{{context}}" and state matches "{{state}}" and manualDeploy matches "{{manualDeploy}}" and publicRepo matches "{{publicRepo}}"
-| count_distinct(name) 
+| count_distinct(name)
 ```
 
 ## Setup
