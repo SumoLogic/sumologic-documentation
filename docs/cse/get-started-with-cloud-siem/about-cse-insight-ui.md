@@ -186,13 +186,13 @@ The card for an Entity displays any [tags](/docs/cse/records-signals-entities-in
 
 * The number of times that Entity was referenced in the Signals in the Insight.
 * The number of Insights, created during the Insight generation [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold), in which the current Entity is the primary Entity.
-:::note
-The detection window is 14 days by default, but can be configured to be a different duration.
-:::
+   :::note
+   The detection window is 14 days by default, but can be configured to be a different duration.
+   :::
 * The number of Signals that fired during the Insight generation detection window, in which the current Entity is the primary Entity, and the sum of the severities for those Signals.
-:::note
-The cumulative severity value is color coded: cyan for less than 12, orange for 12-23, and red for 24 and above, assuming your Insight generation threshold is 12. If the Insight threshold is set to a value other than the default of 12, the color coding will be adjusted to match. 
-:::
+   :::note
+   The cumulative severity value is color coded: cyan for less than 12, orange for 12-23, and red for 24 and above, assuming your Insight generation threshold is 12. If the Insight threshold is set to a value other than the default of 12, the color coding will be adjusted to match. 
+   :::
 
 #### About the Entities tab graph view
 

@@ -16,16 +16,19 @@ To access this section, click the cog icon (<img src={useBaseUrl('img/cloud-soar
 
 App Central allows you to unlock the full Cloud SOAR potential. From this section, you can search and add new integrations, new playbooks, and even complete use cases with all the components needed (automation rules, integrations and playbooks) in one place.
 
-<img src={useBaseUrl('img/cloud-soar/appcentral.png')} alt="App Central" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/appcentral.png')} alt="App Central" style={{border: '1px solid gray'}} width="800"/>
 
 While browsing available integrations, you can check the details and all the actions available and install it.
+
+For a complete list of integrations and their documentation, see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations)
+
 
 ### Install an integration from App Central
 
 1. Use the **Search** bar in the upper right of the **Integrations** tab to find integrations.
 1. Click **Download** in the lower left corner of the integration box.
 1. Click **Install** to install the integration. After installation is complete, **Installed** replaces the **Download** link in the corner of the integration box.
-1. Click **Show More** in the integration box to see if there are additional steps you need to follow to configure the installed integration. 
+1. Find the article for the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) to see if there are additional steps you need to follow to configure the installed integration. 
    :::warning
    Failure to perform these additional steps may result in the integration not working properly.
    :::
@@ -77,29 +80,25 @@ Following is an example of a certified action.<br/><img src={useBaseUrl('img/clo
 
 You can add one or more resources to the certified integration (as explained in [Integrations](/docs/cloud-soar/automation#integrations)), or you use it as-is. 
 
-### Clone an integration
+### Duplicate an integration
 
-To modify an integration's resource code and actions code, you must first clone the integration and make your modifications in the cloned version. When you click the **Clone integration** button, a new integration will be created in the integrations list with an incremented name. <br/><img src={useBaseUrl('img/cloud-soar/integration-duplicate.png')} alt="Clone certified integration" width="600"/>
+To modify an integration's resource code and actions code, you must first duplicate the integration and make your modifications in the duplicated version. When you click the **Duplicate integration** button, a new integration will be created in the integrations list with an incremented name. <br/><img src={useBaseUrl('img/cloud-soar/integration-duplicate.png')} alt="Duplicate certified integration" width="600"/>
 
-Following is a cloned integration:<br/><img src={useBaseUrl('img/cloud-soar/integration-duplicated.png')} alt="Cloned integration" width="250"/>
+Following is a duplicated integration:<br/><img src={useBaseUrl('img/cloud-soar/integration-duplicated.png')} alt="Duplicated integration" width="250"/>
 
-If the certified integration resource was configured before the cloning process, all the settings will be saved and replicated inside the cloned integration. There is no need to reset the cloned integration.
+If the certified integration resource was configured before the duplication process, all the settings will be saved and replicated inside the duplicated integration. There is no need to reset the duplicated integration.
 
-In the following example, the integration resource received an incremented name, but not the actions available for that integration. This facilitates the automation process and helps prevent confusion.<br/><img src={useBaseUrl('img/cloud-soar/integration-duplicated-resources-actions.png')} alt="No changes to cloned resource actions" width="600"/>
+In the following example, the integration resource received an incremented name, but not the actions available for that integration. This facilitates the automation process and helps prevent confusion.<br/><img src={useBaseUrl('img/cloud-soar/integration-duplicated-resources-actions.png')} alt="No changes to duplicated resource actions" width="600"/>
 
-Since only the cloned integration can be modified, the actions name represents the activity that the action will perform, whether it is modified or not. While building playbooks, you can choose which resource you want to use. If the cloned resource is chosen, the actions available will be the ones belonging to the cloned resource.
+Since only the duplicated integration can be modified, the actions name represents the activity that the action will perform, whether it is modified or not. While building playbooks, you can choose which resource you want to use. If the duplicated resource is chosen, the actions available will be the ones belonging to the duplicated resource.
 
 Following is an example of selecting the action’s resource while building a playbook. The selected action is **Add Comment To Issue**.<br/><img src={useBaseUrl('img/cloud-soar/integration-add-comment-to-issue.png')} alt="Add comment to issue" width="600"/>
-
 
 ## Playbook
 
 A **Playbook** is a predefined set of actions or tasks to respond to a certain event or incident type. The creation and utilization of playbooks can allow an organization's teams to respond to an incident in a consistent, focused, and repeatable fashion.
 
-Playbooks are automated workflows which can be configured to execute
-automatically without user intervention, acting on information from the
-incident, or can be executed in interactive mode, where user input is
-required to authorize predefined actions.
+Playbooks are automated workflows which can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
 
 Watch this micro lesson to learn how to create custom playbooks.
 
@@ -118,209 +117,131 @@ Watch this micro lesson to learn how to create custom playbooks.
 
 To configure a new Playbook, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation**.
 
-A list of any previously created Playbooks will be displayed on the
-left-side of the page. Click **+** to add a new playbook.
+A list of any previously created Playbooks will be displayed on the left side of the page. Click **+** to add a new playbook.
 
-A new configuration box will be displayed. Name your new playbook,
-select the **Incident Type** to associated with it, and click save to continue. [Learn more](#custom-fields).
+A new configuration box will be displayed. Name your new playbook, select the **Incident Type** to associate with it, and click save to continue. [Learn more](#custom-fields).
 
-Once the new playbook has been saved, it will be displayed on the
-left-side of the screen. To begin to configure the new playbook, select
-it from the list and click the **Edit** button at the bottom of the
-screen.
+Once the new playbook has been saved, it will be displayed on the left side of the screen. To begin to configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen.
 
 <img src={useBaseUrl('img/cloud-soar/image72.png')} alt="Empty playbook" width="800"/>
 
-Opening the playbook will present a black screen with a **Start** node, and
-an **End** node. These nodes dictate the beginning and the end of the
-playbook's automation sequence. They can be dragged and dropped anywhere
-on the screen to allow for multiple integrations and conditional
-statements to be executed.
+Opening the playbook will present a black screen with a **Start** node, and an **End** node. These nodes dictate the beginning and the end of the playbook's automation sequence. They can be dragged and dropped anywhere on the screen to allow for multiple integrations and conditional statements to be executed.
 
-To begin to add the first node within the new playbook, click the **+** on
-the **Start** node.
+To begin to add the first node within the new playbook, click the **+** on the **Start** node.
 
 <img src={useBaseUrl('img/cloud-soar/image73.png')} alt="New playbook" width="800"/>
 
-
-The playbook configuration page is displayed. It gives you the ability
-to choose from the following options:
-* **Action**: Automatically take specific actions such as enriching
- data or taking containment steps when an Incident Template is matched
-* **Task**: Assign a task to an Cloud SOAR user
-* **Condition**: Use conditional statements to define what actions
- should be taken in response to previous input/output feeds
-* **User Choice**: Pause automatic processing to allow for manual
- intervention
-* **Playbook**: Call other R3 Playbooks in response to conditional
- statements and/or user choice actions
+The playbook configuration page is displayed. It gives you the ability to choose from the following options:
+* **Action**: Automatically take specific actions such as enriching data or taking containment steps when an Incident Template is matched.
+* **Task**: Assign a task to an Cloud SOAR user.
+* **Condition**: Use conditional statements to define what actions should be taken in response to previous input/output feeds.
+* **User Choice**: Pause automatic processing to allow for manual intervention.
+* **Playbook**: Call other R3 Playbooks in response to conditional statements and/or user choice actions.
 
 ### Action
 
-Select **Action** from the node types. A new screen will be displayed
-showing all actions a user has to choose from. These action types
-(Enrichment, Containment, Custom Actions, and Notifications) will
-directly interact with Cloud SOAR's integrations to either gather data or
-initiate actions automatically.
+Select **Action** from the node types. 
 
 <img src={useBaseUrl('img/cloud-soar/image74.png')} alt="Node Adding" width="500"/>
 
+A new screen will be displayed showing all actions a user has to choose from. 
+
 <img src={useBaseUrl('img/cloud-soar/image75.png')} alt="Node Adding" width="500"/>
 
+These action types will directly interact with Cloud SOAR's integrations to either gather data or initiate actions automatically. Select the **Type** of action:
+   * **Containment**. Performs some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall. 
+   * **Custom**. Performs an action defined in a custom action YAML file. For an example of a custom action created for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
+   * **Enrichment**. Enriches data with additional information, such as adding information about a known malicious IP address.
+   * **Notification**. Sends a notification, for example, an email or a post in a messaging service.
+   * **Scheduled**. Runs an action on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed. 
+   :::note
+   The **Type** drop-down menu shows only the action types available in the selected integration.
+   :::
 
-As an example, lets choose Enrichment from the action type screen. As
-with any action type we choose, a new section will be added to our
-configurations screen asking for more clarifying information on how we
-would like this action to be performed.
+As an example, lets choose Enrichment from the action type screen. As with any action type we choose, a new section will be added to our configurations screen asking for more clarifying information on how we would like this action to be performed.
 
-Title the enrichment action something that can easily be identified by
-the action that is being taken, such as **Domain Reputation Check**.
-Next, we want to choose the action, expand the **Action** dropdown list
-and review the available options.
+Title the enrichment action something that can easily be identified by the action that is being taken, such as **Domain Reputation Check**. Next, we want to choose the action, expand the **Action** dropdown list and review the available options.
 
 <img src={useBaseUrl('img/cloud-soar/image76.png')} alt="Node Creation" width="500"/>
 
 <img src={useBaseUrl('img/cloud-soar/image77.png')} alt="Node Resource Adding" width="500"/>
 
+Expand the **Resource** dropdown list to view all active Integration feeds. The feeds found in each action type are those who can execute the specified action (i.e. blocking of an IP address can be done through firewalls/WAFs, etc.). Once a resource is assigned a new dropdown list will be displayed. Options found in this list are comprised of **Incident Artifact** fields, which are the incident fields Cloud SOAR parses out when issuing new incidents.
 
-Expand the **Resource** dropdown list to
-view all active Integration feeds. The feeds found in each action type
-are those who can execute the specified action (i.e. blocking of an IP
-address can be done through firewalls/WAFs, etc.). Once a resource is
-assigned a new dropdown list will be displayed. Options found in this
-list are comprised of **Incident Artifact** fields, which are the incident
-fields Cloud SOAR parses out when issuing new incidents.
+Continuing from the example above, an Enrichment action is being called to gather Domain Reputation information from VirusTotal for the domain observed in the Incident. Once all enrichment variables are identified, click ****Create**** to continue.
 
-Continuing from the example above, an Enrichment action is being called
-to gather Domain Reputation information from VirusTotal for the domain
-observed in the Incident. Once all enrichment variables are identified,
-click ****Create**** to continue.
-
-The newly added node will now be visible in playbook configuration
-screen. To add an additional node hover over the newly created
-enrichment task. A menu bar will be displayed at the bottom of the node,
-click **+** to add a new node, the pencil icon to edit the existing node,
-or the trash can to delete the existing node.
+The newly added node will now be visible in playbook configuration screen. To add an additional node hover over the newly created enrichment task. A menu bar will be displayed at the bottom of the node, click **+** to add a new node, the pencil icon to edit the existing node, or the trash can to delete the existing node.
 
 <img src={useBaseUrl('img/cloud-soar/image78.png')} alt="Node menu" width="600"/>
 
 
 ### Task
 
-From the node selection menu, choose **Task**. A new configuration screen
-will be displayed. Title the new task and add any description if
-desired. The next dropdown lists are **Authorizer** and **Owner** fields.
-The **Authorizer** field is the user who is assigning the task, and the
-**Owner** field is the user who will be assigned the task to complete.
-When the task has been developed, click **Create**.
+From the node selection menu, choose **Task**. A new configuration screen will be displayed. Title the new task and add any description if desired. The next dropdown lists are **Authorizer** and **Owner** fields. The **Authorizer** field is the user who is assigning the task, and the **Owner** field is the user who will be assigned the task to complete. When the task has been developed, click **Create**.
 
 <img src={useBaseUrl('img/cloud-soar/image79.png')} alt="Task Node" width="600"/>            
 
-
-For playbook entities which support user-defined text input, such as email notifications, help desk ticket creation and task creation, variable placeholders may be added to the user defined text which will be replaced with incident variables at run
-time. These variable placeholders may be added by clicking on the <img src={useBaseUrl('img/cloud-soar/image80.png')} alt="Placeholder icon" width="25"/> icon. To add a variable placeholder,
-begin typing in the newly inserted placeholder box and Cloud SOAR will
-display a list of available options which match. For example, typing
-**incident**. will display a list of all the valid incident fields which
-may be added as variable placeholders.
+For playbook entities which support user-defined text input, such as email notifications, help desk ticket creation and task creation, variable placeholders may be added to the user defined text which will be replaced with incident variables at run time. These variable placeholders may be added by clicking on the <img src={useBaseUrl('img/cloud-soar/image80.png')} alt="Placeholder icon" width="25"/> icon. To add a variable placeholder, begin typing in the newly inserted placeholder box and Cloud SOAR will display a list of available options which match. For example, typing **incident**. will display a list of all the valid incident fields which may be added as variable placeholders.
 
 ### Condition
 
-From the node's menu, choose **Condition**. A new configuration screen
-will be displayed which will enable a user to define a conditional
-statement to be met before the next node type can be executed. Under
-**Condition 1,** click on **Select a value** to define the first
-condition.
+From the node's menu, choose **Condition**. A new configuration screen will be displayed which will enable a user to define a conditional statement to be met before the next node type can be executed. Under **Condition 1,** click on **Select a value** to define the first condition.
 
 <img src={useBaseUrl('img/cloud-soar/image81.png')} alt="Condition Node" width="600"/>    
 
 <img src={useBaseUrl('img/cloud-soar/image82.png')} alt="Condition Node" width="600"/>   
 
-
-When developing the first condition, users have multiple options to
-choose from:
+When developing the first condition, users have multiple options to choose from:
 
 - **Insert a custom value**. Will execute when a user-defined variable is observed within an Incident.
 - **Get value from an Incident field**. Will execute when a value is observed within an Incident Field (see [Incident Fields](#custom-fields)).
 - **Get value from Triage Field**. Will execute when a value is observed within a Triage Field (see [Triage Fields](#triage-1)).
 - **Get value from previous action**. Will execute when a value is observed from a previous input or output field.
 
-From our earlier example, we are going to choose to evaluate the output
-from our Domain Reputation check of the observed domain. Click **Output**
-from **Get value from previous action**.
+From our earlier example, we are going to choose to evaluate the output from our Domain Reputation check of the observed domain. Click **Output** from **Get value from previous action**.
 
-A list of available results or outputs from the previously selected
-integration will be displayed in JSON format. Select which output type
-(e.g., hashes, IP addresses, domains) to evaluate and add it to the
-condition.
+A list of available results or outputs from the previously selected integration will be displayed in JSON format. Select which output type (e.g., hashes, IP addresses, domains) to evaluate and add it to the condition.
 
 <img src={useBaseUrl('img/cloud-soar/image83.png')} alt="Node Placeholder Function" width="600"/>   
 
-
-The selected output type will be displayed under **Condition 1**. Select
-which condition you would like for the output results to meet from the
-inequality operators below and click **Select a value** to define the
+The selected output type will be displayed under **Condition 1**. Select which condition you would like for the output results to meet from the inequality operators below and click **Select a value** to define the
 condition.
 
 <img src={useBaseUrl('img/cloud-soar/image84.png')} alt="Condition Node Settings" width="600"/>   
 
-
-The condition we want to meet for this example is "Advance this Incident
-forward if the observed domain returns at least 1 result or **row** from
-VirusTotal". We insert **0** into the custom value field and click **+** to
+The condition we want to meet for this example is "Advance this Incident forward if the observed domain returns at least 1 result or **row** from VirusTotal". We insert **0** into the custom value field and click **+** to
 add it to the condition.
 
 <img src={useBaseUrl('img/cloud-soar/image85.png')} alt="Manual Value Adding" width="600"/>   
 
-
-Now that **Condition 1** is defined*,* users can choose to filter their
-results further by selecting an AND/OR operator to define another
-condition.
+Now that **Condition 1** is defined*,* users can choose to filter their results further by selecting an AND/OR operator to define another condition.
 
 <img src={useBaseUrl('img/cloud-soar/image86.png')} alt="Condition Settings" width="600"/>   
 
-
 Once the condition is defined, click **Create** to add it to the playbook.
 
-When new conditions are created, we will need to define what happens
-when their results meet one of our criteria. A new node is added to the
-condition below. This node breaks the condition down into successes and
-failures and can be modified by hovering over it and clicking **+**.
+When new conditions are created, we will need to define what happens when their results meet one of our criteria. A new node is added to the condition below. This node breaks the condition down into successes and failures and can be modified by hovering over it and clicking **+**.
 
 <img src={useBaseUrl('img/cloud-soar/image87.png')} alt="Use of Condition" width="600"/> 
 
-
-This new node represents a decision tree in which both results, success
-or failure, will have to be defined. Follow the steps above to finalize
-the condition.
+This new node represents a decision tree in which both results, success or failure, will have to be defined. Follow the steps above to finalize the condition.
 
 <img src={useBaseUrl('img/cloud-soar/image88.png')} alt="Nodes List" width="600"/> 
 
-
 ### User Choice
 
-From the node's menu, select **User Choice**. The User Choice option allows
-for the system to pose a question to the incident owner. Based off of
-the analysis the incident owner performs on the previous information
-gathered, they will be presented a choice to take an automated action
-such as blocking an IP at the firewall or Quarantining an end-user
-workstation from the network.
+From the node's menu, select **User Choice**. The User Choice option allows for the system to pose a question to the incident owner. Based off of the analysis the incident owner performs on the previous information
+gathered, they will be presented a choice to take an automated action such as blocking an IP at the firewall or Quarantining an end-user workstation from the network.
 
 <img src={useBaseUrl('img/cloud-soar/image89.png')} alt="User Choice" width="600"/> 
 
-
 <img src={useBaseUrl('img/cloud-soar/image90.png')} alt="Response" width="800"/> 
-
 
 Define the question to be answered and the authorizer of the user choice selection and click ****Create**** to finalize.
 
 ### Playbook Execution
 
-The results of execution - successes, failures, and outcomes - are
-visible the Playbook's individual node details. The results of
-enrichment, containment and custom Playbook actions undertaken on
-incident artifacts, e.g., IP addresses, URLs, domains, etc., are
-catalogued in the incident's **Entities** module.
+The results of execution - successes, failures, and outcomes - are visible the Playbook's individual node details. The results of enrichment, containment and custom Playbook actions undertaken on incident artifacts, e.g., IP addresses, URLs, domains, etc., are catalogued in the incident's **Entities** module.
 
 If a playbook fails, it can be re-executed inside the incident again or on the failing node with the Kill <img src={useBaseUrl('img/cloud-soar/image33c.png')} alt="Kill option" width="200"/>  and Run <img src={useBaseUrl('img/cloud-soar/image33d.png')} alt="Run option" width="200"/> processes available in the playbook screen of the incident. However, a failed node will not stop the playbook from being executed. Only tasks and User Choices will lock the playbook in a **Running** state until the user takes action.
 
@@ -331,20 +252,53 @@ If a playbook fails, it can be re-executed inside the incident again or on the f
 
 ### Playbook Template
 
-When a Playbook is assigned to an incident, these predefined actions and tasks can
-be converted to actual tasks within Cloud SOAR for assignment to users and oversight by management. Each individual task can be assigned attributes, such as who it is assigned to, who has authorized the task, and when it is due. A **Playbook Template** permits administrators to predefine some of these attributes based on an existing Playbook so that they appear as defaults when the Playbook Template is utilized.
+When a Playbook is assigned to an incident, these predefined actions and tasks can be converted to actual tasks within Cloud SOAR for assignment to users and oversight by management. Each individual task can be assigned attributes, such as who it is assigned to, who has authorized the task, and when it is due. A **Playbook Template** permits administrators to predefine some of these attributes based on an existing Playbook so that they appear as defaults when the Playbook Template is utilized.
 
-Playbooks are the core of Cloud SOAR's automation capabilities. Playbooks
-permit administrators to create automated and semi-automated workflows
-utilizing Cloud SOAR integrations, tasks and a variety of flow control
-decisions and other actions.
+Playbooks are the core of Cloud SOAR's automation capabilities. Playbooks permit administrators to create automated and semi-automated workflows utilizing Cloud SOAR integrations, tasks and a variety of flow control decisions and other actions.
 
 **playbook** workflows can be configured to execute automatically without human intervention, or can be executed in an interactive mode, where user input is required to authorize predefined actions.
 
+### Nest playbooks
+
+To run a playbook inside another playbook:
+1. Click **+** on a node in a playbook. 
+1. In the **Add Node** dialog, select **Playbook**. <br/><img src={useBaseUrl('img/cloud-soar/add-playbook-node.png')} alt="Add a playbook node" width="400"/> 
+1. Select the nested playbook from the list of available playbooks. 
+
+#### Pass attributes to a nested playbook
+<!-- Add the following at Delivery 2:
+*(Applies only to organizations running the Delivery 1 version of Cloud SOAR.)*
+-->
+
+When you nest a child playbook within a parent playbook, you must pass parameters from the parent to the child to be utilized within the child playbook actions.
+
+1. Select the playbook (the child) you want to nest within another playbook.
+1. Click the three dots in the upper-right corner of the child playbook, select the **Nested** option, and click **Save**. This tags the playbook as a child and prevents adhoc testing against the child, since it will rely upon the parent to provide it inputs. <br/><img src={useBaseUrl('img/cloud-soar/playbook-nested-option.png')} alt="Nested option" width="500"/> 
+1. Click the **Edit** button at the bottom of the screen, then the **Edit** button on the **Start** node. <br/><img src={useBaseUrl('img/cloud-soar/playbook-start-node.png')} alt="Start node" width="100"/> 
+1. Add the parameters you would like your child playbook to receive from the parent. These can be arbitrary names and do not need to be aligned to any field schema. They will be mapped from the parent nodes. <br/><img src={useBaseUrl('img/cloud-soar/playbook-parameters.png')} alt="Add parameters" width="500"/> 
+1. It’s important that your child nodes make use of these parameters. These will be accessible by editing your relevant child nodes, selecting the cog wheel, and selecting the relevant playbook input. In the example below, we use the playbook ID input parameter that will come from the parent. <br/><img src={useBaseUrl('img/cloud-soar/playbook-edit-parameters.png')} alt="Edit parameters" width="500"/> 
+1. Save and publish your child playbook. 
+1. Navigate to your parent playbook. Add a new node. <br/><img src={useBaseUrl('img/cloud-soar/playbook-add-node.png')} alt="Add node" width="350"/> 
+1. Select **Playbook**. <br/><img src={useBaseUrl('img/cloud-soar/playbook-add-node-2.png')} alt="Select Playbook" width="150"/> 
+1. Select your child playbook. <br/><img src={useBaseUrl('img/cloud-soar/playbook-select-child-playbook.png')} alt="Select child playbook" width="500"/>
+1. You will see the parameters that you had set from your child playbook. Use the cog wheel to set these parameters based on your parent action nodes. <br/><img src={useBaseUrl('img/cloud-soar/playbook-parent-parameters.png')} alt="Parent playbook parameters" width="500"/>
+1. Save and publish your parent playbook.
+
+You will now be able to perform tests against your parent playbook, and your child playbook will receive the parameters from the parent.
+
+### Import and export playbooks
+
+With the mechanism to import and export playbooks, you can move a playbook, along with all its configurations, from one instance to another. The file should be in tar.gz format and adhere to naming conventions.
+
+1. Click on the Export icon located next to the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/export-playbook.png')} alt="Export Playbook" style={{border: '1px solid gray'}} width="500"/>
+1. Upon clicking, the tar.gz archive download will be initiated.
+1. At this point, you can open the archive, modify the configuration data, recreate a tar.gz archive, and upload it. To upload the file, click on the Import icon, select the desired file, and click Import.<br/><img src={useBaseUrl('img/cloud-soar/import-playbook.png')} alt="Import Playbook" style={{border: '1px solid gray'}} width="500"/><br/><img src={useBaseUrl('img/cloud-soar/import-playbook-modal.png')} alt="Import Playbook modal" style={{border: '1px solid gray'}} width="500"/>
+
+It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
+
 ## Incident Templates
 
-Incident Templates define the way in which incidents will be created for
-a specific alert, incident type or event. They allow you to define a certain number of incident attributes (e.g., incident type, severity, assignment, and any other default or custom incident parameters) that will automatically be set each time an incident is generated, based on the template. This may include type, classification, incident assignment, playbooks, Playbooks, knowledge base articles, or any other incident attribute. As rules are created for generating incidents based on syslog messages, email, SIEM integrations or other data sources, it is the Incident Templates that will define how the initial incident will be created.
+Incident Templates define the way in which incidents will be created for a specific alert, incident type or event. They allow you to define a certain number of incident attributes (e.g., incident type, severity, assignment, and any other default or custom incident parameters) that will automatically be set each time an incident is generated, based on the template. This may include type, classification, incident assignment, playbooks, Playbooks, knowledge base articles, or any other incident attribute. As rules are created for generating incidents based on syslog messages, email, SIEM integrations or other data sources, it is the Incident Templates that will define how the initial incident will be created.
 
 ### Create a new template
 
@@ -352,34 +306,15 @@ To create a new template, click the cog icon (<img src={useBaseUrl('img/cloud-so
 
 <img src={useBaseUrl('img/cloud-soar/image91.png')} alt="Add template" width="800"/> 
 
-From the Incident Templates page, you'll find all previously created
-templates on the left-side of the screen. To add a new Incident
-Template, click **+** to proceed.
+From the Incident Templates page, you'll find all previously created templates on the left-side of the screen. To add a new Incident Template, click **+** to proceed.
 
 <img src={useBaseUrl('img/cloud-soar/image92.png')} alt="New Incident Template" width="400"/> 
 
+A new configuration box is displayed. As seen in our previous configurations, you will need to name your template. Make sure it is something easily identifiable and related to the activity it is developed for. The next section is asking for a **Category**. This field, as well as all other fields within the Cloud SOAR platform, can be customized to fit the user's environment (see [Custom Fields](#custom-fields)).
 
-A new configuration box is displayed. As seen in our previous
-configurations, you will need to name your template. Make sure it is
-something easily identifiable and related to the activity it is
-developed for. The next section is asking for a **Category**. This field,
-as well as all other fields within the Cloud SOAR platform, can be
-customized to fit the user's environment (see [Custom Fields](#custom-fields)).
+In our example, we're building an Incident Template for a DLP incident. The category we chose is titled **Data Theft** but can be called anything in which we choose to identify it as. Users also have the option to add **Tags** which can be used to further categorize of define the incident, and can be used when searching for or correlating events. Once our template is named and categorized, click **Next** to continue.
 
-In our example, we're building an Incident Template for a DLP incident.
-The category we chose is titled **Data Theft** but can be called anything
-in which we choose to identify it as. Users also have the option to add
-**Tags** which can be used to further categorize of define the incident,
-and can be used when searching for or correlating events. Once our
-template is named and categorized, click **Next** to continue.
-
-Under the **Incident** tab administrators may define any incident
-parameters they wish to set by default when an incident is creating
-using the template. This often includes parameters such as type, kind
-and severity. All variables marked with an asterisk (*) are required to
-complete the Incident Template (see [**Custom Fields**](#custom-fields) to adjust the fields requirements). As mentioned earlier, all fields are customizable via the
-**Custom Fields** section. Once all required variables have been defined,
-click **Next** to continue.
+Under the **Incident** tab administrators may define any incident parameters they wish to set by default when an incident is creating using the template. This often includes parameters such as type, kind and severity. All variables marked with an asterisk (*) are required to complete the Incident Template (see [**Custom Fields**](#custom-fields) to adjust the fields requirements). As mentioned earlier, all fields are customizable via the **Custom Fields** section. Once all required variables have been defined, click **Next** to continue.
 
 <img src={useBaseUrl('img/cloud-soar/image93.png')} alt="Create incident template" width="400"/> 
 
@@ -392,40 +327,21 @@ The remaining tabs in the Incident Template dialogue are as follows:
 
 ### Report Template
 
-**Report Templates** allow users to build their own reports by selecting
-various components of an incident they wish to include in the report.
-These components can include incident details, evidence, hosts,
-observables and many others.
+**Report Templates** allow users to build their own reports by selecting various components of an incident they wish to include in the report. These components can include incident details, evidence, hosts, observables and many others.
 
 ### Custom Fields
 
-**Custom Fields** allows administrators to edit existing fields as well as
-add new fields for almost every section of Cloud SOAR. All Cloud SOAR sections
-which permit custom fields are displayed on the left-hand side of the
-page. Clicking on any one of these sections will display all current
-fields for that section on the right-hand side of the page. Any existing
-field may be edited, to include changing the name or adding list values.
-The only attribute which cannot be changed is the type of the field,
-such as text or date. New fields may also be added from this page.
-Integrations
+**Custom Fields** allows administrators to edit existing fields as well as add new fields for almost every section of Cloud SOAR. All Cloud SOAR sections which permit custom fields are displayed on the left-hand side of the page. Clicking on any one of these sections will display all current fields for that section on the right-hand side of the page. Any existing field may be edited, to include changing the name or adding list values. The only attribute which cannot be changed is the type of the field, such as text or date. New fields may also be added from this page.
 
-The **Integrations** section allows administrators to configure
-bidirectional integrations with third-party technologies, as well as
-view the supported actions for each integration. In addition, this
-section allows administrators to manage custom scripts, which can be
-written in Python, Perl, PowerShell or Bash.
-
+The **Integrations** section allows administrators to configure bidirectional integrations with third-party technologies, as well as view the supported actions for each integration. In addition, this section allows administrators to manage custom scripts, which can be written in Python, Perl, PowerShell or Bash.
 
 ### Creating Incidents from Automation Rules
 
-Cloud SOAR can ingest, parse, and process incident data from email, syslog
-and bidirectional integrations. For Cloud SOAR to begin processing incident
-data from these sources, the **Automation Rules** features need to be configured.
+Cloud SOAR can ingest, parse, and process incident data from email, syslog and bidirectional integrations. For Cloud SOAR to begin processing incident data from these sources, the **Automation Rules** features need to be configured.
 
 To access, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation** > __Rules__. 
 
 <img src={useBaseUrl('img/cloud-soar/image94.png')} alt="Automation menu" width="200"/> 
-
 
 ## Integrations
 
@@ -438,36 +354,19 @@ A list of available integrations within the organization can be found to the lef
 <img src={useBaseUrl('img/cloud-soar/image63.png')} alt="Configure integration" width="800"/> 
 
 
-A product overview screen will be displayed with what actions a product can perform and a link to configure the integration. These actions are categorized into five separate types: **Enrichment, Containment, Custom, Daemon, and Notification** actions. Each selection will list its associated actions
-and if there are required fields which need to be configured for Cloud SOAR to utilize its functionality within its Playbooks.
+A product overview screen will be displayed with what actions a product can perform and a link to configure the integration. These actions are categorized into five separate types: **Enrichment**, **Containment**, **Custom**, **Daemon**, and **Notification** actions. Each selection will list its associated actions and if there are required fields which need to be configured for Cloud SOAR to utilize its functionality within its Playbooks.
 
-To add a new integration resource, click the **+ Resources** button in the
-upper left-hand corner of the integrations screen. To edit an existing
-integration resource, hover over the resource and click the pencil icon
-to the far right of the resource name in the resource list.          
+To add a new integration resource, click the **+ Resources** button in the upper left-hand corner of the integrations screen. To edit an existing integration resource, hover over the resource and click the pencil icon to the far right of the resource name in the resource list.          
 
 <img src={useBaseUrl('img/cloud-soar/image64.png')} alt="image64" width="400"/> 
 
 Each Integration's configuration screen may be different, but in most cases, administrators will need information such as IP addresses, API tokens, usernames and passwords for their network/security products.
 
-To test the configuration, click save and reopen the Integration. Once
-the Integration is reopened, click test and successful connections will
-display a success message at the bottom of the screen. Any unsuccessful
-attempts will display an error message with information needed to
-remediate the issue.
+To test the configuration, click save and reopen the Integration. Once the Integration is reopened, click test and successful connections will display a success message at the bottom of the screen. Any unsuccessful attempts will display an error message with information needed to remediate the issue.
 
-Additionally, some integration types also allow users to use a
-pre-configured general proxy or define a specific one for its
-integration with Cloud SOAR. To configure a proxy for an integration, open
-the integration and click the Proxy dropdown. Select "Use different
-proxy** and add the corresponding proxy information.
+Additionally, some integration types also allow users to use a pre-configured general proxy or define a specific one for its integration with Cloud SOAR. To configure a proxy for an integration, open the integration and click the Proxy dropdown. Select **Use different proxy** and add the corresponding proxy information.
 
-Once the information has been added, click save to commit the
-integration. Open the integration up again and click the Test button to
-test the new configuration settings. A successful connection attempt
-will be displayed at the bottom right-side of the screen. Once the proxy
-test is successful, click save again to commit the final configuration
-settings for the integration.
+Once the information has been added, click save to commit the integration. Next, open up the integratio again and click the **Test** button to test the new configuration settings. A successful connection attempt will be displayed at the bottom right-side of the screen. Once the proxy test is successful, click save again to commit the final configuration settings for the integration.
 
 #### Deleted bookmark
 
@@ -477,43 +376,22 @@ Click the **Deleted** button to see all the deleted integrations.<br/><img src={
 
 ### Integration Framework
 
-Cloud SOAR's Integration Framework allows Sumo Logic and Cloud SOAR users to develop and extend integrations using a common, open and easy to use framework.
-For increased security and isolation, each integration is executed in
-its own Docker container, which can be easily customized by the user
-when the integration is created.
+Cloud SOAR's Integration Framework allows Sumo Logic and Cloud SOAR users to develop and extend integrations using a common, open and easy to use framework. For increased security and isolation, each integration is executed in
+its own Docker container, which can be easily customized by the user when the integration is created.
 
-Integrations are defined using two types of YAML text files. The first
-type, the integration definition file, is used to define the properties
-of the product with which the integration connects. This includes
-information such as the name, logo, connection parameters, test code and
-the Docker container used to execute the actions. One integration
-definition file is required for each integration and serves as a
-container for all of the actions that the integration will perform.
+Integrations are defined using two types of YAML text files. The first type, the integration definition file, is used to define the properties of the product with which the integration connects. This includes information such as the name, logo, connection parameters, test code and the Docker container used to execute the actions. One integration definition file is required for each integration and serves as a container for all of the actions that the integration will perform.
 
-The second type of file is an action definition file, which is used to
-define a single action that will be performed using the integration.
-Each integration action is defined in a separate action definition file,
-which will be associated by Cloud SOAR with the appropriate integration
-definition. Action definition files are the files which contain the
-actual code which will be executed to perform the action. Supported
-languages include Perl, Python, PowerShell and Bash. In addition to the
-action code, action definition files also contain information such as
-the name, required and optional fields and the format in which the
-resulting information will be displayed.
+The second type of file is an action definition file, which is used to define a single action that will be performed using the integration. Each integration action is defined in a separate action definition file, which will be associated by Cloud SOAR with the appropriate integration definition. Action definition files are the files which contain the actual code which will be executed to perform the action. Supported languages include Perl, Python, PowerShell and Bash. In addition to the action code, action definition files also contain information such as the name, required and optional fields and the format in which the resulting information will be displayed.
 
-<img src={useBaseUrl('img/cloud-soar/image65.png')} alt="Integration definition" style={{border: '1px solid black'}} width="600"/> 
+<img src={useBaseUrl('img/cloud-soar/image65.png')} alt="Integration definition" style={{border: '1px solid gray'}} width="600"/> 
 
 ### Integration File Hierarchy
 
-Defining integrations at the **action** level allows users greater
-flexibility in customizing existing integrations and sharing new actions
-with other users. For example, a user may choose to extend Sumo Logic'
-existing RSA Netwitness integration to include an additional action
-which retrieves all network connections for a given host.
+Defining integrations at the **action** level allows users greater flexibility in customizing existing integrations and sharing new actions with other users. For example, a user may choose to extend Sumo Logic's existing RSA Netwitness integration to include an additional action which retrieves all network connections for a given host.
 
 Once the user has created this new action, it can easily be added to the existing RSA Netwitness integration by uploading the new integration action file. This new action can also be shared between customers and used to extend the functionality of the integration in other customer instances as well.
 
-<img src={useBaseUrl('img/cloud-soar/image66.png')} alt="New action" style={{border: '1px solid black'}} width="600"/> 
+<img src={useBaseUrl('img/cloud-soar/image66.png')} alt="New action" style={{border: '1px solid gray'}} width="600"/> 
 
 See [Integration Framework](#integration-framework) for more details on utilizing the integration framework within Cloud SOAR.
 
@@ -580,10 +458,8 @@ After you create a Slack app, you must add the appropriate permissions for use w
 1. Verify that scopes are set up correctly:
    * Here are the Bot Token scopes after configuration:<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-bot-token.png')} alt="Bot token" width="600"/>
    * Here are the User Token scopes after configuration:<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-user-token.png')} alt="User token" width="600"/>
-1. Click **Install to Workspace** to make the app available for use. 
-<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-install-to-workspace.png')} alt="Install the app" width="600"/>
-1. Installation generates a User OAuth Token and a Bot User OAuth Token. Copy the tokens and keep them in a secure location for use in the next step. 
-<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-oauth-token.png')} alt="Oauth tokens" width="600"/>
+1. Click **Install to Workspace** to make the app available for use. <br/><img src={useBaseUrl('img/cloud-soar/integration-slack-install-to-workspace.png')} alt="Install the app" width="600"/>
+1. Installation generates a User OAuth Token and a Bot User OAuth Token. Copy the tokens and keep them in a secure location for use in the next step. <br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-oauth-token.png')} alt="Oauth tokens" width="600"/>
 
 #### Step 4: Configure the Slack integration in Cloud SOAR
 
@@ -601,9 +477,9 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
    1. Repeat the steps to create a "Bot User OAuth Access Token", and paste your previously saved Bot User OAuth Token into the **Bot/User OAuth Token** field.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-2.png')} alt="Bot resource" width="400"/>
    1. Ensure that both new resources are configured properly by using **TEST SAVED SETTINGS**. Following is an example of a successful configuration message.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-edit-resource.png')} alt="Successful configuration message" width="400"/><br/>Here is how the Resources look after configuration.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-resource-2.png')} alt="Resources after configuration" width="600"/>
 1. Set up instant messaging:
-:::note
-Only set this up if you want to be able to use the Slack App in User Choice responses or enable Slack Chat Integration. This is outlined below.
-:::
+   :::note
+   Only set this up if you want to be able to use the Slack App in User Choice responses or enable Slack Chat Integration. This is outlined below.
+   :::
    1. Navigate to the [Slack API page](https://api.slack.com/apps). 
    1. Place your instance URL in the **Event Subscriptions** page.<br/><img src={useBaseUrl('img/cloud-soar/integration-event-subscriptions.png')} alt="Event subscriptions" width="600"/>
    1. Place your instance URL in the **Interactivity & Shortcuts** page.<br/><img src={useBaseUrl('img/cloud-soar/integrations-interactivity.png')} alt="Event subscriptions" width="600"/>

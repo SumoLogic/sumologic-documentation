@@ -1,6 +1,7 @@
 ---
 id: windows-json-opentelemetry
 title: PCI Compliance for Windows JSON - OpenTelemetry
+sidebar_label: Windows JSON - OTel Collector
 dashboard: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
@@ -16,7 +17,7 @@ The PCI Compliance for Windows JSON - OpenTelemetry is a log app that sends Wind
 The PCI Compliance for Windows JSON app covers PCI requirements 02, 06, 08, and 10.
 :::
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-WIndows-JSON-Schematics.png' alt="PCI-Windows-JSON-Schematics" style={{border: '1px solid black'}} />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-WIndows-JSON-Schematics.png' alt="PCI-Windows-JSON-Schematics" style={{border: '1px solid gray'}} />
 
 ## Fields created in Sumo Logic for PCI Compliance Windows JSON App
 
@@ -26,7 +27,7 @@ Following tags will be created as part of PCI Compliance Windows JSON app instal
 - `host.group`: user configured tag which signifies a group of hosts for the operating system.
 - `deployment.environment`: user configured tag which identifies the environment where the windows system resides. For example: dev, prod or qa.
 
-## Log Types
+## Log types
 
 The Windows App assumes events are coming from Windows Event Log receiver in JSON format. It does not work with third party logs.
 
@@ -38,10 +39,12 @@ Standard Windows event channels include:
 ## Collection configuration and app installation
 
 :::note
-You can skip this section if you have already set up the logs collection through [Windows](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry/). Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
+You can skip this section if you have already set up the logs collection through [Windows](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry), [Windows - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry), or [Active Directory](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
 :::
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
@@ -69,7 +72,9 @@ Once the details are filled in, click on the **Download YAML File** button to ge
 
 ### Step 3: Send logs to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -93,26 +98,34 @@ Once the details are filled in, click on the **Download YAML File** button to ge
 
 <TabItem value="Chef">
 
-{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
 
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-## Sample Queries
+<LogsOutro/>
+
+## Sample queries
 
 This sample log query is from the **Windows - PCI Req 02, 08, 10 - Account, User, System Monitoring** dashboard > **User Account Created** panel.
 

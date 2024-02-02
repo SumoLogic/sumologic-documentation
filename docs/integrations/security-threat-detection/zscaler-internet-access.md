@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic App for Zscaler Internet Access (ZIA) collects logs via Cloud Nanolog Streaming Service (NSS) to populate pre-configured searches and Dashboards in order to visualize and provide insight into threats, DNS, web traffic behaviors, security, user browsing activities, and risk.
 
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Zscaler uses NSS feed output logs (Web, Tunnel, DNS, Firewall), as documented [here](https://help.zscaler.com/zia/documentation-knowledgebase/analytics/nss/nss-feeds/formatting-nss-feeds).
 
@@ -113,7 +113,7 @@ If you are not able to use Zscaler Cloud NSS, you can collect logs for the ZIA A
    1. **Timezone.** Set to GMT by default.
    1. Click **Save**.
 
-### Sample Log Message
+### Sample log messages
 
 
 ```json title="Web Log Sample"
@@ -183,7 +183,9 @@ _sourceCategory=ZIA
 
 This section provides instructions on how to install the Zscaler Internet Access app, and provides examples of each of the dashboards. The preconfigured searches and dashboards provides you an easy-to-access visual insights into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing ZIA dashboards
 

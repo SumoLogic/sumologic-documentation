@@ -24,7 +24,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 1. Log into the Google Admin Console.  
 1. Select **Apps > SAML Apps**.
 1. Select a new SAML app to be configured, or click the **+** at the bottom of the page.
-1. On the **Enable SSO for SAML Application** page, select **Setup my own Custom App** at the bottom of the page**.
+1. On the **Enable SSO for SAML Application** page, select **Setup my own Custom App** at the bottom of the page.
 
     ![img](/img/security/ga_saml_enable_sso.png)
 
@@ -85,7 +85,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
     ![img](/img/security/ga_saml_service_provider.png)
 
     * **ACS URL.** This is the **Assertion Consumer** from Sumo Logic
-    * **Entity ID.** Enter the following URL, substituting your actual Sumo Logic [deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security"), for example, us1, us2, eu, and so on, for \<*deployment*\\>: `https:///img/security\<deploymen\>.sumologic.com`
+    * **Entity ID.** Enter your Sumo Logic [Service Endpoint URL](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security): <br/>`https://service.<deployment>.sumologic.com`
     * **Name ID.** Basic Information – Primary Email
     * **Name ID Format.** EMAIL
 
@@ -113,4 +113,6 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
 ## Create multiple SAML configurations
 
-{@import ../../../reuse/saml.md}
+import Saml from '../../../reuse/saml.md';
+
+<Saml/>

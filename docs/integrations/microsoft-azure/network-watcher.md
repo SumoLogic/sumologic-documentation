@@ -20,7 +20,7 @@ The Sumo Logic App for Azure Network Watcher uses Network Security Group (NSG) f
 * 5-tuple information with respect to flow (Source/Destination IP and Port, Protocol)
 * Allowed/Denied traffic flow.
 
-### Sample log message
+### Sample log messages
 
 ```json
     {  
@@ -41,7 +41,7 @@ The Sumo Logic App for Azure Network Watcher uses Network Security Group (NSG) f
     }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Denied Traffic Flow by Source Location"
 _sourceCategory="security/flowlogs"
@@ -93,7 +93,7 @@ To configure an Azure storage account, do the following:
    * Select **Blobs** under **Blob Service**.
       * Select **+ Container**,
       * Enter the Name
-      * Select** Private** for the Public Access Level.
+      * Select **Private** for the Public Access Level.
       * Click **OK**.
 
 Make a note of the container name. You will need to supply it later.
@@ -108,10 +108,10 @@ This section demonstrates how to configure an HTTP source to receive logs from t
 
 To configure an HTTP source for Azure, do the following:
 1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the URL for the source, you will need it in the next step. I
-3. In **Advanced Options for Logs**, under **Timestamp Format**, click Specify a format and enter the following:
-* Specify Format as epoch
-* Specify Timestamp locator as `\"time\": (.*),`
+2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the URL for the source, you will need it in the next step.
+3. In **Advanced Options for Logs**, under **Timestamp Format**, click **Specify a format** and enter the following:
+   * Specify Format as epoch
+   * Specify Timestamp locator as `\"time\": (.*),`
 
 ### Step 3: Configure Azure Resources using ARM template
 
@@ -137,7 +137,7 @@ This template uses Consumption Plan which does not support VNet integration. For
     :::
 1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deployment" width="400" />
 1. Verify the deployment was successful by looking at **Notifications** at top right corner of Azure Portal.
-1. (Optional) In the same window, click** Go to resource group** to verify the all resources were successfully created, such as shown in the following example:
+1. (Optional) In the same window, click **Go to resource group** to verify the all resources were successfully created, such as shown in the following example:
 1. Go to **Storage accounts** and search for **sumobrlogs**, then select `sumobrlogs<random-string>`.
 1. In the **Data Storage** menu, do the following:
     1. Click **Tables**.
@@ -159,7 +159,9 @@ If logs don't start flowing into Sumo Logic after you perform the configuration 
 
 Now that you have configured Azure Network Watcher, install the Sumo Logic app for Azure Network Watcher to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Azure Network Watcher dashboards
 

@@ -55,7 +55,7 @@ For common deployment errors refer to the following [doc](https://docs.microsoft
 1. Select **Rule Based Scaling**.
 1. Add your rules based scaling configuration as defined in [Create your first autoscale setting](https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started#create-your-first-autoscale-setting).
 
-<img src={useBaseUrl('img/send-data/autoscalling.png')} alt="autoscalling" style={{border: '1px solid black'}} width="800" />
+<img src={useBaseUrl('img/send-data/autoscalling.png')} alt="autoscalling" style={{border: '1px solid gray'}} width="800" />
 
 ## Verify configurations
 
@@ -68,7 +68,7 @@ Make sure that the resources you created in the [Collect Logs from Azure Blob S
    * An Event Hubs Namespace.
    * A Storage account.
 1. In the left pane of the Azure Portal, click **AppServices**, and search for “SUMOBRTaskConsumer”. You should find the `“SUMOBRTaskConsumer\<random-string\>”` Function App. Click it. 
-1. Click the **Application settings** link. Check that the value of the ** SumoLogEndpoint** field matches the HTTP source URL. 
+1. Click the **Application settings** link. Check that the value of the **SumoLogEndpoint** field matches the HTTP source URL. 
 
 ## Verify Block Blob Create Events are getting published
 
@@ -93,7 +93,7 @@ Go to Service Bus Service from the Azure portal and click on `SUMOBRTaskQueueNam
 
 ![service-bus-metrics.png](/img/send-data/service-bus-metrics.png)
 
-## Verify with LiveTail
+## Verify with Live Tail
 
 In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving events. Search by the source category you assigned to the HTTP Source that receives the log data, for example: `_sourceCategory="azure/ad"`  
 
@@ -155,7 +155,7 @@ If the error still persists, then
             },
     .
     ```
-2. If you want to collect only logs from Azure Monitor, we recommend switching to new [Cloud to Cloud collection for Event hub](../../hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md)
+2. If you want to collect only logs from Azure Monitor, we recommend switching to new [Cloud-to-Cloud collection for Event hub](../../hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md)
 
 `Exception while executing function:  Functions.BlobTaskProducer
 StorageError: The table specified does not exists 

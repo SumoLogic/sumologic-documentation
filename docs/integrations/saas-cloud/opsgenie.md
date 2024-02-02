@@ -15,7 +15,7 @@ Opsgenie is an incident management platform for operating services that are on 2
 
 For more information, see the [Opsgenie Alerts and Alert Fields](https://docs.opsgenie.com/docs/alerts-and-alert-fields) documentation.
 
-## Log Types
+## Log types
 
 Sumo Logic - Opsgenie integration supports the following Alert types:
 * Create
@@ -28,12 +28,12 @@ Sumo Logic - Opsgenie integration supports the following Alert types:
 * Close
 
 
-### Sample Log Message
+### Sample log messages
 
 Different Alert types used by Opsgenie, with sample payloads, are defined here: [https://docs.opsgenie.com/docs/sample-alert-action-data](https://docs.opsgenie.com/docs/sample-alert-action-data)
 
 
-### Sample Query
+### Sample queries
 
 The following query sample is taken from the **Alerts by Priority Over Time** panel on the **Opsgenie - Alerts Breakdown Dashboard**:
 
@@ -88,7 +88,9 @@ To configure log collection for the Opsgenie App, do the following:
 
 This section provides instructions for installing the Opsgenie App, as well as examples of each of the app dashboards.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing OpsGenie Dashboards
 

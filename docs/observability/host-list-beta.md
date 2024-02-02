@@ -22,11 +22,11 @@ Hosts List makes it easier to compare different types of hosts without the need 
 
 All the information in the Hosts List is extracted from the data that you have already sent to Sumo Logic. If you wish to add more hosts, follow the instructions on [sending data to Sumo Logic](/docs/send-data/). By default, all hosts are displayed as long as the related data available.
 
-<img src={useBaseUrl('/img/observability/host_list.png')} alt="host_list" style={{border: '1px solid black'}} width="1200"/>
+<img src={useBaseUrl('/img/observability/host_list.png')} alt="host_list" style={{border: '1px solid gray'}} width="1200"/>
 
 Clicking on any of the rows brings up the **Entity Inspector** panel that provides more detailed information about each of the hosts and allows you to navigate to viewing logs, metrics, traces, alerts, and dashboards linked to this host in the Explore view.
 
-<img src={useBaseUrl('/img/observability/host_list2.png')} alt="host_list2" style={{border: '1px solid black'}} width="500"/>
+<img src={useBaseUrl('/img/observability/host_list2.png')} alt="host_list2" style={{border: '1px solid gray'}} width="500"/>
 
 ## Navigation
 
@@ -36,25 +36,25 @@ The time range selector in the top-right corner of the page allows you to choose
 
 By default, indicators perform the aggregation across the selected time, but it is possible to choose indicators that aggregate values using a time aggregation that overrides the time range selector. For example, CPU (-15min) will aggregate CPU usage for the past 15 minutes, regardless of the value selected using the time range selector. Hosts List can display the data for the last 24 hours and, by default, displays the data for last 60 minutes.
 
-<img src={useBaseUrl('/img/observability/navigation_time_range.png')} alt="navigation_time_range" style={{border: '1px solid black'}} width="400"/>
+<img src={useBaseUrl('/img/observability/navigation_time_range.png')} alt="navigation_time_range" style={{border: '1px solid gray'}} width="400"/>
 
 ### Environment
 
 You can use the **Environment** dropdown to display hosts with a certain value of the **Environment** property. This dropdown is populated with all currently available values of the **Environment** attribute.
 
-<img src={useBaseUrl('/img/observability/navigation_environment.png')} alt="navigation_environment" style={{border: '1px solid black'}} width="400"/>
+<img src={useBaseUrl('/img/observability/navigation_environment.png')} alt="navigation_environment" style={{border: '1px solid gray'}} width="400"/>
 
 ### Group
 
 You can use the **Group** dropdown to display only hosts with a certain value of **Group** property. This dropdown is populated with all currently available values of the **Group** attribute.
 
-<img src={useBaseUrl('/img/observability/navigation_group.png')} alt="navigation_group" style={{border: '1px solid black'}} width="400"/>
+<img src={useBaseUrl('/img/observability/navigation_group.png')} alt="navigation_group" style={{border: '1px solid gray'}} width="400"/>
 
 ### Host Name
 
 You can search for any hosts using the free-text input field, and you can narrow down the list by substring matching.
 
-<img src={useBaseUrl('/img/observability/navigation_host_name.png')} alt="navigation_host_name" style={{border: '1px solid black'}} width="400"/>
+<img src={useBaseUrl('/img/observability/navigation_host_name.png')} alt="navigation_host_name" style={{border: '1px solid gray'}} width="400"/>
 
 ### OS type
 
@@ -64,7 +64,7 @@ You can narrow down the list of visible hosts by the type of detected Operating 
 - Linux
 - Windows
 
-<img src={useBaseUrl('/img/observability/navigation_OS_type.png')} alt="navigation_OS_type" style={{border: '1px solid black'}} width="400"/>
+<img src={useBaseUrl('/img/observability/navigation_OS_type.png')} alt="navigation_OS_type" style={{border: '1px solid gray'}} width="400"/>
 
 ### Cloud Provider
 
@@ -74,7 +74,7 @@ You can narrow down the list of visible Hosts by the type of detected cloud prov
 - Azure
 - GCP
 
-<img src={useBaseUrl('/img/observability/navigation_cloud_provider.png')} alt="navigation_cloud_provider" style={{border: '1px solid black'}} width="400"/>
+<img src={useBaseUrl('/img/observability/navigation_cloud_provider.png')} alt="navigation_cloud_provider" style={{border: '1px solid gray'}} width="400"/>
 
 ### Alert Status
 
@@ -87,7 +87,7 @@ You can narrow down the list of visible hosts by the type of active alerts for a
 
 A Host is displayed in the list if at least one of the alerts is in the selected state.
 
-<img src={useBaseUrl('/img/observability/navigation_alert_status.png')} alt="navigation_alert_status" style={{border: '1px solid black'}} width="400"/>
+<img src={useBaseUrl('/img/observability/navigation_alert_status.png')} alt="navigation_alert_status" style={{border: '1px solid gray'}} width="400"/>
 
 ## Indicators and attributes
 
@@ -270,7 +270,7 @@ metric=Mem_ActualUsed _sourceHost=* | eval _value / (1024*1024*1024) | avg by _s
 
 **Alerts** in the Hosts List are displayed based on the configured [Monitors](/docs/alerts/monitors/overview/) in the Sumo Logic platform for a given host. 
 
-<img src={useBaseUrl('/img/observability/alerts_host_list.png')} alt="alerts_host_list" style={{border: '1px solid black'}} width="400"/>
+<img src={useBaseUrl('/img/observability/alerts_host_list.png')} alt="alerts_host_list" style={{border: '1px solid gray'}} width="400"/>
 
 The Alert column will display the most severe alert status, even if there are active alerts of a different state.
 
@@ -282,7 +282,7 @@ To view alert details, click on a row and view it in the right-hand-side panel.
 
 The **Column selector** is accessed by clicking on the icon on the right-hand side of the screen. This feature allows you to configure the list of columns displayed in the Hosts List view. These settings are applied individually for each user and persist across sessions. 
 
-<img src={useBaseUrl('/img/observability/column_selector.png')} alt="column_selector" style={{border: '1px solid black'}} width="400"/>
+<img src={useBaseUrl('/img/observability/column_selector.png')} alt="column_selector" style={{border: '1px solid gray'}} width="400"/>
 
 ## Troubleshooting
 

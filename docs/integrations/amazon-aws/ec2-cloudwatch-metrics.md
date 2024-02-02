@@ -217,13 +217,15 @@ Enter a parse expression to create an “account” field that maps to the alias
 Now that you have set up collection for AWS EC2 metrics install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing AWS EC2 dashboards
 
 ### Overview (CloudWatch Metrics)
 
-The **AWS EC2 Overview (CloudWatch Metrics) **dashboard provides at-a-glance information about a EC2 CPU, instance disk store, network and EBS volume usage along with EC2 instance health status.
+The **AWS EC2 Overview (CloudWatch Metrics)** dashboard provides at-a-glance information about a EC2 CPU, instance disk store, network and EBS volume usage along with EC2 instance health status.
 
 Use this dashboard to:
 
@@ -266,7 +268,7 @@ Use this dashboard to:
 
 ### CPU (CloudWatch Metrics)
 
-The **AWS EC2 CPU (CloudWatch Metrics) **dashboard provides detailed information about EC2 CPU usage like CPU utilization and CPU credits for burstable performance instances.
+The **AWS EC2 CPU (CloudWatch Metrics)** dashboard provides detailed information about EC2 CPU usage like CPU utilization and CPU credits for burstable performance instances.
 
 Use this dashboard to:
 * Monitor Average CPU utilization over time for EC2.

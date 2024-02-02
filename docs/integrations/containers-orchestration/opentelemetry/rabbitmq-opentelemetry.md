@@ -40,11 +40,15 @@ Once the logs are configured to be written to a local file, follow the below ste
 
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+
+<SetupColl/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
@@ -58,7 +62,9 @@ The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`. Yo
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -101,26 +107,34 @@ The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`. Yo
 </TabItem>
 <TabItem value="Chef">
 
-{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
 
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-## Sample Log Messages
+<LogsOutro/>
+
+## Sample log messages
 
 Here's a sample log message you'd find in Non-Kubernetes environments.
 
@@ -128,7 +142,7 @@ Here's a sample log message you'd find in Non-Kubernetes environments.
 2023-01-16 05:53:44.858 [info] <0.44.0> Application cowboy exited with reason: stopped
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample Query is from the **RabbitMQ - Logs dashboard** > **Events** by Severity panel.
 

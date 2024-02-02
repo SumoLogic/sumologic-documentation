@@ -185,7 +185,7 @@ These steps can help identify the problem:
 
 1. **Use netstat to verify that Sumo is listening on the port.** Once the Syslog source is configured, verify on the collector host that there is a listen process on the configured port in the output of "netstat -nap". If there is no Sumo process listening on the configured protocol (TCP/UDP) and port, it could be that the Sumo process could not bind to the port because another process was using the port. In this case, a collector log message will indicate that the Sumo process failed to bind to the port.
 
-1. **Push test messages using *netcat*.** Use netcat to push data to the port using a chat session. Netcat is a networking utility with a simple interface that you can use to read and write from TCP and UDP sockets. Netcat is not included by default; you can download it from http://nmap.org/nca.
+1. **Push test messages using *netcat*.** Use netcat to push data to the port using a chat session. Netcat is a networking utility with a simple interface that you can use to read and write from TCP and UDP sockets. Netcat is not included by default; you can download it [here](https://nmap.org/ncat).
 
     Sample commands to set up the client are shown below. If you are running the command on the host where the collector runs, replace `"<ip_address>"` with `"localhost"`.
 

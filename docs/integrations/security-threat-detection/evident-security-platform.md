@@ -14,16 +14,17 @@ The Evident.io ESP App provides pre-configured searches and Dashboards that allo
 The Evident.io Evident Security Platform (ESP) streamlines and optimizes vulnerability and risk management. It continuously monitors the AWS cloud, automatically identifies security misconfigurations, enables rapid mitigation of risk through guided remediation and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the vulnerability and identified security misconfigurations from Evident and other data sources, you can reduce your security risk and improve your overall security posture.
 
 
-## Log Types
+## Log types
 
 The Evident.io ESP App collects monitoring alerts.
 
 For details on the log format and definitions, refer to Evident.io documentation at [http://docs.evident.io/](http://docs.evident.io/).
 
 
-### Sample Log Message
+### Sample log messages
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -182,7 +183,7 @@ For details on the log format and definitions, refer to Evident.io documentation
 </details>
 
 
-### Sample Query
+### Sample queries
 
 
 ```sql title="Alerts by Status"
@@ -209,7 +210,7 @@ This page demonstrates how to configure log collection for the Evident.io ESP Ap
     1. **Name.** Enter Evident.io SNS Integration.  
     2. **Source Category.** Enter security_evident.
 3. In the **Advanced** section, configure:
-    1. **Enable Timestamp Parsing. **Activate the check box Extract timestamp information from log files.
+    1. **Enable Timestamp Parsing.** Activate the check box Extract timestamp information from log files.
     1. **Time Zone.** Select Ignore time zone from log file, and select (UTC) Etc/UTC
 4. **Processing Rules.** Create the following [Mask Rule](/docs/send-data/collection/processing-rules/mask-rules):
     1. **Name.** Enable proper timestamp parsing.
@@ -271,7 +272,9 @@ For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-mes
 
 Now that you have configured Evident.io ESP, install the Sumo Logic App for Evident.io ESP to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Evident.io Dashboards
 
@@ -279,9 +282,9 @@ Now that you have configured Evident.io ESP, install the Sumo Logic App for Evid
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Evident.ioESP_Overview_Dashboard.png')} alt="Evident.io ESP dashboards" />
 
-**New Risks. **Displays the number of new risks in a single value chart over the previous 24 hours.
+**New Risks.** Displays the number of new risks in a single value chart over the previous 24 hours.
 
-**New Risks by Severity. **Shows the severity of new risks in a stacked column chart on a timeline for the last 24 hours.
+**New Risks by Severity.** Shows the severity of new risks in a stacked column chart on a timeline for the last 24 hours.
 
 **New High Severity Risks.** Provides details on the new high severity risks in a table chart over the last 24 hours.
 
@@ -289,14 +292,14 @@ Now that you have configured Evident.io ESP, install the Sumo Logic App for Evid
 
 **Resolved Risks.** Shows which risks have been resolved over the last 24 hours in a table chart.
 
-**Total Risks over Time. **Shows a trendline of all alerts over the last 14 days in a stacked area chart.
+**Total Risks over Time.** Shows a trendline of all alerts over the last 14 days in a stacked area chart.
 
 
 ### Evident.io ESP - Detailed Risks
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Evident.ioESP_DetailedRisks_Dashboard.png')} alt="Evident.io ESP dashboards" />
 
-**Total Risks. **Shows the number of total risks in a single value chart over the last 24 hours
+**Total Risks.** Shows the number of total risks in a single value chart over the last 24 hours
 
 **New Risks.** Displays the number of new risks for the last 24 hours in a single value chart.
 
@@ -304,6 +307,6 @@ Now that you have configured Evident.io ESP, install the Sumo Logic App for Evid
 
 **Risks by Region.** Displays the total number of risks by region over the last 24 hours in a donut chart.
 
-**Risks by Signature. **Provides details on risks by signature name and identifier over the last 24 hours in a table chart.
+**Risks by Signature.** Provides details on risks by signature name and identifier over the last 24 hours in a table chart.
 
 **Risks by Account.** Displays the total number of risks by account name over the last 24 hours in a column chart.

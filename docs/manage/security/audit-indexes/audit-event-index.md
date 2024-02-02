@@ -43,9 +43,9 @@ Searching the Audit Event Index is the same as running a normal search against y
 For example, to search for user action events:
 
 1. In the Search page, enter the following: `_index=sumologic_audit_events`  
-  :::important
-  Make sure to enter the query exactly as shown. Changing any part of the query renders it ineffective.
-  :::
+     :::important
+     Make sure to enter the query exactly as shown. Changing any part of the query renders it ineffective.
+     :::
 1. Choose the time range for the incidents that you'd like to review.
 1. Click **Start** to run the search.
 
@@ -82,7 +82,7 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 | [Roles](/docs/manage/users-roles/roles/create-manage-roles) | `roles` |
 | [SAML](/docs/manage/security/saml) | `saml` |
 | [Scheduled Views](/docs/manage/scheduled-views) | `scheduledView` |
-| Security Policies: [Share Dashboards Outside of the Organization](/docs/dashboards-classic/share-dashboard-outside-org), [Data Access Level for Shared Dashboards](/docs/manage/security/data-access-level-shared-dashboards), [Per User Concurrent Sessions Limit](/docs/manage/security/set-limit-user-concurrent-sessions), and [User Session Timeout](/docs/manage/security/set-max-web-session-timeout) | `orgSettings` |
+| Security Policies: Share Dashboards Outside of the Organization, [Data Access Level for Shared Dashboards](/docs/manage/security/data-access-level-shared-dashboards), [Per User Concurrent Sessions Limit](/docs/manage/security/set-limit-user-concurrent-sessions), and [User Session Timeout](/docs/manage/security/set-max-web-session-timeout) | `orgSettings` |
 | Security Policy: [Support Account Access](/docs/manage/security/enable-support-account) | `supportAccount` |
 | [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses) | `serviceAllowlist` |
 | [Support Account](/docs/manage/security/enable-support-account) | `supportAccount` |

@@ -50,11 +50,15 @@ A restart is required for traffic collection to take effect.
 
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+
+<SetupColl/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Collector.png' style={{border:'1px solid black'}} alt="Artifactory-Collector" />
 
@@ -77,7 +81,9 @@ Click on the **Download YAML File** button to get the yaml file.
 
 ### Step 3: Send logs to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -121,33 +127,41 @@ Click on the **Download YAML File** button to get the yaml file.
 
 <TabItem value="Chef">
 
-{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
 
 </TabItem>
 
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-## Sample Log Messages
+<LogsOutro/>
+
+## Sample log messages
 
 ```bash title="Sample Log Messages in Non-Kubernetes environments"
 2023-45-16 11:45:44,171 [a8bgdia2di2g80kh] [ACCEPTED DEPLOY] hortonworks-cache:org/apache/hadoop/hadoop-project/2.6.0-cdh5.4.4-SNAPSHOT/maven-metadata.xml for client : admin/195.186.216.125.
 ```
 
-## Sample Query
+## Sample queries
 
 This sample Query is from the **Artifactory - Cached Deployment Activity** > **Accepted Deploys by Geolocation** panel.
 
@@ -167,34 +181,46 @@ This sample Query is from the **Artifactory - Cached Deployment Activity** > **A
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Overview.png' alt="Artifactory-Overview" />
 
-{@import ../../../reuse/apps/jfrog/artifactory-overview.md}
+import JfrogOv from '../../../reuse/apps/jfrog/artifactory-overview.md';
+
+<JfrogOv/>
 
 ### Artifactory - Cached Deployment Activity
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Cached-Deployment-Activity.png' alt="Artifactory-Cached-Deployment-Activity" />
 
-{@import ../../../reuse/apps/jfrog/artifactory-cached.md}
+import JfrogCache from '../../../reuse/apps/jfrog/artifactory-cached.md';
+
+<JfrogCache/>
 
 ### Artifactory - Download Activity
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Download-Activity.png' alt="Artifactory-Download-Activity" />
 
-{@import ../../../reuse/apps/jfrog/artifactory-download.md}
+import JfrogDl from '../../../reuse/apps/jfrog/artifactory-download.md';
+
+<JfrogDl/>
 
 ### Artifactory - Non-Cached Deployment Activity
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Non-Cached-Deployment-Activity.png' alt="Artifactory-Non-Cached-Deployment-Activity" />
 
-{@import ../../../reuse/apps/jfrog/artifactory-noncached.md}
+import JfrogNon from '../../../reuse/apps/jfrog/artifactory-noncached.md';
+
+<JfrogNon/>
 
 ### Artifactory - Request and Access
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Request-and-Access.png' alt="Artifactory-Request-and-Access" />
 
-{@import ../../../reuse/apps/jfrog/artifactory-request-access.md}
+import JfrogReq from '../../../reuse/apps/jfrog/artifactory-request-access.md';
+
+<JfrogReq/>
 
 ### Artifactory - Traffic
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Artifactory-OpenTelemetry/Artifactory-Traffic.png' alt="Artifactory-Traffic" />
 
-{@import ../../../reuse/apps/jfrog/artifactory-traffic.md}
+import JfrogTr from '../../../reuse/apps/jfrog/artifactory-traffic.md';
+
+<JfrogTr/>

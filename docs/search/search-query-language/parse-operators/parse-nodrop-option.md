@@ -53,7 +53,7 @@ You can parse out an IP address using parse regex and parse nodrop:
 
 ```sql
 _sourceCategory=Apache* 
-| parse regex "(\<src_i\>\d{1,3}\.\d{1,3}.\d{1,3}\.\d{1,3})" nodrop
+| parse regex "(?<src_ip>\d{1,3}\.\d{1,3}.\d{1,3}\.\d{1,3})" nodrop
 ```
 
 ### Use parse nodrop as an OR condition

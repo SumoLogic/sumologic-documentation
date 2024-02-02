@@ -24,7 +24,7 @@ This feature is available in the following account plans.
 
 Global Intelligence for Kubernetes DevOps App uses metrics data from Kubernetes clusters. 
 
-## Sample Query 
+## Sample queries 
 
 The following sample query is from the **Deployment Count** panel of **GI Kubernetes DevOps - 01. Adoption Stats** dashboard.
 
@@ -46,7 +46,9 @@ Follow the steps on the [Sumo Logic Kubernetes Deployment guide](https://github.
 
 Below are the instructions for installing the Sumo App for Kubernetes DevOps.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing GI Kubernetes DevOps Dashboards
 

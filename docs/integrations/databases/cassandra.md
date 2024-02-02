@@ -29,7 +29,7 @@ This section provides instructions for configuring log and metric collection for
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -90,7 +90,7 @@ Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distributio
 In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 :::note Prerequisites
-It’s assumed that you're using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
+It’s assumed that you're using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
 #### Configure Metrics Collection
@@ -99,7 +99,7 @@ Follow the steps listed below to collect Cassandra metrics from a Kubernetes env
 
 1. Set up your [Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf).
 2. On your Cassandra Pods, add the following annotations:
-```sql
+```
 annotations:
  telegraf.influxdata.com/class: sumologic-prometheus
  prometheus.io/scrape: "true"
@@ -168,21 +168,21 @@ annotations:
   tag_keys = ["name"] field_prefix = "$1_"
 ```
 Enter in values for the following parameters (marked ENV_TO_BE_CHANGED above):
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Cassandra Input plugin. Please refer to [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Cassandra input plugin for Telegraf. As Telegraf will be run as a sidecar, the host should always be localhost.
+* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf Cassandra Input plugin. Please refer to [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Cassandra input plugin for Telegraf. As Telegraf will be run as a sidecar, the host should always be localhost.
    * In the input plugins section (`[[inputs.jolokia2_agent]]`):
       * `urls` - The URL to the Cassandra server. This can be a comma-separated list to connect to multiple Cassandra servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Cassandra input plugin for Telegraf.
    * In the tags section (`[[inputs.jolokia2_agent]]`):
-      * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `db_cluster` - Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
-      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
-      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used
+      * `environment`. This is the deployment environment where the Cassandra cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `db_cluster`. Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `db_cluster_address`. Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port`. Enter the database port. If not provided, a default port will be used
 
 
-Here’s an explanation for additional values set by this configuration that we request you  do not modify, as they will cause the Sumo Logic apps to not function correctly.
+**Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
 
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrap: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrap: "true"`. This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
 * `telegraf.influxdata.com/inputs`
     * In the tags section (`[inputs.jolokia2_agent.tags]`):
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
@@ -201,6 +201,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra
 :::
 
   See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+
 3. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 4. Verify metrics in Sumo Logic.
 
@@ -219,17 +220,17 @@ This section explains the steps to collect Cassandra logs from a Kubernetes envi
      db_cluster_port: <database port>
      ```
      Please enter values for the following parameters:
-     * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+     * `environment`. This is the deployment environment where the Cassandra cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
      * `db_cluster`- Enter a name to identify the Cassandra cluster. The cluster name will be shown in the Sumo Logic dashboards.
 
     **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly.
-    * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
-    * `db_system: “Cassandra”` - This value identifies the database system.
-    * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
-    * `db_cluster_port` - Enter the database port. If not provided, a default port will be used
+    * `component: “database”`. This value is used by Sumo Logic apps to identify application components.
+    * `db_system: “Cassandra”`. This value identifies the database system.
+    * `db_cluster_address`. Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+    * `db_cluster_port`. Enter the database port. If not provided, a default port will be used
 
 :::note
-db_cluster_address and db_cluster_port should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
+`db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
 
 For example, if your application uses `“cassandra-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows:
 `db_cluster_address=cassandra-prod.sumologic.com
@@ -286,24 +287,19 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Cassandra
 </TabItem>
 <TabItem value="non-k8s">
 
-Cassandra metrics collection setup can be done in two ways.
-* Using Telegraf and Installed Collector
-* Using OpenTelemetry Collection
+1. Configure Jolokia JVM Agent in Cassandra to collect metrics:
+   1. Download the latest Jolokia JVM agent jar file (example: `jolokia-jvm-1.3.3-agent.jar`) from [here](https://jolokia.org/download.html).
+   2. Copy the downloaded jar file to Cassandra’s lib folder (example: `/usr/share/cassandra/lib`).
+   3. In `cassandra-env.sh` file, enable/add the following lines:
+    ```bash
+    # Jolokia javaagent
+    JVM_OPTS="$JVM_OPTS -javaagent:$CASSANDRA_HOME/lib/jolokia-jvm-1.3.3-agent.jar"
+    ```
+   4. Restart Cassandra service.
+2. Choose one of the two methods below to configure Casssandra metrics collection:
 
-Both the methods require the Jolokia agent to collect metrics. The steps to configure Jolokia JVM Agent in Cassandra are as below:
-
-1. Download the latest Jolokia JVM agent jar file (example: `jolokia-jvm-1.3.3-agent.jar`) from [here](https://jolokia.org/download.html).
-2. Copy the downloaded jar file to Cassandra’s lib folder (example: `/usr/share/cassandra/lib`).
-3. In `cassandra-env.sh` file, enable/add the following lines:
- ```bash
- # Jolokia javaagent
- JVM_OPTS="$JVM_OPTS -javaagent:$CASSANDRA_HOME/lib/jolokia-jvm-1.3.3-agent.jar"
- ```
-4. Restart Cassandra service.
-
-Below we have defined both the ways in which collection can be configured.
-
-<details><summary>Method A: Using Telegraf and Installed Collector</summary>
+<details>
+<summary>Method A: Using Telegraf and Installed Collector</summary>
 
 We use the Telegraf operator for Cassandra metric collection and Sumo Logic Installed Collector for collecting Cassandra logs. The diagram below illustrates the components of the Cassandra collection in a non-Kubernetes environment. Telegraf runs on the same system as Cassandra, and uses the [Jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to obtain Cassandra metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Cassandra on the other hand are sent to a Sumo Logic Local File source.
 
@@ -394,12 +390,12 @@ Please enter values for the following parameters:
 * In the input plugins section, which is `[[inputs. jolokia2_agent]]`:
     * `urls` - The URL to the jolokia server. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Cassandra input plugin for Telegraf.
 * In the tags section, which is `[inputs.Cassandra.tags]`:
-    * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-    * `db_cluster` - Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
+    * `environment`. This is the deployment environment where the Cassandra cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+    * `db_cluster`. Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
     * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 
-Here’s an explanation for additional values set by this configuration that we request you do not modify, as they will cause the Sumo Logic apps to not function correctly.
+**Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
 * In the tags section (`[inputs.jolokia2_agent.tags]`):
     * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
     * `db_system: “cassandra”` - This value identifies the database system.
@@ -468,7 +464,7 @@ Based on your infrastructure and networking setup choose one of these methods to
       * **Description.** (Optional)
       * **File Path (Required).** Enter the path to your log files. The files are typically located in `/var/log/cassandra/system.log`. If you are using a customized path, check the `logback.xml` file for this information.
       * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-      * **Source Category.** Enter any string to tag the output collected from this Source, such as **Cassandra/Logs**. The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices#good-and-bad-source-categories).
+      * **Source Category.** Enter any string to tag the output collected from this Source, such as **Cassandra/Logs**. The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices#good-and-bad-source-categories).
        * **Fields**. Set the following fields:
        * `component = database`
        * `db_system = cassandra`
@@ -489,7 +485,8 @@ At this point, Cassandra logs should start flowing into Sumo Logic.
 
 </details>
 
-<details><summary>Method B: Using OpenTelemetry</summary>
+<details>
+<summary>Method B: Using OpenTelemetry</summary>
 
 We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](https://github.com/SumoLogic/sumologic-otel-collector) for Cassandra metric collection and filelog receiver for collecting Cassandra logs. Sumo Logic OT distro runs on the same system as Cassandra, and uses the Cassandra Jolokia input plugin for Telegraf to obtain Cassandra metrics, and the Sumo Logic exporter to send the metrics to Sumo Logic.
 
@@ -504,8 +501,8 @@ We use the Telegraf receiver of Sumo Logic OpenTelemetry Distro [Collector](http
    * In the input plugins section, that is `[[inputs.jolokia2_agent]]`:
      * **`urls`** - The URL to the jolokia server. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Cassandra input plugin for Telegraf.
    * In the tags section, which is `[inputs.Cassandra.tags]` and filelog section
-      * `environment` - This is the deployment environment where the Cassandra cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `db_cluster` - Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `environment`. This is the deployment environment where the Cassandra cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `db_cluster`. Enter a name to identify this Cassandra cluster. This cluster name will be shown in the Sumo Logic dashboards.
    * In the exporter plugins section :
       * Enter details like `source_category` and `source_host`. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
    * **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly.
@@ -542,10 +539,10 @@ There are limits to how many alerts can be enabled. For more information, see [M
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Memcached/Memcached.json) that describes the monitors.
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Memcached/Memcached.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Cassandra clusters, the data for which has been collected via the instructions in the previous sections.  
 
-  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_cluster=*` with `<Your Custom Filter>`. Custom filter examples:
-    * For alerts applicable only to a specific cluster, your custom filter would be: `db_cluster=dev-cassandra-01`.
-    * For alerts applicable to all clusters that start with `cassandra-prod`, your custom filter would be: `db_cluster=cassandra-prod*`.
-    * For alerts applicable to specific clusters, within a production environment, your custom filter would be:`db_cluster=dev-cassandra-01` AND `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
+   However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_cluster=*` with `<Your Custom Filter>`. Custom filter examples:
+     * For alerts applicable only to a specific cluster, your custom filter would be: `db_cluster=dev-cassandra-01`.
+     * For alerts applicable to all clusters that start with `cassandra-prod`, your custom filter would be: `db_cluster=cassandra-prod*`.
+     * For alerts applicable to specific clusters, within a production environment, your custom filter would be:`db_cluster=dev-cassandra-01` AND `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
 3. Go to **Manage Data > Alerts > Monitors**.
 4. Click **Add**.
 5. Click **Import**.
@@ -556,7 +553,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later and install it.
-3. Download the Sumo Logic Terraform package for Cassandra monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Memcached). You can either download it using the git clone command or as a zip file.
+3. Download the Sumo Logic Terraform package for Cassandra monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Memcached). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration. After extracting the package, navigate to the  `terraform-sumologic-sumo-logic-monitor/monitor_packages/Cassandra/` directory.
 5. Edit the Cassandra.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 ```bash
@@ -619,7 +616,9 @@ This step is not needed if you are using the [Application Components Solution](/
 
 This section demonstrates how to install the Cassandra app.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Cassandra dashboards
 
@@ -746,14 +745,14 @@ Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors
 
 | Alert Name         | Alert Description         | Alert Condition | Recover Condition |
 |:-----------|:--------------|:-----------|:------------|
-| Cassandra - Increase in Authentication Failures              | This alert fires when there is an increase of Cassandra authentication failures.                                                                          | >5              | <= 5              |
-| Cassandra - Cache Hit Rate below 85 Percent                  | This alert fires when the cache key hit rate is below 85%.                                                                                                | <85             | >= 85             |
-| Cassandra - High Commitlog Pending Tasks                     | This alert fires when there are more than 15 Commitlog tasks that are pending.                                                                            | >15             | <= 15             |
-| Cassandra - High Number of Compaction Executor Blocked Tasks | This alert fires when there are more than 15 compaction executor tasks blocked for more than 5 minutes.                                                   | >15             | <= 15             |
-| Cassandra - Compaction Task Pending                          | This alert fires when there are many Cassandra compaction tasks that are pending. You might need to increase I/O capacity by adding nodes to the cluster. | >100            | <= 100            |
-| Cassandra - High Number of Flush Writer Blocked Tasks        | This alert fires when there is a high number of flush writer tasks which are blocked.                                                                     | >15             | <= 15             |
-| Cassandra - Many Compaction Tasks Are Pending                | Many Cassandra compaction tasks are pending                                                                                                               | >100            | <= 100            |
-| Cassandra - Node Down                                        | This alert fires when one or more Cassandra nodes are down                                                                                                | >0              | <= 0              |
-| Cassandra - Blocked Repair Tasks                             | This alert fires when the repair tasks are blocked                                                                                                        | >2              | <= 2              |
-| Cassandra - Repair Tasks Pending                             | This alert fires when repair tasks are pending.                                                                                                           | >2              | <= 2              |
-| Cassandra - High Tombstone Scanning                          | This alert fires when tombstone scanning is very high (>1000 99th Percentile) in queries.                                                                 | >1000           | <= 1000           |
+| Cassandra - Increase in Authentication Failures              | This alert fires when there is an increase of Cassandra authentication failures.                                                                          | >5              | `<=` 5              |
+| Cassandra - Cache Hit Rate below 85 Percent                  | This alert fires when the cache key hit rate is below 85%.         | `<`85             | `>=` 85             |
+| Cassandra - High Commitlog Pending Tasks                     | This alert fires when there are more than 15 Commitlog tasks that are pending.                                                                            | >15             | `<=` 15             |
+| Cassandra - High Number of Compaction Executor Blocked Tasks | This alert fires when there are more than 15 compaction executor tasks blocked for more than 5 minutes.                                                   | >15             | `<=` 15             |
+| Cassandra - Compaction Task Pending                          | This alert fires when there are many Cassandra compaction tasks that are pending. You might need to increase I/O capacity by adding nodes to the cluster. | >100            | `<=` 100            |
+| Cassandra - High Number of Flush Writer Blocked Tasks        | This alert fires when there is a high number of flush writer tasks which are blocked.                                                                     | >15             | `<=` 15             |
+| Cassandra - Many Compaction Tasks Are Pending                | Many Cassandra compaction tasks are pending                                                                                                               | >100            | `<=` 100            |
+| Cassandra - Node Down                                        | This alert fires when one or more Cassandra nodes are down                                                                                                | >0              | `<=` 0              |
+| Cassandra - Blocked Repair Tasks                             | This alert fires when the repair tasks are blocked                                                                                                        | >2              | `<=` 2              |
+| Cassandra - Repair Tasks Pending                             | This alert fires when repair tasks are pending.                                                                                                           | >2              | `<=` 2              |
+| Cassandra - High Tombstone Scanning                          | This alert fires when tombstone scanning is very high (>1000 99th Percentile) in queries.                                                                 | >1000           | `<=` 1000           |

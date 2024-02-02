@@ -21,9 +21,9 @@ Copy this file and edit it for your App integration.
 
 \Add the description from the app description above\
 
-## Log types and metrics 
+## Log types and metrics
 
-The {AppName} App uses...
+The `{AppName}` App uses...
 
 \Enter a list of log types, usually hyperlinked to vendor docs.\
 
@@ -41,7 +41,7 @@ The {AppName} App uses...
 \<add your log message here\>
 ```
 
-## Sample query
+## Sample queries
 
 ### Log query
 
@@ -63,25 +63,29 @@ The {AppName} App uses...
 
 \This section instructions for collecting logs, metrics, or logs and metrics. You can also give link to collection docs if they are hosted publicly. Include a diagram, as appropriate. For an example, see [Collection process for GCP services](/docs/integrations/google/app-engine/#Collection_process_for_GCP_services).\
 
-### Step 1. 
+### Step 1.
 
 \step description\
 
-### Step 2. 
+### Step 2.
 
 \step description\
 
-### Step n. 
+### Step n.
 
 \step description\
 
-## Install the {AppName} app
+## Install the `{AppName}` app
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
 
-## Viewing the {ppName} dashboards
+<AppInstall/>
 
-{@import ../../reuse/filter-dashboards.md}
+## Viewing the `{AppName}` dashboards
+
+import FilterDashboards from '../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
 
 ### Dashboard 1
 
@@ -102,6 +106,6 @@ Use this dashboard to:
 - \use-case-1\
 - \use-case-2\
 
-## Support 
+## Support
 
-This application has been developed and is supported by {app-owner-name}. In case of any technical queries, contact support at `support contact`.
+This application has been developed and is supported by `{app-owner-name}`. In case of any technical queries, contact support at `support contact`.

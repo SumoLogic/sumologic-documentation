@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Automation](https://learn.microsoft.com/en-us/azure/automation/overview) delivers a cloud-based automation, operating system updates, and configuration service that supports consistent management across your Azure and non-Azure environments. It includes process automation, configuration management, update management, shared capabilities, and heterogeneous features. This integration helps in monitoring create, update and delete operations for the Automation runbooks, jobs and automation assets like connection, credential, variable, and certificate. It also gives insights into the status of your Automation jobs.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Automation, you can collect the following logs and metrics:
 
-* **Platform logs**. To know more about the different log category types and schemas collected for Azure Automation, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/automation/automation-manage-send-joblogs-log-analytics#azure-monitor-log-records).
+* **Platform logs**. To learn more about the different log category types and schemas collected for Azure Automation, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/automation/automation-manage-send-joblogs-log-analytics#azure-monitor-log-records).
 * **Platform Metrics for Azure Automation**. These metrics are available in [Microsoft.Automation/automationAccounts](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-automation-automationaccounts-metrics) namespace.
 
 ## Setup
