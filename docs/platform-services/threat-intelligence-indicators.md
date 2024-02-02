@@ -59,7 +59,7 @@ To access the **Threat Intelligence** tab, go to **Manage Data > Logs > Threat I
 1. **Indicators**. The number of threat intelligence indicators included in the file. 
 
 :::note
-The “CrowdStrike provided by Sumo Logic (s_CrowdStrike)” source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name.
+The "CrowdStrike provided by Sumo Logic (s_CrowdStrike)" source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name.
 :::
 
 ### Add indicators in the Threat Intelligence tab
@@ -75,7 +75,7 @@ You can also add threat intelligence indicators using the API or a collector. Se
 1. Select the format of the file to be uploaded:
     * **Normalized JSON**. A normalized JSON file. 
     * **CSV**. A comma-separated value (CSV) file. 
-    * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. 
+    * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. When choosing this format, you must enter the name of the source in the **Source** field provided. 
 
    See [Upload formats](#upload-formats) for the format to use in the file.
 1. Click **Upload** to upload the file. 
@@ -87,14 +87,16 @@ You can also add threat intelligence indicators using the API or a collector. Se
 1. Click **Delete Indicators**. The following dialog appears. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
 1. Select indicators to delete from the source:
    * **Delete all indicators**. Remove all indicators from the source. 
-   * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the files uploaded in [Add indicators in the threat intelligence tab](#add-indicators-in-the-threat-intelligence-tab) above.
+   * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the indicators.
 1. Click **Delete**. 
 
-## Search for threats
+## Find threats
 
 Once you [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab), you can perform searches to find matches to data in the indicators using:
 * [`threatlookup` search operator](#threatlookup-search-operator)
 * [`hasThreatMatch` Cloud SIEM rules language function](#hasthreatmatch-cloud-siem-rules-language-function)
+
+You can also see threat indicators displayed on Entitties in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#threat-indicators-in-the-cloud-siem-ui).
 
 ### threatlookup search operator
 
@@ -163,8 +165,18 @@ You can run the `threatlookup` search operator with the [cat search operator](ht
 cat sumo://threat-intel  | where _threatlookup.indicator = "192.0.2.0"
 ```
 ```
-cat sumo://threat-intel  | where _threatlookup.source = "s_CrowdStrike" and _threatlookup.indicator = "192.0.2.0"
+cat sumo://threat-intel  | where _threatlookup.source = "FreeTAXII" and _threatlookup.indicator = "192.0.2.0"
 ```
+
+In the cat output, timestamp fields (like `valid_until`) will appear as integers. You can use the `formatDate()` function to convert them back to timestamps. For example:
+
+```
+cat sumo://threat-intel | formatDate(toLong(_threatlookup.valid_until), "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", "UTC") as valid_until 
+```
+
+:::note
+You cannot use the cat search operator with the `s_crowdstrike` source.
+:::
 
 ### hasThreatMatch Cloud SIEM rules language function
 
@@ -172,11 +184,11 @@ The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Clou
 
 #### Syntax
 
-`hasThreatMatch([<fields>], <optional_filtering_predicate>, <indicators>)`
+`hasThreatMatch([<fields>], <filters>, <indicators>)`
 
 Parameters:
 * `<fields>` is a list of comma separated Entity field names. At least one field name is required.
-* `<optional_filtering_predicate>` is an optional simple boolean expression on the threat indicator fields. Allowed are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`.
+* `<filters>` is a logical expression using indicator attributes. (Allowed are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`.)
 * `<indicators>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
    * `active_indicators`. Match active indicators only (default).
    * `expired_indicators`. Match expired indicators only.
@@ -187,10 +199,32 @@ Parameters:
 * `hasThreatMatch([srcDevice_ip])`
 * `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
 * `hasThreatMatch([srcDevice_ip], confidence > 50)`
-* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source=”FreeTAXII”)`
-* `hasThreatMatch([srcDevice_ip], source=”s1” OR (source=”s2” confidence > 50 AND))`
+* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source="FreeTAXII")`
+* `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" confidence > 50 AND))`
 * `hasThreatMatch([srcDevice_ip], expired_indicators)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
+
+### Threat indicators in the Cloud SIEM UI
+
+An Entity can be associated with a known indicator that has a threat type attribute, either `threatType` (in normalized JSON format and CSV format), or `indicator_types` (in STIX format as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). 
+
+When that occurs, then anywhere the Entity is displayed in the Cloud SIEM UI, a [threat indicator icon or label](/docs/cse/integrations/enrichments-and-indicators/#threat-indicators) will be displayed showing the Entity's "reputation" corresponding to that threat type:
+
+| Threat type value | Label in the Cloud SIEM UI |
+| :-- | :-- | 
+| `anomalous-activity` | **Suspicious** |
+| `anonymization` |  **Suspicious** | 
+| `benign` |  **Not Flagged** | 
+| `compromised` |  **Malicious** | 
+| `malicious-activity` | **Malicious** | 
+| `attribution` |  (None) | 
+| `unknown` (or not set) |  **Suspicious** | 
+
+Note that if the mapping produces a threat indicator level of **Malicious**, but the confidence is less than 60, the Entity's reputation will be set to **Suspicious** instead. If there are multiple reputation values for a given Entity (potentially from threat intel and enrichment), Cloud SIEM will show the most severe indicator.
+
+Since different sources can report different reputations, each source has a reputation icon on its row in the Cloud SIEM UI. In the following example, the indicator from the Unit 42 source returned a reputation of Malicious, hence the red icon. The link to the right would open a log search window showing the matching indicators in detail.
+
+<img src={useBaseUrl('img/platform-services/threat-indicators-in-cloud-siem-ui.png')} alt="Threat indicators in the Cloud SIEM UI" style={{border: '1px solid gray'}} width="400" />
 
 ## Upload formats
 
@@ -206,29 +240,45 @@ Normalized JSON format is a standardized method to present JSON data. You can us
 
 #### Example file
 
-Following is an example threat indicator file in normalized JSON format (from the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators)):
+Following is an example threat indicator file in normalized JSON format. (For another example, see the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators)).
 
 ```
 {
-  "indicators": [
-    {
-      "id": "indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f",
-      "indicator": "192.0.2.0",
-      "type": "ipv4-addr",
-      "source": "FreeTAXII",
-      "updated": "2023-03-21T12:00:00.000Z",
-      "validFrom": "2023-03-21T12:00:00.000Z",
-      "validUntil": "2023-03-21T12:00:00.000Z",
-      "confidence": 1,
-      "threatType": "indicator",
-      "fields": {
-        "property1": "string",
-        "property2": "string"
-      }
-    }
-  ]
+ "indicators": [
+   {
+     "id": "0001",
+     "indicator": "192.0.2.0",
+     "type": "ipv4-addr:value",
+     "source": "FreeTAXII",
+     "validFrom": "2023-03-21T12:00:00.000Z",
+     "validUntil": "2025-03-21T12:00:00.000Z",
+     "confidence": 30,
+     "threatType": "malicious-activity",
+     "actors": "actor1,actor2",
+     "fields": {
+       "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+       "kill_chain_phase": "reconnaissance"
+     }
+   },
+   {
+     "id": "0002",
+     "indicator": "192.0.2.1",
+     "type": "ipv4-addr:value",
+     "source": "FreeTAXII",
+     "validFrom": "2023-03-21T12:00:00.000Z",
+     "validUntil": "2025-03-21T12:00:00.000Z",
+     "confidence": 30,
+     "threatType": "malicious-activity",
+     "actors": "actor3,actor4",
+     "fields": {
+       "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+       "kill_chain_phase": "reconnaissance"
+     }
+   }
+ ]
 }
 ```
+
 #### Required attributes
 
 For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) resource. 
@@ -249,21 +299,43 @@ The following attributes are required:
        * **source** (string). User-provided text to identify the source of the indicator. For example, `FreeTAXII`. 
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest (as [defined by the confidence scale in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_1v6elyto0uqg)). For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined by indicator_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `indicator`. 
+       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to Entities in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
+          * `anomalous-activity`. Unexpected or unusual activity that may not necessarily be malicious or indicate compromise.
+          * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
+          * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
+          * `compromised`. Assets that are suspected to be compromised.
+          * `malicious-activity`. Patterns of suspected malicious objects and/or activity.
+          * `attribution`. Patterns of behavior that indicate attribution to a particular threat actor or campaign.
+          * `unknown` (or not set). There is not enough information available to determine the threat type.
+       * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor1`. This attribute is frequently used in the s_CrowdStrike source. 
 
 ### CSV format
 
 Comma-separated value (CSV) is a standard format for data upload.
 
-#### Example file
+#### Example files
 
-Following is an example threat indicator file in CSV format (from the [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators)):
+##### Upload with the UI
+
+If uploading a CSV file with the UI, the format should be the same as used for a standard CSV file:
+
+```
+0001,192.0.2.0,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,
+0002,192.0.2.1,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3
+```
+
+##### Upload with the API
+
+If uploading a CSV file using the API, the file should be contained in a JSON object like this:
 
 ```
 {
-  "blob": "0001,192.0.2.0,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2023-05-21T12:00:00.00Z,3,indicator\n"
+ "csv": "0001,192.0.2.0,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,\n
+0002,192.0.2.1,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,actor3\n"
 }
 ```
+
+For other examples for uploading CSV files using the API, see the [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators) and the [uploadBlobIndicators API](https://api.sumologic.com/docs/#operation/uploadBlobIndicators).
 
 #### Required attributes
 
@@ -271,7 +343,7 @@ For information about the attributes to use, see ["Indicator" in the STIX 2.1 sp
 
 Columns for the following attributes are required in the upload file:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
-       * **value** (string). Value of the indicator, such as an IP address, file name, email address, etc. For example, `192.0.2.0`.
+       * **indicator** (string). Value of the indicator, such as an IP address, file name, email address, etc. For example, `192.0.2.0`.
        * **type** (string). Type of the indicator. Following are valid values: 
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
@@ -286,7 +358,15 @@ Columns for the following attributes are required in the upload file:
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest. For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined by indicator_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `indicator`.
+       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to Entities in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
+          * `anomalous-activity`. Unexpected or unusual activity that may not necessarily be malicious or indicate compromise.
+          * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
+          * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
+          * `compromised`. Assets that are suspected to be compromised.
+          * `malicious-activity`. Patterns of suspected malicious objects and/or activity.
+          * `attribution`. Patterns of behavior that indicate attribution to a particular threat actor or campaign.
+          * `unknown` (or not set). There is not enough information available to determine the threat type.
+       * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor3`. This attribute is frequently used in the s_CrowdStrike source. Note if you don’t provide a value for `actors`, you still must provide the empty column at the end of the row with an extra comma, as shown in the examples above.
 
 ### STIX 2.1 JSON format
 
@@ -294,168 +374,141 @@ STIX 2.1 JSON format is a method to present JSON data according to the STIX 2.1 
 
 Note that if you want to upload indicators from multiple sources, you cannot use this format but instead should use the [Normalized JSON format](#normalized-json-format).
 
-#### Example file
-
-Following is an example threat indicator file in STIX 2.1 JSON format (from the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)):
+Also note that if your STIX file includes lines like these at the top...
 
 ```
 {
-  "source": "FreeTAXII",
-  "indicators": [
-    {
-      "type": "indicator",
-      "spec_version": "2.1",
-      "id": "acme:indicator-bf8bc5d5-c7e6-46b0-8d22-7500fea77196",
-      "created": "2023-03-21T12:00:00.000Z",
-      "modified": "2023-03-21T12:00:00.000Z",
-      "created_by_ref": "identity--f431f809-377b-45e0-aa1c-6a4751cae5ff",
-      "revoked": true,
-      "labels": [
-        "heartbleed",
-        "has-logo"
-      ],
-      "confidence": 1,
-      "lang": "en",
-      "external_references": [
-        {
-          "source_name": "system",
-          "description": "string",
-          "url": "https://github.com/vz-risk/0001AA7F-C601-424A-B2B8-BE6C9F5164E7.json",
-          "hashes": {
-            "SHA-256": "6db12788c37247f2316052e142f42f4b259d6561751e5f401a1ae2a6df9c674b"
-          },
-          "external_id": "0001AA7F-C601-424A-B2B8-BE6C9F5164E7"
-        }
-      ],
-      "object_marking_refs": [
-        "marking-definition--089a6ecb-cc15-43cc-9494-767639779123"
-      ],
-      "granular_markings": [
-        {
-          "lang": "en",
-          "marking_ref": "marking-definition--089a6ecb-cc15-43cc-9494-767639779123",
-          "selectors": [
-            "description",
-            "labels"
-          ]
-        }
-      ],
-      "extensions": {
-        "property1": {
-          "type": "indicator",
-          "spec_version": "2.1",
-          "id": "acme:indicator-bf8bc5d5-c7e6-46b0-8d22-7500fea77196",
-          "created": "2023-03-21T12:00:00.000Z",
-          "modified": "2023-03-21T12:00:00.000Z",
-          "created_by_ref": "identity--f431f809-377b-45e0-aa1c-6a4751cae5ff",
-          "revoked": true,
-          "labels": [
-            "heartbleed",
-            "has-logo"
-          ],
-          "external_references": [
-            {
-              "source_name": "system",
-              "description": "string",
-              "url": "https://github.com/vz-risk/0001AA7F-C601-424A-B2B8-BE6C9F5164E7.json",
-              "hashes": {
-                "SHA-256": "6db12788c37247f2316052e142f42f4b259d6561751e5f401a1ae2a6df9c674b"
-              },
-              "external_id": "0001AA7F-C601-424A-B2B8-BE6C9F5164E7"
-            }
-          ],
-          "object_marking_refs": [
-            "marking-definition--089a6ecb-cc15-43cc-9494-767639779123"
-          ],
-          "granular_markings": [
-            {
-              "lang": "en",
-              "marking_ref": "marking-definition--089a6ecb-cc15-43cc-9494-767639779123",
-              "selectors": [
-                "description",
-                "labels"
-              ]
-            }
-          ],
-          "name": "string",
-          "description": "string",
-          "schema": "https://www.example.com/schema-my-favorite-sdo-1/v1",
-          "version": "string",
-          "extension_types": [
-            "new-sdo"
-          ],
-          "extension_properties": [
-            "string"
-          ]
-        },
-        "property2": {
-          "type": "indicator",
-          "spec_version": "2.1",
-          "id": "acme:indicator-bf8bc5d5-c7e6-46b0-8d22-7500fea77196",
-          "created": "2023-03-21T12:00:00.000Z",
-          "modified": "2023-03-21T12:00:00.000Z",
-          "created_by_ref": "identity--f431f809-377b-45e0-aa1c-6a4751cae5ff",
-          "revoked": true,
-          "labels": [
-            "heartbleed",
-            "has-logo"
-          ],
-          "external_references": [
-            {
-              "source_name": "system",
-              "description": "string",
-              "url": "https://github.com/vz-risk/0001AA7F-C601-424A-B2B8-BE6C9F5164E7.json",
-              "hashes": {
-                "SHA-256": "6db12788c37247f2316052e142f42f4b259d6561751e5f401a1ae2a6df9c674b"
-              },
-              "external_id": "0001AA7F-C601-424A-B2B8-BE6C9F5164E7"
-            }
-          ],
-          "object_marking_refs": [
-            "marking-definition--089a6ecb-cc15-43cc-9494-767639779123"
-          ],
-          "granular_markings": [
-            {
-              "lang": "en",
-              "marking_ref": "marking-definition--089a6ecb-cc15-43cc-9494-767639779123",
-              "selectors": [
-                "description",
-                "labels"
-              ]
-            }
-          ],
-          "name": "string",
-          "description": "string",
-          "schema": "https://www.example.com/schema-my-favorite-sdo-1/v1",
-          "version": "string",
-          "extension_types": [
-            "new-sdo"
-          ],
-          "extension_properties": [
-            "string"
-          ]
-        }
-      },
-      "name": "string",
-      "description": "string",
-      "indicator_types": [
-        "malicious-activity"
-      ],
-      "pattern": "[ipv4-addr:value = '1.2.3.4']",
-      "pattern_type": "stix",
-      "pattern_version": "string",
-      "valid_from": "2023-03-21T12:00:00.000Z",
-      "valid_until": "2023-03-21T12:00:00.000Z",
-      "kill_chain_phases": [
-        {
-          "kill_chain_name": "lockheed-martin-cyber-kill-chain",
-          "phase_name": "reconnaissance"
-        }
-      ]
-    }
-  ]
+  "type": "bundle",
+  "id": "bundle--cf20f99b-3ed2-4a9f-b4f1-d660a7fc8241",
+  "objects": [
+  {
+    "type": "indicator", 
+```
+
+...you should remove them before uploading the file, and leave only the objects array like this:
+
+```
+[
+  {
+    "type": "indicator", 
+```
+
+
+#### Example files
+
+##### Upload with the UI
+
+Following is an example threat indicator file in STIX 2.1 JSON format if you're uploading a file with the UI. 
+
+If you are uploading via the UI, do not include the `source` value in the file, since the UI prompts for the source value when you [add the indicator](/docs/platform-services/threat-intelligence-indicators#add-indicators-in-the-threat-intelligence-tab).
+
+```
+[
+   {
+     "type": "indicator",
+     "spec_version": "2.1",
+     "id": "0001",
+     "created": "2023-03-21T12:00:00.000Z",
+     "modified": "2023-03-21T12:00:00.000Z",
+     "confidence": 30,
+     "pattern": "[ipv4-addr:value = '192.0.2.0']",
+     "pattern_type": "stix",
+     "pattern_version": "string",
+     "valid_from": "2023-03-21T12:00:00.000Z",
+     "valid_until": "2025-03-21T12:00:00.000Z",
+     "indicator_types": [
+       "malicious-activity"
+     ],
+     "kill_chain_phases": [
+       {
+         "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+         "phase_name": "reconnaissance"
+       }
+     ]
+   },
+   {
+     "type": "indicator",
+     "spec_version": "2.1",
+     "id": "0002",
+     "created": "2023-03-21T12:00:00.000Z",
+     "modified": "2023-03-21T12:00:00.000Z",
+     "confidence": 30,
+     "pattern": "[ipv4-addr:value = '192.0.2.1']",
+     "pattern_type": "stix",
+     "pattern_version": "string",
+     "valid_from": "2023-03-21T12:00:00.000Z",
+     "valid_until": "2025-03-21T12:00:00.000Z",
+     "indicator_types": [
+       "malicious-activity"
+     ],
+     "kill_chain_phases": [
+       {
+         "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+         "phase_name": "reconnaissance"
+       }
+     ]
+   }
+ ]
+ ```
+
+##### Upload with the API
+
+Following is an example threat indicator file in STIX 2.1 JSON format if you're uploading a file with the API. 
+
+As shown in the following example, if uploading via the API you must add the `source` attribute outside of the indicators object, since the source is not part of the STIX standard. You must also include an `indicators` array field. (For another example for uploading via the API, see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)).
+
+```
+{
+ "source": "FreeTAXII",
+ "indicators": [
+   {
+     "type": "indicator",
+     "spec_version": "2.1",
+     "id": "0001",
+     "created": "2023-03-21T12:00:00.000Z",
+     "modified": "2023-03-21T12:00:00.000Z",
+     "confidence": 30,
+     "pattern": "[ipv4-addr:value = '192.0.2.0']",
+     "pattern_type": "stix",
+     "pattern_version": "string",
+     "valid_from": "2023-03-21T12:00:00.000Z",
+     "valid_until": "2025-03-21T12:00:00.000Z",
+     "indicator_types": [
+       "malicious-activity"
+     ],
+     "kill_chain_phases": [
+       {
+         "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+         "phase_name": "reconnaissance"
+       }
+     ]
+   },
+   {
+     "type": "indicator",
+     "spec_version": "2.1",
+     "id": "0002",
+     "created": "2023-03-21T12:00:00.000Z",
+     "modified": "2023-03-21T12:00:00.000Z",
+     "confidence": 30,
+     "pattern": "[ipv4-addr:value = '192.0.2.1']",
+     "pattern_type": "stix",
+     "pattern_version": "string",
+     "valid_from": "2023-03-21T12:00:00.000Z",
+     "valid_until": "2025-03-21T12:00:00.000Z",
+     "indicator_types": [
+       "malicious-activity"
+     ],
+     "kill_chain_phases": [
+       {
+         "kill_chain_name": "lockheed-martin-cyber-kill-chain",
+         "phase_name": "reconnaissance"
+       }
+     ]
+   }
+ ]
 }
 ```
+
 #### Required attributes
 
 For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource. 
@@ -466,7 +519,18 @@ The following attributes are required:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
        * **created** (string [date-time]). The time at which the object was originally created. Timestamp in UTC in RFC3339 format. For example, `2016-05-01T06:13:14.000Z`.
        * **modified** (string [date-time]). When the object is modified. Timestamp in UTC in RFC3339 format. For example, `2023-05-01T06:13:14.000Z`. This property is only used by STIX Objects that support versioning and represents the time that this particular version of the object was last modified. 
-       * **pattern** (string). The pattern of this indicator (as defined by [pattern in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_me3pzm77qfnf)). For example, `[ file:hashes.'SHA-256' = '4bac27393bdd9777ce02453256c5577cd02275510b2227f473d03f533924f877' ]`. 
+       * **pattern** (string). The pattern of this indicator (as defined by [pattern in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_me3pzm77qfnf)). <br/>For example, `[ file:hashes.'SHA-256' = '4bac393bdd' ]`. Following are valid values:
+         * `domain-name:value`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
+         * `email-addr:value`. Email address. (Entity type in Cloud SIEM is `_email`.)
+         * `file:hashes`. File hash. (Entity type in Cloud SIEM is `_hash`.)
+         * `file:name`. File name. (Entity type in Cloud SIEM is `_file`.)
+         * `ipv4-addr:value`. IPv4 IP address. (Entity type in Cloud SIEM is `_ip`.)
+         * `ipv6-addr:value`. IPv6 IP address. (Entity type in Cloud SIEM is `_ip`.)
+         * `mac-addr:value`. Mac address name. (Entity type in Cloud SIEM is `_mac`.)
+         * `process:name`. Process name. (Entity type in Cloud SIEM is `_process`.)
+         * `url:value`. URL. (Entity type in Cloud SIEM is `_url`.)
+         * `user-account:user-id`. User ID. (Entity type in Cloud SIEM is `_username`.)
+         * `user-account:login`. Login name. (Entity type in Cloud SIEM is `_username`.)       
        * **pattern_type** (string). The pattern language used in this indicator (as defined by [pattern_type in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_9lfdvxnyofxw)). Following are valid values:
           * `stix`. Specifies the [STIX](https://oasis-open.github.io/cti-documentation/stix/intro) pattern language.
           * `pcre`. Specifies the [PCRE](https://www.pcre.org/) language.

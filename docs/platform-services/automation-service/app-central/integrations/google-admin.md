@@ -4,7 +4,7 @@ description: ''
 tags: []
 ---
 
-![](/img/platform-services/automation-service/app-central/logos/google-admin.png)
+![](/img/platform-services/automation-service/app-central/logos/google.png)
 
 Version: 1.2  
 Updated: Sep 21, 2023
