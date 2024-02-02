@@ -15,7 +15,7 @@ The [CrowdStrike Falcon Endpoint Protection Platform](https://www.crowdstrike.co
 
 This version of the CrowdStrike Falcon Endpoint Protection App and its collection process has been tested with SIEM Connector Version 2.1.0+001-siem-release-2.1.0.
 
-## Log Types
+## Log types
 
 The CrowdStrike Falcon Endpoint Protection App uses the following log types:
 * Detection Event
@@ -145,7 +145,7 @@ For more information on Events, please refer to [Streaming API Event Dictionary]
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 This section provides query examples for each event type.
 
@@ -186,8 +186,8 @@ _sourceCategory=*Crowdstrike*  UserActivityAuditEvent
 
 This section shows you how to configure log collection from CrowdStrike Falcon Endpoint Protection and have them sent to Sumo Logic. CrowdStrike Falcon Endpoint Protection provides endpoint detection and response, next-gen antivirus, and threat intelligence services through the cloud. Multiple security functions are consolidated into a single lightweight agent, for visibility across using central security analytics with Sumo Logic.
 
-:::caution
-To collect logs from CrowdStrike Falcon Endpoint Protection, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Crowdstrike](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) to create the source and use the same source category while installing the app.
+:::warning
+To collect logs from CrowdStrike Falcon Endpoint Protection, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud-to-Cloud Integration for Crowdstrike](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) to create the source and use the same source category while installing the app.
 
 The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you're using the Sumo Logic FedRamp deployment, use the sections below to configure the collection for this app.
 :::
@@ -239,12 +239,12 @@ To configure CrowdStrike SIEM Connector, do the following:
 1. In the Falcon console go to [Support > API Clients & Keys](https://falcon.crowdstrike.com/support/api-clients-and-keys).
 2. [Create an API client](https://falcon.crowdstrike.com/support/documentation/1/crowdstrike-api-introduction#auth_apiclient) to use with the SIEM connector, and record its API client ID and API client secret. In the the **Edit API client** dialog, ONLY select the **Event streams** option, and then click **Save**.
    1. Open the **/opt/crowdstrike/etc/cs.falconhoseclient.cfg** file in a text editor.
-   2. Edit the following lines in the **cs.falconhoseclient.cfg ** file:
+   2. Edit the following lines in the **cs.falconhoseclient.cfg** file:
    * Change **app_id** to **SIEM-Connector.**
-   * **client_id - **Add your recorded API Client ID
-   * **client_secret - **Add your recorded API Client Secret
+   * **client_id** - Add your recorded API Client ID
+   * **client_secret** - Add your recorded API Client Secret
    * Make sure **output_format** is set to **json**
-   * For **EventTypeCollection **section - Enable all events:
+   * For **EventTypeCollection** section - Enable all events:
      * DetectionSummaryEvent = true
      * AuthActivityAuditEvent = true
      * UserActivityAuditEvent = true
@@ -266,8 +266,8 @@ To set up an installed collector and local file source, do the following:
 
 1. Install a Sumo Logic collector on the same host as the SIEM Connector. Follow the instructions for your operating system as described in [Installed Collectors](/docs/send-data/installed-collectors).
 2. Add a local file source to the collector for Streaming API Events. Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), with these additional changes:
-* Set the **Filepath** to**:**  **/var/log/crowdstrike/falconhoseclient/output**
-* Set the **Source Category** to: c**rowdstrike/falcon**
+* Set the **Filepath** to: `/var/log/crowdstrike/falconhoseclient/output`
+* Set the **Source Category** to: `crowdstrike/falcon`
 * Under **Enable Multiline Processing**, check  **Boundary Regex**  and enter the following regex: `^\{.*`.
 3. Click **Save**.
 
@@ -280,7 +280,9 @@ For more information about the CrowdStrike Falcon SIEM Connector, see the CrowdS
 
 This section provides instructions for installing the Sumo App for CrowdStrike Falcon Endpoint Protection, as well as examples for each of the app dashboards.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing CrowdStrike Falcon Dashboards
 

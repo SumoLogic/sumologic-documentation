@@ -71,10 +71,7 @@ For instructions, follow [Step 3](/docs/send-data/collect-from-other-data-source
 
 1. Log in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
 1. Under **Management Tools**, select **CloudFormation**.
-1. Create a new stack by clicking **Create Stack**, then select **With new resources (standard).**
-
-  ![Create_Stack_on_AWS_1.gif](/img/send-data/Create_Stack_on_AWS_1.gif)
-
+1. Create a new stack by clicking **Create Stack**, then select **With new resources (standard).** <br/> ![Create_Stack_on_AWS_1.gif](/img/send-data/Create_Stack_on_AWS_1.gif)
 1. On the **Specify Template** window, do one of the following:
 
    * If you have downloaded and optionally modified the CloudFormation template, choose to **Upload a template file**, upload the `DLQLambdaCloudFormationWithSecuredEndpoint.json` file, and then click **Next**.

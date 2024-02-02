@@ -22,7 +22,7 @@ Key features of the Druva Cyber Resilience app include:
 
 The Druva Cyber Resilience App utilizes Sumo Logic's Druva Cyber Resilience Source to gather [Events](https://developer.druva.com/reference/listeventsbytracker) from Cyber Resilience.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Sample Event"
 {
@@ -45,7 +45,7 @@ The Druva Cyber Resilience App utilizes Sumo Logic's Druva Cyber Resilience Sour
     }
 ```
 
-## Sample query
+## Sample queries
 
 ```sql title="Events Count"
 _source="Milan_Druva_Cyber_Resilience_v0.0.1"
@@ -62,34 +62,38 @@ _source="Milan_Druva_Cyber_Resilience_v0.0.1"
 
 ## Set up collection
 
-To set up [Cloud to Cloud Integration Druva Cyber Resilience Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source) for the Druva Cyber Resilience App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Cyber Resilience source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva Cyber Resilience app is properly integrated and configured to collect and analyze your Druva Cyber Resilience data.
+To set up [Cloud-to-Cloud Integration Druva Cyber Resilience Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source) for the Druva Cyber Resilience App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Cyber Resilience source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva Cyber Resilience app is properly integrated and configured to collect and analyze your Druva Cyber Resilience data.
 
 ## Installing the Druva Cyber Resilience app​
 
 This section has instructions for installing the Druva app for Sumo Logic.
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Druva Cyber Resilience dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDash from '../../reuse/apps/view-dashboards.md';
+
+<ViewDash/>
 
 ### Overview
 
-The **Druva Cyber Resilience - Overview** dashboard provides a comprehensive perspective on the organization's cybersecurity environment. It offers insights into the distribution of resilience events categorized by type, Syslog severity, and area. Additionally, it highlights the most recurring resilience event types. Furthermore, the dashboard provides a concise overview of the latest cyber resilience events, allowing for quick situational awareness.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Druva-Cyber-Resilience/Druva-Cyber-Resilience-Overview.png')} alt="Druva-Cyber-Resilience-Overview" style={{border: '1px solid black'}} width="800"/>
+The **Druva Cyber Resilience - Overview** dashboard provides a comprehensive perspective on the organization's cybersecurity environment. It offers insights into the distribution of resilience events categorized by type, Syslog severity, and area. Additionally, it highlights the most recurring resilience event types. Furthermore, the dashboard provides a concise overview of the latest cyber resilience events, allowing for quick situational awareness.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Druva-Cyber-Resilience/Druva-Cyber-Resilience-Overview.png')} alt="Druva-Cyber-Resilience-Overview" style={{border: '1px solid gray'}} width="800"/>
 
 ### Admin Events
 
-The **Druva Cyber Resilience - Admin Events** dashboard presents a cumulative tally of administrative events and carefully picked curated snapshots and provides insights into the success rate of administrator logins. Additionally, this dashboard provides the geographical origins of admin events and those originating from high-risk countries, the distribution of admin events by nature, the most frequent administrators engaged in activities, recent administrative events, and the breakdown of curated snapshots by resource category and the associated actions performed.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Druva-Cyber-Resilience/Druva-Cyber-Resilience-Admin-Events.png')} alt="Druva-Cyber-Resilience-Admin-Events" style={{border: '1px solid black'}} width="800"/>
+The **Druva Cyber Resilience - Admin Events** dashboard presents a cumulative tally of administrative events and carefully picked curated snapshots and provides insights into the success rate of administrator logins. Additionally, this dashboard provides the geographical origins of admin events and those originating from high-risk countries, the distribution of admin events by nature, the most frequent administrators engaged in activities, recent administrative events, and the breakdown of curated snapshots by resource category and the associated actions performed.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Druva-Cyber-Resilience/Druva-Cyber-Resilience-Admin-Events.png')} alt="Druva-Cyber-Resilience-Admin-Events" style={{border: '1px solid gray'}} width="800"/>
 
 ### Data Access Events
 
-The **Druva Cyber Resilience - Data Access Events** dashboard provides a tally of data access events and illustrates their trends over time, categorized by type. It offers insights into the geographical origins of data access events, including those from high-risk countries. Additionally, the distribution of data access events is presented based on their status and Syslog severity levels, highlights the most frequent resources involved in data access events, and a summary of recent data access events.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Druva-Cyber-Resilience/Druva-Cyber-Resilience-Data-Access-Events.png')} style={{border: '1px solid black'}} alt="Druva-Cyber-Resilience-Data-Access-Events" width="800"/>
+The **Druva Cyber Resilience - Data Access Events** dashboard provides a tally of data access events and illustrates their trends over time, categorized by type. It offers insights into the geographical origins of data access events, including those from high-risk countries. Additionally, the distribution of data access events is presented based on their status and Syslog severity levels, highlights the most frequent resources involved in data access events, and a summary of recent data access events.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Druva-Cyber-Resilience/Druva-Cyber-Resilience-Data-Access-Events.png')} style={{border: '1px solid gray'}} alt="Druva-Cyber-Resilience-Data-Access-Events" width="800"/>
 
 ### Unusual Data Activities
 
-The **Druva Cyber Resilience - Unusual Data Activities** dashboard provides a comprehensive count of total unusual data activities and visually represents their evolving patterns over time. Additionally, this dashboard highlights the most commonly utilized resources, identifies the users associated with the highest resource usage, categorizes activities by resource type and Syslog severity, and provides an overview of all the unique and abnormal data activities.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Druva-Cyber-Resilience/Druva-Cyber-Resilience-Unusual-Data-Activities.png')} alt="Druva-Cyber-Resilience-Unusual-Data-Activities" style={{border: '1px solid black'}} width="800"/>
+The **Druva Cyber Resilience - Unusual Data Activities** dashboard provides a comprehensive count of total unusual data activities and visually represents their evolving patterns over time. Additionally, this dashboard highlights the most commonly utilized resources, identifies the users associated with the highest resource usage, categorizes activities by resource type and Syslog severity, and provides an overview of all the unique and abnormal data activities.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Druva-Cyber-Resilience/Druva-Cyber-Resilience-Unusual-Data-Activities.png')} alt="Druva-Cyber-Resilience-Unusual-Data-Activities" style={{border: '1px solid gray'}} width="800"/>
 
 ### Ransomware Recovery Events
 
-The **Druva Cyber Resilience - Ransomware Recovery Events** dashboard offers a comprehensive overview of ransomware recoveries, encompassing their total count, distribution based on Syslog severity and type across time, top resource owners affected, quarantined event breakdown by resource type, geographic origins including high-risk countries, and concludes by furnishing detailed information and an overview of recent ransomware recoveries. The platform is under constant surveillance to swiftly identify and counter ransomware attacks in real time.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Druva-Cyber-Resilience/Druva-Cyber-Resilience-Ransomware-Recovery-Events.png')} style={{border: '1px solid black'}} alt="Druva-Cyber-Resilience-Ransomware-Recovery-Events" width="800"/>
+The **Druva Cyber Resilience - Ransomware Recovery Events** dashboard offers a comprehensive overview of ransomware recoveries, encompassing their total count, distribution based on Syslog severity and type across time, top resource owners affected, quarantined event breakdown by resource type, geographic origins including high-risk countries, and concludes by furnishing detailed information and an overview of recent ransomware recoveries. The platform is under constant surveillance to swiftly identify and counter ransomware attacks in real time.<br/><img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Druva-Cyber-Resilience/Druva-Cyber-Resilience-Ransomware-Recovery-Events.png')} style={{border: '1px solid gray'}} alt="Druva-Cyber-Resilience-Ransomware-Recovery-Events" width="800"/>

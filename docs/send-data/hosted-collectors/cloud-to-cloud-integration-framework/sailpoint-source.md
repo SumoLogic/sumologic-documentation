@@ -25,14 +25,14 @@ This source is not available in the [Fed deployment](/docs/api/getting-started#s
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 5 min |  [Events](https://developer.sailpoint.com/apis/v3/#operation/search) |
-| 12 hours |  [Users Inventory](https://developer.sailpoint.com/apis/v3/#operation/getPublicIdentities) |
+| 5 min |  [Events](https://developer.sailpoint.com/idn/api/v3/search) |
+| 12 hours |  [Users Inventory](https://developer.sailpoint.com/idn/api/v3/get-public-identities) |
 
 ## Setup
 
 ### Vendor configuration
 
-You need a SailPoint Admin account generated `Client ID` and `Client Secret Key` as well as the customer-specific organization name, such as, `{organization}.identitynow.com`.
+You need a SailPoint Admin account generated `Client ID` and `Client Secret Key` as well as the customer-specific organization name, such as `{organization}.identitynow.com`.
 
 To generate a [personal access token](https://developer.sailpoint.com/idn/api/v3/create-personal-access-token/#create-personal-access-token) from the IdentityNow UI, perform the following steps after logging into your IdentityNow instance:
 
@@ -58,11 +58,11 @@ To configure a Duo Source:
 1. Search for and select **SailPoint**.
 1. Enter a **Name** for the Source. The **description** is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. 
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-1. **Tenant Name**. Provide your SailPoint customer-specific organization name, such as, `{organization}.identitynow.com`.
+1. **Tenant Name**. Provide your SailPoint customer-specific organization name, such as `{organization}.identitynow.com`.
 1. **Client ID** and **Client Secret**. Enter the ID and Secret you got from creating your SailPoint access token in the [Vendor configuration section](#vendor-configuration) above.
 1. **Supported APIs to collect**. Select one or more of the available APIs, **Events** and **Users**.
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
@@ -80,7 +80,7 @@ To configure a Duo Source:
 
 ## JSON schema
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
 | Parameter | Type | Value | Required | Description |
 |:--|:--|:--|:--|:--|
@@ -95,13 +95,13 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
-| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| org_name | String | Yes | `null` | Provide your SailPoint customer-specific organization name, such as, {organization}.identitynow.com.	| |
+| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
+| org_name | String | Yes | `null` | Provide your SailPoint customer-specific organization name, such as `{organization}.identitynow.com`.	| |
 | client_id | String | Yes | `null` | Provide the SailPoint client ID you want to use to authenticate collection requests.	| |
 | client_secret | String | Yes | `null` | Provide the SailPoint secret you want to use to authenticate collection requests.|	 |
 | supported_apis | Array of strings | Yes | `null` | Define one or more of the available APIs to collect: Events, and Users.<br/>For example, for both you'd use: `["Events","Users"]` |  |
 
-See how to [create processing rules using JSON](/docs/send-data/use-json-configure-sources).
+See [Create processing rules using JSON](/docs/send-data/use-json-configure-sources/#creating-processing-rules-using-json).
 
 ### JSON example
 

@@ -2,7 +2,7 @@
 id: windows-opentelemetry
 title: Windows - OpenTelemetry Collector
 sidebar_label: Windows - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Windows.
+description: Learn about the Sumo Logic OpenTelemetry app for Windows.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="45"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for Windows allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon. In addition to that, our Windows App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment.
+The Sumo Logic app for Windows allows you to monitor the performance and resource utilization of hosts and processes that your mission-critical applications are dependent upon. In addition to that, our Windows app provides insight into your Windows system's operation and events so that you can better manage and maintain your environment.
 
-The Windows App, which is based on the Windows event log format, consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and Applications. Our dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors.
+The Windows app, which is based on the Windows event log format, consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and applications. Our dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors.
 
 * Windows event logs are sent to Sumo Logic through OpenTelemetry [Event Log receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/windowseventlogreceiver).
 * Windows Host metrics are sent to Sumo Logic through OpenTelemetry [Host Metrics receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/hostmetricsreceiver).
@@ -22,27 +22,34 @@ The Windows App, which is based on the Windows event log format, consists of pre
 
 ## Fields Created in Sumo Logic for Windows
 
-Following are the [fields](/docs/manage/fields/) which will be created as part of Windows App install if not already present. 
+Following are the [fields](/docs/manage/fields/) which will be created as part of Windows app install if not already present. 
 
 - **`sumo.datasource`**. Has a fixed value of **windows**.
 
-## Log Types
+## Log types
 
-The Windows App assumes events are coming from Windows Event Log receiver in JSON format. It does not work with third party logs.
+The Windows app assumes events are coming from Windows Event Log receiver in JSON format. It does not work with third party logs.
 
 Standard Windows event channels include:
 
 - Security
 - System
-- Application
+- application
 
 ## Collection configuration and app installation
+:::note
+You can skip this section if you have already set up the logs collection through [Windows PCI](/docs/integrations/pci-compliance/opentelemetry/windows-json-opentelemetry), [Windows - Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry), or [Active Directory](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry) app installation. Additional collection is not required as the logs used by this app are already ingested into Sumo Logic.
+:::
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+
+<SetupColl/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
@@ -52,24 +59,19 @@ In this step, you will configure the yaml file required for Windows event logs a
 
 Any custom fields can be tagged along with the data in this step.
 
-Once the details are filled in, click on the **Download YAML File** button to get the yaml file.
+#### Enable process metric collection (Optional)
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Windows-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+import ProcMetrics from '../../../reuse/apps/opentelemetry/process-metric-collection.md';
 
-:::note
-By default the collector will be sending process metrics to Sumo Logic. Since the number of processes running can be very large, this may result in significant increase in Data Points per Minute (DPM) . If you would like to narrow down the list of processes being monitored, this can be done by adding the following entry under the process section of the downloaded yaml.
+<ProcMetrics/>
 
-```sh
-process:
-  include:
-    names: [ <process name1>, <process name2> ... ]
-    match_type: <strict|regexp>
-```
-:::
+Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Windows-YAML.png')} alt="Windows-YAML" style={{border:'1px solid black'}} width="800"/>
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -93,26 +95,34 @@ process:
 
 <TabItem value="Chef">
 
-{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
 
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-## Sample Metrics Message
+<LogsOutro/>
+
+## Sample metrics message
 
 ```sql
 {
@@ -141,7 +151,7 @@ process:
 }
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample metrics query is from the **Host Metric - CPU** dashboard > **CPU User Time** panel.
 
@@ -160,8 +170,7 @@ This sample log query is from the **Windows - Overview** dashboard > **System Re
 | count as Restarts
 ```
 
-
-## Sample Logs
+## Sample logs
 
 ```json
 {
@@ -180,7 +189,7 @@ This sample log query is from the **Windows - Overview** dashboard > **System Re
 }
 ```
 
-## Viewing Windows Event Log-Based Dashboards
+## Viewing Windows Event Log-Based dashboards
 
 ### Windows - Overview
 
@@ -318,7 +327,7 @@ The **Process Metrics - Overview** dashboard gives you an at-a-glance view of al
 
 User this dashboard to :
 - Process wise distribution of CPU and memory usage
-- Process wise read/write operations 
+- Process wise read/write operations
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Windows-OpenTelemetry/Process-Metrics-Overview.png' alt="Process Metrics - Overview" />
 

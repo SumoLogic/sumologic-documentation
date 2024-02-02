@@ -14,7 +14,7 @@ The Sumo Logic App for Jira provides insight into Jira usage, request activity, 
 The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/jira-cloud).
 
 
-## Log Types
+## Log types
 
 The Jira app uses the following log types:
 
@@ -28,7 +28,7 @@ The Jira app uses the following log types:
 
 For more information, see [Webhooks](https://developer.atlassian.com/server/jira/platform/webhooks/) in Jira help.
 
-### Sample Query
+### Sample queries
 
 ```sql title="Users created"
 _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
@@ -40,9 +40,10 @@ _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
 | sort by date_time desc
 ```
 
-### Sample Log Messages
+### Sample log messages
 
-<details><summary><strong>Click to expand.</strong> See sample logs for Jira access, Jira catalina, Jira issue.</summary>
+<details>
+<summary><strong>Click to expand.</strong> See sample logs for Jira access, Jira catalina, Jira issue.</summary>
 
 ```json title="Jira Access"
 10.189.181.31 - qe@abc.com [24/Sep/2018:13:31:05 -0700] "POST /testrail/index.php?/api/v2/add_result_for_case/253843/13308563 HTTP/1.1" 200 426 "-" "Go-http-client/1.1"

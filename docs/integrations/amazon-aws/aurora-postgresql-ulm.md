@@ -17,7 +17,7 @@ Amazon Aurora PostgreSQL is a relational database service built for the cloud. F
 
 This guide provides an overview of the Aurora PostgreSQL ULM app pre-defined queries and dashboards, as well as instructions for collecting logs and metrics from Aurora PostgreSQL, and installing the app.
 
-## Log and Metric types
+## Log and metric types
 
 The Sumo Logic app for Aurora PostgreSQL ULM uses the following logs and metrics:
 * [AWS Cloud Trail](https://aws.amazon.com/cloudtrail/features/)
@@ -27,7 +27,8 @@ Below are example logs and metrics collected from your Aurora PostgreSQL databas
 
 ### Sample log
 
-<details><summary>Click to expand. The following is an example of an <strong>AWS Cloud Trail</strong> log.</summary>
+<details>
+<summary>Click to expand. The following is an example of an <strong>AWS Cloud Trail</strong> log.</summary>
 
 ```json
 {
@@ -123,7 +124,7 @@ Below are example logs and metrics collected from your Aurora PostgreSQL databas
 </details>
 
 
-### Sample log query
+### Sample queries
 
 The following log query is from the **Event Status Trend** panel of the **CloudTrail Event - Overview dashboard**.
 
@@ -173,7 +174,7 @@ This section provides instructions for setting up AWS CloudTrail Source to colle
 To collect AWS CloudTrail events, do the following:
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-2. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to the Hosted Collector, providing the following information:
+2. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source) to the Hosted Collector, providing the following information:
    * **Name**. Enter a name to display for the new Source.
    * **Description**. Enter an optional description.
    * **S3 Region**. Select the Amazon Region for your CloudTrail Aurora S3 bucket.
@@ -209,7 +210,9 @@ To collect Aurora CloudWatch metrics, do the following:
 
 Now that you have set up log and metric collection for Amazon Aurora PostgreSQL, you can install the Sumo Logic app for Aurora PostgreSQL ULM, and use its pre-configured searches and dashboards.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Aurora PostgreSQL ULM Dashboards
 

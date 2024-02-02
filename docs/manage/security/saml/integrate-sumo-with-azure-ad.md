@@ -52,12 +52,12 @@ The steps below are for the new Azure Management Console. For general steps for 
 
    1. Select **https://service.sumologic.com** as the default **Identifier (Entity ID)** in the list. (You'll update this in a later step.)
    1. Enter *https://service.sumologic.com* as the **Reply URL (Assertion Consumer Service URL)**. (You'll update this in a later step.)
-   1. Click **Save** at the top of the pane, and then close the pane. 
+   1. Click **Save** at the top of the pane, and then close the pane.
 1. In the **SAML Signing Certificate** tile, click the **Download** link for **Certificate (Base64)** to download the `<app-name>.cer` file.
 
     ![download-cert.png](/img/security/download-cert.png)
 1. In the **SAML Signing Certificate** tile, click the **Download** link for **Federation Metadata XML** to download the `<app-name>.xml` file.
-1. In the **Set Up <\app-name\>** section, copy and paste the contents of the following fields into a text document. You may need these values when in the next step.
+1. In the **Set Up `<app-name>`** section, copy and paste the contents of the following fields into a text document. You may need these values when in the next step.
 
    * Login URL
    * Azure AD identifier
@@ -78,7 +78,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
     ![add-configuration-filled.png](/img/security/add-configuration-filled.png)    
 1. **Configuration Name.** Enter a name to identify the SSO policy (or another name used internally to describe the policy).
 1. **Debug Mode.** Select this option if you'd like to view additional details if an error occurs when a user attempts to authenticate. For more information, see [View SAML Debug Information](view-saml-debug-information.md).
-1. Click the **Import Metadata XML** button. 
+1. Click the **Import Metadata XML** button.
 1. Select **Or Choose File** from the Import Metadata XML prompt and select the XML file you downloaded in substep 13 of [Configure Sumo as an Enterprise App in Azure AD](#configure-sumo-as-an-enterprise-app-in-azure-ad).
 1. Click the **Import** button to import the Azure AD metadata .xml.
 1. Verify the **Issuer** and **X.509 Certificate** fields have been populated by the import. If these fields are not populated:
@@ -86,7 +86,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
     2. **X.509 Certificate**. Use a text editor to open the certificate file you downloaded in substep 12 of [Configure Sumo as an Enterprise App in Azure AD](#configure-sumo-as-an-enterprise-app-in-azure-ad). Copy and paste the contents of the file into the field.   
 1. **Attribute Mapping.** Select **Use SAML subject.**
 1. **Configure SP-initiated Login.** (Optional) This step has instructions for setting up SP-initiated login. When SP-initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page. SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](/docs/manage/manage-subscription/manage-org-settings#change-account-subdomain) section of the **Manage Organization** topic.
-   1. Under the SAML configuration page > **Optional Settings** section, select **SP Initiated Login Configuration**. When you click this option, the following configurations will appear. <br/><img src={useBaseUrl('/img/security/sp-init-settings.png')} alt="SP-initiated login" style={{border: '1px solid black'}} width="300" />
+   1. Under the SAML configuration page > **Optional Settings** section, select **SP Initiated Login Configuration**. When you click this option, the following configurations will appear. <br/><img src={useBaseUrl('/img/security/sp-init-settings.png')} alt="SP-initiated login" style={{border: '1px solid gray'}} width="300" />
    1. **Authn Request URL.** Enter the **Login URL** that you noted in the substep 13 of [Configure Sumo as an Enterprise App in Azure AD](#configure-sumo-as-an-enterprise-app-in-azure-ad).
    1. **Disable Requested Authn Context**. Checkmark this option.
    1. **Select Binding Type**. Click **Post**.
@@ -155,7 +155,7 @@ There are two sides to the configuration. You'll configure a **Group Attribute 
 1. Click **Edit** under **Attribute and Claims**.
 1. Select **Add a group claim**
 1. Select **Groups assigned to the application** from the Group Claims pane.
-1. Select **sAMAccountName** from the Source Attribute drop down. 
+1. Select **sAMAccountName** from the Source Attribute drop down.
 1. Check the box for **Emit group name for cloud-only groups**.
 1. Under the **Advanced options**, check the box for **Customize the name of the group claim**.
 1. Check the box for **Emit groups as role claims**.
@@ -176,6 +176,3 @@ There are two sides to the configuration. You'll configure a **Group Attribute 
 1. You should be redirected and logged into your Sumo Logic account.  If you have enabled SP Initiated Login, you can also go to your Sumo Logic account subdomain login page and select the new SAML login option that appears. 
 
     ![welcome-to-sumo.png](/img/security/login-page-sp-v2.png)
-
-
- 

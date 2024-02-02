@@ -34,11 +34,11 @@ If you lose your place, you can click **Show Original Message** to return to 
 
 When the new query is created to search surrounding messages only the selected metadata is searched. None of the original query is added to the search. For example, take the following query:  
 
-`    _view=audit HTTP Error`
+     `_view=audit HTTP Error`
 
 If you select to view the surrounding minute from the context of the Host, the created query would be:  
 
-`    _sourceHost=52.5.127.200`
+     `_sourceHost=52.5.127.200`
 
 Where only the selected metadata is searched.
 

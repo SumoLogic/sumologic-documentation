@@ -20,7 +20,7 @@ Key features of the Proofpoint on Demand app include:
 
 This app uses Proofpoint on Demand source to collect the data from Proofpoint on Demand (PoD) Log Service and uses the secure WebSocket (WSS) protocol, which securely stores the required authentication, scheduling, and state tracking information.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Message log"
  {
@@ -129,7 +129,7 @@ This app uses Proofpoint on Demand source to collect the data from Proofpoint on
  }
 }
 ```
-## Sample Query
+## Sample queries
 
 ```sql title="Unique Inbound Domains"
 _sourceCategory="pod_src"
@@ -148,7 +148,7 @@ _sourceCategory="pod_src"
 
 ## Set up collection
 
-To set up [Cloud to Cloud Integration Proofpoint on Demand Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source) for the Proofpoint on Demand app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Proofpoint on Demand Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Proofpoint on Demand app is properly integrated and configured to collect and analyze your Proofpoint on Demand data.
+To set up [Cloud-to-Cloud Integration Proofpoint on Demand Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source) for the Proofpoint on Demand app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Proofpoint on Demand Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Proofpoint on Demand app is properly integrated and configured to collect and analyze your Proofpoint on Demand data.
 
 ## Installing the Proofpoint on Demand app​
 

@@ -41,11 +41,9 @@ Let’s say you’re going to write a rule that fires every time a successful Wi
 To find and review a log mapping:
 
 1. Click the gear icon and select **Log Mappings**.
-1. You can use the filter area at the top of the **Log Mappings** page to search for a mapping by various options. The screenshot below shows the results when we enter the filter **Name matches wildcard pattern *46...**. Two mappings match. For each mapping, you can see how many times it’s been used in the last 24 hrs and also over the last 7 days. We’ll select the one that has been in use, rather than the one that hasn’t.
-<br/><img src={useBaseUrl('img/cse/matching-mappings.png')} alt="Mapping mappings" width="800"/>
+1. You can use the filter area at the top of the **Log Mappings** page to search for a mapping by various options. The screenshot below shows the results when we enter the filter **Name matches wildcard pattern *46...**. Two mappings match. For each mapping, you can see how many times it’s been used in the last 24 hrs and also over the last 7 days. We’ll select the one that has been in use, rather than the one that hasn’t. <br/><img src={useBaseUrl('img/cse/matching-mappings.png')} alt="Mapping mappings" width="800"/>
 1. Once you’ve opened the mapping, you’ll see the top of the page shows the Vendor, Product, and Event ID that is written to the Records produced by the mapping. <br/><img src={useBaseUrl('img/cse/selected-mapping-top.png')} alt="Selected mapping" width="500"/>
-1. The **Fields** section of the page shows how raw message fields are mapped to Cloud SIEM schema attributes. In this mapping, `EventData.LogonProcessName` is mapped to `application`, `EventData.WorkstationName` is mapped to `device_hostname`, and so on. 
-<br/><img src={useBaseUrl('img/cse/selected-mapping-bottom.png')} alt="Selected mapping bottom" width="500"/>
+1. The **Fields** section of the page shows how raw message fields are mapped to Cloud SIEM schema attributes. In this mapping, `EventData.LogonProcessName` is mapped to `application`, `EventData.WorkstationName` is mapped to `device_hostname`, and so on. <br/><img src={useBaseUrl('img/cse/selected-mapping-bottom.png')} alt="Selected mapping bottom" width="500"/>
 
 Now that we understand the mapping in Cloud SIEM, we can see we will want to be looking for logs where the `metadata_vendor` is “Microsoft”, `metadata_product` is “Windows”, and `metadata_deviceEventId` is “Security-4624”, and we will also want to use the `user_username` field to find users that don’t match our naming convention.
 

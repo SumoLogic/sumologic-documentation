@@ -62,11 +62,11 @@ To configure a SentinelOne Mgmt API Source:
 1. Search for and select **SentinelOne Mgmt API**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. 
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
-1. **Base URL**. Provide your SentinelOne Management URL. It's in this format: `https:/\<your_management_ur\>`.
+1. **Base URL**. Provide your SentinelOne Management URL. It's in this format: `https://<your_management_url>`.
 1. **API Token**. Provide the API Token you got from the SentinelOne Management Console. See Authentication above for details.
 1. **Supported APIs to collect**. Select one or more of the available APIs: **activities**, **agents**, and **threats**.
 1. When you are finished configuring the Source, click **Submit**.

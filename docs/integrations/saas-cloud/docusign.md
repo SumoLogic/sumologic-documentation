@@ -1,6 +1,6 @@
 ---
 id: docusign
-title: Sumo Logic App for DocuSign
+title: DocuSign
 sidebar_label: DocuSign
 description: The DocuSign App for Sumo Logic helps you monitor and secure your DocuSign account by providing real-time insights into critical events, alerts, and user activity.
 ---
@@ -21,11 +21,11 @@ With the DocuSign App, you can:
 * Protect data loss by closely monitoring access, changes, and unauthorized activity.
 * Analyze user behavior to identify potential security threats by looking for deviations from normal patterns of activity.
 
-## Log Types
+## Log types
 
 The DocuSign App for Sumo Logic uses [Events](https://developers.docusign.com/docs/monitor-api/monitor101/events-alerts/events-list) and [Alerts](https://developers.docusign.com/docs/monitor-api/monitor101/events-alerts/alerts-list) data to generate logs that can be used for monitoring and analysis.
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title="Sample Events Log Message"
 {
@@ -127,7 +127,7 @@ The DocuSign App for Sumo Logic uses [Events](https://developers.docusign.com/do
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 This section contains the sample queries of both the `Events` and `Alerts`.
 
@@ -163,7 +163,9 @@ _sourceCategory="docusign_src"
 
 Before you begin, collect logs from DocuSign API and ingest them into Sumo Logic. Refer to the [DocuSign API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source/) to create the source and use the same source category while installing the app.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing the DocuSign Dashboards
 

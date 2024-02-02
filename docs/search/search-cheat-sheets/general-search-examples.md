@@ -58,7 +58,7 @@ Extract "from" and "to" fields. For example, if a raw event contains "From: Jane
 Extract the source IP addresses using a regular expression for the four octets of an IP address.
 
 ```sql
-*| parse regex "(\<src_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+*| parse regex "(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 ```
 
 Identify all URL addresses visited, extract them as the "url" field.                                                         
@@ -286,4 +286,4 @@ For any query, you can increase specificity by adding metadata fields to the key
 
 Edit Source metadata in the **Collection** tab.
 
-For details see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
+For details, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).

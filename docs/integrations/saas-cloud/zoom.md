@@ -26,7 +26,7 @@ The Webhook events are grouped into the following core event types:
 * User Events
 * Account Events
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -53,7 +53,7 @@ The Webhook events are grouped into the following core event types:
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory=zoom

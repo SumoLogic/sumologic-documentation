@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Public IP Addresses](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses) are used by internet resources to communicate inbound to resources in Azure. A public IP address is a resource with its own properties and can be associated with other azure resources like NAT gateways, Application gateways etc. This integration helps in monitoring DDoS notification events, packet dropped rate, TCP, and UDP data throughput.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Public IP addresses, you can collect the following logs and metrics:
 
-* **Resource logs**. To know more about the different resource log category types collected for Azure Public IP addresses, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-logs/microsoft-network-publicipaddresses-logs).
+* **Resource logs**. To learn more about the different resource log category types collected for Azure Public IP addresses, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-logs/microsoft-network-publicipaddresses-logs).
 * **Platform Metrics for Azure Public IP addresses**. These metrics are available in [Microsoft.Network/publicIPAddresses](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-network-publicipaddresses-metrics) namespace.
 For more information on supported metrics, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/monitor-public-ip-reference#metrics).
 

@@ -6,7 +6,7 @@ description: Field Extraction speeds the search process by parsing fields as log
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Field extractions allow you to parse [fields](/docs/manage/fields.md) from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. With Field Extraction Rules (FERs) in place, users can use the pre-parsed fields for ad-hoc searches, scheduled searches, real-time alerts, and dashboards. In addition, field extraction rules help standardize field names and searches, simplify the search syntax and scope definition, and improve search performance. 
+Field extractions allow you to parse [fields](/docs/manage/fields) from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. With Field Extraction Rules (FERs) in place, users can use the pre-parsed fields for ad-hoc searches, scheduled searches, real-time alerts, and dashboards. In addition, field extraction rules help standardize field names and searches, simplify the search syntax and scope definition, and improve search performance. 
 
 Fields are extracted from the time you create your FER moving forward. Therefore, set your FERs early on to take advantage of this automatic parsing mechanism.
 
@@ -30,7 +30,7 @@ When hovering over a row in the table there are icons that appear on the far ri
 * **Last Modified** date and time by user
 * **Fields Capacity** (bottom of table) shows how many fields your account is using, out of the total available for use.
 
-You can view the fields created in your account and what features are referencing them on the [Fields](/docs/manage/fields.md) page.
+You can view the fields created in your account and what features are referencing them on the [Fields](/docs/manage/fields) page.
 
 On the **Manage Data** > **Logs** > **Field Extraction Rules** page you can:
 
@@ -42,7 +42,9 @@ On the **Manage Data** > **Logs** > **Field Extraction Rules** page you can:
 
 ## Limitations
 
-{@import ../../reuse/fer-limitations.md}
+import FerLimit from '../../reuse/fer-limitations.md';
+
+<FerLimit/>
 
 ## Micro Lesson: Field Extraction Rules Basics
 
@@ -69,7 +71,7 @@ Changes to Field Extraction Rules are implemented immediately.
 
 ## Delete a Field Extraction Rule
 
-Deleting a Field Extraction Rule doesn't delete the fields it was parsing. You can delete any unwanted fields on the [Fields](/docs/manage/fields.md) page.
+Deleting a Field Extraction Rule doesn't delete the fields it was parsing. You can delete any unwanted fields on the [Fields](/docs/manage/fields) page.
 
 1. In Sumo Logic, go to **Manage Data** > **Logs** > **Field Extraction Rules.**
 1. Find the rule to delete in the table and click it. A window appears on the right of the table, click the **More Actions** button, and select **Delete**.

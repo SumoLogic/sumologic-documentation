@@ -70,8 +70,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/collection/start-stop-collector-using-scripts"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Start or Stop a Collector using Scripts
-</h4></a>
+  <a href="/docs/send-data/collection/start-stop-collector-using-scripts"><img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="40"/><h4>Start or Stop a Collector using Scripts</h4></a>
   <p>Start/stop a collector and check collector status.</p>
   </div>
 </div>

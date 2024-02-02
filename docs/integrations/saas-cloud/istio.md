@@ -20,7 +20,7 @@ This app supports Istio versions 1.8.x and 1.9.x+.
 * Access logs - Refer to [this page](https://istio.io/latest/docs/tasks/observability/logs/access-log/#default-access-log-format) for Istio Access log format.
 * Istio Metrics - Refer to [this page](https://istio.io/latest/docs/concepts/observability/#service-level-metrics) for detailed Istio Metrics
 
-### Sample Query
+### Sample queries
 
 Query Sample from Dashboard "Istio - Logs" > Panel "Non 200 Response Codes":
 
@@ -208,7 +208,9 @@ This section provides instructions for installing the Istio App, as well as desc
 
 Now that you have set up metric and log collection for Istio, install the Sumo Logic App for Istio and access the pre-configured dashboards that provide visibility into your Istio environment.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Istio Dashboards
 

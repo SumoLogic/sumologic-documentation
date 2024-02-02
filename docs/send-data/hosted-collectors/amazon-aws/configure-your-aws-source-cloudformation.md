@@ -41,7 +41,7 @@ Both methods require a YAML file with the template. You can create a file with t
 
 1. Options can remain the default, click **Next** again. Review for mistakes then click **Create**.
 
-1. Go to **Services > [S3](https://s3.console.aws.amazon.com/s3/buckets/)** and select the bucket to which you want to attach the notifications. Navigate to **Properties > Events > Add Notification**. Enter a **Name** for the event notification. In the **Events** section select, **All object create events**. In the **Send to** section (notification destination) select **SNS Topic**. An **SNS** section becomes available, select the name of the topic that AWS created in step 5 from the dropdown. The name format is `SumoSNSTopic\<AWS::StackNam\>`. Click **Save**.
+1. Go to **Services > [S3](https://s3.console.aws.amazon.com/s3/buckets/)** and select the bucket to which you want to attach the notifications. Navigate to **Properties > Events > Add Notification**. Enter a **Name** for the event notification. In the **Events** section select, **All object create events**. In the **Send to** section (notification destination) select **SNS Topic**. An **SNS** section becomes available, select the name of the topic that AWS created in step 5 from the dropdown. The name format is `SumoSNSTopic-<AWS::StackName>`. Click **Save**.
 
 ## Use AWS Command Line Interface (CLI)
 
