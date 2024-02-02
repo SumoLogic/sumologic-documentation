@@ -37,8 +37,7 @@ Follow the below steps to get the required fields for user configuration:
     - Short Description
     - Company Name
     - Developer Name
-    - Developer Email Address
-  <br/><img src={useBaseUrl('img/send-data/zoom-app-info.png')} alt="zoom-app-info" width="500"/>
+    - Developer Email Address <br/><img src={useBaseUrl('img/send-data/zoom-app-info.png')} alt="zoom-app-info" width="500"/>
 1. Click **Continue** to copy the **Secret Token** value. <br/><img src={useBaseUrl('img/send-data/secret-token.png')} alt="secret-token" width="500"/>
 1. Keep this window open and configure the Zoom source on Sumo Logic.
 
@@ -78,9 +77,9 @@ To configure a Zoom Source:
 1. Click **Add events** and subscribe to all the Webhook Events.
 1. Click **Done** and validate the endpoint by clicking on the **Validate** button.
 1. Once Validated, click on **Save**.
-  :::note
-  You may face ingestion issues if you use more than one subscription per webhook.
-  :::
+    :::note
+    You may face ingestion issues if you use more than one subscription per webhook.
+    :::
 1. Click **Continue**, to see the app activated message. <br/><img src={useBaseUrl('img/send-data/app-activated-message.png')} alt="app-activated-message" width="400"/>
 
 ### JSON configuration

@@ -50,9 +50,7 @@ For AWS Lambda functions created using Zip files, blueprint or serverless applic
 
 To add the Sumo Logic Lambda Extension to your AWS Lambda function, please follow the steps below:
 
-1. In the AWS Management Console, navigate to the definition of your Lambda function, Select **Layers** and click **Add a Layer**.
-
-  ![Add_Layer.png](/img/send-data/Add_Layer.png)
+1. In the AWS Management Console, navigate to the definition of your Lambda function, Select **Layers** and click **Add a Layer**. <br/> ![Add_Layer.png](/img/send-data/Add_Layer.png)
 
 1. Select **Specify an ARN**.
 
@@ -86,39 +84,37 @@ To package the Sumo Logic Lambda Extension with the AWS Lambda function created 
 
    * For functions based on the x86_64 architecture:
 
-    ```bash
-    wget
-    https://github.com/SumoLogic/sumologic-lambda-extensions/releases/latest/download/sumologic-extension-amd64.tar.gz
-    ```
+     ```bash
+     wget
+     https://github.com/SumoLogic/sumologic-lambda-extensions/releases/latest/download/sumologic-extension-amd64.tar.gz
+     ```
 
    * For functions based on the ARM 64 architecture:
 
-    ```bash
-    wget
-    https://github.com/SumoLogic/sumologic-lambda-extensions/releases/latest/download/sumologic-extension-arm64.tar.gz
-    ```
+     ```bash
+     wget
+     https://github.com/SumoLogic/sumologic-lambda-extensions/releases/latest/download/sumologic-extension-arm64.tar.gz
+     ```
 
 1. In your AWS Lambda container image Dockerfile, add the command below.
 
-  ```bash
-  ADD <Location-where-you-downloaded-the-tar-file>/sumologic-extension-<architecture>.tar.gz /opt/
-  ```
+   ```bash
+   ADD <Location-where-you-downloaded-the-tar-file>/sumologic-extension-<architecture>.tar.gz /opt/
+   ```
 
 1. Validate if the extension is added to the directory and execute the below command.
 
-  ```bash
-  docker run -it --entrypoint sh <ImageName>:<ImageTag>
-  ```
+   ```bash
+   docker run -it --entrypoint sh <ImageName>:<ImageTag>
+   ```
 
-1. Execute the command `ls -R /opt/` to see the directory structure. It should look as per the screenshot below.
-
-  ![Container_Images.png](/img/send-data/Container_Images.png)
+1. Execute the command `ls -R /opt/` to see the directory structure. It should look as per the screenshot below. <br/> ![Container_Images.png](/img/send-data/Container_Images.png)
 
 1. Deploy your AWS Lambda function using the container images.
 
-  :::note
-  The command will extract the Sumo Logic Lambda extension binary file into the folder structure as `/opt/extensions`. **Do not change the directory structure** as it is required by AWS Lambda to identify all the external extensions.
-  :::
+   :::note
+   The command will extract the Sumo Logic Lambda extension binary file into the folder structure as `/opt/extensions`. **Do not change the directory structure** as it is required by AWS Lambda to identify all the external extensions.
+   :::
 
 ## Step 3: Adding the Environment variables
 

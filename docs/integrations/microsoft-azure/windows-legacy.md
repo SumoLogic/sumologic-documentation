@@ -21,7 +21,7 @@ The Windows Legacy app assumes events are coming from Remote Windows Event Log S
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
 
-### Sample log message
+### Sample log messages
 
 
 ```bash
@@ -51,7 +51,7 @@ instance of Win32_NTLogEvent
 };
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Recent Policy Changes"
 _sourceCategory=OS/Windows "Policy Change"

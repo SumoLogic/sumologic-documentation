@@ -13,7 +13,7 @@ The Sumo Logic app for Amazon ElastiCache allows you to set up, run, and scale p
 
 The Amazon ElastiCache dashboards provide visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues. Use the preconfigured dashboards for at-a-glance analysis of event status trends, locations, successes and failures, as well as system health and performance metrics. The dashboards also have additional performance insights for Redis clusters.
 
-## Log and Metric types  
+## Log and metric types  
 
 The Amazon ElastiCache app uses the following logs and metrics:
 * [Amazon ElastiCache Host-Level Metrics for individual cache nodes](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.HostLevel.html)
@@ -21,7 +21,7 @@ The Amazon ElastiCache app uses the following logs and metrics:
 * [CloudTrail Amazon ElastiCache Data Event](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/logging-using-cloudtrail.html)
 
 
-### Sample log message
+### Sample log messages
 
 ```json title="Sample CloudTrail Log Message"
 {
@@ -119,7 +119,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md).
    * **Name**. Enter a name to display for the new Source.
    * **Description**. Enter an optional description.
-   * **S3 Region**. Select the Amazon Region for your** ElastiCache** S3 bucket.
+   * **S3 Region**. Select the Amazon Region for your **ElastiCache** S3 bucket.
    * **Bucket Name**. Enter the exact name of your **ElastiCache** S3 bucket.
    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/hosted-collectors/amazon-aws/amazon-path-expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
    * **Source Category**. Enter aws/observability/cloudtrail/logs
@@ -188,7 +188,9 @@ This section has instructions for installing the Sumo Logic app for **Amazon Ela
 
 Now that you have set up a collection for **Amazon ElastiCache**, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Amazon ElastiCache dashboards  
 
@@ -237,7 +239,7 @@ Use this dashboard to:
 
 ### Host Performance Details
 
-**The Amazon ElastiCache - Host Performance Details **dashboard shows an overview of the resource utilization for a given ElastiCache cluster across its nodes and also showcases trends around CPU, memory, swap usage and network traffic.  
+The **Amazon ElastiCache - Host Performance Details** dashboard shows an overview of the resource utilization for a given ElastiCache cluster across its nodes and also showcases trends around CPU, memory, swap usage and network traffic.  
 
 Use this dashboard to:
 * Get an at-a-glance view of the performance of all nodes within a given ElastiCache cluster
@@ -247,7 +249,7 @@ Use this dashboard to:
 
 ### Redis Performance Details
 
-**The Amazon ElastiCache - Redis Performance Details **dashboard provides detailed insights into cache hits, keys, replication, connections and failures of Redis ElastiCache clusters.
+The **Amazon ElastiCache - Redis Performance Details** dashboard provides detailed insights into cache hits, keys, replication, connections and failures of Redis ElastiCache clusters.
 
 Use this dashboard to:
 * Monitor trends around cache hits and misses to determine if Redis clusters need to be tuned
@@ -258,7 +260,7 @@ Use this dashboard to:
 
 ### Redis Command Latency
 
-**The Amazon ElastiCache - Redis Command Latency **dashboard provides detailed insights into latency of various Redis commands.
+The **Amazon ElastiCache - Redis Command Latency** dashboard provides detailed insights into latency of various Redis commands.
 
 Use this dashboard to:
 * To optimize performance of your Redis clusters by monitoring latency observed across get/set operations. Latency can be high due to high CPU usage, swapping or removing cached items. Performance optimizations can therefore be made either via resource allocation or by optimizing on caching.
@@ -267,7 +269,7 @@ Use this dashboard to:
 
 ### Redis Command Stats
 
-**The Amazon ElastiCache - Redis Command Stats **dashboard provides detailed insights into the number of commands being performed.
+The **Amazon ElastiCache - Redis Command Stats** dashboard provides detailed insights into the number of commands being performed.
 
 Use this dashboard to:
 * Monitor various Get and Set commands received by your ElastiCache clusters and nodes

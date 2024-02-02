@@ -41,7 +41,8 @@ If your system handles metrics, use the Sumo Logic app for [Docker ULM](/docs/in
 }
 ```
 
-<details><summary>Docker stats message (click to expand)</summary>
+<details>
+<summary>Docker stats message (click to expand)</summary>
 
 ```json title="Docker stats message"
 {
@@ -133,7 +134,7 @@ If your system handles metrics, use the Sumo Logic app for [Docker ULM](/docs/in
 
 </details>
 
-### Sample query
+### Sample queries
 
 ```sql title="Containers created or started"
 _sourceCategory=docker  ("\"status\":\"create\"" or "\"status\":\"start\"")  id from

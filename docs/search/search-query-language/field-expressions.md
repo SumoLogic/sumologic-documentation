@@ -84,9 +84,7 @@ The following time suffixes are supported:
 
 ## Arithmetic Operators
 
-Numeric expressions are evaluated using the usual precedence rules:
-parentheses, multiplication, and division, then addition and
-subtraction. Equal precedence is evaluated left to right. Here are some examples:
+Numeric expressions are evaluated using the usual precedence rules: parentheses, multiplication, and division, then addition and subtraction. Equal precedence is evaluated left to right. Here are some examples:
 
 ```sql
 | 537 + 435 as value
@@ -143,4 +141,4 @@ Characters quoted with double quotes (not single quotes) are string literals. Us
 | concat("Hello, ", "world") as welcome
 ```
 
-Use string functions, such as [concat()](/docs/search/search-query-language/search-operators/concat), to combine strings. There are no string operators like "+" or ".". The [`format()`](/docs/search/search-query-language/search-operators/format) operator can create string fields in a specified format. Use [`substring()`](/docs/search/search-query-language/search-operators/substring) to extract portions of a string.
+Use string functions, such as [`concat()`](/docs/search/search-query-language/search-operators/concat), to combine strings. There are no string operators like "+" or ".". The [`format()`](/docs/search/search-query-language/search-operators/format) operator can create string fields in a specified format. Use [`substring()`](/docs/search/search-query-language/search-operators/substring) to extract portions of a string.

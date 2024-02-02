@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Collector Management API gives you the ability to manage Collectors and Sources from HTTP endpoints.
 
-:::caution
+:::warning
 Collector Management APIs are not yet built with OpenAPI specifications and therefore not included in our [Swagger docs](https://api.sumologic.com/docs/). Instead, refer to the below documentation.
 :::
 
@@ -27,7 +27,9 @@ See the following topics for additional information:
 
 There is a community-supported script available on GitHub that allows you to conduct bulk actions to Collectors. See [Collector Management Script](https://github.com/SumoLogic/collector-management-client).
 
-{@import ../../reuse/api-endpoints.md}
+import ApiEndpoints from '../../reuse/api-endpoints.md';
+
+<ApiEndpoints/>
 
 
 ## Collector API Methods and Examples
@@ -36,7 +38,9 @@ The Collector Management API allows you to manage Collectors and Sources from an
 
 ## Rate limiting
 
-{@import ../../reuse/api-rate-limit.md}
+import RateLimit from '../../reuse/api-rate-limit.md';
+
+<RateLimit/>
 
 ## Response fields  
 
@@ -44,242 +48,141 @@ The following table lists the API response fields for installed and hosted Colle
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Access</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
+   <td><strong>Access</strong></td>
   </tr>
   <tr>
-   <td>alive
-   </td>
-   <td>Boolean
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>When a Collector is running it sends Sumo a heartbeat message every 15 seconds. If no heartbeat message is received after 30 minutes this becomes <code>false</code>.
-   </td>
-   <td>Transient
-   </td>
+   <td>alive</td>
+   <td>Boolean</td>
+   <td>Yes</td>
+   <td></td>
+   <td>When a Collector is running it sends Sumo a heartbeat message every 15 seconds. If no heartbeat message is received after 30 minutes this becomes <code>false</code>.</td>
+   <td>Transient</td>
   </tr>
   <tr>
-   <td>category
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>Null
-   </td>
-   <td>The Category of the Collector, used as metadata when searching data.
-   </td>
-   <td>Modifiable
-   </td>
+   <td>category</td>
+   <td>String</td>
+   <td>No</td>
+   <td>Null</td>
+   <td>The Category of the Collector, used as metadata when searching data.</td>
+   <td>Modifiable</td>
   </tr>
   <tr>
-   <td>collectorType
-   </td>
-   <td>String
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>The Collector type: <code>Installable</code> or <code>Hosted</code>
-   </td>
-   <td>Not modifiable
-   </td>
+   <td>collectorType</td>
+   <td>String</td>
+   <td></td>
+   <td></td>
+   <td>The Collector type: <code>Installable</code> or <code>Hosted</code></td>
+   <td>Not modifiable</td>
   </tr>
   <tr>
-   <td>collectorVersion
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>Version of the Collector software installed.
-   </td>
-   <td>Transient
-   </td>
+   <td>collectorVersion</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td></td>
+   <td>Version of the Collector software installed.</td>
+   <td>Transient</td>
   </tr>
   <tr>
-   <td>cutoffRelativeTime
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>
-   </td>
-   <td>Can be specified instead of <code>cutoffTimestamp</code> to provide a relative offset with respect to the current time. Example: use <code>"-1h"</code>, <code>"-1d"</code>, or <code>"-1w"</code> to collect data that's less than one hour, one day, or one week old, respectively. (Note that if you set this property to a relative time that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.)
-   </td>
-   <td>Not modifiable
-   </td>
+   <td>cutoffRelativeTime</td>
+   <td>String</td>
+   <td>No</td>
+   <td> </td>
+   <td>Can be specified instead of <code>cutoffTimestamp</code> to provide a relative offset with respect to the current time. Example: use <code>"-1h"</code>, <code>"-1d"</code>, or <code>"-1w"</code> to collect data that's less than one hour, one day, or one week old, respectively. (Note that if you set this property to a relative time that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.)</td>
+   <td>Not modifiable</td>
   </tr>
   <tr>
-   <td>cutoffTimestamp
-   </td>
-   <td>Long
-   </td>
-   <td>No
-   </td>
-   <td>0 (collects all data)
-   </td>
-   <td>Only collect data from files with a modified date more recent than this timestamp, specified as milliseconds since epoch. (Note that if you set this property to a timestamp that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.)  
-   </td>
-   <td>Modifiable
-   </td>
+   <td>cutoffTimestamp</td>
+   <td>Long</td>
+   <td>No</td>
+   <td>0 (collects all data)</td>
+   <td>Only collect data from files with a modified date more recent than this timestamp, specified as milliseconds since epoch. (Note that if you set this property to a timestamp that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.)</td>
+   <td>Modifiable</td>
   </tr>
   <tr>
-   <td>description
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>Null
-   </td>
-   <td>Description of the Collector.
-   </td>
-   <td>Modifiable
-   </td>
+   <td>description</td>
+   <td>String</td>
+   <td>No</td>
+   <td>Null</td>
+   <td>Description of the Collector.</td>
+   <td>Modifiable</td>
   </tr>
   <tr>
-   <td>ephemeral
-   </td>
-   <td>Boolean
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>When true, the collector will be deleted after 12 hours of inactivity. For more information, see <a href="/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral">Setting a Collector as Ephemeral</a>.
-   </td>
-   <td>Modifiable
-   </td>
+   <td>ephemeral</td>
+   <td>Boolean</td>
+   <td>Yes</td>
+   <td></td>
+   <td>When true, the collector will be deleted after 12 hours of inactivity. For more information, see <a href="/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral">Setting a Collector as Ephemeral</a>.</td>
+   <td>Modifiable</td>
   </tr>
   <tr>
-   <td>fields
-   </td>
-   <td>JSON Object
-   </td>
-   <td>No
-   </td>
-   <td>
-   </td>
+   <td>fields</td>
+   <td>JSON Object</td>
+   <td>No</td>
+   <td> </td>
    <td>JSON map of key-value <a href="/docs/manage/fields">fields</a> (metadata) to apply to the Collector. To assign an <a href="/docs/manage/ingestion-volume/ingest-budgets">Ingest Budget</a> to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:
-   <p><code>fields=_budget=Dev_20GB</code></p>
-   </td>
+   <p><code>fields=_budget=Dev_20GB</code></p></td>
+   <td>Modifiable</td>
+  </tr>
+  <tr>
+   <td>hostName</td>
+   <td>String</td>
+   <td>No</td>
+   <td>Null</td>
+   <td>Host name of the Collector. The hostname can be a maximum of 128 characters.</td>
+   <td>Modifiable</td>
+  </tr>
+  <tr>
+   <td>id</td>
+   <td>Long</td>
+   <td>Yes</td>
+   <td></td>
+   <td>Identifier</td>
+   <td>Not modifiable</td>
+  </tr>
+  <tr>
+   <td>lastSeenAlive</td>
+   <td>Long</td>
+   <td>No</td>
+   <td> </td>
+   <td>The last time the Sumo Logic service received an active heartbeat from the Collector, specified as milliseconds since epoch.</td>
+   <td>Transient</td>
+  </tr>
+  <tr>
+   <td>name</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td> </td>
+   <td>Name of the Collector. It must be unique on your account.</td>
+   <td>Modifiable</td>
+  </tr>
+  <tr>
+   <td>sourceSyncMode</td>
+   <td>String</td>
+   <td>No</td>
+   <td>UI</td>
+   <td>For installed Collectors, whether the Collector is using local source configuration management (using a <code>JSON</code> file), or cloud management (using the <code>UI</code>)</td>
    <td>Modifiable
-   </td>
+   <p>To assign to <code>JSON</code>, <a href="/docs/send-data/use-json-configure-sources/local-configuration-file-management/existing-collectors-and-sources">learn more</a>.</p></td>
   </tr>
   <tr>
-   <td>hostName
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>Null
-   </td>
-   <td>Host name of the Collector. The hostname can be a maximum of 128 characters.
-   </td>
-   <td>Modifiable
-   </td>
+   <td>timeZone</td>
+   <td>String</td>
+   <td>No</td>
+   <td>Null</td>
+   <td>Time zone of the Collector. For a list of possible values, refer to the "TZ" column in <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">this Wikipedia article</a>.</td>
+   <td>Modifiable</td>
   </tr>
   <tr>
-   <td>id
-   </td>
-   <td>Long
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>Identifier
-   </td>
-   <td>Not modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>lastSeenAlive
-   </td>
-   <td>Long
-   </td>
-   <td>No
-   </td>
-   <td>
-   </td>
-   <td>The last time the Sumo Logic service received an active heartbeat from the Collector, specified as milliseconds since epoch.
-   </td>
-   <td>Transient
-   </td>
-  </tr>
-  <tr>
-   <td>name
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>
-   </td>
-   <td>Name of the Collector. It must be unique on your account.
-   </td>
-   <td>Modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>sourceSyncMode
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>UI
-   </td>
-   <td>For installed Collectors, whether the Collector is using local source configuration management (using a <code>JSON</code> file), or cloud management (using the <code>UI</code>)
-   </td>
-   <td>Modifiable
-   <p>To assign to <code>JSON</code>, <a href="/docs/send-data/use-json-configure-sources/local-configuration-file-management/existing-collectors-and-sources">learn more</a>.</p>
-   </td>
-  </tr>
-  <tr>
-   <td>timeZone
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>Null
-   </td>
-   <td>Time zone of the Collector. For a list of possible values, refer to the "TZ" column in <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">this Wikipedia article</a>.
-   </td>
-   <td>Modifiable
-   </td>
-  </tr>
-  <tr>
-   <td>targetCpu
-   </td>
-   <td>Long
-   </td>
-   <td>No
-   </td>
-   <td>Null
-   </td>
-   <td>When CPU utilization exceeds this threshold, the Collector will slow down its rate of ingestion to lower its CPU utilization. Currently only Local and Remote File Sources are supported. The value must be expressed as a whole number percentage. The collector will adjust resources to attempt to limit the CPU usage to at most 20%. For more information, see <a href="/docs/send-data/collection/set-collector-cpu-usage-target">Set the Collector CPU Usage Target</a>.
-   </td>
+   <td>targetCpu</td>
+   <td>Long</td>
+   <td>No</td>
+   <td>Null</td>
+   <td>When CPU utilization exceeds this threshold, the Collector will slow down its rate of ingestion to lower its CPU utilization. Currently only Local and Remote File Sources are supported. The value must be expressed as a whole number percentage. The collector will adjust resources to attempt to limit the CPU usage to at most 20%. For more information, see <a href="/docs/send-data/collection/set-collector-cpu-usage-target">Set the Collector CPU Usage Target</a>.</td>
    <td>Modifiable</td>
   </tr>
 </table>
@@ -288,64 +191,39 @@ The following table lists additional response fields for Installed Collectors on
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Access</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Description</strong></td>
+   <td><strong>Access</strong></td>
   </tr>
   <tr>
-   <td>osName
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>Name of OS that Collector is installed on.
-   </td>
-   <td>Not modifiable
-   </td>
+   <td>osName</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>Name of OS that Collector is installed on.</td>
+   <td>Not modifiable</td>
   </tr>
   <tr>
-   <td>osVersion
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>Version of the OS that Collector is installed on.
-   </td>
-   <td>Not modifiable
-   </td>
+   <td>osVersion</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>Version of the OS that Collector is installed on.</td>
+   <td>Not modifiable</td>
   </tr>
   <tr>
-   <td>osArch
-   </td>
-   <td>
-   </td>
-   <td>Yes
-   </td>
-   <td>Architecture of the OS that Collector is installed on.
-   </td>
-   <td>Not modifiable
-   </td>
+   <td>osArch</td>
+   <td></td>
+   <td>Yes</td>
+   <td>Architecture of the OS that Collector is installed on.</td>
+   <td>Not modifiable</td>
   </tr>
   <tr>
-   <td>osTime
-   </td>
-   <td>Long
-   </td>
-   <td>Yes
-   </td>
-   <td>Time that the Collector has been running, in milliseconds.
-   </td>
-   <td>Not modifiable
-   </td>
+   <td>osTime</td>
+   <td>Long</td>
+   <td>Yes</td>
+   <td>Time that the Collector has been running, in milliseconds.</td>
+   <td>Not modifiable</td>
   </tr>
 </table>
 
@@ -361,54 +239,33 @@ Get a list of Collectors with an optional limit and offset.
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>filter
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>All Collectors
-   </td>
+   <td>filter</td>
+   <td>String</td>
+   <td>No</td>
+   <td>All Collectors</td>
    <td>Filter the Collectors returned using one of the available filter types:
-
-<code>installed</code>, <code>hosted</code>, <code>dead</code>, or <code>alive</code>.
-   </td>
+<code>installed</code>, <code>hosted</code>, <code>dead</code>, or <code>alive</code>.</td>
   </tr>
   <tr>
-   <td>limit
-   </td>
-   <td>Integer
-   </td>
-   <td>No
-   </td>
-   <td>1000
-   </td>
-   <td>Max number of Collectors to return.
-   </td>
+   <td>limit</td>
+   <td>Integer</td>
+   <td>No</td>
+   <td>1000</td>
+   <td>Max number of Collectors to return.</td>
   </tr>
   <tr>
-   <td>offset
-   </td>
-   <td>Integer
-   </td>
-   <td>No
-   </td>
-   <td>0
-   </td>
-   <td>Offset into the list of Collectors.
-   </td>
+   <td>offset</td>
+   <td>Integer</td>
+   <td>No</td>
+   <td>0</td>
+   <td>Offset into the list of Collectors.</td>
   </tr>
 </table>
 
@@ -464,58 +321,34 @@ Get a list of **Installed** Collectors last seen alive before a specified number
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>aliveBeforeDays
-   </td>
-   <td>Integer
-   </td>
-   <td>No
-   </td>
-   <td>100
-   </td>
-   <td>Minimum number of days the Collectors have been offline.
-
-Must be at least 1 day.
-   </td>
+   <td>aliveBeforeDays</td>
+   <td>Integer</td>
+   <td>No</td>
+   <td>100</td>
+   <td>Minimum number of days the Collectors have been offline. Must be at least 1 day.</td>
   </tr>
   <tr>
-   <td>limit
-   </td>
-   <td>Integer
-   </td>
-   <td>No
-   </td>
-   <td>1000
-   </td>
-   <td>Max number of Collectors to return.
-   </td>
+   <td>limit</td>
+   <td>Integer</td>
+   <td>No</td>
+   <td>1000</td>
+   <td>Max number of Collectors to return.</td>
   </tr>
   <tr>
-   <td>offset
-   </td>
-   <td>Integer
-   </td>
-   <td>No
-   </td>
-   <td>0
-   </td>
-   <td>Offset into the list of Collectors.
-   </td>
+   <td>offset</td>
+   <td>Integer</td>
+   <td>No</td>
+   <td>0</td>
+   <td>Offset into the list of Collectors.</td>
   </tr>
 </table>
-
-
 
 #### Example
 
@@ -527,9 +360,7 @@ Request:
 curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/offline?aliveBeforeDays=10
 ```
 
-
 Response:
-
 
 ```json
 {
@@ -558,39 +389,26 @@ Response:
 }
 ```
 
-
-
 ### Get Collector by ID  
 
 Get the Collector with the specified Identifier.
 
 **Method:** `GET Path: /collectors/[id]`
 
-
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>id
-   </td>
-   <td>Integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique identifier of the Collector.
-   </td>
+   <td>id</td>
+   <td>Integer</td>
+   <td>Yes</td>
+   <td>NA</td>
+   <td>Unique identifier of the Collector.</td>
   </tr>
 </table>
 
@@ -638,31 +456,20 @@ Response:
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>name
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Name of the Collector.
-   </td>
+   <td>name</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>NA</td>
+   <td>Name of the Collector.</td>
   </tr>
 </table>
-
 
 
 #### Rules
@@ -789,28 +596,18 @@ Updating a Collector also requires the "If-Match" header to be specified with th
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>id
-   </td>
-   <td>Integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>ID of the Collector.
-   </td>
+   <td>id</td>
+   <td>Integer</td>
+   <td>Yes</td>
+   <td>NA</td>
+   <td>ID of the Collector.</td>
   </tr>
 </table>
 
@@ -913,9 +710,6 @@ Response:
 
 
 ## DELETE methods  
-28
-
-
 
 ### Delete Collector by ID
 
@@ -927,28 +721,18 @@ Use the DELETE method to delete an existing Collector.
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>id
-   </td>
-   <td>Integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique identifier of the Collector.
-   </td>
+   <td>id</td>
+   <td>Integer</td>
+   <td>Yes</td>
+   <td>NA</td>
+   <td>Unique identifier of the Collector.</td>
   </tr>
 </table>
 
@@ -976,30 +760,18 @@ Delete **Installed** Collectors last seen alive before a specified number of day
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required?</strong></td>
+   <td><strong>Default</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>aliveBeforeDays
-   </td>
-   <td>Integer
-   </td>
-   <td>No
-   </td>
-   <td>100
-   </td>
-   <td>The minimum number of days the Collectors have been offline.
-
-Must be at least 1 day.
-   </td>
+   <td>aliveBeforeDays</td>
+   <td>Integer</td>
+   <td>No</td>
+   <td>100</td>
+   <td>The minimum number of days the Collectors have been offline. Must be at least 1 day.</td>
   </tr>
 </table>
 
@@ -1012,12 +784,9 @@ In this example, setting `aliveBeforeDays=10` deletes all the Installed Collecto
 
 Request:
 
-
 ```bash
 curl -u '<accessId>:<accessKey>' -X DELETE https://api.sumologic.com/api/v1/collectors/offline?aliveBeforeDays=10
 ```
-
-
 
 Response:
 
@@ -1025,60 +794,41 @@ There will be no response body, only a 200 OK response with the message "The del
 
 Error Codes and Messages  
 
-
 <table>
   <tr>
-   <td>Code
-   </td>
-   <td>Message
-   </td>
+   <td>Code</td>
+   <td>Message</td>
   </tr>
   <tr>
-   <td>BadRequestCollectorId
-   </td>
-   <td>Request body contains an invalid Collector ID.
-   </td>
+   <td>BadRequestCollectorId</td>
+   <td>Request body contains an invalid Collector ID.</td>
   </tr>
   <tr>
-   <td>CannotModifyCollector
-   </td>
-   <td>User is not authorized to modify the specified Collector.
-   </td>
+   <td>CannotModifyCollector</td>
+   <td>User is not authorized to modify the specified Collector.</td>
   </tr>
   <tr>
-   <td>CollectorDescriptionTooLong
-   </td>
-   <td>Maximum description length is 1024 characters.
-   </td>
+   <td>CollectorDescriptionTooLong</td>
+   <td>Maximum description length is 1024 characters.</td>
   </tr>
   <tr>
-   <td>CollectorNameTooLong
-   </td>
-   <td>Maximum name length is 128 characters.
-   </td>
+   <td>CollectorNameTooLong</td>
+   <td>Maximum name length is 128 characters.</td>
   </tr>
   <tr>
-   <td>createValidationError
-   </td>
-   <td>The specified ID is invalid.
-   </td>
+   <td>createValidationError</td>
+   <td>The specified ID is invalid.</td>
   </tr>
   <tr>
-   <td>DuplicateResourceName
-   </td>
-   <td>A resource with the same name already exists.
-   </td>
+   <td>DuplicateResourceName</td>
+   <td>A resource with the same name already exists.</td>
   </tr>
   <tr>
-   <td>InvalidCollector
-   </td>
-   <td>The specified Collector ID is invalid.
-   </td>
+   <td>InvalidCollector</td>
+   <td>The specified Collector ID is invalid.</td>
   </tr>
   <tr>
-   <td>InvalidCollectorType
-   </td>
-   <td>Invalid Collector type for the requested operation.
-   </td>
+   <td>InvalidCollectorType</td>
+   <td>Invalid Collector type for the requested operation.</td>
   </tr>
 </table>

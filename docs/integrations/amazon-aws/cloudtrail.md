@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Amazon Web Services (AWS) CloudTrail](https://aws.amazon.com/cloudtrail/) records API calls made to AWS. The Sumo Logic App for CloudTrail ingests these logs, providing greater visibility into events that, in turn, allows for security and operations forensics. For example, you can use the Sumo Logic App for CloudTrail to analyze raw CloudTrail data to investigate user behavior patterns. Or, by correlating CloudTrail data with other data sets, you can get a broader understanding of events from operating systems, intrusion detection systems, or even application logs.
 
-## Sample Log Message
+## Sample log messages
 
 ```json
 {  
@@ -42,7 +42,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ```
 
 
-## Sample Query
+## Sample queries
 
 ```sql title="Created and Deleted Network and Security Events"
 _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
@@ -139,17 +139,20 @@ Your search results should look similar to:
 
 Now that you have set up collection for AWS CloudTrail, install the Sumo Logic App for CloudTrail to use the pre-configured searches and dashboards that provide visibility into your environment.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 :::info
 
-<details><summary><strong>What if my data isn't displaying in all Panels?</strong></summary>
+<details>
+<summary><strong>What if my data isn't displaying in all Panels?</strong></summary>
 
 ### Scan interval issues
 
 Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS CloudTrail logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](#AWS-CloudTrail-App-Dashboards)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
 
-Additionally, you can change the time range of a Panel. Even though these  have been preconfigured, they can be edited just like any other Panel. You'll find instructions in [Changing the Time Range of a Panel](/docs/dashboards-classic/edit-dashboards/set-time-range-dashboards.md).
+Additionally, you can change the time range of a Panel. Even though these  have been preconfigured, they can be edited just like any other Panel. You'll find instructions in [Changing the Time Range of a Panel](/docs/dashboards/set-custom-time-ranges).
 
 ### AWS Admin activity not tracked
 
@@ -274,7 +277,7 @@ See information about CloudTrail console logins, including location of users, lo
 
 **Outlier - Success Login**. Shows outliers in count of successful logins on a line chart with threshold for the last 24 hours.
 
-**Login Results - One Day Time Compare. **Shows the number of login successes and failures in an aggregation table, that compares the current count with the count from one day ago.
+**Login Results - One Day Time Compare.** Shows the number of login successes and failures in an aggregation table, that compares the current count with the count from one day ago.
 
 **Outlier - Failed Login**. Shows outliers in count of failed login attempts on a line chart with threshold for the last 24 hours.
 
@@ -287,15 +290,15 @@ See information about S3 public objects and buckets, including counts of new pub
 
 **New Public Objects**. Shows a count of new public objects for the last 24 hours.
 
-**New Public Objects by Object-Bucket. **Displays new public objects per object on a timeline using the `timeslices` of one hour as a stacked column chart for the last 24 hours.
+**New Public Objects by Object-Bucket.** Displays new public objects per object on a timeline using the `timeslices` of one hour as a stacked column chart for the last 24 hours.
 
-**New Public Objects Table. **Displays a table with new public objects in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
+**New Public Objects Table.** Displays a table with new public objects in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
 
 **Public Buckets**. Shows a count of public buckets for the last 24 hours.
 
 **Public Buckets**. Displays public buckets on a timeline using the `timeslices` of one hour as a stacked column chart for the last 24 hours.
 
-**Public Buckets Table. **Displays a table with public buckets in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
+**Public Buckets Table.** Displays a table with public buckets in your S3 bucket, with time, key, bucket name, account ID, region, username, and access key ID for the last 24 hours.
 
 **Modified Public Objects**. Shows a count of public objects that have been modified in the last 24 hours.
 

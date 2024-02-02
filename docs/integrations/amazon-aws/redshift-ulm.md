@@ -32,7 +32,8 @@ dir="ltr">authenticated |Mon, 21 May 2018 01:38:01:601|::ffff:127.0.0.1 |32828 |
 '2018-05-21T06:20:09Z UTC [ db=dev user=himanshu pid=64458 userid=35 xid=5143208 ]' LOG: drop user testuser3
 ```
 
-<details><summary><strong>Click to expand</strong>. Amazon CloudTrail Redshift Log Sample.</summary>
+<details>
+<summary><strong>Click to expand</strong>. Amazon CloudTrail Redshift Log Sample.</summary>
 
 ```json title="Amazon CloudTrail Redshift Log Sample"
 {
@@ -160,7 +161,7 @@ dir="ltr">authenticated |Mon, 21 May 2018 01:38:01:601|::ffff:127.0.0.1 |32828 |
 
 </details>
 
-### Sample query
+### Sample queries
 
 ```sql title="Top Users"
 dir="ltr">_sourceCategory=*/AWS/Redshift/Audit LOG
@@ -394,7 +395,7 @@ See information about database user account events, including database user data
 
 **Create User Events**. Shows an aggregation table with user creation events in the last 24 hours, along with time, command, database name, username, port id, x id, sql statement, and a count of events.
 
-**Drop User Events. **Shows an aggregation table with drop user events in the last 24 hours, along with time, command, database name, username, port id, x id, sql statement, and a count of events.
+**Drop User Events.** Shows an aggregation table with drop user events in the last 24 hours, along with time, command, database name, username, port id, x id, sql statement, and a count of events.
 
 **Alter User Events**. Shows an aggregation table with alter user events in the last 24 hours, along with time, command, database name, username, port id, x id, sql statement, and a count of events.
 

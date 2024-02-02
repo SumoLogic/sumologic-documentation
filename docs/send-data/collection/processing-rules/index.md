@@ -55,8 +55,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/collection/processing-rules/data-forwarding-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Data Forwarding Rules
-</h4></a>
+  <a href="/docs/send-data/collection/processing-rules/data-forwarding-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Data Forwarding Rules</h4></a>
   <p>Data Forwarding rules forward data collected from an Installed Collector to non-Sumo Logic destinations.</p>
   </div>
 </div>

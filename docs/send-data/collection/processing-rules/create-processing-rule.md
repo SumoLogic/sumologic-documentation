@@ -42,9 +42,9 @@ You can add a processing rule to an existing Source or create a processing rule 
 
     For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with **(?s).\*** such as: **(?s).\*matching text(?s).\***
 
-  :::note
-  Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax)
-  :::
+     :::note
+     Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax)
+     :::
 
 1. To remove a filter or action click the trash can icon.  
 
@@ -58,7 +58,7 @@ You can add a processing rule to an existing Source or create a processing rule 
 
 ## Original interface
 
-1. To create a processing rule for an existing Source, go to **Manage Data** > **Collection** > **Collection** and click **Edit** next to a Source. When configuring your new or existing Source, expand the **Processing Rules for Logs**** section and then click **Add Rule**.  
+1. To create a processing rule for an existing Source, go to **Manage Data** > **Collection** > **Collection** and click **Edit** next to a Source. When configuring your new or existing Source, expand the **Processing Rules for Logs** section and then click **Add Rule**.  
 
     ![Add processing rule](/img/collector/processing-rules/create-a-processing-rule/no-rules.png)
 

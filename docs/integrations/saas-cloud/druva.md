@@ -27,7 +27,7 @@ The Sumo Logic Druva app is a powerful tool for monitoring and protecting your d
 
 The Druva app utilizes Sumo Logic's Druva Source to gather [Audit Events](https://developer.druva.com/docs/event-apis) from Druva. For more information on the fields of inSync events, refer to the [inSync events fields](https://developer.druva.com/docs/event-apis#obtain-events-api-response-in-syslog-format) documentation.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Audit Event log"
 {
@@ -52,7 +52,7 @@ The Druva app utilizes Sumo Logic's Druva Source to gather [Audit Events](https:
  }
 ```
 
-## Sample query
+## Sample queries
 
 ```sql title="Number of Users"
 _sourceCategory="druva_app"
@@ -73,7 +73,7 @@ _sourceCategory="druva_app"
 
 ## Set up collection
 
-To set up [Cloud to Cloud Integration Druva Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source/) for the Druva app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva app is properly integrated and configured to collect and analyze your Druva data.
+To set up [Cloud-to-Cloud Integration Druva Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source/) for the Druva App, follow the instructions provided. These instructions will guide you through the process of creating a source using the Druva Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Druva App is properly integrated and configured to collect and analyze your Druva data.
 
 ## Installing the Druva app​
 

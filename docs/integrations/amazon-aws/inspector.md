@@ -54,7 +54,7 @@ To deploy an AWS Security Hub App collector:
 6. Scroll to the bottom of the window and click **Deploy**.
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json title="AWS Security Hub log"
 {
@@ -95,7 +95,7 @@ To deploy an AWS Security Hub App collector:
 ```
 
 
-### Sample Query
+### Sample queries
 
 ```sql title="Findings by resource type and severity query"
 (_sourceCategory="securityhub_findings" OR _sourceCategory="Labs/AWS/SecurityHub")
@@ -115,7 +115,9 @@ To deploy an AWS Security Hub App collector:
 
 Once you've set up ingestion of findings from AWS Security Hub, you can install the Sumo Logic app for Amazon Inspector and use the pre-configured searches and dashboards.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing the Amazon Inspector Overview Dashboard
 

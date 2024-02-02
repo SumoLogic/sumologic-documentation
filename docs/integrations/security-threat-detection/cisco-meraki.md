@@ -81,7 +81,7 @@ into slot 1
 ```
 
 
-### Sample query
+### Sample queries
 
 The following query is from the High Severity Threats panel of the Cisco Meraki - Overview dashboard.
 

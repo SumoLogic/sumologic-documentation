@@ -32,7 +32,7 @@ The Kubernetes Control Plane App uses logs and metrics.
 The Sumo Logic Kubernetes app uses [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) to collect logs.
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title="Kube API Server Logs"
 {"timestamp":1562059802772,"log":"E0702 09:30:02.772323       1
@@ -82,7 +82,7 @@ connection refused"}
 Metrics are collected using [Prometheus](https://prometheus.io/) with [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 For additional information on metrics options you can configure for collection, see [this document](/docs/metrics/kubernetes-metrics.md).
 
-### Sample Query
+### Sample queries
 
 ```sql title="Control Manager - Event Severity Trend"
 _sourceCategory = *controller*
@@ -98,7 +98,7 @@ _sourceCategory = *controller*
 
 See [Sumo Logic Kubernetes Collection](/docs/observability/kubernetes/collection-setup.md) for instructions on configuring log and metric collection for the Kubernetes Control Plane App.
 
-:::caution
+:::warning
 Before installing the [Kubernetes Control Plane App](#installing-the-kubernetes-control-plane-app), you must set up collection for and install the [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes), which provides the services for managing and monitoring Kubernetes worker nodes.
 :::
 
@@ -215,7 +215,7 @@ Use this dashboard to:
 
 ### Security Audit Events
 
-This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `"falco:enabled"` as `"true"` in values.yaml as described [on this page](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
+This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `"falco:enabled"` as `"true"` in values.yaml as described [on this page](/docs/send-data/kubernetes/install-helm-chart).
 
 The **Kubernetes - Security Audit** Events dashboard provides insights into Kubernetes audit events collected by Falco.
 

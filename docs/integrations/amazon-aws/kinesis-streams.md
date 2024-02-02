@@ -18,7 +18,7 @@ The app uses Kinesis logs and metrics for:
 * Kinesis operations using AWS CloudTrail. For details, see [here](http://docs.aws.amazon.com/streams/latest/dev/logging-using-cloudtrail.html).
 
 
-### Sample log message
+### Sample log messages
 
 ```json
  {  
@@ -50,7 +50,7 @@ The app uses Kinesis logs and metrics for:
  }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Details of errors in events"
 _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode

@@ -13,7 +13,7 @@ The Sumo Logic App for Slack provides monitoring and data analytics for Slack us
 
 [Slack](https://slack.com/) is a cloud-based set of software tools and online services that provide for secure collaboration across teams, departments, offices, and countries.
 
-## Log Types
+## Log types
 
 Slack logs are in JSON format. The Slack App utilizes the following log types:
 
@@ -25,82 +25,13 @@ Slack logs are in JSON format. The Slack App utilizes the following log types:
 
 Sumo Logic’s Slack collector enhances the logs by adding a few metadata fields so the raw logs from Slack APIs might differ in format. The availability of all types of logs is determined by the [slack plans](https://get.slack.help/hc/en-us/articles/115003205446-Slack-plans-and-features-).
 
-<table>
-  <tr>
-   <td><strong>Log Type</strong>
-   </td>
-   <td><strong>Free plan</strong>
-   </td>
-   <td><strong>Standard plan</strong>
-   </td>
-   <td><strong> Plus plan</strong>
-   </td>
-   <td><strong>Enterprise plan</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>User logs
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-  </tr>
-  <tr>
-   <td>Public Channel logs
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-  </tr>
-  <tr>
-   <td>Public Message logs
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-  </tr>
-  <tr>
-   <td>Access logs
-   </td>
-   <td>
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-   <td>✓
-   </td>
-  </tr>
-  <tr>
-   <td>Audit logs
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>
-   </td>
-   <td>✓
-   </td>
-  </tr>
-</table>
-
-
+| Log Type | Free plan | Standard plan | Plus plan | Enterprise plan |
+|:---|:---|:---|:---|:---|
+| User logs | ✓ | ✓ | ✓ | ✓ |
+| Public Channel logs | ✓ | ✓ | ✓ | ✓ |
+| Public Message logs | ✓ | ✓ | ✓ | ✓ |
+| Access logs |  | ✓ | ✓ | ✓ |
+| Audit logs |  |  |  | ✓ |
 
 ### Sample log messages
 
@@ -257,7 +188,7 @@ The following table provides sample log messages for the different log types.
 }
 ```
 
-### Sample Query
+### Sample queries
 
 The sample query is from the **Channel Summary** panel of **Slack - Public Channels** dashboard.
 
@@ -292,7 +223,9 @@ This legacy solution to pull logs from Slack to Sumo Logic has been replaced wit
 
 This section demonstrates how to install the Slack App.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Slack Dashboards
 
@@ -375,7 +308,7 @@ Use this dashboard to:
 
 ### Audit Overview Dashboard
 
-The **Slack - Audit Overview **dashboard provides details around  Slack audit actions, and trends.
+The **Slack - Audit Overview** dashboard provides details around  Slack audit actions, and trends.
 
 Use this dashboard to:
 * Review audit actions and determine which are not approved or need to be corrected

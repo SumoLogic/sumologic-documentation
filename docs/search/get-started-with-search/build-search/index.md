@@ -81,10 +81,10 @@ For Source Names: `* | count_frequent(_sourceName)`
 
 The more specific the query, the more efficiently it will run, as unnecessary messages are quickly thrown out of the mix. For example, the following two queries will generate the same result:
 
-* `* | parse regex "uid=(\<userI\>\d+)"`
-* `"uid=" | parse regex "uid=(\<userI\>\d+)"`
+* `* | parse regex "uid=(?<userId>\d+)"`
+* `"uid=" | parse regex "uid=(?<userId>\d+)"`
 
-The second query will return the results more efficiently because the first query includes "`*`", which prompts Sumo Logic to comb through all messages for the given time range.
+The second query will return the results more efficiently because the first query includes `"*"`, which prompts Sumo Logic to comb through all messages for the given time range.
 
 ### Use Field Extraction Rules
 

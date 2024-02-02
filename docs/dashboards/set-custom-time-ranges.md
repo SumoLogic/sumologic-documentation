@@ -16,11 +16,11 @@ After changing the time range for a dashboard or panel, you can set the new rang
 
 You can change the time range for a dashboard or panel by selecting a predefined interval from a drop-down list, choosing a recently used time range, or specifying custom dates and times.
 
-Dashboard panels are limited to a 32-day maximum time range. This limitation does not apply for queries using scheduled views.
+Dashboard panels are limited to a 32-day maximum time range. This limitation does not apply for queries using aggregate scheduled views.
 
 ### Set a predefined time range
 
-**To select a predefined time range:**
+To select a predefined time range:
 
 1. Click the time range shown near the upper right corner of a dashboard or dashboard panel.<br/><img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/dashboard-setting-default.png')} alt="dash range" width="675"/>
 1. Select one of the time range options on the **Relative** tab.<br/><img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/relative-ranges.png')} alt="relative ranges" width="300"/>
@@ -28,14 +28,14 @@ Dashboard panels are limited to a 32-day maximum time range. This limitation doe
 
 ### Choose a recently used time range
 
-**To select a recently used time range:**
+To select a recently used time range:
 
 1. Click the time range shown near the upper right corner of a dashboard or dashboard panel.
 1. Click the **Recent** tab, and select a time range.<br/><img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/recent-time-ranges.png')} alt="dash range" width="300"/>
 
 ### Set a custom time range
 
-**To set a custom time range:**
+To set a custom time range:
 
 1. Click the time range shown near the upper right corner of a dashboard or dashboard panel.
 1. Click the **Custom** tab. <br/><img src={useBaseUrl('img/dashboards-new/set-custom-time-ranges/custom-tab.png')} alt="custom range" width="300"/>

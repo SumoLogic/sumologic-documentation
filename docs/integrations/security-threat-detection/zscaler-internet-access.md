@@ -51,7 +51,7 @@ To send logs to Sumo Logic using Cloud NSS, add a feed in ZIA using the followin
    1. **Add HTTP Header**. No headers are required for Sumo Logic. If it requires at least one header, add a dummy header.
    1. **Log Type**. Select **Web Log**.
    1. **Feed Output Type**. Select **JSON**.
-   1. **JSON Array Notation**. Disable so that logs ingest as individual JSON objects instead of a JSON array. 
+   1. **JSON Array Notation**. Disable so that logs ingest as individual JSON objects instead of a JSON array.
    1. **Feed Escape Character**. Leave this field blank for Web, Firewall, & Tunnel. Set as **,\"** for DNS.
    1. **Feed Output Format**. The JSON format is displayed. (Leave the default setting.)
    1. **Timezone**. Set to GMT by default.
@@ -74,7 +74,7 @@ If you are not able to use Zscaler Cloud NSS, you can collect logs for the ZIA a
 1. Log into your Zscaler NSS system.
 1. Go to **Administration > Settings > Nanolog Streaming Service**.
 1. From the **NSS Feeds** tab, click **Add**.
-1. In the **Add NSS Feed** dialog: 
+1. In the **Add NSS Feed** dialog:
     1. **Feed Name.** Enter a name for your NSS feed.
     1. **NSS Server.** Select the NSS Server.
     1. **SIEM IP Address.** Enter the Sumo Logic Installed Collector IP address.
@@ -113,7 +113,7 @@ If you are not able to use Zscaler Cloud NSS, you can collect logs for the ZIA a
    1. **Timezone.** Set to GMT by default.
    1. Click **Save**.
 
-### Sample log message
+### Sample log messages
 
 
 ```json title="Web Log Sample"

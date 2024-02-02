@@ -152,7 +152,7 @@ metrics:
 10.1.3.83 - - [28/Aug/2018:06:44:18 +0000] "GET /puppet/v3/node/puppet-node-3?environment=production&configured_environment=production&transaction_uuid=f95ce8bd-f97e-4d99-9a72-3b010a50ceb1&fail_on_404=true HTTP/1.1" 200 11394 "-" "Puppet/5.5.3 Ruby/2.4.4-p296 (x86_64-linux)" 77
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Failed Resources"
 _sourceCategory=prod/web/puppet/reports
@@ -236,7 +236,8 @@ The script requires Ruby on the host machine.
 9. **Command**. Leave the default value, `/bin/sh`, selected.
 10. **Script**. Choose **Type the script to execute** and copy/paste the below script in the text box:
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```
 MaxFileSize=20

@@ -120,7 +120,7 @@ When one or more of your Collectors are eligible for an upgrade, you'll be notif
 ![Upgrade collectors with search](/img/collector/upgrade-collectors-icon.png)
 
 :::note
-If you are performing a manual upgrade, make sure that you backup your `\<sumo_hom\>/config` directory before you upgrade because it stores the current source information. If any issues occur during upgrade that leave the Collector unable to connect to the service, or result in missing sources, you can restore this directory and restart the Collector to address the problem.
+If you are performing a manual upgrade, make sure that you backup your `/<sumo_home>/config` directory before you upgrade because it stores the current source information. If any issues occur during upgrade that leave the Collector unable to connect to the service, or result in missing sources, you can restore this directory and restart the Collector to address the problem.
 :::
 
 ### Test Your New Collector in a Staging Environment

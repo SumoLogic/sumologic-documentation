@@ -77,7 +77,7 @@ Use this dashboard to:
 
 ### Login
 
-The** Google Workspace - Login Dashboard** provides high-level graphs and detailed information for Google Workspace apps login data. Login information includes geographic locations, logins by state, successful logins, login failures by the user, IP address, and type; login failure outliers, login activity trends, and logins from multiple IP addresses.
+The **Google Workspace - Login Dashboard** provides high-level graphs and detailed information for Google Workspace apps login data. Login information includes geographic locations, logins by state, successful logins, login failures by the user, IP address, and type; login failure outliers, login activity trends, and logins from multiple IP addresses.
 
 Use this dashboard to:
 * Identify abnormal spikes in login failures.
@@ -89,7 +89,7 @@ Use this dashboard to:
 
 ### Alert Center - Overview Dashboard
 
-The** Google Workspace - Alert Center - Overview Dashboard** provides a high-level view of Google Workspace alert data by source and type, suspicious IP and email addresses, compromised devices and credentials, recent alerts, and alert trends over time.
+The **Google Workspace - Alert Center - Overview Dashboard** provides a high-level view of Google Workspace alert data by source and type, suspicious IP and email addresses, compromised devices and credentials, recent alerts, and alert trends over time.
 
 Use this dashboard to:
 * Determine potential threats.
@@ -102,7 +102,7 @@ Use this dashboard to:
 
 ### Alert Center - Investigations
 
-The** Google Workspace - Alert Center - Investigations  Dashboard** provides easily accessible analytics on compromised credentials, including Google Workspace activity of users with compromised credentials. This dashboard also provides data on Google Workspace activity from compromised devices.
+The **Google Workspace - Alert Center - Investigations Dashboard** provides easily accessible analytics on compromised credentials, including Google Workspace activity of users with compromised credentials. This dashboard also provides data on Google Workspace activity from compromised devices.
 
 Use this dashboard to:
 * Track credential breaches and compromised devices.
@@ -114,7 +114,7 @@ Use this dashboard to:
 
 ### Alert Center - Google Identity
 
-The** Google Workspace - Alert Center - Google Identity dashboard** provides detailed information on suspicious logins and suspended users. This dashboard also provides information on the number and location of suspicious logins and suspended users.
+The **Google Workspace - Alert Center - Google Identity dashboard** provides detailed information on suspicious logins and suspended users. This dashboard also provides information on the number and location of suspicious logins and suspended users.
 
 Use this dashboard to:
 * Monitor suspicious activity and its locations.
@@ -125,7 +125,7 @@ Use this dashboard to:
 
 ### Alert Center - Gmail Phishing
 
-The** Google Workspace - Alert Center - Gmail Phishing dashboard** provides detailed information on phishing attacks and spam activity on Google Workspace applications. This dashboard also provides information on the affected users and the top attackers responsible for the attacks.
+The **Google Workspace - Alert Center - Gmail Phishing dashboard** provides detailed information on phishing attacks and spam activity on Google Workspace applications. This dashboard also provides information on the affected users and the top attackers responsible for the attacks.
 
 Use this dashboard to:
 * Monitor users affected by phishing attacks.
@@ -136,7 +136,7 @@ Use this dashboard to:
 
 ### Alert Center - Other Alerts
 
-The** Google Workspace - Other Alerts Dashboard** provides a high-level view paired with detailed information on Google Workspace operations for security and privacy issues, potential government-backed attacks, recent customer takeout initiated alerts, and  Mobile device management-based alerts.
+The **Google Workspace - Other Alerts Dashboard** provides a high-level view paired with detailed information on Google Workspace operations for security and privacy issues, potential government-backed attacks, recent customer takeout initiated alerts, and  Mobile device management-based alerts.
 
 Use this dashboard to:
 * Identify compromised devices and monitor suspicious activity.

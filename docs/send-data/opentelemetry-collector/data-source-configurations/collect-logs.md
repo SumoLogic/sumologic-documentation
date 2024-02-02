@@ -32,53 +32,52 @@ See [Additional Configurations Reference](/docs/send-data/opentelemetry-collecto
 
 Following configuration demonstrates:
 
-1. **Collect**: How to collect logs stored in `/var/log/syslog` and `/var/log/audit/audit.log`.
-2. **Transform**: Set `_sourceCategory` field to `application_logs_prod`
-3. **Export**: Send data to authenticated Sumo Logic organization.
+* **Collect**: How to collect logs stored in `/var/log/syslog` and `/var/log/audit/audit.log`.
+* **Transform**: Set `_sourceCategory` field to `application_logs_prod`
+* **Export**: Send data to authenticated Sumo Logic organization.
 
-```yaml
-receivers:
-  filelog/custom_files:
-    include:
-      - /var/log/syslog
-      - /var/log/audit/audit.log
-    include_file_name: false
-    include_file_path_resolved: true
-    storage: file_storage
+   ```yaml
+   receivers:
+     filelog/custom_files:
+       include:
+         - /var/log/syslog
+         - /var/log/audit/audit.log
+       include_file_name: false
+       include_file_path_resolved: true
+       storage: file_storage
 
-processors:
-  groupbyattrs/custom_files:
-    keys:
-      - log.file.path_resolved
-  resource/custom_files:
-    attributes:
-      - key: _sourceCategory
-        value: application_logs_prod
-        action: insert
-      - key: sumo.datasource
-        value: linux
-        action: insert
-  sumologic_schema/custom_files:
+   processors:
+     groupbyattrs/custom_files:
+       keys:
+         - log.file.path_resolved
+     resource/custom_files:
+       attributes:
+         - key: _sourceCategory
+           value: application_logs_prod
+           action: insert
+         - key: sumo.datasource
+           value: linux
+           action: insert
+     sumologic_schema/custom_files:
 
-service:
-  pipelines:
-    logs/custom_files:
-      receivers:
-        - filelog/custom_files
-      processors:
-        - memory_limiter
-        - groupbyattrs/custom_files
-        - resource/custom_files
-        - resourcedetection/system
-        - sumologic_schema/custom_files
-        - batch
-      exporters:
-        - sumologic
-```
-
+   service:
+     pipelines:
+       logs/custom_files:
+         receivers:
+           - filelog/custom_files
+         processors:
+           - memory_limiter
+           - groupbyattrs/custom_files
+           - resource/custom_files
+           - resourcedetection/system
+           - sumologic_schema/custom_files
+           - batch
+         exporters:
+           - sumologic
+   ```
 1. Create a file in folder `/etc/otelcol-sumo/conf.d` with name for your choice, perhaps matching the pipeline name, `custom_files.yaml`. Its name has to end with `.yaml`.
-2. Paste the above content.
-3. Restart collector with following command:
+1. Paste the above content.
+1. Restart collector with following command:
    ```bash title="Linux"
    systemctl restart otelcol-sumo
    ```
@@ -174,47 +173,47 @@ Windows Log Event Receiver reads and parses logs from windows event log API to c
 
 Following configuration demonstrates:
 
-1. **Collect**: Collect Application, Security and System channels.
-2. **Transform**: Set `_sourceCategory` field to `windows_event_log_prod`.
-3. **Export**: Send data to authenticated Sumo Logic organization.
+* **Collect**: Collect Application, Security and System channels.
+* **Transform**: Set `_sourceCategory` field to `windows_event_log_prod`.
+* **Export**: Send data to authenticated Sumo Logic organization.
 
-```yaml
-receivers:
-  windowseventlog/application/localhost:
-    channel: Application
-  windowseventlog/security/localhost:
-    channel: Security
-  windowseventlog/system/localhost:
-    channel: System
+   ```yaml
+   receivers:
+     windowseventlog/application/localhost:
+       channel: Application
+     windowseventlog/security/localhost:
+       channel: Security
+     windowseventlog/system/localhost:
+       channel: System
 
-processors:
-  resource/windows_resource_attributes/localhost:
-    attributes:
-      - key: _sourceCategory
-        value: windows_event_log_prod
-        action: insert
-      - key: sumo.datasource
-        value: windows
-        action: insert
+   processors:
+     resource/windows_resource_attributes/localhost:
+       attributes:
+         - key: _sourceCategory
+           value: windows_event_log_prod
+           action: insert
+         - key: sumo.datasource
+           value: windows
+           action: insert
 
-service:
-  pipelines:
-    logs/windows/localhost:
-      receivers:
-        - windowseventlog/application/localhost
-        - windowseventlog/system/localhost
-        - windowseventlog/security/localhost
-      processors:
-        - memory_limiter
-        - resource/windows_resource_attributes/localhost
-        - batch
-      exporters:
-        - sumologic
-```
+   service:
+     pipelines:
+       logs/windows/localhost:
+         receivers:
+           - windowseventlog/application/localhost
+           - windowseventlog/system/localhost
+           - windowseventlog/security/localhost
+         processors:
+           - memory_limiter
+           - resource/windows_resource_attributes/localhost
+           - batch
+         exporters:
+           - sumologic
+   ```
 
 1. Create a file in folder `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\` with name `sample_windows.yaml`.
-2. Paste the above content into the file.
-3. Restart collector with following command:
+1. Paste the above content into the file.
+1. Restart collector with following command:
    ```bash title="Windows"
    Restart-Service -Name OtelcolSumo
    ```
@@ -310,9 +309,9 @@ The following table shows the comparison of these components.
 
 Following configuration demonstrates:
 
-1. **Collect**: Collect syslog sent using UDP protocol to `172.31.93.11` on port `5140`
-2. **Transform**: Set `_sourceCategory` field to `syslog_event_log_prod`
-3. **Export**: Send data to authenticated Sumo Logic organization
+* **Collect**: Collect syslog sent using UDP protocol to `172.31.93.11` on port `5140`
+* **Transform**: Set `_sourceCategory` field to `syslog_event_log_prod`
+* **Export**: Send data to authenticated Sumo Logic organization
 
 ```yaml
 receivers:
@@ -362,9 +361,9 @@ To collect Syslog logs in format compatible with the Sumo Logic Installed Collec
 
 Following configuration demonstrates:
 
-1. **Collect**: Collect syslog UDP on IP `172.31.93.11` port `5140` and TCP on IP `172.31.93.11` port `1514`.
-2. **Transform**: Set `_sourceCategory` field to `syslog_event_log_prod`
-3. **Export**: Send data to authenticated Sumo Logic organization
+* **Collect**: Collect syslog UDP on IP `172.31.93.11` port `5140` and TCP on IP `172.31.93.11` port `1514`.
+* **Transform**: Set `_sourceCategory` field to `syslog_event_log_prod`
+* **Export**: Send data to authenticated Sumo Logic organization
 
 
 ```yaml
