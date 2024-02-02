@@ -161,11 +161,15 @@ To set up [Cloud-to-Cloud Integration Proofpoint TAP Source](/docs/send-data/hos
 
 ## Installing the Proofpoint TAP app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Proofpoint TAP dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Messages Overview
 

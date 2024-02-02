@@ -59,11 +59,15 @@ Make sure to set the Source Category when configuring the Windows Event Log sour
 
 ## Installing the PCI Compliance for Windows JSON app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing PCI Compliance for Windows JSON dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Windows - PCI Req 02, 08, 10 - Account, User, System Monitoring
 

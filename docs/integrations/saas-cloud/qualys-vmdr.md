@@ -88,11 +88,15 @@ This section provides instructions for setting up [Cloud-to-Cloud-Integration fo
 
 ## Installing the Qualys VMDR app​
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Qualys VMDR dashboard
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

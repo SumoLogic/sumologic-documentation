@@ -209,11 +209,15 @@ To set up [Cloud-to-Cloud Integration Rapid7 Source](/docs/send-data/hosted-coll
 
 ## Installing the Rapid7 app​
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Rapid7 dashboards​​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Assets Overview
 

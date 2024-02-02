@@ -227,7 +227,9 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ## Viewing Slack Dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

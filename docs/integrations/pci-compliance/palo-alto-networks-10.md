@@ -157,11 +157,15 @@ _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC allow
 
 ## Installing the PCI for Palo Alto Networks 10 app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing PCI for Palo Alto Networks 10 dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### PCI Req 01 - Accepted and Rejected Traffic
 
