@@ -42,11 +42,15 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 
 ## Installing the PCI Compliance for Linux app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing PCI Compliance for Linux dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Account, User, System Monitoring
 

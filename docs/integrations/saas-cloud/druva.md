@@ -77,11 +77,15 @@ To set up [Cloud-to-Cloud Integration Druva Source](/docs/send-data/hosted-colle
 
 ## Installing the Druva app​
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Druva dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Druva Overview dashboard
 

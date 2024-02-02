@@ -68,11 +68,15 @@ For each Apache server, hourly signals for the past 7 days are used to construct
 
 ## Installing the Global Intelligence for Apache app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Global Intelligence for Apache dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Load Signals and Contributing Factors
 

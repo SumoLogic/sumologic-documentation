@@ -78,11 +78,15 @@ To set up data ingestion for the Cisco Meraki - C2C app, follow the instructions
 
 ## Installing the Cisco Meraki - C2C app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Cisco Meraki - C2C dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Organization Overview
 

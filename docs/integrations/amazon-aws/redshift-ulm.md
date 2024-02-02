@@ -252,11 +252,15 @@ For information about connection logs and user logs, see [STL_CONNECTION_LOG](ht
 
 ## Installing the Amazon Redshift ULM app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Amazon Redshift ULM dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

@@ -278,11 +278,15 @@ For more information about the CrowdStrike Falcon SIEM Connector, see the CrowdS
 
 ## Installing the CrowdStrike Falcon Endpoint Protection app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing CrowdStrike Falcon Endpoint Protection dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview  
 

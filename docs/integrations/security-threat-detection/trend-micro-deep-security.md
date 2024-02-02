@@ -146,11 +146,15 @@ Send System Events to confirm communication with Sumo Logic. There may be a 5-10
 
 ## Installing the Trend Micro Deep Security app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Trend Micro Deep Security dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 
 ### Deep Security - Overview

@@ -232,11 +232,15 @@ SES sends notifications to SNS in a JSON format. Any notification sent through S
 
 ## Installing the Amazon SES app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Amazon SES dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### CloudTrail Events Overview
 

@@ -57,11 +57,15 @@ Follow the steps on the [Sumo Logic Nginx app](/docs/integrations/web-servers/ng
 
 ## Installing the Global Intelligence for Nginx app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Global Intelligence for Nginx dashboards​
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### GI Nginx - 01 Golden Signals
 
