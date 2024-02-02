@@ -13,7 +13,9 @@ When GA'd (est. July 2024), remove beta badge, rename this 'sumo-logic-ui', reti
   <meta name="robots" content="noindex" />
 </head>
 
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+<p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
+
+To opt in, contact your Sumo Logic sales representative.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -23,7 +25,7 @@ This page will help you get to know the Sumo Logic user interface (UI).
 
 ## Using the left navigation panel
 
-The left-side navigation panel is where you can access your dashboard library as well as all of our services, such as Metrics, Logs, Cloud SIEM, and more.
+From the left-side navigation (nav) panel, you can access your dashboard library as well as all of our services, such as Logs, Metrics, and Cloud SIEM.
 
 ### Home
 
@@ -36,7 +38,7 @@ When you first log in, you'll land on the Sumo Logic **Home** page > **Home** ta
 
 ### Access dashboards and searches
 
-The left nav panel provides easy access to libraries, searches, folders, and your personal collection of dashboards. Click the icons at the top of the left-side navigation panel to view:
+The left nav panel provides easy access to libraries, searches, folders, and your personal collection of dashboards. Click the icons at the top of the left-side nav panel to view:
 
 * Your **Library**, which contains:
    * Your **Personal** dashboards and searches.
@@ -45,24 +47,20 @@ The left nav panel provides easy access to libraries, searches, folders, and y
 * **Recent** dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/recent.png')} alt="recent.png" width="350"/>
 * Your **Favorites** list of favorited dashboards and searches.<br/><img src={useBaseUrl('/img/get-started/favs.png')} alt="favs.png" width="350"/>
 
-:::tip
-Use the **Library** search bar to find content quickly.<br/><img src={useBaseUrl('img/get-started/library-search.png')} alt="library-search.png" width="550"/>
+Use the **Library** search bar to find the above quickly. **View as** mode should be set to **Me**.<br/><img src={useBaseUrl('img/get-started/library-search.png')} alt="library-search.png" width="550"/>
+
+If you're an admin, you can view the Library in [Content Administrator](#search-content-administrator-library) mode.
+
+:::tip Hide and show the left nav
+
+Enlarge your working area by click the hamburger menu icon to hide the left-side nav panel. To unhide it, click the hamburger menu icon again.<br/><img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="hamburger.gif" width="350"/>
 :::
-
-### Hide and show the left nav
-
-You can enlarge your working area by hiding the left-side navigation panel. To do this, click the hamburger menu icon.
-
-<img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="hamburger.gif" width="350"/>
-
-To unhide it, click the hamburger menu icon again.
-
 
 ## Using the top navigation bar
 
 ### Access Apps, Admin settings
 
-From the top navigation bar, you can access (from left to right): Sumo Logic [Help](#get-help-docs-community-and-more), [App Catalog](apps-integrations.md), [(Data) Configuration](/docs/send-data), [Administration](/docs/manage) settings, [Notifications](account-settings-preferences.md), and personal [Preferences](account-settings-preferences.md).
+From the top nav bar, you can access (from left to right): Sumo Logic [Help](#get-help-docs-community-and-more), [App Catalog](apps-integrations.md), [(Data) Configuration](/docs/send-data), [Administration](/docs/manage) settings, [Notifications](account-settings-preferences.md), and personal [Preferences](account-settings-preferences.md).
 
 <img src={useBaseUrl('/img/get-started/admin-config.png')} alt="admin-config.png" width="350"/>
 
@@ -72,7 +70,7 @@ You can manage your personal account settings from the **Preferences** page. T
 
 To manage your personal Sumo account preferences:
 
-1. From the top navigation bar, click the person icon, and then from the dropdown, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="img/get-started/acct-pref.png" width="350"/>
+1. From the top nav bar, click the person icon, and then from the dropdown, select **Preferences**.<br/><img src={useBaseUrl('img/get-started/acct-pref.png')} alt="img/get-started/acct-pref.png" width="350"/>
 1. In the Preferences page, you can modify the following settings:
     * **My Profile**. Username and password.
     * **My Access Keys**. Add, edit, and remove access keys.
@@ -123,7 +121,7 @@ To launch a log search, metrics visualization, or Live Tail session, do the foll
 
 ### Add dashboards and searches to your Favorites
 
-You can create a list of favorite dashboards and log searches that appear in the left-side navigation panel. Your [Favorites list](#accessdashboards-and-searches) makes it easy to access your most frequently used dashboards and searches.
+You can create a list of favorite dashboards and log searches that appear in the left-side nav panel. Your [Favorites list](#accessdashboards-and-searches) makes it easy to access your most frequently used dashboards and searches.
 
 To add a dashboard to your Favorites:
 1. Open any dashboard.
@@ -138,7 +136,7 @@ To add a log search to your Favorites:
 
 You can share dashboards, searches, and folders with users and roles. You can edit the sharing permissions at any time and share or revoke permissions as needed. You can share content from the following locations:
 
-* **Left-side navigation panel**. Recommended when you are familiar with the content and need to quickly share with another user.
+* **Left-side nav panel**. Recommended when you are familiar with the content and need to quickly share with another user.
 * **Library**. Recommended when you need a detailed view of the content, who created it, and when it was last modified.
 
 For walkthrough instructions, go to the [Share Content](/docs/manage/content-sharing) page. 
@@ -158,8 +156,8 @@ You must start a search for the **Pin** option to appear. To pin a search, do t
 
 1. Open a Search page.
 1. Enter a query in the search box and click **Start**.
-1. Click the three-dot icon and select **Pin** from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/pin-search.png')} alt="img/get-started/pin-search.png" width="200"/>
-1. A message appears telling you the location of your pinned search in the **Library**. The pinned search takes the name of the Search tab by default.<br/>  ![pinmessage.png](/img/get-started/pinmessage.png)
+1. Click the three-dot icon and select **Pin** from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/pin-search.png')} alt="pin-search.png" width="200"/>
+1. A message appears telling you the location of your pinned search in the **Library**. The pinned search takes the name of the Search tab by default.<br/><img src={useBaseUrl('img/get-started/pinmessage.png')} alt="pinmessage.png" width="350"/>
 1. To change the name of a pinned search, double-click the Search tab and enter a new name in the name field.
 
 Once a search is pinned, it cannot be unpinned, but you can remove it from the **Pinned Searches** tab. You can pin up to 10 searches at a time. Queries that use the [save operator](/docs/search/search-query-language/search-operators/save-classic) cannot be pinned.
@@ -175,7 +173,7 @@ You must have Sumo Logic Admin role privileges to perform these tasks.
 
 ### Configuration
 
-With the Sumo Logic Administrator role, you can manage your organization's data collection settings, ingest budget, partitions, and more. To access these settings, go to the top navigation bar and click the **Configuration** icon.<br/><img src={useBaseUrl('img/get-started/config.png')} alt="config.png" width="400"/>
+With the Sumo Logic Administrator role, you can manage your organization's data collection settings, ingest budget, partitions, and more. To access these settings, go to the top nav bar and click the **Configuration** icon.<br/><img src={useBaseUrl('img/get-started/config.png')} alt="config.png" width="400"/>
 
 * **Collection**. [Collection (and Sources)](/docs/send-data/collection/), [OpenTelemetry Collection](/docs/send-data/opentelemetry-collector/), [Status](/docs/manage/ingestion-volume/collection-status-page/), [Ingest](/docs/manage/ingestion-volume/ingest-budgets/), [Archive](/docs/manage/data-archiving/archive), [Data Archiving](h/docs/manage/data-archiving/).
 * **Logs**. [Fields](/docs/manage/fields/), [Field Extraction Rules](/docs/manage/field-extractions/), [Parsers](/docs/search/search-query-language/parse-operators/), [Partitions](/docs/manage/partitions-data-tiers/), [Scheduled Views](/docs/manage/scheduled-views/), [Data Forwarding](/docs/manage/data-forwarding/), [Threat Intelligence](/docs/platform-services/threat-intelligence-indicators/).
@@ -187,16 +185,16 @@ With the Sumo Logic Administrator role, you can manage your organization's data 
 
 ### Administration
 
-With the Sumo Logic Administrator role, you can manage user accounts, user roles, security, and more. To access admin settings, go to the top navigation bar and click the **Administration** icon.<br/><img src={useBaseUrl('img/get-started/admin.png')} alt="img/get-started/admin.png" width="400"/>
+With the Sumo Logic Administrator role, you can manage user accounts, user roles, security, and more. To access these admin settings, go to the top nav bar and click the **Administration** icon.<br/><img src={useBaseUrl('img/get-started/admin.png')} alt="img/get-started/admin.png" width="400"/>
 
 * **Account**. [Account Overview](/docs/manage/manage-subscription), [Data Management](/docs/manage/ingestion-volume/data-volume-index), [Manage Plan](/docs/manage/manage-subscription/upgrade-cloud-flex-credits-account), [Manage Billing](/docs/manage/manage-subscription/manage-billing-information).
-* **Users and Roles**. [Users](/docs/manage/users-roles/users) and [Roles](/docs/manage/users-roles/roles).
-* **Account Security Settings**. [Installation Tokens](/docs/manage/security/installation-tokens), [Access Keys](/docs/manage/security/access-keys), [Password Policy](/docs/manage/security/set-password-policy), [Service Allowlist Settings](/docs/manage/security/create-allowlist-ip-cidr-addresses), and [SAML](/docs/manage/security/saml)
-* **Cloud SOAR Settings**. [General Settings](/docs/cloud-soar/global-functions-menu/#general-settings), [Notifications](/docs/cloud-soar/global-functions-menu/#notifications), and [Groups](/docs/cloud-soar/global-functions-menu/#groups).
+* **Users and Roles**. [Users](/docs/manage/users-roles/users), [Roles](/docs/manage/users-roles/roles).
+* **Account Security Settings**. [Installation Tokens](/docs/manage/security/installation-tokens), [Access Keys](/docs/manage/security/access-keys), [Password Policy](/docs/manage/security/set-password-policy), [Service Allowlist Settings](/docs/manage/security/create-allowlist-ip-cidr-addresses),[SAML](/docs/manage/security/saml)
+* **Cloud SOAR Settings**. [General Settings](/docs/cloud-soar/global-functions-menu/#general-settings), [Notifications](/docs/cloud-soar/global-functions-menu/#notifications), [Groups](/docs/cloud-soar/global-functions-menu/#groups).
 
-### Search Library
+### Search Content Administrator Library
 
-Administrators can switch to the **Content Administrator** Library content browsing mode by going to **Library** and clicking the **View as** dropdown.
+The **Content Administrator** library is available to Administrator roles only. To browse this content, go to **Library** > click the **View as** dropdown > click **Content Administrator**.<img src={useBaseUrl('img/get-started/library-content-admin.gif')} alt="library-content-admin.gif" width="450"/>
 
 ## Become a Sumo Logic Pro user
 
@@ -204,7 +202,7 @@ Now that you're familiar with the layout and features in the Sumo Logic UI, you'
 
 You don't have to stop there either. You can take the next step and become Sumo Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page and click the **Certification** tab. See [Certification FAQs](/docs/get-started/faq#certification-faq) for more information.
 
-## More Information 
+## More Information
 
 There are a number of places where you can get the answers to questions you have:
 
