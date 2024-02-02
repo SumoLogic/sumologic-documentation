@@ -4,7 +4,7 @@ description: ''
 tags: []
 ---
 
-![](/img/platform-services/automation-service/app-central/logos/aws-cloudtrail.png)
+![](/img/platform-services/automation-service/app-central/logos/aws.png)
 
 Version: 1.2  
 Updated: Jun 15, 2023
