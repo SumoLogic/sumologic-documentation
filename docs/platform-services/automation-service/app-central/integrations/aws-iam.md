@@ -4,7 +4,7 @@ description: ''
 tags: []
 ---
 
-![](/img/platform-services/automation-service/app-central/logos/aws-iam.png)
+![](/img/platform-services/automation-service/app-central/logos/aws.png)
 
 Version: 1.2  
 Updated: Jan 16, 2024
