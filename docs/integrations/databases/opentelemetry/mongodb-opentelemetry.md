@@ -30,7 +30,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 - **`deployment.environment`**. User configured. This is the deployment environment where the Mongodb cluster resides. For example: dev, prod or qa.
 - **`sumo.datasource`**. has a fixed value of **mongodb**.
 
-## Prerequisites
+### Prerequisites
 
 By default, MongoDB logs are stored in a log file.
 
@@ -42,6 +42,26 @@ By default, MongoDB logs are stored in a log file.
       - Command-line:
          - The [--logpath](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--logpath) option for [mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for file.
          - The [--logpath](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--logpath) option for [mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for file.
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 

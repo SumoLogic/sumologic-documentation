@@ -23,7 +23,7 @@ Following are the tags which will be created as part of the Jira App install if 
 
 - `sumo.datasource`. Has fixed value of **jira**.
 
-## Prerequisites
+### Prerequisites
 
 This section provides instructions for configuring log collection for Jira running on a non-Kubernetes environment for the Sumo Logic App for Jira. Sumo Logic supports the collection of logs from Jira server in standalone environments.
 
@@ -37,6 +37,26 @@ The Jira app uses the following log types:
     - Issue
     - User
     - Sprint
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Configure hosted collector to receive Webhooks
 

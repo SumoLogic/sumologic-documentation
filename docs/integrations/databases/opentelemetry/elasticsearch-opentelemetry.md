@@ -30,18 +30,42 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ### Prerequisites
 
+#### For metrics collection
+
 This receiver supports Elasticsearch versions 7.9+.
 
 If Elasticsearch security features are enabled, you must have either the monitor or manage cluster privilege. See the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/authorization.html) for more information on authorization and [Security privileges](https://www.elastic.co/guide/en/elasticsearch/reference/current/security-privileges.html).
 
-**Configure logging in Elasticsearch**. Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set `loglevel` to one of:
+#### For logs collection
 
-* debug: a lot of information, useful for development/testing
-* verbose: includes information not often needed, but logs less than debug
-* notice (default value): moderately verbose, ideal for production environments
-* warning: only very important/critical messages are logged
+Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set `loglevel` to one of:
+
+* **debug**. A lot of information, useful for development/testing.
+* **verbose**. Includes information not often needed, but logs less than debug.
+* **notice** (default value). Moderately verbose, ideal for production environments.
+* **warning**. Only important/critical messages are logged.
 
 All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html). By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`. The default directory for log files is listed in the Elasticsearch.conf file.
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 

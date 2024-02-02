@@ -21,7 +21,7 @@ The diagram below illustrates the components of the MySQL collection for each da
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MySql-OpenTelemetry/MySQL-Schematics.png' alt="Schematics" />
 
-## Log and Metrics Types
+## Log and metrics types
 
 The Sumo Logic App for MySQL assumes the default MySQL Error log file format for error logs, and the MySQL Slow Query file format for slow query logs. For a list of metrics that are collected and used by the app, see [MySQL Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/mysqlreceiver/documentation.md).
 
@@ -49,11 +49,15 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 - `sumo.datasource` - Has fixed value of **mysql**
 - `db.node.name` - Has the value of host name of the machine which is being monitored
 
-## Prerequisites
+### Prerequisites
 
-**For metric collection**: For metric collection [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlreceiver#prerequisites) are the prerequisites.
+#### For metric collection
 
-**For log collection**: Configure MySQL to log to a local file(s). MySQL logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector. To configure the MySQL log file(s), locate your local my.cnf configuration file in the database directory.
+For metric collection [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlreceiver#prerequisites) are the prerequisites.
+
+#### For log collection
+
+Configure MySQL to log to a local file(s). MySQL logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector. To configure the MySQL log file(s), locate your local my.cnf configuration file in the database directory.
 
 1. Open `my.cnf` in a text editor.
 2. Set the following parameters in the `[mysqld]` section:
@@ -67,14 +71,34 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
         long_query_time=2
   ```
 
-[Error Logs](https://dev.mysql.com/doc/refman/8.0/en/error-log.html). By default, error logs are enabled and are logged at file specified by the `log_error` key.
+- **[Error Logs](https://dev.mysql.com/doc/refman/8.0/en/error-log.html)**. By default, error logs are enabled and are logged at file specified by the `log_error` key.
 
-[Slow Query Logs](https://dev.mysql.com/doc/refman/8.0/en/slow-query-log.html). `slow_query_log=1` enables logging of slow queries to the file specified by `slow_query_log_file`. Setting `long_query_time=2` will cause queries that take more than two seconds to execute to be logged. The default value of `long_query_time` is 10 seconds.
+- **[Slow Query Logs](https://dev.mysql.com/doc/refman/8.0/en/slow-query-log.html)**. `slow_query_log=1` enables logging of slow queries to the file specified by `slow_query_log_file`. Setting `long_query_time=2` will cause queries that take more than two seconds to execute to be logged. The default value of `long_query_time` is 10 seconds.
 
-[General Query Logs](https://dev.mysql.com/doc/refman/8.0/en/query-log.html). We don't recommend enabling `general_log` for performance reasons. These logs are not used by the Sumo Logic MySQL App.
+- **[General Query Logs](https://dev.mysql.com/doc/refman/8.0/en/query-log.html)**. We don't recommend enabling `general_log` for performance reasons. These logs are not used by the Sumo Logic MySQL App.
 
-1. Save the `my.cnf` file.
-2. Restart the MySQL server: `sudo mysql.server restart`
+  1. Save the `my.cnf` file.
+  2. Restart the MySQL server: `sudo mysql.server restart`
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 

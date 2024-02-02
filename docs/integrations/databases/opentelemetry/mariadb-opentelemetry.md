@@ -30,7 +30,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 - `deployment.environment`. User configured. This is the deployment environment where the MariaDB cluster resides. For example: dev, prod, or qa.
 - `sumo.datasource`. Has a fixed value of **mariadb**.
 
-## Prerequisites
+### Prerequisites
 
 This section provides instructions for configuring log collection for MariaDB running on a non-Kubernetes environment for the Sumo Logic App for MariaDB. By default, MariaDB logs are stored in a log file.
 
@@ -52,6 +52,26 @@ MariaDB logs written to a log file can be collected via the Filelog receiver of 
    - [General Query Logs](https://mariadb.com/kb/en/general-query-log/). We don't recommend enabling general_log for performance reasons. These logs are not used by the Sumo Logic MariaDB App.
 4. Save the `server.cnf` file.
 5. Restart the MariaDB server: `systemctl restart mariadb`
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 

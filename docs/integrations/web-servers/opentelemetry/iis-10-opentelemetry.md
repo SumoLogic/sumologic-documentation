@@ -25,7 +25,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 - `webengine.system`. Has fixed value of **iis**
 - `sumo.datasource`. Has fixed value of **iis**.
 
-## Prerequisites
+### Prerequisites
 
 This section provides instructions for configuring log collection for IIS running on a non-Kubernetes environment for the Sumo Logic App for IIS. Sumo Logic supports the collection of logs from an IIS server in standalone environments. By default, IIS logs are stored in a log file. 
 
@@ -50,6 +50,22 @@ Within the folder, you will find subfolders for each site configured with IIS. T
   ```
 
 For information on HTTP Error Logs configuration and various HTTP Error Log fields, see [this link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
+
+Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Enable logging on your IIS Server
 

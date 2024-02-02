@@ -22,7 +22,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 * `messaging.cluster.name`. User configured. Specify the user-friendly cluster name which RabbitMQ belongs to.
 * `sumo.datasource`. Has fixed value of **rabbitmq**.
 
-## Prerequisites
+### Prerequisites
 
 This section provides instructions for configuring log collection for RabbitMQ running on a non-Kubernetes environment for the Sumo Logic App for RabbitMQ. By default, RabbitMQ logs are stored in a log file.
 
@@ -37,6 +37,26 @@ Follow the instructions to set up log collection:
   ```
 
 Once the logs are configured to be written to a local file, follow the below steps to configure collection in Sumo.
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 

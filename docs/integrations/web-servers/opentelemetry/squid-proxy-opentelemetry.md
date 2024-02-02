@@ -17,10 +17,6 @@ Squid logs are sent to Sumo Logic through OpenTtelemetry [filelog receiver](http
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Schematics.png' alt="Schematics" />
 
-## Prerequisites
-
-By default, the squid proxy will write the access log to the log directory that was configured during installation. For example, on Linux, the default log directory is `/var/log/squid/access.log`. If the access log is disabled then you must enable the access log by following these [instructions](https://wiki.squid-cache.org/SquidFaq/SquidLogs).
-
 ## Fields creation in Sumo Logic for Squid
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Squid App install if not already present:
@@ -28,6 +24,30 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 - `webengine.cluster.name`. User configured. Enter a name to identify this Squid cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - `webengine.system`. Has a fixed value of **squidproxy**.
 - `sumo.datasource`. Has a fixed value of **squidproxy**.
+
+### Prerequisites
+
+By default, the squid proxy will write the access log to the log directory that was configured during installation. For example, on Linux, the default log directory is `/var/log/squid/access.log`. If the access log is disabled then you must enable the access log by following these [instructions](https://wiki.squid-cache.org/SquidFaq/SquidLogs).
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 

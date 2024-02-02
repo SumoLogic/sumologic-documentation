@@ -32,7 +32,7 @@ The following are [Fields](/docs/manage/fields/) that will be created as part of
 * **`deployment.environment`**. User configured. This is the deployment environment where the Redis cluster resides. For example: dev, prod or qa.
 * **`sumo.datasource`**. Has fixed value of redis.
 
-## Prerequisites
+### Prerequisites
 
 This section provides instructions for configuring log collection for Redis running on a non-Kubernetes environment. By default, Redis logs are stored in a log file.
 
@@ -45,6 +45,11 @@ Follow the instructions to set up log collection:
 1. Save the `redis.conf` file and restart the Redis server using the command: `sudo service redis-server restart`.
 
 Once the logs are configured to write to a local file, follow the steps below to configure the collection in Sumo Logic.
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
 
 ## Collection configuration and app installation
 

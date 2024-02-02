@@ -30,19 +30,50 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 - **`sumo.datasource`**. Has fixed value of **apache**
 - **`webengine.node.name`**. Has the value of host name of the machine which is being monitored
 
-## Prerequisites
+### Prerequisites
+
+#### For metrics collection
 
 The receiver used gets stats from an Apache Web Server instance using the `server-status?auto` endpoint. This receiver supports Apache Web Server version 2.4+.
 
-* **Receive server statistics** by configuring the server's `httpd.conf` file to [enable status support](https://httpd.apache.org/docs/2.4/mod/mod_status.html).
+**Receive server statistics** by configuring the server's `httpd.conf` file to [enable status support](https://httpd.apache.org/docs/2.4/mod/mod_status.html).
+
+#### For logs collection
+
 * **Configure the Apache log files**:
    * Configure the logging of access logs and error logs via the instructions described in their [documentation](https://httpd.apache.org/docs/2.4/logs.html).
    * Locate your local `httpd.conf` configuration file in the Apache directory. After determining the location of the conf file, modify the `httpd.conf` configuration file logging parameters if required.
       * For access logs, the following directive is to be noted:
-         - CustomLog: access log file path and format (standard common and combined)
+         - **CustomLog**. access log file path and format (standard common and combined)
       * For error logs, following directives are to be noted:
-         - ErrorLog: error log file path
-         - LogLevel: to control the number of messages logged to the `error_log`
+         - **ErrorLog**. Error log file path.
+         - **LogLevel**. To control the number of messages logged to the `error_log`.
+
+Ensure that the otelcol has adequate permissions to access all log file paths. Execute the following command for the same:
+
+```
+sudo setfacl -R -m d:u:otelcol-sumo:r-x,u:otelcol-sumo:r-x,g:otelcol-sumo:r-x <PATH_TO_LOG_FILE>
+```
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 

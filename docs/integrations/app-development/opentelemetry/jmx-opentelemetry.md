@@ -15,7 +15,6 @@ Java Management Extensions (JMX) is a standard component of the Java Platform. J
 
 The Sumo Logic App for JMX allows you to analyze and gain insights about Java applications. The dashboards provide a quick glance at various deployment metrics like memory, GC performance, and thread behavior, so you can troubleshoot unexpected behavior in your Java environment and the applications running in it.
 
-
 ## Metrics types
 
 The Sumo Logic App for JMX collects metrics from Java applications via the [JMX Receiver for OpenTelemetry](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver).
@@ -41,7 +40,7 @@ sumo.datasource=jmx metric=jvm.memory.heap.used
 * `sumo.datasource`. Has fixed value of `jmx`.
 * `jmx.endpoint`. The endpoint in the form of `localhost:port` used by JMX Metric Gatherer.
 
-## Prerequisites
+### Prerequisites
 
 The JMX Receiver uses the OpenTelemetry JMX Metric Gatherer. For more details, [see their docs](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
 

@@ -23,9 +23,9 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 
 **`sumo.datasource`** - Has fixed value of **activeDirectory**
 
-### Event Logs Used by Active Directory App
+### Event logs used by Active Directory app
 
-This section provides instructions for configuring log collection for Active Directory running on a non-Kubernetes environment for the Sumo Logic App for Active Directory.
+This section provides instructions for configuring log collection for Active Directory running on a non-Kubernetes environment for the Sumo Logic app for Active Directory. Tails and parses logs from windows event log API are collected using the [opentelemetry-log-collection](https://github.com/open-telemetry/opentelemetry-log-collection) library.
 
 #### Log types
 

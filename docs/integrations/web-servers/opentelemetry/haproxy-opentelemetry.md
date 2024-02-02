@@ -19,7 +19,7 @@ HAProxy logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](htt
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Schematics.png' alt="Schematics" />
 
-## HAProxy Log Types
+## HAProxy log types
 
 The app supports Logs from the open source version of HAProxy. The App is tested on the 2.3.9 version of HAProxy.
 
@@ -33,7 +33,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 - `webengine.system`. Has fixed value of **haproxy**
 - `sumo.datasource`. Has fixed value of **haproxy**
 
-## Prerequisites
+### Prerequisites
 
 This section provides instructions for configuring log collection for HAProxy running on a non-Kubernetes environment for the Sumo Logic App for HAProxy.
 
@@ -74,6 +74,10 @@ By default, HAProxy logs are forwarded to Syslog. This needs to be changed to se
    sudo service rsyslog restart
    sudo service haproxy reload
    ```
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
 
 ## Collection configuration and app installation
 
