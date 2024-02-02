@@ -322,7 +322,7 @@ Types of integrations:
 
 | Logo | Product | Integrations |
 | :-- | :-- | :-- |
-|  <img src={useBaseUrl('img/integrations/misc/jamf-logo.png')} alt="Thumbnail icon" width="50"/>   | [Jamf](https://www.jamf.com/)  | Parnter integration: [Jamf Protect App for Sumo Logic](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/JamfProtect)	 |
+|  <img src={useBaseUrl('img/integrations/misc/jamf-logo.png')} alt="Thumbnail icon" width="50"/>   | [Jamf](https://www.jamf.com/)  | Partner integration: [Jamf Protect App for Sumo Logic](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/JamfProtect)	 |
 |  <img src={useBaseUrl('img/integrations/app-development/jenkins.png')} alt="Thumbnail icon" width="50"/>   | [Jenkins](https://www.jenkins.io/)  | App: [Jenkins](/docs/integrations/app-development/jenkins/)	 |
 |  <img src={useBaseUrl('img/integrations/app-development/jfrog-Artifactory.png')} alt="Thumbnail icon" width="75"/>   | [JFrog Artifactory](https://jfrog.com/artifactory/)  | Apps:	<br/>- [Artifactory	(6 and 7) - Classic](/docs/integrations/app-development/jfrog-artifactory/) <br/>- [Artifactory - OpenTelemetry](/docs/integrations/app-development/opentelemetry/jfrog-artifactory-opentelemetry/) |
 |  <img src={useBaseUrl('img/integrations/app-development/jfrog-xray.png')} alt="Thumbnail icon" width="50"/>   | [JFrog Xray](https://jfrog.com/help/r/get-started-with-the-jfrog-platform/jfrog-xray)  | 	App: [JFrog Xray](/docs/integrations/app-development/jfrog-xray/)	 |
