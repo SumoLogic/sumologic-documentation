@@ -71,7 +71,7 @@ The Sumo Logic integration for iLert ingests alert events into Sumo Logic throug
 _sourceCategory="webhook/ilert"
 | json "id", "summary", "details", "reportTime", "status", "eventType", "priority", "alertSource.name", "assignedTo.username", "assignedTo.email", "responders[0].user.username", "responders[0].user.email" as id, summary, detail, reportTime, status, eventType, priority, alertSource, assignedUserName, assignedEmail, responderUserName, responderEmail nodrop
 | where id matches "{{alertId}}" and alertSource matches "{{alertSource}}" and eventType matches "{{eventType}}" and status matches "{{status}}" and  priority matches "{{priority}}"
-| count_distinct(id) 
+| count_distinct(id)
 ```
 
 ## Setup
@@ -116,11 +116,15 @@ Follow the steps to configure the iLert Webhook.
 
 ### Installing the iLert app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing iLert dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

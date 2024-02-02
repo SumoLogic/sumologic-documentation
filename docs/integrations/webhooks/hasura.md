@@ -59,10 +59,10 @@ The Sumo Logic integration for Hasura ingests events into Sumo Logic through an 
 ### Sample query
 
 ```sql
-_sourceCategory="webhook/hasura" 
+_sourceCategory="webhook/hasura"
 | json "id", "created_at", "event.op","table.name","table.schema","trigger.name" as id, created_at, operation, tableName, tableSchema, triggerName nodrop
 | where tableSchema matches "{{tabelSchema}}" and tableName matches "{{tabelName}}" and operation matches "{{operation}}" and triggerName matches "{{triggerName}}"
-| count 
+| count
 ```
 ## Setup
 
@@ -99,16 +99,20 @@ _sourceCategory=webhook/hasura
 
 :::info
 - For detailed information about webhook creation, refer to the [Hasura Documentation](https://hasura.io/docs/latest/event-triggers/create-trigger/).
-- For support, [contact Hasura](https://cloud.hasura.io/support/create-ticket). 
+- For support, [contact Hasura](https://cloud.hasura.io/support/create-ticket).
 :::
 
 ### Installing the Hasura app
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Hasura dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
