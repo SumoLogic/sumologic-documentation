@@ -63,13 +63,13 @@ See [Suggested Searches for Linux OS](#suggested-searches-for-linux-os).
 
 ## Installing the Linux app
 
-import AppInstall from '../reuse/apps/app-install-v2.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
 ## Viewing Linux dashboards​
 
-import ViewDashboards from '../reuse/apps/view-dashboards.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 

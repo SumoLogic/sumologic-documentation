@@ -333,7 +333,7 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 ## Viewing JFrog Artifactory dashboards
 
-import ViewDashboards from '../reuse/apps/view-dashboards.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 

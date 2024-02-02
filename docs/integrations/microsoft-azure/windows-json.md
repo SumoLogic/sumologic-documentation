@@ -101,7 +101,7 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 ## Viewing Windows JSON dashboards​
 
-import ViewDashboards from '../reuse/apps/view-dashboards.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 <ViewDashboards/>
 
