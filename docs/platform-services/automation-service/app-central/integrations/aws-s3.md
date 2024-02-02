@@ -4,7 +4,7 @@ description: ''
 tags: []
 ---
 
-![](/img/platform-services/automation-service/app-central/logos/aws-s3.png)
+![](/img/platform-services/automation-service/app-central/logos/aws.png)
 
 Version: 1.2  
 Updated: Jun 28, 2023
