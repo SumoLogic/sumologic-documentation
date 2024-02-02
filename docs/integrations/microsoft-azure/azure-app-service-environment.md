@@ -12,11 +12,11 @@ An [Azure App Service Environment](https://learn.microsoft.com/en-us/azure/app-s
 
 The below instructions applies to App Service Environment v3.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure App Service Environment, you can collect the following logs:
 
-* **App Service Environment Platform Logs**. Logs are only emitted when your App Service Environment has an event (for example, a scale operation with an App Service plan) that triggers the logs. To know more about the different situations and messages collected for Azure App Service Environment, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/app-service/environment/using#logging).
+* **App Service Environment Platform Logs**. Logs are only emitted when your App Service Environment has an event (for example, a scale operation with an App Service plan) that triggers the logs. To learn more about the different situations and messages collected for Azure App Service Environment, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/app-service/environment/using#logging).
 
 ## Setup
 

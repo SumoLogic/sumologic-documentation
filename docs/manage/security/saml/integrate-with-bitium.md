@@ -18,7 +18,7 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
 ## Create a Bitium SSO app to connect to Sumo Logic
 
 1. Sign into Bitium.
-1. From the **Bitium** menu, select **Manage**, and then select** Manage Apps**.
+1. From the **Bitium** menu, select **Manage**, and then select **Manage Apps**.
 
     ![Manage apps](/img/security/bitium_manage_apps.png)
 
@@ -105,4 +105,6 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
  
 ## Create multiple SAML configurations
 
-{@import ../../../reuse/saml.md}
+import Saml from '../../../reuse/saml.md';
+
+<Saml/>

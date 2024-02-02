@@ -93,7 +93,7 @@ curl --trace-ascii - --user EMAIL:PASSWORD -H 'Accept: application/json' "https:
 ...
 ```
 
-The result is a JSON object with one key: **dashboards**. The value for the key is an array of dashboard definitions. In this example, the dashboard definition for the first entry in the array is:
+The result is a JSON object with one key: ** dashboards**. The value for the key is an array of dashboard definitions. In this example, the dashboard definition for the first entry in the array is:
 
 ```json
 {

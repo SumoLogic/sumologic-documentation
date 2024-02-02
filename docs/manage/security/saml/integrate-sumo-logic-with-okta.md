@@ -40,7 +40,7 @@ Sumo Logic using their Single Sign-On (SSO) credentials.
    * Click **Next**.    
 
     ![general-settings-2.png](/img/security/general-settings-2.png)
-1. On the **Sign-on Options** tab, select **View Setup Instructions.
+1. On the **Sign-on Options** tab, select **View Setup Instructions**.
 
     ![sign-on-options.png](/img/security/sign-on-options.png)
 1. Follow the instructions on the **View Setup Instructions** page to configure the Sumo Logic SAML integration. The information that appears is similar to the content of the [How to Configure SAML 2.0 for Sumo Logic](https://saml-doc.okta.com/SAML_Docs/How-to-Configure-SAML-2.0-for-Sumologic.html) in Okta help.  The page includes instructions on how to configure on-demand user account provisioning and SP-initiated login.
@@ -70,7 +70,7 @@ There are two sides to the configuration. You'll configure a **Group Attribute 
     1. **Equals**. Useful if there is a single Okta group for Sumo users.
     1. **Contains**. Useful if all the names of the Okta groups with Sumo users all contain the same string.
     1. **Matches regex.** Use this option if you can’t specify your groups using any of the other filter types.  For example regex `Foo|A.*` will match the Okta group “Foo” and groups whose names begin with the letter “A”. If you are entering a regular expression, you must enter the case correctly. Regular expressions are case-sensitive.
-1. Click **Save **at the bottom of the **Create SAML Integration** page.
+1. Click **Save** at the bottom of the **Create SAML Integration** page.
 1. Go to **Administration > Security > SAML** in Sumo Logic.
 1. Click your Okta configuration in the **Configuration List** and then click the edit icon (![pencil](/img/security/pencil.png)) in the details pane.
 1. Select the **Roles Attribute** checkbox and enter the name of the attribute name you created on the the **Group Attribute Statements** section above. 

@@ -18,7 +18,7 @@ In this step, you configure an Google Workspace Apps Audit Source to collect Goo
 1. To create a new hosted collector, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 1. **Fields**. 
     1. If you are planning that all the sources you add to this collector will forward log messages to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to Cloud SIEM.
-    1. If all sources in this collector will be Google Workspace Audit sources, add an additional field with key `_parser` and value */Parsers/System/Google/Google Workspace Audit*.
+    1. If all sources in this collector will be Google Workspace Audit sources, add an additional field with key `_parser` and value */Parsers/System/Google/G Suite Audit*.
     :::note
     It’s also possible to configure individual sources to forward to Cloud SIEM, as described in the following section.
     :::
@@ -28,7 +28,7 @@ In this step, you configure an Google Workspace Apps Audit Source to collect Goo
 1. To configure Google Workspace source, see [Configure a Google Workspace Apps Audit Source](/docs/send-data/hosted-collectors/google-source/google-workspace-apps-audit-source/#configuring-a-google-workspace-apps-auditsource).
 1. **Fields**.
     1. If you have not configured the Hosted Collector to forward all sources in the collector to Cloud SIEM, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*.
-    1. If you are not parsing all sources in the hosted collector with the same parser, **+Add Field** named `_parser` with value */Parsers/System/Google/Google Workspace Audit.*
+    1. If you are not parsing all sources in the hosted collector with the same parser, **+Add Field** named `_parser` with value */Parsers/System/Google/G Suite Audit.*
 1. Sign in with Google. Click to give permission to Sumo Logic to set up watchpoints using the Google Workspace Apps Reports API. Click **Accept**.
 1. Click **Save**.
 

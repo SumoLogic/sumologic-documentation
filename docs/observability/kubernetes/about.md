@@ -18,7 +18,8 @@ With the Sumo Logic Kubernetes Solution, you can monitor and troubleshoot contai
 
 ![K8s_Solution_Ingest_Ease-of-Use.png](/img/kubernetes/K8s_Solution_Ingest_Ease-of-Use.png)
 
-<details><summary>What is Kubernetes?</summary>
+<details>
+<summary>What is Kubernetes?</summary>
 
 Kubernetes is an open source container orchestration platform developed by [Google](https://cloud.google.com/kubernetes/), that is now managed by the [Cloud Native Computing Foundation](https://www.cncf.io/). 
 

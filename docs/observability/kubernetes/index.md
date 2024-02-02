@@ -50,7 +50,7 @@ In this section, we'll walk you through Sumo Logic Kubernetes Solution setup (da
     <div className="box smallbox card">
       <div className="container">
       <a href="/docs/metrics/kubernetes-metrics"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Kubernetes Metrics</h4></a>
-      <p>Learn which Kubernetes metrics are collected when you deploy our [sumologic-kubernetes-collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).</p>
+      <p>Learn which Kubernetes metrics are collected when you deploy our [sumologic-kubernetes-collection](/docs/send-data/kubernetes/install-helm-chart).</p>
       </div>
     </div>
     <div className="box smallbox card">

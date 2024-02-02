@@ -8,6 +8,7 @@ description: The Sumo Logic app for MariaDB is a unified logs and metrics app th
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CollBegin from '../../reuse/collection-should-begin-note.md';
 
 <img src={useBaseUrl('img/integrations/databases/mariadb.png')} alt="Thumbnail icon" width="80"/>
 
@@ -23,7 +24,7 @@ Configuring log and metric collection for the MariaDB app includes the following
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following fields in Sumo Logic before configuring the collection to ensure that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following fields in Sumo Logic before configuring the collection to ensure that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -79,12 +80,13 @@ Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTe
 <img src={useBaseUrl('img/integrations/databases/mariadbk8s.png')} alt="mariadb" />
 
 The first service in the metrics pipeline is Telegraf. Telegraf collects metrics from MariaDB. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, that is Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator.
+
 Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) which enriches metadata and sends metrics to Sumo Logic.
 
 In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 :::note Prerequisites
-These instructions assume that you are using the latest Helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
+These instructions assume that you are using the latest Helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
 #### Configure Metrics Collection
@@ -125,27 +127,27 @@ annotations:
     db_cluster_port = "ENV_TO_BE_CHANGED" --Enter `default` if you haven’t defined a cluster in MariaDB
 ```
 3. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` in the snippet above):
-  * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MySQL input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
+  * `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MySQL input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
   * In the input plugins section, that is:
       * `servers` - The URL of your MariaDB server. For information about additional input plugin configuration options, see the [Readme ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql)for the MySQL input plugin.
   * In the tags section (`[inputs.mysql.tags]`):
-      * `environment` - This is the deployment environment where the MariaDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `db_cluster` - Enter a name to identify this MariaDB cluster. This cluster name will be shown in the Sumo Logic dashboards.  
-      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
-      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+      * `environment`. This is the deployment environment where the MariaDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `db_cluster`. Enter a name to identify this MariaDB cluster. This cluster name will be shown in the Sumo Logic dashboards.  
+      * `db_cluster_address`. Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+      * `db_cluster_port`. Enter the database port. If not provided, a default port will be used.
       :::note
-`db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
+      `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
-For example, if your application uses “mariadb-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=mariadb-prod.sumologic.com db_cluster_port=3306`.
+      For example, if your application uses `“mariadb-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=mariadb-prod.sumologic.com db_cluster_port=3306`.
 
-If your application connects directly to a given sqlserver node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mariadb-prod.sumologic.com`
+      If your application connects directly to a given sqlserver node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mariadb-prod.sumologic.com`
 
-Pivoting to Tracing data from Entity Inspector is possible only for “MariaDB address” Entities.
-:::
-   * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
-     * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-     * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-     * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+      Pivoting to Tracing data from Entity Inspector is possible only for “MariaDB address” Entities.
+      :::
+   * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
+     * `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+     * `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+     * `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
      * `telegraf.influxdata.com/inputs`
       * In the tags section (`[inputs.mysql.tags]`):
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
@@ -206,9 +208,9 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
       * **Rule Name**. Enter the name as **App Observability - database**.
       * **Applied At.** Choose **Ingest Time**
       * **Scope**. Select **Specific Data**
-      * **Scope**: Enter the following keyword search expression:
+      * **Scope**. Enter the following keyword search expression:
       ```sql
-      pod_labels_environment=* pod_labels_component=database \
+      pod_labels_environment=* pod_labels_component=database
       pod_labels_db_cluster=* pod_labels_db_system=*
       ```
       * **Parse Expression**. Enter the following parse expression:
@@ -228,14 +230,7 @@ For non-Kubernetes environments, Sumo Logic uses the Telegraf operator for Maria
 
 Telegraf uses the [MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain MariaDB metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MariaDB are collected by a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
-The process to set up collection for MariaDB data is done through the following steps:
-
-2. Configure Metrics Collection
-    4. Configure a Hosted Collector
-    5. Configure an HTTP Logs and Metrics Source
-    6. Install Telegraf
-    7. Configure and start Telegraf
-
+The process to set up collection for MariaDB data is done through the following steps.
 
 #### Configure Logs Collection
 
@@ -243,9 +238,10 @@ This section provides instructions for configuring log collection for MariaDB ru
 
 Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/hosted-collectors/cloud-syslog-source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors) or [FluentD](https://www.fluentd.org/). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
-Based on your infrastructure and networking setup choose one of these methods to collect MariaDB logs and follow the instructions below to set up log collection:
+Based on your infrastructure and networking setup, choose one of these methods to collect MariaDB logs and follow the instructions below to set up log collection:
 
-<details><summary>Method A: Configure MariaDB to log to a local file.</summary>
+<details>
+<summary>Method A: Configure MariaDB to log to a local file.</summary>
 
 MariaDB logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector.
 
@@ -271,13 +267,15 @@ long_query_time=2
 
 </details>
 
-<details><summary>Method B: Configure a Sumo Logic Collector</summary>
+<details>
+<summary>Method B: Configure a Sumo Logic Collector</summary>
 
 To collect logs directly from the MariaDB machine, configure an [Installed Collector](/docs/send-data/installed-collectors).
 
 </details>
 
-<details><summary>Method C: Configure a Source</summary>
+<details>
+<summary>Method C: Configure a Source</summary>
 
 This section demonstrates how to configure sources for Error Logs and Slow Query Logs.
 
@@ -292,7 +290,7 @@ This section demonstrates how to configure a Local File Source for MariaDB Error
    3. **File Path** (Required). Enter the path to your mariadb-error.log. The files are typically located in /var/log/mariadb/mariadb-error.log. If you're using a customized path, check the server.cnf file for this information
    4. **Collection should begin**. Set this for how far back historically you want to start collecting.
    :::note
-   {@import ../../reuse/collection-should-begin-note.md}
+   <CollBegin/>
    :::
    5. **Source Host** (Optional). Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
    6. **Source Category** (Recommended). DB/MariaDB/ErrorLogs_._
@@ -301,22 +299,22 @@ This section demonstrates how to configure a Local File Source for MariaDB Error
      * `db_system = mariadb`
      * `db_cluster = <Your_MariaDB_Cluster_Name>`. Enter **Default** if you do not have one.
      * `environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod)
-     * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
-     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
+     * `db_cluster_address`. Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
+     * `db_cluster_port`. Enter the database port. If not provided, a default port will be used.
      :::note
      `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
-     For example, if your application uses “mariadb-prod.sumologic.com:3306” as the connection string, the field values should be set as follows: `db_cluster_address=mariadb-prod.sumologic.com db_cluster_port=3306`.
+     For example, if your application uses `“mariadb-prod.sumologic.com:3306”` as the connection string, the field values should be set as follows: `db_cluster_address=mariadb-prod.sumologic.com db_cluster_port=3306`.
 
      If your application connects directly to a given sqlserver node, rather than the whole cluster, use the application connection string to override the value of the “host” field in the Telegraf configuration: `host=mariadb-prod.sumologic.com`.
 
      Pivoting to Tracing data from Entity Inspector is possible only for “MariaDB address” Entities.
      :::
 4. In the **Advanced** section, select the following options:
-   1. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
-   2. **Enable Timestamp Parsing**: Select **Extract timestamp information from log file entries**.
-   3. **Time Zone**: Select the option to **Use time zone from log file. If none is present use**: and set the timezone to **UTC**.
-   4. **Timestamp Format**: Select the option to **Automatically detect the format**.
+   1. **Timestamp Parsing Settings**. Make sure the setting matches the timezone on the log files.
+   2. **Enable Timestamp Parsing**. Select **Extract timestamp information from log file entries**.
+   3. **Time Zone**. Select the option to **Use time zone from log file. If none is present use**. and set the timezone to **UTC**.
+   4. **Timestamp Format**. Select the option to **Automatically detect the format**.
    5. **Encoding**. UTF-8 is the default, but you can choose another encoding format from the menu if your MariaDB logs are encoded differently.
    6. **Enable Multiline Processing**. Uncheck the box to **Detect messages spanning multiple lines**. Since MariaDB Error logs are single line log files, disabling this option will ensure that your messages are collected correctly.
 5. Click **Save**.
@@ -342,10 +340,10 @@ This section demonstrates how to configure a Local File Source for MariaDB Slow 
      * `db_cluster = <Your_mariadb_Cluster_Name>`. Enter **Default** if you do not have one.
      * `environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod)
 4. In the **Advanced** section, select the following options:
-   1. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
-   2. **Enable Timestamp Parsing**: Select **Extract timestamp information from log file entries**.
-   3. **Time Zone**: Select the option to **Use time zone from log file**. If none is present, use and set the timezone to **UTC**.
-   4. **Timestamp Format**: Select the option to **Automatically detect the format**.
+   1. **Timestamp Parsing Settings**. Make sure the setting matches the timezone on the log files.
+   2. **Enable Timestamp Parsing**. Select **Extract timestamp information from log file entries**.
+   3. **Time Zone**. Select the option to **Use time zone from log file**. If none is present, use and set the timezone to **UTC**.
+   4. **Timestamp Format**. Select the option to **Automatically detect the format**.
    5. **Encoding**. UTF-8 is the default, but you can choose another encoding format from the menu if your MariaDB logs are encoded differently.
    6. **Enable Multiline Processing**
      * **Detect Messages Spanning Multiple Lines**. True
@@ -420,7 +418,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
    * In the output plugins section, `[[outputs.sumologic]]`:
       * `URL` - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
    * Below is an explanation for additional values set by this Telegraf configuration. If you haven’t defined a cluster in MariaDB, then enter `default` for db_cluster. There are additional values set by the Telegraf configuration.  We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
-      * `data_format=“prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
+      * `data_format=“prometheus”`. In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
       * `component=“database”` - In the input `[[inputs.mysql]]` plugins section. This value is used by Sumo Logic apps to identify application components.
       * `db_system=“mariadb”` - In the input plugins sections. This value identifies the database system.
    * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for all other parameters that can be configured in the Telegraf agent globally.
@@ -447,7 +445,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/MariaDB/MariaDB.json) that describes the monitors.
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/MariaDB/MariaDB.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all MariaDB clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=mariadb` with `<Your Custom Filter>`. Custom filter examples:
-   * For alerts applicable only to a specific cluster, your custom filter would be,  `db_cluster=mariadb-prod.01`.
+   * For alerts applicable only to a specific cluster, your custom filter would be  `db_cluster=mariadb-prod.01`.
    * For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be `db_cluster=mariadb-prod*`.
    * For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=mariadb-1` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
 3. Go to Manage Data > Alerts > Monitors.
@@ -461,12 +459,11 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html)** or later.
 3. **Download the Sumo Logic Terraform package for MariaDB alerts.** The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/MariaDB). You can either download it through the “git clone” command or as a zip file.
 4. **Alert Configuration.** After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/MariaDB/`. Edit the **MariaDB.auto.tfvars** file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1.
-   ```bash
+  ```bash
   access_id   = "<SUMOLOGIC ACCESS ID>"
   access_key  = "<SUMOLOGIC ACCESS KEY>"
   environment = "<SUMOLOGIC DEPLOYMENT>"
   ```
-
   The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `mariadb_data_source`. Custom filter examples:
     * For a specific cluster, your custom filter would be `db_cluster=mariadb.prod.01`
     * For all clusters in an environment, your custom filter would be `environment=prod`
@@ -524,7 +521,10 @@ This section demonstrates how to install the MariaDB app. To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**.
+:::note
+Version selection is not available for all apps.
+:::
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.**
@@ -654,16 +654,16 @@ Sumo Logic provides the following out-of-the-box alerts:
 
 | Alert Type (Metrics/Logs) | Alert Name                                           | Alert Description                                                                                                                                        | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
 |:---------------------------|:------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------|:-----------------|:-------------------|
-| Logs                      | MariaDB - Excessive Slow Query Detected              | This alert fires when the average time to execute a query is more than 15 seconds for a 5 minute time interval.                                          | Critical                          | >=1             | <1                |
-| Logs                      | MariaDB - Instance down                              | This alert fires when we detect that a MariaDB instance is down                                                                                          | Critical                          | >=1             | <1                |
-| Metrics                   | MariaDB - Connection refused                         | This alert fires when connections are refused when the limit of maximum connections is reached.                                                          | Critical                          | >=1             | <1                |
-| Metrics                   | MariaDB - Follower replication lag detected          | This alert fires when we detect that the average replication lag within a 5 minute time interval is greater than or equal to 900 seconds .               | Critical                          | >=900           | <900              |
-| Metrics                   | MariaDB - High average query run time                | This alert fires when the average run time of MariaDB queries within a 5 minute time interval for a given schema is greater than or equal to one second. | Critical                          | >=1             | <1                |
-| Metrics                   | MariaDB - High Innodb buffer pool utilization        | This alert fires when the InnoDB buffer pool utilization is high (>=90%) within a 5 minute time interval.                                                | Critical                          | >=90            | <90               |
-| Metrics                   | MariaDB - Large number of aborted connections        | This alert fires when there are 5 or more aborted connections detected within a 5 minute time interval.                                                  | Critical                          | >=5             | <5                |
-| Metrics                   | MariaDB - Large number of internal connection errors | This alert fires when there are 5 or more internal connection errors within a 5 minute time interval.                                                    | Critical                          | >=5             | <5                |
-| Metrics                   | MariaDB - Large number of slow queries               | This alert fires when there are 5 or more slow queries within a 5 minute time interval.                                                                  | Critical                          | >=5             | <5                |
-| Metrics                   | MariaDB - Large number of statement errors           | This alert fires when there are 5 or more statement errors within a 5 minute time interval.                                                              | Critical                          | >=5             | <5                |
-| Metrics                   | MariaDB - Large number of statement warnings         | This alert fires when there are 20 or more statement warnings within a 5 minute time interval.                                                           | Critical                          | >=20            | <20               |
-| Metrics                   | MariaDB - No index used in the SQL statements        | This alert fires when there are 5 or more statements not using an index in the SQL query within a 5 minute time interval.                                | Critical                          | >=5             | <5                |
-| Metrics                   | MariaDB - Slave Server Error                         | This alert fires when there are slave server errors within a 5 minute time interval.                                                                     | Critical                          | >0              | <=0               |
+| Logs                      | MariaDB - Excessive Slow Query Detected              | This alert fires when the average time to execute a query is more than 15 seconds for a 5 minute time interval.                                          | Critical                          | `>=`1             | `<`1                |
+| Logs                      | MariaDB - Instance down                              | This alert fires when we detect that a MariaDB instance is down                                                                                          | Critical                          | `>=`1             | `<`1                |
+| Metrics                   | MariaDB - Connection refused                         | This alert fires when connections are refused when the limit of maximum connections is reached.                                                          | Critical                          | `>=`1             | `<`1                |
+| Metrics                   | MariaDB - Follower replication lag detected          | This alert fires when we detect that the average replication lag within a 5 minute time interval is greater than or equal to 900 seconds .               | Critical                          | `>=`900           | `<`900              |
+| Metrics                   | MariaDB - High average query run time                | This alert fires when the average run time of MariaDB queries within a 5 minute time interval for a given schema is greater than or equal to one second. | Critical                          | `>=`1             | `<`1                |
+| Metrics                   | MariaDB - High Innodb buffer pool utilization        | This alert fires when the InnoDB buffer pool utilization is high (`>=`90%) within a 5 minute time interval.                                                | Critical                          | `>=`90            | `<`90               |
+| Metrics                   | MariaDB - Large number of aborted connections        | This alert fires when there are 5 or more aborted connections detected within a 5 minute time interval.                                                  | Critical                          | `>=`5             | `<`5                |
+| Metrics                   | MariaDB - Large number of internal connection errors | This alert fires when there are 5 or more internal connection errors within a 5 minute time interval.                                                    | Critical                          | `>=`5             | `<`5                |
+| Metrics                   | MariaDB - Large number of slow queries               | This alert fires when there are 5 or more slow queries within a 5 minute time interval.                                                                  | Critical                          | `>=`5             | `<`5                |
+| Metrics                   | MariaDB - Large number of statement errors           | This alert fires when there are 5 or more statement errors within a 5 minute time interval.                                                              | Critical                          | `>=`5             | `<`5                |
+| Metrics                   | MariaDB - Large number of statement warnings         | This alert fires when there are 20 or more statement warnings within a 5 minute time interval.                                                           | Critical                          | `>=`20            | `<`20               |
+| Metrics                   | MariaDB - No index used in the SQL statements        | This alert fires when there are 5 or more statements not using an index in the SQL query within a 5 minute time interval.                                | Critical                          | `>=`5             | `<`5                |
+| Metrics                   | MariaDB - Slave Server Error                         | This alert fires when there are slave server errors within a 5 minute time interval.                                                                     | Critical                          | >0              | `<`=0               |

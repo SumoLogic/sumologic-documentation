@@ -11,34 +11,27 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Palo Alto Networks (PAN) 8 provides a next generation firewall and the Traps Endpoint Security Manager. The Palo Alto Networks 8 App gives you visibility into firewall and traps activity, including information about firewall configuration changes, details about rejected and accepted firewall traffic, traffic events that match the Correlation Objects and Security Profiles you have configured in PAN, and events logged by the Traps Endpoint Security Manager.
 
-## Log Types
+## Log types
 
 Parsing in the Sumo Logic app for PAN 8 is based on the [PAN-OS Syslog Integration](https://live.paloaltonetworks.com/t5/Tech-Note-Articles/PAN-OS-Syslog-Integration/ta-p/55323) and uses the following log types:
 
 <table>
   <tr>
-   <td><strong>Log type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Supported log format</strong>
-   </td>
-   <td><strong>For more information</strong>
-   </td>
+   <td><strong>Log type</strong>   </td>
+   <td><strong>Description</strong>   </td>
+   <td><strong>Supported log format</strong> </td>
+   <td><strong>For more information</strong></td>
   </tr>
   <tr>
-   <td>Traffic
-   </td>
-   <td>Entries for the start and end of each session, including date and time; source and destination zones, addresses and ports; application name; security rule applied to the traffic flow; rule action (allow, deny, or drop); ingress and egress interface; number of bytes; and session end reason.
-   </td>
+   <td>Traffic</td>
+   <td>Entries for the start and end of each session, including date and time; source and destination zones, addresses and ports; application name; security rule applied to the traffic flow; rule action (allow, deny, or drop); ingress and egress interface; number of bytes; and session end reason. </td>
    <td>Syslog</td>
    <td><a href="https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/view-and-manage-logs/log-types-and-severity-levels/traffic-logs">Traffic Logs</a></td>
   </tr>
   <tr>
    <td>Threat</td>
    <td>Events logged when traffic matches one of the Security Profiles attached to a security rule on the firewall.</td>
-   <td>Syslog
-   </td>
+   <td>Syslog</td>
    <td><a href="https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/view-and-manage-logs/log-types-and-severity-levels/threat-logs">Threat Logs</a></td>
   </tr>
   <tr>
@@ -63,13 +56,12 @@ Parsing in the Sumo Logic app for PAN 8 is based on the [PAN-OS Syslog Integrati
    <td>TrapsV4</td>
    <td>Events logged by the Traps Endpoint Security component.</td>
    <td>Common Event Format (CEF)</td>
-   <td><a href="https://www.paloaltonetworks.com/documentation/traps/4-2/traps-endpoint-security-manager-admin/reports-and-logging/forward-logs-to-an-external-logging-platform/cef-format#traps-admin-rpts-cef">CEF Format</a>
-   </td>
+   <td><a href="https://www.paloaltonetworks.com/documentation/traps/4-2/traps-endpoint-security-manager-admin/reports-and-logging/forward-logs-to-an-external-logging-platform/cef-format#traps-admin-rpts-cef">CEF Format</a> </td>
   </tr>
 </table>
 
 
-### Sample Log Messages
+### Sample log messages
 
 
 ```json title="Config Log Sample"
@@ -101,7 +93,7 @@ Sep 05 12:30:15 Host CEF:0|Palo Alto Networks|Traps Agent|3.4.3.19949|Client Lic
 
 
 
-### Sample Queries
+### Sample queries
 
 
 ```sql title="Virus Threats"
@@ -142,7 +134,7 @@ In this step you configure a installed collector with a Syslog source that will 
     2. **Description.** Optional.
     3. **Protocol**. UDP or TCP.  Choose the protocol you configured in Palo Alto Networks 8 for Syslog monitoring.
     4. **Port**. Port number. Choose the port you configured in Palo Alto Networks 8 for Syslog monitoring.
-    5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).
+    5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).
     6. Click **Save**.
 
 
@@ -226,7 +218,9 @@ This section provides instructions for installing the Palo Alto Networks 8 App, 
 
 This app supports PAN-OS v7 and v8.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Palo Alto Networks 8 Dashboards
 

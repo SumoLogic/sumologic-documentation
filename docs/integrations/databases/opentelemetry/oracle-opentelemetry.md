@@ -21,7 +21,7 @@ Oracle logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](http
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Schematics.png' alt="Schematics" />
 
-## Log Types
+## Log types
 
 - Alert Logs
 - Listener Logs
@@ -128,11 +128,15 @@ To set up the performance metrics script on Linux and Windows for the Oracle app
 
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up the Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
+
+<SetupColl/>
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
 
@@ -155,7 +159,9 @@ Once the details are filled, click on the **Download YAML File** button to get t
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -207,25 +213,33 @@ otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelc
 </TabItem>
 <TabItem value="Chef">
 
-{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
 
 </TabItem>
 <TabItem value="Ansible">
 
-{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
 
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-## Sample Log Messages
+<LogsOutro/>
+
+## Sample log messages
 
 Sample Log Message in Non-Kubernetes environment:
 
@@ -235,7 +249,7 @@ Sample Log Message in Non-Kubernetes environment:
 TNS-12514: TNS:listener does not currently know of service requested in connect descriptor
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample Query is from the **Oracle - Overview** dashboard > **DB Connection** panel.
 
