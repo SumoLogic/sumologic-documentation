@@ -5,7 +5,7 @@ title: Install OpenTelemetry Collector
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Install the Sumo Logic OpenTelemetry Collector on various platforms.
+Learn how to install the Sumo Logic OpenTelemetry Collector on various platforms.
 
 <div className="box-wrapper">
   <div className="box smallbox card">

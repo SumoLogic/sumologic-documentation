@@ -1,13 +1,13 @@
 ---
 id: faq
 title: FAQ
-description: Frequently asked questions about Sumo Logic OpenTelemetry Collector from our customers and field teams.
+description: Frequently asked questions about the Sumo Logic OpenTelemetry Collector from our customers and field teams.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This document contains frequently asked questions about our OpenTelemetry Collector.
+Below are some frequently asked questions about the Sumo Logic OpenTelemetry Collector.
 
 
 ## Accessing the collector's configuration

@@ -78,7 +78,7 @@ In this section, we'll introduce the following concepts:
 
 ## More information
 
-* [OpenTelemetry Quickstart](/docs/send-data/opentelemetry-collector/quickstart). Get up and running quickly.
-* [Sumo Logic OpenTelemetry vs OpenTelemetry Upstream Relationship](/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship)
+* [OpenTelemetry Quickstart](/docs/send-data/opentelemetry-collector/quickstart). Get up and running quickly with our OTel collector.
+* [Sumo Logic OpenTelemetry vs. OpenTelemetry Upstream Relationship](/docs/send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship)
 * [Sumo Logic Guide to OpenTelemetry](https://www.sumologic.com/guides/opentelemetry). Learn about the powerful observability tool OpenTelemetry and what it can provide for your business.
 * [OpenTelemetry Tutorials](https://www.sumologic.com/blog/common-opentelemetry-demo-application/). Learn how to use the common OpenTelemetry demo application with Sumo Logic.

@@ -1,6 +1,6 @@
 ---
 id: configuration
-title: Configure an Installed Collector and Source
+title: Installed Collector Configuration
 description: Learn how to install and configure Collectors to gather data to send to Sumo Logic, and read about deployment options and volume limitations.
 ---
 

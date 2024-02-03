@@ -7,7 +7,7 @@ description: Learn about Sumo Logic OpenTelemetry vs OpenTelemetry Upstream Rela
 
 This document explains the purpose of the Sumo Logic Distribution for OpenTelemetry Collector, why we offer an alternative distribution of the OpenTelemetry (OTel) Collector, and our approach to versioning and handling breaking changes.
 
-The Sumo Logic Distribution for OpenTelemetry Collector is our custom build of the open source standard OpenTelemetry Collector. Our build supports everything the standard collector does, and includes Sumo-specific changes and extensions that are optimized for interacting with Sumo Logic’s API.
+The Sumo Logic Distribution for OpenTelemetry Collector is our custom build of the open-source standard OpenTelemetry Collector. Our build supports everything the standard collector does, and includes Sumo-specific changes and extensions that are optimized for interacting with Sumo Logic’s API.
 
 Our aim is to extend and not to replace the OpenTelemetry Collector. Releasing our own distribution allows us to:
 

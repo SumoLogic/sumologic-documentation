@@ -67,7 +67,7 @@ Make sure that the resources you created in the [Collect Logs from Azure Blob S
    * A Service Bus Namespace.
    * An Event Hubs Namespace.
    * A Storage account.
-1. In the left pane of the Azure Portal, click **AppServices**, and search for “SUMOBRTaskConsumer”. You should find the `“SUMOBRTaskConsumer\<random-string\>”` Function App and click this. 
+1. In the left pane of the Azure Portal, click **AppServices**, and search for “SUMOBRTaskConsumer”. You should find the `“SUMOBRTaskConsumer\<random-string\>”` Function App and click it. 
 1. Click the **Application settings** link. Check that the value of the **SumoLogEndpoint** field matches the HTTP source URL. 
 
 ## Verify Block Blob Create Events are getting published
@@ -83,7 +83,7 @@ Make sure that the resources you created in the [Collect Logs from Azure Blob S
 To verify that events are appearing in your event hub:
 
 1. In the left pane of Azure Portal, Click **Eventhub**.
-1. Search for `“SUMOBREventHubNamespace”`. You should find the `“SUMOBREventHubNamespace\<random-string>”` Event Hub Namespace, and click this. 
+1. Search for `“SUMOBREventHubNamespace”`. You should find the `“SUMOBREventHubNamespace\<random-string>”` Event Hub Namespace and click it. 
 1. Click the **Messages** link.
 1. Message summary information appears below the chart. Check that the **Incoming Messages** count is greater than zero.<br/>  ![eventhub-messages-metrics.png](/img/send-data/eventhub-messages-metrics.png)
 

@@ -1,6 +1,6 @@
 ---
 id: overview
-title: OpenTelemetry Collector Configuration Overview
+title: Sumo Logic OpenTelemetry Collector Overview
 sidebar_label: Overview
 ---
 
