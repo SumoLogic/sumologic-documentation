@@ -35,7 +35,7 @@ Add the following capabilities:
 
 To search logs that contain correlations to threat intelligence indicators, you must first ingest the indicators. You can ingest indicators using:
 * **The Threat Intelligence tab**. See [Add indicators in the Threat Intelligence tab](#add-indicators-in-the-threat-intelligence-tab).
-* **A collector**. See [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source).
+* **A collector**. See [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source). 
 * **The API**. See the following APIs in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) resource:
    * [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators)
    * [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators)
