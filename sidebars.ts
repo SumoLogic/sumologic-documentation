@@ -2356,6 +2356,7 @@ integrations: [
         label: 'Webhooks',
         collapsible: true,
         collapsed: true,
+        link: {type: 'doc', id: 'integrations/webhooks/index'},
         items: [
           'integrations/webhooks/buddy',
           'integrations/webhooks/bugsnag',
