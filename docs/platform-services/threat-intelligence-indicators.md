@@ -73,9 +73,9 @@ You can also add threat intelligence indicators using the API or a collector. Se
 1. In Sumo Logic, go to **Manage Data > Logs > Threat Intelligence**.
 1. Click **Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
 1. Select the format of the file to be uploaded:
-    * **Normalized JSON**. A normalized JSON file.
-    * **CSV**. A comma-separated value (CSV) file.
-    * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. When choosing this format, you must enter the name of the source in the **Source** field provided.
+    * **Normalized JSON**. A normalized JSON file. 
+    * **CSV**. A comma-separated value (CSV) file. 
+    * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. When choosing this format, you must enter the name of the source in the **Source** field provided. 
 
    See [Upload formats](#upload-formats) for the format to use in the file.
 1. Click **Upload** to upload the file.
