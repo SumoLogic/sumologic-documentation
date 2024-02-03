@@ -15,7 +15,7 @@ When GA'd (est. July 2024), remove beta badge, rename this 'sumo-logic-ui', reti
 
 <p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
-To opt in, contact your Sumo Logic sales representative.
+To request access, contact your Sumo Logic sales representative.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
