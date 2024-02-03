@@ -25,7 +25,7 @@ This page will help you get to know the Sumo Logic user interface (UI).
 
 ## Using the left navigation panel
 
-From the left-side navigation (nav) panel, you can access your dashboard library as well as all of our services, such as Logs, Metrics, and Cloud SIEM.
+From the left-side navigation (nav) panel, you can access your dashboards library as well as our main functions and features, such as Log Search, Metrics, Infrastructure Monitoring, Application Monitoring, Cloud SIEM Enterprise, and Cloud SOAR.
 
 ### Home
 
@@ -57,6 +57,8 @@ Enlarge your working area by click the hamburger menu icon to hide the left-sid
 :::
 
 ## Using the top navigation bar
+
+<!-- The Global Toolbar provides you access to the App catalog, the Configuration (data management) and Administration menus, the Help menu, and your User Profile menu. -->
 
 ### Access Apps, Admin settings
 
@@ -121,7 +123,7 @@ To launch a log search, metrics visualization, or Live Tail session, do the foll
 
 ### Add dashboards and searches to your Favorites
 
-You can create a list of favorite dashboards and log searches that appear in the left-side nav panel. Your [Favorites list](#accessdashboards-and-searches) makes it easy to access your most frequently used dashboards and searches.
+You can create a list of favorite dashboards and log searches that appear in the left-side nav panel. Your [**Favorites** list](#accessdashboards-and-searches) makes it easy to access your most frequently used dashboards and searches.
 
 To add a dashboard to your Favorites:
 1. Open any dashboard.
@@ -160,7 +162,7 @@ You must start a search for the **Pin** option to appear. To pin a search, do t
 1. A message appears telling you the location of your pinned search in the **Library**. The pinned search takes the name of the Search tab by default.<br/><img src={useBaseUrl('img/get-started/pinmessage.png')} alt="pinmessage.png" width="350"/>
 1. To change the name of a pinned search, double-click the Search tab and enter a new name in the name field.
 
-Once a search is pinned, it cannot be unpinned, but you can remove it from the **Pinned Searches** tab. You can pin up to 10 searches at a time. Queries that use the [save operator](/docs/search/search-query-language/search-operators/save-classic) cannot be pinned.
+Once a search is pinned, it cannot be unpinned, but you can remove it from the **Pinned Searches** tab. You can pin up to 10 searches at a time. Queries that use the [`save` operator](/docs/search/search-query-language/search-operators/save) cannot be pinned.
 
 For more information, see [Pinned Searches](/docs/get-started/library#pinned-searches).
 
@@ -168,7 +170,7 @@ For more information, see [Pinned Searches](/docs/get-started/library#pinned-sea
 ## Administrator tasks
 
 :::info
-You must have Sumo Logic Admin role privileges to perform these tasks.
+You'll need Sumo Logic Admin role privileges to perform most of these tasks.
 :::
 
 ### Configuration
@@ -192,9 +194,9 @@ With the Sumo Logic Administrator role, you can manage user accounts, user roles
 * **Account Security Settings**. [Installation Tokens](/docs/manage/security/installation-tokens), [Access Keys](/docs/manage/security/access-keys), [Password Policy](/docs/manage/security/set-password-policy), [Service Allowlist Settings](/docs/manage/security/create-allowlist-ip-cidr-addresses),[SAML](/docs/manage/security/saml)
 * **Cloud SOAR Settings**. [General Settings](/docs/cloud-soar/global-functions-menu/#general-settings), [Notifications](/docs/cloud-soar/global-functions-menu/#notifications), [Groups](/docs/cloud-soar/global-functions-menu/#groups).
 
-### Search Content Administrator Library
+### Content Administrator Library
 
-The **Content Administrator** library is available to Administrator roles only. To browse this content, go to **Library** > click the **View as** dropdown > click **Content Administrator**.<img src={useBaseUrl('img/get-started/library-content-admin.gif')} alt="library-content-admin.gif" width="450"/>
+The **Content Administrator** library is available to Administrator roles only. To browse this content, go to **Library** > click the **View as** dropdown > click **Content Administrator**.<br/><img src={useBaseUrl('img/get-started/library-content-admin.gif')} alt="library-content-admin.gif" width="450"/>
 
 ## Become a Sumo Logic Pro user
 
