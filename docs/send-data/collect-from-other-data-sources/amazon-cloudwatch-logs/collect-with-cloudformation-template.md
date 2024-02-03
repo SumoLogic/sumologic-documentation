@@ -65,7 +65,7 @@ Define variables in the `Environment` section of the CloudFormation template.
 ```
 "Environment": {
     "Variables": {
-        "SOURCE_CATEGORY_OVERRIDE”: "<insert-value-here>"
+        "SOURCE_CATEGORY_OVERRIDE": "<insert-value-here>"
         "SOURCE_HOST_OVERRIDE": "<insert-value-here>"
         "SOURCE_NAME_OVERRIDE": "<insert-value-here>"
         "SOURCE_FIELDS_OVERRIDE": "<insert-value-here>"
