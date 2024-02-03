@@ -21,7 +21,7 @@ Threat intelligence indicators can help security analysts leverage a large body 
 
 ### Role capabilities
 
-To use threat intelligence indicators, you must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#threat-intel).
+To use threat intelligence indicators, you must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#threat-intel). 
 
 1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
 1. Click the **Roles** tab.
