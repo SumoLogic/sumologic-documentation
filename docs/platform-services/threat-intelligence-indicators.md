@@ -78,8 +78,8 @@ You can also add threat intelligence indicators using the API or a collector. Se
     * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. When choosing this format, you must enter the name of the source in the **Source** field provided. 
 
    See [Upload formats](#upload-formats) for the format to use in the file.
-1. Click **Upload** to upload the file.
-1. Click **Import**.
+1. Click **Upload** to upload the file. 
+1. Click **Import**. 
 
 ### Delete threat intelligence indicators
 
