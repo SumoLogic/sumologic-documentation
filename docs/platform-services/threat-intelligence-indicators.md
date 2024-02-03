@@ -56,7 +56,7 @@ To access the **Threat Intelligence** tab, go to **Manage Data > Logs > Threat I
     * **Edit Retention Period**. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180.
 1. **Source Name**. The source of the threat intelligence indicator file.
 1. **Storage Consumed**. The amount of storage consumed by the threat intelligence indicator file.
-1. **Indicators**. The number of threat intelligence indicators included in the file.
+1. **Indicators**. The number of threat intelligence indicators included in the file. 
 
 :::note
 The "CrowdStrike provided by Sumo Logic (s_CrowdStrike)" source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name.
