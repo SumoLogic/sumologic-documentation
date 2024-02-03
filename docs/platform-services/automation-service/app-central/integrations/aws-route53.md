@@ -4,7 +4,7 @@ description: ''
 tags: []
 ---
 
-![](/img/platform-services/automation-service/app-central/logos/aws-route53.png)
+![](/img/platform-services/automation-service/app-central/logos/aws.png)
 
 Version: 1.1  
 Updated: Jun 21, 2023
