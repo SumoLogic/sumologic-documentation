@@ -54,7 +54,7 @@ To access the **Threat Intelligence** tab, go to **Manage Data > Logs > Threat I
 1. **Add Indicators**. Click to upload files that [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab).
 1. **Actions**. Select to perform additional actions:
     * **Edit Retention Period**. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180.
-1. **Source Name**. The source of the threat intelligence indicator file.
+1. **Source Name**. The source of the threat intelligence indicator file. 
 1. **Storage Consumed**. The amount of storage consumed by the threat intelligence indicator file.
 1. **Indicators**. The number of threat intelligence indicators included in the file. 
 
