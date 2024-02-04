@@ -9,20 +9,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/app-development/jfrog-Artifactory.png')} alt="Thumbnail icon" width="100"/>
 
-The Sumo Logic App for Artifactory provides insight into your JFrog Artifactory binary repository. The App provides preconfigured Dashboards that include an Overview of your system, Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity.
+The Sumo Logic app for Artifactory provides insight into your JFrog Artifactory binary repository. The app provides preconfigured Dashboards that include an Overview of your system, Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity.
 
-The Sumo Logic App for Artifactory only supports Artifactory On-Premise. It does not work with Artifactory Online. The [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-integrations/jfrog-artifactory.md) supports both Artifactory On-Premise and Artifactory Online.
+The Sumo Logic app for Artifactory only supports Artifactory On-Premise. It does not work with Artifactory Online. The [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-integrations/jfrog-artifactory.md) supports both Artifactory On-Premise and Artifactory Online.
 
 :::note
 * If you _do not_ have a Sumo Logic account, the [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-integrations/jfrog-artifactory.md) is the most convenient way to start using Sumo Logic directly from Artifactory.
-* If you _do_ have a Sumo Logic account, you can still use use the integration, but this will create a secondary Sumo Logic account. If you choose to use your current account, you can do so by installing the Sumo Logic App for Artifactory and access your Artifactory data from Sumo Logic, instead of from your Artifactory instance.  
+* If you _do_ have a Sumo Logic account, you can still use use the integration, but this will create a secondary Sumo Logic account. If you choose to use your current account, you can do so by installing the Sumo Logic app for Artifactory and access your Artifactory data from Sumo Logic, instead of from your Artifactory instance.  
 :::
 
 ## Artifactory
 
 ### Log types
 
-The Sumo Logic App for Artifactory collects data from the following logs:
+The Sumo Logic app for Artifactory collects data from the following logs:
 
 * **artifactory.log**. The main Artifactory log file that contains data on Artifactory server activity.
 * **access.log**. The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
@@ -38,7 +38,7 @@ Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
 * `traffic.*.log`
 
 
-### Sample Logs
+### Sample logs
 
 ```json
 20170113185444|17|REQUEST|1.1.1.1|anonymous|GET|/cloudera-repos/org/slf4j/slf4j-log4j12/1.7.5/slf4j-log4j12-1.7.5.jar|HTTP/1.1|200|8869
@@ -87,7 +87,7 @@ _sourceCategory=*artifactory* "ACCEPTED DEPLOY" "-cache"
 ```
 
 
-### Collecting Logs
+### Collecting Artifactory logs
 
 This section demonstrates how to collect logs from JFrog Artifactory into Sumo Logic.
 
@@ -199,10 +199,10 @@ For each JFrog service, you will find its active log files in the `$JFROG_HOME/<
 * `artifactory-request.log`
 * `artifactory-traffic.*.log`
 
-For more information about Artifactory logs, see JFrog's [Artifactory Log Files,](https://www.jfrog.com/confluence/display/JFROG/Logging) [Access Logs](https://www.jfrog.com/confluence/display/JFROG/Access+Log).
+For more information about Artifactory logs, see JFrog's [Artifactory Log Files](https://www.jfrog.com/confluence/display/JFROG/Logging) and [Access Logs](https://www.jfrog.com/confluence/display/JFROG/Access+Log).
 
 
-### Sample Logs
+### Sample logs
 
 ```json title="Traffic"
 20201322001341|d29f485ce89ehh3i|0|DOWNLOAD|167.208.229.190
@@ -223,7 +223,7 @@ admin/149.5.95.40.
 
 ### Sample queries
 
-```bash title="Requests by Repo"
+```sql title="Requests by Repo"
 _sourceCategory = Labs/artifactory/*
 | where _sourceCategory matches "*artifactory/request"
 | parse "*|*|*|*|*|*|*|*|*|*|*" as datetime, traceid, ip, user, method, path, status_code, response_size, request_size, response_time, user_agent
@@ -234,7 +234,7 @@ _sourceCategory = Labs/artifactory/*
 | sort by count
 ```
 
-```bash title="Denied Login Attempts"
+```sql title="Denied Login Attempts"
 _sourceCategory = Labs/artifactory/* "login" DENIED
 | where _sourceCategory matches "*artifactory/access"
 | parse " [*] *" as event_type, user_info
@@ -244,7 +244,7 @@ _sourceCategory = Labs/artifactory/* "login" DENIED
 ```
 
 
-```bash title="Most Active Locations"
+```sql title="Most Active Locations"
 _sourceCategory = Labs/artifactory/*
 | where _sourceCategory matches "*artifactory/traffic"
 | parse regex "(?<year>\d{4})(?<month>\d{2})(?<day>\d{2})(?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})\|(?<traceid>\w+)\|\d*\|(?<direction>[^|]*)\|\s*(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[^|]*)\|(?<repo>[^:]*):(?<fullfilepath>[^|]*)\|(?<size>\d*)" nodrop
@@ -275,7 +275,7 @@ Configure an [Installed Collector](/docs/send-data/installed-collectors).
 In this step, you configure four local file sources, one for each log source listed in the table below. When you create a file source for a log type:
 
 * Use the value from the File Path column below as the **File Path** for the source.  
-* The value you specify for the source's **Source Category** _must_ end with the suffix shown below in the Source Category column. For example, you could set the Source Category for the Artifactory Server log source to be `foo/artifactory/console, but not artifactory/console/foo`
+* The value you specify for the source's **Source Category** _must_ end with the suffix shown below in the Source Category column. For example, you could set the Source Category for the Artifactory Server log source to be `foo/artifactory/console, but not artifactory/console/foo`.
 
 The following suffixes are required. For example, you could use `_sourceCategory=<Foo>/artifactory/console`, but the suffix **artifactory/console** must be used.
 
@@ -326,15 +326,15 @@ For complete instructions, see [Local File Source](/docs/send-data/installed-col
    * **Multi-line Parsing**. Detect Messages Spanning Multiple Lines, Infer Boundaries
 4. Click **Save**.
 
-## Installing the Artifactory App
+## Installing the Artifactory app
 
-Now that you have set up collection, install the Sumo Logic App for Artifactory to use the pre-configured searches and Dashboards that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic app for Artifactory to use the pre-configured searches and Dashboards that provide insight into your data.
 
 import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing JFrog Artifactory Dashboards
+## Viewing JFrog Artifactory dashboards
 
 ### Overview
 

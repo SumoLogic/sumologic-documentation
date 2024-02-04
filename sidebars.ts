@@ -662,7 +662,6 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/connections-integrations/index'},
       items: [
-        'manage/connections-integrations/heroku',
         'manage/connections-integrations/jfrog-artifactory',
       ],
     },

@@ -22,7 +22,9 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [Cyral](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cyral)
 * [Dataminr Pulse](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/DataminrPulse)
 * [Gigamon HAWK](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_HAWK)
+<!-- Heroku? -->
 * [Jamf Protect](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/JamfProtect)
+<!-- JFrog? -->
 * [LambdaTest](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest)
 * [Lucidum](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Lucidum)
 * [Mimecast](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian)
