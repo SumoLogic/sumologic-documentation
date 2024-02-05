@@ -58,7 +58,7 @@ Workday app logs are all in JSON format. The Workday app uses two types of logs 
 }
 ```
 
-### Sample queries
+### Sample query
 
 The query sample provided in this section is from the **Failed Login Reasons** panel of the **Workday - Login Activity** dashboard.
 
@@ -117,7 +117,6 @@ This section demonstrates how to configure the Workday portal to integrate with 
     * Access **Maintain Password Rules** task.
     * Add the users to **System Users exempt from password expiration**.
 
-
 ### Step 1.2: Create a Security Group
 
 1. To create a security group, access the **Create Security Group** task and provide the following parameters:
@@ -137,7 +136,6 @@ This section demonstrates how to configure the Workday portal to integrate with 
 1. To apply policy changes, access the **Activate Pending Security Policy Changes** task and activate the changes you made.
 1. Click **OK**.
 
-
 ### Step 1.3: Register the API Client
 
 1. To register the API client, access the **Register API Client** **for Integrations** task, and provide the following parameters:
@@ -156,12 +154,10 @@ This section demonstrates how to configure the Workday portal to integrate with 
 9. In the newly opened window, select **Generate New Refresh Token** checkbox and click **OK**.
 10. Copy the value of the **Refresh Token** column from the opened window and click **Done**.
 
-
 ### Step 1.4: Enable your tenant to send data
 
 1. To enable your Tenant to send data, access the **Edit Tenant Setup - System** task and ensure that the **Enable User Activity Logging** checkbox is selected.
 2. Access the **Edit Tenant Setup - Security** task and ensure that the **OAuth 2.0 Clients Enabled** checkbox is selected.
-
 
 ### Step 1.5: Create a Custom sign on report
 
@@ -192,7 +188,6 @@ For customers that do not make use of the Recruiting Functional Area, the standa
 12. Click the **Actions** button and go to **Web Service > View URLs**.
 13. Click **OK** and copy the URL from **JSON** link. You will need this later while configuring the collection. From the URL, remove any query parameters like json, From Moment and To Moment. The report URL should look like this `https://wd2-impl-services1.workday.com/ccx/service/customreport2/<tenant>/<accountname>/<reportname>`.
 
-
 ### Step 2: Add a Hosted Collector and HTTP Source
 
 :::note
@@ -215,7 +210,7 @@ See [Workday Cloud-to-Cloud Collector Source](/docs/send-data/hosted-collectors/
 
 This section provides instructions on how to install the Workday app, as well as examples of each of the dashboards. The app's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
@@ -267,7 +262,6 @@ Use this dashboard to:
 * Identify changes related to permission and role assignments.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Workday-SystemUserActivity.png')} alt="workday dashboards" />
-
 
 ### API Activity
 
