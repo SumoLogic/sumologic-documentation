@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: "Template to setup the AWS CloudWatch Logs collection using Amazon Kinesis Firehose and send the data to provided Sumo Logic URL."
+Description: "Template to set up the AWS CloudWatch Logs collection using Amazon Kinesis Firehose and send the data to provided Sumo Logic URL."
 
 Metadata:
   AWS::ServerlessRepo::Application:
