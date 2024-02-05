@@ -28,9 +28,7 @@ the API documentation is available through your Cloud SOAR instance at the follo
 http[s]:///<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_documentation_v3
 ```
 
-The APIs listed at this location are internally-facing and are unique to the tenant. The documentation lists all the
-available endpoints and expected parameters. It provides a list of the required and accepted data schema to use for each
-of the exposed endpoints.
+The APIs listed at this location are internal-facing and unique to the tenant. The documentation lists all the available endpoints, expected parameters, and the required and accepted data schema to use for each exposed endpoint.
 
 ### Base path for API requests
 
