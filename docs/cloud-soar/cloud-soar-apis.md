@@ -48,8 +48,7 @@ following steps to issue an API key for an Cloud SOAR user:
 1. Select the desired user in the [User Management](/docs/cloud-soar/global-functions-menu/#user-management) section.
 1. Scroll to the **API Token** section.
 1. Click the **+** button on the right-hand side of the screen.
-1. Click **Generate** to confirm the generation of the API token. The new JWT token will be found in the **API Token**
-   section of the user’s settings.
+1. Click **Generate** to confirm the generation of the API token. You can find your new JWT token in the **API Token** section of your user settings.
 
 You can use the token displayed in the **API Token** section to provide authorization for your API calls. Org administrators can revoke user API tokens by clicking the trash can icon to the far right side of the token row.
 
