@@ -10,7 +10,6 @@ Version: 1.4
 Updated: Feb 5, 2024
 
 Using the integration with IAM, you can create and manage AWS users and groups, and use permissions to allow and deny
-their access to AWS resources.
 
 ## Actions
 
