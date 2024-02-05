@@ -85,11 +85,9 @@ _sourceCategory=*artifactory* "ACCEPTED DEPLOY" "-cache"
 | outlier paths
 ```
 
-
 ### Collecting logs
 
 This section demonstrates how to collect logs from JFrog Artifactory into Sumo Logic.
-
 
 #### Step 1: Activate the traffic.log file
 
@@ -183,11 +181,9 @@ _sourceCategory=*artifactory*
 | parse "*|*|*|*|*|*|*|*|*|*" as datetime, response_time, type, ip, user, method, path, protocol, status_code, size
 ```
 
-
 ## JFrog Artifactory 7
 
 This procedure documents how to collect logs from JFrog Artifactory 7 into Sumo Logic.
-
 
 ### Log types
 
@@ -199,7 +195,6 @@ For each JFrog service, you will find its active log files in the `$JFROG_HOME/<
 * `artifactory-traffic.*.log`
 
 For more information about Artifactory logs, see JFrog's [Artifactory Log Files,](https://www.jfrog.com/confluence/display/JFROG/Logging) [Access Logs](https://www.jfrog.com/confluence/display/JFROG/Access+Log).
-
 
 ### Sample logs
 
@@ -218,7 +213,6 @@ For more information about Artifactory logs, see JFrog's [Artifactory Log Files,
 jcenter-cache:com/cloudera/cdh/cdh-root/5.4.4-SNAPSHOT/maven-metadata.xml for client :
 admin/149.5.95.40.
 ```
-
 
 ### Sample queries
 
