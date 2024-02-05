@@ -28,11 +28,9 @@ If you aren't using DNS Resolver Firewall, the Amazon Route 53 Resolver Security
 
 This topic has instructions for collecting logs for the Amazon Route 53 Resolver Security app.
 
-
 ### Before you start
 
 If you want to set up Route 53 Resolver DNS Firewall, see the Amazon Developer Guide for [instructions](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/firewall-resolver-query-logs-configuring.html).  
-
 
 ### Set up collection
 
@@ -45,15 +43,13 @@ If you want to set up Route 53 Resolver DNS Firewall, see the Amazon Developer G
 4. Complete your configuration by clicking **Configure query logging** at the bottom of the page.
 5. Your new configuration will now be listed.
 
-
 ### Sample log messages
 
 [Route 53 Resolver query log example](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html)
 
-
 ## Installing the Amazon Route 53 Resolver Security app
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
@@ -75,7 +71,6 @@ Use this dashboard to:
 * Identify possible malicious or anomalous behavior by reviewing high entropy domains, most and least queried domains.
 * Analyze DNS requests violating your Route 53 DNS Resolver Firewall policies.
 * Review Threat Intel matches.
-
 
 Panels include:
 * IPv4 Resolution by Geo Location
