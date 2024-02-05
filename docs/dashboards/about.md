@@ -19,7 +19,6 @@ Dashboard provides the unique ability to display metrics metadata and logs dat
 
 [Template variables](filter-template-variables.md) allow you to filter dashboard data dynamically to generate new visualizations for intuitive chart creation and data scoping.
 
-
 ### Features
 
 :::tip
@@ -103,16 +102,3 @@ Dashboards have two themes available: Light mode (which is the default) and Dar
 ## Clickable Legend
 
 If you want to focus on one item in your chart you can simply click on the item in the legend. If you want to toggle just one legend item, just hold the **shift** key and then click the item.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/clicklegend.gif')} alt="clicklegend" style={{border: '1px solid gray'}} width="600" />
-
-## Monitoring with classic Dashboards
-
-If you want to monitor your environment and display dashboards on a monitor or television screen, use the classic Dashboards. Currently, we don't have monitor support for the Dashboard framework. We hope to support monitoring across both dashboard frameworks in the near future.
-
-## Troubleshooting with Dashboard
-
-If you want to interact with dashboards to actively troubleshoot problems, Dashboard is the best framework, depending on the type of data you will be analyzing. There are use cases where a combination of the two dashboards are recommended:
-
-* Use Dashboard if you are building a metrics first dashboard, for the extensive visualization options and variable support for metrics panels.
-* Use classic Dashboards if you are building a logs-first dashboard, for options that provide the most robust results.
-   * You can build logs panels in Dashboard. However, all of the log building pieces you have with classic Dashboards will not be available with Dashboard. Raw messages, output, and facets are not yet available for Logs with Dashboard. However, you can add to a dashboard from the search page with Dashboard, if needed.
-* Use Dashboard for advanced pivots, such as contextual drill-downs to logs from panels, as these features are not available in the existing classic Dashboards.
