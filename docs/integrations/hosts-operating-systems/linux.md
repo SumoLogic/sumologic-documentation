@@ -171,8 +171,6 @@ _sourceCategory=*linux* ("authentication failure" or "FAILED SU" or "input_usera
 | if (src_host=" " or isEmpty(src_host), _sourceHost, src_host) as src_host | src_host as src_ip
 ```
 
-
-
 #### Root Activities
 
 Returns all sudo/su attempts, or activities by "root" user. Modify to include other privileged users that you want to track in your environment.
@@ -186,12 +184,9 @@ _​sourceCategory=OS/Linux/Security ("sudo" or "root" or "su")
 | where command !="" or dest_user in ("root") or src_user in ("root")
 ```
 
-
-
 #### Failed SU attempts
 
 Returns all failed SU attempts.
-
 
 ```bash
 _sourceCategory=*linux*("authentication failure" or "FAILED SU" or "input_userauth_request: invalid user" or "Invalid user" or "Failed publickey" or "Failed password") ("su:" or "su[")  
@@ -216,7 +211,6 @@ _sourceCategory=*linux*("authentication failure" or "FAILED SU" or "input_userau
 | where dest_user!="" and src_user!=""
 | count as attempts by dest_hostname, src_user, dest_user | sort - attempts
 ```
-
 
 ### Security Activity Monitoring
 
@@ -246,7 +240,6 @@ _​sourceCategory=OS/Linux/S* "new group"
 | parse "group=*, gid=*," as dest_group,dest_gid nodrop
 ```
 
-
 #### Existing users added to privileged groups
 
 Returns all messages that indicate a user being added to an administrative group. **Modify this query to include the IDs or names of the administrative groups in your environment.**
@@ -263,7 +256,6 @@ _sourceCategory=OS/Linux/S* "to group" or "default group changed" or "change use
 | where dest_gid in("10","0","4") or dest_group in ("root", "wheel", "adm")
 ```
 
-
 #### Failed Password Changes
 
 Returns all failed attempts to change a user password.
@@ -278,7 +270,6 @@ _sourceCategory=OS/Linux/* "Authentication failure"
 | where process_name="passwd"
 ```
 
-
 #### System Start
 
 Returns all incidents when the system starts (or restarts).
@@ -289,7 +280,6 @@ Suggested time range: -1 day
 _sourceCategory=OS/Linux/System "Initializing cgroup subsys cpuset"
 | parse regex "^(?<StartTime>\S*\s+\d+\s+\d+:\d+:\d+)\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[\d+\]|):\s+" nodrop
 ```
-
 
 #### Service Shutdown/Exiting
 
