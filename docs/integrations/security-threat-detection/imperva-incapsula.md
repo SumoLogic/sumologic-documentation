@@ -2,7 +2,7 @@
 id: imperva-incapsula
 title: Imperva Incapsula
 sidebar_label: Imperva Incapsula
-description: The Imperva Incapsula - Web Application Firewall (WAF) App helps you monitor your web application protection service. The preconfigured dashboards provide insights on the threat alerts events on the BOT access control, blocked countries, and user agents.
+description: The Imperva Incapsula - Web Application Firewall (WAF) app helps you monitor your web application protection service. The preconfigured dashboards provide insights on the threat alerts events on the BOT access control, blocked countries, and user agents.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -15,8 +15,7 @@ The Sumo Logic app for Imperva Incapsula - Web Application Firewall (WAF) helps 
 
 ## Log types
 
-The Imperva Incapsula - Web Application Firewall App uses security and access logs. For more details, see [here](https://docs.incapsula.com/Content/management-console-and-settings/log-integration.htm?Highlight=siem#Overview).
-
+The Imperva Incapsula - Web Application Firewall app uses security and access logs. For more details, see [here](https://docs.incapsula.com/Content/management-console-and-settings/log-integration.htm?Highlight=siem#Overview).
 
 ### Sample queries
 
@@ -68,9 +67,10 @@ _sourceCategory="Incapsula"
 | count by policy_type
 | top 10 policy_type by _count
 ```
+
 ## Collecting logs for the Imperva-Incapsula WAF app
 
-This section provides instructions on configuring log collection for the Imperva - Incapsula Web Application Firewall App, as well as query samples.
+This section provides instructions on configuring log collection for the Imperva - Incapsula Web Application Firewall app, as well as query samples.
 
 ### Set up log integration in Imperva Incapsula
 
@@ -87,7 +87,6 @@ To configure log integration, do the following:
     * **Compress logs**. By default, log files are compressed. Clear this option to keep the logs uncompressed.
 
 For detailed instructions, see [here](https://docs.incapsula.com/Content/management-console-and-settings/log-integration.htm?Highlight=siem#Enable).
-
 
 #### Set up in Sumo Logic
 
@@ -130,7 +129,6 @@ See the overview of your WAF service including the source IP address, client app
 
 **Top Applied ADR Rules**. See the top 10 applied ADR rules by count in the last 14 days displayed in a table.
 
-
 ### Blocked Countries
 
 See the details of blocked countries in your WAF service including the source IP address, browser type, top countries, and user agent.
@@ -146,7 +144,6 @@ See the details of blocked countries in your WAF service including the source IP
 **User Agent Top Values**. See the top 10 user agents by count in the last 14 days displayed in a table.
 
 **Threat Table based on Client IP**. See the details of threats in the last 24 hours based on client IP address including the main client IP address, malicious confidence, actor, source, label name, browser type, attack type, rule name, country code, server IP, server port , client app, method, post body, URL, user agent, and count, displayed in a table.
-
 
 ### BOT - Access Control
 
