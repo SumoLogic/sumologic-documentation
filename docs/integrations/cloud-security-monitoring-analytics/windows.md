@@ -9,15 +9,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Thumbnail icon" width="85"/>
 
-The Cloud Security Monitoring & Analytics for Windows App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
+The Cloud Security Monitoring & Analytics for Windows app offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
-This section provides instructions for configuring log collection for the Windows - Cloud Security Monitoring and Analytics App.
+This section provides instructions for configuring log collection for the Windows - Cloud Security Monitoring and Analytics app.
 
 ## Log types
 
-The Windows - Cloud Security Monitoring and Analytics App uses Windows Security Event and System Event logs. It does not work with third-party logs.
+The Windows - Cloud Security Monitoring and Analytics app uses Windows Security Event and System Event logs. It does not work with third-party logs.
 
-### Sample log messages
+### Sample log message
 
 ```json
 {
@@ -57,7 +57,7 @@ The Windows - Cloud Security Monitoring and Analytics App uses Windows Security 
 }
 ```
 
-### Sample queries
+### Sample query
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
@@ -97,7 +97,7 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 
 <FilterDashboards/>
 
-### Security Monitoring - Inventory
+### Inventory
 
 The **Windows - Security Monitoring - Inventory** dashboard helps you to quickly assess system inventory and recent system reboots/restarts in order to understand device activity within your environment.
 
@@ -105,7 +105,7 @@ The **Windows - Security Monitoring - Inventory** dashboard helps you to quickly
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Monitoring-Inventory.png')} alt="Windows cloud Security Analytics dashboards" />
 
-### Security Monitoring - Critical Events
+### Critical Events
 
 The **Windows - Security Monitoring - Critical Events** dashboard helps you when the audit logs are tampered, services are stopped, and ingestion delays go above ten seconds, these are all good indicators that there are action items to be taken to resolve issues within your Windows machines.
 
@@ -113,7 +113,7 @@ The **Windows - Security Monitoring - Critical Events** dashboard helps you when
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Monitoring-Critical-Events.png')} alt="Windows cloud Security Analytics dashboards" />
 
-### Security Analytics - Windows Updates
+### Windows Updates
 
 The **Windows - Security Analytics - Windows Updates** dashboard provides rich visualizations to indicate the ongoing flow of Windows updates within your organization, so that engineering teams are made aware of red flags or update schedules that require updating.
 
@@ -121,7 +121,7 @@ The **Windows - Security Analytics - Windows Updates** dashboard provides rich v
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-Windows-Updates.png')} alt="Windows cloud Security Analytics dashboards" />
 
-### Security Analytics - Windows Firewall
+### Windows Firewall
 
 The **Windows - Security Analytics - Windows Firewall** dashboard allows you to view Windows Firewall activity including Firewall Service Events, MPSSVC Rule Level Policy Changes, and Filtering Platform Policy Changes.
 
@@ -129,7 +129,7 @@ The **Windows - Security Analytics - Windows Firewall** dashboard allows you to 
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-Windows-Firewall.png')} alt="Windows cloud Security Analytics dashboards" />
 
-### Security Analytics - Windows Defender
+### Windows Defender
 
 The **Windows - Security Analytics - Windows Defender** dashboard is designed to offer visibility into Defender Service Events and Defender Threat Events at the Computer and Trend level.
 
@@ -137,7 +137,7 @@ The **Windows - Security Analytics - Windows Defender** dashboard is designed to
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-Windows-Defender.png')} alt="Windows cloud Security Analytics dashboards" />
 
-### Security Analytics - User Group Updates
+### User Group Updates
 
 The **Windows - Security Analytics - User Group Updates** dashboard provides User Group Updates that are generally a good litmus test for a summarized trend of how successfully Windows groups are being updated and on a correct cadence depending on policy requirements.
 
@@ -145,7 +145,7 @@ The **Windows - Security Analytics - User Group Updates** dashboard provides Use
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-User-Group-Updates.png')} alt="Windows cloud Security Analytics dashboards" />
 
-### Security Analytics - User Authentication
+### User Authentication
 
 The **Windows - Security Analytics - User Authentication** dashboard points to snapshots of trends for successful logins as well as unsuccessful logins.
 
@@ -153,8 +153,7 @@ The **Windows - Security Analytics - User Authentication** dashboard points to s
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-User-Authentication.png')} alt="Windows cloud Security Analytics dashboards" />
 
-
-### Security Analytics - User Account Changes
+### User Account Changes
 
 The **Windows - Security Analytics - User Account Changes** dashboard shows user accounts created, deleted, locked out, as well as password changes for a given account.
 
@@ -162,8 +161,7 @@ The **Windows - Security Analytics - User Account Changes** dashboard shows user
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-User-Account-Changes.png')} alt="Windows cloud Security Analytics dashboards" />
 
-
-### Security Analytics - TLS Certificates and Secure Channels
+### TLS Certificates and Secure Channels
 
 The **Windows - Security Analytics - TLS Certificates and Secure Channels** dashboard indicates TLS Certificate and Secure Channel activity and associated computers, trends, and latest events.
 
@@ -171,8 +169,7 @@ The **Windows - Security Analytics - TLS Certificates and Secure Channels** dash
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-TLS-Certificates-and-Secure-Channels.png')} alt="Windows cloud Security Analytics dashboards" />
 
-
-### Security Analytics - Default Accounts Usage
+### Default Accounts Usage
 
 The **Windows - Security Analytics - Default Accounts Usage** dashboard allows you to filter Default Accounts Usage by EventID, Computer, SubjectUserName, and TargetUserName.
 
