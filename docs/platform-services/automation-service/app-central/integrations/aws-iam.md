@@ -4,10 +4,10 @@ description: ''
 tags: [ ]
 ---
 
-![](/img/platform-services/automation-service/app-central/logos/aws-iam.png)
+<img height="50" src="/img/platform-services/automation-service/app-central/logos/aws-iam.png"/>
 
 Version: 1.4  
-Updated: Feb 2, 2024
+Updated: Feb 5, 2024
 
 Using the integration with IAM, you can create and manage AWS users and groups, and use permissions to allow and deny
 their access to AWS resources.
@@ -39,6 +39,7 @@ their access to AWS resources.
 * **Remove Role From Instance** *(Containment)* - Removes the specified IAM role from the specified EC2 instance
   profile.
 * **Remove User From Group** *(Containment)* - Removes a specified user from a specified group.
+* **Update Access Key** *(Containment)* - Changes the status of the specified access key from Active to Inactive, or vice versa
 * **Update User** *(Containment)* - Updates the name and/or the path of the specified IAM user.
 
 ## External Libraries
@@ -54,5 +55,5 @@ their access to AWS resources.
     + Updated action: Get User (Table View issue fixed)
 * January 24, 2024 (v1.3)
     + Added New Action: Update Access Key
-* February 2, 2024 (v1.4)
+* February 5, 2024 (v1.4)
     + Added New Action: Get Access Key Last Used
