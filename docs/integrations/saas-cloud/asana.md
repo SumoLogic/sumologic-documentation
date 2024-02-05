@@ -21,7 +21,7 @@ Key features of the Asana app include:
 
 This app uses Asana Source to collect [Audit Logs](https://developers.asana.com/reference/audit-log-api) from Asana.
 
-### Sample log messages
+### Sample log message
 
 ```json title="Audit Log"
 {
@@ -53,7 +53,7 @@ This app uses Asana Source to collect [Audit Logs](https://developers.asana.com/
 }
 ```
 
-### Sample queries
+### Sample query
 
 ```sql title="Events by App Authorization"
 _sourceCategory="asana-app"
