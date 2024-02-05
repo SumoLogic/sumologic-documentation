@@ -7,6 +7,7 @@ description: Learn how to write a match rule.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CseRule from '../../reuse/cse-rule-description-links.md';
+import RulesSyntaxNote from '../../reuse/cse-rules-syntax-note.md';
 
 This topic has information about Match rules and how to create them in the Cloud SIEM UI.
 
@@ -49,7 +50,12 @@ import Iframe from 'react-iframe'; 
 1. On the **Create a Rule** page, click **Create** in the **Match** card.
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.
-   1. **Enabled**. By default, the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it. <br/><img src={useBaseUrl('img/cse/match.png')} alt="Match rule" width="600"/>
+   1. **Enabled**. By default, the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it. 
+   1. **When a Record matches the expression**. Enter the expression. 
+       :::note
+       <RulesSyntaxNote/>
+       :::
+      <br/><img src={useBaseUrl('img/cse/match.png')} alt="Match rule" width="600"/>
 
 ## Configure "Then Create a Signal" settings
 

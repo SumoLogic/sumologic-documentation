@@ -7,6 +7,7 @@ description: Learn how to write a Threshold rule.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CseRule from '../../reuse/cse-rule-description-links.md';
+import RulesSyntaxNote from '../../reuse/cse-rules-syntax-note.md';
 
 This topic has information about the Threshold rules and how to create them in the Cloud SIEM UI.
 
@@ -43,7 +44,8 @@ import Iframe from 'react-iframe'; 
 
 1. **When the expression**. Enter the rule expression, a boolean expression that when “true”, causes the rule to fire.
     :::note
-    You can expand the field template guide, which contains a list of all the fields that Cloud SIEM can normalize to v3 of the Cloud SIEM Schema. Note that the existence of a field in the guide doesn't mean that your ingested Records necessarily include that field.
+    * <RulesSyntaxNote/>
+    * You can expand the field template guide, which contains a list of all the fields that Cloud SIEM can normalize to v3 of the Cloud SIEM Schema. Note that the existence of a field in the guide doesn't mean that your ingested Records necessarily include that field.
     :::
 1. **matches *n* Record**. Select how many Records must match the rule expression during the interval you specify below, in the **within** option.
 1. **within**. Select the duration within which the rule expression must evaluate to “true” more than the number of times specified in **matches n Record** for the rule to fire a Signal.

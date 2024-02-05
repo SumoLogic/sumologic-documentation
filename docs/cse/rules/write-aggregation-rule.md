@@ -7,6 +7,7 @@ description: Learn how to write an Aggregation rule.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CseRule from '../../reuse/cse-rule-description-links.md';
+import RulesSyntaxNote from '../../reuse/cse-rules-syntax-note.md';
 
 This topic has information about Cloud SIEM Aggregation rules and how to write them.
 
@@ -65,6 +66,9 @@ import Iframe from 'react-iframe'; 
 
 On the left side of the Rules Editor, in the **If Triggered** section, you configure a filter that determines the Records to which the rule will be applied, and the conditions under which you want the rule to fire a Signal. Here’s the UI before any entries have been made: <br/><img src={useBaseUrl('img/cse/agg-rule-if-triggered.png')} alt="agg-rule-if-triggered.png" width="400"/>
 1. **When Records matching the expression**. Enter one or more boolean expressions to filter the Records you want to apply the rule to. For example: `!isNull(http_response_statusCode)`
+    :::note
+    <RulesSyntaxNote/>
+    :::
 1. **grouped by**. Specify the Record field or fields by which aggregation results will be grouped. Note that when you define the **On Entity** field for the rule (in [Configure “Then Create a Signal” settings](#configure-then-create-a-signal-settings) below), the field you choose will automatically appear here. If you want to aggregate on other fields, you can select them from the selector list.
 1. **Within**. Select the length of time across which the rule is applied. The options range from 5 minutes to 5 days.
 1. **have aggregations**. To define an aggregation:

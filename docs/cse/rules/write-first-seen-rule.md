@@ -11,6 +11,7 @@ keywords:
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import RulesSyntaxNote from '../../reuse/cse-rules-syntax-note.md';
 
 
 This topic has information about First Seen rules and how to create them in the Cloud SIEM UI.
@@ -57,6 +58,9 @@ This section has instructions for configuring a First Seen rule.
 The settings in the **If Triggered** section determine what Records the rule will be applied to and baseline-related options.
 
 1.  **When a Record matching the expression**. Enter an expression that matches the Records that you want to rule to apply to.
+    :::note
+    <RulesSyntaxNote/>
+    :::
 1. **Has a new value for the field(s)**. Select the Record field that will be used to build the baseline.
 1. **after building a [global | per Entity]** The settings in this section define the scope of the baseline that will be built.
    * **per Entity**. Baselines will be created for all entities for the Entity type or types that you'll specify in the following step. Note that a **per Entity** baseline creates a baseline for a particular Entity type. This baseline scope is typically used to track events that an Entity has never done before.

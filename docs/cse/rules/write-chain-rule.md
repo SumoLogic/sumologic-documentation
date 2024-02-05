@@ -7,6 +7,7 @@ description: Learn how to write a Chain rule.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import CseRule from '../../reuse/cse-rule-description-links.md';
+import RulesSyntaxNote from '../../reuse/cse-rules-syntax-note.md';
 
 This topic has information about Chain rules and how to create them in the Cloud SIEM UI.
 
@@ -45,6 +46,9 @@ import Iframe from 'react-iframe'; 
 ## Configure “If Triggered” settings
 
 1. **When ... Record matches expression.** Enter two or more rule expressions. For each, select the number of matches that are required.
+    :::note
+    <RulesSyntaxNote/>
+    :::
 1. **grouped by**.  By default, a chain rule implicitly groups by the entity field you’ll select below when configuring the **Then Create a Signal** options. You can select additional “group by” fields with the matches grouped by option, so that a Signal is only created if the count for the group is above the threshold count specified above. 
 1. **in ... order.** Choose either:
 

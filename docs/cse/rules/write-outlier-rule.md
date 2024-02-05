@@ -11,6 +11,7 @@ keywords:
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import RulesSyntaxNote from '../../reuse/cse-rules-syntax-note.md';
 
 This topic has information about Outlier rules and how to create them in the Cloud SIEM UI.
 
@@ -66,6 +67,9 @@ The settings in the **If Triggered** section are divided into two subsections, o
 
 **Baseline Configuration**
 1. **For the records matching the expression**. Enter an expression that matches the Records that you want to rule to apply to.
+    :::note
+    <RulesSyntaxNote/>
+    :::
 1. **build a daily/hourly baseline**. Select the time window for building the baseline. It can either be a daily or hourly baseline.
 1. **for the entity(ies)**. Select one or more Record fields for which you want baselines built. Selecting multiple fields will build a distinct baseline for a combination of entities.
 1. Set the baseline and retention settings:

@@ -6,6 +6,8 @@ description: Rule tuning expressions allow you to tailor the logic of a built-in
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import RulesSyntaxNote from '../../reuse/cse-rules-syntax-note.md';
+
 
 This topic has instructions for creating and using tuning expressions for Rules.
 
@@ -22,6 +24,10 @@ metadata_vendor = 'Microsoft' and metadata_product = 'Windows' and metadata_devi
 If you don’t want the rule to generate a Signal if the person performing the action is “jdoe”, you can add a tuning expression like this to the rule, and configure the tuning expression to exclude Records that match the tuning expression.
 
 `user_userId = "jdoe"`
+
+:::note
+<RulesSyntaxNote/>
+:::
 
 Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when Cloud SIEM updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
 
@@ -73,7 +79,10 @@ Here’s what the example tuning expression looks like in the Cloud SIEM UI.
    * Leave **include** selected if you want Signals to be fired for Records that match both the rule expression and the tuning expression.
    * Select **exclude** from the pulldown if you want Signals to be fired for Records that match the rule expression and don't match the tuning expression.
 1. Enter a tuning expression.
-2. Click **Submit**.
+      :::note
+      <RulesSyntaxNote/>
+      :::
+1. Click **Submit**.
    <br/><img src={useBaseUrl('img/cse/new-expression.png')} alt="New expression" width="800"/>
 
 ### Create tuning expression without applying it to rules

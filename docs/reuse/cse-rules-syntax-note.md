@@ -1,0 +1,1 @@
+When writing expressions, follow proper syntax (see [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax)). Keep in mind that two forward slashes (//) are not supported for [commenting out lines](/docs/cse/rules/cse-rules-syntax/#--). 
