@@ -158,7 +158,7 @@ Use this dashboard to:
 * Review details of incoming TCP connection requests.
 * Get a high-level analysis of network traffic.
 * Get an overview of CPU and memory usage.
-* Drill down for a view granular metrics by host using the “host” filter.
+* Drill down for a view granular metrics by host using the **Host** filter.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/F5-BIGIPLTM-Metrics-and-Connections.png')} alt="F5 dashboards" />
 
