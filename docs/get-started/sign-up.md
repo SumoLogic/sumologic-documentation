@@ -46,7 +46,7 @@ That's it - congrats! Next, you'll be taken to your onboarding checklist guide, 
 
 ### Upgrade or continue with Free account
 
-After 45 days, your Sumo Logic **Trial account** will convert to a **Free account**. You can continue using our monitoring and continuous intelligence services, but with limited features. You can [upgrade to a paid plan](https://www.sumologic.com/pricing) at any time.
+After 30 days, your Sumo Logic **Trial account** will convert to a **Free account**. You can continue using our monitoring and continuous intelligence services, but with limited features. You can [upgrade to a paid plan](https://www.sumologic.com/pricing) at any time.
 
 |             | Trial accounts | Free accounts
 |:------------|:---------------|:------------
