@@ -289,6 +289,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/kaltura-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs',
@@ -401,6 +402,7 @@ module.exports = {
               items: [
                 'send-data/kubernetes/helm-chart-overview',
                 'send-data/kubernetes/install-helm-chart',
+                'send-data/kubernetes/configuration',
                 'send-data/kubernetes/best-practices',
                 'send-data/kubernetes/collecting-logs',
                 'send-data/kubernetes/collecting-metrics',
