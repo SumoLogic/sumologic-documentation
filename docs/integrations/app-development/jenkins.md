@@ -58,7 +58,6 @@ The Jenkins app uses the following log types:
 }
 ```
 
-
 ```json title="Shutdown"
 {
   "logType": "Slave_Event",
@@ -263,7 +262,7 @@ The Jenkins app uses the following log types:
 
 </details>
 
-### Sample queries
+### Sample query
 
 This sample query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
 
@@ -444,10 +443,10 @@ The **Jenkins - Audit** dashboard provides insight into user events, including c
 
 Use this dashboard to:
 
-* Ensure only authorized users are accessing the Jenkins System and are modifying Jenkins system and job configurations
-* Keep track of the job configuration changes
-* Compare old and new Jenkins system and job configuration settings
-* View trends for Jenkins job start and finish events
+* Ensure only authorized users are accessing the Jenkins System and are modifying Jenkins system and job configurations.
+* Keep track of the job configuration changes.
+* Compare old and new Jenkins system and job configuration settings.
+* View trends for Jenkins job start and finish events.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-Audit.png')} alt="jenkins" />
 
@@ -458,10 +457,10 @@ The **Jenkins - Master Health** dashboard provides insight into the health of Je
 Executors are similar to threads that run jobs, so they are indicators of the load placed on Jenkins. If the executors are full, it means there are a lot of jobs running on the system and more executors may be needed to balance the load.
 
 Use this dashboard to:
-* Monitor shutdown events for Jenkins master nodes
-* Monitor Jenkins system sogs to determine the root cause of system issues
-* Monitor Jenkins master CPU usage and memory usage to allocate additional resources if needed
-* Monitor free executors and busy executors on Jenkins master
+* Monitor shutdown events for Jenkins master nodes.
+* Monitor Jenkins system sogs to determine the root cause of system issues.
+* Monitor Jenkins master CPU usage and memory usage to allocate additional resources if needed.
+* Monitor free executors and busy executors on Jenkins master.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-MasterHealth.png')} alt="jenkins" />
 
@@ -471,8 +470,8 @@ The **Jenkins - Job Health** dashboard provides insight into the health of Jenki
 
 Use this dashboard to:
 
-* Monitor jobs in the queue, blocked and pending jobs to make sure your continuous integrations are running as expected
-* Monitor garbage collection statistics  on the Jenkins master to understand how to improve performance and allocate additional resources if necessary
+* Monitor jobs in the queue, blocked and pending jobs to make sure your continuous integrations are running as expected.
+* Monitor garbage collection statistics  on the Jenkins master to understand how to improve performance and allocate additional resources if necessary.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-JobHealth.png')} alt="jenkins" />
 
@@ -481,9 +480,9 @@ Use this dashboard to:
 The **Jenkins - Node Health** dashboard provides insights into the health of all Jenkins master and worker nodes, with information on node details, recent builds, resource consumption, and node events.
 
 Use this dashboard to:
-* Monitor the health of all Jenkins nodes to understand and resolve potential bottlenecks
-* Monitor  node resource utilization and resize if necessary
-* Monitor removed nodes and node offline and launch failure events to ensure intended operations are being performed
+* Monitor the health of all Jenkins nodes to understand and resolve potential bottlenecks.
+* Monitor  node resource utilization and resize if necessary.
+* Monitor removed nodes and node offline and launch failure events to ensure intended operations are being performed.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-NodeHealth.png')} alt="jenkins" />
 
@@ -497,11 +496,11 @@ The **Jenkins - Job Overview** dashboard provides a high-level view of the job a
 
 Use this dashboard to:
 * Monitor the total number of builds, successful and failed builds.
-* Monitor recent builds and view detailed information in  the Jenkins console
-* Monitor  job duration trends to understand how to improve the execution of various stages in the pipeline
-* Monitor  jobs in progress, and in queue to determine how the pipelines are performing and make adjustments to the build process if needed
-* Identify the slowest failed builds
-* View trends for job results and use that information to identify source code components and teams that need the most improvements
+* Monitor recent builds and view detailed information in  the Jenkins console.
+* Monitor job duration trends to understand how to improve the execution of various stages in the pipeline.
+* Monitor jobs in progress, and in queue to determine how the pipelines are performing and make adjustments to the build process if needed.
+* Identify the slowest failed builds.
+* View trends for job results and use that information to identify source code components and teams that need the most improvements.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-JobOverview.png')} alt="jenkins" />
 
@@ -510,11 +509,11 @@ Use this dashboard to:
 The **Jenkins - Job Information** dashboard provides detailed information about a specific job. Panels show information on job URLs, duration trends, execution results, test case trends, slowest stages for pipeline jobs, console logs, and common errors.
 
 Use this dashboard to:
-* Monitor the total number of builds, successful builds, duration and failed builds for the job in question to understand how to best improve its execution going forward
-*  Drilldown to Jenkins build information as needed
-* Investigate common errors using console logs
-* Investigate common stage failures
-* Monitor recent configuration changes and commits to identify potential causes of failure
+* Monitor the total number of builds, successful builds, duration and failed builds for the job in question to understand how to best improve its execution going forward.
+* Drilldown to Jenkins build information as needed.
+* Investigate common errors using console logs.
+* Investigate common stage failures.
+* Monitor recent configuration changes and commits to identify potential causes of failure.
 
 <img src={useBaseUrl('img/integrations/app-development/Jenkins-JobInformation.png')} alt="jenkins" />
 
