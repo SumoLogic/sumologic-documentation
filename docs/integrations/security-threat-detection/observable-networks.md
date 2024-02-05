@@ -2,14 +2,14 @@
 id: observable-networks
 title: Observable Networks
 sidebar_label: Observable Networks
-description: The Observable Networks App allows you to monitor your Observable Networks deployment from Sumo Logic. The App Overview Dashboard provides insight to high-level data about your network.
+description: The Observable Networks app allows you to monitor your Observable Networks deployment from Sumo Logic. The app Overview dashboard provides insight to high-level data about your network.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Observable.png')} alt="thumbnail icon" width="75"/>
 
-The Observable Networks app allows you to monitor your Observable Networks deployment from Sumo Logic. The App Overview Dashboard provides insight to high-level data about your network.
+The Observable Networks app allows you to monitor your Observable Networks deployment from Sumo Logic. The app Overview Dashboard provides insight to high-level data about your network.
 
 From Sumo Logic, you may also set up forwarding for log monitoring and authentication logs to Observable Networks. With log monitoring, Observable Networks can notify you when it detects that a Collector is missing, exposing gaps in your log coverage. Authentication log forwarding allows for more accurate and detailed alerts, using Sumo Logic log data to provide extra richness to Observable's Dynamic Endpoint Modeling algorithms.
 
@@ -23,7 +23,7 @@ Before you begin, your Observable Networks portal must be properly configured. C
 
 ## Log types
 
-The Sumo Logic App for Observable Networks assumes Observable Networks formatted logs, which provide one JSON message per request.
+The Sumo Logic app for Observable Networks assumes Observable Networks formatted logs, which provide one JSON message per request.
 
 ## Collect logs for the Observable Network app
 
@@ -55,7 +55,6 @@ Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-me
 
 When the URL associated with the Source is displayed, copy the URL so you can use it to send files.
 
-
 ### Configure the Observable Portal
 
 1. From your Observable Networks portal, click **Settings (gear icon) > Integrations > Sumo Logic > Settings**.
@@ -64,11 +63,9 @@ When the URL associated with the Source is displayed, copy the URL so you can us
 
 Your Observable Networks deployment will now publish alert and endpoint information to Sumo Logic.
 
-
 #### Configure Log Monitoring (optional)
 
 If you have Sumo Logic API access, you can integrate Observable Networks and Sumo Logic even further. You can configure Observable Networks to identify devices on your network that do not have Collectors installed. Additionally, Observable Networks can parse authentication log ("auth.log") data from certain Linux distributions (e.g., Ubuntu) to monitor user access.
-
 
 #### Identify Missing Collectors
 
@@ -96,7 +93,7 @@ To parse authentication logs:
 2. From the **Auth.log** dropdown, select the log configuration that represents the auth.log source.
 3. Click **Save**.
 
-### Sample log messages
+### Sample log message
 
 ```json
 {
@@ -150,7 +147,6 @@ _sourceCategory=observable | json field=_raw "obsrvbl_type", "effective_session_
 | order by _timeslice
 ```
 
-
 ```sql title="Top Observation Host"
 _sourceCategory=observable
 | json field=_raw "obsrvbl_type", "source_info.name" as type, name
@@ -173,7 +169,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 
-The Observable Networks Overview Dashboard is intended to provide a high level at-a-glance view into your network.
+The Observable Networks Overview dashboard is intended to provide a high level at-a-glance view into your network.
 
 **Effective Session Count.** Displays the number of effective "flows" ("sessions") as a single value chart for the last hour.
 
