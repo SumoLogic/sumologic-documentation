@@ -32,5 +32,4 @@ For organizations having Cloud SOAR available at URLs matching the pattern `*.so
 https://<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_documentation_v3
 ```
 
-For more information, see [Cloud SOAR APIs](/docs/cloud-soar/cloud-soar-apis/) in
-our [Cloud SOAR documentation](/docs/cloud-soar/).
+For more information, see [Cloud SOAR APIs](/docs/cloud-soar/cloud-soar-apis/).
