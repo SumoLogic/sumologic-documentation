@@ -8,27 +8,29 @@ description: Learn how to access Cloud SOAR APIs and API documentation.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import ApiIntro from '../reuse/api-intro.md';
 
-<!-- Add this once all customers are moved to Cloud SOAR Delivery 2, and remove all the documentation below for "incmansuite_ng:
-
 The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR features.
 
-<ApiIntro/>
+:::info
+This article applies to your organization *only if* your instance URL is a subdomain of `soar.sumologic.com`.
+Otherwise, please refer to:
 
-import CloudSoarApi from '../reuse/csoar-api-table.md';
+* [Cloud SOAR APIs](/docs/api/cloud-soar) for the endpoints by geographic location
+* [API Authentication](/docs/api/getting-started#authentication) for details about API best practises.
 
-<CloudSoarApi/>
+:::
 
--->
+### Inline API documentation
 
-### API documentation
-
-API documentation is available through your Cloud SOAR instance at the following URL:
+For organizations having Cloud SOAR available at URL pattern `*.soar.sumologic.com`,
+the API documentation is available through your Cloud SOAR instance at the following URL:
 
 ```
 http[s]:///<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_documentation_v3
 ```
 
-The APIs listed at this location are internally-facing and are unique to the tenant. The documentation lists all the available endpoints and expected parameters. It provides a list of the required and accepted data schema to use for each of the exposed endpoints.
+The APIs listed at this location are internally-facing and are unique to the tenant. The documentation lists all the
+available endpoints and expected parameters. It provides a list of the required and accepted data schema to use for each
+of the exposed endpoints.
 
 ### Base path for API requests
 
@@ -40,14 +42,18 @@ http[s]://<cloudsoarhost>/incmansuite_ng/api/v3/<endpoint>
 
 ### Generate an API token
 
-The REST API can only be used by authorized users who possess a valid JWT API key. An administrator should perform the following steps to issue an API key for an Cloud SOAR user:
+The REST API can only be used by authorized users who possess a valid JWT API key. An administrator should perform the
+following steps to issue an API key for an Cloud SOAR user:
 
 1. Select the desired user in the [User Management](/docs/cloud-soar/global-functions-menu/#user-management) section.
 1. Scroll to the **API Token** section.
 1. Click the **+** button on the right-hand side of the screen.
-1. Click **Generate** to confirm the generation of the API token. The new JWT token will be found in the **API Token** section of the user’s settings.
+1. Click **Generate** to confirm the generation of the API token. The new JWT token will be found in the **API Token**
+   section of the user’s settings.
 
-A Cloud SOAR user can use the token displayed in the **API Token** section to provide authorization for their API calls. An administrator can revoke a user’s API token at any time by clicking the trash can icon to the far right side of the token row.
+A Cloud SOAR user can use the token displayed in the **API Token** section to provide authorization for their API calls.
+An administrator can revoke a user’s API token at any time by clicking the trash can icon to the far right side of the
+token row.
 
 ### GET/PUT request (without data payload)
 
