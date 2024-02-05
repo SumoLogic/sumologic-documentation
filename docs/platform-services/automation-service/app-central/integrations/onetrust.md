@@ -9,7 +9,7 @@ tags: [ ]
 Version: 1.1  
 Updated: Feb 5, 2024
 
-OneTrust is a technology platform that helps organizations comply with privacy and security regulations like GDPR and
+OneTrust is a technology platform that helps organizations comply with privacy and security regulations like GDPR and CCPA by automating privacy assessments, data mapping, and consent management.
 CCPA by automating privacy assessments, data mapping, and consent management.
 
 ## Actions
