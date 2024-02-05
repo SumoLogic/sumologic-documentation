@@ -115,7 +115,7 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 5. Under **Grant permissions**, select the existing role that was created in the above steps that grants CloudWatch Logs permission to put data into your Kinesis Data Firehose delivery stream. If you used the Cloudformation template, then the role name will contain the cloudformation name followed by `-KinesisLogsRole-`.
 6. In the **Configure log format and filters** section, select a Log format and enter a Subscription filter pattern (Optional) and Subscription filter name.
     :::info
-    - If no subscription filter pattern is provided it will stream all the logs present in the log group.
+    - If no subscription filter pattern is provided, it will stream all the logs present in the log group.
     - Sometimes log format will be specified in the Sumo Logic app specific collection page, so use that specific format otherwise dashboards may not light up.
     :::
 7. (Optional) In the **Test Pattern** section, select the log data to test, then click **Test pattern**. If test results look fine, then click **Start Streaming**.
