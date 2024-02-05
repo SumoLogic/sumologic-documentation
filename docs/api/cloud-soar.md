@@ -26,8 +26,7 @@ import CloudSoarApi from '../reuse/csoar-api-table.md';
 
 ## Inline API documentation
 
-For organizations having Cloud SOAR available at URLs matching the pattern `*.soar.sumologic.com`, 
-the API documentation is available through your Cloud SOAR instance at the following URL:
+For organizations having Cloud SOAR available at URLs matching the pattern `*.soar.sumologic.com`,  the API documentation is available through your Cloud SOAR instance at the following URL:
 
 ```
 https://<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_documentation_v3
