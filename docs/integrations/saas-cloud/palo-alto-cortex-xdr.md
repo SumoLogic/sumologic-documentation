@@ -4,6 +4,7 @@ title: Palo Alto Cortex XDR
 sidebar_label: Palo Alto Cortex XDR
 description: The Sumo Logic app for Palo Alto Cortex XDR provides comprehensive visibility and analysis of alerts and incidents to improve overall security posture.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/integrations/security-threat-detection/pan6.png')} alt="icon" width="100"/>
