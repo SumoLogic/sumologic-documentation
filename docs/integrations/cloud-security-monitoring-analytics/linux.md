@@ -13,7 +13,6 @@ The Cloud Security monitoring and Analytics app for Linux ingests any distributi
 
 Follow the steps in this topic to install or uninstall a collector on Linux. See Installed Collectors for information on other OSs.
 
-
 ## System requirements
 
 * Linux, major distributions 64-bit, or any generic Unix capable of running Java 1.8
@@ -30,7 +29,6 @@ Download the collector in either of the following ways:
 * In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. Click **Add Collector**, click **Installed Collector**, and then click the link for the collector to begin the download.<br/>
 -or-
 * Open a browser and enter the static URL for your pod. See Download a Collector from a Static URL for a list of URLs for your deployment pod. The download begins immediately.
-
 
 ### Install the Collector on Linux
 
@@ -204,7 +202,6 @@ You can build a Collector into a Linux machine image such as an Amazon AMI or VM
 
 After installing Collectors, you can configure Sources from Sumo Logic or by providing the Source settings in a JSON file. If you're using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
 
-
 ### Uninstalling the Collector
 
 Uninstalling a collector requires the following two steps:
@@ -300,7 +297,6 @@ The **Security Monitoring - Overview** dashboard provides an overview of securit
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Monitoring-Overview.png')} alt="Linux Security dashboards" />
 
-
 ### Security Analytics - Login Activity
 
 The **Security Analytics - Login Activity** dashboard tracks login activity. It provides information about failed and successful user logins, and failed and successful root logins.
@@ -309,7 +305,6 @@ The **Security Analytics - Login Activity** dashboard tracks login activity. It 
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-Login-Activity.png')} alt="Linux Security dashboards" />
 
-
 ### Security Analytics - Privileged Activity
 
 The **Security Analytics - Privileged Activity** dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
@@ -317,7 +312,6 @@ The **Security Analytics - Privileged Activity** dashboard provides information 
 **Use case:** Use this dashboard to monitor successful and failed access attempts to systems, especially with administrative privileges. It also helps monitor actions performed by users with administrative privileges.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-Privileged-Activity.png')} alt="Linux Security dashboards" />
-
 
 ### Security Monitoring - User, Service, and System Monitoring
 
