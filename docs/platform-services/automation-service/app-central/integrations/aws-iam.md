@@ -36,7 +36,7 @@ Using the integration with IAM, you can create and manage AWS users and groups, 
 * **Remove Role From Instance** *(Containment)* - Removes the specified IAM role from the specified EC2 instance profile.
   profile.
 * **Remove User From Group** *(Containment)* - Removes a specified user from a specified group.
-* **Update Access Key** *(Containment)* - Changes the status of the specified access key from Active to Inactive, or
+* **Update Access Key** *(Containment)* - Changes the status of the specified access key from Active to Inactive, or vice versa.
   vice versa
 * **Update User** *(Containment)* - Updates the name and/or the path of the specified IAM user.
 
