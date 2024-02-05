@@ -28,7 +28,7 @@ Using the integration with IAM, you can create and manage AWS users and groups, 
 * **List Groups** *(Enrichment)* - Lists the IAM groups that have the specified path prefix.
 * **List Groups For User** *(Enrichment)* - Lists the IAM groups that the specified IAM user belongs to.
 * **List Instance Profiles** *(Enrichment)* - Lists the instance profiles that have the specified path prefix.
-* **List Instance Profiles For Role** *(Enrichment)* - Lists the instance profiles that have the specified associated
+* **List Instance Profiles For Role** *(Enrichment)* - Lists the instance profiles that have the specified associated IAM role.
   IAM role.
 * **List Policies** *(Enrichment)* - Lists all the managed policies that are available in an AWS account.
 * **List Roles** *(Enrichment)* - Lists the IAM roles that have the specified path prefix.
