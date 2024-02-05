@@ -2,7 +2,7 @@
 id: twistlock
 title: Twistlock
 sidebar_label: Twistlock and Twistlock Classic
-description: The Sumo Logic App for Twistlock provides comprehensive monitoring and analysis solution for detecting vulnerabilities and potential threats throughout your environment, including hosts, containers, images, registry.
+description: The Sumo Logic app for Twistlock provides comprehensive monitoring and analysis solution for detecting vulnerabilities and potential threats throughout your environment, including hosts, containers, images, registry.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,28 +11,27 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Twistlock](https://www.twistlock.com/) is a cloud native cybersecurity platform for hosts, containers, and serverless setups that ensures the protection of all your workloads across any environment.
 
-The Sumo Logic App for Twistlock provides a comprehensive monitoring and analysis solution for detecting vulnerabilities and potential threats within your Kubernetes and containerized environments.
+The Sumo Logic app for Twistlock provides a comprehensive monitoring and analysis solution for detecting vulnerabilities and potential threats within your Kubernetes and containerized environments.
 
-If you're using Kubernetes, we recommend installing the Twistlock App.
+If you're using Kubernetes, we recommend installing the Twistlock app.
 
-If you're not using Kubernetes, we recommend installing the Twistlock Classic App.
+If you're not using Kubernetes, we recommend installing the Twistlock Classic app.
 
 ## Log types
 
 The Twistlock Apps work on logs from:
 
-* Twistlock Console. Console logs typically include image scan, host scan, container scan, registry scan, scan summary, management audits, compliance violations, and vulnerability issues events.
-* Twistlock Defender. Defender logs typically include container/host runtime audits, process activity audits, and incident events
+* **Twistlock Console**. Console logs typically include image scan, host scan, container scan, registry scan, scan summary, management audits, compliance violations, and vulnerability issues events.
+* **Twistlock Defender**. Defender logs typically include container/host runtime audits, process activity audits, and incident events
 
 For more information on Twistlock events, refer to the [Twistlock Documentation](https://docs.twistlock.com/docs/latest/audit/logging.html#events).
 
 ## Collecting logs for the Twistlock app
 
-This section provides instructions for configuring log collection for the Sumo Logic App for Twistlock. After completing the following tasks, you will have successfully configured log collection for Twistlock:
+This section provides instructions for configuring log collection for the Sumo Logic app for Twistlock. After completing the following tasks, you will have successfully configured log collection for Twistlock:
 
 * Configure a Sumo Logic syslog source
 * Send Twistlock logs to Sumo Logic
-
 
 ### Step 1. Configure a Sumo Logic syslog source
 
@@ -47,7 +46,6 @@ In this step you configure an installed collector with a Syslog source that will
    5. **Source Category**. (Required) Provide a Source Category for this data type. For example: **prod/twistlock**. For more information, see [Best Practices](/docs/send-data/best-practices).
 1. For Kubernetes customers, we recommend adding a [custom field](/docs/manage/fields) to the Syslog Source so you can reference it in the [Sumo Explorer view](/docs/observability/kubernetes). Each field contains a key-value pair, where the field name is the key. To add a field click the **+Add Field** link in the **Fields** section. You could add a field named **cluster** where you set the name of the cluster to tag to the logs. For example, **cluster** = **k8s.dev.sumo.sumologic.net**.
 1. Click **Save**.
-
 
 ### Step 2: Send Twistlock logs to Sumo Logic
 
@@ -86,9 +84,7 @@ image_name="registry-auth.twistlock.com/tw_blm0yiaqqwvgimnirx1x0iczg9xoslag/twis
 compliance="0"
 ```
 
-
-### Sample queries
-
+### Sample query
 
 The following query sample is from the **Vulnerability Scan Events by Severity** panel in the **Twistlock - Overview** dashboard.
 
@@ -110,7 +106,7 @@ as container_name nodrop | parse "cve=\"*\"" as cve nodrop | parse "vendor_statu
 
 This section provides instructions on how to install the Twistlock App, as well as examples of each of the dashboards. The App pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
