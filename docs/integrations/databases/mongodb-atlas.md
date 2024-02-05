@@ -221,7 +221,7 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 
 </details>
 
-### Sample queries
+### Sample query
 
 This sample query is from the MongoDB Atlas Audit dashboard > Recent Audit Events panel.
 
@@ -234,7 +234,6 @@ This sample query is from the MongoDB Atlas Audit dashboard > Recent Audit Event
 | first(_messageTime) as latest_event_date group by atype, project_id, hostname, cluster_name,  database, collection, users, local_ip, remote_ip
 | sort by latest_event_date
 ```
-
 
 ## Collecting logs and metrics for the MongoDB Atlas app
 
