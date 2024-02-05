@@ -22,7 +22,6 @@ Using the integration with IAM, you can create and manage AWS users and groups, 
 * **Get Instance Profile** *(Enrichment)* - Returns information about the specified instance profile.
 * **Get Role** *(Enrichment)* - Retrieves information about the specified role, including the role's path, GUID, ARN, and the role's trust policy that grants permission to assume the role.
 * **Get User** *(Enrichment)* - Retrieves information about the specified IAM user, including the user's creation date, path, unique ID, and ARN.
-  path, unique ID, and ARN.
 * **List Access Key For User** *(Enrichment)* - Returns information about the access key IDs associated with the specified IAM user.
   specified IAM user.
 * **List Groups** *(Enrichment)* - Lists the IAM groups that have the specified path prefix.
