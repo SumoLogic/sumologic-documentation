@@ -2,17 +2,16 @@
 id: evident-security-platform
 title: Evident.io ESP
 sidebar_label: Evident.io ESP
-description: The Evident.io ESP App provides pre-configured searches and Dashboards that allow you to investigate Evident-specific events and provide operational visibility to team members without logging into Evident.io.
+description: The Evident.io ESP app provides pre-configured searches and dashboards that allow you to investigate Evident-specific events and provide operational visibility to team members without logging into Evident.io.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/evidentio.png')} alt="thumbnail icon" width="75"/>
 
-The Evident.io ESP App provides pre-configured searches and Dashboards that allow you to investigate Evident-specific events and provide operational visibility to team members without logging into Evident.io.
+The Evident.io ESP app provides pre-configured searches and dashboards that allow you to investigate Evident-specific events and provide operational visibility to team members without logging into Evident.io.
 
 The Evident.io Evident Security Platform (ESP) streamlines and optimizes vulnerability and risk management. It continuously monitors the AWS cloud, automatically identifies security misconfigurations, enables rapid mitigation of risk through guided remediation and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the vulnerability and identified security misconfigurations from Evident and other data sources, you can reduce your security risk and improve your overall security posture.
-
 
 ## Log types
 
@@ -20,8 +19,7 @@ The Evident.io ESP App collects monitoring alerts.
 
 For details on the log format and definitions, refer to Evident.io documentation at [http://docs.evident.io/](http://docs.evident.io/).
 
-
-### Sample log messages
+### Sample log message
 
 <details>
 <summary>Click to expand</summary>
@@ -183,8 +181,7 @@ For details on the log format and definitions, refer to Evident.io documentation
 </details>
 
 
-### Sample queries
-
+### Sample query
 
 ```sql title="Alerts by Status"
 _sourceCategory=security_evident
@@ -223,14 +220,12 @@ This page demonstrates how to configure log collection for the Evident.io ESP Ap
 6. Click **Save**.
 7. Copy the HTTP Source Address URL and use it in the following section.
 
-
 ### Step 2. Configure an Evident.io Integration with Amazon SNS
 
 To configure an Evident.IO Integration with Amazon SNS:
 
 1. In Evident.io, [add an Integration](http://docs.evident.io/#to-add-an-integration).
 2. Enable an [Amazon SNS integration](http://docs.evident.io/#amazon-sns).
-
 
 ### Step 3. Subscribe to SNS Notifications
 
@@ -251,7 +246,6 @@ For example, use the query: `_sourceCategory=security_evident SubscribeURL`
 9. In the **AWS Management Console**, select **SNS >Topics**.
 10. Under **Amazon SNS > Actions**, select **Confirm a subscription**.
 11. Paste the `SubscribeURL` into the field **Subscription confirmation URL**, and click **Confirm subscription**.
-
 
 ### Step 4. Enable Raw Message Delivery
 
@@ -292,7 +286,6 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 **Resolved Risks.** Shows which risks have been resolved over the last 24 hours in a table chart.
 
 **Total Risks over Time.** Shows a trendline of all alerts over the last 14 days in a stacked area chart.
-
 
 ### Detailed Risks
 
