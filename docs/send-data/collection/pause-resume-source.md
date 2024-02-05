@@ -14,7 +14,7 @@ The following Sources can use pause/resume:
 
 To pause a Source:
 
-1. Locate the Source on the **Manage Data > Collection > Collection**
+1. Locate the Source on the **Manage Data** > **Collection** > **Collection**
 page.
 1. Click **Pause**. Click the **Resume** link when you are ready for the source to start sending data again.
 

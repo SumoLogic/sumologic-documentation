@@ -10,12 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Akamai Security Events App allows you to visualize security events generated on the Akamai platform. The preconfigured dashboards provide insights into attack data, sources of attack, attack queries, geolocation of attack source, context on attack’s HTTP request, and rules triggered by the attack.
 
-## Log Types  
+## Log types  
 
 The Akamai Security Events App uses security events generated on the Akamai platform by leveraging the [V1 SIEM API](https://developer.akamai.com/api/cloud_security/siem/v1.html) and Sumo Logic’s [Akamai SIEM API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source).
 
-
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -65,8 +64,7 @@ The Akamai Security Events App uses security events generated on the Akamai plat
 }
 ```
 
-
-## Sample Query  
+## Sample queries  
 
 ```sql
 _sourceCategory=<akamai-foo>
@@ -77,45 +75,29 @@ _sourceCategory=<akamai-foo>
 |count by attack_date, client_ip, city, country, rule_action, rule, rule_message, rule_selector, rule_version, config_id, policy_id,http_response
 ```
 
+## Collecting Logs for Akamai Security Events app
 
+To begin collecting logs for the Sumo app for Akamai Security Events:
 
-## Collecting Logs for Akamai Security Events App
-
-To begin collecting logs for the Sumo App for Akamai Security Events:
-
-1. Create an Akamai SIEM API Source as described [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source#create-an%C2%A0akamai-siem-api%C2%A0source)
+1. Create an Akamai SIEM API Source as described [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source/#source-configuration).
 2. Enable both Parsing options while creating the Akamai SIEM API Source. Parsing options:
    * Decode httpMessage fields
    * Duplicate Events once for each rule associated with the event
 
 
-## Installing the Akamai Security Events App
+## Installing the Akamai Security Events app
 
-This section has instructions for installing the Sumo App for Akamai Security Events and descriptions of each of the app dashboards.
+This section has instructions for installing the Sumo Logic app for Akamai Security Events.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection applies only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-   * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source**. Select either of these options for the data source. 
-      * Choose **Source Category**, and select a source category from the list. 
-      * Choose **Enter a Custom Data Filte**r, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
-4. Click Add to Library.
+<AppInstall/>
 
-Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
+## Viewing Akamai Security Events dashboards
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-
-## Viewing Akamai Security Events Dashboards
-
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards-new/filter-template-variables.md) help page.
-
-Note: You can use template variables to drill down and examine the data on a granular level.
-
+<ViewDashboards/>
 
 ### Overview
 
@@ -127,7 +109,6 @@ Use this dashboard to:
 * Analyze summary of last 20 attacks.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Akamai-Security-Events-Overview.png')} alt="Akamai Security Events dashboards" />
-
 
 ### Attack Data
 
@@ -141,8 +122,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Akamai-Security-Events-Attack-Data.png')} alt="Akamai Security Events dashboards" />
 
-
-
 ### HTTP Data
 
 The **Akamai Security Events - HTTP Data** dashboard provides context and visualization of attack’s HTTP request.
@@ -153,8 +132,6 @@ Use this dashboard to:
 * Find request query which led to the attack.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Akamai-Security-Events-HTTP-Data.png')} alt="Akamai Security Events dashboards" />
-
-
 
 ### Threat Intel
 

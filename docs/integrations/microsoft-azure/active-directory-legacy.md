@@ -1,24 +1,24 @@
 ---
 id: active-directory-legacy
-title: Sumo Logic App for Active Directory Legacy
+title: Active Directory Legacy
 sidebar_label: Active Directory (Legacy)
 description: Allows you to analyze Windows Active Directory logs and gain insight into your deployment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Windows-Server-Active-Directory.jpg')} alt="thumbnail icon" width="150"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="40"/>
 
-The Active Directory Legacy App allows you to analyze Windows Active Directory logs and gain insight into your deployment. Using the app, you can identify user activity across your network and security administration systems. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
+The Sumo Logic app for Active Directory Legacy (2008+) allows you to analyze Windows Active Directory logs and gain insight into your deployment. Using the app, you can identify user activity across your network and security administration systems. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 We recommend using the Active Directory App in combination with the Windows App.
 
-## Log Types
+## Log types
 
 Active Directory diagnostic log files are described in more detail in [Microsoft help](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10)).
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title="Domain Controller"
 DomainController DName=="DC=local" DomainName=="local" Forest=="local" NetBIOSName=="LOCAL" ControllerHostName=="HOST1DC01.local" IP=="102.240.30.12" Site=="DC1"
@@ -61,7 +61,7 @@ This event is generated when a logon session is destroyed. It may be positively 
 ```
 
 
-## Sample Query
+## Sample queries
 
 ```sql title="Directory Service Object Changes (from Active Directory App)"
 _sourceCategory=delete_test _sourceName=Security "Directory Service Changes"
@@ -155,8 +155,8 @@ If your Domain Controllers are in the same domain, then you can just run the scr
 
 To configure a script source, do the following:
 
-1. In Sumo Logic, select** Manage Data > Collection > Collection**.
-2. Find the name of the installed collector to which you'd like to add a Source. Click **Add...** then choose** Add Source **from the pop-up menu.
+1. In Sumo Logic, select **Manage Data > Collection > Collection**.
+2. Find the name of the installed collector to which you'd like to add a Source. Click **Add...** then choose **Add Source** from the pop-up menu.
 3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. Enter **DomainCollector** or **ADObjects**, depending on which script you are configuring. Description is optional.
 5. **Source Host** (optional). Enter the hostname or the IP address of the machine. The hostname is stored in a searchable field called `_sourceHost`. The hostname can be a maximum of 128 characters.
@@ -191,7 +191,7 @@ The **Frequency** option should be set according to your environment. We use a s
 
 ## Installing the Sumo Logic App
 
-Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -200,7 +200,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library** and complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    * **Data Source.** Select **Enter a Custom Data Filter** and enter a filter that references the Windows Event Logs source and the script sources" (configured as described in [Collect Active Directory Log Files](/docs/integrations/microsoft-azure/active-directory-legacy#Collect_Log_Files_for_the_Active_Directory_Legacy_App)). For example: `(_sourceCategory=OS/Windows OR _sourcecategory=*adscripts*)`.
+    * **Data Source.** Select **Enter a Custom Data Filter** and enter a filter that references the Windows Event Logs source and the script sources" (configured as described in [Collect Active Directory Log Files](/docs/integrations/microsoft-azure/active-directory-legacy#Collect_Log_Files_for_the_Active_Directory_Legacy_App)). For example: `(_sourceCategory=OS/Windows OR _sourceCategory=*adscripts*)`.
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 3. Click **Add to Library**.
 
@@ -208,7 +208,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-Sumo Logic recommends using the Sumo Logic App for Active Directory in combination with the [Sumo Logic App for Windows](/docs/integrations/microsoft-azure/Windows-Legacy).
+Sumo Logic recommends using the Sumo Logic App for Active Directory in combination with the [Sumo Logic App for Windows](/docs/integrations/microsoft-azure/windows-legacy).
 
 
 ## Viewing Active Directory Legacy Dashboards

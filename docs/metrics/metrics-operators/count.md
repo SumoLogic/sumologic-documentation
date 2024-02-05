@@ -5,17 +5,15 @@ sidebar_label: count
 ---
 
 
-## count
-
 Counts the total number of time series that match the query. If grouping is specified, it counts the total number for each group.
 
-## count syntax
+## Syntax
 
 ```sql
 count [by FIELD [, FIELD, ...]]
-```    
+```
 
-## count examples
+## Examples
 
 ### Count of time series for a metric
 
@@ -41,6 +39,6 @@ This example shows a query in the [Metrics Explorer](/docs/metrics/metrics-queri
 metric=4XXError | count by method
 ```
 
-In this query, we're searching for how many 4xx errors occurred by different methods, for example GET, PUT, DELETE, and so on.
+In this query, we're searching for how many 4xx errors occurred by different methods, for example, GET, PUT, DELETE, and so on.
 
 ![count-example.png](/img/metrics/count-example.png)

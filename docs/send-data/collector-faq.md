@@ -31,14 +31,14 @@ This warning indicates that a brief lapse in network connectivity between your C
 Here are a few troubleshooting steps to try when your Collector is consistently unable to connect to the Service:
 
 1. Test DNS resolution and connectivity to the Sumo servers: 
- ```bash
- curl -i https://collectors.sumologic.com
- # you should see the word "Tweep" returned
- ```
+     ```bash
+     curl -i https://collectors.sumologic.com
+     # you should see the word "Tweep" returned
+     ```
 1. Check whether there is a significant delay in performing the DNS lookup:
- ```bash
- time nslookup collectors.sumologic.com
- ```
+     ```bash
+     time nslookup collectors.sumologic.com
+     ```
 1. Rule out dropped packets due to jumbo frames being unsupported by your network end points. For example, MTU being set to 9001 bytes vs. the age old default of 1500 bytes. In newer AWS EC2 VPC's, the MTU is set to 9001 by default. This is referred to as using [jumbo frames](https://en.wikipedia.org/wiki/Jumbo_frame) and can cause packet loss since not all devices on the internet support large packet sizes. [Path MTU Discovery](https://en.wikipedia.org/wiki/Path_MTU_Discovery) is responsible for ensuring that packets of the correct size are sent to each end point by first checking whether the end point can handle jumbo frames, and then resending the packet in smaller chunks until it's successfully sent. Packets will be dropped in cases where ICMP *Unreachable* messages are disabled on the receiving end since [Path MTU Discovery](https://en.wikipedia.org/wiki/Path_MTU_Discovery) relies on these messages to determine the correct packet size.
 
 #### Setting the default MTU on a Linux Operating System
@@ -110,7 +110,7 @@ This is a known issue regarding upgrading a Windows collector from versions 19.6
 
 1. Restart the Sumo Logic Collector service.
 
-When these steps are complete, in Sumo Logic, go to **Manage Data > Collection > Collection**, click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
+When these steps are complete, in Sumo Logic, go to **Manage Data** > **Collection** > **Collection**, click **Upgrade Collectors**, and select the **Retry** option next to the failed Collector.
 
 
 ## Configure Limits for Collector Caching
@@ -179,12 +179,13 @@ Is it possible to delete data already collected into Sumo Logic? I've ingested 
 
 #### Answer
 
-It is not possible for users to delete specific message data already ingested into Sumo Logic. All data sent to Sumo Logic is indexed together and stored in a Write Once Read Many (WORM) storage, which you cannot modify. You may request data be deleted from your account. If you have Views and Partitions set up, Sumo Logic can delete data from that specific View or Partition. Otherwise, the deletion will cover ALL data delivered into the account within a specified time range. Any request for data deletion should be sent to [Sumo Logic Support](mailto:support@sumologic.com) through your account administrator.
-
-An alternative to requesting Sumo Logic to delete your message data is to create Role filters that will hide the unwanted data so it is not searchable within the account. To do this, you can apply a role filter query string matching this data to the user roles for whom the unwanted data should not be visible.
+Sumo Logic does not support the deletion of specific log messages. You can either delete the entire data ingested in a given time range and index or choose to hide the specific log message. Following is a explanation of these techniques:
+- To request data deletion from your account, you can send a request to [Sumo Logic Support](https://support.sumologic.com) through your account administrator. We will be able to delete all data within the specified time range for particular views/partitions that you have set up.
+- If you do not want to delete all the data in the specified time range, an alternative is hiding the selective messages. You can achieve this in one of the two available ways:
+    - Create Role filters that will hide the unwanted data so it is not searchable within the account. To do this, you can apply a role filter query string matching this data to the user roles for whom the unwanted data should not be visible.
+    - You can reach out to [Sumo Logic Support](https://support.sumologic.com) through your account administrator, who can help in applying filters across your account so that all users in your organization are not able to access the unwanted logs.
 
 It is also important to note that deleting data has no effect on the log ingestion rate that is displayed on the Accounts Page. Once data has been received by Sumo Logic it is counted against your account limits. However, on-demand charges are based on a daily average across the entire billing cycle and most daily spikes can be absorbed over a billing period. 
-
 
 ## Enabling updated Remote Windows Event Collection with 19.155 Collector
 
@@ -299,9 +300,9 @@ To increase the maximum Java Heap size:
 1. On the computer running the Collector, open `install_directory/config/user.properties`.
 1. Add or locate the following parameter:
 
-  ```
-  wrapper.java.maxmemory=128
-  ```
+     ```
+     wrapper.java.maxmemory=128
+     ```
 
 1. Increase the `wrapper.java.maxmemory` value, based on the number of files you expect to collect from.
 
@@ -328,7 +329,7 @@ To monitor collectors for out-of-memory issues, ingest the collector logs, and�
 _sourceCategory=*LocalCollectorLogs* "java.lang.OutOfMemoryError: Java heap space"
 | timeslice 15m
 | count by _timeslice, _collector
-| "/docs/Send-Data/collector-faq#Increase-memory-in-a-Collector" as sumoHelp
+| "/docs/send-data/collector-faq#increase-memory-in-a-collector" as sumoHelp
 | concat ("collector: ", _collector, " identified with insufficient max heap memory. Increase java heap space allocation for it. Refer: ", sumoHelp) as msg
 | sort by _timeslice, _collector | fields -sumoHelp
 ```
@@ -448,7 +449,7 @@ See details on the supported [Timestamps, Time Zones, Time Ranges, and Date For
 #### Message time and receipt time
 
 * **Message time** represents the time of your log events. This is parsed from your logs by the Collector. When adding a Source to a Collector, most users choose to automatically detect timestamps in their logs and parse them by selecting **Extract timestamp information from log file entries** in the Source configuration settings.
-* **Receipt time** is the timestamp the log message was received by the Collector. See Use Receipt Time for details.
+* **Receipt time** is the timestamp the log message was received by the Collector. See [Use Receipt Time](/docs/search/get-started-with-search/build-search/use-receipt-time) for details.
 
 :::note
 If Enable Timestamp Parsing is not selected for your Source, Sumo Logic automatically sets the message time to be equivalent to the receipt time.
@@ -530,7 +531,7 @@ _source=<problem_child>
 | formatDate(fromMillis(_receipttime),"MM/dd hh:mm") as r
 | formatDate(fromMillis(_messagetime),"MM/dd hh:mm") as t
 | abs(_receipttime - _messagetime) as delt| delt/1000/60 as delt
-| min(delt), max(delt), avg(delt), stddev(delt), count(*) by _collector, _sourcename
+| min(delt), max(delt), avg(delt), stddev(delt), count(*) by _collector, _sourceName
 ```
 
 If the average, max, and min delay values are very close in range, then the time difference is most likely the symptom of an incorrect time zone setting. You’ll want to go back and ensure that your Source configurations line up correctly with the log messages. Switch to the raw messages tab and the “format” field shows how the timestamp is parsed from the file.
@@ -545,7 +546,7 @@ After installing a Collector and configuring a Source, your data should appear i
 
 #### Check the Status page of Sumo Logic
 
-In Sumo Logic select **Manage Data > Collection > Status** to view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
+In Sumo Logic, select **Manage Data > Collection > Status** to view the total message volume (the volume of all Collectors in your account) and the volume of data from each Collector.
 
 As long as you see that some messages are present, your Sumo Logic account is up and running. 
 
@@ -584,7 +585,7 @@ When you configure a Source, you can choose one of three timestamp options. Firs
 
 To view Source settings:
 
-1. select **Manage Data > Collection > Collection**. 
+1. select **Manage Data** > **Collection** > **Collection**. 
 1. Click **Edit** to the right of the Source's name.
 1. Under **Advanced**, choose one of the following:
 

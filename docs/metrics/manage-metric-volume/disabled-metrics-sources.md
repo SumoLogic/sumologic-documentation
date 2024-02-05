@@ -115,7 +115,7 @@ The message written to the Audit Event Index is:
 
 ## Why Sumo disables a metrics source 
 
-Too many unique time series can occur with metrics whose names contain dynamically-generated strings, for example a timestamp. This is sometimes the case with Graphite metrics. Similarly, Dropwizard metric names sometimes contain names of threads. With dynamically-generated metric names, a new time series is created with each new name. When this happens, the total number of time series can be subjected to unbounded growth over time. And the time series are typically of little use, given their ephemeral nature.
+Too many unique time series can occur with metrics whose names contain dynamically-generated strings, for example, a timestamp. This is sometimes the case with Graphite metrics. Similarly, Dropwizard metric names sometimes contain names of threads. With dynamically-generated metric names, a new time series is created with each new name. When this happens, the total number of time series can be subjected to unbounded growth over time. And the time series are typically of little use, given their ephemeral nature.
 
 In the case of EC2 CloudWatch metrics, Amazon’s metric naming convention causes a new time series to be created for each EC2 instance.
 

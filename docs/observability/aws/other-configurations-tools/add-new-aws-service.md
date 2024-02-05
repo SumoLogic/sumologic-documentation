@@ -7,7 +7,7 @@ description: Learn how to add a new dashboard to the Hierarchy.
 
 The AWS Observability view in Explore provides a unified view of your AWS Services within Sumo Logic from multiple AWS accounts. It shows a hierarchy across AWS accounts, regions, namespaces, and entities to present an intuitive navigation flow.
 
-By default, the AWS Observability view supports the following services: AWS EC2, AWS API Gateway, AWS Lambda, AWS RDS, AWS DynamoDB, and AWS Application ELB. The purpose of this document is to guide you towards adding any dashboards you may have built for additional services to the AWS Observability hierarchy.
+By default, the AWS Observability view supports the following services: AWS EC2, AWS API Gateway, AWS Lambda, AWS RDS, Amazon DynamoDB, and AWS Application ELB. The purpose of this document is to guide you towards adding any dashboards you may have built for additional services to the AWS Observability hierarchy.
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ Before you can add dashboards for a new service to the AWS Observability
 hierarchy: 
 
 1. The AWS Observability solution must have already been installed for at least one supported service
-1. You need to collect metrics for your service via a Sumo Logic AWS Cloudwatch metrics source for an AWS account that is already being monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
+1. You need to collect metrics for your service via a Sumo Logic AWS CloudWatch metrics source for an AWS account that is already being monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
 1. You need to create at least one Sumo Logic dashboard based on CloudWatch metrics and log data to monitor the operations of the AWS Service in question.
 
 ## Add a new service to the AWS Observability View
@@ -38,18 +38,15 @@ This can be done by following the steps below:
 1. In the AWS Observability solution, identify the account alias for the AWS account you have configured that is running the service you want to monitor
 1. Edit the CloudWatch Metrics source for the AWS service you wish to add to the AWS Observability solution
 1. Add **Account** field as by adding a field as shown in the screenshot below:
-
   ![Step1.png](/img/observability/Step1.png)
-
-1. To confirm if the account tag is indeed added as metadata, go to your Sumo Logic AWS Cloudwatch Metric source and check the metrics data.
-
+1. To confirm if the account tag is indeed added as metadata, go to your Sumo Logic AWS CloudWatch Metric source and check the metrics data.
   ![Step1.1.png](/img/observability/Step1-1.png)
 
 ### Validate the namespace and region metadata tags 
 
 The `namespace` and `region` tags are generally present in AWS CloudWatch metrics when collecting metrics using the Sumo Logic AWS CloudWatch metrics source. 
 
-For the desired AWS Service, go to your Sumo Logic AWS Cloudwatch Metric
+For the desired AWS Service, go to your Sumo Logic AWS CloudWatch Metric
 source and check the metric data.
 
 1. Go to Sumo Logic account
@@ -76,114 +73,107 @@ update the existing hierarchy to show the new AWS Service. Follow the
 steps below to update the existing hierarchy :
 
 1. Run the below curl command to get the existing AWS Observability hierarchy.
-
-  ```bash
-  curl -s -H "Content-Type: application/json" --user
-  "<ACCESS_ID>:<ACCESS_KEY>" -X GET
-  https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies | json_pp
-  -json_opt pretty,canonical | grep -B 80 "\"AWS Observability\"" |
-  grep "id" | head -1 | awk -F":" '{ print $2}' | tr -cd '[:digit:]' |
-  xargs -I {} curl -s -H "Content-Type: application/json" --user
-  "<ACCESS_ID>:<ACCESS_KEY>" -X GET
-  https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies/{} | json_pp -json_opt pretty
-  ```
-
-  The output of the command will look something like below (it is trimmed output, the actual output can vary as per your hierarchy):
-
-  ```json
-  {
-    "filter": null,
-    "id": "0000000000000278",
-    "level": {
-      "nextLevel": {
-        "nextLevel": {
-          "nextLevelsWithConditions": [
-            {
-              "condition": "AWS/ApplicationElb",
-              "level": {
-                "entityType": "loadbalancer",
-                "nextLevelsWithConditions": [],
-                "nextLevel": null
-              }
-            },
-            {
-              "condition": "AWS/ApiGateway",
-              "level": {
-                "nextLevel": null,
-                "entityType": "apiname",
-                "nextLevelsWithConditions": []
-              }
-            }
-          ],
-          "entityType": "namespace",
-          "nextLevel": null
-        },
-        "nextLevelsWithConditions": [],
-        "entityType": "region"
-      },
-      "nextLevelsWithConditions": [],
-      "entityType": "account"
-    },
-    "name": "AWS Observability"
-  }
-  ```
-
+   ```bash
+   curl -s -H "Content-Type: application/json" --user
+   "<ACCESS_ID>:<ACCESS_KEY>" -X GET
+   https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies | json_pp
+   -json_opt pretty,canonical | grep -B 80 "\"AWS Observability\"" |
+   grep "id" | head -1 | awk -F":" '{ print $2}' | tr -cd '[:digit:]' |
+   xargs -I {} curl -s -H "Content-Type: application/json" --user
+   "<ACCESS_ID>:<ACCESS_KEY>" -X GET
+   https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies/{} | json_pp -json_opt pretty
+   ```
+   The output of the command will look something like below (it is trimmed output, the actual output can vary as per your hierarchy):
+   ```json
+   {
+     "filter": null,
+     "id": "0000000000000278",
+     "level": {
+       "nextLevel": {
+         "nextLevel": {
+           "nextLevelsWithConditions": [
+             {
+               "condition": "AWS/ApplicationElb",
+               "level": {
+                 "entityType": "loadbalancer",
+                 "nextLevelsWithConditions": [],
+                 "nextLevel": null
+               }
+             },
+             {
+               "condition": "AWS/ApiGateway",
+               "level": {
+                 "nextLevel": null,
+                 "entityType": "apiname",
+                 "nextLevelsWithConditions": []
+               }
+             }
+           ],
+           "entityType": "namespace",
+           "nextLevel": null
+         },
+         "nextLevelsWithConditions": [],
+         "entityType": "region"
+       },
+       "nextLevelsWithConditions": [],
+       "entityType": "account"
+     },
+     "name": "AWS Observability"
+   }
+   ```
 1. If the AWS Service namespace is not present in the output JSON, update the JSON as below. We are taking AWS/SQS as an example here.
-
-  ```json
-  {
-    "filter": null,
-    "id": "0000000000000278",
-    "level": {
-      "nextLevel": {
-        "nextLevel": {
-          "nextLevelsWithConditions": [
-            {
-              "condition": "AWS/ApplicationElb",
-              "level": {
-                "entityType": "loadbalancer",
-                "nextLevelsWithConditions": [],
-                "nextLevel": null
-              }
-            },
-            {
-              "condition": "AWS/ApiGateway",
-              "level": {
-                "nextLevel": null,
-                "entityType": "apiname",
-                "nextLevelsWithConditions": []
-              }
-            },
-            {
-              "condition": "AWS/SQS", -> Namespace
-              "level": {
-                "nextLevel": null,
-                "entityType": "queuename", -> AWS Resource Name identified in Step 1.3
-                "nextLevelsWithConditions": []
-              }
-            }
-          ],
-          "entityType": "namespace",
-          "nextLevel": null
-        },
-        "nextLevelsWithConditions": [],
-        "entityType": "region"
-      },
-      "nextLevelsWithConditions": [],
-      "entityType": "account"
-    },
-    "name": "AWS Observability"
-  }
-  ```
-
+   ```json
+   {
+     "filter": null,
+     "id": "0000000000000278",
+     "level": {
+       "nextLevel": {
+         "nextLevel": {
+           "nextLevelsWithConditions": [
+             {
+               "condition": "AWS/ApplicationElb",
+               "level": {
+                 "entityType": "loadbalancer",
+                 "nextLevelsWithConditions": [],
+                 "nextLevel": null
+               }
+             },
+             {
+               "condition": "AWS/ApiGateway",
+               "level": {
+                 "nextLevel": null,
+                 "entityType": "apiname",
+                 "nextLevelsWithConditions": []
+               }
+             },
+             {
+               "condition": "AWS/SQS", -> Namespace
+               "level": {
+                 "nextLevel": null,
+                 "entityType": "queuename", -> AWS Resource Name identified in Step 1.3
+                 "nextLevelsWithConditions": []
+               }
+             }
+           ],
+           "entityType": "namespace",
+           "nextLevel": null
+         },
+         "nextLevelsWithConditions": [],
+         "entityType": "region"
+       },
+       "nextLevelsWithConditions": [],
+       "entityType": "account"
+     },
+     "name": "AWS Observability"
+   }
+   ```
 1. Update the hierarchy using the below command.
-
-  ```bash
-  curl -s -H "Content-Type: application/json" --user
-  "<ACCESS_ID>:<ACCESS_KEY>" -X PUT
-  https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies/<ID> -d
-  '<JSON_CONTENT_AFTER_UPDATE>'
-  ```
+   ```bash
+   curl -s -H "Content-Type: application/json" --user
+   "<ACCESS_ID>:<ACCESS_KEY>" -X PUT
+    https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies/<ID> -d
+   '<JSON_CONTENT_AFTER_UPDATE>'
+   ```
 
 :::note
 1. **ACCESS_ID** and **ACCESS_KEY** - Replace parameters with your sumo logic access Id and access key.
@@ -207,7 +197,7 @@ Once you are done with the above steps, the AWS service will be added to the AWS
 
 ### Add **account** field to log data
 
-Logs from AWS services are collected into Sumo Logic via Amazon S3, AWS Elastic Load Balancing, Amazon Cloudfront, AWS Cloudtrail, Amazon S3 Audit, or HTTP Log source (Cloudwatch logs). You can add metadata fields to sources using Fields configuration. 
+Logs from AWS services are collected into Sumo Logic via Amazon S3, AWS Elastic Load Balancing, Amazon CloudFront, AWS CloudTrail, Amazon S3 Audit, or HTTP Log source (CloudWatch logs). You can add metadata fields to sources using Fields configuration. 
 
 Add account field by adding fields to your log source as shown below:
 
@@ -217,7 +207,7 @@ Add account field by adding fields to your log source as shown below:
 
 To enrich the logs data with namespace, region, and aws resource name, we will create a Field Extraction Rule that will add metadata to the logs.
 
-We will take AWS/SQS as an example. For SQS, we selected QueueName as our resource name in metrics data. We will create below FER to extract region, namespace, and queuename from cloudtrail logs.
+We will take AWS/SQS as an example. For SQS, we selected QueueName as our resource name in metrics data. We will create below FER to extract region, namespace, and queuename from CloudTrail logs.
 
 **Name: AwsObservabilitySqsFieldExtractionRule**
 

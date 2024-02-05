@@ -1,6 +1,7 @@
 ---
 id: configure-telegraf-output-plugin
 title: Configure Telegraf Output Plugin for Sumo Logic
+sidebar_label: Configure Telegraf Output Plugin
 description: Learn how to configure the Telegraf output plugin for Sumo Logic to send metrics to Sumo Logic.
 ---
 
@@ -82,10 +83,11 @@ You can use Telegraf [measurement filtering](https://docs.influxdata.com/telegra
 * `namepass`. An array of glob pattern strings. Only points whose measurement name matches a pattern in this list are emitted.
 * `fieldpass`. An array of glob pattern strings. Only fields whose field key matches a pattern in this list are emitted.
 
-Below, we’ve expanded the minimal configuration of of the Sumo Logic output plugin to collect  only available and free memory metrics from the memory input plugin:  
+Below, we’ve expanded the minimal configuration of of the Sumo Logic output plugin to collect only available and free memory metrics from the memory input plugin:  
 
 ```
-url = "https://events.sumologic.net/receiver/v1/http\<HTTPSourceCod\>" data_format = "carbon2"
+url = "https://events.sumologic.net/receiver/v1/http/<HTTPSourceCode>"
+data_format = "carbon2"
 ```
 
 ```
@@ -108,7 +110,7 @@ url = "https://events.sumologic.net/receiver/v1/http/<UniqueHTTPCollectorCode>"
 
 ### data_format
 
-The format of the metrics to be sent. The value you specify will be used to set the `Content-Type` header. For more information about content type headers for metrics, see the [Content type headers for metrics](../../hosted-collectors/http-source/upload-metrics.md) section of the *Upload Metrics to an HTTP Source* topic.
+The format of the metrics to be sent. The value you specify will be used to set the `Content-Type` header. For more information about content type headers for metrics, see the [Content type headers for metrics](../../hosted-collectors/http-source/logs-metrics/upload-metrics.md) section of the *Upload Metrics to an HTTP Source* topic.
 
 Supported values for `data_format` are: 
 

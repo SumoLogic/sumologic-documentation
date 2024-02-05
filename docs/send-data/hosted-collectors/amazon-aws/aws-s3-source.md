@@ -1,9 +1,14 @@
 ---
 id: aws-s3-source
-title: AWS S3 Source
-sidebar_label: AWS S3
+title: Amazon S3 Source
+sidebar_label: Amazon S3
 description: Add an Amazon S3 Source to upload messages to Sumo Logic.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
+
+<img src={useBaseUrl('img/integrations/amazon-aws/s3audit.png')} alt="icon" width="40"/>
 
 Amazon Simple Storage Service (Amazon S3) provides a web services interface that can be used to store and retrieve any amount of data from anywhere on the web. Use an Amazon S3 Source to upload data to Sumo Logic from S3.
 
@@ -26,18 +31,25 @@ Files are transferred in their compressed form and decompressed when ingested. 
 
 ## Configure an Amazon S3 Source
 
-1. [Grant Sumo Logic access](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/) to an Amazon S3 bucket.
+1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product/) to an Amazon S3 bucket.
 1. [Enable logging in AWS](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html) using the Amazon Console.
 1. Confirm that logs are being delivered to the Amazon S3 bucket.
-1. Add an AWS S3 Source to collect objects from your Amazon S3 bucket. See below for details.
+1. Add an Amazon S3 Source to collect objects from your Amazon S3 bucket. See below for details.
 
-## AWS S3 Source
+## Amazon S3 Source
 
-When you create an AWS S3 Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create an Amazon Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 ## Rules
 
 * If you're editing the `Collection should begin` date on a Source the new date must be after the current `Collection should begin` date.
+
+ :::note
+
+ <CollBegin/>
+
+ :::
+
 * Sumo Logic supports log files (S3 objects) that do NOT change after they are uploaded to S3. Support is not provided if your logging approach relies on updating files stored in an S3 bucket. S3 does not have a concept of updating existing files, you can only overwrite an existing file. When this overwrite happens, S3 considers it as a new file object, or a new version of the file, and that file object gets its own unique version ID.
 
     Sumo Logic scans an S3 bucket based on the path expression supplied, or receives an SNS notification when a new file object is created. As part of this, we receive a file name (key) and the object's ID. It's compared against a list of file objects already ingested. If a matching file ID is not found the contents of the file are ingested in full.
@@ -79,14 +91,14 @@ You can adjust the configuration of when and how AWS handles communication attem
 
 import Iframe from 'react-iframe';
 
-## Create an AWS S3 Source
+## Create an Amazon S3 Source
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**. 
-1. On the **Collectors** page, click **Add Source** next to a Hosted** **Collector, either an existing Hosted Collector, or one you have created for this purpose.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
 1. Select **Amazon S3**.
 1. Enter a name for the new Source. A description is optional.
 1. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account. Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](collection-aws-govcloud.md) for details.
-1. **Use AWS versioned APIs**? Select **Yes** to collect from buckets where versioning is enabled. This uses the list-object-versions and get-object-version AWS S3 APIs. Selecting **Yes** requires your credentials to have **ListObjectVersions** and **GetObjectVersion** permissions.
+1. **Use AWS versioned APIs**? Select **Yes** to collect from buckets where versioning is enabled. This uses the list-object-versions and get-object-version Amazon S3 APIs. Selecting **Yes** requires your credentials to have **ListObjectVersions** and **GetObjectVersion** permissions.
 
     ![versioned apis options.png](/img/send-data/versioned-apis-options.png)
 
@@ -104,6 +116,10 @@ import Iframe from 'react-iframe';
     If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
     :::
 
+    :::note
+    <CollBegin/>
+    :::
+
 1. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.)
 1.  **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
@@ -112,7 +128,7 @@ import Iframe from 'react-iframe';
 
 1. For **AWS** **Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md). If you're collecting from a Cisco Umbrella bucket you must use **Key access**.
 
-   * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role. 
+   * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role. 
 
         ![Role based access input roleARN.png](/img/send-data/Role-based-access-input-roleARN.png)
 
@@ -135,7 +151,7 @@ import Iframe from 'react-iframe';
 
 ### Set up SNS in AWS (Highly Recommended)
 
-The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](configure-your-aws-source-cloudformation.md).
+The following steps use the Amazon SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](configure-your-aws-source-cloudformation.md).
 
 1. Go to **Services >** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step.
  Make sure that the topic and the bucket are in the same region.
@@ -192,7 +208,7 @@ The following steps use the AWS SNS Console. You may instead use AWS CloudForma
     In this scenario, you will likely need to have a single Event Notification for the suffix that sends to an SNS Topic, and then have multiple SNS Subscriptions to the same Topic. This will allow you to have parallel data streams for the same Event Notifications (i.e., one that points to a Sumo Endpoint, and one that points elsewhere).
     :::
 
-When collecting from one AWS S3 bucket with multiple Sumo Sources you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo would collect your objects multiple times.
+When collecting from one Amazon S3 bucket with multiple Sumo Sources, you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo would collect your objects multiple times.
 
 Each topic needs a separate filter (prefix/suffix) so that collection does not overlap. For example, the following image shows a bucket configured with two notifications that have filters (prefix/suffix) set to notify Sumo separately about new objects in different folders.
 
@@ -204,7 +220,7 @@ Each topic needs a separate filter (prefix/suffix) so that collection does not o
 There is a [community supported script](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo-Logic-Tools/Event_Based_S3_Automation) available that configures event based object discovery on existing AWS Sources.
 :::
 
-1. In Sumo Logic select **Manage Data > Collection > Collection**.
+1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. On the Collection page navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 13.C when creating your subscription.
 1. Complete steps 13.B through 13.E for [configuring SNS Notifications](#set-up-sns-in-aws-highly-recommended).
 

@@ -5,6 +5,9 @@ sidebar_label: FAQ
 description: Frequently asked questions (FAQs) about the AWS Observability Solution to monitor and troubleshoot your AWS cloud infrastructure.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
+
 This section provides frequently asked questions and information about the AWS Observability Solution to monitor and troubleshoot your AWS cloud infrastructure.
 
 
@@ -22,13 +25,29 @@ Our AWS Observability solution enables you to view your entire AWS environment i
 
 * **AWS Observability Solution** - Sumo Logic’s AWS Observability solution pulls in data across key AWS services and accounts to give a unified view of AWS environments. Easily navigate from overview dashboards into account, region, availability zone, or service specific views. Intuitive navigation ensures teams can quickly resolve issues, minimize downtime, and improve system availability. See [About AWS Observability](/docs/observability/aws/about.md).
 
-See [AWS Observability Apps](/docs/observability/aws/integrations) for detailed information on all supported apps including Application, Classic, and Network Load Balancer, DynamoDB, EC2, RDS, API Gateway, ECS, ElastiCache, Lambda, and SNS.
+See [AWS Observability Apps](/docs/observability/aws/integrations) for detailed information on all supported apps including Application, Classic, and Network Load Balancer, DynamoDB, EC2, RDS, API Gateway, ECS, ElastiCache, Lambda, SNS, and SQS.
 
 ### What AWS services are supported?
 
-Sumo Logic AWS Observability supports the following AWS services: EC2, ECS, RDS, ElastiCache, API Gateway, Lambda, DynamoDB, Application ELB, Classic ELB, Amazon SNS, and Network ELB.
+Sumo Logic AWS Observability supports the following AWS services: EC2, ECS, RDS, ElastiCache, API Gateway, Lambda, DynamoDB, Application ELB, Classic ELB, Amazon SNS, Amazon SQS, and Network ELB.
 
 Sumo Logic Root Cause Explorer analyzes and correlates metrics from all supported AWS Observability services and EBS, Autoscaling, X-ray, SNS, and SQS.
+
+### What is AWS Observability centralized/hub page?
+
+The hub is designed to provide easy navigation to all features and functions of the AWS Observability solution in one place. From the hub, you can navigate to the dashboards, monitors (for alerting), and pre-baked log searches for troubleshooting that come with the AWS Observability solution.
+
+You can access the hub by clicking on the Home button and selecting the AWS Observability tab from the top menu bar.
+
+The hub has the following pages:
+
+**Explore your AWS Environment.** Provides you access to dashboards that help you monitor your AWS environment.
+**Troubleshoot with Logs.** Provides log searches to help you get started troubleshooting issues within your AWS environment.
+**View and Configure Alerts.** Provides you access to monitors that will alert you about issues within your AWS environment.
+**Explore Intelligent Benchmark Dashboards.** Provides you access to our global benchmark dashboards to help you compare your AWS environment with Sumo benchmarks and identify issues.
+**Invite your teammates.** Allows you to quickly add other users to your Sumo Logic account.
+ 
+ <img src={useBaseUrl('img/observability/aws_observability_hub_page.jpg')} alt="AWS Observability Hub" style={{border: '1px solid gray'}} width="800" />
 
 ### Can we monitor other AWS services?
 
@@ -37,7 +56,7 @@ AWS Observability provides a view across AWS accounts, regions, namespaces, and
 Adding a service requires:
 
 * The AWS Observability solution must be installed for at least one supported service.
-* Collect metrics for your service using a [Sumo Logic AWS Cloudwatch  metrics source](/docs/send-data/hosted-collectors/amazon-aws/Amazon-CloudWatch-Source-Metrics) for an AWS account currently monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
+* Collect metrics for your service using a [Sumo Logic AWS CloudWatch metrics source](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics) for an AWS account currently monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
 * Create at least one Sumo Logic dashboard based on CloudWatch metrics and log data to monitor the operations of the AWS Service.
 
 See [Add a New AWS Service to the AWS Observability Explore Hierarchy](/docs/observability/aws/other-configurations-tools/add-new-aws-service.md) to add a new service to the AWS Observability hierarchy. 
@@ -52,12 +71,18 @@ Any Sumo Logic customer can leverage Sumo Logic AWS Observability solution fea
 
 ### Is there a demo of the solution?
 
-See the [Sumo Logic AWS Observability demo video](https://www.sumologic.com/video/aws-observability-demo/)
-for a demo of the solution.
+See the Sumo Logic AWS Observability video below for a demo of the solution.
 
-![aws-demo-video.jpg](/img/observability/aws-demo-video.jpeg)
-
-
+<Iframe url="https://www.youtube.com/embed/H-vRSHPzvz4?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
 
 ## Setup and Deployment
 
@@ -167,7 +192,7 @@ deployment configuration or manually.
 
 For example, metrics for Lambda functions must be coming in for those
 entities to show in the Explore view. If you do not see Lambda
-functions, verify the Cloud Formation stack is correctly configured
+functions, verify the CloudFormation stack is correctly configured
 including the AWS/Lambda namespace to collect metrics. For information,
 see 
 
@@ -184,12 +209,12 @@ See [Root Cause Explorer](/docs/observability/root-cause-explorer.md) for more d
 
 Sumo Logic Root Cause Explorer analyzes and correlates metrics from all supported AWS Observability services and EBS, Autoscaling, X-ray, SNS, and SQS. These services include the following:
 
-* AWS CloudWatch metrics for ALB, NLB, API Gateway, EC2, EBS, Lambda, ECS, RDS, DynamoDB, Elasticache, Autoscaling groups
+* AWS CloudWatch metrics for ALB, NLB, API Gateway, EC2, EBS, Lambda, ECS, RDS, DynamoDB, ElastiCache, Autoscaling groups
 * AWS Simple Notification Service (SNS)
 * AWS Simple Queueing Service (SQS)
 * AWS X-ray
 * Kubernetes metrics and hierarchy
-* Open Telemetry metrics
+* OpenTelemetry metrics
 * Space Map
 
 ### Who can use the new features?

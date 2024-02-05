@@ -59,10 +59,10 @@ Download the appropriate collector from the **Manage Data > Collection > Collec
    * `-q` starts the installer in quiet mode (no UI)
    * `-VskipRegistration=true` to skip collector registration during installation
    * `-Vephemeral=true` to [set the collector as ephemeral](set-collector-as-ephemeral.md) (will be removed after 12 hours offline)
-   * `-Vsumo.accessid\<access_i\>` to specify access id generated above  
-   * `-Vsumo.accesskey\<access_ke\>` to specify access key generated above  
-   * `-Vsources\<filepat\>` to specify the path to your source JSON file created above
-   * (Optional) `-dir` to install into a non-standard installation directory. By default, Windows will install in **C:\\Program Files\\Sumo Logic Collector**.
+   * `--Vsumo.accessid=<access_id>` to specify access id generated above  
+   * `-Vsumo.accesskey=<access_key>` to specify access key generated above  
+   * `-Vsources=<filepath>` to specify the path to your source JSON file created above
+   * (Optional) `-dir` to install into a non-standard installation directory. By default, Windows will install in `C:\Program Files\Sumo Logic Collector`.
 
     Example:
 
@@ -72,7 +72,7 @@ Download the appropriate collector from the **Manage Data > Collection > Collec
 
     When you see the `Finishing installation...` message you can close the command prompt window. The installation is complete.
 
-1. (For Windows hosts launched on AWS EC2 instances) There can be a delay on AWS EC2 instances before a Windows host name is provided. If you would like the collector to wait for the host name to be available, you can enable a delay during registration. To set the delay parameter, add the following to the **collector.properties** file, which is created during installation at **C:\\Program Files\\Sumo Logic Collector\\config\\collector.properties:**
+1. (For Windows hosts launched on Amazon EC2 instances) There can be a delay on Amazon EC2 instances before a Windows host name is provided. If you would like the collector to wait for the host name to be available, you can enable a delay during registration. To set the delay parameter, add the following to the **collector.properties** file, which is created during installation at **C:\\Program Files\\Sumo Logic Collector\\config\\collector.properties:**
 
     ```bash
     collector.registration.delay.ms = 30000

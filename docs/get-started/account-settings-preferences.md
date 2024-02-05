@@ -68,7 +68,7 @@ To set up 2-Step Verification, you will need to install a Time-based One-Time Pa
 
 ## My Access Keys
 
-Users with a role that grants the **Create Access Keys** capability can create and manage their own Access Keys. For more information see [Access Keys](/docs/manage/security/access-keys).
+Users with a role that grants the **Create Access Keys** capability can create and manage their own Access Keys. For more information, see [Access Keys](/docs/manage/security/access-keys).
 
 ## My Preferences
 
@@ -92,7 +92,7 @@ Select from the following international date format options:
 * DD/MM/YYYY (22/04/2015
 * YYYY/MM/DD (2015/04/22)
 
-:::warning
+:::danger
 If you change the date format option, it will affect your saved searches in the Library. Any saved searches that use absolute dates for their time range must be modified to use the new date format. Scheduled searches will continue to run properly. You would need to modify the date format only if you rescheduled the search.
 :::
 

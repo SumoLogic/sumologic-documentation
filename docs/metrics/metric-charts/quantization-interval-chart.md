@@ -11,7 +11,7 @@ This topic pertains to our Classic Metrics UI (Legacy). For information about 
 
 In metric visualizations, rather than charting individual data points, Sumo presents the aggregated value of the data points received during an interval. We call this process [*quantization*](../introduction/metric-quantization.md).
 
-Sumo automatically determines an optimal quantization interval, based on the age of the data you are querying and the number of data points. The quantization interval is shown at the top of the metric query tab. The quantization interval aligns your time series data to common intervals on the time axis (for example every one minute) to optimize the visualization and performance.  
+Sumo automatically determines an optimal quantization interval, based on the age of the data you are querying and the number of data points. The quantization interval is shown at the top of the metric query tab. The quantization interval aligns your time series data to common intervals on the time axis (for example, every one minute) to optimize the visualization and performance.  
 
 Depending on the frequency at which you are reporting metrics to Sumo, you may want to adjust the quantization interval. For example, if your visualization is choppy, like the one below, increasing the quantization interval might make it easier to understand the visualization.
 

@@ -1,6 +1,6 @@
 ---
 id: github
-title: Sumo Logic App for GitHub
+title: GitHub
 sidebar_label: GitHub
 description: Connects to your GitHub repository at the Organization or Repository level, and ingests GitHub events through a webhook.
 ---
@@ -12,7 +12,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level, and ingests GitHub events through a webhook. These events populate the pre-configured Dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 
 :::note
-The Sumo App for GitHub supports GitHub.com, GitHub Advanced Analytics, not GitHub Enterprise.
+If you want to collect audit logs for [GitHub Enterprise](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/audit-log-events-for-your-enterprise):
+
+1. Follow the instructions on [how to stream GitHub Enterprise Audit Logs to an Amazon S3 bucket](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise#setting-up-streaming-to-amazon-s3) or [Azure Event Hubs](https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise#setting-up-streaming-to-azure-event-hubs).
+1. Use an [Amazon S3 source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source) or [Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source) to send those logs to Sumo Logic. This app will work with [global webhook for Github enterprise](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-a-global-webhook-for-a-github-enterprise), [organization webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-an-organization-webhook) or [repository webhook](https://docs.github.com/en/enterprise-cloud@latest/webhooks/using-webhooks/creating-webhooks#creating-a-repository-webhook).
+
+Make sure not to select the same webhook event type at multiple levels (i.e., enterprise, organization, or repository) to avoid ingesting duplicate data.
 :::
 
 This app includes dashboards for GHAS, but to be able to ingest GHAS events you must have a separate GHAS license.
@@ -33,26 +38,26 @@ The Sumo Logic App for GitHub ingests GitHub events via a webhook. Sumo Logic in
 For the GitHub Advanced Security dashboards Sumo Logic App for GitHub uses these types events, but not limited to:
 
 * Code Scanning Alerts
-* Pushes 
+* Pushes
 * Secret Scanning Alerts
 * Security and analysis
 * Repository Vulnerability alerts.
 
-For information on GitHub events, see the [GitHub documentation](https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/about-webhooks#events). 
+For information on GitHub events, see the [GitHub documentation](https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/about-webhooks#events).
 
 :::tip
 If you're just getting started with GitHub Events, see the Sumo Logic DevOps blog, "[A Beginner's Guide to GitHub Events](https://www.sumologic.com/blog/a-beginners-guide-to-github-events/)."
 :::
 
 
-## Log Types
+## Log types
 
 The Sumo Logic App for GitHub gathers statistics and events from the GitHub Remote API on each host.
 
 First, configure a Collector and Source in Sumo Logic, then configure a GitHub Webhook using the HTTP Source Address created in Sumo Logic.
 
 
-### Sample Log Messages
+### Sample log messages
 
 GitHub sends all fields in the payload, documented according to [Event Type](https://developer.github.com/v3/activity/events/types/).
 
@@ -83,7 +88,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Commits Over Time"
 "commits" "https://api.github.com/repos"
@@ -118,14 +123,15 @@ The Sumo Logic App for GitHub connects to your GitHub repository at the Organiza
 
 ### Configure Hosted Collector to Receive GitHub Events
 
-In this step, you configure a Hosted Collector to receive Webhook Events from Github and set up an HTTP Source on it.
+In this step, you configure a Hosted Collector to receive Webhook Events from GitHub and set up an HTTP Source on it.
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector), or select an existing hosted collector for the HTTP Source.
 2. Configure an[ HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) on the Hosted Collector.
     * For Source Category, enter any string to tag the output collected from this Source, such as **GitHub**.
     * Click **+Add Field** and provide the following:
-        * **Field Name.** `_convertHeadersToFields`
-        * **Value.** true
+        * **Field Name**. `_convertHeadersToFields`
+        * **Value**. `true`
+    * Expand **Advanced Options for Logs (Optional)** section, then **uncheck (disable)** option, then **Extract timestamp information from log file entries** in **Timestamp Parsing**
     * Click **Save** and make note of the HTTP address for the Source. You will supply it when you configure the GitHub Webhook in the next section.<br/><img src={useBaseUrl('img/integrations/app-development/Field_GitHub.png')} alt="Field_GitHub" />
 
 ### Configure a GitHub Webhook
@@ -159,26 +165,11 @@ Sumo Logic needs to understand the event type for incoming events. To enable thi
 
 ## Installing the GitHub App
 
-Now that you have set up collector GitHub, install the Sumo Logic App for GitHub to use the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
+Now that you have set up collector GitHub, install the Sumo Logic App for GitHub to use the preconfigured searches and dashboards to analyze your data.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+<AppInstall/>
 
 #### Troubleshooting
 
@@ -194,13 +185,13 @@ If you are getting the following error after installing the app - `Field x-githu
 The **GitHub - Overview** dashboard provides an at-a-glance view of your GitHub issues, pull requests, and the commits over time.
 
 Use this dashboard to:
-* Get an overview of Github commits, Pull Requests, and Issues.
+* Get an overview of GitHub commits, Pull Requests, and Issues.
 
 <img src={useBaseUrl('img/integrations/app-development/GitHub-Overview.png')} alt="GitHub-Overview" />
 
 ### Branch Overview
 
-The **GitHub - Branch Overview **dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
+The **GitHub - Branch Overview** dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
 
 Use this dashboard to:
 
@@ -235,7 +226,7 @@ Use this dashboard to:
 
 ### Security
 
-The **GitHub - Security **dashboard provides detailed information on the security events and repositories.
+The **GitHub - Security** dashboard provides detailed information on the security events and repositories.
 
 Use this dashboard to:
 * Manage users.
@@ -261,13 +252,13 @@ The **GHAS - Advanced Security Overview** dashboard provides an overview of GHAS
 
 Use this dashboard to:
 
-* Monitor open alerts 
-* Monitor alerts by severity 
+* Monitor open alerts
+* Monitor alerts by severity
 * Review recently closed alerts
- 
+
 <img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Advanced-Security-Overview.png" alt="undefined" title="Advanced Security Overview" />
 
-### GHAS - Secret Scanning Alerts 
+### GHAS - Secret Scanning Alerts
 
 **Use this dashboard to:**
 
@@ -278,30 +269,30 @@ Use this dashboard to:
 
 <img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Secret-Scanning-Alerts.png"/>
 
-### GHAS - Code Scanning Alerts 
+### GHAS - Code Scanning Alerts
 
 The **GHAS - Code Scanning Alerts** dashboard provides a granular overview of the code scanning alerts.
 
-Use this dashboard to display: 
- 
-* Mean Time to Resolution (average aggregate resolution time) 
-* Alerts created, fixed, and reopened 
-* Alerts found/fixed ratio 
-* Commit/alert ratio 
-* Alerts by tool, severity, or repo 
+Use this dashboard to display:
+
+* Mean Time to Resolution (average aggregate resolution time)
+* Alerts created, fixed, and reopened
+* Alerts found/fixed ratio
+* Commit/alert ratio
+* Alerts by tool, severity, or repo
 
 <img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Code-Scanning-Alerts.png" />
 
-### GHAS - Dependabot Alerts 
+### GHAS - Dependabot Alerts
 
-The **GHAS - Code Scanning Alerts** dashboard provides a granular overview of the Dependabot alerts 
+The **GHAS - Code Scanning Alerts** dashboard provides a granular overview of the Dependabot alerts
 
 **Use this dashboard to display:**
 
 * Mean Time to Resolution (average aggregate resolution time)
-* Alerts created, fixed, and dismissed 
-* Alerts found/fixed ratio 
-* Vulnerabilities by repo 
-* New alerts by repo 
- 
-<img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Dependabot-Alerts.png" /> 
+* Alerts created, fixed, and dismissed
+* Alerts found/fixed ratio
+* Vulnerabilities by repo
+* New alerts by repo
+
+<img alt="undefined" class="default" src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/GitHub/GHAS-Dependabot-Alerts.png" />

@@ -1,7 +1,6 @@
 ---
 id: config
-title: Sumo Logic App for AWS Config
-sidebar_label: AWS Config
+title: AWS Config
 description: Provides a simple web services interface that can be used to track modifications made to the resources that belong to an AWS account.
 ---
 
@@ -12,14 +11,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Amazon Web Services (AWS) Config provides a simple web services interface that can be used to track modifications made to the resources that belong to an AWS account. The Sumo Logic App for AWS Config presents modification notifications that contain snapshots of resource configurations and information about the modifications made to a resource. The app uses predefined Live and Interactive Dashboards and filters, which provide visibility into your environment for real-time analysis of overall usage.
 
 
-## Log Types
+## Log types
 
 The Sumo Logic App for AWS Config leverages AWS Config’s Simple Notification Service (SNS), which provides notifications in JSON format.
 
 Amazon Web Services (AWS) Config provides a simple web services interface that can be used to track modifications made to the resources that belong to an AWS account. The AWS Config App presents modification notifications that contain snapshots of resource configurations and information about the modifications made to a resource. The app uses predefined Live and Interactive Dashboards and filters that provide visibility into your environment for real-time analysis of overall usage.
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -36,7 +35,7 @@ Amazon Web Services (AWS) Config provides a simple web services interface that c
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Latest Resource Modifications (from App)"
 _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
@@ -126,7 +125,7 @@ Copy the **HTTP Source Address URL** and use it in the following section.
 
 Once the Hosted Collector and HTTP Source are configured, you can subscribe to AWS Config’s SNS Notifications.
 
-1. In the** **AWS Management Console, go to **SNS > Topics**.
+1. In the **AWS Management Console**, go to **SNS > Topics**.
 2. Select the check box for the topic you created when you enabled SNS notifications.
 3. Under **Amazon SNS**, in the **Actions** menu, select **Subscribe to Topic**.
 4. Under **Protocol**, select **HTTPS**, and paste the Sumo Logic HTTP Source URL into the **Endpoint** field.
@@ -155,24 +154,9 @@ To create a partition, follow the instructions to [Create a Partition](/docs/man
 
 Now that you have configured AWS Config, install the Sumo Logic App for AWS Config to take advantage of the pre-configured searches and dashboards to analyze your AWS Config data.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+<AppInstall/>
 
 ## Viewing AWS Config Dashboards
 

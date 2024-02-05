@@ -1,7 +1,6 @@
 ---
 id: route-53-resolver-security
-title: Sumo Logic App for Amazon Route53 Resolver Security
-sidebar_label: Amazon Route53 Resolver Security
+title: Amazon Route53 Resolver Security
 description: AUse the Amazon Route 53 app to monitor and visualize DNS activity in your AWS infrastructure.
 ---
 
@@ -17,22 +16,21 @@ With [Route 53 Resolver DNS Firewall](https://docs.aws.amazon.com/Route53/latest
 
 DNS Firewall is a feature of Route 53 Resolver and doesn't require any additional Resolver setup to use.
 
-## Log Types
+## Log types
+
 The Amazon Route 53 Resolver Security app uses:
 * [Route 53 Resolver query log](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html)
 * [DNS Resolver Firewall Log](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/firewall-resolver-query-logs-configuring.html)
 
 If you aren't using DNS Resolver Firewall, the Amazon Route 53 Resolver Security app can still provide security insights from your [resolver query logs](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html), but data specific to the DNS Resolver Firewall data will not populate in the corresponding panels.
 
-## Collect Logs for the Amazon Route 53 Resolver Security App
+## Collect Logs for the Amazon Route 53 Resolver Security app
 
 This topic has instructions for collecting logs for the Amazon Route 53 Resolver Security app.
-
 
 ### Before you start
 
 If you want to set up Route 53 Resolver DNS Firewall, see the Amazon Developer Guide for [instructions](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/firewall-resolver-query-logs-configuring.html).  
-
 
 ### Set up collection
 
@@ -45,32 +43,21 @@ If you want to set up Route 53 Resolver DNS Firewall, see the Amazon Developer G
 4. Complete your configuration by clicking **Configure query logging** at the bottom of the page.
 5. Your new configuration will now be listed.
 
-
-### Sample log message
+### Sample log messages
 
 [Route 53 Resolver query log example](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html)
 
+## Installing the Amazon Route 53 Resolver Security app
 
-## Installing the Amazon Route 53 Resolver Security App
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
-Locate and install the app from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+<AppInstall/>
 
-1. In the App Catalog, search for and select the app.
-4. Click **Add to Library**.
-3. To install the app, complete the following fields.   				 
-    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source**. Select either of these options for the data source. 
-        * Choose **Source Category,** and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter,** and enter a custom source category beginning with an underscore. Example: (`__sourceCategory=MyCategory_`). 
-    3. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+## Viewing Amazon Route 53 Resolver Security dashboards
 
-Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-## Viewing Amazon Route 53 Resolver Security Dashboards
+<ViewDashboards/>
 
 ### Query Logging Overview
 
@@ -84,7 +71,6 @@ Use this dashboard to:
 * Identify possible malicious or anomalous behavior by reviewing high entropy domains, most and least queried domains.
 * Analyze DNS requests violating your Route 53 DNS Resolver Firewall policies.
 * Review Threat Intel matches.
-
 
 Panels include:
 * IPv4 Resolution by Geo Location

@@ -2,13 +2,16 @@
 id: aws-kinesis-firehose-metrics-source
 title: AWS Kinesis Firehose for Metrics Source
 sidebar_label: AWS Kinesis Firehose Metrics
-description: Learn how to use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from the AWS Kinesis Data Firehose.
+description: Learn how to use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from the Amazon Kinesis Data Firehose.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/send-data/aws-kinesis-firehose-metrics.png')} alt="icon" width="50"/>
 
 This page has information about Sumo Logic’s AWS Kinesis Firehose for Metrics source.
 
-You can use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from the [AWS Kinesis Data Firehose](https://aws.amazon.com/kinesis/data-firehose/?kinesis-blogs.sort-by=item.additionalFields.createdDate&kinesis-blogs.sort-order=desc). AWS CloudWatch Metrics can be streamed using AWS Metric Streams, a managed service that exports CloudWatch metrics data with low latency, and without management overhead or custom integration. With Metric Streams, you can create dedicated, continuous streams of metric data that can be delivered to Sumo Logic by Kinesis Data Firehose.
+You can use the AWS Kinesis Firehose for Metrics source to ingest CloudWatch metrics from the [Amazon Kinesis Data Firehose](https://aws.amazon.com/kinesis/data-firehose/?kinesis-blogs.sort-by=item.additionalFields.createdDate&kinesis-blogs.sort-order=desc). AWS CloudWatch Metrics can be streamed using AWS Metric Streams, a managed service that exports CloudWatch metrics data with low latency, and without management overhead or custom integration. With Metric Streams, you can create dedicated, continuous streams of metric data that can be delivered to Sumo Logic by Kinesis Data Firehose.
 
 ## How it works
 
@@ -38,14 +41,14 @@ The benefits of a streaming source over a polling source include:
 * High resolution—The Kinesis Firehose streams all metrics at a 1-minute resolution. The AWS CloudWatch Metrics source supports scans as low as 1 minute, but that resolution can result in AWS account throttling and higher AWS bills
 
 :::note
-The AWS CloudWatch Metrics source uses AWS’s [GetMetricStatistics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html) API and as a result, supports the `Unit` parameter. (When a request includes the `Unit` parameter, only metrics with the unit specified, for example Bytes, Microseconds, and so on, are reported. The Kinesis Firehose for Metrics does not currently support the `Unit` parameter.
+The AWS CloudWatch Metrics source uses AWS’s [GetMetricStatistics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html) API and as a result, supports the `Unit` parameter. (When a request includes the `Unit` parameter, only metrics with the unit specified, for example, bytes, Microseconds, and so on, are reported. The Kinesis Firehose for Metrics does not currently support the `Unit` parameter.
 :::
 
 ## Step 1: Set up the source
 
 In this step, you create the AWS Kinesis Firehose for Metrics source.
 
-1. Go to **Manage Data > Collection > Collection** in the Sumo Logic UI.
+1. Go to **Manage Data** > **Collection** > **Collection** in the Sumo Logic UI.
 1. Click **Add Source** next to a Hosted Collector. 
 1. Select **AWS Kinesis Firehose** for Metrics.
 
@@ -80,7 +83,7 @@ In this step, you set up the AWS Metric Streams service to stream metrics to Kin
    * **Sumo Logic Kinesis Firehose Metrics Configuration.** (Required) Enter the URL of the AWS Kinesis Firehose for Metrics source.
    * **Select Namespaces to collect AWS CloudWatch Metrics**. Enter a comma-delimited list of the namespaces from which you want to collect AWS CloudWatch metrics.
    * **Failed Data AWS S3 Bucket Configuration**. Enter "Yes" to create a new bucket, or "No" if you want to use an existing bucket.
-   * **AWS S3 Bucket Name for Failed Data**. Provide the name of AWS S3 bucket to create, or the name of an existing bucket in the current AWS Account.
+   * **AWS S3 Bucket Name for Failed Data**. Provide the name of Amazon S3 bucket to create, or the name of an existing bucket in the current AWS Account.
    * Click **Next**.
 
     ![stack.png](/img/send-data/stack.png)

@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 **Root Cause Explorer** (RCE) helps on-call staff, DevOps, and infrastructure engineers accelerate troubleshooting and root cause isolation for incidents in their apps and microservices running on AWS, public cloud hosts, and Kubernetes.
 
-Root Cause Explorer helps you correlate unusual spikes, referred to as *Events of Interest (EOIs)*, in AWS CloudWatch metrics, Open Telemetry trace metrics, host metrics, and Kubernetes metrics using the context associated with the incident. Such incident context includes timeline, stack (for example, AWS, Kubernetes, Application/Services), namespaces, resource identifiers, tags, metric type, metric name and more.
+Root Cause Explorer helps you correlate unusual spikes, referred to as *Events of Interest (EOIs)*, in AWS CloudWatch metrics, OpenTelemetry trace metrics, host metrics, and Kubernetes metrics using the context associated with the incident. Such incident context includes timeline, stack (for example, AWS, Kubernetes, Application/Services), namespaces, resource identifiers, tags, metric type, metric name and more.
 
 Given an alert, for instance, a microservice in AWS us-west-2 experiencing unusual user response times, an on-call user can use Root Cause Explorer to correlate EOIs on over 500 AWS CloudWatch metrics over 15 AWS service namespaces (such as EC2, RDS, and so on), Kubernetes metrics, and trace data, to isolate the probable cause to a specific set of EC2 instances, serving the given microservice in AWS us-west-2 that may be overloaded. 
 
@@ -27,7 +27,7 @@ Root Cause Explorer supports the following AWS namespaces by processing CloudWa
 * AWS/Dynamodb
 * AWS/API Gateway
 * AWS/ECS 
-* AWS/Elasticache 
+* AWS/ElastiCache 
 * AWS/SQS
 * AWS/SNS 
 * AWS X-ray (for service metrics and service topology)
@@ -38,7 +38,7 @@ Root Cause Explorer can also work with EC2 and EBS metrics collected by Host M
 Root Cause Explorer also supports:
 
 * Kubernetes metrics (from customer-managed Kubernetes, EKS, GKE, or Azure Kubernetes Engine) and associated Events of Interest. Given the ephemeral nature of container resources, Root Cause Explorer uses proprietary algorithms to aggregate Events of Interest to stable entities in a Kubernetes cluster.
-* Metrics derived from Open Telemetry data from Sumo Logic Tracing for applications and services
+* Metrics derived from OpenTelemetry data from Sumo Logic Tracing for applications and services
 
 The screenshot below shows the Root Cause Explorer UI.
 
@@ -61,7 +61,7 @@ A spike in a metric on a resource is a sign of an underlying problem. Larger sp
 
 An abnormal spike in a metric is a statistical anomaly. Root Cause Explorer leverages spikes and adds additional context to them to compute Events of Interest (EOIs).
 
-EOIs are constructed based on modeling the periodicity of the underlying AWS Cloudwatch, Kubernetes, or Tracing metrics on each resource in your account to create resource-specific baselines. The periodicity of a metric can be daily, weekly, or none. 
+EOIs are constructed based on modeling the periodicity of the underlying AWS CloudWatch, Kubernetes, or Tracing metrics on each resource in your account to create resource-specific baselines. The periodicity of a metric can be daily, weekly, or none. 
 
 EOIs also leverage proprietary noise reduction rules curated by subject matter experts. One example of a rule is how long the system watches an anomalous metric before detecting an EOI. Similarly, EOIs on metrics that have an upper bound (for example, CPU utilization cannot exceed 100%) are subject to additional curation rules.
 
@@ -158,7 +158,7 @@ You set up Root Cause Explorer using an [AWS CloudFormation template](https://su
 * AWS/Dynamodb
 * AWS/API Gateway
 * AWS/ECS 
-* AWS/Elasticache
+* AWS/ElastiCache
 * AWS/Autoscaling. Auto Scaling data is used only for topology inference. CloudWatch metrics related to Auto Scaling groups are not supported at this time.
 
 If you don’t already have the Sumo Logic CloudWatch Source for Metrics configured, the template will install the source to collect AWS CloudWatch metrics from the account permissioned by the credential provided in the template. The CloudFormation template gives you the option to configure an AWS X-Ray source, if required. 
@@ -196,9 +196,9 @@ To open the Root Cause Explorer from the Explore UI:
 1. Click **+ New** and select **Root Cause**.<br/> ![new root cause.png](/img/rce/new-explore.png)  
 2. Root Cause Explorer opens, displaying EOIs for the currently selected filters and time range.![rce](/img/rce/rce1.png)
 
-If resources are connected based on the infrastructure topology or Service Map linkages, Root Cause Explorer may group multiple EOI into a single EOI on the scatter plot. For example, CPU spikes on 10 EC2 instances in the same autoscaling group would appear as a EOI in the scatter plot. In this case, the composite EOI is considered the parent EOI, and the 10 others, its children.
+    If resources are connected based on the infrastructure topology or Service Map linkages, Root Cause Explorer may group multiple EOI into a single EOI on the scatter plot. For example, CPU spikes on 10 EC2 instances in the same autoscaling group would appear as a EOI in the scatter plot. In this case, the composite EOI is considered the parent EOI, and the 10 others, its children.
 
-Until you click on an EOI, the right pane will list the **Top Contributing Entities**—the entities that are likely to be related to the root cause based on timeline, duration and other factors.  
+    Until you click on an EOI, the right pane will list the **Top Contributing Entities**—the entities that are likely to be related to the root cause based on timeline, duration and other factors.  
 
 3. Click an EOI. Note that a popup, described below in [EOI stats](#eoi-stats), displays key information about the event. The right pane now contains a Summary tab and an Entities tab, described below in [Summary tab](#summary-tab) and [Entities tab](#entities-tab).  
 

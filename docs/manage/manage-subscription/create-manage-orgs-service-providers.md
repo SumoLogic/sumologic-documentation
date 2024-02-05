@@ -31,9 +31,9 @@ We refer to your estimates of ingest capacity required for each product variable
 
 Users that have the required role capabilities can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI at **Administration > Organizations** and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
 
-## About CSE provisioning
+## About Cloud SIEM provisioning
 
-You can enable and provision CSE for a child org. Note that the process of provisioning CSE can take up to 24 hours. For more information see [Monitor CSE Provisioning](#monitor-cse-provisioning), below.
+You can enable and provision Cloud SIEM for a child org. Note that the process of provisioning Cloud SIEM can take up to 24 hours. For more information, see [Monitor Cloud SIEM Provisioning](#monitor-cloud-siem-provisioning), below.
 
 ## Requirements for creating and managing orgs
 
@@ -55,7 +55,7 @@ POV Trial orgs you create will have a 45 day trial period. POV Trial orgs will b
 * 5 GB Infrequent tier ingest
 * 5,000 metric data points per minute (DPM) 
 * 5 GB traces ingestion
-* 5 GB Cloud SIEM Enterprise (CSE) ingest
+* 5 GB Cloud SIEM ingest
 
 :::note
 The credits associated with the trial org allocations don’t impact the parent org’s credits allocation.
@@ -95,17 +95,17 @@ After you create a child org, you can’t delete it.
 1. In the edit pane, click **Plan Type**, and choose the Enterprise plan that appears as an option.<br/> ![upgrade-plan.png](/img/subscriptions/upgrade-plan.png)
 2. A warning message is shown that says you won’t be able to downgrade the org once you upgrade it.<br/> ![plan-selected.png](/img/subscriptions/plan-selected.png)
 3. Click **Allocate Credits**.
-4. The Credits Calculator appears.<br/> <img src={useBaseUrl('static/img/subscriptions/calculator.png')} alt="calculator" />
+4. The Credits Calculator appears.<br/> <img src={useBaseUrl('/img/subscriptions/calculator.png')} alt="calculator" style={{border: '1px solid gray'}} width="400" />
 1. **Continuous Log Ingest**. Enter estimated daily ingestion to the Continuous tier.
 2. **Frequent Log Ingest**. Enter estimated daily ingestion to the Frequent tier.
 3. **Infrequent Log Ingest**. Enter estimated daily ingestion to the Infrequent tier.
 4.  **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
 5.  **Tracing**. Enter estimated daily ingestion of traces.
-6.  **Cloud SIEM Enterprise**. Click the checkbox to enable Cloud SIEM Enterprise (CSE).
-   1. If you enable CSE, the CSE Log Ingest field appears.
+6.  **Cloud SIEM**. Click the checkbox to enable Cloud SIEM.
+   1. If you enable Cloud SIEM, the Cloud SIEM Log Ingest field appears.
    2. Enter a value in GB.
       :::note
-      Provisioning CSE can take up to 24 hours. See [Monitor CSE Provisioning](#monitor-cse-provisioning), below.
+      Provisioning Cloud SIEM can take up to 24 hours. See [Monitor Cloud SIEM Provisioning](#monitor-cse-provisioning), below.
       :::
 7.  As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented. <br/> <img src={useBaseUrl('img/subscriptions/calculator.png')} alt="calculator" width="450"/>
 1.  Click **Use This Allocation**.
@@ -130,18 +130,22 @@ To deactivate a POV Trial org
 1. Click the row for the trial org you want to deactivate.
 1. Click the three-dot more options menu and choose **Deactivate**. <br/> ![deactivate.png](/img/subscriptions/deactivate.png)
 
-## Monitor CSE provisioning
-Provisioning CSE can take up to 24 hours. You can determine provisioning status on the **Administration > Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
+## Monitor Cloud SIEM provisioning
+Provisioning Cloud SIEM can take up to 24 hours. You can determine provisioning status on the **Administration > Organizations** page. Until the provisioning is complete, you'll see a spinner and message that indicates the process is on-going.
 
 <img src={useBaseUrl('img/cse/status.png')} alt="status" />
 
-## Monitor credits quota and usage
+## Monitor credits allocation and usage
 
-This section has information about how you can monitor credit allocations and consumption across all your orgs, and for each child org.
+This section has information about how you can monitor credit allocations and consumption across all your orgs, and for each child org. You can view the usage by orgs and child orgs on the **Account Overview** page.
 
-### View child credit usage by category
+* The **Credit Allocation** tile indicates the total number of credits allocated.
+* The **Total Credit Usage** tile shows amount of credits consumed out of the total allocated credits.
+* The **Usage Forecast** tile indicates the total consumption of the credits by the end of contract period according to the current consumption rate.
 
-You can view the usage by child orgs on the **Account Overview** page. Usage for the following categories is shown:
+### View overall credit usage by category
+
+You can view the aggreagte usage for all child orgs across usage category in the **Overall Usage** tab on the **Account Overview** page. Usage for the following categories is shown:
 
 * **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
 * **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
@@ -150,33 +154,43 @@ You can view the usage by child orgs on the **Account Overview** page. Usage for
 * **Tracing Ingest**. Credits used for traces ingested.
 * **Metrics Ingest**. Credits used for metrics ingested.
 * **Storage**. Credits used for log storage in the Continuous and Frequent tiers.
-* **CSE Ingest**. Credits used for logs ingested into Cloud SIEM Enterprise (CSE).
+* **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent tier.
-* **Promotional categories**. For more information, see [Monitoring Promotional Credit](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage) usage.<br/> <img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" />
+* **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage).
 
-### View cross-org credits allocation and consumption
+By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking **Download Detailed Credit Usages** from the kebab icon next to the Download Report button.
 
-You can see what portion of your subscription credits have been allocated and consumed on the **Administration** > **Organizations** page.
+<img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" style={{border:'1px solid black'}} />
 
-* The **Usage %** column indicates what percentage of overall subscription credits that was allocated to a child org has been consumed.
-* The **Credits Capacity** line at the bottom of the page shows the count and percentage of  credits, out of your total subscription credits, that have been allocated to child orgs, and the number of allocated credits that have been consumed. <br/> ![orgs-page-2.png](/img/subscriptions/orgs-page-2.png)
+### View child credit usage by category
 
-### View child org credits allocation and usage
+You can view the usage of individual child orgs in the **Child Orgs** tab on the **Account Overview** page. Usage for the following categories is shown:
 
-1. Go to **Administration** > **Organizations**.
-1. Click an org in the list of orgs.
-1. A pane with details about the org appears on the right side of the page. <br/> <img src={useBaseUrl('img/subscriptions/credits-usage.png')} alt="usage" width="450"/>  
-1. The **Credits Usage section** of the pane shows the number and percentage of the credits allocated to the org that have been consumed, along with the total credits that are allocated.
-2. Click **View Details** for more information.
-3. The **Credits Usage Details** popup displays the following information. This information is for the current contract subscription period.
-    * **Allocated Credits**. The total number of credits allocated to the org.
-    * **Credits Used**. The number and percentage of allocated credits that have been used.
-    * For each Product Variable, the following information is shown.
-      * **Credits Used**. Number of allocated credits that have been used for the Product Variable.
-      * **Deployment Charge**. The number of credits associated with the Deployment Charge (as applicable), if the child org is in a different deployment than the parent org.
-      * **Credits Deducted**. This column if the parent org is on a subscription to which cross-geo charging applies to the org. If the parent org is on Global Credits, deployment charges don’t apply and this column won't appear. **Credits Deducted** is the sum of **Credits Used** and the **Deployment Charge**.
-      * **Usage %**. The percentage of credits allocated to the org that have been used for the Product Variable.
-      * **Units**. Shows the volume of log ingest in GB or the DPM (metrics) that is equivalent to the credits used for the Product Variable. <br/> ![sp-usage.png](/img/subscriptions/usage-details-2.png)
+* The **Allocated Credits** column indicates the total number of credits allocated to the selected child org.
+* The **Total Credits Used** column indicates the total amount of credits consumed for the selected child org.
+* The **Usage %** column indicates the percentage of overall subscription credits that was allocated to a child org has been consumed.
+* The **Forecast** column indicates the percentage of total consumption of the credits by the end of contract period according to the current consumption rate for a selected child org.
+* The **Usage % Change** column indicates the difference in credit usage by your child organisations over time. For example, if you choose the date from Jan 1 to Jan 7, it will show the usage difference between Dec 25 to Dec 31 and Jan 1 to Jan 7 for each child organisation.
+
+By clicking the **Download Report** button, you can download the child org usage data in csv format for further analysis and reporting.
+
+<img src={useBaseUrl('img/subscriptions/child-org.png')} alt="your description" style={{border:'1px solid black'}} />
+
+By clicking any of the selected child orgs, a side panel opens up in which you can view the individual usage for the following categories:
+
+* **Continuous Ingest**. Credits used for logs ingested into the Continuous tier for the selected child org.
+* **Frequent Ingest**. Credits used for logs ingested into the Frequent tier for the selected child org.
+* **Infrequent Ingest**. Credits used for logs ingested into the Infrequent tier for the selected child org.
+* **Infrequent Scan**. Credits used to scan data for Infrequent tier searches.
+* **Tracing Ingest**. Credits used for traces ingested for the selected child org.
+* **Metrics Ingest**. Credits used for metrics ingested for the selected child org.
+* **Storage**. Credits used for log storage in the Continuous and Frequent tiers for the selected child org.
+* **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM for the selected child org.
+* **Infrequent Storage**. Credits used for log storage in the Infrequent tier for the selected child org.
+
+By clicking the **Download Report** button, you can download the selected child org usage data in csv format for further analysis and reporting.
+
+<img src={useBaseUrl('img/subscriptions/child-credit-usage.png')} alt="your description" style={{border:'1px solid black'}} />
 
 ## Access a child org
 
@@ -185,6 +199,14 @@ If a [custom subdomain](create-manage-orgs.md) has been configured for a child o
 1. Go to **Administration** > **Organizations**.
 1. Click the row for the org you want to access.
 1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="access org" width="450"/>
+
+## View baselines
+
+Your estimates of ingest capacity required for each product variable are called as baselines. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates, you can access it from the **Organizations** UI.
+
+1. Go to **Administration** > **Organizations**.
+1. Click the row for the org you want to check the baselines.
+1. Click **View the organization baselines here** at the bottom of the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/baselines_1.png')} alt="baselines_1" style={{border:'1px solid black'}}  width="450"/> <br/> <img src={useBaseUrl('img/subscriptions/baselines_2.png')} alt="baselines_2" style={{border:'1px solid black'}} width="450"/>
 
 ## Audit logging for organizations
 

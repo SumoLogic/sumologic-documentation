@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src='https://upload.wikimedia.org/wikipedia/en/7/7e/Datadog_logo.svg' alt="icon" width="50"/>
 
-Once you set up a webhook connection you can send a Sumo Logic alert to your Datadog account. For information on how to build your webhook
+Once you set up a webhook connection, you can send a Sumo Logic alert to your Datadog account. For information on how to build your webhook
 payload refer to Datadog webhooks in their [API Help](http://docs.datadoghq.com/integrations/webhooks/).
 
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.

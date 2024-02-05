@@ -1,6 +1,6 @@
 ---
 id: squid-proxy
-title: Sumo Logic App for Squid Proxy
+title: Squid Proxy - Classic Collector
 sidebar_label: Squid Proxy
 description: The Squid Proxy app is a unified logs and metrics app that helps you monitor activity in Squid Proxy.
 ---
@@ -13,18 +13,18 @@ import TabItem from '@theme/TabItem';
 
 The Squid Proxy app is a unified logs and metrics app that helps you monitor activity in Squid Proxy. The preconfigured dashboards provide insight into served and denied requests; performance metrics; IP domain DNS statistics; traffic details; HTTP response codes; URLs experiencing redirects, client errors, and server errors; and quality of service data that helps you understand your users’ experience.
 
-This App is tested with the following Squid Proxy versions:
+This app is tested with the following Squid Proxy versions:
 * For Kubernetes environments: Squid Proxy version: 6.0.0
 * Non-Kubernetes environments: Squid Proxy version: 6.0.0
 
 
-## Collecting Logs and Metrics for the Squid Proxy App
+## Collecting Logs and Metrics for the Squid Proxy app
 
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Squid Proxy.
+This section provides instructions for configuring log and metric collection for the Sumo Logic app for Squid Proxy.
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -71,14 +71,18 @@ Click on the appropriate tabs below based on the environment where your Squid Pr
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Squid Proxy in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Squid Proxy in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
 <img src={useBaseUrl('img/integrations/web-servers/squid-proxy-k8s-flow.png')} alt="Squid Proxy" />
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from Squid Proxy. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+The first service in the pipeline is Telegraf. Telegraf collects metrics from Squid Proxy. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to obtain metrics. For simplicity, the diagram doesn’t show the input plugins.
+The injection of the Telegraf sidecar container is done by the Telegraf Operator.
+Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), which enriches metadata and sends metrics to Sumo Logic.
+
+In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 :::note Prerequisites
-It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
 #### Configure Metrics Collection
@@ -96,7 +100,8 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
   ```
 3. Add annotations on your Squid Proxy pods.
 
-<details><summary><strong>Click to expand.</strong> On your Squid Proxy Pods, add the following annotations:</summary>
+<details>
+<summary><strong>Click to expand.</strong> On your Squid Proxy Pods, add the following annotations:</summary>
 
 ```sql
 annotations:
@@ -110,163 +115,160 @@ annotations:
   name = "squid"
   community = "public"
   [inputs.snmp.tags]
-   proxy_cluster="<Squid Proxy_TO_BE_CHANGED>"
-   component="proxy"
-   environment="env_TO_BE_CHANGED"
-   proxy_system="squidproxy"
-
+    proxy_cluster="<Squid Proxy_TO_BE_CHANGED>"
+    component="proxy"
+    environment="env_TO_BE_CHANGED"
+    proxy_system="squidproxy"
   [[inputs.snmp.field]]
-     name = "uptime"
-     oid = "1.3.6.1.4.1.3495.1.1.3.0"
+    name = "uptime"
+    oid = "1.3.6.1.4.1.3495.1.1.3.0"
   [[inputs.snmp.field]]
-      name = "cacheMemUsage"
-      oid = "1.3.6.1.4.1.3495.1.3.1.3.0"
+    name = "cacheMemUsage"
+    oid = "1.3.6.1.4.1.3495.1.3.1.3.0"
   [[inputs.snmp.field]]
-      name = "cacheCpuUsage"
-      oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
+    name = "cacheCpuUsage"
+    oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
   [[inputs.snmp.field]]
-      name = "cacheClients"
-      oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
+    name = "cacheClients"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
   [[inputs.snmp.field]]
-      name = "cacheProtoClientHttpRequests"
-      oid = "1.3.6.1.4.1.3495.1.3.2.1.1.0"
+    name = "cacheProtoClientHttpRequests"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.1.0"
   [[inputs.snmp.field]]
-  name = "cacheHttpHits"
-      oid = "1.3.6.1.4.1.3495.1.3.2.1.2.0"
+    name = "cacheHttpHits"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.2.0"
   [[inputs.snmp.field]]
     name = "cacheHttpErrors"
     oid = "1.3.6.1.4.1.3495.1.3.2.1.3.0"
   [[inputs.snmp.field]]
     name = "uidcacheHttpInKb"
     oid = "1.3.6.1.4.1.3495.1.3.2.1.4.0"
-
   [[inputs.snmp.field]]
-   name = "cacheHttpOutKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
-
+    name = "cacheHttpOutKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
   [[inputs.snmp.field]]
-   name = "cacheServerInKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.12.0"
+    name = "cacheServerInKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.12.0"
   [[inputs.snmp.field]]
-   name = "cacheServerOutKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.13.0"
+    name = "cacheServerOutKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.13.0"
   [[inputs.snmp.field]]
-   name = "cacheClients"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
+    name = "cacheClients"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
   [[inputs.snmp.field]]
-   name = "cacheCpuTime"
-   oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
+    name = "cacheCpuTime"
+    oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
   [[inputs.snmp.field]]
-   name = "cacheMemMaxSize"
-   oid = "1.3.6.1.4.1.3495.1.2.5.1.0"
+    name = "cacheMemMaxSize"
+    oid = "1.3.6.1.4.1.3495.1.2.5.1.0"
   [[inputs.snmp.field]]
-   name = "cacheServerRequests"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.10.0"
+    name = "cacheServerRequests"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.10.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpInKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.4.0"
+    name = "cacheHttpInKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.4.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpOutKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
+    name = "cacheHttpOutKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
   [[inputs.snmp.field]]
-   name = "cacheNumObjCount"
-   oid = "1.3.6.1.4.1.3495.1.3.1.7.0"
+    name = "cacheNumObjCount"
+    oid = "1.3.6.1.4.1.3495.1.3.1.7.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpAllSvcTime1"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.1"
+    name = "cacheHttpAllSvcTime1"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.1"
   [[inputs.snmp.field]]
-   name = "cacheDnsSvcTime1"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.8.1"
+    name = "cacheDnsSvcTime1"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.8.1"
   [[inputs.snmp.field]]
-   name = "cacheHttpMissSvcTime60"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.60"
+    name = "cacheHttpMissSvcTime60"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.60"
   [[inputs.snmp.field]]
-   name = " cacheHttpHitSvcTime60"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.60"
+    name = " cacheHttpHitSvcTime60"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.60"
   [[inputs.snmp.field]]
-   name = "cacheIpEntries"
-   oid = "1.3.6.1.4.1.3495.1.4.1.1.0"
+    name = "cacheIpEntries"
+    oid = "1.3.6.1.4.1.3495.1.4.1.1.0"
   [[inputs.snmp.field]]
-   name = "cacheIpMisses"
-   oid = "1.3.6.1.4.1.3495.1.4.1.6.0"
+    name = "cacheIpMisses"
+    oid = "1.3.6.1.4.1.3495.1.4.1.6.0"
   [[inputs.snmp.field]]
-   name = "cacheVersionId"
-   oid = "1.3.6.1.4.1.3495.1.2.3.0"
+    name = "cacheVersionId"
+    oid = "1.3.6.1.4.1.3495.1.2.3.0"
   [[inputs.snmp.field]]
-   name = "cacheSysPageFaults"
-   oid = "1.3.6.1.4.1.3495.1.3.1.1.0"
+    name = "cacheSysPageFaults"
+    oid = "1.3.6.1.4.1.3495.1.3.1.1.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpErrors"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.3.0"
+    name = "cacheHttpErrors"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.3.0"
   [[inputs.snmp.field]]
-   name = "cacheServerErrors"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.11.0"
+    name = "cacheServerErrors"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.11.0"
   [[inputs.snmp.field]]
-   name = "cacheCpuUsage"
-   oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
+    name = "cacheCpuUsage"
+    oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
   [[inputs.snmp.field]]
-   name = "cacheCpuTime"
-   oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
+    name = "cacheCpuTime"
+    oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
   [[inputs.snmp.field]]
-   name = "cacheSysVMsize"
-   oid = "1.3.6.1.4.1.3495.1.1.1.0"
+    name = "cacheSysVMsize"
+    oid = "1.3.6.1.4.1.3495.1.1.1.0"
   [[inputs.snmp.field]]
-   name = "cacheSysNumReads"
-   oid = "1.3.6.1.4.1.3495.1.3.1.2.0"
+    name = "cacheSysNumReads"
+    oid = "1.3.6.1.4.1.3495.1.3.1.2.0"
   [[inputs.snmp.field]]
-   name = "cacheCurrentUnusedFDescrCnt"
-   oid = "1.3.6.1.4.1.3495.1.3.1.10.0"
+    name = "cacheCurrentUnusedFDescrCnt"
+    oid = "1.3.6.1.4.1.3495.1.3.1.10.0"
   [[inputs.snmp.field]]
-   name = "cacheCurrentFileDescrCnt"
-   oid = "1.3.6.1.4.1.3495.1.3.1.12.0"
+    name = "cacheCurrentFileDescrCnt"
+    oid = "1.3.6.1.4.1.3495.1.3.1.12.0"
   [[inputs.snmp.field]]
-   name = "cacheMaxResSize"
-   oid = "1.3.6.1.4.1.3495.1.3.1.6.0"
+    name = "cacheMaxResSize"
+    oid = "1.3.6.1.4.1.3495.1.3.1.6.0"
   [[inputs.snmp.field]]
-   name = "cacheCurrentResFileDescrCnt"
-   oid = "1.3.6.1.4.1.3495.1.3.1.11.0"
+    name = "cacheCurrentResFileDescrCnt"
+    oid = "1.3.6.1.4.1.3495.1.3.1.11.0"
   [[inputs.snmp.field]]
-   name = "cacheIpRequests"
-   oid = "1.3.6.1.4.1.3495.1.4.1.2.0"
+    name = "cacheIpRequests"
+    oid = "1.3.6.1.4.1.3495.1.4.1.2.0"
   [[inputs.snmp.field]]
-   name = "cacheIpHits"
-   oid = "1.3.6.1.4.1.3495.1.4.1.3.0"
+    name = "cacheIpHits"
+    oid = "1.3.6.1.4.1.3495.1.4.1.3.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnEntries"
-   oid = "1.3.6.1.4.1.3495.1.4.2.1.0"
+    name = "cacheFqdnEntries"
+    oid = "1.3.6.1.4.1.3495.1.4.2.1.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnRequests"
-   oid = "1.3.6.1.4.1.3495.1.4.2.2.0"
+    name = "cacheFqdnRequests"
+    oid = "1.3.6.1.4.1.3495.1.4.2.2.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnHits"
-   oid = "1.3.6.1.4.1.3495.1.4.2.3.0"
+    name = "cacheFqdnHits"
+    oid = "1.3.6.1.4.1.3495.1.4.2.3.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnMisses"
-   oid = "1.3.6.1.4.1.3495.1.4.2.6.0"
+    name = "cacheFqdnMisses"
+    oid = "1.3.6.1.4.1.3495.1.4.2.6.0"
   [[inputs.snmp.field]]
-   name = "cacheDnsRequests"
-   oid = "1.3.6.1.4.1.3495.1.4.3.1.0"
+    name = "cacheDnsRequests"
+    oid = "1.3.6.1.4.1.3495.1.4.3.1.0"
   [[inputs.snmp.field]]
-   name = "cacheDnsReplies"
-   oid = "1.3.6.1.4.1.3495.1.4.3.2.0"
+    name = "cacheDnsReplies"
+    oid = "1.3.6.1.4.1.3495.1.4.3.2.0"
   [[inputs.snmp.field]]
-   name = "cacheDnsNumberServers"
-   oid = "1.3.6.1.4.1.3495.1.4.3.3.0"
+    name = "cacheDnsNumberServers"
+    oid = "1.3.6.1.4.1.3495.1.4.3.3.0"
   [[inputs.snmp.field]]
-   name = "version"
-   oid = "1.3.6.1.4.1.3495.1.2.3.0"
+    name = "version"
+    oid = "1.3.6.1.4.1.3495.1.2.3.0"
    is_tag = true
   [[inputs.snmp.field]]
-   name = "cacheHttpAllSvcTime5"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.5"
+    name = "cacheHttpAllSvcTime5"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.5"
   [[inputs.snmp.field]]
-   name = "cacheHttpMissSvcTime5"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.5"
+    name = "cacheHttpMissSvcTime5"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.5"
   [[inputs.snmp.field]]
    name = "cacheHttpHitSvcTime5"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.5"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.5"
   [[inputs.snmp.field]]
-   name = "cacheDnsSvcTime5"
+    name = "cacheDnsSvcTime5"
    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.8.5"
 ```
 
@@ -275,26 +277,25 @@ annotations:
 If you haven’t defined a farm in Squid Proxy, then enter ‘**default**’ for `proxy_cluster`.
 
 Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf SNMP Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SNMP input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf SNMP Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SNMP input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
   * In the tags section, which is `[inputs.snmp.tags]`
-    * `environment` - This is the deployment environment where the Squid Proxy cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-    * `proxy_cluster` - Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards.  
+    * `environment`. This is the deployment environment where the Squid Proxy cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+    * `proxy_cluster`. Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards.  
 
-Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
+**Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
 
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
 * `telegraf.influxdata.com/inputs`
   * In the tags section, which is `[inputs.snmp.tags]`
-    * `component: “proxy”` - This value is used by Sumo Logic apps to identify application components.
+    * `component: “proxy”`.  This value is used by Sumo Logic apps to identify application components.
     * `proxy_system: “squidproxy”` - This value identifies the proxy system.
 
   For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic.
-
 
 #### Configure Logs Collection
 
@@ -308,18 +309,17 @@ This section explains the steps to collect Squid Proxy logs from a Kubernetes en
     proxy_system="squidproxy"
     proxy_cluster="<cluster_CHANGEME>"
     ```
+   Enter in values for the following parameters (marked **CHANGE_ME** above):
+    * `environment`. This is the deployment environment where the Squid Proxy cluster identified by the value of `servers`  resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `proxy_cluster`. Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
 
-   Enter in values for the following parameters (marked in **bold and CHANGE_ME** above):
-    * `environment` - This is the deployment environment where the Squid Proxy cluster identified by the value of `servers`  resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
-    * `proxy_cluster` - Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
-
-   Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
-    * `component: “proxy”` - This value is used by Sumo Logic apps to identify application components.
+   **Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
+    * `component: “proxy”`.  This value is used by Sumo Logic apps to identify application components.
     * `proxy_system: “squidproxy”` - This value identifies the proxy system.
 
 For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
-   2. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+   2. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
    3. Verify logs in Sumo Logic.
 
 2. **(Optional) Collecting Squid Proxy Logs from a Log File** Follow the steps below to capture Squid Proxy logs from a log file on Kubernetes.
@@ -366,7 +366,8 @@ Squid Proxy app supports the default access logs and cache logs format.
    2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 4. **Configure a local file source**. Choose a method:
 
-<details><summary>For an Installed Collector</summary>
+<details>
+<summary>For an Installed Collector</summary>
 
 To collect logs directly from your Squid Proxy machine, use an Installed Collector and a Local File Source.  
 
@@ -376,7 +377,7 @@ To collect logs directly from your Squid Proxy machine, use an Installed Collect
 * **Description**. (Optional)
 * **File Path (Required)**. Enter the path to your access.log. The files are typically located in /var/log/squid/access.log. If you're using a customized path, check the squid.conf file for this information.
 * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-* **Source Category**. Enter any string to tag the output collected from this Source, such as SquidProxy/AccessLog. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+* **Source Category**. Enter any string to tag the output collected from this Source, such as SquidProxy/AccessLog. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
 * **Fields.** Set the following fields
 ```bash
 component = proxy
@@ -396,7 +397,8 @@ environment = <Your_Environment_Name> #For example, Dev, QA, or Prod
 
 </details>
 
-<details><summary>For a Hosted Collector</summary>
+<details>
+<summary>For a Hosted Collector</summary>
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
@@ -405,7 +407,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 * **Name**. (Required)
 * **Description**. (Optional)
 * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-* **Source Category**. Enter any string to tag the output collected from this Source, such as SquidProxy/AccessLog. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+* **Source Category**. Enter any string to tag the output collected from this Source, such as SquidProxy/AccessLog. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced **section:
 * **Enable Timestamp Parsing**. Select **Extract timestamp information from log file entries**.
 * **Time Zone**. For Access logs, use the time zone from the log file. For Error logs, make sure to select the correct time zone.
@@ -432,16 +434,17 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
     3. Select **Save**.
     4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 2. **Enable SNMP agent on Squid Proxy**. By default, the [SNMP agent](https://wiki.squid-cache.org/Features/Snmp) will be disabled on squid proxy. You have to enable it. To enable the SNMP agent on squid, edit the configuration file of the squid proxy (squid.conf) and add the following section:
-  ```bash
-  acl snmppublic snmp_community public
-  snmp_port 3401
-  snmp_access allow snmppublic localhost
-  ```
+   ```bash
+   acl snmppublic snmp_community public
+   snmp_port 3401
+   snmp_access allow snmppublic localhost
+   ```
 3. **Set up Telegraf**.
-   1. Install Telegraf if you haven’t already, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
+   1. Install Telegraf if you haven’t already, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
    2. Configure and start Telegraf: as part of collecting metrics data from Telegraf, we'll use the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
-<details><summary><strong>Click to expand</strong>. Create or modify `telegraf.conf` and copy and paste the text below:</summary>
+<details>
+<summary><strong>Click to expand</strong>. Create or modify `telegraf.conf` and copy and paste the text below:</summary>
 
 ```sql
 [[inputs.snmp]]]
@@ -458,178 +461,176 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
     name = "uptime"
     oid = "1.3.6.1.4.1.3495.1.1.3.0"
   [[inputs.snmp.field]]
-      name = "cacheMemUsage"
-      oid = "1.3.6.1.4.1.3495.1.3.1.3.0"
+    name = "cacheMemUsage"
+    oid = "1.3.6.1.4.1.3495.1.3.1.3.0"
   [[inputs.snmp.field]]
-      name = "cacheCpuUsage"
-      oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
+    name = "cacheCpuUsage"
+    oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
   [[inputs.snmp.field]]
-      name = "cacheClients"
-      oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
+    name = "cacheClients"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
   [[inputs.snmp.field]]
-      name = "cacheProtoClientHttpRequests"
-      oid = "1.3.6.1.4.1.3495.1.3.2.1.1.0"
+    name = "cacheProtoClientHttpRequests"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.1.0"
   [[inputs.snmp.field]]
-  name = "cacheHttpHits"
-      oid = "1.3.6.1.4.1.3495.1.3.2.1.2.0"
+    name = "cacheHttpHits"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.2.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpErrors"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.3.0"
+    name = "cacheHttpErrors"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.3.0"
   [[inputs.snmp.field]]
-   name = "uidcacheHttpInKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.4.0"
-
+    name = "uidcacheHttpInKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.4.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpOutKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
-
+    name = "cacheHttpOutKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
   [[inputs.snmp.field]]
-   name = "cacheServerInKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.12.0"
+    name = "cacheServerInKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.12.0"
   [[inputs.snmp.field]]
-   name = "cacheServerOutKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.13.0"
+    name = "cacheServerOutKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.13.0"
   [[inputs.snmp.field]]
-   name = "cacheClients"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
+    name = "cacheClients"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.15.0"
   [[inputs.snmp.field]]
-   name = "cacheCpuTime"
-   oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
+    name = "cacheCpuTime"
+    oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
   [[inputs.snmp.field]]
-   name = "cacheMemMaxSize"
-   oid = "1.3.6.1.4.1.3495.1.2.5.1.0"
+    name = "cacheMemMaxSize"
+    oid = "1.3.6.1.4.1.3495.1.2.5.1.0"
   [[inputs.snmp.field]]
-   name = "cacheServerRequests"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.10.0"
+    name = "cacheServerRequests"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.10.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpInKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.4.0"
+    name = "cacheHttpInKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.4.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpOutKb"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
+    name = "cacheHttpOutKb"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.5.0"
   [[inputs.snmp.field]]
-   name = "cacheNumObjCount"
-   oid = "1.3.6.1.4.1.3495.1.3.1.7.0"
+    name = "cacheNumObjCount"
+    oid = "1.3.6.1.4.1.3495.1.3.1.7.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpAllSvcTime1"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.1"
+    name = "cacheHttpAllSvcTime1"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.1"
   [[inputs.snmp.field]]
-   name = "cacheDnsSvcTime1"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.8.1"
+    name = "cacheDnsSvcTime1"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.8.1"
   [[inputs.snmp.field]]
-   name = "cacheHttpMissSvcTime60"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.60"
+    name = "cacheHttpMissSvcTime60"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.60"
   [[inputs.snmp.field]]
-   name = " cacheHttpHitSvcTime60"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.60"
+    name = " cacheHttpHitSvcTime60"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.60"
   [[inputs.snmp.field]]
-   name = "cacheIpEntries"
-   oid = "1.3.6.1.4.1.3495.1.4.1.1.0"
+    name = "cacheIpEntries"
+    oid = "1.3.6.1.4.1.3495.1.4.1.1.0"
   [[inputs.snmp.field]]
-   name = "cacheIpMisses"
-   oid = "1.3.6.1.4.1.3495.1.4.1.6.0"
+    name = "cacheIpMisses"
+    oid = "1.3.6.1.4.1.3495.1.4.1.6.0"
   [[inputs.snmp.field]]
-   name = "cacheVersionId"
-   oid = "1.3.6.1.4.1.3495.1.2.3.0"
+    name = "cacheVersionId"
+    oid = "1.3.6.1.4.1.3495.1.2.3.0"
   [[inputs.snmp.field]]
-   name = "cacheSysPageFaults"
-   oid = "1.3.6.1.4.1.3495.1.3.1.1.0"
+    name = "cacheSysPageFaults"
+    oid = "1.3.6.1.4.1.3495.1.3.1.1.0"
   [[inputs.snmp.field]]
-   name = "cacheHttpErrors"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.3.0"
+    name = "cacheHttpErrors"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.3.0"
   [[inputs.snmp.field]]
-   name = "cacheServerErrors"
-   oid = "1.3.6.1.4.1.3495.1.3.2.1.11.0"
+    name = "cacheServerErrors"
+    oid = "1.3.6.1.4.1.3495.1.3.2.1.11.0"
   [[inputs.snmp.field]]
-   name = "cacheCpuUsage"
-   oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
+    name = "cacheCpuUsage"
+    oid = "1.3.6.1.4.1.3495.1.3.1.5.0"
   [[inputs.snmp.field]]
-   name = "cacheCpuTime"
-   oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
+    name = "cacheCpuTime"
+    oid = "1.3.6.1.4.1.3495.1.3.1.4.0"
   [[inputs.snmp.field]]
-   name = "cacheSysVMsize"
-   oid = "1.3.6.1.4.1.3495.1.1.1.0"
+    name = "cacheSysVMsize"
+    oid = "1.3.6.1.4.1.3495.1.1.1.0"
   [[inputs.snmp.field]]
-   name = "cacheSysNumReads"
-   oid = "1.3.6.1.4.1.3495.1.3.1.2.0"
+    name = "cacheSysNumReads"
+    oid = "1.3.6.1.4.1.3495.1.3.1.2.0"
   [[inputs.snmp.field]]
-   name = "cacheCurrentUnusedFDescrCnt"
-   oid = "1.3.6.1.4.1.3495.1.3.1.10.0"
+    name = "cacheCurrentUnusedFDescrCnt"
+    oid = "1.3.6.1.4.1.3495.1.3.1.10.0"
   [[inputs.snmp.field]]
-   name = "cacheCurrentFileDescrCnt"
-   oid = "1.3.6.1.4.1.3495.1.3.1.12.0"
+    name = "cacheCurrentFileDescrCnt"
+    oid = "1.3.6.1.4.1.3495.1.3.1.12.0"
   [[inputs.snmp.field]]
-   name = "cacheMaxResSize"
-   oid = "1.3.6.1.4.1.3495.1.3.1.6.0"
+    name = "cacheMaxResSize"
+    oid = "1.3.6.1.4.1.3495.1.3.1.6.0"
   [[inputs.snmp.field]]
-   name = "cacheCurrentResFileDescrCnt"
-   oid = "1.3.6.1.4.1.3495.1.3.1.11.0"
+    name = "cacheCurrentResFileDescrCnt"
+    oid = "1.3.6.1.4.1.3495.1.3.1.11.0"
   [[inputs.snmp.field]]
-   name = "cacheIpRequests"
-   oid = "1.3.6.1.4.1.3495.1.4.1.2.0"
+    name = "cacheIpRequests"
+    oid = "1.3.6.1.4.1.3495.1.4.1.2.0"
   [[inputs.snmp.field]]
-   name = "cacheIpHits"
-   oid = "1.3.6.1.4.1.3495.1.4.1.3.0"
+    name = "cacheIpHits"
+    oid = "1.3.6.1.4.1.3495.1.4.1.3.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnEntries"
-   oid = "1.3.6.1.4.1.3495.1.4.2.1.0"
+    name = "cacheFqdnEntries"
+    oid = "1.3.6.1.4.1.3495.1.4.2.1.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnRequests"
-   oid = "1.3.6.1.4.1.3495.1.4.2.2.0"
+    name = "cacheFqdnRequests"
+    oid = "1.3.6.1.4.1.3495.1.4.2.2.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnHits"
-   oid = "1.3.6.1.4.1.3495.1.4.2.3.0"
+    name = "cacheFqdnHits"
+    oid = "1.3.6.1.4.1.3495.1.4.2.3.0"
   [[inputs.snmp.field]]
-   name = "cacheFqdnMisses"
-   oid = "1.3.6.1.4.1.3495.1.4.2.6.0"
+    name = "cacheFqdnMisses"
+    oid = "1.3.6.1.4.1.3495.1.4.2.6.0"
   [[inputs.snmp.field]]
-   name = "cacheDnsRequests"
-   oid = "1.3.6.1.4.1.3495.1.4.3.1.0"
+    name = "cacheDnsRequests"
+    oid = "1.3.6.1.4.1.3495.1.4.3.1.0"
   [[inputs.snmp.field]]
-   name = "cacheDnsReplies"
-   oid = "1.3.6.1.4.1.3495.1.4.3.2.0"
+    name = "cacheDnsReplies"
+    oid = "1.3.6.1.4.1.3495.1.4.3.2.0"
   [[inputs.snmp.field]]
-   name = "cacheDnsNumberServers"
-   oid = "1.3.6.1.4.1.3495.1.4.3.3.0"
+    name = "cacheDnsNumberServers"
+    oid = "1.3.6.1.4.1.3495.1.4.3.3.0"
   [[inputs.snmp.field]]
-   name = "version"
-   oid = "1.3.6.1.4.1.3495.1.2.3.0"
-   is_tag = true
+    name = "version"
+    oid = "1.3.6.1.4.1.3495.1.2.3.0"
+    is_tag = true
   [[inputs.snmp.field]]
-   name = "cacheHttpAllSvcTime5"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.5"
+    name = "cacheHttpAllSvcTime5"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.2.5"
   [[inputs.snmp.field]]
-   name = "cacheHttpMissSvcTime5"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.5"
+    name = "cacheHttpMissSvcTime5"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.3.5"
   [[inputs.snmp.field]]
-   name = "cacheHttpHitSvcTime5"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.5"
+    name = "cacheHttpHitSvcTime5"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.5.5"
   [[inputs.snmp.field]]
-   name = "cacheDnsSvcTime5"
-   oid = "1.3.6.1.4.1.3495.1.3.2.2.1.8.5"
+    name = "cacheDnsSvcTime5"
+    oid = "1.3.6.1.4.1.3495.1.3.2.2.1.8.5"
 [[outputs.sumologic]]
-  url = "<URL_from_HTTP_Logs_and_Metrics_Source>"
-  data_format = "prometheus"
+    url = "<URL_from_HTTP_Logs_and_Metrics_Source>"
+    data_format = "prometheus"
 ```
 
 </details>
 
      * Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`< >`) in your final configuration.
      * In the tags section, which is `[inputs.snmp.tags]`:
-     * `environment` - This is the deployment environment where the Squid Proxy server identified by the value of servers resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
-     * `proxy_cluster` - Enter a name to identify this Squid Proxy cluster. This cluster name will be shown in our dashboards.
+     * `environment`. This is the deployment environment where the Squid Proxy server identified by the value of servers resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
+     * `proxy_cluster`. Enter a name to identify this Squid Proxy cluster. This cluster name will be shown in our dashboards.
      * In the output plugins section, which is `[[outputs.sumologic]]`:
      * `URL` - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
-     * Here’s an explanation for additional values set by this Telegraf configuration. We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly. If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
-     * `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
-     * `component - “proxy”` - In the input `[[inputs.snmp]]` plugins section. This value is used by Sumo Logic apps to identify application components.
-     * `proxy_system - “squidproxy”` - In the input plugins sections. This value identifies the proxy system.
+     * **Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly. If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
+       * `data_format: “prometheus”`. In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
+       * `component - “proxy”`. In the input `[[inputs.snmp]]` plugins section. This value is used by Sumo Logic apps to identify application components.
+       * `proxy_system - “squidproxy”`. In the input plugins sections. This value identifies the proxy system.
 
-  See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
+     See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for all other parameters that can be configured in the Telegraf agent globally.
 
-  After you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
+     After you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
-  At this point, Telegraf should start collecting the Squid Proxy metrics and forward them to the Sumo Logic HTTP Source.
+     At this point, Telegraf should start collecting the Squid Proxy metrics and forward them to the Sumo Logic HTTP Source.
 
 4. Enter the following options:
    * **Rule Name**. Enter the name as **App Observability - Proxy**.
@@ -654,7 +655,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
 ## Installing Squid Proxy Monitors
 
-This section and below provide instructions for installing the Squid Proxy App, as well as examples of each of the App dashboards. These instructions assume you have already set up the collection as described above.
+This section and below provide instructions for installing the Squid Proxy app, as well as examples of each of the app dashboards. These instructions assume you have already set up the collection as described above.
 
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
@@ -676,7 +677,7 @@ Custom filter examples:
 
 1. For alerts applicable only to a specific farm, your custom filter would be ‘`proxy_cluster=squidproxy-standalone.01`‘.
 2. For alerts applicable to all cluster that start with squidproxy-standalone, your custom filter would be '`proxy_cluster=squidproxy-standalone*`'.
-3. **For alerts applicable to a specific farm within a production environment, your custom filter would be `proxy_cluster=squidproxy-1`** and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
+3. For alerts applicable to a specific farm within a production environment, your custom filter would be `proxy_cluster=squidproxy-1` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
 4. Go to Manage Data > Alerts > Monitors.
 5. Click **Add**.
 6. Click Import and then copy-paste the above JSON to import monitors.
@@ -700,7 +701,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
      * A specific cluster `squidproxy_cluster=squidproxy.standalone.01`.
      * All clusters in an environment `environment=standalone`.
      * For alerts applicable to all cluster that start with squidproxy-standalone, your custom filter would be `proxy_cluster=squidproxy-standalone*`.
-     * For alerts applicable to a specific farm within a production environment, your custom filter would be, `proxy_system=squidproxy` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
+     * For alerts applicable to a specific farm within a production environment, your custom filter would be `proxy_system=squidproxy` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
    3. All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
    4. By default, the monitors are configured in a monitor **folder** called “**SquidProxy**”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at `squidproxy.auto.tfvars` file.
 5. If you would like the alerts to send email or connection notifications, modify the file `squidproxy_notifications.auto.tfvars` and populate `connection_notifications` and `email_notifications` as per below examples.
@@ -721,7 +722,6 @@ connection_notifications = [
     }
   ]
 ```
-
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
 For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
@@ -738,7 +738,6 @@ email_notifications = [
     }
   ]
 ```
-
 6. Install the Alerts:
     1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**SquidProxy**/ and run `terraform init`. This will initialize Terraform and will download the required components.
     2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
@@ -748,14 +747,17 @@ email_notifications = [
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
-## Installing the Squid Proxy App
+## Installing the Squid Proxy app
 
-This section demonstrates how to install the Squid Proxy App.
+This section demonstrates how to install the Squid Proxy app.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**.
+:::note
+Version selection is not available for all apps.
+:::
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Squid Proxy cluster filter. Examples:
@@ -772,7 +774,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing the Squid Proxy Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Overview
@@ -840,7 +842,7 @@ The **Squid Proxy -  HTTP Response Analysis** dashboard provides insights into H
 Use this dashboard to:
 * Gain insights into the count of HTTP responses, such as redirections, successes, client errors, or server errors, on an area chart.
 * Gain insights into client error URLs with information fields: URL, status code, and event count.
-* Get detailed information on any outliers in redirection, client error, server error events on a line chart with thresholds
+* Get detailed information on any outliers in redirection, client error, server error events on a line chart with thresholds.
 
 <img src={useBaseUrl('img/integrations/web-servers/squid-proxy-http-response-analysis.png')} alt="Squid Proxy" />
 
@@ -851,7 +853,7 @@ The **Squid Proxy - Quality of Service** dashboard provides insights into latenc
 
 Use this dashboard to:
 * To identify locations with slow average request response times.
-* Gain insights into the response times according to HTTP actions
+* Gain insights into the response times according to HTTP actions.
 
 <img src={useBaseUrl('img/integrations/web-servers/Squid-Proxy-Quality-of-Service.png')} alt="Squid Proxy" />
 
@@ -862,75 +864,9 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 
 **Sumo Logic provides the following out-of-the-box alerts**:
 
-<table>
-  <tr>
-   <td>Alert Type (Metrics/Logs)
-   </td>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Squid Proxy - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Squid Proxy - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Squid Proxy - High Latency
-   </td>
-   <td>This alert fires when latency on a node in a Squid Proxy cluster is higher than 3 seconds.
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;&#61;3
-   </td>
-   <td>&#60;3
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Squid Proxy - High Denied Request
-   </td>
-   <td>This alert fires when there are too many HTTP denied requests (>5%)
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td> &#60; &#61;0
-   </td>
-  </tr>
-</table>
+| Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|:---|:---|
+| Logs | Squid Proxy - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | Critical | > 0 | `<=`0 |
+| Logs | Squid Proxy - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | Critical | >0 | `<=`0 |
+| Metrics | Squid Proxy - High Latency | This alert fires when latency on a node in a Squid Proxy cluster is higher than 3 seconds. | Critical | `>=`3 | `<`3 |
+| Logs | Squid Proxy - High Denied Request | This alert fires when there are too many HTTP denied requests (>5%) | Critical | >0 | `<=`0 |

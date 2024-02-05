@@ -1,6 +1,6 @@
 ---
 id: nginx-plus
-title: Sumo Logic App for Nginx Plus
+title: Nginx Plus
 sidebar_label: Nginx Plus
 description: The Nginx Plus app is an unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of your Nginx Plus web servers.
 ---
@@ -11,19 +11,19 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/nginx-plus.png')} alt="Thumbnail icon" width="75"/>
 
-The Sumo Logic App for Nginx Plus supports logs as well as Metrics for Nginx Plus, which is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
+The Sumo Logic app for Nginx Plus supports logs as well as Metrics for Nginx Plus, which is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
 
 The Nginx Plus app is an unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of your Nginx Plus web servers. Preconfigured dashboards and searches provide insight into server status, location zones, server zones, upstreams, resolvers, visitor locations, visitor access types, traffic patterns, errors, web server operations and access from known malicious sources.
 
 ## Log and Metrics Types
 
-The Sumo Logic App for Nginx Plus assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
+The Sumo Logic app for Nginx Plus assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
 All Dashboards (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two. For more details on Nginx/NginxPlus logs, see [Module ngx_http_log_module](https://nginx.org/en/docs/http/ngx_http_log_module.html).
 
-The Sumo Logic App for Nginx Plus assumes Prometheus format Metrics for Requests and Connections. For Nginx Plus Server metrics, API Module from Nginx Configuration is used. For more details on Nginx Plus Metrics, see [Module ngx_http_api_module](https://nginx.org/en/docs/http/ngx_http_api_module.html).
+The Sumo Logic app for Nginx Plus assumes Prometheus format Metrics for Requests and Connections. For Nginx Plus Server metrics, API Module from Nginx Configuration is used. For more details on Nginx Plus Metrics, see [Module ngx_http_api_module](https://nginx.org/en/docs/http/ngx_http_api_module.html).
 
-### Sample Log Messages  
+### Sample log messages  
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -70,11 +70,9 @@ HTTP/1.1", host: "example.com", referrer: "https://abc.example.com/"
 </TabItem>
 </Tabs>
 
+### Sample queries
 
-
-### Sample Queries
-
-This sample Query is from the [Nginx Plus - Overview](#overview) dashboard > **Responses Over Time** panel.
+This sample query is from the [Nginx Plus - Overview](#overview) dashboard > **Responses Over Time** panel.
 
 ```
 _sourceCategory=Labs/Nginx/Logs
@@ -94,7 +92,7 @@ _sourceCategory=Labs/Nginx/Logs
 
 ## Collecting Logs and Metrics for Nginx Plus
 
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Plus. Sumo Logic supports a collection of logs and metrics data from Nginx Plus in both Kubernetes and non-Kubernetes environments. Click on the appropriate links below based on the environment where your Nginx Plus servers are hosted.
+This section provides instructions for configuring log and metric collection for the Sumo Logic app for Nginx Plus. Sumo Logic supports a collection of logs and metrics data from Nginx Plus in both Kubernetes and non-Kubernetes environments. Click on the appropriate links below based on the environment where your Nginx Plus servers are hosted.
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -108,9 +106,15 @@ This section provides instructions for configuring log and metric collection for
 
 ### For Kubernetes environments
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Nginx Plus in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.<br/><img src={useBaseUrl('img/integrations/web-servers/nginxplus-k8s.png')} alt="nginxplus-k8s" />
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Nginx Plus in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Telegraf Operator, Prometheus, and [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector).
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from Nginx Plus. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Nginx Plus input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+<img src={useBaseUrl('img/integrations/web-servers/nginxk8s.png')} alt="Web servers" />
+
+The first service in the pipeline is Telegraf. Telegraf collects metrics from Nginx Plus. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Nginx Plus input plugin to obtain metrics. For simplicity, the diagram doesn’t show the input plugins.
+The injection of the Telegraf sidecar container is done by the Telegraf Operator.
+Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), which enriches metadata and sends metrics to Sumo Logic.
+
+In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 #### Collect Logs for Nginx Plus in Kubernetes environment
 
@@ -118,7 +122,7 @@ Nginx Plus app supports the default access logs and error logs format.
 
 1. Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the [Ngnix Plus Configuring Logging documentation](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/).
 2. Use the Sumologic-Kubernetes-Collection, to send the logs to Sumologic. For more information, [visit](/docs/observability/kubernetes/collection-setup).
-3. Identifying the logs metadata: For example, to get **Logs** data from the pod, you can use the following source `_sourcecategory = "kubernetes/default/nginx"` where `kubernetes` is Cluster name, `default` is Namespace, `nginx` is application.
+3. Identifying the logs metadata: For example, to get **Logs** data from the pod, you can use the following source `_sourceCategory = "kubernetes/default/nginx"` where `kubernetes` is Cluster name, `default` is Namespace, `nginx` is application.
 4. To get log data from Nginx Pods - all nginx logs must be redirected to standard output “**stdout**” and standard error “**stderr**”.
 
 
@@ -144,11 +148,10 @@ The following steps assume you are collecting Nginx Plus metrics from a Kubernet
         prometheus.io/scrape: "true"
         prometheus.io/port: "9273"
    ```
-
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Nginx Plus Input plugin. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) for more information on configuring the Nginx input plugin for Telegraf. Note since telegraf will be run as a sidecar the host should always be localhost
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf Nginx Plus Input plugin. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) for more information on configuring the Nginx input plugin for Telegraf. Note since telegraf will be run as a sidecar the host should always be localhost
+* `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"`. This tells Prometheus what ports to scrape on. This should not be changed.
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -163,7 +166,7 @@ Telegraf runs on the same system as Nginx Plus, and uses the [Nginx Plus input p
 
 Nginx Plus app supports the default access logs and error logs format.
 
-This section provides instructions for configuring log collection for the Sumo Logic App for Nginx Plus. Follow the instructions below to set up the Log collection.
+This section provides instructions for configuring log collection for the Sumo Logic app for Nginx Plus. Follow the instructions below to set up the Log collection.
 
 1. **Configure logging in Nginx**. Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following documentation: [https://www.nginx.com/resources/admin-guide/logging-and-monitoring/](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/)
 2. **Configure a Collector**. Use one of the following Sumo Logic Collector options:
@@ -171,7 +174,8 @@ This section provides instructions for configuring log collection for the Sumo L
    * If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md).
 3. **Configure a Source**. Choose a method:
 
-<details><summary>For an Installed Collector</summary>
+<details>
+<summary>For an Installed Collector</summary>
 
 To collect logs directly from your Nginx Plus machine, use an Installed Collector and a Local File Source.
 
@@ -186,15 +190,16 @@ To collect logs directly from your Nginx Plus machine, use an Installed Collecto
     * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
     * **Time Zone.** Automatically detect.
     * **Timestamp Format.** The timestamp format is automatically detected.
-    * **Encoding. **Select** **UTF-8 (Default).
+    * **Encoding.** Select UTF-8 (Default).
     * **Enable Multiline Processing.**
-        * **Error** **logs. **Select **Detect messages spanning multiple lines** and **Infer Boundaries - Detect message boundaries automatically**.
-        * **Access** **logs. **These are single-line logs, uncheck **Detect messages spanning multiple lines**.
+        * **Error logs.** Select **Detect messages spanning multiple lines** and **Infer Boundaries - Detect message boundaries automatically**.
+        * **Access logs.** These are single-line logs, uncheck **Detect messages spanning multiple lines**.
 4. Click **Save**.
 
 </details>
 
-<details><summary>For a Hosted Collector</summary>
+<details>
+<summary>For a Hosted Collector</summary>
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
@@ -203,7 +208,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
     * **Name.** (Required)
     * **Description.** (Optional)
     * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
+    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced** section:
     * **Enable Timestamp Parsing.** Select **Extract timestamp information from log file entries**.
     * **Time Zone.** For Access logs, use the time zone from the log file. For Error logs, make sure to select the correct time zone.
@@ -220,7 +225,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
 Nginx Plus app supports the metrics for Nginx Plus.
 
-This section provides instructions for configuring metrics collection for the Sumo Logic App for Nginx Plus. Follow the below instructions to set up the metric collection.
+This section provides instructions for configuring metrics collection for the Sumo Logic app for Nginx Plus. Follow the below instructions to set up the metric collection.
 
 1. **Configure Metrics in Nginx Plus**. Before you can configure Sumo Logic to ingest metrics, you must enable API module to expose metrics in NGINX Plus.
    * The live activity monitoring data is generated by the [NGINX Plus API](https://nginx.org/en/docs/http/ngx_http_api_module.html). Visit [live activity monitoring](https://www.nginx.com/products/nginx/live-activity-monitoring/) to configure the API module.
@@ -256,7 +261,6 @@ This section provides instructions for configuring metrics collection for the Su
 
 </TabItem>
 </Tabs>
-
 
 ### Field Extraction Rules
 
@@ -295,7 +299,7 @@ Alerts can be installed by either importing them via a JSON or via a Terraform s
 ### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx-plus/nginxplus.json) describing all the monitors.
-2. Replace **$$logs_data_source** and** $$metric_data_source** with logs and metrics data sources respectively. For example, `_sourceCategory=Labs/Nginx/Plus/Logs`.
+2. Replace **$$logs_data_source** and **$$metric_data_source** with logs and metrics data sources respectively. For example, `_sourceCategory=Labs/Nginx/Plus/Logs`.
 3. Go to Manage Data > Alerts > Monitors.
 4. Click **Add**.
 5. Click **Import** to import monitors from the JSON above.
@@ -309,158 +313,71 @@ The monitors are disabled by default. Once you have installed the alerts via thi
 
 1. Generate a Sumo Logic [access key](/docs/manage/security/access-keys#create-an-access-keyon-preferences-page) and access ID for a user that has the [Manage Monitors](/docs/manage/users-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic [deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later
-3. Download the Sumo Logic Terraform package for Nginx Plus alerts. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus). You can either download it via the “git clone” command or as a zip file.
-4. Alert Configuration: After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus/**. Edit the **nginxplus.auto.tfvars** file as per below instructions:
-   1. Add the Sumo Logic Access Key, Access Id, Deployment from Step 1.
-    ```sql
-    access_id  = "<YOUR SUMO ACCESS ID>"
-    access_key = "<YOUR SUMO ACCESS KEY>"
-    environment = "<DEPLOYMENT>"
-    ```
-   2. Add the data source values.
+3. Download the Sumo Logic Terraform package for Nginx Plus alerts. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus). You can either download it via the “git clone” command or as a zip file.
+4. Alert Configuration: After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus/`. Edit the **nginxplus.auto.tfvars** file as per the below instructions:
+   * Add your Sumo Logic Access Key, Access Id, and Deployment from Step 1.
+     ```sql
+     access_id  = "<YOUR SUMO ACCESS ID>"
+     access_key = "<YOUR SUMO ACCESS KEY>"
+     environment = "<DEPLOYMENT>"
+     ```
+   * Add the data source values.
      * **Metric_data_source** - Sumo Logic data source for nginx plus metrics.
      * **Logs_data_source** - Sumo Logic data source for logs.
-   3. All monitors are disabled by default on installation. If you would like to enable all the monitors, set the parameter `monitors_disabled` to `false`.
-   4. All monitors are configured in a monitor folder called “**Nginx Plus**”, if you would like to change the name of the folder, update the parameter **folder**.
-5. Email and Connection Notification Configuration Examples: Modify the file **nginxplus.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per below examples.
-
-```bash title="Pagerduty Connection Example"
-connection_notifications = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved via calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
-For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```bash title="Email Notifications Example"
-email_notifications = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-}
-```
-
+   * All monitors are disabled by default on installation. If you would like to enable all the monitors, set the parameter `monitors_disabled` to `false`.
+   * All monitors are configured in a monitor folder called “**Nginx Plus**”, if you would like to change the name of the folder, update the parameter **folder**.
+5. Email and Connection Notification Configuration Examples: Modify the file **nginxplus.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per the below examples.
+   ```bash title="Pagerduty Connection Example"
+   connection_notifications = [
+       {
+         connection_type       = "PagerDuty",
+         connection_id         = "<CONNECTION_ID>",
+         payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
+         run_for_trigger_types = ["Critical", "ResolvedCritical"]
+       },
+       {
+         connection_type       = "Webhook",
+         connection_id         = "<CONNECTION_ID>",
+         payload_override      = "",
+         run_for_trigger_types = ["Critical", "ResolvedCritical"]
+       }
+     ]
+   ```
+   * Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved via calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections). For overriding payload for different connection types, refer to this [document](/docs/alerts/webhook-connections/set-up-webhook-connections).
+   ```bash title="Email Notifications Example"
+   email_notifications = [
+       {
+         connection_type       = "Email",
+         recipients            = ["abc@example.com"],
+         subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
+         time_zone             = "PST",
+         message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
+         run_for_trigger_types = ["Critical", "ResolvedCritical"]
+       }
+     ]
+   }
+   ```
 6. Install the Alerts:
-   1. Navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus/** and run **terraform init. **This will initialize Terraform and will download the required components.
-   2. Run **terraform plan **to view the monitors resources which will be created/modified by Terraform.
-   3. Run **terraform apply**.
+   1. Navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus/** and run `terraform init`. This will initialize Terraform and will download the required components.
+   2. Run `terraform plan` to view the monitors resources which will be created/modified by Terraform.
+   3. Run `terraform apply`.
 7. Post Installation steps: If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Step 4](/docs/alerts/monitors#add-a-monitor).
 
-Note: There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts).
+There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts).
 
 
-## Installing the Ngnix Plus App
+## Installing the Ngnix Plus app
 
-This section has instructions for installing the Sumo App for Nginx Plus. The instructions assume you have already set up the collection as described above.
+This section has instructions for installing the Sumo app for Nginx Plus. The instructions assume you have already set up the collection as described above.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-## Nginx Plus Alerts
-
-Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Nginx Plus server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
-
-<table>
-  <tr>
-   <td><strong>Name</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Alert Condition</strong>
-   </td>
-   <td><strong>Recover Condition</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus - Dropped Connections
-   </td>
-   <td>This alert fires when we detect dropped connections for a given Nginx Plus server.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus - Critical Error Messages
-   </td>
-   <td>This alert fires when we detect critical error messages for a given Nginx Plus server.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus - Access from Highly Malicious Sources
-   </td>
-   <td>This alert fires when an Nginx Plus is accessed from highly malicious IP addresses.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus - High Client (HTTP 4xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-  <tr>
-   <td>Nginx Plus - High Server (HTTP 5xx) Error Rate
-   </td>
-   <td>This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx.
-   </td>
-   <td> &#62; 0
-   </td>
-   <td> &#60; &#61; 0
-   </td>
-  </tr>
-</table>
-
+<AppInstall/>
 
 ## Viewing Nginx Plus Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Overview
@@ -544,7 +461,7 @@ These insights can be useful for planning in which browsers, platforms, and oper
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Visitor-Access-Types.png')} alt="tk" />
 
 
-### Visitor Locations
+### Viitor Locations
 
 The **Nginx Plus - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by  US region over time.
 
@@ -567,7 +484,7 @@ Use this dashboard to:
 
 ### Caches
 
-The Nginx Plus - Caches metrics dashboard provides insight into cache states, cache hit rate and cache disk usage over time.
+The **Nginx Plus - Caches** dashboard provides insight into cache states, cache hit rate, and cache disk usage over time.
 
 Use this dashboard to:
 * Gain information about the number of caches used, how many of them are in active (hot) state and what is the hit rate of the cache.
@@ -578,7 +495,7 @@ Use this dashboard to:
 
 ### HTTP Location Zones
 
-The Nginx Plus - HTTP Location Zones metrics dashboard provides detailed statistics on the frontend performance, showing traffic speed, responses/requests count and various error responses.
+The **Nginx Plus - HTTP Location Zones** dashboard provides detailed statistics on the frontend performance, showing traffic speed, responses/requests count, and various error responses.
 
 Use this dashboard to:
 
@@ -590,7 +507,7 @@ Use this dashboard to:
 
 ### HTTP Server Zones
 
-The Nginx Plus - HTTP Server Zones metrics dashboard provides detailed statistics on the frontend performance, showing traffic speed, responses/requests count and various error responses.
+The **Nginx Plus - HTTP Server Zones** dashboard provides detailed statistics on the frontend performance, showing traffic speed, responses/requests count, and various error responses.
 
 Use this dashboard to:
 
@@ -602,7 +519,7 @@ Use this dashboard to:
 
 ### HTTP Upstreams
 
-The Nginx Plus - HTTP Upstreams metrics dashboard provides information about each upstream group for HTTP and HTTPS traffic, showing number of HTTP upstreams, servers, back-up servers, error responses and health monitoring.
+The **Nginx Plus - HTTP Upstreams** dashboard provides information about each upstream group for HTTP and HTTPS traffic, showing number of HTTP upstreams, servers, back-up servers, error responses, and health monitoring.
 
 Use this dashboard to:
 
@@ -616,23 +533,23 @@ Use this dashboard to:
 
 ### Resolvers
 
-The Nginx Plus - Resolvers metrics dashboard provides DNS server statistics of requests and responses per each DNS status zone.
+The **Nginx Plus - Resolvers** dashboard provides DNS server statistics of requests and responses per each DNS status zone.
 
 Use this dashboard to:
 
-* Gain information about the total number of zones, responses and requests speed.
+* Gain information about the total number of zones, responses, and requests speed.
 * Gain information about error responses by each type of error.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Resolvers.png')} alt="tk" />
 
 ### TCP/UDP Upstreams
 
-The Nginx Plus - TCP/UDP Upstreams metrics dashboard provides information about each upstream group for TCP and UDP traffic, showing number of TCP and UDP upstreams, servers, back-up servers, error responses and health monitoring.
+The **Nginx Plus - TCP/UDP Upstreams** dashboard provides information about each upstream group for TCP and UDP traffic, showing number of TCP and UDP upstreams, servers, back-up servers, error responses, and health monitoring.
 
 Use this dashboard to:
 
-* Gain information about TCP and UDP upstreams, servers and back-up servers.
-* Gain information about TCP and UDP upstreams traffic: received and sent; speed, requests/responses amount, downtime and response time.
+* Gain information about TCP and UDP upstreams, servers, and back-up servers.
+* Gain information about TCP and UDP upstreams traffic: received and sent; speed, requests/responses amount, downtime, and response time.
 * Gain information about TCP and UDP upstreams error responses: percentage of responses by server, percentage of each type of error responses.
 * Gain information about TCP and UDP upstreams health monitoring.
 
@@ -641,7 +558,7 @@ Use this dashboard to:
 
 ### TCP/UDP Zones
 
-The Nginx Plus - TCP/UDP Zones metrics dashboard provides TCP and UDP status zones with charts for connection limiting.
+The **Nginx Plus - TCP/UDP Zones** dashboard provides TCP and UDP status zones with charts for connection limiting.
 
 Use this dashboard to:
 
@@ -649,3 +566,15 @@ Use this dashboard to:
 * Gain information about TCP and UDP error responses: percentage of responses by server, percentage of each type of error responses.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-TCP-UDP-Zones.png')} alt="tk" />
+
+## Nginx Plus Alerts
+
+Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Nginx Plus server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
+
+| Name | Description | Alert Condition | Recover Condition |
+|:---|:---|:---|:---|
+| Nginx Plus - Dropped Connections | This alert fires when we detect dropped connections for a given Nginx Plus server. | > 0 | < = 0 |
+| Nginx Plus - Critical Error Messages | This alert fires when we detect critical error messages for a given Nginx Plus server. | > 0 | < = 0 |
+| Nginx Plus - Access from Highly Malicious Sources | This alert fires when an Nginx Plus is accessed from highly malicious IP addresses. | > 0 | < = 0 |
+| Nginx Plus - High Client (HTTP 4xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 4xx. | > 0 | < = 0 |
+| Nginx Plus - High Server (HTTP 5xx) Error Rate | This alert fires when there are too many HTTP requests (>5%) with a response status of 5xx. | > 0 | < = 0 |

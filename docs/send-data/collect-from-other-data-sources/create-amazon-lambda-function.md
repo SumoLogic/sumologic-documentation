@@ -1,9 +1,9 @@
 ---
 id: create-amazon-lambda-function
 title: Create a Sumo Lambda Function
+sidebar_label: AWS Lambda - Create Function
 description: Sumo Logic has created an Amazon Lambda function that you can use with AWS.
 ---
-
 
 Sumo provides a Lambda function for use with Amazon Web Services (AWS). It collects AWS Lambda logs using CloudWatch Logs and it extracts and adds a `RequestId` field to each log line to make correlation easier. 
 
@@ -26,7 +26,7 @@ Sumo provides a Lambda function for use with Amazon Web Services (AWS). It coll
        * **Create new role from template(s)**. If you select this option, you can continue without choosing any policy templates—it will create a role with basic Lambda execution privileges by default.
 
     1. **Role Name.** Enter a name for the role.
-    1. **Policy templates.** If you selected **Create new role from template(s) **above, you can leave this blank. 
+    1. **Policy templates.** If you selected **Create new role from template(s)** above, you can leave this blank. 
 
 1. In the **cloudwatch-logs** section, you can create a trigger now, or click **Remove** if you prefer to create it later. To create the trigger:
 

@@ -1,6 +1,6 @@
 ---
 id: palo-alto-networks-10
-title: PCI Compliance App for Palo Alto Networks 10
+title: PCI Compliance for Palo Alto Networks 10
 description: The Sumo Logic App for PCI Compliance for Palo Alto Networks 10 offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 ---
 
@@ -14,28 +14,20 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Netw
 
 You must have Palo Alto Networks Web administrative user permissions to successfully set up collection.
 
-## Log Types
+## Log types
 
 <table>
   <tr>
-   <td><strong>Log type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Supported log format</strong>
-   </td>
-   <td><strong>For more information</strong>
-   </td>
+   <td><strong>Log type</strong> </td>
+   <td><strong>Description</strong>   </td>
+   <td><strong>Supported log format</strong>   </td>
+   <td><strong>For more information</strong>   </td>
   </tr>
   <tr>
-   <td>Traffic
-   </td>
-   <td>Entries for the start and end of each session, including date and time; source and destination zones, addresses and ports; application name; security rule applied to the traffic flow; rule action (allow, deny, or drop); ingress and egress interface; number of bytes; and session end reason.
-   </td>
-   <td>Syslog
-   </td>
-   <td><a href="https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/view-and-manage-logs/log-types-and-severity-levels/traffic-logs">Traffic Logs</a>
-   </td>
+   <td>Traffic   </td>
+   <td>Entries for the start and end of each session, including date and time; source and destination zones, addresses and ports; application name; security rule applied to the traffic flow; rule action (allow, deny, or drop); ingress and egress interface; number of bytes; and session end reason.   </td>
+   <td>Syslog   </td>
+   <td><a href="https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/view-and-manage-logs/log-types-and-severity-levels/traffic-logs">Traffic Logs</a>   </td>
   </tr>
 </table>
 
@@ -116,11 +108,12 @@ Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09 10:19:15,001234567890002,TR
 
 
 
-### Sample Query
+### Sample queries
 
 This example query is from the **Allowed Network Activity by Direction** panel of the **Accepted and Rejected Traffic** dashboard.
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```sql
 _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC allow
@@ -172,23 +165,9 @@ Now that you have set up collection for PCI for Palo Alto Networks 10 app, you c
 
 This app supports PAN-OS v10.
 
-To install the app:
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+<AppInstall/>
 
 ## Viewing PCI for Palo Alto Networks 10 Dashboards
 
@@ -206,7 +185,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **Dashboard description:** View information about inbound and outbound traffic, including traffic to the cardholder data environment (CDE); details of inbound and outbound traffic; the top 10 hosts sending traffic; and the top 10 hosts receiving traffic.
 
-**Use case: **You can use this dashboard to monitor connections made from external IPs to internal IPs. You can identify top internal IPs receiving traffic from external IPs or sending traffic to external IPs. Similarly, this dashboard helps you identify the amount of traffic generated by different IPs crossing your organization's network boundary.
+**Use case:** You can use this dashboard to monitor connections made from external IPs to internal IPs. You can identify top internal IPs receiving traffic from external IPs or sending traffic to external IPs. Similarly, this dashboard helps you identify the amount of traffic generated by different IPs crossing your organization's network boundary.
 
 <img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-10-PCI-Req-01-Traffic-Direction-Monitoring.png')} alt="Palo Alto 10 dashboards" />
 

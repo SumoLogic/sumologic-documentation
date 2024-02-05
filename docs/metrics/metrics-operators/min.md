@@ -8,27 +8,27 @@ sidebar_label: min
 
 The min operator calculates the minimum value of the time series that match the query. If grouping is specified, it calculates the minimum for each group.
 
-## min syntax
+## Syntax
 
 ```sql
 min [by FIELD [, FIELD, ...]]
 ```
 
-## min examples
+## Examples
 
 ### Minimum metric value across all matching time series
 
-This query returns the minimum  `cpu_system` value for each time interval across all matching time series.
+This query returns the minimum `CPU_Sys` value for each time interval across all matching time series.
 
 ```sql
-dep=prod metric=cpu_system | min
+dep=prod metric=CPU_Sys | min
 ```
 
 ### Minimum metric value across by a tag value
 
-This query returns the minimum cpu_system value by node for each time interval across all matching time series.
+This query returns the minimum `CPU_Sys` value by node for each time interval across all matching time series.
 
 ```sql
-cluster=search metric=cpu_idle | min by node
+cluster=search metric=CPU_Sys | min by node
 ```  
  

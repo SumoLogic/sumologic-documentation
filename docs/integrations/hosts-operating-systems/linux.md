@@ -1,13 +1,13 @@
 ---
 id: linux
-title: Sumo Logic App for Linux
+title: Linux
 sidebar_label: Linux
 description: Allows you to view the events, logins, and security status of your Linux system.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="45"/>
 
 The Sumo app for Linux allows you to view information about events, logins, and the security status of your Linux system. The app consists of predefined searches and three dashboards that provide visibility into your environment for real-time or historical analysis.
 
@@ -15,14 +15,13 @@ The Sumo app for Linux allows you to view information about events, logins, and 
 You may also be interested in the [Sumo Logic App for Linux Cloud Security Monitoring and Analytics](docs/integrations/cloud-security-monitoring-analytics/linux.md).
 :::
 
-
-## Collecting Logs for Linux
+## Collecting logs for Linux
 
 This procedure describes how to collect logs from Linux into Sumo Logic.
 
 Sumo apps gather data from the log messages collected from sources by collectors. The Sumo app for Linux requires specific Linux log types, which are set up during the collector and source configuration process.
 
-### Required Logs for Ubuntu
+### Required logs for Ubuntu
 
 The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with Ubuntu:
 * auth.log
@@ -31,8 +30,7 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 * dpkg.log
 * kern.log
 
-
-### Required Logs for CentOS, Amazon Linux, and Red Hat
+### Required logs for CentOS, Amazon Linux, and Red Hat
 
 The following logs, located in your Linux machine's `/var/log` folder, are required for using the Sumo app for Linux with  CentOS, Amazon Linux, and most Red Hat forks:
 * audit/audit.log
@@ -40,17 +38,15 @@ The following logs, located in your Linux machine's `/var/log` folder, are requi
 * messages
 * yum.log
 
-
 ### Configure a Collector
 
 Configure an [Installed Collector](/docs/send-data/installed-collectors).
 
-
 ### Configure a Source
 
-To configure a source for collecting Linux logs, you create a Local File Source. Following the instructions on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source). When you define a Source Category for the source, we recommend something like: prod/os/linux. For more information about Source Categories, see see [Best Practices](/docs/send-data/best-practices).
+To configure a source for collecting Linux logs, you create a Local File Source. Following the instructions on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source). When you define a Source Category for the source, we recommend something like: `prod/os/linux`. For more information about Source Categories, see [Best Practices](/docs/send-data/best-practices).
 
-### Sample Log Messages
+### Sample log messages
 
 ```bash
 Dec 16 20:26:23 ubuntu sshd[15533]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=116.31.116.50  user=root
@@ -60,80 +56,46 @@ Dec 16 20:26:23 ubuntu sshd[15533]: pam_unix(sshd:auth): authentication failure;
 2016-12-16 19:23:13 remove tomcat7:all 7.0.68-1ubuntu0.1 <none>
 ```
 
-### Sample Queries
+### Sample queries
 
-See [Suggested Searches for Linux OS](#Suggested_Searches_for_Linux_OS).
-
-
-## Installing the Linux App
-
-Now that you have set up collection for Linux, install the Sumo Logic App for Linux to use the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
-
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+See [Suggested Searches for Linux OS](#suggested-searches-for-linux-os).
 
 
-## Viewing Linux Dashboards
+## Installing the Linux app
+
+import AppInstall from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall/>
+
+## Viewing Linux dashboards​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
-**Dashboard description:** See an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, a breakdown of successful and failed logins, sudo attempts, and the count of reporting hosts.
+The **Linux - Overview** dashboard provides an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, a breakdown of successful and failed logins, sudo attempts, and the count of reporting hosts.
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Overview.png')} alt="Linux dashboards" />
 
-
-#### Filtering the Overview dashboard
-
-Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of `command`, `dest_group`, `dest_hostname`, and `dest_user`.
-
-
 ### Event Sources
 
-**Dashboard description:** See information about system events, including their distribution across hosts, event counts per host by hour, and even counts by host and service.
+The **Linux - Event Sources** dashboard provides information about system events, including their distribution across hosts, event counts per host by hour, and even counts by host and service.
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/EventSources.png')} alt="Linux dashboards" />
 
-#### Filtering the Event Sources dashboard
-
-Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of `dest_hostname`, `host`, and `process_name`.
-
-
 ### Login Status
 
-**Dashboard description: **See information about logins to Linux hosts; including logins by hour; failed logins per host; the top 30 successful and failed logins; and the top 30 successful and failed remote logins.  
+The **Linux - Login Status** dashboard provides information about logins to Linux hosts; including logins by hour; failed logins per host; the top 30 successful and failed logins; and the top 30 successful and failed remote logins.  
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/LoginStatus.png')} alt="Linux dashboards" />
 
-#### Filtering the Login Status dashboard
-
-Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of `action`, `dest_hostname`, `dest_user`, and `outcome`.
-
-
 ### Security Status
 
-**Dashboard description: **See information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
+The **Linux - Security Status** dashboard provides information about security on Linux hosts, including su, sudo attempts, new and existing user assignments, package operations, and system start events.
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/SecurityStatus.png')} alt="Linux dashboards" />
-
-#### Filtering the Security Status dashboard
-
-Click the funnel icon in the upper left of the dashboard to display filtering options. You can filter the dashboard by any combination of `action`, `dest_hostname`, `dest_user`, and `outcome`.
-
 
 ## Suggested Searches for Linux OS
 
@@ -152,11 +114,9 @@ Meta field: `SourceCategory=OS/Linux/Security`
 
 These logs might have also been collected by the Collector (if selected during its installation).
 
-
 ### User Activity
 
 These searches are intended to help you understand how privileged and non-privileged users are authenticating to and using your Linux servers.
-
 
 #### Successful User Login events
 
@@ -180,8 +140,6 @@ _sourceCategory=OS/Linux* ("su:" or "sudo:" or "sshd:" or "sshd[" or "pam:") (("
 | count as eventCount by _timeslice, dest_host, dest_user, message, protocol, src_host, src_ip, src_user
 | sort by _timeslice, dest_host, dest_user, message, protocol, src_host, src_ip, src_user
 ```
-
-
 
 #### All Failed authentication attempts
 
@@ -213,8 +171,6 @@ _sourceCategory=*linux* ("authentication failure" or "FAILED SU" or "input_usera
 | if (src_host=" " or isEmpty(src_host), _sourceHost, src_host) as src_host | src_host as src_ip
 ```
 
-
-
 #### Root Activities
 
 Returns all sudo/su attempts, or activities by "root" user. Modify to include other privileged users that you want to track in your environment.
@@ -228,12 +184,9 @@ _​sourceCategory=OS/Linux/Security ("sudo" or "root" or "su")
 | where command !="" or dest_user in ("root") or src_user in ("root")
 ```
 
-
-
 #### Failed SU attempts
 
 Returns all failed SU attempts.
-
 
 ```bash
 _sourceCategory=*linux*("authentication failure" or "FAILED SU" or "input_userauth_request: invalid user" or "Invalid user" or "Failed publickey" or "Failed password") ("su:" or "su[")  
@@ -258,7 +211,6 @@ _sourceCategory=*linux*("authentication failure" or "FAILED SU" or "input_userau
 | where dest_user!="" and src_user!=""
 | count as attempts by dest_hostname, src_user, dest_user | sort - attempts
 ```
-
 
 ### Security Activity Monitoring
 
@@ -288,7 +240,6 @@ _​sourceCategory=OS/Linux/S* "new group"
 | parse "group=*, gid=*," as dest_group,dest_gid nodrop
 ```
 
-
 #### Existing users added to privileged groups
 
 Returns all messages that indicate a user being added to an administrative group. **Modify this query to include the IDs or names of the administrative groups in your environment.**
@@ -305,7 +256,6 @@ _sourceCategory=OS/Linux/S* "to group" or "default group changed" or "change use
 | where dest_gid in("10","0","4") or dest_group in ("root", "wheel", "adm")
 ```
 
-
 #### Failed Password Changes
 
 Returns all failed attempts to change a user password.
@@ -320,7 +270,6 @@ _sourceCategory=OS/Linux/* "Authentication failure"
 | where process_name="passwd"
 ```
 
-
 #### System Start
 
 Returns all incidents when the system starts (or restarts).
@@ -331,7 +280,6 @@ Suggested time range: -1 day
 _sourceCategory=OS/Linux/System "Initializing cgroup subsys cpuset"
 | parse regex "^(?<StartTime>\S*\s+\d+\s+\d+:\d+:\d+)\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[\d+\]|):\s+" nodrop
 ```
-
 
 #### Service Shutdown/Exiting
 

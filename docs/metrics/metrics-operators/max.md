@@ -13,22 +13,22 @@ The max operator calculates the maximum value of the time series that match the 
 max [by FIELD [, FIELD, ...]]
 ```
 
-## max examples
+## Examples
 
 ### Maximum metric value across all matching time series
 
-This query returns the maximum `cpu_system` value for each time interval
+This query returns the maximum `CPU_Sys` value for each time interval
 across all matching time series.
 
 ```sql
-dep=prod metric=cpu_system | max
+dep=prod metric=CPU_Sys | max
 ```
 
 ### Maximum metric value across by a tag value
 
-This query returns the maximum `cpu_system` value by node for each time interval across all matching time series.
+This query returns the maximum `CPU_Sys` value by node for each time interval across all matching time series.
 
 ```sql
-cluster=search metric=cpu_idle | max by node
+cluster=search metric=CPU_Sys | max by node
 ```  
  

@@ -1,12 +1,11 @@
 ---
 id: pagerduty-v3
-title: Sumo Logic App for PagerDuty V3
+title: PagerDuty V3
 sidebar_label: PagerDuty V3
 description: The Sumo Logic App for PagerDuty V3 collects incident messages from your PagerDuty account via a webhook, and displays incident data in pre-configured Dashboards that allow you to monitor and analyze the activity of your PagerDuty account and Services.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
 
 <img src={useBaseUrl('img/integrations/saas-cloud/pagerduty.png')} alt="Thumbnail icon" width="75"/>
 
@@ -24,9 +23,6 @@ This section provides instructions for configuring a Sumo Logic Hosted Collector
 * [Create a PagerDuty V3 Webhook](#Create-a-PagerDuty-V3-Webhook)
 
 
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, you can follow the in-product instructions in Sumo Logic to set up the app.
-
-
 ### Event Types
 
 The Sumo Logic App for PagerDuty V3 ingests PagerDuty incident Webhooks V3 messages, that are triggered by events that occur in your PagerDuty account and Services.
@@ -39,7 +35,7 @@ For more information on the incident messages supported in Webhooks V3, see the 
 For examples of incident.triggered, incident.acknowledged and incident.resolved log messages, see the [PagerDuty Webhooks V3 Examples](https://developer.pagerduty.com/docs/ZG9jOjQ1MTg4ODQ0-overview#webhook-payload) page.
 
 
-### Sample Query
+### Sample queries
 
 The following Top Altering Services query is shown on the PagerDuty V3 - Overview dashboard.
 
@@ -57,7 +53,7 @@ _sourceCategory = Labs/pagerduty_v3 "incident.triggered"
 
 ### Configure a Sumo Logic Collector and Source
 
-A** Hosted Collector **is not installed on a local system in your deployment. Instead, Sumo Logic hosts the Collector and its Sources in AWS. With a Hosted Collector, you can create Sources to collect data from various services. A single Hosted Collector can be configured with any number of  Sources.
+A **Hosted Collector** is not installed on a local system in your deployment. Instead, Sumo Logic hosts the Collector and its Sources in AWS. With a Hosted Collector, you can create Sources to collect data from various services. A single Hosted Collector can be configured with any number of  Sources.
 
 An **HTTP Source** is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 
@@ -83,7 +79,7 @@ To create a PagerDuty V3 Webhook, do the following:
 3. Click **New Webhook**.
 4. Configure your webhook:
     1. Enter the **HTTP Source Address URL** as the Webhook URL.
-    2. For** Scope Type**, select Service, Team or Account based on your preferences.
+    2. For **Scope Type**, select Service, Team or Account based on your preferences.
     3. For **Scope**, select the desired service or team.
     4. Enter a **Description**.
     5. For **Event Subscription**, select which events you want to send a webhook.
@@ -97,42 +93,23 @@ In the next section, install the Sumo Logic App for PagerDuty V3.
 
 ## Installing the PagerDuty V3 App
 
-This section provides instructions for installing the Sumo App for PagerDuty V3, as well as the descriptions of each of the app dashboards.
+This section provides instructions for installing the Sumo App for PagerDuty V3.
 
 Now that you have set up a log and metric collection, you can install the Sumo Logic App for PagerDuty V3, and use its pre-configured searches and dashboards.
 
-To install the app, do the following:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for PagerDuty and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-3.png "image_tooltip")
-Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`)
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 ## Viewing PagerDuty V3 Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Overview
 
-**PagerDuty V3 - Overview Dashboard **provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
+**PagerDuty V3 - Overview Dashboard** provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
 
 Use this dashboard to:
 

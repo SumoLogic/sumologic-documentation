@@ -1,6 +1,6 @@
 ---
 id: jmx
-title: Sumo Logic App for Java Management Extensions (JMX)
+title: Java Management Extensions (JMX)
 sidebar_label: JMX
 description: The Sumo Logic App for Java Management Extensions (JMX) allows you to analyze and gain insights about Java applications.
 ---
@@ -31,7 +31,7 @@ The following types of metrics are collected from JMX:
 * ClassLoader
 
 
-### Sample Query
+### Sample queries
 
 This query sample is from the **CPU Load Vs Current Threads** panel of **JMX - Overview** dashboard.
 
@@ -179,7 +179,7 @@ The following steps assume you are collecting JMX metrics from a Kubernetes envi
 1. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md)
 2. On your Pods, add the following annotations to configure Telegraf.
 
-Ensure that Prometheus passes all metrics to Sumo Logic. If you use the below annotations to configure the Telegraf, it should work well, otherwise, refer to this [doc](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/additional-prometheus-configuration.md#update-the-prometheus-overridesyaml-file-to-forward-the-metrics-to-fluentd).
+Ensure that Prometheus passes all metrics to Sumo Logic. If you use the below annotations to configure Telegraf, it should work correctly; otherwise, refer to [Collecting Application Metrics](/docs/send-data/kubernetes/collecting-metrics).
 
 ```sql
 annotations:
@@ -251,10 +251,10 @@ annotations:
           prometheus.io/port: "9273"
 ```
 
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Jolokia Input plugin. Please refer [to this doc ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)for more information on configuring the Jolokia input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf Jolokia Input plugin. Please refer [to this doc ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)for more information on configuring the Jolokia input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
+* `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"`. This tells Prometheus what ports to scrape on. This should not be changed.
 
 </TabItem>
 </Tabs>
@@ -265,40 +265,28 @@ annotations:
 
 <table>
   <tr>
-   <td>Metric Type
-   </td>
-   <td>Sample
-   </td>
+   <td>Metric Type   </td>
+   <td>Sample   </td>
   </tr>
   <tr>
-   <td>CPU
-   </td>
-   <td>java_lang_OperatingSystem_ProcessCpuLoad
-   </td>
+   <td>CPU   </td>
+   <td>java_lang_OperatingSystem_ProcessCpuLoad   </td>
   </tr>
   <tr>
-   <td>GC
-   </td>
-   <td>java_lang_GarbageCollector_LastGcInfo_duration
-   </td>
+   <td>GC </td>
+   <td>java_lang_GarbageCollector_LastGcInfo_duration   </td>
   </tr>
   <tr>
-   <td>Memory
-   </td>
-   <td>java_lang_Memory_NonHeapMemoryUsage_committed
-   </td>
+   <td>Memory   </td>
+   <td>java_lang_Memory_NonHeapMemoryUsage_committed </td>
   </tr>
   <tr>
-   <td>Threads
-   </td>
-   <td>java_lang_Threading_ThreadCount
-   </td>
+   <td>Threads   </td>
+   <td>java_lang_Threading_ThreadCount   </td>
   </tr>
   <tr>
-   <td>ClassLoader
-   </td>
-   <td>java_lang_ClassLoading_LoadedClassCount
-   </td>
+   <td>ClassLoader   </td>
+   <td>java_lang_ClassLoading_LoadedClassCount   </td>
   </tr>
 </table>
 
@@ -307,31 +295,14 @@ annotations:
 
 This section has instructions for installing the Sumo App for JMX.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 ## Viewing JMX Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Overview
@@ -397,7 +368,7 @@ Use this dashboard to:
 
 ### Memory Pool
 
-The **JMX - Memory Pool **dashboard provides key information about the memory pool usage, peak usage, collection usage, garbage collection across various memory pools of your Java virtual machine.
+The **JMX - Memory Pool** dashboard provides key information about the memory pool usage, peak usage, collection usage, garbage collection across various memory pools of your Java virtual machine.
 
 Use this dashboard to:
 * Gain insights into memory usage across different memory pools.

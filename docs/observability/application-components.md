@@ -11,8 +11,9 @@ Pre-configured dashboards available for application components solve many common
 * Reviewing the overall health of specific components to quickly narrow down the scope of troubleshooting.
 * Minimizing the troubleshooting time by providing all relevant information in the right context.
 
-:::caution Limitations
+:::warning Limitations
 This solution is currently supported for the following apps only:
+* [Couchbase](/docs/integrations/databases/couchbase)
 * [Cassandra](/docs/integrations/databases/cassandra)
 * [Elasticsearch](/docs/integrations/databases/elasticsearch)
 * [MongoDB](/docs/integrations/databases/mongodb)
@@ -67,7 +68,7 @@ If you want to deploy in the Admin Recommended folder, you may need [Content Adm
  ```bash
  git clone https://github.com/SumoLogic/sumologic-solution-templates
  ```
-1. Initialize the Terraform working directory by navigating to the directory [sumologic-solution-templates/app-components-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) and then running:
+1. Initialize the Terraform working directory by navigating to the directory [sumologic-solution-templates/app-components](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/application-components) and then running:
   ```bash
   terraform init
   ```
@@ -149,7 +150,7 @@ email_notifications_critical = [
 ---
 **Parameters**: `connection_notifications_critical`, `connection_notifications_warning`, `connection_notifications_missingdata` <br/>
 **Required**: No <br/>
-**Description**: To configure notification via pagerduty or webhook set these parameters for critical, warning and missing data monitors respectively. See this <a href="https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections">document</a> for creating payloads with other connection types.
+**Description**: To configure notification via pagerduty or webhook set these parameters for critical, warning and missing data monitors respectively. See this <a href="/docs/alerts/webhook-connections/set-up-webhook-connections">document</a> for creating payloads with other connection types.
 ```json
 connection_notifications_critical = [
     {
@@ -207,6 +208,7 @@ At the end of the console output, you should see two links, one for Apps Folder 
 ### Configure Metrics and Logs Collection
 
 Refer to the documentation for the app you're using. App Components Solution currently supports:
+* [Couchbase](/docs/integrations/databases/couchbase)
 * [Cassandra](/docs/integrations/databases/cassandra)
 * [Elasticsearch](/docs/integrations/databases/elasticsearch)
 * [MongoDB](/docs/integrations/databases/mongodb)

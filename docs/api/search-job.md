@@ -5,15 +5,20 @@ sidebar_label: Search Job
 description: The Search Job API provides access to resources and log data from third-party scripts and applications.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ApiEndpoints from '../reuse/api-endpoints.md';
+
+<img src={useBaseUrl('img/icons/search.png')} alt="Thumbnail icon" width="55"/>
+
 The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication.
 
-:::note
-Search Job APIs are not yet built with OpenAPI specifications and therefore not documented with the rest of the APIs. Instead, refer to the instructions below for details.
+:::warning
+Search Job APIs are not yet built with OpenAPI specifications and therefore not included in our [Swagger docs](https://api.sumologic.com/docs). Instead, refer to the below documentation.
 :::
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
+import ApiIntro from '../reuse/api-intro.md';
 
-Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
+<ApiIntro/>
 
 ## Before You Begin
 
@@ -21,22 +26,16 @@ The Search Job API is available to Enterprise accounts.
 
 <table>
   <tr>
-   <td>Account Type
-   </td>
-   <td>Account Level
-   </td>
+   <td>Account Type</td>
+   <td>Account Level </td>
   </tr>
   <tr>
-   <td>Cloud Flex
-   </td>
-   <td>Enterprise
-   </td>
+   <td>Cloud Flex </td>
+   <td>Enterprise </td>
   </tr>
   <tr>
-   <td>Cloud Flex Credits
-   </td>
-   <td>Trial, Enterprise Operations, Enterprise Security, Enterprise Suite
-   </td>
+   <td>Cloud Flex Credits</td>
+   <td>Trial, Enterprise Operations, Enterprise Security, Enterprise Suite</td>
   </tr>
 </table>
 
@@ -47,7 +46,7 @@ Sumo Logic has deployments that are assigned depending on the geographic locatio
 
 See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
 
-An HTTP 301 Moved error suggests that the wrong endpoint was specified.
+An `HTTP 301 Moved error` suggests that the wrong endpoint was specified.
 
 ## Session Timeout
 
@@ -70,28 +69,20 @@ You can start requesting results asynchronously while the job is running and pag
 
 <table>
   <tr>
-   <td>Data Tier
-   </td>
-   <td>Non-aggregate Search (messages)
-   </td>
+   <td>Data Tier</td>
+   <td>Non-aggregate Search (messages)</td>
   </tr>
   <tr>
-   <td>Continuous
-   </td>
-   <td>Can return up to 10 million records per search.
-   </td>
+   <td>Continuous</td>
+   <td>Can return up to 10 million records per search.</td>
   </tr>
   <tr>
-   <td>Frequent
-   </td>
-   <td>Can return up to 10 million records per search.
-   </td>
+   <td>Frequent</td>
+   <td>Can return up to 10 million records per search.</td>
   </tr>
   <tr>
-   <td>Infrequent
-   </td>
-   <td>Can return up to 10 million records per search.
-   </td>
+   <td>Infrequent</td>
+   <td>Can return up to 10 million records per search.</td>
   </tr>
 </table>
 
@@ -101,23 +92,19 @@ If you need more results you'll need to break up your search into several search
 
 ## Rate limit throttling  
 
-* A rate limit of four API requests per second (240 requests per minute) applies to all API calls from a user.
-* A rate limit of 10 concurrent requests to any API endpoint applies to an access key.
+import RateLimit from '../reuse/api-rate-limit.md';
 
-    If a rate is exceeded, a rate limit exceeded 429 status code is returned.
+<RateLimit/>
 
-* A limit of 200 active concurrent search jobs applies to your organization.
+A limit of 200 active concurrent search jobs applies to your organization.
 
-When searching the [Frequent Tier](/docs/manage/partitions-data-tiers/data-tiers) a rate limit of 20 concurrent search jobs applies to your organization.
+When searching the [Frequent Tier](/docs/manage/partitions-data-tiers/data-tiers), a rate limit of 20 concurrent search jobs applies to your organization.
 
 Once you reach the limit of 200 active searches, attempting an additional search will result in a status code of _429 Too Many Requests_ telling you that you are over the allowed search job limit.
 
 This limit applies only to Search Job API searches, and does not take into account searches run from the Sumo UI, scheduled searches, or dashboard panel searches that are running at the same time. If the search job is not kept alive by API requests every 20-30 seconds, it is canceled.
 
-
 You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Deleting searches manually will keep the number of active searches low, reducing the likelihood of hitting the Search Job API throttling limit. See [deleting a search job](#deleting-a-search-job) for details.
-
-
 
 ## Process flow
 
@@ -125,7 +112,7 @@ The following figure shows the process flow for search jobs.
 
 1. **Request.** You request a search job, giving the query and time range.
 2. **Response.** Sumo responds with a job ID. If there’s a problem with the request, an error code is provided (see the list of error codes following the figure).
-3. **Request. **Use the job ID to request search status. This needs to be done at least every 20-30 seconds so the search session is not canceled due to inactivity.
+3. **Request.** Use the job ID to request search status. This needs to be done at least every 20-30 seconds so the search session is not canceled due to inactivity.
 4. **Response.** Sumo responds with job status. An error code (404) is returned if the request could not be completed.
 The status includes the current state of the search job (gathering results, done executing, etc.). It also includes the message and record counts based on how many results have already been found while executing the search. For non-aggregation queries, only the number of messages is reported. For aggregation queries, the number of records produced is also reported. The search job status provides access to an implicitly generated histogram of the distribution of found messages over the time range specified for the search job. During and after execution, the API can be used to request available messages and records in a paging fashion.
 5. **Request.** You request results. It’s not necessary for the search to be complete for the user to request results; the process works asynchronously. You can repeat the request as often as needed to keep seeing updated results, keeping in mind the rate limits. The Search Job API can return up to 10 million records per search query.
@@ -137,389 +124,258 @@ The status includes the current state of the search job (gathering results, done
 
 **Generic errors that apply to all APIs**
 
-
 <table>
   <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Error</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Code</strong> </td>
+   <td><strong>Error</strong> </td>
+   <td><strong>Description</strong> </td>
   </tr>
   <tr>
-   <td>301
-   </td>
-   <td>moved
-   </td>
-   <td>The requested resource SHOULD be accessed through returned URI in Location Header.
-   </td>
+   <td>301</td>
+   <td>moved</td>
+   <td>The requested resource SHOULD be accessed through returned URI in Location Header.</td>
   </tr>
   <tr>
-   <td>401
-   </td>
-   <td>unauthorized
-   </td>
-   <td>Credential could not be verified.
-   </td>
+   <td>401</td>
+   <td>unauthorized</td>
+   <td>Credential could not be verified.</td>
   </tr>
   <tr>
-   <td>403
-   </td>
-   <td>forbidden
-   </td>
-   <td>This operation is not allowed for your account type.
-   </td>
+   <td>403</td>
+   <td>forbidden</td>
+   <td>This operation is not allowed for your account type.</td>
   </tr>
   <tr>
-   <td>404
-   </td>
-   <td>notfound
-   </td>
-   <td>Requested resource could not be found.
-   </td>
+   <td>404</td>
+   <td>notfound</td>
+   <td>Requested resource could not be found.</td>
   </tr>
   <tr>
-   <td>405
-   </td>
-   <td>method.unsupported
-   </td>
-   <td>Unsupported method for URL.
-   </td>
+   <td>405</td>
+   <td>method.unsupported</td>
+   <td>Unsupported method for URL.</td>
   </tr>
   <tr>
-   <td>415
-   </td>
-   <td>contenttype.invalid
-   </td>
-   <td>Invalid content type.
-   </td>
+   <td>415</td>
+   <td>contenttype.invalid</td>
+   <td>Invalid content type.</td>
   </tr>
   <tr>
-   <td>429
-   </td>
-   <td>rate.limit.exceeded
-   </td>
-   <td>The API request rate is higher than 4 request per second or your organization has exceeded the 200 active concurrent search job limit.
-   </td>
+   <td>429</td>
+   <td>rate.limit.exceeded</td>
+   <td>The API request rate is higher than 4 request per second or your organization has exceeded the 200 active concurrent search job limit.</td>
   </tr>
   <tr>
-   <td>500
-   </td>
-   <td>internal.error
-   </td>
-   <td>Internal server error.
-   </td>
+   <td>500</td>
+   <td>internal.error</td>
+   <td>Internal server error.</td>
   </tr>
   <tr>
-   <td>503
-   </td>
-   <td>service.unavailable
-   </td>
-   <td>Service is currently unavailable.
-   </td>
+   <td>503</td>
+   <td>service.unavailable</td>
+   <td>Service is currently unavailable.</td>
   </tr>
 </table>
 
 
-**Errors when creating the search query (#2 in the process flow)**
-
+**Errors when creating the search query (#2 in the [process flow](#process-flow))**
 
 <table>
   <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Error</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Code</strong></td>
+   <td><strong>Error</strong> </td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>generic
-   </td>
-   <td>Generic error.
-   </td>
+   <td>400</td>
+   <td>generic</td>
+   <td>Generic error.</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>invalid.timestamp.to
-   </td>
-   <td>The 'to' field contains an invalid time.
-   </td>
+   <td>400</td>
+   <td>invalid.timestamp.to</td>
+   <td>The 'to' field contains an invalid time.</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>invalid.timestamp.from
-   </td>
-   <td>The 'from' field contains an invalid time.
-   </td>
+   <td>400 </td>
+   <td>invalid.timestamp.from</td>
+   <td>The 'from' field contains an invalid time. </td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>to.smaller.than.from
-   </td>
-   <td>The 'from' time cannot be larger than the 'to' time.
-   </td>
+   <td>400</td>
+   <td>to.smaller.than.from</td>
+   <td>The 'from' time cannot be larger than the 'to' time.</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>unknown.timezone
-   </td>
-   <td>The 'timezone' value is not a known time zone. See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes.
-   </td>
+   <td>400</td>
+   <td>unknown.timezone</td>
+   <td>The 'timezone' value is not a known time zone. See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes.</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>empty.timezone
-   </td>
-   <td>The 'timezone' cannot be blank.
-   </td>
+   <td>400</td>
+   <td>empty.timezone</td>
+   <td>The 'timezone' cannot be blank.</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>no.query
-   </td>
-   <td>No 'query' parameter was provided.
-   </td>
+   <td>400</td>
+   <td>no.query</td>
+   <td>No 'query' parameter was provided.</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>unknown.time.type
-   </td>
-   <td>Time type is not correct.
-   </td>
+   <td>400</td>
+   <td>unknown.time.type</td>
+   <td>Time type is not correct.</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>parse.error
-   </td>
-   <td>Unable to parse query.
-   </td>
+   <td>400</td>
+   <td>parse.error</td>
+   <td>Unable to parse query.</td>
   </tr>
 </table>
 
 
-**Error when requesting status (#3 in the process flow)**
+**Error when requesting status (#3 in the [process flow](#process-flow))**
 
 
 <table>
   <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Error</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Code</strong></td>
+   <td><strong>Error</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>404
-   </td>
-   <td>"jobid.invalid"
-   </td>
-   <td>"Job ID is invalid."
-   </td>
+   <td>404</td>
+   <td>"jobid.invalid" </td>
+   <td>"Job ID is invalid."</td>
   </tr>
 </table>
 
-
-**Errors when paging through the result set (#5 in the process flow)**
-
+**Errors when paging through the result set (#5 in the [process flow](#process-flow))**
 
 <table>
   <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Error</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Code</strong> </td>
+   <td><strong>Error</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>"jobid.invalid"
-   </td>
-   <td>"Job ID is invalid."
-   </td>
+   <td>400</td>
+   <td>"jobid.invalid"</td>
+   <td>"Job ID is invalid."</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>"offset.missing"
-   </td>
-   <td>"Offset is missing."
-   </td>
+   <td>400</td>
+   <td>"offset.missing"</td>
+   <td>"Offset is missing."</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>"offset.negative"
-   </td>
-   <td>"Offset cannot be negative."
-   </td>
+   <td>400</td>
+   <td>"offset.negative"</td>
+   <td>"Offset cannot be negative."</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>"limit.missing"
-   </td>
-   <td>"Limit is missing."
-   </td>
+   <td>400</td>
+   <td>"limit.missing"</td>
+   <td>"Limit is missing."</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>"limit.zero"
-   </td>
-   <td>"Limit cannot be 0."
-   </td>
+   <td>400</td>
+   <td>"limit.zero"</td>
+   <td>"Limit cannot be 0."</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>"limit.negative"
-   </td>
-   <td>"Limit cannot be negative."
-   </td>
+   <td>400</td>
+   <td>"limit.negative"</td>
+   <td>"Limit cannot be negative."</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>"no.records.not.an.aggregation.query"
-   </td>
-   <td>"No records; query is not an aggregation"
-   </td>
+   <td>400</td>
+   <td>"no.records.not.an.aggregation.query"</td>
+   <td>"No records; query is not an aggregation"</td>
   </tr>
 </table>
 
 
 
-## Search Job Methods
+## POST Methods
 
-### Creating a search job
+### Create a search job
 
-To create a search job (step 1 in the process flow), send a JSON request to the search job endpoint. JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
+To create a search job (step 1 in the [process flow](#process-flow)), send a JSON request to the search job endpoint. JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
 
-**Method**: `POST`
-
+**Method**: `POST` <br/>
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs`
 
+<details>
+<summary>Which API endpoint should I use?</summary>
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+<ApiEndpoints/>
 
+</details>
 
 #### Headers
 
 <table>
   <tr>
-   <td><strong>Header</strong>
-   </td>
-   <td><strong>Value</strong>
-   </td>
+   <td><strong>Header</strong></td>
+   <td><strong>Value</strong></td>
   </tr>
   <tr>
-   <td>Content-Type
-   </td>
-   <td>application/json
-   </td>
+   <td>Content-Type</td>
+   <td>application/json</td>
   </tr>
   <tr>
-   <td>Accept
-   </td>
-   <td>application/json
-   </td>
+   <td>Accept</td>
+   <td>application/json</td>
   </tr>
 </table>
 
 
-
-#### Query parameters
+#### Request parameters
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>query
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>The actual search expression. Make sure your query is valid JSON format following <a href="https://tools.ietf.org/html/rfc8259">RFC 8259</a>, you may need to escape certain characters.
-   </td>
+   <td>query</td>
+   <td>String </td>
+   <td>Yes</td>
+   <td>The actual search expression. Make sure your query is valid JSON format following <a href="https://tools.ietf.org/html/rfc8259">RFC 8259</a>, you may need to escape certain characters.</td>
   </tr>
   <tr>
-   <td>from
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>The <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601</a> date and time of the time range to start the search.
-<p>For example, to specify July 16, 2017, use the form <code>YYYY-MM-DDTHH:mm:ss</code>, or <code>2017-07-16T00:00:00</code>.</p>
-<p>Can also be milliseconds since epoch.</p>
-   </td>
+   <td>from </td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>The <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601</a> date and time of the time range to start the search. <p>For example, to specify July 16, 2017, use the form <code>YYYY-MM-DDTHH:mm:ss</code>, or <code>2017-07-16T00:00:00</code>.</p>
+<p>Can also be milliseconds since epoch.</p></td>
   </tr>
   <tr>
-   <td>to
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>The <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601</a> date and time of the time range to end the search.
-<p>For example, to specify July 26, 2017, use the form <code>YYYY-MM-DDTHH:mm:ss</code>, or <code>2017-07-26T00:00:00</code>.</p>
-<p>Can also be milliseconds since epoch.</p>
-   </td>
+   <td>to</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>The <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601</a> date and time of the time range to end the search.<p>For example, to specify July 26, 2017, use the form <code>YYYY-MM-DDTHH:mm:ss</code>, or <code>2017-07-26T00:00:00</code>.</p><p>Can also be milliseconds since epoch.</p></td>
   </tr>
   <tr>
-   <td>timeZone
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>The time zone if from/to is not in milliseconds.  See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes. <br/><br/>
-<p><strong>Note</strong> Alternatively, you can use the parameter timezone instead of timeZone.</p>
-   </td>
+   <td>timeZone </td>
+   <td>String </td>
+   <td>Yes</td>
+   <td>The time zone if from/to is not in milliseconds.  See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes. <br/><br/><p><strong>Note</strong> Alternatively, you can use the parameter timezone instead of timeZone.</p></td>
   </tr>
   <tr>
-   <td>byReceiptTime
-   </td>
-   <td>Boolean
-   </td>
-   <td>No
-   </td>
-   <td>Define as <code>true</code> to run the search using<a href="/docs/search/get-started-with-search/build-search/use-receipt-time"> receipt time</a>. By default, searches do not run by receipt time.
-   </td>
+   <td>byReceiptTime</td>
+   <td>Boolean</td>
+   <td>No </td>
+   <td>Define as <code>true</code> to run the search using<a href="/docs/search/get-started-with-search/build-search/use-receipt-time"> receipt time</a>. By default, searches do not run by receipt time. </td>
   </tr>
   <tr>
-   <td>autoParsingMode
-   </td>
-   <td>String
-   </td>
-   <td>No
-   </td>
-   <td>This enables <a href="/docs/search/get-started-with-search/build-search/dynamic-parsing">dynamic parsing</a>. Values are: <br/><br/><code>AutoParse</code> - Sumo Logic will perform field extraction on JSON log messages when you run a search.<br/><br/><code>Manual</code> - (Default value) Sumo Logic will not autoparse JSON logs at search time. <br/><br/><strong>Note</strong> Previously, the supported values for this parameter were <code>performance</code>, <code>intelligent</code>, and <code>verbose</code>. These values still function, but are deprecated. Sumo Logic recommends the use of the new supported values: <code>AutoParse</code> and <code>Manual</code>.
-   </td>
+   <td>autoParsingMode </td>
+   <td>String </td>
+   <td>No</td>
+   <td>This enables <a href="/docs/search/get-started-with-search/build-search/dynamic-parsing">dynamic parsing</a>. Values are: <br/><br/><code>AutoParse</code> - Sumo Logic will perform field extraction on JSON log messages when you run a search.<br/><br/><code>Manual</code> - (Default value) Sumo Logic will not autoparse JSON logs at search time. <br/><br/><strong>Note</strong> Previously, the supported values for this parameter were <code>performance</code>, <code>intelligent</code>, and <code>verbose</code>. These values still function, but are deprecated. Sumo Logic recommends the use of the new supported values: <code>AutoParse</code> and <code>Manual</code>. </td>
   </tr>
 </table>
 
@@ -529,36 +385,24 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
 
 <table>
   <tr>
-   <td><strong>Code</strong>
-   </td>
-   <td><strong>Text</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Code</strong> </td>
+   <td><strong>Text</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>202
-   </td>
-   <td>Accepted
-   </td>
-   <td>The search job has been successfully created.
-   </td>
+   <td>202</td>
+   <td>Accepted</td>
+   <td>The search job has been successfully created.</td>
   </tr>
   <tr>
-   <td>400
-   </td>
-   <td>Bad Request
-   </td>
-   <td>Generic request error by the client.
-   </td>
+   <td>400</td>
+   <td>Bad Request</td>
+   <td>Generic request error by the client. </td>
   </tr>
   <tr>
-   <td>415
-   </td>
-   <td>Unsupported Media Type
-   </td>
-   <td>Content-Type wasn't set to application/json.
-   </td>
+   <td>415</td>
+   <td>Unsupported Media Type</td>
+   <td>Content-Type wasn't set to application/json.</td>
   </tr>
 </table>
 
@@ -568,16 +412,12 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
 
 <table>
   <tr>
-   <td>Header
-   </td>
-   <td>Value
-   </td>
+   <td>Header</td>
+   <td>Value</td>
   </tr>
   <tr>
-   <td>Location
-   </td>
-   <td> <code>https://api.sumologic.com/api/v1/search/jobs/&#60;SEARCH_JOB_ID&#62;</code>
-   </td>
+   <td>Location</td>
+   <td> <code>https://api.sumologic.com/api/v1/search/jobs/&#60;SEARCH_JOB_ID&#62;</code></td>
   </tr>
 </table>
 
@@ -590,15 +430,13 @@ A JSON document containing the ID of the newly created search job. The ID is a s
 Example error response:
 
 ```json
-    {
-      "status" : 400,
-      "id" : "IUUQI-DGH5I-TJ045",
-      "code" : "searchjob.invalid.timestamp.from",
-      "message" : "The 'from' field contains an invalid time."
-    }
+{
+  "status" : 400,
+  "id" : "IUUQI-DGH5I-TJ045",
+  "code" : "searchjob.invalid.timestamp.from",
+  "message" : "The 'from' field contains an invalid time."
+}
 ```
-
-
 
 #### Sample session
 
@@ -610,7 +448,12 @@ curl -b cookies.txt -c cookies.txt -H 'Content-type: application/json'
 --user <ACCESSID>:<ACCESSKEY> https://api.sumologic.com/api/v1/search/jobs
 ```
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+<details>
+<summary>Which API endpoint should I use?</summary>
+
+<ApiEndpoints/>
+
+</details>
 
 The **createSearchJob.json** file looks like this:
 
@@ -627,69 +470,64 @@ The **createSearchJob.json** file looks like this:
 
 The response from Sumo Logic returns the Search Job ID as the “Location” header in the format: `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>`.
 
-### Getting the current Search Job status
+
+
+
+## GET Methods
+
+### Get the current Search Job status
 
 Use the search job ID to obtain the current status of a search job (step 4 in the process flow).
 
-**Method:** `GET`
+**Method:** `GET` <br/>
+**Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>`
 
-**Example endpoint:**
+<details>
+<summary>Which API endpoint should I use?</summary>
 
-```
-https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>
-```
+<ApiEndpoints/>
 
-
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+</details>
 
 
-#### Query parameters
+#### Request parameters
 
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>searchJobId
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>The ID of the search job.
-   </td>
+   <td>searchJobId</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>The ID of the search job.</td>
   </tr>
 </table>
 
 
 
 #### Result
-54
-
 
 The result is a JSON document containing the search job state, the number of messages found so far, the number of records produced so far, any pending warnings and errors, and any histogram buckets so far.
 
 
 #### Sample session
 
-
 ```bash
 curl -v --trace-ascii - -b cookies.txt -c cookies.txt -H 'Accept: application/json'
 --user <ACCESSID>:<ACCESSKEY> https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80
 ```
 
+<details>
+<summary>Which API endpoint should I use?</summary>
 
+<ApiEndpoints/>
 
-56
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+</details>
 
 This is the formatted result document:
 
@@ -723,50 +561,17 @@ This is the formatted result document:
 }
 ```
 
-
 Notice that the state of the sample search job is DONE GATHERING RESULTS. The following table includes possible states.
 
-
-<table>
-  <tr>
-   <td><strong>State</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>NOT STARTED
-   </td>
-   <td>Search job has not been started yet.
-   </td>
-  </tr>
-  <tr>
-   <td>GATHERING RESULTS
-   </td>
-   <td>Search job is still gathering more results, however results might already be available.
-   </td>
-  </tr>
-  <tr>
-   <td>FORCE PAUSED
-   </td>
-   <td>Query that is paused by the system. It is true only for non-aggregate queries that are paused at the limit of 100k. This limit is dynamic and may vary from customer to customer.
-   </td>
-  </tr>
-  <tr>
-   <td>DONE GATHERING RESULTS
-   </td>
-   <td>Search job is done gathering results; the entire specified time range has been covered.
-   </td>
-  </tr>
-  <tr>
-   <td>CANCELLED
-   </td>
-   <td>The search job has been canceled. Note the spelling has two L letters.
-   </td>
-  </tr>
-</table>
-
-
+| State | Description |
+| :-- | :-- |
+| NOT STARTED	| Search job has not been started yet.|
+| GATHERING RESULTS	| Search job is still gathering more results, however results might already be available.|
+| GATHERING RESULTS FROM SUBQUERIES | Search job is gathering results from the subqueries, before executing the main query.|
+| FORCE PAUSED	| Query that is paused by the system. It is true only for non-aggregate queries that are paused at the limit of 100k. This limit is dynamic and may vary from customer to customer.|
+| DONE GATHERING RESULTS	| Search job is done gathering results; the entire specified time range has been covered.|
+| DONE GATHERING HISTOGRAM | Search job is done gathering results needed to build a histogram; the entire specified time range needed to build the histogram has been covered. |
+| CANCELLED	| The search job has been canceled. Note the spelling has two L letters.|
 
 #### More about results
 
@@ -782,8 +587,6 @@ The **histogramBuckets** value returns a list of histogram buckets. A histogram 
 
 The histogram buckets correspond to the histogram display in the Sumo Logic interactive analytics API. The histogram buckets are not cumulative. Because the status API will return only the new buckets discovered since the last status call, the buckets need to be remembered by the client, if they are to be used. A search job in the Sumo Logic backend will always execute a query by finding and processing matching messages starting at the end of the specified time range, and moving to the beginning. During this process, histogram buckets are discovered and returned.
 
-
-58
 Fields are not returned in the specified order and are all lowercase.
 
 
@@ -791,55 +594,43 @@ Fields are not returned in the specified order and are all lowercase.
 
 The search job status informs the user about the number of found messages. The messages can be requested using a paging API call (step 6 in the process flow). Messages are always ordered by the latest `_messageTime` value.
 
-**Method:** `GET`
-
+**Method:** `GET`  <br/>
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>/messages?offset=<OFFSET>&limit=<LIMIT>`
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+<details>
 
+<summary>Which API endpoint should I use?</summary>
 
-#### Query parameters
+<ApiEndpoints/>
+
+</details>
+
+#### Request parameters
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>searchJobId
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>The ID of the search job.
-   </td>
+   <td>searchJobId</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>The ID of the search job.</td>
   </tr>
   <tr>
-   <td>offset
-   </td>
-   <td>Int
-   </td>
-   <td>Yes
-   </td>
-   <td>Return message starting at this offset.
-   </td>
+   <td>offset </td>
+   <td>Int</td>
+   <td>Yes</td>
+   <td>Return message starting at this offset.</td>
   </tr>
   <tr>
-   <td>limit
-   </td>
-   <td>Int
-   </td>
-   <td>Yes
-   </td>
-   <td>The number of messages starting at offset to return. The maximum value for limit is 10,000 messages or 100 MB in total message size, which means the query may return less than 10,000 messages if you exceed the size limit.
-   </td>
+   <td>limit</td>
+   <td>Int</td>
+   <td>Yes</td>
+   <td>The number of messages starting at offset to return. The maximum value for limit is 10,000 messages or 100 MB in total message size, which means the query may return less than 10,000 messages if you exceed the size limit. </td>
   </tr>
 </table>
 
@@ -852,10 +643,15 @@ curl -b cookies.txt -c cookies.txt -H 'Accept: application/json'
 --user <ACCESSID>:<ACCESSKEY> 'https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80/messages?offset=0&limit=10'
 ```
 
+<details>
+<summary>Which API endpoint should I use?</summary>
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+<ApiEndpoints/>
 
-<details><summary>This is the formatted result document (click to expand)</summary>
+</details>
+
+<details>
+<summary>This is the formatted result document (click to expand)</summary>
 
 ```json
 {
@@ -871,17 +667,17 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
          "keyField":false
       },
       {
-         "name":"_sourcename",
+         "name":"_sourceName",
          "fieldType":"string",
          "keyField":false
       },
       {
-         "name":"_sourcehost",
+         "name":"_sourceHost",
          "fieldType":"string",
          "keyField":false
       },
       {
-         "name":"_sourcecategory",
+         "name":"_sourceCategory",
          "fieldType":"string",
          "keyField":false
       },
@@ -921,7 +717,7 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
          "keyField":false
       },
       {
-         "name":"_collectorid",
+         "name":"_collectorId",
          "fieldType":"long",
          "keyField":false
       },
@@ -946,12 +742,12 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
             "_blockid":"-9223372036854775669",
             "_messageid":"-9223372036854773763",
             "_messagetime":"1359407350333",
-            "_collectorid":"1579",
-            "_sourcename":"/Users/christian/Development/sumo/ops/assemblies/latest/service-20.1-SNAPSHOT/logs/service.log",
-            "_sourcehost":"Chiapet.local",
+            "_collectorId":"1579",
+            "_sourceName":"/Users/christian/Development/sumo/ops/assemblies/latest/service-20.1-SNAPSHOT/logs/service.log",
+            "_sourceHost":"Chiapet.local",
             "_raw":"2013-01-28 13:09:10,333 -0800 INFO  [module=SERVICE] [logger=util.scala.zk.discovery.AWSServiceRegistry] [thread=pool-1-thread-1] FINISHED findRunningInstances(ListBuffer((Service: name: elasticache-1, defaultProps: Map()), (Service: name: userAndOrgCache, defaultProps: Map()), (Service: name: rds_cloudcollector, defaultProps: Map()))) returning Map((Service: name: elasticache-1, defaultProps: Map()) -> [], (Service: name: userAndOrgCache, defaultProps: Map()) -> [], (Service: name: rds_cloudcollector, defaultProps: Map()) -> []) after 1515 ms",
             "_size":"549",
-            "_sourcecategory":"service",
+            "_sourceCategory":"service",
             "_sourceid":"1640",
             "_messagecount":"2044"
          }
@@ -966,12 +762,12 @@ Sumo Logic endpoints like `api.sumologic.com` are different in deployments outsi
             "_blockid":"-9223372036854775674",
             "_messageid":"-9223372036854773772",
             "_messagetime":"1359407049529",
-            "_collectorid":"1579",
-            "_sourcename":"/Users/christian/Development/sumo/ops/assemblies/latest/service-20.1-SNAPSHOT/logs/service.log",
-            "_sourcehost":"Chiapet.local",
+            "_collectorId":"1579",
+            "_sourceName":"/Users/christian/Development/sumo/ops/assemblies/latest/service-20.1-SNAPSHOT/logs/service.log",
+            "_sourceHost":"Chiapet.local",
             "_raw":"2013-01-28 13:04:09,529 -0800 INFO  [module=SERVICE] [logger=com.netflix.config.sources.DynamoDbConfigurationSource] [thread=pollingConfigurationSource] Successfully polled Dynamo for a new configuration based on table:raychaser-chiapetProperties",
             "_size":"246",
-            "_sourcecategory":"service",
+            "_sourceCategory":"service",
             "_sourceid":"1640",
             "_messagecount":"2035"
          }
@@ -995,64 +791,50 @@ For example, the field `_raw` contains the raw collected log message.
 
 `_receipttime` is the number of milliseconds since the epoch of the timestamp of arrival of the message in the Sumo Logic system.
 
-The metadata fields `_sourcehost`, `_sourcename`, and `_sourceCategory`, which are also featured in Sumo Logic, are available here.
+The metadata fields `_sourceHost`, `_sourceName`, and `_sourceCategory`, which are also featured in Sumo Logic, are available here.
 
 
-### Paging through the records found by a Search Job
+### Page through the records found by a Search Job
 
 The search job status informs the user as to the number of produced records, if the query performs an aggregation. Those records can be requested using a paging API call (step 6 in the process flow), just as the message can be requested.
 
-**Method: `GET`**
-
+**Method: `GET`** <br/>
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>/records?offset=<OFFSET>&limit=<LIMIT>`
 
+<details>
+<summary>Which API endpoint should I use?</summary>
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+<ApiEndpoints/>
 
+</details>
 
-#### Query parameters
+#### Request parameters
 
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required</strong></td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>searchJobId
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>The ID of the search job.
-   </td>
+   <td>searchJobId</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>The ID of the search job.</td>
   </tr>
   <tr>
-   <td>offset
-   </td>
-   <td>Int
-   </td>
-   <td>Yes
-   </td>
-   <td>Return records starting at this offset.
-   </td>
+   <td>offset</td>
+   <td>Int</td>
+   <td>Yes</td>
+   <td>Return records starting at this offset.</td>
   </tr>
   <tr>
-   <td>limit
-   </td>
-   <td>Int
-   </td>
-   <td>Yes
-   </td>
-   <td>The number of records starting at offset to return. The maximum value for limit is 10,000 records.
-   </td>
+   <td>limit</td>
+   <td>Int</td>
+   <td>Yes</td>
+   <td>The number of records starting at offset to return. The maximum value for limit is 10,000 records. </td>
   </tr>
 </table>
 
@@ -1066,8 +848,6 @@ curl -b cookies.txt -c cookies.txt -H
 'https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80/records?offset=0&limit=1'
 ```
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-
 This is the formatted result document:
 
 
@@ -1075,7 +855,7 @@ This is the formatted result document:
 {
    "fields":[
       {
-         "name":"_sourcecategory",
+         "name":"_sourceCategory",
          "fieldType":"string",
          "keyField":true
       },
@@ -1089,7 +869,7 @@ This is the formatted result document:
       {
          "map":{
             "_count":"90",
-            "_sourcecategory":"service"
+            "_sourceCategory":"service"
          }
       }
    ]
@@ -1099,54 +879,38 @@ This is the formatted result document:
 
 The returned document is similar to the one returned for the message paging API. The schema of the records returned is described by the list of fields as part of the fields element. The records themselves are a list of maps.
 
+## DELETE Methods
 
-### Deleting a search job
+### Delete a search job
 
 Although search jobs ultimately time out in the Sumo Logic backend, it's a good practice to explicitly cancel a search job when it is not needed anymore.
 
-**Method:** `DELETE`
+**Method:** `DELETE` <br/>
+**Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>`
 
-**Example endpoint:**
+<details>
+<summary>Which API endpoint should I use?</summary>
 
+<ApiEndpoints/>
 
-```
-https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>
-```
+</details>
 
-
-
-71
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-
-
-#### Query parameters
-
-
+#### Request parameters
 
 <table>
   <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required</strong> </td>
+   <td><strong>Description</strong></td>
   </tr>
   <tr>
-   <td>searchJobId
-   </td>
-   <td>String
-   </td>
-   <td>Yes
-   </td>
-   <td>The ID of the search job.
-   </td>
+   <td>searchJobId</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>The ID of the search job. </td>
   </tr>
 </table>
-
-
 
 #### Sample session
 
@@ -1156,13 +920,14 @@ curl -b cookies.txt -c cookies.txt -X DELETE
 https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80
 ```
 
+<details>
+<summary>Which API endpoint should I use?</summary>
 
+<ApiEndpoints/>
 
-74
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+</details>
 
-
-### Bash this Search Job
+## Bash this Search Job
 
 You can use the following script to exercise the API.
 

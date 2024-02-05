@@ -10,28 +10,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Networks offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 
-## Log Types
+## Log types
 
 <table>
   <tr>
-   <td><strong>Log type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Supported log format</strong>
-   </td>
-   <td><strong>For more information</strong>
-   </td>
+   <td><strong>Log type</strong>   </td>
+   <td><strong>Description</strong> </td>
+   <td><strong>Supported log format</strong> </td>
+   <td><strong>For more information</strong> </td>
   </tr>
   <tr>
-   <td>Traffic
-   </td>
-   <td>Entries for the start and end of each session, including date and time; source and destination zones, addresses and ports; application name; security rule applied to the traffic flow; rule action (allow, deny, or drop); ingress and egress interface; number of bytes; and session end reason.
-   </td>
-   <td>Syslog
-   </td>
-   <td><a href="https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/view-and-manage-logs/log-types-and-severity-levels/traffic-logs">Traffic Logs</a>
-   </td>
+   <td>Traffic </td>
+   <td>Entries for the start and end of each session, including date and time; source and destination zones, addresses and ports; application name; security rule applied to the traffic flow; rule action (allow, deny, or drop); ingress and egress interface; number of bytes; and session end reason. </td>
+   <td>Syslog   </td>
+   <td><a href="https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/view-and-manage-logs/log-types-and-severity-levels/traffic-logs">Traffic Logs</a> </td>
   </tr>
 </table>
 
@@ -85,7 +77,7 @@ To create a server profile specifying the log destination, do the following:
 8. Commit the changes.
 
 
-### Sample Log messages
+### Sample log messages
 
 ```json title="Traffic log sample"
 Sep 05 12:45:15 SumoStg05 0,2018/09/05 12:45:15,012345678901,TRAFFIC,end,0,2018/09/05 12:45:15,182.80.119.50,176.164.175.181,,,Unexpected Traffic,,npande,ping,vsys3,z1-FW-Transit,z3-Sumo-DMZ,ethernet1/2,ethernet1/2,LOGreset-both,2018/09/05 12:45:15,9434,1,0,0,0,0,0x100064,icmp,allow,122,122,0,1,2018/09/05 12:45:15,0,any,0,5134220147,0x8000000000000000,United States,10.0.0.0-10.255.255.255,0,1,0,aged-out,31,42,0,0,,SumoStg05,from-policy,,,0,,0,,N/A
@@ -96,7 +88,7 @@ Sep 05 12:45:15 SumoStg05 0,2018/09/05 12:45:15,012345678901,TRAFFIC,end,0,2018/
 786 <10>1 2022-03-29T22:32:26+00:00 PA-VM.demo.bkacad.cf - - - - ,2022/03/29*22:32:26,164859314646745,THREAT,vulnerability,,2022/03/29*22:32:26,156.194.158.165,156.194.158.165,156.194.158.165,156.194.158.165,test-threat,,,unknown-udp,vsys1,Outside,Outside,ethernet1/1,ethernet1/1,Forward-Sumo,,8660,1,47495,9034,0,0,0x2000,udp,drop,,Realtek Jungle SDK Remote Code Execution Vulnerability(91535),any,critical,client-to-server,1648593146467628956,0x0,Korea Republic Of,156.194.158.165-156.194.158.165,,,0,,,0,,,,,,,,0,0,0,0,0,,PA-VM,,,,,N/A_id/0,/,0,,N/A,code-execution,AppThreat-8468-6979,,0,1648593146,,,141fd502-fc32-4867-b9a5-5c421583a44b,0,,,,,,,,,,,,,,, ,,,,,,,,,,,,,,0,2022-03-29T22:32:26.467+00:00,,,,unknown,unknown,unknown,1,,,no,no /
 ```
 
-### Sample Query  
+### Sample queries  
 
 Example query from the **Accepted and Rejected Traffic** dashboard > **Denied Traffic Over Time** panel.
 
@@ -114,24 +106,9 @@ _sourceCategory=Loggen/PAN/Traffic TRAFFIC deny
 
 Now that you have set up collection for PCI for Palo Alto Networks install the Sumo Logic App for PCI for Palo Alto Networks to use the preconfigured searches and dashboards that provide insight into your data. This app supports PAN-OS v8 and v9.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+<AppInstall/>
 
 ## Viewing PCI for Palo Alto Networks 9 Dashboards
 
@@ -142,16 +119,16 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **Use case:** You can use this dashboard to monitor allowed and rejected traffic in accordance with PCI requirement 1. The dashboard helps you identify systems accepting or rejecting traffic, and identify inbound and outbound network connections trends.
 
-<img src={useBaseUrl('img/integrations/pci-compliance/pan-pci-req-accepted-rejected.png')} alt="Palo Alto 9 dashboards" />
+<img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-9-PCI-Req-01-Accepted-and-Rejected-Traffic.png')} alt="Palo Alto 9 dashboards" />
 
 
 ### PCI Req 01 - Traffic Direction Monitoring
 
 **Dashboard description:** View information about inbound and outbound traffic, including traffic to the cardholder data environment (CDE); details of inbound and outbound traffic; the top 10 hosts sending traffic; and the top 10 hosts receiving traffic.
 
-**Use case: **You can use this dashboard to monitor connections made from external IPs to internal IPs. You can identify top internal IPs receiving traffic from external IPs or sending traffic to external IPs. Similarly, this dashboard helps you identify the amount of traffic generated by different IPs crossing your organization's network boundary.
+**Use case:** You can use this dashboard to monitor connections made from external IPs to internal IPs. You can identify top internal IPs receiving traffic from external IPs or sending traffic to external IPs. Similarly, this dashboard helps you identify the amount of traffic generated by different IPs crossing your organization's network boundary.
 
-<img src={useBaseUrl('img/integrations/pci-compliance/PCILinuxAccountUserSystem.png')} alt="Palo Alto 9 dashboards" />
+<img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-9-PCI-Req-01-Traffic-Direction-Monitoring.png')} alt="Palo Alto 9 dashboards" />
 
 
 ### PCI Req 01, 02 - Data Access Monitoring
@@ -160,7 +137,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **Use case:** You can use this dashboard to monitor activities on ports, apps being used, and the protocols used to access apps. The panels help you identify possible port scan attacks, both horizontal and vertical. You can also identify if there are systems on which multiple services are executing.
 
-<img src={useBaseUrl('img/integrations/pci-compliance/pan-pci-data-access-monitoring.png')} alt="Palo Alto 9 dashboards" />
+<img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-9-PCI-Req-01-02-Data-Access-Monitoring.png')} alt="Palo Alto 9 dashboards" />
 
 
 ### PCI Req 02, 04 - Insecure Data In Transit
@@ -169,4 +146,4 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **Use case:** You can use this dashboard to identify systems and hosts involved in insecure data transit. You can identify insecure connections and port protocols like ftp, telnet, http, rlogin, and so on. You can also identify successful and rejected network connections for insecure connections.
 
-<img src={useBaseUrl('img/integrations/pci-compliance/pan-pci-traffic-direction-monitoring.png')} alt="Palo Alto 9 dashboards" />
+<img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-9-PCI-Req-02-04-Insecure-Data-In-Transit.png')} alt="Palo Alto 9 dashboards" />

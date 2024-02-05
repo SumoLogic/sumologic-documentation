@@ -15,6 +15,21 @@ In this section, we'll introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
 
-:::tip
-Click [here](https://youtu.be/_5JHkxG7ZMo) to watch a micro lesson on deploying the AWS Observability Solution. 
+import Iframe from 'react-iframe';
+
+:::sumo Micro Lesson
+
+Watch a micro lesson on deploying the AWS Observability Solution. 
+
+<Iframe url="https://www.youtube.com/embed/_5JHkxG7ZMo?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
 :::

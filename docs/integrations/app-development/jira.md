@@ -1,6 +1,6 @@
 ---
 id: jira
-title: Sumo Logic App for Jira
+title: Jira
 sidebar_label: Jira
 description: The Sumo Logic App for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
 ---
@@ -14,7 +14,7 @@ The Sumo Logic App for Jira provides insight into Jira usage, request activity, 
 The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/jira-cloud).
 
 
-## Log Types
+## Log types
 
 The Jira app uses the following log types:
 
@@ -28,7 +28,7 @@ The Jira app uses the following log types:
 
 For more information, see [Webhooks](https://developer.atlassian.com/server/jira/platform/webhooks/) in Jira help.
 
-### Sample Query
+### Sample queries
 
 ```sql title="Users created"
 _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
@@ -40,9 +40,10 @@ _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
 | sort by date_time desc
 ```
 
-### Sample Log Messages
+### Sample log messages
 
-<details><summary><strong>Click to expand.</strong> See sample logs for Jira access, Jira catalina, Jira issue.</summary>
+<details>
+<summary><strong>Click to expand.</strong> See sample logs for Jira access, Jira catalina, Jira issue.</summary>
 
 ```json title="Jira Access"
 10.189.181.31 - qe@abc.com [24/Sep/2018:13:31:05 -0700] "POST /testrail/index.php?/api/v2/add_result_for_case/253843/13308563 HTTP/1.1" 200 426 "-" "Go-http-client/1.1"
@@ -442,12 +443,11 @@ The Jira App supports Jira Server. For Jira Cloud, please see documentation for 
 
 To install the app, do the following:
 
-
 1. From the App Catalog, search for and select the app.
 2. To install the app, click **Add to Library**.
    * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-   * **Jira Server Log data source. **Set **Source Category** to `Atlassian/Jira/Server*`.
-   * **Jira Webhook source. **Set **Source Category** to `Atlassian/Jira/Events`.
+   * **Jira Server Log data source.** Set **Source Category** to `Atlassian/Jira/Server*`.
+   * **Jira Webhook source.** Set **Source Category** to `Atlassian/Jira/Events`.
 3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
@@ -455,7 +455,7 @@ To install the app, do the following:
 ## Viewing Jira Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 You can use template variables to drill down and examine the data on a granular level.

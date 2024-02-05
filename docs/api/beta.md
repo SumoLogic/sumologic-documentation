@@ -7,7 +7,7 @@ title: APIs (Beta)
 
 See the latest advancements in Sumo Logic APIs.
 
-Refer to [Getting Started](/docs/api) for Authentication and Endpoint information.
+Refer to [Getting Started](/docs/api/getting-started) for Authentication and Endpoint information.
 
 ## In Open Beta
 
@@ -32,64 +32,44 @@ Our API documentation is hosted on each Sumo deployment. You need to select the 
 
 <table><small>
   <tr>
-   <td>Deployment
-   </td>
-   <td>Documentation URL
-   </td>
+   <td>Deployment</td>
+   <td>Documentation URL</td>
   </tr>
   <tr>
-   <td>AU
-   </td>
-   <td><a href="https://api.au.sumologic.com/docs/">https://api.au.sumologic.com/docs/</a>
-   </td>
+   <td>AU</td>
+   <td><a href="https://api.au.sumologic.com/docs/">https://api.au.sumologic.com/docs/</a></td>
   </tr>
   <tr>
-   <td>CA
-   </td>
-   <td><a href="https://api.ca.sumologic.com/docs/">https://api.ca.sumologic.com/docs/</a>
-   </td>
+   <td>CA</td>
+   <td><a href="https://api.ca.sumologic.com/docs/">https://api.ca.sumologic.com/docs/</a></td>
   </tr>
   <tr>
-   <td>DE
-   </td>
-   <td><a href="https://api.de.sumologic.com/docs/">https://api.de.sumologic.com/docs/</a>
-   </td>
+   <td>DE</td>
+   <td><a href="https://api.de.sumologic.com/docs/">https://api.de.sumologic.com/docs/</a></td>
   </tr>
   <tr>
-   <td>EU
-   </td>
-   <td><a href="https://api.eu.sumologic.com/docs/">https://api.eu.sumologic.com/docs/</a>
-   </td>
+   <td>EU</td>
+   <td><a href="https://api.eu.sumologic.com/docs/">https://api.eu.sumologic.com/docs/</a></td>
   </tr>
   <tr>
-   <td>FED
-   </td>
-   <td><a href="https://api.fed.sumologic.com/docs/">https://api.fed.sumologic.com/docs/</a>
-   </td>
+   <td>FED</td>
+   <td><a href="https://api.fed.sumologic.com/docs/">https://api.fed.sumologic.com/docs/</a></td>
   </tr>
   <tr>
-   <td>IN
-   </td>
-   <td><a href="https://api.in.sumologic.com/docs/">https://api.in.sumologic.com/docs/</a>
-   </td>
+   <td>IN</td>
+   <td><a href="https://api.in.sumologic.com/docs/">https://api.in.sumologic.com/docs/</a></td>
   </tr>
   <tr>
-   <td>JP
-   </td>
-   <td><a href="https://api.jp.sumologic.com/docs/">https://api.jp.sumologic.com/docs/</a>
-   </td>
+   <td>JP</td>
+   <td><a href="https://api.jp.sumologic.com/docs/">https://api.jp.sumologic.com/docs/</a></td>
   </tr>
   <tr>
-   <td>US1
-   </td>
-   <td><a href="https://api.sumologic.com/docs/">https://api.sumologic.com/docs/</a>
-   </td>
+   <td>US1</td>
+   <td><a href="https://api.sumologic.com/docs/">https://api.sumologic.com/docs/</a></td>
   </tr>
   <tr>
-   <td>US2
-   </td>
-   <td><a href="https://api.us2.sumologic.com/docs/">https://api.us2.sumologic.com/docs/</a>
-   </td>
+   <td>US2</td>
+   <td><a href="https://api.us2.sumologic.com/docs/">https://api.us2.sumologic.com/docs/</a></td>
   </tr></small>
 </table>
 

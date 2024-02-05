@@ -1,13 +1,14 @@
 ---
 id: collect-logs-azure-monitor
 title: Collect Logs from Azure Monitor
+sidebar_label: Collecting Logs
 description: Instructions for configuring a pipeline for shipping logs available from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP source on an hosted collector in Sumo Logic.
 ---
 
-To collect logs from the Azure Monitor, if you are not using the Sumo Logic FedRamp deployment,  use the new [Cloud to Cloud Integration for Azure](../../hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) to create the source and use the same source category while installing the app. 
+To collect logs from the Azure Monitor, if you are not using the Sumo Logic FedRamp deployment,  use the new [Cloud-to-Cloud Integration for Azure](../../hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) to create the source and use the same source category while installing the app. 
 
 :::note
-The sections below are either for FedRamp Sumo Logic deployments or if you have been advised by the Sumo Logic support team to not use the Cloud to Cloud Integration based on your Azure environments. 
+The sections below are either for FedRamp Sumo Logic deployments or if you have been advised by the Sumo Logic support team to not use the Cloud-to-Cloud Integration based on your Azure environments. 
 :::
 
 This page provides instructions for setting up log collection from Azure. Click a link to jump to a topic:
@@ -180,7 +181,7 @@ Managed Exception = System.AccessViolationException:Attempted to read or write p
 
 CallStack - Managed Exception
 
-The above error occurs in certain situations the runtime initiates a host shutdown via HostingEnvironment.InitiateShutdown, for example when an unhandled global exception occurs, when a function TimeoutException is thrown, or when performance counter thresholds are exceeded (HostHealthMonitor).
+The above error occurs in certain situations the runtime initiates a host shutdown using HostingEnvironment.InitiateShutdown, for example, when an unhandled global exception occurs, when a function TimeoutException is thrown, or when performance counter thresholds are exceeded (HostHealthMonitor).
 
 If you're using this function for quite some time then we recommend redeploying the solution with new ARM templates.
 

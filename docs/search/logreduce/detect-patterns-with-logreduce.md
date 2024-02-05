@@ -53,4 +53,4 @@ To investigate the messages in the Others signature:
 1. Select the check box and click **View Details**.
 1. Sumo Logic runs the LogReduce algorithm on the signature with the details operator, and then displays the resulting sub-signatures.
 
-Once a LogReduce query has run with the details operator, you can't use that query again, for example in a separate Search tab.
+Once a LogReduce query has run with the details operator, you can't use that query again, for example, in a separate Search tab.

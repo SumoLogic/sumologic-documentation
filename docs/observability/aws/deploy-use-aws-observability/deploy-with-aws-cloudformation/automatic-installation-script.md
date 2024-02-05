@@ -2,13 +2,16 @@
 id: automatic-installation-script
 title: AWS Observability Automatic Installation Script
 sidebar_label: Automatic Installation Script
-description: Sumo Logic provides POSIX and powershell scripts to trigger the Cloud Formation template for creating a stack to deploy AWS Observability Solution.
+description: Sumo Logic provides POSIX and powershell scripts to trigger the CloudFormation template for creating a stack to deploy AWS Observability Solution.
 ---
 
-Sumo Logic provides [POSIX](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOPosix.sh) and [powershell](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOWin.ps1) scripts to trigger the Cloud Formation template for creating a stack to deploy AWS Observability Solution.
+Sumo Logic provides [POSIX](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOPosix.sh) and [powershell](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOWin.ps1) scripts to trigger the CloudFormation template for creating a stack to deploy AWS Observability Solution.
 
 This is a simplified method of deploying AWS Observability using default parameters with just one quick command. Use it for a quick start or when you are happy with the defaults (see [table below](#Appendix-I)). For more advanced use cases, when any of the default needs to be adjusted, please fall back to  [Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform.md) or [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) installation steps.
 
+:::tip Multi-account and region
+If you need to add support for multiple AWS accounts or multiple regions, refer to the Sumo Logic documentation for [CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) or [Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform.md).
+:::
 
 ## Prerequisite
 
@@ -16,6 +19,18 @@ AWS CLI should be pre-installed on the system where the script is supposed to be
 
 * Set up the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html).
 * [Configure AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) to use AWS profiles.
+* Select/Change the enabled [AWS region](https://docs.aws.amazon.com/cli/latest/reference/configure/set.html) where you want to deploy the solution.
+
+    <details>
+    <summary>Example: How to change your default AWS region to us-west-1</summary>
+    Run the following command with AWS region as us-west-1:
+
+    ```sh
+    aws configure set region us-west-1
+    ```
+
+    </details>
+
 
 
 ## Input Parameters  
@@ -28,9 +43,9 @@ The script takes two inputs:
 **AWS_PROFILE** can be set as an environment variable from the command line before executing the script. If it is not set, the “default” aws profile will be used.
 
 
-## Cloud Formation Parameters
+## CloudFormation Parameters
 
-The script above will take only two inputs - Sumo access Id and Sumo Access Key. And internally it will trigger a cloud formation template. This cloud formation template requires some additional parameters. But all of these parameters will take the default value. When using this script one cannot override these values.  Refer table in **Appendix I** for all the parameters and the respective default values which will be used as part of this installation. Learn details about each parameter in detail [here](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation).
+The script above will take only two inputs - Sumo access Id and Sumo Access Key. And internally it will trigger a CloudFormation template. This CloudFormation template requires some additional parameters. But all of these parameters will take the default value. When using this script one cannot override these values. Refer to the table in **Appendix I** for all the parameters and the respective default values which will be used as part of this installation. Learn details about each parameter in detail [here](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation).
 
 
 ### Powershell Script Command Execution
@@ -38,6 +53,7 @@ The script above will take only two inputs - Sumo access Id and Sumo Access Key.
 Below is an example to run the powershell script with the required parameters
 
 ```
+$uri="https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOWin.ps1";$path=".\DeployAWSOWin.ps1";(New-Object System.Net.WebClient).DownloadFile($uri, $path);
 .\DeployAWSOWin.ps1 <SUMO_ACCESS_ID> <SUMO_ACCESS_KEY>
 ```
 
@@ -46,204 +62,146 @@ Below is an example to run the powershell script with the required parameters
 Below is an example to run posix script with required parameters
 
 ```
-sh DeployAWSOPosix.sh <SUMO_ACCESS_ID> <SUMO_ACCESS_KEY>
+wget "https://raw.githubusercontent.com/SumoLogic/sumologic-solution-templates/master/aws-observability/scripts/AWSOAutoSetupScript/DeployAWSOPosix.sh"
+
+chmod +x DeployAWSOPosix.sh
+
+./DeployAWSOPosix.sh <SUMO_ACCESS_ID> <SUMO_ACCESS_KEY>
 ```
 
 ## Appendix I
 
 <table>
   <tr>
-   <td>Parameter
-   </td>
-   <td>Default Value
-   </td>
+   <td>Parameter</td>
+   <td>Default Value </td>
   </tr>
   <tr>
-   <td>Sumo Logic Deployment Name
-   </td>
-   <td>This will be evaluated when the script is executed
-   </td>
+   <td>Sumo Logic Deployment Name   </td>
+   <td>This will be evaluated when the script is executed </td>
   </tr>
   <tr>
-   <td>Sumo Logic Access ID
-   </td>
-   <td>Will be given by the User
-   </td>
+   <td>Sumo Logic Access ID   </td>
+   <td>Will be given by the User   </td>
   </tr>
   <tr>
-   <td>Sumo Logic Access Key
-   </td>
-   <td>Will be given by the user
-   </td>
+   <td>Sumo Logic Access Key   </td>
+   <td>Will be given by the user   </td>
   </tr>
   <tr>
-   <td>Sumo Logic Organization ID
-   </td>
-   <td>This will be evaluated when the script is executed.
-   </td>
+   <td>Sumo Logic Organization ID   </td>
+   <td>This will be evaluated when the script is executed.   </td>
   </tr>
   <tr>
-   <td>Delete Sumo Logic Resources when stack is deleted
-   </td>
-   <td>True
-   </td>
+   <td>Delete Sumo Logic Resources when stack is deleted   </td>
+   <td>True   </td>
   </tr>
   <tr>
-   <td>Alias for your AWS account
-   </td>
-   <td>This will be the respective AWS Account Id
-   </td>
+   <td>Alias for your AWS account   </td>
+   <td>This will be the respective AWS Account Id   </td>
   </tr>
   <tr>
-   <td>S3 URL of a CSV file that maps AWS Account IDs to an Account Alias
-   </td>
-   <td>empty</td></tr>
+   <td>S3 URL of a CSV file that maps AWS Account IDs to an Account Alias   </td>
+   <td>empty</td>
+   </tr>
   <tr>
-   <td>Install AWS Observability apps and alerts
-   </td>
-   <td>Yes
-   </td>
+   <td>Install AWS Observability apps and alerts   </td>
+   <td>Yes   </td>
   </tr>
   <tr>
-   <td>Select the kind of Metrics Source to create
-   </td>
-   <td>Kinesis Firehose Metrics Source
-   </td>
+   <td>Select the kind of Metrics Source to create   </td>
+   <td>Kinesis Firehose Metrics Source   </td>
   </tr>
   <tr>
-   <td>Sumo Logic AWS Metrics Namespaces
-   </td>
+   <td>Sumo Logic AWS Metrics Namespaces </td>
    <td>AWS/ApplicationELB, AWS/ApiGateway, AWS/DynamoDB, AWS/Lambda, AWS/RDS, AWS/ECS, AWS/ElastiCache, AWS/ELB, AWS/NetworkELB, AWS/SQS, AWS/SNS.</td>
   </tr>
   <tr>
    <td>Existing Sumo Logic Metrics Source API URL</td>
-   <td>empty
-   </td>
+   <td>empty   </td>
   </tr>
   <tr>
-   <td>Enable ALB Access logging
-   </td>
-   <td>Both
-   </td>
+   <td>Enable ALB Access logging </td>
+   <td>Both   </td>
   </tr>
   <tr>
-   <td>Create Sumo Logic ALB Logs Source
-   </td>
-   <td>Yes
-   </td>
+   <td>Create Sumo Logic ALB Logs Source   </td>
+   <td>Yes   </td>
   </tr>
   <tr>
-   <td>Existing Sumo Logic ALB Logs Source API URL
-   </td>
-   <td>empty
-   </td>
+   <td>Existing Sumo Logic ALB Logs Source API URL   </td>
+   <td>empty   </td>
   </tr>
   <tr>
-   <td>AWS S3 Bucket Name
-   </td>
-   <td>empty
-   </td>
+   <td>AWS S3 Bucket Name   </td>
+   <td>empty   </td>
   </tr>
   <tr>
-   <td>Path Expression for the Existing  ALB logs
-   </td>
-   <td>*AWSLogs/*/elasticloadbalancing/*
-   </td>
+   <td>Path Expression for the Existing  ALB logs   </td>
+   <td>*AWSLogs/*/elasticloadbalancing/*   </td>
   </tr>
   <tr>
-   <td>Create Sumo Logic CloudTrail Logs Source
-   </td>
-   <td>Yes
-   </td>
+   <td>Create Sumo Logic CloudTrail Logs Source   </td>
+   <td>Yes   </td>
   </tr>
   <tr>
-   <td>Existing Sumo Logic CloudTrail Logs Source API URL
-   </td>
-   <td>empty
-   </td>
+   <td>Existing Sumo Logic CloudTrail Logs Source API URL   </td>
+   <td>empty   </td>
   </tr>
   <tr>
-   <td>AWS S3 Bucket Name
-   </td>
-   <td>empty
-   </td>
+   <td>AWS S3 Bucket Name   </td>
+   <td>empty   </td>
   </tr>
   <tr>
-   <td>Path Expression to the Existing CloudTrail logs
-   </td>
-   <td>AWSLogs/*/CloudTrail/*
-   </td>
+   <td>Path Expression to the Existing CloudTrail logs   </td>
+   <td>AWSLogs/*/CloudTrail/*   </td>
   </tr>
   <tr>
-   <td>Select the Sumo Logic CloudWatch Logs Sources
-   </td>
-   <td>Kinesis Firehose Log Source
-   </td>
+   <td>Select the Sumo Logic CloudWatch Logs Sources   </td>
+   <td>Kinesis Firehose Log Source   </td>
   </tr>
   <tr>
-   <td>Existing Sumo Logic Lambda CloudWatch Logs Source API URL
-   </td>
-   <td>empty
-   </td>
+   <td>Existing Sumo Logic Lambda CloudWatch Logs Source API URL   </td>
+   <td>empty   </td>
   </tr>
   <tr>
-   <td>Subscribe log groups to Sumo Logic Lambda Forwarder
-   </td>
-   <td>Both
-   </td>
+   <td>Subscribe log groups to Sumo Logic Lambda Forwarder   </td>
+   <td>Both   </td>
   </tr>
   <tr>
-   <td>Regex for AWS Lambda Log Groups
-   </td>
-   <td>lambda
-   </td>
+   <td>Regex for AWS Lambda Log Groups   </td>
+   <td>lambda   </td>
   </tr>
   <tr>
-   <td>Select the Sumo Logic Root Cause Explorer Source
-   </td>
-   <td>Both
-   </td>
+   <td>Select the Sumo Logic Root Cause Explorer Source   </td>
+   <td>Both   </td>
   </tr>
   <tr>
-   <td>Enable ELB Classic Access logging
-   </td>
-   <td>Both
-   </td>
+   <td>Enable ELB Classic Access logging   </td>
+   <td>Both   </td>
   </tr>
   <tr>
-   <td>Create Sumo Logic ELB Logs Source
-   </td>
-   <td>Yes
-   </td>
+   <td>Create Sumo Logic ELB Logs Source   </td>
+   <td>Yes   </td>
   </tr>
   <tr>
-   <td>Existing Sumo Logic ELB Classic Logs Source API URL
-   </td>
-   <td>empty
-   </td>
+   <td>Existing Sumo Logic ELB Classic Logs Source API URL   </td>
+   <td>empty   </td>
   </tr>
   <tr>
-   <td>AWS S3 Bucket Name
-   </td>
-   <td>empty
-   </td>
+   <td>AWS S3 Bucket Name   </td>
+   <td>empty   </td>
   </tr>
   <tr>
-   <td>Path Expression for the Existing  ELB Classic logs
-   </td>
-   <td>classicloadbalancing/AWSLogs/*/elasticloadbalancing/*
-   </td>
+   <td>Path Expression for the Existing  ELB Classic logs   </td>
+   <td>classicloadbalancing/AWSLogs/*/elasticloadbalancing/*   </td>
   </tr>
   <tr>
-   <td>Location where you want the App to be Installed
-   </td>
-   <td>Personal Folder
-   </td>
+   <td>Location where you want the App to be Installed </td>
+   <td>Personal Folder   </td>
   </tr>
   <tr>
-   <td>Do you want to share App with whole organization
-   </td>
-   <td>True
-   </td>
+   <td>Do you want to share App with whole organization   </td>
+   <td>True   </td>
   </tr>
 </table>

@@ -44,7 +44,7 @@ the following parameters are for local file source. 
 | `denylist` | String Array | No | `[ ]` | Comma-separated list of valid path expressions from which logs will not be collected. <br/>Example: `"denylist":["/var/log/**/*.bak","/var/oldlog/*.log"]` | modifiable |
 | `encoding` | String | No | UTF-8 | Defines the encoding form. Default is "UTF-8"; options include "UTF-16"; "UTF-16BE"; "UTF-16LE". | modifiable |
 
-Local File Source JSON example with `cutoffTimestamp`:
+Local File Source JSON example with `cutoffTimestamp`: 
 
 ```json
 {
@@ -116,7 +116,7 @@ Remote file source JSON example:
 
 ### Local Windows event log source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), except hostName, the following parameters are for local Windows event log source. The Source Host (_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), except hostName, the following parameters are for local Windows event log source. The Source Host (`_sourceHost`) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|
@@ -148,7 +148,7 @@ Local Windows event log source JSON example:
 
 ### Remote Windows event log source
 
-In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), except hostName, the following parameters are for remote Windows event log source. The Source Host (_sourceHost) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
+In addition to the [common parameters](/docs/send-data/use-json-configure-sources/#common-parameters-for-log-source-types), except hostName, the following parameters are for remote Windows event log source. The Source Host (`_sourceHost`) value is parsed and applied to your event logs automatically. The value is parsed from the field `Computer` in your event logs.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |:--|:--|:--|:--|:--|:--|

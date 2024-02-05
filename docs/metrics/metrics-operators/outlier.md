@@ -4,16 +4,19 @@ title: outlier Metrics Operator
 sidebar_label: outlier
 ---
 
-
 The metrics `outlier` operator identifies metrics data points that are outside the range of expected values. Outliers help you spot unusual behavior in your metrics visualizations and track the behavior over time.
 
 `outlier` tracks the moving average and standard deviation of a time series over a specified time window, and calculates a threshold band, outside of which data points are considered outliers. You can use optional qualifiers to specify the time window, the number of standard deviations beyond which a data point is considered an outlier, and the directionality of the deviation.
 
-At this time, using the `outlier` operator in a metric monitor is not supported.
+:::note
+You can't directly reference the `outlier` operator in a metrics monitor, however, you can use the outlier detection method in a metrics monitor to alert based on outlier events.
+:::
 
-## outlier syntax
+## Syntax
 
-`metric query | outlier [window=<#>, threshold=<#>, direction=[ +- | + | - ]]`
+```sql
+outlier [window=<time_unit_or_number>, threshold=<number>, direction=[ +- | + | - ]]
+```
 
 Where:
 

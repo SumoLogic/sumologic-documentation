@@ -9,21 +9,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/keeper.png')} alt="thumbnail icon" width="75"/>
 
-This application has been developed and is supported by [Keeper Security](https://keepersecurity.com/). For more information about Keeper, visit [https://keepersecurity.com](https://keepersecurity.com/) or email **business.support@keepersecurity.com** for help.
+This application has been developed and is supported by [Keeper Security](https://keepersecurity.com/). For more information about Keeper, visit [https://keepersecurity.com](https://keepersecurity.com/) or email [business.support@keepersecurity.com](mailto:business.support@keepersecurity.com) for help.
 
 Keeper is the leading secure password manager and digital vault for businesses and individuals. The Keeper Security App for Sumo Logic helps you monitor admin actions, user activities and security risks. The App consists of dashboards and queries that allow you to monitor events logged by Keeper to Sumo Logic.
 
-
-## Log Types
+## Log types
 
 The Keeper Security App uses Keeper Audit logs in JSON format pushed to Sumo HTTP Log Source by Keeper. For a description of the information available in the logs see [Keeper Audit Event List](https://docs.keeper.io/enterprise-guide/event-reporting#event-list).
 
-
 ## Collecting Logs for Keeper Security
 
-This application has been developed and is supported by [Keeper Security](https://keepersecurity.com/). For more information about Keeper please visit [https://keepersecurity.com](https://keepersecurity.com/) or email **business.support@keepersecurity.com** for help.
-
-This section provides instructions for collecting logs for the Keeper Security App for Sumo Logic. This process is as follows:
+This section provides instructions for collecting logs for the Keeper Security App for Sumo Logic. This process is as follows.
 
 ### Step 1: Configure a collector
 
@@ -34,11 +30,11 @@ To configure a collector for Keeper Security, follow the instructions in the [Ho
 You can configure sources for collectors that are hosted in Amazon Web Services (AWS), Microsoft, or other hosting services.
 
 To configure an HTTP source for Keeper, do the following:
+
 1. Go to the [Sources for Hosted Collectors](/docs/send-data/hosted-collectors/) page.
 2. Select the hosting service appropriate for your environment.
 3. Follow the instructions for adding an **HTTP Log Source**, using the default options.
-
-1. Copy the **HTTP Source Address** when prompted.
+4. Copy the **HTTP Source Address** when prompted.
 
 
 ### Step 3: Send Keeper logs to Sumo Logic
@@ -51,7 +47,7 @@ To send Keeper logs to Sumo Logic, do the following:
 2. Select the **External Logging** tab.
 3. Click the Sumo Logic **Setup** button.
 4. In the Sync Settings dialog, enter the **HTTP Source Address** from [step 4](#HTTP-Source-Address) of the previous task.
-1. Continue with [verifying logging](#Step_4:_Verify_logging).
+5. Continue with [verifying logging](#Step_4:_Verify_logging).
 
 
 ### Step 4: Verify logging
@@ -74,29 +70,13 @@ To resume logging, go to the “External Logging” section of the Keeper Admin 
 
 ## Installing the Keeper Security App
 
-This application has been developed and is supported by [Keeper Security](https://keepersecurity.com/). For more information about Keeper please visit [https://keepersecurity.com](https://keepersecurity.com/) or email **business.support@keepersecurity.com** for help.
-
 This section provides instructions for installing the Keeper Security App, as well as examples of each of the App dashboards.
 
-Now that you have set up collection for Keeper, install the app to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis.
+Now that you have set up collection for Keeper, install the app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    * **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 ## Viewing Keeper Security Dashboards
 
@@ -113,7 +93,7 @@ This is a general dashboard that shows the geographic locations of user activity
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Keeper_Overview.png')} alt="Keeper_Security dashboards" />
 
-**Use this dashboard to analyze the following data:
+Use this dashboard to analyze the following data:
 
 * **Activity locations**. See the number of application events across the world on a map in the last 24 hours.
 * **Activity by platform**. See the the number of application events by the client or platform in the last 24 hours.
@@ -134,7 +114,7 @@ Provides detailed information on user activity, highlighting access and related 
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Keeper_Activity.png')} alt="Keeper_Security dashboards" />
 
-**Use this dashboard to analyze the following data:**
+Use this dashboard to analyze the following data:
 
 * **Throttled logins**. If a Keeper user tries to log in repeatedly with an incorrect password, this user logins become “throttled” for some time. This panel shows such login attempts for the last 24 hours, which can be an indication that somebody tries to hack this specific user.
 * **Failed logins**. See the time, event type, username, client version for all login failures (vault, console, 2fa) in the last 24 hours.
@@ -144,15 +124,14 @@ Provides detailed information on user activity, highlighting access and related 
 * **Movement**. See the users who logged in from multiple locations that are far from each other in the last 24 hours. Note: while this report would show hacking attempts from foreign countries, users who used both VPN and non-VPN access, can also fall into this category.
 
 
-
-
 ### Policy and Share
 
 Shows details about user management, team and role management, permission management, sharing information, failed logins, and risk related information.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Keeper-Policy-and-Share.png')} alt="Keeper_Security dashboards" />
 
-**Use this dashboard to analyze the following data:
+Use this dashboard to analyze the following data:
+
 * **User management**. See the users who were created, removed, locked or unlocked in the last 7 days.
 * **Team and Role management**. See the users who were added to a role or a team in the last 7 days. (**Note**: Keeper cannot obtain the names of a role and as such cannot log them to Sumo. If you’re interested in the particular role to which the user was added, try adding a test user to roles. Then, compare the ID for the test user role to the ID in which you are interested in.
 * **Enforcements management**. See the permissions that were granted or removed from roles in the last 7 days.

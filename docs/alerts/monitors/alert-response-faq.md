@@ -45,6 +45,10 @@ For example, in Slack, you can add the following section to the **Alert Payload*
 
 Learn more about [Alert Variables](/docs/alerts/monitors/alert-variables).
 
+## What happens to corresponding alerts when a monitor is deleted?
+
+After a monitor is deleted, corresponding alerts don't remain useful so they are deleted as well. 
+
 ## Where are the Log Fluctuation and Dimensional Explanation Cards for metrics-based Alerts?
 
 Log Fluctuation and Dimensional Explanation cards work on Log data only. They are not applicable for Metrics-based alerts and therefore will not show up.

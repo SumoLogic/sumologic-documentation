@@ -6,8 +6,9 @@
 
 const fs = require('fs')
 
-const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
-const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
+import {themes as prismThemes} from 'prism-react-renderer';
+const lightCodeTheme = prismThemes.github;
+const darkCodeTheme = prismThemes.dracula;
 
 const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString())
 
@@ -28,15 +29,19 @@ module.exports = {
   ],
   scripts: [
     {
-      src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-CVH19TBVSL',
       async: true,
     },
     {
-      src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+      src: 'https://www.googletagmanager.com/ns.html?id=GTM-58ZK7D',
       async: true,
     },
     {
-      src: './src/helper/google-translate.js',
+      src: './src/helper/google-tag-manager.js',
+      async: true,
+    },
+    {
+      src: './src/helper/google-analytics.js',
       async: true,
     },
   ],
@@ -60,8 +65,7 @@ module.exports = {
   },
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      '@docusaurus/preset-classic',
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
@@ -72,13 +76,12 @@ module.exports = {
             //https://www.npmjs.com/package/remark-code-import
             require('remark-code-import'),
             //https://www.npmjs.com/package/remark-import-partial
-            // snippet support {@import ./my-name.md} relative filepath to md file
+            //snippet support (import Abc from '../reuse/abc.md'; <Abc/> relative filepath to .md file)
             require('remark-import-partial'),
           ],
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           admonitions: {
-            tag: ':::',
             keywords: [
               'sumo',
               'secondary',
@@ -89,12 +92,14 @@ module.exports = {
               'tip',
               'warning',
               'important',
-              'caution',
             ],
           },
         },
-        googleAnalytics: {
-          trackingID: 'UA-16579649-3',
+        gtag: {
+          trackingID: 'G-CVH19TBVSL',
+        },
+        googleTagManager: {
+          containerId: 'GTM-58ZK7D',
         },
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
@@ -115,7 +120,6 @@ module.exports = {
         theme: {
           customCss: [
             require.resolve('./src/css/sumo.scss'),
-            require.resolve('./src/css/sitesearch360.scss'),
           ],
         },
       }),
@@ -149,6 +153,26 @@ module.exports = {
            type: 'rss',
            title: 'Sumo Logic Cloud SIEM Release Notes',
            description: 'New and enhanced Cloud SIEM features, bug fixes, updated rules, log mappers, parsers, and more.',
+           copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+         },
+      },
+    ],
+    ['@docusaurus/plugin-content-blog',
+      {
+         id: 'blog-csoar',
+         routeBasePath: 'release-notes-csoar',
+         path: './blog-csoar',
+         archiveBasePath: 'archive',
+         blogTitle: 'Sumo Logic Cloud SOAR Release Notes',
+         blogSidebarTitle: 'All posts',
+         blogSidebarCount: 'ALL',
+         postsPerPage: 'ALL',
+         blogDescription: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
+         showReadingTime: false,
+         feedOptions: {
+           type: 'rss',
+           title: 'Sumo Logic Cloud SOAR Release Notes',
+           description: 'New and enhanced Cloud SOAR features, bug fixes, changes to the application, and more.',
            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
          },
       },
@@ -202,7 +226,6 @@ module.exports = {
     ],
   ],
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       docs: {
         sidebar: {
@@ -227,20 +250,17 @@ module.exports = {
       appId: '2SJPGMLW1Q',
       apiKey: 'fb2f4e1fb40f962900631121cb365549',
       indexName: 'crawler_sumodocs',
-      // Optional: see doc section below
       contextualSearch: false,
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      //externalUrlRegex: 'external\\.com|domain\\.com',
-      // Optional: Algolia search parameters
-      //searchParameters: {},
       // Optional: path for search page that enabled by default (`false` to disable it)
-      searchPagePath: false,
-      //... other Algolia params
+      //searchPagePath: false,
+      getMissingResultsUrl({ query }) {
+        return `https://github.com/SumoLogic/sumologic-documentation/issues/new?title=${query}`;
+      },
     },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
     },
       navbar: {
         logo: {
@@ -273,12 +293,12 @@ module.exports = {
                 type: 'docSidebar',
                 sidebarId: 'searchlogs',
                 label: 'Log Search',
-                icon: 'manage_search',
+                icon: 'article',
               },
               {
                 type: 'docSidebar',
                 sidebarId: 'integrations',
-                label: 'App Catalog',
+                label: 'Apps and Integrations',
                 icon: 'apps',
               },
               {
@@ -289,15 +309,15 @@ module.exports = {
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'dashboards',
-                label: 'Alerts, Monitors',
+                sidebarId: 'alerts',
+                label: 'Alerts',
                 icon: 'notifications',
               },
               {
                 type: 'docSidebar',
                 sidebarId: 'metricslogs',
                 label: 'Metrics',
-                icon: 'timeline',
+                icon: 'stacked_line_chart',
               },
               {
                 type: 'docSidebar',
@@ -314,7 +334,7 @@ module.exports = {
               {
                 type: 'docSidebar',
                 sidebarId: 'security',
-                label: 'Cloud SIEM/SOAR',
+                label: 'Security',
                 icon: 'security',
               },
               {
@@ -322,6 +342,12 @@ module.exports = {
                 sidebarId: 'dashboards',
                 label: 'Dashboards',
                 icon: 'dashboard',
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'platformservices',
+                label: 'Platform Services',
+                icon: 'swap_horiz',
               },
             ]
           },
@@ -361,6 +387,11 @@ module.exports = {
                 icon: 'rss_feed',
               },
               {
+                label: 'Cloud SOAR',
+                to: 'release-notes-csoar',
+                icon: 'rss_feed',
+              },
+              {
                 label: 'Collector',
                 to: 'release-notes-collector',
                 icon: 'rss_feed',
@@ -373,6 +404,10 @@ module.exports = {
             ]
           },
           {
+            type: 'search',
+            position: 'left',
+          },
+          {
             type: 'html',
             position: 'right',
             value: '<div id="google_translate_element"></div>',
@@ -380,7 +415,12 @@ module.exports = {
           {
             to: 'https://www.sumologic.com/sign-up',
             position: 'right',
-            className: 'header-login',
+            className: 'header-trial',
+          },
+          {
+            to: 'https://support.sumologic.com/support/s/contactsupport',
+            position: 'right',
+            className: 'header-support',
           },
           {
             position: 'right',
@@ -391,11 +431,13 @@ module.exports = {
             items:[
               {
                 label: 'Send Feedback',
-                href: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
+                to: 'https://github.com/SumoLogic/sumologic-documentation/issues/new/choose',
+                icon: 'rate_review',
               },
               {
                 label: 'Contribute to Docs',
                 href: '/docs/contributing',
+                icon: 'edit_note',
               },
             ]
           },

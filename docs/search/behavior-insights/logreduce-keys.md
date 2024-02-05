@@ -7,15 +7,15 @@ description: Group by the keys of JSON or keyvalue logs.
 
 The **LogReduce Keys** operator allows you to quickly explore JSON or key-value formatted logs by schemas. If you have a large volume of JSON or key-value logs with different formats and aren't sure which ones you need to focus on, this operator can process them into their object schemas so you can review which ones are relevant to your needs.
 
-The operator accepts JSON and key-value data separated by `"=", ":", "\>", "\>"`. The keys are automatically parsed for you. 
+The operator accepts JSON and key-value data separated by <code>&quot;=&quot;, &quot;:&quot;, &quot;=&gt;&quot;, &quot;-&gt;&quot;</code>. The keys are automatically parsed for you. 
 
 The following table shows the fields that are returned in results.
 
-| _signature_id | _schema | _count |
+| `_signature_id` | `_schema` | `_count` |
 | :-- | :-- | :-- |
 | The unique hash value assigned to the schema.<br/><br/>Unstructured logs will have a value of 0000000000000000. | The schema of the log message.<br/><br/>Unstructured logs will have a value of unknown.	| The number of logs that have the related schema.<br/><br/>The field is a clickable link that opens a new window with a query that drills down to the logs from the related schema. |
 
-With the provided results you can:
+With the provided results, you can:
 
 * Explore logs from each schema by clicking the links provided in the `_count` response field.
 * Compare results against a previous time range with [LogCompare](/docs/search/logcompare).
@@ -24,7 +24,7 @@ With the provided results you can:
 ## Syntax
 
 ```sql
-| logreduce keys [parser\<parse\>] [maxdepth\<maxdept\>] [field\<fieldnam\>] [noaggregate]
+| logreduce keys [parser <parser>] [maxdepth <maxdepth>] [field <fieldname>] [noaggregate]
 ```
 
 | Parameter | Description | Default |
@@ -41,32 +41,30 @@ Results can be returned in two ways:
 
 ## Limitations
 
-* When not specifying a field with the `field=` option don't parse any fields. If you parse any fields they are excluded from the schema in your results. 
+* When not specifying a field with the `field=` option, don't parse any fields. If you parse any fields, they'll be excluded from the schema in your results. 
 * A maximum of 100 keys are automatically parsed.
 * Keys in arrays are not supported.
-* The [Time Compare](../time-compare.md) button will not work on LogReduce Keys results, you need to manually input the [compare operator](/docs/search/search-query-language/search-operators/compare) instead.
-* Response fields `_signature_id`, `_schema`, and `_count` are not supported with [Dashboard filters](../../dashboards/edit-dashboards/use-filters-dashboards.md).
+* The [Time Compare](../time-compare.md) button will not work on LogReduce Keys results, you need to manually input the [`compare` operator](/docs/search/search-query-language/search-operators/compare) instead.
+* Response fields `_signature_id`, `_schema`, and `_count` are not supported with [Dashboard filters](/docs/dashboards/filter-template-variables).
 
 ## _count link
 
 * Searches opened by clicking the link provided in the `_count` response field:
-
     * are run against [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata).
     * can return different results due to variations in your data.
-
 * When provided in a Scheduled Search alert, the link from the `_count` response field is invalid and will not work.
 
 ## Examples
 
 ```sql
-_sourcecategory = "Labs/AWS/GuardDuty_V8"
+_sourceCategory = "Labs/AWS/GuardDuty_V8"
 | json keys "region", "partition", "resource"
 | logreduce keys field=resource
 ```
 
 ### Kubernetes
 
-To get a summary of patterns in Kubernetes event logs you can quickly scan for unique schemas with LogReduce Keys:
+To get a summary of patterns in Kubernetes event logs, you can quickly scan for unique schemas with LogReduce Keys:
 
 ```sql
 _sourceCategory="primary-eks/events"
@@ -83,7 +81,7 @@ Next, use [LogReduce Values to explore the schema based on specific keys](logr
 
 ### AWS CloudTrail
 
-To get a summary of patterns in AWS CloudTrail logs that reference AccessDenied errors for AWS you'd use a query such as the following:
+To get a summary of patterns in AWS CloudTrail logs that reference AccessDenied errors for AWS, you'd use a query such as the following:
 
 ```sql {13}
 _sourceCategory=*cloudtrail* *AccessDenied* 

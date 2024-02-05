@@ -1,6 +1,6 @@
 ---
 id: crowdstrike-falcon-endpoint-protection
-title: Sumo Logic App for CrowdStrike Falcon Endpoint Protection
+title: CrowdStrike Falcon Endpoint Protection
 sidebar_label: CrowdStrike Falcon Endpoint Protection
 description: The CrowdStrike Falcon Endpoint Protection App provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform.
 ---
@@ -15,7 +15,7 @@ The [CrowdStrike Falcon Endpoint Protection Platform](https://www.crowdstrike.co
 
 This version of the CrowdStrike Falcon Endpoint Protection App and its collection process has been tested with SIEM Connector Version 2.1.0+001-siem-release-2.1.0.
 
-## Log Types
+## Log types
 
 The CrowdStrike Falcon Endpoint Protection App uses the following log types:
 * Detection Event
@@ -145,7 +145,7 @@ For more information on Events, please refer to [Streaming API Event Dictionary]
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 This section provides query examples for each event type.
 
@@ -186,8 +186,8 @@ _sourceCategory=*Crowdstrike*  UserActivityAuditEvent
 
 This section shows you how to configure log collection from CrowdStrike Falcon Endpoint Protection and have them sent to Sumo Logic. CrowdStrike Falcon Endpoint Protection provides endpoint detection and response, next-gen antivirus, and threat intelligence services through the cloud. Multiple security functions are consolidated into a single lightweight agent, for visibility across using central security analytics with Sumo Logic.
 
-:::caution
-To collect logs from CrowdStrike Falcon Endpoint Protection, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Crowdstrike](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) to create the source and use the same source category while installing the app.
+:::warning
+To collect logs from CrowdStrike Falcon Endpoint Protection, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud-to-Cloud Integration for Crowdstrike](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) to create the source and use the same source category while installing the app.
 
 The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you're using the Sumo Logic FedRamp deployment, use the sections below to configure the collection for this app.
 :::
@@ -239,12 +239,12 @@ To configure CrowdStrike SIEM Connector, do the following:
 1. In the Falcon console go to [Support > API Clients & Keys](https://falcon.crowdstrike.com/support/api-clients-and-keys).
 2. [Create an API client](https://falcon.crowdstrike.com/support/documentation/1/crowdstrike-api-introduction#auth_apiclient) to use with the SIEM connector, and record its API client ID and API client secret. In the the **Edit API client** dialog, ONLY select the **Event streams** option, and then click **Save**.
    1. Open the **/opt/crowdstrike/etc/cs.falconhoseclient.cfg** file in a text editor.
-   2. Edit the following lines in the **cs.falconhoseclient.cfg ** file:
+   2. Edit the following lines in the **cs.falconhoseclient.cfg** file:
    * Change **app_id** to **SIEM-Connector.**
-   * **client_id - **Add your recorded API Client ID
-   * **client_secret - **Add your recorded API Client Secret
+   * **client_id** - Add your recorded API Client ID
+   * **client_secret** - Add your recorded API Client Secret
    * Make sure **output_format** is set to **json**
-   * For **EventTypeCollection **section - Enable all events:
+   * For **EventTypeCollection** section - Enable all events:
      * DetectionSummaryEvent = true
      * AuthActivityAuditEvent = true
      * UserActivityAuditEvent = true
@@ -266,8 +266,8 @@ To set up an installed collector and local file source, do the following:
 
 1. Install a Sumo Logic collector on the same host as the SIEM Connector. Follow the instructions for your operating system as described in [Installed Collectors](/docs/send-data/installed-collectors).
 2. Add a local file source to the collector for Streaming API Events. Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), with these additional changes:
-* Set the **Filepath** to**:**  **/var/log/crowdstrike/falconhoseclient/output**
-* Set the **Source Category** to: c**rowdstrike/falcon**
+* Set the **Filepath** to: `/var/log/crowdstrike/falconhoseclient/output`
+* Set the **Source Category** to: `crowdstrike/falcon`
 * Under **Enable Multiline Processing**, check  **Boundary Regex**  and enter the following regex: `^\{.*`.
 3. Click **Save**.
 
@@ -280,28 +280,14 @@ For more information about the CrowdStrike Falcon SIEM Connector, see the CrowdS
 
 This section provides instructions for installing the Sumo App for CrowdStrike Falcon Endpoint Protection, as well as examples for each of the app dashboards.
 
-To install the app, do the following:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 ## Viewing CrowdStrike Falcon Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Parsers/FERs Folder

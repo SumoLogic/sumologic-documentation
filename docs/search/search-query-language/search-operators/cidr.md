@@ -73,50 +73,42 @@ compareCIDRPrefix("<ip_addr1>", "<ip_addr2>", "<prefix_length>") as <field>
 compareCIDRPrefix(<ip_addr1>, <ip_addr2>, "<prefix_length>")
 ```
 
+:::tip See also
+You may find the [isValidIP](/docs/search/search-query-language/search-operators/isvalidip) operator helpful as well.
+:::
+
 ### Examples
 
-To review events from a specific network segment:
+#### Review events from a specific network segment
 
 1. Search for the events. For example, let's say we'd like to review firewall logs:
-
     ```
-    (denied OR rejected AND _sourcecategory=firewall | ...
+    (denied OR rejected AND _sourceCategory=firewall | ...
     ```
-
 1. Parse the IP addresses. For example:   
-
     ```sql
     ... | parse "ip=*," as ip_address ...
     ```
-
 1. Compare to the full CIDR notation you requested. For example, 10.10.1.32/27:  
-
     ```sql
     ... | where compareCIDRPrefix("10.10.1.32", ip_address, "27") | ...
     ```
-
 1. Keep matching records, and drop non-matching records from search results:  
-
     ```sql
     ... | count by ip_address
     ```
 
-To review events not from a specific network segment:
+#### Review events not from a specific network segment
 
 1. Search for the events. For example, let's say we'd like to review firewall logs:  
-
    ```
-   (denied OR rejected AND _sourcecategory=firewall | ...
+   (denied OR rejected AND _sourceCategory=firewall | ...
    ```
-
 1. Parse the IP addresses. For example:   
-
     ```sql
     ... | parse "ip=*," as ip_address ...
     ```
-
 1. Compare to the full CIDR notation you requested, and drop matching records. For example, 10.10.1.32/27:  
-
     ```sql
     ... | where !compareCIDRPrefix("10.10.1.32", ip_address, "27") | ...
     ```

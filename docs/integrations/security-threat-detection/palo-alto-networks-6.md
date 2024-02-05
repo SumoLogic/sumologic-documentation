@@ -1,6 +1,6 @@
 ---
 id: palo-alto-networks-6
-title: Sumo Logic App for Palo Alto Networks 6
+title: Palo Alto Networks 6
 sidebar_label: Palo Alto Networks 6
 description: The Palo Alto Networks 6 App provides four dashboards, giving you several ways to discover threats, consumption, traffic patterns, and other security-driven issues, providing additional insight for investigations.
 ---
@@ -11,12 +11,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Palo Alto Networks 6 App provides four dashboards, giving you several ways to discover threats, consumption, traffic patterns, and other security-driven issues, providing additional insight for investigations.
 
-## Log Types
+## Log types
 
 Parsing in the Palo Alto Networks 6 App for PAN 6 is based on the [PAN-OS Syslog integration](https://live.paloaltonetworks.com/t5/forums/searchpage/tab/message?q=PAN-OS+Syslog+integration&filter=labels&search_type=thread).
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 <12>Dec 22 13:22:14 PA-5050 1,2016/12/22 13:22:14,002201002211,THREAT,vulnerability,1,2016/12/22 13:22:14,77.200.181.165,208.74.205.51,0.0.0.0,0.0.0.0,Alert Logging,,,web-browsing,vsys1,IDS,IDS,ethernet1/21,ethernet1/21,Sumo_Logic,2016/12/22 13:22:14,34403128,1,59305,80,0,0,0x80000000,tcp,alert,"1794",HTTP SQL Injection Attempt(38195),any,medium,client-to-server,128764886,0x0,NL,US,0,,1345817091864062106,,,1,,,,,,,,0
@@ -27,7 +27,7 @@ Parsing in the Palo Alto Networks 6 App for PAN 6 is based on the [PAN-OS Syslog
 
 
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Threat Type by Severity"
 _sourceCategory=palo_alto_network | parse "*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*" as f1,recvTime,serialNum,type,subtype,f2,genTime,src_ip,dest_ip,natsrc_ip,natdest_ip,ruleName,src_user,dest_user,app,vsys,src_zone,dest_zone,ingress_if,egress_if,logProfile,f3,sessionID,repeatCnt,src_port,dest_port,natsrc_port,natdest_port,flags,protocol,action,misc,threatID,cat,severity,direction,seqNum,action_flags,src_loc,dest_loc,f4,content_type | count as count by subtype,severity | transpose row severity column subtype
@@ -58,7 +58,7 @@ For Syslog, configure the Source fields:
 2. **Description.** Optional.
 3. **Protocol**. UDP or TCP
 4. **Port**. Port number.
-5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).
+5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).
 6. Click **Save**.
 
 For a Hosted source, use advanced settings as necessary, but save the endpoint URL associated in order to configure Palo Alto Networks.
@@ -81,29 +81,11 @@ misc,threatID,cat,severity,direction,seqNum,action_flags,src_loc,dest_loc,f4,con
 
 ## Installing the Palo Alto Networks 6 App
 
-Now that you have set up collection for Palo Alto Networks, install the Sumo Logic App for Palo Alto Networks to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
+Now that you have set up collection for Palo Alto Networks, install the Sumo Logic App for Palo Alto Networks to use the preconfigured searches and dashboards that provide insight into your data.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-      * Choose **Source Category**, and select a source category from the list. 
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+<AppInstall/>
 
 ## Viewing PAN 6 Dashboards
 
@@ -111,7 +93,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 The Overview Dashboard keeps you up-to-speed on the higher level operations of your PAN deployment.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PAN_Overview_Dashboard.png')} alt="Palo_Alto_Networks_6 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/PAN-Overview.png')} alt="Palo_Alto_Networks_6 Dashboard" />
 
 **Source Host Locations.** Using a geolocation query, this Panel maps the location of source hosts using their IP addresses.
 
@@ -124,7 +106,7 @@ The Overview Dashboard keeps you up-to-speed on the higher level operations of y
 
 ### Threat Analysis
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PAN_ThreatAnalysis_Dashboard.png')} alt="Palo_Alto_Networks_6 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/PAN-Threat-Analysis.png')} alt="Palo_Alto_Networks_6 Dashboard" />
 
 **Threat Type.** Get an idea of the number of threats as well as the type of threats detected by Palo Alto Networks. Top Destination IPs. Shows the top 10 destination IPs (the IPs that have made the most attempts).
 
@@ -143,7 +125,7 @@ Top Destination IPs. Ranks the top 10 destination IPs as a bar chart.
 
 The Traffic Monitoring Dashboard includes several Panels that display information about incoming and outgoing traffic, including bytes sent and received.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PAN_TrafficMonitoring_Dashboard.png')} alt="Palo_Alto_Networks_6 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/PAN-Traffic-Monitoring.png')} alt="Palo_Alto_Networks_6 Dashboard" />
 
 **Events by Protocol.** Displays the breakdown of events, sorted by protocol (ICMP, TCP, UDP, HOPOPT).
 
@@ -166,7 +148,7 @@ The Traffic Monitoring Dashboard includes several Panels that display informatio
 
 This advanced Dashboard includes specialized, targeted Panels that are typically used by IT Admins.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/PAN_Generic_Dashboard.png')} alt="Palo_Alto_Networks_6 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/PAN-Generic.png')} alt="Palo_Alto_Networks_6 Dashboard" />
 
 **Top 10 Source IPs by Byte.** Watch for unexpected spikes in traffic from the top 10 Source IP addresses.
 

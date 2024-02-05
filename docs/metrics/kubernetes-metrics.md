@@ -1,127 +1,123 @@
 ---
 id: kubernetes-metrics
 title: Kubernetes Metrics
-sidebar_label: Kubernetes Metrics
 description: This page lists the Kubernetes metrics that are collected when you deploy the collection solution described in sumologic-kubernetes-collection deployment guide.
 ---
 
 This page lists the Kubernetes metrics that are collected when you deploy the collection solution described in
-[sumologic-kubernetes-collection deployment guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy). 
+[sumologic-kubernetes-collection deployment guide](/docs/send-data/kubernetes/install-helm-chart).
 
-The metrics to be collected are specified in the [overrides.xml](https://github.com/SumoLogic/sumologic-kubernetes-collection) file. The deployment guide has information about filtering and relabeling metrics, and how to send custom Prometheus metrics to Sumo Logic.
+Information about filtering and relabeling metrics, and how to send custom Prometheus metrics to Sumo Logic, can be found in [Collecting Application Metrics](/docs/send-data/kubernetes/collecting-metrics).
 
 ## Kube state metrics (kube-state-metrics)
 
-kube-state-metrics is a service that listens to the Kubernetes API server and generates metrics about the state of the objects, including deployments, nodes, and pods.
+[kube-state-metrics](https://github.com/kubernetes/kube-state-metrics) is a service that listens to the Kubernetes API server and generates metrics about the state of the objects, including deployments, nodes, and pods.
 
-You can deploy kube-state-metrics using Helm. The Sumo Logic helm chart has a dependency to install it. To avoid duplication, use a single instance of FluentD to collect the metrics.  
+You can deploy kube-state-metrics using the [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection).
 
 You can use kube-state-metrics in managed Kubernetes environments, such as GKE, EKS, or AKS, or in a Kubernetes deployment you manage yourself.
 
 ### kube-state-metrics metrics to collect
 
-This section lists recommended metrics to collect. For information about all kube-state-metrics, and metric descriptions, see [Kubernetes docs](https://github.com/kubernetes/kube-state-metrics/tree/master/docs)
+This section lists recommended metrics to collect. For information about all kube-state-metrics, and metric descriptions,
+see [kube-state-metrics docs](https://github.com/kubernetes/kube-state-metrics/tree/release-2.6/docs)
 
-* Daemonsets
-    * kube_daemonset_status_current_number_scheduled
-    * kube_daemonset_status_desired_number_scheduled
-    * kube_daemonset_status_number_misscheduled
-    * kube_daemonset_status_number_unavailable
-    * kube_daemonset_metadata_generation
-* Deployments
-    * kube_deployment_metadata_generation
-    * kube_deployment_spec_paused
-    * kube_deployment_spec_replicas
-    * kube_deployment_spec_strategy_rollingupdate_max_unavailable
-    * kube_deployment_status_observed_generation
-    * kube_deployment_status_replicas_available
-    * kube_deployment_status_replicas_unavailable
-* Nodes
-    * kube_node_info
-    * kube_node_spec_unschedulable
-    * kube_node_status_allocatable
-    * kube_node_status_capacity
-    * kube_node_status_condition
-* Pods
-    * kube_pod_container_info
-    * kube_pod_container_resource_requests
-    * kube_pod_container_resource_limits
-    * kube_pod_container_status_ready
-    * kube_pod_container_status_terminated_reason
-    * kube_pod_container_status_waiting_reason
-    * kube_pod_status_phase
+* kube_daemonset_status_current_number_scheduled
+* kube_daemonset_status_desired_number_scheduled
+* kube_daemonset_status_number_misscheduled
+* kube_daemonset_status_number_unavailable
+* kube_deployment_spec_replicas
+* kube_deployment_status_replicas_available
+* kube_deployment_status_replicas_unavailable
+* kube_node_info
+* kube_node_status_allocatable
+* kube_node_status_capacity
+* kube_node_status_condition
+* kube_statefulset_metadata_generation
+* kube_statefulset_replicas
+* kube_statefulset_status_observed_generation
+* kube_statefulset_status_replicas
+* kube_hpa_spec_max_replicas
+* kube_hpa_spec_min_replicas
+* kube_hpa_status_condition
+* kube_hpa_status_current_replicas
+* kube_hpa_status_desired_replicas
+* kube_pod_container_info
+* kube_pod_container_resource_limits
+* kube_pod_container_resource_requests
+* kube_pod_container_status_ready
+* kube_pod_container_status_restarts_total
+* kube_pod_container_status_terminated_reason
+* kube_pod_container_status_waiting_reason
+* kube_pod_status_phase
+* kube_service_info
+* kube_service_spec_external_ip
+* kube_service_spec_type
+* kube_service_status_load_balancer_ingress
 
 ### View kube-state-metrics
 
-Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace. 
-
-Run this command to start a proxy to the Kubernetes API server: 
+Assuming that you have the [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) installed in your cluster, run this command to start a proxy to the Kubernetes API server:
 
 ```bash
 kubectl proxy
 ```
 
-To view metrics, open your browser to: 
+To view metrics, open your browser to:
 
-`http://127.0.0.1:8001/api/v1/namespaces/prometheus/services/kube-prometheus-exporter-kube-state:80/proxy/metrics`
+`http://127.0.0.1:8001/api/v1/namespaces/SUMOLOGIC_HELM_CHART_NAMESPACE/services/SUMOLOGIC_HELM_CHART_RELEASE_NAME-kube-state-metrics:8080/proxy/metrics`
+
+Where `SUMOLOGIC_HELM_CHART_NAMESPACE` is the namespace where the Sumo Logic Kubernetes Collection Helm Chart is installed and
+`SUMOLOGIC_HELM_CHART_RELEASE_NAME` is the the release name of the Sumo Logic Kubernetes Collection Helm Chart in your cluster.
 
 ## Controller Manager (kube-controller-manager) metrics
 
-Controller manager metrics provide important insight into the performance and health of the controller manager.
+Controller manager metrics provide important insight into the performance and health of [the controller manager](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/).
 
-Requires a service to be deployed to talk to Controller Manager. Prometheus Operator does this for you.
+Collection of controller manager metrics requires a service to be deployed to talk to controller manager. The [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) creates this service.
 
-You can collect kube-controller-manager metrics in a Kubernetes deployment you manage yourself. You can’t collect kube-controller-manager metrics in managed Kubernetes environments, such as GKE, EKS, or AKS.  
+You can collect kube-scheduler metrics in a Kubernetes deployment you manage yourself. You can’t collect kube-scheduler metrics in managed Kubernetes environments, such as GKE, EKS, or AKS.  
 
 ### kube-controller-manager metrics to collect
 
-`cloudprovider_\*_api_request_duration_seconds\*`
+* cloudprovider_\*_api_request_duration_seconds\*
 
-### View kube-controller-manager metrics 
+### View kube-controller-manager metrics
 
-Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.  
-
-Run this command to start a proxy to the Kubernetes API server: 
+To see kube-controller-manager metrics, run the curl command from a master node, using the appropriate certificates to pass the authentication process:
 
 ```bash
-kubectl proxy
+curl -k --cert /tmp/server.crt --key /tmp/server.key https://localhost:10257/metrics
 ```
-
-To view metrics, open your browser to: 
-
-`http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/kube-prometheus-exporter-kube-controller-manager:10252/proxy/metrics`
 
 ## Scheduler (kube-scheduler) metrics
 
-Requires a service to be deployed to talk to Scheduler. Prometheus Operator does this for you.
+[Scheduler](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/) metrics provide information about for kubernetes scheduling.
+
+Collection of scheduler metrics requires a service to be deployed to talk to scheduler. The [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) creates this service.
 
 You can collect kube-scheduler metrics in a Kubernetes deployment you manage yourself. You can’t collect kube-scheduler metrics in managed Kubernetes environments, such as GKE, EKS, or AKS.  
 
 ### kube-scheduler metrics to collect
 
-* scheduler_e2e_scheduling_latency_microseconds\*
-* scheduler_binding_latency_microseconds\*
-* scheduler_scheduling_algorithm_latency_microseconds\*
+* scheduler_e2e_scheduling_duration\*
+* scheduler_binding_duration\*
+* scheduler_scheduling_algorithm_duration\*
 
-### View kube-scheduler metrics 
+### View kube-scheduler metrics
 
-Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.
+To see kube-scheduler metrics, run the curl command from a master node, using the appropriate certificates to pass the authentication process:
 
-Run this command to start a proxy to the Kubernetes API server: 
+```bash
+curl -k --cert /tmp/server.crt --key /tmp/server.key https://localhost:10259/metrics
+```
 
-`kubectl proxy`
+## API Server (kube-apiserver) metrics
 
-To view metrics, open your browser to: 
+You can collect [kube-apiserver](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/) metrics in managed Kubernetes environments, such as GKE, EKS, or AKS, or in a Kubernetes deployment you manage yourself.
 
-`http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/kube-prometheus-exporter-kube-controller-manager:10252/proxy/metrics`
+### kube-apiserver metrics to collect
 
-## API Server (apiserver) metrics
-
-You can collect apiserver metrics in managed Kubernetes environments, such as GKE, EKS, or AKS, or in a Kubernetes deployment you manage yourself.
-
-A single worker should collect these to avoid duplication.
-
-* apiserver metrics to collect
 * apiserver_request_count
 * apiserver_request_latencies\*
 * etcd_request_cache_get_latencies_summary\*
@@ -131,12 +127,11 @@ A single worker should collect these to avoid duplication.
 
 ### View apiserver metrics
 
+Run this command to start a proxy to the Kubernetes API server:
 
-Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.
-
-Run this command to start a proxy to the Kubernetes API server: 
-
-`kubectl proxy `
+```bash
+kubectl proxy
+```
 
 To view metrics, open your browser to:  
 
@@ -144,13 +139,13 @@ To view metrics, open your browser to:  
 
 ## Kubelet (kubelet) metrics
 
-The Kubelet acts as a bridge between the Kubernetes master and the Kubernetes nodes. It manages the pods and containers running on a machine. 
+[Kubelet](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/) acts as a bridge between the Kubernetes master and the Kubernetes nodes. It manages the pods and containers running on a machine.
 
 You can collect kubelet in managed Kubernetes environments, such as GKE, EKS, or AKS, or in a Kubernetes deployment you manage yourself.
 
 Collect from each node in the cluster.
 
-### Metrics to collect
+### Kubelet metrics to collect
 
 * kubelet_docker_operations_errors
 * kubelet_docker_operations_latency_microseconds\*
@@ -162,55 +157,45 @@ Collect from each node in the cluster.
 
 ### View kubelet metrics
 
-Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.
-
 Run this command to start a proxy to the Kubernetes API server: 
 
-`kubectl proxy `
+```bash
+kubectl proxy
+```
 
-To view metrics, open your browser to: 
+To view metrics, open your browser to:
 
 `http://127.0.0.1:8001/api/v1/nodes/NODE_NAME/proxy/metrics`  
-   
+
 Where `NODE_NAME` is the name of your node. For example:
 
 `http://127.0.0.1:8001/api/v1/nodes/ip-172-20-114-48.us-west-2.compute.internal/proxy/metrics`
 
 ## cAdvisor (kubelet) metrics
 
-cAdvisor is an open source container resource usage and performance analysis agent.
+[cAdvisor](https://github.com/google/cadvisor) is an open source container resource usage and performance analysis agent.
 
 You can collect cAdvisor metrics in managed Kubernetes environments, such as GKE, EKS, or AKS, or in a Kubernetes deployment you manage yourself.
 
-By default, we exclude records where container_name is empty or POD and collect from each node in a cluster.
+### cAdvisor metrics to collect
 
-### Metrics to collect
-
-* container_cpu_load_average_10s
-* container_cpu_system_seconds_total
 * container_cpu_usage_seconds_total
-* container_cpu_cfs_throttled_seconds_total
-* container_memory_usage_bytes
-* container_memory_swap
-* container_spec_memory_limit_bytes
-* container_spec_memory_swap_limit_bytes
-* container_spec_memory_reservation_limit_bytes
-* container_fs_usage_bytes
 * container_fs_limit_bytes
-* container_fs_writes_bytes_total
-* container_fs_reads_bytes_total
+* container_fs_usage_bytes
+* container_memory_working_set_bytes
+* container_cpu_cfs_throttled_seconds_total
 * container_network_receive_bytes_total
 * container_network_transmit_bytes_total
-* container_network_receive_errors_total
-* container_network_transmit_errors_total
 
-Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.
+### View cAdvisor metrics
 
-Run this command to start a proxy to the Kubernetes API server: 
+Run this command to start a proxy to the Kubernetes API server:
 
-`kubectl proxy `
+```bash
+kubectl proxy
+```
 
-To view metrics, open your browser to: 
+To view metrics, open your browser to:
 
 `http://127.0.0.1:8001/api/v1/nodes/NODE_NAME/proxy/metrics/cadvisor`
 
@@ -220,66 +205,162 @@ To view metrics, open your browser to: 
 
 ## Node Exporter (node-exporter) metrics
 
-You can collect Node Exporter metrics in managed Kubernetes environments, such as GKE, EKS, or AKS, or in a Kubernetes deployment you manage yourself.
-
-By default, Sumo Logic collects from each node in a cluster.
+You can collect [Node Exporter](https://github.com/prometheus/node_exporter) metrics in managed Kubernetes environments, such as GKE, EKS, or AKS, or in a Kubernetes deployment you manage yourself.
 
 For a full list of metrics scraped and forwarded by Sumo Logic Kubernetes, see [this table](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/scraped-metrics.md#metrics).
 The table lists the metric name, source, and if it is forwarded.
 
 ### Node Exporter metrics to collect
 
+* node_cpu_seconds_total
 * node_load1
 * node_load5
 * node_load15
-* node_cpu_seconds_total
-* node_memory_MemAvailable_bytes
-* node_memory_MemTotal_bytes
-* node_memory_Buffers_bytes
-* node_memory_SwapCached_bytes
-* node_memory_Cached_bytes
+* node_disk_io_time_weighted_seconds_total
+* node_disk_io_time_seconds_total
+* node_vmstat_pgpgin
+* node_vmstat_pgpgout
 * node_memory_MemFree_bytes
-* node_memory_SwapFree_bytes
-* node_ipvs_incoming_bytes_total
-* node_ipvs_incoming_packets_total
-* node_ipvs_outgoing_bytes_total
-* node_ipvs_outgoing_packets_total
-* node_disk_reads_completed_total
-* node_disk_writes_completed_total
-* node_disk_read_bytes_total
-* node_disk_written_bytes_total
+* node_memory_Cached_bytes
+* node_memory_Buffers_bytes
+* node_memory_MemTotal_bytes
+* node_network_receive_drop_total
+* node_network_transmit_drop_total
+* node_network_receive_bytes_total
+* node_network_transmit_bytes_total
 * node_filesystem_avail_bytes
-* node_filesystem_free_bytes
 * node_filesystem_size_bytes
+* node_filesystem_files_free
+* node_filesystem_files
 
 ### View Node Exporter metrics
 
-Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-2-configure-prometheus) in the sumologic namespace.
+Assuming that you have the [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection) installed in your cluster, run this command to start a proxy to the Kubernetes API server:
 
-Run kubectl port-forward: 
+```bash
+kubectl proxy
+```
 
-`kubectl -n sumologic port-forward svc/sumologic-prometheus-node-exporter 9100`
+To view metrics, open your browser to:
 
-In another console, run this command to get a metrics sample to confirm the metrics are being generated.
+`http://127.0.0.1:8001/api/v1/namespaces/SUMOLOGIC_HELM_CHART_NAMESPACE/services/SUMOLOGIC_HELM_CHART_RELEASE_NAME-prometheus-node-exporter:9100/proxy/metrics`
 
-`curl localhost:9100/metrics`
+Where `SUMOLOGIC_HELM_CHART_NAMESPACE` is the namespace where the Sumo Logic Kubernetes Collection Helm Chart is installed and
+`SUMOLOGIC_HELM_CHART_RELEASE_NAME` is the the release name of the Sumo Logic Kubernetes Collection Helm Chart in your cluster.
 
-## Metrics created by Prometheus Operator rules (default)
+## Metrics created by Prometheus rules (default-metrics)
 
-These metrics are produced by Prometheus rules at ingest time—they are not available on an exporter, Prometheus creates them during scrape activities. Rules-created metrics are sent with the remote write API.
+These metrics are produced by Prometheus rules at ingest time — they are not available on an exporter, Prometheus creates them during scrape activities. Rules-created metrics are sent with the remote write API.
 
 You can collect metrics created by Prometheus Operator rules in managed Kubernetes environments, such as GKE, EKS, or AKS, or in a Kubernetes deployment you manage yourself.
 
+These metrics can be found under the **default-metrics** source in Sumo Logic.
+
 ### Metrics to collect
 
-* [Cluster_quantile:apiserver_request_latencies:histogram_quantile](https://github.com/helm/charts/blob/master/stable/prometheus-operator/templates/prometheus/rules/kube-apiserver.rules.yaml#L21)
-* [Node Recording rule metrics](https://github.com/helm/charts/blob/master/stable/prometheus-operator/templates/prometheus/rules/kube-prometheus-node-recording.rules.yaml#L23)
-    * The value of record will be the metric name.
-* [Kube Scheduler rules](https://github.com/helm/charts/blob/master/stable/prometheus-operator/templates/prometheus/rules/kube-scheduler.rules.yaml#L21)
-    * The value of record will be the metric name.
-* [Node Rules](https://github.com/helm/charts/blob/master/stable/prometheus-operator/templates/prometheus/rules/node.rules.yaml)
-    * The value of record will be the metric name.
+* :kube_pod_info_node_count:
+* :node_cpu_saturation_load1:
+* :node_cpu_utilisation:avg1m
+* :node_disk_saturation:avg_irate
+* :node_disk_utilisation:avg_irate
+* :node_memory_swap_io_bytes:sum_rate
+* :node_memory_utilisation:
+* :node_net_saturation:sum_irate
+* :node_net_utilisation:sum_irate
+* cluster_quantile:apiserver_request_duration_seconds:histogram_quantile
+* cluster_quantile:scheduler_binding_duration_seconds:histogram_quantile
+* cluster_quantile:scheduler_e2e_scheduling_duration_seconds:histogram_quantile
+* cluster_quantile:scheduler_scheduling_algorithm_duration_seconds:histogram_quantile
+* instance:node_filesystem_usage:sum
+* instance:node_network_receive_bytes:rate:sum
+* node:cluster_cpu_utilisation:ratio
+* node:cluster_memory_utilisation:ratio
+* node:node_cpu_saturation_load1:
+* node:node_cpu_utilisation:avg1m
+* node:node_disk_saturation:avg_irate
+* node:node_disk_utilisation:avg_irate
+* node:node_filesystem_avail:
+* node:node_filesystem_usage:
+* node:node_inodes_free:
+* node:node_inodes_total:
+* node:node_memory_bytes_total:sum
+* node:node_memory_swap_io_bytes:sum_rate
+* node:node_memory_utilisation:
+* node:node_memory_utilisation:ratio
+* node:node_memory_utilisation_2:
+* node:node_net_saturation:sum_irate
+* node:node_net_utilisation:sum_irate
+* node:node_num_cpu:sum
+* node_namespace_pod:kube_pod_info:
 
-## up metrics
+For more information about above metrics please see [this](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/scraped-metrics.md#aggregations) documentation.
+
+## Collection Health Related Metrics (default-metrics)
+
+These metrics are used to monitor the health of the collectors used to send telemetry data to Sumo Logic.
+
+These metrics can be found under the **default-metrics** source in Sumo Logic, in addition to the [Metrics created by Prometheus rules](/docs/metrics/kubernetes-metrics/#metrics-created-by-prometheus-rules).
+
+### Metrics to collect
+
+* fluentbit_input_bytes_total
+* fluentbit_input_files_closed_total
+* fluentbit_input_files_opened_total
+* fluentbit_input_files_rotated_total
+* fluentbit_input_records_total
+* fluentbit_output_errors_total
+* fluentbit_output_proc_bytes_total
+* fluentbit_output_proc_records_total
+* fluentbit_output_retries_failed_total
+* fluentbit_output_retries_total
+* fluentd_output_status_buffer_available_space_ratio
+* fluentd_output_status_buffer_queue_length
+* fluentd_output_status_buffer_stage_byte_size
+* fluentd_output_status_buffer_stage_length
+* fluentd_output_status_buffer_total_bytes
+* fluentd_output_status_emit_count
+* fluentd_output_status_emit_records
+* fluentd_output_status_flush_time_count
+* fluentd_output_status_num_errors
+* fluentd_output_status_queue_byte_size
+* fluentd_output_status_retry_count
+* fluentd_output_status_retry_wait
+* fluentd_output_status_rollback_count
+* fluentd_output_status_slow_flush_count
+* fluentd_output_status_write_count
+* otelcol_otelsvc_k8s_other_added
+* otelcol_otelsvc_k8s_other_updated
+* otelcol_otelsvc_k8s_pod_added
+* otelcol_otelsvc_k8s_pod_deleted
+* otelcol_otelsvc_k8s_pod_updated
+* otelcol_process_cpu_seconds
+* otelcol_process_runtime_heap_alloc_bytes
+* otelcol_process_runtime_total_alloc_bytes
+* otelcol_process_runtime_total_sys_memory_bytes
+* otelcol_queue_length
+* otelcol_spans_dropped
+* otelcol_trace_batches_dropped
+* prometheus_remote_storage_dropped_samples_total
+* prometheus_remote_storage_enqueue_retries_total
+* prometheus_remote_storage_failed_samples_total
+* prometheus_remote_storage_highest_timestamp_in_seconds
+* prometheus_remote_storage_pending_samples
+* prometheus_remote_storage_queue_highest_sent_timestamp_seconds
+* prometheus_remote_storage_retried_samples_total
+* prometheus_remote_storage_samples_in_total
+* prometheus_remote_storage_sent_batch_duration_seconds_bucket
+* prometheus_remote_storage_sent_batch_duration_seconds_count
+* prometheus_remote_storage_sent_batch_duration_seconds_sum
+* prometheus_remote_storage_shard_capacity
+* prometheus_remote_storage_shards
+* prometheus_remote_storage_shards_desired
+* prometheus_remote_storage_shards_max
+* prometheus_remote_storage_shards_min
+* prometheus_remote_storage_string_interner_zero_reference_releases_total
+* prometheus_remote_storage_succeeded_samples_total
+
+## up metrics (default-metrics)
 
 Prometheus generates a metric called up that indicates whether a scrape was successful. A  value of “1” is scrape indicates success, “0” failure. The `up` metric is useful for debugging and alerting for targets that are down or having issues. Each target should produce an up metric on every scrape.
+
+These metrics can be found under the **default-metrics** source in Sumo Logic.

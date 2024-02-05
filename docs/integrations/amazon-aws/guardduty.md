@@ -1,7 +1,6 @@
 ---
 id: guardduty
-title: Sumo Logic App for Amazon GuardDuty
-sidebar_label: Amazon GuardDuty
+title: Amazon GuardDuty
 description: The Amazon GuardDuty Sumo Logic app provides insights into the activities in your AWS account based on the findings from Amazon GuardDuty, detect unexpected and potentially malicious activities in your AWS account by providing details on threats by severity, VPC, IP, account ID, region, and resource type.
 ---
 
@@ -11,13 +10,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon GuardDuty is a continuous security monitoring service that analyzes and processes VPC Flow Logs and AWS CloudTrail event logs. The Sumo Logic App for Amazon GuardDuty provides insights into the activities in your AWS account based on the findings from Amazon GuardDuty. The App includes preconfigured dashboards that allow you to detect unexpected and potentially malicious activities in your AWS account by providing details on threats by severity, VPC, IP, account ID, region, and resource type.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on GuardDuty findings, see [here](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
 
-### Sample Log Message
+### Sample log messages
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -150,9 +150,10 @@ The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be se
 
 </details>
 
-### Sample Query
+### Sample queries
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```sql title="Threat details"
 _sourceCategory=aws/guardduty
@@ -210,7 +211,7 @@ In this step, you deploy the events processor. This will create the AWS resource
 #### Configure optional environment variables
 
 1. Go to the AWS Lambda console.
-2. Search for the "aws-serverless-repository-CloudWatchEventFunction-<_suffix_>"" function and click it.
+2. Search for the `"aws-serverless-repository-CloudWatchEventFunction-<_suffix_>"` function and click it.
 3. Scroll down to the **Environment variables** section. You can set any of the following optional variables:
     * `ENCODING` (optional). Encoding to use when decoding CloudWatch log events. Default is utf-8.
     * `SOURCE_CATEGORY_OVERRIDE` (optional). Override `_sourceCategory` value configured for the HTTP source.
@@ -220,27 +221,11 @@ In this step, you deploy the events processor. This will create the AWS resource
 
 ## Installing the Amazon GuardDuty App
 
-Now that you have set up collection for Amazon GuardDuty, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon GuardDuty, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-To install the app, do the following:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
+<AppInstall/>
 
 ## Viewing Amazon GuardDuty Dashboards
 
@@ -276,8 +261,7 @@ See the details of GuardDuty CloudTrail threats including the count, title, the 
 <img src={useBaseUrl('img/integrations/amazon-aws/CloudTrailDetails.png')} alt="Amazon GuardDuty dashboards" />
 
 
-
-**CloudTrail Threats. **See the count of CloudTrail threats in the last 24 hours.
+**CloudTrail Threats.** See the count of CloudTrail threats in the last 24 hours.
 
 **CloudTrail Threats by Title Trend**. See the count of CloudTrail threats by title in the last 24 hours on a pie chart.
 
@@ -322,4 +306,4 @@ See the details of GuardDuty threats by VPC, security group, and subnet ID.
 
 **Severity Count by SubnetID**. See the count of severity in the last 24 hours by Subnet ID on a bar chart.
 
-**VPC, Subnet, and Security Group Threat Table. ** See the details of severity in the last 24 hours including the account ID, severity, region, VPC ID, Subnet ID,  security group name and ID,  threat purpose, resource type, threat name, and count, displayed in a table.
+**VPC, Subnet, and Security Group Threat Table.**  See the details of severity in the last 24 hours including the account ID, severity, region, VPC ID, Subnet ID,  security group name and ID,  threat purpose, resource type, threat name, and count, displayed in a table.

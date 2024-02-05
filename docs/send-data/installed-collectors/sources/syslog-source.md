@@ -17,12 +17,12 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
 
 ## Configure a Syslog Source
 
-1. In the Sumo web app select **Manage Data > Collection > Collection**.
+1. In the Sumo web app select **Manage Data** > **Collection** > **Collection**.
 1. Find the Installed Collector to which you'd like to add the Syslog Source. Click **Add** and then choose **Add Source** from the pop-up menu.
 1. Select **Syslog** for the Source type. <br/>![syslog source.png](/img/send-data/syslog-source.png)
 1. **Name.** Enter the name you'd like to display for the new Source. **Description** is optional. The Source's name is stored as the metadata field `_sourceCategory`.
 1. **Protocol.** Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see [Choosing TCP or UDP](syslog-source.md).
-1. **Port.** Enter the port number for the Source to listen to. If the collector runs as root (default), use 51. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
+1. **Port.** Enter the port number for the Source to listen to. If the collector runs as root (default), use 514. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
 1. **Source Category.** Enter a string to tag the collected messages with the searchable metadata field `_sourceCategory`. For example, enter **firewall** to tag all collected messages in a field called `_sourceCategory`. Enter *`_sourceCategory=firewall`* in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/reference-information/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories).
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate; each field needs a name (key) and value. <br/>
      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
@@ -185,7 +185,7 @@ These steps can help identify the problem:
 
 1. **Use netstat to verify that Sumo is listening on the port.** Once the Syslog source is configured, verify on the collector host that there is a listen process on the configured port in the output of "netstat -nap". If there is no Sumo process listening on the configured protocol (TCP/UDP) and port, it could be that the Sumo process could not bind to the port because another process was using the port. In this case, a collector log message will indicate that the Sumo process failed to bind to the port.
 
-1. **Push test messages using *netcat*.** Use netcat to push data to the port using a chat session. Netcat is a networking utility with a simple interface that you can use to read and write from TCP and UDP sockets. Netcat is not included by default; you can download it from http://nmap.org/nca.
+1. **Push test messages using *netcat*.** Use netcat to push data to the port using a chat session. Netcat is a networking utility with a simple interface that you can use to read and write from TCP and UDP sockets. Netcat is not included by default; you can download it [here](https://nmap.org/ncat).
 
     Sample commands to set up the client are shown below. If you are running the command on the host where the collector runs, replace `"<ip_address>"` with `"localhost"`.
 

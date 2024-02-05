@@ -15,7 +15,7 @@ For example, the following image shows a few results in the default sort order. 
 * The `last` result is indicated with the `#` value of 5. This `last` result has the oldest `Time`.
 
 :::tip
-Using the [sort](/docs/search/search-query-language/search-operators/sort) operator allows you to change the default sort order.
+Using the [`sort`](/docs/search/search-query-language/search-operators/sort) operator allows you to change the default sort order.
 :::
 
 #### Limitations
@@ -36,7 +36,7 @@ first(<field>) [as <field>] [by <field>]
 
 ### Rules
 
-* The default field created is named **`_first`**
+* The default field created is named `_first`
 
 ### Example
 
@@ -44,8 +44,7 @@ first(<field>) [as <field>] [by <field>]
 ... | first(error_message) group by hostname
 ```
 
-Note that when you find the first occurrence of more than one field, you must create an alias using the [as
-operator](/docs/search/search-query-language/search-operators/as) to rename the _first fields. See this example:
+Note that when you find the first occurrence of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the `_first` fields. See this example:
 
 ```sql
 _sourceCategory=Apache/Access

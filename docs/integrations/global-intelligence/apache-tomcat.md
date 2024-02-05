@@ -15,9 +15,9 @@ Global Intelligence for Apache Tomcat App is a companion to the Apache Tomcat a
 
 Global Intelligence for Apache Tomcat App uses logs data from Apache Tomcat clusters. Like the Sumo Logic App for Apache Tomcat, it assumes the NCSA extended/combined log file format for Access logs and the default Apache Tomcat error log file format for error logs. For more details on custom log formats, see [Apache Tomcat Module mod_log_config](https://httpd.apache.org/docs/current/mod/mod_log_config.html).
 
-## Sample Query 
+## Sample queries 
 
-The following sample query is from the Average **Requests Per Second: My** **Server** **v Benchmark** panel of **GI Tomcat - 02. Load Signals and Contributing Factors** dashboard.
+The following sample query is from the **Average Requests Per Second: My Server v Benchmark** panel of the **GI Tomcat - 02. Load Signals and Contributing Factors** dashboard.
 
 ```
 | json auto maxdepth 1 nodrop
@@ -45,14 +45,16 @@ The following sample query is from the Average **Requests Per Second: My** **Ser
 
 The Sumo Global Intelligence for Tomcat app provides insights into your key Tomcat infrastructure indicators. 
 
-Follow the steps in [Sumo Logic Tomcat Logs](/docs/integrations/web-servers/apache-Tomcat#Collecting-Logs-and-Metrics-for-Apache-Tomcat) to configure the collection for Global Intelligence for Tomcat App.
-
+Follow the steps in [Sumo Logic Tomcat Logs](/docs/integrations/web-servers/apache-tomcat#Collecting-Logs-and-Metrics-for-Apache-Tomcat) to configure the collection for Global Intelligence for Tomcat App.
 
 
 ## Installing the Global Intelligence for Apache Tomcat App
 
-This section has instructions for installing the Sumo Logic App for Global Intelligence for Apache Tomcat and descriptions of each of the app dashboards. 
+This section has instructions for installing the Sumo Logic App for Global Intelligence for Apache Tomcat.
 
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Concepts
 

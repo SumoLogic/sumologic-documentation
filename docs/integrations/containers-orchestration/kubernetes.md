@@ -1,17 +1,17 @@
 ---
 id: kubernetes
-title: Sumo Logic App for Kubernetes
+title: Kubernetes
 sidebar_label: Kubernetes
-description: The Sumo Logic Kubernetes App provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes.
+description: The Sumo Logic Kubernetes app provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="k8s logo" width="75"/>  
+<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="k8s logo" width="50"/>  
 
-The Sumo Logic Kubernetes App provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes. The App is a single-pane-of-glass through which you can monitor and troubleshoot container health, replication, load balancing, pod state and hardware resource allocation. It utilizes [Falco](https://falco.org/docs/) events to monitor and detect anomalous container, application, host, and network activity.
+The Sumo Logic Kubernetes app provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes. The app is a single-pane-of-glass through which you can monitor and troubleshoot container health, replication, load balancing, pod state and hardware resource allocation. It utilizes [Falco](https://falco.org/docs/) events to monitor and detect anomalous container, application, host, and network activity.
 
-In conjunction with the Kubernetes App, the AKS Control Plane, GKE Control Plane, EKS Control Plane, or Kubernetes Control Plane Apps provide visibility into the control plane, including the APIserver, scheduler, and controller manager.
+In conjunction with the Kubernetes app, the AKS Control Plane, GKE Control Plane, EKS Control Plane, or Kubernetes Control Plane apps provide visibility into the control plane, including the APIserver, scheduler, and controller manager.
 
 [Kubernetes](https://kubernetes.io/) is a system that automates the deployment, management, scaling, networking, and availability of container-based applications. Kubernetes container-orchestration allows you to easily deploy and manage multi-container applications at scale.
 
@@ -21,20 +21,11 @@ For an end-to-end solution for deploying, managing, monitoring, and administerin
 
 ## Supported versions
 
-The following are the minimum supported requirements for this application:
-* Kubernetes
-   * 1.10 and later
-* Kops
-   * 1.13.10-k8s
-   * 1.13.10-kops
-   * 1.12.8-k8s
-   * 1.12.2-kops
-   * 1.10.13-k8s
-   * 1.10.0-kops
+The Sumo Logic Kubernetes app is compatible with the latest version of [Sumo Logic Kubernetes Collection Helm Chart](https://github.com/SumoLogic/sumologic-kubernetes-collection). A list of supported platforms can be found [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/docs#support-matrix).
 
 ## Log and Metric Types
 
-The Sumo Logic App for Kubernetes uses logs and metrics.
+The Sumo Logic app for Kubernetes uses logs and metrics.
 
 ### Log Sources
 
@@ -45,10 +36,9 @@ The Sumo Logic App for Kubernetes uses logs and metrics.
 * [Node-exporter Metrics](https://prometheus.io/docs/guides/node-exporter/) - System-level statistics about bare-metal nodes or virtual machine and generates metrics.
 * [Kube-state-metrics](https://github.com/kubernetes/kube-state-metrics) - Metrics about the state of Kubernetes logical objects, including node status, node capacity (CPU and memory), number of desired/available/unavailable/updated replicas per deployment, pod status (e.g., waiting, running, ready), and containers.
 
-For more information, see [this page](https://github.com/SumoLogic/sumologic-kubernetes-collection). Metrics are collected using [Prometheus with FluentD](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy#step-1-create-sumo-collector-and-deploy-fluentd).
+For more information, see [this page](https://github.com/SumoLogic/sumologic-kubernetes-collection). Metrics are collected using [Prometheus](https://prometheus.io/) with [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) used for metadata enrichment.
 
-
-### Sample Log Message
+### Sample log messages
 
 ```json title="Application Logs"
 {"timestamp":1561534865020,"log":"E0626 07:41:05.020255       1
@@ -58,7 +48,7 @@ Post http://192.168.190.54:10255/stats/container/: dial tcp 192.168.190.54:10255
 getsockopt: connection refused"}
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Message Breakdown by Container from the Dashboard Container Logs"
  cluster = * and namespace = * and pod = * and container = *
@@ -66,9 +56,9 @@ getsockopt: connection refused"}
 | fields - message | count container | top 10 container by _count
 ```
 
-## Collecting Metrics and Logs for the Kubernetes App
+## Collecting Metrics and Logs for the Kubernetes app
 
-This section has instructions for collecting logs and metrics for the Sumo App for Kubernetes. FluentBit and FluentD. Prometheus collects metrics data for Sumo Logic.
+This section contains instructions for collecting logs and metrics for the Sumo App for Kubernetes.
 
 :::note Prerequisites  
 Set the following fields in the Sumo Logic UI prior to configuring collection. This ensures that your logs are tagged with relevant metadata, which is required by the app dashboards and Explore.
@@ -89,20 +79,21 @@ Reference the [Deployment Guide](https://github.com/SumoLogic/sumologic-kubernet
 The Deployment Guide has information on advanced configurations, best practices, performance, troubleshooting, and upgrading for our latest and previous versions of supported software.
 
 
-## Installing the Kubernetes App
+## Installing the Kubernetes app
 
-Now that you have set up the collection for Kubernetes App, install the Sumo Logic App for Kubernetes to use the pre-configured Kubernetes dashboards that provide visibility into your Kubernetes environment.
+Now that you have set up the collection for Kubernetes app, install the Sumo Logic App for Kubernetes to use the pre-configured Kubernetes dashboards that provide visibility into your Kubernetes environment.
 
 To install the app, do the following:
 
-1. Locate and install the app from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-2. From the App Catalog, search for **Kubernetes** and select the app.
-3. Click **Add to Library**.
-4. Complete the following fields:
-   * App Name. You can retain the existing name, or enter a name of your choice for the app. 
-   * Data Source. For each the sources listed, enter a Custom Data Filter or Source Category, as follows: For Falco Log Source, leave  **Source Category** selected, and enter the following source category: *falco* or one that matches the source categories in your environment. For  Events Log Source, leave  Source Category  selected, and enter the following source category: *events* or one that matches the source categories in your environment.
-   * Advanced. Select the location in the Library (the default is the Personal folder in the Library), or click New Folder to add a new folder.
-5. Click **Add to Library**.
+1. Locate and install the app from the **App Catalog**.
+2. Search for **Kubernetes** and select the app.
+3. Optionally, on this page, you can also see a preview of the dashboards included with the app.
+4. Click **Add Integration**.
+5. On the next configuration page, titled **Install App**, follow the instructions (Add Repo, Monitor & Alert Installation, Install Helm chart). When you're done, click **Next**.
+   :::note 
+   Helm chart installation via command line is required in order to install the Kubernetes app and see the dashboards in the next step. 
+   :::
+6. (Optional) On the next configuration step, titled **Preview & Done**, click the blue **Explore Dashboards** button or **Open Dashboards in Library** to check out your Kubernetes dashboards. Here, you'll also be given the options to add another cluster, configure Kubernetes monitors, or manage your collectors.
 
 
 ## Installing Kubernetes Monitors
@@ -117,9 +108,9 @@ For details on the individual alerts, see [Kubernetes Alerts](/docs/observabilit
 
 1. Download the [JSON file](https://raw.githubusercontent.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/main/monitor_packages/kubernetes/kubernetes.json) describing all the monitors.   
 2. The alerts should be restricted to specific clusters and/or namespaces to prevent the monitors hitting the cardinality limits. To limit the alerts, update the JSON file by replacing the text `$$kubernetes_data_source` with `<Your Custom Filter>`. For example: `cluster=k8s-prod.01`.
-3. Go to Manage Data > Alerts > Monitors.
-4. Click Add:<br/> ![add-monitor.png](/img/metrics/add-monitor.png)
-5. Click Import to import monitors from the JSON above.
+3. Go to **Manage Data > Alerts > Monitors**.
+4. Click **Add Monitor**:<br/> ![add-monitor.png](/img/metrics/add-monitor.png)
+5. Click **Import** to import monitors from the JSON above.
 
 :::note
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kubernetes folder under  Monitors  to configure them. See this document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
@@ -127,70 +118,73 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys). Please identify which deployment your Sumo Logic account is in, using this /docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security"> link.
-2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for Kubernetes alerts. The alerts package is available in the [Sumo Logic github repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/kubernetes). You can either download it through the `git clone` command or as a zip file.
-4. Alert Configuration. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/`.
+1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys). There, you'll need to identify which deployment your Sumo Logic account is in ([learn more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security)).
+1. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
+1. Download the Sumo Logic Terraform package for Kubernetes alerts. The alerts package is available in the [Sumo Logic GitHub repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/kubernetes). You can either download it through the `git clone` command or as a zip file.
+1. **Alert Configuration**. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/`.
    1. Edit the kubernetes.auto.tfvars file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
     ```bash
     access_id   = "<SUMOLOGIC ACCESS ID>"
     access_key  = "<SUMOLOGIC ACCESS KEY>"
     environment = "<SUMOLOGIC DEPLOYMENT>"
     ```
-   2. The alerts should be restricted to specific clusters and/or namespaces to prevent the monitors hitting the cardinality limits. To limit the alerts, update the variable `kubernetes_data_source` with your `<Your Custom Filter>`. For example: `cluster=k8s.prod.01`.
-   3. All monitors are disabled by default on installation. If you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
-  4. By default, the monitors are configured in a monitor folder called “Kubernetes”, if you would like to change the name of the folder, update the monitor folder name in this file.
-5. If you would like the alerts to send email or connection notifications, modify the file **kubernetes_notifications.auto.tfvars** and populate `connection_notifications_critical`, `connection_notifications_warnings`, `connection_notifications_missingdata` and `email_notifications_critical`, `email_notifications_warnings`, `email_notifications_missingdata` as per below examples.
-
-```sql title="Pagerduty Connection Example"
-connection_notifications_critical = [
-    {
-      connection_type       = "PagerDuty",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "{\"service_key\": \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    },
-    {
-      connection_type       = "Webhook",
-      connection_id         = "<CONNECTION_ID>",
-      payload_override      = "",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-  Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/docs/api/monitors).
-
-  For overriding payload for different connection types, refer to [this document](/docs/alerts/webhook-connections/set-up-webhook-connections).
-
-```sql title="Email Notifications Example"
-email_notifications_critiical = [
-    {
-      connection_type       = "Email",
-      recipients            = ["abc@example.com"],
-      subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
-      time_zone             = "PST",
-      message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
-      run_for_trigger_types = ["Critical", "ResolvedCritical"]
-    }
-  ]
-```
-
-6. Install the Alerts:
-   * Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/` and run `terraform init`. This will initialize Terraform and will download the required components.
-   * Run `terraform plan` to view the monitors which will be created/modified by Terraform.
-   * Run `terraform apply`.
-7. Post Installation. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. See Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+   1. The alerts should be restricted to specific clusters and/or namespaces to prevent the monitors hitting the cardinality limits. To limit the alerts, update the variable `kubernetes_data_source` with your `<Your Custom Filter>`. For example: `cluster=k8s.prod.01`.
+   1. All monitors are disabled by default on installation. If you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
+  1. By default, the monitors are configured in a monitor folder called **Kubernetes**, if you would like to change the name of the folder, update the monitor folder name in this file.
+1. If you would like the alerts to send email or connection notifications, modify the file **kubernetes_notifications.auto.tfvars** and populate `connection_notifications_critical`, `connection_notifications_warnings`, `connection_notifications_missingdata` and `email_notifications_critical`, `email_notifications_warnings`, `email_notifications_missingdata` as per the below examples.
+   ```sql title="Pagerduty Connection Example"
+   connection_notifications_critical = [
+       {
+         connection_type       = "PagerDuty",
+         connection_id         = "<CONNECTION_ID>",
+         payload_override      = "{\"service_key\":  \"your_pagerduty_api_integration_key\",\"event_type\": \"trigger\",\"description\": \"Alert: Triggered {{TriggerType}} for Monitor {{Name}}\",\"client\": \"Sumo Logic\",\"client_url\": \"{{QueryUrl}}\"}",
+        run_for_trigger_types = ["Critical", "ResolvedCritical"]
+       },
+       {
+         connection_type       = "Webhook",
+         connection_id         = "<CONNECTION_ID>",
+         payload_override      = "",
+         run_for_trigger_types = ["Critical", "ResolvedCritical"]
+       }
+     ]
+   ```
+   Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/docs/api/monitors-management). For information on overriding payload for different connection types, refer to [this document](/docs/alerts/webhook-connections/set-up-webhook-connections).
+   ```sql title="Email Notifications Example"
+   email_notifications_critiical = [
+       {
+         connection_type       = "Email",
+         recipients            = ["abc@example.com"],
+         subject               = "Monitor Alert: {{TriggerType}} on {{Name}}",
+         time_zone             = "PST",
+         message_body          = "Triggered {{TriggerType}} Alert on {{Name}}: {{QueryURL}}",
+           run_for_trigger_types = ["Critical", "ResolvedCritical"]
+       }
+     ]
+   ```
+1. **Install the Alerts**:
+   1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/` and run `terraform init`. This will initialize Terraform and will download the required components.
+   1. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
+   1. Run `terraform apply`.
+1. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. See Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
 :::note
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts).
 :::
 
+## Upgrading the Kubernetes app
+
+The current version of our app is not backwards compatible with older Helm Chart versions. Follow the below steps to upgrade.
+
+1. Switch to [Admin Mode](/docs/manage/content-sharing/admin-mode/#switch-to-admin-mode). If you are not a Content Administrator, you may have to contact Administrator within your organization to grant the [Manage Content](/docs/manage/users-roles/roles/role-capabilities/#data-management) role to your user.
+1. Go to the folder **Library/Admin Recommended/Sumo Logic Integrations/Kubernetes**, click on the three button, choose **Edit**, and rename the folder to your liking (for example, **Kubernetes-backup-Nov-2023**). The renaming may take up to 5 minutes to go into effect.
+1. If you're in **Content Administrator** mode, switch back to **Me** mode.
+1. Go back to the **App Catalog** and reinstall the Kubernetes app again by following the [Installing the Kubernetes app](/docs/integrations/containers-orchestration/kubernetes/#installing-the-kubernetes-app) instructions. If the tab was already open, you may have to refresh the page.
+
 
 ## Viewing Kubernetes Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Cluster Explorer
@@ -206,7 +200,7 @@ Use this dashboard to:
 
 ### Cluster  
 
-The**Kubernetes - Cluster** dashboard provides detailed status of the cluster health, along with details on all the components, resources and related entities.
+The **Kubernetes - Cluster** dashboard provides detailed status of the cluster health, along with details on all the components, resources and related entities.
 
 Use this dashboard to:  
 * Monitor overall cluster health.
@@ -218,7 +212,7 @@ Use this dashboard to:
 
 ### Cluster Overview
 
-The**Kubernetes - Cluster Overview**dashboard provides a high-level view of the cluster health. Use this dashboard to:  
+The **Kubernetes - Cluster Overview** dashboard provides a high-level view of the cluster health. Use this dashboard to:  
 * Get quick insights into the health of the cluster.
 * View top resource intensive components and use this information to fine tune your cluster.
 
@@ -238,7 +232,7 @@ Use this dashboard to:
 
 ### Node Overview   
 
-The **Kubernetes - Node Overview**dashboard provides a high-level view of a node, along with details on all the related components and resources.
+The **Kubernetes - Node Overview** dashboard provides a high-level view of a node, along with details on all the related components and resources.
 
 Use this dashboard to:  
 * Get quick insights into the health of the node.  
@@ -249,7 +243,7 @@ Use this dashboard to:
 
 ### Namespace
 
-The **Kubernetes - Namespace**dashboard provides insights into the health and resource utilization of a namespace.
+The **Kubernetes - Namespace** dashboard provides insights into the health and resource utilization of a namespace.
 
 Use this dashboard to:  
 * Monitor namespace health.  
@@ -286,7 +280,7 @@ Use this dashboard to:
 
 ### Daemonsets Overview
 
-The **Kubernetes - Daemonsets Overview**dashboard provides insights into the health of and resource utilization of Kubernetes Daemonsets.
+The **Kubernetes - Daemonsets Overview** dashboard provides insights into the health of and resource utilization of Kubernetes Daemonsets.
 
 Use this dashboard to:  
 * Monitor the health of Daemonsets.   
@@ -320,12 +314,15 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Deployment_Overview.png')} alt="K8s dashboards" />
 
 
-### Health Check
+### Collection Health Check
 
-The **Kubernetes - Health Check**dashboard displays the collection status from all the components in the Kubernetes cluster.
+The **Kubernetes - Collection Health Check** dashboard displays the collection status from all the components in the Kubernetes cluster.
 
 Use this dashboard to:  
-* Monitor the health of FluentD and FluentBit pods in your Kubernetes environment.
+* Monitor the health of OpenTelemetry based collection in your Kubernetes environment.
+  :::note
+  Currently, in default configurations, [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector) is used instead of FluentD and Fluent Bit.
+  :::
 * Gain insights into Prometheus metric collection endpoint status.
 * Get insight into resource utilization and fine-tune configurations accordingly.
 * View logs and errors and investigate potential issues.
@@ -335,7 +332,7 @@ Use this dashboard to:
 
 ### Deployment  
 
-The **Kubernetes - Deployment**dashboard provides insights into the health and performance of your Kubernetes deployments.
+The **Kubernetes - Deployment** dashboard provides insights into the health and performance of your Kubernetes deployments.
 
 Use this dashboard to:  
 
@@ -349,7 +346,7 @@ Use this dashboard to:
 ### Security Overview
 
 :::note
-This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco:enabled` as `"true"` in values.yaml, as described [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
+This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco:enabled` as `"true"` in values.yaml, as described [here](/docs/send-data/kubernetes/install-helm-chart).
 :::
 
 This dashboard provides high level details around anomalous container, application, host, and network activity detected by Falco.
@@ -363,10 +360,10 @@ Use this dashboard to:
 ### Security Rules Triggered
 
 :::note
-This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco:enabled` as `"true"` in values.yaml, as described [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).
+This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco.enabled` as `"true"` in values.yaml. For details, please see the Sumo Logic Kubernetes Collection Helm Chart [documentation](https://github.com/SumoLogic/sumologic-kubernetes-collection#documentation).
 :::
 
-The**Kubernetes - Security Rules Triggered**dashboard provides detailed information around anomalous activity detected by Falco. It also shows information around the OOB Falco rules triggered by anomalous activity in your Kubernetes environments.
+The **Kubernetes - Security Rules Triggered** dashboard provides detailed information around anomalous activity detected by Falco. It also shows information around the OOB Falco rules triggered by anomalous activity in your Kubernetes environments.
 
 Use this dashboard to:
 * Reviewed detailed information of anomalous activity.
@@ -380,7 +377,7 @@ Use this dashboard to:
 The **Kubernetes - Service** dashboard provides a high-level view of the health of the cluster services, along with details on utilized resources by service.
 
 Use this dashboard to:  
-* Reviewed detailed information of services.  
+* Reviewed detailed information of services.
 * Identify components by Services.  
 * Determine any errors and warnings by Services.
 
@@ -392,7 +389,7 @@ Use this dashboard to:
 The **Kubernetes - Hygiene Check** dashboard provides visibility into the configuration hygiene of your Kubernetes cluster. This dashboard displays color-coded performance checks for nodes, along with resource utilization, pod capacity, pod errors, and pod states.
 
  Use this dashboard to:  
-* Assess bad configurations and determine the trouble areas for proactive adjustment.   
+* Assess bad configurations and determine the trouble areas for proactive adjustment.
 * Monitor resource allocation across your cluster to maintain optimum performance.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Hygiene_Check.png')} alt="K8s dashboards" />
@@ -405,7 +402,7 @@ CoreDNS is a [DNS server](https://en.wikipedia.org/wiki/Domain_Name_System) and 
 The **Kubernetes - CoreDNS** dashboard provides visibility into the health and performance of CoreDNS.  
 
 Use this dashboard to:  
-* Track the total number of requests.  
+* Track the total number of requests.
 * Review Cache statistics.  
 * Monitor CoreDNSs resource usage and spikes.
 
@@ -416,10 +413,10 @@ Use this dashboard to:
 
 The Horizontal Pod Autoscaler automatically scales the number of Pods in a replication controller, deployment, replica set or stateful set based on observed CPU utilization.
 
-The **Kubernetes - HPA**dashboard provides visibility into the health and performance of HPA.  
+The **Kubernetes - HPA** dashboard provides visibility into the health and performance of HPA.  
 
 Use this dashboard to:  
-* Identify whether the required replica level has been achieved or not.  
+* Identify whether the required replica level has been achieved or not.
 * View logs and errors and investigate potential issues.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_HPA.png')} alt="K8s dashboards" />

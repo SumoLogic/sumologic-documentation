@@ -1,17 +1,17 @@
 ---
 id: armis
-title: Sumo Logic App for Armis
+title: Armis
 sidebar_label: Armis
 description: The Sumo Logic App for Armis offers complete device security with alert analysis, device monitoring, and device information for IT infrastructure protection.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud/armis-icon.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/send-data/armis-icon.png')} alt="armis-icon.png" width="80" />
 
 The Sumo Logic App for Armis offers enhanced visibility into both alerts and device data, making it easier to monitor and manage your device security. The app features dashboards that analyze alerts by severity, status, and type, providing a clear picture of the trend of alerts over time. Additionally, the app allows you to monitor devices by risk level, type, and category, and provides a table view of the latest devices with key information to keep your IT infrastructure secure.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for Armis gathers log information from the following two sources.
 
@@ -55,13 +55,11 @@ The Sumo Logic App for Armis gathers log information from the following two sour
 | `site` | String | The site of the device. |
 
 
-### Sample Log Messages
+### Sample log messages
 
 This section contains log messages for both Alerts and Device sources. It helps in monitoring activity and resolving issues.
 
-**Sample Alerts Log Messages**
-
-```json
+```json title="Sample Alerts Log Messages"
 {
  "data": {
    "count": 10,
@@ -93,9 +91,7 @@ This section contains log messages for both Alerts and Device sources. It helps 
 }
 ```
 
-**Sample Device Log Messages**
-
-```json
+```json title="Sample Device Log Messages"
 {
    "data": {
      "count": 83,
@@ -164,7 +160,7 @@ This section contains log messages for both Alerts and Device sources. It helps 
  }
 ```
 
-### Sample Queries
+### Sample queries
 
 This section contains the sample queries of both the `Alerts` and `Device`.
 
@@ -191,43 +187,23 @@ _sourceCategory=ArmisDashboards id
 
 This section explains how to collect logs from Armis API and ingest them into Sumo Logic. Refer to the [Armis API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source/) to create the source and use the same source category while installing the app.
 
-## Installing the Armis App
+## Installing the Armis app
 
-Locate and install the app from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
-To install the app, follow the steps below:
-1. From the **App Catalog**, search for the app and select it.
-2. Select the version of the service you're using and click **Add to Library**.
+<AppInstall/>
 
-:::note
-Version selection is applicable only to a few apps currently. For details, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-:::
-3. To install the app, enter the following fields.
-   1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
-   2. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example, `_sourceCategory=MyCategory`.
-   3. **Advanced**. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+## Viewing the Armis dashboards
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
+<ViewDashboards/>
 
-## Viewing the Armis Dashboards​
-
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
-
-### Alerts Overview Dashboard
+### Alerts Overview 
 
 **Armis - Alerts Overview** dashboard. The dashboard provides a comprehensive analysis of alerts, by categorizing them based on their severity, status, type, and presenting a trend of alerts over a specified period of time.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Armis-Alerts-Overview.png')} alt="Armis-Alerts-Overview.png" width="600"/>
 
 
-### Device Overview Dashboard
+### Device Overview
 
 **Armis - Device Overview** dashboard. The dashboard provides a table view of last-seen devices with key information to protect your IT infrastructure and offers visibility into devices based on risk levels, types, and categories.<br/><img src={useBaseUrl('img/integrations/saas-cloud/Armis-Device-Overview.png')} alt="Armis-Alerts-Overview.png" width="600"/>

@@ -1,19 +1,19 @@
 ---
 id: active-directory-json
-title: Sumo Logic App for Active Directory JSON
+title: Active Directory JSON - Classic Collector
 sidebar_label: Active Directory JSON
 description: The Active Directory JSON App helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/AD-small.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="40"/>
 
-The Active Directory JSON App helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format. The app includes predefined searches and dashboards that provide user activity into your environment for real-time analysis of overall usage.
+The Sumo Logic app for Active Directory JSON (2012+) helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format. The app includes predefined searches and dashboards that provide user activity into your environment for real-time analysis of overall usage.
 
 We recommend using the Active Directory JSON App in combination with the Windows JSON App.
 
-## Log Types
+## Log types
 
 Standard Windows event channels include:
 * Security
@@ -22,7 +22,7 @@ Standard Windows event channels include:
 
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {
@@ -64,7 +64,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 ```
 
 
-### Sample Query
+### Sample queries
 
 The sample query is from **Successes Vs Failures** panel from [Active Directory Service Failures](#service-failures) dashboard.
 
@@ -78,7 +78,7 @@ _sourceCategory=Labs/windows-jsonformat
 | transpose row _timeslice column status
 ```
 
-## Collecting Logs
+## Collecting logs
 
 This section provides instructions on configuring log collection for the Active Directory JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
 
@@ -89,42 +89,23 @@ To configure a collector and source, do the following:
 1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
   * **Event Format.** Select Collect using JSON format.
-
-Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
+	* **Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
   * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown.
 **Complete Message** will ingest the entire event content along with metadata.
 
 For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/local-windows-event-log-source) and [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/remote-windows-event-log-source).
 
-## Installing the Active Directory JSON App
+## Installing the Active Directory JSON app​
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+<AppInstall/>
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
+## Viewing Active Directory JSON dashboards​
 
-Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-3. To install the app, complete the following fields.
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    * **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-## Viewing Active Directory JSON Dashboards
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
-:::
+<ViewDashboards/>
 
 ### Service Activity
 

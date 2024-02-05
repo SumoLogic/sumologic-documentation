@@ -1,6 +1,6 @@
 ---
 id: auth0
-title: Sumo Logic App for Auth0
+title: Auth0
 sidebar_label: Auth0
 description: The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs, and provides insight into security and operational issues.
 ---
@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Auth0 is a cloud-based, extensible identity provider for applications. The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs, and provides insight into security and operational issues.
 
-For more information, see [https://auth0.com/docs/extensions/sumologic](https://auth0.com/docs/extensions/sumologic).
+For more information, see [Export Logs to Sumo Logic](https://auth0.com/docs/extensions/sumologic).
 
 
 ## Collecting Logs for Auth0
@@ -65,7 +65,7 @@ Format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z' \
 Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_id"`
 
 
-## Sample Log Messages
+## Sample log messages
 
 ```json title="Example 1"
 {
@@ -108,7 +108,7 @@ Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_
 
 
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Logins by Client per Day"
 _collector="productionappauth0Logs_Collector"
@@ -139,26 +139,11 @@ _collector="productionappauth0Logs_Collector"
 
 ## Installing the Auth0 App
 
-Now that you have set up collection for Auth0, install the Sumo Logic App for Auth0 to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
+Now that you have set up collection for Auth0, install the Sumo Logic App for Auth0 to use the preconfigured searches and dashboards that provide insight into your data.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+<AppInstall/>
 
 ## Viewing Auth0 Dashboards
 
@@ -174,7 +159,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **Top 10 Source IPs by Failed Login.** Displays a table chart with a list of ten source IP addresses causing the most failed logins, including IP and count, for the last 24 hours.
 
-**Top 10 User Agents. **Displays the top ten most popular user agents in a pie chart from all connections for the last seven days.
+**Top 10 User Agents.** Displays the top ten most popular user agents in a pie chart from all connections for the last seven days.
 
 **Top 10 Operating Systems.** Shows the top ten most popular operating systems based on user agent in a pie chart for the last seven days.
 
@@ -190,10 +175,10 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **Connection Types per Hour.** Provides a line chart on a timeline of the connection types used for the past seven days.
 
-**Client Version Usage. **Displays a line chart on a timeline of the Auth0 library version being used by all clients for the past seven days. This is useful to detect outdated clients, as well as to track upgrades.
+**Client Version Usage.** Displays a line chart on a timeline of the Auth0 library version being used by all clients for the past seven days. This is useful to detect outdated clients, as well as to track upgrades.
 
 **Top 10 Clients.** Shows a table chart that lists the ten most popular clients, including client name and count for the past 24 hours.
 
-**Top 10 Recent Errors. **Provides a table chart with a list of the ten most frequent errors, including details on client name, connection, description and count for the last 24 hours. This is useful for discovering and troubleshooting operational issues.
+**Top 10 Recent Errors.** Provides a table chart with a list of the ten most frequent errors, including details on client name, connection, description and count for the last 24 hours. This is useful for discovering and troubleshooting operational issues.
 
 <img src={useBaseUrl('img/integrations/saml/auth0-app-overview-dashboard-mapbox.png')} alt="Auth0 app-overview-dashboard-mapbox" />

@@ -1,8 +1,7 @@
 ---
 id: dynamodb
 title: Amazon DynamoDB
-sidebar_label: Amazon DynamoDB
-description: The Sumo App for DynamoDB provides operational insight into your database environment. The app includes Dashboards that allow you to view the events, errors, latency, and capacity of your DynamoDB environment.
+description: The Sumo Logic app for DynamoDB provides operational insight into your database environment and Dashboards displaying the events, errors, latency, and capacity of your DynamoDB environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,20 +11,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon DynamoDB is a fast and flexible NoSQL database service that provides consistent, single-digit millisecond latency at any scale. For more details see here.
 
-The Sumo App for Amazon DynamoDB uses both logs and metrics to is a unified logs and metrics App that provides operational insights into your DynamoDB. The App includes Dashboards that allow you to monitor key metrics, view the throttle events, errors, and latency, and also help you plan the capacity of your DynamoDB instances.
+The Sumo app for Amazon DynamoDB uses both logs and metrics to is a unified logs and metrics app that provides operational insights into your DynamoDB. The app includes Dashboards that allow you to monitor key metrics, view the throttle events, errors, and latency, and also help you plan the capacity of your DynamoDB instances.
 
-## Collect Logs and Metrics for the Amazon DynamoDB App
+## Collect Logs and Metrics for the Amazon DynamoDB app
 
-### Log and Metric Types  
+### Log and metric types  
 
 The AWS DynamoDB app uses the following logs and metrics:
 
 * [DynamoDB CloudWatch Metrics](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html)
 * [DynamoDB operations using AWS CloudTrail](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/logging-using-cloudtrail.html)
 
-
-### Sample CloudTrail Log Message
-
+### Sample CloudTrail log message
 
 ```json
 {
@@ -63,8 +60,7 @@ The AWS DynamoDB app uses the following logs and metrics:
 }
 ```
 
-
-### Sample Queries
+### Sample queries
 
 ```sql title="Successful Request latency by Table Name (Metric based)"
 namespace=aws/dynamodb metric=SuccessfulRequestLatency Statistic=Average account=* region=* tablename=*  | sum by account, region, namespace, tablename
@@ -81,7 +77,6 @@ account=dev namespace=aws/dynamodb region=us-east-1 "\"eventSource\":\"dynamodb.
 | limit 20
 ```
 
-
 ### Collect Metrics for Amazon DynamoDB
 
 Sumo Logic supports collecting metrics using two source types:
@@ -90,7 +85,7 @@ Sumo Logic supports collecting metrics using two source types:
 
 Namespace for **Amazon DynamoDB** Service is **AWS/DynamoDB**.
 
-* **Metadata**: Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+* **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
 
 ### Collect Amazon DynamoDB CloudTrail Logs
@@ -105,10 +100,10 @@ Namespace for **Amazon DynamoDB** Service is **AWS/DynamoDB**.
     * **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
     * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources)
     * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
-    * **Enable Timestamp Parsing**. Select the check box.
-    * **Time Zone**. Select Ignore time zone from the log file and instead use, and select UTC.
-    * **Timestamp Format.** Select Automatically detect the format.
-    * **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+   * **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+   * **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+   * **Timestamp Format.** Select **Automatically detect the format**.
+   * **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 2. Click **Save**.
 
 
@@ -137,14 +132,13 @@ Parse Expression:
 
 ### Centralized AWS CloudTrail Log Collection
 
-In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
+In case you have a centralized collection of CloudTraillogs and are ingesting them from all accounts into a single Sumo Logic CloudTraillog source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 ```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data):
 _sourceCategory=aws/observability/cloudtrail/logs
 ```
-
 
 **Parse Expression**
 
@@ -158,26 +152,16 @@ Enter a parse expression to create an “account” field that maps to the alias
 | fields account
 ```
 
-## Installing the Amazon DynamoDB App
+## Installing the Amazon DynamoDB app
 
-Now that you have set up a collection for **Amazon DynamoDB**, install the Sumo Logic App to use the pre-configured [dashboards](/docs/integrations/amazon-aws/sqs#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for **Amazon DynamoDB**, install the Sumo Logic app to use the pre-configured [dashboards](/docs/integrations/amazon-aws/sqs#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library** and complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-3. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 
-## Viewing Amazon DynamoDB Dashboards
+## Viewing Amazon DynamoDB dashboards
 
 The Sumo Logic AWS Observability DynamoDB Dashboards for AWS DynamoDB provides operational insights into DynamoDB instances. Preconfigured dashboards allow you to monitor key metrics and view the throttle events, errors, and latency. They also help you plan DynamoDB instances' capacity in your environment.
 
@@ -208,7 +192,7 @@ Use this dashboard to:
 
 ### Latency and Errors
 
-**AWS DynamoDB - Latency and Errors **dashboard provides insights across your infrastructure for DynamoDB errors and latency including failed requests, and latency.
+**AWS DynamoDB - Latency and Errors** dashboard provides insights across your infrastructure for DynamoDB errors and latency including failed requests, and latency.
 
 Use this dashboard to:
 * Identify high get and put latencies for DynamoDB tables
@@ -219,7 +203,7 @@ Use this dashboard to:
 
 ### Events
 
-The **AWS DynamoDB - Events **dashboard provides insights across your infrastructure for DynamoDB events including trends, users, errors, updates, creations and deletions to tables.
+The **AWS DynamoDB - Events** dashboard provides insights across your infrastructure for DynamoDB events including trends, users, errors, updates, creations and deletions to tables.
 
 Use this dashboard to:
 

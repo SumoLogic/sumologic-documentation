@@ -1,6 +1,6 @@
 ---
 id: vmware-legacy
-title: Sumo Logic App for VMware Legacy
+title: VMware Legacy
 sidebar_label: VMware (Legacy)
 description: Allows you to collect and centralize logs, troubleshoot farms, and monitor the entire VMware infrastructure.
 ---
@@ -31,20 +31,20 @@ For vSphere 6.5 and later please use [Sumo Logic App for VMware ULM](/docs/integ
 Because vSphere CLI 5.1 has known issues with resxtop and SSL certifications, be sure to use vMA 5.1 Patch 1 (5.1.0.1). (The known issues in 5.1 are documented in the [Release Notes](https://www.vmware.com/support/developer/vcli/vcli51/vsp5_51_vcli_relnotes.html#knownissues).)
 
 
-## Log Types
+## Log types
 
 The Sumo Logic App for VMware collects logs from vCenter Servers to analyze vCenter Server Events and Performance Data in real time to enable monitoring and detect important events within your virtual environment.
 
 For information on collecting unified logs and metrics for VMware, see [VMware ULM](/docs/integrations/containers-orchestration/vmware).
 
 
-## Sample Log Message
+## Sample log messages
 
 ```json
 2017-09-25 22:09:45.123 +0000 2013-11-19T10:03:35.042999Z ,,, message=Task: Delete virtual machine,,,user=SUMO\USER,,,vm=VMNAME,,,host=HOSTNAME.sumolab.org
 ```
 
-## Sample Queries
+## Sample queries
 
 ```sql title="vCenter User Activity"
  _sourceCategory=esx_perf OR _sourceCategory=vcenter_log "message=User "
@@ -65,10 +65,7 @@ _sourceCategory=esx_perf OR _sourceCategory=vcenter_log "Memory" AND "NonKernel 
 
 ### Sumo Logic Scripts for VMware
 
-The Sumo Logic scripts required to work with the app are located here:
-
-* **[vSphere5.0.zip ](https://help.sumologic.com/@api/deki/files/23/vSphere5.0.zip?revision=1)**(MD5: b2a9da81125066bc4d81c1fd6153a926)
-* **[vSphere5.5.zip](https://help.sumologic.com/@api/deki/files/24/vSphere5.5.zip?revision=1)** (MD5: eb643b01f217ceec20e1a2fb1c285fa4)
+The Sumo Logic scripts required to work with the app are located at [sumo-vsphere-ulm.zip](https://s3.amazonaws.com/appdevstore/VMWare/sumo-vsphere-ulm.zip).
 
 For vMA 6.0, use the script package for vSphere 5.5.
 
@@ -164,7 +161,7 @@ An event is an action that triggers an event message on a vCenter Server. Event 
 
 A Sumo Logic [Syslog Source](/docs/send-data/installed-collectors/sources/syslog-source) operates like a Syslog server listening on the designated port to receive Syslog messages.
 
-1. Go to **Manage Data > Collection > Collection**, and click **Add Source**.
+1. Go to **Manage Data** > **Collection** > **Collection**, and click **Add Source**.
 2. Select **Syslog** for the Source type.
 3. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called _sourceName.
 4. For **Protocol** choose **TCP**.
@@ -203,7 +200,7 @@ Collecting performance logs involves using VMware tools and scripts running on v
 
 Configure a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source).
 
-1. Go to **Manage Data > Collection > Collection**, and click **Add Source** for your vCenter Server Collector.
+1. Go to **Manage Data** > **Collection** > **Collection**, and click **Add Source** for your vCenter Server Collector.
 2. Select **Local File** for the Source type.
 3. Enter a **Name** to display for this Source. Source name metadata is stored in a searchable field called `_sourceName`.
 4. For File Path, enter **/var/log/vmware/*.perf.out.**
@@ -235,7 +232,7 @@ vcenter03.company.com "domain_name\user_name"
 4. Run **/usr/lib/vmware-vcli/apps/general/credstore_admin.pl list** to get a list of all the vCenter Servers you have already configured for authentication. 
 5. Edit the following in the **cron_vcenter_perf.sh** script:
     * Change the **SCRIPT_PATH** variable to reflect the absolute path where the script resides.
-    * Select the method you'd like to use to collect performance data. Then, uncomment the line that calls**$SCRIPT_PATH/getserver_perf.pl**. For more information, see Segmenting Collection.
+    * Select the method you'd like to use to collect performance data. Then, uncomment the line that calls **$SCRIPT_PATH/getserver_perf.pl**. For more information, see Segmenting Collection.
 
 Test the command used in the cron script before testing the cron command and enabling it as described in [Troubleshooting and Manual Testing](#Troubleshooting_and_Manual_Testing).
 ```bash
@@ -275,7 +272,7 @@ domain_name\user_name password:
 */15 * * * * LD_LIBRARY_PATH=:/opt/vmware/vma/lib64:/opt/vmware/vma/lib /var/log/vmware/cron_vcenter_perf.sh
 ```
 
-7. Create a cron job to periodically run the **cron_vcenter_perf.sh** script. For example to run the script every 15 minutes, it would look like:
+7. Create a cron job to periodically run the **cron_vcenter_perf.sh** script. For example, to run the script every 15 minutes, it would look like:
 
 ## Understand vCenter Scripts
 
@@ -300,7 +297,7 @@ Because the above information is logged into /var/log/message for cron jobs, it'
 
 ### Collect Historical Events
 
-By default, the first time** query_vCenter.pl** is called, events from the past 24 hours are collected. Each time the script is called, it writes the timestamp of the last read event in a file named **.timelog** for the next call to pick up.
+By default, the first time **query_vCenter.pl** is called, events from the past 24 hours are collected. Each time the script is called, it writes the timestamp of the last read event in a file named **.timelog** for the next call to pick up.
 
 If you want to collect events older than the past 24 hours, before setting up the CRON job for **cron_vcenter_events.sh**, do the following on the VMA machine.
 
@@ -353,28 +350,15 @@ Once you are satisfied with the time it takes for collecting data for a segment,
 
 ## Install the VMware (Legacy) App
 
+:::warning
 A newer app, [VMware ULM](/docs/integrations/containers-orchestration/vmware), is available. The App on this page is based on the vMA technology running on legacy vSphere versions 6.0 and prior. The vMA technology is no longer supported by VMware.
+:::
 
-Now that you have set up collection, install the Sumo Logic App for VMware to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for VMware to use the preconfigured searches and dashboards that provide insight into your data.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+<AppInstall/>
 
 ## Viewing VMware Dashboards
 

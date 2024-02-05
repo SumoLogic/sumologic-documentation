@@ -14,7 +14,7 @@ Once Sumo Logic detects data coming from user browsers, the RUM app will be ins
 
 The data will populate in your organization's **Sumo Logic RUM - default** dashboards, located inside of your **Admin Recommended** folder. Do not modify or delete content in this folder, as it's maintained and updated automatically.
 
-<details><summary>If your RUM app is removed accidentally, here's how to install it manually (<strong>click to expand</strong>).</summary>
+If your RUM app is removed accidentally, you'll need to install it manually:
 
 1. Go to the **App Catalog**, then search for and select the **Real User Monitoring** app. 
 1. Click **Add to Library**.
@@ -23,12 +23,9 @@ The data will populate in your organization's **Sumo Logic RUM - default** das
 1. Click **Add to Library**.
 1. Once the app is installed, it will appear in your **Personal** folder or the folder you specified. From here, you can share it with your organization.
 
-</details>
-
-
 ## Using Explore View
 
-Once the RUM app has been installed, use our [Explore view](/docs/dashboards-new/explore-view.md) to gain visibility into your web app's performance and end-user activity, such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
+Once the RUM app has been installed, use our [Explore view](/docs/dashboards/explore-view.md) to gain visibility into your web app's performance and end-user activity, such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
 
 1. Go to **+New** > **Explore**.
 1. Under **Explore By**, **click Real User Monitoring**.
@@ -36,7 +33,7 @@ Once the RUM app has been installed, use our [Explore view](/docs/dashboards-new
 1. Set your desired filters. **Explore** organizes RUM data on five levels:
    * **Application**: corresponds to the value of the application tag set in your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). This should correspond to your whole website defined by its business function, such as `the-coffee-bar-app`.
    * **Service**: corresponds to the name of the service in your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). The value should correspond to the JavaScript code executed in your browser, such as `coffee-bar-frontend`. You can have multiple services for each application.
-   * **deployment.environment**: corresponds to your development environment. To enable this, add the `deployment.environment` tag and desired value (like `us-west-1`, `prod`, `dev`) to your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header).
+   * **deployment.environment**: corresponds to your development environment. To enable this, add the `deployment.environment` tag and desired value (like `us-west-1`, `prod`, `dev`) to your [RUM script](/docs/apm/real-user-monitoring/configure-data-collection/#step-2-add-rum-script-to-your-page-header). Supports up to 10 **deployment.environment** values.
    * **Action Type**: can be one of:
      * **document loads**: representing loading of actual documents and their resources into the browser
      * **XHR actions**: representing any interaction with a page like click or submit that executes AJAX requests in the background to communicate with the backend, or

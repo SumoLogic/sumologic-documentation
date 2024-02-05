@@ -118,6 +118,7 @@ Collector versions 19.253-26+ support **wrapper** configuration parameters.
 | http.socketTimeout | integer  | HTTP socket timeout in milliseconds when attempting to send data to Sumo Logic. | 60000 |
 | http.transmitter.retry.sleep.ms | integer  | Duration in milliseconds to sleep before retrying sending on connection failure. | 5000 |
 | httpAppender.disable | boolean  | Disable diagnostic HTTP appender for Collector logging. | false |
+| installed.collector.zstd.compression.enabled | boolean | Enable zstd compression algorithm and allow switching back to deflate by setting it to false. | true |
 | json.sync.sleep.time | integer  | Time period in milliseconds to check for changes to the Sources JSON sync file. | 1000 |
 | json.sync.waiting.after.fail | integer  | Duration in milliseconds to wait before retrying to sync to a JSON source sync file after failure. | 600000 |
 | local.win.event.collection.flag | string   | Override for the type of local Windows event collection. Possible override values include "0" for legacy mode. | NULL |
@@ -163,3 +164,5 @@ Collector versions 19.253-26+ support **wrapper** configuration parameters.
 | windows.local.jni | boolean  | Enable using JNI for local Windows Event Log Sources. | true |
 | wrapper.out.oom | string   | Custom message to log upon OutOfMemory exception from Wrapper. | The JVM has run out of memory. |
 | wrapper.out.stop | string   | Custom message to log upon stopping the Wrapper. | Wrapper Stopped |
+| collector.windows.active.directory.log.escape.special.characters | boolean | Allows escaping of special characters in Windows Active Directory Inventory Logs Source. | false  |
+| collector.windows.constant.sleep.interval.retry.windows.event | boolean | Allows to wait for a constant time to retry sending data whenever we get some invalid data. | false  |

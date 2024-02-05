@@ -14,7 +14,7 @@ The Infrequent Data Tier App provides visibility into the On-demand Search usage
 With growing adoption of modern application stacks that leverage micro-services and distributed architectures, organizations are generating more and more machine data. A large part of this data is not required for every day mission-critical operations. However, organizations still need to retain and analyze this data, as it can provide value across multiple groups within a digital enterprise. A cost efficient solution that manages infrequently used data is currently lacking in the market place, forcing customers to either not retain the data or build home-grown solutions that are difficult to maintain, secure, and don’t provide easy access to insights when enterprise needs it.
 
 
-## Log Types
+## Log types
 
 The Search Audit Index for Infrequent Data Tier App has the following fields:
 
@@ -44,7 +44,7 @@ analytics_tier="Infrequent"
 ```
 
 
-### Sample Query
+### Sample queries
 
 The following query is from the **Data Scanned Over Time** panel of the **Infrequent Cost** dashboard.
 
@@ -66,16 +66,12 @@ Sumo Logic Infrequent Data Tier App is only available for Enterprise Suite custo
 
 <table>
   <tr>
-   <td>Account Type
-   </td>
-   <td>Account Level
-   </td>
+   <td>Account Type </td>
+   <td>Account Level   </td>
   </tr>
   <tr>
-   <td>Credits
-   </td>
-   <td>Enterprise Suite
-   </td>
+   <td>Credits </td>
+   <td>Enterprise Suite </td>
   </tr>
 </table>
 
@@ -100,27 +96,12 @@ If no results are returned even for longer time ranges, it means you don't have 
 Complete the following instructions to install the Sumo Logic Infrequent Data Tier App.
 
 :::note required step
-Before installing the Infrequent Data Tier App, you need to enable the [Search Audit Index](/docs/manage/security/search-audit-index), which is currently in beta. Please reach out to your account executive or Sumo Logic support to get the Search Audit index enabled.
+Before installing the Infrequent Data Tier App, you need to enable the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index), which is currently in beta. Please reach out to your account executive or Sumo Logic support to get the Search Audit index enabled.
 :::
 
-To install the app, do the following:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Data Source.** Select either of these options for the data source. 
-      * Choose **Source Category**, and select a source category from the list. 
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
+<AppInstall/>
 
 ## Viewing Infrequent Data Tier Dashboards
 
