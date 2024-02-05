@@ -42,6 +42,8 @@ Available chart types:
 * [Box Plot](/docs/dashboards/panels/box-plot-charts)
 * [Heat Map](/docs/metrics/metrics-queries/heat-map)
 
+When you move the cursor over the Line, Column, Bar, Area, and Boxplots time series panels, you can see a vertical line across the panel at the same time point.
+
 ### What is the difference between a categorical and time series panel?
 
 The **categorical** panel type contains charts that graph data across categories. This includes:
