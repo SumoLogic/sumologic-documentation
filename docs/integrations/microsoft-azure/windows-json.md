@@ -2,22 +2,21 @@
 id: windows-json
 title: Windows JSON
 sidebar_label: Windows JSON
-description: The Windows JSON App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment.
+description: The Windows JSON app provides insight into your Windows system's operation and events so that you can better manage and maintain your environment.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="75"/>
 
-The Windows JSON App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows JSON App is based on the JSON Windows event log format and consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and Applications.
+The Windows JSON app provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows JSON app is based on the JSON Windows event log format and consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and Applications.
 
 :::note
 You may also be interested in the [Sumo Logic App for Windows Cloud Security Monitoring and Analytics](docs/integrations/cloud-security-monitoring-analytics/windows.md).
 :::
 
-
 ## Log types
 
-The Windows JSON App assumes events are coming from Windows Event Log Sources in JSON format. It does not work with third party logs.
+The Windows JSON app assumes events are coming from Windows Event Log Sources in JSON format. It does not work with third party logs.
 
 Standard Windows event channels include:
 * Security
@@ -26,8 +25,7 @@ Standard Windows event channels include:
 
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
-
-### Sample log messages
+### Sample log message
 
 ```json
 {
@@ -66,7 +64,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 }
 ```
 
-### Sample queries
+### Sample query
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
