@@ -9,8 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saml/onelogin.png')} alt="Thumbnail icon" width="50"/>
 
-OneLogin is an Identity Management provider that supplies a comprehensive set of enterprise-grade identity and access management solutions, including single sign-on (SSO), user provisioning, and multi-factor authentication. The Sumo Logic app for OneLogin provides real-time visibility and analysis of OneLogin user activity through event data, such as user logins, administrative operations, and provisioning.
-
+OneLogin is an Identity Management provider that supplies a comprehensive set of enterprise-grade identity and access management solutions, including single sign-on (SSO), user provisioning, and multi-factor authentication (MFA). The Sumo Logic app for OneLogin provides real-time visibility and analysis of OneLogin user activity through event data, such as user logins, administrative operations, and provisioning.
 
 ## Prerequisites
 
@@ -26,12 +25,11 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
    * Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for your OneLogin data. Make sure to set the **Source Category** when configuring the OneLogin source. For example, onelogin.
    * From OneLogin, configure a broadcaster that points to this endpoint using the instructions in the [OneLogin documentation](https://onelogin.service-now.com/support?id=kb_article&sys_id=43f95543db109700d5505eea4b961959). You must use SIEM (NDJSON) format. Use the Sumo Logic HTTP Source URL as the Listener URL, and custom header is not needed.
 
-
 ## Log types
 
 The Sumo Logic app for OneLogin uses event logs in NDJSON format.
 
-## Sample log messages
+## Sample log message
 
 Each event is a single-line JSON, containing information such as:
 
@@ -111,8 +109,7 @@ Each event is a single-line JSON, containing information such as:
 }
 ```
 
-## Sample queries
-
+## Sample query
 
 ```sql title="Name - Events by User"
 _sourceCategory=onelogin
@@ -124,7 +121,7 @@ _sourceCategory=onelogin
 
 ## Installing the OneLogin app
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
@@ -152,7 +149,6 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 
 <img src={useBaseUrl('img/integrations/saml/OneLoginOverview.png')} alt="OneLogin" />
 
-
 ### App Monitoring
 
 **Event Distribution by App.** See the percentage of events by application in the last 24 hours as a pie chart to identify the event distribution by apps having the most events recently.
@@ -168,6 +164,7 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 <img src={useBaseUrl('img/integrations/saml/OneLoginAppMonitoring.png')} alt="OneLogin" />
 
 ### Security
+
 **User Activity.** View the count of user activities by username as a bar chart for the last 24 hours as a bar chart to quickly identify unusual user activity.
 
 **Password Changes.** See the count of password changes by username as a bar chart for the last 24 hours to quickly identify any unusually high numbers of password changes by a particular user.
