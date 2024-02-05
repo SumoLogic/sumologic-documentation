@@ -2,8 +2,9 @@
 id: symantec-web-security-service
 title: Symantec Web Security Service
 sidebar_label: Symantec Web Security Service
-description: The Sumo Logic App for Symantec Web Security provides real-time insights into the web traffic and helps you to identify potential security threats.
+description: The Sumo Logic app for Symantec Web Security provides real-time insights into the web traffic and helps you to identify potential security threats.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/symantec-logo.svg')} alt="icon" width="125"/>
@@ -17,9 +18,9 @@ With the Sumo Logic app for Symantec Web Security, you can:
 
 ## Log types
 
-This App uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source) to collect [Access Logs](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/cloud-swg/help/wss-reference/accesslogformats-ref.html) from Symantec Web Security Service.
+This app uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source) to collect [Access Logs](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/cloud-swg/help/wss-reference/accesslogformats-ref.html) from Symantec Web Security Service.
 
-## Sample log messages
+## Sample log message
 
 ```json title="Access Log"
  {
@@ -50,7 +51,7 @@ This App uses [Symantec Web Security Service](/docs/send-data/hosted-collectors/
     ]
 }
 ```
-## Sample queries
+## Sample query
 
 ```sql title="Unique Inbound Domains"
 _sourceCategory=swssDev
