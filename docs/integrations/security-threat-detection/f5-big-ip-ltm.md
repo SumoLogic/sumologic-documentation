@@ -2,22 +2,22 @@
 id: f5-big-ip-ltm
 title: F5 BIG-IP Local Traffic Manager
 sidebar_label: F5 - BIG-IP LTM
-description: The F5 - BIG-IP Local Traffic Manager (LTM) App helps you optimize and secure network traffic patterns coming into your data center using the F5 BIG-IP platform.
+description: The F5 - BIG-IP Local Traffic Manager (LTM) app helps you optimize and secure network traffic patterns coming into your data center using the F5 BIG-IP platform.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/f5.png')} alt="thumbnail icon" width="75"/>
 
-The F5 - BIG-IP  Local Traffic Manager (LTM) App helps you optimize and secure network traffic patterns coming into your data center using the F5 BIG-IP platform.
+The F5 - BIG-IP Local Traffic Manager (LTM) app helps you optimize and secure network traffic patterns coming into your data center using the F5 BIG-IP platform.
 
-The Sumo Logic App for F5 - BIG-IP Local Traffic Manager (LTM) helps you optimize and secure network traffic patterns coming into your data center using the F5 BIG-IP platform. This App analyzes traffic flowing through the F5 Local Traffic Manager (LTM) and automatically detects threats using Sumo Logic Threat Intel. The Sumo Logic App for F5 - BIG-IP LTM provides pre-configured dashboards that allow you to monitor traffic details by application, facility, pool, active and non-responding hosts, connections, and logins. It also reports LTM CPU, disk usage, and outliers in LTM activities and traffic patterns.
+The Sumo Logic app for F5 - BIG-IP Local Traffic Manager (LTM) helps you optimize and secure network traffic patterns coming into your data center using the F5 BIG-IP platform. This app analyzes traffic flowing through the F5 Local Traffic Manager (LTM) and automatically detects threats using Sumo Logic Threat Intel. The Sumo Logic app for F5 - BIG-IP LTM provides pre-configured dashboards that allow you to monitor traffic details by application, facility, pool, active and non-responding hosts, connections, and logins. It also reports LTM CPU, disk usage, and outliers in LTM activities and traffic patterns.
 
 ## Log types
 
-The F5 - BIG-IP Local Traffic Manager (LTM) App uses event logs with payloads, as described in this [document.](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/output-example.html#ltm-request-log)
+The F5 - BIG-IP Local Traffic Manager (LTM) app uses event logs with payloads, as described in this [document.](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/output-example.html#ltm-request-log)
 
-### Sample Log
+### Sample log message 
 
 ```json title="LTM Request Log"
 {
@@ -35,7 +35,7 @@ The F5 - BIG-IP Local Traffic Manager (LTM) App uses event logs with payloads, a
 }
 ```
 
-### Sample queries
+### Sample query
 
 The following query sample is from the **F5 - BIG-IP LTM - Overview** Dashboard, **Pool Status** panel.
 
@@ -58,7 +58,6 @@ _sourceCategory=f5/bigip/ltm  systemInfo
 ## Collecting logs for the F5 - BIG-IP LTM app
 
 This section provides instructions for collecting logs for the F5 - BIG-IP LTM App, as well as a sample log message and query sample.
-
 
 ### Collection overview
 
@@ -90,7 +89,6 @@ Perform the following tasks to configure log collection for the F5 - BIG-IP LTM 
 1. Configure a Hosted Collector in Sumo Logic using [these instructions](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Add an [HTTP source](/docs/send-data/hosted-collectors/http-source/logs-metrics), configuring the Source Category with the string f5 in it (e.g., “f5/ltm”). Make a note of the URL for the HTTP source, as you will need it in the following steps. The URL for our example is: `https://collectors.us2.sumologic.com/receiver/v1/http/Thisis4fakeendpoint4testing==`.
 
-
 #### Step 2: Use AS3 Declarative language to define a logging profile on BIG-IP.
 
 Download [AS3Listener.json from here](https://sumologic-app-data.s3.amazonaws.com/F5LTM/AS3Listener.json), and we will use it to define the logging profile st BIG IP.
@@ -100,7 +98,6 @@ Use the following curl cmd to set logging profile at BIG-IP. Replace `BIG-IP PWD
 ```bash
 curl -k --user admin:<BIG-IP PWD> -H "Accept: application/json" -H "Content-Type:application/json" -X POST -d@AS3Listener.json https://<BIG-IP IP>:<PORT>/mgmt/shared/appsvcs/declare | python -m json.tool
 ```
-
 
 #### Step 3: Sumo Logic Consumer Set up using Telemetry  
 
@@ -142,10 +139,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/F5-BIGIPLTM-Overview.png')} alt="F5 dashboards" />
 
-
 ### Threat Analysis
 
-**F5 - BIG-IP LTM - Threat Analysis** dashboard provides an overview of the number of threats, their geographic location, and a breakdown by source using the Threat Intel App. This dashboard also provides details on the severity of threats, as well as the network, user name, and country of origin.
+the **F5 - BIG-IP LTM - Threat Analysis** dashboard provides an overview of the number of threats, their geographic location, and a breakdown by source using the Threat Intel app. This dashboard also provides details on the severity of threats, as well as the network, user name, and country of origin.
 
 Use this dashboard to:
 * Review details on potential threats and IOCs for incoming requests to F5 LTM.
@@ -154,10 +150,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/F5-BIGIPLTM-ThreatAnalysis.png')} alt="F5 dashboards" />
 
-
 ### Metrics and Connections
 
-**F5 - BIG-IP LTM - Metrics and Connections** dashboard provides an at-a-glance view of TCP connections, network traffic by host, and Traffic Manager resource usage.
+The **F5 - BIG-IP LTM - Metrics and Connections** dashboard provides an at-a-glance view of TCP connections, network traffic by host, and Traffic Manager resource usage.
 
 Use this dashboard to:
 * Review details of incoming TCP connection requests.
@@ -169,15 +164,15 @@ Use this dashboard to:
 
 ### Outlier Analysis
 
-**F5 - BIG-IP LTM - Outlier Analysis** dashboard provides an at-a-glance view of TCP connection and login request outliers, along with network traffic and Traffic Manager resource usage.
+The **F5 - BIG-IP LTM - Outlier Analysis** dashboard provides an at-a-glance view of TCP connection and login request outliers, along with network traffic and Traffic Manager resource usage.
 
-**Use this dashboard to** find any outliers in your incoming traffic, CPU and memory usage.
+**Use this dashboard to** find any outliers in your incoming traffic, CPU, and memory usage.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/F5-BIGIPLTM-OutlierAnalysis.png')} alt="F5 dashboards" />
 
 ### User Session Events
 
-**F5 - BIG-IP LTM - User Session Events** dashboard provides an at-a-glance view of user activity and their geographic location. This dashboard also provides information on login trends, operating systems used, user session IDs, and users by their application profile.
+The **F5 - BIG-IP LTM - User Session Events** dashboard provides an at-a-glance view of user activity and their geographic location. This dashboard also provides information on login trends, operating systems used, user session IDs, and users by their application profile.
 
 Use this dashboard to:
 * View the geographic location of active users.
