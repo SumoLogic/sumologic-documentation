@@ -13,8 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR features.
 
 :::info
-If your instance URL is a subdomain of `soar.sumologic.com`, please refer to the 
-[next paragraph](#inline-api-documentation) for information about API.
+If your instance URL is a subdomain of `soar.sumologic.com`, refer to the [next section](#inline-api-documentation) for information about API.
 :::
 
 import ApiIntro from '../reuse/api-intro.md';
