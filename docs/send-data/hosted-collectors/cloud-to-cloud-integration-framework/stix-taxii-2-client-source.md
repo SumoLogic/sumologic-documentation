@@ -6,7 +6,7 @@ tags:
   - cloud-to-cloud
   - stix
   - taxii
-description: Learn how to setup a STIX/TAXII 2.x client to collect threat intelligence indicators into the Sumo Logic environment.
+description: Learn how to set up a STIX/TAXII 2.x client to collect threat intelligence indicators into the Sumo Logic environment.
 ---
 
 import CodeBlock from '@theme/CodeBlock';
@@ -14,12 +14,6 @@ import ExampleJSON from '/files/c2c/taxii-2/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/taxii-2/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/taxii-2/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 [STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients. This Sumo Logic source supports collecting indicators from STIX/TAXII 2.0 and 2.1 versions. The legacy STIX/TAXII 1.x versions are not supported with this source.
 

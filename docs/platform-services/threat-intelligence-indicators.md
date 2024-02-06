@@ -2,14 +2,8 @@
 id: threat-intelligence-indicators
 title: Threat Intelligence Indicators
 sidebar_label: Threat Intelligence Indicators
-description: Learn how to add indicators from threat intelligence sources.
+description: Learn how to use indicators from threat intelligence sources.
 ---
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
