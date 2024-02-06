@@ -20,8 +20,8 @@ If you have an existing Collector with Sources of the same types that you are ab
 
 There are two ways to implement local configuration file management:
 
- * Specify all Sources in a single UTF-8 encoded JSON file following [RFC 8259](https://tools.ietf.org/html/rfc8259). For more information, see [Define one Source in a JSON file](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
- * Use multiple UTF-8 encoded JSON files to specify your Sources, and put all of those files in a single folder. You can put each Source definition in its own file, or define multiple Sources per file, if you like. For more information, see [Define Multiple Sources in a JSON File](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
+* Specify all Sources in a single UTF-8 encoded JSON file following [RFC 8259](https://tools.ietf.org/html/rfc8259). For more information, see [Define one Source in a JSON file](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
+* Use multiple UTF-8 encoded JSON files to specify your Sources, and put all of those files in a single folder. You can put each Source definition in its own file, or define multiple Sources per file, if you like. For more information, see [Define Multiple Sources in a JSON File](/docs/send-data/use-json-configure-sources/local-configuration-file-management).
 
 ## Step 3. Install Collector with syncSources parameter
 
