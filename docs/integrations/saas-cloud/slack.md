@@ -221,11 +221,11 @@ This legacy solution to pull logs from Slack to Sumo Logic has been replaced wit
 
 ## Installing the Slack app
 
-import AppInstall2 from '../../reuse/apps/app-install-v2.md';;
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Viewing Slack Dashboards
+## Viewing Slack dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
