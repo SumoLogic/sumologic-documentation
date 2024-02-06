@@ -9,14 +9,14 @@ tags: [ ]
 Version: 1.4  
 Updated: Feb 5, 2024
 
-Using the integration with IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources.
+AWS IAM (Identity and Access Management) is a web service that helps securely control access to AWS resources. It enables users to manage and control access to AWS services and resources effectively. With this integration, you can create and manage AWS users and groups, and use permissions to allow or deny their access to AWS resources.
 
 ## Actions
 
 * **Add User To Group** *(Containment)* - Adds the specified user to the specified group.
 * **Attach Policy** *(Containment)* - Attaches a policy to the specified target.
 * **Delete Access Key** *(Containment)* - Deletes the access key pair associated with the specified IAM user.
-* **Delete Login Profile (Containment)**. Deletes the password for the specified IAM user, which terminates the user's ability to access AWS services through the AWS Management Console.
+* **Delete Login Profile** *(Containment)* - Deletes the password for the specified IAM user, which terminates the user's ability to access AWS services through the AWS Management Console.
 * **Detach Policy** *(Containment)* - Detaches a policy from a specified target.
 * **Get Access Key Last Used** *(Enrichment)* - Retrieves information about when the specified access key was last used.
 * **Get Instance Profile** *(Enrichment)* - Returns information about the specified instance profile.
