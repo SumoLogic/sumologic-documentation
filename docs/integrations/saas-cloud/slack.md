@@ -188,7 +188,7 @@ The following table provides sample log messages for the different log types.
 }
 ```
 
-### Sample query
+### Sample queries
 
 The sample query is from the **Channel Summary** panel of **Slack - Public Channels** dashboard.
 
