@@ -2,14 +2,14 @@
 id: slack
 title: Slack
 sidebar_label: Slack
-description: The Sumo Logic App for Slack provides monitoring and data analytics for Slack users, channels, access logs for workspaces with free, standard, and plus plans.
+description: The Sumo Logic app for Slack provides monitoring and data analytics for Slack users, channels, access logs for workspaces with free, standard, and plus plans.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/slack.png')} alt="Thumbnail icon" width="50"/>
 
-The Sumo Logic App for Slack provides monitoring and data analytics for Slack users, channels, access logs for workspaces with free, standard, plus, and enterprise plans. The app is focused on **public channels** only.
+The Sumo Logic app for Slack provides monitoring and data analytics for Slack users, channels, access logs for workspaces with free, standard, plus, and enterprise plans. The app is focused on **public channels** only.
 
 [Slack](https://slack.com/) is a cloud-based set of software tools and online services that provide for secure collaboration across teams, departments, offices, and countries.
 
@@ -188,7 +188,7 @@ The following table provides sample log messages for the different log types.
 }
 ```
 
-### Sample queries
+### Sample query
 
 The sample query is from the **Channel Summary** panel of **Slack - Public Channels** dashboard.
 
@@ -221,9 +221,9 @@ This legacy solution to pull logs from Slack to Sumo Logic has been replaced wit
 
 ## Installing the Slack app
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';;
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Slack Dashboards
 
