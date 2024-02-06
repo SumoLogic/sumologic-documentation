@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Palo Alto Firewall app helps you analyze traffic and gain a better understanding of your Palo Alto Networks environments. You can dig deep into the data, broken down by threat detection indicators, malware type, and so on.
 
-## Sample logs
+## Sample log messages
 
 The Palo Alto Networks 10 app uses [Traffic](https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields) and [Threat](https://docs.paloaltonetworks.com/pan-os/10-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields) logs.
 
@@ -23,7 +23,7 @@ Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09 10:19:15,001234567890002,TR
  786 <10>1 2022-03-29T22:32:26+00:00 PA-VM.demo.bkacad.cf - - - - ,2022/03/29*22:32:26,164859314646745,THREAT,vulnerability,,2022/03/29*22:32:26,156.194.158.165,156.194.158.165,156.194.158.165,156.194.158.165,test-threat,,,unknown-udp,vsys1,Outside,Outside,ethernet1/1,ethernet1/1,Forward-Sumo,,8660,1,47495,9034,0,0,0x2000,udp,drop,,Realtek Jungle SDK Remote Code Execution Vulnerability(91535),any,critical,client-to-server,1648593146467628956,0x0,Korea Republic Of,156.194.158.165-156.194.158.165,,,0,,,0,,,,,,,,0,0,0,0,0,,PA-VM,,,,,N/A_id/0,/,0,,N/A,code-execution,AppThreat-8468-6979,,0,1648593146,,,141fd502-fc32-4867-b9a5-5c421583a44b,0,,,,,,,,,,,,,,, ,,,,,,,,,,,,,,0,2022-03-29T22:32:26.467+00:00,,,,unknown,unknown,unknown,1,,,no,no /
 ```
 
-## Sample queries
+## Sample query
 
 This example query is from the **Top 20 Hosts with Outbound Traffic** panel of the **Outbound Traffic and Potential Exfiltration Activity** dashboard.
 
@@ -38,7 +38,6 @@ _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC
 | sum(bytes_sent) as bytes_sent, sum(bytes_recv) as bytes_received by src_ip
 | top 20 src_ip by bytes_sent
 ```
-
 
 ## Prerequisites
 
@@ -138,7 +137,6 @@ The **Security Analytics - Outbound Traffic and Potential Exfiltration Activity*
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Analytics-Outbound-Traffic-and-Potential-Exfiltration-Activity.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
-
 ### Security Analytics - Potentially Malicious Activity
 
 The **Security Analytics - Potentially Malicious Activity** dashboard provides information about traffic to and from IP addresses called out as potentially malicious by threat intelligence, countries that are on the OFAC (embargoed) list, and potential port scans.
@@ -146,7 +144,6 @@ The **Security Analytics - Potentially Malicious Activity** dashboard provides i
 **Use case:** You can use this dashboard to analyze attempted and successful connections to IP addresses on threat intelligence lists both inbound and outbound. Additionally you can view connections to geolocation IP addresses associated with countries on the OFAC list (USA embargo list). Finally the bottom panel provides analysis on vertical port scans (one target, scanned on multiple network ports) and horizontal port scans (same port scanned across multiple destinations.)
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Analytics-Potentially-Malicious-Activity.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
-
 
 ### Security Monitoring - THREAT Log by Category
 
@@ -163,7 +160,6 @@ The **Security Monitoring - THREAT Logs by Severity** dashboard provides analyti
 **Use case:** You can use this dashboard to review THREAT events broken down by severity, allowing you to focus on the critical events first but also providing events of lesser severity for additional triage and investigation if necessary.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-THREAT-Log-by-Severity.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
-
 
 ### Security Monitoring - TRAFFIC Log Overview
 
