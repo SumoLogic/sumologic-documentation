@@ -2,7 +2,7 @@
 id: tenable
 title: Tenable
 sidebar_label: Tenable
-description: The Sumo Logic App for Tenable provides comprehensive visibility and actionable insights into your organization's security posture by leveraging data from the Tenable platform.
+description: The Sumo Logic app for Tenable provides comprehensive visibility and actionable insights into your organization's security posture by leveraging data from the Tenable platform.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -62,9 +62,9 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 ## Viewing Tenable dashboards​
 
-import ViewDash from '../../reuse/apps/view-dashboards.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-<ViewDash/>
+<ViewDashboards/>
 
 ### Overview
 
