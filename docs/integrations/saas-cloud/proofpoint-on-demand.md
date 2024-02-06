@@ -20,7 +20,7 @@ Key features of the Proofpoint on Demand app include:
 
 This app uses Proofpoint on Demand source to collect the data from Proofpoint on Demand (PoD) Log Service and uses the secure WebSocket (WSS) protocol, which securely stores the required authentication, scheduling, and state tracking information.
 
-## Sample log message
+## Sample log messages
 
 ```json title="Message log"
  {
@@ -129,7 +129,7 @@ This app uses Proofpoint on Demand source to collect the data from Proofpoint on
  }
 }
 ```
-## Sample query
+## Sample queries
 
 ```sql title="Unique Inbound Domains"
 _sourceCategory="pod_src"
