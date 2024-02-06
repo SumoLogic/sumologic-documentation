@@ -6,7 +6,6 @@ sidebar_label: Global Functions Menu
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
-import CloudSoarDelivery2 from '../reuse/csoar-delivery-2.md';
 
 Cloud SOAR is a pure web-based application that does not require an additional add-on or client to deploy. The Global Functions Menu consists of all Cloud SOAR configuration and administrative options you'll need, such as user access, integration configurations, and auditing information.
 
@@ -431,8 +430,6 @@ Cloud SOAR audit logs and activity can be reviewed under the **Audit Trail** sec
 The **Automation Bridge Monitoring** section displays the status of the automation bridges configured.
 
 ## Report
-
-<CloudSoarDelivery2/>
 
 You can create reports on incidents to share with others. You can also [create widgets](/docs/cloud-soar/main-menu#create-widgets-for-dashboards-or-reports) to use in the report that display text, graphs, and charts containing details about incidents and other aspects of Cloud SOAR.
 

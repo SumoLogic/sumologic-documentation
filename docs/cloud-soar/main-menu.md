@@ -6,7 +6,6 @@ sidebar_label: Main Menu
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
-import CloudSoarDelivery2 from '../reuse/csoar-delivery-2.md';
 
 Cloud SOAR is a pure web-based application which does not require an additional add-on or client to deploy. The main menu consists of all operational sections of Cloud SOAR, including Incidents, Triage (if enabled), Operations, and incoming Data Sources.
 
@@ -88,8 +87,6 @@ You can also export Dashboards to an Excel spreadsheet or PDF document to includ
 
 ### Create a dashboard
 
-<CloudSoarDelivery2/>
-
 You can create dashboards in Cloud SOAR similar to dashboards in the core Sumo Logic platform. You can also [create widgets](#create-widgets-for-dashboards-or-reports) to use in the dashboards that display text, graphs, and charts containing details about incidents and other aspects of Cloud SOAR.
 
 1. Select **Dashboard** in the upper-left corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-dashboards.png')} alt="Access dashboards" width="300"/>
@@ -141,8 +138,6 @@ KPI Output Sets can also be generated using the Cloud SOAR API. Please see
 the API manual for additional details.
 
 ### Create widgets for dashboards or reports
-
-<CloudSoarDelivery2/>
 
 You can create widgets as needed to help analysts and administrators quickly get the information they need. Widgets are reusable pieces that display information in different forms, such as text, pie chart, bar chart, graph, or table. You can use the same widgets in both dashboards and reports. 
 
