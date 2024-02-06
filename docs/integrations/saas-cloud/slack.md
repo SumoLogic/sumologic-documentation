@@ -15,7 +15,7 @@ The Sumo Logic app for Slack provides monitoring and data analytics for Slack us
 
 ## Log types
 
-Slack logs are in JSON format. The Slack App utilizes the following log types:
+Slack logs are in JSON format. The Slack app utilizes the following log types:
 
 * User logs
 * Public channel logs
