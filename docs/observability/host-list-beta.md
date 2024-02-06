@@ -12,31 +12,33 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
-Our Host List gives you key insights about all hosts running in your infrastructure. You can view the most important host metrics on a single page, regardless of the host type, the collection method, or the format of the collected data.
+The **Host List** gives you key insights about all hosts running in your infrastructure on a single page, regardless of the host type, the collection method, or the format of the collected data. You can compare these different types of hosts without having to build custom dashboards or switch between multiple existing visualizations and queries.
 
-* Compare, filter, and search for hosts.
-* Configure key indicators via the display icon on the right side of the page.
-* Identify active alerts related to each host.
+* Compare, filter, and search for hosts
+* Configure key indicators via the display icon on the right side of the page
+* Identify active alerts related to each host
 
-The Host List makes it easier to compare different types of hosts without having to build custom dashboards or switch between multiple existing visualizations and queries. The Host List is available without additional configuration and displays all the hosts detected based on the signals ingested into Sumo Logic. Following sources are used to extract the hosts:
+## How it works
+
+The Host List is available for you automatically - no additional configuration needed. It displays all hosts detected, based on the signals ingested into Sumo Logic. All information in the Host List is extracted from the following sources:
 
 - Logs
 - Metrics
 - Spans
 
-All the information in the Host List is extracted from the data that you have already sent to Sumo Logic. If you wish to add more hosts, follow the instructions on [sending data to Sumo Logic](/docs/send-data/). By default, all hosts are displayed as long as the related data available.
+<img src={useBaseUrl('/img/observability/host_list.png')} alt="host_list" style={{border: '1px solid gray'}} width="800"/>
 
-<img src={useBaseUrl('/img/observability/host_list.png')} alt="host_list" style={{border: '1px solid gray'}} width="1200"/>
-
-Clicking on any of the rows brings up the **Entity Inspector** panel that provides more detailed information about each of the hosts and allows you to navigate to viewing logs, metrics, traces, alerts, and dashboards linked to this host in the Explore view.
+Clicking on any of the rows brings up the **Entity Inspector** panel, which provides more detailed information about each of the hosts and allows you to navigate to viewing logs, metrics, traces, alerts, and dashboards linked to this host in the **Explore** view.
 
 <img src={useBaseUrl('/img/observability/host_list2.png')} alt="host_list2" style={{border: '1px solid gray'}} width="500"/>
+
+If you wish to add more hosts, follow the instructions on [sending data to Sumo Logic](/docs/send-data/).
 
 ## Navigation
 
 ### Time range
 
-The time range selector in the top-right corner of the page allows you to choose the time range for which the host's data is displayed. This setting impacts the number of hosts visible in the list, as only active hosts during the selected time range are displayed, and influences the values of some [Indicators](#indicators).
+The time range selector (in the top-right corner of the page) allows you to choose the time range for which the host's data is displayed. This setting impacts the number of hosts visible in the list, as only active hosts during the selected time range are displayed, and influences the values of some [Indicators](#indicators).
 
 By default, indicators perform the aggregation across the selected time, but it is possible to choose indicators that aggregate values using a time aggregation that overrides the time range selector. For example, CPU (-15min) will aggregate CPU usage for the past 15 minutes, regardless of the value selected using the time range selector. The Host List can display the data for the last 24 hours and, by default, displays the data for last 60 minutes.
 
@@ -56,7 +58,7 @@ You can use the **Group** dropdown to display only hosts with a certain value of
 
 ### Host Name
 
-You can search for any hosts using the free-text input field, and you can narrow down the list by substring matching.
+You can search for any hosts using the free-text input field, and narrow down the list by substring matching.
 
 <img src={useBaseUrl('/img/observability/navigation_host_name.png')} alt="navigation_host_name" style={{border: '1px solid gray'}} width="350"/>
 
@@ -93,12 +95,9 @@ A host will be displayed in the list if at least one of the alerts is in the sel
 
 <img src={useBaseUrl('/img/observability/navigation_alert_status.png')} alt="navigation_alert_status" style={{border: '1px solid gray'}} width="250"/>
 
-## Attributes and Indicators
+## Attributes and indicators
 
-For each of your hosts, Sumo Logic will extract several types of data based on the signals ingested to Sumo Logic. This information falls into three main categories:
-- Attributes
-- Indicators
-- Alerts
+For each of your hosts, Sumo Logic will extract several types of data based on the signals ingested to Sumo Logic. This information falls into three main categories: attributes, indicators, and alerts.
 
 Both attributes and indicators will work properly using one of the following collection methods:
 
@@ -183,7 +182,7 @@ Currently Host List supports the following indicators:
 - Memory Total
 - Memory Used
 
-We recommend using the [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector/) to collect logs, metrics, and traces, as this method provides all of the required Indicators without any additional configuration. However, if you’d like to keep using your current collection method, we recommend populating the relevant metric names as described below.  
+We recommend using the [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector/) to collect logs, metrics, and traces, as this method provides all of the required indicators without any additional configuration. However, if you’d like to keep using your current collection method, we recommend populating the relevant metric names as described below.  
 
 #### CPU
 
@@ -215,7 +214,7 @@ Memory is expressed using one of the following aggregation methods:
 - 95th percentile
 - 99th percentile
 
-The value of the Memory Indicator is extracted using the following queries (depending on the collection method used):
+The value of the Memory indicator is extracted using the following queries (depending on the collection method used):
 
 ```sql
 metric=system.memory.utilization state=used host.name=* | eval(_value*100) | sum by deployment.environment, host.group, host.name
@@ -269,27 +268,25 @@ metric=Mem_ActualUsed _sourceHost=* | eval _value / (1024*1024*1024) | avg by _s
 
 **Alerts** in the Host List are displayed based on the configured [Monitors](/docs/alerts/monitors/overview/) in Sumo Logic for a given host.
 
-<img src={useBaseUrl('/img/observability/alerts_host_list.png')} alt="alerts_host_list" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('/img/observability/alerts_host_list.png')} alt="alerts_host_list" style={{border: '1px solid gray'}} width="350"/>
 
-The Alert column will display the most severe alert status, even if there are active alerts of a different state.
-
-The Alert count will display the sum of all active alerts.
+The **Alerts** column will display the most severe alert status, even if there are active alerts of a different state. The Alert count will display the sum of all active alerts.
 
 To view alert details, click on a row and view it in the right-hand-side panel.
 
 ## Columns Display Settings
 
-You can access the **Columns Display Settings** by clicking on the icon on the right-hand side of the screen. This feature allows you to configure the list of columns displayed in the Host List view. These settings are applied individually for each user and persist across sessions.
+You can access the **Columns Display Settings** by clicking the icon on the right-hand side of the screen. This feature allows you to configure the list of columns displayed in the Host List view. These settings are applied individually for each user and persist across sessions.
 
-<img src={useBaseUrl('/img/observability/column_selector.png')} alt="column_selector" style={{border: '1px solid gray'}} width="400"/>
+<img src={useBaseUrl('/img/observability/column_selector.png')} alt="column_selector" style={{border: '1px solid gray'}} width="325"/>
 
 ## Troubleshooting
 
-### Hosts is not displayed in the Host List
+### Host not displayed in the Host List
 
-Ensure that you have the data collection enabled for a given host.
+If a host is missing from your list, ensure that you have enabled the data collection for that given host.
 
-We recommend using the [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) to collect logs, metrics, and traces, as this method provides all of the functionality without any additional configuration. Other collection methods are also supported, as described in the [Indicators](#indicators) and [Attributes](#attributes) section of this document.
+We recommend using the [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) to collect logs, metrics, and traces, as this method provides all of the functionality without any additional configuration. Other collection methods are also supported, as described in the [indicators](#indicators) and [attributes](#attributes) section of this document.
 
 If the data collection is already enabled, verify that your host has any of the required tags:
 
@@ -305,10 +302,10 @@ If the tags are missing, do any one of the following:
 - Try manually adding a Field to a Metrics Source.
 - Add a custom tag using your current collection method.
 
-### Indicator values are missing for some hosts
+### Indicator values missing for some hosts
 
-Ensure that you have the metrics collection enabled for a given host.
+Ensure that you have enabled metrics collection for a given host.
 
-We recommend using the [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) to collect logs, metrics, and traces, as this method provides all of the functionality without any additional configuration. Other collection methods are also supported, as described in the [Indicators](#indicators) section of this document.
+We recommend using the [Sumo Logic OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) to collect logs, metrics, and traces, as this method provides all of the functionality without any additional configuration. Other collection methods are also supported, as described in the [indicators](#indicators) section of this document.
 
 Using the correct metric names, verify the relevant metrics reported.
