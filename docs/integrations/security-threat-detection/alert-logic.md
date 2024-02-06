@@ -29,11 +29,11 @@ Key features of the Alert Logic app include:
 
 This app uses Sumo Logic’s Alert Logic webhook to collect [Incident Events](https://docs.alertlogic.com/configure/connections/templated/incident.htm) from the Alert Logic Platform.
 
-## Sample log messages
+## Sample log message
 
 Refer to [Alert Logic guide](https://docs.alertlogic.com/configure/connections/templated/incident.htm) for sample Incident Payload.
 
-## Sample queries
+## Sample query
 
 ```sql title="Events Count"
 _sourceCategory=alertlogic
