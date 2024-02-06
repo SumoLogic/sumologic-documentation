@@ -1,6 +1,6 @@
 ---
 slug: /platform-services/automation-service/app-central
-title: App Central
+title: App Central in the Automation Service
 ---
 
 
@@ -9,6 +9,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
 App Central provides apps to help you be more productive in the Automation Service. From here, you can search and add new integrations with all the needed components. 
+
+:::note
+Cloud SOAR has its own App Central. For more information, see [App Central](/docs/cloud-soar/automation/#app-central) in *Cloud SOAR Automation*.
+:::
 
 <!-- Micro lesson is commented out until it is adjusted to show that App Central is no longer under Cloud SIEM but is part of the Automation Service.
 

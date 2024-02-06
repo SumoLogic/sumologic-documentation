@@ -2797,6 +2797,7 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'platform-services/automation-service/index'},
           items: [
+            'platform-services/automation-service/about-automation-service',
             {
               type: 'category',
               label: 'App Central',
@@ -2819,7 +2820,6 @@ integrations: [
                 }
               ],
             },
-            'platform-services/automation-service/about-automation-service',
             'platform-services/automation-service/automation-service-playbooks',
             'platform-services/automation-service/automation-service-integrations',
             'platform-services/automation-service/automation-service-audit-logging',
