@@ -18,7 +18,7 @@ Puppet is a software configuration management tool. Puppet can provision infrast
 * Find out how often resources have changed, skipped, failed to update, or are out-of-sync.
 * Find out the root cause of issues by correlating puppet runs with metrics from other components in your infrastructure.
 
-## Log Types
+## Log types
 
 Sumo’s Puppet Logs source and Puppet Reports source use an installed collector to gather the following data from Puppet:
 
@@ -135,7 +135,7 @@ metrics:
 </Tabs>
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title=" Puppet Server"
 2018-08-22 00:03:14,141 INFO  [qtp839286351-63] [puppetserver] Puppet Compiled catalog for puppet-node-1 in environment production in 0.18 seconds
@@ -147,7 +147,7 @@ metrics:
 10.1.3.83 - - [28/Aug/2018:06:44:18 +0000] "GET /puppet/v3/node/puppet-node-3?environment=production&configured_environment=production&transaction_uuid=f95ce8bd-f97e-4d99-9a72-3b010a50ceb1&fail_on_404=true HTTP/1.1" 200 11394 "-" "Puppet/5.5.3 Ruby/2.4.4-p296 (x86_64-linux)" 77
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Failed Resources"
 _sourceCategory=prod/web/puppet/reports

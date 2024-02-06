@@ -15,7 +15,7 @@ The Docker app will be fully functional with Docker setup using [cgroup v1](http
 
 The Sumo Logic app for Docker Community Edition (CE) provides operational insight into your Docker containers. This app includes dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.
 
-## Log Types
+## Log types
 
 This Docker App monitors Docker container logs and metrics (stats) in log format only.
 
@@ -134,7 +134,7 @@ If your system handles metrics, use the Sumo Logic app for [Docker ULM](/docs/in
 
 </details>
 
-### Sample Query
+### Sample queries
 
 ```sql title="Containers created or started"
 _sourceCategory=docker  ("\"status\":\"create\"" or "\"status\":\"start\"")  id from

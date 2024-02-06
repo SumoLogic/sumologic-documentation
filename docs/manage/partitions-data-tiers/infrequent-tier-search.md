@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Previously, scheduled searches were only supported in Sumo Logic’s Continuous data tier. Now, you can also schedule searches that run against the Infrequent Tier.
 
-## Sample Queries
+## Sample queries
 
 This means you can now include data from the Infrequent Tier in the scope of the scheduled search.
 

@@ -20,7 +20,7 @@ The AWS API Gateway app uses the following logs and metrics:
 * [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html) <br/><img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
 
 
-### Sample log message
+### Sample log messages
 
 ```json title="Sample CloudTrail Log Message"
 {

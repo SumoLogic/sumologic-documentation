@@ -163,7 +163,7 @@ Refer to [Collecting Metrics](/docs/send-data/kubernetes/collecting-metrics/).
 
 ### Collecting Kubernetes events
 
-Refer to [Collecting Kubernetes Events document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-kubernetes-events.md#collecting-kubernetes-events)
+Refer to [Collecting Kubernetes Events document](/docs/send-data/kubernetes/collecting-events/)
 
 ## Upgrading Sumo Logic Collection
 
@@ -261,7 +261,7 @@ tailing-sidecar-operator:
 **Notice:** Prometheus Operator is deployed by default on OpenShift platform, you may either limit scope for Prometheus Operator installed
 with Sumo Logic Kubernetes Collection using `kube-prometheus-stack.prometheusOperator.namespaces.additional` parameter in `user-values.yaml`
 or exclude namespaces for Prometheus Operator installed with Sumo Logic Kubernetes Collection using
-`kube-prometheus-stack.prometheusOperator.denyNamespaces` in `user-values.yaml`. For details see
+`kube-prometheus-stack.prometheusOperator.denyNamespaces` in `user-values.yaml`. For details, see
 [Prometheus document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/prometheus.md#prometheus-operator-in-the-cluster)
 
 ## Non-helm installation

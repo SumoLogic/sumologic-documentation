@@ -41,7 +41,7 @@ The `{AppName}` App uses...
 \<add your log message here\>
 ```
 
-## Sample query
+## Sample queries
 
 ### Log query
 

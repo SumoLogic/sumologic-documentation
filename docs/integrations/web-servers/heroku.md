@@ -17,7 +17,7 @@ The Sumo Logic app for Heroku is a logs only app that allows you to monitor your
 
 * The Heroku Labs [log-runtime-metrics](https://devcenter.heroku.com/articles/log-runtime-metrics) feature adds experimental support for enabling visibility into load and memory usage for running dynos.
 
-### Sample log message
+### Sample log messages
 
 * A Logplex POST body resembles the following.
 ```
@@ -31,7 +31,7 @@ The Sumo Logic app for Heroku is a logs only app that allows you to monitor your
 205 <134>1 2023-08-24T12:31:50.112+00:00 host heroku web.1 - source=web.1 dyno=heroku.319324155.67cc34d0-0440-4106-97b6-d9486f7d9009 sample#load_avg_1m=0.00 sample#load_avg_5m=0.00 sample#load_avg_15m=0.01
 ```
 
-### Sample query
+### Sample queries
 
 #### Log Query
 

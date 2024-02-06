@@ -105,7 +105,7 @@ please apply your changes to the latest version and try again"}
 scheduler.go:197] Failed to schedule pod: hello-app/frontend-56f7975f44-8sgj7"}
 ```
 
-### Sample Query
+### Sample queries
 
 The following query sample is taken from the **Top 10 URLs with Problem Status Codes** panel on the **EKS - API Server Audit Overview** dashboard.
 
@@ -159,11 +159,9 @@ All the dashboards are linked to the Explore tab so they can be easily accessed 
 
 ## Viewing Dashboards for Amazon EKS - Control Plane
 
-Filter with template variables    
-
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
-
-You can use template variables to drill down and examine the data on a granular level.
+:::note Filter with template variables    
+Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
+:::
 
 ### API Server Audit
 

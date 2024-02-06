@@ -14,7 +14,7 @@ The Sumo Logic app for AWS Observability DynamoDB is a unified logs and metrics 
 * [DynamoDB CloudWatch Metrics](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html)
 * [DynamoDB operations using AWS CloudTrail](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/logging-using-cloudtrail.html)
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -52,7 +52,7 @@ The Sumo Logic app for AWS Observability DynamoDB is a unified logs and metrics 
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="All IP Threat Count"
 _sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynamodb.amazonaws.com\""

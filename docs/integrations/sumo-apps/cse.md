@@ -53,8 +53,8 @@ Cloud SIEM Signals are stored in the following partition:
 
 Cloud SIEM Insight activity is written to these Audit Event Index partitions:
 
-* sumologic_audit_events — User actions performed on Insights
-* sumologic_system_events — System actions performed on Insights are logged
+* sumologic_audit_events. User actions performed on Insights
+* sumologic_system_events, System actions performed on Insights are logged
 
 Logs written to either of the partitions above are assigned the source category cseinsight. Note that the Audit Event Index contains logs for a variety of Sumo Logic subsystems, so when searching either partition for Insights, include the source category in your search scope.
 
@@ -62,13 +62,16 @@ Logs written to either of the partitions above are assigned the source category 
 ## Install the App
 
 1. From the App Catalog, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install Apps from the Library](/docs/get-started/apps-integrations).
+2. Select the version of the service you're using and click **Add to Library**.
+:::note
+Version selection is not available for all apps.
+:::
 3. To install the app, complete the following fields.
    * **App Name**. You can retain the existing name, or enter a name of your choice for the app.
    * **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
-Once an app is installed, it will appear in your **Personal **folder, or other folder that you specified. From here, you can share it with your organization.
+Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 

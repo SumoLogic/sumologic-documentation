@@ -21,12 +21,15 @@ App Central allows you to unlock the full Cloud SOAR potential. From this sectio
 
 While browsing available integrations, you can check the details and all the actions available and install it.
 
+For a complete list of integrations and their documentation, see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations)
+
+
 ### Install an integration from App Central
 
 1. Use the **Search** bar in the upper right of the **Integrations** tab to find integrations.
 1. Click **Download** in the lower left corner of the integration box.
 1. Click **Install** to install the integration. After installation is complete, **Installed** replaces the **Download** link in the corner of the integration box.
-1. Click **Show More** in the integration box to see if there are additional steps you need to follow to configure the installed integration. 
+1. Find the article for the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) to see if there are additional steps you need to follow to configure the installed integration. 
    :::warning
    Failure to perform these additional steps may result in the integration not working properly.
    :::
@@ -282,6 +285,16 @@ When you nest a child playbook within a parent playbook, you must pass parameter
 1. Save and publish your parent playbook.
 
 You will now be able to perform tests against your parent playbook, and your child playbook will receive the parameters from the parent.
+
+### Import and export playbooks
+
+With the mechanism to import and export playbooks, you can move a playbook, along with all its configurations, from one instance to another. The file should be in tar.gz format and adhere to naming conventions.
+
+1. Click on the Export icon located next to the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/export-playbook.png')} alt="Export Playbook" style={{border: '1px solid gray'}} width="500"/>
+1. Upon clicking, the tar.gz archive download will be initiated.
+1. At this point, you can open the archive, modify the configuration data, recreate a tar.gz archive, and upload it. To upload the file, click on the Import icon, select the desired file, and click Import.<br/><img src={useBaseUrl('img/cloud-soar/import-playbook.png')} alt="Import Playbook" style={{border: '1px solid gray'}} width="500"/><br/><img src={useBaseUrl('img/cloud-soar/import-playbook-modal.png')} alt="Import Playbook modal" style={{border: '1px solid gray'}} width="500"/>
+
+It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
 
 ## Incident Templates
 

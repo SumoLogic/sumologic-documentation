@@ -20,7 +20,7 @@ This app supports Istio versions 1.8.x and 1.9.x+.
 * Access logs - Refer to [this page](https://istio.io/latest/docs/tasks/observability/logs/access-log/#default-access-log-format) for Istio Access log format.
 * Istio Metrics - Refer to [this page](https://istio.io/latest/docs/concepts/observability/#service-level-metrics) for detailed Istio Metrics
 
-### Sample Query
+### Sample queries
 
 Query Sample from Dashboard "Istio - Logs" > Panel "Non 200 Response Codes":
 

@@ -21,7 +21,7 @@ The diagram below illustrates the components of the Kafka collection for each Ka
 
 This App has been tested with following Kafka versions: 2.6.0, 2.7.0 and 3.1.2.
 
-## Log Types and Metrics
+## Log types and Metrics
 
 The Sumo Logic App for Kafka assumes:
 
@@ -146,14 +146,14 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 <LogsOutro/>
 
 
-## Sample Log Messages
+## Sample log messages
 
 ```
 [2021-03-10 20:12:28,742] INFO [KafkaServer id=0]
 started (kafka.server.KafkaServer)
 ```
 
-## Sample Queries
+## Sample queries
 
 ### Log query
 

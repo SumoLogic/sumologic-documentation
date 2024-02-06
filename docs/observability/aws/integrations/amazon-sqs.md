@@ -16,7 +16,7 @@ The app uses SQS logs and metrics for:
 * [SQS operations using AWS CloudTrail](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-logging-using-cloudtrail.html)
 
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -63,7 +63,7 @@ The app uses SQS logs and metrics for:
 }
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Messages Received (Metric-based)"
 metric=NumberOfMessagesReceived Statistic=Sum account=* region=* namespace=* queuename=* | sum by account, region, namespace, queuename

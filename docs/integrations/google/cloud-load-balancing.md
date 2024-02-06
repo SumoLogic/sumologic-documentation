@@ -11,18 +11,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Google Cloud Load Balancing is Google’s load balancing service for Google Cloud Platform. The Sumo Logic App for Google Cloud Load Balancing helps you monitor load balancing activity.  The preconfigured dashboards provide insight into request locations and volume, response codes, and request and response data by load balancer.
 
-## Log Types
+## Log types
 
 The app uses the following log type:
 * [Cloud Load Balancing Request Logs](https://cloud.google.com/compute/docs/load-balancing/http/#logging)
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {"remoteIp":"98.243.249.133","requestUrl":"http:\/\/35.201.123.100\/","requestMethod":"POST","serverIp":"10.128.0.9","responseSize":"415","userAgent":"Mozilla\/5.0 (Windows NT 6.3; WOW64; Trident\/7.0; rv:11.0) like Gecko","requestSize":"1347","status":501}
 ```
 
-### Sample Query
+### Sample queries
 
 ```bash title="Status codes per load balancer"
 _sourceCategory=*gcp* data logName resource "\"type\":\"http_load_balancer\""
@@ -80,7 +80,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 4. Enter a **Name** to display for the Source. A **Description** is optional.<br/><img src={useBaseUrl('img/integrations/google/google_cloud_platform_2022.png')} alt="Google integrations" />
 5. **Source Host** (Optional). The Source Host value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called _sourceHost. Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 128 characters.
 6. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices). Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 1,024 characters.
-7. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
+7. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) If an orange triangle with an exclamation point is shown, use the option to automatically add or enable the nonexistent fields before proceeding to the next step. The orange icon indicates that the field doesn't exist, or is disabled, in the Fields table schema. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
   * ![green check circle.png](/img/reuse/green-check-circle.png) If a green circle with a checkmark is shown, the field exists and is already enabled in the Fields table schema. Proceed to the next step.
 8. **Advanced Options for Logs**.<br/><img src={useBaseUrl('img/integrations/google/GCP-advanced-options-Jan-22.png')} alt="Google integrations" />

@@ -273,7 +273,7 @@ If you can't find the expected metrics, ensure that prometheus configuration is 
 
 Next, you can check if Prometheus is successfully scraping the `/metrics` endpoints. In the top menu, navigate to section `Status > Targets` or go to the `http://localhost:8080/targets`. Check if any targets are down or have errors.
 
-### Check Scrape Configs for Open Telemetry Operator
+### Check Scrape Configs for OpenTelemetry Operator
 
 First expose the target allocator on local port 9090:
 

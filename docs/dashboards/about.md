@@ -19,7 +19,6 @@ Dashboard provides the unique ability to display metrics metadata and logs dat
 
 [Template variables](filter-template-variables.md) allow you to filter dashboard data dynamically to generate new visualizations for intuitive chart creation and data scoping.
 
-
 ### Features
 
 :::tip
@@ -92,27 +91,13 @@ Live mode restrictions do not apply to Dashboard. 
 
 Your dashboard can automatically refresh its panels to the latest information. You have the ability to configure the refresh interval rate by clicking the dropdown arrow next to the refresh icon.
 
-There are some restrictions when using operators with dashboards. To learn more, see [Restricted Operators in Dashboards](/docs/dashboards/restricted-operators-dashboards).<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/auto-refresh-dropdown-options.png')} alt="auto refresh dropdown options" style={{border: '1px solid gray'}} width="300" />
-
-A list of the refresh interval rates is provided for you to select from.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/dashboard-new-refresh-interval-options.png')} alt="dashboard new refresh interval options" style={{border: '1px solid gray'}} width="200" />
+There are some restrictions when using operators with dashboards. To learn more, see [Restricted Operators in Dashboards](/docs/dashboards/restricted-operators-dashboards).<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/auto-refresh-dropdown-options.png')} alt="auto refresh dropdown options" style={{border: '1px solid gray'}} width="200" />
+<br/>A list of the refresh interval rates is provided for you to select from.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/dashboard-new-refresh-interval-options.png')} alt="dashboard new refresh interval options" style={{border: '1px solid gray'}} width="100" />
 
 ## Dark Theme
 
-Dashboards have two themes available: Light mode (which is the default) and Dark mode. You can toggle between the two themes within the dashboard by clicking the three-dot icon. The following image shows the option to **Switch to Dark Theme**.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/dark-theme-switch.png')} alt="dark theme switch" style={{border: '1px solid gray'}} width="600" />
+Dashboards have two themes available: Light mode (which is the default) and Dark mode. You can toggle between the two themes within the dashboard by clicking the three-dot icon. The following image shows the option to **Switch to Dark Theme**.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/dark-theme-switch.png')} alt="dark theme switch" style={{border: '1px solid gray'}} width="700" />
 
 ## Clickable Legend
 
-If you want to focus on one item in your chart you can simply click on the item in the legend. If you want to toggle just one legend item, just hold the **shift** key and then click the item.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/clicklegend.gif')} alt="clicklegend" style={{border: '1px solid gray'}} width="600" />
-
-## Monitoring with classic Dashboards
-
-If you want to monitor your environment and display dashboards on a monitor or television screen, use the classic Dashboards. Currently, we don't have monitor support for the Dashboard framework. We hope to support monitoring across both dashboard frameworks in the near future.
-
-## Troubleshooting with Dashboard
-
-If you want to interact with dashboards to actively troubleshoot problems, Dashboard is the best framework, depending on the type of data you will be analyzing. There are use cases where a combination of the two dashboards are recommended:
-
-* Use Dashboard if you are building a metrics first dashboard, for the extensive visualization options and variable support for metrics panels.
-* Use classic Dashboards if you are building a logs-first dashboard, for options that provide the most robust results.
-   * You can build logs panels in Dashboard. However, all of the log building pieces you have with classic Dashboards will not be available with Dashboard. Raw messages, output, and facets are not yet available for Logs with Dashboard. However, you can add to a dashboard from the search page with Dashboard, if needed.
-* Use Dashboard for advanced pivots, such as contextual drill-downs to logs from panels, as these features are not available in the existing classic Dashboards.
+If you want to focus on one item in your chart you can simply click on the item in the legend. If you want to toggle just one legend item, just hold the **shift** key and then click the item.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/clicklegend.gif')} alt="clicklegend" style={{border: '1px solid gray'}} width="700" />

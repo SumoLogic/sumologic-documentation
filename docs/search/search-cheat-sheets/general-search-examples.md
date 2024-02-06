@@ -286,4 +286,4 @@ For any query, you can increase specificity by adding metadata fields to the key
 
 Edit Source metadata in the **Collection** tab.
 
-For details see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
+For details, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).

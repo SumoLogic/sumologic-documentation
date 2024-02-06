@@ -31,20 +31,20 @@ For vSphere 6.5 and later please use [Sumo Logic App for VMware ULM](/docs/integ
 Because vSphere CLI 5.1 has known issues with resxtop and SSL certifications, be sure to use vMA 5.1 Patch 1 (5.1.0.1). (The known issues in 5.1 are documented in the [Release Notes](https://www.vmware.com/support/developer/vcli/vcli51/vsp5_51_vcli_relnotes.html#knownissues).)
 
 
-## Log Types
+## Log types
 
 The Sumo Logic App for VMware collects logs from vCenter Servers to analyze vCenter Server Events and Performance Data in real time to enable monitoring and detect important events within your virtual environment.
 
 For information on collecting unified logs and metrics for VMware, see [VMware ULM](/docs/integrations/containers-orchestration/vmware).
 
 
-## Sample Log Message
+## Sample log messages
 
 ```json
 2017-09-25 22:09:45.123 +0000 2013-11-19T10:03:35.042999Z ,,, message=Task: Delete virtual machine,,,user=SUMO\USER,,,vm=VMNAME,,,host=HOSTNAME.sumolab.org
 ```
 
-## Sample Queries
+## Sample queries
 
 ```sql title="vCenter User Activity"
  _sourceCategory=esx_perf OR _sourceCategory=vcenter_log "message=User "
@@ -232,7 +232,7 @@ vcenter03.company.com "domain_name\user_name"
 4. Run **/usr/lib/vmware-vcli/apps/general/credstore_admin.pl list** to get a list of all the vCenter Servers you have already configured for authentication. 
 5. Edit the following in the **cron_vcenter_perf.sh** script:
     * Change the **SCRIPT_PATH** variable to reflect the absolute path where the script resides.
-    * Select the method you'd like to use to collect performance data. Then, uncomment the line that calls**$SCRIPT_PATH/getserver_perf.pl**. For more information, see Segmenting Collection.
+    * Select the method you'd like to use to collect performance data. Then, uncomment the line that calls **$SCRIPT_PATH/getserver_perf.pl**. For more information, see Segmenting Collection.
 
 Test the command used in the cron script before testing the cron command and enabling it as described in [Troubleshooting and Manual Testing](#Troubleshooting_and_Manual_Testing).
 ```bash
@@ -297,7 +297,7 @@ Because the above information is logged into /var/log/message for cron jobs, it'
 
 ### Collect Historical Events
 
-By default, the first time** query_vCenter.pl** is called, events from the past 24 hours are collected. Each time the script is called, it writes the timestamp of the last read event in a file named **.timelog** for the next call to pick up.
+By default, the first time **query_vCenter.pl** is called, events from the past 24 hours are collected. Each time the script is called, it writes the timestamp of the last read event in a file named **.timelog** for the next call to pick up.
 
 If you want to collect events older than the past 24 hours, before setting up the CRON job for **cron_vcenter_events.sh**, do the following on the VMA machine.
 

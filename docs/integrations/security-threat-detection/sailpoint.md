@@ -19,7 +19,7 @@ The SailPoint Source ingests:
 * Users Inventory data from the [Public Identities API Endpoint](https://developer.sailpoint.com/idn/api/v3/get-public-identities).
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {
@@ -87,7 +87,7 @@ The SailPoint Source ingests:
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Authentication Event"
 _sourceCategory=Labs/sailpoint ipAddress
@@ -111,7 +111,7 @@ _sourceCategory=Labs/sailpoint
 
 ## Set up collection
 
-Follow the instructions for setting up [Cloud to Cloud Integration for SailPoint App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app.
+Follow the instructions for setting up [Cloud-to-Cloud Integration for SailPoint App](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) to create the source and use the same source category while installing the app.
 
 
 ## Installing the SailPoint App

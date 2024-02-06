@@ -33,7 +33,7 @@ This app uses [Cisco Meraki source](/docs/send-data/hosted-collectors/cloud-to-c
 - [Get Network Events](https://developer.cisco.com/meraki/api-v1/#!get-network-events) sample log format.
 - [Get Network Wireless Air Marshal](https://developer.cisco.com/meraki/api-v1/#!get-network-wireless-air-marshal) sample log format.
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Total Organizations"
 _sourceCategory=cm_con2006 licensing

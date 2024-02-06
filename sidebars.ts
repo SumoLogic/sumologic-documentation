@@ -3,7 +3,7 @@
  Add content to the following sections in this sidebar Navigation file:
 
   Manage: Admin level options, collection, connections, etc
-  Dashboards & Visuals: New and Classic Dashboards, Library of Dashboards, Alerts, Monitors, Alerts, Monitors, SLOs, Health Events, Connections
+  Dashboards & Visuals: NDashboards, Library of Dashboards, Alerts, Monitors, Alerts, Monitors, SLOs, Health Events, Connections
   Searches & Logs: Log Search, All Log Searches, Livetail, Lookup, Log Config
   Metrics & Logs: Metrics Search, All Metrics Searches, Config
   Infrastructure Monitoring: Kubernetes, AWS Observability, Root Cause Explorer,
@@ -89,7 +89,7 @@ module.exports = {
            // 'send-data/opentelemetry-collector/quickstart',
             {
               type: 'category',
-              label: 'Install Collector',
+              label: 'Install OTel Collector',
               collapsible: true,
               collapsed: true,
               link: {type: 'doc', id: 'send-data/opentelemetry-collector/install-collector/index'},
@@ -104,11 +104,12 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Data Source and Configurations',
+              label: 'Data Sources and Configurations',
               collapsible: true,
               collapsed: true,
               link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-configurations/index'},
               items:[
+                'send-data/opentelemetry-collector/data-source-configurations/overview',
                 'send-data/opentelemetry-collector/data-source-configurations/mapping-records-resources',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
@@ -120,8 +121,8 @@ module.exports = {
             'send-data/opentelemetry-collector/performance-benchmarks',
             'send-data/opentelemetry-collector/data-transformations',
             'send-data/opentelemetry-collector/troubleshooting',
-            'send-data/opentelemetry-collector/faq',
             'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
+            'send-data/opentelemetry-collector/faq',
           ]
         },
         {
@@ -250,6 +251,7 @@ module.exports = {
               collapsed: true,
               link: {type: 'doc', id: 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/index'},
               items: [
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/source-info',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/abnormal-security-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/airtable-source',
@@ -267,25 +269,27 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-meraki-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cisco-vulnerability-management-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-host-inventory-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-host-inventory-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cyberark-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/druva-cyber-resilience-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/duo-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/gmail-tracelogs-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/kaltura-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs',
@@ -307,7 +311,6 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/slack-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source',
-                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/source-info',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/symantec-web-security-service-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/trellix-mvisio-epo-source',
@@ -391,12 +394,23 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'send-data/kubernetes/index'},
           items: [
-            'send-data/kubernetes/helm-chart-overview',
-            'send-data/kubernetes/install-helm-chart',
-            'send-data/kubernetes/best-practices',
-            'send-data/kubernetes/collecting-metrics',
-            'send-data/kubernetes/security-best-practices',
-            'send-data/kubernetes/troubleshoot-collection',
+            {
+              type: 'category',
+              label: 'v4 (latest)',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'send-data/kubernetes/helm-chart-overview',
+                'send-data/kubernetes/install-helm-chart',
+                'send-data/kubernetes/configuration',
+                'send-data/kubernetes/best-practices',
+                'send-data/kubernetes/collecting-logs',
+                'send-data/kubernetes/collecting-metrics',
+                'send-data/kubernetes/collecting-events',
+                'send-data/kubernetes/security-best-practices',
+                'send-data/kubernetes/troubleshoot-collection',
+              ],
+            },
             {
               type: 'category',
               label: 'v4 Upgrade Guide',
@@ -2456,6 +2470,7 @@ integrations: [
       link: {type: 'doc', id: 'cse/index'},
       items: [
         'cse/introduction-to-cloud-siem',
+        'cse/cloud-siem-content-catalog',
       {
           type: 'category',
           label: 'Get Started with Cloud SIEM',
@@ -2782,8 +2797,29 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'platform-services/automation-service/index'},
           items: [
+            {
+              type: 'category',
+              label: 'App Central',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'platform-services/automation-service/app-central/index'},
+              items: [
+                {
+                  type: 'category',
+                  label: 'Integrations in App Central',
+                  collapsible: true,
+                  collapsed: true,
+                  link: {type: 'doc', id: 'platform-services/automation-service/app-central/integrations/index'},
+                  items: [
+                    {
+                      type: 'autogenerated',
+                      dirName: 'platform-services/automation-service/app-central/integrations'
+                    }
+                  ],
+                }
+              ],
+            },
             'platform-services/automation-service/about-automation-service',
-            'platform-services/automation-service/automation-service-app-central',
             'platform-services/automation-service/automation-service-playbooks',
             'platform-services/automation-service/automation-service-integrations',
             'platform-services/automation-service/automation-service-audit-logging',
