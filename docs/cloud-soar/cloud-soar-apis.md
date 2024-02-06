@@ -14,8 +14,8 @@ The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR 
 This article applies to your organization *only if* your instance URL is a subdomain of `soar.sumologic.com`.
 Otherwise, please refer to:
 
-* [Cloud SOAR APIs](/docs/api/cloud-soar) for the endpoints by geographic location
-* [API Authentication](/docs/api/getting-started#authentication) for details about API best practises.
+* [Cloud SOAR APIs](/docs/api/cloud-soar) for the endpoints by geographic location.
+* [API Authentication](/docs/api/getting-started#authentication) for details about API best practices.
 
 :::
 
