@@ -15,7 +15,7 @@ This guide helps you set up Sumo Logic Collectors, and install the PCI Complianc
 
 The PCI Compliance For Windows JSON App uses Windows Security Event and System Event logs. It does not work with third-party logs.
 
-### Sample log message
+### Sample log messages
 
 ```json
 {"TimeCreated":"2020-10-12T07:31:14+000039800Z","EventID":"1102","Task":104,"Correlation":"","Keywords":"Audit
@@ -24,7 +24,7 @@ Success","Channel":"Security","Opcode":"Info","Security":"","Provider":{"Guid":"
 "WIN-6D5CO5AB123","Level":"Informational","EventData":{},"UserData":{"LogFileCleared":{"xmlns":"http://sz2016rose.ddns.net/win/2004/08/windows/eventlog",
 "SubjectUserName":"Administrator","SubjectDomainName":"WIN-6D5CO5AB123","SubjectLogonId":"0x1971888","SubjectUserSid":"S-1-5-21-2020-10-12T07:31:14-203418232-2020-10-12T07:31:14-500"}},"Message":"The audit log was cleared.\r\nSubject:\r\n\tSecurity ID:\tWIN-6D5CO5AB123\\Administrator\r\n\tAccount Name:\tAdministrator\r\n\tDomain Name:\tWIN-6D5CO5AB123\r\n\tLogon ID:\t0x1971888"}
 ```
-### Sample query
+### Sample queries
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
