@@ -92,7 +92,7 @@ You can use the AWS console or our CloudFormation Template.
 
 ### CloudFormation Template
 
-[Download](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/KinesisFirehoseCWLogs.template.yaml) our CloudFormation template and upload it when [creating a stack on the AWS CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html).
+[Download](https://help.sumologic.com/files/KinesisFirehoseCWLogs.template.yaml) our CloudFormation template and upload it when [creating a stack on the AWS CloudFormation console](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html).
 
 When you [Specify a stack name and parameters](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-parameters.html) on the AWS CloudFormation console you'll provide the following:
 
