@@ -137,17 +137,19 @@ to create the KPI report template.
 KPI Output Sets can also be generated using the Cloud SOAR API. Please see
 the API manual for additional details.
 
-### Create widgets for dashboards or reports
+### Create widgets
 
-You can create widgets as needed to help analysts and administrators quickly get the information they need. Widgets are reusable pieces that display information in different forms, such as text, pie chart, bar chart, graph, or table. You can use the same widgets in both dashboards and reports. 
+You can create widgets as needed to help analysts and administrators quickly get the information they need. Widgets are reusable pieces that display information in different forms, such as text, pie chart, bar chart, graph, or table.  
 
-1. Open the widgets panel.
-   * From [dashboards](#create-a-dashboard):
+1. Open the widgets panel:
       1. Select **Dashboard** in the upper-left corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-dashboards.png')} alt="Access dashboards" width="300"/>
       1. Select a dashboard.
       1. Click the **Edit** button. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-dashboard-button.png')} alt="Empty dashboard" width="150"/><br/>
-   * From [reports](/docs/cloud-soar/global-functions-menu#report):
-      1. Click the gear icon in the upper-right corner of the UI, then select **Report**. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-reports.png')} alt="Access reports" width="150"/>
+      <!-- 
+      :::note
+      To open widget from Reports, click the gear icon in the upper-right corner of the UI, then select **Report**. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-reports.png')} alt="Access reports" width="150"/> 
+      ::: 
+      -->
 1. The widgets panel displays to the right of the screen.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets.png')} alt="Widgets panel" width="250"/>
 1. Click **New**.<br/>The dialog to create new widgets displays. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-create-widget.png')} alt="Create a widget" width="600"/>
 1. In **Name**, provide a name that clearly explains the widget's purpose.
