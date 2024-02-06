@@ -2,7 +2,7 @@
 id: zoom
 title: Zoom
 sidebar_label: Zoom
-description: The Sumo Logic App for Zoom provides visibility into how Zoom is being used across your organization, displaying analytics on performance, availability, security, and user activity.
+description: The Sumo Logic app for Zoom provides visibility into how Zoom is being used across your organization, displaying analytics on performance, availability, security, and user activity.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Zoom unifies cloud video and audio conferencing, simple online meetings, and group messaging into one easy-to-use platform. The cloud platform facilitates collaboration across mobile devices, desktops, telephones, and room systems for an online meeting space you can depend on. Zoom allows you to stay connected wherever you go with face-to-face video, high quality screen sharing, and instant messaging.
 
-The Sumo Logic App for Zoom provides visibility into how Zoom is being used across your organization, displaying analytics on performance, availability, security, and user activity. The app aggregates and reports on data so you can correlate and investigate trends and respond to incidents across all of your IT tools in a consistent and timely manner.
+The Sumo Logic app for Zoom provides visibility into how Zoom is being used across your organization, displaying analytics on performance, availability, security, and user activity. The app aggregates and reports on data so you can correlate and investigate trends and respond to incidents across all of your IT tools in a consistent and timely manner.
 
 ## Log types
 
@@ -26,7 +26,7 @@ The Webhook events are grouped into the following core event types:
 * User Events
 * Account Events
 
-### Sample log messages
+### Sample log message
 
 ```json
 {
@@ -53,7 +53,7 @@ The Webhook events are grouped into the following core event types:
 }
 ```
 
-### Sample queries
+### Sample query
 
 ```sql
 _sourceCategory=zoom
@@ -79,7 +79,7 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Viewing Zoom Dashboards
+## Viewing Zoom dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
