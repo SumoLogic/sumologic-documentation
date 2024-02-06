@@ -16,7 +16,7 @@ AWS IAM (Identity and Access Management) is a web service that helps securely co
 * **Add User To Group** *(Containment)* - Adds the specified user to the specified group.
 * **Attach Policy** *(Containment)* - Attaches a policy to the specified target.
 * **Delete Access Key** *(Containment)* - Deletes the access key pair associated with the specified IAM user.
-* **Delete Login Profile (Containment)** - Deletes the password for the specified IAM user, which terminates the user's ability to access AWS services through the AWS Management Console.
+* **Delete Login Profile** *(Containment)* - Deletes the password for the specified IAM user, which terminates the user's ability to access AWS services through the AWS Management Console.
 * **Detach Policy** *(Containment)* - Detaches a policy from a specified target.
 * **Get Access Key Last Used** *(Enrichment)* - Retrieves information about when the specified access key was last used.
 * **Get Instance Profile** *(Enrichment)* - Returns information about the specified instance profile.
