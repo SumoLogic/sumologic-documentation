@@ -11,8 +11,7 @@ import ApiIntro from '../reuse/api-intro.md';
 The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR features.
 
 :::info
-This article applies to your organization *only if* your instance URL is a subdomain of `soar.sumologic.com`.
-Otherwise, please refer to:
+This article only applies to organizations having a Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`. If it doesn't, refer to:
 
 * [Cloud SOAR APIs](/docs/api/cloud-soar) for the endpoints by geographic location.
 * [API Authentication](/docs/api/getting-started#authentication) for details about API best practices.
@@ -21,8 +20,7 @@ Otherwise, please refer to:
 
 ### Inline API documentation
 
-For organizations having Cloud SOAR available at URL pattern `*.soar.sumologic.com`,
-the API documentation is available through your Cloud SOAR instance at the following URL:
+For organizations with a Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`, you can find API documentation through your Cloud SOAR instance at:
 
 ```
 http[s]:///<cloudsoarhost>/incmansuite_ng/lib/gui/app.php#support_apidoc|api_documentation_v3
