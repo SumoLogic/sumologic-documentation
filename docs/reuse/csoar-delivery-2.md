@@ -1,1 +1,0 @@
-*(Applies only to organizations running the Delivery 2 version of Cloud SOAR.)*

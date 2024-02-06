@@ -6,10 +6,6 @@ sidebar_label: Overview
 
 Cloud SOAR fully automates triage, investigation, and remediation of threats for any security professional. The open integrations framework allows you to connect to a multitude of third-party applications. The platform provides full incident response lifecycle management with machine learning and threat hunting, accelerating mean time to respond (MTTR).
 
-:::note
-The Delivery 2 version of Cloud SOAR is available only to organizations as a new installation, or to organizations that have migrated to Delivery 2 from the original version of Cloud SOAR (Delivery 1). For help getting Cloud SOAR Delivery 2, reach out to your Sumo Logic account team.
-:::
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Why Cloud SOAR?
