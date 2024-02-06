@@ -33,7 +33,7 @@ The Sumo Logic app for Heroku is a logs only app that allows you to monitor your
 
 ### Sample queries
 
-#### Log query
+#### Log queries
 
 ```sql title="Successful App Build Trend"
 _sourceCategory="Heroku" "Build Succeeded"
