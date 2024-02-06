@@ -21,7 +21,7 @@ For details, see the Salesforce [Event Monitoring Quick Start Guide](http://www.
 
 For the complete list of available events and fields, see [Event Monitoring Event Types](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_eventlogfile_supportedeventtypes.htm).
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -55,7 +55,7 @@ For the complete list of available events and fields, see [Event Monitoring Even
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Most Accessed Reports"
 _sourceCategory=salesforce event type "Report"
