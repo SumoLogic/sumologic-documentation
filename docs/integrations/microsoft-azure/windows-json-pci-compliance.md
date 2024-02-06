@@ -2,7 +2,7 @@
 id: windows-json-pci-compliance
 title: PCI Compliance for Windows JSON
 sidebar_label: PCI Compliance For Windows (JSON)
-description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows JSON offers dashboards to monitor system, account and user activity to ensure that login activity and privileged users are within the expected ranges.
+description: The Sumo Logic app for Payment Card Industry (PCI) Compliance for Windows JSON offers dashboards to monitor system, account and user activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -15,8 +15,7 @@ This guide helps you set up Sumo Logic Collectors, and install the PCI Complianc
 
 The PCI Compliance For Windows JSON App uses Windows Security Event and System Event logs. It does not work with third-party logs.
 
-
-### Sample log messages  
+### Sample log message
 
 ```json
 {"TimeCreated":"2020-10-12T07:31:14+000039800Z","EventID":"1102","Task":104,"Correlation":"","Keywords":"Audit
@@ -25,8 +24,7 @@ Success","Channel":"Security","Opcode":"Info","Security":"","Provider":{"Guid":"
 "WIN-6D5CO5AB123","Level":"Informational","EventData":{},"UserData":{"LogFileCleared":{"xmlns":"http://sz2016rose.ddns.net/win/2004/08/windows/eventlog",
 "SubjectUserName":"Administrator","SubjectDomainName":"WIN-6D5CO5AB123","SubjectLogonId":"0x1971888","SubjectUserSid":"S-1-5-21-2020-10-12T07:31:14-203418232-2020-10-12T07:31:14-500"}},"Message":"The audit log was cleared.\r\nSubject:\r\n\tSecurity ID:\tWIN-6D5CO5AB123\\Administrator\r\n\tAccount Name:\tAdministrator\r\n\tDomain Name:\tWIN-6D5CO5AB123\r\n\tLogon ID:\t0x1971888"}
 ```
-
-### Sample queries
+### Sample query
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
@@ -88,7 +86,6 @@ Track your user accounts and recent system changes.
 * **Service Stopped.** Aggregation table of the number of services stopped over the last 24 hours.
 * **Service Execution Trend.** Trend of the different services being executed over time.
 
-
 ### Windows - PCI Req 02, 10 - Login Activity
 
 Track login successes and failures.
@@ -102,7 +99,6 @@ Track login successes and failures.
 * **Default Login-Failure.** Aggregation table of failed default logins.
 * **Default Login-Success.** Aggregation table of successful default logins.
 
-
 ### Windows - PCI Req 08 - Other User Activity
 
 Track user activities such as password changes, password resets, excessive failed access attempts, unlocked accounts, and disabled accounts.
@@ -114,7 +110,6 @@ Track user activities such as password changes, password resets, excessive faile
 * **Excessive Failed Access Attempts.** Displays an aggregation table of the excessive failed access attempts, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **User Account Unlocked.** Displays an aggregation table of the times a user account was unlocked  the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **User Account Disabled but not deleted.** Displays an aggregation table of the times a user account was unlocked,  the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
-
 
 ### Windows - PCI Req 06 - Windows Updates Activity
 
