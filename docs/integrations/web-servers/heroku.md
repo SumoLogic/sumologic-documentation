@@ -44,7 +44,7 @@ _sourceCategory="Heroku" "Build Succeeded"
 | transpose row _timeslice column log_drain
 ```
 
-#### Metric log query
+#### Metric log queries
 
 ```sql title="Memory Utilization (MB)"
 _sourceCategory="Heroku"
