@@ -2,7 +2,7 @@
 id: jira-opentelemetry
 title: Jira - OpenTelemetry Collector
 sidebar_label: Jira - OTel Collector
-description: The Sumo Logic App for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
+description: The Sumo Logic app for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events. 
+The Sumo Logic app for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events. 
 
 Jira logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
@@ -23,7 +23,7 @@ Following are the tags which will be created as part of the Jira App install if 
 
 - `sumo.datasource`. Has fixed value of **jira**.
 
-### Prerequisites
+## Prerequisites
 
 This section provides instructions for configuring log collection for Jira running on a non-Kubernetes environment for the Sumo Logic App for Jira. Sumo Logic supports the collection of logs from Jira server in standalone environments.
 
@@ -42,7 +42,7 @@ import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prer
 
 <LogsCollectionPrereqisites/>
 
-Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+For windows system, log files which are collected should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
 
 ```
 $NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
