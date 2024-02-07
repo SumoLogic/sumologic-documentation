@@ -116,7 +116,7 @@ For example, use the function to find all Records with a `srcDevice_ip` attribut
 hasThreatMatch([srcDevice_ip], confidence > 50)
 ```
 
-For more information, see [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch)
+For more information, see [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch).
 
 ## Threat indicators in the Cloud SIEM UI
 
