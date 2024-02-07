@@ -26,7 +26,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 - `deployment.environment`. User configured. Through this Cassandra cluster is identified by the environment where it resides. For example: dev, prod or qa.
 - `sumo.datasource`. Has fixed value of **cassandra**.
 
-### Prerequisites
+## Prerequisites
 
 Cassandra has three main logs: system.log, debug.log, and gc.log which hold general logging messages, debugging logging messages, and java garbage collection logs respectively.
 
