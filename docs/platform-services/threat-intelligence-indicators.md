@@ -11,6 +11,8 @@ Threat intelligence, often abbreviated as *threat intel*, is information that he
 
 Threat intelligence indicators can help security analysts leverage a large body of information to surface potential threats. For example, say that a threat intelligence database has an indicator that correlates a certain IP address with known malicious activity. Because of this correlation, analysts can assume log messages with that IP address are more likely to be part of a real cyber attack.
 
+Once you [ingest indicators](#ingest-threat-intelligence-indicators) and they appear on the [Threat Intelligence tab](#threat-intelligence-tab), you can use them to search logs for threats. See [Find threats](#find-threats) to learn how. 
+
 ## Prerequisites
 
 ### Role capabilities
@@ -86,119 +88,37 @@ You can also add threat intelligence indicators using the API or a collector. Se
 
 ## Find threats
 
-Once you [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab), you can perform searches to find matches to data in the indicators using:
-* [`threatlookup` search operator](#threatlookup-search-operator)
-* [`hasThreatMatch` Cloud SIEM rules language function](#hasthreatmatch-cloud-siem-rules-language-function)
-
-You can also see threat indicators displayed on Entitties in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#threat-indicators-in-the-cloud-siem-ui).
+Once you [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators), you can perform searches to find matches to data in the indicators using the `threatlookup` search operator or the `hasThreatMatch` Cloud SIEM rules language function.
 
 ### threatlookup search operator
 
-The `threatlookup` search operator allows you to search logs for matches in threat intelligence indicators. Note that you can also use the [`threatIP`](/docs/search/search-query-language/search-operators/threatip/) search operator to search CrowdStrike's threat intelligence data based on IP addresses. For other search operators, see [Search Operators](/docs/search/search-query-language/search-operators).
+The `threatlookup` operator allows you to search logs for matches in threat intelligence indicators. 
 
-#### Syntax
+For example, use the following query to find logs in all `sec_record*` indexes with a `srcDevice_ip` attribute correlated to a threat indicator with a high confidence level (greater than 50): 
 
-```
-threatlookup [source="<source_value>"] [include="<all|active|expired>"] <indicator_value_field> [,<optional_indicator_value_field_2>, …]
-```
-
-Response fields:
-* confidence
-* fields
-* imported
-* indicator
-* valid_from
-* valid_until
-* source
-* threat_type
-* type
-* updated
-
-#### Examples
-
-```
-_index=sec_record*
-| threatlookup dstDevice_ip
-| where _threatlookup.confidence > 50
-| timeslice 1h
-| count by _timeslice
-```
-```
-_index=sec_record*
-| threatlookup source="s_CrowdStrike" dstDevice_ip
-| where _threatlookup.confidence > 50
-| timeslice 1h
-| count by _timeslice
-```
-```
-_index=sec_record*
-| threatlookup dstDevice_ip, srcDevice_ip
-| where _threatlookup.confidence > 50
-| timeslice 1h
-| count by _timeslice
-```
-```
-_index=sec_record*
-| threatlookup  source="s_CrowdStrike" dstDevice_ip, srcDevice_ip
-| where _threatlookup.confidence > 50
-| timeslice 1h
-| count by _timeslice
-```
-```
-_index=sec_record*
-| threatlookup  source="s_CrowdStrike" include="active" dstDevice_ip, srcDevice_ip
+ ```
+_index=sec_record* 
+| threatlookup srcDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
 ```
 
-#### Run threatlookup with the cat search operator
+For more information, see [threatlookup search operator](/docs/search/search-query-language/search-operators/threatlookup/).
 
-You can run the `threatlookup` search operator with the [cat search operator](https://help.sumologic.com/docs/search/search-query-language/search-operators/cat/) by using the `sumo://threat-intel` path. This lets you search the entire store of threat intelligence indicators, or just a portion. For example:
-```
-cat sumo://threat-intel  | where _threatlookup.indicator = "192.0.2.0"
-```
-```
-cat sumo://threat-intel  | where _threatlookup.source = "FreeTAXII" and _threatlookup.indicator = "192.0.2.0"
-```
+### hasThreatMatch Cloud SIEM rules function
 
-In the cat output, timestamp fields (like `valid_until`) will appear as integers. You can use the `formatDate()` function to convert them back to timestamps. For example:
+Use the `hasThreatMatch` function in Cloud SIEM rules to search incoming Records for matches to threat intelligence indicators. 
+   
+For example, use the function to find all Records with a `srcDevice_ip` attribute correlated to a threat indicator with a high confidence level (greater than 50): 
 
 ```
-cat sumo://threat-intel | formatDate(toLong(_threatlookup.valid_until), "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", "UTC") as valid_until
+hasThreatMatch([srcDevice_ip], confidence > 50)
 ```
 
-:::note
-You cannot use the cat search operator with the `s_crowdstrike` source.
-:::
+For more information, see [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch)
 
-### hasThreatMatch Cloud SIEM rules language function
-
-The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to threat intelligence indicators. It can match values in [Cloud SIEM threat intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) lists as well as threat indicators added to the [Threat Intelligence tab](#threat-intelligence-tab). For other Cloud SIEM rules functions, see [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/).
-
-#### Syntax
-
-`hasThreatMatch([<fields>], <filters>, <indicators>)`
-
-Parameters:
-* `<fields>` is a list of comma separated Entity field names. At least one field name is required.
-* `<filters>` is a logical expression using indicator attributes. (Allowed are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`.)
-* `<indicators>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
-   * `active_indicators`. Match active indicators only (default).
-   * `expired_indicators`. Match expired indicators only.
-   * `all_indicators`. Match all indicators.
-
-#### Examples
-
-* `hasThreatMatch([srcDevice_ip])`
-* `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
-* `hasThreatMatch([srcDevice_ip], confidence > 50)`
-* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source="FreeTAXII")`
-* `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" confidence > 50 AND))`
-* `hasThreatMatch([srcDevice_ip], expired_indicators)`
-* `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
-
-### Threat indicators in the Cloud SIEM UI
+## Threat indicators in the Cloud SIEM UI
 
 An Entity can be associated with a known indicator that has a threat type attribute, either `threatType` (in normalized JSON format and CSV format), or `indicator_types` (in STIX format as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). 
 

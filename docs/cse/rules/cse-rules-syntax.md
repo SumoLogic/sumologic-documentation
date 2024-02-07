@@ -582,6 +582,32 @@ The following expression returns "10.10.1.0":
 
 `getCIDRPrefix("10.10.1.35", "24")`
 
+## hasThreatMatch
+
+The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to [threat intelligence indicators](/docs/platform-services/threat-intelligence-indicators). It can also match values in [Cloud SIEM threat intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence). 
+
+**Syntax**
+
+`hasThreatMatch([<fields>], <filters>, <indicators>)`
+
+Parameters:
+* `<fields>` is a list of comma separated Entity field names. At least one field name is required.
+* `<filters>` is a logical expression using indicator attributes. (Allowed are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`.)
+* `<indicators>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
+   * `active_indicators`. Match active indicators only (default).
+   * `expired_indicators`. Match expired indicators only.
+   * `all_indicators`. Match all indicators.
+
+**Examples**
+
+* `hasThreatMatch([srcDevice_ip])`
+* `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
+* `hasThreatMatch([srcDevice_ip], confidence > 50)`
+* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source="FreeTAXII")`
+* `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" confidence > 50 AND))`
+* `hasThreatMatch([srcDevice_ip], expired_indicators)`
+* `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
+
 ## haversine
 
 Returns the distance between latitude and longitude values of two coordinates in kilometers.

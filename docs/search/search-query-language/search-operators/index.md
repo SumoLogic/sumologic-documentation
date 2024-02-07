@@ -382,19 +382,25 @@ In this section, we'll introduce the following concepts:
         </div>
         <div className="box smallbox card">
           <div className="container">
-          <a href="/docs/search/search-query-language/search-operators/substring"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>substring()</h4></a>
+          <a href="/docs/search/search-query-language/search-operators/substring"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>substring</h4></a>
           <p>The substring operator allows you to specify an offset that will output only part of a string, referred to as a substring.</p>
           </div>
         </div>
         <div className="box smallbox card">
           <div className="container">
-          <a href="/docs/search/search-query-language/search-operators/threatip"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>threatip()</h4></a>
+          <a href="/docs/search/search-query-language/search-operators/threatip"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>threatip</h4></a>
           <p>Correlates CrowdStrike's threat intelligence data based on IP addresses from your log data, helping you detect threats in your environment.</p>
+          </div>
+        </div>
+                <div className="box smallbox card">
+          <div className="container">
+          <a href="/docs/search/search-query-language/search-operators/threatlookup"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>threatlookup</h4></a>
+          <p>Allows you to search logs for matches in threat intelligence indicators.</p>
           </div>
         </div>
         <div className="box smallbox card">
           <div className="container">
-          <a href="/docs/search/search-query-language/search-operators/timeslice"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>timeslice()</h4></a>
+          <a href="/docs/search/search-query-language/search-operators/timeslice"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>timeslice</h4></a>
           <p>The timeslice operator aggregates data by time period, so you can create bucketed results based on a fixed interval.</p>
           </div>
         </div>
@@ -448,7 +454,7 @@ In this section, we'll introduce the following concepts:
         </div>
         <div className="box smallbox card">
           <div className="container">
-          <a href="/docs/search/search-query-language/search-operators/trim"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>trim()</h4></a>
+          <a href="/docs/search/search-query-language/search-operators/trim"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>trim</h4></a>
           <p>The trim operator eliminates leading and trailing spaces from a string field.</p>
           </div>
         </div>
@@ -466,7 +472,7 @@ In this section, we'll introduce the following concepts:
         </div>
         <div className="box smallbox card">
           <div className="container">
-          <a href="/docs/search/search-query-language/search-operators/where"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>where()</h4></a>
+          <a href="/docs/search/search-query-language/search-operators/where"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>where</h4></a>
           <p>The where operator allows you to filter results based on a boolean expression.</p>
           </div>
         </div>

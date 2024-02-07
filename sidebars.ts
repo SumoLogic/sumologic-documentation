@@ -1207,6 +1207,7 @@ module.exports = {
             'search/search-query-language/search-operators/sort',
             'search/search-query-language/search-operators/substring',
             'search/search-query-language/search-operators/threatip',
+            'search/search-query-language/search-operators/threatlookup',
             'search/search-query-language/search-operators/timeslice',
             'search/search-query-language/search-operators/timeslice-join',
             'search/search-query-language/search-operators/tolowercase-touppercase',
