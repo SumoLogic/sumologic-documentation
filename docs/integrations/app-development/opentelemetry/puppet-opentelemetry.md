@@ -22,7 +22,7 @@ Following are the tags which will be created as part of Puppet App install if no
 
 - `sumo.datasource`. Has a fixed value of **Puppet**.
 
-### Prerequisites
+## Prerequisites
 
 This section provides instructions for configuring log collection for Puppet running on a non-Kubernetes environment for the Sumo Logic App for Puppet. F
 
@@ -119,7 +119,7 @@ import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prer
 
 <LogsCollectionPrereqisites/>
 
-Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+For windows system, log files which are collected should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
 
 ```
 $NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
