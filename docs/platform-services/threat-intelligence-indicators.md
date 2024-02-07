@@ -86,9 +86,9 @@ You can also add threat intelligence indicators using the API or a collector. Se
 1. Select a source. Details of the source appear in a sidebar.
 1. Click **Delete Indicators**. The following dialog appears. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
 1. Select indicators to delete from the source:
-   * **Delete all indicators**. Remove all indicators from the source. 
+   * **Delete all indicators**. Remove all indicators from the source.
    * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the indicators.
-1. Click **Delete**. 
+1. Click **Delete**.
 
 ## Find threats
 
@@ -123,38 +123,38 @@ Response fields:
 #### Examples
 
 ```
-_index=sec_record* 
+_index=sec_record*
 | threatlookup dstDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
 ```
 ```
-_index=sec_record* 
+_index=sec_record*
 | threatlookup source="s_CrowdStrike" dstDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
 ```
 ```
-_index=sec_record* 
+_index=sec_record*
 | threatlookup dstDevice_ip, srcDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
 ```
 ```
-_index=sec_record* 
+_index=sec_record*
 | threatlookup  source="s_CrowdStrike" dstDevice_ip, srcDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
 ```
 ```
-_index=sec_record* 
-| threatlookup  source="s_CrowdStrike" include="active" dstDevice_ip, srcDevice_ip 
-| where _threatlookup.confidence > 50 
-| timeslice 1h 
+_index=sec_record*
+| threatlookup  source="s_CrowdStrike" include="active" dstDevice_ip, srcDevice_ip
+| where _threatlookup.confidence > 50
+| timeslice 1h
 | count by _timeslice
 ```
 
@@ -171,7 +171,7 @@ cat sumo://threat-intel  | where _threatlookup.source = "FreeTAXII" and _threatl
 In the cat output, timestamp fields (like `valid_until`) will appear as integers. You can use the `formatDate()` function to convert them back to timestamps. For example:
 
 ```
-cat sumo://threat-intel | formatDate(toLong(_threatlookup.valid_until), "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", "UTC") as valid_until 
+cat sumo://threat-intel | formatDate(toLong(_threatlookup.valid_until), "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", "UTC") as valid_until
 ```
 
 :::note
@@ -211,14 +211,14 @@ An Entity can be associated with a known indicator that has a threat type attrib
 When that occurs, then anywhere the Entity is displayed in the Cloud SIEM UI, a [threat indicator icon or label](/docs/cse/integrations/enrichments-and-indicators/#threat-indicators) will be displayed showing the Entity's "reputation" corresponding to that threat type:
 
 | Threat type value | Label in the Cloud SIEM UI |
-| :-- | :-- | 
+| :-- | :-- |
 | `anomalous-activity` | **Suspicious** |
-| `anonymization` |  **Suspicious** | 
-| `benign` |  **Not Flagged** | 
-| `compromised` |  **Malicious** | 
-| `malicious-activity` | **Malicious** | 
-| `attribution` |  (None) | 
-| `unknown` (or not set) |  **Suspicious** | 
+| `anonymization` |  **Suspicious** |
+| `benign` |  **Not Flagged** |
+| `compromised` |  **Malicious** |
+| `malicious-activity` | **Malicious** |
+| `attribution` |  (None) |
+| `unknown` (or not set) |  **Suspicious** |
 
 Note that if the mapping produces a threat indicator level of **Malicious**, but the confidence is less than 60, the Entity's reputation will be set to **Suspicious** instead. If there are multiple reputation values for a given Entity (potentially from threat intel and enrichment), Cloud SIEM will show the most severe indicator.
 
@@ -236,7 +236,7 @@ Use the following formats for threat intelligence indicator files when you [add 
 
 ### Normalized JSON format
 
-Normalized JSON format is a standardized method to present JSON data. You can use this format to load indicators from multiple sources. 
+Normalized JSON format is a standardized method to present JSON data. You can use this format to load indicators from multiple sources.
 
 #### Example file
 
@@ -281,12 +281,12 @@ Following is an example threat indicator file in normalized JSON format. (For an
 
 #### Required attributes
 
-For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) resource. 
+For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) resource.
 
 The following attributes are required:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
        * **indicator** (string). Value of the indicator, such as an IP address, file name, email address, etc. For example, `192.0.2.0`.
-       * **type** (string). Type of the indicator. Following are valid values: 
+       * **type** (string). Type of the indicator. Following are valid values:
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
@@ -296,7 +296,7 @@ The following attributes are required:
          * `process`. Process name. (Entity type in Cloud SIEM is `_process`.)
          * `url`. URL. (Entity type in Cloud SIEM is `_url`.)
          * `user-account`. User ID. (Entity type in Cloud SIEM is `_username`.)
-       * **source** (string). User-provided text to identify the source of the indicator. For example, `FreeTAXII`. 
+       * **source** (string). User-provided text to identify the source of the indicator. For example, `FreeTAXII`.
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest (as [defined by the confidence scale in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_1v6elyto0uqg)). For example, `75`.
        * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to Entities in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
@@ -307,7 +307,7 @@ The following attributes are required:
           * `malicious-activity`. Patterns of suspected malicious objects and/or activity.
           * `attribution`. Patterns of behavior that indicate attribution to a particular threat actor or campaign.
           * `unknown` (or not set). There is not enough information available to determine the threat type.
-       * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor1`. This attribute is frequently used in the s_CrowdStrike source. 
+       * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor1`. This attribute is frequently used in the s_CrowdStrike source.
 
 ### CSV format
 
@@ -344,7 +344,7 @@ For information about the attributes to use, see ["Indicator" in the STIX 2.1 sp
 Columns for the following attributes are required in the upload file:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
        * **indicator** (string). Value of the indicator, such as an IP address, file name, email address, etc. For example, `192.0.2.0`.
-       * **type** (string). Type of the indicator. Following are valid values: 
+       * **type** (string). Type of the indicator. Following are valid values:
          * `domain-name`. Domain name. (Entity type in Cloud SIEM is `_domain`.)
          * `email-addr`. Email address. (Entity type in Cloud SIEM is `_email`.)
          * `file`. File name. (Entity type in Cloud SIEM is `_file`.)
@@ -370,7 +370,7 @@ Columns for the following attributes are required in the upload file:
 
 ### STIX 2.1 JSON format
 
-STIX 2.1 JSON format is a method to present JSON data according to the STIX 2.1 specification. 
+STIX 2.1 JSON format is a method to present JSON data according to the STIX 2.1 specification.
 
 Note that if you want to upload indicators from multiple sources, you cannot use this format but instead should use the [Normalized JSON format](#normalized-json-format).
 
@@ -382,7 +382,7 @@ Also note that if your STIX file includes lines like these at the top...
   "id": "bundle--cf20f99b-3ed2-4a9f-b4f1-d660a7fc8241",
   "objects": [
   {
-    "type": "indicator", 
+    "type": "indicator",
 ```
 
 ...you should remove them before uploading the file, and leave only the objects array like this:
@@ -390,7 +390,7 @@ Also note that if your STIX file includes lines like these at the top...
 ```
 [
   {
-    "type": "indicator", 
+    "type": "indicator",
 ```
 
 
@@ -398,7 +398,7 @@ Also note that if your STIX file includes lines like these at the top...
 
 ##### Upload with the UI
 
-Following is an example threat indicator file in STIX 2.1 JSON format if you're uploading a file with the UI. 
+Following is an example threat indicator file in STIX 2.1 JSON format if you're uploading a file with the UI.
 
 If you are uploading via the UI, do not include the `source` value in the file, since the UI prompts for the source value when you [add the indicator](/docs/platform-services/threat-intelligence-indicators#add-indicators-in-the-threat-intelligence-tab).
 
@@ -453,7 +453,7 @@ If you are uploading via the UI, do not include the `source` value in the file, 
 
 ##### Upload with the API
 
-Following is an example threat indicator file in STIX 2.1 JSON format if you're uploading a file with the API. 
+Following is an example threat indicator file in STIX 2.1 JSON format if you're uploading a file with the API.
 
 As shown in the following example, if uploading via the API you must add the `source` attribute outside of the indicators object, since the source is not part of the STIX standard. You must also include an `indicators` array field. (For another example for uploading via the API, see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)).
 
@@ -511,10 +511,10 @@ As shown in the following example, if uploading via the API you must add the `so
 
 #### Required attributes
 
-For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource. 
+For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
 
 The following attributes are required:
-       * **type** (string). The type of STIX object. For example, `indicator`. The value must be the name of one of the types of STIX objects defined in the STIX 2.1 specification. 
+       * **type** (string). The type of STIX object. For example, `indicator`. The value must be the name of one of the types of STIX objects defined in the STIX 2.1 specification.
        * **spec_version** (string). The version of the STIX specification used to represent this object. The value of this property must be `2.1` for STIX objects defined according to the STIX 2.1 specification.
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
        * **created** (string [date-time]). The time at which the object was originally created. Timestamp in UTC in RFC3339 format. For example, `2016-05-01T06:13:14.000Z`.

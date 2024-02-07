@@ -89,7 +89,7 @@ module.exports = {
            // 'send-data/opentelemetry-collector/quickstart',
             {
               type: 'category',
-              label: 'Install Collector',
+              label: 'Install OTel Collector',
               collapsible: true,
               collapsed: true,
               link: {type: 'doc', id: 'send-data/opentelemetry-collector/install-collector/index'},
@@ -104,11 +104,12 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Data Source and Configurations',
+              label: 'Data Sources and Configurations',
               collapsible: true,
               collapsed: true,
               link: {type: 'doc', id: 'send-data/opentelemetry-collector/data-source-configurations/index'},
               items:[
+                'send-data/opentelemetry-collector/data-source-configurations/overview',
                 'send-data/opentelemetry-collector/data-source-configurations/mapping-records-resources',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-logs',
                 'send-data/opentelemetry-collector/data-source-configurations/collect-metrics',
@@ -120,8 +121,8 @@ module.exports = {
             'send-data/opentelemetry-collector/performance-benchmarks',
             'send-data/opentelemetry-collector/data-transformations',
             'send-data/opentelemetry-collector/troubleshooting',
-            'send-data/opentelemetry-collector/faq',
             'send-data/opentelemetry-collector/sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship',
+            'send-data/opentelemetry-collector/faq',
           ]
         },
         {
@@ -288,6 +289,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/kaltura-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-exchange-trace-logs',
@@ -2795,6 +2797,7 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'platform-services/automation-service/index'},
           items: [
+            'platform-services/automation-service/about-automation-service',
             {
               type: 'category',
               label: 'App Central',
@@ -2817,7 +2820,6 @@ integrations: [
                 }
               ],
             },
-            'platform-services/automation-service/about-automation-service',
             'platform-services/automation-service/automation-service-playbooks',
             'platform-services/automation-service/automation-service-integrations',
             'platform-services/automation-service/automation-service-audit-logging',
