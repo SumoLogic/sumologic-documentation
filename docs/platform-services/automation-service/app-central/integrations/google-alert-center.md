@@ -4,7 +4,7 @@ description: ''
 tags: []
 ---
 
-![](/img/platform-services/automation-service/app-central/logos/google-alert-center.png)
+![](/img/platform-services/automation-service/app-central/logos/google.png)
 
 Version: 1.0  
 Updated: Dec 12, 2023

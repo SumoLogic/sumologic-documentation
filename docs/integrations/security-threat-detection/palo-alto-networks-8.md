@@ -2,14 +2,14 @@
 id: palo-alto-networks-8
 title: Palo Alto Networks 8
 sidebar_label: Palo Alto Networks 8
-description: The Palo Alto Networks 8 App gives you visibility into firewall and traps activity, including information about firewall configuration changes, details about rejected and accepted firewall traffic, traffic events that match the Correlation Objects and Security Profiles you have configured in PAN, and events logged by the Traps Endpoint Security Manager.
+description: The Palo Alto Networks 8 app gives you visibility into firewall and traps activity, including information about firewall configuration changes, details about rejected and accepted firewall traffic, traffic events that match the Correlation Objects and Security Profiles you have configured in PAN, and events logged by the Traps Endpoint Security Manager.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan8.png')} alt="thumbnail icon" width="100"/>
 
-Palo Alto Networks (PAN) 8 provides a next generation firewall and the Traps Endpoint Security Manager. The Palo Alto Networks 8 App gives you visibility into firewall and traps activity, including information about firewall configuration changes, details about rejected and accepted firewall traffic, traffic events that match the Correlation Objects and Security Profiles you have configured in PAN, and events logged by the Traps Endpoint Security Manager.
+Palo Alto Networks (PAN) 8 provides a next generation firewall and the Traps Endpoint Security Manager. The Palo Alto Networks 8 app gives you visibility into firewall and traps activity, including information about firewall configuration changes, details about rejected and accepted firewall traffic, traffic events that match the Correlation Objects and Security Profiles you have configured in PAN, and events logged by the Traps Endpoint Security Manager.
 
 ## Log types
 
@@ -105,9 +105,9 @@ _sourceCategory=Loggen/PAN/Threat THREAT (virus or "wildfire-virus")
 ```
 
 
-## Collecting Logs for the Palo Alto Networks 8 App
+## Collecting Logs for the Palo Alto Networks 8 app
 
-This section has instructions for collecting logs for the Palo Alto Networks 8 App, as well as examples of field extraction rules, logs, and queries.
+This section has instructions for collecting logs for the Palo Alto Networks 8 app, as well as examples of field extraction rules, logs, and queries.
 
 ### Prerequisites
 
@@ -212,9 +212,9 @@ _sourceCategory=Loggen/PAN/Traffic TRAFFIC
 
 
 
-## Installing the Palo Alto Networks 8 App
+## Installing the Palo Alto Networks 8 app
 
-This section provides instructions for installing the Palo Alto Networks 8 App, along with examples of each of the dashboards that provide visual insights into your data.
+This section provides instructions for installing the Palo Alto Networks 8 app, along with examples of each of the dashboards that provide visual insights into your data.
 
 This app supports PAN-OS v7 and v8.
 
