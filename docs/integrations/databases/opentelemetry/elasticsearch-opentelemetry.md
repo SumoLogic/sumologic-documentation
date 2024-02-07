@@ -2,7 +2,7 @@
 id: elasticsearch-opentelemetry
 title: Elasticsearch - OpenTelemetry Collector
 sidebar_label: Elasticsearch - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Elasticsearch.
+description: Learn about the Sumo Logic OpenTelemetry app for Elasticsearch.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -28,15 +28,15 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 - `sumo.datasource`. Has a fixed value of **elasticsearch**.
 - `db.node.name`. Has the value of host name of the machine which is being monitored.
 
-### Prerequisites
+## Prerequisites
 
-#### For metrics collection
+### For metrics collection
 
 This receiver supports Elasticsearch versions 7.9+.
 
 If Elasticsearch security features are enabled, you must have either the monitor or manage cluster privilege. See the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/authorization.html) for more information on authorization and [Security privileges](https://www.elastic.co/guide/en/elasticsearch/reference/current/security-privileges.html).
 
-#### For logs collection
+### For logs collection
 
 Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set `loglevel` to one of:
 
@@ -51,7 +51,7 @@ import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prer
 
 <LogsCollectionPrereqisites/>
 
-Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+For windows system, log files which are collected should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
 
 ```
 $NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
@@ -98,7 +98,7 @@ For Linux platform, click on **Download Environment Variables File** button to g
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Elasticsearch-OpenTelemetry/ElasticSearch-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
