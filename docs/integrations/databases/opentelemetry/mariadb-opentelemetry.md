@@ -2,7 +2,7 @@
 id: mariadb-opentelemetry
 title: MariaDB - OpenTelemetry Collector
 sidebar_label: MariaDB - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for MongoDB.
+description: Learn about the Sumo Logic OpenTelemetry app for MongoDB.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The [MariaDB](https://mariadb.org/about/) app is a logs based app that helps you monitor MariaDB database. Pre-configured dashboards provide insight into the health of your database clusters, replication, error logs, slow queries and failed logins.
 
-This App is tested with the following MariaDB versions:
+This app is tested with the following MariaDB versions:
 
 - Non-Kubernetes: MariaDB - Version 10.7.1
 
@@ -30,7 +30,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 - `deployment.environment`. User configured. This is the deployment environment where the MariaDB cluster resides. For example: dev, prod, or qa.
 - `sumo.datasource`. Has a fixed value of **mariadb**.
 
-### Prerequisites
+## Prerequisites
 
 This section provides instructions for configuring log collection for MariaDB running on a non-Kubernetes environment for the Sumo Logic App for MariaDB. By default, MariaDB logs are stored in a log file.
 
@@ -57,7 +57,7 @@ import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prer
 
 <LogsCollectionPrereqisites/>
 
-Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+For windows system, log files which are collected should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
 
 ```
 $NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
@@ -95,7 +95,7 @@ The files are typically located in `/var/log/mariadb/`. If you're using a custom
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
-### Step 3: Send logs to Sumo
+### Step 3: Send logs to Sumo Logic
 
 Once you have the yaml file downloaded in step 2, you can copy the same to the machine which needs to be monitored. Follow the below steps based on the platform of the machine:
 
@@ -168,7 +168,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Logs
+## Sample logs
 
 ```sql
 2023-01-09*04:51:04 0 [ERROR] mysqld: Event Scheduler: An error occurred when initializing system tables. Disabling the Event Scheduler.
@@ -186,7 +186,7 @@ Following query is from the "Errors" panel of the overview dashboard in Mariadb 
 | where ErrorLogtype="ERROR" | count as error_count
 ```
 
-## Viewing MariaDB Dashboards
+## Viewing MariaDB dashboards
 
 ### Overview
 
@@ -205,9 +205,9 @@ The **MariaDB - Error Logs** dashboard provides insight into database error logs
 
 Use this dashboard to:
 
-- Quickly identify errors and patterns in logs for troubleshooting
-- Monitor trends in the error log and identify outliers
-- Ensure that server start, server stop, and crash recovery events are in line with expectations
+- Quickly identify errors and patterns in logs for troubleshooting.
+- Monitor trends in the error log and identify outliers.
+- Ensure that server start, server stop, and crash recovery events are in line with expectations.
 - Dashboard filters allow you to narrow a search for the database clusters.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Error-Logs.png' alt="Error Logs" />
@@ -218,7 +218,7 @@ The **MariaDB - Failed Logins** dashboard provides insights into all failed logi
 
 Use this dashboard to:
 
-- Monitor all failed login attempts and identify any unusual or suspicious activity
+- Monitor all failed login attempts and identify any unusual or suspicious activity.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Failed-Logins.png' alt="Failed Logins" />
 
@@ -228,8 +228,8 @@ The **MariaDB - Replication** dashboard provides insights into the state of data
 
 Use this dashboard to:
 
-- Quickly determine reasons for replication failures
-- Monitor replication status trends
+- Quickly determine reasons for replication failures.
+- Monitor replication status trends.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Replication.png' alt="Replication" />
 
@@ -241,10 +241,10 @@ Slow queries are queries that take 10 seconds or more to execute (default value 
 
 Use this dashboard to:
 
-- Identify all slow queries
-- Quickly determine which queries have been identified as slow or excessive slow queries
-- Monitor users and hosts running slow queries
-- Determine which SQL commands are slower than others
-- Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters
+- Identify all slow queries.
+- Quickly determine which queries have been identified as slow or excessive slow queries.
+- Monitor users and hosts running slow queries.
+- Determine which SQL commands are slower than others.
+- Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MariaDB-OpenTelemetry/MariaDB-Slow-Queries.png' alt="Slow Queries" />
