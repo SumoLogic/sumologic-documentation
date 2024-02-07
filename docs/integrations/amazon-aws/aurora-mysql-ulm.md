@@ -15,7 +15,7 @@ The Sumo Logic app for Aurora MySQL ULM includes predefined searches and dashboa
 
 This guide provides an overview of the Aurora MySQL ULM app pre-defined queries and dashboards, as well as instructions for collecting logs and metrics from Aurora MySQL, and installing the app.
 
-## Log and Metric types
+## Log and metric types
 
 The Sumo Logic app for Aurora MySQL ULM uses the following logs and metrics. Click the link for more information about the log type:
 
@@ -32,149 +32,150 @@ The Sumo Logic app for Aurora MySQL ULM uses the following logs and metrics. Cli
 
 ```json title="AWS Cloud Trail log example"
 {
-	"eventVersion":"1.05",
-	"userIdentity":{
-		"type":"IAMUser",
-		"principalId":"AIDABCDEFGH4QEWUABG5Q",
-		"arn":"arn:aws:iam::951234567898:user/Nitin",
-		"accountId":"951234567898",
-		"accessKeyId":"ASIABCDEFGHFBOT4FDVK",
-		"userName":"Nitin",
-		"sessionContext":{
-			"attributes":{
-				"mfaAuthenticated":"true",
-				"creationDate":"2018-10-28T08:16:35Z"
-			}
-		},
-		"invokedBy":"signin.amazonaws.com"
-	},
-	"eventTime":"2018-10-28T08:55:37Z",
-	"eventSource":"rds.amazonaws.com",
-	"eventName":"CreateDBCluster",
-	"awsRegion":"us-west-1",
-	"sourceIPAddress":"140.144.120.190",
-	"userAgent":"signin.amazonaws.com",
-	"requestParameters":{
-		"backupRetentionPeriod":1,
-		"databaseName":"NitinSampleDB",
-		"dBClusterIdentifier":"auroramysql57dbcluster02-cluster",
-		"dBClusterParameterGroupName":"default.aurora-mysql5.7",
-		"vpcSecurityGroupIds":[
-			"sg-0123454e5b1da3aff"
-		],
-		"dBSubnetGroupName":"default-vpc-b92fc5d7",
-		"engine":"aurora-mysql",
-		"engineVersion":"5.7.12",
-		"port":3306,
-		"masterUsername":"nitin",
-		"masterUserPassword":"****",
-		"storageEncrypted":true,
-		"enableCloudwatchLogsExports":[
-			"audit",
-			"error",
-			"general",
-			"slowquery"
-		],
-		"engineMode":"provisioned"
-	},
-	"responseElements":{
-		"allocatedStorage":1,
-		"availabilityZones":[
-			"us-west-1a",
-			"us-west-1b",
-			"us-west-1c"
-		],
-		"backupRetentionPeriod":1,
-		"databaseName":"NitinSampleDB",
-		"dBClusterIdentifier":"auroramysql57dbcluster02-cluster",
-		"dBClusterParameterGroup":"default.aurora-mysql5.7",
-		"dBSubnetGroup":"default-vpc-b92fc5d7",
-		"status":"creating",
-		"endpoint":"auroramysql57dbcluster07-cluster.cluster-cp1svq2n34sd.us-west-1.rds.amazonaws.com",
-		"readerEndpoint":"auroramysql57dbcluster07-cluster.cluster-ro-cp5svq2n34sd.us-west-1.rds.amazonaws.com",
-		"multiAZ":false,
-		"engine":"aurora-mysql",
-		"engineVersion":"5.7.12",
-		"port":3306,
-		"masterUsername":"nitin",
-		"preferredBackupWindow":"03:25-03:55",
-		"preferredMaintenanceWindow":"tue:03:58-tue:04:28",
-		"readReplicaIdentifiers":[
+  "eventVersion":"1.05",
+  "userIdentity":{
+    "type":"IAMUser",
+    "principalId":"AIDABCDEFGH4QEWUABG5Q",
+    "arn":"arn:aws:iam::951234567898:user/Nitin",
+    "accountId":"951234567898",
+    "accessKeyId":"ASIABCDEFGHFBOT4FDVK",
+    "userName":"Nitin",
+    "sessionContext":{
+      "attributes":{
+        "mfaAuthenticated":"true",
+        "creationDate":"2018-10-28T08:16:35Z"
+      }
+    },
+    "invokedBy":"signin.amazonaws.com"
+  },
+  "eventTime":"2018-10-28T08:55:37Z",
+  "eventSource":"rds.amazonaws.com",
+  "eventName":"CreateDBCluster",
+  "awsRegion":"us-west-1",
+  "sourceIPAddress":"140.144.120.190",
+  "userAgent":"signin.amazonaws.com",
+  "requestParameters":{
+    "backupRetentionPeriod":1,
+    "databaseName":"NitinSampleDB",
+    "dBClusterIdentifier":"auroramysql57dbcluster02-cluster",
+    "dBClusterParameterGroupName":"default.aurora-mysql5.7",
+    "vpcSecurityGroupIds":[
+      "sg-0123454e5b1da3aff"
+    ],
+    "dBSubnetGroupName":"default-vpc-b92fc5d7",
+    "engine":"aurora-mysql",
+    "engineVersion":"5.7.12",
+    "port":3306,
+    "masterUsername":"nitin",
+    "masterUserPassword":"****",
+    "storageEncrypted":true,
+    "enableCloudwatchLogsExports":[
+      "audit",
+      "error",
+      "general",
+      "slowquery"
+    ],
+    "engineMode":"provisioned"
+  },
+  "responseElements":{
+    "allocatedStorage":1,
+    "availabilityZones":[
+      "us-west-1a",
+      "us-west-1b",
+      "us-west-1c"
+    ],
+    "backupRetentionPeriod":1,
+    "databaseName":"NitinSampleDB",
+    "dBClusterIdentifier":"auroramysql57dbcluster02-cluster",
+    "dBClusterParameterGroup":"default.aurora-mysql5.7",
+    "dBSubnetGroup":"default-vpc-b92fc5d7",
+    "status":"creating",
+    "endpoint":"auroramysql57dbcluster07-cluster.cluster-cp1svq2n34sd.us-west-1.rds.amazonaws.com",
+    "readerEndpoint":"auroramysql57dbcluster07-cluster.cluster-ro-cp5svq2n34sd.us-west-1.rds.amazonaws.com",
+    "multiAZ":false,
+    "engine":"aurora-mysql",
+    "engineVersion":"5.7.12",
+    "port":3306,
+    "masterUsername":"nitin",
+    "preferredBackupWindow":"03:25-03:55",
+    "preferredMaintenanceWindow":"tue:03:58-tue:04:28",
+    "readReplicaIdentifiers":[
 
-		],
-		"dBClusterMembers":[
+    ],
+    "dBClusterMembers":[
 
-		],
-		"vpcSecurityGroups":[
-			{
-				"vpcSecurityGroupId":"sg-012345e5b1da3aff",
-				"status":"active"
-			}
-		],
-		"hostedZoneId":"Z2R2ITUGPM61AM",
-		"storageEncrypted":true,
-		"kmsKeyId":"arn:aws:kms:us-west-1:951234567898:key/9a3d8016-4cdb-478f-a3a4-9a310fc25307",
-		"dbClusterResourceId":"cluster-AVPSEUMFISOMMXXVGKL4GBUC2E",
-		"dBClusterArn":"arn:aws:rds:us-west-1:951234567898:cluster:auroramysql57dbcluster02-cluster",
-		"associatedRoles":[
+    ],
+    "vpcSecurityGroups":[
+      {
+        "vpcSecurityGroupId":"sg-012345e5b1da3aff",
+        "status":"active"
+      }
+    ],
+    "hostedZoneId":"Z2R2ITUGPM61AM",
+    "storageEncrypted":true,
+    "kmsKeyId":"arn:aws:kms:us-west-1:951234567898:key/9a3d8016-4cdb-478f-a3a4-9a310fc25307",
+    "dbClusterResourceId":"cluster-AVPSEUMFISOMMXXVGKL4GBUC2E",
+    "dBClusterArn":"arn:aws:rds:us-west-1:951234567898:cluster:auroramysql57dbcluster02-cluster",
+    "associatedRoles":[
 
-		],
-		"iAMDatabaseAuthenticationEnabled":false,
-		"clusterCreateTime":"Oct 28, 2018 8:55:35 AM",
-		"enabledCloudwatchLogsExports":[
-			"audit",
-			"error",
-			"general",
-			"slowquery"
-		],
-		"engineMode":"provisioned",
-		"deletionProtection":false
-	},
-	"requestID":"2cbb7974-b79c-4121-aed1-5ebe8f945b72",
-	"eventID":"7e554be7-0a00-4f8f-9e56-a2d54519fff9",
-	"eventType":"AwsApiCall",
-	"recipientAccountId":"951234567898"
+    ],
+    "iAMDatabaseAuthenticationEnabled":false,
+    "clusterCreateTime":"Oct 28, 2018 8:55:35 AM",
+    "enabledCloudwatchLogsExports":[
+      "audit",
+      "error",
+      "general",
+      "slowquery"
+    ],
+    "engineMode":"provisioned",
+    "deletionProtection":false
+  },
+  "requestID":"2cbb7974-b79c-4121-aed1-5ebe8f945b72",
+  "eventID":"7e554be7-0a00-4f8f-9e56-a2d54519fff9",
+  "eventType":"AwsApiCall",
+  "recipientAccountId":"951234567898"
 }
 ```
 
 
 ```json title="Audit Log"
 {
-	"timestamp":1540983162255,
-	"message":"1540983162255314,auroramysql57dbcluster02,npande,149.148.162.25,7556,640361,QUERY,NitinSampleDB,'DROP user IF EXISTS npande1',0",
-	"logStream":"auroramysql57dbcluster02.audit.log.1.2018-10-30-04-02.0.2",
-	"logGroup":"/aws/rds/cluster/auroramysql57dbcluster02-cluster/audit"
+  "timestamp":1540983162255,
+  "message":"1540983162255314,auroramysql57dbcluster02,npande,149.148.162.25,7556,640361,QUERY,NitinSampleDB,'DROP user IF EXISTS npande1',0",
+  "logStream":"auroramysql57dbcluster02.audit.log.1.2018-10-30-04-02.0.2",
+  "logGroup":"/aws/rds/cluster/auroramysql57dbcluster02-cluster/audit"
 }
 ```
 
 
 ```json title="Error log"
 {
-	"timestamp":1541352616280,
-	"message":"2018-11-04T17:30:16.280728Z 28167 [Note] Access denied for user 'npande'@'149.148.77.110' (using password: YES)",
-	"logStream":"auroramysql57dbcluster02",
-	"logGroup":"/aws/rds/cluster/auroramysql57dbcluster02-cluster/error",
-	"requestID":"28167"
+  "timestamp":1541352616280,
+  "message":"2018-11-04T17:30:16.280728Z 28167 [Note] Access denied for user 'npande'@'149.148.77.110' (using password: YES)",
+  "logStream":"auroramysql57dbcluster02",
+  "logGroup":"/aws/rds/cluster/auroramysql57dbcluster02-cluster/error",
+  "requestID":"28167"
 }
 ```
 
 ```json title="General Log"
 {
-	"timestamp":1541352658026,
-	"message":"2018-11-04T17:30:58.026053Z28173 Connect\tnpande@149.148.77.110 on NitinSampleDB using TCP/IP",
-	"logStream":"auroramysql57dbcluster02",
-	"logGroup":"/aws/rds/cluster/auroramysql57dbcluster02-cluster/general",
-	"requestID":"18"
+  "timestamp":1541352658026,
+  "message":"2018-11-04T17:30:58.026053Z28173 Connect\tnpande@149.148.77.110 on NitinSampleDB using TCP/IP",
+  "logStream":"auroramysql57dbcluster02",
+  "logGroup":"/aws/rds/cluster/auroramysql57dbcluster02-cluster/general",
+  "requestID":"18"
 }
 ```
 
 
 ```json title="Slow query log"
-{"timestamp":1541352664176,"message":"# Time: 2018-11-04T17:31:04.176310Z\n# User@Host:
-npande[npande] @  [149.148.77.110]  Id: 28173\n# Query_time: 0.000337  Lock_time: 0.000172 Rows_sent:
-0  Rows_examined: 87\nSET timestamp=1541352664;\nUPDATE inventory SET quantity = quantity + 100 WHERE
-quantity = 50;","logStream":"auroramysql57dbcluster02","logGroup":
-"/aws/rds/cluster/auroramysql57dbcluster02-cluster/slowquery"}
+{
+  "timestamp":1541352664176,
+  "message":"# Time: 2018-11-04T17:31:04.176310Z\n# User@Host: npande[npande] @ [149.148.77.110] Id: 28173\n# Query_time: 0.000337 Lock_time: 0.000172 Rows_sent: 0 Rows_examined: 87\nSET timestamp=1541352664;\nUPDATE inventory SET quantity = quantity + 100 WHERE quantity = 50;",
+  "logStream":"auroramysql57dbcluster02",
+  "logGroup":"/aws/rds/cluster/auroramysql57dbcluster02-cluster/slowquery"
+}
 ```
 
 ### Sample queries
@@ -225,7 +226,7 @@ This section provides instructions for setting up AWS CloudTrail Source to colle
 
 To collect AWS CloudTrail events, do the following:
 1. Configure a [Hosted Collector.](/docs/send-data/hosted-collectors/configure-hosted-collector)
-2. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to the Hosted Collector, providing the following information:
+2. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source) to the Hosted Collector, providing the following information:
    * **Name**. Enter a name to display for the new Source.
    * **Description**.(Optional) Enter a description of the Source.
    * **S3 Region**. Select the Amazon Region for your CloudTrail Aurora S3 bucket.
@@ -254,7 +255,7 @@ This section provides instructions for setting up the collection of AWS CloudWat
 6. Enable the following audit logs:
    * server_audit_logging
    * server_audit_logs_upload
-7. Modify the cluster to specify the** Cluster Parameter group on cluster level** and the **Parameter Group on instance level**.
+7. Modify the cluster to specify the **Cluster Parameter group on cluster level** and the **Parameter Group on instance level**.
 8. Reboot the instances to make the changes effective.
 
 ### Step 4: Collect Aurora CloudWatch metrics using AWS CloudWatch Metric Source
@@ -277,7 +278,9 @@ To collect Aurora CloudWatch metrics, do the following:
 
 Now that you've set up logs and metrics collection for Amazon Aurora MySQL, you can install the Sumo Logic app for Aurora MySQL ULM and use its pre-configured searches and [dashboards](#viewing-aurora-mysql-ulm-dashboards).
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 
 ## Viewing Aurora MySQL ULM Dashboards

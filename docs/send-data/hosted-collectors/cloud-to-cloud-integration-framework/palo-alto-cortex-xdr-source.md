@@ -47,9 +47,9 @@ To authenticate to the Cortex XDR APIs, follow the steps below:
 1. In the **Configurations** panel, navigate to the **Integrations** option and select **API keys**.<br/> <img src={useBaseUrl('img/send-data/cortex-select-api-key.png')} alt="cortex-select-api-key.png" width="600" />
 1. Click <img src={useBaseUrl('img/send-data/cortex-new-key-button.png')} alt="cortex-new-key-button.png" width="100" /> button to add a new API key.
 1. You will be directed to a page to generate the key. Fill in the required information, then click **Save**.<img src={useBaseUrl('img/send-data/generate-api-key.png')} alt="generate-api-key.png" width="400" />
- :::important
- Make sure to assign the API key the **Standard** security level.
- :::
+    :::important
+    Make sure to assign the API key the **Standard** security level.
+    :::
 1. Copy <img src={useBaseUrl('img/send-data/copy-button.png')} alt="copy-button.png" width="30" /> the generated API key and save it to your personal folder for later use when creating the Cortex XDR source. <br/> <img src={useBaseUrl('img/send-data/cortex-api-key-generated.png')} alt="cortex-api-key-generated.png" width="400" />
 1. Click **Close** to exit the API keys configuration panel.
 
@@ -103,7 +103,7 @@ To ensure accurate and effective display of all alerts, we recommend enabling du
 | `_siemVendor` | `Palo Alto ` | Set when **Forward To SIEM** is checked. |
 | `_siemProduct` | `Cortex` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
-| `_siemEventID` | `<category>` | Alert logs and associated event logs use {category} while incident logs use the static text `incident` |
+| `_siemEventID` | `<category>` | Alert logs and associated event logs use `{category}` while incident logs use the static text `incident` |
 
 ## JSON schema
 

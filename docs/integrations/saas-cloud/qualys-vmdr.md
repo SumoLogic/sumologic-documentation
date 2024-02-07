@@ -11,12 +11,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Qualys VMDR app is a new Sumo Logic app based on the [Qualys VMDR Cloud-to-Cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source/), which tracks errors, reports its health, and start-up progress. It provides a cloud security, compliance, and vulnerability management solutions across your IT infrastructure.
 
-## Log Types
+## Log types
 
 The Sumo logic App for Qualys VMDR uses vulnerability data from [Vulnerability API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf) and asset data from [Asset API](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf).
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -43,7 +43,7 @@ The Sumo logic App for Qualys VMDR uses vulnerability data from [Vulnerability A
 ```
 
 
-### Sample Queries
+### Sample queries
 
 ```sql
 source=Qualys
@@ -90,7 +90,9 @@ This section provides instructions for setting up [Cloud-to-Cloud-Integration fo
 
 This section provides instructions for installing the Qualys VMDR Sumo Logic App.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Qualys VMDR Dashboard
 

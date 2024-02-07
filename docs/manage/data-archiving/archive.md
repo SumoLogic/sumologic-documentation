@@ -4,6 +4,8 @@ title: Archive Log Data to S3
 description: Send data to an Archive that you can ingest from later.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Archive allows you to forward log data from Installed Collectors to AWS S3 buckets to collect at a later time. If you have logs that you don't need to search immediately you can archive them for later use. You can ingest from your Archive on-demand with five-minute granularity.
 
 :::important
@@ -25,22 +27,18 @@ You need the **Manage S3 data forwarding** role capability to create an AWS Ar
 1. Follow the instructions on Grant Access to an AWS Product to grant Sumo permission to send data to the destination S3 bucket.
 1. In Sumo Logic, select **Manage Data > Collection > Data Archiving**.
 1. Click **+** to add a new destination.
-1. Select **AWS Archive bucket** for **Destination Type**.  
-    ![destinationType.png](/img/archive/destinationType.png)
+1. Select **AWS Archive bucket** for **Destination Type**.  <br/><img src={useBaseUrl('img/archive/archive-destination.png')} alt="Create a New Destination dialog" style={{border: '1px solid gray'}} width="400"/>
 1. Configure the following:
    * **Destination Name**. Enter a name to identify the destination.
    * **Bucket Name**. Enter the exact name of the S3 bucket.
-
     :::note
     You can create only one destination with a particular bucket name.  If you try to create a new destination with the bucket name of an existing destination, the new destination replaces the old one.
     :::
-
    * **Description**. You can provide a meaningful description of the connection.
    * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in step 1, [Grant Sumo Logic access to an AWS Product](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
-
       * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
-      * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
-
+      * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
+      * For **AWS EC2 Credentials** instance profile credentials on an EC2 instance where an installed collector will be used to archive log data to S3, see https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-roles.html.
    * **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 1. Click **Save**.
 
@@ -67,18 +65,14 @@ You can use JSON to configure a processing rule, use the **Forward** filterTy
 1. Scroll down to the **Processing Rules** section and click the arrow to expand the section.
 1. Click **Add Rule**.
 1. Type a **Name** for this rule. (Names have a maximum of 32 characters.)
-1. For **Filter**, type a regular expression that defines the messages you want to filter. The rule must match the whole message. For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with **(?s).\* **such as: `(?s).*matching text(?s).*` Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax)
+1. For **Filter**, type a regular expression that defines the messages you want to filter. The rule must match the whole message. For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with `(?s)` such as: `(?s).*matching text(?s).*` Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax)
 1. Select **Archive messages that match** as the rule type. This option is visible only if you have defined at least one [**AWS Archive bucket** destination](#create-an-aws-archive-destination), as described in the previous section. 
-1. Select the Destination from the dropdown menu.  
-
-    ![archive rule.png](/img/archive/archive-rule.png)
-
+1. Select the Destination from the dropdown menu.  <br/><img src={useBaseUrl('img/archive/archive-rule.png')} alt="Archive rule" width="450"/>
 1. (Optional) Enter a **Prefix** that matches the location to store data in the S3 bucket. The prefix has the following requirements:
    * It can not start with a forward slash `/`.
    * It needs to end with a forward slash `/`.
    * Supports up to a maximum of 64 characters.
    * The following are supported characters:
-
      * Alphanumeric characters: 0-9, a-z, A-Z
      * Special characters: - _ . * ' ( )
 10. Click **Apply**. The new rule is listed along with any other previously defined processing rules.
@@ -144,12 +138,12 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector or one you have created for this purpose.
-1. Select **AWS S3 Archive**. <br/> ![archive icon.png](/img/archive/archive-icon.png)
+1. Select **AWS S3 Archive**. <br/><img src={useBaseUrl('img/archive/archive-icon.png')} alt="Archive icon" width="100"/>
 1. Enter a name for the new Source. A description is optional.
 1. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 1. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS.
 1. For **Path Expression**, enter the wildcard pattern that matches the Archive files you'd like to collect. The pattern:
-    * can use **one **wildcard (\*).
+    * can use one wildcard (\*).
     * can specify a [prefix](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys) so only certain files from your bucket are ingested. For example, if your filename is `prefix/dt=<date>/hour=<hour>/minute=<minute>/<collectorId>/<sourceId>/v1/<fileName>.txt.gzip`, you could use `prefix*` to only ingest from those matching files.
     * can **NOT** use a leading forward slash.
     * can **NOT** have the S3 bucket name.
@@ -163,7 +157,7 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 1. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step Grant Sumo Logic access to an AWS Product.
-    * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role.   
+    * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role.   
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 1. Create any Processing Rules you'd like for the AWS Source.
 1. When you are finished configuring the Source, click **Save**.
@@ -176,20 +170,18 @@ You need the Manage or View Collectors role capability to manage or view Archiv
 
 The Archive page provides a table of all the existing [AWS S3 Archive Sources](#create-an-aws-s3-archive-source) in your account and ingestion jobs. In Sumo Logic, select **Manage Data > Collection > Archive**.
 
-![archive page.png](/img/archive/archive-page.png)
+<img src={useBaseUrl('img/archive/archive-page.png')} alt="Archive page" width="800"/>
 
 ### Details pane
 
 Click on a table row to view the Source details. This includes:
 
-* Name
-* Description
-* AWS S3 bucket
-* All ingestion jobs that are and have been created on the Source.
+* **Name**
+* **Description**
+* **AWS S3 bucket**
+* All **Ingestion jobs** that are and have been created on the Source.
     * Each ingestion job shows the name, time window, and volume of data processed by the job. Click the icon ![open in search icon.png](/img/archive/open-search-icon.png) to the right of the job name to start a Search against the data that was ingested by the job.
-    * Hover your mouse over the information icon to view who created the job and when.
-
-![archive details pane.png](/img/archive/archive-details-pane.png)
+    * Hover your mouse over the information icon to view who created the job and when.<br/><img src={useBaseUrl('img/archive/archive-details-pane.png')} alt="Archive details pane" width="325"/>
 
 ## Create an ingestion job
 
@@ -203,25 +195,22 @@ An ingestion job is a request to pull data from your S3 bucket. The job begins i
 1. On the **Archive** page search and select the AWS S3 Archive Source that has access to your archived data.
 1. Click **New Ingestion Job** and a window appears where you:
     1. Define a mandatory job name that is unique to your account.
-    1. Select the date and time range of archived data to ingest. A maximum of 12 hours is supported.
-
-    ![Archive ingest job.png](/img/archive/Archive-ingest-job.png)
-
+    1. Select the date and time range of archived data to ingest. A maximum of 12 hours is supported. <br/><img src={useBaseUrl('img/archive/Archive-ingest-job.png')} alt="Archive ingest job" width="350"/>
 1. Click **Ingest Data** to begin ingestion. The status of the job is visible in the Details pane of the Source in the Archive page.
 
 ### Job status
 
 An ingestion job will have one of the following statuses:
 
-* **Pending** - The job is queued before scanning has started.
-* **Scanning** - The job is actively scanning for objects from your S3 bucket. Your objects could be ingesting in parallel.
-* **Ingesting** - The job has completed scanning for objects and is still ingesting your objects.
-* **Failed** - The job has failed to complete. Partial data may have been ingested and is searchable.
-* **Succeeded** - The job completed ingesting and your data is searchable.
+* **Pending**. The job is queued before scanning has started.
+* **Scanning**. The job is actively scanning for objects from your S3 bucket. Your objects could be ingesting in parallel.
+* **Ingesting* The job has completed scanning for objects and is still ingesting your objects.
+* **Failed**. The job has failed to complete. Partial data may have been ingested and is searchable.
+* **Succeeded** The job completed ingesting and your data is searchable.
 
 ## Search ingested Archive data
 
-Once your Archive data is ingested with an ingestion job you can search for it as you would any other data ingested into Sumo Logic. On the Archive page find and select the Archive S3 Source that ran the ingestion job to ingest your Archive data. In the [Details pane](#details-pane) you can click the **Open in Search** link to view the data in a Search that was ingested by the job.
+Once your Archive data is ingested with an ingestion job you can search for it as you would any other data ingested into Sumo Logic. On the Archive page find and select the Archive S3 Source that ran the ingestion job to ingest your Archive data. In the [Details pane](#details-pane), you can click the **Open in Search** link to view the data in a Search that was ingested by the job.
 
 :::note
 When you search for data in the Frequent or Infrequent Tier, you must explicitly reference the partition.
@@ -229,10 +218,10 @@ When you search for data in the Frequent or Infrequent Tier, you must explicitly
 
 The metadata field `_archiveJob` is automatically created in your account and assigned to ingested Archive data. This field does not count against your Fields limit. Ingested Archive data has the following metadata assignments:
 
-| Field          | Description                                                         |
-|:----------------|:---------------------------------------------------------------------|
-| _archiveJob   | The name of the ingestion job assigned to ingest your Archive data. |
-| _archiveJobId | The unique identifier of the ingestion job.                         |
+| Field          | Description                         |
+|:----------------|:-------------------------------------|
+| `_archiveJob`   | The name of the ingestion job assigned to ingest your Archive data. |
+| `_archiveJobId` | The unique identifier of the ingestion job.                    |
 
 ## Audit ingestion job requests
 

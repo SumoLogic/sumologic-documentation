@@ -43,7 +43,7 @@ For the Federal environments, a different set of Static IPs is available for eac
 
 ## Integrations
 
-The topics below are the available integrations. In Sumo Logic these are called Sources. Check out the Sources we have available in beta. 
+The topics below are the available integrations. In Sumo Logic these are called Sources. Check out the Sources we have available in beta.
 
 ## Versions
 
@@ -54,6 +54,12 @@ Sources in the Cloud-to-Cloud Integration Framework need updates over time to m
 In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper">
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/c2c/info/"><img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/><h4>Cloud-to-Cloud Info</h4></a>
+  <p>Learn the basics of setting up Cloud-to-Cloud Integration Framework sources.</p>
+  </div>
+</div>
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source"><img src={useBaseUrl('img/integrations/1password/1password.png')} alt="Thumbnail icon" width="50"/><h4>1Password</h4></a>
@@ -158,8 +164,8 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source"><img src={useBaseUrl('img/send-data/cloudquery-logo.png')} alt="icon" width="80"/><h4>CloudQuery Source</h4></a>
-  <p>Learn how to collect inventory from the AWS APIs.</p>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source"><img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="icon" width="50"/><h4>Cloud SIEM AWS EC2 Inventory</h4></a>
+  <p>Provides a secure endpoint to receive event data from the EC2 describe instances API.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -194,14 +200,14 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike Spotlight</h4></a>
-  <p>Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike Spotlight platform.</p>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-filevantage-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike FileVantage</h4></a>
+  <p>Learn how to collect file integrity monitoring logs from the CrowdStrike FileVantage platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source"><img src={useBaseUrl('img/send-data/aws-ec2.svg')} alt="icon" width="50"/><h4>Cloud SIEM AWS EC2 Inventory</h4></a>
-  <p>Provides a secure endpoint to receive event data from the EC2 describe instances API.</p>
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-spotlight-source"><img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="65"/><h4>CrowdStrike Spotlight</h4></a>
+  <p>Learn how to collect combined endpoint vulnerabilities data from the CrowdStrike Spotlight platform.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -274,6 +280,12 @@ In this section, we'll introduce the following concepts:
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source"><img src={useBaseUrl('img/send-data/jumpcloud-directory-insights-logo.png')} alt="icon" width="120"/><h4>JumpCloud Directory Insights </h4></a>
   <p>Collect events data from the JumpCloud Directory Insight.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/kaltura-source"><img src={useBaseUrl('img/send-data/kaltura-logo.png')} alt="icon" width="75"/><h4>Kaltura Source</h4></a>
+  <p>Learn how to collect Audit Trail and Base Entry events from Kaltura platform.</p>
   </div>
 </div>
 <div className="box smallbox card">

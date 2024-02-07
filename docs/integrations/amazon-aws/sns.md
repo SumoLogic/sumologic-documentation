@@ -18,7 +18,7 @@ The Sumo Logic app for Amazon SNS uses:
 * SNS CloudWatch Metrics. For details, see [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html). 
 * SNS operations using AWS CloudTrail. For details, see [here](http://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html). 
 
-### Sample log message
+### Sample log messages
 
 ```
 {
@@ -158,7 +158,9 @@ In case, you have a centralized collection of CloudTrail logs and are ingesting 
 
 Now that you have set up collection for Amazon SNS, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Amazon SNS dashboards
 

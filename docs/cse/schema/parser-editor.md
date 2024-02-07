@@ -8,16 +8,31 @@ description: Learn how to use the Parser Editor to configure and test a custom p
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-This topic has instructions for using the Sumo Logic parser editor. You can use the editor to customize system parsers, and to create your own custom parsers. We provide [parser templates](#parser-templates) that you can use as a starting point for creating custom parsers. 
+This topic has instructions for using the Sumo Logic parser editor. You can use the editor to customize system parsers, and to create your own custom parsers. We provide [parser templates](#parser-templates) that you can use as a starting point for creating custom parsers.
+
+For a complete list of standard parsers, see [Parsers](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog).
 
 See additional articles for more information about the Sumo Logic Cloud SIEM parsers:
 * [Parsing Language Reference Guide](/docs/cse/schema/parsing-language-reference-guide)
-* [Parsing Patterns](/docs/cse/schema/parsing-patterns) 
+* [Parsing Patterns](/docs/cse/schema/parsing-patterns)
 * [Parser Troubleshooting](/docs/cse/schema/parser-troubleshooting-tips)
 
 :::note
 The instructions that follow assume that you have already written your parser code.
 :::
+
+Watch the following micro lesson to learn how to apply parsers to Cloud SIEM data sets.
+
+<Iframe url="https://www.youtube.com/embed/CVaoD96Mhok?rel=0"
+     width="854px"
+     height="480px"
+     id="myId"
+     className="video-container"
+     display="initial"
+     position="relative"
+     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+     allowfullscreen
+     />
 
 ## Check parser code for mapping hints
 
@@ -47,9 +62,9 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 
 1. After you’ve obtained sample messages using one of the methods above, click **Parse Logs**.
 1. If all of the sample messages are parsed successfully, you’ll see results like those shown below in the **Parsed Messages** section of the editor. The **Event Details** section shows the key-value pairs that were parsed from the raw message. If your results indicate that there were warnings, unparsed, or dropped messages, see [Understanding parsing failures and warnings](#understanding-parsing-failures-and-warnings).<br/><img src={useBaseUrl('img/cse/successsful-blurred.png')} alt="Successful parsing" width="800"/>
-  :::note
-  One of the two messages that was parsed was cut out of the screenshot to make the image shorter. 
-  :::
+    :::note
+    One of the two messages that was parsed was cut out of the screenshot to make the image shorter. 
+    :::
 1. Once your new parser is working, and you want to start using it, follow the instructions in [Configuring a source to use a parser](#configure-and-test-a-custom-parser).
 
 ## Get sample messages
@@ -188,14 +203,14 @@ This section explains how to configure a Sumo Logic core platform source to send
 
 ## Parser templates
 
-We provide a number of parsers to extract data for normalization. However, you might need to create custom parsers for data sources not included in the parsers we offer. For this reason, we provide parser templates to aid in creating your own custom parsers. 
+We provide a number of parsers to extract data for normalization (see [Parsers](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/parsers/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog)). However, you might need to create custom parsers for data sources not included in the parsers we offer. For this reason, we provide parser templates to aid in creating your own custom parsers.
 
 ### Access parser templates
 
 1. Go to **Manage Data > Logs**.
 1. Select the **Parsers** tab.
 1. Open the **System** folder.
-1. Scroll down to the **Parser Templates** folder and open it. 
+1. Scroll down to the **Parser Templates** folder and open it.
 1. Browse the templates. Available formats include:
    * CEF
    * CSV
@@ -206,7 +221,7 @@ We provide a number of parsers to extract data for normalization. However, you m
    * Windows XML
    * XML
 
-<img src={useBaseUrl('img/cse/parser-templates.png')} alt="Parser templates" style={{border: '1px solid black'}} width="800" />
+<img src={useBaseUrl('img/cse/parser-templates.png')} alt="Parser templates" style={{border: '1px solid gray'}} width="800" />
 
 ### What's inside the templates
 

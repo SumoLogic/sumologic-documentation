@@ -20,7 +20,7 @@ Global Intelligence baselines are computed by aggregating data for a given custo
 
 The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment, including threat sources and targets by geographic locations.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details, see [GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
 
@@ -81,9 +81,10 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 
 
 
-### Sample Log Message
+### Sample log messages
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -214,7 +215,7 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 
 </details>
 
-### Sample Query
+### Sample queries
 
 The following query is from the **Threats by Region** panel of the **Amazon GuardDuty - Threat Details** dashboard:
 
@@ -279,7 +280,7 @@ Use this dashboard to:
 
 ### 4. My Company v. Global Baseline: Rare Threats
 
-The** My Company v. Global Baseline: Rare Threats** dashboard compares your company against Sumo Logic customers with respect to rare threats, defined as threats that account for less than 0.2% of total GuardDuty findings.
+The **My Company v. Global Baseline: Rare Threats** dashboard compares your company against Sumo Logic customers with respect to rare threats, defined as threats that account for less than 0.2% of total GuardDuty findings.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/GDB_My_Company_v_Global_Baseline_Rare_Threats.png')} alt="Amazon GuardDuty Benchmark" />
 

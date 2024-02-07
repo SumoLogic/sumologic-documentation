@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Previously, SLOs were only supported in Sumo Logic's Continuous data tier. This support enabled you to configure SLOs on Infrequent tier logs to increase the monitoring coverage for reliability management.
 
-## Sample Queries
+## Sample queries
 
 While defining SLOs for the Infrequent tier logs, you can use the following sample queries.
 

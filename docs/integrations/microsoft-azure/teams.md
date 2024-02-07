@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels and permission changes.
 
 
-## Log Types  
+## Log types  
 
 The Teams app provides visibility into the logging that Microsoft exposes in the Office 365 Audit Logs for Microsoft Teams. Logged events are grouped into the following categories:
 
@@ -24,7 +24,7 @@ The Teams app provides visibility into the logging that Microsoft exposes in the
 For more information, see Microsoft’s [list of Teams Activities](https://docs.microsoft.com/en-us/microsoftteams/audit-log-events#teams-activities).
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 "CreationTime":"2020-10-30T14:00:51",
@@ -41,7 +41,7 @@ For more information, see Microsoft’s [list of Teams Activities](https://docs.
 "TeamName":"My Team"
 ```
 
-### Sample Query
+### Sample queries
 ```sql
 _sourceCategory="O365/General"
 | json "Workload", "Operation" , "UserId" as workload, operation, email
@@ -62,7 +62,9 @@ To collect logs for Microsoft Teams, please configure an Office 365 Audit Source
 
 This section shows you how to install the Sumo Logic App for Microsoft Teams.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Microsoft Teams Dashboards  
 

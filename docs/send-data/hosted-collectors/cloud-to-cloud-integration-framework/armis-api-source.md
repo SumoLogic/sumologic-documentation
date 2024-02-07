@@ -67,9 +67,9 @@ To configure an Armis Source:
    * If **Device API** is selected, the integration will fetch device data.
      * Permission `Device>Read` must be provided to fetch device data.
      * Data for the device will be fetched every 24 hours.
-  :::note
-  This step is mandatory, ensure you select one data source.
-  :::
+   :::note
+   This step is mandatory, ensure you select one data source.
+   :::
 1. (Optional) In **Processing Rules for Logs**, configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 1. When you are finished configuring the Source, click **Submit**.
 

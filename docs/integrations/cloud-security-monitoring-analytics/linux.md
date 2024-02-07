@@ -13,14 +13,12 @@ The Cloud Security monitoring and Analytics app for Linux ingests any distributi
 
 Follow the steps in this topic to install or uninstall a collector on Linux. See Installed Collectors for information on other OSs.
 
-
-## System Requirements
+## System requirements
 
 * Linux, major distributions 64-bit, or any generic Unix capable of running Java 1.8
 * Single core, 512MB RAM
 * 8GB disk space
 * Package installers require TLS 1.2 or higher.
-
 
 ## Collecting Data for the Linux Integration
 
@@ -32,12 +30,12 @@ Download the collector in either of the following ways:
 -or-
 * Open a browser and enter the static URL for your pod. See Download a Collector from a Static URL for a list of URLs for your deployment pod. The download begins immediately.
 
-
 ### Install the Collector on Linux
 
 Choose one of these methods to install the Collector:
 
-<details><summary>Install Using the UI Installer</summary>
+<details>
+<summary>Install Using the UI Installer</summary>
 
 Run the installer on your server with root or Administrator privileges. If you are not logged in as root or Administrator, you might be prompted to reauthenticate to your system when you start the UI Installer.
 
@@ -52,11 +50,12 @@ Run the installer on your server with root or Administrator privileges. If you a
    * Installation Token: The [Setup Wizard](/docs/send-data/setup-wizard) has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
    * Setup Wizard Token: If the Setup Wizard has provided you with a token for the UI Installer, click **Next**, enter the token, and click **Next**. The Setup Wizard Token is a one-time use token, available for one hour after it is generated, then it expires. This token authenticates the user. It is designed to be used for only one Collector. The token cannot be used with the API, and it cannot be disabled.
 8. Click **Finish** to complete the setup.
-9. In Sumo Logic select** Manage Data > Collection > Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the Error Codes list to help troubleshoot.
+9. In Sumo Logic select **Manage Data > Collection > Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the Error Codes list to help troubleshoot.
 
 </details>
 
-<details><summary>Install Using the Command-Line Installer</summary>
+<details>
+<summary>Install Using the Command-Line Installer</summary>
 
 1. Add execution permissions to the downloaded Collector file (.sh):
  ```bash
@@ -84,7 +83,8 @@ sudo ./SumoCollector.sh -q -Vsumo.accessid=<accessId> -Vsumo.accesskey=<accessKe
 
 </details>
 
-<details><summary>Install Using the RPM or Debian Package</summary>
+<details>
+<summary>Install Using the RPM or Debian Package</summary>
 
 You can use the RPM or Debian package to install a Collector on a Linux 64-bit system.
 
@@ -132,7 +132,8 @@ You can use the RPM or Debian package to install a Collector on a Linux 64-bit s
 </details>
 
 
-<details><summary>Install using the Binary Package</summary>
+<details>
+<summary>Install using the Binary Package</summary>
 
 1. Install the version of JRE you want to use from the following location. (The collector requires Java 8 or higher). The binary installation process does not include JRE installation.
 [https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)
@@ -201,14 +202,14 @@ You can build a Collector into a Linux machine image such as an Amazon AMI or VM
 
 After installing Collectors, you can configure Sources from Sumo Logic or by providing the Source settings in a JSON file. If you're using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
 
-
 ### Uninstalling the Collector
 
 Uninstalling a collector requires the following two steps:
 
 1. **Uninstall the collector from the Linux system using any of these methods**:
 
-<details><summary>Uninstall using the UI Installer</summary>
+<details>
+<summary>Uninstall using the UI Installer</summary>
 
 1. On your system, in the Applications folder, find the Sumo Logic Collector folder.
 2. Double-click the file Sumo Logic Collector Uninstaller.
@@ -219,7 +220,8 @@ Uninstalling a collector requires the following two steps:
 
 </details>
 
-<details><summary>Uninstall using the Command Line</summary>
+<details>
+<summary>Uninstall using the Command Line</summary>
 
 1. In a terminal prompt, change the directory to the collector installation directory. By default, the collector will be installed in either /opt/SumoCollector or /usr/local/SumoCollector.
 ```bash
@@ -232,7 +234,8 @@ sudo ./uninstall -q
 
 </details>
 
-<details><summary>Uninstall using the RPM/Debian packages</summary>
+<details>
+<summary>Uninstall using the RPM/Debian packages</summary>
 
 For the RPM package, use the command:
 ```bash
@@ -245,7 +248,8 @@ sudo dpkg -r SumoCollector
 
 </details>
 
-<details><summary>Uninstall using the binary package</summary>
+<details>
+<summary>Uninstall using the binary package</summary>
 
 1. Uninstall the collector service.
 ```bash
@@ -271,44 +275,47 @@ sudo systemctl daemon-reload
 A success message is displayed and the collector is removed from the list.
 
 
-## Installing the Linux App
+## Installing the Linux app
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Linux to use the preconfigured searches and Dashboards that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Viewing Linux Security Monitoring Dashboards
+<AppInstall2/>
 
-### Linux - Security Monitoring - Overview
+## Viewing Linux Security Monitoring dashboards
 
-**Dashboard description:** This dashboard provides an overview of security statistics relevant for Linux systems. It presents information about successful and failed logins, root login successes and failures, user accounts created and deleted, sudo attempts and total Services.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
+
+### Security Monitoring - Overview
+
+The **Security Monitoring - Overview** dashboard provides an overview of security statistics relevant for Linux systems. It presents information about successful and failed logins, root login successes and failures, user accounts created and deleted, sudo attempts and total Services.
 
 **Use case:** Use this dashboard to monitor administrative actions (create, delete users) performed by end users, ensure proper services are running on all systems, detect attempts to change the system time, and verify that critical systems are up and running.You can also monitor excessive failed login attempts to detect attempts to break into the system.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Monitoring-Overview.png')} alt="Linux Security dashboards" />
 
+### Security Analytics - Login Activity
 
-### Linux - Security Analytics - Login Activity
-
-**Dashboard description: **This dashboard tracks login activity. It provides information about failed and successful user logins, and failed and successful root logins.
+The **Security Analytics - Login Activity** dashboard tracks login activity. It provides information about failed and successful user logins, and failed and successful root logins.
 
 **Use case:** Use this dashboard to monitor access to the linux computing environment. You can monitor failed and successful user logins.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-Login-Activity.png')} alt="Linux Security dashboards" />
 
+### Security Analytics - Privileged Activity
 
-### Linux - Security Analytics - Privileged Activity
-
-**Dashboard description: **This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
+The **Security Analytics - Privileged Activity** dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case:** Use this dashboard to monitor successful and failed access attempts to systems, especially with administrative privileges. It also helps monitor actions performed by users with administrative privileges.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-Privileged-Activity.png')} alt="Linux Security dashboards" />
 
+### Security Monitoring - User, Service, and System Monitoring
 
-### Linux - Security Monitoring - User, Service, and System Monitoring
-
-**Dashboard description: **This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
+The **Security Monitoring - User, Service, and System Monitoring** dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case:** Use this dashboard to monitor accounts created and deleted. It also helps monitor service usage and other system activity.
 

@@ -11,7 +11,7 @@ You can create a field extraction rule of your own from scratch by following the
 You need the **Manage field extraction rules** [role capability](../users-roles/roles/role-capabilities.md) to create a field extraction rule.
 
 :::note
-Fields specified in field extraction rules are automatically added and enabled in your [Fields](/docs/manage/fields.md) table schema.
+Fields specified in field extraction rules are automatically added and enabled in your [Fields](/docs/manage/fields) table schema.
 :::
 
 :::sumo Micro Lesson
@@ -69,7 +69,7 @@ To create a Field Extraction Rule:
    * **Parse Expression**. (Applicable to Ingest Time rules)
      * Type a valid parse expression with supported parse and search operators. Because fields are associated with the Rule Name, you can parse one particular field into as many rules as you'd like. For example, to parse a single field, you could use a definition similar to this: `parse "message count = *," as msg_count`. To parse multiple fields, you could use a definition similar to this: `parse "[hostId=*] [module=*] [localUserName=*] [logger=*] [thread=*]" as hostId, module, localUserName, logger, thread`.
 
-1. **Extracted Fields** (applicable to Ingest Time rules) shows the field names the rule will parse. Any fields that do not exist in the Field table schema are shown with the text **New** highlighted in green. New fields are automatically created in the table schema when you save the rule. You can view and manage the field table schema on the [Fields](/docs/manage/fields.md) page.
+1. **Extracted Fields** (applicable to Ingest Time rules) shows the field names the rule will parse. Any fields that do not exist in the Field table schema are shown with the text **New** highlighted in green. New fields are automatically created in the table schema when you save the rule. You can view and manage the field table schema on the [Fields](/docs/manage/fields) page.
 1. Click **Save** to create the rule.
 
 ## Example Template
@@ -140,10 +140,6 @@ The **multi** and **auto** options are not supported in FERs.
 
 The `parse multi` operator is not supported in FERs.
 
-Ingest Time FERs have the following limitations:
+import FerLimit from '../../reuse/fer-limitations.md';
 
-* There is a limit of 50 Ingest Time rules and 200 fields. [Fields](/docs/manage/fields.md) created as log metadata and from Ingest Time rules share the same quota of 200 fields. You can manage your fields on the [Fields](/docs/manage/fields.md) page.
-* Ingest Time rule expressions are limited to a maximum of 16k (16,384) characters.
-* Ingest Time rules can extract up to a maximum of 16k (16,384) characters for each field.
-* The cumulative size of all fields extracted by a rule for a message/event is limited to 64kb.
-* Ingest Time rules **only apply to data moving forward**. If you want to parse data ingested before the creation of your Ingest Time FER, you can either [parse](/docs/search/search-query-language/parse-operators) your data in your query, or create [Scheduled Views](/docs/manage/scheduled-views) to extract fields for your historical data.  
+<FerLimit/> 

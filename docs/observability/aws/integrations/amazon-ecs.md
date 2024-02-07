@@ -7,18 +7,19 @@ description: With Sumo Logic dashboards for Amazon ECS, you can monitor capacity
 
 Amazon Elastic Container Service is a scalable, container management service that is used to manage containers in a cluster. With dashboards for Amazon ECS, you can monitor capacity and resource utilization of ECS components as well as quickly identify changes made to your clusters to help with troubleshooting.
 
-## Log and Metric Types
+## Log and metrics types
 
 The Amazon ECS app uses the following logs and metrics:
 
 * [Amazon ECS metrics](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html)
-* [CloudTrail Amazon ECS Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events)
+* [CloudTrail Amazon ECS Data Event](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/logging-using-cloudtrail.html)
 
-### Sample CloudTrail Log Message
+### Sample log messages
 
-<details><summary>Click to expand log message</summary>
+<details>
+<summary>Click to expand log message</summary>
 
-```json
+```json title="CloudTrail"
 {
 	"eventVersion":"1.04",
 	"userIdentity":{
@@ -277,11 +278,11 @@ The Amazon ECS app uses the following logs and metrics:
 
 </details>
 
-### Sample Query (CloudTrail Log based) 
+### Sample queries
 
 Created ECS Resources:
 
-```sql
+```sql title="CloudTrail Log based"
 account=dev region=us-east-1 namespace=aws/ecs "\"eventSource\":\"ecs.amazonaws.com\"" (CreateCluster or CreateService or RegisterContainerInstance or RegisterTaskDefinition or RunTask)
 | json "eventName", "eventSource", "awsRegion", "requestParameters", "sourceIPAddress" as event_name, event_source, Region, requestParameters, src_ip nodrop
 | where event_source = "ecs.amazonaws.com"
@@ -293,21 +294,21 @@ account=dev region=us-east-1 namespace=aws/ecs "\"eventSource\":\"ecs.amazonaws.
 | count as event_count by resource_type | sort by event_count, resource_type asc
 ```
 
-## Query Sample (Metric based)
-
 Average CPU Utilization by ServiceName:
 
-```sql
+```sql title="Metric based"
 account=dev region=us-east-1 namespace=aws/ecs metric=CPUUtilization statistic=Average ClusterName=* ServiceName=* | avg by ClusterName, ServiceName, account, region, namespace
 ```
  
-## Amazon ECS Dashboards
+## Viewing Amazon ECS dashboards
 
-Amazon Elastic Container Service is a scalable, container management service that is used to manage containers in a cluster. With dashboards for Amazon ECS, you can monitor capacity and resource utilization of ECS components as well as quickly identify changes made to your clusters to help with troubleshooting.
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
 
 ### Overview
 
-**The Amazon ECS - Overview** dashboard provides an overview of CPU and memory utilization across all your ECS clusters and services. The customer upon checking the dashboard can determine which services are high in utilization and accordingly make decisions for the ECS deployment.
+The **Amazon ECS - Overview** dashboard provides an overview of CPU and memory utilization across all your ECS clusters and services. The customer upon checking the dashboard can determine which services are high in utilization and accordingly make decisions for the ECS deployment.
 
 Use this dashboard to: 
 
@@ -319,7 +320,7 @@ Use this dashboard to: 
 
 ### Audit Events
 
-**The Amazon ECS - Audit Events** dashboard provides insights into changes to your ECS environment including top IAM users, locations of events. The dashboard also shows the created, updated, and deleted events with respect to time, along with the details for the top 10 AWS Identity and Access Management users, and the last 20 Container Registration and Deregistration Events.
+The **Amazon ECS - Audit Events** dashboard provides insights into changes to your ECS environment including top IAM users, locations of events. The dashboard also shows the created, updated, and deleted events with respect to time, along with the details for the top 10 AWS Identity and Access Management users, and the last 20 Container Registration and Deregistration Events.
 
 Use this dashboard to:
 
@@ -331,7 +332,7 @@ Use this dashboard to:
 
 ### Resource Utilization
 
-**The Amazon ECS - Resource Utilization** dashboard provides trends around CPU and Memory utilization for clusters and services. 
+The **Amazon ECS - Resource Utilization** dashboard provides trends around CPU and Memory utilization for clusters and services. 
 
 * Cluster CPU or Cluster memory utilization metrics are only used for tasks using the EC2 launch type.
 * Service CPU or service memory utilization metrics are used for tasks using both the Fargate and the EC2 launch type.
@@ -344,7 +345,7 @@ Use this dashboard to:
 
 ### Resource Reservation
 
-**The Amazon ECS - Resource Reservation** dashboard provides detailed insights into the average reservation (units utilized) by CPU, Memory, and GPU for a given cluster.
+The **Amazon ECS - Resource Reservation** dashboard provides detailed insights into the average reservation (units utilized) by CPU, Memory, and GPU for a given cluster.
 
 * These metrics are available for clusters only. 
 * This metric is used only on clusters with tasks or services using the EC2 launch type. It's not supported on clusters with tasks using the Fargate launch type.

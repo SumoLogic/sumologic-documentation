@@ -11,7 +11,7 @@ By default, when performing non-aggregate Log Search queries, the results are di
 
 If you want to view the results with all the parameter field values, you can select all the parameter fields in the **Hidden Fields** tab, which makes the results page clustered. You can overcome this by using the **Log Message Inspector** option. **Log Message Inspector** dock will display an **INFO/ERROR** to quickly identify the type of each log message using the color-code, raw log message, message time, receipt time, and the parameter values associated with the query. 
 
-<img src={useBaseUrl('img/search/get-started-search/search-page/log-message-inspector.png')} width="500" style={{border: '1px solid black'}} alt="log-message-inspector" />
+<img src={useBaseUrl('img/search/get-started-search/search-page/log-message-inspector.png')} width="500" style={{border: '1px solid gray'}} alt="log-message-inspector" />
 
 | Letter | Purpose |
 |:--|:--|
@@ -28,9 +28,9 @@ Follow the below steps to open the **Log Message Inspector** dock and view the r
 1. In the results page, go to **Messages** tab.
 1. Navigate to the row of your choice.
 1. There are two ways to access the Log Message Inspector dock.
-    - Right-click on the row to open the menu and select the **Open Log Message Inspector** option. Or, <br/><img src={useBaseUrl('img/search/get-started-search/search-page/log-message-inspector-approach-1.png')} width="800" style={{border: '1px solid black'}} alt="log-message-inspector-approach-1" />
-    - Click the **Open Log Message Inspector** icon in the custom action bar. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/log-message-inspector-approach-2.png')} width="800" style={{border: '1px solid black'}} alt="log-message-inspector-approach-2" />
+    - Right-click on the row to open the menu and select the **Open Log Message Inspector** option. Or, <br/><img src={useBaseUrl('img/search/get-started-search/search-page/log-message-inspector-approach-1.png')} width="800" style={{border: '1px solid gray'}} alt="log-message-inspector-approach-1" />
+    - Click the **Open Log Message Inspector** icon in the custom action bar. <br/><img src={useBaseUrl('img/search/get-started-search/search-page/log-message-inspector-approach-2.png')} width="800" style={{border: '1px solid gray'}} alt="log-message-inspector-approach-2" />
 
 ## Filtering the query through Log Message Inspector
 
-While viewing parameter values, you can add any parameter of your choice to the query by clicking on the kebab menu and selecting the **Filter selected value** option against the field. This narrows down your query to the same tab and avoids opening a new search page, which occurs when you filter the query using the field browser.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/filter-selected-value.png')} width="400" style={{border: '1px solid black'}} alt="filter-selected-value" />
+While viewing parameter values, you can add any parameter of your choice to the query by clicking on the kebab menu and selecting the **Filter selected value** option against the field. This narrows down your query to the same tab and avoids opening a new search page, which occurs when you filter the query using the field browser.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/filter-selected-value.png')} width="400" style={{border: '1px solid gray'}} alt="filter-selected-value" />

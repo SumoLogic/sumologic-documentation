@@ -16,22 +16,21 @@ With [Route 53 Resolver DNS Firewall](https://docs.aws.amazon.com/Route53/latest
 
 DNS Firewall is a feature of Route 53 Resolver and doesn't require any additional Resolver setup to use.
 
-## Log Types
+## Log types
+
 The Amazon Route 53 Resolver Security app uses:
 * [Route 53 Resolver query log](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html)
 * [DNS Resolver Firewall Log](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/firewall-resolver-query-logs-configuring.html)
 
 If you aren't using DNS Resolver Firewall, the Amazon Route 53 Resolver Security app can still provide security insights from your [resolver query logs](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html), but data specific to the DNS Resolver Firewall data will not populate in the corresponding panels.
 
-## Collect Logs for the Amazon Route 53 Resolver Security App
+## Collect Logs for the Amazon Route 53 Resolver Security app
 
 This topic has instructions for collecting logs for the Amazon Route 53 Resolver Security app.
-
 
 ### Before you start
 
 If you want to set up Route 53 Resolver DNS Firewall, see the Amazon Developer Guide for [instructions](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/firewall-resolver-query-logs-configuring.html).  
-
 
 ### Set up collection
 
@@ -44,17 +43,21 @@ If you want to set up Route 53 Resolver DNS Firewall, see the Amazon Developer G
 4. Complete your configuration by clicking **Configure query logging** at the bottom of the page.
 5. Your new configuration will now be listed.
 
-
-### Sample log message
+### Sample log messages
 
 [Route 53 Resolver query log example](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html)
 
+## Installing the Amazon Route 53 Resolver Security app
 
-## Installing the Amazon Route 53 Resolver Security App
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
-{@import ../../reuse/apps/app-install.md}
+<AppInstall/>
 
-## Viewing Amazon Route 53 Resolver Security Dashboards
+## Viewing Amazon Route 53 Resolver Security dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Query Logging Overview
 
@@ -68,7 +71,6 @@ Use this dashboard to:
 * Identify possible malicious or anomalous behavior by reviewing high entropy domains, most and least queried domains.
 * Analyze DNS requests violating your Route 53 DNS Resolver Firewall policies.
 * Review Threat Intel matches.
-
 
 Panels include:
 * IPv4 Resolution by Geo Location
