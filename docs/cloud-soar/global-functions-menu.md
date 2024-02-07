@@ -429,6 +429,7 @@ Cloud SOAR audit logs and activity can be reviewed under the **Audit Trail** sec
 
 The **Automation Bridge Monitoring** section displays the status of the automation bridges configured.
 
+<!-- Add this once the Reports feature released to production. 
 ## Report
 
 You can create reports on incidents to share with others. You can also [create widgets](/docs/cloud-soar/main-menu#create-widgets-for-dashboards-or-reports) to use in the report that display text, graphs, and charts containing details about incidents and other aspects of Cloud SOAR.
@@ -444,6 +445,7 @@ You can create reports on incidents to share with others. You can also [create w
     1. Click **Save**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-save-report.png')} alt="Save a report" width="300"/>
 1. Click **Export** to export the report to PDF. 
 1. Click **Open** to open the report later. 
+-->
 
 ## User Settings
 
