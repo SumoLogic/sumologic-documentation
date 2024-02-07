@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/kafka.png')} alt="icon" width="90"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for Kafka is a unified logs and metrics app. The app helps you monitor the brokers, partition replicas and consumer groups components of Kafka messaging/streaming clusters. Pre-configured dashboards provide insights into the broker operations, topics, replication and error logs.
+The Sumo Logic app for Kafka is a unified logs and metrics app. The app helps you monitor the brokers, partition replicas and consumer groups components of Kafka messaging/streaming clusters. Pre-configured dashboards provide insights into the broker operations, topics, replication and error logs.
 
 We use the OpenTelemetry collector for Kafka metrics and logs collection.
 
@@ -19,11 +19,11 @@ The diagram below illustrates the components of the Kafka collection for each Ka
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Schematics.png' alt="Schematics" />
 
-This App has been tested with following Kafka versions: 2.6.0, 2.7.0 and 3.1.2.
+This app has been tested with following Kafka versions: 2.6.0, 2.7.0 and 3.1.2.
 
 ## Log types and Metrics
 
-The Sumo Logic App for Kafka assumes:
+The Sumo Logic app for Kafka assumes:
 
 - Kafka app supports the default logs format.
 - For a list of metrics that are collected and used by the app, see [Kafka Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/kafkametricsreceiver/documentation.md).
@@ -38,13 +38,13 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 * `messaging.system`. Has fixed value of `kafka`.
 * `sumo.datasource`. Has fixed value of `kafka`.
 
-### Prerequisites
+## Prerequisites
 
-#### For metrics collection
+### For metrics collection
 
 Kafka metrics [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/kafkametricsreceiver) collects Kafka metrics (brokers, topics, partitions, and consumer groups) from the Kafka server. This app has been tested with following Kafka versions: 2.6.0, 2.7.0, and 3.1.2.
 
-#### For logs collection
+### For logs collection
 
 Configure logging in Kafka: By default, Kafka logs (`server.log` and `controller.log`) are stored in the directory called `/opt/Kafka/kafka_<VERSION>/logs`. Make a note of this logs directory.
 
@@ -58,7 +58,7 @@ import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prer
 
 <LogsCollectionPrereqisites/>
 
-Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+For windows system, log files which are collected should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
 
 ```
 $NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
