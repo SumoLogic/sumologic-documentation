@@ -9,8 +9,7 @@ tags: [ ]
 Version: 1.1  
 Updated: Jul 11, 2023
 
-Dynatrace is a cutting-edge solution that offers full-stack monitoring, enabling organizations to track their IT infrastructure's performance and security. Its AI-powered capabilities provide actionable insights to optimize operations and mitigate risks. This integration offers enriched cybersecurity management, allowing users to search and manage security problems, observe problems over time, and automate the retrieval of latest issues. It also provides insights into logs, events, and metrics,
-while offering AI-powered security advice.
+Dynatrace is a cutting-edge solution that offers full-stack monitoring, enabling organizations to track their IT infrastructure's performance and security. Its AI-powered capabilities provide actionable insights to optimize operations and mitigate risks. This integration offers enriched cybersecurity management, allowing users to search and manage security problems, observe problems over time, and automate the retrieval of latest issues. It also provides insights into logs, events, and metrics, while offering AI-powered security advice.
 
 ## Actions
 
