@@ -2,7 +2,7 @@
 id: rabbitmq-opentelemetry
 title: RabbitMQ - OpenTelemetry Collector
 sidebar_label: RabbitMQ - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for RabbitMQ.
+description: Learn about the Sumo Logic OpenTelemetry app for RabbitMQ.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -22,7 +22,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 * `messaging.cluster.name`. User configured. Specify the user-friendly cluster name which RabbitMQ belongs to.
 * `sumo.datasource`. Has fixed value of **rabbitmq**.
 
-### Prerequisites
+## Prerequisites
 
 This section provides instructions for configuring log collection for RabbitMQ running on a non-Kubernetes environment for the Sumo Logic App for RabbitMQ. By default, RabbitMQ logs are stored in a log file.
 
@@ -36,13 +36,13 @@ Follow the instructions to set up log collection:
   log.file.level = debug
   ```
 
-Once the logs are configured to be written to a local file, follow the below steps to configure collection in Sumo.
+Once the logs are configured to be written to a local file, follow the below steps to configure collection in Sumo Logic.
 
 import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
 
 <LogsCollectionPrereqisites/>
 
-Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+For windows system, log files which are collected should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
 
 ```
 $NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
@@ -80,7 +80,7 @@ The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`. Yo
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
-### Step 3: Send logs to Sumo
+### Step 3: Send logs to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
