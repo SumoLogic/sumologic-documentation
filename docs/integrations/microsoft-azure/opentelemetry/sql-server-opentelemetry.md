@@ -2,7 +2,7 @@
 id: sql-server-opentelemetry
 title: Microsoft SQL Server - OpenTelemetry Collector
 sidebar_label: Microsoft SQL Server - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Microsoft SQL Server for Windows.
+description: Learn about the Sumo Logic OpenTelemetry app for Microsoft SQL Server for Windows.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 :::note
 The information provided in this page will only support the Sumo Logic OpenTelemetry app for Microsoft SQL Server for Windows.
 :::
-The SQL Server app is a unifies logs and metrics app to help you monitor the availability, performance, health and resource utilization of your Microsoft SQL Server database clusters. Preconfigured dashboards provide insight into cluster status, performance, operations as well as backup and restore operations along with Performance metrics and metrics for transaction and transaction logs.
+The SQL Server app is a unifies logs and metrics app to help you monitor the availability, performance, health, and resource utilization of your Microsoft SQL Server database clusters. Preconfigured dashboards provide insight into cluster status, performance, operations as well as backup and restore operations along with Performance metrics and metrics for transaction and transaction logs.
 
-This App has been tested with following SQL Server versions:
+This app has been tested with following SQL Server versions:
 
 - Microsoft SQL Server 2016
 
@@ -48,7 +48,7 @@ The ERRORLOG is typically in UTF-16LE encoding, however, be sure to verify the f
 
 **ACL Support**
 
-Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+For windows system, log files which are collected should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
 
 ```
 $NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
