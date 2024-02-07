@@ -2,7 +2,7 @@
 id: jmx-opentelemetry
 title: Java Management Extensions (JMX) - OpenTelemetry Collector
 sidebar_label: JMX - OTel Collector
-description: The Sumo Logic App for Java Management Extensions (JMX) allows you to analyze and gain insights about Java applications.
+description: The Sumo Logic app for Java Management Extensions (JMX) allows you to analyze and gain insights about Java applications.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,11 +13,11 @@ import TabItem from '@theme/TabItem';
 
 Java Management Extensions (JMX) is a standard component of the Java Platform. JMX gives developers a standard and simple way to manage resources, including services, devices, and applications. JMX is dynamic, so you can manage and monitor resources as soon as they are created, implemented, or installed.
 
-The Sumo Logic App for JMX allows you to analyze and gain insights about Java applications. The dashboards provide a quick glance at various deployment metrics like memory, GC performance, and thread behavior, so you can troubleshoot unexpected behavior in your Java environment and the applications running in it.
+The Sumo Logic app for JMX allows you to analyze and gain insights about Java applications. The dashboards provide a quick glance at various deployment metrics like memory, GC performance, and thread behavior, so you can troubleshoot unexpected behavior in your Java environment and the applications running in it.
 
 ## Metrics types
 
-The Sumo Logic App for JMX collects metrics from Java applications via the [JMX Receiver for OpenTelemetry](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver).
+The Sumo Logic app for JMX collects metrics from Java applications via the [JMX Receiver for OpenTelemetry](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver).
 
 The following types of metrics are collected from JMX:
 
@@ -40,7 +40,7 @@ sumo.datasource=jmx metric=jvm.memory.heap.used
 * `sumo.datasource`. Has fixed value of `jmx`.
 * `jmx.endpoint`. The endpoint in the form of `localhost:port` used by JMX Metric Gatherer.
 
-### Prerequisites
+## Prerequisites
 
 The JMX Receiver uses the OpenTelemetry JMX Metric Gatherer. For more details, [see their docs](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
 
