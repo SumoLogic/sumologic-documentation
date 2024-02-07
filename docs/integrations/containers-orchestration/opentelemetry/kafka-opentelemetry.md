@@ -19,7 +19,7 @@ The diagram below illustrates the components of the Kafka collection for each Ka
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Schematics.png' alt="Schematics" />
 
-This app has been tested with following Kafka versions: 2.6.0, 2.7.0 and 3.1.2.
+This app has been tested with following Kafka versions: 2.6.0, 2.7.0, and 3.1.2.
 
 ## Log types and Metrics
 
