@@ -2,7 +2,7 @@
 id: mongodb-opentelemetry
 title: MongoDB - OpenTelemetry Collector
 sidebar_label: MongoDB - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for MongoDB.
+description: Learn about the Sumo Logic OpenTelemetry app for MongoDB.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -30,7 +30,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 - **`deployment.environment`**. User configured. This is the deployment environment where the Mongodb cluster resides. For example: dev, prod or qa.
 - **`sumo.datasource`**. has a fixed value of **mongodb**.
 
-### Prerequisites
+## Prerequisites
 
 By default, MongoDB logs are stored in a log file.
 
@@ -47,7 +47,7 @@ import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prer
 
 <LogsCollectionPrereqisites/>
 
-Collected log files should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+For windows system, log files which are collected should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
 
 ```
 $NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
@@ -85,7 +85,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
-### Step 3: Send logs to Sumo
+### Step 3: Send logs to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
@@ -209,7 +209,7 @@ deployment.environment=* db.cluster.name=* sumo.datasource=mongodb  | json "log
 | count by component
 ```
 
-## Viewing MongoDB Dashboards
+## Viewing MongoDB dashboards
 
 If no relevant data was received within the time range of the Panel, the Panel will be empty.
 
@@ -264,7 +264,7 @@ The **MongoDB - Replication Logs** dashboard shows replica deletes/updates/inser
 Use this dashboard to:
 
 -   Monitor replication state and replication events like inserts/updates/commands per second.
--   Track Replication Oplog window to identify replication delay
+-   Track Replication Oplog window to identify replication delay.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Replication-Logs.png' alt="Replication Logs" />
 
