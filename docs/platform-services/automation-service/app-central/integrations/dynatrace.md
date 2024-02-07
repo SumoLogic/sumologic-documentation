@@ -1,7 +1,7 @@
 ---
 title: Dynatrace
 description: ''
-tags: []
+tags: [ ]
 ---
 
 ![](/img/platform-services/automation-service/app-central/logos/dynatrace.png)
@@ -9,25 +9,24 @@ tags: []
 Version: 1.1  
 Updated: Jul 11, 2023
 
-Dynatrace is a software-intelligence monitoring platform that simplifies enterprise cloud complexity and accelerates digital transformation. With Davis (the Dynatrace AI causation engine) and complete automation, the Dynatrace all-in-one platform provides answers, not just data, about the performance of your applications, their underlying infrastructure, and the experience of your end users. Dynatrace is used to modernize and automate enterprise cloud operations, release higher-quality software faster, and deliver optimum digital experiences to your organization's customers.
-
-Dynatrace seamlessly brings infrastructure and cloud, application performance, and digital experience monitoring into an all-in-one, automated solution that's powered by artificial intelligence. Dynatrace assists in driving performance results by providing development, operations, and business teams with a shared platform, metrics. In this way, Dynatrace can serve as your organization's single "source of truth."
+Dynatrace is a cutting-edge solution that offers full-stack monitoring, enabling organizations to track their IT infrastructure's performance and security. Its AI-powered capabilities provide actionable insights to optimize operations and mitigate risks. This integration offers enriched cybersecurity management, allowing users to search and manage security problems, observe problems over time, and automate the retrieval of latest issues. It also provides insights into logs, events, and metrics,
+while offering AI-powered security advice.
 
 ## Actions
 
-* **Search Security Problems** *(Enrichment)* - Lists all security problems based the parameters provided
-* **Search Security Problems Daemon** *(Daemon)* - Automatically returns latest security problems
-* **Mute Security Problem** *(Containment)* - Mutes the specified security problem. Muted problems are hidden from the list of problems in the UI
-* **Unmute Security Problem** *(Containment)* - Unmutes the specified security problem
-* **Get Problems** *(Enrichment)* - Lists the problems (and their details) observed by Dynatrace during a relative period of time
-* **Get Problems Daemon** *(Daemon)* - Automatically returns the latest problems
 * **Close Problem** *(Containment)* - Closes the specified problem and adds a closing comment
 * **Create Problem Comment** *(Containment)* - Adds a new comment on the specified problem
-* **Search Logs** *(Enrichment)* - Lists all log records based on the parameters provided
 * **Get Events** *(Enrichment)* - Lists events based on the parameters provided
+* **Get Problems Daemon** *(Daemon)* - Automatically returns the latest problems
+* **Get Problems** *(Enrichment)* - Lists the problems (and their details) observed by Dynatrace during a relative period of time
 * **Get Security Advices** *(Enrichment)* - Lists recommendations related to security problems using AI
+* **Mute Security Problem** *(Containment)* - Mutes the specified security problem. Muted problems are hidden from the list of problems in the UI
+* **Search Logs** *(Enrichment)* - Lists all log records based on the parameters provided
 * **Search Metrics** *(Enrichment)* - Lists all metrics based on the parameters provided
 * **Search Metrics Daemon** *(Daemon)* - Automatically returns the latest metrics
+* **Search Security Problems** *(Enrichment)* - Lists all security problems based the parameters provided
+* **Search Security Problems Daemon** *(Daemon)* - Automatically returns latest security problems
+* **Unmute Security Problem** *(Containment)* - Unmutes the specified security problem
 
 **Timeframe**
 
@@ -36,17 +35,16 @@ You can use one of the following formats for timeframe:
 * Timestamp in UTC milliseconds.
 * Human-readable format of 2021-01-25T05:57:01.123+01:00. If no time zone is specified, UTC is used. You can use a space character instead of the T. Seconds and fractions of a second are optional.
 * Relative timeframe, back from now. The format is now-NU/A, where N is the amount of time, U is the unit of time, and A is an alignment. The alignment rounds all the smaller values to the nearest zero in the past. For example, now-1y/w is one year back, aligned by a week. You can also specify relative timeframe without an alignment: now-NU. Supported time units for the relative timeframe are:
-	+ m: minutes
-	+ h: hours
-	+ d: days
-	+ w: weeks
-	+ M: months
-	+ y: years
+    + m: minutes
+    + h: hours
+    + d: days
+    + w: weeks
+    + M: months
+    + y: years
 
 **Event Selector**
 
-Defines the scope of the query. Only events matching the specified criteria are included in the response.   
-
+Defines the scope of the query. Only events matching the specified criteria are included in the response.
 
 * Event ID: eventId("id-1", "id-2").
 * ID of related entity: entityId("id-1", "id-2").
@@ -75,20 +73,20 @@ You can add one or several of the following criteria. Values are case-sensitive 
 * Management zone ID: mzId(123)
 * Management zone name: mzName("value")
 * Entity name: entityName("value"). By default this filters for entities, whose name contains the given value and is not case sensitive. The following modifications are available:
-	+ entityName.equals: changes the operator to EQUALS.
-	+ entityName.startsWith: changes the operator to BEGINS WITH.
-	+ entityName.in: enables you to provide multiple values. The EQUALS operator applies.
-	+ caseSensitive(entityName("value")): takes any entity name criterion as an arguments and makes the value case-sensitive.
+    + entityName.equals: changes the operator to EQUALS.
+    + entityName.startsWith: changes the operator to BEGINS WITH.
+    + entityName.in: enables you to provide multiple values. The EQUALS operator applies.
+    + caseSensitive(entityName("value")): takes any entity name criterion as an arguments and makes the value case-sensitive.
 * Health state (HEALTHY,UNHEALTHY): healthState("HEALTHY")
 * First seen timestamp: firstSeenTms.&lt;operator&gt;(now-3h). Use any timestamp format from the from/to parameters. The following operators are available:
-	+ lte: earlier than or at the specified time
-	+ lt: earlier than the specified time
-	+ gte: later than or at the specified time
-	+ gt: later than the specified time
+    + lte: earlier than or at the specified time
+    + lt: earlier than the specified time
+    + gte: later than or at the specified time
+    + gt: later than the specified time
 * Entity attribute: &lt;attribute&gt;("value1","value2") and &lt;attribute&gt;.exists(). To fetch the list of available attributes, execute the GET entity type request and check the properties field of the response.
 * Relationships: fromRelationships.&lt;relationshipName&gt;() and toRelationships.&lt;relationshipName&gt;(). The criterion takes an entity selector as an attribute. To fetch the list of available relationships, execute the GET entity type request and check the fromRelationships and toRelationships fields.
 * Negation: not(&lt;criterion&gt;). Inverts any criterion except for type.   
-For more information, see Entity selector in Dynatrace Documentation.
+  For more information, see Entity selector in Dynatrace Documentation.
 
 To set several criteria, separate them with a comma (,). For example, type("HOST"),healthState("HEALTHY"). Only results matching all criteria are included in response.
 
@@ -135,11 +133,11 @@ To be authenticated to use the Dynatrace API, you need a valid access token. To 
 1. In the "Dynatrace menu", select **Access tokens**
 2. Select **Generate new token**
 3. Enter a name for your token.   
-Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed
+   Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed
 4. Select the required scopes for the token
 5. Select **Generate**
 6. Copy the generated token to the clipboard. Store the token in a password manager for future use   
-**NOTE:** You can only access your token once upon creation. You can't reveal it afterwards
+   **NOTE:** You can only access your token once upon creation. You can't reveal it afterwards
 
 ## Dynatrace in Automation Service and Cloud SOAR
 
