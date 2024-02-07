@@ -48,7 +48,7 @@ The ERRORLOG is typically in UTF-16LE encoding, however, be sure to verify the f
 
 **ACL Support**
 
-For windows system, log files which are collected should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
+For Windows system, log files which are collected should be accessible by SYSTEM group. Follow the set of below power shell command if SYSTEM group does not have the access.
 
 ```
 $NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
