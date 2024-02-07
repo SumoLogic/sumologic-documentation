@@ -51,7 +51,7 @@ The **categorical** panel type contains charts that graph data across categories
 * Line Charts
 * Area Charts
 * Bar Charts over categories
-* Column charts over categories
+* Column Charts over categories
 * Pie Charts
 * Funnel Charts
 * Tables over categories
