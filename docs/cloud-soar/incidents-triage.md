@@ -535,7 +535,7 @@ When you create an incident from an Insight, you can map the Insight attributes 
 | `entity.type` | `Entity Type` (custom field) |
 | `id` | `Insight ID` (custom field) |
 | `involvedEntities[].value` | `Involved Entities` (custom field) |
-| `readableId` | `Incident ID` (custom field) |
+| `readableId` | `Incident ID` |
 | `severity` | `Severity` |
 | `status.displayName` | `Status` |
 | `tags[]` | `Tags` |
