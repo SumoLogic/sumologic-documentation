@@ -30,7 +30,7 @@ Following are the tags which will be created as part of the Docker app installat
 
 * `sumo.datasource`. Has a fixed value of **docker**.
 
-### Prerequisites
+## Prerequisites
 
 This section provides instructions for configuring metrics and log collection for the Sumo Logic app for Docker.
 
