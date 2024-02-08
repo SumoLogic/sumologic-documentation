@@ -19,7 +19,7 @@ JFrog Artifactory is a universal Artifact Repository Manager that integrates wit
 ## Prerequisites
 
 * If you're using Artifactory Online, you _must_ use the [Artifactory Sumo Logic integration](#artifactory-online-sumo-logic-integration)
-* If you're using Artifactory On-Premise, you can use either the [Sumo Logic app for Artifactory](#installing-the-artifactory-app) or the [Artifactory Sumo Logic integration](#artifactory-online-sumo-logic-integration)
+* If you're using Artifactory On-Premise, you can use either the [Sumo Logic app for Artifactory](#installing-the-artifactory-app) or the [Artifactory Sumo Logic integration](#artifactory-online-sumo-logic-integration).
 
 
 ## Artifactory 6
