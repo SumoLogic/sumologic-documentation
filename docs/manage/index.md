@@ -41,12 +41,6 @@ This topic describes features and options that give you administration over acco
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/connections-integrations"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Connections and Integrations</h4></a>
-  <p>Learn how to set up integrations to send alerts to other tools.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/manage/users-roles"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Users and Roles</h4></a>
   <p>Learn how to manage users and roles in Sumo Logic.</p>
   </div>

@@ -658,16 +658,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Connections and Integrations',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/connections-integrations/index'},
-      items: [
-        'manage/connections-integrations/jfrog-artifactory',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Users and Roles',
       collapsible: true,
       collapsed: true,

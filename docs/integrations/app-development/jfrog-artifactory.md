@@ -9,27 +9,31 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/app-development/jfrog-Artifactory.png')} alt="Thumbnail icon" width="100"/>
 
-The Sumo Logic app for Artifactory provides insight into your JFrog Artifactory binary repository. The app provides preconfigured Dashboards that include an Overview of your system, Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity.
+JFrog Artifactory is a universal Artifact Repository Manager that integrates with CI/CD and DevOps tools to provide artifact tracking. The Sumo Logic apps for Artifactory 6 and Artifactory 7 provide insight into your JFrog Artifactory binary repository. Our preconfigured Dashboards provide an overview of your system as well as Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity.
 
-The Sumo Logic app for Artifactory only supports Artifactory On-Premise. It does not work with Artifactory Online. The [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-integrations/jfrog-artifactory.md) supports both Artifactory On-Premise and Artifactory Online.
-
-:::note
-* If you _do not_ have a Sumo Logic account, the [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-integrations/jfrog-artifactory.md) is the most convenient way to start using Sumo Logic directly from Artifactory.
+:::tip
+* If you _do not_ have a Sumo Logic account, the [JFrog Artifactory Sumo Logic integration](#if-you-do-not-have-a-sumo-logic-account) is the most convenient way to start using Sumo Logic directly from Artifactory.
 * If you _do_ have a Sumo Logic account, you can still use use the integration, but this will create a secondary Sumo Logic account. If you choose to use your current account, you can do so by installing the Sumo Logic app for Artifactory and access your Artifactory data from Sumo Logic, instead of from your Artifactory instance.  
 :::
 
-## Artifactory
+## Prerequisites
+
+* If you're using Artifactory Online, you _must_ use the [Artifactory Sumo Logic integration](#artifactory-online-sumo-logic-integration)
+* If you're using Artifactory On-Premise, you can use either the [Sumo Logic app for Artifactory](#installing-the-artifactory-app) or the [Artifactory Sumo Logic integration](#artifactory-online-sumo-logic-integration)
+
+
+## Artifactory 6
 
 ### Log types
 
-The Sumo Logic app for Artifactory collects data from the following logs:
+The Sumo Logic app for Artifactory 6 collects data from the following logs:
 
-* **artifactory.log**. The main Artifactory log file that contains data on Artifactory server activity.
-* **access.log**. The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
-* **request.log**. Generic HTTP traffic information similar to the Apache HTTPd request log.
-* **traffic.log**. A log that contains information about site traffic and file sizes.
+* `artifactory.log`. The main Artifactory log file that contains data on Artifactory server activity.
+* `access.log`. The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
+* `request.log`. Generic HTTP traffic information similar to the Apache HTTPd request log.
+* `traffic.log`. A log that contains information about site traffic and file sizes.
 
-For more details about Artifactory logs, refer to [https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files) and [Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF6X/Artifactory+Log+Files#ArtifactoryLogFiles-RequestLog).
+For more details about Artifactory logs, refer to the [JFrog Logging documentation](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files) and [Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF6X/Artifactory+Log+Files#ArtifactoryLogFiles-RequestLog).
 
 Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
 * `artifactory.log`
@@ -86,15 +90,13 @@ _sourceCategory=*artifactory* "ACCEPTED DEPLOY" "-cache"
 | outlier paths
 ```
 
+### Collecting logs
 
-### Collecting Artifactory logs
-
-This section demonstrates how to collect logs from JFrog Artifactory into Sumo Logic.
-
+This section demonstrates how to collect logs from JFrog Artifactory 6 into Sumo Logic.
 
 #### Step 1: Activate the traffic.log file
 
-To activate the **traffic.log** file, add the following parameter to your **artifactory.system.properties** file, located under **$ARTIFACTORY/etc**:
+To activate the `traffic.log` file, add the following parameter to your `artifactory.system.properties` file, located under `$ARTIFACTORY/etc`:
 ```bash
 artifactory.traffic.collectionActive=true
 ```
@@ -116,29 +118,29 @@ The following suffixes are required. For example, you could use `_sourceCategory
 
 <table><small>
   <tr>
-   <td><strong>Log source</strong>   </td>
-   <td><strong>File Path</strong> </td>
-   <td><strong>Source Category</strong>   </td>
+   <td><strong>Log source</strong></td>
+   <td><strong>File Path</strong></td>
+   <td><strong>Source Category</strong></td>
   </tr>
   <tr>
-   <td>Artifactory Server </td>
-   <td>/var/opt/jfrog/artifactory/logs/artifactory.log </td>
-   <td>artifactory/console   </td>
+   <td>Artifactory Server</td>
+   <td>/var/opt/jfrog/artifactory/logs/artifactory.log</td>
+   <td>artifactory/console</td>
   </tr>
   <tr>
-   <td>Access   </td>
-   <td>/var/opt/jfrog/artifactory/logs/access.log   </td>
-   <td>artifactory/access   </td>
+   <td>Access</td>
+   <td>/var/opt/jfrog/artifactory/logs/access.log</td>
+   <td>artifactory/access</td>
   </tr>
   <tr>
-   <td>Request   </td>
-   <td>/var/opt/jfrog/artifactory/logs/request.log   </td>
-   <td>artifactory/request </td>
+   <td>Request</td>
+   <td>/var/opt/jfrog/artifactory/logs/request.log</td>
+   <td>artifactory/request</td>
   </tr>
   <tr>
-   <td>Traffic   </td>
-   <td>/var/opt/jfrog/artifactory/logs/traffic.*.log  </td>
-   <td>artifactory/traffic   </td>
+   <td>Traffic</td>
+   <td>/var/opt/jfrog/artifactory/logs/traffic.*.log</td>
+   <td>artifactory/traffic</td>
   </tr></small>
 </table>
 
@@ -150,42 +152,19 @@ For complete instructions, see [Local File Source](/docs/send-data/installed-col
 
 1. Configure a Local File source.
 2. Configure the Source fields:
-    * **Name**. (Required) A name is required.
-    * **Description** is optional.
-    * **Source Category**. (Required)  
+    * **Name** (required). A name is required.
+    * **Description** (Optional).
+    * **Source Category**. (required).
 3. Configure the Advanced section:
-    * **Enable Timestamp Parsing**. True
-    * **Time Zone**. Logs are in UTC by default
-    * **Timestamp Format**. Auto Detect
-    * **Encoding Type**. UTF-8
-    * **Multi-line Parsing**. Detect Messages Spanning Multiple Lines, Infer Boundaries
+    * **Enable Timestamp Parsing**. True.
+    * **Time Zone**. Logs are in UTC by default.
+    * **Timestamp Format**. Auto Detect.
+    * **Encoding Type**. UTF-8.
+    * **Multi-line Parsing**. Detect Messages Spanning Multiple Lines, Infer Boundaries.
 4. Click **Save**.
 
 
-### Field Extraction Rules
-
-Here are Artifactory extraction rules that use different approaches.
-
-```sql title="Traffic"
-_sourceCategory=*artifactory*
-| where _sourceCategory matches "*artifactory/traffic"
-| parse regex "(?<year>\d{4})(?<month>\d{2})(?<day>\d{2})(?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})\|\d*\|(?<direction>[^|]*)\|\s*(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[^|]*)\|(?<repo>[^:]*):(?<fullfilepath>[^|]*)\|(?<size>\d*)" nodrop
-```
-
-```sql title="Access Logs"
-_sourceCategory=*artifactory*
-| where _sourceCategory matches "*artifactory/access"
-| parse "[*] *:* for */*" as what, repo, path, user, ip
-```
-
-```sql title="Request Logs"
-_sourceCategory=*artifactory*
-| where _sourceCategory matches "*artifactory/request"
-| parse "*|*|*|*|*|*|*|*|*|*" as datetime, response_time, type, ip, user, method, path, protocol, status_code, size
-```
-
-
-## JFrog Artifactory 7
+## Artifactory 7
 
 This procedure documents how to collect logs from JFrog Artifactory 7 into Sumo Logic.
 
@@ -255,7 +234,7 @@ _sourceCategory = Labs/artifactory/*
 | sort by actions | limit 10
 ```
 
-### Collecting Logs
+### Collecting logs
 
 #### Step 1: Activate the traffic.log file
 
@@ -281,29 +260,29 @@ The following suffixes are required. For example, you could use `_sourceCategory
 
 <table><small>
   <tr>
-   <td><strong>Log source</strong>   </td>
-   <td><strong>File Path</strong>   </td>
-   <td><strong>Source Category</strong>   </td>
+   <td><strong>Log source</strong></td>
+   <td><strong>File Path</strong></td>
+   <td><strong>Source Category</strong></td>
   </tr>
   <tr>
-   <td>Artifactory Server and other microservices   </td>
-   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-service.log </td>
-   <td>artifactory/console   </td>
+   <td>Artifactory Server and other microservices</td>
+   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-service.log</td>
+   <td>artifactory/console</td>
   </tr>
   <tr>
-   <td>Access </td>
-   <td>$JFROG_HOME/artifactory/var/artifactory/log/artifactory-access.log.   </td>
-   <td>artifactory/access   </td>
+   <td>Access</td>
+   <td>$JFROG_HOME/artifactory/var/artifactory/log/artifactory-access.log.</td>
+   <td>artifactory/access</td>
   </tr>
   <tr>
-   <td>Request   </td>
-   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-request.log   </td>
-   <td>artifactory/request   </td>
+   <td>Request</td>
+   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-request.log</td>
+   <td>artifactory/request</td>
   </tr>
   <tr>
    <td>Traffic</td>
-   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-traffic.*.log   </td>
-   <td>artifactory/traffic   </td>
+   <td>$JFROG_HOME/&#60;product&#62;/var/log/artifactory-traffic.*.log</td>
+   <td>artifactory/traffic</td>
   </tr></small>
 </table>
 
@@ -315,16 +294,98 @@ For complete instructions, see [Local File Source](/docs/send-data/installed-col
 
 1. Configure a Local File source.
 2. Configure the Source fields:
-   * **Name**. (Required) A name is required.
-   * **Description** is optional.
-   * **Source Category**. (Required)  
+   * **Name** (required). A name is required.
+   * **Description** (optional).
+   * **Source Category**. (required)  
 3. Configure the Advanced section:
-   * **Enable Timestamp Parsing**. True
-   * **Time Zone**. Logs are in UTC by default
-   * **Timestamp Format**. Auto Detect
-   * **Encoding Type**. UTF-8
-   * **Multi-line Parsing**. Detect Messages Spanning Multiple Lines, Infer Boundaries
+   * **Enable Timestamp Parsing**. True.
+   * **Time Zone**. Logs are in UTC by default.
+   * **Timestamp Format**. Auto Detect.
+   * **Encoding Type**. UTF-8.
+   * **Multi-line Parsing**. Detect Messages Spanning Multiple Lines, Infer Boundaries.
 4. Click **Save**.
+
+
+## Artifactory Online Sumo Logic integration
+
+The JFrog Artifactory Sumo Logic integration provides the ability to access preconfigured Sumo Logic Dashboards directly from Artifactory that will allow you to analyze data from your Artifactory logs. This integration sends Sumo Logic alerts to Artifactory.
+
+:::important
+If you do not have a Sumo Logic account, the JFrog Artifactory Sumo Logic integration is the most convenient way to start using Sumo Logic directly from Artifactory. You can also choose to use an existing Sumo Logic account to integrate with Artifactory Online.
+:::
+
+**If you do not have an existing Sumo Logic Account**, enable the JFrog Artifactory Sumo Logic integration directly from Artifactory. When you enable the integration, a Sumo Logic Connector and Source get automatically configured, and the Sumo Logic App for Artifactory gets installed automatically. The JFrog Artifactory Sumo Logic integration provides a new Sumo Logic Free account with a daily data volume limit of 500MB per day, with 30 users and 14 days of data retention.
+
+**If you have an existing Sumo Logic account**, you can configure Artifactory Online to send data (described below) to an existing Sumo Logic [HTTP Logs and Metrics](/docs/send-data/hosted-collectors/http-source/logs-metrics) source.
+
+### Collect Artifactory logs
+
+The integration collects data from the following Artifactory logs:
+
+* **artifactory.log**. The main Artifactory log file that contains data on Artifactory server activity.
+* **access.log**. The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. For each event, the originating IP address gets recorded.
+* **request.log**. Generic HTTP traffic information similar to the Apache HTTPd request log.
+* **traffic.*.log**. A log containing information about site traffic and file sizes.
+
+For more details about Artifactory logs, refer to [JFrog's Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files).
+
+For questions or help, contact [Sumo Logic Support](https://support.sumologic.com/hc/en-us).
+
+### Enable the integration
+
+1. Log into JFrog Artifactory.
+1. Click the gear icon, then click **Artifactory.** <br/>![jfrog 1](/img/connection-and-integration/jfrog1.png)
+1. Select **Log Analytics**.<br/>![jfrog 2](/img/connection-and-integration/jfrog2.png)<br/>![jfrog 2](/img/connection-and-integration/jfrog2.png)
+1. In the dialog **Enable Sumo Logic Integration**, click **Enable**.<br/>![jfrog 3](/img/connection-and-integration/jfrog3.png)
+
+### If you do not have a Sumo Logic account
+
+If you do not have an existing Sumo Logic Account and it is your first time here:
+
+1. Select **Create New Connection**.
+1. Click **Access Dashboard**.
+1. When the Sumo Logic page appears, select **I agree to the Service License Agreement**, and click **Access Dashboard**.<br/>![jfrog 4](/img/connection-and-integration/jfrog4.png)
+1. When you see the message **Your Dashboards are being populated**, click **OK, Got It**.
+1. Click on **Library** > **Personal** > **Artifactory 7** to access the Artifactory dashboards.<br/>![jfrog 5](/img/connection-and-integration/jfrog5.png)
+
+### If you have an existing connection
+
+If you already have an existing connection set up via Artifactory Online:
+
+1. The **Use Existing Client ID and Secret** radio button is selected, and keys will pre-populate automatically based on your previous configuration.
+1. Click Access Dashboards to view Dashboards as you did before.<br/>![jfrog 6](/img/connection-and-integration/jfrog6.png)
+
+### If you have a Sumo Logic account
+
+If you already have an existing Sumo Logic Account created outside of Artifactory Online:
+
+1. Select **Connection URL** and copy and paste the URL of an existing Sumo Logic [HTTP Logs and Metrics Source in the Connection URL text box](/docs/send-data/hosted-collectors/http-source/logs-metrics). <br/>![jfrog 7](/img/connection-and-integration/jfrog7.png)
+1. Log in to Sumo Logic and verify that your logs are flowing in as expected.
+1. Go to our **Apps Catalog**, search for **Artifactory**, then install the [Sumo Logic app for Artifactory](/docs/integrations/app-development/jfrog-artifactory) (version 7.x) to get instant insight into your Artifactory logs. 
+
+
+
+## Field Extraction Rules
+
+Here are Artifactory extraction rules that use different approaches.
+
+```sql title="Traffic"
+_sourceCategory=*artifactory*
+| where _sourceCategory matches "*artifactory/traffic"
+| parse regex "(?<year>\d{4})(?<month>\d{2})(?<day>\d{2})(?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})\|\d*\|(?<direction>[^|]*)\|\s*(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[^|]*)\|(?<repo>[^:]*):(?<fullfilepath>[^|]*)\|(?<size>\d*)" nodrop
+```
+
+```sql title="Access Logs"
+_sourceCategory=*artifactory*
+| where _sourceCategory matches "*artifactory/access"
+| parse "[*] *:* for */*" as what, repo, path, user, ip
+```
+
+```sql title="Request Logs"
+_sourceCategory=*artifactory*
+| where _sourceCategory matches "*artifactory/request"
+| parse "*|*|*|*|*|*|*|*|*|*" as datetime, response_time, type, ip, user, method, path, protocol, status_code, size
+```
 
 ## Installing the Artifactory app
 
@@ -334,7 +395,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing JFrog Artifactory dashboards
+## Viewing Artifactory dashboards
 
 ### Overview
 
@@ -383,3 +444,8 @@ import JfrogCache from '../../reuse/apps/jfrog/artifactory-cached.md';
 import JfrogNon from '../../reuse/apps/jfrog/artifactory-noncached.md';
 
 <JfrogNon/>
+
+
+## More Information
+
+For more information about JFrog Artifactory, see [Using Node.js npm with Artifactory via the API and CLI (Sumo Logic DevOps blog)](https://www.sumologic.com/blog/using-node-js-npm-with-jfrog-artifactory-via-the-api-and-cli/).

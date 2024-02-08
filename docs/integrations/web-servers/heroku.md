@@ -87,6 +87,8 @@ You can also run `heroku drains` or `heroku drains --json` command in your app d
 
 The Sumo Logic add-on for Heroku helps you to monitor Heroku apps and harness the power of machine data with effortless log management that delivers business and operational insights within minutes.
 
+This integration sends Sumo Logic alerts to Heroku.
+
 #### Provisioning the Sumo Logic add-on via CLI
 
 Provisioning the Sumo Logic add-on via the CLI allows us to monitor a single app as well as multiple apps using the same add-on. It creates a Sumo Logic free trial account for analyzing the Heroku logs. You would first need to [install](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli) the Heroku CLI. The following sections show how to configure the add-on for Heroku apps.
