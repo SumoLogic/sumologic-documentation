@@ -43,7 +43,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ### For metrics collection 
 
-- This collection fetches stats from a Nginx Web Server instance using the `/status` endpoint. The app has been tested with Nginx version: 1.19.8, 1.21.4, and 1.23.1.
+- This collection fetches stats from a Nginx Web Server instance using the `/status` endpoint. The app has been tested with Nginx versions 1.19.8, 1.21.4, and 1.23.1.
 
 - You must configure NGINX to expose status information by editing the NGINX configuration. Refer to [ngx_http_stub_status_module](http://nginx.org/en/docs/http/ngx_http_stub_status_module.html) guide to configure the NGINX stats module ngx_http_stub_status_module.
 
