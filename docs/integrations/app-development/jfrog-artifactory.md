@@ -9,17 +9,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/app-development/jfrog-Artifactory.png')} alt="Thumbnail icon" width="100"/>
 
-JFrog Artifactory is a universal Artifact Repository Manager that integrates with CI/CD and DevOps tools to provide artifact tracking. The Sumo Logic apps for Artifactory 6 and Artifactory 7 provide insight into your JFrog Artifactory binary repository. Our preconfigured Dashboards provide an overview of your system as well as Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity.
+JFrog Artifactory is a universal artifact repository manager that integrates with CI/CD and DevOps tools to provide artifact tracking. The Sumo Logic apps for Artifactory 6 and Artifactory 7 provide insight into your JFrog Artifactory binary repository. Our preconfigured dashboards provide an overview of your system as well as Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity.
 
-:::tip
-* If you _do not_ have a Sumo Logic account, the [JFrog Artifactory Sumo Logic integration](#if-you-do-not-have-a-sumo-logic-account) is the most convenient way to start using Sumo Logic directly from Artifactory.
-* If you _do_ have a Sumo Logic account, you can still use use the integration, but this will create a secondary Sumo Logic account. If you choose to use your current account, you can do so by installing the Sumo Logic app for Artifactory and access your Artifactory data from Sumo Logic, instead of from your Artifactory instance.  
-:::
+If you _do not_ have a Sumo Logic account and want to get up and running quickly, the [JFrog Artifactory Sumo Logic integration](#if-you-do-not-have-a-sumo-logic-account) is the most convenient way to get started. It allows you to access Sumo Logic directly from Artifactory.
+
+If you have an existing Sumo Logic account, you can still use the integration, however, this will create a secondary Sumo Logic account. To use your existing account, install the [Sumo Logic app for Artifactory](#installing-the-artifactory-app) instead of the integration and access your Artifactory data from Sumo Logic, rather than your Artifactory instance.  
 
 ## Prerequisites
 
-* If you're using Artifactory Online, you _must_ use the [Artifactory Sumo Logic integration](#artifactory-online-sumo-logic-integration)
-* If you're using Artifactory On-Premise, you can use either the [Sumo Logic app for Artifactory](#installing-the-artifactory-app) or the [Artifactory Sumo Logic integration](#artifactory-online-sumo-logic-integration).
+* If you're using Artifactory Online, you'll need use the [integration](#artifactory-online-sumo-logic-integration) (our [app](#installing-the-artifactory-app) is not compatible with Artifactory Online).
+* If you're using Artifactory On-Premise, you can use our [app](#installing-the-artifactory-app) or the [integration](#artifactory-online-sumo-logic-integration).
 
 
 ## Artifactory 6
@@ -178,7 +177,7 @@ For each JFrog service, you will find its active log files in the `$JFROG_HOME/<
 * `artifactory-request.log`
 * `artifactory-traffic.*.log`
 
-For more information about Artifactory logs, see JFrog's [Artifactory Log Files](https://www.jfrog.com/confluence/display/JFROG/Logging) and [Access Logs](https://www.jfrog.com/confluence/display/JFROG/Access+Log).
+For more information, see JFrog's [Artifactory Log Files](https://www.jfrog.com/confluence/display/JFROG/Logging) and [Access Logs](https://www.jfrog.com/confluence/display/JFROG/Access+Log) documentation.
 
 
 ### Sample logs
@@ -239,9 +238,9 @@ _sourceCategory = Labs/artifactory/*
 #### Step 1: Activate the traffic.log file
 
 1. To activate the **traffic.log** file, add the following parameter to your **artifactory.system.properties** file, located under **$ARTIFACTORY/etc**:
-  ```bash
-  $JFROG_HOME/artifactory/var/etc/artifactory/artifactory.system.properties
-  ```
+   ```bash
+   $JFROG_HOME/artifactory/var/etc/artifactory/artifactory.system.properties
+   ```
 2. A restart is required for traffic collection to take effect.
 
 #### Step 2: Configure a collector
@@ -254,7 +253,7 @@ Configure an [Installed Collector](/docs/send-data/installed-collectors).
 In this step, you configure four local file sources, one for each log source listed in the table below. When you create a file source for a log type:
 
 * Use the value from the File Path column below as the **File Path** for the source.  
-* The value you specify for the source's **Source Category** _must_ end with the suffix shown below in the Source Category column. For example, you could set the Source Category for the Artifactory Server log source to be `foo/artifactory/console, but not artifactory/console/foo`.
+* The value you specify for the source's **Source Category** _must_ end with the suffix shown below in the Source Category column. For example, you could set the Source Category for the Artifactory Server log source to be `foo/artifactory/` console, but not `artifactory/console/foo`.
 
 The following suffixes are required. For example, you could use `_sourceCategory=<Foo>/artifactory/console`, but the suffix **artifactory/console** must be used.
 
@@ -308,13 +307,9 @@ For complete instructions, see [Local File Source](/docs/send-data/installed-col
 
 ## Artifactory Online Sumo Logic integration
 
-The JFrog Artifactory Sumo Logic integration provides the ability to access preconfigured Sumo Logic Dashboards directly from Artifactory that will allow you to analyze data from your Artifactory logs. This integration sends Sumo Logic alerts to Artifactory.
+The JFrog Artifactory Sumo Logic integration provides the ability to access preconfigured Sumo Logic Dashboards directly from Artifactory that will allow you to analyze data from your Artifactory logs.
 
-:::important
-If you do not have a Sumo Logic account, the JFrog Artifactory Sumo Logic integration is the most convenient way to start using Sumo Logic directly from Artifactory. You can also choose to use an existing Sumo Logic account to integrate with Artifactory Online.
-:::
-
-**If you do not have an existing Sumo Logic Account**, enable the JFrog Artifactory Sumo Logic integration directly from Artifactory. When you enable the integration, a Sumo Logic Connector and Source get automatically configured, and the Sumo Logic App for Artifactory gets installed automatically. The JFrog Artifactory Sumo Logic integration provides a new Sumo Logic Free account with a daily data volume limit of 500MB per day, with 30 users and 14 days of data retention.
+**If you do not have an existing Sumo Logic account**, enable the JFrog Artifactory Sumo Logic integration directly from Artifactory. When you enable the integration, a Sumo Logic Connector and Source get automatically configured, and the Sumo Logic App for Artifactory gets installed automatically. The JFrog Artifactory Sumo Logic integration provides a new Sumo Logic Free account with a daily data volume limit of 500MB per day, with 30 users and 14 days of data retention.
 
 **If you have an existing Sumo Logic account**, you can configure Artifactory Online to send data (described below) to an existing Sumo Logic [HTTP Logs and Metrics](/docs/send-data/hosted-collectors/http-source/logs-metrics) source.
 
@@ -329,24 +324,30 @@ The integration collects data from the following Artifactory logs:
 
 For more details about Artifactory logs, refer to [JFrog's Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files).
 
-For questions or help, contact [Sumo Logic Support](https://support.sumologic.com/hc/en-us).
-
 ### Enable the integration
 
-1. Log into JFrog Artifactory.
+1. Log in to JFrog Artifactory.
 1. Click the gear icon, then click **Artifactory.** <br/>![jfrog 1](/img/connection-and-integration/jfrog1.png)
-1. Select **Log Analytics**.<br/>![jfrog 2](/img/connection-and-integration/jfrog2.png)<br/>![jfrog 2](/img/connection-and-integration/jfrog2.png)
+1. Select **Log Analytics**.<br/>![jfrog 2](/img/connection-and-integration/jfrog2.png)
 1. In the dialog **Enable Sumo Logic Integration**, click **Enable**.<br/>![jfrog 3](/img/connection-and-integration/jfrog3.png)
 
 ### If you do not have a Sumo Logic account
 
-If you do not have an existing Sumo Logic Account and it is your first time here:
+If you do not have an existing Sumo Logic account and it is your first time here:
 
 1. Select **Create New Connection**.
 1. Click **Access Dashboard**.
 1. When the Sumo Logic page appears, select **I agree to the Service License Agreement**, and click **Access Dashboard**.<br/>![jfrog 4](/img/connection-and-integration/jfrog4.png)
 1. When you see the message **Your Dashboards are being populated**, click **OK, Got It**.
-1. Click on **Library** > **Personal** > **Artifactory 7** to access the Artifactory dashboards.<br/>![jfrog 5](/img/connection-and-integration/jfrog5.png)
+1. To access your Artifactory dashboards, click **Library** > **Personal** > **Artifactory 7**.<br/><img src={useBaseUrl('img/connection-and-integration/jfrog5.png')} alt="jfrog5.png" width="300"/>
+
+### If you have a Sumo Logic account
+
+If you already have an existing Sumo Logic account created outside of Artifactory Online:
+
+1. Select **Connection URL** and copy and paste the URL of an existing Sumo Logic [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) in the **Connection URL** text box. <br/>![jfrog 7](/img/connection-and-integration/jfrog7.png)
+1. Log in to Sumo Logic and verify that your logs are flowing in as expected.
+1. Go to our **Apps Catalog**, search for **Artifactory**, then install the [Sumo Logic app for Artifactory 7](/docs/integrations/app-development/jfrog-artifactory) to get instant insight into your Artifactory logs. 
 
 ### If you have an existing connection
 
@@ -354,16 +355,6 @@ If you already have an existing connection set up via Artifactory Online:
 
 1. The **Use Existing Client ID and Secret** radio button is selected, and keys will pre-populate automatically based on your previous configuration.
 1. Click Access Dashboards to view Dashboards as you did before.<br/>![jfrog 6](/img/connection-and-integration/jfrog6.png)
-
-### If you have a Sumo Logic account
-
-If you already have an existing Sumo Logic Account created outside of Artifactory Online:
-
-1. Select **Connection URL** and copy and paste the URL of an existing Sumo Logic [HTTP Logs and Metrics Source in the Connection URL text box](/docs/send-data/hosted-collectors/http-source/logs-metrics). <br/>![jfrog 7](/img/connection-and-integration/jfrog7.png)
-1. Log in to Sumo Logic and verify that your logs are flowing in as expected.
-1. Go to our **Apps Catalog**, search for **Artifactory**, then install the [Sumo Logic app for Artifactory](/docs/integrations/app-development/jfrog-artifactory) (version 7.x) to get instant insight into your Artifactory logs. 
-
-
 
 ## Field Extraction Rules
 
@@ -453,3 +444,5 @@ import JfrogNon from '../../reuse/apps/jfrog/artifactory-noncached.md';
 ## More Information
 
 For more information about JFrog Artifactory, see [Using Node.js npm with Artifactory via the API and CLI (Sumo Logic DevOps blog)](https://www.sumologic.com/blog/using-node-js-npm-with-jfrog-artifactory-via-the-api-and-cli/).
+
+For questions or help regarding the integration, see the [JFrog Artifactory documentation](https://jfrog.com/help/r/jfrog-platform-administration-documentation/sumo-logic) or contact [Sumo Logic Support](https://support.sumologic.com/hc/en-us).

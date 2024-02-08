@@ -7,7 +7,7 @@ description: Partner Ecosystem Apps are third-party Sumo Logic apps for partners
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/PartnerEcosystem.png')} alt="Thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/PartnerEcosystem.png')} alt="Thumbnail icon" width="60"/>
 
 Sumo Logic Partner Ecosystem Apps are provided and supported by our partner network. The following links provide collection, installation, and dashboard information on working with these apps.
 * [Aqua Security](https://github.com/aquasecurity/Sumo-Logic-App/)  
@@ -22,9 +22,7 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [Cyral](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Cyral)
 * [Dataminr Pulse](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/DataminrPulse)
 * [Gigamon HAWK](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_HAWK)
-<!-- Heroku? -->
 * [Jamf Protect](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/JamfProtect)
-<!-- JFrog? -->
 * [LambdaTest](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/LambdaTest)
 * [Lucidum](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Lucidum)
 * [Mimecast](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian)
@@ -32,8 +30,7 @@ Sumo Logic Partner Ecosystem Apps are provided and supported by our partner netw
 * [Spinnaker](https://docs.armory.io/armory-enterprise/armory-admin/observe/integrations-sumologic/)
 * [StackRox](https://cdn.stackrox.io/integrations/sumologic-stackrox-app.pdf)
 * [Sauce Labs](https://docs.saucelabs.com/basics/integrations/sumo/)
-* <a href="https://help.sumologic.com/files/zerofox-integrations.pdf" target="_blank">ZeroFox</a>
 * [Tessian](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Tessian)
-
+* <a href="https://help.sumologic.com/files/zerofox-integrations.pdf" target="_blank">ZeroFox</a>
 
 For any questions on these applications, contact our partners.

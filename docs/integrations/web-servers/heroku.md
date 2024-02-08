@@ -87,8 +87,6 @@ You can also run `heroku drains` or `heroku drains --json` command in your app d
 
 The Sumo Logic add-on for Heroku helps you to monitor Heroku apps and harness the power of machine data with effortless log management that delivers business and operational insights within minutes.
 
-This integration sends Sumo Logic alerts to Heroku.
-
 #### Provisioning the Sumo Logic add-on via CLI
 
 Provisioning the Sumo Logic add-on via the CLI allows us to monitor a single app as well as multiple apps using the same add-on. It creates a Sumo Logic free trial account for analyzing the Heroku logs. You would first need to [install](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli) the Heroku CLI. The following sections show how to configure the add-on for Heroku apps.
@@ -126,7 +124,7 @@ To monitor multiple applications, you can share the same Sumo Logic add-on with 
     Opening sumologic for sharp-mountain-4005
     ```
 
-This opens up a Sumo Logic free trial account. Fill up the Sumo Logic onboarding form with the relevant details and click on **Get Started** to use Sumo Logic. The Sumo Logic add-on for Heroku sets the value of **`_sourceCategory`** for your Heroku log data to **heroku**. It is recommended to use a single add-on for multiple applications.
+This opens up a Sumo Logic free trial account. Fill up the Sumo Logic onboarding form with the relevant details and click on **Get Started** to use Sumo Logic. The Sumo Logic add-on for Heroku sets the value of `_sourceCategory` for your Heroku log data to **heroku**. It is recommended to use a single add-on for multiple applications.
 
 #### Provisioning the Sumo Logic add-on via the UI
 
@@ -187,7 +185,7 @@ This step is optional, but recommended, as it makes easier for you to query your
 
 For ease of understanding the log data, you can use a **Field Extraction Rule (FER)** to rename `_sourceName` from the drain UUID to the application name. For general information about FERs, refer to the [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule/).
 
-1. Determine the drain identifier by running the ```heroku drains``` command for your app. The identifier will look something like:
+1. Determine the drain identifier by running the `heroku drains` command for your app. The identifier will look something like:
    ```
    d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a
    ```
@@ -196,20 +194,20 @@ For ease of understanding the log data, you can use a **Field Extraction Rule (F
     2. Click the **+** in the upper left corner of the page to display the **Create Field Extraction Rule** popup.
         * **Rule Name**. Enter a name for the FER.
         * **Scope**. Enter `_sourceCategory=heroku` when the collection is setup via the Sumo Add-on.
-        * **Parse Expression**. For each Heroku application reporting data to Sumo, enter a statement that renames the ``_sourceName`` from the drain ID to the application name. For example:
+        * **Parse Expression**. For each Heroku application reporting data to Sumo, enter a statement that renames the `_sourceName` from the drain ID to the application name. For example:
 
         ```sql
         if (_sourceName="Drain_ID", "Application_Name", _sourceName) as _sourceName
         ```
 
-        The FER below changes the value of ``_sourceName`` for two applications. The first line changes ``_sourceName`` from “d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a” to “CustApp”. The second line changes ``_sourceName`` from “d.00870f28-53f9-4680-b2ab-2287ec9d8637” to “VendorApp”:
+        The FER below changes the value of `_sourceName` for two applications. The first line changes `_sourceName` from “d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a” to “CustApp”. The second line changes `_sourceName` from “d.00870f28-53f9-4680-b2ab-2287ec9d8637” to “VendorApp”:
         ```sql
         if (_sourceName="d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a", "CustApp", _sourceName) as _sourceName
         | if (_sourceName="d.00870f28-53f9-4680-b2ab-2287ec9d8637", "VendorApp", _sourceName) as _sourceName
         ```
 3. Click **Add** to save the rule.
 
-These custom app `_sourceNames` will appear as values in the dashboard filter variable ``log_drain`` for the Heroku app dashboards.
+These custom app `_sourceNames` will appear as values in the dashboard filter variable `log_drain` for the Heroku app dashboards.
 
 ## Installing the Heroku app
 
@@ -319,11 +317,11 @@ The **Heroku - Memory Metrics** dashboard demonstrates the use cases for the met
 
 ### CPU Load Metrics
 
-The **Heroku - CPU Load Metrics** dashboard demonstrates the use cases for the metrics which are reported for CPU load average. This dashboard has two filter variables namely, ``dyno`` and ``log_drain``.
+The **Heroku - CPU Load Metrics** dashboard demonstrates the use cases for the metrics which are reported for CPU load average. This dashboard has two filter variables namely, `dyno` and `log_drain`.
 
 * **dyno**. Denotes the name of dynos present in the Heroku applications. It works on all panels of the dashboard.
 
-* **log_drain**. denotes the drain identifier Heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
+* **log_drain**. denotes the drain identifier Heroku attaches with the `_sourceName` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
 <img src={useBaseUrl('img/integrations/web-servers/heroku-cpu-load-metrics.png')} style={{border: '1px solid gray'}} alt="Heroku dashboards" />
 
@@ -333,9 +331,9 @@ The **Heroku - CPU Load Metrics** dashboard demonstrates the use cases for the m
 
 ### Infrastructure Errors
 
-The **Heroku - Infrastructure Errors** dashboard demonstrates the use cases for Heroku infrastructure errors, providing information about different types of errors and other observations. It also shows the trends of these Heroku infrastructure errors. This dashboard has two filter variables namely, ``log_drain`` and ``application_name``.
+The **Heroku - Infrastructure Errors** dashboard demonstrates the use cases for Heroku infrastructure errors, providing information about different types of errors and other observations. It also shows the trends of these Heroku infrastructure errors. This dashboard has two filter variables namely, `log_drain` and `application_name`.
 
-* **log_drain**. Denotes the drain identifier Heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
+* **log_drain**. Denotes the drain identifier Heroku attaches with the `_sourceName` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
 * **application_name**. Denotes an application name from the Heroku platform. It works on all panels of the dashboard.
 
@@ -345,9 +343,9 @@ The panels of this dashboard try to cover a few error cases from the list of err
 
 ### Application Errors
 
-The **Heroku - Application Errors** dashboard demonstrates the use cases for Heroku app errors, providing information about different types of errors and other observations. It also the trends of these Heroku app errors. This dashboard has a single filter variable namely, ``log_drain``.
+The **Heroku - Application Errors** dashboard demonstrates the use cases for Heroku app errors, providing information about different types of errors and other observations. It also the trends of these Heroku app errors. This dashboard has a single filter variable namely, `log_drain`.
 
-* **log_drain**. Denotes the drain identifier Heroku attaches with the ``_sourceName`` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
+* **log_drain**. Denotes the drain identifier Heroku attaches with the `_sourceName` metadata while ingesting Heroku logs. It works on all panels of the dashboard.
 
 <img src={useBaseUrl('img/integrations/web-servers/heroku-application-errors.png')} style={{border: '1px solid gray'}} alt="Heroku dashboards" />
 
