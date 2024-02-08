@@ -391,11 +391,15 @@ _sourceCategory=*artifactory*
 
 Now that you have set up collection, install the Sumo Logic app for Artifactory to use the pre-configured searches and Dashboards that provide insight into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Artifactory dashboards
+## Viewing JFrog Artifactory dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
