@@ -33,7 +33,7 @@ We offer an [add-on for Heroku](https://elements.heroku.com/addons/sumologic) th
 
 ## Sample queries
 
-### Log query
+#### Log queries
 
 ```sql title="Successful App Build Trend"
 _sourceCategory="Heroku" "Build Succeeded"
@@ -44,7 +44,7 @@ _sourceCategory="Heroku" "Build Succeeded"
 | transpose row _timeslice column log_drain
 ```
 
-### Metrics log query
+#### Metric log queries
 
 ```sql title="Memory Utilization (MB)"
 _sourceCategory="Heroku"
@@ -54,7 +54,7 @@ _sourceCategory="Heroku"
 | avg(memory_total) as memory_total, avg(memory_rss) as resident_memory, avg(memory_cache) as disk_cache_memory, avg(memory_swap) as swap_memory by _timeslice
 ```
 
-## Collecting Logs for Heroku
+## Collecting logs for Heroku
 
 Heroku is a cloud platform that lets companies build, deliver, monitor, and scale apps in eight programming languages namely Node.js, Ruby, Python, Java, PHP, Go, Scala, and Clojure.
 
@@ -66,7 +66,7 @@ There are two ways to send Heroku logs to Sumo Logic.
 We recommended attaching a Heroku add-on just after creating an app or running the `heroku create` command to help observe Heroku logs for all events that may follow for the app.
 :::
 
-### Collecting Logs via HTTPS Log Drain
+### Collecting logs via HTTPS Log Drain
 
 A HTTPS Log Drain can be attached to a Heroku application via the CLI.
 
@@ -216,6 +216,10 @@ These custom app `_sourceNames` will appear as values in the dashboard filter va
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+:::note
+While using the **Sumo Add-on**, the value `_sourceCategory=heroku` should be used while installing the app.
+:::
 
 ## Viewing Heroku Dashboards
 

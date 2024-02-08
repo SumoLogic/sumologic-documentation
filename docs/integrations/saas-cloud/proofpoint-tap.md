@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/proofpoint-logo.png')} alt="icon" width="140"/>
 
-The Sumo Logic app for Proofpoint Targeted Attack Protection App (TAP) provides comprehensive visibility and analysis of messages and clicks of malicious URLs. Proofpoint TAP is a cybersecurity solution offered by Proofpoint, a leading cybersecurity company. By leveraging advanced technologies and threat intelligence, Proofpoint TAP helps organizations detect and mitigate sophisticated threats, reducing the risk of successful cyberattacks.
+The Sumo Logic app for Proofpoint Targeted Attack Protection (TAP) app provides comprehensive visibility and analysis of messages and clicks of malicious URLs. Proofpoint TAP is a cybersecurity solution offered by Proofpoint, a leading cybersecurity company. By leveraging advanced technologies and threat intelligence, Proofpoint TAP helps organizations detect and mitigate sophisticated threats, reducing the risk of successful cyberattacks.
 
 Key features of the Proofpoint TAP app include:
 
@@ -161,19 +161,15 @@ To set up [Cloud-to-Cloud Integration Proofpoint TAP Source](/docs/send-data/hos
 
 ## Installing the Proofpoint TAP app
 
-This section provides instructions on how to install the Proofpoint TAP app, as well as examples of each of the dashboards. The app pre-configured searches and dashboards provide easy-to-access visual insights into your data.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
-
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Proofpoint TAP dashboards
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following dashboards. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<ViewDashboards/>
 
 ### Messages Overview
 
