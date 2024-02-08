@@ -55,7 +55,7 @@ If process metrics are enabled it will also create [fields for JMX metrics](/doc
 
 ## Prerequisites
 
-#### Configure logging in ActiveMQ:
+### Configure logging in ActiveMQ:
 
 1. By default, ActiveMQ logs (`audit.log` and `activemq.log`) are stored in the directory called `${ACTIVEMQ_HOME}/data/activemq.log`. Make a note of this logs directory.
 1. [Enable auditing](https://activemq.apache.org/audit-logging) if not enabled by default.
