@@ -27,7 +27,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ## Prerequisites
 
-By default, the squid proxy will write the access log to the log directory that was configured during installation. For example, on Linux, the default log directory is `/var/log/squid/access.log`. If the access log is disabled then you must enable the access log by following these [instructions](https://wiki.squid-cache.org/SquidFaq/SquidLogs).
+By default, the squid proxy will write the access log to the log directory that was configured during installation. For example, on Linux, the default log directory is `/var/log/squid/access.log`. If the access log is disabled, you must enable the access log by following [these instructions](https://wiki.squid-cache.org/SquidFaq/SquidLogs).
 
 import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
 
