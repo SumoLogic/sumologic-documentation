@@ -42,7 +42,7 @@ This app is based on the following log files from the Ubuntu Linux machine.
 - yum.log
 
 :::note
-If collection of these log files are already configured (for example, during Linux or Linux - PCI app setup) then no additional log file collection is required. If any of the log files is missing then the missing file collection can be configured in the next step.
+If you've already configured collection of these log files (for example, during Linux or Linux - PCI app setup), then no additional log file collection is required. If any log files are missing, you can configure the missing file collection in the next step.
 :::
 
 import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
