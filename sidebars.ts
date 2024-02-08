@@ -660,17 +660,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Connections and Integrations',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/connections-integrations/index'},
-      items: [
-        'manage/connections-integrations/heroku',
-        'manage/connections-integrations/jfrog-artifactory',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Users and Roles',
       collapsible: true,
       collapsed: true,
@@ -2359,6 +2348,7 @@ integrations: [
         label: 'Webhooks',
         collapsible: true,
         collapsed: true,
+        link: {type: 'doc', id: 'integrations/webhooks/index'},
         items: [
           'integrations/webhooks/buddy',
           'integrations/webhooks/bugsnag',
