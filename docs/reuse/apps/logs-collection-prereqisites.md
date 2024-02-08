@@ -6,6 +6,6 @@ The required ACL may not be supported for some rare cases, for example, Linux OS
 sudo setfacl -R -m d:u:otelcol-sumo:r-x,d:g:otelcol-sumo:r-x,u:otelcol-sumo:r-x,g:otelcol-sumo:r-x <PATH_TO_LOG_FILE>
 ```
 
-Run the above command for all the log files in the directory that need to be ingested, which are not residing in the default location .
+Run the above command for all the log files in the directory that need to be ingested, which are not residing in the default location.
 
 If Linux **ACL Support** is not available, traditional Unix-styled user and group permission must be modified. It should be sufficient to add the otelcol system user to the specific group that has access to the log files.
