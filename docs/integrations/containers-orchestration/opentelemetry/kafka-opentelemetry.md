@@ -48,7 +48,7 @@ Kafka metrics [receiver](https://github.com/open-telemetry/opentelemetry-collect
 
 Configure logging in Kafka: By default, Kafka logs (`server.log` and `controller.log`) are stored in the directory called `/opt/Kafka/kafka_<VERSION>/logs`. Make a note of this logs directory.
 
-Ensure that the otelcol has adequate permissions to access all log file paths. Please execute the following command for the same:
+Ensure that the otelcol has adequate permissions to access all log file paths. Execute the following command:
 
 ```
 sudo setfacl -R -m d:u:otelcol-sumo:r-x,u:otelcol-sumo:r-x,g:otelcol-sumo:r-x <PATH_TO_LOG_FILE>
