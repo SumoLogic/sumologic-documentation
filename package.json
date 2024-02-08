@@ -79,6 +79,7 @@
     "swc": "^1.0.11",
     "swc-loader": "^0.2.3",
     "trim": "^0.0.3",
+    "typed.js": "^2.1.0",
     "url-loader": "^4.1.1",
     "use-sync-external-store": "1.2.0",
     "webpack": "^5.76.0",
