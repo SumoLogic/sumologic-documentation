@@ -176,7 +176,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 <TabItem value="macOS">
 
 1. Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the ActiveMQ instance which needs to be monitored.
-1. Restart the `otelcol-sumo` process using the below command::
+1. Restart the `otelcol-sumo` process using the below command:
   ```
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
