@@ -1,0 +1,1 @@
+If you have the latest version of Cloud SOAR, the [Cloud SOAR Automation](/docs/cloud-soar/automation) page displays when you click **Manage Playbooks**.  

@@ -2,6 +2,7 @@
 slug: /send-data/installed-collectors
 title: Installed Collectors
 description: Learn how to install and configure Collectors to gather and send data to Sumo Logic.
+tags: [installed collectors]
 ---
 
 Our Installed Collector is installed on your local environment, as opposed to our Hosted Collector, which resides on the Sumo Logic service. After installing a Collector, you'll need to add Sources, to which the Collector connects to obtain data to send to the Sumo Logic service. 
