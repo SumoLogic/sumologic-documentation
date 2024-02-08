@@ -2695,6 +2695,7 @@ integrations: [
       items: [
         'cloud-soar/overview',
         'cloud-soar/architecture',
+        'cloud-soar/compared-to-automation-service',
         'cloud-soar/global-functions-menu',
         'cloud-soar/main-menu',
         'cloud-soar/incidents-triage',
@@ -2797,6 +2798,7 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'platform-services/automation-service/index'},
           items: [
+            'platform-services/automation-service/about-automation-service',
             {
               type: 'category',
               label: 'App Central',
@@ -2819,7 +2821,6 @@ integrations: [
                 }
               ],
             },
-            'platform-services/automation-service/about-automation-service',
             'platform-services/automation-service/automation-service-playbooks',
             'platform-services/automation-service/automation-service-integrations',
             'platform-services/automation-service/automation-service-audit-logging',
