@@ -27,13 +27,4 @@ In this section, we'll introduce the following concepts:
       <p>Learn to archive data to S3 for future ingestion and retrieval.</p>
     </div>
   </div>
-  <div className="box smallbox card">
-    <div className="container">
-      <a href="/docs/manage/data-archiving/installed-collectors">
-        <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="45" />
-        <h4>Archive Log Data to other destinations</h4>
-      </a>
-      <p>Learn how to set up Data Archiving destinations.</p>
-    </div>
-  </div>
 </div>
