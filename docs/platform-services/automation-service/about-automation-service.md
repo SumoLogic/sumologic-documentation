@@ -34,9 +34,6 @@ Before you can access the Automation Service, you must first [configure role cap
 ### From the Sumo Logic screen
 1. Go to the main menu.
 1. Click **Automation**. <br/><img src={useBaseUrl('img/cse/automation-menu-in-nav-bar.png')} alt="Automation menu option in the nav bar" width="200"/> 
-   :::note
-   The **Automation** option appears in the main menu only if you have Cloud SIEM installed. If you also have Cloud SOAR installed, a **Cloud SOAR** option appears instead, since all automation services are provided by Cloud SOAR when it installed in conjunction with Cloud SIEM.
-   :::
 1. The Automation Service screen opens on the **Playbook** tab. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} alt="Playbook screen" width="800"/>
 
 ### From Cloud SIEM
