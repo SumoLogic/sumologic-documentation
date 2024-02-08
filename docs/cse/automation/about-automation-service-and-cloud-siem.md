@@ -39,9 +39,11 @@ import Iframe from 'react-iframe';
 ## Differences compared to Cloud SOAR
 
 Using the Automation Service with Cloud SIEM differs from Cloud SOAR in the following ways:
-* In Cloud SIEM, the Automation Service only supports automated enrichment, notification, and custom action types. 
 * Using the Automation Service with Cloud SIEM does not include the incident and case management features from Cloud SOAR.
+* The Automation Service does not support daemon and trigger action types. The Automation Service can only use triggers built into Cloud SIEM and the Log Analytics platform. 
 * Playbooks, integrations, and actions in the Automation Service may differ from those in [Cloud SOAR automation](/docs/cloud-soar/automation/). 
+
+For more information, see [Cloud SOAR Compared to the Automation Service](/docs/cloud-soar/compared-to-automation-service/).
 
 ## Benefits
 

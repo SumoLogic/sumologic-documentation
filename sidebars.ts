@@ -2695,6 +2695,7 @@ integrations: [
       items: [
         'cloud-soar/overview',
         'cloud-soar/architecture',
+        'cloud-soar/compared-to-automation-service',
         'cloud-soar/global-functions-menu',
         'cloud-soar/main-menu',
         'cloud-soar/incidents-triage',
