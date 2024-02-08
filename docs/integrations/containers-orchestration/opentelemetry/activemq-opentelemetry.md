@@ -97,8 +97,8 @@ Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
    ```
 1. Set the JMX port by changing the `ACTIVEMQ_SUNJMX_START` parameter. Usually it is set in `/opt/activemq/bin/env` or `C:\Program Files\apache-activemq\bin\activemq.bat` file.
    ```
-      ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=11099 -Dcom.sun.management.jmxremote.ssl=false  -Dcom.sun.management.jmxremote.password.file=${ACTIVEMQ_CONF_DIR}/jmx.password -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_CONF_DIR}/jmx.access"
-  ```
+   ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=11099 -Dcom.sun.management.jmxremote.ssl=false  -Dcom.sun.management.jmxremote.password.file=${ACTIVEMQ_CONF_DIR}/jmx.password -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_CONF_DIR}/jmx.access"
+   ```
 
 ## Collection configuration and app installation
 
