@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Cloud SOAR is a full-featured security orchestration, automation, and response (SOAR) application. The [Automation Service](/docs/platform-services/automation-service/about-automation-service/) is a subset of automation capabilities adapted from Cloud SOAR that is available to the entire Sumo Logic log analytics platform. 
 
-The Automation Service only has Cloud SOAR’s  playbook-related features, including App Central and the Automation Bridge. Like the [Cloud SOAR action types](/docs/cloud-soar/automation/#action), the [Automation Service action types](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) can perform automated responses to events, including  run containment actions and manual user interaction steps. 
+The Automation Service only has Cloud SOAR’s playbook-related features, including App Central and the Automation Bridge. Like the [Cloud SOAR action types](/docs/cloud-soar/automation/#action), the [Automation Service action types](/docs/platform-services/automation-service/automation-service-playbooks/#add-an-action-node-to-a-playbook) can perform automated responses to events, including run containment actions and manual user interaction steps. 
 
 ## Main differences
 
