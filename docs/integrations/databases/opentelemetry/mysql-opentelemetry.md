@@ -53,7 +53,7 @@ Following are the [fields](/docs/manage/fields/) which will be created as part o
 
 ### For metric collection
 
-For metric collection [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlreceiver#prerequisites) are the prerequisites.
+For metrics collection, you can find the prerequisites [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/mysqlreceiver#prerequisites).
 
 ### For log collection
 
