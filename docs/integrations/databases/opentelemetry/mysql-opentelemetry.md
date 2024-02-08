@@ -64,21 +64,19 @@ Configure MySQL to log to a local file(s). MySQL logs written to a log file can 
 
   ```sql
   [mysqld]
-        log_error = /var/log/mysql/error.log
-        slow_query_log=1
-        slow_query_log_file = /var/log/mysql/mysql-slow.log
-        long_query_time=2
-        long_query_time=2
+  log_error = /var/log/mysql/error.log
+  slow_query_log=1
+  slow_query_log_file = /var/log/mysql/mysql-slow.log
+  long_query_time=2
+  long_query_time=2
   ```
 
 - **[Error Logs](https://dev.mysql.com/doc/refman/8.0/en/error-log.html)**. By default, error logs are enabled and are logged at file specified by the `log_error` key.
-
 - **[Slow Query Logs](https://dev.mysql.com/doc/refman/8.0/en/slow-query-log.html)**. `slow_query_log=1` enables logging of slow queries to the file specified by `slow_query_log_file`. Setting `long_query_time=2` will cause queries that take more than two seconds to execute to be logged. The default value of `long_query_time` is 10 seconds.
-
 - **[General Query Logs](https://dev.mysql.com/doc/refman/8.0/en/query-log.html)**. We don't recommend enabling `general_log` for performance reasons. These logs are not used by the Sumo Logic MySQL app.
 
-  1. Save the `my.cnf` file.
-  2. Restart the MySQL server: `sudo mysql.server restart`.
+3. Save the `my.cnf` file.
+4. Restart the MySQL server: `sudo mysql.server restart`.
 
 import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
 
