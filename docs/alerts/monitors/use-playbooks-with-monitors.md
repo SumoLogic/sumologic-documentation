@@ -37,6 +37,14 @@ For more information, see [Add an automated playbook to a monitor](/docs/alerts/
 
 For more information, see [View automated playbooks for an alert](#view-automated-playbooks-for-an-alert) below.
 
+### From the main navigation menu
+
+1. Go to the main menu.
+1. Click **Automation**. <br/><img src={useBaseUrl('img/platform-services/automation-menu-in-nav-bar-main.png')} alt="Automation menu option in the nav bar" style={{border: '1px solid gray'}} width="250"/> 
+1. The Automation Service screen opens on the **Playbook** tab. 
+
+For more information, see [About the Automation Service](/docs/platform-services/automation-service/about-automation-service/). 
+
 ## Add an automated playbook to a monitor
 
 1. [Open the **New Monitor** window](/docs/alerts/monitors/create-monitor/#open-the-new-monitor-window). 
