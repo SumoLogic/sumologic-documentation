@@ -88,7 +88,7 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 <TabItem value="macOS">
 
 1. Copy the yaml at `/etc/otelcol-sumo/conf.d/` folder in the Varnish instance which needs to be monitored.
-2. Restart the otelcol-sumo process using the below command
+2. Restart the otelcol-sumo process using the below command.
   ```sh
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --conf "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
