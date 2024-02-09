@@ -7,7 +7,7 @@ description: Learn how to create a Sumo Logic monitor.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import AlertsTimeslice from '../../reuse/alerts-timeslice.md';
 
-This topic shows you how to create a monitor. 
+This topic shows you how to create a monitor.
 
 <details>
 <summary>Use the <strong>New Monitor</strong> dialog to create a monitor (expand to view)</summary>
@@ -69,7 +69,7 @@ The first step when you create a new monitor is to set the trigger conditions.
 ### Select monitor type and detection method
 
 1. Select a **Monitor Type**. <br/><img src={useBaseUrl('img/monitors/trigger-conditions-monitor.png')} alt="icon" width="300"/>
-   * **Logs**. Creates alerts based on a [log search](/docs/search/). 
+   * **Logs**. Creates alerts based on a [log search](/docs/search/).
    * **Metrics**. Creates alerts based on [metrics queries](/docs/metrics/metrics-queries/).
    * **SLO**. Creates alerts based on a [Service Level Objectives (SLO)](/docs/observability/reliability-management-slo/).
 1. Select a **Detection Method**. <br/><img src={useBaseUrl('img/monitors/monitor-detection-methods.png')} alt="icon" width="310"/> <!-- At "smart alerts" GA, add a screenshot that shows the "Anomaly" detection method to the right of "Static" and "Outlier". -->
@@ -101,7 +101,7 @@ Specify the **Trigger Type**. A Monitor can have one critical, warning, and mis
 
 <!-- At "smart alerts" GA, add a screenshot that shows the "Anomaly" detection method to the right of "Static" and "Outlier". -->
 
-<img src={useBaseUrl('img/monitors/logs-monitors.png')} alt="icon" width="800"/> 
+<img src={useBaseUrl('img/monitors/logs-monitors.png')} alt="icon" width="800"/>
 
 Trigger alerts on:<br/>![trigger alerts on field.png](/img/monitors/trigger-alerts-field.png)
 
@@ -322,7 +322,7 @@ When a trigger condition is met, you can send notifications to other people and 
 To add notifications, click the **Add Notification** button. You can add more than one notification channel for a Monitor.
 
 1. Set your **Preferred Notification Time Zone** for your monitor's alert notifications. If you don't select anything, it will default to the time zone specified in your user preferences.
-1. The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/manage/connections-integrations) for details. Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](/docs/alerts/monitors/alert-variables) for a table of the available variables.
+1. The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/alerts/webhook-connections) for details. Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](/docs/alerts/monitors/alert-variables) for a table of the available variables.
    * **Email**: Provide 1-100 recipient email addresses. You can customize the email subject and body.
    * **Webhook**: By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.
 1. Select the **Alert** and **Recovery** checkboxes for each trigger type based on when you want to send a notification.  You can have different Trigger Conditions send a notification to different channels. For example, you can get notified on PagerDuty for critical Incidents and get an email or Slack notification for warning incidents.
@@ -343,8 +343,8 @@ Monitor details" style={{border: '1px solid gray'}} width="800"/>
 1. (Optional) Add a **Description**.
 1. (Optional) Create or select an existing **Playbook**, which allows admins to codify tribal knowledge for an on-call so that they know what to do upon receiving an alert. Markdown is supported.
 <!--  At "smart alerts" GA, add the following:
-<br/>Select one of the following: 
-   * **Insert custom playbook**. Input your own playbook to run when the alert is fired. 
+<br/>Select one of the following:
+   * **Insert custom playbook**. Input your own playbook to run when the alert is fired.
    * **Select automated playbook**. Select an existing playbook from the Automation Service to run when an alert is fired. Click **Manage Playbooks** button to manage the playbooks. See [Use Playbooks with Monitors](/docs/alerts/monitors/use-playbooks-with-monitors) for more information.
 -->
 
