@@ -48,7 +48,7 @@ In this section, we'll introduce the following concepts:
         <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="45" />
         <h4>View Information About Data Forwarding</h4>
       </a>
-      <p>Learn how to view a list of data forwarding configured for your organization, and to view the basic info and details of data forwarding.</p>
+      <p>Learn how to view data forwarding configuration information for your organization.</p>
     </div>
   </div>
   </div>
