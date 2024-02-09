@@ -2,27 +2,27 @@
 id: zscaler-private-access
 title: Zscaler Private Access
 sidebar_label: Zscaler Private Access
-description: The Zscaler Private Access App collects logs from Zscaler using the Log Streaming Service (LSS) to populate pre-configured searches and Dashboards.
+description: The Zscaler Private Access app collects logs from Zscaler using the Log Streaming Service (LSS) to populate pre-configured searches and dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/zscaler.png')} alt="thumbnail icon" width="75"/>
 
-The Zscaler Private Access App collects logs from Zscaler using the Log Streaming Service (LSS) to populate pre-configured searches and Dashboards. The dashboards provide easy-to-access visual insights into user behaviors, security, connector status, and risk.
+The Zscaler Private Access app collects logs from Zscaler using the Log Streaming Service (LSS) to populate pre-configured searches and Dashboards. The dashboards provide easy-to-access visual insights into user behaviors, security, connector status, and risk.
 
 ## Log types
 
-The Sumo Logic App for Zscaler Private Access uses LSS to send the following logs, as documented [here](https://help.zscaler.com/zpa/about-log-streaming-service):
+The Sumo Logic app for Zscaler Private Access uses LSS to send the following logs, as documented [here](https://help.zscaler.com/zpa/about-log-streaming-service):
 
-* App Connector Status: Information related to an App Connector's availability and connection to ZPA. To learn more, see [App Connector Status Log Fields](https://help.zscaler.com/zpa/connector-status-log-fields).
-* User Activity: Information on end user requests to Applications. To learn more, see [User Activity Log Fields](https://help.zscaler.com/zpa/user-activity-log-fields).
-* User Status: Information related to an end user's availability and connection to ZPA. To learn more, see [User Status Log Fields](https://help.zscaler.com/zpa/user-status-log-fields).
-* Browser Access Logs: HTTP log information related to Browser Access. To learn more, see[ Browser Access Log Fields](https://help.zscaler.com/zpa/browser-access-log-fields) and [About Browser Access](https://help.zscaler.com/zpa/about-BrowserAccess).
-* Audit Logs: Session information for all admins accessing the ZPA Admin Portal. To learn more, see [Audit Log Fields](https://help.zscaler.com/zpa/about-audit-log-fields) and [About Audit Logs](https://help.zscaler.com/zpa/about-audit-logs).
+* **App Connector Status**. Information related to an App Connector's availability and connection to ZPA. To learn more, see [App Connector Status Log Fields](https://help.zscaler.com/zpa/connector-status-log-fields).
+* **User Activity**. Information on end user requests to Applications. To learn more, see [User Activity Log Fields](https://help.zscaler.com/zpa/user-activity-log-fields).
+* **User Status**. Information related to an end user's availability and connection to ZPA. To learn more, see [User Status Log Fields](https://help.zscaler.com/zpa/user-status-log-fields).
+* **Browser Access Logs**. HTTP log information related to Browser Access. To learn more, see[ Browser Access Log Fields](https://help.zscaler.com/zpa/browser-access-log-fields) and [About Browser Access](https://help.zscaler.com/zpa/about-BrowserAccess).
+* **Audit Logs**. Session information for all admins accessing the ZPA Admin Portal. To learn more, see [Audit Log Fields](https://help.zscaler.com/zpa/about-audit-log-fields) and [About Audit Logs](https://help.zscaler.com/zpa/about-audit-logs).
 
 
-## Collect Logs for the Zscaler Private Access (ZPA) App
+## Collect logs for the Zscaler Private Access (ZPA) app
 
 Zscaler Private Access uses the Log Streaming Service (LSS), to stream logs from the Zscaler service and deliver them to the Sumo Logic Hosted collector via Syslog.
 
@@ -30,14 +30,12 @@ LSS is deployed using two components, a log receiver and a ZPA App Connector. LS
 
 To collect logs for Zscaler Private Access, perform these steps, detailed in the following sections:
 
-1. Configure Sumo Logic Hosted Collector and a Cloud Syslog Source
-2. Configure App Connector in ZPA
-3. Deploy an App Connector on a Supported Platform
-4. Configure Log Receivers in ZPA to send logs to Sumo Logic
+1. Configure Sumo Logic Hosted Collector and a Cloud Syslog Source.
+2. Configure App Connector in ZPA.
+3. Deploy an App Connector on a Supported Platform.
+4. Configure Log Receivers in ZPA to send logs to Sumo Logic.
 
-
-
-### Configure Sumo Logic Hosted Collector and a Cloud Syslog Source
+### Configure Sumo Logic hosted collector and a Cloud Syslog source
 
 To collect logs for ZPA, do the following in Sumo Logic:
 
@@ -56,15 +54,11 @@ To collect logs for ZPA, do the following in Sumo Logic:
     * **Mask String**: `{`
 5. Click **Save**.
 
-
 Copy and paste the **Token, Host and Port** in a secure location. You will need these when you configure ZPA LSS.
-
 
 ### Configure App Connector in ZPA
 
 Configure a new [App Connector](https://help.zscaler.com/zpa/configuring-connectors) in ZPA. Copy the provisioning key created/selected during App Connector configuration.
-
-
 
 ### Deploy an App Connector on a Supported Platform
 
@@ -75,7 +69,6 @@ Before you begin a deployment, read [App Connector Deployment Prerequisites](htt
 The deployment process differs depending on the platform used for the App Connector. Zscaler recommends that App Connectors be deployed in pairs, to ensure continuous availability during software upgrades.
 
 To deploy the App Connector, see the [Deployment Guide](https://help.zscaler.com/knowledge-base-categories/supported-platforms-connectors) for your platform.
-
 
 ### Configure Log Receivers in ZPA to send logs to Sumo Logic
 
@@ -132,17 +125,18 @@ For **Syslog Token,** enter the token from the Sumo Logic[ Cloud Syslog Source](
 
 1. At this point, ZPA should start sending logs to Sumo Logic.
 
+
 ## Installing the Zscaler Private Access app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
 
-## Viewing Zscaler Private Access dashboards
+## Viewing ZPA Dashboards  
 
-import ViewDash from '../../reuse/apps/view-dashboards.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-<ViewDash/>
+<ViewDashboards/>
 
 ### Overview
 
@@ -154,7 +148,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Overview.png')} alt="zscaler private access Dashboard" />
 
-
 ### Audit
 
 The **ZPA - Audit** Dashboard focuses the changes in the ZPA admin UI. It allows easy tracking and change management.
@@ -164,7 +157,6 @@ Use this dashboard to:
 * Easily identify the mis-configurations for erratic behavior.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Audit.png')} alt="zscaler private access Dashboard" />
-
 
 ### Connectors
 
@@ -186,8 +178,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Performance.png')} alt="zscaler private access Dashboard" />
 
-
-
 ### User Activity
 
 The **ZPA - User Activity** Dashboard focuses on the users activity.
@@ -197,7 +187,6 @@ Use this dashboard to:
 * Gain insights into User activity.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-User-Activity.png')} alt="zscaler private access Dashboard" />
-
 
 ### Users
 
