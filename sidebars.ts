@@ -740,6 +740,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/data-forwarding/index'},
       items: [
+        'manage/data-forwarding/installed-collectors',
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
         'manage/data-forwarding/view-list-data-forwarding',
@@ -753,7 +754,6 @@ module.exports = {
       link: {type: 'doc', id: 'manage/data-archiving/index'},
       items: [
         'manage/data-archiving/archive',
-        'manage/data-archiving/installed-collectors',
       ]
     },
     {
