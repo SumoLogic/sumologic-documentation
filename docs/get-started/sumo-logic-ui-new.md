@@ -5,8 +5,8 @@ description: Get to know the Sumo Logic platform user interface.
 ---
 
 <!--
-When Open Beta'd (est. May 2024), remove no-index, place doc in sidebars.ts and call this "New" and rename the old one "Classic", add announcement banner.
-When GA'd (est. July 2024), remove beta badge, rename this 'sumo-logic-ui', retire the Classic UI version.
+When Open Beta'd (est. Aug 2024), remove no-index, place doc in sidebars.ts and call this "New" and rename the old one "Classic", add announcement banner.
+When GA'd (est. Nov 2024), remove beta badge, rename this 'sumo-logic-ui', retire the Classic UI version.
 -->
 
 <head>
@@ -15,7 +15,9 @@ When GA'd (est. July 2024), remove beta badge, rename this 'sumo-logic-ui', reti
 
 <p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
+:::sumo beta
 To request access, contact your Sumo Logic sales representative.
+:::
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -51,9 +53,8 @@ Use the **Library** search bar to find the above quickly. **View as** mode shoul
 
 If you're an admin, you can view the Library in [Content Administrator](#search-content-administrator-library) mode.
 
-:::tip Hide and show the left nav
-
-Enlarge your working area by click the hamburger menu icon to hide the left-side nav panel. To unhide it, click the hamburger menu icon again.<br/><img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="hamburger.gif" width="350"/>
+:::tip
+Enlarge your working area by hiding the left-side nav panel. Just click the hamburger menu icon. To unhide it, click the hamburger menu icon again.<br/><img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="hamburger.gif" width="350"/>
 :::
 
 ## Using the top navigation bar
@@ -62,7 +63,7 @@ Enlarge your working area by click the hamburger menu icon to hide the left-sid
 
 ### Access Apps, Admin settings
 
-From the top nav bar, you can access (from left to right): Sumo Logic [Help](#get-help-docs-community-and-more), [App Catalog](apps-integrations.md), [(Data) Configuration](/docs/send-data), [Administration](/docs/manage) settings, [Notifications](account-settings-preferences.md), and personal [Preferences](account-settings-preferences.md).
+From the top nav bar, you can access (from left to right): [Help](#get-help-docs-community-and-more), [App Catalog](apps-integrations.md), [(Data) Configuration](/docs/send-data), [Administration](/docs/manage), and user settings ([Notifications](account-settings-preferences.md) and [Preferences](account-settings-preferences.md)).
 
 <img src={useBaseUrl('/img/get-started/admin-config.png')} alt="admin-config.png" width="350"/>
 

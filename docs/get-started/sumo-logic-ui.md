@@ -5,20 +5,20 @@ title: Tour the Sumo Logic UI
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, then sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
+The [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and sharing your findings with your colleagues. This page will help you get to know the Sumo Logic user interface (UI).
 
 ## Using the Left Navigation Bar
 
-When you first log in, you'll land on the Sumo Logic Home page. The **Left Nav Bar** menu bar is a one-stop location where you can access the following:
+When you first log in, you'll land on the Sumo Logic Home page. The **left nav bar** menu bar is a one-stop location where you can access the following:
 
 ### Access dashboards and searches
 
-The **Left Nav Bar** provides easy access to libraries, personal collections of dashboards, searches, and folders. Click the icons at the top of the Left Nav Bar (left to right) to view:
+The **left nav bar** provides easy access to libraries, personal collections of dashboards, searches, and folders. Click the icons at the top of the Left Nav Bar (left to right) to view:
 
 * **Recent** dashboards and searches
 * A list of your **Favorites** (dashboards and searches)
-* Your **Personal** library of dashboards and searches,
-* A **Library** of shared dashboards and searches (within your organization) respectively.<br/>![TUI_Left_Nav.png](/img/get-started/ui/TUI_Left_Nav.png)
+* Your **Personal** library of dashboards and searches
+* A **Library** of shared dashboards and searches (within your organization)<br/>![TUI_Left_Nav.png](/img/get-started/ui/TUI_Left_Nav.png)
 
 ### Search and switch browsing modes
 
@@ -32,12 +32,12 @@ users and easily switch browsing modes. 
 
 You can easily hide the **left nav bar** to enlarge the working area. Then, just as easily show it again.
 
-* To hide the Left Nav Bar, click the **Arrow** in the top right corner.<br/>![TUI_NavBar_Hide.png](/img/get-started/ui/TUI_NavBar_Hide.png)
-* To show a hidden Left Nav Bar, click the **Menu** icon.<br/>![TUI_NavBar_Show.png](/img/get-started/ui/TUI_NavBar_Show.png)
+* To hide the left nav bar, click the **Arrow** in the top right corner.<br/>![TUI_NavBar_Hide.png](/img/get-started/ui/TUI_NavBar_Hide.png)
+* To show a hidden left nav bar, click the **Menu** icon.<br/>![TUI_NavBar_Show.png](/img/get-started/ui/TUI_NavBar_Show.png)
 
 ### Access Apps, Admin features, and Help
 
-In the lower section of the left nav bar, you can access the [App Catalog](apps-integrations.md), [Manage Data and Administration](/docs/manage) features, and [get help](#get-help-docs-community-and-more). 
+In the lower section of the left nav bar, you can access the [App Catalog](apps-integrations.md), [Manage Data](/docs/manage), handle Administration, and [get help](#get-help-docs-community-and-more). 
 
 ![TUI_App-Admin-Help.png](/img/get-started/ui/TUI_App-Admin-Help.png)
 
@@ -113,11 +113,15 @@ To launch a search, metrics visualization, or live tail session, do the followin
 
 1. Go to the Sumo Logic **Home** page.
 1. Do one of the following:
-   * Click **+New** in the Tabs menu and choose an option from the dropdown menu. 
-   * Click one of the following Home page icons:
+   * Click **+New** in the Tabs menu and choose an option from the dropdown menu.<br/><img src={useBaseUrl('img/get-started/ui/new-icons.png')} alt="new-icons.png" width="600"/>
+   * Click one of the following Home page icons:<br/><img src={useBaseUrl('img/get-started/ui/home-icons.png')} alt="home-icons.png" width="600"/>
      * [Log Search](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
      * [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
-     * [Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.<br/>![WTS_UI_Search-Metrics-LiveTail.png](/img/get-started/ui/WTS_UI_Search-Metrics-LiveTail.png)
+     * [Traces](/docs/apm/traces/). Monitor user activity, span analytics, service maps, and transaction traces between microservices.
+     * [Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
+     * [Explore](/docs/dashboards/explore-view). See an intuitive visual hierarchy of your environment.
+     * [Dashboard](/docs/dashboards/). Analyze metrics and log data on the same dashboard, in a streamlined user experience.
+     * [Root Cause](/docs/observability/root-cause-explorer). Accelerate troubleshooting and isolate root causes for incidents in your apps and microservices.
 
 ### View recent dashboards and searches 
 
@@ -153,7 +157,7 @@ The dashboard and search appear in the Favorites list in the Left Nav Bar.
 
 You can share dashboards, searches, and folders with users and roles. You can edit the sharing permissions at any time and share or revoke permissions as needed. You can share content from the following locations:
 
-* **left nav bar.** Recommended when you are familiar with the content and need to quickly share with another user.
+* **Left nav bar.** Recommended when you are familiar with the content and need to quickly share with another user.
 * **Library.** Recommended when you need a detailed view of the content, who created it, and when it was last modified.
 
 For walkthrough instructions, go to the [Share Content](/docs/manage/content-sharing) page. 
@@ -226,7 +230,7 @@ Sumo Logic Administrators (Admins) are responsible for managing data collectio
 
 To manage data in Sumo Logic, do the following:
 
-1. Go to the **left nav bar** and click **Manage Data**. <br/><img src={useBaseUrl('img/get-started/ui/pin-search.png')} alt="img/get-started/ui/pin-search.png" style={{border: '1px solid gray'}} width="175" />
+1. Go to the **left nav bar** and click **Manage Data**. <br/><img src={useBaseUrl('img/get-started/ui/manage-data.png')} alt="manage data" style={{border: '1px solid gray'}} width="175" />
 1. Choose from the following, as needed:
     * **Collection.** [Manage collectors and sources](/docs/send-data/collection).
     * **Logs.** Manage [fields](/docs/manage/fields), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions-data-tiers), [scheduled views](/docs/manage/scheduled-views), [connections](/docs/alerts/webhook-connections), and [data forwarding](/docs/manage/data-forwarding).
