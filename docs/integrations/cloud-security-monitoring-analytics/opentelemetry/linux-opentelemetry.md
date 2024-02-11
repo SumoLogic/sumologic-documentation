@@ -64,7 +64,7 @@ The following logs, located in the `/var/log` folder, are required for using the
 
 Click on the **Download YAML File** button to get the YAML file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Linux-YAML.png' style={{border:'1px solid black'}} alt="Linux-YAML.png" style={{border: '1px solid gray'}}/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Linux-YAML.png' style={{border:'1px solid gray'}} alt="Linux-YAML.png" style={{border: '1px solid gray'}}/>
 
 :::note
 By default, the path for Linux log files required for all the distros are pre-populated in the UI. (Optional) Unwanted file paths can be removed from the list if the files are not available on your Linux distribution. The collection will work even if not all the files are present in your system.

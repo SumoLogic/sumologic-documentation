@@ -54,7 +54,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -69,7 +69,7 @@ Below is the input required:
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo
 

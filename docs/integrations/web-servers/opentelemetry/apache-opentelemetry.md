@@ -56,7 +56,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -71,7 +71,7 @@ Below are the inputs required:
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo
 
