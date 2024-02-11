@@ -59,11 +59,9 @@ Enlarge your working area by hiding the left-side nav panel. Just click the ham
 
 ## Using the top navigation bar
 
-<!-- The Global Toolbar provides you access to the App catalog, the Configuration (data management) and Administration menus, the Help menu, and your User Profile menu. -->
-
 ### Access Apps, Admin settings
 
-From the top nav bar, you can access (from left to right): [Help](#get-help-docs-community-and-more), [App Catalog](apps-integrations.md), [(Data) Configuration](/docs/send-data), [Administration](/docs/manage), and user settings ([Notifications](account-settings-preferences.md) and [Preferences](account-settings-preferences.md)).
+The global toolbar (top nav bar) provides you access to (from left to right): [Help](#get-help-docs-community-and-more), [App Catalog](apps-integrations.md), [(Data) Configuration](/docs/send-data), [Administration](/docs/manage), and your user profile options ([Notifications](account-settings-preferences.md) and [Preferences](account-settings-preferences.md)).
 
 <img src={useBaseUrl('/img/get-started/admin-config.png')} alt="admin-config.png" width="350"/>
 
@@ -178,22 +176,18 @@ You'll need Sumo Logic Admin role privileges to perform most of these tasks.
 
 With the Sumo Logic Administrator role, you can manage your organization's data collection settings, ingest budget, partitions, and more. To access these settings, go to the top nav bar and click the **Configuration** icon.<br/><img src={useBaseUrl('img/get-started/config.png')} alt="config.png" width="400"/>
 
-* **Collection**. [Collection (and Sources)](/docs/send-data/collection/), [OpenTelemetry Collection](/docs/send-data/opentelemetry-collector/), [Status](/docs/manage/ingestion-volume/collection-status-page/), [Ingest](/docs/manage/ingestion-volume/ingest-budgets/), [Archive](/docs/manage/data-archiving/archive), [Data Archiving](/docs/manage/data-archiving/).
-* **Logs**. [Fields](/docs/manage/fields/), [Field Extraction Rules](/docs/manage/field-extractions/), [Parsers](/docs/search/search-query-language/parse-operators/), [Partitions](/docs/manage/partitions-data-tiers/), [Scheduled Views](/docs/manage/scheduled-views/), [Data Forwarding](/docs/manage/data-forwarding/), [Threat Intelligence](/docs/platform-services/threat-intelligence-indicators/).
+* **Collection**. [Collection](/docs/send-data/collection/), [OpenTelemetry Collection](/docs/send-data/opentelemetry-collector/), [Source Template](/docs/send-data), [Status](/docs/manage/ingestion-volume/collection-status-page/), [Ingest Budget](/docs/manage/ingestion-volume/ingest-budgets/), [Archive](/docs/manage/data-archiving/archive), [Data Archiving](/docs/manage/data-archiving/).
+* **Logs**. [Fields](/docs/manage/fields/), [Field Extraction Rules](/docs/manage/field-extractions/), [Partitions](/docs/manage/partitions-data-tiers/), [Scheduled Views](/docs/manage/scheduled-views/), [Data Forwarding](/docs/manage/data-forwarding/), [Threat Intelligence](/docs/platform-services/threat-intelligence-indicators/).
 * **Metrics**. [Metrics Rules](/docs/metrics/metric-rules-editor/), [Logs-to-Metrics](/docs/metrics/logs-to-metrics/), [Metrics Transformation Rules](/docs/metrics/metrics-transformation-rules/).
-* **Cloud SIEM Integrations**. [Ingest Mappings](/docs/cse/ingestion/sumo-logic-ingest-mapping/), [Log Mappings](/docs/cse/schema/create-structured-log-mapping/), [Context Actions](/docs/cse/administration/create-cse-context-actions/), [Actions](/docs/cse/administration/create-cse-actions/), [Enrichment](/docs/cse/integrations/enrichments-and-indicators/), [Automation](/docs/cse/automation/).
-* **Cloud SIEM Entities**. [Groups](/docs/cse/records-signals-entities-insights/create-an-entity-group/), [Normalization](/docs/cse/records-signals-entities-insights/configure-entity-lookup-table/), [Custom Types](/docs/cse/records-signals-entities-insights/create-custom-entity-type/), [Criticality](/docs/cse/records-signals-entities-insights/entity-criticality/).
-* **Cloud SIEM Workflow**. [Insight Detection](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/), [Insight Statuses](/docs/cse/administration/manage-custom-insight-statuses/), [Insight Resolutions](/docs/cse/administration/manage-custom-insight-resolutions/), [Tag Schemas](/docs/cse/administration/create-a-custom-tag-schema/).
-* **Cloud SOAR Configurations**. [Incidents](/docs/cloud-soar/incidents-triage/), [Fields](/docs/cloud-soar/incidents-triage/#custom-fields), [Incident Labels](/docs/cloud-soar/global-functions-menu/#incident-label).
+* **Monitoring**. [Connections](/docs/alerts/webhook-connections).
 
 ### Administration
 
 With the Sumo Logic Administrator role, you can manage user accounts, user roles, security, and more. To access these admin settings, go to the top nav bar and click the **Administration** icon.<br/><img src={useBaseUrl('img/get-started/admin.png')} alt="img/get-started/admin.png" width="400"/>
 
-* **Account**. [Account Overview](/docs/manage/manage-subscription), [Data Management](/docs/manage/ingestion-volume/data-volume-index), [Manage Plan](/docs/manage/manage-subscription/upgrade-cloud-flex-credits-account), [Manage Billing](/docs/manage/manage-subscription/manage-billing-information).
+* **Account**. [Account Overview](/docs/manage/manage-subscription), [Data Management](/docs/manage/ingestion-volume/data-volume-index), [Manage Plan](/docs/manage/manage-subscription/upgrade-cloud-flex-credits-account), [Metrics Data Ingestion](/docs/metrics/metrics-dpm).
 * **Users and Roles**. [Users](/docs/manage/users-roles/users), [Roles](/docs/manage/users-roles/roles).
-* **Account Security Settings**. [Installation Tokens](/docs/manage/security/installation-tokens), [Access Keys](/docs/manage/security/access-keys), [Password Policy](/docs/manage/security/set-password-policy), [Service Allowlist Settings](/docs/manage/security/create-allowlist-ip-cidr-addresses),[SAML](/docs/manage/security/saml)
-* **Cloud SOAR Settings**. [General Settings](/docs/cloud-soar/global-functions-menu/#general-settings), [Notifications](/docs/cloud-soar/global-functions-menu/#notifications), [Groups](/docs/cloud-soar/global-functions-menu/#groups).
+* **Account Security Settings**. [Installation Tokens](/docs/manage/security/installation-tokens), [Access Keys](/docs/manage/security/access-keys), [Password Policy](/docs/manage/security/set-password-policy), [Policies](/docs/manage/security/audit-indexes/audit-index), [Service Allowlist Settings](/docs/manage/security/create-allowlist-ip-cidr-addresses), [SAML](/docs/manage/security/saml).
 
 ### Content Administrator Library
 
