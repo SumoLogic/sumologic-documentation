@@ -230,7 +230,7 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 1. (Optional) In the **Test Pattern** section, select the log data to test, then click **Test pattern**. If test results look fine, then click **Start Streaming**.<br/><img src={useBaseUrl('img/send-data/test-pattern.png')} style={{border: '1px solid gray'}} alt="test-pattern" width="700"/>
 
 :::note
-Sample cloudWatch Log ingested for Amazon RDS postgreSQL using Lambda Log forwarder with ```IncludeLogGroupInfo``` set to ```false``` . 
+Sample CloudWatch log ingested for Amazon RDS PostgreSQL using Lambda log forwarder with ```IncludeLogGroupInfo``` set to ```false``` . 
 ```json 
 {
     "timestamp":1705908605000,
