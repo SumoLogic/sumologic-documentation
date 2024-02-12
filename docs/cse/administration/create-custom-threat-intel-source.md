@@ -8,7 +8,7 @@ description: Learn how to create and manage custom threat sources.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::info
-This article describes functionality previously available in Cloud SIEM. **You can no longer add or manage custom intelligence sources in Cloud SIEM, and must migrate your indicators to our new threat intelligence indicators framework.** For more information, see [Migrate intelligence indicators from Cloud SIEM](/docs/platform-services/threat-intelligence-indicators/#migrate-intelligence-indicators-from-cloud-siem).
+This article describes functionality previously available in Cloud SIEM. **You can no longer add or manage custom intelligence sources in Cloud SIEM, but must ingest your indicators to our new threat intelligence indicators framework.** For more information, see [Custom threat intelligence sources in Cloud SIEM](/docs/platform-services/threat-intelligence-indicators/#custom-threat-intelligence-sources-in-cloud-siem).
 :::
 
 This topic has information about setting up a *custom threat intelligence source* in Cloud SIEM, which is a threat intelligence list that you can populate manually, as opposed to using an automatic feed. 
