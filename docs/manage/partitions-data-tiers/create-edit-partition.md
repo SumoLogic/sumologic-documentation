@@ -32,10 +32,10 @@ If you have a Sumo Logic Enterprise Suite account, you can take advantage of th
 1. **Data Tier.** (Enterprise Suite accounts only) Click the radio button for the tier where you want the Partition to reside.
 1. **Routing Expression**. Enter a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the Partition, using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) or [custom metadata fields](/docs/manage/fields). If you have an Enterprise Suite account, and are going to assign the Partition to the Infrequent Tier, see the information in the [Assigning Data to a Data Tier](/docs/manage/partitions-data-tiers/data-tiers#assigning-data-to-a-data-tier) section of the [Data Tiers](/docs/manage/partitions-data-tiers/data-tiers) page.
     :::note
-    The [_dataTier](searching-data-tiers.md) search modifier is not supported in Partition routing expressions.
+    The [`_dataTier`](searching-data-tiers.md) search modifier is not supported in Partition routing expressions.
     :::
 1. **Retention Period**. Enter the number of days you wish to retain the data in the Partition, or click **Apply the retention period of the Default Continuous Index**.
-1. **Data Forwarding**. If you want to forward the data in the Partition to a cloud environment, click **Enable Data Forwarding **and specify the necessary information for the options that appear. For more information [Data Forwarding](/docs/manage/data-forwarding).
+1. **Data Forwarding**. If you want to forward the data in the Partition to a cloud environment, click **Enable Data Forwarding** and specify the necessary information for the options that appear. For more information, see [Data Forwarding](/docs/manage/data-forwarding).
 
 ### Enhance search and retention
 

@@ -4,11 +4,31 @@ title: Data Tiers FAQs
 description: Answers to FAQ about Data Tiers.
 ---
 
-This page has frequently asked questions about Data Tiers. For information about selecting the data tier for your use case, features of each tier, and the differences among tiers, see [Data Tiers.](data-tiers.md)
+This page has frequently asked questions about Data Tiers. For information about selecting the data tier for your use case, features of each tier, and the differences among tiers, see [Data Tiers](data-tiers.md).
 
 ## In which Sumo subscriptions are Data Tiers available? 
 
 The Continuous Data Tier is available in all Sumo subscriptions. Frequent and Infrequent are available only if you have Sumo Logic Enterprise Suite. 
+
+## Flex Tier
+
+### What is Flex Tier?
+
+import FlexTier from '../../reuse/flex-tier.md';
+
+<FlexTier/>
+
+### What are the benefits of Flex Tier?
+
+<!-- to do-->
+
+### Why should I consider it versus the three tiers?
+
+<!-- to do-->
+
+### How should I approach moving from Infrequent, Frequent, or Continuous Tier to a plan with Flex Tier only?
+
+<!-- to do-->
 
 ## Is the Infrequent Tier available to existing Cloud Flex customers?
 
@@ -89,10 +109,10 @@ Assume you have three different services sending logs to Sumo. There a couple of
 
 The cost of queries depends on two factors: 
 
-* Partition size — The partition size governs the volume of data that will be scanned by a  search against it. 
+* Partition size — The partition size governs the volume of data that will be scanned by a search against it. 
 * Time range of the query — The time range further reduces the volume of data scanned.
 
-Using keywords or other metadata in a query will not reduce the amount of data scanned. For example, the inclusion of a keyword and custom field in the scope of the query below does not reduce the amount of data that Sumo Logic will scan. Sumo Logic will scan all data in the partition named “ybase_partition”
+Using keywords or other metadata in a query will not reduce the amount of data scanned. For example, the inclusion of a keyword and custom field in the scope of the query below does not reduce the amount of data that Sumo Logic will scan. Sumo Logic will scan all data in the partition named “ybase_partition”.
 
 ```sql
 _index=ybase_partition (error and cluster=nxt)

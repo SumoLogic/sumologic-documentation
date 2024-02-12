@@ -1,0 +1,1 @@
+**Flex Tier (Beta)** is for <!--definition-->. For existing customers, Flex Tier will be available (late 2024) in addition to the above mentioned tiers. For new customers, Flex will be listed as the *only* tier.
