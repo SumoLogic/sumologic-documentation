@@ -79,7 +79,7 @@ If you have more than one CloudWatch Log Group to assign to your Lambda function
 1. Click **Add** to add the trigger to your Lambda function.
 
 :::note
-Sample cloudWatch Log ingested for Amazon RDS postgreSQL using Lambda Log forwarder. 
+Sample CloudWatch log ingested for Amazon RDS PostgreSQL using Lambda log forwarder. 
 ```json 
 {
     "timestamp":1705908605000,
