@@ -229,6 +229,16 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
     <br/><img src={useBaseUrl('img/send-data/create-destination.png')} style={{border: '1px solid gray'}} alt="create-destination" width="700"/>
 1. (Optional) In the **Test Pattern** section, select the log data to test, then click **Test pattern**. If test results look fine, then click **Start Streaming**.<br/><img src={useBaseUrl('img/send-data/test-pattern.png')} style={{border: '1px solid gray'}} alt="test-pattern" width="700"/>
 
+:::note
+Sample cloudWatch Log ingested for Amazon RDS postgresSQL using Lambda Log forwarder with ```IncludeLogGroupInfo``` set to ```false``` . 
+```json 
+{
+    "timestamp":1705908605000,
+    "message":"2024-01-22 07:30:05 UTC::@:[561]:LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB"
+}
+```
+:::
+
 ### Auto-subscribe other log groups to SumoCWLogsLambda function
 
 If you want to collect logs from multiple Log Groups, you can use Sumo’s LogGroup Lambda Connector to subscribe additional Log Groups to the Lambda function. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a Lambda Function](../autosubscribe-arn-destination.md). When you edit the connector parameters, set the `DestinationArnValue` parameter to the `SumoCWLogsLambda` function ARN.
