@@ -17,6 +17,15 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
   <div className="box smallbox card">
     <div className="container">
+      <a href="/docs/manage/data-forwarding/installed-collectors">
+        <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="45" />
+        <h4>Forward Data from an Installed Collector</h4>
+      </a>
+      <p>Learn how to set up Data Forwarding destinations for Installed Collectors.</p>
+    </div>
+  </div>
+  <div className="box smallbox card">
+    <div className="container">
       <a href="/docs/manage/data-forwarding/amazon-s3-bucket">
         <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="45" />
         <h4>Forward Data from Sumo Logic to S3</h4>
@@ -31,6 +40,15 @@ In this section, we'll introduce the following concepts:
         <h4>Manage Data Forwarding</h4>
       </a>
       <p>View, edit, delete, activate, and deactivate data forwarding destinations.</p>
+    </div>
+  </div>
+  <div className="box smallbox card">
+    <div className="container">
+      <a href="/docs/manage/data-forwarding/view-list-data-forwarding/">
+        <img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="45" />
+        <h4>View Information About Data Forwarding</h4>
+      </a>
+      <p>Learn how to view data forwarding configuration information for your organization.</p>
     </div>
   </div>
   </div>
