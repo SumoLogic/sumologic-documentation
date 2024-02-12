@@ -151,7 +151,7 @@ If you have indicators in Cloud SIEM that you want to continue using, you must m
 
 To migrate intelligence indicators from Cloud SIEM:
 
-1. Use the [GetAllThreatIntelIndicators](/docs/sec/#operation/GetAllThreatIntelIndicators) API in the [Cloud SIEM APIs](/docs/cse/administration/cse-apis/) to export all the indicators in Cloud SIEM.
+1. Use the [GetAllThreatIntelIndicators](https://api.sumologic.com/docs/sec/#operation/GetThreatIntelIndicators) API in the [Cloud SIEM APIs](/docs/cse/administration/cse-apis/) to export all the indicators in Cloud SIEM.
 2. Use the exported indicators to create a JSON file that follows the [normalized JSON format](#normalized-json-format). 
 3. Import the indicators using the [uploadNormalizedIndicators](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) API.
 
