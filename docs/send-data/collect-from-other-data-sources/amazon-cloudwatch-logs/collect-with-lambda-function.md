@@ -54,6 +54,11 @@ To add an Amazon Lambda function:
     * **SOURCE_NAME_OVERRIDE (Optional)**. Override `_sourceName` value configured for the HTTP source.
 1. Click **Create Function.** A success message will be displayed.<br/><img src={useBaseUrl('img/send-data/success.png')} style={{border: '1px solid gray'}} alt="success" width="700"/>
 
+:::note
+This solution only ingests log messages to sumo logic. If you want to include log levels (such as INFO, DEBUG,etc) to sumo logic, please find and update the regex in [lambda code](https://github.com/SumoLogic/sumologic-aws-lambda/blob/main/cloudwatchlogs/cloudwatchlogs_lambda.js#L32) deployed in your AWS account with 
+<br/>`var consoleFormatRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z\s(\w+?-\w+?-\w+?-\w+?-\w+)\s/;`
+:::
+
 ## Step 3: Assign CloudWatch Log Groups to Your Lambda Function
 
 :::info
@@ -72,3 +77,13 @@ If you have more than one CloudWatch Log Group to assign to your Lambda function
 1. Add a **Filter Name** to your trigger.
 1. (Optional) Add a **Filter Pattern** to your trigger. For information about AWS filter patterns, see [Filter and Pattern Syntax](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) in the AWS documentation.
 1. Click **Add** to add the trigger to your Lambda function.
+
+:::note
+Sample log cloudWatch Logs ingested for Amazon RDS postgresSQL using Lambda Log forwarder. 
+```json 
+{
+    "timestamp":1705908605000,
+    "message":"2024-01-22 07:30:05 UTC::@:[561]:LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB"
+}
+```
+:::
