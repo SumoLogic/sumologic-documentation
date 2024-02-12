@@ -88,13 +88,9 @@ You can also add threat intelligence indicators using the API or a collector. Se
 
 ## Find threats
 
-Once you [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators), you can perform searches to find matches to data in the indicators using the `threatlookup` search operator or the `hasThreatMatch` Cloud SIEM rules language function.
+Once you [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators), you can perform searches to find matches to data in the indicators using the `threatlookup` search operator.
 
-### threatlookup search operator
-
-The `threatlookup` operator allows you to search logs for matches in threat intelligence indicators. 
-
-For example, use the following query to find logs in all `sec_record*` indexes with a `srcDevice_ip` attribute correlated to a threat indicator with a high confidence level (greater than 50): 
+The `threatlookup` operator allows you to search logs for matches in threat intelligence indicators. For example, use the following query to find logs in all `sec_record*` indexes with a `srcDevice_ip` attribute correlated to a threat indicator with a high confidence level (greater than 50): 
 
  ```
 _index=sec_record* 
@@ -105,6 +101,13 @@ _index=sec_record*
 ```
 
 For more information, see [threatlookup search operator](/docs/search/search-query-language/search-operators/threatlookup/).
+
+You can also use the `hasThreatMatch` function to look for matches in Cloud SIEM records. See [hasThreatMatch Cloud SIEM rules function](#hasthreatmatch-cloud-siem-rules-function).
+
+
+## Threat indicators in Cloud SIEM
+
+Threat indicators can be used in Cloud SIEM to find possible threats. 
 
 ### hasThreatMatch Cloud SIEM rules function
 
@@ -118,7 +121,7 @@ hasThreatMatch([srcDevice_ip], confidence > 50)
 
 For more information, see [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch).
 
-## Threat indicators in the Cloud SIEM UI
+### View threat indicators in the Cloud SIEM UI
 
 An Entity can be associated with a known indicator that has a threat type attribute, either `threatType` (in normalized JSON format and CSV format), or `indicator_types` (in STIX format as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). 
 
@@ -139,6 +142,20 @@ Note that if the mapping produces a threat indicator level of **Malicious**, but
 Since different sources can report different reputations, each source has a reputation icon on its row in the Cloud SIEM UI. In the following example, the indicator from the Unit 42 source returned a reputation of Malicious, hence the red icon. The link to the right would open a log search window showing the matching indicators in detail.
 
 <img src={useBaseUrl('img/platform-services/threat-indicators-in-cloud-siem-ui.png')} alt="Threat indicators in the Cloud SIEM UI" style={{border: '1px solid gray'}} width="400" />
+
+### Migrate intelligence indicators from Cloud SIEM
+
+Previously, you could [create custom threat intelligence sources using Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). You can no longer create sources using Cloud SIEM, but you must use the Threat Intelligence tab, a collector, or the API to [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators).
+
+If you have indicators in Cloud SIEM that you want to continue using, you must migrate them to the threat intelligence indicators framework described in this article. Once migrated, the indicators will appear in the [Threat Intelligence tab](#threat-intelligence-tab) and be available for use in both Cloud SIEM as well as the Sumo Logic Log Analytics Platform. 
+
+To migrate intelligence indicators from Cloud SIEM:
+
+1. Use the [GetAllThreatIntelIndicators](/docs/sec/#operation/GetAllThreatIntelIndicators) API in the [Cloud SIEM APIs](/docs/cse/administration/cse-apis/) to export all the indicators in Cloud SIEM.
+2. Use the exported indicators to create a JSON file that follows the [normalized JSON format](#normalized-json-format). 
+3. Import the indicators using the [uploadNormalizedIndicators](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) API.
+
+If you need help, ask your Sumo Logic account representative to engage the Professional Services team to guide you through the migration process. 
 
 ## Upload formats
 
