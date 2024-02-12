@@ -2,7 +2,7 @@
 id: oracle-opentelemetry
 title: Oracle - OpenTelemetry Collector
 sidebar_label: Oracle - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Oracle.
+description: Learn about the Sumo Logic OpenTelemetry app for Oracle.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/databases/oracle.png')} alt="Thumbnail icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The [Oracle](https://docs.oracle.com/database/121/CNCPT/intro.htm#CNCPT001) app is a logs based app. Preconfigured dashboards and searches provide insight into the listeners, sys/xml audit logs, alerts, performance and security.
+The [Oracle](https://docs.oracle.com/database/121/CNCPT/intro.htm#CNCPT001) app is a logs based app. Preconfigured dashboards and searches provide insight into the listeners, sys/xml audit logs, alerts, performance, and security.
 
-This App is tested with the following Oracle versions:
+This app is tested with the following Oracle versions:
 
 - Non-Kubernetes: Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production - Version 19.3.0.0.0
 
@@ -126,6 +126,26 @@ To set up the performance metrics script on Linux and Windows for the Oracle app
 </TabItem>
 </Tabs>
 
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
+
 ## Collection configuration and app installation
 
 import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
@@ -157,7 +177,7 @@ Once the details are filled, click on the **Download YAML File** button to get t
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Oracle-OpenTelemetry/Oracle-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
 
-### Step 3: Send logs to Sumo
+### Step 3: Send logs to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
@@ -263,7 +283,7 @@ This sample Query is from the **Oracle - Overview** dashboard > **DB Connection*
 | count as %"ConnectionCount"
 ```
 
-## Viewing Oracle Dashboards
+## Viewing Oracle dashboards
 
 ### Overview
 

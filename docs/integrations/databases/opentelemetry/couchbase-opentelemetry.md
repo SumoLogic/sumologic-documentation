@@ -2,7 +2,7 @@
 id: couchbase-opentelemetry
 title: Couchbase - OpenTelemetry Collector
 sidebar_label: Couchbase - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Couchbase.
+description: Learn about the Sumo Logic OpenTelemetry app for Couchbase.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -30,9 +30,29 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 * `deployment.environment`. User configured. Through this Couchbase cluster is identified by the environment where it resides. For example: dev, prod or qa.
 * `sumo.datasource`. Has a fixed value of `couchbase`.
 
-### Prerequisite
+## Prerequisite
 
 By default, the Couchbase will write the log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/opt/couchbase/var/lib/couchbase/logs`. By default, the Audit log is disabled, you must enable the audit log following these [instructions](https://docs.couchbase.com/server/current/manage/manage-security/manage-auditing.html). Query log, error log, the access log will be enabled by default.
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 
