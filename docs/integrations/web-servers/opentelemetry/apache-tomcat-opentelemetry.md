@@ -2,7 +2,7 @@
 id: apache-tomcat-opentelemetry
 title: Apache Tomcat - OpenTelemetry Collector
 sidebar_label: Apache Tomcat - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Apache Tomcat.
+description: Learn about the Sumo Logic OpenTelemetry app for Apache Tomcat.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/apache-tomcat.png')} alt="Thumbnail icon" width="65"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The [Apache Tomcat](https://tomcat.apache.org/tomcat-8.5-doc/index.html) app is a logs app that helps you get insight into visitor locations, traffic patterns, errors, resource utilization, garbage collection, web server operations and access from known malicious sources.
+The [Apache Tomcat](https://tomcat.apache.org/tomcat-8.5-doc/index.html) app is a logs app that helps you get insight into visitor locations, traffic patterns, errors, resource utilization, garbage collection, web server operations, and access from known malicious sources.
 
 Tomcat logs are sent to Sumo Logic through Opentelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
@@ -25,15 +25,35 @@ The following are the [Fields](/docs/manage/fields) that will be created as part
 - `webengine.system`. Has a fixed value of **tomcat**.
 - `sumo.datasource`. Has a fixed value of **tomcat**.
 
-## Prerequisites
+### Prerequisites
 
-The Sumo Logic App for Apache Tomcat uses three types of logs:
+The Sumo Logic app for Apache Tomcat uses three types of logs:
 
 1. Tomcat Access logs. [Log format description](https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html). Recommended pattern used is pattern="common".
 2. Tomcat Catalina.out logs. [Log format description](https://docs.oracle.com/javase/8/docs/api/java/util/logging/SimpleFormatter.html)
 3. Tomcat Garbage Collection (GC) logs. [Log format description](https://stackoverflow.com/questions/4468546/explanation-of-tomcat-gc-log-statements)
 
 By default, Tomcat logs are stored in `/usr/share/tomcat/logs/` The default directory for log files is listed in the `/usr/share/tomcat/conf/logging.properties` file.
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 
@@ -61,7 +81,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
@@ -155,7 +175,7 @@ Dec 13, 2022 03:53:03 PM org.apache.catalina.startup.Catalina start INFO: Server
 | transpose row _timeslice column component
 ```
 
-## Viewing Tomcat Dashboards
+## Viewing Tomcat dashboards
 
 ### Overview
 
@@ -163,7 +183,7 @@ The **Apache Tomcat - Overview** Dashboard provides a high-level view of informa
 
 Use this dashboard to:
 
-- Analyze http request about status code
+- Analyze http request about status code.
 - Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
 - Gain insights into Client, Server Responses on Tomcat Server. This helps you identify errors in Tomcat Server.
 

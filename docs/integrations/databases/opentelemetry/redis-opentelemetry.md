@@ -2,7 +2,7 @@
 id: redis-opentelemetry
 title: Redis - OpenTelemetry Collector
 sidebar_label: Redis - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Redis.
+description: Learn about the Sumo Logic OpenTelemetry app for Redis.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 [Redis](https://redis.io/docs/about/) is an in-memory data structure that implements a distributed, in-memory key-value database with durability options.
 
-The Sumo Logic App for Redis helps you monitor the Redis database cluster. The preconfigured dashboards provide detailed analysis based on logs. The panels provide details such as RDBMemory Usage, events, RDB, and AOF events.
+The Sumo Logic app for Redis helps you monitor the Redis database cluster. The preconfigured dashboards provide detailed analysis based on logs. The panels provide details such as RDBMemory Usage, events, RDB, and AOF events.
 
 Redis logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
@@ -45,6 +45,10 @@ Follow the instructions to set up log collection:
 1. Save the `redis.conf` file and restart the Redis server using the command: `sudo service redis-server restart`.
 
 Once the logs are configured to write to a local file, follow the steps below to configure the collection in Sumo Logic.
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
 
 ## Collection configuration and app installation
 
@@ -156,7 +160,7 @@ db.cluster.name=* sumo.datasource="redis"
 | fields message
 ```
 
-## Viewing Redis Dashboards
+## Viewing Redis dashboards
 
 ### Logs
 

@@ -2,7 +2,7 @@
 id: squid-proxy-opentelemetry
 title: Squid Proxy - OpenTelemetry Collector
 sidebar_label: Squid Proxy - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Squid Proxy.
+description: Learn about the Sumo Logic OpenTelemetry app for Squid Proxy.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,10 +17,6 @@ Squid logs are sent to Sumo Logic through OpenTtelemetry [filelog receiver](http
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Schematics.png' alt="Schematics" />
 
-## Prerequisites
-
-By default, the squid proxy will write the access log to the log directory that was configured during installation. For example, on Linux, the default log directory is `/var/log/squid/access.log`. If the access log is disabled then you must enable the access log by following these [instructions](https://wiki.squid-cache.org/SquidFaq/SquidLogs).
-
 ## Fields creation in Sumo Logic for Squid
 
 Following are the [Fields](/docs/manage/fields/) which will be created as part of Squid App install if not already present:
@@ -28,6 +24,30 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 - `webengine.cluster.name`. User configured. Enter a name to identify this Squid cluster. This cluster name will be shown in the Sumo Logic dashboards.
 - `webengine.system`. Has a fixed value of **squidproxy**.
 - `sumo.datasource`. Has a fixed value of **squidproxy**.
+
+## Prerequisites
+
+By default, the squid proxy will write the access log to the log directory that was configured during installation. For example, on Linux, the default log directory is `/var/log/squid/access.log`. If the access log is disabled, you must enable the access log by following [these instructions](https://wiki.squid-cache.org/SquidFaq/SquidLogs).
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 
@@ -55,7 +75,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-## Step 3: Send logs to Sumo
+## Step 3: Send logs to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
@@ -149,27 +169,27 @@ This sample Query is from the **Squid Proxy - HTTP Response Analysis** > **URLs 
 | sort by status_code, eventCount, url
 ```
 
-## Viewing Squid Dashboards
+## Viewing Squid dashboards
 
-### Squid Proxy - Overview
+### Overview
 
 The **Squid Proxy - Overview** Dashboard provides an at-a-glance view of the activity and health of the SquidProxy clusters and servers by destination locations, error and denied requests, URLs accessed.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Overview.png' alt="Overview" />
 
-### Squid Proxy - Activity Trend
+### Activity Trend
 
-**Squid Proxy - Activity Trend** dashboard provides trends around denied request trend, action trend, time spent to serve, success and non-success response, remote hosts.
+the **Squid Proxy - Activity Trend** dashboard provides trends around denied request trend, action trend, time spent to serve, success and non-success response, remote hosts.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-Activity-Trend.png' alt="Activity Trend" />
 
-### Squid Proxy - HTTP Response Analysis
+### HTTP Response Analysis
 
-**The Squid Proxy - HTTP Response Analysis** dashboard provides insights into HTTP response, HTTP code, the number of client errors, server errors, redirections outlier, URLs experiencing server errors.
+The **The Squid Proxy - HTTP Response Analysis** dashboard provides insights into HTTP response, HTTP code, the number of client errors, server errors, redirections outlier, URLs experiencing server errors.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Squid-Proxy-OpenTelemetry/Squid-Proxy-HTTP-Response-Analysis.png' alt="HTTP Response Analysis" />
 
-### Squid Proxy - Quality of Service
+### Quality of Service
 
 The **Squid Proxy - Quality of Service** dashboard provides insights into latency, the response time of requests according to HTTP action, and the response time according to location.
 

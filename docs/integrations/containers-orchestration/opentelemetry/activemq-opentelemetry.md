@@ -13,7 +13,6 @@ import TabItem from '@theme/TabItem';
 
 The **ActiveMQ** app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your ActiveMQ messaging clusters. Preconfigured dashboards provide insight into cluster status, nodes, producers, consumers, destinations, resource utilization, message rates, and error logs.
 
-
 We use the OpenTelemetry collector for ActiveMQ metrics and logs collection.
 
 The diagram below illustrates the components of the ActiveMQ collection for each ActiveMQ broker node. OpenTelemetry collector runs on the same host as ActiveMQ broker, and uses the [JMX Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver) to obtain ActiveMQ metrics, and the [Sumo Logic OpenTelemetry Exporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/sumologicexporter) to send the metrics to Sumo Logic. ActiveMQ logs are sent to Sumo Logic through a [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
@@ -24,7 +23,7 @@ This app has been tested with following ActiveMQ versions:
   * 5.17.4
   * 5.18.2
 
-## Log types and metrics
+## Log and metrics types
 
 The Sumo Logic App for ActiveMQ assumes:
 
@@ -56,43 +55,50 @@ If process metrics are enabled it will also create [fields for JMX metrics](/doc
 
 ## Prerequisites
 
-#### Configure logging in ActiveMQ:
+### Configure logging in ActiveMQ:
 
-  1. By default, ActiveMQ logs (`audit.log` and `activemq.log`) are stored in the directory called `${ACTIVEMQ_HOME}/data/activemq.log`. Make a note of this logs directory.
-
-  2. [Enable auditing](https://activemq.apache.org/audit-logging) if not enabled by default.
-
+1. By default, ActiveMQ logs (`audit.log` and `activemq.log`) are stored in the directory called `${ACTIVEMQ_HOME}/data/activemq.log`. Make a note of this logs directory.
+1. [Enable auditing](https://activemq.apache.org/audit-logging) if not enabled by default.
      `ACTIVEMQ_OPTS="$ACTIVEMQ_OPTS -Dorg.apache.activemq.audit=true"`
-
-  3. Ensure that below log formats are present in [logging configuration](https://activemq.apache.org/how-do-i-change-the-logging). Also make sure appropriate log level is set.
-
-      * [Audit Logs](https://activemq.apache.org/audit-logging):
-
+1. Ensure that below log formats are present in [logging configuration](https://activemq.apache.org/how-do-i-change-the-logging). Also make sure appropriate log level is set.
+  * [Audit Logs](https://activemq.apache.org/audit-logging):
         `appender.auditlog.layout.pattern=%d | %-5p | %m | %t%n`
-
-      * ActiveMQ Logs:
-
+  * ActiveMQ Logs:
         `appender.logfile.layout.pattern=%d | %-5p | %m | %c | %t%n%throwable{full}`
 
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
 
+<LogsCollectionPrereqisites/>
 
-#### Configure metrics in ActiveMQ:
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
 
-  1. Follow the instructions in [JMX - OpenTelemetry's prerequisites section](/docs/integrations/app-development/opentelemetry/jmx-opentelemetry#prerequisites) to download the [JMX Metric Gatherer](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/README.md) used by the [JMX Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
+### Configure metrics in ActiveMQ
 
-  2. Enable reads metrics from ActiveMQ servers via the [JMX MBeans](https://activemq.apache.org/jmx) by setting `useJmx="true"` in file config [ActiveMQ.xml](https://activemq.apache.org/xml-configuration.html)
-       ```xml
+1. Follow the instructions in [JMX - OpenTelemetry's prerequisites section](/docs/integrations/app-development/opentelemetry/jmx-opentelemetry#prerequisites) to download the [JMX Metric Gatherer](https://github.com/open-telemetry/opentelemetry-java-contrib/blob/main/jmx-metrics/README.md) used by the [JMX Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/jmxreceiver#details).
+1. Enable reads metrics from ActiveMQ servers via the [JMX MBeans](https://activemq.apache.org/jmx) by setting `useJmx="true"` in file config [ActiveMQ.xml](https://activemq.apache.org/xml-configuration.html)
+   ```xml
        <broker useJmx="true" brokerName="BROKER1">
        ...
        </broker>
-       ```
-
-  3. Set the JMX port by changing the `ACTIVEMQ_SUNJMX_START` parameter. Usually it is set in `/opt/activemq/bin/env` or `C:\Program Files\apache-activemq\bin\activemq.bat` file.
-
-      ```
-      ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=11099 -Dcom.sun.management.jmxremote.ssl=false  -Dcom.sun.management.jmxremote.password.file=${ACTIVEMQ_CONF_DIR}/jmx.password -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_CONF_DIR}/jmx.access"
-      ```
+   ```
+1. Set the JMX port by changing the `ACTIVEMQ_SUNJMX_START` parameter. Usually it is set in `/opt/activemq/bin/env` or `C:\Program Files\apache-activemq\bin\activemq.bat` file.
+   ```
+   ACTIVEMQ_SUNJMX_START="$ACTIVEMQ_SUNJMX_START -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=11099 -Dcom.sun.management.jmxremote.ssl=false  -Dcom.sun.management.jmxremote.password.file=${ACTIVEMQ_CONF_DIR}/jmx.password -Dcom.sun.management.jmxremote.access.file=${ACTIVEMQ_CONF_DIR}/jmx.access"
+   ```
 
 ## Collection configuration and app installation
 
@@ -125,8 +131,6 @@ Below is the input required:
 - **ActiveMQ process name**. Enter the ActiveMQ process name.It will be used for filtering process metrics based on process name.
 - **Fields**. `messaging.cluster.name` User configured. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-
-
 Click on the **Download YAML File** button to get the YAML file.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/ActiveMQ-OpenTelemetry/ActiveMQ-OTEL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
@@ -151,31 +155,34 @@ import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
 <TabItem value="Linux">
 
-1.  Copy the YAML to the`/etc/otelcol-sumo/conf.d/` folder for the ActiveMQ instance which needs to be monitored.
-2.  Restart the collector using:
-  ```sh
+1. Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the ActiveMQ instance that needs to be monitored.
+1. Restart the collector using:
+  ```
   sudo systemctl restart otelcol-sumo
   ```
 
 </TabItem>
+
 <TabItem value="Windows">
 
-1.  Copy the YAML to the `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
-2.  Restart the collector using:
-  ```sh
+1. Copy the YAML file to `C:\ProgramData\Sumo Logic\OpenTelemetry Collector\config\conf.d` folder in the machine which needs to be monitored.
+1. Restart the collector using:
+  ```
   Restart-Service -Name OtelcolSumo
   ```
 
 </TabItem>
+
 <TabItem value="macOS">
 
-1.  Copy the YAML to the `/etc/otelcol-sumo/conf.d/` folder in the ActiveMQ instance which needs to be monitored.
-2.  Restart the `otelcol-sumo` process using the below command:
-  ```sh
+1. Copy the YAML file to `/etc/otelcol-sumo/conf.d/` folder in the ActiveMQ instance which needs to be monitored.
+1. Restart the `otelcol-sumo` process using the below command:
+  ```
   otelcol-sumo --config /etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
   ```
 
 </TabItem>
+
 <TabItem value="Chef">
 
 import ChefEnv from '../../../reuse/apps/opentelemetry/chef-with-env.md';
@@ -199,6 +206,7 @@ import PuppetEnv from '../../../reuse/apps/opentelemetry/puppet-with-env.md';
 <PuppetEnv/>
 
 </TabItem>
+
 </Tabs>
 
 import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';

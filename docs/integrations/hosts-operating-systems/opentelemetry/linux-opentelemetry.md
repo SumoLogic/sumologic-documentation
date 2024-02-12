@@ -27,6 +27,28 @@ Following are the [fields](/docs/manage/fields) that will be created as part of 
 
 - **`sumo.datasource`** - has a fixed value of **linux**.
 
+## Prereqisites
+This app is based on the following log files from the Ubuntu Linux machine.
+
+- auth.log
+- syslog
+- daemon.log
+- dpkg.log
+- kern.log
+- CentOS, Amazon Linux, and Red Hat
+- audit/audit.log
+- secure
+- messages
+- yum.log
+
+:::note
+If you've already configured collection of these log files (for example, during Linux or Linux - PCI app setup), then no additional log file collection is required. If any log files are missing, you can configure the missing file collection in the next step.
+:::
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
 ## Collection configuration and app installation
 
 :::note
