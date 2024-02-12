@@ -186,7 +186,7 @@ If you do not want the `SumoCWSpilloverAlarm` alarm to be created, remove the de
 After few minutes you will see `CREATE_COMPLETE` in the Status column.
 
 :::note
-This solution only ingests log messages to sumo logic. If you want to include log levels (such as INFO, DEBUG,etc) to sumo logic, please find and update the regex in [lambda code](https://github.com/SumoLogic/sumologic-aws-lambda/blob/main/cloudwatchlogs-with-dlq/cloudwatchlogs_lambda.js#L14) deployed in your AWS account with 
+This solution only ingests log messages to Sumo Logic. If you want to include log levels (such as INFO, DEBUG, etc.) to Sumo Logic, find and update the regex in [Lambda code](https://github.com/SumoLogic/sumologic-aws-lambda/blob/main/cloudwatchlogs-with-dlq/cloudwatchlogs_lambda.js#L14) deployed in your AWS account with 
 <br/>`var consoleFormatRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z\s(\w+?-\w+?-\w+?-\w+?-\w+)\s/;`
 :::
 
