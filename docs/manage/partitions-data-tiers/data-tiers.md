@@ -44,7 +44,7 @@ All the data that is ingested into Sumo goes to the Continuous Tier, if no other
 When planning your use of Data Tiers, it is important to remember the following guidelines:
 
 * The General Index cannot be changed, and it is always in the Continuous Tier.
-* The tier you assign your data to governs how you can search and analyze the data. The table below shows capabilities that are available in each tier. 
+* The tier you assign your data to governs how you can search and analyze the data. The table below shows capabilities that are available in each tier.
 
 The amount of data you can ingest to the Frequent or Infrequent Tier is defined by your Sumo account plan. For more information, contact your Sumo Account Representative.
 
