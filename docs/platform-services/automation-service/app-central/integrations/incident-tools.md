@@ -6,8 +6,8 @@ tags: [cloud soar integrations]
 
 ![](/img/platform-services/automation-service/app-central/logos/incident-tools.png)
 
-Version: 1.4  
-Updated: Dec 14, 2023
+Version: 1.5  
+Updated: Feb 13, 2024
 
 :::sumo Cloud SOAR
 This integration is for Cloud SOAR only
