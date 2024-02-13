@@ -9,7 +9,7 @@ tags: []
 Version: 1.1  
 Updated: Jul 11, 2023
 
-Intisight Threat Intelligence Platform.
+Intsight Threat Intelligence Platform.
 
 ## Actions
 
