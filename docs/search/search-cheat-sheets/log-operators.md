@@ -514,7 +514,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><a href="/docs/search/search-query-language/search-operators/sessionize">sessionize</a></td>
    <td>The sessionize operator allows you to use an extracted value from one log message (generated from one system) to find correlating values in log messages from other systems. After you run Sessionize, these related events are displayed on the same page. The thread of logs woven together is called a session.</td>
    <td></td>
-   <td>Not supported in Auto Refresh Dashboards or any continuous query.</td>
+   <td>Not supported in auto refresh dashboards or any continuous query.</td>
    <td>Full query example:<br/><code>(SearchServiceImpl Creating Query) or (Stream SessionId using searchSessionId) or (Started search with sessionId)<br/>| sessionize "session: '*', streamSessionID: '*'" as (serviceSessionId, streamSessionId),<br/>"Stream SessionId=$streamSessionId using searchSessionId=* and rawSessionId=*" as (searchSessionId, rawSessionId),<br/>"Started search with sessionId: $searchSessionId, customerId: *, query: *" as (customerId, query)</code></td>
   </tr>
   <tr>
