@@ -111,7 +111,7 @@ Instead, use separate steps:
    <td><a href="/docs/search/search-query-language/group-aggregate-operators/first-last">first and last</a></td>
    <td>First finds the earliest occurrence in search results, and last finds the result that follows all others, based on the sort order for the query.</td>
    <td>_first<br/>_last</td>
-   <td>Not supported in Auto Refresh Dashboards or any continuous query.</td>
+   <td>Not supported in auto refresh dashboards or any continuous query.</td>
    <td><code>| sort by _timeslice<br/>| first(error_message) by hostname</code></td>
   </tr>
   <tr>
