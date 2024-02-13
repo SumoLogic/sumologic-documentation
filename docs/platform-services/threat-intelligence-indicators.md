@@ -147,7 +147,7 @@ Since different sources can report different reputations, each source has a repu
 
 Previously, you could [create custom threat intelligence sources using Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). You can no longer create custom sources using Cloud SIEM, but you must use the Threat Intelligence tab, a collector, or the API to [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators).
 
-If you have indicators in Cloud SIEM that you want to continue using, you must re-ingest them from the source that you orginally used to place the custom sources in Cloud SIEM. Once ingested, the indicators will appear in the [Threat Intelligence tab](#threat-intelligence-tab) and be available for use in both Cloud SIEM as well as the Sumo Logic Log Analytics Platform. 
+If you have indicators in Cloud SIEM that you want to continue using, you must re-ingest them from the source that you originally used to place the custom sources in Cloud SIEM. Once ingested, the indicators will appear in the [Threat Intelligence tab](#threat-intelligence-tab) and be available for use in both Cloud SIEM as well as the Sumo Logic Log Analytics Platform. 
 
 ## Upload formats
 
