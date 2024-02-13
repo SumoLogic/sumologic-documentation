@@ -73,7 +73,7 @@ The following table provides a summary list of key features by Sumo Logic Cloud 
 
 ## Account Page
 
-The **Account Overview** tab of the  **Account** page for Cloud Flex Credits displays information about your Sumo Logic organization, account type, contract and billing periods, number of credits you've used, as well as auto refresh dashboards and real time alerts. The account owner can reassign the Account Owner role from this page.
+The **Account Overview** tab of the **Account** page for Cloud Flex Credits displays information about your Sumo Logic organization, account type, contract and billing periods, number of credits you've used, as well as auto refresh dashboards and real time alerts. The account owner can reassign the Account Owner role from this page.
 
 :::note
 This page is strictly access controlled. You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
