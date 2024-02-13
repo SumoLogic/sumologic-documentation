@@ -5,10 +5,10 @@ description: Data Tiers provide the ability to allocate data to different storag
 ---
 
 
-This page describes Sumo Logic's Data Tiers feature. For related information, see [Data Tiers FAQs](data-tiers-faqs.md).
+This page describes Sumo Logic's Data Tiers feature.
 
-:::note
-The Continuous Data Tier is available in all Sumo subscriptions. Frequent and Infrequent are available only if you have Sumo Logic Enterprise Suite. 
+:::tip
+For related information, see [Data Tiers FAQs](data-tiers-faqs.md).
 :::
 
 Modern enterprises collect and analyze vast amounts of data for a variety of use cases. Sumo Logic customers use ingested data to monitor operations, troubleshoot problems, to understand and better serve customers, to ensure security, and more. 
@@ -37,16 +37,20 @@ import FlexTier from '../../reuse/flex-tier.md';
 
 <FlexTier/>
 
+:::note
+Frequent and Infrequent Tiers are available only for Sumo Logic Enterprise Suite plans. Continuous Data Tier is available for all Sumo Logic subscriptions.
+:::
+
 ## Planning your use of Data Tiers 
 
-All the data that is ingested into Sumo goes to the Continuous Tier, if no other tier has been specified. Only data that goes to a partition can go to the Frequent or Infrequent tiers. You configure the target tier for the data in a partition on the Partition page.
+If you do not specify a data tier, all data ingested into Sumo Logic will go to the Continuous Tier. Only data that goes to a partition can go to the Frequent or Infrequent Tiers. You'll need to configure the target tier for the data in a partition on the **Partition** page.
 
 When planning your use of Data Tiers, it is important to remember the following guidelines:
 
 * The General Index cannot be changed, and it is always in the Continuous Tier.
-* The tier you assign your data to governs how you can search and analyze the data. The table below shows capabilities that are available in each tier.
+* The tier where you assign your data governs how you can search and analyze the data. The table below shows capabilities that are available in each tier. 
 
-The amount of data you can ingest to the Frequent or Infrequent Tier is defined by your Sumo account plan. For more information, contact your Sumo Account Representative.
+The amount of data you can ingest to the Frequent or Infrequent Tier is defined by your Sumo Logic account plan. For more information, contact your Sumo Logic account representative.
 
 :::note
 After a partition is created in a given tier, you can't change its tier. If you decide the data should be in a different tier, you must decommission the partition and create a new one.
@@ -81,11 +85,11 @@ Choosing between Frequent and Infrequent for a data set depends on how frequentl
 
 For example, for a large development team with hundreds of developers, it is better to send development and test logs to the Frequent Tier if your developers are going to access it often during development. 
 
-In contrast, debug or other verbose log sources that are only used to troubleshoot very specific issues that occur infrequently, for example, only a couple of times a week, are better off in the Infrequent tier to keep the cost of ownership low.  
+In contrast, debug or other verbose log sources that are only used to troubleshoot very specific issues that occur infrequently, for example, only a couple of times a week, are better off in the Infrequent Tier to keep the cost of ownership low.  
 
 ## Assigning data to a Data Tier
 
-You assign data to a Data Tier at the partition level. When you create a partition, you define a routing expression and select the target tier for the data that matches the routing expression. For instructions, see [Add a Partition](/docs/manage/partitions-data-tiers/create-edit-partition.md).
+You assign data to a Data Tier at the partition level. When you create a partition, you define a routing expression and select the target tier for the data that matches the routing expression. For instructions, see [Create a Partition](/docs/manage/partitions-data-tiers/create-edit-partition).
 
 ## Searching Data Tiers 
 
@@ -95,16 +99,5 @@ For information about searching data tiers, see [Searching Data Tiers](searchin
 
 This section describes the most common error messages for Data Tiers.
 
-* If you try to add a panel to a dashboard that uses data from the Frequent or Infrequent tiers, you receive the following error message, because you can only use data from the Continuous Tier in a dashboard:
-
-    ```
-    This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.
-    ```
-
-    ![create-panel.png](/img/partitions-data-tiers/no-dashboard-support.png)    
-
-* If you try to specify the scope of a Scheduled View or a Scheduled Search using a partition in the Frequent or Infrequent Data tiers, you receive this error message:
-
-    ```
-    This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.
-    ```
+* If you try to add a panel to a dashboard that uses data from the Frequent or Infrequent Tiers, you'll receive the following error message, because you can only use data from the Continuous Tier in a dashboard: `This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.`<br/>![create-panel.png](/img/partitions-data-tiers/no-dashboard-support.png)    
+* If you try to specify the scope of a Scheduled View or a Scheduled Search using a partition in the Frequent or Infrequent Data tiers, you'll receive this error message: `This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.`

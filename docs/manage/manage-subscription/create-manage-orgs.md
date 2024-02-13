@@ -72,9 +72,9 @@ After you create a child org, you can’t delete it.
       * **Plan Type**. Select your organization's plan type. 
 1. Click **Allocate Credits**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/credits-calculator.png')} alt="calculator" width="450" /> 
 1. Enter the following:
-      * **Continuous Tier**. Enter estimated daily ingestion to the Continuous tier.
-      * **Frequent Tier.** Enter estimated daily ingestion to the Frequent tier.
-      * **Infrequent Tier.** Enter estimated daily ingestion to the Infrequent tier.
+      * **Continuous Tier**. Enter estimated daily ingestion to the Continuous Tier.
+      * **Frequent Tier.** Enter estimated daily ingestion to the Frequent Tier.
+      * **Infrequent Tier.** Enter estimated daily ingestion to the Infrequent Tier.
       * **Metrics**. Enter estimated daily metric data points per minute (DPM) ingestion.
       * **Tracing**. Enter estimated daily ingestion of traces.
 1. **Cloud SIEM**. Click the checkbox to enable Cloud SIEM.
@@ -115,15 +115,15 @@ This section has information about how you can monitor credit allocations and co
 
 You can view the aggreagte usage for all child orgs across usage category in the **Overall Usage** tab on the **Account Overview** page. Usage for the following categories is shown:
 
-* **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
-* **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
-* **Infrequent Ingest**. Credits used for logs ingested into the Infrequent tier.
-* **Infrequent Scan**. Credits used to scan data for Infrequent tier searches.
+* **Continuous Ingest**. Credits used for logs ingested into the Continuous Tier.
+* **Frequent Ingest**. Credits used for logs ingested into the Frequent Tier.
+* **Infrequent Ingest**. Credits used for logs ingested into the Infrequent Tier.
+* **Infrequent Scan**. Credits used to scan data for Infrequent Tier searches.
 * **Tracing Ingest**. Credits used for traces ingested.
 * **Metrics Ingest**. Credits used for metrics ingested.
-* **Storage**. Credits used for log storage in the Continuous and Frequent tiers.
+* **Storage**. Credits used for log storage in the Continuous and Frequent Tiers.
 * **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
-* **Infrequent Storage**. Credits used for log storage in the Infrequent tier.
+* **Infrequent Storage**. Credits used for log storage in the Infrequent Tier.
 * **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage).
 
 By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking **Download Detailed Credit Usages** from the kebab icon next to the Download Report button.
@@ -146,15 +146,15 @@ By clicking the **Download Report** button, you can download the child org usage
 
 By clicking any of the selected child orgs, a side panel opens up in which you can view the individual usage for the following categories:
 
-* **Continuous Ingest**. Credits used for logs ingested into the Continuous tier for the selected child org.
-* **Frequent Ingest**. Credits used for logs ingested into the Frequent tier for the selected child org.
-* **Infrequent Ingest**. Credits used for logs ingested into the Infrequent tier for the selected child org.
-* **Infrequent Scan**. Credits used to scan data for Infrequent tier searches.
+* **Continuous Ingest**. Credits used for logs ingested into the Continuous Tier for the selected child org.
+* **Frequent Ingest**. Credits used for logs ingested into the Frequent Tier for the selected child org.
+* **Infrequent Ingest**. Credits used for logs ingested into the Infrequent Tier for the selected child org.
+* **Infrequent Scan**. Credits used to scan data for Infrequent Tier searches.
 * **Tracing Ingest**. Credits used for traces ingested for the selected child org.
 * **Metrics Ingest**. Credits used for metrics ingested for the selected child org.
-* **Storage**. Credits used for log storage in the Continuous and Frequent tiers for the selected child org.
+* **Storage**. Credits used for log storage in the Continuous and Frequent Tiers for the selected child org.
 * **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM for the selected child org.
-* **Infrequent Storage**. Credits used for log storage in the Infrequent tier for the selected child org.
+* **Infrequent Storage**. Credits used for log storage in the Infrequent Tier for the selected child org.
 
 By clicking the **Download Report** button, you can download the selected child org usage data in csv format for further analysis and reporting.
 

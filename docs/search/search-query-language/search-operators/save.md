@@ -26,7 +26,7 @@ Where: 
 Be sure to specify the path to the table in in this format: `path://”<path-to-table>”`
 :::
 
-To determine the path to a lookup table, highlight the row for the table in the Sumo Logic Library, and select **Copy path to clipboard** from the three-dot more options menu for the table.
+To determine the path to a lookup table, highlight the row for the table in the Sumo Logic Library, and select **Copy path to clipboard** from the three-dot kebab menu for the table.
 
 ## Rules 
 
