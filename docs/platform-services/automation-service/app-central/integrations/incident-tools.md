@@ -52,3 +52,8 @@ Supervised Active Intelligence Automation
 	+ Changed API endpoint for resource testing
 	+ Improved error handling
 * December 14, 2023 (v1.4) - Added new action: Get Incident
+* February 13, 2024 (v1.5) - Fixed typo in the following actions
+    + Update Incident Date And Time Field
+    + Update Incident Description
+    + Update Incident Field
+    + Update Incident Fields
