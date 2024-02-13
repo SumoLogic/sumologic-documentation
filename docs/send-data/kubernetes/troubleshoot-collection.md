@@ -705,7 +705,7 @@ debug:
     enabled: true
     deployment:
       extraArgs:
-        - --print-logs  # print reveived events/logs on stdout  
+        - --print-logs  # print received events/logs on stdout  
         - --print-headers  # print headers on stdout
   events:
     # enable logs forwarding
