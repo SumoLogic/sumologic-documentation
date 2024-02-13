@@ -21,7 +21,7 @@ If your query supports basic mode, you can freely move between basic and advance
 
 ## Switch between Basic and Advanced Mode
 
-When you open a new Metrics tab, it is displayed in Basic Mode. You can switch to Advanced Mode by clicking the three-dot icon, and selecting **Advanced Mode**. When you are in Advanced Mode, you can switch back to Basic Mode from the same options menu.
+When you open a new Metrics tab, it is displayed in Basic Mode. You can switch to Advanced Mode by clicking the three-dot kebab icon, and selecting **Advanced Mode**. When you are in Advanced Mode, you can switch back to Basic Mode from the same options menu.
 
 If you use the Advanced Mode to build complex metrics, you can convert it to Basic Mode by selecting the option. If the query cannot support basic mode, you receive a message informing you "Your query cannot be switched to Basic Mode."
 
@@ -40,11 +40,11 @@ When converted, the filters convert allowing you to select and modify, make diff
 Effective January 2024, we're deprecated Classic Metrics (and Classic Dashboards) in favor of our newer [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) interface. No action is required on your part.
 :::
 
-If you prefer to use the Classic metrics UI, you can switch to it, and switch back the Metrics Explorer interface at any point. To switch to Classic metrics, click the three-dot icon near the upper right corner of the page and click **Switch to Classic Metrics**. 
+If you prefer to use the Classic metrics UI, you can switch to it, and switch back the Metrics Explorer interface at any point. To switch to Classic metrics, click the three-dot kebab icon near the upper right corner of the page and click **Switch to Classic Metrics**. 
 
 Not all of the features available in the Metrics Explorer are found in the Classic UI.
 
-You'll be asked to confirm your choice. Click **Switch to Classic UI** to proceed. After you switch to the Classic UI, you can return to the Metrics Explorer UI by clicking the three-dot icon again, and selecting **Switch to New Metrics**. While you are in the Classic UI, new metric tabs you open will display the Classic UI.
+You'll be asked to confirm your choice. Click **Switch to Classic UI** to proceed. After you switch to the Classic UI, you can return to the Metrics Explorer UI by clicking the three-dot kebab icon again, and selecting **Switch to New Metrics**. While you are in the Classic UI, new metric tabs you open will display the Classic UI.
 
 ![switch-to-classic.png](/img/metrics/confirm-switch-to-classic.png)
 
@@ -103,7 +103,7 @@ You can add or remove a column from the Time Series table using the checkbox nex
 
 ### Context menu
 
-When you mouse over a cell in the Time SeriesEC2 table, a three-dot icon appears. Click it to display a context menu.
+When you mouse over a cell in the Time SeriesEC2 table, a three-dot kebab icon appears. Click it to display a context menu.
 
 The context menu is available in both Basic and Advanced mode.
 
@@ -215,7 +215,7 @@ You can perform basic math operations (+, -, \*, /) on two or more metrics queri
 
 ![pre-join.png](/img/metrics/pre-join.png)
 
-To join the queries, add a third query row, and then switch to Advanced mode, by choosing **Advanced Mode** from the three-dot menu in that row.
+To join the queries, add a third query row, and then switch to Advanced mode, by choosing **Advanced Mode** from the three-dot kebab menu in that row.
 
 ![advanced.png](/img/metrics/advanced.png)
 
@@ -272,7 +272,7 @@ Below are some FAQs about the Metrics Explorer.
 
 ### What happens to the current metrics tab when the new Metrics Explorer comes out?
 
-The Metrics Explorer replaces the Classic metrics UI. If you’re not ready to switch to the Metrics Explorer, you continue to use the Classic UI until you are. The option for switching between Classic metrics and Metrics Explorer is on the three-dot menu at the top right of the page, next to the **Add to Dashboard** button.
+The Metrics Explorer replaces the Classic metrics UI. If you’re not ready to switch to the Metrics Explorer, you continue to use the Classic UI until you are. The option for switching between Classic metrics and Metrics Explorer is on the three-dot kebab menu at the top right of the page, next to the **Add to Dashboard** button.
 
 ### What value does Metrics Explorer provide?
 

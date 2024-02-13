@@ -6,6 +6,7 @@ description: Partitions speed the search process by allowing an Admin to filter 
 
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import PartitionPermissions from '../../reuse/partition-permissions.md';
 
 Creating a partition allows you to improve search performance by searching over a smaller number of messages. Use the Partitions page to set up and manage partitions. To access the Partitions page, go to **Manage Data** > **Logs** > **Partitions**.
 
@@ -27,7 +28,7 @@ You define the data that will reside in a partition by defining a routing expres
 
 ## Limitations 
 
-* To create and manage partitions, you must be an Admin or you must have the Manage Partitions [role capability](../users-roles/roles/role-capabilities.md). 
+* <PartitionPermissions/> 
 * There is a limit of 50 partitions per account. (This excludes [decommissioned partitions](decommission-partition.md).)
 * You can make the following edits to an existing partition:
    * You can change the routing expression, unless the partition is decommissioned.
