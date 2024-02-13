@@ -257,7 +257,7 @@ debug:
     enabled: true
     deployment:
       extraArgs:
-        - --print-logs  # print reveived logs on stdout  
+        - --print-logs  # print received logs on stdout  
         - --print-headers  # print headers on stdout
   logs:
     metadata:
