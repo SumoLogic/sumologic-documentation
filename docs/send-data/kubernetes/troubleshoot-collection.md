@@ -637,7 +637,7 @@ debug:
     enabled: true
     deployment:
       extraArgs:
-        - --print-spans    # print reveived spans on stdout  
+        - --print-spans    # print received spans on stdout  
         - --print-headers  # print headers on stdout
   instrumentation:
     tracesSampler:
