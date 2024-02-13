@@ -156,7 +156,7 @@ Another common reason to set up a local configuration is to pre-parse the conten
 To create a local configuration:
 
 1. Go to **Manage Data** > **Logs** > **Parsers**.
-1. In the System folder, navigate to the parser you want to modify and choose **Edit** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/three-dot kebab.png')} alt="three-dot" width="800"/>
+1. In the System folder, navigate to the parser you want to modify and choose **Edit** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/three-dot.png')} alt="three-dot kebab" width="800"/>
 1. The parser editor opens. The parser code is shown in the **System Configuration** area.<br/><img src={useBaseUrl('img/cse/system-parser-edit-button.png')} alt="System parser edit button" width="800"/>
 1. Paste your custom parser code in the **Local Configuration** area.
 1. Use one of the methods in **Get test messages** above, and then click **Parse Logs**.
