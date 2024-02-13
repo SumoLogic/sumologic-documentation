@@ -23,7 +23,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Our [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues. 
 
-This page will help you get to know the Sumo Logic user interface (UI).
+This page will help you get to know the new Sumo Logic user interface (UI), currently in beta and scheduled for general availability in late 2024.
+
+## Getting to the New UI
+
+Once you're logged in to Sumo Logic, go to the left navigation panel and click **Switch to the New UI**.
+
+<img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="350"/>
 
 ## Using the left navigation panel
 
