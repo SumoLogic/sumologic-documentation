@@ -1,1 +1,0 @@
-To create or edit a Partition, you must be an account Administrator or have the [Manage Partitions role capability](/docs/manage/users-roles/roles/role-capabilities). Partitions apply to data from the date they are created (going forward only), and do not include data before the date of their creation.

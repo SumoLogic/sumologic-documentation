@@ -5,23 +5,19 @@ description: Learn how to create and edit a Partition in an Index.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import PartitionPermissions from '../../reuse/partition-permissions.md';
 
 Partitions provide three primary functions:
 * Enhance performance
 * Enhance searches
 * Enhance retention options
 
-:::important
-
-<PartitionPermissions/>
-
-:::
-
 Partitions ingest your messages in real time, and differ from [Scheduled Views](/docs/manage/scheduled-views), which backfill with aggregate data. Partitions begin building a non-aggregate index from the time the Partition is created and only index data moving forward (from the time of creation).
 
 See [Partitions and Data Tiers](/docs/manage/partitions-data-tiers) for limitations.
 
+## Prerequisites
+
+To create or edit a Partition, you must be an account Administrator or have the [Manage Partitions role capability](/docs/manage/users-roles/roles/role-capabilities). It's important to note that Partitions only affect data generated from the date of their creation onwards; any data predating their establishment is not included.
 
 ## Partitions and Data Tiers
 
@@ -65,10 +61,6 @@ Overlapping data between two or more Partitions will count as additional ingest 
 ## Edit a partition
 
 This section has instructions for editing a partition.  
-
-:::important
-<PartitionPermissions/>
-:::
 
 When you create a partition, you specify the Data Tier where the partition will reside, a routing expression that determines what data is stored in the partition, and a retention period. Optionally, you can enable data forwarding of the partition’s data to an S3 bucket.  
 
