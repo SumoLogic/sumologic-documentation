@@ -597,7 +597,7 @@ module.exports = {
   manage: [
   {
     type: 'category',
-    label: 'Manage',
+    label: 'Manage Account',
     collapsible: true,
     collapsed: false,
     link: {type: 'doc', id: 'manage/index'},
