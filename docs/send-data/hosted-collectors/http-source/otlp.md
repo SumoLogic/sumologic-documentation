@@ -136,7 +136,7 @@ export OTEL_EXPORTER_OTLP_ENDPOINT=<source_url>
 | `forceTimeZone` | Boolean | No | False | Type `true` to force the Source to use a specific time zone, otherwise type `false` to use the time zone found in the logs. The default setting is false. | |
 | `cutoffTimestamp` | Long | No | 0 (collects all data) | Only collect data from files with a modified date more recent than this timestamp, specified as milliseconds since epoch. | |
 | `encoding` | String | No | UTF-8 | Defines the encoding form. Default is "UTF-8"; options include "UTF-16"; "UTF-16BE"; "UTF-16LE". | |
-| `messagePerRequest` | Boolean | Yes | | When set to `true`, only a single message will be sent for each HTTP request. To disable this feature, set to `false`.You need to specify the common parameter `multilineProcessingEnabled` as false when setting `messagePerRequest` to `true`. | |
+| `messagePerRequest` | Boolean | Yes | | When set to `true`, only a single message will be sent for each HTTP request. To disable this feature, set to `false`. You need to specify the common parameter `multilineProcessingEnabled` as false when setting `messagePerRequest` to `true`. | |
 | `sourcetype` | String | Yes | | HTTP source | |
 
 ### JSON example
