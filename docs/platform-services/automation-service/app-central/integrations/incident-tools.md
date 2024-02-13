@@ -6,8 +6,8 @@ tags: [cloud soar integrations]
 
 ![](/img/platform-services/automation-service/app-central/logos/incident-tools.png)
 
-Version: 1.4  
-Updated: Dec 14, 2023
+Version: 1.5  
+Updated: Feb 13, 2024
 
 :::sumo Cloud SOAR
 This integration is for Cloud SOAR only
@@ -52,3 +52,8 @@ Supervised Active Intelligence Automation
 	+ Changed API endpoint for resource testing
 	+ Improved error handling
 * December 14, 2023 (v1.4) - Added new action: Get Incident
+* February 13, 2024 (v1.5) - Fixed typo in the following actions
+    + Update Incident Date And Time Field
+    + Update Incident Description
+    + Update Incident Field
+    + Update Incident Fields

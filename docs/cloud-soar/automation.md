@@ -452,7 +452,7 @@ Before you can use the Slack integration in Cloud SOAR, you need to create a Sla
 1. Navigate to the [Slack API page](https://api.slack.com/apps). 
 1. Click **Create an App**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-add-app.png')} alt="Create a Slack app" width="800"/>
 1. Select **From scratch**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-from-scratch.png')} alt="Create a Slack app from scratch" width="400"/>
-1. Enter "CSOAR Bot" as the app name and select the workspace where you wish to install it.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-workspace-delivery2.png')} alt="Insert name and workspace for Slack app" style={{border: '1px solid black'}} width="400"/>
+1. Enter "CSOAR Bot" as the app name and select the workspace where you wish to install it.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-workspace-delivery2.png')} alt="Insert name and workspace for Slack app" style={{border: '1px solid gray'}} width="400"/>
 1. Click **Create App**. 
 
 ### Step 2: Add permissions to the Slack app
@@ -461,7 +461,7 @@ After you create a Slack app, you must add the appropriate permissions for use w
 
 1. Click **Permissions**, or from the left nav bar, click **OAuth & Permissions**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-permissions.png')} alt="Slack OAuth and Permissions" width="600"/>
 1. Scroll down to the **Scopes** section.<br/>You must add permissions for the Bot Token. Bot tokens let your app act independently.
-1. Click **Add an OAuth Scope** under **Bot Token Scopes**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-delivery2.png')} alt="Add an OAuth Scope in Slack" style={{border: '1px solid black'}} width="500"/>
+1. Click **Add an OAuth Scope** under **Bot Token Scopes**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-delivery2.png')} alt="Add an OAuth Scope in Slack" style={{border: '1px solid gray'}} width="500"/>
 1. Enter the following permissions.
    * **Actions: List Channels / Get Channel / Get Members**
       * `channels:read`. View basic information about public channels in a workspace.
@@ -487,14 +487,14 @@ After you create a Slack app, you must add the appropriate permissions for use w
    * **Actions: Send Message / Delete Message**
       * `chat:write`. Post messages in approved channels and conversations.
 1. Verify that scopes are set up correctly:
-   * Here are the Bot Token scopes after configuration:<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-bot-token-1-delivery2.png')} alt="Bot token 1" style={{border: '1px solid black'}} width="500"/>
+   * Here are the Bot Token scopes after configuration:<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-bot-token-1-delivery2.png')} alt="Bot token 1" style={{border: '1px solid gray'}} width="500"/>
 1. Place your instance URL in the **Interactivity & Shortcuts** page.
-<br/><img src={useBaseUrl('img/cloud-soar/integrations-interactivity-delivery2.png')} alt="Interactivity" style={{border: '1px solid black'}} width="600"/>
+<br/><img src={useBaseUrl('img/cloud-soar/integrations-interactivity-delivery2.png')} alt="Interactivity" style={{border: '1px solid gray'}} width="600"/>
 1. Click **Install to Workspace** to make the app available for use. 
 <br/><img src={useBaseUrl('img/cloud-soar/integration-slack-install-to-workspace.png')} alt="Install the app" width="600"/>
 1. Installation generates a Bot User OAuth Token and a Signing Secret. Copy the tokens and keep them in a secure location for use in the next step. 
-<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-oauth-token.png')} alt="Bot Oauth token" style={{border: '1px solid black'}} width="600"/>
-<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-signing-secret.png')} alt="Signing Secret" style={{border: '1px solid black'}} width="600"/>
+<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-oauth-token.png')} alt="Bot Oauth token" style={{border: '1px solid gray'}} width="600"/>
+<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-signing-secret.png')} alt="Signing Secret" style={{border: '1px solid gray'}} width="600"/>
 
 ### Step 3: Configure the Slack integration in Cloud SOAR
 
