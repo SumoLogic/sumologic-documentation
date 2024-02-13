@@ -27,9 +27,9 @@ This page will help you get to know the new Sumo Logic user interface (UI), curr
 
 ## Getting to the New UI
 
-Once you're logged in to Sumo Logic, go to the left navigation panel and click **Switch to the New UI**.
+Once you're logged in to Sumo Logic, go to the left navigation panel and click **Switch to New UI**.
 
-<img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="350"/>
+<img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="250"/>
 
 ## Using the left navigation panel
 
