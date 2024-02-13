@@ -538,7 +538,7 @@ debug:
     enabled: true
     deployment:
       extraArgs:
-        - --print-metrics  # print reveived metrics on stdout  
+        - --print-metrics  # print received metrics on stdout  
         - --print-headers  # print headers on stdout
   metrics:
     metadata:
