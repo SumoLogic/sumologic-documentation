@@ -1,6 +1,6 @@
 ---
 slug: /manage
-title: Manage Sumo Account
+title: Manage Account
 description: Manage user accounts, Collectors and Sources, security, SEO, and other administrative details.
 ---
 
