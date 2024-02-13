@@ -37,7 +37,7 @@ Frequent and Infrequent Tiers are available only for Sumo Logic Enterprise Suite
 
 ## Planning your use of Data Tiers 
 
-If you do not specify a data tier, all data ingested into Sumo Logic will go to the Continuous Tier. Only data that goes to a partition can go to the Frequent or Infrequent Tiers. You'll need to configure the target tier for the data in a partition on the Partition page.
+If you do not specify a data tier, all data ingested into Sumo Logic will go to the Continuous Tier. Only data that goes to a partition can go to the Frequent or Infrequent Tiers. You'll need to configure the target tier for the data in a partition on the **Partition** page.
 
 When planning your use of Data Tiers, it is important to remember the following guidelines:
 

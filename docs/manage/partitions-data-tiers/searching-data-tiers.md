@@ -42,8 +42,8 @@ Even though you don't have to use `_dataTier` when you are querying selected par
 
 | Example query	| Description |
 | :-- | :-- |
-| `error` | Searches all partitions in the Continuous Tier  for messages that contain the string “error”. |
-| `_dataTier=Frequent error` | Searches all partitions in the Frequent Tier  for messages that contain the string “error”. |
+| `error` | Searches all partitions in the Continuous Tier for messages that contain the string “error”. |
+| `_dataTier=Frequent error` | Searches all partitions in the Frequent Tier for messages that contain the string “error”. |
 | `_dataTier=All error` | Searches all partitions in all tiers for messages that contain the string “error”. |
 | `(_dataTier=Continuous OR _dataTier=Infrequent) error` | Searches all partitions in the Continuous and Infrequent Tier for messages that contain the string “error”. |
 | `_dataTier=Infrequent error` | Searches all the partitions in the Infrequent Tier for messages that contain the string “error”. |

@@ -262,7 +262,7 @@ To rename a pinned search:
 
 To remove a search from the pinned search List:
 
-1. Hover over the search, then click the three-dot kebabs to the right of the name.
+1. Hover over the search, then click the three-dot kebab menu icon to the right of the name.
 1. Click **Unpin**.  <br/> ![unpin.png](/img/get-started/library/unpin.png)
 1. In the **Confirm** dialog, click **OK**.
 
