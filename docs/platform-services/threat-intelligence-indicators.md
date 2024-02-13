@@ -193,7 +193,7 @@ If you have indicators in Cloud SIEM that you want to continue using past deprec
 
 Use the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) to view events for threat indicators, such as adding indicators, removing indicators, or changing the retention period.
 
-Ue a search like the following:
+Use a search like the following:
 
 ```
 _index=sumologic_audit_events _sourceCategory=threatIntelligence
