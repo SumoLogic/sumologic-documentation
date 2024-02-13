@@ -104,14 +104,14 @@ Instead, use separate steps:
    <td><a href="/docs/search/search-query-language/search-operators/fillmissing">fillmissing</a></td>
    <td>When you run a standard <a href="/docs/search/search-query-language/group-aggregate-operators">group-by</a> query, Sumo Logic only returns non-empty groups in the results. For example, if you are grouping by timeslice, then only the timeslices that have data are returned.<br/>This operator allows you to specify groups to present in the output, even if those groups have no data.</td>
    <td></td>
-   <td>Not supported in Live Dashboards or any continuous query.</td>
+   <td>Not supported in Auto Refresh Dashboards or any continuous query.</td>
    <td><code>error<br/>| count by _sourceCategory<br/>| fillmissing values("backend", "database", "webapp") in _sourceCategory</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/group-aggregate-operators/first-last">first and last</a></td>
    <td>First finds the earliest occurrence in search results, and last finds the result that follows all others, based on the sort order for the query.</td>
    <td>_first<br/>_last</td>
-   <td>Not supported in Live Dashboards or any continuous query.</td>
+   <td>Not supported in Auto Refresh Dashboards or any continuous query.</td>
    <td><code>| sort by _timeslice<br/>| first(error_message) by hostname</code></td>
   </tr>
   <tr>
@@ -514,7 +514,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><a href="/docs/search/search-query-language/search-operators/sessionize">sessionize</a></td>
    <td>The sessionize operator allows you to use an extracted value from one log message (generated from one system) to find correlating values in log messages from other systems. After you run Sessionize, these related events are displayed on the same page. The thread of logs woven together is called a session.</td>
    <td></td>
-   <td>Not supported in Live Dashboards or any continuous query.</td>
+   <td>Not supported in Auto Refresh Dashboards or any continuous query.</td>
    <td>Full query example:<br/><code>(SearchServiceImpl Creating Query) or (Stream SessionId using searchSessionId) or (Started search with sessionId)<br/>| sessionize "session: '*', streamSessionID: '*'" as (serviceSessionId, streamSessionId),<br/>"Stream SessionId=$streamSessionId using searchSessionId=* and rawSessionId=*" as (searchSessionId, rawSessionId),<br/>"Started search with sessionId: $searchSessionId, customerId: *, query: *" as (customerId, query)</code></td>
   </tr>
   <tr>
@@ -577,7 +577,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><a href="/docs/search/search-query-language/search-operators/trace">trace</a></td>
    <td>A trace operator acts as a highly sophisticated filter to connect the dots across different log messages. You can use any identifying value with a trace operator (such as a user ID, IP address, session ID, etc.) to retrieve a comprehensive set of activity associated to that original ID.</td>
    <td></td>
-   <td>Not supported in Live Dashboards or any continuous query.</td>
+   <td>Not supported in Auto Refresh Dashboards or any continuous query.</td>
    <td><code>| trace "ID=( [0-9a-fA-F] {4} )" "7F92"</code></td>
   </tr>
   <tr>
