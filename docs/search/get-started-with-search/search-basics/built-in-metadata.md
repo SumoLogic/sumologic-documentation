@@ -69,7 +69,7 @@ This table shows some examples and a description of each metadata type.
 
 In the **Messages** tab, each message displays its metadata tags:  
 
-<img src={useBaseUrl('img/search/get-started-search/search-basics/msg-with-metadata.png')} style={{border:'1px solid black'}} alt="msg-with-metadata" width="800"/>
+<img src={useBaseUrl('img/search/get-started-search/search-basics/msg-with-metadata.png')} style={{border:'1px solid gray'}} alt="msg-with-metadata" width="800"/>
 
 ## Search different values of a metadata field in the same query
 
