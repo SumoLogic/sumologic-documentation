@@ -185,6 +185,11 @@ If you do not want the `SumoCWSpilloverAlarm` alarm to be created, remove the de
 
 After few minutes you will see `CREATE_COMPLETE` in the Status column.
 
+:::note
+This solution only ingests log messages to Sumo Logic. If you want to include log levels (such as INFO, DEBUG, etc.) to Sumo Logic, find and update the regex in [Lambda code](https://github.com/SumoLogic/sumologic-aws-lambda/blob/main/cloudwatchlogs-with-dlq/cloudwatchlogs_lambda.js#L14) deployed in your AWS account with 
+<br/>`var consoleFormatRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z\s(\w+?-\w+?-\w+?-\w+?-\w+)\s/;`
+:::
+
 :::important
 If you're using an existing log group or if you don’t want to send logs to the default group **SumoCWLogGroup** then you must do one of the following:
 * [Manually subscribe the **SumoCWLogsLambda** to an existing CloudWatch Log Group](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs)
@@ -223,6 +228,16 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
     :::
     <br/><img src={useBaseUrl('img/send-data/create-destination.png')} style={{border: '1px solid gray'}} alt="create-destination" width="700"/>
 1. (Optional) In the **Test Pattern** section, select the log data to test, then click **Test pattern**. If test results look fine, then click **Start Streaming**.<br/><img src={useBaseUrl('img/send-data/test-pattern.png')} style={{border: '1px solid gray'}} alt="test-pattern" width="700"/>
+
+:::note
+Sample CloudWatch log ingested for Amazon RDS PostgreSQL using Lambda log forwarder with ```IncludeLogGroupInfo``` set to ```false``` . 
+```json 
+{
+    "timestamp":1705908605000,
+    "message":"2024-01-22 07:30:05 UTC::@:[561]:LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB"
+}
+```
+:::
 
 ### Auto-subscribe other log groups to SumoCWLogsLambda function
 

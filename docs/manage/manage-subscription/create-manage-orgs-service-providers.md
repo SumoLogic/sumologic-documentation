@@ -169,7 +169,7 @@ You can view the aggreagte usage for all child orgs across usage category in the
 
 By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking **Download Detailed Credit Usages** from the kebab icon next to the Download Report button.
 
-<img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" style={{border:'1px solid black'}} />
+<img src={useBaseUrl('img/subscriptions/account-overview-new.png')} alt="your description" style={{border:'1px solid gray'}} />
 
 ### View child credit usage by category
 
@@ -183,7 +183,7 @@ You can view the usage of individual child orgs in the **Child Orgs** tab on the
 
 By clicking the **Download Report** button, you can download the child org usage data in csv format for further analysis and reporting.
 
-<img src={useBaseUrl('img/subscriptions/child-org.png')} alt="your description" style={{border:'1px solid black'}} />
+<img src={useBaseUrl('img/subscriptions/child-org.png')} alt="your description" style={{border:'1px solid gray'}} />
 
 By clicking any of the selected child orgs, a side panel opens up in which you can view the individual usage for the following categories:
 
@@ -199,7 +199,7 @@ By clicking any of the selected child orgs, a side panel opens up in which you c
 
 By clicking the **Download Report** button, you can download the selected child org usage data in csv format for further analysis and reporting.
 
-<img src={useBaseUrl('img/subscriptions/child-credit-usage.png')} alt="your description" style={{border:'1px solid black'}} />
+<img src={useBaseUrl('img/subscriptions/child-credit-usage.png')} alt="your description" style={{border:'1px solid gray'}} />
 
 ## Access a child org
 
@@ -215,7 +215,7 @@ Your estimates of ingest capacity required for each product variable are called 
 
 1. Go to **Administration** > **Organizations**.
 1. Click the row for the org you want to check the baselines.
-1. Click **View the organization baselines here** at the bottom of the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/baselines_1.png')} alt="baselines_1" style={{border:'1px solid black'}}  width="450"/> <br/> <img src={useBaseUrl('img/subscriptions/baselines_2.png')} alt="baselines_2" style={{border:'1px solid black'}} width="450"/>
+1. Click **View the organization baselines here** at the bottom of the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/baselines_1.png')} alt="baselines_1" style={{border:'1px solid gray'}}  width="450"/> <br/> <img src={useBaseUrl('img/subscriptions/baselines_2.png')} alt="baselines_2" style={{border:'1px solid gray'}} width="450"/>
 
 ## Audit logging for organizations
 
