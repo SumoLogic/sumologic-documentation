@@ -6,7 +6,7 @@ description: Partitions speed the search process by allowing an Admin to filter 
 
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import PartitionPermissions from '../reuse/partition-permissions.md';
+import PartitionPermissions from '../../reuse/partition-permissions.md';
 
 Creating a partition allows you to improve search performance by searching over a smaller number of messages. Use the Partitions page to set up and manage partitions. To access the Partitions page, go to **Manage Data** > **Logs** > **Partitions**.
 
