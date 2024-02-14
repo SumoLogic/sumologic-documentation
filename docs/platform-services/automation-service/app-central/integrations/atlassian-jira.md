@@ -1,13 +1,13 @@
 ---
 title: Atlassian Jira
 description: ''
-tags: []
+tags: [ ]
 ---
 
 ![](/img/platform-services/automation-service/app-central/logos/atlassian-jira.png)
 
-Version: 1.5  
-Updated: Jan 10, 2024
+Version: 1.6  
+Updated: Feb 14, 2024
 
 This integration is built specifically for Jira OnPrem (Server and Data Center) and provides a range of issue management capabilities.
 
@@ -39,25 +39,27 @@ Ticketing System
 * April 5, 2021 - New actions added
 * June 3, 2021 - New action added
 * June 24, 2022 - New actions added:
-	+ Get Issue
-	+ Monitor Issue Status
+    + Get Issue
+    + Monitor Issue Status
 * August 02, 2022 - Updated action: Create Issue (update the description field to support the new line)
 * August 02, 2022 - New action added:
-	+ Get Issue Comments
+    + Get Issue Comments
 * January 24, 2023
-	+ added hint for Host
-	+ solved issue for which the integration test will throw an error if no value for timeout is provided
-	+ set the timeout field as not required
+    + added hint for Host
+    + solved issue for which the integration test will throw an error if no value for timeout is provided
+    + set the timeout field as not required
 * July 18, 2023 (v1.4) - Updated the integration with Environmental Variables
 * January 9, 2024 (v1.5)
-	+ New Logo
-	+ The following actions have been renamed:
-		- Add Comment To Issue: Add Comment
-		- Add Issue Attachments To Incident: Get Attachments
-		- Get Issue Comments: List Comments
-		- List Issue Fields: List Fields
-		- List Issue Status: List Statuses
-		- List Project: List Projects
-		- Search Into Issues Jira: Search
-		- Set Issue Status: Update Issue Status
-	+ Please note that this update introduces BREAKING CHANGES: both the output mapping and some input fields have been revised and updated.
+    + New Logo
+    + The following actions have been renamed:
+        - Add Comment To Issue: Add Comment
+        - Add Issue Attachments To Incident: Get Attachments
+        - Get Issue Comments: List Comments
+        - List Issue Fields: List Fields
+        - List Issue Status: List Statuses
+        - List Project: List Projects
+        - Search Into Issues Jira: Search
+        - Set Issue Status: Update Issue Status
+    + Please note that this update introduces BREAKING CHANGES: both the output mapping and some input fields have been revised and updated.
+* February 14, 2024
+    * Enhanced "Create Issue" and "Update Issue" actions to support Jira custom fields
