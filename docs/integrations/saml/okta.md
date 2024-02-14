@@ -2,21 +2,20 @@
 id: okta
 title: Okta
 sidebar_label: Okta
-description: The Sumo Logic App for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta.
+description: The Sumo Logic app for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Thumbnail icon" width="75"/>
 
-Okta provides secure connections between people and your applications on any device through identity management service built for the cloud. The Sumo Logic App for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta. The App consists of dashboards that give you visibility into the applications, accesses, user events, and Multi-Factor Authentication (MFA).
+Okta provides secure connections between people and your applications on any device through identity management service built for the cloud. The Sumo Logic app for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta. The app consists of dashboards that give you visibility into the applications, accesses, user events, and Multi-Factor Authentication (MFA).
 
-## Log Types and Versions
+## Log types and versions
 
-The Sumo Logic Collector uses Okta System Log API to get the logs of Okta System. The log types include authentication, events, and actions. For more information on the Okta log API, see [here](https://developer.okta.com/docs/api/resources/system_log.html).
+The Sumo Logic collector uses Okta System Log API to get the logs of Okta System. The log types include authentication, events, and actions. For more information on the Okta log API, see [here](https://developer.okta.com/docs/api/resources/system_log.html).
 
-
-### Sample Log message
+### Sample log message
 
 <details>
 <summary>Click to expand</summary>
@@ -136,8 +135,7 @@ The Sumo Logic Collector uses Okta System Log API to get the logs of Okta System
 
 </details>
 
-
-### Sample Queries
+### Sample queries
 
 ```sql title="Details of Applications Deleted"
 _sourceCategory = "okta" "application.lifecycle.delete"
@@ -186,23 +184,23 @@ _sourceCategory = "okta" "user.mfa.factor.deactivate"
 
 ## Configuring Okta Log Collection
 
-Use the [new Cloud to Cloud Integration for Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) to create the source and use the same source category while installing the app.
+Use the [new Cloud-to-Cloud Integration for Okta](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) to create the source and use the same source category while installing the app.
 
 :::note
 The Okta Log Collection configuration via SumoJanus is no longer applicable and deprecated. We recommend switching to [Cloud-to-Cloud integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) to configure the Okta Log collection. The steps must be completed in the order they are presented.
 :::
 
+## Installing the Okta app
 
-## Installing the Okta App
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-Now that you have set up collection for Okta, install the Sumo Logic App for Okta to use the preconfigured searches and dashboards that provide insight into your data.
+<AppInstall2/>
 
-import AppInstall from '../../reuse/apps/app-install.md';
+## Viewing Okta dashboards​
 
-<AppInstall/>
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-## Viewing Okta Dashboards
-
+<ViewDashboards/>
 
 ### Administrative Actions
 
@@ -229,8 +227,8 @@ Shows the details of administrative actions such as the geolocation of applicati
 <img src={useBaseUrl('img/integrations/saml/Okta-AdministrativeActions.png')} alt="Okta-AdministrativeActions" />
 
 
-
 ### Application Access
+
 Shows the details of accesses by different applications, the location of logins, top 10 active users, successful and failed accesses by applications.
 
 **Breakdown By Application**. See the Okta access broken down by application in a pie chart for the last three days.

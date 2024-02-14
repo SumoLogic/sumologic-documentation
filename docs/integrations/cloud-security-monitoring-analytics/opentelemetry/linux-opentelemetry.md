@@ -1,7 +1,7 @@
 ---
 id: linux-opentelemetry
 title: Linux - Cloud Security Monitoring and Analytics - OpenTelemetry
-sidebar_label: Linux - OpenTelemetry
+sidebar_label: Linux - OTel Collector
 description: The Sumo Logic app for Linux Cloud Security Monitoring and Analytics - OpenTelemetry provides better understanding of your production environments, and surfaces relevant insights by tuning out-of-the-box content to align with your security team’s focus.
 ---
 
@@ -17,9 +17,32 @@ Linux - Cloud Security Monitoring and Analytics - OpenTelemetry is a unified log
 
 ## Fields created in Sumo Logic for Linux - Security Analytics
 
-The following tag will be created as part of Linux app installation, if not already present. 
+The following tag will be created as part of Linux app installation, if not already present.
 
 - `sumo.datasource`. Has a fixed value of **linux**.
+
+## Prereqisites
+
+This app is based on the following log files from the Ubuntu Linux machine.
+
+- auth.log
+- syslog
+- daemon.log
+- dpkg.log
+- kern.log
+- CentOS, Amazon Linux, and Red Hat
+- audit/audit.log
+- secure
+- messages
+- yum.log
+
+:::note
+If you've already configured collection of these log files (for example, during Linux or Linux - PCI app setup), then no additional log file collection is required. If any of the log files are missing, you can configure the missing file collection in the next step.
+:::
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
 
 ## Collection configuration and app installation
 
@@ -60,11 +83,11 @@ The following logs, located in the `/var/log` folder, are required for using the
 - audit/audit.log
 - secure
 - Messages
-- yum.log 
+- yum.log
 
 Click on the **Download YAML File** button to get the YAML file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Linux-YAML.png' style={{border:'1px solid black'}} alt="Linux-YAML.png" style={{border: '1px solid gray'}}/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Linux-YAML.png' style={{border:'1px solid gray'}} alt="Linux-YAML.png" style={{border: '1px solid gray'}}/>
 
 :::note
 By default, the path for Linux log files required for all the distros are pre-populated in the UI. (Optional) Unwanted file paths can be removed from the list if the files are not available on your Linux distribution. The collection will work even if not all the files are present in your system.
@@ -127,27 +150,27 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample log message
+## Sample log messages
 
 ```
 Dec 13 04:44:00 <1> [zypper++] Summary.cc(readPool):133 I_TsU(27372)Mesa-libGL1-8.0.4-20.4.1.i586(@System)
 ```
 
-## Sample log query
+## Sample queries
 
 ```sql
 sumo.datasource=linux deployment.environment=* host.group=* host.name=*
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s+(?<dest_host>\S*)\s+(?<process>\w*)(?:\[\d+\]:|:)\s*(?<message>.+)$" nodrop
 | if (isEmpty(dest_host), _sourceHost, dest_host) as dest_host
-| parse regex "(?<service>\w*)\[\d+\]:\s+" 
+| parse regex "(?<service>\w*)\[\d+\]:\s+"
 | where !isEmpty(service)
 | where dest_host matches "*"
 | where process matches "*"
-| count as eventCount, first(_messagetime) as latest, last(_messagetime) as earliest by service, dest_host 
-| formatDate(fromMillis(latest),"MM/dd/yyyy HH:mm:ss Z") as %"LatestTime" 
-| formatDate(fromMillis(earliest),"MM/dd/yyyy HH:mm:ss Z") as %"EarliestTime" 
+| count as eventCount, first(_messagetime) as latest, last(_messagetime) as earliest by service, dest_host
+| formatDate(fromMillis(latest),"MM/dd/yyyy HH:mm:ss Z") as %"LatestTime"
+| formatDate(fromMillis(earliest),"MM/dd/yyyy HH:mm:ss Z") as %"EarliestTime"
 | fields -latest, earliest, eventCount
-| sort by %"LatestTime" 
+| sort by %"LatestTime"
 ```
 
 ## Viewing Linux - Cloud Security Monitoring and Analytics dashboards
@@ -185,7 +208,7 @@ Use this dashboard to:
 The **Linux - Security Analytics - Privileged Activity** dashboard provides information about total sudo attempts, failed sudo attempts, top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 Use this dashboard to:
-- Monitor successful and failed access attempts to systemswith administrative privileges. 
+- Monitor successful and failed access attempts to systemswith administrative privileges.
 - Monitor actions performed by users with administrative privileges.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-Privileged-Activity.png' style={{border: '1px solid gray'}} alt="Linux-Security-Analytics-Privileged-Activity" />
@@ -196,8 +219,7 @@ Use this dashboard to:
 The **Linux - Security Analytics - User, Service, and System Monitoring** dashboard provides information about total sudo attempts, failed sudo attempts, top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 Use this dashboard to:
-- Monitor accounts created and deleted. 
+- Monitor accounts created and deleted.
 - Monitor service usage and other system activity.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-Cloud-Security-Monitoring-and-Analytics/Opentelemetry/Linux-Security-Analytics-User-Service-and-System-Monitoring.png' style={{border: '1px solid gray'}} alt="Linux-Security-Analytics-User-Service-and-System-Monitoring" />
-

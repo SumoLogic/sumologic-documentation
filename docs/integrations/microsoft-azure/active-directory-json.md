@@ -22,7 +22,7 @@ Standard Windows event channels include:
 
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -64,7 +64,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 ```
 
 
-### Sample query
+### Sample queries
 
 The sample query is from **Successes Vs Failures** panel from [Active Directory Service Failures](#service-failures) dashboard.
 

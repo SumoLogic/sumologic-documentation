@@ -2,7 +2,7 @@
 id: sql-server-opentelemetry
 title: Microsoft SQL Server - OpenTelemetry Collector
 sidebar_label: Microsoft SQL Server - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Microsoft SQL Server for Windows.
+description: Learn about the Sumo Logic OpenTelemetry app for Microsoft SQL Server for Windows.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 :::note
 The information provided in this page will only support the Sumo Logic OpenTelemetry app for Microsoft SQL Server for Windows.
 :::
-The SQL Server app is a unifies logs and metrics app to help you monitor the availability, performance, health and resource utilization of your Microsoft SQL Server database clusters. Preconfigured dashboards provide insight into cluster status, performance, operations as well as backup and restore operations along with Performance metrics and metrics for transaction and transaction logs.
+The SQL Server app is a unifies logs and metrics app to help you monitor the availability, performance, health, and resource utilization of your Microsoft SQL Server database clusters. Preconfigured dashboards provide insight into cluster status, performance, operations as well as backup and restore operations along with Performance metrics and metrics for transaction and transaction logs.
 
-This App has been tested with following SQL Server versions:
+This app has been tested with following SQL Server versions:
 
 - Microsoft SQL Server 2016
 
@@ -34,11 +34,35 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ## Prerequisites
 
+### For metrics collection
+
+The [SQL server receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/sqlserverreceiver/README.md) for OpenTelemetry grabs metrics about a Microsoft SQL Server instance using the Windows Performance Counters. 
+
+### For logs collection
+
 Make sure logging is turned on in SQL Server. Follow [this documentation](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/scm-services-configure-sql-server-error-logs?view=sql-server-ver15) to enable it.
 
 The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in: `C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`.
 
 The ERRORLOG is typically in UTF-16LE encoding, however, be sure to verify the file encoding used in your SQL Server configuration.
+
+**ACL Support**
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 
@@ -55,7 +79,7 @@ If you want to create a new Collector, select the **Add a new Collector** option
 Select the platform for which you want to install the Sumo OpenTelemetry Collector.
 
 This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -64,7 +88,7 @@ The Microsoft SQL Server App's queries and dashboards depend on logs from the SQ
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
 
@@ -157,7 +181,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
   }
 ```
 
-## Sample log query
+## Sample queries
 
 Following is the query from **Error and warning count** panel from the **SQL Server App - Overview** dashboard:
 

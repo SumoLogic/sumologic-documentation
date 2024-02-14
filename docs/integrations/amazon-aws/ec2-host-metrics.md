@@ -25,7 +25,7 @@ Host metrics are gathered by the open-source [SIGAR library](https://github.com/
 * [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics#disk-metrics)
 
 
-### Sample Query  
+### Sample queries  
 
 ```sql title="Average CPU Utilization"
 _sourceCategory=Labs/AWS/Host/Metrics metric=CPU_Total account=* region=* namespace=aws/ec2 instanceid=* | avg
@@ -187,7 +187,7 @@ Use this dashboard to:
 
 ### AWS EC2 - Network (Host OS Metrics)
 
-The** AWS EC2 - Network (Host OS Metrics)** dashboard provides insights into EC2 network performance per instance across your infrastructure, including metrics for the average number of packets in and out, packet rate in and out, and byte rate in and out.
+The **AWS EC2 - Network (Host OS Metrics)** dashboard provides insights into EC2 network performance per instance across your infrastructure, including metrics for the average number of packets in and out, packet rate in and out, and byte rate in and out.
 
 Use this dashboard to:
 * Quickly identify if traffic sent and received rates for an EC2 instance is potentially causing a production issue.

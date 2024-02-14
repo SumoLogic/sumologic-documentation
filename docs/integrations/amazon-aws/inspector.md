@@ -54,7 +54,7 @@ To deploy an AWS Security Hub App collector:
 6. Scroll to the bottom of the window and click **Deploy**.
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json title="AWS Security Hub log"
 {
@@ -95,7 +95,7 @@ To deploy an AWS Security Hub App collector:
 ```
 
 
-### Sample Query
+### Sample queries
 
 ```sql title="Findings by resource type and severity query"
 (_sourceCategory="securityhub_findings" OR _sourceCategory="Labs/AWS/SecurityHub")

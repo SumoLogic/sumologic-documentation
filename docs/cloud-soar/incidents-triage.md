@@ -71,7 +71,7 @@ list. Bulk actions include:
 - Change Owner
 
 To perform bulk actions on incidents, check the incidents you wish to
-perform the bulk actions on, then click the three dots in the upper
+perform the bulk actions on, then click the three-dot kebab menu in the upper
 left-hand corner of the screen and select the appropriate bulk action.
 
 ## Working with Incidents
@@ -122,7 +122,7 @@ The Incident Overview section contains all the pertinent information for a speci
 
 The Operations section contains all the investigative information for a specific incident and is broken out into the following sections: **War Room**, **playbook**, **Tasks**, and **Notes**.
 
-Watch this micro lesson to learn more about security automation with playbooks. 
+Watch this micro lesson to learn more about security automation with playbooks.
 
 <Iframe url="https://www.youtube.com/embed/ZGSxFsfyrdIrel=0"
         width="854px"
@@ -522,12 +522,12 @@ they will be used when the API is invoked.
 
 #### Attributes sent from Cloud SIEM
 
-You can ingest Cloud SIEM Insights into Cloud SOAR for incident triage using the `GetInsight` Cloud SOAR API. The following Insight attributes are returned. 
+You can ingest Cloud SIEM Insights into Cloud SOAR for incident triage using the `GetInsight` Cloud SOAR API. The following Insight attributes are returned.
 
 When you create an incident from an Insight, you can map the Insight attributes to fields in Cloud SOAR as follows:
 
-| Attribute in Cloud SIEM | Field in Cloud SOAR | 
-| :-- | :-- | 
+| Attribute in Cloud SIEM | Field in Cloud SOAR |
+| :-- | :-- |
 | `assignee` | `Insight Assignee` (custom field) |
 | `created` | `Start time` |
 | `description` | `Additional Info` |
@@ -535,13 +535,13 @@ When you create an incident from an Insight, you can map the Insight attributes 
 | `entity.type` | `Entity Type` (custom field) |
 | `id` | `Insight ID` (custom field) |
 | `involvedEntities[].value` | `Involved Entities` (custom field) |
-| `readableId` | `Incident ID` (custom field) |
+| `readableId` | `Incident ID` |
 | `severity` | `Severity` |
 | `status.displayName` | `Status` |
 | `tags[]` | `Tags` |
 
 :::note
-When creating incidents from Insights, adding additional required attributes to the incident template will result in an error. Only those attributes sent over with Insights can be used as required attributes on the template. 
+When creating incidents from Insights, adding additional required attributes to the incident template will result in an error. Only those attributes sent over with Insights can be used as required attributes on the template.
 :::
 
 ### Working with Events

@@ -45,13 +45,13 @@ This feature is available in the following account plans.
 |  Cloud Flex  |  Trial, Enterprise
 | Cloud Flex Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite
 
-## Log Types  
+## Log types  
 
 Global Intelligence for CloudTrail DevOps App uses AWS CloudTrail logs.
 
 The Sumo Logic Global Intelligence for AWS CloudTrail DevOps app provides insight into your key CloudTrail events. You can review the log collection process and start collecting data.
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -88,10 +88,12 @@ state=hashArgs%23%2Frepositories%2Ftravellogic%3Aproducts&isauthcode=true",
 
 
 
-### Sample Query
+### Sample queries
 
 <details>
-<summary>Click to expand.<br/>This sample query is from the <strong>Lambda Configuration: My Company v. Others (Categorical)</strong> panel of <strong>GI CloudTrail DevOps - 05. Configuration Benchmarks</strong>.</summary>
+<summary>Click to expand.</summary>
+
+This sample query is from the **Lambda Configuration: My Company v. Others (Categorical)** panel of **GI CloudTrail DevOps - 05. Configuration Benchmarks** dashboard.
 
 ```sql
 // id=@config_lambda_categorical_values

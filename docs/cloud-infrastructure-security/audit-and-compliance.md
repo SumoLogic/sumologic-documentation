@@ -132,7 +132,7 @@ To perform the audit:
 1. In the left navigation pane, click your **Personal** folder, then expand the PCI Compliance app folder.
 1. Open the **PCI Compliance For Palo Alto Networks - PCI Req 02, 04 - Insecure Data In Transit** dashboard.
 1. Find the **Insecure Allowed Traffic by Target Port and Involved Host** panel. 
-1. In the top right corner, click the three-dot button and select **Open in Log Search**.
+1. In the top right corner, click the three-dot kebab button and select **Open in Log Search**.
 1. Next to the clock icon, select **Last 24 Hours**. (You may have to select a longer time frame to get results.)
 1. Click the magnifying glass icon or press Enter to start the search.
 1. Click the **Messages** tab in the results. Here you’ll see the details of every log message that match the query. You’ll see columns for the timestamp, port, IP address, number of bytes sent, number of bytes received, and many other fields. 
@@ -162,7 +162,7 @@ The root account generally has unrestricted access to resources in an account. A
 To use Cloud Infrastructure Security to start an audit of AWS root for compliance, perform these steps:
 
 1. Near the top of the Sumo Logic UI, click **+ New > Log search** to open a new Sumo Logic search.
-1. Make sure you’re in Advanced Mode. If you’re in Basic Mode, click the three dot icon on the right side of the query builder, then select **Advanced Mode**.
+1. Make sure you’re in Advanced Mode. If you’re in Basic Mode, click the three-dot icon on the right side of the query builder, then select **Advanced Mode**.
 1. Copy and paste this query into the query builder. (In the query, replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
  ```
  _sourceCategory=Labs/AWS/CloudTrail and (root or su or sudo)

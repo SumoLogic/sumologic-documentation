@@ -34,7 +34,7 @@ Search modifiers are different from Sumo Logic’s [built-in metadata fields](/d
 
 When you include the `_dataTier` modifier in a query, the query will run against only the tier or tiers you specify. If you do not specify one or more partitions in the query, using `_index`, the query will run against all partitions in the tier you specified with `_dataTier`. The `_dataTier` modifier acts as an alias for all the indexes part of the tier or tiers selected. 
 
-If you don’t include `_dataTier`, and do not specify any partitions in the query, your search will run against the Continuous tier. If you do specify one or more partitions, Sumo Logic will infer what tier or tiers contain those partitions, and query only those partitions.
+If you don’t include `_dataTier`, and do not specify any partitions in the query, your search will run against the Continuous Tier. If you do specify one or more partitions, Sumo Logic will infer what tier or tiers contain those partitions, and query only those partitions.
 
 Even though you don't have to use `_dataTier` when you are querying selected partitions, it is a good practice, as it makes it clear from looking at the query what tier it runs against.
 
@@ -42,16 +42,16 @@ Even though you don't have to use `_dataTier` when you are querying selected par
 
 | Example query	| Description |
 | :-- | :-- |
-| `error` | Searches all partitions in the Continuous tier  for messages that contain the string “error”. |
-| `_dataTier=Frequent error` | Searches all partitions in the Frequent tier  for messages that contain the string “error”. |
+| `error` | Searches all partitions in the Continuous Tier for messages that contain the string “error”. |
+| `_dataTier=Frequent error` | Searches all partitions in the Frequent Tier for messages that contain the string “error”. |
 | `_dataTier=All error` | Searches all partitions in all tiers for messages that contain the string “error”. |
-| `(_dataTier=Continuous OR _dataTier=Infrequent) error` | Searches all partitions in the Continuous and Infrequent tier for messages that contain the string “error”. |
-| `_dataTier=Infrequent error` | Searches all the partitions in the Infrequent tier for messages that contain the string “error”. |
-| `_dataTier=Infrequent _index=payments error` | Searches the “payments” partition in the Infrequent tier for messages that contain the string “error”. |
-| `_index=InfreqPart error`<br/>(Where `InfreqPart` is a partition in the Infrequent tier.) | Searches the partition named “InfreqPart” in the Infrequent tier for messages that contain the string “error”. |
-| `_index=ContPart1 OR _index=FreqPart2 OR _index=InfreqPart3 error`<br/>(Where `ContPart1`, `FreqPart2`, and `InfreqPart3` are partitions in the Continuous, Frequent, and Infrequent tier respectively.) | Sumo Logic infers the tier that contains each of the specified partitions and searches them for messages that contain the string “error”. |
-| `_sourceCategory=apache error` | Searches the Continuous tier for messages whose source category is "apache" and that contain the string “error”. |
-| `(_dataTier=Continuous OR _dataTier = Infrequent) _index=<FreqPart2>`<br/>This is an example of a query that will fail. | This query will fail because it limits the search to the the Continuous and Infrequent tiers, but specifies a partition that is in the Frequent tier. |
+| `(_dataTier=Continuous OR _dataTier=Infrequent) error` | Searches all partitions in the Continuous and Infrequent Tier for messages that contain the string “error”. |
+| `_dataTier=Infrequent error` | Searches all the partitions in the Infrequent Tier for messages that contain the string “error”. |
+| `_dataTier=Infrequent _index=payments error` | Searches the “payments” partition in the Infrequent Tier for messages that contain the string “error”. |
+| `_index=InfreqPart error`<br/>(Where `InfreqPart` is a partition in the Infrequent Tier.) | Searches the partition named “InfreqPart” in the Infrequent Tier for messages that contain the string “error”. |
+| `_index=ContPart1 OR _index=FreqPart2 OR _index=InfreqPart3 error`<br/>(Where `ContPart1`, `FreqPart2`, and `InfreqPart3` are partitions in the Continuous, Frequent, and Infrequent Tier respectively.) | Sumo Logic infers the tier that contains each of the specified partitions and searches them for messages that contain the string “error”. |
+| `_sourceCategory=apache error` | Searches the Continuous Tier for messages whose source category is "apache" and that contain the string “error”. |
+| `(_dataTier=Continuous OR _dataTier = Infrequent) _index=<FreqPart2>`<br/>This is an example of a query that will fail. | This query will fail because it limits the search to the the Continuous and Infrequent Tiers, but specifies a partition that is in the Frequent Tier. |
 
 ## _dataTier limitations
 
@@ -65,13 +65,13 @@ The `_dataTier` search modifier is not supported in:
 * In scheduled searches, setting `_dataTier` to All, Frequent, or Infrequent is not supported.
 * Searches against Cloud SIEM data in Sumo Logic. Don't use `_dataTier` when searching Cloud SIEM data. Instead, use `_index` to specify the security partition or partitions you want to access, as described in [Searching for Cloud SIEM Records in Sumo Logic](docs/cse/records-signals-entities-insights/search-cse-records-in-sumo.md).
 
-In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](/docs/manage/fields.md) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
+In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](/docs/manage/fields) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
 
 ## Best practices
 
-* To query a single tier, use `_dataTier=<TierName>` (i.e. `_dataTier=Infrequent`) in the scope of your query.
+* To query a single tier, use `_dataTier=<TierName>` (e.g., `_dataTier=Infrequent`) in the scope of your query.
 * To query all tiers, use `_dataTier=All`.
-* When you run a query that will return data from the Infrequent tier, the best practice is to review the scan estimate after writing the query and before before running it. See the following section for more information.
+* When you run a query that will return data from the Infrequent Tier, the best practice is to review the scan estimate after writing the query and before before running it. See the following section for more information.
 
 ### Estimated and actual scan data for Infrequent queries
 
@@ -106,17 +106,17 @@ Given these partitions:
 | Role search filter  | Search query | Results | Notes |
 |:--|:--|:--|:--|
 | `*` | `_index=dashboard*` | Results will include data from all three of the partitions  | Because the role search filter grants access to all partitions, regardless of tier, results are returned for each of the partitions. |
-| `_index=dashboard*` | `*` | Results will only include data from the `dashboardContinuous` partition. | Although the filter gives the user access to `dashboardCont`, `dashboardFreq` and `dashboardInfreq`. The search query "\*" means only continuous views, so of the three views the user has access to, the one in the Continuous tier will be the one selected. |
+| `_index=dashboard*` | `*` | Results will only include data from the `dashboardContinuous` partition. | Although the filter gives the user access to `dashboardCont`, `dashboardFreq` and `dashboardInfreq`. The search query "\*" means only continuous views, so of the three views the user has access to, the one in the Continuous Tier will be the one selected. |
 
 ### _dataTier and scheduled views and audit indexes 
 
-When you query scheduled views, the Sumo Logic Audit Index, or the Sumo Logic Audit Event Index, it isn’t necessary to specify a tier with `_dataTier`. Search these indexes using `_index`.  By default, Sumo will run such queries against the Continuous tier. 
+When you query scheduled views, the Sumo Logic Audit Index, or the Sumo Logic Audit Event Index, it isn’t necessary to specify a tier with `_dataTier`. Search these indexes using `_index`.  By default, Sumo will run such queries against the Continuous Tier. 
 
 If you use `_dataTier` to specify a tier other than Continuous in a query of scheduled views or either of the audit indexes, Sumo Logic presents an error message.
 
 ### API Support with Rate Limiting
 
-The rate limits described in the [Rate limit throttling](/docs/api/search-job "About the Search Job API") section of the *About the Search Job API* topic apply to cross-tier searches with these concurrent active job limits: 
+The rate limits described in [Rate limit throttling](/docs/api/search-job/#rate-limit-throttling) apply to cross-tier searches with these concurrent active job limits: 
 
 * A limit of 200 active concurrent search jobs applies to your organization for the Continuous Tier (`_dataTier=Continuous`), the Infrequent Tier (`_dataTier=Infrequent`), and All Tiers (`_dataTier=All`).
 * When searching only the Frequent Tier (`_dataTier=Frequent`), a rate limit of 20 concurrent search jobs applies to your organization.

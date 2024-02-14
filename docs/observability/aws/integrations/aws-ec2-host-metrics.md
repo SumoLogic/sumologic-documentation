@@ -30,7 +30,7 @@ The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or lon
 
 Collectors running on Host Metrics (EC2) instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source/).
 
-### Sample query 
+### Sample queries 
 
 ```sql title="CPU utilization (Host metric based)"
 metric=CPU_Sys _sourceCategory=Labs/AWS/Host/Metrics _sourceHost=* _collector=* _source = * account=* region=* instancetype=* namespace=hostmetrics instanceid=* | avg

@@ -69,11 +69,11 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 
 ### Configure the connection for an integration resource
 
-To use [integrations](/docs/platform-services/automation-service/automation-service-integrations), you must configure the connection for their resources.
+To use [integrations](/docs/platform-services/automation-service/automation-service-integrations), you must configure the connection for their resources. 
 1. Click **Integrations** in the left navigation bar.
-1. Select the integration whose resource you want to configure the connection for.
+1. Select the integration whose resource you want to configure the connection for. 
 1. Hover over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} alt="Edit a resource" width="800"/> 
-1. Enter the connection configuration needed by the resource. What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. For example, in the following screen enter the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} alt="Edit a resource" width="400"/> 
+1. Enter the connection configuration needed by the resource. (Find the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) for configuration instructions.)<br/>What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. For example, in the following screen enter the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} alt="Edit a resource" width="400"/> 
 1. Click **Save** to save the configuration. 
 
 ## Actions limit

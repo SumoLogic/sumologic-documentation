@@ -7,7 +7,7 @@ description: Learn how to create a Sumo Logic monitor.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import AlertsTimeslice from '../../reuse/alerts-timeslice.md';
 
-This topic shows you how to create a monitor. 
+This topic shows you how to create a monitor.
 
 <details>
 <summary>Use the <strong>New Monitor</strong> dialog to create a monitor (expand to view)</summary>
@@ -322,7 +322,7 @@ When a trigger condition is met, you can send notifications to other people and 
 To add notifications, click the **Add Notification** button. You can add more than one notification channel for a Monitor.
 
 1. Set your **Preferred Notification Time Zone** for your monitor's alert notifications. If you don't select anything, it will default to the time zone specified in your user preferences.
-1. The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/manage/connections-integrations) for details. Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](/docs/alerts/monitors/alert-variables) for a table of the available variables.
+1. The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/alerts/webhook-connections) for details. Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](/docs/alerts/monitors/alert-variables) for a table of the available variables.
    * **Email**: Provide 1-100 recipient email addresses. You can customize the email subject and body.
    * **Webhook**: By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.
 1. Select the **Alert** and **Recovery** checkboxes for each trigger type based on when you want to send a notification.  You can have different Trigger Conditions send a notification to different channels. For example, you can get notified on PagerDuty for critical Incidents and get an email or Slack notification for warning incidents.

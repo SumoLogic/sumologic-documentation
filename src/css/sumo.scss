@@ -223,7 +223,7 @@ html[data-theme='light'] {
 
 .DocSearch-Button-Placeholder {
   font-size: .85rem !important;
-  min-width: 85px;
+  min-width: 100px;
 }
 
 .header-github-link:hover {
@@ -1085,7 +1085,6 @@ html[data-theme='dark'] .node polygon {
 }
 
 html[data-theme='dark'] .card:hover {
-  border-top: 4px solid var(--ds-blue-700);
   transition: none;
 }
 

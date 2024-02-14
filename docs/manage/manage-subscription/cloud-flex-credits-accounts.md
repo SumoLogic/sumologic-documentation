@@ -4,7 +4,6 @@ title: Cloud Flex Credits Accounts
 description: View information on Sumo Logic Cloud Flex Credits account and intuitively monitor usage and manage account costs.
 ---
 
-
 Sumo Logic provides flexible account types within its Cloud Flex Credits packaging for any size organization. A **credit** is a unit of measure that tracks use, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose. This allows you to carefully manage your account.
 
 This page provides information on the Cloud Flex Credits account types you can choose, and then explains how to monitor and manage your account.
@@ -19,7 +18,7 @@ You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise S
   :::
 * **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest, For information on Trial account features, see [Cloud Flex accounts](/docs/manage/manage-subscription/cloud-flex-accounts/).  
   :::note
-  Trials are limited to 30 days. If you require an extended trial period, contact [sales@sumologic.com](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
+  Trials are limited to 30 days. If you require an extended trial period, contact our [sales team](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
   :::
 * **Essentials**  accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-cloud-flex-account.md) from a Essential account to either Enterprise Operations, Enterprise Security, or Enterprise Suite accounts  at any time.
 * **Enterprise** **Operations** accounts are optimized for best practice operational monitoring at any ingest volume.
@@ -80,7 +79,7 @@ The **Account Overview** tab of the  **Account** page for Cloud Flex Credits d
 This page is strictly access controlled. You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
 :::
 
-[Data Tiers](/docs/manage/partitions-data-tiers) are available as part of the Enterprise Suite Package Account, and provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous, Frequent, and Infrequent tiers, you can segment your data by use case and analytics needs, thus optimizing your analytics investments.
+[Data Tiers](/docs/manage/partitions-data-tiers) are available as part of the Enterprise Suite Package Account, and provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous, Frequent, and Infrequent Tiers, you can segment your data by use case and analytics needs, thus optimizing your analytics investments.
 
 :::note
 For more information on Data Tiers, contact your Sumo Logic account manager.
@@ -103,7 +102,7 @@ The Account page provides an at-a-glance view of your account information in t
 
 ### Usage Forecast
 
-The usage forecast gives you an opportunity to see the potential end of the current credtits and an estimate on when those credits will end.
+The usage forecast gives you an opportunity to see the potential end of the current credits and an estimate on when those credits will end.
 
 * **Upgrade Plan**. Link to the upgrade account page, where you can message your request for an account upgrade to your account manager.
 * **Forecasted use**. Predicts your credit usage by end of the contract period.
@@ -116,7 +115,7 @@ The usage forecast gives you an opportunity to see the potential end of the curr
 
 ### Promotional Credits
 
-There are times when Sumo Logic promotes services and consumables through the provision of Promotional Credits. Promotional Credits are non-transferrable and auto-expire at the end of the promotion period.  In other words, if the Promotional Credits are not used within the promotion period, they do not carry over. They are of a use-it-or-lose-it nature. Promotional Credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional Credit consumption is calculated separately from the credits you paid for in your contract period. Promotional Credits are utilized as the priority credit for the specified credit variable.
+There are times when Sumo Logic promotes services and consumables through the provision of Promotional Credits. Promotional Credits are non-transferrable and auto-expire at the end of the promotion period. In other words, if the Promotional Credits are not used within the promotion period, they do not carry over. They are of a "use it or lose it" nature. Promotional Credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional Credit consumption is calculated separately from the credits you paid for in your contract period. Promotional Credits are utilized as the priority credit for the specified credit variable.
 
 For example, if the your contract period is licensed for 100,000 credits and 10,000 promotional credits for "Metrics” and you're using all your credits for metrics, Promotional Credits will be the first 10,000 credits used. Once the Promotional Credits are depleted, paid credits will  be  used for metrics. The ability to filter down to  he focused credit component and see more detailed patterns extends to Promotional Credits as well as paid credits. For more information, see [Monitoring Promotional Credit Usage](cloud-flex-credits-accounts.md).
 
@@ -163,14 +162,14 @@ The Usage (Sumo Credits) panel at the bottom of the Account Overview page provi
 
 The Usage Details panel contains the following usage categories:
 
-* **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
-* **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
-* **Infrequent Ingest**. Credits used for logs ingested into the Infrequent tier.
-* **Infrequent Scan**. Credits used to scan data for Infrequent tier searches.
+* **Continuous Ingest**. Credits used for logs ingested into the Continuous Tier.
+* **Frequent Ingest**. Credits used for logs ingested into the Frequent Tier.
+* **Infrequent Ingest**. Credits used for logs ingested into the Infrequent Tier.
+* **Infrequent Scan**. Credits used to scan data for Infrequent Tier searches.
 * **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
 * **Metrics Ingest**. Credits used for metrics ingested.
-* **Storage**. Credits used for log storage in the Continuous and Frequent tiers. 
-* **Infrequent Storage**. Credits used for log storage in the Infrequent tier. 
+* **Storage**. Credits used for log storage in the Continuous and Frequent Tiers. 
+* **Infrequent Storage**. Credits used for log storage in the Infrequent Tier. 
 * **Promotional categories**. See [Monitoring Promotional Credit usage](#monitoring-promotional-credit-usage).
 
 :::note

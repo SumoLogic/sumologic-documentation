@@ -2,7 +2,7 @@
 id: jira-opentelemetry
 title: Jira - OpenTelemetry Collector
 sidebar_label: Jira - OTel Collector
-description: The Sumo Logic App for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
+description: The Sumo Logic app for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="50"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events. 
+The Sumo Logic app for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events. 
 
 Jira logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
@@ -37,6 +37,26 @@ The Jira app uses the following log types:
     - Issue
     - User
     - Sprint
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Configure hosted collector to receive Webhooks
 
@@ -81,7 +101,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -94,7 +114,7 @@ Path of the different log file configured to capture Jira logs is needed to be g
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Jira-OpenTelemetry/Jira-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
 
@@ -178,13 +198,13 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Log Messages
+## Sample log messages
 
 ```sh title="Sample Log Message (Non-Kubernetes environment)"
 bluechip-office - - 19/01/2023:05:02:10 Z "GET /jira/rest/gadget/1.0/averageage/generate?projectOrFilterId=filter-16392&periodName=monthly&daysprevious=730&width=428&height=285&inline=true&_=1541539601115 HTTP/1.1" 401 8509 "https://jira.kumoroku.com/jira/plugins/servlet/gadgets/ifr?container=atlassian&mid=17024&country=US&lang=en&view=default&view-params=%7B%22writable%22%3A%22true%22%7D&st=atlassian%3A7udmdg9B2kTj%2FIang%2FZBXDM3COYkLIHJIzAUYmw9QDAiuHR4StJpZph6bTEtMMfxwx46%2B7cTTIjSGz%2B%2FNBJa4GLMS7e3ijRtWhIEIi4u19i2WXZsBZ8ZP8AekcT1JzwwkH9lGt9IRgXmL05epIw8kYAzDpKI1E%2FdHLFYtwo7m1M%2FRSsPMdoYGmwUfuIHM6%2FKGMsCDzToTKRzay85Sw9O7Db6%2B7A9MkQm0BxSmX3hMpV%2BPWgw%2BKDuNwPC0HCzrkMb4V2M3pJE0qBbvJqM2O6ezII938KZBz0%2B1zKnC9Rw2ePrbrm7TjCWGiR77NxKFtowNo3Xfg%3D%3D&up_isConfigured=true&up_isPopup=false&up_refresh=15&up_projectOrFilterId=filter-
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample query is from the **Jira - Overview** dashboard > **Catalina Requests** panel.
 

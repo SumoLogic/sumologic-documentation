@@ -19,7 +19,7 @@ The app collects ECS logs and metrics for:
    * All Amazon ECS actions are logged by CloudTrail and documented in the [Amazon Elastic Container Service API Reference](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Operations.html).
 
 
-### Sample log message
+### Sample log messages
 
 <details>
 <summary>Click to expand</summary>
@@ -275,7 +275,7 @@ The app collects ECS logs and metrics for:
 
 </details>
 
-### Sample query
+### Sample queries
 
 ```sql title="Deleted Resources Over Time"
 _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInstance or DeregisterTaskDefinition or StopTask) and !(InternalFailure)

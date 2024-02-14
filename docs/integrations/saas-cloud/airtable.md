@@ -1,6 +1,6 @@
 ---
 id: airtable
-title: Sumo Logic App for Airtable
+title: Airtable
 sidebar_label: Airtable
 description: The Sumo Logic App for the Airtable App offers functionality for monitoring and analyzing your organization's Airtable audit logs.
 ---
@@ -27,7 +27,7 @@ The Sumo Logic app for Airtable consumes Audit logs from your Airtable Enterpris
 
 To understand how to access detailed records of changes made to the Airtable Enterprise account, refer to the [Airtable Audit logs](https://support.airtable.com/docs/how-to-access-enterprise-audit-logs#interpreting-audit-logs) documentation. This documentation provides information on the different types of logs that are available, how to access them, and what information they contain.
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -59,7 +59,7 @@ To understand how to access detailed records of changes made to the Airtable Ent
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql="Active Team Members"
 _sourceCategory="Labs/airtable"

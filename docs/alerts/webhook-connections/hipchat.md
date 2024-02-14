@@ -18,7 +18,7 @@ Once you set up the webhook connection, you'll have the option to use it in a�
 :::
 
 :::note
-You'll need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
+You'll need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 :::
 
 To set up a webhook connection for HipChat:

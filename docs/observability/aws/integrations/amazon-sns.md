@@ -17,7 +17,7 @@ The app uses SNS logs and metrics:
 * [SNS operations using AWS CloudTrail](http://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html)
 
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -45,7 +45,7 @@ The app uses SNS logs and metrics:
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Events By Status"
 account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\"sns.amazonaws.com\""

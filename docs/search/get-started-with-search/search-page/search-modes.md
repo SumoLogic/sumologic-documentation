@@ -19,7 +19,7 @@ When you open a Log Search you'll have the option to switch between Basic and Ad
 
     ![new log search.png](/img/search/get-started-search/search-page/new-log-search.png)
 
-1. Click the three-dot icon on the right of the Search page and select **Basic Mode** or **Advanced Mode** from the menu options.
+1. Click the three-dot kebab icon on the right of the Search page and select **Basic Mode** or **Advanced Mode** from the menu options.
 
     ![search menu options.png](/img/search/get-started-search/search-page/search-menu-options.png)
 
@@ -41,7 +41,7 @@ This section elaborates on the input options.
 
     ![Basic mode Index options.png](/img/search/get-started-search/search-page/Basic-mode-Index-options.png)    
 
-* **Filters**. Type in any [fields](/docs/manage/fields.md) you want to run the query against. Once you select a field you need to select a value for it. When you click in the text area and begin typing an autocomplete list begins to offer suggestions. Click a suggestion to automatically fill in the value in the text area. You can continue to add additional fields if desired.
+* **Filters**. Type in any [fields](/docs/manage/fields) you want to run the query against. Once you select a field you need to select a value for it. When you click in the text area and begin typing an autocomplete list begins to offer suggestions. Click a suggestion to automatically fill in the value in the text area. You can continue to add additional fields if desired.
 
     ![basic mode filters option.png](/img/search/get-started-search/search-page/basic-mode-filters-option.png)
 

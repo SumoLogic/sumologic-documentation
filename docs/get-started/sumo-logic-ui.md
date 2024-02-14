@@ -46,7 +46,7 @@ You can easily hide the **left nav bar** to enlarge the working area. Then, jus
 
 ### Access Apps, Admin features, and Help
 
-In the lower section of the left nav bar, you can access the [App Catalog](apps-integrations.md), [Manage Data and Administration](/docs/manage) features, access the [Automation Service](/docs/platform-services/automation-service/), and [get help](#get-help-docs-community-and-more). 
+In the lower section of the left nav bar, you can access the [App Catalog](apps-integrations.md), [Manage Data and Administration](/docs/manage) features, access the [Automation Service](/docs/platform-services/automation-service/), and [get help](#get-help-docs-community-and-more). 
 
 <img src={useBaseUrl('img/get-started/ui/TUI_App-Admin-Help.png')} alt="Lower left nav menu" style={{border: '1px solid gray'}} width="300" />
 
@@ -133,7 +133,7 @@ This section shows you how to get started working with logs and metrics. The li
 
 To launch a search, metrics visualization, or live tail session, do the following:
 
-1. Go to the Sumo **Home** page.
+1. Go to the Sumo Logic **Home** page.
 1. Do one of the following:
 
    * Click **+New** in the Tabs menu and choose an option from the dropdown menu. 
@@ -176,7 +176,7 @@ To view Favorites and add to the list, do the following:
 
    1. [Save the search](/docs/search/get-started-with-search/search-basics/save-search) (if not already saved) by clicking **Save As**, then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
    1. Click **Save**.
-   1. Click the three-dot icon and click **Favorite** from the provided options. 
+   1. Click the three-dot kebab icon and click **Favorite** from the provided options. 
 
 ![favorite saved search ](/img/get-started/ui/favorite-saved-search.png)
 
@@ -216,7 +216,7 @@ To pin a search, do the following:
 
 1. Open a Search page.
 1. Enter a query in the search box and click **Start**.
-1. Click the three-dot icon and click **Pin** from the provided options.
+1. Click the three-dot kebab icon and click **Pin** from the provided options.
 
     ![pin search](/img/get-started/ui/pin-search.png)
 
@@ -232,7 +232,7 @@ For information on how to manage pinned searches, see the [Pinned Searches](/doc
 
 You can manage your personal account settings from the **Preferences** page. These settings **only apply** to your account. Changes you make to your preferences take effect the next time you sign in, not during the current session.
 
-To manage your personal Sumo account preferences, do the following:
+To manage your personal Sumo Logic account preferences, do the following:
 
 1. At the very bottom of the Left Nav Bar, click your Account Name.
 1. In the pop-up dialog, select **Preferences**.
@@ -276,9 +276,9 @@ To manage data in Sumo Logic, do the following:
 1. Go to the **left nav bar** and click **Manage Data**. <br/>![manage-data.png](/img/get-started/ui/manage-data.png)
 1. Choose from the following, as needed:
     * **Collection.** [Manage collectors and sources](/docs/send-data/collection).
-    * **Logs.** Manage [fields](/docs/manage/fields.md), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions-data-tiers), [scheduled views](/docs/manage/scheduled-views), [connections](/docs/manage/connections-integrations), and [data forwarding](/docs/manage/data-forwarding).
+    * **Logs.** Manage [fields](/docs/manage/fields), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions-data-tiers), [scheduled views](/docs/manage/scheduled-views), [connections](/docs/alerts/webhook-connections), and [data forwarding](/docs/manage/data-forwarding).
     * **Metrics.** Manage metrics rules, [logs-to-metrics](../metrics/logs-to-metrics.md), and [metrics transformation rules](../metrics/metrics-transformation-rules.md).
-    * **Alerts.** [Monitors](/docs/alerts/monitors), [connections](/docs/manage/connections-integrations), and [health events](/docs/manage/health-events.md).
+    * **Alerts.** [Monitors](/docs/alerts/monitors), [connections](/docs/alerts/webhook-connections), and [health events](/docs/manage/health-events).
 
 ### Admin: Manage accounts, users, and security
 
@@ -290,12 +290,12 @@ To administer Sumo Logic accounts, users, and security, do the following:
 1. Choose from the following, as needed:
     * **Account.** [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
     * **Users and Roles**. [Manage users and roles](/docs/manage/users-roles).
-    * **Security.** [Set password policy for your org](/docs/manage/security/set-password-policy.md), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses.md), [manage access keys](/docs/manage/security/access-keys.md), manage security polices ([audit index](/docs/manage/security/audit-indexes/audit-index.md), [support account access,](/docs/manage/security/enable-support-account.md) and [dashboard sharing](../dashboards/share-dashboard-new.md), and [set up SAML authentication](/docs/manage/security/saml).
+    * **Security.** [Set password policy for your org](/docs/manage/security/set-password-policy), [set up security whitelist](/docs/manage/security/create-allowlist-ip-cidr-addresses), [manage access keys](/docs/manage/security/access-keys), manage security polices ([audit index](/docs/manage/security/audit-indexes/audit-index), [support account access,](/docs/manage/security/enable-support-account) and [dashboard sharing](../dashboards/share-dashboard-new.md), and [set up SAML authentication](/docs/manage/security/saml).
 
-## Become a Sumo Pro user
+## Become a Sumo Logic Pro user
 
-Now that you're familiar with the layout and features in the Sumo Logic user interface (UI), you're ready to ramp up your Sumo skills with [self-paced training](https://www.sumologic.com/self-paced-training/).
+Now that you're familiar with the layout and features in the Sumo Logic user interface (UI), you're ready to ramp up your Sumo Logic skills with [self-paced training](https://www.sumologic.com/self-paced-training/).
 
-You don't have to stop there either. You can take the next step and become Sumo Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page and click the **Certification** tab. See [Certification FAQs](/docs/get-started/faq#certification-faq) for more information.
+You don't have to stop there either. You can take the next step and become Sumo Logic Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page, click the **Learn** tab, and click **Get Certified**. See [Certification FAQs](/docs/get-started/faq#certification-faq) for more information.
 
-![WTS_UI_Certification.png](/img/get-started/ui/WTS_UI_Certification.png)
+<img src={useBaseUrl('img/get-started/certifications.png')} alt="Certifications" style={{border: '1px solid gray'}} width="500" />
