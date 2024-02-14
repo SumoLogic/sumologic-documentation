@@ -46,9 +46,9 @@ You can easily hide the **left nav bar** to enlarge the working area. Then, jus
 
 ### Access Apps, Admin features, and Help
 
-In the lower section of the left nav bar, you can access the [App Catalog](apps-integrations.md), [Manage Data and Administration](/docs/manage) features, and [get help](#get-help-docs-community-and-more). 
+In the lower section of the left nav bar, you can access the [App Catalog](apps-integrations.md), [Manage Data and Administration](/docs/manage) features, access the [Automation Service](/docs/platform-services/automation-service/), and [get help](#get-help-docs-community-and-more). 
 
-![TUI_App-Admin-Help.png](/img/get-started/ui/TUI_App-Admin-Help.png)
+<img src={useBaseUrl('img/get-started/ui/TUI_App-Admin-Help.png')} alt="Lower left nav menu" style={{border: '1px solid gray'}} width="300" />
 
 ## Working with tabs
 
