@@ -61,5 +61,5 @@ Ticketing System
         - Search Into Issues Jira: Search
         - Set Issue Status: Update Issue Status
     + Please note that this update introduces BREAKING CHANGES: both the output mapping and some input fields have been revised and updated.
-* February 14, 2024
+* February 14, 2024 (v1.6)
     * Enhanced "Create Issue" and "Update Issue" actions to support Jira custom fields
