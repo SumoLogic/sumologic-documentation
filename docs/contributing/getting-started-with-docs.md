@@ -183,7 +183,7 @@ Submit a pull request (PR) to merge your changes into the `main` branch of the s
 1. From the **Assignees** dropdown, select your name to assign it to yourself.
 1. From the **Labels** dropdown, select the label that best suits your changes (see the labels list [here](https://github.com/SumoLogic/sumologic-documentation/wiki#github-labels)).
 1. Click **Files Changed** tab to confirm your changes are present and that you did not accidentally introduce unintended changes.
-1. nce you’re satisfied with the set of changes, click the **Create Pull Request** button.
+1. Once you’re satisfied with the set of changes, click the **Create Pull Request** button.
 
 ### Merge your changes
 
