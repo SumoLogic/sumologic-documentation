@@ -6,7 +6,7 @@ description: This article lists all the products that Sumo Logic integrates with
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article lists all the products that Sumo Logic integrates with, including the types of integrations we offer.
+This article lists all the vendors and products that Sumo Logic integrates with, including the types of integrations we offer.
 
 Types of integrations:
 * **Apps**. Pre-built applications with dashboards that provide robust analytics about the product. To [install apps](/docs/get-started/apps-integrations/), select **App Catalog** from the main menu. See [Apps and Integrations](/docs/integrations/) for more information.
@@ -24,7 +24,7 @@ Types of integrations:
 
 ## A
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 | <img src={useBaseUrl('img/integrations/saas-cloud/acquia.png')} alt="Thumbnail icon" width="75"/>   | [Acquia](https://www.acquia.com/)  | App: [Acquia](/docs/integrations/saas-cloud/acquia/)	 |
 | <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="50"/>   | [Active Directory](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10))  | Apps: <br/>- [Active Directory 2008+ (Legacy)](/docs/integrations/microsoft-azure/active-directory-legacy/)<br/>- [Active Directory 2012+ (JSON)](/docs/integrations/microsoft-azure/active-directory-json/) <br/>- [Active Directory JSON - OpenTelemetry](/docs/integrations/microsoft-azure/opentelemetry/active-directory-json-opentelemetry/) <br/>Automation integration: <br/>- [Active Directory](/docs/platform-services/automation-service/app-central/integrations/active-directory/)<br/>- [Active Directory v2](/docs/platform-services/automation-service/app-central/integrations/active-directory-v2/)<br/>Collectors: <br/>- [Microsoft Azure AD Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source/) <br/>- [Windows Active Directory Inventory Source](/docs/send-data/installed-collectors/sources/windows-active-directory-inventory-source/) |
@@ -180,7 +180,7 @@ Types of integrations:
 
 ## B
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/misc/banzai-cloud-logo.png')} alt="Thumbnail icon" width="100"/>   | [Banzai Cloud](https://banzaicloud.com/)  | 	Partner integration: [Banzai Cloud](https://kube-logging.dev/docs/examples/sumologic/)	 |
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/barracuda.png')} alt="Thumbnail icon" width="100"/>   | [Barracuda WAF](https://www.barracuda.com/products/application-protection/web-application-firewall)  | 	App: [Barracuda WAF](/docs/integrations/security-threat-detection/barracuda-waf/)	<br/>Partner integration: [Barracuda CloudGen Firewall](https://campus.barracuda.com/product/cloudgenfirewall/doc/91132156/sumo-logic-integration/) |
@@ -195,7 +195,7 @@ Types of integrations:
 
 ## C
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="Thumbnail icon" width="50"/>   |  [Carbon Black Cloud](https://www.vmware.com/products/carbon-black-cloud) | App:	[Carbon Black Cloud](/docs/integrations/security-threat-detection/carbon-black-cloud/) <br/>Collectors:	<br/>- [Carbon Black Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source/) <br/>- [Carbon Black Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source/) <br/>- [Carbon Black Cloud - Cloud SIEM](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/carbon-black/) |
 | <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ca-service-desk.png')} alt="Thumbnail icon" width="50"/> | [CA Service Desk Manager](https://www.broadcom.com/products/software/service-management/service-desk-manager) | Automation integration: [CA Service Desk](http://localhost:3000/docs/platform-services/automation-service/app-central/integrations/ca-service-desk/) |
@@ -248,7 +248,7 @@ Types of integrations:
 
 ## D
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/darkowl.png')} alt="Thumbnail icon" width="100"/> | [DarkOwl](https://www.darkowl.com/) | Automation integration: [DarkOwl](/docs/platform-services/automation-service/app-central/integrations/darkowl/) |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/darktrace.png')} alt="Thumbnail icon" width="100"/> | [Darktrace](https://darktrace.com/) | Automation integration: [Darktrace](/docs/platform-services/automation-service/app-central/integrations/darktrace/) |
@@ -270,7 +270,7 @@ Types of integrations:
 
 ## E
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/eclecticiq.png')} alt="Thumbnail icon" width="75"/> | [EclecticIQ](https://www.eclecticiq.com/) | Automation integration: [EclecticIQ](/docs/platform-services/automation-service/app-central/integrations/eclecticiq/) |
 |  <img src={useBaseUrl('img/integrations/misc/egnyte-logo.png')} alt="Thumbnail icon" width="75"/>   |  [Egnyte](https://www.egnyte.com/) | 	Partner integration: [Egnyte](https://helpdesk.egnyte.com/hc/en-us/articles/4407850661133-Egnyte-for-Sumo-Logic)	 |
@@ -285,7 +285,7 @@ Types of integrations:
 
 ## F
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('/img/integrations/security-threat-detection/f5.png')} alt="Thumbnail icon" width="50"/>   | [F5](https://www.f5.com/)  | App: [F5 - BIG-IP LTM](/docs/integrations/security-threat-detection/f5-big-ip-ltm/) <br/>Automation integrations: <br/>- [F5 AS3](http://localhost:3000/docs/platform-services/automation-service/app-central/integrations/f5-as3/) <br/>- [F5 AWAF](docs/platform-services/automation-service/app-central/integrations/f5-awaf/) |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/farsight-security-dnsdb.png')} alt="Thumbnail icon" width="100"/> | [Farsight Security DNSDB](https://www.domaintools.com/products/farsight-dnsdb/) | Automation integration: [Farsight Security DNSDB](/docs/platform-services/automation-service/app-central/integrations/farsight-security-dnsdb/) |
@@ -304,7 +304,7 @@ Types of integrations:
 
 ## G
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/misc/gigamon-logo.png')} alt="Thumbnail icon" width="75"/>   | [Gigamon](https://www.gigamon.com/)  | Partner integrations:<br/>- [Gigamon HAWK](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_HAWK)<br/>- [Gigamon ThreatINSIGHT](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/Gigamon_ThreatINSIGHT) |
 |  <img src={useBaseUrl('img/integrations/app-development/GitHub.png')} alt="Thumbnail icon" width="75"/>   | [GitHub](https://github.com/)  | 	App: [GitHub](/docs/integrations/app-development/github/)	 |
@@ -365,7 +365,7 @@ Types of integrations:
 
 ## H
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/web-servers/haproxy.png')} alt="Thumbnail icon" width="50"/>   |  [HAProxy](https://www.haproxy.com/) | 	Apps: <br/>- [HAProxy](/docs/integrations/web-servers/haproxy/)	 <br/>- [HAProxy - OpenTelemetry](/docs/integrations/web-servers/opentelemetry/haproxy-opentelemetry/)	 |
 |  <img src={useBaseUrl('img/integrations/misc/harness-logo.png')} alt="Thumbnail icon" width="75"/>   |  [Harness](https://www.harness.io/) | 	Partner integration: [Harness](https://developer.harness.io/docs/first-gen/continuous-delivery/continuous-verification/continuous-verification-overview/concepts-cv/sumo-logic-verification-overview/)	 |
@@ -375,7 +375,7 @@ Types of integrations:
 
 ## I
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.png')} alt="Thumbnail icon" width="75"/>   | [IIS](https://www.iis.net/)  | Apps: <br/>- [IIS 7](/docs/integrations/microsoft-azure/iis-7/) <br/>- [IIS 10](/docs/integrations/web-servers/iis-10/)	 <br/>- [IIS 10 - OpenTelemetry](/docs/integrations/web-servers/opentelemetry/iis-10-opentelemetry/)	 |
 |  <img src={useBaseUrl('img/integrations/webhooks/ilert-logo.png')} alt="Thumbnail icon" width="50"/>   | [iLert](https://www.ilert.com/)  | Webhook: [iLert](/docs/integrations/webhooks/ilert/)	 |
@@ -384,7 +384,7 @@ Types of integrations:
 
 ## J
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/misc/jamf-logo.png')} alt="Thumbnail icon" width="50"/>   | [Jamf](https://www.jamf.com/)  | Partner integration: [Jamf Protect App for Sumo Logic](https://github.com/SumoLogic/sumologic-public-partner-apps/tree/master/JamfProtect)	 |
 |  <img src={useBaseUrl('img/integrations/app-development/jenkins.png')} alt="Thumbnail icon" width="50"/>   | [Jenkins](https://www.jenkins.io/)  | App: [Jenkins](/docs/integrations/app-development/jenkins/)	 |
@@ -395,7 +395,7 @@ Types of integrations:
 
 ## K
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('/img/integrations/containers-orchestration/kafka.png')} alt="Thumbnail icon" width="85"/>   |  [Kafka](https://kafka.apache.org/) | Apps: <br/>- [Kafka](/docs/integrations/containers-orchestration/kafka/)	<br/>- [Kafka - OpenTelemetry](/docs/integrations/containers-orchestration/opentelemetry/kafka-opentelemetry/)	 |
 |  <img src={useBaseUrl('/img/send-data/kaltura-logo.png')} alt="Thumbnail icon" width="55"/>   |  [Kaltura](https://corp.kaltura.com/) | Collector: [Kaltura - Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/kaltura-source/)	 |
@@ -406,7 +406,7 @@ Types of integrations:
 
 ## L
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/misc/lacework-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Lacework](https://www.lacework.com/) | Partner integration: [Lacework](https://docs.lacework.net/onboarding/sumo-logic)	 |
 |  <img src={useBaseUrl('img/integrations/misc/lambdatest-logo.png')} alt="Thumbnail icon" width="100"/>   |  [LambdaTest](https://www.lambdatest.com/) | Partner integration: [LambdaTest](https://www.lambdatest.com/support/docs/sumo-logic-integration/)	 |
@@ -415,7 +415,7 @@ Types of integrations:
 
 ## M
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/hosts-operating-systems/mac-apple-icon.png')} alt="Thumbnail icon" width="50"/>   | [macOS](https://www.apple.com/macos)  | App: [macOS OpenTelemetry](/docs/integrations/hosts-operating-systems/opentelemetry/macos-opentelemetry/)	<br/>Collectors: <br/>- [Install a Collector on macOS](/docs/send-data/installed-collectors/macos/) <br/>- [Install OpenTelemetry Collector on macOS](/docs/send-data/opentelemetry-collector/install-collector/macos/) |
 |  <img src={useBaseUrl('img/integrations/webhooks/mailgun-logo.png')} alt="Thumbnail icon" width="50"/>   | [Mailgun](https://www.mailgun.com/)  | Webhook: [Mailgun](/docs/integrations/webhooks/mailgun/)	 |
@@ -436,7 +436,7 @@ Types of integrations:
 
 ## N
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/webhooks/netlify-logo.png')} alt="Thumbnail icon" width="50"/>   | [Netlify](https://www.netlify.com/)  | Webhook: [Netlify](/docs/integrations/webhooks/netlify/)	 |
 | <img src={useBaseUrl('img/platform-services/automation-service/app-central/logos/arbor.png')} alt="Thumbnail icon" width="75"/> | [NETSCOUT](https://www.netscout.com/) (formerly Arbor) | Automation integration: [Arbor (NETSCOUT)](/docs/platform-services/automation-service/app-central/integrations/arbor/) |
@@ -450,7 +450,7 @@ Types of integrations:
 
 ## O
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/Observable.png')} alt="Thumbnail icon" width="50"/>   | [Observable Networks](https://www.cisco.com/c/en/us/services/acquisitions/observable-networks.html)  | 	App: [Observable Networks](/docs/integrations/security-threat-detection/observable-networks/)	 |
 |  <img src={useBaseUrl('img/integrations/saml/okta.png')} alt="Thumbnail icon" width="50"/>   | [Okta](https://www.okta.com/)  | 	App: [Okta](/docs/integrations/saml/okta/)	<br/>Collectors: <br/>- [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source/) <br/>- [Okta - Cloud SIEM](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/okta/) |
@@ -464,7 +464,7 @@ Types of integrations:
 
 ## P
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/saas-cloud/pagerduty.png')} alt="Thumbnail icon" width="50"/>   |  [PagerDuty](https://www.pagerduty.com/) | 	Apps: <br/>- [PagerDuty V2](/docs/integrations/saas-cloud/pagerduty-v2/)	<br/>- [PagerDuty V3](/docs/integrations/saas-cloud/pagerduty-v3/)	<br/>Webhook: [Webhook Connection for PagerDuty](/docs/alerts/webhook-connections/pagerduty/) |
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="Thumbnail icon" width="100"/>   |  [Palo Alto Networks](https://www.paloaltonetworks.com/) | Apps: <br/>- [Palo Alto Firewall 9](/docs/integrations/cloud-security-monitoring-analytics/palo-alto-firewall-9/) <br/>- [Palo Alto Firewall 10](/docs/integrations/cloud-security-monitoring-analytics/palo-alto-firewall-10/) <br/>- [Palo Alto Networks 6](/docs/integrations/security-threat-detection/palo-alto-networks-6/)	<br/>- [Palo Alto Networks 8](/docs/integrations/security-threat-detection/palo-alto-networks-8/)	<br/>- [Palo Alto Networks 9](/docs/integrations/security-threat-detection/palo-alto-networks-9/)	<br/>- [PCI Compliance for Palo Alto Networks 9](/docs/integrations/pci-compliance/palo-alto-networks-9/) <br/>- [PCI Compliance for Palo Alto Networks 10](/docs/integrations/pci-compliance/palo-alto-networks-10/) <br/>- [Palo Alto Cortex XDR](/docs/integrations/saas-cloud/palo-alto-cortex-xdr/) <br/>Automation integration: [Cortex XDR](/docs/platform-services/automation-service/app-central/integrations/cortex-xdr/) <br/>Collectors: <br/>- [Collect Logs from Palo Alto Networks Cortex Data Lake](/docs/send-data/collect-from-other-data-sources/collect-logs-palo-alto-networks-cortex/) <br/>- [Palo Alto Cortex XDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source/) <br/>- [Palo Alto Firewall - Cloud SIEM](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/palo-alto-firewall/) <br/>Partner integration: [Cortex XSOAR](https://xsoar.pan.dev/docs/reference/integrations/sumo-logic)  |
@@ -480,13 +480,13 @@ Types of integrations:
 
 ## Q
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('/img/integrations/saas-cloud/qualys-icon.png')} alt="Thumbnail icon" width="100"/>   | [Qualys VMDR](https://www.qualys.com/apps/vulnerability-management-detection-response/) | 	App: [Qualys VMDR](/docs/integrations/saas-cloud/qualys-vmdr/)	<br/>Collector: [Qualys VMDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source/) |
 
 ## R
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/containers-orchestration/rabbitmq.png')} alt="Thumbnail icon" width="50"/>   | [RabbitMQ](https://www.rabbitmq.com/)  | 	Apps: <br/>- [RabbitMQ](/docs/integrations/containers-orchestration/rabbitmq/)	<br/>- [RabbitMQ - OpenTelemetry](/docs/integrations/containers-orchestration/opentelemetry/rabbitmq-opentelemetry/)  |
 |  <img src={useBaseUrl('img/send-data/rapid7-logo.png')} alt="Thumbnail icon" width="75"/>   | [Rapid7](https://www.rapid7.com/)  | 	App: [Rapid7](/docs/integrations/saas-cloud/rapid7/)	 |
@@ -499,7 +499,7 @@ Types of integrations:
 
 ## S
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/security-threat-detection/sailpoint-logo.svg')} alt="Thumbnail icon" width="75"/>   | [SailPoint](https://www.sailpoint.com/)  | 	App: [SailPoint](/docs/integrations/security-threat-detection/sailpoint/)	<br/>Collector: [SailPoint Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source/) |
 |  <img src={useBaseUrl('img/integrations/saas-cloud/salesforce-logo.svg')} alt="Thumbnail icon" width="50"/>   |  [Salesforce](https://www.salesforce.com/) | 	App: [Salesforce](/docs/integrations/saas-cloud/salesforce/) <br/>Collector: [Salesforce Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source/) |
@@ -528,7 +528,7 @@ Types of integrations:
 
 ## T
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/misc/tanium-logo.png')} alt="Thumbnail icon" width="75"/>   |  [Tanium](https://www.tanium.com/) | 	Collector: [Tanium](https://community.tanium.com/s/article/How-can-I-send-Tanium-data-to-Sumo-Logic)	 |
 |  <img src={useBaseUrl('img/integrations/misc/telegraf-logo.png')} alt="Thumbnail icon" width="75"/>   | [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/)  | 	Collector: [Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/)	 |
@@ -540,13 +540,13 @@ Types of integrations:
 
 ## U
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/webhooks/uptime-logo.png')} alt="Thumbnail icon" width="50"/>   | [Uptime](https://uptime.com/)  | 	Webhook: [Uptime](/docs/integrations/webhooks/uptime/)	 |
 
 ## V
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/web-servers/varnish-cache.png')} alt="Thumbnail icon" width="75"/>   | [Varnish](https://www.varnish-software.com/)  | Apps: <br/>- [Varnish](/docs/integrations/web-servers/varnish/) <br/>- [Varnish - OpenTelemetry](/docs/integrations/web-servers/opentelemetry/varnish-opentelemetry/)	 |
 |  <img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="Thumbnail icon" width="50"/>   | [VMware](https://www.vmware.com/)  | 	Apps: <br/>- [VMware](/docs/integrations/containers-orchestration/vmware/) <br/>- [VMware Legacy](/docs/integrations/containers-orchestration/vmware-legacy/)	<br/>- [VMware Carbon Black](/docs/integrations/security-threat-detection/vmware-carbon-black/) <br/>Collectors: <br/>- [Collect Metrics from VMware vRealize Operations Manager 8 Enterprise](/docs/send-data/collect-from-other-data-sources/collect-metrics-vrealize-operations-manager/) <br/>- [VMware AirWatch Integration for Sumo Logic](/docs/send-data/collect-from-other-data-sources/vmware-airwatch-integration/)	<br/>- [VMware vRealize Log Insight](/docs/send-data/collect-from-other-data-sources/vmware-vrealize-log-insight/)  |
@@ -555,14 +555,14 @@ Types of integrations:
 
 ## W
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="Thumbnail icon" width="50"/>   | [Windows](https://www.microsoft.com/en-us/windows) | 	Apps:  <br/>- [Windows Cloud Security Monitoring and Analytics](/docs/integrations/cloud-security-monitoring-analytics/windows/) <br/>- [Windows - Cloud Security Monitoring and Analytics - OpenTelemetry](/docs/integrations/cloud-security-monitoring-analytics/opentelemetry/windows-opentelemetry/) <br/>- [Windows JSON](/docs/integrations/microsoft-azure/windows-json/)  <br/>- [Windows - OpenTelemetry](/docs/integrations/hosts-operating-systems/opentelemetry/windows-opentelemetry/)  <br/>- [Windows Performance](/docs/integrations/microsoft-azure/performance/) <br/>- [Windows Legacy](/docs/integrations/microsoft-azure/windows-legacy/) <br/>- [PCI Compliance For Windows (JSON)](/docs/integrations/microsoft-azure/windows-json-pci-compliance/) <br/>- [PCI Compliance for Windows JSON - OpenTelemetry](/docs/integrations/pci-compliance/opentelemetry/windows-json-opentelemetry/)  <br/>- [PCI Compliance For Windows (Legacy)](/docs/integrations/microsoft-azure/windows-legacy-pci-compliance/) <br/>Collectors: <br/>- [Add a Collector to a Windows Machine Image](/docs/send-data/installed-collectors/collector-installation-reference/add-collector-windows-machine-image/) <br/>- [Install a Collector on Windows](/docs/send-data/installed-collectors/windows/) <br/>- [Install OpenTelemetry Collector on Windows](/docs/send-data/opentelemetry-collector/install-collector/windows/) <br/>- [Local Windows Event Log Source](/docs/send-data/installed-collectors/sources/local-windows-event-log-source/) <br/>- [Local Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/local-windows-performance-monitor-log-source/) <br/>- [Microsoft Windows - Cloud SIEM](/docs/cse/ingestion/ingestion-sources-for-cloud-siem/microsoft-windows/) <br/>- [Preconfigure a Machine to Collect Remote Windows Events](/docs/send-data/installed-collectors/sources/preconfigure-machine-collect-remote-windows-events/) <br/>- [Preconfigure a Machine to Collect Remote Windows Performance Monitoring Logs](/docs/send-data/installed-collectors/sources/preconfigure-machine-collect-remote-windows-performance-monitoring-logs/) <br/>- [Remote Windows Event Log Source](/docs/send-data/installed-collectors/sources/remote-windows-event-log-source/) <br/>-  [Remote Windows Performance Monitor Log Source](/docs/send-data/installed-collectors/sources/remote-windows-performance-monitor-log-source/) <br/>- [Windows Event Source Custom Channels](/docs/send-data/installed-collectors/sources/windows-event-source-custom-channels/)|
 |  <img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="50"/>   | [Workday](https://www.workday.com/)  | 	App: [Workday](/docs/integrations/saas-cloud/workday/)	<br/>Collector: [Workday Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/workday-source/) |
 
 ## Z
 
-| Logo | Product | Integrations |
+| Logo | Vendors and Products | Integrations |
 | :-- | :-- | :-- |
 |  <img src={useBaseUrl('img/integrations/webhooks/zebrium-rcaas-logo.png')} alt="Thumbnail icon" width="50"/>   | [Zebrium](https://www.zebrium.com/)  | Webhook: [Zebrium RCaaS](/docs/integrations/webhooks/zebrium-rcaas/)	 |
 |  <img src={useBaseUrl('img/integrations/webhooks/zenduty-logo.png')} alt="Thumbnail icon" width="50"/>   |  [Zenduty](https://www.zenduty.com/) | Webhook: [Zenduty](/docs/integrations/webhooks/zenduty/)	 |
