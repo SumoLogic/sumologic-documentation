@@ -99,7 +99,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -116,7 +116,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 For linux platform - Click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo Logic
 

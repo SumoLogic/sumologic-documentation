@@ -19,7 +19,7 @@ When you open a Log Search you'll have the option to switch between Basic and Ad
 
     ![new log search.png](/img/search/get-started-search/search-page/new-log-search.png)
 
-1. Click the three-dot icon on the right of the Search page and select **Basic Mode** or **Advanced Mode** from the menu options.
+1. Click the three-dot kebab icon on the right of the Search page and select **Basic Mode** or **Advanced Mode** from the menu options.
 
     ![search menu options.png](/img/search/get-started-search/search-page/search-menu-options.png)
 

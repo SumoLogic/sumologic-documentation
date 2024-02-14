@@ -176,7 +176,7 @@ To view Favorites and add to the list, do the following:
 
    1. [Save the search](/docs/search/get-started-with-search/search-basics/save-search) (if not already saved) by clicking **Save As**, then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
    1. Click **Save**.
-   1. Click the three-dot icon and click **Favorite** from the provided options. 
+   1. Click the three-dot kebab icon and click **Favorite** from the provided options. 
 
 ![favorite saved search ](/img/get-started/ui/favorite-saved-search.png)
 
@@ -216,7 +216,7 @@ To pin a search, do the following:
 
 1. Open a Search page.
 1. Enter a query in the search box and click **Start**.
-1. Click the three-dot icon and click **Pin** from the provided options.
+1. Click the three-dot kebab icon and click **Pin** from the provided options.
 
     ![pin search](/img/get-started/ui/pin-search.png)
 
