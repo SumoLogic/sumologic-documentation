@@ -145,7 +145,7 @@ Do not author your changes in the `main` branch.
 
 1. Open your Atom or VS Code editor.
 1. Choose an option:
-    - To create a new doc, refer to [Create Your First Doc](/docs/contributing/create-document/).
+    - To create a new doc, refer to [Create Your First Doc](/docs/contributing/create-doc/).
     - To edit an existing doc, open its markdown file and apply your change.
 1. Save your local markdown file changes in the traditional **File > Save** way. Each time you save these local changes, Git keeps track of every edit. At some point, you’ll want to migrate your changes to the `HEAD` repo, so they can be published. The next steps will help you do that.
 
