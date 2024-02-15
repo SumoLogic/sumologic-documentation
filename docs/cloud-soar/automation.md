@@ -299,7 +299,7 @@ It is crucial that the file names inside the tar.gz adhere to the following form
 
 It is possible to perform a test run to verify the proper functioning of a playbook, either a revision or published.
 To do this, simply click on the icon with the 3 dots, then click on Run Test.<br/><img src={useBaseUrl('img/cloud-soar/playbook-run-test-option.png')} alt="Run test option" style={{border: '1px solid gray'}} width="800"/><br/>Upon clicking, a modal will be opened, where you can choose the type of Input in case the playbook is expecting data.
-Once the necessary data is entered, clicking the RUN button will open a new page with run details.<br/><img src={useBaseUrl('img/cloud-soar/playbook-run-test-modal.png')} alt="Run test modal" style={{border: '1px solid gray'}} width="500"/><br/>In order to be able to differentiate between runs, in case of test runs, "(RUN TEST)" will be added to the end of the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/playbook-executed-run-test.png')} alt="Playbook executed run test" style={{border: '1px solid gray'}} width="500"/><br/>
+Once the necessary data is entered, clicking the RUN button will open a new page with run details.<br/><img src={useBaseUrl('img/cloud-soar/playbook-run-test-modal.png')} alt="Run test modal" style={{border: '1px solid gray'}} width="500"/><br/>In order to be able to differentiate between runs, in case of test runs, "(RUN TEST)" will be added to the end of the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/playbook-executed-run-test.png')} alt="Playbook executed run test" style={{border: '1px solid gray'}} width="800"/><br/>
 
 ## Incident Templates
 
