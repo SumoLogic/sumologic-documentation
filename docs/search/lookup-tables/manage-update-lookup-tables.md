@@ -38,7 +38,7 @@ The file should have a .csv extension, and not be larger than 100 MB. The first 
 For example: `username,IPAddress,region`
 
 1. Go to your **Library**.
-1. Mouse over the lookup table you want to view, and select **Edit** from the three-dot more options menu.
+1. Mouse over the lookup table you want to view, and select **Edit** from the three-dot kebab menu.
 1. The edit page for the lookup table appears. <br/>  ![edit-lookup-table.png](/img/search/lookup-tables/edit-lookup-table.png)
 1. Click **Merge Data**.
 1. The **Merge Lookup Data** popup appears.<br/> <img src={useBaseUrl('img/search/lookup-tables/merge-lookup-data.png')} alt="img/search/lookup-tables/merge-lookup-data.png" width="350"/>
@@ -59,7 +59,7 @@ For example: `username,IPAddress,region`
 For a field that is configured to be boolean, make sure that the field value is either `true` or `false`. Field values are case-insensitive, so `TRUE` or `FALSE` are also fine. However, if a boolean field contains any other value, the value written to the table will be `false`.
 
 1. Go to your **Library**.
-1. Mouse over the lookup table you want to view, and select **Edit** from the three-dot more options menu.
+1. Mouse over the lookup table you want to view, and select **Edit** from the three-dot kebab menu.
 1. The edit page for the lookup table appears. <br/>  ![edit-lookup-table.png](/img/search/lookup-tables/edit-lookup-table.png)
 1. Click **Replace Data**.
 1. The **Replace All Lookup Data** popup appears. <br/><img src={useBaseUrl('img/search/lookup-tables/replace-all-lookup-data.png')} alt="replace-all-lookup-data.png" width="350"/>
@@ -74,7 +74,7 @@ You can use the **Delete Data** option to remove all the data in a lookup table
 Follow the steps below to delete all of the contents of a lookup table:
 
 1. Go to your **Library**.
-1. Mouse over the lookup table you want to delete, and select **Edit** from the three-dot more options menu.
+1. Mouse over the lookup table you want to delete, and select **Edit** from the three-dot kebab menu.
 1. The edit page for the lookup table appears.  <br/>  ![edit-lookup-table.png](/img/search/lookup-tables/edit-lookup-table.png)
 1. Click **Delete Data.**
 1. You are prompted to confirm that you want to delete the contents of the lookup file. <br/><img src={useBaseUrl('img/search/lookup-tables/delete-lookup-data.png')} alt="delete-lookup-data.png" width="350"/>
@@ -91,7 +91,7 @@ To save the results of a query to a lookup table in a scheduled search, see [Sav
 If you want to replicate a lookup table schema in a different folder in the Library, the process is to export it, and then import it into the desired folder. When you export a lookup table, the data it contains is not exported.
 
 1. Go to your **Library**.
-1. Mouse over the lookup table you want to export, and select **Export** from the three-dot more options menu.
+1. Mouse over the lookup table you want to export, and select **Export** from the three-dot kebab menu.
 1. The export popup presents the contents of the lookup table in JSON format.<br/>   <img src={useBaseUrl('img/search/lookup-tables/export-lookup-table.png')} alt="export-lookup-table.png" width="350"/>
 1. Click **Copy** to copy the JSON to the clipboard, or **Download** to download a JSON file.
 1. Click **Done**. 
@@ -112,7 +112,7 @@ You can also use the [Lookups API](https://api.sumologic.com/docs/#tag/lookupMan
 Follow the steps below to completely delete a lookup table:
 
 1. Go to your **Library**.
-1. Mouse over the lookup table you want to delete, and select **Delete** from the three-dot more options menu.
+1. Mouse over the lookup table you want to delete, and select **Delete** from the three-dot kebab menu.
 
 ## View Lookup Table update status
 

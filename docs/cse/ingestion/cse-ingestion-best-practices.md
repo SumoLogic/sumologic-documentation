@@ -58,7 +58,7 @@ We recommend the following ingestion processes, starting with the most preferred
         ```  
 
         :::note 
-        You can get the path to a parser on the **Manage Data > Logs > Parsers** page in Sumo Logic. Click the three-dot more options menu in the row for a parser, and select **Copy Path**.
+        You can get the path to a parser on the **Manage Data > Logs > Parsers** page in Sumo Logic. Click the three-dot kebab menu in the row for a parser, and select **Copy Path**.
         :::
 
 1. **Use a Sumo Logic Source and Cloud SIEM Ingest mapping**. This is the least recommended method, as you have to manually configure the mapping hints in an ingestion mapping. For more information, see [Configure a Sumo Logic Ingest Mapping](/docs/cse/ingestion/sumo-logic-ingest-mapping/).
