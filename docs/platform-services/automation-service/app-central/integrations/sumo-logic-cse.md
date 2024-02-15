@@ -111,5 +111,5 @@ SIEM
         - Updated the enrichment field to accept either the output.raw or any other JSON format
         - Added additional fields: reputation, expiresAt and externalUrl
         - Updated the field *Fields Name/Path To Extract* to enable the extraction of field values from the JSON by using either the Path or Field Name
-* February 7, 2024 (v.10)
+* February 7, 2024 (v1.10)
     * Fixed issue in the "Add Comment To Insight" action where line breaks in the "Insight Comment" field were removed upon submission
