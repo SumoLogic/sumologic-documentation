@@ -249,7 +249,7 @@ It's important to perform first step exactly as it is, especially waiting for al
 
 ### See logs being send to Sumo Logic
 
-You can use Sumo Logic Mock, to see what data has been send to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
+You can use Sumo Logic Mock to see what data has been sent to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
 
 ```yaml
 debug:
@@ -265,7 +265,7 @@ debug:
       forwardToSumologicMock: true
 ```
 
-and then look at the Sumo Logic Mock logs:
+Then look at the Sumo Logic Mock logs:
 
 ```shell
 > kubectl logs -l sumologic.com/app=sumologic-mock -f
@@ -492,7 +492,7 @@ where `metadata.name` is the value from Argo Application manifest.
 
 ### Check metrics content
 
-You can print metrics on stdout of metrics collector and metrics metadata, and validate if they are correct. It may happen that metrics are ingested, but with different metadata than you expect them.
+You can print metrics on stdout of metrics collector and metrics metadata, and validate if they are correct. It may happen that metrics are ingested, but with different metadata than you expect.
 
 In order to print them on stdout, two steps are required:
 
@@ -525,12 +525,12 @@ In order to print them on stdout, two steps are required:
 3. To revert changes, please perform first step as it is, and after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
 
 :::note
-It's important to perform first step exactly as it is, especially waiting for all logs collector pods to apply new configuration. We want to avoid situation in which logs collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
+It's important to perform the first step exactly as it is, especially waiting for all logs collector pods to apply the new configuration. We want to avoid a situation in which logs collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
 :::
 
 ### See metrics being send to Sumo Logic
 
-You can use Sumo Logic Mock, to see what data has been send to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
+You can use Sumo Logic Mock to see what data has been send to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
 
 ```yaml
 debug:
@@ -546,7 +546,7 @@ debug:
       forwardToSumologicMock: true
 ```
 
-and then look at the Sumo Logic Mock logs:
+Then look at the Sumo Logic Mock logs:
 
 ```shell
 > kubectl logs -l sumologic.com/app=sumologic-mock -f
@@ -586,7 +586,7 @@ and then look at the Sumo Logic Mock logs:
 
 ### Check instrumentation content
 
-You can print spans on stdout of instrumentation related pods, and validate if they are correct. It may happen that spans are ingested, but with different metadata than you expect them.
+You can print spans on stdout of instrumentation related pods, and validate if they are correct. It may happen that spans are ingested, but with different metadata than you expect.
 
 In order to print them on stdout, two steps are required:
 
@@ -624,12 +624,12 @@ In order to print them on stdout, two steps are required:
 3. To revert changes, please perform first step as it is, and after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
 
 :::note
-It's important to perform first step exactly as it is, especially waiting for all logs collector pods to apply new configuration. We want to avoid situation in which logs collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
+It's important to perform the first step exactly as it is, especially waiting for all logs collector pods to apply new configuration. We want to avoid the situation in which logs collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
 :::
 
 ### See traces being send to Sumo Logic
 
-You can use Sumo Logic Mock, to see what data has been send to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
+You can use Sumo Logic Mock to see what data has been send to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
 
 ```yaml
 debug:
@@ -645,7 +645,7 @@ debug:
       forwardToSumologicMock: true
 ```
 
-and then look at the Sumo Logic Mock logs:
+Then look at the Sumo Logic Mock logs:
 
 ```shell
 > kubectl logs -l sumologic.com/app=sumologic-mock -f
@@ -689,15 +689,15 @@ In order to print them on stdout, two steps are required:
        stopLogsIngestion: true
    ```
 
-3. To revert changes, please perform first step as it is, and after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
+3. To revert changes, please perform the first step as it is, and after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
 
 :::note
-It's important to perform first step exactly as it is, especially waiting for all collector pods to apply new configuration. We want to avoid situation in which collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
+It's important to perform the first step exactly as it is, especially waiting for all collector pods to apply new configuration. We want to avoid the situation in which collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
 :::
 
 ### See events being send to Sumo Logic
 
-You can use Sumo Logic Mock, to see what data has been send to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
+You can use Sumo Logic Mock to see what data has been send to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
 
 ```yaml
 debug:
@@ -712,7 +712,7 @@ debug:
     forwardToSumologicMock: true
 ```
 
-and then look at the Sumo Logic Mock logs:
+Then look at the Sumo Logic Mock logs:
 
 ```shell
 > kubectl logs -l sumologic.com/app=sumologic-mock -f
@@ -977,15 +977,15 @@ kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-
 
 ## Using Sumo Logic Mock
 
-Sumo Logic Mock is debugging tool, which helps to see what exactly is being send from the Sumo Logic Collection to Sumo Logic. It may help with finding if there are any missing metrics, logs, traces or parts of them like labels or metadata.
+Sumo Logic Mock is debugging tool, which helps to see what exactly is being sent from the Sumo Logic Collection to Sumo Logic. It may help with finding if there are any missing metrics, logs, traces, or parts of them like labels or metadata.
 
 :::note
-Sumo Logic Mock is treated as experimental tool and it may significally change between every release
+Sumo Logic Mock is treated as an experimental tool and it may significantly change between every release.
 :::
 
 ### Estimate ingestion using Sumo Logic Mock in local mode
 
-Sumo Logic mock can be used to estimate how many logs and metrics is going to be send to the Sumo Logic without even having any Sumo Logic account.
+Sumo Logic Mock can be used to estimate how many logs and metrics are going to be sent to Sumo Logic without even having any Sumo Logic account.
 
 Please add the following configuration to your `user-values.yaml`:
 
