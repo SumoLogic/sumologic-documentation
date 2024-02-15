@@ -28,12 +28,12 @@ For a complete list of integrations and their documentation, see [Integrations i
 1. Use the **Search** bar in the upper right of the **Integrations** tab to find integrations.
 1. Click **Download** in the lower left corner of the integration box.
 1. Click **Install** to install the integration. After installation is complete, **Installed** replaces the **Download** link in the corner of the integration box.
-1. Find the article for the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) to see if there are additional steps you need to follow to configure the installed integration. 
+1. Find the article for the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) to see if there are additional steps you need to follow to configure the installed integration.
    :::warning
    Failure to perform these additional steps may result in the integration not working properly.
    :::
 
-### Update an integration from App Central 
+### Update an integration from App Central
 
 Integrations in App Central display a version number. The version indicates when there is a change to the integration. If a newer version is available, you can  update the integration from  App Central by clicking **UPDATE**.<br/><img src={useBaseUrl('img/cloud-soar/integration-update.png')} alt="Update integration" width="400"/>
 
@@ -54,7 +54,7 @@ Update integrations in App Central using keywords in the bottom left corner of t
 
 #### Update an installed integration to show all actions
 
-Here an example of updating an installed integration. 
+Here an example of updating an installed integration.
 
 1. In the Integrations section, check the actions present on the installed integration. In the example below, the only types of actions in the integration are Enrichment and Notification. <br/><img src={useBaseUrl('img/cloud-soar/installed-integration.png')} alt="Installed integration" width="800"/>
 1. Go to App Central and search for the same integration. Click the integration. <br/><img src={useBaseUrl('img/cloud-soar/installed-detail.png')} alt="Installed integration" width="300"/>
@@ -78,7 +78,7 @@ After you select the integration resource and click the **View Code** button, th
 
 Following is an example of a certified action.<br/><img src={useBaseUrl('img/cloud-soar/integration-certified-action.png')} alt="Certified action" width="600"/>
 
-You can add one or more resources to the certified integration (as explained in [Integrations](/docs/cloud-soar/automation#integrations)), or you use it as-is. 
+You can add one or more resources to the certified integration (as explained in [Integrations](/docs/cloud-soar/automation#integrations)), or you use it as-is.
 
 ### Duplicate an integration
 
@@ -113,7 +113,7 @@ Watch this micro lesson to learn how to create custom playbooks.
         allowfullscreen
         />
 
-### Configure a new playbook 
+### Configure a new playbook
 
 To configure a new Playbook, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation**.
 
@@ -140,20 +140,20 @@ The playbook configuration page is displayed. It gives you the ability to choose
 
 ### Action
 
-Select **Action** from the node types. 
+Select **Action** from the node types.
 
 <img src={useBaseUrl('img/cloud-soar/image74.png')} alt="Node Adding" width="500"/>
 
-A new screen will be displayed showing all actions a user has to choose from. 
+A new screen will be displayed showing all actions a user has to choose from.
 
 <img src={useBaseUrl('img/cloud-soar/image75.png')} alt="Node Adding" width="500"/>
 
 These action types will directly interact with Cloud SOAR's integrations to either gather data or initiate actions automatically. Select the **Type** of action:
-   * **Containment**. Performs some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall. 
+   * **Containment**. Performs some sort of response or remediation action, such as resetting a user's password or blocking a domain on your firewall.
    * **Custom**. Performs an action defined in a custom action YAML file. For an example of a custom action created for Cloud SIEM, see [Advanced example: Configure a custom integration](/docs/cse/automation/cloud-siem-automation-examples/#advanced-example-configure-a-custom-integration).
    * **Enrichment**. Enriches data with additional information, such as adding information about a known malicious IP address.
    * **Notification**. Sends a notification, for example, an email or a post in a messaging service.
-   * **Scheduled**. Runs an action on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed. 
+   * **Scheduled**. Runs an action on a schedule once the playbook starts. For example, the action regularly checks a condition, and once the condition is met, the next playbook actions are executed.
    :::note
    The **Type** drop-down menu shows only the action types available in the selected integration.
    :::
@@ -222,20 +222,20 @@ Once the condition is defined, click **Create** to add it to the playbook.
 
 When new conditions are created, we will need to define what happens when their results meet one of our criteria. A new node is added to the condition below. This node breaks the condition down into successes and failures and can be modified by hovering over it and clicking **+**.
 
-<img src={useBaseUrl('img/cloud-soar/image87.png')} alt="Use of Condition" width="600"/> 
+<img src={useBaseUrl('img/cloud-soar/image87.png')} alt="Use of Condition" width="600"/>
 
 This new node represents a decision tree in which both results, success or failure, will have to be defined. Follow the steps above to finalize the condition.
 
-<img src={useBaseUrl('img/cloud-soar/image88.png')} alt="Nodes List" width="600"/> 
+<img src={useBaseUrl('img/cloud-soar/image88.png')} alt="Nodes List" width="600"/>
 
 ### User Choice
 
 From the node's menu, select **User Choice**. The User Choice option allows for the system to pose a question to the incident owner. Based off of the analysis the incident owner performs on the previous information
 gathered, they will be presented a choice to take an automated action such as blocking an IP at the firewall or Quarantining an end-user workstation from the network.
 
-<img src={useBaseUrl('img/cloud-soar/image89.png')} alt="User Choice" width="600"/> 
+<img src={useBaseUrl('img/cloud-soar/image89.png')} alt="User Choice" width="600"/>
 
-<img src={useBaseUrl('img/cloud-soar/image90.png')} alt="Response" width="800"/> 
+<img src={useBaseUrl('img/cloud-soar/image90.png')} alt="Response" width="800"/>
 
 Define the question to be answered and the authorizer of the user choice selection and click ****Create**** to finalize.
 
@@ -245,9 +245,9 @@ The results of execution - successes, failures, and outcomes - are visible the P
 
 If a playbook fails, it can be re-executed inside the incident again or on the failing node with the Kill <img src={useBaseUrl('img/cloud-soar/image33c.png')} alt="Kill option" width="200"/>  and Run <img src={useBaseUrl('img/cloud-soar/image33d.png')} alt="Run option" width="200"/> processes available in the playbook screen of the incident. However, a failed node will not stop the playbook from being executed. Only tasks and User Choices will lock the playbook in a **Running** state until the user takes action.
 
-<img src={useBaseUrl('img/cloud-soar/image33e.png')} alt="Status running" width="800"/> 
+<img src={useBaseUrl('img/cloud-soar/image33e.png')} alt="Status running" width="800"/>
 
-<img src={useBaseUrl('img/cloud-soar/image33e1.png')} alt="Status completed" width="400"/> 
+<img src={useBaseUrl('img/cloud-soar/image33e1.png')} alt="Status completed" width="400"/>
 
 
 ### Playbook Template
@@ -261,9 +261,9 @@ Playbooks are the core of Cloud SOAR's automation capabilities. Playbooks permit
 ### Nest playbooks
 
 To run a playbook inside another playbook:
-1. Click **+** on a node in a playbook. 
-1. In the **Add Node** dialog, select **Playbook**. <br/><img src={useBaseUrl('img/cloud-soar/add-playbook-node.png')} alt="Add a playbook node" width="400"/> 
-1. Select the nested playbook from the list of available playbooks. 
+1. Click **+** on a node in a playbook.
+1. In the **Add Node** dialog, select **Playbook**. <br/><img src={useBaseUrl('img/cloud-soar/add-playbook-node.png')} alt="Add a playbook node" width="400"/>
+1. Select the nested playbook from the list of available playbooks.
 
 #### Pass attributes to a nested playbook
 
@@ -272,13 +272,13 @@ To run a playbook inside another playbook:
 When you nest a child playbook within a parent playbook, you must pass parameters from the parent to the child to be utilized within the child playbook actions.
 
 1. Select the playbook (the child) you want to nest within another playbook.
-1. Click the three dots in the upper-right corner of the child playbook, select the **Nested** option, and click **Save**. This tags the playbook as a child and prevents adhoc testing against the child, since it will rely upon the parent to provide it inputs. <br/><img src={useBaseUrl('img/cloud-soar/playbook-nested-option.png')} alt="Nested option" width="500"/> 
-1. Click the **Edit** button at the bottom of the screen, then the **Edit** button on the **Start** node. <br/><img src={useBaseUrl('img/cloud-soar/playbook-start-node.png')} alt="Start node" width="100"/> 
-1. Add the parameters you would like your child playbook to receive from the parent. These can be arbitrary names and do not need to be aligned to any field schema. They will be mapped from the parent nodes. <br/><img src={useBaseUrl('img/cloud-soar/playbook-parameters.png')} alt="Add parameters" width="500"/> 
-1. It’s important that your child nodes make use of these parameters. These will be accessible by editing your relevant child nodes, selecting the cog wheel, and selecting the relevant playbook input. In the example below, we use the playbook ID input parameter that will come from the parent. <br/><img src={useBaseUrl('img/cloud-soar/playbook-edit-parameters.png')} alt="Edit parameters" width="500"/> 
-1. Save and publish your child playbook. 
-1. Navigate to your parent playbook. Add a new node. <br/><img src={useBaseUrl('img/cloud-soar/playbook-add-node.png')} alt="Add node" width="350"/> 
-1. Select **Playbook**. <br/><img src={useBaseUrl('img/cloud-soar/playbook-add-node-2.png')} alt="Select Playbook" width="150"/> 
+1. Click the three-dot kebab menu icon in the upper-right corner of the child playbook, select the **Nested** option, and click **Save**. This tags the playbook as a child and prevents adhoc testing against the child, since it will rely upon the parent to provide it inputs. <br/><img src={useBaseUrl('img/cloud-soar/playbook-nested-option.png')} alt="Nested option" width="500"/> 
+1. Click the **Edit** button at the bottom of the screen, then the **Edit** button on the **Start** node. <br/><img src={useBaseUrl('img/cloud-soar/playbook-start-node.png')} alt="Start node" width="100"/>
+1. Add the parameters you would like your child playbook to receive from the parent. These can be arbitrary names and do not need to be aligned to any field schema. They will be mapped from the parent nodes. <br/><img src={useBaseUrl('img/cloud-soar/playbook-parameters.png')} alt="Add parameters" width="500"/>
+1. It’s important that your child nodes make use of these parameters. These will be accessible by editing your relevant child nodes, selecting the cog wheel, and selecting the relevant playbook input. In the example below, we use the playbook ID input parameter that will come from the parent. <br/><img src={useBaseUrl('img/cloud-soar/playbook-edit-parameters.png')} alt="Edit parameters" width="500"/>
+1. Save and publish your child playbook.
+1. Navigate to your parent playbook. Add a new node. <br/><img src={useBaseUrl('img/cloud-soar/playbook-add-node.png')} alt="Add node" width="350"/>
+1. Select **Playbook**. <br/><img src={useBaseUrl('img/cloud-soar/playbook-add-node-2.png')} alt="Select Playbook" width="150"/>
 1. Select your child playbook. <br/><img src={useBaseUrl('img/cloud-soar/playbook-select-child-playbook.png')} alt="Select child playbook" width="500"/>
 1. You will see the parameters that you had set from your child playbook. Use the cog wheel to set these parameters based on your parent action nodes. <br/><img src={useBaseUrl('img/cloud-soar/playbook-parent-parameters.png')} alt="Parent playbook parameters" width="500"/>
 1. Save and publish your parent playbook.
@@ -309,11 +309,11 @@ Incident Templates define the way in which incidents will be created for a speci
 
 To create a new template, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation > Incident Templates**.
 
-<img src={useBaseUrl('img/cloud-soar/image91.png')} alt="Add template" width="800"/> 
+<img src={useBaseUrl('img/cloud-soar/image91.png')} alt="Add template" width="800"/>
 
 From the Incident Templates page, you'll find all previously created templates on the left-side of the screen. To add a new Incident Template, click **+** to proceed.
 
-<img src={useBaseUrl('img/cloud-soar/image92.png')} alt="New Incident Template" width="400"/> 
+<img src={useBaseUrl('img/cloud-soar/image92.png')} alt="New Incident Template" width="400"/>
 
 A new configuration box is displayed. As seen in our previous configurations, you will need to name your template. Make sure it is something easily identifiable and related to the activity it is developed for. The next section is asking for a **Category**. This field, as well as all other fields within the Cloud SOAR platform, can be customized to fit the user's environment (see [Custom Fields](#custom-fields)).
 
@@ -321,7 +321,7 @@ In our example, we're building an Incident Template for a DLP incident. The cate
 
 Under the **Incident** tab administrators may define any incident parameters they wish to set by default when an incident is creating using the template. This often includes parameters such as type, kind and severity. All variables marked with an asterisk (*) are required to complete the Incident Template (see [**Custom Fields**](#custom-fields) to adjust the fields requirements). As mentioned earlier, all fields are customizable via the **Custom Fields** section. Once all required variables have been defined, click **Next** to continue.
 
-<img src={useBaseUrl('img/cloud-soar/image93.png')} alt="Create incident template" width="400"/> 
+<img src={useBaseUrl('img/cloud-soar/image93.png')} alt="Create incident template" width="400"/>
 
 The remaining tabs in the Incident Template dialogue are as follows:
 - **Incident details**: To set up details for a specific incident type.
@@ -344,26 +344,26 @@ The **Integrations** section allows administrators to configure bidirectional in
 
 Cloud SOAR can ingest, parse, and process incident data from email, syslog and bidirectional integrations. For Cloud SOAR to begin processing incident data from these sources, the **Automation Rules** features need to be configured.
 
-To access, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation** > __Rules__. 
+To access, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation** > __Rules__.
 
-<img src={useBaseUrl('img/cloud-soar/image94.png')} alt="Automation menu" width="200"/> 
+<img src={useBaseUrl('img/cloud-soar/image94.png')} alt="Automation menu" width="200"/>
 
 ## Integrations
 
 Cloud SOAR's orchestration and automation capabilities are achieved through its unidirectional and bidirectional integrations with the industry's leading network and security vendors. To configure, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation** > **Integrations**.
 
-<img src={useBaseUrl('img/cloud-soar/image62.png')} alt="Integrations" width="800"/> 
+<img src={useBaseUrl('img/cloud-soar/image62.png')} alt="Integrations" width="800"/>
 
 A list of available integrations within the organization can be found to the left-side of the screen. To begin to configure, click on a product to continue.
 
-<img src={useBaseUrl('img/cloud-soar/image63.png')} alt="Configure integration" width="800"/> 
+<img src={useBaseUrl('img/cloud-soar/image63.png')} alt="Configure integration" width="800"/>
 
 
 A product overview screen will be displayed with what actions a product can perform and a link to configure the integration. These actions are categorized into five separate types: **Enrichment**, **Containment**, **Custom**, **Daemon**, and **Notification** actions. Each selection will list its associated actions and if there are required fields which need to be configured for Cloud SOAR to utilize its functionality within its Playbooks.
 
 To add a new integration resource, click the **+ Resources** button in the upper left-hand corner of the integrations screen. To edit an existing integration resource, hover over the resource and click the pencil icon to the far right of the resource name in the resource list.          
 
-<img src={useBaseUrl('img/cloud-soar/image64.png')} alt="image64" width="400"/> 
+<img src={useBaseUrl('img/cloud-soar/image64.png')} alt="image64" width="400"/>
 
 Each Integration's configuration screen may be different, but in most cases, administrators will need information such as IP addresses, API tokens, usernames and passwords for their network/security products.
 
@@ -388,7 +388,7 @@ Integrations are defined using two types of YAML text files. The first type, the
 
 The second type of file is an action definition file, which is used to define a single action that will be performed using the integration. Each integration action is defined in a separate action definition file, which will be associated by Cloud SOAR with the appropriate integration definition. Action definition files are the files which contain the actual code which will be executed to perform the action. Supported languages include Perl, Python, PowerShell and Bash. In addition to the action code, action definition files also contain information such as the name, required and optional fields and the format in which the resulting information will be displayed.
 
-<img src={useBaseUrl('img/cloud-soar/image65.png')} alt="Integration definition" style={{border: '1px solid gray'}} width="600"/> 
+<img src={useBaseUrl('img/cloud-soar/image65.png')} alt="Integration definition" style={{border: '1px solid gray'}} width="600"/>
 
 ### Integration File Hierarchy
 
@@ -396,13 +396,13 @@ Defining integrations at the **action** level allows users greater flexibility i
 
 Once the user has created this new action, it can easily be added to the existing RSA Netwitness integration by uploading the new integration action file. This new action can also be shared between customers and used to extend the functionality of the integration in other customer instances as well.
 
-<img src={useBaseUrl('img/cloud-soar/image66.png')} alt="New action" style={{border: '1px solid gray'}} width="600"/> 
+<img src={useBaseUrl('img/cloud-soar/image66.png')} alt="New action" style={{border: '1px solid gray'}} width="600"/>
 
 See [Integration Framework](#integration-framework) for more details on utilizing the integration framework within Cloud SOAR.
 
 ### Integration Builder
 
-You can build basic integrations without having to provide custom YAML files. 
+You can build basic integrations without having to provide custom YAML files.
 
 1. Click the gear icon in the upper-right corner and select **Automation**. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-automation-menu.png')} alt="Access Automation" width="150"/>
 1. Select **Integrations** from the navigation menu at the left of the screen.
@@ -410,7 +410,7 @@ You can build basic integrations without having to provide custom YAML files.
 1. Fill out the **New Integration** dialog:
    1. Upload a **Logo** for your integration.
    1. Provide a **Name**.
-   1. Click **Use Connection Configuration** and fill out the fields for credentials configuration. 
+   1. Click **Use Connection Configuration** and fill out the fields for credentials configuration.
    1. Click **Add** to add the connection configuration.
    1. If other fields are needed at the integration resource level, click **+ Field** to add the fields and their information. For example, for an integration like VirusTotal, you would need to add `apikey` and `domain` as required fields.
    1. Click **Create**. The integration file is created for the integration.
@@ -418,12 +418,12 @@ You can build basic integrations without having to provide custom YAML files.
 1. Now that you have created the integration file, you need to create an action file for the integration.
    1. Hover your mouse over the new integration and click the **Upload** button that appears.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-upload-icon.png')} alt="Upload button" width="300"/>
    1. In the **Upload** dialog, notice how **Integration File** is highlighted. That's because it was created in the last step.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-upload-files.png')} alt="Upload dialog" width="300"/>
-   1. Click **Action** and **Next**. 
-1. Fill out the **Upload** dialog: 
+   1. Click **Action** and **Next**.
+1. Fill out the **Upload** dialog:
    1. Provide a **Name** for the action.
    1. Select a **Type** for the action, such as enrichment, containment, custom, or notification.
    1. Click **Use Connection Configuration** if it is needed for the action, fill out the fields for credentials configuration, and click **Add**.
-   1. If other fields are needed at the action level, click **+ Field** to add the fields and their information. 
+   1. If other fields are needed at the action level, click **+ Field** to add the fields and their information.
    1. Click **Create**. The action file is created for the integration.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-create-action-file.png')} alt="Create action" width="600"/><br/>The new action displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration.png')} alt="Example integration" width="600"/>
 1. Add the resource information:
    1. Click the **+** button to the left of **Resources**.
@@ -443,7 +443,7 @@ You can set integrations, and their related action execution, to be executed in 
 
 ## Configure Slack for Cloud SOAR
 
-With the Cloud SOAR Slack integration, teams can remain connected, organize conversations,  and quickly find what is needed to get the work done. 
+With the Cloud SOAR Slack integration, teams can remain connected, organize conversations,  and quickly find what is needed to get the work done.
 
 With the Cloud SOAR Slack integration, you can directly manage [User Choice](#user-choice) actions within the playbooks from your Slack workspace.  Furthermore, for each new incident, a related conversation channel will be created within your Slack workspace, where users will correspond to investigators. Changing a user within the incident will also result in a change to the user within the conversation channel.
 
@@ -453,21 +453,21 @@ To configure Slack for use inside Cloud SOAR, you must first create a public or 
 
 ### Step 1: Create a Slack app
 
-Before you can use the Slack integration in Cloud SOAR, you need to create a Slack app on the user or company workspace. 
+Before you can use the Slack integration in Cloud SOAR, you need to create a Slack app on the user or company workspace.
 
-1. Navigate to the [Slack API page](https://api.slack.com/apps). 
+1. Navigate to the [Slack API page](https://api.slack.com/apps).
 1. Click **Create an App**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-add-app.png')} alt="Create a Slack app" width="800"/>
 1. Select **From scratch**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-from-scratch.png')} alt="Create a Slack app from scratch" width="400"/>
-1. Enter "CSOAR Bot" as the app name and select the workspace where you wish to install it.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-workspace-delivery2.png')} alt="Insert name and workspace for Slack app" style={{border: '1px solid black'}} width="400"/>
-1. Click **Create App**. 
+1. Enter "CSOAR Bot" as the app name and select the workspace where you wish to install it.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-workspace-delivery2.png')} alt="Insert name and workspace for Slack app" style={{border: '1px solid gray'}} width="400"/>
+1. Click **Create App**.
 
 ### Step 2: Add permissions to the Slack app
 
-After you create a Slack app, you must add the appropriate permissions for use with Cloud SOAR. 
+After you create a Slack app, you must add the appropriate permissions for use with Cloud SOAR.
 
 1. Click **Permissions**, or from the left nav bar, click **OAuth & Permissions**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-permissions.png')} alt="Slack OAuth and Permissions" width="600"/>
 1. Scroll down to the **Scopes** section.<br/>You must add permissions for the Bot Token. Bot tokens let your app act independently.
-1. Click **Add an OAuth Scope** under **Bot Token Scopes**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-delivery2.png')} alt="Add an OAuth Scope in Slack" style={{border: '1px solid black'}} width="500"/>
+1. Click **Add an OAuth Scope** under **Bot Token Scopes**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-delivery2.png')} alt="Add an OAuth Scope in Slack" style={{border: '1px solid gray'}} width="500"/>
 1. Enter the following permissions.
    * **Actions: List Channels / Get Channel / Get Members**
       * `channels:read`. View basic information about public channels in a workspace.
@@ -493,14 +493,14 @@ After you create a Slack app, you must add the appropriate permissions for use w
    * **Actions: Send Message / Delete Message**
       * `chat:write`. Post messages in approved channels and conversations.
 1. Verify that scopes are set up correctly:
-   * Here are the Bot Token scopes after configuration:<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-bot-token-1-delivery2.png')} alt="Bot token 1" style={{border: '1px solid black'}} width="500"/>
+   * Here are the Bot Token scopes after configuration:<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-bot-token-1-delivery2.png')} alt="Bot token 1" style={{border: '1px solid gray'}} width="500"/>
 1. Place your instance URL in the **Interactivity & Shortcuts** page.
-<br/><img src={useBaseUrl('img/cloud-soar/integrations-interactivity-delivery2.png')} alt="Interactivity" style={{border: '1px solid black'}} width="600"/>
-1. Click **Install to Workspace** to make the app available for use. 
+<br/><img src={useBaseUrl('img/cloud-soar/integrations-interactivity-delivery2.png')} alt="Interactivity" style={{border: '1px solid gray'}} width="600"/>
+1. Click **Install to Workspace** to make the app available for use.
 <br/><img src={useBaseUrl('img/cloud-soar/integration-slack-install-to-workspace.png')} alt="Install the app" width="600"/>
-1. Installation generates a Bot User OAuth Token and a Signing Secret. Copy the tokens and keep them in a secure location for use in the next step. 
-<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-oauth-token.png')} alt="Bot Oauth token" style={{border: '1px solid black'}} width="600"/>
-<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-signing-secret.png')} alt="Signing Secret" style={{border: '1px solid black'}} width="600"/>
+1. Installation generates a Bot User OAuth Token and a Signing Secret. Copy the tokens and keep them in a secure location for use in the next step.
+<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-oauth-token.png')} alt="Bot Oauth token" style={{border: '1px solid gray'}} width="600"/>
+<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-signing-secret.png')} alt="Signing Secret" style={{border: '1px solid gray'}} width="600"/>
 
 ### Step 3: Configure the Slack integration in Cloud SOAR
 
@@ -508,13 +508,13 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
 
 1. Add resources for the tokens:
    1. In Cloud SOAR, click the gear icon and select **Automation**.<br/><img src={useBaseUrl('img/cloud-soar/integration-automation-menu-delivery2.png')} alt="Automation option" width="300"/>
-   1. Click **Integrations**. 
+   1. Click **Integrations**.
    1. Select the Slack integration. The integration's resources appear.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-in-list.png')} alt="Select the Slack integration" width="800"/>
-   1. Click **+** to add a new Resource.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-resources.png')} alt="Add a resource" width="600"/> 
+   1. Click **+** to add a new Resource.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-resources.png')} alt="Add a resource" width="600"/>
    1. Name the resource "Bot User OAuth Access Token".
    1. Click **Edit**.
-   1. Copy the Bot Oauth Token you saved from the Slack API setup and paste it Into the **Bot/User OAuth Token** field. 
-   1. Once you have filled in all the required fields, click **Save**. 
+   1. Copy the Bot Oauth Token you saved from the Slack API setup and paste it Into the **Bot/User OAuth Token** field.
+   1. Once you have filled in all the required fields, click **Save**.
    1. Click **TEST SAVED SETTINGS** to verify configuration.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-2.png')} alt="Bot resource" width="400"/>
 1. In Cloud SOAR, at the top of the screen click the gear icon and select **Settings**.<br/><img src={useBaseUrl('img/cloud-soar/integration-settings-menu-delivery2.png')} alt="Settings option" width="300"/>
 1. Click **General**.
@@ -523,10 +523,10 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
 1. Paste your previously saved Bot User OAuth Access Token to the **Bot OAuth** field.
 1. Paste your previously saved Signing Secret to the **Signing Secret for verify requests** field. If configuration is successful, **Workspace** displays "Success".
 
-If your new resources are configured correctly, and Instant Messaging displays a "Success" message for the configured workspace, you can [Use the Slack app in User Choice](#use-the-slack-app-in-user-choice). 
+If your new resources are configured correctly, and Instant Messaging displays a "Success" message for the configured workspace, you can [Use the Slack app in User Choice](#use-the-slack-app-in-user-choice).
 
 ### Use the Slack app in User Choice
- 
+
  If you have configured Slack as described in [Configure Slack for Cloud SOAR](#configure-slack-for-cloud-soar---delivery-2), you can set a playbook’s [User Choice](/docs/cloud-soar/automation/#user-choice) to be answered by Slack.
 
 1. Run a playbook with a User Choice action. The following example shows a simple playbook with two available answers: **Close Incident** and **Investigate**. Notice that the option **Answer By Slack** is enabled.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-playbook.png')} alt="Playbook with user choices" width="600"/>
@@ -543,7 +543,7 @@ You can manage Slack communication channels directly by creating/editing various
 * Close / delete an incident <br/>When an incident is closed / deleted, the related channel in the workspace will automatically be archived as well.<br/><img src={useBaseUrl('img/cloud-soar/archived-slack-channel.png')} alt="Archived Slack channel" width="400"/>
 * Viewing channel history from the **War room** section <br/>Within the war room section of an incident, it will be possible to view the history of a Slack channel.<br/><img src={useBaseUrl('img/cloud-soar/war-room-chat-section.png')} alt="Archived Slack channel" width="800"/>
 
-<!-- 
+<!--
 Directions in the following section describe how to configure Slack in the Delivery 1 version of Cloud SOAR. Keeping these hidden here in case they need to be placed back into the documentation.
 
 
@@ -553,22 +553,22 @@ With Slack configured for Cloud SOAR, you can add Slack to the list of available
 
 #### Step 1: Create a Slack app
 
-Before you can use the Slack integration in Cloud SOAR, you need to create a Slack app on the user or company workspace. 
+Before you can use the Slack integration in Cloud SOAR, you need to create a Slack app on the user or company workspace.
 
-1. Navigate to the [Slack API page](https://api.slack.com/apps). 
+1. Navigate to the [Slack API page](https://api.slack.com/apps).
 1. Click **Create an App**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-add-app.png')} alt="Create a Slack app" width="800"/>
 1. Select **From scratch**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-from-scratch.png')} alt="Create a Slack app from scratch" width="400"/>
 1. Type a name for the app and select the workspace.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-workspace.png')} alt="Choose name and workspace for Slack app" width="400"/>
-1. Click **Create App**. 
+1. Click **Create App**.
 
 #### Step 2: Add permissions to the Slack app
 
-After you create a Slack app, you must add the appropriate permissions for use with Cloud SOAR. 
+After you create a Slack app, you must add the appropriate permissions for use with Cloud SOAR.
 
 1. Click **Permissions**, or from the left nav bar, click **OAuth & Permissions**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-permissions.png')} alt="Slack OAuth and Permissions" width="600"/>
 1. Scroll down to the **Scopes** section.<br/>You must add permissions for the Bot Token and the User Token. Both tokens let your app act independently, but user tokens allow you to work directly on behalf of users, based on the OAuth scopes for users in your app.
 1. Click **Add an OAuth Scope** under **Bot Token Scopes** or **User Token Scopes**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes.png')} alt="Add an OAuth Scope in Slack" width="500"/>
-1. Enter the following permissions for Bot Token Scopes or User Token Scopes, depending on the the actions you want to perform. You'll need at least one of the `channels:`, `groups:`, `im:`, or `mpim:` scopes corresponding to the conversation type you're working with. 
+1. Enter the following permissions for Bot Token Scopes or User Token Scopes, depending on the the actions you want to perform. You'll need at least one of the `channels:`, `groups:`, `im:`, or `mpim:` scopes corresponding to the conversation type you're working with.
    * **Actions: List Channels / Get Channel / Get Members**<br/>Bot Token and User Token need the same scopes:
       * `channels:read`. View basic information about public channels in a workspace.
       * `groups:read`. View basic information about private channels that your Slack app has been added to.
@@ -612,13 +612,13 @@ After you create a Slack app, you must add the appropriate permissions for use w
 Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth Token and User OAuth token you saved in the previous step. These tokens will give the Slack integration the permissions it needs to perform the tasks in the scopes you set up.
 1. Add resources for the tokens:
    1. In Cloud SOAR, click the gear icon and select **Automation**.<br/><img src={useBaseUrl('img/cloud-soar/integration-automation-menu.png')} alt="Automation option" width="300"/>
-   1. Click **Integrations**. 
+   1. Click **Integrations**.
    1. Select the Slack integration. The integration's resources appear.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-in-list.png')} alt="Select the Slack integration" width="800"/>
-   1. Click **+** to add a new Resource.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-resources.png')} alt="Add a resource" width="600"/> 
+   1. Click **+** to add a new Resource.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-resources.png')} alt="Add a resource" width="600"/>
    1. Name the resource "User OAuth Access Token".
    1. Click **Edit**.
-   1. Copy the User OAuth Token you saved from the Slack API setup and paste it Into the **Bot/User OAuth Token** field. 
-   1. Once you have filled in all the required fields, click **Save**. 
+   1. Copy the User OAuth Token you saved from the Slack API setup and paste it Into the **Bot/User OAuth Token** field.
+   1. Once you have filled in all the required fields, click **Save**.
    1. Click **TEST SAVED SETTINGS** to verify configuration.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user.png')} alt="New resource" width="400"/>
    1. Repeat the steps to create a "Bot User OAuth Access Token", and paste your previously saved Bot User OAuth Token into the **Bot/User OAuth Token** field.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-2.png')} alt="Bot resource" width="400"/>
    1. Ensure that both new resources are configured properly by using **TEST SAVED SETTINGS**. Following is an example of a successful configuration message.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-edit-resource.png')} alt="Successful configuration message" width="400"/><br/>Here is how the Resources look after configuration.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-resource-2.png')} alt="Resources after configuration" width="600"/>
@@ -626,7 +626,7 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
    :::note
    Only set this up if you want to be able to use the Slack App in User Choice responses or enable Slack Chat Integration. This is outlined below.
    :::
-   1. Navigate to the [Slack API page](https://api.slack.com/apps). 
+   1. Navigate to the [Slack API page](https://api.slack.com/apps).
    1. Place your instance URL in the **Event Subscriptions** page.<br/><img src={useBaseUrl('img/cloud-soar/integration-event-subscriptions.png')} alt="Event subscriptions" width="600"/>
    1. Place your instance URL in the **Interactivity & Shortcuts** page.<br/><img src={useBaseUrl('img/cloud-soar/integrations-interactivity.png')} alt="Event subscriptions" width="600"/>
    1. In Cloud SOAR, at the top of the screen click the gear icon and select **Settings**.<br/><img src={useBaseUrl('img/cloud-soar/integration-settings-menu.png')} alt="Settings option" width="300"/>
@@ -643,7 +643,7 @@ If your new resources are configured correctly, and Instant Messaging displays a
  If you have configured Slack as described in [Configure Slack for Cloud SOAR](#configure-slack-for-cloud-soar), you can set a playbook’s [User Choice](#user-choice) to be answered by Slack.
 
 1. Run a playbook with a User Choice action. The following example shows a simple playbook with two available answers: **Close Incident** and **Investigate**. Notice that the option **Answer By Slack** is enabled.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-playbook.png')} alt="Playbook with user choices" width="600"/>
-<br/>In this case, the Authorizer set is just a user. If a group is chosen, a Slack channel will be created and all the group members will be authorized to choose one of the **User Choice** available options. The channel will be automatically named as the incident on which the playbook is running. 
+<br/>In this case, the Authorizer set is just a user. If a group is chosen, a Slack channel will be created and all the group members will be authorized to choose one of the **User Choice** available options. The channel will be automatically named as the incident on which the playbook is running.
 1. When the playbook flow reaches the **User Choice**, the user or group will receive a message containing the reference to the incident, the playbook name, and the question set for the **User Choice**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice.png')} alt="Slack user choice message" width="600"/>
 1. After a recipient chooses one of the available options, the playbook flow will continue and a message will inform the user or the group about the choice made.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-user-choice-2.png')} alt="Selected user choice" width="600"/>
 
@@ -653,7 +653,7 @@ Cloud SOAR has a built-in Slack chat feature that lets you exchange messages wit
 
 1. Set the BOT Token scopes and User Token scopes as described in [Configure Slack for Cloud SOAR](#configure-slack-for-cloud-soar).
 1. Select **Profile**.<br/><img src={useBaseUrl('img/cloud-soar/integration-profile-button.png')} alt="Profile button" width="150"/><br/>Your user profile opens in the **User > User Management** page.
-1. In the Preferences panel click **Enable slack chat integration**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-chat-enable.png')} alt="Enable Slack chat integtration toggle" width="500"/> 
+1. In the Preferences panel click **Enable slack chat integration**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-chat-enable.png')} alt="Enable Slack chat integtration toggle" width="500"/>
 1. After enabling the Slack chat integration, a channel will automatically appear in the workspace when an incident is created inside Cloud SOAR. The message will contain a link to the incident and all team conversations regarding the incident. <br/><img src={useBaseUrl('img/cloud-soar/integration-slack-chat-new-channel.png')} alt="New channel" width="400"/>
 1. A chat box also displays. Click the incident ID shown in the chat box to open the incident.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-chat-incident-id.png')} alt="Chat box" width="200"/>
 
@@ -666,7 +666,7 @@ Cloud SOAR has a built-in Slack chat feature that lets you exchange messages wit
 Select **Automation Rules** page follows the same format as
 all customizable Cloud SOAR features, click **+** to create a new automation ruleset:
 
-<img src={useBaseUrl('img/cloud-soar/image95.png')} alt="Add automation rule"  width="400"/> 
+<img src={useBaseUrl('img/cloud-soar/image95.png')} alt="Add automation rule"  width="400"/>
 
 
 Select a name for the rule, then select the daemon to use with this new rule and the resource and fill all the remain parameters.
@@ -685,4 +685,4 @@ The **Action Type** dropdown will contain the specific actions Cloud SOAR can ta
 
 To add a new mapping setting, click on the plus button near Mapping if enable for that action.
 
-<img src={useBaseUrl('img/cloud-soar/image103.png')} alt="Add action"  width="400"/> 
+<img src={useBaseUrl('img/cloud-soar/image103.png')} alt="Add action"  width="400"/>

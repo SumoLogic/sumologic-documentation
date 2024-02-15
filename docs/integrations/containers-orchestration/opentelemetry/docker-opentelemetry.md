@@ -59,7 +59,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-collector.png')} style={{border:'1px solid black'}} alt="Docker-collector"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-collector.png')} style={{border:'1px solid gray'}} alt="Docker-collector"/>
 
 ### Step 2: Configure integration
 
@@ -72,7 +72,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-YAML.png')} style={{border:'1px solid black'}} alt="Docker-YAML"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-YAML.png')} style={{border:'1px solid gray'}} alt="Docker-YAML"/>
 
 ### Step 3: Send logs to Sumo
 
