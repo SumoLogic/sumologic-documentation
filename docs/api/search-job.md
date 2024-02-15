@@ -84,6 +84,10 @@ You can start requesting results asynchronously while the job is running and pag
    <td>Infrequent</td>
    <td>Can return up to 10 million records per search.</td>
   </tr>
+  <tr>
+   <td>Flex</td>
+   <td>Can return up to 10 million records per search.</td>
+  </tr>
 </table>
 
 

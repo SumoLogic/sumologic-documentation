@@ -48,7 +48,7 @@ You may edit the retention period of Partitions and Scheduled Views. The minimum
    1. If the new retention period is shorter than the previous period, a portion of your data will be deleted in 7 days or right away. Click **Save** and choose either:
        * Simulate this data deletion for a few days and then reduce it permanently by selecting **Reduce retention period after 7 days.** You will be billed for this data until the deletion is permanent, but it gives you a sense of how the deletion will impact you before it is final.
          :::note
-         When you select **Reduce Retention Period after 7 days**, the retention period on your Partitions page will not change immediately. There will be a an icon indicating that a retention decrease is imminent in a number of days. When the counter expires, the data will be deleted, the warning icon will disappear, and the new retention policy will be in effect.
+         When you select **Reduce Retention Period after 7 days**, the retention period on your Partitions page will not change immediately. There will be an icon indicating that a retention decrease is imminent in a number of days. When the counter expires, the data will be deleted, the warning icon will disappear, and the new retention policy will be in effect.
 
          The retention period change applies to all data (including data ingested before the change).
 
