@@ -169,8 +169,8 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | Settings General | Configure | Configure [settings](/docs/cloud-soar/global-functions-menu/#settings). |
 | User Management | Groups | Manage [groups](/docs/cloud-soar/global-functions-menu/#groups). |
 | Notification | Configure | Configure [notifications](/docs/cloud-soar/global-functions-menu/#notifications). |
-| Customization | Logo | Customize the [logo](/cloud-soar/global-functions-menu/#logo). |
-| Customization | Fields | Customize [fields](/cloud-soar/global-functions-menu/#logo). |
+| Customization | Logo | Customize the [logo](/docs/cloud-soar/global-functions-menu/#logo). |
+| Customization | Fields | Customize [fields](/docs/cloud-soar/global-functions-menu/#logo). |
 | Customization | Incident Labels | Customize incident labels. |
 | Customization | Triage | Customize triage. |
 | Audit and Information | License Information | View license [audit and information](/docs/cloud-soar/global-functions-menu/#audit-and-information). |
