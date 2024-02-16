@@ -2,7 +2,7 @@
 id: threat-intelligence-indicators
 title: Threat Intelligence Indicators
 sidebar_label: Threat Intelligence Indicators
-description: Learn how to add indicators from threat intelligence sources.
+description: Learn how to use indicators from threat intelligence sources.
 ---
 
 <head>
@@ -16,6 +16,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Threat intelligence, often abbreviated as *threat intel*, is information that helps you prevent or mitigate cyber attacks. *Threat intelligence indicators* are individual data points about threats that are gathered from external sources about various entities such as host names, file hashes, IP addresses, and other known targets for compromise. You can import files containing threat intelligence indicators directly into Sumo Logic to aid in security analysis. 
 
 Threat intelligence indicators can help security analysts leverage a large body of information to surface potential threats. For example, say that a threat intelligence database has an indicator that correlates a certain IP address with known malicious activity. Because of this correlation, analysts can assume log messages with that IP address are more likely to be part of a real cyber attack.
+
+Once you [ingest indicators](#ingest-threat-intelligence-indicators) and they appear on the [Threat Intelligence tab](#threat-intelligence-tab), you can use them to search logs for threats. See [Find threats with log queries](#find-threats-with-log-queries) to learn how. 
 
 ## Prerequisites
 
@@ -36,16 +38,29 @@ Add the following capabilities:
 To search logs that contain correlations to threat intelligence indicators, you must first ingest the indicators. You can ingest indicators using:
 * **The Threat Intelligence tab**. See [Add indicators in the Threat Intelligence tab](#add-indicators-in-the-threat-intelligence-tab).
 * **A collector**. See [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source). 
-* **The API**. See the following APIs in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) resource:
+* **The API**. See the following APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource:
    * [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators)
    * [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators)
    * [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)
 
 See [Upload formats](#upload-formats) for the format to use when uploading indicators using the Threat Intelligence tab or APIs.
 
+:::note
+* The limit of the number of indicators that can be uploaded in one API call is 100.
+* When you add indicators, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](#audit-logging-for-threat-intelligence).
+:::
+
+## Typical workflow
+
+Here is the typical workflow to set up and use threat intelligence indicators:
+
+1. A system administrator sets up services to automatically [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators). For example, install a collector such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and set up services to obtain indicators from Federal, vendor, and open services and ingest them using the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs. You can manually add additional indicators as needed, such as your own private indicators, using the [Threat Intelligence tab](#add-indicators-in-the-threat-intelligence-tab) or the APIs.
+1. Analysts use the threat indicators data for such things as saved searches, dashboards, [manual searches](#find-threats-with-log-queries), [Cloud SIEM rules](#find-threats-using-cloud-siem-rules), and [Cloud SIEM UI](#view-threat-indicators-in-the-cloud-siem-ui).
+1. A system administrator occasionally checks to see why a connector isn’t ingesting data, or to see how much storage all the indicators are using. They may [run threatlookup with the cat search operator](#find-threats-with-log-queries) to explore their indicators and then [delete some old or irrelevant data](#delete-threat-intelligence-indicators).
+
 ## Threat Intelligence tab
 
-Use the **Threat Intelligence** tab to add and manage threat intelligence indicators. You can add threat intelligence indicators from a number of sources, including CrowdStrike, TAXII, ThreatQ, iDefense, and many others. And threat intelligence indicators imported to Sumo Logic not only integrate with your existing core Sumo Logic deployment, but also Cloud SIEM and Cloud SOAR. (For information about how to add additional threat intelligence indicators for Cloud SIEM, see [Create a Custom Threat Intelligence Source](/docs/cse/administration/create-custom-threat-intel-source).)
+Use the **Threat Intelligence** tab to add and manage threat intelligence indicators. You can add threat intelligence indicators from a number of sources, including CrowdStrike, TAXII, ThreatQ, iDefense, and many others. And threat intelligence indicators imported to Sumo Logic not only integrate with your existing core Sumo Logic deployment, but also Cloud SIEM and Cloud SOAR. 
 
 To access the **Threat Intelligence** tab, go to **Manage Data > Logs > Threat Intelligence**.
 
@@ -53,13 +68,14 @@ To access the **Threat Intelligence** tab, go to **Manage Data > Logs > Threat I
 
 1. **Add Indicators**. Click to upload files that [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab).
 1. **Actions**. Select to perform additional actions:
-    * **Edit Retention Period**. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180.
+    * **Edit Retention Period**. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180. See [Change the retention period for expired indicators](#change-the-retention-period-for-expired-indicators).
 1. **Source Name**. The source of the threat intelligence indicator file. 
 1. **Storage Consumed**. The amount of storage consumed by the threat intelligence indicator file.
 1. **Indicators**. The number of threat intelligence indicators included in the file. 
 
 :::note
-The "CrowdStrike provided by Sumo Logic (s_CrowdStrike)" source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name.
+* The "CrowdStrike provided by Sumo Logic (s_CrowdStrike)" source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name.
+* The default storage limit is 5 million total indicators (not including any indicators provided by Sumo Logic such as the s_CrowdStrike source).
 :::
 
 ### Add indicators in the Threat Intelligence tab
@@ -81,32 +97,56 @@ You can also add threat intelligence indicators using the API or a collector. Se
 1. Click **Upload** to upload the file. 
 1. Click **Import**. 
 
+:::note
+When you add indicators, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](#audit-logging-for-threat-intelligence).
+:::
+
 ### Delete threat intelligence indicators
 
-1. Select a source. Details of the source appear in a sidebar.
+1. In Sumo Logic, go to **Manage Data > Logs > Threat Intelligence**.
+1. Select a source in the list of sources. Details of the source appear in a sidebar.
 1. Click **Delete Indicators**. The following dialog appears. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
 1. Select indicators to delete from the source:
    * **Delete all indicators**. Remove all indicators from the source.
    * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the indicators.
 1. Click **Delete**.
 
-## Find threats
-
-Once you [add threat intelligence indicators](#add-indicators-in-the-threat-intelligence-tab), you can perform searches to find matches to data in the indicators using:
-* [`threatlookup` search operator](#threatlookup-search-operator)
-* [`hasThreatMatch` Cloud SIEM rules language function](#hasthreatmatch-cloud-siem-rules-language-function)
-
-You can also see threat indicators displayed on Entities in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#threat-indicators-in-the-cloud-siem-ui).
-
-### threatlookup search operator
-
-The `threatlookup` search operator allows you to search logs for matches in [threat intelligence indicators](/docs/platform-services/threat-intelligence-indicators/), providing security analytics to help you to detect threats in your environment. 
-
 :::note
-You can also use the [`threatIP`](/docs/search/search-query-language/search-operators/threatip/) search operator to search CrowdStrike's threat intelligence data based on IP addresses. 
+When you remove indicators, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](#audit-logging-for-threat-intelligence).
 :::
 
-#### Syntax
+### Change the retention period for expired indicators
+
+Indicators are deemed valid until they reach the date set by their "valid until" attribute (`validUntil` for [normalized JSON](#normalized-json-format) and [CSV](#csv-format), and `valid_until` for [STIX](#stix-21-json-format)). After that date, they are considered expired.
+
+Expired indicators are retained until they reach the end of the retention period. At the end of the retention period, expired indicators are automatically deleted. Between the time they expire and are deleted, the indicators are still in the system, and you can search against them if you want.
+
+By default, expired indicators are retained for 180 days. To change the retention period:
+1. In Sumo Logic, go to **Manage Data > Logs > Threat Intelligence**.
+1. Click the three-dot button in the upper-right corner of the page.
+1. Click **Edit Retention Period**. 
+1. Enter the length of time in days to retain expired threat intelligence indicator files. The maximum number of days is 180. 
+
+:::note
+When you change the retention period, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](#audit-logging-for-threat-intelligence).
+:::
+
+You do not have to wait until indicators reach the end of their retention period in order to delete them. You can [use the Threat Intelligence tab to delete indicators](#delete-threat-intelligence-indicators), as well as use the APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
+
+## Find threats with log queries
+
+Once you [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators), you can perform searches to find matches to data in the indicators using the `threatlookup` search operator.
+
+The `threatlookup` operator allows you to search logs for matches in threat intelligence indicators. For example, use the following query to find logs in all `sec_record*` indexes with a `srcDevice_ip` attribute correlated to a threat indicator with a high confidence level (greater than 50): 
+
+ ```
+_index=sec_record* 
+| where _threatlookup.confidence > 50
+| timeslice 1h
+| count by _timeslice
+```
+
+### Syntax
 
 ```
 threatlookup [singleIndicator] [source="<source_value>"] [include="<all|active|expired>"] <indicator_value_field> [,<optional_indicator_value_field_2>, …]
@@ -120,7 +160,7 @@ Where:
      1. Higher confidence indicators.
      1. More malicious indicators.
      1. Most recently updated indicators.
-   
+
    If there's still a tie at this point, the system picks the indicator the back-end database returned first.
 
 * `source` is the source to search for the threat intelligence indicator. If `source` is not specified, all sources are searched.
@@ -141,7 +181,7 @@ Where:
 * updated
 * num_match (if `singleIndicator` is used)
 
-#### Examples
+### Examples
 
 ```
 _index=sec_record*
@@ -206,11 +246,23 @@ cat sumo://threat-intel | formatDate(toLong(_threatlookup.valid_until), "yyyy-MM
 You cannot use the cat search operator with the `s_crowdstrike` source.
 :::
 
+## Threat indicators in Cloud SIEM
+
+Threat indicators can be used in Cloud SIEM to find possible threats. 
+
 ### hasThreatMatch Cloud SIEM rules language function
 
-The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to threat intelligence indicators. It can match values in [Cloud SIEM threat intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence) lists as well as threat indicators added to the [Threat Intelligence tab](#threat-intelligence-tab). For other Cloud SIEM rules functions, see [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/).
+Use the `hasThreatMatch` function in Cloud SIEM rules to search incoming Records for matches to threat intelligence indicators. 
 
-#### Syntax
+For example, use the function to find all Records with a `srcDevice_ip` attribute correlated to a threat indicator with a high confidence level (greater than 50): 
+
+```
+hasThreatMatch([srcDevice_ip], confidence > 50)
+```
+
+The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to [threat intelligence indicators](/docs/platform-services/threat-intelligence-indicators). It can also match values in [Cloud SIEM threat intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence). 
+
+**Syntax**
 
 `hasThreatMatch([<fields>], <filters>, <indicators>)`
 
@@ -222,7 +274,7 @@ Parameters:
    * `expired_indicators`. Match expired indicators only.
    * `all_indicators`. Match all indicators.
 
-#### Examples
+**Examples**
 
 * `hasThreatMatch([srcDevice_ip])`
 * `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
@@ -232,7 +284,7 @@ Parameters:
 * `hasThreatMatch([srcDevice_ip], expired_indicators)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
 
-### Threat indicators in the Cloud SIEM UI
+### View threat indicators in the Cloud SIEM UI
 
 An Entity can be associated with a known indicator that has a threat type attribute, either `threatType` (in normalized JSON format and CSV format), or `indicator_types` (in STIX format as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). 
 
@@ -254,9 +306,25 @@ Since different sources can report different reputations, each source has a repu
 
 <img src={useBaseUrl('img/platform-services/threat-indicators-in-cloud-siem-ui.png')} alt="Threat indicators in the Cloud SIEM UI" style={{border: '1px solid gray'}} width="400" />
 
+### Custom threat intelligence sources in Cloud SIEM
+
+Previously, you could [create custom threat intelligence sources using Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). You can no longer create custom sources using Cloud SIEM, but you must use the Threat Intelligence tab, a collector, or the API to [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators). If you have custom sources in Cloud SIEM, they will continue to be honored until the feature is deprecated at a future time.
+
+If you have indicators in Cloud SIEM that you want to continue using past deprecation, you must re-ingest them from the source that you originally used to place the custom sources in Cloud SIEM. Once ingested, the indicators will appear in the [Threat Intelligence tab](#threat-intelligence-tab) and be available for use in both Cloud SIEM as well as the Sumo Logic Log Analytics Platform. 
+
+## Audit logging for threat intelligence
+
+Use the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index/) to view events for threat indicators, such as adding indicators, removing indicators, or changing the retention period.
+
+Use a search like the following:
+
+```
+_index=sumologic_audit_events _sourceCategory=threatIntelligence
+```
+
 ## Upload formats
 
-Use the following formats for threat intelligence indicator files when you [add indicators in the Threat Intelligence tab](#add-indicators-in-the-threat-intelligence-tab) or when you use the upload APIs in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) resource:
+Use the following formats for threat intelligence indicator files when you [add indicators in the Threat Intelligence tab](#add-indicators-in-the-threat-intelligence-tab) or when you use the upload APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource:
 
 * [Normalized JSON format](#normalized-json-format)
 * [CSV format](#csv-format)
@@ -309,7 +377,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
 
 #### Required attributes
 
-For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) resource.
+For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators) in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
 
 The following attributes are required:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
@@ -367,7 +435,7 @@ For other examples for uploading CSV files using the API, see the [uploadCsvIndi
 
 #### Required attributes
 
-For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
+For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators) in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
 
 Columns for the following attributes are required in the upload file:
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
@@ -539,7 +607,7 @@ As shown in the following example, if uploading via the API you must add the `so
 
 #### Required attributes
 
-For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [threatIntelIngest](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
+For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
 
 The following attributes are required:
        * **type** (string). The type of STIX object. For example, `indicator`. The value must be the name of one of the types of STIX objects defined in the STIX 2.1 specification.
