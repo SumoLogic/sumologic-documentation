@@ -295,6 +295,12 @@ With the mechanism to import and export playbooks, you can move a playbook, alon
 
 It is crucial that the file names inside the tar.gz adhere to the following format: `<unique_id>.<file_representing_name>.<file_type>.<file_extension>`, for example, `97ad7d6e.IP-Reputation.action.yaml`
 
+### Testing playbooks
+
+It is possible to perform a test run to verify the proper functioning of a playbook, either a revision or published.
+To do this, simply click on the icon with the 3 dots, then click on Run Test.<br/><img src={useBaseUrl('img/cloud-soar/playbook-run-test-option.png')} alt="Run test option" style={{border: '1px solid gray'}} width="800"/><br/>Upon clicking, a modal will be opened, where you can choose the type of Input in case the playbook is expecting data.
+Once the necessary data is entered, clicking the RUN button will open a new page with run details.<br/><img src={useBaseUrl('img/cloud-soar/playbook-run-test-modal.png')} alt="Run test modal" style={{border: '1px solid gray'}} width="500"/><br/>In order to be able to differentiate between runs, in case of test runs, "(RUN TEST)" will be added to the end of the playbook name.<br/><img src={useBaseUrl('img/cloud-soar/playbook-executed-run-test.png')} alt="Playbook executed run test" style={{border: '1px solid gray'}} width="800"/><br/>
+
 ## Incident Templates
 
 Incident Templates define the way in which incidents will be created for a specific alert, incident type or event. They allow you to define a certain number of incident attributes (e.g., incident type, severity, assignment, and any other default or custom incident parameters) that will automatically be set each time an incident is generated, based on the template. This may include type, classification, incident assignment, playbooks, Playbooks, knowledge base articles, or any other incident attribute. As rules are created for generating incidents based on syslog messages, email, SIEM integrations or other data sources, it is the Incident Templates that will define how the initial incident will be created.

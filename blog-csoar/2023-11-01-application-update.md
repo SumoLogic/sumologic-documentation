@@ -7,6 +7,9 @@ keywords:
  
 tags: [cloud soar release notes, application update]
 image: https://help.sumologic.com/img/sumo-square.png
+authors:
+  - url: https://help.sumologic.com/release-notes-csoar/rss.xml
+    image_url: /img/release-notes/rss-orange.png
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
