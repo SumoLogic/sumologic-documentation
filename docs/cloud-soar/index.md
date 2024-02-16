@@ -23,6 +23,12 @@ Navigate the evolving threat landscape with our best-in-class security orchestra
 </div>
 <div className="box smallbox card">
   <div className="container">
+  <a href="/docs/cloud-soar/compared-to-automation-service"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Cloud SOAR Compared to the Automation Service</h4></a>
+  <p>Compare the features of Cloud SOAR with the Automation Service.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
   <a href="/docs/cloud-soar/global-functions-menu"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Global Functions Menu</h4></a>
   <p>Cloud SOAR configuration and administrative options.</p>
   </div>

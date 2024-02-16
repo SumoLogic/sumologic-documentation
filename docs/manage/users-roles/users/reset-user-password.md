@@ -19,5 +19,5 @@ To reset a user's password follow these steps:
 
     ![user-options-menu.png](/img/users-roles/reset-password.png)
 
-1. Select the row for the user whose password you want to reset and choose **Reset Password** from the three-dot options menu. 
+1. Select the row for the user whose password you want to reset and choose **Reset Password** from the three-dot kebab options menu. 
 1. A new random password is generated and sent to the user at the email address listed in the user's details. When the user logs in with the reset password, the user is prompted to enter a new password.

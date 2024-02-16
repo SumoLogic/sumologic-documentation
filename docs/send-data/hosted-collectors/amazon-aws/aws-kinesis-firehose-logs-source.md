@@ -120,6 +120,13 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
     :::
 7. (Optional) In the **Test Pattern** section, select the log data to test, then click **Test pattern**. If test results look fine, then click **Start Streaming**.
 
-#### Auto-subscribe other log groups to SumoCWLogsLambda function
+:::note
+With above configuration sample log with ```raw``` format will be ingested into sumo logic for Amazon RDS cloudWatch logs for postgreSQL.
+```json 
+2024-01-13 11:02:19 UTC::@:[561]:LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB
+```
+:::
 
-If you want to collect logs from multiple Log Groups, you can use Sumo’s LogGroup Lambda Connector to subscribe additional Log Groups to the AWS Kinesis Firehose. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a AWS Kinesis Firehose stream](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination). When you edit the connector parameters, set the `DestinationArnType` parameter to Kinesis, the `DestinationArnValue` parameter to the AWS Kinesis Firehose stream ARN, and the `ARNRole` parameter to the role that was created in the above steps that grants CloudWatch Logs permission to put data into your Kinesis Data Firehose delivery stream. If you used the Cloudformation template, then the role name will contain the cloudformation name followed by `-KinesisLogsRole-`.
+#### Auto-subscribe other log groups to Kinesis Data Firehose
+
+If you want to collect logs from multiple Log Groups, you can subscribe additional Log Groups to the AWS Kinesis Firehose. To do so, follow the instructions in [Auto-Subscribe AWS Log Groups to a AWS Kinesis Firehose stream](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination). When you edit the connector parameters, set the `DestinationArnType` parameter to <b>Kinesis</b>, the `DestinationArnValue` parameter to the AWS Kinesis Firehose stream ARN, and the `ARNRole` parameter to the role that was created in the above steps that grants CloudWatch Logs permission to put data into your Kinesis Data Firehose delivery stream. If you used the Cloudformation template, then the role name will contain the cloudformation name followed by `-KinesisLogsRole-`.
