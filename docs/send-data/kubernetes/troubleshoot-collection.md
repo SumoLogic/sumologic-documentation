@@ -15,7 +15,7 @@ If you are using ArgoCD or another tool that uses Helm under the hood, make sure
 
 ### Sumo Logic fields
 
-Sumo Logic Apps for Kubernetes and Explore require below listed fields to be added in Sumo Logic UI to your Fields table schema.
+Sumo Logic apps for Kubernetes and Explore require the below listed fields to be added in the Sumo Logic UI to your Fields table schema.
 
 - `cluster`
 - `container`
@@ -30,7 +30,7 @@ Sumo Logic Apps for Kubernetes and Explore require below listed fields to be add
 
 This is normally done in the setup job when `sumologic.setupEnabled` is set to `true` (default behavior).
 
-In an unlikely scenario that this fails, create them manually by visiting [Fields#Manage_fields](/docs/manage/fields/#manage-fields) in Sumo Logic UI.
+In the unlikely scenario that this fails, you can create them manually by visiting [Fields#Manage_fields](/docs/manage/fields/#manage-fields) in Sumo Logic UI.
 
 This is to ensure your logs are tagged with relevant metadata.
 
@@ -215,7 +215,7 @@ You can print logs on stdout of logs collector and logs metadata, and validate i
 
 In order to print them on stdout, two steps are required:
 
-1. Disable ingesting logs from logs related pods. This is required to prevent logs ingest spike.
+1. Disable ingesting logs from log-related pods. This is required to prevent logs ingest spike.
    - Add the following configuration to `user-values.yaml`:
      ```yaml
      debug:
@@ -225,24 +225,24 @@ In order to print them on stdout, two steps are required:
          collector:
            stopLogsIngestion: true
      ```
-   - Then, update your collection and wait for all logs collector pods to be redeployed.
+   - Then, update your collection and wait for all log collector pods to be redeployed.
 2. Enable printing logs on stdout for logs related pods by adding the following to `user-values.yaml`:
    ```yaml
-      debug:
-        logs:
-          metadata:
-            print: true
-            stopLogsIngestion: true
-          collector:
-            print: true
-            stopLogsIngestion: true
-      ```
+   debug:
+     logs:
+       metadata:
+         print: true
+         stopLogsIngestion: true
+       collector:
+         print: true
+         stopLogsIngestion: true
+   ```
 3. To revert your changes, perform first step as-is, then after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
 :::note
-It's important to perform first step exactly as it is, especially waiting for all collector pods to apply new configuration. We want to avoid situation in which collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
+It's important to perform first step exactly as-is, especially waiting for all collector pods to apply new configuration. We want to avoid situation in which collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
 :::
 
-### See logs being send to Sumo Logic
+### View logs being sent to Sumo Logic
 
 You can use Sumo Logic Mock to see what data has been sent to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
 
@@ -260,7 +260,7 @@ debug:
       forwardToSumologicMock: true
 ```
 
-Then look at the Sumo Logic Mock logs:
+Then, look at the Sumo Logic Mock logs:
 
 ```shell
 > kubectl logs -l sumologic.com/app=sumologic-mock -f
@@ -290,7 +290,7 @@ Then look at the Sumo Logic Mock logs:
 2024-02-13T08:54:27.742Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/logs HTTP/1.1--> accept-encoding: gzip--> content-type: application/x-protobuf--> content-length: 759--> host: collection-sumologic-mock.sumologic:3000--> content-encoding: gzip--> x-sumo-client: k8s_4.4.0-24-g7a27f1c253--> user-agent: Go-http-client/1.1
 
 2024-02-13T08:54:27.742Z DEBUG [sumologic_mock::router::otlp] log => 10.0.2.15 - - [13/Feb/2024:08:54:25 +0000] "GET / HTTP/1.1" 200 6 "" "kube-probe/1.23+"
-2024-02-13T08:54:27.742Z DEBUG [sumologic_mock::router::otlp] log => 
+2024-02-13T08:54:27.742Z DEBUG [sumologic_mock::router::otlp] log =>
 2024-02-13T08:54:27.742Z DEBUG [sumologic_mock::router::otlp] log => Initializing the backend...
 2024-02-13T08:54:27.768Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/logs HTTP/1.1--> host: collection-sumologic-mock.sumologic:3000--> content-length: 1393--> user-agent: Go-http-client/1.1--> content-type: application/x-protobuf--> accept-encoding: gzip--> x-sumo-client: k8s_4.4.0-24-g7a27f1c253--> content-encoding: gzip
 ```
@@ -303,7 +303,7 @@ Logs do not contain metadata fields. Due to that, you can only check data body s
 
 ### Check the `/metrics` endpoint
 
-You can `port-forward` to a pod exposing `/metrics` endpoint and verify it is exposing Prometheus metrics:
+You can `port-forward` to a pod exposing the `/metrics` endpoint and verify it is exposing Prometheus metrics:
 
 ```sh
 kubectl port-forward collection-sumologic-xxxxxxxxx-xxxxx 8080:24231
@@ -313,7 +313,7 @@ Then, in your browser, go to `http://localhost:8080/metrics`. You should see Pro
 
 #### Check the `/metrics` endpoint for Kubernetes services
 
-For kubernetes services you can use the following way:
+For kubernetes services, you can use the following way:
 
 1. Create `sumologic-debug` pod.
    ```yml
@@ -502,7 +502,7 @@ In order to print them on stdout, two steps are required:
          stopLogsIngestion: true
    ```
 
-   Then update your collection and wait for all logs collector pods to be redeployed.
+   Then update your collection and wait for all log collector pods to be redeployed.
 
 2. Enable printing metrics on stdout for metrics related pods, by adding the following to `user-values.yaml`:
 
@@ -520,13 +520,14 @@ In order to print them on stdout, two steps are required:
 3. To revert your changes, perform first step as-is, then after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
 
 :::note
-It's important to perform the first step exactly as it is, especially waiting for all logs collector pods to apply the new configuration. We want to avoid a situation in which logs collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
+It's important to perform the first step exactly as-is, especially waiting for all log collector pods to apply the new configuration. We want to avoid a situation in which logs collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
 :::
 
-### See metrics being send to Sumo Logic
+### View metrics being sent to Sumo Logic
 
-You can use Sumo Logic Mock to see what data has been send to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
+You can use Sumo Logic Mock to see what data has been send to Sumo Logic.
 
+In order to do that, add the following to your `user-values.yaml`:
 ```yaml
 debug:
   sumologicMock:
@@ -541,7 +542,7 @@ debug:
       forwardToSumologicMock: true
 ```
 
-Then look at the Sumo Logic Mock logs:
+Then, look at the Sumo Logic Mock logs:
 
 ```shell
 > kubectl logs -l sumologic.com/app=sumologic-mock -f
@@ -598,7 +599,7 @@ In order to print them on stdout, two steps are required:
          stopLogsIngestion: true
    ```
 
-   Then update your collection and wait for all logs collector pods to be redeployed.
+   Then update your collection and wait for all log collector pods to be redeployed.
 
 2. Enable printing spans on stdout for instrumentation related pods, by adding the following to `user-values.yaml`:
 
@@ -616,16 +617,17 @@ In order to print them on stdout, two steps are required:
          stopLogsIngestion: true
    ```
 
-3. To revert changes, please perform first step as it is, and after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
+3. To revert your changes, perform first step as-is, then after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
 
 :::note
-It's important to perform the first step exactly as it is, especially waiting for all logs collector pods to apply new configuration. We want to avoid the situation in which logs collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
+It's important to perform the first step exactly as-is, especially waiting for all log collector pods to apply new configuration. We want to avoid the situation in which logs collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
 :::
 
-### See traces being send to Sumo Logic
+### View traces being sent to Sumo Logic
 
-You can use Sumo Logic Mock to see what data has been send to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
+You can use Sumo Logic Mock to see what data has been send to Sumo Logic.
 
+In order to do that, add the following to your `user-values.yaml`:
 ```yaml
 debug:
   sumologicMock:
@@ -640,7 +642,7 @@ debug:
       forwardToSumologicMock: true
 ```
 
-Then look at the Sumo Logic Mock logs:
+Then, look at the Sumo Logic Mock logs:
 
 ```shell
 > kubectl logs -l sumologic.com/app=sumologic-mock -f
@@ -665,32 +667,28 @@ You can print events on stdout of events collector pod, and validate if they are
 
 In order to print them on stdout, two steps are required:
 
-1. Disable ingesting logs from events collector. This is required to prevent logs ingest spike. Add the following configuration to `user-values.yaml`:
-
+1. Disable ingesting logs from events collector. This is required to prevent logs ingest spike.
+   - Add the following configuration to `user-values.yaml`:
    ```yaml
    debug:
      events:
        stopLogsIngestion: true
    ```
-
-   Then update your collection and wait for all logs collector pods to be redeployed.
-
+   - Then, update your collection and wait for all log collector pods to be redeployed.
 2. Enable printing events on stdout for events collector, by adding the following to `user-values.yaml`:
-
    ```yaml
    debug:
      events:
        print: true
        stopLogsIngestion: true
    ```
-
-3. To revert changes, please perform the first step as it is, and after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
+3. To revert your changes, perform the first step as-is, then after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
 
 :::note
-It's important to perform the first step exactly as it is, especially waiting for all collector pods to apply new configuration. We want to avoid the situation in which collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
+It's important to perform the first step exactly as-is, especially waiting for all collector pods to apply new configuration. We want to avoid the situation in which collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
 :::
 
-### See events being send to Sumo Logic
+### View events being sent to Sumo Logic
 
 You can use Sumo Logic Mock to see what data has been send to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
 
@@ -982,7 +980,7 @@ Sumo Logic Mock is treated as an experimental tool and it may significantly chan
 
 Sumo Logic Mock can be used to estimate how many logs and metrics are going to be sent to Sumo Logic without even having any Sumo Logic account.
 
-Please add the following configuration to your `user-values.yaml`:
+Add the following configuration to your `user-values.yaml`:
 
 ```yaml
 debug:
