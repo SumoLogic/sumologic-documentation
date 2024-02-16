@@ -60,11 +60,14 @@ To configure a TAXII 2 Client Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. (Optional) **Sumo Logic Threat Intel Source ID**. Provide your own threat intelligence source ID for organizing multiple sources.
-1. In **STIX/TAXII Configuration**:
+1. **STIX/TAXII Configuration**:
     1. **Version**. Select the STIX/TAXII version the vendor is using (2.0 or 2.1).
     1. **TAXII Discovery URL**. Enter the TAXII Discovery URL provided by the vendor.
-1. **Authentication**. If HTTP basic authentication is required, check **Use Basic Auth** and provide your vendor username and password.
-1. In **Other Settings**:
+1. **Authentication**. Select the authentication type:
+   * **API Key**. Provide the API auth name and value, and select the API auth style.
+   * **Basic**. Provide your vendor username and password.
+   * **Bearer**. Provide the bearer auth token and prefix. 
+1. **Other Settings**:
     1. (Optional) **Set Indicators Limit Per Page**. Set the maximum number of indicators to return per page. The default is 99.
     1. (Optional) **Polling Interval**. Set how frequently to poll for new or updated indicators. It must be between 5 minutes and 48 hours. 
 1. When you are finished configuring the Source, click **Save**.
