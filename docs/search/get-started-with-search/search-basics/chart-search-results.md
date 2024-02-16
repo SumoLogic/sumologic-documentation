@@ -19,7 +19,7 @@ Follow the below instructions to chart aggregate the results:
 1. From a search, run an aggregate query.
 1. From the **Aggregates** tab, click a graph button on the **Aggregates** tab.
 
-<img src={useBaseUrl('img/search/get-started-search/search-basics/aggregates.png')} alt="aggregates" style={{border:'1px solid black'}} width="800" />
+<img src={useBaseUrl('img/search/get-started-search/search-basics/aggregates.png')} alt="aggregates" style={{border:'1px solid gray'}} width="800" />
 
 For this example, you can see a bar chart, but you can pick from any of the available charting options, see [Chart Panel Types](/docs/dashboards/panels) for details.
 
@@ -29,15 +29,15 @@ Clicking the **New Visualizations** button will enable the new visualizations fo
 
 Charts will appear in classic visualization style by default. However, if you choose a new visualization, your selection will be remembered, and any further searches in the same or new tab will always render with the new visualization.
 
-<img src={useBaseUrl('img/search/get-started-search/search-page/new-visualizations.png')} alt="new-visualizations" style={{border:'1px solid black'}} width="800" />
+<img src={useBaseUrl('img/search/get-started-search/search-page/new-visualizations.png')} alt="new-visualizations" style={{border:'1px solid gray'}} width="800" />
 
 **Data** represents the data that has been used to plot chart, **Round data point** toggle button is used to turn ON/OFF the round off to the value in tooltip, and the **Visual Settings** options allow you to customize your chart. The other customizing properties include **[Display Overrides](/docs/dashboards/panels/modify-chart/#overridedashboard-displays)**, **[Axes](/docs/dashboards/panels/modify-chart/#modifychart-axes)**, **[Legend](/docs/dashboards/panels/modify-chart/#modifychart-legend)**, **Thresholds**, and **[JSON](/docs/dashboards/panels/modify-chart/#modifychart-legend)**.
 
-<img src={useBaseUrl('img/search/get-started-search/search-basics/log-query-charts-properties.png')} alt="log-query-charts-properties" style={{border:'1px solid black'}} width="800" />
+<img src={useBaseUrl('img/search/get-started-search/search-basics/log-query-charts-properties.png')} alt="log-query-charts-properties" style={{border:'1px solid gray'}} width="800" />
 
 If you prefer to use the classic visualizations UI, you can do so by clicking the **Classic Visualizations** button. You'll be asked to confirm your choice, Click **Switch to Classic Visualizations** to proceed.
 
-<img src={useBaseUrl('img/search/get-started-search/search-basics/switch-to-classic-visualizations.png')} alt="switch-to-classic-visualizations" style={{border:'1px solid black'}} width="400" />
+<img src={useBaseUrl('img/search/get-started-search/search-basics/switch-to-classic-visualizations.png')} alt="switch-to-classic-visualizations" style={{border:'1px solid gray'}} width="400" />
 
 ## FAQ
 

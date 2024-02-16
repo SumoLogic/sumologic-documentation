@@ -598,7 +598,7 @@ module.exports = {
   manage: [
   {
     type: 'category',
-    label: 'Manage',
+    label: 'Manage Account',
     collapsible: true,
     collapsed: false,
     link: {type: 'doc', id: 'manage/index'},
@@ -658,17 +658,6 @@ module.exports = {
         'manage/partitions-data-tiers/data-tiers-faqs',
         'manage/partitions-data-tiers/searching-data-tiers',
       ]
-    },
-    {
-      type: 'category',
-      label: 'Connections and Integrations',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/connections-integrations/index'},
-      items: [
-        'manage/connections-integrations/heroku',
-        'manage/connections-integrations/jfrog-artifactory',
-      ],
     },
     {
       type: 'category',
@@ -752,6 +741,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/data-forwarding/index'},
       items: [
+        'manage/data-forwarding/installed-collectors',
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
         'manage/data-forwarding/view-list-data-forwarding',
@@ -765,7 +755,6 @@ module.exports = {
       link: {type: 'doc', id: 'manage/data-archiving/index'},
       items: [
         'manage/data-archiving/archive',
-        'manage/data-archiving/installed-collectors',
       ]
     },
     {
@@ -2361,6 +2350,7 @@ integrations: [
         label: 'Webhooks',
         collapsible: true,
         collapsed: true,
+        link: {type: 'doc', id: 'integrations/webhooks/index'},
         items: [
           'integrations/webhooks/buddy',
           'integrations/webhooks/bugsnag',
@@ -2697,6 +2687,7 @@ integrations: [
       items: [
         'cloud-soar/overview',
         'cloud-soar/architecture',
+        'cloud-soar/compared-to-automation-service',
         'cloud-soar/global-functions-menu',
         'cloud-soar/main-menu',
         'cloud-soar/incidents-triage',

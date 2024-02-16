@@ -126,7 +126,7 @@ config similar to the following to proxy the syslog data:
 
 ```
 cert = /etc/stunnel/stunnel.pem
-sslVersion = SSLv3
+sslVersion = TLSv1.2
 chroot = /var/run/stunnel/
 setuid = nobody
 setgid = nobody
@@ -143,7 +143,8 @@ connect = 1514
 In this example, we're listening for incoming TLS connections on the host port 1543/TCP ("accept = 1543"). Then this forwards the plain text data to port 1514/TCP, ("connect = 1514") or the port defined in the Collector Syslog config, via the loop back.
 
 :::note
-Your Collector Syslog source must be configured to listen over TCP for this proxy to work correctly.
+* Your Collector Syslog source must be configured to listen over TCP for this proxy to work correctly.
+* The example uses `sslVersion = TLSv1.2` Check that your SSL version works properly.
 :::
 
 Find more information on Stunnel and its available configuration options, see https://www.stunnel.org/docs.html.

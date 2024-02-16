@@ -2,7 +2,7 @@
 id: haproxy-opentelemetry
 title: HAProxy - OpenTelemetry Collector
 sidebar_label: HAProxy - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for HAProxy.
+description: Learn about the Sumo Logic OpenTelemetry app for HAProxy.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,13 +13,13 @@ import TabItem from '@theme/TabItem';
 
 [HAProxy](https://docs.haproxy.org/2.6/intro.html) is open source software that provides a high availability load balancer and proxy server for TCP and HTTP-based applications that spreads requests across multiple servers.
 
-The Sumo Logic App for HAProxy helps you monitor activity in HAProxy. The preconfigured dashboards provide information about site visitors, including location of visitors, HTTP Error codes percentage, Backend and Frontend server statistics.
+The Sumo Logic app for HAProxy helps you monitor activity in HAProxy. The preconfigured dashboards provide information about site visitors, including location of visitors, HTTP Error codes percentage, Backend and Frontend server statistics.
 
 HAProxy logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Schematics.png' alt="Schematics" />
 
-## HAProxy Log Types
+## HAProxy log types
 
 The app supports Logs from the open source version of HAProxy. The App is tested on the 2.3.9 version of HAProxy.
 
@@ -35,7 +35,7 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ## Prerequisites
 
-This section provides instructions for configuring log collection for HAProxy running on a non-Kubernetes environment for the Sumo Logic App for HAProxy.
+This section provides instructions for configuring log collection for HAProxy running on a non-Kubernetes environment for the Sumo Logic app for HAProxy.
 
 By default, HAProxy logs are forwarded to Syslog. This needs to be changed to send the logs to files. Configuration in the file `/etc/haproxy/haproxy.cfg` is needed to be modified to send logs to files.
 
@@ -75,6 +75,10 @@ By default, HAProxy logs are forwarded to Syslog. This needs to be changed to se
    sudo service haproxy reload
    ```
 
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
 ## Collection configuration and app installation
 
 import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
@@ -87,7 +91,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -97,9 +101,9 @@ The path of the log file configured to capture haproxy logs is needed to be give
 
 The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the haproxy.conf file for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
@@ -193,7 +197,7 @@ webengine.cluster.name=* %"sumo.datasource"=haproxy
 | limit 5
 ```
 
-## Viewing HAProxy Dashboards
+## Viewing HAProxy dashboards
 
 ### Overview
 

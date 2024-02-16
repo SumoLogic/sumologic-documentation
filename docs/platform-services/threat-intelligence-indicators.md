@@ -136,6 +136,7 @@ The `threatlookup` operator allows you to search logs for matches in threat inte
  ```
 _index=sec_record* 
 | threatlookup srcDevice_ip
+
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice

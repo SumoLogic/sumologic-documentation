@@ -38,7 +38,7 @@ The keys assigned to the Dashboard Stack Linking would need to include those, fo
 
 To link a custom Dashboard to your stack in Explore, do the following:
 
-1. From your custom dashboard, click the three-dot icon in the upper right corner of the window and select **Create Stack Linking** from the dropdown menu.
+1. From your custom dashboard, click the three-dot kebab icon in the upper right corner of the window and select **Create Stack Linking** from the dropdown menu.
     :::info
     Make sure you have edit permission for a dashboard to create stack linking.
     :::
