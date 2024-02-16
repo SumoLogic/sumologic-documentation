@@ -517,7 +517,7 @@ In order to print them on stdout, two steps are required:
          stopLogsIngestion: true
    ```
 
-3. To revert changes, please perform first step as it is, and after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
+3. To revert your changes, perform first step as-is, then after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
 
 :::note
 It's important to perform the first step exactly as it is, especially waiting for all logs collector pods to apply the new configuration. We want to avoid a situation in which logs collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
