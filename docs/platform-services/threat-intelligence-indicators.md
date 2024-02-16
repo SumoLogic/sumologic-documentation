@@ -96,19 +96,39 @@ Once you [add threat intelligence indicators](#add-indicators-in-the-threat-inte
 * [`threatlookup` search operator](#threatlookup-search-operator)
 * [`hasThreatMatch` Cloud SIEM rules language function](#hasthreatmatch-cloud-siem-rules-language-function)
 
-You can also see threat indicators displayed on Entitties in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#threat-indicators-in-the-cloud-siem-ui).
+You can also see threat indicators displayed on Entities in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#threat-indicators-in-the-cloud-siem-ui).
 
 ### threatlookup search operator
 
-The `threatlookup` search operator allows you to search logs for matches in threat intelligence indicators. Note that you can also use the [`threatIP`](/docs/search/search-query-language/search-operators/threatip/) search operator to search CrowdStrike's threat intelligence data based on IP addresses. For other search operators, see [Search Operators](/docs/search/search-query-language/search-operators).
+The `threatlookup` search operator allows you to search logs for matches in [threat intelligence indicators](/docs/platform-services/threat-intelligence-indicators/), providing security analytics to help you to detect threats in your environment. 
+
+:::note
+You can also use the [`threatIP`](/docs/search/search-query-language/search-operators/threatip/) search operator to search CrowdStrike's threat intelligence data based on IP addresses. 
+:::
 
 #### Syntax
 
 ```
-threatlookup [source="<source_value>"] [include="<all|active|expired>"] <indicator_value_field> [,<optional_indicator_value_field_2>, …]
+threatlookup [singleIndicator] [source="<source_value>"] [include="<all|active|expired>"] <indicator_value_field> [,<optional_indicator_value_field_2>, …]
 ```
 
-Response fields:
+Where:
+* `singleIndicator` returns the single best matching indicator. (In the response, `num_match` indicates how many actual matches there are.) If `singleIndicator` is not specified, all matching indicators are returned. 
+
+   Specifying `singleIndicator` sorts the list of matching indicators using the following priority order, then returns the indicator at the top of the list:
+     1. Active indicators over expired indicators (if you use `include="all"`).
+     1. Higher confidence indicators.
+     1. More malicious indicators.
+     1. Most recently updated indicators.
+   
+   If there's still a tie at this point, the system picks the indicator the back-end database returned first.
+
+* `source` is the source to search for the threat intelligence indicator. If `source` is not specified, all sources are searched.
+* `include` includes either all, only active, or only expired threat intelligence indicators. If `include` is not specified, all matching indicators are returned.
+* `<indicator_value_field>` is the indicator to look up. 
+* `<optional_indicator_value_field>` is used to add more indicators to look up.
+
+#### Response fields
 * confidence
 * fields
 * imported
@@ -119,19 +139,27 @@ Response fields:
 * threat_type
 * type
 * updated
+* num_match (if `singleIndicator` is used)
 
 #### Examples
 
 ```
 _index=sec_record*
-| threatlookup dstDevice_ip
+| threatlookup srcDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
 ```
 ```
 _index=sec_record*
-| threatlookup source="s_CrowdStrike" dstDevice_ip
+| threatlookup singleIndicator srcDevice_ip
+| where _threatlookup.confidence > 50
+| timeslice 1h
+| count by _timeslice
+```
+```
+_index=sec_record*
+| threatlookup source="s_CrowdStrike" srcDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
@@ -160,7 +188,7 @@ _index=sec_record*
 
 #### Run threatlookup with the cat search operator
 
-You can run the `threatlookup` search operator with the [cat search operator](https://help.sumologic.com/docs/search/search-query-language/search-operators/cat/) by using the `sumo://threat-intel` path. This lets you search the entire store of threat intelligence indicators, or just a portion. For example:
+You can run the `threatlookup` search operator with the [cat search operator](/docs/search/search-query-language/search-operators/cat/) by using the `sumo://threat-intel` path. This lets you search the entire store of threat intelligence indicators, or just a portion. For example:
 ```
 cat sumo://threat-intel  | where _threatlookup.indicator = "192.0.2.0"
 ```
