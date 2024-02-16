@@ -12,7 +12,7 @@ This topic shows you how to create a monitor.
 <details>
 <summary>Use the <strong>New Monitor</strong> dialog to create a monitor (expand to view)</summary>
 
-<img src={useBaseUrl('img/monitors/new-monitor-dialog.png')} alt="New Monitor dialog" style={{border: '1px solid black'}} width="800"/>
+<img src={useBaseUrl('img/monitors/new-monitor-dialog.png')} alt="New Monitor dialog" style={{border: '1px solid gray'}} width="800"/>
 
 </details>
 
@@ -60,7 +60,7 @@ Note that the same threshold translating functionality supports to [Opening Aler
 
 The first step when you create a new monitor is to set the trigger conditions.
 
-<img src={useBaseUrl('img/monitors/new-monitor-set-trigger-conditions.png')} alt="Set trigger conditions" style={{border: '1px solid black'}} width="800"/>
+<img src={useBaseUrl('img/monitors/new-monitor-set-trigger-conditions.png')} alt="Set trigger conditions" style={{border: '1px solid gray'}} width="800"/>
 
 ### Select monitor type and detection method
 
@@ -96,7 +96,7 @@ Specify the **Trigger Type**. A Monitor can have one critical, warning, and mis
 
 #### Logs Trigger Types
 
-<img src={useBaseUrl('img/monitors/logs-monitors.png')} alt="icon" style={{border: '1px solid black'}}  width="600"/> 
+<img src={useBaseUrl('img/monitors/logs-monitors.png')} alt="icon" style={{border: '1px solid gray'}}  width="600"/> 
 
 Trigger alerts on:<br/>![trigger alerts on field.png](/img/monitors/trigger-alerts-field.png)
 
@@ -148,7 +148,7 @@ For Metrics monitors, you can choose to recover based on a single data point bel
 
 **Logs Trigger Type: Critical** 
 
- <img src={useBaseUrl('img/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid black'}} width="800" />
+ <img src={useBaseUrl('img/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid gray'}} width="800" />
 
 | Parameter | Description |
 |:--|:--|
@@ -192,7 +192,7 @@ Recover
 
 **Logs Trigger Type: Critical** 
 
- <img src={useBaseUrl('img/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid black'}} width="800" />
+ <img src={useBaseUrl('img/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid gray'}} width="800" />
 
 | Parameter | Description |
 |:--|:--|
@@ -333,7 +333,7 @@ To add notifications, click the **Add Notification** button. You can add more 
 
 The fourth step when you create a new monitor is to add playbooks.
 
-<img src={useBaseUrl('img/monitors/new-monitor-playbook.png')} alt="Playbook" style={{border: '1px solid black'}} width="800"/>
+<img src={useBaseUrl('img/monitors/new-monitor-playbook.png')} alt="Playbook" style={{border: '1px solid gray'}} width="800"/>
 
 In this step, you can add a **Playbook** to run in response to an alert. 
 
