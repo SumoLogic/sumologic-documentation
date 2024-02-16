@@ -215,34 +215,29 @@ You can print logs on stdout of logs collector and logs metadata, and validate i
 
 In order to print them on stdout, two steps are required:
 
-1. Disable ingesting logs from logs related pods. This is required to prevent logs ingest spike. Add the following configuration to `user-values.yaml`:
-
+1. Disable ingesting logs from logs related pods. This is required to prevent logs ingest spike.
+   - Add the following configuration to `user-values.yaml`:
+     ```yaml
+     debug:
+       logs:
+         metadata:
+           stopLogsIngestion: true
+         collector:
+           stopLogsIngestion: true
+     ```
+   - Then, update your collection and wait for all logs collector pods to be redeployed.
+2. Enable printing logs on stdout for logs related pods by adding the following to `user-values.yaml`:
    ```yaml
-   debug:
-     logs:
-       metadata:
-         stopLogsIngestion: true
-       collector:
-         stopLogsIngestion: true
-   ```
-
-   Then update your collection and wait for all logs collector pods to be redeployed.
-
-2. Enable printing logs on stdout for logs related pods, by adding the following to `user-values.yaml`:
-
-   ```yaml
-   debug:
-     logs:
-       metadata:
-         print: true
-         stopLogsIngestion: true
-       collector:
-         print: true
-         stopLogsIngestion: true
-   ```
-
-3. To revert changes, please perform first step as it is, and after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
-
+      debug:
+        logs:
+          metadata:
+            print: true
+            stopLogsIngestion: true
+          collector:
+            print: true
+            stopLogsIngestion: true
+      ```
+3. To revert your changes, perform first step as-is, then after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
 :::note
 It's important to perform first step exactly as it is, especially waiting for all collector pods to apply new configuration. We want to avoid situation in which collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
 :::
