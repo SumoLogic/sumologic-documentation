@@ -49,7 +49,7 @@ For more information, see [About the Automation Service](/docs/platform-services
 
 1. [Open the **New Monitor** window](/docs/alerts/monitors/create-monitor/#open-the-new-monitor-window). 
 1. Perform [Step 1](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), [Step 2](/docs/alerts/monitors/create-monitor/#step-2-advanced-settings-optional), and [Step 3](/docs/alerts/monitors/create-monitor/#step-3-notifications-optional) in the **New Monitor** window.
-1. In [Step 4: Playbook](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional), click the field under **Automated Playbooks** to select a [playbook in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/) to run when an alert is fired. <br/><img src={useBaseUrl('img/monitors/monitor-playbooks-ui.png')} alt="Add a playbook to a monitor" style={{border: '1px solid black'}} width="800" />
+1. In [Step 4: Playbook](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional), click the field under **Automated Playbooks** to select a [playbook in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/) to run when an alert is fired. <br/><img src={useBaseUrl('img/monitors/monitor-playbooks-ui.png')} alt="Add a playbook to a monitor" style={{border: '1px solid gray'}} width="800" />
 1.  (Optional) Click **Manage Playbooks** to see playbooks in the Automation Service. From here you can view the playbook you selected above and look at its details in the Automation Service to determine if it is the one you want to run when the alert is triggered. You can also edit the playbook, or if you want, create a new playbook in the Automation Service to use in the monitor. 
 
 After you add playbooks to the monitor, when the monitor triggers an alert, the selected playbooks run automatically.
@@ -68,9 +68,9 @@ Once a monitor triggers an alert with one or more attached playbooks, you can vi
    | <img src={useBaseUrl('img/monitors/playbook-user-interaction-icon.png')} alt="Waiting for user interaction icon" width="30" /> | Waiting for user interaction |
    | <img src={useBaseUrl('img/monitors/playbook-completed-icon.png')} alt="Completed icon" width="30" /> | Completed |
 
-1. Click the playbook name to open the [playbook in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/). <br/>The playbook shows the status of each action in the playbook that ran for the alert. For example, **Success** displays at the bottom of actions that have successfully completed, **Failed** for actions that did not complete, or **Waiting Owner** for actions that need user interaction. <br/><img src={useBaseUrl('img/monitors/playbook-in-automation-service.png')} alt="Playbook in the Automation Service" width="800" />
-1. Click an action to view more about its status. Status information opens in a box to the left. <br/>In the following example of an action whose status is **Waiting Owner**, an **Action Task** appears in the box that describes user interaction required to complete the task. <br/><img src={useBaseUrl('img/monitors/playbook-waiting-owner.png')} alt="Playbook awaiting user interaction" width="800" />
-1. If you have an action marked as **Waiting Owner**, perform the steps needed to complete the **Action Task**. When done, click the appropriate button at the bottom of the **Waiting Owner** action box (**Approve**, **Approve & Close**, or **Reject**). The action completes, and the subsequent remaining actions in the playbook run.<br/><img src={useBaseUrl('img/monitors/playbook-complete-task.png')} alt="Playbook awaiting user interaction" width="300" />
+1. Click the playbook name to open the [playbook in the Automation Service](/docs/platform-services/automation-service/automation-service-playbooks/). <br/>The playbook shows the status of each action in the playbook that ran for the alert. For example, **Success** displays at the bottom of actions that have successfully completed, **Failed** for actions that did not complete, or **Waiting Owner** for actions that need user interaction. <br/><img src={useBaseUrl('img/monitors/playbook-in-automation-service.png')} alt="Playbook in the Automation Service" style={{border: '1px solid gray'}} width="800" />
+1. Click an action to view more about its status. Status information opens in a box to the left. <br/>In the following example of an action whose status is **Waiting Owner**, an **Action Task** appears in the box that describes user interaction required to complete the task. <br/><img src={useBaseUrl('img/monitors/playbook-waiting-owner.png')} alt="Playbook awaiting user interaction" style={{border: '1px solid gray'}} width="800" />
+1. If you have an action marked as **Waiting Owner**, perform the steps needed to complete the **Action Task**. When done, click the appropriate button at the bottom of the **Waiting Owner** action box (**Approve**, **Approve & Close**, or **Reject**). The action completes, and the subsequent remaining actions in the playbook run.<br/><img src={useBaseUrl('img/monitors/playbook-complete-task.png')} alt="Playbook awaiting user interaction" style={{border: '1px solid gray'}} width="300" />
 1. Address any other actions in the playbook that need attention. For example, click and open any failed actions to see why they failed and to determine what you need to do to get them to complete successfully. 
 
 ## Create an anomaly monitor that runs an automated playbook
@@ -95,7 +95,7 @@ To create an anomaly monitor that runs an automated playbook in response to an a
    * **Detector Sensitivity**. Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Low sensitivity will result in more alerts, and high sensitivity will result in fewer alerts. Use low sensitivity if you do not want to miss out on most anomalies.  
    * **Minimum Anomaly Count**. Enter the minimum number of anomalies to detect during the detection window before triggering an alert. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the Detection Window is set to 5 minutes, and the Minimum Anomaly Count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period. 
 1. Perform [Step 2: Advanced Settings](/docs/alerts/monitors/create-monitor/#step-2-advanced-settings-optional) and [Step 3: Notifications](/docs/alerts/monitors/create-monitor/#step-3-notifications-optional) in the **New Monitor** window. 
-1. In [Step 4: Playbook](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional), click the field under **Automated Playbooks** to select one or more playbooks that run when the monitor triggers an alert.  <br/><img src={useBaseUrl('img/monitors/monitor-playbooks-ui.png')} alt="Add a playbook to a monitor" style={{border: '1px solid black'}} width="800" />
+1. In [Step 4: Playbook](/docs/alerts/monitors/create-monitor/#step-4-playbook-optional), click the field under **Automated Playbooks** to select one or more playbooks that run when the monitor triggers an alert.  <br/><img src={useBaseUrl('img/monitors/monitor-playbooks-ui.png')} alt="Add a playbook to a monitor" style={{border: '1px solid gray'}} width="800" />
 1. Perform [Step 5: Monitor Details](/docs/alerts/monitors/create-monitor/#step-5-monitor-details).
 1. Click **Save** to save the monitor with the attached playbooks.
 
@@ -111,7 +111,7 @@ To view playbooks in the Automation Service, [access playbooks](#access-automate
 
 Although you can attach any playbook to a monitor, playbooks of type **Alert** are specifically designed for use with alerts, since they transmit the alert context to the playbook and can drive actions there. When you open a playbook, the type displays next to the name.
 
-<img src={useBaseUrl('img/monitors/playbook-alert-type.png')} alt="Playbook alert type" width="700" />
+<img src={useBaseUrl('img/monitors/playbook-alert-type.png')} alt="Playbook alert type" style={{border: '1px solid gray'}} width="700" />
 
 Sample playbooks to attach to monitors include:
 * **535 - Application Latency Playbook**. Diagnose and resolve application latency issues, including code deploy events and infrastructure anomalies.
@@ -121,7 +121,7 @@ Sample playbooks to attach to monitors include:
 
 To create a playbook so you can add it to a monitor, see [Create a new playbook](/docs/platform-services/automation-service/automation-service-playbooks/#create-a-new-playbook). As a best practice, whenever you want to create a new playbook, select an existing playbook to serve as the template for the new playbook and click the **Duplicate** button to copy it. 
 
-<img src={useBaseUrl('img/monitors/playbook-duplicate-button.png')} alt="Duplicate button" width="300" />
+<img src={useBaseUrl('img/monitors/playbook-duplicate-button.png')} alt="Duplicate button" style={{border: '1px solid gray'}} width="300" />
 
 ### Install an integration for monitors
 
