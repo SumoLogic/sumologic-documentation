@@ -242,7 +242,7 @@ In order to print them on stdout, two steps are required:
 It's important to perform first step exactly as it is, especially waiting for all collector pods to apply new configuration. We want to avoid situation in which collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
 :::
 
-### See logs being send to Sumo Logic
+### View logs being sent to Sumo Logic
 
 You can use Sumo Logic Mock to see what data has been sent to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
 
