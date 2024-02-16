@@ -3,11 +3,12 @@ title: Forcepoint Web Security
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/forcepoint-web-security.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/forcepoint-web-security.png')} alt="forcepoint-web-security" width="100"/>
 
-Version: 1.2  
-Updated: Jul 18, 2023
+***Version: 1.2  
+Updated: Jul 18, 2023***
 
 Forcepoint Web Security is a flexible web protection solution that provides fine-tuned control over your users’ web access, while providing comprehensive protection against web threats such as viruses, malware, data loss, and phishing attacks. 
 

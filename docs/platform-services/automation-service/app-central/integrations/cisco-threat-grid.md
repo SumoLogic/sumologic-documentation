@@ -3,11 +3,12 @@ title: Cisco Threat Grid
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/cisco-threat-grid.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-threat-grid.png')} alt="cisco-threat-grid" width="100"/>
 
-Version: 1.2  
-Updated: Jul 11, 2023
+***Version: 1.2  
+Updated: Jul 11, 2023***
 
 Utilize the Cisco AMP Threat Grid to retrieve information about incident elements such as IP, domain, or file hash.
 

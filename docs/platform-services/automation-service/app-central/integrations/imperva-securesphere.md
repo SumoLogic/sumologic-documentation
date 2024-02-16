@@ -3,11 +3,12 @@ title: Imperva SecureSphere
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/imperva-securesphere.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/imperva-securesphere.png')} alt="imperva-securesphere" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Retrieve and modify IP groups for incident investigation and remediation.
 

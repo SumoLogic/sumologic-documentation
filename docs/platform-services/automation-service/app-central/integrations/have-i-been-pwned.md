@@ -3,11 +3,12 @@ title: Have I Been Pwned
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/have-i-been-pwned.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/have-i-been-pwned.png')} alt="have-i-been-pwned" width="100"/>
 
-Version: 1.3  
-Updated: Dec 12, 2023
+***Version: 1.3  
+Updated: Dec 12, 2023***
 
 Have I Been Pwned (HIBP) allows you to check if your personal data has been compromised in a data breach.
 

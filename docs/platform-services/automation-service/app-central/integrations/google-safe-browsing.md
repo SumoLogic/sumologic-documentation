@@ -3,11 +3,12 @@ title: Google Safe Browsing
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/google.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="100"/>
 
-Version: 1.4  
-Updated: Jul 25, 2023
+***Version: 1.4  
+Updated: Jul 25, 2023***
 
 Google Safe Browsing helps protect over four billion devices every day by showing warnings to users when they attempt to navigate to dangerous sites or download dangerous files.
 

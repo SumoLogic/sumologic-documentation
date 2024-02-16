@@ -3,11 +3,12 @@ title: Active Directory
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/active-directory.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/active-directory.png')} alt="active-directory" width="100"/>
 
-Version: 1.3  
-Updated: Dec 19, 2023
+**Version: 1.3  
+Updated: Dec 19, 2023**
 
 Utilize user, group, and system information from Microsoft Active Directory.
 

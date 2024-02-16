@@ -4,13 +4,14 @@ description: ''
 tags: []
 ---
 
-![](/img/platform-services/automation-service/app-central/logos/active-directory-v2.png)
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Version: 2.2  
-Updated: Dec 19, 2023
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/active-directory-v2.png')} alt="active-directory-v2" width="90"/>
+
+***Version: 2.2  
+Updated: Dec 19, 2023***
 
 Utilize user, group, and system information from Active Directory.   
-
 
 ## Actions
 

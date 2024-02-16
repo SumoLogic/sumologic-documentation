@@ -3,11 +3,12 @@ title: Symantec Endpoint Protection
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/symantec-endpoint-protection.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/symantec-endpoint-protection.png')} alt="symantec-endpoint-protection" width="100"/>
 
-Version: 1.1  
-Updated: Jul 07, 2023
+***Version: 1.1  
+Updated: Jul 07, 2023***
 
 Work with Symantec Endpoint Protection groups and events and issue containment actions during an active incident.
 

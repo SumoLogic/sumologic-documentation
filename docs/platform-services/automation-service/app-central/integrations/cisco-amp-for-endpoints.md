@@ -3,11 +3,12 @@ title: Cisco AMP for Endpoints
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/cisco-amp-for-endpoints.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-amp-for-endpoints.png')} alt="cisco-amp-for-endpoints" width="100"/>
 
-Version: 1.2  
-Updated: Jun 21, 2023
+***Version: 1.2  
+Updated: Jun 21, 2023***
 
 Perform a wide variety of Enrichment and Containment actions for endpoint investigation and response with Cisco AMP for Endpoints.
 

@@ -3,11 +3,12 @@ title: URLhaus Abuse
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/urlhaus-abuse.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/urlhaus-abuse.png')} alt="urlscan.io" width="100"/>
 
-Version: 1.0  
-Updated: Feb 20, 2023
+***Version: 1.0  
+Updated: Feb 20, 2023***
 
 Query domains, URLs and hash values with URLhaus.
 

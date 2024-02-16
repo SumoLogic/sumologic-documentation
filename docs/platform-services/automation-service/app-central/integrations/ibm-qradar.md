@@ -3,11 +3,14 @@ title: IBM QRadar
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ibm-qradar.png')} alt="ibm-qradar" width="100"/>
 
 ![](/img/platform-services/automation-service/app-central/logos/ibm-qradar.png)
 
-Version: 1.3  
-Updated: Jul 11, 2023
+***Version: 1.3  
+Updated: Jul 11, 2023***
 
 IBM QRadar SIEM helps security teams detect, prioritize and respond to threats across the enterprise.
 

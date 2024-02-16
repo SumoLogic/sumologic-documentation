@@ -3,13 +3,14 @@ title: Check Point
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/check-point.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/check-point.png')} alt="check-point" width="100"/>
 
-Version: 1.4  
-Updated: Jun 26, 2023
+***Version: 1.4  
+Updated: Jun 26, 2023***
 
-Utilize Check Point to gather enrichment data and issue containment actions during incident investigations
+Utilize Check Point to gather enrichment data and issue containment actions during incident investigations.
 
 ## Actions
 

@@ -3,11 +3,12 @@ title: APIVoid
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/apivoid.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/apivoid.png')} alt="apivoid" width="90"/>
 
-Version: 1.2  
-Updated: Oct 05, 2023
+***Version: 1.2  
+Updated: Oct 05, 2023***
 
 Utilize APIVOID to gather enrichment data during incident investigations.
 

@@ -3,25 +3,26 @@ title: Cuckoo
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/cuckoo.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cuckoo.png')} alt="cuckoo" width="100"/>
 
-Version: 1.4  
-Updated: Jul 06, 2023
+***Version: 1.4  
+Updated: Jul 06, 2023***
 
 Utilize Cuckoo sandbox to detonate potentially malicious files and URLs during an active investigation.
 
 ## Actions
 
 * **Detonate File** (*Enrichment) -* Submit file for analysis
-* **Detonate URL***(Enrichment) -* Submit URL for analysis
-* ***Get Task Status** (Enrichment) - Get status for a specific Task*
-* ***Get URL Report** (Enrichment) - Get report for a specific URL*
-* ***Get File Report** (Enrichment) - Get report for a specific file*
+* **Detonate URL** *(Enrichment) -* Submit URL for analysis
+* **Get Task Status** (*Enrichment*) - Get status for a specific Task
+* **Get URL Report** (*Enrichment*) - Get report for a specific URL
+* **Get File Report** (*Enrichment*) - Get report for a specific file
 
 ## Notes
 
-* After submitting (detonation), task has three phases. It can be status :pending, analyzing, reported.
+* After submitting (detonation), task has three phases. It can be pending, analyzing, or reported status.
 
 ## Change Log
 

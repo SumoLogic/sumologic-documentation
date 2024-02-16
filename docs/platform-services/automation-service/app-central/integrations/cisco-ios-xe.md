@@ -3,11 +3,12 @@ title: Cisco IOS XE
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/cisco-ios-xe.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-ios-xe.png')} alt="cisco-ios-xe" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Utilize and manipulate ACLs and Interfaces with Cisco IOS XE.
 
@@ -17,12 +18,12 @@ Utilize and manipulate ACLs and Interfaces with Cisco IOS XE.
 * **Get ACL** (*Enrichment*) - Gather information on a specific ACL
 * **Get Interfaces** (*Enrichment*) - Gather all available interfaces
 * **Get Interface** (*Enrichment*) - Gather information on a specific interface
-* **Get Interface Oper** (*Enrichment) -* Gather a specific interface name
-* **Get Interfaces Oper** (*Enrichment) -* Gather all interface names
-* **Add ACL** (*Containment) -* Add a new ACL
-* **Update ACL***(Containment) -* Update an existing ACL
-* **Enable Interface***(Containment) -* Enable an interface
-* **Disable Interface***(Containment) -* Disable an interface
+* **Get Interface Oper** (*Enrichment*) - Gather a specific interface name
+* **Get Interfaces Oper** (*Enrichment*) - Gather all interface names
+* **Add ACL** (*Containment*) - Add a new ACL
+* **Update ACL** (*Containment*) - Update an existing ACL
+* **Enable Interface** (*Containment*) - Enable an interface
+* **Disable Interface** (*Containment*) - Disable an interface
 
 ## Change Log
 

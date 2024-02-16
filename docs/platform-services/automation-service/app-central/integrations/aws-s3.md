@@ -3,11 +3,12 @@ title: AWS S3
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/aws.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-Version: 1.2  
-Updated: Jun 28, 2023
+***Version: 1.2  
+Updated: Jun 28, 2023***
 
 Interact with AWS S3 buckets, objects, and policies.
 

@@ -3,11 +3,12 @@ title: CSE Tools
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/cse-tools.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cse-tools.png')} alt="cse-tools" width="100"/>
 
-Version: 1.14  
-Updated: Nov 24, 2023
+***Version: 1.14  
+Updated: Nov 24, 2023***
 
 Utilize CSE entities to correlate Signals and Insights through Sumo Logic CSE integration.
 

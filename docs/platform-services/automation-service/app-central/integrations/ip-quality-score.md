@@ -3,11 +3,12 @@ title: IP Quality Score
 description: ''
 tags: [ ]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/ip-quality-score.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ip-quality-score.png')} alt="ip-quality-score" width="100"/>
 
-Version: 1.2  
-Updated: Jan 29, 2024
+***Version: 1.2  
+Updated: Jan 29, 2024***
 
 Perform threat intelligence evidence gathering with IP Quality Score.
 
@@ -17,7 +18,6 @@ Perform threat intelligence evidence gathering with IP Quality Score.
 * **Get Credit Usage** *(Enrichment)* - Gather Credit usage information from IP Quality Score
 * **IP Reputation** *(Enrichment)* - Gather IP reputation information from IP Quality Score
 * **URL Reputation** *(Enrichment)* - Gather URL reputation information from IP Quality Score
-
 
 ## Change Log
 

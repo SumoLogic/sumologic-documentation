@@ -3,11 +3,12 @@ title: Armorblox
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/armorblox.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/armorblox.png')} alt="armorblox" width="80"/>
 
-Version: 1.1  
-Updated: Sep 04, 2023
+***Version: 1.1  
+Updated: Sep 04, 2023***
 
 Armorblox secures enterprise communications over email and other cloud office applications with the power of Natural Language Understanding. The Armorblox platform connects over APIs and analyzes thousands of signals to understand the context of communications and protect people and data from compromise. Armorblox connects over APIs with Office 365, G Suite, and Exchange to secure your human layer without affecting MX records or mail flow. Tens of thousands of organizations use Armorblox to stop BEC and targeted phishing attacks, protect sensitive PII and PCI, and automate remediation of user-reported email threats.
 

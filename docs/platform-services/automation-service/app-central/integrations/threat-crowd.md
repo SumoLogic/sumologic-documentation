@@ -3,11 +3,12 @@ title: Threat Crowd
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/threat-crowd.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/threat-crowd.png')} alt="threatminer" width="100"/>
 
-Version: 1.2  
-Updated: Jun 30, 2023
+***Version: 1.2  
+Updated: Jun 30, 2023***
 
 Search malicious indicators using Threat Crowd intelligence feeds.
 

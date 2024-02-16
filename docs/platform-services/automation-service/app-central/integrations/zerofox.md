@@ -3,11 +3,12 @@ title: ZeroFOX
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/zerofox.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zerofox.png')} alt="axonius" width="100"/>
 
-Version: 1.1  
-Updated: Jul 11, 2023
+***Version: 1.1  
+Updated: Jul 11, 2023***
 
 Query data and utilize action in ZeroFOX Platform.
 
@@ -26,7 +27,7 @@ Query data and utilize action in ZeroFOX Platform.
 
 ## Notes
 
-* For action *List Alerts ,* by default no filters are applied and results are sorted by timestamp, and *Alert Tag Changeset* .
+* For action *List Alerts, * by default no filters are applied and results are sorted by timestamp, and *Alert Tag Changeset* .
 
 ## Change Log
 

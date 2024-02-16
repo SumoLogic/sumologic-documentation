@@ -3,11 +3,12 @@ title: Atlassian Confluence
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/atlassian-confluence.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-confluence.png')} alt="atlassian-confluence" width="80"/>
 
-Version: 1.0  
-Updated: Oct 13, 2023
+***Version: 1.0  
+Updated: Oct 13, 2023***
 
 Atlassian Confluence is a collaborative workspace tool for teams to create, share, and manage content, enhancing communication and project organization.
 

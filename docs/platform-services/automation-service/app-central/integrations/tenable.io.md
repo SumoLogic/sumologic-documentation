@@ -3,11 +3,12 @@ title: Tenable.io
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/tenable.io.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/tenable.io.png')} alt="tenable.io" width="100"/>
 
-Version: 1.3  
-Updated: Aug 18, 2023
+***Version: 1.3  
+Updated: Aug 18, 2023***
 
 Connect with Tenable.io to execute scans, get scan results and perform administrative actions.
 

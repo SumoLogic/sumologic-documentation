@@ -3,11 +3,12 @@ title: Claroty
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/claroty.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/claroty.png')} alt="claroty" width="100"/>
 
-Version: 1.1  
-Updated: Jul 11, 2023
+***Version: 1.1  
+Updated: Jul 11, 2023***
 
 Query Claroty CTD, an OT scanner and monitoring system. Claroty CTD provides fundamental cybersecurity controls that support the REVEAL, PROTECT, DETECT, CONNECT framework for industrial networks.
 

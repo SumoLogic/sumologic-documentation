@@ -3,11 +3,12 @@ title: FireEye Central Management (CM)
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/fireeye-central-management-cm.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-central-management-cm.png')} alt="fireeye-central-management-cm" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Centralized device and intelligence management to correlate data across attack vectors.
 

@@ -3,11 +3,12 @@ title: Imperva Incapsula
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/imperva-incapsula.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/imperva-incapsula.png')} alt="imperva-incapsula" width="100"/>
 
-Version: 1.2  
-Updated: Jul 18, 2023
+***Version: 1.2  
+Updated: Jul 18, 2023***
 
 Gather statistical information from Incapsula for incident investigation.
 

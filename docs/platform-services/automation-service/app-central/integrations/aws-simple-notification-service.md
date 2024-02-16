@@ -4,10 +4,12 @@ description: ''
 tags: []
 ---
 
-![](/img/platform-services/automation-service/app-central/logos/aws.png)
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Version: 1.2  
-Updated: Jun 15, 2023
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
+
+***Version: 1.2  
+Updated: Jun 15, 2023***
 
 Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients.
 
@@ -22,27 +24,19 @@ Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notif
 
 ## Configure Amazon Simple Notification Service in Automation Service and Cloud SOAR
 
-1. To configure AWS Simple Notification Service (SNS) in Sumo Logic Cloud SOAR, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-1.png)
-
-1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-2.png)
-
+1. To configure AWS Simple Notification Service (SNS) in Sumo Logic Cloud SOAR, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-1.png')} style={{border:'1px solid gray'}} alt="aws-simple-notification-service-1" width="400"/>
+1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-2.png')} style={{border:'1px solid gray'}} alt="aws-simple-notification-service-2" width="400"/>
 1. After the list of the integrations appears, search/look for the integration and click on the row.
-
-1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-3.png)
-
-1. Populate all the required fields(\*) and click Save.
-   * Label: Name of the resource for AWS SNS.
-   * Access key ID: Enter your AWS Access Key.
-   * Secret Access key: Enter your AWS Secret Access Key.
-   * AWS Region: Enter the AWS region for the SNS topic.
-
-   For more info about [Access Key ID and Secret Access Key](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-4.png)
-
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-5.png)
-
-1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-6.png)
-
-1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-7.png)
+1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-3.png')} style={{border:'1px solid gray'}} alt="aws-simple-notification-service-3" width="600"/>
+1. Populate all the required fields(\*) and click **SAVE**.
+   * **Label**. Name of the resource for AWS SNS.
+   * **Access key ID**. Enter your AWS Access Key.
+   * **Secret Access key**. Enter your AWS Secret Access Key.
+   * **AWS Region**. Enter the AWS region for the SNS topic.
+   For more info about [Access Key ID and Secret Access Key](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-4.png')} style={{border:'1px solid gray'}} alt="aws-simple-notification-service-4" width="400"/>
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-5.png')} style={{border:'1px solid gray'}} alt="aws-simple-notification-service-5" width="400"/>
+1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-6.png')} style={{border:'1px solid gray'}} alt="aws-simple-notification-service-6" width="400"/>
+1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-simple-notification-service/aws-simple-notification-service-7.png')} style={{border:'1px solid gray'}} alt="aws-simple-notification-service-7" width="400"/>
 
 ## External Libraries
 

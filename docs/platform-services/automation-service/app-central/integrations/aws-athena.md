@@ -3,14 +3,14 @@ title: AWS Athena
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/aws.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="automox" width="50"/>
 
-Version: 1.1  
-Updated: Jun 15, 2023
+***Version: 1.1  
+Updated: Jun 15, 2023***
 
 Amazon Athenais a cloud-based service that enables you to run SQL queries on data stored in Amazon S3 without the need to set up any infrastructure. It is a serverless, pay-per-query service that makes it easy to analyze large amounts of data.
-
   
 * **Run Query** *(Enrichment)* - The action runs the SQL query statements contained in the Query and retrieve the results from the query
 * **Start Query** *(Enrichment)* - Start a query execution
@@ -23,34 +23,28 @@ Amazon Athenais a cloud-based service that enables you to run SQL queries on dat
 
 ## Amazon Athena configuration
 
-1. To get access key and secret access key, you will need to follow these steps:
-2. Sign in to your [AWS Management Console](https://console.aws.amazon.com/)
-3. Click on your account name in the top-right corner of the screen and select "My Security Credentials" from the drop-down menu.
-4. Click on the "Access keys" section in the left-hand menu.
-5. Click on the "Create New Access Key" button.
-6. Your new access key and secret access key will be displayed on the screen. Make sure to copy and save them in a secure location as you will not be able to access them again.
+To get access key and secret access key, you will need to follow these steps:
+
+1. Sign in to your [AWS Management Console](https://console.aws.amazon.com/).
+1. Click on your account name in the top-right corner of the screen and select **My Security Credentials** from the drop-down menu.
+1. Click on the **Access keys** section in the left-hand menu.
+1. Click on the **Create New Access Key** button.
+1. Your new access key and secret access key will be displayed on the screen. Make sure to copy and save them in a secure location as you will not be able to access them again.
 
 ## Amazon Athena in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-1.png)
-
-1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-2.png)
-
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-1.png')} style={{border:'1px solid gray'}} alt="aws-athena-1" width="400"/>
+1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-2.png')} style={{border:'1px solid gray'}} alt="aws-athena-2" width="400"/>
 1. After the list of the integrations appears, search for the integration and click on the row.
-
-1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-3.png)
-
-1. Populate all the required fields (\*) and then click Save.
-   * Label: The desired name for the resource.
-   * AWS Region: your AWS region. (Default: us-east-2)
-   * Access Key ID: your Access Key ID.
-   * Secret Access Key: your Secret Access Key. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-4.png) 
-
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-5.png)
-
-1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-6.png)
-
-1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-7.png)
+1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-3.png')} style={{border:'1px solid gray'}} alt="aws-athena-3" width="400"/>
+1. Populate all the required fields (\*) and then click **SAVE**.
+   * **Label**. The desired name for the resource.
+   * **AWS Region**. Your AWS region. (Default: us-east-2).
+   * **Access Key ID**. Your Access Key ID.
+   * **Secret Access Key**. Your Secret Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-4.png')} style={{border:'1px solid gray'}} alt="aws-athena-4" width="400"/>
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-5.png')} style={{border:'1px solid gray'}} alt="aws-athena-5" width="400"/>
+1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-6.png')} style={{border:'1px solid gray'}} alt="aws-athena-6" width="400"/>
+1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-7.png')} style={{border:'1px solid gray'}} alt="aws-athena-7" width="400"/>
 
 ## External Libraries
 
@@ -59,4 +53,4 @@ Amazon Athenais a cloud-based service that enables you to run SQL queries on dat
 ## Change Log
 
 * February 22, 2023 (v1.0) - First upload
-* June 15, 2023 (v1.1)- Updated the integration with Environmental Variables
+* June 15, 2023 (v1.1) - Updated the integration with Environmental Variables

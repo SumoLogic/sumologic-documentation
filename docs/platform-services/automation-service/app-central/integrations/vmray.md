@@ -3,11 +3,12 @@ title: VMRay
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/vmray.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmray.png')} alt="vmray" width="100"/>
 
-Version: 1.1  
-Updated: Jul 07, 2023
+***Version: 1.1  
+Updated: Jul 07, 2023***
 
 VMRay Platform products provide set of tools for malware detection and analysis.
 

@@ -3,11 +3,12 @@ title: VMWare vSphere
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/vmware-vsphere.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-vsphere.png')} alt="axonius" width="100"/>
 
-Version: 1.4  
-Updated: Sep 19, 2023
+***Version: 1.4  
+Updated: Sep 19, 2023***
 
 Utilize and manipulate virtual machines during an incident investigation with VMWare vSphere.
 

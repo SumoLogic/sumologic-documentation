@@ -3,11 +3,12 @@ title: Telegram V2
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/telegram-v2.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/telegram-v2.png')} alt="tenable.io" width="100"/>
 
-Version: 2.1  
-Updated: Jul 07, 2023
+***Version: 2.1  
+Updated: Jul 07, 2023***
 
 Send messages from Cloud SOAR integration with Telegram V2.
 

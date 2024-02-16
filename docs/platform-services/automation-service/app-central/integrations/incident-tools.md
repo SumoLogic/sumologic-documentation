@@ -3,14 +3,15 @@ title: Incident Tools
 description: ''
 tags: [cloud soar integrations]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/incident-tools.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/incident-tools.png')} alt="incident-tools" width="100"/>
 
-Version: 1.5  
-Updated: Feb 13, 2024
+***Version: 1.5  
+Updated: Feb 13, 2024***
 
 :::sumo Cloud SOAR
-This integration is for Cloud SOAR only
+This integration is only for Cloud SOAR.
 :::
 
 Set of scripts to perform actions within Cloud SOAR.

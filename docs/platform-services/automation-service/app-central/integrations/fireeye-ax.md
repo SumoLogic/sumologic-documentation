@@ -3,11 +3,12 @@ title: FireEye AX
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/fireeye-ax.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-ax.png')} alt="fireeye-ax" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Inspect malicious files using FireEye AX.
 

@@ -3,11 +3,12 @@ title: Securonix
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/securonix.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/securonix.png')} alt="securonix" width="100"/>
 
-Version: 1.1  
-Updated: Jul 11, 2023
+***Version: 1.1  
+Updated: Jul 11, 2023***
 
 Query event/alert data and user details from Securonix.
 

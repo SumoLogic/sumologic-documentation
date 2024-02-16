@@ -3,11 +3,12 @@ title: SentinelOne
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/sentinelone.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sentinelone.png')} alt="sentinelone" width="100"/>
 
-Version: 1.8  
-Updated: Jun 22, 2023
+***Version: 1.8  
+Updated: Jun 22, 2023***
 
 SentinelOne Endpoint Protection Platform (EPP) unifies prevention, detection, and response in a single, purpose-built agent powered by machine learning and automation. It provides prevention and detection of attacks across all major vectors, rapid elimination of threats with fully automated, policy-driven response capabilities, and complete visibility into the endpoint environment with full-context, real-time forensics.
 

@@ -3,11 +3,12 @@ title: FortiGate
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/fortigate.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortigate.png')} alt="fortigate" width="100"/>
 
-Version: 1.2  
-Updated: Jul 14, 2023
+***Version: 1.2  
+Updated: Jul 14, 2023***
 
 Work with Addresses, Policies and Services in Fortinet FortiGate.
 

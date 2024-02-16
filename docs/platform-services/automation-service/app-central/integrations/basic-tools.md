@@ -3,11 +3,12 @@ title: Basic Tools
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/basic-tools.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/basic-tools.png')} alt="basic-tools" width="100"/>
 
-Version: 1.5  
-Updated: Oct 24, 2023
+***Version: 1.5  
+Updated: Oct 24, 2023***
 
 Basic Tools implement some utils method to use inside Playbook
 

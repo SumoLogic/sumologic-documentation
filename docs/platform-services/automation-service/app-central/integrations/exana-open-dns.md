@@ -3,11 +3,12 @@ title: Exana Open DNS
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/exana-open-dns.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/exana-open-dns.png')} alt="exana-open-dns" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Query Exana Open DNS for DNS records.
 

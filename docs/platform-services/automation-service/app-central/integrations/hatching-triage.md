@@ -3,11 +3,12 @@ title: Hatching Triage
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/hatching-triage.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hatching-triage.png')} alt="hatching-triage" width="100"/>
 
-Version: 1.2  
-Updated: Jul 06, 2023
+***Version: 1.2  
+Updated: Jul 06, 2023***
 
 Detonate files with Hatching Triage Malware Sandbox.
 

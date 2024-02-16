@@ -3,11 +3,12 @@ title: AWS IAM
 description: ''
 tags: [ ]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/aws.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-Version: 1.5  
-Updated: Feb 8, 2024
+***Version: 1.5  
+Updated: Feb 8, 2024***
 
 AWS IAM (Identity and Access Management) is a web service that helps securely control access to AWS resources. It enables users to manage and control access to AWS services and resources effectively. With this integration, you can create and manage AWS users and groups, and use permissions to allow or deny their access to AWS resources.
 

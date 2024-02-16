@@ -3,14 +3,15 @@ title: ESMTP
 description: ''
 tags: [cloud soar integrations]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/esmtp.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/esmtp.png')} alt="esmtp" width="100"/>
 
-Version: 1.1  
-Updated: Oct 27, 2023
+***Version: 1.1  
+Updated: Oct 27, 2023***
 
 :::sumo Cloud SOAR
-This integration is for Cloud SOAR only
+This integration is only for Cloud SOAR.
 :::
 
 Allows you to connect your mailbox with Cloud SOAR and send emails via ESMTP.

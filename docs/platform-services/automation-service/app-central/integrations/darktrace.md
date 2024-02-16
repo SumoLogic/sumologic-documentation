@@ -3,11 +3,12 @@ title: Darktrace
 description: ''
 tags: [ ]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/darktrace.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/darktrace.png')} alt="darktrace" width="100"/>
 
-Version: 1.4  
-Updated: Jan 29, 2024
+***Version: 1.4  
+Updated: Jan 29, 2024***
 
 Perform threat intelligence evidence gathering with Darktrace.
 

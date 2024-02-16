@@ -3,11 +3,12 @@ title: GitLab
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/gitlab.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/gitlab.png')} alt="gitlab" width="100"/>
 
-Version: 1.1  
-Updated: Jun 26, 2023
+***Version: 1.1  
+Updated: Jun 26, 2023***
 
 Query data from GitLab.
 

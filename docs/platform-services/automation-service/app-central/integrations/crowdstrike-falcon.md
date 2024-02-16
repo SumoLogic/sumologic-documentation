@@ -3,13 +3,14 @@ title: CrowdStrike Falcon
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-Version: 1.8  
-Updated: Jul 12, 2023
+***Version: 1.8  
+Updated: Jul 12, 2023***
 
-CrowdStrike Falcon integration allows to pull Detections, Incidents, searching Incidents/Devices/Detections/ and updating Detections/Incidents.
+CrowdStrike Falcon integration allows to pull Detections, Incidents, searching Incidents/Devices/Detections, and updating Detections/Incidents.
 
 ## Actions
 

@@ -3,11 +3,12 @@ title: Triage Tools
 description: ''
 tags: [cloud soar integrations]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/triage-tools.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/triage-tools.png')} alt="urlscan.io" width="100"/>
 
-Version: 1.1  
-Updated: Nov 07, 2023
+***Version: 1.1  
+Updated: Nov 07, 2023***
 
 :::sumo Cloud SOAR
 This integration is for Cloud SOAR only

@@ -3,11 +3,12 @@ title: FortiAnalyzer
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/fortianalyzer.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortianalyzer.png')} alt="fortianalyzer" width="100"/>
 
-Version: 1.4  
-Updated: Sep 19, 2023
+***Version: 1.4  
+Updated: Sep 19, 2023***
 
 Search events and network traffic from Fortinet FortiAnalyzer.
 

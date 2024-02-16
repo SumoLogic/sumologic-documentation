@@ -3,11 +3,12 @@ title: FortiMail
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/fortimail.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortimail.png')} alt="fortimail" width="100"/>
 
-Version: 1.1  
-Updated: Jul 03, 2023
+***Version: 1.1  
+Updated: Jul 03, 2023***
 
 Work with Access Rules, Domains, IP Policies and Recipient Policies in Fortinet FortiMail.
 
@@ -15,7 +16,7 @@ Work with Access Rules, Domains, IP Policies and Recipient Policies in Fortinet 
 
 * **Get Access Rules** (*Enrichment*) - Get access rules
 * **Get Domain Info** (*Enrichment*) - Get information for a domain
-* **Get IP Policies** *Enrichment*) - Get IP policies
+* **Get IP Policies** (*Enrichment*) - Get IP policies
 * **Get Recipient Policies** (*Enrichment*) - Get recipient policies
 * **Get Blacklist** (*Enrichment*) - Gather blacklists from FortiMail
 * **Add to Blacklist** (*Containment*) - Add a new entry to a blacklist

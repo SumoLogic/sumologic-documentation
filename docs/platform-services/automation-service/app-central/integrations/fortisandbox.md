@@ -3,11 +3,12 @@ title: FortiSandbox
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/fortisandbox.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortisandbox.png')} alt="fortisandbox" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Fortinet FortiSandbox is a detection tool with threat prevention capabilities, with the integration actions can be utilized to the technology.
 

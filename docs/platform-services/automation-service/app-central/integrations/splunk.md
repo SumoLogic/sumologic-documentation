@@ -3,11 +3,12 @@ title: Splunk
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/splunk.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/splunk.png')} alt="splunk" width="100"/>
 
-Version: 1.2  
-Updated: Jul 13, 2023
+***Version: 1.2  
+Updated: Jul 13, 2023***
 
 Search and send events with Splunk.
 
@@ -21,8 +22,8 @@ Search and send events with Splunk.
 
 ## Notes
 
-* ***Important***: *Change the line "\_indextime>0000000000" to indicate the time in Epoch format you wish to begin creating incidents from in the Splunk Events Daemon action.*
-* Only default fields, such as "[].\_raw", "[].host", and "[].source" are included in the Search Into Splunk Events and Splunk Events Daemon actions.   
+* ***Important***: Change the line `\_indextime>0000000000` to indicate the time in Epoch format you wish to begin creating incidents from in the Splunk Events Daemon action.
+* Only default fields, such as `[].\_raw`, `[].host`, and `[].source` are included in the Search Into Splunk Events and Splunk Events Daemon actions.   
 To use any custom fields from Splunk within Cloud SOAR, make sure they are added to these action files.
 
 ## Change Log

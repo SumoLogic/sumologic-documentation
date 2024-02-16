@@ -3,11 +3,12 @@ title: Cybereason
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/cybereason.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cybereason.png')} alt="cybereason" width="100"/>
 
-Version: 1.1  
-Updated: Jul 03, 2023
+***Version: 1.1  
+Updated: Jul 03, 2023***
 
 Query Cybereason, set item reputations and work with isolation rules.
 

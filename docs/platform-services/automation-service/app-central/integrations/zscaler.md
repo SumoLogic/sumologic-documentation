@@ -3,11 +3,12 @@ title: Zscaler
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/zscaler.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zscaler.png')} alt="axonius" width="80"/>
 
-Version: 1.2  
-Updated: Jun 15, 2023
+***Version: 1.2  
+Updated: Jun 15, 2023***
 
 Zscaler Internet Access is a cloud native [security service edge (SSE)](https://www.zscaler.com/solutions/zscaler-security-service-edge) solution that builds on a [decade of secure web gateway leadership](https://www.zscaler.com/gartner-magic-quadrant-secure-web-gateways-2020). Offered as a scalable SaaS platform from the world’s largest security cloud, it replaces legacy network security solutions to stop advanced attacks and prevent data loss with a comprehensive zero trust approach
 
@@ -27,7 +28,7 @@ Zscaler Internet Access is a cloud native [security service edge (SSE)](https://
 
 **Zscaler Sumo Logic Integration**
 
-[Modern Security Ops with Zscaler and Sumo Logic](https://www.youtube.com/watch?v=ZAReRGjdUns)
+[Modern Security Ops with Zscaler and Sumo Logic](https://www.youtube.com/watch?v=ZAReRGjdUns).
 
 ## Category
 

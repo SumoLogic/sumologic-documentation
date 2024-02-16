@@ -3,11 +3,12 @@ title: Syslog-NG
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/syslog-ng.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/syslog-ng.png')} alt="syslog-ng" width="100"/>
 
-Version: 1.1  
-Updated: Jul 07, 2023
+***Version: 1.1  
+Updated: Jul 07, 2023***
 
 Syslog-ng is a free and open-source implementation of the syslog protocol for Unix and Unix-like systems.
 

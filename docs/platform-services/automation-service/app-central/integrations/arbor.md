@@ -3,11 +3,12 @@ title: Arbor
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/arbor.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/arbor.png')} alt="apivoid" width="90"/>
 
-Version: 1.2  
-Updated: Jul 13, 2023
+***Version: 1.2  
+Updated: Jul 13, 2023***
 
 Gather detail-rich data from Netscout Arbor alerts.
 

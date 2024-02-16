@@ -3,11 +3,12 @@ title: ConnectWise Manage
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/connectwise-manage.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/connectwise-manage.png')} alt="connectwise-manage" width="100"/>
 
-Version: 1.2  
-Updated: Sep 04, 2023
+***Version: 1.2  
+Updated: Sep 04, 2023***
 
 Create, update, search, and gather ticket information from ConnectWise.
 

@@ -3,11 +3,12 @@ title: FortiWeb
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/fortiweb.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortiweb.png')} alt="fortiweb" width="100"/>
 
-Version: 1.1  
-Updated: Jul 12, 2023
+***Version: 1.1  
+Updated: Jul 12, 2023***
 
 List and create policies and rules with Fortinet FortiWeb.
 

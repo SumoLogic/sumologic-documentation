@@ -3,11 +3,12 @@ title: Cortex XDR
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/cortex-xdr.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cortex-xdr.png')} alt="cortex-xdr" width="100"/>
 
-Version: 1.3  
-Updated: Jul 11, 2023
+***Version: 1.3  
+Updated: Jul 11, 2023***
 
 Query data and utilize actions in Palo Alto Networks Cortex XDR.
 

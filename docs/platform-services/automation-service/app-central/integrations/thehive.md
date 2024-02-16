@@ -3,11 +3,12 @@ title: TheHive
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/thehive.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/thehive.png')} alt="thehive" width="100"/>
 
-Version: 1.0.1  
-Updated: Jul 03, 2023
+***Version: 1.0.1  
+Updated: Jul 03, 2023***
 
 Query, update and work with cases in TheHive from Cloud SOAR.
 

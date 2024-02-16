@@ -3,11 +3,12 @@ title: FortiSIEM
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/fortisiem.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortisiem.png')} alt="fortisiem" width="100"/>
 
-Version: 1.2  
-Updated: Nov 10, 2023
+***Version: 1.2  
+Updated: Nov 10, 2023***
 
 Search events and retrieve device details from Fortinet FortiSIEM.
 

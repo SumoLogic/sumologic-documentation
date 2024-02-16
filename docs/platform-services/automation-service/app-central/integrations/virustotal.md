@@ -3,11 +3,12 @@ title: VirusTotal
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/virustotal.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/virustotal.png')} alt="virustotal" width="100"/>
 
-Version: 1.8  
-Updated: Jul 25, 2023
+***Version: 1.8  
+Updated: Jul 25, 2023***
 
 Perform threat intelligence evidence gathering with VirusTotal.
 
@@ -21,7 +22,7 @@ Perform threat intelligence evidence gathering with VirusTotal.
 * **IP Reputation V3** (*Enrichment*) - Gather IP reputation information for multiple IP addresses v3
 * **Scan File***(Enrichment*) - Gather information on a specific file
 * **Scan URL** (*Enrichment*) - Gather information on a specific URL
-* **URL Reputation** (*Enrichment) -* Gather reputation information for multiple URLs
+* **URL Reputation** (*Enrichment*) - Gather reputation information for multiple URLs
 * **File Scan** **V2** (*Enrichment*) - Acquire information about a specific file without saving the report.
 * **URL Scan V2** (*Enrichment*) - Obtain information about a particular URL without storing the report.
 

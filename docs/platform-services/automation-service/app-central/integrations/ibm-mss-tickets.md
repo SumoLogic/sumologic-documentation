@@ -3,11 +3,12 @@ title: IBM MSS Tickets
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/ibm-mss-tickets.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ibm-mss-tickets.png')} alt="ibm-mss-tickets" width="100"/>
 
-Version: 1.1  
-Updated: Jul 11, 2023
+***Version: 1.1  
+Updated: Jul 11, 2023***
 
 Create, update and gather IBM MSS tickets information.
 

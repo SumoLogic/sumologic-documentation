@@ -3,11 +3,12 @@ title: CrowdStrike Falcon Sandbox
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon-sandbox.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon-sandbox.png')} alt="crowdstrike-falcon-sandbox" width="100"/>
 
-Version: 1.3  
-Updated: Jul 14, 2023
+***Version: 1.3  
+Updated: Jul 14, 2023***
 
 Malware Analysis Tool providing threat intelligence.
 
@@ -22,7 +23,7 @@ Malware Analysis Tool providing threat intelligence.
 * **Get Hash Summary** (*Enrichment*) - Summary for given hash
 * **Download Sample** (*Enrichment*) - Download sample file (Full CSOAR only)
 * **List Feed** (*Enrichment*) - Access a JSON feed (summary information) of last 250 reports from 24h
-* **Get Hash Analysis Overview** (*Enrichment*) - Return overview for the hash, related information[report, parent, children, scanners
+* **Get Hash Analysis Overview** (*Enrichment*) - Return overview for the hash  related information [report, parent, children, scanners]
 * **List Environments** (*Enrichment*) - List system environments
 
 ## Change Log

@@ -3,11 +3,12 @@ title: Trend Micro Deep Security
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/trend-micro-deep-security.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/trend-micro-deep-security.png')} alt="trend-micro-deep-security" width="100"/>
 
-Version: 1.2  
-Updated: Jun 22, 2023
+***Version: 1.2  
+Updated: Jun 22, 2023***
 
 Utilize Trend Micro Deep Security to interact with IP lists, firewall and intrusion rules, and gather enrichment data during incident investigations.
 

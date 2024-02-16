@@ -3,11 +3,12 @@ title: Blueliv
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/blueliv.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/blueliv.png')} alt="blueliv" width="80"/>
 
-Version: 1.1  
-Updated: Jul 03, 2023
+***Version: 1.1  
+Updated: Jul 03, 2023***
 
 Enrich incident evidence with threat intelligence data from Blueliv.
 

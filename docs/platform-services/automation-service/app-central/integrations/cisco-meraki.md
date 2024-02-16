@@ -3,11 +3,12 @@ title: Cisco Meraki
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/cisco-meraki.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-meraki.png')} alt="cisco-meraki" width="100"/>
 
-Version: 1.2  
-Updated: Jun 26, 2023
+***Version: 1.2  
+Updated: Jun 26, 2023***
 
  Perform a wide variety of actions within the **Cisco Meraki** ecosystem.
 

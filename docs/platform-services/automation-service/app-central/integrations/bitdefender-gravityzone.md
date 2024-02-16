@@ -3,11 +3,12 @@ title: Bitdefender GravityZone
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/bitdefender-gravityzone.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/bitdefender-gravityzone.png')} alt="bitdefender-gravityzone" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Layered Next-Gen Security for physical, virtual, and cloud environments provided with reports, scan, policies and details as per below.
 

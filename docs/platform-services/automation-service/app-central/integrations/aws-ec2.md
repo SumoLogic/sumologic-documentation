@@ -3,11 +3,12 @@ title: AWS EC2
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/aws.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-Version: 1.3  
-Updated: Jan 16, 2024
+***Version: 1.3  
+Updated: Jan 16, 2024***
 
 Using the integration with EC2, you can enrich incidents with specific EC2 data, create and delete snapshots, work with elastic addresses and instances, and manipulate security groups. 
 

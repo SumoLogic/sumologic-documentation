@@ -3,13 +3,14 @@ title: EnergyLogserver
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/energylogserver.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/energylogserver.png')} alt="energylogserver" width="100"/>
 
-Version: 1.2  
-Updated: Nov 03, 2023
+***Version: 1.2  
+Updated: Nov 03, 2023***
 
-Query EnergyLogserver by using Elasticsearch API
+Query EnergyLogserver by using Elasticsearch API.
 
 ## Actions
 

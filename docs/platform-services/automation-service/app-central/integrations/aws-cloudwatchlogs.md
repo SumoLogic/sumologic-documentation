@@ -3,11 +3,12 @@ title: AWS CloudWatchLogs
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/aws.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-Version: 1.2  
-Updated: Jun 15, 2023
+***Version: 1.2  
+Updated: Jun 15, 2023***
 
 Interact with AWS CloudWatch through Groups, Streams, Metric Filters, and Retention Policies.
 

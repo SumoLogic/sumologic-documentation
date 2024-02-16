@@ -3,11 +3,12 @@ title: Zendesk
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/zendesk.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zendesk.png')} alt="axonius" width="100"/>
 
-Version: 1.3  
-Updated: Jul 06, 2023
+***Version: 1.3  
+Updated: Jul 06, 2023***
 
 Query data and perform actions in Zendesk ticketing system.
 

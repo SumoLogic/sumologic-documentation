@@ -3,11 +3,12 @@ title: ipdata
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/ipdata.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ipdata.png')} alt="ipdata" width="100"/>
 
-Version: 1.0  
-Updated: Nov 21, 2023
+***Version: 1.0  
+Updated: Nov 21, 2023***
 
 ipdata provides Geolocation and Threat Intelligence API to look up the location and threat profile of any IP Address.
 

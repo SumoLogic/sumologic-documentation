@@ -3,11 +3,12 @@ title: Fidelis Elevate Network
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/fidelis-elevate-network.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fidelis-elevate-network.png')} alt="fidelis-elevate-network" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Search alerts and retrieve analysis details from Fidelis Network Elevate.
 

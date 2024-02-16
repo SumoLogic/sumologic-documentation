@@ -3,11 +3,12 @@ title: Symantec Endpoint Protection Cloud
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/symantec-endpoint-protection-cloud.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/symantec-endpoint-protection-cloud.png')} alt="symantec-endpoint-protection-cloud" width="100"/>
 
-Version: 1.1  
-Updated: Jul 07, 2023
+***Version: 1.1  
+Updated: Jul 07, 2023***
 
 Gather system information and event details from Symantec Endpoint Protection Cloud.
 

@@ -3,11 +3,12 @@ title: FreshDesk
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/freshdesk.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/freshdesk.png')} alt="freshdesk" width="100"/>
 
-Version: 1.1  
-Updated: Jun 30, 2023
+***Version: 1.1  
+Updated: Jun 30, 2023***
 
 Interact with FreshDesk contacts and tickets.
 

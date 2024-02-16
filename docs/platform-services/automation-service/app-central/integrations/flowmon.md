@@ -3,11 +3,12 @@ title: Flowmon
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/flowmon.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/flowmon.png')} alt="flowmon" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Network performance monitoring and network security products, Flowmon is utilizing information from traffic flow.
 

@@ -3,11 +3,12 @@ title: CA Service Desk
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/ca-service-desk.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/ca-service-desk.png')} alt="axonius" width="50"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Work with Resources within CA Service Desk.
 

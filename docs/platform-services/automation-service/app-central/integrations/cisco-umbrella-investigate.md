@@ -3,11 +3,12 @@ title: Cisco Umbrella Investigate
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/cisco-umbrella-investigate.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-umbrella-investigate.png')} alt="cisco-umbrella-investigate" width="100"/>
 
-Version: 1.4  
-Updated: Jun 23, 2023
+***Version: 1.4  
+Updated: Jun 23, 2023***
 
 Gather enrichment data on incident observables using Cisco Umbrella Investigate.
 
