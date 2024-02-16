@@ -57,7 +57,7 @@ The left nav panel provides easy access to libraries, searches, folders, and y
 
 Use the **Library** search bar to find the above quickly. **View as** mode should be set to **Me**.<br/><img src={useBaseUrl('img/get-started/library-search.png')} alt="library-search.png" width="550"/>
 
-If you're an admin, you can view the Library in [Content Administrator](#search-content-administrator-library) mode.
+If you're an admin, you can view the Library in [Content Administrator](#content-administrator-library) mode.
 
 :::tip
 Enlarge your working area by hiding the left-side nav panel. Just click the hamburger menu icon. To unhide it, click the hamburger menu icon again.<br/><img src={useBaseUrl('/img/get-started/hamburger.gif')} alt="hamburger.gif" width="350"/>
@@ -67,7 +67,7 @@ Enlarge your working area by hiding the left-side nav panel. Just click the ham
 
 ### Access Apps, Admin settings
 
-The global toolbar (top nav bar) provides you access to (from left to right): [Help](#get-help-docs-community-and-more), [App Catalog](apps-integrations.md), [(Data) Configuration](/docs/send-data), [Administration](/docs/manage), and your user profile options ([Notifications](account-settings-preferences.md) and [Preferences](account-settings-preferences.md)).
+The global toolbar (top nav bar) provides you access to (from left to right): [Help](help.md), [App Catalog](apps-integrations.md), [(Data) Configuration](/docs/send-data), [Administration](/docs/manage), and your user profile options ([Notifications](account-settings-preferences.md) and [Preferences](account-settings-preferences.md)).
 
 <img src={useBaseUrl('/img/get-started/admin-config.png')} alt="admin-config.png" width="350"/>
 
@@ -99,19 +99,19 @@ This section provides information on how to perform basic everyday tasks using 
 
 ### Analysts (all users)
 
-* [Launch log searches, metrics visualizations, and Live Tail sessions](#launch-searches-metrics-visualizations-and-live-tail-sessions)
-* [View recent dashboards and searches](#view-recent-dashboards-and-searches)
-* [View Favorites and add dashboards and searches to the list](#view-favorites-and-add-dashboards-and-searches-to-the-list)
+* [Launch log searches, metrics visualizations, and Live Tail sessions](#launch-searches-metrics-visualizations-andlive-tail-sessions)
+* [View recent dashboards and searches](#accessdashboards-and-searches)
+* [View Favorites and add dashboards and searches to the list](#add-dashboards-and-searches-to-your-favorites)
 * [Share a dashboard, search, or folder](#share-a-dashboard-search-or-folder)
 * [View content that is shared with you](#view-content-that-is-shared-with-you)
-* [Pin and manage searches](#pin-and-manage-searches)
+* [Pin and manage searches](#pin-and-managesearches)
 * [Manage your personal account preferences](#manage-your-personal-account-preferences)
-* [Get help: Sumo Docs, Community, and more](#get-help-docs-community-and-more)
+* [Get help: Sumo Docs, Community, and more](#get-support)
 
 ### Administrators
 
-* [Manage data collection, data settings, and alerts](#admin-managedata-collection-data-settings-and-alerts)
-* [Manage accounts, users, and security](#admin-manage-accounts-users-and-security)
+* [Manage data collection, data settings, and alerts](#configuration)
+* [Manage accounts, users, and security](#administration)
 
 ### Launch searches, metrics visualizations, and Live Tail sessions 
 
@@ -124,7 +124,7 @@ To launch a log search, metrics visualization, or Live Tail session, do the foll
    * Click one of the following left-side nav menu icons:
      * [Logs](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
      * [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
-     * [**Logs** > **Live Tail**](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
+     * [Logs > Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
 
 ### Add dashboards and searches to your Favorites
 
@@ -169,13 +169,13 @@ You must start a search for the **Pin** option to appear. To pin a search, do t
 
 Once a search is pinned, it cannot be unpinned, but you can remove it from the **Pinned Searches** tab. You can pin up to 10 searches at a time. Queries that use the [`save` operator](/docs/search/search-query-language/search-operators/save) cannot be pinned.
 
-For more information, see [Pinned Searches](/docs/get-started/library#pinned-searches).
+For more information, see [Pinned Searches](/docs/get-started/library/#pinned-searches).
 
 
 ## Administrator tasks
 
 :::info
-You'll need Sumo Logic Admin role privileges to perform most of these tasks.
+You'll need Sumo Logic Administrator role privileges to perform most of these tasks.
 :::
 
 ### Configuration
@@ -205,7 +205,7 @@ Now that you're familiar with the layout and features in the Sumo Logic UI, you'
 
 You don't have to stop there either. You can take the next step and become Sumo Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page and click the **Certification** tab. See [Certification FAQs](/docs/get-started/faq#certification-faq) for more information.
 
-## More Information
+## Get support
 
 There are a number of places where you can get the answers to questions you have:
 
