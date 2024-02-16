@@ -46,7 +46,7 @@ Use caution when deleting a user. This action can't be undone.
 
     ![user-options-menu.png](/img/users-roles/users-page.png)
 
-1. Select the row for the user you want to delete and choose **Delete** from the three-dot options menu.
+1. Select the row for the user you want to delete and choose **Delete** from the three-dot kebab options menu.
 1. A popup appears, offering you the option to either transfer the user’s content to another user or delete the content along with the user. 
 
     ![transfer-content-to.png](/img/users-roles/delete-user.png)
@@ -63,7 +63,7 @@ Use caution when deleting a user. This action can't be undone.
 
     ![users-page-2.png](/img/users-roles/users-page-2.png)
 
-1. Select the row for the user you want to delete and choose **Delete** from the three-dot options menu.
+1. Select the row for the user you want to delete and choose **Delete** from the three-dot kebab options menu.
 1. A popup appears, offering you the option to either transfer the user’s content to another user or delete the content along with the user. 
 
     ![transfer-content-to.png](/img/users-roles/delete-user2.png)

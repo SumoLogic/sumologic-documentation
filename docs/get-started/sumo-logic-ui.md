@@ -37,9 +37,9 @@ You can easily hide the **left nav bar** to enlarge the working area. Then, jus
 
 ### Access Apps, Admin features, and Help
 
-In the lower section of the left nav bar, you can access the [App Catalog](apps-integrations.md), [Manage Data](/docs/manage), handle Administration, and [get help](#get-help-docs-community-and-more). 
+In the lower section of the left nav bar, you can access the [App Catalog](apps-integrations.md), [Manage Data and Administration](/docs/manage) features, access the [Automation Service](/docs/platform-services/automation-service/), and [get help](#get-help-docs-community-and-more).
 
-![TUI_App-Admin-Help.png](/img/get-started/ui/TUI_App-Admin-Help.png)
+<img src={useBaseUrl('img/get-started/ui/TUI_App-Admin-Help.png')} alt="Lower left nav menu" style={{border: '1px solid gray'}} width="300" />
 
 ## Working with tabs
 
@@ -147,7 +147,7 @@ To view Favorites and add to the list, do the following:
 1. To add a search to the Favorites list, do the following:
    1. [Save the search](/docs/search/get-started-with-search/search-basics/save-search) (if not already saved) by clicking **Save As**, then in the Save Item dialog enter a name, description, and select a folder in which to save the search.
    1. Click **Save**.
-   1. Click the three-dot icon and click **Favorite** from the provided options. <br/> <img src={useBaseUrl('img/get-started/ui/favorite-saved-search.png')} alt="favorite-saved-search.png" width="200"/>
+   1. Click the three-dot kebab icon and click **Favorite** from the provided options. <br/> <img src={useBaseUrl('img/get-started/ui/favorite-saved-search.png')} alt="favorite-saved-search.png" width="200"/>
 
 The dashboard and search appear in the Favorites list in the Left Nav Bar.
 
@@ -183,7 +183,7 @@ To pin a search, do the following:
 
 1. Open a Search page.
 1. Enter a query in the search box and click **Start**.
-1. Click the three-dot icon and click **Pin** from the provided options.<br/><img src={useBaseUrl('img/get-started/ui/pin-search.png')} alt="pin-search.png" width="200"/>
+1. Click the three-dot kebab icon and click **Pin** from the provided options.<br/><img src={useBaseUrl('img/get-started/ui/pin-search.png')} alt="pin-search.png" width="200"/>
 1. A message appears telling you the location of your pinned search in the Library. The Pinned Search takes the name of the Search tab by default.<br/>  ![pinmessage.png](/img/get-started/ui/pinmessage.png)
 1. To change the name of a Pinned Search, double-click the Search tab and enter a new name in the name field.
 

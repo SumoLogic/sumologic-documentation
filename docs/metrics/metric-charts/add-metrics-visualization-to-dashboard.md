@@ -14,7 +14,7 @@ You can add a metrics visualization as a panel in a dashboard.
 ## Add a metric chart to a dashboard
 
 1. First, [create a metrics query and visualization](create-metrics-visualization.md).
-1. Choose **Add to Dashboard** from the three-dot menu in the upper right corner of the metric chart  
+1. Choose **Add to Dashboard** from the three-dot kebab menu in the upper right corner of the metric chart  
 
     ![add-to-dashboard.png](/img/metrics/add-to-dashboard.png). 
 
