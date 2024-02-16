@@ -63,10 +63,11 @@ To configure a TAXII 2 Client Source:
 1. **STIX/TAXII Configuration**:
     1. **Version**. Select the STIX/TAXII version the vendor is using (2.0 or 2.1).
     1. **TAXII Discovery URL**. Enter the TAXII Discovery URL provided by the vendor.
-1. **Authentication**. Select the authentication type:
-   * **API Key**. Provide the API auth name and value, and select the API auth style.
+1. **Authentication Configuration**. Select the authentication type:
+   * **No Auth**. Select if no authorization is needed.
+   * **APIKey**. Provide the API auth name and value, and select the API auth style (in params, header, or query string).
    * **Basic**. Provide your vendor username and password.
-   * **Bearer**. Provide the bearer auth token and prefix. 
+   * **Bearer**. Provide the bearer auth token and (optional) the prefix. 
 1. **Other Settings**:
     1. (Optional) **Set Indicators Limit Per Page**. Set the maximum number of indicators to return per page. The default is 99.
     1. (Optional) **Polling Interval**. Set how frequently to poll for new or updated indicators. It must be between 5 minutes and 48 hours. 
