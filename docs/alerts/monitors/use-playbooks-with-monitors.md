@@ -80,7 +80,7 @@ You can create a monitor that triggers an alert that in turn runs an automated p
 An anomaly monitor is triggered when unusual conditions  are detected. Anomaly monitors leverage a machine learning model to detect anomalies and identify unusual patterns of activity. The output of the machine learning model are baselines for normal behavior, in the form of lower and upper thresholds, so that deviations from baselines signal unusual activity and trigger alerts. 
 
 :::note
-Outlier monitors are under the detector type for **Anomaly** monitors because outlier monitors use anomaly detection on in-query data. 
+Weekly seasonality detection is turned off by default to optimize performance. [Contact Sumo Logic Customer Support](https://support.sumologic.com/support/s/contactsupport) to activate it for specific monitors. (*Weekly seasonality detection* is the optimization of baseline calculations to account for the variations of data flow that can occur in a work week.)
 :::
 
 To create an anomaly monitor that runs an automated playbook in response to an alert:
@@ -88,7 +88,7 @@ To create an anomaly monitor that runs an automated playbook in response to an a
 1. [Open the **New Monitor** window](/docs/alerts/monitors/create-monitor/#open-the-new-monitor-window).
 1. Go to [Step 1: Trigger Conditions](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions) in the **New Monitor** window.
 1. Select the **Logs** monitor type.
-1. Select **Anomaly** under **Detection Method**. <br/> <img src={useBaseUrl('img/monitors/new-monitor-anomaly-detection-method.png')} alt="Anomaly detection method" style={{border: '1px solid gray'}} width="800" />
+1. Select **Anomaly** under **Detection Method**. <br/>(Note that **Outlier** monitors are under **Anomaly** because they use anomaly detection on in-query data.) <br/> <img src={useBaseUrl('img/monitors/new-monitor-anomaly-detection-method.png')} alt="Anomaly detection method" style={{border: '1px solid gray'}} width="800" />
 1. In **Query**, [provide a query](/docs/alerts/monitors/create-monitor/#provide-a-query-logs-and-metrics-only) for the logs to be monitored for anomalous behavior.
 1. In the **Critical** tab under **Trigger Type**, select the parameters for the alert trigger:
    * **Detection Window**. Select the duration of time to watch for anomalies (from 5 minutes to 24 hours). Ensure that the detection window is 5-10 times longer than the timeslice used in the log query. 
