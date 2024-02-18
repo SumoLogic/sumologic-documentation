@@ -1536,6 +1536,7 @@
   "/cid/1012": "/docs/get-started",
   "/cid/10120": "/docs/metrics/logs-to-metrics",
   "/cid/10121": "/docs/get-started",
+  "/cid/10123": "/docs/integrations/security-threat-detection/vmware-carbon-black",
   "/cid/1013": "/docs/send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors",
   "/cid/10132": "/docs/manage/partitions-data-tiers/data-tiers",
   "/cid/10133": "/docs/manage/partitions-data-tiers/searching-data-tiers",
