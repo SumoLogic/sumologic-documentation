@@ -85,7 +85,7 @@ Follow these steps to set up an S3 Source to collect event logs from your S3 buc
 6. **Use AWS versioned APIs**? Select **No**
 7. **Bucket Name.** Enter the exact name of the S3 bucket you created above.
 8. **Path Expression.** Enter: `events/*`
-9. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. 
+9. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs.
 :::note
 import CollBegin from '../../reuse/collection-should-begin-note.md';
 
@@ -116,9 +116,9 @@ Please carefully evaluate this information to assure that your configuration ref
 
 ## Installing the Carbon Black Cloud app
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Carbon Black Cloud dashboards
 
