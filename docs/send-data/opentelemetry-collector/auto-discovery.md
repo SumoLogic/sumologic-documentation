@@ -33,7 +33,7 @@ For the discovered services, you can set up data collection with guided onboardi
 1. In Sumo Logic, select **Manage Data > Collection > OpenTelemetry Collection**.
 1. On the OpenTelemetry Collection page, click **Add Collector**.
 1. [Install the OpenTelemetry collector](https://help.sumologic.com/docs/send-data/opentelemetry-collector/install-collector/).
-1. On the **Done** page, you can see services discovered which are updated in real time.<br/><img src={useBaseUrl('img/send-data/collector-installation-completion-page.png')} alt="collector-installation-completion-page" style={{border:'1px solid black'}} width="700" />
+1. On the **Done** page, you can see services discovered which are updated in real time.<br/><img src={useBaseUrl('img/send-data/collector-installation-completion-page.png')} alt="collector-installation-completion-page" style={{border:'1px solid gray'}} width="700" />
 1. On clicking the application of interest in **Auto Discovered Service(s)** section, you will be taken to the **Configure App** section.
 1. Fill up the details to complete the collection configuration and app installation.
 
@@ -43,7 +43,7 @@ You can also review the applications discovered per collector on the collector l
 
 1. In Sumo Logic, select **Manage Data > Collection > OpenTelemetry Collection**.
 1. Click on the collector from the list which will open the Collector Inspector view.  
-1. Select **Discovered Service(s)** tab to review all the services discovered.<br/><img src={useBaseUrl('img/send-data/collector-list-page.png')} alt="collector-list-page" style={{border:'1px solid black'}} width="800" />
+1. Select **Discovered Service(s)** tab to review all the services discovered.<br/><img src={useBaseUrl('img/send-data/collector-list-page.png')} alt="collector-list-page" style={{border:'1px solid gray'}} width="800" />
 1. On clicking the application of interest, you will be taken to the **Configure App** section.
 1. Fill up the details to complete the collection configuration and app installation.
 

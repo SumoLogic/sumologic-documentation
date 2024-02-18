@@ -10,7 +10,7 @@ description: Learn how to monitor and view the details about the alert against t
 
 <p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
-Previously, monitors and alert response page (ARP) were only supported in Sumo Logic’s Continuous data tier. Now, you can set robust and configurable alerting policies that enable you to get notified about critical changes and view granular details about an individual alert that include data from the Infrequent tier.
+Previously, monitors and alert response page (ARP) were only supported in Sumo Logic’s Continuous data tier. Now, you can set robust and configurable alerting policies that enable you to get notified about critical changes and view granular details about an individual alert that include data from the Infrequent Tier.
 
 ## Monitors
 
