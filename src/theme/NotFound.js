@@ -4,37 +4,57 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+
 import React from 'react';
+import Translate, {translate} from '@docusaurus/Translate';
+import {PageMetadata} from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Typed from '@theme/Typed';
-
-function NotFound() {
+export default function NotFound(): JSX.Element {
   return (
-    <Layout>
-      <main className="">
-        <div className="container">
+    <>
+      <PageMetadata
+        title={translate({
+          id: 'theme.NotFound.title',
+          message: 'Page Not Found',
+        })}
+      />
+      <Layout>
+        <main className="container margin-vert--l">
           <div className="row">
-            <div className="col col--8 col--offset-2">
-              <div className="terminal">
-                <div className="terminal-header">
-                </div>
-                <div className="terminal-body">404</div>
-              </div>
-              <h1 className="title">
-                <Typed strings={['>_ Page not found']} typeSpeed={75} />
+            <div className="col col--6 col--offset-3">
+              <h1 align="center" >
+                <Translate
+                  id="theme.NotFound.title"
+                  description="The title of the 404 page">
+                  404 - Page Not Found
+                </Translate>
               </h1>
-              <img src={useBaseUrl('/img/replace-with-search-code.png')} className="code" alt="" />
-              <a href="/" className="link">
-                Back to homepage
-              </a>
+              <p align="center">
+                <Translate
+                  id="theme.NotFound.p1"
+                  description="The first paragraph of the 404 page">
+                  Whoops! We can't find what you're looking for.
+                </Translate>
+              </p>
+              <p align="center">
+              <button className="homepage"
+                  description="Back to Sumo Docs homepage">
+                  <a href="/">Back to home</a>
+              </button>
+              <button className="homepage"
+                  description="Open GitHub Issue">
+                  <a href="https://github.com/SumoLogic/sumologic-documentation/issues/new/choose">Report this bug</a>
+              </button>
+              </p>
+              <p align="center">
+              <img class="svg" src="/img/sumo-404.svg" alt="Sumo Logic 404 image" width="250">
+              </img>
+              </p>
             </div>
           </div>
-        </div>
-      </main>
-    </Layout>
+        </main>
+      </Layout>
+    </>
   );
 }
-
-export default NotFound;
