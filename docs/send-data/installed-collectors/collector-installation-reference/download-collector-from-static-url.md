@@ -177,5 +177,5 @@ Choose one of the following:
 * Windows 64: https://collectors.us2.sumologic.com/rest/download/win64
 
 :::info
-To download older version collectors, append `?version=19.XXX-X` to the static URLs quoted above. For example, use the URL: https://collectors.au.sumologic.com/rest/download/win64/?version=19.461-1, if you want to download version 19.461-1 of our Windows 64 bit installed collector from our AU service.
+To download older version collectors, append `?version=19.XXX-X` to the static URLs quoted above. For example, use the URL: https://collectors.au.sumologic.com/rest/download/win64/?version=19.461-1 if you want to download version 19.461-1 of our Windows 64 bit installed collector from our AU service.
 :::
