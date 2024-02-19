@@ -83,18 +83,18 @@ receivers:
     scrapers:
       memory:
 
-  exporters:
-    logging:
-      loglevel: debug
+exporters:
+  debug:
+    verbosity: detailed
 
-  service:
-    pipelines:
-      metrics:
-        receivers:
-          - hostmetrics
-        exporters:
-          - sumologic
-          - logging
+service:
+  pipelines:
+    metrics:
+      receivers:
+        - hostmetrics
+      exporters:
+        - sumologic
+        - debug
 ```
 
 <details>
@@ -132,7 +132,7 @@ At this point, the collector should be running and sending memory stats data int
 
 Then after that, every 5 seconds you should see a line like:
 
-`[...] MetricsExporter {"kind": "exporter", "data_type": "metrics", "name": "logging", "#metrics": 1} [...]`
+`[...] MetricsExporter {"kind": "exporter", "data_type": "metrics", "name": "debug", "#metrics": 1} [...]`
 
 If you see that kind of output, the collector has successfully set up a connection to Sumo Logic and is sending memory stats metrics as expected. Great! Now let’s go find those in Sumo.
 
