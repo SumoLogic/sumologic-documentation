@@ -83,12 +83,16 @@ This will generate a command which can be executed in the machine which needs to
 
 ### Step 2: Configure integration
 
-The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in:
+1. The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in:
 `C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
 
-You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the yaml file.
+1. To collect from a SQL Server with a named instance, both computer_name and instance_name are required. Toggle the "Enable metric collection for SQL Server with a named instance." button. For a default SQL Server setup, these settings are optional.
+    * Computer Name: The computer name identifies the SQL Server name or IP address of the computer being monitored.
+    * Instance Name: The instance name identifies the specific SQL Server instance being monitored.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
+3. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic. Click on the **Download YAML File** button to get the yaml file.
+
+    <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/SQLServer-OpenTelemetry/SQL-Server-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
 
