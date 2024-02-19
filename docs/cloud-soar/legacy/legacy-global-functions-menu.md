@@ -2,7 +2,7 @@
 id: legacy-cloud-soar-global-functions-menu
 title: Legacy Cloud SOAR Global Functions Menu
 sidebar_label: Global Functions Menu
-description: Learn about features of the legacy Cloud SOAR Global Functions Menu.
+description: Features of the legacy Cloud SOAR Global Functions Menu.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -18,30 +18,26 @@ Global Search allows you, with the appropriate permissions, to perform exhaustiv
 
 All searchable Cloud SOAR sections are listed and individually selectable. To search, enter the search criteria in the search bar, then select the sections you wish to search and click **Search**.
 
-<img src={useBaseUrl('img/cloud-soar/image9.png')} alt="Global Search Criteria" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image9.png')} alt="Global Search Criteria" style={{border: '1px solid gray'}} width="800"/>
 
 
 The **Other Filters** tab permits a more targeted selection of search
 criteria. Targeted searching does not extend to the data inside Digital Support or Knowledge Base articles.
 
-<img src={useBaseUrl('img/cloud-soar/image10.png')} alt="Global Search Filters" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image10.png')} alt="Global Search Filters" style={{border: '1px solid gray'}} width="800"/>
 
-<img src={useBaseUrl('img/cloud-soar/image11.png')} alt="Global Search" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image11.png')} alt="Global Search" style={{border: '1px solid gray'}} width="800"/>
 
 When a search result is located within an incident, the incident number will be displayed in the Incident column. Clicking on the incident number will open the incident in a new window. Clicking on the arrow at the end of each search result will display the details of the individual search result in the current window. Search results may also be exported to a PDF file by clicking on Export PDF at the bottom of the search results window.
 
-<img src={useBaseUrl('img/cloud-soar/image12.png')} alt="Global Search Results" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image12.png')} alt="Global Search Results" style={{border: '1px solid gray'}} width="800"/>
 
 ## Automation
-
-The **Automation** section contains all the functions related to automation and orchestration processes of the Cloud SOAR platform.
-
-To access this section, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation**.
 
 ### ARK
 
 ARK or Automated Responder Knowledge is the Machine Learning component of Cloud SOAR which implements the Supervised learning in Case-Based Reasoning (CBR) algorithm.
-CBR solves new problems by adapting previously successful solutions to similar problems. In Cloud SOAR, this can be leveraged by analyzing solved incidents to hint steps and procedures to operators in new similar threats.<br/> <img src={useBaseUrl('img/cloud-soar/image15e.png')} alt="Automation menu" width="250"/>
+CBR solves new problems by adapting previously successful solutions to similar problems. In Cloud SOAR, this can be leveraged by analyzing solved incidents to hint steps and procedures to operators in new similar threats.<br/> <img src={useBaseUrl('img/cloud-soar/image15e.png')} alt="Automation menu" style={{border: '1px solid gray'}} width="250"/>
 
 ARK assists operators during investigations in two main areas: Automatically suggesting/prompting next actions/tasks in Playbooks (until version 5) and Correlation/ Deduplication of similar threats into 1 unique incident.
 
@@ -61,11 +57,11 @@ Watch this micro lesson to learn more about ARK.
 
 #### Enable ARK
 
-To enable ARK, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Settings** > **ARK** and make sure you have it set to **ON**.
+To enable ARK, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" style={{border: '1px solid gray'}} width="20"/>) > **Settings** > **ARK** and make sure you have it set to **ON**.
 
 From this page, it’s possible to configure also other ARK Settings such as the Neighbor incidents considered for each recommendation and an age relevance threshold. Those two parameters will allow you to tune the incidents that the Machine Learning algorithm will consider.
 
-<img src={useBaseUrl('img/cloud-soar/image16b.png')} alt="ARK Settings" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image16b.png')} alt="ARK Settings" style={{border: '1px solid gray'}} width="800"/>
 
 When an incident is created in Cloud SOAR, the Incident Type field will be the one defining which Playbooks you can attach to that incident.
 
@@ -75,15 +71,15 @@ ARK has a correlation and deduplication or merging mechanism you can use with th
 
 ARK 2.0 OIF is a custom Sumo Logic integration which allows investigators to implement a mechanism for deduplication and correlation of ingested alerts and Cloud SOAR incidents.
 
-<img src={useBaseUrl('img/cloud-soar/image16d.png')} alt="ARK OIF" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image16d.png')} alt="ARK OIF" style={{border: '1px solid gray'}} width="800"/>
 
-<img src={useBaseUrl('img/cloud-soar/image16e.png')} alt="Test Action" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image16e.png')} alt="Test Action" style={{border: '1px solid gray'}} width="800"/>
 
 OIF ARK enrichment action “Get parents for incident” allows you to retrieve every incident (as proposed parents) that is similar to the analyzed one.
 
 Each optional field allows you to fine tune the weight of the fields, acceptance thresholds and of the algorithm which needs to be trained and fine-tuned in order to get correct and reliable results.
 
-<img src={useBaseUrl('img/cloud-soar/image16f.png')} alt="Field Weight" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image16f.png')} alt="Field Weight" style={{border: '1px solid gray'}} width="800"/>
 
 Alert deduplication or merging can be achieved by utilizing ARK OIF enrichment actions and Cloud SOAR’s unique Triage capability.
 
@@ -95,14 +91,7 @@ Cloud SOAR can also correlate existing incidents to check if specific data is al
 
 ## Settings
 
-The **Settings** section contains several Cloud SOAR administrative functions. To access, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) <br/><img src={useBaseUrl('img/cloud-soar/automation.png')} alt="Automation" width="600"/>
-
-<img src={useBaseUrl('img/cloud-soar/image17.png')} alt="Settings menu" width="300"/>                    
-
-The following sections detail the various setup and configuration options for the Cloud SOAR platform. Although initial configuration can be performed in any order, the following sections are ordered in the suggested order for initial configuration.
-
 ### General Settings
-The following options can be configured under General Settings:
 
 #### User Settings (Security)
 
@@ -110,8 +99,7 @@ The following options can be configured under General Settings:
 - Lock users after their inactivity.
 - Possibility to change the password policies
 
-<img src={useBaseUrl('img/cloud-soar/image185.png')} alt="Security Settings" width="600"/>
-
+<img src={useBaseUrl('img/cloud-soar/image185.png')} alt="Security Settings" style={{border: '1px solid gray'}} width="600"/>
 
 ### User Management
 
@@ -150,7 +138,7 @@ all groups are merged.
 Under the **User Management** dropdown choose **Users** and click **+** to
 begin adding the user's details.
 
-<img src={useBaseUrl('img/cloud-soar/image35.png')} alt="General User Settings" width="400"/>
+<img src={useBaseUrl('img/cloud-soar/image35.png')} alt="General User Settings" style={{border: '1px solid gray'}} width="400"/>
 
 The General tab contains the usual user account attributes such as name, email, address, username, etc. Select the user's Profile from the dropdown list to apply their permissions.
 
@@ -175,7 +163,7 @@ Next, configure your reference field. References fields will work from 2
 bits of data; SAMAccountName for a username or the individuals email
 address.
 
-<img src={useBaseUrl('img/cloud-soar/image36.png')} alt="LDAP Settings References" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image36.png')} alt="LDAP Settings References" style={{border: '1px solid gray'}} width="800"/>
 
 Authentication may or may not be required depending on user permissions
 on the AD/LDAP server. If your LDAP/AD server permissions require it,
@@ -194,7 +182,7 @@ During user creation utilize the same naming/email schema that you have
 in your LDAP/AD Tree. In the example below The Cloud SOAR username, Peter
 Parker, would correspond to the CN for the user in your LDAP/AD tree.
 
-<img src={useBaseUrl('img/cloud-soar/image41.png')} alt="LDAP/AD tree" width="400"/>
+<img src={useBaseUrl('img/cloud-soar/image41.png')} alt="LDAP/AD tree" style={{border: '1px solid gray'}} width="400"/>
 
 #### Logged Users
 
@@ -203,24 +191,24 @@ information for the user who is currently logged on to the Cloud SOAR
 platform. For administrators of the Cloud SOAR platform, this section will
 show all authorized user session activity.
 
-<img src={useBaseUrl('img/cloud-soar/image22.png')} alt="Logged Users" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image22.png')} alt="Logged Users" style={{border: '1px solid gray'}} width="800"/>
 
 ### Audit and Information
 
 All audit and licensing information can be found under the Audit and Information tab.<br/> <img src={useBaseUrl('img/cloud-soar/image120.png')} alt="Audit and Information Menu" width="300"/>
 
-<img src={useBaseUrl('img/cloud-soar/image20b.png')} alt="Audit and information" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image20b.png')} alt="Audit and information" style={{border: '1px solid gray'}} width="800"/>
 
 Cloud SOAR audit logs and activity can be reviewed under the **Audit Trail** section of the menu. You can filter through activity displaying only errors and warnings or build their own filters for review. Log rotation settings and the ability to export audit findings can be controlled from the **Audit** menu at the top of the screen.
 
-<img src={useBaseUrl('img/cloud-soar/image120b.png')} alt="Audit Trail" width="800"/>
+<img src={useBaseUrl('img/cloud-soar/image120b.png')} alt="Audit Trail" style={{border: '1px solid gray'}} width="800"/>
 
 The **Automation Bridge Monitoring** section displays the status of the automation bridges configured.
 
-## User Settings
+### User Settings
 
 The user icon in the upper right-hand corner allows you to view their profile and settings, as well as log out of the platform.
 
-<img src={useBaseUrl('img/cloud-soar/image24.png')} alt="_Profile_" width="200"/>
+<img src={useBaseUrl('img/cloud-soar/image24.png')} alt="_Profile_" style={{border: '1px solid gray'}} width="200"/>
 
 The **Profile** button will take you to the [**User Management** section](#user-management), where administrators can add and remove users, lock a user's account, force a user account to change their password or set its expiration period.

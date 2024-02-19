@@ -53,12 +53,6 @@ Navigate the evolving threat landscape with our best-in-class security orchestra
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cloud-soar/mssp"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>MSSP</h4></a>
-  <p>Full-featured instance of Cloud SOAR designed for internal MSSP use.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/cloud-soar/cloud-soar-bridge"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Bridge</h4></a>
   <p>Learn how to install a bridge for Cloud SOAR to allow running custom actions or integrations in an on-premise environment.</p>
   </div>

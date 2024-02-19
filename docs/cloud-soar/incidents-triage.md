@@ -276,7 +276,7 @@ free form text box and click create when finished.
 
 <img src={useBaseUrl('img/cloud-soar/image162.png')} alt="Add note" width="800"/>
 
-## Create a New Incident Manually
+## Create a new incident manually
 
 To create an Incident manually, click the **+ Incident** button on the top
 right-side of the screen.
@@ -325,18 +325,6 @@ You have the option to create manual Parent/Child relationships between the new 
 <img src={useBaseUrl('img/cloud-soar/image130.png')} alt="Incident Relationships" width="800"/>
 
 The final step in manual incident creation is to add an investigator or a group of investigators to the incident. Select an investigator or group from the left side of the screen by double-clicking on their name and the investigator will be added to the investigators pane. Once finished, click **Create**.
-
-### Incident Report
-
-The **Report Template** section allows you to create templates for custom reporting. The Report Template screen contains a list of all current report templates. To add a new report template, click on the **+** icon above the report template list.
-
-The Details tab of the new report template window allows you to specify a unique name for the template as well as a template category and any appropriate tags.
-
-The Sections tab of the new report template window allows you to drag and drop sections of the incident into the report template. All incident sections are listed in the left-hand pane. Dragging incident sections to the right-hand pane will add the section to the report template.
-Sections will be printed in the report in the order they appear in the right-hand pane. Once satisfied with the selection, click **Save**.
-
-<img src={useBaseUrl('img/cloud-soar/image45.png')} alt="Report Template Sections" width="400"/>
-
 
 ### Custom Fields
 

@@ -2,7 +2,7 @@
 id: legacy-cloud-soar-architecture
 title: Legacy Cloud SOAR Architecture
 sidebar_label: Architecture
-description: Learn about features of the legacy Cloud SOAR architecture.
+description: Features of the legacy Cloud SOAR architecture.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
