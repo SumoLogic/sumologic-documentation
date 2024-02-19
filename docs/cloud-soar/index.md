@@ -8,6 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Navigate the evolving threat landscape with our best-in-class security orchestration, automation and response (SOAR) solution to streamline incident response workflows.
 
+:::info
+The articles in this section only apply to organizations having the latest Clouad SOAR SaaS version. If your Cloud SOAR instance URL matches the pattern `*.soar.sumologic.com`, refer to [Legacy Cloud SOAR](/docs/cloud-soar/legacy/). 
+:::
+
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
