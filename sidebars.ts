@@ -2700,7 +2700,11 @@ integrations: [
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'cloud-soar/legacy/index'},
-          items: ['cloud-soar/cloud-soar-apis',
+          items: [
+            'cloud-soar/legacy/legacy-cloud-soar-architecture',
+            'cloud-soar/legacy/legacy-cloud-soar-global-functions-menu',
+            'cloud-soar/legacy/legacy-cloud-soar-main-menu',
+            'cloud-soar/legacy/cloud-soar-apis',
         ],
       },
       ],

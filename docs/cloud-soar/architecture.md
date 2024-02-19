@@ -30,30 +30,6 @@ Cloud SOAR offers a patent-pending Automated Responder Knowledge (DF-ARK) module
 
 <img src={useBaseUrl('img/cloud-soar/image3.png')} alt="architecture" style={{border: '1px solid gray'}} width="800"/>
 
-
-## Multi-Tenancy
-
-Cloud SOAR Security Operations (Cloud SOAR SO) supports a multi-tenant architecture, typically for a Managed Security Service Provider (MSSP) to support management of multiple customers in isolated environments.
-
-Tenants are separately managed in a segregated Cloud SOAR instance with complete isolation of all the platform's functions. Additionally, a Master Console is available to manage all the instances (create, destroy, monitor) and to provide aggregated reporting.
-
-All multi-tenant installations offer:
-- Separate schema or databases for each individual tenant
-- Logical or physical segregation of tenants
-- A **Superuser** role that provides visibility on all tenants and provides for execution of administrative duties, analytics, dashboards, and reporting
-- Individual administrators otherwise segregated to each tenant
-- Isolation of external actions (e.g., enrichment of indicators of compromise, containment actions prescribed to a host)
-
-<img src={useBaseUrl('img/cloud-soar/image5.png')} alt="Multi-tenancy" width="600"/>
-
-## Automated Responder Knowledge (DF-ARK)
-
-Cloud SOAR's Automated Responder Knowledge (DF-ARK) module utilizes machine
-learning through historical responses to past incidents and threat
-intelligence feeds to enrich new incidents. This enrichment allows
-Cloud SOAR to recommend relevant Playbooks and plans of action to expedite
-detection and response times.
-
 ## Automation Bridge
 
 Cloud SOAR interacts with the platforms in your environment using a module called Automation Bridge.

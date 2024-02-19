@@ -5,7 +5,35 @@ sidebar_label: Legacy Cloud SOAR
 description: Learn about our legacy Cloud SOAR product offering.
 ---
 
-The articles in this section only apply to organizations having a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`. 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-For documentation for our latest Cloud SOAR SaaS version, see [Cloud SOAR](/docs/cloud-soar/).
+The articles in this section only apply to organizations having a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`. For documentation for our latest Cloud SOAR SaaS version, see [Cloud SOAR](/docs/cloud-soar/).
 
+In this section, we'll introduce the following concepts:
+
+<div className="box-wrapper" >
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/cloud-soar/legacy/legacy-cloud-soar-architecture/"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Legacy Cloud SOAR Architecture</h4></a>
+  <p>Learn about features of the legacy Cloud SOAR architecture.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/cloud-soar/legacy/legacy-cloud-soar-global-functions-menu/"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Legacy Cloud SOAR Global Functions Menu</h4></a>
+  <p>Learn about features of the legacy Cloud SOAR Global Functions menu.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/cloud-soar/legacy/cloud-soar-main-menu/"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Legacy Cloud SOAR Main Menu</h4></a>
+  <p>Learn about features of the legacy Cloud SOAR main menu.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/cloud-soar/legacy/cloud-soar-apis/"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Legacy Cloud SOAR APIs</h4></a>
+  <p>Learn how to access legacy Cloud SOAR APIs and API documentation.</p>
+  </div>
+</div>
+</div>

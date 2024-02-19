@@ -71,12 +71,6 @@ Navigate the evolving threat landscape with our best-in-class security orchestra
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cloud-soar/cloud-soar-apis"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Cloud SOAR APIs</h4></a>
-  <p>Learn how to access Cloud SOAR APIs and API documentation.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/cloud-soar/audit-event-index"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Audit Logging</h4></a>
   <p>Learn how to search the Audit Event Index for CSOAR log events.</p>
   </div>
