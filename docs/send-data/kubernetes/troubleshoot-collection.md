@@ -345,14 +345,14 @@ metadata:
     config:
       merge:
         exporters:
-          logging:
+          debug:
             verbosity: detailed
         service:
           pipelines:
             metrics:
               exporters:
                 - sumologic/default
-                - logging
+                - debug
 ```
 
 This configuration ensures that all metrics are printed to stdout and they are not collected by logs collector to keep your ingest low.

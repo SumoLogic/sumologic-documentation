@@ -6,8 +6,8 @@ tags: [ ]
 
 ![](/img/platform-services/automation-service/app-central/logos/google.png)
 
-Version: 1.2  
-Updated: Jan 27, 2023
+Version: 1.3  
+Updated: February 16, 2024
 
 Chronicle SIEM is a cloud service, built as a specialized layer on top of core Google infrastructure, designed for
 enterprises to privately retain, analyze, and search the massive amounts of security and network telemetry they
@@ -42,3 +42,5 @@ risky activity
         * Get Log
         * List Alerts
         * UDM Search
+* February 16, 2023 (v1.3)
+    * List Alerts Action: Fix bug related to the PageSize field
