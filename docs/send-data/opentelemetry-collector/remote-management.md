@@ -37,8 +37,9 @@ Goal: As a user I have 50 Linux servers where we are running Apache servers and 
 1. On the OpenTelemetry Collection page, click Add Collector.
 1. On the left panel, select Linux as the platform.
 1. Select/create installation token.
-1. Add a new Tag “Application = Apache” as in screenshot below to identify these collectors as Apache running on them. We will keep the Collector setting to default.
-1. Copy the command and execute it in your system terminal where the collector needs to be installed.
+1. Add a new Tag “Application = Apache” as in screenshot below to identify these collectors as Apache running on them.<br/><img src={useBaseUrl('img/send-data/linux-install.png')} alt="linux-install" width="600"/>
+1. We will keep the Collector setting to default.
+1. Copy the command and execute it in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/linux-terminal-installation.png')} alt="linux-terminal-installation" width="600"/>
 1. Wait for the installation process to complete, then click Next to proceed. On this screen you will see a list of available Source Templates. For our use case we will Select Apache Source Template.
 If you choose to close this screen, you can also navigate to create a new Source template by following
 1. Select Manage Data > Collection > Source Template.
@@ -46,11 +47,11 @@ If you choose to close this screen, you can also navigate to create a new Source
 
 ## Step 2: Create a data collection configuration to collect Apache error logs and link them to all the collectors that have tag Application = Apache
 
-Complete the Source Template form by providing the Name, Error log file path and Click next.
+Complete the Source Template form by providing the Name, Error log file path and Click next.<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="local-file-apache" width="300"/>
 
-On the Collector Linking step you will have the option to link the collectors using Collector name or add Tags to find the group of collectors.
+On the Collector Linking step you will have the option to link the collectors using Collector name or add Tags to find the group of collectors.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="link-collectors" width="600"/>
 
-For our scenario we will add Tag Application = Apache.
+For our scenario, we will add Tag Application = Apache.
 Click Preview collectors to see the list of collectors that will be linked to the newly created source Template.
 
 Click next to complete Source Template Creation. In the background system will apply the configuration to all the linked collectors and start collecting from Apache error files. Click on Log search Icon to search for data collected for this Source Template.
