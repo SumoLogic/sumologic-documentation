@@ -84,7 +84,7 @@ This will generate a command you can execute on the machine that you need to mon
 
 1. The Microsoft SQL Server App's queries and dashboards depend on logs from the SQL Server ERRORLOG, which is typically found in:
 `C:\Program Files\Microsoft SQL Server\MSSQL<version>.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
-1. To collect from a SQL Server with a named instance, both **Computer Name** and **Instance Name** are required. Toggle the `Enable metric collection for SQL Server with a named instance.` button. For a default SQL Server setup, these settings are optional.
+2. To collect from a SQL Server with a named instance, both **Computer Name** and **Instance Name** are required. Toggle the `Enable metric collection for SQL Server with a named instance.` button. For a default SQL Server setup, these settings are optional.
     * **Computer Name**. The computer name identifies the SQL Server name or IP address of the computer being monitored.
     * **Instance Name**. The instance name identifies the specific SQL Server instance being monitored.
 3. You can add any custom fields which you want to tag along with the data ingested in Sumo Logic.
