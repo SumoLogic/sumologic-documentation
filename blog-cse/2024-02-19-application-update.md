@@ -17,7 +17,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 * [New] Users can now navigate directly from the Entity Activity panel on the HUD to the Entity List page, with the proper filter pre-applied.
 * [Updated] The `Object Type` attribute has been added back to the Signal summary section, next to the timestamp, so that it is visible whether the Signal details are expanded or collapsed.
 * [New] A user-editable **Description** field has been added to Rule Tuning Expressions.
-* 
 
 ### Bug fixes
 
