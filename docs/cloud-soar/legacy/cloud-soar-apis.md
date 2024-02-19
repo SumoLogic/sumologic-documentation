@@ -6,7 +6,7 @@ description: Learn how to access legacy Cloud SOAR APIs and API documentation.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import ApiIntro from '../reuse/api-intro.md';
+import ApiIntro from '../../reuse/api-intro.md';
 
 The Cloud SOAR APIs allow you to manage incidents, triage, and other Cloud SOAR features.
 
