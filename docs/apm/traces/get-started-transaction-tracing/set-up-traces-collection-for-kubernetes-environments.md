@@ -157,14 +157,14 @@ After enabling and installing tracing, you should have additional Kubernetes res
 * There are running pods `<RELEASE_NAME>-sumologic-otelcol-instrumentation-<hash>, <RELEASE_NAME>-sumologic-traces-gateway-<hash>, <RELEASE_NAME>-sumologic-traces-sampler-<hash>`
 * Kubernetes metadata tags such as `pod` and `replicaset` should be applied to all spans.
 * The OpenTelemetry Collector can export metrics, which include information such as the number of spans exported. Several metrics starting with `otelcol_` will become available, such as `otelcol_exporter_sent_spans` and `otelcol_receiver_accepted_spans`.
-* **OpenTelemetry Collector can have logging exporter enabled.** This will put on the output contents of spans (with some sampling above a certain rate). To enable, apply the following flags when installing/upgrading the collector (appending logging to the list of exporters):
+* **OpenTelemetry Collector can have Debug exporter enabled.** This will put on the output contents of spans (with some sampling above a certain rate). To enable, apply the following flags when installing/upgrading the collector (appending `debug` to the list of exporters):
 
     ```bash
     helm upgrade collection sumologic/sumologic \
       --namespace sumologic \
       ...
-      --set tracesSampler.config.exporters.logging.logLevel=debug \
-      --set tracesSampler.config.service.pipelines.traces.exporters="{otlphttp,logging}"
+      --set tracesSampler.config.exporters.debug.verbosity=detailed \
+      --set tracesSampler.config.service.pipelines.traces.exporters="{otlphttp,debug}"
     ```
 
   Having this enabled, `kubectl logs -n sumologic collection-sumologic-traces-sampler-<ENTER ACTUAL POD ID>` might yield the following output:

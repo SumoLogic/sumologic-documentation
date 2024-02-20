@@ -6,8 +6,8 @@ tags: [ ]
 
 ![](/img/platform-services/automation-service/app-central/logos/google.png)
 
-Version: 1.2  
-Updated: Jan 27, 2023
+Version: 1.5  
+Updated: February 19, 2024
 
 Chronicle SIEM is a cloud service, built as a specialized layer on top of core Google infrastructure, designed for
 enterprises to privately retain, analyze, and search the massive amounts of security and network telemetry they
@@ -30,6 +30,7 @@ risky activity
 * **List IoC Details** *(Enrichment)* - Returns the threat intelligence associated with an artifact. The threat
   intelligence information is obtained from your enterprise security systems and from IoC partners of Google
 * **UDM Search** *(Enrichment)* - UDM Search query and retrieve matches
+* **Get Events** *(Enrichment)* - Returns multiple events given the UIDs for the events
 
 ## Change Log
 
@@ -42,3 +43,10 @@ risky activity
         * Get Log
         * List Alerts
         * UDM Search
+* February 16, 2023 (v1.3)
+    * List Alerts Action: Fix bug related to the PageSize field
+* February 19, 2024 (v1.4)
+    * Alerts Daemon Chronicle: Fix bug related to Last execution time
+* February 19, 2024 (v1.5)
+    * Added new Action: Get Events
+    * Alerts Daemon Chronicle: Updated Output mappings
