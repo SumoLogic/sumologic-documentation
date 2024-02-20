@@ -70,7 +70,7 @@ The purpose of this section is to provide you the information you need to update
 
 Update integrations in App Central using keywords in the bottom left corner of the integration:
 * **UPDATE**. Appears on the installed integrations if there is a new version of that integration and with a new YAML configuration file. <br/><img src={useBaseUrl('img/cloud-soar/new-integration-update.png')} alt="Update" style={{border: '1px solid gray'}} width="300"/>
-* **INSTALLED**: Appears when the integration is installed and updated to the latest version, and with the correct actions.<br/><img src={useBaseUrl('img/cloud-soar/integration-installed.png')} alt="Installed" style={{border: '1px solid gray'}} width="300"/>
+* **INSTALLED**. Appears when the integration is installed and updated to the latest version, and with the correct actions.<br/><img src={useBaseUrl('img/cloud-soar/integration-installed.png')} alt="Installed" style={{border: '1px solid gray'}} width="300"/>
 * **DOWNLOAD**. Appears if this integration is not yet installed.<br/><img src={useBaseUrl('img/cloud-soar/integration-download.png')} alt="Download" style={{border: '1px solid gray'}} width="300"/>
 
 #### Update an installed integration to show all actions
