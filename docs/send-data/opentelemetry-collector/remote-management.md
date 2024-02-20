@@ -12,17 +12,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-OpenTelemetry collectors support remote management of data collection configuration. Set up data collection configuration from Sumo UI and push the configuration to one or multiple collectors.  
+The Sumo Logic Distribution for OpenTelemetry Collector supports remote management of data collection configuration. You can set up data collection configuration from the Sumo UI and push the configuration to one or more collectors.  
 
-## New Concepts
+## Remote Management features
 
-### Collector Tags
+### Collector tags
 
-Add Tags to the collectors installed which can be used to categorize and group the collectors. These tags are also enriched in your data so you can also use them in your dashboards and searches.
+With OpenTelemetry (OTel) remote management, you can tag your installed collectors and use it to categorize and group the collectors. These tags are enriched in your data, so you can use them in your dashboards and searches as well.
 
-### Source Templates
+### Source templates
 
-Data configuration setup for OT collectors will be done using Source Templates. Source templates is an extension of existing Source concept for Installed collectors which has a new capability to be attached to multiple collectors.
+Data configuration setup for OT collectors will be done using Source templates. The Source template is an extension of existing Source concept for Installed collectors which has a new capability to be attached to multiple collectors.
 
 Use collector tags to group the collector and associate the Source Template to these groups of collectors thus helping in reducing redundancy of data collection setup. This additional step for Source Template is called Collector Linking.
 
@@ -51,7 +51,7 @@ If you choose to close this screen, you can also navigate to create a new Source
 
 ### Step 2: Data configuration
 
-In this step, we'll create a data collection configuration to collect Apache error logs and link them to all the collectors that have the tag Application = Apache.
+In this step, we'll create a data collection configuration to collect Apache error logs and link them to all the collectors that have the tag "application = Apache".
 
 1. Complete the Source Template form by providing the Name, Error log file path and click **Next**.
 1. On the **Link Collectors** step, you will have the option to link the collectors using the Collector name or by adding tags to find the group of collectors. For our scenario, we will add the tag "application = Apache".<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="local-file-apache" width="300"/>
