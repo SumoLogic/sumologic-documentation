@@ -96,11 +96,11 @@ Follow the instructions for setting up [Cato Networks](/docs/send-data/hosted-co
 
 ## Installing the Cato Networks app
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Cato Networks dashboards 
+## Viewing Cato Networks dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
