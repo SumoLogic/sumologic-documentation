@@ -2,16 +2,16 @@
 id: jira
 title: Jira
 sidebar_label: Jira
-description: The Sumo Logic App for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
+description: The Sumo Logic app for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="50"/>
 
-The Sumo Logic App for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events.   
+The Sumo Logic app for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events.   
 
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/jira-cloud).
+The Jira app supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud app](/docs/integrations/app-development/jira-cloud).
 
 
 ## Log types
@@ -378,11 +378,11 @@ _sourceCategory=Jira/events (user_created or user_deleted or user_updated)
 </details>
 
 
-## Collecting Logs for the Jira App
+## Collecting Logs for the Jira app
 
-This section has instructions for collecting logs from Jira for the Sumo App for Jira.
+This section has instructions for collecting logs from Jira for the Sumo app for Jira.
 
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/jira-cloud).
+The Jira app supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud app](/docs/integrations/app-development/jira-cloud).
 
 You will configure an installed collector on your Jira host with three local file sources, for collecting Jira access, security, and catalina logs. You also configure a hosted collector with an HTTP source for receiving webhook events from Jira.
 
@@ -433,33 +433,17 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
 
 When you configure the webhook, enter the URL for the HTTP source you created in [step 2](#Step_2:_Configure_hosted_collector_to_receive_webhooks) as the endpoint for the webhook.
 
+## Installing the Jira app
 
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Installing the Jira App
+<AppInstall2/>
 
-Now that you have set up collection for Jira, install the Jira app to use the pre-configured dashboards for insights into your data.
+## Viewing Jira dashboards​
 
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/jira-cloud).
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-To install the app, do the following:
-
-1. From the App Catalog, search for and select the app.
-2. To install the app, click **Add to Library**.
-   * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-   * **Jira Server Log data source.** Set **Source Category** to `Atlassian/Jira/Server*`.
-   * **Jira Webhook source.** Set **Source Category** to `Atlassian/Jira/Events`.
-3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-
-## Viewing Jira Dashboards
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
-
-You can use template variables to drill down and examine the data on a granular level.
-
+<ViewDashboards/>
 
 ### Overview
 
