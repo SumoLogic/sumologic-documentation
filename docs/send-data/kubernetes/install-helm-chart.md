@@ -98,7 +98,7 @@ Thank you for installing sumologic.
 (...)
 ```
 
-More configuration examples (i.e., OpenShift) can found seen in [this document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/configuration-examples.md).
+More configuration examples (i.e. OpenShift) can found seen in [this document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/configuration-examples.md).
 
 ## Viewing Data In Sumo Logic
 
