@@ -13,45 +13,49 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-OpenTelemetry collectors to support remote management of data collection configuration. Set up data collection configuration from Sumo UI and push the configuration to one or multiple collectors.  
+OpenTelemetry collectors support remote management of data collection configuration. Set up data collection configuration from Sumo UI and push the configuration to one or multiple collectors.  
 
-New Concepts:
+## New Concepts
 
-Collector Tags:
+### Collector Tags
+
 Add Tags to the collectors installed which can be used to categorize and group the collectors. These tags are also enriched in your data so you can also use them in your dashboards and searches.
 
-Source Templates:
+### Source Templates
+
 Data configuration setup for OT collectors will be done using Source Templates. Source templates is an extension of existing Source concept for Installed collectors which has a new capability to be attached to multiple collectors.
 
 Use collector tags to group the collector and associate the Source Template to these groups of collectors thus helping in reducing redundancy of data collection setup. This additional step for Source Template is called Collector Linking.
 
-To get started with using this feature we will provide a scenario which can be replicated in your environment.
+## How it works
 
-Goal: As a user I have 50 Linux servers where we are running Apache servers and would like to monitor the Apache error logs from all these servers.
+To get started with using this feature, we will provide a scenario that can be replicated in your environment.
+
+Goal: *As a user, I have 50 Linux servers where I'm running Apache servers and would like to monitor the Apache error logs from all these servers.*
+
+### Step 1: Collector installation
+
+In this step, we'll install the collector on 50 servers and add a uniquely identifiable tag to these collectors depicting that these have Apache server running on them.
+
+1. In Sumo Logic, select **Manage Data** > **Collection** > **OpenTelemetry Collection**.
+1. On the **OpenTelemetry Collection** page, click **Add Collector**.
+1. In the **Set up Collector** step, select **Linux** as the platform.<br/><img src={useBaseUrl('img/send-data/linux-install.png')} alt="linux-install" width="600"/>
+1. Enter your **Installation Token**.
+1. Under **Tag data on Collector level**, add a new tag, “application = Apache” as seen in the screenshot below to identify these collectors as Apache running on them.
+1. For **Collector Settings**, leave them as default (unchecked).
+1. Under **Generate and run the command to install the collector**, copy the command and execute it in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/linux-terminal-installation.png')} alt="linux-terminal-installation" width="600"/>
+1. Wait for the installation process to complete, then click **Next** to proceed.
+1. On the next screen, you will see a list of available Source Templates. For our use case, we will select Apache Source Template.
+
+If you choose to close this screen, you can also navigate to create a new Source template by selecting **Manage Data** > **Collection** > **Source Template**.
 
 
-## Step 1: Install collector on 50 servers and add a uniquely identifiable tag to these collectors depicting that these have Apache server running on them
+### Step 2: Data configuration
 
+In this step, we'll create a data collection configuration to collect Apache error logs and link them to all the collectors that have the tag Application = Apache.
 
-1. In Sumo Logic, select Manage Data > Collection > OpenTelemetry Collection.
-1. On the OpenTelemetry Collection page, click Add Collector.
-1. On the left panel, select Linux as the platform.
-1. Select/create installation token.
-1. Add a new Tag “Application = Apache” as in screenshot below to identify these collectors as Apache running on them.<br/><img src={useBaseUrl('img/send-data/linux-install.png')} alt="linux-install" width="600"/>
-1. We will keep the Collector setting to default.
-1. Copy the command and execute it in your system terminal where the collector needs to be installed.<br/><img src={useBaseUrl('img/send-data/linux-terminal-installation.png')} alt="linux-terminal-installation" width="600"/>
-1. Wait for the installation process to complete, then click Next to proceed. On this screen you will see a list of available Source Templates. For our use case we will Select Apache Source Template.
-If you choose to close this screen, you can also navigate to create a new Source template by following
-1. Select Manage Data > Collection > Source Template.
-
-
-## Step 2: Create a data collection configuration to collect Apache error logs and link them to all the collectors that have tag Application = Apache
-
-Complete the Source Template form by providing the Name, Error log file path and Click next.<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="local-file-apache" width="300"/>
-
-On the Collector Linking step you will have the option to link the collectors using Collector name or add Tags to find the group of collectors.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="link-collectors" width="600"/>
-
-For our scenario, we will add Tag Application = Apache.
-Click Preview collectors to see the list of collectors that will be linked to the newly created source Template.
-
-Click next to complete Source Template Creation. In the background system will apply the configuration to all the linked collectors and start collecting from Apache error files. Click on Log search Icon to search for data collected for this Source Template.
+1. Complete the Source Template form by providing the Name, Error log file path and click **Next**.
+1. On the **Link Collectors** step, you will have the option to link the collectors using the Collector name or by adding tags to find the group of collectors. For our scenario, we will add the tag "application = Apache".<br/><img src={useBaseUrl('img/send-data/local-file-apache.png')} alt="local-file-apache" width="300"/>
+1. Click **Preview Collector(s)** to see the list of collectors that will be linked to the newly created source Template.<br/><img src={useBaseUrl('img/send-data/link-collectors.png')} alt="link-collectors" width="600"/>
+1. Click **Next** to complete Source Template Creation. In the background, the system will apply the configuration to all the linked collectors and start collecting from Apache error files.
+1. Click the **Log Search** icon to search for data collected for this Source Template.
