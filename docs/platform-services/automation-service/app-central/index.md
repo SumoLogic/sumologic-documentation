@@ -13,6 +13,8 @@ App Central provides apps to help you be more productive in the Automation Servi
 Cloud SOAR has its own App Central. For more information, see [App Central](/docs/cloud-soar/automation/#app-central) in *Cloud SOAR Automation*.
 :::
 
+In this section, we'll introduce the following concepts:
+
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
