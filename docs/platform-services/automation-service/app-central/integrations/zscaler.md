@@ -7,7 +7,7 @@ tags: [ ]
 ![](/img/platform-services/automation-service/app-central/logos/zscaler.png)
 
 Version: 1.3  
-Updated: February 20, 2024
+Updated: Feb 20, 2024
 
 Zscaler Internet Access is a cloud native [security service edge (SSE)](https://www.zscaler.com/solutions/zscaler-security-service-edge) solution that builds on a [decade of secure web gateway leadership](https://www.zscaler.com/gartner-magic-quadrant-secure-web-gateways-2020). Offered as a scalable SaaS platform from the world’s largest security cloud, it replaces legacy network security solutions to stop advanced attacks and prevent data loss with a comprehensive zero trust approach
 
