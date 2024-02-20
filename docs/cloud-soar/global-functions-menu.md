@@ -2,7 +2,7 @@
 id: global-functions-menu
 title: Cloud SOAR Global Functions Menu
 sidebar_label: Global Functions Menu
-description: Learn about features of the legacy Cloud SOAR main menu.
+description: Learn about features of the Cloud SOAR main menu.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
