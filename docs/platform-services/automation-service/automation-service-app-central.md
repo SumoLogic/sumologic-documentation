@@ -1,15 +1,18 @@
 ---
 id: automation-service-app-central
-title: App Central in the Automation Service
-sidebar_label: App Central
+title: About App Central in the Automation Service
+sidebar_label: About App Central
 description: Learn how to use App Central to get new applications and tools. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
 import Iframe from 'react-iframe';
 
 App Central provides apps to help you be more productive in the Automation Service. From here, you can search and add new integrations with all the needed components. 
+
+:::note
+Cloud SOAR has its own App Central. For more information, see [App Central](/docs/cloud-soar/automation/#app-central) in *Cloud SOAR Automation*.
+:::
 
 <!-- Micro lesson is commented out until it is adjusted to show that App Central is no longer under Cloud SIEM but is part of the Automation Service.
 
@@ -39,21 +42,21 @@ Before you can access App Central, you must have the App Central Access role cap
 <img src={useBaseUrl('img/cse/automation-service-app-central.png')} alt="App Central" style={{border:'1px solid gray'}} width="800"/>
 
 1. **Playbooks**. Click to view [playbooks in App Central](#playbooks-in-app-central) that are available to install.
-1. **Integrations**. Click to view [integrations in App Central](#integrations-in-app-central) that are available to install.
+1. **Integrations**. Click to view [integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) that are available to install.
 1. **Search**. Search for integrations or playbooks to install. 
 1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization. The actions limit is set to 200 per hour by default to prevent abuse of system resources or runaway processes. For more information, see [Actions limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit).
 1. **Download**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](#install-a-playbook-from-app-central). 
 
-## Integrations in App Central
+## Work with integrations in App Central
 
-Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While [Integrations](/docs/platform-services/automation-service/automation-service-integrations/) in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Central shows you additional integrations you can install.
+Integrations are connectors to applications from industry-leading network and security vendors. Resources in the integrations provide the actions run by Playbooks. While the [**Integrations**](/docs/platform-services/automation-service/automation-service-integrations/) menu item in the Automation Service UI shows the integrations installed to your environment, the **Integrations** tab in App Central shows you [integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) that you can install.
 
 ### Install an integration from App Central
 
 1. Use the **Search** bar in the upper right of the **Integrations** tab to find integrations.
 1. Click **Download** in the lower left corner of the integration box.
 1. Click **Install** to install the integration. After installation is complete, **Installed** replaces the **Download** link in the corner of the integration box.
-1. **IMPORTANT**: Click **Show More** in the integration box to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
+1. **IMPORTANT**: Find the article for the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) to see if there are additional steps you need to follow to configure the installed integration. Failure to perform these additional steps may result in the integration not working properly.
 
 ### Update an integration from App Central
 
@@ -66,6 +69,7 @@ Integrations in App Central display a version number. The version indicates when
 The purpose of this section is to provide you the information you need to update your integrations to include all types of actions that should be present in that integration, for example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Central to make sure you don't have any integrations without useful actions.
 
 Update integrations in App Central using keywords in the bottom left corner of the integration:
+
 * **UPDATE**. Appears on the installed integrations if there is a new version of that integration and with a new YAML configuration file. <br/><img src={useBaseUrl('img/cloud-soar/new-integration-update.png')} alt="Update" style={{border:'1px solid gray'}} width="300"/>
 * **INSTALLED**: Appears when the integration is installed and updated to the latest version, and with the correct actions.<br/><img src={useBaseUrl('img/cloud-soar/integration-installed.png')} alt="Installed" style={{border:'1px solid gray'}} width="300"/>
 * **DOWNLOAD**. Appears if this integration is not yet installed.<br/><img src={useBaseUrl('img/cloud-soar/integration-download.png')} style={{border:'1px solid gray'}} alt="Download" width="300"/>
@@ -82,6 +86,7 @@ Here an example of updating an installed integration.
 #### Update an integration with a new version to show all actions
 
 If there are two different versions between the integration installed and that in App Central, the type of operation required to update the integration is **UPDATE**.
+
 1. In the Integrations section, open the installed integration in code mode to view the version. <br/><img src={useBaseUrl('img/cloud-soar/integration-code-mode.png')} style={{border:'1px solid gray'}} alt="Integration code mode" width="800"/>
 1. Go to App Central and search for the same integration. Click **UPDATE**. <br/><img src={useBaseUrl('img/cloud-soar/integration-update-version.png')} alt="Integration update version" style={{border:'1px solid gray'}} width="300"/>
 1. On the dialog that appears, click **Update**.  <br/><img src={useBaseUrl('img/cloud-soar/integration-update-2.png')} style={{border:'1px solid gray'}} alt="Integration update" width="400"/>
@@ -109,7 +114,7 @@ While [Playbooks](/docs/platform-services/automation-service/automation-service-
 
 You can export the contents of integrations and playbooks from App Central.
 
-1. Click the **Go to export page** button in the top right corner of the **Integrations** tab.<br/><img src={useBaseUrl('img/cse/automation-service-app-central-export-button.png')} alt="Go to the export page" width="300"/>
+1. Click the **Go to export page** button in the top right corner of the **Integrations** tab.<br/><img src={useBaseUrl('img/cse/automation-service-app-central-export-button.png')} alt="Go to the export page" style={{border: '1px solid gray'}} width="300"/>
 1. Select the items you want to export. Provide a description in the box provided. If you select more than one item, you are prompted to provide a title as well. 
 1. Scroll down and click **Export** at the bottom right corner of the screen. The selections are exported in a .tar file to your downloads folder.
 1. Extract the .tar file. An archive file is extracted from the .tar file (for example, a .tar.gz file).
