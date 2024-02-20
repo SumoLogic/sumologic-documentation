@@ -8,7 +8,7 @@
 /docs/send-data/kubernetes/  @SumoLogic/open-source-collection-team @kimsauce @jpipkin1 @JV0812
 
 # Owners of all files in the `/docs/send-data/opentelemetry-collector` directory and its subdirectories.
-/docs/send-data/opentelemetry-collector/  @SumoLogic/open-source-collection-team @kimsauce @stacykor @jpipkin1 @JV0812
+/docs/send-data/opentelemetry-collector/  @SumoLogic/open-source-collection-team @kimsauce @jpipkin1 @JV0812
 
 # GitHub workflow owners
 /.github/workflows/ @SumoLogic/open-source-collection-team @kimsauce
