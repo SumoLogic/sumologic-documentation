@@ -1,5 +1,5 @@
 ---
-id: mssp
+id: legacy-cloud-soar-mssp
 title: Cloud SOAR for MSSPs (Legacy Only)
 sidebar_label: MSSP
 description: Full-featured instance of legacy Cloud SOAR designed for internal MSSP use.

@@ -1,5 +1,5 @@
 ---
-id: cloud-soar-apis
+id: legacy-cloud-soar-apis
 title: Legacy Cloud SOAR APIs
 sidebar_label: APIs
 description: Learn how to access legacy Cloud SOAR APIs and API documentation.

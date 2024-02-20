@@ -46,13 +46,13 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cloud-soar/legacy/mssp"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Cloud SOAR for MSSPs (Legacy Only)</h4></a>
+  <a href="/docs/cloud-soar/legacy/legacy-cloud-soar-mssp"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Cloud SOAR for MSSPs (Legacy Only)</h4></a>
   <p>Full-featured instance of legacy Cloud SOAR designed for internal MSSP use.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cloud-soar/legacy/cloud-soar-apis/"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Legacy Cloud SOAR APIs</h4></a>
+  <a href="/docs/cloud-soar/legacy/legacy-cloud-soar-apis/"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Legacy Cloud SOAR APIs</h4></a>
   <p>Learn how to access legacy Cloud SOAR APIs and API documentation.</p>
   </div>
 </div>
