@@ -14,13 +14,13 @@ Query data and perform actions in Zendesk ticketing system.
 
 ## Actions
 
-* **Create Ticket** *(Notification)* - Creates a new ticket
-* **Update Ticket** *(Notification)* - Update an existing ticket by ID
-* **Delete Ticket** *(Containment)* - Delete a ticket by ID
-* **Restore Deleted Ticket** *(Containment)* - Restore previously deleted ticket by ID
-* **List Tickets** *(Enrichment)* - Fetch a detailed list with all tickets
-* **Get Ticket Details** *(Enrichment)* - Retrieve information about an existing ticket by ID
-* **List Users** *(Enrichment)* - Fetch a detailed list with all users
+* **Create Ticket** *(Notification)* - Creates a new ticket.
+* **Update Ticket** *(Notification)* - Update an existing ticket by ID.
+* **Delete Ticket** *(Containment)* - Delete a ticket by ID.
+* **Restore Deleted Ticket** *(Containment)* - Restore previously deleted ticket by ID.
+* **List Tickets** *(Enrichment)* - Fetch a detailed list with all tickets.
+* **Get Ticket Details** *(Enrichment)* - Retrieve information about an existing ticket by ID.
+* **List Users** *(Enrichment)* - Fetch a detailed list with all users.
 
 ## Change Log
 

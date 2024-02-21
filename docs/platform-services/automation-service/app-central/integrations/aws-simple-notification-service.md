@@ -16,8 +16,8 @@ Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notif
 ## Actions
 
 * **Send Message** (*Notification*) - Sends a message to an Amazon SNS Topic, a text message (SMS message) directly to a phone number.
-* **List Subscriptions** (*Enrichment*) - List of the requester's subscriptions
-* **List Topics** (*Enrichment*) - List of the requester's topics
+* **List Subscriptions** (*Enrichment*) - List of the requester's subscriptions.
+* **List Topics** (*Enrichment*) - List of the requester's topics.
 * **Get Subscription Attributes** (*Enrichment*) - Returns all of the properties of a subscription.
 * **Get Topic Attributes** (*Enrichment*) - Returns all of the properties of a topic. Topic properties returned might differ based on the authorization of the user.
 * **List Sandbox Phone Numbers** (Enrichment) - Lists the calling AWS account's current verified and pending destination phone numbers in the SMS sandbox.

@@ -14,26 +14,26 @@ Utilize Check Point to gather enrichment data and issue containment actions duri
 
 ## Actions
 
-* **Domain Information** (*Enrichment*) - Gather domain information
-* **IP Information** (*Enrichment*) - Gather IP information
-* **User Attributes** (*Enrichment*) - Gather user attributes for a specific user account
-* **Show Access rule-base** (*Enrichment*) - Get access rule-base
-* **Show Threat rule-base** (*Enrichment*) - Get threat rule-base
-* **Block IP** (*Containment*) - Block the specified IP address
-* **Unblock IP** (*Containment*) - Unblock the specified IP address
-* **Block Domain** (*Containment*) - Block a specific domain
-* **Unblock Domain** (*Containment*) - Unblock a specific domain
-* **Unlock User** (*Containment*) - Unlock a specific user account
-* **Block Port** (*Containment*) - Block a specific port
-* **Unblock Port** (*Containment*) - Unblock a specific port
-* **Add Rule** (*Containment*) - Add a new rule
-* **Delete Rule** (*Containment*) - Delete an existing rule
-* **Add Threat Rule** (*Containment*) - Add a new threat rule
-* **Delete Threat Rule** (*Containment*) - Delete an existing threat rule
-* **Add Host To Specific Group** (*Containment*) - Add host to a group
-* **Assign Global** (*Containment*) - Assign global policy
-* **Install Policy** (*Containment*) - Install a specific policy
-* **Show Access Rule** *(Enrichment)* - Get access rule
+* **Domain Information** (*Enrichment*) - Gather domain information.
+* **IP Information** (*Enrichment*) - Gather IP information.
+* **User Attributes** (*Enrichment*) - Gather user attributes for a specific user account.
+* **Show Access rule-base** (*Enrichment*) - Get access rule-base.
+* **Show Threat rule-base** (*Enrichment*) - Get threat rule-base.
+* **Block IP** (*Containment*) - Block the specified IP address.
+* **Unblock IP** (*Containment*) - Unblock the specified IP address.
+* **Block Domain** (*Containment*) - Block a specific domain.
+* **Unblock Domain** (*Containment*) - Unblock a specific domain.
+* **Unlock User** (*Containment*) - Unlock a specific user account.
+* **Block Port** (*Containment*) - Block a specific port.
+* **Unblock Port** (*Containment*) - Unblock a specific port.
+* **Add Rule** (*Containment*) - Add a new rule.
+* **Delete Rule** (*Containment*) - Delete an existing rule.
+* **Add Threat Rule** (*Containment*) - Add a new threat rule.
+* **Delete Threat Rule** (*Containment*) - Delete an existing threat rule.
+* **Add Host To Specific Group** (*Containment*) - Add host to a group.
+* **Assign Global** (*Containment*) - Assign global policy.
+* **Install Policy** (*Containment*) - Install a specific policy.
+* **Show Access Rule** *(Enrichment)* - Get access rule.
 
 ## Category
 

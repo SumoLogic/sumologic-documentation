@@ -14,7 +14,7 @@ Query Starlight events during active incident investigations with Cloud SOAR teg
 
 ## Actions
 
-* **Search Into Events Starlight** (*Enrichment*) - Search into Starlight events
+* **Search Into Events Starlight** (*Enrichment*) - Search into Starlight events.
 
 ## Change Log
 

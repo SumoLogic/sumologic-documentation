@@ -14,15 +14,15 @@ Search events and network traffic from Fortinet FortiAnalyzer.
 
 ## Actions
 
-* **Search Into Events** (*Enrichment*) - Search FortiAnalyzer based on the specified criteria
-* **Get Alert Events** (*Enrichment*) - Get alerts based on specific event criteria
-* **Get Alert Event Logs** (*Enrichment*) - Get event logs based on the specified criteria
-* **Search Network Traffic** (*Enrichment) -* Search network traffic based on specific criteria
-* **List Incidents** (*Enrichment*) - List previously generated incidents
-* **Create Incident** (*Notification*) - Create new incident
-* **Update Incident** (*Notification*) - Update a previously created incident
-* **Get Alerts Events Daemon** (*Daemon*) - Daemon to pull FortiAnalyzer Alert Events
-* **Get Alert Events Daemon V2** *(Daemon) -* Daemon to pull FortiAnalyzer Alert Events
+* **Search Into Events** (*Enrichment*) - Search FortiAnalyzer based on the specified criteria.
+* **Get Alert Events** (*Enrichment*) - Get alerts based on specific event criteria.
+* **Get Alert Event Logs** (*Enrichment*) - Get event logs based on the specified criteria.
+* **Search Network Traffic** (*Enrichment*) - Search network traffic based on specific criteria.
+* **List Incidents** (*Enrichment*) - List previously generated incidents.
+* **Create Incident** (*Notification*) - Create new incident.
+* **Update Incident** (*Notification*) - Update a previously created incident.
+* **Get Alerts Events Daemon** (*Daemon*) - Daemon to pull FortiAnalyzer Alert Events.
+* **Get Alert Events Daemon V2** *(Daemon*) - Daemon to pull FortiAnalyzer Alert Events.
 
 ## Change Log
 

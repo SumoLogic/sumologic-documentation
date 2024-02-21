@@ -14,8 +14,8 @@ Utilize ThreatConnect intelligence data during incident investigations.
 
 ## Actions
 
-* **Search Intelligence** (*Enrichment*) - Search ThreatConnect data for information matching the specified query
-* **Update Intelligence** (*Notification*) - Update ThreatConnect intelligence data
+* **Search Intelligence** (*Enrichment*) - Search ThreatConnect data for information matching the specified query.
+* **Update Intelligence** (*Notification*) - Update ThreatConnect intelligence data.
 
 ## Change Log
 

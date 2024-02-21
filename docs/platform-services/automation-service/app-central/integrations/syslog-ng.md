@@ -5,7 +5,7 @@ tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/syslog-ng.png')} alt="syslog-ng" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/syslog-ng.png')} alt="syslog-ng" width="70"/>
 
 ***Version: 1.1  
 Updated: Jul 07, 2023***
@@ -14,12 +14,12 @@ Syslog-ng is a free and open-source implementation of the syslog protocol for Un
 
 ## Actions
 
-* **Filter Logspaces** *(Enrichment)* - Retrieves log message records from SSB
-* **Generate Statistics** *(Enrichment)* - Get statistics without querying
-* **Get Number of Messages** *(Enrichment)* - Returns the number of messages that would be resulted by a query
-* **List Dynamic Columns** *(Enrichment)* - Returns the names of dynamic columns available for the given logspace
-* **List Logspaces** *(Enrichment)* - Retrieves the list of searchable (indexed) logspaces
-* **Logspace Details** *(Enrichment)* - Retrieves the list of searchable (indexed) logspaces, including the details of the logspace
+* **Filter Logspaces** *(Enrichment)* - Retrieves log message records from SSB.
+* **Generate Statistics** *(Enrichment)* - Get statistics without querying.
+* **Get Number of Messages** *(Enrichment)* - Returns the number of messages that would be resulted by a query.
+* **List Dynamic Columns** *(Enrichment)* - Returns the names of dynamic columns available for the given logspace.
+* **List Logspaces** *(Enrichment)* - Retrieves the list of searchable (indexed) logspaces.
+* **Logspace Details** *(Enrichment)* - Retrieves the list of searchable (indexed) logspaces, including the details of the logspace.
 
 ## Change Log
 

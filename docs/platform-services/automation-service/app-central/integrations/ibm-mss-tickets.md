@@ -14,10 +14,10 @@ Create, update and gather IBM MSS tickets information.
 
 ## Actions
 
-* **Get Tickets** (*Enrichment*) - Get tickets from IBM MSS
-* **Create Ticket** (*Notification*) - Get tickets from IBM MSS
-* **Update Ticket** (*Notification*) - Get tickets from IBM MSS
-* **IBM MSS Tickets Daemon** (*Daemon*) - Automatically pull tickets from MSS
+* **Get Tickets** (*Enrichment*) - Get tickets from IBM MSS.
+* **Create Ticket** (*Notification*) - Get tickets from IBM MSS.
+* **Update Ticket** (*Notification*) - Get tickets from IBM MSS.
+* **IBM MSS Tickets Daemon** (*Daemon*) - Automatically pull tickets from MSS.
 
 ## Change Log
 

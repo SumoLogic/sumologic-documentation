@@ -14,7 +14,7 @@ Gather host configuration data with HP Universal CMDB.
 
 ## Actions
 
-* **Get Host Details** (*Enrichment*) - Gather host information
+* **Get Host Details** (*Enrichment*) - Gather host information.
 
 ## Change Log
 

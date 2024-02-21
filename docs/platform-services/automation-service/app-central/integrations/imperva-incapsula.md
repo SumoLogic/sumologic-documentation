@@ -14,7 +14,7 @@ Gather statistical information from Incapsula for incident investigation.
 
 ## Actions
 
-* **Get Infrastructure Protection Statistics** (*Enrichment*) - Gather Infrastructure Protection statistics for an account or IP range from Incapsula
+* **Get Infrastructure Protection Statistics** (*Enrichment*) - Gather Infrastructure Protection statistics for an account or IP range from Incapsula.
 
 ## Change Log
 

@@ -14,16 +14,16 @@ Query data and utilize action in ZeroFOX Platform.
 
 ## Actions
 
-* **List Alerts** *(Enrichment)* - Returns alerts matching given/default filters and parameters
-* **Alerts ZeroFOX Daemon** *(Daemon)* - Daemon to fetch alerts
-* **Get Alert** *(Enrichment)* - Reads a specific alert
-* **Alert Review** *(Containment)* - Creates an alert review
-* **List Alert Reviews** *(Enrichment)* - Lists all of the alerts current reviews
-* **Get Alert Review** *(Enrichment)* - Reads a given review
-* **List Users** *(Enrichment)* - Lists current users assigned to the caller's enterprise
-* **Update ZeroFOX Alert** *(Containment)* - Takes an action on an alert
-* **Assign Alert To User** *(Enrichment)* - Assign alert to user
-* **Alert Tag Changeset** *(Containment)* - List of Alert Tags to add or remove to/from the Alert
+* **List Alerts** *(Enrichment)* - Returns alerts matching given/default filters and parameters.
+* **Alerts ZeroFOX Daemon** *(Daemon)* - Daemon to fetch alerts.
+* **Get Alert** *(Enrichment)* - Reads a specific alert.
+* **Alert Review** *(Containment)* - Creates an alert review.
+* **List Alert Reviews** *(Enrichment)* - Lists all of the alerts current reviews.
+* **Get Alert Review** *(Enrichment)* - Reads a given review.
+* **List Users** *(Enrichment)* - Lists current users assigned to the caller's enterprise.
+* **Update ZeroFOX Alert** *(Containment)* - Takes an action on an alert.
+* **Assign Alert To User** *(Enrichment)* - Assign alert to user.
+* **Alert Tag Changeset** *(Containment)* - List of Alert Tags to add or remove to/from the Alert.
 
 ## Notes
 

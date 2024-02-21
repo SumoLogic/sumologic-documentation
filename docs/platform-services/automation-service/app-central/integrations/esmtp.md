@@ -18,7 +18,7 @@ Allows you to connect your mailbox with Cloud SOAR and send emails via ESMTP.
 
 ## Actions
 
-* **Send Email** (*Notification*) - Send an email
+* **Send Email** (*Notification*) - Send an email.
 
 ## Change Log
 

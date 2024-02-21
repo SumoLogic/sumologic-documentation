@@ -14,9 +14,9 @@ Gather detonation data for files and URL using `ANY.RUN`.
 
 ## Actions
 
-* **Detonate File** (*Enrichment*) - Detonate a file
-* **Detonate URL** (*Enrichment*) - Detonate a URL
-* **Get Report** (*Enrichment*) - Gather detonation report
+* **Detonate File** (*Enrichment*) - Detonate a file.
+* **Detonate URL** (*Enrichment*) - Detonate a URL.
+* **Get Report** (*Enrichment*) - Gather detonation report.
 
 ## ANY.RUN configuration
 

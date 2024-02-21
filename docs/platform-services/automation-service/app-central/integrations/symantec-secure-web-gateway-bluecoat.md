@@ -14,9 +14,9 @@ Search SWG events and test URL access.
 
 ## Actions
 
-* **Search Into Events Bluecoat** (*Enrichment*) - Search events based on the specified query
-* **Show Active Sessions** (*Enrichment*) - Search active sessions based on the specified query
-* **Test URL Access** (*Enrichment*) - Test access to the specified URL
+* **Search Into Events Bluecoat** (*Enrichment*) - Search events based on the specified query.
+* **Show Active Sessions** (*Enrichment*) - Search active sessions based on the specified query.
+* **Test URL Access** (*Enrichment*) - Test access to the specified URL.
 
 ## Change Log
 

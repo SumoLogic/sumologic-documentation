@@ -5,7 +5,7 @@ tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/f5-as3.png')} alt="f5-as3" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/f5-as3.png')} alt="f5-as3" width="60"/>
 
 ***Version: 1.1  
 Updated: Jul 06, 2023***
@@ -14,7 +14,7 @@ Manipulate F5 AS3 configurations during an active investigation.
 
 ## Actions
 
-* **Set Configuration** (*Containment*) - Set configuration parameters within F5 AS3
+* **Set Configuration** (*Containment*) - Set configuration parameters within F5 AS3.
 
 ## Change Log
 

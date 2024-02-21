@@ -14,12 +14,12 @@ AWS Network Firewall is a stateful, managed, network firewall and intrusion dete
 
 ## Actions
 
-* **Add Rule Group To Firewall Policy** *(Containment)* - Add specified rule group to firewall policy
-* **Create Rule Group** *(Containment)* - Creates the specified stateless or stateful rule group, which includes the rules for network traffic inspection, a capacity setting, and tags
-* **Describe Firewall Policy** *(Enrichment)* - Returns the data objects for the specified firewall policy
-* **Describe Rule Group** *(Enrichment)* - Returns the data objects for the specified rule group
-* **List Firewall Policies** *(Enrichment)* - Retrieves the metadata for the firewall policies that you have defined
-* **List Rule Groups** *(Enrichment)* - Retrieves the metadata for the rule groups that you have defined
+* **Add Rule Group To Firewall Policy** *(Containment)* - Add specified rule group to firewall policy.
+* **Create Rule Group** *(Containment)* - Creates the specified stateless or stateful rule group, which includes the rules for network traffic inspection, a capacity setting, and tags.
+* **Describe Firewall Policy** *(Enrichment)* - Returns the data objects for the specified firewall policy.
+* **Describe Rule Group** *(Enrichment)* - Returns the data objects for the specified rule group.
+* **List Firewall Policies** *(Enrichment)* - Retrieves the metadata for the firewall policies that you have defined.
+* **List Rule Groups** *(Enrichment)* - Retrieves the metadata for the rule groups that you have defined.
 
 ## External Libraries
 

@@ -14,19 +14,19 @@ Layered Next-Gen Security for physical, virtual, and cloud environments provided
 
 ## Actions
 
-* **Add File To Quarantine** (*Containment*) - Creates a new task to add a file to quarantine
-* **Add To Blocklist** (*Containment*) - Add file hashes to the Blocklist
-* **Create Report** (*Notification*) - Create new Report
-* **Create Scan Task** (*Containment*) - Create new Scan Task
-* **Delete Report** (*Containment*) - Delete Report
-* **Get Endpoint List** (*Enrichment*) - Search list of available endpoints
-* **Get Report** (*Enrichment*) - Get details of a report
-* **Get Scan List** (*Enrichment*) - Search list of available scans
-* **List Blocklist Items** (*Enrichment*) - Lists all the hashes that are present in the blocklist
-* **List Companies** (*Enrichment*) - Search list of available companies
-* **List Policies** (*Enrichment*) - Search list of available policies
-* **Policy Details** (*Enrichment*) - Get details of specific policy
-* **Remove From Blocklist** (*Containment*) - Remove file hashes from Blocklist
+* **Add File To Quarantine** (*Containment*) - Creates a new task to add a file to quarantine.
+* **Add To Blocklist** (*Containment*) - Add file hashes to the Blocklist.
+* **Create Report** (*Notification*) - Create new Report.
+* **Create Scan Task** (*Containment*) - Create new Scan Task.
+* **Delete Report** (*Containment*) - Delete Report.
+* **Get Endpoint List** (*Enrichment*) - Search list of available endpoints.
+* **Get Report** (*Enrichment*) - Get details of a report.
+* **Get Scan List** (*Enrichment*) - Search list of available scans.
+* **List Blocklist Items** (*Enrichment*) - Lists all the hashes that are present in the blocklist.
+* **List Companies** (*Enrichment*) - Search list of available companies.
+* **List Policies** (*Enrichment*) - Search list of available policies.
+* **Policy Details** (*Enrichment*) - Get details of specific policy.
+* **Remove From Blocklist** (*Containment*) - Remove file hashes from Blocklist.
 
 ## Change Log
 

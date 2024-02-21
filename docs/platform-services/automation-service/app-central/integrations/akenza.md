@@ -14,17 +14,17 @@ Updated: Jul 18, 2023***
 
 ## Actions
 
-* **Get Organization** (*Enrichment*) - Get organization details
-* **Create Workspace** (*Containment*) - Create workspace
-* **List Workspaces** (*Enrichment*) - List workspaces
-* **Get Workspace** (*Enrichment*) - Get workspace details
-* **Delete Workspace** (*Containment*) - Remove workspace
-* **Create Device Type** (*Containment*) - Create new device type
-* **List Device Types** (*Enrichment*) - List device types
-* **Get Device Type** (*Enrichment*) - Get device type
-* **Delete Device Type** (*Containment*) - remove device type
-* **List Data Flows** (*Enrichment*) - List data flows on device
-* **Query Data Device** (*Enrichment*) - Query device data
+* **Get Organization** (*Enrichment*) - Get organization details.
+* **Create Workspace** (*Containment*) - Create workspace.
+* **List Workspaces** (*Enrichment*) - List workspaces.
+* **Get Workspace** (*Enrichment*) - Get workspace details.
+* **Delete Workspace** (*Containment*) - Remove workspace.
+* **Create Device Type** (*Containment*) - Create new device type.
+* **List Device Types** (*Enrichment*) - List device types.
+* **Get Device Type** (*Enrichment*) - Get device type.
+* **Delete Device Type** (*Containment*) - remove device type.
+* **List Data Flows** (*Enrichment*) - List data flows on device.
+* **Query Data Device** (*Enrichment*) - Query device data.
 
 ## Akenza configuration
 

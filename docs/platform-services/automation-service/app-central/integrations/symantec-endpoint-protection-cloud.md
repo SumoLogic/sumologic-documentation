@@ -14,12 +14,12 @@ Gather system information and event details from Symantec Endpoint Protection Cl
 
 ## Actions
 
-* **Get Devices** (*Enrichment*) - Get a list of SEPC devices
-* **Get Event Details** (*Enrichment*) - Get the details of an event
-* **Search Into Events SEPC** (*Enrichment*) - Search for SEPC events
-* **System Info** (*Enrichment*) - Get detailed information about the specified device
-* **System Group Info** (*Enrichment*) - Get detailed information about the specified group
-* **System User Info** (*Enrichment*) - Get detailed information about the specified user
+* **Get Devices** (*Enrichment*) - Get a list of SEPC devices.
+* **Get Event Details** (*Enrichment*) - Get the details of an event.
+* **Search Into Events SEPC** (*Enrichment*) - Search for SEPC events.
+* **System Info** (*Enrichment*) - Get detailed information about the specified device.
+* **System Group Info** (*Enrichment*) - Get detailed information about the specified group.
+* **System User Info** (*Enrichment*) - Get detailed information about the specified user.
 
 ## Change Log
 

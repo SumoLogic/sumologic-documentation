@@ -14,7 +14,7 @@ Symantec Javelin AD Protect provide protection for Microsoft Active Directory fr
 
 ## Actions
 
-* **Get Report** *(Enrichment)* - Get detailed alert information
+* **Get Report** *(Enrichment)* - Get detailed alert information.
 
 ## Change Log
 

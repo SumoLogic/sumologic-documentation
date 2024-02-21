@@ -14,8 +14,8 @@ Search DNS records for enrichment data with Cloud SOAR integration with ThreatMi
 
 ## Actions
 
-* **Search DNS Records** (*Enrichment*) - Search for DNS records
-* **Search DNS Records V2** (*Enrichment*) - Search for DNS records without saving attachments
+* **Search DNS Records** (*Enrichment*) - Search for DNS records.
+* **Search DNS Records V2** (*Enrichment*) - Search for DNS records without saving attachments.
 
 ## Notes
 

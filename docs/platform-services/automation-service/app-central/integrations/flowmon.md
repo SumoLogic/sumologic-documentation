@@ -14,9 +14,9 @@ Network performance monitoring and network security products, Flowmon is utilizi
 
 ## Actions
 
-* **Flows** *(Enrichment)* - Get a list of flows with a few parameters (from, to, profile, channels, etc)
-* **List Of Alerts** *(Enrichment)* - Get a list of alerts
-* **Get Alert** *(Enrichment)* - Gets specific alert object
+* **Flows** *(Enrichment)* - Get a list of flows with a few parameters (from, to, profile, channels, etc).
+* **List Of Alerts** *(Enrichment)* - Get a list of alerts.
+* **Get Alert** *(Enrichment)* - Gets specific alert object.
 
 ## Change Log
 

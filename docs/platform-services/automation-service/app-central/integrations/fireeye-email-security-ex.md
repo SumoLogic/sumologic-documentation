@@ -14,9 +14,9 @@ Full stack email security solution for email analysis.
 
 ## Actions
 
-* **Get Alert Info** (*Enrichment*) - Query FireEye EX for alert details
-* **Get ATI Details** (*Enrichment*) - Get the ATI details for the specified alert Id
-* **Add YARA Rule** (*Containment*) - Add a new YARA rule from the specified file
+* **Get Alert Info** (*Enrichment*) - Query FireEye EX for alert details.
+* **Get ATI Details** (*Enrichment*) - Get the ATI details for the specified alert Id.
+* **Add YARA Rule** (*Containment*) - Add a new YARA rule from the specified file.
 
 ## Change Log
 

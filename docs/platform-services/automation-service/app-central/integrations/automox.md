@@ -14,15 +14,15 @@ Automox is a cloud-native patching platform that automates patch management acro
 
 ## Actions
 
-* **List Devices** (*Enrichment*) - Retrieve a detailed list of all devices for the authenticated user
-* **List Organizations** (*Enrichment*) - Retrieve a detailed list of all organizations for the authenticated user
-* **List Users** (*Enrichment*) - Retrieve a list of all users with access to an organization
-* **List Server Groups** (*Enrichment*) - Retrieve all server group objects for the authenticated user
-* **List Tasks** (*Enrichment*) - List all tasks for an organization, with the ability to filter and sort results
-* **Run Command** (*Containment*) - Force a device to Scan, Patch, or Reboot for immediate execution
-* **Submit CSV File** (*Containment*) - Upload a vulnerability report to Automox
-* **Submit CSV File** (*Containment*) - Upload a vulnerability report to Automox
-* **Update Task** (*Containment*) - Change the state of a task
+* **List Devices** (*Enrichment*) - Retrieve a detailed list of all devices for the authenticated user.
+* **List Organizations** (*Enrichment*) - Retrieve a detailed list of all organizations for the authenticated user.
+* **List Users** (*Enrichment*) - Retrieve a list of all users with access to an organization.
+* **List Server Groups** (*Enrichment*) - Retrieve all server group objects for the authenticated user.
+* **List Tasks** (*Enrichment*) - List all tasks for an organization, with the ability to filter and sort results.
+* **Run Command** (*Containment*) - Force a device to Scan, Patch, or Reboot for immediate execution.
+* **Submit CSV File** (*Containment*) - Upload a vulnerability report to Automox.
+* **Submit CSV File** (*Containment*) - Upload a vulnerability report to Automox.
+* **Update Task** (*Containment*) - Change the state of a task.
 
 ## Automox configuration
 

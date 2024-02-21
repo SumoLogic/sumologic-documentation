@@ -18,19 +18,19 @@ risky activity.
 ## Actions
 
 * **Alerts Daemon Chronicle** *(Daemon)* - Automatically pulls information about both asset-based and user-based alerts
-  with event
-* **Get Event** *(Enrichment)* - Returns a single event given the UID for the event
-* **Get Log** *(Enrichment)* - Returns a single raw log given the UID for the event
+  with event.
+* **Get Event** *(Enrichment)* - Returns a single event given the UID for the event.
+* **Get Log** *(Enrichment)* - Returns a single raw log given the UID for the event.
 * **List Alerts** *(Enrichment)* - Returns information about both asset-based and user-based alerts with event
-  timestamps within the specified time range
+  timestamps within the specified time range.
 * **List Assets** *(Enrichment)* - Lists all the assets that accessed the specified artifact in your enterprise within
-  the specified time period
+  the specified time period.
 * **List Events** *(Enrichment)* - Lists all the events discovered within your enterprise on a particular device within
-  the specified time range
-* **List IOCs** *(Enrichment)* - Lists all the IoCs discovered within your enterprise within the specified time range
+  the specified time range.
+* **List IOCs** *(Enrichment)* - Lists all the IoCs discovered within your enterprise within the specified time range.
 * **List IoC Details** *(Enrichment)* - Returns the threat intelligence associated with an artifact. The threat
-  intelligence information is obtained from your enterprise security systems and from IoC partners of Google
-* **UDM Search** *(Enrichment)* - UDM Search query and retrieve matches
+  intelligence information is obtained from your enterprise security systems and from IoC partners of Google.
+* **UDM Search** *(Enrichment)* - UDM Search query and retrieve matches.
 
 ## Change Log
 

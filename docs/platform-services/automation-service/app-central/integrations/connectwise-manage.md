@@ -14,13 +14,13 @@ Create, update, search, and gather ticket information from ConnectWise.
 
 ## Actions
 
-* **List Tickets** (*Notification*) - Gather all available tickets
-* **Get Ticket** (*Notification*) - Gather information on a specific ticket
-* **Search Ticket** (*Notification*) - Search for a specific ticket
-* **Create Ticket** (*Notification*) - Create a new ticket
-* **Update Ticket** (*Notification*) - Update an existing ticket
-* **Add Notes To Ticket** (*Notification*) - Add a note to the ticket
-* **List Ticket Notes** (*Notification*) - Gather all ticket notes
+* **List Tickets** (*Notification*) - Gather all available tickets.
+* **Get Ticket** (*Notification*) - Gather information on a specific ticket.
+* **Search Ticket** (*Notification*) - Search for a specific ticket.
+* **Create Ticket** (*Notification*) - Create a new ticket.
+* **Update Ticket** (*Notification*) - Update an existing ticket.
+* **Add Notes To Ticket** (*Notification*) - Add a note to the ticket.
+* **List Ticket Notes** (*Notification*) - Gather all ticket notes.
 
 ## Change Log
 

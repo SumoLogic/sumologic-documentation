@@ -14,8 +14,8 @@ Inspect malicious files using FireEye AX.
 
 ## Actions
 
-* **Submit Malware File Test** (*Enrichment*) - Submit a malicious file to FireEye AX
-* **Get Malware Analysis Report** (*Enrichment*) - Gather malware analysis report for a submitted file
+* **Submit Malware File Test** (*Enrichment*) - Submit a malicious file to FireEye AX.
+* **Get Malware Analysis Report** (*Enrichment*) - Gather malware analysis report for a submitted file.
 
 ## Change Log
 

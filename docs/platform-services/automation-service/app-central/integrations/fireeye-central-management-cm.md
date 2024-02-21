@@ -14,12 +14,12 @@ Centralized device and intelligence management to correlate data across attack v
 
 ## Actions
 
-* **Get Alert Info** (*Enrichment*) - Query FireEye CM for alert details
-* **Get ATI Details** (*Enrichment*) - Query FireEye Advanced Threat Intelligence for intelligence data
-* **Get Event Info** (*Enrichment*) - Get information from previously generated event
-* **Add Snort Rule** (*Containment*) - Add a new Snort rule
-* **Add YARA Rule** (*Containment*) - Add a new YARA rule
-* **Acknowledge Alert** (*Containment*) - Notate previously generated alert
+* **Get Alert Info** (*Enrichment*) - Query FireEye CM for alert details.
+* **Get ATI Details** (*Enrichment*) - Query FireEye Advanced Threat Intelligence for intelligence data.
+* **Get Event Info** (*Enrichment*) - Get information from previously generated event.
+* **Add Snort Rule** (*Containment*) - Add a new Snort rule.
+* **Add YARA Rule** (*Containment*) - Add a new YARA rule.
+* **Acknowledge Alert** (*Containment*) - Notate previously generated alert.
 
 ## Change Log
 

@@ -14,9 +14,9 @@ Enrich incident evidence with threat intelligence data from Blueliv.
 
 ## Actions
 
-* **Online Crime Servers** (*Enrichment*) - Returns every Crime Server online
-* **Recent Crime Servers** (*Enrichment*) - Returns full Crime Servers’ feed updates collected during the last 24 hours
-* **Last Crime Servers** (*Enrichment*) - Returns full Crime Servers’ feed updates collected during the last 15 minutes
+* **Online Crime Servers** (*Enrichment*) - Returns every Crime Server online.
+* **Recent Crime Servers** (*Enrichment*) - Returns full Crime Servers’ feed updates collected during the last 24 hours.
+* **Last Crime Servers** (*Enrichment*) - Returns full Crime Servers’ feed updates collected during the last 15 minutes.
 
 ## Change Log
 

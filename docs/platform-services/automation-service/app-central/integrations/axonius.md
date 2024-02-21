@@ -14,20 +14,20 @@ Axonius is a cybersecurity asset management platform that provides comprehensive
 
 ## Actions
 
-* **Get Device Fields** (*Enrichment*) - Get all available fields and schema for Device assets
-* **Get User Fields** (*Enrichment*) - Get all available fields and schema for User assets
-* **List Devices** (*Enrichment*) - Get device assets by hostname/ IP address/MAC address
-* **List Users** (*Enrichment*) - Get user assets by Username/Email Address
-* **Search Devices** (*Enrichment*) - Get device assets using a Query built by the Query Wizard in the GUI
-* **Search Users** (*Enrichment*) - Get User assets using a Query built by the Query Wizard in the GUI
+* **Get Device Fields** (*Enrichment*) - Get all available fields and schema for Device assets.
+* **Get User Fields** (*Enrichment*) - Get all available fields and schema for User assets.
+* **List Devices** (*Enrichment*) - Get device assets by hostname/ IP address/MAC address.
+* **List Users** (*Enrichment*) - Get user assets by Username/Email Address.
+* **Search Devices** (*Enrichment*) - Get device assets using a Query built by the Query Wizard in the GUI.
+* **Search Users** (*Enrichment*) - Get User assets using a Query built by the Query Wizard in the GUI.
 
 ## Axonius configuration
 
 The API Key and Secret for an Axonius user is available from the My Account page.
 
 1. Log in to Axonius with a user account or Service Account whose role has the **API access enabled** permission.
-1. At the bottom of the Navigation toolbar, click on your account avatar. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-1.png')} style={{border:'1px solid gray'}} alt="axonius-1" width="400"/>
-1. Click **User Settings** and then click the **API Key** tab. Copy the existing API key and secret. To reset them, click **Reset** Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-2.png')} style={{border:'1px solid gray'}} alt="axonius-2" width="400"/>
+1. At the bottom of the Navigation toolbar, click on your account avatar. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-1.png')} style={{border:'1px solid gray'}} alt="axonius-1" width="200"/>
+1. Click **User Settings** and then click the **API Key** tab. Copy the existing API key and secret. To reset them, click **Reset** Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-2.png')} style={{border:'1px solid gray'}} alt="axonius-2" width="600"/>
 
 **Enable API Access Permission**
 
@@ -35,8 +35,8 @@ Using the **Axonius API** to query Axonius assets requires a that the user's rol
 
 To set this permission:
 
-1. Open the **Manage Roles** page. From the top right corner of all pages, click . The **System Settings** page opens. Then, click the **Manage Roles** tab.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-3.png')} style={{border:'1px solid gray'}} alt="axonius-3" width="400"/>
-1. Select the relevant role as described in [Manage Roles](https://docs.axonius.com/manage-roles). For the selected role, under the **API Access** category, select the **API access enabled** checkbox.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-4.png')} style={{border:'1px solid gray'}} alt="axonius-4" width="400"/>
+1. Open the **Manage Roles** page. From the top right corner of all pages, click . The **System Settings** page opens. Then, click the **Manage Roles** tab.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-3.png')} style={{border:'1px solid gray'}} alt="axonius-3" width="700"/>
+1. Select the relevant role as described in [Manage Roles](https://docs.axonius.com/manage-roles). For the selected role, under the **API Access** category, select the **API access enabled** checkbox.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-4.png')} style={{border:'1px solid gray'}} alt="axonius-4" width="700"/>
 1. Click **Save**.
 
 More info related to creating queries is [here](https://docs.axonius.com/docs/query-wizard-and-query-filter).
@@ -46,7 +46,7 @@ More info related to creating queries is [here](https://docs.axonius.com/docs/qu
 1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-5.png')} style={{border:'1px solid gray'}} alt="axonius-5" width="400"/>
 1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-6.png')} style={{border:'1px solid gray'}} alt="axonius-6" width="400"/>
 1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-7.png')} style={{border:'1px solid gray'}} alt="axonius-7" width="400"/>
+1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/axonius/axonius-7.png')} style={{border:'1px solid gray'}} alt="axonius-7" width="600"/>
 1. Populate the resource fields as indicated.
    * **Label**. The name of the resource.
    * **URL**. URL to Axonius instance, for example, 'https://your-axonius-instance.axonius.com'.

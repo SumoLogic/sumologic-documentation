@@ -14,13 +14,13 @@ IBM X-Force Exchange is a cloud-based threat intelligence platform that allows y
 
 ## Actions
 
-* **Search DNS Records** (*Enrichment*) - Search DNS records for a specified IP or Domain
-* **IP Reputation** (*Enrichment*) - Gather IP reputation information for a specific IP address
-* **File Reputation** (*Enrichment*) - Gather file reputation information for a specific file
-* **URL Reputation** (*Enrichment*) - Gather URL reputation information for a specific URL
-* **Whois Lookup** (*Enrichment*) - Issue a Whois lookup on a specific IP or Domain
-* **Passive DNS** (*Enrichment*) - Search passive DNS records for a specific IP or Domain
-* **URL Reputation V2** (*Enrichment*) - Accepted multiple URLs separated by comma as Input and do URL reputation
+* **Search DNS Records** (*Enrichment*) - Search DNS records for a specified IP or Domain.
+* **IP Reputation** (*Enrichment*) - Gather IP reputation information for a specific IP address.
+* **File Reputation** (*Enrichment*) - Gather file reputation information for a specific file.
+* **URL Reputation** (*Enrichment*) - Gather URL reputation information for a specific URL.
+* **Whois Lookup** (*Enrichment*) - Issue a Whois lookup on a specific IP or Domain.
+* **Passive DNS** (*Enrichment*) - Search passive DNS records for a specific IP or Domain.
+* **URL Reputation V2** (*Enrichment*) - Accepted multiple URLs separated by comma as Input and do URL reputation.
 
 ## Category
 

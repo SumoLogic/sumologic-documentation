@@ -14,10 +14,10 @@ Perform threat intelligence evidence gathering with IP Quality Score.
 
 ## Actions
 
-* **Email Reputation** *(Enrichment)* - Gather Email reputation information from IP Quality Score
-* **Get Credit Usage** *(Enrichment)* - Gather Credit usage information from IP Quality Score
-* **IP Reputation** *(Enrichment)* - Gather IP reputation information from IP Quality Score
-* **URL Reputation** *(Enrichment)* - Gather URL reputation information from IP Quality Score
+* **Email Reputation** *(Enrichment)* - Gather Email reputation information from IP Quality Score.
+* **Get Credit Usage** *(Enrichment)* - Gather Credit usage information from IP Quality Score.
+* **IP Reputation** *(Enrichment)* - Gather IP reputation information from IP Quality Score.
+* **URL Reputation** *(Enrichment)* - Gather URL reputation information from IP Quality Score.
 
 ## Change Log
 

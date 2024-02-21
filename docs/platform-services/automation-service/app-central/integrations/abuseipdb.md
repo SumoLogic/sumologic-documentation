@@ -14,8 +14,8 @@ Enrich IP addresses with reputation information gathered from AbuseIPDB.
 
 ## Actions
 
-* **IP Reputation** *(Enrichment)* - Gather IP reputation information (only for Cloud SOAR)
-* **IP Reputation V2** *(Enrichment)* - Gather IP reputation information
+* **IP Reputation** *(Enrichment)* - Gather IP reputation information (only for Cloud SOAR).
+* **IP Reputation V2** *(Enrichment)* - Gather IP reputation information.
 
 ## Notes
 

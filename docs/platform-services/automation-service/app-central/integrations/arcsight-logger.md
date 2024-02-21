@@ -14,7 +14,7 @@ Query events in Micro Focus ArcSight Logger.
 
 ## Actions
 
-* **Search Into Events Arcsight** (*Enrichment*) - Search events in ArcSight Logger
+* **Search Into Events Arcsight** (*Enrichment*) - Search events in ArcSight Logger.
 
 ## Change Log
 

@@ -14,12 +14,12 @@ Using the integration with SQS, you can gather current queues, add a new queue, 
 
 ## Actions
 
-* **List Queues** (*Enrichment*) - List of all queues (Max 1,000 queues)
-* **Get Queue URL** (*Enrichment*) - Returns the URL of an existing Amazon SQS queue
-* **Create Queue** (*Containment*) - Creates a new standard or FIFO queue
-* **Delete Queue** (*Containment*) - Deletes the queue specified by the *QueueUrl*, regardless of the queue's contents
-* **Purge Queue** (*Containment*) - Deletes the messages in a queue specified by the *QueueURL* parameter
-* **Send Message** (*Notification*) - Delivers a message to the specified queue
+* **List Queues** (*Enrichment*) - List of all queues (Max 1,000 queues).
+* **Get Queue URL** (*Enrichment*) - Returns the URL of an existing Amazon SQS queue.
+* **Create Queue** (*Containment*) - Creates a new standard or FIFO queue.
+* **Delete Queue** (*Containment*) - Deletes the queue specified by the *QueueUrl*, regardless of the queue's contents.
+* **Purge Queue** (*Containment*) - Deletes the messages in a queue specified by the *QueueURL* parameter.
+* **Send Message** (*Notification*) - Delivers a message to the specified queue.
 
 ## External Libraries
 

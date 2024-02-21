@@ -11,6 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Updated: Jun 15, 2023***
 
 Amazon CloudFront integrates with AWS Identity and Access Management (IAM), a service that lets your organization do the following:
+
 * Create users and groups under your organization's AWS account.
 * Easily share your AWS account resources among the users in the account.
 * Assign unique security credentials to each user.

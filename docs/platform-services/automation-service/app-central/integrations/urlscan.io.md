@@ -14,12 +14,12 @@ Scan and analyse websites. When a URL is submitted to urlscan.io, an automated p
 
 ## Actions
 
-* **Scan URL** (*Enrichment*) - Scan and analyze suspicious websites
-* **Scan Result** (*Enrichment*) - Get results of a previously executed scan
-* **Scan Search** (*Enrichment*) - Search for a specific scan
-* **Get HTTP Transactions** (*Enrichment*) - Get HTTP transactions
-* **Get HTTP Transactions** V2 (*Enrichment*) - Get HTTP transactions without saving attachments
-* **Get Source Code** (*Enrichment*) - Get a web-page's source code
+* **Scan URL** (*Enrichment*) - Scan and analyze suspicious websites.
+* **Scan Result** (*Enrichment*) - Get results of a previously executed scan.
+* **Scan Search** (*Enrichment*) - Search for a specific scan.
+* **Get HTTP Transactions** (*Enrichment*) - Get HTTP transactions.
+* **Get HTTP Transactions** V2 (*Enrichment*) - Get HTTP transactions without saving attachments.
+* **Get Source Code** (*Enrichment*) - Get a web-page's source code.
 
 ## Change Log
 

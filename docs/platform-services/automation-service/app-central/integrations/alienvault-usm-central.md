@@ -14,10 +14,10 @@ Search events, alarms, and update labels in AlienVault USM Central.
 
 ## Actions
 
-* **Get Alarm** (*Enrichment*) - Gather all available alarms
-* **List Alarms** (*Enrichment*) - List all available alarms
-* **List Deployments** (*Enrichment*) - List all available deployments
-* **AlienVault USM Central Alarms** (*Daemon*) - Automatically pull USM Central Alarms
+* **Get Alarm** (*Enrichment*) - Gather all available alarms.
+* **List Alarms** (*Enrichment*) - List all available alarms.
+* **List Deployments** (*Enrichment*) - List all available deployments.
+* **AlienVault USM Central Alarms** (*Daemon*) - Automatically pull USM Central Alarms.
 
 ## Change Log
 

@@ -14,20 +14,20 @@ Jira is a proprietary issue tracking product developed by Atlassian that allows 
 
 ## Actions
 
-* **Add Comment to Issue** *(Notification)* - Add a comment to the specified issue
-* **Create Issue** (*Notification*) - Create a new issue in the specified Jira project
-* **Delete Issue** (*Containment*) - Delete the specified issue
-* **Update Issue** (*Notification*) - Update the specified issue field with the specified value
-* **Add Issue Attachments To Incident** *(Enrichment)* - Add attachment from Jira issue to Cloud SOAR Incident
-* **Update Transition Issue** *(Notification)* - Update transition issue based on the issue's status
-* **Issues Jira Daemon** *(Daemon)* - Daemon to pull Jira issues
-* **Get Issue** *(Enrichment)* - Returns the details for an issue
-* **List Issue** Fields *(Enrichment)* - List the issue fields
-* **List Statuses** *(Enrichment)* - Returns a list of the statuses
-* **List Issue Types** *(Enrichment)* - List issue types
-* **List Projects** *(Enrichment)* - List the current projects
-* **Search Into Issues** *(Enrichment)* - Search Jira Issues
-* **List Transitions** *(Enrichment)* - Returns either all transitions or a transition that can be performed by the user on an issue, based on the issue's status.
+* **Add Comment to Issue** *(Notification)* - Add a comment to the specified issue.
+* **Create Issue** (*Notification*) - Create a new issue in the specified Jira project.
+* **Delete Issue** (*Containment*) - Delete the specified issue.
+* **Update Issue** (*Notification*) - Update the specified issue field with the specified value.
+* **Add Issue Attachments To Incident** *(Enrichment)* - Add attachment from Jira issue to Cloud SOAR Incident.
+* **Update Transition Issue** *(Notification)* - Update transition issue based on the issue's status.
+* **Issues Jira Daemon** *(Daemon)* - Daemon to pull Jira issues.
+* **Get Issue** *(Enrichment)* - Returns the details for an issue.
+* **List Issue** Fields *(Enrichment)* - List the issue fields.
+* **List Statuses** *(Enrichment)* - Returns a list of the statuses.
+* **List Issue Types** *(Enrichment)* - List issue types.
+* **List Projects** *(Enrichment)* - List the current projects.
+* **Search Into Issues** *(Enrichment)* - Search Jira Issues.
+* **List Transitions** *(Enrichment)* - Returns either all transitions or a transition that can be performed by the user on an issue, based on the issue's .status.
 * **List Users** *(Enrichment)* - Returns a list of all users
 
 ## Atlassian Jira V2 configuration

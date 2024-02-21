@@ -14,7 +14,7 @@ DEVO integration to query data from Devo.
 
 ## Actions
 
-* **Query Data** (*Enrichment*) - Query data from DEVO
+* **Query Data** (*Enrichment*) - Query data from DEVO.
 
 ## Change Log
 

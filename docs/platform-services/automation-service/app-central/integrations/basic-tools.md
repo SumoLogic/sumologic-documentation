@@ -14,8 +14,8 @@ Basic Tools implement some utils method to use inside Playbook
 
 ## Actions
 
-* **Send Email** (*Notification*) - Send an email
-* **Payload Regex** (*Custom*) - use regular expressions to extract data from the payload
+* **Send Email** (*Notification*) - Send an email.
+* **Payload Regex** (*Custom*) - use regular expressions to extract data from the payload.
 
 ## Change Log
 

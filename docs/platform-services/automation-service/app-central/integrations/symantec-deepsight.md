@@ -14,11 +14,11 @@ Gather threat intelligence data from Symantec DeepSight for incident investigati
 
 ## Actions
 
-* **Malware Information** (*Enrichment*) - Gather malware information from DeepSight
-* **File Reputation** (*Enrichment*) - Gather file reputation information from DeepSight
-* **URL Reputation** (*Enrichment*) - Gather URL reputation information from DeepSight
-* **Domain Reputation** (*Enrichment*) - Gather domain reputation information from DeepSight
-* **IP Reputation** (*Enrichment*) - Gather IP reputation information from DeepSight
+* **Malware Information** (*Enrichment*) - Gather malware information from DeepSight.
+* **File Reputation** (*Enrichment*) - Gather file reputation information from DeepSight.
+* **URL Reputation** (*Enrichment*) - Gather URL reputation information from DeepSight.
+* **Domain Reputation** (*Enrichment*) - Gather domain reputation information from DeepSight.
+* **IP Reputation** (*Enrichment*) - Gather IP reputation information from DeepSight.
 
 ## Change Log
 

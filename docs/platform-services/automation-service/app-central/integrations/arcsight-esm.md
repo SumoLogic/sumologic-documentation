@@ -14,18 +14,18 @@ Work with cases and active lists in Micro Focus ArcSight ESM.
 
 ## Actions
 
-* **Get Active List Entries** (*Enrichment*) - Get entries from an active list
-* **Get Query Viewers** (*Enrichment*) - Get entries from a Query Viewer
-* **Get Query Viewer Results** (*Enrichment*) - Get results from a Query Viewer
-* **Create Case** (*Notification*) - Create a new case
-* **Get Case Details** (*Notification*) - Get the details of a case
-* **Update Case** (*Notification*) - Update an existing case
-* **Add Active List Entries** (*Containment*) - Add a new entry to an active list
-* **Clean Active List Entries** (*Containment*) - Clean entries from an active list
-* **Arcsight ESM Get Query Viewer Results Daemon** (*Daemon*) - Automatically gather Query Viewer Results
-* **Arcsight ESM Get Query Viewer Results Daemon V2** (*Daemon*) - Automatically gather Query Viewer Results
-* **Get Cases Arcsight ESM Daemon** (*Daemon*) - Automatically pull ArcSight ESM Cases
-* **Get Security Event** (*Enrichment*) - Get Security Event related to Case
+* **Get Active List Entries** (*Enrichment*) - Get entries from an active list.
+* **Get Query Viewers** (*Enrichment*) - Get entries from a Query Viewer.
+* **Get Query Viewer Results** (*Enrichment*) - Get results from a Query Viewer.
+* **Create Case** (*Notification*) - Create a new case.
+* **Get Case Details** (*Notification*) - Get the details of a case.
+* **Update Case** (*Notification*) - Update an existing case.
+* **Add Active List Entries** (*Containment*) - Add a new entry to an active list.
+* **Clean Active List Entries** (*Containment*) - Clean entries from an active list.
+* **Arcsight ESM Get Query Viewer Results Daemon** (*Daemon*) - Automatically gather Query Viewer Results.
+* **Arcsight ESM Get Query Viewer Results Daemon V2** (*Daemon*) - Automatically gather Query Viewer Results.
+* **Get Cases Arcsight ESM Daemon** (*Daemon*) - Automatically pull ArcSight ESM Cases.
+* **Get Security Event** (*Enrichment*) - Get Security Event related to Case.
 
 ## Change Log
 

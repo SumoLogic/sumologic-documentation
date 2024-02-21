@@ -14,12 +14,12 @@ Work with Resources within CA Service Desk.
 
 ## Actions
 
-* **Add Resource** (*Enrichment*) - Add a new resource
-* **Authorize** (*Enrichment*) - Authorize Cloud SOAR for CA Service Desk. **This should only be run once and not from a Playbook**
-* **Edit Resource** (*Enrichment*) - Edit an existing resource
-* **Get Resource** (*Enrichment*) - Get resource information
-* **Search Resource** (*Enrichment*) - Search resources
-* **Delete a Resource** (*Containment*) - Delete a resource
+* **Add Resource** (*Enrichment*) - Add a new resource.
+* **Authorize** (*Enrichment*) - Authorize Cloud SOAR for CA Service Desk. **This should only be run once and not from a Playbook**.
+* **Edit Resource** (*Enrichment*) - Edit an existing resource.
+* **Get Resource** (*Enrichment*) - Get resource information.
+* **Search Resource** (*Enrichment*) - Search resources.
+* **Delete a Resource** (*Containment*) - Delete a resource.
 
 ## Change Log
 

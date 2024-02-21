@@ -14,7 +14,7 @@ Query Digital Shadows threat intelligence.
 
 ## Actions
 
-* **Search Intelligence** (*Enrichment*) - Search Digital Shadows threat intelligence
+* **Search Intelligence** (*Enrichment*) - Search Digital Shadows threat intelligence.
 
 ## Change Log
 

@@ -14,15 +14,15 @@ Perform threat intelligence evidence gathering with VirusTotal.
 
 ## Actions
 
-* **Add Comment** (*Notification*) - Add a new comment
-* **Domain Reputation** (*Enrichment*) - Gather domain reputation information on a specific domain v2
-* **File Reputation** (*Enrichment*) - Gather reputation information on a specific file
-* **Get Comment** (*Enrichment*) - Gather all comments
-* **IP Reputation** (*Enrichment*) - Gather IP reputation information for a specific IP address
-* **IP Reputation V3** (*Enrichment*) - Gather IP reputation information for multiple IP addresses v3
-* **Scan File***(Enrichment*) - Gather information on a specific file
-* **Scan URL** (*Enrichment*) - Gather information on a specific URL
-* **URL Reputation** (*Enrichment*) - Gather reputation information for multiple URLs
+* **Add Comment** (*Notification*) - Add a new comment.
+* **Domain Reputation** (*Enrichment*) - Gather domain reputation information on a specific domain v2.
+* **File Reputation** (*Enrichment*) - Gather reputation information on a specific file.
+* **Get Comment** (*Enrichment*) - Gather all comments.
+* **IP Reputation** (*Enrichment*) - Gather IP reputation information for a specific IP address.
+* **IP Reputation V3** (*Enrichment*) - Gather IP reputation information for multiple IP addresses v3.
+* **Scan File** (*Enrichment*) - Gather information on a specific file.
+* **Scan URL** (*Enrichment*) - Gather information on a specific URL.
+* **URL Reputation** (*Enrichment*) - Gather reputation information for multiple URLs.
 * **File Scan** **V2** (*Enrichment*) - Acquire information about a specific file without saving the report.
 * **URL Scan V2** (*Enrichment*) - Obtain information about a particular URL without storing the report.
 

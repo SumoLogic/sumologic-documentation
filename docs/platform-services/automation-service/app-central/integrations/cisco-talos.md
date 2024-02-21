@@ -5,7 +5,7 @@ tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-talos.png')} alt="cisco-talos" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-talos.png')} alt="cisco-talos" width="70"/>
 
 ***Version: 1.1  
 Updated: Jul 06, 2023***
@@ -14,7 +14,7 @@ Utilize the Cisco Talos service ([https://www.talosintelligence.com](https://www
 
 ## Actions
 
-* **IP Reputation** (*Enrichment*) - Get IP reputation information
+* **IP Reputation** (*Enrichment*) - Get IP reputation information.
 
 ## Change Log
 

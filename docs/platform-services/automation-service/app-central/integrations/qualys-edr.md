@@ -3,20 +3,21 @@ title: Qualys EDR
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/qualys-edr.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/qualys-edr.png')} alt="qualys-edr" width="100"/>
 
-Version: 1.2  
-Updated: Jun 26, 2023
+***Version: 1.2  
+Updated: Jun 26, 2023***
 
 Collect events from Qualys EDR. 
 
 ## Actions
 
-* **JWT Token** (*Enrichment*) - Returns a JSON Web Token (JWT)
+* **JWT Token** (*Enrichment*) - Returns a JSON Web Token (JWT).
 * **List Events** (*Enrichment*) - Get EDR events in the user account.
-* **Count Events** (*Enrichment*) - Get number of events logged within a date range
-* **Events Daemon Qualys** (*Daemon*) - Fetch events from Qualys EDR
+* **Count Events** (*Enrichment*) - Get number of events logged within a date range.
+* **Events Daemon Qualys** (*Daemon*) - Fetch events from Qualys EDR.
 
 ## Change Log
 

@@ -10,16 +10,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.1  
 Updated: Jun 15, 2023***
 
-Amazon Athenais a cloud-based service that enables you to run SQL queries on data stored in Amazon S3 without the need to set up any infrastructure. It is a serverless, pay-per-query service that makes it easy to analyze large amounts of data.
+Amazon Athena is a cloud-based service that enables you to run SQL queries on data stored in Amazon S3 without the need to set up any infrastructure. It is a serverless, pay-per-query service that makes it easy to analyze large amounts of data.
   
-* **Run Query** *(Enrichment)* - The action runs the SQL query statements contained in the Query and retrieve the results from the query
-* **Start Query** *(Enrichment)* - Start a query execution
-* **Get Query Execution** (*Enrichment*) - Returns the details of a single query execution or a list of up to 50 query executions
-* **Get Query Results** *(Enrichment)* - Streams the results of a single query execution specified by the Query Execution ID
-* **Cancel Query** (*Enrichment*) - Stops a query execution
-* **List Databases** (*Enrichment*) - Lists the databases in the specified data catalog
-* **List Workgroups** *(Enrichment)* - Lists available workgroups for the account
-* **List Table Metadata** (*Enrichment*) - Lists the metadata for the tables in the specified data catalog database
+* **Run Query** *(Enrichment)* - The action runs the SQL query statements contained in the Query and retrieve the results from the query.
+* **Start Query** *(Enrichment)* - Start a query execution.
+* **Get Query Execution** (*Enrichment*) - Returns the details of a single query execution or a list of up to 50 query executions.
+* **Get Query Results** *(Enrichment)* - Streams the results of a single query execution specified by the Query Execution ID.
+* **Cancel Query** (*Enrichment*) - Stops a query execution.
+* **List Databases** (*Enrichment*) - Lists the databases in the specified data catalog.
+* **List Workgroups** *(Enrichment)* - Lists available workgroups for the account.
+* **List Table Metadata** (*Enrichment*) - Lists the metadata for the tables in the specified data catalog database.
 
 ## Amazon Athena configuration
 
@@ -36,7 +36,7 @@ To get access key and secret access key, you will need to follow these steps:
 1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-1.png')} style={{border:'1px solid gray'}} alt="aws-athena-1" width="400"/>
 1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-2.png')} style={{border:'1px solid gray'}} alt="aws-athena-2" width="400"/>
 1. After the list of the integrations appears, search for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-3.png')} style={{border:'1px solid gray'}} alt="aws-athena-3" width="400"/>
+1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/aws-athena/aws-athena-3.png')} style={{border:'1px solid gray'}} alt="aws-athena-3" width="600"/>
 1. Populate all the required fields (\*) and then click **SAVE**.
    * **Label**. The desired name for the resource.
    * **AWS Region**. Your AWS region. (Default: us-east-2).

@@ -14,11 +14,11 @@ Updated: Jul 18, 2023**
 
 ## Actions
 
-* **Get Record** (*Enrichment*) - Get specific recorde
-* **List Records Incident Details** (*Enrichment*) - Get all recordes
-* **List Bases**(*Enrichment*) - List bases on Airtable
-* **Get Base Schema** (*Enrichment*) - Get base structure
-* **Create Records All** (*Containment*) - Create redords
+* **Get Record** (*Enrichment*) - Get specific recorde.
+* **List Records Incident Details** (*Enrichment*) - Get all recordes.
+* **List Bases**(*Enrichment*) - List bases on Airtable.
+* **Get Base Schema** (*Enrichment*) - Get base structure.
+* **Create Records All** (*Containment*) - Create redords.
 
 ## Airtable configuration
 

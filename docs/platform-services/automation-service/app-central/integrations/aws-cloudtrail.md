@@ -14,14 +14,14 @@ Interact with AWS CloudTrail through Trails and Events.
 
 ## Actions
 
-* **Describe Trails** (*Enrichment*) - Retrieves settings for the trail associated with the current region for an AWS account
-* **Lookup Events** (*Enrichment*) - Looks up management events captured by CloudTrail
-* **Create Trail** (*Enrichment*) - Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket
-* **Delete Trail** (*Containment*) - Deletes a trail
-* **Start Logging** (*Enrichment*) -Starts the recording of AWS API calls and log file delivery for a trail
-* **Stop Logging** (*Enrichment*) - Suspends the recording of AWS API calls and log file delivery for the specified trail
-* **Update Trail** (*Enrichment*) - Updates the settings that specify delivery of log files
-* **List Trail** (*Enrichment*) - Lists trails that are in the current account
+* **Describe Trails** (*Enrichment*) - Retrieves settings for the trail associated with the current region for an AWS account.
+* **Lookup Events** (*Enrichment*) - Looks up management events captured by CloudTrail.
+* **Create Trail** (*Enrichment*) - Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket.
+* **Delete Trail** (*Containment*) - Deletes a trail.
+* **Start Logging** (*Enrichment*) - Starts the recording of AWS API calls and log file delivery for a trail.
+* **Stop Logging** (*Enrichment*) - Suspends the recording of AWS API calls and log file delivery for the specified trail.
+* **Update Trail** (*Enrichment*) - Updates the settings that specify delivery of log files.
+* **List Trail** (*Enrichment*) - Lists trails that are in the current account.
 
 ## External Libraries
 

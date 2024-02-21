@@ -14,16 +14,16 @@ Utilize and manipulate virtual machines during an incident investigation with VM
 
 ## Actions
 
-* **Get Events** (*Enrichment*) - Gather events from vSphere
-* **Get Snapshots** (*Enrichment*) - Get VM snapshots
-* **Get VMs** (*Enrichment*) - Get list of available virtual machine
-* **Create Snapshot** (C*ontainment*) - Create a new snapshot
-* **Hard Reboot** (C*ontainment*) - Execute a hard reboot of a system
-* **Power Off** (C*ontainment*) - Power off a system
-* **Power On** (C*ontainment*) - Power on a system
-* **Revert To Snapshot** (C*ontainment*) - Roll back to a previous snapshot
-* **Soft Reboot** (C*ontainment*) - Execute a soft reboot of a system
-* **Suspend** (C*ontainment*) - Suspend a virtual machine
+* **Get Events** (*Enrichment*) - Gather events from vSphere.
+* **Get Snapshots** (*Enrichment*) - Get VM snapshots.
+* **Get VMs** (*Enrichment*) - Get list of available virtual machine.
+* **Create Snapshot** (C*ontainment*) - Create a new snapshot.
+* **Hard Reboot** (C*ontainment*) - Execute a hard reboot of a system.
+* **Power Off** (C*ontainment*) - Power off a system.
+* **Power On** (C*ontainment*) - Power on a system.
+* **Revert To Snapshot** (C*ontainment*) - Roll back to a previous snapshot.
+* **Soft Reboot** (C*ontainment*) - Execute a soft reboot of a system.
+* **Suspend** (C*ontainment*) - Suspend a virtual machine.
 
 ## External libraries
 

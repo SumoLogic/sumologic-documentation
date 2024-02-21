@@ -14,11 +14,11 @@ Utilize Cuckoo sandbox to detonate potentially malicious files and URLs during a
 
 ## Actions
 
-* **Detonate File** (*Enrichment) -* Submit file for analysis
-* **Detonate URL** *(Enrichment) -* Submit URL for analysis
-* **Get Task Status** (*Enrichment*) - Get status for a specific Task
-* **Get URL Report** (*Enrichment*) - Get report for a specific URL
-* **Get File Report** (*Enrichment*) - Get report for a specific file
+* **Detonate File** (*Enrichment*) - Submit file for analysis.
+* **Detonate URL** (*Enrichment*) - Submit URL for analysis.
+* **Get Task Status** (*Enrichment*) - Get status for a specific Task.
+* **Get URL Report** (*Enrichment*) - Get report for a specific URL.
+* **Get File Report** (*Enrichment*) - Get report for a specific file.
 
 ## Notes
 

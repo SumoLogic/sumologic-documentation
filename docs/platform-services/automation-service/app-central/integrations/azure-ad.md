@@ -14,18 +14,18 @@ Azure Active Directory (Azure AD) is Microsoft's cloud-based identity and access
 
 ## Actions
 
-* **Create User** *(Enrichment)* - Create a new user
-* **Delete User** *(Containment)* - Delete a specific user
-* **List Users** *(Enrichment)* - List all users
-* **Get User** (Enrichment) - Get details for a specific user
-* **Create Group** *(Enrichment)* - Create a group
-* **Delete Group** *(Containment)* -Delete a specific group
-* **Add Member To Group** *(Enrichment)* - Add a user to a specific group
-* **Get Manager** (*Enrichment*) - Get user manager
-* **List Groups** (*Enrichment*) - List all the groups available in an organization
-* **Revoke Sign In Sessions** (*Containment*) - Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user's browser)
-* **List Devices** *(Enrichment)* - Retrieve a list of device objects registered in the organization
-* **Disable User** *(Containment)* - Block user account
+* **Create User** *(Enrichment)* - Create a new user.
+* **Delete User** *(Containment)* - Delete a specific user.
+* **List Users** *(Enrichment)* - List all users.
+* **Get User** (Enrichment) - Get details for a specific user.
+* **Create Group** *(Enrichment)* - Create a group.
+* **Delete Group** *(Containment)* -Delete a specific group.
+* **Add Member To Group** *(Enrichment)* - Add a user to a specific group.
+* **Get Manager** (*Enrichment*) - Get user manager.
+* **List Groups** (*Enrichment*) - List all the groups available in an organization.
+* **Revoke Sign In Sessions** (*Containment*) - Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user's browser).
+* **List Devices** *(Enrichment)* - Retrieve a list of device objects registered in the organization.
+* **Disable User** *(Containment)* - Block user account.
 * **Get Member Groups** *(Enrichment)* - Retrieve a Group memberships for the user.
 
 ## Azure Active Directory configuration

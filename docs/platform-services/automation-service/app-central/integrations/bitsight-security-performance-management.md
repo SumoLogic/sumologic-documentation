@@ -14,11 +14,11 @@ BitSight offers the world's leading security ratings solution with a mission to 
 
 ## Actions
 
-* **List Alerts** *(Enrichment)* - List your existing alerts and their details
-* **Get Alert Details** *(Enrichment)* - Get the details of an alert
-* **List Companies** *(Enrichment)* - Retrieve information about all companies in your portfolio
-* **Get Company Details** *(Enrichment)* - Get specific details about a company that's not returned by querying companies alone. The details include rating details, rating history, and risk vector grades
-* **Get Company Findings** *(Enrichment)* - Get an organization’s finding details
+* **List Alerts** *(Enrichment)* - List your existing alerts and their details.
+* **Get Alert Details** *(Enrichment)* - Get the details of an alert.
+* **List Companies** *(Enrichment)* - Retrieve information about all companies in your portfolio.
+* **Get Company Details** *(Enrichment)* - Get specific details about a company that's not returned by querying companies alone. The details include rating details, rating history, and risk vector grades.
+* **Get Company Findings** *(Enrichment)* - Get an organization’s finding details.
 
 ## BitSight configuration
 
@@ -30,7 +30,7 @@ BitSight offers the world's leading security ratings solution with a mission to 
 1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-2.png')} style={{border:'1px solid gray'}} alt="bitsight-security-performance-management-2" width="400"/>
 1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-3.png')} style={{border:'1px solid gray'}} alt="bitsight-security-performance-management-3" width="400"/>
 1. After the list of the integrations appears, search/look for the integration and click on the row.
-1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-4.png')} style={{border:'1px solid gray'}} alt="bitsight-security-performance-management-4" width="400"/>
+1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/bitsight-security-performance-management/bitsight-security-performance-management-4.png')} style={{border:'1px solid gray'}} alt="bitsight-security-performance-management-4" width="600"/>
 1. Populate all the required fields (\*):
    * **Label**. The name of the resource.
    * **URL**. URL of BitSight API (default URL [https://api.bitsighttech.com](<https://www.alphamountain.ai/contact/>) is already provided).

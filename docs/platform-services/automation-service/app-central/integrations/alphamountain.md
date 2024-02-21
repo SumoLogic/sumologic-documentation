@@ -14,11 +14,11 @@ alphaMountain provides up-to-date domain and IP intelligence for cybersecurity i
 
 ## Actions
 
-* **Get Categories** (*Enrichment*) - Get categories for an internet URI/URL
-* **Get Threat Score** (*Enrichment*) - Return a threat score for an internet URL
-* **Get Possible Impersonations** (*Enrichment*) - Get possible impersonations for a URI/URL
-* **Get Remaining Quota** (*Enrichment*) - Fetch remaining quota
-* **Get Popularity** (*Enrichment*) - Return the popularity in the last 24 hours of a given hostname or domain name as an integer
+* **Get Categories** (*Enrichment*) - Get categories for an internet URI/URL.
+* **Get Threat Score** (*Enrichment*) - Return a threat score for an internet URL.
+* **Get Possible Impersonations** (*Enrichment*) - Get possible impersonations for a URI/URL.
+* **Get Remaining Quota** (*Enrichment*) - Fetch remaining quota.
+* **Get Popularity** (*Enrichment*) - Return the popularity in the last 24 hours of a given hostname or domain name as an integer.
 
 ## alphaMountain Configuration
 

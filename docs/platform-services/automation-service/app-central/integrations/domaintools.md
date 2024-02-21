@@ -14,9 +14,9 @@ DomainTools is the global leader for internet intelligence and the first place s
 
 ## Actions
 
-* **Domain Reputation** (*Enrichment*) - Get domain reputation
-* **Email Reputation** (*Enrichment*) - Get email address reputation
-* **IP Reputation** (*Enrichment*) - Get IP address reputation
+* **Domain Reputation** (*Enrichment*) - Get domain reputation.
+* **Email Reputation** (*Enrichment*) - Get email address reputation.
+* **IP Reputation** (*Enrichment*) - Get IP address reputation.
 
 ## External Libraries
 

@@ -14,15 +14,15 @@ Search events, alarms, and update labels in AlienVault USM Anywhere.
 
 ## Actions
 
-* **Get Events** (*Enrichment*) - Gather all available events
-* **Get Event** (*Enrichment*) - Gather information about a specific event
-* **Get Alarms** (*Enrichment*) - Gather all available alarms
-* **Get Alarm** (*Enrichment*) - Gather information on a specific alarm
-* **Get Labels** (*Enrichment*) - Gather all available labels
-* **Add Label** (*Notification*) - Add a new label
-* **Delete Label** (*Notification*) - Delete an existing label
-* **Get Events AlienVault Daemon** (*Daemon*) - Automatically gather all available events
-* **Get Alarms AlienVault Daemon** (*Daemon*) - Automatically gather all available alarms
+* **Get Events** (*Enrichment*) - Gather all available events.
+* **Get Event** (*Enrichment*) - Gather information about a specific event.
+* **Get Alarms** (*Enrichment*) - Gather all available alarms.
+* **Get Alarm** (*Enrichment*) - Gather information on a specific alarm.
+* **Get Labels** (*Enrichment*) - Gather all available labels.
+* **Add Label** (*Notification*) - Add a new label.
+* **Delete Label** (*Notification*) - Delete an existing label.
+* **Get Events AlienVault Daemon** (*Daemon*) - Automatically gather all available events.
+* **Get Alarms AlienVault Daemon** (*Daemon*) - Automatically gather all available alarms.
 
 ## Change Log
 

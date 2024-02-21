@@ -14,7 +14,7 @@ Perform WHOIS queries with Domain Dossier.
 
 ## Actions
 
-* **Whois** (*Enrichment*) - Get WHOIS information for an IP or domain
+* **Whois** (*Enrichment*) - Get WHOIS information for an IP or domain.
 
 ## Change Log
 

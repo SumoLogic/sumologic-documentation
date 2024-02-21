@@ -14,8 +14,8 @@ Retrieve and modify IP groups for incident investigation and remediation.
 
 ## Actions
 
-* **Get IP Group** (*Enrichment*) - Gather IP groups from SecureSphere
-* **Update IP Group** (*Containment*) - Modify IP groups in SecureSphere
+* **Get IP Group** (*Enrichment*) - Gather IP groups from SecureSphere.
+* **Update IP Group** (*Containment*) - Modify IP groups in SecureSphere.
 
 ## Change Log
 

@@ -14,13 +14,13 @@ Query Cybereason, set item reputations and work with isolation rules.
 
 ## Actions
 
-* **Get Isolation Rules** (*Enrichment*) - Get isolation rules matching the query
-* **Get Items Reputation** (*Enrichment*) - Get items reputation
-* **List Endpoints** (*Enrichment*) - List all endpoints matching the query
-* **Create Isolation Rules** (*Containment*) - Create a new isolation rule
-* **Delete Isolation Rules** (*Containment*) - Delete an existing isolation rule
-* **Set Item Reputation** (*Containment*) - Set the reputation for an item
-* **Update Isolation Rules** (*Containment*) - Update an existing isolation rule
+* **Get Isolation Rules** (*Enrichment*) - Get isolation rules matching the query.
+* **Get Items Reputation** (*Enrichment*) - Get items reputation.
+* **List Endpoints** (*Enrichment*) - List all endpoints matching the query.
+* **Create Isolation Rules** (*Containment*) - Create a new isolation rule.
+* **Delete Isolation Rules** (*Containment*) - Delete an existing isolation rule.
+* **Set Item Reputation** (*Containment*) - Set the reputation for an item.
+* **Update Isolation Rules** (*Containment*) - Update an existing isolation rule.
 
 ## Change Log
 

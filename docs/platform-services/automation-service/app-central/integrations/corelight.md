@@ -14,8 +14,8 @@ Utilize Corelight during incident investigation.
 
 ## Actions
 
-* **Get Metrics** (*Enrichment*) - Gather metrics from Corelight
-* **Update Threat Intel** (*Containment*) - Update Corelight threat intel
+* **Get Metrics** (*Enrichment*) - Gather metrics from Corelight.
+* **Update Threat Intel** (*Containment*) - Update Corelight threat intel.
 
 ## Change Log
 

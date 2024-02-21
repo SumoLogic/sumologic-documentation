@@ -14,7 +14,7 @@ Initiate the triage of endpoints with Cyber Triage from Basis Technology.
 
 ## Actions
 
-* **Triage Endpoint** (*Containment*) - Start the triage process on an endpoint
+* **Triage Endpoint** (*Containment*) - Start the triage process on an endpoint.
 
 ## Change Log
 

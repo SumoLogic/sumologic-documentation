@@ -5,7 +5,7 @@ tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-carbon-black-cloud-endpoint-standard-v2.png')} alt="vmware-carbon-black-cloud-endpoint-standard-v2" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-carbon-black-cloud-endpoint-standard-v2.png')} alt="vmware-carbon-black-cloud-endpoint-standard-v2" width="70"/>
 
 ***Version: 2.1  
 Updated: Jul 11, 2023***
@@ -14,16 +14,16 @@ VMware Carbon Black Cloud Endpoint Standard Integration allows security operator
 
 ## Actions
 
-* **Carbon Black Cloud Alerts Daemon** (Daemon) - Daemon to automatically gather alerts
-* **Delete File** (Containment) - Delete a File from a device
-* **Get Alert** (Enrichment) - Get a specific Alert
-* **Get Device** (Enrichment) - Retrieve info about a device
-* **Get Device Quarantine Status** (Enrichment) - Get a specific Device Quarantine Status
-* **Get Device Vulnerability** (Enrichment) - Get a specific Device Vulnerability
-* **Get Group Alerts** (Enrichment) - Get a specific Group of Alerts
-* **Quarantine** (Containment) - Quarantine the specified device within Carbon Black Cloud
-* **Search Process** (Enrichment ) - Queries all events using input search criteria and returns a list of processes
-* **Terminate Process** (Containment) - Terminate process on a device
+* **Carbon Black Cloud Alerts Daemon** (*Daemon*) - Daemon to automatically gather alerts.
+* **Delete File** (*Containment*) - Delete a File from a device.
+* **Get Alert** (*Enrichment*) - Get a specific Alert.
+* **Get Device** (*Enrichment*) - Retrieve info about a device.
+* **Get Device Quarantine Status** (*Enrichment*) - Get a specific Device Quarantine Status.
+* **Get Device Vulnerability** (*Enrichment*) - Get a specific Device Vulnerability.
+* **Get Group Alerts** (*Enrichment*) - Get a specific Group of Alerts.
+* **Quarantine** (*Containment*) - Quarantine the specified device within Carbon Black Cloud.
+* **Search Process** (*Enrichment* ) - Queries all events using input search criteria and returns a list of processes.
+* **Terminate Process** (*Containment*) - Terminate process on a device.
 
 ## Change Log
 

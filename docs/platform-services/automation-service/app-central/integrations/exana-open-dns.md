@@ -14,7 +14,7 @@ Query Exana Open DNS for DNS records.
 
 ## Actions
 
-* **Search DNS Records** (*Enrichment*) - Search DNS records for a domain
+* **Search DNS Records** (*Enrichment*) - Search DNS records for a domain.
 
 ## Change Log
 

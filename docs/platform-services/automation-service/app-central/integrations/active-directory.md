@@ -14,22 +14,22 @@ Utilize user, group, and system information from Microsoft Active Directory.
 
 ## Actions
 
-* **System Attributes** (*Enrichment*) - Gather system attributes
-* **User Attributes** (*Enrichment*) - Gather user attributes
-* **Group Attributes** (*Enrichment*) - Gather group attributes
-* **Users Groups** (*Enrichment*) - Gather user's groups
-* **Create User** (*Containment) - Create a new user*
-* **Reset Password** (*Containment*) - Reset a user's password
-* **Set Password** (*Containment*) - Set a new password
-* **Set System Attributes** (*Containment*) - Set a system's attribute
-* **Set User Attributes** (*Containment)*- Set a user's attributes
-* **Change System OU** (*Containment*) - Change a system's organizational unit (OU)
-* **Enable User** (*Containment*) - Enable a user account
-* **Disable User** (*Containment*) - Disable a user's account
-* **Remove Users From Groups** (*Containment*) - Remove users from AD group
-* **Get Groups Members** (*Containment*) - retrieve users from AD group
-* **Add Users To Groups** (*Containment*) - Add a user to a group
-* **User Attributes V2** *(Enrichment)*- Gather user attributes v2
+* **System Attributes** (*Enrichment*) - Gather system attributes.
+* **User Attributes** (*Enrichment*) - Gather user attributes.
+* **Group Attributes** (*Enrichment*) - Gather group attributes.
+* **Users Groups** (*Enrichment*) - Gather user's groups.
+* **Create User** (*Containment) - Create a new user.
+* **Reset Password** (*Containment*) - Reset a user's password.
+* **Set Password** (*Containment*) - Set a new password.
+* **Set System Attributes** (*Containment*) - Set a system's attribute.
+* **Set User Attributes** (*Containment)*- Set a user's attributes.
+* **Change System OU** (*Containment*) - Change a system's organizational unit (OU).
+* **Enable User** (*Containment*) - Enable a user account.
+* **Disable User** (*Containment*) - Disable a user's account.
+* **Remove Users From Groups** (*Containment*) - Remove users from AD group.
+* **Get Groups Members** (*Containment*) - retrieve users from AD group.
+* **Add Users To Groups** (*Containment*) - Add a user to a group.
+* **User Attributes V2** *(Enrichment)* - Gather user attributes v2.
 
 ## External Libraries
 

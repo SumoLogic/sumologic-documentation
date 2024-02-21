@@ -5,7 +5,7 @@ tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/armorblox.png')} alt="armorblox" width="80"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/armorblox.png')} alt="armorblox" width="70"/>
 
 ***Version: 1.1  
 Updated: Sep 04, 2023***
@@ -14,12 +14,12 @@ Armorblox secures enterprise communications over email and other cloud office ap
 
 ## Actions
 
-* **Armorblox Incidents Daemon** *(Daemon)* - Automatically retrieve incidents from Armorblox
-* **Get App Restrictions** *(Enrichment)* - Retrieve info about what actions are available, what each email label's ID is, AD group UIds
-* **Get Incident** *(Enrichment)* - Get information about a specific incident
-* **Get Incident Senders** *(Enrichment)* - Get information about an incident's sender data
-* **List Incidents** *(Enrichment)* - Get a list of all the Incidents detected by Armorblox
-* **Update Incident Action** *(Containment)* - Update the action to be taken for an incident's objects
+* **Armorblox Incidents Daemon** *(Daemon)* - Automatically retrieve incidents from Armorblox.
+* **Get App Restrictions** *(Enrichment)* - Retrieve info about what actions are available, what each email label's ID is, AD group UIds.
+* **Get Incident** *(Enrichment)* - Get information about a specific incident.
+* **Get Incident Senders** *(Enrichment)* - Get information about an incident's sender data.
+* **List Incidents** *(Enrichment)* - Get a list of all the Incidents detected by Armorblox.
+* **Update Incident Action** *(Containment)* - Update the action to be taken for an incident's objects.
 
 ## Change Log
 

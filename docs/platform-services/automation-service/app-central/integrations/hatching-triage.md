@@ -14,10 +14,10 @@ Detonate files with Hatching Triage Malware Sandbox.
 
 ## Actions
 
-* **Detonate File** (*Enrichment*) - Denote a specific file
-* **Get Static Report** (*Enrichment*) - Get a specific static report
-* **Get Triage Report** (*Enrichment*) - Get a specific triage report
-* **Get Summary Report** (*Enrichment*) - Get a summary report
+* **Detonate File** (*Enrichment*) - Denote a specific file.
+* **Get Static Report** (*Enrichment*) - Get a specific static report.
+* **Get Triage Report** (*Enrichment*) - Get a specific triage report.
+* **Get Summary Report** (*Enrichment*) - Get a summary report.
 
 ## Notes
 

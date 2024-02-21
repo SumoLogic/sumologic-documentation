@@ -5,7 +5,7 @@ tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/splunk.png')} alt="splunk" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/splunk.png')} alt="splunk" width="70"/>
 
 ***Version: 1.2  
 Updated: Jul 13, 2023***
@@ -14,11 +14,11 @@ Search and send events with Splunk.
 
 ## Actions
 
-* **Search Into Events Splunk** (*Enrichment*) - Search Splunk events
-* **Send Splunk Events** (*Notification*) - Send an event to Splunk
-* **Splunk Events Daemon** (*Daemon*) - Daemon to gather new Splunk events
-* **Splunk Alerts Daemon** (*Daemon*) - Daemon to gather new Splunk alerts
-* **Update Notable Event** (*Notification*) - Update a notable (important) event in Splunk
+* **Search Into Events Splunk** (*Enrichment*) - Search Splunk events.
+* **Send Splunk Events** (*Notification*) - Send an event to Splunk.
+* **Splunk Events Daemon** (*Daemon*) - Daemon to gather new Splunk events.
+* **Splunk Alerts Daemon** (*Daemon*) - Daemon to gather new Splunk alerts.
+* **Update Notable Event** (*Notification*) - Update a notable (important) event in Splunk.
 
 ## Notes
 

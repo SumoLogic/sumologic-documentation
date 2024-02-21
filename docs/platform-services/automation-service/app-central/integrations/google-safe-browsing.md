@@ -14,8 +14,8 @@ Google Safe Browsing helps protect over four billion devices every day by showin
 
 ## Actions
 
-* **Lookup URL** *(Enrichment)* - Query data in Google Safe Browsing
-* **Threat Lists** *(Enrichment)* - Retrieve list of threats
+* **Lookup URL** *(Enrichment)* - Query data in Google Safe Browsing.
+* **Threat Lists** *(Enrichment)* - Retrieve list of threats.
 
 ## Change Log
 

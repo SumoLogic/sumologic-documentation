@@ -14,7 +14,7 @@ Submit URLs to Symantec WebPulse.
 
 ## Actions
 
-* **Submit URL** (*Notification*) - Submit the specified URL
+* **Submit URL** (*Notification*) - Submit the specified URL.
 
 ## Change Log
 

@@ -14,23 +14,23 @@ Connect with Tenable.io to execute scans, get scan results and perform administr
 
 ## Actions
 
-* **Create Scan** (*Enrichment*) - Create a scan for the specified IP addresses or hostnames
-* **Execute Scan** (*Enrichment*) - Execute the specified scan
-* **Get Asset Details** (*Enrichment*) - Get the scan report for the specified ID in CSV format
-* **Get Plugin Details** (*Enrichment*) - Get Plugin Details based on Vulnerabilities
-* **Get Scan Details** (*Enrichment*) - Get details of scan in CSV using Scan id
-* **Get Scan Report** (*Enrichment*) - Get a report for Scan ID
-* **Get Scan Report Data** (*Enrichment*) - Get data from scan report
-* **Get Scan Vulnerabilities** (*Enrichment*) - Get Vulnerabilities Per Scan
-* **List Assets** (*Enrichment*) - List all assets
-* **List Policies** (*Enrichment*) - List all policies
-* **List Scan** (*Enrichment*) - List all scans
-* **List Scanners** (*Enrichment*) - List all scanners
-* **List Templates** (*Enrichment*) - List all scan templates
-* **List Vulnerabilities** (*Enrichment*) - Get vulnerabilities and severity
-* **Manage Scan** (*Enrichment* ) - Stop, Launch[Start], Resume, Delete, Copy, Pause, Trash
-* **Target Info** (*Enrichment*) - Get basic information on a target
-* **Target Vulnerabilities** (*Enrichment*) - Get vulnerability information for a target
+* **Create Scan** (*Enrichment*) - Create a scan for the specified IP addresses or hostnames.
+* **Execute Scan** (*Enrichment*) - Execute the specified scan.
+* **Get Asset Details** (*Enrichment*) - Get the scan report for the specified ID in CSV format.
+* **Get Plugin Details** (*Enrichment*) - Get Plugin Details based on Vulnerabilities.
+* **Get Scan Details** (*Enrichment*) - Get details of scan in CSV using Scan ID.
+* **Get Scan Report** (*Enrichment*) - Get a report for Scan ID.
+* **Get Scan Report Data** (*Enrichment*) - Get data from scan report.
+* **Get Scan Vulnerabilities** (*Enrichment*) - Get Vulnerabilities Per Scan.
+* **List Assets** (*Enrichment*) - List all assets.
+* **List Policies** (*Enrichment*) - List all policies.
+* **List Scan** (*Enrichment*) - List all scans.
+* **List Scanners** (*Enrichment*) - List all scanners.
+* **List Templates** (*Enrichment*) - List all scan templates.
+* **List Vulnerabilities** (*Enrichment*) - Get vulnerabilities and severity.
+* **Manage Scan** (*Enrichment* ) - Stop, Launch[Start], Resume, Delete, Copy, Pause, Trash.
+* **Target Info** (*Enrichment*) - Get basic information on a target.
+* **Target Vulnerabilities** (*Enrichment*) - Get vulnerability information for a target.
 
 ## Change Log
 

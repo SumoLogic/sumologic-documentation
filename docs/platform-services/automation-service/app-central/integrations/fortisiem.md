@@ -14,9 +14,9 @@ Search events and retrieve device details from Fortinet FortiSIEM.
 
 ## Actions
 
-* **List Devices** (*Enrichment*) - Get a list of devices
-* **Get Device Info** (*Enrichment*) - Get device info for the specified IP address
-* **Search Into Events** (*Enrichment*) - Search FortiSIEM based on the specified criteria
+* **List Devices** (*Enrichment*) - Get a list of devices.
+* **Get Device Info** (*Enrichment*) - Get device info for the specified IP address.
+* **Search Into Events** (*Enrichment*) - Search FortiSIEM based on the specified criteria.
 
 ## External Libraries
 

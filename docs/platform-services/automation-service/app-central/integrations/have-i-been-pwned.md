@@ -14,12 +14,12 @@ Have I Been Pwned (HIBP) allows you to check if your personal data has been comp
 
 ## Actions
 
-* **Get Latest Breach** *(Enrichment)* - Get the most recently added breach
-* **Get Single Breached Site** *(Enrichment)* - Get a single breached site
-* **List Breached Sites In System** *(Enrichment)* - List all breached sites in the system
-* **List Breaches For Account** *(Enrichment)* - Return a list of all breaches a particular account has been involved in
-* **List Data Classes In System** *(Enrichment)* - Get all data classes in the system
-* **List Pastes For Account** *(Enrichment)* - Get all pastes for an account
+* **Get Latest Breach** *(Enrichment)* - Get the most recently added breach.
+* **Get Single Breached Site** *(Enrichment)* - Get a single breached site.
+* **List Breached Sites In System** *(Enrichment)* - List all breached sites in the system.
+* **List Breaches For Account** *(Enrichment)* - Return a list of all breaches a particular account has been involved in.
+* **List Data Classes In System** *(Enrichment)* - Get all data classes in the system.
+* **List Pastes For Account** *(Enrichment)* - Get all pastes for an account.
 
 ## Category
 

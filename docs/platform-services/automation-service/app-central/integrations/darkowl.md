@@ -14,8 +14,8 @@ Perform threat intelligence evidence gathering with DarkOwl.
 
 ## Actions
 
-* **Domain Reputation** (*Enrichment*) - Check reputation of a domain
-* **Search Intelligence** (*Enrichment*) - Search threat intelligence feeds
+* **Domain Reputation** (*Enrichment*) - Check reputation of a domain.
+* **Search Intelligence** (*Enrichment*) - Search threat intelligence feeds.
 
 ## Change Log
 
