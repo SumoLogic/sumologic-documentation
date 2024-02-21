@@ -1,14 +1,14 @@
 ---
 id: palo-alto-networks-9
 title: PCI Compliance for Palo Alto Networks 9
-description: The Sumo Logic App for PCI Compliance for Palo Alto Networks offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
+description: The Sumo Logic app for PCI Compliance for Palo Alto Networks offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/pci-compliance/pci-logo.png')} alt="Thumbnail icon" width="90"/>
 
-The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Networks offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
+The Sumo Logic app for Payment Card Industry (PCI) Compliance for Palo Alto Networks offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 
 ## Log types
 
@@ -28,7 +28,7 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Netw
 </table>
 
 
-## Collecting Logs for PCI Compliance for Palo Alto Networks 9
+## Collecting logs for PCI Compliance for Palo Alto Networks 9
 
 This section has instructions for collecting logs for the PCI Compliance for Palo Alto Networks 9 app. This app supports Palo Alto Networks v9 and v8.
 
@@ -100,17 +100,17 @@ _sourceCategory=Loggen/PAN/Traffic TRAFFIC deny
 | count by _timeslice
 ```
 
+## Install the PCI for Palo Alto Networks 9 app
 
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Install the PCI for Palo Alto Networks 9 App
+<AppInstall2/>
 
-Now that you have set up collection for PCI for Palo Alto Networks install the Sumo Logic App for PCI for Palo Alto Networks to use the preconfigured searches and dashboards that provide insight into your data. This app supports PAN-OS v8 and v9.
+## Viewing PCI for Palo Alto Networks 9 dashboards​
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-<AppInstall/>
-
-## Viewing PCI for Palo Alto Networks 9 Dashboards
+<ViewDashboards/>
 
 
 ### PCI Req 01 - Accepted and Rejected Traffic
