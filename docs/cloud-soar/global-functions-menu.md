@@ -243,7 +243,7 @@ With the **Report** option, you can create incident reports to share with others
 
 1. Click the gear icon in the upper-right corner of the UI, then select **Report**. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-reports.png')} alt="Access reports" width="150"/><br/>The Report UI appears. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-report-ui.png')} alt="Reports user interface" width="600"/> 
 1. Click the **+** icon in the upper left corner. 
-1. On the right side, select widgets to add to the report from **My Widgets** or **Public**. These are the same widgets that are available to use in [dashboards](/docs/cloud-soar/main-menu#create-a-dashboard). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](/docs/cloud-soar/main-menu/#create-widgets). Click **Show List** to see all available widgets.  
+1. On the right side, select widgets to add to the report from **My Widgets** or **Public**. These are the same widgets that are available to use in [dashboards](/docs/cloud-soar/main-menu/#create-a-dashboard). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](/docs/cloud-soar/main-menu/#create-widgets). Click **Show List** to see all available widgets.  
 1. Rearrange the widgets in the report as needed. You can even add widgets to the header and footer.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets-in-report.png')} alt="Widgets in a report" width="600"/>
 1. Click **Save**. In the dialog:
     1. Provide a **Report name** and a **Description**.
