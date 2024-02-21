@@ -3,11 +3,12 @@ title: OneTrust
 description: ''
 tags: [ ]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/onetrust.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/onetrust.png')} alt="onetrust" width="100"/>
 
-Version: 1.1  
-Updated: Feb 5, 2024
+***Version: 1.1  
+Updated: Feb 5, 2024***
 
 OneTrust is a technology platform that helps organizations comply with privacy and security regulations like GDPR and CCPA by automating privacy assessments, data mapping, and consent management.
 

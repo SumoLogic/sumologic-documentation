@@ -3,28 +3,27 @@ title: Duo
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/duo.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/duo.png')} alt="duo" width="70"/>
 
-Version: 1.5  
-Updated: Sep 19, 2023
+***Version: 1.5  
+Updated: Sep 19, 2023***
 
 Duo puts your organization on the fast-track to zero trust by securing the modern workforce. The simple, all-in-one platform lets you verify user identities, assess and act on the health of devices, set adaptive access policies, and protect users' productivity with modern remote access and SSO capabilities.
 
 ## Actions
 
-* **Associate Device With User** (*Containment*) - Associates a device with a user
-* **Disassociate Device From User** (*Containment*) - Dissociates a device from a user
-* **Get Authentication Log** (*Enrichment) -* Tracking of the authentication
-* **Get Devices** (*Enrichment) -* Get the devices
-* **Get Devices By User** (*Enrichment) -* Get devices by specific user
-* **Get Users** (*Enrichment) -* Get users
+* **Associate Device With User** (*Containment*) - Associates a device with a user.
+* **Disassociate Device From User** (*Containment*) - Dissociates a device from a user.
+* **Get Authentication Log** (*Enrichment*) - Tracking of the authentication.
+* **Get Devices** (*Enrichment*) - Get the devices.
+* **Get Devices By User** (*Enrichment*) - Get devices by specific user.
+* **Get Users** (*Enrichment*) - Get users.
 
 ## Duo configuration
 
-Please follow this [link](https://duo.com/docs/adminapi) for configuration purposes:
-
-![](/img/platform-services/automation-service/app-central/integrations/duo/duo-1.png)
+Follow this [link](https://duo.com/docs/adminapi) for configuration purposes:<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/duo/duo-1.png')} style={{border:'1px solid gray'}} alt="downdetector" width="700"/>
 
 ## Change Log
 

@@ -3,21 +3,22 @@ title: FireEye Network Security (NX)
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/fireeye-network-security-nx.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-network-security-nx.png')} alt="fireeye-network-security-nx" width="100"/>
 
-Version: 1.1  
-Updated: Jul 03, 2023
+***Version: 1.1  
+Updated: Jul 03, 2023***
 
 Advanced network security solution for network traffic analysis.
 
 ## Actions
 
-* **Get Alert Info** (*Enrichment*) - Query FireEye NX for alert details
-* **Get ATI Details** (*Enrichment*) - Query FireEye Advanced Threat Intelligence for intelligence data
-* **Get Event Info**(*Enrichment*) - Get information from previously generated event
-* **Add Snort Rule** (*Containment*) - Add a new Snort rule
-* **Add YARA Rule** (*Containment*) - Add a new YARA rule
+* **Get Alert Info** (*Enrichment*) - Query FireEye NX for alert details.
+* **Get ATI Details** (*Enrichment*) - Query FireEye Advanced Threat Intelligence for intelligence data.
+* **Get Event Info**(*Enrichment*) - Get information from previously generated event.
+* **Add Snort Rule** (*Containment*) - Add a new Snort rule.
+* **Add YARA Rule** (*Containment*) - Add a new YARA rule.
 
 ## Change Log
 
