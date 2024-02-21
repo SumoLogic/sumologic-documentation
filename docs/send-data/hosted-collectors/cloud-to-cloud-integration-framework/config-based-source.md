@@ -152,18 +152,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | linkHeadersJsonPath     | String      | No       | `null`        | A JSON Path to the appropriate body property.                                                                                                                                                                                            | `"linkHeadersJsonPath": "$.link.next"`                                                                                                                                                                                                                    |
 | pollingInterval         | String      | Yes      | `5m`          | Set how frequently to poll for new data. It must be between 5 minutes and 48 hours.                                                                                                                                                      | `"pollingInterval": "5m"`                                                                                                                                                                                                                                 |
 
-### JSON example
-
-<CodeBlock language="json">{MyComponentSource}</CodeBlock>
-
-[Download example](/files/c2c/config-based/example.json)
-
-### Terraform example
-
-<CodeBlock language="json">{TerraformExample}</CodeBlock>
-
-[Download example](/files/c2c/config-based/example.tf)
-
 ## FAQ
 
 :::info
