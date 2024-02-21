@@ -72,6 +72,7 @@ The script is going to perform the following operations:
 | `-Tags`         | Sets tags for collector. This argument should be a map. | Yes, for example `@{"host.group" = "default"; "deployment.environment" = "default"}` |
 | `-InstallHostMetrics` | Installs the hostmetrics configuration to collect host metrics. The default is `$False`. | Yes, for example: `-InstallHostMetrics $True` or `-InstallHostMetrics $False`. |
 | `-Fips` | If set to `$True`, installs the FIPS-compliant binary. The default is `$False`. See [FIPS](#fips) section for more details. | Yes, for example: `-Fips $True` or `-Fips $False` |
+| `-Version` | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version. | Yes, for example: `-Version 0.94.0-sumo-2` |
 
 ### Manual Step-by-Step Installation
 
