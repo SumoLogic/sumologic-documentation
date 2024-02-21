@@ -29,9 +29,9 @@ risky activity.
   the specified time range.
 * **List IOCs** *(Enrichment)* - Lists all the IoCs discovered within your enterprise within the specified time range.
 * **List IoC Details** *(Enrichment)* - Returns the threat intelligence associated with an artifact. The threat
-  intelligence information is obtained from your enterprise security systems and from IoC partners of Google
-* **UDM Search** *(Enrichment)* - UDM Search query and retrieve matches
-* **Get Events** *(Enrichment)* - Returns multiple events given the UIDs for the events
+  intelligence information is obtained from your enterprise security systems and from IoC partners of Google.
+* **UDM Search** *(Enrichment)* - UDM Search query and retrieve matches.
+* **Get Events** *(Enrichment)* - Returns multiple events given the UIDs for the events.
 
 ## Change Log
 
