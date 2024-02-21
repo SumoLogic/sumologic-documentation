@@ -239,7 +239,7 @@ alerts.
 
 ## Report
 
-You can create reports on incidents to share with others. You can also [create widgets](/docs/cloud-soar/main-menu/#create-widgets) to use in the report that display text, graphs, and charts containing details about incidents and other aspects of Cloud SOAR.
+With the **Report** option, you can create incident reports to share with others as well as [widgets](/docs/cloud-soar/main-menu/#create-widgets) to use in the report that display text, graphs, and charts containing details about incidents and other aspects of Cloud SOAR.
 
 1. Click the gear icon in the upper-right corner of the UI, then select **Report**. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-reports.png')} alt="Access reports" width="150"/><br/>The Report UI appears. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-report-ui.png')} alt="Reports user interface" width="600"/> 
 1. Click the **+** icon in the upper left corner. 
