@@ -46,6 +46,7 @@ Video: Quick Onboarding with Kubernetes.
 
 * A Sumo Logic account (if you don't have one, [sign up for a free trial](/get-started/sign-up.md#create-a-trial-account))
 * Your Sumo Logic [Sumo Logic Access ID and Access Key](/docs/manage/security/access-keys)
+* Ensure that the Sumo Logic account you're going to use has Manage Content & Manage Collector permissions
 
 ### Supported versions
 
