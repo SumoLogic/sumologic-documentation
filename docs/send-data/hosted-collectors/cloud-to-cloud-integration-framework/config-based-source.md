@@ -18,17 +18,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-[Config Based C2C]
+Sumo Logic provides this configuration based cloud source to collect log data from vendor APIs with a modular configuration. The goal of this source is for Sumo Logic to expand the configuration modules over time giving greater compatibility with vendor APIs, but to acknowledge complex APIs will still require a specific cloud source and not be compatible with this source.
 
 :::note
 This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
-## Data collected
+# Setup
+Follow the sections below to gather the required vendor information and setup the source with a compatible configuration.
 
-## Setup
-
-### Vendor configuration
+## Gather Vendor Requirements
 
 1. Identify a vendor who provides the data that should be ingested.
 1. Follow their documentation to obtain the required configuration:
@@ -38,11 +37,11 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
    - Location of the log data from the API response
    - Pagination
 
-### Source configuration
+## Source Configuration
 
 When you create an Config Based Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-To configure a Config Based Source:
+### General Configuration
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
@@ -102,6 +101,38 @@ To configure a Config Based Source:
          1. **JsonPath**. A JSON Path to the appropriate body property. If not specified, empty value weill be used.
 1. (Optional) **Polling Interval**. Set how frequently to poll for new data. It must be between 5 minutes and 48 hours
 1. When you are finished configuring the Source, click **Save**.
+
+
+### Authentication Configuration
+Choose the type of authentication the source will use based on the vendor API requirements and configure the details of that specific authentication type.
+
+#### Basic
+Select this authentication option if the vendor API requires basic HTTP authentication. The source will always add the `Authorization` HTTP request header with the base64 encoded `username:password` as the value.
+- **Basic HTTP Username**: The username required by the vendor API.
+- **Basic HTTP Password**: The password required by the vendor API.
+
+#### API Key
+Select this authentication option if the vendor API requires you to use a static API key.
+- **How should we use your API key?**
+   - **In HTTP Request Header**: The requests always include the API key in the HTTP headers.
+   - **In HTTP Request URL Parameters**: The request always includes the API key as part of the URL query parameters.
+- **Location Key**: The key value when using the API key. This is the header key if used in the headers and the URL parameter key if used in the URL parameters.
+- **API Key**: Your secret API key credentials
+- **API Key Prefix**: This is an optional prefix you can add to your API key. Some APIs require a text prefix, followed by a space and then your secret API key. For example: `SSWS {api-key}`.
+
+#### Bearer
+Select this authentication option if the vendor API requires bearer authentication. This is similar to the API Key option, but it is a common format many APIs use. The source will always add the `Authorization` HTTP request header with text `Bearer` followed by your API token. For example: `Authorization: Bearer <token>`.
+- **Bearer Token**: Your secret API key credentials
+
+#### None
+Select this authentication option if the vendor API does not require any form of authentication.
+
+### Request Configuration
+### Tracking Progression Configuration
+### Response Log Ingest Configuration
+### Pagination Configuration
+### HTTP Client Options
+
 
 ## JSON Configuration
 
