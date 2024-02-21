@@ -40,7 +40,7 @@ In this step, we'll install the collector on 50 servers and add a uniquely ident
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **OpenTelemetry Collection**.
 1. On the **OpenTelemetry Collection** page, click **Add Collector**.
-1. In the **Set up Collector** step, select **Linux** as the platform.<br/><img src={useBaseUrl('img/send-data/linux-install.png')} alt="linux-install" width="600"/>
+1. In the **Set up Collector** step, select **Linux** as the platform.<br/><img src={useBaseUrl('img/send-data/linux-install.png')} alt="linux-install" style={{border: '1px solid gray'}} width="800"/>
 1. Enter your **Installation Token**.
 1. Under **Tag data on Collector level**, add a new tag, “application = Apache” as seen in the screenshot below to identify these collectors as having Apache running on them.
 1. For **Collector Settings**, leave them as default (unchecked).
