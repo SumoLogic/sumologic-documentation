@@ -101,7 +101,7 @@ Running  OtelcolSumo        Sumo Logic OpenTelemetry Collector
 ```
 Alternatively, you can open `Services.msc` and check whether Sumo Logic OTel Collector Service is running or not.
 
-## Additional Settings
+### Additional Settings
 
 This section describes common OpenTelemetry customizations.
 
@@ -137,7 +137,7 @@ To install FIPS compliant binary, add `-Fips $True` option to the installation c
 
 Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) in our repository for more details.
 
-### Uninstall
+## Uninstall
 
 1. Go to **Add or remove programs**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-1.png')} alt="windows-uninstallation-1.png" width="550" />
 1. Find **OpenTelemetry Collector** and click **Uninstall**.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-2.png')} alt="windows-uninstallation-2.png" width="550" />
