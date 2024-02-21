@@ -3,23 +3,24 @@ title: LogRhythm
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/logrhythm.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/logrhythm.png')} alt="logrhythm" width="100"/>
 
-Version: 1.1  
-Updated: Jul 11, 2023
+***Version: 1.1  
+Updated: Jul 11, 2023***
 
 Query and update events in LogRhythm SIEM.
 
 ## Actions
 
-* **List Alarms** *(Enrichment)* - Returns Alarms details
-* **Get Alarm By ID** *(Enrichment)* - Returns Alarm detail based on the Alarm ID
-* **Update Alarm Comments** *(Notification)* - Adds comment to an Alarm ID
-* **Get Events By Alarm ID** *(Enrichment)* - Returns Events detail based on the Alarm ID
-* **Get Alarm History By ID** *(Enrichment)* - Returns Alarm History detail based on the Alarm ID
-* **Update Alarm Status** *(Notification)* - Update the Alarm status
-* **LogRhythm Alarms Daemon** *(Daemon)* - Automatically fetch Alarms
+* **List Alarms** *(Enrichment)* - Returns Alarms details.
+* **Get Alarm By ID** *(Enrichment)* - Returns Alarm detail based on the Alarm ID.
+* **Update Alarm Comments** *(Notification)* - Adds comment to an Alarm ID.
+* **Get Events By Alarm ID** *(Enrichment)* - Returns Events detail based on the Alarm ID.
+* **Get Alarm History By ID** *(Enrichment)* - Returns Alarm History detail based on the Alarm ID.
+* **Update Alarm Status** *(Notification)* - Update the Alarm status.
+* **LogRhythm Alarms Daemon** *(Daemon)* - Automatically fetch Alarms.
 
 ## Change Log
 

@@ -3,40 +3,35 @@ title: WhoisXML
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/whoisxml.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/whoisxml.png')} alt="whoisxml" width="100"/>
 
-Version: 1.5  
-Updated: Jul 07, 2023
+***Version: 1.5  
+Updated: Jul 07, 2023***
 
 WHOIS API service provides the registration details, also known as the WHOIS record data, of a domain name, an IP address, or an email address.
 
 ## Actions
 
-* **Whois** *(Enrichment)* - Retrieve WHOIS record data
-* **DNS Lookup** *(Enrichment)* - Retrieve data about specific DNS
-* **Domain Reputation** *(Enrichment)* - Retrieve data about specific domain
-* **List Subdomains** *(Enrichment)* - Retrieve data about child subdomain for a specific domain
-* **Geolocate IP Address** *(Enrichment)* - Retrieve geolocation data for the provided IP Address
+* **Whois** *(Enrichment)* - Retrieve WHOIS record data.
+* **DNS Lookup** *(Enrichment)* - Retrieve data about specific DNS.
+* **Domain Reputation** *(Enrichment)* - Retrieve data about specific domain.
+* **List Subdomains** *(Enrichment)* - Retrieve data about child subdomain for a specific domain.
+* **Geolocate IP Address** *(Enrichment)* - Retrieve geolocation data for the provided IP Address.
 
 ## WhoisXML in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation.    <br/>![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-1.png)
-
-1. In the Automation section, on the left menu, click Integrations.   <br/>![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-2.png)
-
-1. After the list of the integrations appears, search/look for the integration and click on the row. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-3.png)
-
-1. Populate all the required fields (\*) and then click Save. 
-   * Label: The desired name for the resource.
-   * URL: WhoisXML API URL.
-   * API Key: Your WhoisXML API Key. <br/>![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-4.png)
-
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-5.png)
-
-1. Click Test Saved Settings.   <br/>![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-6.png)
-
-1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-7.png)
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-1.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
+1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-2.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
+1. After the list of the integrations appears, search/look for the integration and click on the row. The integration details will appear. Click on the **"+"** button to add new Resource.br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-3.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
+1. Populate all the required fields (\*) and then click **SAVE**. 
+   * **Label**. The desired name for the resource.
+   * **URL**. WhoisXML API URL.
+   * **API Key**. Your WhoisXML API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-4.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-5.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
+1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-6.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
+1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/whoisxml/whoisxml-7.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
 
 ## Change Log
 

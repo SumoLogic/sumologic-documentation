@@ -3,29 +3,30 @@ title: Dynatrace
 description: ''
 tags: [ ]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/dynatrace.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/dynatrace.png')} alt="dynatrace" width="100"/>
 
-Version: 1.1  
-Updated: Jul 11, 2023
+***Version: 1.1  
+Updated: Jul 11, 2023***
 
 Dynatrace is a cutting-edge solution that offers full-stack monitoring, enabling organizations to track their IT infrastructure's performance and security. Its AI-powered capabilities provide actionable insights to optimize operations and mitigate risks. This integration offers enriched cybersecurity management, allowing users to search and manage security problems, observe problems over time, and automate the retrieval of latest issues. It also provides insights into logs, events, and metrics, while offering AI-powered security advice.
 
 ## Actions
 
-* **Close Problem** *(Containment)* - Closes the specified problem and adds a closing comment
-* **Create Problem Comment** *(Containment)* - Adds a new comment on the specified problem
-* **Get Events** *(Enrichment)* - Lists events based on the parameters provided
-* **Get Problems Daemon** *(Daemon)* - Automatically returns the latest problems
-* **Get Problems** *(Enrichment)* - Lists the problems (and their details) observed by Dynatrace during a relative period of time
-* **Get Security Advices** *(Enrichment)* - Lists recommendations related to security problems using AI
-* **Mute Security Problem** *(Containment)* - Mutes the specified security problem. Muted problems are hidden from the list of problems in the UI
-* **Search Logs** *(Enrichment)* - Lists all log records based on the parameters provided
-* **Search Metrics** *(Enrichment)* - Lists all metrics based on the parameters provided
-* **Search Metrics Daemon** *(Daemon)* - Automatically returns the latest metrics
-* **Search Security Problems** *(Enrichment)* - Lists all security problems based the parameters provided
-* **Search Security Problems Daemon** *(Daemon)* - Automatically returns latest security problems
-* **Unmute Security Problem** *(Containment)* - Unmutes the specified security problem
+* **Close Problem** *(Containment)* - Closes the specified problem and adds a closing comment.
+* **Create Problem Comment** *(Containment)* - Adds a new comment on the specified problem.
+* **Get Events** *(Enrichment)* - Lists events based on the parameters provided.
+* **Get Problems Daemon** *(Daemon)* - Automatically returns the latest problems.
+* **Get Problems** *(Enrichment)* - Lists the problems (and their details) observed by Dynatrace during a relative period of time.
+* **Get Security Advices** *(Enrichment)* - Lists recommendations related to security problems using AI.
+* **Mute Security Problem** *(Containment)* - Mutes the specified security problem. Muted problems are hidden from the list of problems in the UI.
+* **Search Logs** *(Enrichment)* - Lists all log records based on the parameters provided.
+* **Search Metrics** *(Enrichment)* - Lists all metrics based on the parameters provided.
+* **Search Metrics Daemon** *(Daemon)* - Automatically returns the latest metrics.
+* **Search Security Problems** *(Enrichment)* - Lists all security problems based the parameters provided.
+* **Search Security Problems Daemon** *(Daemon)* - Automatically returns latest security problems.
+* **Unmute Security Problem** *(Containment)* - Unmutes the specified security problem.
 
 **Timeframe**
 
@@ -129,36 +130,28 @@ More information can be found [here](https://www.dynatrace.com/support/help).
 
 To be authenticated to use the Dynatrace API, you need a valid access token. To generate an access token follow these steps:
 
-1. In the "Dynatrace menu", select **Access tokens**
-2. Select **Generate new token**
+1. In the "Dynatrace menu", select **Access tokens**.
+2. Select **Generate new token**.
 3. Enter a name for your token.   
-   Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed
-4. Select the required scopes for the token
-5. Select **Generate**
-6. Copy the generated token to the clipboard. Store the token in a password manager for future use   
+   Dynatrace doesn't enforce unique token names. You can create multiple tokens with the same name. Be sure to provide a meaningful name for each token you generate. Proper naming helps you to efficiently manage your tokens and perhaps delete them when they're no longer needed.
+4. Select the required scopes for the token.
+5. Select **Generate**.
+6. Copy the generated token to the clipboard. Store the token in a password manager for future use  . 
    :::note
    You can only access your token once upon creation. You can't reveal it afterwards.
    :::
 
 ## Dynatrace in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-1.png)
-
-1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-2.png)
-
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-1.png')} style={{border:'1px solid gray'}} alt="dynatrace" width="400"/>
+1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-2.png')} style={{border:'1px solid gray'}} alt="dynatrace" width="400"/>
 1. After the list of the integrations appears, search/look for the integration and click on the row.
-
-1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-3.png)
-
-1. Populate all the required fields (\*)
-
+1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-3.png')} style={{border:'1px solid gray'}} alt="dynatrace" width="400"/>
+1. Populate all the required fields (\*).
 1. Click **Save**.
-
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-4.png)
-
-1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-5.png)
-
-1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-6.png)
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-4.png')} style={{border:'1px solid gray'}} alt="dynatrace" width="400"/>
+1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-5.png')} style={{border:'1px solid gray'}} alt="dynatrace" width="400"/>
+1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/dynatrace/dynatrace-6.png')} style={{border:'1px solid gray'}} alt="dynatrace" width="400"/>
 
 ## Change Log
 
