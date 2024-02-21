@@ -111,6 +111,9 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
    ```
 
 ### Installation configuration
+
+**Check if the prefix name of generated token repect the requirements.** [Get installation token](#get-installation-token)
+
 1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters:
    * `1SOAR_URL1`
    * `1SOAR_TOKEN1`
