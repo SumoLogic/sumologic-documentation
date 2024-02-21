@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/recorded-future.png')} alt="recorded-future" width="100"/>
 
-***Version: 1.7  
-Updated: Jun 29, 2023***
+Version: 1.8  
+Updated: February 16, 2024
 
 Utilize Recorded Future threat intelligence feeds during incident investigation.
 
@@ -54,3 +54,5 @@ Search Domain, Search URL, Search IP, Search Hash
 	+ IP Reputation
 * June 22, 2023 (v1.6) - Removed unnecessary empty lines
 * June 22, 2023 (v1.7) - Renamed integration from Recorded Future OIF to Recorded Future
+* February 16, 2024 (v1.8)
+    + Refactored Recorded Future Alerts Daemon

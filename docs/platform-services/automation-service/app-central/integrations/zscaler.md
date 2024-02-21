@@ -1,30 +1,30 @@
 ---
 title: Zscaler
 description: ''
-tags: []
+tags: [ ]
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zscaler.png')} alt="axonius" width="80"/>
 
-***Version: 1.2  
-Updated: Jun 15, 2023***
+**Version: 1.3  
+Updated: Feb 20, 2024**
 
 Zscaler Internet Access is a cloud native [security service edge (SSE)](https://www.zscaler.com/solutions/zscaler-security-service-edge) solution that builds on a [decade of secure web gateway leadership](https://www.zscaler.com/gartner-magic-quadrant-secure-web-gateways-2020). Offered as a scalable SaaS platform from the world’s largest security cloud, it replaces legacy network security solutions to stop advanced attacks and prevent data loss with a comprehensive zero trust approach.
 
 ## Actions
 
-* **Get Blacklist** (*Enrichment*) - Retrieve addresses blacklist.
-* **Get Categories** (*Enrichment*) - Retrieve categories.
-* **Get Sandbox Report** (*Enrichment*) - Obtain a sandbox report.
-* **Get Whitelist** (*Enrichment*) - Retrieve addresses whitelist.
-* **Url Lookup** (*Enrichment*) - Lookup of an URL.
-* **Add Url To Category** (*Containment*) - Add an URL to category.
-* **Add Url To Blacklist** (*Containment*) - Blocklist an URL.
-* **Remove Url From Category** (*Containment*) - Remove an URL from category.
-* **Remove Url From Blacklist** (*Containment*) - Remove an URL from blacklist.
-* **Remove Url From Whitelist** (*Containment*) - Remove an URL from whitelist.
-* **Add Url To Whitelist** (*Containment*) - Add an URL to whitelist.
+* **Add Url To Blacklist** (*Containment*) - Blocklist a URL
+* **Add Url To Category** (*Containment*) - Add a URL to category
+* **Add Url To Whitelist** (*Containment*) - Add a URL to whitelist
+* **Get Blacklist** (*Enrichment*) - Retrieve addresses blacklist
+* **Get Categories** (*Enrichment*) - Retrieve categories
+* **Get Sandbox Report** (*Enrichment*) - Obtain a sandbox report
+* **Get Whitelist** (*Enrichment*) - Retrieve addresses whitelist
+* **Remove Url From Blacklist** (*Containment*) - Remove a URL from blacklist
+* **Remove Url From Category** (*Containment*) - Remove a URL from category
+* **Remove Url From Whitelist** (*Containment*) - Remove a URL from whitelist
+* **Url Lookup** (*Enrichment*) - Lookup of a URL
 
 **Zscaler Sumo Logic Integration**
 
@@ -38,7 +38,8 @@ Security gateway
 
 * October 16, 2019 - First upload
 * July 18, 2022
-	+ Base URL in the connector is now visible as plain text
-	+ New logo
-	+ Added missing incident Artifacts
+    + Base URL in the connector is now visible as plain text
+    + New logo
+    + Added missing incident Artifacts
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
+* February 20, 2024 (v1.3) - Fixed an issue that prevented some actions from being executed
