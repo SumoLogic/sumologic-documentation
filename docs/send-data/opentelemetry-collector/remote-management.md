@@ -1,6 +1,6 @@
 ---
 id: remote-management
-title: OpenTelemetry Remote Management Beta
+title: OpenTelemetry Remote Management
 sidebar_label: Remote Management
 ---
 
@@ -12,19 +12,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
+This feature is in Beta. To participate, contact your Sumo Logic account executive.
+
 The Sumo Logic Distribution for OpenTelemetry Collector supports remote management of data collection configuration. You can set up data collection configuration from the Sumo UI and push the configuration to one or more collectors.  
 
 ## Remote Management features
 
 ### Collector tags
 
-With OpenTelemetry (OTel) remote management, you can tag your installed collectors and use it to categorize and group the collectors. These tags are enriched in your data, so you can use them in your dashboards and searches as well.
+With OpenTelemetry (OTel) remote management, you can tag your [Installed Collectors](/docs/send-data/installed-collectors) and use those tags to categorize and group them. These tags are enriched in your data, so you can use them in your dashboards and searches as well.
 
 ### Source templates
 
-Data configuration setup for OT collectors will be done using Source templates. The Source template is an extension of existing Source concept for Installed collectors which has a new capability to be attached to multiple collectors.
+With remote management, data configuration setup for OTel collectors is done using Source templates. This is an extension of our existing [Installed Collector Source](/docs/send-data/installed-collectors/sources) template, with the addition of this new capability to be attached to multiple collectors.
 
-Use collector tags to group the collector and associate the Source Template to these groups of collectors thus helping in reducing redundancy of data collection setup. This additional step for Source Template is called Collector Linking.
+You can use collector tags to group your collectors, as described in the previous section, and associate the Source template to these groups of collectors. This reduces redundancy in your data collection setup. This additional step for Source template is called *Collector Linking*.
 
 ## How it works
 
