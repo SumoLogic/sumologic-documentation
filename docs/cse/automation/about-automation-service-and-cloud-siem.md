@@ -117,7 +117,7 @@ The [Cloud SIEM API](/docs/cse/administration/cse-apis/) supports automations. E
 The Sumo Logic Terraform provider also supports automation, but does not support the ability to create or modify integrations, playbooks, or actions. For more information about Terraform, see the [Sumo Logic Terraform](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs) documentation.
 
 :::note
-The Automation Service uses the [Cloud SOAR API](/docs/cloud-soar/cloud-soar-apis). 
+The Automation Service uses the [Cloud SOAR API](/docs/api/cloud-soar/). 
 :::
 
 ### Data retention

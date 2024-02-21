@@ -3,18 +3,19 @@ title: Corelight
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/corelight.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/corelight.png')} alt="corelight" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Utilize Corelight during incident investigation.
 
 ## Actions
 
-* **Get Metrics** (*Enrichment*) - Gather metrics from Corelight
-* **Update Threat Intel** (*Containment*) - Update Corelight threat intel
+* **Get Metrics** (*Enrichment*) - Gather metrics from Corelight.
+* **Update Threat Intel** (*Containment*) - Update Corelight threat intel.
 
 ## Change Log
 

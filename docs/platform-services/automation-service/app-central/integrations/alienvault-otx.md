@@ -3,28 +3,29 @@ title: AlienVault OTX
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/alienvault-otx.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/alienvault-otx.png')} alt="alienvault-otx" width="90"/>
 
-Version: 1.12  
-Updated: Sep 04, 2023
+***Version: 1.12  
+Updated: Sep 04, 2023***
 
 Enrich incident evidence with threat intelligence data from AlienVault OTX.
 
 ## Actions
 
-* **Domain Info** (*Enrichment*) - Gather information of specific domain
-* **Domain Reputation** (*Enrichment*) - Gather the reputation score of a specific domain
-* **File Info** (*Enrichment*) - Gather information on a specific file
-* **File Reputation** (*Enrichment*) - Gather the reputation score of a specific file
-* **Geo Locate Domain Info** (*Enrichment*) - Geographically locate a specific domain
-* **IP Reputation** (*Enrichment*) - Gather the reputation score for a specific IP address
-* **Page Links** (*Enrichment*) - Gather page link information
-* **Reverse DNS** (*Enrichment*) - Gather reverse DNS information
-* **Scan URL** (*Enrichment*) - Scan a specific URL
-* **URL Info** (*Enrichment*) - Gather information on a specific URL
-* **URL Reputation** (*Enrichment*) - Gather the reputation score for a specific URL
-* **Whois Lookup** (*Enrichment*) - Gather Whois information
+* **Domain Info** (*Enrichment*) - Gather information of specific domain.
+* **Domain Reputation** (*Enrichment*) - Gather the reputation score of a specific domain.
+* **File Info** (*Enrichment*) - Gather information on a specific file.
+* **File Reputation** (*Enrichment*) - Gather the reputation score of a specific file.
+* **Geo Locate Domain Info** (*Enrichment*) - Geographically locate a specific domain.
+* **IP Reputation** (*Enrichment*) - Gather the reputation score for a specific IP address.
+* **Page Links** (*Enrichment*) - Gather page link information.
+* **Reverse DNS** (*Enrichment*) - Gather reverse DNS information.
+* **Scan URL** (*Enrichment*) - Scan a specific URL.
+* **URL Info** (*Enrichment*) - Gather information on a specific URL.
+* **URL Reputation** (*Enrichment*) - Gather the reputation score for a specific URL.
+* **Whois Lookup** (*Enrichment*) - Gather Whois information.
 
 ## External Libraries
 
