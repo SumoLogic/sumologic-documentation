@@ -48,7 +48,9 @@ In this step, we'll install the collector on 50 servers and add a uniquely ident
 1. Wait for the installation process to complete, then click **Next** to proceed.
 1. On the next screen, you will see a list of available Source Templates. For our use case, we will select Apache Source Template.
 
-If you choose to close this screen, you can also navigate to create a new Source template by selecting **Manage Data** > **Collection** > **Source Template**.
+:::note
+If you choose to close this Source template creation screen, you can navigate back by selecting **Manage Data** > **Collection** > **Source Template**.
+:::
 
 
 ### Step 2: Data configuration
