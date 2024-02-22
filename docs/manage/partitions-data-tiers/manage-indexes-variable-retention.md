@@ -10,7 +10,7 @@ In managing your company's log data, it's crucial to recognize the diverse natur
 
 With Variable Retention, you can create Index Partitions and Scheduled Views to store your data as needed, and set different retention periods for those Partitions and Scheduled Views. This way, you can keep the data you need for as long as you need it, while other less important data can be retained for a shorter period, reducing your overall cost of operation.
 
-You establish the retention period during the initial [creation of the Partition](/docs/manage/partitions-data-tiers/create-edit-partition/#create-a-partition) or [Scheduled View](/docs/manage/scheduled-views). Additionally, you retain the flexibility to modify the retention period at any point in the future.
+You set the retention period when you first [create the Partition](/docs/manage/partitions-data-tiers/create-edit-partition/#create-a-partition) or [Scheduled View](/docs/manage/scheduled-views), and you can also edit the retention period at any time in the future. 
 
 Retention is measured from the time that data was received, rather than the message time. 
 

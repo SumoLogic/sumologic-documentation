@@ -1,7 +1,7 @@
 ---
 id: data-tiers
 title: Data Tiers
-description: Data Tiers provide the ability to allocate data to different storage tiers based on frequency of access - Continuous, Frequent, Infrequent, and Flex.
+description: Data Tiers provide the ability to allocate data to different storage tiers based on frequency of access - Continuous, Frequent, and Infrequent.
 ---
 
 
@@ -27,11 +27,9 @@ Data Tiers must be enabled on your [Cloud Flex](/docs/manage/manage-subscription
 
 Each Sumo Logic Data Tier supports a different use case and provides its own set of features and capabilities: 
 
-**Continuous Tier** is for the data you use to monitor and troubleshoot production applications and to ensure the security of your applications. 
-
-**Frequent Tier** is for data you need to frequently access to troubleshoot and investigate issues. For example, you might use the Frequent tier for development and test data that helps you investigate issues during development. Searching the Frequent tier is free: it's included in the data ingestion price.
-
-**Infrequent Tier** is for data that is used to troubleshoot intermittent or hard-to-reproduce issues. For example, you might use the Infrequent Tier for debug logs, OS logs, thread dumps, and so on. The Infrequent Tier has a pay-per-search pricing model, and very low ingestion cost.
+* The Continuous Tier is for the data you use to monitor and troubleshoot production applications and to ensure the security of your applications. 
+* The Frequent Tier is for data you need to frequently access to troubleshoot and investigate issues. For example, you might use the Frequent Tier for development and test data that helps you investigate issues during development. Searching the Frequent Tier is free: it's included in the data ingestion price.
+* The Infrequent Tier is for data that is used to troubleshoot intermittent or hard-to-reproduce issues. For example, you might use the Infrequent Tier for debug logs, OS logs, thread dumps, and so on. The Infrequent Tier has a pay-per-search pricing model, and very low ingestion cost.  
 
 import FlexPricing from '../../reuse/flex-pricing.md';
 
