@@ -3,11 +3,12 @@ title: Neurons ITSM
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/neurons-itsm.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/neurons-itsm.png')} alt="neurons-itsm" width="70"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Ivanti Neurons ITSMis IT service management solution that transforms help desks and support teams into strategic business.
 
@@ -19,32 +20,24 @@ Ivanti Neurons ITSMis IT service management solution that transforms help desks 
 * **Create Incident Neurons ITSM** (*Containment*) - Creates incident.
 * **Close Incident** (*Containment*) - Close an incident using a quick action.
 
-## Neurons ITSM Configuration
+## Neurons ITSM configuration
 
 To access Neurons for ITSM specify the URL for your tenant that has been sent to you by email. 
 
-To view your API Key from the Configuration Console, click Configure > Security Controls > API Keys to open the API Keys workspace. The application displays the API keys. Copy your key.
+To view your API Key from the Configuration Console, click **Configure > Security Controls > API Keys** to open the API Keys workspace. The application displays the API keys. Copy your key.
 
 ## Neurons ITSM in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-1.png)
-
-1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-2.png)
-
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-1.png')} style={{border:'1px solid gray'}} alt="neurons-itsm" width="300"/>
+1. In the Automation section, on the left menu, click **Integrations**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-2.png')} style={{border:'1px solid gray'}} alt="neurons-itsm" width="300"/>
 1. After the list of the integrations appears, search for the integration and click on the row.
-
-1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-3.png)
-
-1. Populate all the required fields (\*) and then click Save.
-   * Tenant URL: your tenant url
-   * API Key: the API Key you copied earlier. <br/>![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-4.png)
-
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-5.png)
-
-1. Click Test. <br/>![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-6.png)   
-
-1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-7.png)
-
+1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-3.png')} style={{border:'1px solid gray'}} alt="neurons-itsm" width="500"/>
+1. Populate all the required fields (\*) and then click **SAVE**.
+   * **Tenant URL**. Enter your tenant url.
+   * **API Key**. The API Key you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-4.png')} style={{border:'1px solid gray'}} alt="neurons-itsm" width="400"/>
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-5.png')} style={{border:'1px solid gray'}} alt="neurons-itsm" width="400"/>
+1. Click **TEST**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-6.png')} style={{border:'1px solid gray'}} alt="neurons-itsm" width="400"/>
+1. You should receive a successful notification in the bottom right corner. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/neurons-itsm/neurons-itsm-7.png')} style={{border:'1px solid gray'}} alt="neurons-itsm" width="400"/>
 
 ## Change Log
 
