@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS_API_Gateway.png')} alt="Thumbnail icon" width="50"/>
 
-AWS API Gateway service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
+AWS API Gateway service allows you to create RESTful APIs, HTTP APIs, and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 
 The Sumo Logic AWS API Gateway app provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
 
@@ -184,6 +184,16 @@ For **Metadata**, add an **account** field to the source and assign it a value t
    1. [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-logging-to-kinesis.html)
    2. [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging.html)
    3. [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html)
+6. To enable enhanced metrics:
+   1. For REST APIs, While enabling access logs in section **Logs and tracing**, select **Edit**. Select **Detailed metrics**, and then choose **Save changes**.
+   2. For HTTP APIs, Go to **Metrics** under **Monitor**. Select the stage, Click on **Edit** and enable **Detailed route metrics**. Deploy it.
+   <img src={useBaseUrl('img/integrations/amazon-aws/HTTP_API_Enhanced_Metrics.png')} alt="AWS API Gateway" />
+   3. For WebSocket API, Run the below command in terminal,
+   :::
+   aws apigatewayv2 update-stage --api-id <API_ID> --stage-name <STAGE_NAME> --default-route-settings <YOUR_ROUTE_SETTINGS> --output <OUTPUT_FORMAT> --region <REGION>
+   Example:
+   aws apigatewayv2 update-stage --api-id av8eg0byq4 --stage-name production --default-route-settings "{\"DetailedMetricsEnabled\":true}" --output json --region eu-north-1
+   :::
 
 ### Collect AWS API Gateway CloudTrail Logs
 
