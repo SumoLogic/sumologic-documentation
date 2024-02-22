@@ -1,6 +1,6 @@
 ---
 id: flex
-title: Flex Pricing App
+title: Flex App
 sidebar_label: Flex
 ---
 
