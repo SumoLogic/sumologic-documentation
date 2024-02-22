@@ -3,18 +3,19 @@ title: Cofense
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/cofense.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cofense.png')} alt="cofense" width="70"/>
 
-Version: 1.3  
-Updated: Oct 09, 2023
+***Version: 1.3  
+Updated: Oct 09, 2023***
 
 Search Cofense for Threats and download Threat Reports.
 
 ## Actions
 
-* **Get Report** (*Enrichment*) - Get a Threat Report and attach it to the Cloud SOAR incident
-* **Search Threats** (*Enrichment*) - Search Threats based on the specified parameters
+* **Get Report** (*Enrichment*) - Get a Threat Report and attach it to the Cloud SOAR incident.
+* **Search Threats** (*Enrichment*) - Search Threats based on the specified parameters.
 
 ## Change Log
 

@@ -2,7 +2,7 @@
 id: docker-community-edition
 title: Docker Community Edition
 sidebar_label: Docker Community Edition
-description: The Docker App monitors Docker container logs and metrics (stats) in log format, providing operational insight into your Docker containers.
+description: The Docker app monitors Docker container logs and metrics (stats) in log format, providing operational insight into your Docker containers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,11 +17,11 @@ The Sumo Logic app for Docker Community Edition (CE) provides operational insigh
 
 ## Log types
 
-This Docker App monitors Docker container logs and metrics (stats) in log format only.
+This Docker app monitors Docker container logs and metrics (stats) in log format only.
 
 If your system handles metrics, use the Sumo Logic app for [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm).
 
-### Sample Event Log Messages  
+### Sample log messages  
 
 ```json title="Docker event log"
 {
@@ -158,13 +158,13 @@ Sumo’s Docker logs source and Docker stats source use the Docker Engine API to
 
 By default, you can monitor up to 40 Docker containers on a Docker host. If you want to monitor more than 40 containers on a given host you can configure a larger number in `collector.properties`. The procedures below explain how. We don’t support monitoring more than 100 containers on a Docker host.
 
-## Collecting Logs and Metrics from Docker
+## Collecting logs and metrics from Docker
 
 Sumo supports multiple methods of collecting data from Docker. This procedure describes how to collect data from Docker using an installed collector and Sumo’s Docker logs source and Docker stats source.
 
 The sections below provide instructions for installing a collector on a Docker host, setting up both Sumo Docker sources (log source and stats source), and installing the Sumo app for Docker. With this configuration you can collect Docker logs, events, and stats, and visualize resource performance and event data in the dashboards provided by the app.
 
-With the method described in this topic you can collect Docker logs, stats, and events and view summaries of the data collected using the Sumo App for Docker.
+With the method described in this topic you can collect Docker logs, stats, and events and view summaries of the data collected using the Sumo app for Docker.
 
 :::note
 Windows operating systems are not supported.
@@ -270,16 +270,16 @@ Follow the instructions for the operating system of the host where you will inst
 
 ### Step 5: Install Sumo app for Docker
 
-The Sumo App for Docker provides operational insight into your Docker containers. The app includes Dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.  
+The Sumo app for Docker provides operational insight into your Docker containers. The app includes Dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.  
 
-For installation instructions, see [Install the Docker App](#Installing-the-Docker-App).
+For installation instructions, see [Install the Docker app](#Installing-the-Docker-app).
 
 
 ### Step 6: Run searches and use dashboards
 
 At this point, Sumo should be receiving Docker data. For an example of logs collected from Docker, see Sample Docker log messages. For an example query, see [Sample query](#Query_Sample) - Containers created or started.  
 
-For information about the dashboards provided by the Sumo App for Docker, see [Docker App Dashboards](#Dashboards).
+For information about the dashboards provided by the Sumo app for Docker, see [Docker app Dashboards](#Dashboards).
 
 
 ## Defining Container Filters  
@@ -357,15 +357,17 @@ If a user-defined variable doesn’t exist, that portion of the metadata field w
 
 
 
-## Installing the Docker CE App
+## Installing the Docker CE app
 
-The Sumo App for Docker provides operational insight into your Docker containers. The app includes dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.  
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<AppInstall2/>
 
-<AppInstall/>
+## Viewing Docker CE dashboards​
 
-## Viewing Docker CE Dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
