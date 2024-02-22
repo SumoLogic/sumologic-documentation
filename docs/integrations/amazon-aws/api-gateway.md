@@ -171,31 +171,45 @@ For **Metadata**, add an **account** field to the source and assign it a value t
    3. **Enable S3 Replay**. Do not check this option.
    4. **Source Category**. Enter `aws/apigateway`.
    5. **Fields**. Add below fields in it:
-      1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”. 
-      2. Add **region**, **namespace** and **accountid** fields and assign it's respective values.
+      1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the `account field`. 
+      2. Add **region**, **namespace**, and **accountid** fields and assign it's respective values.
    6. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
    7. **Time Zone**. Select **Use time zone from log file. If none is detected use**, and select **Use Collector Default** from the dropdown.
    8. **Timestamp Format.** Select **Automatically detect the format**.
    9. **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
    10. Click **Save**.
-2. Then [Create Stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html) in AWS console with given [CloudFormation Template]((https://help.sumologic.com/files/KinesisFirehoseCWLogs.template.yaml)).
-4. To Export logs, [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group)
-5. To Enable access logging for each APIs:
+1. [Create Stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html) in AWS console with given [CloudFormation Template]((https://help.sumologic.com/files/KinesisFirehoseCWLogs.template.yaml)).
+1. To Export logs, refer to [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group).
+1. Enable access logging for each APIs:
    1. [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-logging-to-kinesis.html)
-   2. [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging.html)
-   3. [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html)
-6. To enable enhanced metrics:
-   1. For REST APIs, While enabling access logs in section **Logs and tracing**, select **Edit**. Select **Detailed metrics**, and then choose **Save changes**.
-   2. For HTTP APIs, Go to **Metrics** under **Monitor**. Select the stage, Click on **Edit** and enable **Detailed route metrics**. Deploy it.
-   <img src={useBaseUrl('img/integrations/amazon-aws/HTTP_API_Enhanced_Metrics.png')} alt="AWS API Gateway" />
-   3. For WebSocket API, Run the below command in terminal,
-   ```
-   aws apigatewayv2 update-stage --api-id <API_ID> --stage-name <STAGE_NAME> --default-route-settings <YOUR_ROUTE_SETTINGS> --output <OUTPUT_FORMAT> --region <REGION>
-   ```
-   ```
-   Example:
-   aws apigatewayv2 update-stage --api-id av8eg0byq4 --stage-name production --default-route-settings "{\"DetailedMetricsEnabled\":true}" --output json --region eu-north-1
-   ```
+   1. [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging.html)
+   1. [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html)
+
+### Enable enhanced metrics
+
+Enable enhanced metrics for REST APIs:
+
+1. Enable access logs in **Logs and tracing** section. 
+1. Click on **Edit**. 
+1. Select **Detailed metrics** checkbox.
+1. Click **Save changes**.
+
+Enable enhanced metrics for HTTPS APIs:
+
+1. Go to **Metrics** under **Monitor**. 
+1. Select the stage, and click on **Edit**.
+1. Toggle the **enabled** button to enable the **Detailed route metrics**. 
+1. Click **Save**.
+1. Click on **Deploy**.<br/><img src={useBaseUrl('img/integrations/amazon-aws/HTTP_API_Enhanced_Metrics.png')} alt="AWS API Gateway" />
+
+To enable enhanced metrics for WebSocket API, run the following command in your terminal:
+```
+aws apigatewayv2 update-stage --api-id <API_ID> --stage-name <STAGE_NAME> --default-route-settings <YOUR_ROUTE_SETTINGS> --output <OUTPUT_FORMAT> --region <REGION>
+```
+```
+Example:
+aws apigatewayv2 update-stage --api-id av8eg0byq4 --stage-name production --default-route-settings "{\"DetailedMetricsEnabled\":true}" --output json --region eu-north-1
+```
 
 ### Collect AWS API Gateway CloudTrail Logs
 
