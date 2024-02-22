@@ -16,9 +16,15 @@ The Sumo Logic AWS API Gateway app provides insights into API Gateway tasks whil
 
 The AWS API Gateway app uses the following logs and metrics:
 
-* [Amazon API Gateway metrics](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+* Amazon API Gateway metrics
+   * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+   * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-metrics.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+   * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
 * [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html) <br/><img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-* [AWS Kinesis Firehose Access Log](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-logging-to-kinesis.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+* API Gateway Access logs
+   * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+   * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging-variables.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+   * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
 
 
 ### Sample log messages
@@ -63,6 +69,63 @@ The AWS API Gateway app uses the following logs and metrics:
    "readOnly":true,
    "eventType":"AwsApiCall",
    "recipientAccountId":"123408221234"
+}
+```
+
+```json title="Sample Access Log Message"
+{
+  "requestId": "bf04adbf-eacc-4601-8c14-94605f242e1a",
+  "extendedRequestId": "Sca3bFUQgi0EYeA=",
+  "identitySourceIp": "103.108.207.58",
+  "identityCaller": "-",
+  "identityUser": "-",
+  "requestTime": "01/Feb/2024:06:47:49 +0000",
+  "status": "500",
+  "authorizerProperty": "-",
+  "routeKey": "-",
+  "apiId": "9iljix61i7",
+  "authorizeError": "-",
+  "authorizeLatency": "-",
+  "authorizeStatus": "-",
+  "authorizerError": "-",
+  "authorizerIntegrationStatus": "-",
+  "authorizerIntegrationLatency": "-",
+  "authorizerLatency": "-",
+  "authorizerPrincipalId": "-",
+  "authorizerRequestId": "-",
+  "authorizerStatus": "-",
+  "authenticateError": "-",
+  "authenticateLatency": "-",
+  "authenticateStatus": "-",
+  "connectedAt": "-",
+  "connectionId": "-",
+  "domainName": "9iljix61i7.execute-api.eu-north-1.amazonaws.com",
+  "errorMessage": "Internal server error",
+  "errorResponseType": "DEFAULT_5XX",
+  "errorValidationErrorString": "-",
+  "eventType": "-",
+  "identityAccountId": "-",
+  "identityCognitoAuthenticationProvider": "-",
+  "identityCognitoAuthenticationType": "-",
+  "identityCognitoIdentityId": "-",
+  "identityCognitoIdentityPoolId": "-",
+  "identityPrincipalOrgId": "-",
+  "identityUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+  "identityUserArn": "-",
+  "identityApiKey": "-",
+  "identityApiKeyId": "-",
+  "integrationError": "Execution failed due to configuration error: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target",
+  "integrationIntegrationStatus": "-",
+  "integrationLatency": "258",
+  "integrationRequestId": "-",
+  "integrationStatus": "-",
+  "contextIntegrationLatency": "258",
+  "requestTimeEpoch": "1706770069673",
+  "stage": "test",
+  "messageId": "-",
+  "wafError": "-",
+  "wafLatency": "10",
+  "wafStatus": "200"
 }
 ```
 
@@ -115,6 +178,12 @@ For **Metadata**, add an **account** field to the source and assign it a value t
    8. **Timestamp Format.** Select **Automatically detect the format**.
    9. **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
    10. Click **Save**.
+2. Then [Create Stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html) in AWS console with given [CloudFormation Template]((https://help.sumologic.com/files/KinesisFirehoseCWLogs.template.yaml)).
+4. To Export logs, [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group)
+5. To Enable access logging for each APIs:
+   1. [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-logging-to-kinesis.html)
+   2. [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging.html)
+   3. [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html)
 
 ### Collect AWS API Gateway CloudTrail Logs
 
