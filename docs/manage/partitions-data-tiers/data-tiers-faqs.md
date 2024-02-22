@@ -12,15 +12,15 @@ For information about selecting the data tier for your use case, features of eac
 
 The Continuous Data Tier is available in all Sumo subscriptions. Frequent and Infrequent are available only if you have Sumo Logic Enterprise Suite. 
 
-## Flex Tier
+## Flex Pricing
 
-### What is Flex Tier?
+### What is Flex Pricing?
 
-import FlexTier from '../../reuse/flex-tier.md';
+import FlexPricing from '../../reuse/flex-pricing.md';
 
-<FlexTier/>
+<FlexPricing/>
 
-### What are the benefits of Flex Tier?
+### What are the benefits of Flex Pricing?
 
 <!-- to do-->
 
@@ -28,7 +28,7 @@ import FlexTier from '../../reuse/flex-tier.md';
 
 <!-- to do-->
 
-### How should I approach moving from Infrequent, Frequent, or Continuous Tier to a plan with Flex Tier only?
+### How should I approach moving from Infrequent, Frequent, or Continuous Tier to a plan with Flex Pricing only?
 
 <!-- to do-->
 

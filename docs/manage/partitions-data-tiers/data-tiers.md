@@ -33,9 +33,9 @@ Each Sumo Logic Data Tier supports a different use case and provides its own set
 
 **Infrequent Tier** is for data that is used to troubleshoot intermittent or hard-to-reproduce issues. For example, you might use the Infrequent Tier for debug logs, OS logs, thread dumps, and so on. The Infrequent Tier has a pay-per-search pricing model, and very low ingestion cost.
 
-import FlexTier from '../../reuse/flex-tier.md';
+import FlexPricing from '../../reuse/flex-pricing.md';
 
-<FlexTier/>
+<FlexPricing/>
 
 :::note
 Frequent and Infrequent Tiers are available only for Sumo Logic Enterprise Suite plans. Continuous Data Tier is available for all Sumo Logic subscriptions.
@@ -60,7 +60,7 @@ After a partition is created in a given tier, you can't change its tier. If you 
 
 How you can search and use your ingested data varies by the Data Tier it resides in, as described in the following table. 
 
-| Feature support | Continuous Tier | Frequent Tier | Infrequent Tier | Flex Tier
+| Feature support | Continuous Tier | Frequent Tier | Infrequent Tier | Flex Pricing
 | :-- | :-- | :-- | :-- | :--
 | Centralized, secure, multi-tenant cloud-native platform | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)
 | Data replication across availability zones, data encryption | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)

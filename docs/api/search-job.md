@@ -84,12 +84,9 @@ You can start requesting results asynchronously while the job is running and pag
    <td>Infrequent</td>
    <td>Can return up to 10 million records per search.</td>
   </tr>
-  <tr>
-   <td>Flex</td>
-   <td>Can return up to 10 million records per search.</td>
-  </tr>
 </table>
 
+<!-- note about Flex pricing and app -->
 
 If you need more results you'll need to break up your search into several searches that span smaller blocks of the time range needed. For example, if your search runs for a week and returns 70 million records. Break up the search into at least seven searches that span for a day each.
 

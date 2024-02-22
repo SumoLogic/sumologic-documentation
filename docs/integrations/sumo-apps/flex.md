@@ -1,8 +1,7 @@
 ---
-id: flex-data-tier
-title: Flex Data Tier App
-sidebar_label: Flex Data Tier
-description: add description
+id: flex
+title: Flex Pricing App
+sidebar_label: Flex
 ---
 
 <head>
@@ -15,10 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
-
-## Prerequisites
-
-This app is currently in Closed Beta. To request access, contact your Sumo Logic sales representative.
+This app is currently in Beta. To request access, contact your Sumo Logic sales representative.
 
 
 ## Log types
@@ -26,15 +22,15 @@ This app is currently in Closed Beta. To request access, contact your Sumo Logic
 
 ## Sample queries
 
-## Collecting Data for the Flex Data Tier app
+## Collecting Data for the Flex app
 
-## Installing the Flex Tier app
+## Installing the Flex app
 
 import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing Flex Tier dashboards
+## Viewing Flex app dashboards
 
 ### Overview
 
