@@ -1,7 +1,7 @@
 ---
 id: api-gateway
 title: AWS API Gateway
-description: Amazon API Gateway service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
+description: Amazon API Gateway service allows you to create RESTful APIs, HTTP APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -18,6 +18,7 @@ The AWS API Gateway app uses the following logs and metrics:
 
 * [Amazon API Gateway metrics](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
 * [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html) <br/><img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
+* [AWS Kinesis Firehose Access Log](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-logging-to-kinesis.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
 
 
 ### Sample log messages
@@ -99,6 +100,21 @@ Namespace for **AWS API Gateway** Service is **AWS/ApiGateway**.
 
 For **Metadata**, add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
+### Collect Access Logs for AWS API Gateway   
+
+1. To your Hosted Collector, add an [AWS Kinesis Firehose for Logs Source](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/).
+   1. **Name**. Enter a name to display the new Source.
+   2. **Description**. Enter an optional description.
+   3. **Enable S3 Replay**. Do not check this option.
+   4. **Source Category**. Enter `aws/apigateway`.
+   5. **Fields**. Add below fields in it:
+      1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”. 
+      2. Add **region**, **namespace** and **accountid** fields and assign it's respective values.
+   6. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+   7. **Time Zone**. Select **Use time zone from log file. If none is detected use**, and select **Use Collector Default** from the dropdown.
+   8. **Timestamp Format.** Select **Automatically detect the format**.
+   9. **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
+   10. Click **Save**.
 
 ### Collect AWS API Gateway CloudTrail Logs
 
