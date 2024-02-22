@@ -1,7 +1,7 @@
 ---
 id: api-gateway
 title: AWS API Gateway
-description: Amazon API Gateway service allows you to create RESTful APIs, HTTP APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
+description: Amazon API Gateway service allows you to create RESTful APIs, HTTP APIs, and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
