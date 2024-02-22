@@ -189,11 +189,13 @@ For **Metadata**, add an **account** field to the source and assign it a value t
    2. For HTTP APIs, Go to **Metrics** under **Monitor**. Select the stage, Click on **Edit** and enable **Detailed route metrics**. Deploy it.
    <img src={useBaseUrl('img/integrations/amazon-aws/HTTP_API_Enhanced_Metrics.png')} alt="AWS API Gateway" />
    3. For WebSocket API, Run the below command in terminal,
-   :::
+   ```
    aws apigatewayv2 update-stage --api-id <API_ID> --stage-name <STAGE_NAME> --default-route-settings <YOUR_ROUTE_SETTINGS> --output <OUTPUT_FORMAT> --region <REGION>
+   ```
+   ```
    Example:
    aws apigatewayv2 update-stage --api-id av8eg0byq4 --stage-name production --default-route-settings "{\"DetailedMetricsEnabled\":true}" --output json --region eu-north-1
-   :::
+   ```
 
 ### Collect AWS API Gateway CloudTrail Logs
 
