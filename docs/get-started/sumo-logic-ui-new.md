@@ -85,13 +85,7 @@ To manage your personal Sumo account preferences:
 
 For more information, see [Account Preferences and Credentials](account-settings-preferences.md).
 
-## Customize your environment with tabs
-
-If you'd prefer to multitask and keep multiple tab open simultaneously (for example: log search, dashboards, App Catalog, and Preferences), we recommend utilizing your own web browser's tab grouping functionality. By adding Sumo Logic tabs to a tab group, any new tabs opened within the Sumo Logic platform will automatically open in the same tab group.
-
-<img src={useBaseUrl('/img/get-started/tabs.png')} alt="tabs.png" width="500" />
-
-This will also allow you to collapse the tab group to reclaim valuable real estate in your browser's tab bar.
+<!--
 
 ## Mastering everyday tasks
 
@@ -119,12 +113,10 @@ This section shows you how to get started working with logs and metrics. The li
 
 To launch a log search, metrics visualization, or Live Tail session, do the following:
 
-1. Go to the Sumo **Home** page.
-1. Do one of the following: 
-   * Click one of the following left-side nav menu icons:
-     * [Logs](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
-     * [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
-     * [Logs > Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
+Click one of the following left-side nav menu icons:
+* [Logs](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
+* [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
+* [Logs > Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
 
 ### Add dashboards and searches to your Favorites
 
@@ -178,6 +170,8 @@ For more information, see [Pinned Searches](/docs/get-started/library/#pinned-se
 You'll need Sumo Logic Administrator role privileges to perform most of these tasks.
 :::
 
+-->
+
 ### Configuration
 
 With the Sumo Logic Administrator role, you can manage your organization's data collection settings, ingest budget, partitions, and more. To access these settings, go to the top nav bar and click the **Configuration** icon.<br/><img src={useBaseUrl('img/get-started/config.png')} alt="config.png" width="400"/>
@@ -195,9 +189,19 @@ With the Sumo Logic Administrator role, you can manage user accounts, user roles
 * **Users and Roles**. [Users](/docs/manage/users-roles/users), [Roles](/docs/manage/users-roles/roles).
 * **Account Security Settings**. [Installation Tokens](/docs/manage/security/installation-tokens), [Access Keys](/docs/manage/security/access-keys), [Password Policy](/docs/manage/security/set-password-policy), [Policies](/docs/manage/security/audit-indexes/audit-index), [Service Allowlist Settings](/docs/manage/security/create-allowlist-ip-cidr-addresses), [SAML](/docs/manage/security/saml).
 
-### Content Administrator Library
+#### Content Administrator Library
 
 The **Content Administrator** library is available to Administrator roles only. To browse this content, go to **Library** > click the **View as** dropdown > click **Content Administrator**.<br/><img src={useBaseUrl('img/get-started/library-content-admin.gif')} alt="library-content-admin.gif" width="450"/>
+
+## Customize your environment with tabs
+
+If you'd prefer to multitask and keep multiple tab open simultaneously (for example: log search, dashboards, App Catalog, and Preferences), we recommend utilizing your own web browser's tab grouping functionality. By adding Sumo Logic tabs to a tab group, any new tabs opened within the Sumo Logic platform will automatically open in the same tab group.
+
+<img src={useBaseUrl('/img/get-started/tabs.png')} alt="tabs.png" width="500" />
+
+This will also allow you to collapse the tab group to reclaim valuable real estate in your browser's tab bar.
+
+<!--
 
 ## Become a Sumo Logic Pro user
 
@@ -205,17 +209,10 @@ Now that you're familiar with the layout and features in the Sumo Logic UI, you'
 
 You don't have to stop there either. You can take the next step and become Sumo Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page and click the **Certification** tab. See [Certification FAQs](/docs/get-started/faq#certification-faq) for more information.
 
+-->
+
 ## Get support
 
-There are a number of places where you can get the answers to questions you have:
+Contact [Support](https://support.sumologic.com/) or head to our [Sumo Logic Slack](https://sumodojo.slack.com/) channel.
 
-* Check out our [Release Notes](/docs/release-notes)
-* Search [Sumo Docs](https://help.sumologic.com/)
-* Visit the **Learn Page** in the Sumo Logic UI
-* Post a question on the [Sumo Logic Community](https://support.sumologic.com/hc/en-us/community/topics)
-* Contact [Support](https://support.sumologic.com/)
-* Join our [Sumo Logic Slack](https://sumodojo.slack.com/) channel
-
-:::tip
-See [Help Resources and Contacts](/docs/get-started/help) for full information.
-:::
+Have feedback? Send it to [our UX Team](mailto:sumologic-ux-research@sumologic.com).
