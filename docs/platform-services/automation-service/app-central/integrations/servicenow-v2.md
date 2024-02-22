@@ -3,46 +3,38 @@ title: ServiceNow V2
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/servicenow-v2.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/servicenow-v2.png')} alt="servicenow" width="100"/>
 
-Version: 2.3  
-Updated: Jun 30, 2023
+***Version: 2.3  
+Updated: Jun 30, 2023***
 
-ServiceNow V2 SaaS is for technical management support - create, update and gather ServiceNow ticket information.
+ServiceNow V2 SaaS is for technical management support - create, update, and gather ServiceNow ticket information.
 
 ## Actions
 
-* **Create Ticket** *(Notification)* - Inserts one record in the specified table
-* **Update Ticket** *(Notification)* - Updates the specified record with the name-value pairs included in the request body
-* **Close Ticket** *(Containment) - Closes a ticket specified by the System ID*
-* **Get Ticket Details** *(Enrichment)* - Retrieve a record from a table
-* **Search Tickets** *(Enrichment)* - Retrieve a record from a table
-* **ServiceNow Incidents Daemon** *(Daemon)* - Automatically retrieves new tickets
+* **Create Ticket** *(Notification)* - Inserts one record in the specified table.
+* **Update Ticket** *(Notification)* - Updates the specified record with the name-value pairs included in the request body.
+* **Close Ticket** *(Containment)* - Closes a ticket specified by the System ID.
+* **Get Ticket Details** *(Enrichment)* - Retrieve a record from a table.
+* **Search Tickets** *(Enrichment)* - Retrieve a record from a table.
+* **ServiceNow Incidents Daemon** *(Daemon)* - Automatically retrieves new tickets.
 
 ## ServiceNow V2 in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-1.png)
-
-1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-2.png)
-
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-1.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/>
+1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-2.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/>
 1. After the list of the integrations appears, search for the integration and click on the row.
-
-1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-3.png)  
- 
+1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-3.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/> 
 1. Populate all the required fields (\*):
-   * URL: ServiceNow URL in the format 'https://company.service-now.com/'
-   * Username: your ServiceNow username
-   * Password: your ServiceNow password
-
-1. Click SAVE. <br/>![](/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-4.png)
-
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-5.png)
-
-1. Click TEST SAVED SETTINGS. <br/>![](/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-6.png)
-
-1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-7.png)  
- 
+   * **URL**. ServiceNow URL in the format `https://company.service-now.com/`.
+   * **Username**. Your ServiceNow username.
+   * **Password**. Your ServiceNow password.
+1. Click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-4.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/>
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-5.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/>
+1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-6.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/>
+1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/servicenow-v2/servicenow-v2-7.png')} style={{border:'1px solid gray'}} alt="servicenow" width="400"/> 
 
 **ServiceNow Incidents Daemon**
 
