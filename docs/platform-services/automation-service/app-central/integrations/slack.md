@@ -3,49 +3,44 @@ title: Slack
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/slack.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/slack.png')} alt="slack" width="80"/>
 
-Version: 1.8  
-Updated: Jan 16, 2024
+***Version: 1.8  
+Updated: Jan 16, 2024***
 
 Create a public or private channel, Send messages or Files to channels or Users directly. **C**loud SOAR Slack integration keeps teams connected. Organize conversations, and quickly find what you need to get work done. 
 
 ## Actions
 
-* **Send Message** *(Notification)* - Sends a message to a channel or direct message
-* **Send File** *(Notification)* - Sends a file to a channel or direct user
-* **Create Channel** *(Notification)* - Initiates a public or private channel-based conversation
-* **Get Channel** *(Notification)* - Retrieve information about a conversation
-* **Invite To Channel** *(Notification)* - Invites users to a channel
-* **Search into Conversations** *(Notification)* - Searches for messages and files matching a query
-* **List Conversations History** *(Notification)* - Fetches a conversation's history of messages and events
-* **Remove User From Channel** *(Containment)* - Removes a user from a conversation
-* **Archive Channel** *(Containment)* - Archives a conversation
+* **Send Message** *(Notification)* - Sends a message to a channel or direct message.
+* **Send File** *(Notification)* - Sends a file to a channel or direct user.
+* **Create Channel** *(Notification)* - Initiates a public or private channel-based conversation.
+* **Get Channel** *(Notification)* - Retrieve information about a conversation.
+* **Invite To Channel** *(Notification)* - Invites users to a channel.
+* **Search into Conversations** *(Notification)* - Searches for messages and files matching a query.
+* **List Conversations History** *(Notification)* - Fetches a conversation's history of messages and events.
+* **Remove User From Channel** *(Containment)* - Removes a user from a conversation.
+* **Archive Channel** *(Containment)* - Archives a conversation.
 * **Deactivate Account** *(Containment)* - Remove a user from a workspace.
-* **Delete Message** *(Containment)* - Deletes a message
-* **Get Members** *(Notification)* - Retrieve members of a conversation
+* **Delete Message** *(Containment)* - Deletes a message.
+* **Get Members** *(Notification)* - Retrieve members of a conversation.
 * **Get User** *(Notification)* - Gets information about a user.
-* **List Channels** *(Notification)* - Lists all channels in a Slack team
-* **List Users** *(Notification)* - Lists all users in a Slack team
-* **Ask Question** (Notification) - Ask a Question, you can use any option to send a message/question to any user to user or user to channel for both bot and user with multiple options
-* **Ask For User Email** (Notification) - Retrieve an Email Address or User tagged in the slack chat
+* **List Channels** *(Notification)* - Lists all channels in a Slack team.
+* **List Users** *(Notification)* - Lists all users in a Slack team.
+* **Ask Question** (Notification) - Ask a Question, you can use any option to send a message/question to any user to user or user to channel for both bot and user with multiple options.
+* **Ask For User Email** (Notification) - Retrieve an Email Address or User tagged in the slack chat.
 
-## Slack Configuration
+## Slack configuration
 
-1. First you need to create a Slack App on your workspace. Click on this [link](https://api.slack.com/apps).
-
-1. Click on Create an App button. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-1.png)
-
-1. Choose From scratch. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-2.png)
-
-1. Insert a a name for the app and select the workspace. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-3.png)
-
-1. Once you created your App, you have to add Permissions. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-4.png)
-
-1. Alternatively you can see OAuth & Permissions from this page. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-5.png)
-
-1. Now you have to add the Scopes for User Token and Bot Token. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-6.png)
+1. [Create](https://api.slack.com/apps) a Slack App on your workspace.
+1. Click on **Create an App** button.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-1.png')} style={{border:'1px solid gray'}} alt="slack" width="800"/>
+1. Choose **From scratch**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-2.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+1. Insert a name for the app and select the workspace.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-3.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+1. Once you created your App, you have to add **Permissions**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-4.png')} style={{border:'1px solid gray'}} alt="slack" width="800"/>
+1. Alternatively you can see **OAuth & Permissions** from this page.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-5.png')} style={{border:'1px solid gray'}} alt="slack" width="800"/>
+1. Now you have to add the Scopes for User Token and Bot Token. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-6.png')} style={{border:'1px solid gray'}} alt="slack" width="800"/>
    * Tokens
       * Bot tokens let your app act independently.
       * User tokens allow you to work directly on behalf of users, based on the OAuth scopes that installing users' awards to your app.
@@ -92,40 +87,25 @@ Create a public or private channel, Send messages or Files to channels or Users 
       * User Token:
           * `search:read`. Search a workspace’s content.
     * **Actions: Send File**<br/>Bot Token and User Token need the same scopes:
-      * `files:write`. Upload, edit, and delete files as your Slack app. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-7.png) <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-8.png)
-
-1. Now you need to Install the APP in the workspace. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-9.png)
-
-1. After installing the App now, you have two Tokens, these tokens are automatically generated when you installed the app. You will need these two tokens later. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-10.png)
+      * `files:write`. Upload, edit, and delete files as your Slack app.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-7.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-8.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+1. Now you need to Install the APP in the workspace. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-9.png')} style={{border:'1px solid gray'}} alt="slack" width="800"/>
+1. After installing the App now, you have two Tokens, these tokens are automatically generated when you installed the app. You will need these two tokens later. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-10.png')} style={{border:'1px solid gray'}} alt="slack" width="800"/>
 
 ## Slack in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-11.png)
-
-1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-12.png)
-
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-11.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-12.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
 1. After the list of the integrations appears, search/look for the integration and click on the row.
-
-1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-13.png)
-
+1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-13.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
 1. Create a new resource for the User.
-
 1. Copy the User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
-
-1. Once you have filled in all the required fields, click Save. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-14.png)
-
+1. Once you have filled in all the required fields, click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-14.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
 1. Create another resource for the Bot User.
-
 1. Copy the Bot User OAuth Token from Slack webpage and paste it In the Bot/User OAuth Token.
-
-1. Once you have filled in all the required fields, click Save. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-15.png) <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-16.png)
-
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-17.png)
-
-1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-18.png)
-
-1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/slack/slack-19.png)
-
+1. Once you have filled in all the required fields, click **SAVE**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-15.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-16.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-17.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-18.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
+1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/slack/slack-19.png')} style={{border:'1px solid gray'}} alt="slack" width="400"/>
 
 ## Change Log
 

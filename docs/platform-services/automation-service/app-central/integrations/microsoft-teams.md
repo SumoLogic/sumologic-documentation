@@ -3,11 +3,12 @@ title: Microsoft Teams
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/microsoft-teams.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-teams.png')} alt="microsoft-teamsg" width="100"/>
 
-Version: 1.8  
-Updated: Jul 05, 2023
+***Version: 1.8  
+Updated: Jul 05, 2023***
 
 Microsoft Teams is the ultimate hub for teamwork and intelligent communications. Built on the strength and scale of Microsoft 365 with over 120 million users, Microsoft Teams is a chat-based workspace in Microsoft 365. Microsoft Graph makes it easy to create large numbers of teams and populate them with users and channels, by automating the creation and management of teams, and channels. also send a messages to chats or channels.
 
@@ -15,26 +16,26 @@ Microsoft Teams is the ultimate hub for teamwork and intelligent communications.
 
 * **Add Channel Members**  *(Notification)* - Add a conversation member to a Channel. This operation is allowed only for private Channels.
 * **Add Team Members**  *(Notification)* - Add new multiple conversation Members to a Team.
-* **Archive Team** *(Containment)* - Archive the specified team. When a team is archived, users can no longer send or like messages on any channel in the team, edit the team's name, description, or other settings, or in general make most changes to the team. Membership changes to the team continue to be allowed
-* **Archive Team On Incident Closure Trigger** (Trigger) -Archive Team automatically when the SOAR Incident is closed
-* **Create Channel** *(Notification)* - Create a new channel by including the display name and description in a team
+* **Archive Team** *(Containment)* - Archive the specified team. When a team is archived, users can no longer send or like messages on any channel in the team, edit the team's name, description, or other settings, or in general make most changes to the team. Membership changes to the team continue to be allowed.
+* **Archive Team On Incident Closure Trigger** *(Trigger)* - Archive Team automatically when the SOAR Incident is closed.
+* **Create Channel** *(Notification)* - Create a new channel by including the display name and description in a team.
 * **Create Team**  *(Notification)* - Create a Team from scratch.
-* **Create Team On Incident Creation Trigger** *(Trigger)* - When a new incident is created, automatically a new Team will be created in Microsoft Teams and all investigators of the incident will be added to the Team
-* **Delete Channel** *(Containment)* - Delete the specified Channel
-* **List Channel Members** *(Enrichment)* -Retrieve a list of conversation members from a Channel
-* **List Channel Messages**  *(Enrichment)* -Retrieve the list of messages in a channel of a team. By using the delta query, you can get new or updated messages in a channel
+* **Create Team On Incident Creation Trigger** *(Trigger)* - When a new incident is created, automatically a new Team will be created in Microsoft Teams and all investigators of the incident will be added to the Team.
+* **Delete Channel** *(Containment)* - Delete the specified Channel.
+* **List Channel Members** *(Enrichment)* - Retrieve a list of conversation members from a Channel.
+* **List Channel Messages**  *(Enrichment)* - Retrieve the list of messages in a channel of a team. By using the delta query, you can get new or updated messages in a channel.
 * **List Channels**  *(Enrichment)* - Retrieve the list of channels in this team.
-* **List Team Members** *(Enrichment)* - List the conversation member collection of a Team
-* **List Teams** *(Enrichment)* - List all the Teams available in an organization
-* **List Users** *(Enrichment)* - Retrieve a list of users objects
-* **Remove Member From Channel** *(Containment)* - Delete a conversation member from a Channel. This operation is allowed only for private channels
-* **Search Channels Messages** *(Enrichment)* - Retrieve messages across all Channels in a Team
-* **Search Chats Messages** *(Enrichment)* - Retrieve all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats
-* **Send Chat Message** *(Notification)* - Create a new chat and Send a chat message to a one-on-one chat or group chat conversation
-* **Send Teams Message** *(Notification)* - Send a new chat Message in the specified Channel in a Team
-* **Microsoft Teams List Channel Messages Daemon** *(Daemon)* - A Daemon that retrieves the list of messages in a channel of a team
+* **List Team Members** *(Enrichment)* - List the conversation member collection of a Team.
+* **List Teams** *(Enrichment)* - List all the Teams available in an organization.
+* **List Users** *(Enrichment)* - Retrieve a list of users objects.
+* **Remove Member From Channel** *(Containment)* - Delete a conversation member from a Channel. This operation is allowed only for private channels.
+* **Search Channels Messages** *(Enrichment)* - Retrieve messages across all Channels in a Team.
+* **Search Chats Messages** *(Enrichment)* - Retrieve all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+* **Send Chat Message** *(Notification)* - Create a new chat and Send a chat message to a one-on-one chat or group chat conversation.
+* **Send Teams Message** *(Notification)* - Send a new chat Message in the specified Channel in a Team.
+* **Microsoft Teams List Channel Messages Daemon** *(Daemon)* - A Daemon that retrieves the list of messages in a channel of a team.
 
-## Microsoft Teams Configuration
+## Microsoft Teams configuration
 
 Each application you want the Microsoft identity platform to perform identity and access management (IAM) needs to be registered. Registering it establishes a trust relationship between your application and the identity provider, the Microsoft identity platform.
 
@@ -45,27 +46,21 @@ Registering your application establishes a trust relationship between your app a
 Follow these steps to create the app registration:
 
 1. Sign in to the [Azure portal](https://portal.azure.com/).
-1.  If you have access to multiple tenants, use the **Directory + subscription** filter ![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-1.png) in the top menu to select the tenant in which you want to register an application.
+1.  If you have access to multiple tenants, use the **Directory + subscription** filter <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-1.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="30"/> in the top menu to select the tenant in which you want to register an application.
 1. Search for and select the **Azure Active Directory.**
 1. Under Manage, select **App registrations** > **New registration**.
 1. Enter a **Name** for your application. Users of your app might see this name, and you can change it later.
-1. Select **Register** to complete the initial app registration. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-2.png)
-
-1. Don't enter anything for Redirect URI (optional)
-
+1. Select **Register** to complete the initial app registration. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-2.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="800"/>
+1. Don't enter anything for **Redirect URI (optional)**.
 1. When registration completes, the Azure portal displays the app registration's Overview pane, which includes its **Application (client) ID**. Also referred to as just *client ID*, this value uniquely identifies your application in the Microsoft identity platform.
 
-The client ID as one aspect in validating the security tokens it receives from the identity platform.
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-3.png)
+The client ID as one aspect in validating the security tokens it receives from the identity platform.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-3.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="800"/>
 
 **Add Credentials**
 
 Credentials are used by confidential client applications that access an API. Examples of confidential clients are web apps, or service- and daemon-type applications. Credentials allow your application to authenticate as itself, requiring no interaction from a user at runtime.
 
-You can add client secrets (a string) as credentials to your confidential client app registration.
-
-![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-4.png)
+You can add client secrets (a string) as credentials to your confidential client app registration.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-4.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="800"/>
 
 **Add a Client Secret**
 
@@ -442,38 +437,29 @@ For detailed API documentation visit [**https://docs.microsoft.com/en-us/graph/a
 
 ## Microsoft Teams in Automation Service and Cloud SOAR
 
-1. To configure the integration in Sumo Logic Cloud SOAR, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-5.png)
-
-1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-6.png)
-
+1. To configure the integration in Sumo Logic Cloud SOAR, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-5.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
+1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-6.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
 1. After the list of the integrations appears, search for Microsoft Teams integration and click on the row.
-
-1. The integration details will appear. Click on the "+" button to add new Resource.
-
-1. Please add two different resources for Application and Delegated context. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-7.png)
-
+1. The integration details will appear. Click on the **"+"** button to add new Resource.
+1. Add two different resources for Application and Delegated context.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-7.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
 1. Populate the resource fields as indicated.
-   * Label: The resource name
-   * API URL: The default Microsoft Graph API URL is 'https://graph.microsoft.com/v1.0'
-   * Tenant ID: Directory (Tenant) ID (You can check from you app registration page)
-   * Authentication Grant Type: you can choose any value from the following according to the permissions you add to your App:
+   * **Label**. The resource name.
+   * **API URL**. The default Microsoft Graph API URL is 'https://graph.microsoft.com/v1.0'.
+   * **Tenant ID**. Directory (Tenant) ID (You can check from you app registration page).
+   * **Authentication Grant Type**. You can choose any value from the following according to the permissions you add to your App:
 	  * Password (Delegated Context)
 	  * Client Credentials (Application Context)
-   * Client ID: Application (Client) ID, Required for both Authentication Grant Type (You can check from you app registration page)
-   * Client Secret: Application (Client) Secret, Required for both Authentication Grant Type (Client Secret that you copied earlier)
-   * Username: Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context)
-   * Password: Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context)
-   * Cloud SOAR URL: Provide the SOAR URL in format 'https://your-cloud-soar-host/incmansuite\_ng' (this field is only required and use in Triggers)
-   * Cloud SOAR JWT Token: provide your SOAR JWT which you can copy from your profile section (this field is only required and use in Triggers)
-   * Team Incident Internal Field Name: To save Team ID in Incident Field, Required only for Triggers, For Example: opt\_1
-
-1. Click Save. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-8.png)
-
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-9.png)
-
-1. Click Test to test the integration connector. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-10.png)
-
-1. You should receive a successful notification in the bottom right corner if resource was tested successfully. <br/>![](/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-11.png)
+   * **Client ID**. Application (Client) ID, Required for both Authentication Grant Type (You can check from you app registration page).
+   * **Client Secret**. Application (Client) Secret, Required for both Authentication Grant Type (Client Secret that you copied earlier).
+   * **Username**. Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context).
+   * **Password**. Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context).
+   * **Cloud SOAR URL**. Provide the SOAR URL in format 'https://your-cloud-soar-host/incmansuite\_ng' (this field is only required and use in Triggers).
+   * **Cloud SOAR JWT Token**. Provide your SOAR JWT which you can copy from your profile section (this field is only required and use in Triggers).
+   * **Team Incident Internal Field Name**. To save Team ID in Incident Field, Required only for Triggers, For Example: opt\_1.
+1. Click **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-8.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-9.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
+1. Click **TEST** to test the integration connector. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-10.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="300"/>
+1. You should receive a successful notification in the bottom right corner if resource was tested successfully.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-11.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
 
 ## Change Log
 
