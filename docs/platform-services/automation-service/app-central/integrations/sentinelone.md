@@ -3,32 +3,33 @@ title: SentinelOne
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/sentinelone.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sentinelone.png')} alt="sentinelone" width="100"/>
 
-Version: 1.8  
-Updated: Jun 22, 2023
+***Version: 1.8  
+Updated: Jun 22, 2023***
 
 SentinelOne Endpoint Protection Platform (EPP) unifies prevention, detection, and response in a single, purpose-built agent powered by machine learning and automation. It provides prevention and detection of attacks across all major vectors, rapid elimination of threats with fully automated, policy-driven response capabilities, and complete visibility into the endpoint environment with full-context, real-time forensics.
 
 ## Actions
 
-* **Hash Reputation** *(Enrichment)*- Gather hash reputation information
-* **Add Blacklist Items** (*Containment*) - Add a wildcard hash to blacklist
-* **Get Blacklist Items** *(Enrichment)* - Get blacklisted hashes
-* **Delete Blacklist Items** (*Containment*) - Remove a wildcard hash from blacklist
-* **Get Threats** *(Enrichment)* - Get all Threats
-* **List Group IDs** *(Enrichment)* - List Group IDs on the system
-* **List Agents** *(Enrichment)* - Listagents
-* **Get Sites** *(Enrichment)* - Get sites
-* **Get Activities** *(Enrichment)* - Get last activities
-* **Connect to Network** *(Containment)* - Reconnects an endpoint to the network
-* **Disconnect from Network** *(Containment)* - Isolates an endpoint from the network
-* **Get Alerts** *(Enrichment)* - Fetches base Alerts from SentinelOne
-* **Update Alert SentinelOne** *(Notification)* - Updates the Analyst Verdict of an alert(s)
-* **Monitor Threat Status** *(Scheduled)* - Scheduled action that exits when the status of a threat is “resolved” (timeout currently set to 12 hours)
-* **Update Threat** *(Notification)* - Updates the Status and Analyst Verdict of a SentinelOne Threat Incident
-* **SentinelOne Threats Daemon** *(Daemon)* - automatically ingest SentinelOne Threats
+* **Hash Reputation** *(Enrichment)*- Gather hash reputation information.
+* **Add Blacklist Items** (*Containment*) - Add a wildcard hash to blacklist.
+* **Get Blacklist Items** *(Enrichment)* - Get blacklisted hashes.
+* **Delete Blacklist Items** (*Containment*) - Remove a wildcard hash from blacklist.
+* **Get Threats** *(Enrichment)* - Get all Threats.
+* **List Group IDs** *(Enrichment)* - List Group IDs on the system.
+* **List Agents** *(Enrichment)* - Listagents.
+* **Get Sites** *(Enrichment)* - Get sites.
+* **Get Activities** *(Enrichment)* - Get last activities.
+* **Connect to Network** *(Containment)* - Reconnects an endpoint to the network.
+* **Disconnect from Network** *(Containment)* - Isolates an endpoint from the network.
+* **Get Alerts** *(Enrichment)* - Fetches base Alerts from SentinelOne.
+* **Update Alert SentinelOne** *(Notification)* - Updates the Analyst Verdict of an alert(s).
+* **Monitor Threat Status** *(Scheduled)* - Scheduled action that exits when the status of a threat is “resolved” (timeout currently set to 12 hours).
+* **Update Threat** *(Notification)* - Updates the Status and Analyst Verdict of a SentinelOne Threat Incident.
+* **SentinelOne Threats Daemon** *(Daemon)* - automatically ingest SentinelOne Threats.
 
 ## Category
 

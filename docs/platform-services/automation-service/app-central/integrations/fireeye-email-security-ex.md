@@ -3,19 +3,20 @@ title: FireEye Email Security (EX)
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/fireeye-email-security-ex.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-email-security-ex.png')} alt="fireeye-email-security-ex" width="100"/>
 
-Version: 1.1  
-Updated: Jul 03, 2023
+***Version: 1.1  
+Updated: Jul 03, 2023***
 
 Full stack email security solution for email analysis.
 
 ## Actions
 
-* **Get Alert Info** (*Enrichment*) - Query FireEye EX for alert details
-* **Get ATI Details** (*Enrichment*) - Get the ATI details for the specified alert Id
-* **Add YARA Rule** (*Containment*) - Add a new YARA rule from the specified file
+* **Get Alert Info** (*Enrichment*) - Query FireEye EX for alert details.
+* **Get ATI Details** (*Enrichment*) - Get the ATI details for the specified alert Id.
+* **Add YARA Rule** (*Containment*) - Add a new YARA rule from the specified file.
 
 ## Change Log
 

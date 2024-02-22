@@ -3,17 +3,18 @@ title: Devo
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/devo.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/devo.png')} alt="darktrace" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 DEVO integration to query data from Devo.
 
 ## Actions
 
-* **Query Data** (*Enrichment*) - Query data from DEVO
+* **Query Data** (*Enrichment*) - Query data from DEVO.
 
 ## Change Log
 

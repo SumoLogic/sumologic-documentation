@@ -105,7 +105,7 @@ yum update -y
 yum install -y kernel-$(uname -r) kernel-headers-$(uname -r) kernel-devel-$(uname -r) gcc*
 dnf install -y 'dnf-command(config-manager)'
 dnf config-manager --set-enabled powertools
-yum install -y elfutils-libelf-devel python36
+yum install -y elfutils-libelf-devel python3
 reboot
 ```
 
