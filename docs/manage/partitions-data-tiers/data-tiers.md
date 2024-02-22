@@ -1,7 +1,7 @@
 ---
 id: data-tiers
 title: Data Tiers
-description: Data Tiers provide the ability to allocate data to different storage tiers based on frequency of access - Continuous, Frequent, Infrequent, and Flex.
+description: Data Tiers provide the ability to allocate data to different storage tiers based on frequency of access - Continuous, Frequent, and Infrequent.
 ---
 
 
