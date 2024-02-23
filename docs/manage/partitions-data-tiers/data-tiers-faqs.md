@@ -12,25 +12,11 @@ This page answers frequently asked questions about Data Tiers. For information a
 
 The Continuous Data Tier is available in all Sumo subscriptions. Frequent and Infrequent are available only if you have Sumo Logic Enterprise Suite. 
 
-## Flex Pricing
-
-### What is Flex Pricing?
+## What is Flex Pricing?
 
 import FlexPricing from '../../reuse/flex-pricing.md';
 
 <FlexPricing/>
-
-### What are the benefits of Flex Pricing?
-
-<!-- to do-->
-
-### Why should I consider it versus the three tiers?
-
-<!-- to do-->
-
-### How should I approach moving from Infrequent, Frequent, or Continuous Tier to a plan with Flex Pricing only?
-
-<!-- to do-->
 
 ## Is the Infrequent Tier available to existing Cloud Flex customers?
 

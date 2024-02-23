@@ -1,5 +1,11 @@
-Say goodbye to data tiers and hello to Sumo Logic Flex Pricing (Beta), our new unlimited ingest log analytics plan that's based on the volume of analytics you generate from your data, rather than the volume of data you send to Sumo Logic for ingestion.
+Introducing Sumo Logic Flex: the solution that revolutionizes log analytics pricing for technical teams. Bid farewell to data tiers as we usher in an era where your analytics volume, not data ingestion, dictates pricing.
 
-This new pricing model provides you with an efficient and centralized log analytics architecture where you can manage and scale enterprise-wide cloud-scale log ingestion without the risk of runaway costs (should we say no penalties or cost overages?). With all of your application, infrastructure, and security data and insights unified one place, and unlimited user access, it's easy to collaborate. By removing ingest limitations and enabling an enterprise-wide single source of truth for your analytics, this allows Dev, Sec, and Ops teams to troubleshoot faster and accelerate release velocity while delivering reliable and secure digital experiences.
+With Sumo Logic Flex, you gain an efficient, centralized log analytics framework capable of managing enterprise-wide cloud-scale log ingestion without cost concerns. Consolidate all your data streams — application, infrastructure, security — into a single platform with unlimited user access, fostering seamless collaboration.
 
-The more log data ingested, the more accurate your analytics and ML/AI outcomes.
+The more log data ingested, the sharper your analytics and ML/AI insights become. By eliminating ingest limitations and empowering an ML/AI-driven single source of truth for analytics, Flex enables DevOps and DevSecOps teams to troubleshoot faster, accelerate release velocity, and ensure reliable, secure digital experiences.
+
+:::note
+Effective March 5, Flex pricing is the default plan for new customers who sign up with Sumo.
+
+Effective May 15, Flex will become available for existing customers, in parallel with the three data tiers (Frequent, Infrequent, and Continuous).
+:::
