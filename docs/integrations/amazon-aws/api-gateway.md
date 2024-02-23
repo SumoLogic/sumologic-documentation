@@ -165,21 +165,21 @@ For **Metadata**, add an **account** field to the source and assign it a value t
 
 ### Collect Access Logs for AWS API Gateway   
 
-1. To your Hosted Collector, add an [AWS Kinesis Firehose for Logs Source](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/).
+1. To your Hosted Collector, add an [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/).
    1. **Name**. Enter a name to display the new Source.
    2. **Description**. Enter an optional description.
    3. **Enable S3 Replay**. Do not check this option.
    4. **Source Category**. Enter `aws/apigateway`.
    5. **Fields**. Add below fields in it:
-      1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the `account field`. 
+      1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the `account field`.
       2. Add **region**, **namespace**, and **accountid** fields and assign it's respective values.
    6. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
    7. **Time Zone**. Select **Use time zone from log file. If none is detected use**, and select **Use Collector Default** from the dropdown.
    8. **Timestamp Format.** Select **Automatically detect the format**.
    9. **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
    10. Click **Save**.
-1. [Create Stack](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#cloudformation-template) in AWS console with given [CloudFormation Template](https://help.sumologic.com/files/KinesisFirehoseCWLogs.template.yaml).
-1. To Export logs, refer to [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group).
+1. [Create Stack](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#cloudformation-template) in AWS console with given [CloudFormation Template](https://help.sumologic.com/files/KinesisFirehoseCWLogs.template.yaml).
+1. To Export logs, refer to [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group).
 1. Enable access logging with JSON as Log format for each APIs:
    1. [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-logging-to-kinesis.html)
    1. [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging.html)
@@ -189,16 +189,16 @@ For **Metadata**, add an **account** field to the source and assign it a value t
 
 Enable enhanced metrics for REST APIs:
 
-1. Enable access logs in **Logs and tracing** section. 
-1. Click on **Edit**. 
+1. Enable access logs in **Logs and tracing** section.
+1. Click on **Edit**.
 1. Select **Detailed metrics** checkbox.
 1. Click **Save changes**.
 
 Enable enhanced metrics for HTTPS APIs:
 
-1. Go to **Metrics** under **Monitor**. 
+1. Go to **Metrics** under **Monitor**.
 1. Select the stage, and click on **Edit**.
-1. Toggle the **enabled** button to enable the **Detailed route metrics**. 
+1. Toggle the **enabled** button to enable the **Detailed route metrics**.
 1. Click **Save**.
 1. Click on **Deploy**.<br/><img src={useBaseUrl('img/integrations/amazon-aws/HTTP_API_Enhanced_Metrics.png')} alt="AWS API Gateway" />
 
