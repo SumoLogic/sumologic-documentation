@@ -16,21 +16,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Changes and Enhancements 
 * Playbooks: 
-  * Enabled [Testing playbooks](https://help.sumologic.com/docs/cloud-soar/automation/#testing-playbooks) where user can choose between: Insight, Custom (JSON payload) and for CloudSoar also Incidents.
-  * Node configuration: Added suggested values present in yaml.
+  * Enabled  [Playbook Testing](https://help.sumologic.com/docs/cloud-soar/automation/#testing-playbooks) feature. With this improvement is now possible to test a playbook configuration, before publishing it, using Insight, Incident or a custom JSON as input.
+  * Action configuration: integration fields configuration now suggest a default values, if present.
   * UserChoice, answer by Email: Fixed Authorizer usage from previous nodes.
-* AppCentral: Integrations added link to [Integrations in App Central
-](https://help.sumologic.com/docs/platform-services/automation-service/app-central/integrations/) for each integration in Installation modal.
-* Integrations: Enabled custom docker container.
+* AppCentral: Within the Integrations section, each integration card contains now an hyperlink to the related public documentation page [Integrations in App Central](https://help.sumologic.com/docs/platform-services/automation-service/app-central/integrations/).
+* Integrations: Is now possible to send custom commands when integration docker image is created. This feature is available fot Not certified integration only.
+
 #### Cloud SOAR 
-* Reports: Enabled new reports.
+* Enabled a new reporting feature for case management and dashboarding.
 
 ### Bug fixes 
 * Integrations: 
-  * Fixed test resource for not saved values.
-* AppCentral: Fixed playbook maximize view.
+  * Fixed Resource test issue.
+* AppCentral: Fixed playbook preview when maximized view is used.
  
 #### Cloud SOAR 
 * Rules: Fixed scheduled execution.
 * Tasks: Fixed creation if required field is dismissed.
-* Incidents: Widgets fixed full screen view buttons.
+* Incidents: Fixed full screen view buttons for widgets.
