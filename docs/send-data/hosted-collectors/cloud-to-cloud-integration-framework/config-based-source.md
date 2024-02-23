@@ -25,6 +25,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 :::
 
 # Setup
+
 Follow the sections below to gather the required vendor information and setup the source with a compatible configuration.
 
 ## Gather Vendor Requirements
@@ -53,22 +54,7 @@ When you create an Config Based Source, you add it to a Hosted Collector. Before
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    - ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    - ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. **Authentication Configuration**. This section configures the authentication that is required by the vendor's API.
-   1. **Authentication type**. Select one of currently supported authentication types: APIKey, Basic, or Bearer. If no authentication is required, select None. The deafault is Basic.
-      1. **APIKey**. Involves passing a non-expired/static token in the request header or query parameters, with a customizable token name.
-         1. **Name**. Name of the APIKey parameter.
-         1. **Value**. API key itself.
-         1. **Style**. Represents how the API key should be sent in the request. Possible options: In Params (1), In Header (2), In Query String (3). By default, the API-Key is passed in the header of the request.
-            1. **AuthStyleInParams**. Send the credentials in the POST body as application/x-www-form-urlencoded parameters.
-            1. **AuthStyleInHeader**. Send the credentials using HTTP Basic Authorization.
-            1. **AuthStyleInQueryString**. Send the credentials in the query parameters.
-         1. **Prefix**. The prefix used with the apikey. By default the value is empty and no prefix will be used.
-      1. **Basic**. Requires the user's username and password to be provided in the request header.
-         1. **Username**. Basic auth username.
-         1. **Password**. Basic auth password.
-      1. **Bearer**. Requires a non-expired/static bearer token to be included in the Authorization header.
-         1. **Token**. Token is the actual non-expirable authentication token.
-         1. **Prefix**. The prefix used with the token (e.g., "Bearer"). If not specified, the default prefix "Bearer" will be used.
+1. **Authentication Configuration**. This section configures the authentication that is required by the vendor's API. See [Authentication Section](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/config-based-source#authentication-configuration) for more details.
 1. **Request Configuration**. This section configures the request that is created for the first call to the vendor's API within the polling cycle. This component prepares, executes and makes it ready for the next polling cycle. For now we only support HTTP requests.
    1. **Method**. The HTTP method used in the request. Possible values: GET, POST. Default value: GET.
    1. **Endpoint**. The original api endpoint URL as a string that the requestor will append parameters to.
@@ -102,37 +88,47 @@ When you create an Config Based Source, you add it to a Hosted Collector. Before
 1. (Optional) **Polling Interval**. Set how frequently to poll for new data. It must be between 5 minutes and 48 hours
 1. When you are finished configuring the Source, click **Save**.
 
-
 ### Authentication Configuration
+
 Choose the type of authentication the source will use based on the vendor API requirements and configure the details of that specific authentication type.
 
 #### Basic
-Select this authentication option if the vendor API requires basic HTTP authentication. The source will always add the `Authorization` HTTP request header with the base64 encoded `username:password` as the value.
+
+It is a default value. Select this authentication option if the vendor API requires basic HTTP authentication. The source will always add the `Authorization` HTTP request header with the base64 encoded `username:password` as the value.
+
 - **Basic HTTP Username**: The username required by the vendor API.
 - **Basic HTTP Password**: The password required by the vendor API.
 
 #### API Key
+
 Select this authentication option if the vendor API requires you to use a static API key.
-- **How should we use your API key?**
-   - **In HTTP Request Header**: The requests always include the API key in the HTTP headers.
-   - **In HTTP Request URL Parameters**: The request always includes the API key as part of the URL query parameters.
+
 - **Location Key**: The key value when using the API key. This is the header key if used in the headers and the URL parameter key if used in the URL parameters.
 - **API Key**: Your secret API key credentials
-- **API Key Prefix**: This is an optional prefix you can add to your API key. Some APIs require a text prefix, followed by a space and then your secret API key. For example: `SSWS {api-key}`.
+- **API Key Prefix**: This is an optional prefix you can add to your API key. Some APIs require a text prefix, followed by a space and then your secret API key. For example: `SSWS {api-key}`. By default the value is empty and no prefix will be used.
+- **How should we use your API key?**
+  - **In HTTP Request Header**: The requests always include the API key in the HTTP headers. It is a default value.
+  - **In HTTP Request URL Parameters**: The request always includes the API key as part of the URL query parameters.
 
 #### Bearer
+
 Select this authentication option if the vendor API requires bearer authentication. This is similar to the API Key option, but it is a common format many APIs use. The source will always add the `Authorization` HTTP request header with text `Bearer` followed by your API token. For example: `Authorization: Bearer <token>`.
+
 - **Bearer Token**: Your secret API key credentials
 
 #### None
+
 Select this authentication option if the vendor API does not require any form of authentication.
 
 ### Request Configuration
-### Tracking Progression Configuration
-### Response Log Ingest Configuration
-### Pagination Configuration
-### HTTP Client Options
 
+### Tracking Progression Configuration
+
+### Response Log Ingest Configuration
+
+### Pagination Configuration
+
+### HTTP Client Options
 
 ## JSON Configuration
 
@@ -153,15 +149,14 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | category                | String      | No       | `null`        | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`                                                                                                                                                                                                                                         |
 | parserPath              | String      | No       | `null`        | The path to a parser. name                                                                                                                                                                                                               |                                                                                                                                                                                                                                                           |
 | fields                  | JSON Object | No       | `null`        | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.                                                                                          | `{"_siemForward": false, "fieldA": "valueA"}`                                                                                                                                                                                                             |
-| authType                | String      | Yes      | `Basic`       | Authentication type.                                                                                                                                                                                                                     | `"authType": "APIKey"`                                                                                                                                                                                                                                    |
-| apiKeyName              | String      | Yes      | `2.1`         | Name of the API-Key parameter.                                                                                                                                                                                                           | `"apiKeyName": "Authorization"`                                                                                                                                                                                                                           |
-| apiKeyValue             | String      | Yes      | `null`        | API-Key itself.                                                                                                                                                                                                                          | `"apiKeyValue": "value"`                                                                                                                                                                                                                                  |
-| apiKeyAuthStyle         | Integer     | Yes      | `2`           | Represents how the API key should be sent in the request. Possible options: In Params (1), In Header (2), In Query String (3).                                                                                                           | `"apiKeyAuthStyle": 2`                                                                                                                                                                                                                                    |
-| apiKeyPrefix            | String      | No       | `null`        | The prefix used with the apikey.                                                                                                                                                                                                         | `"apiKeyPrefix": "SSWS"`                                                                                                                                                                                                                                  |
-| basicUsername           | String      | Yes      | `null`        | Basic auth username.                                                                                                                                                                                                                     | `"basicUsername": "username"`                                                                                                                                                                                                                             |
-| basicPassword           | String      | Yes      | `null`        | Basic auth password.                                                                                                                                                                                                                     | `"basicPassword": "password"`                                                                                                                                                                                                                             |
-| bearerToken             | String      | Yes      | `null`        | Token is the actual non-expirable authentication token.                                                                                                                                                                                  | `"bearerToken": "token"`                                                                                                                                                                                                                                  |
-| bearerPrefix            | String      | No       | `Bearer`      | The prefix used with the token (e.g., "Bearer").                                                                                                                                                                                         | `"bearerPrefix": "SSWS"`                                                                                                                                                                                                                                  |
+| authType                | String      | Yes      | `Basic`       | One of currently supported authentication types.                                                                                                                                                                                         | `"authType": "APIKey"`                                                                                                                                                                                                                                    |
+| authApiKeyName          | String      | Yes      | `2.1`         | Location key.                                                                                                                                                                                                                            | `"authApiKeyName": "Authorization"`                                                                                                                                                                                                                       |
+| authApiKeyValue         | String      | Yes      | `null`        | API key itself.                                                                                                                                                                                                                          | `"authApiKeyValue": "value"`                                                                                                                                                                                                                              |
+| authApiKeyStyle         | String      | Yes      | `headers`     | Represents how the API key should be sent in the request. Possible options: headers, parameters.                                                                                                                                         | `"authApiKeyStyle": "headers"`                                                                                                                                                                                                                            |
+| authApiKeyPrefix        | String      | No       | `null`        | The prefix used with the apikey.                                                                                                                                                                                                         | `"authApiKeyPrefix": "SSWS"`                                                                                                                                                                                                                              |
+| authBasicUsername       | String      | Yes      | `null`        | Basic HTTP Username.                                                                                                                                                                                                                     | `"authBasicUsername": "username"`                                                                                                                                                                                                                         |
+| authBasicPassword       | String      | Yes      | `null`        | Basic HTTP Password.                                                                                                                                                                                                                     | `"authBasicPassword": "password"`                                                                                                                                                                                                                         |
+| authBearerToken         | String      | Yes      | `null`        | Bearer token.                                                                                                                                                                                                                            | `"authBearerToken": "token"`                                                                                                                                                                                                                              |
 | requestMethod           | String      | Yes      | `GET`         | The HTTP method used in the request.                                                                                                                                                                                                     | `"requestMethod": "GET"`                                                                                                                                                                                                                                  |
 | requestEndpoint         | String      | Yes      | `null`        | The original api endpoint URL as a string that the requestor will append parameters to.                                                                                                                                                  | `"requestEndpoint": "endpoint"`                                                                                                                                                                                                                           |
 | requestBody             | String      | No       | `null`        | The HTTP body which is put through the Go template engine.                                                                                                                                                                               |                                                                                                                                                                                                                                                           |
