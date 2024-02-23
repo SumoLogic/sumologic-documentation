@@ -180,7 +180,7 @@ For **Metadata**, add an **account** field to the source and assign it a value t
    10. Click **Save**.
 1. [Create Stack](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#cloudformation-template) in AWS console with given [CloudFormation Template]((https://help.sumologic.com/files/KinesisFirehoseCWLogs.template.yaml)).
 1. To Export logs, refer to [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group).
-1. Enable access logging for each APIs:
+1. Enable access logging with JSON as Log format for each APIs:
    1. [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-logging-to-kinesis.html)
    1. [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging.html)
    1. [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html)
