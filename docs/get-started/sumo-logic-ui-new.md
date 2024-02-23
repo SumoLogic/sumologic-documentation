@@ -86,7 +86,7 @@ To manage your personal Sumo account preferences:
 For more information, see [Account Preferences and Credentials](account-settings-preferences.md).
 
 <!--
-
+This section is on hold pending finalization of UI.
 ## Mastering everyday tasks
 
 This section provides information on how to perform basic everyday tasks using the Sumo Logic UI.
