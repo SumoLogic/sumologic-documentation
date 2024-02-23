@@ -82,7 +82,7 @@ The Bridge has to be able to resolve DNS hostnames and needs to reach the below 
 
 Login to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with name prefix `csoar-bridge-token`.
 
-<img src={useBaseUrl('img/cse/automations-bridge-installation-token.png')} alt="Installation token" width="800"/>
+<img src={useBaseUrl('img/cse/automations-bridge-installation-token.png')} alt="Installation token" style={{border:'1px solid gray'}} width="800"/>
 
 ## Automation bridge installation
 
@@ -111,6 +111,8 @@ Login to Sumo Logic and create a new [installation token](/docs/manage/security/
    ```
 
 ### Installation configuration
+
+1. Verify that the prefix name of the generated token respects the requirements (see [Get installation token](#get-installation-token)).
 1. Edit the file `/opt/automation-bridge/etc/user-configuration.conf` and set the below mandatory parameters:
    * `1SOAR_URL1`
    * `1SOAR_TOKEN1`
@@ -132,9 +134,9 @@ An example of a configuration file would be:
 
 With bridge ALIAS, it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the Bridge that has the same ALIAS.
 
-<img src={useBaseUrl('img/cse/automations-bridge-alias-create.png')} alt="Create ALIAS bridge" width="400"/>
+<img src={useBaseUrl('img/cse/automations-bridge-alias-create.png')} style={{border:'1px solid gray'}} alt="Create ALIAS bridge" width="400"/>
 
-<img src={useBaseUrl('img/cse/automations-bridge-alias-default.png')} alt="Use default ALIAS bridge" width="400"/>
+<img src={useBaseUrl('img/cse/automations-bridge-alias-default.png')} style={{border:'1px solid gray'}} alt="Use default ALIAS bridge" width="400"/>
 
 ### Automation bridge update
 
@@ -169,11 +171,11 @@ To check if the bridge is running correctly, run the following command:
 ps faux |grep automation-bridge
 ```
 
-This is an example of running `automation-bridge`:<br/><img src={useBaseUrl('img/cse/automations-bridge-example-output.png')} alt="Example of running automation-bridge" width="800"/>
+This is an example of running `automation-bridge`:<br/><img src={useBaseUrl('img/cse/automations-bridge-example-output.png')} style={{border:'1px solid gray'}} alt="Example of running automation-bridge" width="800"/>
 
 On the **Bridge** tab in the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui), a list of live bridge agents will be displayed along with their status.
 
-<img src={useBaseUrl('img/platform-services/bridge-main-screen.png')} alt="Bridge screen" width="800"/>
+<img src={useBaseUrl('img/platform-services/bridge-main-screen.png')} style={{border:'1px solid gray'}} alt="Bridge screen" width="800"/>
 
 ### Configuring the automation bridge for CyberArk
 

@@ -4,13 +4,14 @@ description: ''
 tags: [ ]
 ---
 
-![](/img/platform-services/automation-service/app-central/logos/abnormal-security.png)
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Version: 1.2  
-Updated: Jun 21, 2023
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/abnormal-security.png')} alt="abnormal-security" width="90"/>
 
-Abnormal Security provides advanced email security to prevent credential phishing, business email compromise, account
-takeover, and more.
+***Version: 1.2  
+Updated: Jun 21, 2023***
+
+Abnormal Security provides advanced email security to prevent credential phishing, business email compromise, account takeover, and more.
 
 ## Actions
 
@@ -27,24 +28,17 @@ takeover, and more.
 
 ## Abnormal Security in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-1.png)
-
-1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-2.png)
-
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-1.png')} style={{border:'1px solid gray'}} alt="abnormal-security-1" width="400"/>
+1. In the Automation section, on the left menu, click **Integrations**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-2.png')} style={{border:'1px solid gray'}} alt="abnormal-security-2" width="400"/>
 1. After the list of the integrations appears, search for the integration and click on the row.
-
-1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-3.png)
-
-1. Populate all the required fields (\*) and then click Save.
-   * Label: the name for the resource
-   * URL API: Abnormal Security URL API. Default: 'https://api.abnormalplatform.com'
-   * Token: retrieved from Abnormal Security <br/>!(/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-4.png)
-
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-5.png)
-
-1. Click Test Saved Settings.<br/>![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-6.png)
-
-1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-7.png)
+1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-3.png')} style={{border:'1px solid gray'}} alt="abnormal-security-3" width="400"/>
+1. Populate all the required fields (\*) and then click **SAVE**.
+   * **Label**.The name for the resource
+   * **URL API**. Abnormal Security URL API. Default: 'https://api.abnormalplatform.com'
+   * **Token**. retrieved from Abnormal Security <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-4.png')} style={{border:'1px solid gray'}} alt="abnormal-security-4" width="400"/>
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-5.png')} style={{border:'1px solid gray'}} alt="abnormal-security-5" width="400"/>
+1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-6.png')} style={{border:'1px solid gray'}} alt="abnormal-security-6" width="400"/>
+1. You should receive a successful notification in the bottom right corner. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/abnormal-security/abnormal-security-7.png')} style={{border:'1px solid gray'}} alt="abnormal-security-7" width="400"/>
 
 ## Category
 
