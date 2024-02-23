@@ -3,21 +3,22 @@ title: POP3
 description: ''
 tags: [cloud soar integrations]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/pop3.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/pop3.png')} alt="pop3" width="80"/>
 
-Version: 1.2  
-Updated: Oct 27, 2023
+***Version: 1.2  
+Updated: Oct 27, 2023***
 
 :::sumo Cloud SOAR
-This integration is for Cloud SOAR only
+This integration is only for Cloud SOAR.
 :::
 
-Allows you to connect your mailbox with Cloud SOAR and receive emails via POP3 protocol
+Allows you to connect your mailbox with Cloud SOAR and receive emails via POP3 protocol.
 
 ## Actions
 
-* **Incoming Mail Daemon POP3** *(Daemon)* - Automatically get emails using POP3
+* **Incoming Mail Daemon POP3** *(Daemon)* - Automatically get emails using POP3.
 
 ## Change Log
 
