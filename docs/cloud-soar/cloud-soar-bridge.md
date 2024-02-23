@@ -227,13 +227,13 @@ This is the current solution and it needs to run service as `root`.
 
 ## Csoar Automation Bridge for Docker
 
-This repository a Docker images to run the Sumo Logic Csoar Automation bridge. The images contains an automation brige able to connect on Sumo Logic SOAR environment.
+This repository a Docker images to run the Sumo Logic Csoar Automation bridge. The images contains an automation bridge able to connect on Sumo Logic SOAR environment.
 
 ## Use the Docker automation bridge image
 
 The image tagged `latest` and specific version to runs the automation bridge with Sumo’s Csoar Docker automation bridge executable.
 
-When run, the automation bridge listens on the Docker Unix socket for be able to execute the soar integration or can run a standalone deamon.
+When run, the automation bridge listens on the Docker Unix socket for be able to execute the soar integration or can run a standalone daemon.
 
 Csoar Automation Bridge need to be able to communicate with the Docker API to works.
 
@@ -246,7 +246,7 @@ Csoar Automation Bridge need to be able to communicate with the Docker API to wo
 |`SIEM_URL_HERE`           |The HTTP Sumo Logic collector to send the bridge logs|NONE|
 |`BRIDGE_ALIAS_HERE`               |Provide the alias name. With bridge ALIAS, it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited, it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the Bridge that has the same ALIAS.|NONE|
 
-### Can run with two metodologies
+### Can run with two methodologies
 
 #### With the docker socket mounted as volume
 
@@ -270,7 +270,7 @@ This way the main container will have access to the Docker socket and will, ther
 
 ![Mounting docker socket](https://cdn.hashnode.com/res/hashnode/image/upload/v1693178230450/3b5e8d84-a6e6-40b9-acce-8b2f623e67be.png?auto=compress,format&format=webp)
 
-It's usefull to sharing pulled image with all bridges running on host machine.
+It's useful to sharing pulled image with all bridges running on host machine.
 
 #### With privileged option
 
