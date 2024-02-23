@@ -178,7 +178,7 @@ For **Metadata**, add an **account** field to the source and assign it a value t
    8. **Timestamp Format.** Select **Automatically detect the format**.
    9. **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
    10. Click **Save**.
-1. [Create Stack](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html) in AWS console with given [CloudFormation Template]((https://help.sumologic.com/files/KinesisFirehoseCWLogs.template.yaml)).
+1. [Create Stack](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#cloudformation-template) in AWS console with given [CloudFormation Template]((https://help.sumologic.com/files/KinesisFirehoseCWLogs.template.yaml)).
 1. To Export logs, refer to [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group).
 1. Enable access logging for each APIs:
    1. [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-logging-to-kinesis.html)
