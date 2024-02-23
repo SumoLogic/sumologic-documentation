@@ -34,3 +34,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 * Rules: Fixed scheduled execution.
 * Tasks: Fixed creation if required field is dismissed.
 * Incidents: Fixed full screen view buttons for widgets.
+* Notes: Fixed csv export.
