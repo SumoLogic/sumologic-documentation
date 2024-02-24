@@ -252,7 +252,7 @@ Csoar Automation Bridge need to be able to communicate with the Docker API to wo
 
 [Recommended]
 
- ```bash
+```bash
 docker run -d \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -e SOAR_URL=API_URL_HERE \
