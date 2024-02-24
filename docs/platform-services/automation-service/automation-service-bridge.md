@@ -245,7 +245,7 @@ Cloud SOAR Automation Bridge need to be able to communicate with the Docker API 
 ### Prerequisites and configuration
 
 |Environment Variable                |Description    |Default   |
-|------------------------------------|---------------|----------|
+|:------------------------------------|:---------------|:----------|
 |`API_URL_HERE`                    |To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the API Endpoint column. For example: https://api.eu.sumologic.com/api/||
 |`SOAR_TOKEN_HERE`                   |Log in to Sumo Logic and create a new [installation token](https://help.sumologic.com/docs/manage/security/installation-tokens/) with the name prefix csoar-bridge-token.||
 |`SIEM_URL_HERE`           |The HTTP Sumo Logic collector to send the bridge logs|NONE|
