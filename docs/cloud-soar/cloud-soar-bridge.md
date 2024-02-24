@@ -40,38 +40,38 @@ The Bridge must be able to resolve DNS hostnames and reach the below destination
 | production.cloudflare.docker.com* | 	TCP| 	443|
 | long-endpoint1-events.sumologic.net | 	TCP| 	443|
 
-\* Needed only to connect to docker hub.
+\* Needed only to connect to Docker hub.
 
 ## Install Docker
 
 1. Install Docker-CE following the [installation instructions in Docker Docs](https://docs.docker.com/engine/install/). Install at least version 20.10 (do not use nightly build).
-1. As soon as the docker daemon is installed, start it with:
-   ```
+1. As soon as the Docker daemon is installed, start it with:
+   ```sh
    systemctl start docker
    ```
 1. Enable it on boot:
-   ```
+   ```sh
    systemctl enable docker
    ```
 
 ### Using a proxy
 
-1. If docker has to use a proxy to pull images, follow the below instructions:
-   ```
+1. If Docker has to use a proxy to pull images, follow the below instructions:
+   ```sh
    mkdir -p /etc/systemd/system/docker.service.d
    ```
 1. Create a file named `/etc/systemd/system/docker.service.d/http-proxy.conf`, and add:
-   ```
+   ```sh
    [Service]
    Environment="HTTP_PROXY=http://proxy.example.com:8080\"
    Environment="HTTPS_PROXY=http://proxy.example.com:8080\"
    ```
 1. Reload the systemd daemon with:
-   ```
+   ```sh
    systemctl daemon-reload
    ```
-1. And restart docker service with:
-   ```
+1. And restart Docker service with:
+   ```sh
    systemctl restart docker
    ```
 
@@ -89,11 +89,11 @@ Log in to Sumo Logic and create a new [installation token](/docs/manage/security
 1. In the **Automation Bridge** box, click **UBUNTU**.
 1. Click **Download** to download the `automation-bridge-X.X.deb` file.
 1. Copy the file to the bridge virtual machine. You can use SCP - see example below:
-    ```
+    ```sh
     scp -r -i /path/to/private_key /path/to/local/folder remote_user@remote_ip:/path/to/remote/folder
     ```
 3. To install the package run from ssh:
-   ```
+   ```sh
    sudo dpkg -i automation-bridge-X.X.deb
    ```
 
@@ -103,11 +103,11 @@ Log in to Sumo Logic and create a new [installation token](/docs/manage/security
 1. In the **Automation Bridge** box, click **CENTOS/REDHAT**.
 1. Click **Download** to download the `automation-bridge-X.X.rpm` file.
 1. Copy the file to the bridge virtual machine (You can use SCP, see example below).
-    ```
+    ```sh
     scp -r -i /path/to/private_key /path/to/local/folder remote_user@remote_ip:/path/to/remote/folder
     ```
 1. To install the package run from ssh:
-   ```
+   ```sh
    sudo yum install automation-bridge-X.X.rpm
    ```
 
@@ -122,12 +122,12 @@ Log in to Sumo Logic and create a new [installation token](/docs/manage/security
 And you can set this optional parameter (do not include spaces and must be less than 20 characters): `ALIAS`
 
 An example of a configuration file would be:
-```
+```json
 {
-   "SOAR_URL":"API_ENDPOINT_FROM_FIREWALL_DOC_FOR_YOUR_REGION",
-   "SOAR_TOKEN":"TOKEN_FROM_ADMINISTRATION_-->_SECURITY_-->_INSTALLATION TOKEN",
-   "SIEM_URL":"https://YOUR_CSE_URL/sec",
-   "ALIAS":"YOUR_ALIAS_NO_SPACES_LESS_THAN_20_CHARACTERS"
+  "SOAR_URL":"API_ENDPOINT_FROM_FIREWALL_DOC_FOR_YOUR_REGION",
+  "SOAR_TOKEN":"TOKEN_FROM_ADMINISTRATION_-->_SECURITY_-->_INSTALLATION TOKEN",
+  "SIEM_URL":"https://YOUR_CSE_URL/sec",
+  "ALIAS":"YOUR_ALIAS_NO_SPACES_LESS_THAN_20_CHARACTERS"
 }
 ```
 
@@ -147,28 +147,32 @@ For Ubuntu and CentOS/RedHat, the update process works as the installation proce
 If you are not using the SIEM:
 1. Set `SIEM_URL` to `NONE`.
 1. Restart the service with:
-   ```
+   ```sh
    systemctl restart automation-bridge
    ```
 1. If you need to allow automation-bridge communication through a proxy, edit the file `/etc/opt/automation-bridge/automation-bridge.conf` and set the correct value. Below is an example:
-   ```
+   ```sh
    HTTP_PROXY="http://proxy.example.com:8080"
    HTTPS_PROXY="http://proxy.example.com:8080"
    ```
 1. Restart the service with:
-   ```
+   ```sh
    systemctl restart automation-bridge
    ```
 :::
 
 ### Configuring the automation bridge for high availability
 
-You may elect to deploy and register multiple bridges to your Cloud SOAR tenant for high availability. To cluster automation bridges together logically within Cloud SOAR and ensure high availability, you must set the same ALIAS for each bridge within the cluster in each respective `user-configuration.conf` file upon installation. When multiple bridges are registered with the same ALIAS, they will appear as active. If one or more bridges within the cluster go offline, playbooks will execute via the active nodes utilizing the same ALIAS. So long as there is parity between the nodes and there is at least one active node registered, there will be no disruption in playbook execution. It is important to note that integration actions within the playbook must have the appropriate bridge ALIAS assigned within the resource configuration and that connectivity can be established with the appropriate resources. Advanced playbooks may elect to utilize multiple bridge clusters leveraging multiple aliases.
+You may elect to deploy and register multiple bridges to your Cloud SOAR tenant for high availability. To cluster automation bridges together logically within Cloud SOAR and ensure high availability, you must set the same ALIAS for each bridge within the cluster in each respective `user-configuration.conf` file upon installation.
+
+When multiple bridges are registered with the same ALIAS, they will appear as active. If one or more bridges within the cluster go offline, playbooks will execute via the active nodes utilizing the same ALIAS. So long as there is parity between the nodes and there is at least one active node registered, there will be no disruption in playbook execution.
+
+It is important to note that integration actions within the playbook must have the appropriate bridge ALIAS assigned within the resource configuration and that connectivity can be established with the appropriate resources. Advanced playbooks may elect to utilize multiple bridge clusters leveraging multiple aliases.
 
 ### Post-installation checks
 
 To check if the bridge is running correctly, run the following command:
-```
+```sh
 ps faux |grep automation-bridge
 ```
 
@@ -225,13 +229,13 @@ WantedBy=multi-user.target
 This is the current solution and it needs to run service as `root`.
 :::
 
-## Csoar Automation Bridge for Docker
+## Cloud SOAR Automation Bridge for Docker
 
-This repository a Docker images to run the Sumo Logic Csoar Automation bridge. The images contains an automation bridge able to connect on Sumo Logic SOAR environment.
+This repository a Docker images to run the Sumo Logic Cloud SOAR Automation bridge. The images contains an automation bridge able to connect on Sumo Logic SOAR environment.
 
 ## Use the Docker automation bridge image
 
-The image tagged `latest` and specific version to runs the automation bridge with Sumo’s Csoar Docker automation bridge executable.
+The image tagged `latest` and specific version to runs the automation bridge with the Sumo Logic Cloud SOAR Docker automation bridge executable.
 
 When run, the automation bridge listens on the Docker Unix socket for be able to execute the soar integration or can run a standalone daemon.
 
@@ -239,8 +243,8 @@ Cloud SOAR Automation Bridge need to be able to communicate with the Docker API 
 
 ### Prerequisites and configuration
 
-|Environment Variable                |Description    |Default   |
-|------------------------------------|---------------|----------|
+|Environment Variable             |Description   |Default   |
+|:--------------------------------|:-------------|:---------|
 |`API_URL_HERE`                    |To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the API Endpoint column. For example: https://api.eu.sumologic.com/api/||
 |`SOAR_TOKEN_HERE`                   |Log in to Sumo Logic and create a new [installation token](/docs/manage/security/installation-tokens/) with the name prefix csoar-bridge-token.||
 |`SIEM_URL_HERE`           |The HTTP Sumo Logic collector to send the bridge logs|NONE|
@@ -248,7 +252,7 @@ Cloud SOAR Automation Bridge need to be able to communicate with the Docker API 
 
 ### Can run with two methodologies
 
-#### With the docker socket mounted as volume
+#### With the Docker socket mounted as volume
 
 [Recommended]
 
@@ -268,7 +272,7 @@ In the DooD approach, you use the Docker daemon from the host system to interact
 
 This way, the main container will have access to the Docker socket and can start containers. The only difference is that instead of starting “child” containers, it will start “sibling” containers.
 
-![Mounting docker socket](https://cdn.hashnode.com/res/hashnode/image/upload/v1693178230450/3b5e8d84-a6e6-40b9-acce-8b2f623e67be.png?auto=compress,format&format=webp)
+![Mounting Docker socket](https://cdn.hashnode.com/res/hashnode/image/upload/v1693178230450/3b5e8d84-a6e6-40b9-acce-8b2f623e67be.png?auto=compress,format&format=webp)
 
 It's useful to share pulled images with all bridges running on the host machine.
 
