@@ -262,7 +262,6 @@ docker run -d \
 -e DOCKER_TLS_CERTDIR=/certs \
 -v docker-certs-ca:/certs/ca -v docker-certs-client:/certs/client \
 public.ecr.aws/u5z5f8z6/sumologic/csoar-automation-bridge:latest
- ```
 
 In the DooD approach, you use the Docker daemon from the host system to interact with containers. Containers themselves don't have their own Docker runtime; they communicate with the host's Docker. This offers some distinct advantages: simplicity in managing the containers and resource efficiency, as containers don't need to run their own Docker daemon.
 
