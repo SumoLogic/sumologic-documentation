@@ -3,8 +3,9 @@ title: Recorded Future
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/recorded-future.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/recorded-future.png')} alt="recorded-future" width="100"/>
 
 Version: 1.8  
 Updated: February 16, 2024
@@ -13,28 +14,28 @@ Utilize Recorded Future threat intelligence feeds during incident investigation.
 
 ## Actions
 
-* **IP Reputation** (*Enrichment*) - Get the reputation for the specified IP address
-* **URL Reputation** (*Enrichment*) - Get the reputation for the specified URL
-* **Domain Reputation** (*Enrichment*) - Get the reputation for the specified domain
-* **File Reputation** (*Enrichment*) - Get the reputation for the specified file hash
-* **Vulnerability Search** (*Enrichment*) - Search threat intelligence for the specified search query
-* **Malware Search** (*Enrichment*) - Search threat intelligence for the specified search query
-* **Get Alert Details** *(Enrichment)* - Get the details for the specified alert
-* **Recorded Future Alerts Daemon** *(Daemon)* - Gather RF alerts
-* **Vulnerability Search Daemon***(Daemon)* - Daemon to fetch vulnerabilities
-* **File Reputation V2** (*Enrichment)* - Get the reputation for the specified file hash v2
-* **Search Domain** (*Enrichment*) - Search Domains
-* **Search URL** *(Enrichment)* - Search URLs
-* **Search IP** (*Enrichment)* - Search IP Addresses
-* **Search Hash** (*Enrichment)* - Search Hashes
-* **Create List** (*Containment*) - Create List
-* **Search List** (*Enrichment*) - Find lists based on a query
-* **Add Entity** (*Containment*) - Add an entity to the list
-* **Remove Entity** (*Containment*) - Remove an entity from the list
-* **List Entities** (*Enrichment*) - Get entities on the list
-* **Credentials Search** (*Enrichment*) - Search Credential data
-* **Credentials Lookup By Email** (*Enrichment*) - Lookup Credential data by Email
-* **Credentials Lookup By Login** (*Enrichment*) - Lookup Credential data by Login
+* **IP Reputation** (*Enrichment*) - Get the reputation for the specified IP address.
+* **URL Reputation** (*Enrichment*) - Get the reputation for the specified URL.
+* **Domain Reputation** (*Enrichment*) - Get the reputation for the specified domain.
+* **File Reputation** (*Enrichment*) - Get the reputation for the specified file hash.
+* **Vulnerability Search** (*Enrichment*) - Search threat intelligence for the specified search query.
+* **Malware Search** (*Enrichment*) - Search threat intelligence for the specified search query.
+* **Get Alert Details** *(Enrichment)* - Get the details for the specified alert.
+* **Recorded Future Alerts Daemon** *(Daemon)* - Gather RF alerts.
+* **Vulnerability Search Daemon** *(Daemon)* - Daemon to fetch vulnerabilities.
+* **File Reputation V2** (*Enrichment)* - Get the reputation for the specified file hash v2.
+* **Search Domain** (*Enrichment*) - Search Domains.
+* **Search URL** *(Enrichment)* - Search URLs.
+* **Search IP** (*Enrichment)* - Search IP Addresses.
+* **Search Hash** (*Enrichment)* - Search Hashes.
+* **Create List** (*Containment*) - Create List.
+* **Search List** (*Enrichment*) - Find lists based on a query.
+* **Add Entity** (*Containment*) - Add an entity to the list.
+* **Remove Entity** (*Containment*) - Remove an entity from the list.
+* **List Entities** (*Enrichment*) - Get entities on the list.
+* **Credentials Search** (*Enrichment*) - Search Credential data.
+* **Credentials Lookup By Email** (*Enrichment*) - Lookup Credential data by Email.
+* **Credentials Lookup By Login** (*Enrichment*) - Lookup Credential data by Login.
 
 ## Change Log
 

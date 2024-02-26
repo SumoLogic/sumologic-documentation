@@ -2782,7 +2782,8 @@ integrations: [
       items: [
         'manage/manage-subscription/beta-opt-in',
         'api/beta',
-        'manage/users-roles/roles/rbac-for-indexes'
+        'get-started/sumo-logic-ui-new',
+        'manage/users-roles/roles/rbac-for-indexes',
       ],
     },
   ],
