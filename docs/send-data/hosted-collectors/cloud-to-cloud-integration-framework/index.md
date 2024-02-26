@@ -279,7 +279,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/jfrog-xray-source"><img src={useBaseUrl('img/integrations/security-threat-detection/jfrog.png')} alt="icon" width="60"/><h4>JFrog Xray</h4></a>
-  <p>Collect violation events from JFrog Xray</p>
+  <p>Collect violation events from JFrog Xray.</p>
   </div>
 </div>
 <div className="box smallbox card">
