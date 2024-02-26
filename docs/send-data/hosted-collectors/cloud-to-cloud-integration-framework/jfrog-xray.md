@@ -33,7 +33,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 ### Vendor configuration
 
-Ensure Xray has policies configured. This source will ingest violation logs when those policies raise violations. You will need the domain of your JFrog instance and JFrog username/password in order to configure this source. We suggest using a dedicated user account for this source.
+Make sure that you've set up Xray's policies correctly. This source will capture violation logs triggered by those policies. To configure this source, you'll need the domain of your JFrog instance and your JFrog username/password. We recommend creating a dedicated user account specifically for this purpose.
 
 ### Source configuration
 
