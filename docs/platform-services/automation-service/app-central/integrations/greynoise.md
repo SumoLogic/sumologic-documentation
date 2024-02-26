@@ -16,7 +16,7 @@ GreyNoise tells security analysts what not to worry about. They do this by curat
 ## Actions
 
 * **Context IP Lookup** *(Enrichment)* - Get more information about a given IP address.
-* **Context IP Lookup Community** *(Enrichment)* - Query IPs in the GreyNoise dataset and retrieve a subset of the full IP context data using the free Community API
+* **Context IP Lookup Community** *(Enrichment)* - Query IPs in the GreyNoise dataset and retrieve a subset of the full IP context data using the free Community API.
 * **Execute GNQL Query** *(Enrichment)* - Make complex and one-off queries against the GreyNoise dataset.
 * **Grey Noise Alert Daemon** *(Daemon)* - Get an email if GreyNoise observes any Internet scan and attack traffic originating from networks that belong to you.
 * **Ping** *(Enrichment)* - Check for connectivity and key validation.
