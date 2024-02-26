@@ -85,7 +85,7 @@ the right side of the screen.
 <img src={useBaseUrl('img/cloud-soar/image147.png')} alt="Incident details page" width="800"/>
 
 
-## Incident VIP section
+### Incident VIP section
 
 <img src={useBaseUrl('img/cloud-soar/image148.png')} alt="Incident VIP section" width="300"/>
 
@@ -108,17 +108,17 @@ rearranged in the desired order by dragging and dropping into place. To
 remove a field, simply click the **x** next to the field to be removed.
 Once all the details have been added and are in place, click **Apply**.
 
-## Incident Properties
+### Incident Properties
 
 The Incident Details section contains all the important information that makes up the incident, such as executed Playbooks and incident tasks. This information is divided into four different sections: **Overview**, **Operations**, **Entities**, and **Documentation**.
 
 <img src={useBaseUrl('img/cloud-soar/image149.png')} alt="Incident Overview" width="600"/>
 
-### Overview
+#### Overview
 
 The Incident Overview section contains all the pertinent information for a specific incident such as the severity, SLA counter, and category of alert. This information can be customized in the Custom Fields section of the platform. For more information, see [Custom Fields](#custom-fields).
 
-### Operations
+#### Operations
 
 The Operations section contains all the investigative information for a specific incident and is broken out into the following sections: **War Room**, **playbook**, **Tasks**, and **Notes**.
 
