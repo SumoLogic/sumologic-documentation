@@ -55,7 +55,7 @@ Search Domain, Search URL, Search IP, Search Hash
 * June 22, 2023 (v1.6) - Removed unnecessary empty lines
 * June 22, 2023 (v1.7) - Renamed integration from Recorded Future OIF to Recorded Future
 * February 16, 2024 (v1.8)
-    + Refactored Recorded Future Alerts DaemonK
+    + Refactored Recorded Future Alerts Daemon
 * February 23, 2024 (v1.9)
     + Refactored Vulnerability Search Daemon
 * February 26, 2024 (v1.10)
