@@ -106,9 +106,9 @@ helm upgrade --install collection sumologic/sumologic \
 ### Custom configuration
 
 Every customization to your collector configuration should be applied using keys `config.merge` or `config.override`:
-  - for `otelcolInstrumentation` - `otelcolInstrumentation.config.merge` which will merge provided configuration to [default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/tests/helm/testdata/goldenfile/otelcol-instrumentation-config/traces-gateway-enabled.output.yaml#L15) or `otelcolInstrumentation.config.override` which will override whole configuration.
-  - for `tracesGateway` - `tracesGateway.config.merge` which will merge provided configuration to [default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/tests/helm/testdata/goldenfile/traces-gateway-loadbalancing/traces-gateway-true.output.yaml#L14) or `tracesGateway.config.override` which will override whole configuration.
-  - for `tracesSampler` - `tracesSampler.config.merge` which will merge provided configuration to [default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/tests/helm/testdata/goldenfile/traces-sampler/simple.output.yaml#L14) or `tracesSampler.config.override` which will override whole configuration.
+  - **For `otelcolInstrumentation`**. Use `otelcolInstrumentation.config.merge`, which will merge provided configuration to [default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/tests/helm/testdata/goldenfile/otelcol-instrumentation-config/traces-gateway-enabled.output.yaml#L15) or `otelcolInstrumentation.config.override`, which will override the whole configuration.
+  - **For `tracesGateway`**. Use `tracesGateway.config.merge`, which will merge provided configuration to [default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/tests/helm/testdata/goldenfile/traces-gateway-loadbalancing/traces-gateway-true.output.yaml#L14) or `tracesGateway.config.override` which will override the whole configuration.
+  - **For `tracesSampler`**. Use `tracesSampler.config.merge`, which will merge provided configuration to [default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/tests/helm/testdata/goldenfile/traces-sampler/simple.output.yaml#L14) or `tracesSampler.config.override`, which will override the whole configuration.
 
 ### Pointing tracing clients (instrumentation exporters) to the agent collectors
 
