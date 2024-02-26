@@ -49,8 +49,8 @@ To configure the JFrog Xray Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. In **JFrog Base URL**, enter your JFrog instance domain (for example, `https://acme.jfrog.io`).
-1. In **HTTP Basic Auth Username**, enter your JFrog username you created
-1. In **HTTP Basic Auth Password**, enter your JFrog password you created
+1. In **HTTP Basic Auth Username**, enter your JFrog username you created.
+1. In **HTTP Basic Auth Password**, enter your JFrog password you created.
 1. In **Collect Violation Details**, only toggle this on if you need the full violation details. This will require 1 extra API call per violation log.
 1. (Optional) The **Polling Interval** is set for 5 minutes by default. You can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Save**.
