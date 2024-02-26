@@ -3,17 +3,18 @@ title: Javelin AD Protect
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/javelin-ad-protect.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/javelin-ad-protect.png')} alt="javelin-ad-protect" width="100"/>
 
-Version: 1.2  
-Updated: Nov 10, 2023
+***Version: 1.2  
+Updated: Nov 10, 2023***
 
 Symantec Javelin AD Protect provide protection for Microsoft Active Directory from malicious use by attackers. 
 
 ## Actions
 
-* **Get Report** *(Enrichment)* - Get detailed alert information
+* **Get Report** *(Enrichment)* - Get detailed alert information.
 
 ## Change Log
 

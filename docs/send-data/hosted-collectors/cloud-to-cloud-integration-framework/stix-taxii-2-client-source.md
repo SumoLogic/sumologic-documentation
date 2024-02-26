@@ -59,12 +59,23 @@ To configure a TAXII 2 Client Source:
 1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. (Optional) **Sumo Logic Threat Intel Source ID**. Provide your own threat intelligence source ID for organizing multiple sources.
-1. In **STIX/TAXII Configuration**:
+1. (Optional) **Sumo Logic Threat Intel Source ID**. Provide your own threat intelligence source ID. This is useful for organizing multiple sources.
+1. **Authentication**. Select the authentication type:
+   * **Basic**. Provide your vendor username and password.
+   * **API Key**. Provide:
+      * How to use the key (either in the HTTP request header or HTTP request URL parameters).
+      * The location where to use the key, such as the HTTP header key name (for example, `Authorization`).
+      * The API key.
+      * The API key prefix (optional).
+   * **Bearer**. Provide the bearer auth token. 
+   * **None**. Select if no authorization is needed.
+1. **STIX/TAXII Configuration**:
     1. **Version**. Select the STIX/TAXII version the vendor is using (2.0 or 2.1).
-    1. **TAXII Discovery URL**. Enter the TAXII Discovery URL provided by the vendor.
-1. **Authentication**. If HTTP basic authentication is required, check **Use Basic Auth** and provide your vendor username and password.
-1. In **Other Settings**:
+    1. **API Root URL Source**. Enter:
+       * **Discovery URL**. Enter the TAXII Discovery URL provided by the vendor (optional).
+       * **Root URL(s)**. Enter the TAXII root URL(s). For example, `https://stix2.mysource.org/my-root`.
+    1. **Collection Id(s)**. Enter the collection IDs for TAXII (optional).
+1. **Other Settings**:
     1. (Optional) **Set Indicators Limit Per Page**. Set the maximum number of indicators to return per page. The default is 99.
     1. (Optional) **Polling Interval**. Set how frequently to poll for new or updated indicators. It must be between 5 minutes and 48 hours. 
 1. When you are finished configuring the Source, click **Save**.

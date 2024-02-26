@@ -2,7 +2,7 @@
 id: docker-ulm
 title: Docker ULM
 sidebar_label: Docker ULM
-description: The Docker ULM App is a unified logs and metrics (ULM) app that utilizes data from Docker container logs, engine events, and container stats to monitor your Docker deployment.
+description: The Docker ULM app is a unified logs and metrics (ULM) app that utilizes data from Docker container logs, engine events, and container stats to monitor your Docker deployment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,23 +10,23 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="175"/>
 
 :::note
-The Docker App will be fully functional working with Docker setup using cgroup v1. For more details on cgroup click [here](https://docs.docker.com/config/containers/runmetrics/#control-groups).
+The Docker app will be fully functional working with Docker setup using cgroup v1. For more details on cgroup click [here](https://docs.docker.com/config/containers/runmetrics/#control-groups).
 :::
 
-The Sumo Logic App for Docker ULM is a unified logs and metrics app that allows you to monitor your Docker deployment. The preconfigured dashboards present information about container state and resource usage, including CPU, memory, block I/O, and network. This app has been tested with Docker v8.03.1-ce and Docker API v1.37.
+The Sumo Logic app for Docker ULM is a unified logs and metrics app that allows you to monitor your Docker deployment. The preconfigured dashboards present information about container state and resource usage, including CPU, memory, block I/O, and network. This app has been tested with Docker v8.03.1-ce and Docker API v1.37.
 
-## Log and Metric Types
+## Log and metric types
 
 Sumo’s Docker Logs source and Docker Stats source use the Docker Engine API to gather the following data from Docker:
 
-* Docker container logs. Sumo’s Docker Logs source collects container logs. For information about the API Sumo uses to collect logs, see the [https://docs.docker.com/engine/api/v1.37/#operation/ContainerLogs](https://docs.docker.com/engine/api/v1.37/#operation/ContainerLogs) in Docker help.
-* Docker engine events. Sumo’s Docker Log source collect Docker events. For information about Docker events, see [https://docs.docker.com/engine/api/v1.37/#operation/SystemPing](https://docs.docker.com/engine/api/v1.37/#operation/SystemPing) in Docker help.
-* Docker container stats. Sumo’s Docker Stats source collects stats. For information about Docker stats, see [https://docs.docker.com/engine/api/v1.37/#operation/ContainerStats](https://docs.docker.com/engine/api/v1.37/#operation/ContainerStats) in Docker help.
+* **Docker container logs**. Sumo Logic’s Docker Logs source collects container logs. For information about the API Sumo uses to collect logs, see the [https://docs.docker.com/engine/api/v1.37/#operation/ContainerLogs](https://docs.docker.com/engine/api/v1.37/#operation/ContainerLogs) in Docker help.
+* **Docker engine events**. Sumo Logic’s Docker Log source collect Docker events. For information about Docker events, see [https://docs.docker.com/engine/api/v1.37/#operation/SystemPing](https://docs.docker.com/engine/api/v1.37/#operation/SystemPing) in Docker help.
+* **Docker container stats**. Sumo Logic’s Docker Stats source collects stats. For information about Docker stats, see [https://docs.docker.com/engine/api/v1.37/#operation/ContainerStats](https://docs.docker.com/engine/api/v1.37/#operation/ContainerStats) in Docker help.
 
 By default, you can monitor up to 40 Docker containers on a Docker host. If you want to monitor more than 40 containers on a given host you can configure a larger number in `collector.properties`, as described in the next section. We don’t support monitoring more than 100 containers on a Docker host.
 
 
-## Collecting Logs and Metrics for Docker ULM
+## Collecting logs and metrics for Docker ULM
 
 Docker is a lightweight open platform that provides a way to package applications in containers for a software development environment.
 
@@ -48,7 +48,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 * Docker truncates logs at 16kb and Sumo Logic does not stitch them back together.
 
 
-### Add a Docker Logs Source
+### Add a Docker logs source
 
 1. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
@@ -93,7 +93,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 
 1. In Sumo select **Manage Data** > **Collection** > **Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
-3. Select **Docker Stats.** The following Docker Stats page appears. There are two possible content types available, select **Metrics** to collect data as metrics, or select **Logs** (JSON) to collect data as JSON logs. To collect metrics for the Docker ULM App, select **Metrics** as the Content Type.
+3. Select **Docker Stats.** The following Docker Stats page appears. There are two possible content types available, select **Metrics** to collect data as metrics, or select **Logs** (JSON) to collect data as JSON logs. To collect metrics for the Docker ULM app, select **Metrics** as the Content Type.
 4. Configure the source fields:
    * **Name.** (Required)
    * **Description.** (Optional)
@@ -546,29 +546,17 @@ The example above uses a hyphen `-` character to separate variable components. S
 
 If a user-defined variable doesn’t exist, that portion of the metadata field will be blank.
 
-## Installing the Docker ULM App
+## Installing the Docker ULM app
 
-Now that you have set up collection of Docker logs and metrics, install the Sumo Logic App for Docker ULM to use the pre-configured searches and dashboards.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-To install the app:
+<AppInstall2/>
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+## Viewing Docker ULM dashboards​
 
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library**.
-   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-   * **Docker Log Source.** Select the source category that you configured for the Docker Logs source. 
-   * **Docker Metrics Source**. Select the source category that you configured for the Docker Stats source.
-3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library) for information on working with the library.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-## Viewing the Docker ULM Dashboards
-
-This section describes the dashboards in the Sumo Logic App for Docker ULM.
+<ViewDashboards/>
 
 ### Overview
 

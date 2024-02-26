@@ -43,7 +43,7 @@ You specify the `_index` metadata field with one of these values:
 * `sumologic_audit_events`. This index contains user action events, which are events that were triggered by a user action, either from the UI or an API.
 * `sumologic_system_events`. This index contains system action events, which are events that were triggered by Sumo Logic. For example, this index contains Automation Actions start events, rules triggered, and so on.
 
-## Cloud SOAR Audited events
+## Cloud SOAR audited events
 
 This Audit Event Index has detailed JSON logs for the following features. 
 To search for audit events for a specific feature, use the metadata field `_sourceCategory` with its corresponding value. 

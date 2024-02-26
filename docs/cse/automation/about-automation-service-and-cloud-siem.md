@@ -38,20 +38,21 @@ import Iframe from 'react-iframe';
 
 ## Differences compared to Cloud SOAR
 
+The Automation Service is a subset of automation capabilities adapted from Cloud SOAR that is available to the entire Sumo Logic log analytics platform. The Automation Service only has Cloud SOAR’s playbook-related features, including App Central and the Automation Bridge. Like the Cloud SOAR action types, the Automation Service action types can perform automated responses to events, including run containment actions and manual user interaction steps. 
+
 Using the Automation Service with Cloud SIEM differs from Cloud SOAR in the following ways:
 * Using the Automation Service with Cloud SIEM does not include the incident and case management features from Cloud SOAR.
 * The Automation Service does not support daemon and trigger action types. The Automation Service can only use triggers built into Cloud SIEM and the Log Analytics platform. 
-* Playbooks, integrations, and actions in the Automation Service may differ from those in [Cloud SOAR automation](/docs/cloud-soar/automation/). 
+* Playbooks, integrations, and actions in the Automation Service may differ from those in Cloud SOAR automation. 
 
 For more information, see [Cloud SOAR Compared to the Automation Service](/docs/cloud-soar/compared-to-automation-service/).
 
 ## Benefits
 
-* The Automation Service supports enrichment, notification, and custom actions in Cloud SIEM:
-  * Enrichment actions can be used to gather additional information about an Entity or Insight, including [threat indicators](/docs/cse/integrations/enrichments-and-indicators#threat-indicators).
-  * Notification actions can be used to send notifications or update status in systems like Cloud SIEM, the Sumo Logic core platform, Slack, Microsoft Teams, Jira, email, and so on.
-* Automations can be triggered automatically when an Insight is created or closed. Automations can also be executed manually via the Cloud SIEM UI and API.
-* Playbooks run for Cloud SIEM automation can contain both enrichment and notification actions. Playbooks can also be nested. So, for example, you could define a playbook that is executed automatically when an Insight is created that gathers enrichment data. And if the data returned includes a malicious threat indicator:
+* The Automation Service supports enrichment, notification, containment, user choice, and custom actions in Cloud SIEM. 
+* Enrichment actions can be used to gather additional information about an Entity or Insight, including threat indicators.
+* Notification actions can be used to send notifications or update status in systems like Cloud SIEM, the Sumo Logic core platform, Slack, Microsoft Teams, Jira, email, and so on.
+* Automations can be triggered automatically when an Insight is created or closed. For example, you could define a playbook that is executed automatically when an Insight is created that gathers enrichment data. And if the data returned includes a malicious threat indicator:
   1. Changes the Insight state to “In Progress”.
   1. Assigns the Insight.
   1. Sends a (customized) email with information about the Insight and indicator.
@@ -117,7 +118,7 @@ The [Cloud SIEM API](/docs/cse/administration/cse-apis/) supports automations. E
 The Sumo Logic Terraform provider also supports automation, but does not support the ability to create or modify integrations, playbooks, or actions. For more information about Terraform, see the [Sumo Logic Terraform](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs) documentation.
 
 :::note
-The Automation Service uses the [Cloud SOAR API](/docs/cloud-soar/cloud-soar-apis). 
+The Automation Service uses the [Cloud SOAR API](/docs/api/cloud-soar/). 
 :::
 
 ### Data retention
