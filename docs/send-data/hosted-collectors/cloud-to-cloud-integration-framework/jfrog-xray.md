@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/jfrog.png')} alt="thumbnail icon" width="85"/>
 
-The JFrog Xray source will collect JFrog Xray violations by querying the API for new policy violations when they occur.
+Our JFrog Xray source collects JFrog Xray violations by querying the API for new policy violations when they occur.
 
 :::note
 This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
