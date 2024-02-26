@@ -230,32 +230,34 @@ WantedBy=multi-user.target
 This is the current solution and it needs to run service as `root`.
 :::
 
-## Cloud SOAR Automation Bridge for Docker
+## Automation bridge for Docker
 
-This repository a Docker images to run the Sumo Logic Cloud SOAR Automation bridge. The images contains an automation bridge able to connect on Sumo Logic SOAR environment.
+This repository provides Docker images to run the Sumo Logic automation bridge. The images contain an automation bridge able to connect to the Automation Service environment.
 
-## Use the Docker automation bridge image
+### Use the Docker automation bridge image
 
-The image tagged `latest` and specific version to runs the automation bridge with the Sumo Logic Cloud SOAR Docker automation bridge executable.
+There are images tagged `latest` and for specific versions to run the automation bridge.
 
-When run, the automation bridge listens on the Docker Unix socket for be able to execute the soar integration or can run a standalone daemon.
+When run, the automation bridge listens on the Docker Unix socket to be able to execute the integration or to run a standalone daemon.
 
-Cloud SOAR Automation Bridge need to be able to communicate with the Docker API to works.
+The automation bridge needs to be able to communicate with the Docker API to work.
 
 ### Prerequisites and configuration
 
-|Environment Variable                |Description    |Default   |
+|Environment Variable |Description |Default   |
 |:------------------------------------|:---------------|:----------|
-|`API_URL_HERE`                    |To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the API Endpoint column. For example: https://api.eu.sumologic.com/api/||
-|`SOAR_TOKEN_HERE`                   |Log in to Sumo Logic and create a new [installation token](https://help.sumologic.com/docs/manage/security/installation-tokens/) with the name prefix csoar-bridge-token.||
-|`SIEM_URL_HERE`           |The HTTP Sumo Logic collector to send the bridge logs|NONE|
-|`BRIDGE_ALIAS_HERE`               |Provide the alias name. With bridge ALIAS, it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited, it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the Bridge that has the same ALIAS.|NONE|
+|`API_URL_HERE` | To determine which is the correct SOAR_URL, see [Sumo Logic Endpoints by Deployment and Firewall Security](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) and get the URL under the API Endpoint column. For example: `https://api.eu.sumologic.com/api/` | |
+|`SOAR_TOKEN_HERE` | Log in to Sumo Logic and create a new [installation token](https://help.sumologic.com/docs/manage/security/installation-tokens/) with the name prefix `csoar-bridge-token`. | |
+|`SIEM_URL_HERE` | The HTTP Sumo Logic collector to send the bridge logs. | NONE |
+|`BRIDGE_ALIAS_HERE` | Provide the alias name. With bridge ALIAS, it is possible to distinguish which integration resources will be executed with this automation bridge. When a new integration resource is created or edited, it is possible to select the default ALIAS or to create a new one. So every automatic action configured to use this resource will be performed with the bridge that has the same ALIAS. | NONE |
 
-### Can run with two methodologies
+### Methodologies
+
+The bridge can run with two methodologies.
 
 #### With the Docker socket mounted as volume
 
-[Recommended]
+(Recommended)
 
 ```bash
 docker run -d \
@@ -269,9 +271,9 @@ docker run -d \
 public.ecr.aws/u5z5f8z6/sumologic/csoar-automation-bridge:latest
 ```
 
-In the DooD approach, you use the Docker daemon from the host system to interact with containers. Containers themselves don't have their own Docker runtime; they communicate with the host's Docker. This offers some distinct advantages: simplicity in managing the containers and resource efficiency, as containers don't need to run their own Docker daemon.
+In the DooD approach, you use the Docker daemon from the host system to interact with containers. Containers themselves don't have their own Docker runtime; they communicate with the host's Docker. This offers some distinct advantages, including simplicity in managing the containers and resource efficiency, as containers don't need to run their own Docker daemon.
 
-This way the main container will have access to the Docker socket and will, therefore, be able to start containers. The only difference is that instead of starting “child” containers, it will start “sibling” containers.
+This way, the main container will have access to the Docker socket and will, therefore, be able to start containers. The only difference is that instead of starting “child” containers, it will start “sibling” containers.
 
 ![Mounting Docker socket](https://cdn.hashnode.com/res/hashnode/image/upload/v1693178230450/3b5e8d84-a6e6-40b9-acce-8b2f623e67be.png?auto=compress,format&format=webp)
 
