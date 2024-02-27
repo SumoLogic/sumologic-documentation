@@ -33,6 +33,12 @@ risky activity.
 * **UDM Search** *(Enrichment)* - UDM Search query and retrieve matches.
 * **Get Events** *(Enrichment)* - Returns multiple events given the UIDs for the events.
 
+## External Libraries
+
+* [Chronicle (Google Auth)](https://github.com/googleapis/google-auth-library-python/blob/master/LICENSE)
+* [Chronicle (Google API)](https://github.com/googleapis/google-api-python-client/blob/master/LICENSE)
+
+
 ## Change Log
 
 * July 30, 2021 - First upload
