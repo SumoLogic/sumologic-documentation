@@ -63,6 +63,12 @@ To configure a Code42 Incydr Source:
 1. In **Secret Key**, enter the Secret Key you generated from the Code42 Incydr platform.
 1. In **Data Collection**, select the type of source from which you want to collect the data from. This allows you to limit the response to just the data you want.
 
+## Metadata fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemParser` | `/Parsers/Sumo/Code42/Code42 Incydr` | Set when **Forward To SIEM** is checked. |
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
