@@ -19,7 +19,7 @@ The Amazon RDS app uses the following logs and metrics:
 * [RDS CloudWatch Instance Level Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-metrics.html#rds-cw-metrics-instance), [RDS CloudWatch Aurora Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.AuroraMySQL.Monitoring.Metrics.html), and [Amazon CloudWatch metrics for Performance Insights](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.Cloudwatch.html).
 * [Amazon RDS operations using AWS CloudTrail](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/logging-using-cloudtrail.html).
 * [Publishing RDS CloudWatch Logs, RDS Database logs for Aurora MySQL, RDS MySQL, MariaDB](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQLDB.PublishtoCloudWatchLogs.html).
-* [Publishing RDS CloudWatch logs, RDS Database logs for Aurora PostgreSQL, RDS PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.PostgreSQL.html#USER_LogAccess.Concepts.PostgreSQL.PublishtoCloudWatchLogs)
+* [Publishing RDS CloudWatch logs, RDS Database logs for Aurora PostgreSQL, and RDS PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.PostgreSQL.html#USER_LogAccess.Concepts.PostgreSQL.PublishtoCloudWatchLogs).
 
 ### Sample CloudTrail log message
 
@@ -261,9 +261,9 @@ import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
 We highly recommend you view these dashboards in the [Explore View](/docs/observability/aws/deploy-use-aws-observability/view-dashboards) of the AWS Observability solution.
 
-### 1. Amazon RDS Overview
+### 1. Amazon RDS - Overview
 
-The **Amazon RDS Overview** dashboard provides insights into RDS resource statistics and utilization throughout your infrastructure, including CPU, memory, latency, storage, and network throughput.
+The **Amazon RDS - Overview** dashboard provides insights into RDS resource statistics and utilization throughout your infrastructure, including CPU, memory, latency, storage, and network throughput.
 
 Use this dashboard to:
 * Get a high-level overview of your Amazon RDS infrastructure.
@@ -272,9 +272,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} />
 
-### 2. Amazon RDS CloudTrail Audit Events
+### 2. Amazon RDS - CloudTrail Audit Events
 
-The **Amazon RDS CloudTrail Audit Events** dashboard provides insights into audit events of your database instances and clusters.
+The **Amazon RDS - CloudTrail Audit Events** dashboard provides insights into audit events of your database instances and clusters.
 
 Use this dashboard to:
 * Monitor Amazon RDS-related audit logs using CloudTrail Events.
@@ -284,9 +284,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-CloudTrail-Audit-Events.png')} alt="Amazon RDS dashboard" />
 
-### 3. Amazon RDS Non-Describe CloudTrail Audit Events
+### 3. Amazon RDS - Non-Describe CloudTrail Audit Events
 
-The **Amazon RDS Non-Describe CloudTrail Audit Events** dashboard provides statistical and detailed insights into Non-Describe DB Instance, SnapShot, Cluster, and Security group events.
+The **Amazon RDS - Non-Describe CloudTrail Audit Events** dashboard provides statistical and detailed insights into Non-Describe DB Instance, SnapShot, Cluster, and Security group events.
 
 Use this dashboard to:
 * Monitor Amazon RDS-related non-describe audit logs using CloudTrail Events.
@@ -296,9 +296,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Non-Describe-CloudTrail-Audit-Events.png')} alt="Amazon RDS dashboard" />
 
-### 01. Amazon RDS Overview By Database Instance
+### 01. Amazon RDS - Overview By Database Instance
 
-The **Amazon RDS Overview By Database Instance** dashboard provides insights into resource statistics and utilization per database instance throughout your infrastructure. Panels display data for CPU, memory, latency, storage, and network throughput per database instance.
+The **Amazon RDS - Overview By Database Instance** dashboard provides insights into resource statistics and utilization per database instance throughout your infrastructure. Panels display data for CPU, memory, latency, storage, and network throughput per database instance.
 
 Use this dashboard to:
 * Quickly identify performance or resource utilization issues in your RDS clusters.
@@ -306,9 +306,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview-By-Database-Instance.png')} alt="Amazon RDS dashboard" />
 
-### 02. Amazon RDS Performance Insights   
+### 02. Amazon RDS - Performance Insights   
 
-The **Amazon RDS Performance Insights** dashboard provides intuitive performance data from throughout your RDS infrastructure across CPU load, non-CPU load, active sessions, and performance trends.
+The **Amazon RDS - Performance Insights** dashboard provides intuitive performance data from throughout your RDS infrastructure across CPU load, non-CPU load, active sessions, and performance trends.
 
 Use this dashboard to:
 * Monitor Amazon RDS DB instance loads to analyze and troubleshoot database performance.
@@ -317,9 +317,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Performance-Insights.png')} alt="Amazon RDS dashboard" />
 
-### 03. Amazon RDS Aurora Generic
+### 03. Amazon RDS - Aurora Generic
 
-The **Amazon RDS Aurora Generic** dashboard provides generic AWS Aurora performance statistics across your infrastructure for uptime, replica lag, latency, network throughput, volume, and storage.
+The **Amazon RDS - Aurora Generic** dashboard provides generic AWS Aurora performance statistics across your infrastructure for uptime, replica lag, latency, network throughput, volume, and storage.
 
 Use this dashboard to:
 * Monitor common health and performance metrics of your RDS Amazon Aurora MySQL/PostgreSQL cluster.
@@ -330,9 +330,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-Generic.png')} alt="Amazon RDS dashboard" />
 
-### 04. Amazon RDS Aurora MySQL
+### 04. Amazon RDS - Aurora MySQL
 
-The **Amazon RDS Aurora MySQL** dashboard provides intuitive Aurora MySQL performance data from across your infrastructure for latency, throughput, active and blocked transactions, queries, login failures, and replica lag.
+The **Amazon RDS - Aurora MySQL** dashboard provides intuitive Aurora MySQL performance data from across your infrastructure for latency, throughput, active and blocked transactions, queries, login failures, and replica lag.
 
 Use this dashboard to:
 * Monitor the health and performance of your RDS Amazon Aurora MySQL instances and cluster.
@@ -343,9 +343,9 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL.png')} alt="Amazon RDS dashboard" />
 
-### 05. Amazon RDS Aurora MySQL Global Database and BackTrack Activity
+### 05. Amazon RDS - Aurora MySQL Global Database and BackTrack Activity
 
-**Amazon RDS Aurora MySQL Global Database and BackTrack Activity** dashboard provides insights into Aurora MySQL performance data from across your infrastructure for Global Database activity and Backtrack activity.
+**Amazon RDS - Aurora MySQL Global Database and BackTrack Activity** dashboard provides insights into Aurora MySQL performance data from across your infrastructure for Global Database activity and Backtrack activity.
 
 Use this dashboard to:
 
@@ -450,7 +450,7 @@ Use this dashboard to:
 The **Amazon RDS - PostgreSQL Logs - Errors** dashboard provide details on error occurring on your PostgreSQL instance by keeping track of log severity using `postgresql.log`.
 
 Use this dashboard to:
-* Obtain PostgreSQL log severity distribution along with error log log distribution by database, user, and host.
+* Obtain PostgreSQL log severity distribution along with error log distribution by database, user, and host.
 * Identify PostgreSQL log severity over time by user, host along with error event (fatal/error log level) outlier.
 * Obtain recent and top fatal and error events.
 * Obtain recent queries running into error with error message.
@@ -463,7 +463,7 @@ The **Amazon RDS - PostgreSQL Logs - Slow Query Overview** dashboard provides an
 
 Use this dashboard to: 
 * Obtain count of slow queries and unique slow queries.
-* Identify number of Slow queries by user,host and command type along with slow queries over time by user and database.
+* Identify number of slow queries by user, host, and command type along with slow queries over time by user and database.
 * Monitor average execution time by SQL command.
 * Obtain unique slow queries along with execution time, analysing minimum, maximum, average, and many more.
 * Obtain time comparison between number of slow queries and their execution time over 1 day or 1 week.
@@ -499,6 +499,6 @@ The **Amazon RDS - PostgreSQL Logs - Query Execution Time** dashboard provides d
 
 Use this dashboard to: 
 * Obtain number of queries executed and average query execution time by database.
-* Monitor time comparison for number of queries executed and query execution time.
+* Monitor time comparison between number of queries executed and query execution time.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Query-Execution-Time.png')} alt="Amazon RDS dashboard" />
