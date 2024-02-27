@@ -66,6 +66,9 @@ To add investigators to incidents:
 1. Click the three-dot kebab menu in the upper left-hand corner of the screen.
 1. Select **Add Investigator**.<br/>The **Add Investigator** screen is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-add-investigator.png')} alt="Add Investigator dialog" style={{border: '1px solid gray'}} width="700"/>
 1. Select the investigators to add to the selected incidents.
+   :::info
+   You can also select groups in addition to selecting individuals. For more information, see [Groups](/docs/cloud-soar/global-functions-menu/#groups).
+   :::
 1. In the **Role** column, select the role assigned to the users that you want them to have as investigators. For example, select Analyst, Administrator, or some other role. The roles must have the appropriate Cloud SOAR role capabilities that you want them to have as investigators of the incidents. 
 1. Click **Apply**. 
 
