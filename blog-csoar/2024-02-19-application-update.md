@@ -1,5 +1,5 @@
 ---
-title: February 23, 2024 - Application Update
+title: February 19, 2024 - Application Update
 hide_table_of_contents: false
 keywords:
   - sumo logic
