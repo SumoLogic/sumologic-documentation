@@ -3,26 +3,27 @@ title: MISP
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/misp.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/misp.png')} alt="misp" width="100"/>
 
-Version: 1.2  
-Updated: Jul 11, 2023
+***Version: 1.2  
+Updated: Jul 11, 2023***
 
 Utilize MISP intelligence data during incident investigations.
 
 ## Actions
 
-* **Get Object Templates** (*Enrichment) -* Gather all object templates
-* **Get Tags** (*Enrichment) -* Gather all tags
-* **Search Intelligence** (*Enrichment) -* Search MISP data for information matching the specified query
-* **Search MISP Attribute** (*Daemon) -* Search MISP attributes
-* **Search MISP Intelligence** (*Daemon) -* Search MISP intelligence
-* **Add Attribute** (*Notification*) - Add a new attribute
-* **Add Event** (*Notification*) - Add a new event
-* **Add Object** (*Notification*) - Add a new object
-* **Update Attribute** (*Enrichment*) - Update an existing attribute
-* **Update Event** (*Enrichment*) - Update an existing attribute
+* **Get Object Templates** (*Enrichment*) - Gather all object templates.
+* **Get Tags** (*Enrichment*) - Gather all tags.
+* **Search Intelligence** (*Enrichment*) - Search MISP data for information matching the specified query.
+* **Search MISP Attribute** (*Daemon*) - Search MISP attributes.
+* **Search MISP Intelligence** (*Daemon*) - Search MISP intelligence.
+* **Add Attribute** (*Notification*) - Add a new attribute.
+* **Add Event** (*Notification*) - Add a new event.
+* **Add Object** (*Notification*) - Add a new object.
+* **Update Attribute** (*Enrichment*) - Update an existing attribute.
+* **Update Event** (*Enrichment*) - Update an existing attribute.
 
 ## Change Log
 

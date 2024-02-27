@@ -3,11 +3,12 @@ title: Lacework
 description: ''
 tags: [ ]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/lacework.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/lacework.png')} alt="lacework" width="100"/>
 
-Version: 1.4  
-Updated: Jan 26, 2024
+***Version: 1.4  
+Updated: Jan 26, 2024***
 
 Lacework provides end-to-end cloud security automation for AWS, Azure, and GCP with a comprehensive view of risks across cloud workloads and containers.
 
