@@ -90,12 +90,54 @@ Select this authentication option if the vendor API does not require any form of
 <details>
   <summary>HTTP Request</summary>
   <div>
-  This section configures the request that is created for the first call to the vendor's API within the polling cycle. This component prepares, executes and makes it ready for the next polling cycle. For now we only support HTTP requests.
-   1. **Method**. The HTTP method used in the request. Possible values: GET, POST. Default value: GET.
-   1. **Endpoint**. The original api endpoint URL as a string that the requestor will append parameters to.
-   1. **Body**. The HTTP body which is put through the Go template engine. If not specified, the default empty value will be used.
-   1. **Params**. The url parameters where the key is a string and the value is also a string but is put through the Go template engine. If not specified, no params will be used.
-   1. **Headers**. The HTTP request headers where the key is a string and the value is also a string but is put through the Go template engine. If not specified, no headers will be used.
+  Configure how the HTTP requests are created for your source.
+
+  #### Method
+  The HTTP method used in the request. The supported values are: `GET` and `POST` with `GET` as the default.
+
+  #### Endpoint Url
+  The endpoint URL should include the `https://` protocol, vendor domain, and the full path to the API endpoint hosting the log data. It should **NOT** include any URL parameters as that information can be included in a dedicated section below.
+  
+  Valid Examples:
+  - `https://acme.org/api/v1/auditLogs`
+  - `https://api.acme.org/v2/securityEvents`
+
+  Invalid Examples:
+  | Invalid Example                               | Invalid Reason                     |
+  |-----------------------------------------------|------------------------------------|
+  | `acme.org/v1/auditLogs`                       | Missing HTTPS protocol             |
+  | `http://acme.org/api/v1/auditLogs`            | Unsecure HTTP protocol not allowed |
+  | `https://acme.org/api/v1/auditLogs?limit=100` | Do not include URL parameters      |
+
+  #### Request Body
+  This is optional and only used if the HTTP `POST` method is configured above. You can use this field to include any information in the HTTP request body. The data included in this field can access our template feature.
+
+  #### Request Headers
+  Include any HTTP request headers required by the vendor API. The key names are static text, but the values can access our template feature to make them dynamic. 
+  
+  Please do **NOT** include any sensitive information such as authentication secrets in this section.
+
+  | Example Header Key | Example Header Value         |
+  |--------------------|------------------------------|
+  | `Accept`           | `application/json`           |
+  | `Accept-Encoding`  | `gzip`                       |
+  | `User-Agent`       | `Vendor Required Agent Name` |
+
+
+  #### Request Parameters
+  Include any URL query parameters required by the vendor API. The key names are static text, but the values can access our template feature to make them dynamic. 
+  
+  Please do **NOT** include any sensitive information such as authentication secrets in this section.
+
+  | Example Header Key | Example Header Value                           |
+  |--------------------|------------------------------------------------|
+  | `limit`            | `1000`                                         |
+  | `since`            | `{{ .WindowStartUTC "2006-01-02T15:04:05Z" }}` |
+  | `until`            | `{{ .WindowEndUTC "2006-01-02T15:04:05Z" }}`   |
+
+  Examples URL encoded: 
+  `?limit=100&since=2024-02-01T08:15:00Z&until=2024-02-01T08:20:00Z`
+
   </div>
 </details>
 <details>
@@ -170,11 +212,11 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | authKeyValue            | String      | Yes      | `null`            | The authentication secret value used for the `authKeyName` key.                                                                                                                                                                          |                                                                                                                                                                                                                                                           |
 | authKeyValuePrefix      | String      | No       | `null`            | An optional non-secret text prefix prepended to the `authKeyValue` secret.                                                                                                                                                               | `"SSWS"`                                                                                                                                                                                                                                                  |
 | authBearerToken         | String      | Yes      | `null`            | The authentication bearer secret token                                                                                                                                                                                                   |                                                                                                                                                                                                                                                           |
-| requestMethod           | String      | Yes      | `GET`             | The HTTP method used in the request.                                                                                                                                                                                                     | `"requestMethod": "GET"`                                                                                                                                                                                                                                  |
-| requestEndpoint         | String      | Yes      | `null`            | The original api endpoint URL as a string that the requestor will append parameters to.                                                                                                                                                  | `"requestEndpoint": "endpoint"`                                                                                                                                                                                                                           |
-| requestBody             | String      | No       | `null`            | The HTTP body which is put through the Go template engine.                                                                                                                                                                               |                                                                                                                                                                                                                                                           |
-| requestHeaders          | JSON Object | No       | `null`            | HTTP basic authentication password                                                                                                                                                                                                       | `"requestHeaders": [{"headerName": "Accept", "headerValue": "application/json"}, {"headerName": "Content-Type", "headerValue": "application/json"}]`                                                                                                      |
-| requestParams           | JSON Object | No       | `null`            | HTTP basic authentication password                                                                                                                                                                                                       | `"requestParams": [{"paramName": "limit",  "paramValue": "1000"}, {"paramName": "since", "paramValue": "{{ .WindowStartUTC \"2006-01-02T15:04:05Z07:00\" }}"}, {"paramName": "until", "paramValue": "{{ .WindowEndUTC \"2006-01-02T15:04:05Z07:00\" }}"}` |
+| requestMethod           | String      | Yes      | `GET`             | The HTTP method used in the request.                                                                                                                                                                                                     | `"GET"`, `"POST"`                                                                                                                                                                                                                                         |
+| requestEndpoint         | String      | Yes      | `null`            | The API endpoint URL excluding the URL parameters                                                                                                                                                                                        | `"https://acme.org/api/v1/auditLogs"`                                                                                                                                                                                                                     |
+| requestBody             | String      | No       | `null`            | The data to include in the HTTP request body if the `POST` method is used.                                                                                                                                                                               |                                                                                                                                                                                                                                                           |
+| requestHeaders          | JSON Object | No       | `null`            | Any HTTP request headers to include.                                                                                                                                                                                                     | `"requestHeaders": [{"headerName": "Accept", "headerValue": "application/json"}, {"headerName": "Content-Type", "headerValue": "application/json"}]`                                                                                                      |
+| requestParams           | JSON Object | No       | `null`            | Any HTTP URL parameters to include.                                                                                                                                                                                                      | `"requestParams": [{"paramName": "limit",  "paramValue": "1000"}, {"paramName": "since", "paramValue": "{{ .WindowStartUTC \"2006-01-02T15:04:05Z07:00\" }}"}, {"paramName": "until", "paramValue": "{{ .WindowEndUTC \"2006-01-02T15:04:05Z07:00\" }}"}` |
 | progressionType         | String      | Yes      | `null`            | Progression type.                                                                                                                                                                                                                        | `"progressionType": "window"`                                                                                                                                                                                                                             |
 | windowInitialLookback   | String      | Yes      | `24h`             | How far back from current time to start the window upon source creation. Must be between window size and 31d.                                                                                                                            | `"windowInitialLookback": "24h"`                                                                                                                                                                                                                          |
 | windowMaxLookback       | String      | Yes      | `31d`             | How far back the window is allowed to go based on the third party APIs data retention policy. Must be between window size and 365d.                                                                                                      | `"windowMaxLookback": "31d"`                                                                                                                                                                                                                              |
