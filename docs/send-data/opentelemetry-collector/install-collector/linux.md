@@ -89,7 +89,7 @@ The following arguments can be passed to the script:
 | `--skip-installation-token` | `k`        | Skips requirement for installation token. This option do not disable default configuration creation.      | No          |
 | `--tag`                     | `t`        | Sets tag for collector. This argument can be use multiple times. One per tag.              | Yes, in `key=value` format |
 | `--download-only`           | `w`        | Download new binary only and skip configuration part.           | No                         |
-| `--version`                 | `v`        | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version.             | Yes, e.g. `0.71.0-sumo-0`  |
+| `--version`                 | `v`        | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version.             | Yes, e.g. `0.94.0-sumo-2`  |
 | `--skip-config`             | `s`        | Do not create default configuration            | No                         |
 | `--skip-systemd`            | `d`        | Preserves from Systemd service installation.               | No                         |
 | `--fips`                    | `f`        | Install the FIPS-compliant binary. See [FIPS section](#fips) for more details.             | No                         |
@@ -109,7 +109,7 @@ The following env variables can be used along with script:
 
 #### Step 1. Download the Binary
 
-Examples for OpenTelemetry Collector version `0.73.0-sumo-0`.
+Examples for OpenTelemetry Collector version `0.94.0-sumo-2`.
 
 <Tabs
   className="unique-tabs"
@@ -123,7 +123,7 @@ Examples for OpenTelemetry Collector version `0.73.0-sumo-0`.
 
 ```bash
 curl -sLo otelcol-sumo \
-"https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.73.0-sumo-0/otelcol-sumo-0.73.0-sumo-0-linux_amd64"
+"https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.94.0-sumo-2/otelcol-sumo-0.94.0-sumo-2-linux_amd64"
 ```
 
 </TabItem>
@@ -131,7 +131,7 @@ curl -sLo otelcol-sumo \
 
 ```bash
 curl -sLo otelcol-sumo \
-"https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.73.0-sumo-0/otelcol-sumo-0.73.0-sumo-0-linux_arm64"
+"https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.94.0-sumo-2/otelcol-sumo-0.94.0-sumo-2-linux_arm64"
 ```
 
 </TabItem>

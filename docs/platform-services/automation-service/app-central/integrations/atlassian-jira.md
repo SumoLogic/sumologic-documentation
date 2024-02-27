@@ -3,29 +3,30 @@ title: Atlassian Jira
 description: ''
 tags: [ ]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/atlassian-jira.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-jira.png')} alt="atlassian-jira" width="80"/>
 
-Version: 1.6  
-Updated: Feb 14, 2024
+***Version: 1.6  
+Updated: Feb 14, 2024***
 
 This integration is built specifically for Jira OnPrem (Server and Data Center) and provides a range of issue management capabilities.
 
 ## Actions
 
 * **Add Comment** (*Notification*) - Adds a new comment to an issue.
-* **Create Issue**(*Notification*) - Creates a new issue in the specified Jira project.
+* **Create Issue** (*Notification*) - Creates a new issue in the specified Jira project.
 * **Delete Issue** (*Containment*) - Deletes the specified issue.
-* **Get Attachments***(Enrichment)* - Retrieves attachments from an issue and stores them in Cloud SOAR.
+* **Get Attachments** *(Enrichment)* - Retrieves attachments from an issue and stores them in Cloud SOAR.
 * **Get Issue** *(Enrichment)* - Returns an issue in JSON format.
-* **Jira Issues Daemon**(*Daemon*) - Automatically pulls issues from the specified project.
-* **List Comments**(*Enrichment*) - Returns all comments for an issue.
+* **Jira Issues Daemon** (*Daemon*) - Automatically pulls issues from the specified project.
+* **List Comments** (*Enrichment*) - Returns all comments for an issue.
 * **List Fields** (*Enrichment*) - Returns a list of all fields, both System and Custom.
 * **List Issue Types** (*Enrichment*) - Returns a list of all issue types visible to the user.
-* **List Projects**(*Enrichment*) - Returns all projects which are visible for the currently logged-in user.
-* **List Statuses**(*Enrichment*) - Get all issue types with valid status values for a project.
+* **List Projects** (*Enrichment*) - Returns all projects which are visible for the currently logged-in user.
+* **List Statuses** (*Enrichment*) - Get all issue types with valid status values for a project.
 * **List Transitions** (*Enrichment*) - Get a list of the transitions possible for this issue by the current user.
-* **Search**(*Enrichment*) - Searches for issues using JQL.
+* **Search** (*Enrichment*) - Searches for issues using JQL.
 * **Update Issue** (*Notification*) - Edits an issue.
 * **Update Issue Status** (*Notification*) - Perform a transition on an issue.
 

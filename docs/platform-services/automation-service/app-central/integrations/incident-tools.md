@@ -3,37 +3,38 @@ title: Incident Tools
 description: ''
 tags: [cloud soar integrations]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/incident-tools.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/incident-tools.png')} alt="incident-tools" width="100"/>
 
-Version: 1.5  
-Updated: Feb 13, 2024
+***Version: 1.5  
+Updated: Feb 13, 2024***
 
 :::sumo Cloud SOAR
-This integration is for Cloud SOAR only
+This integration is only for Cloud SOAR.
 :::
 
 Set of scripts to perform actions within Cloud SOAR.
 
 ## Actions
 
-* **Add Incident Artifact** (*Custom*) - Add an artifact to an incident
-* **Add Investigators** (*Custom*) - Add investigators to an incident
-* **Add Note** (*Custom*) - Add a note to an incident
-* **Add Users Details** (*Custom*) - Add the user details entity to an incident
-* **Change Incident Folder** (*Custom*) - Change the destination folder for an incident
-* **Change Incident Owner** (*Custom*) - Change the incident's owner
-* **Close Incident** (*Custom*) - Set incident status to closed
-* **Create Entity** (*Custom*) - Create a new entity
-* **Create Incident From Template** (*Custom*) - Create a new incident from an existing incident template
-* **Extract Data And Save Into Attachments** (*Custom*) - Extract data from previous action using fields path, then save as attachments as CSV, JSON or text file
-* **Get Incident** (*Custom*) - Get details of the specified incident
-* **List Users** (*Enrichment*) - List Users
-* **Update Incident Date And Time Field** (*Custom*) - Update the date and time Incident field
-* **Update Incident Description** (*Custom*) - Update an incident description
-* **Update Incident Field** (*Custom*) - Update an incident field
-* **Update Incident Fields** (*Custom*) - Update multiple incident fields
-* **Update Incident Phase** (*Custom*) Update the incident phase
+* **Add Incident Artifact** (*Custom*) - Add an artifact to an incident.
+* **Add Investigators** (*Custom*) - Add investigators to an incident.
+* **Add Note** (*Custom*) - Add a note to an incident.
+* **Add Users Details** (*Custom*) - Add the user details entity to an incident.
+* **Change Incident Folder** (*Custom*) - Change the destination folder for an incident.
+* **Change Incident Owner** (*Custom*) - Change the incident's owner.
+* **Close Incident** (*Custom*) - Set incident status to closed.
+* **Create Entity** (*Custom*) - Create a new entity.
+* **Create Incident From Template** (*Custom*) - Create a new incident from an existing incident template.
+* **Extract Data And Save Into Attachments** (*Custom*) - Extract data from previous action using fields path, then save as attachments as CSV, JSON or text file.
+* **Get Incident** (*Custom*) - Get details of the specified incident.
+* **List Users** (*Enrichment*) - List Users.
+* **Update Incident Date And Time Field** (*Custom*) - Update the date and time Incident field.
+* **Update Incident Description** (*Custom*) - Update an incident description.
+* **Update Incident Field** (*Custom*) - Update an incident field.
+* **Update Incident Fields** (*Custom*) - Update multiple incident fields.
+* **Update Incident Phase** (*Custom*) Update the incident phase.
 
 ## Category
 
