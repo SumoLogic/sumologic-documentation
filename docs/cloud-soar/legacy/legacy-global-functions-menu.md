@@ -122,17 +122,6 @@ Cloud SOAR platform are displayed. These permissions are as follows:
 - **Automation** refers to the Automation Section in the settings menu. Configuring these permissions will determine for example, what integrations can be viewed or modified
 - **Entities** refers to the Entities section located in the Global Functions menu. Configuring these permissions will determine what the user can view/modify within the entities module.
 
-#### Groups
-
-Once general and incident profiles have been created, administrators can
-add these profiles to their appropriate **Groups**. Navigate to **User Management** and select **Groups**.
-
-Click the **+** again to add a new group. When the configuration screen is
-displayed, name the new group and assign its
-profile; click **Save** to continue. Group privileges override user
-privileges. If a user belongs to more than one group, the privileges of
-all groups are merged.
-
 #### Users
 
 Under the **User Management** dropdown choose **Users** and click **+** to
