@@ -453,7 +453,7 @@ To view the details of a Triage event, click on the box and arrow icon in the Ac
 
 To begin triaging an event, click on the person icon in the Actions column for the event to **grab** the event. Once an event is grabbed by an analyst, any Playbooks defined for that incident type will be automatically executed and the results will be displayed in the Results section of the Event Details screen. Because all Playbooks for the specified incident type are automatically executed as soon as the incident is grabbed, it is recommended that separate incident types and Playbooks be created for Triage events.
 
-After triaging the event, the event may be reassigned to another user for further analysis, discarded or converted to an incident. To reassign the event to another user, click on the circular arrow icon in the Actions column for the event. To discard the event, click on the trashcan icon in the Actions column for the event.        
+After triaging the event, the event may be reassigned to another user for further analysis, discarded or converted to an incident. To reassign the event to another user, click on the circular arrow icon in the **Actions** column for the event. To discard the event, click on the trash can icon in the **Actions** column for the event.        
 
 <img src={useBaseUrl('img/cloud-soar/image182.png')} alt="Discard events" style={{border: '1px solid gray'}} width="100"/>
 
