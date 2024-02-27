@@ -3,21 +3,22 @@ title: Arbor
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/arbor.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/arbor.png')} alt="apivoid" width="90"/>
 
-Version: 1.2  
-Updated: Jul 13, 2023
+***Version: 1.2  
+Updated: Jul 13, 2023***
 
 Gather detail-rich data from Netscout Arbor alerts.
 
 ## Actions
 
-* **Alert Ongoing Polling** (*Enrichment*) - Presents data on whether the alert is still active
-* **Get Alert** (*Enrichment*) - Get a specific Arbor alert
-* **List Alerts** (*Enrichment*) - Get all Arbor alerts
-* **Mitigation Ongoing Polling** (*Enrichment*) - Presents data on whether the alert is still actively being mitigated
-* **Arbor Alerts Daemon** (*Daemon*) - Automatically pass alerts to Cloud SOAR
+* **Alert Ongoing Polling** (*Enrichment*) - Presents data on whether the alert is still active.
+* **Get Alert** (*Enrichment*) - Get a specific Arbor alert.
+* **List Alerts** (*Enrichment*) - Get all Arbor alerts.
+* **Mitigation Ongoing Polling** (*Enrichment*) - Presents data on whether the alert is still actively being mitigated.
+* **Arbor Alerts Daemon** (*Daemon*) - Automatically pass alerts to Cloud SOAR.
 
 ## Change Log
 

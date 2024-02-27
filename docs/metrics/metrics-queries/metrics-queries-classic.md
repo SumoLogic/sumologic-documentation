@@ -157,7 +157,7 @@ When you save a metric query, it will be saved the currently selected time rang
 Follow these steps to save a metric query.
 
 1. Enter a metric query, and run it to make sure it returns results. Before Sumo Logic saves a metric query, it validates the query syntax, but does not not run the query.
-1. Click the save icon in the upper right corner of the metric query tab. Alternatively, you can select **Save As** from the three-dot more options menu, also in the upper right corner of the metric query tab.
+1. Click the save icon in the upper right corner of the metric query tab. Alternatively, you can select **Save As** from the three-dot kebab menu, also in the upper right corner of the metric query tab.
 1. The **Save Item** popup appears.  
 1. **Name**. Enter a name for the metric query
 1. Navigate to the folder where you want to save the query.

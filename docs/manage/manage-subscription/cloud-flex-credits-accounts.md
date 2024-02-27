@@ -82,7 +82,7 @@ The **Account Overview** tab of the  **Account** page for Cloud Flex Credits d
 This page is strictly access controlled. You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
 :::
 
-[Data Tiers](/docs/manage/partitions-data-tiers) are available as part of the Enterprise Suite Package Account, and provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous, Frequent, and Infrequent tiers, you can segment your data by use case and analytics needs, thus optimizing your analytics investments.
+[Data Tiers](/docs/manage/partitions-data-tiers) are available as part of the Enterprise Suite Package Account, and provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous, Frequent, and Infrequent Tiers, you can segment your data by use case and analytics needs, thus optimizing your analytics investments.
 
 :::note
 For more information on Data Tiers, contact your Sumo Logic account manager.
@@ -170,14 +170,14 @@ The Usage (Sumo Credits) panel at the bottom of the Account Overview page provi
 
 The Usage Details panel contains the following usage categories:
 
-* **Continuous Ingest**. Credits used for logs ingested into the Continuous tier.
-* **Frequent Ingest**. Credits used for logs ingested into the Frequent tier.
-* **Infrequent Ingest**. Credits used for logs ingested into the Infrequent tier.
-* **Infrequent Scan**. Credits used to scan data for Infrequent tier searches.
+* **Continuous Ingest**. Credits used for logs ingested into the Continuous Tier.
+* **Frequent Ingest**. Credits used for logs ingested into the Frequent Tier.
+* **Infrequent Ingest**. Credits used for logs ingested into the Infrequent Tier.
+* **Infrequent Scan**. Credits used to scan data for Infrequent Tier searches.
 * **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
 * **Metrics Ingest**. Credits used for metrics ingested.
-* **Storage**. Credits used for log storage in the Continuous and Frequent tiers. 
-* **Infrequent Storage**. Credits used for log storage in the Infrequent tier. 
+* **Storage**. Credits used for log storage in the Continuous and Frequent Tiers. 
+* **Infrequent Storage**. Credits used for log storage in the Infrequent Tier. 
 * **Promotional categories**. See [Monitoring Promotional Credit usage](#monitoring-promotional-credit-usage).
 
 :::note

@@ -27,9 +27,9 @@ To collect logs from the Duo Security App, use the new [Cloud-to-Cloud Integrati
 
 ## Installing the Duo Security app
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Duo Security dashboards
 

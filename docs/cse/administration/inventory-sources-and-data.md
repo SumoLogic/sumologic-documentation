@@ -33,6 +33,10 @@ Some of the inventory sources are strictly for collecting inventory data—such 
 
 Some inventory sources provide user inventory information, some provide computer inventory information, and some provide both. The table below lists currently available inventory sources.
 
+:::note
+The AWS Inventory Source collects the inventory of AWS resources in your AWS account, but is usable only by the Root Cause Explorer. See [AWS Inventory Source](/docs/observability/root-cause-explorer/#aws-inventory-source).
+:::
+
 | Inventory source | Type of source | Inventory data collected |
 | :-- | :-- | :-- |
 | [Armis API Integration Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source) | Cloud-to-Cloud | Computer |

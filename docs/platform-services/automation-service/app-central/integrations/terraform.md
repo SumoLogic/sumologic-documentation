@@ -3,11 +3,12 @@ title: Terraform
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/terraform.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/terraform.png')} alt="terraform" width="100"/>
 
-Version: 1.1  
-Updated: Jun 22, 2023
+***Version: 1.1  
+Updated: Jun 22, 2023***
 
 Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage cloud services.
 
@@ -32,33 +33,22 @@ Terraform is an open-source infrastructure as code software tool that provides a
 
 ## Terraform configuration
 
-1. Login to Terraform. Click on your profile picture on the top right corner.
-
-1. Click user settings.
-
-1. In the left menu, under Tokens, click Create an API token button. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-1.png)  
-
-1. Then add a description and create your API token. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-2.png)
-
+1. Log in to Terraform. Click on your profile picture on the top right corner.
+1. Click **User settings**.
+1. In the left menu, under Tokens, click Create an API token button. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-1.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
+1. Then add a description and create your API token.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-2.png')} style={{border:'1px solid gray'}} alt="terraform" width="600"/>
 1. Use the copy button to save your token. This token **will not be displayed again**, so make sure to save it to a safe place.
 
 ## Terraform in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-3.png)
-
-1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-4.png)
-
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-3.png')} style={{border:'1px solid gray'}} alt="terraform" width="300"/>
+1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-4.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
 1. After the list of the integrations appears, search/look for the integration and click on the row.
-
-1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-5.png)
-
-1. Populate all the required fields (\*) then click SAVE SETTINGS. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-6.png)
-
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-7.png)
-
-1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-8.png)
-
-1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/terraform/terraform-9.png)
+1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-5.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
+1. Populate all the required fields (\*) then click **SAVE SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-6.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-7.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
+1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-8.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
+1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/terraform/terraform-9.png')} style={{border:'1px solid gray'}} alt="terraform" width="400"/>
 
 ## Change Log
 

@@ -9,7 +9,7 @@ Pausing a view stops new data from being indexed. You can resume indexing at any
 ## Pause a scheduled view
 
 1. Go to **Manage Data** > **Logs** > **Scheduled Views**.
-1. Click the three-dot icon to the right of the scheduled view, then click **Pause** from the menu.
+1. Click the three-dot kebab icon to the right of the scheduled view, then click **Pause** from the menu.
 
 To resume indexing at a later time, click **Start**.
 
@@ -23,4 +23,4 @@ If you disable a view, it is no longer visible in Sumo Logic. If you create a ne
 To disable a scheduled view:
 
 1. Go to **Manage Data** > **Logs** > **Scheduled Views**.
-1. Click the three-dot icon to the right of the scheduled view you'd like to disable, then choose **Disable** from the menu.
+1. Click the three-dot kebab icon to the right of the scheduled view you'd like to disable, then choose **Disable** from the menu.
