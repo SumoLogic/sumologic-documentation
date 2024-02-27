@@ -6,12 +6,12 @@ description: Learn how automations run playbooks to add enrichments and create n
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import ActionLimit from '../../reuse/action-limits.md';
+import ActionsLimit from '../../reuse/actions-limit.md';
 
 Cloud SIEM automations run playbooks in the [Automation Service](/docs/platform-services/automation-service/) to add enrichments and create notifications for either Insights or Entities. You can set automations to run automatically when Insights are created or closed, or you can run them manually.
 
 :::note
-<ActionLimit/>
+<ActionsLimit/>
 :::
 
 ## Overview: Configure an automation
@@ -76,7 +76,7 @@ If you configured the automation to [run manually](#run-an-automation-manually),
    1. Select an option under **Entity Automation**.
 
    :::note
-   <ActionLimit/>
+   <ActionsLimit/>
    :::
 
 ## View automations

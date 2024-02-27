@@ -2,13 +2,14 @@
 id: automation-service-app-central
 title: About App Central in the Automation Service
 sidebar_label: About App Central
-description: Learn how to use App Central to get new applications and tools. 
+description: Learn how to use App Central to get new applications and tools.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
+import ActionsLimit from '../../reuse/actions-limit.md';
 
-App Central provides apps to help you be more productive in the Automation Service. From here, you can search and add new integrations with all the needed components. 
+App Central provides apps to help you be more productive in the Automation Service. From here, you can search and add new integrations with all the needed components.
 
 :::note
 Cloud SOAR has its own App Central. For more information, see [App Central](/docs/cloud-soar/automation/#app-central) in *Cloud SOAR Automation*.
@@ -33,19 +34,19 @@ Watch this micro lesson to learn how to use App Central.
 
 ## View App Central
 
-To view App Central, [access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service) and click **App Central** in the left navigation bar. 
+To view App Central, [access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service) and click **App Central** in the left navigation bar.
 
 Before you can access App Central, you must have the App Central Access role capability. For more information on role capabilities needed to use the Automation Service, see [Configure role capabilities](/docs/platform-services/automation-service/about-automation-service/#configure-role-capabilities).
 
-## App Central UI 
+## App Central UI
 
 <img src={useBaseUrl('img/cse/automation-service-app-central.png')} alt="App Central" style={{border:'1px solid gray'}} width="800"/>
 
 1. **Playbooks**. Click to view [playbooks in App Central](#playbooks-in-app-central) that are available to install.
 1. **Integrations**. Click to view [integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) that are available to install.
-1. **Search**. Search for integrations or playbooks to install. 
-1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization. The actions limit is set to 200 per hour by default to prevent abuse of system resources or runaway processes. For more information, see [Actions limit](/docs/platform-services/automation-service/about-automation-service/#actions-limit).
-1. **Download**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](#install-a-playbook-from-app-central). 
+1. **Search**. Search for integrations or playbooks to install.
+1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization. <ActionsLimit/>
+1. **Download**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](#install-a-playbook-from-app-central).
 
 ## Work with integrations in App Central
 
@@ -76,7 +77,7 @@ Update integrations in App Central using keywords in the bottom left corner of t
 
 #### Update an installed integration to show all actions
 
-Here an example of updating an installed integration. 
+Here an example of updating an installed integration.
 
 1. In the Integrations section, check the actions present on the installed integration. In the example below, the only types of actions in the integration are Enrichment and Notification. <br/><img src={useBaseUrl('img/cloud-soar/installed-integration.png')} style={{border:'1px solid gray'}} alt="Installed integration" width="800"/>
 1. Go to App Central and search for the same integration. Click the integration. <br/><img src={useBaseUrl('img/cloud-soar/installed-detail.png')} alt="Installed integration" style={{border:'1px solid gray'}} width="300"/>
@@ -103,21 +104,21 @@ While [Playbooks](/docs/platform-services/automation-service/automation-service-
 
 1. Use the **Search** bar in the upper right of the **Playbooks** tab to find playbooks.
 1. Click **Download** in the corner of the playbook box.
-1. Click **Next**. 
-1. Click **Install** to install the playbook. 
+1. Click **Next**.
+1. Click **Install** to install the playbook.
 1. Click **Close**. After installation is complete, **Installed** replaces the **Download** link in the corner of the playbook box.
 1. **IMPORTANT**: Click **Show More** in the playbook box to see if there are additional steps you need to follow to configure the installed playbook. Failure to perform these additional steps may result in the playbook not working properly.
 
-<!-- There used to be an export button, but now it's gone. Saving this text below in case it comes back. 
+<!-- There used to be an export button, but now it's gone. Saving this text below in case it comes back.
 
 ## Export from App Central
 
 You can export the contents of integrations and playbooks from App Central.
 
 1. Click the **Go to export page** button in the top right corner of the **Integrations** tab.<br/><img src={useBaseUrl('img/cse/automation-service-app-central-export-button.png')} alt="Go to the export page" style={{border: '1px solid gray'}} width="300"/>
-1. Select the items you want to export. Provide a description in the box provided. If you select more than one item, you are prompted to provide a title as well. 
+1. Select the items you want to export. Provide a description in the box provided. If you select more than one item, you are prompted to provide a title as well.
 1. Scroll down and click **Export** at the bottom right corner of the screen. The selections are exported in a .tar file to your downloads folder.
 1. Extract the .tar file. An archive file is extracted from the .tar file (for example, a .tar.gz file).
-1. Extract the archive file. The exported items are extracted, including any YAML files they contain. 
+1. Extract the archive file. The exported items are extracted, including any YAML files they contain.
 
 -->
