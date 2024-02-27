@@ -115,7 +115,7 @@ The usage forecast gives you an opportunity to see the potential end of the curr
 ### Usage Details by Category
 
 * **Usage Details.** Shows graphs that represent detail usage of Sumo Credits by ingest, storage, or any type of data service utilized from the start of the contract period.
-* **Usage Categories**. Table displaying the credits used, % of credits used, usgae % change, and units by usage categories ingest type and promotional credits usage.
+* **Usage Categories**. Table displaying the credits used, % of credits used, usage % change, units by usage categories ingest type, and promotional credits usage.
 * **Usage % Change**. Indicates the difference in credit usage for a selected usage category over time. For example, if you choose the date from Jan 1 to Jan 7, it will show the usage difference between Dec 25 to Dec 31 and Jan 1 to Jan 7 for each usage category.
 
 ### Promotional Credits
