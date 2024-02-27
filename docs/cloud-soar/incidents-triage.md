@@ -412,8 +412,7 @@ Up to 100 custom fields and be created for the Triage module, allowing customiza
 To add a new field, click **Add** from the upper right-hand corner and configure the field as desired. Note that to be
 able to filter events in the Triage module based on the values of a field, **Use as filter** must be checked in the Visualization tab when adding or modifying a field.
 
-As fields are created, they will be assigned a number starting at `1`, which will be used to identify the field when adding events via the API. The first field added will be identified as `opt_1`, the second as `opt_2`, and so on. Regardless of the ordering of the fields on the screen, these numbers will remain the same. If a field is deleted, the
-number will not be reused. For example, if you have defined `opt_1` through `opt_8` and delete the field `opt_8`, the next field added will still become `opt_9`. It is important to remember these field numbers, as they will be used when the API is invoked.
+As fields are created, they will be assigned a number starting at `1`, which will be used to identify the field when adding events via the API. The first field added will be identified as `opt_1`, the second as `opt_2`, and so on. Regardless of the ordering of the fields on the screen, these numbers will remain the same. If a field is deleted, the number will not be reused. For example, if you have defined `opt_1` through `opt_8` and delete the field `opt_8`, the next field added will still become `opt_9`. It is important to remember these field numbers, as they will be used when the API is invoked.
 
 #### Attributes sent from Cloud SIEM
 
