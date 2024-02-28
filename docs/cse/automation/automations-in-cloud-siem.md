@@ -46,6 +46,7 @@ Now that you have the names of the actions you want to use, you can add them to 
 1. Click **Create**. The node is added to the playbook.
 1. Repeat to add more actions to the playbook. If desired, add conditions.
 1. Click **Save** to save your changes.
+1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
 1. When you're ready to let the playbook be used in automations, click **Publish**.
 
 ### Step 3: Add the playbook to an automation
