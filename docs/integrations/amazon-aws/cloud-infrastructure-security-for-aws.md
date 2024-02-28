@@ -128,8 +128,8 @@ This section describes prerequisites and guidelines for deploying Sumo Logic’s
    * [AWS Network Firewall](https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-aws-network-firewall.html)
    * [AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html)
    * [AWS Web Application Firewall (WAF)](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html)
-* **Sumo Logic console**. Make sure you have access to the [Sumo Logic console](/docs/get-started/sumo-logic-ui/) and as a user that is associated with Sumo Logic role and required role capabilities.
-* **Role capabilities**. Make sure you have a Sumo Logic role that have the following [role capabilities](/docs/manage/users-roles/roles/role-capabilities/):
+* **Sumo Logic console**. Make sure you have access to the [Sumo Logic console](/docs/get-started/sumo-logic-ui/).
+* **Role capabilities**. Make sure you have a Sumo Logic role that has the following [role capabilities](/docs/manage/users-roles/roles/role-capabilities/):
   * Data Management
      * View Collectors
      * Manage Collectors
@@ -194,13 +194,13 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
     :::important
     This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
     :::
-   1. **Deploy AWS**. Click the **Deploy AWS Security** button.  <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="Deploy Cloud Infrastructure for AWS screen" style={{border: '1px solid gray'}} width="700"/>
+   1. **Deploy AWS**. Click the **Deploy AWS Security** button. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="Deploy Cloud Infrastructure for AWS screen" style={{border: '1px solid gray'}} width="700"/>
 1. Sign in the [AWS Console](https://console.aws.amazon.com/console/).
 1. In **Quick Create Stack**, fill out the fields to create the stack from the CloudFormation template.
    1. In **Stack Name**, enter a name for the stack. The stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-quick-create-stack.png')} alt="Create stack" style={{border: '1px solid gray'}} width="700"/>
    1. Scroll down to the **Parameters** section.
    1. In **1. Sumo Logic Configuration**, fill out the following:
-      * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, or fed.
+      * **Sumo Logic deployment location**. Choose the geographic location of the deployment: au, ca, de, eu, jp, us2, us1, in, or fed. For information about where your Sumo Logic data is stored in AWS, see [Where is My Data Stored?](/docs/get-started/faq/#where-is-my-data-stored)
       * **Sumo Logic access ID**. Enter the Sumo Logic console access ID, which you received when you created the [access key](/docs/manage/security/access-keys/).
       * **Sumo Logic access key**. Enter your Sumo Logic access key. Retrieve this from your Sumo Logic account.
       * **Sumo Logic organization ID**. Enter your Sumo Logic organization ID, which you can find in the Sumo Logic console, under [Account](/docs/get-started/account-settings-preferences).
