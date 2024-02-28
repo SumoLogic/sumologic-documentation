@@ -20,13 +20,9 @@ HipChat webhook connections allow you to send Sumo Logic alert results to Hip
 
 Once you set up the webhook connection, you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor](/docs/alerts/monitors).
 
-:::note
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
-:::
 
-:::note
 You'll need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
-:::
 
 To set up a webhook connection for HipChat:
 
