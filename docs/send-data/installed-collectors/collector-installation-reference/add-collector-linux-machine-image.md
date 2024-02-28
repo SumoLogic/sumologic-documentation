@@ -31,7 +31,7 @@ Collection > Collection** page, or from the list below.
 
     :::important
     JSON files need to be UTF-8 encoded.
-    ```
+    :::
 
     ```json title="Sample sources.json"
     {
