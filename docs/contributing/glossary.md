@@ -32,7 +32,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete)**. On the Search page of the Sumo Logic user interface, the search autocomplete dropdown dialog offers suggestions to make query writing easier. Suggestions include simple logic that offers common default queries, keywords, metadata terms, and search operators. The autocomplete dialog also includes links to Help topics for more information.
 
-**[Automation Service](/docs/cse/automation/about-automation-service-and-cloud-siem)**. In Cloud SIEM, a service that automatically runs tasks such as sending notifications or adding data to records when security incidents occur. 
+**[Automation Service](/docs/cse/automation/about-automation-service-and-cloud-siem)**. In Cloud SIEM, a service that automatically runs tasks such as sending notifications or adding data to records when security incidents occur.
 
 
 ## B
@@ -316,6 +316,6 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 ## W
 
-**[Webhook](/docs/alerts/webhook-connections)**. A WebHook is an HTTP callback: an HTTP POST that occurs when something happens. WebHook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming WebHooks. You can configure a custom WebHook, or use preconfigured WebHooks for a number of apps, including Slack, Datadog, and so on.
+**[Webhook](/docs/alerts/webhook-connections)**. A webhook is an HTTP callback: an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks. You can configure a custom webhook, or use preconfigured webhooks for a number of apps, including Slack, Datadog, and so on.
 
 **[`where` operator](/docs/search/search-query-language/search-operators/where)**. A conditional operator that can precede or follow another operator. Example combinations include "where x matches y", "where x in (a, b, c)", "where x not in (a, b, c)" and "where a > 1 and b / 4 &lt; sqrt(x)".

@@ -117,7 +117,7 @@ For instructions on how to create a metric query, see [Metrics Explorer](../metr
 
 ### Metricmonitors
 
-You can configure a metric monitor for a metric query so that Sumo will send an alert notification, when the query results match the rules that you define for the monitor. There are two notification types: email and WebHook. 
+You can configure a metric monitor for a metric query so that Sumo will send an alert notification, when the query results match the rules that you define for the monitor. There are two notification types: email and webhook. 
 
 You can set up several types of monitors: Critical, Warning, and Missing Data. Critical and Warning result in value-based alerts—they are triggered when a metric in a time series varies from a threshold for a specified period of time.  A Missing Data monitor triggers an alert when no data is received for a specified period of time.  
 
