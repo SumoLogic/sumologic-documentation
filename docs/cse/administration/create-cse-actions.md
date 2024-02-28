@@ -21,7 +21,6 @@ You can use Cloud SIEM Actions to issue a notification to another service when c
 * Demisto (Corex XSOAR)
 * Email
 * HTTP POST v2
-* HipChat
 * Microsoft Teams
 * PagerDuty
 * Recorded Future
@@ -50,7 +49,7 @@ import Iframe from 'react-iframe'; 
 
 You can configure an Action to send information about an Insight to another system, automatically when the Insight is created or on-demand from the Insight's **Actions** menu, and in the case of an HTTP POST v2 Action, when an Insight is closed.
 
-What gets sent to the target system depends on the Action type. For some types—Slack, HipChat, Microsoft Teams, and PagerDuty—the notification contains a summary of the Insight with the following information:
+What gets sent to the target system depends on the Action type. For some types — Slack, Microsoft Teams, and PagerDuty — the notification contains a summary of the Insight with the following information:
 
 * The Entity the Insight fired on.
 * The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to. In the example below, the “Initial Access” tactic is shown.
@@ -82,7 +81,6 @@ The notification sent by a Rule Action contains the name of the rule and the re
     * [Demisto](#demistocorex-xsoar)
     * [Email](#email)
     * [HTTP POST v2](#http-post-v2)
-    * [HipChat](#hipchat)
     * [Microsoft Teams](#microsoft-teams)
     * [PagerDuty](#pagerduty)
     * [Recorded Future](#recorded-future)
@@ -153,20 +151,6 @@ in Cloud SIEM.
 1. **Record Fields to Include**. If desired, provide a comma-delimited list of selected Record fields to include (instead of all Record fields).
 1. Click **Create**. <br/><img src={useBaseUrl('img/cse/http-post-v2.png')} alt="HTTP Post V2 action" width="500" />
 
-### HipChat
-
-This Action type sends a message to a HipChat room.
-
-1. **API Key**. Enter your HipChat API key.
-1. **Room**. Enter the HipChat room to send the notification to. 
-1. Click **Create**.  <br/><img src={useBaseUrl('img/cse/hipchat.png')} alt="HipChat action" width="500" />
-
-When this Action type is run on an Insight, the message contains:
-
-* The Entity the Insight fired on.
-* The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to. 
-* A link to the Insight in Cloud SIEM.
-
 ### Microsoft Teams
 
 This Action type sends a Webhook notification to Microsoft Teams.
@@ -177,8 +161,7 @@ Create a Webhook connection for the Microsoft Teams channel to which emails shou
 
 #### Configure Action in Cloud SIEM
 
-1. **URL**. Enter the URL for the Webhook connection you created
-    above. 
+1. **URL**. Enter the URL for the Webhook connection you created above. 
 1. Click **Create**. <br/><img src={useBaseUrl('img/cse/microsoft-teams.png')} alt="Microsoft Teams action" width="500" />
 
 ### PagerDuty
