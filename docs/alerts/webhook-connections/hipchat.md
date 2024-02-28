@@ -7,12 +7,12 @@ description: Send data from alerts to HipChat rooms.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/connection-and-integration/hipchat-logo-vector.svg')} alt="icon" width="55"/>
+
 :::warning solution deprecated
 
 <details>
 <summary>Our webhook connection for HipChat has been deprecated. See the full list of our supported webhook connections [here](/docs/alerts/webhook-connections).</summary>
-
-<img src={useBaseUrl('img/connection-and-integration/hipchat-logo-vector.svg')} alt="icon" width="45"/>
 
 Our HipChat CSE Action has been deprecated as well.
 

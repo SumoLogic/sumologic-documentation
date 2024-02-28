@@ -49,7 +49,7 @@ import Iframe from 'react-iframe'; 
 
 You can configure an Action to send information about an Insight to another system, automatically when the Insight is created or on-demand from the Insight's **Actions** menu, and in the case of an HTTP POST v2 Action, when an Insight is closed.
 
-What gets sent to the target system depends on the Action type. For some types-Slack, Microsoft Teams, and PagerDuty-the notification contains a summary of the Insight with the following information:
+What gets sent to the target system depends on the Action type. For some types—Slack, Microsoft Teams, and PagerDuty—the notification contains a summary of the Insight with the following information:
 
 * The Entity the Insight fired on.
 * The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to. In the example below, the “Initial Access” tactic is shown.
