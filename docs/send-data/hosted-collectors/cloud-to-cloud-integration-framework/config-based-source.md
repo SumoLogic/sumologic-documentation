@@ -163,14 +163,72 @@ Select this authentication option if the vendor API does not require any form of
 <details>
   <summary>HTTP Response Log Ingest Configuration</summary>
   <div>
-   This section configures the location of the log data from the API response. For now we only support JSON data.
-   1. **JSON**. Multiple result configurations can be added and at least one is required.
-      For paths and locations we decided to go with the JSONPath standard.
-      Different vendors are returning timestamps in different formats. For time parsing, we plan to add
-      Time parsing functionality in the future to use sumo time. For now, time format needs to be provided using Golang time format.
-      1. **Result Path**. JPath to the array of logs to ingest.
-      1. **Timestamp Path**. JPath to the log timestamp. If not specified, the default value of current time will be used.
-      1. **Time Format**. Log Timestamp Format. Has to be configured when Timestamp Path is provided.
+  Select the format of the data returned by the vendor and configure how the source should break down the response into into individual logs with the correct timestamp.
+
+  #### JSON with JPath
+  Use this option when the vendor API returns a JSON document with an array of log data somewhere inside the document. You will need to add one or more log location configurations telling the source where the array log are and how to parse their timestamps. In most cases vendor will only provide one array of log data and you only need to configure this once.
+
+  The source follows the [JSON Path standard defined here](https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html).
+
+  **Logs JPath**: Provide the JPath to the location of the array of individual logs you want to ingest into Sumo Logic starting at the root of the JSON response. The destination of this path must be an array.  
+  **Timestamp JPath**: Provide the JPath to the log timestamp, starting within an individual log.
+  **Timestamp Format**: Provide the timestamp format the logs use in the Go programming language format. [See our time formatting section for more details](#timestamp-formatting).
+
+  **JSON with JPath Examples**
+
+```json title="Vendor API JSON Response Example"
+{
+    "meta": {
+        "trace": "1234567890",
+        "error": false
+    },
+    "events": [
+        {
+            "id": 45345,
+            "ts": "2024-02-01T16:07:54Z",
+            "type": "security",
+            "msg": "some security event details"
+        },
+        {
+            "id": 45346,
+            "ts": "024-02-01T16:07:57Z",
+            "type": "security",
+            "msg": "some other security event details"
+        }
+    ],
+    "pagination": {
+        "nextUrl": "https://acme.org/api/v1/events?foo=bar"
+    }
+}
+```
+  | Setting          | Value                       |
+  |------------------|-----------------------------|
+  | Logs JPath       | `$.events[*]`               |
+  | Timestamp JPath  | `$.ts`                      |
+  | Timestamp Format | `2006-01-02T15:04:05Z07:00` |
+
+  ```json title="Vendor API JSON Response Example with Only Logs"
+[
+    {
+        "id": 45345,
+        "ts": "2024-02-01T16:07:54.512Z",
+        "type": "security",
+        "msg": "some security event details"
+    },
+    {
+        "id": 45346,
+        "ts": "2024-02-01T16:07:57.452Z",
+        "type": "security",
+        "msg": "some other security event details"
+    }
+]
+```
+  | Setting          | Value                           |
+  |------------------|---------------------------------|
+  | Logs JPath       | `$[*]`                          |
+  | Timestamp JPath  | `$.ts`                          |
+  | Timestamp Format | `2006-01-02T15:04:05.999Z07:00` |
+
   </div>
 </details>
 <details>
@@ -197,6 +255,7 @@ Select this authentication option if the vendor API does not require any form of
 10. (Optional) **Polling Interval**. Set how frequently to poll for new data. It must be between 5 minutes and 48 hours
 1. When you are finished configuring the Source, click **Save**.
 
+### Configuration Object
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.
 
 | Parameter  | Type        | Value                                         | Required | Description                      |
@@ -204,8 +263,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | schemaRef  | JSON Object | `{"type":"Config Based"}`                     | Yes      | Define the specific schema type. |
 | sourceType | String      | `"Universal"`                                 | Yes      | Type of source.                  |
 | config     | JSON Object | [Configuration object](#configuration-object) | Yes      | Source type specific values.     |
-
-### Configuration Object
 
 | Parameter                  | Type        | Required | Default           | Description                                                                                                                                                                                                                              | Examples                                                                                                                                                                                                                                                  |
 |:---------------------------|:------------|:---------|:------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -231,17 +288,56 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | progressWindowSize         | String      | Yes      | `5m`              | The size of the time window.                                                                                                                                                                                                             | `"windowSize": "5m"`                                                                                                                                                                                                                                      |
 | progressWindowInitLookback | String      | Yes      | `24h`             | How far back the source should start collecting data when created. This setting has no affect after the initial creation.                                                                                                                | `"windowInitialLookback": "24h"`                                                                                                                                                                                                                          |
 | progressWindowMaxLookback  | String      | Yes      | `31d`             | How far the window is allowed to stagnate when encountering repetitive errors.                                                                                                                                                           | `"windowMaxLookback": "31d"`                                                                                                                                                                                                                              |
+| responseLogsType           | String      | Yes      | `json`            | How the source should ingest logs from the response.                                                                                                                                                                                     | `"json"`                                                                                                                                                                                                                                                  |
+| responseLogsJsonPaths      | JSON Object | Yes      | `null`            | The location of logs to ingest in the JSON response and how to handle event timestamps. See full documentation for details.                                                                                                              | `[{"logsPath": "$[*]", "logTimestampPath": "$.published", "logTimestampFormat": "2006-01-02T15:04:05.999Z"}]`                                                                                                                                             |
+| paginationType             | String      | Yes      | `linkHeaders`     | Pagination type.                                                                                                                                                                                                                         | `"paginationType": "linkHeaders"`                                                                                                                                                                                                                         |
+| linkHeadersType            | String      | Yes      | `headers`         | Configures if the next page URL is included in the Link HTTP response header or in the response body.                                                                                                                                    | `"linkHeadersType": "headers"`                                                                                                                                                                                                                            |
+| linkHeadersJsonPath        | String      | No       | `null`            | A JSON Path to the appropriate body property.                                                                                                                                                                                            | `"linkHeadersJsonPath": "$.link.next"`                                                                                                                                                                                                                    |
 | clientTimeoutDuration      | String      | Yes      | `5m`              | How long the source allows the HTTP connection to live before closing it and setting the health to a timeout error. Must be between window size and 31d.                                                                                 | `"clientTimeoutDuration": "5m"`                                                                                                                                                                                                                           |
 | clientTimeoutRetries       | Integer     | Yes      | 5                 | The source will automatically retry without waiting for the next poll interval this many times for some errors such as 500 Internal Server.                                                                                              | `"clientTimeoutRetries": 5`                                                                                                                                                                                                                               |
 | clientRateLimitReqs        | Integer     | Yes      | 1000              | The number of HTTP requests the source is allowed to make within the rate limit duration.                                                                                                                                                | `"clientRateLimitReqs": 1000`                                                                                                                                                                                                                             |
 | clientRateLimitDuration    | String      | Yes      | `1m`              | The duration the rate limit requests, must be between 1s and 1h.                                                                                                                                                                         | `"clientRateLimitDuration": "1m"`                                                                                                                                                                                                                         |
 | clientRateLimitBurst       | Integer     | Yes      | 1000              | The number of requests the source is allowed to burst.                                                                                                                                                                                   | `"clientRateLimitBurst": 1000`                                                                                                                                                                                                                            |
-| dataProcessorType          | String      | Yes      | `json`            | Response Log Type.                                                                                                                                                                                                                       | `"dataProcessorType": "json"`                                                                                                                                                                                                                             |
-| resultsConfig              | JSON Object | Yes      | `null`            | Configuration of the location of the log data from the API response.                                                                                                                                                                     | `"resultsConfig": [{"resultPath": "$[*]", "timestampPath": "$.published", "timestampFormat": "2006-01-02T15:04:05.999Z"}]`                                                                                                                                |
-| paginationType             | String      | Yes      | `linkHeaders`     | Pagination type.                                                                                                                                                                                                                         | `"paginationType": "linkHeaders"`                                                                                                                                                                                                                         |
-| linkHeadersType            | String      | Yes      | `headers`         | Configures if the next page URL is included in the Link HTTP response header or in the response body.                                                                                                                                    | `"linkHeadersType": "headers"`                                                                                                                                                                                                                            |
-| linkHeadersJsonPath        | String      | No       | `null`            | A JSON Path to the appropriate body property.                                                                                                                                                                                            | `"linkHeadersJsonPath": "$.link.next"`                                                                                                                                                                                                                    |
 | pollingInterval            | String      | Yes      | `5m`              | Set how frequently to poll for new data. It must be between 5 minutes and 48 hours.                                                                                                                                                      | `"pollingInterval": "5m"`                                                                                                                                                                                                                                 |
+
+## Template Dynamic Values
+
+
+## Timestamp Formatting
+
+The source uses the the [Go programming language timestamp formatting](https://go.dev/src/time/format.go). See the table below for references and examples.
+
+  | Date Format                                 | Reference Value                                                       |
+  |---------------------------------------------|-----------------------------------------------------------------------|
+  | Year                                        | `2006`                                                                |
+  | Month Full Name                             | `January`                                                             |
+  | Month Abbreviated Name                      | `Jan`                                                                 |
+  | Month Zero Leading Number                   | `01`                                                                  |
+  | Month Number                                | `1`                                                                   |
+  | Day Zero Leading Number                     | `02`                                                                  |
+  | Day Number                                  | `2`                                                                   |
+  | Day Weekday Full Name                       | `Monday`                                                              |
+  | Day Weekday Abbreviated Name                | `Mon`                                                                 |
+  | 24 Hour Zero Leading Number                 | `15`                                                                  |
+  | 12 Hour Zero Leading Number                 | `03`                                                                  |
+  | 12 Hour Number                              | `3`                                                                   |
+  | Minute Zero Leading Number                  | `04`                                                                  |
+  | Minute Number                               | `4`                                                                   |
+  | Second Zero Leading Number                  | `05`                                                                  |
+  | Second Number                               | `5`                                                                   |
+  | Fractional Seconds                          | `.999` Milliseconds, `.999999` Microseconds, `.999999999` Nanoseconds |
+  | AM/PM Uppercase                             | `PM`                                                                  |
+  | AM/PM Lowercase                             | `pm`                                                                  |
+  | Timezone Offset without Colon Use Z for UTC | `Z0700`                                                               |
+  | Timezone Offset with Colon Use Z for UTC    | `Z07:00`                                                              |
+  | Timezone Offset without Colon               | `-0700`                                                               |
+  | Timezone Offset wit Colon                   | `-07:00`                                                              |
+  | Timezone Abbreviated Name                   | `MST`                                                                 |
+
+  | Standard              | Timestamp in Log                 | Timestamp Format                      |
+  |-----------------------|----------------------------------|---------------------------------------|
+  | RFC 3339              | `2024-02-01T16:07:57Z`           | `2006-01-02T15:04:05Z07:00`           |
+  | RFC 3339 Nano Seconds | `2024-02-01T16:07:57.541468757Z` | `2006-01-02T15:04:05.999999999Z07:00` |
 
 ## FAQ
 
