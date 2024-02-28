@@ -97,5 +97,5 @@ description: It is simple to configure traceId and spanId data injection into us
     ```
 
 :::note
-For more details please visit [Logger MDC auto-instrumentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/release/v1.32.x/docs/logger-mdc-instrumentation.md).
+For more details, refer to the [Logger MDC auto-instrumentation](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/release/v1.32.x/docs/logger-mdc-instrumentation.md).
 :::
