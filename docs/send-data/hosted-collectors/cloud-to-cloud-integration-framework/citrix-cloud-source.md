@@ -99,6 +99,10 @@ To configure the Citrix Cloud API:
 
 If the integration is configured with the SIEM forward option, set the Metadata field `_siemparser` to `/Parsers/System/Citrix/Citrix Cloud C2C`.
 
+:::note
+Session logs are not supported with the SIEM forward option.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 

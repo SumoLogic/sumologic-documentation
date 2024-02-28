@@ -3,26 +3,27 @@ title: Hacker Target
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/hacker-target.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/hacker-target.png')} alt="hacker-target" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1
+Updated: Jul 06, 2023***
 
 Utilize Hacker Target's investigational tools during an incident.
 
 ## Actions
 
-* **Find A Records** (*Enrichment*) - Query Hacker Target for A records matching the specified domain
-* **Search DNS Records** (*Enrichment*) - Query Hacker Target for DNS records matching the specified domain or IP
-* **HTTP Records** (*Enrichment*) - Query Hacker Target for HTTP records matching the specified domain
-* **Geo IP Lookup** (*Enrichment*) - Retrieve geolocation information for the specified IP address from Hacker Target
-* **Ping** (*Enrichment*) - Ping the specified domain or IP from Hacker Target
-* **Reverse DNS** (*Enrichment*) - Query Hacker Target for reverse DNS information on the specified domain or IP
-* **Reverse IP** (*Enrichment*) - Query Hacker Target for reverse IP information on the specified domain or IP
-* **Traceroute** (*Enrichment*) - Run a traceroute command on the specified domain or IP from Hacker Target
-* **Whois Lookup** (*Enrichment*) - Retrieve Whois information for the specified IP address
-* **Page Links** (*Enrichment*) - Parse the html of a website and extract links from the page
+* **Find A Records** (*Enrichment*) - Query Hacker Target for A records matching the specified domain.
+* **Search DNS Records** (*Enrichment*) - Query Hacker Target for DNS records matching the specified domain or IP.
+* **HTTP Records** (*Enrichment*) - Query Hacker Target for HTTP records matching the specified domain.
+* **Geo IP Lookup** (*Enrichment*) - Retrieve geolocation information for the specified IP address from Hacker Target.
+* **Ping** (*Enrichment*) - Ping the specified domain or IP from Hacker Target.
+* **Reverse DNS** (*Enrichment*) - Query Hacker Target for reverse DNS information on the specified domain or IP.
+* **Reverse IP** (*Enrichment*) - Query Hacker Target for reverse IP information on the specified domain or IP.
+* **Traceroute** (*Enrichment*) - Run a traceroute command on the specified domain or IP from Hacker Target.
+* **Whois Lookup** (*Enrichment*) - Retrieve Whois information for the specified IP address.
+* **Page Links** (*Enrichment*) - Parse the html of a website and extract links from the page.
 
 ## Change Log
 

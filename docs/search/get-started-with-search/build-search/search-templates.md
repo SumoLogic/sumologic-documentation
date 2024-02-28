@@ -77,9 +77,7 @@ Next, specify the `user_name` parameter as a lookup that already has the associa
 
 ### Create a Search Template for timeslice
 
-You can create a Search Template parameter for timeslice and allow dashboard viewers to adjust the timeslice to the granularity they want in their dashboard.
-
-For example, let’s take a simple query:
+Let’s take a simple query:
 
 ```sql
 _sourceCategory=apache_error
@@ -148,25 +146,3 @@ There are some best practices for working with data types.
 * If you want to parameterize arguments to an operator then you should use the data types Any or Number, depending on what arguments the user needs to supply in the search.
 * If you want to parameterize numeric arguments to an operator such as timeslice then you should always use the Number data type because there is a check to validate the right data type is being used. The **Any** data type does not support any validation so people can use it in unsupported values.
 * If you want to parameterize a part of a path, for example, `/mysearch/{{parameter}}/k8s/api`, you must use the **Any** Input type.
-
-## Create Dashboards from Search Templates
-
-You can use Search Templates to create convenient filters for your dashboards.
-
-If you have an existing autocomplete, we will give you warning message. For example `_sourceCategory`. If you limit what the `_sourceCategory` can be from the search template, it will overwrite the existing choices in the dashboard.
-
-To create a dashboard from a Search Template:
-
-1. Run your search template and wait for results.
-1. Click **Add to Dashboard**.
-1. Choose an existing dashboard for this panel, or create a new one.
-
-    :::note
-    You must choose a unique name for your search parameter for it to be a dashboard filter. If the parameter name conflicts with existing dashboard filter names, you will be prompted to rename your search parameter before adding it to a dashboard. If you ignore this warning and add the search to the dashboard then parameter’s autocomplete values will override any existing autocomplete values for the existing filter.
-    :::
-
-    ![file-exists.png](/img/search/get-started-search/build-search/search-templates/file-exists.png)
-
-1. The parameters will automatically become available as dashboard-wide filters.
-
-    ![dashboard-filter.png](/img/search/get-started-search/build-search/search-templates/dashboard-filter.png)
