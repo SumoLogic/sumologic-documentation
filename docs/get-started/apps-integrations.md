@@ -11,8 +11,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you. In this doc, you'll learn how to install apps from the **App Catalog** to your Library and how to manage them in multiple environments.
 
-<img src={useBaseUrl('img/get-started/library/App-Catalog.png')} alt="app catalog" style={{border:'1px solid gray'}} width="800"/>
-
 Sumo Logic apps address these common use cases:
 
 * **Increase availability and performance.** Sumo Logic enables issues to be identified before they impact the application and customer. Precise, proactive analytics quickly uncover hidden root causes across all layers of the application and infrastructure stack.
@@ -39,17 +37,9 @@ What makes Next-Gen different from Classic apps?
 * Upon app installation, content is installed into a shared **Installed Apps** folder that's visible to your entire org, making it easier to locate and upgrade, when needed.
 * Installed app content is immutable, which ensure that any apps upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
 
-import AppInstall from '../reuse/apps/app-install-v2.md';
-
-<AppInstall/>
-
 ### Classic Apps (Legacy)
 
 All of our existing Classic apps will be converted to Next-Gen. In the meantime, our Classic apps will remain available to you within the Application Catalog.
-
-import ClassicAppInstall from '../reuse/apps/app-install.md';
-
-<ClassicAppInstall/>
 
 ## Prerequisites
 
@@ -64,7 +54,13 @@ Certain apps have specific installation requirements. Be sure to check the instr
 Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic apps.
 :::
 
-## Install apps in Multiple Environments
+## Installing apps to your Library
+
+import AppInstall from '../reuse/apps/app-install.md';
+
+<AppInstall/>
+
+## Install apps in multiple environments
 
 If you have multiple environments generating data that you want to monitor using Sumo Logic apps — for example, environments for production, development, and testing — you’ll need to perform the following steps in each environment:
 
@@ -105,7 +101,7 @@ Each Sumo Logic app has unique requirements, so make sure to follow the specific
 
 Many of our apps are labeled with the **Certified by Sumo Logic** designation. Just look for the blue checkmark symbol:
 
-<img src={useBaseUrl('img/get-started/cert-app.png')} alt="cert-app.png" width="500" />
+<img src={useBaseUrl('img/get-started/cert-app.png')} alt="cert-app.png" style={{border:'1px solid gray'}} width="500" />
 
 These apps have gone through code and functional review with the Sumo Logic app development team as part of the [App Intelligence Partner Program](https://www.sumologic.com/technology-partners). This process includes feedback and re-review as needed, and ensures that apps certified through this process meet the team's quality standards.
 
@@ -137,9 +133,9 @@ Searches from Enterprise apps, which require a paid Professional Services contr
 
 To run a search from a Sumo Logic app:
 
-1. Find the Sumo Logic app for the data Source you would like to search in the **App Catalog**. For example, we've picked Cloud Passage Halo's **Outlier in Critical Issues**.<br/>  ![Outlier in critical issues](/img/get-started/library/FindSearchInApp.png)
+1. Find the Sumo Logic app for the data Source you would like to search in the **App Catalog**. For example, we've picked Cloud Passage Halo's **Outlier in Critical Issues**.<br/><img src={useBaseUrl('/img/get-started/library/FindSearchInApp.png')} alt="Outlier in critical issues" style={{border:'1px solid gray'}} width="700" />
 1. Find the search you want to run and click it.
-1. In the **Run Search** dialog, select a **Source Category** or enter a **Custom data filter** to run the search against.<br/>  ![Run a Search from an app](/img/get-started/library/RunSearch.png)
+1. In the **Run Search** dialog, select a **Source Category** or enter a **Custom data filter** to run the search against.<br/><img src={useBaseUrl('/img/get-started/library/RunSearch.png')} alt="Run a Search from an app" style={{border:'1px solid gray'}} width="500" />
 1. Click **Run Search**.
 
 The **Search** page opens, the search populates a new tab, and the search runs using the query's time range. If you would like to use a different time range, stop the search and reset it.
@@ -161,9 +157,9 @@ However, if you want to use multiple metadata fields as your filter criteria, f
 #### Define a custom data filter
 
 1. In the App Catalog, select the application you want to install and click **Add Integration**.
-1. Click the down arrow next to **Source Category**.<br/>  ![Custom Data Filter](/img/get-started/library/add-apache.png)
-1. A **Custom Data Filter** option appears. Click the option.<br/>  ![apache-custom-filter.png](/img/get-started/library/apache-custom-filter.png)
-1. Enter a filter expression in the **Custom Data Filter** field. For example filters, see [Example custom data filters](#example-custom-data-filters), below.<br/> ![apache-custom-filter-field.png](/img/get-started/library/apache-custom-filter-field.png)
+1. Click the down arrow next to **Source Category**.<br/><img src={useBaseUrl('/img/get-started/library/add-apache.png')} alt="Custom Data Filter" style={{border:'1px solid gray'}} width="500" />
+1. A **Custom Data Filter** option appears. Click the option.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter.png')} alt="apache-custom-filter" style={{border:'1px solid gray'}} width="500" />
+1. Enter a filter expression in the **Custom Data Filter** field. For example filters, see [Example custom data filters](#example-custom-data-filters), below.<br/><img src={useBaseUrl('/img/get-started/library/apache-custom-filter-field.png')} alt="apache-custom-filter-field" style={{border:'1px solid gray'}} width="500" />
 
 #### Example custom data filters
 
@@ -177,7 +173,6 @@ The table below has examples of custom data filters.
 | `_sourceHost=stage-EMEA* AND (_source=Apache* or _source=DB)` | App searches will return data whose source host begins with the string stage-EMEA and whose source either begins with Apache or is DB. We use parentheses to group the logic operations. |
 
 
-
 ## Log Analysis QuickStart app
 
 The Log Analysis QuickStart app, created for new users of Sumo Logic, includes searches to extract important information from your log files, independent of where they get generated.
@@ -189,7 +184,7 @@ Whether you're new to log management or plan to migrate from other products, the
 To install the app:
 
 1. From **App Catalog**, search for and select the **Log Analysis QuickStart** app.
-1. Click **Add Integration**.<br/> ![log-quickstart-analysis.png](/img/get-started/library/log-quickstart-analysis.png)
+1. Click **Add Integration**.<br/><img src={useBaseUrl('/img/get-started/library/log-quickstart-analysis.png')} alt="log-quickstart-analysis" style={{border:'1px solid gray'}} width="500" />
 1. Select from **Source Category** values. Choose an existing `_sourceCategory` present in your account used for your Sumo Logic data.
     :::info
     If you do not select the correct `_sourceCategory`, data will not be loaded into the app. If you don't know which `_sourceCategory` to select, ask your administrator who configured the Source.
@@ -201,7 +196,7 @@ To install the app:
 
 The Visits Dashboard displays identifying information about external and internal visitors across you deployment, including email addresses visitors are using.
 
-![log_analysis_app_visits](/img/get-started/library/log-analysis-qs-visits.png)
+<img src={useBaseUrl('/img/get-started/library/log-analysis-qs-visits.png')} alt="log_analysis_app_visits" style={{border:'1px solid gray'}} width="800" />
 
 * **Geo Location of All Users.** Uses a geolocation search to display the locations of IP addresses used by visitors.
 * **Frequent IP Addresses.** Shows a list of the most frequently used IP addresses by visitors.

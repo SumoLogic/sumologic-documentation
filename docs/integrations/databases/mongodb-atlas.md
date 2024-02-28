@@ -153,7 +153,7 @@ Here are some examples of the metric types utilized by the MongoDB Atlas app.
 <details>
 <summary>Sample process metrics and disk metrics (<strong>click here to expand</strong>)</summary>
 
-#### Process Metrics
+#### Process metrics
 
 ```bash title="Metrics Collected"
 CACHE_DIRTY_BYTES
@@ -202,7 +202,7 @@ SYSTEM_NORMALIZED_CPU_STEAL
 For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/](https://docs.atlas.mongodb.com/reference/api/process-measurements/).
 
 
-#### Disk Metrics
+#### Disk metrics
 
 ```bash title="Metrics collected"
 DISK_PARTITION_IOPS_READ
@@ -221,7 +221,7 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 
 </details>
 
-### Sample queries
+### Sample query
 
 This sample query is from the MongoDB Atlas Audit dashboard > Recent Audit Events panel.
 
@@ -235,8 +235,7 @@ This sample query is from the MongoDB Atlas Audit dashboard > Recent Audit Event
 | sort by latest_event_date
 ```
 
-
-## Collecting Logs and Metrics for the MongoDB Atlas app
+## Collecting logs and metrics for the MongoDB Atlas app
 
 This section explains how to collect logs from MongoDB Atlas for mongo version 6.0 and ingest them into Sumo Logic for use with the MongoDB Atlas app predefined dashboards and searches. Most of the panels for this app work for logs coming in from mongo version 4.4 and 5.
 
@@ -629,23 +628,15 @@ Exception: Invalid config
 
 ## Installing the MongoDB Atlas app
 
-This section provides instructions on how to install the MongoDB Atlas app, as well as examples of each of the dashboards. The app's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
-
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
-All panels may not populate. Some tiers do not support certain types of logs. Refer atlas tier [limitation docs](https://docs.atlas.mongodb.com/reference/free-shared-limitations/#atlas-free-tier) for more details.
+## Viewing MongoDB Atlas dashboards
 
+import FilterDashboards from '../../reuse/filter-dashboards.md';
 
-## Viewing MongoDB Atlas Dashboards
-
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
+<FilterDashboards/>
 
 #### Overview
 
@@ -657,8 +648,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Overview.png')} alt="MongoDB Atlas dashboards" />
 
-
-### Security Dashboards
+### Security dashboards
 
 The MongoDB Atlas Security dashboards aim to provide a comprehensive view of Atlas security and audit aspects via the Atlas audit logs, alerts, and events logs.
 
@@ -694,15 +684,13 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Audit.png')} alt="MongoDB Atlas dashboards" />
 
-### Performance Dashboards
+### Performance dashboards
 
 Performance dashboards provide visual representations of key MongoDB Atlas metrics. You can use this data to correlate system health and performance and use Atlas logs to identify and fix the root cause of any problems. These dashboards are also provide the ability to fine tune your queries and database operations.
 
-
 #### Cluster Metrics
 
-
-The **MongoDB Atlas Cluster Metrics** dashboard provides a high-level view of cluster performance, disk and cache usage. Panel graphs show details for read and write operations and their execution times, network traffic, connections, data sizes, and disk read and write IOPs.
+The **MongoDB Atlas - Cluster Metrics** dashboard provides a high-level view of cluster performance, disk and cache usage. Panel graphs show details for read and write operations and their execution times, network traffic, connections, data sizes, and disk read and write IOPs.
 
 Use this dashboard to:
 * Identify anomalous changes in database metrics.
@@ -733,7 +721,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Slow_Queries.png')} alt="MongoDB Atlas dashboards" />
 
-### Operations Dashboards
+### Operations dashboards
 
 The Operations dashboards monitor database operations, such as indexing, sharding, and replication. These dashboards allow you to view detailed error logs for troubleshooting and track login activities in your database including failed attempts.
 

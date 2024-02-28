@@ -196,9 +196,9 @@ SHA256: *" as event_name, device_name, ip_address, action, action_type, filepath
 
 ## Installing the Cylance app
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Cylance dashboards
 

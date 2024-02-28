@@ -18,14 +18,17 @@ You can only use `_index` in the keyword search expression that scopes the searc
 :::
 
 ## Search the default partition
-Data that you ingest that is not directed to a partition will go to the default partition, named `sumologic_default`. The default partition is the first partition listed on the **Partitions** page. To run a search against the default partition, include this in the scope of your search. `_index=sumologic_default`.
+Data that you ingest that is not directed to a partition will go to the default partition, named `sumologic_default`. The default partition is the first partition listed on the **Partitions** page. To run a search against the default partition, include this in the scope of your search:
+```
+_index=sumologic_default
+```
 
 ## Run a search against a partition from the Partitions page
 
 1. Go to **Manage Data > Logs > Partitions**.
 1. Do one of the following:
     * Click the **Search Icon** to the right of the partition name. This launches a search on just the data indexed in the partition.<br/><img src={useBaseUrl('img/partitions-data-tiers/partitions-page-search-icon.png')} alt="icon" />    
-    * Select a partition from the table and click the **Search Icon** to the right of the routing expression. This launches a search that runs the expression against the partition, as well as any other logs that match the query. This means that you can capture search results on all data, not just the data indexed in the partition.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane-search-icon.png')} alt="icon" />    
+    * Select a partition from the table and click the **Search Icon** to the right of the routing expression. This launches a search that runs the expression against the partition, as well as any other logs that match the query. This means that you can capture search results on all data, not just the data indexed in the partition.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane-search-icon.png')} alt="edit-partition-pane-search-icon" width="300"/>    
 
 ## Searching partitions in Data Tiers
 

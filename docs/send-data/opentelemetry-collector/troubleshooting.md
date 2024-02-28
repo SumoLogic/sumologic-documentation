@@ -168,10 +168,14 @@ On the other hand, if you only delete the local registration file and do not del
 
 After successful registration of collector, if you delete the collector in Sumo Logic UI, the collector will fail to start on next run. The error message is similar to the below:
 
-```
-2021-08-24T10:52:38.639Z  error  sumologicextension@v0.31.0/extension.go:373  Heartbeat error  {"kind": "extension", "name": "sumologic", "collector_name": "<your-collector-name>", "collector_id": "0000000001A2B3C4", "error": "collector heartbeat request failed, status code: 401, body: {\n\"servlet\":\"rest\",\n\"message\":\"Could not authenticate.\",\n\"url\":\"/api/v1/collector/heartbeat\",\n\"status\":\"401\"\n}"}
-github.com/open-telemetry/opentelemetry-collector-contrib/extension/sumologicextension.(*SumologicExtension).heartbeatLoop
-github.com/open-telemetry/opentelemetry-collector-contrib/extension/sumologicextension@v0.31.0/extension.go:373
+```console
+2024-02-21T10:59:54.665+0100	info	extensions/extensions.go:37	Extension is starting...	{"kind": "extension", "name": "sumologic"}
+2024-02-21T10:59:54.666+0100	info	credentials/credentialsstore_localfs.go:147	Collector registration credentials retrieved from local fs	{"kind": "extension", "name": "sumologic", "path": "/var/lib/otelcol-sumo/credentials/f1e98079b6ff1105a0d1ba513531ef57364b326da18ccdea63da4c2cb811790a"}
+2024-02-21T10:59:54.666+0100	info	sumologicextension@v0.91.0-sumo-0/extension.go:238	Validating collector credentials...	{"kind": "extension", "name": "sumologic", "collector_credential_id": "AiN2lZaDWkWSWqHkBHy8", "collector_id": "00005AF3107B06F2"}
+2024-02-21T10:59:54.927+0100	info	sumologicextension@v0.91.0-sumo-0/extension.go:339	Found stored credentials, skipping registration	{"kind": "extension", "name": "sumologic", "collector_name": "<your-collector-name>"}
+2024-02-21T10:59:55.068+0100	info	sumologicextension@v0.91.0-sumo-0/extension.go:816	Updating collector metadata	{"kind": "extension", "name": "sumologic", "collector_name": "<your-collector-name>", "collector_id": "00005AF3107B06F2", "URL": "https://open-collectors.de.sumologic.com/api/v1/otCollectors/metadata", "body": "{\"hostDetails\":{\"name\":\"<your-collector-name>\",\"osName\":\"darwin\",\"osVersion\":\"14.3.1\",\"environment\":\"\"},\"collectorDetails\":{\"runningVersion\":\"v0.94.0-sumo-2\"},\"networkDetails\":{\"hostIpAddress\":\"192.168.0.133\"},\"tagDetails\":{\"deployment.environment\":\"default\",\"host.group\":\"default\",\"sumo.disco.enabled\":\"true\"}}\n"}
+2024-02-21T10:59:55.280+0100	warn	sumologicextension@v0.91.0-sumo-0/extension.go:836	Metadata API error response	{"kind": "extension", "name": "sumologic", "collector_name": "<your-collector-name>", "collector_id": "00005AF3107B06F2", "status": 404, "body": ""}
+2024-02-21T10:59:55.280+0100	warn	sumologicextension@v0.91.0-sumo-0/extension.go:864	collector metadata update failed: collector metadata request failed: API error (status code: 404): 	{"kind": "extension", "name": "sumologic", "collector_name": "<your-collector-name>", "collector_id": "00005AF3107B06F2"}
 ```
 
 To work around this, delete the local collector registration file at `~/.sumologic-otel-collector/`. The collector will re-register on next run.

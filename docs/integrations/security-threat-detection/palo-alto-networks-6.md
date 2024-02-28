@@ -2,18 +2,18 @@
 id: palo-alto-networks-6
 title: Palo Alto Networks 6
 sidebar_label: Palo Alto Networks 6
-description: The Palo Alto Networks 6 App provides four dashboards, giving you several ways to discover threats, consumption, traffic patterns, and other security-driven issues, providing additional insight for investigations.
+description: The Palo Alto Networks 6 app provides four dashboards, giving you several ways to discover threats, consumption, traffic patterns, and other security-driven issues, providing additional insight for investigations.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="100"/>
 
-The Palo Alto Networks 6 App provides four dashboards, giving you several ways to discover threats, consumption, traffic patterns, and other security-driven issues, providing additional insight for investigations.
+The Palo Alto Networks 6 app provides four dashboards, giving you several ways to discover threats, consumption, traffic patterns, and other security-driven issues, providing additional insight for investigations.
 
 ## Log types
 
-Parsing in the Palo Alto Networks 6 App for PAN 6 is based on the [PAN-OS Syslog integration](https://live.paloaltonetworks.com/t5/forums/searchpage/tab/message?q=PAN-OS+Syslog+integration&filter=labels&search_type=thread).
+Parsing in the Palo Alto Networks 6 app for PAN 6 is based on the [PAN-OS Syslog integration](https://live.paloaltonetworks.com/t5/forums/searchpage/tab/message?q=PAN-OS+Syslog+integration&filter=labels&search_type=thread).
 
 
 ### Sample log messages
@@ -34,9 +34,9 @@ _sourceCategory=palo_alto_network | parse "*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*
 ```
 
 
-## Collecting Logs for the Palo Alto Networks 6 App
+## Collecting Logs for the Palo Alto Networks 6 app
 
-This section provides instructions on how to collect logs for the Palo Alto Networks 6 App, as well as log and query samples.
+This section provides instructions on how to collect logs for the Palo Alto Networks 6 app, as well as log and query samples.
 
 
 ### Prerequisites
@@ -79,9 +79,9 @@ misc,threatID,cat,severity,direction,seqNum,action_flags,src_loc,dest_loc,f4,con
 ```
 
 
-## Installing the Palo Alto Networks 6 App
+## Installing the Palo Alto Networks 6 app
 
-Now that you have set up collection for Palo Alto Networks, install the Sumo Logic App for Palo Alto Networks to use the preconfigured searches and dashboards that provide insight into your data.
+Now that you have set up collection for Palo Alto Networks, install the Sumo Logic app for Palo Alto Networks to use the preconfigured searches and dashboards that provide insight into your data.
 
 import AppInstall from '../../reuse/apps/app-install.md';
 

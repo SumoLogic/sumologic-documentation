@@ -3,22 +3,23 @@ title: AWS SQS
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/aws-sqs.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/aws.png')} alt="aws" width="50"/>
 
-Version: 1.2  
-Updated: Jun 15, 2023
+***Version: 1.2  
+Updated: Jun 15, 2023***
 
 Using the integration with SQS, you can gather current queues, add a new queue, delete and purge existing queues during an active investigation.
 
 ## Actions
 
-* **List Queues** (*Enrichment*) - List of all queues (Max 1,000 queues)
-* **Get Queue URL** (*Enrichment*) - Returns the URL of an existing Amazon SQS queue
-* **Create Queue** (*Containment*) - Creates a new standard or FIFO queue
-* **Delete Queue** (*Containment*) - Deletes the queue specified by the *QueueUrl* , regardless of the queue's contents
-* **Purge Queue** (*Containment*) - Deletes the messages in a queue specified by the *QueueURL* parameter
-* **Send Message** (*Notification*) - Delivers a message to the specified queue
+* **List Queues** (*Enrichment*) - List of all queues (Max 1,000 queues).
+* **Get Queue URL** (*Enrichment*) - Returns the URL of an existing Amazon SQS queue.
+* **Create Queue** (*Containment*) - Creates a new standard or FIFO queue.
+* **Delete Queue** (*Containment*) - Deletes the queue specified by the *QueueUrl*, regardless of the queue's contents.
+* **Purge Queue** (*Containment*) - Deletes the messages in a queue specified by the *QueueURL* parameter.
+* **Send Message** (*Notification*) - Delivers a message to the specified queue.
 
 ## External Libraries
 

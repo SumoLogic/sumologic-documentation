@@ -3,18 +3,19 @@ title: RSA NetWitness Logs
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/rsa-netwitness-logs.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rsa-netwitness-logs.png')} alt="rsa-netwitness-logs" width="60"/>
 
-Version: 1.2  
-Updated: Jul 07, 2023
+***Version: 1.2  
+Updated: Jul 07, 2023***
 
-Query RSA NetWitness Incidents, Events and Logs.
+Query RSA NetWitness Incidents, Events, and Logs.
 
 ## Actions
 
-* **Query** (*Enrichment*) - Query NetWitness logs
-* **Retrieve Log Data** (*Enrichment*) - Retrieve NetWitness log data
+* **Query** (*Enrichment*) - Query NetWitness logs.
+* **Retrieve Log Data** (*Enrichment*) - Retrieve NetWitness log data.
 
 ## Change Log
 
