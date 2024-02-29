@@ -31,7 +31,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ### Overview
 
-<!-- awaiting image from apps team -->
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Overview.png" alt="Flex dashboard" />
 
 The **Overview** dashboard displays how much data you are ingesting and scanning in logs. It also helps you understand how much data you are ingesting in Metrics and Tracing.
 
