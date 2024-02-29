@@ -38,7 +38,7 @@ AWS Observability integrates with Explore by populating metadata and only shows
    * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.7.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
    * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.7.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.<br/>
      :::note
-     Download this or other versions of this template from [Change Log](../changelog.md). 
+     Download this or other versions of this template from [Changelog](../changelog.md). 
      :::
      :::note
      To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.1.0 or greater and follow the instructions in the (#modify-the-collector-name-and-source-categories) section.
@@ -127,7 +127,7 @@ The below tables displays the response for each text box in this section.
  :::note
   * Don't use forward slashes (`/`) to encapsulate the regex. While normally they are needed for raw code, it's not necessary here.
   * Use regex `.*` for auto-subscribing all log groups.
- ::: 
+ :::
 
 
 ## Step 9: Sumo Logic Root Cause Explorer Sources
@@ -176,7 +176,7 @@ Do not update the source names as created by CloudFormation template in Sumo Log
 
 Follow the steps below to change the default collector name and source categories
 
-1. Download the template version 2.1.0 or later from the [change log](../changelog.md) page.
+1. Download the template version 2.1.0 or later from the [changelog](../changelog.md) page.
 1. Modify the collector name and source categories in the `Mappings` section of the CloudFormation template.<br/><img src={useBaseUrl('img/observability/mappings.png')} style={{border: '1px solid gray'}} alt="mappings" width="600"/>
 1. Deploy the CloudFormation template.
 
