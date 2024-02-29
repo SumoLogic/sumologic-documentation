@@ -219,8 +219,8 @@ This guide offers responses to frequently asked questions regarding the Sumo Log
 <summary><strong>Q:</strong> What's being launched?</summary>
 
 We are excited to introduce the Sumo Logic Unified Experience, also known as Project Kanso, inspired by the Japanese principle of simplicity and clutter elimination. This initiative integrates the capabilities of our Log Analytics, Cloud SIEM, and Cloud SOAR into a unified navigation system. Alongside this integration, we have implemented several user interface enhancements to make all Sumo Logic features more accessible and user-friendly.
-
 </details>
+
 
 <details>
 <summary><strong>Q:</strong> What issues does the New UI resolve?</summary>
@@ -229,9 +229,9 @@ The disparate user interface and varying navigation patterns among Log Analytics
 
 The current information architecture and navigation system have not effectively showcased useful functionalities to users. It's structured around tools like Explore, Traces, Log Search, and Metric Search rather than focusing on user-centric use cases. This places a burden on users to discover these functionalities.
 
-In-app tabs present performance and usability challenges since they all operate within a single browser tab. These tabs disrupt native browser navigation features like the back button and tab grouping. The New UI navigation lets you leverage native browser capabilities and customize tab organization according to your preferences.
-
+In-app tabs present performance and usability challenges since they all operate within a single browser tab. These tabs disrupt native browser navigation features like the back button and tab grouping. The **New UI** navigation lets you leverage native browser capabilities and customize tab organization according to your preferences.
 </details>
+
 
 <details>
 <summary><strong>Q:</strong> What changes have been implemented and how do they enhance my Sumo experience?</summary>
@@ -240,18 +240,19 @@ In-app tabs present performance and usability challenges since they all operate 
 * **Improved Product Discoverability**. The left navigation bar now organizes product features in a solution-centric manner, emphasizing key use cases like infrastructure monitoring, application monitoring, log analysis, security monitoring, and analytics. This reorganization aims to facilitate easier access to Sumo Logic's product features.
 * **Enhanced Browsing Experience and Accelerated Performance**. In-app tabs will be replaced with native browser tabs, significantly improving _First Contentful Paint_ (FCP) and _Time to Interactive_ (TTI) metrics. With this change, you'll experience faster page load times and ability to organize tabs the way you are used to with other applications.
 * **Stateful URLs**. Most of the page URLs will now be stateful, allowing you to easily share content with your team members. Any changes made in the UI will be reflected in the URL parameters, making it simple for you to copy and share URLs. Additionally, this feature enables users to navigate back to previous states effortlessly by using the browser.
-
 </details>
+
 
 <details>
 <summary><strong>Q:</strong> I have some concerns regarding unfamiliar experiences and potential issues arising from them. How is Sumo Logic addressing these concerns to ensure a seamless transition?</summary>
 
-Understanding the challenges that come with change, we are confident that the New UI will offer our customers a notably enhanced, faster, and more seamlessly integrated experience. To facilitate a smooth transition, we have taken the following steps:
+Understanding the challenges that come with change, we are confident that the **New UI** will offer our customers a notably enhanced, faster, and more seamlessly integrated experience. To facilitate a smooth transition, we have taken the following steps:
 
 * **Dogfooding**. We at Sumo Logic are the biggest customer of our own platform. Through extensive dogfooding, we've gained a deep understanding of workflows and addressed any issues that arose.
 * **Beta Testing**. We're conducting extensive beta testing with a large group of our customers. This allows us to gather feedback and address any pain points that may have been overlooked. If you'd like to participate, reach out to your Sumo Logic account executive.
 * **Opt-in General Availability (GA)**. Additionally, we will have an opt-in period lasting at least three months. During this time, users can choose to opt-in to the new experience, enabling them to become familiar with it gradually before a complete switch occurs.
 </details>
+
 
 <details>
 <summary><strong>Q:</strong> I like that all Sumo Logic tabs are grouped together in one browser tab. With this change, will I have an excessive amount of Sumo Logic tabs in my browser?</summary>
@@ -263,35 +264,35 @@ Having in-app tabs has caused performance issues, which has been a complaint abo
 If you prefer having all Sumo Logic tabs in one place - without getting mixed with other browser tabs - we suggest utilizing the [tab grouping functionality](#customize-your-environment-withtabs) offered by most browsers. By adding your Sumo Logic tab to a tab group, any new tabs opened within the Sumo Logic platform will automatically open in the same tab group. You can also collapse the tab group to reclaim valuable real estate in the browser's tab bar.
 </details>
 
+
 <details>
 <summary><strong>Q:</strong> Will the New UI continue the functionality of remembering the tabs I had opened in my previous session, similar to the Classic UI?</summary>
 
-After analyzing tab usage data, we've found that a minimal portion of previously opened tabs are actively utilized by our users. Consequently, the Sumo Logic UI often remains cluttered with multiple unused tabs. With the introduction of the New UI experience, if you fail to close browser tabs from previous sessions, they will automatically reload upon login.
+After analyzing tab usage data, we've found that a minimal portion of previously opened tabs are actively utilized by our users. Consequently, the Sumo Logic UI often remains cluttered with multiple unused tabs. With the introduction of the **New UI** experience, if you fail to close browser tabs from previous sessions, they will automatically reload upon login.
 
 <img src={useBaseUrl('img/get-started/tab-reload.gif')} alt="tab-reload.gif" />
 
 Moreover, we've made the **Recents** feature more prominent in the navigation bar and plan to extend it to other content types which will make it easier for users to open recently opened tabs.
-
 </details>
+
 
 <details>
 <summary><strong>Q:</strong> If I opt in to the New UI, will I lose access to the Classic UI?</summary>
 
-No, opting for the New UI won't lock you out of the old interface. You'll have the flexibility to switch between the two experiences directly within the UI.
+No, opting for the **New UI** won't lock you out of the old interface. You'll have the flexibility to switch between the two experiences directly within the UI.
 
-Once the feature flag is enabled, all organization users will see a **Switch to New UI** option in the left navigation menu. Clicking on this button allows users to opt into the New UI. Once opted in, the system will remember the preference, redirecting old URLs to their corresponding new ones. Consequently, subsequent logins will automatically direct users to the New UI.
-
+Once the feature flag is enabled, all organization users will see a **Switch to New UI** option in the left navigation menu. Clicking on this button allows users to opt into the **New UI**. Once opted in, the system will remember the preference, redirecting old URLs to their corresponding new ones. Consequently, subsequent logins will automatically direct users to the **New UI**.
 </details>
+
 
 <details>
 <summary><strong>Q:</strong> How do I opt out of the New UI?</summary>
 
-You have the flexibility to opt out whenever you choose. Just click the **Return to Classic UI** option on your left navigation menu of the New UI. Once you've switched back to the **Classic UI**, all subsequent sessions will default to the **Classic UI** experience.
+You have the flexibility to opt out whenever you choose. Just go to left navigation menu of the **New UI** and click the **Return to Classic UI** option. Once you've switched back to the **Classic UI**, all subsequent sessions will default to the **Classic UI** experience.
 
 <img src={useBaseUrl('img/get-started/return-to-classic.png')} alt="return-to-classic.png" width="200"/>
 
 If you enter the **New UI** URL in your browser, it will still direct you to the **New UI**. We have implemented a translation from the **Classic UI** to the **New UI**, but not the other way around.
-
 </details>
 
 
@@ -299,7 +300,6 @@ If you enter the **New UI** URL in your browser, it will still direct you to the
 <summary><strong>Q:</strong> When is Sumo Logic planning to remove access to the Classic UI?</summary>
 
 Our goal is to turn off access to the Classic UI at the end of 2024. However, this timeline is subject to our successful beta testing.
-
 </details>
 
 
@@ -309,14 +309,12 @@ Our goal is to turn off access to the Classic UI at the end of 2024. However, th
 Our goal was to provide customers with access to the New UI as quickly as possible. As this is the beta version, we are currently addressing various bugs across different areas to enhance the overall experience.
 
 Additionally, there are a few functionalities that are still in the process of being developed or migrated into the New UI. The key ones include:
-
 * **Co-Branding**. Co-branded logos will not be visible on the platform.
 * **SAML and Allowlist Pages**. These pages have not yet been migrated to the New UI.
 * **Keyboard Shortcuts**. We will be rolling out the keyboard shortcuts incrementally.
 * **Rich Tooltip in Navigation**. Similar to the Classic UI, future releases of the New UI will include rich tooltips when hovering over navigation content items, providing details such as owner and data access level.
 * **URL Parameters**. URL parameters have been added to most pages to maintain page state. Currently, queries in the URL are plain text. We are working on compressing and encoding them. If your query exceeds ~10000 characters, you may encounter a "URI Too Large" error. In such cases, we recommend switching back to the old UI.
 * **Content Admin Mode**. Recents and favorites will not load in content admin mode. We are actively enhancing the user experience for recents and favorites in this mode.
-
 </details>
 
 ## Get support
