@@ -62,6 +62,7 @@ The following example shows how to add an enrichment to an Insight using the “
    1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
    1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
+   1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-an-enrichment-playbook.png')} alt="Simple playbook for Insight enrichment" width="700"/>
 1. Create an automation to run the playbook:
    1. Return to the main Cloud SIEM screen.
@@ -138,6 +139,7 @@ The following example shows how to configure a notification that sends an email 
    1. Click and hold on the right semicircle of the new **Send Email** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
    1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
+   1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-a-notification-playbook.png')} alt="Playbook for notification" width="700"/>
 1. Create an automation to run the playbook:
    1. Return to the main Cloud SIEM screen.
@@ -244,6 +246,7 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
     1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
+    1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
     1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-insight-enrichment.png')} alt="Custom playbook for Insight enrichment" width="700"/>
 1. Create an automation to run the playbook:
     1. Return to the main Cloud SIEM screen.
@@ -372,7 +375,8 @@ The following example pulls together elements of the [Simple example](#simple-ex
     1. Click and hold on the right semicircle of the new **Send Email** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
     1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
-    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/automation-example-playbook-4.png')} alt="Complex playbook" width="800"/>
+    1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
+    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/automation-example-playbook-4.png')} alt="Complex playbook" width="800"/> 
 1. Create an automation to run the playbook:
    1. Return to the main Cloud SIEM screen.
    1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.

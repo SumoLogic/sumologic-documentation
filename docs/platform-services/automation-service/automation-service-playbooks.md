@@ -176,4 +176,17 @@ Define a playbook to run inside another playbook. For example, you may want to c
 1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>   
 1. Select **Playbook**. The playbook node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-playbook-node.png')} alt="Add playbook node" style={{border:'1px solid gray'}} width="500"/>
 1. In the **Playbook** drop-down menu, select the playbook to run.
-1. Click **Create**.
+1. Click **Create**. 
+
+## Test a playbook
+
+You can test a playbook to verify that it works properly. The test results show the outcome as if the playbook actually ran.
+
+1. [Access the Automation Service](/docs/platform-services/automation-service/about-automation-service/#access-the-automation-service).
+1. Click **Playbook** in the left navigation bar. 
+1. Select a playbook.
+1. Click the kebab button in the upper-left corner of the UI. 
+1. Select **Run Test**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-run-test.png')} alt="Run a playbook test" style={{border:'1px solid gray'}} width="600"/>
+1. In the **Test playbook** dialog, enter the requested information and click **Run**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-playbook.png')} alt="Test playbook" style={{border:'1px solid gray'}} width="600"/>
+1. The results of the test are displayed in a new window labeled with the playbook name and **(RUN TEST)**. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-results.png')} alt="Test results" style={{border:'1px solid gray'}} width="600"/>
+1. Click the clock icon in the upper-right corner to see the testing history. Select **Latest actions** to see test results for all the actions on the playbook, or select items on the list to see results for individual actions. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-playbook-test-results-filtered.png')} alt="Filtered test results" style={{border:'1px solid gray'}} width="600"/>
