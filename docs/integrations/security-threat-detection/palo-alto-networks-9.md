@@ -25,12 +25,12 @@ The Sumo Logic app for Palo Alto Networks 9 utilizes PANOS 9 new features in pre
 
 The Palo Alto Networks 9 app uses the following log types:
 
-* [System](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/system-log-fields.html) Logs
-* [Configuration](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/config-log-fields.html) Logs
-* [USERID](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/user-id-log-fields.html) Logs
-* [HIPMatch](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/hip-match-log-fields.html) Logs
-* [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html) Logs
-* [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields.html) Logs
+* [System](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/system-log-fields) Logs
+* [Configuration](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/config-log-fields) Logs
+* [USERID](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/user-id-log-fields) Logs
+* [HIPMatch](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/hip-match-log-fields) Logs
+* [Traffic](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields) Logs
+* [Threat](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields) Logs
 
 
 ## Sample logs
@@ -154,7 +154,7 @@ To create a server profile specifying  the log destination, do the following:
 
 ### Step 3. Configure syslog forwarding
 
-To configure syslog forwarding for each log type (`config`, `system`, `threat`, `traffic`, `HIPMatch`, `USERID`), follow the steps to [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/configure-log-forwarding) as described in the Palo Networks documentation.
+To configure syslog forwarding for each log type (`config`, `system`, `threat`, `traffic`, `HIPMatch`, `USERID`), follow the steps to [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/9-1/pan-os-admin/monitoring/configure-log-forwarding) as described in the Palo Networks documentation.
 
 
 ### Step 4. Verify logs in Palo Alto Networks
