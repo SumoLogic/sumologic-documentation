@@ -45,7 +45,10 @@ Before you can access App Central, you must have the App Central Access role cap
 1. **Playbooks**. Click to view [playbooks in App Central](#playbooks-in-app-central) that are available to install.
 1. **Integrations**. Click to view [integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) that are available to install.
 1. **Search**. Search for integrations or playbooks to install.
-1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization. <ActionsLimit/>
+1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization.
+   :::note
+   <ActionsLimit/>
+   :::
 1. **Download**. Click to [install an integration](#install-an-integration-from-app-central) or [install a playbook](#install-a-playbook-from-app-central).
 
 ## Work with integrations in App Central
