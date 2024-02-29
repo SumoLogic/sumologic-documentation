@@ -223,12 +223,10 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
       * **Publish AWS WAF data to Sumo** 
       * **Publish AWS Network Firewall data to Sumo** 
       <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-3.png')} alt="AWS service configuration" style={{border: '1px solid gray'}} width="700"/>
-1. If you selected **Yes** in the preceding step, you can accept the default values in the following sections to set up each source, unless there are any values you'd like to change. If you selected **No** in the preceding step, in the following sections you *must* replace the source category name with the value of your existing installed source.
+1. If you selected **Yes** in the preceding step, you can accept the default values in the following sections to set up each source, unless there are any values you'd like to change. <br/><br/>If you selected **No** in the preceding step, in the following sections you must answer **No** when asked if you want to create a source, and you must replace the source category name with the value of your existing installed source.
 
        <details>
-
        <summary>GuardDuty</summary>
-   
        * **4.1 GuardDuty service configuration**
           * **GuardDuty Regions**. The regions from which GuardDuty Data should be sent.
        * **4.2 GuardDuty Sumo log source configuration**
@@ -236,14 +234,10 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
           * **Sumo Logic HTTP logs source category name**. The source category name to be created. If you selected **No** in the previous field, enter your existing source category name for the GuardDuty logs. 
           
           <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-4.png')} alt="GuardDuty configuration" style={{border: '1px solid gray'}} width="700"/>
-      
-
        </details>
 
        <details>
-
        <summary>CloudTrail</summary>
-
        * **5.1 CloudTrail service configuration**. 
           * **CloudTrail Regions**. The region from which CloudTrail Data should be sent. 
              :::note
@@ -257,25 +251,19 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
           * **Create an S3 bucket for CloudTrail logs**. **Yes** is the default value. Select **No** if you already have a bucket. (We recommend you use an existing bucket if possible.)
           * **Name of existing S3 bucket that contains the CloudTrail logs**. If you selected **Yes** in the previous field, leave this blank. If you selected **No** in the previous field, enter the name of the existing S3 bucket. 
           * **Delivery bucket prefix**. The log delivery S3 bucket prefix. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-5.png')} alt="CloudTrail configuration" style={{border: '1px solid gray'}} width="700"/>
-
        </details>
 
        <details>
-
        <summary>Security Hub</summary>
-
        * **6.1 Security Hub Service Configuration**. 
           * **Security Hub Regions**. The regions from which Security Hub data should be sent.
        * **6.2 Security Hub Sumo Log Source configuration**.
           * **Create Sumo Logic HTTP logs source**. **Yes** is the default value. Select **No** if you already have a logs source.
           * **Sumo Logic HTTP logs source category name**. The source category name to be created. If you selected **No** in the previous field, provide an existing source category name from the Security Hub logs.  <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-6.png')} alt="Security Hub configuration" style={{border: '1px solid gray'}} width="700"/>
-
        </details>
 
        <details>
-
        <summary>WAF</summary>
-
        * **7.1 AWS Firewall Manager Policy Regions Configuration**.
           * **AWS WAF Policy Regions**. The region from which AWS WAF data should be sent. 
              :::note
@@ -290,13 +278,10 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
           * **Sumo Logic AWS Kinesis Firehose Logs WAF Source Category Name**. The source category name to be created. If you selected **No** in the preceding field for creating a source, provide an existing source category name. 
           * **Amazon Kinesis Data Firehose delivery stream name**. The Amazon Kinesis Data Firehose (Kinesis Data Firehose) delivery stream name.
        <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-7.png')} alt="Firewall configuration" style={{border: '1px solid gray'}} width="700"/>
-
        </details>
 
        <details>
-
        <summary>Network Firewall</summary>
-
        * **7.3 Firewall Manager Details - S3 Source Network Firewall Configuration**.
           * **Create Sumo Logic Amazon S3 Logs Source for Network Firewall**.  **Yes** is the default. Select **No** if you already have a source.
           * **Sumo Logic Amazon S3 Logs Source Category Name for Network Firewall**. The source category name to be created. If you selected **No** in the previous field, enter an existing source category name. 
@@ -307,7 +292,6 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
              :::
           * **Network Firewall Delivery Bucket Prefix**. The Network Firewall Log Delivery S3 bucket prefix.
           * **Name of existing S3 Bucket which contains the Network Firewall Logs**. If you selected **Yes** in the preceding field in this section for creating an S3 bucket, leave this blank. If you selected **No** in the preceding field for creating an S3 bucket, provide an existing S3 Bucket name which contains Network Firewall Logs. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-7a.png')} alt="Firewall configuration" style={{border: '1px solid gray'}} width="700"/>
-
        </details>
 
 1. Under **Permissions**, in **IAM role - optional**, choose the IAM role for CloudFormation to use for all operations performed on the stack. The role must have permissions to set up the necessary Lambdas, S3 buckets, Kenesis streams, and other objects needed in the CloudFormation template, as well as access to the appropriate logs. If your AWS role does not have the necessary permissions, see the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html) for information on configuring a policy to provide permissions. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions.png')} alt="Create Stack button" style={{border: '1px solid gray'}} width="700"/>
