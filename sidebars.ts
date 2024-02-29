@@ -648,6 +648,16 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/partitions-data-tiers/index'},
       items: [
+        {
+          type: 'category',
+          label: 'Flex Pricing',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/partitions-data-tiers/flex-pricing/index'},
+          items: [
+            'manage/partitions-data-tiers/flex-pricing/estimate-and-actual-scan-data',
+          ]
+        },
         'manage/partitions-data-tiers/create-edit-partition',
         'manage/partitions-data-tiers/view-partition-details',
         'manage/partitions-data-tiers/run-search-against-partition',
