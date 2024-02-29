@@ -1,6 +1,5 @@
 ---
 title: January 30, 2024 - Application Update
-hide_table_of_contents: false
 keywords:
   - sumo logic
   - cloud soar
@@ -29,15 +28,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Bug fixes
 * Email encoding a character to UTF8 for literal string fixed.
-* Playbooks: 
+* Playbooks:
   * Unable to use variable fields with quotes in text area fixed.
   * Fixed playbook inputs not visible in TextArea placeholder.
   * Resolved scheduled action execution issue with playbook status.
 
 #### Cloud SOAR
-* Incidents: 
+* Incidents:
   * Fixed war room export for updated tasks.
   * Fixed possibility to copy table contents in Notes description field.
   * Incident creation: Fixed infinite spinner in Automation tab.
-
-
