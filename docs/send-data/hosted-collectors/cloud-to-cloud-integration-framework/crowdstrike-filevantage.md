@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
 
-The CrowdStrike FileVantage source will collect CrowdStrike FileVantage logs by querying the API for file changes resource IDs. It will then make another API call using those resource IDs to obtain the file change logs and ingest them into Sumo Logic.
+The CrowdStrike FileVantage source will collect CrowdStrike FileVantage logs by querying the API for file changes resource IDs. It will then make another API call using those resource IDs to obtain the file changelogs and ingest them into Sumo Logic.
 
 :::important
 The CrowdStrike API documentation is not public and can only be accessed by partners or customers.
@@ -30,7 +30,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 | Polling Interval | Data |
 | :--- | :--- |
 | 15 minutes |  [highVolumeQueryChanges Endpoint](https://www.falconpy.io/Service-Collections/FileVantage.html#highvolumequerychanges) - Retrieves log resource IDs|
-| 15 minutes |  [getChanges Endpoint](https://www.falconpy.io/Service-Collections/FileVantage.html#getchanges) - Retrieves file change logs from resource IDs from previous endpoint|
+| 15 minutes |  [getChanges Endpoint](https://www.falconpy.io/Service-Collections/FileVantage.html#getchanges) - Retrieves file changelogs from resource IDs from previous endpoint|
 
 
 ## Setup
@@ -76,7 +76,7 @@ To configure the CrowdStrike FileVantage Source:
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **CrowdStrike FileVantage** icon.
 1. Enter a **Name** to display for the Source in the Sumo Logic web application. The description is optional.
-1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`. 
+1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. (Optional) **Fields**. Click the **+Add Field** link to define the fields you want to associate. Each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
