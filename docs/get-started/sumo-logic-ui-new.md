@@ -149,7 +149,7 @@ To see dashboards, searches, and folders that have been shared with you, do the 
 
 ### Pin and manage searches
 
-After you start a log search, you can "pin" it, and it will run in the background for up to 24 hours. If the search does not finish in that time frame, it is paused. You can restart the search at any time. Search results are available for three days.
+After you start a log search, you can “pin” it, and it will run in the background for up to 24 hours. If the search does not finish in that time frame, it is paused. You can restart the search at any time. Search results are available for three days.
 
 You must start a search for the **Pin** option to appear. To pin a search, do the following:
 
@@ -257,7 +257,7 @@ If you prefer having all Sumo Logic tabs in one place - without getting mixed wi
 
 After analyzing tab usage data, we've found that a minimal portion of previously opened tabs are actively utilized by our users. Consequently, the Sumo Logic UI often remains cluttered with multiple unused tabs. With the introduction of the New UI experience, if you fail to close browser tabs from previous sessions, they will automatically reload upon login.
 
-<img src={useBaseUrl('img/get-started/tab-reload.gif')} alt="tab-eload.gif" />
+<img src={useBaseUrl('img/get-started/tab-reload.gif')} alt="tab-reload.gif" />
 
 Moreover, we've made the **Recents** feature more prominent in the navigation bar and plan to extend it to other content types which will make it easier for users to open recently opened tabs.
 
@@ -289,7 +289,6 @@ Apart from that, there are a few functionalities that are still under developmen
 * **Rich tooltip in the navigation**. In the Classic UI, you could hover over the content items on the navigation and it would provide you details about the object like the owner, data access level, etc. We will be implementing that in New UI in future releases.
 * **URL Parameters**. To maintain the state of the page we have added URL parameters to most of the pages. Currently the queries in the URL are written as plain text. We are working on compressing and encoding it. If your query is very long (~10000 characters), you might see "URI Too Large error". In those scenarios, we suggest you to switch back to old UI.
 * **Content Admin Mode**. Recents and favorite will not load if you are in content admin mode. We're working on improving the user experience of recents and favorites when you are in content admin mode.
-
 
 ## Get support
 
