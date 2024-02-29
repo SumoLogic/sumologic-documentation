@@ -40,10 +40,4 @@ In this section, we'll introduce the following concepts:
   <p>Collect event logs on search activities in your account.</p>
   </div>
 </div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/manage/security/audit-indexes/audit-index-access"><img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="40"/><h4>Grant Access to Data in Audit Indexes</h4></a>
-  <p>Use role capabilities to grant access to data in audit indexes.</p>
-  </div>
-</div>
 </div>

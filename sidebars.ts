@@ -826,7 +826,6 @@ module.exports = {
             'manage/security/audit-indexes/audit-index',
             'manage/security/audit-indexes/audit-event-index',
             'manage/security/audit-indexes/search-audit-index',
-            'manage/security/audit-indexes/audit-index-access',
           ]
         },
         'manage/security/create-allowlist-ip-cidr-addresses',
