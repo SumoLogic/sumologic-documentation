@@ -213,7 +213,7 @@ You don't have to stop there either. You can take the next step and become Sumo 
 
 ## FAQ
 
-This guide provides answers to some of the frequently asked questions about the Sumo Logic UI redesign project.
+This guide offers responses to frequently asked questions regarding the Sumo Logic UI redesign project, which involves transitioning from the current Classic UI to the upcoming New UI.
 
 ### What's being launched?
 
@@ -254,7 +254,7 @@ Having in-app tabs has caused performance issues, which has been a complaint abo
 
 If you prefer having all Sumo Logic tabs in one place - without getting mixed with other browser tabs - we suggest utilizing the [tab grouping functionality](#customize-your-environment-withtabs) offered by most browsers. By adding your Sumo Logic tab to a tab group, any new tabs opened within the Sumo Logic platform will automatically open in the same tab group. You can also collapse the tab group to reclaim valuable real estate in the browser's tab bar.
 
-### Will the New UI retain the feature of remembering the tabs I had opened in my previous session, like the old (Classic) UI does?
+### Will the New UI continue the functionality of remembering the tabs I had opened in my previous session, similar to the Classic UI?
 
 After analyzing tab usage data, we've found that a minimal portion of previously opened tabs are actively utilized by our users. Consequently, the Sumo Logic UI often remains cluttered with multiple unused tabs. With the introduction of the New UI experience, if you fail to close browser tabs from previous sessions, they will automatically reload upon login.
 
@@ -262,7 +262,7 @@ After analyzing tab usage data, we've found that a minimal portion of previously
 
 Moreover, we've made the **Recents** feature more prominent in the navigation bar and plan to extend it to other content types which will make it easier for users to open recently opened tabs.
 
-### If I opt in to the New UI, will I lose access to the old (Classic) UI?
+### If I opt in to the New UI, will I lose access to the Classic UI?
 
 No, opting for the New UI won't lock you out of the old interface. You'll have the flexibility to switch between the two experiences directly within the UI.
 
@@ -272,11 +272,11 @@ Once the feature flag is enabled, all organization users will see a **Switch to 
 
 You have the flexibility to opt out whenever you choose. Just click the **Return to Classic UI** option on your left navigation menu of the New UI. Once you've switched back to the Classic UI, all subsequent sessions will default to the Classic UI experience.
 
-If you enter the New UI URL in your browser, it will still direct you to the New UI. We have implemented a translation from the old (Classic) UI to the New UI, but not the other way around.
+If you enter the New UI URL in your browser, it will still direct you to the New UI. We have implemented a translation from the Classic UI to the New UI, but not the other way around.
 
 ### When is Sumo Logic planning to remove access to the Classic UI?
 
-Our goal is to turn off access to the old (Classic) UI at the end of 2024. However, this timeline is subject to our successful beta testing.
+Our goal is to turn off access to the Classic UI at the end of 2024. However, this timeline is subject to our successful beta testing.
 
 ### Will there be any limitations on capabilities during the beta phase?
 
