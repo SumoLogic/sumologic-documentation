@@ -31,11 +31,10 @@ If you don’t already have a Sumo Logic account, you can [Start a free trial](h
 The following are required to set up and deploy the Sumo Logic Kubernetes collection.
 
 - Review our [minimum requirements](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/README.md#minimum-requirements) and [support matrix](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/README.md#support-matrix)
-- An [Access ID and Access Key](/docs/manage/security/access-keys/) with the following [Data Management role capabilities](/docs/manage/users-roles/roles/role-capabilities#data-management):
-   - Manage Collectors
-   - Manage Fields
-   - Manage Content
-   - Manage Monitors
+- An [Access ID and Access Key](/docs/manage/security/access-keys/) with the following [Data Management role capabilities](/docs/manage/users-roles/roles/role-capabilities#data-management): Manage Collectors and Manage Fields.
+   :::note
+   The Manage Monitors and Manage Content capabilities are required to install the built-in monitors and dashboards, which are recommended and enabled by default.
+   :::
    - ...you need View capabilities on most other non-admin/non-security pieces as well.
 
 To get an idea of the resources this chart will require to run on your cluster, you can reference our [performance doc](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/performance.md).
