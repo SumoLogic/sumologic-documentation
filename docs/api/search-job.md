@@ -86,6 +86,7 @@ You can start requesting results asynchronously while the job is running and pag
   </tr>
 </table>
 
+<!-- note about Flex pricing and app -->
 
 If you need more results you'll need to break up your search into several searches that span smaller blocks of the time range needed. For example, if your search runs for a week and returns 70 million records. Break up the search into at least seven searches that span for a day each.
 

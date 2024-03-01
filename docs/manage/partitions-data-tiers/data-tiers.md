@@ -27,13 +27,19 @@ Data Tiers must be enabled on your [Cloud Flex](/docs/manage/manage-subscription
 
 Each Sumo Logic Data Tier supports a different use case and provides its own set of features and capabilities: 
 
-* The Continuous Tier is for the data you use to monitor and troubleshoot production applications and to ensure the security of your applications. 
-* The Frequent Tier is for data you need to frequently access to troubleshoot and investigate issues. For example, you might use the Frequent Tier for development and test data that helps you investigate issues during development. Searching the Frequent Tier is free: it's included in the data ingestion price.
-* The Infrequent Tier is for data that is used to troubleshoot intermittent or hard-to-reproduce issues. For example, you might use the Infrequent Tier for debug logs, OS logs, thread dumps, and so on. The Infrequent Tier has a pay-per-search pricing model, and very low ingestion cost.   
+* The Continuous Tier is for the data you use to monitor and troubleshoot production applications and to ensure the security of your applications.
+* The Frequent Tier - available only for Sumo Logic Enterprise Suite plans - is for data you need to frequently access to troubleshoot and investigate issues. For example, you might use the Frequent Tier for development and test data that helps you investigate issues during development. Searching the Frequent Tier is free: it's included in the data ingestion price.
+* The Infrequent Tier - available only for Sumo Logic Enterprise Suite plans - is for data that is used to troubleshoot intermittent or hard-to-reproduce issues. For example, you might use the Infrequent Tier for debug logs, OS logs, thread dumps, and so on. The Infrequent Tier has a pay-per-search pricing model, and very low ingestion cost.  
 
-:::note
-Frequent and Infrequent Tiers are available only for Sumo Logic Enterprise Suite plans. Continuous Data Tier is available for all Sumo Logic subscriptions.
-:::
+### Flex pricing
+
+import FlexPricing from '../../reuse/flex-pricing.md';
+
+<FlexPricing/>
+
+#### Setup and configuration
+
+See [Flex App](/docs/integrations/sumo-apps/flex).
 
 ## Planning your use of Data Tiers 
 
@@ -54,23 +60,23 @@ After a partition is created in a given tier, you can't change its tier. If you 
 
 How you can search and use your ingested data varies by the Data Tier it resides in, as described in the following table. 
 
-| Feature support | Continuous Tier | Frequent Tier | Infrequent Tier |
-| :-- | :-- | :-- | :-- |
-| Centralized, secure, multi-tenant cloud-native platform | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Data replication across availability zones, data encryption | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Interactive queries (UI) | ![check](/img/reuse/check.png)<br/>Partitions can be specified, but are optional. |![check](/img/reuse/check.png)<br/>Partition or `_dataTier` must be specified. |![check](/img/reuse/check.png)<br/>Partition or `_dataTier` must be specified. |
-| Support for Installed and Hosted Collectors | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| RBAC support | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Support for search operators | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Field Extraction Rules | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Logs to Metrics | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Data Forwarding | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |
-| Live Tail | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
-| Dashboards | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |
-| Monitors | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |
-| Scheduled Searches | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |
-| Scheduled Views | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![check](/img/reuse/x.png) |
-| API Queries |  ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png)
+| Feature support | Continuous Tier | Frequent Tier | Infrequent Tier | Flex Pricing
+| :-- | :-- | :-- | :-- | :--
+| Centralized, secure, multi-tenant cloud-native platform | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)
+| Data replication across availability zones, data encryption | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)
+| Interactive queries (UI) | ![check](/img/reuse/check.png)<br/>Partitions can be specified, but are optional. |![check](/img/reuse/check.png)<br/>Partition or `_dataTier` must be specified. |![check](/img/reuse/check.png)<br/>Partition or `_dataTier` must be specified. |![check](/img/reuse/check.png)
+| Support for Installed and Hosted Collectors | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png)
+| RBAC support | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png)
+| Support for search operators | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png)
+| Field Extraction Rules | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png)
+| Logs to Metrics | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png)
+| Data Forwarding | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![check](/img/reuse/check.png)
+| Live Tail | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png)
+| Dashboards | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |![check](/img/reuse/check.png)
+| Monitors | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |![check](/img/reuse/check.png)
+| Scheduled Searches | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |![check](/img/reuse/check.png)
+| Scheduled Views | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![check](/img/reuse/x.png) |![check](/img/reuse/check.png)
+| API Queries |  ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) | ![check](/img/reuse/check.png)
 
 
 ## How to choose between Frequent and Infrequent 

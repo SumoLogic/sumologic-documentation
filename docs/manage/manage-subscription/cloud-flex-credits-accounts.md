@@ -141,6 +141,8 @@ Be aware of the following features:
 
 ![account-overview-credits.png](/img/account/account-usage-fields.png)
 
+![flex-usage-categories.png](/img/subscriptions/flex-usage-categories.png)
+
 :::note
 If are the Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For instructions on this options, see [Manage Organization](manage-org-settings.md).
 :::
@@ -170,6 +172,10 @@ The Usage Details panel contains the following usage categories:
 * **Metrics Ingest**. Credits used for metrics ingested.
 * **Storage**. Credits used for log storage in the Continuous and Frequent Tiers. 
 * **Infrequent Storage**. Credits used for log storage in the Infrequent Tier. 
+* **Flex Upfront Scan**. <!-- description -->
+* **Flex Scan**.<!-- description -->
+* **Flex Storage**.<!-- description -->
+* **Flex Ingest**.<!-- description -->
 * **Promotional categories**. See [Monitoring Promotional Credit usage](#monitoring-promotional-credit-usage).
 
 :::note
