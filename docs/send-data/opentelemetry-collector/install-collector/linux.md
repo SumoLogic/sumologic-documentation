@@ -24,7 +24,7 @@ Minimal resource requirements are the following:
 
 Supported Versions
 
-* RHEL (7-9), Debian (9-11), Ubuntu (18-22), SUSE (ES12, ES15), Amazon Linux 2, CentOS (7, 8)
+* RHEL (7-9), Debian (9-11), Ubuntu (18-22), SUSE (ES12, ES15), Amazon Linux 2(AL2),Amazon Linux 2023(AL2023), CentOS (7, 8)
 
 ## Install
 
