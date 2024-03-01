@@ -3,25 +3,26 @@ title: FortiAnalyzer
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/fortianalyzer.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortianalyzer.png')} alt="fortianalyzer" width="100"/>
 
-Version: 1.4  
-Updated: Sep 19, 2023
+***Version: 1.4  
+Updated: Sep 19, 2023***
 
 Search events and network traffic from Fortinet FortiAnalyzer.
 
 ## Actions
 
-* **Search Into Events** (*Enrichment*) - Search FortiAnalyzer based on the specified criteria
-* **Get Alert Events** (*Enrichment*) - Get alerts based on specific event criteria
-* **Get Alert Event Logs** (*Enrichment*) - Get event logs based on the specified criteria
-* **Search Network Traffic** (*Enrichment) -* Search network traffic based on specific criteria
-* **List Incidents** (*Enrichment*) - List previously generated incidents
-* **Create Incident** (*Notification*) - Create new incident
-* **Update Incident** (*Notification*) - Update a previously created incident
-* **Get Alerts Events Daemon** (*Daemon*) - Daemon to pull FortiAnalyzer Alert Events
-* **Get Alert Events Daemon V2** *(Daemon) -* Daemon to pull FortiAnalyzer Alert Events
+* **Search Into Events** (*Enrichment*) - Search FortiAnalyzer based on the specified criteria.
+* **Get Alert Events** (*Enrichment*) - Get alerts based on specific event criteria.
+* **Get Alert Event Logs** (*Enrichment*) - Get event logs based on the specified criteria.
+* **Search Network Traffic** (*Enrichment*) - Search network traffic based on specific criteria.
+* **List Incidents** (*Enrichment*) - List previously generated incidents.
+* **Create Incident** (*Notification*) - Create new incident.
+* **Update Incident** (*Notification*) - Update a previously created incident.
+* **Get Alerts Events Daemon** (*Daemon*) - Daemon to pull FortiAnalyzer Alert Events.
+* **Get Alert Events Daemon V2** *(Daemon*) - Daemon to pull FortiAnalyzer Alert Events.
 
 ## Change Log
 

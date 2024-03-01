@@ -20,7 +20,6 @@ Along with a fully customizable webhook connection, you can quickly create webho
 * [AWS Lambda](aws-lambda.md)
 * [Azure Functions](microsoft-azure-functions.md)
 * [Datadog](datadog.md)
-* [HipChat](hipchat.md)
 * [Jira](jira-cloud.md)
 * [Microsoft Teams](microsoft-teams.md)
 * [New Relic](new-relic.md)

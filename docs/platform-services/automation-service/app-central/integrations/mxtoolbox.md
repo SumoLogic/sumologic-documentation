@@ -3,17 +3,18 @@ title: MxToolbox
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/mxtoolbox.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mxtoolbox.png')} alt="mxtoolbox" width="60"/>
 
-Version: 1.3  
-Updated: Jun 23, 2023
+***Version: 1.3  
+Updated: Jun 23, 2023***
 
 Utilize MXToolbox to gather MX records for enrichment data during incident investigation.
 
 ## Actions
 
-* **Lookup** (*Enrichment*) - Lookup MX records for a specific domain
+* **Lookup** (*Enrichment*) - Lookup MX records for a specific domain.
 
 ## Change Log
 

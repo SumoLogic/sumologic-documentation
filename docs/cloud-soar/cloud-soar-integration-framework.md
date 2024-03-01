@@ -1575,7 +1575,7 @@ fields:
     required: true
 ```
 
-Now you can perform a `POST` request to the [Cloud SOAR API](/docs/cloud-soar/cloud-soar-apis/) `/webhook` resource with a raw payload:
+Now you can perform a `POST` request to the [Cloud SOAR API](/docs/api/cloud-soar/) `/webhook` resource with a raw payload:
 ```json
 {
   "title": "test",

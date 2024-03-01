@@ -1,9 +1,10 @@
 ---
 title: Index Field (Search)
-image: https://www.sumologic.com/img/logo.svg
+image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - search
-  - release notes
+  - fields
+  - log search
 hide_table_of_contents: true
 authors:
   - url: https://help.sumologic.com/release-notes-service/rss.xml
