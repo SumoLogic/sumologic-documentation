@@ -191,9 +191,9 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
 1. Click **Install App**.  
 1. In the **Deploy Cloud Infrastructure for AWS** screen, perform the following steps:
    1. **Select Region**. Select the [AWS region](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.Regions) where you want to deploy the solution. For information about where your Sumo Logic data is stored in AWS, see [Where is My Data Stored?](/docs/get-started/faq/#where-is-my-data-stored)
-    :::important
-    This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
-    :::
+       :::info
+       This step is critical. If you do not select the correct region, you will deploy the solution in the wrong region.
+       :::
    1. **Deploy AWS**. Click the **Deploy AWS Security** button. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-install-1.png')} alt="Deploy Cloud Infrastructure for AWS screen" style={{border: '1px solid gray'}} width="700"/>
 1. Sign in the [AWS Console](https://console.aws.amazon.com/console/).
 1. In **Quick Create Stack**, fill out the fields to create the stack from the CloudFormation template.
@@ -213,9 +213,9 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
          :::
       * **Security-tooling and log-archiving account Region**. Enter your Security Tooling and Log Archive account region if it's different from the default.
       * **AWS Organization root ID**. Enter the ID for your organization root. This string requires `r-` followed by from 4 to 32 lowercase letters or digits.<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-2.png')} alt="AWS organization configuration" style={{border: '1px solid gray'}} width="700"/>
-       :::note
-       You can find the values for this dialog in the **Organizational structure** section of your [AWS accounts](https://console.aws.amazon.com/organizations/v2/home/accounts) page. Sign in to the AWS console, click on your profile in the top-right corner, select **Organization**, and in the left nav bar select **Policy management > AWS accounts**. You must have the correct permissions to view the account IDs. For more information about organizations, see [AWS documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-organizations.png')} alt="AWS organizational structure" style={{border: '1px solid gray'}} width="700"/>
-       :::
+          :::note
+          You can find the values for this dialog in the **Organizational structure** section of your [AWS accounts](https://console.aws.amazon.com/organizations/v2/home/accounts) page. Sign in to the AWS console, click on your profile in the top-right corner, select **Organization**, and in the left nav bar select **Policy management > AWS accounts**. You must have the correct permissions to view the account IDs. For more information about organizations, see [AWS documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html).<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-organizations.png')} alt="AWS organizational structure" style={{border: '1px solid gray'}} width="700"/>
+          :::
 1. In **3. AWS Service configuration**, select **Yes** for each of the following sources you want to install for Sumo Logic, or **No** if you already have the source installed:
       * **Publish AWS GuardDuty data to Sumo**
       * **Publish AWS CloudTrail data to Sumo** 
