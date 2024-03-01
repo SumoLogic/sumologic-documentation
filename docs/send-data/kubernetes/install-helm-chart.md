@@ -35,7 +35,6 @@ The following are required to set up and deploy the Sumo Logic Kubernetes collec
    - Manage Collectors
    - Manage Fields
    - Manage Content
-   - Manage Apps
    - Manage Monitors
    - ...you need View capabilities on most other non-admin/non-security pieces as well.
 
