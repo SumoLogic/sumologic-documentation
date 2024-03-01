@@ -35,7 +35,6 @@ The following are required to set up and deploy the Sumo Logic Kubernetes collec
    :::note
    The Manage Monitors and Manage Content capabilities are required to install the built-in monitors and dashboards, which are recommended and enabled by default.
    :::
-   - ...you need View capabilities on most other non-admin/non-security pieces as well.
 
 To get an idea of the resources this chart will require to run on your cluster, you can reference our [performance doc](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/performance.md).
 
