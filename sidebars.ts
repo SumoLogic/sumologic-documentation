@@ -2751,7 +2751,7 @@ integrations: [
         'api/logs-data-forwarding',
         'api/log-search-estimated-usage',
         'api/log-searches',
-        'api/data-forwarding',
+        'api/logs-data-forwarding',
         'api/lookup-tables',
         'api/metrics',
         'api/metrics-query',

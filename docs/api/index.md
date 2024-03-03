@@ -74,7 +74,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/data-forwarding"><img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="50"/><h4>Data Forwarding</h4></a>  
+  <a href="/docs/api/logs-data-forwarding"><img src={useBaseUrl('img/icons/operations/send-data.png')} alt="Thumbnail icon" width="50"/><h4>Data Forwarding</h4></a>  
   </div>
 </div>
 <div className="box smallbox card">
