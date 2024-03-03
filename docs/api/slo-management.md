@@ -2,6 +2,7 @@
 id: slo-management
 title: SLO Management APIs
 sidebar_label: SLOs
+description: Use SLO Management API to can monitor and set up alerts on KPIs for your most important services or user experience
 hide_table_of_contents: true
 ---
 

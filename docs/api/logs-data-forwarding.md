@@ -1,5 +1,5 @@
 ---
-id: data-forwarding
+id: logs-data-forwarding
 title: Logs Data Forwarding Management APIs
 sidebar_label: Logs Data Forwarding
 description: Use HTTP endpoints to manage Data Forwarding to S3.

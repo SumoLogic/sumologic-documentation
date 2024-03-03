@@ -2,6 +2,7 @@
 id: muting-schedules
 title: Muting Schedules Management APIs
 sidebar_label: Muting Schedules
+description: Muting Schedules Management APIs allow you to pause alert notifications from monitors.
 hide_table_of_contents: true
 ---
 

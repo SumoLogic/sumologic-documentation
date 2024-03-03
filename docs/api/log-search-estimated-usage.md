@@ -2,7 +2,7 @@
 id: log-search-estimated-usage
 title: Log Search Estimated Usage APIs
 sidebar_label: Log Search Estimated Usage
-description: Log Search Estimated Usage API gets the estimated volume of Infrequent Data Tier data scanned for a given log search over a particular time range.
+description: Log Search Estimated Usage APIs get the estimated volume of Infrequent Data Tier data scanned for a given log search over a particular time range.
 hide_table_of_contents: true
 ---
 

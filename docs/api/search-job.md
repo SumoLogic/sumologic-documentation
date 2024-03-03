@@ -2,7 +2,7 @@
 id: search-job
 title: Search Job APIs
 sidebar_label: Search Job
-description: The Search Job API provides access to resources and log data from third-party scripts and applications.
+description: Search Job APIs provides access to resources and log data from third-party scripts and applications.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

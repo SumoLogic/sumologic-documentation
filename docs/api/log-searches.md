@@ -2,7 +2,7 @@
 id: log-searches
 title: Log Searches Management API
 sidebar_label: Log Searches
-description: With the Log Searches API, you can list, save, update, and delete your log searches.
+description: With Log Searches Management APIs, you can list, save, update, and delete your log searches.
 hide_table_of_contents: true
 ---
 
