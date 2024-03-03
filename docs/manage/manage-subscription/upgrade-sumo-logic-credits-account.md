@@ -6,7 +6,7 @@ description: Learn how to upgrade a Free or Trial account to an Essentials subsc
 
 This page has instructions for upgrading a Sumo Logic Free or Trial account to an Essentials account, and for updating an existing Essentials account.
 
-For information about Essentials accounts, see [Credits - Account Types](sumo-logic-credits-accounts.md). 
+For information about Essentials accounts, see [Credits - Account Types](/docs/manage/manage-subscription/sumo-logic-credits-accounts). 
 
 :::note
 For information about canceling a Sumo Logic subscription, see [Close or Cancel a Sumo Logic Account](close-cancel-sumo-account.md).
