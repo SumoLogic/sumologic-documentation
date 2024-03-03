@@ -120,7 +120,7 @@ The [Search Job API documentation](/docs/api/search-job) provides an example of 
 
 ## Search Job API results into formatted JSON file
 
-When getting current [Search Job API](/docs/api/search-job) results, the results can be nicely formatted into a JSON file.
+When getting current [Search Job API](/docs/api/search-job) results, you can format them cleanly into a JSON file.
 
 Using an open source Python tool called mjson that comes with the standard Python libraries, you can put your results in an easier to read format. You can reference the tool at the following links:
 * [https://pypi.python.org/pypi/mjson](https://pypi.python.org/pypi/mjson)
