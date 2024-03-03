@@ -45,7 +45,7 @@ The **Capacity Utilization** dashboard displays the subscribed, actual, and perc
 
 <img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Flex/Flex-Credits-Consumed.png" alt="Flex dashboard" />
 
-The **Credits Consumed** dashboard provides visibility into the total amount of [Cloud Flex Credits](/docs/manage/manage-subscription/cloud-flex-credits-accounts) your organization has consumed. This allows you to monitor and control search costs.
+The **Credits Consumed** dashboard provides visibility into the total amount of [Sumo Logic Credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts) your organization has consumed. This allows you to monitor and control search costs.
 
 ### Feature Level Scan Volume
 

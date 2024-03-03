@@ -1,12 +1,12 @@
 ---
-id: upgrade-cloud-flex-credits-account
-title: Upgrade a Credits Account
+id: upgrade-sumo-logic-credits-account
+title: Upgrade a Sumo Logic Credits Account
 description: Learn how to upgrade a Free or Trial account to an Essentials subscription.
 ---
 
 This page has instructions for upgrading a Sumo Logic Free or Trial account to an Essentials account, and for updating an existing Essentials account.
 
-For information about Essentials accounts, see [Credits - Account Types](cloud-flex-credits-accounts.md). 
+For information about Essentials accounts, see [Credits - Account Types](sumo-logic-credits-accounts.md). 
 
 :::note
 For information about canceling a Sumo Logic subscription, see [Close or Cancel a Sumo Logic Account](close-cancel-sumo-account.md).

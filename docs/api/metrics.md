@@ -19,7 +19,7 @@ import ApiIntro from '../reuse/api-intro.md';
 
 You will need:
 
-* An Enterprise account. For more information, see [Cloud Flex](/docs/manage/manage-subscription/cloud-flex-accounts) or [Cloud Flex Credits](/docs/manage/manage-subscription/cloud-flex-credits-accounts), depending on the Sumo Logic packaging you have.
+* An Enterprise account. For more information, see [Sumo Logic Credits accounts](/docs/manage/manage-subscription/sumo-logic-credits-accounts) or [Cloud Flex (Legacy) Accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts), depending on the Sumo Logic package you have.
 * An access key/access ID for authentication. Username/password are not supported.
 
 

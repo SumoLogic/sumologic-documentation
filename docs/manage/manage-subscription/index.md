@@ -13,19 +13,19 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/manage-subscription/cloud-flex-credits-accounts"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Cloud Flex Credits Accounts</h4></a>
-  <p>View information on Cloud Flex Credits account, monitor usage, and manage account costs.</p>
+  <a href="/docs/manage/manage-subscription/sumo-logic-credits-accounts"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Sumo Logic Credits Accounts</h4></a>
+  <p>View information on Sumo Logic Credits account, monitor usage, and manage account costs.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/manage-subscription/cloud-flex-accounts"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Cloud Flex Accounts</h4></a>
-  <p>View information on Cloud Flex account, monitor usage, and manage account costs.</p>
+  <a href="/docs/manage/manage-subscription/cloud-flex-legacy-accounts"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Cloud Flex Legacy Accounts</h4></a>
+  <p>View information, monitor usage, and manage account costs on Cloud Flex legacy accounts.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/manage-subscription/upgrade-cloud-flex-credits-account"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Upgrade a Credits Account</h4></a>
+  <a href="/docs/manage/manage-subscription/upgrade-sumo-logic-credits-account"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Upgrade a Credits Account</h4></a>
   <p>Learn how to upgrade a Free or Trial account to an Essentials subscription.</p>
   </div>
 </div>

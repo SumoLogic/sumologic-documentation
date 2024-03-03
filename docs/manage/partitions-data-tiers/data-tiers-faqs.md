@@ -20,7 +20,7 @@ import FlexPricing from '../../reuse/flex-pricing.md';
 
 ## Is the Infrequent Tier available to existing Cloud Flex customers?
 
-No. Infrequent Tier is only available to customers who have [Cloud Flex Credits](/docs/manage/manage-subscription/cloud-flex-credits-accounts) packaging.  
+No. Infrequent Tier is only available to customers who have [Sumo Logic Credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts) packaging.  
 
 ## Can I restrict access to Infrequent or Frequent data to select users?
 

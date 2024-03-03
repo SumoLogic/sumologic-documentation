@@ -4,7 +4,7 @@ title: Upgrade Your Cloud Flex Legacy Account
 description: Learn how to upgrade your Sumo Logic account.
 ---
 
-This page has information about upgrading a legacy account. The account plan has the following account types: Free, Trial, Professional, and Enterprise. For information about each account type, see [Cloud Flex Legacy Accounts](cloud-flex-accounts.md). 
+This page has information about upgrading a legacy account. The account plan has the following account types: Free, Trial, Professional, and Enterprise. For information about each account type, see [Cloud Flex Legacy Accounts](cloud-flex-legacy-accounts.md). 
 
 ## Upgrade options for legacy accounts
 

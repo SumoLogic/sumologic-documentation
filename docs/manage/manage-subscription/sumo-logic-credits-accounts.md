@@ -1,8 +1,12 @@
 ---
-id: cloud-flex-credits-accounts
+id: sumo-logic-credits-accounts
 title: Sumo Logic Credits Accounts
 description: View information on Sumo Logic Credits accounts and intuitively monitor usage and manage account costs.
 ---
+
+:::note
+Formerly known as Cloud Flex Credits.
+:::
 
 Sumo Logic provides flexible account types within its Credits packaging for any size organization. A **credit** is a unit of measure that tracks use, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose. This allows you to carefully manage your account.
 
@@ -16,7 +20,7 @@ You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise S
   :::note
   [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management), which you can find under **Administration** > **Account**, is not available for Free accounts (Trial and paid accounts only).
   :::
-* **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest, For information on Trial account features, see [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-accounts/).  
+* **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a credit allocation to support a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. If you use up the credits allocated for the trial period before the period ends, Sumo Logic’s [standard throttling mechanism](../ingestion-volume/log-ingestion.md) will be applied to your log ingest, For information on Trial account features, see [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts/).  
   :::note
   Trials are limited to 30 days. If you require an extended trial period, contact our [sales team](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
   :::
@@ -118,7 +122,7 @@ The usage forecast gives you an opportunity to see the potential end of the curr
 
 There are times when Sumo Logic promotes services and consumables through the provision of Promotional Credits. Promotional Credits are non-transferrable and auto-expire at the end of the promotion period. In other words, if the Promotional Credits are not used within the promotion period, they do not carry over. They are of a "use it or lose it" nature. Promotional Credits are specific to a promotion and cannot be used for any service. The criteria, including promotion period, are listed in your contract. Promotional Credit consumption is calculated separately from the credits you paid for in your contract period. Promotional Credits are utilized as the priority credit for the specified credit variable.
 
-For example, if your contract period is licensed for 100,000 credits and 10,000 promotional credits for "Metrics” and you're using all your credits for metrics, Promotional Credits will be the first 10,000 credits used. Once the Promotional Credits are depleted, paid credits will  be  used for metrics. The ability to filter down to the focused credit component and see more detailed patterns extends to Promotional Credits as well as paid credits. For more information, see [Monitoring Promotional Credit Usage](cloud-flex-credits-accounts.md).
+For example, if your contract period is licensed for 100,000 credits and 10,000 promotional credits for "Metrics” and you're using all your credits for metrics, Promotional Credits will be the first 10,000 credits used. Once the Promotional Credits are depleted, paid credits will  be  used for metrics. The ability to filter down to the focused credit component and see more detailed patterns extends to Promotional Credits as well as paid credits. For more information, see [Monitoring Promotional Credit Usage](sumo-logic-credits-accounts.md).
 
 * **Promotional Credits** bar graphs show the rate at which you are consuming your allocated Promotional Credits.
 
