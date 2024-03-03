@@ -154,7 +154,7 @@ With this graphic, you can see how to collect logs from AWS CloudTrail DevOps an
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Collection_Process_Overview-devops.png')} alt="Collection_Process_Overview-devops" />
 
-### Before you begin
+### Prerequisites
 
 Before you begin, you must configure AWS CloudTrail logging to an S3 bucket.
 1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_started_top_level.html) in your AWS account.
