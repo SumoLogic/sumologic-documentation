@@ -106,7 +106,9 @@ import Iframe from 'react-iframe';
 
     ![img](/img/send-data/S3_Bucket.png)
 
-1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a multiple wildcard. Do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details.
+1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a multiple wildcard. Do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details. 
+
+   Following is an example of a managed S3 bucket's name and path expression entered in the dialog. Together they comprise an S3 bucket data path. For more information, see [S3 Bucket Data Path](https://docs.umbrella.com/deployment-umbrella/docs/cisco-managed-s3-bucket#s3-bucket-data-path) in the Cisco documentation. <br/><img src={useBaseUrl('img/send-data/bucket-name-and-path-expression.png')} alt="<your image description>" style={{border: '1px solid gray'}} width="600" />
 1. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
 
    * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”.
