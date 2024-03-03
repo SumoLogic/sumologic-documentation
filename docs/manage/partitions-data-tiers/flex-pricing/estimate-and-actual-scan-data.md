@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Search modifier `_datatier` is not supported for any Flex query.
 :::
 
-When you enter a query that runs against the Flex pricing, Sumo Logic estimates and displays the amount of data that is scanned in Flex to return the search results. This detail is vital as in Flex you will pay for whatever amount of data that are scanned to complete the query. 
+When you enter a query against Flex pricing, Sumo Logic will estimate and display the amount of data that is scanned in Flex to return the search results. This detail is vital. With Flex pricing, you're charged for the amount of data that's scanned to complete the query. 
 
 You can view this detail by clicking the meter icon <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" />. A popup appears on click, which displays the estimated scan data breakup for the chargeable tiers like Infrequent and Flex. 
 
