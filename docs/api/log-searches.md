@@ -8,6 +8,8 @@ hide_table_of_contents: true
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/icons/logs.png')} alt="Thumbnail icon" width="50"/>
+
 With the Log Searches Management API, you can list, save, update, and delete your log searches.
 
 Whether you're running ad hoc searches during a forensic investigation or running standard searches for health checks, you can save any search to run again later. When you create a search that you would like to reuse, you can save it to the Library. From there you can run it again, share with others, edit the search, or create a Scheduled Search to run at a regularly scheduled time, and set up alerts. The saved search will also include any charts you have created in the Aggregates tab.
