@@ -9,27 +9,27 @@ OpenTelemetry Python instrumentation provides the ability to capture telemetry d
 
 ## How to instrument your app
 
-The best way to instrument Python applications is to use OpenTelemetry-Python automatic instrumentation. This approach is simple, easy, and does not require many code changes. Only a few Python packages have to be installed to successfully instrument the code of the application. Instruction below applies to OpenTelemetry-Python instrumentation in version **1.17.0/0.38b0** with [OpenTelemetry Protocol HTTP Exporter](https://github.com/open-telemetry/opentelemetry-python/tree/v1.17.0/exporter/opentelemetry-exporter-otlp-proto-http).
+The best way to instrument Python applications is to use OpenTelemetry-Python automatic instrumentation. This approach is simple, easy, and does not require many code changes. Only a few Python packages have to be installed to successfully instrument the code of the application. Instruction below applies to OpenTelemetry-Python instrumentation in version **1.23.0/0.44b0** with [OpenTelemetry Protocol HTTP Exporter](https://github.com/open-telemetry/opentelemetry-python/tree/v1.23.0/exporter/opentelemetry-exporter-otlp-proto-http).
 
 ## Mandatory packages installation
 
 Installation of the package listed below is required to start the instrumentation and export telemetry data. Run the following pip commands:  
 
 ```bash
-pip install opentelemetry-distro==0.38b0
-pip install opentelemetry-exporter-otlp-proto-http==1.17.0
+pip install opentelemetry-distro==0.44b0
+pip install opentelemetry-exporter-otlp-proto-http==1.23.0
 ```
 
 If requirements.txt is used to manage dependencies in the project add:
 
 ```bash
-opentelemetry-distro==0.38b0 opentelemetry-exporter-otlp-proto-http==1.17.0
+opentelemetry-distro==0.44b0 opentelemetry-exporter-otlp-proto-http==1.23.0
 ```
 
 If pipfile, add these dependencies instead of using the pip commands. For example:
 
 ```bash
-opentelemetry-distro = "0.38b0" opentelemetry-exporter-otlp-proto-http = "1.17.0"
+opentelemetry-distro = "0.44b0" opentelemetry-exporter-otlp-proto-http = "1.23.0"
 ```
 
 ## Application specific packages installation
@@ -40,7 +40,7 @@ The next step is related to the installation of the instrumented packages used i
 opentelemetry-bootstrap --action=install
 ```
 
-It is possible to install instrumented packages manually but it will require from the user to find libraries used in the code and install their [instrumented counterparts](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.38b0/instrumentation) (such as Flask [opentelemetry-instrumentation-flask](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.38b0/instrumentation/opentelemetry-instrumentation-flask)).
+It is possible to install instrumented packages manually but it will require from the user to find libraries used in the code and install their [instrumented counterparts](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.44b0/instrumentation) (such as Flask [opentelemetry-instrumentation-flask](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.44b0/instrumentation/opentelemetry-instrumentation-flask)).
 
 ## Instrumentation configuration
 
@@ -100,7 +100,7 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
   * Propagator package installation:
 
       ```bash
-      pip install opentelemetry-propagator-b3==1.17.0
+      pip install opentelemetry-propagator-b3==1.23.0
       ```  
 
   * Configuration:
@@ -126,7 +126,7 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
   * Propagator package installation:
 
       ```bash
-      pip install opentelemetry-propagator-jaeger==1.17.0
+      pip install opentelemetry-propagator-jaeger==1.23.0
       ```  
 
   * Configuration:
@@ -139,7 +139,7 @@ By default, OpenTelemetry uses W3C context propagation standard. If application 
   * Propagator package installation:
 
       ```bash
-      pip install opentelemetry-ot-trace==0.38b0
+      pip install opentelemetry-ot-trace==0.44b0
       ```  
 
   * Configuration:
