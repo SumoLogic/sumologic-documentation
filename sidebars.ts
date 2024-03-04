@@ -723,7 +723,7 @@ module.exports = {
         'manage/manage-subscription/sumo-logic-credits-accounts',
         'manage/manage-subscription/cloud-flex-legacy-accounts',
         'manage/manage-subscription/upgrade-sumo-logic-credits-account',
-        'manage/manage-subscription/upgrade-cloud-flex-account',
+        'manage/manage-subscription/upgrade-cloud-flex-legacy-account',
         'manage/manage-subscription/manage-billing-information',
         'manage/manage-subscription/create-manage-orgs',
         'manage/manage-subscription/create-manage-orgs-service-providers',

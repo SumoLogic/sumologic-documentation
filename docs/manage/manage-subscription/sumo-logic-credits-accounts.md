@@ -16,7 +16,7 @@ This page provides information on the Credits account types you can choose, and 
 
 You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise Security, or Enterprise Suite Credits accounts.
 
-* **Free** accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for logs, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](upgrade-cloud-flex-account.md) to Sumo Logic paid service agreements in the Sumo Logic UI.
+* **Free** accounts give you access to most Sumo Logic features, with a credit allocation of 20 credits a day. Credits can be used for logs, metrics, and traces, in any combination that meets your needs. The retention period for logs is 7 days. Free accounts allow three users. Free account holders can [upgrade](upgrade-cloud-flex-legacy-account.md) to Sumo Logic paid service agreements in the Sumo Logic UI.
   :::note
   [Data Management](/docs/manage/users-roles/roles/role-capabilities/#data-management), which you can find under **Administration** > **Account**, is not available for Free accounts (Trial and paid accounts only).
   :::
@@ -24,7 +24,7 @@ You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise S
   :::note
   Trials are limited to 30 days. If you need to extend your trial period, contact our [sales team](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
   :::
-* **Essentials** accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-cloud-flex-account.md) from a Essential account to either Enterprise Operations, Enterprise Security, or Enterprise Suite accounts at any time.
+* **Essentials** accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-cloud-flex-legacy-account.md) from a Essential account to either Enterprise Operations, Enterprise Security, or Enterprise Suite accounts at any time.
 * **Enterprise Operations** accounts are optimized for best practice operational monitoring at any ingest volume.
 * **Enterprise Security** accounts include advanced security capabilities. Enterprise Security is ideal for security operation centers (SOCs). SOC teams can leverage the latest PCI compliance application frameworks and threat detection capabilities.  
 * **Enterprise Suite** accounts are optimized to address the most advanced data insight challenges. Enterprise Suite accounts include all of Sumo Logic’s industry-leading capabilities including Sumo Logic’s Tiered Analytics.

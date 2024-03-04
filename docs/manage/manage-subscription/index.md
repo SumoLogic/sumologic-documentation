@@ -31,7 +31,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/manage-subscription/upgrade-cloud-flex-account"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Upgrade Your Cloud Flex Account</h4></a>
+  <a href="/docs/manage/manage-subscription/upgrade-cloud-flex-legacy-account"><img src={useBaseUrl('img/icons/operations/manage.png')} alt="icon" width="40"/><h4>Upgrade Your Cloud Flex Account</h4></a>
   <p>Learn how to upgrade your Sumo Logic account.</p>
   </div>
 </div>
