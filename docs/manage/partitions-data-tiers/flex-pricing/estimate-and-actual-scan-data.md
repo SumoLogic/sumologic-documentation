@@ -24,7 +24,7 @@ If there is no pay per scan tier scanned, an error message will be displayed in 
 
 When you click in the status area under the histogram, a popup with more detailed information appears. <br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/scan-details.png')} alt="scan-details" style={{border:'1px solid gray'}} width="500" />
 
-Sumo logic will charge you every time you scan the data. So scheduling the search will help you to reduce some prices. You can also see the data scanned in **Time range for scheduled searches** for the selected run frequency while creating/modifying the scheduled search. <br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/scan-schedules-search.png')} alt="scan-schedules-search" style={{border:'1px solid gray'}} width="450" />
+As Sumo Logic charges for each data scan, scheduling searches can help mitigate costs. When creating or modifying a scheduled search, you can view the data scanned in the **Time Range for Scheduled Searches** based on the selected run frequency. <br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/scan-schedules-search.png')} alt="scan-schedules-search" style={{border:'1px solid gray'}} width="450" />
 
 ## Best practices
 
