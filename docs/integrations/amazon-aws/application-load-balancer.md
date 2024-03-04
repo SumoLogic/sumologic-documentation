@@ -80,7 +80,7 @@ Namespace for AWS Application Load Balancer Service is AWS/ApplicationELB.
 
 ### Collecting Access Logs
 
-#### Before you begin
+#### Prerequisites
 
 Before you begin to use the AWS Elastic Load Balancing (ELB) Application app, complete the following steps:
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.

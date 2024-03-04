@@ -30,7 +30,7 @@ _sourceCategory= aws/cf | parse "*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*" as
 
 ## Collecting Logs for the Amazon CloudFront app
 
-### Before you begin
+### Prerequisites
 
 Before you install the Amazon CloudFront app, complete the following tasks:
 
