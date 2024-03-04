@@ -94,7 +94,7 @@ fillmissing <keyFieldGenerator> [, <keyFieldGenerator> ]  [ with <nonKeyFieldSpe
 
 ## Rules
 
-* In Live Dashboards, you must use the `fillmissing` operator after an aggregate operator.
+* In Auto Refresh Dashboards, you must use the `fillmissing` operator after an aggregate operator.
 * Buckets from the timeslice generator need to be based on a time period. Supported `<time_period>` values are weeks `(w)`, days `(d)`, hours `(h)`, minutes `(m)`, and seconds `(s)`.
 
 ## Examples
