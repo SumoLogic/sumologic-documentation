@@ -2349,6 +2349,7 @@ integrations: [
           'integrations/sumo-apps/data-volume',
           'integrations/sumo-apps/enterprise-audit',
           'integrations/sumo-apps/enterprise-search-audit',
+          'integrations/sumo-apps/flex',
           'integrations/sumo-apps/infrequent-data-tier',
           'integrations/sumo-apps/security-analytics',
         ],

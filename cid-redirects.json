@@ -1503,6 +1503,7 @@
   "/cid/1005": "/docs/send-data/collection",
   "/cid/1006": "/docs/manage/users-roles/users",
   "/cid/10130": "/docs/manage/partitions-data-tiers/flex-pricing/estimate-and-actual-scan-data",
+  "/cid/10131": "/docs/integrations/sumo-apps/flex",
   "/cid/1007": "/docs/search/get-started-with-search/search-basics/built-in-metadata",
   "/cid/1008": "/docs/search/search-query-language/search-operators/concat",
   "/cid/1009": "/docs/send-data/installed-collectors/windows",
