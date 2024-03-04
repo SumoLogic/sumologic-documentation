@@ -4,6 +4,8 @@ title: Cloud Flex Credits Accounts
 description: View information on Sumo Logic Cloud Flex Credits account and intuitively monitor usage and manage account costs.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Sumo Logic provides flexible account types within its Cloud Flex Credits packaging for any size organization. A **credit** is a unit of measure that tracks use, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose. This allows you to carefully manage your account.
 
 This page provides information on the Cloud Flex Credits account types you can choose, and then explains how to monitor and manage your account.
@@ -20,7 +22,7 @@ You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise S
   :::note
   Trials are limited to 30 days. If you require an extended trial period, contact our [sales team](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
   :::
-* **Essentials**  accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-cloud-flex-account.md) from a Essential account to either Enterprise Operations, Enterprise Security, or Enterprise Suite accounts  at any time.
+* **Essentials** accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-cloud-flex-account.md) from a Essential account to either Enterprise Operations, Enterprise Security, or Enterprise Suite accounts  at any time.
 * **Enterprise** **Operations** accounts are optimized for best practice operational monitoring at any ingest volume.
 * **Enterprise** **Security** accounts include advanced security capabilities. Enterprise Security is ideal for security operation centers (SOCs). SOC teams can leverage the latest PCI compliance application frameworks and threat detection capabilities.  
 * **Enterprise** **Suite** accounts are optimized to address the most advanced data insight challenges. Enterprise Suite accounts include all of Sumo Logic’s industry-leading capabilities including Sumo Logic’s Tiered Analytics.
@@ -29,6 +31,7 @@ You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise S
 
   It's important to keep track of your daily data usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see [Log Ingestion](../ingestion-volume/log-ingestion.md).
   :::
+
 ## Features by subscription type
 
 The following table provides a summary list of key features by Sumo Logic Cloud Flex Credits package accounts. For Free and Trial account details, see the details for [Cloud Flex accounts](cloud-flex-accounts.md).
@@ -98,7 +101,7 @@ The Account page provides an at-a-glance view of your account information in t
 
 * **Credits Used.** Displays the number of credits used and the percentage used since the beginning of your current contract.
 * **Credits remaining.** Displays number of credits remaining as well as the percentage of credits used since the beginning of your current contract.
-
+* **Total Credits Usage Breakdown.** Displays the total consumed contract credits and promotional credits of your current contract.
 
 ### Usage Forecast
 
@@ -107,11 +110,13 @@ The usage forecast gives you an opportunity to see the potential end of the curr
 * **Upgrade Plan**. Link to the upgrade account page, where you can message your request for an account upgrade to your account manager.
 * **Forecasted use**. Predicts your credit usage by end of the contract period.
 * **Credits exhaust**. The predicted number of days and the exact date when we estimate your current credits will be exhausted.
+* **Dynamic forecast**. You can now see predicted credit usage based on the past trends for 7, 30, or 90 days that can be selected from the dropdown.
 
 ### Usage Details by Category
 
 * **Usage Details.** Shows graphs that represent detail usage of Sumo Credits by ingest, storage, or any type of data service utilized from the start of the contract period.
-* **Usage Categories**. Table displaying the credits used, % of credits used, and units by usage categories, ingest type and promotional credits usage.
+* **Usage Categories**. Table displaying the credits used, % of credits used, usage % change, units by usage categories ingest type, and promotional credits usage.
+* **Usage % Change**. Indicates the difference in credit usage for a selected usage category over time. For example, if you choose the date from Jan 1 to Jan 7, it will show the usage difference between Dec 25 to Dec 31 and Jan 1 to Jan 7 for each usage category.
 
 ### Promotional Credits
 
@@ -135,11 +140,14 @@ You must have a role that grants you the View Account Overview capability to vie
 Be aware of the following features:
 
 * **Details of Credit Usage** allow you to review your consumption by usage categories and credit types.
+* **Credit baseline** allows you to track the credit consumption against the plans expected credit usage. 
 * View consumption by day, week, or month.
+* View consumption on Line or Column time series chart.
 * View consumption by time period.
 * Download a report on usage, or just on credits usage as a CSV file.
+* View the detailed usage data for any time period on the chart by hovering over the chart.
 
-![account-overview-credits.png](/img/account/account-usage-fields.png)
+<img src={useBaseUrl('/img/account/account-usage-fields.png')} alt="account-overview-credits" style={{border:'1px solid gray'}} width="800"/>
 
 :::note
 If are the Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For instructions on this options, see [Manage Organization](manage-org-settings.md).
