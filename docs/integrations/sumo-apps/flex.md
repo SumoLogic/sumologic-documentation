@@ -14,8 +14,136 @@ With Sumo Logic Flex, you gain an efficient and centralized log analytics framew
 
 - [Log and Tracing Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/)
 - [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/)
+- [Log Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#log-search-audit-index-message-fields)
 
 ### Log samples
+
+<details>
+<summary>Click to expand</summary>
+```json
+[
+    {
+    "field":"sourcename_and_tier_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":11555,
+    "count":1
+    },
+    {
+    "field":"collector_and_tier_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":366,
+    "count":1
+    },
+    {
+    "field":"source_metrics_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":4463,
+    "count":47
+    },
+    {
+    "field":"source_and_tier_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":731,
+    "count":1
+    },
+    {
+    "field":"sourcehost_metrics_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":4973,
+    "count":47
+    },
+    {
+    "field":"sourcecategory_metrics_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":5362,
+    "count":47
+    },
+    {
+    "field":"PDET/CIS/AWS/Vanta/Flow",
+    "dataTier":"Flex",
+    "sizeInBytes":70759,
+    "count":126
+    },
+    {
+    "field":"collector_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":262,
+    "count":1
+    },
+    {
+    "field":"sourcename_metrics_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":5481,
+    "count":47
+    },
+    {
+    "field":"collector_metrics_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":5159,
+    "count":47
+    },
+    {
+    "field":"view_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":364,
+    "count":1
+    },
+    {
+    "field":"",
+    "dataTier":"Flex",
+    "sizeInBytes":333,
+    "count":19
+    },
+    {
+    "field":"PDET/CIS/AWS/GuardDuty",
+    "dataTier":"Flex",
+    "sizeInBytes":30471,
+    "count":15},
+    {
+    "field":"sourcehost_and_tier_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":1158,
+    "count":1
+    },
+    {
+    "field":"view_and_tier_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":546,
+    "count":1
+    },
+    {
+    "field":"PDET/CIS/AWS/CloudTrail/Analytics",
+    "dataTier":"Flex",
+    "sizeInBytes":62273,
+    "count":70
+    },
+    {
+    "field":"sourcecategory_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":6485,
+    "count":1
+    },
+    {
+    "field":"sourcehost_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":794,
+    "count":1
+    },
+    {
+    "field":"sedemostag/events",
+    "dataTier":"Flex",
+    "sizeInBytes":22790,
+    "count":19
+    },
+    {
+    "field":"source_volume",
+    "dataTier":"Flex",
+    "sizeInBytes":497,
+    "count":1
+    }
+]
+```
+</details>
 
 ### Sample queries
 
@@ -46,7 +174,7 @@ Sumo Logic Flex app is only available for Enterprise Suite - Flex customers.
 
 :::
 
-To collect data for Flex app, you need to enable the [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/#enable-the-data-volume-index).
+To collect data for Flex app, you need to enable [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/#enable-the-data-volume-index) and [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index).
 
 You can verify if you already have the Data Volume Index enabled by querying:
 
@@ -55,6 +183,14 @@ _index=sumologic_volume
 ```
 
 If no results are returned even for longer time ranges, it means you don't have the Data Volume Index enabled.
+
+You can verify if you already have the Search Audit Index enabled by querying:
+
+```sql
+_index=sumologic_search_usage_per_query
+```
+
+If no results are returned even for longer time ranges, it means you don't have Search Audit index enabled.
 
 ## Installing the Flex app
 
