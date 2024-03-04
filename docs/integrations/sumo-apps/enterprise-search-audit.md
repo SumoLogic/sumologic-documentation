@@ -16,9 +16,9 @@ Before you can use the Enterprise Search Audit App, an administrator must first 
 
 ## Installing the Enterprise Search Audit App
 
-import AppInstall2 from '../../reuse/apps/app-install-sumo-apps.md';
+import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
 
-<AppInstall2/>
+<AppInstallNoDataSourceV1/>
 
 ## Enterprise Search Audit App Dashboards
 This page has information about the pre-built dashboards for the Enterprise Search Audit App and a description of each of the app dashboards.

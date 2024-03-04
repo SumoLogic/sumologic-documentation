@@ -46,9 +46,9 @@ Audit data is not backfilled to any time before Enterprise Audit was installed. 
 
 ## Installing Enterprise Audit Apps
 
-import AppInstall2 from '../../reuse/apps/app-install-sumo-apps.md';
+import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
 
-<AppInstall2/>
+<AppInstallNoDataSourceV1/>
 
 ## Viewing Enterprise Audit App Dashboards
 

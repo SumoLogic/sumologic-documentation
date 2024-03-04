@@ -18,9 +18,9 @@ The Data Volume Index gathers volume data as soon as it is enabled. It will not 
 
 ## Installing the Data Volume app
 
-import AppInstall2 from '../../reuse/apps/app-install-sumo-apps.md';
+import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
 
-<AppInstall2/>
+<AppInstallNoDataSourceV1/>
 
 ## Set up Burndown Rates for Consumables
 

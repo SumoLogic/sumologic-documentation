@@ -194,9 +194,9 @@ If no results are returned even for longer time ranges, it means you don't have 
 
 ## Installing the Flex app
 
-import AppInstall2 from '../../reuse/apps/app-install-sumo-apps.md';
+import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
 
-<AppInstall2/>
+<AppInstallNoDataSourceV1/>
 
 ## Viewing Flex app dashboards
 
