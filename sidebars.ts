@@ -719,6 +719,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/manage-subscription/index'},
       items: [
+        'manage/manage-subscription/sumo-logic-flex-accounts',
         'manage/manage-subscription/sumo-logic-credits-accounts',
         'manage/manage-subscription/cloud-flex-legacy-accounts',
         'manage/manage-subscription/upgrade-sumo-logic-credits-account',

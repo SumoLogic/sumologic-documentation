@@ -22,7 +22,7 @@ For multi-account to work, your username (email address) must be the same in the
 If you would still like to have an account that is separate from your Sumo Logic Multi-account, simply use a different email address. This way, you can keep this account separate from your Multi-account username and password.
 
 :::note
-Your account owner can change the organizations' display name on the Account page. For more information, see [Cloud Flex Accounts](/docs/manage/manage-subscription/cloud-flex-accounts) or [Cloud Flex Credits Accounts](/docs/manage/manage-subscription/sumo-logic-credits-accounts), depending on your Sumo Logic packaging.
+Your account owner can change the organizations' display name on the Account page. For more information, see [Cloud Flex Legacy Accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts) or [Sumo Logic Credits Accounts](/docs/manage/manage-subscription/sumo-logic-credits-accounts), depending on your Sumo Logic packaging.
 :::
 
 Single account users are unaffected by multi-account Access, and will not see this option in the UI.
