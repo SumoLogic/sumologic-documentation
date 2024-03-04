@@ -3,6 +3,7 @@ id: sumo-logic-flex-accounts
 title: Sumo Logic Flex Accounts
 description: View information on Sumo Logic Flex Accounts and intuitively monitor usage and manage account costs.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic provides flexible account types within its Flex packaging for any size organization with a credit-based capacity measurement. A *credit* is a unit of measure that tracks use, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose. This allows you to carefully manage your account.
 
@@ -116,6 +117,7 @@ The Account page provides an at-a-glance view of your account information in the
 
 * **Credits Used**. Displays the number of credits used and the percentage used since the beginning of your current contract.
 * **Credits remaining**. Displays number of credits remaining as well as the percentage of credits used since the beginning of your current contract.
+* **Total Credits Usage Breakdown.** Displays the total consumed contract credits and promotional credits of your current contract.
 
 ### Usage Forecast​
 
@@ -124,11 +126,13 @@ The usage forecast gives you an opportunity to see the potential end of the curr
 * **Upgrade Plan**. Link to the upgrade account page, where you can message your request for an account upgrade to your account manager.
 * **Forecasted use**. Predicts your credit usage by end of the contract period.
 * **Credits exhaust**. The predicted number of days and the exact date when we estimate your current credits will be exhausted.
+* **Dynamic forecast**. You can now see predicted credit usage based on the past trends for 7, 30, or 90 days that can be selected from the dropdown.
 
 ### Usage Details by Category​
 
 * **Usage Details**. Shows graphs that represent detail usage of Sumo Credits by ingest, storage, or any type of data service utilized from the start of the contract period.
 * **Usage Categories**. Table displaying the credits used, % of credits used, and units by usage categories, ingest type and promotional credits usage.
+* **Usage % Change**. Indicates the difference in credit usage for a selected usage category over time. For example, if you choose the date from Jan 1 to Jan 7, it will show the usage difference between Dec 25 to Dec 31 and Jan 1 to Jan 7 for each usage category.
 
 ### Promotional Credits​
 
@@ -151,13 +155,14 @@ You must have a role that grants you the View Account Overview capability to vie
 Be aware of the following features:
 
 * **Details of Credit Usage** allow you to review your consumption by usage categories and credit types.
+* **Credit baseline** allows you to track the credit consumption against the plans expected credit usage.
 * View consumption by day, week, or month.
+* View consumption on Line or Column time series chart.
 * View consumption by time period.
 * Download a report on usage, or just on credits usage as a CSV file.
+* View the detailed usage data for any time period on the chart by hovering over the chart.
 
-![account-overview-flex.png](/img/account/account-overview-flex.png)
-
-![flex-usage-categories.png](/img/subscriptions/flex-usage-categories.png)
+<img src={useBaseUrl('/img/account/account-overview-flex.png')} alt="account-overview-flex" style={{border:'1px solid gray'}} width="800"/><br/><img src={useBaseUrl('/img/subscriptions/flex-usage-categories.png')} alt="flex-usage-categories" style={{border:'1px solid gray'}} width="800"/>
 
 :::note
 If are the Sumo Logic account owner, your Account page also displays a **Manage Organization** section. For instructions on this options, see [Manage Organization](manage-org-settings.md).
