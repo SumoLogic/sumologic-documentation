@@ -31,16 +31,6 @@ Each Sumo Logic Data Tier supports a different use case and provides its own set
 * The Frequent Tier - available only for Sumo Logic Enterprise Suite plans - is for data you need to frequently access to troubleshoot and investigate issues. For example, you might use the Frequent Tier for development and test data that helps you investigate issues during development. Searching the Frequent Tier is free: it's included in the data ingestion price.
 * The Infrequent Tier - available only for Sumo Logic Enterprise Suite plans - is for data that is used to troubleshoot intermittent or hard-to-reproduce issues. For example, you might use the Infrequent Tier for debug logs, OS logs, thread dumps, and so on. The Infrequent Tier has a pay-per-search pricing model, and very low ingestion cost.  
 
-### Flex pricing
-
-import FlexPricing from '../../reuse/flex-pricing.md';
-
-<FlexPricing/>
-
-#### Setup and configuration
-
-See [Flex App](/docs/integrations/sumo-apps/flex).
-
 ## Planning your use of Data Tiers 
 
 If you do not specify a data tier, all data ingested into Sumo Logic will go to the Continuous Tier. Only data that goes to a partition can go to the Frequent or Infrequent Tiers. You'll need to configure the target tier for the data in a partition on the **Partition** page.

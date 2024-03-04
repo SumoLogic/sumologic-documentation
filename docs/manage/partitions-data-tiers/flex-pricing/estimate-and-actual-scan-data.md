@@ -19,7 +19,7 @@ The example below shows the estimate of how much Flex data will be scanned for a
 After you run a query, you can see the actual Flex data was scanned for a query in the scope.<br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/actual-scanned-data.png')} alt="actual-scanned-data" style={{border:'1px solid gray'}} width="800" />
 
 :::note
-If there is no pay per scan tier scanned, an error message will be displayed in the **Scan Estimates** popup.
+If there is no pay-as-search tier scanned, a warning message will be displayed in the **Scan Estimates** popup.
 :::
 
 When you click in the status area under the histogram, a popup with more detailed information appears. <br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/scan-details.png')} alt="scan-details" style={{border:'1px solid gray'}} width="500" />

@@ -8,9 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/flex-tier.png')} alt="Thumbnail icon" width="55"/>
 
-import FlexPricing from '../../reuse/flex-pricing.md';
-
-<FlexPricing/>
+With Sumo Logic Flex, you gain an efficient, centralized log analytics framework capable of managing enterprise-wide cloud-scale log ingestion without cost concerns. Consolidate all your data streams — application, infrastructure, security — into a single platform with unlimited user access, fostering seamless collaboration.
 
 ## Log types
 
