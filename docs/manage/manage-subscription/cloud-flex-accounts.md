@@ -122,7 +122,7 @@ The top panel of the Account Overview page provides an at-a-glance view of your
 * **Frequent Ingest**. Shows your daily capacity for log ingest to the Frequent Data Tier, and your average daily usage. If the daily ingest average over the billing cycle is above your capacity, you will be charged the on-demand rate for the difference.
 * **Metrics Ingest**. Shows your daily capacity for metrics ingest, and your average daily usage, both in DPM. If the daily ingest average over the billing cycle is above your capacity, you will be charged the on-demand rate for the difference. If your daily usage average is higher than your capacity, you will be charged the on-demand rate for the difference.
 * **Storage.** Shows your daily storage capacity and average daily storage usage. You can adjust capacity use by modifying your [retention periods](../partitions-data-tiers/manage-indexes-variable-retention.md).
-* **Live Dashboard Panels and Real Time Alerts.** Show the number of live dashboard panels and real time alerts you have set up. Compares the number allowed to the number already in use. For example, out of 200, 174 have been used.
+* **Auto Refresh Dashboard Panels and Real Time Alerts.** Show the number of auto refresh dashboard panels and real time alerts you have set up. Compares the number allowed to the number already in use. For example, out of 200, 174 have been used.
 
 To view the Account page, do the following:
 
