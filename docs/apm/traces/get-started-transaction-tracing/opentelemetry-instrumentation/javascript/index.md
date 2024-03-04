@@ -5,17 +5,21 @@ sidebar_label: JavaScript OpenTelemetry auto-instrumentation
 description: Learn how to instrument your JavaScript/NodeJS services using the Sumo Logic distribution for OpenTelemetry JS (recommended) or the official OpenTelemetry distribution.
 ---
 
-You can instrument your JavaScript/NodeJS services either using [official OpenTelemetry distribution](#auto-instrumentation-using-official-opentelemetry-for-js) (recommended) or [Sumo Logic distribution for OpenTelemetry JS](#auto-instrumentation-using-sumo-logic-opentelemetry-for-js-distro-easy-setup). 
+You can instrument your JavaScript/NodeJS services by using either the [official OpenTelemetry distribution](#option-1-auto-instrumentation-using-official-opentelemetry-for-js) (recommended) or the [Sumo Logic Distribution for OpenTelemetry JS](#option-2-auto-instrumentation-using-sumo-logicopentelemetry-for-js-distro-basic). 
 
 ## Option 1: Auto-instrumentation using official OpenTelemetry for JS
 
-The OpenTelemetry-JS community supports all active versions of NodeJS. See a [list of supported runtimes](https://github.com/open-telemetry/opentelemetry-js#supported-runtimes). Instruction below apply to **OpenTelemetry JavaScript Instrumentation** in version **1.8.0/0.41.1**.
+The OpenTelemetry-JS community supports all active versions of NodeJS. See a [list of supported runtimes](https://github.com/open-telemetry/opentelemetry-js#supported-runtimes). 
+
+The instructions below apply to the **OpenTelemetry JavaScript Instrumentation** in version **1.8.0/0.41.1**.
 
 There are a few simple steps to instrument your application and obtain telemetry data.
 
 ### Packages installation
 
-The installation of the packages listed below is required to apply the instrumentation and export telemetry data.
+:::note required step
+You must install the packages listed below to apply the instrumentation and export telemetry data.
+:::
 
 ```bash
 npm install --save @opentelemetry/api@1.8.0
@@ -24,49 +28,37 @@ npm install --save @opentelemetry/auto-instrumentations-node@0.41.1
 
 ### Instrumentation configuration
 
-After successful installation of the packages it is important to properly configure instrumentation. Configuration is set through environment variables.
+After successful installation of the packages, it is important to properly configure instrumentation. Configuration is set through environment variables.
 
-* Disables metrics exporter:
-
- ```bash
- OTEL_METRICS_EXPORTER=none
- ```
-
+* Disables the metrics exporter:
+  ```bash
+  OTEL_METRICS_EXPORTER=none
+  ```
 * Sets the exporter to OTLP:
-
-```bash
-OTEL_TRACES_EXPORTER=otlp
-```
-
+  ```bash
+  OTEL_TRACES_EXPORTER=otlp
+  ```
 * Configures the endpoint where telemetry data will be sent:
-
-```bash
-OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_ENDPOINT:4318
-```
-
-This should be OpenTelemetry Collector/Agent endpoint address or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). For Kubernetes environments, see the [available endpoints for a direct connection](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md).
-
+  ```bash
+  OTEL_EXPORTER_OTLP_ENDPOINT=http://OTLP_ENDPOINT:4318
+  ```
+  This should be the OpenTelemetry Collector/Agent endpoint address or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). For Kubernetes environments, see the [available endpoints for a direct connection](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md). For other environments, see [endpoints and protocols](docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md).
 * Configures the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
-
-```bash
-OTEL_SERVICE_NAME=SERVICE_NAME
-```
-
-* Configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
-
-```bash
-OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME
-```
-
-* Configure the resource dectectors. Additional attributes related to environment are added to the spans.
-
-```bash
-OTEL_NODE_RESOURCE_DETECTORS="env,host,os"
-```
+  ```bash
+  OTEL_SERVICE_NAME=SERVICE_NAME
+  ```
+* Configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma-separated key=value pairs.
+  ```bash
+  OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME
+  ```
+* Configure the resource detectors. Additional attributes related to environment are added to the spans.
+  ```bash
+  OTEL_NODE_RESOURCE_DETECTORS="env,host,os"
+  ```
 
 ### Application execution
 
-When everything is configured it is very simple to run an instrumented application.
+When everything is configured, it is very simple to run an instrumented application.
 
 ```bash
 node --require @opentelemetry/auto-instrumentations-node/register your-js-script.js
@@ -88,11 +80,11 @@ Your `index.js` file will run automatically with a started [`@opentelemetry/s
 
 Remember to provide configuration using environment variables:
 
-* `OTEL_EXPORTER_OTLP_ENDPOINT` - must be provided with the location of the OpenTelemetry Collector/Agent (recommended for production) or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). Refer to the following setup instructions if you haven't yet installed a collector:
+* `OTEL_EXPORTER_OTLP_ENDPOINT`. Must be provided with the location of the OpenTelemetry Collector/Agent (recommended for production) or [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp). If you haven't yet installed a collector, refer to the following setup instructions:
   * [Set up traces collection for Kubernetes environments](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md)
   * [Set up traces collection for other environments usage](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md)
-* `OTEL_SERVICE_NAME` - a logical service name that represents its business logic
-* `OTEL_RESOURCE_ATTRIBUTES` - set "application" name attribute which should represent its business logic and extra attributes attached to all spans. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels).
+* `OTEL_SERVICE_NAME`. A logical service name that represents its business logic.
+* `OTEL_RESOURCE_ATTRIBUTES`. Set "application" name attribute which should represent its business logic and extra attributes attached to all spans. Add the `deployment.environment=[environment-name]` tag as needed to allow for filtering by environment on dashboard panels. For more information, see [Services Dashboard Panels](/docs/apm/traces/services-list-map#services-dashboard-panels).
 
 **Example:**
 
@@ -111,7 +103,7 @@ npm i -g @sumologic/opentelemetry-node
 
 ### Instrumented packages
 
-Sumo Logic OpenTelemetry for JS instrumentation enables all officially supported core and contrib auto-instrumentation plugins defined in [@opentelemetry/auto-instrumentations-node](https://www.npmjs.com/package/@opentelemetry/auto-instrumentations-node), including:
+The Sumo Logic OpenTelemetry for JS instrumentation enables all officially supported core and contrib auto-instrumentation plugins defined in [@opentelemetry/auto-instrumentations-node](https://www.npmjs.com/package/@opentelemetry/auto-instrumentations-node), including:
 * [@opentelemetry/instrumentation-dns](https://www.npmjs.com/package/@opentelemetry/instrumentation-dns)
 * [@opentelemetry/instrumentation-http](https://www.npmjs.com/package/@opentelemetry/instrumentation-http)
 * [@opentelemetry/instrumentation-grpc](https://www.npmjs.com/package/@opentelemetry/instrumentation-grpc)
