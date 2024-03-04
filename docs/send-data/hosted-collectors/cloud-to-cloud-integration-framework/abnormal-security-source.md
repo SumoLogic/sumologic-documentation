@@ -58,7 +58,6 @@ To configure an Abnormal Security Source, follow the steps below:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema, it is ignored, also known as dropped.
 1. Enter the **Access Token** for authorization collected from the [Abnormal Security platform](#set-up-and-configuration).
 1. Additionally, if you like to collect the case data, enter **cases** in the **Supported APIs to collect** section. Threat data will be collected by default. But, if you like to collect only case data, you can unselect **threats** from the **Supported APIs to collect** section.
-
 1. When you are finished configuring the Source, click **Save**.
 
 ## JSON schema
