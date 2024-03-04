@@ -16,7 +16,7 @@ Sumo Logic APIs follow Representational State Transfer (REST) patterns and are o
 To view our main docs, click the link below corresponding to your deployment. If you're not sure, see [How to determine your endpoint](#which-endpoint-should-i-should-use).
 
 | Deployment | API Docs URL                       |
-|:------------|:----------------------------------|
+|:-----------|:----------------------------------|
 | AU         | https://api.au.sumologic.com/docs/  |
 | CA         | https://api.ca.sumologic.com/docs/  |
 | DE         | https://api.de.sumologic.com/docs/  |
@@ -27,50 +27,11 @@ To view our main docs, click the link below corresponding to your deployment. If
 | US1        | https://api.sumologic.com/docs/     |
 | US2        | https://api.us2.sumologic.com/docs/ |
 
-
-<!--
-#### Infrequent Data Tier
-
-<table>
-  <tr>
-   <td>API
-   </td>
-   <td>Documentation URL
-   </td>
-  </tr>
-  <tr>
-   <td>Log Search Estimated Usage
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/logSearchesEstimatedUsage">https://api.sumologic.com/docs/#tag/...EstimatedUsage</a>
-   </td>
-  </tr>
-</table>
-
-
-#### Log Search
-
-<table>
-  <tr>
-   <td>API
-   </td>
-   <td>Documentation URL
-   </td>
-  </tr>
-  <tr>
-   <td>Search Job
-   </td>
-   <td><a href="https://api.de.sumologic.com/docs/">/docs/api/search-job-API</a>
-   </td>
-  </tr>
-</table>
-
--->
-
 ## Authentication
 
 Sumo Logic supports the following options for API authentication:
 * Access ID and access key
-* Base64 encoded access id and access key
+* Base64-encoded access id and access key
 
 See [Access Keys](/docs/manage/security/access-keys) to learn how to generate an access key. Make sure to copy the key you create, because it is displayed only once.
 

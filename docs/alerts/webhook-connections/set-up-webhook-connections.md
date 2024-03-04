@@ -277,7 +277,7 @@ Basic QWxhZGRpbjpPcGVuU2VzYW1l
 
 ## Test a connection
 
-After configuring the connection, click the **Test Connection** button at the bottom left of the **Payload** area. If the connection is made, you will see a 200 OK response message.
+After configuring the connection, click the **Test Connection** button at the bottom left of the **Payload** area. If the connection is made, you will see a `200 OK` response message.
 
 This test does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
 

@@ -1,7 +1,7 @@
 ---
 id: token-management
 title: Token Management APIs
-sidebar_label: Token Management
+sidebar_label: Tokens
 description: Use HTTP endpoints to manage Installation Tokens.
 hide_table_of_contents: true
 ---
