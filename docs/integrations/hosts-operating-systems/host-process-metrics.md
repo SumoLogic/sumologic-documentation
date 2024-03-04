@@ -1,21 +1,21 @@
 ---
 id: host-process-metrics
 title: Host and Process Metrics
-description: The Sumo Logic App for Host and Process Metrics allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications depend upon.
+description: The Sumo Logic app for Host and Process Metrics allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications depend upon.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/hostAndProcessMetrics.png')} alt="Thumbnail icon" width="75"/>
 
-The Sumo Logic App for Host and Process Metrics allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses Telegraf, an open-source, plugin-based collector for the collection of both host and process metrics data.
+The Sumo Logic app for Host and Process Metrics allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses Telegraf, an open-source, plugin-based collector for the collection of both host and process metrics data.
 
 This app uses Telegraf and associated input plugins to collect both host and process metrics. To use the installed collector to collect and analyze host metrics, please see the [Host Metrics app](/docs/integrations/hosts-operating-systems/host-metrics).
 
 This app has been validated on Linux(Ubuntu 20.04.2 LTS) and  Windows (Microsoft Windows Server 2019) and higher using Telegraf 1.18.2. This app is not recommended in Kubernetes environments; instead please use the [Kubernetes app](/docs/integrations/containers-orchestration/kubernetes).
 
 
-## Collecting Metrics for Host and Processes
+## Collecting metrics for Host and Processes
 
 We use the Telegraf agent for Host and Process metrics collection. Telegraf runs on the same system and uses the input plugins to obtain host and process metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic.
 
@@ -43,9 +43,9 @@ For Windows:
 * [Win_Perf_counters](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/win_perf_counters/README.md)
 
 
-### Configuring Metrics Collection
+### Configuring metrics collection
 
-This section provides instructions for configuring metrics collection for the Sumo Logic App for Host and Process metrics. Follow the below instructions to set up the metric collection for a given machine.
+This section provides instructions for configuring metrics collection for the Sumo Logic app for Host and Process metrics. Follow the below instructions to set up the metric collection for a given machine:
 
 1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
 2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/hosted-collectors/http-source/logs-metrics). Suggestions for setting your source category:
@@ -147,18 +147,14 @@ Example: For defining multiple patterns for multiple processes you can use the p
      uname -a
          lsb_release -a
      ```
-
 *  To enable debug logs, set `“debug = true”` flag in telegraf.conf and run the command, it will output error in stdout.
    ```bash
    telegraf --config telegraf.conf --test
    ```
-
 * If the telegraf conf changes are not reflecting, make sure to restart Telegraf using the command
     * Windows: `./telegraf.exe --service restart`
     * Linux: `sudo service telegraf restart`
-
 * If certain metrics are not coming you may have to run the telegraf agent as root. Check [the respective plugin](#input+plugins) documentation for more information.
-
 
 ## Sample queries
 
@@ -176,7 +172,7 @@ metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.n
 
 ## Installing the Alerts
 
-The next few sections provide instructions for installing the Sumo App and Alerts for hosts and processes. These instructions assume you have already set up a collection as described in Collecting Metrics for Host and Processes.
+The next few sections provide instructions for installing the Sumo app and Alerts for hosts and processes. These instructions assume you have already set up a collection as described in Collecting Metrics for Host and Processes.
 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your hosts and processes. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
@@ -236,7 +232,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
        }
      ]
    ```
-   
+
    ```sql title="Email Notifications Example"
    email_notifications = [
        {
@@ -259,25 +255,19 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 If you haven’t enabled alerts or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
+## Installing the Host and Process Metrics app
 
-## Installing the Host and Process Metrics App
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-This section demonstrates how to install the Host and Process Metrics App.
+<AppInstall2/>
 
-Now that you have set up a log and metric collection for the Host and Process Metrics App, you can install the Sumo Logic App for Host and Processes to use the pre-configured searches and dashboards.
+## Viewing Host and Process Metrics dashboards​
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-<AppInstall/>
+<ViewDashboards/>
 
-## Viewing Host and Process Metrics Dashboards
-
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
-
-
-### Host Metrics - Overview
+### Overview
 
 The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
 
@@ -287,7 +277,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Overview.png')} alt="Host Metrics dashboards" />
 
 
-### Host Metrics - CPU
+### CPU
 
 The **Host Metrics - CPU** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 
@@ -298,7 +288,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-CPU.png')} alt="Host Metrics dashboards" />
 
 
-### Host Metrics - Disk
+### Disk
 
 The **Host Metrics - Disk** dashboard provides detailed information about on disk utilization and disk IO operations.You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 
@@ -310,7 +300,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Disk.png')} alt="Host Metrics dashboards" />
 
 
-### Host Metrics - Memory
+### Memory
 The **Host Metrics - Memory** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
@@ -321,7 +311,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Memory.png')} alt="Host Metrics dashboards" />
 
 
-### Host Metrics - Network
+### Network
 
 The **Host Metrics - Network** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
 
@@ -333,7 +323,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Network.png')} alt="Host Metrics dashboards" />
 
 
-### Host Metrics - TCP
+### TCP
 The **Host Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections.
 
 Use this dashboard to:

@@ -3,19 +3,20 @@ title: URLhaus Abuse
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/urlhaus-abuse.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/urlhaus-abuse.png')} alt="urlscan.io" width="80"/>
 
-Version: 1.0  
-Updated: Feb 20, 2023
+***Version: 1.0  
+Updated: Feb 20, 2023***
 
-Query domains, URLs and hash values with URLhaus.
+Query domains, URLs, and hash values with URLhaus.
 
 ## Actions
 
-* **Get Domain Info** (*Enrichment*) - To retrieve information about a host
-* **Get Hash Info** (*Enrichment*) - To retrieve information about a payload (*malware sample*) that URLhaus has retrieved
-* **Get URL Info** (*Enrichment*) - To retrieve information about an URL
+* **Get Domain Info** (*Enrichment*) - To retrieve information about a host.
+* **Get Hash Info** (*Enrichment*) - To retrieve information about a payload (*malware sample*) that URLhaus has retrieved.
+* **Get URL Info** (*Enrichment*) - To retrieve information about an URL.
 
 ## Change Log
 

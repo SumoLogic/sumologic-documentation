@@ -86,7 +86,7 @@ Where:
 
     `/Library/Admin Recommended/Lookups/Approved Cloud Jump Stations`  
 
-    To determine the path to a lookup table, highlight the row for the table in the Sumo Logic Library, and select **Copy path to clipboard** from the three-dot more options menu for the table.   
+    To determine the path to a lookup table, highlight the row for the table in the Sumo Logic Library, and select **Copy path to clipboard** from the three-dot kebab menu for the table.   
 
     ![more-options-lookup.png](/img/search/searchquerylanguage/search-operators/more-options-lookup.png)
 

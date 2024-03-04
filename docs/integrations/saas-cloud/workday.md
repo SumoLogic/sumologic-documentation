@@ -148,7 +148,7 @@ This section demonstrates how to configure the Workday portal to integrate with 
 5. To generate a refresh token, access the **View API Clients** task and copy the below two parameters from the top of the page:
     * **Workday REST API Endpoint.** The endpoint to use access to the resources in your Tenant.
     * **Token Endpoint**. The endpoint used to exchange an authorization code for a token (if you configure authorization code grant).
-6. Go to the **API Clients for Integrations** tab, hover on the **“Sumo Logic Workday Collector API”** client, and click on the three-dot action buttons.
+6. Go to the **API Clients for Integrations** tab, hover on the **“Sumo Logic Workday Collector API”** client, and click on the three-dot kebab action buttons.
 7. In the new pop up window, click **API Client** > Manage Refresh Token for Integrations.
 8. In the **Manage Refresh Token for Integrations** window, select **“SumoLogic_ISU”** in the **Workday Account** field and click **OK**.
 9. In the newly opened window, select **Generate New Refresh Token** checkbox and click **OK**.
