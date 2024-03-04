@@ -20,7 +20,7 @@ What you'll learn:
 * Monitor and troubleshoot your environment
 * Share your findings with your team
 
-## Before you begin
+## Prerequisites
 
 You'll need a Sumo Logic account. Sign up for a free trial [here](/docs/get-started/sign-up).
 

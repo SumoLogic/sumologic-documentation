@@ -2,7 +2,7 @@
 id: role-management
 title: Role Management APIs
 sidebar_label: Role Management
-description: The Role Management API allows you to manage roles from HTTP endpoints.
+description: Role Management APIs allow you to manage roles from HTTP endpoints.
 hide_table_of_contents: true
 ---
 
