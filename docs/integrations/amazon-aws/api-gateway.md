@@ -248,7 +248,7 @@ aws apigatewayv2 update-stage --api-id 9pk1qlmpci --stage-name $default --defaul
 
 ### Collect Access Logs for AWS API Gateway   
 
-1. To your Hosted Collector, add an [AWS Kinesis Firehose for Logs Source](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/).
+1. To your Hosted Collector, add an [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/).
    1. **Name**. Enter a name to display the new Source.
    2. **Description**. Enter an optional description.
    3. **Enable S3 Replay**. Do not check this option.
