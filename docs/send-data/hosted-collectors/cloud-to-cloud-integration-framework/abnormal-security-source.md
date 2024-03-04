@@ -5,7 +5,7 @@ sidebar_label: Abnormal Security
 tags:
   - cloud-to-cloud
   - abnormal-security
-description: Learn how to collect abnormal threat and cases logs from the Abnormal Security source.
+description: Learn how to collect abnormal threat and case logs from the Abnormal Security source.
 ---
 
 import CodeBlock from '@theme/CodeBlock';
