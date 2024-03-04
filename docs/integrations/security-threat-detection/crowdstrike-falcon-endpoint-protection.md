@@ -209,7 +209,7 @@ To set up log collection for CrowdStrike Falcon, you'll download, install, and c
 The following graphic illustrates the Sumo Logic collection of CrowdStrike streaming API events using a SIEM Connector.
 
 
-### Before you begin (DEPRECATED)
+### Prerequisites (DEPRECATED)
 
 It is important that you complete the following tasks before you start to configure log collection for CrowdStrike Falcon:
 
