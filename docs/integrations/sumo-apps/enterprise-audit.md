@@ -15,20 +15,10 @@ The Sumo Logic Enterprise Audit Apps are JSON-based to provide for more meaningf
 
 The Audit Event Index is only available for Trial and Enterprise accounts.
 
-<table>
-  <tr>
-   <td><strong>Account Type</strong></td>
-   <td><strong>Account Level</strong></td>
-  </tr>
-  <tr>
-   <td>CloudFlex</td>
-   <td>Trial, Enterprise</td>
-  </tr>
-  <tr>
-   <td>Credits</td>
-   <td>Trial, Enterprise Operations, Enterprise Suite, Enterprise Security</td>
-  </tr>
-</table>
+| Account Type    | Account Level      |
+| :--------- | :-------- |
+| Cloud Flex    | Trial, Enterprise    |
+| Credits | Trial, Enterprise Operations, Enterprise Suite, Enterprise Security |
 
 ## Enterprise Audit Apps
 
