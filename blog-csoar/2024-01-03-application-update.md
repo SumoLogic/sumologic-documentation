@@ -1,6 +1,5 @@
 ---
 title: January 03, 2024 - Application Update
-hide_table_of_contents: false
 keywords:
   - sumo logic
   - cloud soar

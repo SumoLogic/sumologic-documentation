@@ -22,24 +22,24 @@ If the default tags are not providing enough relevant data you can add custom t
 
 ## Step 1: Satisfy project dependencies
 
-Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-sdk/1.26.0) library.
+Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-sdk/1.32.0) library.
 
 * Maven projects
 
-    ```
+    ```maven
     <!-- https://mvnrepository.com/artifact/io.opentelemetry/opentelemetry-sdk -->
     <dependency>
         <groupId>io.opentelemetry</groupId>
         <artifactId>opentelemetry-sdk</artifactId>
-        <version>1.26.0</version>
+        <version>1.32.0</version>
     </dependency>
     ```
 
 * Gradle projects
 
-    ```
+    ```gradle
     dependencies {
-    compile 'io.opentelemetry:opentelemetry-sdk:1.26.0'
+        compile 'io.opentelemetry:opentelemetry-sdk:1.32.0'
     }
     ```
 
@@ -55,7 +55,7 @@ import io.opentelemetry.api.trace.Span;
 
 Use the following to add a custom tag:
 
-```
+```java
 Span currentSpan = Span.current();
 currentSpan.setAttribute("foo","bar");
 ```

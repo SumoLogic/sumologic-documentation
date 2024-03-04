@@ -57,7 +57,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/search/search-query-language/search-operators/cat"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>cat</h4></a>
-  <p>You can use the cat operator to view the contents of a lookup table. Not supported in live dashboards or scheduled searches.</p>
+  <p>You can use the cat operator to view the contents of a lookup table. Not supported in auto refresh dashboards or scheduled searches.</p>
   </div>
 </div>
 <div className="box smallbox card">

@@ -919,7 +919,6 @@ module.exports = {
             'alerts/webhook-connections/set-up-webhook-connections',
             'alerts/webhook-connections/aws-lambda',
             'alerts/webhook-connections/datadog',
-            'alerts/webhook-connections/hipchat',
             'alerts/webhook-connections/jira-cloud',
             'alerts/webhook-connections/jira-server',
             'alerts/webhook-connections/jira-service-desk',
