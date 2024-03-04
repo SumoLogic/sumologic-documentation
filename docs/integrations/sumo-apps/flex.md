@@ -170,7 +170,7 @@ Sumo Logic Flex app is only available for Enterprise Suite - Flex customers.
 
 | Account Type | Account Level |
 |:--|:--|
-| Credits | Enterprise Suite - Flex |
+| Flex Credits | Enterprise Suite - Flex |
 
 :::
 
