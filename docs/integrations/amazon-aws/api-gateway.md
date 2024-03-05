@@ -160,7 +160,7 @@ Log in to Sumo Logic, then go to **Manage Data** > **Logs** > **Fields**. Search
 
 Learn how to create Field Extraction Rules [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
-Create Field Extraction Rule for CloudTrail Logs. 
+Create Field Extraction Rule for CloudTrail Logs.
 ```sql
 Rule Name: AwsObservabilityApiGatewayCloudTrailLogsFER
 Applied at: Ingest Time
@@ -218,32 +218,31 @@ API Gateway will not send these metrics unless you have explicitly enabled detai
 ##### Enable enhanced metrics for REST APIs:
 
 1. Open the [Amazon API Gateway console](https://aws.amazon.com/api-gateway), then click on your REST API.
-1. Select stage, then navigate to the **Logs and tracing** section. 
-1. Click **Edit**. 
+1. Select stage, then navigate to the **Logs and tracing** section.
+1. Click **Edit**.
 1. Select the **Detailed metrics** checkbox.
 1. Click **Save changes**.
 
 ##### Enable enhanced metrics for HTTPS APIs:
 
-1. Open the API [Gateway console](https://aws.amazon.com/api-gateway/), and click on your HTTPS API.
+1. Open the [Amazon API Gateway console](https://aws.amazon.com/api-gateway/), and click on your HTTPS API.
 1. Under the **Monitor** section, click **Metrics**.
 1. Select the stage, and click **Edit**.
-1. Toggle the **enabled** button to enable the **Detailed route metrics**. 
+1. Toggle the **enabled** button to enable the **Detailed route metrics**.
 1. Click **Save**.
 1. Click **Deploy**.<br/><img src={useBaseUrl('img/integrations/amazon-aws/HTTP_API_Enhanced_Metrics.png')} alt="AWS API Gateway" />
 
 ##### Enable enhanced metrics for WebSocket APIs:
 
-1. You can do this by calling the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis-apiid-stages-stagename.html) action of the API Gateway V2 REST API to update the detailedMetricsEnabled property to true. Alternatively, you can call the [update-stage](https://docs.aws.amazon.com/cli/latest/reference/apigatewayv2/update-stage.html) AWS CLI command to update the DetailedMetricsEnabled property to true as shown below:
+1. You can do this by calling the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis-apiid-stages-stagename.html) action of the API Gateway V2 REST API to update the `detailedMetricsEnabled` property to `true`. Alternatively, you can call the [update-stage](https://docs.aws.amazon.com/cli/latest/reference/apigatewayv2/update-stage.html) AWS CLI command to update the DetailedMetricsEnabled property to true as shown below:
+1. Run the following command in your terminal:
+   ```sh
+   aws apigatewayv2 update-stage --api-id <API_ID> --stage-name <STAGE_NAME> --default-route-settings <YOUR_ROUTE_SETTINGS> --output <OUTPUT_FORMAT> --region <REGION>
+   ```
 
-1. run the following command in your terminal:
-```
-aws apigatewayv2 update-stage --api-id <API_ID> --stage-name <STAGE_NAME> --default-route-settings <YOUR_ROUTE_SETTINGS> --output <OUTPUT_FORMAT> --region <REGION>
-```
-```
-Example:
-aws apigatewayv2 update-stage --api-id 9pk1qlmpci --stage-name $default --default-route-settings "{\"DetailedMetricsEnabled\":true}" --output json --region eu-north-1
-```
+   ```sh title="Example"
+   aws apigatewayv2 update-stage --api-id 9pk1qlmpci --stage-name $default --default-route-settings "{\"DetailedMetricsEnabled\":true}" --output json --region eu-north-1
+   ```
 
 ### Collect Access Logs for AWS API Gateway   
 
@@ -253,7 +252,7 @@ aws apigatewayv2 update-stage --api-id 9pk1qlmpci --stage-name $default --defaul
    3. **Enable S3 Replay**. Do not check this option.
    4. **Source Category**. Enter `aws/apigateway`.
    5. **Fields**. Add below fields in it:
-      1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the `account field`. 
+      1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the `account field`.
       2. Add **region**, and **accountid** fields and assign it's respective values.
    6. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
    7. **Time Zone**. Select **Use time zone from log file. If none is detected use**, and select **Use Collector Default** from the dropdown.
@@ -261,76 +260,76 @@ aws apigatewayv2 update-stage --api-id 9pk1qlmpci --stage-name $default --defaul
    9. **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
    10. Click **Save**.
    11. Save the given URL of the source for next step.
-2. [Create Stack](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#cloudformation-template) in AWS console with given CloudFormation Template.
+2. [Create Stack](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#cloudformation-template) in AWS console with given CloudFormation Template.
 3. Enable access logging with below exact JSON Log formats for each APIs:
-   1. [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-logging-to-kinesis.html)
+   * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-logging-to-kinesis.html)
    ```json title="JSON Log Format for REST API"
    {
-   "accountId": "$context.accountId",
-   "requestId": "$context.requestId",
-   "authorizerClaimsProperty": "$context.authorizer.claims.property",
-   "extendedRequestId": "$context.extendedRequestId",
-   "identitySourceIp": "$context.identity.sourceIp",
-   "identityCaller": "$context.identity.caller",
-   "identityUser": "$context.identity.user",
-   "requestTime": "$context.requestTime",
-   "status": "$context.status",
-   "routeKey": "$context.routeKey",
-   "apiId": "$context.apiId",
-   "domainPrefix": "$context.domainPrefix",
-   "httpMethod": "$context.httpMethod",
-   "identityClientCertSerialNumber": "$context.identity.clientCert.serialNumber",
-   "identityUserAgent": "$context.identity.userAgent",
-   "path": "$context.path",
-   "protocol": "$context.protocol",
-   "resourceId": "$context.resourceId",
-   "responseOverrideStatus": "$context.responseOverride.status",
-   "authorizeError": "$context.authorize.error",
-   "resourcePath": "$context.resourcePath",
-   "authorizeLatency": "$context.authorize.latency",
-   "authorizeStatus": "$context.authorize.status",
-   "authorizerError": "$context.authorizer.error",
-   "authorizerIntegrationStatus": "$context.authorizer.integrationStatus",
-   "authorizerIntegrationLatency": "$context.authorizer.integrationLatency",
-   "authorizerLatency": "$context.authorizer.latency",
-   "authorizerPrincipalId": "$context.authorizer.principalId",
-   "authorizerRequestId": "$context.authorizer.requestId",
-   "authorizerStatus": "$context.authorizer.status",
-   "authenticateError": "$context.authenticate.error",
-   "authenticateLatency": "$context.authenticate.latency",
-   "authenticateStatus": "$context.authenticate.status",
-   "connectedAt": "$context.connectedAt",
-   "connectionId": "$context.connectionId",
-   "domainName": "$context.domainName",
-   "errorMessage": "$context.error.message",
-   "errorResponseType": "$context.error.responseType",
-   "errorValidationErrorString": "$context.error.validationErrorString",
-   "eventType": "$context.eventType",
-   "identityAccountId": "$context.identity.accountId",
-   "identityPrincipalOrgId": "$context.identity.principalOrgId",
-   "identityUserArn": "$context.identity.userArn",
-   "identityApiKey": "$context.identity.apiKey",
-   "identityApiKeyId": "$context.identity.apiKeyId",
-   "integrationError": "$context.integration.error",
-   "integrationIntegrationStatus": "$context.integration.integrationStatus",
-   "integrationLatency": "$context.integration.latency",
-   "integrationRequestId": "$context.integration.requestId",
-   "integrationStatus": "$context.integration.status",
-   "contextIntegrationLatency": "$context.integrationLatency",
-   "responseLatency": "$context.responseLatency",
-   "responseLength": "$context.responseLength",
-   "xrayTraceId": "$context.xrayTraceId",
-   "requestTimeEpoch": "$context.requestTimeEpoch",
-   "stage": "$context.stage",
-   "messageId": "$context.messageId",
-   "wafResponseCode": "$context.wafResponseCode",
-   "wafError": "$context.waf.error",
-   "wafLatency": "$context.waf.latency",
-   "wafStatus": "$context.waf.status",
-   "webaclArn": "$context.webaclArn"
+     "accountId": "$context.accountId",
+     "requestId": "$context.requestId",
+     "authorizerClaimsProperty":   "$context.authorizer.claims.property",
+     "extendedRequestId": "$context.extendedRequestId",
+     "identitySourceIp": "$context.identity.sourceIp",
+     "identityCaller": "$context.identity.caller",
+     "identityUser": "$context.identity.user",
+     "requestTime": "$context.requestTime",
+     "status": "$context.status",
+     "routeKey": "$context.routeKey",
+     "apiId": "$context.apiId",
+     "domainPrefix": "$context.domainPrefix",
+     "httpMethod": "$context.httpMethod",
+     "identityClientCertSerialNumber": "$context.identity.clientCert.serialNumber",
+     "identityUserAgent": "$context.identity.userAgent",
+     "path": "$context.path",
+     "protocol": "$context.protocol",
+     "resourceId": "$context.resourceId",
+     "responseOverrideStatus": "$context.responseOverride.status",
+     "authorizeError": "$context.authorize.error",
+     "resourcePath": "$context.resourcePath",
+     "authorizeLatency": "$context.authorize.latency",
+     "authorizeStatus": "$context.authorize.status",
+     "authorizerError": "$context.authorizer.error",
+     "authorizerIntegrationStatus": "$context.authorizer.integrationStatus",
+     "authorizerIntegrationLatency": "$context.authorizer.integrationLatency",
+     "authorizerLatency": "$context.authorizer.latency",
+     "authorizerPrincipalId": "$context.authorizer.principalId",
+     "authorizerRequestId": "$context.authorizer.requestId",
+     "authorizerStatus": "$context.authorizer.status",
+     "authenticateError": "$context.authenticate.error",
+     "authenticateLatency": "$context.authenticate.latency",
+     "authenticateStatus": "$context.authenticate.status",
+     "connectedAt": "$context.connectedAt",
+     "connectionId": "$context.connectionId",
+     "domainName": "$context.domainName",
+     "errorMessage": "$context.error.message",
+     "errorResponseType": "$context.error.responseType",
+     "errorValidationErrorString": "$context.error.validationErrorString",
+     "eventType": "$context.eventType",
+     "identityAccountId": "$context.identity.accountId",
+     "identityPrincipalOrgId": "$context.identity.principalOrgId",
+     "identityUserArn": "$context.identity.userArn",
+     "identityApiKey": "$context.identity.apiKey",
+     "identityApiKeyId": "$context.identity.apiKeyId",
+     "integrationError": "$context.integration.error",
+     "integrationIntegrationStatus": "$context.integration.integrationStatus",
+     "integrationLatency": "$context.integration.latency",
+     "integrationRequestId": "$context.integration.requestId",
+     "integrationStatus": "$context.integration.status",
+     "contextIntegrationLatency": "$context.integrationLatency",
+     "responseLatency": "$context.responseLatency",
+     "responseLength": "$context.responseLength",
+     "xrayTraceId": "$context.xrayTraceId",
+     "requestTimeEpoch": "$context.requestTimeEpoch",
+     "stage": "$context.stage",
+     "messageId": "$context.messageId",
+     "wafResponseCode": "$context.wafResponseCode",
+     "wafError": "$context.waf.error",
+     "wafLatency": "$context.waf.latency",
+     "wafStatus": "$context.waf.status",
+     "webaclArn": "$context.webaclArn"
    }
    ```
-   1. [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging.html)
+   * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging.html)
    ```json title="JSON Log Format for HTTP API"
    {
    "requestId": "$context.requestId",
@@ -387,70 +386,69 @@ aws apigatewayv2 update-stage --api-id 9pk1qlmpci --stage-name $default --defaul
    "stage": "$context.stage"
    }
    ```
-   1. [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html)
+   * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html)
    ```json title="JSON Log Format for WebSocket API"
    {
-   "requestId": "$context.requestId",
-   "extendedRequestId": "$context.extendedRequestId",
-   "identitySourceIp": "$context.identity.sourceIp",
-   "identityCaller": "$context.identity.caller",
-   "identityUser": "$context.identity.user",
-   "requestTime": "$context.requestTime",
-   "httpMethod": "$context.httpMethod",
-   "resourcePath": "$context.resourcePath",
-   "status": "$context.status",
-   "protocol": "$context.protocol",
-   "responseLength": "$context.responseLength",
-   "accountId": "$context.accountId",
-   "authorizerProperty": "$context.authorizer.property",
-   "routeKey": "$context.routeKey",
-   "responseLatency": "$context.responseLatency",
-   "integrationErrorMessage": "$context.integrationErrorMessage",
-   "apiId": "$context.apiId",
-   "authorizerClaimsProperty": "$context.authorizer.claims.property",
-   "authorizerError": "$context.authorizer.error",
-   "authorizerPrincipalId": "$context.authorizer.principalId",
-   "awsEndpointRequestId": "$context.awsEndpointRequestId",
-   "awsEndpointRequestId2": "$context.awsEndpointRequestId2",
-   "customDomainBasePathMatched": "$context.customDomain.basePathMatched",
-   "dataProcessed": "$context.dataProcessed",
-   "domainName": "$context.domainName",
-   "domainPrefix": "$context.domainPrefix",
-   "errorMessage": "$context.error.message",
-   "errorResponseType": "$context.error.responseType",
-   "identityAccountId": "$context.identity.accountId",
-   "identityCognitoAuthenticationProvider": "$context.identity.cognitoAuthenticationProvider",
-   "identityCognitoAuthenticationType": "$context.identity.cognitoAuthenticationType",
-   "identityCognitoIdentityId": "$context.identity.cognitoIdentityId",
-   "identityCognitoIdentityPoolId": "$context.identity.cognitoIdentityPoolId",
-   "identityPrincipalOrgId": "$context.identity.principalOrgId",
-   "identityClientCertClientCertPem": "$context.identity.clientCert.clientCertPem",
-   "identityClientCertSubjectDN": "$context.identity.clientCert.subjectDN",
-   "identityClientCertIssuerDN": "$context.identity.clientCert.issuerDN",
-   "identityClientCertSerialNumber": "$context.identity.clientCert.serialNumber",
-   "identityClientCertValidityNotBefore": "$context.identity.clientCert.validity.notBefore",
-   "identityClientCertValidityNotAfter": "$context.identity.clientCert.validity.notAfter",
-   "identityUserAgent": "$context.identity.userAgent",
-   "identityUserArn": "$context.identity.userArn",
-   "integrationError": "$context.integration.error",
-   "integrationIntegrationStatus": "$context.integration.integrationStatus",
-   "integrationLatency": "$context.integration.latency",
-   "integrationRequestId": "$context.integration.requestId",
-   "integrationStatus": "$context.integration.status",
-   "contextIntegrationLatency": "$context.integrationLatency",
-   "contextIntegrationStatus": "$context.integrationStatus",
-   "path": "$context.path",
-   "requestTimeEpoch": "$context.requestTimeEpoch",
-   "stage": "$context.stage"
+     "requestId": "$context.requestId",
+     "extendedRequestId": "$context.extendedRequestId",
+     "identitySourceIp": "$context.identity.sourceIp",
+     "identityCaller": "$context.identity.caller",
+     "identityUser": "$context.identity.user",
+     "requestTime": "$context.requestTime",
+     "httpMethod": "$context.httpMethod",
+     "resourcePath": "$context.resourcePath",
+     "status": "$context.status",
+     "protocol": "$context.protocol",
+     "responseLength": "$context.responseLength",
+     "accountId": "$context.accountId",
+     "authorizerProperty": "$context.authorizer.property",
+     "routeKey": "$context.routeKey",
+     "responseLatency": "$context.responseLatency",
+     "integrationErrorMessage": "$context.integrationErrorMessage",
+     "apiId": "$context.apiId",
+     "authorizerClaimsProperty": "$context.authorizer.claims.property",
+     "authorizerError": "$context.authorizer.error",
+     "authorizerPrincipalId": "$context.authorizer.principalId",
+     "awsEndpointRequestId": "$context.awsEndpointRequestId",
+     "awsEndpointRequestId2": "$context.awsEndpointRequestId2",
+     "customDomainBasePathMatched": "$context.customDomain.basePathMatched",
+     "dataProcessed": "$context.dataProcessed",
+     "domainName": "$context.domainName",
+     "domainPrefix": "$context.domainPrefix",
+     "errorMessage": "$context.error.message",
+     "errorResponseType": "$context.error.responseType",
+     "identityAccountId": "$context.identity.accountId",
+     "identityCognitoAuthenticationProvider": "$context.identity.cognitoAuthenticationProvider",
+     "identityCognitoAuthenticationType": "$context.identity.cognitoAuthenticationType",
+     "identityCognitoIdentityId": "$context.identity.cognitoIdentityId",
+     "identityCognitoIdentityPoolId": "$context.identity.cognitoIdentityPoolId",
+     "identityPrincipalOrgId": "$context.identity.principalOrgId",
+     "identityClientCertClientCertPem": "$context.identity.clientCert.clientCertPem",
+     "identityClientCertSubjectDN": "$context.identity.clientCert.subjectDN",
+     "identityClientCertIssuerDN": "$context.identity.clientCert.issuerDN",
+     "identityClientCertSerialNumber": "$context.identity.clientCert.serialNumber",
+     "identityClientCertValidityNotBefore": "$context.identity.clientCert.validity.notBefore",
+     "identityClientCertValidityNotAfter": "$context.identity.clientCert.validity.notAfter",
+     "identityUserAgent": "$context.identity.userAgent",
+     "identityUserArn": "$context.identity.userArn",
+     "integrationError": "$context.integration.error",
+     "integrationIntegrationStatus": "$context.integration.integrationStatus",
+     "integrationLatency": "$context.integration.latency",
+     "integrationRequestId": "$context.integration.requestId",
+     "integrationStatus": "$context.integration.status",
+     "contextIntegrationLatency": "$context.integrationLatency",
+     "contextIntegrationStatus": "$context.integrationStatus",
+     "path": "$context.path",
+     "requestTimeEpoch": "$context.requestTimeEpoch",
+     "stage": "$context.stage"
    }
    ```
-4. To Export logs, refer to [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](https://help.sumologic.com/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group).
-
+4. To Export logs, refer to [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group).
 
 
 ### Collect AWS API Gateway CloudTrail Logs
 
-To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md):
+To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) using the below instructions.
 
 #### Collect CloudTrail Lambda Data Events
 
@@ -460,7 +458,7 @@ To configure a CloudTrail Source, perform these steps:
 2. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) and for more information on what events are logged refer [API gateway API calls documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html).
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
-5. While configuring the cloud trail log source, the following field can be added to the source:
+5. While configuring the CloudTrail log source, the following field can be added to the source:
     * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Fields.png')} alt="Fields" />
@@ -469,7 +467,8 @@ To configure a CloudTrail Source, perform these steps:
 
 ### Centralized AWS CloudTrail log Collection
 
-In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
+In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
+
 ```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time
