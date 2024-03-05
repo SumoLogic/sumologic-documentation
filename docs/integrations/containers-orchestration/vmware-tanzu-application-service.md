@@ -15,7 +15,7 @@ The Sumo Logic Nozzle for VMware Tanzu can help you:
 * Drill down from alerts to see key performance metrics and audit logs for VMware Tanzu and your custom apps
 * Store VMware Tanzu audit details in a fully secure SOC 2, HIPAA, and PCI-compliant environment
 
-The Sumo Logic nozzle for [VMware Tanzu Firehose](https://docs.vmware.com/en/Tile-Developer-Guide/3.0/tile-dev-guide/nozzle.html) allows operations teams and app owners to monitor and troubleshoot the VMware Tanzu platform and apps in real time, without having to install a Sumo Logic agent in their Cloud Foundry environment.
+The Sumo Logic Nozzle for [VMware Tanzu Firehose](https://docs.vmware.com/en/Tile-Developer-Guide/3.0/tile-dev-guide/nozzle.html) allows operations teams and app owners to monitor and troubleshoot the VMware Tanzu platform and apps in real time, without having to install a Sumo Logic agent in their Cloud Foundry environment.
 
 The nozzle filters out messages per your tile configuration and securely sends those logs and metrics to an HTTP API in the Sumo Logic SaaS service. The tile allows you to configure batching intervals, toggle verbose logging mode, and add metadata to your logs and metrics.
 
