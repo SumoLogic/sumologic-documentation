@@ -5,25 +5,44 @@ description: Get to know the Sumo Logic platform user interface.
 ---
 
 <!--
-When Open Beta'd (est. Aug 2024), remove no-index, place doc in sidebars.ts and call this "New" and rename the old one "Classic", add announcement banner.
-When GA'd (est. Nov 2024), remove beta badge, rename this 'sumo-logic-ui', retire the Classic UI version.
+When Open Beta'd (est. Aug 2024):
+remove no-index
+place doc in sidebars.ts
+rename the old UI "Classic"
+add announcement banner.
+
+When GA'd (est. Nov 2024):
+remove beta badge
+rename this 'sumo-logic-ui'
+retire the Classic UI version
+add back this opening paragraph: Our [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues.
 -->
 
 <head>
   <meta name="robots" content="noindex" />
 </head>
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Iframe from 'react-iframe';
+
 <p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
-:::sumo beta
-To request access, contact your Sumo Logic sales representative.
-:::
+This page provides an overview of Sumo Logic **New UI**, currently in beta (slated for general availability in late 2024).
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
+<Iframe url="https://www.youtube.com/embed/shtEqnPL-sc?si=sR26VYLt9NnqqghL?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
 
-Our [Quickstart](/docs/get-started/quickstart) introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, and then sharing your findings with your colleagues. 
+## Prerequisites
 
-This page will help you get to know the new Sumo Logic user interface (UI), currently in beta and scheduled for general availability in late 2024.
+You'll need request access by contacting your Sumo Logic sales representative.
 
 ## Getting to the New UI
 
@@ -185,7 +204,7 @@ With the Sumo Logic Administrator role, you can manage your organization's data 
 
 With the Sumo Logic Administrator role, you can manage user accounts, user roles, security, and more. To access these admin settings, go to the top nav bar and click the **Administration** icon.<br/><img src={useBaseUrl('img/get-started/admin.png')} alt="img/get-started/admin.png" width="400"/>
 
-* **Account**. [Account Overview](/docs/manage/manage-subscription), [Data Management](/docs/manage/ingestion-volume/data-volume-index), [Manage Plan](/docs/manage/manage-subscription/upgrade-cloud-flex-credits-account), [Metrics Data Ingestion](/docs/metrics/metrics-dpm).
+* **Account**. [Account Overview](/docs/manage/manage-subscription), [Data Management](/docs/manage/ingestion-volume/data-volume-index), [Manage Plan](/docs/manage/manage-subscription), [Metrics Data Ingestion](/docs/metrics/metrics-dpm).
 * **Users and Roles**. [Users](/docs/manage/users-roles/users), [Roles](/docs/manage/users-roles/roles).
 * **Account Security Settings**. [Installation Tokens](/docs/manage/security/installation-tokens), [Access Keys](/docs/manage/security/access-keys), [Password Policy](/docs/manage/security/set-password-policy), [Policies](/docs/manage/security/audit-indexes/audit-index), [Service Allowlist Settings](/docs/manage/security/create-allowlist-ip-cidr-addresses), [SAML](/docs/manage/security/saml).
 

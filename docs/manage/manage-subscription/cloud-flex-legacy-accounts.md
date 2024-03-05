@@ -1,29 +1,32 @@
 ---
-id: cloud-flex-accounts
-title: Cloud Flex Accounts
-description: View information on your Sumo Logic Cloud Flex account and intuitively monitor usage and manage account costs.
+id: cloud-flex-legacy-accounts
+title: Cloud Flex Legacy Accounts
+description: Learn how to view information on Cloud Flex legacy accounts and intuitively monitor usage and manage account costs.
 ---
 
+:::note
+You're viewing our legacy account page. Refer to our newer [Sumo Logic Credits Accounts](/docs/manage/manage-subscription/sumo-logic-credits-accounts) docs for the latest information.
+:::
 
-Sumo Logic provides flexible account types within its Cloud Flex packaging for any size organization. This page provides information on the Cloud Flex account types from which you can choose, then explains how you can intuitively monitor and manage your account.
+Sumo Logic provides flexible account types within its Cloud Flex Legacy packaging for any size organization. This page provides information on the Cloud Flex account types from which you can choose, then explains how you can intuitively monitor and manage your account.
 
-## Cloud Flex - Account Types
+## Cloud Flex Legacy - Account Types
 
 * **Free** accounts give you access to core Sumo Logic features, with a daily 500 MB data volume limit. Free accounts allow three users, with 4 GB of retention. For information about Free account features, see the "Free Accounts" column in the following table and the Important notes section on [Sumo Logic Free accounts](#important-notes-on-sumo-logic-free-accounts).
    :::tip
-   Free account holders can [upgrade](upgrade-cloud-flex-account.md) to a Professional account from within Sumo Logic.
+   Free account holders can [upgrade](upgrade-cloud-flex-legacy-account.md) to a Professional account from within Sumo Logic.
    :::
 * **Trial** accounts allow you to try all of Sumo Logic's advanced features to understand how Sumo Logic will fit within your organization before you buy. It includes a daily data volume limit of 1 GB per day, with 20 users and 30 days of data retention. For information about Trial account features, see the "Trial Accounts" column in the table below and [Important notes on Sumo Logic Trial accounts](#important-notes-on-sumo-logic-free-accounts).  
    :::note
    Trials are limited to 30 days. If you need to extend your trial period, contact [sales@sumologic.com](mailto:sales@sumologic.com) to inquire about a Proof of Concept (PoC).
    :::
-* **Professional** accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-cloud-flex-account.md) from a Professional to an Enterprise account at any time.
+* **Professional** accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-cloud-flex-legacy-account.md) from a Professional to an Enterprise account at any time.
 * **Enterprise** accounts, the premier Sumo Logic log management solution, are built to fit your organization's needs for data volume, data retention, and user management requirements. Enterprise accounts include [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets) and [SAML-based SSO](../security/saml/set-up-saml.md). 
    :::note
    [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets/) are only available for Enterprise accounts. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
    :::
 
-The following table provides a summary list of key features by Sumo Logic Cloud Flex package accounts. 
+The following table provides a summary list of key features by package accounts. 
 
 | Feature | Free | Trial | Professional | Enterprise |
 |:-- | :-- | :-- | :-- | :-- |
@@ -109,7 +112,7 @@ The **Account** page displays information about your Sumo Logic organization, 
 [Data Tiers](../partitions-data-tiers/data-tiers.md) provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous and Frequent tiers, you can appropriately segment your data by use case and analytics needs, thus enabling you to optimize your analytics investments.
 
 :::note
-[Data Tiers](../partitions-data-tiers/data-tiers.md) must be enabled on your Cloud Flex plan to be able to access this functionality. For more information, contact your Sumo Logic Account Representative.
+[Data Tiers](../partitions-data-tiers/data-tiers.md) must be enabled on your plan to be able to access this functionality. For more information, contact your Sumo Logic Account Representative.
 :::
 
 The top panel of the Account Overview page provides an at-a-glance view of your account information:
@@ -126,7 +129,7 @@ The top panel of the Account Overview page provides an at-a-glance view of your
 
 To view the Account page, do the following:
 
-1. Log in to your Sumo Logic Cloud Flex account.
+1. Log in to your account.
 1. In the left navigation bar of the UI, select **Administration** > **Account**. The Account Overview tab of the Account page is shown by default.
 :::note
 You must have a role that grants you the [Account Overview capability](/docs/manage/users-roles/roles/role-capabilities/) to view the Account Overview tab.

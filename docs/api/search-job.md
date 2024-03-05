@@ -2,7 +2,7 @@
 id: search-job
 title: Search Job APIs
 sidebar_label: Search Job
-description: The Search Job API provides access to resources and log data from third-party scripts and applications.
+description: Search Job APIs provides access to resources and log data from third-party scripts and applications.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -20,7 +20,7 @@ import ApiIntro from '../reuse/api-intro.md';
 
 <ApiIntro/>
 
-## Before You Begin
+## Prerequisites
 
 The Search Job API is available to Enterprise accounts.
 
@@ -86,8 +86,9 @@ You can start requesting results asynchronously while the job is running and pag
   </tr>
 </table>
 
+<!-- note about Flex pricing and app -->
 
-If you need more results you'll need to break up your search into several searches that span smaller blocks of the time range needed. For example, if your search runs for a week and returns 70 million records. Break up the search into at least seven searches that span for a day each.
+If you need more results, you'll need to break up your search into several searches that span smaller blocks of the time range needed. For example, if your search runs for a week and returns 70 million records, consider breaking it into at least seven searches, each spanning a day.
 
 
 ## Rate limit throttling  
@@ -100,24 +101,24 @@ A limit of 200 active concurrent search jobs applies to your organization.
 
 When searching the [Frequent Tier](/docs/manage/partitions-data-tiers/data-tiers), a rate limit of 20 concurrent search jobs applies to your organization.
 
-Once you reach the limit of 200 active searches, attempting an additional search will result in a status code of _429 Too Many Requests_ telling you that you are over the allowed search job limit.
+Once you reach the limit of 200 active searches, attempting an additional search will return a status code of `429 Too Many Requests`, indicating that you've exceeded the permitted search job limit.
 
 This limit applies only to Search Job API searches, and does not take into account searches run from the Sumo UI, scheduled searches, or dashboard panel searches that are running at the same time. If the search job is not kept alive by API requests every 20-30 seconds, it is canceled.
 
-You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Deleting searches manually will keep the number of active searches low, reducing the likelihood of hitting the Search Job API throttling limit. See [deleting a search job](#deleting-a-search-job) for details.
+You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Manual deletion of searches helps maintain a low count of active searches, of reaching the Search Job API throttling limit. See [Deleting a search job](#deleting-a-search-job) for details.
 
 ## Process flow
 
 The following figure shows the process flow for search jobs.
 
-1. **Request.** You request a search job, giving the query and time range.
-2. **Response.** Sumo responds with a job ID. If there’s a problem with the request, an error code is provided (see the list of error codes following the figure).
-3. **Request.** Use the job ID to request search status. This needs to be done at least every 20-30 seconds so the search session is not canceled due to inactivity.
-4. **Response.** Sumo responds with job status. An error code (404) is returned if the request could not be completed.
-The status includes the current state of the search job (gathering results, done executing, etc.). It also includes the message and record counts based on how many results have already been found while executing the search. For non-aggregation queries, only the number of messages is reported. For aggregation queries, the number of records produced is also reported. The search job status provides access to an implicitly generated histogram of the distribution of found messages over the time range specified for the search job. During and after execution, the API can be used to request available messages and records in a paging fashion.
-5. **Request.** You request results. It’s not necessary for the search to be complete for the user to request results; the process works asynchronously. You can repeat the request as often as needed to keep seeing updated results, keeping in mind the rate limits. The Search Job API can return up to 10 million records per search query.
-6. **Response.** Sumo delivers JSON-formatted search results as requested. The API can deliver partial results that the user can start paging through, even as new results continue to come in. If there’s a problem with the results, an error code is provided (see the list of error codes following the figure).
+<img src={useBaseUrl('img/api/search_job_api_process_flow.png')} alt="search_job_api_process_flow" width="400"/>
 
+1. **Request.** You request a search job, giving the query and time range.
+2. **Response.** Sumo Logic responds with a job ID. If there’s a problem with the request, an error code is provided (see the list of error codes following the figure).
+3. **Request.** Use the job ID to request search status. This needs to be done at least every 20-30 seconds so the search session is not canceled due to inactivity.
+4. **Response.** Sumo Logic responds with job status. An error code (404) is returned if the request could not be completed. The status includes the current state of the search job (gathering results, done executing, etc.). It also includes the message and record counts based on how many results have already been found while executing the search. For non-aggregation queries, only the number of messages is reported. For aggregation queries, the number of records produced is also reported. The search job status provides access to an implicitly generated histogram of the distribution of found messages over the time range specified for the search job. During and after execution, the API can be used to request available messages and records in a paging fashion.
+5. **Request.** You request results. It’s not necessary for the search to be complete for the user to request results; the process works asynchronously. You can repeat the request as often as needed to keep seeing updated results, keeping in mind the rate limits. The Search Job API can return up to 10 million records per search query.
+6. **Response.** Sumo Logic delivers JSON-formatted search results as requested. The API can deliver partial results that the user can start paging through, even as new results continue to come in. If there’s a problem with the results, an error code is provided (see the list of error codes following the figure).
 
 
 ## Errors

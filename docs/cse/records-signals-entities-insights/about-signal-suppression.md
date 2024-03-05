@@ -15,7 +15,7 @@ This topic describes the various ways that Signals can get suppressed.
 
 In Cloud SIEM, a *suppressed Signal* is a Signal that Cloud SIEM's Insight algorithm will exclude from the Insight generation process. In other words, a suppressed Signal does not contribute to or become a part of an Insight. By default, Signals are automatically suppressed for 72 hours. 
 
-Signal suppression can occur for a variety of reasons, including [Entity suppression](#suppress-by-entity), [network blocks](#suppress-by-network-block), [suppression lists](#suppress-by-indicator), and identifying [redundant Signals](#automatic-suppression-of-redundant-signals) by our rules correlation engine. In all cases, Signals will still be generated in the suppressed state. Depending on the reason, the field `suppressedReasons` will be populated. For example, this may include the Signal ID of an identical Signal that caused subsequent redundant Signals to be suppressed, or it may contain the name of the network block with suppression enabled.
+Signal suppression can occur for a variety of reasons, including [Entity suppression](#suppress-by-entity), [network blocks](#suppress-by-network-block), [suppression lists](#suppress-by-indicator), and identifying [redundant Signals](#automatic-suppression-of-redundant-signals) by our rules correlation engine. In all cases, Signals will still be generated in the suppressed state. Depending on the reason, the field `suppressedReasons` will be populated in the `sec_signal` index. For example, this may include the Signal ID of an identical Signal that caused subsequent redundant Signals to be suppressed, or it may contain the name of the network block with suppression enabled.
 
 ## Set the global Signal suppression value
 
