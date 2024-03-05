@@ -23,7 +23,7 @@ In this quickstart, you'll run our OpenTelemetry collector directly on the machi
 
 We'll show a simple example of running a single collector, on a single machine, collecting a single metric. But of course, in the real world, you'll be dealing with hundreds or thousands of machines, each with as many metrics, and you'll be collecting much more nuanced information than simple system memory load.
 
-## Before you begin
+## Prerequisites
 
 * You'll need a Sumo Logic account. If you don't have one, [start a free trial](/docs/get-started/sign-up/#sign-up-through-sumo-logic).
 * Review [What's the difference between OpenTelemetry and the Sumo Logic Distribution for OpenTelemetry?](/docs/send-data/opentelemetry-collector/troubleshooting/#whats-the-difference-between-opentelemetry-and-the-sumo-logic-distribution-for-opentelemetry)

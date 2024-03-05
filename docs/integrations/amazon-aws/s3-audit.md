@@ -38,7 +38,7 @@ This topic details how to collect logs for Amazon S3 Audit and ingest them into 
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the Account page in  Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-legacy-account.md) at any time.
 
-### Before you begin
+### Prerequisites
 
 Before you can begin to collect logs from an S3 bucket, perform the following steps:
 
