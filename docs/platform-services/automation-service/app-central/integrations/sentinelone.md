@@ -1,14 +1,15 @@
 ---
 title: SentinelOne
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sentinelone.png')} alt="sentinelone" width="100"/>
 
-***Version: 1.8  
-Updated: Jun 22, 2023***
+***Version: 1.9  
+Updated: Mar 4, 2024***
 
 SentinelOne Endpoint Protection Platform (EPP) unifies prevention, detection, and response in a single, purpose-built agent powered by machine learning and automation. It provides prevention and detection of attacks across all major vectors, rapid elimination of threats with fully automated, policy-driven response capabilities, and complete visibility into the endpoint environment with full-context, real-time forensics.
 
@@ -39,22 +40,23 @@ XDR
 
 * March 26, 2021 - First upload
 * July 19, 2022
-	+ added default URL in the connector
-	+ changed some labels in the connector
+    + added default URL in the connector
+    + changed some labels in the connector
 * August 30, 2022 - Added new actions:
-	+ Connect to Network
-	+ Disconnect from Network
-	+ Get Alerts
-	+ Update Alert SentinelOne
-	+ Monitor Threat Status
-	+ Update Threat
-	+ SentinelOne Threats Daemon
+    + Connect to Network
+    + Disconnect from Network
+    + Get Alerts
+    + Update Alert SentinelOne
+    + Monitor Threat Status
+    + Update Threat
+    + SentinelOne Threats Daemon
 * October 28, 2022 - Action Get Agents renamed to List Agents and refactored
 * January 16, 2023 - Integration refactored
 * January 30, 2023 - Updated Daemon
-	+ SentinelOne Threats Daemon: refactored
+    + SentinelOne Threats Daemon: refactored
 * February 8, 2023 (v1.6)
-	+ Updated Action: List Agents (Added IP field for filtering and Improved error handling)
+    + Updated Action: List Agents (Added IP field for filtering and Improved error handling)
 * February 17, 2023 (v1.7)
-	+ Updated Action: List Agents (Added Query field for Filtering)
+    + Updated Action: List Agents (Added Query field for Filtering)
 * June 22, 2023 (v1.8) - Removed unnecessary spaces
+* March 4, 2024 (v1.9) - Updated code for compatibility with Python 3.12
