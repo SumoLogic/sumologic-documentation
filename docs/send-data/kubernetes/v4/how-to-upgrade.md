@@ -22,7 +22,7 @@ If you don't have metrics collection enabled, skip straight to the
 
 ### Convert Prometheus remote writes to otel metrics filters
 
-**When?**: If you have custom remote writes defined in `kube-prometheus-stack.prometheus.additionalRemoteWrites`.
+**When?**: If you have custom remote writes defined in `kube-prometheus-stack.prometheus.prometheusSpec.additionalRemoteWrites`.
 
 When using Prometheus for metrics collection in v3, we relied on remote writes for filtering forwarded metrics. OTel, which is the default in v4, does not support remote writes, so we've moved this functionality to OTel processors, or ServiceMonitors if it can be done there.
 
@@ -61,12 +61,13 @@ before migrating to version 4. The configuration for version 3 is the following:
 ```yaml
 kube-prometheus-stack:
   prometheus:
-    additionalRemoteWrite:
-      - url: http://$(METADATA_METRICS_SVC).$(NAMESPACE).svc.cluster.local.:9888/prometheus.metrics.node
-        remoteTimeout: 5s
-        writeRelabelConfigs:
-          - action: keep
-            regex: node-exporter;(?:node_load1|node_load5|node_load15|node_cpu_seconds_total|node_disk_io_time_weighted_seconds_total|node_disk_io_time_seconds_total|node_vmstat_pgpgin|node_vmstat_pgpgout|node_memory_MemFree_bytes|node_memory_MemAvailable_bytes|node_memory_Cached_bytes|node_memory_Buffers_bytes|node_memory_MemTotal_bytes|node_network_receive_drop_total|node_network_transmit_drop_total|node_network_receive_bytes_total|node_network_transmit_bytes_total|node_filesystem_avail_bytes|node_filesystem_size_bytes)
+    prometheusSpec:
+      additionalRemoteWrite:
+        - url: http://$(METADATA_METRICS_SVC).$(NAMESPACE).svc.cluster.local.:9888/prometheus.metrics.node
+          remoteTimeout: 5s
+          writeRelabelConfigs:
+            - action: keep
+              regex: node-exporter;(?:node_load1|node_load5|node_load15|node_cpu_seconds_total|node_disk_io_time_weighted_seconds_total|node_disk_io_time_seconds_total|node_vmstat_pgpgin|node_vmstat_pgpgout|node_memory_MemFree_bytes|node_memory_MemAvailable_bytes|node_memory_Cached_bytes|node_memory_Buffers_bytes|node_memory_MemTotal_bytes|node_network_receive_drop_total|node_network_transmit_drop_total|node_network_receive_bytes_total|node_network_transmit_bytes_total|node_filesystem_avail_bytes|node_filesystem_size_bytes)
             sourceLabels: [job, __name__]
   prometheus-node-exporter:
     prometheus:
