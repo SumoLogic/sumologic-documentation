@@ -83,6 +83,10 @@ To configure a Kaltura source:
 | :--- | :--- | :--- |
 | `_siemParser` | `/Parsers/Sumo/Kaltura/Kaltura` | Set when **Forward To SIEM** is checked. |
 
+:::info
+The `_siemparser` is currently available only for the Audit Trail Events.
+:::
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
