@@ -5,7 +5,7 @@ sidebar_label: Go OpenTelemetry auto-instrumentation
 description: OpenTelemetry Golang instrumentation gives you the possibility to capture telemetry (metrics and traces) data from code written in Golang.
 ---
 
-OpenTelemetry Golang instrumentation gives you the possibility to capture telemetry (metrics and traces) data from code written in Golang. The best way is to use https://github.com/open-telemetry/opentelemetry-go. See the list of [supported libraries](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/v1.24.0/instrumentation#instrumentation-packages).
+OpenTelemetry Golang instrumentation gives you the ability to capture telemetry (metrics and traces) data from code written in Golang. The best way is to use https://github.com/open-telemetry/opentelemetry-go. See the list of [supported libraries](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/v1.24.0/instrumentation#instrumentation-packages).
 
 ## Instrumentation types
 
