@@ -190,7 +190,7 @@ json "apiId", "domainName", "stage" as apiId, domainName, stage
 
 ### Metric Rules
 
-Create the following Metric Rule for the AWS API gateway app if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metric-rule).
+Create the following Metric Rule for the AWS API Gateway app, if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metric-rule).
 
 ```sql
 Rule name: AwsObservabilityApiGatewayApiNameEntityRule
