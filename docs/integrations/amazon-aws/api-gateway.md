@@ -587,7 +587,7 @@ Use this dashboards to:
 
 ### Enhanced Monitoring
 
-The **AWS API Gateway - Enhanced Monitoring** dashboards provides detailed insights into API Gateway performance throughout your infrastructure, including the number and types of API calls, API resources, cache hits, and misses, latency averages, data proccessed, and errors by HTTP method, resource and stage.
+The **AWS API Gateway - Enhanced Monitoring** dashboards provides detailed insights into API Gateway performance throughout your infrastructure, including the number and types of API calls, API resources, cache hits, and misses, latency averages, data processed, and errors by HTTP method, resource and stage.
 
 For your API Gateway instance to send enhanced metrics, you must have explicitly enabled detailed CloudWatch metrics. You can do this in the AWS management console under a Stage settings tab by selecting Enable CloudWatch Metrics. Alternatively, you can call the update-stage AWS CLI command to update the metrics enabled property to True.
 
