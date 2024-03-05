@@ -77,6 +77,12 @@ To configure a Kaltura source:
 1. **Polling Interval** You have the option to select how often to poll for base entry events. Default is 24 hours.
 1. When you are finished configuring the Source, click **Save**.
 
+## Metadata fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemParser` | `/Parsers/Sumo/Kaltura/Kaltura` | Set when **Forward To SIEM** is checked. |
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details. 
