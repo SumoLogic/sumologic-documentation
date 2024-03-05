@@ -11,8 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.7  
 Updated: Mar 4, 2024***
 
-CrowdStrike® Falcon Intelligence™ is an automated threat intelligence service built on the CrowdStrike Falcon Platform. It automates incident investigations and streamlines breach response so you can make faster, more confident cyber security decisions. Organizations, regardless of size or sophistication, learn from the attacks in their environment applying that knowledge to proactively prevent future attacks. Falcon Intelligence provides insight into global threats, tracked by CrowdStrike’s
-elite team of intelligence experts.
+CrowdStrike® Falcon Intelligence™ is an automated threat intelligence service built on the CrowdStrike Falcon Platform. It automates incident investigations and streamlines breach response so you can make faster, more confident cyber security decisions. Organizations, regardless of size or sophistication, learn from the attacks in their environment applying that knowledge to proactively prevent future attacks. Falcon Intelligence provides insight into global threats, tracked by CrowdStrike’s elite team of intelligence experts.
 
 * Intelligence Automation
 * Custom IOCs
