@@ -53,7 +53,6 @@ After you make this change, you will not be able to edit the account owner.
 If the account owner leaves your organization and you cannot transfer the account ownership, please [submit a support ticket](https://support.sumologic.com/hc/en-us) to transfer the account ownership.
 :::
 
-
 ## Delete an organization
 
 :::note
