@@ -15,7 +15,7 @@ import ApiIntro from '../reuse/api-intro.md';
 
 <ApiIntro/>
 
-## Before You Begin
+## Prerequisites
 
 You will need:
 
