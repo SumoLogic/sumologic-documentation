@@ -213,8 +213,7 @@ Namespace for **AWS API Gateway** Service is **AWS/ApiGateway**.
 For **Metadata**, add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 #### Enable enhanced metrics
 
-API Gateway will not send these metrics unless you have explicitly enabled detailed CloudWatch metrics. Enabling such metrics will incur additional charges to your account. For pricing information, see Amazon CloudWatch Pricing.
-Follow below instruction for your respective api types.
+API Gateway will not send these metrics unless you have explicitly enabled detailed CloudWatch metrics. Enabling such metrics will incur additional charges to your account. For pricing information, see [Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/). Follow the below instructions for your respective API types.
 
 ##### Enable enhanced metrics for REST APIs:
 
