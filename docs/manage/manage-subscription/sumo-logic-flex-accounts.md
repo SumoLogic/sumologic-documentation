@@ -100,8 +100,8 @@ The following table provides a summary list of key features by Flex package acco
 
 The **Account Overview** tab of the **Account** page displays information about your Sumo Logic organization, account type, contract and billing periods, number of credits you've used, as well as live dashboards and real time alerts. The account owner can reassign the Account Owner role from this page.
 
-:::note
-This page is strictly access controlled. You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab.
+:::note permissions required
+To view the **Account Overview** tab, you must have a role that grants you the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities/#data-management) capability.
 :::
 
 The Account page provides an at-a-glance view of your account information in the following panels.
@@ -142,14 +142,12 @@ For example, if your contract period is licensed for 100,000 credits and 10,000 
 
 * **Promotional Credits** bar graphs show the rate at which you are consuming your allocated Promotional Credits.
 
-### Viewing the account information​
+### Viewing your account information​
 
-To view the Account page, do the following:
-1. Log in to your account.
-1. In the left navigation bar, select **Administration** > **Account**. The **Account Overview** tab is shown by default.
+To view your Account page, go to the left navigation bar and then select **Administration** > **Account**. The **Account Overview** tab is shown by default.
 
-:::note
-You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab.
+:::note permissions required
+To view the **Account Overview** tab, you must have a role that grants you the [View Account Overview](/docs/manage/users-roles/roles/role-capabilities/#data-management) capability.
 :::
 
 Be aware of the following features:
@@ -172,7 +170,7 @@ If are the Sumo Logic account owner, your Account page also displays a **Manag
 
 ## Monitoring account usage ​
 
-The Usage (Sumo Credits) panel at the bottom of the Account Overview page provides at-a-glance analytics with which you can intuitively monitor your account usage in comparison to your contract capacity. In the Usage panel, you can do the following:
+The Usage (Sumo Credits) panel at the bottom of the Account Overview page provides at-a-glance analytics with which you can intuitively monitor your account usage in comparison to your contract capacity. In the **Usage** panel, you can do the following:
 
 * Review your usage to date.
 * Review usage forecast based on usage to date.
@@ -185,11 +183,10 @@ The Usage (Sumo Credits) panel at the bottom of the Account Overview page provid
 
 The Usage Details panel contains the following usage categories:
 
-* **Flex scan Upfront**. used for reserved log search volume.
-* **Flex scan Metered**. used for log search volume when not Upfront search volume is available.
+* **Flex Scan Upfront**. Used for reserved log search volume.
+* **Flex Scan Metered**. Used for log search volume when not Upfront search volume is available.
 * **Flex Storage**. Credits used for log storage.
-* **Flex Scan**.<!-- description -->
-* **Flex Ingest**.<!-- description -->
+* **Tracing Ingest**. Credits used for tracing.
 * **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
 * **Metrics Ingest**. Credits used for metrics ingested.
 * **Promotional categories**. See [Monitoring Promotional Credit usage](#monitoring-promotional-credit-usage).
@@ -200,14 +197,14 @@ The usage data on this page is updated frequently to reflect the near-real time 
 
 ### Changing views and time intervals​
 
-The Sumo Logic Account page allows you to easily monitor your data usage over selected time intervals, including total storage and metrics usage.
+The Sumo Logic **Account** page allows you to easily monitor your data usage over selected time intervals, including total storage and metrics usage.
 
 To switch between views and time interval displays:
-1. Log in to Sumo Logic and select **Administration** > **Account** in the left navigation pane.
-The Account page appears with the Account Overview tab shown by default. From this tab you can see your subscription type, current credit usage, and forecasted usage as well as drill down by data tier or promotional credit type.
+
+1. Log in to Sumo Logic and select **Administration** > **Account** in the left navigation pane. The Account page appears with the **Account Overview** tab shown by default. From this tab, you can see your subscription type, current credit usage, and forecasted usage as well as drill down by data tier or promotional credit type.
 1. To only view data for a specific analytic type or types, go to the bottom of the **Usage Details** panel and click the check box next to the analytic type or types you want to exclude.<br/> ![account-details-credit-usage-flex.png](/img/account/account-details-credit-usage-flex.png)
 1. To toggle an analytic data type back on, click the blank icon next to the data type name. The analytic data type reappears in the graph and the credit usage for the data type is once again included.
-1. To change the aggregation of the data, click the Group by arrow and choose day, week, or month from the dropdown list. The default is View By Day.
+1. To change the aggregation of the data, click the Group by arrow and choose day, week, or month from the dropdown list. The default is **View By Day**.
 
 ### Drilling into usage data​
 
@@ -215,8 +212,8 @@ You can easily drill into usage graph for a more granular view of the data, with
 
 To drill into usage data, do the following:
 
-1. In the Usage Details panel, drag your cursor over the graph intervals you want to analyze in greater detail.
-1. To scroll through the data, click the Zoom (magnifying glass) icon to toggle On the Pan feature, then select the background and drag your cursor to the left and right. Optionally, hover the cursor over an area on the chart to view a pop-up with detailed information.
+1. In the **Usage Details** panel, drag your cursor over the graph intervals you want to analyze in greater detail.
+1. To scroll through the data, click the Zoom (magnifying glass) icon to toggle On the Pan feature, then select the background and drag your cursor to the left and right. Optionally, you can hover the cursor over an area on the chart to view a pop-up with detailed information.
 
 ### Monitoring Promotional Credit usage​
 
