@@ -4,6 +4,8 @@ title: Search Audit Index
 description: The Search Audit Index provides event logs on search usage and activities for your account. 
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Search Audit Index provides event logs on search usage and activities for your account. The index allows you to monitor and audit the search queries being run within your account, the types of queries, the users running them, and more. 
 
 To visualize your Search Audit Index data, download the [Enterprise Search Audit App](/docs/integrations/sumo-apps/enterprise-search-audit), which provides pre-built dashboards and reports to help you analyze your current search use and identify areas for improvement.
@@ -13,11 +15,9 @@ To visualize your Search Audit Index data, download the [Enterprise Search Audi
 This feature is available in the following account plans.
 
 | Account Type | Account Level |
-|:--------------------|:---------------------------------------------------------------------|
+|:--|:---|
 | Cloud Flex | Trial, Enterprise |
 | Cloud Flex Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
-
-
 
 ## Enable the Search Audit Index
 
@@ -26,9 +26,7 @@ The Search Audit Index must be enabled by an administrator.
 To enable the Search Audit Index:
 
 1. Go to the **Administration** > **Security** > **Policies** page.
-1. Under **Sumo Logic Auditing**, select the second **Enable** option.
-
-    ![Search-Audit-Index_Enabled.png](/img/security/Search_Audit_Index_Enabled.png)
+1. Under **Sumo Logic Auditing**, select **Enable Search Audit Record**. <br/><img src={useBaseUrl('img/security/Search_Audit_Index_Enabled.png')} alt="Enable Search Audit Index" style={{border: '1px solid gray'}} width="600" />
 
 :::note
 * Users with a role that grants the [**Manage audit data feed**](/docs/manage/users-roles/roles/role-capabilities#security) capability are allowed to enable the Search Audit Index.
@@ -58,6 +56,8 @@ The following table provides details on the fields returned by the index:
 |:--|:--|
 | `time` | The time when the audit log was generated. |
 | `analytics_tier` | The data tier associated with the audit message. Learn more about [Data Tiers](/docs/manage/partitions-data-tiers/data-tiers). |
+| `content_identifier` | The ID of the content item that triggered the search query. |
+| `content_name` | The name of the content item that triggered the search query. |
 | `data_retreived_bytes` | Amount of data retrieved by the search query. This represents the approximate size of messages that match the source expression of the query and are retrieved from scanning. |
 | `data_scanned_bytes` | Amount of data scanned by the search query. This value is an approximation, as the scanned message bytes are captured at intermittent time intervals and then averaged over the query time range. It is important to note that this value may be less than the retrieved bytes in some cases due to the approximation. Additionally, if a query contains a `timecompare` or `subquery` operator, the `data_scanned_byte` attribute in the audit log will include the sum of both the parent and child queries. |
 | `execution_duration_ms` | Time taken to complete the search. |
@@ -68,6 +68,7 @@ The following table provides details on the fields returned by the index:
 | `query_type` | Identifies the type of query run within the account such as API, UI, Scheduled Views, etc. The values and their detailed description are provided in [Query type field values](#query-type-field-values). |
 | `remote_ip` | The remote IP of the source from where the query originated. |
 | `retrieved_message_count` | The number of messages returned by the search result. This represents the approximate count of messages that match the source expression of the query and are retrieved from scanning. |
+| `scanned_bytes_breakdown` | Amount of data scanned by the search query broken down by type. |
 | `scanned_message_count`   | The number of messages scanned by the search. This is an approximation, as `scanned_message_count` is captured at intermittent time intervals and averaged over a query time range. (May be less than `retrieved_message_count` in some cases due to this approximation.) |
 | `scanned_partition_count` | The number of partitions scanned by the search. This is an approximation as scanned message bytes are captured at intermittent time intervals and averaged over a query time range. (May be less than retrieved bytes in some cases due to this approximation.) |
 | `session_id` | An identifier for every search run within the account. This is the same SESSION number displayed in the UI in the search tab. |
