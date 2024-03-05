@@ -86,58 +86,58 @@ The client secret, known also as an *application password*, is a string value of
 
 One of the following permissions is required to call this Action. To learn more, including how to choose permissions, see [Permissions](https://docs.microsoft.com/en-us/graph/permissions-reference).
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                                        |
-|------------------------------------|----------------------------------------------------------------------------------------------------|
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)|
+|:-- | :-- |
 | Delegated (work or school account) | User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
-| Application                        | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All                     |
+| Application | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                                            |
-|------------------------------------|--------------------------------------------------------------------------------------------------------|
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
 | Delegated (work or school account) | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
-| Application                        | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
+| Application | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 
 **Add Channel Members Action:**
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                                        |
-|------------------------------------|----------------------------------------------------------------------------------------------------|
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
 | Delegated (work or school account) | User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
-| Application                        | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All                     |
+| Application | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | ChannelMember.ReadWrite.All                 |
-| Application                        | ChannelMember.ReadWrite.All                 |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | ChannelMember.ReadWrite.All |
+| Application | ChannelMember.ReadWrite.All |
 
 **Add Team Members Action:**
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                                        |
-|------------------------------------|----------------------------------------------------------------------------------------------------|
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
 | Delegated (work or school account) | User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
-| Application                        | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All                     |
+| Application | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | TeamMember.ReadWrite.All                    |
-| Application                        | TeamMember.ReadWrite.All                    |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | TeamMember.ReadWrite.All |
+| Application | TeamMember.ReadWrite.All |
 
 **Archive Team** *AND* **Archive Team On Incident Closure Trigger Actions:**
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | TeamSettings.ReadWrite.All                  |
-| Application                        | TeamSettings.ReadWrite.Group\*              |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | TeamSettings.ReadWrite.All |
+| Application | TeamSettings.ReadWrite.Group\* |
 
 **Note**: This API supports admin permissions. Global admins and Microsoft Teams service admins can access teams that they are not a member of.
 
@@ -145,17 +145,17 @@ One of the following permissions is required to call this Action.
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                                            |
-|------------------------------------|--------------------------------------------------------------------------------------------------------|
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
 | Delegated (work or school account) | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
-| Application                        | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
+| Application | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | Channel.Create                              |
-| Application                        | Channel.Create                              |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | Channel.Create |
+| Application | Channel.Create |
 
 **Note**: This API supports admin permissions. Global admins and Microsoft Teams service admins can access teams that they are not a member of.
 
@@ -163,83 +163,83 @@ One of the following permissions is required to call this Action.
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | Team.Create                                 |
-| Application                        | Team.Create, Teamwork.Migrate.All           |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | Team.Create |
+| Application | Team.Create, Teamwork.Migrate.All |
 
 **Create Team On Incident Creation Trigger Action:**
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | TeamMember.ReadWrite.All                    |
-| Application                        | TeamMember.ReadWrite.All                    |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | TeamMember.ReadWrite.All |
+| Application | TeamMember.ReadWrite.All |
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | Team.Create                                 |
-| Application                        | Team.Create, Teamwork.Migrate.All           |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | Team.Create |
+| Application | Team.Create, Teamwork.Migrate.All |
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                                        |
-|------------------------------------|----------------------------------------------------------------------------------------------------|
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)|
+|:-- | :-- |
 | Delegated (work or school account) | User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
-| Application                        | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All                     |
+| Application | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 
 **Delete Channel Action:**
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | Channel.Delete.All                          |
-| Application                        | Channel.Delete.Group\*, Channel.Delete.All, |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | Channel.Delete.All |
+| Application  | Channel.Delete.Group\*, Channel.Delete.All, |
 
 **List Channel Members Action:**
 
 One of the following permissions is required to call this API.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)         |
-|------------------------------------|-----------------------------------------------------|
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
 | Delegated (work or school account) | ChannelMember.Read.All, ChannelMember.ReadWrite.All |
-| Application                        | ChannelMember.Read.All, ChannelMember.ReadWrite.All |
+| Application | ChannelMember.Read.All, ChannelMember.ReadWrite.All |
 
 **List Channel Messages Action:**
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                                            |
-|------------------------------------|--------------------------------------------------------------------------------------------------------|
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)|
+|:-- | :-- |
 | Delegated (work or school account) | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
-| Application                        | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
+| Application | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                    |
-|------------------------------------|--------------------------------------------------------------------------------|
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
 | Delegated (work or school account) | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
-| Application                        | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
+| Application | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | ChannelMessage.Read.All                     |
-| Application                        | ChannelMessage.Read.All                     |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | ChannelMessage.Read.All |
+| Application | ChannelMessage.Read.All  |
 
 **List Channels Action:**
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                    |
-|------------------------------------|--------------------------------------------------------------------------------|
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                    |
+|:-- | :-- |
 | Delegated (work or school account) | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
-| Application                        | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
+| Application | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
 
 :::note
 This API supports admin permissions. Global admins and Microsoft Teams service admins can access teams that they are not a member of **List Team Members Action**.
@@ -247,46 +247,46 @@ This API supports admin permissions. Global admins and Microsoft Teams service a
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                            |
-|------------------------------------|------------------------------------------------------------------------|
-| Delegated (work or school account) | TeamMember.Read.All, TeamMember.ReadWrite.All                          |
-| Application                        | TeamMember.Read.Group\*, TeamMember.Read.All, TeamMember.ReadWrite.All |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | TeamMember.Read.All, TeamMember.ReadWrite.All|
+| Application | TeamMember.Read.Group\*, TeamMember.Read.All, TeamMember.ReadWrite.All |
 
 **List Teams Action:**
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                                            |
-|------------------------------------|--------------------------------------------------------------------------------------------------------|
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
 | Delegated (work or school account) | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
-| Application                        | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
+| Application | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 
 **List Users Action:**
 
 One of the following permissions is required to call this Action.
 
-| **PERMISSION TYPE**                    | **PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)**                                                        |
-|----------------------------------------|--------------------------------------------------------------------------------------------------------|
-| **Delegated (work or school account)** | **User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All** |
-| **Application**                        | **User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All**                     |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
+| Application | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 
 **Remove Member From Channel Action:**
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | ChannelMember.ReadWrite.All                 |
-| Application                        | ChannelMember.ReadWrite.All                 |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | ChannelMember.ReadWrite.All |
+| Application | ChannelMember.ReadWrite.All |
 
 **Search Channels Messages Action:**
 
 The following permissions are required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | Not supported.                              |
-| Application                        | ChannelMessage.Read.All                     |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | Not supported. |
+| Application | ChannelMessage.Read.All |
 
 Note: Before you call this Action with application permissions, you must request access. For details, see [**Protected APIs in Microsoft Teams**](https://docs.microsoft.com/en-us/graph/teams-protected-apis)
 
@@ -294,10 +294,10 @@ Note: Before you call this Action with application permissions, you must request
 
 The following permissions are required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | Not supported.                              |
-| Application                        | Chat.Read.All, Chat.ReadWrite.All           |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | Not supported. |
+| Application | Chat.Read.All, Chat.ReadWrite.All |
 
 Note: Before you call this Action with application permissions, you must request access. For details, see [**Protected APIs in Microsoft Teams**](https://docs.microsoft.com/en-us/graph/teams-protected-apis).
 
@@ -305,24 +305,23 @@ Note: Before you call this Action with application permissions, you must request
 
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](https://docs.microsoft.com/en-us/graph/permissions-reference).
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | ChatMessage.Send, Chat.ReadWrite            |
-| Application                        | **Not supported.**                          |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+| Delegated (work or school account) | ChatMessage.Send, Chat.ReadWrite |
+| Application | Not supported.  |
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                                        |
-|------------------------------------|----------------------------------------------------------------------------------------------------|
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
 | Delegated (work or school account) | User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
-| Application                        | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All                     |
+| Application | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | Chat.Create, Chat.ReadWrite                 |
-| Application                        | Chat.Create                                 |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | Chat.Create, Chat.ReadWrite |
+| Application | Chat.Create |
 
 For the action to work correctly and to avoid permission errors, ensure that one of the following criteria is met:
 
@@ -336,26 +335,26 @@ For more information please visit: [Change moderator roles and settings in a cha
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-|------------------------------------|---------------------------------------------|
-| Delegated (work or school account) | ChannelMessage.Send                         |
-| Application                        | Teamwork.Migrate.All                        |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | ChannelMessage.Send |
+| Application | Teamwork.Migrate.All |
 
 Note: Application permissions are *only* supported for [migration](https://docs.microsoft.com/en-us/microsoftteams/platform/graph-api/import-messages/import-external-messages-to-teams). In the future, Microsoft may require you or your customers to pay additional fees based on the amount of data imported.
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                                            |
-|------------------------------------|--------------------------------------------------------------------------------------------------------|
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)|
+|:-- | :-- |
 | Delegated (work or school account) | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
-| Application                        | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
+| Application | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 
 One of the following permissions is required to call this Action.
 
-| PERMISSION TYPE                    | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                    |
-|------------------------------------|--------------------------------------------------------------------------------|
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
 | Delegated (work or school account) | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
-| Application                        | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
+| Application | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
 
 For the action to work correctly and to avoid permission errors, ensure that one of the following criteria is met:
 
