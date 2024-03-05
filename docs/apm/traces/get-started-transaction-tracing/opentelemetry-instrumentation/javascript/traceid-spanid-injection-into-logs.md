@@ -8,7 +8,7 @@ description: Configuring traceId, spanId, and trace flags data injection into us
 It is very simple to configure **traceId, spanId, and trace flags data** injection into user logs in JavaScript applications. Mostly it is enough to add instrumented versions of the logging packages into project dependencies and register them as new instrumentation.
 
 :::note
-The examples below apply to **OpenTelemetry JS** instrumentation version **0.23.0**.
+The examples below are compatible with **OpenTelemetry JS API and SDK 1.0+**.
 :::
 
 ## Winston Logger OpenTelemetry instrumentation

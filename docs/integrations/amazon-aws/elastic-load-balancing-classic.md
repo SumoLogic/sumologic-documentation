@@ -34,7 +34,7 @@ The log format is described in [AWS ELB Access Log Collection](http://docs.aws.a
 Follow the [Before you begin](#Before-you-begin) section and then use the in-product instructions in Sumo Logic to set up the app. For information on collecting unified logs and metrics for AWS Elastic Load Balancing - Classic, see [AWS Elastic Load Balancing ULM - Classic](/docs/integrations/amazon-aws/classic-load-balancer.md).
 
 
-### Before you begin
+### Prerequisites
 
 Enable Elastic Load Balancing logging in your AWS account and configure a Sumo Logic ELB Source, using [these instructions](/docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source).
 

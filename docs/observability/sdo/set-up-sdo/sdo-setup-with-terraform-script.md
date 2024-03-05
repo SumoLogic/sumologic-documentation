@@ -17,7 +17,7 @@ The Terraform script performs the following actions:
 
 The Terraform script requires a set of parameters to be configured.
 
-## Before you begin
+## Prerequisites
 Before setting up the SDO solution, you need to complete the following tasks:
 
 * Create or collect API Keys and credentials for Jira, GitHub, GitLab, Jenkins, Bitbucket, CircleCI, and Opsgenie with Webhook creation capabilities.
