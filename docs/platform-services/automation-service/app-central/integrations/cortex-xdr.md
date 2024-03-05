@@ -1,14 +1,15 @@
 ---
 title: Cortex XDR
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cortex-xdr.png')} alt="cortex-xdr" width="100"/>
 
-***Version: 1.3  
-Updated: Jul 11, 2023***
+***Version: 1.4  
+Updated: Mar 4, 2024***
 
 Query data and utilize actions in Palo Alto Networks Cortex XDR.
 
@@ -41,6 +42,7 @@ XDR
 * July 19, 2022 - Incidents Cortex XDR Daemon action added
 * January 27, 2023 - Integration refactored
 * January 30, 2023 - Updated Daemon
-	+ Incidents Cortex XDR Daemon: refactored
-	+ Alerts Cortex XDR Daemon: refactored
+    + Incidents Cortex XDR Daemon: refactored
+    + Alerts Cortex XDR Daemon: refactored
 * July 11, 2023 (v1.3) - Removed leading/trailing spaces
+* March 4, 2024 (v1.4) - Updated code for compatibility with Python 3.12
