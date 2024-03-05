@@ -45,7 +45,7 @@ Available chart types:
 When you move the cursor over the Line, Column, Bar, Area, and Box Plot time series panels, you can see a vertical crosshair line across the panel which displays the time-series data. If other time series panels are also configured with same time range, then when you hover over one time panel, vertical crosshair will be displayed on the other panels as well. A tooltip is used to display the time-series data along with the vertical crosshair line, which also displays information about the combination chart.
 
 :::note
-Vertical crosshair timestamp is not availble for Heatmap and Table panels.
+Vertical crosshair timestamp is not available for Heatmap and Table panels.
 :::
 
 ### What is the difference between a categorical and time series panel?
