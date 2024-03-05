@@ -1,14 +1,15 @@
 ---
 title: Microsoft Teams
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-teams.png')} alt="microsoft-teamsg" width="100"/>
 
-***Version: 1.8  
-Updated: Jul 05, 2023***
+***Version: 1.9  
+Updated: Mar 4, 2024***
 
 Microsoft Teams is the ultimate hub for teamwork and intelligent communications. Built on the strength and scale of Microsoft 365 with over 120 million users, Microsoft Teams is a chat-based workspace in Microsoft 365. Microsoft Graph makes it easy to create large numbers of teams and populate them with users and channels, by automating the creation and management of teams, and channels. also send a messages to chats or channels.
 
@@ -46,7 +47,7 @@ Registering your application establishes a trust relationship between your app a
 Follow these steps to create the app registration:
 
 1. Sign in to the [Azure portal](https://portal.azure.com/).
-1.  If you have access to multiple tenants, use the **Directory + subscription** filter <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-1.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="30"/> in the top menu to select the tenant in which you want to register an application.
+1. If you have access to multiple tenants, use the **Directory + subscription** filter <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-1.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="30"/> in the top menu to select the tenant in which you want to register an application.
 1. Search for and select the **Azure Active Directory.**
 1. Under Manage, select **App registrations** > **New registration**.
 1. Enter a **Name** for your application. Users of your app might see this name, and you can change it later.
@@ -73,7 +74,7 @@ The client secret, known also as an *application password*, is a string value of
 1. Select **Add**.
 1. **Record the secret's** value for use in your client application resource - it's *never displayed again* after you leave this page.
 
- **Add Permissions to API**
+**Add Permissions to API**
 
 1. Select your application in **App registrations** in the Azure portal.
 1. Select **API permissions** > **Add a permission**
@@ -85,19 +86,15 @@ The client secret, known also as an *application password*, is a string value of
 
 One of the following permissions is required to call this Action. To learn more, including how to choose permissions, see [Permissions](https://docs.microsoft.com/en-us/graph/permissions-reference).
 
-
-
-| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)|
+|:-- | :-- |
 | Delegated (work or school account) | User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 | Application | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 
- One of the following permissions is required to call this Action.
-
-
+One of the following permissions is required to call this Action.
 
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 | Application | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 
@@ -105,19 +102,15 @@ One of the following permissions is required to call this Action. To learn more,
 
 One of the following permissions is required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 | Application | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 
 One of the following permissions is required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | ChannelMember.ReadWrite.All |
 | Application | ChannelMember.ReadWrite.All |
 
@@ -125,52 +118,42 @@ One of the following permissions is required to call this Action.
 
 One of the following permissions is required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 | Application | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 
 One of the following permissions is required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | TeamMember.ReadWrite.All |
 | Application | TeamMember.ReadWrite.All |
 
-**Archive Team** *AND* **Archive Team On Incident Closure Trigger Actions:** 
+**Archive Team** *AND* **Archive Team On Incident Closure Trigger Actions:**
 
- One of the following permissions is required to call this Action.
-
-
+One of the following permissions is required to call this Action.
 
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | TeamSettings.ReadWrite.All |
 | Application | TeamSettings.ReadWrite.Group\* |
 
 **Note**: This API supports admin permissions. Global admins and Microsoft Teams service admins can access teams that they are not a member of.
 
-**Create Channel** **Action:** 
+**Create Channel** **Action:**
 
 One of the following permissions is required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 | Application | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 
 One of the following permissions is required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | Channel.Create |
 | Application | Channel.Create |
 
@@ -180,10 +163,8 @@ One of the following permissions is required to call this Action.
 
 One of the following permissions is required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | Team.Create |
 | Application | Team.Create, Teamwork.Migrate.All |
 
@@ -191,28 +172,22 @@ One of the following permissions is required to call this Action.
 
 One of the following permissions is required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | TeamMember.ReadWrite.All |
 | Application | TeamMember.ReadWrite.All |
 
 One of the following permissions is required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | Team.Create |
 | Application | Team.Create, Teamwork.Migrate.All |
 
- One of the following permissions is required to call this Action.
+One of the following permissions is required to call this Action.
 
-
-
-| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)|
+|:-- | :-- |
 | Delegated (work or school account) | User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 | Application | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 
@@ -220,63 +195,51 @@ One of the following permissions is required to call this Action.
 
 One of the following permissions is required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | Channel.Delete.All |
-| Application | Channel.Delete.Group\*, Channel.Delete.All, |
+| Application  | Channel.Delete.Group\*, Channel.Delete.All, |
 
 **List Channel Members Action:**
 
- One of the following permissions is required to call this API.
-
-
+One of the following permissions is required to call this API.
 
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | ChannelMember.Read.All, ChannelMember.ReadWrite.All |
 | Application | ChannelMember.Read.All, ChannelMember.ReadWrite.All |
 
- **List Channel Messages Action:**
+**List Channel Messages Action:**
 
 One of the following permissions is required to call this Action.
 
-
-
-| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)|
+|:-- | :-- |
 | Delegated (work or school account) | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 | Application | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 
- One of the following permissions is required to call this Action.
-
-
+One of the following permissions is required to call this Action.
 
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
 | Application | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
 
- One of the following permissions is required to call this Action.
-
-
+One of the following permissions is required to call this Action.
 
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | ChannelMessage.Read.All |
-| Application | ChannelMessage.Read.All |
+| Application | ChannelMessage.Read.All  |
 
 **List Channels Action:**
 
 One of the following permissions is required to call this Action.
 
-
-
-| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)                                    |
+|:-- | :-- |
 | Delegated (work or school account) | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
-| Application |  Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
+| Application | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
 
 :::note
 This API supports admin permissions. Global admins and Microsoft Teams service admins can access teams that they are not a member of **List Team Members Action**.
@@ -284,21 +247,17 @@ This API supports admin permissions. Global admins and Microsoft Teams service a
 
 One of the following permissions is required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
-| Delegated (work or school account) | TeamMember.Read.All, TeamMember.ReadWrite.All |
+|:-- | :-- |
+| Delegated (work or school account) | TeamMember.Read.All, TeamMember.ReadWrite.All|
 | Application | TeamMember.Read.Group\*, TeamMember.Read.All, TeamMember.ReadWrite.All |
 
 **List Teams Action:**
 
 One of the following permissions is required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 | Application | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 
@@ -306,21 +265,17 @@ One of the following permissions is required to call this Action.
 
 One of the following permissions is required to call this Action.
 
-
-
-| **PERMISSION TYPE** | **PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)** |
-| --- | --- |
-| **Delegated (work or school account)** | **User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All** |
-| **Application** | **User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All** |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
+|:-- | :-- |
+| Delegated (work or school account) | User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
+| Application | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 
 **Remove Member From Channel Action:**
 
 One of the following permissions is required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | ChannelMember.ReadWrite.All |
 | Application | ChannelMember.ReadWrite.All |
 
@@ -328,54 +283,43 @@ One of the following permissions is required to call this Action.
 
 The following permissions are required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | Not supported. |
 | Application | ChannelMessage.Read.All |
 
- Note: Before you call this Action with application permissions, you must request access. For details, see [**Protected APIs in Microsoft Teams**](https://docs.microsoft.com/en-us/graph/teams-protected-apis)
+Note: Before you call this Action with application permissions, you must request access. For details, see [**Protected APIs in Microsoft Teams**](https://docs.microsoft.com/en-us/graph/teams-protected-apis)
 
 **Search Chats Messages Action:**
 
- The following permissions are required to call this Action.
-
-
+The following permissions are required to call this Action.
 
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | Not supported. |
 | Application | Chat.Read.All, Chat.ReadWrite.All |
 
- Note: Before you call this Action with application permissions, you must request access. For details, see [**Protected APIs in Microsoft Teams**](https://docs.microsoft.com/en-us/graph/teams-protected-apis).
+Note: Before you call this Action with application permissions, you must request access. For details, see [**Protected APIs in Microsoft Teams**](https://docs.microsoft.com/en-us/graph/teams-protected-apis).
 
 **Send Chat Message Action:**
 
 One of the following permissions is required to call this API. To learn more, including how to choose permissions, see [Permissions](https://docs.microsoft.com/en-us/graph/permissions-reference).
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
 | Delegated (work or school account) | ChatMessage.Send, Chat.ReadWrite |
-| Application | **Not supported.** |
+| Application | Not supported.  |
 
- One of the following permissions is required to call this Action.
-
-
+One of the following permissions is required to call this Action.
 
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 | Application | User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All |
 
 One of the following permissions is required to call this Action.
 
-
-
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | Chat.Create, Chat.ReadWrite |
 | Application | Chat.Create |
 
@@ -385,37 +329,30 @@ For the action to work correctly and to avoid permission errors, ensure that one
 * The account must be added as a moderator
 * The account must be added as a team owner
 
-For more information please visit: [Change moderator roles and settings in a channel](https://support.microsoft.com/en-us/office/change-moderator-roles-and-settings-in-a-channel-6ac54758-3440-4f6a-9bd5-cebf97cb7ea6)   
-
+For more information please visit: [Change moderator roles and settings in a channel](https://support.microsoft.com/en-us/office/change-moderator-roles-and-settings-in-a-channel-6ac54758-3440-4f6a-9bd5-cebf97cb7ea6)
 
 **Send Teams Message Action:**
 
- One of the following permissions is required to call this Action. 
-
-
+One of the following permissions is required to call this Action.
 
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | ChannelMessage.Send |
 | Application | Teamwork.Migrate.All |
 
- Note: Application permissions are *only* supported for [migration](https://docs.microsoft.com/en-us/microsoftteams/platform/graph-api/import-messages/import-external-messages-to-teams). In the future, Microsoft may require you or your customers to pay additional fees based on the amount of data imported.
+Note: Application permissions are *only* supported for [migration](https://docs.microsoft.com/en-us/microsoftteams/platform/graph-api/import-messages/import-external-messages-to-teams). In the future, Microsoft may require you or your customers to pay additional fees based on the amount of data imported.
 
- One of the following permissions is required to call this Action.
+One of the following permissions is required to call this Action.
 
-
-
-| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+| PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED)|
+|:-- | :-- |
 | Delegated (work or school account) | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 | Application | GroupMember.Read.All, Group.Read.All, Directory.Read.All, Group.ReadWrite.All, Directory.ReadWrite.All |
 
- One of the following permissions is required to call this Action.
-
-
+One of the following permissions is required to call this Action.
 
 | PERMISSION TYPE | PERMISSIONS (FROM LEAST TO MOST PRIVILEGED) |
-| --- | --- |
+|:-- | :-- |
 | Delegated (work or school account) | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
 | Application | Channel.ReadBasic.All, ChannelSettings.Read.All, ChannelSettings.ReadWrite.All |
 
@@ -443,19 +380,19 @@ For detailed API documentation visit [**https://docs.microsoft.com/en-us/graph/a
 1. The integration details will appear. Click on the **"+"** button to add new Resource.
 1. Add two different resources for Application and Delegated context.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-7.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
 1. Populate the resource fields as indicated.
-   * **Label**. The resource name.
-   * **API URL**. The default Microsoft Graph API URL is 'https://graph.microsoft.com/v1.0'.
-   * **Tenant ID**. Directory (Tenant) ID (You can check from you app registration page).
-   * **Authentication Grant Type**. You can choose any value from the following according to the permissions you add to your App:
-	  * Password (Delegated Context)
-	  * Client Credentials (Application Context)
-   * **Client ID**. Application (Client) ID, Required for both Authentication Grant Type (You can check from you app registration page).
-   * **Client Secret**. Application (Client) Secret, Required for both Authentication Grant Type (Client Secret that you copied earlier).
-   * **Username**. Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context).
-   * **Password**. Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context).
-   * **Cloud SOAR URL**. Provide the SOAR URL in format 'https://your-cloud-soar-host/incmansuite\_ng' (this field is only required and use in Triggers).
-   * **Cloud SOAR JWT Token**. Provide your SOAR JWT which you can copy from your profile section (this field is only required and use in Triggers).
-   * **Team Incident Internal Field Name**. To save Team ID in Incident Field, Required only for Triggers, For Example: opt\_1.
+    * **Label**. The resource name.
+    * **API URL**. The default Microsoft Graph API URL is 'https://graph.microsoft.com/v1.0'.
+    * **Tenant ID**. Directory (Tenant) ID (You can check from you app registration page).
+    * **Authentication Grant Type**. You can choose any value from the following according to the permissions you add to your App:
+        * Password (Delegated Context)
+        * Client Credentials (Application Context)
+    * **Client ID**. Application (Client) ID, Required for both Authentication Grant Type (You can check from you app registration page).
+    * **Client Secret**. Application (Client) Secret, Required for both Authentication Grant Type (Client Secret that you copied earlier).
+    * **Username**. Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context).
+    * **Password**. Required only for Authentication Grant Type Password (Delegated Context) leave this field empty if you set **Authentication Grant Type** as Client Credentials (Application Context).
+    * **Cloud SOAR URL**. Provide the SOAR URL in format 'https://your-cloud-soar-host/incmansuite\_ng' (this field is only required and use in Triggers).
+    * **Cloud SOAR JWT Token**. Provide your SOAR JWT which you can copy from your profile section (this field is only required and use in Triggers).
+    * **Team Incident Internal Field Name**. To save Team ID in Incident Field, Required only for Triggers, For Example: opt\_1.
 1. Click **SAVE**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-8.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
 1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-9.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="400"/>
 1. Click **TEST** to test the integration connector. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/microsoft-teams/microsoft-teams-10.png')} style={{border:'1px solid gray'}} alt="microsoft-teams" width="300"/>
@@ -467,14 +404,15 @@ For detailed API documentation visit [**https://docs.microsoft.com/en-us/graph/a
 * January 10, 2023 (v1.1) - Refactoring
 * May 10, 2023 (v1.2) - Daemon added
 * May 19, 2023 (v1.3)
-	+ Updated Daemon - **Microsoft Teams List Channel Messages Daemon** (Removed HTML Tags from Messages)
-	+ Documentation Updated
-	+ Modified the action type from **Containment** to **Notification** for the following actions:
-		- Add Channel Members
-		- Add Team Members
-		- Create Channel
-		- Create Team
+    + Updated Daemon - **Microsoft Teams List Channel Messages Daemon** (Removed HTML Tags from Messages)
+    + Documentation Updated
+    + Modified the action type from **Containment** to **Notification** for the following actions:
+        - Add Channel Members
+        - Add Team Members
+        - Create Channel
+        - Create Team
 * June 26, 2023 (v1.4) - Removed unnecessary empty lines and other little changes
 * June 28, 2023 (v1.6) - Visibility of the Resource fields changed
 * July 5, 2023 (v1.8)
-	+ Updated Actions - List Users & Create Channel
+    + Updated Actions - List Users & Create Channel
+* March 4, 2024 (v1.9) - Updated code for compatibility with Python 3.12
