@@ -82,4 +82,11 @@ This guide has documentation Sumo apps for container management and orchestratio
     <p>A guide to the Sumo Logic app for VMware Legacy.</p>
     </div>
   </div>
+  <div className="box smallbox card">
+    <div className="container">
+    <img src={useBaseUrl('img/integrations/containers-orchestration/vmware-tanzu.png')} alt="Thumbnail icon" width="50"/>
+    <h4><a href="/docs/integrations/containers-orchestration/vmware-tanzu-application-service">VMware Tanzu Application Service</a></h4>
+    <p>A guide to the Sumo Logic app for VMware Tanzu Application Service.</p>
+    </div>
+  </div>
 </div>

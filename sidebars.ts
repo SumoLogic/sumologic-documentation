@@ -2093,6 +2093,7 @@ integrations: [
           'integrations/containers-orchestration/rabbitmq',
           'integrations/containers-orchestration/vmware',
           'integrations/containers-orchestration/vmware-legacy',
+          'integrations/containers-orchestration/vmware-tanzu-application-service',
         ],
       },
       {
