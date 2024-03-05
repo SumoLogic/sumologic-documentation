@@ -218,10 +218,10 @@ Follow below instruction for your respective api types.
 
 ##### Enable enhanced metrics for REST APIs:
 
-1. Open the API [Gateway console](https://aws.amazon.com/api-gateway/), and click on your REST API.
-1. Select stage, and navigate to **Logs and tracing** section. 
-1. Click on **Edit**. 
-1. Select **Detailed metrics** checkbox.
+1. Open the [Amazon API Gateway console](https://aws.amazon.com/api-gateway), then click on your REST API.
+1. Select stage, then navigate to the **Logs and tracing** section. 
+1. Click **Edit**. 
+1. Select the **Detailed metrics** checkbox.
 1. Click **Save changes**.
 
 ##### Enable enhanced metrics for HTTPS APIs:
