@@ -84,7 +84,7 @@ To configure a Kaltura source:
 | `_siemParser` | `/Parsers/Sumo/Kaltura/Kaltura` | Set when **Forward To SIEM** is checked. |
 
 :::info
-The `_siemparser` is currently available only for the Audit Trail Events.
+Base entry event logs are not supported with the SIEM forward option.
 :::
 
 ## JSON schema
