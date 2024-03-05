@@ -129,8 +129,7 @@ Once the playbook is ready, then you can create an Incident Template.
 5. Search your playbook.
 6. Select the playbook(s) you want to add.
 7. Click Add.
-8. Enable AUTORUN.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-27.png')} style={{border:'1px solid gray'}} alt="imap" width="600"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-28.png')} style={{border:'1px solid gray'}} alt="imap" width="700"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-29.png')} style={{border:'1px
-   solid gray'}} alt="imap" width="700"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-30.png')} style={{border:'1px solid gray'}} alt="imap" width="700"/>
+8. Enable AUTORUN.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-27.png')} style={{border:'1px solid gray'}} alt="imap" width="600"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-28.png')} style={{border:'1px solid gray'}} alt="imap" width="700"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-29.png')} style={{border:'1px solid gray'}} alt="imap" width="700"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-30.png')} style={{border:'1px solid gray'}} alt="imap" width="700"/>
 
 ### Create a new Rule
 
