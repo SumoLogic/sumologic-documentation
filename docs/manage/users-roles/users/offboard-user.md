@@ -4,7 +4,6 @@ title: Offboard a User
 description: Steps to take when removing a user from your organization's Sumo Logic account.
 ---
 
-
 When it's time to remove a user from your organization's Sumo Logic account, there are a few important steps to take before actually disabling or deleting that user. To save the settings for a user and temporarily prevent access, you can [deactivate a user](deactivate-activate-user.md) rather than deleting them. Disabled users can't log in to their Sumo Logic account, giving you time to replicate content.
 
 To safeguard content in your organization's Sumo Logic account perform the following tasks before deleting or deactivating a user.
@@ -12,6 +11,10 @@ To safeguard content in your organization's Sumo Logic account perform the foll
 ## Transfer account owner (if necessary)
 
 A user designated as Account Owner cannot be deleted. To transfer ownership, the account owner must do this on the **Account** page. For more information, see [Cloud Flex Accounts](/docs/manage/manage-subscription/cloud-flex-accounts.md) or [Cloud Flex Credits Accounts](/docs/manage/manage-subscription/cloud-flex-credits-accounts.md), depending on your Sumo Logic packaging.
+
+:::note
+If the account owner leaves your organization and you cannot transfer the account ownership, please [submit a support ticket](https://support.sumologic.com/hc/en-us) to transfer the account ownership.
+:::
 
 ## Check for allowlisted IP addresses
 
