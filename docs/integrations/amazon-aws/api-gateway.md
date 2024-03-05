@@ -158,7 +158,7 @@ Log in to Sumo Logic, then go to **Manage Data** > **Logs** > **Fields**. Search
 
 ### Field Extraction Rule(s)
 
-Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
+Learn how to create Field Extraction Rules [here](/docs/manage/field-extractions/create-field-extraction-rule).
 
 Create Field Extraction Rule for CloudTrail Logs. 
 ```sql
