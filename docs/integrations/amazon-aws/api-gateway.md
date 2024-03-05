@@ -227,11 +227,11 @@ Follow below instruction for your respective api types.
 ##### Enable enhanced metrics for HTTPS APIs:
 
 1. Open the API [Gateway console](https://aws.amazon.com/api-gateway/), and click on your HTTPS API.
-1. Go to **Metrics** under **Monitor**. 
-1. Select the stage, and click on **Edit**.
+1. Under the **Monitor** section, click **Metrics**.
+1. Select the stage, and click **Edit**.
 1. Toggle the **enabled** button to enable the **Detailed route metrics**. 
 1. Click **Save**.
-1. Click on **Deploy**.<br/><img src={useBaseUrl('img/integrations/amazon-aws/HTTP_API_Enhanced_Metrics.png')} alt="AWS API Gateway" />
+1. Click **Deploy**.<br/><img src={useBaseUrl('img/integrations/amazon-aws/HTTP_API_Enhanced_Metrics.png')} alt="AWS API Gateway" />
 
 ##### Enable enhanced metrics for WebSocket APIs:
 
