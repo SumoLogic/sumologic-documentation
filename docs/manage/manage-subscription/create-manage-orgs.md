@@ -93,7 +93,7 @@ After you create a child org, you can’t delete it.
 To change an org's credits allocation:
 1. Go to **Administration > Organizations**.
 1. Click the row for the org you want to edit.
-1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} alt="your description" width="450" />
+1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
 2. Click **Modify Allocation**.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} alt="allocation" width="450" />
 3. The **Credits Calculator** appears.
 4. Follow the steps in [Create a child org](#create-a-child-org) to update the credits allocation.
@@ -166,7 +166,16 @@ If a [custom subdomain](manage-org-settings.md#set-up-a-customsubdomain) has bee
 
 1. Go to **Administration** > **Organizations**.
 1. Click the row for the org you want to access.
-1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="your description" width="450"/>
+1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="your description" style={{border:'1px solid gray'}} width="450"/>
+
+## View child credits usage
+
+You can access the child credits usage for a selected organization from the **Organizations** UI. 
+
+1. Go to **Administration** > **Organizations**.
+1. Click the row for the org you want to access the credits usage.
+1. Scrow down to **Credits Usage**. You can see the total percentage of credits consumed out of the total number of credits allocated.
+1. Click **Open in Account Overview** for detailed child credit usage report for the selected organization.<br/> <img src={useBaseUrl('img/subscriptions/child-credits-usage.png')} alt="child-credits-usage" style={{border:'1px solid gray'}} width="450"/>
 
 ## View baselines
 
