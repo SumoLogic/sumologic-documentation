@@ -42,7 +42,7 @@ Available chart types:
 * [Box Plot](/docs/dashboards/panels/box-plot-charts)
 * [Heat Map](/docs/metrics/metrics-queries/heat-map)
 
-When you move the cursor over the Line, Column, Bar, Area, and Box Plot time series panels, you can see a crosshair line across the panel which displays the time-series data. If other time series panels are also configured with same time range, then when you hover over one time panel, crosshair timestap will be displayed on the other panels as well. A tooltip is used to display the time-series data along with the crosshair, which also displays information about the combination chart.
+When you move the cursor over the Line, Column, Bar, Area, and Box Plot time series panels, you can see a crosshair line across the panel which displays the time-series data. If other time series panels are also configured with same time range, then when you hover over one time panel, crosshair timestamp will be displayed on the other panels as well. A tooltip is used to display the time-series data along with the crosshair, which also displays information about the combination chart.
 
 :::note
 Crosshair timestamps are not available for Heatmap and Table panels.
