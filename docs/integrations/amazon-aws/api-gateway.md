@@ -219,7 +219,7 @@ Save it
 
 ### Configure Hosted Collector
 
-In Sumo Logic, configure a [Hosted Collector](docs/send-data/hosted-collectors/configure-hosted-collector/).
+In Sumo Logic, configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector/).
 
 ### Collect metrics for AWS API Gateway
 
@@ -236,7 +236,7 @@ For **Metadata**, add an **account** field to the source and assign it a value t
 
 #### Enable cache metrics
 
-To collect `CacheHitCount` and `CacheMissCount` metrics, make sure you [enable caching]([https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html]) for a specific stage.
+To collect `CacheHitCount` and `CacheMissCount` metrics, make sure you [enable caching](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html) for a specific stage.
 
 #### Enable enhanced metrics
 
