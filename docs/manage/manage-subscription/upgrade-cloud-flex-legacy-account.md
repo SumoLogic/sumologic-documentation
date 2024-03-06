@@ -1,15 +1,14 @@
 ---
-id: upgrade-cloud-flex-account
-title: Upgrade Your Cloud Flex Account
+id: upgrade-cloud-flex-legacy-account
+title: Upgrade Your Cloud Flex Legacy Account
 description: Learn how to upgrade your Sumo Logic account.
 ---
 
+This page has information about upgrading a legacy account. The account plan has the following account types: Free, Trial, Professional, and Enterprise. For information about each account type, see [Cloud Flex Legacy Accounts](cloud-flex-legacy-accounts.md). 
 
-This page has information about upgrading a Sumo Logic CloudFlex account. The Cloud Flex plan has the following account types: Free, Trial, Professional, and Enterprise. For information about each account type, see [Cloud Flex Accounts](cloud-flex-accounts.md). 
+## Upgrade options for legacy accounts
 
-## Upgrade options for Cloud Flex accounts
-
-This table summarizes upgrade options for different Cloud Flex account types.
+This table summarizes upgrade options for different account types.
 
 | Account Type | Upgrade Options |
 | :-- | :-- |
@@ -25,11 +24,11 @@ It depends on your current account type:
 * If your organization already has a Sumo Logic Professional account, only the existing Account Owner can perform upgrades.
 * Sumo Logic Enterprise accounts do not have account owners, as all upgrades are handled by a Sumo Logic salesperson.
 
-## Upgrade a Cloud Flex account
+## Upgrade an account
 
 1. Go to **Administration** > **Account** > **Manage Plan**.<br/>  ![manage-plan-cloudflex.png](/img/subscriptions/manage-plan-cloudflex.png)
 1. The left side of the page displays your current account type.
-1. **Choose a New Plan**. Click the radio button next to **Professional** or **Enterprise**.  If you just want to increase product variable levels for your current account type, don't select a new plan type.
+1. **Choose a New Plan**. Click the radio button next to **Professional** or **Enterprise**. If you just want to increase product variable levels for your current account type, don't select a new plan type.
 1. **Select New Log and Metric Data Volume**. As you change the values, the upgrade cost shown to the right will adjust.
     * **Log Ingest**. Select an estimate of your daily ingestion, in GB.
     * **Metrics**. Enter an estimate of the metrics to be ingested daily, in data points per minute (DPM.)
@@ -42,7 +41,7 @@ It depends on your current account type:
 1. Click **Confirm** to complete the upgrade. After you click **Confirm**, the credit card you provided to Sumo Logic is charged.
 1. The upgrade is processed, then a **Congratulations** screen appears. Click **Finish**.
 
-If you have any issues, or if you don't see a charge on your credit card within 48 hours, please contact [support@sumologic.com](mailto:support@sumologic.com).
+If you have any issues, or if you don't see a charge on your credit card within 48 hours, contact [support@sumologic.com](mailto:support@sumologic.com).
 
 :::note
 The price shown in the screenshots above may not reflect the actual current price.

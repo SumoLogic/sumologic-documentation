@@ -1,14 +1,15 @@
 ---
 title: Incident Tools
 description: ''
-tags: [cloud soar integrations]
+tags: [ cloud soar integrations ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/incident-tools.png')} alt="incident-tools" width="100"/>
 
-***Version: 1.5  
-Updated: Feb 13, 2024***
+***Version: 1.6  
+Updated: Mar 4, 2024***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -44,17 +45,18 @@ Supervised Active Intelligence Automation
 
 * June 1, 2023 - First upload
 * July 7, 2023 (v1.2)
-	+ Updated action: Create Entity
-	+ Removed leading/trailing spaces
+    + Updated action: Create Entity
+    + Removed leading/trailing spaces
 * November 24, 2023 (v1.3)
-	+ Updated action: Add User Details
-		- Enabled incident artifacts feature flag for User Details field (formerly, Users)
-		- Added a checkbox to allow the conversion of user details to lower case
-	+ Changed API endpoint for resource testing
-	+ Improved error handling
+    + Updated action: Add User Details
+        - Enabled incident artifacts feature flag for User Details field (formerly, Users)
+        - Added a checkbox to allow the conversion of user details to lower case
+    + Changed API endpoint for resource testing
+    + Improved error handling
 * December 14, 2023 (v1.4) - Added new action: Get Incident
 * February 13, 2024 (v1.5) - Fixed typo in the following actions
     + Update Incident Date And Time Field
     + Update Incident Description
     + Update Incident Field
     + Update Incident Fields
+* March 4, 2024 (v1.6) - Updated code for compatibility with Python 3.12

@@ -1,14 +1,15 @@
 ---
 title: MISP
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/misp.png')} alt="misp" width="100"/>
 
-***Version: 1.2  
-Updated: Jul 11, 2023***
+***Version: 1.3  
+Updated: Mar 4, 2024***
 
 Utilize MISP intelligence data during incident investigations.
 
@@ -30,9 +31,10 @@ Utilize MISP intelligence data during incident investigations.
 * December 19, 2019 - First upload
 * July 1, 2020 - Added new actions
 * August 02, 2022 - Update Actions:
-	+ Search MISP Intelligence (remove duplicates data from Daemon)
-	+ Search MISP Attribute (remove duplicates data from Daemon)
-	+ Search Intelligence (added new field 'Search All')
+    + Search MISP Intelligence (remove duplicates data from Daemon)
+    + Search MISP Attribute (remove duplicates data from Daemon)
+    + Search Intelligence (added new field 'Search All')
 * July 11, 2023 (v1.2)
-	+ Updated the integration with Environmental Variables
-	+ Integration renamed from MISP OIF to MISP
+    + Updated the integration with Environmental Variables
+    + Integration renamed from MISP OIF to MISP
+* March 4, 2024 (v1.3) - Updated code for compatibility with Python 3.12
