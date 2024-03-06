@@ -16,12 +16,12 @@ The Sumo Logic AWS API Gateway app provides insights into API Gateway tasks whil
 
 The AWS API Gateway app uses the following logs and metrics:
 
-* Amazon API Gateway metrics
+* Amazon API Gateway metrics:
    * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
    * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-metrics.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
    * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
 * [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html) <br/><img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
-* API Gateway Access logs
+* Amazon API Gateway access logs:
    * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
    * [HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging-variables.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
    * [WebSocket APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/websocket-api-logging.html) <img src='https://upload.wikimedia.org/wikipedia/commons/a/a4/OOjs_UI_icon_external-link-ltr-progressive.svg' alt="Thumbnail icon" width="12"/>
@@ -149,18 +149,18 @@ Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* api
 | top 10 errorCode by eventCount, errorCode asc
 ```
 
-## Collecting Logs and Metrics for AWS API Gateway
+## Collecting logs and metrics for AWS API Gateway
 
-### Field in Field Schema
+### Fields in field schema
 
-Log in to Sumo Logic, then go to **Manage Data** > **Logs** > **Fields**. Search for the **apiname** field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
+Log in to Sumo Logic, then go to **Manage Data** > **Logs** > **Fields**. Search for the **apiname** field. If not present, create it. To learn how to create and manage fields, see [Fields](/docs/manage/fields.md#manage-fields).
 
 
-### Field Extraction Rule(s)
+### Field extraction rules
 
-Learn how to create Field Extraction Rules [here](/docs/manage/field-extractions/create-field-extraction-rule).
+To learn how to create field extraction rules, [Create a Field Extraction Rules](/docs/manage/field-extractions/create-field-extraction-rule).
 
-Create Field Extraction Rule for CloudTrail Logs.
+Create a field extraction rule for cloudTrail logs:
 ```sql
 Rule Name: AwsObservabilityApiGatewayCloudTrailLogsFER
 Applied at: Ingest Time
@@ -175,7 +175,7 @@ Parse Expression:
 | fields region, namespace, apiname, accountid
 ```
 
-Create Field Extraction Rule for Access Logs.
+Create a field extraction rule for access logs:
 ```sql
 Rule Name: AwsObservabilityApiGatewayAccessLogsFER
 Applied at: Ingest Time
@@ -188,9 +188,9 @@ json "apiId", "domainName", "stage" as apiId, domainName, stage
 | fields apiName, namespace, apiId
 ```
 
-### Metric Rules
+### Metrics rules
 
-Create the following Metric Rule for the AWS API Gateway app, if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metric-rule).
+Create the following metrics rule for the AWS API Gateway app, if not already created. To learn how to create a metrics rule, see [Metrics Rules Editor](/docs/metrics/metric-rules-editor#create-a-metric-rule).
 
 ```sql
 Rule name: AwsObservabilityApiGatewayApiNameEntityRule
@@ -200,7 +200,7 @@ Tag sequence: $apiid._1
 Save it
 ```
 
-### Collect Metrics for AWS API Gateway   
+### Collect metrics for AWS API Gateway  
 
 Sumo Logic supports collecting metrics using two source types:
 * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (**recommended**); or
@@ -230,12 +230,13 @@ API Gateway will not send these metrics unless you have explicitly enabled detai
 1. Select the stage, and click **Edit**.
 1. Toggle the **enabled** button to enable the **Detailed route metrics**.
 1. Click **Save**.
-1. Click **Deploy**.<br/><img src={useBaseUrl('img/integrations/amazon-aws/HTTP_API_Enhanced_Metrics.png')} alt="AWS API Gateway" />
+1. Click **Deploy**.<br/><img src={useBaseUrl('img/integrations/amazon-aws/HTTP_API_Enhanced_Metrics.png')} alt="AWS API Gateway" style={{border: '1px solid gray'}} width="800" />
 
 ##### Enable enhanced metrics for WebSocket APIs:
 
-1. You can do this by calling the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis-apiid-stages-stagename.html) action of the API Gateway V2 REST API to update the `detailedMetricsEnabled` property to `true`. Alternatively, you can call the [update-stage](https://docs.aws.amazon.com/cli/latest/reference/apigatewayv2/update-stage.html) AWS CLI command to update the DetailedMetricsEnabled property to true as shown below:
-1. Run the following command in your terminal:
+You can do this by calling the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis-apiid-stages-stagename.html) action of the API Gateway V2 REST API to update the `detailedMetricsEnabled` property to `true`. 
+
+Alternatively, you can call the [update-stage](https://docs.aws.amazon.com/cli/latest/reference/apigatewayv2/update-stage.html) AWS CLI command to update the DetailedMetricsEnabled property to true. Run the following command in your terminal:
    ```sh
    aws apigatewayv2 update-stage --api-id <API_ID> --stage-name <STAGE_NAME> --default-route-settings <YOUR_ROUTE_SETTINGS> --output <OUTPUT_FORMAT> --region <REGION>
    ```
@@ -244,7 +245,7 @@ API Gateway will not send these metrics unless you have explicitly enabled detai
    aws apigatewayv2 update-stage --api-id 9pk1qlmpci --stage-name $default --default-route-settings "{\"DetailedMetricsEnabled\":true}" --output json --region eu-north-1
    ```
 
-### Collect Access Logs for AWS API Gateway   
+### Collect access logs for AWS API Gateway 
 
 1. To your Hosted Collector, add an [AWS Kinesis Firehose for Logs Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/).
    1. **Name**. Enter a name to display the new Source.
@@ -253,7 +254,7 @@ API Gateway will not send these metrics unless you have explicitly enabled detai
    4. **Source Category**. Enter `aws/apigateway`.
    5. **Fields**. Add below fields in it:
       1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the `account field`.
-      2. Add **region**, and **accountid** fields and assign it's respective values.
+      2. Add **region** and **accountid** fields and assign their respective values.
    6. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
    7. **Time Zone**. Select **Use time zone from log file. If none is detected use**, and select **Use Collector Default** from the dropdown.
    8. **Timestamp Format.** Select **Automatically detect the format**.
@@ -261,7 +262,7 @@ API Gateway will not send these metrics unless you have explicitly enabled detai
    10. Click **Save**.
    11. Save the given URL of the source for next step.
 2. [Create Stack](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#cloudformation-template) in AWS console with given CloudFormation Template.
-3. Enable access logging with below exact JSON Log formats for each APIs:
+3. Enable access logging with the following exact JSON log formats for each API:
    * [REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-logging-to-kinesis.html)
    ```json title="JSON Log Format for REST API"
    {
@@ -446,28 +447,28 @@ API Gateway will not send these metrics unless you have explicitly enabled detai
 4. To Export logs, refer to [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group).
 
 
-### Collect AWS API Gateway CloudTrail Logs
+### Collect AWS API Gateway CloudTrail logs
 
-To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) using the below instructions.
+To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) using the instructions below.
 
-#### Collect CloudTrail Lambda Data Events
+#### Collect CloudTrail Lambda data events
 
 To configure a CloudTrail Source, perform these steps:
 
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
-2. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) and for more information on what events are logged refer [API gateway API calls documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html).
+2. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html). For more information on what events are logged, refer to the [API gateway API calls documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html).
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
 5. While configuring the CloudTrail log source, the following field can be added to the source:
     * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
 
-<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Fields.png')} alt="Fields" />
+<img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Fields.png')} alt="Fields" style={{border: '1px solid gray'}} width="400" />
 
 
 
-### Centralized AWS CloudTrail log Collection
+### Centralized AWS CloudTrail log collection
 
-In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following Field Extraction Rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
+In case you have a centralized collection of CloudTrail logs and are ingesting them from all accounts into a single Sumo Logic CloudTrail log source, create the following field extraction rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
 
 ```sql
 Rule Name: AWS Accounts
@@ -507,14 +508,14 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 
 The **AWS API Gateway - Overview** dashboards provides insights into API Gateway performance throughout your infrastructure, including API calls, latency, client and server-side errors, connect and message count, data processed, API cache hits, and back-end cache misses.
 
-There are three Overview dashboards: **AWS API Gateway - Overview (REST API)**, **AWS API Gateway - Overview (HTTP API)**, and **AWS API Gateway - Overview (WebSocket API)**.
+There are three overview dashboards: **AWS API Gateway - Overview (REST API)**, **AWS API Gateway - Overview (HTTP API)**, and **AWS API Gateway - Overview (WebSocket API)**.
 
 To collect `CacheHitCount` and `CacheMissCount` metrics, enable your API cache:
 * On the **AWS console**, Go to **API Gateway Service** and select Specific API -> **Stages**.
 * Select Specific **Stage** and go to the **Settings** tab.
 * The API should have the "**Enable API Cache**" checkbox enabled to enable API caching and to collect the CacheHitCount and CacheMissCount metrics.
 
-Use this dashboards to:
+Use these dashboards to:
 
 * Get a high-level overview of your API Gateway infrastructure.
 * Compare API requests made today, yesterday, and last week to identify any abnormal deviations in load
@@ -537,7 +538,7 @@ Use this dashboards to:
 
 The **AWS API Gateway - Audit Events** dashboard provides detailed audit insights into API Gateway events by various dimensions including event names, trends, regions, user agents, and recipient account IDs.
 
-Use this dashboard to:
+Use these dashboards to:
 * Monitor all API Gateway-related audit logs available via CloudTrail events
 * Monitor incoming user activity locations for both successful and failed events to ensure the activity matches with expectations
 * Monitor successful and failed API Gateway events, users and user agents / fail activities, and failure reasons
@@ -550,9 +551,9 @@ Use this dashboard to:
 
 The **AWS API Gateway - Latency, Cache** dashboards provides insights into API Gateway performance including API requests, latency, integration latency, and its statistics, API cache hits, and back-end cache misses.
 
-There are two dashboards related to Latency and Cache: **AWS API Gateway - Latency, Cache (REST API)** and **AWS API Gateway - Latency (HTTP and WebSocket API)**.
+There are two dashboards related to latency and cache: **AWS API Gateway - Latency, Cache (REST API)** and **AWS API Gateway - Latency (HTTP and WebSocket API)**.
 
-Use this dashboards to:
+Use these dashboards to:
 * Monitor the overall responsiveness of API calls (latency), comparing times (in milliseconds) between receiving a request from and returning a response to a client.
 * Monitor the responsiveness of the backend (integration latency), comparing times (in milliseconds) between API Gateway relay requests to and receiving a response back from the backend.
 * Monitor API cache hits and misses to optimize cache capacities across your infrastructure and achieve desired performance.
@@ -569,10 +570,9 @@ Use this dashboards to:
 
 The **AWS API Gateway - Errors** dashboards provides insights into API Gateway HTTP 4xx and 5xx code errors throughout your infrastructure, including API requests, client errors, integration errors, execution errors, client-side errors, and server-side errors.
 
-There are two dashboards related to Errors: **AWS API Gateway - Errors (REST API)** and **AWS API Gateway - Errors (HTTP and WebSocket API)**.
+There are two dashboards related to errors: **AWS API Gateway - Errors (REST API)** and **AWS API Gateway - Errors (HTTP and WebSocket API)**.
 
-Use this dashboards to:
-
+Use these dashboards to:
 * Monitor the total number of client-side errors based on API name and region across your infrastructure.
 * Monitor the total number of server-side errors based on API name and region across your infrastructure.
 * Monitor the total number of client, integration and execution errors based on API name and region across your infrastructure.
@@ -591,10 +591,9 @@ The **AWS API Gateway - Enhanced Monitoring** dashboards provides detailed insig
 
 For your API Gateway instance to send enhanced metrics, you must have explicitly enabled detailed CloudWatch metrics. You can do this in the AWS management console under a Stage settings tab by selecting Enable CloudWatch Metrics. Alternatively, you can call the update-stage AWS CLI command to update the metrics enabled property to True.
 
-There are three dashboards related to Enhanced Monitoring: **AWS API Gateway - Enhanced Monitoring (REST API)**, **AWS API Gateway - Enhanced Monitoring (HTTP API)**, and **AWS API Gateway - Enhanced Monitoring (WebSocket API)**.
+There are three dashboards related to enhanced monitoring: **AWS API Gateway - Enhanced Monitoring (REST API)**, **AWS API Gateway - Enhanced Monitoring (HTTP API)**, and **AWS API Gateway - Enhanced Monitoring (WebSocket API)**.
 
-
-Use this dashboards to:
+Use these dashboards to:
 * Monitor API Gateways across your infrastructure using enhanced metrics.
 * Monitor API requests trend by resource, HTTP method, and deployment stage.
 * Monitor API cache hits and misses to optimize cache capacities to achieve desired performance.
@@ -614,28 +613,28 @@ Use this dashboards to:
 
 The **AWS API Gateway - Access Logs - Overview** dashboard provides insights on Request's latency, Request trend, Distribution of requests by Method, Stage, and Protocol, Client's location, Request status code trend, and slowest requests.
 
-Use this dashboards to:
+Use this dashboard to:
 * Monitor Latency across your infrastructure for all kind of APIs.
-* Monitor total API call, average response size and length and request trend.
+* Monitor total API call, average response size, and length and request trend.
 * Monitor API requests trend by stage, HTTP method, user agent and protocol.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Enhanced-Monitoring.png')} alt="Access Logs - Overview" />
 
 ### AWS API Gateway - Access Logs - Details
 
-The **AWS API Gateway - Access Logs - Details** dashboard provides insights on Request's latencies, Request trend, Distribution of requests by Method, Stage, and Protocol, Client's location, Request status code trend, and slowest requests
+The **AWS API Gateway - Access Logs - Details** dashboard provides insights on the request's latencies; request trends; distribution of requests by method, stage, and protocol; client's location, request status code trend, and slowest requests.
 
-Use this dashboards to get detailed distribution and trend of API requests across all type of APIs.
+Use this dashboard to get detailed distribution and trend of API requests across all type of APIs.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Enhanced-Monitoring.png')} alt="Access Logs - Details" />
 
 ### AWS API Gateway - Access logs - Errors
 
-The **AWS API Gateway - Access logs - Errors** dashboard provide insights on statistics of Top 20 failed requests, Error messages trend, Client's location, Errors by response type, Recent authorizer errors, missing authentication token errors, and WAF errors
+The **AWS API Gateway - Access logs - Errors** dashboard provides insights on statistics of the top 20 failed requests, error messages trends, client's location, errors by response type, recent authorizer errors, missing authentication token errors, and WAF errors.
 
-Use this dashboards to:
-* Monitor all the failed requests, error messages and it's trend.
-* Monitor failed requests with it's distribution by response type, client IP.
+Use this dashboard to:
+* Monitor all the failed requests, error messages, and their trends.
+* Monitor failed requests with their distribution by response type and client IP.
 * Monitor recent authorizer and missing authentication token errors.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Enhanced-Monitoring.png')} alt="Access logs - Errors" />
