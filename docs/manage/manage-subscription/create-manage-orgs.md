@@ -70,7 +70,7 @@ After you create a child org, you can’t delete it.
         Depending on your Sumo Logic subscription type, creating an org in a different deployment than the parent may result in a deployment charge being applied.
         :::
       * **Plan Type**. Select your organization's plan type. 
-1. Click **Allocate Credits**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/credits-calculator.png')} alt="calculator" width="450" /> 
+1. Click **Allocate Credits**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/credits-calculator.png')} alt="calculator" width="450" />
 1. Enter the following:
       * **Continuous Tier**. Enter estimated daily ingestion to the Continuous Tier.
       * **Frequent Tier.** Enter estimated daily ingestion to the Frequent Tier.
@@ -124,7 +124,7 @@ You can view the aggreagte usage for all child orgs across usage category in the
 * **Storage**. Credits used for log storage in the Continuous and Frequent Tiers.
 * **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent Tier.
-* **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage).
+* **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](sumo-logic-credits-accounts.md#monitoring-promotional-credit-usage).
 
 By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking **Download Detailed Credit Usages** from the kebab icon next to the Download Report button.
 

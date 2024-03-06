@@ -3,12 +3,13 @@ title: Chronicle
 description: ''
 tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="100"/>
 
-**Version: 1.5  
-Updated: February 19, 2024**
+**Version: 1.6  
+Updated: Mar 4, 2024**
 
 Chronicle SIEM is a cloud service, built as a specialized layer on top of core Google infrastructure, designed for
 enterprises to privately retain, analyze, and search the massive amounts of security and network telemetry they
@@ -38,7 +39,6 @@ risky activity.
 * [Chronicle (Google Auth)](https://github.com/googleapis/google-auth-library-python/blob/master/LICENSE)
 * [Chronicle (Google API)](https://github.com/googleapis/google-api-python-client/blob/master/LICENSE)
 
-
 ## Change Log
 
 * July 30, 2021 - First upload
@@ -57,3 +57,4 @@ risky activity.
 * February 19, 2024 (v1.5)
     * Added new Action: Get Events
     * Alerts Daemon Chronicle: Updated Output mappings
+* March 4, 2024 (v1.6) - Updated code for compatibility with Python 3.12

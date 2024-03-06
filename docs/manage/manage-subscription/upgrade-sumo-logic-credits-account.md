@@ -1,21 +1,21 @@
 ---
-id: upgrade-cloud-flex-credits-account
-title: Upgrade a Cloud Flex Credits Account
+id: upgrade-sumo-logic-credits-account
+title: Upgrade a Sumo Logic Credits Account
 description: Learn how to upgrade a Free or Trial account to an Essentials subscription.
 ---
 
 This page has instructions for upgrading a Sumo Logic Free or Trial account to an Essentials account, and for updating an existing Essentials account.
 
-For information about Essentials accounts, see [Cloud Flex Credits - Account Types](cloud-flex-credits-accounts.md). 
+For information about Essentials accounts, see [Credits - Account Types](/docs/manage/manage-subscription/sumo-logic-credits-accounts). 
 
 :::note
-For information about cancelling a Sumo Logic subscription, see [Close or Cancel a Sumo Logic Account](close-cancel-sumo-account.md).
+For information about canceling a Sumo Logic subscription, see [Close or Cancel a Sumo Logic Account](close-cancel-sumo-account.md).
 :::
 
 ## Update a Free or Trial Credits account to Essentials
 
 :::note
-You must be an admin to upgrade your CloudFlex Credits free or trial account.
+You must be an admin to upgrade your Credits free or trial account.
 :::
 
 1. To initiate your account upgrade, click the **Upgrade** link at the top of the Sumo Logic UI in your account, or go to **Administration** > **Account** > **Manage Plan**.
@@ -43,7 +43,7 @@ The payment will be calculated for the full day on which you confirm and pay. Th
 
 ## Update an Essentials account
 
-This section has instructions for making changes to your Cloud Flex Credit Essentials account. You can change your plan from monthly to annual or from annual to monthly. You can also increase or decrease the levels of Log Ingest, Log Retention, Metrics, and Tracing provided by your plan.
+This section has instructions for making changes to your Essentials account. You can change your plan from monthly to annual or from annual to monthly. You can also increase or decrease the levels of Log Ingest, Log Retention, Metrics, and Tracing provided by your plan.
 
 Updates to an annual plan will take effect upon your next billing cycle, or when your current credit balance is depleted. Until the update takes effect, it will be in a “pending” status and you can cancel it.
 
@@ -56,13 +56,13 @@ When you update the product variables for a monthly plan (without changing to an
 2. Click **Upgrade**. The page refreshes to display the **Customize Plan** step.
     ![current-levels.png](/img/subscriptions/current-levels.png)
 4. Choose **Subscription Type**. Click a radio button to change your subscription type from monthly to annual, or from annual to monthly, as desired.
-5. **Calculate Sumo Credits to Purchase**. Use the dropdown lists to select new values for the each product variable you want to change. As you make your changes, the plan cost and credits values are updated
+5. **Calculate Sumo Credits to Purchase**. Use the dropdown lists to select new values for each product variable you want to change. As you make your changes, the plan cost and credits values are updated
     * **Continuous Log Ingest**. Select an estimate of your daily ingestion to the Continuous Tier, in GB.
     * **Continuous Log Storage**. Select the number of days you want to retain the data ingested to the Continuous Tier.
     * **Metrics**. Enter an estimate of the [metrics](/docs/metrics) to be ingested daily, in data points per minute (DPM.)
     * **Tracing Ingest**. Enter an estimate of your daily ingestion of [transaction traces](/docs/apm/traces), in GB.
        ![new-levels.png](/img/subscriptions/new-levels.png)
-6. Click **Continue** to go to **Payment Method** step.
+6. Click **Continue** to go to the **Payment Method** step.
 7. On the **Confirm Payment Method** page, click **Continue** to use the current payment method, or click **Change payment method** to enter new payment details.
    ![confirm.png](/img/subscriptions/confirm-payment-method.png)
 8. On the **Confirm Upgrade** page, if you have a monthly plan, you have the option to either upgrade right away, or on your next subscription billing date. The following information, which pertains to an immediate upgrade, is displayed:
