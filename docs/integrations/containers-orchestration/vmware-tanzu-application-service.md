@@ -31,18 +31,18 @@ Before you install the Sumo Logic Nozzle for VMware Tanzu tile, you'll need:
 * A [Sumo Logic](https://www.sumologic.com/pricing/) account.
 * To configure VMware Tanzu as an [HTTP Source](https://help.sumologic.com/?cid=5084) in Sumo Logic.
 
-## <a id="snapshot"></a> Product Snapshot #TODO
+## <a id="snapshot"></a> Product Snapshot
 
 The following table provides version and version-support information about Sumo Logic Nozzle for VMware Tanzu:
 
-|Element                              |Details                         |
-|:------------------------------------|:--------------------------------|
-|Version                              |v1.0.5                          |
-|Release date                         |March #TODO, 2024               |
-|Compatible Ops Manager version(s)    |2.7.x, v2.8.x and v2.9.x        |
-|Compatible Elastic Runtime version(s)|v2.7.x, v2.8.x, and v2.9.x      |
-|BOSH stemcell version                |Ubuntu Xenial, Ubuntu Jammy     |
-|IaaS support                         |AWS, GCP, OpenStack, and vSphere|
+|Element                              | Details                                           |
+|:------------------------------------|:--------------------------------------------------|
+|Version                              | v1.0.5                                            |
+|Release date                         | March 08, 2024                                    |
+|Compatible Ops Manager version(s)    | v3.0.x, v2.9.x, v2.8.x or v2.7.x                  |
+|Compatible Tanzu Application Service version(s)| v2.7.x, v2.8.x, and v2.9.x                        |
+|BOSH stemcell version                | Ubuntu Xenial v621.x or v170.x, Ubuntu Jammy v1.x |
+| IaaS support                        | AWS, GCP, OpenStack, and vSphere                  |
 
 ## <a id="install_and_config_sumo"></a> Installing and Configuring Sumo Logic Nozzle for VMware Tanzu
 
@@ -102,7 +102,17 @@ You can also create [dashboards](https://help.sumologic.com/docs/dashboards/) an
 
 ## <a id='troubleshooting'></a> Troubleshooting
 
-Troubleshooting information for Sumo Logic sources is available in [Sources FAQ](https://help.sumologic.com/Send_Data/Source_FAQs).
+To Troubleshooting Sumo Logic nozzle integration with VMware tanzu
+1. Login to **Apps Manager**, **Home** >> **ORG** sumo-logic-nozzle-org >> **SPACE** sumo-logic-nozzle-space 
+2. Click on **Name**
+![Troubleshooting.png](/img/integrations/containers-orchestration/Troubleshooting.png)
+3. You will visit to **APP page**, Click on **Logs**
+![TroubleshootingApp.png](/img/integrations/containers-orchestration/TroubleshootingApp.png)
+4. **Logs Page**, it will show you logs related to Sumo Logic nozzle integration
+![TroubleshootingLogs.png](/img/integrations/containers-orchestration/TroubleshootingLogs.png)
+
+## Changelog
+See the [Changelog](https://github.com/SumoLogic/sumologic-cloudfoundry-nozzle/blob/master/CHANGELOG.md).
 
 ## <a id="feedback"></a> Feedback
 
