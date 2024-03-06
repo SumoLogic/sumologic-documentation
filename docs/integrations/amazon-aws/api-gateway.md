@@ -149,11 +149,27 @@ Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* api
 | top 10 errorCode by eventCount, errorCode asc
 ```
 
+```sql title="Distribution by User Agent (Access Log-based)"
+account=dev region=us-east-1 namespace=aws/apigateway apiname=* apiid stage domainname requestId identityUserAgent
+| json "requestId", "apiId", "authorizerError", "errorMessage", "errorResponseType", "status", "integrationLatency", "domainName", "identitySourceIp", "identityUserAgent", "stage", "integrationStatus" as requestId, apiId, authorizerError, errorMessage, errorResponseType, status, integrationLatency, domainName, identitySourceIp, identityUserAgent, stage, integrationStatus
+| json "wafLatency", "responseLatency", "responseLength", "path", "httpMethod", "protocol" as wafLatency, responseLatency, responseLength, path, httpMethod, protocol nodrop
+| parse field=domainName "*.execute-api.*.amazonaws.com" as  apiid, region
+| where account matches "dev" and region matches "us-east-1" and apiid matches "*" and apiname matches "*"
+| where !(identityUserAgent=="-")
+| count as Frequency by identityUserAgent
+| sort by Frequency, identityUserAgent asc
+```
+
 ## Collecting logs and metrics for AWS API Gateway
 
 ### Fields in field schema
 
-Log in to Sumo Logic, then go to **Manage Data** > **Logs** > **Fields**. Search for the **apiname** field. If not present, create it. To learn how to create and manage fields, see [Fields](/docs/manage/fields.md#manage-fields).
+Log in to Sumo Logic, then go to **Manage Data** > **Logs** > **Fields**. Search for the below fields. If not present, create it. To learn how to create and manage fields, see [Fields](/docs/manage/fields.md#manage-fields):
+   * apiname
+   * account
+   * namespace
+   * region
+   * accountid
 
 
 ### Field extraction rules
@@ -199,6 +215,9 @@ Variable name: apiname
 Tag sequence: $apiid._1
 Save it
 ```
+### Configure Hosted Collector
+
+In Sumo Logic, configure a [Hosted Collector](docs/send-data/hosted-collectors/configure-hosted-collector/).
 
 ### Collect metrics for AWS API Gateway  
 
@@ -211,6 +230,11 @@ Namespace for **AWS API Gateway** Service is **AWS/ApiGateway**.
 :::
 
 For **Metadata**, add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+
+#### Enable cache metrics
+
+To collect `CacheHitCount` and `CacheMissCount` metrics, make sure you [enable caching]([https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html]) for a specific stage.
+
 #### Enable enhanced metrics
 
 API Gateway will not send these metrics unless you have explicitly enabled detailed CloudWatch metrics. Enabling such metrics will incur additional charges to your account. For pricing information, see [Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/). Follow the below instructions for your respective API types.
@@ -223,6 +247,11 @@ API Gateway will not send these metrics unless you have explicitly enabled detai
 1. Select the **Detailed metrics** checkbox.
 1. Click **Save changes**.
 
+
+By default, methods inherit stage-level settings. You can customize settings for a method, by configuring `Method overrides`.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/REST_API_Enhanced_Metrics_Method_Overides.png')} alt="AWS API Gateway" />
+
 ##### Enable enhanced metrics for HTTPS APIs:
 
 1. Open the [Amazon API Gateway console](https://aws.amazon.com/api-gateway/), and click on your HTTPS API.
@@ -234,9 +263,10 @@ API Gateway will not send these metrics unless you have explicitly enabled detai
 
 ##### Enable enhanced metrics for WebSocket APIs:
 
-You can do this by calling the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis-apiid-stages-stagename.html) action of the API Gateway V2 REST API to update the `detailedMetricsEnabled` property to `true`. 
+The below steps require AWS CLI, refer [install](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and [configure](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) documentation, if you do not have it installed and configured in your local machine.
 
-Alternatively, you can call the [update-stage](https://docs.aws.amazon.com/cli/latest/reference/apigatewayv2/update-stage.html) AWS CLI command to update the DetailedMetricsEnabled property to true. Run the following command in your terminal:
+Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis-apiid-stages-stagename.html) action of the API Gateway V2 REST API to update the `detailedMetricsEnabled` property to true. Alternatively, you can call the [update-stage](https://docs.aws.amazon.com/cli/latest/reference/apigatewayv2/update-stage.html) AWS CLI command to update the `DetailedMetricsEnabled` property to true as shown below:
+
    ```sh
    aws apigatewayv2 update-stage --api-id <API_ID> --stage-name <STAGE_NAME> --default-route-settings <YOUR_ROUTE_SETTINGS> --output <OUTPUT_FORMAT> --region <REGION>
    ```
@@ -251,7 +281,7 @@ Alternatively, you can call the [update-stage](https://docs.aws.amazon.com/cli/l
    1. **Name**. Enter a name to display the new Source.
    2. **Description**. Enter an optional description.
    3. **Enable S3 Replay**. Do not check this option.
-   4. **Source Category**. Enter `aws/apigateway`.
+   4. **Source Category**. Enter `aws/apigateway/accesslogs`.
    5. **Fields**. Add below fields in it:
       1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the `account field`.
       2. Add **region** and **accountid** fields and assign their respective values.
@@ -268,7 +298,7 @@ Alternatively, you can call the [update-stage](https://docs.aws.amazon.com/cli/l
    {
      "accountId": "$context.accountId",
      "requestId": "$context.requestId",
-     "authorizerClaimsProperty":   "$context.authorizer.claims.property",
+     "authorizerClaimsProperty": "$context.authorizer.claims.property",
      "extendedRequestId": "$context.extendedRequestId",
      "identitySourceIp": "$context.identity.sourceIp",
      "identityCaller": "$context.identity.caller",
