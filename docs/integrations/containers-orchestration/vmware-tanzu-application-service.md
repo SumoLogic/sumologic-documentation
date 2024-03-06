@@ -48,7 +48,7 @@ The following table provides version and version-support information about Sumo 
 
 This topic describes how to install and configure Sumo Logic Nozzle for VMware Tanzu.
 
-## Install and configure the tile
+### Install and configure the tile
 
 1. Download the product file from [Pivotal Network](https://network.pivotal.io/products/sumologic-nozzle).            
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.                     
