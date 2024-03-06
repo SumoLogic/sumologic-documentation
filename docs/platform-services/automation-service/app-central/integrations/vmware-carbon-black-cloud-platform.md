@@ -1,14 +1,15 @@
 ---
 title: VMware Carbon Black Cloud Platform
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-carbon-black-cloud-platform.png')} alt="vmware-carbon-black-cloud-platform" width="60"/>
 
-***Version: 2.3  
-Updated: Nov 07, 2023***
+***Version: 2.4  
+Updated: Mar 4, 2024***
 
 VMware Carbon Black Cloud Platform Integration transform your security with intelligent endpoint and workload protection that adapts to your needs, allows security operators to collect CBC Alerts and Devices information and take action on remote endpoints to Quarantine it or update the Policy of endpoints.
 
@@ -57,11 +58,11 @@ VMware Carbon Black Cloud Platform Integration transform your security with inte
 1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-7.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="400"/>
 1. After the list of the integrations appears, search/look for the VMware Carbon Black Cloud Platform integration and click on it. The integration details will appear. Click on the **"+"** button to add a new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-8.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="600"/>
 1. Populate all the required fields (\*) and then click **SAVE**.
-   * **Label**. The name of the resource.
-   * **API URL**. URL to the API of the VMware Carbon Black Cloud Platform instance `https://defense.conferdeploy.net`.
-   * **Organization Key**. The Organization Key you copied earlier.
-   * **API ID / Connector ID**. The API ID that you copied earlier.
-   * **API Secret Key**. The API Secret Key that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-9.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="400"/>
+    * **Label**. The name of the resource.
+    * **API URL**. URL to the API of the VMware Carbon Black Cloud Platform instance `https://defense.conferdeploy.net`.
+    * **Organization Key**. The Organization Key you copied earlier.
+    * **API ID / Connector ID**. The API ID that you copied earlier.
+    * **API Secret Key**. The API Secret Key that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-9.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="400"/>
 1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-10.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="400"/>
 1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-11.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="400"/>
 1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-carbon-black-cloud-platform/vmware-carbon-black-cloud-platform-12.png')} style={{border:'1px solid gray'}} alt="vmware-carbon-black-cloud-platform" width="400"/>
@@ -81,3 +82,4 @@ EDR
 * June 08, 2022 - Updated integration doc
 * July 19, 2023 (v2.2) - Removed leading/trailing spaces
 * November 7, 2023 (v2.3) - Updated integration for compatibility with new Cloud SOAR API
+* March 4, 2024 (v2.4) - Updated code for compatibility with Python 3.12
