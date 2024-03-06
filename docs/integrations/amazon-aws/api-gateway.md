@@ -250,7 +250,7 @@ API Gateway will not send these metrics unless you have explicitly enabled detai
 1. Select the **Detailed metrics** checkbox.
 1. Click **Save changes**.
 
-   <img src={useBaseUrl('img/integrations/amazon-aws/REST_API_Enhanced_Metrics.png')} alt="AWS API Gateway” />
+   <img src={useBaseUrl('img/integrations/amazon-aws/REST_API_Enhanced_Metrics.png')} alt="AWS API Gateway" />
 
    By default, methods inherit stage-level settings. You can customize settings for a method, by configuring `Method overrides`.
 
@@ -558,15 +558,15 @@ Use these dashboards to:
 
 #### AWS API Gateway - Overview (REST API)
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Overview.png')} alt="Overview (REST API)" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/1.-AWS-API-Gateway-Overview-REST-API.png' alt="Overview (REST API)" />
 
 #### AWS API Gateway - Overview (HTTP API)
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Overview.png')} alt="Overview (HTTP API)" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/2.-AWS-API-Gateway-Overview-HTTP-API.png' alt="Overview (HTTP API)" />
 
 #### AWS API Gateway - Overview (WebSocket API)
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Overview.png')} alt="Overview (WebSocket API)" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/3.-AWS-API-Gateway-Overview-WebSocket-API.png' alt="Overview (WebSocket API)" />
 
 ### Audit Events
 
@@ -579,7 +579,7 @@ Use these dashboards to:
 * Monitor successful and failed API Gateway events, users and user agents / fail activities, and failure reasons
 * Monitor requests coming in from known malicious IP addresses detected via [Sumo Logic Threat Intel](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ)
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Audit-Events.png')} alt="Audit Events" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/5.-AWS-API-Gateway-Audit-Events.png' alt="Audit Events" />
 
 ### Latency and Cache
 
@@ -598,11 +598,11 @@ Use these dashboards to:
 
 #### AWS API Gateway - Latency, Cache (REST API)
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Latency-Cache.png')} alt="Latency, Cache (REST API)" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/1.-AWS-API-Gateway-Latency-Cache-REST-API.png' alt="Latency, Cache (REST API)" />
 
 #### AWS API Gateway - Latency (HTTP and WebSocket API)
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Latency-Cache.png')} alt="Latency (HTTP and WebSocket API)" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/2.-AWS-API-Gateway-Latency-HTTP-and-WebSocket-API.png' alt="Latency (HTTP and WebSocket API)" />
 
 ### Errors
 
@@ -619,11 +619,11 @@ Use these dashboards to:
 
 #### AWS API Gateway - Errors (REST API)
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-4XX-and-5XX-Errors.png')} alt="Errors (REST API)" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/3.-AWS-API-Gateway-Errors-REST-API.png' alt="Errors (REST API)" />
 
 #### AWS API Gateway - Errors (HTTP and WebSocket API)
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-4XX-and-5XX-Errors.png')} alt="Errors (HTTP and WebSocket API)" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/4.-AWS-API-Gateway-Errors-HTTP-and-WebSocket-API.png' alt="Errors (HTTP and WebSocket API)" />
 
 ### Enhanced Monitoring
 
@@ -643,15 +643,15 @@ Use these dashboards to:
 
 #### AWS API Gateway - Enhanced Monitoring (REST API)
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Enhanced-Monitoring.png')} alt="Enhanced Monitoring (REST API)" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/6.-AWS-API-Gateway-Enhanced-Monitoring-REST-API.png' alt="Enhanced Monitoring (REST API)" />
 
 #### AWS API Gateway - Enhanced Monitoring (HTTP API)
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Enhanced-Monitoring.png')} alt="Enhanced Monitoring (HTTP API)" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/7.-AWS-API-Gateway-Enhanced-Monitoring-HTTP-API.png' alt="Enhanced Monitoring (HTTP API)" />
 
 #### AWS API Gateway - Enhanced Monitoring (WebSocket API)
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Enhanced-Monitoring.png')} alt="Enhanced Monitoring (WebSocket API)" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/8.-AWS-API-Gateway-Enhanced-Monitoring-WebSocket-API.png' alt="Enhanced Monitoring (WebSocket API)" />
 
 ### AWS API Gateway - Access Logs - Overview
 
@@ -663,7 +663,7 @@ Use this dashboard to:
 * Monitor total API call, average response size, and length and request trend.
 * Monitor API requests trend by stage, HTTP method, user agent and protocol.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Enhanced-Monitoring.png')} alt="Access Logs - Overview" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/4.-AWS-API-Gateway-Access-Logs-Overview.png' alt="Access Logs - Overview" />
 
 ### AWS API Gateway - Access Logs - Details
 
@@ -671,7 +671,7 @@ The **AWS API Gateway - Access Logs - Details** dashboard provides insights on t
 
 Use this dashboard to get detailed distribution and trend of API requests across all type of APIs.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Enhanced-Monitoring.png')} alt="Access Logs - Details" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/9.-AWS-API-Gateway-Access-Logs-Details.png' alt="Access Logs - Details" />
 
 ### AWS API Gateway - Access logs - Errors
 
@@ -683,4 +683,4 @@ Use this dashboard to:
 * Monitor failed requests with their distribution by response type and client IP.
 * Monitor recent authorizer and missing authentication token errors.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Enhanced-Monitoring.png')} alt="Access logs - Errors" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/5.-AWS-API-Gateway-Access-Logs-Errors.png' alt="Access logs - Errors" />
