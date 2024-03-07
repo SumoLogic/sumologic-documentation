@@ -16,16 +16,11 @@ Before you can install and use the Data Volume app, an administrator must first 
 The Data Volume Index gathers volume data as soon as it is enabled. It will not gather data from legacy versions or backfill data.
 
 
-## Installing the Data Volume App
+## Installing the Data Volume app
 
-To install the app:
+import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
 
-1. From **App Catalog**, search for the **Data Volume** app.
-2. Click **Data Volume**.
-3. Select the version and click **Add to Library.** This opens a new window. Within the window, click on **Advanced** and choose a location to install the app.<br/><img src={useBaseUrl('img/integrations/sumo-apps/app.png')} alt="Data volume" width="350"/>
-4. Choose a location for Data Volume in your **Personal** folder.
-5. Click **Add to Library**. A dialog will confirm the app is installed successfully.
-
+<AppInstallNoDataSourceV1/>
 
 ## Set up Burndown Rates for Consumables
 

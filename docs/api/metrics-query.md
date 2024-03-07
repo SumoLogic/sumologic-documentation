@@ -2,7 +2,7 @@
 id: metrics-query
 title: Metrics Query Management APIs
 sidebar_label: Metrics Query
-description: The Metrics Query API allows you to execute queries on various metrics and retrieve multiple time-series (data-points) over time from HTTP endpoints.
+description: Metrics Query APIs allow you to execute queries on various metrics and retrieve multiple time-series (data-points) over time from HTTP endpoints.
 hide_table_of_contents: true
 ---
 

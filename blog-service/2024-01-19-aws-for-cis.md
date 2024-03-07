@@ -1,6 +1,6 @@
 ---
 title: Cloud Infrastructure Security for AWS (Apps)
-image: https://www.sumologic.com/img/logo.svg
+image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - apps
   - app catalog

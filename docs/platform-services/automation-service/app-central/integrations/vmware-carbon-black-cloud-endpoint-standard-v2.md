@@ -1,14 +1,15 @@
 ---
 title: VMware Carbon Black Cloud Endpoint Standard V2
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-carbon-black-cloud-endpoint-standard-v2.png')} alt="vmware-carbon-black-cloud-endpoint-standard-v2" width="70"/>
 
-***Version: 2.1  
-Updated: Jul 11, 2023***
+***Version: 2.2  
+Updated: Mar 4, 2024***
 
 VMware Carbon Black Cloud Endpoint Standard Integration allows security operators to collect information and take action on remote endpoints in real-time using API V6.
 
@@ -29,3 +30,4 @@ VMware Carbon Black Cloud Endpoint Standard Integration allows security operator
 
 * February 3, 2022 - First upload
 * July 11, 2023 (v2.1) - Updated the integration with Environmental Variables
+* March 4, 2024 (v2.2) - Updated code for compatibility with Python 3.12

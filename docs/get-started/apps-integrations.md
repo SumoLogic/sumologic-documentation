@@ -37,17 +37,9 @@ What makes Next-Gen different from Classic apps?
 * Upon app installation, content is installed into a shared **Installed Apps** folder that's visible to your entire org, making it easier to locate and upgrade, when needed.
 * Installed app content is immutable, which ensure that any apps upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
 
-import AppInstall from '../reuse/apps/app-install-v2.md';
-
-<AppInstall/>
-
 ### Classic Apps (Legacy)
 
 All of our existing Classic apps will be converted to Next-Gen. In the meantime, our Classic apps will remain available to you within the Application Catalog.
-
-import ClassicAppInstall from '../reuse/apps/app-install.md';
-
-<ClassicAppInstall/>
 
 ## Prerequisites
 
@@ -62,7 +54,13 @@ Certain apps have specific installation requirements. Be sure to check the instr
 Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic apps.
 :::
 
-## Install classic apps in multiple environments
+## Installing apps to your Library
+
+import AppInstall from '../reuse/apps/app-install.md';
+
+<AppInstall/>
+
+## Install apps in multiple environments
 
 If you have multiple environments generating data that you want to monitor using Sumo Logic apps — for example, environments for production, development, and testing — you’ll need to perform the following steps in each environment:
 

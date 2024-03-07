@@ -140,7 +140,8 @@ Once you [ingest threat intelligence indicators](#ingest-threat-intelligence-ind
 The `threatlookup` operator allows you to search logs for matches in threat intelligence indicators. For example, use the following query to find logs in all `sec_record*` indexes with a `srcDevice_ip` attribute correlated to a threat indicator with a high confidence level (greater than 50): 
 
  ```
-_index=sec_record* 
+_index=sec_record*
+| threatlookup srcDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
@@ -351,6 +352,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
      "confidence": 30,
      "threatType": "malicious-activity",
      "actors": "actor1,actor2",
+     "killChain": "reconnaissance",
      "fields": {
        "kill_chain_name": "lockheed-martin-cyber-kill-chain",
        "kill_chain_phase": "reconnaissance"
@@ -366,6 +368,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
      "confidence": 30,
      "threatType": "malicious-activity",
      "actors": "actor3,actor4",
+     "killChain": "reconnaissance",
      "fields": {
        "kill_chain_name": "lockheed-martin-cyber-kill-chain",
        "kill_chain_phase": "reconnaissance"
@@ -403,8 +406,18 @@ The following attributes are required:
           * `malicious-activity`. Patterns of suspected malicious objects and/or activity.
           * `attribution`. Patterns of behavior that indicate attribution to a particular threat actor or campaign.
           * `unknown` (or not set). There is not enough information available to determine the threat type.
-       * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor1`. This attribute is frequently used in the s_CrowdStrike source.
 
+      The following attributes are optional:
+       * **actors** (string list). An identified threat actor such as an individual, organization, or group. For example, `actor1`. This attribute is frequently used in the s_CrowdStrike source.
+       * **killChain** (string list). The various phases an attacker may undertake to achieve their objectives (as [defined by kill_chain_phase in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_i4tjv75ce50h)). For example, `reconnaissance`. This attribute is frequently used in the s_CrowdStrike source. Although you can use any kill chain definition and values you want, following are example values based on the standard stages in a kill chain:
+          * `reconnaissance`.  Researching potential targets.
+          * `weaponization`. Creation of malware to be used against an identified target.
+          * `delivery`. Infiltration of a target’s network and users. 
+          * `exploitation`. Taking advantage of the vulnerabilities discovered in previous stages to further infiltrate a target’s network and achieve objectives.
+          * `installation`. Install malware and other cyberweapons onto the target network to take control of its systems and exfiltrate valuable data.
+          * `command-and-control`. Communication with the installed malware.
+          * `actions-on-objectives`. Carrying out cyberattack objectives.
+         
 ### CSV format
 
 Comma-separated value (CSV) is a standard format for data upload.
@@ -416,8 +429,8 @@ Comma-separated value (CSV) is a standard format for data upload.
 If uploading a CSV file with the UI, the format should be the same as used for a standard CSV file:
 
 ```
-0001,192.0.2.0,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,
-0002,192.0.2.1,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3
+0001,192.0.2.0,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,,
+0002,192.0.2.1,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3,reconnaissance
 ```
 
 ##### Upload with the API
@@ -426,8 +439,8 @@ If uploading a CSV file using the API, the file should be contained in a JSON ob
 
 ```
 {
- "csv": "0001,192.0.2.0,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,\n
-0002,192.0.2.1,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,actor3\n"
+ "csv": "0001,192.0.2.0,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,,\n
+0002,192.0.2.1,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,actor3,reconnaissance\n"
 }
 ```
 
@@ -462,7 +475,17 @@ Columns for the following attributes are required in the upload file:
           * `malicious-activity`. Patterns of suspected malicious objects and/or activity.
           * `attribution`. Patterns of behavior that indicate attribution to a particular threat actor or campaign.
           * `unknown` (or not set). There is not enough information available to determine the threat type.
-       * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor3`. This attribute is frequently used in the s_CrowdStrike source. Note if you don’t provide a value for `actors`, you still must provide the empty column at the end of the row with an extra comma, as shown in the examples above.
+
+      The following attributes are optional: 
+       * **actors** (string list). An identified threat actor such as an individual, organization, or group. For example, `actor3`. This attribute is frequently used in the s_CrowdStrike source. Note if you don’t provide a value for `actors`, you still must provide the empty column at the end of the row with an extra comma, as shown in the examples above.
+       * **killChain** (string list). The various phases an attacker may undertake to achieve their objectives (as [defined by kill_chain_phase in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_i4tjv75ce50h)). For example, `reconnaissance`. This attribute is frequently used in the s_CrowdStrike source. Although you can use any kill chain definition and values you want, following are example values based on the standard stages in a kill chain:
+          * `reconnaissance`.  Researching potential targets.
+          * `weaponization`. Creation of malware to be used against an identified target.
+          * `delivery`. Infiltration of a target’s network and users. 
+          * `exploitation`. Taking advantage of the vulnerabilities discovered in previous stages to further infiltrate a target’s network and achieve objectives.
+          * `installation`. Install malware and other cyberweapons onto the target network to take control of its systems and exfiltrate valuable data.
+          * `command-and-control`. Communication with the installed malware.
+          * `actions-on-objectives`. Carrying out cyberattack objectives.
 
 ### STIX 2.1 JSON format
 

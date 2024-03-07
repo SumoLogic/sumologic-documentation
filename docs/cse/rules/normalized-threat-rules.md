@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about Cloud SIEM’s built-in normalized threat rules.
 
-To get a CSV of normalized threat rules, see [Rules - Useful CSVs](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md#useful-csvs) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog). The CSV includes information about the log mappers that participate in normalized threat rules and the data sources the rules support.
+To get a CSV of normalized threat rules, see [Rules - Useful CSVs](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md#useful-csvs) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md). The CSV includes information about the log mappers that participate in normalized threat rules and the data sources the rules support.
 
 ## Normalized threat rules pass alerts to Cloud SIEM
 
