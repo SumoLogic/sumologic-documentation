@@ -31,7 +31,7 @@ For more details on the ALB Access log, see the [AWS documentation](https://docs
 
 ## Collecting Logs for the AWS Elastic Load Balancer Application
 
-### Before you begin
+### Prerequisites
 
 In this step, you'll configure an AWS Elastic Load Balancing source to receive logs. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector). Before you can begin to use the Sumo Logic App for Application Load Balancing, complete the following steps:
 

@@ -15,20 +15,10 @@ The Sumo Logic Enterprise Audit Apps are JSON-based to provide for more meaningf
 
 The Audit Event Index is only available for Trial and Enterprise accounts.
 
-<table>
-  <tr>
-   <td><strong>Account Type</strong></td>
-   <td><strong>Account Level</strong></td>
-  </tr>
-  <tr>
-   <td>CloudFlex</td>
-   <td>Trial, Enterprise</td>
-  </tr>
-  <tr>
-   <td>Credits</td>
-   <td>Trial, Enterprise Operations, Enterprise Suite, Enterprise Security</td>
-  </tr>
-</table>
+| Account Type    | Account Level      |
+| :--------- | :-------- |
+| Cloud Flex    | Trial, Enterprise    |
+| Credits | Trial, Enterprise Operations, Enterprise Suite, Enterprise Security |
 
 ## Enterprise Audit Apps
 
@@ -46,17 +36,9 @@ Audit data is not backfilled to any time before Enterprise Audit was installed. 
 
 ## Installing Enterprise Audit Apps
 
-Install the Sumo Logic App to use the preconfigured searches and dashboards. Logs are being provided by Audit Event Index. For more information, see the Audit Event Index page.
+import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
 
-The Audit Event Index is enabled by default, and only available for Trial and Enterprise accounts.
-
-To install an Enterprise Audit App, do the following:
-
-1. In the App Catalog, search for "Audit" and select an Enterprise Audit app.
-4. Click **Add to Library**.
-3. If you want to save the app to a new folder in your personal folder, click **+ New Folder** and select a name and location for your folder.
-4. Click **Add to Library** to install the app. A confirmation dialog will appear and then you can start viewing your dashboards.
-
+<AppInstallNoDataSourceV1/>
 
 ## Viewing Enterprise Audit App Dashboards
 

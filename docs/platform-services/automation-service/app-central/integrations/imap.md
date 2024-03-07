@@ -1,14 +1,15 @@
 ---
 title: IMAP
 description: ''
-tags: [cloud soar integrations]
+tags: [ cloud soar integrations ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/imap.png')} alt="imap" width="80"/>
 
-***Version: 1.2  
-Updated: Oct 02, 2023***
+***Version: 1.3  
+Updated: Mar 4, 2024***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -25,41 +26,41 @@ Allows you to connect your mailbox with Cloud SOAR and receive mail via IMAP pro
 ### Get JWT token
 
 1. Collect the JWT token which is required later:
-   1. It can be found under the user **Profile**.
-   1. Just copy it temporarily in a text editor.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-1.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
+    1. It can be found under the user **Profile**.
+    1. Just copy it temporarily in a text editor.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-1.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
 1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-2.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
 1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-3.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
 1. After the list of the integrations appears, search/look for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-4.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
 1. Populate all the required fields (\*) and then click **Save**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-5.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
-   * **IMAP Server**. For example: Imap.gmail.com, Outlook.office365.com, Imap.mail.yahoo.com
-   * **Mailbox Account**. Only required if the Username isn't already an email address (for example: Username: admin, Mailbox Account: admin@test.com). 
-   * **Cloud SOAR User JWT Token**. Enter the previously copied token.
-   * **Email Fetch Type (Daemon)**.
-	   * **Unseen/Unread**. Only fetch the mails which are currently UNSEEN or UNREAD.
-	   * **Fetch From Latest CSOAR Mail**. Fetch all mails from the mail server which are not yet stored on Cloud SOAR. For the first time it will fetch UNSEEN mails for the second run/execution. Pre-Filtering options can be used to pre-filter emails in the mail server. Only pre-filtered emails are imported and analyzed by Cloud SOAR. 
-	   * Email Fetch Type and below other filters will be combined with **AND** operator. 
-	   
-	   * Pre-filtered options:
-         * **From**. You can filter email using From or even you can use full Domain name. For example: sumologic.com, sales@sumologic.com. Based on the above example, only the mails coming from Sumo Logic domain or sales@sumologic.com will be fetched. This field accepts multiple values separated by comma. Multiple values will be combined with OR operator.
-         * **To**. Indicate the receiver of the mail, this filter works the same as From filter. This field accepts multiple values separated by comma. Multiple values will be combined with OR operator.
-         * **Subject**. Fetch mails based on Subject. This field accepts multiple values separated by comma. Multiple values will be combined with OR operator.
-         * **Text Body**. Based on text search inside the body even it will work for attachment name. This field accepts multiple values separated by comma. Multiple values will be combined with OR operator.
-         * **Header**. Header string to be searched based on the below filter.
-         * **Header Field Name To Search in Header**. A list from which you can choose a header element where to search the provided value in the previous field.
+    * **IMAP Server**. For example: Imap.gmail.com, Outlook.office365.com, Imap.mail.yahoo.com
+    * **Mailbox Account**. Only required if the Username isn't already an email address (for example: Username: admin, Mailbox Account: admin@test.com).
+    * **Cloud SOAR User JWT Token**. Enter the previously copied token.
+    * **Email Fetch Type (Daemon)**.
+        * **Unseen/Unread**. Only fetch the mails which are currently UNSEEN or UNREAD.
+        * **Fetch From Latest CSOAR Mail**. Fetch all mails from the mail server which are not yet stored on Cloud SOAR. For the first time it will fetch UNSEEN mails for the second run/execution. Pre-Filtering options can be used to pre-filter emails in the mail server. Only pre-filtered emails are imported and analyzed by Cloud SOAR.
+        * Email Fetch Type and below other filters will be combined with **AND** operator.
 
-         Pre-filtered options are also available to filter as **NOT** condition:
-         * **Not From**
-         * **Not To**
-         * **Not Subject**
-         * **Not Text Body**
-         * **Not Header**
-         * **Header Field Name To Search in Header**
+        * Pre-filtered options:
+            * **From**. You can filter email using From or even you can use full Domain name. For example: sumologic.com, sales@sumologic.com. Based on the above example, only the mails coming from Sumo Logic domain or sales@sumologic.com will be fetched. This field accepts multiple values separated by comma. Multiple values will be combined with OR operator.
+            * **To**. Indicate the receiver of the mail, this filter works the same as From filter. This field accepts multiple values separated by comma. Multiple values will be combined with OR operator.
+            * **Subject**. Fetch mails based on Subject. This field accepts multiple values separated by comma. Multiple values will be combined with OR operator.
+            * **Text Body**. Based on text search inside the body even it will work for attachment name. This field accepts multiple values separated by comma. Multiple values will be combined with OR operator.
+            * **Header**. Header string to be searched based on the below filter.
+            * **Header Field Name To Search in Header**. A list from which you can choose a header element where to search the provided value in the previous field.
 
-         Similarly to the other pre-filter, but the email elements matching the provided conditions will not be fetched.
+          Pre-filtered options are also available to filter as **NOT** condition:
+            * **Not From**
+            * **Not To**
+            * **Not Subject**
+            * **Not Text Body**
+            * **Not Header**
+            * **Header Field Name To Search in Header**
 
-         As specified, all filters will be combined with **AND** operator.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-6.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
-         
+          Similarly to the other pre-filter, but the email elements matching the provided conditions will not be fetched.
+
+          As specified, all filters will be combined with **AND** operator.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-6.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
+
 1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-7.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
 1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-8.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
 1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-9.png')} style={{border:'1px solid gray'}} alt="imap" width="400"/>
@@ -101,20 +102,20 @@ Follow these steps:
 
 ### Create an Incident associated with mail
 
-Once IMAP is configured you have the possibility to create an Incident associated with mail. 
+Once IMAP is configured you have the possibility to create an Incident associated with mail.
 
 1. Create a new playbook or you can update the existing playbook.
 1. Add Email To Incident action to the playbook.
-Cloud SOAR Email ID: choose the ID that you created earlier (i.e. CSOAR Email ID from Incident fields).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-19.png')} style={{border:'1px solid gray'}} alt="imap" width="600"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-20.png')} style={{border:'1px solid gray'}} alt="imap" width="800"/>
+   Cloud SOAR Email ID: choose the ID that you created earlier (i.e. CSOAR Email ID from Incident fields).<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-19.png')} style={{border:'1px solid gray'}} alt="imap" width="600"/><br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-20.png')} style={{border:'1px solid gray'}} alt="imap" width="800"/>
 1. Now let's expand the playbook by adding the ability to save attachments in the incident. Create a new node of type Action and set the fields as you can see in the following picture.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-21.png')} style={{border:'1px solid gray'}} alt="imap" width="600"/>
 1. Now we need a new node of type Condition. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-22.png')} style={{border:'1px solid gray'}} alt="imap" width="600"/>
 1. Finally add another Action as you can see. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-23.png')} style={{border:'1px solid gray'}} alt="imap" width="600"/>
 1. Below you can see the final playbook.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-24.png')} style={{border:'1px solid gray'}} alt="imap" width="600"/>
-1. Another scenario that could be used with the IMAP mail daemon is to analyze an EML or MSG attachment that is contained in the mail without saving the attachment in the incident. Users can just extract the email with a given email ID. 
+1. Another scenario that could be used with the IMAP mail daemon is to analyze an EML or MSG attachment that is contained in the mail without saving the attachment in the incident. Users can just extract the email with a given email ID.
    The following example demonstrates that in an incident:
-      * Use the same action Add Email to Incident as seen before. This action is used to attach the email to the current incident.
-      * Then create Analyze EML MSG action (Mail Tools) .  
-      * Select what should be parsed from the EML or MSG attachments.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-25.png')} style={{border:'1px solid gray'}} alt="imap" width="600"/>
+    * Use the same action Add Email to Incident as seen before. This action is used to attach the email to the current incident.
+    * Then create Analyze EML MSG action (Mail Tools) .
+    * Select what should be parsed from the EML or MSG attachments.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-25.png')} style={{border:'1px solid gray'}} alt="imap" width="600"/>
 1. Below you can see the final playbook.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/imap/imap-26.png')} style={{border:'1px solid gray'}} alt="imap" width="600"/>
 
 ### Create an Incident Template
@@ -165,22 +166,22 @@ The final playbook looks like this:<br/><img src={useBaseUrl('/img/platform-serv
 * **DateTime Regex Example (2021-01-28 11:21:04)**: \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}
 * **Email Attachments Filename (Email Header Regex Action)**: filename: (.\*?),,
 * Common credit card vendor Regex:
-	+ **MasterCard**: (?:5[1-5][0-9]{14}|2(?:22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))
-	+ **Visa Mastercard**: (?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})
-	+ **Amex Card**: 3[47][0-9]{13}
-	+ **BCGlobal**: (6541|6556)[0-9]{12}
-	+ **Carte Blanche Card**: 389[0-9]{11}
-	+ **Diners Club Card**: 3(?:0[0-5]|[68][0-9])[0-9]{11}
-	+ **Discover Card**: 65[4-9][0-9]{13}|64[4-9][0-9]{13}|6011[0-9]{12}|(622(?:12[6-9]|1[3-9][0-9]|[2-8][0-9][0-9]|9[01][0-9]|92[0-5])[0-9]{10})
-	+ **Insta Payment Card**: 63[7-9][0-9]{13}
-	+ **JCB Card**: (?:2131|1800|35\d{3})\d{11}
-	+ **KoreanLocalCard**: 9[0-9]{15}
-	+ **Laser Card**: (6304|6706|6709|6771)[0-9]{12,15}
-	+ **Maestro Card**: (5018|5020|5038|6304|6759|6761|6763)[0-9]{8,15}
-	+ **Solo Card**: (6334|6767)[0-9]{12}|(6334|6767)[0-9]{14}|(6334|6767)[0-9]{15}
-	+ **Switch Card**: (4903|4905|4911|4936|6333|6759)[0-9]{12}|(4903|4905|4911|4936|6333|6759)[0-9]{14}|(4903|4905|4911|4936|6333|6759)[0-9]{15}|564182[0-9]{10}|564182[0-9]{12}|564182[0-9]{13}|633110[0-9]{10}|633110[0-9]{12}|633110[0-9]{13}
-	+ **Union Pay Card**: (62[0-9]{14,17})
-	+ **Visa Card**: 4[0-9]{12}(?:[0-9]{3})?
+    + **MasterCard**: (?:5[1-5][0-9]{14}|2(?:22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))
+    + **Visa Mastercard**: (?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})
+    + **Amex Card**: 3[47][0-9]{13}
+    + **BCGlobal**: (6541|6556)[0-9]{12}
+    + **Carte Blanche Card**: 389[0-9]{11}
+    + **Diners Club Card**: 3(?:0[0-5]|[68][0-9])[0-9]{11}
+    + **Discover Card**: 65[4-9][0-9]{13}|64[4-9][0-9]{13}|6011[0-9]{12}|(622(?:12[6-9]|1[3-9][0-9]|[2-8][0-9][0-9]|9[01][0-9]|92[0-5])[0-9]{10})
+    + **Insta Payment Card**: 63[7-9][0-9]{13}
+    + **JCB Card**: (?:2131|1800|35\d{3})\d{11}
+    + **KoreanLocalCard**: 9[0-9]{15}
+    + **Laser Card**: (6304|6706|6709|6771)[0-9]{12,15}
+    + **Maestro Card**: (5018|5020|5038|6304|6759|6761|6763)[0-9]{8,15}
+    + **Solo Card**: (6334|6767)[0-9]{12}|(6334|6767)[0-9]{14}|(6334|6767)[0-9]{15}
+    + **Switch Card**: (4903|4905|4911|4936|6333|6759)[0-9]{12}|(4903|4905|4911|4936|6333|6759)[0-9]{14}|(4903|4905|4911|4936|6333|6759)[0-9]{15}|564182[0-9]{10}|564182[0-9]{12}|564182[0-9]{13}|633110[0-9]{10}|633110[0-9]{12}|633110[0-9]{13}
+    + **Union Pay Card**: (62[0-9]{14,17})
+    + **Visa Card**: 4[0-9]{12}(?:[0-9]{3})?
 
 ## Change Log
 
@@ -189,3 +190,4 @@ The final playbook looks like this:<br/><img src={useBaseUrl('/img/platform-serv
 * March 8, 2022 - Description, Guide
 * May 5, 2022 - Added new filter options for Incoming Mail Daemon
 * October 2, 2023 (v1.2) - Integration Updated
+* March 4, 2024 (v1.3) - Updated code for compatibility with Python 3.12

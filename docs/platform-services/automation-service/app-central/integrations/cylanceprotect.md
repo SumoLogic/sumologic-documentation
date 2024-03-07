@@ -1,14 +1,15 @@
 ---
 title: CylanceProtect
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cylanceprotect.png')} alt="cylanceprotect" width="100"/>
 
-***Version: 1.2  
-Updated: Nov 03, 2023***
+***Version: 1.3  
+Updated: Mar 4, 2024***
 
 Query CylanceProtect, enrich data and contain threats through devices, zones, policies, global lists, and more.
 
@@ -37,7 +38,7 @@ To retrieve the API Credentials, refer to the following [guide](https://docs.bla
 
 API URL:
 
-The Auth API will be accessed via the following base endpoint: 
+The Auth API will be accessed via the following base endpoint:
 
 North America: *https://protectapi.cylance.com/*
 
@@ -56,15 +57,16 @@ All Other Regions: *https://protectapi-{region-code}.cylance.com/*
 * February 6, 2019 - First upload
 * September 6, 2019 - Added link to Cylance Protect external library
 * November 3, 2023 (v1.2)
-	+ Updated the integration with Environmental Variables
-	+ Improved error handling
-	+ Removed leading/trailing spaces
-	+ Code Refactored
-	+ The following actions has been renamed
-		- Get Device Threats *to* List Device Threats
-		- Get Devices *to* List Devices
-		- Get Policies *to* List Policies
-		- Get Threat Devices *to* List Threat Devices
-		- Get Threats *to* List Threats
-		- Get Zone Devices *to* Get Device Zone
-		- Get Zones *to* List Zones
+    + Updated the integration with Environmental Variables
+    + Improved error handling
+    + Removed leading/trailing spaces
+    + Code Refactored
+    + The following actions has been renamed
+        - Get Device Threats *to* List Device Threats
+        - Get Devices *to* List Devices
+        - Get Policies *to* List Policies
+        - Get Threat Devices *to* List Threat Devices
+        - Get Threats *to* List Threats
+        - Get Zone Devices *to* Get Device Zone
+        - Get Zones *to* List Zones
+* March 4, 2024 (v1.3) - Updated code for compatibility with Python 3.12
