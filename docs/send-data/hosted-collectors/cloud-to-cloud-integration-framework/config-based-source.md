@@ -170,7 +170,9 @@ Select this authentication option if the vendor API does not require any form of
   The source follows the [JSON Path standard defined here](https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html).
 
   **Logs JPath**: Provide the JPath to the location of the array of individual logs you want to ingest into Sumo Logic starting at the root of the JSON response. The destination of this path must be an array.  
-  **Timestamp JPath**: Provide the JPath to the log timestamp, starting within an individual log.
+  
+  **Timestamp JPath**: Provide the JPath to the log timestamp, starting within an individual log. The source will use current time if this field is not populated.
+  
   **Timestamp Format**: Provide the timestamp format the logs use in the Go programming language format. [See our time formatting section for more details](#timestamp-formatting).
 
   **JSON with JPath Examples**
