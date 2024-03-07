@@ -92,13 +92,17 @@ Select this authentication option if the vendor API does not require any form of
   <div>
   Configure how the HTTP requests are created for your source.
 
+  :::danger
+  Please do **NOT** include any sensitive information such as authentication secrets in this section. Please use the authentication section for any sensitive information such as keys and passwords.
+  :::
+
   #### Method
   The HTTP method used in the request. The supported values are: `GET` and `POST` with `GET` as the default.
 
   #### Endpoint Url
   The endpoint URL should include the `https://` protocol, vendor domain, and the full path to the API endpoint hosting the log data. It should **NOT** include any URL parameters as that information can be included in a dedicated section below.
   
-  | Valid Examples                                  |
+  | Valid Examples                           |
   |------------------------------------------|
   | `https://acme.org/api/v1/auditLogs`      |
   | `https://api.acme.org/v2/securityEvents` |
@@ -109,10 +113,8 @@ Select this authentication option if the vendor API does not require any form of
   - `https://acme.org/api/v1/auditLogs?limit=100` Do not include URL parameters      
 
   #### Request Headers
-  Include any HTTP request headers required by the vendor API. The key names are static text, but the values can access our template feature to make them dynamic. 
+  Include any HTTP request headers required by the vendor API. The key names are static text, but the values can access our [template feature](#template-dynamic-values) to make them dynamic. 
   
-  Please do **NOT** include any sensitive information such as authentication secrets in this section.
-
   | Example Header Key | Example Header Value         |
   |--------------------|------------------------------|
   | `Accept`           | `application/json`           |
@@ -121,9 +123,7 @@ Select this authentication option if the vendor API does not require any form of
 
 
   #### Request Parameters
-  Include any URL query parameters required by the vendor API. The key names are static text, but the values can access our template feature to make them dynamic. 
-  
-  Please do **NOT** include any sensitive information such as authentication secrets in this section.
+  Include any URL query parameters required by the vendor API. The key names are static text, but the values can access our [template feature](#template-dynamic-values) to make them dynamic. 
 
   | Example Header Key | Example Header Value                           |
   |--------------------|------------------------------------------------|
@@ -135,7 +135,7 @@ Select this authentication option if the vendor API does not require any form of
   `?limit=100&since=2024-02-01T08:15:00Z&until=2024-02-01T08:20:00Z`
 
   #### Request Body
-  This is optional and only used if the HTTP `POST` method is configured above. You can use this field to include any information in the HTTP request body. The data included in this field can access our template feature.
+  This is optional and only used if the HTTP `POST` method is configured above. You can use this field to include any information in the HTTP request body. The data included in this field can access our [template feature](#template-dynamic-values).
 
   </div>
 </details>
@@ -145,9 +145,9 @@ Select this authentication option if the vendor API does not require any form of
   The source needs a way to keep track of it's progress to prevent data loss and duplication. Select the type of progression used and configure the details.
 
   #### Time Window
-  The source will provide both a start and end timestamp for you to dynamically use in your HTTP request. The window will only move forward if no errors are raised when collecting logs from the vendor API for the current window.
+  The source will provide both a start and end timestamp for you to [dynamically](#template-dynamic-values) use in your HTTP request. The window will only move forward if no errors are raised when collecting logs from the vendor API for the current window.
   
-  Use the template feature to include the window start and end timestamps within your HTTP request.
+  Use the [template feature](#template-dynamic-values) to include the window start and end timestamps within your HTTP request.
   
   The start time is inclusive and the end time is exclusive as that is the behavior of most APIs.
 
@@ -313,6 +313,90 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | pollingInterval            | String      | Yes      | `"5m"`            | Set how frequently to poll for new data. It must be between 5 minutes and 48 hours.                                                                                                                                                      | `"5m"`                                                                                                                                                                                                                                                    |
 
 ## Template Dynamic Values
+
+The source has the ability to template in dynamic text into the values of certain fields providing flexibility in crafting the HTTP requests sent to the vendor API.
+
+The following fields values are allowed to access dynamic text from the template functions described in this section:
+
+- HTTP Request Header Values
+- HTTP Request Parameter Values
+- HTTP Request Body
+
+To start using the template with one of the supported config values listed above, you will need to enclose the template logic inside double curly braces `{{}}`. Any text outside these double curly braces will be treated as normal unmodified text.
+
+Here are some syntax examples calling functions with and without arguments:
+
+```text title="Template Syntax Examples"
+{{ .FunctionName }}
+{{ .FunctionName "string argument 1" }}
+{{ .FunctionName "string argument 1" "string argument 2" }}
+```
+
+**Available Template Functions**
+- [WindowStartUTC](#windowstartutc)
+- [WindowStartLocation](#windowstartlocation)
+- [WindowEndUTC](#windowendutc)
+- [WindowEndLocation](#windowendlocation)
+ 
+### WindowStartUTC
+This function will template in the `start timestamp` of the source window when source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
+
+The syntax for this function requires a timestamp format as a single argument. Please refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+
+```{{ .WindowStartUTC "<timestamp format>" }}```
+
+| Template Example                                                    | Output                                 |
+|---------------------------------------------------------------------|----------------------------------------|
+| `{{ .WindowStartUTC "2006-01-02T15:04:05Z" }}`                      | `2024-03-07T20:15:56Z`                 |
+| `{{ .WindowStartUTC "2006-01-02T15:04:05.999999Z07:00" }}`          | `2024-03-07T20:15:56.905571Z`          |
+| `greaterThan:{{ .WindowStartUTC "2006-01-02T15:04:05.999Z07:00" }}` | `greaterThan:2024-03-07T20:15:56.905Z` |
+
+### WindowStartLocation
+This function is the same as [WindowStartUTC](#windowstartutc) except it has an additional argument to specify the timezone location.
+
+:::note
+We strongly recommend you always use `WindowStartUTC` instead of `WindowStartLocation`. Most vendors support and expect UTC timestamps when using their APIs.
+:::
+
+Please refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument and refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+
+```{{ .WindowStartLocation "<time zone location>" "<timestamp format>" }}```
+
+| Template Example                                                                         | Output                                      |
+|------------------------------------------------------------------------------------------|---------------------------------------------|
+| `{{ .WindowStartLocation "US/Eastern" "2006-01-02T15:04:05Z" }}`                         | `2024-03-07T15:15:56-05:00`                 |
+| `{{ .WindowStartLocation "US/Pacific" "2006-01-02T15:04:05.999999Z07:00" }}`             | `2024-03-07T12:15:56.905-08:00`             |
+| `greaterThan:{{ .WindowStartLocation "Europe/Berlin" "2006-01-02T15:04:05.999Z07:00" }}` | `greaterThan:2024-03-07T21:15:56.905+01:00` |
+
+### WindowEndUTC
+This function will template in the `end timestamp` of the source window when source is configured to use the `Time Window` progression. The timestamp will always use `UTC` time and never adjust for a specific timezone.
+
+The syntax for this function requires a timestamp format as a single argument. Please refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+
+```{{ .WindowEndUTC "<timestamp format>" }}```
+
+| Template Example                                               | Output                              |
+|----------------------------------------------------------------|-------------------------------------|
+| `{{ .WindowEndUTC "2006-01-02T15:04:05Z" }}`                   | `2024-03-07T20:15:56Z`              |
+| `{{ .WindowEndUTC "2006-01-02T15:04:05.999999Z07:00" }}`       | `2024-03-07T20:15:56.905571Z`       |
+| `lessThan:{{ .WindowEndUTC "2006-01-02T15:04:05.999Z07:00" }}` | `lessThan:2024-03-07T20:15:56.905Z` |
+
+### WindowEndLocation
+This function is the same as [WindowEndUTC](#windowendutc) except it has an additional argument to specify the timezone location.
+
+:::note
+We strongly recommend you always use `WindowEndUTC` instead of `WindowEndLocation`. Most vendors support and expect UTC timestamps when using their APIs.
+:::
+
+Please refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument and refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
+
+```{{ .WindowEndLocation "<time zone location>" "<timestamp format>" }}```
+
+| Template Example                                                                    | Output                                   |
+|-------------------------------------------------------------------------------------|------------------------------------------|
+| `{{ .WindowEndLocation "US/Eastern" "2006-01-02T15:04:05Z" }}`                      | `2024-03-07T15:15:56-05:00`              |
+| `{{ .WindowEndLocation "US/Pacific" "2006-01-02T15:04:05.999999Z07:00" }}`          | `2024-03-07T12:15:56.905-08:00`          |
+| `lessThan:{{ .WindowEndLocation "Europe/Berlin" "2006-01-02T15:04:05.999Z07:00" }}` | `lessThan:2024-03-07T21:15:56.905+01:00` |
 
 
 ## Timestamp Formatting
