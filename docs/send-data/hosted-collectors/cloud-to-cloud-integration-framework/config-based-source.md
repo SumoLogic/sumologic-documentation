@@ -354,7 +354,7 @@ The syntax for this function requires a timestamp format as a single argument. P
 ### WindowStartLocation
 This function is the same as [WindowStartUTC](#windowstartutc) except it has an additional argument to specify the timezone location.
 
-:::note
+:::sumo[Best Practice]
 We strongly recommend you always use `WindowStartUTC` instead of `WindowStartLocation`. Most vendors support and expect UTC timestamps when using their APIs.
 :::
 
@@ -384,7 +384,7 @@ The syntax for this function requires a timestamp format as a single argument. P
 ### WindowEndLocation
 This function is the same as [WindowEndUTC](#windowendutc) except it has an additional argument to specify the timezone location.
 
-:::note
+:::sumo[Best Practice]
 We strongly recommend you always use `WindowEndUTC` instead of `WindowEndLocation`. Most vendors support and expect UTC timestamps when using their APIs.
 :::
 
