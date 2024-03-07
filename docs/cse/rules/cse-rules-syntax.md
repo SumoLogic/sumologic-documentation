@@ -5,15 +5,13 @@ sidebar_label: Rules Syntax
 description: Learn about the functions you can use when writing Cloud SIEM Rules.
 ---
 
-This topic describes commonly used Cloud SIEM rules language functions. 
-
-Many of these functions are similar to those used in search queries. For more information, see [Search Query Language](/docs/search/search-query-language/). 
+This topic describes commonly used Cloud SIEM rules language functions. Rules language functions are used in Cloud SIEM rule expressions. For information about rules and rule expressions, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules).
 
 ## Sumo Logic core platform literals supported in Cloud SIEM
 
-The following Sumo Logic core platform literals are supported in Cloud SIEM. For more information about these literals, see [Field Expressions](/docs/search/search-query-language/field-expressions/).
+The following Sumo Logic core platform literals are supported in Cloud SIEM rule expressions. For more information about these literals, see [Field Expressions](/docs/search/search-query-language/field-expressions/).
 
-* [Time-based suffixed literals](/docs/search/search-query-language/field-expressions/#time-suffix)(millisecond-based. i.e., 1s == 1000)
+* [Time-based suffixed literals](/docs/search/search-query-language/field-expressions/#time-suffix) (millisecond-based. i.e., 1s == 1000)
 
   * ns (nanosecond)
   * us (microsecond)
@@ -47,7 +45,9 @@ The following Sumo Logic core platform literals are supported in Cloud SIEM. For
 
 ## Rules language functions
 
-Rules language functions are used in Cloud SIEM rule expressions. For information about rules and rule expressions, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules).
+Following are rules language functions commonly used in Cloud SIEM rule expressions. 
+
+Many of these functions are similar to those used in search queries. For more information, see [Search Query Language](/docs/search/search-query-language/). 
 
 ### &&
 
