@@ -371,7 +371,9 @@ We strongly recommend you always use `WindowStartUTC` instead of `WindowStartLoc
 
 Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument and refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
 
-```{{ .WindowStartLocation "<time zone location>" "<timestamp format>" }}```
+```sh
+{{ .WindowStartLocation "<time zone location>" "<timestamp format>" }}
+```
 
 | Template Example                                                                         | Output                                      |
 |:------------------------------------------------------------------------------------------|:---------------------------------------------|
@@ -384,7 +386,7 @@ This function will template in the `end timestamp` of the source window when sou
 
 The syntax for this function requires a timestamp format as a single argument. Refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
 
-```
+```sh
 {{ .WindowEndUTC "<timestamp format>" }}
 ```
 
@@ -403,7 +405,7 @@ We strongly recommend you always use `WindowEndUTC` instead of `WindowEndLocatio
 
 Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for specifying the time zone in the first argument and refer to the [Timestamp Formatting](#timestamp-formatting) section for more information on how to format the timestamp.
 
-```
+```sh
 {{ .WindowEndLocation "<time zone location>" "<timestamp format>" }}
 ```
 
