@@ -412,6 +412,7 @@ Please refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_dat
 
 The source uses the the [Go programming language timestamp formatting](https://go.dev/src/time/format.go). See the table below for references and examples.
 
+### Format Reference
   | Date Format                                 | Reference Value                                                       |
   |---------------------------------------------|-----------------------------------------------------------------------|
   | Year                                        | `2006`                                                                |
@@ -439,6 +440,7 @@ The source uses the the [Go programming language timestamp formatting](https://g
   | Timezone Offset wit Colon                   | `-07:00`                                                              |
   | Timezone Abbreviated Name                   | `MST`                                                                 |
 
+### Format Examples
   | Standard              | Timestamp in Log                 | Timestamp Format                      |
   |-----------------------|----------------------------------|---------------------------------------|
   | RFC 3339              | `2024-02-01T16:07:57Z`           | `2006-01-02T15:04:05Z07:00`           |
