@@ -30,13 +30,22 @@ Follow the sections below to gather the required vendor information and setup th
 
 ## Gather Vendor Requirements
 
-1. Identify a vendor who provides the data that should be ingested.
-1. Follow their documentation to obtain the required configuration:
-   - Authentication
-   - Endpoint specific request information
-   - Rate limit
-   - Location of the log data from the API response
-   - Pagination
+There is various information you will need to gather from the third party vendor in order to configure collecting log data from their API using this source. Our goal is to support many of the common ways APIs expose functionality to retrieve log data, but we recognize we can't support every feature. We recommend gathering all of the requirements listed below. 
+
+If this source is not able to be configured to support your vendor API, we can either take requests to add additional features to support it or take a request to build a dedicated source integration if needed. 
+
+1. Locate the vendors API docs describing the API.
+1. Identify how the API implements authentication.
+1. Identify one API endpoint to collect logs from. You will need to create multiple Sumo sources if you wish to collect log data from more than one endpoint.
+   - What is the endpoint URL?
+   - Are there any required HTTP Headers?
+   - What URL parameters are available to use? Which ones track progression such as ingest timestamps?
+   - How is pagination implemented? 
+   - Where in the response body is the array of logs to ingest?
+   - Are there timestamps within the response array of logs indicating the individual log timestamp?
+1. Identify API rate limits
+   - Does the API specify a rate limit?
+   - Is bursting allowed?
 
 ## Source Configuration
 
