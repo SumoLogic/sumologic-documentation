@@ -31,7 +31,7 @@ This integration enables user management and secure app access with MFA and even
 
 * March 1, 2021 - First upload
 * June 15, 2023 (v1.2)- Updated the integration with Environmental Variables
-* March 7, 2024 (v1.3)
+* March 7, 2024 (v1.4)
     * New actions:
         * List Enrolled Authentication Factors
         * Remove a Factor
