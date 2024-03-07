@@ -7,7 +7,7 @@ description: Learn how to create and edit a Partition in an Index.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::sumo Important
-Configurations related to data tier is not relavant for the customers with Flex package.
+Configurations related to data tier is not relevant for the customers with Flex package.
 :::
 
 Partitions provide three primary functions:
