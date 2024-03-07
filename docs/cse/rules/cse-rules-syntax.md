@@ -5,17 +5,59 @@ sidebar_label: Rules Syntax
 description: Learn about the functions you can use when writing Cloud SIEM Rules.
 ---
 
-This topic describes commonly used Cloud SIEM rules language functions. Rules language functions are used in Cloud SIEM rule expressions. For information about rules and rule expressions, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules).
+This topic describes commonly used Cloud SIEM rules language functions. 
 
-## &&
+Many of these functions are similar to those used in search queries. For more information, see [Search Query Language](/docs/search/search-query-language/). 
+
+## Sumo Logic core platform literals supported in Cloud SIEM
+
+The following Sumo Logic core platform literals are supported in Cloud SIEM. For more information about these literals, see [Field Expressions](/docs/search/search-query-language/field-expressions/).
+
+* [Time-based suffixed literals](/docs/search/search-query-language/field-expressions/#time-suffix)(millisecond-based. i.e., 1s == 1000)
+
+  * ns (nanosecond)
+  * us (microsecond)
+  * ms (millisecond)
+  * s (second)
+  * m (minute)
+  * h (hour)
+  * d (day)
+  * w (week)
+
+* [Base-1000 suffixed literals](/docs/search/search-query-language/field-expressions/#size-suffix) 
+
+  * k or K (1,000)
+  * M (1,000,000)
+  * G or B (1,000,000,000)
+  * T (1,000,000,000,000)
+  * P (1,000,000,000,000,000)
+
+* [Base-1024 suffixed literals](/docs/search/search-query-language/field-expressions/#size-suffix) 
+
+  * Ki (1,024)
+  * Mi (1,048,576)
+  * Gi (1,073,741,824)
+  * Ti (1,099,511,627,776)
+  * Pi (1,125,899,906,842,624)
+
+* [Escaped double quote are supported](/docs/search/search-query-language/field-expressions/#string-expressions-and-quotes)
+
+  * For example, `"\"foo\""` is the literal `"foo"`
+
+
+## Rules language functions
+
+Rules language functions are used in Cloud SIEM rule expressions. For information about rules and rule expressions, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules).
+
+### &&
 
 The double ampersand (&&) operator is equivalent to a logical AND operator.
 
-## \|\|  
+### \|\|  
 
 A logical OR. 
 
-## !
+### !
 
 The exclamation point (!) function is equivalent to a logical NOT operator.
 
@@ -29,7 +71,7 @@ The exclamation point (!) function is equivalent to a logical NOT operator.
 
    `!(null)`
 
-## -
+### -
 
 The dash (-) function is a subtraction operator. 
 
@@ -39,7 +81,7 @@ The following expression returns the difference between the length of the `dns_q
 
 `(length(dns_query) - length(dns_queryDomain)) `
 
-## /
+### /
 
 The forward slash (/) operator performs floating-point division between two expressions. 
 
@@ -53,7 +95,7 @@ The following expression divides `error_count` by `user_count`:
 
 `error_count / user_count`
 
-## /*  */
+### /*  */
 
 The forward slash and asterisk characters (/*  */) comment out lines.
 
@@ -67,7 +109,7 @@ For Cloud SIEM rules, two forward slashes (//) are *not* supported for commentin
 
 `/* This is a comment. */`
 
-## `<`
+### `<`
 
 The less than (`<`) character returns “true” if the expression is less than the other expression.
 
@@ -93,7 +135,7 @@ The less than (`<`) character returns “true” if the expression is less than 
 
    `null < null`
 
-## `<=`
+### `<=`
 
 The is less than or equal to (`<=`) character returns true if the expression is less than or equal to the other expression.
 
@@ -119,7 +161,7 @@ The is less than or equal to (`<=`) character returns true if the expression is 
 
    `null <= null`
 
-## =
+### =
 
 The equal to (=) function returns “true” if the expressions are equal, or "false" if either expression is null.  
 
@@ -145,7 +187,7 @@ The equal to (=) function returns “true” if the expressions are equal, or 
 
    `null = null`
 
-## ==
+### ==
 
 The double equal sign (==) function returns “true” if the two expressions are equal. The two expressions must be the same type, and must be a type that can be used in an equality comparison. For complex types such as array and struct, the data types of fields must be orderable.
 
@@ -153,7 +195,7 @@ The double equal sign (==) function returns “true” if the two expressions ar
 
 `expr1 == expr2`
 
-## >
+### >
 
 The greater than (>) function returns “true” if one expression is greater than the other expression.
 
@@ -179,7 +221,7 @@ The greater than (>) function returns “true” if one expression is greater th
 
    `null > null`  
  
-## >=
+### >=
 
 The greater than or equal to (>=) function returns “true” if one expression is greater than or equal to another expression.
 
@@ -205,7 +247,7 @@ The greater than or equal to (>=) function returns “true” if one expression 
 
    `null >= null`
 
-## +
+### +
 
 The plus sign (+) function adds the value of two or more expressions.
 
@@ -219,7 +261,7 @@ The following example adds the value of the `errorCount_x`  field to the value 
 
 `errorCount_x + errorCount_y`
 
-## \*
+### \*
 
 The asterisk (\*) returns the  product  of two expressions.
 
@@ -227,7 +269,7 @@ The asterisk (\*) returns the  product  of two expressions.
 
 `expr1 *  expr2`
 
-## abs
+### abs
 
 Calculates the absolute value of the supplied argument.
 
@@ -241,7 +283,7 @@ The following expression returns "1.5":
 
 `abs(-1.5)`
 
-## acos
+### acos
 
 Returns the inverse cosine of the supplied argument.
 
@@ -255,7 +297,7 @@ The following expression returns "0":
 
 `acos(1`
 
-## anyHttpHeaderMatches
+### anyHttpHeaderMatches
 
 Checks if any HTTP header in the supplied map matches a given regex. 
 
@@ -267,7 +309,7 @@ Checks if any HTTP header in the supplied map matches a given regex. 
 
 `anyHttpHeaderMatches(request_headers, 'sumo logic')`  
  
-## asciiToHex
+### asciiToHex
 
 Casts an ASCII string to a hexadecimal string. This is equivalent to `toHex` in the Cloud SIEM rules syntax.
 
@@ -276,7 +318,7 @@ Casts an ASCII string to a hexadecimal string. This is equivalent to `toHex` in 
 * `asciiToHex(<ascii_string>)`
 * `asciiToHex(<ascii_field>)`
 
-## asin
+### asin
 
 Returns the inverse sine of the supplied argument.
 
@@ -290,7 +332,7 @@ The following example returns "1.5707963267948966":
 
 `asin(1)`
 
-## atan
+### atan
 
 Returns the inverse tangent of the supplied argument.
 
@@ -304,7 +346,7 @@ The following expression returns the inverse tangent of 1, which is "0.78540":
 
 `atan(1)`
 
-## atan2
+### atan2
 
 Returns the four-quadrant inverse tangent of the two arguments supplied.
 
@@ -318,7 +360,7 @@ The following expression returns "3.141592653589793" (pi):
 
 `atan2(0, -1)`
 
-## array_contains
+### array_contains
 
 Returns “true” if a specified array contains a particular value. 
 
@@ -367,7 +409,7 @@ This example checks to see if the `listMatches` field contains the value “vul
 
 `array_contains(listMatches, 'vuln_scanners')`
 
-## base64Decode
+### base64Decode
 
 Casts a `base64` string to an ASCII string, encoded as UTF-8. This is equivalent to `fromBase64` in the Cloud SIEM rules syntax.
 
@@ -377,7 +419,7 @@ Casts a `base64` string to an ASCII string, encoded as UTF-8. This is equivalent
 
 `base64Decode(<string_field>)`
 
-## base64Encode 
+### base64Encode 
 
 Takes an ASCII string and converts it to a base64 string. This is equivalent to `toBase64` in the Cloud SIEM rules syntax.
 
@@ -387,7 +429,7 @@ Takes an ASCII string and converts it to a base64 string. This is equivalent to 
 
 `base64Encode(<string_field>)`
 
-## between
+### between
 
 Returns “true” if the value of an expression falls within a specified range. 
 
@@ -413,7 +455,7 @@ Returns “true” if the value of an expression falls within a specified range.
 
    `10 BETWEEN 1 and null`
 
-## cbrt
+### cbrt
 
 Returns the cube root value of the argument.
 
@@ -427,7 +469,7 @@ The following expression returns "2":
 
 `cbrt(8)`
 
-## ceil
+### ceil
 
 The ceil operator rounds up a field value to the nearest integer value.
 
@@ -445,7 +487,7 @@ The ceil operator rounds up a field value to the nearest integer value.
 
    `ceil(-1.5)`
 
-## compareCIDRPrefix
+### compareCIDRPrefix
 
 Compares two IPv4 addresses and returns true if the network prefixes match.
 
@@ -459,7 +501,7 @@ The following expression returns "true":
 
 `compareCIDRPprefix("10.10.1.35", "10.10.1.100", "24")`
 
-## concat
+### concat
 
 Allows you to concatenate or join multiple strings, numbers, and fields into a single string.
 
@@ -473,7 +515,7 @@ The following example returns "1/1/2020":
 
 `concat(1, "/", 1, "/", 2020)`
 
-## contains
+### contains
 
 Compares string values of two fields and returns a boolean result based on whether the second field's value exists in the first.
 
@@ -485,7 +527,7 @@ Compares string values of two fields and returns a boolean result based on wheth
 Sumo Logic core platform supports additional two forms of `contains` syntax. Cloud SIEM supports only the form shown here. 
 :::
 
-## cos
+### cos
 
 Returns the cosine of the argument in radians.
 
@@ -499,7 +541,7 @@ The following expression returns "0.5403023058681398":
 
 `cos(1)`
 
-## cosh
+### cosh
 
 Returns the hyperbolic cosine of the argument in radians.
 
@@ -513,7 +555,7 @@ The following expression returns "1.54308":
 
 `cosh(1)`
 
-## decToHex
+### decToHex
 
 Converts a long value of 16 or fewer digits to a hexadecimal string using Two's Complement for negative values.
 
@@ -527,7 +569,7 @@ The following expression returns "1337":
 
 `decToHex(“4919”)`
 
-## exp
+### exp
 
 Returns Euler's number e raised to the power of x.
 
@@ -541,7 +583,7 @@ The following expression returns "2.7182818284590455":
 
 `exp(1)`
 
-## expm1
+### expm1
 
 Returns value of x in exp(x)-1, compensating for the roundoff in exp(x).
 
@@ -555,7 +597,7 @@ The following expression returns "0.10517091807564763":
 
 `expm1(0.1)`
 
-## floor
+### floor
 
 Rounds down to the largest previous integer value. Returns the largest integer not greater than x. This is equivalent to `int` in the Cloud SIEM rules syntax.
 
@@ -568,7 +610,7 @@ Rounds down to the largest previous integer value. Returns the largest integer n
 * `floor(1.5) as v`   Sets `v` to the value “1”
 * `floor(-1.5) as v `   Sets `v` to the value “-2”
 
-## getCIDRPrefix
+### getCIDRPrefix
 
 Extracts the network prefix from an IPv4 address. 
 
@@ -582,7 +624,7 @@ The following expression returns "10.10.1.0":
 
 `getCIDRPrefix("10.10.1.35", "24")`
 
-## haversine
+### haversine
 
 Returns the distance between latitude and longitude values of two coordinates in kilometers.
 
@@ -596,7 +638,7 @@ The following expression returns "3512.71":
 
 `haversine(39.04380, -77.48790, 45.73723, -119.81143)`
 
-## hexToAscii 
+### hexToAscii 
 
 Converts a hexadecimal string to an ASCII string. This is equivalent to fromHex in the Cloud SIEM rules syntax.
 
@@ -605,7 +647,7 @@ Converts a hexadecimal string to an ASCII string. This is equivalent to fromHex 
 * `hexToAscii(<hexadecimal_field>)`
 * `hexToAscii("<hexadecimal string>")`
 
-## hexToDec
+### hexToDec
 
 Converts a hexadecimal string of 16 or fewer characters to a long data type using Two's Complement for negative values.
 
@@ -619,7 +661,7 @@ The following expression returns "4919":
 
 `hexToDec("0000000000001337")`
 
-## hypot
+### hypot
 
 Returns the square root of the sum of an array of squares.
 
@@ -633,7 +675,7 @@ The following expression returns "5":
 
 `hypot(3, 4)`
 
-## if
+### if
 
 Evaluates a condition as either true or false, with values assigned for each outcome. It is a shorthand way to express an if-else condition. On the basis of the test, the entire expression returns `value_if_true` if the condition is true, else `value_if_false` if the condition is false. The two sub-expressions  `value_if_true` and `value_if_false`) must have the same type.
 
@@ -651,7 +693,7 @@ Here is an example of nesting the `if` operator.
 
 `| if(severity >= 10, "Critical", if(severity >= 5, "Moderate", "Low"))`
 
-## in
+### in
 
 Returns “true” if the value of an expression exists within the specified list of values.
 
@@ -673,7 +715,7 @@ Returns “true” if the value of an expression exists within the specified lis
 
    `null IN ("value1", "value2", "value3")`
 
-## ipv4ToNumber
+### ipv4ToNumber
 
 Converts an Internet Protocol version 4 (IPv4) IP address from the octet dot-decimal format to a decimal format.
 
@@ -687,7 +729,7 @@ The following expression returns "2130706433":
 
 `ipv4ToNumber("127.0.0.1")`
 
-## isBlank
+### isBlank
 
 Checks to see if a string contains text. Specifically, it checks to see if a character sequence is whitespace, empty (""), or null. It takes a single parameter and returns a boolean value: “true” if the variable is blank, or “false” if the variable contains a value other than whitespace, empty, or null.
 
@@ -695,7 +737,7 @@ Checks to see if a string contains text. Specifically, it checks to see if a cha
 
 `isBlank(string)`
 
-## isEmpty
+### isEmpty
 
 Checks to see if a string contains no characters or whitespace, and returns a boolean value: “true” if the string contains no characters or whitespace, or “false” otherwise.
 
@@ -703,7 +745,7 @@ Checks to see if a string contains no characters or whitespace, and returns a bo
 
 `isEmpty(string)`
 
-## isNull
+### isNull
 
 Checks to see if a string is null, and returns a boolean value: “true” if the string is null, or “false” if the string is not null.
 
@@ -711,7 +753,7 @@ Checks to see if a string is null, and returns a boolean value: “true” if th
 
 `isNull(string)`
 
-## isNumeric
+### isNumeric
 
 Checks whether a string is a valid Java number. 
 
@@ -725,7 +767,7 @@ qualifier, like 123L.
 
 `isNumeric(<string_field>)`
 
-## isPrivateIP
+### isPrivateIP
 
 Checks if an IPv4 address is private and returns a boolean.
 
@@ -739,7 +781,7 @@ The following expression returns "true":
 
 `isPrivateIP("192.168.0.1")`
 
-## isPublicIP
+### isPublicIP
 
 Checks if an IPv4 address is public and returns a boolean.
 
@@ -753,7 +795,7 @@ The following expression returns "false":
 
 `isPublicIP("10.255.255.255")`
 
-## isValidIP
+### isValidIP
 
 Checks if the input string is a valid IPv4 or IPv6 address.
 
@@ -771,7 +813,7 @@ Checks if the input string is a valid IPv4 or IPv6 address.
 
    `isValidIP("127.0.500.1")`
 
-## isValidIPv4
+### isValidIPv4
 
 Checks if the input string is a valid IPv4 address.
 
@@ -785,7 +827,7 @@ The following expression returns "true":
 
 `isValidIPv4("10.10.10.10")`
 
-## isValidIPv6
+### isValidIPv6
 
 Checks if the input string is a valid IPv6 address.
 
@@ -799,7 +841,7 @@ The following expression returns "false":
 
 `isValidIPv6("10.10.10.10")`
 
-## jsonArrayContains 
+### jsonArrayContains 
 
 Returns “true” if a specified field contains a particular value. This is
 equivalent to `array_contains` in the Cloud SIEM rules syntax.
@@ -812,7 +854,7 @@ equivalent to `array_contains` in the Cloud SIEM rules syntax.
 
 `| where jsonArrayContains(field, “vuln_scanner”)`
 
-## jsonArraySize 
+### jsonArraySize 
 
 Returns the length of a string. Returns -1 if null. This is equivalent
 to `size` in the Cloud SIEM rules syntax.
@@ -825,7 +867,7 @@ to `size` in the Cloud SIEM rules syntax.
 
 `| where jsonArraySize(field) > 5`
 
-## json
+### json
 
 Extracts values from JSON logs with selected JSONPath expressions. See
 Supported JSONPath syntax elements below.
@@ -895,7 +937,7 @@ The second query shown above is equivalent to the following Cloud SIEM syntax. 
 
 `int(fields['packetsSent']) != int(fields['packetsReceived'])`
 
-## length
+### length
 
 Returns the number of characters in a string. If the string is null, it returns 0.
 
@@ -913,7 +955,7 @@ Returns the number of characters in a string. If the string is null, it returns 
 
    `length(null)`
 
-## like
+### like
 
 Compares a string to a pattern, and returns “true” if the string matches the pattern, null if any arguments are null, and “false” otherwise. Patterns can contain regular characters as well as wildcards. Wildcard characters can be escaped using the single character specified for the `ESCAPE` parameter. Matching is case sensitive.
 
@@ -952,7 +994,7 @@ null.
    `'%SystemDrive%\Users\John' like '\%SystemDrive\%\\Users%'`  
  
 
-## log
+### log
 
 Returns the natural logarithm of the argument.
 
@@ -966,7 +1008,7 @@ The following expression returns "0.6931471805599453":
 
 `log(2) `
 
-## log10
+### log10
 
 Returns the base-10 logarithm of the argument.
 
@@ -980,7 +1022,7 @@ The following expression returns "0.3010299956639812":
 
 `log10(2)`
 
-## log1p
+### log1p
 
 Calculates log(1+x) accurately for small values of x.
 
@@ -994,7 +1036,7 @@ The following expression returns "0.09531017980432487":
 
 `log1p(0.1)`
 
-## luhn
+### luhn
 
 Uses Luhn’s algorithm to check message logs for strings of numbers that may be credit card numbers and then validates them.
 
@@ -1012,7 +1054,7 @@ Uses Luhn’s algorithm to check message logs for strings of numbers that may be
 
    `luhn("0000000000000131")`
 
-## maskFromCIDR
+### maskFromCIDR
 
 A utility function that returns a subnet mask for boolean operations with IPv4 addresses.
 
@@ -1026,7 +1068,7 @@ The following expression returns "255.255.255.252":
 
 `maskFromCIDR("30")`
 
-## matches
+### matches
 
 Can be used to match a string to a wildcard pattern or an RE2 compliant regex. The operator returns a boolean value; the operator can be used with `where` or `if` operators.
 
@@ -1045,7 +1087,7 @@ Can be used to match a string to a wildcard pattern or an RE2 compliant regex. T
 * `where foo matches "*bar*"` (This example is equivalent to `foo LIKE '%bar%'` in the Cloud SIEM rules syntax.)
 * `where foo matches /.*bar.*/` (This example is equivalent to `foo RLIKE '.*bar.*'` in the Cloud SIEM rules syntax.)
 
-## num
+### num
 
 Casts string data to a number.
 
@@ -1053,7 +1095,7 @@ Casts string data to a number.
 
 `num(string)`
 
-## number
+### number
 
 Casts string data to a number.
 
@@ -1061,7 +1103,7 @@ Casts string data to a number.
 
 `number()`
 
-## rlike
+### rlike
 
 The `rlike` function returns “true” if a string matches a specified regular expression. If there is no match, the function returns “false”,
 
@@ -1089,7 +1131,7 @@ matches the regular expression `[A-Za-z2-7]{60,}`:
 
    `dns_query rlike '[A-Za-z2-7]{60,}' `
 
-## round
+### round
 
 Rounds the function to N decimal places. If the second argument is not
 provided, it will round to the nearest integer.
@@ -1108,7 +1150,7 @@ provided, it will round to the nearest integer.
 
    `round(1.549, 2)`
 
-## sin
+### sin
 
 Returns the sine of the argument in radians.
 
@@ -1122,7 +1164,7 @@ The following expression returns "0.8414709848078965":
 
 `sin(1) `
 
-## sinh
+### sinh
 
 Returns the hyperbolic sine of the argument in radians.
 
@@ -1136,7 +1178,7 @@ The following expression returns "1.1752011936438014":
 
 `sinh(1)`
 
-## size
+### size
 
 Returns the number of elements in the input array.
 
@@ -1148,7 +1190,7 @@ Returns the number of elements in the input array.
 
 `size(listMatches) > 5`
 
-## sqrt
+### sqrt
 
 Returns the square root of the argument.
 
@@ -1162,7 +1204,7 @@ The following expression returns "2":
 
 `sqrt(4)`
 
-## substring
+### substring
 
 Allows you to specify an offset that will output only part of a string, referred to as a substring. You can use this operator to output just a part of a string instead of the whole string, for example, if you wanted to output an employee’s initials instead of their whole name.
 
@@ -1193,7 +1235,7 @@ Allows you to specify an offset that will output only part of a string, referred
 
    `substring("Sumo Logic", 0, 100)`
 
-## tan
+### tan
 
 Returns the tangent of the argument in radians.
 
@@ -1207,7 +1249,7 @@ The following expression returns "1.5574077246549023":
 
 `tan(1)`
 
-## tanh
+### tanh
 
 Returns the hyperbolic tangent of the argument in radians.
 
@@ -1221,7 +1263,7 @@ The following expression returns "0.76159":
 
 `tanh(1)`
 
-## toDegrees
+### toDegrees
 
 Converts angles from radians to degrees.
 
@@ -1235,7 +1277,7 @@ The following expression returns "90 (asin(1) is pi / 2)":
 
 `toDegrees(asin(1))`
 
-## toDouble
+### toDouble
 
 Casts string data to the double data type.
 
@@ -1243,7 +1285,7 @@ Casts string data to the double data type.
 
 `toDouble(<field>)`
 
-## toFloat 
+### toFloat 
 
 Casts a string to a floating point number. This is equivalent to `float`
 in the Cloud SIEM rules syntax.
@@ -1252,7 +1294,7 @@ in the Cloud SIEM rules syntax.
 
 `float(<field>)`
 
-## toInt 
+### toInt 
 
 Casts a string to an integer. This is equivalent to `int` in the Cloud SIEM
 rules syntax.
@@ -1261,7 +1303,7 @@ rules syntax.
 
 `int (<field>)`
 
-## toLong
+### toLong
 
 Casts string data to the long data type.
 
@@ -1269,7 +1311,7 @@ Casts string data to the long data type.
 
 `toLong(<field>)`
 
-## toLowerCase 
+### toLowerCase 
 
 Converts a string to all lower case letters. This is equivalent to lower
 in the Cloud SIEM rules syntax.
@@ -1278,7 +1320,7 @@ in the Cloud SIEM rules syntax.
 
 `toLowerCase(<string>)`
 
-## toRadians
+### toRadians
 
 Converts angles from radians to degrees.
 
@@ -1292,7 +1334,7 @@ The following expression returns "3.141592653589793" (pi):
 
 `toRadians(180)`
 
-## toUpperCase 
+### toUpperCase 
 
 Converts a string to all uppercase letters. This is equivalent to upper
 in the Cloud SIEM rules syntax.
@@ -1301,7 +1343,7 @@ in the Cloud SIEM rules syntax.
 
 `toUpperCase(<string>)`
 
-## trim
+### trim
 
 Eliminates leading and trailing spaces from a string field.
 
@@ -1315,7 +1357,7 @@ The following expression returns "Hello World":
 
 `trim("  Hello World  ")`
 
-## urldecode
+### urldecode
 
 Decodes a URL you include in a query, returning the decoded (unescaped)
 URL string.
@@ -1330,7 +1372,7 @@ The following expression returns "http://yourmainserver-city55555.org/...iWS7o3K
 
 `urldecode("http%3A%2F%2Fyourmainserver-city55555.org%2Ffunctions%2Fmain.php%3Fgk%3DGk45MgHJhEYx8bPYvGfiWS7o3KLdfg90%26")`
 
-## urlencode
+### urlencode
 
 Encodes the URL into an ASCII character set.
 
@@ -1344,7 +1386,7 @@ The following expression returns "http%3A%2F%2Fyourmainserver-city55555.org%2Ffu
 
 `urlencode("http://yourmainserver-city55555.org/...iWS7o3KLdfg90&")`
 
-## where
+### where
 
 Filters results based on the value of a boolean expression.  
 
@@ -1356,37 +1398,3 @@ Filters results based on the value of a boolean expression.  
 
 `| where jsonArrayContains(field, “vuln_scanner”)`  
 
-## Sumo Logic core platform literals supported in Cloud SIEM
-
-The following Sumo Logic core platform literals are supported in Cloud SIEM:
-
-* Time-based suffixed literals (millisecond-based. i.e., 1s == 1000)
-
-  * ns (nanosecond)
-  * us (microsecond)
-  * ms (millisecond)
-  * s (second)
-  * m (minute)
-  * h (hour)
-  * d (day)
-  * w (week)
-
-* Base-1000 suffixed literals
-
-  * k or K (1,000)
-  * M (1,000,000)
-  * G or B (1,000,000,000)
-  * T (1,000,000,000,000)
-  * P (1,000,000,000,000,000)
-
-* Base-1024 suffixed literals
-
-  * Ki (1,024)
-  * Mi (1,048,576)
-  * Gi (1,073,741,824)
-  * Ti (1,099,511,627,776)
-  * Pi (1,125,899,906,842,624)
-
-* Escaped double quote are supported
-
-  * For example, `"\"foo\""` is the literal `"foo"`
