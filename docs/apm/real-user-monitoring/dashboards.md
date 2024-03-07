@@ -14,7 +14,7 @@ Once Sumo Logic detects data coming from user browsers, the RUM app will be ins
 
 The data will populate in your organization's **Sumo Logic RUM - default** dashboards, located inside of your **Admin Recommended** folder. Do not modify or delete content in this folder, as it's maintained and updated automatically.
 
-<details><summary>If your RUM app is removed accidentally, here's how to install it manually (<strong>click to expand</strong>).</summary>
+If your RUM app is removed accidentally, you'll need to install it manually:
 
 1. Go to the **App Catalog**, then search for and select the **Real User Monitoring** app. 
 1. Click **Add to Library**.
@@ -23,12 +23,9 @@ The data will populate in your organization's **Sumo Logic RUM - default** das
 1. Click **Add to Library**.
 1. Once the app is installed, it will appear in your **Personal** folder or the folder you specified. From here, you can share it with your organization.
 
-</details>
-
-
 ## Using Explore View
 
-Once the RUM app has been installed, use our [Explore view](/docs/dashboards-new/explore-view.md) to gain visibility into your web app's performance and end-user activity, such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
+Once the RUM app has been installed, use our [Explore view](/docs/dashboards/explore-view.md) to gain visibility into your web app's performance and end-user activity, such as geographic location, browser type, operating systems used. These dashboards visualize RUM metrics gathered from browser tracing instrumentation.
 
 1. Go to **+New** > **Explore**.
 1. Under **Explore By**, **click Real User Monitoring**.

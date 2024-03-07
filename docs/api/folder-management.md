@@ -1,9 +1,9 @@
 ---
 id: folder-management
 title: Folder Management APIs
-sidebar_label: Folder Management
+sidebar_label: Folders
 hide_table_of_contents: true
-description: Use HTTP endpoints to manage folders in the Library.
+description: Use Folder Management APIs to manage folders in your Library.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,7 +12,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Folder Management API allows you to add folders and subfolders to the [Library](/docs/get-started/library) from HTTP endpoints to organize your content.
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
+
+<ApiIntro/>
 
 | Deployment | Documentation URL                                        |
 |:------------|:--------------------------------------------------------|

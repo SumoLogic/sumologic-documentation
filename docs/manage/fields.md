@@ -16,8 +16,9 @@ The order of precedence for field assignment from highest to lowest is:
 1. Field Extraction Rule (FER)
 1. Amazon EC2 resource tags
 1. Amazon EC2 instance information
-1. Collector _or_ HTTP Header
+1. HTTP Header
 1. Source
+1. Collector
 
 So, if you have a field defined at the Collector or Source level, and you create a FER against the same source of data with the same field name, the FER will win the field assignment.
 
@@ -165,7 +166,7 @@ See [how to upload logs to an HTTP Source](/docs/send-data/hosted-collectors/htt
 Your fields need to be in a comma separated list of key-value pairs. For example, a cURL command posting data with custom fields would look like:
 
 ```bash
-curl -v -X POST -H 'X-Sumo-Fields:environment=dev,cluster=k8s' -T /file.txt\<HTTP endpoin\>
+curl -v -X POST -H 'X-Sumo-Fields:environment=dev,cluster=k8s' -T /file.txt <HTTP endpoint>
 ```
 
 #### Extended HTTP Metadata Collection
@@ -177,7 +178,7 @@ When creating or editing your HTTP Source that will receive log data add the fie
 With this field set on your Source, headers are processed as metadata fields. For example, a cURL command posting data with custom fields would look like:
 
 ```bash
-curl -v -X POST -H 'environment: dev' -H 'cluster: k8s' -T /file.txt\<HTTP endpoin\>
+curl -v -X POST -H 'environment: dev' -H 'cluster: k8s' -T /file.txt <HTTP endpoint>
 ```
 
 #### Reserved headers

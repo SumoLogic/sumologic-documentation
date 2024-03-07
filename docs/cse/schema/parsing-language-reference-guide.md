@@ -2,14 +2,14 @@
 id: parsing-language-reference-guide
 title: Parsing Language Reference Guide
 sidebar_label: Parsing Language Reference
-description: Parsing is the first step in the Cloud SIEM Enterprise (CSE) Record processing pipeline
+description: Parsing is the first step in the Cloud SIEM Record processing pipeline
 ---
 
-This topic describes the CSE parsing language, which you can use to write custom parsers.
+This topic describes the Cloud SIEM parsing language, which you can use to write custom parsers.
 
 ## What is parsing?
 
-Parsing is the first step in the Cloud SIEM Enterprise (CSE) [Record processing pipeline](record-processing-pipeline.md) — it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message. We refer to the result of the parsing process as a *field dictionary*. The raw message is retained. 
+Parsing is the first step in the Cloud SIEM [Record processing pipeline](/docs/cse/schema/record-processing-pipeline) — it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message. We refer to the result of the parsing process as a *field dictionary*. The raw message is retained. 
 
 Parsers are written in a specialized Sumo Parsing Language. The parser code resides in a a parser configuration object. At runtime, parser code is executed by the Sumo Logic parsing engine.
 
@@ -21,7 +21,7 @@ This section explains a number of concepts that are fundamental to the parsing p
 
 A regular expression, often referred to as a regex, is a sequence of characters that define a search pattern. A regular expression engine compares strings to regular expressions to find matches. Regexes can also be used to extract substrings and bind them to a name, known as a group in a dictionary.
 
-Many CSE parsers rely upon regex exclusively to parse messages. (Sumo Logic Field Extraction Rules also use regex: they parse selected fields from log messages at the time of ingestion.)  Sumo Logic's parsing engine performs top-level, gross format parsing first using compiled built-in formats, and then relies on regular expressions to extract information from irregular or complex formats.
+Many Cloud SIEM parsers rely upon regex exclusively to parse messages. (Sumo Logic Field Extraction Rules also use regex: they parse selected fields from log messages at the time of ingestion.)  Sumo Logic's parsing engine performs top-level, gross format parsing first using compiled built-in formats, and then relies on regular expressions to extract information from irregular or complex formats.
 
 The parser engine uses the [RE2 regular expression library](https://github.com/google/re2/wiki/Syntax). This is important to know because regex syntax varies between implementations. RE2 is a slightly modified version of the standard regular expression libraries that is designed to operate with bounded
 execution time.
@@ -30,30 +30,7 @@ execution time.
 For historic reasons, the named groups in the regex of many parsers still uses Python-style notation, for instance `(?P<syslog_timestamp>[^ ]+ +[^ ]+ [^ ]+)`. When you write new regular expressions, you can omit P.
 :::
 
-The parser engine also supports Grok, a system that introduces symbolic names for patterns to regular expressions (see also [Patterns](#patterns) section). You reference Grok symbolic names using this pattern:
-
-`%{<pattern_name>:<optional_group_name>}`
-
-The pattern name is replaced with the regular expression associated with that name and the entire result is wrapped with a named group capture.
-
-Grok patterns are used to make the use of complex regular expressions that match particular values, such as IP addresses, clearer and easier
-to read.
-
-The list of patterns supported can be found in the local and default config files, and `patterns.conf`.
-
-For example, given a string:
-
-`TEST 123`
-
-and the regex:
-
-`(?<login>\w+) (?<id>\d+)`
-
-we would get back this dictionary: 
-
-`{“login”: “TEST”,  “Id”: “123”}`
-
-You can find a regex debugger at[https://regoio.herokuapp.com/](https://regoio.herokuapp.com/).
+You can find a regex debugger at [https://www.debuggex.com](https://www.debuggex.com).
 
 :::note
 This debugger uses the GoLang RE2 library, but all RE2 libraries are based on the same codebase and it is a sufficient test mechanism.
@@ -75,6 +52,8 @@ In parsers, you refer to a pattern as `%{<Pattern Name>}`. You can use a patter
 named capture group like this:
 
 `%{<Pattern Name>:<field_name>}`
+
+For available patterns, see [Parsing Patterns](/docs/cse/schema/parsing-patterns).
 
 ## Mustache templates
 
@@ -162,13 +141,13 @@ Parses LEEF format logs.
 
 ### WINDOWS_XML parsing
 
-Parses Windows XML messages from CSE Windows Sensor. 
+Parses Windows XML messages from Cloud SIEM Windows Sensor. 
 
 ## Mapping hints
 
-After parsing, the next step in the CSE Record processing pipeline is log mapping, which is the process of mapping fields that were parsed out of messages to CSE schema attributes. 
+After parsing, the next step in the Cloud SIEM Record processing pipeline is log mapping, which is the process of mapping fields that were parsed out of messages to Cloud SIEM schema attributes. 
 
-Every parser must provide *mapping hints* that provide information CSE can use to select the correct log mapper for parsed messages. You do this with the MAPPER attribute. For more information, see [MAPPER](#mapper).
+Every parser must provide *mapping hints* that provide information Cloud SIEM can use to select the correct log mapper for parsed messages. You do this with the MAPPER attribute. For more information, see [MAPPER](#mapper).
 
 ### Internal temporary variables supported in parsers
 
@@ -204,7 +183,7 @@ The key principal: When selecting a name for the field, stay as close to the nam
 The `_starttime` and `_endtime` fields are normally assigned values using [START_TIME_FIELD](#start_time_field) and [END_TIME_FIELD](#end_time_field).  Note that if none of
 [DEFAULT_START_TIME](#default_start_time),  [DEFAULT_END_TIME](#default_end_time), START_TIME_FIELD or END_TIME_FIELD are defined `_starttime` and `_endtime` will not be included in the field dictionary.
 
-If `_starttime` is defined (at minimum, `START_TIME_FIELD` has been specified in the parser), it will be used as the Record timestamp. If `_starttime` is not defined, the timestamp should be set by the CSE log mapper that processes the Record, typically by mapping a parsed field to the `timestamp` schema attribute.
+If `_starttime` is defined (at minimum, `START_TIME_FIELD` has been specified in the parser), it will be used as the Record timestamp. If `_starttime` is not defined, the timestamp should be set by the Cloud SIEM log mapper that processes the Record, typically by mapping a parsed field to the `timestamp` schema attribute.
 
 ### Representation of “no value”
 
@@ -388,7 +367,7 @@ none
 
 ### DROP
 
-Drops one or more fields from a message, or drops an entire message. Fields that are dropped will not be included in the dictionary of key-value pairs that the parser extracts from a message. Messages that are dropped will not be forwarded to CSE (effectively `overriding _siemForward=true` configured on the collector).
+Drops one or more fields from a message, or drops an entire message. Fields that are dropped will not be included in the dictionary of key-value pairs that the parser extracts from a message. Messages that are dropped will not be forwarded to Cloud SIEM (effectively `overriding _siemForward=true` configured on the collector).
 
 :::tip
 Dropping is useful for getting rid of temporary fields that may collide with later uses.
@@ -584,7 +563,7 @@ Joins a list created by [ADD_VALUES](#add_values) with the separator mentioned. 
 
 ### MAPPER
 
-Provides information that tells CSE which log mapper should process the parsed message. There are two ways to do that: 
+Provides information that tells Cloud SIEM which log mapper should process the parsed message. There are two ways to do that: 
 
 * Specify the log mapper UID.  If `MAPPER:uid` is specified with other MAPPER fields, mapping lookup will be performed by uid. 
 * Specify the `product`, `vendor`, and `event_id `for the message. (All three attributes are required.) Templating is allowed for each value. However, the most common and best practice is to define `vendor` and `product` using static strings, for example:
@@ -699,7 +678,7 @@ Creates a field with an associated value. If the field already exists, SET overw
 
 `SET:<field> = <string>`
 
-The field name is treated as a Mustache template if it contains two curly braces ‘{{‘. The template can access any field dictionary fields that have been parsed prior to this instruction. 
+The field name is treated as a Mustache template if it contains two curly braces `{{`. The template can access any field dictionary fields that have been parsed prior to this instruction. 
 
 **Default**
 
@@ -1077,17 +1056,17 @@ Always applied first, before the [FORMAT](#format) is applied. Applies the trans
 
 ### ZIP
 
-Takes keys and values in separate fields from a JSON event and combines them together into proper key-value pairs with the specified prefix. There are two separate methods to do this, regex (specified by r\|) and non-regex. 
+Takes keys and values in separate fields from a JSON event and combines them together into proper key-value pairs with the specified prefix. There are two separate methods to do this, regex (specified by `r|`) and non-regex. 
 
 **Syntax**
 
-`ZIP\<ke\>\<value\> =\<prefix or %s template\>`
+`ZIP:<key>:<value> = <prefix or %s template>`
 
 **Non-regex method**
 
-The non-regex method is simple, but isn’t always sufficient.. For example, this example:
+The non-regex method is simple, but isn’t always sufficient. For example, this:
 
-`ZIP:<key>:<value> = <prefix or %s template>`
+`ZIP:test_key:test_val = testPrefix_`
 
 Will convert `test_key_1 = x, test_val_1 = y` into `testPrefix_x = y`, but won’t handle internal lists properly, for example, `test_key_1_1`. This is not supported because it makes assumptions about how those lists are formatted.
 
@@ -1099,7 +1078,7 @@ There are two ways you can specify the value template: using a mustache template
 
 Will convert `test_key_1 = x, test_val_1 = y, sampleField = something` into `something_x_testSuffix = y`.
 
-**r\| regex handling**
+**`r|` regex handling**
 
 Regex that starts with `r|` syntax has certain requirements that regular regex does not. Specifically, you must specify a capture group, `_$INDEX`, which is an index shared by the key field and the value field. You can specify `_$LIST_INDEX` to support lists, but they must always be an integer. These parsed fields are not added to the field dictionary. For example,  
 
@@ -1133,7 +1112,7 @@ Behaves exactly like [ZIP](#zip), but doesn’t drop the fields afterwards.
 
 **Default**
 
-The default value for \<ke\>` is `_$log_entry`
+The default value for `<key> is _$log_entry`
 
 ## Attributes Specific to REGEX Format
 

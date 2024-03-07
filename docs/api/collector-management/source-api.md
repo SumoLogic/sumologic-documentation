@@ -8,18 +8,19 @@ The Collector Management API allows you to manage Collectors and Sources from an
 
 You cannot use the Source API to create Microsoft Office 365 sources, Google Audit sources, or any other sources that require OAuth-based authentication with another vendor.
 
-:::caution
+:::warning
 Collector Management APIs are not yet built with OpenAPI specifications and therefore not included in our [Swagger docs](https://api.sumologic.com/docs/). Instead, refer to the below documentation.
 :::
 
 ## Rate limiting
 
-{@import ../../reuse/api-rate-limit.md}
+import RateLimit from '../../reuse/api-rate-limit.md';
+
+<RateLimit/>
 
 ## Response fields
 
 See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for a description of Source parameters.
-
 
 ## GET methods
 
@@ -31,65 +32,20 @@ Gets information about all Sources for a specified Collector.
 
 **Path:** `/collectors/[collectorId]/sources`
 
-
-<table>
-  <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>collectorId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Collector identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>download
-   </td>
-   <td>boolean
-   </td>
-   <td>No
-   </td>
-   <td>false
-   </td>
-   <td>When set to <code>true</code>, the response will be a JSON array of Sources that can be used to register a new Collector.
-   </td>
-  </tr>
-</table>
-
-
+| Parameter   | Type    | Required? | Default | Description           |
+| :---------- | :------ | :-------- | :------ | :-------------------- |
+| `collectorId` | integer | Yes       | NA      | Unique Collector identifier.    |
+| `download`    | boolean | No        | false   | When set to `true`, the response will be a JSON array of Sources that can be used to register a new Collector. |
 
 #### Examples
 
 This example gets all Sources for a Collector.
 
-Request:
-
-
-```bash
+```bash title="Request"
 curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/25/sources
 ```
 
-
-
-Response:
-
-
-```json
+```json title="Response"
 {
   "sources":[{
     "id":101792472,
@@ -113,21 +69,13 @@ Response:
 }
 ```
 
-
 This example gets a ready-to-go JSON configuration of the Sources of a Collector, which can be used to register a new Collector.
 
-Request:
-
-
-```bash
+```bash title="Request"
 curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/25/sources?download=true
 ```
 
-
-Response:
-
-
-```json
+```json title="Response"
 {
   "api.version": "v1",
   "sources":[{
@@ -149,8 +97,6 @@ Response:
   ]
 }
 ```
-
-
 
 ### Get Source by ID
 
@@ -160,77 +106,21 @@ Gets information about a specified Collector and Source.
 
 **Path:** `/collectors/[collectorId]/sources/[sourceId]`
 
-
-<table>
-  <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>collectorId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Collector identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>sourceId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Source identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>download
-   </td>
-   <td>boolean
-   </td>
-   <td>No
-   </td>
-   <td>false
-   </td>
-   <td>When set to <code>true</code>, the response will be a JSON Source object that can be used to create a new Source.
-   </td>
-  </tr>
-</table>
-
-
+| Parameter   | Type    | Required? | Default | Description   |
+| :---------- | :------ | :-------- | :------ | :------------ |
+| `collectorId` | integer | Yes       | NA      | Unique Collector identifier.       |
+| `sourceId`    | integer | Yes       | NA      | Unique Source identifier.         |
+| `download`    | boolean | No        | false   | When set to `true`, the response will be a JSON Source object that can be used to create a new Source. |
 
 #### Examples
 
 This example gets data for a Source with a specified ID.
 
-Request:
-
-
-```bash
+```bash title="Request"
 curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/25/sources/101792472
 ```
 
-
-
-Response:
-
-
-```json
+```json title="Response"
 {
   "source":{
     "id":101792472,
@@ -252,21 +142,13 @@ Response:
 }
 ```
 
-
 This example gets a ready-to-go JSON configuration of a Source with a specified ID, which can be used when managing a folder of multiple sources, or uploading a new source via the API.
 
-Request:
-
-
-```bash
+```bash title="Request"
 curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/25/sources/101792472?download=true
 ```
 
-
-Response:
-
-
-```json
+```json title="Response"
 {
   "api.version": "v1",
   "source":{
@@ -287,10 +169,7 @@ Response:
 }
 ```
 
-
-
 ## POST methods
-
 
 ### Create Source
 
@@ -300,34 +179,9 @@ Creates a new Source for a Collector. See [Use JSON to Configure Sources](/docs/
 
 **Path**: `/collectors/[collectorId]/sources`
 
-
-<table>
-  <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>collectorId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Collector identifier.
-   </td>
-  </tr>
-</table>
-
+| Parameter   | Type    | Required? | Default | Description                  |
+| :---------- | :------ | :-------- | :------ | :--------------------------- |
+| `collectorId` | integer | Yes       | NA      | Unique Collector identifier. |
 
 POST creates a single Source per request.
 
@@ -336,19 +190,11 @@ POST creates a single Source per request.
 
 This example creates a new Host Metrics Source on Collector with ID 10 using the parameters in the JSON file.
 
-Request:
-
-
-```bash
+```bash title="Request"
 curl -u '<accessId>:<accessKey>' -X POST -H "Content-Type: application/json" -T host_metrics.json https://api.sumologic.com/api/v1/collectors/10/sources
 ```
 
-
-
-Request JSON (host_metrics.json):
-
-
-```json
+```json title="Request JSON (host_metrics.json)"
 {
   "source":{
     "sourceType":"SystemStats",
@@ -364,10 +210,8 @@ Request JSON (host_metrics.json):
 ```
 
 
-Response:
 
-
-```json
+```json title="Response"
 {
    "source": {
       "id": 101833059,
@@ -398,12 +242,9 @@ Response:
 }
 ```
 
-
 Note that the filter value shown above is an example for excluding a keyword. Filter values are specified to do batch edits to Processing Rules for Sources. For details on the different types of filters available, see [Creating Processing Rules Using a JSON File](/docs/send-data/use-json-configure-sources/#creating-processing-rules-using-json).
 
-
 ## PUT methods
-
 
 ### Update Source
 
@@ -417,67 +258,22 @@ Updating a Source also requires the "If-Match" header to be specified with the "
 
 **Path**: `/collectors/[collectorId]/sources/[sourceId]`
 
-
-<table>
-  <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>collectorId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Collector identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>sourceId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Source identifier.
-   </td>
-  </tr>
-</table>
-
-
+| Parameter   | Type    | Required? | Default | Description                  |
+| :---------- | :------ | :-------- | :------ | :--------------------------- |
+| `collectorId` | integer | Yes       | NA      | Unique Collector identifier. |
+| `sourceId`    | integer | Yes       | NA      | Unique Source identifier.    |
 
 #### Example
 
 This example updates the Host Metrics Source created in the previous example with "interval" = 15000.
 
-First, use a GET request with -v flag to obtain the "ETag" header value.
+First, use a GET request with `-v` flag to obtain the "ETag" header value.
 
-Initial GET Request:
-
-
-```bash
+```bash title="Initial GET Request"
 curl -v -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/15/sources/101833059
 ```
 
-
-
-Initial GET Response:
-
-
-```
+```sh title="Initial GET Response"
 < HTTP/1.1 200 OK
 < ETag: "5f6bbe49f8b5a19dd43c806411225a5f"
 ...
@@ -489,21 +285,13 @@ Initial GET Response:
     ...
 ```
 
-
 Next, modify the Source's JSON attributes as needed (in this example, setting "interval" to "15000"), and use a PUT request, passing the "ETag" value obtained above with the "If-Match" header.
 
-Request:
-
-
-```bash
+```bash title="Request"
 curl -u '<accessId>:<accessKey>' -X PUT -H "Content-Type: application/json" -H "If-Match: \"5f6bbe49f8b5a19dd43c806411225a5f\"" -T updated_host_metrics.json https://api.sumologic.com/api/v1/collectors/15/sources/101833059
 ```
 
-
-Request JSON (updated_host_metrics.json)
-
-
-```json
+```json title="Request JSON (updated_host_metrics.json)"
 {
    "source": {
       "id": 101833059,
@@ -533,14 +321,10 @@ Request JSON (updated_host_metrics.json)
    }
 }
 ```
-
 
 Note that the filter value shown above is an example for excluding a keyword. Filter values are specified to do batch edits to Processing Rules for Sources. For details on the different types of filters available, see [Creating Processing Rules Using a JSON File](/docs/send-data/use-json-configure-sources/#creating-processing-rules-using-json).
 
-Response:
-
-
-```json
+```json title="Response"
 {
    "source": {
       "id": 101833059,
@@ -570,8 +354,6 @@ Response:
    }
 }
 ```
-
-
 
 ## DELETE methods
 
@@ -585,117 +367,25 @@ Requests to delete Sources from the [Cloud-to-Cloud Integration Framework](/docs
 
 **Path**: `/collectors/[collectorId]/sources/[sourceId]`
 
-
-<table>
-  <tr>
-   <td><strong>Parameter</strong>
-   </td>
-   <td><strong>Type</strong>
-   </td>
-   <td><strong>Required?</strong>
-   </td>
-   <td><strong>Default</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>collectorId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Collector identifier.
-   </td>
-  </tr>
-  <tr>
-   <td>sourceId
-   </td>
-   <td>integer
-   </td>
-   <td>Yes
-   </td>
-   <td>NA
-   </td>
-   <td>Unique Source identifier.
-   </td>
-  </tr>
-</table>
-
-
-
 #### Example
 
 This example deletes a Source.
 
-
-```bash
+```bash title="Request"
 curl -u '<accessId>:<accessKey>' -X DELETE https://api.sumologic.com/api/v1/collectors/15/sources/101833059
 ```
 
-
-
-Response: There will be no response body, only a 200 OK response code.
-
+Response: There will be no response body, only a `200 OK` response code.
 
 ## Error Codes and Messages
 
-<table>
-  <tr>
-   <td>Code
-   </td>
-   <td>Message
-   </td>
-  </tr>
-  <tr>
-   <td>BadRequestBladeId
-   </td>
-   <td>Request body contains an invalid Source ID.
-   </td>
-  </tr>
-  <tr>
-   <td>CannotModifySources
-   </td>
-   <td>Collector is in JSON mode, user cannot create, delete, or update sources using the API.
-   </td>
-  </tr>
-  <tr>
-   <td>CollectorDescriptionTooLong
-   </td>
-   <td>Maximum description length is 1024 characters.
-   </td>
-  </tr>
-  <tr>
-   <td>CollectorNameTooLong
-   </td>
-   <td>Maximum name length is 128 characters.
-   </td>
-  </tr>
-  <tr>
-   <td>createValidationError
-   </td>
-   <td>The specified ID is invalid.
-   </td>
-  </tr>
-  <tr>
-   <td>DuplicateResourceName
-   </td>
-   <td>A resource with the same name already exists.
-   </td>
-  </tr>
-  <tr>
-   <td>EmptySourceType
-   </td>
-   <td>Need to specify a source type.
-   </td>
-  </tr>
-  <tr>
-   <td>InvalidSourceType
-   </td>
-   <td>Invalid Source type for the requested operation.
-   </td>
-  </tr>
-</table>
+|Code                       |Message                     |
+|:---------|:---------------|
+|`BadRequestBladeId`          |Request body contains an invalid Source ID.                                            |
+|`CannotModifySources`        |Collector is in JSON mode, user cannot create, delete, or update sources using the API.|
+|`CollectorDescriptionTooLong`|Maximum description length is 1024 characters.                                         |
+|`CollectorNameTooLong`       |Maximum name length is 128 characters.                                                 |
+|`createValidationError`      |The specified ID is invalid.                                                           |
+|`DuplicateResourceName`      |A resource with the same name already exists.                                          |
+|`EmptySourceType`            |Need to specify a source type.                                                         |
+|`InvalidSourceType`          |Invalid Source type for the requested operation.                                       |

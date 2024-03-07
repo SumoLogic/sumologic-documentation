@@ -1,23 +1,22 @@
 ---
 id: netskope-legacy-collection
-title: Netskope Legacy Collection
-sidebar_label: Netskope Legacy Collection
+title: Netskope (Legacy)
 description: The Netskope App created by Sumo Logic provides visibility into security posture for your applications, as well as allowing you to determine the overall usage of software and SaaS applications in your environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="55"/>
 
-:::note
-This document contains our legacy collection method for non-Fedramp Sumo logic deployments. If you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app.
+:::info legacy
+This document contains our legacy collection method for non-Fedramp Sumo logic deployments. If you are not using the Sumo Logic FedRamp deployment, use the [new Cloud-to-Cloud Integration for Netskope](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/netskope-source) to create the source and use the same source category while installing the app.
 :::
 
 The Netskope App provides visibility into the security posture of your applications and helps you determine the overall usage of software and SaaS applications.
 
 Netskope is a Cloud Access Security Broker (CASB) hosted in the cloud. The Netskope product is primarily used for enforcing security policies for cloud-based resources, such as Box and Microsoft Office 365. Customers purchase a CASB to address cloud service risks, enforce security policies, and comply with regulations, even when cloud services are beyond their perimeter and out of their direct control.
 
-## Log Types
+## Log types
 
 The Netskope App provides a collector source for pulling all the events and alerts from Netskope in real-time via API calls and ingests them into the Sumo Logic platform through our Hosted collector.
 
@@ -45,23 +44,28 @@ The Netskope App has the following components:
 This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs and Metrics source, to collect events for Netskope
 
 
-#### Prerequisite
+#### Prerequisites
+
 Before creating the HTTP source, identify the Sumo Logic Hosted Collector you want to use, or create a new Hosted Collector as described in the following task.
+
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this to configure in configuration file.
+
 To add a hosted collector and HTTP source, do the following:
+
 1. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Add an [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 3. In **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
    * Specify **Format** as `epoch`
    * Specify **Timestamp locator** as `\"timestamp\": (.*),`
-
-1. Click **Add**.
+4. Click **Add**.
 
 
 ### Step 2: Getting a token from the Netskope Portal (DEPRECATED)
 
 Netskope REST APIs use an auth token to make authorized calls to the API. This section demonstrates how to obtain a token from the Netskope user interface (UI).
+
 To obtain a Netskope auth token, do the following:
+
 1. Login to Netskope as the Tenant Admin.
 2. Go to the API portion of the Netskope, **Settings** > **Tools** > **Rest API**.
 3. Copy the existing token to your clipboard, or you can generate a new token and copy that token.
@@ -74,46 +78,42 @@ The sumologic netskope collector is compatible with Python 3.7 and Python 2.7. I
 
 To create a Sumo Logic Netskope collector, do the following:
 1. Login to a Linux machine.
-2. Install the collector using the following command.
-
-If pip (python package installer) is not installed on your system, see the pip [docs](https://pip.pypa.io/en/stable/installing/) for instructions on how to download and install pip.
-```
-pip install sumologic-netskope-collector
-```
-
-1. Download the [netskope.yaml](https://s3.amazonaws.com/appdevstore/netskope.yaml) configuration file and place in the home directory.  
-2. Edit the netskope.yaml file in the following way:
-    1. Replace `<SUMO HTTP SOURCE ENDPOINT>` with the Sumo Logic HTTPS Source endpoint you created in [Step 1](#Step_1:_Add_a_Hosted_Collector_and_HTTP_Source).
-    2. Replace `<Netskope API Token>` with the Netskope API token you created in [Step 2](#Step_2:_Getting_a_token_from_the_Netskope_Portal).
-    3. Replace `<Netskope Domain>` with your Netskope domain name.
-
-Example of an edited netskope.yaml file:
-
-```yml
-Netskope:
- TOKEN: "ExampleTokenGxrtwdshciB7gHR7efDQbZPW"
- NETSKOPE_EVENT_ENDPOINT: https://example.goskope.com/api/v1/events
- NETSKOPE_ALERT_ENDPOINT: https://example.goskope.com/api/v1/alerts
-SumoLogic:
- SUMO_ENDPOINT: "https://collectors.sumologic.com/receiver/v1/http/ZaVnC4dhaxxExampleEndpointxxx==="
-```
-
-1. Create a cron job to run the collector every 5 minutes, (use the crontab -e option) and add the following line:
-
-```
-*/5 * * * *  /usr/bin/python -m \
-sumonetskopecollector.netskope > /dev/null 2>&1
-```
+2. Install the collector using the following command. If pip (python package installer) is not installed on your system, see the pip [docs](https://pip.pypa.io/en/stable/installing/) for instructions on how to download and install pip.
+   ```
+   pip install sumologic-netskope-collector
+   ```
+3. Download the [netskope.yaml](https://s3.amazonaws.com/appdevstore/netskope.yaml) configuration file and place in the home directory.  
+4. Edit the netskope.yaml file in the following way:
+    * Replace `<SUMO HTTP SOURCE ENDPOINT>` with the Sumo Logic HTTPS Source endpoint you created in [Step 1](#step-1-adding-a-hosted-collector-and-http-source-deprecated).
+    * Replace `<Netskope API Token>` with the Netskope API token you created in [Step 2](#step-2-getting-a-token-from-the-netskope-portal-deprecated).
+    * Replace `<Netskope Domain>` with your Netskope domain name.<br/>Example of an edited netskope.yaml file:
+     ```yml
+     Netskope:
+      TOKEN: "ExampleTokenGxrtwdshciB7gHR7efDQbZPW"
+      NETSKOPE_EVENT_ENDPOINT: https://example.goskope.com/api/v1/events
+      NETSKOPE_ALERT_ENDPOINT: https://example.goskope.com/api/v1/alerts
+     SumoLogic:
+      SUMO_ENDPOINT: "https://collectors.sumologic.com/receiver/v1/http/ZaVnC4dhaxxExampleEndpointxxx==="
+     ```
+5. Create a cron job to run the collector every 5 minutes, (use the crontab -e option) and add the following line:
+   ```
+   */5 * * * *  /usr/bin/python -m \
+   sumonetskopecollector.netskope > /dev/null 2>&1
+   ```
 
 ### Updating the Sumo Logic Netskope collector (DEPRECATED)
 
 Sumo Logic periodically makes changes to the collector. To make sure your collector is up-to-date, perform the following tasks on each machine running the collector:
+
 * Check the latest version of the Netskope collector on this page: [https://pypi.org/project/sumologic-netskope-collector/#history](https://pypi.org/project/sumologic-netskope-collector/#history)
 * Check the version of the collector you have installed by running the following command: `pip show sumologic-netskope-collector`
 * If you are not running the latest collector, do the following:
    1. Disable your cron job.
    2. Stop all existing collector processes.
-   3. Run the following command to upgrade your collector: `pip install sumologic-netskope-collector --upgrade`
+   3. Run the following command to upgrade your collector:
+    ```
+    pip install sumologic-netskope-collector --upgrade
+    ```
    4. Enable the cron job.
 
 
@@ -129,59 +129,46 @@ The following table explains the configuration file parameters and their usage.
   <tr>
    <td>EVENT_TYPES</td>
    <td>List of events to fetch from Netskope:
-<ul>
-<li>page</li>
+<ul><li>page</li>
 <li>application</li>
 <li>audit</li>
-<li>infrastructure</li>
-</ul>
-   </td>
+<li>infrastructure</li></ul></td>
   </tr>
   <tr>
    <td>ALERT_TYPES</td>
    <td>List of alerts to fetch from Netskope:
-<ul>
-<li>Malware</li>
+<ul><li>Malware</li>
 <li>Malsite</li>
 <li>Compromised Credential</li>
 <li>Anomaly</li>
 <li>DLP</li>
 <li>Watchlist</li>
 <li>Quarantine</li>
-<li>Policy</li>
-</ul>
-   </td>
+<li>Policy</li></ul></td>
   </tr>
   <tr>
-   <td>BACKFILL_DAYS
-   </td>
-   <td>Number of days <em>before</em> the event collection will start. If the value is 1, then events are fetched from yesterday to today.
-   </td>
+   <td>BACKFILL_DAYS </td>
+   <td>Number of days <em>before</em> the event collection will start. If the value is 1, then events are fetched from yesterday to today. </td>
   </tr>
   <tr>
    <td>PAGINATION_LIMIT</td>
-   <td>Number of events to fetch in a single API call
-   </td>
+   <td>Number of events to fetch in a single API call </td>
   </tr>
   <tr>
    <td>LOG_FORMAT</td>
-   <td>Log format used by the python logging module to write logs in a file
-   </td>
+   <td>Log format used by the python logging module to write logs in a file </td>
   </tr>
   <tr>
    <td>ENABLE_LOGFILE</td>
-   <td>Set to TRUE to write all logs and errors to a log file
-   </td>
+   <td>Set to TRUE to write all logs and errors to a log file   </td>
   </tr>
   <tr>
    <td>ENABLE_CONSOLE_LOG</td>
-   <td>Enables printing logs in a console
-   </td>
+   <td>Enables printing logs in a console </td>
   </tr>
   <tr>
    <td>LOG_FILEPATH</td>
-   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE
-   </td>
+   <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE   </td>
   </tr>
   <tr>
    <td>NUM_WORKERS</td>
@@ -189,13 +176,11 @@ The following table explains the configuration file parameters and their usage.
   </tr>
   <tr>
    <td>MAX_RETRY</td>
-   <td>Number of retries to attempt in case of request failure
-   </td>
+   <td>Number of retries to attempt in case of request failure </td>
   </tr>
   <tr>
    <td>BACKOFF_FACTOR</td>
-   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries.
-   </td>
+   <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries. </td>
   </tr>
   <tr>
    <td>TIMEOUT</td>
@@ -207,15 +192,15 @@ The following table explains the configuration file parameters and their usage.
   </tr>
   <tr>
    <td>SUMO_ENDPOINT</td>
-   <td>HTTP source endpoint url created in Sumo Logic
-   </td>
+   <td>HTTP source endpoint url created in Sumo Logic </td>
   </tr>
 </table>
 
 
-### Sample Log message
+## Sample log message
 
-<details><summary>Click to expand</summary>
+<details>
+<summary>Click to expand</summary>
 
 ```json
 {
@@ -273,7 +258,7 @@ The following table explains the configuration file parameters and their usage.
 </details>
 
 
-### Sample Query  
+### Sample queries  
 
 The following query sample was is from the Total Sessions panel of the Application Overview Dashboard.
 
@@ -297,7 +282,9 @@ This section demonstrates how to install the Netskope App, and provides examples
 * **Application Usage.** Insights into application usage; specifically by devices, users, users and traffic patterns.
 * **Security Alerts.** Visibility into Netskope security alerts and violations and the ability to identify effects of a breach.  
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Netskope Dashboards
 

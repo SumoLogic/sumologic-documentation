@@ -45,6 +45,10 @@ Sumo supports the Graphite, Carbon 2.0, and Prometheus metric formats. For more
 
 ## Metrics sources
 
+:::note
+Metrics reported with a timestamp older than 24 hours ago or newer than 24 hours in the future from the time they are reported are dropped.
+:::
+
 Currently available metric sources are:
 
 * [HTTP Logs and Metrics source.](/docs/send-data/hosted-collectors/http-source/logs-metrics) You can use an HTTP source on hosted collector to collect Graphite, Carbon 2.0, and Prometheus metrics from environments where it is impractical to deploy an installed collector.
@@ -113,7 +117,7 @@ For instructions on how to create a metric query, see [Metrics Explorer](../metr
 
 ### Metricmonitors
 
-You can configure a metric monitor for a metric query so that Sumo will send an alert notification, when the query results match the rules that you define for the monitor. There are two notification types: email and WebHook. 
+You can configure a metric monitor for a metric query so that Sumo will send an alert notification, when the query results match the rules that you define for the monitor. There are two notification types: email and webhook. 
 
 You can set up several types of monitors: Critical, Warning, and Missing Data. Critical and Warning result in value-based alerts—they are triggered when a metric in a time series varies from a threshold for a specified period of time.  A Missing Data monitor triggers an alert when no data is received for a specified period of time.  
 

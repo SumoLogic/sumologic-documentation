@@ -37,7 +37,9 @@ The Sumo Logic Threat Intel lookup database is only available with Sumo Logic En
 
 Now that you have set up collection, install the Sumo Logic App for Threat Intel for AWS to use the preconfigured searches and [Dashboards](/docs/integrations/amazon-aws/threat-intel#viewing-threat-intel-dashboards) that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Threat Intel Dashboards
 
@@ -48,13 +50,13 @@ All Dashboards include filters that you can use in Interactive Mode for further 
 
 High-level view of the threats identified by Threat Intel in your AWS CloudTrail, VPC Flow Logs, and ELB systems.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Threat-Intel-overview.png')} alt="AWS Threat Intel" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Threat-Intel-for-AWS-Overview.png')} alt="AWS Threat Intel" />
 
 * **Welcome to Threat Intel for AWS.** See an informational panel to help you get started with Threat Intel. You can close this panel once you’ve read the text and visited the FAQs.
 * **Scanned Events Over Time.**  See the number of events scanned while looking for threats during the last 24 hours, broken down by source type.  
-* **CloudTrail. **Count of threats detected in CloudTrail logs for the last 24 hours. Click this panel to drill down further on threats identified for CloudTrail and you’ll be taken to the Threat Intel - AWS CloudTrail dashboard.
+* **CloudTrail.** Count of threats detected in CloudTrail logs for the last 24 hours. Click this panel to drill down further on threats identified for CloudTrail and you’ll be taken to the Threat Intel - AWS CloudTrail dashboard.
 * **VPC.** Count of threats detected in VPC Flow logs for the last 24 hours. Click this panel to drill down further on threats identified for VPC Flow Logs and you’ll be taken to the Threat Intel - AWS VPC dashboard.
-* **ELB. **Count of threats detected in ELB logs for the last 24 hours. Count of threats detected in ELB for the last 24 hours. Click this panel to drill down further on threats identified for VPC and you’ll be taken to the Threat Intel - AWS ELB dashboard.
+* **ELB.** Count of threats detected in ELB logs for the last 24 hours. Count of threats detected in ELB for the last 24 hours. Click this panel to drill down further on threats identified for VPC and you’ll be taken to the Threat Intel - AWS ELB dashboard.
 * **Threats over Time - CloudTrail**. Count of threats to CloudTrail over the last 24 hours timesliced by hour to give you a trend of threats identified over time.
 * **Threats over Time - VPC.** Count of threats to VPC Flow logs over the last 24 hours timesliced by hour to give you a trend of threats identified over time
 * **Threats over Time - ELB.** Count of threats to ELB over the last 24 hours timesliced by hour to give you a trend of threats identified over time.
@@ -67,27 +69,27 @@ High-level view of the threats identified by Threat Intel in your AWS CloudTrail
 
 Use this dashboard for details on potential threats and IOCs for AWS CloudTrail.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ThreatIntelAWSCloudTrail.png')} alt="AWS Threat Intel" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Threat-Intel-for-AWS-AWS-CloudTrail.png')} alt="AWS Threat Intel" />
 
 * **Threats by Geo Location.** View the geo location of threats by IP address that have been identified by Crowdstrike with a malicious confidence of High over the last 24 hours.
 * **Threats Associated with CloudTrail Events.** Track events in CloudTrail by event time where the malicious confidence is High by source user, source IP address, event name, AWS region, result, malicious confidence, label name, threat malware families, threat last updated, and count for the last 24 hours.
 * **Threats by Events and I.P.** Compare events where the malicious confidence is High by source IP address over the last 24 hours.
-* **Threats Over Time by Result. **Compare successful versus access denied threats with a High malicious confidence for the last 24 hours, timesliced by hour.
+* **Threats Over Time by Result.** Compare successful versus access denied threats with a High malicious confidence for the last 24 hours, timesliced by hour.
 * **Threats By Actor.** Compare High malicious confidence threats by actor over the last 24 hours.
-* **Threats by Events and Result. **Compare events identified as threats with a High malicious confidence and see the number of successful versus access denied results for the last 24 hours.
+* **Threats by Events and Result.** Compare events identified as threats with a High malicious confidence and see the number of successful versus access denied results for the last 24 hours.
 
 
 ### Amazon VPC Flow Logs
 
 Use this dashboard for details on potential threats and IOCs for AWS VPC Flow Logs.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ThreatIntelAWSVPCFlowLogs.png')} alt="AWS Threat Intel" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Threat-Intel-for-AWS-Amazon-VPC-Flow-Logs.png')} alt="AWS Threat Intel" />
 
 * **Geo Location of Threats with Rejected Flow Logs.** View the location of the source IP address of threats identified as High malicious confidence and rejected VPC flow logs for the last 24 hours.
 * **Geo Location of Threats with Accepted Flow Logs.** View the location of the source IP address of threats identified as High malicious confidence and accepted VPC flow logs for the last 24 hours
 * **Threats Associated with Rejected Flow Logs.** View an aggregation table of High malicious confidence threats with rejected flow logs and compare the the interface ID, account ID, source, destination, protocol, malicious confidence, label name, threat malware families, threat last updated, and count.
 * **Threats Associated with Accepted Flow Logs.** View an aggregation table of High malicious confidence threats with accepted flow logs and compare the the interface ID, account ID, source, destination, protocol, malicious confidence, label name, threat malware families, threat last updated, and count.
-* **Top 10 Threat Sources by Action. **View a barchart of the top ten threat sources by source IP address, action and count over the last 24 hours.
+* **Top 10 Threat Sources by Action.** View a barchart of the top ten threat sources by source IP address, action and count over the last 24 hours.
 * **Threat Breakdown.** View a bar chart of threats over the last 24 hours by count, actor, and action
 * **Threats Over Time by Action.** View a trend over the last 24 hours of accepted and rejected threats.
 
@@ -96,12 +98,12 @@ Use this dashboard for details on potential threats and IOCs for AWS VPC Flow Lo
 
 Use this dashboard for details on potential threats and IOCs for Elastic Load Balancing.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/ThreatIntelAWSELB.png')} alt="AWS Threat Intel" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Threat-Intel-for-AWS-AWS-Elastic-Load-Balancing-Classic.png')} alt="AWS Threat Intel" />
 
-* **Threats by Geo Location. **View the latest threats identified the geo location of their by source IP address.
-* **Threats Associated with Client IP. ** View an aggregation table of threats by client IP with a malicious confidence of High that contains the ELB server, ELB status code, full request, source IP,  source port, back end host, destination port, malicious confidence, label name, threat malware families, and threat last updated.
+* **Threats by Geo Location.** View the latest threats identified the geo location of their by source IP address.
+* **Threats Associated with Client IP.**  View an aggregation table of threats by client IP with a malicious confidence of High that contains the ELB server, ELB status code, full request, source IP,  source port, back end host, destination port, malicious confidence, label name, threat malware families, and threat last updated.
 * **Client IP threats by ELB Server.** View threats by client IP with a malicious confidence of High by ELB Server.
-* **Threats By Actor. **View a count of total threats with a malicious confidence of High for the last 24 hours, broken up by Actor.
-* **Client IP Threats Over Time by ELB Server. **View a line chart of the threats by client IP address with high malicious confidence over the last 24 hours.
+* **Threats By Actor.** View a count of total threats with a malicious confidence of High for the last 24 hours, broken up by Actor.
+* **Client IP Threats Over Time by ELB Server.** View a line chart of the threats by client IP address with high malicious confidence over the last 24 hours.
 * **Threats Associated with Hostname.** View an aggregation table of threats by hostname with a malicious confidence of High that contains the ELB server, ELB status code, full request, host name,  source port, back end host, destination port, malicious confidence, label name, threat malware families, and threat last updated over the last 24 hours.
 * **Threats Associated with URL (Request).** View threats by URL where the malicious confidence is high over the last 24 hours.

@@ -9,10 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page describes the Metrics Explorer UI and how to use it.
 
-:::tip
-If you prefer to use the Classic metrics UI, see [Switch to the Classic metrics UI](/docs/metrics/metrics-queries/metrics-explorer/#switch-to-the-classic-metrics-ui).
-:::
-
 ## About the UI
 
 The Metrics Explorer appears when you open a new metrics tab. The page
@@ -25,14 +21,14 @@ If your query supports basic mode, you can freely move between basic and advance
 
 ## Switch between Basic and Advanced Mode
 
-When you open a new Metrics tab, it is displayed in Basic Mode. You can switch to Advanced Mode by clicking the three-dot icon, and selecting **Advanced Mode**. When you are in Advanced Mode, you can switch back to Basic Mode from the same options menu.
+When you open a new Metrics tab, it is displayed in Basic Mode. You can switch to Advanced Mode by clicking the three-dot kebab icon, and selecting **Advanced Mode**. When you are in Advanced Mode, you can switch back to Basic Mode from the same options menu.
 
 If you use the Advanced Mode to build complex metrics, you can convert it to Basic Mode by selecting the option. If the query cannot support basic mode, you receive a message informing you "Your query cannot be switched to Basic Mode."
 
 Example of queries that *will not* convert:
 
-* `metric=CPU_Sys _sourcecategory=autocomplete | bottomk (5, avg + 3 * stddev)` This query is not supported because `bottomk` in basic mode only supports simple aggregators such as `avg` or `count`. It does not support arbitrary formulas.
-* `(metric=CPU_Sys OR metric=CPU_Idle) _sourcecategory=autocomplete` This query is not supported because basic mode does not support logical `OR` for the selector part of the query.
+* `metric=CPU_Sys _sourceCategory=autocomplete | bottomk (5, avg + 3 * stddev)` This query is not supported because `bottomk` in basic mode only supports simple aggregators such as `avg` or `count`. It does not support arbitrary formulas.
+* `(metric=CPU_Sys OR metric=CPU_Idle) _sourceCategory=autocomplete` This query is not supported because basic mode does not support logical `OR` for the selector part of the query.
 
 When converted, the filters convert allowing you to select and modify, make different selections, remove filters, and add operators as you would normally in Basic Mode.
 
@@ -40,11 +36,15 @@ When converted, the filters convert allowing you to select and modify, make diff
 
 ## Switch to the Classic metrics UI
 
-If you prefer to use the Classic metrics UI, you can switch to it, and switch back the Metrics Explorer interface at any point. To switch to Classic metrics, click the three-dot icon near the upper right corner of the page and click **Switch to Classic Metrics**. 
+:::info Classic Metrics Deprecation
+Effective January 2024, we're deprecated Classic Metrics (and Classic Dashboards) in favor of our newer [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) interface. No action is required on your part.
+:::
+
+If you prefer to use the Classic metrics UI, you can switch to it, and switch back the Metrics Explorer interface at any point. To switch to Classic metrics, click the three-dot kebab icon near the upper right corner of the page and click **Switch to Classic Metrics**. 
 
 Not all of the features available in the Metrics Explorer are found in the Classic UI.
 
-You'll be asked to confirm your choice. Click **Switch to Classic UI** to proceed. After you switch to the Classic UI, you can return to the Metrics Explorer UI by clicking the three-dot icon again, and selecting **Switch to New Metrics**. While you are in the Classic UI, new metric tabs you open will display the Classic UI.
+You'll be asked to confirm your choice. Click **Switch to Classic UI** to proceed. After you switch to the Classic UI, you can return to the Metrics Explorer UI by clicking the three-dot kebab icon again, and selecting **Switch to New Metrics**. While you are in the Classic UI, new metric tabs you open will display the Classic UI.
 
 ![switch-to-classic.png](/img/metrics/confirm-switch-to-classic.png)
 
@@ -62,7 +62,7 @@ The key components of the UI are:
 | B | In the **Filters** area, you can narrow down the scope of your query, using metadata and metric dimensions. When you click in this area, you’re presented with a dropdown list of the metadata fields and dimensions associated with the metric you selected. When you select a metadata field or dimension, you’re presented with a list of values for the selected field or dimension. In our example query, we selected one metadata field, `_sourceCategory=bloomfilter`. The more metadata fields and dimensions you select, the narrower your query will be. After you've selected a filter and filter value, you can click the chip for the filter setting to edit it. |
 | C | In this area, you can apply one or more metric operators to metric query results. When you click **Add Operator**, you’re presented with a list of metric operators. In our example query, we selected the `topk` operator.     |
 | D | By default, the left pane below the query builder section presents Time Series Table of the time series returned by your query. You can click **Chart** to view a visualization instead. When you switch to the chart view, by default, a time series plot is presented. You can select a different visualization method, although not all visualizations make sense for every query.  |
-| E | In the **Panel Type** area, you can select a different chart type: Categorical, Single Value, Map, and Honeycomb. The **Visual Settings** options allow you to customize your chart. For more information about the Chart Customization, see [Modify a Chart](/docs/dashboards-new/panels/modify-chart).  |
+| E | In the **Panel Type** area, you can select a different chart type: Categorical, Single Value, Map, and Honeycomb. The **Visual Settings** options allow you to customize your chart. For more information about the Chart Customization, see [Modify a Chart](/docs/dashboards/panels/modify-chart).  |
 | F | The icons on the right of the **Panel Type** area allow you to add a query, hide a query, clear a query, enter advanced mode, and duplicate a query. |
 | G | The icons in this area allow you to add another query row, hide a query, and open the more options menu.
 | H | The icons in this area allow you to save and share metric queries. |
@@ -103,7 +103,7 @@ You can add or remove a column from the Time Series table using the checkbox nex
 
 ### Context menu
 
-When you mouse over a cell in the Time SeriesEC2 table, a three-dot icon appears. Click it to display a context menu.
+When you mouse over a cell in the Time SeriesEC2 table, a three-dot kebab icon appears. Click it to display a context menu.
 
 The context menu is available in both Basic and Advanced mode.
 
@@ -147,7 +147,7 @@ If the query editor mode can't be adjusted, it is changed to advanced mode so th
 
     ![click-in-metric-area.png](/img/metrics/click-in-metrici-area.png)
 
-1. Click the **Filters** field. A list of metadata fields and metric dimensions appears. Scroll through the list, or begin typing to dynamically narrow the list. Click a field or dimension. In the screenshot below, we clicked the `_sourcecategory` metadata field. A dropdown list of values for the selected item appears.
+1. Click the **Filters** field. A list of metadata fields and metric dimensions appears. Scroll through the list, or begin typing to dynamically narrow the list. Click a field or dimension. In the screenshot below, we clicked the `_sourceCategory` metadata field. A dropdown list of values for the selected item appears.
 
     ![filter-values.png](/img/metrics/filter-values.png)
 
@@ -215,7 +215,7 @@ You can perform basic math operations (+, -, \*, /) on two or more metrics queri
 
 ![pre-join.png](/img/metrics/pre-join.png)
 
-To join the queries, add a third query row, and then switch to Advanced mode, by choosing **Advanced Mode** from the three-dot menu in that row.
+To join the queries, add a third query row, and then switch to Advanced mode, by choosing **Advanced Mode** from the three-dot kebab menu in that row.
 
 ![advanced.png](/img/metrics/advanced.png)
 
@@ -272,7 +272,7 @@ Below are some FAQs about the Metrics Explorer.
 
 ### What happens to the current metrics tab when the new Metrics Explorer comes out?
 
-The Metrics Explorer replaces the Classic metrics UI. If you’re not ready to switch to the Metrics Explorer, you continue to use the Classic UI until you are. The option for switching between Classic metrics and Metrics Explorer is on the three-dot menu at the top right of the page, next to the **Add to Dashboard** button.
+The Metrics Explorer replaces the Classic metrics UI. If you’re not ready to switch to the Metrics Explorer, you continue to use the Classic UI until you are. The option for switching between Classic metrics and Metrics Explorer is on the three-dot kebab menu at the top right of the page, next to the **Add to Dashboard** button.
 
 ### What value does Metrics Explorer provide?
 

@@ -24,7 +24,7 @@ For more information on the incident messages supported in Webhooks V2, see the 
 For examples of incident.trigger, incident.acknowledge, incident.resolve, and incident.assign log messages, see the [PagerDuty Webhooks V2 Examples](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview#examples) page.
 
 
-### Sample Query
+### Sample queries
 
 The following Top Altering Services query is shown on the PagerDuty V2 - Overview dashboard.
 
@@ -70,21 +70,23 @@ To create a PagerDuty V2 Webhook, do the following:
 
 ## Installing the PagerDuty V2 App
 
-This section provides instructions for installing the Sumo App for PagerDuty V2, as well as the descriptions of each of the app dashboards.
+This section provides instructions for installing the Sumo App for PagerDuty V2.
 
 Now that you have set up a log and metric collection, you can install the Sumo Logic App for PagerDuty V2, and use its pre-configured searches and dashboards.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing PagerDuty v2 Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Overview
 
-**PagerDuty V2 - Overview Dashboard **provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
+**PagerDuty V2 - Overview Dashboard** provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
 
 Use this dashboard to:
 * Review the services, incidents and policies that are causing the most alerts.

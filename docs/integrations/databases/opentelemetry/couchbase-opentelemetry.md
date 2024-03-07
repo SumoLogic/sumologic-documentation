@@ -2,7 +2,7 @@
 id: couchbase-opentelemetry
 title: Couchbase - OpenTelemetry Collector
 sidebar_label: Couchbase - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Couchbase.
+description: Learn about the Sumo Logic OpenTelemetry app for Couchbase.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -30,11 +30,35 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 * `deployment.environment`. User configured. Through this Couchbase cluster is identified by the environment where it resides. For example: dev, prod or qa.
 * `sumo.datasource`. Has a fixed value of `couchbase`.
 
-### Prerequisite
+## Prerequisite
 
 By default, the Couchbase will write the log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/opt/couchbase/var/lib/couchbase/logs`. By default, the Audit log is disabled, you must enable the audit log following these [instructions](https://docs.couchbase.com/server/current/manage/manage-security/manage-auditing.html). Query log, error log, the access log will be enabled by default.
 
-## Configure Couchbase Logs Collection
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
+
+## Collection configuration and app installation
+
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
@@ -46,7 +70,7 @@ Select the platform for which you want to install the Sumo OpenTelemetry Collect
 
 This will generate a command which can be executed in the machine which needs to get monitored. Once executed it will install the Sumo Logic OpenTelemetry Collector agent.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-Collector.png' alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -62,11 +86,13 @@ The files are typically located in folder `/opt/couchbase/var/lib/couchbase/logs
 You can add any custom fields which you want to tag along with the data ingested in Sumo.
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-YAML.png' alt="Configuration" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Couchbase-OpenTelemetry/Couchbase-YAML.png' style={{border:'1px solid gray'}} alt="Configuration" />
 
 ### Step 3: Send logs to Sumo
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -75,6 +101,9 @@ Click on the **Download YAML File** button to get the yaml file.
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -104,9 +133,34 @@ Click on the **Download YAML File** button to get the yaml file.
   ```
 
 </TabItem>
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 ## Sample Logs
 
@@ -114,7 +168,7 @@ Click on the **Download YAML File** button to get the yaml file.
 _time=09/Jan/2023:04:50:03 +0000+07:00 _level=ERROR _msg=Failed to perform INSERT on key <ud>key1</ud> for Keyspace default:beer-sample.inventory.hotel. Error - <ud>Duplicate Key key1</ud>
 ```
 
-## Sample Queries
+## Sample queries
 
 Following query is from **Average Latency of All HTTP Requests** panel from Couchbase Overview dashboard:
 

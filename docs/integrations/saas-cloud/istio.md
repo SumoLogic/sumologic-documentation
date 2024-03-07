@@ -20,7 +20,7 @@ This app supports Istio versions 1.8.x and 1.9.x+.
 * Access logs - Refer to [this page](https://istio.io/latest/docs/tasks/observability/logs/access-log/#default-access-log-format) for Istio Access log format.
 * Istio Metrics - Refer to [this page](https://istio.io/latest/docs/concepts/observability/#service-level-metrics) for detailed Istio Metrics
 
-### Sample Query
+### Sample queries
 
 Query Sample from Dashboard "Istio - Logs" > Panel "Non 200 Response Codes":
 
@@ -208,12 +208,14 @@ This section provides instructions for installing the Istio App, as well as desc
 
 Now that you have set up metric and log collection for Istio, install the Sumo Logic App for Istio and access the pre-configured dashboards that provide visibility into your Istio environment.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Istio Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
 
 ### Overview

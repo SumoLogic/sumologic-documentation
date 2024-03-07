@@ -2,7 +2,7 @@
 id: apache-tomcat-opentelemetry
 title: Apache Tomcat - OpenTelemetry Collector
 sidebar_label: Apache Tomcat - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Apache Tomcat.
+description: Learn about the Sumo Logic OpenTelemetry app for Apache Tomcat.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/apache-tomcat.png')} alt="Thumbnail icon" width="65"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The [Apache Tomcat](https://tomcat.apache.org/tomcat-8.5-doc/index.html) app is a logs app that helps you get insight into visitor locations, traffic patterns, errors, resource utilization, garbage collection, web server operations and access from known malicious sources.
+The [Apache Tomcat](https://tomcat.apache.org/tomcat-8.5-doc/index.html) app is a logs app that helps you get insight into visitor locations, traffic patterns, errors, resource utilization, garbage collection, web server operations, and access from known malicious sources.
 
 Tomcat logs are sent to Sumo Logic through Opentelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
@@ -25,9 +25,9 @@ The following are the [Fields](/docs/manage/fields) that will be created as part
 - `webengine.system`. Has a fixed value of **tomcat**.
 - `sumo.datasource`. Has a fixed value of **tomcat**.
 
-## Prerequisites
+### Prerequisites
 
-The Sumo Logic App for Apache Tomcat uses three types of logs:
+The Sumo Logic app for Apache Tomcat uses three types of logs:
 
 1. Tomcat Access logs. [Log format description](https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html). Recommended pattern used is pattern="common".
 2. Tomcat Catalina.out logs. [Log format description](https://docs.oracle.com/javase/8/docs/api/java/util/logging/SimpleFormatter.html)
@@ -35,15 +35,39 @@ The Sumo Logic App for Apache Tomcat uses three types of logs:
 
 By default, Tomcat logs are stored in `/usr/share/tomcat/logs/` The default directory for log files is listed in the `/usr/share/tomcat/conf/logging.properties` file.
 
-## Collecting Logs and Installing the Apache Tomcat app
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
 
-Here are the steps for Collecting Logs and installing the app.
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
+
+## Collection configuration and app installation
+
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -55,11 +79,13 @@ The files are typically located in `/usr/share/tomcat/logs/*`. If you're using a
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -68,6 +94,9 @@ You can add any custom fields which you want to tag along with the data ingested
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -97,18 +126,43 @@ You can add any custom fields which you want to tag along with the data ingested
   ```
 
 </TabItem>
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-## Sample Log Messages
+<LogsOutro/>
+
+## Sample log messages
 
 ```
 Dec 13, 2022 03:53:03 PM org.apache.catalina.startup.Catalina start INFO: Server startup in 63394 ms
 179.105.33.169 - - [13/Dec/2022:15:53:03 +0000] "PUT /aboutus/ HTTP/1.1" 404 76246453 "http://bing.com/Nutch-1.4" "-"
 ```
 
-## Sample Queries
+## Sample queries
 
 ```sql
  %"sumo.datasource"=tomcat %"webengine.cluster.name"=*
@@ -121,7 +175,7 @@ Dec 13, 2022 03:53:03 PM org.apache.catalina.startup.Catalina start INFO: Server
 | transpose row _timeslice column component
 ```
 
-## Viewing Tomcat Dashboards
+## Viewing Tomcat dashboards
 
 ### Overview
 
@@ -129,7 +183,7 @@ The **Apache Tomcat - Overview** Dashboard provides a high-level view of informa
 
 Use this dashboard to:
 
-- Analyze http request about status code
+- Analyze http request about status code.
 - Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
 - Gain insights into Client, Server Responses on Tomcat Server. This helps you identify errors in Tomcat Server.
 
@@ -254,6 +308,6 @@ The **Apache Tomcat - Threat Intel** dashboard provides an at-a-glance view of t
 
 Use this dashboard to:
 
-- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
+- To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#03_Threat-Intel-FAQ) threat feed.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tomcat-OpenTelemetry/Apache-Tomcat-Threat-Intel.png' alt="Threat intel" />

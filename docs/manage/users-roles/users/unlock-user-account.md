@@ -16,16 +16,12 @@ At this time, an administrator can:
 **To unlock a user's account**
 
 1. Go to **Administration > Users and Roles > Users**. 
-
     ![user-options-menu.png](/img/users-roles/user-options-menu.png)
-
-1. Select the row for the user you want to unlock and choose **Unlock** from the three-dot options menu.
-
-    :::noteIf you have configured SAML for single sign-on, and you have locked down SAML so that users must login using SAML, the **Unlock** option will not appear on the **More Actions** menu. To unlock the user account, you must first toggle the **Require SAML Sign In** option, and then re-enable lockdown. For more information, see [SAML Lockdown Limitations](../../security/saml/set-up-saml.md).
+1. Select the row for the user you want to unlock and choose **Unlock** from the three-dot kebab options menu.
+    :::note
+    If you have configured SAML for single sign-on, and you have locked down SAML so that users must login using SAML, the **Unlock** option will not appear on the **More Actions** menu. To unlock the user account, you must first toggle the **Require SAML Sign In** option, and then re-enable lockdown. For more information, see [SAML Lockdown Limitations](../../security/saml/set-up-saml.md).
     :::
-     
 1. The user's account is unlocked, and Sumo Logic automatically sends an email to alert the user. 
-
-:::note
-During the lockout period, users can request a password reset from the login page, however this password will not allow access to the account until either the lockout period has expired or an administrator has unlocked the account.
-:::
+   :::note
+   During the lockout period, users can request a password reset from the login page, however this password will not allow access to the account until either the lockout period has expired or an administrator has unlocked the account.
+   :::

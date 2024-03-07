@@ -14,7 +14,9 @@ This feature is available in the following account plans.
 | AWS Observability Dashboards | Trial, Professional, and Enterprise | Trial, Essentials, Enterprise Operations, Enterprise Security,  Enterprise Suite |
 | Root Cause Explorer | Trail, Enterprise | Trial, Enterprise Operations, Enterprise Suite |
 
-This page shows you how to intuitively navigate through your AWS environment using [Explore](/docs/dashboards-new/explore-view) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
+This page shows you how to intuitively navigate through your AWS environment and [Explore](/docs/dashboards/explore-view) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
+
+You can also easily navigate to all features and functions of the AWS Observability solution in one place. Refer to the [AWS Observability Hub](/docs/observability/aws) page to learn more about the centralized page to access the AWS Observability solution.
 
 ## Working with Explore View
 
@@ -24,9 +26,9 @@ The AWS Observability Solution comprises an intuitive dashboard framework that m
 
 Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuitive visual representation of your environment.
 
-To open Explore and AWS Observability View, do the following:
+To open Explore and AWS Observability View, go to [AWS Observibility tab](/docs/observability/aws) in the home page or do the following:
 
-1. Log in to Sumo Logic and click **+ New** on the top menu bar.
+1. Sign in to Sumo Logic and click **+ New** on the top menu bar.
 1. From the dropdown menu, choose **Explore**. 
 
     ![Explorer.png](/img/observability/Explorer.png)
@@ -73,7 +75,7 @@ Select the graph data point you are interested in. In the following screenshot, 
 
 ![Drill_RCA.png](/img/observability/Drill_RCA.png)
 
-For details, see [Drill down to discover root causes](../../../dashboards-new/drill-down-to-discover-root-causes.md).
+For details, see [Drill down to discover root causes](../../../dashboards/drill-down-to-discover-root-causes.md).
 
 ## Troubleshooting with the AWS Observability Root Cause Explorer Dashboards
 
@@ -96,10 +98,10 @@ Click a link for information on the individual app dashboards:
 * [AWS API Gateway Dashboards](../integrations/aws-api-gateway.md)
 * [AWS Application Load Balancer Dashboards](../integrations/aws-application-load-balancer.md)
 * [AWS DynamoDB Dashboards](../integrations/aws-dynamodb.md)
-* [AWS EC2 Host Metrics Dashboards](../integrations/aws-ec2-host-metrics.md/)
+* [AWS EC2 Host Metrics Dashboards](../integrations/aws-ec2-host-metrics.md)
 * [AWS EC2 Metrics Dashboards](../integrations/aws-ec2-metrics.md)
 * [AWS Lambda Dashboards](../integrations/aws-lambda.md)
-* [Amazon RDS Dashboards](../integrations/aws-rds-metrics.md)
+* [Amazon RDS Dashboards](../integrations/amazon-rds.md)
 * [Amazon ElastiCache Dashboards](../integrations/amazon-elasticache.md)
 * [Amazon ECS Dashboards](../integrations/amazon-ecs.md)
 * [AWS Network ELB Dashboards](../integrations/aws-network-load-balancer.md)
@@ -110,4 +112,4 @@ Click a link for information on the individual app dashboards:
 
 ## More Information
 
-* [Explore View](/docs/dashboards-new/explore-view.md)
+* [Explore View](/docs/dashboards/explore-view.md)

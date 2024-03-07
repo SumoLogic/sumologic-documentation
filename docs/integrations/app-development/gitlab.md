@@ -31,7 +31,7 @@ For information on GitLab events, refer to [GitLab documentation](https://docs.g
 For more information about log messages, see [GitLab documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html).
 
 
-### Sample Query
+### Sample queries
 
 This section provides a sample query from the **Opened Merge Requests** panel on the **GitLab - Merge Requests** dashboard.
 
@@ -101,25 +101,10 @@ Sumo Logic needs to understand the event type for incoming events. To enable thi
 
 ## Installing the GitLab App
 
-To install the app, do the following:
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in the Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder or another specified folder. From here, you can share it with your organization.
-
-Panels will start to fill automatically.
-
-Each panel slowly fills with data matching the time range query and received since the panel was created. Results will not immediately be available, updating with full graphs and charts over time.
+<AppInstall/>
 
 
 ### Troubleshooting
@@ -156,7 +141,7 @@ Use this dashboard to:
 
 ### Deployments
 
-The **GitLab - Deployments **dashboard provides users with a high-level view of activities such as deployments failed or success.
+The **GitLab - Deployments** dashboard provides users with a high-level view of activities such as deployments failed or success.
 
 Use this dashboard to:
 * Understand the number of deployments that failed or succeeded.
@@ -170,7 +155,7 @@ Use this dashboard to:
 
 ### Builds
 
-The **GitLab - Builds **dashboard provides users with a high-level view of activities such as builds failed or success.
+The **GitLab - Builds** dashboard provides users with a high-level view of activities such as builds failed or success.
 
 Use this dashboard to:
 * Understand the number of builds that failed or succeeded.
@@ -183,7 +168,7 @@ Use this dashboard to:
 
 ### Pipeline
 
-The **GitLab - Pipeline **dashboard provides users with a high-level view of activities such as builds failed or success.
+The **GitLab - Pipeline** dashboard provides users with a high-level view of activities such as builds failed or success.
 
 Use this dashboard to:
 * Understand the number of pipelines that failed or succeeded.
@@ -198,7 +183,7 @@ Use this dashboard to:
 
 ### Merge Requests
 
-The **GitLab - Merge Requests **dashboard provides users with a high-level view of activities such as Merge Requests opened, closed, and merged.
+The **GitLab - Merge Requests** dashboard provides users with a high-level view of activities such as Merge Requests opened, closed, and merged.
 
 Use this dashboard to:
 * Understand the number of merge requests being opened, closed, and merged.
@@ -214,7 +199,7 @@ Use this dashboard to:
 
 ### Commits
 
-The **GitLab - Commits **dashboard provides users with a high-level view of activities such as files modified, added, and removed by commit.
+The **GitLab - Commits** dashboard provides users with a high-level view of activities such as files modified, added, and removed by commit.
 
 Use this dashboard to:
 * Get insight into the total number of commits by branch, project, repository, and user.

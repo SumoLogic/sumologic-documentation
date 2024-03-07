@@ -11,11 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Citrix Cloud is a platform that manages and hosts various Citrix cloud services. The Citrix Cloud App for Sumo Logic allows you to keep track of any modifications made to configurations or actions that have affected your environment and other account administrators. This app is built on the Citrix Cloud source, which ensures effortless integration between Citrix Cloud and Sumo Logic. Through real-time analysis, the App offers dashboards to display critical metrics, enabling you to understand administrator, client administrator, and group administrator activities within your Active Directory or Azure Active Directory (AD).
 
-## Log Types
+## Log types
 
 This Citrix Cloud App uses [SystemLog](https://developer.cloud.com/citrix-cloud/citrix-cloud---systemlog/apis/Records/GetRecords) records from the Citrix Cloud. To learn about the Citrix Cloud API fields, see the [Event Data Fields](https://docs.citrix.com/en-us/citrix-cloud/citrix-cloud-management/system-log/events.html#event-data-descriptions#fields) documentation.
 
-### Sample Logs
+### Sample log
 
 ```json
 {
@@ -35,7 +35,7 @@ This Citrix Cloud App uses [SystemLog](https://developer.cloud.com/citrix-cloud/
                "AccessType": "Full",
                "Pending": "True",
                "FromRecovery": "False",
-               "Requestor": "{\"Firstname\":null,\"Lastname\":null,\"Email\":\"prpatel.ctr@sumologic.com\",\"UCOid\":null}"
+               "Requester": "{\"Firstname\":null,\"Lastname\":null,\"Email\":\"prpatel.ctr@sumologic.com\",\"UCOid\":null}"
            },
            "agentId": "delegatedadministration",
            "serviceProfileName": null,
@@ -52,7 +52,7 @@ This Citrix Cloud App uses [SystemLog](https://developer.cloud.com/citrix-cloud/
        }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql="Active Team Members"
 sourceCategory="citrixCloudSource"
@@ -66,36 +66,24 @@ sourceCategory="citrixCloudSource"
 | top 50 time,name,message,access_type by time
 ```
 
-## Installing the Citrix Cloud App
+## Installing the Citrix Cloud app
 
-Before you begin, collect logs from Citrix Cloud API and ingest them into Sumo Logic. Refer to the [Citrix Cloud API Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source/) to create the source and use the same source category while installing the app.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-To install the app, follow the steps below:
-1. From the **App Catalog**, search for the app and select it.
-1. Select **Add Integration** button to install the app.
-1. Configure **Citrix Cloud App** using the steps described in the [Citrix Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source/). If you already have set up your data, skip this step by clicking on **Next**.
-1. Complete the following fields:
-   1. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example, `_sourceCategory=MyCategory`.
-    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-1. Click **Next**.
+<AppInstall2/>
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
+## Viewing Citrix Cloud dashboards
 
-The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-## Viewing the Citrix Cloud Dashboards
+<ViewDashboards/>
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+### Administrator Overview
 
 **Citrix Cloud - Administrator Overview** dashboard provides detailed information on newly added administrators, pending invitations, and recently deleted administrators from your Citrix Cloud account, including any updates to roles and permissions. The Dashboard also allows for easy visualization of the distribution of event types and the actors who perform these records, enabling you to identify trends and patterns in administrator activity.
 
 In addition to the above, the Dashboard provides a summary of all the Administrator events, allowing you to quickly assess the overall state of your Citrix Cloud account. With this Dashboard, you can easily monitor and analyze administrator activity, ensuring that your Citrix Cloud account remains secure and compliant with your organization's policies and regulations.<br/><img src={useBaseUrl('img/integrations/saas-cloud/citrix-admin-overview.png')} alt="citrix-admin-overview" width="750"/>
+
+### Client, Group Administrator Overview
 
 **Citrix Cloud - Client, Group Administrator Overview** dashboard provides detailed information about newly added and recently deleted clients and group administrators from your Citrix Cloud account. It also indicates whether any group administrators' roles/permissions have been updated. It also provides a summary of all Administrator events.<br/><img src={useBaseUrl('img/integrations/saas-cloud/client-group-admin-overview.png')} alt="client-group-admin-overview" width="750"/>

@@ -1,133 +1,103 @@
 ---
 id: about
-title: About Dashboards
+title: About Dashboard
+sidebar_label: About Dashboard
+description: Learn the benefits of Dashboard and how it seamlessly integrates log, metric, and trace data.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Dashboards** are a powerful forensic tool to create searches and view search results based on data available through a search.
+<img src={useBaseUrl('img/dashboards-new/about-dashboard-new/dashboards-new.png')} alt="icon" width="50"/>
 
-* If you’re having problems with your systems or network, you can easily move backward in time to pinpoint exactly when the problems occurred, and analyze additional search results to uncover the root cause.
-* Reports and long-term trend analysis provide historical context and are useful in any situations in which live data isn’t as relevant as historical data.
-* Dashboards populate completely every time you launch them and backfill data as needed. This means there will be a delay before you see all the data. If you change a time range, the data panels will rerun the search.
-* In Live Mode, dashboards provide a real-time view of your system, continually updating as data comes in.
+Dashboard allows you to analyze metric and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to effectively monitor and manage a Kubernetes environment.
 
-Dashboards contain a collection of panels:
+Dashboards are a critical tool for monitoring and troubleshooting modern applications, allowing you to quickly navigate through your data without having to learn a query language. Graphs and data mappings provide visual representations of data that enable you to quickly identify and resolve key issues.
 
-* **Data Panels** provide a graphical representation in the form of a chart of your organization's data.
-* **Text and Title Panels** allow you to add context to the data in the dashboard.
+## What's great about Dashboard 
 
-To create a data panel, you first run a search query. From the resulting data in the search page's Aggregates tab, you can display that data using different types of charts, then save those charts to a panel in a dashboard.
+Dashboard provides the unique ability to display metrics metadata and logs data on the same dashboard in an integrated seamless view. This gives you control over the visual display of metric data as well as log data. Dashboard streamlines dashboard configuration and on-the-fly analytic visualizations with its new templating features. 
 
-The information you save in a dashboard provides insight into the current state of the data you're uploading to Sumo Logic. Instead of having to run a number of queries, Sumo Logic runs these searches automatically, making sure that you're never looking at stale data. You won't have to remember to run important searches once you save them to dashboards—you'll be able to spend your time gaining insight into what's happening in your organization.
+[Template variables](filter-template-variables.md) allow you to filter dashboard data dynamically to generate new visualizations for intuitive chart creation and data scoping.
 
-For more information, see the following topics:
-
-* [Adding Text and Title Panels](get-started/add-text-panel.md)
-* [Get Started with Dashboards and Panels](/docs/dashboards/get-started)
-* Share Dashboards [Inside](share-dashboard-inside-org.md) and [Outside](share-dashboard-outside-org.md) Your Organization
-
-## Live mode
-
-From a dashboard, you can click the toggle to go into Live Mode.
-
-![livemode.png](/img/dashboards/livemode.png)
-
-In Live Mode, dashboards provide a real-time view of your system, continually updating as data comes in. When you click the toggle to go into Live Mode, the panels start displaying live data going forward, while they also backfill with data for the specified time period. When the dashboard is completely backfilled, the percentage indicator changes to a green dot.
-
-Live Mode is the ideal way to share screens for network operations centers, Operations, Developers, and so on.
-
-:::note
-To display Live Mode when a dashboard first opens, you can include mode=live in the URL (for example, `https://example-www.sumologic.net/ui...&t=r&mode=live`). This option won't work if the dashboard has panels with absolute or literal time ranges, but in that case, you will still be able to toggle to Live Mode.
-:::
-
-Live Mode supports filters and relative time range changes. But keep in mind that if you start Live Mode with new settings, the dashboard will take some time to load, depending on the time range and amount of data being queried. You can close the browser when backfill is still in progress (not 100% yet). Backfill continues to run until complete.
-
-Note that in Live Mode, Sumo will not render a panel that has more than 1440 groups. For more information, see [Live Mode panel limitations](#live-mode-panel-limitations) below.
-
-:::note
-For free accounts, Live Mode will disable automatically if not viewed for seven days. For other accounts, Live Mode will disable automatically if not viewed for 30 days. If disabled, click the Live Mode toggle to reopen Live Mode.
-:::
-
-## Interactive mode
-
-When you toggle a dashboard's Live Mode icon off, the dashboard enters interactive mode. In interactive mode, the dashboard is not updated with new data. You must put a dashboard in interactive mode to edit the dashboard and to change time range and filter settings.
-
-## Dashboard uses
-
-The uses for dashboards are nearly endless. Perhaps your IT security group wants to keep an eye on who is installing virtual machines. Save the query you run as a panel in a dashboard, and watch for spikes in a line graph. Dashboards bring additional assurance, knowing that unusual activity will be displayed real time in an easy-to-digest graphical format. The data that matters the most to you is even easier to track.
-
-When you install Sumo Logic apps, they display information about your environment using pre-configured search queries, panels, and dashboards. They're also a great example of use cases for creating your own dashboards.
-
-For example, in the Sumo Logic Data Volume App, the panels in the Overview dashboard provide information on the ingest, top  five collectors and source categories being used in the last 24 hours, by logs and metrics.
-
-![DataVolumeOverview1.png](/img/dashboards/DataVolumeOverview1.png)
-
-The Sumo Logic Log Analysis QuickStart App, in the Keywords and Metadata dashboard, you instantly see any issues that are appearing in your top source categories, source hosts, and in the top 10 files.
-
-![LogAnalysis.png](/img/dashboards/LogAnalysis.png)
-
-Once you have installed an app, you can view the pre-configured search queries that power the dashboards by [launching a search from a panel](get-started/launch-search-data-panel.md).
+### Features
 
 :::tip
-For an extended use case example, see the Sumo Logic DevOps blog, "[Building Software Release Cycle Health Dashboards in Sumo Logic](https://www.sumologic.com/blog-devops/software-release-cycle-dashboards-sumo-logic/)." 
+See [Migrate to Dashboards](/docs/dashboards/dashboards-migration).
 :::
 
-## Accessing Dashboards
+* Dashboard template variables provide full replacement control over what is inserted, and the variables work across both log and metric panels.
+* Dashboard provides a dashboard-first view to build, maintain, and interact with dashboards. With Dashboard you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
+* Dashboard utilizes the [metrics query builder](/docs/metrics/metrics-queries/metrics-explorer/) with an improved full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
 
-If you want to limit your search to all the available dashboards, you can access available dashboards from the Library tab. You can specifically call out Public and Whitelist dashboards:
+The following table shows the availability of features for Dashboard.
 
-![ChooseYourDashboards.png](/img/dashboards/ChooseYourDashboards.png)
+| Feature |Dashboard|
+| :-- | :-- |
+| Filtering a Dashboard | [Template Variable Based Filters](/docs/dashboards/filter-template-variables/) with greater control on filter values, data type, and acceptable input. |
+| Adding Queries to Dashboards | Add a panel from Search or Metrics<br/>Ability to [add panels inline](/docs/dashboards/filter-template-variables/) through Add a Panel button |
+| Log Visualizations | [Area](/docs/dashboards/panels/area-charts/)<br/>[Bar](/docs/dashboards/panels/bar-charts/)<br/>[Box Plot](/docs/dashboards/panels/box-plot-charts/)<br/>[Bubble](/docs/dashboards/panels/bubble-charts/)<br/>[Cluster Map](/docs/dashboards/panels/map-charts/)<br/>[Column](/docs/dashboards/panels/column-charts/)<br/>[Combo](/docs/dashboards/panels/combo-charts/)<br/>Connection Map<br/>[Funnel](/docs/metrics/metrics-queries/funnel-chart/)<br/>[Geo Heat Map](/docs/dashboards/panels/map-charts/)<br/>[Heat Map](/docs/metrics/metrics-queries/heat-map/)<br/>Honeycomb<br/>[Line](/docs/dashboards/panels/line-charts/)<br/>[Pie](/docs/dashboards/panels/pie-charts/)<br/>[Sankey Diagram](/docs/dashboards/panels/sankey-charts/)<br/>[Scatter](/docs/dashboards/panels/scatter-charts/)<br/>[Single Value](/docs/dashboards/panels/single-value-charts/)<br/>[Table](/docs/dashboards/panels/table-charts/) |
+| Metric Visualizations |  [Area](/docs/dashboards/panels/area-charts/)<br/>[Bar](/docs/dashboards/panels/bar-charts/)<br/>[Box Plot](/docs/dashboards/panels/box-plot-charts/)<br/>[Bubble](/docs/dashboards/panels/bubble-charts/)<br/>[Cluster Map](/docs/dashboards/panels/map-charts/)<br/>[Column](/docs/dashboards/panels/column-charts/)<br/>[Combo](/docs/dashboards/panels/combo-charts/)<br/>Connection Map<br/>[Funnel](/docs/metrics/metrics-queries/funnel-chart/)<br/>[Geo Heat Map](/docs/dashboards/panels/map-charts/)<br/>[Heat Map](/docs/metrics/metrics-queries/heat-map/)<br/>Honeycomb<br/>[Line](/docs/dashboards/panels/line-charts/)<br/>[Pie](/docs/dashboards/panels/pie-charts/)<br/>[Sankey Diagram](/docs/dashboards/panels/sankey-charts/)<br/>[Scatter](/docs/dashboards/panels/scatter-charts/)<br/>[Single Value](/docs/dashboards/panels/single-value-charts/)<br/>[Table](/docs/dashboards/panels/table-charts/) |
+| Text Panel | [Supported](/docs/dashboards/panels/markdown-syntax/) |
+| Real Time Dashboarding | [Auto Refresh](/docs/dashboards/about/#auto-refresh) |
+| Dashboards as Wall Monitors | Public Dashboards<br/>Whitelisting |
+| Dashboard Sharing with Variables and Time Range preserved | [Supported](/docs/dashboards/share-dashboard-new/) |
+| Dashboard Content Item Sharing | [Supported](/docs/dashboards/share-dashboard-new/#sharing-a-dashboard-within-your-organization) |
+| Run As Creator / Data Access Level Control | Supported |
+| Dark Theme | [Supported](/docs/dashboards/about/#dark-theme) |
+| Configured Dashboard Linking | [Supported](/docs/dashboards/link-dashboards/) |
+| Recommended Dashboards & Logs Drilldowns | Supported by clicking on data points or slices/sections of pie charts, bar charts, column charts, area charts, and line charts. [Learn more](/docs/dashboards/drill-down-to-discover-root-causes).|
+| Combined Metrics & Logs Panel | Supported. See how to [overlay logs and metrics in a panel](/docs/dashboards/faq#how-do-i-overlay-logs-and-metrics-on-one-panel). |
+| Styling Queries and Series |  Ability to style through display overrides inside the panel settings.<br/>Ability to set the color per query/series.<br/>Multiple layers of expressiveness for display overrides.<br/>For details, see how to [modify a chart](/docs/dashboards/panels/modify-chart/). |
+| Colors by Value Range  | Supported |
+| Export to PDF/PNG/JSON File | [Supported](/docs/dashboards/export-dashboard-new/) |
+| Scheduled Dashboard Report | [Supported](/docs/dashboards/scheduled-report/) |
+| Link Dashboard to Explore | [Supported](/docs/dashboards/link-dashboards/#link-a-dashboard-new-to-explore) |
+| Locate Deviations in a Time Series |[Supported](/docs/dashboards/locate-deviations-time-series/) |
+| Longer Time Range Queries | [Supported](/docs/dashboards/set-custom-time-ranges/) |
 
-You can also do this from the left nav, but you have to switch into the all shared content view.
+## Restricted Operators in Dashboard
 
-![SwitchtoAllShared.png](/img/dashboards/SwitchtoAllShared.png)
+The following operators can't be used with Dashboard:
 
-Then you will be able to search by the dashboard type:
+* Details
+* LogReduce
+* LogCompare
+* Save
+* Transaction
 
-![dashboard type](/img/dashboards/dashboard-type.png)
+:::note
+Live mode restrictions do not apply to Dashboard. 
+:::
 
-## What else do I need to know before I get started?
+## Limitations
 
-Here are a few things to keep in mind about dashboards.
+* A panel can have up to 6 logs and 6 metrics queries.
+* Joining log queries in a separate query is not supported. See how to [join metric queries](/docs/metrics/metrics-queries/metrics-explorer) for details on how this works.
+* A Dashboard can have up to 100 queries.
+* Dashboard chart properties are not retained when viewed from the Search page.
+* Chart properties are not retained when a chart is added to a Dashboard from the Search page.
+* Dashboard queries cannot return more than 1440 data points.
+  
+## Rules
 
-### Pie chart labels on dashboards are meant to be single line
+* Auto Refresh applies to the whole dashboard, you can't configure it by panel.
+* If there are two or more queries in a panel, the refresh interval for the panel is set to the maximum supported interval.
+* If the requested refresh interval is not possible, you'll get an error message indicating the actual refresh rate is slower than requested. This can be due to one of the following reasons:
+   * The time range is too long to refresh at this rate. Reduce the time range to allow a faster refresh interval.
+   * An operator is not supported at this refresh interval.
+   * The number of grouped elements is too large for the requested interval.
 
-Pie chart labels on dashboard panels are intended to be a single line, due to the size of the display area. Pie chart labels are shown in multiple lines in the larger display area of a Search page. The comparison of single line and multi line Pie chart labels is illustrated in the following example.
+## Auto Refresh
 
-![Dashboard_Pie_chart_single_line_example.png](/img/dashboards/Dashboard_Pie_chart_single_line_example.png)
+Your dashboard can automatically refresh its panels to the latest information. You have the ability to configure the refresh interval rate by clicking the dropdown arrow next to the refresh icon.
 
-### Dashboards can be published and shared to leverage the data you've analyzed.
+There are some restrictions when using operators with dashboards. To learn more, see [Restricted Operators in Dashboards](/docs/dashboards/restricted-operators-dashboards).<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/auto-refresh-dropdown-options.png')} alt="auto refresh dropdown options" style={{border: '1px solid gray'}} width="200" />
+<br/>A list of the refresh interval rates is provided for you to select from.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/dashboard-new-refresh-interval-options.png')} alt="dashboard new refresh interval options" style={{border: '1px solid gray'}} width="100" />
 
-You've saved panels in a dashboard, and you'd like to enlighten others in your organization. Just publish the dashboard to allow everyone to see what you've uncovered through your analysis.
+## Dark Theme
 
-You can also [share a dashboard](share-dashboard-inside-org.md) from the Dashboards page.
+Dashboards have two themes available: Light mode (which is the default) and Dark mode. You can toggle between the two themes within the dashboard by clicking the three-dot kebab icon. The following image shows the option to **Switch to Dark Theme**.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/dark-theme-switch.png')} alt="dark theme switch" style={{border: '1px solid gray'}} width="700" />
 
-### Dashboards are built to your specifications.
+## Clickable Legend
 
-As long as you run a search with aggregate results, you can save that search in a dashboard as a panel. For example, you could create a dashboard filled with performance-based searches, and another to track session length or other unique searches. Whatever makes sense for you and your organization—create a dashboard and  you're set.
-
-### Dashboards require queries that have aggregate results.
-
-Only searches that produce aggregate results can be saved as panels. What does that mean? Basically, to produce aggregate results, your query will contain a [grouping](/docs/search/search-query-language/group-aggregate-operators) function. This allows the data to be displayed properly in a graphical format.
-
-### Dashboards can't support all queries.
-
-Because they are resource heavy, parsing libraries are not supported in dashboards.
-
-Also, certain operators cannot be used in dashboard panels. A list of unsupported operators can be found in [Restricted Operators](restricted-operators-dashboards.md).
-
-### Live Mode panel limitations
-
-If you have a dashboard that contains a panel that has more than 1440 groups, if you switch to Live Mode a yellow warning icon will appear in the upper right corner of the panel. When you click the icon, this message appears:
-
-`Unable to include all results. Please edit your search to produce fewer results.`
-
-### Dashboard Timezones
-
-Dashboards use the **Default Timezone** setting found on the [Preferences page](../get-started/account-settings-preferences.md). The dashboard's timezone cannot be edited once it is created.
-
-### Sumo Logic free accounts
-
-Dashboards in Sumo Logic free accounts work the same way as those in enterprise accounts with one limitation: organizations with Sumo Logic free accounts have access to 20 Panels, shared between the three users in the account. You can decide to build as many dashboards as you'd like with the available panels in your account.
-
-When you publish a dashboard, it's made available to all the users in the account. However, because Sumo Logic free accounts run on seven day intervals, Dashboard panel queries may not use a time range longer than 7 days. For more information, see the [Account Usage](/docs/manage/manage-subscription) help pages.
+If you want to focus on one item in your chart you can simply click on the item in the legend. If you want to toggle just one legend item, just hold the **shift** key and then click the item.<br/><img src={useBaseUrl('/img/dashboards-new/about-dashboard-new/clicklegend.gif')} alt="clicklegend" style={{border: '1px solid gray'}} width="700" />

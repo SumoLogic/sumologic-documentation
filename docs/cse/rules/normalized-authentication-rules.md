@@ -2,11 +2,12 @@
 id: normalized-authentication-rules
 title: Normalized Authentication Rules
 sidebar_label: Normalized Authentication Rules
-description: CSE's Normalized Authentication Rules detect activities that compromise accounts using authentication logs from any data source that CSE parsers and mappings support.
+description: Cloud SIEM's Normalized Authentication Rules detect activities that compromise accounts using authentication logs from any data source that Cloud SIEM parsers and mappings support.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-*Normalized Authentication Rules* detect activities that compromise accounts using authentication logs from any data source that CSE parsers and mappings support. New authentication data sources can immediately take advantage of this rule logic without the need to customize for the
+*Normalized Authentication Rules* detect activities that compromise accounts using authentication logs from any data source that Cloud SIEM parsers and mappings support. New authentication data sources can immediately take advantage of this rule logic without the need to customize for the
 specific product or vendor.  
 
 ## Requirements and prerequisites
@@ -16,7 +17,7 @@ CloudTrail, VPN authentication services like Cisco ASA, and OS-based authenticat
 
 For the rules to support a particular product or service, the log mapping for that service must map several fields correctly.
 
-You can check whether a given data source is already supported by reviewing its log mapping in CSE. If it is, you’re good to go. If a mapping already exists for the data source, you can update it as described in this topic. If the data source doesn’t already have a mapping, you can create one.
+You can check whether a given data source is already supported by reviewing its log mapping in Cloud SIEM. If it is, you’re good to go. If a mapping already exists for the data source, you can update it as described in this topic. If the data source doesn’t already have a mapping, you can create one.
 
 The mapping requirements are:
 
@@ -33,22 +34,22 @@ The mapping requirements are:
 
 This log mapping for the AWS CloudTrail ConsoleSignIn event meets the requirements described above. (Note that `srcDevice_hostname` is not mapped because the AWS log message for that event doesn’t contain a hostname.)
 
-![auth-rule-mapping-1.png](/img/cse/auth-rule-mapping-1.png)
+<img src={useBaseUrl('img/cse/auth-rule-mapping-1.png')} alt="Authentication rule mapping" width="600"/>
 
 ## Normalized Authentication Rules
 
-* Authentication Without MFA - Detects a successful login where the account did NOT use multi-factor authentication (MFA) to gain access. We strongly recommend that you require MFA to protect accounts in the event that credentials are stolen. If you don’t require MFA for a data source, we recommend you disable this rule, or that you use a [Rule Tuning Expression](rule-tuning-expressions.md) to exclude the data source so that messages from it won’t be processed by this rule. 
+* Authentication Without MFA - Detects a successful login where the account did NOT use multi-factor authentication (MFA) to gain access. We strongly recommend that you require MFA to protect accounts in the event that credentials are stolen. If you don’t require MFA for a data source, we recommend you disable this rule, or that you use a [Rule Tuning Expression](/docs/cse/rules/rule-tuning-expressions) to exclude the data source so that messages from it won’t be processed by this rule. 
 * Brute Force Attempt - Detects multiple failed login attempts for the same username over a 24 hour timeframe. This is designed to catch both slow and quick brute force type attacks. The threshold and time frame can be adjusted based on your environment. This rule only monitors events with a `normalizedAction` of *logon*.
 * Domain Brute Force Attempt - Detects multiple failed login attempts for the same username over a 1 hour timeframe. This is designed to catch attacks that leverage domain resources to attempt credential validation. The threshold and time frame can be adjusted based on your environment. This rule only monitors events with a `normalizedAction` of *domainLogon*.
 * Password Attack - Detects multiple failed login attempts from a single source with unique usernames over a 24 hour timeframe. This is designed to catch both slow and quick password spray type attacks. The threshold and time frame can be adjusted based on your environment. This rule only monitors events with a `normalizedAction` of *logon*.
 * Domain Password Attack - Detects multiple failed login attempts from a single source with unique usernames over a 1 hour timeframe. This is designed to catch attacks leveraging domain resources to attempt credential validation. The threshold and time frame can be adjusted based on your environment. This rule only monitors events with a `normalizedAction` of *domainLogon*.
 * Successful Brute Force - Detects a series of failed logins followed by a successful login. This could indicate that an attacker was successful in guessing a user's password and has compromised the user’s account. This rule only monitors events with a `normalizedAction` of *logon*. There is no “Domain” version of this rule–that means Windows workstation logging is required to achieve full visibility for Windows environments.
 * Impossible Travel - Successful - Detects two successful logins from the same user with different country codes, indicating possible credential theft. We recommend you add filtering criteria to the rule expression to reduce false positives, for example, known VPN addresses.
-* Impossible Travel - Unsuccessful - Detects two failed logins from the same user with different country codes, indicating a possible credential theft attempt. We recommend you use a [Rule Tuning Expression](rule-tuning-expressions.md) to add filtering criteria to the rule to reduce false positives, for example, known VPN addresses.
+* Impossible Travel - Unsuccessful - Detects two failed logins from the same user with different country codes, indicating a possible credential theft attempt. We recommend you use a [Rule Tuning Expression](/docs/cse/rules/rule-tuning-expressions) to add filtering criteria to the rule to reduce false positives, for example, known VPN addresses.
 
 ## About logon and domainLogon
 
-There are two `normalizedAction` values that relate to user logins: *domainLogon* and *logon*. This enables CSE to distinguish between Windows authentication events that represent access to a domain resource (*domainLogon*) and events that represent a user accessing a specific machine (*logon*). Currently, only Windows domain (meaning an Active Directory authentication setup regardless of client OS) authentication events will have a ` normalizedAction` value of *domainLogon*.
+There are two `normalizedAction` values that relate to user logins: *domainLogon* and *logon*. This enables Cloud SIEM to distinguish between Windows authentication events that represent access to a domain resource (*domainLogon*) and events that represent a user accessing a specific machine (*logon*). Currently, only Windows domain (meaning an Active Directory authentication setup regardless of client OS) authentication events will have a ` normalizedAction` value of *domainLogon*.
 
 This is done for several reasons:
 
@@ -56,7 +57,7 @@ This is done for several reasons:
 * To differentiate between instances where a user account’s credentials are definitively being used to log into a machine, such as a Windows interactive logon as reported in event code 4624, from instances where credentials are being checked for access to the domain, such as a Kerberos TGT request as reported in event code 4768.
 * To allow for different thresholds to be applied to domain access checks as these events tend to be more voluminous and difficult to attribute to a specific action. For example, a 4768 could be generated when Username1 logs in by typing credentials in on a keyboard or when another user accesses the same host using RDP with the credentials for Username1, but there would be no way of reliably determining which scenario occurred based on the 4768 log alone.
 
-CSE determines which value of of `normalizedAction` is appropriate for a given log message, using this logic:
+Cloud SIEM determines which value of of `normalizedAction` is appropriate for a given log message, using this logic:
 
 * Windows Event Codes 4768 and 4771 are statically assigned the value *domainLogon.*
 * Windows Event Code 4776 is statically assigned the value *logon* but logic is included in several of the normalized authentication rules to differentiate between an NTLM authentication to a domain controller and to a local account on a machine

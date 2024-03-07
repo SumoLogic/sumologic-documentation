@@ -27,6 +27,7 @@ By clicking on any data point on the chart, you can view the side panel's **Enti
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Application-Health-Across-Services.png' alt="Explore coffee app to drill down on infrastructure tab.png" width="950"/>
 
+
 :::note
 Tracing metrics retention has [default metrics retention](/docs/apm/traces/view-and-investigate-traces/#time-range).
 :::
@@ -42,7 +43,6 @@ Do not modify or delete content in the **Admin Recommended** folder as it is mai
 To install the app, do the following:
 
 1. From the **App Catalog**, search for and select the **Tracing - Application Services Health** app.<br/> ![install-tracing-app.png](/img/traces/install-tracing-app.png)
-    If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 2. To install the app, click the **Add to Library** button and complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Advanced**. Select the **Location in Library** (the default is the Personal folder), or click **New Folder** to add a new folder.<br/> ![Trace app two.png](/img/traces/Trace-app-two.png)
@@ -54,7 +54,7 @@ Once an app is installed, it will appear in your **Personal** folder or the fol
 
 There are three tracing-specific dashboard panels available out of the box: **Services Map**, **Services List**, and **Trace List** panels, which explore your application environment and review all traces from your Dashboard. Duplicate or add multiple panels with different filtering or queries to refine views and support your organization.
 
-See the [Dashboard (New) guide](/docs/dashboards-new) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
+See the [Dashboard guide](/docs/dashboards) for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 
 ### Services panels
 
@@ -99,7 +99,7 @@ To add a Trace List panel to your Dashboard:
 
 #### 01. Application Service Overview
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/01.-Application-Service-Overview.png' alt="APM Dashboard" width="950"/>
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/01.-Application-Service-Overview.png' alt="APM Dashboard" width="1000"/>
 
 #### 01. Environment Overview
 
@@ -122,6 +122,7 @@ To add a Trace List panel to your Dashboard:
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/03.-Application-Service-Health-Across-Operations.png' alt="APM Dashboard" width="950"/>
 
 #### 03. Application Service Health Across Operations within Environment
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/03.-Application-Service-Health-Across-Operations-within-Environment.png' alt="APM Dashboard" width="950"/>
 
 #### 04. Application Health Across Services
@@ -132,6 +133,7 @@ To add a Trace List panel to your Dashboard:
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Service-Health-Across-Applications-and-Operations.png' alt="APM Dashboard" width="950"/>
 
 #### 04. Service Health Across Applications and Operations within Environment
+
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Tracing-Application-Services-Health/04.-Service-Health-Across-Applications-and-Operations-within-Environment.png' alt="APM Dashboard" width="950"/>
 
 #### 05. Application Service Health Across Environments

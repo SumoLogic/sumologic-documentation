@@ -1,6 +1,6 @@
 ---
 id: knowbe4
-title: Sumo Logic App for KnowBe4
+title: KnowBe4
 sidebar_label: KnowBe4
 description: The Sumo Logic App for KnowBe4 offers functionality for monitoring and analyzing KnowBe4 Phishing Security logs.
 ---
@@ -15,11 +15,11 @@ The distribution of **Phishing Security Tests** by difficulty and long-running *
 
 The **Geo Location of Failed Users** dashboard panel provides geographic insights into where failed users are located. The **Phishing Security Tests Summary** and **Phish Failures Summary** dashboard panels provide high-level summaries of the organization's testing performance. Finally, the **Top Failed Users** panel identifies users who have failed multiple tests and may require additional training.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for KnowBe4 consumes Phishing Security logs. Refer to the [KnowBe4 Phishing Security Tests](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests/get) and [Recipient Results](https://developer.knowbe4.com/rest/reporting#tag/Phishing/paths/~1v1~1phishing~1security_tests~1{pst_id}~1recipients/get) documentation.
 
-## Sample Log Messages
+## Sample log messages
 
 ```json title="Sample Phishing Security Tests Log"
 {
@@ -103,7 +103,7 @@ The Sumo Logic App for KnowBe4 consumes Phishing Security logs. Refer to the [Kn
 ```
 
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Total Phishing Security Tests"
 _sourceCategory="knowbe4nfr" campaign_id
@@ -124,25 +124,11 @@ email, scheduled_at, delivered_at, opened_at, clicked_at, replied_at, attachment
 
 ## Installing the KnowBe4 App
 
-Locate and install the app from the **App Catalog**. To see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
 Before you begin, collect logs from KnowBe4 and ingest them into Sumo Logic. Refer to the [KnowBe4 Cloud-to-Cloud Integration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source/) to create the source and use the same source category while installing the app.
 
-To install the app, follow the steps below:
-1. From the **App Catalog**, search for the app and select it.
-1. Select **Add Integration** button to install the app.
-1. Configure **KnowBe4 App** using the steps described in the [KnowBe4 Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source/). If you already have set up your data, skip this step and click **Next**.
-1. Complete the following fields:
-   1. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For example, `_sourceCategory=MyCategory`.
-    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-1. Click **Next**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
-
-The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but you will be able to view full graphs and maps.
+<AppInstall/>
 
 ## Viewing KnowBe4 Dashboards​
 

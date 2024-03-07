@@ -7,7 +7,7 @@ description: Sumo Logic Live Tail allows you to see a real-time live feed of log
 
 Use Live Tail to see a real-time feed of log events associated with a Source or Collector. These live feeds can help you with development and troubleshooting.
 
-Live Tail mimics the output of the command line command `tail -f `with a solid black background and easy to read white text. You can see all log messages as they come in, with low latency, but they are not sorted as they are with Search.
+Live Tail mimics the output of the command line command `tail -f` with a solid black background and easy to read white text. You can see all log messages as they come in, with low latency, but they are not sorted as they are with Search.
 
 You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors.
 
@@ -49,7 +49,7 @@ There is also a [Live Tail Command Line Interface](live-tail-cli.md) (CLI). Thi
 * Search operators are not supported in filters.
 * If too much data is coming in, messages may be skipped or not displayed on the screen, or there may be a lag before messages are displayed.
 * If the query you are using produces too many log message results, we may end the session, and present an error that prompts you to make your query more specific. This is to provide the best performance possible. If a Live Tail session has ended, you can restart it at any time.
-* Metadata [fields](/docs/manage/fields.md) are not available in Live Tail.
+* Metadata [fields](/docs/manage/fields) are not available in Live Tail.
 * Windows Event Source logs and Windows Performance Source logs may not handle filters properly. Applying a filter may cause no data to appear in a Live Tail.
 * If `_sourceCategory`, `_sourceHost`, or any of the built-in meta fields are changed in an FER, Live Tail will not support those changes. For example, if `_sourceCategory` is *ABC* in the raw data but is renamed to *XYZ* in an FER, Live Tail will not see it as *XYZ*. It will only see the data as its raw form, *ABC*.
 
@@ -71,7 +71,7 @@ The **Run** button changes to **Running**, and log messages fill the screen.
 ### On the Search page
 
 1. On the **Search** page, in the search box, enter a valid query for a Source Category, Source Host, Source Name, Source, or Collector with filters, if desired. (Live Tail will take everything before the first pipe, but search operators are not supported.)
-1. Click the three-dot icon and click **Live Tail** from the provided options.    
+1. Click the three-dot kebab icon and click **Live Tail** from the provided options.    
 
     ![live tail option png](/img/search/livetail/About-Live-Tail/live-tail-option.png)
 

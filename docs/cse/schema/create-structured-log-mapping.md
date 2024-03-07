@@ -7,30 +7,24 @@ description: Learn how to create a log mapping for structured messages.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has instructions for creating a log mapping for structured messages using the CSE UI. Log mapping is the process of telling CSE how to build a Record from the key-value pairs extracted from messages. For more information about log mapping, and how it fits into the Record creation process, see the [Record Processing Pipeline](record-processing-pipeline.md) topic.
+This topic has instructions for creating a log mapping for structured messages using the Cloud SIEM UI. Log mapping is the process of telling Cloud SIEM how to build a Record from the key-value pairs extracted from messages. 
+
+For more information about log mapping, and how it fits into the Record creation process, see the [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline) topic. For a complete list of the standard log mappings, see [Mappings](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/mappings/README.md) the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
 
 ## About the log mapping process
 
 When you set up a log mapping, you supply the following information:  
 
 * **What messages will the mapper process?** To identify which incoming messages the mapper should process, you supply a vendor name, product name, message format, and an event ID expression. 
-* **What Record type should be created for the messages the mapper processes?** CSE has multiple predefined [Record types](cse-record-types.md), each of which corresponds to a particular sort of event a log message might describe. When you configure a log mapping, you select the Record type that corresponds best to the log messages the mapper will process. For example, you would select “Authentication” as the Record type to create from messages that report successful or unsuccessful authentication events.
-* **What normalized classification should be added for the messages the mapper processes?** Records can be classified at two levels of granularity. First, at a high level with [Record Types](cse-record-types.md) which all mapped Records have, and more specifically using Normalized Classification Fields alongside the mapped attributes within a Record. For more information, see the [CSE Normalized Classification.](cse-normalized-classification.md)
+* **What Record type should be created for the messages the mapper processes?** Cloud SIEM has multiple predefined [Record types](/docs/cse/schema/cse-record-types), each of which corresponds to a particular sort of event a log message might describe. When you configure a log mapping, you select the Record type that corresponds best to the log messages the mapper will process. For example, you would select “Authentication” as the Record type to create from messages that report successful or unsuccessful authentication events.
+* **What normalized classification should be added for the messages the mapper processes?** Records can be classified at two levels of granularity. First, at a high level with [Record Types](/docs/cse/schema/cse-record-types) which all mapped Records have, and more specifically using Normalized Classification Fields alongside the mapped attributes within a Record. For more information, see the [Cloud SIEM Normalized Classification.](/docs/cse/schema/cse-normalized-classification)
 
 ## Step 1: Choose mapping type and name the mapping
 
-1. Click the gear icon and select **Log Mappings**.
-
-    ![config-gear-mappings.png](/img/cse/config-gear-mappings.png)
-1. Click **Create** in the upper right side of the **Log Mappings** page.
-
-    ![log-mappings.png](/img/cse/log-mappings.png)
-1. Click the **Structured Mapping** tile on the **Create a Mapping** page. 
-
-    ![select-mapping-type.png](/img/cse/select-mapping-type.png)
-1. On the **New Mapping** page, enter a name for the mapping.
-
-    ![new-mapping-page.png](/img/cse/new-mapping-page.png)
+1. Click the gear icon and select **Log Mappings**.<br/><img src={useBaseUrl('img/cse/config-gear-mappings.png')} alt="Log mappings" width="800"/>
+1. Click **Create** in the upper right side of the **Log Mappings** page.<br/><img src={useBaseUrl('img/cse/log-mappings.png')} alt="Log mappings page" width="800"/>
+1. Click the **Structured Mapping** tile on the **Create a Mapping** page. <br/><img src={useBaseUrl('img/cse/select-mapping-type.png')} alt="Structured mapping" width="800"/>
+1. On the **New Mapping** page, enter a name for the mapping.<br/><img src={useBaseUrl('img/cse/new-mapping-page.png')} alt="New mapping page" width="800"/>
 
 ## Step 2: Enter “If Input Matches” values
 
@@ -38,52 +32,46 @@ In this step you supply information about the messages that the mapper will proc
 
 The values you supply should correspond to the values that were supplied for vendor, product name, message format, and event ID regex in the Sumo Logic ingest mapping configured for the data source. 
 
-1. **Vendor**. The vendor of the product that issues the messages to be mapped. Enter the vendor name as it appears in messages generated by the product. 
-1. **Product**. The name of the product that issues the messages to be mapped. Enter the product name as it appears in messages generated by the product. 
-1. **Format**. The format of the messages: JSON, Windows XML, Syslog, or CEF/LEEF
-1. **Event ID**. An event ID pattern, which is a constant value or a regex string that is checked against the `event_id` field (or constant, or group of fields) defined in the Sumo Logic ingest mapping for the data source. 
-1. If you intend the mapper to also process messages with a different combination of Vendor, Product, Format, and Event ID pattern click the plus sign (+), and repeat steps 1 through 4, as many times as you want.
-1. **Values to skip**. A list of skipped values (which is usually set to “,” and “-”) for which any value in the original log should be ignored. 
+1. **When a log from vendor**. The vendor of the product that issues the messages to be mapped. Select the vendor from the drop-down list. If the vendor does not appear in the drop-down list, you can create a new vendor entry by typing the vendor name as it appears in messages generated by the product, and clicking the **Create "`<vendor name>`"** button that appears beneath the field.
+1. **and product**. The name of the product that issues the messages to be mapped. Select the product from the drop-down list. If the product does not already exist in the drop-down list, you can create a new product entry by typing the product name as it appears in messages generated by the product, and clicking the **Create "`<product name>`"** button that appears beneath the field. 
+1. **has the format**. The format of the messages: JSON, Windows XML, Syslog, or CEF/LEEF
+1. **and the event ID matches regex**. An event ID pattern, which is a constant value or a regex string that is checked against the `event_id` field (or constant, or group of fields) defined in the Sumo Logic ingest mapping for the data source. 
+1. **Add**. If you intend the mapper to also process messages with a different combination of Vendor, Product, Format, and Event ID pattern click **Add**, and repeat steps 1 through 4, as many times as you want.
+1. **skipping the values**. A list of skipped values (which is usually set to “,” and “-”) for which any value in the original log should be ignored. 
 
 ## Step 3: Enter “Then Create Record” values
 
-1. **Record**. Select the [Record type](cse-record-types.md) that specifies the attributes that the Records created by the mapper should contain.
-1. **Vendor**. The vendor name that the mapper should write to Records. You can select a vendor from the pull-down, or select **Matching input vendor** if you want to use the value you supplied for **Vendor** in the **If Input Matches** area. In the Records the mapper creates, this value will be written to the `device_vendor` field.
-1. **Product**. The product name that the mapper should write to Records. If you selected a vendor from the **Vendor** pull-down, the **Product** pull-down will list products from that vendor - you can either select a specific product from the pull-down, or select **Matching input product**. In the Records the mapper creates, this value will be written to the `device_product` field.
+1. **Record of type**. Select the [Record type](/docs/cse/schema/cse-record-types) that specifies the attributes that the Records created by the mapper should contain.
+1. **with vendor**. The vendor name that the mapper should write to Records. If you already selected a vendor in **When a log from vendor** in the **If Input Matches** area, that vendor appears here. In the Records the mapper creates, this value will be written to the `device_vendor` field.
+1. **and product**. The product name that the mapper should write to Records. If you already selected a product from **and product** in the **If Input Matches** area, that product appears here. In the Records the mapper creates, this value will be written to the `device_product` field.
 
 ## Step 4: Specify field mapping
 
-In this step you specify field mapping. This is the process of assigning the value of message fields to CSE attributes. 
+In this step you specify field mapping. This is the process of assigning the value of message fields to Cloud SIEM attributes. 
 
 You might not map all message fields to schema attributes. Unmapped message fields will be retained in the `fields` attribute of the resulting Records.
 
 The sections that follow have instructions for setting up each type of mapping:
+  * [constant mapping](#constant-mapping)
+  * [extracted mapping](#extracted-mapping)
+  * [format mapping](#format-mapping)
+  * [joined mapping](#joined-mapping)
+  * [lookup mapping](#lookup-mapping)
+  * [split mapping](#split-mapping)
+  * [standard mapping](#standard-mapping)
+  * [time mapping](#time-mapping)
 
-- [About the log mapping process](#about-the-log-mapping-process)
-- [Step 1: Choose mapping type and name the mapping](#step-1-choose-mapping-type-and-name-the-mapping)
-- [Step 2: Enter “If Input Matches” values](#step-2-enter-if-input-matches-values)
-- [Step 3: Enter “Then Create Record” values](#step-3-enter-then-create-record-values)
-- [Step 4: Specify field mapping](#step-4-specify-field-mapping)
-  - [constant mapping](#constant-mapping)
-  - [extracted mapping](#extracted-mapping)
-  - [format mapping](#format-mapping)
-  - [joined mapping](#joined-mapping)
-  - [lookup mapping](#lookup-mapping)
-  - [split mapping](#split-mapping)
-  - [standard mapping](#standard-mapping)
-  - [time mapping](#time-mapping)
-
-If you are creating a mapping for a source whose messages you want to be processed by CSE's [normalized threat rules](../rules/normalized-threat-rules.md), see [Field Mapping for Security Event Sources](field-mapping-security-event-sources.md).
+If you are creating a mapping for a source whose messages you want to be processed by Cloud SIEM's [normalized threat rules](/docs/cse/rules/normalized-threat-rules), see [Field Mapping for Security Event Sources](/docs/cse/schema/field-mapping-security-event-sources).
 
 ### constant mapping
 
-You can use a constant mapping to map a constant encountered in a message to a CSE attribute. 
+You can use a constant mapping to map a constant encountered in a message to a Cloud SIEM attribute. 
 
 **Example constant mapping**
 
 Given the example constant mapping below, if the key value “true” is encountered in an incoming message, that value is mapped to the success schema attribute.
 
-![constant.png](/img/cse/constant.png)
+<img src={useBaseUrl('img/cse/constant.png')} alt="Constant mapping" width="600"/>
 
 To configure a constant mapping:
 
@@ -94,13 +82,13 @@ To configure a constant mapping:
 
 ### extracted mapping
 
-You can use an extracted mapping to map a field that was extracted from a log message by a Sumo Logic Field Extraction Rule (FER) to a CSE attribute. 
+You can use an extracted mapping to map a field that was extracted from a log message by a Sumo Logic Field Extraction Rule (FER) to a Cloud SIEM attribute. 
 
 **Example extracted mapping**
 
 Given the following example mapping, if the extracted field `serial` is encountered in a message, its value is mapped to the `resource` schema attribute.
 
-![extracted-mapping-example.png](/img/cse/extracted-mapping-example.png)
+<img src={useBaseUrl('img/cse/extracted-mapping-example.png')} alt="Extracted mapping" width="600"/>
 
 To configure a extracted mapping:
 
@@ -121,7 +109,7 @@ The example mapping below creates a string by combining the values of the `first
 
 the mapping combines the values of the ` firstName` and the `lastName` message fields, separated by a space. The resulting value, "John Doe", is mapped to the `user_username` attribute.  
    
-![format-mapping-example.png](/img/cse/format-mapping-example.png)
+<img src={useBaseUrl('img/cse/format-mapping-example.png')} alt="Format mapping" width="600"/>
 
 To define a format mapping:
 
@@ -133,24 +121,24 @@ To define a format mapping:
 
 ### joined mapping
 
-You can use a joined mapping to join multiple values together and map them to a CSE attribute.
+You can use a joined mapping to join multiple values together and map them to a Cloud SIEM attribute.
 
 **Example joined mapping** 
 
 In the screenshot below, we're configuring a mapping that joins the value of the `actor.firstname` and `actor.lastname` fields and maps the result to the `user_username` attribute. For example, if the value of `actor.firstname` is "zaya", and the value of `actor.lastname` is "hedad", this mapping would result in "zayahedad" being written to the `user_username` attribute. 
 
-<img src={useBaseUrl('img/cse/joined-mapping.png')} alt="Joined mapping"/>
+<img src={useBaseUrl('img/cse/joined-mapping.png')} alt="Joined mapping" width="600" />
 
 1. **Input Fields**. Enter the names of input fields. These are the fields from incoming messages whose values you want to join.
 1. **Delimiter.** Enter the character that delimits the segments of the input fields.
 1. **Show optional fields**. Expand this section if you want to specify one or more alternative input fields, or set a default value to be mapped to the target in the event that the input field is null.
-   1. **Alternate input fields**. Enter one or more fields, separated by spaces. If any of the input fields you entered above don't exist in a message, or is null, the value of the first alternative field that exists in the message and isn’t null will be mapped to the CSE attribute you’ll specify later in this procedure.
-   1. **Default value**. Enter the value you want to write to the CSE attribute in the event that neither the input field or any alternative fields with non-null values exist in the message.
+   1. **Alternate input fields**. Enter one or more fields, separated by spaces. If any of the input fields you entered above don't exist in a message, or is null, the value of the first alternative field that exists in the message and isn’t null will be mapped to the Cloud SIEM attribute you’ll specify later in this procedure.
+   1. **Default value**. Enter the value you want to write to the Cloud SIEM attribute in the event that neither the input field or any alternative fields with non-null values exist in the message.
 1. **Output Field**. Select an output field. This is the Record attribute whose value you wish to populate.
 
 ### lookup mapping
 
-You use a lookup mapping to specify a set of input-output value pairs that are used to translate the value of an input field to the output value that should be mapped to a selected CSE attribute. You can define a default value that will be applied if the input field value from an incoming message doesn’t match any of the input values you define.  
+You use a lookup mapping to specify a set of input-output value pairs that are used to translate the value of an input field to the output value that should be mapped to a selected Cloud SIEM attribute. You can define a default value that will be applied if the input field value from an incoming message doesn’t match any of the input values you define.  
 
 **Example lookup mapping**
 
@@ -158,7 +146,7 @@ In the screenshot below, we’ve defined a set of lookup key-value pairs that sp
 
 The configuration shown below defines what value to write to the logonType attribute of a Record when the EventData.LogonType message field value is “1”, “2”, “3”, or “4”, which will be “Interactive”, “”Network”, “Batch”, and “Service”, respectively.
 
-![lookup-mapping-filled-out.png](/img/cse/lookup-mapping-filled-out.png)
+<img src={useBaseUrl('img/cse/lookup-mapping-filled-out.png')} alt="Lookout mapping" width="800" />
 
 **To define a lookup mapping**
 
@@ -174,13 +162,13 @@ The configuration shown below defines what value to write to the logonType attri
 
 ### split mapping
 
-You can use a split mapping to split the character-delimited value of an input field into multiple segments, and map one segment to the selected CSE attribute.  
+You can use a split mapping to split the character-delimited value of an input field into multiple segments, and map one segment to the selected Cloud SIEM attribute.  
 
 **Example split mapping**
 
 In the screenshot below, we’re configuring a mapping that splits the value of the actor.email field when an ampersand (@) is encountered, and maps the first segment to the user_username attribute. For example, if the value of actor.email is “ddonovan@acme.com”, this mapping would result in “ddonavan” being written to the `user_username` attribute.
 
-![split-mapping-filled-out.png](/img/cse/split-mapping-filled-out.png)
+<img src={useBaseUrl('img/cse/split-mapping-filled-out.png')} alt="Split mapping" width="800" />
 
 To define a split mapping:
 
@@ -193,7 +181,7 @@ To define a split mapping:
 
 ### standard mapping
 
-You can use a standard mapping to map a single input field to a CSE attribute or to combine the values of multiple input fields into a character-delimited value and map it to a CSE attribute.
+You can use a standard mapping to map a single input field to a Cloud SIEM attribute or to combine the values of multiple input fields into a character-delimited value and map it to a Cloud SIEM attribute.
 
 Optionally, you can specify one or more alternative input fields that will be used in the case that the specified input field doesn’t exist in the message, or is null. 
 
@@ -203,16 +191,16 @@ An alternate input field won’t be mapped to the selected attribute if the spec
 
 In the screenshot below, we’re configuring a mapping that maps the value of the `EventData.LogonProcessName` message field to the `application` attribute. We defined one alternate input field, `AppId`, which will be mapped to the `application` attribute if the `EventData.LogonProcessName` field is not found in the message, or exists and is null. 
 
-![standard-mapping-single-input.png](/img/cse/standard-mapping-single-input.png)
+<img src={useBaseUrl('img/cse/standard-mapping-single-input.png')} alt="Standard mapping" width="800" />
 
 To map a single input field:
 
 1. Select standard from the **Create a new … mapping field?** pull-down.
-1. **Input Field**. Enter the name of an input field. This is the field from incoming messages whose value you want to write to the CSE attribute you’ll specify later in this procedure.
+1. **Input Field**. Enter the name of an input field. This is the field from incoming messages whose value you want to write to the Cloud SIEM attribute you’ll specify later in this procedure.
 1. **Show optional fields**. Expand this section if you want to specify one or more alternative input fields, or set a default value to be mapped to the target in the event that the input field is null.
 
-   1. **Alternate input fields**. Enter one or more fields, separated by spaces. If the Input Field you entered above doesn’t exist in a message, or is null, the value of the first alternative field that exists in the message and isn’t null will be mapped to the CSE attribute you’ll specify later in this procedure.
-   1. **Default value**. Enter the value you want to write to the CSE attribute in the event that neither the input field or any alternative fields with non-null values exist in the message.
+   1. **Alternate input fields**. Enter one or more fields, separated by spaces. If the Input Field you entered above doesn’t exist in a message, or is null, the value of the first alternative field that exists in the message and isn’t null will be mapped to the Cloud SIEM attribute you’ll specify later in this procedure.
+   1. **Default value**. Enter the value you want to write to the Cloud SIEM attribute in the event that neither the input field or any alternative fields with non-null values exist in the message.
 1. **Output Field**. Select an output field. This is the Record attribute whose value you wish to populate.
 1. Click **Add Field** to save the field mapping.
 
@@ -224,7 +212,7 @@ We defined two alternative fields, `fieldc` and `fieldd`. If `fielda`and `fieldb
 
 We also defined a default value: if `fieldc` and `fieldd` are not found in a message or are null, the default value “john.doe” is mapped to the `user_username` attribute.
 
-![standard-mapping-multiple-fields.png](/img/cse/standard-mapping-multiple-fields.png)
+<img src={useBaseUrl('img/cse/standard-mapping-multiple-fields.png')} alt="Standard mapping with multiple fields" width="800" />
 
 To map multiple input fields:
 
@@ -233,8 +221,8 @@ To map multiple input fields:
 1. **Input Fields**. Enter the names of the input fields to be combined, separated by spaces. 
 1. **Input Field Delimiter**. Enter the character to use as the delimiter between the input field values.
 1. **Show optional fields**. Click this if you want to specify one or more alternative input fields, or set a default value to be mapped to the target in the event that the input field is null.
-   1. **Alternate input fields**. Enter one or more fields, separated by spaces. If any of the Input Fields you entered above don’t exist in a message, or are null, the values of the alternative fields you enter will be combined and mapped to the CSE attribute you’ll specify later in this procedure.
-   1. **Default value**. Enter the value you want to write to the CSE attribute in the event that neither the input fields or any alternative fields exist with non-null values in the message.
+   1. **Alternate input fields**. Enter one or more fields, separated by spaces. If any of the Input Fields you entered above don’t exist in a message, or are null, the values of the alternative fields you enter will be combined and mapped to the Cloud SIEM attribute you’ll specify later in this procedure.
+   1. **Default value**. Enter the value you want to write to the Cloud SIEM attribute in the event that neither the input fields or any alternative fields exist with non-null values in the message.
 1. **Output Field**. Select an output field. This is the Record attribute whose value you wish to populate.
 1. Click **Add Field** to save the field mapping.
 
@@ -246,7 +234,7 @@ You can use a time mapping to map a formatted time value to the timestamp schema
 
 This example mapping maps the TimeCreated.SystemTime input field to the timestamp attribute.
 
-![time-mapping-filled-out.png](/img/cse/time-mapping-filled-out.png)
+<img src={useBaseUrl('img/cse/time-mapping-filled-out.png')} alt="Time mapping" width="800" />
 
 To create a time mapping:
 

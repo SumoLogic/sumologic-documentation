@@ -1,18 +1,20 @@
 ---
 id: ingest-zeek-logs
 title: Ingest Zeek Logs
-description: Learn how to collect Zeek (Bro) logs and ingest them to CSE.
+description: Learn how to collect Zeek (Bro) logs and ingest them to Cloud SIEM.
 ---
 
-This topic has instructions for ingesting Zeek logs into CSE. 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+This topic has instructions for ingesting Zeek logs into Cloud SIEM. 
 
 ## What is Zeek?
 
-Cloud SIEM Enterprise (CSE) uses [Zeek](https://zeek.org/) (formerly known as Bro) for network visibility. Zeek is an open source network analysis framework that organizes packets into flows, decodes common protocols, performs file extraction, SSL certificate validation, OS fingerprinting and more. Zeek can be extended through plugins for additional detection capabilities.
+Cloud SIEM uses [Zeek](https://zeek.org/) (formerly known as Bro) for network visibility. Zeek is an open source network analysis framework that organizes packets into flows, decodes common protocols, performs file extraction, SSL certificate validation, OS fingerprinting and more. Zeek can be extended through plugins for additional detection capabilities.
 
 ## Best collection method: Network Sensor
 
-Sumo Logic recommends using CSE’s Network Sensor to collect Zeek logs and upload them to an HTTP Source on a Sumo Logic Hosted Collector. This is far and away the preferred method: it ensures that supported Bro policies are enabled and that the supported Bro output format is configured. It also results in the creation of CSE Records from the raw Zeek log messages. For instructions, see [Network Sensor Deployment Guide](/docs/cse/sensors/network-sensor-deployment-guide). 
+Sumo Logic recommends using Cloud SIEM’s Network Sensor to collect Zeek logs and upload them to an HTTP Source on a Sumo Logic Hosted Collector. This is far and away the preferred method: it ensures that supported Bro policies are enabled and that the supported Bro output format is configured. It also results in the creation of Cloud SIEM Records from the raw Zeek log messages. For instructions, see [Network Sensor Deployment Guide](/docs/cse/sensors/network-sensor-deployment-guide). 
 
 The Network Sensor extracts files observed over cleartext protocols that match selected MIME types. You can configure what types will be extracted using the [extracted_file_types](/docs/cse/sensors/network-sensor-deployment-guide) property in the Network Sensor’s configuration file, `trident-sensor.cfg`. By default the sensor will upload password-protected zip files and the following types of executables:
 
@@ -27,7 +29,7 @@ your own Zeek deployment and ingest logs using a Sumo Logic Source you can't al
 
 ### Filtering Zeek logs
 
-This section describes two methods you can use to filter the logs that the Network Sensor sends to CSE.
+This section describes two methods you can use to filter the logs that the Network Sensor sends to Cloud SIEM.
 
 * You can configure a Berkeley Packet Filter (BPF) filter using the [filter](/docs/cse/sensors/network-sensor-deployment-guide) parameter in Network Sensor’s configuration file, `trident-sensor.cfg`. This is the most efficient filtering mechanism as it is performed before Network Sensor processing.
 
@@ -62,16 +64,16 @@ In this step, you configure a Sumo Logic Source on an Sumo Logic Installed Colle
 * If you already have a method of forwarding Zeek logs in JSON format in Syslog format to a collector in your environment, you can use a Syslog Source to ingest the logs.
 * If you’re not set up to use Syslog, and have Zeek log files stored on a filesystem, you can use a Local File Source to ingest the logs.
 
-After configuring the appropriate source, use one of the methods described in [Enable parsing and mapping of Zeek logs](#enable-parsing-and-mapping-of-zeek-logs) to provide information CSE requires to parse and map Zeek logs.
+After configuring the appropriate source, use one of the methods described in [Enable parsing and mapping of Zeek logs](#enable-parsing-and-mapping-of-zeek-logs) to provide information Cloud SIEM requires to parse and map Zeek logs.
 
 ### Enable parsing and mapping of Zeek logs
 
-This configuration step is required to ensure that CSE knows how to parse incoming Zeek logs, correctly map the log fields to schema attributes, and create CSE Records. The most important bit of information is what type of data a particular log contains. Zeek has a variety of log types, for example `conn` for TCP/UDP/ICMP connections, `http` for HTTP requests and replies, and `ftp` for FTP activity.
+This configuration step is required to ensure that Cloud SIEM knows how to parse incoming Zeek logs, correctly map the log fields to schema attributes, and create Cloud SIEM Records. The most important bit of information is what type of data a particular log contains. Zeek has a variety of log types, for example `conn` for TCP/UDP/ICMP connections, `http` for HTTP requests and replies, and `ftp` for FTP activity.
 
 So, how to determine whether a Zeek log is a `conn`, `http`, `ftp`, or some other log type? Zeek logs don’t contain a key that explicitly holds a value that is only the log type identifier. There are two options for dealing with this:
 
 * Use Corelight to add a field to each Zeek log that identifies its log type. See [Use Corelight](#use-corelight) below.
-* Use Sumo Logic Field Extraction Rules (FERs) to create fields that provide the log type and other data that enables CSE to parse and map the logs. See [Use FERs](#use-fers).
+* Use Sumo Logic Field Extraction Rules (FERs) to create fields that provide the log type and other data that enables Cloud SIEM to parse and map the logs. See [Use FERs](#use-fers).
 
 ### Use Corelight
 
@@ -79,25 +81,18 @@ With this method, you use Corelight’s [json-streaming-logs](https://github.com
 
 After installing the `json-streaming-logs` package, follow these instructions to set up the Sumo Logic mapping.
 
-1. In CSE, click the gear icon and select **Sumo Logic** under **Integrations**.
-
-    ![gear-integrations-sumo.png](/img/cse/gear-integrations-sumo.png)
-1. On the **Sumo Logic Ingest Mappings** page, click **Create**.
-
-    ![ingest-mappings.png](/img/cse/ingest-mappings.png)
+1. In Cloud SIEM, click the gear icon and select **Sumo Logic** under **Integrations**.<br/><img src={useBaseUrl('img/cse/gear-integrations-sumo.png')} alt="Gear integrations" width="800"/>
+1. On the **Sumo Logic Ingest Mappings** page, click **Create**.<br/><img src={useBaseUrl('img/cse/ingest-mappings.png')} alt="Ingest mappings" width="800"/>
 1. On the **Create Sumo Logic Mapping** page:
-
    1. **Source Category**. Enter the Source Category value you assigned to the Source you configured above in [Configure a Sumo Logic Source](#configure-a-sumo-logic-source).
    1. **Format**. Choose Bro/Zeek JSON.
    1. **Event ID**. Enter *_path*.
    1. **Enabled**. Use the slider to enable the mapping if you’re ready to receive Zeek logs.
-   1. Click **Create**.    
-
-    ![create-mapping.png](/img/cse/create-mapping.png)
+   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/create-mapping.png')} alt="Create mapping" width="600"/>
 
 ### Use FERs
 
-With this method, you use Sumo Logic Field Extraction Rules (FERs) to extract fields from each Zeek log. The fields you extract will provide the information necessary for CSE to correctly parse and map the logs. 
+With this method, you use Sumo Logic Field Extraction Rules (FERs) to extract fields from each Zeek log. The fields you extract will provide the information necessary for Cloud SIEM to correctly parse and map the logs. 
 
 Here’s an example Bro log from the Security Onion platform. 
 
@@ -107,29 +102,42 @@ Here’s an example Bro log from the Security Onion platform. 
 
 In the log above, the content of the Bro log is the value of the `MESSAGE` key. Note that no key in the log explicitly states the log type, which is `conn`. 
 
-To enable CSE to successfully process the log, we need to create the
-following fields listed in the table below.
+To enable Cloud SIEM to successfully process the log, we need to create the following fields listed in the table below.
 
-| Field          | Parse Expression                                                                                       |
-|:----------------|:--------------------------------------------------------------------------------------------------------|
-| `_siemMessage` | `json field=_raw "MESSAGE" as _siemMessage`                                                            |
-| `_siemEventId` | `json field=_raw "PROGRAM" as _siemEventId | parse regex field=_siemEventId "bro_(\<_siemEventI\>.*)"` |
-| `_siemFormat`  | `“bro” as _siemFormat`                                                                                 |
-| `_siemVendor`  | `“bro” as _siemVendor`                                                                                 |
-| `_siemProduct` | `“bro” as _siemProduct`                                                                                |
-
+<table>
+  <tr>
+   <td><strong>Field</strong></td>
+   <td><strong>Parse Expression</strong> </td>
+  </tr>
+  <tr>
+   <td><code>_siemMessage</code> </td>
+   <td><code>json field=_raw "MESSAGE" as _siemMessage</code> </td>
+  </tr>
+  <tr>
+   <td><code>_siemEventId</code></td>
+   <td><code>json field=_raw "PROGRAM" as _siemEventId | parse regex field=_siemEventId "bro_(?&lt;_siemEventId>.*)"</code> </td>
+  </tr>
+  <tr>
+   <td><code>_siemFormat</code></td>
+   <td><code>"bro" as _siemFormat</code></td>
+  </tr>
+  <tr>
+   <td><code>_siemVendor</code></td>
+   <td><code>"bro" as _siemVendor</code></td>
+  </tr>
+  <tr>
+   <td><code>_siemProduct</code></td>
+   <td><code>"bro" as _siemProduct</code></td>
+  </tr>
+</table>
 
 Perform these steps for each of the FERs.
 
 1. In the Sumo Logic UI, go to **Manage Data > Logs > Field Extraction Rules**.
 1. Click **Add Rule**.
 1. In the **Add Field Extraction Rule** pane:
-
    1. **Rule Name**. Enter a meaningful name for the rule.
    1. **Applied At**. Click Ingest Time. 
    1. **Scope**. Click **Specific Data**.
    1. **Parse Expression**. Enter the parse expression shown in the table above for the field the rule will extract.
-
-1. Click **Save**.     
-
-    ![example-fer.png](/img/cse/example-fer.png)
+1. Click **Save**.<br/><img src={useBaseUrl('img/cse/example-fer.png')} alt="Example FER" width="400"/>

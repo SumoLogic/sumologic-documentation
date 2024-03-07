@@ -1,8 +1,8 @@
 ---
 id: ingest-budget-v2
-title: Ingest Budget v2 Management APIs
-sidebar_label: Ingest Budget v2
-description: The Ingest Budget Management API V2 allows you to manage metadata-based ingest budgets (V2) from HTTP endpoints.
+title: Ingest Budgets Management v2 APIs
+sidebar_label: Ingest Budgets v2
+description: Ingest Budgets Management V2 APIs allow you to manage metadata-based ingest budgets (V2) from HTTP endpoints.
 hide_table_of_contents: true
 ---
 
@@ -21,8 +21,9 @@ To manage ingest budgets, you must have the **Manage Ingest Budgets** [role capa
 | CloudFlex    | Enterprise      |
 | Credits      | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-{@import ../reuse/api-intro.md}
+import ApiIntro from '../reuse/api-intro.md';
 
+<ApiIntro/>
 
 | Deployment | Documentation URL                                                |
 |:------------|:------------------------------------------------------------------|

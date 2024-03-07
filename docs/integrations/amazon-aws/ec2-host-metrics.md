@@ -25,10 +25,10 @@ Host metrics are gathered by the open-source [SIGAR library](https://github.com/
 * [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics#disk-metrics)
 
 
-### Sample Query  
+### Sample queries  
 
 ```sql title="Average CPU Utilization"
-_sourcecategory=Labs/AWS/Host/Metrics metric=CPU_Total account=* region=* namespace=aws/ec2 instanceid=* | avg
+_sourceCategory=Labs/AWS/Host/Metrics metric=CPU_Total account=* region=* namespace=aws/ec2 instanceid=* | avg
 ```
 
 
@@ -115,21 +115,13 @@ You can also build your EC2 AMI machine image with these fields and settings. Fo
 Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics. Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see [AWS Metadata Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/aws-metadata-tag-source).
 
 
-# Install the Host Metrics (EC2) App
+## Install the Host Metrics (EC2) App
 
-Now that you have set up the collection for Host Metrics (EC2) metrics, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up the collection for Host Metrics (EC2) metrics, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library** and complete the following fields.
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    * **Advanced**. Select the **Location in the Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-3. Click **Add to Library**.
-
-Once the app is installed, it will appear in your **Personal** folder, or any other folder you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 ## Viewing EC2 Host Metrics Dashboards
 
@@ -195,7 +187,7 @@ Use this dashboard to:
 
 ### AWS EC2 - Network (Host OS Metrics)
 
-The** AWS EC2 - Network (Host OS Metrics)** dashboard provides insights into EC2 network performance per instance across your infrastructure, including metrics for the average number of packets in and out, packet rate in and out, and byte rate in and out.
+The **AWS EC2 - Network (Host OS Metrics)** dashboard provides insights into EC2 network performance per instance across your infrastructure, including metrics for the average number of packets in and out, packet rate in and out, and byte rate in and out.
 
 Use this dashboard to:
 * Quickly identify if traffic sent and received rates for an EC2 instance is potentially causing a production issue.

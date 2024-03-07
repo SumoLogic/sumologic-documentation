@@ -6,7 +6,6 @@ description: First Seen rules allow you to generate a Signal when behavior by an
 keywords:
   - sumo logic
   - cloud siem
-  - cse
   - first seen rule
   - behavioral analytics
 ---
@@ -14,9 +13,9 @@ keywords:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
-This topic has information about First Seen rules and how to create them in the CSE UI.
+This topic has information about First Seen rules and how to create them in the Cloud SIEM UI.
 :::tip
-If you are new to writing rules, see [About CSE Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
+If you are new to writing rules, see [About Cloud SIEM Rules](/docs/cse/rules/about-cse-rules) for information about rule expressions and other rule options.
 :::
 
 ## About First Seen rules
@@ -27,20 +26,35 @@ First Seen rules allow you to generate a Signal when behavior by an Entity (such
 * High severity EDR alert seen for the first time
 * MFA acceptance from first seen device
 
-A First Seen rule is different from other CSE rule types in that you don’t define the criteria for firing a Signal. Instead, the rule expression in a First Seen rule is simply a filter condition that defines what incoming Records the rule will apply to. For each First Seen rule, CSE automatically creates a baseline model of normal behavior evidenced by Records that match the Rule Expression. After the baseline learning period is completed, when an incoming Record includes matching activity not seen during the baseline learning period, the rule creates a Signal.
+A First Seen rule is different from other Cloud SIEM rule types in that you don’t define the criteria for firing a Signal. Instead, the rule expression in a First Seen rule is simply a filter condition that defines what incoming Records the rule will apply to. For each First Seen rule, Cloud SIEM automatically creates a baseline model of normal behavior evidenced by Records that match the Rule Expression. After the baseline learning period is completed, when an incoming Record includes matching activity not seen during the baseline learning period, the rule creates a Signal.
 
-For example, for the “First time a user logged in from a new geographic location” use case, CSE will build a baseline model of all the geolocations from where a logon event is seen for the Entity (user). Once the baselining period is complete, CSE will create a Signal for every new geolocation detected and incrementally add to the baseline.
+For example, for the “First time a user logged in from a new geographic location” use case, Cloud SIEM will build a baseline model of all the geolocations from where a logon event is seen for the Entity (user). Once the baselining period is complete, Cloud SIEM will create a Signal for every new geolocation detected and incrementally add to the baseline.
+
+Watch this micro lesson to learn more about First Seen rules.
+
+<Iframe url="https://www.youtube.com/embed/ssfL_c3j_r8?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe';
 
 ## Example rule
-The screenshot below shows a First Seen rule in the CSE rules editor. For an explanation of the configuration options, see [Configure a First Seen rule](#configure-a-first-seen-rule), below.
+The screenshot below shows a First Seen rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Configure a First Seen rule](#configure-a-first-seen-rule), below.
 <img src={useBaseUrl('img/cse/first-seen-rule.jpg')} alt="Example First Seen Rule Definition"/>
 
 
 ## Configure a First Seen rule
 This section has instructions for configuring a First Seen rule.
 
-### If triggered
-The settings in the **If triggered** section determine what Records the rule will be applied to and baseline-related options.
+### If Triggered
+The settings in the **If Triggered** section determine what Records the rule will be applied to and baseline-related options.
 
 1.  **When a Record matching the expression**. Enter an expression that matches the Records that you want to rule to apply to.
 1. **Has a new value for the field(s)**. Select the Record field that will be used to build the baseline.
@@ -61,7 +75,7 @@ The settings in the **If triggered** section determine what Records the rule wil
    The **Baseline Learning Period** must be shorter than the **Baseline Retention Period**. Also be aware that short baseline learning periods can potentially generate false positive Signals.
    :::
 
-### Then create a Signal
+### Then Create a Signal
 
 For instructions, see [Configure “Then Create a Signal” settings](/docs/cse/rules/write-match-rule#configure-then-create-a-signal-settings) section of the Match Rule topic.
 
@@ -71,9 +85,18 @@ Sumo Logic ensures that Rule processing does not impact the reliability of produ
 On the Rule detail page, if you hover over the degraded message, you will usually see more details about what tripped the circuit breaker and how to resolve the problem. Generally speaking, a rule that is degraded probably needs to be tuned for your specific environment.
 :::
 
+## When the baseline is reset for a First Seen rule
+
+The baseline learning period begins again when the following fields on the rule are updated or overridden:
+* **If Triggered**:
+   * **When a Record matching the expression**
+   * **Has a new value for the field(s)**
+* **Then Create a Signal**:
+   * **On Entity**
+
 ## Use case: Monitor login from first seen geolocation
 
-This section shows how the same first seen rule would function with each of the two baselining strategies.
+This section shows how the same First Seen rule would function with each of the two baselining strategies.
 
 Our example rule expression is:
 

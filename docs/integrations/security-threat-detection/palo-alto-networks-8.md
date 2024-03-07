@@ -2,43 +2,36 @@
 id: palo-alto-networks-8
 title: Palo Alto Networks 8
 sidebar_label: Palo Alto Networks 8
-description: The Palo Alto Networks 8 App gives you visibility into firewall and traps activity, including information about firewall configuration changes, details about rejected and accepted firewall traffic, traffic events that match the Correlation Objects and Security Profiles you have configured in PAN, and events logged by the Traps Endpoint Security Manager.
+description: The Palo Alto Networks 8 app gives you visibility into firewall and traps activity, including information about firewall configuration changes, details about rejected and accepted firewall traffic, traffic events that match the Correlation Objects and Security Profiles you have configured in PAN, and events logged by the Traps Endpoint Security Manager.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan8.png')} alt="thumbnail icon" width="100"/>
 
-Palo Alto Networks (PAN) 8 provides a next generation firewall and the Traps Endpoint Security Manager. The Palo Alto Networks 8 App gives you visibility into firewall and traps activity, including information about firewall configuration changes, details about rejected and accepted firewall traffic, traffic events that match the Correlation Objects and Security Profiles you have configured in PAN, and events logged by the Traps Endpoint Security Manager.
+Palo Alto Networks (PAN) 8 provides a next generation firewall and the Traps Endpoint Security Manager. The Palo Alto Networks 8 app gives you visibility into firewall and traps activity, including information about firewall configuration changes, details about rejected and accepted firewall traffic, traffic events that match the Correlation Objects and Security Profiles you have configured in PAN, and events logged by the Traps Endpoint Security Manager.
 
-## Log Types
+## Log types
 
 Parsing in the Sumo Logic app for PAN 8 is based on the [PAN-OS Syslog Integration](https://live.paloaltonetworks.com/t5/Tech-Note-Articles/PAN-OS-Syslog-Integration/ta-p/55323) and uses the following log types:
 
 <table>
   <tr>
-   <td><strong>Log type</strong>
-   </td>
-   <td><strong>Description</strong>
-   </td>
-   <td><strong>Supported log format</strong>
-   </td>
-   <td><strong>For more information</strong>
-   </td>
+   <td><strong>Log type</strong>   </td>
+   <td><strong>Description</strong>   </td>
+   <td><strong>Supported log format</strong> </td>
+   <td><strong>For more information</strong></td>
   </tr>
   <tr>
-   <td>Traffic
-   </td>
-   <td>Entries for the start and end of each session, including date and time; source and destination zones, addresses and ports; application name; security rule applied to the traffic flow; rule action (allow, deny, or drop); ingress and egress interface; number of bytes; and session end reason.
-   </td>
+   <td>Traffic</td>
+   <td>Entries for the start and end of each session, including date and time; source and destination zones, addresses and ports; application name; security rule applied to the traffic flow; rule action (allow, deny, or drop); ingress and egress interface; number of bytes; and session end reason. </td>
    <td>Syslog</td>
    <td><a href="https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/view-and-manage-logs/log-types-and-severity-levels/traffic-logs">Traffic Logs</a></td>
   </tr>
   <tr>
    <td>Threat</td>
    <td>Events logged when traffic matches one of the Security Profiles attached to a security rule on the firewall.</td>
-   <td>Syslog
-   </td>
+   <td>Syslog</td>
    <td><a href="https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/view-and-manage-logs/log-types-and-severity-levels/threat-logs">Threat Logs</a></td>
   </tr>
   <tr>
@@ -63,13 +56,12 @@ Parsing in the Sumo Logic app for PAN 8 is based on the [PAN-OS Syslog Integrati
    <td>TrapsV4</td>
    <td>Events logged by the Traps Endpoint Security component.</td>
    <td>Common Event Format (CEF)</td>
-   <td><a href="https://www.paloaltonetworks.com/documentation/traps/4-2/traps-endpoint-security-manager-admin/reports-and-logging/forward-logs-to-an-external-logging-platform/cef-format#traps-admin-rpts-cef">CEF Format</a>
-   </td>
+   <td><a href="https://www.paloaltonetworks.com/documentation/traps/4-2/traps-endpoint-security-manager-admin/reports-and-logging/forward-logs-to-an-external-logging-platform/cef-format#traps-admin-rpts-cef">CEF Format</a> </td>
   </tr>
 </table>
 
 
-### Sample Log Messages
+### Sample log messages
 
 
 ```json title="Config Log Sample"
@@ -101,7 +93,7 @@ Sep 05 12:30:15 Host CEF:0|Palo Alto Networks|Traps Agent|3.4.3.19949|Client Lic
 
 
 
-### Sample Queries
+### Sample queries
 
 
 ```sql title="Virus Threats"
@@ -113,9 +105,9 @@ _sourceCategory=Loggen/PAN/Threat THREAT (virus or "wildfire-virus")
 ```
 
 
-## Collecting Logs for the Palo Alto Networks 8 App
+## Collecting Logs for the Palo Alto Networks 8 app
 
-This section has instructions for collecting logs for the Palo Alto Networks 8 App, as well as examples of field extraction rules, logs, and queries.
+This section has instructions for collecting logs for the Palo Alto Networks 8 app, as well as examples of field extraction rules, logs, and queries.
 
 ### Prerequisites
 
@@ -142,7 +134,7 @@ In this step you configure a installed collector with a Syslog source that will 
     2. **Description.** Optional.
     3. **Protocol**. UDP or TCP.  Choose the protocol you configured in Palo Alto Networks 8 for Syslog monitoring.
     4. **Port**. Port number. Choose the port you configured in Palo Alto Networks 8 for Syslog monitoring.
-    5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).
+    5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).
     6. Click **Save**.
 
 
@@ -220,13 +212,15 @@ _sourceCategory=Loggen/PAN/Traffic TRAFFIC
 
 
 
-## Installing the Palo Alto Networks 8 App
+## Installing the Palo Alto Networks 8 app
 
-This section provides instructions for installing the Palo Alto Networks 8 App, along with examples of each of the dashboards that provide visual insights into your data.
+This section provides instructions for installing the Palo Alto Networks 8 app, along with examples of each of the dashboards that provide visual insights into your data.
 
 This app supports PAN-OS v7 and v8.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing Palo Alto Networks 8 Dashboards
 
@@ -236,7 +230,7 @@ This app supports PAN-OS v7 and v8.
 
 **Use case:** Use this dashboard for an overview of various activities by severity level, geo-location, and bandwidth consumption. Based on the results you see, you can go to more detailed dashboards to drill down for details. For example, if the “Threats By Severity Level” panel shows that there are “Critical” threats, you can proceed to the threat-related dashboards, including Threat Overview, Threat Analysis, Traffic Insight - File Activity, and Traffic Insight - Web Activity.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-threat-overview.png')} alt="Palo_Alto_Networks_8 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Overview.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### Configuration Analysis
 
@@ -244,8 +238,7 @@ This app supports PAN-OS v7 and v8.
 
 **Use case:** Use this dashboard to learn about firewall configuration changes. You can identify who performed a configuration change, and the system from which the configuration change was made. The dashboard also helps you identify failed and successful configurations changes. If you observe a sudden change in device behavior, you can check this dashboard to investigate whether a configuration change might be to blame.  
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-configuration-analysis.png')} alt="Palo_Alto_Networks_8 Dashboard" />
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Configuration-Analysis.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### Correlation Analysis
 
@@ -253,7 +246,7 @@ This app supports PAN-OS v7 and v8.
 
 **Use case:** Use this dashboard to identify hosts that are compromised, very likely compromised, likely compromised, or possibly compromised, based on correlation events.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-correlation-analysis.png')} alt="Palo_Alto_Networks_8 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Correlation-Analysis.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### High Severity Threats
 
@@ -261,8 +254,7 @@ This app supports PAN-OS v7 and v8.
 
 **Use case:** Use this dashboard to identify the impact of high severity threats, including the most involved  source and destination IPs. You can identify threats affecting multiple IPs, IPs affected by multiple threats, and identify source IPs or users which are responsible for generating high severity threats or are impacted by high severity threats.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-high-severity-threats.png')} alt="Palo_Alto_Networks_8 Dashboard" />
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-High-Severity-Threats.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### System Monitoring
 
@@ -270,8 +262,7 @@ This app supports PAN-OS v7 and v8.
 
 **Use case:** Use this dashboard to identify system issues like hardware failures, HA failures, link down status, dropped connections with external devices, firmware / software upgrades, password change notifications, log in/log off, administrator name or password change, any configuration change, and other minor events.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-system-monitoring.png')} alt="Palo_Alto_Networks_8 Dashboard" />
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-System-Monitoring.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### Threat Overview
 
@@ -279,7 +270,7 @@ This app supports PAN-OS v7 and v8.
 
 **Use case:** Use this dashboard to identify threat subtypes. Based on what you learn, you can drill down for additional detail in the “Threat Analysis” dashboard. You can also use this dashboard to identify threats that affect multiple IPs, IPs affected by multiple threats, and narrow in on source IPs or users that are responsible for generating threats or are impacted by threats.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-threat-overview.png')} alt="Palo_Alto_Networks_8 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Threat-Overview.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### Threat Analysis
 
@@ -287,7 +278,7 @@ This app supports PAN-OS v7 and v8.
 
 **Use case:** Use this dashboard to get detailed information on threats identified, rules fired, actions, trends, threat outliers, and threat directions.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-threat-analysis.png')} alt="Palo_Alto_Networks_8 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Threat-Analysis.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 
 ### Traffic Monitoring
@@ -298,8 +289,7 @@ This app supports PAN-OS v7 and v8.
 
 You can also monitor the types of content being accessed by various apps and virtual systems. You can track the bandwidth consumed by specific apps and take corrective action as necessary. Using the geolocation map, you can track source and destination locations and determine whether a location is expected, and block it, as appropriate.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-traffic-monitoring.png')} alt="Palo_Alto_Networks_8 Dashboard" />
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Traffic-Monitoring.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### Traffic Insight - File Activity
 
@@ -307,8 +297,7 @@ You can also monitor the types of content being accessed by various apps and vir
 
 **Use case:** Use this dashboard to monitor end users’ file upload and download activities. You can track suspicious file types being uploaded or downloaded through various apps. It also provides insight into sudden changes in activities though outliers. You can compare the current activity trend with the the previous hour, the same time yesterday, and the same time last week with the time compare panel.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-traffic-insight-file-activity.png')} alt="Palo_Alto_Networks_8 Dashboard" />
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Traffic-Insight-File-Activity.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### Traffic Insight - Web Activity
 
@@ -316,7 +305,7 @@ You can also monitor the types of content being accessed by various apps and vir
 
 **Use case:** Use this dashboard to monitor end users’ file web browsing activities. You can track URLs and the content being browsed using various apps. It also provides insight into sudden changes in activities though outliers. You can compare the current activity trend with the the previous hour, the same time yesterday, and the same time last week with the time compare panel.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-traffic-insight-web-activity.png')} alt="Palo_Alto_Networks_8 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Traffic-Insight-Web-Activity.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 ### Traps V4 Monitoring
 
@@ -324,4 +313,4 @@ You can also monitor the types of content being accessed by various apps and vir
 
 **Use case:** Use this dashboard to identify how end points have been attacked. You can monitor ransomware threats and new exploits. You can also track agent installs/uninstalls, upgrades, service statuses, access violations, and prevention events.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan8-traps-v4-monitoring.png')} alt="Palo_Alto_Networks_8 Dashboard" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Palo-Alto-Networks-8-Traps-V4-Monitoring.png')} alt="Palo_Alto_Networks_8 Dashboard" />

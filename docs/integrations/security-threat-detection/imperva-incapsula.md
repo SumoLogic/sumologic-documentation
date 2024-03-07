@@ -2,7 +2,7 @@
 id: imperva-incapsula
 title: Imperva Incapsula
 sidebar_label: Imperva Incapsula
-description: The Imperva Incapsula - Web Application Firewall (WAF) App helps you monitor your web application protection service. The preconfigured dashboards provide insights on the threat alerts events on the BOT access control, blocked countries, and user agents.
+description: The Imperva Incapsula - Web Application Firewall (WAF) app helps you monitor your web application protection service. The preconfigured dashboards provide insights on the threat alerts events on the BOT access control, blocked countries, and user agents.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,12 +13,11 @@ Imperva Incapsula is a cloud-based application delivery service that includes we
 
 The Sumo Logic app for Imperva Incapsula - Web Application Firewall (WAF) helps you monitor your web application protection service. The preconfigured dashboards provide insights on the threat alerts events.
 
-## Log Types
+## Log types
 
-The Imperva Incapsula - Web Application Firewall App uses security and access logs. For more details, see [here](https://docs.incapsula.com/Content/management-console-and-settings/log-integration.htm?Highlight=siem#Overview).
+The Imperva Incapsula - Web Application Firewall app uses security and access logs. For more details, see [here](https://docs.incapsula.com/Content/management-console-and-settings/log-integration.htm?Highlight=siem#Overview).
 
-
-### Sample Queries
+### Sample queries
 
 ```sql title="Parse Command for all CEF items in Imperva Incapsula"
 | parse "fileId=* " as ID nodrop
@@ -69,27 +68,25 @@ _sourceCategory="Incapsula"
 | top 10 policy_type by _count
 ```
 
+## Collecting logs for the Imperva-Incapsula WAF app
 
-## Collecting Logs for the Imperva-Incapsula WAF App
-
-This section provides instructions on configuring log collection for the Imperva - Incapsula Web Application Firewall App, as well as query samples.
+This section provides instructions on configuring log collection for the Imperva - Incapsula Web Application Firewall app, as well as query samples.
 
 ### Set up log integration in Imperva Incapsula
 
 To configure log integration, do the following:
 
-1. Log into your [my.incapsula.com](https://my.incapsula.com/admin/login) account. 
-2. On the sidebar, click **Logs > Log Setup**. 
+1. Log into your [my.incapsula.com](https://my.incapsula.com/admin/login) account.
+2. On the sidebar, click **Logs > Log Setup**.
 3. **Connection**. Select **Amazon S3**.
 4. Next, fill in your credentials:
-    * Your S3 **Access key, Secret key, and Path**, where path is the location of the folder where you want to store the logs. Enter the path in the following format: `<Amazon S3 bucket name>/<log folder>`. For example: MyBucket/MyIncapsulaLogFolder. 
-    * Click **Test connection** to perform a full testing cycle in which a test file will be transferred to your designated folder. The test file does not contain real data, and will be removed by Incapsula when the transfer is complete. 
+    * Your S3 **Access key, Secret key, and Path**, where path is the location of the folder where you want to store the logs. Enter the path in the following format: `<Amazon S3 bucket name>/<log folder>`. For example: MyBucket/MyIncapsulaLogFolder.
+    * Click **Test connection** to perform a full testing cycle in which a test file will be transferred to your designated folder. The test file does not contain real data, and will be removed by Incapsula when the transfer is complete.
 5. Configure the additional options:
-    * **Format**. Select the format for the log files: **CEF** 
-    * **Compress logs**. By default, log files are compressed. Clear this option to keep the logs uncompressed. 
+    * **Format**. Select the format for the log files: **CEF**
+    * **Compress logs**. By default, log files are compressed. Clear this option to keep the logs uncompressed.
 
 For detailed instructions, see [here](https://docs.incapsula.com/Content/management-console-and-settings/log-integration.htm?Highlight=siem#Enable).
-
 
 #### Set up in Sumo Logic
 
@@ -98,20 +95,23 @@ To configure log collection for Sumo Logic, do the following:
 1. Add a [Sumo Logic Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector)
 2. Configure [Amazon S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source).
 
+## Installing the Imperva-Incapsula WAF app
 
-## Installing the Imperva-Incapsula WAF App
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-Now that you have set up collection for Imperva Incapsula - Web Application Firewall, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+<AppInstall2/>
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Imperva-Incapsula WAF dashboards​
 
-## Viewing Imperva-Incapsula WAF Dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-### WAF - Overview
+<ViewDashboards/>
+
+### Overview
 
 See the overview of your WAF service including the source IP address, client app, user agent, country, ADR rules, and policy type.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/imperva-overview.png')} alt="Imperva - Incapsula dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Imperva-Incapsula-WAF-Overview.png')} alt="Imperva - Incapsula dashboards" />
 
 **Client App Top Values**. See the top 10 client apps by count in the last 14 days on a bar chart.
 
@@ -129,12 +129,11 @@ See the overview of your WAF service including the source IP address, client app
 
 **Top Applied ADR Rules**. See the top 10 applied ADR rules by count in the last 14 days displayed in a table.
 
-
-### WAF - Blocked Countries
+### Blocked Countries
 
 See the details of blocked countries in your WAF service including the source IP address, browser type, top countries, and user agent.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/imperva-Blocked_Countries.png')} alt="Imperva - Incapsula dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Imperva-Incapsula-WAF-Blocked-Countries.png')} alt="Imperva - Incapsula dashboards" />
 
 **Blocked Countries Top Values**. See the top 10 blocked countries by count in the last 14 days on a pie chart.
 
@@ -146,12 +145,11 @@ See the details of blocked countries in your WAF service including the source IP
 
 **Threat Table based on Client IP**. See the details of threats in the last 24 hours based on client IP address including the main client IP address, malicious confidence, actor, source, label name, browser type, attack type, rule name, country code, server IP, server port , client app, method, post body, URL, user agent, and count, displayed in a table.
 
-
-### WAF BOT - Access Control
+### BOT - Access Control
 
 See the details of BOT access control in your WAF service including the city, country, browser type, source IP address, and user agent.
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/BOTaccessControl.png')} alt="Imperva - Incapsula dashboards" />
+<img src={useBaseUrl('img/integrations/security-threat-detection/Imperva-Incapsula-WAF-BOT-Access-Control.png')} alt="Imperva - Incapsula dashboards" />
 
 **City Top Values**. See the top 10 cities by count in the last 14 days on a column chart.
 

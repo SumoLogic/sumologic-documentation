@@ -28,7 +28,9 @@ To configure an AWS CloudTrail Source, do the following:
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance for AWS CloudTrail to use the preconfigured searches and [dashboards](#viewing-pci-compliance-for-aws-cloudtrail-dashboards) that provide insight into your data.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing PCI Compliance for AWS CloudTrail Dashboards
 
@@ -43,7 +45,7 @@ The Sumo Logic PCI Compliance for AWS CloudTrail App provides dashboards and sam
 
 See the details of security group activities and all AWS activities in compliance with PCI Requirement 01.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudtrail-AccessMonitoring.png')} alt="PCI Compliance for AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-PCI-Req-01-Access-Monitoring.png')} alt="PCI Compliance for AWS CloudTrail" />
 
 * **Security Group Activity.** Pie chart of the security group activity over the last 24 hours.
 * **Security Group Activity.** Aggregation table of the security group activity over the last 24 hours.
@@ -56,7 +58,7 @@ See the details of security group activities and all AWS activities in complianc
 
 See the details of failed logins and successful logins in compliance with PCI Requirement 10.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudtrail-PCIReq10-LoginActivity.png')} alt="PCI Compliance for AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-PCI-Req-10-Login-Activity.png')} alt="PCI Compliance for AWS CloudTrail" />
 
 * **Failed API Calls.** Total number of failed API calls over the last 24 hours. Adjust time range as needed.
 * **Failed API Calls- Reason - Login Credentials and Permission Issues.** Aggregation table detailing failed API calls, source IP, destination user, event type, error code, region, and account ID.
@@ -75,7 +77,7 @@ See the details of failed logins and successful logins in compliance with PCI Re
 
 Search user account and IAM activity in compliance with PCI Requirement 08.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudtrail-PCIReq08-AccountSystemMonitoring.png')} alt="PCI Compliance for AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-PCI-Req-08-Account-System-Monitoring.png')} alt="PCI Compliance for AWS CloudTrail" />
 
 * **Created Users.** Aggregation table of users created in the last 24 hours.
 * **Deleted Users.** Aggregation table of users deleted in the last 24 hours.
@@ -95,14 +97,14 @@ Search user account and IAM activity in compliance with PCI Requirement 08.
 
 See the successful and failed configuration changes, policy changes, and security group activity.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Cloudtrail-PCIReq0810-PrivilegedActivity.png')} alt="PCI Compliance for AWS CloudTrail" />
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-CloudTrail-PCI-Req-08-10-Privileged-Activity.png')} alt="PCI Compliance for AWS CloudTrail" />
 
 #### Successful Configuration Changes
 * **Successful Configuration Changes.** Pie chart of the successful configuration changes over the last 24 hours.
 * **Successful Configuration Changes.** Aggregation table of the successful configuration changes over the last 24 hours.
 
 #### Failed Configuration Changes
-* **Failed Configuration Changes. **Pie chart of the failed configuration changes over the last 24 hours.
+* **Failed Configuration Changes.** Pie chart of the failed configuration changes over the last 24 hours.
 * **Failed Configuration Changes.** Aggregation table of the failed configuration changes over the last 24 hours.
 
 #### Security Groups
@@ -110,7 +112,7 @@ See the successful and failed configuration changes, policy changes, and securit
 * **Deleted Security Groups.** Aggregation table of security groups created in the last 24 hours.
 * **Operation Failure - Authorize, Revoke Security Groups Ingress, Egress Rules**. See the details of failed events - authorize security group ingress, authorize security group egress, revoke security group ingress, and revoke security group egress, in the last 24 hours, including the event time, event name, user, group ID, account ID, error code, error message, and source IP address.
 * **Operation Success - Authorize, Revoke Security Groups Ingress, Egress Rules**. See the details of successful events - authorize security group ingress, authorize security group egress, revoke security group ingress, and revoke security group egress, in the last 24 hours, including the event time, event name, user, group ID, account ID, AWS region, and source IP address.
-* **Security Group Activity Over Time. **Histogram of security group activity over the last 24 hours time sliced by hour.
+* **Security Group Activity Over Time.** Histogram of security group activity over the last 24 hours time sliced by hour.
 
 #### Policy Operations
 * **Failed Policy Changes**. See the details of failed policy changes, in the last 24 hours, including the event time, event name, event source, policy name, user, account ID, AWS region, source IP address, error code, and error message.

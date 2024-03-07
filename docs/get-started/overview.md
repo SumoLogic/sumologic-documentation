@@ -7,7 +7,13 @@ sidebar_label: Intro to Sumo Logic
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/cloud/core-platform.png')} alt="icon" width="60"/>
+Sumo Logic puts the power of data analytics at the fingertips of everyone on your team. Sumo's pre-configured searches and at-a-glance visual dashboards make it easy to search, filter, and analyze your data.
+
+Visual displays of real-time data allow you to monitor the health, fitness, and security of your application and network, providing insights for troubleshooting and timely resolutions.
+
+<img src={useBaseUrl('img/get-started/sumo-overview.png')} alt="sumo-overview.png" />
+
+## Overview
 
 Get to know Sumo Logic through our video, "Introduction to Sumo Logic".
 
@@ -29,7 +35,8 @@ Sumo Logic helps businesses build, run, and secure modern applications through f
 
 There are various factors to consider when implementing a Sumo Logic solution in your organization, based on the different collection strategies.
 
-Get to know about benefits through our video, "Benefits of Using Sumo Logic".
+:::sumo micro lesson
+Get to know more about the Benefits of Using Sumo Logic.
 
 <Iframe url="https://www.youtube.com/embed/D4WO5DlqD6o"
         width="854px"
@@ -42,7 +49,7 @@ Get to know about benefits through our video, "Benefits of Using Sumo Logic".
         allowfullscreen
         />
 
-<br/>
+:::
 
 ## Sumo Logic Components
 
@@ -56,7 +63,8 @@ Sumo Logic helps in transforming daily operations into intelligent business deci
 
 :::tip Data Collection strategies
 
-<details><summary>Learn about local collection, centralized collection, and data collection best practices (click to expand).</summary>
+<details>
+<summary>Learn about local collection, centralized collection, and data collection best practices (click to expand).</summary>
 
 [Basics](/docs/send-data/best-practices#local-and-centralized-data-collection). Review the installed collector and its basic concepts. This is a software agent that can be installed on a machine (physical or virtual) to collect logs. The installed collector can be used to collect logs and metrics from the host machine, or from those within the same network as the host machine.
 
@@ -84,7 +92,7 @@ Get to know the Collection process through our video, "Data Collection Strategy"
 
 #### OpenTelemetry Collector (recommended)
 
-The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) is our next-generation collector, built on OpenTelemetry, that provides a single unified agent to send logs, metrics, traces, and metadata from a [variety of sources](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/) to Sumo Logic. The collector uses encryption and compression to send data securely and efficiently and is fault-tolerant to network issues. 
+The [Sumo Logic Distribution for OpenTelemetry Collector](/docs/send-data/opentelemetry-collector) is our next-generation collector, built on OpenTelemetry, that provides a single unified agent to send logs, metrics, traces, and metadata from a [variety of sources](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/) to Sumo Logic. The collector uses encryption and compression to send data securely and efficiently and is fault-tolerant to network issues.
 
 #### Installed Collector
 
@@ -116,7 +124,7 @@ Once you've set up a collector and source, read these tips on configuring and ma
 
 * [Data Retention](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention). Determine the average data retention for your account (total storage and daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data** > **Settings** > **Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
 * [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
-* [Audit Index](/docs/manage/security/audit-index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
+* [Audit Index](/docs/manage/security/audit-indexes/audit-index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
 * [Data Volume App](/docs/integrations/sumo-apps/data-volume). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
 * [Audit App](/docs/integrations/sumo-apps/audit). Install the Audit app and explore its content. You can use this to monitor user activity, content changes, as well as scheduled search changes and executions.
 

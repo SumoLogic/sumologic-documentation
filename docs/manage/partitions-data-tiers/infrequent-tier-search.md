@@ -14,7 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Previously, scheduled searches were only supported in Sumo Logic’s Continuous data tier. Now, you can also schedule searches that run against the Infrequent Tier.
 
-## Sample Queries
+## Sample queries
 
 This means you can now include data from the Infrequent Tier in the scope of the scheduled search.
 
@@ -22,7 +22,7 @@ This means you can now include data from the Infrequent Tier in the scope of the
   ```sql
   _dataTier=Infrequent _sourceCategory=appA "error"
   ```
-* Or, you can select data in the Infrequent tier by specifying the Partition that contains it, like this:
+* Or, you can select data in the Infrequent Tier by specifying the Partition that contains it, like this:
   ```sql
   _index=some_infrequent_index
   ```
@@ -32,13 +32,13 @@ This means you can now include data from the Infrequent Tier in the scope of the
   ```
 
 :::note
-If you choose **Save to Index** as the Alert Type for a Scheduled Search, and any of the data that is scanned for the search is in the Infrequent tier, the index will be saved to the Infrequent Tier.
+If you choose **Save to Index** as the Alert Type for a Scheduled Search, and any of the data that is scanned for the search is in the Infrequent Tier, the index will be saved to the Infrequent Tier.
 :::
 
 
 ## Infrequent Scheduled Search Dashboard
 
-Sumo Logic provides a dashboard you can use to monitor the Infrequent tier space consumed by saved Scheduled Searches.
+Sumo Logic provides a dashboard you can use to monitor the Infrequent Tier space consumed by saved Scheduled Searches.
 
 <img src={useBaseUrl('img/partitions-data-tiers/infrequent-scheduled-search.png')} alt="dashboard" />
 
@@ -59,5 +59,5 @@ You can download the JSON for the dashboard [here](https://sumologic-app-data.s3
 
 ## Limitations  
 
-* You can’t save a scheduled search that returns data from the Infrequent tier to a partition in the Continuous tier.
-* A scheduled search against the Infrequent tier cannot have a run frequency of “real time”.
+* You can’t save a scheduled search that returns data from the Infrequent Tier to a partition in the Continuous Tier.
+* A scheduled search against the Infrequent Tier cannot have a run frequency of “real time”.

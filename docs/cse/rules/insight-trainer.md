@@ -13,17 +13,37 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Cloud SIEM - Insight Trainer](/docs/integrations/sumo-apps/cse#insight-trainer) is a dashboard in the Enterprise Audit - Cloud SIEM app. Insight Trainer offers suggestions for making adjustments to rules, such as writing rule tuning expressions and changing severities. Implementing the recommendations causes rules to be more effective at creating high-fidelity Signals, resulting in generation of more meaningful Insights. 
 
+Watch this micro lesson to learn how to use the Insight Trainer dashboard.
+
+<Iframe url="https://www.youtube.com/embed/I90Wsjp5XPA?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe';
+
 ## About Insight Trainer
 
-When you resolve Insights, you give them [Insight resolutions](/docs/cse/administration/manage-custom-insight-resolutions/) such as: 
+When you [close an Insight](/docs/cse/administration/manage-custom-insight-resolutions/#close-an-insight-using-a-custom-resolution), you can give it one of the following built-in [Insight resolutions](/docs/cse/administration/manage-custom-insight-resolutions/): 
 
+* **Duplicate**. The insight has triggered before on the same entity and is a duplicate.
 * **False Positive**. A false alarm, possibly due to an error in the detection logic of the rule or inapplicability to your environment.
 * **No Action**. A valid detection, but no action is necessary due to effective containment measures. Rules participating in repeated No Action Insights may also be good tuning expression candidates.
-* **Resolved:**. A valid detection where investigation was necessary.
+* **Resolved**. A valid detection where investigation was necessary.
 
 As you resolve Insights, you may find you have a high ratio of False Positive and No Action resolutions compared to Resolved resolutions. By reducing the number of Signals that produce Insights that turn out to be false positives or require no action, you can produce more reliable Insights. 
 
-You could use trial-and-error to tune rules, but the Insight Trainer dashboard provides a data-driven approach. Machine learning and AI learn historical patterns from your own data to suggest rule severity adjustments that minimize false positives without missing out on actual incidents. If you implement the suggested changes on a regular basis, the number of false positive resolutions can be greatly reduced. 
+:::note
+For the Insight Trainer to build an effective model of Insight resolution, you must close Insights with either the **False Positive** or **Resolved** resolution. 
+:::
+
+You could use trial-and-error to tune rules, but the Insight Trainer dashboard provides a data-driven approach. Once a week, the Insight Trainer provides fresh recommendations based on analysis of the last 60 days of data. Machine learning and AI learn historical patterns from your own data to suggest rule severity adjustments that minimize false positives without missing out on actual incidents. To see fresh recommendation every week, you must make suggested tuning adjustments at least once every two weeks. If you implement the suggested changes on a regular basis, the number of false positive resolutions can be greatly reduced. 
 
 The dashboard makes two kinds of suggestions, either a “tunability” score to help you write tuning expressions for Entities, or recommendations to change the severity level of rules. We recommend you first look at rules with the highest tunability score and assess the dominant Entities (like users and IPs) to write tuning expressions for. Only after implementing tuning expressions do we recommend you adjust rule severities. This [suggested workflow](#suggested-workflow) will give you the best results over time.
 
@@ -50,7 +70,13 @@ Use the fields at the top of the page to filter the kinds of recommendations you
    * **Rules with severity recommendations**. Provide recommendations only for those rules with suggested changes to their severity.
 1. **deployment**. The deployment whose rules you want recommendations for. 
 1. **domain**. The domain whose rules you want recommendations for.
-1. **Date Range**. The date range displayed is the model training period and is read-only. Model retraining is weekly based on a rolling history of your Insights data. The funnel shows the number of Insights eligible for recommendations. For example, in the image above, 24 Insights out of 30 are eligible for recommendations. In many cases, Insights are eligible for recommendations because they originate from rules that have a static severity that can be updated.  
+1. **Date Range**. Once a week, the Insight Trainer provides fresh recommendations. The date range displayed is the model training period and is read-only. Model retraining is weekly, based on a rolling history of your Insights data. The funnel shows the number of Insights eligible for recommendations. For example, in the image above, 24 Insights out of 30 are eligible for recommendations. In many cases, Insights are eligible for recommendations because they originate from rules that have a static severity that can be updated.
+The funnel depicts algorithmic Insights that remain after filtering Insights based on:
+   * Date range
+   * Insights containing dynamic severity rules
+   * Non-algorithmic detection (that is, rule and user Insights)
+   * Duplicate Insights
+   * Data completeness 
 1. **Insight Source**. The primary source of Insights (for example, by algorithm, rule, or user).
 
 ### Recommendations Summary
@@ -89,7 +115,7 @@ In general, fewer Insights are generated if you decrease severities on rules, an
 ## Suggested workflow
 
 Following is the suggested workflow to use the Insight Trainer dashboard:
-1. Review severity recommendations once a week.
+1. Review severity recommendations once a week. The Insight Trainer provides fresh recommendations weekly, provided that you regularly implement recommendations. 
 1. Look at the rules with the highest tunability scores and assess the dominant Entities to write [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions) for (like users and IP addresses).
 1. Write tuning expressions for Entities, where possible.
 1. Adjust rule severities if needed.

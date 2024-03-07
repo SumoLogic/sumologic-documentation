@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Elasticsearch app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Elasticsearch clusters. Preconfigured dashboards provide insight into cluster health, resource utilization, sharding, garbage collection, and search, index, and cache performance.
 
-## Sample Log Messages
+## Sample log messages
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -60,11 +60,11 @@ The Elasticsearch app is a unified logs and metrics app that helps you monitor t
 
 ## Collecting Logs and Metrics for the Elasticsearch app
 
-Configuring log and metric collection for the Elasticsearch App includes the following tasks.
+Configuring log and metric collection for the Elasticsearch app includes the following tasks.
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic before configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic before configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -97,7 +97,6 @@ If you're using Elasticsearch in a non-Kubernetes environment, create the fields
 </TabItem>
 </Tabs>
 
-
 ### Step 2: Configure Collection for Elasticsearch
 
 <Tabs
@@ -122,7 +121,7 @@ In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collec
 Follow the below instructions to set up the logs and metric collection:
 
 :::note prerequisites
-It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
 #### Configure Logs Collection
@@ -131,17 +130,17 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
 
 1. **(Recommended Method) Add labels on your Elasticsearch pods to capture logs from standard output on Kubernetes**.
    1. Apply the following labels to the Elasticsearch pods:
-    ```sql
-    environment: "dev_CHANGE_ME"
-    component: "database"
-    db_system: "elasticsearch"
-    db_cluster: "elasticsearch_on_k8s_CHANGE_ME"
+    ```sh
+    environment = "dev_CHANGE_ME"
+    component = "database"
+    db_system = "elasticsearch"
+    db_cluster = "elasticsearch_on_k8s_CHANGE_ME"
     db_cluster_address = `ENV_TO_BE_CHANGED`
     db_cluster_port = `ENV_TO_BE_CHANGED`
     ```
    2. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` above):
-    * `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example, dev, prod, or QA. While this value is optional we highly recommend setting it.
-    * `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
+    * `environment`. This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example, dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `db_cluster`. Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
     * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 
@@ -218,20 +217,20 @@ This section explains the steps to collect Elasticsearch metrics from a Kubernet
   indices_include = ["_all"]
   indices_level = "cluster"
   [inputs.elasticsearch.tags]
-     environment: "ENV_TO_BE_CHANGED"
-     component: "database"
-     db_system: "elasticsearch"
-     db_cluster: "ENV_TO_BE_CHANGED"
-     db_cluster_address = `ENV_TO_BE_CHANGED`
-     db_cluster_port = `ENV_TO_BE_CHANGED`
+    environment = "ENV_TO_BE_CHANGED"
+    component = "database"
+    db_system = "elasticsearch"
+    db_cluster = "ENV_TO_BE_CHANGED"
+    db_cluster_address = `ENV_TO_BE_CHANGED`
+    db_cluster_port = `ENV_TO_BE_CHANGED`
 ```
 3. Enter in values for the following parameters (marked ENV_TO_BE_CHANGED above):
-   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Elasticsearch Input plugin. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Elasticsearch input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+   * `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf Elasticsearch Input plugin. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Elasticsearch input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
    * In the input plugins section, that is `[[inputs.elasticsearch]]`:
       * `servers` - The URL to the Elasticsearch server. This can be a comma-separated list to connect to multiple Elasticsearch servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Elasticsearch input plugin for Telegraf.
    * In the tags section, which is `[inputs.elasticsearch]`
-     * `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
-     * `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
+     * `environment`. This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
+     * `db_cluster`. Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 
@@ -244,10 +243,10 @@ This section explains the steps to collect Elasticsearch metrics from a Kubernet
 
      Pivoting to Tracing data from Entity Inspector is possible only for “Elasticsearch address” Entities.
      :::
-   * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
-     * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-     * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-     * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+   * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
+     * `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+     * `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+     * `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
      * `telegraf.influxdata.com/inputs`
      * In the tags section   `[inputs.elasticsearch.tags]`
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
@@ -262,7 +261,7 @@ This section explains the steps to collect Elasticsearch metrics from a Kubernet
 
 For non-Kubernetes environments, we use the Telegraf operator for Elasticsearch metric collection and Sumo Logic Installed Collector for collecting Elasticsearch logs. The diagram below illustrates the components of the Elasticsearch collection in a non-Kubernetes environment. Telegraf runs on the same system as Elasticsearch to obtain Elasticsearch metrics. The Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Elasticsearch on the other hand are sent to a Sumo Logic Local File source.<br/><img src={useBaseUrl('img/integrations/databases/elasticsearchnonk8s.png')} alt="elasticsearch" />
 
-This section provides instructions for configuring logs and metrics collection for the Sumo Logic App for Elasticsearch.
+This section provides instructions for configuring logs and metrics collection for the Sumo Logic app for Elasticsearch.
 
 #### Configure Metrics Collection
 
@@ -281,13 +280,13 @@ This section provides instructions for configuring logs and metrics collection f
   indices_include = ["_all"]
   indices_level = "cluster"
   node_stats = ["indices", "os", "process", "jvm", "thread_pool", "fs", "transport", "http"]
-[inputs.elasticsearch.tags]
-   environment="ENV_TO_BE_CHANGED"
-   component="database"
-   db_system="elasticsearch"
-   db_cluster="ENV_TO_BE_CHANGED"
-   db_cluster_address = `ENV_TO_BE_CHANGED`
-   db_cluster_port = `ENV_TO_BE_CHANGED`
+  [inputs.elasticsearch.tags]
+    environment ="ENV_TO_BE_CHANGED"
+    component ="database"
+    db_system ="elasticsearch"
+    db_cluster ="ENV_TO_BE_CHANGED"
+    db_cluster_address = `ENV_TO_BE_CHANGED`
+    db_cluster_port = `ENV_TO_BE_CHANGED`
 [[outputs.sumologic]]
   url = "<URL Created in Step 3_CHANGEME>"
   data_format = "prometheus"
@@ -296,8 +295,8 @@ This section provides instructions for configuring logs and metrics collection f
   * In the input plugins section, that is `[[inputs.elasticsearch]]`:
      * `servers` - The URL to the elasticsearch server. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/elasticsearch) for more information on additional parameters for configuring the Elasticsearch input plugin for Telegraf.
      * In the tags section (`[inputs.Elasticsearch.tags]`):
-        * `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
-        * `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
+        * `db_cluster`. Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
         * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
         * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
         :::note
@@ -314,7 +313,7 @@ This section provides instructions for configuring logs and metrics collection f
    * Here’s an explanation for additional values set by this Telegraf configuration. If you haven’t defined a cluster in Elasticsearch, then enter `default` for `db_cluster`. There are additional values set by the Telegraf configuration, which we recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
      * `data_format - “prometheus”` In the output plugins section (`[[outputs.sumologic]]`), metrics are sent in the Prometheus format to Sumo Logic
      * `component: “database”` - In the input plugins section (`[[inputs.Elasticsearch]]`), this value is used by Sumo Logic apps to identify application components.
-     * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
+     * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
 6. After you've finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, Elasticsearch metrics should start flowing into Sumo Logic.
@@ -323,7 +322,7 @@ At this point, Elasticsearch metrics should start flowing into Sumo Logic.
 
 #### Configure Logs Collection
 
-This section provides instructions for configuring log collection for Sumo Logic App for Elasticsearch, running on a non-Kubernetes environment. By default, Elasticsearch logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see [this page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+This section provides instructions for configuring log collection for Sumo Logic app for Elasticsearch, running on a non-Kubernetes environment. By default, Elasticsearch logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see [this page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 1. **Configure logging in Elasticsearch**. Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set loglevel to one of:
    * `debug`: a lot of information, useful for development/testing
@@ -338,7 +337,7 @@ This section provides instructions for configuring log collection for Sumo Logic
    * **Description.** (Optional)
    * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in `/var/log/elasticsearch/elasticsearch-<clustername>.log`. If you're using a customized path, check the Elasticsearch.conf file for this information.
    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
-   * **Source Category.** Enter any string to tag the output collected from this Source, such as **elasticsearch/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
+   * **Source Category.** Enter any string to tag the output collected from this Source, such as **elasticsearch/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
    * **Fields. Set the following fields:**
       * `component = database`
       * `db_system = elasticsearch`
@@ -369,14 +368,11 @@ At this point, Elasticsearch logs should start flowing into Sumo Logic.
 </TabItem>
 </Tabs>
 
-
-
 ## Installing Elasticsearch Monitors
 
 Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Elasticsearch cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Elasticsearch Alerts](#Elasticsearch-Alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability. You can install monitors by importing a JSON file or using a Terraform script. There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
-
 
 ### Method 1: Importing a JSON file
 
@@ -388,22 +384,21 @@ To install these monitors, you must have the **Manage Monitors** role capability
 3. Go to **Manage Data > Alerts > Monitors**.
 4. Click **Add**.
 5. Click **Import**.
-6. On the** Import Content popup**, enter **Elasticsearch** in the Name field, paste in the JSON into the popup, and click **Import**.
+6. On the **Import Content popup**, enter **Elasticsearch** in the Name field, paste in the JSON into the popup, and click **Import**.
 7. The monitors are created in a **Elasticsearch** folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
-
 
 ### Method 2: Using a Terraform script
 
 1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/security/access-keys#Create-an-access-key-on-Preferences-page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
-3. Download the Sumo Logic Terraform package for Elasticsearch monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Elasticsearch). You can either download it using the git clone command or as a zip file.
-4. Alert Configuration. After extracting the package, navigate to the  `terraform-sumologic-sumo-logic-monitor/monitor_packages/Elasticsearch/` directory.
+3. Download the Sumo Logic Terraform package for Elasticsearch monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Elasticsearch). You can either download it using the git clone command or as a zip file.
+4. Alert Configuration. After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/Elasticsearch/` directory.
    * Edit the `Elasticsearch.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-   ```bash
-   access_id   = "<SUMOLOGIC ACCESS ID>"
-   access_key  = "<SUMOLOGIC ACCESS KEY>"
-   environment = "<SUMOLOGIC DEPLOYMENT>"
-   ```
+    ```bash
+    access_id   = "<SUMOLOGIC ACCESS ID>"
+    access_key  = "<SUMOLOGIC ACCESS KEY>"
+    environment = "<SUMOLOGIC DEPLOYMENT>"
+    ```
    * The Terraform script installs the alerts without any scope filters. If you would like to restrict the alerts to specific clusters or environments, update the `elasticsearch_data_source` variable. For example:
      * To configure alerts for a specific cluster, set `elasticsearch_data_source` to something like `db_cluster=elasticsearch.prod.01`
      * To configure alerts for all clusters in an environment, set `elasticsearch_data_source` to something like `environment=prod`
@@ -444,369 +439,119 @@ email_notifications = [
   ]
 ```
 6. Installation.
-   1. Navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/Elasticsearch/ directory and run terraform init. This will initialize Terraform and download the required components.
+   1. Navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/Elasticsearch/` directory and run terraform init. This will initialize Terraform and download the required components.
    2. Run `terraform plan` to view the monitors that Terraform will create or modify.
    3. Run `terraform apply`.
 
+## Installing the Elasticsearch app
 
-## Installing Elasticsearch App
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+<AppInstall/>
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see [Installing the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-## Viewing Elasticsearch Dashboards
+## Viewing Elasticsearch dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
 :::
-
 
 ### Overview
 
-The Elasticsearch - Overview dashboard provides the health of Elasticsearch clusters, shards analysis, resource utilization of Elasticsearch host & clusters, search and indexing performance.
+The **Elasticsearch - Overview** dashboard provides the health of Elasticsearch clusters, shards analysis, resource utilization of Elasticsearch host & clusters, search and indexing performance.
 
 <img src={useBaseUrl('img/integrations/databases/Elasticsearch-Overview.png')} alt="elasticsearch dashboards" />
 
 ### Total Operations Stats
 
-The Elasticsearch - Total Operations stats dashboard provides information on the operations of the Elasticsearch system.
+The **Elasticsearch - Total Operations Stats** dashboard provides information on the operations of the Elasticsearch system.
 
 <img src={useBaseUrl('img/integrations/databases/ElasticSearch-Total.png')} alt="elasticsearch dashboards" />
 
-
 ### Thread Pool
 
-The Elasticsearch- Thread Pool dashboard analyzes thread pools operations to manage memory consumption of nodes in the cluster.
+The **Elasticsearch- Thread Pool** dashboard analyzes thread pools operations to manage memory consumption of nodes in the cluster.
 
 <img src={useBaseUrl('img/integrations/databases/ElasticSearch-thread.png')} alt="elasticsearch dashboards" />
 
 ### Resource
 
-The Elasticsearch - Resource dashboard monitors JVM Memory, Network, Disk, Network and CPU of Elasticsearch node.
+The **Elasticsearch - Resource** dashboard monitors JVM Memory, Network, Disk, Network and CPU of Elasticsearch node.
 
 <img src={useBaseUrl('img/integrations/databases/ElasticSearch-resource.png')} alt="elasticsearch dashboards" />
 
 ### Performance Stats
 
-The Elasticsearch - Performance Stats dashboard performance statistics such as latency and Translog operations and size.
+The **Elasticsearch - Performance Stats** dashboard performance statistics such as latency and Translog operations and size.
 
 <img src={useBaseUrl('img/integrations/databases/ElasticSearch-perf.png')} alt="elasticsearch dashboards" />
 
-
 ### Indices
 
-The Elasticsearch - Indices dashboard monitors Index operations, size and latency. It also provides analytics on doc values, fields, fixed bitsets, and terms memory.
+The **Elasticsearch - Indices** dashboard monitors Index operations, size and latency. It also provides analytics on doc values, fields, fixed bitsets, and terms memory.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-ind.png')} alt="elasticsearch dashboards" />
 
-
 ### Documents
 
-The Elasticsearch - Documents dashboard provides analytics and monitoring on Elasticsearch documents.
+The **Elasticsearch - Documents** dashboard provides analytics and monitoring on Elasticsearch documents.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-doc.png')} alt="elasticsearch dashboards" />
 
-
 ### Caches
 
-The Elasticsearch - Caches dashboard allows you to monitor query cache size, evictions and field data memory size.
+The **Elasticsearch - Caches** dashboard allows you to monitor query cache size, evictions and field data memory size.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-cache.png')} alt="elasticsearch dashboards" />
 
-
 ### Errors And Warnings
 
-The ElasticSearch - Errors And Warnings dashboard shows errors and warnings by Elasticsearch components.
+The **ElasticSearch - Errors And Warnings** dashboard shows errors and warnings by Elasticsearch components.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-err.png')} alt="elasticsearch dashboards" />
 
-
 ### Garbage Collection
-36
 
-
-The Elasticsearch - Garbage Collector dashboard provides information on the garbage collection of the Java Virtual Machine.
+The **Elasticsearch - Garbage Collection** dashboard provides information on the garbage collection of the Java Virtual Machine.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-garbage.png')} alt="elasticsearch dashboards" />
 
 ### Login And Connections
-38
 
-
-The ElasticSearch - Login And Connections dashboard shows geo location of client connection requests, failed connection logins and count of failed login attempts
+The **ElasticSearch - Login And Connections** dashboard shows geo location of client connection requests, failed connection logins and count of failed login attempts.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-login.png')} alt="elasticsearch dashboards" />
 
-
 ### Operations
 
-The Elasticsearch - Operations dashboard allows you to monitor server stats and events such as node up/down, index creation/deletion. It also provides disk usage and cluster health status.
+The **Elasticsearch - Operations** dashboard allows you to monitor server stats and events such as node up/down, index creation/deletion. It also provides disk usage and cluster health status.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-ops.png')} alt="elasticsearch dashboards" />
 
 ### Queries
 
-The ElasticSearch - Queries dashboard shows Elasticsearch provides analytics on slow queries, and query shards.
+The **ElasticSearch - Queries** dashboard shows Elasticsearch provides analytics on slow queries, and query shards.
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch-q.png')} alt="elasticsearch dashboards" />
-
-
 
 ## Elasticsearch Alerts
 
 Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Elasticsearch database cluster is available and performing as expected.
 
-
-<table>
-  <tr>
-   <td>Alert Type (Metrics/Logs)
-   </td>
-   <td>Alert Name
-   </td>
-   <td>Alert Description
-   </td>
-   <td>Trigger Type (Critical / Warning)
-   </td>
-   <td>Alert Condition
-   </td>
-   <td>Recover Condition
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Cluster Red
-   </td>
-   <td>This alert fires when Elasticsearch Cluster status is RED
-   </td>
-   <td>Critical
-   </td>
-   <td>&#62; &#61;3
-   </td>
-   <td> &#60;3
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Cluster Yellow
-   </td>
-   <td>This alert fires when Elasticsearch Cluster status is YELLOW
-   </td>
-   <td>Warning
-   </td>
-   <td>&#62; &#61;2
-   </td>
-   <td> &#60;2
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Disk Out of Space
-   </td>
-   <td>This alert fires when the disk usage is over 90%
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;90
-   </td>
-   <td>&#60; &#61;90
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Disk Space Low
-   </td>
-   <td>This alert fires when the disk usage is over 80%
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;80
-   </td>
-   <td>&#60; &#61; 80
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Healthy Data Nodes
-   </td>
-   <td>This alert fires when there missing data node in Elasticsearch cluster
-   </td>
-   <td>Critical
-   </td>
-   <td> &#60;3
-   </td>
-   <td>&#62; &#61;3
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Healthy Nodes
-   </td>
-   <td>This alert fires when there is missing node in Elasticsearch cluster
-   </td>
-   <td>Critical
-   </td>
-   <td> &#60;3
-   </td>
-   <td>&#62; &#61;3
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Heap Usage Too High
-   </td>
-   <td>This alert fires when the heap usage is over 90%
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;90
-   </td>
-   <td>&#60; &#61;90
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Heap Usage Warning
-   </td>
-   <td>This alert fires when the heap usage is over 80%
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;80
-   </td>
-   <td>&#60; &#61;80
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Initializing Shards Too Long
-   </td>
-   <td>This alert fires when elasticsearch has been initializing shards for 5 min
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Pending Tasks
-   </td>
-   <td>This alert fires when elasticsearch has pending tasks.
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Relocating Shards Too Long
-   </td>
-   <td>This alert fires when elasticsearch has been relocating shards for 5min
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Metrics
-   </td>
-   <td>Elasticsearch - Unassigned Shards
-   </td>
-   <td>This alert fires when Elasticsearch has unassigned shards
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Elasticsearch - Query Time Too Slow
-   </td>
-   <td>This alert fires when queries are slow to execute
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Elasticsearch - Query Time Slow
-   </td>
-   <td>This alert fires when query time is greater than 5 ms
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;0
-   </td>
-   <td>&#60; &#61;0
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Elasticsearch - Too Many Slow Query
-   </td>
-   <td>This alert fires when there aret oo Many Slow Query in 5 minutes
-   </td>
-   <td>Warning
-   </td>
-   <td> &#62;100
-   </td>
-   <td>&#60; &#61;100
-   </td>
-  </tr>
-  <tr>
-   <td>Logs
-   </td>
-   <td>Elasticsearch - Error Log Too Many
-   </td>
-   <td>Error Log Too Many
-   </td>
-   <td>Critical
-   </td>
-   <td> &#62;1000
-   </td>
-   <td>&#60; &#61;1000
-   </td>
-  </tr>
-</table>
+| Alert Type (Metrics/Logs) | Alert Name | Alert Description | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|---|---|---|---|---|---|
+| Metrics | Elasticsearch - Cluster Red | This alert fires when Elasticsearch Cluster status is RED | Critical | `>=`3 | `<`3 |
+| Metrics | Elasticsearch - Cluster Yellow | This alert fires when Elasticsearch Cluster status is YELLOW | Warning | `>=`2 | `<`2 |
+| Metrics | Elasticsearch - Disk Out of Space | This alert fires when the disk usage is over 90% | Critical | >90 | < =90 |
+| Metrics | Elasticsearch - Disk Space Low | This alert fires when the disk usage is over 80% | Warning | >80 | < = 80 |
+| Metrics | Elasticsearch - Healthy Data Nodes | This alert fires when there missing data node in Elasticsearch cluster | Critical | `<`3 | `>=`3 |
+| Metrics | Elasticsearch - Healthy Nodes | This alert fires when there is missing node in Elasticsearch cluster | Critical | `<`3 | `>=`3 |
+| Metrics | Elasticsearch - Heap Usage Too High | This alert fires when the heap usage is over 90% | Critical | >90 | < =90 |
+| Metrics | Elasticsearch - Heap Usage Warning | This alert fires when the heap usage is over 80% | Warning | >80 | < =80 |
+| Metrics | Elasticsearch - Initializing Shards Too Long | This alert fires when elasticsearch has been initializing shards for 5 min | Warning | >0 | < =0 |
+| Metrics | Elasticsearch - Pending Tasks | This alert fires when elasticsearch has pending tasks. | Warning | >0 | < =0 |
+| Metrics | Elasticsearch - Relocating Shards Too Long | This alert fires when elasticsearch has been relocating shards for 5min | Warning | >0 | < =0 |
+| Metrics | Elasticsearch - Unassigned Shards | This alert fires when Elasticsearch has unassigned shards | Critical | >0 | < =0 |
+| Logs | Elasticsearch - Query Time Too Slow | This alert fires when queries are slow to execute | Critical | >0 | < =0 |
+| Logs | Elasticsearch - Query Time Slow | This alert fires when query time is greater than 5 ms | Warning | >0 | < =0 |
+| Logs | Elasticsearch - Too Many Slow Query | This alert fires when there aret oo Many Slow Query in 5 minutes | Warning | >100 | < =100 |
+| Logs | Elasticsearch - Error Log Too Many | Error Log Too Many | Critical | >1000 | < =1000 |

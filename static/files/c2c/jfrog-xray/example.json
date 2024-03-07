@@ -1,0 +1,17 @@
+{
+    "api.version":"v1",
+    "source":{
+      "config":{
+        "name": "JFrog Xray Source",
+        "base_url": "https://acme.jfrog.io",
+        "username": "sumo-source",
+        "password": "********",
+        "collect_violation_details": false,
+        "polling_interval": "5m"
+      },
+      "schemaRef":{
+        "type":"JFrog Xray"
+      },
+      "sourceType":"Universal"
+    }
+  }

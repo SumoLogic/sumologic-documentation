@@ -4,25 +4,16 @@ title: View Records for a Signal
 description: Learn how to view Records associated with a Signal.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-CSE uses rules to evaluate incoming Records, and when the conditions of a rule are met, generates a Signal. This topic explains how to view Records associated with a Signal in CSE. 
+Cloud SIEM uses rules to evaluate incoming Records, and when the conditions of a rule are met, generates a Signal. This topic explains how to view Records associated with a Signal in Cloud SIEM. 
 
-## View attached Records for a Signal
+When you view the details page for a Signal that was triggered by a threshold, aggregation, or chain rule, you’ll see a section that displays Records that matched the rules conditions. These Records will continue to be associated with the Signal as long as the Signal is available. 
 
-When you view the details page for a Signal that was triggered by a threshold, aggregation, or chain rule, you’ll see an **Attached Records** section, which displays up to 20 of the Records that matched the rules conditions. Attached Records will continue to be associated with the Signal as long as the Signal is available.
+Click the plus sign (+) for a Record to view its details. Click the **Timestamp** button to sort Records by their timestamp.
 
-Click the plus sign (+) for Record to view its details.
+<img src={useBaseUrl('img/cse/attached-records.png')} alt="View attached records" width="800"/>
 
-![attached-records.png](/img/cse/attached-records.png)
-
-If other Records matched the rule conditions during the time window of the Signal, you can search for them from the Signal details page, as described in the following section.
-
-## View additional Records for a Signal
-
-To view additional Records that matched the rule conditions during the time window of the Signal, click **Queried Records** near the upper right corner of the Signal details page.
-
-![queried-records-link.png](/img/cse/queried-records-link.png)
-
-The Records are retrieved in real time. The query is limited to the time window of the Signal. So, the list of Records may change over time; if you run the query occurs during the Signal’s time window, new Records could still be occurring, and if the query occurs after the retention period for records (by default, 90 days), it’s possible that no additional Records could be returned. 
-
-![queried-records-results.png](/img/cse/queried-records-results.png)
+:::note
+Only a single record is attached to the Signal itself. Any other involved records are retrieved via log search. If the records are past their retention period, they no longer appear in the UI. In the API and `sec_signal` index, only the single attached record is included, along with a list of any other entities that were seen on the involved records (in `involvedEntities`). You must [perform a log search](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo/#partition-for-cloud-siem-signals) to find the other involved records.
+:::

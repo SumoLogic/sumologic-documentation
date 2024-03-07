@@ -4,18 +4,17 @@ title: Dynamic Parsing
 description: Dynamic Parsing allows you to configure automatic parsing of JSON logs.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Dynamic Parsing allows automatic field extraction from your JSON log messages when you run a search. This allows you to view fields from JSON logs without having to manually specify parsing logic.
 
-Dynamic Parsing extracts JSON fields when you run a query, at search time (run time). Dynamic Parsing for JSON can be thought of as a Run
-Time field extraction rule (FER). By default, your account is given one Run Time FER that encompasses all of your data.
+Dynamic Parsing extracts JSON fields when you run a query, at search time (run time). Dynamic Parsing for JSON can be thought of as a Run Time field extraction rule (FER). By default, your account is given one Run Time FER that encompasses all of your data.
 
 ![Default Run Time FER.png](/img/search/get-started-search/build-search/dynamic-parsing/default-runtime-FER.png)
 
-With this FER defined, any search on JSON data will automatically parse out its JSON fields, which you can then use within your search query, exactly like any other field. You have an option on the Search Page that allows you to control Dynamic Parsing. Dynamic Parsing is activated when a search is run in **Auto Parse Mode**, more details about the modes can be found in [using Dynamic Parsing](dynamic-parsing.md).
+With this FER defined, any search on JSON data will automatically parse out its JSON fields, which you can then use within your search query, exactly like any other field. You have an option on the Search Page that allows you to control Dynamic Parsing. Dynamic Parsing is activated when a search is run in **Auto Parse Mode**.
 
-![auto parse mode option.png](/img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png)
+<img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png')} alt="auto parse mode option.png" width="300"/>
 
 ## Advantages of using Dynamic Parsing
 
@@ -28,8 +27,7 @@ By default, your account is configured with a Run Time FER that is applied to al
 
 To optimize search performance you can manually set up Dynamic Parsing by defining your own Run Time FERs.
 
-Run Time FERs have a scope, exactly like an Ingest Time FER, that defines which searches are applicable to Dynamic Parsing **Auto Parse Mode**. For Dynamic Parsing to work your query needs to have a scope that is defined in a Run Time FER, otherwise **Auto Parse Mode** will
-not be applicable.
+Run Time FERs have a scope, exactly like an Ingest Time FER, that defines which searches are applicable to Dynamic Parsing **Auto Parse Mode**. For Dynamic Parsing to work your query needs to have a scope that is defined in a Run Time FER, otherwise **Auto Parse Mode** will not be applicable.
 
 1. Go to **Manage Data** > **Logs** > **Field Extraction Rules**.
 1. Click **+ Add** at top right of the table to create an FER.  
@@ -42,7 +40,7 @@ not be applicable.
 
     * **Applied At**. Select **Run Time**.
 
-    * **Scope**. Select **Specific Data** and define the scope of your JSON data. You can define your JSON data source as a [Partition](/docs/manage/partitions-data-tiers) Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](../search-basics/built-in-metadata.md) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe ( \| ). You will use the Scope to run a search against the rule. You can't use keywords like “info” or “error” in your scope.
+    * **Scope**. Select **Specific Data** and define the scope of your JSON data. You can define your JSON data source as a [Partition](/docs/manage/partitions-data-tiers) Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](../search-basics/built-in-metadata.md) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You will use the Scope to run a search against the rule. You can't use keywords like “info” or “error” in your scope.
 
         Always set up JSON auto extraction (Run Time field extraction) on a specific Partition name (recommended) or a particular Source. Failing to do so might cause the auto parsing logic to run on data sources where it is not applicable and will add additional overhead that might deteriorate the performance of your queries.
 
@@ -62,20 +60,20 @@ Now that you have at least one Run Time FER created you can start querying your 
 
 While the Run Time FERs are set to run automatically, you can selectively choose to apply these to your search queries on the log search query page. To use Dynamic Parsing, click the gear icon to open the **Search Config** menu and toggle **Auto Parse Mode** on.
 
-![auto parse mode option.png](/img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png)
+<img src={useBaseUrl('img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png')} alt="auto parse mode option.png" width="300"/>
 
 The two modes available are:
 
 * **Auto Parse Mode**
     * Parses out all fields detected in your JSON data source, irrespective of whether you are using them in your query or not.
-    * Supported in classic dashboards and aggregate scheduled searches. This mode is only applicable when searching JSON data sources that have been properly set up in a Run Time FER.
+    * Supported in aggregate scheduled searches. This mode is only applicable when searching JSON data sources that have been properly set up in a Run Time FER.
 * **Manual Mode** (when Auto Parse Mode is disabled)
     * Fields will not be parsed out automatically unless defined in an Ingest Time FER. Users have to manually specify further parsing logic.
     * This mode is for advanced users who are interested in the best performance and know how to parse out the fields they need.
 
 ## Reference parsed JSON fields
 
-The [field browser]/field-browser) and search results [messages table]) have a few helpful features. 
+The [field browser](/docs/search/get-started-with-search/search-page/field-browser) and search results ([messages table](/docs/search/get-started-with-search/search-page)) have a few helpful features. 
 
 Field Browser:
 
@@ -107,10 +105,10 @@ Search results table:
 
 1. Run Time FERs are only applied to logs that match the scope of the query. When a search query is run, it is first determined if any of the Run Time FERs match the scope of the query. Those Run Time FERs with a matching scope are applied. Run Time FERs are applied per log line only if the log contains a JSON element.  
 
-    For example, a Run Time FER with the scope: `_sourcecategory = A`
+    For example, a Run Time FER with the scope: `_sourceCategory = A`
 
-    * The query `_sourcecategory = B` is not applied since the scope does not overlap with the Run Time FER scope.
-    * The query `_sourcecategory = A or _sourcecategory = B` is applied, only within the log lines that fall within `_sourcecategory = A`, while the remaining log lines are not parsed by this Run Time FER.
+    * The query `_sourceCategory = B` is not applied since the scope does not overlap with the Run Time FER scope.
+    * The query `_sourceCategory = A or _sourceCategory = B` is applied, only within the log lines that fall within `_sourceCategory = A`, while the remaining log lines are not parsed by this Run Time FER.
 
 1. If a field does not exist in the schema of the log message, null results are displayed for the field (instead of erroring out).
 
@@ -132,5 +130,5 @@ The following are limitations around the number of fields:
 
 * Dynamic Parsing extracts up to 100 fields per message. This 100 field count includes all built-in and parsed fields.
 * Total fields shown in the field browser consist of all the fields extracted across log lines.
-* The [Field Browser]/field-browser) displays the count of the fields as well as the distribution of values of each field. These calculations are done for the first 200 fields that are parsed by a run-time FER.
+* The [Field Browser](/docs/search/get-started-with-search/search-page/field-browser) displays the count of the fields as well as the distribution of values of each field. These calculations are done for the first 200 fields that are parsed by a run-time FER.
 * Non-aggregate queries in Scheduled Views and Scheduled Searches can't be created in auto parse mode (Dynamic Parsing).

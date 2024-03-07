@@ -2,7 +2,7 @@
 id: mongodb-opentelemetry
 title: MongoDB - OpenTelemetry Collector
 sidebar_label: MongoDB - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for MongoDB.
+description: Learn about the Sumo Logic OpenTelemetry app for MongoDB.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,7 +17,7 @@ MongoDB logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](htt
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Schematics.png' alt="Schematics" />
 
-## Log Types
+## Log types
 
 The MongoDB logs are generated in files as configured in the configuration file `/var/log/mongodb/mongodb.log`. For more details on MongoDB logs, see [this](https://docs.mongodb.com/manual/reference/log-messages/) link.
 
@@ -43,13 +43,39 @@ By default, MongoDB logs are stored in a log file.
          - The [--logpath](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--logpath) option for [mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for file.
          - The [--logpath](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--logpath) option for [mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for file.
 
-## Configure MongoDB Logs Collection
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
+
+## Collection configuration and app installation
+
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Collector.png' alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -57,11 +83,13 @@ In this step the user needs to provide the path to the mongo db log file configu
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-YAML.png' alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs to Sumo
+### Step 3: Send logs to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -70,6 +98,9 @@ You can add any custom fields which you want to tag along with the data ingested
     {label: 'Linux', value: 'Linux'},
     {label: 'Windows', value: 'Windows'},
     {label: 'macOS', value: 'macOS'},
+    {label: 'Chef', value: 'Chef'},
+    {label: 'Ansible', value: 'Ansible'},
+    {label: 'Puppet', value: 'Puppet'},
   ]}>
 
 <TabItem value="Linux">
@@ -99,11 +130,36 @@ Restart-Service -Name OtelcolSumo
 ```
 
 </TabItem>
+
+<TabItem value="Chef">
+
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
+
+</TabItem>
+<TabItem value="Ansible">
+
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
+
+</TabItem>
+
+<TabItem value="Puppet">
+
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
+
+</TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-## Sample Log Message
+<LogsOutro/>
+
+## Sample log messages
 
 ```sql
 {
@@ -137,7 +193,7 @@ Restart-Service -Name OtelcolSumo
 }
 ```
 
-## Sample Query
+## Sample queries
 
 Dashboard: MongoDB - Errors and Warnings, Panel: Errors by Component
 
@@ -153,7 +209,7 @@ deployment.environment=* db.cluster.name=* sumo.datasource=mongodb  | json "log
 | count by component
 ```
 
-## Viewing MongoDB Dashboards
+## Viewing MongoDB dashboards
 
 If no relevant data was received within the time range of the Panel, the Panel will be empty.
 
@@ -208,7 +264,7 @@ The **MongoDB - Replication Logs** dashboard shows replica deletes/updates/inser
 Use this dashboard to:
 
 -   Monitor replication state and replication events like inserts/updates/commands per second.
--   Track Replication Oplog window to identify replication delay
+-   Track Replication Oplog window to identify replication delay.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/MongoDB-OpenTelemetry/MongoDB-Replication-Logs.png' alt="Replication Logs" />
 

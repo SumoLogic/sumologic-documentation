@@ -14,7 +14,7 @@ The Infrequent Data Tier App provides visibility into the On-demand Search usage
 With growing adoption of modern application stacks that leverage micro-services and distributed architectures, organizations are generating more and more machine data. A large part of this data is not required for every day mission-critical operations. However, organizations still need to retain and analyze this data, as it can provide value across multiple groups within a digital enterprise. A cost efficient solution that manages infrequently used data is currently lacking in the market place, forcing customers to either not retain the data or build home-grown solutions that are difficult to maintain, secure, and don’t provide easy access to insights when enterprise needs it.
 
 
-## Log Types
+## Log types
 
 The Search Audit Index for Infrequent Data Tier App has the following fields:
 
@@ -44,7 +44,7 @@ analytics_tier="Infrequent"
 ```
 
 
-### Sample Query
+### Sample queries
 
 The following query is from the **Data Scanned Over Time** panel of the **Infrequent Cost** dashboard.
 
@@ -66,16 +66,12 @@ Sumo Logic Infrequent Data Tier App is only available for Enterprise Suite custo
 
 <table>
   <tr>
-   <td>Account Type
-   </td>
-   <td>Account Level
-   </td>
+   <td>Account Type </td>
+   <td>Account Level   </td>
   </tr>
   <tr>
-   <td>Credits
-   </td>
-   <td>Enterprise Suite
-   </td>
+   <td>Credits </td>
+   <td>Enterprise Suite </td>
   </tr>
 </table>
 
@@ -100,12 +96,14 @@ If no results are returned even for longer time ranges, it means you don't have 
 Complete the following instructions to install the Sumo Logic Infrequent Data Tier App.
 
 :::note required step
-Before installing the Infrequent Data Tier App, you need to enable the [Search Audit Index](/docs/manage/security/search-audit-index), which is currently in beta. Please reach out to your account executive or Sumo Logic support to get the Search Audit index enabled.
+Before installing the Infrequent Data Tier App, you need to enable the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index), which is currently in beta. Please reach out to your account executive or Sumo Logic support to get the Search Audit index enabled.
 :::
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
 
-## Viewing Infrequent Data Tier Dashboards
+<AppInstallNoDataSourceV1/>
+
+## Viewing Infrequent Data Tier dashboards
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
