@@ -21,7 +21,7 @@ This integration enables user management and secure app access with MFA and even
 * **List Apps** _(Enrichment)_ - Get a list of all Apps in a OneLogin account.
 * **List Enrolled Authentication Factors** _(Enrichment)_ - Get a list of authentication factors registered to a particular user for multifactor authentication (MFA).
 * **List Events** _(Enrichment)_ - Get a list of events.
-* **List Groupes** _(Enrichment)_ - Get a list of groups that are available in your account.
+* **List Groups** _(Enrichment)_ - Get a list of groups that are available in your account.
 * **List Roles** _(Enrichment)_ - Get a list of roles.
 * **List Users** _(Enrichment)_ - Get a list of users in a OneLogin account.
 * **Remove a Factor** _(Containment)_ - Remove an enrolled factor from a user.
