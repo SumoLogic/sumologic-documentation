@@ -251,7 +251,7 @@ With the **Report** option, you can create incident reports to share with others
     1. Scroll to the bottom of the dialog and click **Public** if you want to make the report available to others.
     1. Click **Save**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-save-report.png')} alt="Save a report" width="300"/>
 1. Click **Export** to export the report to PDF. 
-1. Click **Open** to open the report later. 
+1. Click **Open** to open available reports. 
 
 ## Support
 
