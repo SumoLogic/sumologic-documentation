@@ -2805,6 +2805,22 @@ integrations: [
       ],
     },
   ],
+  ai: [
+    {
+      type: 'category',
+      label: 'AI and Machine Learning',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'ai/index'},
+      items: [
+        'alerts/monitors/use-playbooks-with-monitors',
+        'search/logreduce/index',
+        // Splunk-to-Sumo conversion migration tool
+        // Smart Alerts
+        // Ask Sumo tool
+      ],
+    },
+  ],
   // Platform services
   platformservices: [
     {
