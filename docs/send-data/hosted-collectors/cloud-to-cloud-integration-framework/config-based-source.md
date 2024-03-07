@@ -1,7 +1,7 @@
 ---
 id: config-based-source
 title: Config Based Source
-sidebar_label: STIX/TAXII 2 Client
+sidebar_label: Config Based Source
 tags:
   - cloud-to-cloud
   - config
