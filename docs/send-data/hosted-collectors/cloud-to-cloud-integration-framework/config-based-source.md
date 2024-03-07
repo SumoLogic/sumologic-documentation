@@ -43,7 +43,7 @@ If this source is not able to be configured to support your vendor API, we can e
    - How is pagination implemented?
    - Where in the response body is the array of logs to ingest?
    - Are there timestamps within the response array of logs indicating the individual log timestamp?
-1. Identify API rate limits
+1. Identify API rate limits.
    - Does the API specify a rate limit?
    - Is bursting allowed?
 
