@@ -288,6 +288,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-bigquery-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
+                'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jfrog-xray-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/jumpcloud-directory-insights-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/kaltura-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/knowbe4-api-source',
@@ -597,7 +598,7 @@ module.exports = {
   manage: [
   {
     type: 'category',
-    label: 'Manage',
+    label: 'Manage Account',
     collapsible: true,
     collapsed: false,
     link: {type: 'doc', id: 'manage/index'},
@@ -647,6 +648,16 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/partitions-data-tiers/index'},
       items: [
+        {
+          type: 'category',
+          label: 'Flex Pricing',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/partitions-data-tiers/flex-pricing/index'},
+          items: [
+            'manage/partitions-data-tiers/flex-pricing/estimate-and-actual-scan-data',
+          ]
+        },
         'manage/partitions-data-tiers/create-edit-partition',
         'manage/partitions-data-tiers/view-partition-details',
         'manage/partitions-data-tiers/run-search-against-partition',
@@ -657,17 +668,6 @@ module.exports = {
         'manage/partitions-data-tiers/data-tiers-faqs',
         'manage/partitions-data-tiers/searching-data-tiers',
       ]
-    },
-    {
-      type: 'category',
-      label: 'Connections and Integrations',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'manage/connections-integrations/index'},
-      items: [
-        'manage/connections-integrations/heroku',
-        'manage/connections-integrations/jfrog-artifactory',
-      ],
     },
     {
       type: 'category',
@@ -719,10 +719,11 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/manage-subscription/index'},
       items: [
-        'manage/manage-subscription/cloud-flex-credits-accounts',
-        'manage/manage-subscription/cloud-flex-accounts',
-        'manage/manage-subscription/upgrade-cloud-flex-credits-account',
-        'manage/manage-subscription/upgrade-cloud-flex-account',
+        'manage/manage-subscription/sumo-logic-flex-accounts',
+        'manage/manage-subscription/sumo-logic-credits-accounts',
+        'manage/manage-subscription/cloud-flex-legacy-accounts',
+        'manage/manage-subscription/upgrade-sumo-logic-credits-account',
+        'manage/manage-subscription/upgrade-cloud-flex-legacy-account',
         'manage/manage-subscription/manage-billing-information',
         'manage/manage-subscription/create-manage-orgs',
         'manage/manage-subscription/create-manage-orgs-service-providers',
@@ -751,6 +752,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/data-forwarding/index'},
       items: [
+        'manage/data-forwarding/installed-collectors',
         'manage/data-forwarding/amazon-s3-bucket',
         'manage/data-forwarding/manage',
         'manage/data-forwarding/view-list-data-forwarding',
@@ -764,7 +766,6 @@ module.exports = {
       link: {type: 'doc', id: 'manage/data-archiving/index'},
       items: [
         'manage/data-archiving/archive',
-        'manage/data-archiving/installed-collectors',
       ]
     },
     {
@@ -929,7 +930,6 @@ module.exports = {
             'alerts/webhook-connections/set-up-webhook-connections',
             'alerts/webhook-connections/aws-lambda',
             'alerts/webhook-connections/datadog',
-            'alerts/webhook-connections/hipchat',
             'alerts/webhook-connections/jira-cloud',
             'alerts/webhook-connections/jira-server',
             'alerts/webhook-connections/jira-service-desk',
@@ -2350,6 +2350,7 @@ integrations: [
           'integrations/sumo-apps/data-volume',
           'integrations/sumo-apps/enterprise-audit',
           'integrations/sumo-apps/enterprise-search-audit',
+          'integrations/sumo-apps/flex',
           'integrations/sumo-apps/infrequent-data-tier',
           'integrations/sumo-apps/security-analytics',
         ],
@@ -2359,6 +2360,7 @@ integrations: [
         label: 'Webhooks',
         collapsible: true,
         collapsed: true,
+        link: {type: 'doc', id: 'integrations/webhooks/index'},
         items: [
           'integrations/webhooks/buddy',
           'integrations/webhooks/bugsnag',
@@ -2695,15 +2697,30 @@ integrations: [
       items: [
         'cloud-soar/overview',
         'cloud-soar/architecture',
+        'cloud-soar/compared-to-automation-service',
         'cloud-soar/global-functions-menu',
         'cloud-soar/main-menu',
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
-        'cloud-soar/mssp',
         'cloud-soar/cloud-soar-bridge',
         'cloud-soar/cloud-soar-integration-framework',
-        'cloud-soar/cloud-soar-apis',
         'cloud-soar/audit-event-index',
+        {
+          type: 'category',
+          label: 'Legacy Cloud SOAR',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'cloud-soar/legacy/index'},
+          items: [
+            'cloud-soar/legacy/legacy-cloud-soar-architecture',
+            'cloud-soar/legacy/legacy-cloud-soar-global-functions-menu',
+            'cloud-soar/legacy/legacy-cloud-soar-main-menu',
+            'cloud-soar/legacy/legacy-cloud-soar-incidents-and-triage',
+            'cloud-soar/legacy/legacy-cloud-soar-automation',
+            'cloud-soar/legacy/legacy-cloud-soar-mssp',
+            'cloud-soar/legacy/legacy-cloud-soar-apis',
+        ],
+      },
       ],
     },
   ],
@@ -2735,8 +2752,7 @@ integrations: [
         },
         'api/content-permissions',
         'api/content-management',
-        'api/dashboard-new',
-        'api/data-forwarding',
+        'api/dashboard',
         'api/dynamic-parsing',
         'api/field-extraction-rules',
         'api/field-management',
@@ -2744,10 +2760,16 @@ integrations: [
         'api/health-events',
         'api/ingest-budget-v1',
         'api/ingest-budget-v2',
+        'api/logs-data-forwarding',
+        'api/log-search-estimated-usage',
+        'api/log-searches',
+        'api/logs-data-forwarding',
         'api/lookup-tables',
         'api/metrics',
         'api/metrics-query',
         'api/monitors-management',
+        'api/muting-schedules',
+        'api/organizations-management',
         'api/partition-management',
         'api/password-policy',
         'api/policies-management',
@@ -2756,6 +2778,7 @@ integrations: [
         'api/scheduled-views',
         'api/search-job',
         'api/service-map',
+        'api/slo-management',
         'api/span-analytics',
         'api/service-allowlist',
         'api/token-management',
@@ -2777,7 +2800,8 @@ integrations: [
       items: [
         'manage/manage-subscription/beta-opt-in',
         'api/beta',
-        'manage/users-roles/roles/rbac-for-indexes'
+        'get-started/sumo-logic-ui-new',
+        'manage/users-roles/roles/rbac-for-indexes',
       ],
     },
   ],
@@ -2797,6 +2821,7 @@ integrations: [
           collapsed: true,
           link: {type: 'doc', id: 'platform-services/automation-service/index'},
           items: [
+            'platform-services/automation-service/about-automation-service',
             {
               type: 'category',
               label: 'App Central',
@@ -2804,6 +2829,7 @@ integrations: [
               collapsed: true,
               link: {type: 'doc', id: 'platform-services/automation-service/app-central/index'},
               items: [
+                'platform-services/automation-service/automation-service-app-central',
                 {
                   type: 'category',
                   label: 'Integrations in App Central',
@@ -2819,7 +2845,6 @@ integrations: [
                 }
               ],
             },
-            'platform-services/automation-service/about-automation-service',
             'platform-services/automation-service/automation-service-playbooks',
             'platform-services/automation-service/automation-service-integrations',
             'platform-services/automation-service/automation-service-audit-logging',

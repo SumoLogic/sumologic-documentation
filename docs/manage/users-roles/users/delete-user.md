@@ -17,7 +17,7 @@ If you prefer to prevent a user from accessing Sumo without transferring the use
 A user designated as Account Owner cannot be deleted. To transfer ownership, the Account Owner must do this on the Account page. For more information, see the [Change the Account Owner](/docs/manage/manage-subscription/manage-org-settings.md) section in the *Manage Organization* topic.
 :::
 
-## Before you begin
+## Prerequisites
 
 Before you begin, perform the steps in [Offboard a User.](offboard-user.md) These steps will help you identify any data or access transfers that need to occur before you delete a user and prevent disruption to any automated services set up under that user.
 
@@ -46,7 +46,7 @@ Use caution when deleting a user. This action can't be undone.
 
     ![user-options-menu.png](/img/users-roles/users-page.png)
 
-1. Select the row for the user you want to delete and choose **Delete** from the three-dot options menu.
+1. Select the row for the user you want to delete and choose **Delete** from the three-dot kebab options menu.
 1. A popup appears, offering you the option to either transfer the user’s content to another user or delete the content along with the user. 
 
     ![transfer-content-to.png](/img/users-roles/delete-user.png)
@@ -63,7 +63,7 @@ Use caution when deleting a user. This action can't be undone.
 
     ![users-page-2.png](/img/users-roles/users-page-2.png)
 
-1. Select the row for the user you want to delete and choose **Delete** from the three-dot options menu.
+1. Select the row for the user you want to delete and choose **Delete** from the three-dot kebab options menu.
 1. A popup appears, offering you the option to either transfer the user’s content to another user or delete the content along with the user. 
 
     ![transfer-content-to.png](/img/users-roles/delete-user2.png)

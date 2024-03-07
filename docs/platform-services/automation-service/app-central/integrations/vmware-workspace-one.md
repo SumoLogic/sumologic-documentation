@@ -3,11 +3,12 @@ title: VMware Workspace ONE
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/vmware-workspace-one.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/vmware-workspace-one.png')} alt="vmware-workspace-one" width="80"/>
 
-Version: 1.1  
-Updated: Jul 07, 2023
+***Version: 1.1  
+Updated: Jul 07, 2023***
 
 VMware Workspace ONE is an intelligence-driven digital workspace platform that enables you to simply and securely deliver and manage any app on any device, anywhere.
 
@@ -26,34 +27,27 @@ The API key can be found on the REST API settings page of the Workspace ONE UEM.
 Enable API access in the Workspace ONE UEM console using these steps:
 
 1. Ensure that you are in the desired organization group that is a Customer type.
-2. Navigate to Groups & Settings > All Settings > System > Advanced > API > REST API.
-3. Select the tab and configure the following setting on the corresponding tab:
-4. Select Enable API Access.
-5. This selection automatically generates the API Key for the organization group.
+1. Navigate to **Groups & Settings > All Settings > System > Advanced > API > REST API**.
+1. Select the tab and configure the following setting on the corresponding tab:
+1. Select **Enable API Access**.
+1. This selection automatically generates the API Key for the organization group.
 
 ## VMware Workspace ONE in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click Automation. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-1.png)
-
-1. In the Automation section, on the left menu, click Integrations. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-2.png)
-
+1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-1.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
+1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-2.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
 1. After the list of the integrations appears, search/look for the integration and click on the row.
-
-1. The integration details will appear. Click on the "+" button to add new Resource. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-3.png)
-
+1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-3.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
 1. Populate all the required fields (\*)
-   * URL: `https://techp-as.awmdm.com/API`.
-   * Username: Workspace ONE Login Username.
-   * Password: Workspace ONE Login Password.
-   * API Key: The previous generated API Key. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-4.png)
+   * **URL**. `https://techp-as.awmdm.com/API`.
+   * **Username**. Workspace ONE Login Username.
+   * **Password**. Workspace ONE Login Password.
+   * **API Key**. The previous generated API Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-4.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
+1. Click **SAVED**.
+1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-5.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
+1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-6.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
+1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-7.png')} style={{border:'1px solid gray'}} alt="vmware-workspace-one" width="400" />
 
-1. Click Save.
-
-1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-5.png)
-
-1. Click Test Saved Settings. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-6.png)
-
-1. You should receive a successful notification in the bottom right corner. <br/>![](/img/platform-services/automation-service/app-central/integrations/vmware-workspace-one/vmware-workspace-one-7.png)
 
 ## Change Log
 

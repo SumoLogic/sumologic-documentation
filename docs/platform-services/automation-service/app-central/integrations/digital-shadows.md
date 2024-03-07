@@ -3,17 +3,18 @@ title: Digital Shadows
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/digital-shadows.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/digital-shadows.png')} alt="digital-shadows" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Query Digital Shadows threat intelligence.
 
 ## Actions
 
-* **Search Intelligence** (*Enrichment*) - Search Digital Shadows threat intelligence
+* **Search Intelligence** (*Enrichment*) - Search Digital Shadows threat intelligence.
 
 ## Change Log
 

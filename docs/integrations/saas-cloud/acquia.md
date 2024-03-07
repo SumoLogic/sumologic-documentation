@@ -172,7 +172,7 @@ After the Collector has been set up, it appears on the Collection page as a Host
 
 This task shows you how to configure a cloud syslog source for Acquia log collection.
 
-#### Before you begin
+#### Prerequisites
 
 It's helpful to know the options you'll need to set before starting a procedure. When you're [configuring a cloud syslog source](/#Configuring_a_cloud_syslog_source), be sure to specify the following configurations:
 
@@ -247,9 +247,9 @@ To configure Acquia log forwarding, follow the instructions in the Acquia [docum
 
 This section provides instructions on how to install the Acquia App, as well as examples of each of the dashboards. The app's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Acquia dashboards
 

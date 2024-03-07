@@ -4,7 +4,6 @@ title: Metrics Data Volume Index
 description: The Metrics Data Volume Index contains JSON formatted messages that contain parent objects for each source data point, and child objects that detail the data points for each parent.
 ---
 
-
 Sumo Logic populates the Metrics Data Volume Index with a set of JSON-formatted messages every five minutes. The messages contain the volume of metric data points your account is ingesting. 
 
 You can query the index to:
@@ -12,7 +11,7 @@ You can query the index to:
 * Get the total metric data volume (data points) ingested by collector, source, source name, source category, or source host. 
 
 :::note
-You cannot query the index to get storage credits. For information about storage credits, see [Cloud Flex Credits Accounts](/docs/manage/manage-subscription/cloud-flex-credits-accounts).
+You cannot query the index to get storage credits. For information about storage credits, see [Sumo Logic Credits Accounts](/docs/manage/manage-subscription/sumo-logic-credits-accounts).
 :::
 
 ## Message format

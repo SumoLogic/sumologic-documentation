@@ -23,7 +23,7 @@ In this quickstart, you'll run our OpenTelemetry collector directly on the machi
 
 We'll show a simple example of running a single collector, on a single machine, collecting a single metric. But of course, in the real world, you'll be dealing with hundreds or thousands of machines, each with as many metrics, and you'll be collecting much more nuanced information than simple system memory load.
 
-## Before you begin
+## Prerequisites
 
 * You'll need a Sumo Logic account. If you don't have one, [start a free trial](/docs/get-started/sign-up/#sign-up-through-sumo-logic).
 * Review [What's the difference between OpenTelemetry and the Sumo Logic Distribution for OpenTelemetry?](/docs/send-data/opentelemetry-collector/troubleshooting/#whats-the-difference-between-opentelemetry-and-the-sumo-logic-distribution-for-opentelemetry)
@@ -83,18 +83,18 @@ receivers:
     scrapers:
       memory:
 
-  exporters:
-    logging:
-      loglevel: debug
+exporters:
+  debug:
+    verbosity: detailed
 
-  service:
-    pipelines:
-      metrics:
-        receivers:
-          - hostmetrics
-        exporters:
-          - sumologic
-          - logging
+service:
+  pipelines:
+    metrics:
+      receivers:
+        - hostmetrics
+      exporters:
+        - sumologic
+        - debug
 ```
 
 <details>
@@ -132,7 +132,7 @@ At this point, the collector should be running and sending memory stats data int
 
 Then after that, every 5 seconds you should see a line like:
 
-`[...] MetricsExporter {"kind": "exporter", "data_type": "metrics", "name": "logging", "#metrics": 1} [...]`
+`[...] MetricsExporter {"kind": "exporter", "data_type": "metrics", "name": "debug", "#metrics": 1} [...]`
 
 If you see that kind of output, the collector has successfully set up a connection to Sumo Logic and is sending memory stats metrics as expected. Great! Now let’s go find those in Sumo.
 

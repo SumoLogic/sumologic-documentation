@@ -19,7 +19,7 @@ When you open a Log Search you'll have the option to switch between Basic and Ad
 
     ![new log search.png](/img/search/get-started-search/search-page/new-log-search.png)
 
-1. Click the three-dot icon on the right of the Search page and select **Basic Mode** or **Advanced Mode** from the menu options.
+1. Click the three-dot kebab icon on the right of the Search page and select **Basic Mode** or **Advanced Mode** from the menu options.
 
     ![search menu options.png](/img/search/get-started-search/search-page/search-menu-options.png)
 
@@ -33,7 +33,7 @@ This section elaborates on the input options.
 
 ![Basic mode query editor.png](/img/search/get-started-search/search-page/basic-mode-query-editor.png)
 
-* **Data Tier**. Select from the dropdown which Data Tier the query should run against, either Continuous, Frequent, or Infrequent. See [Searching Data Tiers](/docs/manage/partitions-data-tiers/searching-data-tiers) for further details.
+* **Data Tier**. Select from the dropdown which Data Tier the query should run against, either Continuous, Frequent, or Infrequent. See [Searching Data Tiers](/docs/manage/partitions-data-tiers/searching-data-tiers) for further details.<!-- note about Flex pricing and app -->
 
     ![Data Tier options.png](/img/search/get-started-search/search-page/Data-Tier-options.png) 
 
