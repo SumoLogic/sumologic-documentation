@@ -7,13 +7,7 @@ description: This documentation describes the Sumo Logic Nozzle for VMware Tanzu
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/vmware-tanzu.png')} alt="VMware Tanzu Application Service" width="50" />
-
-The Sumo Logic Nozzle for VMware Tanzu can help you:
-
-* View dashboards to monitor the overall health and security of your VMware Tanzu resources.
-* Drill down from alerts to see key performance metrics and audit logs for VMware Tanzu and your custom apps.
-* Store VMware Tanzu audit details in a fully secure SOC 2, HIPAA, and PCI-compliant environment.
+<img src={useBaseUrl('img/integrations/containers-orchestration/vmware-tanzu.png')} alt="VMware Tanzu Application Service" width="40" />
 
 The Sumo Logic Nozzle for [VMware Tanzu Firehose](https://docs.vmware.com/en/Tile-Developer-Guide/3.0/tile-dev-guide/nozzle.html) allows operations teams and app owners to monitor and troubleshoot the VMware Tanzu platform and apps in real time, without having to install a Sumo Logic agent in their Cloud Foundry environment.
 
@@ -23,17 +17,19 @@ The only configuration you need to do on the Sumo Logic platform is to enable th
 
 The Sumo Logic nozzle is written in Go and is based on the [firehose-to-syslog](https://github.com/cloudfoundry-community/firehose-to-syslog) nozzle.
 
+Key features of Sumo Logic Nozzle for VMware Tanzu include:
+
+* View dashboards to monitor the overall health and security of your VMware Tanzu resources.
+* Drill down from alerts to see key performance metrics and audit logs for VMware Tanzu and your custom apps.
+* Store VMware Tanzu audit details in a fully secure SOC 2, HIPAA, and PCI-compliant environment.
+
 ## Prerequisites
 
-Before you install the Sumo Logic Nozzle for VMware Tanzu tile, you'll need:
+Before you install the Sumo Logic Nozzle for VMware Tanzu tile, you'll need Administrative access to your VMware Tanzu deployment.
 
-* Administrative access to your VMware Tanzu deployment.
-* A [Sumo Logic](https://www.sumologic.com/pricing/) account.
-* To configure VMware Tanzu as an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) in Sumo Logic.
+### Product snapshot
 
-## Product snapshot
-
-The following table provides version and version-support information about Sumo Logic Nozzle for VMware Tanzu:
+The following table provides version and version-support information about Sumo Logic Nozzle for VMware Tanzu.
 
 |Element | Details |
 |:---|:---|
@@ -44,11 +40,19 @@ The following table provides version and version-support information about Sumo 
 |BOSH stemcell version | Ubuntu Xenial v621.x or v170.x, Ubuntu Jammy v1.x |
 | IaaS support | AWS, GCP, OpenStack, and vSphere |
 
-## Installing and configuring Sumo Logic Nozzle for VMware Tanzu
+## Setup
 
-This topic describes how to install and configure Sumo Logic Nozzle for VMware Tanzu.
+This section has instructions for installing and configuring Sumo Logic Nozzle for VMware Tanzu.
 
-### Install and configure the tile
+### Source configuration
+
+Follow the below steps to configure the Hosted Collector to receive VMware Tanzu events:
+
+1. In the Sumo Logic portal, create a new Hosted Collector or use an existing one. Then add an HTTP Logs and Metrics Source.
+1. Configure **Source Category** in the HTTP Source - for example, `vmware-tanzu/logs` - for the VMware Tanzu integration.
+1. Copy and save the endpoint URL of the source.
+
+### Vendor configuration
 
 1. Download the product file from [Pivotal Network](https://network.pivotal.io/products/sumologic-nozzle).            
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.                     
@@ -58,17 +62,20 @@ This topic describes how to install and configure Sumo Logic Nozzle for VMware T
    1. Choose placement.
    1. Click **Save**.
 1. Configure **Sumo Logic Settings**.
-   1. **Sumo Logic Endpoint**. Click **Add**, then enter the endpoint that you configured when specifying VMware Tanzu as an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) for Sumo Logic. You can set up multiple endpoints with different settings (more below).<br/><img src={useBaseUrl('img/integrations/containers-orchestration/SumologicSettings.png')} alt="Sumo Logic settings" style={{border: '1px solid gray'}} width="800" />
-	 1. **Sumo Logic Post Minimum Delay**. Enter a time in milliseconds for the post minimum delay. The default is 2000ms.
-	 1. (Optional) **Sumo Logic Category**. Specify a source category to call data with that specific metadata tag. For example, `MyOrg/MyCategory`.
- 	 1. (Optional) **Sumo Logic Name**. Specify a source name locally to distinguish it from the configured HTTP Source configuration and prevent metadata overwrites if you have more than one use for that source (e.g., `MyPivotalApp`).
+   1. **Sumo Logic Endpoint**. Click **Add**, then enter the endpoint that you configured when specifying VMware Tanzu as an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) for Sumo Logic. 
+      :::note
+      You can set up multiple endpoints with different settings.
+      :::
+	1. **Sumo Logic Post Minimum Delay**. Enter a time in milliseconds for the post minimum delay. The default is 2000ms.
+	1. (Optional) **Sumo Logic Category**. Specify a source category to call data with that specific metadata tag. For example, `MyOrg/MyCategory`.
+ 	1. (Optional) **Sumo Logic Name**. Specify a source name locally to distinguish it from the configured HTTP Source configuration and prevent metadata overwrites if you have more than one use for that source (e.g., `MyPivotalApp`).
    1. (Optional) **Sumo Logic Host**. If you have a local file source, you can specify a hostname. If you are using a Remote Host, do not use this field.
-	 1. (Optional) **Custom Metadata**. Add custom metadata to the JSON. For example, `key1:value1,key2:value2`.
-	 1. (Optional) **Include Only Matching Filter**. Include only designated events.
-	 1. (Optional) **Exclude Always Filter**. Exclude specific events that are not pertinent to your search, such as `cf\_app\_name:sumo-logic-nozzle-0.1.0`.
-	 1. Click **Save**.
+	1. (Optional) **Custom Metadata**. Add custom metadata to the JSON. For example, `key1:value1,key2:value2`.
+	1. (Optional) **Include Only Matching Filter**. Include only designated events.
+	1. (Optional) **Exclude Always Filter**. Exclude specific events that are not pertinent to your search, such as `cf\_app\_name:sumo-logic-nozzle-0.1.0`.
+	1. Click **Save**.<br/><img src={useBaseUrl('img/integrations/containers-orchestration/SumologicSettings.png')} alt="Sumo Logic settings" style={{border: '1px solid gray'}} width="800" />
 1. Configure **Cloud Foundry Settings**.
-   1. **Cloud Foundry API Endpoint**. Enter your [API endpoint](https://docs.pivotal.io/pivotalcf/2-1/opsguide/api-endpoint.html). <br/><img src={useBaseUrl('img/integrations/containers-orchestration/SumoNozzlePCFSettings.png')} alt="Sumo Logic Nozzle PCF settings" style={{border: '1px solid gray'}} width="800" />
+   1. **Cloud Foundry API Endpoint**. Enter your [API endpoint](https://docs.pivotal.io/pivotalcf/2-1/opsguide/api-endpoint.html). 
    1. **Cloud Foundry User**. Specify your Cloud Foundry username.
    1. **Cloud Foundry Password**. Enter Cloud Foundry password.
    1. **Log Events Batch Size**. Choose how many messages need to occur before they are sent to Sumo Logic.
@@ -76,27 +83,31 @@ This topic describes how to install and configure Sumo Logic Nozzle for VMware T
    1. **Skip SSL Validation**. This option should only be checked if you are on a known and trusted dev environment and have expired certificates. Do not enable this option for a production system.
    1. **Verbose in 'LogMessage' event**. Enable this option if you need more detail than the default logging information, `timestamp`, `cf_app_guid`, `Msg`. This is what a log message looks like when you turn on verbose: <br/><img src={useBaseUrl('img/integrations/containers-orchestration/SumoLogicVerbose.png')} alt="Sumo Logic verbose" style={{border: '1px solid gray'}} width="600" />
    1. **Nozzle Polling Period**. Set how frequently the Nozzle polls the Cloud Foundry Nozzle for data. Sumo Logic recommends 5000ms.
-   1. Click **Save**.
+   1. Click **Save**.<br/><img src={useBaseUrl('img/integrations/containers-orchestration/SumoNozzlePCFSettings.png')} alt="Sumo Logic Nozzle PCF settings" style={{border: '1px solid gray'}} width="800" />
 1. **Errands**. Leave settings as default.
 1. **Resource Config**. For both deploy-all and delete-all, use VM Type setting the Automatic Micro.
 1. **Stemcell**. Ensure the proper stemcell is available.
 1. Return to the Ops Manager Installation Dashboard.
 1. Click **Apply Changes**. The installation can take a few minutes to complete. You will see a message confirming your changes have been applied.
 
-## Using Sumo Logic Nozzle for VMware Tanzu
+#### Using Sumo Logic Nozzle for VMware Tanzu
 
-This topic describes how to use Sumo Logic Nozzle for VMware Tanzu. After installation, the Sumo Logic Nozzle is available in the Apps Manager.
+This section describes how to use Sumo Logic Nozzle for VMware Tanzu. After installation, the Sumo Logic Nozzle is available in the Apps Manager.
 
 1. From the **system** drop-down menu, select **sumo-logic-nozzle-org**.
 1. Under Apps, select the name of the build you want. For example, **sumo-logic-nozzle-0.1.0-build3**. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/selectnozzle.png')} alt="Select Nozzle" style={{border: '1px solid gray'}} width="800" />
 1. Push the **Start** button to begin running the nozzle.<br/> <img src={useBaseUrl('img/integrations/containers-orchestration/selectplay.png')} alt="Select play" style={{border: '1px solid gray'}} width="400" />
 1. Cloud Foundry will provision the VMs and begin running the nozzle service.
+1. Verify Sumo Logic Nozzle for VMware Tanzu tile is installed and started running the nozzle service by [running searches](/docs/search/search-cheat-sheets/general-search-examples/). If this is your first time using Sumo Logic, see [Getting Started with Search](/docs/search/get-started-with-search/).
 
-## Using Sumo Logic
+:::info
+You can also create [dashboards](/docs/dashboards/) and [alerts](/docs/alerts/).
+:::
 
-After you have installed the Sumo Logic Nozzle for VMware Tanzu tile and started running the nozzle service, you can verify data ingestion by [running searches](/docs/search/search-cheat-sheets/general-search-examples/). If this is your first time using Sumo Logic, see [Getting Started with Search](/docs/search/get-started-with-search/).
-
-You can also create [dashboards](/docs/dashboards/) and [alerts](/docs/alerts/) in Sumo Logic.
+:::note
+- For detailed information about changelog, refer to [Changelog](https://github.com/SumoLogic/sumologic-cloudfoundry-nozzle/blob/master/CHANGELOG.md) file.
+- For support, contact [VMware Tanzu Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or [Sumo Logic Support](https://support.sumologic.com/).
+:::
 
 ## Troubleshooting
 
@@ -106,14 +117,3 @@ To troubleshoot the Sumo Logic Nozzle integration with VMware Tanzu:
 2. Click on **Name**. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/Troubleshooting.png')} alt="Troubleshooting" style={{border: '1px solid gray'}} width="800" />
 3. The app page appears. Click **Logs**. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/TroubleshootingApp.png')} alt="Troubleshooting app" style={{border: '1px solid gray'}} width="800" />
 4. On the **Logs** page it will show you logs related to the Sumo Logic Nozzle integration. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/TroubleshootingLogs.png')} alt="Troubleshooting logs" style={{border: '1px solid gray'}} width="800" />
-
-## Changelog
-See the [Changelog](https://github.com/SumoLogic/sumologic-cloudfoundry-nozzle/blob/master/CHANGELOG.md).
-
-## Feedback
-
-Please send any bugs, feature requests, or questions to the [VMware Tanzu Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or [Sumo Logic Support](https://support.sumologic.com/).
-
-## License
-
-See our [Service License Agreement](https://www.sumologic.com/terms-conditions/service-license-agreement/).
