@@ -87,7 +87,6 @@ module.exports = {
           link: {type: 'doc', id: 'send-data/opentelemetry-collector/index'},
           items: [
            // 'send-data/opentelemetry-collector/quickstart',
-            'send-data/opentelemetry-collector/use-case-prometheus',
             {
               type: 'category',
               label: 'Install Collector',
