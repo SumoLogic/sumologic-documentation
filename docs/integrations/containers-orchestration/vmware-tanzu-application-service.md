@@ -105,7 +105,7 @@ You can also create [dashboards](/docs/dashboards/) and [alerts](/docs/alerts/).
 :::
 
 :::note
-- For detailed information about changelog, refer to [Changelog](https://github.com/SumoLogic/sumologic-cloudfoundry-nozzle/blob/master/CHANGELOG.md) file.
+- For detailed information about changelog, refer to the [Changelog](https://github.com/SumoLogic/sumologic-cloudfoundry-nozzle/blob/master/CHANGELOG.md) file.
 - For support, contact [VMware Tanzu Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or [Sumo Logic Support](https://support.sumologic.com/).
 :::
 
