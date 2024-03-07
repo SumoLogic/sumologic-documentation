@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/onelogin.png')} alt="onelogin" width="100"/>
 
-***Version: 1.3  
+***Version: 1.4  
 Updated: Mar 7, 2024***
 
 OneLogin streamlines identity management, enabling secure and audited access to critical systems.  
@@ -36,4 +36,5 @@ This integration enables user management and secure app access with MFA and even
         * List Enrolled Authentication Factors
         * Remove a Factor
         * Update User
+    * Renamed action List Groups
     * Other minor improvements and fixes
