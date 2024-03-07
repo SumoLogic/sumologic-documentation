@@ -1,14 +1,15 @@
 ---
-title: Arcsight ESM
+title: ArcSight ESM
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/arcsight-esm.png')} alt="arcsight-esm" width="90"/>
 
-***Version: 1.1  
-Updated: Sep 28, 2023***
+***Version: 1.2  
+Updated: Mar 4, 2024***
 
 Work with cases and active lists in Micro Focus ArcSight ESM.
 
@@ -34,3 +35,4 @@ Work with cases and active lists in Micro Focus ArcSight ESM.
 * July 1, 2021 - New action added
 * August 17, 2021 - New actions added
 * June 26, 2023 (v1.1) - Updated the integration with Environmental Variables
+* March 4, 2024 (v1.2) - Updated code for compatibility with Python 3.12

@@ -1,14 +1,15 @@
 ---
 title: FortiAnalyzer
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fortianalyzer.png')} alt="fortianalyzer" width="100"/>
 
-***Version: 1.4  
-Updated: Sep 19, 2023***
+***Version: 1.5  
+Updated: Mar 4, 2024***
 
 Search events and network traffic from Fortinet FortiAnalyzer.
 
@@ -31,3 +32,4 @@ Search events and network traffic from Fortinet FortiAnalyzer.
 * July 21, 2023 (v1.2) - Updated the integration with Environmental Variables
 * September 4, 2023 (v1.3) - Fixed a bug where if the timeout was not specified, an error would occur
 * September 19, 2023 (v1.4) - Versioning
+* March 4, 2024 (v1.5) - Updated code for compatibility with Python 3.12

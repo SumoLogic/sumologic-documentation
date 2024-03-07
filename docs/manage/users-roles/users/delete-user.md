@@ -17,7 +17,7 @@ If you prefer to prevent a user from accessing Sumo without transferring the use
 A user designated as Account Owner cannot be deleted. To transfer ownership, the Account Owner must do this on the Account page. For more information, see the [Change the Account Owner](/docs/manage/manage-subscription/manage-org-settings.md) section in the *Manage Organization* topic.
 :::
 
-## Before you begin
+## Prerequisites
 
 Before you begin, perform the steps in [Offboard a User.](offboard-user.md) These steps will help you identify any data or access transfers that need to occur before you delete a user and prevent disruption to any automated services set up under that user.
 

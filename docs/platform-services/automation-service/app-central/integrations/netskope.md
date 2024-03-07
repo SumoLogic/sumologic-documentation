@@ -1,14 +1,15 @@
 ---
 title: Netskope
 description: ''
-tags: [cloud soar integrations]
+tags: [ cloud soar integrations ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/netskope.png')} alt="netskope" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 13, 2023***
+***Version: 1.2  
+Updated: Mar 4, 2024***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -25,6 +26,7 @@ Manage and steer traffic, give visibility of network activities, and analytics t
 
 * July 20, 2021 - First upload
 * July 13, 2023 (v1.1)
-	+ Updated the integration with Environmental Variables
-	+ Changed fields visibility
-	+ Changed Daemon compatibility (Netskope Get Event List Daemon)
+    + Updated the integration with Environmental Variables
+    + Changed fields visibility
+    + Changed Daemon compatibility (Netskope Get Event List Daemon)
+* March 4, 2024 (v1.2) - Updated code for compatibility with Python 3.12

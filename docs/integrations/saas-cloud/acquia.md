@@ -172,7 +172,7 @@ After the Collector has been set up, it appears on the Collection page as a Host
 
 This task shows you how to configure a cloud syslog source for Acquia log collection.
 
-#### Before you begin
+#### Prerequisites
 
 It's helpful to know the options you'll need to set before starting a procedure. When you're [configuring a cloud syslog source](/#Configuring_a_cloud_syslog_source), be sure to specify the following configurations:
 

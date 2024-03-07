@@ -1,14 +1,15 @@
 ---
 title: Devo
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/devo.png')} alt="darktrace" width="100"/>
 
-***Version: 1.1  
-Updated: Jul 06, 2023***
+***Version: 1.2  
+Updated: Mar 4, 2024***
 
 DEVO integration to query data from Devo.
 
@@ -20,3 +21,4 @@ DEVO integration to query data from Devo.
 
 * February 12, 2021 - First upload
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+* March 4, 2024 (v1.2) - Updated code for compatibility with Python 3.12
