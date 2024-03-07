@@ -1,4 +1,4 @@
-Introducing Sumo Logic Flex: the solution that revolutionizes log analytics pricing for technical teams. Bid farewell to data tiers as we usher in an era where your analytics volume, not data ingestion, dictates pricing.
+Introducing Sumo Logic Flex: the solution that revolutionizes log analytics pricing for technical teams. Bid farewell to data tiers as we usher in an era where your insights and analytics volume, not data ingestion, dictates pricing. The value of log data is now in sync with the insights and analytics you generate from the data, not the data volume or management process.
 
 With Sumo Logic Flex, you gain an efficient, centralized log analytics framework capable of managing enterprise-wide cloud-scale log ingestion without cost concerns. Consolidate all your data streams — application, infrastructure, security — into a single platform with unlimited user access, fostering seamless collaboration.
 
