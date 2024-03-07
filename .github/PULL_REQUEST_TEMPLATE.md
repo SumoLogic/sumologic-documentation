@@ -12,6 +12,6 @@
 - [ ] New Content - New features, sections, pages, tutorials
 - [ ] Site and Tools - .clabot, version updates, maintenance, dependencies, new packages for the site (Docusaurus, Gatsby, React, etc.)
 
-## Asana
+## Asana ticket (if applicable)
 
-<!-- populates automatically when you add this PR link to Asana ticket -->
+<!-- populates in this space automatically when you add this PR link to Asana ticket -->
