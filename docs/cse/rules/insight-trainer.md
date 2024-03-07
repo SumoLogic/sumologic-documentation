@@ -30,13 +30,18 @@ import Iframe from 'react-iframe';
 
 ## About Insight Trainer
 
-When you resolve Insights, you give them [Insight resolutions](/docs/cse/administration/manage-custom-insight-resolutions/) such as: 
+When you [close an Insight](/docs/cse/administration/manage-custom-insight-resolutions/#close-an-insight-using-a-custom-resolution), you can give it one of the following built-in [Insight resolutions](/docs/cse/administration/manage-custom-insight-resolutions/): 
 
+* **Duplicate**. The insight has triggered before on the same entity and is a duplicate.
 * **False Positive**. A false alarm, possibly due to an error in the detection logic of the rule or inapplicability to your environment.
 * **No Action**. A valid detection, but no action is necessary due to effective containment measures. Rules participating in repeated No Action Insights may also be good tuning expression candidates.
-* **Resolved:**. A valid detection where investigation was necessary.
+* **Resolved**. A valid detection where investigation was necessary.
 
 As you resolve Insights, you may find you have a high ratio of False Positive and No Action resolutions compared to Resolved resolutions. By reducing the number of Signals that produce Insights that turn out to be false positives or require no action, you can produce more reliable Insights. 
+
+:::note
+For the Insight Trainer to build an effective model of Insight resolution, you must close Insights with either the **False Positive** or **Resolved** resolution. 
+:::
 
 You could use trial-and-error to tune rules, but the Insight Trainer dashboard provides a data-driven approach. Once a week, the Insight Trainer provides fresh recommendations based on analysis of the last 60 days of data. Machine learning and AI learn historical patterns from your own data to suggest rule severity adjustments that minimize false positives without missing out on actual incidents. To see fresh recommendation every week, you must make suggested tuning adjustments at least once every two weeks. If you implement the suggested changes on a regular basis, the number of false positive resolutions can be greatly reduced. 
 
