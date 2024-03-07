@@ -118,7 +118,7 @@ Select this authentication option if the vendor API does not require any form of
 
   Invalid Examples:
   - `acme.org/v1/auditLogs` Missing HTTPS protocol             
-  - `http://acme.org/api/v1/auditLogs` Unsecure HTTP protocol not allowed 
+  - `http://acme.org/api/v1/auditLogs` Insecure HTTP protocol not allowed 
   - `https://acme.org/api/v1/auditLogs?limit=100` Do not include URL parameters      
 
   #### Request Headers
@@ -437,7 +437,7 @@ The source uses the the [Go programming language timestamp formatting](https://g
   | Timezone Offset without Colon Use Z for UTC | `Z0700`                                                               |
   | Timezone Offset with Colon Use Z for UTC    | `Z07:00`                                                              |
   | Timezone Offset without Colon               | `-0700`                                                               |
-  | Timezone Offset wit Colon                   | `-07:00`                                                              |
+  | Timezone Offset with Colon                   | `-07:00`                                                              |
   | Timezone Abbreviated Name                   | `MST`                                                                 |
 
 ### Format Examples
