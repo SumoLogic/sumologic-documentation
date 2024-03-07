@@ -12,6 +12,7 @@ You can also view data from audit indexes in dashboards when you install these a
 * [**Sumo Logic Audit App**](http://localhost:3000/docs/integrations/sumo-apps/audit/). Displays data from the [Audit Index](/docs/manage/security/audit-indexes/audit-index).
 * [**Enterprise Audit Apps**](/docs/integrations/sumo-apps/enterprise-audit/). Display data from the [Audit Event Index](/docs/manage/security/audit-indexes/audit-event-index).
 * [**Sumo Logic Infrequent Data Tier App**](/docs/integrations/sumo-apps/infrequent-data-tier) and [**Sumo Logic Enterprise Search Audit App**](/docs/integrations/sumo-apps/enterprise-search-audit/). Display data from the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index).
+* [**Sumo Logic Flex App**](/docs/integrations/sumo-apps/flex//). Display data from the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index).
 
 :::note
 Availability of the indexes differs according to your account type. To enable access to audit indexes, go to **Administration > Security > Policies**.

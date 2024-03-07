@@ -656,6 +656,8 @@ module.exports = {
           link: {type: 'doc', id: 'manage/partitions-data-tiers/flex-pricing/index'},
           items: [
             'manage/partitions-data-tiers/flex-pricing/estimate-and-actual-scan-data',
+            'manage/partitions-data-tiers/flex-pricing/view-partition-details-flex',
+            'manage/partitions-data-tiers/flex-pricing/flex-pricing-faq',
           ]
         },
         'manage/partitions-data-tiers/create-edit-partition',

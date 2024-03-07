@@ -5,9 +5,25 @@ description: Learn about Sumo Logic Flex Pricing.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import FlexPricing from '../../../reuse/flex-pricing.md';
+Flex pricing delivers the new financial model for log management, with which your businesses can finally centralize, store, and analyze all application, infrastructure, and security data in one place to drive collaboration and unmatched velocity while delivering reliable  and secure digital experiences.
 
-<FlexPricing/>
+| Feature support | Flex Pricing |
+| :-- | :-- | 
+| Centralized, secure, multi-tenant cloud-native platform | ![check](/img/reuse/check.png) |
+| Data replication across availability zones, data encryption | ![check](/img/reuse/check.png) |
+| Interactive queries (UI) |![check](/img/reuse/check.png) |
+| Support for Installed and Hosted Collectors | ![check](/img/reuse/check.png) |
+| RBAC support | ![check](/img/reuse/check.png) |
+| Support for search operators | ![check](/img/reuse/check.png) |
+| Field Extraction Rules | ![check](/img/reuse/check.png) |
+| Logs to Metrics | ![check](/img/reuse/check.png) |
+| Data Forwarding | ![check](/img/reuse/check.png) |
+| Live Tail | ![check](/img/reuse/check.png) |
+| Dashboards | ![check](/img/reuse/check.png) |
+| Monitors | ![check](/img/reuse/check.png) |
+| Scheduled Searches | ![check](/img/reuse/check.png) |
+| Scheduled Views | ![check](/img/reuse/check.png) |
+| API Queries |  ![check](/img/reuse/check.png) |
 
 <div className="box-wrapper" >
 <div className="box smallbox card">
