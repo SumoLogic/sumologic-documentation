@@ -1,6 +1,6 @@
 ## Purpose of this pull request
 
-<!-- This pull request... -->
+This pull request... <!-- brief description here -->
 
 <!-- Enter the GitHub Issue number or the Jira ticket number (e.g., SUMO-12345) -->
 
