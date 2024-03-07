@@ -648,6 +648,16 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/partitions-data-tiers/index'},
       items: [
+        {
+          type: 'category',
+          label: 'Flex Pricing',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/partitions-data-tiers/flex-pricing/index'},
+          items: [
+            'manage/partitions-data-tiers/flex-pricing/estimate-and-actual-scan-data',
+          ]
+        },
         'manage/partitions-data-tiers/create-edit-partition',
         'manage/partitions-data-tiers/view-partition-details',
         'manage/partitions-data-tiers/run-search-against-partition',
@@ -709,10 +719,11 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/manage-subscription/index'},
       items: [
-        'manage/manage-subscription/cloud-flex-credits-accounts',
-        'manage/manage-subscription/cloud-flex-accounts',
-        'manage/manage-subscription/upgrade-cloud-flex-credits-account',
-        'manage/manage-subscription/upgrade-cloud-flex-account',
+        'manage/manage-subscription/sumo-logic-flex-accounts',
+        'manage/manage-subscription/sumo-logic-credits-accounts',
+        'manage/manage-subscription/cloud-flex-legacy-accounts',
+        'manage/manage-subscription/upgrade-sumo-logic-credits-account',
+        'manage/manage-subscription/upgrade-cloud-flex-legacy-account',
         'manage/manage-subscription/manage-billing-information',
         'manage/manage-subscription/create-manage-orgs',
         'manage/manage-subscription/create-manage-orgs-service-providers',
@@ -2339,6 +2350,7 @@ integrations: [
           'integrations/sumo-apps/data-volume',
           'integrations/sumo-apps/enterprise-audit',
           'integrations/sumo-apps/enterprise-search-audit',
+          'integrations/sumo-apps/flex',
           'integrations/sumo-apps/infrequent-data-tier',
           'integrations/sumo-apps/security-analytics',
         ],

@@ -70,7 +70,7 @@ After you create a child org, you can’t delete it.
         Depending on your Sumo Logic subscription type, creating an org in a different deployment than the parent may result in a deployment charge being applied.
         :::
       * **Plan Type**. Select your organization's plan type. 
-1. Click **Allocate Credits**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/credits-calculator.png')} alt="calculator" width="450" /> 
+1. Click **Allocate Credits**. The **Credits Calculator** appears.<br/> <img src={useBaseUrl('img/subscriptions/credits-calculator.png')} alt="calculator" width="450" />
 1. Enter the following:
       * **Continuous Tier**. Enter estimated daily ingestion to the Continuous Tier.
       * **Frequent Tier.** Enter estimated daily ingestion to the Frequent Tier.
@@ -93,7 +93,7 @@ After you create a child org, you can’t delete it.
 To change an org's credits allocation:
 1. Go to **Administration > Organizations**.
 1. Click the row for the org you want to edit.
-1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} alt="your description" width="450" />
+1. Click **Edit** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/edit-org-3.png')} style={{border:'1px solid gray'}} alt="your description" width="450" />
 2. Click **Modify Allocation**.<br/> <img src={useBaseUrl('img/subscriptions/modify-allocation-button.png')} alt="allocation" width="450" />
 3. The **Credits Calculator** appears.
 4. Follow the steps in [Create a child org](#create-a-child-org) to update the credits allocation.
@@ -124,7 +124,7 @@ You can view the aggreagte usage for all child orgs across usage category in the
 * **Storage**. Credits used for log storage in the Continuous and Frequent Tiers.
 * **Cloud SIEM Ingest**. Credits used for logs ingested into Cloud SIEM.
 * **Infrequent Storage**. Credits used for log storage in the Infrequent Tier.
-* **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](cloud-flex-credits-accounts.md#monitoring-promotional-credit-usage).
+* **Promotional categories**. For more information, see [Monitoring Promotional Credit usage](sumo-logic-credits-accounts.md#monitoring-promotional-credit-usage).
 
 By clicking the **Download Report** button, you can download the org usage data in csv format for further analysis and reporting. You can also download the detailed child org usage data in csv format by clicking **Download Detailed Credit Usages** from the kebab icon next to the Download Report button.
 
@@ -166,7 +166,16 @@ If a [custom subdomain](manage-org-settings.md#set-up-a-customsubdomain) has bee
 
 1. Go to **Administration** > **Organizations**.
 1. Click the row for the org you want to access.
-1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="your description" width="450"/>
+1. Click **Access Organization** in the right hand pane. <br/> <img src={useBaseUrl('img/subscriptions/access-org.png')} alt="your description" style={{border:'1px solid gray'}} width="450"/>
+
+## View child credits usage
+
+You can access the child credits usage for a selected organization from the **Organizations** UI. 
+
+1. Go to **Administration** > **Organizations**.
+1. Click the row for the org you want to access the credits usage.
+1. Scrow down to **Credits Usage**. You can see the total percentage of credits consumed out of the total number of credits allocated.
+1. Click **Open in Account Overview** for detailed child credit usage report for the selected organization.<br/> <img src={useBaseUrl('img/subscriptions/child-credits-usage.png')} alt="child-credits-usage" style={{border:'1px solid gray'}} width="450"/>
 
 ## View baselines
 

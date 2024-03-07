@@ -1,14 +1,15 @@
 ---
 title: DarkOwl
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/darkowl.png')} alt="darkowl" width="100"/>
 
-***Version: 1.1
-Updated: Jul 06, 2023***
+***Version: 1.2
+Updated: Mar 4, 2024***
 
 Perform threat intelligence evidence gathering with DarkOwl.
 
@@ -22,3 +23,4 @@ Perform threat intelligence evidence gathering with DarkOwl.
 * July 1, 2019 - First upload
 * July 22, 2019 - Search Intelligence action updated
 * July 6, 2023 (v1.1) - Updated the integration with Environmental Variables
+* March 4, 2024 (v1.2) - Updated code for compatibility with Python 3.12

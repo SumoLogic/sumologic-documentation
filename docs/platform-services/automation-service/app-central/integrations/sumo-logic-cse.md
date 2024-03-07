@@ -3,12 +3,13 @@ title: Sumo Logic CSE
 description: ''
 tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-cse.png')} alt="sumo-logic-cse" width="100"/>
 
-***Version: 1.10  
-Updated: Feb 7, 2024***
+***Version: 1.11  
+Updated: Mar 4, 2024***
 
 Utilize CSE entities to correlate Signals and Insights through Sumo Logic CSE integration.
 
@@ -103,3 +104,4 @@ SIEM
         - Updated the field *Fields Name/Path To Extract* to enable the extraction of field values from the JSON by using either the Path or Field Name
 * February 7, 2024 (v1.10)
     * Fixed issue in the "Add Comment To Insight" action where line breaks in the "Insight Comment" field were removed upon submission
+* March 4, 2024 (v1.11) - Updated code for compatibility with Python 3.12

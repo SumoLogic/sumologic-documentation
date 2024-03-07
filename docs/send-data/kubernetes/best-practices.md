@@ -232,7 +232,7 @@ metadata:
               processors:
                 - memory_limiter
                 - batch
-              exporters: [sumologic/containers]
+              exporters: [sumologic]
     statefulset:
       extraPorts:
         - name: otlphttp2
