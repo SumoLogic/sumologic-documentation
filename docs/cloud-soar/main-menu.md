@@ -108,7 +108,7 @@ You can create widgets as needed to help analysts and administrators quickly get
       1. Click the **Edit** button. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-dashboard-button.png')} alt="Empty dashboard" width="150"/><br/>
       :::note
       Widgets are shared between **Reports** and **Dashboards**.
-      To edit a widget user can click the gear icon in the upper-right corner, then select **Report** or throught **Dashboard** edit mode.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-reports.png')} alt="Access reports" width="150"/> 
+      To edit a widget user can click the gear icon in the upper-right corner, then select **Report** or through **Dashboard** edit mode.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-reports.png')} alt="Access reports" width="150"/> 
       ::: 
 1. The widgets panel displays to the right of the screen.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets.png')} alt="Widgets panel" width="250"/>
 1. Click **New**.<br/>The dialog to create new widgets displays. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-create-widget.png')} alt="Create a widget" width="600"/>
