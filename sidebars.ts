@@ -2811,7 +2811,7 @@ integrations: [
       label: 'AI and Machine Learning',
       collapsible: true,
       collapsed: true,
-      link: {type: 'doc', id: 'beta/index'},
+      link: {type: 'doc', id: 'ai/index'},
       items: [
         'alerts/monitors/use-playbooks-with-monitors',
         'search/logreduce/index',

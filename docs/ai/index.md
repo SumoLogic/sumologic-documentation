@@ -1,5 +1,5 @@
 ---
-id: ai-machine-learning
+id: ai
 title: Sumo Logic AI and Machine Learning
 description: Leverage Sumo Logic's automated machine learning and AI capabilities (mention features here) to (business value).
 ---
