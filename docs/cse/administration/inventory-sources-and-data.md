@@ -33,6 +33,10 @@ Some of the inventory sources are strictly for collecting inventory data—such 
 
 Some inventory sources provide user inventory information, some provide computer inventory information, and some provide both. The table below lists currently available inventory sources.
 
+:::note
+The AWS Inventory Source collects the inventory of AWS resources in your AWS account, but is usable only by the Root Cause Explorer. See [AWS Inventory Source](/docs/observability/root-cause-explorer/#aws-inventory-source).
+:::
+
 | Inventory source | Type of source | Inventory data collected |
 | :-- | :-- | :-- |
 | [Armis API Integration Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/armis-api-source) | Cloud-to-Cloud | Computer |
@@ -44,7 +48,7 @@ Some inventory sources provide user inventory information, some provide computer
 | [Microsoft Azure AD Inventory Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source) | Cloud-to-Cloud | Computer and User |
 | [Okta Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/okta-source) | Cloud-to-Cloud | User |
 | [Qualsys VMDR Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source) | Cloud-to-Cloud | Computer |
-| [Rapid7 Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source/) | Cloud-to-Cloud | Computer | 
+| [Rapid7 Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/rapid7-source/) | Cloud-to-Cloud | Computer |
 | [Sailpoint Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source) | Cloud-to-Cloud | User |
 | [SentinelOne Mgmt API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source) | Cloud-to-Cloud | Computer |
 | [Tenable Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source) | Cloud-to-Cloud | Computer |  
@@ -71,10 +75,10 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 | Inventory Attribute | Data Source Field | Note |
 | :-- | :-- | :-- |
-| uniqueId | "armis-" + id | A globally unique ID that distinguishes this object from inventory from all other sources | 
-| deviceUniqueId | id | A per-source unique ID | 
-| ip | ipAddress |  | 
-| mac | macAddress |  | 
+| uniqueId | "armis-" + id | A globally unique ID that distinguishes this object from inventory from all other sources |
+| deviceUniqueId | id | A per-source unique ID |
+| ip | ipAddress |  |
+| mac | macAddress |  |
 | natIp | ipAddress |  |
 | os | operatingSystem |  |
 | osVersion | operatingSystemVersion |  |
@@ -95,16 +99,16 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 | Inventory Attribute | Data Source Field | Note |  
 | :-- | :-- | :-- |
-| uniqueId | "crowdstrike-" + id | A globally unique ID that distinguishes this object from inventory from all other sources | 
-| deviceUniqueId | device_id | A per-source unique ID | 
-| groups | groups |  | 
-| hostname | hostname |  | 
-| normalizedHostname | hostname |  | 
-| ip | external_ip |  | 
-| mac | mac_address |  | 
-| natIp | local_ip |  | 
-| os | os_product_name |  | 
-| osVersion | os_version |  | 
+| uniqueId | "crowdstrike-" + id | A globally unique ID that distinguishes this object from inventory from all other sources |
+| deviceUniqueId | device_id | A per-source unique ID |
+| groups | groups |  |
+| hostname | hostname |  |
+| normalizedHostname | hostname |  |
+| ip | external_ip |  |
+| mac | mac_address |  |
+| natIp | local_ip |  |
+| os | os_product_name |  |
+| osVersion | os_version |  |
 
 
 ### Cloud SIEM AWS (EC2) Inventory Source - Computer
@@ -185,29 +189,29 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 | Inventory Attribute | Data Source Field | Note |
 | :-- | :-- | :-- |
-| uniqueId | "qualys-" + id | A globally unique ID that distinguishes this object from inventory from all other sources | 
-| deviceUniqueId | assetUUID | A per-source unique ID | 
-| computerName  | assetName |  | 
-| normalizedComputername | assetName |  | 
-| hostname | assetName |  | 
-| normalizedHostname | assetName |  | 
-| ip | address |  | 
-| mac | networkInterfaceListData[“networkInterface”][0].macAddress |  | 
-| natIp | address |  | 
-| os | operatingSystem.osName |  | 
-| osVersion | operatingSystem.version |  | 
+| uniqueId | "qualys-" + id | A globally unique ID that distinguishes this object from inventory from all other sources |
+| deviceUniqueId | assetUUID | A per-source unique ID |
+| computerName  | assetName |  |
+| normalizedComputername | assetName |  |
+| hostname | assetName |  |
+| normalizedHostname | assetName |  |
+| ip | address |  |
+| mac | networkInterfaceListData[“networkInterface”][0].macAddress |  |
+| natIp | address |  |
+| os | operatingSystem.osName |  |
+| osVersion | operatingSystem.version |  |
 
 ### Rapid7 - Computer
 
 | Inventory Attribute | Data Source Field | Note |
 | :-- | :-- | :-- |
-| uniqueId | "rapid7-" + id | A globally unique ID that distinguishes this object from inventory from all other sources | 
-| deviceUniqueId | id | A per-source unique ID | 
-| groups | groups |  | 
-| ip | ip |  | 
-| natIp | ip |  | 
-| os | os_system_name |  | 
-| osVersion | os_version |  | 
+| uniqueId | "rapid7-" + id | A globally unique ID that distinguishes this object from inventory from all other sources |
+| deviceUniqueId | id | A per-source unique ID |
+| groups | groups |  |
+| ip | ip |  |
+| natIp | ip |  |
+| os | os_system_name |  |
+| osVersion | os_version |  |
 
 ### Sailpoint Source - User
 
@@ -223,17 +227,17 @@ There are two types of normalized inventory objects, Computers and Users. Some s
 
 | Inventory Attribute | Data Source Field | Note |  
 | :-- | :-- | :-- |
-| uniqueId | sentinelOne-{id} | A globally unique ID that distinguishes this object from inventory from all other sources | 
-| groups | groupId |  | 
-| computerName | computerName |  | 
-| hostname | computerName |  | 
-| ip | lastIpToMgmt | Falls back to externalIp | 
-| mac | networkInterfaces[1].physical |  | 
-| natIp | externalIp |  | 
-| osName | os |  | 
-| osVersion | osRevision |  | 
-| location | locations[1].name |  | 
-| deviceUniqueId | uuid | A per-source unique ID | 
+| uniqueId | `sentinelOne-{id}` | A globally unique ID that distinguishes this object from inventory from all other sources | 
+| groups | groupId |  |
+| computerName | computerName |  |
+| hostname | computerName |  |
+| ip | lastIpToMgmt | Falls back to externalIp |
+| mac | networkInterfaces[1].physical |  |
+| natIp | externalIp |  |
+| osName | os |  |
+| osVersion | osRevision |  |
+| location | locations[1].name |  |
+| deviceUniqueId | uuid | A per-source unique ID |
 
 ### Tenable Source - Computer  
 

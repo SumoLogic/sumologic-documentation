@@ -2,7 +2,7 @@
 id: apache-opentelemetry
 title: Apache - OpenTelemetry Collector
 sidebar_label: Apache - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Apache.
+description: Learn about the Sumo Logic OpenTelemetry app for Apache.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,7 +17,7 @@ The diagram below illustrates the components of the Apache collection for each w
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Schematics.png' alt="Schematics" />
 
-The Sumo Logic App for Apache assumes:
+The Sumo Logic app for Apache assumes:
 
 - The [NCSA extended/combined log file format ](http://httpd.apache.org/docs/current/mod/mod_log_config.html)has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/apachereceiver/documentation.md).
 
@@ -32,27 +32,62 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ## Prerequisites
 
+### For metrics collection
+
 The receiver used gets stats from an Apache Web Server instance using the `server-status?auto` endpoint. This receiver supports Apache Web Server version 2.4+.
 
-* **Receive server statistics** by configuring the server's `httpd.conf` file to [enable status support](https://httpd.apache.org/docs/2.4/mod/mod_status.html).
+**Receive server statistics** by configuring the server's `httpd.conf` file to [enable status support](https://httpd.apache.org/docs/2.4/mod/mod_status.html).
+
+### For logs collection
+
 * **Configure the Apache log files**:
    * Configure the logging of access logs and error logs via the instructions described in their [documentation](https://httpd.apache.org/docs/2.4/logs.html).
    * Locate your local `httpd.conf` configuration file in the Apache directory. After determining the location of the conf file, modify the `httpd.conf` configuration file logging parameters if required.
       * For access logs, the following directive is to be noted:
-         - CustomLog: access log file path and format (standard common and combined)
+         - **CustomLog**. access log file path and format (standard common and combined)
       * For error logs, following directives are to be noted:
-         - ErrorLog: error log file path
-         - LogLevel: to control the number of messages logged to the `error_log`
+         - **ErrorLog**. Error log file path.
+         - **LogLevel**. To control the number of messages logged to the `error_log`.
+
+Ensure that the otelcol has adequate permissions to access all log file paths. Execute the following command for the same:
+
+```
+sudo setfacl -R -m d:u:otelcol-sumo:r-x,u:otelcol-sumo:r-x,g:otelcol-sumo:r-x <PATH_TO_LOG_FILE>
+```
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -67,11 +102,13 @@ Below are the inputs required:
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -114,26 +151,34 @@ You can add any custom fields which you want to tag along with the data ingested
 </TabItem>
 <TabItem value="Chef">
 
-{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
 
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-## Sample Log Messages
+<LogsOutro/>
+
+## Sample log messages
 
 ```sh title="Access Logs"
 192.168.29.177 - - [26/Apr/2021:12:18:32 +0530]  "GET /server-status HTTP/1.1"  404  196
@@ -143,7 +188,7 @@ You can add any custom fields which you want to tag along with the data ingested
 [Mon Apr 26 09:52:58.188858 2021]  [core:notice]  [pid 530] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
 ```
 
-## Sample Queries
+## Sample queries
 
 ### Logs
 
@@ -198,7 +243,7 @@ sumo.datasource=apache metric=apache.scoreboard state=waiting webengine.cluster.
 ```
 
 
-## Viewing Apache Dashboards
+## Viewing Apache dashboards
 
 ### Overview
 
@@ -206,9 +251,9 @@ The **Apache - Overview** Dashboard provides an at-a-glance view of the activity
 
 Use this dashboard to:
 
-- Get an at-a-glance view of the state of all your Apache web servers
-- Identify the top URLs causing errors
-- Identify the top critical error messages
+- Get an at-a-glance view of the state of all your Apache web servers.
+- Identify the top URLs causing errors.
+- Identify the top critical error messages.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Overview.png' alt="Overview" />
 
@@ -218,10 +263,10 @@ The **Apache - Error Log Analysis** dashboard provides a high-level view of erro
 
 Use this dashboard to:
 
-- Quickly identify critical errors affecting your Apache web servers
-- Analyze types and patterns of log messages in your Apache web servers
-- Identify clients causing the most errors
-- Monitor trends in error logs and identify outliers
+- Quickly identify critical errors affecting your Apache web servers.
+- Analyze types and patterns of log messages in your Apache web servers.
+- Identify clients causing the most errors.
+- Monitor trends in error logs and identify outliers.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Error-Log-Analysis.png' alt="Error Log Analysis" />
 
@@ -231,7 +276,7 @@ The **Apache - Trends** dashboard provides trends around HTTP responses, server 
 
 Use this dashboard to:
 
-- Monitor trends and identify outliers
+- Monitor trends and identify outliers.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Trends.png' alt="Trends" />
 
@@ -241,7 +286,7 @@ The **Apache - Outlier Analysis** dashboard helps you quickly identify outliers 
 
 Use this dashboard to:
 
-- Automatically detect outliers in the operations of your Apache web servers and take corrective actions if needed
+- Automatically detect outliers in the operations of your Apache web servers and take corrective actions if needed.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Outlier-Analysis.png' alt="Outlier Analysis" />
 
@@ -253,7 +298,7 @@ Dashboard panels show threat counts, geographic locations, actors, threat severi
 
 Use this dashboard to:
 
-- Identify threats from incoming traffic based on incoming client IP addresses and discover potential IOCs
+- Identify threats from incoming traffic based on incoming client IP addresses and discover potential IOCs.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Threat-Analysis.png' alt="Threat Analysis" />
 
@@ -263,7 +308,7 @@ The **Apache - Visitor Locations** dashboard provides a high-level view of Apach
 
 Use this dashboard to:
 
-- Get insights into geographic locations of your user base
+- Get insights into geographic locations of your user base.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Visitor-Locations.png' alt="Visitor Locations" />
 
@@ -273,7 +318,7 @@ The **Apache - Visitor Access Types** dashboard provides insights into visitor p
 
 Use this dashboard to:
 
-- Understand which platform and browsers are being used to access your applications
+- Understand which platform and browsers are being used to access your applications.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Visitor-Access-Types.png' alt="Visitor Access Types" />
 
@@ -289,11 +334,11 @@ Use this dashboard to:
 
 ### Web Server Operations
 
-The **Apache - Web Server Operations** dashboard provides an at-a-glance view of the operations of your Apache web servers. Dashboard panels show information on bots, geographic locations, errors and URLs.
+The **Apache - Web Server Operations** dashboard provides an at-a-glance view of the operations of your Apache web servers. Dashboard panels show information on bots, geographic locations, errors, and URLs.
 
 Use this dashboard to:
 
-- Get insights into client locations, bots and response codes
+- Get insights into client locations, bots, and response codes.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Web-Server-Operations.png' alt="Web Server Operations" />
 
@@ -303,7 +348,7 @@ The **Apache - Request State Analysis** dashboard shows trends around the state 
 
 Use this dashboard to:
 
-- Monitor the state of requests being handled by worker threads over time and take remedial actions to optimize your web servers if needed
+- Monitor the state of requests being handled by worker threads over time and take remedial actions to optimize your web servers if needed.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Request-State-Analysis.png' alt="Request State Analysis" />
 
@@ -313,7 +358,7 @@ The **Apache - Server Status** dashboard shows information related to the state 
 
 Use this dashboard to:
 
-- Monitor server uptime
-- Monitor web server performance
+- Monitor server uptime.
+- Monitor web server performance.
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Apache-OpenTelemetry/Apache-Server-Status.png' alt="Server Status" />

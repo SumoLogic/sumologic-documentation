@@ -13,7 +13,7 @@ AWS Web Application Firewall (WAF) is a web application firewall that helps prot
 The Sumo Logic app for AWS WAF analyzes traffic flowing through AWS WAF and automatically detects threats using Sumo Logic Threat Intel. The app provides pre-configured dashboards and searches that allow you to monitor threat and traffic details by client IP,  allowed and blocked traffic, malicious IPs, threat actors, location, rules configured, trends and more.
 
 
-## Sample log message
+## Sample log messages
 
 ```json
 {
@@ -54,7 +54,7 @@ The Sumo Logic app for AWS WAF analyzes traffic flowing through AWS WAF and auto
 }
 ```
 
-## Sample query  
+## Sample queries  
 
 ```sql title="Client IP Threat Info"
 _sourceCategory=AWS/WAF {{client_ip}}
@@ -66,7 +66,7 @@ _sourceCategory=AWS/WAF {{client_ip}}
 
 Follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
-### Before you begin
+### Prerequisites
 
 In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesis Data Firehose. In the next step, you'll configure Sumo to collect logs from the bucket.
 
@@ -98,7 +98,9 @@ In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesi
 
 Now that you have set up collection for AWS WAF, install the Sumo Logic app for AWS AWS to use the pre-configured searches and dashboards.
 
-{@import ../../reuse/apps/app-install.md}
+import AppInstall from '../../reuse/apps/app-install.md';
+
+<AppInstall/>
 
 ## Viewing AWS WAF dashboards
 

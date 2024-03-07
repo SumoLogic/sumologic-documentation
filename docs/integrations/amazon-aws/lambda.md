@@ -43,7 +43,7 @@ AWS Lambda automatically monitors functions on your behalf, reporting [AWS Lambd
 
 The Sumo Logic App for AWS Lambda provide insights into the Lambda Functions invocations, IteratorAge for stream-based invocations, Errors, Dead Letter Errors, Concurrent Executions, Unreserved Concurrent Executions, Duration, Throttles by Function and Time based Comparison.
 
-### Sample Log Messages
+### Sample log messages
 This section provides sample Amazon CloudWatch Log and CloudTrail Lambda Data Events log messages.
 
 ```json title="Amazon CloudWatch Log"
@@ -100,7 +100,7 @@ This section provides sample Amazon CloudWatch Log and CloudTrail Lambda Data Ev
 ```
 
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Requests by Function Versions (Based on CloudWatch logs)"
 account={{account}} region={{region}} Namespace={{namespace}}
@@ -202,34 +202,24 @@ Once Provisioned Concurrency is enabled and you start collecting CloudWatch metr
 
 <table><small>
   <tr>
-   <td>Metric
-   </td>
-   <td>Description
-   </td>
+   <td>Metric   </td>
+   <td>Description   </td>
   </tr>
   <tr>
-   <td><strong>ProvisionedConcurrentExecutions</strong>
-   </td>
-   <td>Concurrent Executions using Provisioned Concurrency
-   </td>
+   <td><strong>ProvisionedConcurrentExecutions</strong> </td>
+   <td>Concurrent Executions using Provisioned Concurrency   </td>
   </tr>
   <tr>
-   <td><strong>ProvisionedConcurrencyUtilization</strong>
-   </td>
-   <td>Fraction of Provisioned Concurrency in use
-   </td>
+   <td><strong>ProvisionedConcurrencyUtilization</strong>   </td>
+   <td>Fraction of Provisioned Concurrency in use   </td>
   </tr>
   <tr>
-   <td><strong>ProvisionedConcurrencyInvocations</strong>
-   </td>
-   <td>Number of Invocations using Provisioned Concurrency
-   </td>
+   <td><strong>ProvisionedConcurrencyInvocations</strong>   </td>
+   <td>Number of Invocations using Provisioned Concurrency   </td>
   </tr>
   <tr>
-   <td><strong>ProvisionedConcurrencySpilloverInvocations</strong>
-   </td>
-   <td>Number of Invocations that are above Provisioned Concurrency
-   </td>
+   <td><strong>ProvisionedConcurrencySpilloverInvocations</strong>   </td>
+   <td>Number of Invocations that are above Provisioned Concurrency   </td>
   </tr></small>
 </table>
 
@@ -308,20 +298,11 @@ Parse Expression:
 
 ## Installing the AWS Lambda App
 
-Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-aws-lambda-dashboards) that provide visibility into your environment for real-time analysis of overall usage. To install the app, follow the steps below:
+Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library** and complete the following fields.
-    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    * Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+<AppInstall/>
 
 ## Viewing AWS Lambda Dashboards
 
@@ -331,7 +312,7 @@ Here are some of the measurements and calculations underlying the information pr
 * **Memory Size**. The amount of memory allocated for a function.
 * **Max Memory (MB) Used.** The amount of memory used by a function, in MBs. This is a measure of performance.
 * **Compute Usage (GBs).** This is a product of Memory Size and Billed Duration (Memory Size * Billed Duration).
-* **Billed Compute. **memory configured on the function (in GB) x duration of the request (in seconds). In the actual query, Sumo Logic converts MB to GB and milliseconds to seconds to get the real billing numbers used. The actual cost varies by customer. This measurement is used to measure cost.
+* **Billed Compute.** memory configured on the function (in GB) x duration of the request (in seconds). In the actual query, Sumo Logic converts MB to GB and milliseconds to seconds to get the real billing numbers used. The actual cost varies by customer. This measurement is used to measure cost.
 * **Unused Memory.** This is Memory Size - Max Memory Used = Unused Memory. Because you are billed based on Memory Size (which you allocate), this is an indicator of not allocating appropriately.
 * **IteratorAge.** This AWS Lambda CloudWatch metric is emitted for stream-based invocations (functions triggered by an Amazon DynamoDB stream or Kinesis stream). Measures, in milliseconds, the age of the last record for each batch of records processed. Age is the difference between the time Lambda received the batch, and the time the last record in the batch was written to the stream.
 
@@ -380,7 +361,7 @@ Use this dashboard to:
 
 ### Error Analysis
 
-The** AWS Lambda - Error Analysis** dashboard provides insights on errors and warnings in your AWS Lambda functions.
+The **AWS Lambda - Error Analysis** dashboard provides insights on errors and warnings in your AWS Lambda functions.
 
 Use this dashboard to:
 * Quickly identify the top errors and warnings across a Lambda function and its version.
@@ -394,7 +375,7 @@ Use this dashboard to:
 
 ### Resource Usage
 
-**AWS Lambda - Resource Usage **dashboard provides insights on recent AWS Lambda request details, memory usage trends, function duration, and compute usage.
+**AWS Lambda - Resource Usage** dashboard provides insights on recent AWS Lambda request details, memory usage trends, function duration, and compute usage.
 
 Use this dashboard to:
 * Monitor the memory usage pattern of a Lambda function during its execution.
@@ -406,7 +387,7 @@ Use this dashboard to:
 
 ### Performance Trends
 
-**AWS Lambda - Performance Trends **dashboard displays log data analytics to provide insights on memory usage, function duration, recent request details, and compute usage.
+**AWS Lambda - Performance Trends** dashboard displays log data analytics to provide insights on memory usage, function duration, recent request details, and compute usage.
 
 Use this dashboard to:
 * Monitor concurrent executions of an AWS Lambda function and understand trends over time.

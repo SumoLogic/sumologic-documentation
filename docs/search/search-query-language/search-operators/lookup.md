@@ -6,10 +6,6 @@ sidebar_label: lookup
 
 The `lookup` operator can return one or more fields from a lookup table hosted by Sumo Logic and add the fields to the log messages returned by your query. You create a lookup table using the lookup UI or the <a href="https://api.sumologic.com/docs/#tag/lookupManagement">Lookup API</a>. You can populate a lookup table by uploading a CSV file using the Lookup API, or by using the [`save` operator](/docs/search/search-query-language/search-operators/save) to save the results of a log query. 
 
-:::note
-New Lookup Tables are available in all deployments except Sumo Logic's Montreal deployment, pending AWS providing a required AWS service in the Montreal region.
-:::
-
 For information about lookup tables, see [Create and Manage Lookup Tables](/docs/search/lookup-tables/create-lookup-table.md).
 
 ## Rules and limitations
@@ -90,7 +86,7 @@ Where:
 
     `/Library/Admin Recommended/Lookups/Approved Cloud Jump Stations`  
 
-    To determine the path to a lookup table, highlight the row for the table in the Sumo Logic Library, and select **Copy path to clipboard** from the three-dot more options menu for the table.   
+    To determine the path to a lookup table, highlight the row for the table in the Sumo Logic Library, and select **Copy path to clipboard** from the three-dot kebab menu for the table.   
 
     ![more-options-lookup.png](/img/search/searchquerylanguage/search-operators/more-options-lookup.png)
 

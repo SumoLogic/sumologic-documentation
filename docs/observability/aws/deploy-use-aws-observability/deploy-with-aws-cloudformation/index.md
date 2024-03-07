@@ -3,6 +3,7 @@ slug: /observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudforma
 title: Deploy with AWS CloudFormation
 description: Learn about the process of executing the AWS CloudFormation template to set up the AWS Observability Solution for a single AWS region and account combination.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This section walks you through the process of executing the AWS CloudFormation template to set up the AWS Observability Solution for a **single AWS region and account** combination.
 
@@ -36,14 +37,14 @@ AWS Observability integrates with Explore by populating metadata and only shows
 1. Choose an option to invoke AWS CloudFormation Template:
    * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.7.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
    * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.7.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.<br/>
-:::note
-Download this or other versions of this template from [Change Log](../changelog.md). 
-:::
-:::note
-To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.1.0 or greater and follow the instructions in the (#modify-the-collector-name-and-source-categories) section.
-:::
+     :::note
+     Download this or other versions of this template from [Changelog](../changelog.md). 
+     :::
+     :::note
+     To change the Collector Name and Source Categories of Sumo Logic sources, you must download CloudFormation template version 2.1.0 or greater and follow the instructions in the (#modify-the-collector-name-and-source-categories) section.
+     :::
 1. Select the AWS Region where you want to deploy the AWS CloudFormation template.
-    :::warning
+    :::danger
     This step is critical: if you do not select the correct region, you will deploy the solution in the wrong region.
     :::
 1. Proceed to [Step 2](#step-2-sumo-logic-access-configuration), below.
@@ -123,10 +124,10 @@ The below tables displays the response for each text box in this section.
 | Existing Sumo Logic Lambda CloudWatch Logs Source API URL | Required you already collect AWS Lambda CloudWatch logs. Provide the existing Sumo Logic AWS Lambda CloudWatch Source API URL. The account, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](/docs/send-data/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md). |
 | Subscribe log groups to Sumo Logic Lambda Forwarder | <ul><li>**New** - Automatically subscribes new AWS Lambda log groups to Lambda, to send logs to Sumo Logic.</li><li>**Existing** - Automatically subscribes existing log groups to Lambda, to send logs to Sumo Logic.</li><li>**Both** - Automatically subscribes new and existing log groups.</li><li>**None** - Skips Automatic subscription of log groups.</li></ul> |
 | Regex for AWS Log Groups | Default Value: <b>lambda\|rds</b> <br/> With default value, log group names matching with lambda or rds will be subscribed and ingesting cloudwatch logs into sumo logic.<br/> Enter a regex for matching log group names. For more information, see [Configuring parameters](/docs/send-data/collect-from-other-data-sources/autosubscribe-arn-destination.md) in the *Auto-Subscribe AWS Log Groups to a Lambda Function topic*.<br/>
-:::note
+ :::note
   * Don't use forward slashes (`/`) to encapsulate the regex. While normally they are needed for raw code, it's not necessary here.
   * Use regex `.*` for auto-subscribing all log groups.
-::: |
+ :::
 
 
 ## Step 9: Sumo Logic Root Cause Explorer Sources
@@ -160,9 +161,7 @@ The below tables displays the response for each text box in this section.
 
 ## Step 12: Create stack
 
-1. In **Capabilities and transforms** click each checkbox.
-
-    ![CFT_Capabilities_Transforms.png](/img/observability/CFT_Capabilities_Transforms.png)
+1. Under **Capabilities and transforms**, click each checkbox.<br/><img src={useBaseUrl('img/observability/CFT_Capabilities_Transforms.png')} style={{border: '1px solid gray'}} alt="CFT_Capabilities_Transforms" width="800"/>
 1. Click **Create Stack**.
 1. Verify that the AWS CloudFormation template has executed successfully in a CREATE_COMPLETE status.  This indicates that all the resources have been created successfully in both Sumo Logic and AWS.
 1. If the AWS CloudFormation template has not run successfully, identify and fix any permission errors till the stack completes with a CREATE_COMPLETE status. See [Troubleshooting](#troubleshooting) for assistance with how to resolve these errors.
@@ -177,12 +176,8 @@ Do not update the source names as created by CloudFormation template in Sumo Log
 
 Follow the steps below to change the default collector name and source categories
 
-1. Download the template version 2.1.0 or later from the [change log](../changelog.md) page.
-
-1. Modify the collector name and source categories in the Mapping section of the CloudFormation template.
-
-    ![mappings.png](/img/observability/mappings.png)
-
+1. Download the template version 2.1.0 or later from the [changelog](../changelog.md) page.
+1. Modify the collector name and source categories in the `Mappings` section of the CloudFormation template.<br/><img src={useBaseUrl('img/observability/mappings.png')} style={{border: '1px solid gray'}} alt="mappings" width="600"/>
 1. Deploy the CloudFormation template.
 
 ## Troubleshooting
@@ -195,21 +190,11 @@ This section walks you through the process of troubleshooting an AWS CloudForma
 
 To debug an AWS CloudFormation installation failure, do the following:
 
-1. After the stack rollback is complete and the status is ROLLBACK_COMPLETE, go to the parent stack. In the parent stack, look for the first failure as shown in the following example. The failure can be a direct reason or can point to a nested stack.
-
-    ![Troubleshooting_1.png](/img/observability/Troubleshooting_1.png)
-1. Look for direct reasons for the failure that is available in the parent stack, as shown in the following example.
-
-    ![Troubleshooting_2.png](/img/observability/Troubleshooting_2.png)
-1. To find indirect reasons for the failure, go to the nested stack mentioned in the status reason, as shown in the following example. Take a note of the resources mentioned in the reason.
-
-    ![Troubleshooting_3.png](/img/observability/Troubleshooting_3.png)
-1. Select the deleted option to find the nested stacks, as shown in the following example.
-
-    ![Troubleshooting_4.png](/img/observability/Troubleshooting_4.png)
-1. Go to the nested stack and look for the resource mentioned in the previous step to identify the reason, as shown in the following example.
-
-    ![Troubleshooting_5.png](/img/observability/Troubleshooting_5.png)
+1. After the stack rollback is complete and the status is ROLLBACK_COMPLETE, go to the parent stack. In the parent stack, look for the first failure as shown in the following example. The failure can be a direct reason or can point to a nested stack.<br/><img src={useBaseUrl('img/observability/Troubleshooting_1.png')} style={{border: '1px solid gray'}} alt="Troubleshooting_1" width="700"/>
+1. Look for direct reasons for the failure that is available in the parent stack, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_2.png')} style={{border: '1px solid gray'}} alt="Troubleshooting_2" width="700"/>
+1. To find indirect reasons for the failure, go to the nested stack mentioned in the status reason, as shown in the following example. Take a note of the resources mentioned in the reason.<br/><img src={useBaseUrl('img/observability/Troubleshooting_3.png')} style={{border: '1px solid gray'}} alt="Troubleshooting_3" width="700"/>
+1. Select the deleted option to find the nested stacks, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_4.png')} style={{border: '1px solid gray'}} alt="Troubleshooting_4" width="500"/>
+1. Go to the nested stack and look for the resource mentioned in the previous step to identify the reason, as shown in the following example.<br/><img src={useBaseUrl('img/observability/Troubleshooting_5.png')} style={{border: '1px solid gray'}} alt="Troubleshooting_5" width="700"/>
 
 ### Optimize CloudTrail log ingest
 
@@ -238,7 +223,7 @@ Below are some common errors that can occur while using the CloudFormation templ
 
 | Error | Description | Resolution |
 |:--|:--|:--|
-| The API rate limit for this user has been exceeded. | This error indicates that AWS CloudFormation execution has exceeded the API rate limit set on the Sumo Logic side. It can occur if you install the AWS CloudFormation template in multiple regions or accounts using the same Access Key and Access ID. | Do not install the AWS CloudFormation template in multiple regions or accounts with the same Access Key and Access ID. |
+| The API rate limit for this user has been exceeded. | This error indicates that AWS CloudFormation execution has exceeded the API rate limit set on the Sumo Logic side. It can occur if you install the AWS CloudFormation template in multiple regions or accounts using the same Access Key and Access ID. | - Re-deploy the deployment stack without updating the stack in the template. Re-running will detect the drift and create remaining resources. <br/> - If the throttling problem persists, try to break down the multi-region deployment into parts and use distinct access IDs and access keys for each part. |
 | S3 Bucket already exists. | The error can occur if:<br/>- An S3 bucket with the same name exists in S3, or<br/>- The S3 Bucket is not present in S3 but is referenced by some other AWS CloudFormation stack which created it. | - Remove the S3 bucket from S3 or select “No” in the AWS Cloudformation template for S3 bucket creation. <br/>- Remove the AWS CloudFormation Stack which references the S3 bucket. |
 | The S3 bucket you tried to delete is not empty. | The error can occur when deleting the stack with a non-empty S3 bucket. | Delete the S3 bucket manually if you do not need the bucket or its content in the future. |
 
@@ -255,6 +240,19 @@ To uninstall the AWS Observability Solution:
 
 1. Log in to your AWS account and go to CloudFormation.
 1. Select the main stack you want to delete.
-1. Select **Delete**.
+1. Select **Delete**.<br/><img src={useBaseUrl('img/observability/CFT_Uninstall.png')} style={{border: '1px solid gray'}} alt="CFT_Uninstall" width="800"/>
 
-![CFT_Uninstall.png](/img/observability/CFT_Uninstall.png)
+### Remove the account from AWS Observability hierarchy
+
+AWS Observability hierarchy is auto-populated based on the metrics ingested into Sumo Logic with an account tag on the metric source. To remove any AWS account from the AWS Observability hierarchy, you need to remove the data sources ingesting metrics data or remove the account tag from the same metric source. After this, the account will be removed automatically in the next 24 hours. Follow the below the steps to remove the account from the AWS Observability hierarchy:
+
+1. Identify the account that you want to remove from the AWS Observability hierarchy. For example, let's assume you want to remove `mobilebankingprod` from the hierarchy.<br/><img src={useBaseUrl('img/observability/hierarchy.png')} style={{border: '1px solid gray'}} alt="hierarchy" width="400"/>
+1. Run the required metric query to identify from which source and collector data is getting ingested. For this example, enter the below metric query:
+    ```sql
+    account= mobilebankingprod | count by _collector , _source
+    ```
+    <br/><img src={useBaseUrl('img/observability/metric-query.png')} style={{border: '1px solid gray'}} alt="metric-query" width="800"/>
+1. Delete the source or remove the account tag from the same metric source. After this, the account will be automatically removed from the AWS Observability hierarchy in the next 24 hours.
+    :::note
+    Removing the account tag will not stop the metrics ingestion.
+    :::

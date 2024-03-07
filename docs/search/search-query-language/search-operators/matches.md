@@ -4,7 +4,7 @@ title: matches Search Operator
 sidebar_label: matches
 ---
 
-The `matches` operator can be used to match a string to a wildcard pattern or an RE2 compliant regex. The operator returns a boolean value; the operator can be used with where or if operators.
+The `matches` operator can be used to match a string to a wildcard pattern or an RE2 compliant regex. The operator returns a boolean value; the operator can be used with the `where` or `if` operators.
 
 Matches can be used in Dashboard Panels, and are very commonly used in conjunction with other operators to build robust queries.
 
@@ -93,7 +93,7 @@ Produces aggregate results similar to the following, when you configure it to cr
 
 ### Viewing errors and warnings over time
 
-In this example, we will run a query against Windows logs to see the distribution of errors and warnings over the previous hours. Using a timeslice operator in the query breaks the results into one-hour buckets.
+In this example, we will run a query against Windows logs to see the distribution of errors and warnings over the previous hours. Using a `timeslice` operator in the query breaks the results into one-hour buckets.
 
 Running a search like:
 
@@ -115,7 +115,7 @@ Produces results similar to the following, when you configure it to be visualize
 
 ### Matching against parsed field values
 
-The matches operator can match against your parsed fields by using the [concat](concat.md) operator to add wildcards to the necessary location of your parsed field. The following example is parsing the instance value and then concatenating wildcards to the beginning and end of the parsed field. This provides the matches operator the necessary wildcards to match against.
+The matches operator can match against your parsed fields by using the [`concat`](concat.md) operator to add wildcards to the necessary location of your parsed field. The following example is parsing the instance value and then concatenating wildcards to the beginning and end of the parsed field. This provides the matches operator the necessary wildcards to match against.
 
 ```sql
 | parse "instance \"*\"" as instance

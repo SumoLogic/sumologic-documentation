@@ -2,7 +2,7 @@
 id: qualys-vmdr
 title: Qualys VMDR
 sidebar_label: Qualys VMDR
-description: The Sumo Logic App for Qualys VMDR provides vulnerability summary across your IT infrastructure.
+description: The Sumo Logic app for Qualys VMDR provides vulnerability summary across your IT infrastructure.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,12 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Qualys VMDR app is a new Sumo Logic app based on the [Qualys VMDR Cloud-to-Cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source/), which tracks errors, reports its health, and start-up progress. It provides a cloud security, compliance, and vulnerability management solutions across your IT infrastructure.
 
-## Log Types
+## Log types
 
-The Sumo logic App for Qualys VMDR uses vulnerability data from [Vulnerability API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf) and asset data from [Asset API](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf).
+The Sumo logic app for Qualys VMDR uses vulnerability data from [Vulnerability API](https://www.qualys.com/docs/qualys-api-vmpc-user-guide.pdf) and asset data from [Asset API](https://www.qualys.com/docs/qualys-global-ai-api-v2-user-guide.pdf).
 
-
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -42,8 +41,7 @@ The Sumo logic App for Qualys VMDR uses vulnerability data from [Vulnerability A
 }
 ```
 
-
-### Sample Queries
+### Sample queries
 
 ```sql
 source=Qualys
@@ -85,14 +83,19 @@ source=Qualys
 
 This section provides instructions for setting up [Cloud-to-Cloud-Integration for Qualys VMDR](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/qualys-vmdr-source.md) to create the source and use the same source category while installing the app.
 
+## Installing the Qualys VMDR app​
 
-## Installing the Qualys VMDR App​
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-This section provides instructions for installing the Qualys VMDR Sumo Logic App.
+<AppInstall2/>
 
-{@import ../../reuse/apps/app-install.md}
+## Viewing Qualys VMDR dashboard
 
-## Viewing Qualys VMDR Dashboard
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-**Qualys VMDR - Overview dashboard** This dashboard gives you visibility into low, medium, high, and critical vulnerabilities by hosts in your network. Use the dashboard to slice and dice data by vulnerability severity, IPs, and hosts.
+<ViewDashboards/>
+
+### Overview
+
+The **Qualys VMDR - Overview dashboard** provides visibility into low, medium, high, and critical vulnerabilities by hosts in your network. Use the dashboard to slice and dice data by vulnerability severity, IPs, and hosts.
 <img src={useBaseUrl('img/integrations/saas-cloud/qualys-vmdr-overview.png')} alt="Qyalys VMDR Overview" width="900"/>

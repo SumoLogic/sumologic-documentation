@@ -19,7 +19,7 @@ grouping_function by <fieldname>
 ```
 
 :::important
-The `withtime`, `most_recent`, and `least_recent` operators are not considered standalone operators; they are designed to only be used as an alternative to the [first and last operators](/docs/search/search-query-language/group-aggregate-operators/first-last) in Live Dashboards or any continuous query where first and last are not supported.
+The `withtime`, `most_recent`, and `least_recent` operators are not considered standalone operators; they are designed to only be used as an alternative to the [first and last operators](/docs/search/search-query-language/group-aggregate-operators/first-last) in auto refresh dashboards or any continuous query where first and last are not supported.
 :::
 
 By default, the ordering is not defined inside of groups created using a group-by expression. To order your results, use the [`sort`](/docs/search/search-query-language/search-operators/sort) operator.
@@ -75,8 +75,8 @@ avg(abs_latency_ms) as avg_latency_ms
 
 ```sql title="Count by user"
 status AND down 
-| parse regex "user=(\<use\>.*?)"
-| parse regex "host=(\<msg_hos\>.*?)"
+| parse regex "user=(?<user>.*?)"
+| parse regex "host=(?<msg_host>.*?)"
 | count by user
 ```
 

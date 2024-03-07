@@ -105,7 +105,7 @@ please apply your changes to the latest version and try again"}
 scheduler.go:197] Failed to schedule pod: hello-app/frontend-56f7975f44-8sgj7"}
 ```
 
-### Sample Query
+### Sample queries
 
 The following query sample is taken from the **Top 10 URLs with Problem Status Codes** panel on the **EKS - API Server Audit Overview** dashboard.
 
@@ -150,25 +150,18 @@ To configure Amazon CloudWatch log collection, do the following:
 
 Now that you have set up collection for EKS, install the Sumo Logic app for EKS - Control Plane to use the pre-configured Kubernetes dashboards that provide visibility into your EKS environment.
 
-To install the app, do the following:
-1. Locate and install the app from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-2. From the App Catalog, search for **EKS** and select the app.
-3. To install the app, click **Add to Library** and complete the following fields.
-    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.**  For **EKS Log Source,** leave Source Category selected, and enter the value of source category which you used while configuring the Sumo Logic HTTP Source.
-    3. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
-4. Click **Add to Library**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-All the dashboards are linked to the Explore tab so they can be easily accessed by clicking on Cluster from side navigation of Explore tab.
+<AppInstall/>
+
+All the dashboards are linked to the Explore tab so they can be easily accessed by going to the **Explore** tab side navigation and clicking **Cluster**.
 
 
 ## Viewing Dashboards for Amazon EKS - Control Plane
 
-Filter with template variables    
-
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
-
-You can use template variables to drill down and examine the data on a granular level.
+:::note Filter with template variables    
+Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see the [Filter with template variables](/docs/dashboards/filter-template-variables.md) help page.
+:::
 
 ### API Server Audit
 

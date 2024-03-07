@@ -11,7 +11,7 @@ Traces will be enhanced with Kubernetes metadata, similarly to the logs and metr
 
 ## Prerequisites
 
-* Kubernetes 1.20+
+* Kubernetes 1.24+
 * Helm 3.5+
 
 | Account Type | Account Level         |
@@ -25,7 +25,9 @@ Installation is the same as for the official [Sumo Logic Kubernetes Collection](
 In the following installation steps, we use the release name `collection` and the namespace name `sumologic`. You can use any names you want, however, you'll need to adjust your installation commands to use your names since these names impact the OpenTelemetry Collector endpoint name.
 
 :::note
- If you're upgrading from Sumo Logic Kubernetes Collection `v2.x` to `v3.x`, see [Sumo Logic Kubernetes Collection Migration Guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
+ If you're upgrading from Sumo Logic Kubernetes Collection:
+  - `v2.x` to `v3.x`, see [Sumo Logic Kubernetes Collection Migration Guide v3](/docs/send-data/kubernetes/v3/how-to-upgrade.md)
+  - `v3.x` to `v4.x`, see [Sumo Logic Kubernetes Collection Migration Guide v4](/docs/send-data/kubernetes/v4/how-to-upgrade.md)
 :::
 
 ### Collection architecture
@@ -101,6 +103,13 @@ helm upgrade --install collection sumologic/sumologic \
   -f values.yaml
 ```
 
+### Custom configuration
+
+Every customization to your collector configuration should be applied using keys `config.merge` or `config.override`:
+  - **For `otelcolInstrumentation`**. Use `otelcolInstrumentation.config.merge`, which will merge provided configuration to [default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/tests/helm/testdata/goldenfile/otelcol-instrumentation-config/traces-gateway-enabled.output.yaml#L15) or `otelcolInstrumentation.config.override`, which will override the whole configuration.
+  - **For `tracesGateway`**. Use `tracesGateway.config.merge`, which will merge provided configuration to [default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/tests/helm/testdata/goldenfile/traces-gateway-loadbalancing/traces-gateway-true.output.yaml#L14) or `tracesGateway.config.override` which will override the whole configuration.
+  - **For `tracesSampler`**. Use `tracesSampler.config.merge`, which will merge provided configuration to [default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/tests/helm/testdata/goldenfile/traces-sampler/simple.output.yaml#L14) or `tracesSampler.config.override`, which will override the whole configuration.
+
 ### Pointing tracing clients (instrumentation exporters) to the agent collectors
 
 Using OTLP HTTP is recommended:
@@ -157,14 +166,14 @@ After enabling and installing tracing, you should have additional Kubernetes res
 * There are running pods `<RELEASE_NAME>-sumologic-otelcol-instrumentation-<hash>, <RELEASE_NAME>-sumologic-traces-gateway-<hash>, <RELEASE_NAME>-sumologic-traces-sampler-<hash>`
 * Kubernetes metadata tags such as `pod` and `replicaset` should be applied to all spans.
 * The OpenTelemetry Collector can export metrics, which include information such as the number of spans exported. Several metrics starting with `otelcol_` will become available, such as `otelcol_exporter_sent_spans` and `otelcol_receiver_accepted_spans`.
-* **OpenTelemetry Collector can have logging exporter enabled.** This will put on the output contents of spans (with some sampling above a certain rate). To enable, apply the following flags when installing/upgrading the collector (appending logging to the list of exporters):
+* **OpenTelemetry Collector can have Debug exporter enabled.** This will put on the output contents of spans (with some sampling above a certain rate). To enable, apply the following flags when installing/upgrading the collector (appending `debug` to the list of exporters):
 
     ```bash
     helm upgrade collection sumologic/sumologic \
       --namespace sumologic \
       ...
-      --set tracesSampler.config.exporters.logging.logLevel=debug \
-      --set tracesSampler.config.service.pipelines.traces.exporters="{otlphttp,logging}"
+      --set tracesSampler.config.exporters.debug.verbosity=detailed \
+      --set tracesSampler.config.service.pipelines.traces.exporters="{otlphttp,debug}"
     ```
 
   Having this enabled, `kubectl logs -n sumologic collection-sumologic-traces-sampler-<ENTER ACTUAL POD ID>` might yield the following output:

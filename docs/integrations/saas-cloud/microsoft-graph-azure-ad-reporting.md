@@ -16,13 +16,14 @@ Key features of the Microsoft Graph Azure AD Reporting app include:
 - **Identify Suspicious Activities**. Identify suspicious activity, such as sign-ins from unfamiliar/risky locations or multiple sign-in attempts.
 - **Analyze Provisioning Activities**. Provides distribution of provisioning activities by status, actions, and initiators. It also shows the most frequent service principals used while provisioning.
 
-## Log Types
+## Log types
 
 The App uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https://learn.microsoft.com/en-us/graph/api/resources/directoryaudit?view=graph-rest-1.0), [Sign-in](https://learn.microsoft.com/en-us/graph/api/resources/signin?view=graph-rest-1.0), and [Provisioning](https://learn.microsoft.com/en-us/graph/api/resources/provisioningobjectsummary?view=graph-rest-1.0) activities.
 
-## Sample Log Message
+## Sample log messages
 
-<details><summary>View Sample Log Message</summary>
+<details>
+<summary>View Sample Log Message</summary>
 
 ```json title="Audit Activity Message"
 {
@@ -243,9 +244,10 @@ The App uses Microsoft Graph Azure AD Reporting Source to collect [Audit](https:
 ```
 </details>
 
-## Sample Query
+## Sample queries
 
-<details><summary>View Sample Queries</summary>
+<details>
+<summary>View Sample Queries</summary>
 
 ```sql title="Audis by Resource Categories (Audit Activity)"
 _sourceCategory="azure_ad_reporting" "activityDisplayName" "operationType"
@@ -295,20 +297,9 @@ Follow the instructions for setting up [Microsoft Graph Azure AD Reporting](/doc
 
 This section has instructions for installing the Microsoft Graph Azure AD Reporting app for Sumo Logic.
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-1. From the **App Catalog**, search for the app and select it.
-1. Select **Add Integration** button to install the app.
-1. Configure **Microsoft Graph Azure AD Reporting** app using the steps described in the [Microsoft Graph Azure AD Reporting Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-azure-ad-reporting-source/). If you already have set up your data, skip this step by clicking on **Next**.
-1. Complete the following fields:
-   1. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and type in a custom source category that starts with an underscore. For Example, `_sourceCategory=MyCategory`.
-    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app.
-    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-1. Click **Next**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. You can share it with your organization.
-The panels will begin to fill automatically. It's worth noting that each panel gradually fills with data that matches the time range query and has been received since the panel was created. The results will not be available right away, but with some patience, you will be able to view full graphs and maps.
+<AppInstall/>
 
 ## Viewing Microsoft Graph Azure AD Reporting dashboards​​
 

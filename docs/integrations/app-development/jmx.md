@@ -2,7 +2,7 @@
 id: jmx
 title: Java Management Extensions (JMX)
 sidebar_label: JMX
-description: The Sumo Logic App for Java Management Extensions (JMX) allows you to analyze and gain insights about Java applications.
+description: The Sumo Logic app for Java Management Extensions (JMX) allows you to analyze and gain insights about Java applications.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,12 +13,12 @@ import TabItem from '@theme/TabItem';
 
 Java Management Extensions (JMX) is a standard component of the Java Platform. JMX gives developers a standard and simple way to manage resources, including services, devices, and applications. JMX is dynamic, so you can manage and monitor resources as soon as they are created, implemented, or installed.
 
-The Sumo Logic App for **JMX** allows you to analyze and gain insights about Java applications. The dashboards provide a quick glance at various deployment metrics like memory, CPU, GC performance, and thread behavior, so you can troubleshoot unexpected behavior in your Java environment and the applications running in it.
+The Sumo Logic app for **JMX** allows you to analyze and gain insights about Java applications. The dashboards provide a quick glance at various deployment metrics like memory, CPU, GC performance, and thread behavior, so you can troubleshoot unexpected behavior in your Java environment and the applications running in it.
 
 
-## Metric Types
+## Metric types
 
-The Sumo Logic App for JMX collects Prometheus metrics from Java applications, via the [Jolokia Plugin for telegraf.](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)
+The Sumo Logic app for JMX collects Prometheus metrics from Java applications, via the [Jolokia Plugin for telegraf.](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)
 
 The following types of metrics are collected from JMX:
 
@@ -31,7 +31,7 @@ The following types of metrics are collected from JMX:
 * ClassLoader
 
 
-### Sample Query
+### Sample queries
 
 This query sample is from the **CPU Load Vs Current Threads** panel of **JMX - Overview** dashboard.
 
@@ -41,7 +41,7 @@ metric=java_lang_OperatingSystem_TotalMemorySize jolokia_agent_url={{Server}} | 
 ```
 
 
-## Collecting Metrics for JMX
+## Collecting metrics for JMX
 
 This section explains how to collect metrics from JMX and ingest them into Sumo Logic to use with the predefined dashboards and searches in the JMX app.
 
@@ -61,7 +61,7 @@ These metrics are then forwarded to Sumo Logic HTTP Source. The collection start
 
 ### Step 1: Metric Collection in Non-Kubernetes Environment
 
-This section provides instructions for configuring metrics collection for the Sumo Logic App for JMX. Follow the below instructions to set up the metric collection.
+This section provides instructions for configuring metrics collection for the Sumo Logic app for JMX. Follow the below instructions to set up the metric collection.
 1. **Configure metrics for JMX**. To configure JMX metrics using Jolokia, do the following:
    * Download the latest Jolokia JVM agent from [Jolokia](https://jolokia.org/download.html).
    * You can attach the Jolokia JVM agent jar as a Java Agent to your application.
@@ -179,7 +179,7 @@ The following steps assume you are collecting JMX metrics from a Kubernetes envi
 1. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md)
 2. On your Pods, add the following annotations to configure Telegraf.
 
-Ensure that Prometheus passes all metrics to Sumo Logic. If you use the below annotations to configure Telegraf, it should work correctly, otherwise, refer to this [doc](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-application-metrics.md).
+Ensure that Prometheus passes all metrics to Sumo Logic. If you use the below annotations to configure Telegraf, it should work correctly; otherwise, refer to [Collecting Application Metrics](/docs/send-data/kubernetes/collecting-metrics).
 
 ```sql
 annotations:
@@ -251,69 +251,57 @@ annotations:
           prometheus.io/port: "9273"
 ```
 
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Jolokia Input plugin. Please refer [to this doc ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)for more information on configuring the Jolokia input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf Jolokia Input plugin. Please refer [to this doc ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)for more information on configuring the Jolokia input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
+* `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"`. This tells Prometheus what ports to scrape on. This should not be changed.
 
 </TabItem>
 </Tabs>
 
 
 
-### Sample Metric Names
+### Sample metric names
 
 <table>
   <tr>
-   <td>Metric Type
-   </td>
-   <td>Sample
-   </td>
+   <td>Metric Type   </td>
+   <td>Sample   </td>
   </tr>
   <tr>
-   <td>CPU
-   </td>
-   <td>java_lang_OperatingSystem_ProcessCpuLoad
-   </td>
+   <td>CPU   </td>
+   <td>java_lang_OperatingSystem_ProcessCpuLoad   </td>
   </tr>
   <tr>
-   <td>GC
-   </td>
-   <td>java_lang_GarbageCollector_LastGcInfo_duration
-   </td>
+   <td>GC </td>
+   <td>java_lang_GarbageCollector_LastGcInfo_duration   </td>
   </tr>
   <tr>
-   <td>Memory
-   </td>
-   <td>java_lang_Memory_NonHeapMemoryUsage_committed
-   </td>
+   <td>Memory   </td>
+   <td>java_lang_Memory_NonHeapMemoryUsage_committed </td>
   </tr>
   <tr>
-   <td>Threads
-   </td>
-   <td>java_lang_Threading_ThreadCount
-   </td>
+   <td>Threads   </td>
+   <td>java_lang_Threading_ThreadCount   </td>
   </tr>
   <tr>
-   <td>ClassLoader
-   </td>
-   <td>java_lang_ClassLoading_LoadedClassCount
-   </td>
+   <td>ClassLoader   </td>
+   <td>java_lang_ClassLoading_LoadedClassCount   </td>
   </tr>
 </table>
 
 
-## Install the JMX App
+## Install the JMX app
 
-This section has instructions for installing the Sumo App for JMX.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-{@import ../../reuse/apps/app-install.md}
+<AppInstall2/>
 
-## Viewing JMX Dashboards
+## Viewing JMX dashboards​
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -378,7 +366,7 @@ Use this dashboard to:
 
 ### Memory Pool
 
-The **JMX - Memory Pool **dashboard provides key information about the memory pool usage, peak usage, collection usage, garbage collection across various memory pools of your Java virtual machine.
+The **JMX - Memory Pool** dashboard provides key information about the memory pool usage, peak usage, collection usage, garbage collection across various memory pools of your Java virtual machine.
 
 Use this dashboard to:
 * Gain insights into memory usage across different memory pools.

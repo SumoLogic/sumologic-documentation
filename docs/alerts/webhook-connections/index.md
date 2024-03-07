@@ -6,10 +6,10 @@ description: Webhook connections send alerts to third-party applications.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Webhook connections send alerts to third-party applications. To access these, go to **Manage Data** > **Monitoring** > **Connections**.
+Our webhook connections send Sumo Logic alerts to third-party applications. To access them, go to **Manage Data** > **Monitoring** > **Connections**.
 
-:::info Prerequisite
-To create a connection, you'll need the Manage Connection [role capability](/docs/manage/users-roles/roles/role-capabilities). Contact your administrator for assistance.
+:::tip
+See also: [Webhook Integrations](/docs/integrations/webhooks).
 :::
 
 In this section, we'll introduce the following concepts and more:

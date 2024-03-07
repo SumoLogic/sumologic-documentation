@@ -6,6 +6,7 @@ description: Learn how to write a match rule.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CseRule from '../../reuse/cse-rule-description-links.md';
 
 This topic has information about Match rules and how to create them in the Cloud SIEM UI.
 
@@ -60,9 +61,9 @@ import Iframe from 'react-iframe'; 
     :::
 1. **with the summary**. Enter a brief summary describing what causes the Rule to create a Signal.
 1. **with the description**. Define the description for the Signal the same way you did the Signal name, using text and Record fields. The Signal description should be a good indication of what the rule looks for.
-:::note
-{@import ../../reuse/cse-rule-description-links.md}
-:::
+   :::note
+   <CseRule/>
+   :::
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity:
    * **Constant**. Every Signal that the rule fires will have the same severity,
    * **Dynamic**. Severity is based on the value of a field in the Record.

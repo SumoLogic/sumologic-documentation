@@ -1,25 +1,25 @@
 ---
 id: miro
-title: Sumo Logic App for Miro
+title: Miro
 sidebar_label: Miro
-description: The Sumo Logic App for Miro offers functionality for monitoring and investigating potential security threats.
+description: The Sumo Logic app for Miro offers functionality for monitoring and investigating potential security threats.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/Miro-logo.png')} alt="icon" width="40" />
 
-The Sumo Logic App for Miro provides visibility into Miro audit logs to ensure the security and compliance of your Miro environment. The app leverages the [Miro cloud-to-cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source) to collect audit log data and provides pre-built dashboards and visualizations to enable security teams to easily monitor and investigate potential security threats.
+The Sumo Logic app for Miro provides visibility into Miro audit logs to ensure the security and compliance of your Miro environment. The app leverages the [Miro cloud-to-cloud source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source) to collect audit log data and provides pre-built dashboards and visualizations to enable security teams to easily monitor and investigate potential security threats.
 
-The App provides a comprehensive overview of key security events and user activity. It includes widgets that track key metrics such as total events, board events, team events, sign-in security events, and more. Additionally, it offers insights into the distribution of sign-in security events and sign-ins over time by authentication methods. The dashboard also highlights sign-ins from risky geo-locations, which helps you to quickly identify potential security threats and take appropriate actions to mitigate them. These widgets help you to monitor your account performance, identify improvement areas, and ensure their data's security. With these widgets, you can easily monitor and manage their security posture, ensuring your data and systems remain secure and protected.
+The app provides a comprehensive overview of key security events and user activity. It includes widgets that track key metrics such as total events, board events, team events, sign-in security events, and more. Additionally, it offers insights into the distribution of sign-in security events and sign-ins over time by authentication methods. The dashboard also highlights sign-ins from risky geo-locations, which helps you to quickly identify potential security threats and take appropriate actions to mitigate them. These widgets help you to monitor your account performance, identify improvement areas, and ensure their data's security. With these widgets, you can easily monitor and manage their security posture, ensuring your data and systems remain secure and protected.
 
-With the Sumo Logic App for Miro, security teams can stay on top of potential security threats, proactively identify vulnerabilities, and respond quickly to security incidents.
+With the Sumo Logic app for Miro, security teams can stay on top of potential security threats, proactively identify vulnerabilities, and respond quickly to security incidents.
 
-## Log Types
+## Log types
 
 This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://developers.miro.com/v1.0/reference/get-logs) from Miro.
 
-## Sample Log Message
+## Sample log message
 
 ```json title="Audit Log"
 {
@@ -54,7 +54,7 @@ This App uses Sumo Logic’s Miro Source to collect [Audit Logs](https://develop
       "id": "450256789"
 }
 ```
-## Sample Query
+## Sample query
 
 ```sql title="Total Phishing Security Tests"
 _sourceCategory=miro
@@ -69,30 +69,19 @@ _sourceCategory=miro
 
 Follow the instructions for setting up [Cloud-to-Cloud Integration for Miro](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source/) source and use the same source category while installing the app.
 
-## Installing the Miro App
+## Installing the Miro app
 
-This section has instructions for installing the Miro App for Sumo Logic.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-{@import ../../reuse/apps/app-install.md}
+<AppInstall2/>
 
-1. From the **App Catalog**, search for and select the app. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-1. Click **Add Integration**.
-1. Configure **Miro App** using the steps described in the [Miro Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/miro-source/). If you already have set up your data, skip this step and click **Next**.
-1. Complete the following fields.
-   1. **Data Source**. Select either of these options for the data source:
-      * Choose **Source Category** and then choose a source category from the list.
-      * Select **Enter a Custom Data Filter** and enter a custom source category that starts with an underscore. For example, `_sourceCategory=MyCategory`.
-    2. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app.
-    3. Select the **Location in Library** (the default is the **Personal** folder in the library), or click **New Folder** to add a new folder.
-1. Click **Next**.
+## Viewing Miro dashboards​
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data that matches the time range query and has been received since the panel was created. Results will not be available right away, but with a bit of time, you'll see full graphs and maps.
+<ViewDashboards/>
 
-## Viewing Miro Dashboards​
-
-### Miro - Overview
+### Overview
 
 The **Miro - Overview** dashboard provides a comprehensive overview of events related to Miro. The dashboard features various widgets, including Total Events, Total Board Events, Distribution of App Events, Events By Team, Boards Created and Opened over Time, Events Over Time, Geo-Location of Events, Recent File Event Summary, and Recent Event Summary.
 
@@ -100,7 +89,7 @@ The widgets allow you to track and analyze event-related information, including 
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Miro/Miro-Overview.png' alt="Miro-Overview.png" />
 
-### Miro - Security Events
+### Security Events
 
 The **Miro - Security Events** dashboard provides a comprehensive overview of your security events related to Miro. The dashboard features various widgets, including Sign-in Security Events, Account(s) Created, Account(s) Deleted, User(s) Deactivated, User(s) Reactivated, Distribution of Sign-in Security Events, Sign-In over time by Authentication Methods, and Sign-in from Risky Geo-Locations.
 

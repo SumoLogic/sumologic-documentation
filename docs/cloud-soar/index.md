@@ -8,6 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Navigate the evolving threat landscape with our best-in-class security orchestration, automation and response (SOAR) solution to streamline incident response workflows.
 
+:::info
+If your Cloud SOAR instance URL matches the pattern `*.soar.sumologic.com`, this means you're using the legacy version. Refer to the [Legacy Cloud SOAR](/docs/cloud-soar/legacy/) section. 
+:::
+
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
@@ -19,6 +23,12 @@ Navigate the evolving threat landscape with our best-in-class security orchestra
   <div className="container">
   <a href="/docs/cloud-soar/architecture"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Architecture</h4></a>
   <p>Cloud SOAR Security ops supports multi-tenant architecture.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/cloud-soar/compared-to-automation-service"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Cloud SOAR Compared to the Automation Service</h4></a>
+  <p>Compare the features of Cloud SOAR with the Automation Service.</p>
   </div>
 </div>
 <div className="box smallbox card">
@@ -47,12 +57,6 @@ Navigate the evolving threat landscape with our best-in-class security orchestra
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cloud-soar/mssp"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>MSSP</h4></a>
-  <p>Full-featured instance of Cloud SOAR designed for internal MSSP use.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/cloud-soar/cloud-soar-bridge"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Bridge</h4></a>
   <p>Learn how to install a bridge for Cloud SOAR to allow running custom actions or integrations in an on-premise environment.</p>
   </div>
@@ -61,12 +65,6 @@ Navigate the evolving threat landscape with our best-in-class security orchestra
   <div className="container">
   <a href="/docs/cloud-soar/cloud-soar-integration-framework"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Integration Framework</h4></a>
   <p>Learn about the framework used for integrations.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/cloud-soar/cloud-soar-apis"><img src={useBaseUrl('img/icons/security/SOC.png')} alt="icon" width="40"/><h4>Cloud SOAR APIs</h4></a>
-  <p>Learn how to access Cloud SOAR APIs and API documentation.</p>
   </div>
 </div>
 <div className="box smallbox card">

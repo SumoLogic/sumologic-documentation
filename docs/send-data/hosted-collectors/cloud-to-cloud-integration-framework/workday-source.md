@@ -13,6 +13,7 @@ import ExampleJSON from '/files/c2c/workday/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/workday/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/workday/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 <img src={useBaseUrl('img/integrations/saas-cloud/workday.png')} alt="Thumbnail icon" width="50"/>
 
@@ -62,7 +63,7 @@ To configure a Workday Source, follow the steps below:
 15. **REST API URL**. Take the Workday Rest API endpoint copied in [Step 1.3](/docs/integrations/saas-cloud/workday.md#step-13-register-the-api-client) and modify it to match the format `https://<host>/ccx/api/privacy/v1/<tenant>/activityLogging`. Provide the modified URL here.
 16. **Collection Should begin** (Optional). Select the time range for how far back you want this source to start collecting data from Workday. This is set to **24 Hours ago** by default.
   :::note
-  {@import ../../../reuse/collection-should-begin-note.md}
+  <CollBegin/>
   :::
 17. **Polling Interval** (Optional). Select how often you want the Source to collect data from Workday. This is set to 10 minutes by default.
 18. When you are finished configuring the Source, click **Save**.
@@ -184,7 +185,12 @@ To resolve this:
 - An invalid hostname is provided in the token or Activity Logs URL. For example, `wd5-impl-services1.workday.com` instead of `wd2-impl-services1.workday.com`.
 
 To resolve this:
-1. Provide the correct "tenant name" and "hostname".                  
+1. Provide the correct "tenant name" and "hostname".
+
+#### Error | received sign-on report log time outside time filter window. create a custom sign on report as per the setup instructions
+- Custom sign on report is not created as per the instructions
+
+To resolve this, [Create a Custom Sign on Report](/docs/integrations/saas-cloud/workday/#step-15-create-a-custom-sign-on-report) and configure the source accordingly. 
 
 ## FAQ
 

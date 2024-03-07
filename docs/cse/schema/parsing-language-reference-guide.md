@@ -678,7 +678,7 @@ Creates a field with an associated value. If the field already exists, SET overw
 
 `SET:<field> = <string>`
 
-The field name is treated as a Mustache template if it contains two curly braces ‘{{‘. The template can access any field dictionary fields that have been parsed prior to this instruction. 
+The field name is treated as a Mustache template if it contains two curly braces `{{`. The template can access any field dictionary fields that have been parsed prior to this instruction. 
 
 **Default**
 
@@ -1056,17 +1056,17 @@ Always applied first, before the [FORMAT](#format) is applied. Applies the trans
 
 ### ZIP
 
-Takes keys and values in separate fields from a JSON event and combines them together into proper key-value pairs with the specified prefix. There are two separate methods to do this, regex (specified by r\|) and non-regex. 
+Takes keys and values in separate fields from a JSON event and combines them together into proper key-value pairs with the specified prefix. There are two separate methods to do this, regex (specified by `r|`) and non-regex. 
 
 **Syntax**
 
-`ZIP\<ke\>\<value\> =\<prefix or %s template\>`
+`ZIP:<key>:<value> = <prefix or %s template>`
 
 **Non-regex method**
 
-The non-regex method is simple, but isn’t always sufficient.. For example, this example:
+The non-regex method is simple, but isn’t always sufficient. For example, this:
 
-`ZIP:<key>:<value> = <prefix or %s template>`
+`ZIP:test_key:test_val = testPrefix_`
 
 Will convert `test_key_1 = x, test_val_1 = y` into `testPrefix_x = y`, but won’t handle internal lists properly, for example, `test_key_1_1`. This is not supported because it makes assumptions about how those lists are formatted.
 
@@ -1078,7 +1078,7 @@ There are two ways you can specify the value template: using a mustache template
 
 Will convert `test_key_1 = x, test_val_1 = y, sampleField = something` into `something_x_testSuffix = y`.
 
-**r\| regex handling**
+**`r|` regex handling**
 
 Regex that starts with `r|` syntax has certain requirements that regular regex does not. Specifically, you must specify a capture group, `_$INDEX`, which is an index shared by the key field and the value field. You can specify `_$LIST_INDEX` to support lists, but they must always be an integer. These parsed fields are not added to the field dictionary. For example,  
 
@@ -1112,7 +1112,7 @@ Behaves exactly like [ZIP](#zip), but doesn’t drop the fields afterwards.
 
 **Default**
 
-The default value for \<ke\>` is `_$log_entry`
+The default value for `<key> is _$log_entry`
 
 ## Attributes Specific to REGEX Format
 

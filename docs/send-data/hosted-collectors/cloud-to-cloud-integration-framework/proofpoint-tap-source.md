@@ -40,7 +40,14 @@ The maximum data retention period for Proofpoint TAP is 7 days, as mentioned in 
 
 ### Vendor configuration
 
-The integration must be configured with a service credential (`Service Principal`) and API secret key.
+The integration must be configured with a service credential (`Service Principal`) and API secret key. The service principal and secret are used to authenticate to the SIEM API. 
+
+To generate TAP service credentials:
+1. Log in to the [TAP dashboard](https://threatinsight.proofpoint.com/auth/new).
+1. Navigate to **Settings > Connected Applications**.
+1. Click **Create New Credential**.
+1. Name the new credential set and click **Generate**.
+1. Copy the Service Principal and Secret and save them for later use in [Source configuration](#source-configuration) below. 
 
 #### Copy log options
 
@@ -184,15 +191,15 @@ To configure a Proofpoint TAP Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Proofpoint TAP**.
-1. Enter a **Name **for the Source. The description is optional.
+1. Enter a **Name** for the Source. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Proofpoint Domain**. Provide a Proofpoint endpoint if different from the default, `tap-api-v2.proofpoint.com`.
-1. **API Secret**. Provide the Proofpoint API Secret for authenticating collection requests.
-1. **Service Principal**. Provide the Proofpoint Service Principal for authenticating collection requests.
+1. **API Secret**. Provide the Proofpoint API Secret for authenticating collection requests (copied in [Vendor configuration](#vendor-configuration) above).
+1. **Service Principal**. Provide the Proofpoint Service Principal for authenticating collection requests (copied in [Vendor configuration](#vendor-configuration) above).
 1. Select from the options **Copy** **logs for each recipient** and **Copy logs for each MessagePart**. With both options enabled, the integration creates and ingests four total events, for one original event. See [copy options](#copy-log-options) for details.
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Submit**.

@@ -7,7 +7,9 @@ description: Learn how to create a log mapping for structured messages.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This topic has instructions for creating a log mapping for structured messages using the Cloud SIEM UI. Log mapping is the process of telling Cloud SIEM how to build a Record from the key-value pairs extracted from messages. For more information about log mapping, and how it fits into the Record creation process, see the [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline) topic.
+This topic has instructions for creating a log mapping for structured messages using the Cloud SIEM UI. Log mapping is the process of telling Cloud SIEM how to build a Record from the key-value pairs extracted from messages. 
+
+For more information about log mapping, and how it fits into the Record creation process, see the [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline) topic. For a complete list of the standard log mappings, see [Mappings](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/mappings/README.md) the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
 
 ## About the log mapping process
 

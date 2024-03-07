@@ -216,26 +216,16 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 Now that you have set up collection for AWS EC2 metrics install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-To install the app:
 
-Locate and install the AWS EC2 app from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library** and complete the following fields.
-    * **App Name.** You can retain the existing name or enter a name of your choice for the app. 
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-3. Click **Add to Library**.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
+<AppInstall/>
 
 ## Viewing AWS EC2 dashboards
 
 ### Overview (CloudWatch Metrics)
 
-The **AWS EC2 Overview (CloudWatch Metrics) **dashboard provides at-a-glance information about a EC2 CPU, instance disk store, network and EBS volume usage along with EC2 instance health status.
+The **AWS EC2 Overview (CloudWatch Metrics)** dashboard provides at-a-glance information about a EC2 CPU, instance disk store, network and EBS volume usage along with EC2 instance health status.
 
 Use this dashboard to:
 
@@ -278,7 +268,7 @@ Use this dashboard to:
 
 ### CPU (CloudWatch Metrics)
 
-The **AWS EC2 CPU (CloudWatch Metrics) **dashboard provides detailed information about EC2 CPU usage like CPU utilization and CPU credits for burstable performance instances.
+The **AWS EC2 CPU (CloudWatch Metrics)** dashboard provides detailed information about EC2 CPU usage like CPU utilization and CPU credits for burstable performance instances.
 
 Use this dashboard to:
 * Monitor Average CPU utilization over time for EC2.

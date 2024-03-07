@@ -14,7 +14,7 @@ AWS Global Accelerator is a service in which you create accelerators to improve 
 
 For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html).
 
-## Log and Metric types
+## Log and metric types
 * [CloudWatch Metrics](https://docs.aws.amazon.com/global-accelerator/latest/dg/cloudwatch-monitoring.html)
 * [Flow Logs](https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/global-accelerator/latest/dg/logging-using-cloudtrail.html)

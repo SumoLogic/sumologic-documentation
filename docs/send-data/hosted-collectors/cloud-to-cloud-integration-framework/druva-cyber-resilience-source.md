@@ -37,9 +37,9 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 In this configuration, you will collect the Base URL from the Druva platform to authorize and authenticate the realize events using Druva Realize Events API. Follow the below steps to get the Base URL for user configuration.
 
 1. Sign in to the [Druva console](https://login.druva.com/login).
-1. Go to the **Administration** menu and click **Druva Cloud Settings** option.<br/> <img src={useBaseUrl('img/send-data/druva-console.png')} style={{border: '1px solid black'}} alt="druva-console" width="800" />
+1. Go to the **Administration** menu and click **Druva Cloud Settings** option.<br/> <img src={useBaseUrl('img/send-data/druva-console.png')} style={{border: '1px solid gray'}} alt="druva-console" width="800" />
 1. Select the **API Credentials** option.
-1. In the API Credentials page, copy and save the **API Endpoint URL**.<br/> <img src={useBaseUrl('img/send-data/druva-cloud-settings.png')} style={{border: '1px solid black'}} alt="druva-cloud-settings" width="800" />
+1. In the API Credentials page, copy and save the **API Endpoint URL**.<br/> <img src={useBaseUrl('img/send-data/druva-cloud-settings.png')} style={{border: '1px solid gray'}} alt="druva-cloud-settings" width="800" />
 
 ### Source configuration
 
@@ -59,6 +59,12 @@ To configure a Druva Cyber Resilience Source:
 1. **Client ID**. Enter your Client ID. To get Client ID, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials#createnewcreds).
 1. **Secret Key**. Enter your Secret Key. To get Secret Key, follow the instructions from [Create and Manage Druva API Credentials](https://docs.druva.com/Druva_Cloud_Platform/Integration_with_Druva_APIs/Create_and_Manage_API_Credentials#createnewcreds).
 1. When you are finished configuring the Source, click **Save**.
+
+## Metadata field
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemParser` | `/Parsers/Sumo/Druva/Druva Cyber Resilience` | Set when **Forward To SIEM** is checked. |
 
 ## JSON schema
 

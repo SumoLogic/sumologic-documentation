@@ -17,7 +17,7 @@ The app uses SQS logs and metrics for:
 * SQS operations using AWS CloudTrail. For details, [see here](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-logging-using-cloudtrail.html).
 
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -64,7 +64,7 @@ The app uses SQS logs and metrics for:
 }
 ```
 
-### Sample query
+### Sample queries
 
 **Messages Received (Metrics-based)**
 
@@ -176,20 +176,9 @@ In case you have a centralized collection of CloudTrail logs and are ingesting t
 
 Now that you have set up collection for Amazon SQS, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-To install the app:
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add Integration** and complete the following fields:
-   1. **Folder Name**. You can retain the existing name, or enter a name of your choice for the app.
-   2. **Select Folder Location for your App**. Select the location in the library (the default is the Personal folder in the library), or
-   3. Click **New Folder** to add a new folder.
-3. Click on **Next** and then exit to exit from the app catalog or back to edit name or location.
-
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 ## Viewing Amazon SQS dashboards
 

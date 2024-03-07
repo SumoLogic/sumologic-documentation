@@ -16,7 +16,7 @@ Sumo Logic APIs follow Representational State Transfer (REST) patterns and are o
 To view our main docs, click the link below corresponding to your deployment. If you're not sure, see [How to determine your endpoint](#which-endpoint-should-i-should-use).
 
 | Deployment | API Docs URL                       |
-|:------------|:----------------------------------|
+|:-----------|:----------------------------------|
 | AU         | https://api.au.sumologic.com/docs/  |
 | CA         | https://api.ca.sumologic.com/docs/  |
 | DE         | https://api.de.sumologic.com/docs/  |
@@ -27,50 +27,11 @@ To view our main docs, click the link below corresponding to your deployment. If
 | US1        | https://api.sumologic.com/docs/     |
 | US2        | https://api.us2.sumologic.com/docs/ |
 
-
-<!--
-#### Infrequent Data Tier
-
-<table>
-  <tr>
-   <td>API
-   </td>
-   <td>Documentation URL
-   </td>
-  </tr>
-  <tr>
-   <td>Log Search Estimated Usage
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/logSearchesEstimatedUsage">https://api.sumologic.com/docs/#tag/...EstimatedUsage</a>
-   </td>
-  </tr>
-</table>
-
-
-#### Log Search
-
-<table>
-  <tr>
-   <td>API
-   </td>
-   <td>Documentation URL
-   </td>
-  </tr>
-  <tr>
-   <td>Search Job
-   </td>
-   <td><a href="https://api.de.sumologic.com/docs/">/docs/api/search-job-API</a>
-   </td>
-  </tr>
-</table>
-
--->
-
 ## Authentication
 
 Sumo Logic supports the following options for API authentication:
 * Access ID and access key
-* Base64 encoded access id and access key
+* Base64-encoded access id and access key
 
 See [Access Keys](/docs/manage/security/access-keys) to learn how to generate an access key. Make sure to copy the key you create, because it is displayed only once.
 
@@ -122,137 +83,87 @@ Sumo Logic redirects your browser to the correct login URL and also redirects Co
 
 <table><small>
   <tr>
-   <td>Deployment
-   </td>
-   <td>Service Endpoint (login URL)
-   </td>
-   <td>API Endpoint
-   </td>
-   <td>Collection Endpoint
-   </td>
-   <td>Cloud Syslog Endpoint
-   </td>
-   <td>OpenTelmetry Collector Endpoint
-   </td>
+   <td>Deployment</td>
+   <td>Service Endpoint (login URL)</td>
+   <td>API Endpoint</td>
+   <td>Collection Endpoint</td>
+   <td>Cloud Syslog Endpoint</td>
+   <td>OpenTelemetry Collector Endpoint</td>
   </tr>
   <tr>
-   <td>AU
-   </td>
-   <td>https://service.au.sumologic.com
-   </td>
-   <td>https://api.au.sumologic.com/api/
-   </td>
-   <td>https://collectors.au.sumologic.com
-   </td>
-   <td>syslog.collection.au.sumologic.com
-   </td>
-   <td>https://open-collectors.au.sumologic.com
-   </td>
+   <td>AU</td>
+   <td>https://service.au.sumologic.com</td>
+   <td>https://api.au.sumologic.com/api/</td>
+   <td>https://collectors.au.sumologic.com</td>
+   <td>syslog.collection.au.sumologic.com</td>
+   <td>https://open-collectors.au.sumologic.com</td>
   </tr>
   <tr>
-   <td>CA
-   </td>
-   <td>https://service.ca.sumologic.com
-   </td>
-   <td>https://api.ca.sumologic.com/api/
-   </td>
-   <td>https://collectors.ca.sumologic.com
-   </td>
-   <td>syslog.collection.ca.sumologic.com
-   </td>
-   <td>https://open-collectors.ca.sumologic.com
-   </td>
+   <td>CA</td>
+   <td>https://service.ca.sumologic.com</td>
+   <td>https://api.ca.sumologic.com/api/</td>
+   <td>https://collectors.ca.sumologic.com</td>
+   <td>syslog.collection.ca.sumologic.com</td>
+   <td>https://open-collectors.ca.sumologic.com</td>
   </tr>
   <tr>
-   <td>DE
-   </td>
-   <td>https://service.de.sumologic.com
-   </td>
-   <td>https://api.de.sumologic.com/api/
-   </td>
-   <td>https://collectors.de.sumologic.com
-   </td>
-   <td>syslog.collection.de.sumologic.com
-   </td>
-   <td>https://open-collectors.de.sumologic.com
-   </td>
+   <td>DE</td>
+   <td>https://service.de.sumologic.com</td>
+   <td>https://api.de.sumologic.com/api/</td>
+   <td>https://collectors.de.sumologic.com</td>
+   <td>syslog.collection.de.sumologic.com</td>
+   <td>https://open-collectors.de.sumologic.com</td>
   </tr>
   <tr>
-   <td>EU
-   </td>
+   <td>EU</td>
    <td>https://service.eu.sumologic.com</td>
    <td>https://api.eu.sumologic.com/api/</td>
    <td>https://collectors.eu.sumologic.com<br/>
    https://endpoint1.collection.eu.sumologic.com</td>
-   <td>syslog.collection.eu.sumologic.com
-   </td>
-   <td>https://open-collectors.eu.sumologic.com
-   </td>
+   <td>syslog.collection.eu.sumologic.com</td>
+   <td>https://open-collectors.eu.sumologic.com</td>
   </tr>
   <tr>
-   <td>FED
-   </td>
-   <td>https://service.fed.sumologic.com
-   </td>
-   <td>https://api.fed.sumologic.com/api/
-   </td>
+   <td>FED</td>
+   <td>https://service.fed.sumologic.com</td>
+   <td>https://api.fed.sumologic.com/api/</td>
    <td>https://collectors.fed.sumologic.com</td>
    <td>syslog.collection.fed.sumologic.com</td>
    <td>https://open-collectors.fed.sumologic.com/</td>
   </tr>
   <tr>
-   <td>IN
-   </td>
-   <td>https://service.in.sumologic.com
-   </td>
-   <td>https://api.in.sumologic.com/api/
-   </td>
-   <td>https://collectors.in.sumologic.com
-   </td>
-   <td>syslog.collection.in.sumologic.com
-   </td>
-   <td>https://open-collectors.in.sumologic.com
-   </td>
+   <td>IN</td>
+   <td>https://service.in.sumologic.com</td>
+   <td>https://api.in.sumologic.com/api/</td>
+   <td>https://collectors.in.sumologic.com</td>
+   <td>syslog.collection.in.sumologic.com</td>
+   <td>https://open-collectors.in.sumologic.com</td>
   </tr>
   <tr>
-   <td>JP
-   </td>
-   <td>https://service.jp.sumologic.com
-   </td>
-   <td>https://api.jp.sumologic.com/api/
-   </td>
-   <td>https://collectors.jp.sumologic.com
-   </td>
-   <td>syslog.collection.jp.sumologic.com
-   </td>
-   <td>https://open-collectors.jp.sumologic.com
-   </td>
+   <td>JP</td>
+   <td>https://service.jp.sumologic.com</td>
+   <td>https://api.jp.sumologic.com/api/</td>
+   <td>https://collectors.jp.sumologic.com</td>
+   <td>syslog.collection.jp.sumologic.com</td>
+   <td>https://open-collectors.jp.sumologic.com</td>
   </tr>
   <tr>
-   <td>US1
-   </td>
-   <td>https://service.sumologic.com/
-   </td>
-   <td>https://api.sumologic.com/api/
-   </td>
+   <td>US1</td>
+   <td>https://service.sumologic.com/</td>
+   <td>https://api.sumologic.com/api/</td>
    <td>https://collectors.sumologic.com<br/>
    https://endpoint1.collection.sumologic.com<br/>
    https://endpoint2.collection.sumologic.com<br/>
    https://endpoint3.collection.sumologic.com<br/>
    https://endpoint4.collection.sumologic.com<br/>
    https://endpoint5.collection.sumologic.com</td>
-   <td>syslog.collection.us1.sumologic.com
-   </td>
-   <td>https://open-collectors.sumologic.com
-   </td>
+   <td>syslog.collection.us1.sumologic.com</td>
+   <td>https://open-collectors.sumologic.com</td>
   </tr>
   <tr>
-   <td>US2
-   </td>
-   <td>https://service.us2.sumologic.com
-   </td>
-   <td>https://api.us2.sumologic.com/api/
-   </td>
+   <td>US2</td>
+   <td>https://service.us2.sumologic.com</td>
+   <td>https://api.us2.sumologic.com/api/</td>
    <td>https://collectors.us2.sumologic.com<br/>
 https://endpoint1.collection.us2.sumologic.com<br/>
 https://endpoint2.collection.us2.sumologic.com<br/>
@@ -298,8 +209,9 @@ Sumo Logic's FedRAMP deployment is similar to our other deployments, such as US2
 
 ### AWS Region by Sumo Deployment
 
-{@import ../reuse/aws-region-by-sumo-deployment.md}
+import AwsRegion from '../reuse/aws-region-by-sumo-deployment.md';
 
+<AwsRegion/>
 
 ## Status Codes
 

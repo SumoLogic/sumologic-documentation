@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for AWS Cost Explorer lets you visualize, understand, and manage your AWS costs and usage over time.
 
-## Log Types
+## Log types
 
 The **AWS Cost Explorer** App uses the JSON formatted logs collected using **AWS Cost Explorer** source.
 
@@ -34,7 +34,7 @@ The **AWS Cost Explorer** App uses the JSON formatted logs collected using **AWS
 }
 ```
 
-### Sample Query
+### Sample queries
 
 The following query sample was taken from the **Cost by Region** panel on the **AWS Cost Explorer - Account** dashboard.
 
@@ -75,22 +75,17 @@ Create a Field Extraction Rule (FER) for AWS Cost Explorer Logs. Learn how to cr
 
 ## Configure an AWS Cost Explorer Source
 
-{@import ../../reuse/aws-cost-explorer.md}
+import AwsCost from '../../reuse/aws-cost-explorer.md';
+
+<AwsCost/>
 
 ## Installing the AWS Cost Explorer App
 
 Now that you have set up a collection for AWS Cost Explorer, install the Sumo Logic App to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-1. Locate and install the app you need from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click Preview Dashboards.
-2. From the App Catalog, search for AWS Cost Explorer and select the app.
-3. To install the app, click Add to Library and complete the following fields.
-   * App Name. You can retain the existing name, or enter a name of your choice for the app. 
-   * Advanced. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
-4. Click Add to Library.
+import AppInstall from '../../reuse/apps/app-install.md';
 
-Once an app is installed, it will appear in your Personal folder, or another folder that you've specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+<AppInstall/>
 
 ## Viewing AWS Cost Explorer Dashboards
 

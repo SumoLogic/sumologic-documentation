@@ -6,8 +6,9 @@
 
 const fs = require('fs')
 
-const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
-const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
+import {themes as prismThemes} from 'prism-react-renderer';
+const lightCodeTheme = prismThemes.github;
+const darkCodeTheme = prismThemes.dracula;
 
 const cidRedirects = JSON.parse(fs.readFileSync('cid-redirects.json').toString())
 
@@ -29,6 +30,14 @@ module.exports = {
   scripts: [
     {
       src: 'https://www.googletagmanager.com/gtag/js?id=G-CVH19TBVSL',
+      async: true,
+    },
+    {
+      src: 'https://www.googletagmanager.com/ns.html?id=GTM-58ZK7D',
+      async: true,
+    },
+    {
+      src: './src/helper/google-tag-manager.js',
       async: true,
     },
     {
@@ -56,8 +65,7 @@ module.exports = {
   },
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      '@docusaurus/preset-classic',
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.ts'),
@@ -68,13 +76,12 @@ module.exports = {
             //https://www.npmjs.com/package/remark-code-import
             require('remark-code-import'),
             //https://www.npmjs.com/package/remark-import-partial
-            // snippet support {@import ./my-name.md} relative filepath to md file
+            //snippet support (import Abc from '../reuse/abc.md'; <Abc/> relative filepath to .md file)
             require('remark-import-partial'),
           ],
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           admonitions: {
-            tag: ':::',
             keywords: [
               'sumo',
               'secondary',
@@ -85,18 +92,14 @@ module.exports = {
               'tip',
               'warning',
               'important',
-              'caution',
             ],
           },
         },
         gtag: {
-          trackingID: [
-            'G-CVH19TBVSL',
-            'UA-16579649-3',
-          ],
+          trackingID: 'G-CVH19TBVSL',
         },
-        googleAnalytics: {
-          trackingID: 'UA-16579649-3',
+        googleTagManager: {
+          containerId: 'GTM-58ZK7D',
         },
         blog: {
           blogTitle: 'Sumo Logic Service Release Notes',
@@ -117,7 +120,6 @@ module.exports = {
         theme: {
           customCss: [
             require.resolve('./src/css/sumo.scss'),
-            require.resolve('./src/css/sitesearch360.scss'),
           ],
         },
       }),
@@ -224,7 +226,6 @@ module.exports = {
     ],
   ],
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       docs: {
         sidebar: {
@@ -259,9 +260,10 @@ module.exports = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`],
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
     },
       navbar: {
+        hideOnScroll: true,
         logo: {
           alt: 'Sumo Logic logo',
           srcDark: 'img/sumo-logo.svg',

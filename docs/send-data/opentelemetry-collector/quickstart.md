@@ -23,7 +23,7 @@ In this quickstart, you'll run our OpenTelemetry collector directly on the machi
 
 We'll show a simple example of running a single collector, on a single machine, collecting a single metric. But of course, in the real world, you'll be dealing with hundreds or thousands of machines, each with as many metrics, and you'll be collecting much more nuanced information than simple system memory load.
 
-## Before you begin
+## Prerequisites
 
 * You'll need a Sumo Logic account. If you don't have one, [start a free trial](/docs/get-started/sign-up/#sign-up-through-sumo-logic).
 * Review [What's the difference between OpenTelemetry and the Sumo Logic Distribution for OpenTelemetry?](/docs/send-data/opentelemetry-collector/troubleshooting/#whats-the-difference-between-opentelemetry-and-the-sumo-logic-distribution-for-opentelemetry)
@@ -49,7 +49,8 @@ In this section, you'll create a new [installation token](/docs/manage/security/
 
 ### Step 3: Install the collector on the target machine
 
-<details><summary>What's a collector?</summary>
+<details>
+<summary>What's a collector?</summary>
 A collector is an executable program that collects and sends observability data. It typically runs directly on the node that is being monitored (this is the OTel agent).
 </details>
 
@@ -82,21 +83,22 @@ receivers:
     scrapers:
       memory:
 
-  exporters:
-    logging:
-      loglevel: debug
+exporters:
+  debug:
+    verbosity: detailed
 
-  service:
-    pipelines:
-      metrics:
-        receivers:
-          - hostmetrics
-        exporters:
-          - sumologic
-          - logging
+service:
+  pipelines:
+    metrics:
+      receivers:
+        - hostmetrics
+      exporters:
+        - sumologic
+        - debug
 ```
 
-<details><summary>What are <code>receivers</code>, <code>exporters</code>, and <code>services</code>?</summary>
+<details>
+<summary>What are <code>receivers</code>, <code>exporters</code>, and <code>services</code>?</summary>
 
 The [`receivers` section](https://opentelemetry.io/docs/collector/configuration/#receivers) describes the sources from which we will collect observability data. The receiver is a component within the collector that understands how to receive data from a particular source. This will have custom code for understanding various types of services to derive metrics from (like Nginx or PostgreSQL). In this case, we’re going to be using the `hostmetrics` receiver, which can collect CPU, disk, and memory information from the host machine that the collector is running on. In that stanza, we specify that we want the collector to scrape information once every 5 seconds, and that we want to run the `memory` scraper. To learn more about `hostmetrics` receiver, check out the docs.
 
@@ -130,7 +132,7 @@ At this point, the collector should be running and sending memory stats data int
 
 Then after that, every 5 seconds you should see a line like:
 
-`[...] MetricsExporter {"kind": "exporter", "data_type": "metrics", "name": "logging", "#metrics": 1} [...]`
+`[...] MetricsExporter {"kind": "exporter", "data_type": "metrics", "name": "debug", "#metrics": 1} [...]`
 
 If you see that kind of output, the collector has successfully set up a connection to Sumo Logic and is sending memory stats metrics as expected. Great! Now let’s go find those in Sumo.
 

@@ -1,8 +1,8 @@
 ---
 id: ingest-budget-v1
-title: Ingest Budget Management APIs
-sidebar_label: Ingest Budget
-description: The Ingest Budget Management API allows you to manage ingest budgets from HTTP endpoints.
+title: Ingest Budgets Management APIs
+sidebar_label: Ingest Budgets
+description: Ingest Budget Management APIs allow you to manage ingest budgets from HTTP endpoints.
 hide_table_of_contents: true
 ---
 
@@ -21,8 +21,9 @@ To manage ingest budgets, you must have the **Manage Ingest Budgets** [role capa
 | CloudFlex    | Enterprise      |
 | Credits      | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
+import ApiIntro from '../reuse/api-intro.md';
 
-{@import ../reuse/api-intro.md}
+<ApiIntro/>
 
 | Deployment | Documentation URL                                                |
 |:------------|:-------------------------------------|

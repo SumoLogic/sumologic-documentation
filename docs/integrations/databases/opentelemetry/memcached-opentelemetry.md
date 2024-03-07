@@ -2,7 +2,7 @@
 id: memcached-opentelemetry
 title: Memcached - OpenTelemetry Collector
 sidebar_label: Memcached - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for Memcached.
+description: Learn about the Sumo Logic OpenTelemetry app for Memcached.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The [Memcached](https://memcached.org/about) app is a logs based app that helps you monitor your Memcached clusters. Preconfigured dashboards provide insight into errors, warnings, and commands executed.
 
-The Sumo Logic App for Memcached is tested for Version: 1.4.15.
+The Sumo Logic app for Memcached is tested for Version: 1.4.15.
 
 Memcache logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
@@ -44,15 +44,39 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
     ```
 3. Save the file and restart Memcached.
 
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
+
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -62,11 +86,13 @@ The files are typically located in `/var/log/memcached/memcached.log`. If you're
 
 You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Memcached-OpenTelemetry/Memcached-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs to Sumo
+### Step 3: Send logs to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -109,34 +135,42 @@ You can add any custom fields which you want to tag along with the data ingested
 </TabItem>
 <TabItem value="Chef">
 
-{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
+
+<PuppetNoEnv/>
 
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 
-## Sample Log Message
+## Sample log messages
 
 ```
 Jun 23 07:35:01 node03 memcached: \
 <31 set GFcIh47CswfCnwk3JkmJ 0 0 4096
 ```
 
-## Sample Query
+## Sample queries
 
 Following is the query from Errors panel of Memcached app's overview Dashboard:
 
@@ -149,7 +183,7 @@ Following is the query from Errors panel of Memcached app's overview Dashboard:
 | sum(ERROR) as ERROR by _timeslice
 ```
 
-## Viewing Memcached Dashboards
+## Viewing Memcached dashboards
 
 ### Overview
 

@@ -102,7 +102,7 @@ You can organize your saved content into subfolders in your Personal Folder.
 1. Mouse over the icon next to a Library item you want to move to display the checkbox. <br/><img src={useBaseUrl('img/get-started/library/checkbox.png')} alt="checkbox.png" width="<insert-pixel-number>"/>
 1. Click the checkbox to select the item.
 1. Select other items as desired.
-1. After selecting the content you want to move, click the three-dot more options menu and select the **Move** option.<br/><img src={useBaseUrl('img/get-started/library/move-option.png')} alt="move-option.png" width="<insert-pixel-number>"/>
+1. After selecting the content you want to move, click the three-dot kebab menu and select the **Move** option.<br/><img src={useBaseUrl('img/get-started/library/move-option.png')} alt="move-option.png" width="<insert-pixel-number>"/>
 1. In the **Move Item** dialog, select the location you want to move the content to, and click **Move**.<br/><img src={useBaseUrl('img/get-started/library/select-folder.png')} alt="select-folder.png" width="<insert-pixel-number>"/>
 1. The item(s) will be moved and appear in the new location.
 
@@ -184,7 +184,7 @@ the following prefixes:
 * **type:dashboard** - Finds all Dashboards.
 * **type:dashboard keyword** - Lists all Dashboards that match the keyword.
 
-:::caution Limitations
+:::warning Limitations
 * Library Search is only supported in the **Personal** and **Org** folders.
 * Content type search is only supported in the **Personal** folder. 
 * Leading wildcards (`*ab`) are not supported.
@@ -225,7 +225,7 @@ There is a known issue that may cause Pinned Searches to be lost when Sumo Logic
 #### Pin and unpin a search
 
 1. Enter a query in the search box and click **Start**.
-1. Click the three-dot icon and click **Pin** from the provided options. <br/> <img src={useBaseUrl('img/get-started/library/pin-search-option.png')} alt="pin-search-option.png" width="325"/>
+1. Click the three-dot kebab icon and click **Pin** from the provided options. <br/> <img src={useBaseUrl('img/get-started/library/pin-search-option.png')} alt="pin-search-option.png" width="325"/>
 1. A message displays that tells you where you can find it later in the Library. The Pinned Search is named by default with the name of the search tab. <br/>![pinmessage.png](/img/get-started/library/pinmessage.png)
 1. To change the name of the pinned search, double-click the **Search** tab to activate the name field and enter a new name.
 1. To preserve the pinned search, follow the steps in Save a pinned search.
@@ -262,7 +262,7 @@ To rename a pinned search:
 
 To remove a search from the pinned search List:
 
-1. Hover over the search, then click the three-dots to the right of the name.
+1. Hover over the search, then click the three-dot kebab menu icon to the right of the name.
 1. Click **Unpin**.  <br/> ![unpin.png](/img/get-started/library/unpin.png)
 1. In the **Confirm** dialog, click **OK**.
 
@@ -308,7 +308,7 @@ In the **Library**, you can export content as JSON, including whole folders with
 
 The Export and Import functions are provided in order for you to transfer data immediately. The Sumo Logic JSON format may change without notice. There is no guarantee that you will be able to import the JSON in the future.
 
-:::caution limitations
+:::warning limitations
 * Recent Searches, Favorites, Scheduled Views, Partitions, Field Extraction Rules (FERs), and lookups are not supported.
 * For content that is shared, only the content is imported, not the Shared state. You can [share](/docs/dashboards) it again as necessary.
 * All content names must be unique within a folder in the Library.
@@ -322,7 +322,7 @@ The Export and Import functions are provided in order for you to transfer data i
 1. In the **Library**, do either:
     * To export an item, navigate to it, click the details icon for that item, and select **Export**.
     * To export a whole folder (with any subfolders), click the details icon for that folder select **Export**.
-1. In the **Export** **Item **dialog, do either:
+1. In the **Export** **Item** dialog, do either:
     * Click **Copy** to send it to the clipboard.
     * Click **Download** to download the content as a JSON file.
 1. Click **DONE** to close the window.
@@ -334,8 +334,8 @@ If you modify your JSON manually after export, we recommend that you use [JSONLi
 
 1. Navigate to the folder into which you want to import the library item.
 2. Select **Import** from the options menu.
-3. In the **Content Import **dialog, enter **Name.** The item name must be unique with a folder. **Check your JSON before importing to make sure that there is no organization-specific content.** All content names in an organization must be unique. If the name is not unique, you will get an error that prevents you from importing the content.
-4. Paste the JSON you copied from the** JSON** dialog to the clipboard, or from the JSON file you downloaded.
+3. In the **Content Import** dialog, enter **Name.** The item name must be unique with a folder. **Check your JSON before importing to make sure that there is no organization-specific content.** All content names in an organization must be unique. If the name is not unique, you will get an error that prevents you from importing the content.
+4. Paste the JSON you copied from the **JSON** dialog to the clipboard, or from the JSON file you downloaded.
 5. Click **Import**. The Import button is only available if you have pasted in a valid JSON.
 
 ## Library Filters

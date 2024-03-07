@@ -2,7 +2,7 @@
 id: postgresql-opentelemetry
 title: PostgreSQL - OpenTelemetry Collector
 sidebar_label: PostgreSQL - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for PostgreSQL.
+description: Learn about the Sumo Logic OpenTelemetry app for PostgreSQL.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 
 [PostgreSQL](https://www.postgresql.org/) is an open source object-relational database that extends the robustness SQL language to safely store and scale extensive data workloads.
 
-The Sumo Logic App for PostgreSQL includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors.The metrics allow you to monitor database resource utilization and throughput performance.
+The Sumo Logic app for PostgreSQL includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 
-This App supports PostgreSQL version 9.6+.
+This app supports PostgreSQL version 9.6+.
 
 We use the OpenTelemetry collector for PostgreSQL metric collection and for collecting PostgreSQL logs.
 
@@ -34,7 +34,13 @@ Following are the tags that will be created as part of PostgreSQL App install if
 
 ## Prerequisites
 
-[Here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/postgresqlreceiver#prerequisites) are the prerequisites for metric collection.
+### For metrics collection
+
+- This collection queries the PostgreSQL [statistics collector](https://www.postgresql.org/docs/9.6/monitoring-stats.html).
+- This receiver supports PostgreSQL version 9.6+.
+- The monitoring user must be granted **SELECT** on the `pg_stat_database`.
+
+### For logs collection
 
 Configure logging in PostgreSQL:
 
@@ -61,15 +67,39 @@ Configure logging in PostgreSQL:
   sudo service postgresql restart
   ```
 
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
+
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -86,11 +116,13 @@ You can add any custom fields which you want to tag along with the data ingested
 
 For linux platform - Click on **Download Environment Variables File** button to get the file with the password which is supposed to be set as environment variable.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Postgresql-OpenTelemetry/PostgreSQL-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -137,32 +169,40 @@ For linux platform - Click on **Download Environment Variables File** button to 
 </TabItem>
 <TabItem value="Chef">
 
-{@import ../../../reuse/apps/opentelemetry/chef-with-env.md}
+import ChefEnv from '../../../reuse/apps/opentelemetry/chef-with-env.md';
+
+<ChefEnv/>
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-{@import ../../../reuse/apps/opentelemetry/ansible-with-env.md}
+import AnsEnv from '../../../reuse/apps/opentelemetry/ansible-with-env.md';
+
+<AnsEnv/>
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-{@import ../../../reuse/apps/opentelemetry/puppet-with-env.md}
+import PuppetEnv from '../../../reuse/apps/opentelemetry/puppet-with-env.md';
+
+<PuppetEnv/>
 
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
-## Sample Logs
+<LogsOutro/>
+
+## Sample logs
 
 ```sql
 2021-04-01 08:30:20.002 UTC [11916] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample query is from the **PostgreSQL - Overview** dashboard, **Fatal Errors** panel.
 
@@ -181,14 +221,14 @@ This sample query is from the **PostgreSQL - Database Metrics** dashboard, **Num
 sumo.datasource=postgresql deployment.environment=* db.cluster.name=* metric=postgresql.backends postgresql.database.name=* db.node.name=* | count by postgresql.database.name | count
 ```
 
-## Sample Metrics
+## Sample metrics
 
 ```sql
 {"queryId":"A","_source":"postgresql-metric-otel","source":"idx_read","db.table":"company","_sourceName":"Http Input","host":"ip-172-31-91-203.ec2.internal","os.type":"linux","sumo.datasource":"postgresql","db.system":"postgresql","postgresql.database.name":"postgres","_sourceCategory":"Labs/postgresql-otel/metric","deployment.environment":"postgresqlEnvanema","_contentType":"Carbon2","metric":"postgresql.blocks_read","_collectorId":"000000000CD05E30","db.schema":"public","_sourceId":"000000004453F6D9","unit":"1","db.cluster.name":"postgresqlOtelClusteranema","postgresql.table.name":"public.company","_collector":"Labs - postgresql-otel","max":5,"min":0,"avg":1.92,"sum":115,"latest":0,"count":60}
 ```
 
 
-## Viewing PostgreSQL Dashboards
+## Viewing PostgreSQL dashboards
 
 ### Overview
 
@@ -243,7 +283,7 @@ If your database regularly performs more sequential scans over time, you can imp
 
 ### Security
 
-The **PostgreSQL - Security** dashboard provides insight into locations of incoming connections, failed authentications and top database errors and warnings.
+The **PostgreSQL - Security** dashboard provides insight into locations of incoming connections, failed authentications, and top database errors and warnings.
 
 Use this dashboard to:
 
@@ -254,7 +294,7 @@ Use this dashboard to:
 
 ### Error Logs
 
-The **PostgreSQL - Error Logs** dashboard provides insight into database error logs by specifically monitoring errors, user activity, database activity and database shutdown/start events.
+The **PostgreSQL - Error Logs** dashboard provides insight into database error logs by specifically monitoring errors, user activity, database activity, and database shutdown/start events.
 
 Use this dashboard to:
 

@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/kafka.png')} alt="icon" width="90"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
 
-The Sumo Logic App for Kafka is a unified logs and metrics app. The app helps you monitor the brokers, partition replicas and consumer groups components of Kafka messaging/streaming clusters. Pre-configured dashboards provide insights into the broker operations, topics, replication and error logs.
+The Sumo Logic app for Kafka is a unified logs and metrics app. The app helps you monitor the brokers, partition replicas, and consumer groups components of Kafka messaging/streaming clusters. Pre-configured dashboards provide insights into the broker operations, topics, replication, and error logs.
 
 We use the OpenTelemetry collector for Kafka metrics and logs collection.
 
@@ -19,11 +19,11 @@ The diagram below illustrates the components of the Kafka collection for each Ka
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Schematics.png' alt="Schematics" />
 
-This App has been tested with following Kafka versions: 2.6.0, 2.7.0 and 3.1.2.
+This app has been tested with following Kafka versions: 2.6.0, 2.7.0, and 3.1.2.
 
-## Log Types and Metrics
+## Log types and Metrics
 
-The Sumo Logic App for Kafka assumes:
+The Sumo Logic app for Kafka assumes:
 
 - Kafka app supports the default logs format.
 - For a list of metrics that are collected and used by the app, see [Kafka Metrics](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/kafkametricsreceiver/documentation.md).
@@ -40,17 +40,53 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ## Prerequisites
 
+### For metrics collection
+
+Kafka metrics [receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/kafkametricsreceiver) collects Kafka metrics (brokers, topics, partitions, and consumer groups) from the Kafka server. This app has been tested with following Kafka versions: 2.6.0, 2.7.0, and 3.1.2.
+
+### For logs collection
+
 Configure logging in Kafka: By default, Kafka logs (`server.log` and `controller.log`) are stored in the directory called `/opt/Kafka/kafka_<VERSION>/logs`. Make a note of this logs directory.
+
+Ensure that the otelcol has adequate permissions to access all log file paths. Execute the following command:
+
+```
+sudo setfacl -R -m d:u:otelcol-sumo:r-x,u:otelcol-sumo:r-x,g:otelcol-sumo:r-x <PATH_TO_LOG_FILE>
+```
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 
-{@import ../../../reuse/apps/opentelemetry/config-app-install.md}
+import ConfigAppInstall from '../../../reuse/apps/opentelemetry/config-app-install.md';
+
+<ConfigAppInstall/>
 
 ### Step 1: Set up OpenTelemetry Collector
 
-{@import ../../../reuse/apps/opentelemetry/set-up-collector.md}
+import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<SetupColl/>
+
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -65,11 +101,13 @@ Below is the input required:
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Kafka-OpenTelemetry/Kafka-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs and metrics to Sumo
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-intro.md}
+import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
+
+<LogsIntro/>
 
 <Tabs
   className="unique-tabs"
@@ -112,51 +150,42 @@ Click on the **Download YAML File** button to get the yaml file.
 </TabItem>
 <TabItem value="Chef">
 
-{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
+import ChefNoEnv from '../../../reuse/apps/opentelemetry/chef-without-env.md';
+
+<ChefNoEnv/>
 
 </TabItem>
 
 <TabItem value="Ansible">
 
-{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
+import AnsibleNoEnv from '../../../reuse/apps/opentelemetry/ansible-without-env.md';
+
+<AnsibleNoEnv/>
 
 </TabItem>
 
 <TabItem value="Puppet">
 
-{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+import PuppetNoEnv from '../../../reuse/apps/opentelemetry/puppet-without-env.md';
 
-</TabItem>
-<TabItem value="Chef">
-
-{@import ../../../reuse/apps/opentelemetry/chef-without-env.md}
-
-</TabItem>
-
-<TabItem value="Ansible">
-
-{@import ../../../reuse/apps/opentelemetry/ansible-without-env.md}
-
-</TabItem>
-
-<TabItem value="Puppet">
-
-{@import ../../../reuse/apps/opentelemetry/puppet-without-env.md}
+<PuppetNoEnv/>
 
 </TabItem>
 </Tabs>
 
-{@import ../../../reuse/apps/opentelemetry/send-logs-outro.md}
+import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
+
+<LogsOutro/>
 
 
-## Sample Log Messages
+## Sample log messages
 
 ```
 [2021-03-10 20:12:28,742] INFO [KafkaServer id=0]
 started (kafka.server.KafkaServer)
 ```
 
-## Sample Queries
+## Sample queries
 
 ### Log query
 

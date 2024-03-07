@@ -49,7 +49,7 @@ In this step, you configure an HTTP Source that will receive the inventory data 
 
 ## Step 2: Create a Webhook connection
 
-In this step you create a WebHook that points to the HTTP source.
+In this step, you create a webhook that points to the HTTP source.
 
 1. Go to **Manage Data > Monitoring** and select the **Connections** tab. <br/><img src={useBaseUrl('img/cse/connections.png')} alt="connections.png" />
 2. Click the plus sign (+) icon.
@@ -93,88 +93,60 @@ The table below lists attributes most typically used in host inventory records. 
 
 <table>
   <tr>
-   <td><strong>Inventory attribute</strong>
-   </td>
-   <td><strong>Notes</strong>
-   </td>
+   <td><strong>Inventory attribute</strong>   </td>
+   <td><strong>Notes</strong>   </td>
   </tr>
   <tr>
-   <td><code>computername</code>
-   </td>
-   <td>
-   </td>
+   <td><code>computername</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>deviceUniqueId</code>
-   </td>
-   <td>A unique ID that distinguishes an inventory item from other inventory items from the same source.
-   </td>
+   <td><code>deviceUniqueId</code>   </td>
+   <td>A unique ID that distinguishes an inventory item from other inventory items from the same source.   </td>
   </tr>
   <tr>
-   <td><code>groups</code>
-   </td>
-   <td>The directory service (for example, Azure AD) group that the inventory item belongs to.
-   </td>
+   <td><code>groups</code>   </td>
+   <td>The directory service (for example, Azure AD) group that the inventory item belongs to. </td>
   </tr>
   <tr>
-   <td><code>hostname</code>
-   </td>
-   <td>
-   </td>
+   <td><code>hostname</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>ip</code>
-   </td>
-   <td>
-   </td>
+   <td><code>ip</code> </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>location</code>
-   </td>
-   <td>
-   </td>
+   <td><code>location</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>mac</code>
-   </td>
-   <td>
-   </td>
+   <td><code>mac</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>natIp</code>
-   </td>
-   <td>
-   </td>
+   <td><code>natIp</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>normalizedComputerName</code>
-   </td>
-   <td>
-   </td>
+   <td><code>normalizedComputerName</code> </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>normalizedHostname</code>
-   </td>
-   <td>
-   </td>
+   <td><code>normalizedHostname</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>os</code>
-   </td>
-   <td>
-   </td>
+   <td><code>os</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>osVersion</code>
-   </td>
-   <td>
-   </td>
+   <td><code>osVersion</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>uniqueID</code>
-   </td>
-   <td>A unique ID that distinguishes an inventory item from all other inventory items from all inventory sources.
-   </td>
+   <td><code>uniqueID</code>   </td>
+   <td>A unique ID that distinguishes an inventory item from all other inventory items from all inventory sources.   </td>
   </tr>
 </table>
 
@@ -187,64 +159,44 @@ The table below lists attributes most typically used in user inventory records. 
 
 <table>
   <tr>
-   <td><strong>Inventory attribute</strong>
-   </td>
-   <td><strong>Notes</strong>
-   </td>
+   <td><strong>Inventory attribute</strong>   </td>
+   <td><strong>Notes</strong>   </td>
   </tr>
   <tr>
-   <td><code>department</code>
-   </td>
-   <td>
-   </td>
+   <td><code>department</code> </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>emails</code>
-   </td>
-   <td>
-   </td>
+   <td><code>emails</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>givenName</code>
-   </td>
-   <td>
-   </td>
+   <td><code>givenName</code> </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>groups </code>
-   </td>
-   <td>The directory service (for example, Azure AD) group that the inventory item belongs to.
-   </td>
+   <td><code>groups </code>   </td>
+   <td>The directory service (for example, Azure AD) group that the inventory item belongs to.   </td>
   </tr>
   <tr>
-   <td><code>lastName</code>
-   </td>
-   <td>
-   </td>
+   <td><code>lastName</code>   </td>
+   <td></td>
   </tr>
   <tr>
-   <td><code>middleName</code>
-   </td>
-   <td>
-   </td>
+   <td><code>middleName</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>uniqueID</code>
-   </td>
-   <td>A unique ID that distinguishes an inventory item from all other inventory items from all inventory sources.
-   </td>
+   <td><code>uniqueID</code> </td>
+   <td>A unique ID that distinguishes an inventory item from all other inventory items from all inventory sources.   </td>
   </tr>
   <tr>
-   <td><code>userId</code>
-   </td>
-   <td>
-   </td>
+   <td><code>userId</code>   </td>
+   <td>   </td>
   </tr>
   <tr>
-   <td><code>username</code>
-   </td>
-   <td>
-   </td>
+   <td><code>username</code>   </td>
+   <td>   </td>
   </tr>
 </table>
 
@@ -255,7 +207,7 @@ The table below lists attributes most typically used in user inventory records. 
 
 ### Scheduled search
 
- The search below extracts inventory fields from JAMF logs.
+The search below extracts inventory fields from JAMF logs.
 
 ```json
 _sourceCategory="security/jamf" and _collector="Jamf"
@@ -273,11 +225,7 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 
 **Notes**
 
-
-
 * `_collector` and `_sourceCategory` and specify the collector that ingests the inventory data and the source category assigned it. In your own search, you can use these and other [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields to scope your search.
-
-
 
 ### Webhook payload for User Entity
 
@@ -316,7 +264,6 @@ _sourceCategory="security/jamf" and _collector="Jamf"
 
 
 **Notes**
-
 
 * The `source` key is an arbitrary string that identifies the source of the inventory data.
 * The `customInventory` key identifies the payload as custom inventory data. You must include this in your webhook payload.
