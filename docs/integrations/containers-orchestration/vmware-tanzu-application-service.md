@@ -100,9 +100,9 @@ Once the nozzle is set up, you can create [dashboards](/docs/dashboards/) and [a
 To troubleshoot the Sumo Logic Nozzle integration with VMware Tanzu:
 1. Log in to **Apps Manager**.
 1. Navigate to **Home** > **ORG** `<sumo-logic-nozzle-org>` > **SPACE** `<sumo-logic-nozzle-space>`.
-2. Click on **Name**. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/Troubleshooting.png')} alt="Troubleshooting" style={{border: '1px solid gray'}} width="800" />
-3. The app page appears. Click **Logs**. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/TroubleshootingApp.png')} alt="Troubleshooting app" style={{border: '1px solid gray'}} width="800" />
-4. On the **Logs** page it will show you logs related to the Sumo Logic Nozzle integration. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/TroubleshootingLogs.png')} alt="Troubleshooting logs" style={{border: '1px solid gray'}} width="800" />
+1. Click on **Name**. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/Troubleshooting.png')} alt="Troubleshooting" style={{border: '1px solid gray'}} width="800" />
+1. The app page appears. Click **Logs**. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/TroubleshootingApp.png')} alt="Troubleshooting app" style={{border: '1px solid gray'}} width="800" />
+1. On the **Logs** page it will show you logs related to the Sumo Logic Nozzle integration. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/TroubleshootingLogs.png')} alt="Troubleshooting logs" style={{border: '1px solid gray'}} width="800" />
 
 ## More information
 
