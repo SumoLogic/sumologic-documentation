@@ -397,7 +397,7 @@ curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collect
 <summary><span className="api post">POST</span><code>/collectors</code></summary>
 <p/>
 
-Use the POST method with a JSON file to create a new Hosted Collector. The required parameters can be referenced in the [Response fields](#Response_fields) table above. Note that "id" field should be omitted when creating a new Hosted Collector.
+Use the POST method with a JSON file to create a new Hosted Collector. The required parameters can be referenced in the [Response fields](#response-fields) table above. Note that "id" field should be omitted when creating a new Hosted Collector.
 
 This method can only be used to create Hosted Collectors. You must [install a Collector manually](/docs/send-data/installed-collectors/sources) to create an Installed Collector.
 
