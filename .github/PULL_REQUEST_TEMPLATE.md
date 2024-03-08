@@ -2,7 +2,6 @@
 
 This pull request... <!-- brief description here -->
 
-<!-- Enter the GitHub Issue number or the Jira ticket number (e.g., SUMO-12345) -->
 
 ## Select the type of change
 <!-- What types of changes does your code introduce? Select the checkbox after clicking "Create pull request" button. -->
