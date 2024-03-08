@@ -12,6 +12,6 @@ This pull request... <!-- brief description here -->
 - [ ] New Content - New features, sections, pages, tutorials
 - [ ] Site and Tools - .clabot, version updates, maintenance, dependencies, new packages for the site (Docusaurus, Gatsby, React, etc.)
 
-## Asana ticket (if applicable)
+## Ticket (if applicable)
 
 <!-- populates in this space automatically when you add this PR link to Asana ticket -->
