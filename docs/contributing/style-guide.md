@@ -5,6 +5,35 @@ sidebar_label: Style Guide
 description: A guide to styling and formatting Sumo Logic Docs.
 ---
 
+
+:::note
+This is a note.
+:::
+
+:::tip
+This is a tip about a cool feature option.
+:::
+
+:::important
+This is some vital information.
+:::
+
+:::danger
+This action is dangerous and could result in data loss.
+:::
+
+:::caution
+This action is dangerous and could result in data loss.
+:::
+
+:::warning
+This could note important and problematic information.
+:::
+
+:::sumo Best Practice
+Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
+:::
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page describes how to author Sumo Docs, which are written in GitHub-flavored markdown.
@@ -1053,7 +1082,7 @@ Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/ma
 * To add a dedicated sidebar, use the following format:
    <details>
    <summary>Example: adding a dedicated sidebar for a guide</summary>
-   
+
    ```js title="sidebars.ts"
    module.exports = {
      sectionName: [
