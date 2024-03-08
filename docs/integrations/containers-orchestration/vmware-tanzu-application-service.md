@@ -95,11 +95,6 @@ This section describes how to use Sumo Logic Nozzle for VMware Tanzu. After inst
 
 Once the nozzle is set up, you can create [dashboards](/docs/dashboards/) and [alerts](/docs/alerts/) from the data.
 
-:::note
-- For detailed information about changelog, refer to the [Changelog](https://github.com/SumoLogic/sumologic-cloudfoundry-nozzle/blob/master/CHANGELOG.md) file.
-- For support, contact [VMware Tanzu Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or [Sumo Logic Support](https://support.sumologic.com/).
-:::
-
 ## Troubleshooting
 
 To troubleshoot the Sumo Logic Nozzle integration with VMware Tanzu:
@@ -108,3 +103,8 @@ To troubleshoot the Sumo Logic Nozzle integration with VMware Tanzu:
 2. Click on **Name**. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/Troubleshooting.png')} alt="Troubleshooting" style={{border: '1px solid gray'}} width="800" />
 3. The app page appears. Click **Logs**. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/TroubleshootingApp.png')} alt="Troubleshooting app" style={{border: '1px solid gray'}} width="800" />
 4. On the **Logs** page it will show you logs related to the Sumo Logic Nozzle integration. <br/><img src={useBaseUrl('img/integrations/containers-orchestration/TroubleshootingLogs.png')} alt="Troubleshooting logs" style={{border: '1px solid gray'}} width="800" />
+
+## More information
+
+- For detailed version information, refer to the [changelog](https://github.com/SumoLogic/sumologic-cloudfoundry-nozzle/blob/master/CHANGELOG.md) file.
+- For support, contact [VMware Tanzu Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or [Sumo Logic Support](https://support.sumologic.com).
