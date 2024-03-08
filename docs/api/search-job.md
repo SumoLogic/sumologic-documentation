@@ -297,191 +297,15 @@ The following figure shows the process flow for search jobs.
 </table>
 
 
-
-## POST Methods
-
-### Create a search job
-
-To create a search job (step 1 in the [process flow](#process-flow)), send a JSON request to the search job endpoint. JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
-
-**Method**: `POST` <br/>
-**Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs`
-
-<details>
-<summary>Which API endpoint should I use?</summary>
-
-<ApiEndpoints/>
-
-</details>
-
-#### Headers
-
-<table>
-  <tr>
-   <td><strong>Header</strong></td>
-   <td><strong>Value</strong></td>
-  </tr>
-  <tr>
-   <td>Content-Type</td>
-   <td>application/json</td>
-  </tr>
-  <tr>
-   <td>Accept</td>
-   <td>application/json</td>
-  </tr>
-</table>
-
-
-#### Request parameters
-
-<table>
-  <tr>
-   <td><strong>Parameter</strong></td>
-   <td><strong>Type</strong></td>
-   <td><strong>Required</strong></td>
-   <td><strong>Description</strong></td>
-  </tr>
-  <tr>
-   <td>query</td>
-   <td>String </td>
-   <td>Yes</td>
-   <td>The actual search expression. Make sure your query is valid JSON format following <a href="https://tools.ietf.org/html/rfc8259">RFC 8259</a>, you may need to escape certain characters.</td>
-  </tr>
-  <tr>
-   <td>from </td>
-   <td>String</td>
-   <td>Yes</td>
-   <td>The <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601</a> date and time of the time range to start the search. <p>For example, to specify July 16, 2017, use the form <code>YYYY-MM-DDTHH:mm:ss</code>, or <code>2017-07-16T00:00:00</code>.</p>
-<p>Can also be milliseconds since epoch.</p></td>
-  </tr>
-  <tr>
-   <td>to</td>
-   <td>String</td>
-   <td>Yes</td>
-   <td>The <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601</a> date and time of the time range to end the search.<p>For example, to specify July 26, 2017, use the form <code>YYYY-MM-DDTHH:mm:ss</code>, or <code>2017-07-26T00:00:00</code>.</p><p>Can also be milliseconds since epoch.</p></td>
-  </tr>
-  <tr>
-   <td>timeZone </td>
-   <td>String </td>
-   <td>Yes</td>
-   <td>The time zone if from/to is not in milliseconds.  See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes. <br/><br/><p><strong>Note</strong> Alternatively, you can use the parameter timezone instead of timeZone.</p></td>
-  </tr>
-  <tr>
-   <td>byReceiptTime</td>
-   <td>Boolean</td>
-   <td>No </td>
-   <td>Define as <code>true</code> to run the search using<a href="/docs/search/get-started-with-search/build-search/use-receipt-time"> receipt time</a>. By default, searches do not run by receipt time. </td>
-  </tr>
-  <tr>
-   <td>autoParsingMode </td>
-   <td>String </td>
-   <td>No</td>
-   <td>This enables <a href="/docs/search/get-started-with-search/build-search/dynamic-parsing">dynamic parsing</a>. Values are: <br/><br/><code>AutoParse</code> - Sumo Logic will perform field extraction on JSON log messages when you run a search.<br/><br/><code>Manual</code> - (Default value) Sumo Logic will not autoparse JSON logs at search time. <br/><br/><strong>Note</strong> Previously, the supported values for this parameter were <code>performance</code>, <code>intelligent</code>, and <code>verbose</code>. These values still function, but are deprecated. Sumo Logic recommends the use of the new supported values: <code>AutoParse</code> and <code>Manual</code>. </td>
-  </tr>
-</table>
-
-
-
-#### Status codes
-
-<table>
-  <tr>
-   <td><strong>Code</strong> </td>
-   <td><strong>Text</strong></td>
-   <td><strong>Description</strong></td>
-  </tr>
-  <tr>
-   <td>202</td>
-   <td>Accepted</td>
-   <td>The search job has been successfully created.</td>
-  </tr>
-  <tr>
-   <td>400</td>
-   <td>Bad Request</td>
-   <td>Generic request error by the client. </td>
-  </tr>
-  <tr>
-   <td>415</td>
-   <td>Unsupported Media Type</td>
-   <td>Content-Type wasn't set to application/json.</td>
-  </tr>
-</table>
-
-
-
-#### Response headers
-
-<table>
-  <tr>
-   <td>Header</td>
-   <td>Value</td>
-  </tr>
-  <tr>
-   <td>Location</td>
-   <td> <code>https://api.sumologic.com/api/v1/search/jobs/&#60;SEARCH_JOB_ID&#62;</code></td>
-  </tr>
-</table>
-
-
-
-#### Result
-
-A JSON document containing the ID of the newly created search job. The ID is a string to use for all API interactions relating to the search job.
-
-Example error response:
-
-```json
-{
-  "status" : 400,
-  "id" : "IUUQI-DGH5I-TJ045",
-  "code" : "searchjob.invalid.timestamp.from",
-  "message" : "The 'from' field contains an invalid time."
-}
-```
-
-#### Sample session
-
-The following sample session uses cURL. The Search Job API requires cookies to be honored by the client. Use `curl -b cookies.txt -c cookies.txt` options to receive, store, and send back the cookies set by the API.
-
-```bash
-curl -b cookies.txt -c cookies.txt -H 'Content-type: application/json'
--H 'Accept: application/json' -X POST -T createSearchJob.json
---user <ACCESSID>:<ACCESSKEY> https://api.sumologic.com/api/v1/search/jobs
-```
-
-<details>
-<summary>Which API endpoint should I use?</summary>
-
-<ApiEndpoints/>
-
-</details>
-
-The **createSearchJob.json** file looks like this:
-
-
-```json
-{
-  "query": "| count _sourceCategory",
-  "from": "2019-05-03T12:00:00",
-  "to": "2019-05-03T12:05:00",
-  "timeZone": "IST",
-  "byReceiptTime": true
-}
-```
-
-The response from Sumo Logic returns the Search Job ID as the “Location” header in the format: `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>`.
-
-
-
-
 ## GET Methods
 
 ### Get the current Search Job status
 
-Use the search job ID to obtain the current status of a search job (step 4 in the process flow).
+<details>
+<summary><span className="api get">GET</span><code>/v1/search/jobs/&#123;SEARCH_JOB_ID&#125;</code></summary>
+<p/>
 
-**Method:** `GET` <br/>
-**Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>`
+Use the search job ID to obtain the current status of a search job (step 4 in the process flow).
 
 <details>
 <summary>Which API endpoint should I use?</summary>
@@ -490,9 +314,7 @@ Use the search job ID to obtain the current status of a search job (step 4 in th
 
 </details>
 
-
 #### Request parameters
-
 
 <table>
   <tr>
@@ -509,12 +331,9 @@ Use the search job ID to obtain the current status of a search job (step 4 in th
   </tr>
 </table>
 
-
-
 #### Result
 
 The result is a JSON document containing the search job state, the number of messages found so far, the number of records produced so far, any pending warnings and errors, and any histogram buckets so far.
-
 
 #### Sample session
 
@@ -590,13 +409,16 @@ The histogram buckets correspond to the histogram display in the Sumo Logic inte
 
 Fields are not returned in the specified order and are all lowercase.
 
+</details>
 
+---
 ### Paging through the messages found by a search job
 
-The search job status informs the user about the number of found messages. The messages can be requested using a paging API call (step 6 in the process flow). Messages are always ordered by the latest `_messageTime` value.
+<details>
+<summary><span className="api get">GET</span><code>/v1/search/jobs/&#123;SEARCH_JOB_ID&#125;/messages?offset=&#123;OFFSET&#125;&limit=&#123;LIMIT&#125;</code></summary>
+<p/>
 
-**Method:** `GET`  <br/>
-**Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>/messages?offset=<OFFSET>&limit=<LIMIT>`
+The search job status informs the user about the number of found messages. The messages can be requested using a paging API call (step 6 in the process flow). Messages are always ordered by the latest `_messageTime` value.
 
 <details>
 
@@ -794,13 +616,16 @@ For example, the field `_raw` contains the raw collected log message.
 
 The metadata fields `_sourceHost`, `_sourceName`, and `_sourceCategory`, which are also featured in Sumo Logic, are available here.
 
+</details>
 
+---
 ### Page through the records found by a Search Job
 
-The search job status informs the user as to the number of produced records, if the query performs an aggregation. Those records can be requested using a paging API call (step 6 in the process flow), just as the message can be requested.
+<details>
+<summary><span className="api get">GET</span><code>/v1/search/jobs/&#123;SEARCH_JOB_ID&#125;/records?offset=&#123;OFFSET]&limit=&#123;LIMIT&#125;</code></summary>
+<p/>
 
-**Method: `GET`** <br/>
-**Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>/records?offset=<OFFSET>&limit=<LIMIT>`
+The search job status informs the user as to the number of produced records, if the query performs an aggregation. Those records can be requested using a paging API call (step 6 in the process flow), just as the message can be requested.
 
 <details>
 <summary>Which API endpoint should I use?</summary>
@@ -810,7 +635,6 @@ The search job status informs the user as to the number of produced records, if 
 </details>
 
 #### Request parameters
-
 
 <table>
   <tr>
@@ -838,8 +662,6 @@ The search job status informs the user as to the number of produced records, if 
    <td>The number of records starting at offset to return. The maximum value for limit is 10,000 records. </td>
   </tr>
 </table>
-
-
 
 #### Sample session
 
@@ -877,17 +699,195 @@ This is the formatted result document:
 }
 ```
 
-
 The returned document is similar to the one returned for the message paging API. The schema of the records returned is described by the list of fields as part of the fields element. The records themselves are a list of maps.
+
+</details>
+
+## POST Methods
+
+### Create a search job
+
+<details>
+<summary><span className="api post">POST</span><code>/v1/search/jobs</code></summary>
+<p/>
+
+To create a search job (step 1 in the [process flow](#process-flow)), send a JSON request to the search job endpoint. JSON files need to be UTF-8 encoded following [RFC 8259](https://tools.ietf.org/html/rfc8259).
+
+<details>
+<summary>Which API endpoint should I use?</summary>
+
+<ApiEndpoints/>
+
+</details>
+
+#### Headers
+
+<table>
+  <tr>
+   <td><strong>Header</strong></td>
+   <td><strong>Value</strong></td>
+  </tr>
+  <tr>
+   <td>Content-Type</td>
+   <td>application/json</td>
+  </tr>
+  <tr>
+   <td>Accept</td>
+   <td>application/json</td>
+  </tr>
+</table>
+
+
+#### Request parameters
+
+<table>
+  <tr>
+   <td><strong>Parameter</strong></td>
+   <td><strong>Type</strong></td>
+   <td><strong>Required</strong></td>
+   <td><strong>Description</strong></td>
+  </tr>
+  <tr>
+   <td>query</td>
+   <td>String </td>
+   <td>Yes</td>
+   <td>The actual search expression. Make sure your query is valid JSON format following <a href="https://tools.ietf.org/html/rfc8259">RFC 8259</a>, you may need to escape certain characters.</td>
+  </tr>
+  <tr>
+   <td>from </td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>The <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601</a> date and time of the time range to start the search. <p>For example, to specify July 16, 2017, use the form <code>YYYY-MM-DDTHH:mm:ss</code>, or <code>2017-07-16T00:00:00</code>.</p>
+<p>Can also be milliseconds since epoch.</p></td>
+  </tr>
+  <tr>
+   <td>to</td>
+   <td>String</td>
+   <td>Yes</td>
+   <td>The <a href="https://www.w3.org/TR/NOTE-datetime">ISO 8601</a> date and time of the time range to end the search.<p>For example, to specify July 26, 2017, use the form <code>YYYY-MM-DDTHH:mm:ss</code>, or <code>2017-07-26T00:00:00</code>.</p><p>Can also be milliseconds since epoch.</p></td>
+  </tr>
+  <tr>
+   <td>timeZone </td>
+   <td>String </td>
+   <td>Yes</td>
+   <td>The time zone if from/to is not in milliseconds.  See this <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia article</a> for a list of time zone codes. <br/><br/><p><strong>Note</strong> Alternatively, you can use the parameter timezone instead of timeZone.</p></td>
+  </tr>
+  <tr>
+   <td>byReceiptTime</td>
+   <td>Boolean</td>
+   <td>No </td>
+   <td>Define as <code>true</code> to run the search using<a href="/docs/search/get-started-with-search/build-search/use-receipt-time"> receipt time</a>. By default, searches do not run by receipt time. </td>
+  </tr>
+  <tr>
+   <td>autoParsingMode </td>
+   <td>String </td>
+   <td>No</td>
+   <td>This enables <a href="/docs/search/get-started-with-search/build-search/dynamic-parsing">dynamic parsing</a>. Values are: <br/><br/><code>AutoParse</code> - Sumo Logic will perform field extraction on JSON log messages when you run a search.<br/><br/><code>Manual</code> - (Default value) Sumo Logic will not autoparse JSON logs at search time. <br/><br/><strong>Note</strong> Previously, the supported values for this parameter were <code>performance</code>, <code>intelligent</code>, and <code>verbose</code>. These values still function, but are deprecated. Sumo Logic recommends the use of the new supported values: <code>AutoParse</code> and <code>Manual</code>. </td>
+  </tr>
+</table>
+
+
+
+#### Status codes
+
+<table>
+  <tr>
+   <td><strong>Code</strong> </td>
+   <td><strong>Text</strong></td>
+   <td><strong>Description</strong></td>
+  </tr>
+  <tr>
+   <td>202</td>
+   <td>Accepted</td>
+   <td>The search job has been successfully created.</td>
+  </tr>
+  <tr>
+   <td>400</td>
+   <td>Bad Request</td>
+   <td>Generic request error by the client. </td>
+  </tr>
+  <tr>
+   <td>415</td>
+   <td>Unsupported Media Type</td>
+   <td>Content-Type wasn't set to application/json.</td>
+  </tr>
+</table>
+
+
+
+#### Response headers
+
+<table>
+  <tr>
+   <td>Header</td>
+   <td>Value</td>
+  </tr>
+  <tr>
+   <td>Location</td>
+   <td> <code>https://api.sumologic.com/api/v1/search/jobs/&#60;SEARCH_JOB_ID&#62;</code></td>
+  </tr>
+</table>
+
+
+
+#### Result
+
+A JSON document containing the ID of the newly created search job. The ID is a string to use for all API interactions relating to the search job.
+
+Example error response:
+
+```json
+{
+  "status" : 400,
+  "id" : "IUUQI-DGH5I-TJ045",
+  "code" : "searchjob.invalid.timestamp.from",
+  "message" : "The 'from' field contains an invalid time."
+}
+```
+
+#### Sample session
+
+The following sample session uses cURL. The Search Job API requires cookies to be honored by the client. Use `curl -b cookies.txt -c cookies.txt` options to receive, store, and send back the cookies set by the API.
+
+```bash
+curl -b cookies.txt -c cookies.txt -H 'Content-type: application/json'
+-H 'Accept: application/json' -X POST -T createSearchJob.json
+--user <ACCESSID>:<ACCESSKEY> https://api.sumologic.com/api/v1/search/jobs
+```
+
+<details>
+<summary>Which API endpoint should I use?</summary>
+
+<ApiEndpoints/>
+
+</details>
+
+The **createSearchJob.json** file looks like this:
+
+```json
+{
+  "query": "| count _sourceCategory",
+  "from": "2019-05-03T12:00:00",
+  "to": "2019-05-03T12:05:00",
+  "timeZone": "IST",
+  "byReceiptTime": true
+}
+```
+
+The response from Sumo Logic returns the Search Job ID as the “Location” header in the format: `https://api.sumologic.com/api/v1/search/jobs/[SEARCH_JOB_ID]`.
+
+</details>
+
 
 ## DELETE Methods
 
 ### Delete a search job
 
-Although search jobs ultimately time out in the Sumo Logic backend, it's a good practice to explicitly cancel a search job when it is not needed anymore.
+<details>
+<summary><span className="api delete">DELETE</span><code>/v1/search/jobs/&#123;SEARCH_JOB_ID&#125;</code></summary>
+<p/>
 
-**Method:** `DELETE` <br/>
-**Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>`
+Although search jobs ultimately time out in the Sumo Logic backend, it's a good practice to explicitly cancel a search job when it is not needed anymore.
 
 <details>
 <summary>Which API endpoint should I use?</summary>
@@ -1001,3 +1001,5 @@ RESULT=$(curl $OPTIONS    \
 JOB_ID=$(echo $RESULT | sed 's/^.*"id":"\(.*\)".*$/\1/')
 echo Search job deleted, id: $JOB_ID
 ```
+
+</details>

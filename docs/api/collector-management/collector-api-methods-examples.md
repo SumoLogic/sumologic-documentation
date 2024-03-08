@@ -198,11 +198,13 @@ The following table lists additional response fields for Installed Collectors on
 
 ## GET methods  
 
-### List Collectors   
+### Get a List of Collectors   
+
+<details>
+<summary><span className="api get">GET</span><code>/collectors</code></summary>
+<p/>
 
 Get a list of Collectors with an optional limit and offset.
-
-**Method:** `GET Path: /collectors`
 
 | Parameter | Type    | Required? | Default        | Description           |
 | :--------- | :------- | :--------- | :-------------- | :------------------------- |
@@ -245,11 +247,16 @@ curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collect
 }
 ```
 
-### List Offline Collectors
+</details>
 
-Get a list of **Installed** Collectors last seen alive before a specified number of days with an optional limit and offset.
+---
+### Get a List of Offline Collectors
 
-**Method:** `GET Path: /collectors/offline`
+<details>
+<summary><span className="api get">GET</span><code>/collectors/offline</code></summary>
+<p/>
+
+Get a list of Installed Collectors last seen alive before a specified number of days with an optional limit and offset.
 
 | Parameter       | Type    | Required? | Default | Description                 |
 | :--------------- | :------- | :--------- | :------- | :---------------------------- |
@@ -291,12 +298,16 @@ curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collect
   }]
 }
 ```
+</details>
 
+---
 ### Get Collector by ID  
 
-Get the Collector with the specified Identifier.
+<details>
+<summary><span className="api get">GET</span><code>/collectors/&#123;id&#125;</code></summary>
+<p/>
 
-**Method:** `GET Path: /collectors/[id]`
+Get the Collector with the specified Identifier.
 
 | Parameter | Type    | Required? | Default | Description                         |
 | :--------- | :------- | :--------- | :------- | :----------------------------------- |
@@ -328,10 +339,14 @@ curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collect
   }
 }
 ```
+</details>
 
+---
 ### Get Collector by Name  
 
-**Method:** `GET Path: /collectors/name/[name]`
+<details>
+<summary><span className="api get">GET</span><code>/collectors/name/&#123;name&#125;</code></summary>
+<p/>
 
 | Parameter | Type   | Required? | Default | Description            |
 | :--------- | :------ | :--------- | :------- | :---------------------- |
@@ -372,15 +387,19 @@ curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collect
 }
 ```
 
+</details>
+
 ## POST methods
 
 ### Create Hosted Collector
 
+<details>
+<summary><span className="api post">POST</span><code>/collectors</code></summary>
+<p/>
+
 Use the POST method with a JSON file to create a new Hosted Collector. The required parameters can be referenced in the [Response fields](#Response_fields) table above. Note that "id" field should be omitted when creating a new Hosted Collector.
 
 This method can only be used to create Hosted Collectors. You must [install a Collector manually](/docs/send-data/installed-collectors/sources) to create an Installed Collector.
-
-**Method: `POST Path: /collectors`**
 
 
 #### Example
@@ -427,15 +446,20 @@ curl -u '<accessId>:<accessKey>' -X POST -H "Content-Type: application/json" -T 
   }
 ```
 
+</details>
+
 ## PUT methods  
 
 ### Update a Collector  
+
+<details>
+<summary><span className="api put">PUT</span><code>/collectors/&#123;id&#125;</code></summary>
+<p/>
 
 Use the PUT method with your JSON file to update an existing Collector. Available parameters can be referenced in the [Response fields](#Response-fields) table above. The JSON request file must specify values for all required fields. Not modifiable fields must match their current values in the system. This is in accordance with HTTP 1.1 RFC-2616 Section 9.6.
 
 Updating a Collector also requires the "If-Match" header to be specified with the "ETag" provided in the headers of a previous GET request.
 
-**Method:** `PUT Path: /collectors/[id]`
 
 | Parameter | Type    | Required? | Default | Description          |
 | :--------- | :------- | :--------- | :------- | :-------------------- |
@@ -521,13 +545,17 @@ curl -u '<accessId>:<accessKey>' -X PUT -H "Content-Type: application/json" -H "
 }
 ```
 
+</details>
+
 ## DELETE methods  
 
 ### Delete Collector by ID
 
-Use the DELETE method to delete an existing Collector.
+<details>
+<summary><span className="api delete">DELETE</span><code>/collectors/&#123;id&#125;</code></summary>
+<p/>
 
-**Method:** `DELETE Path: /collectors/[id]`
+Use the DELETE method to delete an existing Collector.
 
 | Parameter | Type    | Required? | Default | Description                         |
 | :--------- | :------- | :--------- | :------- | :----------------------------------- |
@@ -541,12 +569,16 @@ curl -u '<accessId>:<accessKey>' -X DELETE https://api.sumologic.com/api/v1/coll
 
 Response: There will be no response body - only a `200 OK` response code.
 
+</details>
 
+---
 ### Delete Offline Collectors
 
-Delete **Installed** Collectors last seen alive before a specified number of days.
+<details>
+<summary><span className="api delete">DELETE</span><code>/collectors/offline</code></summary>
+<p/>
 
-**Method:** `DELETE Path: /collectors/offline`
+Delete **Installed** Collectors last seen alive before a specified number of days.
 
 | Parameter       | Type    | Required? | Default | Description                   |
 | :-------------- | :------ | :-------- | :------ | :----------------------------- |
@@ -575,3 +607,5 @@ Response: There will be no response body - only a `200 OK` response with the mes
 | `DuplicateResourceName`       | A resource with the same name already exists.             |
 | `InvalidCollector`            | The specified Collector ID is invalid.                    |
 | `InvalidCollectorType`        | Invalid Collector type for the requested operation.       |
+
+</details>
