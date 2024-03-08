@@ -91,9 +91,9 @@ This section describes how to use Sumo Logic Nozzle for VMware Tanzu. After inst
 1. Cloud Foundry will provision the VMs and begin running the nozzle service.
 1. Verify Sumo Logic Nozzle for VMware Tanzu tile is installed and started running the nozzle service by [running searches](/docs/search/search-cheat-sheets/general-search-examples/). If this is your first time using Sumo Logic, see [Getting Started with Search](/docs/search/get-started-with-search/).
 
-:::info
-You can also create [dashboards](/docs/dashboards/) and [alerts](/docs/alerts/).
-:::
+## Dashboards and alerts
+
+Once the nozzle is set up, you can create [dashboards](/docs/dashboards/) and [alerts](/docs/alerts/) from the data.
 
 :::note
 - For detailed information about changelog, refer to the [Changelog](https://github.com/SumoLogic/sumologic-cloudfoundry-nozzle/blob/master/CHANGELOG.md) file.
