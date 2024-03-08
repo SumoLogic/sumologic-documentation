@@ -27,18 +27,9 @@ Key features of Sumo Logic Nozzle for VMware Tanzu include:
 
 Before you install the Sumo Logic Nozzle for VMware Tanzu tile, you'll need Administrative access to your VMware Tanzu deployment.
 
-### Product snapshot
-
-The following table provides version and version-support information about Sumo Logic Nozzle for VMware Tanzu.
-
-|Element | Details |
-|:---|:---|
-|Version | v1.0.5 |
-|Release date | March 08, 2024 |
-|Compatible Ops Manager version(s) | v3.0.x, v2.9.x, v2.8.x or v2.7.x |
-|Compatible Tanzu Application Service version(s)| v2.7.x, v2.8.x, and v2.9.x |
-|BOSH stemcell version | Ubuntu Xenial v621.x or v170.x, Ubuntu Jammy v1.x |
-| IaaS support | AWS, GCP, OpenStack, and vSphere |
+:::tip
+To learn about compatible Tanzu Application Service versions, refer to the [latest release](https://github.com/SumoLogic/sumologic-cloudfoundry-nozzle/releases).
+:::
 
 ## Setup
 
