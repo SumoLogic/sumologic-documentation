@@ -14,4 +14,4 @@ This pull request... <!-- brief description here -->
 
 ## Ticket (if applicable)
 
-<!-- populates in this space automatically when you add this PR link to Asana ticket -->
+<!-- enter your Jira, Asana, or GitHub ticket number -->
