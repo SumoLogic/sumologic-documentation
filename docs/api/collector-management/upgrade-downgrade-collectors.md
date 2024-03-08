@@ -22,11 +22,11 @@ If an upgrade task does not complete successfully after 30 minutes, it will auto
 
 ### Get upgradable Collectors
 
+<details>
+<summary><span className="api get">GET</span><code>collectors/upgrades/collectors</code></summary>
+<p/>
+
 Sends a request to get Collectors you can upgrade.
-
-**Method: `GET`**
-
-**Path:** `collectors/upgrades/collectors`
 
 **Request Headers**
 
@@ -90,12 +90,14 @@ curl -i -u "<accessId>:<accessKey>" -X GET https://api.sumologic.com/api/v1/coll
     ]
 }
 ```
+</details>
 
+---
 ### Get available builds
 
-**Method: `GET`**
-
-**Path: `/collectors/upgrades/targets`**
+<details>
+<summary><span className="api get">GET</span><code>/collectors/upgrades/targets</code></summary>
+<p/>
 
 **Request Headers**
 
@@ -125,7 +127,7 @@ A JSON document containing the versions of collector builds, which includes the 
 | `version` | string    | Version of the collector build.  |
 | `latest`  | boolean   | Whether it's the latest version. |
 
-**Sample Session**
+#### Examples
 
 ```bash title="Sample request"
 curl -i -u "<accessId>:<accessKey>" -X GET https://api.sumologic.com/api/v1/collectors/upgrades/targets
@@ -133,27 +135,29 @@ curl -i -u "<accessId>:<accessKey>" -X GET https://api.sumologic.com/api/v1/coll
 
 ```json title="Sample response"
 {
-    "targets": [
-        {
-            "version": "19.115-37",
-            "latest": false
-        },
-        ...
-        {
-            "version": "20.1-2749",
-            "latest": true
-        }
-    ]
+  "targets": [
+  {
+    "version": "19.115-37",
+    "latest": false
+  },
+  ...
+  {
+    "version": "20.1-2749",
+    "latest": true
+  }
+ ]
 }
 ```
+</details>
 
+---
 ### Get upgrade task status
 
+<details>
+<summary><span className="api get">GET</span><code>/collectors/upgrades/&#123;upgradeTaskID&#125;</code></summary>
+<p/>
+
 After obtaining the upgrade job ID, you can obtain the status of the upgrade task from the status endpoint.
-
-**Method:** `GET`
-
-**Path:** `/collectors/upgrades/<upgradeTaskID>`
 
 **Request Headers**
 
@@ -208,14 +212,15 @@ curl -i -u "<accessId>:<accessKey>" -X GET https://api.sumologic.com/api/v1/coll
     }
 }
 ```
+</details>
 
 ## POST Methods
 
 ### Create an upgrade or downgrade task
 
-**Method:** `POST`
-
-**Path:** `/collectors/upgrades`
+<details>
+<summary><span className="api post">POST</span><code>/collectors/upgrades</code></summary>
+<p/>
 
 **Request Headers**
 
@@ -275,3 +280,5 @@ https://api.sumologic.com/api/v1/collectors/upgrades
     }
 }
 ```
+
+</details>
