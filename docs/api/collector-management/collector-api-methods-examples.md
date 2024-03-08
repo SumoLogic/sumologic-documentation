@@ -456,7 +456,7 @@ curl -u '<accessId>:<accessKey>' -X POST -H "Content-Type: application/json" -T 
 <summary><span className="api put">PUT</span><code>/collectors/&#123;id&#125;</code></summary>
 <p/>
 
-Use the PUT method with your JSON file to update an existing Collector. Available parameters can be referenced in the [Response fields](#Response-fields) table above. The JSON request file must specify values for all required fields. Not modifiable fields must match their current values in the system. This is in accordance with HTTP 1.1 RFC-2616 Section 9.6.
+Use the PUT method with your JSON file to update an existing Collector. Available parameters can be referenced in the [Response fields](#response-fields) table above. The JSON request file must specify values for all required fields. Not modifiable fields must match their current values in the system. This is in accordance with HTTP 1.1 RFC-2616 Section 9.6.
 
 Updating a Collector also requires the "If-Match" header to be specified with the "ETag" provided in the headers of a previous GET request.
 
