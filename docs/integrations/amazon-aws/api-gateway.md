@@ -205,7 +205,7 @@ json "apiId", "domainName", "stage" as apiId, domainName, stage
 | fields apiName, namespace, apiId
 ```
 
-Create a field extraction rule for cloudwatch logs:
+Create/Update field extraction rule(s) for cloudwatch logs:
 
 ```sql
 Rule Name: AwsObservabilityGenericCloudWatchLogsFER
@@ -324,6 +324,8 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
 2. [Create Stack](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#cloudformation-template) in AWS console with given CloudFormation Template.
 3. Follow below steps for enabling access logs for each respective API type:
    * Enable Access logs for REST APIs by referring to [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-logging-to-kinesis.html#set-up-kinesis-access-logging-using-console) and  when you specify the `Log format` field use the below JSON.
+      
+      <img src={useBaseUrl('img/integrations/amazon-aws/Access_Logging_REST_API.png')} alt="AWS API Gateway" style={{border: '1px solid gray'}} width="800" />
 
    ```json title="JSON Log Format for REST API"
    {
@@ -394,6 +396,8 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
 
    * Enable Access logs for HTTP APIs by referring to [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-logging.html#http-api-enable-logging) and  when you specify the `Log format` field use the below JSON.
 
+      <img src={useBaseUrl('img/integrations/amazon-aws/Access_Logging_HTTP_API.png')} alt="AWS API Gateway" style={{border: '1px solid gray'}} width="800" />
+
    ```json title="JSON Log Format for HTTP API"
    {
       "requestId": "$context.requestId",
@@ -452,6 +456,8 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
    ```
 
    * Enable Access logs for WebSocket APIs by referring to [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-using-console) and  when you specify the `Log format` field use the below JSON.
+
+      <img src={useBaseUrl('img/integrations/amazon-aws/Access_Logging_WebSocket_API.png')} alt="AWS API Gateway" style={{border: '1px solid gray'}} width="800" />
 
    ```json title="JSON Log Format for WebSocket API"
    {
@@ -631,7 +637,7 @@ Use these dashboards to:
 * Monitor successful and failed API Gateway events, users and user agents / fail activities, and failure reasons
 * Monitor requests coming in from known malicious IP addresses detected via [Sumo Logic Threat Intel](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ)
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/5.-AWS-API-Gateway-Audit-Events.png' alt="Audit Events" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/6.-AWS-API-Gateway-Audit-Events.png' alt="Audit Events" />
 
 ### Latency and Cache
 
