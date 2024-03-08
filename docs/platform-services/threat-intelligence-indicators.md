@@ -23,7 +23,7 @@ Once you [ingest indicators](#ingest-threat-intelligence-indicators) and they ap
 
 ### Role capabilities
 
-To use threat intelligence indicators, you must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#threat-intel). 
+To view and manage threat intelligence indicators on the [Threat Intelligence tab](#threat-intelligence-tab), you must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#threat-intel). 
 
 1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
 1. Click the **Roles** tab.
@@ -32,6 +32,8 @@ Add the following capabilities:
    * **Threat Intel**
        * **View Threat Intel Data Store**
        * **Manage Threat Intel Data Store**
+
+You do not need to be assigned these role capabilities to [find threats with log queries](/docs/platform-services/threat-intelligence-indicators#find-threats-with-log-queries).
 
 ### Ingest threat intelligence indicators
 
