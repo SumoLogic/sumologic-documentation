@@ -51,7 +51,6 @@ The URL and supported payload are different based on the version of the PagerDut
    {
      "routing_key": "SERVICE KEY",
      "event_action": "trigger",
-     "description": "{{TriggerType}} Alert:{{AlertName}}",
      "client": "Sumo Logic",
      "client_url": "{{AlertResponseURL}}",
      "payload": {
