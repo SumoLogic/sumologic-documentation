@@ -40,7 +40,7 @@ When you [close an Insight](/docs/cse/administration/manage-custom-insight-resol
 As you resolve Insights, you may find you have a high ratio of False Positive and No Action resolutions compared to Resolved resolutions. By reducing the number of Signals that produce Insights that turn out to be false positives or require no action, you can produce more reliable Insights. 
 
 :::note
-For the Insight Trainer to build an effective model of Insight resolution, you must close Insights with either the **False Positive** or **Resolved** resolution. 
+For Insight Trainer to work correctly, it needs a balanced set of Insights in a closed state with an appropriate mix of resolution statuses, such as **False Positive**, **No Action**, and **Resolved**. Unbalanced datasets can occur if resolutions are unrealistically assigned, for example, if all Insights are closed with a single closed state such as **False Positive**.
 :::
 
 You could use trial-and-error to tune rules, but the Insight Trainer dashboard provides a data-driven approach. Once a week, the Insight Trainer provides fresh recommendations based on analysis of the last 60 days of data. Machine learning and AI learn historical patterns from your own data to suggest rule severity adjustments that minimize false positives without missing out on actual incidents. To see fresh recommendation every week, you must make suggested tuning adjustments at least once every two weeks. If you implement the suggested changes on a regular basis, the number of false positive resolutions can be greatly reduced. 
