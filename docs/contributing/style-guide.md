@@ -22,7 +22,7 @@ If you need help with a convention, word to use, or format to follow, we will ke
 * [Microsoft Manual of Style](https://docs.microsoft.com/en-us/style-guide/welcome/)
   * [User Input | Formatting Text in Instructions](https://docs.microsoft.com/en-us/style-guide/procedures-instructions/formatting-text-in-instructions)
 
-For terminology usage guidance, see our [Word List](/docs/contributing/word-list.md).
+For terminology usage guidance, see our [Word List](/docs/contributing/word-list).
 
 If you're new to writing tech content or would like to learn more, check out these resources:
 * [Write the Docs](https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/). Association of tech writers, developers, trainers, and more that have collected ideas, created training and guidelines, and actively discuss documentation.
@@ -631,7 +631,7 @@ Use hashtags `#` to indicate the heading level and group content. Always start w
 </TabItem>
 </Tabs>
 
-Headings must be used in correct order. The subsection of an H2 header would be H3 - you wouldn't jump to an H4 or H5. Skipping over a header level affects search and SEO structures to search crawlers like Google. Malformed structures can reduce search and SEO for the page. Docusaurus carefully formats generated pages to ensure strong SEO.
+Headings must be used in correct order. The subsection of an H2 header would be H3 - you wouldn't jump to an H4 or H5. Skipping over a header level affects search and SEO structures to search crawlers like Google. Docusaurus carefully formats generated pages to ensure strong search and SEO, and malformed structures can reduce that strength.
 
 ### Documenting procedures
 
@@ -698,7 +698,7 @@ You can use a link to a file embedding the entire file, or embed a range of code
    <details>
    <summary>More about <code>alt text</code></summary>
 
-   Alt text is used by readers who can't see images well, or who have software that reads the text aloud, and even by readers with slow Internet connections who don't want to wait for images to download. Alt text is required under [US Government GSA Section 508](https://www.section508.gov/) regulations. Non-compliance with Section 508 can cost a company federal sales. Many companies start out ignoring this future possibility and, like everything, it is more expensive to fix later.
+   Alt text, required under [US Government GSA Section 508](https://www.section508.gov/) regulations, is used by readers who cannot see images well or have software that reads the text aloud. It's also used by readers with slow internet connections who do not want to wait for images to download.
 
    </details>
 1. Use the `width` to resize oversized and/or pixelated images, if needed.
