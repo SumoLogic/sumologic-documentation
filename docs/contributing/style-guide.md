@@ -156,12 +156,12 @@ This is a tip about a cool feature option.
 This is some vital information.
 :::
 
-:::danger
-This action is dangerous and could result in data loss.
-:::
-
 :::warning
 This could note important and problematic information.
+:::
+
+:::danger
+This action is dangerous and could result in data loss.
 :::
 
 :::sumo Best Practice
@@ -185,12 +185,12 @@ This is a tip about a cool feature option.
 This is some vital information.
 :::
 
-:::danger
-This action is dangerous and could result in data loss.
-:::
-
 :::warning
 This could note important and problematic information.
+:::
+
+:::danger
+This action is dangerous and could result in data loss.
 :::
 
 :::sumo Best Practice
@@ -1053,7 +1053,7 @@ Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/ma
 * To add a dedicated sidebar, use the following format:
    <details>
    <summary>Example: adding a dedicated sidebar for a guide</summary>
-   
+
    ```js title="sidebars.ts"
    module.exports = {
      sectionName: [
