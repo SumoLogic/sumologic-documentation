@@ -6,7 +6,7 @@ description: Evaluate messages and place them into groups.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Aggregating (group-by) functions evaluate messages and place them into groups. The group operator is used in conjunction with group-by functions.
+Aggregating (group-by) functions evaluate messages and place them into groups. The `group` operator is used in conjunction with group-by functions.
 
 Only search results that have been aggregated using a group or aggregate operator can be placed on a dashboard panel. See [Chart Search Results](/docs/search/get-started-with-search/search-basics/chart-search-results) for information about charting.
 
@@ -19,7 +19,7 @@ grouping_function by <fieldname>
 ```
 
 :::important
-The `withtime`, `most_recent`, and `least_recent` operators are not considered standalone operators; they are designed to only be used as an alternative to the [first and last operators](/docs/search/search-query-language/group-aggregate-operators/first-last) in auto refresh dashboards or any continuous query where first and last are not supported.
+The `withtime`, `most_recent`, and `least_recent` operators are not considered standalone operators; they are designed to only be used as an alternative to the [`first` and `last` operators](/docs/search/search-query-language/group-aggregate-operators/first-last) in auto refresh dashboards or any continuous query where first and last are not supported.
 :::
 
 By default, the ordering is not defined inside of groups created using a group-by expression. To order your results, use the [`sort`](/docs/search/search-query-language/search-operators/sort) operator.

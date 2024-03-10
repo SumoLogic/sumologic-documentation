@@ -7,19 +7,18 @@ description: The JSON operator allows you to extract values from JSON logs wit
 The JSON operator allows you to extract values from JSON logs with most [JSONPath](http://goessner.net/articles/JsonPath/) expressions. See the [supported JSONPath syntax elements](#supported-jsonpath-syntax-elements) below.
 
 :::note
-If the messages in your search results can be formatted as JSON, the **Messages** tab presents the option to display each message in JSON or raw format. See [Format JSON messages in search results](../../get-started-with-search/search-basics/view-search-results-json-logs.md).
+If the messages in your search results can be formatted as JSON, the **Messages** tab presents the option to display each message in JSON or raw format. See [Format JSON messages in search results](/docs/search/get-started-with-search/search-basics/view-search-results-json-logs/#format-jsonmessages-in-search-results).
 :::
 
 Because JSON supports both nested keys and arrays that contain ordered sequences of values, the Sumo Logic JSON operator allows you to extract:
 
-* Single, top-level fields.
-* Multiple fields.
-* Nested keys.
-* Keys in arrays.
+* Single, top-level fields
+* Multiple fields
+* Nested keys
+* Keys in arrays
 
 :::tip
-Not familiar with JSONPath syntax? Try our [UI generator](#ui-parse-generator)
-that can create the parse expression for a specific JSON key for you.
+Not familiar with JSONPath syntax? Try our [UI generator](#ui-parse-generator) that can create the parse expression for a specific JSON key for you.
 :::
 
 ## Syntax
@@ -33,9 +32,9 @@ that can create the parse expression for a specific JSON key for you.
 
 ## Options
 
-* `nodrop` - allows messages containing invalid JSON values to be displayed. For details, see [parse nodrop](parse-nodrop-option.md) and [using the nodrop option](#using-the-nodrop-option).
-* `field=<field_name>` - allows you to specify a field to parse other than the default message. For details, see [parse field](parse-field-option.md).
-* `auto` - automatically detects JSON objects in logs and extracts the key/value pairs. See [JSON auto option](#json-auto-option) for details.
+* `nodrop`. Allows messages containing invalid JSON values to be displayed. For details, see [parse nodrop](parse-nodrop-option.md) and [using the nodrop option](#using-the-nodrop-option).
+* `field=<field_name>`. Allows you to specify a field to parse other than the default message. For details, see [parse field](parse-field-option.md).
+* `auto`. Automatically detects JSON objects in logs and extracts the key/value pairs. See [JSON auto option](#json-auto-option) for details.
 
 The following examples use this sample log message:
 
@@ -169,7 +168,7 @@ The result of the query would look like this: 
 
 ## Using the nodrop option
 
-By default, the JSON operator optimizes results by dropping messages that don't use the specified key or keys, or messages that use invalid JSON keys. Use the nodrop option to prevent this optimization, and set the extracted field values to null (empty):
+By default, the JSON operator optimizes results by dropping messages that don't use the specified key or keys, or messages that use invalid JSON keys. Use the `nodrop` option to prevent this optimization, and set the extracted field values to null (empty):
 
 ```sql
 * | json field=jsonobject "baselineIntervals[0]" nodrop

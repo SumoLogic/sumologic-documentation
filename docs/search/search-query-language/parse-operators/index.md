@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Parse operators allow you to extract fields from log messages within a query manually and on an ad-hoc basis.
 
-For best practices use Parse operators to build [Field Extraction Rules](/docs/manage/field-extractions) to automatically extract field values and use them to extend your query.
+For best practices, use Parse operators to build [Field Extraction Rules](/docs/manage/field-extractions) to automatically extract field values and use them to extend your query.
 
 In this section, we'll introduce the following concepts:
 
