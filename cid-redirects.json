@@ -3497,7 +3497,7 @@
   "/Apps/Preview_Apps/Azure_Audit+App": "/docs/integrations/microsoft-azure/audit",
   "/Apps/Windows_App/Windows_App_Dashboards": "/docs/integrations/microsoft-azure",
   "/Beta": "/docs/beta",
-  "/Beta/APIs/APIs": "/docs/api/beta",
+  "/Beta/APIs/APIs": "/docs/api",
   "/Beta/AWS_Kinesis_Firehose_for_Logs_Source": "/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source",
   "/Beta/AWS_Lambda_-_Python_function_instrumentation_with_Sumo_Logic_tracing": "/docs/apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/python",
   "/docs/beta/aws-private-link": "/docs/integrations/amazon-aws/aws-privatelink",
