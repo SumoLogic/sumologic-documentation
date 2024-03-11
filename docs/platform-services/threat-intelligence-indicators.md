@@ -5,12 +5,6 @@ sidebar_label: Threat Intelligence Indicators
 description: Learn how to use indicators from threat intelligence sources.
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Threat intelligence, often abbreviated as *threat intel*, is information that helps you prevent or mitigate cyber attacks. *Threat intelligence indicators* are individual data points about threats that are gathered from external sources about various entities such as host names, file hashes, IP addresses, and other known targets for compromise. You can import files containing threat intelligence indicators directly into Sumo Logic to aid in security analysis. 
@@ -57,8 +51,8 @@ See [Upload formats](#upload-formats) for the format to use when uploading indic
 Here is the typical workflow to set up and use threat intelligence indicators:
 
 1. A system administrator sets up services to automatically [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators). For example, install a collector such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and set up services to obtain indicators from Federal, vendor, and open services. Then ingest them using the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs. You can manually add more indicators as needed, such as your own private indicators, using the [Threat Intelligence tab](#add-indicators-in-the-threat-intelligence-tab) or the APIs.
-1. Analysts use the threat indicators data for such things as saved searches, dashboards, [manual searches](#find-threats-with-log-queries), [Cloud SIEM rules](#find-threats-using-cloud-siem-rules), and [Cloud SIEM UI](#view-threat-indicators-in-the-cloud-siem-ui).
-1. A system administrator occasionally checks to see why a connector isn’t ingesting data, or to see how much storage all the indicators are using. They may [run threatlookup with the cat search operator](#find-threats-with-log-queries) to explore their indicators and then [delete some old or irrelevant data](#delete-threat-intelligence-indicators).
+1. Analysts use the threat indicators data for such things as saved searches, dashboards, [manual searches](#find-threats-with-log-queries), [Cloud SIEM rules](#hasthreatmatch-cloud-siem-rules-language-function), and [Cloud SIEM UI](#view-threat-indicators-in-the-cloud-siem-ui).
+1. A system administrator occasionally checks to see why a connector isn’t ingesting data, or to see how much storage all the indicators are using. They may [run threatlookup with the cat search operator](/docs/search/search-query-language/search-operators/threatlookup/#run-threatlookup-with-the-cat-search-operator) to explore their indicators and then [delete some old or irrelevant data](#delete-threat-intelligence-indicators).
 
 ## Threat Intelligence tab
 
@@ -149,105 +143,10 @@ _index=sec_record*
 | count by _timeslice
 ```
 
-### Syntax
+For more information, see [threatlookup search operator](/docs/search/search-query-language/search-operators/threatlookup/). 
 
-```
-threatlookup [singleIndicator] [source="<source_value>"] [include="<all|active|expired>"] <indicator_value_field> [,<optional_indicator_value_field_2>, …]
-```
+You can also [run threatlookup with the cat search operator](/docs/search/search-query-language/search-operators/threatlookup/#run-threatlookup-with-the-cat-search-operator) to search the entire store of threat intelligence indicators.
 
-Where:
-* `singleIndicator` returns the single best matching indicator. (In the response, `num_match` indicates how many actual matches there are.) If `singleIndicator` is not specified, all matching indicators are returned. 
-
-   Specifying `singleIndicator` sorts the list of matching indicators using the following priority order, then returns the indicator at the top of the list:
-     1. Active indicators over expired indicators (if you use `include="all"`).
-     1. Higher confidence indicators.
-     1. More malicious indicators.
-     1. Most recently updated indicators.
-
-   If there's still a tie at this point, the system picks the indicator the back-end database returned first.
-
-* `source` is the source to search for the threat intelligence indicator. If `source` is not specified, all sources are searched.
-* `include` includes either all, only active, or only expired threat intelligence indicators. If `include` is not specified, all matching indicators are returned.
-* `<indicator_value_field>` is the indicator to look up. 
-* `<optional_indicator_value_field>` is used to add more indicators to look up.
-
-#### Response fields
-* confidence
-* fields
-* imported
-* indicator
-* valid_from
-* valid_until
-* source
-* threat_type
-* type
-* updated
-* num_match (if `singleIndicator` is used)
-
-### Examples
-
-```
-_index=sec_record*
-| threatlookup srcDevice_ip
-| where _threatlookup.confidence > 50
-| timeslice 1h
-| count by _timeslice
-```
-```
-_index=sec_record*
-| threatlookup singleIndicator srcDevice_ip
-| where _threatlookup.confidence > 50
-| timeslice 1h
-| count by _timeslice
-```
-```
-_index=sec_record*
-| threatlookup source="s_CrowdStrike" srcDevice_ip
-| where _threatlookup.confidence > 50
-| timeslice 1h
-| count by _timeslice
-```
-```
-_index=sec_record*
-| threatlookup dstDevice_ip, srcDevice_ip
-| where _threatlookup.confidence > 50
-| timeslice 1h
-| count by _timeslice
-```
-```
-_index=sec_record*
-| threatlookup  source="s_CrowdStrike" dstDevice_ip, srcDevice_ip
-| where _threatlookup.confidence > 50
-| timeslice 1h
-| count by _timeslice
-```
-```
-_index=sec_record*
-| threatlookup  source="s_CrowdStrike" include="active" dstDevice_ip, srcDevice_ip
-| where _threatlookup.confidence > 50
-| timeslice 1h
-| count by _timeslice
-```
-
-#### Run threatlookup with the cat search operator
-
-You can run the `threatlookup` search operator with the [cat search operator](/docs/search/search-query-language/search-operators/cat/) by using the `sumo://threat-intel` path. This lets you search the entire store of threat intelligence indicators, or just a portion. For example:
-```
-cat sumo://threat-intel  | where _threatlookup.indicator = "192.0.2.0"
-```
-```
-cat sumo://threat-intel  | where _threatlookup.source = "FreeTAXII" and _threatlookup.indicator = "192.0.2.0"
-```
-
-In the cat output, timestamp fields (like `valid_until`) will appear as integers. You can use the `formatDate()` function to convert them back to timestamps. For example:
-
-```
-cat sumo://threat-intel | formatDate(toLong(_threatlookup.valid_until), "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", "UTC") as valid_until
-```
-
-:::note
-You cannot use the cat search operator with the `s_crowdstrike` source.
-:::
 
 ## Threat indicators in Cloud SIEM
 
@@ -263,29 +162,7 @@ For example, use the function to find all Records with a `srcDevice_ip` attribut
 hasThreatMatch([srcDevice_ip], confidence > 50)
 ```
 
-The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to [threat intelligence indicators](/docs/platform-services/threat-intelligence-indicators). It can also match values in [Cloud SIEM threat intelligence](/docs/cse/rules/about-cse-rules/#threat-intelligence). 
-
-**Syntax**
-
-`hasThreatMatch([<fields>], <filters>, <indicators>)`
-
-Parameters:
-* `<fields>` is a list of comma separated Entity field names. At least one field name is required.
-* `<filters>` is a logical expression using indicator attributes. (Allowed are parentheses `()`; `OR` and `AND` boolean operators; and comparison operators `=`, `<`, `>`, `=<`, `=>`, `!=`.)
-* `<indicators>` is an optional case insensitive option that describes how indicators should be matched with regard to their validity. Accepted values are:
-   * `active_indicators`. Match active indicators only (default).
-   * `expired_indicators`. Match expired indicators only.
-   * `all_indicators`. Match all indicators.
-
-**Examples**
-
-* `hasThreatMatch([srcDevice_ip])`
-* `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
-* `hasThreatMatch([srcDevice_ip], confidence > 50)`
-* `hasThreatMatch([srcDevice_ip], confidence > 50 AND source="FreeTAXII")`
-* `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" confidence > 50 AND))`
-* `hasThreatMatch([srcDevice_ip], expired_indicators)`
-* `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
+For more information, see [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch).
 
 ### View threat indicators in the Cloud SIEM UI
 
@@ -400,7 +277,7 @@ The following attributes are required:
        * **source** (string). User-provided text to identify the source of the indicator. For example, `FreeTAXII`.
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest (as [defined by the confidence scale in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_1v6elyto0uqg)). For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to Entities in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
+       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to Entities in the Cloud SIEM UI. See [View threat indicators in the Cloud SIEM UI](#view-threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
           * `anomalous-activity`. Unexpected or unusual activity that may not necessarily be malicious or indicate compromise.
           * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
           * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
@@ -469,7 +346,7 @@ Columns for the following attributes are required in the upload file:
        * **validFrom** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
        * **validUntil** (string [date-time]). Ending time this indicator is valid. If not set, the indicator never expires. Timestamp in UTC in RFC3339 format. For example, `2024-03-21T12:00:00.000Z`.
        * **confidence** (integer [ 1 .. 100 ]). Confidence that the creator has in the correctness of their data, where 100 is highest. For example, `75`.
-       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to Entities in the Cloud SIEM UI. See [Threat indicators in the Cloud SIEM UI](#threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
+       * **threatType** (string). Type of indicator (as [defined by indicator_types in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_cvhfwe3t9vuo)). For example, `malicious-activity`. (This attribute can result in a special label appearing next to Entities in the Cloud SIEM UI. See [View threat indicators in the Cloud SIEM UI](#view-threat-indicators-in-the-cloud-siem-ui).) <br/>Following are valid values:
           * `anomalous-activity`. Unexpected or unusual activity that may not necessarily be malicious or indicate compromise.
           * `anonymization`. Suspected anonymization tools or infrastructure (proxy, TOR, VPN, etc.).
           * `benign`. Activity that is not suspicious or malicious in and of itself, but when combined with other activity may indicate suspicious or malicious behavior.
