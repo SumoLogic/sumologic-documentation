@@ -169,3 +169,18 @@ At line:1 char:1
 Ensure that you run **PowerShell** as an Administrator.
 
 For information on troubleshooting and solutions, refer to the [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).
+
+### Error when running the FIPS binary: `panic: cngcrypto: not in FIPS mode`
+
+If you installed the FIPS version of the OpenTelemetry Collector and are getting the following error when trying to run it:
+
+```console
+C:\>"C:\Program Files\Sumo Logic\OpenTelemetry Collector\bin\otelcol-sumo.exe" --version
+panic: cngcrypto: not in FIPS mode
+
+goroutine 1 [running]:
+crypto/internal/backend.init.0()
+        crypto/internal/backend/cng_windows.go:34 +0x85
+```
+
+This means you are running the Sumo Otelcol FIPS binary in a non-FIPS environment. The FIPS binary is built using the `requirefips` mode, which causes the collector to only work in a FIPS-compliant environment and fail to start otherwise. See [documentation](https://github.com/microsoft/go/blob/microsoft/main/eng/doc/fips/README.md#build-option-to-require-fips-mode).
