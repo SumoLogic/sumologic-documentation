@@ -422,6 +422,12 @@ In this section, we'll introduce the following concepts:
       </div>
       <div className="box smallbox card">
         <div className="container">
+        <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source"><img src={useBaseUrl('img/send-data/stix-logo.png')} alt="icon" width="75"/><h4>STIX/TAXII 1 Client</h4></a>
+        <p>Learn how to set up a STIX/TAXII 1.x client to collect threat intelligence indicators into the Sumo Logic environment.</p>
+        </div>
+      </div>
+      <div className="box smallbox card">
+        <div className="container">
         <a href="/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source"><img src={useBaseUrl('img/send-data/stix-logo.png')} alt="icon" width="75"/><h4>STIX/TAXII 2 Client</h4></a>
         <p>Learn how to set up a STIX/TAXII 2.x client to collect threat intelligence indicators into the Sumo Logic environment.</p>
         </div>
