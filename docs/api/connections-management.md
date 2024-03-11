@@ -1,7 +1,7 @@
 ---
 id: connections-management
 title: Connections Management APIs
-sidebar_label: Connections Management
+sidebar_label: Connections
 description: Use our Connections Management APIs to set up connections to send alerts to third-party tools.
 hide_table_of_contents: true
 ---

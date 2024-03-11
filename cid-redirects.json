@@ -3841,6 +3841,7 @@
   "/docs/manage/security/search-audit-index": "/docs/manage/security/audit-indexes/search-audit-index",
   "/docs/manage/security/audit-index-access": "/docs/manage/security/audit-indexes/audit-index-access",
   "/cid/-1": "/",
+  "/docs/api/beta": "/docs/api",
   "/docs/cloud-security-analytics": "/docs/cloud-infrastructure-security",
   "/docs/cloud-security-analytics/introduction-to-cloud-security-analytics": "/docs/cloud-infrastructure-security/introduction-to-cloud-infrastructure-security",
   "/docs/cloud-security-analytics/data-lake": "/docs/cloud-infrastructure-security/data-lake",
