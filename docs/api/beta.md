@@ -9,20 +9,19 @@ See the latest advancements in Sumo Logic APIs.
 
 Refer to [Getting Started](/docs/api/getting-started) for Authentication and Endpoint information.
 
-## In Open Beta
+## In open beta
 
-APIs in open beta do not require specific access and are available to everyone.
+APIs in open beta do not require specific access and are available to all users.
 
-* Apps
-* Connections
-* Metric Transformation Rules
+* [Apps](/docs/api/app-management)
+* [Dashboard Data](/docs/api/dashboard-data)
+* Metrics Transformation Rules
 
-
+<!--
 ## In Closed Beta
 
 To participate in a closed beta, contact your Sumo account executive. You cannot use an API in closed beta until given access.
-
-* [Organizations Management API](https://organizations.sumologic.com/docs/) (This API is documented separately)
+-->
 
 ## About Sumo Logic APIs
 
