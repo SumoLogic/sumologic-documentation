@@ -4,7 +4,7 @@ title: Keyword Search Expressions
 description: The text that comes before the first pipe symbol in a query is called the keyword expression or scope.
 ---
 
-A Keyword Search Expression defines the scope of data for the query.
+A _Keyword Search Expression_ defines the scope of data for the query.
 
 Boolean logic and wildcards enable you to search for multiple terms, express logic about term distribution within messages, and specify partial terms with wildcards. The keyword expression can include [built-in metadata fields](../search-basics/built-in-metadata.md) such as `_collector`, `_sourceCategory`, `_sourceName`, and `_sourceHost` as well as custom log metadata fields.
 
@@ -52,7 +52,7 @@ Keyword search expressions are often referred to as the **scope** of a query.
 * `_sourceHost=Atlanta AND (_sourceCategory="win-app-logs" OR _sourceName="win-firewall-logs")`
 * `_sourceHost="10.1.12.22" AND_sourceCategory="my category" NOT _sourceCategory="some-other" AND _sourceName="/var/log/some.log"`
 
-It can be hard to create a search query if you don't know what data you have in your Sumo Logic environment. For simple example queries to discover existing Source Categories, Source Names, and Source Hosts, see [What Data Do I Have?](/docs/search/get-started-with-search/build-search)
+It can be hard to create a search query if you do not know what data you have in your Sumo Logic environment. For simple example queries to discover existing Source Categories, Source Names, and Source Hosts, see [What Data Do I Have?](/docs/search/get-started-with-search/build-search)
 
 ## Phrases
 
@@ -110,7 +110,7 @@ info
 
 To convert a string to all lowercase or all uppercase letters, you can use the [`toUpperCase` and `toLowerCase`](/docs/search/search-query-language/search-operators/tolowercase-touppercase) operators.
 
-## Normalization of Phrase Queries
+## Normalization of phrase queries
 
 Sumo Logic normalizes the way it matches raw messages to log query source expressions, regardless of the tier in which the data is stored. One of the effects/use-cases of normalization is the replacement of consecutive whitespace characters within quoted phrases with a single space character. This ensures that query results are consistent when searching data in the continuous/frequent/infrequent tiers.
 
@@ -137,7 +137,7 @@ It is '\u001E', U+001E RECORD SEPARATOR.
 It is '\u001F', U+001F UNIT SEPARATOR
 ```
 
-### Types of Whitespace Characters
+### Types of whitespace characters
 
 * **Multiple space whitespace character**. This character determines the multiple spaces present in the payload or in the source expression.
 

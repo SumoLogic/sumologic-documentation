@@ -141,7 +141,7 @@ in Cloud SIEM.
 
 1. **URL**. The URL to send the POST to.
    :::note
-   The allowed destination ports for the HTTP Post are: *80*, *8080*, *443*, *8443*, and *8000*. You can specify the port in the URL, but if the default port on the destination server is an allowable port, you don't need to.
+   The allowed destination ports for the HTTP Post are: *80*, *8080*, *443*, *8443*, and *8000*. You can specify the port in the URL, but if the default port on the destination server is an allowable port, you do not need to.
    :::
 1. **Username**. The username to use to access the URL.
 1. **Password**. The password to use to access the URL.

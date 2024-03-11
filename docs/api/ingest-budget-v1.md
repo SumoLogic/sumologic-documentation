@@ -1,7 +1,7 @@
 ---
 id: ingest-budget-v1
-title: Ingest Budgets Management APIs
-sidebar_label: Ingest Budgets
+title: Ingest Budgets Management V1 APIs
+sidebar_label: Ingest Budgets V1
 description: Ingest Budget Management APIs allow you to manage ingest budgets from HTTP endpoints.
 hide_table_of_contents: true
 ---

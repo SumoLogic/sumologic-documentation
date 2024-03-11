@@ -186,16 +186,20 @@ export const Footer = () => {
         >
           {[
             {
+              label: 'Status',
+              href: 'https://status.sumologic.com',
+            },
+            {
               label: 'Legal',
-              href: 'https://www.sumologic.com/legal/',
+              href: 'https://www.sumologic.com/legal',
             },
             {
               label: 'Privacy Statement',
-              href: 'https://www.sumologic.com/privacy-statement/',
+              href: 'https://www.sumologic.com/privacy-statement',
             },
             {
               label: 'Terms of Use',
-              href: 'https://www.sumologic.com/terms-conditions/',
+              href: 'https://www.sumologic.com/terms-conditions',
             }].map(({ href, label }) => (
               <Fragment key={href}>
                 <Link

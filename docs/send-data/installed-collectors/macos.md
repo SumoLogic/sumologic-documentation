@@ -133,11 +133,11 @@ A success message is displayed and the Collector is removed from the list.
 This issue only applies to Collector versions prior to 19.361-8.
 :::
 
-When you try to install a Sumo Logic Collector on a Mac running OS X Mountain Lion or later, you may see the error message "App can't be opened because it is from an unidentified developer". This message appears to prevent installing applications from developers that aren't verified through the Mac App Store:
+When you try to install a Sumo Logic Collector on a Mac running OS X Mountain Lion or later, you may see the error message "App cannot be opened because it is from an unidentified developer". This message appears to prevent installing applications from developers that aren't verified through the Mac App Store:
 
 ![install](/img/send-data/Mac_OSX_Gatekeeper.png)
 
-This doesn't mean that you can't install a Sumo Logic Collector. The Sumo Logic Collector app is a legitimate and safe download. It just takes an extra step.
+This doesn't mean that you cannot install a Sumo Logic Collector. The Sumo Logic Collector app is a legitimate and safe download. It just takes an extra step.
 
 To install a Sumo Logic Collector:
 

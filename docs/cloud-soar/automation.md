@@ -56,7 +56,7 @@ Following is an example of integration code after updating the integration:<br/>
 
 ### Update integrations to include all available actions
 
-The purpose of this section is to provide you the information you need to update your integrations to include all types of actions that should be present in that integration, for example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Central to make sure you don't have any integrations without useful actions.
+The purpose of this section is to provide you the information you need to update your integrations to include all types of actions that should be present in that integration, for example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Central to make sure you do not have any integrations without useful actions.
 
 Update integrations in App Central using keywords in the bottom left corner of the integration:
 * **UPDATE**. Appears on the installed integrations if there is a new version of that integration and with a new YAML configuration file. <br/><img src={useBaseUrl('img/cloud-soar/new-integration-update.png')} alt="Update" width="300"/>

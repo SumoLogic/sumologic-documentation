@@ -30,7 +30,7 @@ Follow the sections below to gather the required vendor information and setup th
 
 ## Vendor configurations
 
-You need to gather various information from the third party vendor in order to configure collecting log data from their API using this source. Our goal is to support many of the common ways to expose APIs functionality to retrieve log data, but we recognize we can't support every feature. We recommend gathering all of the requirements listed below.
+You need to gather various information from the third party vendor in order to configure collecting log data from their API using this source. Our goal is to support many of the common ways to expose APIs functionality to retrieve log data, but we recognize we cannot support every feature. We recommend gathering all of the requirements listed below.
 
 :::info
 If you are unable to configure the source to support your vendor API, you can either request to add additional features to support it or take a request to build a dedicated source integration if needed.
