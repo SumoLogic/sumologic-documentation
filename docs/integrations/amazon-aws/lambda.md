@@ -286,15 +286,13 @@ Enter a parse expression to create an “account” field that maps to the alias
 ```yml
 Rule Name: AwsObservabilityLambdaCloudWatchLogsFER
 Applied at: Ingest Time
-Scope (Specific Data): _sourceHost=/aws/lambda/*
+Scope (Specific Data): account=*region* _sourceHost=/aws/lambda/*
 Parse Expression:
 | parse field=_sourceHost "/aws/lambda/*" as functionname
 | tolowercase(functionname) as functionname
 | "aws/lambda" as namespace
 | fields functionname, namespace
 ```
-
-
 
 ## Installing the AWS Lambda App
 
@@ -304,7 +302,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing AWS Lambda Dashboards
+## Viewing AWS Lambda dashboards
 
 Here are some of the measurements and calculations underlying the information presented in dashboard panels.
 
