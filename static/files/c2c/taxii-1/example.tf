@@ -1,7 +1,7 @@
 resource "sumologic_cloud_to_cloud_source" "taxii2_source" {
   collector_id = sumologic_collector.collector.id
   schema_ref = {
-    type = "TAXII 2 Client"
+    type = "TAXII 1 Client"
   }
   config = jsonencode({
 			"name":"STIX TAXII 1 Client for Unit 42",
