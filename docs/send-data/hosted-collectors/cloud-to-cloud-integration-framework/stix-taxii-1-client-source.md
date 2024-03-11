@@ -28,7 +28,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 :::
 
 :::sumo[Best Practice]
-This source only support STIX/TAXII 1.1. Sumo Logic recommends using our [STIX/TAXII 2.x source](http://localhost:3000/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source/) instead as it is the current version of STIX/TAXII.
+This source only supports STIX/TAXII 1.1. Sumo Logic recommends using our [STIX/TAXII 2.x source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source/) instead as it is the current version of STIX/TAXII.
 :::
 
 ## Data collected
