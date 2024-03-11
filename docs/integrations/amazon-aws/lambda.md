@@ -286,7 +286,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 ```yml
 Rule Name: AwsObservabilityLambdaCloudWatchLogsFER
 Applied at: Ingest Time
-Scope (Specific Data): account=*region* _sourceHost=/aws/lambda/*
+Scope (Specific Data): account=* region* _sourceHost=/aws/lambda/*
 Parse Expression:
 | parse field=_sourceHost "/aws/lambda/*" as functionname
 | tolowercase(functionname) as functionname
