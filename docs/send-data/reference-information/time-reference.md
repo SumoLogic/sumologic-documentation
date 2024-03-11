@@ -132,7 +132,7 @@ Our Collectors can automatically parse most timestamps without any issues. Howe
    :::
    :::warning requirements
    * Your custom timestamp format must follow our supported [timestamp conventions](time-reference.md).
-   * When you specify a custom format, provide us with the timestamp format (and optionally a regex) to help locate the desired timestamp in your log line format. If you don't provide a locator, we’ll scan the entire log message for a timestamp matching the given format by default. You can also test some sample log lines and see if we can parse the new format.
+   * When you specify a custom format, provide us with the timestamp format (and optionally a regex) to help locate the desired timestamp in your log line format. If you do not provide a locator, we’ll scan the entire log message for a timestamp matching the given format by default. You can also test some sample log lines and see if we can parse the new format.
    * When providing multiple custom formats, specify the most common format first. The Collector will process each custom format in the order provided. Once a timestamp is located, no further timestamp checking is done.
    * If no timestamps are located that match your custom formats, the Collector will still attempt to automatically locate the log's timestamp.
    :::
@@ -231,7 +231,7 @@ When configuring a Source, you can choose either of the following options:
 * Use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message.
 * Have us completely disregard any time zone information present in logs by forcing a time zone.
 
-It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, we stamp them with UTC.
+It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, we stamp them with UTC.
 
 ### Time zone considerations
 

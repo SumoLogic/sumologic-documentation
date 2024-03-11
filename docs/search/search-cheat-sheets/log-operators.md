@@ -62,7 +62,7 @@ Sumo provides a number of ways to [parse](/docs/search/search-query-language/pa
 conjunction with group-by functions. When using any grouping function, the word by is sufficient for representing the group operator.
 
 :::note
-An aggregation function can't take another function (such as a math function). For example, you can't use:
+An aggregation function cannot take another function (such as a math function). For example, you cannot use:
 
 ```sql
 ... | avg(x + y) as average
@@ -172,7 +172,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/asn-lookup">asn lookup</a></td>
-   <td>Sumo Logic can lookup an Autonomous System Number (ASN) and organization name by an IP address. Any IP addresses that don't have an ASN will return null values.</td>
+   <td>Sumo Logic can lookup an Autonomous System Number (ASN) and organization name by an IP address. Any IP addresses that do not have an ASN will return null values.</td>
    <td></td>
    <td></td>
 <td><code>_sourceCategory=stream "remote_ip="<br/>| parse regex "(?&lt;ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"<br/>| lookup organization, asn from asn://default on ip = ip</code></td>
@@ -584,7 +584,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><a href="/docs/search/search-query-language/transaction-analytics/transaction-operator">transaction</a></td>
    <td>The transaction operator is used to analyze related sequences of logs. No matter what type of data you're analyzing, from tracking web site sign ups, to e-commerce data, to watching system activity across a distributed system, the transaction operator can be used in a variety of use cases.</td>
    <td>_start_time<br/>_end_time</td>
-   <td>Tables generated with unordered data can be added to Dashboards, but Flow Diagrams cannot be added to Dashboards.<br/>Transaction by flow can't be used with Dashboards.</td>
+   <td>Tables generated with unordered data can be added to Dashboards, but Flow Diagrams cannot be added to Dashboards.<br/>Transaction by flow cannot be used with Dashboards.</td>
    <td><code>| transaction on sessionid fringe=10m <br/>with "Starting session *" as init, <br/>with "Initiating countdown *" as countdown_start, <br/>with "Countdown reached *" as countdown_done, <br/>with "Launch *" as launch <br/>results by transaction</code></td>
   </tr>
   <tr>

@@ -50,7 +50,7 @@ To create a new doc quickly, use a template. You can copy and paste the file, ad
 * Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face.
 * Instructional content and blog posts should be written at approximately the 8th-grade reading level, particularly in introductory sections, for readability and SEO. You can test your content [here](http://www.writingtester.com).
 * When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you are recommended to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Please use a different email or contact Sumo Logic for assistance."
-* We have a sense of humor! Conveying that we do serious work, but we don't take ourselves too seriously, makes Sumo Logic feel likable.
+* We have a sense of humor! Conveying that we do serious work, but we do not take ourselves too seriously, makes Sumo Logic feel likable.
 
 ### Active Voice
 
@@ -489,7 +489,7 @@ Place long lists or lots of content in this section. The reader can expand/colla
 
 Using contractions contributes to our goals of striking a conversational, friendly tone.
 
-It's okay to use common contractions like “I'm”, “they're”, and “you’ll”. Spell out all negative contractions (for example: use "cannot", not "can't"), as they can be easily mistaken for the opposite meaning.
+It's okay to use common contractions like “I'm”, “they're”, and “you’ll”. Spell out all negative contractions (for example: use "cannot", not "cannot"), as they can be easily mistaken for the opposite meaning.
 
 Avoid less common contractions, like “should’ve”, or “it’ll”.
 
@@ -842,7 +842,7 @@ Always start with `1.`. Markdown automatically numbers sequentially when buildin
 1. First ordered list item.
 1. Another item.
    - Unordered sub-list.
-1. Actual numbers don't matter, just that it is a number.
+1. Actual numbers do not matter, just that it is a number.
    1. Ordered sub-list.
 1. And another item.
 
@@ -855,7 +855,7 @@ Always start with `1.`. Markdown automatically numbers sequentially when buildin
 1. First ordered list item.
 1. Another item.
    * Unordered sub-list.
-1. Actual numbers don't matter, just that it is a number.
+1. Actual numbers do not matter, just that it is a number.
    1. Ordered sub-list.
 1. And another item.
    * More content for this entry. And a screenshot:<br/> ![span hover](/img/apm/traces/span-hover-view.png)
@@ -865,7 +865,7 @@ Always start with `1.`. Markdown automatically numbers sequentially when buildin
 
 ### Bulleted Lists
 
-Use bulleted lists when the items don't need to be presented in sequential order. End each bullet in a terminal period. Use asterisks `*` for unordered, bulleted lists.
+Use bulleted lists when the items do not need to be presented in sequential order. End each bullet in a terminal period. Use asterisks `*` for unordered, bulleted lists.
 
 <Tabs
   className="unique-tabs"
@@ -1107,7 +1107,7 @@ Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/ma
 
 ## Patents and trademarks
 
-Protecting our patents and trademarks is important to do correctly. We don't want to expose the company to a loss of trademark or patent just because we didn't list it correctly.
+Protecting our patents and trademarks is important to do correctly. We do not want to expose the company to a loss of trademark or patent just because we didn't list it correctly.
 
 This is a partial list of trademarked terms, which should be capitalized exactly as shown below.
 
@@ -1270,7 +1270,7 @@ Colons can be used to align columns.
 | zebra stripes | are neat      |    $1 |
 
 There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the
+The outer pipes (|) are optional, and you do not need to make the
 raw Markdown line up prettily. You can also use inline Markdown.
 
 Markdown | Less | Pretty
@@ -1302,7 +1302,7 @@ Colons can be used to align columns.
 | zebra stripes | are neat      |    $1 |
 
 There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the
+The outer pipes (|) are optional, and you do not need to make the
 raw Markdown line up prettily. You can also use inline Markdown.
 
 Markdown | Less | Pretty
@@ -1403,7 +1403,7 @@ For clarity and search engine discoverability:
    * Example: ~~_Monitoring with the Observability Solution_~~ &rarr; _Monitoring with Sumo Logic Observability_
 * Use H2 sections to break up content and try to use primary keywords here as well.
    * Example: _AWS Observability Solution_.
-* H3 and H4 headers don't impact SEO as much. Use short, meaningful titles for readability and search.
+* H3 and H4 headers do not impact SEO as much. Use short, meaningful titles for readability and search.
    * Example: _System architecture and monitoring_.
 
 :::sumo For internal contributors

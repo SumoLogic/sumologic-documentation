@@ -1248,6 +1248,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'search/search-query-language/group-aggregate-operators/index'},
           items: [
+            'search/search-query-language/group-aggregate-operators/overview',
             'search/search-query-language/group-aggregate-operators/avg',
             'search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent',
             'search/search-query-language/group-aggregate-operators/first-last',

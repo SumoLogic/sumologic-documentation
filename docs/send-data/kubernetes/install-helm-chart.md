@@ -265,7 +265,7 @@ or exclude namespaces for Prometheus Operator installed with Sumo Logic Kubernet
 
 ## Non-helm installation
 
-If you don't want to use Helm to manage the installation, please use `helm template` to generate Kubernetes templates and apply them using
+If you do not want to use Helm to manage the installation, please use `helm template` to generate Kubernetes templates and apply them using
 Kubectl.
 
 > **Warning:** > Before upgrade, please delete the old jobs:

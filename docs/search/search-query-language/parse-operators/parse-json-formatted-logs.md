@@ -168,7 +168,7 @@ The result of the query would look like this: 
 
 ## Using the nodrop option
 
-By default, the JSON operator optimizes results by dropping messages that don't use the specified key or keys, or messages that use invalid JSON keys. Use the `nodrop` option to prevent this optimization, and set the extracted field values to null (empty):
+By default, the JSON operator optimizes results by dropping messages that do not use the specified key or keys, or messages that use invalid JSON keys. Use the `nodrop` option to prevent this optimization, and set the extracted field values to null (empty):
 
 ```sql
 * | json field=jsonobject "baselineIntervals[0]" nodrop
@@ -205,7 +205,7 @@ The result would look like this:
 
 Use the **json auto** option in a query to automatically detect JSON objects in logs and extract the key/value pairs without the need to specify fields in a parse statement. After the query runs, you can use the Field Browser to choose the fields you’d like to display. You can also operate on the extracted fields later in the query.
 
-If you don't specify any additional fields, the JSON objects are automatically detected and all of the key/value pairs are extracted. Note that messages that don't contain JSON are not dropped.
+If you do not specify any additional fields, the JSON objects are automatically detected and all of the key/value pairs are extracted. Note that messages that do not contain JSON are not dropped.
 
 The JSON portion does not need to span the entire log message. There can be some text before and after the JSON portion. The **json auto** operator automatically detects where the JSON object is located and parses it.
 
@@ -249,7 +249,7 @@ Example:
 * | json auto keys "<key1>", "<key2>" as <field1>, <field2>
 ```
 
-Use the **refonly** option to extract only the referenced keys. If you don't use this option, **json auto** will also extract all other JSON fields in the message.
+Use the **refonly** option to extract only the referenced keys. If you do not use this option, **json auto** will also extract all other JSON fields in the message.
 
 Example:
 
@@ -390,13 +390,13 @@ Sumo Logic can generate the parse expression for a specific JSON key for you. Th
 
 ### Unable to parse input as json
 
-By default the JSON operator optimizes results by dropping messages that don't have the fields or keys specified in your query or if the JSON is invalid. When a message is dropped the user interface provides a warning message: 
+By default the JSON operator optimizes results by dropping messages that do not have the fields or keys specified in your query or if the JSON is invalid. When a message is dropped the user interface provides a warning message: 
 
 ![unable to parse json warning message.png](/img/search/searchquerylanguage/parse-operators/parse-json-formatted-logs/unable-to-parse-json-warning-message.png)
 
 This is only a warning message to inform you that at least one log returned in the scope of the query did not have a specified key. 
 
-Use the [nodrop](parse-nodrop-option.md) option to prevent this optimization. For example, the following query is looking for the key `event` and it has specified not to drop messages that don't have this key:
+Use the [nodrop](parse-nodrop-option.md) option to prevent this optimization. For example, the following query is looking for the key `event` and it has specified not to drop messages that do not have this key:
 
 ```sql
 _sourceCategory="nginx"

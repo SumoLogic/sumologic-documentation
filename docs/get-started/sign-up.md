@@ -29,7 +29,7 @@ The link in your account activation email will expire after 3 days. If the link 
 
 To activate your Sumo Logic Trial account:
 
-1. Check your email inbox for the activation Sumo Logic email. If you don't see it, check your Spam and Trash folders.
+1. Check your email inbox for the activation Sumo Logic email. If you do not see it, check your Spam and Trash folders.
 1. In the email, click **Activate Now**.
 1. Fill out the **Activate Your Account** form, then click **Activate**.
 
@@ -128,7 +128,7 @@ Next, use the [Setup Wizard](/docs/send-data/setup-wizard) to send your logs to 
 
 If upgrades are allowed for your AWS account, you can upgrade your active account directly from Sumo Logic.
 
-- Payment is handled by Amazon. You don't need to provide any payment information.
+- Payment is handled by Amazon. You do not need to provide any payment information.
 - The account upgrade is independent from your AWS subscription. It increases your reserved Sumo Logic ingest volume, so you are less likely to be subject to overage charges.
 
 To upgrade:

@@ -74,7 +74,7 @@ To configure an AWS CloudTrail Source, perform these steps:
   * Generate the Role-Based Access CloudFormation template in Sumo Logic and download the template.
   * Create the CloudFormation stack in AWS Management Console using the template.
   * Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, refer [Configuring your AWS source with CloudFormation](/docs/send-data/hosted-collectors/amazon-aws/configure-your-aws-source-cloudformation#set-up-an-iam-role).
-3. [Enable Sumo to track AWS Admin activity](#Enable-Sumo-to-Track-AWS-Admin-Activity). This step is optional, but if you don't do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
+3. [Enable Sumo to track AWS Admin activity](#Enable-Sumo-to-Track-AWS-Admin-Activity). This step is optional, but if you do not do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
 4. Install the Sumo Logic App for AWS CloudTrail.
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-legacy-account.md) at any time.

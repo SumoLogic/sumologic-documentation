@@ -209,7 +209,7 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
       * **Security-tooling account ID**. Enter your Security Tooling account ID. This is used to set up the AWS CloudWatch, Lambda, Kinesis, S3 bucket, and SNS topic for collecting AWS GuardDuty, Security Hub, WAF, and Network Firewall data.
       * **Log-archiving account ID**. Enter your log-archiving account ID. This is used to set up an S3 bucket and SNS topic for collecting the AWS CloudTrail data. 
          :::note
-         This can be the same ID as the Security Tooling account if you don't a separate Log Archive account set up.
+         This can be the same ID as the Security Tooling account if you do not a separate Log Archive account set up.
          :::
       * **Security-tooling and log-archiving account Region**. Enter your Security Tooling and Log Archive account region if it's different from the default.
       * **AWS Organization root ID**. Enter the ID for your organization root. This string requires `r-` followed by from 4 to 32 lowercase letters or digits.<br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-2.png')} alt="AWS organization configuration" style={{border: '1px solid gray'}} width="700"/>

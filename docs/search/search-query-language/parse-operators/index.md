@@ -52,7 +52,7 @@ In this section, we'll introduce the following concepts:
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/search/search-query-language/parse-operators/parse-nodrop-option"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Parse nodrop option</h4></a>
-  <p>Forces results to also include messages that don't match any segment of the parse expression.</p>
+  <p>Forces results to also include messages that do not match any segment of the parse expression.</p>
   </div>
 </div>
 <div className="box smallbox card">

@@ -47,7 +47,7 @@ A single line installation powered by Install Script.
 
 #### Get the Installation Token
 
-Get your [installation token](/docs/manage/security/installation-tokens) if you don't have it already. We are going to refer to this token as `<TOKEN>` in next streps.
+Get your [installation token](/docs/manage/security/installation-tokens) if you do not have it already. We are going to refer to this token as `<TOKEN>` in next streps.
 
 #### Run Installation Script
 

@@ -100,7 +100,7 @@ When you create a metric query in the Metrics Explorer, the first thing you do i
 
 #### Filters  
 
-Filters, sometimes referred to as selectors, narrow the scope of your query. If you don't include one or more filters in a metric query or apply an aggregation operator, it's possible that the query will return too many results to display.  A filter can be one or more key-value pairs, or a keyword string, or a combination of key-value pairs and keywords. When you click in the **Filters** field, a list of metadata fields appears, for example, `_sourceCategory`, `_collector`, `availabilityzone`, and so on. After you select a metadata field, a list of values appear. Here are two examples of filters:
+Filters, sometimes referred to as selectors, narrow the scope of your query. If you do not include one or more filters in a metric query or apply an aggregation operator, it's possible that the query will return too many results to display.  A filter can be one or more key-value pairs, or a keyword string, or a combination of key-value pairs and keywords. When you click in the **Filters** field, a list of metadata fields appears, for example, `_sourceCategory`, `_collector`, `availabilityzone`, and so on. After you select a metadata field, a list of values appear. Here are two examples of filters:
 
 * `cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu-idle`
 * `_sourceCategory=hostmetrics`

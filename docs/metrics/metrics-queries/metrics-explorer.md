@@ -137,7 +137,7 @@ Every query run by a user is saved in query history (both incorrect and correct 
 When you select a query from the list, it is updated for a query row where you opened query history dropdown. Selected queries from list are adjusted to current query editor mode selected by the user. For example, if you are in Basic mode and the query was run before in advanced mode, the Metrics interface  will adjust to Basic mode.
 
 :::note
-If the query editor mode can't be adjusted, it is changed to advanced mode so that it can handle query from history. It is possible to run queries which were used with parameters/template variables.
+If the query editor mode cannot be adjusted, it is changed to advanced mode so that it can handle query from history. It is possible to run queries which were used with parameters/template variables.
 :::
 
 ## Create a metric query

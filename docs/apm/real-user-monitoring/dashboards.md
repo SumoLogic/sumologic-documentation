@@ -119,7 +119,7 @@ The following fields are available to better aggregate and filter your results:
 * User agent
 * Span and Trace ids
 
-Because errors don't always have to be connected with user actions, it is ok to leave some of these fields empty.
+Because errors do not always have to be connected with user actions, it is ok to leave some of these fields empty.
 
 In addition to that, we also aggregate that information in form of log-query based panels and display on various dashboards:
 

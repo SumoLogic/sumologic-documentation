@@ -182,7 +182,7 @@ You can verify if you already have the Data Volume Index enabled by querying:
 _index=sumologic_volume
 ```
 
-If no results are returned even for longer time ranges, it means you don't have the Data Volume Index enabled.
+If no results are returned even for longer time ranges, it means you do not have the Data Volume Index enabled.
 
 You can verify if you already have the Search Audit Index enabled by querying:
 
@@ -190,7 +190,7 @@ You can verify if you already have the Search Audit Index enabled by querying:
 _index=sumologic_search_usage_per_query
 ```
 
-If no results are returned even for longer time ranges, it means you don't have Search Audit index enabled.
+If no results are returned even for longer time ranges, it means you do not have Search Audit index enabled.
 
 ## Installing the Flex app
 

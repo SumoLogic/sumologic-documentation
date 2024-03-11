@@ -27,7 +27,7 @@ The metrics collection pipeline for using Telegraf in a non-Kubernetes environme
 1. In non-Kubernetes environments, you'll need to install Telegraf on the system that hosts the application you want to monitor. For instructions, see [Install Telegraf](install-telegraf.md).
 2. Configure the appropriate application-specific input plugin and the Sumo Logic output plugin in the Telegraf configuration file. For more information, see [Configure Telegraf Input Plugins](configure-telegraf-input-plugins.md) and [Configure Telegraf Output Plugin for Sumo Logic](configure-telegraf-output-plugin.md).
 
-#### For applications that don't expose metrics
+#### For applications that do not expose metrics
 
 Some applications may not expose their metrics for another system to access, in which case you'll need to configure the application to expose the metrics so that Telegraf can collect them. Some examples:
 * To collect metrics from Nginx, you'd need to configure it to expose metrics in the Nginx configuration file. For more information, see [Collecting Logs and Metrics for Nginx (Legacy)](/docs/integrations/web-servers/nginx-legacy/#collecting-logs-and-metrics-for-nginx-legacy).

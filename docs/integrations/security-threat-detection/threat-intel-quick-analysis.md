@@ -130,7 +130,7 @@ Yes. You can scan for malicious Indicators of Compromise (IOCs) in real time usi
 Yes, you can search any log data that is still retained and searchable using the Sumo Logic Platform. However, we suggest customers break up historical searches into smaller and more manageable chunks based on time range and/or source category for performance reasons.
 
 
-#### If I don't see any results in any Dashboard, is that a bad thing?
+#### If I do not see any results in any Dashboard, is that a bad thing?
 
 No. No results in your Dashboards can mean that nothing has been identified by CrowdStrike as a threat, verified or unverified.
 

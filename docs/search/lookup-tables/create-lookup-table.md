@@ -30,11 +30,11 @@ Before you create or update a Lookup table, note the following.
 
 * Lookup files can be up to 100 MB in size. Note that if the .csv file contains duplicate rows (rows with the same primary key) the duplicate rows will be included in the file size calculation, and apply towards the 100 MB limit.
 * The maximum length for a primary key string field is 1024 characters.
-* The total size of any row can't be larger than 200 KB.
+* The total size of any row cannot be larger than 200 KB.
 
 ### Lookup Table naming
 
-A Lookup Table can't have a forward slash (`/`) in its name or be stored in a folder with a forward slash in the name.
+A Lookup Table cannot have a forward slash (`/`) in its name or be stored in a folder with a forward slash in the name.
 
 ### Reserved keywords
 
@@ -44,8 +44,8 @@ When you create a Lookup Table schema, note the following requirements:
 
     "pkv", "tid-cid-s", "mt", "tid-sk-1", "tid-sk-2", "tid-sk-3", "tid-sk-4", "tid-sk-5", "tid-sk-6", "tid-sk-7", "tid-sk-8", "tid-sk-9", "tid-sk-10", "tid-sk-11", "tid-sk-12", "tid-sk-13", "tid-sk-14", "tid-sk-15", "tid-sk-16", "tid-sk-17", "tid-sk-18", "tid-sk-19", "tid-sk-20", "`_messagetime`", "`_receipttime`", "`_sourceCategory`", "`_sourceHost`", "`_sourceName`", "`_source`", "`_sourceid`", "`_collector`", "`_collectorId`", "`_view`", "`_index`"
 
-* Field names can't contain two tilde characters in a row (`~~`). 
-* Field names are not case-sensitive. For example, you can't have both "Name" and "name" fields.
+* Field names cannot contain two tilde characters in a row (`~~`). 
+* Field names are not case-sensitive. For example, you cannot have both "Name" and "name" fields.
 
 ### Lookup Tables and Search Templates
 

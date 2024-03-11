@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="50"/>
 
-You can review and update your account settings and login credentials at any time in your user **Preferences**. The **Preferences** page contains settings that apply to your account only and don't affect other users in your organization.
+You can review and update your account settings and login credentials at any time in your user **Preferences**. The **Preferences** page contains settings that apply to your account only and do not affect other users in your organization.
 
 ## My Profile
 
@@ -72,7 +72,7 @@ Users with a role that grants the **Create Access Keys** capability can create a
 
 ## My Preferences
 
-Preference settings are only changed for your personal account; they don't affect any other users in your organization. Any changes you make to your preferences take effect the next time you sign in, not during the current session.
+Preference settings are only changed for your personal account; they do not affect any other users in your organization. Any changes you make to your preferences take effect the next time you sign in, not during the current session.
 
 ### Default Timezone
 
