@@ -14,16 +14,16 @@ authors:
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ### Changes and Enhancements
-* Python version updated if you experience any issue, please refer to this [release note](/release-notes-csoar/2024/03/04/content/).
+* Python version updated. If you experience any issues, refer to our [content release note](/release-notes-csoar/2024/03/12/content/).
 
 #### Cloud SOAR
-* Playbooks: Test feature now permits to use internal Incident ID.
+* Playbooks: Test feature now permits you to use internal Incident ID.
 
 ### Bug fixes
 * Playbooks: 
   * Fixed test playbook broken functionality.
   * Fixed scheduled actions issue.
-* Integrations: Fixed Docker Image build results in Internal error. 
+* Integrations: Fixed Docker Image build issue that resulted in an internal error. 
 
 #### Cloud SOAR
 * Incidents: Fixed column reordering causing the table to disappear.
