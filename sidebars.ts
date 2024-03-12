@@ -899,6 +899,7 @@ module.exports = {
             'alerts/monitors/alert-response-faq',
             'alerts/monitors/muting-schedules',
             'manage/ingestion-volume/monitor-ingestion-receive-alerts',
+            'alerts/monitors/use-playbooks-with-monitors',
           ],
         },
         {
