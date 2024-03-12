@@ -36,9 +36,9 @@ When converted, the filters convert allowing you to select and modify, make diff
 
 ## Switch to the Classic metrics UI
 
-:::info Classic Metrics Deprecation
-Effective January 2024, we're deprecated Classic Metrics (and Classic Dashboards) in favor of our newer [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) interface. No action is required on your part.
-:::
+import ClassicMetricsNote from '../../reuse/classic-metrics-deprecation.md';
+
+<ClassicMetricsNote/>
 
 If you prefer to use the Classic metrics UI, you can switch to it, and switch back the Metrics Explorer interface at any point. To switch to Classic metrics, click the three-dot kebab icon near the upper right corner of the page and click **Switch to Classic Metrics**. 
 
@@ -270,10 +270,6 @@ To add a metric chart to a dashboard, click the **Add to Dashboard** button in t
 
 Below are some FAQs about the Metrics Explorer.
 
-### What happens to the current metrics tab when the new Metrics Explorer comes out?
-
-The Metrics Explorer replaces the Classic metrics UI. If you’re not ready to switch to the Metrics Explorer, you continue to use the Classic UI until you are. The option for switching between Classic metrics and Metrics Explorer is on the three-dot kebab menu at the top right of the page, next to the **Add to Dashboard** button.
-
 ### What value does Metrics Explorer provide?
 
 The Metrics Explorer gives you more visualization types and makes your metrics easier to  discover. Metrics Explorer provides the same visualizations available in Dashboards (New), from tables and category charts, to time series charts and honeycomb visualizations. The Metrics Explorer has richer and more comprehensive autocomplete support, providing suggestions for even very high cardinality queries. The structured query builder approach also makes the metrics experience friendlier to infrequent and inexperienced metrics users.
@@ -281,10 +277,6 @@ The Metrics Explorer gives you more visualization types and makes your metrics e
 ### Can I put logs and metrics on the same panel in the Metrics Explorer?
 
 Yes you can. The experience is consistent with the Dashboards (New) experience and has the same features.
-
-### I loved the ability to overlay log-based events and metrics on the classic metrics page. When will you be bringing that back?
-
-Event overlay support is planned for a future release of Metrics Explorer.
 
 ### How does autocomplete when searching metrics work?
 
