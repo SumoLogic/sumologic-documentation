@@ -72,7 +72,7 @@ sumologic:
         # ...
 ```
 
-In that case `first_line_regex` of **first** matching condition is applied, and `sumologic.logs.multiline.first_line_regex` is used as expression for logs which don't match any of the condition.
+In that case `first_line_regex` of **first** matching condition is applied, and `sumologic.logs.multiline.first_line_regex` is used as expression for logs which do not match any of the condition.
 
 Conditions have to be valid [OpenTelemetry Expression](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/v0.90.1/pkg/stanza/docs/types/expression.md).
 

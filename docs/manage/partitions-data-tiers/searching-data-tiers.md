@@ -37,7 +37,7 @@ When you include the `_dataTier` modifier in a query, the query will run against
 
 If you don’t include `_dataTier`, and do not specify any partitions in the query, your search will run against the Continuous Tier. If you do specify one or more partitions, Sumo Logic will infer what tier or tiers contain those partitions, and query only those partitions.
 
-Even though you don't have to use `_dataTier` when you are querying selected partitions, it is a good practice, as it makes it clear from looking at the query what tier it runs against.
+Even though you do not have to use `_dataTier` when you are querying selected partitions, it is a good practice, as it makes it clear from looking at the query what tier it runs against.
 
 ## Examples
 

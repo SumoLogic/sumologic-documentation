@@ -216,8 +216,8 @@ annotations:
          * `environment`: This is the deployment environment where the Apache webserver farm identified by the value of `urls` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
          * `webserver_farm`: Enter a name to uniquely identify this Apache Webserver farm. This Apache webserver farm name will be shown in the Sumo Logic dashboards.
 
-   :::warning **Do not modify the other values**
-   Modifying these values will cause the Sumo Logic apps to function incorrectly
+   :::warning **Do not modify the following values**
+   Modifying these values will cause the Sumo Logic apps to function incorrectly.
    * `telegraf.influxdata.com/class: sumologic-prometheus`: Instructs the Telegraf operator what output to use.
    * `prometheus.io/scrape: "true"`: Ensures our Prometheus will scrape the metrics.
    * `prometheus.io/port: "9273"`: Tells prometheus what ports to scrape on.
@@ -251,7 +251,7 @@ This section explains the steps to collect Apache logs from a Kubernetes environ
       * `environment`: This is the deployment environment where the Apache webserver farm identified by the value of `urls` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `webserver_farm`: Enter a name to identify this Apache webserver farm. This Apache webserver farm name will be shown in the Sumo Logic dashboards.
 
-   :::warning **Do not modify the other values**
+   :::warning **Do not modify the following values**
    Modifying these values will cause the Sumo Logic apps to function incorrectly
    * `component: “webserver”`: This value is used by Sumo Logic apps to identify application components.
    * `webserver_system: “apache”`: This value identifies the webserver system.
@@ -359,7 +359,7 @@ This section provides instructions for configuring metrics collection for the Su
         * `url`: This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
       * In the `[agent]` section, set `interval` and `flush_interval` to `“60s”` to collect metric every 60 seconds.
 
-      :::warning **Do not modify the other values**
+      :::warning **Do not modify the following values**
       Modifying these values will cause the Sumo Logic apps to function incorrectly
       * `data_format = “prometheus”`, In the output plugins section, Metrics are sent in the Prometheus format to Sumo Logic
       * `component = “webserver”`: In the input plugins section, This value is used by Sumo Logic apps to identify application components.

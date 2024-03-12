@@ -12,13 +12,13 @@ Follow the steps in this topic to install or uninstall a collector on Linux. S
 * Linux, major distributions 64-bit, or any generic Unix capable of running Java 1.8
 * Single core, 512MB RAM
 * 8GB disk space
-* Package installers require TLS 1.2 or higher.
+* Package installers require TLS 1.2 or higher
 
 ## Download 
 
 Download the collector in either of the following ways:
 
-* In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the collector to begin the download.
+* In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. Click **Add Collector**, click **Installed Collector**, and then click the link for the collector to begin the download.
 * Open a browser and enter the static URL for your pod. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod. The download begins immediately.
 
 ## Install Collector
@@ -43,7 +43,7 @@ Run the installer on your server with root or Administrator privileges. If you a
 1. The Installer displays the summary of the default settings. If you want to change any of these, click [Advanced UI Installer Settings](collector-installation-reference/advanced-ui-installer-settings.md) and follow the instructions. Click **Next**.
 1. Choose an authentication method.
    * **Access Key**. If you have a Sumo Logic access ID and key, click **Next**, enter the access ID and key, and click **Next**.
-   * **Installation Token**. The Setup Wizard has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the ****Token String**** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
+   * **Installation Token**. The Setup Wizard has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
 1. Click **Finish** to complete the setup.
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the collector, check the [Error Codes](collector-installation-reference/collector-installation-error-messages.md) list to help troubleshoot.
 
@@ -83,8 +83,7 @@ sudo ./SumoCollector.sh -q -Vsumo.accessid=<accessId> -Vsumo.accesskey=<accessKe
 
 ### Using the RPM or Debian package
 
-You can use the RPM or Debian package to install a Collector on a Linux
-64-bit system.
+You can use the RPM or Debian package to install a Collector on a Linux 64-bit system.
 
 1. Install the Collector using the downloaded installation package. For the RPM package, use the command:
    ```bash
@@ -110,7 +109,7 @@ You can use the RPM or Debian package to install a Collector on a Linux
    accesskey = <accessKey>
    ```
 
-   To use an installation token, provide the authentication parameters `token` and `url`. To use these two parameters you'll need to manually base64 decode the **Token String**. Once decoded you'll have a string with a token and a URL.
+   To use an installation token, provide the authentication parameters `token` and `url`. To use these two parameters, you'll need to manually base64 decode the **Token String**. Once decoded, you'll have a string with a token and a URL.
 
    For example, the following decoded **Token String**:
 
@@ -170,17 +169,17 @@ You can use the RPM or Debian package to install a Collector on a Linux
    wrapper.java.command = java
    ```
 
-   To use an installation token, provide the authentication parameters `token` and `url`. To use these two parameters you'll need to manually base64 decode the **Token String**. Once decoded you'll have a string with a token and a URL.
+   To use an installation token, provide the authentication parameters `token` and `url`. To use these two parameters, you'll need to manually base64 decode the **Token String**. Once decoded, you'll have a string with a token and a URL.
 
    For example, the following decoded **Token String**:
 
-   ```
+   ```sh
    SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXXhttps://collectors.sumologic.com
    ```
 
    would be used as:
 
-   ```
+   ```sh
    name = <collectorName>
    url=https://collectors.sumologic.com
    token=SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -256,19 +255,14 @@ sudo dpkg -r SumoCollector
 ### Uninstall using the binary package
 
 1. Uninstall the collector service.
-
    ```bash
    sudo <Collector Installation Directory>/collector remove
    ```
-
 1. Remove the collector installation directory.
-
    ```bash
    sudo rm -rf <Collector Installation Directory>
    ```
-
 1. (Optional) On some distributions, for instance, Ubuntu, you may need to re-synchronize the daemon setting before installing the collector again.
-
    ```bash
    sudo systemctl daemon-reload
    ```

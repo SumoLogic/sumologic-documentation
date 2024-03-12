@@ -397,7 +397,7 @@ Notice that the state of the sample search job is DONE GATHERING RESULTS. The fo
 
 The **messageCount** and **recordCount** values indicate the number of messages and records found or produced so far. Messages are raw log messages and records are aggregated data.
 
-For queries that don't contain an aggregation operator, only messages are returned. If the query contains an aggregation, for example, **count by _sourceCategory**, then the messages are returned along with records resulting from the aggregation (similar to what a SQL database would return).
+For queries that do not contain an aggregation operator, only messages are returned. If the query contains an aggregation, for example, **count by _sourceCategory**, then the messages are returned along with records resulting from the aggregation (similar to what a SQL database would return).
 
 The **pendingErrors** and **pendingWarnings** values contain any pending error or warning strings that have accumulated since the last time the status was requested.
 
