@@ -1479,6 +1479,7 @@
   "/docs/dashboards-classic/share-dashboard-outside-org": "/docs/dashboards",
   "/docs/dashboards-classic/restricted-operators-dashboards": "/docs/dashboards",
   "/docs/dashboards-classic/troubleshoot-dashboards": "/docs/dashboards",
+  "/docs/manage/partitions-data-tiers/flex-pricing/estimate-and-actual-scan-data": "/docs/manage/partitions-data-tiers",
   "/cid/0011": "/docs/manage/field-extractions/create-field-extraction-rule",
   "/cid/0071": "/docs/metrics/introduction/get-started-metrics",
   "/cid/1": "/docs/search/get-started-with-search/build-search/search-syntax-overview",
