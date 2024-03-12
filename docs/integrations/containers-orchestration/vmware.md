@@ -28,7 +28,7 @@ The dashboards provide real-time monitoring with visual data displays, allowing 
 
 ```json
 2018-11-15 17:39:09.569 +0530 ,,, message=Error detected for sumo-win2k8-a-4 on xx1.sumolabs.com
-in Production1-West: Agent can't send heartbeats.msg size: 612, sendto() returned: Operation not
+in Production1-West: Agent cannot send heartbeats.msg size: 612, sendto() returned: Operation not
 permitted.,,,eventType=<class 'pyVmomi.VmomiSupport.vim.event.GeneralVmErrorEvent'>,,,
 vm=ubuntu16.04-b-4,,,host=8df.sumolabs.com,,,datacenter=Production3-East,,,
 computeResource=esx1.sumolabscluster.com,,,key=3553,,,chainId=3269

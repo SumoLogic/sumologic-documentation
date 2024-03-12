@@ -4,7 +4,7 @@ title: threatip Search Operator
 sidebar_label: threatip
 ---
 
-The `threatip` operator correlates <a href="https://www.crowdstrike.com/sumologic">CrowdStrike's</a> threat intelligence data based on IP addresses from your log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. Note that you can also use the [`threatlookup`](/docs/search/search-query-language/search-operators/threatlookup/) search operator to search threat intelligence indicators.
+The `threatip` operator correlates [CrowdStrike's](https://www.crowdstrike.com/sumologic) threat intelligence data based on IP addresses from your log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. Note that you can also use the [`threatlookup`](/docs/search/search-query-language/search-operators/threatlookup/) search operator to search threat intelligence indicators.
 
 The `threatip` operator uses the same lookup as the [Threat Intel Quick Analysis App](/docs/integrations/security-threat-detection/threat-intel-quick-analysis) but is simplified for only IP threat lookups. For further details on how this lookup works and what to do with the results see [Threat Intel FAQ](/docs/integrations/security-threat-detection/threat-intel-quick-analysis/#threat-intel-faq).
 

@@ -100,7 +100,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Entity](/docs/cse/records-signals-entities-insights/view-manage-entities)**. In Cloud SIEM, a unique actor encountered in incoming messages, such as a user, IP address, or host.
 
-**[Exclude rule](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Exclude rules are a type of Processing Rule that specifies log messages that you don't want to send to Sumo Logic, think of it as an "allowlist" filter.
+**[Exclude rule](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Exclude rules are a type of Processing Rule that specifies log messages that you do not want to send to Sumo Logic, think of it as an "allowlist" filter.
 
 **[Explore](/docs/dashboards/explore-view)**. Explore is an intuitive navigational framework that provides a visual map of the hierarchy of your Kubernetes environment. It allows you to easily traverse the hierarchy and filter the display to focus on deployments, nodes, services, or namespaces.
 
@@ -137,7 +137,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Host Metrics](/docs/integrations/hosts-operating-systems/host-metrics)**. The Sumo Logic app for Host Metrics allows you to collect local host metrics and display them using predefined search queries and dashboards. The app provides dashboards to display analysis of local host metrics for the CPU, disk, memory, network, and TCP.
 
-**[Hosted Collectors](/docs/send-data/hosted-collectors)**. Hosted Collectors don't require installation or registration, nor do Hosted Collectors have physical requirements, since they're hosted by Sumo Logic in AWS.
+**[Hosted Collectors](/docs/send-data/hosted-collectors)**. Hosted Collectors do not require installation or registration, nor do Hosted Collectors have physical requirements, since they're hosted by Sumo Logic in AWS.
 
 
 ## I

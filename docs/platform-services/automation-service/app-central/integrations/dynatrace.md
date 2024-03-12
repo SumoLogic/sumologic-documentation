@@ -138,7 +138,7 @@ To be authenticated to use the Dynatrace API, you need a valid access token. To 
 5. Select **Generate**.
 6. Copy the generated token to the clipboard. Store the token in a password manager for future use  . 
    :::note
-   You can only access your token once upon creation. You can't reveal it afterwards.
+   You can only access your token once upon creation. You cannot reveal it afterwards.
    :::
 
 ## Dynatrace in Automation Service and Cloud SOAR

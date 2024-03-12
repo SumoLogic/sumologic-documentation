@@ -175,7 +175,7 @@ You can revert back to a default configuration by removing the corresponding li
 
 #### Question
 
-Is it possible to delete data already collected into Sumo Logic? I've ingested some private information into my Sumo Logic account by mistake and I want to remove it so that search results don't show this data. Is this possible?
+Is it possible to delete data already collected into Sumo Logic? I've ingested some private information into my Sumo Logic account by mistake and I want to remove it so that search results do not show this data. Is this possible?
 
 #### Answer
 
@@ -562,7 +562,7 @@ If your user account is not an administrator check your Role assignment for any
 
 #### Verify that your Collectors are running
 
-Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with ![green check circle.png](/img/reuse/green-check-circle.png). Stopped Collectors and Sources are marked with ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png). Stopped Collectors don't send any data.
+Collectors and Sources in your account are listed on the Collectors page. Collectors and Sources that are running (able to communicate with Sumo Logic and configured to send data) are marked with ![green check circle.png](/img/reuse/green-check-circle.png). Stopped Collectors and Sources are marked with ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png). Stopped Collectors do not send any data.
 
 If a Collector is stopped, you can verify the Collector's status and restart it if necessary.
 
@@ -592,7 +592,7 @@ To view Source settings:
     ![img](/img/send-data/timezone_parsing_options.png)
 
    * Extract timestamp information from log file entries. Select this option if you'd like Sumo Logic to always extract timestamps from log messages. If no timestamp is detected, Sumo Logic uses the time when the data is received. Generally, this is the best option (it's also selected by default).
-   * Use time zone from log file. Choose a time zone that Sumo Logic can use if log files don't have a time stamp. If a Collector is running on a computer set to the UTC time zone without an offset, Sumo Logic will use this time zone.
+   * Use time zone from log file. Choose a time zone that Sumo Logic can use if log files do not have a time stamp. If a Collector is running on a computer set to the UTC time zone without an offset, Sumo Logic will use this time zone.
    * Ignore time zone from log file. Choose a time zone to override any time zone information found in log files. If you're collecting log files from disparate time zones, choose this option to set all your Sources to the same time zone.
 
 :::important

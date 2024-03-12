@@ -120,4 +120,4 @@ Following is the suggested workflow to use the Insight Trainer dashboard:
 1. Write tuning expressions for Entities, where possible.
 1. Adjust rule severities if needed.
 
-We suggest adjusting rule severities to the recommended levels only after you have written rule tuning expressions and seen how they result in lowering false positives. The algorithm adjusts its recommendations continuously. So if at first you don't see your false positives change much, wait a few days, and you will notice new recommendations.  
+We suggest adjusting rule severities to the recommended levels only after you have written rule tuning expressions and seen how they result in lowering false positives. The algorithm adjusts its recommendations continuously. So if at first you do not see your false positives change much, wait a few days, and you will notice new recommendations.  

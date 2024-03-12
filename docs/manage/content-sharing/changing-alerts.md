@@ -13,7 +13,7 @@ We strongly recommend sharing your scheduled searches with at least one Role or 
 If you or your role has Edit permissions on a scheduled search you can modify the frequency and type of alert as well as the query if you need to make any adjustments such as the threshold or timeslice.
 
 :::note
-If you're using a search template with your saved search, you can't modify the query from the alert.
+If you're using a search template with your saved search, you cannot modify the query from the alert.
 :::
 
 To edit an alert:
