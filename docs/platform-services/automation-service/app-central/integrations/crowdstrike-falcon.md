@@ -1,14 +1,15 @@
 ---
 title: CrowdStrike Falcon
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/crowdstrike-falcon.png')} alt="crowdstrike-falcon" width="100"/>
 
-***Version: 1.8  
-Updated: Jul 12, 2023***
+***Version: 1.9  
+Updated: Mar 4, 2024***
 
 CrowdStrike Falcon integration allows to pull Detections, Incidents, searching Incidents/Devices/Detections, and updating Detections/Incidents.
 
@@ -35,17 +36,18 @@ EDR
 
 * June 3, 2021 - First upload
 * July 8, 2022 - Added new action
-	+ Device Actions
+    + Device Actions
 * November 10, 2022 - Added new action:
-	+ Get Browser History
+    + Get Browser History
 * January 31, 2020 - Action updated: Get Report Summary
 * December 30, 2022 - Action updated
-	+ Detections CrowdStrike Falcon Daemon (Added FQL-based filter and Pagination to Daemon)
+    + Detections CrowdStrike Falcon Daemon (Added FQL-based filter and Pagination to Daemon)
 * February 17, 2023 - Refactoring
 * February 23, 2023 (v1.3)
-	+ List Endpoints: Updated API Endpoint
-	+ Incidents CrowdStrike Falcon Daemon: Duplicate Removed
+    + List Endpoints: Updated API Endpoint
+    + Incidents CrowdStrike Falcon Daemon: Duplicate Removed
 * March 7, 2023 (v1.4)
-	+ List Endpoints: Updated Fields Hints
+    + List Endpoints: Updated Fields Hints
 * March 21, 2023 (v1.5) - Logo updated
 * July 12, 2023 (v1.8) - Changed fields visibility
+* March 4, 2024 (v1.9) - Updated code for compatibility with Python 3.12

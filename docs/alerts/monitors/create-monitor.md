@@ -74,7 +74,7 @@ The first step when you create a new monitor is to set the trigger conditions.
    * **SLO**. Creates alerts based on a [Service Level Objectives (SLO)](/docs/observability/reliability-management-slo/).
 1. Select a **Detection Method**. <br/><img src={useBaseUrl('img/monitors/monitor-detection-methods.png')} alt="icon" width="310"/> <!-- At "smart alerts" GA, add a screenshot that shows the "Anomaly" detection method to the right of "Static" and "Outlier". -->
    * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.
-   * **Outlier** lets you detect an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. 
+   * **Outlier** lets you detect an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that do not have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. 
 <!--    * **Anomaly** lets you uncover unusual behavior identified by anomaly detection. (The **Anomaly** method applies only to the **Logs** monitor type.) Sumo Logic applies advanced analytics techniques, including machine learning and behavioral analytics, to detect anomalies and identify suspicious patterns of activity. It establishes baselines for normal behavior so you can receive alerts when deviations or unusual activities are detected.
 -->
 
@@ -321,7 +321,7 @@ When a trigger condition is met, you can send notifications to other people and 
 
 To add notifications, click the **Add Notification** button. You can add more than one notification channel for a Monitor.
 
-1. Set your **Preferred Notification Time Zone** for your monitor's alert notifications. If you don't select anything, it will default to the time zone specified in your user preferences.
+1. Set your **Preferred Notification Time Zone** for your monitor's alert notifications. If you do not select anything, it will default to the time zone specified in your user preferences.
 1. The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/alerts/webhook-connections) for details. Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](/docs/alerts/monitors/alert-variables) for a table of the available variables.
    * **Email**: Provide 1-100 recipient email addresses. You can customize the email subject and body.
    * **Webhook**: By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.

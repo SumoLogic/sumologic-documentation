@@ -6,7 +6,7 @@ description: Add scheduled searches that monitor log ingestion and send alerts.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to configure ingest alerts that you can schedule to get timely information about ingestion usage or throttling. The information in this article applies to [Cloud Flex accounts](/docs/manage/manage-subscription/cloud-flex-accounts/). To monitor ingestion for Cloud Flex Credits accounts, see [Monitoring account usage](/docs/manage/manage-subscription/cloud-flex-credits-accounts/#monitoring-account-usage) in the Cloud Flex Credits Accounts article.
+This article describes how to configure ingest alerts that you can schedule to get timely information about ingestion usage or throttling. The information in this article applies to [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts/). To monitor ingestion for Sumo Logic Credits accounts, see [Monitoring account usage](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#monitoring-account-usage).
 
 With the exception of the [Throttling alert](#throttling-alert) described below, these alerts apply to logs, not metrics. For metrics volume queries, use the [Metrics Data Volume Index](data-volume-index/metrics-data-volume-index.md).
 
@@ -215,7 +215,7 @@ _index=sumologic_volume sizeInBytes _sourceCategory="collector_volume"
 
 You can run a similar query across Sources, sourceHosts, sourceNames, source categories, or views, by changing the entry for `"collector_volume"` in the search scope keyword line to:`"source_volume"` for Sources, `"sourcehost_volume"`for sourceHosts, `"sourcename_volume"` for sourceNames, `"sourceCategory_volume"` for sourceCategories, or `"view_volume"` for views. 
 
-If you don't want the results of the query across Sources or source categories to be called "collector", you can replace all three instances of "collector" with a different field name.
+If you do not want the results of the query across Sources or source categories to be called "collector", you can replace all three instances of "collector" with a different field name.
 
 #### Scheduling
 

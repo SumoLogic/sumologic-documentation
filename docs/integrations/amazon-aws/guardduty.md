@@ -184,7 +184,7 @@ This section has instructions for collecting logs for the Amazon GuardDuty App.
 2. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo CloudWatchEventFunction Lambda function.
 3. The Lambda function sends the events to an HTTP source on a Sumo hosted collector.
 
-This configuration is defined in a [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html) published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). You don't need to manually create the necessary AWS resources. You simply deploy the configuration, as described in Step 2 below.
+This configuration is defined in a [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html) published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). You do not need to manually create the necessary AWS resources. You simply deploy the configuration, as described in Step 2 below.
 
 
 ### Step 1: Configure an HTTP source

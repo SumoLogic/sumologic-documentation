@@ -40,7 +40,11 @@ The maximum data retention period for Proofpoint TAP is 7 days, as mentioned in 
 
 ### Vendor configuration
 
-The integration must be configured with a service credential (`Service Principal`) and API secret key.
+The integration must be configured with a service credential (`Service Principal`) and API secret key. The service principal and secret are used to authenticate to the SIEM API. 
+
+1. Log in to the [TAP dashboard](https://threatinsight.proofpoint.com/auth/new).
+1. Generate TAP service credentials. For directions, see the [Proofpoint TAP documentation](https://ptr-docs.proofpoint.com/ptr-guides/integrations-files/ptr-tap/#generate-tap-service-credentials).
+1. Copy the Service Principal and Secret and save them for later use in [Source configuration](#source-configuration) below. 
 
 #### Copy log options
 
@@ -191,8 +195,8 @@ To configure a Proofpoint TAP Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 1. **Proofpoint Domain**. Provide a Proofpoint endpoint if different from the default, `tap-api-v2.proofpoint.com`.
-1. **API Secret**. Provide the Proofpoint API Secret for authenticating collection requests.
-1. **Service Principal**. Provide the Proofpoint Service Principal for authenticating collection requests.
+1. **API Secret**. Provide the Proofpoint API Secret for authenticating collection requests (copied in [Vendor configuration](#vendor-configuration) above).
+1. **Service Principal**. Provide the Proofpoint Service Principal for authenticating collection requests (copied in [Vendor configuration](#vendor-configuration) above).
 1. Select from the options **Copy** **logs for each recipient** and **Copy logs for each MessagePart**. With both options enabled, the integration creates and ingests four total events, for one original event. See [copy options](#copy-log-options) for details.
 1. (Optional) The **Polling Interval** is set for 300 seconds by default, you can adjust it based on your needs.
 1. When you are finished configuring the Source, click **Submit**.

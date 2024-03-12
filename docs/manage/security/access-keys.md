@@ -64,7 +64,7 @@ Whether Sumo accepts or rejects an API request depends on whether it contains an
 Sumo rejects:
 
 * Requests with an ORIGIN header but the allowlist is empty.
-* Requests with an ORIGIN header that don't match any entry in the allowlist.
+* Requests with an ORIGIN header that do not match any entry in the allowlist.
 
 When Sumo rejects a request, it issues an httpErrorCode 403 error. The error key is "forbidden" and the error message is: `The request origin is not allowlisted to use this access key`.
 

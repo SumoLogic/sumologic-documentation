@@ -13,7 +13,7 @@ This topic has information about writing custom Cloud SIEM rules.
 Before you create a custom rule, check to see if there is a [built-in rule](/docs/cse/rules/cse-built-in-rules) that meets or comes close to meeting your need. You can easily tailor built-in rules using [rule tuning expressions](/docs/cse/rules/rule-tuning-expressions).
 :::
 
-By tuning and using a built-in rule, you avoid the effort of writing a rule, and get the benefit of on-going improvements when we update core rule logic. Added bonus: Signals and Insights from built-in rules leverage crowd-sourced machine learning that custom rules can't.
+By tuning and using a built-in rule, you avoid the effort of writing a rule, and get the benefit of on-going improvements when we update core rule logic. Added bonus: Signals and Insights from built-in rules leverage crowd-sourced machine learning that custom rules cannot.
 
 ## Related topics
 

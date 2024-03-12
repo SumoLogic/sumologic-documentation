@@ -132,7 +132,7 @@ In the screenshot below, we're configuring a mapping that joins the value of the
 1. **Input Fields**. Enter the names of input fields. These are the fields from incoming messages whose values you want to join.
 1. **Delimiter.** Enter the character that delimits the segments of the input fields.
 1. **Show optional fields**. Expand this section if you want to specify one or more alternative input fields, or set a default value to be mapped to the target in the event that the input field is null.
-   1. **Alternate input fields**. Enter one or more fields, separated by spaces. If any of the input fields you entered above don't exist in a message, or is null, the value of the first alternative field that exists in the message and isn’t null will be mapped to the Cloud SIEM attribute you’ll specify later in this procedure.
+   1. **Alternate input fields**. Enter one or more fields, separated by spaces. If any of the input fields you entered above do not exist in a message, or is null, the value of the first alternative field that exists in the message and isn’t null will be mapped to the Cloud SIEM attribute you’ll specify later in this procedure.
    1. **Default value**. Enter the value you want to write to the Cloud SIEM attribute in the event that neither the input field or any alternative fields with non-null values exist in the message.
 1. **Output Field**. Select an output field. This is the Record attribute whose value you wish to populate.
 

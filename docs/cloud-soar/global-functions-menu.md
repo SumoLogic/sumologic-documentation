@@ -211,23 +211,21 @@ The Incident labels section allows an administrator to define labels for the dif
 Cloud SOAR's Triage module ingests events via the Cloud SOAR API and can be used to triage events which may be unverified or have a low confidence level before they are converted to incidents. The Triage module can be completely customized for use cases from financial fraud to network IDS
 alerts.
 
-<!-- Add this once the Reports feature released to production. 
 ## Report
 
-You can create reports on incidents to share with others. You can also [create widgets](/docs/cloud-soar/main-menu#create-widgets-for-dashboards-or-reports) to use in the report that display text, graphs, and charts containing details about incidents and other aspects of Cloud SOAR.
+With the **Report** option, you can create incident reports to share with others as well as [widgets](/docs/cloud-soar/main-menu/#create-widgets) to use in the report that display text, graphs, tables, and charts containing details about incidents and other aspects of Cloud SOAR.
 
 1. Click the gear icon in the upper-right corner of the UI, then select **Report**. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-access-reports.png')} alt="Access reports" width="150"/><br/>The Report UI appears. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-report-ui.png')} alt="Reports user interface" width="600"/> 
 1. Click the **+** icon in the upper left corner. 
-1. On the right side, select widgets to add to the report from **My Widgets** or **Public**. These are the same widgets that are available to use in [dashboards](/docs/cloud-soar/main-menu#create-a-dashboard). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](/docs/cloud-soar/main-menu#create-widgets-for-dashboards-or-reports). Click **Show List** to see all available widgets.  
-1. Rearrange the widgets in the report as needed. You can even add widgets to the header and footer.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets-in-report.png')} alt="Widgets in a report" width="600"/>
+1. On the right side, select widgets to add to the report from **My Widgets** or **Public**. These are the same widgets that are available to use in [dashboards](/docs/cloud-soar/main-menu/#create-a-dashboard). Widgets can be graphs, charts, tables, or any kind of visual element that contains information. Click **New** to [create a new widget](/docs/cloud-soar/main-menu/#create-widgets). Click **Show List** to see all available widgets.  
+1. Rearrange the widgets in the report as needed.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-widgets-in-report.png')} alt="Widgets in a report" width="600"/>
 1. Click **Save**. In the dialog:
     1. Provide a **Report name** and a **Description**.
     1. Click **Schedule** to schedule the report to run on a regular basis.
     1. Scroll to the bottom of the dialog and click **Public** if you want to make the report available to others.
     1. Click **Save**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-save-report.png')} alt="Save a report" width="300"/>
 1. Click **Export** to export the report to PDF. 
-1. Click **Open** to open the report later. 
--->
+1. Click **Open** to open available reports. 
 
 ## Support
 

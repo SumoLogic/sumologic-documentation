@@ -174,7 +174,7 @@ Syntax: query user [&lt;username&gt; | &lt;sessionname&gt; | &lt;sessionID&gt;] 
 Remarks:
 
 * To use this action, you must have Full Control permission or special access permission.
-* If you don't specify a user using the &lt;username&gt;, &lt;sessionname&gt;, or sessionID parameters, a list of all users who are logged on to the server is returned. Alternatively, you can also use the query session command to display a list of all sessions on a server.
+* If you do not specify a user using the &lt;username&gt;, &lt;sessionname&gt;, or sessionID parameters, a list of all users who are logged on to the server is returned. Alternatively, you can also use the query session command to display a list of all sessions on a server.
 * When query user returns information, a greater than (&gt;) symbol is displayed before the current session
 
 ## PowerShell Tools in Automation Service and Cloud SOAR
