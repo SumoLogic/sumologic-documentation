@@ -5,7 +5,7 @@ description: Deleting a user permanently removes the user and certain content ty
 ---
 
 
-Deleting a user permanently removes the user. When you delete a user, you can select a Sumo Logic user account to which to transfer the deleted user’s content, including folders, searches, scheduled searches, scheduled views, monitors, and dashboards. If you don't want to transfer the content to another user, you can choose to delete it along with the user account.
+Deleting a user permanently removes the user. When you delete a user, you can select a Sumo Logic user account to which to transfer the deleted user’s content, including folders, searches, scheduled searches, scheduled views, monitors, and dashboards. If you do not want to transfer the content to another user, you can choose to delete it along with the user account.
 
 :::note
 When you delete a user, a message is written to the Sumo Audit Index, if the audit index is enabled.
@@ -39,7 +39,7 @@ Before you begin, perform the steps in [Offboard a User.](offboard-user.md) The
 ## Delete a user and transfer content
 
 :::important
-Use caution when deleting a user. This action can't be undone.
+Use caution when deleting a user. This action cannot be undone.
 :::
 
 1. Go to **Administration** > **Users and Roles** > **Users**.  
@@ -56,7 +56,7 @@ Use caution when deleting a user. This action can't be undone.
 ## Delete a user and user's content
 
 :::important
-Use caution when deleting a user. This action can't be undone.
+Use caution when deleting a user. This action cannot be undone.
 :::
 
 1. Go to  **Administration** > **Users and Roles** > **Users**.  

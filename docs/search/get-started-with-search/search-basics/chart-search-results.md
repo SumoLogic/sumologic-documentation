@@ -43,7 +43,7 @@ If you prefer to use the classic visualizations UI, you can do so by clicking th
 
 ### Why are the chart options not available?
 
-Your data may be a string data type instead of a number. Most aggregate operators will cast your data to a number, operators like `first` and `last` don't. You can cast your data to a number if needed using the `num` operator.
+Your data may be a string data type instead of a number. Most aggregate operators will cast your data to a number, operators like `first` and `last` do not. You can cast your data to a number if needed using the `num` operator.
 
 Example:
 

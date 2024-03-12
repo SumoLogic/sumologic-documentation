@@ -30,7 +30,7 @@ Follow the sections below to gather the required vendor information and setup th
 
 ## Vendor configurations
 
-You need to gather various information from the third party vendor in order to configure collecting log data from their API using this source. Our goal is to support many of the common ways to expose APIs functionality to retrieve log data, but we recognize we can't support every feature. We recommend gathering all of the requirements listed below.
+You need to gather various information from the third party vendor in order to configure collecting log data from their API using this source. Our goal is to support many of the common ways to expose APIs functionality to retrieve log data, but we recognize we cannot support every feature. We recommend gathering all of the requirements listed below.
 
 :::info
 If you are unable to configure the source to support your vendor API, you can either request to add additional features to support it or take a request to build a dedicated source integration if needed.
@@ -115,9 +115,10 @@ Select this authentication option if the vendor API does not require any form of
   #### Endpoint Url
   The endpoint URL should include the `https://` protocol, vendor domain, and the full path to the API endpoint hosting the log data. It should **NOT** include any URL parameters as that information can be included in a dedicated section below.
 
-  Valid examples  :
-  - `https://acme.org/api/v1/auditLogs` 
-  - `https://api.acme.org/v2/securityEvents`
+  | Example                                  |
+  |:-----------------------------------------|
+  | `https://acme.org/api/v1/auditLogs`      |
+  | `https://api.acme.org/v2/securityEvents` |
 
   Invalid examples:
   - `acme.org/v1/auditLogs` Missing HTTPS protocol             
@@ -128,7 +129,7 @@ Select this authentication option if the vendor API does not require any form of
   Include any HTTP request headers required by the vendor API. The key names are static text, but the values can access our [template feature](#template-dynamic-values) to make them dynamic.
 
   | Example Header Key | Example Header Value         |
-  |:--------------------|:------------------------------|
+  |:-------------------|:-----------------------------|
   | `Accept`           | `application/json`           |
   | `Accept-Encoding`  | `gzip`                       |
   | `User-Agent`       | `Vendor Required Agent Name` |
@@ -138,7 +139,7 @@ Select this authentication option if the vendor API does not require any form of
   Include any URL query parameters required by the vendor API. The key names are static text, but the values can access our [template feature](#template-dynamic-values) to make them dynamic.
 
   | Example Header Key | Example Header Value                           |
-  |:--------------------|:------------------------------------------------|
+  |:-------------------|:-----------------------------------------------|
   | `limit`            | `1000`                                         |
   | `since`            | `{{ .WindowStartUTC "2006-01-02T15:04:05Z" }}` |
   | `until`            | `{{ .WindowEndUTC "2006-01-02T15:04:05Z" }}`   |
@@ -163,10 +164,10 @@ Select this authentication option if the vendor API does not require any form of
 
   The start time is inclusive and the end time is exclusive as that is the behavior of most APIs.
 
-  | Setting | Description |
-  | :- | :- |                   
-  | Window Size | This is the maximum size of the window between the start and end timestamp. The default is `5m` and we recommend leaving this setting unless there is a specific reason to adjust it. The source has 512MB of memory and processing data from the vendor API in small window sizes is ideal to work within the memory limits. Larger windows can be used if you need to make fewer API calls to the vendor and the data volume is low. The smallest window size is `1m` and the largest is `24h`. You must keep this setting less than or equal to your polling interval. |
-  | Initial Lookback | This setting determines how far back from current time to start the window when the source is created. Adjusting this after source creation will not have an affect. This value must be greater than or equal to the `window size` and no further back than `31d`. The default value is `24h`. |
+  | Setting          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+  |:-----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+  | Window Size      | This is the maximum size of the window between the start and end timestamp. The default is `5m` and we recommend leaving this setting unless there is a specific reason to adjust it. The source has 512MB of memory and processing data from the vendor API in small window sizes is ideal to work within the memory limits. Larger windows can be used if you need to make fewer API calls to the vendor and the data volume is low. The smallest window size is `1m` and the largest is `24h`. You must keep this setting less than or equal to your polling interval. |
+  | Initial Lookback | This setting determines how far back from current time to start the window when the source is created. Adjusting this after source creation will not have an affect. This value must be greater than or equal to the `window size` and no further back than `31d`. The default value is `24h`.                                                                                                                                                                                                                                                                            |
   | Max Lookback | This will determine how far back the window is allowed and should be set based on the vendors data retention policy. If the source encounters a repetitive error causing the window to not move forward for a period of time, the window will not be allowed to stagnate past this configured time. The default is `31d` and we recommend leaving the default unless the vendor specifically states their data retention policy. You can configure this setting between the `window size` and `365d`. 
   </div>
 </details>
@@ -236,7 +237,7 @@ Select this authentication option if the vendor API does not require any form of
 ]
 ```
   | Setting          | Value                           |
-  |:------------------|:---------------------------------|
+  |:-----------------|:--------------------------------|
   | Logs JPath       | `$[*]`                          |
   | Timestamp JPath  | `$.ts`                          |
   | Timestamp Format | `2006-01-02T15:04:05.999Z07:00` |
@@ -265,13 +266,13 @@ Select this authentication option if the vendor API does not require any form of
   The client will automatically handle HTTP 429 response status codes that include the [Retry-After](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After) response header and back off as instructed by the vendor API.
   :::
 
-  | Setting   | Value  | 
-  | :- | :- |
-  | HTTP Timeout | How long the source allows the HTTP connection to live before closing it and setting the health to a `context deadline exceeded` timeout error. This time includes receiving the server response and downloading all of the data returned in the response body. The default is `5m`. |
-  | HTTP Client Retries | The source will automatically retry without waiting for the next poll interval this many times for some temporary service errors such as a 500 Internal Server. If not specified, the default value 5 will be used. |
-  | Rate Limit Requests | The number of HTTP requests the source is allowed to make within the `Rate Limit Duration`. The default is `1000` requests. |
-  | Rate Limit Duration | The amount of time the source is allowed to make HTTP request to the vendor API using the `Rate Limit Requests`. The default is `1m` |
-  | Rate Limit Burst | The number of requests the source is allowed to burst. The default is `1000`. Set this value to `1` to disable bursting. |
+  | Setting             | Value                                                                                                                                                                                                                                                                                |
+  |:--------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+  | HTTP Timeout        | How long the source allows the HTTP connection to live before closing it and setting the health to a `context deadline exceeded` timeout error. This time includes receiving the server response and downloading all of the data returned in the response body. The default is `5m`. |
+  | HTTP Client Retries | The source will automatically retry without waiting for the next poll interval this many times for some temporary service errors such as a 500 Internal Server. If not specified, the default value 5 will be used.                                                                  |
+  | Rate Limit Requests | The number of HTTP requests the source is allowed to make within the `Rate Limit Duration`. The default is `1000` requests.                                                                                                                                                          |
+  | Rate Limit Duration | The amount of time the source is allowed to make HTTP request to the vendor API using the `Rate Limit Requests`. The default is `1m`                                                                                                                                                 |
+  | Rate Limit Burst    | The number of requests the source is allowed to burst. The default is `1000`. Set this value to `1` to disable bursting.                                                                                                                                                             |
   </div>
 </details>
 10. (Optional) **Polling Interval**. Set how frequently to poll for new data. It must be between 5 minutes and 48 hours
@@ -289,41 +290,41 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### Configuration Object
 
-| Parameter | Type | Required | Default | Description | Example |
-|:--|:--|:--|:--|:--|:--|
-| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`.| `"mySource"`|
-| description | String | No  | `null`  | Type a description of the source. | `"Testing source"`|
-| category  | String  | No  | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"` |
-| parserPath  | String  | No | `null`  | The path to a parser name |  |
-| fields   | JSON Object | No   | `null`  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | `{"_siemForward": false, "fieldA": "valueA"}` |
-| authCategory | String | Yes | `"Basic"` | One of currently supported authentication types. | `"Basic"`, `"ApiKey"`, `"Bearer"`, `"NoAuth"` |
-| authBasicUsername | String | No | `null` | The HTTP basic authentication username. | `"collection-user"` |
-| authBasicPassword | String | No | `null` | The HTTP basic authentication password. | |
-| authLocation | String | Yes | `"headers"` | The location to include the HTTP authentication information. | `"headers"`, `"parameters"` |
-| authKeyName | String | Yes | `"Authorization"` | The key name used to provide the authentication secret | `"Authorization"`, `"X-API-Key"` |
-| authKeyValue | String | Yes | `null` | The authentication secret value used for the `authKeyName` key. | |
-| authKeyValuePrefix | String | No | `null` | An optional non-secret text prefix prepended to the `authKeyValue` secret. | `"SSWS"` |
-| authBearerToken | String | Yes | `null` | The authentication bearer secret token | |
-| requestMethod | String | Yes | `GET` | The HTTP method used in the request. | `"GET"`, `"POST"` |
-| requestEndpoint | String | Yes | `null` | The API endpoint URL excluding the URL parameters | `"https://acme.org/api/v1/auditLogs"` |
-| requestHeaders | JSON Object | No | `null` | Any HTTP request headers to include. | `"requestHeaders": [{"headerName": "Accept", "headerValue": "application/json"}, {"headerName": "Content-Type", "headerValue": "application/json"}]` |
-| requestParams | JSON Object | No | `null` | Any HTTP URL parameters to include. | `"requestParams": [{"paramName": "limit",  "paramValue": "1000"}, {"paramName": "since", "paramValue": "{{ .WindowStartUTC \"2006-01-02T15:04:05Z07:00\" }}"}, {"paramName": "until", "paramValue": "{{ .WindowEndUTC \"2006-01-02T15:04:05Z07:00\" }}"}`|
-| requestBody | String | No | `null` | The data to include in the HTTP request body if the `POST` method is used. | |
-| progressType | String | Yes | `"window"` | Select the type of progression the source will use to prevent data loss and duplication. | `"progressionType": "window"` |
-| progressWindowSize | String | Yes | `"5m"` | The size of the time window.| `"windowSize": "5m"`|
-| progressWindowInitLookback | String | Yes | `"24h"` | How far back the source should start collecting data when created. This setting has no affect after the initial creation. | `"windowInitialLookback": "24h"` |
-| progressWindowMaxLookback  | String | Yes | `"31d"` | How far the window is allowed to stagnate when encountering repetitive errors. | `"windowMaxLookback": "31d"` |
-| responseLogsType | String | Yes | `"json"` | How the source should ingest logs from the response. | `"json"` |
-| responseLogsJsonPaths | JSON Object | Yes | `null` | The location of logs to ingest in the JSON response and how to handle event timestamps. See full documentation for details. | `[{"logsPath": "$[*]", "logTimestampPath": "$.published", "logTimestampFormat": "2006-01-02T15:04:05.999Z"}]` |
-| paginationType | String| Yes| `"LinkHeaders"` | Pagination type.| `"LinkHeaders"`, `"None"`|
-| paginationLinkHeadersType  | String | Yes | `"headers"` | Configures if the next page URL is included in the Link HTTP response header or in the response body. | `"headers"`, `"body"` |
-| paginationLinkHeadersJPath | String | No | `null` | A JSON Path to the appropriate body property. | `"$.link.next"` |
-| clientTimeoutDuration | String | Yes | `"5m"` | How long the source allows the HTTP connection to live before closing it and setting the health to a timeout error. | `"5m"` |
-| clientTimeoutRetries | Integer | Yes | `5` | The source will automatically retry without waiting for the next poll interval this many times for some errors such as 500 Internal Server. | `5` |
-| clientRateLimitReqs | Integer | Yes | `1000` | The number of HTTP requests the source is allowed to make within the rate limit duration.  | `1000` |
-| clientRateLimitDuration | String | Yes | `"1m"` | The duration the rate limit requests, must be between 1s and 1h. | `"1m"` |
-| clientRateLimitBurst  | Integer | Yes | `1000` | The number of requests the source is allowed to burst. | `1000`  |
-| pollingInterval  | String  | Yes  | `"5m"` | Set how frequently to poll for new data. It must be between 5 minutes and 48 hours. | `"5m"`|
+| Parameter                  | Type        | Required | Default           | Description                                                                                                                                                                                                                              | Example                                                                                                                                                                                                                                                   |
+|:---------------------------|:------------|:---------|:------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name                       | String      | Yes      | `null`            | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`.                                | `"mySource"`                                                                                                                                                                                                                                              |
+| description                | String      | No       | `null`            | Type a description of the source.                                                                                                                                                                                                        | `"Testing source"`                                                                                                                                                                                                                                        |
+| category                   | String      | No       | `null`            | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`                                                                                                                                                                                                                                         |
+| parserPath                 | String      | No       | `null`            | The path to a parser name                                                                                                                                                                                                                |                                                                                                                                                                                                                                                           |
+| fields                     | JSON Object | No       | `null`            | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.                                                                                          | `{"_siemForward": false, "fieldA": "valueA"}`                                                                                                                                                                                                             |
+| authCategory               | String      | Yes      | `"Basic"`         | One of currently supported authentication types.                                                                                                                                                                                         | `"Basic"`, `"ApiKey"`, `"Bearer"`, `"NoAuth"`                                                                                                                                                                                                             |
+| authBasicUsername          | String      | No       | `null`            | The HTTP basic authentication username.                                                                                                                                                                                                  | `"collection-user"`                                                                                                                                                                                                                                       |
+| authBasicPassword          | String      | No       | `null`            | The HTTP basic authentication password.                                                                                                                                                                                                  |                                                                                                                                                                                                                                                           |
+| authLocation               | String      | Yes      | `"headers"`       | The location to include the HTTP authentication information.                                                                                                                                                                             | `"headers"`, `"parameters"`                                                                                                                                                                                                                               |
+| authKeyName                | String      | Yes      | `"Authorization"` | The key name used to provide the authentication secret                                                                                                                                                                                   | `"Authorization"`, `"X-API-Key"`                                                                                                                                                                                                                          |
+| authKeyValue               | String      | Yes      | `null`            | The authentication secret value used for the `authKeyName` key.                                                                                                                                                                          |                                                                                                                                                                                                                                                           |
+| authKeyValuePrefix         | String      | No       | `null`            | An optional non-secret text prefix prepended to the `authKeyValue` secret.                                                                                                                                                               | `"SSWS"`                                                                                                                                                                                                                                                  |
+| authBearerToken            | String      | Yes      | `null`            | The authentication bearer secret token                                                                                                                                                                                                   |                                                                                                                                                                                                                                                           |
+| requestMethod              | String      | Yes      | `GET`             | The HTTP method used in the request.                                                                                                                                                                                                     | `"GET"`, `"POST"`                                                                                                                                                                                                                                         |
+| requestEndpoint            | String      | Yes      | `null`            | The API endpoint URL excluding the URL parameters                                                                                                                                                                                        | `"https://acme.org/api/v1/auditLogs"`                                                                                                                                                                                                                     |
+| requestHeaders             | JSON Object | No       | `null`            | Any HTTP request headers to include.                                                                                                                                                                                                     | `"requestHeaders": [{"headerName": "Accept", "headerValue": "application/json"}, {"headerName": "Content-Type", "headerValue": "application/json"}]`                                                                                                      |
+| requestParams              | JSON Object | No       | `null`            | Any HTTP URL parameters to include.                                                                                                                                                                                                      | `"requestParams": [{"paramName": "limit",  "paramValue": "1000"}, {"paramName": "since", "paramValue": "{{ .WindowStartUTC \"2006-01-02T15:04:05Z07:00\" }}"}, {"paramName": "until", "paramValue": "{{ .WindowEndUTC \"2006-01-02T15:04:05Z07:00\" }}"}` |
+| requestBody                | String      | No       | `null`            | The data to include in the HTTP request body if the `POST` method is used.                                                                                                                                                               |                                                                                                                                                                                                                                                           |
+| progressType               | String      | Yes      | `"window"`        | Select the type of progression the source will use to prevent data loss and duplication.                                                                                                                                                 | `"progressionType": "window"`                                                                                                                                                                                                                             |
+| progressWindowSize         | String      | Yes      | `"5m"`            | The size of the time window.                                                                                                                                                                                                             | `"windowSize": "5m"`                                                                                                                                                                                                                                      |
+| progressWindowInitLookback | String      | Yes      | `"24h"`           | How far back the source should start collecting data when created. This setting has no affect after the initial creation.                                                                                                                | `"windowInitialLookback": "24h"`                                                                                                                                                                                                                          |
+| progressWindowMaxLookback  | String      | Yes      | `"31d"`           | How far the window is allowed to stagnate when encountering repetitive errors.                                                                                                                                                           | `"windowMaxLookback": "31d"`                                                                                                                                                                                                                              |
+| responseLogsType           | String      | Yes      | `"json"`          | How the source should ingest logs from the response.                                                                                                                                                                                     | `"json"`                                                                                                                                                                                                                                                  |
+| responseLogsJsonPaths      | JSON Object | Yes      | `null`            | The location of logs to ingest in the JSON response and how to handle event timestamps. See full documentation for details.                                                                                                              | `[{"logsPath": "$[*]", "logTimestampPath": "$.published", "logTimestampFormat": "2006-01-02T15:04:05.999Z"}]`                                                                                                                                             |
+| paginationType             | String      | Yes      | `"LinkHeaders"`   | Pagination type.                                                                                                                                                                                                                         | `"LinkHeaders"`, `"None"`                                                                                                                                                                                                                                 |
+| paginationLinkHeadersType  | String      | Yes      | `"headers"`       | Configures if the next page URL is included in the Link HTTP response header or in the response body.                                                                                                                                    | `"headers"`, `"body"`                                                                                                                                                                                                                                     |
+| paginationLinkHeadersJPath | String      | No       | `null`            | A JSON Path to the appropriate body property.                                                                                                                                                                                            | `"$.link.next"`                                                                                                                                                                                                                                           |
+| clientTimeoutDuration      | String      | Yes      | `"5m"`            | How long the source allows the HTTP connection to live before closing it and setting the health to a timeout error.                                                                                                                      | `"5m"`                                                                                                                                                                                                                                                    |
+| clientTimeoutRetries       | Integer     | Yes      | `5`               | The source will automatically retry without waiting for the next poll interval this many times for some errors such as 500 Internal Server.                                                                                              | `5`                                                                                                                                                                                                                                                       |
+| clientRateLimitReqs        | Integer     | Yes      | `1000`            | The number of HTTP requests the source is allowed to make within the rate limit duration.                                                                                                                                                | `1000`                                                                                                                                                                                                                                                    |
+| clientRateLimitDuration    | String      | Yes      | `"1m"`            | The duration the rate limit requests, must be between 1s and 1h.                                                                                                                                                                         | `"1m"`                                                                                                                                                                                                                                                    |
+| clientRateLimitBurst       | Integer     | Yes      | `1000`            | The number of requests the source is allowed to burst.                                                                                                                                                                                   | `1000`                                                                                                                                                                                                                                                    |
+| pollingInterval            | String      | Yes      | `"5m"`            | Set how frequently to poll for new data. It must be between 5 minutes and 48 hours.                                                                                                                                                      | `"5m"`                                                                                                                                                                                                                                                    |
 
 ## Template Dynamic Values
 
@@ -361,7 +362,7 @@ The syntax for this function requires a timestamp format as a single argument. S
 ```
 
 | Template Example                                                    | Output                                 |
-|:---------------------------------------------------------------------|:----------------------------------------|
+|:--------------------------------------------------------------------|:---------------------------------------|
 | `{{ .WindowStartUTC "2006-01-02T15:04:05Z" }}`                      | `2024-03-07T20:15:56Z`                 |
 | `{{ .WindowStartUTC "2006-01-02T15:04:05.999999Z07:00" }}`          | `2024-03-07T20:15:56.905571Z`          |
 | `greaterThan:{{ .WindowStartUTC "2006-01-02T15:04:05.999Z07:00" }}` | `greaterThan:2024-03-07T20:15:56.905Z` |
@@ -380,7 +381,7 @@ Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_t
 ```
 
 | Template Example                                                                         | Output                                      |
-|:------------------------------------------------------------------------------------------|:---------------------------------------------|
+|:-----------------------------------------------------------------------------------------|:--------------------------------------------|
 | `{{ .WindowStartLocation "US/Eastern" "2006-01-02T15:04:05Z" }}`                         | `2024-03-07T15:15:56-05:00`                 |
 | `{{ .WindowStartLocation "US/Pacific" "2006-01-02T15:04:05.999999Z07:00" }}`             | `2024-03-07T12:15:56.905-08:00`             |
 | `greaterThan:{{ .WindowStartLocation "Europe/Berlin" "2006-01-02T15:04:05.999Z07:00" }}` | `greaterThan:2024-03-07T21:15:56.905+01:00` |
@@ -395,7 +396,7 @@ The syntax for this function requires a timestamp format as a single argument. R
 ```
 
 | Template Example                                               | Output                              |
-|:----------------------------------------------------------------|:-------------------------------------|
+|:---------------------------------------------------------------|:------------------------------------|
 | `{{ .WindowEndUTC "2006-01-02T15:04:05Z" }}`                   | `2024-03-07T20:15:56Z`              |
 | `{{ .WindowEndUTC "2006-01-02T15:04:05.999999Z07:00" }}`       | `2024-03-07T20:15:56.905571Z`       |
 | `lessThan:{{ .WindowEndUTC "2006-01-02T15:04:05.999Z07:00" }}` | `lessThan:2024-03-07T20:15:56.905Z` |
@@ -414,7 +415,7 @@ Refer to the [TZ identifier](https://en.wikipedia.org/wiki/List_of_tz_database_t
 ```
 
 | Template Example                                                                    | Output                                   |
-|:-------------------------------------------------------------------------------------|:------------------------------------------|
+|:------------------------------------------------------------------------------------|:-----------------------------------------|
 | `{{ .WindowEndLocation "US/Eastern" "2006-01-02T15:04:05Z" }}`                      | `2024-03-07T15:15:56-05:00`              |
 | `{{ .WindowEndLocation "US/Pacific" "2006-01-02T15:04:05.999999Z07:00" }}`          | `2024-03-07T12:15:56.905-08:00`          |
 | `lessThan:{{ .WindowEndLocation "Europe/Berlin" "2006-01-02T15:04:05.999Z07:00" }}` | `lessThan:2024-03-07T21:15:56.905+01:00` |
@@ -426,7 +427,7 @@ The source uses the the [Go programming language timestamp formatting](https://g
 
 ### Format Reference
   | Date Format                                 | Reference Value                                                       |
-  |:---------------------------------------------|:-----------------------------------------------------------------------|
+  |:--------------------------------------------|:----------------------------------------------------------------------|
   | Year                                        | `2006`                                                                |
   | Month Full Name                             | `January`                                                             |
   | Month Abbreviated Name                      | `Jan`                                                                 |
@@ -449,16 +450,20 @@ The source uses the the [Go programming language timestamp formatting](https://g
   | Timezone Offset without Colon Use Z for UTC | `Z0700`                                                               |
   | Timezone Offset with Colon Use Z for UTC    | `Z07:00`                                                              |
   | Timezone Offset without Colon               | `-0700`                                                               |
-  | Timezone Offset with Colon                   | `-07:00`                                                              |
+  | Timezone Offset with Colon                  | `-07:00`                                                              |
   | Timezone Abbreviated Name                   | `MST`                                                                 |
 
 ### Format Examples
   | Standard              | Timestamp in Log                 | Timestamp Format                      |
-  |:-----------------------|:----------------------------------|:---------------------------------------|
+  |:----------------------|:---------------------------------|:--------------------------------------|
   | RFC 3339              | `2024-02-01T16:07:57Z`           | `2006-01-02T15:04:05Z07:00`           |
   | RFC 3339 Nano Seconds | `2024-02-01T16:07:57.541468757Z` | `2006-01-02T15:04:05.999999999Z07:00` |
 
 ## FAQ
+
+:::info
+Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
+:::
 
 <details>
   <summary>What if I want to query multiple HTTP endpoints?</summary>
@@ -470,9 +475,5 @@ The source uses the the [Go programming language timestamp formatting](https://g
 </details>
 <details>
   <summary>What timestamp is used for the data?</summary>
-  <div>Logs without a timestamp or failed timestamp parsing will use current time. Be sure to configure the HTTP response log ingestion configuration section to ensure time parsing is correctly handled.</div>
+  <div>If you leave the time parsing configuration blank, it will cause the source to use current time for the collected logs. Be sure to configure the HTTP response log ingestion configuration section to ensure time parsing is correctly handled. The source will enter an error health status if time parsing is configured and is unsuccessful.</div>
 </details>
-
-:::info
-Click [here](/docs/c2c/info) for more information about Cloud-to-Cloud sources.
-:::

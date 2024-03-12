@@ -13,7 +13,7 @@ Images, blockquotes, code blocks, URLs, and email addresses are not supported in
 
 ## Basic text
 
-You don't need to apply any syntax to display basic text. Just type the phrase in the Text box.
+You do not need to apply any syntax to display basic text. Just type the phrase in the Text box.
 
 ## Bold/italic text
 

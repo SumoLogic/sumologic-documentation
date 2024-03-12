@@ -102,11 +102,11 @@ parse "user=\"*\" action=\"*\" sessionId=\"*\"" as user, action, sessionid
 
 ## Best practices for designing Rules
 
-**Include the most accurate keywords to identify the subset of data from which you want to extract data.** Lock down the scope as tightly as possible to make sure it's extracting just the data you want, nothing more. Using a broader scope means that Sumo Logic will inspect more data for the fields you'd like to parse, which may mean that fields are extracted when you don't actually need them.
+**Include the most accurate keywords to identify the subset of data from which you want to extract data.** Lock down the scope as tightly as possible to make sure it's extracting just the data you want, nothing more. Using a broader scope means that Sumo Logic will inspect more data for the fields you'd like to parse, which may mean that fields are extracted when you do not actually need them.
 
 **Create multiple, specific rules.** Instead of constructing complicated rules, create multiple rules with basic scope, then search on more than one (rules are additive). The OR and AND commands are supported, just as in any search. For example, you could use one rule to parse Apache log response codes, and then use another rule to parse response time. When used together, you can get all of the information you may need.
 
-**Don't extract fields you don't need.** Extract the minimum number of fields that should all be present in logs. Every field you include in the scope shows up in every search, so including extra fields means you'll see more results than you may need. It's better to create more rules that extract the fields that are most commonly used. First, look at common data sources and see what's most frequently extracted. Then, think about what you most frequently parse from those sources, then create rules to automatically extract those fields.
+**Don't extract fields you do not need.** Extract the minimum number of fields that should all be present in logs. Every field you include in the scope shows up in every search, so including extra fields means you'll see more results than you may need. It's better to create more rules that extract the fields that are most commonly used. First, look at common data sources and see what's most frequently extracted. Then, think about what you most frequently parse from those sources, then create rules to automatically extract those fields.
 
 **Create multiple parse nodrop statements in an FER for a field name to match distinct log patterns**. The different parse statements will effectively function like an OR statement since only one will match the log message and return the field value.
 

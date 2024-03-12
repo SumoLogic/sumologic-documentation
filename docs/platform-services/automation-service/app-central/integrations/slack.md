@@ -45,7 +45,7 @@ Create a public or private channel, Send messages or Files to channels or Users 
       * Bot tokens let your app act independently.
       * User tokens allow you to work directly on behalf of users, based on the OAuth scopes that installing users' awards to your app.
    * Actions <br/>All the Actions required scopes depend on the type of channel-like object you're working with. To use the Actions, you'll need at least one of the channels:, groups:, im: or mpim: scopes corresponding to the conversation type you're working with.
-      * Send Message Action   <br/>BOT users can't post to a direct message conversation between two users using Send Message Action.   If your app was involved in the conversation, then it would be a multi-person direct message instead.   Apps can post to direct message conversations between users when a shortcut or slash command belonging to that app is used in the conversation.
+      * Send Message Action   <br/>BOT users cannot post to a direct message conversation between two users using Send Message Action.   If your app was involved in the conversation, then it would be a multi-person direct message instead.   Apps can post to direct message conversations between users when a shortcut or slash command belonging to that app is used in the conversation.
       * Get User Action   <br/>This Action returns information about a member of a workspace.   If you want to search for users it's possible to manage it with an Exact match or without an Exact match.   Also this action will return on the field name users\_ids in JSON, which you can use in Playbook, if you want to invite many users to the channel.
       * Delete Action   <br/>When used with a typical user token, may only delete messages posted by that user. When used with a bot user's token, may delete only messages posted by that bot user.
       * Invite To Channel Action   <br/>This action invites 1-1000 users to a public or private channel. The calling user must be a member of the channel. And also the invites must not be the owner of the channel.   
@@ -53,7 +53,7 @@ Create a public or private channel, Send messages or Files to channels or Users 
 	  * Deactivate Account Action  <br/>This Admin API removes a user from a workspace. This app can not be installed on a workspace. Apps with this feature are only available to Enterprise customers.
 	  * Archive Channel Action   <br/>This Action archives a conversation. Not all types of conversations can be archived.   
       :::note
-	  Limits for workspace apps   <br/>Because workspace apps can't act on behalf of users, they don't have the power to archive conversations, except when they're the owner/creator of the conversation.
+	  Limits for workspace apps   <br/>Because workspace apps cannot act on behalf of users, they do not have the power to archive conversations, except when they're the owner/creator of the conversation.
 	  :::
 1. Now for each action of Slack Integration, you need different scopes to be added to the BOT or User.
    * **Actions: List Channels / Get Channel / Get Members**<br/>Bot Token and User Token need the same scopes:

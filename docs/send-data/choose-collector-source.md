@@ -139,7 +139,7 @@ The following table shows the comparison between the Installed Collector and Ope
 
 **Hosted Collectors** reside in the Cloud allowing for seamless collection from Amazon Web Services, Google, Microsoft, and many other Cloud services.
 
-Unlike Installed Collectors, [Hosted Collectors](/docs/send-data/hosted-collectors/) don't require installation or activation, nor do Hosted Collectors have physical requirements since they're hosted by Sumo Logic in AWS.
+Unlike Installed Collectors, [Hosted Collectors](/docs/send-data/hosted-collectors/) do not require installation or activation, nor do Hosted Collectors have physical requirements since they're hosted by Sumo Logic in AWS.
 
 Because there are no performance issues to consider, you can configure as many Sources as you'd like, up to 1,000, for a single Hosted Collector. Consider setting up more than one Hosted Collector if you'd like to tag different data types with different metadata.
 

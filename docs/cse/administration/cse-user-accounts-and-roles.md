@@ -33,6 +33,6 @@ Roles and capabilities are managed on the Sumo Logic platform. For instructions,
 For descriptions of the capabilities in each category, see [Role Capabilities](/docs/manage/users-roles/roles/role-capabilities#cloud-siem-enterprise).
 
 :::tip
-* If you select a “Manage” capability for an object (like **Manage Rules**) you also have to select the corresponding “View” capability (like **View Rules**). Users can't manage something without also being able to view it. 
+* If you select a “Manage” capability for an object (like **Manage Rules**) you also have to select the corresponding “View” capability (like **View Rules**). Users cannot manage something without also being able to view it. 
 * When we add new features to Cloud SIEM, capabilities for them are auto-enabled on the built-in **Administrator** role. However, if you create your own roles for Cloud SIEM, you must add those capabilities as needed to your custom roles. Follow our [Cloud SIEM release notes](/release-notes-cse/) for new features to determine if they have corresponding role capabilities you need to add to your roles.
 :::
