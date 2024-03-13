@@ -1,5 +1,5 @@
 ---
-slug: /manage/partitions-data-tiers/flex-pricing
+slug: /manage/partitions/flex
 title: Flex Pricing
 description: Learn about Sumo Logic Flex Pricing.
 ---
@@ -34,7 +34,7 @@ Flex pricing delivers the new financial model for log management, with which you
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions-data-tiers/flex-pricing/estimate-and-actual-scan-data"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Estimate and Actual Scan Data</h4></a>
+  <a href="/docs/manage/partitions/flex/estimate-and-actual-scan-data"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Estimate and Actual Scan Data</h4></a>
   <p> Learn about the estimate and actual scan data for Flex pricing.</p>
   </div>
 </div>

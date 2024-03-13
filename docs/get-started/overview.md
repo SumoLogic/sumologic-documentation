@@ -122,7 +122,7 @@ Once you've set up a collector and source, read these tips on configuring and ma
 
 ### Data Volume and Retention
 
-* [Data Retention](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention). Determine the average data retention for your account (total storage and daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data** > **Settings** > **Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
+* [Data Retention](/docs/manage/partitions/manage-indexes-variable-retention). Determine the average data retention for your account (total storage and daily ingest) and change the General Index retention period if necessary. The General Index settings can be found on the **Manage Data** > **Settings** > **Partitions** menu, which is explained in further detail on the Optimization Setup sheet of this document.
 * [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index). Enable the data volume index. This feature allows you to track your log and metric ingest more closely using a built-in Sumo tool.
 * [Audit Index](/docs/manage/security/audit-indexes/audit-index). Enable the audit index. This feature allows you to track user behavior, content changes, and scheduled search execution results.
 * [Data Volume App](/docs/integrations/sumo-apps/data-volume). Install the Data Volume app in Sumo App Catalog and explore the app's content. This will give you insight into your log and metric ingest volume, as well as the identification of top sources using various metadata tags.
@@ -142,7 +142,7 @@ Before adding Partitions, consider the following:
 The **Partitions** page can be found under the **Manage Data** > **Settings** menu. Partitions are tools that can be used to route data into smaller subsets of the overall data ingest. These datasets can be isolated for either query performance reasons or for log retention purposes.
 
 * [Routing Expression.](/docs/manage/partitions-data-tiers) Each partition's contents are determined by the routing expression, which will be scoped using metadata and/or keywords.
-* [Variable Retention.](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention.md) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
+* [Variable Retention.](/docs/manage/partitions/manage-indexes-variable-retention.md) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
 
 
 ### Field Extraction Rule setup

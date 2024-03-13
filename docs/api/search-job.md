@@ -86,10 +86,11 @@ You can start requesting results asynchronously while the job is running and pag
   </tr>
 </table>
 
-<!-- note about Flex pricing and app -->
+:::info
+Flex Licensing model can return up to 10 million records per search.
+:::
 
 If you need more results, you'll need to break up your search into several searches that span smaller blocks of the time range needed. For example, if your search runs for a week and returns 70 million records, consider breaking it into at least seven searches, each spanning a day.
-
 
 ## Rate limit throttling  
 
@@ -99,7 +100,9 @@ import RateLimit from '../reuse/api-rate-limit.md';
 
 A limit of 200 active concurrent search jobs applies to your organization.
 
-When searching the [Frequent Tier](/docs/manage/partitions-data-tiers/data-tiers), a rate limit of 20 concurrent search jobs applies to your organization.
+When searching the [Frequent Tier](/docs/manage/partitions/data-tiers), a rate limit of 20 concurrent search jobs applies to your organization.
+
+When searching the [Flex data](/docs/manage/partitions/flex-pricing), a rate limit of 200 concurrent search jobs applies to your organization.
 
 Once you reach the limit of 200 active searches, attempting an additional search will return a status code of `429 Too Many Requests`, indicating that you've exceeded the permitted search job limit.
 

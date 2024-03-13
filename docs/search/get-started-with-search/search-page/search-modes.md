@@ -33,14 +33,14 @@ This section elaborates on the input options.
 
 ![Basic mode query editor.png](/img/search/get-started-search/search-page/basic-mode-query-editor.png)
 
-* **Data Tier**. Select from the dropdown which Data Tier the query should run against, either Continuous, Frequent, or Infrequent. See [Searching Data Tiers](/docs/manage/partitions-data-tiers/searching-data-tiers) for further details.
+* **Data Tier**. Select from the dropdown which Data Tier the query should run against, either Continuous, Frequent, or Infrequent. See [Searching Data Tiers](/docs/manage/partitions/data-tiers/searching-data-tiers) for further details.
     :::note
     **Data Tier** option is not available for the customer with Flex package.
     :::
 
     ![Data Tier options.png](/img/search/get-started-search/search-page/Data-Tier-options.png) 
 
-* **Index**. Type in any [Partitions](/docs/manage/partitions-data-tiers) you want to run the query against. When you click in the text area a list of available options is provided. Click an option to automatically fill in the value in the text area. You can continue to add additional Partitions if desired.
+* **Index**. Type in any [Partitions](/docs/manage/partitions) you want to run the query against. When you click in the text area a list of available options is provided. Click an option to automatically fill in the value in the text area. You can continue to add additional Partitions if desired.
 
     ![Basic mode Index options.png](/img/search/get-started-search/search-page/Basic-mode-Index-options.png)    
 

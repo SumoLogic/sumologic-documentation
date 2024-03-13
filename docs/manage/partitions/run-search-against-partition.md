@@ -30,9 +30,11 @@ _index=sumologic_default
     * Click the **Search Icon** to the right of the partition name. This launches a search on just the data indexed in the partition.<br/><img src={useBaseUrl('img/partitions-data-tiers/partitions-page-search-icon.png')} alt="icon" />    
     * Select a partition from the table and click the **Search Icon** to the right of the routing expression. This launches a search that runs the expression against the partition, as well as any other logs that match the query. This means that you can capture search results on all data, not just the data indexed in the partition.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane-search-icon.png')} alt="edit-partition-pane-search-icon" width="300"/>    
 
-## Searching partitions in Data Tiers
+## Searching partitions
 
-If you have the [Data Tiers](data-tiers.md) feature, see [Searching Data Tiers](searching-data-tiers.md) for information about how to search partitions by Data Tier.
+- If you have the [Data Tiers](data-tiers.md) feature, see [Searching Data Tiers](searching-data-tiers.md) for information about how to search partitions by Data Tier.
+
+- If you have the Flex feature, see [Searching Flex](searching-data-tiers.md) for information about how to search partitions.
 
 ## Why did I get a message to run a search against a partition?
 

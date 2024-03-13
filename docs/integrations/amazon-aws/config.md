@@ -148,7 +148,7 @@ This section is optional, but recommended for better search performance.
 
 Due to the infrequent nature of AWS Config changes, Sumo Logic recommends creating a partition for logs. A partition will provide better search performance, especially if there is high data volume in your account.
 
-To create a partition, follow the instructions to [Create a Partition](/docs/manage/partitions-data-tiers/create-edit-partition.md). Name the index **aws_config**. For the Routing Expression, enter a query that isolates messages from AWS Config, such as `_sourceCategory=aws_config`.
+To create a partition, follow the instructions to [Create a Partition](/docs/manage/partitions/data-tiers/create-edit-partition.md). Name the index **aws_config**. For the Routing Expression, enter a query that isolates messages from AWS Config, such as `_sourceCategory=aws_config`.
 
 ## Installing the AWS Config App
 

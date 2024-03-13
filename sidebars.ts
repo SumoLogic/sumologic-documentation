@@ -643,32 +643,42 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Partitions and Data Tiers',
+      label: 'Partitions',
       collapsible: true,
       collapsed: true,
-      link: {type: 'doc', id: 'manage/partitions-data-tiers/index'},
+      link: {type: 'doc', id: 'manage/partitions/index'},
       items: [
         {
           type: 'category',
-          label: 'Flex Pricing',
+          label: 'Data Tier',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'manage/partitions-data-tiers/flex-pricing/index'},
+          link: {type: 'doc', id: 'manage/partitions/flex-pricing/index'},
           items: [
-            'manage/partitions-data-tiers/flex-pricing/estimate-and-actual-scan-data',
-            'manage/partitions-data-tiers/flex-pricing/view-partition-details-flex',
-            'manage/partitions-data-tiers/flex-pricing/flex-pricing-faq',
+            'manage/partitions/create-edit-partition',
+            'manage/partitions/view-partition-details',
+            'manage/partitions/data-tiers',
+            'manage/partitions/data-tiers-faqs',
+            'manage/partitions/searching-data-tiers',
           ]
         },
-        'manage/partitions-data-tiers/create-edit-partition',
-        'manage/partitions-data-tiers/view-partition-details',
-        'manage/partitions-data-tiers/run-search-against-partition',
-        'manage/partitions-data-tiers/edit-data-forwarding-destinations-partition',
-        'manage/partitions-data-tiers/manage-indexes-variable-retention',
-        'manage/partitions-data-tiers/decommission-partition',
-        'manage/partitions-data-tiers/data-tiers',
-        'manage/partitions-data-tiers/data-tiers-faqs',
-        'manage/partitions-data-tiers/searching-data-tiers',
+        {
+          type: 'category',
+          label: 'Flex',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/partitions/flex-pricing/index'},
+          items: [
+            'manage/partitions/flex/create-edit-partition-flex',
+            'manage/partitions/flex/estimate-and-actual-scan-data',
+            'manage/partitions/flex/view-partition-details-flex',
+            'manage/partitions/flex/flex-pricing-faq',
+          ]
+        },
+        'manage/partitions/run-search-against-partition',
+        'manage/partitions/edit-data-forwarding-destinations-partition',
+        'manage/partitions/manage-indexes-variable-retention',
+        'manage/partitions/decommission-partition',
       ]
     },
     {
