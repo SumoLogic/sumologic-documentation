@@ -2980,7 +2980,7 @@
   "/Manage/Ingestion-and-Volume/Monitor-Ingestion-and-Receive-Alerts": "/docs/manage/ingestion-volume/monitor-ingestion-receive-alerts",
   "/Manage/Ingestion-and-Volume/Ingest_Budgets/Ingest_Budgets_Quick_Start_Tutorial": "/docs/manage/ingestion-volume/ingest-budgets/quickstart",
   "/Manage/Partitions": "/docs/manage/partitions",
-  "/manage/partitions_and-data_tiers/data_tiers": "/docs/manage/partitions-data-tiers",
+  "/manage/partitions_and-data_tiers/data_tiers": "/docs/manage/partitions/data-tiers",
   "/Manage/Partitions/About-Partitions": "/docs/manage/partitions",
   "/Manage/Partitions/Analytics_Tiers": "/docs/manage/partitions/data-tiers",
   "/Manage/Partitions/Data_Tiers": "/docs/manage/partitions/data-tiers",

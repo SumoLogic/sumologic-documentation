@@ -8,7 +8,7 @@ description: Index access search filtering allows you to use rule permissions to
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), you can restrict access to data in logs using advanced search filters, and you can also restrict access to the [indexes](/docs/manage/partitions-data-tiers/) you specify. This ensures that users only see the data they are supposed to.
+When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), you can restrict access to data in logs using advanced search filters, and you can also restrict access to the [indexes](/docs/manage/partitions/) you specify. This ensures that users only see the data they are supposed to.
 
 Follow this process to restrict access using advanced filters and indexes:
 
@@ -39,7 +39,7 @@ Keep in mind that these are examples only, and you must adapt them for use in yo
 
 ## Configure index access
 
-An index filter allows or denies access to [search indexes](/docs/manage/partitions-data-tiers/).
+An index filter allows or denies access to [search indexes](/docs/manage/partitions/).
 
 1. [Create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role).
 1. In the **Create New Role** pane, navigate to **Index Access**.

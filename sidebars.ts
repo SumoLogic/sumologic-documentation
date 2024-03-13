@@ -650,7 +650,7 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'Data Tier',
+          label: 'Data Tiers',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'manage/partitions/data-tiers/index'},

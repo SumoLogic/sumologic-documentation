@@ -141,7 +141,7 @@ Before adding Partitions, consider the following:
 
 The **Partitions** page can be found under the **Manage Data** > **Settings** menu. Partitions are tools that can be used to route data into smaller subsets of the overall data ingest. These datasets can be isolated for either query performance reasons or for log retention purposes.
 
-* [Routing Expression.](/docs/manage/partitions-data-tiers) Each partition's contents are determined by the routing expression, which will be scoped using metadata and/or keywords.
+* [Routing Expression.](/docs/manage/partitions) Each partition's contents are determined by the routing expression, which will be scoped using metadata and/or keywords.
 * [Variable Retention.](/docs/manage/partitions/manage-indexes-variable-retention.md) Each Partition has its own retention period. This allows for some logs to be retained for longer, while others are discarded more quickly.
 
 

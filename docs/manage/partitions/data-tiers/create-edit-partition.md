@@ -13,7 +13,7 @@ Partitions provide three primary functions:
 
 Partitions ingest your messages in real time, and differ from [Scheduled Views](/docs/manage/scheduled-views), which backfill with aggregate data. Partitions begin building a non-aggregate index from the time the Partition is created and only index data moving forward (from the time of creation).
 
-See [Partitions and Data Tiers](/docs/manage/partitions-data-tiers) for limitations.
+See [Partitions](/docs/manage/partitions) for limitations.
 
 ## Prerequisites
 
