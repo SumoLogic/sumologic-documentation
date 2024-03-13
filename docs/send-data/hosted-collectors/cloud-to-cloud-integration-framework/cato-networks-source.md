@@ -85,7 +85,7 @@ To configure a Cato Networks Source:
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
-| `_siemParser` | `/Parsers/Sumo/Cato Networks/Cato Networks` | Set when **Forward To SIEM** is checked. |
+| `_siemParser` | `/Parsers/System/Cato Networks/Cato Networks` | Set when **Forward To SIEM** is checked. |
 
 ## JSON Configuration
 
