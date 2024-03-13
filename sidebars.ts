@@ -653,13 +653,12 @@ module.exports = {
           label: 'Data Tier',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'manage/partitions/flex-pricing/index'},
+          link: {type: 'doc', id: 'manage/partitions/data-tiers/index'},
           items: [
-            'manage/partitions/create-edit-partition',
-            'manage/partitions/view-partition-details',
-            'manage/partitions/data-tiers',
-            'manage/partitions/data-tiers-faqs',
-            'manage/partitions/searching-data-tiers',
+            'manage/partitions/data-tiers/create-edit-partition',
+            'manage/partitions/data-tiers/view-partition-details',
+            'manage/partitions/data-tiers/data-tiers-faqs',
+            'manage/partitions/data-tiers/searching-data-tiers',
           ]
         },
         {
@@ -667,7 +666,7 @@ module.exports = {
           label: 'Flex',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'manage/partitions/flex-pricing/index'},
+          link: {type: 'doc', id: 'manage/partitions/flex/index'},
           items: [
             'manage/partitions/flex/create-edit-partition-flex',
             'manage/partitions/flex/estimate-and-actual-scan-data',
