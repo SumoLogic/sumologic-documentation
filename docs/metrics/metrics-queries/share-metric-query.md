@@ -8,7 +8,7 @@ description: Share a saved or unsaved metric query.
 There are two ways you can share a metric query with other Sumo users:
 
 * You can share a saved metric query with one or more roles, users, or a combination of roles and individual users. When you share a saved metric query, you can set the sharing permission level to View, Edit, or Manage, and also apply advanced sharing options.
-* You can also share an unsaved metric query. After you run a metric query you can obtain a URL for the chart and send it to other users so that they can view the chart. Anyone in your org with access to the URL can view the chart. When you share an unsaved metric query in this fashion, you can't grant Edit or Manage permissions, or any of the advanced options available when sharing a saved query. 
+* You can also share an unsaved metric query. After you run a metric query you can obtain a URL for the chart and send it to other users so that they can view the chart. Anyone in your org with access to the URL can view the chart. When you share an unsaved metric query in this fashion, you cannot grant Edit or Manage permissions, or any of the advanced options available when sharing a saved query. 
 
 ## Share a saved metric query
 

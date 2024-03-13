@@ -61,7 +61,7 @@ To disable 2-Step Verification:
 
 ## Lost device? Use a backup code
 
-If you lose your mobile device or otherwise can't generate a code for the configured TOTP integration, you can use your backup codes to sign in. Each of the five codes can be used for one sign-in.
+If you lose your mobile device or otherwise cannot generate a code for the configured TOTP integration, you can use your backup codes to sign in. Each of the five codes can be used for one sign-in.
 
 You can find your codes in one of two ways:
 

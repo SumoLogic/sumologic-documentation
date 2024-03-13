@@ -28,7 +28,7 @@ From any query you create, or an existing one you manage, you can create a searc
    | Keyword | Any Sumo Logic keyword. There are some performance benefits to using Sumo Logic keywords so this is a great option to choose if you can. |
 1. Optionally, you can set autocomplete values for your parameter by selecting **Set Values for Parameter**. Select a format:
     1. For text entries, enter each value on a separate line. Do not use commas to separate values as they will be marked invalid. If the string needs a comma, use quotes in the text entry, such as “abc,xyz”.
-    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you're using a Lookup make sure that you are using a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file because the system will reject any lookup file path that it can't validate.<br/>  ![label-value-pairs.png](/img/search/get-started-search/build-search/search-templates/label-value-pairs.png)
+    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you're using a Lookup make sure that you are using a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file because the system will reject any lookup file path that it cannot validate.<br/>  ![label-value-pairs.png](/img/search/get-started-search/build-search/search-templates/label-value-pairs.png)
         1. Select the appropriate values for the field, such as user ID. 
         1. Select values for the corresponding label, such as name. Both **Text** entries and **Label-value** pairs allow amaximum of 10,000 entries. A lookup file can have a maximum of 40,000 entries.
     1. For a lookup file, you must enter a valid [lookup (classic)](/docs/search/search-query-language/search-operators/lookup-classic) file that you have [saved](/docs/search/search-query-language/search-operators/save-classic). 
@@ -54,7 +54,7 @@ _sourceCategory=service "Successful login from UI"
 | count by latitude, longitude, user
 ```
 
-For example, your team could use this query to locate “time-travelers”, suspicious users who log in from two different geographical areas in an impossibly short amount of time, like New York and California within a timerange of the last 15 minutes. These users don't want to modify the query or look up user ids to user names. With parameters we can make a search template that will give your users the dropdowns they need quickly.
+For example, your team could use this query to locate “time-travelers”, suspicious users who log in from two different geographical areas in an impossibly short amount of time, like New York and California within a timerange of the last 15 minutes. These users do not want to modify the query or look up user ids to user names. With parameters we can make a search template that will give your users the dropdowns they need quickly.
 
 First create parameters for `user_name` and `state` to eliminate the manual entries joeX and CA:
 
@@ -93,7 +93,7 @@ _sourceCategory=apache_error
 | count by _timeslice
 ```
 
-Make sure you specify the right data type for timeslice, Number. You don't want users to input a string.
+Make sure you specify the right data type for timeslice, Number. You do not want users to input a string.
 
 The parameter is now available for your users to modify as they want, with any input value for the timeslice. Given that our search is a 15 minute time range, values over 5 are probably not useful.
 

@@ -56,7 +56,7 @@ import Iframe from 'react-iframe'; 
 1. **On Entity**. Select the Entity field—for example, an IP address, MAC address, hostname, and so on—in the Record that the resulting Signal should be associated with. (In Cloud SIEM, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
 1. **using the name**. Define the name for Signals fired by the rule. You can enter text, and include Record fields from the custom token list. Including Record field values in the Signal name can make it more meaningful.
     :::note
-    * When you're configuring a Threshold and Chain rule, you don't supply a Signal name; a Signal fired by those rule types has the same name as the rule that fired it.
+    * When you're configuring a Threshold and Chain rule, you do not supply a Signal name; a Signal fired by those rule types has the same name as the rule that fired it.
     * For extracted fields, you can specify a token for an extracted field using the format `{{fields["<field_name>"]}}`.
     :::
 1. **with the summary**. Enter a brief summary describing what causes the Rule to create a Signal.

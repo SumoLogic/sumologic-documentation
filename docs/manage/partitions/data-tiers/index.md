@@ -42,7 +42,7 @@ When planning your use of Data Tiers, it is important to remember the following 
 The amount of data you can ingest to the Frequent or Infrequent Tier is defined by your Sumo Logic account plan. For more information, contact your Sumo Logic account representative.
 
 :::note
-After a partition is created in a given tier, you can't change its tier. If you decide the data should be in a different tier, you must decommission the partition and create a new one.
+After a partition is created in a given tier, you cannot change its tier. If you decide the data should be in a different tier, you must decommission the partition and create a new one.
 :::
 
 ## Feature support by tier

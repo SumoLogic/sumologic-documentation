@@ -23,7 +23,7 @@ With this FER defined, any search on JSON data will automatically parse out i
 
 ## Set up Dynamic Parsing
 
-By default, your account is configured with a Run Time FER that is applied to all of your data. The default Run Time FER named **JSON Auto Parsing - All Sources** can't be edited or deleted. With this FER configured, you don't have to set up anything to use Dynamic Parsing. However, having one FER applied to all of your data may not be optimal for your needs as it would be applied for every search query (including ones that may not query any JSON logs). Further details can be found in [best practices for designing Rules](/docs/manage/field-extractions/create-field-extraction-rule.md).
+By default, your account is configured with a Run Time FER that is applied to all of your data. The default Run Time FER named **JSON Auto Parsing - All Sources** cannot be edited or deleted. With this FER configured, you do not have to set up anything to use Dynamic Parsing. However, having one FER applied to all of your data may not be optimal for your needs as it would be applied for every search query (including ones that may not query any JSON logs). Further details can be found in [best practices for designing Rules](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
 To optimize search performance you can manually set up Dynamic Parsing by defining your own Run Time FERs.
 
@@ -131,4 +131,4 @@ The following are limitations around the number of fields:
 * Dynamic Parsing extracts up to 100 fields per message. This 100 field count includes all built-in and parsed fields.
 * Total fields shown in the field browser consist of all the fields extracted across log lines.
 * The [Field Browser](/docs/search/get-started-with-search/search-page/field-browser) displays the count of the fields as well as the distribution of values of each field. These calculations are done for the first 200 fields that are parsed by a run-time FER.
-* Non-aggregate queries in Scheduled Views and Scheduled Searches can't be created in auto parse mode (Dynamic Parsing).
+* Non-aggregate queries in Scheduled Views and Scheduled Searches cannot be created in auto parse mode (Dynamic Parsing).

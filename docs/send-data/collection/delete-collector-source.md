@@ -7,7 +7,7 @@ description: You can delete a Collector or Source from Sumo Logic.
 
 Deleting a Collector deregisters it with Sumo. This cannot be undone. Installed Collectors shutdown when receiving a 401 response that its credentials are no longer accepted. The Collector and its Sources are removed from the **Manage Data** > **Collection** > **Collection** page. Data already collected is not affected and is still searchable.
 
-You can recreate Collectors and Sources with the same names so searches include data from the new and deleted Collectors. Be sure to adjust your Sources so they don't reingest data that was already collected by the deleted Collector.
+You can recreate Collectors and Sources with the same names so searches include data from the new and deleted Collectors. Be sure to adjust your Sources so they do not reingest data that was already collected by the deleted Collector.
 
 To delete a Collector or Source from the web application:
 

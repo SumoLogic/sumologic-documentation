@@ -16,7 +16,7 @@ For Azure Front Door, you can collect the following logs and metrics:
 
 * **Access logs**. These can be used to identify slow requests, determine error rates, and understand how Front Door's caching behavior is working for your solution.
 * **Web application firewall (WAF) logs**. These can be used to detect potential attacks and false positive detections, which indicates legitimate requests that the WAF blocked. For more information on the WAF logs, see Azure Web Application Firewall monitoring and logging.
-* **Health probe logs**. These can be used to identify origins that are unhealthy or that don't respond to requests from some of Front Door's geographically distributed PoPs.
+* **Health probe logs**. These can be used to identify origins that are unhealthy or that do not respond to requests from some of Front Door's geographically distributed PoPs.
 
 For more information on logs schema, refer to the below documentation:
 * [Standard/Premium tier](https://learn.microsoft.com/en-us/azure/frontdoor/front-door-diagnostics?pivots=front-door-standard-premium#logs)

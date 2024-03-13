@@ -17,7 +17,7 @@ As of version 3 of the Chart, Fluent Bit and Fluentd were replaced by the OpenTe
 
 ### Drop Prometheus recording rule metrics
 
-OpenTelemetry can't collect Prometheus recording rule metrics. The new version therefore stops collecting recording rule metrics and updates will be made to the Kubernetes App to remove these metrics. See the [scraped metrics reference][scraped_metrics_aggregations] for instructions on how to recover these recording rule metrics in Sumo.
+OpenTelemetry cannot collect Prometheus recording rule metrics. The new version therefore stops collecting recording rule metrics and updates will be made to the Kubernetes App to remove these metrics. See the [scraped metrics reference][scraped_metrics_aggregations] for instructions on how to recover these recording rule metrics in Sumo.
 
 ### OpenTelemetry Collector for metrics collection
 

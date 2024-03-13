@@ -129,4 +129,4 @@ See [Searching Data Tiers](searching-data-tiers.md).
 
 ## Can I use Scheduled Searches on the lower data tiers?
 
-Currently, you can't use [Scheduled Searches](/docs/alerts/scheduled-searches) on the Infrequent Tier.  
+Currently, you cannot use [Scheduled Searches](/docs/alerts/scheduled-searches) on the Infrequent Tier.  

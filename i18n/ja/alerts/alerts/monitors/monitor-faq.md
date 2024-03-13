@@ -85,6 +85,6 @@ The Monitors page allows you to disable a Monitor so you're not alerted during 
 
 1. Click the three-dot kebab icon to view the menu options. You can select to Enable or Disable the monitor.
 
-Currently, you can only manually disable or enable a Monitor. You can't disable and enable based on a schedule.
+Currently, you can only manually disable or enable a Monitor. You cannot disable and enable based on a schedule.
 
  

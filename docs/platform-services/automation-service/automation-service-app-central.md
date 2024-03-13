@@ -70,7 +70,7 @@ Integrations in App Central display a version number. The version indicates when
 
 ### Update integrations to include all available actions
 
-The purpose of this section is to provide you the information you need to update your integrations to include all types of actions that should be present in that integration, for example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Central to make sure you don't have any integrations without useful actions.
+The purpose of this section is to provide you the information you need to update your integrations to include all types of actions that should be present in that integration, for example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Central to make sure you do not have any integrations without useful actions.
 
 Update integrations in App Central using keywords in the bottom left corner of the integration:
 
