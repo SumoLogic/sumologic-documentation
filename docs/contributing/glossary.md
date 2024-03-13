@@ -172,8 +172,6 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[LogCompare](/docs/search/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
 
-**[Log overlay](/docs/metrics/metric-charts/log-overlay-analyze-metrics-visualizations)**. A Sumo Logic feature you can use to run a log query on the metric query page and visualize the count of matching log messages on the metric chart.
-
 **[LogReduce](/docs/search/logreduce)**. LogReduce uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
 
 **[Logs-to-Metrics](/docs/metrics/logs-to-metrics)**. A Sumo Logic feature you can use to extract or create metrics from log data. You can extract metrics that are embedded in logs, or count logs as a metric.

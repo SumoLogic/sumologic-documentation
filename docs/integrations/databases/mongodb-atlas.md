@@ -705,7 +705,7 @@ The **MongoDB Atlas Metrics** dashboard provides an at-a-glance view of database
 Use this dashboard to:
 * Determine node health based on page faults, cache dirty bytes, replication headroom, queued operations, and  disk write latency.
 * Monitor resource usage (cache and disk) and active connections. You can set up alerts for notification on these metrics.
-* Drill-down into the underlying queries and use the the Sumo Logic [Log Overlay](/docs/metrics/metric-charts/log-overlay-analyze-metrics-visualizations.md) feature to correlate performance metrics with underlying logs to identify the root cause of performance degradations.
+* Drill-down into the underlying queries and correlate performance metrics with underlying logs to identify the root cause of performance degradations.
 
 <img src={useBaseUrl('img/integrations/databases/MongoDBAtlas_Metrics.png')} alt="MongoDB Atlas dashboards" />
 

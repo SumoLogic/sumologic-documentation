@@ -35,7 +35,7 @@ Here is example content for a `v1/metricQueries` API call:
 }
 ```
 
-A metric query consists of a metric, one or more filters, and optionally, one or more [metrics operators](/docs/metrics/metrics-operators/). Although both filters and operators are optional, in practice, your metric queries will almost always contain filters that narrow the scope of your query. For more information about the query language, see [Metrics - Classic](/docs/metrics/metrics-queries/metrics-queries-classic/).
+A metric query consists of a metric, one or more filters, and optionally, one or more [metrics operators](/docs/metrics/metrics-operators/). Although both filters and operators are optional, in practice, your metric queries will almost always contain filters that narrow the scope of your query. 
 
 ## Documentation
 

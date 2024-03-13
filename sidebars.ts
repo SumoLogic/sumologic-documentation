@@ -1431,7 +1431,6 @@ module.exports = {
         'metrics/metrics-queries/aggregation-tips',
         'metrics/metrics-queries/metric-query-error-messages',
         'metrics/metrics-queries/share-metric-query',
-        'metrics/metrics-queries/metrics-queries-classic',
       ],
     },
     {
@@ -1499,7 +1498,6 @@ module.exports = {
         'metrics/metric-charts/quantization-interval-chart',
         'metrics/metric-charts/metrics-outliers',
         'metrics/metric-charts/add-metrics-visualization-to-dashboard',
-        'metrics/metric-charts/log-overlay-analyze-metrics-visualizations',
        ],
      },
    ],

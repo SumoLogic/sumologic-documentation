@@ -40,8 +40,6 @@ The metrics visualization area is in the upper part of the page and the query ar
 
     ![image3.png](/img/metrics/metrics-query-tab.png)
 
-    For more information, see [Guidelines for Metrics Queries](../metrics-queries/metrics-queries-classic.md).
-
 3. Press **Enter** in any of the entry fields to display the data in the data visualization area. See [Interacting with Metrics Charts](interacting-metric-charts.md) to learn how to interact with the visualization and modify settings.  <br/>  ![metrics_first chart.jpg](/img/metrics/create-metric-vis.png)
 
 ## Limitations

@@ -55,10 +55,4 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to add a metrics visualization as a panel in a dashboard.</p>
   </div>
 </div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/metrics/metric-charts/log-overlay-analyze-metrics-visualizations"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Log Overlay</h4></a>
-  <p>Learn how metrics visualizations can provide a clear status of your environment.</p>
-  </div>
-</div>
 </div>
