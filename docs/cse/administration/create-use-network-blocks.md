@@ -72,7 +72,7 @@ Follow these instructions to create a Network Block using the Cloud SIEM UI. For
     1. **Address Block**. Enter a CIDR block that identifies a contiguous range of IP addresses.
     1. **Label**. Enter a meaningful name for the Network Block.
     1. **Internal**. Leave the toggle switched to the right (green) if you want to mark IP addresses that match the network block as Internal. This allows you to filter on the IP addresses in rule expressions, as described below in [Using enrichment fields](#using-enrichment-fields), below.
-    1. **Suppress Signals**. Leave the toggle switched to the left (red) if you don't want to suppress Signals on IP addresses in the Network Block. Otherwise, switch the toggle to the right (green).
+    1. **Suppress Signals**. Leave the toggle switched to the left (red) if you do not want to suppress Signals on IP addresses in the Network Block. Otherwise, switch the toggle to the right (green).
     1. Click **Create**. <br/><img src={useBaseUrl('img/cse/create-network-block.png')} alt="Create network block" width="400"/>
 
 ## Upload a CSV file of Network Blocks

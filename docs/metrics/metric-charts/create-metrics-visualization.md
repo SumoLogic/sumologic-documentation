@@ -5,9 +5,9 @@ sidebar_label: Create and Chart a Metrics Query
 description: You can view metrics data in Sumo Logic.
 ---
 
-:::note
-This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metrics-queries/metrics-explorer.md).
-:::
+import ClassicMetricsNote from '../../reuse/classic-metrics-deprecation.md';
+
+<ClassicMetricsNote/>
 
 The metrics visualization area is in the upper part of the page and the query area is in the lower part of the page.  
 

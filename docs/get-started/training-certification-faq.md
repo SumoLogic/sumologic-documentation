@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Learning at Sumo Logic will help you build the skills necessary to achieve your organization's goals using our platform to make the world’s apps reliable and secure.
 
-We offer courses online (live and on-demand) and in-person **for free**. Customized training is also available through our private offering.
+Our self-paced training, micro lessons, and scheduled instructor-led training are all **free**. And if you want customized private training for your team, you can pay for that through our private offering.
 
 * [**Sumo Logic Training Portal**](#training-portal), only available in-product, where you'll find our courses and certifications. To browse our certification descriptions, see [Sumo Logic Training and Certifications](https://www.sumologic.com/learn/certifications).
 * [**Sumo Logic Training Lab Environment**](#training-lab-environment), curated and set up to work along with our training curriculum.

@@ -93,7 +93,7 @@ We use Yarn for all installs and builds. Never use NPM commands for installing o
 1. Set permissions to allow maintainers to edit and update the PR ([learn more](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork)).
 1. Push your branch to the forked repo.
 1. Visit [GitHub](https://github.com/SumoLogic/sumologic-documentation) after pushing your branch. If you see an option to **Compare & pull request** for your branch, click this.<br/>![compare](/img/contributing/compare-pr.png)
-   * If you don't see it, create a new [PR](https://github.com/SumoLogic/sumologic-documentation/compare).
+   * If you do not see it, create a new [PR](https://github.com/SumoLogic/sumologic-documentation/compare).
       1. Select `main` for the base branch. This is the branch all staging and production content builds from.
       1. Select your branch for the **compare**.
       1. Click **Create Pull Request**.

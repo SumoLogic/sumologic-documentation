@@ -67,7 +67,7 @@ To configure a Code42 Incydr Source:
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
-| `_siemParser` | `/Parsers/Sumo/Code42/Code42 Incydr` | Set when **Forward To SIEM** is checked. |
+| `_siemParser` | `/Parsers/System/Code42/Code42 Incydr` | Set when **Forward To SIEM** is checked. |
 
 ## JSON schema
 
