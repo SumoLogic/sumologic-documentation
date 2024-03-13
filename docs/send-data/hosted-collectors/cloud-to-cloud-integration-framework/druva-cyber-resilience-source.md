@@ -64,7 +64,7 @@ To configure a Druva Cyber Resilience Source:
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
-| `_siemParser` | `/Parsers/Sumo/Druva/Druva Cyber Resilience` | Set when **Forward To SIEM** is checked. |
+| `_siemParser` | `/Parsers/System/Druva/Druva Cyber Resilience` | Set when **Forward To SIEM** is checked. |
 
 ## JSON schema
 
