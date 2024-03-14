@@ -72,6 +72,13 @@ Once all the tags are checked and identified in the metrics, we can
 update the existing hierarchy to show the new AWS Service. Follow the
 steps below to update the existing hierarchy :
 
+:::note
+- **ACCESS_ID** and **ACCESS_KEY** - Replace parameters with your sumo logic access Id and access key.
+- **SUMOLOGIC_URL** - Replace with [api endpoint URL](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) as per deployment.
+- **ID** - Replace with the hierarchy ID as present in the JSON output from Step 1.
+- **JSON_CONTENT_AFTER_UPDATE** - Replace with the JSON updated with new AWS service after Step 2.
+:::
+
 1. Run the below curl command to get the existing AWS Observability hierarchy.
    ```bash
    curl -s -H "Content-Type: application/json" --user
@@ -174,13 +181,6 @@ steps below to update the existing hierarchy :
     https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies/<ID> -d
    '<JSON_CONTENT_AFTER_UPDATE>'
    ```
-
-:::note
-1. **ACCESS_ID** and **ACCESS_KEY** - Replace parameters with your sumo logic access Id and access key.
-1. **SUMOLOGIC_URL** - Replace with service endpoint URL as per deployment.
-1. **ID** - Replace with the hierarchy ID as present in the JSON output from Step 1.
-1. **JSON_CONTENT_AFTER_UPDATE** - Replace with the JSON updated with new AWS service after Step 2.
-:::
 
 ### Validate the new Hierarchy
 
