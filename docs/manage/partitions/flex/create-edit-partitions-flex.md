@@ -32,8 +32,8 @@ To create or edit a Partition, you must be an account Administrator or have th
 
 ### Enhance search and retention
 
-* To learn how to run a search against a Partition, see [Run a Search Against a Partition](run-search-against-partition.md) and [Optimize Your Search with Partitions](../../search/optimize-search-partitions.md).
-* To learn about data retention periods and how to modify them, see [Manage Indexes with Variable Retention](manage-indexes-variable-retention.md).
+* To learn how to run a search against a Partition, see [Run a Search Against a Partition](/docs/manage/run-search-against-partition) and [Optimize Your Search with Partitions](/docs/search/optimize-search-partitions.md).
+* To learn about data retention periods and how to modify them, see [Manage Indexes with Variable Retention](/docs/manage/manage-indexes-variable-retention).
 
 
 ### Best practices for optimum performance
