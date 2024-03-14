@@ -74,6 +74,12 @@ For example, a single message for the "Collector" volume data may look similar t
 {"field":"epd_dat_a_cluster","dataTier":"Continuous","sizeInBytes":2163905,"count":2157},...]
 ```
 
+For example, a single message for the "Collector" volume data may look similar to the following flex data, with field, dataTier, sizeInBytes, and count values for those five minutes.
+
+```
+{"field": "part_a","dataTier": "Flex","sizeInBytes": 13754115,"count": 10255}
+```
+
 ## Examples
 
 **Volume for Each Category**

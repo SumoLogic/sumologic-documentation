@@ -30,11 +30,11 @@ The Search Job API is available to Enterprise accounts.
    <td>Account Level </td>
   </tr>
   <tr>
-   <td>Cloud Flex </td>
+   <td>Cloud Flex Legacy</td>
    <td>Enterprise </td>
   </tr>
   <tr>
-   <td>Cloud Flex Credits</td>
+   <td>Sumo Logic Credits</td>
    <td>Trial, Enterprise Operations, Enterprise Security, Enterprise Suite</td>
   </tr>
 </table>
@@ -102,7 +102,7 @@ A limit of 200 active concurrent search jobs applies to your organization.
 
 When searching the [Frequent Tier](/docs/manage/partitions/data-tiers), a rate limit of 20 concurrent search jobs applies to your organization.
 
-When searching the [Flex data](/docs/manage/partitions/flex-pricing), a rate limit of 200 concurrent search jobs applies to your organization.
+When searching the [Flex data](/docs/manage/partitions/flex), a rate limit of 200 concurrent search jobs applies to your organization.
 
 Once you reach the limit of 200 active searches, attempting an additional search will return a status code of `429 Too Many Requests`, indicating that you've exceeded the permitted search job limit.
 

@@ -32,9 +32,9 @@ _index=sumologic_default
 
 ## Searching partitions
 
-- If you have the [Data Tiers](data-tiers.md) feature, see [Searching Data Tiers](searching-data-tiers.md) for information about how to search partitions by Data Tier.
+- If you have the [Data Tiers](/docs/manage/partitions/data-tiers/) feature, see [Searching Data Tiers](/docs/manage/searching-data-tiers/) for information about how to search partitions by Data Tier.
 
-- If you have the Flex feature, see [Searching Flex](searching-data-tiers.md) for information about how to search partitions.
+- If you have the Flex feature, see [Searching Flex](/docs/manage/partitions/flex/) for information about how to search partitions.
 
 ## Why did I get a message to run a search against a partition?
 

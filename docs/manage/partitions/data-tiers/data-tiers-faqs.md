@@ -6,7 +6,7 @@ description: Answers to FAQ about Data Tiers.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page answers frequently asked questions about Data Tiers. For information about each data tier and selecting the right one for your use case, see [Data Tiers](data-tiers.md).
+This page answers frequently asked questions about Data Tiers. For information about each data tier and selecting the right one for your use case, see [Data Tiers](/docs/manage/partitions/data-tiers/).
 
 ## In which Sumo subscriptions are Data Tiers available? 
 

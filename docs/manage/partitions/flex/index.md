@@ -34,8 +34,20 @@ Flex pricing delivers the new financial model for log management, with which you
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions/flex/estimate-and-actual-scan-data"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Estimate and Actual Scan Data</h4></a>
-  <p> Learn about the estimate and actual scan data for Flex pricing.</p>
+  <a href="/docs/manage/partitions/flex/estimate-and-actual-scan-data"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create and Edit a Partition</h4></a>
+  <p> Learn how to create and edit a Partition in an Index.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/partitions/flex/estimate-and-actual-scan-data"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>View Details About a Partition</h4></a>
+  <p> Learn how to view details about a Sumo Logic partition.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/partitions/flex/estimate-and-actual-scan-data"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Flex Pricing FAQs</h4></a>
+  <p> Answers to FAQ about Flex pricing.</p>
   </div>
 </div>
 </div>

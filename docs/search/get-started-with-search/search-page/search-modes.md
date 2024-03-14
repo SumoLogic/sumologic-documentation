@@ -35,7 +35,7 @@ This section elaborates on the input options.
 
 * **Data Tier**. Select from the dropdown which Data Tier the query should run against, either Continuous, Frequent, or Infrequent. See [Searching Data Tiers](/docs/manage/partitions/data-tiers/searching-data-tiers) for further details.
     :::note
-    **Data Tier** option is not available for the customer with Flex package.
+    **Data Tier** option is not available for the customer with Flex.
     :::
 
     ![Data Tier options.png](/img/search/get-started-search/search-page/Data-Tier-options.png) 
