@@ -23,10 +23,11 @@ To create or edit a Partition, you must be an account Administrator or have th
 
 1. In the Sumo Logic left navigation bar, go to **Manage Data > Logs**, then select the **Partitions** tab.
 1. Click **+ Add Partition**.
-1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/partitions-data-tiers/create-new-partition.png')} alt="create-new-partition.png" width="300"/>
+1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/partitions-data-tiers/create-new-partition-flex.png')} alt="create-new-partition-flex.png"  style={{border:'1px solid gray'}} width="300"/>
 1. **Name**. Enter a name for the Partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores (`_`). However, a Partition name cannot start with `sumologic_` or an underscore `_`.
 1. **Routing Expression**. Enter a [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the Partition, using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) or [custom metadata fields](/docs/manage/fields). 
-1. **Retention Period**. Enter the number of days you wish to retain the data in the Partition, or click **Apply the retention period of the Default Continuous Index**.
+1. **Retention Period**. Enter the number of days you wish to retain the data in the Partition, or click **Apply the retention period of sumologic_default**.
+1. **Compliance data**. Click the **Mark as compliance data** to not change the routing expression and the retention period for partitions.
 1. **Data Forwarding**. If you want to forward the data in the Partition to a cloud environment, click **Enable Data Forwarding** and specify the necessary information for the options that appear. For more information, see [Data Forwarding](/docs/manage/data-forwarding).
 
 ### Enhance search and retention
@@ -73,7 +74,7 @@ You can make some changes to an existing partition:  
 1. In the Sumo Logic left navigation bar, go to **Manage Data** > **Logs**, then select the **Partitions** tab.
 1. Click the row with the partition you want to edit.
 1. The partition details are displayed on the right side of the page.
-1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane.png')} alt="edit-partition-pane.png" width="300"/>
+1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane-flex.png')} alt="edit-partition-pane-flex.png"  style={{border:'1px solid gray'}} width="300"/>
 1. **Retention Period**. Enter the number of days you wish to retain the data in the partition, or click **Apply the retention period of the Default Continuous Index**.
 1. **Data Forwarding**. You can configure Data Forwarding, or if Data Forwarding is already configured, modify the configuration. For more information, see [Data Forwarding](/docs/manage/data-forwarding).
 

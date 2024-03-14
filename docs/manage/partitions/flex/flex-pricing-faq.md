@@ -40,8 +40,6 @@ You can create a role with this role search filter:
 
 Then, you assign that role to any user that shouldn’t have access to data in that partition.
 
-## How does pricing work for Flex data searches? 
-
 ## How can I get visibility into our Flex search costs?
 
 Your **Account Overview** page shows the credits your org has consumed for Flex data searches. br/><img src={useBaseUrl('/img/subscriptions/flex-usage-categories.png')} alt="flex-usage-categories" style={{border:'1px solid gray'}} width="800"/>
