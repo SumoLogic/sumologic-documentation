@@ -74,7 +74,7 @@ steps below to update the existing hierarchy :
 
 :::note
 - **ACCESS_ID** and **ACCESS_KEY** - Replace parameters with your sumo logic access Id and access key.
-- **SUMOLOGIC_URL** - Replace with [api endpoint URL](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) as per deployment.
+- **SUMOLOGIC_URL** - Replace with [API Endpoint URL](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) as per deployment.
 - **ID** - Replace with the hierarchy ID as present in the JSON output from Step 1.
 - **JSON_CONTENT_AFTER_UPDATE** - Replace with the JSON updated with new AWS service after Step 2.
 :::
