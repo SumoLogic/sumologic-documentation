@@ -73,10 +73,11 @@ update the existing hierarchy to show the new AWS Service. Follow the
 steps below to update the existing hierarchy :
 
 :::note
-- **ACCESS_ID** and **ACCESS_KEY**. Replace parameters with your Sumo Logic access Id and access key.
-- **SUMOLOGIC_URL**. Replace with [API Endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) as per deployment.
-- **ID**. Replace with the hierarchy ID as present in the JSON output from Step 1.
-- **JSON_CONTENT_AFTER_UPDATE**. Replace with the JSON updated with new AWS service after Step 2.
+In the code samples in the following steps:
+- **ACCESS_ID** and **ACCESS_KEY**. Replace with your Sumo Logic access ID and access key.
+- **SUMOLOGIC_URL**. Replace with the [API Endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your deployment.
+- **ID**. Replace with the hierarchy ID as present in the JSON output from Step 1 below.
+- **JSON_CONTENT_AFTER_UPDATE**. Replace with the JSON updated with new AWS service after Step 2 below.
 :::
 
 1. Run the below curl command to get the existing AWS Observability hierarchy.
