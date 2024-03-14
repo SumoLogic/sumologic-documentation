@@ -670,6 +670,7 @@ module.exports = {
           items: [
             'manage/partitions/flex/create-edit-partition-flex',
             'manage/partitions/flex/view-partition-details-flex',
+            //'manage/partitions/flex/estimate-and-actual-scan-data',
             'manage/partitions/flex/flex-pricing-faq',
           ]
         },
