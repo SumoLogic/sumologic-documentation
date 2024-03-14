@@ -136,10 +136,10 @@ The below tables displays the response for the text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
-| Select the Sumo Logic Root Cause Explorer Source | <ul><li>**Inventory Source** - Creates a Sumo Logic Inventory Source used by Root Cause Explorer. The AWS Inventory Source collects the inventory of AWS resources in your AWS account, such as EC2 and RDS instances, including all metadata and tags applied to those resources. We use this data to construct a topology of resources, such as which resource talks to or depends upon which other resources, and so on</li><li>**X-Ray Source** - Creates a Sumo Logic AWS X-Ray Source used by Root Cause Explorer. The AWS X-Ray source collects the AWS X-Ray service graph, as well as service-level metrics such as latency, throughput, and error rate. The service graph allows us to figure out which service depends on which other service(s).</li><li>**Both** - Install both Inventory and Xray sources.</li><li>**None** - Skips installation of both sources.</li></ul> |
+| Select the Sumo Logic Root Cause Explorer Source | <ul><li>**Inventory Source** - Creates a Sumo Logic Inventory Source used by Root Cause Explorer. The AWS Inventory Source collects the inventory of AWS resources in your AWS account, such as EC2 and RDS instances, including all metadata and tags applied to those resources. We use this data to construct a topology of resources, such as which resource talks to or depends upon which other resources, and so on.</li><li>**X-Ray Source** - Creates a Sumo Logic AWS X-Ray Source used by Root Cause Explorer. The AWS X-Ray source collects the AWS X-Ray service graph, as well as service-level metrics such as latency, throughput, and error rate. The service graph allows us to figure out which service depends on which other services.</li><li>**Both** - Install both Inventory and Xray sources.</li><li>**None** - Skips installation of both sources.</li></ul> |
 
 :::important
-The AWS Inventory and AWS X-Ray Sources is usable only by the Root Cause Explorer and is not exposed anywhere else in Continuous Intelligence Platform (CIP). For more information, please see our [Root Cause Explorer documentation](../../../root-cause-explorer.md). 
+The AWS Inventory Source and AWS X-Ray Source are usable only by the Root Cause Explorer and are not exposed anywhere else in the Sumo Logic SaaS Log Analytics Platform. For more information, see [Root Cause Explorer](/docs/observability/root-cause-explorer/). 
 :::
 
 ## Step 10: Sumo Logic AWS ELB Classic Log Source
