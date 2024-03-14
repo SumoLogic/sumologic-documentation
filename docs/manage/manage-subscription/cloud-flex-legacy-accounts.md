@@ -109,10 +109,10 @@ Using a Trial account is a great way to learn about the advanced features of Su
 
 The **Account** page displays information about your Sumo Logic organization, account type, billing period, and the number of users. It also allows the account owner to reassign the role of the Account Owner.
 
-[Data Tiers](../partitions/data-tiers) provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous and Frequent tiers, you can appropriately segment your data by use case and analytics needs, thus enabling you to optimize your analytics investments.
+[Data Tiers](/docs/manage/partitions/data-tiers) provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous and Frequent tiers, you can appropriately segment your data by use case and analytics needs, thus enabling you to optimize your analytics investments.
 
 :::note
-[Data Tiers](../partitions/data-tiers) must be enabled on your plan to be able to access this functionality. For more information, contact your Sumo Logic Account Representative.
+[Data Tiers](/docs/manage/partitions/data-tiers) must be enabled on your plan to be able to access this functionality. For more information, contact your Sumo Logic Account Representative.
 :::
 
 The top panel of the Account Overview page provides an at-a-glance view of your account information:
