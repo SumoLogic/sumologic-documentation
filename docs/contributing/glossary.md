@@ -212,7 +212,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **Organization**. In Sumo Logic, org, or organization, refers to your company’s Sumo Logic account (not an individual user’s account).
 
-**Outlier**. Outliers are log data or metric values in a sequence that seem unexpected, and might indicate an operational or performance issue. In Sumo Logic, you can use the [outlier operator](/docs/search/search-query-language/search-operators/outlier) to identify outliers in log data. In addition, Sumo Logic has a [metrics outlier](docs/metrics/metrics-operators/outlier/) operator that identifies metric data points that are outside the range of expected values.
+**Outlier**. Outliers are log data or metric values in a sequence that seem unexpected, and might indicate an operational or performance issue. In Sumo Logic, you can use the [outlier operator](/docs/search/search-query-language/search-operators/outlier) to identify outliers in log data. In addition, Sumo Logic has a [metrics outlier](/docs/metrics/metrics-operators/outlier/) operator that identifies metric data points that are outside the range of expected values.
 
 
 

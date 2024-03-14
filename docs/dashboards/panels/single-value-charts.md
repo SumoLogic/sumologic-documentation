@@ -5,7 +5,7 @@ description: Displays the first record of your search results.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can use single value charts to display results for a search or metric query as a single value, for at-a-glance analysis. This page shows you how to create and tailor single value charts for searches. For information on single value charts for metrics, see [Create and Tailor Single Value Metrics Charts](/docs/metrics/metric-charts).
+You can use single value charts to display results for a search or metric query as a single value, for at-a-glance analysis. This page shows you how to create and tailor single value charts for searches. 
 
 A single value chart displays a single record from a search, in order to make that value stand out at a glance. If the query returns more than one value in the **Aggregates** tab, only the first value is displayed in the single value chart.
 

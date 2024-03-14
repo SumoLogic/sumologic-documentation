@@ -101,7 +101,7 @@ An anomaly is a spike in latency and errors or a dip in requests. Here's how to
 
 <img src={useBaseUrl('img/traces/services-list-map-auto-detection-settings.png')} style={{border: '1px solid gray'}} alt="auto service anomaly settings" width="400" />
 
-The standard [metric outlier operator](docs/metrics/metrics-operators/outlier/) is used to detect this. You can adjust the sensitivity and **Learning window** of the outlier detection in the settings to make the logic more or less dependent on occasional spikes. 
+The standard [metric outlier operator](/docs/metrics/metrics-operators/outlier/) is used to detect this. You can adjust the sensitivity and **Learning window** of the outlier detection in the settings to make the logic more or less dependent on occasional spikes. 
 
 ### Manual
 Manual anomaly detection allows you to specify different detection settings for each KPI. Click the toggle switch to manually enable or disable each KPI highlight as desired.
