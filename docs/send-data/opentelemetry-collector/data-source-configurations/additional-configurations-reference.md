@@ -139,6 +139,21 @@ processors:
       action: upsert
 ```
 
+If you would like to add your own custom metadata fields to your logs, you can use the same attributes processor and use *action: insert*:
+
+```yaml
+processors:
+  resource/custom_fields:
+    attributes:
+      - key: collection_method
+        value: otel
+        action: insert
+```
+
+:::note
+If you are adding custom attributes to your log metadata, then you need to ensure that these fields are also added in Sumo Logic under the **Logs > Fields** section.
+:::
+
 For more advanced processing capabilities in your data pipeline, you can make use of the **Transform** processor. This processor enables you to perform more complex transformations on your data. For example, you can concatenate multiple **Resource attributes** into  `_sourceCategory` field with a `/` character separating each attribute.
 
 ```yaml
