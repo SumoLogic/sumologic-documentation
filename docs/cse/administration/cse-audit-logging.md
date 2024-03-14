@@ -59,6 +59,7 @@ The table below shows the `_sourceCategory` that is assigned to event logs by Cl
 | [Action](/docs/cse/administration/create-cse-actions) | `cseAction` |
 | [Aggregation Rule](/docs/cse/rules/write-aggregation-rule) | `cseRule` |
 | Configure Assigned Insight Emails<br/>(Relates to the option, on the Actions page, that causes a user to receive an email whenever another user assigns an Insight to them.) | `cseConfiguration` |
+| [Automation](/docs/cse/automation/) | `cseAutomation` |
 | [Chain Rule](/docs/cse/rules/write-chain-rule) | `cseRule` |
 | [Cloud SOAR Incident](/docs/cloud-soar/incidents-triage) | `cseCloudSoar` |
 | [Context Action](/docs/cse/administration/create-cse-context-actions)  | `cseContextAction` |
@@ -67,21 +68,30 @@ The table below shows the `_sourceCategory` that is assigned to event logs by Cl
 | [Custom Match List Column](/docs/cse/match-lists-suppressed-lists/custom-match-list-columns) | `cseCustomMatchListColumn` |
 | [Custom Tag Schema](/docs/cse/administration/create-a-custom-tag-schema) | `cseCustomTagSchema` |
 | [Customer Sourced Entity Lookup Table](/docs/cse/administration/save-inventory-data-lookup-table) | `cseCustomerSourcedEntityLookupTable` |
+| [Enrichment](/docs/cse/integrations/enrichments-and-indicators/) | `cseEnrichment` |
 | [Entity](/docs/cse/records-signals-entities-insights/view-manage-entities)  | `cseEntity` |
 | [Entity Criticality Config](/docs/cse/records-signals-entities-insights/entity-criticality) | `cseEntityCriticalityConfig` |
 | [Entity Domain Configuration](/docs/cse/schema/username-and-hostname-normalization)  | `cseEntityNormalization` |
+| [Entity Group Configuration](/docs/cse/records-signals-entities-insights/create-an-entity-group/) | `cseEntityGroupConfiguration` |
+| Entity Note | `cseEntityNote` |
 | Favorite Field | `cseFavoriteField` |
+| [First Seen Rule](/docs/cse/rules/write-first-seen-rule/) | `cseRule` |
 | [Insight](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui) | `cseInsight` |
+| Insight Comment | `cseInsightComment` |
 | Inventory Entity Lookup Table | `cseInventoryEntityLookupTable` |
 | [Log Mapping](/docs/cse/schema/create-structured-log-mapping)  | `cseLogMapping` |
 | [Match List](/docs/cse/match-lists-suppressed-lists/create-match-list) | `cseMatchList` |
 | [Match Rule](/docs/cse/rules/write-match-rule) | `cseRule` |
+| [MITRE ATT&CK Coverage](/docs/cse/administration/mitre-coverage) | `cseMitreAttackCoverage` |
 | [Network Block](/docs/cse/administration/create-use-network-blocks) | `cseNetworkBlock` |
+| [Outlier Rule](/docs/cse/rules/write-outlier-rule/) | `cseRule` |
+| [Rule Tuning Expression](/docs/cse/rules/rule-tuning-expressions/) | `cseRuleTuningExpression` |
 | Streaming Export Configuration  | `cseStreamingExportConfiguration` |
 | [Sumo Mapping](/docs/cse/ingestion/sumo-logic-ingest-mapping)  | `cseSumoMapping` |
 | [Suppressed List](/docs/cse/match-lists-suppressed-lists)  | `cseSuppressList` |
 | Templated Match Rule  | `cseRule` |
-| [Threat Intel Sources](/docs/cse/administration/create-custom-threat-intel-source)<br/>(Applies to all source types on the **Threat Intel** page.) | `cseThreatIntelSource` |
+| [Threat Intel Source](/docs/cse/administration/create-custom-threat-intel-source)<br/>(Applies to all source types on the **Threat Intel** page.) | `cseThreatIntelSource` |
+| Threat Intel Source Poll | `cseThreatIntelSource`  |
 | [Threshold Rule](/docs/cse/rules/write-threshold-rule) | `cseRule` |
 | Virus Total Configuration | `cseConfiguration` |
 | [Yara Rule](/docs/cse/rules/import-yara-rules) | `cseYara` |

@@ -81,7 +81,7 @@ To configure a Kaltura source:
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
-| `_siemParser` | `/Parsers/Sumo/Kaltura/Kaltura` | Set when **Forward To SIEM** is checked. |
+| `_siemParser` | `/Parsers/System/Kaltura/Kaltura` | Set when **Forward To SIEM** is checked. |
 
 :::info
 Base entry event logs are not supported with the SIEM forward option.
