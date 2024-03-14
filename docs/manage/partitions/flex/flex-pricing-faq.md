@@ -1,7 +1,7 @@
 ---
 id: flex-pricing-faq
-title: Flex Pricing FAQs
-description: Answers to FAQ about Flex pricing.
+title: Flex FAQs
+description: Answers to FAQ about Flex.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
