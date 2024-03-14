@@ -139,7 +139,7 @@ processors:
       action: upsert
 ```
 
-If you would like to add your own custom metadata fields to your logs, you can use the same attributes processor and use *action: insert*:
+If you would like to add your own custom metadata fields to your logs, you can use the same attributes processor and use `action: insert`:
 
 ```yaml
 processors:
