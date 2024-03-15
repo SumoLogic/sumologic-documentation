@@ -42,7 +42,7 @@ Then, you assign that role to any user that shouldn’t have access to data in t
 
 ## How can I get visibility into our Flex search costs?
 
-Your **Account Overview** page shows the credits your org has consumed for Flex data searches. br/><img src={useBaseUrl('/img/subscriptions/flex-usage-categories.png')} alt="flex-usage-categories" style={{border:'1px solid gray'}} width="800"/>
+Your **Account Overview** page shows the credits your org has consumed for Flex data searches. <br/><img src={useBaseUrl('/img/subscriptions/flex-usage-categories.png')} alt="flex-usage-categories" style={{border:'1px solid gray'}} width="800"/>
 
 ## How can I optimize Flex data search costs?
 
