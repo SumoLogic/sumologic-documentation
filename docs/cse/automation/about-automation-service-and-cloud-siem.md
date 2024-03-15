@@ -17,35 +17,7 @@ You interact with the Automation Service through [automations in Cloud SIEM](/do
 Before you can create automations in Cloud SIEM, you must first [configure role capabilities](#configure-role-capabilities-for-cloud-siem-automation).
 :::
 
-<!-- Micro lesson is commented out until it is adjusted to show that the Automation Service is no longer under Cloud SIEM.
-
-Watch this micro lesson to learn more about using the Automation Service to create automations in Cloud SIEM.
-
-<Iframe url="https://www.youtube.com/embed/kJawCYJhS4M?rel=0"
-     width="854px"
-     height="480px"
-     id="myId"
-     className="video-container"
-     display="initial"
-     position="relative"
-     allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-     allowfullscreen
-     />
-
-import Iframe from 'react-iframe';
-
--->
-
-## Differences compared to Cloud SOAR
-
-The Automation Service is a subset of automation capabilities adapted from Cloud SOAR that is available to the entire Sumo Logic log analytics platform. The Automation Service only has Cloud SOAR’s playbook-related features, including App Central and the Automation Bridge. Like the Cloud SOAR action types, the Automation Service action types can perform automated responses to events, including run containment actions and manual user interaction steps. 
-
-Using the Automation Service with Cloud SIEM differs from Cloud SOAR in the following ways:
-* Using the Automation Service with Cloud SIEM does not include the incident and case management features from Cloud SOAR.
-* The Automation Service does not support daemon and trigger action types. The Automation Service can only use triggers built into Cloud SIEM and the Log Analytics platform. 
-* Playbooks, integrations, and actions in the Automation Service may differ from those in Cloud SOAR automation. 
-
-For more information, see [Cloud SOAR Compared to the Automation Service](/docs/cloud-soar/compared-to-automation-service/).
+The Automation Service is a subset of automation capabilities adapted from Cloud SOAR that is available to the entire Sumo Logic log analytics platform. For more information, see [Cloud SOAR Compared to the Automation Service](/docs/cloud-soar/compared-to-automation-service/).
 
 ## Benefits
 
