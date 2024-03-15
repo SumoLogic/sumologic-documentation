@@ -46,7 +46,7 @@ Your **Account Overview** page shows the credits your org has consumed for Flex 
 
 ## How can I optimize Flex data search costs?
 
-There are two ways you can control the cost of running queries data in the Flex:
+There are two ways you can control the cost of running queries data in Flex:
 
 * Logically apportion your data, depending on how you plan to query it, into multiple partitions, instead of creating a single large partition. Try to limit queries to a single partition as much as possible. Assume you have three different services sending logs to Sumo Logic. There a couple of approaches you can take:
     * **Create one partition per service**. All the logs for that service go there. This approach can be leveraged if each team owns a service, and they typically query the logs within their service to find issues.
