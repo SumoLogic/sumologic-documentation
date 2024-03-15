@@ -663,7 +663,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Flex',
+          label: 'Flex Pricing',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'manage/partitions/flex/index'},
