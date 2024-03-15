@@ -180,4 +180,4 @@ _index=sec_record_authentication
     ```
     _index = sec_record_* srcDevice_ip=*
     ```  
-* The partitions that contain Cloud SIEM Records and Signals are stored in a dedicated security data tier. You can’t access data in the security indexes and data in other data tiers (Continuous, Frequent, or Infrequent) in the same query.
+* The partitions that contain Cloud SIEM Records and Signals are stored in a dedicated security data tier. You can’t access data in the security indexes and data in other data tiers (Continuous, Frequent, or Infrequent) and flex in the same query.

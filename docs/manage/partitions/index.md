@@ -1,6 +1,6 @@
 ---
-slug: /manage/partitions-data-tiers
-title: Partitions and Data Tiers
+slug: /manage/partitions
+title: Partitions
 description: Partitions speed the search process by allowing an Admin to filter a subset of the log messages in an index.
 ---
 
@@ -60,55 +60,55 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions-data-tiers/create-edit-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create and Edit a Partition</h4></a>
+  <a href="/docs/manage/partitions/data-tier/create-edit-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Create and Edit a Partition</h4></a>
   <p>Learn how to create and edit a Partition in an Index.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions-data-tiers/view-partition-details"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>View Details About a Partition</h4></a>
+  <a href="/docs/manage/partitions/data-tier/view-partition-details"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>View Details About a Partition</h4></a>
   <p>Learn how to view details about a Sumo Logic Partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions-data-tiers/run-search-against-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Search a Partition</h4></a>
+  <a href="/docs/manage/partitions/run-search-against-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Search a Partition</h4></a>
   <p>Learn how to run a search against data in a Partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions-data-tiers/edit-data-forwarding-destinations-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Edit Data Forwarding Destinations for a Partition</h4></a>
+  <a href="/docs/manage/partitions/edit-data-forwarding-destinations-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Edit Data Forwarding Destinations for a Partition</h4></a>
   <p>Learn how to specify Data Forwarding settings for a Partition.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions-data-tiers/manage-indexes-variable-retention"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage Indexes with Variable Rentention</h4></a>
+  <a href="/docs/manage/partitions/manage-indexes-variable-retention"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Manage Indexes with Variable Rentention</h4></a>
   <p>Learn how to create Index Partitions and Scheduled Views to store your data.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions-data-tiers/decommission-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Decommission a Partition</h4></a>
+  <a href="/docs/manage/partitions/decommission-partition"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Decommission a Partition</h4></a>
   <p>Learn how to decommission a Partition to keep it from being started.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions-data-tiers/data-tiers"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers</h4></a>
+  <a href="/docs/manage/partitions/data-tier/data-tiers"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers</h4></a>
   <p>Get to know about Sumo Logic's Data Tiers feature.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions-data-tiers/data-tiers-faqs">  <img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers FAQs</h4></a>
+  <a href="/docs/manage/partitions/data-tier/data-tiers-faqs">  <img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Data Tiers FAQs</h4></a>
   <p>Get answers on various FAQs about Data Tiers.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions-data-tiers/searching-data-tiers"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Searching Data Tiers</h4></a>
+  <a href="/docs/manage/partitions/data-tier/searching-data-tiers"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Searching Data Tiers</h4></a>
   <p>Learn how to search specific Data Tiers.</p>
   </div>
 </div>
