@@ -51,7 +51,7 @@ There are two ways you can control the cost of running queries data in Flex:
 * Logically apportion your data, depending on how you plan to query it, into multiple partitions, instead of creating a single large partition. Try to limit queries to a single partition as much as possible. Assume you have three different services sending logs to Sumo Logic. There a couple of approaches you can take:
     * **Create one partition per service**. All the logs for that service go there. This approach can be leveraged if each team owns a service, and they typically query the logs within their service to find issues.
     * **Create one partition per log type (debug, infra, and so on)**. This approach can be leveraged if, most of the time, the team searches one log type per query. For example, the team only queries debug logs, and typically queries other logs like Database logs and OS logs in separate queries. 
-* Try to use a restrictive time range, instead of running a query with very long time range. 
+* Try to use a restrictive time range, instead of running a query with a very long time range. 
 
 Using keywords or other metadata in a query will not reduce the amount of data scanned. For example, the inclusion of a keyword and custom field in the scope of the query below does not reduce the amount of data that Sumo Logic will scan. Sumo Logic will scan all data in the partition named `ybase_partition`.
 
