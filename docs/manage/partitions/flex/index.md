@@ -5,7 +5,7 @@ description: Learn about Sumo Logic Flex Pricing.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Flex pricing delivers the new financial model for log management, with which your businesses can finally centralize, store, and analyze all application, infrastructure, and security data in one place to drive collaboration and unmatched velocity while delivering reliable  and secure digital experiences.
+Flex pricing delivers a new financial model for log management, in which your businesses can centralize, store, and analyze all application, infrastructure, and security data in one place. This drives collaboration and velocity while delivering a reliable  and secure digital experience.
 
 | Feature support | Flex Pricing |
 | :-- | :-- | 
