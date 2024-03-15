@@ -20,12 +20,12 @@ import ApiIntro from '../reuse/api-intro.md';
 
 | Deployment | Documentation URL                                        |
 |:------------|:--------------------------------------------------------|
-| AU         | https://api.au.sumologic.com/docs/#tag/getLogSearchEstimatedUsageByMeteringType  |
-| CA         | https://api.ca.sumologic.com/docs/#tag/getLogSearchEstimatedUsageByMeteringType  |
-| DE         | https://api.de.sumologic.com/docs/#tag/getLogSearchEstimatedUsageByMeteringType  |
-| EU         | https://api.eu.sumologic.com/docs/#tag/getLogSearchEstimatedUsageByMeteringType  |
-| FED        | https://api.fed.sumologic.com/docs/#tag/getLogSearchEstimatedUsageByMeteringType |
-| IN         | https://api.in.sumologic.com/docs/#tag/getLogSearchEstimatedUsageByMeteringType  |
-| JP         | https://api.jp.sumologic.com/docs/#tag/getLogSearchEstimatedUsageByMeteringType  |
-| US1        | https://api.sumologic.com/docs/#tag/getLogSearchEstimatedUsageByMeteringType     |
-| US2        | https://api.us2.sumologic.com/docs/#tag/getLogSearchEstimatedUsageByMeteringType |
+| AU         | https://api.au.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
+| CA         | https://api.ca.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
+| DE         | https://api.de.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
+| EU         | https://api.eu.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
+| FED        | https://api.fed.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType |
+| IN         | https://api.in.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
+| JP         | https://api.jp.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType  |
+| US1        | https://api.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType     |
+| US2        | https://api.us2.sumologic.com/docs/#operation/getLogSearchEstimatedUsageByMeteringType |
