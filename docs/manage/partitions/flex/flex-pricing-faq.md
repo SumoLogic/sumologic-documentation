@@ -16,7 +16,7 @@ import FlexPricing from '../../../reuse/flex-pricing.md';
 
 ## Is the Flex pricing available to existing Cloud Flex customers?
 
-No, it is not available for the existing customer. Flex will become available for existing customers in the near future. Currently, Flex Licencing is the default plan for new customers who sign up with Sumo Logic. 
+No, it is not available for the existing customers. Flex will become available for existing customers in the near future. Currently, Flex Licencing is the default plan for new customers who sign up with Sumo Logic. 
 
 ## How is Flex Pricing different from the other data tiers?
 
