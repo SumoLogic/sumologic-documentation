@@ -26,7 +26,7 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | View Connections | View [connections](/docs/alerts/webhook-connections/) on the **Connections** page. |
 | View Scheduled Views	| [View Scheduled Views](/docs/manage/scheduled-views).|
 | Manage Scheduled Views	| View, create, edit, and delete Scheduled Views. Note that if you grant a role the Manage Schedule Views capability, users with that role will also have View Scheduled Views capability.|
-| View Partitions	| View [partitions](/docs/manage/partitions-data-tiers).|
+| View Partitions	| View [partitions](/docs/manage/partitions).|
 | Manage Partitions	| View, create, edit, and delete partitions. Note that if you grant a role the Manage Partitions capability, users with that role will also have View Partitions and Manage S3 Data Forwarding capabilities.|
 | View Account Overview |	View the Account Overview page.|
 | Manage Tokens	| Manage [Installation Tokens](/docs/manage/security/installation-tokens).|
