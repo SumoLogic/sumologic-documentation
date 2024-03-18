@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-Previously, data forwarding was only supported in Sumo Logic’s Continuous data tier. Now, you can forward log data from a [Partition](/docs/manage/partitions-data-tiers/) or [Scheduled View](/docs/manage/scheduled-views/) in Infrequent Tier. This support helps debugging of rare issues by utilizing verbose log sources, ensuring effective troubleshooting for specific scenarios that occur infrequently.
+Previously, data forwarding was only supported in Sumo Logic’s Continuous data tier. Now, you can forward log data from a [Partition](/docs/manage/partitions/) or [Scheduled View](/docs/manage/scheduled-views/) in Infrequent Tier. This support helps debugging of rare issues by utilizing verbose log sources, ensuring effective troubleshooting for specific scenarios that occur infrequently.
 
 ## Infrequent data forwarding support
 

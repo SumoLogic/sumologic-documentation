@@ -17,6 +17,17 @@ You can use the Automation Service to run automations for the following:
 * **Cloud SIEM**. Use the [Automation Service with Cloud SIEM](/docs/cse/automation/about-automation-service-and-cloud-siem) to respond to security incidents.
 * **Monitors**. Use [automated playbooks in monitors](/docs/alerts/monitors/use-playbooks-with-monitors) to run workflows in response to alerts. 
 
+## Differences compared to Cloud SOAR
+
+The Automation Service is a subset of automation capabilities adapted from [Cloud SOAR Automation](/docs/cloud-soar/automation/) that is available to the entire Sumo Logic log analytics platform. The Automation Service only has Cloud SOAR’s playbook-related features, including App Central and the Automation Bridge. Like the Cloud SOAR action types, the Automation Service action types can perform automated responses to events, including run containment actions and manual user interaction steps. 
+
+The Automation Service differs from Cloud SOAR in the following ways:
+* The Automation Service does not include the incident and case management features from Cloud SOAR.
+* The Automation Service does not support daemon and trigger action types. The Automation Service can only use triggers built into Cloud SIEM and the Log Analytics platform. 
+* Playbooks, integrations, and actions in the Automation Service may differ from those in Cloud SOAR automation. 
+
+For more information, see [Cloud SOAR Compared to the Automation Service](/docs/cloud-soar/compared-to-automation-service/).
+
 ## Automation Service UI
 
 The Automation Service UI is composed of the following tabs:

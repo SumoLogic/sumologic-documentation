@@ -93,12 +93,12 @@ Depending on the action, you may need to select a playbook input. The playbook i
 
 The following example shows how to configure a notification that sends an email upon completion of an action to perform a log search in Sumo Logic core platform.
 
-1. Edit the Sumo Logic CIP resource:
+1. Edit the Sumo Logic resource:
    1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
    1. Under **Integrations**, select **Automation**.
    1. From the Automation screen, click **Manage Playbooks**. This opens the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui).
    1. Click **Integrations** in the navigation menu.
-   1. Select **Sumo Logic CIP**.
+   1. Select **Sumo Logic**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" width="600"/>
    1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
    1. [Create an access key](/docs/manage/security/access-keys#create-your-access-key) and copy the resulting access ID and access key.
@@ -118,7 +118,7 @@ The following example shows how to configure a notification that sends an email 
    1. In the **Edit node** dialog, select **Insight** from the dropdown menu and click **UPDATE**.
    1. Click the **Add Node** button (**+** icon) on **START**.
    1. In the **Add node** dialog, select **Action**.
-   1. For **Integration**, select **Sumo Logic CIP**.
+   1. For **Integration**, select **Sumo Logic**.
    1. Ensure that **Type** is **Enrichment**.
    1. For **Action**, select **Search Sumo Logic**.
    1. In the **Query** box enter the search query you want to make in the Sumo Logic core platform. For help with queries, see [General Search Examples Cheat Sheet](/docs/search/search-cheat-sheets/general-search-examples/).
@@ -293,12 +293,12 @@ The following example pulls together elements of the [Simple example](#simple-ex
    1. In the **Edit resource** dialog, enter the **API URL**: `https://www.virustotal.com`.
    1. Enter the **API Key**. See the [VirusTotal documentation](https://support.virustotal.com/hc/en-us/articles/115002100149-API) to learn how to obtain the API key. If you do not already have a VirusTotal account, you need to create one to get an API key.
    1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-virus-total-edit-resource.png')} alt="Edit resource" width="400"/>
-1. Edit the Sumo Logic CIP resource:
+1. Edit the Sumo Logic resource:
    1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
    1. Under **Integrations**, select **Automation**.
    1. From the Automation screen, click **Manage Playbooks**. This opens the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui).
    1. Click **Integrations** in the navigation menu.
-   1. Select **Sumo Logic CIP**.
+   1. Select **Sumo Logic**.
    1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automation-examples-sumo-logic-cip-resource-edit-button.png')} alt="Resource edit button" width="600"/>
    1. In the **Edit  resource** dialog, enter the **API URL** for your Sumo Logic core platform instance (for example, `https://api.us2.sumologic.com`). For the URL to use for your Sumo Logic instance, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
    1. [Create an access key](/docs/manage/security/access-keys#create-your-access-key) and copy the resulting access ID and access key.
@@ -353,7 +353,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
     1. In the **Edit node** dialog, select **Insight** from the dropdown menu and click **UPDATE**.
     1. Click the **Add Node** button (**+** icon) on **START**.
     1. In the **Add node** dialog, select **Action**.
-    1. For **Integration**, select **Sumo Logic CIP**.
+    1. For **Integration**, select **Sumo Logic**.
     1. Ensure that **Type** is **Enrichment**.
     1. For **Action**, select **Search Sumo Logic**.
     1. In the **Query** box enter the search query you want to make in the Sumo Logic core platform. In the example below, a placeholder queries for a value obtained from the IP Reputation V3 node. For help with queries, see [General Search Examples Cheat Sheet](/docs/search/search-cheat-sheets/general-search-examples/).
