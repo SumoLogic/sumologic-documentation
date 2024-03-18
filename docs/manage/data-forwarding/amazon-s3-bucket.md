@@ -65,6 +65,8 @@ These file objects will contain the messages received as well as the system met
 
 ### Example
 
+When forwarding data from Sumo Logic, the system will write structured logs that include the original message being forwarded, as well as additional metadata and quotation marks as seen in a structured JSON file.
+
 **Metadata fields**
 
 `messageId,sourceName,sourceHost,sourceCategory,messageTime,receiptTime,sourceId,collectorId,count,format,view,encoding,message,aggregatefield1,aggregatefield2`
