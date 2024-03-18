@@ -57,6 +57,8 @@ The list of supported suffixes, and the factor by which they multiply the numeri
 | T          | 1000000000000    | Ti         | 1099511627776    |
 | P          | 1000000000000000 | Pi         | 1125899906842624 |
 
+These suffixes are also supported in Cloud SIEM rules. See [Sumo Logic core platform literals supported in Cloud SIEM](/docs/cse/rules/cse-rules-syntax/#sumo-logic-core-platform-literals-supported-in-cloud-siem).
+
 ## Time suffix
 
 This is used to represent units of time. **The base unit of time returned is the millisecond**. For example, 1.5s would be returned as 1,500. One and a half seconds converted to the base unit of milliseconds. Some examples of time suffixes:
@@ -81,6 +83,8 @@ The following time suffixes are supported:
 | h          | Hour        |
 | d          | Day         |
 | w          | Week        |
+
+These suffixes are also supported in Cloud SIEM rules. See [Sumo Logic core platform literals supported in Cloud SIEM](/docs/cse/rules/cse-rules-syntax/#sumo-logic-core-platform-literals-supported-in-cloud-siem).
 
 ## Arithmetic Operators
 

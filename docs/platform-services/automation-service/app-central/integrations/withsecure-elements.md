@@ -1,14 +1,15 @@
 ---
 title: WithSecure Elements
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/withsecure-elements.png')} alt="withsecure-elements" width="80"/>
 
-***Version: 1.1  
-Updated: Jul 18, 2023***
+***Version: 1.2  
+Updated: Mar 4, 2024***
 
 WithSecure Elements is a single, modular solution consisting of a complete range of cybersecurity applications that offer end-to-end enterprise and cloud coverage. The product includes our award-winning technologies for vulnerability management, patch management, endpoint protection, and endpoint detection and response. In today's unpredictable and ever-changing business environment, our all-in-one security solution helps build and ensure a resilient business.
 
@@ -34,10 +35,10 @@ WithSecure Elements is a single, modular solution consisting of a complete range
 1. After the list of the integrations appears, search/look for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-7.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="600" />
 1. Populate all the required fields (\*) and then click **SAVE**.
-   * **Label**. The name for the resource.
-   * **URL**. The base API URL for WithSecure Elements. Default: `https://api.connect.withsecure.com/`.
-   * **Client ID**. Your previously retrieved Client ID.
-   * **Client Secret**. Your previously retrieved Client Secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-8.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="400" />
+    * **Label**. The name for the resource.
+    * **URL**. The base API URL for WithSecure Elements. Default: `https://api.connect.withsecure.com/`.
+    * **Client ID**. Your previously retrieved Client ID.
+    * **Client Secret**. Your previously retrieved Client Secret.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-8.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="400" />
 1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-9.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="400" />
 1. Click **TEST SAVED SETTINGS**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-10.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="400" />
 1. You should receive a successful notification in the bottom right corner.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/withsecure-elements/withsecure-elements-11.png')} style={{border:'1px solid gray'}} alt="withsecure-elements" width="400" />
@@ -50,3 +51,4 @@ Threat Intelligence-Reputation
 
 * March 22, 2023 - First upload
 * July 18, 2023 (v1.1) - Removed leading/trailing spaces
+* March 4, 2024 (v1.2) - Updated code for compatibility with Python 3.12

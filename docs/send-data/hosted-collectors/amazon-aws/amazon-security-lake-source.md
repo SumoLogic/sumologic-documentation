@@ -71,7 +71,7 @@ To create an Amazon Security Lake Source, follow the steps below:
 1. In **Role ARN**: Paste the AWS Role ID from your Amazon Security Lake console, see above [Step 2.11](#step-2-set-up-subscriber-in-amazon-security-lake-console).<br/><img src={useBaseUrl('img/send-data/role-arn-id.png')} alt="role-arn-id.png" width="400"/>
 1. Click **Save**. A pop-up will appear with the subscription endpoint. <br/> <img src={useBaseUrl('img/send-data/subscription-endpoint.png')} alt="subscription-endpoint.png" width="400"/>
     :::note
-    Remember to copy and secure the subscription endpoint. If you closed the window and could not copy the URL, don't worry. Click on the **Edit** button under the list of sources and copy the URL.
+    Remember to copy and secure the subscription endpoint. If you closed the window and could not copy the URL, do not worry. Click on the **Edit** button under the list of sources and copy the URL.
     :::
 1. Optional: You can create any **Processing Rules** that you want for the Source. For more information, see [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 

@@ -63,7 +63,7 @@ In this section, we'll introduce the following concepts:
 
 ## What Data Do I Have?
 
-It can be hard to create a search query if you don't know what data you have in your Sumo Logic environment. 
+It can be hard to create a search query if you do not know what data you have in your Sumo Logic environment. 
 
 You can use the following simple queries to identify possible values for your existing Source Categories, Source Names, and Source Hosts. You can also approximate data volume for each of the possible values using these queries.
 

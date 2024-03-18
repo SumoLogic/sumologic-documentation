@@ -100,7 +100,7 @@ When you create a metric query in the Metrics Explorer, the first thing you do i
 
 #### Filters  
 
-Filters, sometimes referred to as selectors, narrow the scope of your query. If you don't include one or more filters in a metric query or apply an aggregation operator, it's possible that the query will return too many results to display.  A filter can be one or more key-value pairs, or a keyword string, or a combination of key-value pairs and keywords. When you click in the **Filters** field, a list of metadata fields appears, for example, `_sourceCategory`, `_collector`, `availabilityzone`, and so on. After you select a metadata field, a list of values appear. Here are two examples of filters:
+Filters, sometimes referred to as selectors, narrow the scope of your query. If you do not include one or more filters in a metric query or apply an aggregation operator, it's possible that the query will return too many results to display.  A filter can be one or more key-value pairs, or a keyword string, or a combination of key-value pairs and keywords. When you click in the **Filters** field, a list of metadata fields appears, for example, `_sourceCategory`, `_collector`, `availabilityzone`, and so on. After you select a metadata field, a list of values appear. Here are two examples of filters:
 
 * `cluster=cluster-1 node=node-1 cpu=cpu-1 metric=cpu-idle`
 * `_sourceCategory=hostmetrics`
@@ -117,7 +117,7 @@ For instructions on how to create a metric query, see [Metrics Explorer](../metr
 
 ### Metricmonitors
 
-You can configure a metric monitor for a metric query so that Sumo will send an alert notification, when the query results match the rules that you define for the monitor. There are two notification types: email and WebHook. 
+You can configure a metric monitor for a metric query so that Sumo will send an alert notification, when the query results match the rules that you define for the monitor. There are two notification types: email and webhook. 
 
 You can set up several types of monitors: Critical, Warning, and Missing Data. Critical and Warning result in value-based alerts—they are triggered when a metric in a time series varies from a threshold for a specified period of time.  A Missing Data monitor triggers an alert when no data is received for a specified period of time.  
 

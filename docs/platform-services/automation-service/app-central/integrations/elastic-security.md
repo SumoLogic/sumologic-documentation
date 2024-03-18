@@ -1,16 +1,17 @@
 ---
 title: Elastic Security
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/elastic-security.png')} alt="elastic-security" width="100"/>
 
-***Version: 1.2  
-Updated: Jul 13, 2023***
+***Version: 1.3  
+Updated: Mar 4, 2024***
 
-Elastic Security equips analysts to prevent, detect, and respond to threats. The free and open solution delivers SIEM, endpoint security, threat hunting, cloud monitoring, and more. 
+Elastic Security equips analysts to prevent, detect, and respond to threats. The free and open solution delivers SIEM, endpoint security, threat hunting, cloud monitoring, and more.
 
 ## Actions
 
@@ -46,6 +47,7 @@ Elastic Security equips analysts to prevent, detect, and respond to threats. The
 * September 24, 2021 - New action updated
 * January 21, 2022 - New action updated
 * July 13, 2023 (v1.2)
-	+ Updated the integration with Environmental Variables
-	+ Changed fields visibility
-	+ Updated Daemon compatibility (Fetch Items Elastic Security)
+    + Updated the integration with Environmental Variables
+    + Changed fields visibility
+    + Updated Daemon compatibility (Fetch Items Elastic Security)
+* March 4, 2024 (v1.3) - Updated code for compatibility with Python 3.12

@@ -20,7 +20,7 @@ An SSL certificate can be associated with one or more servers (IP address:port c
 
 * The Botnet C2 IP Blacklist gets generated every 5 minutes. Do not fetch it more often than every 5 minutes.
 * As IP addresses are getting recycled and reused, this blacklist only contains IP addresses that have been see to be associated with malicious SSL certificate in past 30 days. The false positive rate for this blacklist should therefore be low.
-* I strongly recommend you to not use the aggressive version of the Botnet C2 IP blacklist as it definitely will cause false positives. If you want to reduce the amount of false positives, don't use this option. If you want to get maximum protection and don't care about false positives, you can enable the action by selecting the checkbox (not recommended).
+* I strongly recommend you to not use the aggressive version of the Botnet C2 IP blacklist as it definitely will cause false positives. If you want to reduce the amount of false positives, do not use this option. If you want to get maximum protection and do not care about false positives, you can enable the action by selecting the checkbox (not recommended).
 * More info: 'https://sslbl.abuse.ch/'
 
 ## Abuse.ch SSLBL Feed in Automation Service and Cloud SOAR

@@ -16,7 +16,7 @@ Updates are divided using semantic versioning. The syntax of version numbers ar
 where
 
 * `MAJOR` is not backward compatible and requires new configuration input from you, either in Sumo Logic or the service you're collecting from. * Requires manual upgrade through the web interface or API. * Sumo Logic provides upgrade instructions.
-* `MINOR` is backward compatible, it may be user-facing such as a new optional or default configuration value, however, you don't have to make the change, it's automatically upgraded.
+* `MINOR` is backward compatible, it may be user-facing such as a new optional or default configuration value, however, you do not have to make the change, it's automatically upgraded.
 * `PATCH` is backward compatible, is usually bug fixes or security updates, and is automatically upgraded.
 
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
@@ -45,7 +45,7 @@ Once you complete the upgrade instructions you can select the **Upgrade** butt
 
 You can use the Source PUT endpoint from the Collector Management API to upgrade your Source.
 
-Cloud-to-Cloud Source JSON needs to assign `version` to `latest` in `schemaRef` block. If you don't, it will only update any other configuration changes.
+Cloud-to-Cloud Source JSON needs to assign `version` to `latest` in `schemaRef` block. If you do not, it will only update any other configuration changes.
 
 For example,
 

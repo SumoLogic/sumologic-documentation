@@ -4,7 +4,7 @@ title: cat Search Operator
 sidebar_label: cat
 ---
 
-You can use the `cat` operator to view the contents of a lookup table. Not supported in live dashboards or scheduled searches.
+You can use the `cat` operator to view the contents of a lookup table. Not supported in auto refresh dashboards or scheduled searches.
 
 ## Syntax
 

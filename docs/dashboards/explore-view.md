@@ -83,7 +83,7 @@ Explore provides the ability to filter your view so you can focus on specific en
 The Dashboard and Explore menu will refresh with your filters applied.
 
 :::tip Negation
-You can apply the filter as an exclusion or negation so the filter acts as a `not` or bang `!`. This way the filter will return results that don't have those values. Simply click the prohibition or _no_ sign to set. The filter will get a red border when set to exclude. You may manually add an exclamation or bang `!` to the input area before selecting your filter. For example, `!_key=value`.
+You can apply the filter as an exclusion or negation so the filter acts as a `not` or bang `!`. This way the filter will return results that do not have those values. Simply click the prohibition or _no_ sign to set. The filter will get a red border when set to exclude. You may manually add an exclamation or bang `!` to the input area before selecting your filter. For example, `!_key=value`.
 :::
 
 ### Saving filters
@@ -135,7 +135,7 @@ Optional arguments:
 Filters:
 * `<filterValue>` is the value of a key you want to filter.
 * `<filter>` (optional) is the metadata key you want to apply as a filter to explore. You do not have to provide a filter, you may only provide a `filterValue`.
-* `<negation>` set as `0` to apply your filters or `1` to treat the filters as an exclusion. Think of using `1` as using a `not` or `!` bang, so the filter will return results that don't have those values. This is an example:
+* `<negation>` set as `0` to apply your filters or `1` to treat the filters as an exclusion. Think of using `1` as using a `not` or `!` bang, so the filter will return results that do not have those values. This is an example:
 ```xml
 https://<endpoint>/ui/#//explore/@1628023955694,1628024855694@topology=0000000000000041@cluster=kubernetes@filters@1:cl-tracing-training:_collector,0:kubernetes:_origin
 ```

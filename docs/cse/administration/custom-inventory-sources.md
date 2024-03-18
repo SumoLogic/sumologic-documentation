@@ -49,7 +49,7 @@ In this step, you configure an HTTP Source that will receive the inventory data 
 
 ## Step 2: Create a Webhook connection
 
-In this step you create a WebHook that points to the HTTP source.
+In this step, you create a webhook that points to the HTTP source.
 
 1. Go to **Manage Data > Monitoring** and select the **Connections** tab. <br/><img src={useBaseUrl('img/cse/connections.png')} alt="connections.png" />
 2. Click the plus sign (+) icon.

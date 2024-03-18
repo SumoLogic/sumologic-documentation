@@ -23,7 +23,7 @@ Once you [ingest indicators](#ingest-threat-intelligence-indicators) and they ap
 
 ### Role capabilities
 
-To use threat intelligence indicators, you must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#threat-intel). 
+To view and manage threat intelligence indicators on the [Threat Intelligence tab](#threat-intelligence-tab), you must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#threat-intel). 
 
 1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
 1. Click the **Roles** tab.
@@ -33,11 +33,13 @@ Add the following capabilities:
        * **View Threat Intel Data Store**
        * **Manage Threat Intel Data Store**
 
+You do not need to be assigned these role capabilities to [find threats with log queries](/docs/platform-services/threat-intelligence-indicators#find-threats-with-log-queries).
+
 ### Ingest threat intelligence indicators
 
 To search logs that contain correlations to threat intelligence indicators, you must first ingest the indicators. You can ingest indicators using:
 * **The Threat Intelligence tab**. See [Add indicators in the Threat Intelligence tab](#add-indicators-in-the-threat-intelligence-tab).
-* **A collector**. See [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source). 
+* **A collector**. See [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source) and [STIX/TAXII 1 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source). 
 * **The API**. See the following APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource:
    * [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators)
    * [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators)
@@ -352,6 +354,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
      "confidence": 30,
      "threatType": "malicious-activity",
      "actors": "actor1,actor2",
+     "killChain": "reconnaissance",
      "fields": {
        "kill_chain_name": "lockheed-martin-cyber-kill-chain",
        "kill_chain_phase": "reconnaissance"
@@ -367,6 +370,7 @@ Following is an example threat indicator file in normalized JSON format. (For an
      "confidence": 30,
      "threatType": "malicious-activity",
      "actors": "actor3,actor4",
+     "killChain": "reconnaissance",
      "fields": {
        "kill_chain_name": "lockheed-martin-cyber-kill-chain",
        "kill_chain_phase": "reconnaissance"
@@ -404,8 +408,18 @@ The following attributes are required:
           * `malicious-activity`. Patterns of suspected malicious objects and/or activity.
           * `attribution`. Patterns of behavior that indicate attribution to a particular threat actor or campaign.
           * `unknown` (or not set). There is not enough information available to determine the threat type.
-       * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor1`. This attribute is frequently used in the s_CrowdStrike source.
 
+      The following attributes are optional:
+       * **actors** (string list). An identified threat actor such as an individual, organization, or group. For example, `actor1`. This attribute is frequently used in the s_CrowdStrike source.
+       * **killChain** (string list). The various phases an attacker may undertake to achieve their objectives (as [defined by kill_chain_phase in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_i4tjv75ce50h)). For example, `reconnaissance`. This attribute is frequently used in the s_CrowdStrike source. Although you can use any kill chain definition and values you want, following are example values based on the standard stages in a kill chain:
+          * `reconnaissance`.  Researching potential targets.
+          * `weaponization`. Creation of malware to be used against an identified target.
+          * `delivery`. Infiltration of a target’s network and users. 
+          * `exploitation`. Taking advantage of the vulnerabilities discovered in previous stages to further infiltrate a target’s network and achieve objectives.
+          * `installation`. Install malware and other cyberweapons onto the target network to take control of its systems and exfiltrate valuable data.
+          * `command-and-control`. Communication with the installed malware.
+          * `actions-on-objectives`. Carrying out cyberattack objectives.
+         
 ### CSV format
 
 Comma-separated value (CSV) is a standard format for data upload.
@@ -417,8 +431,8 @@ Comma-separated value (CSV) is a standard format for data upload.
 If uploading a CSV file with the UI, the format should be the same as used for a standard CSV file:
 
 ```
-0001,192.0.2.0,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,
-0002,192.0.2.1,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3
+0001,192.0.2.0,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,,
+0002,192.0.2.1,ipv4-addr:value,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,30,malicious-activity,actor3,reconnaissance
 ```
 
 ##### Upload with the API
@@ -427,8 +441,8 @@ If uploading a CSV file using the API, the file should be contained in a JSON ob
 
 ```
 {
- "csv": "0001,192.0.2.0,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,\n
-0002,192.0.2.1,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,actor3\n"
+ "csv": "0001,192.0.2.0,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,,\n
+0002,192.0.2.1,ipv4-addr,FreeTAXII,2023-02-21T12:00:00.00Z,2025-05-21T12:00:00.00Z,3,malicious-activity,actor3,reconnaissance\n"
 }
 ```
 
@@ -463,7 +477,17 @@ Columns for the following attributes are required in the upload file:
           * `malicious-activity`. Patterns of suspected malicious objects and/or activity.
           * `attribution`. Patterns of behavior that indicate attribution to a particular threat actor or campaign.
           * `unknown` (or not set). There is not enough information available to determine the threat type.
-       * **actors** (string list) is an optional attribute. An identified threat actor such as an individual, organization, or group. For example, `actor3`. This attribute is frequently used in the s_CrowdStrike source. Note if you don’t provide a value for `actors`, you still must provide the empty column at the end of the row with an extra comma, as shown in the examples above.
+
+      The following attributes are optional: 
+       * **actors** (string list). An identified threat actor such as an individual, organization, or group. For example, `actor3`. This attribute is frequently used in the s_CrowdStrike source. Note if you don’t provide a value for `actors`, you still must provide the empty column at the end of the row with an extra comma, as shown in the examples above.
+       * **killChain** (string list). The various phases an attacker may undertake to achieve their objectives (as [defined by kill_chain_phase in STIX 2.1](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_i4tjv75ce50h)). For example, `reconnaissance`. This attribute is frequently used in the s_CrowdStrike source. Although you can use any kill chain definition and values you want, following are example values based on the standard stages in a kill chain:
+          * `reconnaissance`.  Researching potential targets.
+          * `weaponization`. Creation of malware to be used against an identified target.
+          * `delivery`. Infiltration of a target’s network and users. 
+          * `exploitation`. Taking advantage of the vulnerabilities discovered in previous stages to further infiltrate a target’s network and achieve objectives.
+          * `installation`. Install malware and other cyberweapons onto the target network to take control of its systems and exfiltrate valuable data.
+          * `command-and-control`. Communication with the installed malware.
+          * `actions-on-objectives`. Carrying out cyberattack objectives.
 
 ### STIX 2.1 JSON format
 

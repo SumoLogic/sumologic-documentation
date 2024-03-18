@@ -54,6 +54,11 @@ Tutorial: Set up an AWS CloudTrail Source.
     * **Role-based access**. Enter the Role ARN that was provided by AWS after creating the role.   
         ![role-arn.png](/img/cse/role-arn.png)
     * **Key access**. Enter the Access Key ID and Secret Access Key. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
+1. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/hosted-collectors/amazon-aws/aws-sources).
+10. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
+11. **Time Zone**. Select **Ignore time zone from the log file and instead use**, and select **UTC** from the dropdown.
+12. **Timestamp Format.** Select **Automatically detect the format**.
+13. **Enable Multiline Processing**. Select the **Detect messages spanning multiple lines** check box, and select **Infer Boundaries**.
 1. Click **SAVE**.
 1. **Optional:** Install the Sumo Logic App for AWS CloudTrail.
 

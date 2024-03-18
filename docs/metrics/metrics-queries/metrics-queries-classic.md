@@ -5,11 +5,11 @@ sidebar_label: Metrics - Classic (Legacy)
 description: See information about the Classic metrics UI.
 ---
 
-This topic explains how to construct metrics queries and provides examples. 
+import ClassicMetricsNote from '../../reuse/classic-metrics-deprecation.md';
 
-:::tip
-This topic has information about the Classic metrics UI. For information about the Metrics Explorer, the UI that replaces Classic metrics, see [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer).
-:::
+<ClassicMetricsNote/>
+
+This topic explains how to construct metrics queries and provides examples. 
 
 ## Structure of metrics queries
 

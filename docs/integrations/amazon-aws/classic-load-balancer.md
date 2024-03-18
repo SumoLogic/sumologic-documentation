@@ -83,7 +83,7 @@ Namespace for **AWS Classic Load Balancer** Service is **AWS/ELB**.
 See [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 
-#### Before you begin
+#### Prerequisites
 
 Before you can begin to use the AWS Elastic Load Balancing (ELB) Application App, complete the following steps:
 
