@@ -2638,7 +2638,7 @@
   "/Cloud_SIEM_Enterprise/Administration/Cloud_SIEM_Enterprise_Feature_Update_(2022)": "/docs/cse/administration",
   "/Cloud_SIEM_Enterprise/Administration/Create_a_Custom_Tag_Schema": "/docs/cse/administration/create-a-custom-tag-schema",
   "/Cloud_SIEM_Enterprise/Administration/Configure_a_Custom_Inventory_Source": "/docs/cse/administration/custom-inventory-sources",
-  "/Cloud_SIEM_Enterprise/Administration/Create_a_Custom_Threat_Intel_Source": "/docs/cse/administration/create-custom-threat-intel-source",
+  "/Cloud_SIEM_Enterprise/Administration/Create_a_Custom_Threat_Intel_Source": "/docs/platform-services/threat-intelligence-indicators",
   "/Cloud_SIEM_Enterprise/Administration/Create_and_Use_Network_Blocks": "/docs/cse/administration/create-use-network-blocks",
   "/Cloud_SIEM_Enterprise/Administration/Create_CSE_Actions": "/docs/cse/administration/create-cse-actions",
   "/Cloud_SIEM_Enterprise/Administration/Create_CSE_Context_Actions": "/docs/cse/administration/create-cse-context-actions",
