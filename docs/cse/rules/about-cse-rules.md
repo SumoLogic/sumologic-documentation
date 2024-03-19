@@ -159,42 +159,6 @@ This example below checks a Record for a field named `listMatches` that contains
 
 ### Threat Intelligence
 
-Cloud SIEM’s Threat Intelligence lists are very similar to Match Lists, and you leverage them in rules in the same way. Threat Intelligence lists contain values that, when encountered in a Record, are clear indicators of compromise. To create a new source of Threat Intelligence, see [Create a Custom Threat Intelligence Source](/docs/cse/administration/create-custom-threat-intel-source/).
+Threat Intelligence sources contain values that, when encountered in a Record, are clear indicators of compromise. To create a new source of Threat Intelligence, see [Threat Intelligence Indicators](/docs/platform-services/threat-intelligence-indicators/).
 
-Here’s an example of a Threat Intelligence list in the Cloud SIEM UI, at **Content > Threat Intelligence**. 
-
-<img src={useBaseUrl('img/cse/example-threat-intl.png')} alt="Example threat intelligence list" width="800"/>
-
-Like Match Lists, Threat Intelligence lists are used at the time of Record ingestion. When a Record is ingested, Cloud SIEM determines whether any of the fields in the Record exist in any of your configured Threat Intelligence lists.
-
-When a Record contains a value that matches an entry in one or more Threat Intelligence lists, just like with Match List data, two fields in the Record get populated: a `listMatches` field that contains the names of Threat Intelligence lists that the Record matched, and a `matchedItems` field that contains the actual key-value pairs that were matched. In addition, the string “threat” is added to the `listMatches` field.  
-
-For example, given a Record whose `SourceIp` column matches a entry in My Threat Intelligence List, the `listMatches` field added to the Record would look like this:
-
-```sql
-listMatches: \['threat_Ip_My_Threat_Intel_List', 'source:My_Threat_Intel_List', 'column:Ip', 'column:SrcIp' 'threat'\]
-```
-where:
-
-* `threat_Ip_My_Threat_Intel_List` is formed by concatenating the following, separated by underscore characters (_):
-   * the string `threat` 
-   * the type of the column–Ip Domain, FileHash, and so on–in the Record that matched an Indicator from the threat intelligence source
-* The name of the threat intelligence source, with embedded spaces replaced by underscore characters (_).
-* `source:My_Threat_Intel_List` identifies the threat intelligence list.
-* `column:Ip` identifies the type of the field where the match was found.
-* `column:SrcIp` identifies the name of the field where the match was found.
-* `threat `is a string that Cloud SIEM uses to indicate that the Record field matched a threat source, rather than another type of list.
-  
-Because the threat intelligence information is persisted within Records, you can reference it downstream in both rules and search. To leverage the information in a rule, you extend your rule expression with the `array_contains` function. The syntax is:
-
-```sql
-array_contains(listMatches, "threat-intel-list-name")
-```
-
-where 
-
-`threat-intel-list`  is the name of the Threat Intelligence list.
-
-:::note
-If your `array_contains` statement refers to a threat intelligence source whose name contains embedded spaces, be sure to replace the spaces with underscores.
-::: 
+Threat Intelligence sources are used at the time of Record ingestion. When a Record is ingested, Cloud SIEM determines whether any of the fields in the Record exist in any of your Threat Intelligence sources. When a Record contains a value that matches an entry in one or more Threat Intelligence sources, the `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to threat intelligence indicators. For more information, see [Threat indicators in Cloud SIEM](/docs/platform-services/threat-intelligence-indicators/#threat-indicators-in-cloud-siem).
