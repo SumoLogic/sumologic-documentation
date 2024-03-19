@@ -18,7 +18,7 @@ If there is no pay-as-search tier scanned, a warning message will be displayed i
 
 ## Monitors
 
-When [creating or modifying a partions](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), you can view the Average scan, Daily scan, and Yearly scan data information based on the selected alert frequency by clicking the meter icon <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" /> on top of the **Monitor** right side panel. <br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/monitors_1.png')} alt="monitors_1" style={{border:'1px solid gray'}} width="450" /> 
+When [creating or modifying a partitions](/docs/alerts/monitors/create-monitor/#step-1-set-trigger-conditions), you can view the Average scan, Daily scan, and Yearly scan data information based on the selected alert frequency by clicking the meter icon <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" /> on top of the **Monitor** right side panel. <br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/monitors_1.png')} alt="monitors_1" style={{border:'1px solid gray'}} width="450" /> 
 
 In addition, you can also see the Model training scan details for the anomaly detection method.<br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/monitors_2.png')} alt="monitors_2" style={{border:'1px solid gray'}} width="450" /> 
 
