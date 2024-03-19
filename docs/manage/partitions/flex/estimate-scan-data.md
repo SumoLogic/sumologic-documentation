@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 When you enter a query against Flex pricing, Sumo Logic will estimate and display the amount of data scanned in Flex to return the search results. This detail is vital. With Flex pricing, you're charged for the amount of data that's scanned to complete the query. 
 
-You can view this detail by clicking the meter icon <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" />. A popup appears on click, which displays the estimated scan data breakup for the chargeable tiers like Infrequent and Flex.
+You can view this detail by clicking the meter icon <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" />. A popup appears that displays the estimated scan data for the chargeable tiers like Infrequent and Flex.
 
 The example below shows the estimate of how much Flex data will be scanned for a query in the scope.<br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/estimated-scanned-data.png')} alt="estimated-scanned-data" style={{border:'1px solid gray'}} width="800" /> 
 
