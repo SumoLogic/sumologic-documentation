@@ -72,7 +72,7 @@ The first step when you create a new monitor is to set the trigger conditions.
    * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.
    * **Anomaly** lets you uncover unusual behavior identified by anomaly detection. Sumo Logic applies machine learning techniques to detect anomalies and identify suspicious patterns of activity. It establishes baselines for normal behavior so you can receive alerts when deviations or unusual activities are detected. To automatically respond when an anomaly alert is triggered, see [Create an anomaly monitor that runs an automated playbook](/docs/alerts/monitors/use-playbooks-with-monitors/#create-an-anomaly-monitor-that-runs-an-automated-playbook).
    * **Outlier** lets you detect an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. 
-1. If you chose the **Anomaly** detection method, choose **Use classic Outlier** if you want to trigger alerts on outlier direction rather than anomaly direction: <br/><img src={useBaseUrl('img/monitors/monitor-detector-types-for-anamoly.png')} alt="Use classic Outlier" width="600"/>
+1. If you chose the **Anomaly** detection method, choose **Use Outlier** if you want to trigger alerts on outlier direction rather than anomaly direction: <br/><img src={useBaseUrl('img/monitors/monitor-detector-types-for-anamoly.png')} alt="Use Outlier" width="600"/>
 
 ### Provide a query (logs and metrics only)
 
@@ -151,10 +151,10 @@ For Metrics monitors, you can choose to recover based on a single data point bel
 
 | Parameter | Description |
 |:--|:--|
-|  Alert when anomaly count is at least ___ (max. 5) at any time within ___ | Enter the minimum number of anomalies to detect during the detection window before triggering an alert, and the duration of time to watch for anomalies (from 5 minutes to 24 hours). Ensure that the time period window is 5-10 times longer than the timeslice used in the log query. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the time period is set to 5 minutes, and the minimum anomaly count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period.   |
+|  Alert when anomaly count is at least ___ (max. ##) at any time within ___ | Enter the minimum number of anomalies to detect during the detection window before triggering an alert, and the duration of time to watch for anomalies (from 5 minutes to 24 hours). Ensure that the time period window is 5-10 times longer than the timeslice used in the log query. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the time period is set to 5 minutes, and the minimum anomaly count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period.   |
 | Show me fewer alerts --- more alerts | Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Select more alerts if you do not want to miss out on most anomalies. | 
 
-##### Outlier detection method
+##### Use Outlier with Anomaly detection
 
 **Logs Trigger Type: Critical and Warning**
 
@@ -182,21 +182,12 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 |:--|:--|
 | Time range | The time span of data to evaluate. Select either 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 3 hours, 6 hours, 12 hours, or 24 hours. |
 
-Recover
+**Recover**
 
 * Automatically: Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
 
     `Recover automatically when data becomes available for the affected time span.`
 
-**Logs Trigger Type: Critical** 
-
- <img src={useBaseUrl('img/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid gray'}} width="800" />
-
-| Parameter | Description |
-|:--|:--|
-| Detection Window | The duration of time to watch for anomalies, from 5 minutes to 24 hours.  |
-| Detector Sensitivity | Tunes the number of anomalous data points detected per day compared to the predicted baseline for the detection window. High sensitivity will result in more alerts. |
-| Minimum Anomaly Count | The minimum number of anomalies to detect during the detection window before triggering an alert. For example, if the Detection Window is set to 5 minutes, and the Minimum Anomaly Count is set to 1, then an alert is triggered if 1 anomaly appears within a 5 minute timeframe. |
 
 </details>
 
