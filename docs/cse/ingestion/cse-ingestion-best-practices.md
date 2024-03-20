@@ -18,7 +18,7 @@ The process consists of configuring a source or collector to forward messages to
 The diagram below is a high level illustration of several alternative processing flows from a data source to a Sumo Logic collector or source, and on to Cloud SIEM. 
 
 :::note
-You can only send log data that resides in the [Continuous data tier](/docs/manage/partitions-data-tiers/data-tiers) to Cloud SIEM.
+You can only send log data that resides in the [Continuous data tier](/docs/manage/partitions/data-tiers) to Cloud SIEM.
 :::
 
 <img src={useBaseUrl('img/cse/cip-to-cse.png')} alt="Data flow diagram" width="800"/>

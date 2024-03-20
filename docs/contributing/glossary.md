@@ -225,7 +225,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Parser](/docs/cse/schema/parser-editor)**. In Cloud SIEM, a script that parses logs and normalizes them into structured records.
 
-**[Partition](/docs/manage/partitions-data-tiers)**. Sumo Logic allows you to filter a subset of the messages in an Index into a Partition. Partitioning messages in an Index improves search query performance, as the total number of messages that need to be searched is reduced. Once messages are routed to a Partition, you can limit your search to those messages using the Partition name in a search query.
+**[Partition](/docs/manage/partitions)**. Sumo Logic allows you to filter a subset of the messages in an Index into a Partition. Partitioning messages in an Index improves search query performance, as the total number of messages that need to be searched is reduced. Once messages are routed to a Partition, you can limit your search to those messages using the Partition name in a search query.
 
 **[Pinned searches](/docs/get-started/library)**. The Pinned Search feature allows you to start a search, then “pin” it, so it will continue running in the background independent of the browser session. Then, you can close the Search tab or log out and find your results later in the Library on the Recent tab in a folder named Pinned Searches.
 

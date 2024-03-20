@@ -126,7 +126,7 @@ After configuring Sources to collect the logs you need, you can begin using sear
 Search optimization tools speed the search process, delivering query results in less time and improving productivity for forensic analysis and log management. Search speed generally depends on the amount of data and the type of query run against the data. Search optimization tools segment the data and queue it up for quick results.
 
 * [Optimize Search Performance](../search/optimize-search-performance.md). Describes index-based and field-based methods for search optimization, the search optimization process, and how to choose the right tool for the job.
-* [Partitions](/docs/manage/partitions-data-tiers). Partitions speed the search process by allowing you to filter a subset of the log messages in an index.
+* [Partitions](/docs/manage/partitions). Partitions speed the search process by allowing you to filter a subset of the log messages in an index.
 * [Scheduled Views](/docs/manage/scheduled-views). Scheduled Views speed the search process for small and historical subsets of your data by functioning as a pre-aggregated index.
 * [Field Extraction](/docs/manage/field-extractions). Field Extraction speeds the search process by parsing fields as log messages are ingested. The parsing is done automatically, so you don’t need to run a query to parse the fields.
 * [Field Browser](/docs/search/get-started-with-search/search-page/field-browser). The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. You can focus on the fields you’re interested in, avoiding the “noise” of fields you don’t want to see.

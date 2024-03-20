@@ -93,7 +93,7 @@ You can also add threat intelligence indicators using the API or a collector. Se
 1. Select the format of the file to be uploaded:
     * **Normalized JSON**. A normalized JSON file. 
     * **CSV**. A comma-separated value (CSV) file. 
-    * **STIX 2.1 JSON**. A JSON file in STIX 2.1 format. When choosing this format, you must enter the name of the source in the **Source** field provided. 
+    * **STIX 2.x JSON**. A JSON file in STIX 2.x format. When choosing this format, you must enter the name of the source in the **Source** field provided. 
 
    See [Upload formats](#upload-formats) for the format to use in the file.
 1. Click **Upload** to upload the file. 
@@ -331,7 +331,7 @@ Use the following formats for threat intelligence indicator files when you [add 
 
 * [Normalized JSON format](#normalized-json-format)
 * [CSV format](#csv-format)
-* [STIX 2.1 JSON format](#stix-21-json-format)
+* [STIX 2.x JSON format](#stix-2x-json-format)
 
 ### Normalized JSON format
 
@@ -489,9 +489,9 @@ Columns for the following attributes are required in the upload file:
           * `command-and-control`. Communication with the installed malware.
           * `actions-on-objectives`. Carrying out cyberattack objectives.
 
-### STIX 2.1 JSON format
+### STIX 2.x JSON format
 
-STIX 2.1 JSON format is a method to present JSON data according to the STIX 2.1 specification.
+STIX 2.x JSON format is a method to present JSON data according to the STIX 2.x specification.
 
 Note that if you want to upload indicators from multiple sources, you cannot use this format but instead should use the [Normalized JSON format](#normalized-json-format).
 
@@ -635,7 +635,7 @@ As shown in the following example, if uploading via the API you must add the `so
 For information about the attributes to use, see ["Indicator" in the STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html#_muftrcpnf89v), and the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators) in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
 
 The following attributes are required:
-       * **type** (string). The type of STIX object. For example, `indicator`. The value must be the name of one of the types of STIX objects defined in the STIX 2.1 specification.
+       * **type** (string). The type of STIX object. For example, `indicator`. The value must be the name of one of the types of STIX objects defined in the STIX 2.x specification.
        * **spec_version** (string). The version of the STIX specification used to represent this object. The value of this property must be `2.1` for STIX objects defined according to the STIX 2.1 specification.
        * **id** (string). ID of the indicator. For example, `indicator--d81f86b9-975b-4c0b-875e-810c5ad45a4f`.
        * **created** (string [date-time]). The time at which the object was originally created. Timestamp in UTC in RFC3339 format. For example, `2016-05-01T06:13:14.000Z`.

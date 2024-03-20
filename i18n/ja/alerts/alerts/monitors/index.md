@@ -29,7 +29,7 @@ See details on how [Scheduled Searches are different](/docs/alerts/difference-fr
 ## Limitations
 
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
-* Monitors only support the [Continuous data tier](/docs/manage/partitions-data-tiers/data-tiers.md).
+* Monitors only support the [Continuous data tier](/docs/manage/partitions/data-tiers).
 * An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
 * [Search templates](../../search/get-started-with-search/build-search/search-templates.md) are not supported.
