@@ -15,37 +15,37 @@ Sumo Logic Documentation is an Open Source project available as a [GitHub reposi
 There are many ways to contribute to Sumo Docs, beyond writing code. Here's how you can get involved.
 
 <div className="box-wrapper" markdown="1">
-<div className="box smallbox1 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/contributing/edit-doc"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Submit a Doc Fix</h4></a>
   </div>
 </div>
-<div className="box smallbox2 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/contributing/create-doc"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Create a New Doc</h4></a>
   </div>
 </div>
-<div className="box smallbox3 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/contributing/remove-doc"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Delete a Doc</h4></a>
   </div>
 </div>
-<div className="box smallbox4 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/contributing/style-guide"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Style Guide</h4></a>
   </div>
 </div>
-<div className="box smallbox5 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/contributing/glossary"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Glossary</h4></a>
   </div>
 </div>
-<div className="box smallbox6 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/contributing/code-of-conduct"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Code of Conduct</h4></a>
   </div>
 </div>
-<div className="box smallbox7 card">
+<div className="box smallbox card">
   <div className="container">
   <a href="/docs/contributing/word-list"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Word List</h4></a>
   </div>
