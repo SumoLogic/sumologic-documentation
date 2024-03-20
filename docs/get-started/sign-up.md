@@ -8,9 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic provides everything you need to conduct real-time forensics and log management for all of your IT data—without having to manage and scale any hardware or storage.
 
-By signing up for a **Trial account**, which you can do through [our website](#sign-up-through-sumo-logic) or [AWS Marketplace](#aws-marketplace), you can start using Sumo Logic in minutes. You'll have 30 days of full Enterprise account access to review and use our Continuous Intelligence Platform&#8482; features.
+By signing up for a **Trial account**, which you can do through [our website](#sign-up-through-sumo-logic) or [AWS Marketplace](#aws-marketplace), you can start using Sumo Logic in minutes. You'll have 30 days of full Enterprise account access to review and use our Sumo Logic SaaS Log Analytics Platform features.
 
-After 30 days, if you've not purchased a plan, your account will convert to a Sumo Logic [Free account](#upgrade-or-continue-with-free-account), and you can [upgrade to a plan](https://www.sumologic.com/pricing) at any time.
+After 45 days, if you've not purchased a plan, your account will convert to a Sumo Logic [Free account](#upgrade-or-continue-with-free-account), and you can [upgrade to a plan](https://www.sumologic.com/pricing) at any time.
 
 ## Sign up through Sumo Logic
 
@@ -29,7 +29,7 @@ The link in your account activation email will expire after 3 days. If the link 
 
 To activate your Sumo Logic Trial account:
 
-1. Check your email inbox for the activation Sumo Logic email. If you don't see it, check your Spam and Trash folders.
+1. Check your email inbox for the activation Sumo Logic email. If you do not see it, check your Spam and Trash folders.
 1. In the email, click **Activate Now**.
 1. Fill out the **Activate Your Account** form, then click **Activate**.
 
@@ -46,7 +46,7 @@ That's it - congrats! Next, you'll be taken to your onboarding checklist guide, 
 
 ### Upgrade or continue with Free account
 
-After 30 days, your Sumo Logic **Trial account** will convert to a **Free account**. You can continue using our monitoring and continuous intelligence services, but with limited features. You can [upgrade to a paid plan](https://www.sumologic.com/pricing) at any time.
+After 30 days, your Sumo Logic **Trial account** will convert to a **Free account**. You can continue using our monitoring and log analytics services, but with limited features. You can [upgrade to a paid plan](https://www.sumologic.com/pricing) at any time.
 
 |             | Trial accounts | Free accounts
 |:------------|:---------------|:------------
@@ -128,7 +128,7 @@ Next, use the [Setup Wizard](/docs/send-data/setup-wizard) to send your logs to 
 
 If upgrades are allowed for your AWS account, you can upgrade your active account directly from Sumo Logic.
 
-- Payment is handled by Amazon. You don't need to provide any payment information.
+- Payment is handled by Amazon. You do not need to provide any payment information.
 - The account upgrade is independent from your AWS subscription. It increases your reserved Sumo Logic ingest volume, so you are less likely to be subject to overage charges.
 
 To upgrade:

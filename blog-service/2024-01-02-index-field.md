@@ -1,9 +1,10 @@
 ---
 title: Index Field (Search)
-image: https://www.sumologic.com/img/logo.svg
+image: https://help.sumologic.com/img/sumo-square.png
 keywords:
   - search
-  - release notes
+  - fields
+  - log search
 hide_table_of_contents: true
 authors:
   - url: https://help.sumologic.com/release-notes-service/rss.xml
@@ -12,4 +13,4 @@ authors:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-We're excited to include the **Index** field as metadata at the bottom of every message row, along with other metadata. This allows you to modify the search query by clicking the index name or view surrounding messages by clicking on the dropdown. [Learn more](/docs/search/get-started-with-search/search-basics/built-in-metadata). <br/><img src={useBaseUrl('img/search/get-started-search/search-page/index-filter.png')} alt="index-filter" width="800" style={{border: '1px solid black'}}/>
+We're excited to include the **Index** field as metadata at the bottom of every message row, along with other metadata. This allows you to modify the search query by clicking the index name or view surrounding messages by clicking on the dropdown. [Learn more](/docs/search/get-started-with-search/search-basics/built-in-metadata). <br/><img src={useBaseUrl('img/search/get-started-search/search-page/index-filter.png')} alt="index-filter" width="800" style={{border: '1px solid gray'}}/>

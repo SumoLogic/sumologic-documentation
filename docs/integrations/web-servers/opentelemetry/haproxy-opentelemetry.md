@@ -2,7 +2,7 @@
 id: haproxy-opentelemetry
 title: HAProxy - OpenTelemetry Collector
 sidebar_label: HAProxy - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for HAProxy.
+description: Learn about the Sumo Logic OpenTelemetry app for HAProxy.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,13 +13,13 @@ import TabItem from '@theme/TabItem';
 
 [HAProxy](https://docs.haproxy.org/2.6/intro.html) is open source software that provides a high availability load balancer and proxy server for TCP and HTTP-based applications that spreads requests across multiple servers.
 
-The Sumo Logic App for HAProxy helps you monitor activity in HAProxy. The preconfigured dashboards provide information about site visitors, including location of visitors, HTTP Error codes percentage, Backend and Frontend server statistics.
+The Sumo Logic app for HAProxy helps you monitor activity in HAProxy. The preconfigured dashboards provide information about site visitors, including location of visitors, HTTP Error codes percentage, Backend and Frontend server statistics.
 
 HAProxy logs are sent to Sumo Logic through OpenTelemetry [filelog receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/receiver/filelogreceiver).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Schematics.png' alt="Schematics" />
 
-## HAProxy Log Types
+## HAProxy log types
 
 The app supports Logs from the open source version of HAProxy. The App is tested on the 2.3.9 version of HAProxy.
 
@@ -35,45 +35,49 @@ Following are the [Fields](/docs/manage/fields/) which will be created as part o
 
 ## Prerequisites
 
-This section provides instructions for configuring log collection for HAProxy running on a non-Kubernetes environment for the Sumo Logic App for HAProxy.
+This section provides instructions for configuring log collection for HAProxy running on a non-Kubernetes environment for the Sumo Logic app for HAProxy.
 
 By default, HAProxy logs are forwarded to Syslog. This needs to be changed to send the logs to files. Configuration in the file `/etc/haproxy/haproxy.cfg` is needed to be modified to send logs to files.
 
-HAProxy logs have several levels of verbosity. To select a level, set your loglevel to one of the following:
+1. HAProxy logs have several levels of verbosity. To select a level, set your loglevel to one of the following:
+   - **emerg**. Errors such as running out of operating system file descriptors.
+   - **alert**. Some rare cases where something unexpected has happened, such as being unable to cache a response.
+   - **info**. TCP connection and http request details and errors.
+   - **err**. Errors such as being unable to parse a map file, being unable to parse the HAProxy configuration file, and when an operation on a stick table fails.
+   - **warning**. Certain important, but non-critical, errors such as failing to set a request header or failing to connect to a DNS nameserver.
+   - **notice**. Changes to a server's state, such as being UP or DOWN or when a server is disabled. Other events at startup, such as starting proxies and loading modules are also included. Health check logging, if enabled, also uses this level.
+   - **debug**. Complete information, useful for development/testing.
 
-- emerg - Errors such as running out of operating system file descriptors.
-- alert - Some rare cases where something unexpected has happened, such as being unable to cache a response.
-- info - TCP connection and http request details and errors.
-- err - Errors such as being unable to parse a map file, being unable to parse the HAProxy configuration file, and when an operation on a stick table fails.
-- warning - Certain important, but non-critical, errors such as failing to set a request header or failing to connect to a DNS nameserver.
-- notice - Changes to a server's state, such as being UP or DOWN or when a server is disabled. Other events at startup, such as starting proxies and loading modules are also included. Health check logging, if enabled, also uses this level.
-- debug - Complete information, useful for development/testing.
-
-All logging settings are located in [Haproxy.conf](https://www.haproxy.com/blog/introduction-to-haproxy-logging/). For the dashboards to work properly, you'll need to set the log format.
-
-```bash
-%ci:%cp\ [%tr]\ %ft\ %b/%s\ %TR/%Tw/%Tc/%Tr/%Ta\ %ST\ %B\ %CC\ %CS\ %tsc\ %ac/%fc/%bc/%sc/%rc\ %sq/%bq\ %hr\ %hs\ %{+Q}r
-```
+   All logging settings are located in [Haproxy.conf](https://www.haproxy.com/blog/introduction-to-haproxy-logging/). For the dashboards to work properly, you'll need to set the log format.
+   ```bash
+   %ci:%cp\ [%tr]\ %ft\ %b/%s\ %TR/%Tw/%Tc/%Tr/%Ta\ %ST\ %B\ %CC\ %CS\ %tsc\ %ac/%fc/%bc/%sc/%rc\ %sq/%bq\ %hr\ %hs\ %{+Q}r
+   ```
 
 1. You can enable HAProxy logs to syslog by adding the following line in the global section of `/etc/haproxy/haproxy.cfg` file. This means that HAProxy will send its messages to rsyslog on 127.0.0.1.
-  ```bash
-  global
-     log 127.0.0.1  local2
-  ```
+   ```bash
+   global
+     log 127.0.0.1  local2
+   ```
+
 1. Create an `etc/rsyslog.d/haproxy.conf` file containing below lines.
-  ```bash
-  local2.*    /var/log/haproxy.log
-  ```
+   ```bash
+   local2.*    /var/log/haproxy.log
+   ```
    * You can, of course, be more specific and create separate log files according to the level of messages:
     ```bash
     local2.=info   /var/log/haproxy-info.log
     local2.=notice   /var/log/haproxy-notice.log
     ```
+
 1. Restart HAProxy and rsyslog server to enforce configuration changes.
-  ```bash
-  sudo service rsyslog restart
-  sudo service haproxy reload
-  ```
+   ```bash
+   sudo service rsyslog restart
+   sudo service haproxy reload
+   ```
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
 
 ## Collection configuration and app installation
 
@@ -87,7 +91,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -97,9 +101,9 @@ The path of the log file configured to capture haproxy logs is needed to be give
 
 The files are typically located in `/var/log/haproxy*.log`. If you're using a customized path, check the haproxy.conf file for this information. You can add any custom fields which you want to tag along with the data ingested in Sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/HAProxy-OpenTelemetry/HAProxy-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs and metrics to Sumo
+### Step 3: Send logs and metrics to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
@@ -163,14 +167,14 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Log Messages
+## Sample log messages
 
 ```bash
 May 13 08:24:43 localhost haproxy[21813]:
 27.2.81.92:64274 [13/May/2021:08:24:43.921] web-edupia.vn-4
 ```
 
-## Sample Queries
+## Sample queries
 
 This query example is from the **HAProxy - Overview** dashboard > **Top 5 URLs with Errors** panel:
 
@@ -193,7 +197,7 @@ webengine.cluster.name=* %"sumo.datasource"=haproxy
 | limit 5
 ```
 
-## Viewing HAProxy Dashboards
+## Viewing HAProxy dashboards
 
 ### Overview
 

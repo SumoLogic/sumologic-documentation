@@ -13,12 +13,12 @@ The Sumo Logic app for Active Directory Legacy (2008+) allows you to analyze Win
 
 We recommend using the Active Directory App in combination with the Windows App.
 
-## Log Types
+## Log types
 
 Active Directory diagnostic log files are described in more detail in [Microsoft help](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10)).
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title="Domain Controller"
 DomainController DName=="DC=local" DomainName=="local" Forest=="local" NetBIOSName=="LOCAL" ControllerHostName=="HOST1DC01.local" IP=="102.240.30.12" Site=="DC1"
@@ -61,7 +61,7 @@ This event is generated when a logon session is destroyed. It may be positively 
 ```
 
 
-## Sample Query
+## Sample queries
 
 ```sql title="Directory Service Object Changes (from Active Directory App)"
 _sourceCategory=delete_test _sourceName=Security "Directory Service Changes"
@@ -155,8 +155,8 @@ If your Domain Controllers are in the same domain, then you can just run the scr
 
 To configure a script source, do the following:
 
-1. In Sumo Logic, select** Manage Data > Collection > Collection**.
-2. Find the name of the installed collector to which you'd like to add a Source. Click **Add...** then choose** Add Source **from the pop-up menu.
+1. In Sumo Logic, select **Manage Data > Collection > Collection**.
+2. Find the name of the installed collector to which you'd like to add a Source. Click **Add...** then choose **Add Source** from the pop-up menu.
 3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. Enter **DomainCollector** or **ADObjects**, depending on which script you are configuring. Description is optional.
 5. **Source Host** (optional). Enter the hostname or the IP address of the machine. The hostname is stored in a searchable field called `_sourceHost`. The hostname can be a maximum of 128 characters.
@@ -167,7 +167,7 @@ To configure a script source, do the following:
 The **Frequency** option should be set according to your environment. We use a short interval in our example and testing, but in your deployment, the proper **Frequency** value depends on how often your topology changes. It's important that the **Frequency** be set to a time longer than it takes for the script to run. For example, if a script takes two hours to finish, the **Frequency** should be set to **Every 3 Hours**. If the topology is relatively stable, the **Frequency** can be set to a longer value, such as **Every 12 hours** (it is recommended that each script run at least once every day).
 
 
-1. If you'd like to set a timeout for your script, select **Specify a timeout for your command**. If you don't need a timeout, or if you're running a script once daily, we recommend that you leave this option deselected.
+1. If you'd like to set a timeout for your script, select **Specify a timeout for your command**. If you do not need a timeout, or if you're running a script once daily, we recommend that you leave this option deselected.
 2. **Command**. Select **PowerShell Script.**
 3. **Script.** Do one of the following:
     * If you have the script saved to a file location and you do not have restrictions on running scripts, choose **Type a path to the script to execute** and enter the path to the script. For example, `c:\PSScripts\adObjectCollector.ps1` or  `c:\PSScripts\domainCollector.ps1`. (The script path you enter will depend on which script source you are currently configuring.)

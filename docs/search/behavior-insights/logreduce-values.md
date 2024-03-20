@@ -30,7 +30,7 @@ With the provided results you can:
 | logreduce values on <keys>[,<keys>, ...] [output_threshold <output_threshold>]
 ```
 
-| _cluster_id | _signature | _count |
+| `_cluster_id` | `_signature` | `_count` |
 | :-- | :-- | :-- |
 | The unique hash value assigned to the signature. | The group of specified key-value pairs with their count and percentage of occurrence in relation to the group _count. | The number of logs that have the related signature.<br/><br/>The field is a clickable link that opens a new window with a query that drills down to the logs from the related schema. |
 
@@ -60,7 +60,7 @@ There are two methods you have to use the details option:
 | logreduce values details on <keys>[, <keys>, ...] <shortcodeID> <cluster_id>,<cluster_id>, ...]
 ```
 
-| Parameter   | Description | Default |
+| Parameter | Description | Default |
 | :-- | :-- | :-- |
 | keys | Comma separated list of keys that were parsed from structured data. | Null |
 | cluster_id  | The signature identifier that was provided from your initial LogReduce Values search. | Null |
@@ -81,7 +81,7 @@ To see all the logs by cluster identifiers for further processing, you'd use
 ## Limitations
 
 * Not supported with [Real Time alerts](/docs/alerts/scheduled-searches/faq#real-time-alert-with-greater-than-1000-results).
-* [Time Compare](../time-compare.md) and the [compare operator](/docs/search/search-query-language/search-operators/compare) are not supported against LogReduce Values results.
+* [Time Compare](../time-compare.md) and the [`compare` operator](/docs/search/search-query-language/search-operators/compare) are not supported against LogReduce Values results.
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.
 * Response fields `_cluster_id`, `_signature`, and `_count` are not supported with [Dashboard filters](/docs/dashboards/filter-template-variables).
 
@@ -117,11 +117,11 @@ _sourceCategory="primary-eks/events"
 | logreduce values on reason, objectName, message, kind, component, namespace
 ```
 
-Next, use [LogExplain to determine how frequently your `reason` is ](logexplain.md)`FailedScheduling`.  
+Next, use [LogExplain to determine how frequently your `reason` is](logexplain.md) `FailedScheduling`.  
 
 ### AWS CloudTrail
 
-The following query helps you see which groups of users, IP addresses, AWS regions, and S3 event names are prevalent in your AWS CloudTrail logs that reference AccessDenied errors for AWS. Knowing these clusters can help plan remediation efforts.
+The following query helps you see which groups of users, IP addresses, AWS regions, and S3 event names are prevalent in your AWS CloudTrail logs that reference `AccessDenied` errors for AWS. Knowing these clusters can help plan remediation efforts.
 
 ```sql
 _sourceCategory=*cloudtrail* *AccessDenied*
@@ -145,7 +145,7 @@ Results show each unique signature:
 
 ![CloudTrail example LogReduce Values.png](/img/search/behavior-insights/CloudTrail-example-LogReduce-Values.png)
 
-Next, use [LogExplain](logexplain.md) to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that don't contain these errors.
+Next, use [LogExplain](logexplain.md) to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that do not contain these errors.
 
 **Drill down**
 
@@ -171,6 +171,6 @@ _sourceCategory="aws/cloudtrail/production" and _collector="AWS"
 * `shortcode_id`, required: this is used to link to the serialized histograms and fetches them. Once fetched, they are used to recluster the logs in the same query and match them to their respective clusters
 * `cluster_label`, optional: The cluster label is passed as a query parameter to the logreduce values-details operator which can take either a list of labels as a parameter where it only matches the logs against the histograms of those labels or no labels where we return all logs with a new field which is the cluster label, on which we can run the future logexplain operator downstream. Only for drilling down, we would pass the cluster label to this operator which would return non-agg output of all logs with that cluster label.
 
-**Drill down output:**
+**Drill-down output:**
 
 Non-agg output, with the same schema as the input format, but added an extra “cluster” column which denotes cluster membership.

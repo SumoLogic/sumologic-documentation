@@ -43,9 +43,9 @@ Searching the Audit Event Index is the same as running a normal search against y
 For example, to search for user action events:
 
 1. In the Search page, enter the following: `_index=sumologic_audit_events`  
-  :::important
-  Make sure to enter the query exactly as shown. Changing any part of the query renders it ineffective.
-  :::
+     :::important
+     Make sure to enter the query exactly as shown. Changing any part of the query renders it ineffective.
+     :::
 1. Choose the time range for the incidents that you'd like to review.
 1. Click **Start** to run the search.
 
@@ -151,4 +151,4 @@ Each audit event log has common keys that categorize it to a product area and pr
 
 ## Index retention period
 
-By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](/docs/manage/partitions-data-tiers/create-edit-partition).
+By default, the retention period of the Audit Event index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).

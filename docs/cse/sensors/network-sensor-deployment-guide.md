@@ -109,7 +109,7 @@ yum update -y
 yum install -y kernel-$(uname -r) kernel-headers-$(uname -r) kernel-devel-$(uname -r) gcc*
 dnf install -y 'dnf-command(config-manager)'
 dnf config-manager --set-enabled powertools
-yum install -y elfutils-libelf-devel python36
+yum install -y elfutils-libelf-devel python3
 reboot
 ```
 
@@ -429,7 +429,7 @@ Configured by wizard? No
 
 ### set_source_category
 
-**Description.** When this option is set to "true", the value of the `_sourceCategory` metadata field assigned to the data collected by the sensor is `cse/network\<typ\>`. If you set the option to "false", the `_sourceCategory` value will be the same as the `_sourceCategory` assigned the Sumo Logic collector. 
+**Description.** When this option is set to "true", the value of the `_sourceCategory` metadata field assigned to the data collected by the sensor is `cse/network/<type>`. If you set the option to "false", the `_sourceCategory` value will be the same as the `_sourceCategory` assigned the Sumo Logic collector. 
 
 **Default Value**. true
 

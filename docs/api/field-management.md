@@ -2,7 +2,7 @@
 id: field-management
 title: Field Management APIs
 sidebar_label: Field Management
-description: Use HTTP endpoints to manage your account's field table schema.
+description: Use Field Management APIs to manage your account's field table schema.
 hide_table_of_contents: true
 ---
 

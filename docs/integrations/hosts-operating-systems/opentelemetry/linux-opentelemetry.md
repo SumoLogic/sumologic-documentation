@@ -27,6 +27,28 @@ Following are the [fields](/docs/manage/fields) that will be created as part of 
 
 - **`sumo.datasource`** - has a fixed value of **linux**.
 
+## Prereqisites
+This app is based on the following log files from the Ubuntu Linux machine.
+
+- auth.log
+- syslog
+- daemon.log
+- dpkg.log
+- kern.log
+- CentOS, Amazon Linux, and Red Hat
+- audit/audit.log
+- secure
+- messages
+- yum.log
+
+:::note
+If you've already configured collection of these log files (for example, during Linux or Linux - PCI app setup), then no additional log file collection is required. If any log files are missing, you can configure the missing file collection in the next step.
+:::
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
 ## Collection configuration and app installation
 
 :::note
@@ -43,7 +65,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/Linux-OpenTelemetry/Linux-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -78,7 +100,7 @@ import ProcMetrics from '../../../reuse/apps/opentelemetry/process-metric-collec
 
 <ProcMetrics/>
 
-Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Linux-YAML.png')} alt="Linux-YAML" style={{border:'1px solid black'}} width="800"/>
+Click on the **Download YAML File** button to get the yaml file.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/Linux-YAML.png')} alt="Linux-YAML" style={{border:'1px solid gray'}} width="800"/>
 
 ### Step 3: Send logs and metrics to Sumo Logic
 
@@ -136,7 +158,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Log Messages
+## Sample log messages
 
 ```
 Dec 13 04:44:00 <1> [zypper++] Summary.cc(readPool):133 I_TsU(27372)Mesa-libGL1-8.0.4-20.4.1.i586(@System)

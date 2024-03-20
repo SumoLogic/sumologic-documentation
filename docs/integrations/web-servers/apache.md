@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 The Apache app is a unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of Apache web server farms. Preconfigured dashboards and searches provide visibility into your environment for real-time or historical analysis: visitor locations, visitor access types, traffic patterns, errors, web server operations, resource utilization and access from known malicious sources.
 
-## Log Types and Metrics
+## Log types and Metrics
 The Sumo Logic app for Apache assumes:
 * The [NCSA extended/combined log file format ](http://httpd.apache.org/docs/current/mod/mod_log_config.html) has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](#Apache-Metrics).
 
@@ -65,7 +65,7 @@ The Sumo Logic app for Apache assumes:
 </TabItem>
 </Tabs>
 
-### Sample Query
+### Sample queries
 
 This sample Query is from the **Top 5 Clients Causing 4xx Errors** panel of the Apache - Web server Operations dashboard.
 
@@ -116,7 +116,7 @@ This section provides instructions for configuring log and metrics collection fo
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -216,8 +216,8 @@ annotations:
          * `environment`: This is the deployment environment where the Apache webserver farm identified by the value of `urls` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
          * `webserver_farm`: Enter a name to uniquely identify this Apache Webserver farm. This Apache webserver farm name will be shown in the Sumo Logic dashboards.
 
-   :::warning **Do not modify the other values**
-   Modifying these values will cause the Sumo Logic apps to function incorrectly
+   :::warning **Do not modify the following values**
+   Modifying these values will cause the Sumo Logic apps to function incorrectly.
    * `telegraf.influxdata.com/class: sumologic-prometheus`: Instructs the Telegraf operator what output to use.
    * `prometheus.io/scrape: "true"`: Ensures our Prometheus will scrape the metrics.
    * `prometheus.io/port: "9273"`: Tells prometheus what ports to scrape on.
@@ -251,7 +251,7 @@ This section explains the steps to collect Apache logs from a Kubernetes environ
       * `environment`: This is the deployment environment where the Apache webserver farm identified by the value of `urls` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `webserver_farm`: Enter a name to identify this Apache webserver farm. This Apache webserver farm name will be shown in the Sumo Logic dashboards.
 
-   :::warning **Do not modify the other values**
+   :::warning **Do not modify the following values**
    Modifying these values will cause the Sumo Logic apps to function incorrectly
    * `component: “webserver”`: This value is used by Sumo Logic apps to identify application components.
    * `webserver_system: “apache”`: This value identifies the webserver system.
@@ -359,7 +359,7 @@ This section provides instructions for configuring metrics collection for the Su
         * `url`: This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
       * In the `[agent]` section, set `interval` and `flush_interval` to `“60s”` to collect metric every 60 seconds.
 
-      :::warning **Do not modify the other values**
+      :::warning **Do not modify the following values**
       Modifying these values will cause the Sumo Logic apps to function incorrectly
       * `data_format = “prometheus”`, In the output plugins section, Metrics are sent in the Prometheus format to Sumo Logic
       * `component = “webserver”`: In the input plugins section, This value is used by Sumo Logic apps to identify application components.
@@ -397,8 +397,8 @@ For error logs, following directives are to be noted:
    * **Description.** (Optional)
    * **File Path (Required).** Enter the path to your apache access logs. The files are typically located in `/var/log/apache2/access_log`. If you're using a customized path, check the httpd.conf file for this information.
    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-   * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Access**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
-   * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
+   * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Access**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
+   * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
     * `component = webserver`
     * `webserver_system = apache`
     * `webserver_farm = <your_apache_webserver_farmname>`
@@ -408,7 +408,7 @@ For error logs, following directives are to be noted:
    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
    * **Time Zone.** Select Use time zone form log file, if none is detected use “Use Collector Default”
    * **Timestamp Format.** Select Automatically detect the format.
-   * **Encoding. **Select** **UTF-8 (Default).
+   * **Encoding.** Select UTF-8 (Default).
    * Apache Access logs are single-line logs, uncheck **Detect messages spanning multiple lines.**
    3. Click **Save**. At this point, Apache access logs should start flowing into Sumo Logic.
 4. **Configure a Local File Source for Apache error logs**. To add a Local File Source for Apache error log do the following
@@ -418,8 +418,8 @@ For error logs, following directives are to be noted:
     * **Description.** (Optional)
     * **File Path (Required).** Enter the path to your error_log. The files are typically located in `/var/log/apache2/error_log`. If you're using a customized path, check the httpd.conf file for this information.
     * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
-    * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
+    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
+    * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields):
     ```sql
     component = webserver
     webserver_system = apache
@@ -467,7 +467,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this[ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for Apache alerts. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/apache). You can either download it through the “git clone” command or as a zip file.
+3. Download the Sumo Logic Terraform package for Apache alerts. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/apache). You can either download it through the “git clone” command or as a zip file.
 4. Alert Configuration. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/apache/`.
    1. Edit the **apache.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
     ```bash
@@ -522,8 +522,8 @@ email_notifications = [
 ```
 6. Install the Alerts.
    1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**apache**/ and run **terraform init.** This will initialize Terraform and will download the required components.
-   2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
-   3. Run **terraform apply**.
+   2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
+   3. Run `terraform apply`.
 
 ## Installing the Apache app
 

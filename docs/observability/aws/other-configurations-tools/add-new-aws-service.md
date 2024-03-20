@@ -38,11 +38,8 @@ This can be done by following the steps below:
 1. In the AWS Observability solution, identify the account alias for the AWS account you have configured that is running the service you want to monitor
 1. Edit the CloudWatch Metrics source for the AWS service you wish to add to the AWS Observability solution
 1. Add **Account** field as by adding a field as shown in the screenshot below:
-
   ![Step1.png](/img/observability/Step1.png)
-
 1. To confirm if the account tag is indeed added as metadata, go to your Sumo Logic AWS CloudWatch Metric source and check the metrics data.
-
   ![Step1.1.png](/img/observability/Step1-1.png)
 
 ### Validate the namespace and region metadata tags 
@@ -75,122 +72,116 @@ Once all the tags are checked and identified in the metrics, we can
 update the existing hierarchy to show the new AWS Service. Follow the
 steps below to update the existing hierarchy :
 
-1. Run the below curl command to get the existing AWS Observability hierarchy.
-
-  ```bash
-  curl -s -H "Content-Type: application/json" --user
-  "<ACCESS_ID>:<ACCESS_KEY>" -X GET
-  https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies | json_pp
-  -json_opt pretty,canonical | grep -B 80 "\"AWS Observability\"" |
-  grep "id" | head -1 | awk -F":" '{ print $2}' | tr -cd '[:digit:]' |
-  xargs -I {} curl -s -H "Content-Type: application/json" --user
-  "<ACCESS_ID>:<ACCESS_KEY>" -X GET
-  https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies/{} | json_pp -json_opt pretty
-  ```
-
-  The output of the command will look something like below (it is trimmed output, the actual output can vary as per your hierarchy):
-
-  ```json
-  {
-    "filter": null,
-    "id": "0000000000000278",
-    "level": {
-      "nextLevel": {
-        "nextLevel": {
-          "nextLevelsWithConditions": [
-            {
-              "condition": "AWS/ApplicationElb",
-              "level": {
-                "entityType": "loadbalancer",
-                "nextLevelsWithConditions": [],
-                "nextLevel": null
-              }
-            },
-            {
-              "condition": "AWS/ApiGateway",
-              "level": {
-                "nextLevel": null,
-                "entityType": "apiname",
-                "nextLevelsWithConditions": []
-              }
-            }
-          ],
-          "entityType": "namespace",
-          "nextLevel": null
-        },
-        "nextLevelsWithConditions": [],
-        "entityType": "region"
-      },
-      "nextLevelsWithConditions": [],
-      "entityType": "account"
-    },
-    "name": "AWS Observability"
-  }
-  ```
-
-1. If the AWS Service namespace is not present in the output JSON, update the JSON as below. We are taking AWS/SQS as an example here.
-
-  ```json
-  {
-    "filter": null,
-    "id": "0000000000000278",
-    "level": {
-      "nextLevel": {
-        "nextLevel": {
-          "nextLevelsWithConditions": [
-            {
-              "condition": "AWS/ApplicationElb",
-              "level": {
-                "entityType": "loadbalancer",
-                "nextLevelsWithConditions": [],
-                "nextLevel": null
-              }
-            },
-            {
-              "condition": "AWS/ApiGateway",
-              "level": {
-                "nextLevel": null,
-                "entityType": "apiname",
-                "nextLevelsWithConditions": []
-              }
-            },
-            {
-              "condition": "AWS/SQS", -> Namespace
-              "level": {
-                "nextLevel": null,
-                "entityType": "queuename", -> AWS Resource Name identified in Step 1.3
-                "nextLevelsWithConditions": []
-              }
-            }
-          ],
-          "entityType": "namespace",
-          "nextLevel": null
-        },
-        "nextLevelsWithConditions": [],
-        "entityType": "region"
-      },
-      "nextLevelsWithConditions": [],
-      "entityType": "account"
-    },
-    "name": "AWS Observability"
-  }
-  ```
-
-1. Update the hierarchy using the below command.
-
-  ```bash
-  curl -s -H "Content-Type: application/json" --user
-  "<ACCESS_ID>:<ACCESS_KEY>" -X PUT
-  https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies/<ID> -d
-  '<JSON_CONTENT_AFTER_UPDATE>'
-  ```
-
 :::note
-1. **ACCESS_ID** and **ACCESS_KEY** - Replace parameters with your sumo logic access Id and access key.
-1. **SUMOLOGIC_URL** - Replace with service endpoint URL as per deployment.
-1. **ID** - Replace with the hierarchy ID as present in the JSON output from Step 1.
-1. **JSON_CONTENT_AFTER_UPDATE** - Replace with the JSON updated with new AWS service after Step 2.
+In the code samples in the following steps:
+- **ACCESS_ID** and **ACCESS_KEY**. Replace with your Sumo Logic access ID and access key.
+- **SUMOLOGIC_URL**. Replace with the [API Endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your deployment.
+- **ID**. Replace with the hierarchy ID as present in the JSON output from Step 1 below.
+- **JSON_CONTENT_AFTER_UPDATE**. Replace with the JSON updated with new AWS service after Step 2 below.
 :::
+
+1. Run the below curl command to get the existing AWS Observability hierarchy.
+   ```bash
+   curl -s -H "Content-Type: application/json" --user
+   "<ACCESS_ID>:<ACCESS_KEY>" -X GET
+   https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies | json_pp
+   -json_opt pretty,canonical | grep -B 80 "\"AWS Observability\"" |
+   grep "id" | head -1 | awk -F":" '{ print $2}' | tr -cd '[:digit:]' |
+   xargs -I {} curl -s -H "Content-Type: application/json" --user
+   "<ACCESS_ID>:<ACCESS_KEY>" -X GET
+   https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies/{} | json_pp -json_opt pretty
+   ```
+   The output of the command will look something like below (it is trimmed output, the actual output can vary as per your hierarchy):
+   ```json
+   {
+     "filter": null,
+     "id": "0000000000000278",
+     "level": {
+       "nextLevel": {
+         "nextLevel": {
+           "nextLevelsWithConditions": [
+             {
+               "condition": "AWS/ApplicationElb",
+               "level": {
+                 "entityType": "loadbalancer",
+                 "nextLevelsWithConditions": [],
+                 "nextLevel": null
+               }
+             },
+             {
+               "condition": "AWS/ApiGateway",
+               "level": {
+                 "nextLevel": null,
+                 "entityType": "apiname",
+                 "nextLevelsWithConditions": []
+               }
+             }
+           ],
+           "entityType": "namespace",
+           "nextLevel": null
+         },
+         "nextLevelsWithConditions": [],
+         "entityType": "region"
+       },
+       "nextLevelsWithConditions": [],
+       "entityType": "account"
+     },
+     "name": "AWS Observability"
+   }
+   ```
+1. If the AWS Service namespace is not present in the output JSON, update the JSON as below. We are taking AWS/SQS as an example here.
+   ```json
+   {
+     "filter": null,
+     "id": "0000000000000278",
+     "level": {
+       "nextLevel": {
+         "nextLevel": {
+           "nextLevelsWithConditions": [
+             {
+               "condition": "AWS/ApplicationElb",
+               "level": {
+                 "entityType": "loadbalancer",
+                 "nextLevelsWithConditions": [],
+                 "nextLevel": null
+               }
+             },
+             {
+               "condition": "AWS/ApiGateway",
+               "level": {
+                 "nextLevel": null,
+                 "entityType": "apiname",
+                 "nextLevelsWithConditions": []
+               }
+             },
+             {
+               "condition": "AWS/SQS", -> Namespace
+               "level": {
+                 "nextLevel": null,
+                 "entityType": "queuename", -> AWS Resource Name identified in Step 1.3
+                 "nextLevelsWithConditions": []
+               }
+             }
+           ],
+           "entityType": "namespace",
+           "nextLevel": null
+         },
+         "nextLevelsWithConditions": [],
+         "entityType": "region"
+       },
+       "nextLevelsWithConditions": [],
+       "entityType": "account"
+     },
+     "name": "AWS Observability"
+   }
+   ```
+1. Update the hierarchy using the below command.
+   ```bash
+   curl -s -H "Content-Type: application/json" --user
+   "<ACCESS_ID>:<ACCESS_KEY>" -X PUT
+    https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies/<ID> -d
+   '<JSON_CONTENT_AFTER_UPDATE>'
+   ```
 
 ### Validate the new Hierarchy
 

@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 The ActiveMQ app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your ActiveMQ messaging clusters. Preconfigured dashboards provide insight into cluster status, nodes, producers, consumers, destinations, resource utilization, message rates, and error logs.
 
 
-## Sample Log Message
+## Sample log messages
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -55,7 +55,7 @@ Configuring log and metric collection for the ActiveMQ App includes the followin
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -110,7 +110,7 @@ The first service in the metrics pipeline is Telegraf. Telegraf collects metrics
 In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 :::note Prerequisites
-It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
 #### Configure Metrics Collection
@@ -198,28 +198,25 @@ This section explains the steps to collect ActiveMQ metrics from a Kubernetes en
 ```
 
 Enter values for the following parameters (marked `CHANGE_ME` above):
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf ActiveMQ Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the ActiveMQ input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf ActiveMQ Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the ActiveMQ input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
    * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
       * `url` - The URL of the ActiveMQ server for [JMX MBeans](https://activemq.apache.org/jmx)  HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2_agent/examples/activemq.conf) for more information on additional parameters for configuring the Jolokia2 input plugin for Telegraf.
-      * `username`: The Username of ActiveMQ’s admin account . The default is “admin”.
-      * `password`:  The password of ActiveMQ's admin account. The default is “admin”.
+      * `username`. The Username of ActiveMQ’s admin account. The default is “admin”.
+      * `password`. The password of ActiveMQ's admin account. The default is “admin”.
    * In the tags section, `[inputs.jolokia2_agent.tags]`:
-      * `environment` - This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `messaging_cluster` - Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * `environment`. This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `messaging_cluster`. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
   :::warning Do not modify these values
-
   Modifying these values will cause the Sumo Logic apps to not function correctly.
-
-  * `telegraf.influxdata.com/class: sumologic-prometheus` - Instructs the Telegraf operator what output to use.
-  * `prometheus.io/scrape: "true"` - Ensures our Prometheus will scrape the metrics.
-  * `prometheus.io/port: "9273"` - Tells prometheus what ports to scrape on.
+  * `telegraf.influxdata.com/class: sumologic-prometheus`. Instructs the Telegraf operator what output to use.
+  * `prometheus.io/scrape: "true"`. Ensures our Prometheus will scrape the metrics.
+  * `prometheus.io/port: "9273"`. Tells prometheus what ports to scrape on.
     * `telegraf.influxdata.com/inputs`
       * In the tags section, `[inputs.jolokia2_agent.tags]`:
         * `component: “messaging”` - Used by Sumo Logic apps to identify application components.
         * `messaging_system: “activemq”` - Identifies the messaging system.
   :::
-
    * For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 4. SumoLogic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
@@ -310,91 +307,89 @@ This section provides instructions for configuring metrics collection for the Su
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [Jolokia2 input plugin](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2_agent/examples/activemq.conf) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
    1. Before you configure telegraf, you will need to:
       * **Enable reads metrics** from ActiveMQ servers via the [JMX MBeans](https://activemq.apache.org/jmx) by setting `useJmx="true"` in file config [ActiveMQ.xml](https://activemq.apache.org/xml-configuration.html)
-       ```xml
-       <broker useJmx="true" brokerName="BROKER1">
-       ...
-       </broker>
-       ```
+        ```xml
+        <broker useJmx="true" brokerName="BROKER1">
+        ...
+        </broker>
+        ```
       * **Disable strict-checking** by editing file `jolokia-access.xml`.Navigate to directory:
-       ```xml
-       <Folder ActiveMQ Installed>/webapps/api/WEB-INF/classes/
-       ```
+        ```xml
+        <Folder ActiveMQ Installed>/webapps/api/WEB-INF/classes/
+        ```
       * Open file `jolokia-access.xml`, and comment or remove section below:
-       ```xml
-       <cors>
-       <strict-checking/>
-       </cors>
-       ```
+        ```xml
+        <cors>
+        <strict-checking/>
+        </cors>
+        ```
    2. Create or modify `telegraf.conf` and copy and paste the text below:  
- ```sql
- [[inputs.disk]]
-   mount_points = ["/"]
-   [inputs.disk.tags]
-        environment="dev"
-        component="messaging"
-        messaging_system="activemq"
-        messaging_cluster="activemq_CHANGE_ME"
+   ```sql
+   [[inputs.disk]]
+     mount_points = ["/"]
+     [inputs.disk.tags]
+          environment="dev"
+          component="messaging"
+          messaging_system="activemq"
+          messaging_cluster="activemq_CHANGE_ME"
 
- [[inputs.jolokia2_agent]]
-   urls = ["http://localhost:8161/api/jolokia"]
-   name_prefix = "activemq_"
-   username = "<username_CHANGE_ME>"
-   password = "<password_CHANGE_ME>"
-   [inputs.jolokia2_agent.tags]
-        environment="dev"
-        component="messaging"
-        messaging_system="activemq"
-        messaging_cluster="activemq__CHANGE_ME"
+   [[inputs.jolokia2_agent]]
+     urls = ["http://localhost:8161/api/jolokia"]
+     name_prefix = "activemq_"
+     username = "<username_CHANGE_ME>"
+     password = "<password_CHANGE_ME>"
+     [inputs.jolokia2_agent.tags]
+          environment="dev"
+          component="messaging"
+          messaging_system="activemq"
+          messaging_cluster="activemq__CHANGE_ME"
 
-  [[inputs.jolokia2_agent.metric]]
-        name  = "OperatingSystem"
-        mbean = "java.lang:type=OperatingSystem"
+    [[inputs.jolokia2_agent.metric]]
+          name  = "OperatingSystem"
+          mbean = "java.lang:type=OperatingSystem"
 
-  [[inputs.jolokia2_agent.metric]]
-        name  = "jvm_runtime"
-        mbean = "java.lang:type=Runtime"
-        paths = ["Uptime"]
+    [[inputs.jolokia2_agent.metric]]
+          name  = "jvm_runtime"
+          mbean = "java.lang:type=Runtime"
+          paths = ["Uptime"]
 
-  [[inputs.jolokia2_agent.metric]]
-        name  = "jvm_memory"
-        mbean = "java.lang:type=Memory"
-  [[inputs.jolokia2_agent.metric]]
-        name = "jvm_garbage_collector"
-        mbean = "java.lang:name=*,type=GarbageCollector"
-        paths = ["CollectionCount"]
-        tag_keys = ["name"]
+    [[inputs.jolokia2_agent.metric]]
+           name  = "jvm_memory"
+          mbean = "java.lang:type=Memory"
+    [[inputs.jolokia2_agent.metric]]
+          name = "jvm_garbage_collector"
+          mbean = "java.lang:name=*,type=GarbageCollector"
+          paths = ["CollectionCount"]
+          tag_keys = ["name"]
 
-  [[inputs.jolokia2_agent.metric]]
-        name = "queue"
-        mbean =
-        "org.apache.activemq:brokerName=*,destinationName=*,
-        destinationType=Queue,type=Broker"
-        tag_keys = ["brokerName","destinationName"]
+    [[inputs.jolokia2_agent.metric]]
+          name = "queue"
+          mbean =
+          "org.apache.activemq:brokerName=*,destinationName=*,destinationType=Queue,type=Broker"
+          tag_keys = ["brokerName","destinationName"]
 
-  [[inputs.jolokia2_agent.metric]]
-        name = "topic"
-        mbean =
-        "org.apache.activemq:brokerName=*,destinationName=*,
-        destinationType=Topic,type=Broker"
-        tag_keys = ["brokerName","destinationName"]
+    [[inputs.jolokia2_agent.metric]]
+          name = "topic"
+          mbean =
+          "org.apache.activemq:brokerName=*,destinationName=*,destinationType=Topic,type=Broker"
+          tag_keys = ["brokerName","destinationName"]
 
-  [[inputs.jolokia2_agent.metric]]
-        name = "broker"
-        mbean = "org.apache.activemq:brokerName=*,type=Broker"
-        tag_keys = ["brokerName"]
-  [[outputs.sumologic]]
-  url = "<URL Created in Step b_CHANGE_ME>"
-    data_format = "prometheus"
- ```
+    [[inputs.jolokia2_agent.metric]]
+          name = "broker"
+          mbean = "org.apache.activemq:brokerName=*,type=Broker"
+          tag_keys = ["brokerName"]
+    [[outputs.sumologic]]
+    url = "<URL Created in Step b_CHANGE_ME>"
+      data_format = "prometheus"
+   ```
 
 * Enter values for the following parameters (marked in `CHANGE_ME` above):
   * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
     * `url` - The URL of the ActiveMQ server for [JMX MBeans](https://activemq.apache.org/jmx) HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2_agent/examples/activemq.conf) for more information on additional parameters for configuring the Jolokia2 input plugin for Telegraf.
-    * `username`: The Username of ActiveMQ’s admin account . The default is “admin”.
-    * `password`:  The password of ActiveMQ's admin account. The default is “admin”.
+    * `username`. The Username of ActiveMQ’s admin account . The default is “admin”.
+    * `password`.  The password of ActiveMQ's admin account. The default is “admin”.
   * In the tags section, which is `[inputs.jolokia2_agent.tags]`
-    * `environment` - This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-    * `messaging_cluster` - Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
+    * `environment`. This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+    * `messaging_cluster`. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
   * In the output plugins section, which is `[[outputs.sumologic]]`:
     * `url` - This is the HTTP source URL created in step 3 (Install Telegraf). Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
@@ -425,11 +420,11 @@ Based on your infrastructure and networking setup choose one of these methods to
 2. **Configure ActiveMQ to log to a Local file**. By default, ActiveMQ logs are stored in `<Folder ActiveMQ Installed>/data/activemq.log`. The default directory for log files is listed in the [log4j.properties](https://github.com/apache/activemq/blob/main/activemq-console/src/test/resources/log4j2-test.properties) file. To configure the log output destination to a log file:
    * Navigate to directory : `<Folder ActiveMQ Installed>`
    * Open file log4j.properties and edit options below:
-   ```sql
-   log4j.appender.logfile.file=${activemq.data}/activemq.log
-   log4j.appender.logfile.maxFileSize=10240MB
-   log4j.logger.org.apache.activemq=DEBUG
-   ```
+     ```sql
+     log4j.appender.logfile.file=${activemq.data}/activemq.log
+     log4j.appender.logfile.maxFileSize=10240MB
+     log4j.logger.org.apache.activemq=DEBUG
+     ```
    * Logs from the ActiveMQ log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/installed-collectors) and a [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source) as explained in the next section.
 3. **Configuring a Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/installed-collectors)
 4. **Configuring a Source**. To collect logs directly from your ActiveMQ machine, use an Installed Collector and a Local File Source:
@@ -439,7 +434,7 @@ Based on your infrastructure and networking setup choose one of these methods to
      * **Description.** (Optional)
      * **File Path (Required).** Enter the path to your activemq.log. The files are typically located in `<Folder ActiveMQ Installed>/data/activemq.log`. If you're using a customized path, check the log4j.properties file for this information.
      * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-     * **Source Category.** Enter any string to tag the output collected from this Source, such as **ActiveMQ/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
+     * **Source Category.** Enter any string to tag the output collected from this Source, such as **ActiveMQ/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
      * **Fields**. Set the following fields:
        * `component = messaging`
        * `messaging_system = activemq`
@@ -489,28 +484,27 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method 2: Install the alerts using a Terraform script
 
-1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this[  link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). To find out which deployment your Sumo Logic account is in, see [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for ActiveMQ alerts: The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/ActiveMQ). You can either download it through the “git clone” command or as a zip file.
 4. Alert Configuration: After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/ActiveMQ/`.
    1. Edit the `activemq.auto.tfvars` file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1.
-    ```bash
-    access_id   = "<SUMOLOGIC ACCESS ID>"
-    access_key  = "<SUMOLOGIC ACCESS KEY>"
-    environment = "<SUMOLOGIC DEPLOYMENT>"
-    ```
-  The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `'activemq_data_source'`. Custom filter examples:
-    * A specific cluster **`'messaging_cluster=activemq.prod.01'`
-    * All clusters in an environment `'environment=prod'`
-    * For alerts applicable to all clusters that start with activemq-prod, your custom filter would be: `'messaging_cluster=activemq-prod*'`
-    * For alerts applicable to a specific cluster within a production environment, your custom filter would be:`activemq_cluster=activemq-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)
+     ```bash
+     access_id   = "<SUMOLOGIC ACCESS ID>"
+     access_key  = "<SUMOLOGIC ACCESS KEY>"
+     environment = "<SUMOLOGIC DEPLOYMENT>"
+     ```
+    The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `'activemq_data_source'`. Custom filter examples:
+      * A specific cluster `'messaging_cluster=activemq.prod.01'`
+      * All clusters in an environment `'environment=prod'`
+      * For alerts applicable to all clusters that start with activemq-prod, your custom filter would be: `'messaging_cluster=activemq-prod*'`
+      * For alerts applicable to a specific cluster within a production environment, your custom filter would be:`activemq_cluster=activemq-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)
 
-All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter monitors_disabled to false in this file.
+  All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter monitors_disabled to false in this file.
 
-By default, the monitors are configured in a monitor **folder** called “**ActiveMQ**”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at **activemq.auto.tfvars** file.
+  By default, the monitors are configured in a monitor **folder** called “**ActiveMQ**”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at **activemq.auto.tfvars** file.
 
 5. If you would like the alerts to send email or connection notifications, modify the file **activemq_notifications.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per below examples.
-
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
     {
@@ -530,7 +524,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the[ Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this[ document](/docs/alerts/webhook-connections/set-up-webhook-connections).
+For overriding payload for different connection types, see [Set Up Webhook Connections](/docs/alerts/webhook-connections/set-up-webhook-connections).
 
 ```bash title="Email Notifications Example"
 email_notifications = [
@@ -549,11 +543,9 @@ email_notifications = [
    1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/ActiveMQ/` and run `terraform init`. This will initialize Terraform and will download the required components.
    2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
    3. Run `terraform apply`.
-7. Post Installation
+7. Post Installation: If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
-
-There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
+There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
 
 
 ## Installing the ActiveMQ App
@@ -713,7 +705,7 @@ Template variables provide dynamic dashboards that rescope data on the fly. As y
 
 ### Overview
 
-The ActiveMQ - Overview dashboard gives you an at-a-glance view of your ActiveMQ deployment across brokers, queues, topics, and messages.
+The **ActiveMQ - Overview** dashboard gives you an at-a-glance view of your ActiveMQ deployment across brokers, queues, topics, and messages.
 
 Use this dashboard to:
 * Analyze Memory and CPU utilization.
@@ -727,7 +719,7 @@ Use this dashboard to:
 
 ### Brokers
 
-The ActiveMQ - Brokers dashboard provides an at-a-glance view of the state of your brokers in the ActiveMQ cluster.
+The **ActiveMQ - Brokers** dashboard provides an at-a-glance view of the state of your brokers in the ActiveMQ cluster.
 
 Use this dashboard to:
 * Monitor brokers uptime.
@@ -742,7 +734,7 @@ Use this dashboard to:
 
 ### Queues
 
-The ActiveMQ - Queues dashboard provides an at-a-glance view of the state of your queues in ActiveMQ clusters.
+The **ActiveMQ - Queues** dashboard provides an at-a-glance view of the state of your queues in ActiveMQ clusters.
 
 Use this dashboard to:
 * Monitor en queue latency, the memory usage of queues.
@@ -756,7 +748,7 @@ Use this dashboard to:
 
 ### Topics
 
-The ActiveMQ - Topics dashboard provides an at-a-glance view of the state of your topics in ActiveMQ clusters.
+The **ActiveMQ - Topics** dashboard provides an at-a-glance view of the state of your topics in ActiveMQ clusters.
 
 Use this dashboard to:
 
@@ -771,7 +763,7 @@ Use this dashboard to:
 
 ### Resource Utilization
 
-The ActiveMQ - Resource Utilization dashboard provides an at-a-glance view of the state of system loads in clusters: CPU usage, memory usage, Swap usage,  file descriptor usage, garbage collection rate, heap, and non-heap usage.
+The **ActiveMQ - Resource** Utilization dashboard provides an at-a-glance view of the state of system loads in clusters: CPU usage, memory usage, Swap usage,  file descriptor usage, garbage collection rate, heap, and non-heap usage.
 
 Use this dashboard to:
 * Analyze memory, CPU, disk, swap, file descriptor utilization of nodes in clusters.
@@ -783,7 +775,7 @@ Use this dashboard to:
 
 ### Logs
 
-This dashboard helps you quickly analyze your ActiveMQ error logs across all clusters.
+The **ActiveMQ - Logs** dashboard helps you quickly analyze your ActiveMQ error logs across all clusters.
 
 Use this dashboard to:
 * Identify critical events in your ActiveMQ cluster.

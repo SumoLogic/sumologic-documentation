@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 When configuring an [Amazon S3 Source](/docs/send-data/hosted-collectors/amazon-aws/aws-s3-source), you'll set the scan interval, which defines the waiting time between scans of the objects in your S3 bucket. It's important to set an interval that is long enough to allow new files to be uploaded, but is not too short that scans are performed without any new files being available to upload.
 
-A scan interval that's too long can cause a delay in new files being uploaded in a timely manner. A scan interval that's too short could cause additional charges to your AWS account. When Sumo Logic scans the contents of a bucket for new files, it will perform a number of listings, which may increase with the number of objects in the bucket. Sumo Logic can't determine if the data in your S3 bucket has changed without listing each object in every scan interval.  
+A scan interval that's too long can cause a delay in new files being uploaded in a timely manner. A scan interval that's too short could cause additional charges to your AWS account. When Sumo Logic scans the contents of a bucket for new files, it will perform a number of listings, which may increase with the number of objects in the bucket. Sumo Logic cannot determine if the data in your S3 bucket has changed without listing each object in every scan interval.  
 
 In addition, be aware that uploading data to Sumo Logic can incur data transfer charges from AWS. You can view current pricing for list and data transferring [here](http://aws.amazon.com/s3#pricing). To get an idea of what your charges could be, we recommend using the [Simple Monthly Calculator](http://calculator.s3.amazonaws.com/calc5.html).
 

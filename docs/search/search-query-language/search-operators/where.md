@@ -39,7 +39,7 @@ Instead, separate the `where` operator from the preceding `parse` operator l
 ## Rules
 
 * The pipe delimiter is required to separate the `where` operator as a distinct query operator.
-* The `where` operator *can't* be used inline as a query clause, like ".`.. | extract a where b==something |...`"
+* The `where` operator *cannot* be used inline as a query clause, like ".`.. | extract a where b==something |...`"
 * You must use the `matches` syntax with the `where` operator when using wildcards `*`.
 * Multiple `where` operators are processed in the order they are specified, with each subsequent `where` operator further filtering results.
 * [Keyword expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md) can be used in the boolean expression, such as OR and AND.

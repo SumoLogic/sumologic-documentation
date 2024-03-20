@@ -57,6 +57,8 @@ The list of supported suffixes, and the factor by which they multiply the numeri
 | T          | 1000000000000    | Ti         | 1099511627776    |
 | P          | 1000000000000000 | Pi         | 1125899906842624 |
 
+These suffixes are also supported in Cloud SIEM rules. See [Sumo Logic core platform literals supported in Cloud SIEM](/docs/cse/rules/cse-rules-syntax/#sumo-logic-core-platform-literals-supported-in-cloud-siem).
+
 ## Time suffix
 
 This is used to represent units of time. **The base unit of time returned is the millisecond**. For example, 1.5s would be returned as 1,500. One and a half seconds converted to the base unit of milliseconds. Some examples of time suffixes:
@@ -82,11 +84,11 @@ The following time suffixes are supported:
 | d          | Day         |
 | w          | Week        |
 
+These suffixes are also supported in Cloud SIEM rules. See [Sumo Logic core platform literals supported in Cloud SIEM](/docs/cse/rules/cse-rules-syntax/#sumo-logic-core-platform-literals-supported-in-cloud-siem).
+
 ## Arithmetic Operators
 
-Numeric expressions are evaluated using the usual precedence rules:
-parentheses, multiplication, and division, then addition and
-subtraction. Equal precedence is evaluated left to right. Here are some examples:
+Numeric expressions are evaluated using the usual precedence rules: parentheses, multiplication, and division, then addition and subtraction. Equal precedence is evaluated left to right. Here are some examples:
 
 ```sql
 | 537 + 435 as value
@@ -143,4 +145,4 @@ Characters quoted with double quotes (not single quotes) are string literals. Us
 | concat("Hello, ", "world") as welcome
 ```
 
-Use string functions, such as [concat()](/docs/search/search-query-language/search-operators/concat), to combine strings. There are no string operators like "+" or ".". The [`format()`](/docs/search/search-query-language/search-operators/format) operator can create string fields in a specified format. Use [`substring()`](/docs/search/search-query-language/search-operators/substring) to extract portions of a string.
+Use string functions, such as [`concat()`](/docs/search/search-query-language/search-operators/concat), to combine strings. There are no string operators like "+" or ".". The [`format()`](/docs/search/search-query-language/search-operators/format) operator can create string fields in a specified format. Use [`substring()`](/docs/search/search-query-language/search-operators/substring) to extract portions of a string.

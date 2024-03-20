@@ -6,7 +6,7 @@ description: Add scheduled searches that monitor log ingestion and send alerts.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This article describes how to configure ingest alerts that you can schedule to get timely information about ingestion usage or throttling. The information in this article applies to [Cloud Flex accounts](/docs/manage/manage-subscription/cloud-flex-accounts/). To monitor ingestion for Cloud Flex Credits accounts, see [Monitoring account usage](/docs/manage/manage-subscription/cloud-flex-credits-accounts/#monitoring-account-usage) in the Cloud Flex Credits Accounts article.
+This article describes how to configure ingest alerts that you can schedule to get timely information about ingestion usage or throttling. The information in this article applies to [Cloud Flex Legacy accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts/). To monitor ingestion for Sumo Logic Credits accounts, see [Monitoring account usage](/docs/manage/manage-subscription/sumo-logic-credits-accounts/#monitoring-account-usage).
 
 With the exception of the [Throttling alert](#throttling-alert) described below, these alerts apply to logs, not metrics. For metrics volume queries, use the [Metrics Data Volume Index](data-volume-index/metrics-data-volume-index.md).
 
@@ -123,7 +123,7 @@ After completing the setup steps above, schedule the search to run, as follows.�
 1. Schedule the query you created in the previous step (**Query**). For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the run frequency to **Daily**.
 1. Set time range value to **Last 24 Hours**.<br/> ![time range daily plan limit.png](/img/ingestion-volume/daily-last-24.png)
-1. Make sure Alert Condition is set to **Send Notification **if the **Alert Condition** is met: **Number of results** greater than **0.**
+1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
 
 ## Usage spike alert
 
@@ -171,7 +171,7 @@ After completing the setup steps above, schedule the search to run, as follows.�
 1. Schedule the query you just created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the run frequency to **Hourly**.
 1. Enter **-65m -5m** for the time range.<br/>  ![time range usage spike.png](/img/ingestion-volume/hourly-65.png)
-1. Make sure Alert Condition is set to **Send Notification **if the **Alert Condition** is met: **Number of results** greater than **0.**
+1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0.**
 
 
 
@@ -215,7 +215,7 @@ _index=sumologic_volume sizeInBytes _sourceCategory="collector_volume"
 
 You can run a similar query across Sources, sourceHosts, sourceNames, source categories, or views, by changing the entry for `"collector_volume"` in the search scope keyword line to:`"source_volume"` for Sources, `"sourcehost_volume"`for sourceHosts, `"sourcename_volume"` for sourceNames, `"sourceCategory_volume"` for sourceCategories, or `"view_volume"` for views. 
 
-If you don't want the results of the query across Sources or source categories to be called "collector", you can replace all three instances of "collector" with a different field name.
+If you do not want the results of the query across Sources or source categories to be called "collector", you can replace all three instances of "collector" with a different field name.
 
 #### Scheduling
 
@@ -224,7 +224,7 @@ After completing the setup steps, you'll need to create a monitor. 
 1. Create a monitor corresponding to the query you've created above ([learn more](/docs/alerts/monitors/create-monitor)).
 1. Set the **Run frequency** to **Hourly**.
 1. Set a time range. The default is **Last 24 hours**. If you need to allow for more time because some collectors do not typically ingest data that often, specify a longer time range. For example, seven days.<br/>  ![Alert](/img/ingestion-volume/AlertDataLoss.png)
-1. Make sure Alert Condition is set to **Send Notification **if the **Alert Condition** is met: **Number of results** greater than **0**.
+1. Make sure Alert Condition is set to **Send Notification** if the **Alert Condition** is met: **Number of results** greater than **0**.
 1. (Optional) You can test your new alert in one of the following ways.
     * Limit the results to monitor just two collectors by adding this extra line to the end of the query:
         ```sql
@@ -241,7 +241,7 @@ After completing the setup steps, you'll need to create a monitor. 
 This alert is automatically generated when your account has entered a throttled state (induced by metrics or logs) in the last 15 minutes. The alert runs every 15 minutes and covers a 15-minute period.
 
 :::note
-All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](../partitions-data-tiers/data-tiers.md).
+All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions/data-tiers/).
 :::
 
 #### Setup

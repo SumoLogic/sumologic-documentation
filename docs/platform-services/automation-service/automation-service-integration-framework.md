@@ -15,13 +15,13 @@ The second type of file is an action definition file, which is used to define a 
 
 The following diagram shows the integration file hierarchy:
 
-<img src={useBaseUrl('img/cse/integration-framework-container.png')} alt="Integraton framework container" width="700"/>
+<img src={useBaseUrl('img/cse/integration-framework-container.png')} style={{border:'1px solid gray'}} alt="Integraton framework container" width="700"/>
 
 Defining integrations at the action level allows users have greater flexibility in customizing existing integrations and sharing new actions with other users. For example, you may choose to extend the existing RSA NetWitness integration to include an additional action which retrieves all network connections for a given host. Once you create this new action, you can easily add it to the existing RSA Netwitness integration by uploading the new integration action file.
 
 You can also share this new action and use it to extend the functionality of the integration for others. The following diagram shows action file portability:
 
-<img src={useBaseUrl('img/cse/integration-framework-file-portability.png')} alt="Integration framework file portability" width="700"/>
+<img src={useBaseUrl('img/cse/integration-framework-file-portability.png')} style={{border:'1px solid gray'}} alt="Integration framework file portability" width="700"/>
 
 ## Integration framework file formats
 
@@ -29,33 +29,33 @@ Both the integration definition file and the action definition file are YAML fil
 
 ### Integration definition file format
 
-**\* ** Required fields
+`*` Required fields
 
-* **name* ** [String]: Name displayed in the UI. It must match the `integration` field of each action definition file added to the integration.
-* **version* ** [String]: File version number.
-* **icon* ** [Base64 String]: Integration logo.
-* **script* **:
-   * **type* ** [String]: Indicates which code parser should be used to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are:
+* **name** `*` [String]: Name displayed in the UI. It must match the `integration` field of each action definition file added to the integration.
+* **version** `*` [String]: File version number.
+* **icon** `*` [Base64 String]: Integration logo.
+* **script** `*`:
+   * **type** `*` [String]: Indicates which code parser should be used to execute the code within the integration and action definition files. All action definition files for the integration must use the same code language as defined in the integration definition file. Acceptable values are:
      * `bash`
      * `perl`
      * `powershell`
      * `python`
-   * **test_connection_code* ** [String]: Code which can be used to test the integration through the UI by clicking on Test Saved Settings. Exiting with a value of `0` indicates success, while any other value will indicate failure.
-* **docker_repo_tag* ** [String]: Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server.
-* **configuration* **:
-   * **testable_connection* ** [Boolean]: Is test code present (true/false).
-   * **require_proxy_config* ** [Boolean]: True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter `proxy_url` will be passed to the code on execution as an environment variable.
-   * **data_attributes* **: Fields required for configuration.
-      * **`<field_name>`* ** [String]: Name of field which will be passed to code as environment variable. One `<field_name>` attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The `<field_name>` parameters will be passed to the code on execution.
-         * **label* ** [String]: Label displayed in the UI.
-         * **type* ** [String]: Type of field. Acceptable values are:
+   * **test_connection_code** `*` [String]: Code which can be used to test the integration through the UI by clicking on Test Saved Settings. Exiting with a value of `0` indicates success, while any other value will indicate failure.
+* **docker_repo_tag** `*` [String]: Docker repository tag of the image build the new container is from. Can be from any local or remote repository configured on the server.
+* **configuration** `*`:
+   * **testable_connection** `*` [Boolean]: Is test code present (true/false).
+   * **require_proxy_config** `*` [Boolean]: True/false value indicating whether a proxy configuration tab should be available in the UI for the integration. If the value is set to true and a proxy is configured in the UI, the parameter `proxy_url` will be passed to the code on execution as an environment variable.
+   * **data_attributes** `*`: Fields required for configuration.
+      * **`<field_name>`** `*` [String]: Name of field which will be passed to code as environment variable. One `<field_name>` attribute should be added for each configuration parameter that will be required to configure the integration. For example, if a URL, username, and password are required to connect to an integrated solution, the attributes `configuration:data_attributes:url`, `configuration:data_attributes:user_name`, and `configuration:data_attributes:password` should be added with their appropriate sub-attributes. The `<field_name>` parameters will be passed to the code on execution.
+         * **label** `*` [String]: Label displayed in the UI.
+         * **type** `*` [String]: Type of field. Acceptable values are:
            * `checkbox`
             * `list`
             * `number`
             * `password`
             * `text`
             * `textarea`
-         * **required* ** [Boolean]: Is the field required (true/false).
+         * **required** `*` [Boolean]: Is the field required (true/false).
          * **validator** [String]: Input validator type. Acceptable values are:
            * `host`
            * `integer`
@@ -68,26 +68,26 @@ Both the integration definition file and the action definition file are YAML fil
            * `ip: IP Address`
            * `url: URL`<br/>In this example, if a user selected IP Address from the dropdown list, the value `ip` would be passed to the parameter at runtime as an environment variable.
    * **listing_attributes** Configuration fields to show in the resource table.
-      * **`<field_name>`* ** [String]: Name of field which will be shown in the table.
-      * **name* ** [String]: Name displayed in the column header.
+      * **`<field_name>`** `*` [String]: Name of field which will be shown in the table.
+      * **name** `*` [String]: Name displayed in the column header.
 * **signature** [String]: Signature to indicate integration is the original one written by Sumo Logic.
 
 ### Action definition file format
 
-**\* ** Required fields
+`*` Required fields
 
-* **integration* ** [String]: Name of integration. This should match the `name` field of the integration definition file for the integration.
-* **name* ** [String]: Name of action which will be displayed in the UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as `ip reputation` or `system info`.
-* **type* ** [String]: Type of action being performed. Acceptable values are:
+* **integration** `*` [String]: Name of integration. This should match the `name` field of the integration definition file for the integration.
+* **name** `*` [String]: Name of action which will be displayed in the UI. If the action name does not already exist, it will be added. However, for consistency and simplicity, it is recommended to use one of the existing names in the list of actions, such as `ip reputation` or `system info`.
+* **type** `*` [String]: Type of action being performed. Acceptable values are:
    * `Custom`
    * `Enrichment`
    * `Notification`
-* **script* **:
-   * **code* ** [String]: Action code.
-* **fields* **:
-   * **id* ** [String]: Name of field. One ID attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution.
-   * **label* ** [String]: Label displayed in the UI.
-   * **type* ** [String]: Type of field. Acceptable values are:
+* **script** `*`:
+   * **code** `*` [String]: Action code.
+* **fields** `*`:
+   * **id** `*` [String]: Name of field. One ID attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution.
+   * **label** `*` [String]: Label displayed in the UI.
+   * **type** `*` [String]: Type of field. Acceptable values are:
      * `checkbox`
       * `datetime`
       * `fileDetonate`
@@ -98,8 +98,8 @@ Both the integration definition file and the action definition file are YAML fil
       * `text`
       * `textarea`
       * `upload`
-   * **required* ** [Boolean]: Is the field required (true/false).
-   * **validator* ** [String]: Input validator type. Acceptable values are:  
+   * **required** `*` [Boolean]: Is the field required (true/false).
+   * **validator** `*` [String]: Input validator type. Acceptable values are:  
      * `datetime`
      * `domain`
      * `e-mail`
@@ -118,8 +118,8 @@ Both the integration definition file and the action definition file are YAML fil
      * `ip: IP Address`
      * `url: URL`<br/>In this example, if a user selected **IP Address** from the dropdown list, the value `ip` would be passed to the parameter at runtime.
    * **incident_artifacts** [Boolean]: Allow use of incident artifact values for the field (true/false). When set to `true`, incident artifact values such as `sourceAddress` can be used as inputs for the field.
-* **output* **: Expected fields from results.
-   * **path* ** [String]: JSON path for each field which may be returned by the action, using the following JSON as an example:
+* **output** `*`: Expected fields from results.
+   * **path** `*` [String]: JSON path for each field which may be returned by the action, using the following JSON as an example:
    ```
    { country: "US",
    response_code: 1,
@@ -135,14 +135,14 @@ Both the integration definition file and the action definition file are YAML fil
      * `as_owner`
      * `detected_urls.[].url`
      * `detected_urls.[].positives`
-     * **type* ** [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
-* **table_view* **: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
-   * **display_name* ** [String]: Column name.
-   * **value* ** [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
-   * **type* ** [String]: Type of value which is only possible to specify if the value should be shown as a link.
-* **src_doc* ** [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed.
-* **url_preview* ** [String]: Result path to show in html5 iframe sandboxed.
-* **image_base64_png(jpg)* ** [String]: Result path of a base64 image png or jpg format.
+     * **type** `*` [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
+* **table_view** `*`: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
+   * **display_name** `*` [String]: Column name.
+   * **value** `*` [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
+   * **type** `*` [String]: Type of value which is only possible to specify if the value should be shown as a link.
+* **src_doc** `*` [String]: Result path or raw output to take the entire output to show in html5 iframe sandboxed.
+* **url_preview** `*` [String]: Result path to show in html5 iframe sandboxed.
+* **image_base64_png(jpg)** `*` [String]: Result path of a base64 image png or jpg format.
 * **signature** [String]: Signature to indicate action is the original one written by Sumo Logic. Not to be set by user.
 
 ## Action parameters
@@ -172,7 +172,7 @@ And you must add it into the action `kwargs`:
 parser.add_argument('--host', help='host , REQUIRED', required=True, action=EnvDefault)
 ```
 
-Otherwise, if you don't need extra utilities provided by `ArgumentParser` for validation, you can simply use:
+Otherwise, if you do not need extra utilities provided by `ArgumentParser` for validation, you can simply use:
 
 ```
 host = os.environ.get("host", "localhost")
@@ -208,11 +208,11 @@ value : cvss'
 
 The following image shows the table view:
 
-<img src={useBaseUrl('img/cse/integration-framework-action-result.png')} alt="Action result" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-action-result.png')} style={{border:'1px solid gray'}} alt="Action result" width="600"/>
 
 The JSON view will display the entire output of the integration action in JSON format:
 
-<img src={useBaseUrl('img/cse/integration-framework-action-result-2.png')} alt="Action result output" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-action-result-2.png')} style={{border:'1px solid gray'}} alt="Action result output" width="600"/>
 
 Following is the setting for a link type:
 
@@ -222,7 +222,7 @@ value : 'cvss'
 type : 'link'
 ```
 
-<img src={useBaseUrl('img/cse/integration-framework-show-details.png')} alt="Show details" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-show-details.png')} style={{border:'1px solid gray'}} alt="Show details" width="600"/>
 
 ### Added more output type for action
 
@@ -262,11 +262,11 @@ src_doc: 'rawOutput'
 
 The following image shows output from the code example:
 
-<img src={useBaseUrl('img/cse/integration-framework-browser-market-share.png')} alt="Browser market share" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-browser-market-share.png')} style={{border:'1px solid gray'}} alt="Browser market share" width="600"/>
 
 The `image_base64_png(jpg)` field provides the result path where to get base64 png or jpg image, for example:
 
-<img src={useBaseUrl('img/cse/integration-framework-show-details-2.png')} alt="Result path" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-show-details-2.png')} style={{border:'1px solid gray'}} alt="Result path" width="600"/>
 
 ## Working with integrations
 
@@ -276,11 +276,11 @@ All integrations are configured by navigating to **Integrations** in the UI.
 
 To add a new integration, click on the **+** icon on the **Integrations** page.
 
-<img src={useBaseUrl('img/cse/integration-framework-definition.png')} alt="Add integration" width="800"/>
+<img src={useBaseUrl('img/cse/integration-framework-definition.png')} style={{border:'1px solid gray'}} alt="Add integration" width="800"/>
 
 The **New Integration** window allows you to upload an integration definition file by clicking **Select File**. Once you define the integration definition file, click **Save** to add the new integration.
 
-<img src={useBaseUrl('img/cse/integration-framework-new-integration.png')} alt="New integration" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-new-integration.png')} style={{border:'1px solid gray'}} alt="New integration" width="600"/>
 
 To edit an existing integration by uploading a new integration definition file , click on the **Edit** button. To export the integration definition file for the selected integration, click the **Export** icon.
 
@@ -290,21 +290,21 @@ To add a new action, select the appropriate integration from the integrations li
 
 The **New Action** window allows you to upload an action definition file by clicking **Select File**, and lets you select the kind of action.
 
-<img src={useBaseUrl('img/cse/integration-framework-upload.png')} alt="Upload" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-upload.png')} style={{border:'1px solid gray'}} alt="Upload" width="600"/>
 
 Once the action definition file has been selected, click **Save** to add the new action.
 
 Existing actions may be edited by clicking the **Upload** button below the action name to upload a new action definition file, or by clicking the **Edit** button below the action name to open a text editor and edit the action directly.
 
-<img src={useBaseUrl('img/cse/integration-framework-action-editor.png')} alt="Action editor" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-action-editor.png')} style={{border:'1px solid gray'}} alt="Action editor" width="600"/>
 
 To test an action, click on the **Test Action** button below the action name.
 
-<img src={useBaseUrl('img/cse/integration-framework-add-integration.png')} alt="Add integration" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-add-integration.png')} style={{border:'1px solid gray'}} alt="Add integration" width="600"/>
 
 Enter the required parameters and click **Test Action**.
 
-<img src={useBaseUrl('img/cse/integration-framework-test-action.png')} alt="Test action" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-test-action.png')} style={{border:'1px solid gray'}} alt="Test action" width="600"/>
 
 To export an action, click on the **Export** button below the action name.
 
@@ -555,11 +555,11 @@ output:
 ```
 And if you use that output into `textarea` as placeholder:
 
-<img src={useBaseUrl('img/cse/integration-framework-app-d-image-1.png')} alt="Textarea" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-d-image-1.png')} style={{border:'1px solid gray'}} alt="Textarea" width="600"/>
 
 You will get a print HTML of aggregated elements
 
-<img src={useBaseUrl('img/cse/integration-framework-app-d-image-2.png')} alt="HTML of aggregated elements" width="500"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-d-image-2.png')} style={{border:'1px solid gray'}} alt="HTML of aggregated elements" width="500"/>
 
 ## Pipe functions in YAML output
 
@@ -572,11 +572,11 @@ output:
   - path : '[].guid | join(,)'
 ```
 
-<img src={useBaseUrl('img/cse/integration-framework-app-3-image-1.png')} alt="Join separator pipe function" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-3-image-1.png')} style={{border:'1px solid gray'}} alt="Join separator pipe function" width="600"/>
 
 And so the next action will run one time with a string created join array element with `separator` specified:
 
-<img src={useBaseUrl('img/cse/integration-framework-app-e-image-2.png')} alt="Separator specified" width="700"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-e-image-2.png')} style={{border:'1px solid gray'}} alt="Separator specified" width="700"/>
 
 Pipe function `unique()`:
 ```
@@ -584,8 +584,8 @@ output:
   - path : '[].tags.[] | unique()'
 ```
 
-<img src={useBaseUrl('img/cse/integration-framework-app-e-image-3.png')} alt="Unique pipe function" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-e-image-3.png')} style={{border:'1px solid gray'}} alt="Unique pipe function" width="600"/>
 
 The array will be populated with not duplicated element:
 
-<img src={useBaseUrl('img/cse/integration-framework-app-e-image-4.png')} alt="Pip function specified" width="800"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-e-image-4.png')} style={{border:'1px solid gray'}} alt="Pip function specified" width="800"/>

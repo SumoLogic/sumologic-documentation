@@ -36,7 +36,7 @@ To install an upgrade on one or more collectors:
 1. In Sumo Logic, select **Manage Data > Collection > Collection**.
 1. Click the **Upgrade Collectors** link.
 1. Determine if you'd like to install the upgrade on individual collectors or on all collectors simultaneously. Then, choose one of the following:
-    * Click **Update** next to the name of a collector to install the upgrade just on that specific collector. This option can be used if a policy prevents you from upgrading every collector at the same time of day, or if you can't deploy the upgrade all at once. Any collectors you choose not to upgrade will remain available in the upgrade dialog box so you can install the upgrade at a later time.
+    * Click **Update** next to the name of a collector to install the upgrade just on that specific collector. This option can be used if a policy prevents you from upgrading every collector at the same time of day, or if you cannot deploy the upgrade all at once. Any collectors you choose not to upgrade will remain available in the upgrade dialog box so you can install the upgrade at a later time.
     * If you can safely upgrade all collectors, click **Update All.**
     :::note
     We strongly advise you to validate collector upgrades on non-production hosts before upgrading production collectors.
@@ -120,7 +120,7 @@ When one or more of your Collectors are eligible for an upgrade, you'll be notif
 ![Upgrade collectors with search](/img/collector/upgrade-collectors-icon.png)
 
 :::note
-If you are performing a manual upgrade, make sure that you backup your `\<sumo_hom\>/config` directory before you upgrade because it stores the current source information. If any issues occur during upgrade that leave the Collector unable to connect to the service, or result in missing sources, you can restore this directory and restart the Collector to address the problem.
+If you are performing a manual upgrade, make sure that you backup your `/<sumo_home>/config` directory before you upgrade because it stores the current source information. If any issues occur during upgrade that leave the Collector unable to connect to the service, or result in missing sources, you can restore this directory and restart the Collector to address the problem.
 :::
 
 ### Test Your New Collector in a Staging Environment

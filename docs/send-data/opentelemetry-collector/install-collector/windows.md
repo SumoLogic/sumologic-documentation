@@ -34,7 +34,7 @@ You can install our OpenTelemetry Collector using either of the following method
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **OpenTelemetry Collection**.
 1. On the OpenTelemetry Collection page, click **Add Collector**.
-1. On the left panel, select **Windows** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows.png')} alt="widows-terminal" style={{border: '1px solid black'}} width="900"/>
+1. On the left panel, select **Windows** as the platform.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows.png')} alt="widows-terminal" style={{border: '1px solid gray'}} width="900"/>
 1. Select/create installation token and customize your tags.
 1. (Optional) Select the **Auto Configure Host and Process metrics data collection** checkbox to collect host and process metrics.
 1. Copy the command.
@@ -47,7 +47,7 @@ A single line installation powered by Install Script.
 
 #### Get the Installation Token
 
-Get your [installation token](/docs/manage/security/installation-tokens) if you don't have it already. We are going to refer to this token as `<TOKEN>` in next streps.
+Get your [installation token](/docs/manage/security/installation-tokens) if you do not have it already. We are going to refer to this token as `<TOKEN>` in next streps.
 
 #### Run Installation Script
 
@@ -71,6 +71,8 @@ The script is going to perform the following operations:
 | `-InstallationToken` | Installation token      | Yes       |
 | `-Tags`         | Sets tags for collector. This argument should be a map. | Yes, for example `@{"host.group" = "default"; "deployment.environment" = "default"}` |
 | `-InstallHostMetrics` | Installs the hostmetrics configuration to collect host metrics. The default is `$False`. | Yes, for example: `-InstallHostMetrics $True` or `-InstallHostMetrics $False`. |
+| `-Fips` | If set to `$True`, installs the FIPS-compliant binary. The default is `$False`. See [FIPS](#fips) section for more details. | Yes, for example: `-Fips $True` or `-Fips $False` |
+| `-Version` | Version of Sumo Logic Distribution for OpenTelemetry Collector to install. By default, it gets latest version. | Yes, for example: `-Version 0.94.0-sumo-2` |
 
 ### Manual Step-by-Step Installation
 
@@ -100,7 +102,7 @@ Running  OtelcolSumo        Sumo Logic OpenTelemetry Collector
 ```
 Alternatively, you can open `Services.msc` and check whether Sumo Logic OTel Collector Service is running or not.
 
-## Additional Settings
+### Additional Settings
 
 This section describes common OpenTelemetry customizations.
 
@@ -132,11 +134,11 @@ Restart `Sumo Logic OpenTelemetry Collector` (`OtelcolSumo`) service to apply th
 
 #### FIPS
 
-We currently do not build FIPS binary for Windows.
+To install FIPS compliant binary, add `-Fips $True` option to the installation command.
 
 Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) in our repository for more details.
 
-### Uninstall
+## Uninstall
 
 1. Go to **Add or remove programs**.<br/> <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-1.png')} alt="windows-uninstallation-1.png" width="550" />
 1. Find **OpenTelemetry Collector** and click **Uninstall**.<br/>  <img src={useBaseUrl('img/send-data/opentelemetry-collector/windows-uninstall-2.png')} alt="windows-uninstallation-2.png" width="550" />
@@ -167,3 +169,18 @@ At line:1 char:1
 Ensure that you run **PowerShell** as an Administrator.
 
 For information on troubleshooting and solutions, refer to the [Troubleshooting](/docs/send-data/opentelemetry-collector/troubleshooting).
+
+### Error when running the FIPS binary: `panic: cngcrypto: not in FIPS mode`
+
+If you installed the FIPS version of the OpenTelemetry Collector and are getting the following error when trying to run it:
+
+```console
+C:\>"C:\Program Files\Sumo Logic\OpenTelemetry Collector\bin\otelcol-sumo.exe" --version
+panic: cngcrypto: not in FIPS mode
+
+goroutine 1 [running]:
+crypto/internal/backend.init.0()
+        crypto/internal/backend/cng_windows.go:34 +0x85
+```
+
+This means you are running the Sumo Otelcol FIPS binary in a non-FIPS environment. The FIPS binary is built using the `requirefips` mode, which causes the collector to only work in a FIPS-compliant environment and fail to start otherwise. See [documentation](https://github.com/microsoft/go/blob/microsoft/main/eng/doc/fips/README.md#build-option-to-require-fips-mode).

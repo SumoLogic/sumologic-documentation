@@ -20,37 +20,37 @@ Sumo provides a number of ways to [parse](/docs/search/search-query-language/pa
    <td><strong>Example</strong></td>
   </tr>
   <tr>
-   <td><a href="https://www.tutorialspoint.com/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor">parse (anchor)</a></td>
+   <td><a href="/docs/search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor">parse (anchor)</a></td>
    <td>The parse operator, also called parse anchor, parses strings according to specified start and stop anchors, and then labels them as fields for use in subsequent aggregation functions in the query such as sorting, grouping, or other functions.</td>
    <td><code>| parse "User=*:" as user</code></td>
   </tr>
   <tr>
-   <td><a href="https://www.tutorialspoint.com/Search-Query-Language/01-Parse-Operators/02-Parse-Variable-Patterns-Using-Regex">parse regex</a></td>
+   <td><a href="/docs/search/search-query-language/parse-operators/parse-variable-patterns-using-regex">parse regex</a></td>
    <td>The parse regex operator (also called the extract operator) enables users comfortable with regular expression syntax to extract more complex data from log lines. Parse regex can be used, for example, to extract nested fields.</td>
    <td><code>| parse regex field=url "[0-9A-Za-z-]+\.(?&lt;domain>[A-Za-z-]+\.(?:co\.uk|com|com\.au))/.*"</code></td>
   </tr>
   <tr>
-   <td><a href="https://www.tutorialspoint.com/Search-Query-Language/01-Parse-Operators/04-Parse-Keyvalue-Formatted-Logs">keyvalue</a></td>
+   <td><a href="/docs/search/search-query-language/parse-operators/parse-keyvalue-formatted-logs">keyvalue</a></td>
    <td>Typically, log files contain information that follow a key-value pair structure. The keyvalue operator allows you to get values from a log message by specifying the key paired with each value.</td>
    <td><code>| keyvalue infer "module", "thread"</code></td>
   </tr>
   <tr>
-   <td><a href="https://www.tutorialspoint.com/Search-Query-Language/01-Parse-Operators/05-Parse-CSV-Formatted-Logs">csv</a></td>
+   <td><a href="/docs/search/search-query-language/parse-operators/parse-csv-formatted-logs">csv</a></td>
    <td>The csv operator allows you to parse Comma Separated Values (CSV) formatted log entries. It uses a comma as the default delimiter.csv operator allows you to parse Comma Separated Values (CSV) formatted log entries. It uses a comma as the default delimiter.</td>
    <td><code>| csv_raw extract 1 as user, 2 as id, 3 as name</code></td>
   </tr>
   <tr>
-   <td><a href="https://www.tutorialspoint.com/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs">JSON</a></td>
+   <td><a href="/docs/search/search-query-language/parse-operators/parse-json-formatted-logs">JSON</a></td>
    <td>The JSON operator is a search query language operator that allows you to extract values from JSON input. Because JSON supports both nested keys and arrays that contain ordered sequences of values, the Sumo Logic JSON operator allows you to extract single top-level fields, multiple fields, nested keys, and keys in arrays.</td>
    <td><code>| parse "explainJsonPlan] *" as jsonobject <br/>| json field=jsonobject "sessionId"<br/>| json auto</code></td>
   </tr>
   <tr>
-   <td><a href="https://www.tutorialspoint.com/Search-Query-Language/01-Parse-Operators/06-Parse-Delimited-Logs-Using-Split">split</a></td>
+   <td><a href="/docs/search/search-query-language/parse-operators/parse-delimited-logs-using-split">split</a></td>
    <td>The split operator allows you to split strings into multiple strings, and parse delimited log entries, such as space-delimited formats.</td>
    <td>Full query example:<br/><code>_sourceCategory=colon<br/>| parse "] * *" as log_level, text<br/>| split text delim=':' extract 1 as user, 2 as account_id, 3 as session_id, 4 as result</code></td>
   </tr>
   <tr>
-   <td><a href="https://www.tutorialspoint.com/Search-Query-Language/01-Parse-Operators/07-Parse-XML-Formatted-Logs">xml</a></td>
+   <td><a href="/docs/search/search-query-language/parse-operators/parse-xml-formatted-logs">xml</a></td>
    <td>The XML operator uses a subset of the XPath 1.0 specification to provide a way for you to parse fields from XML documents. Using it, you can specify what to extract from an XML document using an XPath reference.</td>
    <td><code>| parse xml "/af/minimum/@requested_bytes"</code></td>
   </tr>
@@ -62,7 +62,7 @@ Sumo provides a number of ways to [parse](/docs/search/search-query-language/pa
 conjunction with group-by functions. When using any grouping function, the word by is sufficient for representing the group operator.
 
 :::note
-An aggregation function can't take another function (such as a math function). For example, you can't use:
+An aggregation function cannot take another function (such as a math function). For example, you cannot use:
 
 ```sql
 ... | avg(x + y) as average
@@ -104,14 +104,14 @@ Instead, use separate steps:
    <td><a href="/docs/search/search-query-language/search-operators/fillmissing">fillmissing</a></td>
    <td>When you run a standard <a href="/docs/search/search-query-language/group-aggregate-operators">group-by</a> query, Sumo Logic only returns non-empty groups in the results. For example, if you are grouping by timeslice, then only the timeslices that have data are returned.<br/>This operator allows you to specify groups to present in the output, even if those groups have no data.</td>
    <td></td>
-   <td>Not supported in Live Dashboards or any continuous query.</td>
+   <td>Not supported in Auto Refresh Dashboards or any continuous query.</td>
    <td><code>error<br/>| count by _sourceCategory<br/>| fillmissing values("backend", "database", "webapp") in _sourceCategory</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/group-aggregate-operators/first-last">first and last</a></td>
    <td>First finds the earliest occurrence in search results, and last finds the result that follows all others, based on the sort order for the query.</td>
    <td>_first<br/>_last</td>
-   <td>Not supported in Live Dashboards or any continuous query.</td>
+   <td>Not supported in auto refresh dashboards or any continuous query.</td>
    <td><code>| sort by _timeslice<br/>| first(error_message) by hostname</code></td>
   </tr>
   <tr>
@@ -172,7 +172,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/search-operators/asn-lookup">asn lookup</a></td>
-   <td>Sumo Logic can lookup an Autonomous System Number (ASN) and organization name by an IP address. Any IP addresses that don't have an ASN will return null values.</td>
+   <td>Sumo Logic can lookup an Autonomous System Number (ASN) and organization name by an IP address. Any IP addresses that do not have an ASN will return null values.</td>
    <td></td>
    <td></td>
 <td><code>_sourceCategory=stream "remote_ip="<br/>| parse regex "(?&lt;ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"<br/>| lookup organization, asn from asn://default on ip = ip</code></td>
@@ -392,7 +392,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><a href="/docs/search/behavior-insights/logexplain">logexplain</a></td>
    <td>The logexplain operator allows you to compare sets of structured logs based on events you're interested in. Structured logs can be in JSON, CSV, key-value, or any structured format.</td>
    <td>_explanation<br/>_relevance<br/>_test_coverage<br/>_control_coverage</td>
-   <td>Not supported with <a href="https://www.tutorialspoint.com/Visualizations-and-Alerts/Alerts/Scheduled-Searches/Create_a_Real_Time_Alert">Real Time alerts</a>.<br/><a href="https://www.tutorialspoint.com/Time-Compare">Time Compare</a> and the <a href="/docs/search/search-query-language/search-operators/Compare">compare operator</a> are not supported against LogExplain results.</td>
+   <td>Not supported with <a href="/docs/Visualizations-and-Alerts/Alerts/Scheduled-Searches/Create_a_Real_Time_Alert">Real Time alerts</a>.<br/><a href="/docs/Time-Compare">Time Compare</a> and the <a href="/docs/search/search-query-language/search-operators/Compare">compare operator</a> are not supported against LogExplain results.</td>
    <td><code>_sourceCategory=stream <br/>| if(_raw matches "error", 1, 0) as hasError<br/>| logexplain hasError == 1 on _sourceHost</code></td>
   </tr>
   <tr>
@@ -514,7 +514,7 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><a href="/docs/search/search-query-language/search-operators/sessionize">sessionize</a></td>
    <td>The sessionize operator allows you to use an extracted value from one log message (generated from one system) to find correlating values in log messages from other systems. After you run Sessionize, these related events are displayed on the same page. The thread of logs woven together is called a session.</td>
    <td></td>
-   <td>Not supported in Live Dashboards or any continuous query.</td>
+   <td>Not supported in auto refresh dashboards or any continuous query.</td>
    <td>Full query example:<br/><code>(SearchServiceImpl Creating Query) or (Stream SessionId using searchSessionId) or (Started search with sessionId)<br/>| sessionize "session: '*', streamSessionID: '*'" as (serviceSessionId, streamSessionId),<br/>"Stream SessionId=$streamSessionId using searchSessionId=* and rawSessionId=*" as (searchSessionId, rawSessionId),<br/>"Started search with sessionId: $searchSessionId, customerId: *, query: *" as (customerId, query)</code></td>
   </tr>
   <tr>
@@ -577,14 +577,14 @@ This section provides detailed syntax, rules, and examples for Sumo Logic Opera
    <td><a href="/docs/search/search-query-language/search-operators/trace">trace</a></td>
    <td>A trace operator acts as a highly sophisticated filter to connect the dots across different log messages. You can use any identifying value with a trace operator (such as a user ID, IP address, session ID, etc.) to retrieve a comprehensive set of activity associated to that original ID.</td>
    <td></td>
-   <td>Not supported in Live Dashboards or any continuous query.</td>
+   <td>Not supported in Auto Refresh Dashboards or any continuous query.</td>
    <td><code>| trace "ID=( [0-9a-fA-F] {4} )" "7F92"</code></td>
   </tr>
   <tr>
    <td><a href="/docs/search/search-query-language/transaction-analytics/transaction-operator">transaction</a></td>
    <td>The transaction operator is used to analyze related sequences of logs. No matter what type of data you're analyzing, from tracking web site sign ups, to e-commerce data, to watching system activity across a distributed system, the transaction operator can be used in a variety of use cases.</td>
    <td>_start_time<br/>_end_time</td>
-   <td>Tables generated with unordered data can be added to Dashboards, but Flow Diagrams cannot be added to Dashboards.<br/>Transaction by flow can't be used with Dashboards.</td>
+   <td>Tables generated with unordered data can be added to Dashboards, but Flow Diagrams cannot be added to Dashboards.<br/>Transaction by flow cannot be used with Dashboards.</td>
    <td><code>| transaction on sessionid fringe=10m <br/>with "Starting session *" as init, <br/>with "Initiating countdown *" as countdown_start, <br/>with "Countdown reached *" as countdown_done, <br/>with "Launch *" as launch <br/>results by transaction</code></td>
   </tr>
   <tr>
@@ -661,12 +661,12 @@ You can use general mathematical expressions on numerical data extracted from lo
    <td><code>| floor(1.5) as v<br/>// v = 1</code></td>
   </tr>
   <tr>
-   <td><a href="https://www.tutorialspoint.com/Search-Query-Language/aaGroup/min-and-max">max</a></td>
+   <td><a href="/docs/search/search-query-language/group-aggregate-operators/min-max">max</a></td>
    <td>The maximum function returns the larger of two values.</td>
    <td><code>| max(1, 2) as v<br/>// v = 2</code></td>
   </tr>
   <tr>
-   <td><a href="https://www.tutorialspoint.com/Search-Query-Language/aaGroup/min-and-max">min</a></td>
+   <td><a href="/docs/search/search-query-language/group-aggregate-operators/min-max">min</a></td>
    <td>The minimum function returns the smaller of two values.</td>
    <td><code>| min(1, 2) as v<br/>// v = 1</code></td>
   </tr>

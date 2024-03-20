@@ -44,7 +44,7 @@ This creates the today column, and returns the following results.
 
 ![FormatDate](/img/search/searchquerylanguage/search-operators/FormatDate.png)
 
-### European date format** **dd-MM-yyyy
+### European date format dd-MM-yyyy
 
 Use the following query to create a **today** column, and return the results using the European date format of day, month, year, **dd-MM-yyyy**.
 
@@ -103,7 +103,7 @@ Which produces results like this:
 
 To get the day of the week from your logs, you can reference your log's timestamps, which are stored as the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_messageTime`. You can also parse out any dates in your logs and use the [formatDate](formatdate.md) operator to get the day of the week.  
 
-Beginning with the `_messageTime` field, you can determine the day of the week, and then remove the days you don't want using the formatDate operator. This example query provides results only for Mondays:
+Beginning with the `_messageTime` field, you can determine the day of the week, and then remove the days you do not want using the formatDate operator. This example query provides results only for Mondays:
 
 ```sql
 | formatDate(_messagetime, "EEE") as day
@@ -117,7 +117,7 @@ This example query provides only weekday results:
 | where !(day="Sat" or day="Sun")
 ```
 
-If you don't use `_messageTime`, and instead parse out another timestamp, you can convert it to milliseconds and determine the day this way:
+If you do not use `_messageTime`, and instead parse out another timestamp, you can convert it to milliseconds and determine the day this way:
 
 ```sql
 | parseDate(parsedtime, "MM/dd/yyyy HH:mm:ss a") as inMilliseconds
@@ -136,14 +136,14 @@ _sourceCategory=sourceCategory
 You get the following results:
 
 | # | session | _count | _min | _max |
-|:--||-|-|-|
+|:--|:--|:--|:--|:--|
 |  1     | 7oEmE+KLpk1nVYpF | 22          | 1.35844e+12 | 1.35844e+12 |
 |  2     | 6uklr9UDkTOg79je | 412         | 1.35844e+12 | 1.35844e+12 |
 |  3     | q0K6ztX9IvpZWh1p | 18          | 1.35844e+12 | 1.35844e+12 |
 
 In the results, the **`_min`** and **`_max`** values are displayed as an epoch value. You can format these epoch values into a readable date with an experimental operator, **`toLong`**.
 
-* [toLong](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) casts the data into a Long data type as milliseconds.
+* [`toLong`](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) casts the data into a Long data type as milliseconds.
 
 Normally, to convert the epoch time into a date formatted string you'd do something like this:
 
@@ -151,7 +151,7 @@ Normally, to convert the epoch time into a date formatted string you'd do somet
 * | formatDate(_messagetime, "``MM-dd-``yyyy`` HH:mm:ss") as myDate
 ```
 
-However, in the case where you are using **Min** and **Max** to get the first and last values, you also need to convert the return value to a "Long" value type using the experimental [toLong](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) operator. This is because when you run the **Min** and **Max** operators, the return value gets reformatted as a "Double" value type that the formatDate operator can't read.
+However, in the case where you are using **Min** and **Max** to get the first and last values, you also need to convert the return value to a "Long" value type using the experimental [`toLong`](/docs/search/search-query-language/search-operators/manually-cast-data-string-number) operator. This is because when you run the **Min** and **Max** operators, the return value gets reformatted as a "Double" value type that the formatDate operator cannot read.
 
 ```sql
 * | count, min(_messagetime) as mindate | formatDate(toLong(mindate))

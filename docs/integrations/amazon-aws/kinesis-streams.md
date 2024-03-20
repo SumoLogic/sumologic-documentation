@@ -18,7 +18,7 @@ The app uses Kinesis logs and metrics for:
 * Kinesis operations using AWS CloudTrail. For details, see [here](http://docs.aws.amazon.com/streams/latest/dev/logging-using-cloudtrail.html).
 
 
-### Sample log message
+### Sample log messages
 
 ```json
  {  
@@ -50,7 +50,7 @@ The app uses Kinesis logs and metrics for:
  }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql title="Details of errors in events"
 _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
@@ -100,13 +100,15 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 
 ## Installing the Amazon Kinesis - Streams app
 
-Now that you have set up collection for Amazon Kinesis, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<AppInstall2/>
 
-<AppInstall/>
+## Viewing Amazon Kinesis - Streams dashboards​
 
-## Viewing Amazon Kinesis Streams dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Events
 
@@ -132,8 +134,6 @@ See the details of Kinesis events including the count over time, location, API c
 
 
 ### Metrics
-11
-
 
 See the details of the Kinesis metrics including the incoming bytes, incoming records, get records, put and get latency, write and read provisioned throughput exceeded, and iterator age.
 

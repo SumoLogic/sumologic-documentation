@@ -9,7 +9,7 @@ You can update an existing observability stack using Terraform or an AWS CloudFo
 
 ## Update with Terraform
 
-The AWS Observability Terraform scripts reside in GitHub and updates will be posted on the [Change Log](changelog.md).
+The AWS Observability Terraform scripts reside in GitHub and updates will be posted on the [Changelog](changelog.md).
 
 To update the deployed solution:
 
@@ -17,7 +17,7 @@ To update the deployed solution:
     ```bash
     $ git pull 
     ```
-1. Review the Change Log and configure any new parameters as needed. See [Deploy with Terraform](deploy-with-terraform.md) on how to configure parameters and to override default values.
+1. Review the changelog and configure any new parameters as needed. See [Deploy with Terraform](deploy-with-terraform.md) on how to configure parameters and to override default values.
 1. Run the Terraform commands to update the solution:
     ```bash
     $ terraform init
@@ -31,7 +31,7 @@ Use a new version or the same version of AWS CloudFormation template to update a
 Before starting with stack update, make sure no resource has been deleted manually as it can lead to failures in the stack update procedure.
 
 :::note
-Updating the Apps will create a backup of the old apps in a folder called as **“BackUpOldApps''** in the **“Sumo Logic AWS Observability Apps”**. Please delete the BackUp apps after moving any customizations in old dashboards to the new dashboard folder. **Keeping multiple copies of dashboards around will result in multiple dashboards in the explore dropdown hierarchy.**
+Updating the Apps will create a backup of the old apps in a folder called as **“BackUpOldApps''** in the **“Sumo Logic AWS Observability Apps”**. Delete the BackUp apps after moving any customizations in old dashboards to the new dashboard folder. **Keeping multiple copies of dashboards around will result in multiple dashboards in the explore dropdown hierarchy.**
 :::
 
 To update an existing stack to the latest version:

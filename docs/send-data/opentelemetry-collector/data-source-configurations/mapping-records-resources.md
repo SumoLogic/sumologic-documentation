@@ -24,7 +24,7 @@ At Sumo Logic, we use the concept of [Fields](/docs/manage/fields) for log data.
 
 Looking from the OpenTelemetry standpoint, [Fields](/docs/manage/fields) are a good match for the **Resource-level** attributes, while Log Record-level attributes are good fit for the [structured representation of the log via JSON](/docs/search/get-started-with-search/search-basics/view-search-results-json-logs), which is automatically supported by Sumo Logic Search.
 
-All **Resource-level** attributes are stored as fields, and any attributes that don't match a defined field will be skipped. You can check the list of ignored fields using the [dropped fields view](/docs/manage/fields/#view-dropped-fields). When a log contains attributes at the **Record-level**, they are stored as JSON, and if there is a body, it will be stored under the `log` key.
+All **Resource-level** attributes are stored as fields, and any attributes that do not match a defined field will be skipped. You can check the list of ignored fields using the [dropped fields view](/docs/manage/fields/#view-dropped-fields). When a log contains attributes at the **Record-level**, they are stored as JSON, and if there is a body, it will be stored under the `log` key.
 
 :::info
 If your log record has any **Record-level** attributes, Sumo will interpret this as a _structured log_, and display it in JSON. If the log does not have any **Record-level** attributes, Sumo will treat it as _unstructured_ and display the body. **Resource-level** attributes are interpreted as fields.
@@ -56,7 +56,7 @@ _raw (JSON): {
 }
 ```
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-and-record-level-attributes.png')} alt="resource and record attributes in Sumo Logic" style={{border: '1px solid black'}} />
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-and-record-level-attributes.png')} alt="resource and record attributes in Sumo Logic" style={{border: '1px solid gray'}} />
 
 ## Example: Log with Resource-level attributes only
 
@@ -79,4 +79,4 @@ Fields:
 _raw: "Sample body"
 ```
 
-<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-attributes-only.png')} alt="resource attributes only in Sumo Logic" style={{border: '1px solid black'}} />
+<img src={useBaseUrl('img/send-data/opentelemetry-collector/resource-attributes-only.png')} alt="resource attributes only in Sumo Logic" style={{border: '1px solid gray'}} />

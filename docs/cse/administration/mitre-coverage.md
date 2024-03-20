@@ -41,7 +41,7 @@ To open the MITRE ATT&CK Coverage page, select **Content > MITRE ATT&CK Coverage
 <img src={useBaseUrl('img/cse/mitre-coverage-page.png')} alt="MITRE Coverage page" width="900"/>
 
 1. **Recent Activity**. Shows coverage for your organization based on Signals received over the last 180 days. 
-1. **All Community Activity**. Shows coverage for all customers that use Cloud SIEM based on Signals received over the last 180 days. (Customer data is anonymized.) Comparing this coverage to **Recent Activity** can help you determine what coverage you're missing compared to other customers using Cloud SIEM.
+1. **All Community Activity**. Shows coverage for all customers that use the same Cloud SIEM sources as you based on all Signals received by all instances over the last 180 days. (Customer data is anonymized.) Comparing this coverage to **Recent Activity** can help you determine what other potential techniques are covered by your data sources, but not evidenced yet in your environment.
 1. **Theoretical Coverage**. Shows coverage for your organization if all data ingest worked perfectly and all enabled rules generated at least one Signal. This view can help you determine what custom rules would be most valuable to implement. If this is selected, the **Vendor/Product** filter is disabled.
 1. **Export**. Export the filtered coverage to a JSON file. The file is in the format used by MITRE, and can be used with other exported files of MITRE data to aggregate and analyze MITRE ATT&CK coverage data. The file includes a score from 0 to 3 for each technique. The higher the score, the better coverage you have: 0=None (10 or fewer rules), 1=Low (11-13 rules), 2=Medium (14-16 rules), 3=High (17 or more rules). 
 1. [**MITRE TTP**](#mitre-ttp-filter). Click to filter on MITRE tactics, techniques, and sub-techniques. 
@@ -68,7 +68,17 @@ To open the MITRE ATT&CK Coverage page, select **Content > MITRE ATT&CK Coverage
    * Filter not applied
 1. **Matrix**. The techniques from the [MITRE Enterprise matrix](https://attack.mitre.org/matrices/enterprise/). When you click a square, a panel appears with [details](#technique-details) showing your coverage for that technique.
 
-## Technique details
+### Benefits
+
+* Use **Theoretical Coverage** to understand the content that Cloud SIEM includes out-of-the-box, and compare this with other SIEM solutions. 
+* Track **Theoretical Coverage** over time to see the coverage levels increase as Sumo Logic deploys new content and you write new rules.
+* Use **Theoretical Coverage** to prioritize which custom rules to write, and use **Recent Activity** to support this as well as your rule tuning efforts.
+* Compare **Recent Activity** to **Theoretical Coverage** view to see if rules that provide coverage are actually creating Signals in your environment. If they are not creating Signals, you'll need to investigate why not.
+* Use the data in **Recent Activity** to help justify the value of Cloud SIEM. Anywhere a cell is lit up, Cloud SIEM has detected potential malicious activity that matches that technique. In addition, by deselecting and selecting **Vendor/Product** log sources, you can see the contribution (and therefore the value) of any particular log source to that coverage. 
+* Use the data in **Community Activity** to better understand the contribution (and therefore the value) of any particular log source, even those they are not currently ingesting into Cloud SIEM. This could help justify additional data ingest into Cloud SIEM, or justify a better balance of data sources to get optimal coverage. 
+* Export the data in these views in the standard MITRE JSON format, and combine it with the data exported by other security tools in your environment, to get the total coverage of all of the tools in your environment. 
+
+### Technique details
 
 When you click a square in the matrix, details about coverage for that MITRE technique display in a panel. The description displayed is pulled directly from the MITRE Enterprise matrix. The panel includes an assessment of your coverage (**None**, **Low**, **Medium**, and **High**). A coverage of **None** does not mean you have no coverage; it only means you might not have enough rules to adequately cover the technique.
 
@@ -80,13 +90,13 @@ Click **Rules** at the bottom of the panel to see a list of all the rules that c
 
 <img src={useBaseUrl('img/cse/mitre-details.png')} alt="MITRE TTP filter" width="300"/>
 
-## MITRE TTP filter
+### MITRE TTP filter
 
 Use the **MITRE TTP** filter to search for specific MITRE tactics, techniques, and sub-techniques. Used in combination with the **Product/Vendor** filter, you can see exactly which data sources provide coverage for specific TTPs. 
 
 <img src={useBaseUrl('img/cse/mitre-ttp-filter.png')} alt="MITRE TTP filter" width="300"/>
 
-## Vendor/Product filter
+### Vendor/Product filter
 
 Use the **Vendor/Product** filter to search for data sources in your environment to see how well they provide coverage. Filtering on specific products and vendors helps you determine which provide the best coverage. Add or remove items from the list to see how different combinations provide coverage for the specific techniques you are most concerned about.
 
@@ -94,7 +104,7 @@ This filter is only enabled if you first select **Recent Activity** or **All Com
 
 <img src={useBaseUrl('img/cse/mitre-vendor-product-filter.png')} alt="MITRE vendor/product filter" width="300"/>
 
-### Custom rules and vendors/products
+#### Custom rules and vendors/products
 
 Vendors and products appear in the **Vendor/Product** filter when rules with MITRE tags generate Signals from logs provided by those vendors and products. 
 
@@ -108,12 +118,12 @@ To add a new vendor and product to log mapping:
 
 Once the vendor and product appear in the log mapping list, custom rules can refer to them, and the system can successfully generate Signals from the logs. Then the vendor and product will display in the **Vendor/Product** filter.
 
-## Benefits
+## Audit logging for MITRE ATT&CK coverage
 
-* Use **Theoretical Coverage** to understand the content that Cloud SIEM includes out-of-the-box, and compare this with other SIEM solutions. 
-* Track **Theoretical Coverage** over time to see the coverage levels increase as Sumo Logic deploys new content and you write new rules.
-* Use **Theoretical Coverage** to prioritize which custom rules to write, and use **Recent Activity** to support this as well as your rule tuning efforts.
-* Compare **Recent Activity** to **Theoretical Coverage** view to see if rules that provide coverage are actually creating Signals in your environment. If they are not creating Signals, you'll need to investigate why not.
-* Use the data in **Recent Activity** to help justify the value of Cloud SIEM. Anywhere a cell is lit up, Cloud SIEM has detected potential malicious activity that matches that technique. In addition, by deselecting and selecting **Vendor/Product** log sources, you can see the contribution (and therefore the value) of any particular log source to that coverage. 
-* Use the data in **Community Activity** to better understand the contribution (and therefore the value) of any particular log source, even those they are not currently ingesting into Cloud SIEM. This could help justify additional data ingest into Cloud SIEM, or justify a better balance of data sources to get optimal coverage. 
-* Export the data in these views in the standard MITRE JSON format, and combine it with the data exported by other security tools in your environment, to get the total coverage of all of the tools in your environment. 
+MITRE ATT&CK coverage events are recorded in the Audit Event Index. To query for MITRE ATT&CK events, run this query:
+
+```
+_index=sumologic_system_events _sourceCategory=cseMitreAttackCoverage
+```
+
+For more information about how to query for audit log events, see [Cloud SIEM Audit Logging](https://help.sumologic.com/docs/cse/administration/cse-audit-logging/)

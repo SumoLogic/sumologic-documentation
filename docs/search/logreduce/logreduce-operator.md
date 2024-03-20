@@ -30,7 +30,7 @@ When you've already run a search query with non-aggregate results, you can use t
 
 ### Rules
 
-* The logreduce operator can't be used with [group-by operators](/docs/search/search-query-language/group-aggregate-operators) such as "count by field".
+* The logreduce operator cannot be used with [group-by operators](/docs/search/search-query-language/group-aggregate-operators) such as "count by field".
 
 ### Syntax
 
@@ -41,7 +41,7 @@ When you've already run a search query with non-aggregate results, you can use t
 | `field` | The field to group by similarity. If no field is provided the raw message is used. |
 | `byField` | Field to group signatures by. Results are returned aggregated. |
 | `limit` | Limits the number of signatures returned. The total number of signatures involved in a search query can be overwhelming, making final results hard to digest and comprehend. Use this parameter to limit the number of returned signatures. |
-| `criteria` | By default, LogReduce tries to find the most anomalous signatures. The criteria parameter can override the default criteria to either of the following values:<ul><li>`mostcommon`: Signatures that appear most frequently, having the highest counts.<li></li>`leastcommon`: Signatures that appear least frequently, having the lowest counts.</li></ul> |
+| `criteria` | By default, LogReduce tries to find the most anomalous signatures. The criteria parameter can override the default criteria to either of the following values:<ul><li>`mostcommon`: Signatures that appear most frequently, having the highest counts.</li><li>`leastcommon`: Signatures that appear least frequently, having the lowest counts.</li></ul> |
 
 ### Details option
 
@@ -56,10 +56,10 @@ After running a LogReduce operation, from the **Signatures** tab, you can view
 
 Details option syntax:
 
-`... | logreduce | details\<signatureI\>`
+<code>... | logreduce | details &lt;signatureId&gt;</code><br/>
 
 :::important
-Once a LogReduce query has run with the details operator, you can't use that query again, for example, in a separate Search tab.
+Once a LogReduce query has run with the details operator, you cannot use that query again, for example, in a separate Search tab.
 :::
 
 ### Optimize option

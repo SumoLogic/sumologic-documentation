@@ -4,7 +4,7 @@ title: compare Search Operator
 sidebar_label: compare
 ---
 
-The `compare` operator can be used with the **Time Compare** button in the Sumo interface, which automatically generates the appropriate syntax and adds it to your aggregate query. See [Time Compare](/docs/search/time-compare) for details. The following information can also be found documented in Time Compare.
+The `compare` operator can be used with the [**Time Compare**](/docs/search/time-compare) button in the Sumo interface, which automatically generates the appropriate syntax and adds it to your aggregate query. The following information can also be found documented in Time Compare.
 
 You can use `compare` to:
 
@@ -21,7 +21,7 @@ Use the compare operator in the following ways:
 
 By default, results are displayed in the **Aggregates** tab on the search page in a table. Each column of the output table contains results from one of the specified queries. The first column is suffixed with the keyword **target**, appended to the original column name, and contains results from the present time (or the time range specified in the time range field). Additional columns are suffixed by the timeshift (the period shifted back in time) of the queries. From here, you can select a chart type to display results visually.
 
-For example, if you were doing a comparison with yesterday, when you use the compare operator after the count operator, the aggregation table results will display the column names **count_target** and **count_1d**.
+For example, if you were doing a comparison with yesterday, when you use the compare operator after the count operator, the aggregation table results will display the column names `count_target` and `count_1d`.
 
 ## Syntax
 
@@ -75,7 +75,7 @@ The following query returns result from the present with results from the same 
 
 ### Aggregate Comparison
 
-Aggregate the results from multiple past time periods using an aggregation operator (avg, min, or max).
+Aggregate the results from multiple past time periods using an aggregation operator (`avg`, `min`, or `max`).
 
 ```sql
 ... | compare timeshift <number><time granularity> <number of shifts <avg/min/max>
@@ -124,25 +124,23 @@ For example:
 ## Rules
 
 * The compare operator must follow a group by aggregate operator, such as: `count`, `min`, `max`, or `sum`.
-* If you want to use timeslice with compare, don't alias timeslice.
+* If you want to use `timeslice` with `compare`, do not alias `timeslice`.
 
 ### Limitations
 
-* Compare can't generate more than **seven** additional queries. An additional query is generated whenever a comparison in time is initiated. Note that multiple comparisons and aggregate comparisons will generate multiple queries. For example, the following queries are not allowed:
+* Compare cannot generate more than **seven** additional queries. An additional query is generated whenever a comparison in time is initiated. Note that multiple comparisons and aggregate comparisons will generate multiple queries. For example, the following queries are not allowed:
 
     ```sql
     ... | compare timeshift 1d 14
     ```
 
-    This query compares with the past 14 days data. It is not allowed as it
-    generates 14 queries. 
+    This query compares with the past 14 days data. It is not allowed as it generates 14 queries. 
 
     ```sql
     ... | compare timeshift 1d 5 avg, timeshift 1w  4
     ```
 
-    This query compares with the last five days, and the same day for the
-    last four weeks. It is not allowed as it generates 9 queries. 
+    This query compares with the last five days, and the same day for the last four weeks. It is not allowed as it generates 9 queries. 
 
 * Duplicate aliases are not allowed. For example, the following query is not allowed:
 
@@ -150,7 +148,7 @@ For example:
     ... | compare timeshift 1d 7 as last_week, timeshift 1d 7 avg as last_week
     ```
 
-* Real time queries using time compare need to have at least three timeslices within its time range. For example, if the time range is 10 minutes, your timeslices need to be no longer than 3 minutes so that there are at least three of them.
+* Real-time queries using time compare need to have at least three timeslices within its time range. For example, if the time range is 10 minutes, your timeslices need to be no longer than 3 minutes so that there are at least three of them.
 * Compare is not supported in Scheduled Views.
 * Compare can only be used once in a search query.
 
@@ -175,8 +173,7 @@ Create a line chart to visualize the results.
 
 ![count-2dLineChart.png](/img/search/timecompare/count-2dLineChart.png)
 
-Using the multiple comparison feature, you can compare the number of
-logs against every ten minutes of the past hour:
+Using the multiple comparison feature, you can compare the number of logs against every ten minutes of the past hour:
 
 ```sql
 _sourceHost = prod
@@ -193,8 +190,7 @@ Create a line chart to visualize the results.
 
 ![TenMinuteLIneChart.png](/img/search/timecompare/TenMinuteLIneChart.png)
 
-Alternatively, you can compare against the average of all the ten minute
-periods:
+Alternatively, you can compare against the average of all the ten minute periods:
 
 ```sql
 _sourceHost = prod
@@ -211,8 +207,7 @@ Create a line chart to visualize the results.
 
 ### Compare categorical data parsed from logs
 
-Use compare to analyze the change in delays on different _sourceHosts
-using parsed data from logs.
+Use compare to analyze the change in delays on different `_sourceHost`s using parsed data from logs.
 
 ```sql
 "delay:"

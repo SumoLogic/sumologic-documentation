@@ -2,7 +2,7 @@
 id: cisco-meraki
 title: Cisco Meraki
 sidebar_label: Cisco Meraki
-description: The Sumo Logic App for Cisco Meraki provides a single-pane-of-glass for monitoring and troubleshooting network security, end-to-end performance, switch port management, and device management in your environment.
+description: The Sumo Logic app for Cisco Meraki provides a single-pane-of-glass for monitoring and troubleshooting network security, end-to-end performance, switch port management, and device management in your environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,9 +11,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cisco Meraki app provides a single-pane-of-glass for monitoring and troubleshooting network security, end-to-end performance, switch port management, and device management of your Cisco Meraki wireless infrastructure management platform.  
 
-## Log Types  
+## Log types  
 
-The Cisco Meraki App is dependent on the following logs:
+The Cisco Meraki app is dependent on the following logs:
 * flows
 * urls
 * events
@@ -27,7 +27,7 @@ For more information on log types, see these topics in Cisco Meraki documentatio
 * [Syslog Server Overview and Configuration](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Server_Overview_and_Configuration)
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title="security_event log sample"
 <134>1 1563249630.774247467 remote_DC1_appliance security_event ids_alerted signature=1:41944:2 priority=1 timestamp=TIMESTAMPEPOCH.647461
@@ -81,7 +81,7 @@ into slot 1
 ```
 
 
-### Sample Query
+### Sample queries
 
 The following query is from the High Severity Threats panel of the Cisco Meraki - Overview dashboard.
 
@@ -97,9 +97,9 @@ _sourceCategory=*meraki* "security_event"
 ```
 
 
-## Collecting logs for the Cisco Meraki App
+## Collecting logs for the Cisco Meraki app
 
-This section provides instructions for configuring log collection for the Cisco Meraki App, as well as log and query examples.
+This section provides instructions for configuring log collection for the Cisco Meraki app, as well as log and query examples.
 
 
 ### Configure Log Collection
@@ -128,22 +128,17 @@ For more information on configuring log forwarding from Cisco Meraki, see the [C
 
 
 
-## Installing the Cisco Meraki App
+## Installing the Cisco Meraki app
 
-This section provides instructions on how to install the Cisco Meraki App. The App's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<AppInstall2/>
 
-<AppInstall/>
+## Viewing Cisco Meraki dashboards​
 
-## View Cisco Meraki Dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-Each dashboard has a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
+<ViewDashboards/>
 
 ### Overview
 
