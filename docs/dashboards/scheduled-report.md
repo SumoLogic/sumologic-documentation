@@ -59,3 +59,9 @@ To cancel a Scheduled Report:
 1. Navigate to the dashboard, then click the kebab menu and select **Edit Reports**.
 1. Click the kebab menu and select **Delete** against the required report.<br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/delete_scheduled_report_1.png')} alt="delete_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
 1. In the popup window, click **Delete**. <br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/delete_scheduled_report.png')} alt="delete_scheduled_report" style={{border: '1px solid gray'}} width="500"/>
+
+OR
+
+1. Navigate to the dashboard, then click the kebab menu and select **Edit Reports**.
+1. 1. Click the kebab menu and select **Edit** against the required report. <br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/update_scheduled_report_1.png')} alt="update_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
+1. Click the down arrow next to the **Update** button, then click **Delete Report**. <br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/delete_scheduled_report_2.png')} alt="delete_scheduled_report" style={{border: '1px solid gray'}} width="500"/>
