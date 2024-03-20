@@ -53,6 +53,19 @@ To encode a certificate in Base64 format using OpenSSL, perform the following st
 4. **Verify the Output File**: Ensure that the Base64-encoded file has been created successfully and contains the expected content. You can do this by opening the file in a text editor. For example, Visual Studio Code or alternatively, you can use any text editor you prefer, such as Notepad on Windows or TextEdit on macOS.
 5. **Use the Encoded Certificate**: Once you have verified the content, you can copy the Base64-encoded text and paste it into the appropriate field in your integration resource.
 
+## Permissions
+
+The integration has different types of actions, and different permissions are required depending on the specific action you want to perform:
+* **Add Safe** - The user who runs this web service must have **Add Safes** permissions in the Vault.
+* **Add Account** - To run this web service, you must have the following permissions in the Vault:
+    * **Add account**
+    * **Update password** or **Update password properties**
+* **Delete Account** - The user who runs this web service requires **Delete Accounts** permissions in the Vault
+* **Delete Safe** - The user who runs this web service must have **Manage Safe** permissions in the Safe.
+* **List Accounts** - The user who runs this web service requires **List Accounts** permissions in the Safe.
+* **Get Account Details** - The user who runs this web service requires **List Accounts** permissions in the Safe where the account is located inside the Vault.
+* **List Safes** - The user who runs this web service must be a member of the Safes in the Vault that are returned in the list.
+
 ## Change Log
 
 * June 19, 2020 (v1.0) - First upload
