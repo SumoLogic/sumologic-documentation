@@ -30,7 +30,7 @@ If there is only one endpoint in the Pod you want to scrape metrics from, you ca
 annotations:
   prometheus.io/port: '<port name or number>' # Port which metrics should be scraped from
   prometheus.io/scrape: 'true' # Set if metrics should be scraped from this Pod
-  prometheus.io/path: "/metrics" # Path which metrics should be scraped from
+  prometheus.io/path: '/metrics' # Path which metrics should be scraped from
 ```
 
 :::note
