@@ -187,7 +187,7 @@ To create an event grid subscription, do the following:
    * **Resource**. Select the Storage Account you configured, from where you want to ingest logs.
 
     :::note
-    If you don't see your configured Storage Account in the dropdown menu, make sure you met the requirements in [Requirements](#requirements) section.
+    If you do not see your configured Storage Account in the dropdown menu, make sure you met the requirements in [Requirements](#requirements) section.
     :::
 
 1. Specify the following details for Event Types:

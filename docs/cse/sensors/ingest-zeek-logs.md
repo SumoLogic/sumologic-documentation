@@ -24,7 +24,7 @@ The Network Sensor extracts files observed over cleartext protocols that match s
 
 :::note
 YARA [file analysis](/docs/cse/rules/import-yara-rules) is supported only for files extracted by the Network Sensor. If you use
-your own Zeek deployment and ingest logs using a Sumo Logic Source you can't also upload extracted files. 
+your own Zeek deployment and ingest logs using a Sumo Logic Source you cannot also upload extracted files. 
 :::
 
 ### Filtering Zeek logs

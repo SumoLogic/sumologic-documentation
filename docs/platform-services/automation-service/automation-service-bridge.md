@@ -1,7 +1,7 @@
 ---
 id: automation-service-bridge
 title: Bridge for the Automation Service
-sidebar_label: Bridge
+sidebar_label: Automation Bridge
 description: Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment.   
 ---
 
@@ -271,7 +271,7 @@ docker run -d \
 public.ecr.aws/u5z5f8z6/sumologic/csoar-automation-bridge:latest
 ```
 
-In the DooD approach, you use the Docker daemon from the host system to interact with containers. Containers themselves don't have their own Docker runtime; they communicate with the host's Docker. This offers some distinct advantages, including simplicity in managing the containers and resource efficiency, as containers don't need to run their own Docker daemon.
+In the DooD approach, you use the Docker daemon from the host system to interact with containers. Containers themselves do not have their own Docker runtime; they communicate with the host's Docker. This offers some distinct advantages, including simplicity in managing the containers and resource efficiency, as containers do not need to run their own Docker daemon.
 
 This way, the main container will have access to the Docker socket and will, therefore, be able to start containers. The only difference is that instead of starting “child” containers, it will start “sibling” containers.
 

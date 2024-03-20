@@ -6,7 +6,7 @@ description: Learn how integrations are connectors to applications from industry
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import ActionLimit from '../../reuse/action-limits.md';
+import ActionsLimit from '../../reuse/actions-limit.md';
 
 Integrations are connectors to applications from industry-leading network and security vendors. Playbooks run actions provided by resources in integrations.      
 
@@ -17,7 +17,7 @@ Before you can use actions from an integration resource, you must [configure the
 :::
 
 :::note
-<ActionLimit/>
+<ActionsLimit/>
 :::
 
 ## View integrations
@@ -46,7 +46,7 @@ After you select the integration resource and click the **View Code** button, th
 
 Certified actions are designated by a **Certified Action** check mark.<br/><img src={useBaseUrl('img/cse/automations-integration-certified-action.png')} style={{border:'1px solid gray'}} alt="Certified action" width="300"/>
 
-You can add resources to the certified integration by clicking the **+** button, or you use it as-is.<br/><img src={useBaseUrl('img/cse/automations-add-resource.png')} style={{border:'1px solid gray'}} alt="Add a resource" width="400"/> 
+You can add resources to the certified integration by clicking the **+** button, or you use it as-is.<br/><img src={useBaseUrl('img/cse/automations-add-resource.png')} style={{border:'1px solid gray'}} alt="Add a resource" width="400"/>
 
 ## Duplicate an integration
 
@@ -62,4 +62,4 @@ Note that in the following example a **(2)** follows the duplicated integration'
 
 ## Available integrations
 
-For a complete list of integrations that are available to install, see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/). 
+For a complete list of integrations that are available to install, see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/).

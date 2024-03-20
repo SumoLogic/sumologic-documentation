@@ -56,7 +56,7 @@ To configure a cloud syslog source, do the following:
 1. Set any of the following under **Advanced**:
 
    * **Enable Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed.
-   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns the UTC time zone; if the rest of your logs are from another time zone your search results will be affected.
+   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns the UTC time zone; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format**. By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, and Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference).
 
 1. Create any Processing Rules you'd like for the new source.
@@ -190,4 +190,4 @@ If you followed the documentation for syslog-ng or rsyslog configurations but st
     21:46:35.955326 IP server-host > client-host.client-port: Flags [.], ack 389, win 181, options [nop,nop,TS val 112586129 ecr 523153927], length 0 ...
     ```
 
-1. If the previous steps don't solve the problem, file a support case with information about the specific Collector and Source setup. You can also include the `tcpdump` if available.
+1. If the previous steps do not solve the problem, file a support case with information about the specific Collector and Source setup. You can also include the `tcpdump` if available.

@@ -100,7 +100,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Entity](/docs/cse/records-signals-entities-insights/view-manage-entities)**. In Cloud SIEM, a unique actor encountered in incoming messages, such as a user, IP address, or host.
 
-**[Exclude rule](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Exclude rules are a type of Processing Rule that specifies log messages that you don't want to send to Sumo Logic, think of it as an "allowlist" filter.
+**[Exclude rule](/docs/send-data/collection/processing-rules/include-and-exclude-rules)**. Exclude rules are a type of Processing Rule that specifies log messages that you do not want to send to Sumo Logic, think of it as an "allowlist" filter.
 
 **[Explore](/docs/dashboards/explore-view)**. Explore is an intuitive navigational framework that provides a visual map of the hierarchy of your Kubernetes environment. It allows you to easily traverse the hierarchy and filter the display to focus on deployments, nodes, services, or namespaces.
 
@@ -137,7 +137,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Host Metrics](/docs/integrations/hosts-operating-systems/host-metrics)**. The Sumo Logic app for Host Metrics allows you to collect local host metrics and display them using predefined search queries and dashboards. The app provides dashboards to display analysis of local host metrics for the CPU, disk, memory, network, and TCP.
 
-**[Hosted Collectors](/docs/send-data/hosted-collectors)**. Hosted Collectors don't require installation or registration, nor do Hosted Collectors have physical requirements, since they're hosted by Sumo Logic in AWS.
+**[Hosted Collectors](/docs/send-data/hosted-collectors)**. Hosted Collectors do not require installation or registration, nor do Hosted Collectors have physical requirements, since they're hosted by Sumo Logic in AWS.
 
 
 ## I
@@ -227,7 +227,7 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 **[Parser](/docs/cse/schema/parser-editor)**. In Cloud SIEM, a script that parses logs and normalizes them into structured records.
 
-**[Partition](/docs/manage/partitions-data-tiers)**. Sumo Logic allows you to filter a subset of the messages in an Index into a Partition. Partitioning messages in an Index improves search query performance, as the total number of messages that need to be searched is reduced. Once messages are routed to a Partition, you can limit your search to those messages using the Partition name in a search query.
+**[Partition](/docs/manage/partitions)**. Sumo Logic allows you to filter a subset of the messages in an Index into a Partition. Partitioning messages in an Index improves search query performance, as the total number of messages that need to be searched is reduced. Once messages are routed to a Partition, you can limit your search to those messages using the Partition name in a search query.
 
 **[Pinned searches](/docs/get-started/library)**. The Pinned Search feature allows you to start a search, then “pin” it, so it will continue running in the background independent of the browser session. Then, you can close the Search tab or log out and find your results later in the Library on the Recent tab in a folder named Pinned Searches.
 
@@ -316,6 +316,6 @@ This glossary provides an alphabetized list of technical term definitions used i
 
 ## W
 
-**[Webhook](/docs/alerts/webhook-connections)**. A WebHook is an HTTP callback: an HTTP POST that occurs when something happens. WebHook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming WebHooks. You can configure a custom WebHook, or use preconfigured WebHooks for a number of apps, including Slack, HipChat, Datadog, and so on.
+**[Webhook](/docs/alerts/webhook-connections)**. A webhook is an HTTP callback: an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks. You can configure a custom webhook, or use preconfigured webhooks for a number of apps, including Slack, Datadog, and so on.
 
 **[`where` operator](/docs/search/search-query-language/search-operators/where)**. A conditional operator that can precede or follow another operator. Example combinations include "where x matches y", "where x in (a, b, c)", "where x not in (a, b, c)" and "where a > 1 and b / 4 &lt; sqrt(x)".

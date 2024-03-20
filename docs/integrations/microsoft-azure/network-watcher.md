@@ -125,7 +125,7 @@ In this step, you enable NSG flow logs with the Azure portal.
 
 ### Troubleshooting
 
-If logs don't start flowing into Sumo Logic after you perform the configuration above, see [Troubleshoot Azure Blob Storage Log Collection](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-azure-blob-storage-log-collection.md).
+If logs do not start flowing into Sumo Logic after you perform the configuration above, see [Troubleshoot Azure Blob Storage Log Collection](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-azure-blob-storage-log-collection.md).
 
 ## Installing the Azure Network Watcher app
 

@@ -16,11 +16,22 @@ To access this section, click the cog icon (<img src={useBaseUrl('img/cloud-soar
 
 App Central allows you to unlock the full Cloud SOAR potential. From this section, you can search and add new integrations, new playbooks, and even complete use cases with all the components needed (automation rules, integrations and playbooks) in one place.
 
-<img src={useBaseUrl('img/cloud-soar/appcentral.png')} alt="App Central" style={{border: '1px solid gray'}} width="800"/>
-
 While browsing available integrations, you can check the details and all the actions available and install it.
 
-For a complete list of integrations and their documentation, see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations)
+For a complete list of integrations and their documentation, see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations).
+
+### App Central UI
+
+<img src={useBaseUrl('img/cloud-soar/appcentral.png')} alt="App Central" style={{border: '1px solid gray'}} width="800"/>
+
+1. **Playbooks**. Click to view [playbooks](#playbook) in App Central that are available to install.
+1. **Integrations**. Click to view [integrations](#integrations) in App Central that are available to install.
+1. **Search**. Search for integrations or playbooks to install.
+1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization.
+   :::note
+   By default, the actions limit is set to 200 per hour to prevent abuse of system resources or runaway processes. All actions running in the cloud or via the bridge are included in this limit.
+   :::
+1. **Install**. Click to install an integration or install a playbook. Once an integration is installed, the text changes to **Installed**. If an update of the integration is available, the text changes to **Update**.
 
 
 ### Install an integration from App Central
@@ -45,7 +56,7 @@ Following is an example of integration code after updating the integration:<br/>
 
 ### Update integrations to include all available actions
 
-The purpose of this section is to provide you the information you need to update your integrations to include all types of actions that should be present in that integration, for example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Central to make sure you don't have any integrations without useful actions.
+The purpose of this section is to provide you the information you need to update your integrations to include all types of actions that should be present in that integration, for example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Central to make sure you do not have any integrations without useful actions.
 
 Update integrations in App Central using keywords in the bottom left corner of the integration:
 * **UPDATE**. Appears on the installed integrations if there is a new version of that integration and with a new YAML configuration file. <br/><img src={useBaseUrl('img/cloud-soar/new-integration-update.png')} alt="Update" width="300"/>

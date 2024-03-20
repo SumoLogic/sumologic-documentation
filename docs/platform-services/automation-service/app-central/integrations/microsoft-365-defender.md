@@ -1,14 +1,15 @@
 ---
 title: Microsoft 365 Defender
 description: ''
-tags: []
+tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-365-defender.png')} alt="microsoft-365-defender" width="100"/>
 
-***Version: 1.4  
-Updated: Jun 28, 2023***
+***Version: 1.5  
+Updated: Mar 4, 2024***
 
 Microsoft 365 Defender is a part of Microsoft’s XDR solution which can automatically analyze threat data across domains, building a complete picture of each attack in a single dashboard. Microsoft 365 Defender integration allows us to query and update incident related data from the solution itself.
 
@@ -32,7 +33,8 @@ EDR
 * April 8, 2021 - First upload
 * May 4, 2021 - Actions updated: Accept multiple DateTime formats
 * January 30, 2023 - Updated Daemon
-	+ Microsoft 365 Defender Incidents Daemon: Duplicate results removed
+    + Microsoft 365 Defender Incidents Daemon: Duplicate results removed
 * May 23, 2023 (v1.3)
-	+ Updated integration: (Updated the integration Fields with Environmental Variables and improved error handling)
+    + Updated integration: (Updated the integration Fields with Environmental Variables and improved error handling)
 * June 28, 2023 (v1.4) - Removed leading/trailing spaces
+* March 4, 2024 (v1.5) - Updated code for compatibility with Python 3.12

@@ -21,5 +21,5 @@ We've upgraded kube-prometheus-stack, which results in some changes to metrics, 
 
 ## Tracing enabled by default
 
-Trace collection is now enabled by default. If you don't have instrumented applications in your cluster, or don't want to collect traces,
+Trace collection is now enabled by default. If you do not have instrumented applications in your cluster, or do not want to collect traces,
 you'll need to disable this feature manually.

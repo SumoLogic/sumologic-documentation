@@ -61,7 +61,7 @@ To configure a JumpCloud Directory Insights source:
 
 | Field | Value | Description |
 | :--- | :--- | :--- |
-| `_siemParser` | `/Parsers/Sumo/JumpCloud/JumpCloud Directory Insights` | Set when **Forward To SIEM** is checked. |
+| `_siemParser` | `/Parsers/System/JumpCloud/JumpCloud Directory Insights` | Set when **Forward To SIEM** is checked. |
 
 ## JSON schema
 

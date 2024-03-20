@@ -11,21 +11,29 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Data Volume App provides you with a summary and detailed views of your account's data usage volume by data type, tier, category, collector, source name, and hosts via predefined searches and dashboards.
 
-Before you can install and use the Data Volume app, an administrator must first enable the feature. For more information, see Enable and Manage the Data Volume Index.
+Before you can install and use the Data Volume app, an administrator must first enable the feature. For more information, see [Enable the Data Volume Index](#enable-the-data-volume-index) below.
 
 The Data Volume Index gathers volume data as soon as it is enabled. It will not gather data from legacy versions or backfill data.
 
 
-## Installing the Data Volume App
+## Enable the Data Volume Index
 
-To install the app:
+The Data Volume Index must be enabled by an administrator.
 
-1. From **App Catalog**, search for the **Data Volume** app.
-2. Click **Data Volume**.
-3. Select the version and click **Add to Library.** This opens a new window. Within the window, click on **Advanced** and choose a location to install the app.<br/><img src={useBaseUrl('img/integrations/sumo-apps/app.png')} alt="Data volume" width="350"/>
-4. Choose a location for Data Volume in your **Personal** folder.
-5. Click **Add to Library**. A dialog will confirm the app is installed successfully.
+To enable the Data Volume Index:
 
+1. Go to the **Administration** > **Account** > **Data Management** page.
+1. Under **Data Volume**, select **Enable**.
+
+<img src={useBaseUrl('img/ingestion-volume/data_volume_check_box.png')} alt="Enable Data Volume Index" style={{border: '1px solid gray'}} width="800"/>
+
+A message confirms that the feature is enabled.
+
+## Installing the Data Volume app
+
+import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
+
+<AppInstallNoDataSourceV1/>
 
 ## Set up Burndown Rates for Consumables
 

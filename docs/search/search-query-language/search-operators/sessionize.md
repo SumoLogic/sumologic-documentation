@@ -15,7 +15,7 @@ For example, let's say we have the value of a userRequestId, which entered a dis
 Each system generated log messages, so we know that at some point a failure occurred. We know the userRequestID value from the log files from the Service machine, and we know the serviceSessionId, streamRequestId, and configSessionId. Using **sessionize**, we can weave together these disparate logs to identify where the failure occurred.
 
 :::note
-Queries using `sessionize` can't be added to a Dashboard.
+Queries using `sessionize` cannot be added to a Dashboard.
 :::
 
 ## Syntax

@@ -378,22 +378,27 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 #### Create/Update Field Extraction Rule(s) for RDS CloudWatch logs
 
-```
-Rule Name: AwsObservabilityGenericCloudWatchLogsFER
-Applied at: Ingest Time
-Scope (Specific Data): account=* region=* _sourceHost=/aws/*
-```
-
-**Parse Expression**:
 
 ```sql
-| "unknown" as namespace
-| if (_sourceHost matches "/aws/lambda/*", "aws/lambda", namespace) as namespace
-| if (_sourceHost matches "/aws/rds/*", "aws/rds", namespace) as namespace
-| if (_sourceHost matches "/aws/ecs/containerinsights/*", "aws/ecs", namespace) as namespace
-| if (_sourceHost matches "/aws/kinesisfirehose/*", "aws/firehose", namespace) as namespace
-| parse field=_sourceHost "/aws/rds/*/*/" as f1, dbidentifier
-| fields namespace, dbidentifier
+Rule Name: AwsObservabilityGenericCloudWatchLogsFER
+Applied at: Ingest Time
+Scope (Specific Data):
+account=* region=* (_sourceHost=/aws/* or _sourceHost=API*Gateway*Execution*Logs*)
+Parse Expression:
+if (isEmpty(namespace),"unknown",namespace) as namespace 
+| if (_sourceHost matches "/aws/lambda/*", "aws/lambda", namespace) as namespace 
+| if (_sourceHost matches "/aws/rds/*", "aws/rds", namespace) as namespace 
+| if (_sourceHost matches "/aws/ecs/containerinsights/*", "aws/ecs", namespace) as namespace 
+| if (_sourceHost matches "/aws/kinesisfirehose/*", "aws/firehose", namespace) as namespace 
+| if (_sourceHost matches "/aws/apigateway/*", "aws/apigateway", namespace) as namespace 
+| if (_sourceHost matches "API-Gateway-Execution-Logs*", "aws/apigateway", namespace) as namespace 
+| parse field=_sourceHost "/aws/lambda/*" as functionname nodrop | tolowercase(functionname) as functionname 
+| parse field=_sourceHost "/aws/rds/*/*/" as f1, dbidentifier nodrop 
+| parse field=_sourceHost "/aws/apigateway/*/*" as apiid, stage nodrop
+| parse field=_sourceHost "API-Gateway-Execution-Logs_*/*" as apiid, stage nodrop
+| apiid as apiName
+| tolowercase(dbidentifier) as dbidentifier 
+| fields namespace, functionname, dbidentifier, apiid, apiName
 ```
 
 ### Metric Rules
