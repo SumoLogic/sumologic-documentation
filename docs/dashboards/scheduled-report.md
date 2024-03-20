@@ -26,7 +26,7 @@ To schedule a dashboard email report, do the following:
 1. Enter your preferences in the **Schedule Report** popup.<br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/scheduled_report.png')} alt="scheduled_report" style={{border: '1px solid gray'}} width="600"/>
    * **Format.** Choose PDF or PNG.
    * **Frequency.** Choose Daily, Weekly, or Monthly.
-   * **Every:** The options depend on the Frequency you selected.
+   * **Every.** The options depend on the Frequency you selected.
       * **Daily.** Choose Every day, Weekdays, or Weekends.
       * **Weekly.** Choose a particular day of the week.
       * **Monthly.** Choose which day of which week of the month you want the report to be sent.
@@ -58,4 +58,4 @@ To cancel a Scheduled Report:
 
 1. Navigate to the dashboard, then click the kebab menu and select **Edit Reports**.
 1. Click the kebab menu and select **Delete** against the required report.<br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/delete_scheduled_report_1.png')} alt="delete_scheduled_report" style={{border: '1px solid gray'}} width="600"/>
-1. Click **Delete**. <br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/delete_scheduled_report.png')} alt="delete_scheduled_report" style={{border: '1px solid gray'}} width="500"/>
+1. In the popup window, click **Delete**. <br/><img src={useBaseUrl('img/dashboards-new/scheduled_reports/delete_scheduled_report.png')} alt="delete_scheduled_report" style={{border: '1px solid gray'}} width="500"/>
