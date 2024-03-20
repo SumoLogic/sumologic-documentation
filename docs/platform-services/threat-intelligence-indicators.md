@@ -70,8 +70,8 @@ To access the **Threat Intelligence** tab, go to **Manage Data > Logs > Threat I
 1. **Indicators**. The number of threat intelligence indicators included in the file. 
 
 :::note
-* The "CrowdStrike provided by Sumo Logic (s_CrowdStrike)" source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name.
-* The default storage limit is 5 million total indicators (not including any indicators provided by Sumo Logic such as the s_CrowdStrike source).
+* The "CrowdStrike provided by Sumo Logic (s_CrowdStrike)" source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name. For more information, see [CrowdStrike source](#crowdstrike-source).
+The default storage limit is 5 million total indicators (not including any indicators provided by Sumo Logic such as the s_CrowdStrike source).
 :::
 
 ### Add indicators in the Threat Intelligence tab
@@ -537,3 +537,46 @@ The following attributes are required:
           * `suricata`. Specifies the [SURICATA](https://suricata-ids.org/) language.
           * `yara`. Specifies the [YARA](https://virustotal.github.io/yara/) language.
        * **valid_from** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
+
+## CrowdStrike source
+
+Sumo Logic provides a CrowdStrike threat intelligence indicator source out-of-the-box. You can see it in the [Threat Intelligence tab](#threat-intelligence-tab), as "CrowdStrike provided by Sumo Logic (s_CrowdStrike)". This source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name.
+
+### CrowdStrike mapping
+
+In the "s_CrowdStrike" source, the CrowdStrike schema is mapped to normalized values to provide ease of interoperability with the schema from other threat intelligence sources:
+
+| CrowdStrike schema | Normalized schema in "s_CrowdStrike" source |
+|:--|:--|
+| `actor` | `actors` |
+| `id` | `id` |
+| `indicator` | `indicator` |
+| `kill_chain_phases` | `killChain` |
+| `labels.ThreatType` | `threatType` |
+| `last_updated` | `updated` |
+| `malicious_confidence` | `confidence` (normalized to the 0-100 scale) |
+| `published_date` | `validFrom` and `imported` |
+| `type` | `type` |
+
+(All other fields will be kept in the `fields{}` object.)
+
+The CrowdStrike `type` object is mapped to the following normalized type values:
+
+| CrowdStrike type | Normalized type in "s_CrowdStrike" source |
+|:--|:--|
+| `binary_string` | `artifact:payload_bin` | 
+| `bitcoin_address` | `url:value` | 
+| `ip_address` | `ipv4-addr:value` / `ipv6-addr:value` |
+| `domain` |  `domain-name:value` | 
+| `email_address` | `email-add:value` | 
+| `file_path` | `file:name` | 
+| `file_name` | `file:name` | 
+| `hash_md5` | `file:hashes.'MD5'` | 
+| `hash_sha1` | `file:hashes.'SHA-1'` | 
+| `hash_sha256` | `file:hashes.'SHA-256'` | 
+| `mutex_name` | `mutex:name` | 
+| `service_name` | `process:name` | 
+| `url` | `url:value` | 
+| `username` | `user-account:user_id` | 
+| `user_agent` | `http-request-ext:request_header.'User-Agent'` | 
+| `x509_subject` | `x509-certificate:serial_number` | 
