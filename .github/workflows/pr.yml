@@ -40,3 +40,11 @@ jobs:
           skip: "*.svg,*.js,*.map,*.css,*.scss"
           ignore_words_list: "aks,atleast,cros,ddress,fiel,ist,nd,ot,pullrequest,ser,shttp,wast,fo,seldomly,delt,cruzer,plack,secur,te"
           path: docs
+    fail-for-do-not-merge:
+      if: contains(github.event.pull_request.labels.*.name, 'do-not-merge')
+      runs-on: ubuntu-latest
+      steps:
+        - name: Fail if PR is labeled with do not merge
+          run: |
+            echo "This PR cannot be merged due to the 'do not merge' label."
+            exit 1
