@@ -23,12 +23,16 @@ When [creating or modifying a monitor](/docs/alerts/monitors/create-monitor/#ste
 In addition, you can also see the Model training scan details for the anomaly detection method.<br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/monitors_2.png')} alt="monitors_2" style={{border:'1px solid gray'}} width="450" /> 
 
 :::note
-You can view the scan estimates data only if you select the trigger type.
+You can view the scan estimates data once you select the trigger type.
 :::
 
 ## Scheduled searches
 
 As Sumo Logic charges for each data scan, scheduling searches can help mitigate costs. When [creating or modifying a scheduled search](/docs/alerts/scheduled-searches/schedule-search/#schedule-a-search), you can view the Average scan, Daily scan, and Yearly scanned data information based on the selected run frequency by clicking the meter icon <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/meter-icon.png')} alt="meter-icon" width="25" /> on top of the **Schedule this search** popup. <br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/scan-schedules-search.png')} alt="scan-schedules-search" style={{border:'1px solid gray'}} width="450" />
+
+:::note
+Daily scan data will not be available if scheduled search runs only on selected days and not daily.
+:::
 
 ## Best practices
 
