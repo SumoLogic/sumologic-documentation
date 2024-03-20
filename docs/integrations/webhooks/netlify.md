@@ -145,7 +145,7 @@ Follow the below steps to configure the Netlify webhook.
 2. Go to **Sites**, and select a site for which you want to send notifications to Sumo Logic.
 3. Go to **Site configuration**, and select **Build & deploy**.
 4. Go to **Deploy notifications**.
-5. Click **Add notification**, and select **Outgoing webhook**, the webhook form appears.
+5. Click **Add notification** and select **HTTP Post Request**. The webhook form appears.
 6. Enter webhook form data as follows:
     - **Event to listen for**. Select the type of events that will cause this webhook to execute.
     - **URL to notify**. Enter the Sumo Logic HTTP endpoint URL (source address) created above.
@@ -156,7 +156,7 @@ Follow the below steps to configure the Netlify webhook.
 ```
 
 :::info
-- For detailed information about webhook creation, refer to the [Netlify Documentation](https://docs.netlify.com/site-deploys/notifications/#outgoing-webhooks).
+- For detailed information about webhook creation, refer to the [Netlify Documentation](https://docs.netlify.com/site-deploys/notifications/#http-post-request).
 - For support, [contact Netlify](https://www.netlify.com/support/).
 :::
 
