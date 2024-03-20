@@ -93,10 +93,10 @@ The following table shows the capabilities included with Sumo Logic’s FedRAMP 
 | Collection - Cloud APIs | [1Password](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/1password-source/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)<br/>*Available upon request within 5 business days.*
 | Dashboards |  [Dashboard reports](/docs/dashboards/scheduled-report/) |![check](/img/reuse/check.png)|![x](/img/reuse/x.png) |
 | Manage Data - Logs | [Data forwarding](/docs/manage/data-forwarding/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
-| Manage Data - Logs | [Data tiering](/docs/manage/partitions-data-tiers/data-tiers/) |![check](/img/reuse/check.png)<br/>*Only included with Enterprise Suite License.* |![check](/img/reuse/check.png)<br/>*Only included with Enterprise Suite License.* |
+| Manage Data - Logs | [Data tiering](/docs/manage/partitions/data-tiers/) |![check](/img/reuse/check.png)<br/>*Only included with Enterprise Suite License.* |![check](/img/reuse/check.png)<br/>*Only included with Enterprise Suite License.* |
 | Manage Data - Logs | [Fields](/docs/manage/fields/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Manage Data - Logs | [Field extraction rules](/docs/manage/field-extractions/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
-| Manage Data - Logs | [Partitions](/docs/manage/partitions-data-tiers/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
+| Manage Data - Logs | [Partitions](/docs/manage/partitions/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Manage Data - Logs | [Scheduled searches](/docs/alerts/scheduled-searches/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Manage Data - Logs | [Scheduled views](/docs/manage/scheduled-views/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|
 | Manage Data - Metrics | [Logs-to-Metrics](/docs/metrics/logs-to-metrics/) |![check](/img/reuse/check.png)|![check](/img/reuse/check.png)|

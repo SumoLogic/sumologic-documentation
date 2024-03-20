@@ -6,21 +6,23 @@ description: Answers to FAQ about Data Tiers.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page answers frequently asked questions about Data Tiers. For information about each data tier and selecting the right one for your use case, see [Data Tiers](data-tiers.md).
+This page answers frequently asked questions about Data Tiers. For information about each data tier and selecting the right one for your use case, see [Data Tiers](/docs/manage/partitions/data-tiers/).
 
 ## In which Sumo subscriptions are Data Tiers available? 
 
 The Continuous Data Tier is available in all Sumo subscriptions. Frequent and Infrequent are available only if you have Sumo Logic Enterprise Suite. 
 
-## What is Flex Pricing?
-
-import FlexPricing from '../../reuse/flex-pricing.md';
-
-<FlexPricing/>
-
 ## Is the Infrequent Tier available to existing Cloud Flex customers?
 
-No. Infrequent Tier is only available to customers who have [Sumo Logic Credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts) packaging.  
+No. Infrequent Tier is only available to customers who have [Sumo Logic Credits](/docs/manage/manage-subscription/sumo-logic-credits-accounts) packaging. 
+
+## How to choose between Frequent and Infrequent ?
+
+Choosing between Frequent and Infrequent for a data set depends on how frequently you need to access the data. If you expect to search the data often, the Frequent Tier, with its predictable upfront pricing model, is appropriate. Data that you expect to access less often is an ideal candidate for the Infrequent Tier, which offers low ingest cost, and competitive on-demand search pricing.
+
+For example, for a large development team with hundreds of developers, it is better to send development and test logs to the Frequent Tier if your developers are going to access it often during development. 
+
+In contrast, debug or other verbose log sources that are only used to troubleshoot very specific issues that occur infrequently, for example, only a couple of times a week, are better off in the Infrequent Tier to keep the cost of ownership low.   
 
 ## Can I restrict access to Infrequent or Frequent data to select users?
 

@@ -36,7 +36,7 @@ Compressed files are decompressed before they are ingested, so they are ingested
 Part of managing spikes in activity is properly slowing the rate of ingestion while the demand is at its peak, known as throttling. (This section pertains to logs. For metrics, see [Metrics Throttling](../../metrics/manage-metric-volume/metric-throttling.md)).
 
 :::note
-All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions-data-tiers).
+All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions/data-tiers).
 :::
 
 Watch this micro lesson to learn more about throttling.

@@ -86,7 +86,7 @@ The **Account Overview** tab of the **Account** page for Credits displays infor
 This page is strictly access controlled. You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
 :::
 
-[Data Tiers](/docs/manage/partitions-data-tiers) are available as part of the Enterprise Suite Package Account, and provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous, Frequent, and Infrequent Tiers, you can segment your data by use case and analytics needs, thus optimizing your analytics investments.
+[Data Tiers](/docs/manage/partitions/data-tiers) are available as part of the Enterprise Suite Package Account, and provide economic flexibility by aligning your analytics to the value of your data. By using the Continuous, Frequent, and Infrequent Tiers, you can segment your data by use case and analytics needs, thus optimizing your analytics investments.
 
 :::note
 For more information on Data Tiers, contact your Sumo Logic account manager.
