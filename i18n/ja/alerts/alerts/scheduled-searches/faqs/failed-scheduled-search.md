@@ -13,7 +13,7 @@ Failures could be related to the Scheduled Search query. Check the following pos
 * In queries that use [lookup](/docs/search/search-query-language/search-operators/lookup-classic) files, the lookup file could be empty. This would cause the Scheduled Search to fail because Sumo Logic downloads the lookup file prior to executing the query. 
 * Other query-specific factors could be at play. To test if the failure can be reproduced, run the Scheduled Search query. 
 * To make sure your query is written correctly, see [Write Efficient Search Queries](/docs/search/get-started-with-search/build-search). 
-* You may be able to optimize your query performance using [Partitions](/docs/manage/partitions-data-tiers) or [Scheduled Views](/docs/manage/scheduled-views).  
+* You may be able to optimize your query performance using [Partitions](/docs/manage/partitions) or [Scheduled Views](/docs/manage/scheduled-views).  
 * Taking too long to complete. See [How to Prevent Your Scheduled Search from Timing Out](prevent-scheduled-search-timing-out.md). 
 
 ## Sumo Logic Backend Issues

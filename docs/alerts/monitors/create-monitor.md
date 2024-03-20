@@ -12,11 +12,9 @@ This topic shows you how to create a monitor.
 <details>
 <summary>Use the <strong>New Monitor</strong> dialog to create a monitor (expand to view)</summary>
 
-<!-- At "smart alerts" GA, add a screenshot that shows the "Anomaly" detection method to the right of "Static" and "Outlier". -->
+<img src={useBaseUrl('img/monitors/new-monitor-dialog.png')} alt="New Monitor dialog" style={{border: '1px solid gray'}} width="800"/>
 
- <img src={useBaseUrl('img/monitors/new-monitor-dialog.png')} alt="New Monitor dialog" style={{border: '1px solid gray'}} width="800"/>
-
- </details>
+</details>
 
 
 ## Open the New Monitor window
@@ -62,21 +60,20 @@ Note that the same threshold translating functionality supports to [Opening Aler
 
 The first step when you create a new monitor is to set the trigger conditions.
 
-<!-- At "smart alerts" GA, add a screenshot that shows the "Anomaly" detection method to the right of "Static" and "Outlier". -->
-
 <img src={useBaseUrl('img/monitors/new-monitor-set-trigger-conditions.png')} alt="Set trigger conditions" style={{border: '1px solid gray'}} width="800"/>
 
 ### Select monitor type and detection method
 
-1. Select a **Monitor Type**. <br/><img src={useBaseUrl('img/monitors/trigger-conditions-monitor.png')} alt="icon" width="300"/>
-   * **Logs**. Creates alerts based on a [log search](/docs/search/).
+1. Select a **Monitor Type**: <br/><img src={useBaseUrl('img/monitors/trigger-conditions-monitor.png')} alt="Monitor types" width="250"/>
+   * **Logs**. Creates alerts based on a [log search](/docs/search/). 
    * **Metrics**. Creates alerts based on [metrics queries](/docs/metrics/metrics-queries/).
    * **SLO**. Creates alerts based on a [Service Level Objectives (SLO)](/docs/observability/reliability-management-slo/).
-1. Select a **Detection Method**. <br/><img src={useBaseUrl('img/monitors/monitor-detection-methods.png')} alt="icon" width="310"/> <!-- At "smart alerts" GA, add a screenshot that shows the "Anomaly" detection method to the right of "Static" and "Outlier". -->
+1. Select a **Detection Method**. The methods available depend on whether you choose **Logs** or **Metrics** as the monitor type (there is no detection type for **SLO**): <br/><img src={useBaseUrl('img/monitors/monitor-detection-methods-for-logs.png')} alt="Logs detection methods" width="425"/> 
    * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.
-   * **Outlier** lets you detect an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that do not have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. 
-<!--    * **Anomaly** lets you uncover unusual behavior identified by anomaly detection. (The **Anomaly** method applies only to the **Logs** monitor type.) Sumo Logic applies advanced analytics techniques, including machine learning and behavioral analytics, to detect anomalies and identify suspicious patterns of activity. It establishes baselines for normal behavior so you can receive alerts when deviations or unusual activities are detected.
--->
+   * **Anomaly** lets you uncover unusual behavior identified by anomaly detection. Sumo Logic applies machine learning techniques to detect anomalies and identify suspicious patterns of activity. It establishes baselines for normal behavior so you can receive alerts when deviations or unusual activities are detected. To automatically respond when an anomaly alert is triggered, see [Create an anomaly monitor that runs an automated playbook](/docs/alerts/monitors/use-playbooks-with-monitors/#create-an-anomaly-monitor-that-runs-an-automated-playbook).
+1. If you chose the **Anomaly** detection method, choose the detector type: <br/><img src={useBaseUrl('img/monitors/monitor-detector-types-for-anamoly.png')} alt="Detector types" width="600"/>
+   * **Outlier** lets you detect an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. 
+   * **Cluster** allows you to detect clusters of key indicators, which can reveal grouped patterns of suspicious behavior.
 
 ### Provide a query (logs and metrics only)
 
@@ -99,9 +96,7 @@ Specify the **Trigger Type**. A Monitor can have one critical, warning, and mis
 
 #### Logs Trigger Types
 
-<!-- At "smart alerts" GA, add a screenshot that shows the "Anomaly" detection method to the right of "Static" and "Outlier". -->
-
-<img src={useBaseUrl('img/monitors/logs-monitors.png')} alt="icon" width="800"/>
+<img src={useBaseUrl('img/monitors/logs-monitors.png')} alt="icon" style={{border: '1px solid gray'}}  width="600"/> 
 
 Trigger alerts on:<br/>![trigger alerts on field.png](/img/monitors/trigger-alerts-field.png)
 
@@ -149,6 +144,17 @@ For Metrics monitors, you can choose to recover based on a single data point bel
 
 ![monitors.png](/img/monitors/metricsmonitor.png)
 
+##### Anomaly detection method
+
+**Logs Trigger Type: Critical** 
+
+ <img src={useBaseUrl('img/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid gray'}} width="800" />
+
+| Parameter | Description |
+|:--|:--|
+| Detection Window | The duration of time to watch for anomalies, from 5 minutes to 24 hours.  |
+| Detector Sensitivity | Tunes the number of anomalous data points detected per day compared to the predicted baseline for the detection window. High sensitivity will result in more alerts. |
+| Minimum Anomaly Count | The minimum number of anomalies to detect during the detection window before triggering an alert. For example, if the Detection Window is set to 5 minutes, and the Minimum Anomaly Count is set to 1, then an alert is triggered if 1 anomaly appears within a 5 minute timeframe. |
 
 ##### Outlier detection method
 
@@ -184,21 +190,15 @@ Recover
 
     `Recover automatically when data becomes available for the affected time span.`
 
-<!-- At "smart alerts" GA, add the following:
-
-##### Anomaly detection method
-
-**Logs Trigger Type: Critical** (for **Anomaly** detection type only)
+**Logs Trigger Type: Critical** 
 
  <img src={useBaseUrl('img/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid gray'}} width="800" />
 
 | Parameter | Description |
 |:--|:--|
-| Detection Window | The duration of time to watch for anomalies. Select either 5 minutes, 10 minutes, 15 minutes, 30 minutes, 1 hour, 3 hours, 6 hours, 12 hours, or 24 hours.  |
-| Detector Sensitivity | Tunes the number of anomalous data points detected per day compared to the predicted baseline for the detection window. High sensitivity will result in more alerts and vice versa. |
+| Detection Window | The duration of time to watch for anomalies, from 5 minutes to 24 hours.  |
+| Detector Sensitivity | Tunes the number of anomalous data points detected per day compared to the predicted baseline for the detection window. High sensitivity will result in more alerts. |
 | Minimum Anomaly Count | The minimum number of anomalies to detect during the detection window before triggering an alert. For example, if the Detection Window is set to 5 minutes, and the Minimum Anomaly Count is set to 1, then an alert is triggered if 1 anomaly appears within a 5 minute timeframe. |
-
--->
 
 </details>
 
@@ -329,11 +329,22 @@ To add notifications, click the **Add Notification** button. You can add more 
    * If your connection type is Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, or a generic webhook, the **Recovery** checkbox enables an automatic resolution process that updates the connection when an alert has recovered within Sumo Logic. Support for other connection types is coming soon.
    * **Add Notifications** to add additional notification channels as needed. You can configure different notifications for each trigger type, critical, warning, and missing data.
 
-## Step 4: Monitor details
+## Step 4: Playbook (optional)
 
-The fourth step when you create a new monitor is to configure details.
+The fourth step when you create a new monitor is to add playbooks.
 
-<!-- At "smart alerts" GA, add a screenshot that shows the new playbook UI elements (radio buttons "Insert custom playbook" and "Select automated playbook", and the "Manage Playbooks" button). -->
+<img src={useBaseUrl('img/monitors/new-monitor-playbook.png')} alt="Playbook" style={{border: '1px solid gray'}} width="800"/>
+
+In this step, you can add a **Playbook** to run in response to an alert. 
+
+1. **Text Playbook**. Enter instructions for how to handle the alerts resulting from the monitor. This allows admins to codify tribal knowledge for an on-call so that they know what to do upon receiving an alert. Markdown is supported. For an example, see [Alert details](/docs/alerts/monitors/alert-response/#alert-details).
+1. **Automated Playbooks**. Select an existing playbook from the Automation Service to run when an alert is fired. For more information, see [Automated Playbooks in Monitors](/docs/alerts/monitors/use-playbooks-with-monitors/).
+1. **Add Playbook**. If desired, you can add more automated playbooks to run sequentially.
+1. Click **Manage Playbooks** to manage the automated playbooks in the Automation Service. 
+
+## Step 5: Monitor details
+
+The fifth step when you create a new monitor is to configure monitor details.
 
 <img src={useBaseUrl('img/monitors/new-monitor-details.png')} alt="
 Monitor details" style={{border: '1px solid gray'}} width="800"/>
@@ -341,12 +352,7 @@ Monitor details" style={{border: '1px solid gray'}} width="800"/>
 1. Enter a **Monitor Name** and the **Location** where you want to save it.
 1. (Optional) Add one or more **Tags**. [Learn more here](/docs/alerts/monitors/settings#tags).
 1. (Optional) Add a **Description**.
-1. (Optional) Create or select an existing **Playbook**, which allows admins to codify tribal knowledge for an on-call so that they know what to do upon receiving an alert. Markdown is supported.
-<!--  At "smart alerts" GA, add the following:
-<br/>Select one of the following:
-   * **Insert custom playbook**. Input your own playbook to run when the alert is fired.
-   * **Select automated playbook**. Select an existing playbook from the Automation Service to run when an alert is fired. Click **Manage Playbooks** button to manage the playbooks. See [Use Playbooks with Monitors](/docs/alerts/monitors/use-playbooks-with-monitors) for more information.
--->
+1. When you're done creating the monitor, click **Save**. 
 
 ## Other Configurations
 

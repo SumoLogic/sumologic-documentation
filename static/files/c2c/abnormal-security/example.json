@@ -5,7 +5,11 @@
             "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZABC",
             "accessToken": "ABCDEFGH",
             "description": "ABCDEFGHIJKLMNOPQRSTUV",
-            "category": "ABCDEFGHIJKLMNOPQRSTUVWX"
+            "category": "ABCDEFGHIJKLMNOPQRSTUVWX",
+            "dataCollection": [
+                "cases",
+	        "threats"
+            ]
         },
         "schemaRef": {
             "type": "Abnormal Security"

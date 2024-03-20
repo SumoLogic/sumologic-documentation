@@ -1,7 +1,7 @@
 ---
 id: automation-service-bridge
 title: Bridge for the Automation Service
-sidebar_label: Bridge
+sidebar_label: Automation Bridge
 description: Learn how to install a bridge for the Automation Service to allow running custom actions or integrations in an on-premise environment.   
 ---
 
