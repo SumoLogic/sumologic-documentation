@@ -5,7 +5,7 @@ sidebar_label: Filter and Shape Output Data
 description: Learn how to create and apply custom rules to shape tracing data.
 ---
 
-You may ask yourself, "What if I don't want to send all my trace data to Sumo Logic?". With our OpenTelemetry collector, you can define custom rules to filter and extract data based on your selection.
+You may ask yourself, "What if I do not want to send all my trace data to Sumo Logic?". With our OpenTelemetry collector, you can define custom rules to filter and extract data based on your selection.
 
 Our OpenTelemetry collector is uniquely capable of [shaping trace data at output](https://github.com/SumoLogic/opentelemetry-collector-contrib/tree/main/processor/cascadingfilterprocessor). You can define rules in a cascading fashion, assign different volume pool sizes to each rule, and give them different priorities.
 

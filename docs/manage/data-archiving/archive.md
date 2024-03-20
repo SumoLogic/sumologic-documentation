@@ -6,7 +6,7 @@ description: Send data to an Archive that you can ingest from later.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Archive allows you to forward log data from Installed Collectors to AWS S3 buckets to collect at a later time. If you have logs that you don't need to search immediately you can archive them for later use. You can ingest from your Archive on-demand with five-minute granularity.
+Archive allows you to forward log data from Installed Collectors to AWS S3 buckets to collect at a later time. If you have logs that you do not need to search immediately you can archive them for later use. You can ingest from your Archive on-demand with five-minute granularity.
 
 :::important
 Do not change the name and location of the archived files in your S3 bucket, otherwise ingesting them later will not work properly.
@@ -65,7 +65,7 @@ You can use JSON to configure a processing rule, use the **Forward** filterTy
 1. Scroll down to the **Processing Rules** section and click the arrow to expand the section.
 1. Click **Add Rule**.
 1. Type a **Name** for this rule. (Names have a maximum of 32 characters.)
-1. For **Filter**, type a regular expression that defines the messages you want to filter. The rule must match the whole message. For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with **(?s).\* **such as: `(?s).*matching text(?s).*` Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax)
+1. For **Filter**, type a regular expression that defines the messages you want to filter. The rule must match the whole message. For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with `(?s)` such as: `(?s).*matching text(?s).*` Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax)
 1. Select **Archive messages that match** as the rule type. This option is visible only if you have defined at least one [**AWS Archive bucket** destination](#create-an-aws-archive-destination), as described in the previous section. 
 1. Select the Destination from the dropdown menu.  <br/><img src={useBaseUrl('img/archive/archive-rule.png')} alt="Archive rule" width="450"/>
 1. (Optional) Enter a **Prefix** that matches the location to store data in the S3 bucket. The prefix has the following requirements:
@@ -119,7 +119,7 @@ You can ingest a specific time range of data from your Archive at any time wit
 * Filenames or object key names must be in either of the following formats:
     * Sumo Logic [Archive format](#archive-format)
     * `prefix/dt=YYYYMMDD/hour=HH/fileName.json.gz`
-* If the logs from Archive don't have timestamps they are only searchable by receipt time.
+* If the logs from Archive do not have timestamps they are only searchable by receipt time.
 * If a Field is tagged to an archived log message and the ingesting Collector or Source has a different value for the Field, the field values already tagged to the archived log take precedence.
 * If the Collector or Source that Archived the data is deleted the ingesting Collector and Source metadata Fields are tagged to your data.
 * You can create ingestion jobs for the same time range, however, jobs maintain a 10 day history of ingested data and any data resubmitted for ingestion within 10 days of its last ingestion will be automatically filtered so it's not ingested.
@@ -143,7 +143,7 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
 1. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 1. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS.
 1. For **Path Expression**, enter the wildcard pattern that matches the Archive files you'd like to collect. The pattern:
-    * can use **one **wildcard (\*).
+    * can use one wildcard (\*).
     * can specify a [prefix](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys) so only certain files from your bucket are ingested. For example, if your filename is `prefix/dt=<date>/hour=<hour>/minute=<minute>/<collectorId>/<sourceId>/v1/<fileName>.txt.gzip`, you could use `prefix*` to only ingest from those matching files.
     * can **NOT** use a leading forward slash.
     * can **NOT** have the S3 bucket name.
@@ -157,7 +157,7 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 1. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step Grant Sumo Logic access to an AWS Product.
-    * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role.   
+    * For **Role-based access**, enter the Role ARN that was provided by AWS after creating the role.   
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 1. Create any Processing Rules you'd like for the AWS Source.
 1. When you are finished configuring the Source, click **Save**.

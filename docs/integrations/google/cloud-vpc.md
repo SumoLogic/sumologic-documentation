@@ -11,13 +11,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Google Cloud Platform (GCP) [Virtual Private Cloud](https://cloud.google.com/vpc/docs/)(VPC) provides networking functionality to [Compute Engine](https://cloud.google.com/compute/docs/) virtual machine (VM) instances, [Kubernetes Engine](https://cloud.google.com/kubernetes-engine/docs/) containers and [App Engine Flex](https://cloud.google.com/appengine/docs/flexible/). The Sumo Logic App for Google Cloud VPC provides visibility into the activities, traffic, and VPC flow in your GCP. The preconfigured dashboards provide you details on the VPC flows, source and destination IP addresses, ports, protocols, and messages.
 
-## Log Types
+## Log types
 
 The App uses:
 * **Compute Engine VPC Flow Logs**. These logs provide information from Compute Engine ​VMs ​for ​network ​operations ​such ​as ​Network ​monitoring, ​forensics, ​real-time security ​analysis ​and ​expense ​optimization.
 
 
-### Sample Log Message  
+### Sample log messages  
 
 ```json
 {
@@ -81,7 +81,7 @@ The App uses:
 }
 ```
 
-### Sample Query
+### Sample queries
 
 ```bash title="Average latency (ms) by subnet ID"
 _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
@@ -139,17 +139,17 @@ However, this is not recommended since you cannot define specific Source Categor
 This Source will be a Google Pub/Sub-only Source, which means that it will only be usable for log data formatted as data coming from Google Pub/Sub.
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
-2. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+2. Select an existing Hosted Collector upon which to add the Source. If you do not already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 3. Click **Add Source** next to the Hosted Collector and click **Google Cloud Platform**.
 4. Enter a **Name** to display for the Source. A **Description** is optional.<br/><img src={useBaseUrl('img/integrations/google/google_cloud_platform_2022.png')} alt="Google integrations" />
 5. **Source Host** (Optional). The Source Host value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called _sourceHost. Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 128 characters.
 6. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices). Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 1,024 characters.
-7. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
+7. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) If an orange triangle with an exclamation point is shown, use the option to automatically add or enable the nonexistent fields before proceeding to the next step. The orange icon indicates that the field doesn't exist, or is disabled, in the Fields table schema. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
   * ![green check circle.png](/img/reuse/green-check-circle.png) If a green circle with a checkmark is shown, the field exists and is already enabled in the Fields table schema. Proceed to the next step.
 8. **Advanced Options for Logs**.<br/><img src={useBaseUrl('img/integrations/google/GCP-advanced-options-Jan-22.png')} alt="Google integrations" />
   * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-  * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+  * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
 9. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/send-data/collection/processing-rules/create-processing-rule).
 10. When you are finished configuring the Source, click **Save**.
@@ -161,7 +161,7 @@ You need to configure a Pub/Sub Topic in GCP and add a subscription to the Sourc
 
 1. Create a Pub/Sub Topic in GCP. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
 2. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
-   * Use a **Push Delivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the** Collection** page in Sumo Logic and click **Show URL**.
+   * Use a **Push Delivery Method** to the Sumo Logic Source URL. To determine the URL, navigate to the Source on the **Collection** page in Sumo Logic and click **Show URL**.
 
 
 ### Limitations
@@ -225,19 +225,19 @@ See an overview of the top 10 IPs, ports, and VMs; along with trends in traffic 
 
 **Top 10 Internal Destination Ports by VPC Flows**. Shows the top 10 internal destination ports by VPC flows in the last 24 hours on a horizontal bar graph.
 
-**Top 10 Source VMs by Traffic (MiB). **Shows the top 10 source VMs by Traffic (MiB) in the last 24 hours on a horizontal bar graph.
+**Top 10 Source VMs by Traffic (MiB).** Shows the top 10 source VMs by Traffic (MiB) in the last 24 hours on a horizontal bar graph.
 
-**Top 10 Destination VMs by Traffic (MiB). **Shows the top 10 Destination VMs by Traffic (MiB) in the last 24 hours on a horizontal bar graph.
+**Top 10 Destination VMs by Traffic (MiB).** Shows the top 10 Destination VMs by Traffic (MiB) in the last 24 hours on a horizontal bar graph.
 
-**Traffic (MiB) by Subnetwork. **Shows trends in traffic in the last 24 hours by Subnetwork on a line graph with two lines.
+**Traffic (MiB) by Subnetwork.** Shows trends in traffic in the last 24 hours by Subnetwork on a line graph with two lines.
 
-**Traffic (MiB) by Project. **Shows trends in traffic in the last 24 hours by Project on a line graph.
+**Traffic (MiB) by Project.** Shows trends in traffic in the last 24 hours by Project on a line graph.
 
-**Traffic (MiB) by VPC. **Shows trends in traffic in the last 24 hours by VPC on a line graph.
+**Traffic (MiB) by VPC.** Shows trends in traffic in the last 24 hours by VPC on a line graph.
 
-**Top 10 Source VMs per VPC by Traffic (MiB). **Shows the top 10 Source VMs per VPC by Traffic (MiB) in the last 24 hours on a column graph.
+**Top 10 Source VMs per VPC by Traffic (MiB).** Shows the top 10 Source VMs per VPC by Traffic (MiB) in the last 24 hours on a column graph.
 
-**Top 10 Destination VMs per VPC by Traffic (MiB). **Show the top 10 Destination VMs per VPC by Traffic (MiB) in the last 24 hours on a column graph.
+**Top 10 Destination VMs per VPC by Traffic (MiB).** Show the top 10 Destination VMs per VPC by Traffic (MiB) in the last 24 hours on a column graph.
 
 **VPC Flows per Protocol by Hour**. See the VPC flows per protocol by hour in the last 24 hours on a column graph.
 
@@ -249,23 +249,23 @@ See the details of your Google Cloud VPC activity including the trends of traffi
 
 <img src={useBaseUrl('img/integrations/google/cloud-vpc-activity.png')} alt="Google Cloud VPC dashboards" />
 
-**Traffic (MiB) by Subnetwork ID. **Shows trends in traffic by Subnetwork ID in the last hour on a line graph.
+**Traffic (MiB) by Subnetwork ID.** Shows trends in traffic by Subnetwork ID in the last hour on a line graph.
 
 **Traffic (MiB) by Source VM Over Time.** Shows trends in traffic by Source VM over time in the last hour on a column graph.
 
-**Traffic (MiB) by Destination VM Over Time. **Shows trends in traffic by Destination VM over time in the last hour on a column graph.
+**Traffic (MiB) by Destination VM Over Time.** Shows trends in traffic by Destination VM over time in the last hour on a column graph.
 
-**Packets by Subnetwork ID. **Shows trends in packets by Subnetwork ID in the last hour on a line graph.
+**Packets by Subnetwork ID.** Shows trends in packets by Subnetwork ID in the last hour on a line graph.
 
-**Packets by Source VM Over Time. **Shows packets by Source VM over time in last hour on a column graph.
+**Packets by Source VM Over Time.** Shows packets by Source VM over time in last hour on a column graph.
 
-**Packets by Destination VM Over Time. **Shows packets by Destination VM over time in last hour on a column graph.
+**Packets by Destination VM Over Time.** Shows packets by Destination VM over time in last hour on a column graph.
 
-**Average Latency (ms) by Subnetwork ID. **Shows the average latency by Subnetwork ID in the last hour on a line graph.
+**Average Latency (ms) by Subnetwork ID.** Shows the average latency by Subnetwork ID in the last hour on a line graph.
 
-**Average Latency (ms) by Source VPC. **Shows the average latency by Source VPC in the last hour on a line graph.
+**Average Latency (ms) by Source VPC.** Shows the average latency by Source VPC in the last hour on a line graph.
 
-**Average Latency (ms) by Destination VPC. **Shows the average latency by Destination VPC in the last hour on a line graph.
+**Average Latency (ms) by Destination VPC.** Shows the average latency by Destination VPC in the last hour on a line graph.
 
 **VPC Flows by Source Address**. Shows the count of VPC flows by source IP address in the last hour on a pie chart.
 
@@ -292,7 +292,7 @@ See the details of your Google Cloud VPC traffic including the trend and outlier
 
 **MBs per Minute - Trend**. Shows trends in total bytes per minute sent over the last hour on a scatter plot graph along with the predicted values.
 
-**MBs Box Plot. **Shows a box plot of the MBs sent in the last hour with the maximum, upper quartile, median, lower quartile, and minimum values.
+**MBs Box Plot.** Shows a box plot of the MBs sent in the last hour with the maximum, upper quartile, median, lower quartile, and minimum values.
 
 **Packets per Minute - Outlier**. Shows outliers in the total packets sent per minute over the last hour on a line graph showing threshold.
 
@@ -300,8 +300,8 @@ See the details of your Google Cloud VPC traffic including the trend and outlier
 
 **Packets Box Plot**. Shows a box plot of the packets sent in the last hour with the maximum, upper quartile, median, lower quartile, and minimum values.
 
-**Average Latency (ms) per Minute - Outlier. **Shows the outliers in average latency per minute in the last hour on a line graph with threshold.
+**Average Latency (ms) per Minute - Outlier.** Shows the outliers in average latency per minute in the last hour on a line graph with threshold.
 
-**Average Latency (ms) per Minute - Trend. **Shows the trend in average latency per minute in the last hour on a scatter plot graph.
+**Average Latency (ms) per Minute - Trend.** Shows the trend in average latency per minute in the last hour on a scatter plot graph.
 
-**Latency (ms) Box Plot. **Shows a box plot of the latency in the last hour with the maximum, upper quartile, median, lower quartile, and minimum values.
+**Latency (ms) Box Plot.** Shows a box plot of the latency in the last hour with the maximum, upper quartile, median, lower quartile, and minimum values.

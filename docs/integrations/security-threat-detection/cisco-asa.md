@@ -73,7 +73,7 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 | parse regex "access[\s-]group\s[\(\"]?(?<acl>[^\s\"\)]+)" nodrop
 | parse regex "(?<src_ip>\d{1,3}\.\d{1,3}.\d{1,3}.\d{1,3})\s+(?<vendor_action>\S+)\s+(?:url|URL)\s+(?<dest_ip>\d{1,3}\.\d{1,3}.\d{1,3}.\d{1,3})\s*:\s*(?<url>\S*)" nodrop
 | parse regex "threat-level\s*:\s*(?<vendor_severity>[^\s,]+)[\s,]+category\s*:\s*(?<vendor_category>[^\s,]+)" nodrop
-| parse regex "(?<action>[Aa]uthentication [Ss]ucceeded|[Aa]uthorization [Pp]ermitted|authentication Successful|passed authentication|Login permitted|Authentication failed|Authorization denied|Can't find authorization|Authentication Failed|authentication Rejected|credentials rejected|Authentication:Dropping|login warning|login failed|failed authentication|[Cc]onnection denied|Deny inbound|Deny|Terminating|action locally|Unable to Pre-allocate|denied\s[tcp|udp|icmp]+|access denied|access requested|access permitted|limit exceeded|Dropped|Dropping|[B|b]uilt|[pP]ermitted|whitelisted|Pre-allocated|Rebuilt|redirected|discarded)" nodrop
+| parse regex "(?<action>[Aa]uthentication [Ss]ucceeded|[Aa]uthorization [Pp]ermitted|authentication Successful|passed authentication|Login permitted|Authentication failed|Authorization denied|cannot find authorization|Authentication Failed|authentication Rejected|credentials rejected|Authentication:Dropping|login warning|login failed|failed authentication|[Cc]onnection denied|Deny inbound|Deny|Terminating|action locally|Unable to Pre-allocate|denied\s[tcp|udp|icmp]+|access denied|access requested|access permitted|limit exceeded|Dropped|Dropping|[B|b]uilt|[pP]ermitted|whitelisted|Pre-allocated|Rebuilt|redirected|discarded)" nodrop
 | parse regex "(?<action>Teardown\s[A-Z]{3,4})\sconnection" nodrop
 | parse regex "%ASA-\d-\d+: (?<msg>.+)" nodrop
 | parse regex "\sconnection (?<session_id>\d+)" nodrop
@@ -99,9 +99,9 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 
 ## Installing the Cisco ASA app  
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Cisco ASA dashboards
 
@@ -113,9 +113,9 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Outbound Destinations.** A geolocation query tracks the number of outbound connection and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search** to see more details of the query results.
 
-**Denied Connections by Location.** Uses a geolocation query to track the number of denied connections and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search **to see more details of the query results.
+**Denied Connections by Location.** Uses a geolocation query to track the number of denied connections and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search** to see more details of the query results.
 
-**Total Denied Sources. **Displays the total number of denied Sources as a single value chart for the last hour.
+**Total Denied Sources.** Displays the total number of denied Sources as a single value chart for the last hour.
 
 **Bandwidth Served.** Shows the amount of bandwidth served as a single value chart for the last hour.
 
@@ -137,7 +137,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Outbound Connections to High Risk Countries.** Displays the number of outbound connections by country to countries considered high risk over the last hour in five-minute increments.
 
-**Denied Connections by Location.** Uses a geolocation query to track the number of denied connections, and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search **to see more details of the query results.
+**Denied Connections by Location.** Uses a geolocation query to track the number of denied connections, and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search** to see more details of the query results.
 
 **Top Denied Sources.** Lists the top five denied sources by IP address over the last hour.
 
@@ -149,7 +149,7 @@ import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 **Count of ASA Logs by LogLevel.** Displays the logs by LogLevel and Severity.
 
-**Count by Severity Code. **Displays the logs by Severity Code.
+**Count by Severity Code.** Displays the logs by Severity Code.
 
 **Parameterized Search.** Log Details with counts.
 

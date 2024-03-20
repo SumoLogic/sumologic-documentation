@@ -49,24 +49,24 @@ To enable integration and configure syslog, do the following:
 
 1. Specify the following options in the Syslog dialog:
 
-| Setting | Description | Sumo Logic Specific Value |
-|:--|:--|:--|
-| Syslog Integration | Enable/Disable | Enable |
-| Host Name | Host Name of Cloud Syslog | Host Name of the Sumo Logic Cloud Syslog:<br/>`syslog.collection.us1.sumologic.com` |
-| Protocol | UDP, TCP, Secure TCP | A secure TCP is required for Sumo Logic  |
-| Port | Port number | 6514 |
-| Syslog Facility | Roughly suggests from what part of a system a message originated, and can help distinguish different classes of messages. | Optional, or as required |
-| Message Tag | Enter a descriptive tag to identify events from the AirWatch Console in the Message Tag field. | Optional, or as required |
-| Message Content | Enter the data to include in the transmission in the Message Content field.<br/>Note: Paste the Sumo Logic Token in the message field as highlighted in next column. | AirWatch Syslog Details are as follows:<br/>Event Type: `{EventType}`<br/>Event: `{Event}`<br/>User: `{User}`<br/>Event Source: `{EventSource}`<br/>Event Module: `{EventModule}`<br/>Event Category: `{EventCategory}`<br/>Event Data: `{EventData} 7SarExampleSumoLogicToken+57f7ZDzI4aDN29uOy0vPj6x9z6tkwH6KBtS@41123` |
+    | Setting | Description | Sumo Logic Specific Value |
+    |:--|:--|:--|
+    | Syslog Integration | Enable/Disable | Enable |
+    | Host Name | Host Name of Cloud Syslog | Host Name of the Sumo Logic Cloud Syslog:<br/>`syslog.collection.us1.sumologic.com` |
+    | Protocol | UDP, TCP, Secure TCP | A secure TCP is required for Sumo Logic  |
+    | Port | Port number | 6514 |
+    | Syslog Facility | Roughly suggests from what part of a system a message originated, and can help distinguish different classes of messages. | Optional, or as required |
+    | Message Tag | Enter a descriptive tag to identify events from the AirWatch Console in the Message Tag field. | Optional, or as required |
+    | Message Content | Enter the data to include in the transmission in the Message Content field.<br/>Note: Paste the Sumo Logic Token in the message field as highlighted in next column. | AirWatch Syslog Details are as follows:<br/>Event Type: `{EventType}`<br/>Event: `{Event}`<br/>User: `{User}`<br/>Event Source: `{EventSource}`<br/>Event Module: `{EventModule}`<br/>Event Category: `{EventCategory}`<br/>Event Data: `{EventData} 7SarExampleSumoLogicToken+57f7ZDzI4aDN29uOy0vPj6x9z6tkwH6KBtS@41123` |
 
-5. Click the **Advanced** tab, and configure the following settings.
+1. Click the **Advanced** tab, and configure the following settings.
 
-| Setting | Description |
-|:--|:--|
-| **Console Events** | Select whether to enable or disable the reporting of Console events. |
-| **Select Console Events to Send to Syslog** | For each subheading, select the specific events that you want to trigger a message to syslog. |
-| **Device Events** | Select whether to enable or disable the reporting of Device events. |
-| **Select Device Events to Send to Syslog**  | For each subheading, select the specific events that you want to trigger a message to syslog. |
+   | Setting | Description |
+   |:--|:--|
+   | **Console Events** | Select whether to enable or disable the reporting of Console events. |
+   | **Select Console Events to Send to Syslog** | For each subheading, select the specific events that you want to trigger a message to syslog. |
+   | **Device Events** | Select whether to enable or disable the reporting of Device events. |
+   | **Select Device Events to Send to Syslog**  | For each subheading, select the specific events that you want to trigger a message to syslog. |
 
 1. Click **Save**, and then click **Test Connection** to ensure you have successful communication between the AirWatch Console and Sumo Logic. For more information, see the following AirWatch [documentation](https://docs.vmware.com/en/VMware-AirWatch/9.3/vmware-airwatch-guides-93/GUID-AW93-Configure_Syslog.html).
 

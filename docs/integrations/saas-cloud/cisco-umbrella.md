@@ -22,7 +22,7 @@ Sumo Logic app for Cisco Umbrella uses the following log types:
 
 To know about the Sample Logs and Schema for Cisco Umbrella logs, [click here](https://docs.umbrella.com/deployment-umbrella/docs/log-formats-and-versioning#format).
 
-### Sample query
+### Sample queries
 
 ```sql title="DNS Logs"
 _sourceCategory=Labs/cisco_umbrella
@@ -66,9 +66,9 @@ For more information, see [Cisco Umbrella Documentation](https://docs.umbrella.c
 
 ## Installing the Cisco Umbrella app
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Cisco Umbrella dashboards
 

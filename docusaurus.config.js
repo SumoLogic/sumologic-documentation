@@ -263,6 +263,7 @@ module.exports = {
       additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
     },
       navbar: {
+        hideOnScroll: true,
         logo: {
           alt: 'Sumo Logic logo',
           srcDark: 'img/sumo-logo.svg',
@@ -457,7 +458,7 @@ module.exports = {
                 href: 'https://www.sumologic.com/events/',
               },
               {
-                label: 'Request Demo',
+                label: 'Request a Demo',
                 href: 'https://www.sumologic.com/request-demo',
               },
             ],
@@ -466,7 +467,7 @@ module.exports = {
           {
             items: [
               {
-                label: 'Support',
+                label: 'Contact Support',
                 href: 'https://support.sumologic.com/hc/en-us',
               },
               {
@@ -478,7 +479,7 @@ module.exports = {
                 href: 'https://support.sumologic.com/hc/en-us/community/topics',
               },
             ],
-            title: 'Contact Us',
+            title: 'Help',
           },
           {
             items: [
@@ -496,6 +497,23 @@ module.exports = {
               },
             ],
             title: 'Open Source',
+          },
+          {
+            items: [
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/@sumologic/videos',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/sumo-logic',
+              },
+              {
+                label: 'X (Twitter)',
+                href: 'https://twitter.com/SumoLogic',
+              },
+            ],
+            title: 'Social',
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,

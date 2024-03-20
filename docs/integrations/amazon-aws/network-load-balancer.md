@@ -1,7 +1,7 @@
 ---
 id: network-load-balancer
 title: AWS Network Load Balancer
-description: The Sumo Logic App for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy, and to quickly identify errors.
+description: The Sumo Logic app for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy, and to quickly identify errors.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,24 +10,26 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS Network Load Balancer service is distributed in OSI Layer 4 (the network layer) traffic (TCP, UDP, TLS) and can handle over a million requests per second.
 
-The Sumo Logic App for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy, and to quickly identify errors.
+The Sumo Logic app for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy, and to quickly identify errors.
 
-## Log and Metric Types  
+## Metric types  
+
 The AWS Network Load Balancer app uses AWS Network Load Balancer metrics.
 
-### Sample Query
+### Sample queries
 
 ```sql title="Active Flows (Connections) by Load Balancer (Metric-based)"
 account=* region=* LoadBalancer=* Namespace=aws/NetworkELB metric=ActiveFlowCount Statistic=Sum | sum by account, region, namespace, LoadBalancer
 ```
 
-## Collecting Metrics for AWS Network Load Balancer App
+## Collecting Metrics for AWS Network Load Balancer app
 
 Sumo Logic supports collecting metrics using two source types:
+
 * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-metrics-source) (Recommended); or
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/hosted-collectors/amazon-aws/amazon-cloudwatch-source-metrics)
 
-Namespace for **Amazon Network Load Balancer **Service is **AWS/NetworkELB.**
+Namespace for **Amazon Network Load Balancer** Service is **AWS/NetworkELB.**
 
 * **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
@@ -49,13 +51,11 @@ Tag sequence: $LoadBalancer._1
 Save it
 ```
 
+## Installing the AWS Network Load Balancer app
 
+This section has instructions for installing the Sumo Logic app for **AWS Network Load Balancer** and descriptions of each of the app dashboards along with associated use cases.
 
-## Installing the AWS Network Load Balancer App
-
-This section has instructions for installing the Sumo Logic App for **AWS Network Load Balancer** and descriptions of each of the app dashboards along with associated use cases.
-
-Now that you have set up a collection for **AWS Network Load Balancer**, install the Sumo Logic App to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for **AWS Network Load Balancer**, install the Sumo Logic app to use the pre-configured dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 import AppInstall from '../../reuse/apps/app-install.md';
 
@@ -63,12 +63,9 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ## Viewing AWS Network Load Balancer Dashboards
 
-**App description:**
+import FilterDashboards from '../../reuse/filter-dashboards.md';
 
-AWS Network Load Balancer service is distributed in OSI Layer 4 (i.e., network) traffic (e.g., TCP, UDP, TLS) and can handle over a million requests per second.
-
-The Sumo Logic App for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy and to quickly identify errors.
-
+<FilterDashboards/>
 
 ### Overview
 
@@ -84,7 +81,7 @@ Use this dashboard to:
 
 ### Active and New Flows
 
-**The AWS Network Load Balancer - Active and New Flows **dashboard provides detailed insights for new flows, and active flows for TCP, TLS, and UDP traffic.
+**The AWS Network Load Balancer - Active and New Flows** dashboard provides detailed insights for new flows, and active flows for TCP, TLS, and UDP traffic.
 
 Use this dashboard to:
 * Monitor trends around active and new flows (connections) to make sure they line up with expectations and then use that information to scale up/scale down backend hosts.
@@ -95,7 +92,7 @@ Use this dashboard to:
 ### Host Health Status
 
 
-**The AWS Network Load Balancer - Host Health Status **dashboard provides detailed insights into the number of healthy and unhealthy hosts.
+**The AWS Network Load Balancer - Host Health Status** dashboard provides detailed insights into the number of healthy and unhealthy hosts.
 
 Use this dashboard to:
 
@@ -107,10 +104,8 @@ Use this dashboard to:
 
 
 ### Errors
-14
 
-
-**The AWS Network Load Balancer - Errors **dashboard provides detailed insights into the errors reported by the network load balancer. This dashboard shows information for the total number of TLS handshakes that failed during negotiation between a client and a TLS listener, and the total number of TLS handshakes that failed during negotiation between a TLS listener and a target.
+**The AWS Network Load Balancer - Errors** dashboard provides detailed insights into the errors reported by the network load balancer. This dashboard shows information for the total number of TLS handshakes that failed during negotiation between a client and a TLS listener, and the total number of TLS handshakes that failed during negotiation between a TLS listener and a target.
 
 Use this dashboard to:
 * Monitor TLS handshake errors during negotiation between a client and a TLS listener, which could happen if clients are sending an incorrect cipher or are using incorrect protocols not matching the one specified in the security policy. It’s recommended to use the most recent AWS CLI client version.
@@ -123,7 +118,7 @@ Use this dashboard to:
 ### Reset (RST) Packets
 
 
-**The AWS Network Load Balancer - Reset (RST) Packets **dashboard provides detailed insights into the number reset (RST) packets received by the network load balancer. The dashboard shows the information for the total number of reset (RST) packets sent from a client to a target , the total number of reset (RST) packets generated by the load balancer, and the total number of reset (RST) packets sent from a target to a client.
+**The AWS Network Load Balancer - Reset (RST) Packets** dashboard provides detailed insights into the number reset (RST) packets received by the network load balancer. The dashboard shows the information for the total number of reset (RST) packets sent from a client to a target , the total number of reset (RST) packets generated by the load balancer, and the total number of reset (RST) packets sent from a target to a client.
 
 Use this dashboard to:
 * To monitor the number of RST packets. A high number of reset packets could indicate connections are getting dropped and could mean a disruption in service.
@@ -133,7 +128,7 @@ Use this dashboard to:
 
 ### Processed Bytes
 
-**The AWS Network Load Balancer - Processed Bytes **dashboard provides detailed insights into the amount of bytes processed by the load balancer for total, UDP, TCP and TLS traffic.
+**The AWS Network Load Balancer - Processed Bytes** dashboard provides detailed insights into the amount of bytes processed by the load balancer for total, UDP, TCP and TLS traffic.
 
 Use this dashboard to:
 * Monitor trends around processed bytes to make sure they line up with expectations and then use that information to scale up or scale down backend hosts.
@@ -143,7 +138,7 @@ Use this dashboard to:
 
 ### Consumed LCUs
 
-The **AWS Network Load Balancer - Consumed LCUs **dashboard shows you the total number of load balancer capacity units (LCU) used by your load balancer by network protocol.
+The **AWS Network Load Balancer - Consumed LCUs** dashboard shows you the total number of load balancer capacity units (LCU) used by your load balancer by network protocol.
 
 You pay for the number of LCUs that you use per hour.
 

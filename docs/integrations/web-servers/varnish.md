@@ -24,13 +24,13 @@ This app is tested with the following versions:
   groupId="k8s-nonk8s"
   defaultValue="k8s"
   values={[
-    {label: 'For Kubernetes environments', value: 'k8s'},
-    {label: 'For Non-Kubernetes environments', value: 'non-k8s'},
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
   ]}>
 
 <TabItem value="k8s">
 
-```
+```json
 {
   "timestamp": 1625219282000,
   "log": "187.255.220.191 - - [01/Jul/2021:15:15:53 +0700] "GET /_includes/wp/blog/wp-content/themes/sumologic/style.css HTTP/1.1" 200 33229114 "http://www.greylock.com" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_7; en-us) AppleWebKit/533.21.1 (KHTML, like Gecko) Chrome/19.0.1084.30 Safari/536.5""
@@ -58,14 +58,14 @@ Configuring log and metric collection for the Varnish app includes the following
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic before configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which the app dashboards require. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic before configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which the app dashboards require. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
   defaultValue="k8s"
   values={[
-    {label: 'For Kubernetes environments', value: 'k8s'},
-    {label: 'For Non-Kubernetes environments', value: 'non-k8s'},
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
   ]}>
 
 <TabItem value="k8s">
@@ -112,19 +112,20 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 <img src={useBaseUrl('img/integrations/web-servers/varnish-k8s.png')} alt="Varnish" />
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Varnish. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Varnish input plugin to obtain metrics. For simplicity, the diagram doesn’t show the input plugins.The injection of the Telegraf sidecar container is done by the Telegraf Operator.
-Prometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), which enriches metadata and sends metrics to Sumo Logic.
+P
+rometheus pulls metrics from Telegraf and sends them to [Sumo Logic Distribution for OpenTelemetry Collector](https://github.com/SumoLogic/sumologic-otel-collector), which enriches metadata and sends metrics to Sumo Logic.
 
 In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collects logs written to standard out and forwards them to another instance of Sumo Logic Distribution for OpenTelemetry Collector, which enriches metadata and sends logs to Sumo Logic.
 
 :::note Prerequisites
-It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
 #### Configure Metrics Collection
 
 This section explains the steps to collect Varnish metrics from a Kubernetes environment.
 
-1. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)
+1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf).
 2. On your Varnish Pods, add the following annotations:
   ```sql
   annotations:
@@ -145,24 +146,23 @@ This section explains the steps to collect Varnish metrics from a Kubernetes env
 
 Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
 
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf varnish Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Varnish input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
+* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf varnish Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Varnish input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
     * In the input plugins section, which is `[[inputs.varnish]]`
-        * `binary `-  The default location of the varnish stat binary. Please override as per your configuration.
-        * `use_sudo `- If running as a restricted user, prepend sudo for additional access.
-        * `stats `- Stats may also be set to ["*"], which will collect all stats. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) for more information on additional parameters for configuring the Varnish input plugin for Telegraf.
+        * `binary`. The default location of the varnish stat binary. Please override as per your configuration.
+        * `use_sudo`. If running as a restricted user, prepend sudo for additional access.
+        * `stats`. Stats may also be set to `["*"]`, which will collect all stats. See [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) for more information on additional parameters for configuring the Varnish input plugin for Telegraf.
     * In the tags section, which is `[inputs.varnish.tags]`
-        * `environment `- This is the deployment environment where the Varnish cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * `cache_cluster `- Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. This is the deployment environment where the Varnish cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `cache_cluster`. Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
-
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+**Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
+* `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
 * `telegraf.influxdata.com/inputs`
     * In the tags section, `[inputs.varnish.tags]`
-        * `component: “cache”` - This value is used by Sumo Logic apps to identify application components.
-        * `cache_system: “varnish”` - This value identifies the web server system.
+        * `component: “cache”`. This value is used by Sumo Logic apps to identify application components.
+        * `cache_system: “varnish”`. This value identifies the web server system.
 
 For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
@@ -183,16 +183,16 @@ This section explains the steps to collect Varnish logs from a Kubernetes enviro
    cache_cluster: "varnish_on_k8s_CHANGEME"
    ```
    2. Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
-   * `environment` - This is the deployment environment where the Varnish cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-   * `cache_cluster` - Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
+   * `environment`. This is the deployment environment where the Varnish cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+   * `cache_cluster`. Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
-* `component: “cache”` - This value is used by Sumo Logic apps to identify application components.
-* `cache_system: “varnish”` - This value identifies the cache system.
+**Do not modify** the following values set by this configuration as it will cause the Sumo Logic app to not function correctly.
+* `component: “cache”`. This value is used by Sumo Logic apps to identify application components.
+* `cache_system: “varnish”`. This value identifies the cache system.
 
 For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
-2. **(Optional) Collecting Varnish Logs from a Log File. Follow the steps below to capture Varnish logs from a log file on Kubernetes**.
+2. (Optional) Collecting Varnish Logs from a Log File. Follow the steps below to capture Varnish logs from a log file on Kubernetes.
    1. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
    2. Add the following annotation in addition to the existing annotations.
     ```xml
@@ -271,15 +271,15 @@ Please enter values for the following parameters (marked `CHANGEME` above):
     * `use_sudo` - If running as a restricted user, prepend sudo for additional access.
     * **`stats`** - Stats may also be set to ["*"], which will collect all stats. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) for more information on additional parameters for configuring the Varnish input plugin for Telegraf.
     * In the tags section, which is `[inputs.varnish.tags]`
-        * `environment` - This is the deployment environment where the Varnish cluster identified by the value of **servers** resides. For example; dev, prod or qa. While this value is optional we highly recommend setting it.
-        * **`cache_cluster` **- Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. This is the deployment environment where the Varnish cluster identified by the value of **servers** resides. For example; dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `cache_cluster`. Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * In the output plugins section, which is `[[outputs.sumologic]]`
     * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
-Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
-* `data_format=“prometheus”` - In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic
-* `Component=“cache”` - In the input plugins section, which is, `[[inputs.varnish]]` - This value is used by Sumo Logic apps to identify application components.
-* `cache_system: “varnish”` - In the input plugins sections. In other words, this value identifies the cache system
+**Do not modify** the following values set by this Telegraf configuration as it will cause the Sumo Logic app to not function correctly.
+* `data_format=“prometheus”`. In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic
+* `Component=“cache”`. In the input plugins section, which is, `[[inputs.varnish]]` - This value is used by Sumo Logic apps to identify application components.
+* `cache_system: “varnish”`. In the input plugins sections. In other words, this value identifies the cache system
 * For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/logrotate.d/telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 Once you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
@@ -307,8 +307,8 @@ By default, Varnish logs are stored in a log file. Sumo Logic supports collectin
      * **Description.** (Optional)
      * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in **/var/log/varnish/varnishncsa.log**.
      * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-     * **Source Category.** Enter any string to tag the output collected from this Source, such as **Varnish/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices.md).)
-     * **Fields. **Set the following fields:
+     * **Source Category.** Enter any string to tag the output collected from this Source, such as **Varnish/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices.md).)
+     * **Fields.** Set the following fields:
        * `component = cache`
        * `cache_system = varnish`
        * `cache_cluster = <Your_Varnish_Cluster_Name>`
@@ -317,7 +317,7 @@ By default, Varnish logs are stored in a log file. Sumo Logic supports collectin
      * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
      * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Varnish Server’s time zone.
      * **Timestamp Format.** The timestamp format is automatically detected.
-     * **Encoding. **Select** **UTF-8 (Default).
+     * **Encoding.** Select UTF-8 (Default).
      * **Enable Multiline Processing.** Detect messages spanning multiple lines
     * Infer Boundaries - Detect message boundaries automatically
    4. Click **Save**.
@@ -340,14 +340,14 @@ You can install monitors by importing a JSON file or using a Terraform script.
 ### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/RabbitMQ/rabbitmq.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/RabbitMQ/rabbitmq.json) contains the alerts based on Sumo Logic searches that do not have any scope filters. Therefore, it will apply to all Varnish clusters, the data for which has been collected via the instructions in the previous sections.   However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `cache_cluster=* `with `<Your Custom Filter>`. Custom filter examples:
+2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/RabbitMQ/rabbitmq.json) contains the alerts based on Sumo Logic searches that do not have any scope filters. Therefore, it will apply to all Varnish clusters, the data for which has been collected via the instructions in the previous sections.   However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `cache_cluster=*` with `<Your Custom Filter>`. Custom filter examples:
    * For alerts applicable only to a specific cluster, your custom filter would be `cache_cluster=dev-varnish01`
    * For alerts applicable to all clusters that start with `varnish`-prod, your custom filter would be `cache_cluster=varnish-prod*`
    * For alerts applicable to a specific cluster within a production environment, your custom filter would be `cache_cluster=dev-varnish01` AND `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
 3. Go to **Manage Data > Alerts > Monitors**.
 4. Click **Add**.
 5. Click **Import.**
-6. On the** Import Content popup**, enter **Varnish** in the Name field, paste the JSON into the popup, and click **Import**.
+6. On the **Import Content** popup, enter **Varnish** in the **Name** field, paste the JSON into the popup, and click **Import**.
 7. The monitors are created in a "Varnish" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 ### Method B: Using a Terraform script
@@ -355,7 +355,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 1. Generate an access key and access ID for a user with the **Manage Monitors** role capability; for instructions, see  [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later and install it.
 3. Download the Sumo Logic Terraform package for MySQL monitor. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages). You can either download it using the git clone command or as a zip file.
-4. Alert Configuration. After extracting the package , navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/Varnish/ directory.
+4. Alert Configuration. After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/Varnish/` directory.
 
 Edit the `varnish.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 

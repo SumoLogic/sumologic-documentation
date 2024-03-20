@@ -4,6 +4,7 @@ title: Palo Alto Cortex XDR
 sidebar_label: Palo Alto Cortex XDR
 description: The Sumo Logic app for Palo Alto Cortex XDR provides comprehensive visibility and analysis of alerts and incidents to improve overall security posture.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/integrations/security-threat-detection/pan6.png')} alt="icon" width="100"/>
@@ -130,7 +131,7 @@ This app uses [Palo Alto Cortex XDR](/docs/send-data/hosted-collectors/cloud-to-
 
 </details>
 
-## Sample Query
+## Sample queries
 
 <details>
 <summary>View sample queries</summary>
@@ -167,11 +168,15 @@ Prior to installing the Palo Alto Cortex XDR app, you'll first need to set up th
 
 This section has instructions for installing the Sumo Logic app for Palo Alto Cortex XDR.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Palo Alto Cortex XDR dashboards​
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Alerts Overview
 

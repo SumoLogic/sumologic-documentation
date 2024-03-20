@@ -1,8 +1,8 @@
 ---
 id: host-metrics
-title: Host Metrics Sumo Logic App
+title: Host Metrics Sumo Logic app
 sidebar_label: Host Metrics
-description: The Sumo Logic App for Host Metrics allows you to collect your local host metrics and display them using predefined search queries and Dashboards.
+description: The Sumo Logic app for Host Metrics allows you to collect your local host metrics and display them using predefined search queries and Dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Host Metrics app allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses the Sumo Logic installed collector for the collection of host metrics data.
 
 
-## Collecting Metrics for the Host Metrics App
+## Collecting metrics for the Host Metrics app
 
 This procedure explains how to collect metrics from a host machine and ingest them into Sumo Logic for metrics visualization.
 
@@ -23,17 +23,17 @@ Configure an [Installed Collector](/docs/send-data/installed-collectors). Collec
 
 ### Configure a Source
 
-1. Configure a [Host Metrics Source](#Collecting-Metrics-for-the-Host-Metrics-App). Choose **Add Source** and select **Host Metrics** as the source type.
+1. Configure a [Host Metrics Source](#Collecting-Metrics-for-the-Host-Metrics-app). Choose **Add Source** and select **Host Metrics** as the source type.
 2. Configure the Source Fields as follows:
     1. **Name.** Required. Description is optional. The source name is stored in a searchable field called `_sourceName`.
     2. **Source Host**. Enter the host name of the machine from which the metrics will be collected.
-    3. **Source Category.** Required. The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).
+    3. **Source Category.** Required. The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).
     4. **Scan Interval**. Select the frequency for the Source to scan for hostmetrics data. Selecting a short interval will increase the message volume and could cause your deployment to incur additional charges. The default is 1 minute.
     5. **Metrics**. Select check boxes for the metrics to collect. By default, all CPU and memory metrics are collected. Select the top level check box to select all metrics in that category. A blue checkmark icon indicates that the category is selected. To select individual metrics, click the right-facing arrow to expand the category and select the individual metrics. The icon changes to <img src={useBaseUrl('img/integrations/hosts-operating-systems/icon_blue_minus.png')} alt="icon_blue_minus" />, as shown below.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/host_metrics_config_window.png')} alt="host_metrics_config_window" />
 3. Click **Save**.
 
 
-## Metric Types
+## Metric types
 
 Available metrics include:
 * CPU
@@ -48,7 +48,7 @@ Host metrics are gathered by the open-source [SIGAR library](https://github.com/
 
 The following tables list the available host metrics.
 
-### CPU Metrics
+### CPU metrics
 
 | Metric | Units | Description |
 |---|---|---|
@@ -125,7 +125,7 @@ Load averages are not available on Windows platform.
 </table>
 
 
-### TCP Metrics
+### TCP metrics
 
 | Metric | Units | Description |
 |---|---|---|
@@ -139,7 +139,7 @@ Load averages are not available on Windows platform.
 | TCP_Close | Count | TCP close connection count |
 | TCP_TimeWait | Count | TCP time_wait connection count |
 
-### Networking Metrics
+### Networking metrics
 
 These have two additional dimensions:
 * Interface: Name of the network interface (example: `eth0`)
@@ -155,7 +155,7 @@ Networking metrics are cumulative, so you can use the rate operator to display t
 | Net_OutBytes | Bytes | Number of sent bytes |
 
 
-### Disk Metrics
+### Disk metrics
 
 Disk metrics have two additional dimensions:
 
@@ -198,15 +198,17 @@ Collectors running on AWS EC2 instances can optionally collect AWS Metadata such
 Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts.
 
 
-## Installing the Host Metrics App
+## Installing the Host Metrics app
 
-Now that you have configured Host Metrics, install the Sumo Logic App for Host Metrics to take advantage of the preconfigured searches and dashboards to analyze your Host Metrics data.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<AppInstall2/>
 
-<AppInstall/>
+## Viewing Host Metrics dashboards​
 
-## Viewing Host Metrics Dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -273,15 +275,15 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/host_metrics_app_memory.png')} alt="Host Metrics dashboards" />
 
-**Total Memory per Host. **Displays total memory per host in a line chart on a timeline for the last hour.
+**Total Memory per Host.** Displays total memory per host in a line chart on a timeline for the last hour.
 
 **Percent Memory Used per Host.** Shows percent memory used per host in a line chart on a timeline for the last hour.
 
 **Total Free, Buffers, and Cached Memory per Host.** Provides details on the total free, buffers, and cached memory per host (from a metric called ActualFree) in a line chart on a timeline for the last hour.
 
-**Total Used, Less Buffers, and Cached Memory per Host. **Displays the total used, buffers, and cached memory (from a metric called ActualUsed) in a line chart on a timeline for the last hour.
+**Total Used, Less Buffers, and Cached Memory per Host.** Displays the total used, buffers, and cached memory (from a metric called ActualUsed) in a line chart on a timeline for the last hour.
 
-**Total Free Memory per Host. **Shows the amount of total free memory per host available in a line chart on a timeline for the last hour.
+**Total Free Memory per Host.** Shows the amount of total free memory per host available in a line chart on a timeline for the last hour.
 
 **Total Used System Memory per Host.** Provides details on the total system memory per host used in a line chart on a timeline for the last hour.
 
@@ -303,9 +305,9 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/host_metrics_app_tcp.png')} alt="Host Metrics dashboards" />
 
-**Inbound Connections per Host. **Displays inbound connections per host in a line chart on a timeline for the last hour.
+**Inbound Connections per Host.** Displays inbound connections per host in a line chart on a timeline for the last hour.
 
-**Outbound Connections per Host. **Shows outbound connections per host in a line chart on a timeline for the last hour.
+**Outbound Connections per Host.** Shows outbound connections per host in a line chart on a timeline for the last hour.
 
 **Listen Connections per Host.** Provides details on listen connections per host in a line chart on a timeline for the last hour.
 

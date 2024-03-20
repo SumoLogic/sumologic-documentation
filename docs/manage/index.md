@@ -1,6 +1,6 @@
 ---
 slug: /manage
-title: Manage Sumo Account
+title: Manage Account
 description: Manage user accounts, Collectors and Sources, security, SEO, and other administrative details.
 ---
 
@@ -35,14 +35,8 @@ This topic describes features and options that give you administration over acco
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/manage/partitions-data-tiers"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Partitions and Data Tiers</h4></a>
+  <a href="/docs/manage/partitions"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Partitions</h4></a>
   <p>Accelerate the search process by allowing Admins to filter a subset of the log messages in an index.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/manage/connections-integrations"><img src={useBaseUrl('img/icons/business/user-permissions.png')} alt="icon" width="40"/><h4>Connections and Integrations</h4></a>
-  <p>Learn how to set up integrations to send alerts to other tools.</p>
   </div>
 </div>
 <div className="box smallbox card">

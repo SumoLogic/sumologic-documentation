@@ -53,7 +53,7 @@ Before you run the upgrade command, review the manual steps below and carry out 
 
 ## Metrics migration
 
-If you don't have metrics collection enabled, skip straight to the [next major section](#logs-migration).
+If you do not have metrics collection enabled, skip straight to the [next major section](#logs-migration).
 
 The metrics migration involves one major manual step that everyone needs to do, which is upgrading kube-prometheus-stack.
 
@@ -167,11 +167,11 @@ In addition please ensure that `url` for all `remoteWrite` configurations starts
 
 If you're adding extra configuration to fluentd metrics, you will likely want to do analogous modifications in OpenTelemetry.
 
-Please look at the [Metrics modifications](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-application-metrics.md#metrics-modifications) doc.
+See [Metrics modifications](/docs/send-data/kubernetes/collecting-metrics#metrics-modifications).
 
 ## Logs migration
 
-If you don't have log collection enabled, skip straight to the [next major section](#tracing-migration).
+If you do not have log collection enabled, skip straight to the [next major section](#tracing-migration).
 
 ### Replacing Fluent Bit with OpenTelemetry Collector
 
@@ -267,7 +267,7 @@ sumologic:
     enabled: false
 ```
 
-If you don't have tracing collection enabled, you can skip straight to the [end](#running-the-helm-upgrade) and upgrade using Helm.
+If you do not have tracing collection enabled, you can skip straight to the [end](#running-the-helm-upgrade) and upgrade using Helm.
 
 ### Replace special configuration values marked by 'replace' suffix
 
@@ -337,7 +337,7 @@ Once you've taken care of any manual steps necessary for your configuration, run
 helm upgrade --namespace "${NAMESPACE}" "${HELM_RELEASE_NAME}" sumologic/sumologic --version=3.0.0 -f new-values.yaml
 ```
 
-After you're done, please review the [full list of changes](full-list-of-changes.md), as some of them may impact you even if they don't require additional action.
+After you're done, please review the [full list of changes](full-list-of-changes.md), as some of them may impact you even if they do not require additional action.
 
 ## Known issues
 

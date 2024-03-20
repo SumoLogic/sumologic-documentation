@@ -88,7 +88,7 @@ Both the integration definition file and the action definition file are YAML fil
    * `Notification`
    * `Trigger`
 * **script** `*`:
-   * **code* ** [String]: Action code.
+   * **code** [String]: Action code.
 * **fields** `*`:
    * **id** `*` [String]: Name of field which will be passed to code at runtime as an environment variable. One ID attribute should be added for each required or optional parameter that may be provided to the integration action at runtime. The name of the ID attribute will be passed as a environment variable to the code containing the dynamic value provided on execution.
    * **label** `*` [String]: Label displayed in the UI.
@@ -133,35 +133,62 @@ Both the integration definition file and the action definition file are YAML fil
      * `sha256`
      * `url`
      * `userdetail`
-  :::note
-  Cloud SOAR automatically extracts observables from incidents content and converts them to entities (domain, email, file, IP address, hash values, URL, and user details). However, usernames are automatically converted into entities only if the input of an automatic action for users contains the **observables** statement and is also specified as `userdetail`.
-  :::
+     :::note
+     Cloud SOAR automatically extracts observables from incidents content and converts them to entities (domain, email, file, IP address, hash values, URL, and user details). However, usernames are automatically converted into entities only if the input of an automatic action for users contains the **observables** statement and is also specified as `userdetail`.
+     :::
 * **output** `*`: Expected fields from results.
-   * **path** `*` [String]:  JSON path for each field which may be returned by the action, using the following JSON as an example:
-   ```
-   {
-       country: "US",
-       response_code: 1,
-       as_owner: "CloudFlare, Inc.",
-       detected_urls: [
-          {
-             url: "http://google.com/",
-             positives: 2
-          }
-      ]
-  }
-   ```
-   The following `output:path` attributes should be added:
-     * `country`
-     * `response_code`
-     * `as_owner`
-     * `detected_urls.[].url`
-     * `detected_urls.[].positives`
-     * `detected_urls.[0].positives`(you can also specify array index)
+   * **path** `*` [String]:  JSON path for each field which may be returned by the action. 
+   
+   *Example* <br/>Using the following JSON as an example:
+     ```
+     {
+         country: "US",
+         response_code: 1,
+         as_owner: "CloudFlare, Inc.",
+         detected_urls: [
+            {
+               url: "http://google.com/",
+               positives: 2
+            }
+        ]
+     }
+     ```
+     The following `output:path` attributes should be added:
+       * `country`
+       * `response_code`
+       * `as_owner`
+       * `detected_urls.[].url`
+       * `detected_urls.[].positives`
+       * `detected_urls.[0].positives` (you can also specify array index)
+  
+     *Example with special characters* <br/>Use quotation marks [““] when there is a text with special character like a hyphen. Consider the following example JSON:   
+     ```
+     {
+       "payload": {
+         "headers": {
+           "MIME-Version": "1.0",
+           "From": "Joe Smith <joe.smith@example.com>",
+           "Message-ID": "<193853.example.com>",
+           "Subject": "Account Verification Required",
+           "To": "verify@example.com",
+           "Content-Type": "multipart/mixed; boundary=\"0000008\""
+         }
+       }
+     }
+     ```
+
+     To correctly parse `"MIME-Version"` in the example, use one of the following formats:
+     * `payload.headers."MIME-Version"`
+     * `payload.headers.["MIME-Version"]`
+
+     In addition to using quotation marks to enclose text with special characters, you must separate nested output fields with a period (**.**). Note that these formats will not parse correctly:
+     * `payload.headers["MIME-Version"]`
+     * `payload.headers[MIME-Version]`
+
 * **type** `*` [String]: Type of data returned. Reserved for future use. All outputs are treated as strings.
-* **table_view* **: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
+* **table_view**: Results to display in table view. The sub-attributes will define which field values returned by the integration will be displayed when viewing the results in table view.
    * **display_name** `*` [String]: Column name.
-   * **value* ** [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
+   * **value** [String]: JSON path for each field which may be returned by the action. See the `output:path` field above for additional information.
    * **type** `*` [String]: Type of value which is only possible to specify if the value should be shown as a link.
 * **use_in_triage** [Boolean]: Action should be manually executable in triage event (default False).
 * **hook** [List]: A list of hooks used to fire trigger actions to interact with Cloud SOAR elements. For more information, see [Trigger hooks](#trigger-hooks). Valid values are:
@@ -231,7 +258,7 @@ And you must add it into the action `kwargs`:
 parser.add_argument('--host', help='host , REQUIRED', required=True, action=EnvDefault)
 ```
 
-Otherwise, if you don't need extra utilities provided by `ArgumentParser` for validation, you can simply use:
+Otherwise, if you do not need extra utilities provided by `ArgumentParser` for validation, you can simply use:
 
 ```
 host = os.environ.get("host", "localhost")
@@ -1548,7 +1575,7 @@ fields:
     required: true
 ```
 
-Now you can perform a `POST` request to the [Cloud SOAR API](/docs/cloud-soar/cloud-soar-apis/) `/webhook` resource with a raw payload:
+Now you can perform a `POST` request to the [Cloud SOAR API](/docs/api/cloud-soar/) `/webhook` resource with a raw payload:
 ```json
 {
   "title": "test",
@@ -1582,16 +1609,11 @@ You can execute all the actions of an integration in a container built from a cu
 
 1. Go to the **Integrations** page.
 1. Look for the integration for which you need to create a custom Docker image and click on it.
-1. Next to the name of the integration, you will see two buttons. Click on the one that is on the far right and has the Docker logo on it.
-<br/><img src={useBaseUrl('img/cloud-soar/integration-framework-custom-docker-image.png')} alt="Custom Docker image" width="700"/>
-<br/>This will open the custom Docker editor:
-<br/><img src={useBaseUrl('img/cloud-soar/integration-framework-docker-editor.png')} alt="Docker editor" width="700"/>
+1. Next to the name of the integration, you will see two buttons. Click on the one that is on the far right and has the Docker logo on it. <br/><img src={useBaseUrl('img/cloud-soar/integration-framework-custom-docker-image.png')} alt="Custom Docker image" width="700"/> <br/>This will open the custom Docker editor: <br/><img src={useBaseUrl('img/cloud-soar/integration-framework-docker-editor.png')} alt="Docker editor" width="700"/>
 1. Type a name for your custom image in the **Docker image tag** field. This is a required field.
-1. When you are creating a new custom Docker image, you will see the **Last update** field is showing **Never edited before**. The text area below allows you to write a Dockerfile with the instructions to build your custom image:
-<br/><img src={useBaseUrl('img/cloud-soar/integration-framework-docker-editor-2.png')} alt="Docker custom image" width="700"/>
+1. When you are creating a new custom Docker image, you will see the **Last update** field is showing **Never edited before**. The text area below allows you to write a Dockerfile with the instructions to build your custom image: <br/><img src={useBaseUrl('img/cloud-soar/integration-framework-docker-editor-2.png')} alt="Docker custom image" width="700"/>
 1. Proceed to write your custom Dockerfile as you would normally do. If you need tips on how to do this, refer to [Useful Docker commands](#useful-docker-commands) or check the Docker official documentation. Keep in mind that the following statements are not currently available, which means they will be ignored when building the image: `COPY`, `WORKDIR`, `EXPOSE`, `ADD`, `ENTRYPOINT`, `USER`, `ARG`, and `STOPSIGNAL`.
-1. In the editor you will see there is a dropdown menu above the text area that reads **Valid Instructions**. This dropdown menu enumerates in a descriptive way a set of instructions that you can use in your Dockerfile. If you choose them from the dropdown menu, a new line will be added to your Dockerfile with the keyword to start the statement, so you can pick up from there. The use of this dropdown menu is completely optional and you can write your Dockerfile directly in the text area.
-<br/><img src={useBaseUrl('img/cloud-soar/integration-framework-docker-editor-3.png')} alt="Docker instructions" width="600"/>
+1. In the editor you will see there is a dropdown menu above the text area that reads **Valid Instructions**. This dropdown menu enumerates in a descriptive way a set of instructions that you can use in your Dockerfile. If you choose them from the dropdown menu, a new line will be added to your Dockerfile with the keyword to start the statement, so you can pick up from there. The use of this dropdown menu is completely optional and you can write your Dockerfile directly in the text area. <br/><img src={useBaseUrl('img/cloud-soar/integration-framework-docker-editor-3.png')} alt="Docker instructions" width="600"/>
 1. As soon as you change something in your Dockerfile, a **Save** button will appear next to the Docker editor button. Click on it if you are ready to save your custom Dockerfile.
 
 Once you have saved a custom Dockerfile, the integration will be executed on a container built from the relative custom Docker image.
@@ -1600,10 +1622,7 @@ Once you have saved a custom Dockerfile, the integration will be executed on a c
 
 We strongly suggest that you test your custom images as soon as you create or modify them. If by any chance you save a faulty custom Dockerfile, when the actions from that integration are triggered, their execution will fail because the Docker image will fail as well.
 
-1. To test your custom images, click where it says **TEST IMAGE** at the bottom right corner of the editor.
-<br/><img src={useBaseUrl('img/cloud-soar/integration-framework-test-docker-image.png')} alt="Test Docker image" width="6700"/>
-<br/>The system will try to build an image from your Dockerfile. While this happens, a spinner will appear in the editor. Consider this may take a few moments, depending on the instructions used in your Dockerfile.
-<br/><img src={useBaseUrl('img/cloud-soar/integration-framework-test-docker-image-2.png')} alt="Docker image tested" width="700"/>
+1. To test your custom images, click where it says **TEST IMAGE** at the bottom right corner of the editor. <br/><img src={useBaseUrl('img/cloud-soar/integration-framework-test-docker-image.png')} alt="Test Docker image" width="6700"/> <br/>The system will try to build an image from your Dockerfile. While this happens, a spinner will appear in the editor. Consider this may take a few moments, depending on the instructions used in your Dockerfile. <br/><img src={useBaseUrl('img/cloud-soar/integration-framework-test-docker-image-2.png')} alt="Docker image tested" width="700"/>
 1. If your custom Docker image was built without error, a success message will pop up in your screen. Otherwise, if a proper image cannot be built from your custom Dockerfile, an error message will pop up, containing details on what went wrong. In that case, it is very important that you correct your Dockerfile and test it again until an image is built successfully. As an alternative, you can always revert to the original Docker image used by the integration, by clicking on Reset Default Image at the bottom of the editor.
 
 ### Deleting your custom Docker image and reverting to the original one

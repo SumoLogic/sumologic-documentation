@@ -52,9 +52,9 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
      <img src={useBaseUrl('img/traces/lambda-python3.png')} alt="Environment variables" style={{border: '1px solid gray'}} width="800" />
 
 1. Make sure you have **X-Ray Tracing** disabled in Lambda API Stage. Navigate to [AWS API Gateway console](https://console.aws.amazon.com/apigateway/main/apis), find your API and go to Stages. In the **Logs/Tracing** tab uncheck **Enable X-Ray Tracing** option.
-:::note
-If for whatever reason you can't disable this, configure X-Ray context propagation by setting `OTEL_PROPAGATORS=xray` environment variable on your client side.
-:::
+   :::note
+   If for whatever reason you cannot disable this, configure X-Ray context propagation by setting `OTEL_PROPAGATORS=xray` environment variable on your client side.
+   :::
 
 1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](/docs/apm/traces/view-and-investigate-traces).
 

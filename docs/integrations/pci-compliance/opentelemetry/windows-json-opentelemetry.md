@@ -1,6 +1,7 @@
 ---
 id: windows-json-opentelemetry
 title: PCI Compliance for Windows JSON - OpenTelemetry
+sidebar_label: Windows JSON - OTel Collector
 dashboard: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
@@ -26,7 +27,7 @@ Following tags will be created as part of PCI Compliance Windows JSON app instal
 - `host.group`: user configured tag which signifies a group of hosts for the operating system.
 - `deployment.environment`: user configured tag which identifies the environment where the windows system resides. For example: dev, prod or qa.
 
-## Log Types
+## Log types
 
 The Windows App assumes events are coming from Windows Event Log receiver in JSON format. It does not work with third party logs.
 
@@ -57,7 +58,7 @@ To create a new Collector:
 
 This will generate a command that you can execute in the machine environment you need to monitor. Once executed, it will install the Sumo Logic OpenTelemetry Collector.
 
-<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-Collector.png" style={{border:'1px solid black'}} alt="collector"/>
+<img src="https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-Collector.png" style={{border:'1px solid gray'}} alt="collector"/>
 
 ### Step 2: Configure integration
 
@@ -67,7 +68,7 @@ Any custom fields can be tagged along with the data in this step.
 
 Once the details are filled in, click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Windows-JSON/OpenTelemetry/PCI-Windows-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
 ### Step 3: Send logs to Sumo Logic
 
@@ -124,7 +125,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Queries
+## Sample queries
 
 This sample log query is from the **Windows - PCI Req 02, 08, 10 - Account, User, System Monitoring** dashboard > **User Account Created** panel.
 

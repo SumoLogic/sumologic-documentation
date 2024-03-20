@@ -15,7 +15,7 @@ If you are using ArgoCD or another tool that uses Helm under the hood, make sure
 
 ### Sumo Logic fields
 
-Sumo Logic Apps for Kubernetes and Explore require below listed fields to be added in Sumo Logic UI to your Fields table schema.
+Sumo Logic apps for Kubernetes and Explore require the below listed fields to be added in the Sumo Logic UI to your Fields table schema.
 
 - `cluster`
 - `container`
@@ -30,7 +30,7 @@ Sumo Logic Apps for Kubernetes and Explore require below listed fields to be add
 
 This is normally done in the setup job when `sumologic.setupEnabled` is set to `true` (default behavior).
 
-In an unlikely scenario that this fails, create them manually by visiting [Fields#Manage_fields](/docs/manage/fields/#manage-fields) in Sumo Logic UI.
+In the unlikely scenario that this fails, you can create them manually by visiting [Fields#Manage_fields](/docs/manage/fields/#manage-fields) in Sumo Logic UI.
 
 This is to ensure your logs are tagged with relevant metadata.
 
@@ -207,14 +207,103 @@ otellogs:
                     - IntenseLogGeneration
 ```
 
-For more information look at the `Setting different resources on different nodes for logs collector` section in [Advanced Configuration / Best Practices](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/best-practices.md#setting-different-resources-on-different-nodes-for-logs-collector)
-document.
+For more information, see [Setting different resources on different nodes for logs collector](/docs/send-data/kubernetes/best-practices/#setting-different-resources-on-different-nodes-for-logs-collector).
+
+### Check logs body
+
+You can print logs on stdout of logs collector and logs metadata, and validate if they are correct. It may happen that logs are ingested, but with different metadata than you expect them.
+
+In order to print them on stdout, two steps are required:
+
+1. Disable ingesting logs from log-related pods. This is required to prevent logs ingest spike.
+   - Add the following configuration to `user-values.yaml`:
+     ```yaml
+     debug:
+       logs:
+         metadata:
+           stopLogsIngestion: true
+         collector:
+           stopLogsIngestion: true
+     ```
+   - Then, update your collection and wait for all log collector pods to be redeployed.
+2. Enable printing logs on stdout for logs related pods by adding the following to `user-values.yaml`:
+   ```yaml
+   debug:
+     logs:
+       metadata:
+         print: true
+         stopLogsIngestion: true
+       collector:
+         print: true
+         stopLogsIngestion: true
+   ```
+3. To revert your changes, perform first step as-is, then after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
+:::note
+It's important to perform first step exactly as-is, especially waiting for all collector pods to apply new configuration. We want to avoid situation in which collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
+:::
+
+### View logs being sent to Sumo Logic
+
+You can use Sumo Logic Mock to see what data has been sent to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
+
+```yaml
+debug:
+  sumologicMock:
+    enabled: true
+    deployment:
+      extraArgs:
+        - --print-logs  # print received logs on stdout  
+        - --print-headers  # print headers on stdout
+  logs:
+    metadata:
+      # enable logs forwarding
+      forwardToSumologicMock: true
+```
+
+Then, look at the Sumo Logic Mock logs:
+
+```shell
+> kubectl logs -l sumologic.com/app=sumologic-mock -f
+2024-02-13T08:54:24.664Z INFO  [sumologic_mock] Sumo Logic Mock is listening on 0.0.0.0:3000!
+2024-02-13T08:54:24.664Z INFO  [actix_server::builder] Starting 8 workers
+2024-02-13T08:54:24.664Z INFO  [actix_server::server] Actix runtime found; starting in Actix runtime
+2024-02-13T08:54:26.489Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/logs HTTP/1.1--> content-encoding: gzip--> host: collection-sumologic-mock.sumologic:3000--> user-agent: Go-http-client/1.1--> content-type: application/x-protobuf--> accept-encoding: gzip--> x-sumo-client: k8s_4.4.0-24-g7a27f1c253--> content-length: 1821
+
+2024-02-13T08:54:26.489Z DEBUG [sumologic_mock::router::otlp] log => Container image "public.ecr.aws/sumologic/kubernetes-setup:3.11.0" already present on machine
+2024-02-13T08:54:26.489Z DEBUG [sumologic_mock::router::otlp] log => Created container setup
+2024-02-13T08:54:26.489Z DEBUG [sumologic_mock::router::otlp] log => Successfully pulled image "public.ecr.aws/sumologic/sumologic-mock:2.22.0-59-g245ae92" in 907.292569ms (907.296521ms including waiting)
+2024-02-13T08:54:26.489Z DEBUG [sumologic_mock::router::otlp] log => Created container sumologic-mock
+2024-02-13T08:54:26.489Z DEBUG [sumologic_mock::router::otlp] log => Started container setup
+2024-02-13T08:54:26.489Z DEBUG [sumologic_mock::router::otlp] log => Started container sumologic-mock
+2024-02-13T08:54:26.776Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/logs HTTP/1.1--> host: collection-sumologic-mock.sumologic:3000--> content-type: application/x-protobuf--> content-length: 1111--> content-encoding: gzip--> x-sumo-client: k8s_4.4.0-24-g7a27f1c253--> user-agent: Go-http-client/1.1--> accept-encoding: gzip
+
+2024-02-13T08:54:26.776Z DEBUG [sumologic_mock::router::otlp] log => time="2024-02-13T08:54:24Z" level=info msg="finished unary call with code OK" grpc.code=OK grpc.method=Check grpc.service=grpc.health.v1.Health grpc.start_time="2024-02-13T08:54:24Z" grpc.time_ms=0.013 span.kind=server system=grpc
+2024-02-13T08:54:26.776Z DEBUG [sumologic_mock::router::otlp] log => 2024-02-13T08:54:24.471Z   info    exporterhelper/retry_sender.go:129      Exporting failed. Will retry the request after interval.        {"kind": "exporter", "data_type": "logs", "name": "sumologic", "error": "Post \"http://collection-sumologic-mock.sumologic:3000/receiver/v1/logs\": dial tcp 10.152.183.65:3000: connect: connection refused", "interval": "3.254316449s"}
+2024-02-13T08:54:27.239Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/metrics HTTP/1.1--> accept-encoding: gzip--> content-type: application/x-protobuf--> x-sumo-client: k8s_4.4.0-24-g7a27f1c253--> content-length: 1121--> user-agent: Go-http-client/1.1--> host: collection-sumologic-mock.sumologic:3000--> content-encoding: gzip
+
+2024-02-13T08:54:27.726Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/logs HTTP/1.1--> user-agent: Go-http-client/1.1--> accept-encoding: gzip--> host: collection-sumologic-mock.sumologic:3000--> x-sumo-client: k8s_4.4.0-24-g7a27f1c253--> content-encoding: gzip--> content-type: application/x-protobuf--> content-length: 1886
+
+2024-02-13T08:54:27.726Z DEBUG [sumologic_mock::router::otlp] log => Stopping container sumologic-mock
+2024-02-13T08:54:27.726Z DEBUG [sumologic_mock::router::otlp] log => Scaled up replica set collection-sumologic-mock-6bb85f46c8 to 1
+2024-02-13T08:54:27.726Z DEBUG [sumologic_mock::router::otlp] log => Created pod: collection-sumologic-mock-6bb85f46c8-99tq4
+2024-02-13T08:54:27.726Z DEBUG [sumologic_mock::router::otlp] log => Successfully assigned sumologic/collection-sumologic-mock-6bb85f46c8-99tq4 to sumologic-kubernetes-collection
+2024-02-13T08:54:27.742Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/logs HTTP/1.1--> accept-encoding: gzip--> content-type: application/x-protobuf--> content-length: 759--> host: collection-sumologic-mock.sumologic:3000--> content-encoding: gzip--> x-sumo-client: k8s_4.4.0-24-g7a27f1c253--> user-agent: Go-http-client/1.1
+
+2024-02-13T08:54:27.742Z DEBUG [sumologic_mock::router::otlp] log => 10.0.2.15 - - [13/Feb/2024:08:54:25 +0000] "GET / HTTP/1.1" 200 6 "" "kube-probe/1.23+"
+2024-02-13T08:54:27.742Z DEBUG [sumologic_mock::router::otlp] log =>
+2024-02-13T08:54:27.742Z DEBUG [sumologic_mock::router::otlp] log => Initializing the backend...
+2024-02-13T08:54:27.768Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/logs HTTP/1.1--> host: collection-sumologic-mock.sumologic:3000--> content-length: 1393--> user-agent: Go-http-client/1.1--> content-type: application/x-protobuf--> accept-encoding: gzip--> x-sumo-client: k8s_4.4.0-24-g7a27f1c253--> content-encoding: gzip
+```
+
+:::note
+Logs do not contain metadata fields. Due to that, you can only check data body sent to Sumo Logic.
+:::
 
 ## Collecting metrics
 
 ### Check the `/metrics` endpoint
 
-You can `port-forward` to a pod exposing `/metrics` endpoint and verify it is exposing Prometheus metrics:
+You can `port-forward` to a pod exposing the `/metrics` endpoint and verify it is exposing Prometheus metrics:
 
 ```sh
 kubectl port-forward collection-sumologic-xxxxxxxxx-xxxxx 8080:24231
@@ -224,7 +313,7 @@ Then, in your browser, go to `http://localhost:8080/metrics`. You should see Pro
 
 #### Check the `/metrics` endpoint for Kubernetes services
 
-For kubernetes services you can use the following way:
+For kubernetes services, you can use the following way:
 
 1. Create `sumologic-debug` pod.
    ```yml
@@ -270,11 +359,11 @@ Then, in your browser, go to `localhost:8080`. You should be in the Prometheus U
 
 From here you can start typing the expected name of a metric to see if Prometheus auto-completes the entry.
 
-If you can't find the expected metrics, ensure that prometheus configuration is correct and up to date. In the top menu, navigate to section `Status > Configuration` or go to the `http://localhost:8080/config`. Review the configuration.
+If you cannot find the expected metrics, ensure that prometheus configuration is correct and up to date. In the top menu, navigate to section `Status > Configuration` or go to the `http://localhost:8080/config`. Review the configuration.
 
 Next, you can check if Prometheus is successfully scraping the `/metrics` endpoints. In the top menu, navigate to section `Status > Targets` or go to the `http://localhost:8080/targets`. Check if any targets are down or have errors.
 
-### Check Scrape Configs for Open Telemetry Operator
+### Check Scrape Configs for OpenTelemetry Operator
 
 First expose the target allocator on local port 9090:
 
@@ -346,14 +435,14 @@ metadata:
     config:
       merge:
         exporters:
-          logging:
+          debug:
             verbosity: detailed
         service:
           pipelines:
             metrics:
               exporters:
                 - sumologic/default
-                - logging
+                - debug
 ```
 
 This configuration ensures that all metrics are printed to stdout and they are not collected by logs collector to keep your ingest low.
@@ -395,6 +484,266 @@ kube-prometheus-stack:
 ```
 
 where `metadata.name` is the value from Argo Application manifest.
+
+### Check metrics content
+
+You can print metrics on stdout of metrics collector and metrics metadata, and validate if they are correct. It may happen that metrics are ingested, but with different metadata than you expect.
+
+In order to print them on stdout, two steps are required:
+
+1. Disable ingesting logs from metrics related pods. This is required to prevent logs ingest spike. Add the following configuration to `user-values.yaml`:
+
+   ```yaml
+   debug:
+     metrics:
+       metadata:
+         stopLogsIngestion: true
+       collector:
+         stopLogsIngestion: true
+   ```
+
+   Then update your collection and wait for all log collector pods to be redeployed.
+
+2. Enable printing metrics on stdout for metrics related pods, by adding the following to `user-values.yaml`:
+
+   ```yaml
+   debug:
+     metrics:
+       metadata:
+         print: true
+         stopLogsIngestion: true
+       collector:
+         print: true
+         stopLogsIngestion: true
+   ```
+
+3. To revert your changes, perform first step as-is, then after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
+
+:::note
+It's important to perform the first step exactly as-is, especially waiting for all log collector pods to apply the new configuration. We want to avoid a situation in which logs collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
+:::
+
+### View metrics being sent to Sumo Logic
+
+You can use Sumo Logic Mock to see what data has been send to Sumo Logic.
+
+In order to do that, add the following to your `user-values.yaml`:
+```yaml
+debug:
+  sumologicMock:
+    enabled: true
+    deployment:
+      extraArgs:
+        - --print-metrics  # print received metrics on stdout  
+        - --print-headers  # print headers on stdout
+  metrics:
+    metadata:
+      # enable metrics forwarding
+      forwardToSumologicMock: true
+```
+
+Then, look at the Sumo Logic Mock logs:
+
+```shell
+> kubectl logs -l sumologic.com/app=sumologic-mock -f
+2024-02-13T09:06:54.577Z DEBUG [sumologic_mock::router] --> GET /metrics HTTP/1.1--> host: 10.1.126.167:3000--> user-agent: kube-probe/1.23+--> connection: close--> accept: */*
+
+2024-02-13T09:06:55.816Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/metrics HTTP/1.1--> content-encoding: gzip--> host: collection-sumologic-mock.sumologic:3000--> user-agent: Go-http-client/1.1--> content-type: application/x-protobuf--> accept-encoding: gzip--> content-length: 1107--> x-sumo-client: k8s_4.4.0-23-g067275958d
+
+2024-02-13T09:06:55.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_exporter_queue_capacity", value: 1000.0, labels: {"cluster": "kubernetes", "pod": "collection-sumologic-traces-sampler-5788c687c8-thwll", "node": "sumologic-kubernetes-collection", "job": "collection-sumologic-traces-sampler-headless", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "service_instance_id": "e09dbbcb-47e0-4f86-899e-e298dc4bcb99", "deployment": "collection-sumologic-traces-sampler", "pod_labels_heritage": "Helm", "pod_labels_app": "collection-sumologic-traces-sampler", "_collector": "kubernetes", "container": "otelcol", "service_version": "v0.92.0-sumo-0", "service_name": "otelcol-sumo", "replicaset": "collection-sumologic-traces-sampler-5788c687c8", "pod_labels_release": "collection", "endpoint": "metrics", "prometheus_service": "collection-sumologic-traces-sampler-headless", "service": "collection-sumologic-traces-sampler-headless", "pod_labels_pod-template-hash": "5788c687c8", "exporter": "otlphttp", "namespace": "sumologic", "_origin": "kubernetes"}, timestamp: 1707815214712 }
+2024-02-13T09:06:55.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_exporter_queue_size", value: 0.0, labels: {"pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "_origin": "kubernetes", "pod_labels_pod-template-hash": "5788c687c8", "pod": "collection-sumologic-traces-sampler-5788c687c8-thwll", "service_name": "otelcol-sumo", "replicaset": "collection-sumologic-traces-sampler-5788c687c8", "container": "otelcol", "job": "collection-sumologic-traces-sampler-headless", "_collector": "kubernetes", "service_version": "v0.92.0-sumo-0", "cluster": "kubernetes", "pod_labels_heritage": "Helm", "pod_labels_release": "collection", "pod_labels_app": "collection-sumologic-traces-sampler", "service": "collection-sumologic-traces-sampler-headless", "service_instance_id": "e09dbbcb-47e0-4f86-899e-e298dc4bcb99", "deployment": "collection-sumologic-traces-sampler", "prometheus_service": "collection-sumologic-traces-sampler-headless", "endpoint": "metrics", "namespace": "sumologic", "exporter": "otlphttp", "node": "sumologic-kubernetes-collection"}, timestamp: 1707815214712 }
+2024-02-13T09:06:55.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_process_runtime_heap_alloc_bytes", value: 756309472.0, labels: {"prometheus_service": "collection-sumologic-traces-sampler-headless", "job": "collection-sumologic-traces-sampler-headless", "_origin": "kubernetes", "pod_labels_release": "collection", "pod_labels_app": "collection-sumologic-traces-sampler", "service_name": "otelcol-sumo", "namespace": "sumologic", "node": "sumologic-kubernetes-collection", "deployment": "collection-sumologic-traces-sampler", "pod_labels_heritage": "Helm", "_collector": "kubernetes", "service_version": "v0.92.0-sumo-0", "pod": "collection-sumologic-traces-sampler-5788c687c8-thwll", "replicaset": "collection-sumologic-traces-sampler-5788c687c8", "container": "otelcol", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "pod_labels_pod-template-hash": "5788c687c8", "endpoint": "metrics", "service": "collection-sumologic-traces-sampler-headless", "cluster": "kubernetes", "service_instance_id": "e09dbbcb-47e0-4f86-899e-e298dc4bcb99"}, timestamp: 1707815214712 }
+2024-02-13T09:06:55.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_process_runtime_total_alloc_bytes", value: 771413904.0, labels: {"service_instance_id": "e09dbbcb-47e0-4f86-899e-e298dc4bcb99", "service_name": "otelcol-sumo", "prometheus_service": "collection-sumologic-traces-sampler-headless", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "namespace": "sumologic", "job": "collection-sumologic-traces-sampler-headless", "container": "otelcol", "_origin": "kubernetes", "pod_labels_app": "collection-sumologic-traces-sampler", "_collector": "kubernetes", "service": "collection-sumologic-traces-sampler-headless", "pod": "collection-sumologic-traces-sampler-5788c687c8-thwll", "cluster": "kubernetes", "endpoint": "metrics", "pod_labels_heritage": "Helm", "pod_labels_release": "collection", "replicaset": "collection-sumologic-traces-sampler-5788c687c8", "deployment": "collection-sumologic-traces-sampler", "pod_labels_pod-template-hash": "5788c687c8", "service_version": "v0.92.0-sumo-0", "node": "sumologic-kubernetes-collection"}, timestamp: 1707815214712 }
+2024-02-13T09:06:55.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_process_runtime_total_sys_memory_bytes", value: 787995064.0, labels: {"pod": "collection-sumologic-traces-sampler-5788c687c8-thwll", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "node": "sumologic-kubernetes-collection", "pod_labels_release": "collection", "prometheus_service": "collection-sumologic-traces-sampler-headless", "job": "collection-sumologic-traces-sampler-headless", "namespace": "sumologic", "_collector": "kubernetes", "replicaset": "collection-sumologic-traces-sampler-5788c687c8", "pod_labels_heritage": "Helm", "endpoint": "metrics", "service_version": "v0.92.0-sumo-0", "pod_labels_pod-template-hash": "5788c687c8", "cluster": "kubernetes", "service_name": "otelcol-sumo", "service_instance_id": "e09dbbcb-47e0-4f86-899e-e298dc4bcb99", "service": "collection-sumologic-traces-sampler-headless", "container": "otelcol", "_origin": "kubernetes", "pod_labels_app": "collection-sumologic-traces-sampler", "deployment": "collection-sumologic-traces-sampler"}, timestamp: 1707815214712 }
+2024-02-13T09:06:55.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "up", value: 1.0, labels: {"pod_labels_app": "collection-sumologic-traces-sampler", "prometheus_service": "collection-sumologic-traces-sampler-headless", "service_instance_id": "e09dbbcb-47e0-4f86-899e-e298dc4bcb99", "namespace": "sumologic", "_origin": "kubernetes", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "pod_labels_heritage": "Helm", "pod_labels_pod-template-hash": "5788c687c8", "service_version": "v0.92.0-sumo-0", "pod": "collection-sumologic-traces-sampler-5788c687c8-thwll", "node": "sumologic-kubernetes-collection", "pod_labels_release": "collection", "service": "collection-sumologic-traces-sampler-headless", "replicaset": "collection-sumologic-traces-sampler-5788c687c8", "job": "collection-sumologic-traces-sampler-headless", "endpoint": "metrics", "container": "otelcol", "service_name": "otelcol-sumo", "cluster": "kubernetes", "deployment": "collection-sumologic-traces-sampler", "_collector": "kubernetes"}, timestamp: 1707815214712 }
+2024-02-13T09:06:55.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_process_uptime", value: 676.894321119, labels: {"service": "collection-sumologic-traces-sampler-headless", "pod_labels_heritage": "Helm", "replicaset": "collection-sumologic-traces-sampler-5788c687c8", "cluster": "kubernetes", "container": "otelcol", "prometheus_service": "collection-sumologic-traces-sampler-headless", "service_instance_id": "e09dbbcb-47e0-4f86-899e-e298dc4bcb99", "job": "collection-sumologic-traces-sampler-headless", "pod": "collection-sumologic-traces-sampler-5788c687c8-thwll", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "pod_labels_app": "collection-sumologic-traces-sampler", "endpoint": "metrics", "deployment": "collection-sumologic-traces-sampler", "pod_labels_pod-template-hash": "5788c687c8", "_collector": "kubernetes", "service_name": "otelcol-sumo", "_origin": "kubernetes", "pod_labels_release": "collection", "service_version": "v0.92.0-sumo-0", "namespace": "sumologic", "node": "sumologic-kubernetes-collection"}, timestamp: 1707815214712 }
+2024-02-13T09:06:55.818Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_processor_batch_metadata_cardinality", value: 1.0, labels: {"pod_labels_app": "collection-sumologic-traces-sampler", "replicaset": "collection-sumologic-traces-sampler-5788c687c8", "namespace": "sumologic", "cluster": "kubernetes", "pod": "collection-sumologic-traces-sampler-5788c687c8-thwll", "pod_labels_heritage": "Helm", "_origin": "kubernetes", "_collector": "kubernetes", "prometheus_service": "collection-sumologic-traces-sampler-headless", "node": "sumologic-kubernetes-collection", "service_instance_id": "e09dbbcb-47e0-4f86-899e-e298dc4bcb99", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "container": "otelcol", "job": "collection-sumologic-traces-sampler-headless", "service_version": "v0.92.0-sumo-0", "deployment": "collection-sumologic-traces-sampler", "service_name": "otelcol-sumo", "endpoint": "metrics", "service": "collection-sumologic-traces-sampler-headless", "pod_labels_pod-template-hash": "5788c687c8", "pod_labels_release": "collection"}, timestamp: 1707815214712 }
+2024-02-13T09:06:55.818Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_process_cpu_seconds", value: 0.9, labels: {"node": "sumologic-kubernetes-collection", "deployment": "collection-sumologic-traces-sampler", "pod_labels_app": "collection-sumologic-traces-sampler", "_collector": "kubernetes", "_origin": "kubernetes", "service_instance_id": "e09dbbcb-47e0-4f86-899e-e298dc4bcb99", "cluster": "kubernetes", "pod_labels_release": "collection", "pod_labels_pod-template-hash": "5788c687c8", "service_name": "otelcol-sumo", "prometheus_service": "collection-sumologic-traces-sampler-headless", "endpoint": "metrics", "job": "collection-sumologic-traces-sampler-headless", "pod": "collection-sumologic-traces-sampler-5788c687c8-thwll", "service": "collection-sumologic-traces-sampler-headless", "service_version": "v0.92.0-sumo-0", "replicaset": "collection-sumologic-traces-sampler-5788c687c8", "pod_labels_heritage": "Helm", "namespace": "sumologic", "container": "otelcol", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d"}, timestamp: 1707815214712 }
+2024-02-13T09:06:55.818Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_process_memory_rss", value: 147492864.0, labels: {"pod": "collection-sumologic-traces-sampler-5788c687c8-thwll", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "service": "collection-sumologic-traces-sampler-headless", "pod_labels_pod-template-hash": "5788c687c8", "replicaset": "collection-sumologic-traces-sampler-5788c687c8", "cluster": "kubernetes", "_origin": "kubernetes", "service_version": "v0.92.0-sumo-0", "deployment": "collection-sumologic-traces-sampler", "pod_labels_heritage": "Helm", "node": "sumologic-kubernetes-collection", "pod_labels_app": "collection-sumologic-traces-sampler", "_collector": "kubernetes", "service_instance_id": "e09dbbcb-47e0-4f86-899e-e298dc4bcb99", "service_name": "otelcol-sumo", "prometheus_service": "collection-sumologic-traces-sampler-headless", "job": "collection-sumologic-traces-sampler-headless", "endpoint": "metrics", "namespace": "sumologic", "pod_labels_release": "collection", "container": "otelcol"}, timestamp: 1707815214712 }
+2024-02-13T09:06:56.816Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/metrics HTTP/1.1--> accept-encoding: gzip--> content-length: 3209--> host: collection-sumologic-mock.sumologic:3000--> user-agent: Go-http-client/1.1--> x-sumo-client: k8s_4.4.0-23-g067275958d--> content-encoding: gzip--> content-type: application/x-protobuf
+
+2024-02-13T09:06:56.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_exporter_queue_size", value: 0.0, labels: {"exporter": "sumologic", "statefulset": "collection-sumologic-otelcol-logs", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "service_instance_id": "9efeb490-0d19-49b0-8128-01ac2aabe1df", "cluster": "kubernetes", "pod_labels_heritage": "Helm", "_collector": "kubernetes", "job": "collection-sumologic-metadata-logs", "_origin": "kubernetes", "pod_labels_release": "collection", "endpoint": "otelcol-metrics", "node": "sumologic-kubernetes-collection", "service_version": "v0.92.0-sumo-0", "namespace": "sumologic", "service": "collection-sumologic-metadata-logs_collection-sumologic-otelcol-logs-headless", "pod": "collection-sumologic-otelcol-logs-0", "service_name": "otelcol-sumo", "prometheus_service": "collection-sumologic-metadata-logs", "pod_labels_statefulset.kubernetes.io/pod-name": "collection-sumologic-otelcol-logs-0", "pod_labels_controller-revision-hash": "collection-sumologic-otelcol-logs-6ff4df45b", "container": "otelcol", "pod_labels_app": "collection-sumologic-otelcol-logs"}, timestamp: 1707815215023 }
+2024-02-13T09:06:56.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_exporter_requests_records", value: 19.0, labels: {"pod_labels_app": "collection-sumologic-otelcol-logs", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "pod_labels_statefulset.kubernetes.io/pod-name": "collection-sumologic-otelcol-logs-0", "pipeline": "logs", "_collector": "kubernetes", "exporter": "sumologic", "statefulset": "collection-sumologic-otelcol-logs", "_origin": "kubernetes", "service_instance_id": "9efeb490-0d19-49b0-8128-01ac2aabe1df", "prometheus_service": "collection-sumologic-metadata-logs", "endpoint": "otelcol-metrics", "status_code": "200", "container": "otelcol", "pod_labels_controller-revision-hash": "collection-sumologic-otelcol-logs-6ff4df45b", "pod_labels_heritage": "Helm", "cluster": "kubernetes", "service_version": "v0.92.0-sumo-0", "job": "collection-sumologic-metadata-logs", "exported_endpoint": "https://collectors.sumologic.com/receiver/v1/otlp/ZaVnC4dhaV1G3fKi4RlKyO3Jr3J_nyx1O2Z2QovkcXrzueaasBjb9PDJIBG-9D6qfPgmu8_8327GeYSDhzM69yzZJxZo3he3vnqtp4XL1GQhEGPICw9l4A==/v1/logs", "service_name": "otelcol-sumo", "pod": "collection-sumologic-otelcol-logs-0", "node": "sumologic-kubernetes-collection", "namespace": "sumologic", "pod_labels_release": "collection", "service": "collection-sumologic-metadata-logs_collection-sumologic-otelcol-logs-headless"}, timestamp: 1707815215023 }
+2024-02-13T09:06:56.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_otelsvc_k8s_pod_added", value: 35.0, labels: {"container": "otelcol", "pod_labels_heritage": "Helm", "_collector": "kubernetes", "pod_labels_release": "collection", "_origin": "kubernetes", "node": "sumologic-kubernetes-collection", "service_name": "otelcol-sumo", "pod": "collection-sumologic-otelcol-logs-0", "statefulset": "collection-sumologic-otelcol-logs", "job": "collection-sumologic-metadata-logs", "namespace": "sumologic", "service": "collection-sumologic-metadata-logs_collection-sumologic-otelcol-logs-headless", "pod_labels_controller-revision-hash": "collection-sumologic-otelcol-logs-6ff4df45b", "pod_labels_statefulset.kubernetes.io/pod-name": "collection-sumologic-otelcol-logs-0", "pod_labels_app": "collection-sumologic-otelcol-logs", "cluster": "kubernetes", "endpoint": "otelcol-metrics", "prometheus_service": "collection-sumologic-metadata-logs", "service_version": "v0.92.0-sumo-0", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "service_instance_id": "9efeb490-0d19-49b0-8128-01ac2aabe1df"}, timestamp: 1707815215023 }
+2024-02-13T09:06:56.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_process_cpu_seconds", value: 0.51, labels: {"pod": "collection-sumologic-otelcol-logs-0", "pod_labels_release": "collection", "cluster": "kubernetes", "endpoint": "otelcol-metrics", "container": "otelcol", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "pod_labels_statefulset.kubernetes.io/pod-name": "collection-sumologic-otelcol-logs-0", "node": "sumologic-kubernetes-collection", "service": "collection-sumologic-metadata-logs_collection-sumologic-otelcol-logs-headless", "namespace": "sumologic", "service_version": "v0.92.0-sumo-0", "service_name": "otelcol-sumo", "prometheus_service": "collection-sumologic-metadata-logs", "pod_labels_app": "collection-sumologic-otelcol-logs", "pod_labels_controller-revision-hash": "collection-sumologic-otelcol-logs-6ff4df45b", "pod_labels_heritage": "Helm", "statefulset": "collection-sumologic-otelcol-logs", "service_instance_id": "9efeb490-0d19-49b0-8128-01ac2aabe1df", "_collector": "kubernetes", "_origin": "kubernetes", "job": "collection-sumologic-metadata-logs"}, timestamp: 1707815215023 }
+2024-02-13T09:06:56.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_processor_filter_logs_filtered", value: 0.0, labels: {"_origin": "kubernetes", "node": "sumologic-kubernetes-collection", "service": "collection-sumologic-metadata-logs_collection-sumologic-otelcol-logs-headless", "namespace": "sumologic", "pod_labels_release": "collection", "pod": "collection-sumologic-otelcol-logs-0", "_collector": "kubernetes", "container": "otelcol", "filter": "filter/include_containers", "pod_labels_statefulset.kubernetes.io/pod-name": "collection-sumologic-otelcol-logs-0", "statefulset": "collection-sumologic-otelcol-logs", "job": "collection-sumologic-metadata-logs", "pod_labels_app": "collection-sumologic-otelcol-logs", "pod_labels_heritage": "Helm", "service_version": "v0.92.0-sumo-0", "pod_labels_controller-revision-hash": "collection-sumologic-otelcol-logs-6ff4df45b", "service_instance_id": "9efeb490-0d19-49b0-8128-01ac2aabe1df", "prometheus_service": "collection-sumologic-metadata-logs", "endpoint": "otelcol-metrics", "cluster": "kubernetes", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "service_name": "otelcol-sumo"}, timestamp: 1707815215023 }
+2024-02-13T09:06:56.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_processor_filter_logs_filtered", value: 38.0, labels: {"job": "collection-sumologic-metadata-logs", "pod_labels_heritage": "Helm", "_origin": "kubernetes", "prometheus_service": "collection-sumologic-metadata-logs", "namespace": "sumologic", "pod": "collection-sumologic-otelcol-logs-0", "_collector": "kubernetes", "statefulset": "collection-sumologic-otelcol-logs", "service_instance_id": "9efeb490-0d19-49b0-8128-01ac2aabe1df", "pod_labels_controller-revision-hash": "collection-sumologic-otelcol-logs-6ff4df45b", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "filter": "filter/include_fluent_tag_host", "pod_labels_statefulset.kubernetes.io/pod-name": "collection-sumologic-otelcol-logs-0", "pod_labels_release": "collection", "service": "collection-sumologic-metadata-logs_collection-sumologic-otelcol-logs-headless", "container": "otelcol", "service_version": "v0.92.0-sumo-0", "endpoint": "otelcol-metrics", "pod_labels_app": "collection-sumologic-otelcol-logs", "service_name": "otelcol-sumo", "cluster": "kubernetes", "node": "sumologic-kubernetes-collection"}, timestamp: 1707815215023 }
+2024-02-13T09:06:56.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "up", value: 1.0, labels: {"namespace": "sumologic", "service_name": "otelcol-sumo", "service_instance_id": "9efeb490-0d19-49b0-8128-01ac2aabe1df", "container": "otelcol", "pod_labels_heritage": "Helm", "pod_labels_controller-revision-hash": "collection-sumologic-otelcol-logs-6ff4df45b", "pod_labels_statefulset.kubernetes.io/pod-name": "collection-sumologic-otelcol-logs-0", "service_version": "v0.92.0-sumo-0", "_collector": "kubernetes", "prometheus_service": "collection-sumologic-metadata-logs", "_origin": "kubernetes", "job": "collection-sumologic-metadata-logs", "cluster": "kubernetes", "node": "sumologic-kubernetes-collection", "endpoint": "otelcol-metrics", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "service": "collection-sumologic-metadata-logs_collection-sumologic-otelcol-logs-headless", "pod": "collection-sumologic-otelcol-logs-0", "pod_labels_app": "collection-sumologic-otelcol-logs", "pod_labels_release": "collection", "statefulset": "collection-sumologic-otelcol-logs"}, timestamp: 1707815215023 }
+2024-02-13T09:06:56.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_exporter_requests_sent", value: 9.0, labels: {"_origin": "kubernetes", "endpoint": "otelcol-metrics", "pod_labels_release": "collection", "cluster": "kubernetes", "container": "otelcol", "job": "collection-sumologic-metadata-logs", "statefulset": "collection-sumologic-otelcol-logs", "_collector": "kubernetes", "service_instance_id": "9efeb490-0d19-49b0-8128-01ac2aabe1df", "service_name": "otelcol-sumo", "namespace": "sumologic", "pod_labels_heritage": "Helm", "pod_labels_app": "collection-sumologic-otelcol-logs", "pod_labels_controller-revision-hash": "collection-sumologic-otelcol-logs-6ff4df45b", "pod_labels_statefulset.kubernetes.io/pod-name": "collection-sumologic-otelcol-logs-0", "prometheus_service": "collection-sumologic-metadata-logs", "exported_endpoint": "https://collectors.sumologic.com/receiver/v1/otlp/ZaVnC4dhaV1G3fKi4RlKyO3Jr3J_nyx1O2Z2QovkcXrzueaasBjb9PDJIBG-9D6qfPgmu8_8327GeYSDhzM69yzZJxZo3he3vnqtp4XL1GQhEGPICw9l4A==/v1/logs", "node": "sumologic-kubernetes-collection", "pipeline": "logs", "service_version": "v0.92.0-sumo-0", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "status_code": "200", "exporter": "sumologic", "pod": "collection-sumologic-otelcol-logs-0", "service": "collection-sumologic-metadata-logs_collection-sumologic-otelcol-logs-headless"}, timestamp: 1707815215023 }
+2024-02-13T09:06:56.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_http_server_response_content_length", value: 18.0, labels: {"job": "collection-sumologic-metadata-logs", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "service": "collection-sumologic-metadata-logs_collection-sumologic-otelcol-logs-headless", "net_host_name": "collection-sumologic-metadata-logs.sumologic.svc.cluster.local.", "endpoint": "otelcol-metrics", "namespace": "sumologic", "_origin": "kubernetes", "service_instance_id": "9efeb490-0d19-49b0-8128-01ac2aabe1df", "pod_labels_app": "collection-sumologic-otelcol-logs", "node": "sumologic-kubernetes-collection", "cluster": "kubernetes", "statefulset": "collection-sumologic-otelcol-logs", "_collector": "kubernetes", "net_host_port": "4318", "prometheus_service": "collection-sumologic-metadata-logs", "service_name": "otelcol-sumo", "pod_labels_controller-revision-hash": "collection-sumologic-otelcol-logs-6ff4df45b", "http_status_code": "200", "http_flavor": "1.1", "container": "otelcol", "http_method": "POST", "pod": "collection-sumologic-otelcol-logs-0", "pod_labels_heritage": "Helm", "pod_labels_statefulset.kubernetes.io/pod-name": "collection-sumologic-otelcol-logs-0", "http_scheme": "http", "pod_labels_release": "collection", "service_version": "v0.92.0-sumo-0"}, timestamp: 1707815215023 }
+2024-02-13T09:06:56.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_processor_batch_timeout_trigger_send", value: 9.0, labels: {"processor": "batch", "service_instance_id": "9efeb490-0d19-49b0-8128-01ac2aabe1df", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "pod_labels_heritage": "Helm", "container": "otelcol", "pod": "collection-sumologic-otelcol-logs-0", "pod_labels_release": "collection", "namespace": "sumologic", "node": "sumologic-kubernetes-collection", "service": "collection-sumologic-metadata-logs_collection-sumologic-otelcol-logs-headless", "endpoint": "otelcol-metrics", "cluster": "kubernetes", "statefulset": "collection-sumologic-otelcol-logs", "_collector": "kubernetes", "prometheus_service": "collection-sumologic-metadata-logs", "service_name": "otelcol-sumo", "pod_labels_statefulset.kubernetes.io/pod-name": "collection-sumologic-otelcol-logs-0", "job": "collection-sumologic-metadata-logs", "pod_labels_controller-revision-hash": "collection-sumologic-otelcol-logs-6ff4df45b", "pod_labels_app": "collection-sumologic-otelcol-logs", "service_version": "v0.92.0-sumo-0", "_origin": "kubernetes"}, timestamp: 1707815215023 }
+2024-02-13T09:06:56.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_receiver_accepted_log_records", value: 19.0, labels: {"pod_labels_statefulset.kubernetes.io/pod-name": "collection-sumologic-otelcol-logs-0", "service": "collection-sumologic-metadata-logs_collection-sumologic-otelcol-logs-headless", "_origin": "kubernetes", "prometheus_service": "collection-sumologic-metadata-logs", "service_version": "v0.92.0-sumo-0", "container": "otelcol", "service_instance_id": "9efeb490-0d19-49b0-8128-01ac2aabe1df", "pod_labels_release": "collection", "statefulset": "collection-sumologic-otelcol-logs", "node": "sumologic-kubernetes-collection", "service_name": "otelcol-sumo", "receiver": "otlp", "cluster": "kubernetes", "transport": "http", "pod": "collection-sumologic-otelcol-logs-0", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "job": "collection-sumologic-metadata-logs", "namespace": "sumologic", "pod_labels_heritage": "Helm", "pod_labels_app": "collection-sumologic-otelcol-logs", "pod_labels_controller-revision-hash": "collection-sumologic-otelcol-logs-6ff4df45b", "_collector": "kubernetes", "endpoint": "otelcol-metrics"}, timestamp: 1707815215023 }
+2024-02-13T09:06:56.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_exporter_requests_duration", value: 2217.0, labels: {"pod_labels_controller-revision-hash": "collection-sumologic-otelcol-logs-6ff4df45b", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "status_code": "200", "service_name": "otelcol-sumo", "service_version": "v0.92.0-sumo-0", "pod": "collection-sumologic-otelcol-logs-0", "_origin": "kubernetes", "statefulset": "collection-sumologic-otelcol-logs", "node": "sumologic-kubernetes-collection", "pod_labels_heritage": "Helm", "job": "collection-sumologic-metadata-logs", "pod_labels_app": "collection-sumologic-otelcol-logs", "service": "collection-sumologic-metadata-logs_collection-sumologic-otelcol-logs-headless", "_collector": "kubernetes", "container": "otelcol", "prometheus_service": "collection-sumologic-metadata-logs", "exporter": "sumologic", "cluster": "kubernetes", "service_instance_id": "9efeb490-0d19-49b0-8128-01ac2aabe1df", "pipeline": "logs", "pod_labels_release": "collection", "endpoint": "otelcol-metrics", "namespace": "sumologic", "exported_endpoint": "https://collectors.sumologic.com/receiver/v1/otlp/ZaVnC4dhaV1G3fKi4RlKyO3Jr3J_nyx1O2Z2QovkcXrzueaasBjb9PDJIBG-9D6qfPgmu8_8327GeYSDhzM69yzZJxZo3he3vnqtp4XL1GQhEGPICw9l4A==/v1/logs", "pod_labels_statefulset.kubernetes.io/pod-name": "collection-sumologic-otelcol-logs-0"}, timestamp: 1707815215023 }
+2024-02-13T09:06:56.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_exporter_sent_log_records", value: 19.0, labels: {"_collector": "kubernetes", "endpoint": "otelcol-metrics", "exporter": "sumologic", "_origin": "kubernetes", "cluster": "kubernetes", "service_name": "otelcol-sumo", "pod_labels_app": "collection-sumologic-otelcol-logs", "pod_labels_release": "collection", "namespace": "sumologic", "service_instance_id": "9efeb490-0d19-49b0-8128-01ac2aabe1df", "node": "sumologic-kubernetes-collection", "service_version": "v0.92.0-sumo-0", "pod_labels_statefulset.kubernetes.io/pod-name": "collection-sumologic-otelcol-logs-0", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "pod_labels_heritage": "Helm", "job": "collection-sumologic-metadata-logs", "pod_labels_controller-revision-hash": "collection-sumologic-otelcol-logs-6ff4df45b", "statefulset": "collection-sumologic-otelcol-logs", "service": "collection-sumologic-metadata-logs_collection-sumologic-otelcol-logs-headless", "prometheus_service": "collection-sumologic-metadata-logs", "container": "otelcol", "pod": "collection-sumologic-otelcol-logs-0"}, timestamp: 1707815215023 }
+2024-02-13T09:06:56.817Z DEBUG [sumologic_mock::router::otlp] metrics => Sample { metric: "otelcol_process_runtime_heap_alloc_bytes", value: 50173608.0, labels: {"service_version": "v0.92.0-sumo-0", "node": "sumologic-kubernetes-collection", "service": "collection-sumologic-metadata-logs_collection-sumologic-otelcol-logs-headless", "prometheus_service": "collection-sumologic-metadata-logs", "service_name": "otelcol-sumo", "pod_labels_app": "collection-sumologic-otelcol-logs", "pod_labels_statefulset.kubernetes.io/pod-name": "collection-sumologic-otelcol-logs-0", "pod_labels_release": "collection", "_collector": "kubernetes", "service_instance_id": "9efeb490-0d19-49b0-8128-01ac2aabe1df", "statefulset": "collection-sumologic-otelcol-logs", "_origin": "kubernetes", "namespace": "sumologic", "pod_labels_chart": "sumologic-4.4.0-23-g067275958d", "pod": "collection-sumologic-otelcol-logs-0", "pod_labels_heritage": "Helm", "container": "otelcol", "pod_labels_controller-revision-hash": "collection-sumologic-otelcol-logs-6ff4df45b", "job": "collection-sumologic-metadata-logs", "cluster": "kubernetes", "endpoint": "otelcol-metrics"}, timestamp: 1707815215023 }
+```
+
+## Collecting Spans and Traces
+
+### Check instrumentation content
+
+You can print spans on stdout of instrumentation related pods, and validate if they are correct. It may happen that spans are ingested, but with different metadata than you expect.
+
+In order to print them on stdout, two steps are required:
+
+1. Disable ingesting logs from instrumentation related pods. This is required to prevent logs ingest spike. Add the following configuration to `user-values.yaml`:
+
+   ```yaml
+   debug:
+     instrumentation:
+       otelcolInstrumentation:
+         stopLogsIngestion: true
+       tracesGateway:
+         stopLogsIngestion: true
+       tracesSampler:
+         stopLogsIngestion: true
+   ```
+
+   Then update your collection and wait for all log collector pods to be redeployed.
+
+2. Enable printing spans on stdout for instrumentation related pods, by adding the following to `user-values.yaml`:
+
+   ```yaml
+   debug:
+     instrumentation:
+       otelcolInstrumentation:
+         print: true
+         stopLogsIngestion: true
+       tracesGateway:
+         print: true
+         stopLogsIngestion: true
+       tracesSampler:
+         print: true
+         stopLogsIngestion: true
+   ```
+
+3. To revert your changes, perform first step as-is, then after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
+
+:::note
+It's important to perform the first step exactly as-is, especially waiting for all log collector pods to apply new configuration. We want to avoid the situation in which logs collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
+:::
+
+### View traces being sent to Sumo Logic
+
+You can use Sumo Logic Mock to see what data has been send to Sumo Logic.
+
+In order to do that, add the following to your `user-values.yaml`:
+```yaml
+debug:
+  sumologicMock:
+    enabled: true
+    deployment:
+      extraArgs:
+        - --print-spans    # print received spans on stdout  
+        - --print-headers  # print headers on stdout
+  instrumentation:
+    tracesSampler:
+      # enable spans forwarding
+      forwardToSumologicMock: true
+```
+
+Then, look at the Sumo Logic Mock logs:
+
+```shell
+> kubectl logs -l sumologic.com/app=sumologic-mock -f
+2024-02-13T14:19:22.397Z INFO  [sumologic_mock] Sumo Logic Mock is listening on 0.0.0.0:3000!
+2024-02-13T14:19:22.398Z INFO  [actix_server::builder] Starting 8 workers
+2024-02-13T14:19:22.398Z INFO  [actix_server::server] Actix runtime found; starting in Actix runtime
+2024-02-13T14:19:56.412Z DEBUG [sumologic_mock::router::otlp] Span => name: root-span-otlpHttp, span_id: 0cdfc556b3884a6e, parent_span_id: , trace_id: f7563cc4ef721e1d14974eea71e20b55
+2024-02-13T14:19:56.412Z DEBUG [sumologic_mock::router::otlp] Span => name: ancestor-1, span_id: b5206fc77b835624, parent_span_id: 0cdfc556b3884a6e, trace_id: f7563cc4ef721e1d14974eea71e20b55
+2024-02-13T14:19:56.412Z DEBUG [sumologic_mock::router::otlp] Span => name: ancestor-2, span_id: 3663cc216d50caa4, parent_span_id: b5206fc77b835624, trace_id: f7563cc4ef721e1d14974eea71e20b55
+2024-02-13T14:19:56.412Z DEBUG [sumologic_mock::router::otlp] Span => name: ancestor-3, span_id: 1ce499eb291e4c49, parent_span_id: 3663cc216d50caa4, trace_id: f7563cc4ef721e1d14974eea71e20b55
+2024-02-13T14:19:56.412Z DEBUG [sumologic_mock::router::otlp] Span => name: ancestor-4, span_id: 671623a120987635, parent_span_id: 1ce499eb291e4c49, trace_id: f7563cc4ef721e1d14974eea71e20b55
+2024-02-13T14:19:56.412Z DEBUG [sumologic_mock::router::otlp] Span => name: ancestor-5, span_id: a6225d27fd7fec15, parent_span_id: 671623a120987635, trace_id: f7563cc4ef721e1d14974eea71e20b55
+2024-02-13T14:19:56.412Z DEBUG [sumologic_mock::router::otlp] Span => name: ancestor-6, span_id: 2ef9759def53f709, parent_span_id: a6225d27fd7fec15, trace_id: f7563cc4ef721e1d14974eea71e20b55
+2024-02-13T14:19:56.412Z DEBUG [sumologic_mock::router::otlp] Span => name: ancestor-7, span_id: 34b7b7f27d6a9d86, parent_span_id: 2ef9759def53f709, trace_id: f7563cc4ef721e1d14974eea71e20b55
+```
+
+## Collecting events
+
+### Check events body
+
+You can print events on stdout of events collector pod, and validate if they are correct.
+
+In order to print them on stdout, two steps are required:
+
+1. Disable ingesting logs from events collector. This is required to prevent logs ingest spike.
+   - Add the following configuration to `user-values.yaml`:
+   ```yaml
+   debug:
+     events:
+       stopLogsIngestion: true
+   ```
+   - Then, update your collection and wait for all log collector pods to be redeployed.
+2. Enable printing events on stdout for events collector, by adding the following to `user-values.yaml`:
+   ```yaml
+   debug:
+     events:
+       print: true
+       stopLogsIngestion: true
+   ```
+3. To revert your changes, perform the first step as-is, then after configuration has been propagated to all pods, you can remove all configuration added in this section from the `user-values.yaml`.
+
+:::note
+It's important to perform the first step exactly as-is, especially waiting for all collector pods to apply new configuration. We want to avoid the situation in which collector pods are picking up debugging logs and sending them to Sumo Logic, as it may increase your costs.
+:::
+
+### View events being sent to Sumo Logic
+
+You can use Sumo Logic Mock to see what data has been send to Sumo Logic. In order to do that, add the following to your `user-values.yaml`:
+
+```yaml
+debug:
+  sumologicMock:
+    enabled: true
+    deployment:
+      extraArgs:
+        - --print-logs  # print received events/logs on stdout  
+        - --print-headers  # print headers on stdout
+  events:
+    # enable logs forwarding
+    forwardToSumologicMock: true
+```
+
+Then look at the Sumo Logic Mock logs:
+
+```shell
+> kubectl logs -l sumologic.com/app=sumologic-mock -f
+2024-02-13T21:44:36.922Z INFO  [sumologic_mock] Sumo Logic Mock is listening on 0.0.0.0:3000!
+2024-02-13T21:44:36.923Z INFO  [actix_server::builder] Starting 8 workers
+2024-02-13T21:44:36.923Z INFO  [actix_server::server] Actix runtime found; starting in Actix runtime
+2024-02-13T21:44:52.264Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/traces HTTP/1.1--> content-type: application/x-protobuf--> content-length: 1113--> accept-encoding: gzip--> user-agent: Sumo Logic OpenTelemetry Collector distribution/v0.92.0-sumo-0 (linux/amd64)--> host: collection-sumologic-mock.sumologic:3000--> content-encoding: gzip
+
+2024-02-13T21:44:55.558Z DEBUG [sumologic_mock::router] --> GET /metrics HTTP/1.1--> accept: */*--> user-agent: kube-probe/1.23+--> connection: close--> host: 10.1.126.180:3000
+
+2024-02-13T21:44:57.264Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/traces HTTP/1.1--> content-type: application/x-protobuf--> user-agent: Sumo Logic OpenTelemetry Collector distribution/v0.92.0-sumo-0 (linux/amd64)--> host: collection-sumologic-mock.sumologic:3000--> content-encoding: gzip--> accept-encoding: gzip--> content-length: 1372
+
+2024-02-13T21:45:02.262Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/traces HTTP/1.1--> host: collection-sumologic-mock.sumologic:3000--> content-length: 1252--> accept-encoding: gzip--> content-encoding: gzip--> user-agent: Sumo Logic OpenTelemetry Collector distribution/v0.92.0-sumo-0 (linux/amd64)--> content-type: application/x-protobuf
+
+2024-02-13T21:45:07.264Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/traces HTTP/1.1--> accept-encoding: gzip--> user-agent: Sumo Logic OpenTelemetry Collector distribution/v0.92.0-sumo-0 (linux/amd64)--> content-type: application/x-protobuf--> content-encoding: gzip--> host: collection-sumologic-mock.sumologic:3000--> content-length: 1502
+
+2024-02-13T21:45:15.558Z DEBUG [sumologic_mock::router] --> GET /metrics HTTP/1.1--> host: 10.1.126.180:3000--> connection: close--> accept: */*--> user-agent: kube-probe/1.23+
+
+2024-02-13T21:45:35.559Z DEBUG [sumologic_mock::router] --> GET /metrics HTTP/1.1--> user-agent: kube-probe/1.23+--> accept: */*--> connection: close--> host: 10.1.126.180:3000
+
+2024-02-13T21:45:36.924Z DEBUG [sumologic_mock::router] 1707860736 Metrics:          0 Logs:          0; 0.000000 MB/s Spans:         40;
+2024-02-13T21:45:54.784Z DEBUG [sumologic_mock::router] --> POST /receiver/v1/logs HTTP/1.1--> user-agent: Go-http-client/1.1--> content-length: 5888--> accept-encoding: gzip--> x-sumo-client: k8s_4.4.0--> content-encoding: gzip--> content-type: application/x-protobuf--> host: collection-sumologic-mock.sumologic:3000
+
+2024-02-13T21:45:54.785Z DEBUG [sumologic_mock::router::otlp] log => delete Pod collection-sumologic-otelcol-events-0 in StatefulSet collection-sumologic-otelcol-events successful
+2024-02-13T21:45:54.785Z DEBUG [sumologic_mock::router::otlp] log => Stopping container otelcol
+2024-02-13T21:45:54.785Z DEBUG [sumologic_mock::router::otlp] log => delete Pod collection-sumologic-otelcol-instrumentation-2 in StatefulSet collection-sumologic-otelcol-instrumentation successful
+2024-02-13T21:45:54.785Z DEBUG [sumologic_mock::router::otlp] log => Stopping container otelcol
+2024-02-13T21:45:54.785Z DEBUG [sumologic_mock::router::otlp] log => Container image "public.ecr.aws/sumologic/sumologic-otel-collector:0.92.0-sumo-0" already present on machine
+2024-02-13T21:45:54.785Z DEBUG [sumologic_mock::router::otlp] log => Created container otelcol
+2024-02-13T21:45:54.785Z DEBUG [sumologic_mock::router::otlp] log => Container image "public.ecr.aws/sumologic/sumologic-otel-collector:0.92.0-sumo-0" already present on machine
+2024-02-13T21:45:54.785Z DEBUG [sumologic_mock::router::otlp] log => Created container otelcol
+2024-02-13T21:45:54.785Z DEBUG [sumologic_mock::router::otlp] log => Started container otelcol
+2024-02-13T21:45:54.785Z DEBUG [sumologic_mock::router::otlp] log => Started container otelcol
+```
+
+:::note
+Logs do not contain metadata fields. Due to that, you can only check data body sent to Sumo Logic.
+:::
 
 ## Common Issues
 
@@ -617,4 +966,68 @@ It means that Custom Resource Definition has not been applied by Helm. It is [He
 
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.44.0/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml
+```
+
+## Using Sumo Logic Mock
+
+Sumo Logic Mock is debugging tool, which helps to see what exactly is being sent from the Sumo Logic Collection to Sumo Logic. It may help with finding if there are any missing metrics, logs, traces, or parts of them like labels or metadata.
+
+:::note
+Sumo Logic Mock is treated as an experimental tool and it may significantly change between every release.
+:::
+
+### Estimate ingestion using Sumo Logic Mock in local mode
+
+Sumo Logic Mock can be used to estimate how many logs and metrics are going to be sent to Sumo Logic without even having any Sumo Logic account.
+
+Add the following configuration to your `user-values.yaml`:
+
+```yaml
+debug:
+  sumologicMock:
+    enabled: true
+  enableLocalMode: tru
+```
+
+And then, you can see throughput in the Sumo Logic Mock logs:
+
+```shell
+> kubectl logs -l sumologic.com/app=sumologic-mock -f
+2024-02-12T10:08:43.117Z INFO  [sumologic_mock] Sumo Logic Mock is listening on 0.0.0.0:3000!
+2024-02-12T10:08:43.118Z INFO  [actix_server::builder] Starting 8 workers
+2024-02-12T10:08:43.118Z INFO  [actix_server::server] Actix runtime found; starting in Actix runtime
+2024-02-12T10:09:43.117Z DEBUG [sumologic_mock::router] 1707732583 Metrics:       1522 Logs:         44; 0.000075 MB/s Spans:         17;
+2024-02-12T10:10:43.118Z DEBUG [sumologic_mock::router] 1707732643 Metrics:       2050 Logs:         33; 0.000027 MB/s Spans:         13;
+2024-02-12T10:11:43.117Z DEBUG [sumologic_mock::router] 1707732703 Metrics:       1786 Logs:         35; 0.000034 MB/s Spans:          2;
+2024-02-12T10:12:43.117Z DEBUG [sumologic_mock::router] 1707732763 Metrics:       1786 Logs:         40; 0.000075 MB/s Spans:         15;
+2024-02-12T10:13:43.117Z DEBUG [sumologic_mock::router] 1707732823 Metrics:       1786 Logs:         31; 0.000027 MB/s Spans:          0;
+```
+
+Where `1707732583 Metrics:       1522 Logs:         44; 0.000075 MB/s Spans:          17;` means the following:
+
+- It sums up ingestion for one minute up to `1707732583` (`2024-02-12T10:09:43`)
+- there were `1522` metrics data points, which means `1522 DPM`
+- There were `44` logs (`0.000075 MB/s`)
+- There were `17` spans
+
+### Estimate ingestion while sending data to Sumo Logic
+
+You can also send every signal separately at the same time as ingesting it to Sumo Logic.
+
+Add one of the following to your `user-values.yaml` in order to achieve that:
+
+```yaml
+debug:
+  sumologicMock:
+    # This is obligatory. It spins up the Sumo Logic Mock service
+    enabled: true
+  logs:
+    metadata:
+      # enable logs forwarding
+      forwardToSumologicMock: true
+
+  metrics:
+    metadata:
+      # enable metrics forwarding
+      forwardToSumologicMock: true
 ```

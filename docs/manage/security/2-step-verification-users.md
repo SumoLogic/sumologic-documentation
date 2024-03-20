@@ -54,14 +54,14 @@ After signing in to Sumo Logic, you can disable 2-Step Verification if it is opt
 
 To disable 2-Step Verification:
 
-1. Click **your name** in the left nav, then go to** Preferences**.
+1. Click **your name** in the left nav, then go to **Preferences**.
 1. Click **Disable 2-Step Verification**.
 1. Enter your Sumo Logic password.
 1. Click **Save**.
 
 ## Lost device? Use a backup code
 
-If you lose your mobile device or otherwise can't generate a code for the configured TOTP integration, you can use your backup codes to sign in. Each of the five codes can be used for one sign-in.
+If you lose your mobile device or otherwise cannot generate a code for the configured TOTP integration, you can use your backup codes to sign in. Each of the five codes can be used for one sign-in.
 
 You can find your codes in one of two ways:
 

@@ -24,7 +24,7 @@ The Network Sensor extracts files observed over cleartext protocols that match s
 
 :::note
 YARA [file analysis](/docs/cse/rules/import-yara-rules) is supported only for files extracted by the Network Sensor. If you use
-your own Zeek deployment and ingest logs using a Sumo Logic Source you can't also upload extracted files. 
+your own Zeek deployment and ingest logs using a Sumo Logic Source you cannot also upload extracted files. 
 :::
 
 ### Filtering Zeek logs
@@ -102,17 +102,34 @@ Here’s an example Bro log from the Security Onion platform. 
 
 In the log above, the content of the Bro log is the value of the `MESSAGE` key. Note that no key in the log explicitly states the log type, which is `conn`. 
 
-To enable Cloud SIEM to successfully process the log, we need to create the
-following fields listed in the table below.
+To enable Cloud SIEM to successfully process the log, we need to create the following fields listed in the table below.
 
-| Field          | Parse Expression                                                                                       |
-|:----------------|:--------------------------------------------------------------------------------------------------------|
-| `_siemMessage` | `json field=_raw "MESSAGE" as _siemMessage`                                                            |
-| `_siemEventId` | `json field=_raw "PROGRAM" as _siemEventId | parse regex field=_siemEventId "bro_(\<_siemEventI\>.*)"` |
-| `_siemFormat`  | `“bro” as _siemFormat`                                                                                 |
-| `_siemVendor`  | `“bro” as _siemVendor`                                                                                 |
-| `_siemProduct` | `“bro” as _siemProduct`                                                                                |
-
+<table>
+  <tr>
+   <td><strong>Field</strong></td>
+   <td><strong>Parse Expression</strong> </td>
+  </tr>
+  <tr>
+   <td><code>_siemMessage</code> </td>
+   <td><code>json field=_raw "MESSAGE" as _siemMessage</code> </td>
+  </tr>
+  <tr>
+   <td><code>_siemEventId</code></td>
+   <td><code>json field=_raw "PROGRAM" as _siemEventId | parse regex field=_siemEventId "bro_(?&lt;_siemEventId>.*)"</code> </td>
+  </tr>
+  <tr>
+   <td><code>_siemFormat</code></td>
+   <td><code>"bro" as _siemFormat</code></td>
+  </tr>
+  <tr>
+   <td><code>_siemVendor</code></td>
+   <td><code>"bro" as _siemVendor</code></td>
+  </tr>
+  <tr>
+   <td><code>_siemProduct</code></td>
+   <td><code>"bro" as _siemProduct</code></td>
+  </tr>
+</table>
 
 Perform these steps for each of the FERs.
 

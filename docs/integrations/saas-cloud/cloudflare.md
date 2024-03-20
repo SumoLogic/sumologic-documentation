@@ -19,7 +19,7 @@ The Cloudflare App provides a set of dashboards that make analyzing Cloudflare l
 The Cloudflare App uses HTTP request logs in JSON format gathered from all of the 160+ Cloudflare data centers. By default, timestamps are returned as Unix nanosecond integers. We recommend using the RFC 3339 format for sending logs to Sumo Logic. For a description of the fields available in the logs see link [here](https://developers.cloudflare.com/logs/logpull-api/#fields).
 
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -35,7 +35,7 @@ The Cloudflare App uses HTTP request logs in JSON format gathered from all of th
 }
 ```
 
-### Sample query
+### Sample queries
 
 The following log query is from the ‘Total Number of Requests’ panel in the ‘Cloudflare - Snapshot’ dashboard.
 
@@ -92,11 +92,11 @@ Once connected, Cloudflare lists Sumo Logic as a connected service under Logs > 
 
 ## Installing the Cloudflare app
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Cloudflare dashboards 
+## Viewing Cloudflare dashboards
 =======
 This section has instructions for installing the Cloudflare App for Sumo Logic.
 

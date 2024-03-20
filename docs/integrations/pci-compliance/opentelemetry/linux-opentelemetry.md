@@ -1,6 +1,7 @@
 ---
 id: linux-opentelemetry
 title: PCI Compliance for Linux - OpenTelemetry
+sidebar_label: Linux - OTel Collector
 dashboard: The Sumo Logic app for Payment Card Industry (PCI) Compliance for Linux - OpenTelemetry offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
@@ -20,9 +21,34 @@ The PCI Compliance for Linux app covers PCI requirements 02, 07, 08, and 10.
 
 ## Fields created in Sumo Logic for Linux PCI Compliance
 
-Following tag will be created as part of Linux app installation, if not already present. 
+Following tag will be created as part of Linux app installation, if not already present.
 
 - `sumo.datasource`. Has a fixed value of **linux**.
+
+## Prereqisites
+
+This app is based on the following log files from the Ubuntu Linux machine.
+
+- auth.log
+- syslog
+- daemon.log
+- dpkg.log
+- kern.log
+- CentOS, Amazon Linux, and Red Hat
+- audit/audit.log
+- secure
+- messages
+- yum.log
+
+:::note
+If you've already configured collection of these log files (for example, during Linux or Linux - Cloud Security Monitoring and Analytics app setup), then no additional log file collection is required. If any of the log files are missing, you can configure the missing file collection in the next step.
+:::
+
+### For logs collection
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
 
 ## Collection configuration and app installation
 
@@ -129,13 +155,13 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample log message
+## Sample log messages
 
 ```
 Jun 28 07:46:03 bruno-supercomputer useradd[1602]: new account added - account=root1, uid=1002, gid=100, home=/home/root1, shell=/bin/bash, by=0
 ```
 
-## Sample log query
+## Sample queries
 
 ```sql
 sumo.datasource=linux deployment.environment=* host.group=* host.name=* "useradd" and ("new user" or "new account")
@@ -190,7 +216,7 @@ Use this dashboard to:
 The **PCI Compliance for Linux - PCI Requirements 10 - Privileged Activity** dashboard meets PCI Requirement 10. This dashboard provides information about total sudo attempts, failed sudo attempts, top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 Use this dashboard to:
-- Monitor successful and failed access attempts to systems with administrative privileges. 
+- Monitor successful and failed access attempts to systems with administrative privileges.
 - Monitor actions performed by users with administrative privileges.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/PCI-Compliance-For-Linux/OpenTelemetry/PCI-Compliance-Req-10.png')} alt="PCI Compliance for Linux dashboards" style={{border: '1px solid gray'}}/>

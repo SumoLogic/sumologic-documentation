@@ -2,7 +2,7 @@
 id: puppet
 title: Puppet - Classic Collector
 sidebar_label: Puppet
-description: The Sumo Logic App for Puppet helps you monitor Puppet metrics and events.
+description: The Sumo Logic app for Puppet helps you monitor Puppet metrics and events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,22 +11,22 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/app-development/puppet.png')} alt="Thumbnail icon" width="50"/>
 
-Puppet is a software configuration management tool. Puppet can provision infrastructure and enforce desired configurations across new and existing servers. The Sumo Logic App for Puppet helps you monitor Puppet metrics and events, which means that you can easily:
+Puppet is a software configuration management tool. Puppet can provision infrastructure and enforce desired configurations across new and existing servers. The Sumo Logic app for Puppet helps you monitor Puppet metrics and events, which means that you can easily:
 
 * Determine when Puppet runs occurred.
 * Track service and applying times for each run.
 * Find out how often resources have changed, skipped, failed to update, or are out-of-sync.
 * Find out the root cause of issues by correlating puppet runs with metrics from other components in your infrastructure.
 
-## Log Types
+## Log types
 
-Sumo’s Puppet Logs source and Puppet Reports source use an installed collector to gather the following data from Puppet:
+Sumo Logic’s Puppet Logs source and Puppet Reports source use an installed collector to gather the following data from Puppet:
 
 * Puppet Server logs. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
 * Puppet Server Access logs. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
 * Puppet Reports. Puppet generates reports in YAML format. SumoLogic supports report format 10. This is the format of reports output by Puppet versions 5.5.3 and newer. It is backward compatible with report format 9 (in Puppet versions 5.5.0 to 5.5.2). For more information about the puppet reports, see [Puppet Reports](https://puppet.com/docs/puppet/5.5/format_report.html).
 
-### Puppet Reports
+### Puppet reports
 
 Puppet reports are in YAML format. They must be converted to JSON prior to ingestion to Sumo.
 
@@ -129,13 +129,18 @@ metrics:
 				[
 					"failed",
 					"\"Fail",
+				]
+			]
+		}
+	}
+}
 ```
 
 </TabItem>
 </Tabs>
 
 
-### Sample Log Messages
+### Sample log messages
 
 ```json title=" Puppet Server"
 2018-08-22 00:03:14,141 INFO  [qtp839286351-63] [puppetserver] Puppet Compiled catalog for puppet-node-1 in environment production in 0.18 seconds
@@ -147,7 +152,7 @@ metrics:
 10.1.3.83 - - [28/Aug/2018:06:44:18 +0000] "GET /puppet/v3/node/puppet-node-3?environment=production&configured_environment=production&transaction_uuid=f95ce8bd-f97e-4d99-9a72-3b010a50ceb1&fail_on_404=true HTTP/1.1" 200 11394 "-" "Puppet/5.5.3 Ruby/2.4.4-p296 (x86_64-linux)" 77
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Failed Resources"
 _sourceCategory=prod/web/puppet/reports
@@ -157,9 +162,9 @@ _sourceCategory=prod/web/puppet/reports
 | fields failed_res_pct
 ```
 
-## Collecting Logs for Puppet
+## Collecting logs for Puppet
 
-Learn how to collect Puppet logs, reports, and events for the Sumo App for Puppet.
+Learn how to collect Puppet logs, reports, and events for the Sumo app for Puppet.
 
 The sections below provide instructions for installing a collector on a Puppet Master host, setting up Sumo Puppet sources (server, access and reports logs), and installing the Sumo app for Puppet. With this configuration you can collect Puppet logs, events, and reports, and visualize resource performance and puppet runs data in the dashboards provided by the app.
 
@@ -331,17 +336,17 @@ If you encounter problems:
 * Review [Script source prerequisites](#Script_source_prerequisites).
 * Review the contents of the log file that the script creates in the configured working directory.
 
+## Installing the Puppet app
 
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Installing the Puppet App
+<AppInstall2/>
 
-Now that you have set up collection for Puppet, install the Sumo Logic App for Puppet to use the preconfigured searches and Dashboards that provide insight into your data.
+## Viewing Puppet dashboards​
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-<AppInstall/>
-
-## Viewing Puppet App Dashboards
+<ViewDashboards/>
 
 ### Overview
 

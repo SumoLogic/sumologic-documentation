@@ -44,14 +44,12 @@ To configure syslog messages, do the following:
 
 1. In the SentinelOne sidebar, click **Scope**, and then select a scope.
 
-  :::note
-  If you are a Site or Account admin, you must select one Site to be able to open Settings.
-  :::
+   :::note
+   If you are a Site or Account admin, you must select one Site to be able to open Settings.
+   :::
 
 1. In the sidebar, click **Settings**.
-1. In the Settings toolbar, click **Integrations**.
-
-  ![SentinelOne_Integrations_option.png](/img/send-data/SentinelOne_Integrations_option.png)
+1. In the Settings toolbar, click **Integrations**. <br/> ![SentinelOne_Integrations_option.png](/img/send-data/SentinelOne_Integrations_option.png)
 
 1. Click **SYSLOG**. The SYSLOG dialog appears.
 1. Click the toggle to **Enable SYSLOG**.
@@ -60,13 +58,11 @@ To configure syslog messages, do the following:
 1. Specify the following **Formatting** options:
 
    * **Information format**: Select **CEF2**
-   * **SIEM Token**: Paste the Cloud Syslog Source Token generated from Sumo Logic.
-
-  ![SentinelOne_SYSLOG_dialog.png](/img/send-data/SentinelOne_SYSLOG_dialog.png)
+   * **SIEM Token**: Paste the Cloud Syslog Source Token generated from Sumo Logic. <br/> ![SentinelOne_SYSLOG_dialog.png](/img/send-data/SentinelOne_SYSLOG_dialog.png)
 
 1. Click **Test**, and then click **Save**.
 
-1. In Sumo Logic, verify that the logs are being ingested by running a search against the Cloud Syslog source you configured in [Step 1](#step-1-get-a-token-and-certificate-from-sumo-logic). If you don't see any data coming in after 2-3 minutes, check the following:
+1. In Sumo Logic, verify that the logs are being ingested by running a search against the Cloud Syslog source you configured in [Step 1](#step-1-get-a-token-and-certificate-from-sumo-logic). If you do not see any data coming in after 2-3 minutes, check the following:
 
    * that the Sumo Logic Collector has read access to the logs
    * that your time zone is configured correctly.

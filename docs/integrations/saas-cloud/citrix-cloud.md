@@ -52,7 +52,7 @@ This Citrix Cloud App uses [SystemLog](https://developer.cloud.com/citrix-cloud/
        }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql="Active Team Members"
 sourceCategory="citrixCloudSource"
@@ -68,9 +68,9 @@ sourceCategory="citrixCloudSource"
 
 ## Installing the Citrix Cloud app
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Citrix Cloud dashboards
 

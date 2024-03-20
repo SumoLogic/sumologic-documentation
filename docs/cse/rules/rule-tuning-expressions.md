@@ -71,7 +71,7 @@ Here’s what the example tuning expression looks like in the Cloud SIEM UI.
    * To apply the expression to some but not all rules, choose **selected**. In the **Type to add a rule area**, enter a search string that matches Rule names or Rule IDs. To search by Rule name, you can enter a string that the Rule name contains. To search by Rule ID, you can enter the complete ID, or a subset of the ID, starting with the leading character.  The name and ID of rules that match will appear on the page..
 1. In the **To \[include|exclude\]... area**:
    * Leave **include** selected if you want Signals to be fired for Records that match both the rule expression and the tuning expression.
-   * Select **exclude** from the pulldown if you want Signals to be fired for Records that match the rule expression and don't match the tuning expression.
+   * Select **exclude** from the pulldown if you want Signals to be fired for Records that match the rule expression and do not match the tuning expression.
 1. Enter a tuning expression.
 2. Click **Submit**.
    <br/><img src={useBaseUrl('img/cse/new-expression.png')} alt="New expression" width="800"/>
@@ -101,7 +101,7 @@ You can also toggle the enablement state on the details page for a tuning expres
 
 ## Testing tuning expressions
 
-When you test a [rule expression](/docs/cse/rules/about-cse-rules#about-rule-expressions) by clicking **Test Rule** in the rules editor, any tuning expressions assigned to the rule will be included in the test. If you don't want to test the tuning expressions, you can deselect one or more of the tuning expressions before clicking **Test Rule.**
+When you test a [rule expression](/docs/cse/rules/about-cse-rules#about-rule-expressions) by clicking **Test Rule** in the rules editor, any tuning expressions assigned to the rule will be included in the test. If you do not want to test the tuning expressions, you can deselect one or more of the tuning expressions before clicking **Test Rule.**
 
 <img src={useBaseUrl('img/cse/tuning-checkbox.png')} alt="Test rule" width="400"/>
 

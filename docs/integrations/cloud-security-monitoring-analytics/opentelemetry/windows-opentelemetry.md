@@ -1,7 +1,7 @@
 ---
 id: windows-opentelemetry
 title: Windows - Cloud Security Monitoring and Analytics - OpenTelemetry
-sidebar_label: Windows - OpenTelemetry
+sidebar_label: Windows - OTel Collector
 description: The Sumo Logic app for Windows Cloud Security Monitoring and Analytics - OpenTelemetry provides pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 ---
 
@@ -17,7 +17,7 @@ Windows - Cloud Security Monitoring and Analytics - OpenTelemetry is a unified l
 
 ## Fields created in Sumo Logic for Windows
 
-The following tag will be created as part of Windows app installation, if not already present. 
+The following tag will be created as part of Windows app installation, if not already present.
 
 - `sumo.datasource`. Has a fixed value of **windows**.
 - `host.group`. User configured tag which signifies a group of hosts for the operating system.
@@ -114,7 +114,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample log message
+## Sample log messages
 
 ```json
 {
@@ -210,7 +210,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 }
 ```
 
-## Sample log query
+## Sample queries
 
 This sample log query is from the **Windows - Security Analytics - User Account Changes** dashboard > **Failed Logins Summary** panel.
 

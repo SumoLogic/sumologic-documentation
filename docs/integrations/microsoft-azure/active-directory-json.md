@@ -22,7 +22,7 @@ Standard Windows event channels include:
 
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -64,7 +64,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 ```
 
 
-### Sample query
+### Sample queries
 
 The sample query is from **Successes Vs Failures** panel from [Active Directory Service Failures](#service-failures) dashboard.
 
@@ -89,8 +89,7 @@ To configure a collector and source, do the following:
 1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
   * **Event Format.** Select Collect using JSON format.
-
-Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
+	* **Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
   * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown.
 **Complete Message** will ingest the entire event content along with metadata.
 
@@ -98,9 +97,9 @@ For more information on local or remote Windows Event Log Source configuration, 
 
 ## Installing the Active Directory JSON app​
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Active Directory JSON dashboards​
 

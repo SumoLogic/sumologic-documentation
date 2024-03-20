@@ -52,7 +52,7 @@ started (kafka.server.KafkaServer)
 </Tabs>
 
 
-## Sample Queries
+## Sample queries
 
 This sample query string is from the Logs panel of the **Kafka - Logs** dashboard.
 
@@ -69,7 +69,7 @@ This section provides instructions for configuring log and metric collection for
 
 ### Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -132,18 +132,18 @@ Follow these steps to collect metrics from a Kubernetes environment:
 2. **Add annotations on your Kafka pods**.
    1. Open [this yaml file](https://sumologic-app-data.s3.amazonaws.com/Kafka/KAfka_PodAnnotations.yaml) and add the annotations mentioned there.
    2. Enter in values for the parameters marked with `CHANGE_ME` in the yaml file:
-     * `telegraf.influxdata.com/inputs` - As telegraf will be run as a sidecar the `urls` should always be localhost.
+     * `telegraf.influxdata.com/inputs`. As telegraf will be run as a sidecar the `urls` should always be localhost.
      * In the input plugins section:
         * `urls` - The URL to the Kafka server. As telegraf will be run as a sidecar the `urls` should always be localhost. This can be a comma-separated list to connect to multiple Kafka servers.
      * In the tags sections, (`[inputs.jolokia2_agent.tags]` and `[inputs.disk.tags]`):
-        * `environment` - This is the deployment environment where the Kafka cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * `messaging_cluster` - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. This is the deployment environment where the Kafka cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `messaging_cluster`. Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-Here’s an explanation for additional values set by this configuration that we request you **do not modify** these values as they will cause the Sumo Logic apps to not function correctly.
+**Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
 
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus plugin will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape metrics from. This should not be changed.
+* `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"`. This ensures our Prometheus plugin will scrape the metrics.
+* `prometheus.io/port: "9273"`. This tells Prometheus what ports to scrape metrics from. This should not be changed.
 * `telegraf.influxdata.com/inputs`
     * In the tags sections `[inputs.jolokia2_agent/diskio/disk]`
         * `component: “messaging”` - This value is used by Sumo Logic apps to identify application components.
@@ -205,9 +205,9 @@ This section explains the steps to collect Kafka logs from a Kubernetes environm
     `messaging_system: "kafka"` \
     `messaging_cluster: "kafka_prod_cluster01-CHANGE_ME”`
    2. Enter in values for the following parameters (marked in bold and `CHANGE_ME` above):
-      * `environment` - This is the deployment environment where the Kafka cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `messaging_cluster` - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
-      * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+      * `environment`. This is the deployment environment where the Kafka cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `messaging_cluster`. Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
+      * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
       * `component: “messaging”` - This value is used by Sumo Logic apps to identify application components.
       * `messaging_system: “kafka”` - This value identifies the messaging system.
       * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) for more parameters that can be configured in the Telegraf agent globally.
@@ -296,8 +296,8 @@ This section provides instructions for configuring metrics collection for the Su
 * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
     * `urls` - In the `[[inputs.jolokia2_agent]]` section. The URL to the Kafka server. This can be a comma-separated list to connect to multiple Kafka servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Jolokia input plugin for Telegraf.
     * In the tags sections (total 3) which is section[inputs.jolokia2_agent.tags], and [inputs.disk.tags]
-        * `environment` - This is the deployment environment where the Kafka cluster identified by the value of `urls` parameter resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * `messaging_cluster` - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. This is the deployment environment where the Kafka cluster identified by the value of `urls` parameter resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `messaging_cluster`. Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * In the output plugins section:
     * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
@@ -338,7 +338,7 @@ This section provides instructions for configuring log collection for Kafka runn
      * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
      * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Kafka Server’s time zone.
      * **Timestamp Format.** The timestamp format is automatically detected.
-     * **Encoding. **Select** **UTF-8 (Default).
+     * **Encoding.** Select UTF-8 (Default).
      * **Enable Multiline Processing.** Detect messages spanning multiple lines
      * Select Infer Boundaries - Detect message boundaries automatically
     4. Click **Save**.
@@ -367,8 +367,8 @@ Create or modify config.yaml. Refer sample config [here](https://ot-distro.s3.am
     * In the receivers > telegraf > agent_config > input plugins section which is :
         * `urls` - In the section. The URL to the Kafka server. This can be a comma-separated list to connect to multiple Kafka servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Jolokia input plugin for Telegraf.
         * In the tags sections (total 3) which is section`[inputs.jolokia2_agent.tags]`, and [inputs.disk.tags]
-            * `environment` - This is the deployment environment where the Kafka cluster identified by the value of `urls` parameter resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-            * `messaging_cluster` - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
+            * `environment`. This is the deployment environment where the Kafka cluster identified by the value of `urls` parameter resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+            * `messaging_cluster`. Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
     * In the receivers > filelog section, refer instructions [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/v0.54.0/receiver/filelogreceiver):
         * include: list of kafka log files with full directory path.
     * Configure sumologic exporter and service as defined here.
@@ -420,7 +420,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in using [this link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-3. Download the Sumo Logic Terraform package for Kafka alerts. The alerts package is available in the Sumo Logic [github repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Kafka). You can either download it through the “git clone” command or as a zip file.
+3. Download the Sumo Logic Terraform package for Kafka alerts. The alerts package is available in the Sumo Logic [GitHub repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Kafka). You can either download it through the “git clone” command or as a zip file.
 4. Alert Configuration. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Kafka`.
    1. Edit the `monitor.auto.tfvars` file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
     ```bash
@@ -485,7 +485,9 @@ This section demonstrates how to install the Kafka App.
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**. :::note
+Version selection is not available for all apps.
+:::
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom Kafka cluster filter. Examples:
@@ -552,7 +554,7 @@ The **Kafka -Zookeeper** dashboard provides an at-a-glance view of the state of 
 Use this dashboard to monitor key Zookeeper metrics such as:
 * **Zookeeper disconnect rate** - This metric indicates if a Zookeeper node has lostits connection to a Kafka broker.
 * **Authentication Failures** - This metric indicates a Kafka Broker is unable to connect to its Zookeeper node.
-* **Session Expiration **- When a Kafka broker - Zookeeper node session expires, leader changes can occur and the broker can be assigned a new controller. If this metric is increasing we recommend you:
+* **Session Expiration** - When a Kafka broker - Zookeeper node session expires, leader changes can occur and the broker can be assigned a new controller. If this metric is increasing we recommend you:
     1. Check the health of your network.
     2. Check for garbage collection issues and tune your JVMs accordingly.
 * Connection Rate.
@@ -574,7 +576,7 @@ Use this dashboard to:
 
 ### Kafka - Failures and Delayed Operations
 
-The **Kafka - Failures and Delayed Operations **dashboard gives you insight into all failures and delayed operations associated with your Kafka clusters.
+The **Kafka - Failures and Delayed Operations** dashboard gives you insight into all failures and delayed operations associated with your Kafka clusters.
 
 Use this dashboard to:
 * Analyze failed produce requests -  A failed produce request occurs when a problem is encountered when processing a produce request. This could be for a variety of reasons, however some common reasons are:
@@ -595,9 +597,9 @@ The **Kafka - Request-Response** **Times** dashboard helps you get insight into 
 
 Use this dashboard to:
 * Monitor request time metrics - The Request Metrics metric group contains information regarding different types of request to and from the cluster. Important request metrics to monitor:
-    1. **Fetch Consumer Request Total Time **- The Fetch Consumer Request Total Time metric shows the maximum and mean amount of time taken for processing, and the number of requests from consumers to get new data. Reasons for increased time taken could be: increased load on the node (creating processing delays), or perhaps requests are being held in purgatory for a long time (determined by fetch.min.bytes and fetch.wait.max.ms metrics).
+    1. **Fetch Consumer Request Total Time** - The Fetch Consumer Request Total Time metric shows the maximum and mean amount of time taken for processing, and the number of requests from consumers to get new data. Reasons for increased time taken could be: increased load on the node (creating processing delays), or perhaps requests are being held in purgatory for a long time (determined by fetch.min.bytes and fetch.wait.max.ms metrics).
     2. **Fetch Follower Request Total Time** - The Fetch Follower Request Total Time metric displays the maximum and mean amount of time taken while processing, and the number of requests to get new data from Kafka brokers that are followers of a partition. Common causes of increased time taken are increased load on the node causing delays in processing requests, or that some partition replicas may be overloaded or temporarily unavailable.
-    3. **Produce Request Total Time **- The Produce Request Total Time metric displays the maximum and mean amount of time taken for processing, and the number of requests from producers to send data. Some reasons for increased time taken could be: increased load on the node causing delays in processing the requests, or perhaps requests are being held in purgatory for a long time (if the `requests.required.acks` metrics is equal to '1' or all).
+    3. **Produce Request Total Time**- The Produce Request Total Time metric displays the maximum and mean amount of time taken for processing, and the number of requests from producers to send data. Some reasons for increased time taken could be: increased load on the node causing delays in processing the requests, or perhaps requests are being held in purgatory for a long time (if the `requests.required.acks` metrics is equal to '1' or all).
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Request-Response-Times.png')} alt="Kafka dashboards" />
 

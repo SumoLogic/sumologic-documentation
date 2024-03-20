@@ -4,7 +4,7 @@ title: join Search Operator
 sidebar_label: join
 ---
 
-The `join` operator combines records of two or more data streams. Results are admitted on-the-fly to allow real time tables to be built. Values common to each table are then delivered as search results. The join operator in Sumo Logic works much like an <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join">inner SQL join</a>.
+The `join` operator combines records of two or more data streams. Results are admitted on-the-fly to allow real time tables to be built. Values common to each table are then delivered as search results. The `join` operator in Sumo Logic works much like an [inner SQL join](https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join).
 
 ## Syntax
 
@@ -56,7 +56,7 @@ on t1.a = t2.c
     `The number of output messages exceeds 10,000,000. Please refine your search or shorten the time range to reduce the number of output messages.`
 
 * Only conjunctive conditions (AND) are allowed. Using NOT or OR conditions is not supported.
-* [Real Time Alerts](/docs/alerts/scheduled-searches/create-real-time-alert.md) don't support the join operator.
+* [Real Time Alerts](/docs/alerts/scheduled-searches/create-real-time-alert.md) do not support the join operator.
 * The join operator uses sliding windows to store candidates for joins in order to prevent unbounded memory usage when joining between two large relations. Because of this, the result of the join could be incomplete and inconsistent from run-to-run.
 * The following conditions are not currently supported in the ON clause:
 
