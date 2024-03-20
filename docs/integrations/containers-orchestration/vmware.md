@@ -2,14 +2,14 @@
 id: vmware
 title: VMware
 sidebar_label: VMware
-description: The Sumo Logic App for VMware collects unified logs and metrics from the VMware cloud computing virtualization platform, including vCenter Server, vSphere, ESX/ESXi, and individual virtual machines, for real-time display in predefined dashboards.
+description: The Sumo Logic app for VMware collects unified logs and metrics from the VMware cloud computing virtualization platform, including vCenter Server, vSphere, ESX/ESXi, and individual virtual machines, for real-time display in predefined dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="VMware dashboards" width="50" />
 
-The VMware App uses unified logs and metrics from the VMware cloud computing virtualization platform to enable monitoring of vCenter, ESXi hosts and individual virtual machines metrics with real-time date displayed in predefined dashboards.
+The VMware app uses unified logs and metrics from the VMware cloud computing virtualization platform to enable monitoring of vCenter, ESXi hosts and individual virtual machines metrics with real-time date displayed in predefined dashboards.
 
 The dashboards provide insight into key events and metrics such as VM CPU, memory, disk utilization, under-provisioned physical hosts, and idle VMs. This enables you to determine capacity constraints and troubleshoot operational issues related to over-provisioning, changes to configuration, and VM movement.
 
@@ -28,7 +28,7 @@ The dashboards provide real-time monitoring with visual data displays, allowing 
 
 ```json
 2018-11-15 17:39:09.569 +0530 ,,, message=Error detected for sumo-win2k8-a-4 on xx1.sumolabs.com
-in Production1-West: Agent can't send heartbeats.msg size: 612, sendto() returned: Operation not
+in Production1-West: Agent cannot send heartbeats.msg size: 612, sendto() returned: Operation not
 permitted.,,,eventType=<class 'pyVmomi.VmomiSupport.vim.event.GeneralVmErrorEvent'>,,,
 vm=ubuntu16.04-b-4,,,host=8df.sumolabs.com,,,datacenter=Production3-East,,,
 computeResource=esx1.sumolabscluster.com,,,key=3553,,,chainId=3269
@@ -52,19 +52,19 @@ _sourceCategory = Labs/VMWare6.5 and ("error" or "fail" or "critical")
 
 ## Prerequisites
 
-* **Supported Software Versions**. The VMware App works with vCenter and vSphere 6.5, 6.7, and 7.0.
+* **Supported Software Versions**. The VMware app works with vCenter and vSphere 6.5, 6.7, and 7.0.
 * **Sumo Logic scripts for VMware**. The Sumo Logic scripts required to work with the app are located here: [sumo-vsphere-ulm.zip](https://appdevstore.s3.amazonaws.com/VMWare/sumo-vsphere-ulm.zip).
 
 
-## Collecting Logs and Metrics for the VMware App
+## Collecting logs and metrics for the VMware app
 
-The VMware App collects logs and metrics from your VMware cloud computing virtualization platform, then displays the data in predefined dashboards. The App enables you to monitor vCenter, ESXi hosts and VM metrics and events.
+The VMware app collects logs and metrics from your VMware cloud computing virtualization platform, then displays the data in predefined dashboards. The app enables you to monitor vCenter, ESXi hosts and VM metrics and events.
 
 This section provides instructions for collecting logs and metrics for VMware.
 
 ### Step 1: Set up a server, host, or VM to collect data
 
-You can use the following method for setting up a server to collect data for the VMware App:
+You can use the following method for setting up a server to collect data for the VMware app:
 
 If you have an existing VM, go directly to [Installing the Sumo Logic scripts on a VM](#installing-sumo-logic-scripts-on-a-vcenter-server-another-host-or-vm) and proceed with following the instructions. Install the Sumo Logic scripts for events and metrics on a vCenter server, or another host with access to vCenter APIs.
 
@@ -92,9 +92,9 @@ An Installed Collector is a Java agent that receives logs and metrics from its S
 To install a Collector to collect logs and metrics, refer to this [link](/docs/send-data/installed-collectors) for installation instructions.
 
 
-### Step 3: Collect logs and metrics for the VMware App
+### Step 3: Collect logs and metrics for the VMware app
 
-This section explains how to set up a vCenter server, host, or VM to collect logs and metric for the Sumo Logic App for VMware.
+This section explains how to set up a vCenter server, host, or VM to collect logs and metric for the Sumo Logic app for VMware.
 
 #### Collecting event messages
 
@@ -329,22 +329,17 @@ The pE flag is used to specify whether the password is encrypted or not. Default
     * If following error is encountered: “pyVmomi.VmomiSupport.UnknownWsdlTypeError: 'ContentLibrary'”, remove TaskEvent and EventEx from the vmware_constants.py and try again.
 
 
-## Installing the VMware App
+## Installing the VMware app
 
-This section provides instructions for installing the VMware App.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-Now that you have set up collection for VMWare, you can install the VMWare App to use the preconfigured searches and Dashboards that provide insight into your data.
+<AppInstall2/>
 
-import AppInstall from '../../reuse/apps/app-install.md';
+## Viewing VMware dashboards​
 
-<AppInstall/>
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-## Viewing VMware Dashboards
-
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard.
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
+<ViewDashboards/>
 
 ### vCenter Operations - Overview
 

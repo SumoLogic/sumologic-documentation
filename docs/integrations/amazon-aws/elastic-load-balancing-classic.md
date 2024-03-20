@@ -34,7 +34,7 @@ The log format is described in [AWS ELB Access Log Collection](http://docs.aws.a
 Follow the [Before you begin](#Before-you-begin) section and then use the in-product instructions in Sumo Logic to set up the app. For information on collecting unified logs and metrics for AWS Elastic Load Balancing - Classic, see [AWS Elastic Load Balancing ULM - Classic](/docs/integrations/amazon-aws/classic-load-balancer.md).
 
 
-### Before you begin
+### Prerequisites
 
 Enable Elastic Load Balancing logging in your AWS account and configure a Sumo Logic ELB Source, using [these instructions](/docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source).
 
@@ -48,7 +48,7 @@ Finally, make copies of each Panel in the Elastic Load Balancing Dashboards, and
 This procedure shows how to enable access to your Amazon Web Services (AWS) Elastic Load Balancing (ELB) logs and ingest them into Sumo Logic.
 
 :::note
-Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-account.md) at any time.
+Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-legacy-account.md) at any time.
 :::
 
 

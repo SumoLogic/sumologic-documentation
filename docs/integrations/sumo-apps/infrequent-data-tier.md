@@ -81,14 +81,14 @@ Sumo Logic Infrequent Data Tier App is only available for Enterprise Suite custo
 
 Infrequent Data Tiers enable you to ingest log or machine data for a minimal cost per GB. Your data is then securely stored by Sumo Logic and is instantly available on-demand for interactive analysis without any additional preparation, re-ingestion, or rehydration. This service is ideal when you need to quickly and/or periodically investigate issues, troubleshoot code, configuration problems, or address customer support cases which can rely on searching high volumes of data for insights. This allows you to only pay for the specific data sets that you analyze at a given time.
 
-[Infrequent Data Tiers](/docs/manage/partitions-data-tiers/data-tiers) allow you to effectively analyze high volumes of log data that is accessed on a minimal basis. In this data tier, you pay for the amount of data scanned in each search. This on-demand payment model allows you to minimize costs by only paying the data accessed.
+[Infrequent Data Tiers](/docs/manage/partitions/data-tiers) allow you to effectively analyze high volumes of log data that is accessed on a minimal basis. In this data tier, you pay for the amount of data scanned in each search. This on-demand payment model allows you to minimize costs by only paying the data accessed.
 
 You can verify if you already have the Search Audit Index enabled by querying:
 ```sql
 _index=sumologic_search_usage_per_query
 ```
 
-If no results are returned even for longer time ranges, it means you don't have Search Audit index enabled.
+If no results are returned even for longer time ranges, it means you do not have Search Audit index enabled.
 
 
 ## Installing the Infrequent Data Tier App
@@ -99,11 +99,11 @@ Complete the following instructions to install the Sumo Logic Infrequent Data Ti
 Before installing the Infrequent Data Tier App, you need to enable the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index), which is currently in beta. Please reach out to your account executive or Sumo Logic support to get the Search Audit index enabled.
 :::
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
 
-<AppInstall/>
+<AppInstallNoDataSourceV1/>
 
-## Viewing Infrequent Data Tier Dashboards
+## Viewing Infrequent Data Tier dashboards
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 

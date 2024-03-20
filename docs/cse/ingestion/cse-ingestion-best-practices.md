@@ -18,7 +18,7 @@ The process consists of configuring a source or collector to forward messages to
 The diagram below is a high level illustration of several alternative processing flows from a data source to a Sumo Logic collector or source, and on to Cloud SIEM. 
 
 :::note
-You can only send log data that resides in the [Continuous data tier](/docs/manage/partitions-data-tiers/data-tiers) to Cloud SIEM.
+You can only send log data that resides in the [Continuous data tier](/docs/manage/partitions/data-tiers) to Cloud SIEM.
 :::
 
 <img src={useBaseUrl('img/cse/cip-to-cse.png')} alt="Data flow diagram" width="800"/>
@@ -58,7 +58,7 @@ We recommend the following ingestion processes, starting with the most preferred
         ```  
 
         :::note 
-        You can get the path to a parser on the **Manage Data > Logs > Parsers** page in Sumo Logic. Click the three-dot more options menu in the row for a parser, and select **Copy Path**.
+        You can get the path to a parser on the **Manage Data > Logs > Parsers** page in Sumo Logic. Click the three-dot kebab menu in the row for a parser, and select **Copy Path**.
         :::
 
 1. **Use a Sumo Logic Source and Cloud SIEM Ingest mapping**. This is the least recommended method, as you have to manually configure the mapping hints in an ingestion mapping. For more information, see [Configure a Sumo Logic Ingest Mapping](/docs/cse/ingestion/sumo-logic-ingest-mapping/).

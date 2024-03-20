@@ -30,11 +30,11 @@ Before you create or update a Lookup table, note the following.
 
 * Lookup files can be up to 100 MB in size. Note that if the .csv file contains duplicate rows (rows with the same primary key) the duplicate rows will be included in the file size calculation, and apply towards the 100 MB limit.
 * The maximum length for a primary key string field is 1024 characters.
-* The total size of any row can't be larger than 200 KB.
+* The total size of any row cannot be larger than 200 KB.
 
 ### Lookup Table naming
 
-A Lookup Table can't have a forward slash (`/`) in its name or be stored in a folder with a forward slash in the name.
+A Lookup Table cannot have a forward slash (`/`) in its name or be stored in a folder with a forward slash in the name.
 
 ### Reserved keywords
 
@@ -44,8 +44,8 @@ When you create a Lookup Table schema, note the following requirements:
 
     "pkv", "tid-cid-s", "mt", "tid-sk-1", "tid-sk-2", "tid-sk-3", "tid-sk-4", "tid-sk-5", "tid-sk-6", "tid-sk-7", "tid-sk-8", "tid-sk-9", "tid-sk-10", "tid-sk-11", "tid-sk-12", "tid-sk-13", "tid-sk-14", "tid-sk-15", "tid-sk-16", "tid-sk-17", "tid-sk-18", "tid-sk-19", "tid-sk-20", "`_messagetime`", "`_receipttime`", "`_sourceCategory`", "`_sourceHost`", "`_sourceName`", "`_source`", "`_sourceid`", "`_collector`", "`_collectorId`", "`_view`", "`_index`"
 
-* Field names can't contain two tilde characters in a row (`~~`). 
-* Field names are not case-sensitive. For example, you can't have both "Name" and "name" fields.
+* Field names cannot contain two tilde characters in a row (`~~`). 
+* Field names are not case-sensitive. For example, you cannot have both "Name" and "name" fields.
 
 ### Lookup Tables and Search Templates
 
@@ -99,7 +99,7 @@ schema without populating the table.
     * **Value Type**. Choose the value type: boolean, int, long, double, or string (default).
     * **Primary Key**. Click the **Yes** checkbox if the field is part of the primary key for the table. If your table's primary key is a composite key, you will check this checkbox for each field that is part of the key. You must define a primary key for your Lookup Table.
 1. To add another column to the table, click the plus sign to the right of the first column and repeat the previous step.
-1. To remove a column from the table, select **Delete Column** from the three-dot more options menu.
+1. To remove a column from the table, select **Delete Column** from the three-dot kebab menu.
 1. When you are done adding columns, click **Create**. 
 
 ### Create a Lookup Table from a .csv file
@@ -139,7 +139,7 @@ As you name your fields, note the information in [Reserved keywords](#reserved-k
 
 1. Go to your **Library**.
 1. Click in the search bar, and select **Lookups** from the dropdown.  <br/>  ![search-for-lookups.png](/img/search/lookup-tables/search-for-lookups.png)
-1. Hover over the Lookup Table you want to view, and select **Open** from the three-dot more options menu.
+1. Hover over the Lookup Table you want to view, and select **Open** from the three-dot kebab menu.
 1. The view page for the Lookup Table appears. It displays a preview of the contents of the Lookup Table, up to 10 rows.  <br/>  ![lookup-created.png](/img/search/lookup-tables/lookup-created.png)
 1. To view the complete contents of the Lookup Table, click **View Data**.
 1. A Sumo Logic search tab opens and a `cat` command is run on your table. <br/>  ![view-lookup-table.png](/img/search/lookup-tables/view-lookup-table.png)
@@ -149,7 +149,7 @@ As you name your fields, note the information in [Reserved keywords](#reserved-k
 When you run search operators that work with Lookup Tables (described in the following section), you need to know the path to the Lookup Table in the Sumo Logic Library. The path can be determined in several ways:
 
 * From the **Actions** menu on the Lookup Table page. <br/>  ![copy-path-actions-menu.png](/img/search/lookup-tables/copy-path-actions-menu.png)
-* From the three-dot more options menu for a Lookup Table in the Sumo Logic Library.  <br/>  ![copy-path-lib.png](/img/search/lookup-tables/copy-path-lib.png)
+* From the three-dot kebab menu for a Lookup Table in the Sumo Logic Library.  <br/>  ![copy-path-lib.png](/img/search/lookup-tables/copy-path-lib.png)
 * From the left-hand navigation menu  <br/>  ![copy-path-left-nav.png](/img/search/lookup-tables/copy-path-left-nav.png)
 
 ## Operators you use with Lookup Tables

@@ -49,7 +49,7 @@ The API server is the front door to Kubernetes. Any changes you make in the envi
 
 The etcd of the control plane is a value store that Kubernetes uses this for storing all of the desired states for the cluster. Changes in the cluster are compared to the desired state to determine the necessary response. For etcd, you should monitor the following:
 * Leader changes
-* Quorum - if quorum is lost, etcd falls into a read-only state and you can't make changes to the API or get new state coming back from your cluster
+* Quorum - if quorum is lost, etcd falls into a read-only state and you cannot make changes to the API or get new state coming back from your cluster
 * Disk space - if you lose your backup for etcd you may lose all the state for the entire cluster
 
 #### Controller Manager
@@ -98,5 +98,5 @@ The kube-proxy is a network proxy that runs on each node in your cluster. The ku
 ### Pods
 
 Pods reside on a given node, and a container can contain several pods. For pods, you should monitor:
-* Scheduler health for individual pods - so they don't get stuck in a restart loop
+* Scheduler health for individual pods - so they do not get stuck in a restart loop
 * Pod health - availability, resource consumption, and performance

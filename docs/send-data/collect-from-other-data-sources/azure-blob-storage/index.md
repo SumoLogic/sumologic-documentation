@@ -63,7 +63,7 @@ The table below describes the key components in the Azure-Sumo pipeline.
 
 | Component Description     | Description |
 |:--|:--|
-| Azure Event Grid | A fully-managed intelligent event routing service that allows for uniform event consumption using a publish-subscribe model. You select the Azure resource you would like to subscribe to, and specify the event handler or WebHook endpoint to which to send the event.  |
+| Azure Event Grid | A fully-managed intelligent event routing service that allows for uniform event consumption using a publish-subscribe model. You select the Azure resource you would like to subscribe to, and specify the event handler or webhook endpoint to which to send the event.  |
 | Azure Event Hubs | A data streaming platform and event ingestion service capable of receiving, storing. and processing millions of events per second. Event Grid routes “create block blob” events to an event hub, which triggers a Sumo-provided Azure function. |
 | Sumo-provided Azure functions | Small pieces of code that are triggered by an Event Hub to send monitoring data to a Sumo HTTP source. Each of the functions also maintains its own logs for function debug information. |
 | Sumo HTTP source | A Sumo HTTP source on a hosted collector receives the monitoring data from the TaskConsumer Azure function.  |

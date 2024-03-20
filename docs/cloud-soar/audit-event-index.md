@@ -43,7 +43,7 @@ You specify the `_index` metadata field with one of these values:
 * `sumologic_audit_events`. This index contains user action events, which are events that were triggered by a user action, either from the UI or an API.
 * `sumologic_system_events`. This index contains system action events, which are events that were triggered by Sumo Logic. For example, this index contains Automation Actions start events, rules triggered, and so on.
 
-## Cloud SOAR Audited events
+## Cloud SOAR audited events
 
 This Audit Event Index has detailed JSON logs for the following features. 
 To search for audit events for a specific feature, use the metadata field `_sourceCategory` with its corresponding value. 
@@ -174,6 +174,6 @@ Here is an example `PlaybookExecutionStarted` event log.
 
 ## Index retention period 
 
-By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Create and Edit a Partition](/docs/manage/partitions-data-tiers/create-edit-partition).  
+By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Create and Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).  
    
  

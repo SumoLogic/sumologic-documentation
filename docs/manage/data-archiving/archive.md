@@ -6,7 +6,7 @@ description: Send data to an Archive that you can ingest from later.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Archive allows you to forward log data from Installed Collectors to AWS S3 buckets to collect at a later time. If you have logs that you don't need to search immediately you can archive them for later use. You can ingest from your Archive on-demand with five-minute granularity.
+Archive allows you to forward log data from Installed Collectors to AWS S3 buckets to collect at a later time. If you have logs that you do not need to search immediately you can archive them for later use. You can ingest from your Archive on-demand with five-minute granularity.
 
 :::important
 Do not change the name and location of the archived files in your S3 bucket, otherwise ingesting them later will not work properly.
@@ -119,7 +119,7 @@ You can ingest a specific time range of data from your Archive at any time wit
 * Filenames or object key names must be in either of the following formats:
     * Sumo Logic [Archive format](#archive-format)
     * `prefix/dt=YYYYMMDD/hour=HH/fileName.json.gz`
-* If the logs from Archive don't have timestamps they are only searchable by receipt time.
+* If the logs from Archive do not have timestamps they are only searchable by receipt time.
 * If a Field is tagged to an archived log message and the ingesting Collector or Source has a different value for the Field, the field values already tagged to the archived log take precedence.
 * If the Collector or Source that Archived the data is deleted the ingesting Collector and Source metadata Fields are tagged to your data.
 * You can create ingestion jobs for the same time range, however, jobs maintain a 10 day history of ingested data and any data resubmitted for ingestion within 10 days of its last ingestion will be automatically filtered so it's not ingested.

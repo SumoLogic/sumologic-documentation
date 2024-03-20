@@ -13,17 +13,16 @@ Workday is a cloud-based ERP system that manages the business processes and allo
 
 The Sumo Logic app for Workday provides insights into authentication activity, user activity, and administrator activity. The pre-configured dashboards help identify events that identify compliance and incident reporting, common security events, and real-time analysis of suspicious activities.
 
-
 ## Log types
 
-The Sumo Logic App for Workday collects all logs in JSON format. It uses the following two types of logs:
+The Sumo Logic app for Workday collects all logs in JSON format. It uses the following two types of logs:
+
 * SignOn Logs
 * Activity Logs
 
-
 ### Sample log messages
 
-Workday App logs are all in JSON format. The Workday App uses two types of logs and this section provides examples of the log types.
+Workday app logs are all in JSON format. The Workday app uses two types of logs and this section provides examples of the log types.
 
 ```json title="SignOn Logs"
 {
@@ -59,7 +58,7 @@ Workday App logs are all in JSON format. The Workday App uses two types of logs 
 }
 ```
 
-### Sample queries
+### Sample query
 
 The query sample provided in this section is from the **Failed Login Reasons** panel of the **Workday - Login Activity** dashboard.
 
@@ -83,7 +82,7 @@ Sumo Logic collects data from the User Activity and Signon Activity Reports via 
 
 User activity data is collected through the Workday Activity Logs API. To ensure that no sensitive information is being sent to Sumo Logic via this report, please run the “User Activity” Report and check the columns (specifically the Target column). If the data contains sensitive info, you can enable data masking for the security group created in the steps outlined below by following the instructions in [this Workday doc](https://doc.workday.com/reader/Z9lz_01hqDMDg6NSf7wCBQ/uHBXsJmAzuJ2QFVU6D3o2w).
 
-## Collecting Logs for the Workday app
+## Collecting logs for the Workday app
 
 This section explains how to collect logs from Workday and ingest them into Sumo Logic for use with the Workday app predefined dashboards and searches.
 
@@ -118,7 +117,6 @@ This section demonstrates how to configure the Workday portal to integrate with 
     * Access **Maintain Password Rules** task.
     * Add the users to **System Users exempt from password expiration**.
 
-
 ### Step 1.2: Create a Security Group
 
 1. To create a security group, access the **Create Security Group** task and provide the following parameters:
@@ -138,7 +136,6 @@ This section demonstrates how to configure the Workday portal to integrate with 
 1. To apply policy changes, access the **Activate Pending Security Policy Changes** task and activate the changes you made.
 1. Click **OK**.
 
-
 ### Step 1.3: Register the API Client
 
 1. To register the API client, access the **Register API Client** **for Integrations** task, and provide the following parameters:
@@ -151,18 +148,16 @@ This section demonstrates how to configure the Workday portal to integrate with 
 5. To generate a refresh token, access the **View API Clients** task and copy the below two parameters from the top of the page:
     * **Workday REST API Endpoint.** The endpoint to use access to the resources in your Tenant.
     * **Token Endpoint**. The endpoint used to exchange an authorization code for a token (if you configure authorization code grant).
-6. Go to the **API Clients for Integrations** tab, hover on the **“Sumo Logic Workday Collector API”** client, and click on the three-dot action buttons.
+6. Go to the **API Clients for Integrations** tab, hover on the **“Sumo Logic Workday Collector API”** client, and click on the three-dot kebab action buttons.
 7. In the new pop up window, click **API Client** > Manage Refresh Token for Integrations.
 8. In the **Manage Refresh Token for Integrations** window, select **“SumoLogic_ISU”** in the **Workday Account** field and click **OK**.
 9. In the newly opened window, select **Generate New Refresh Token** checkbox and click **OK**.
 10. Copy the value of the **Refresh Token** column from the opened window and click **Done**.
 
-
 ### Step 1.4: Enable your tenant to send data
 
 1. To enable your Tenant to send data, access the **Edit Tenant Setup - System** task and ensure that the **Enable User Activity Logging** checkbox is selected.
 2. Access the **Edit Tenant Setup - Security** task and ensure that the **OAuth 2.0 Clients Enabled** checkbox is selected.
-
 
 ### Step 1.5: Create a Custom sign on report
 
@@ -193,7 +188,6 @@ For customers that do not make use of the Recruiting Functional Area, the standa
 12. Click the **Actions** button and go to **Web Service > View URLs**.
 13. Click **OK** and copy the URL from **JSON** link. You will need this later while configuring the collection. From the URL, remove any query parameters like json, From Moment and To Moment. The report URL should look like this `https://wd2-impl-services1.workday.com/ccx/service/customreport2/<tenant>/<accountname>/<reportname>`.
 
-
 ### Step 2: Add a Hosted Collector and HTTP Source
 
 :::note
@@ -216,15 +210,15 @@ See [Workday Cloud-to-Cloud Collector Source](/docs/send-data/hosted-collectors/
 
 This section provides instructions on how to install the Workday app, as well as examples of each of the dashboards. The app's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
 ## Viewing Workday dashboards
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
@@ -236,7 +230,6 @@ Use this dashboard to:
 * Quickly identify if users are logging in from expected locations and using supported devices.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Workday-Overview.png')} alt="workday dashboards" />
-
 
 ### Login Activity
 
@@ -260,7 +253,6 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Workday-User-Activity.png')} alt="workday dashboards" />
 
-
 ### System User Activity
 
 The **Workday - System User Activity** dashboard monitors the system user activities. Panels also identify all configuration changes related to domain security, business processes, security groups, and API client modules.
@@ -270,7 +262,6 @@ Use this dashboard to:
 * Identify changes related to permission and role assignments.
 
 <img src={useBaseUrl('img/integrations/saas-cloud/Workday-SystemUserActivity.png')} alt="workday dashboards" />
-
 
 ### API Activity
 

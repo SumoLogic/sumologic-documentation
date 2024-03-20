@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has instructions for creating a log mapping for structured messages using the Cloud SIEM UI. Log mapping is the process of telling Cloud SIEM how to build a Record from the key-value pairs extracted from messages. 
 
-For more information about log mapping, and how it fits into the Record creation process, see the [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline) topic. For a complete list of the standard log mappings, see [Mappings](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/mappings/README.md) the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog).
+For more information about log mapping, and how it fits into the Record creation process, see the [Record Processing Pipeline](/docs/cse/schema/record-processing-pipeline) topic. For a complete list of the standard log mappings, see [Mappings](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/mappings/README.md) the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
 
 ## About the log mapping process
 
@@ -132,7 +132,7 @@ In the screenshot below, we're configuring a mapping that joins the value of the
 1. **Input Fields**. Enter the names of input fields. These are the fields from incoming messages whose values you want to join.
 1. **Delimiter.** Enter the character that delimits the segments of the input fields.
 1. **Show optional fields**. Expand this section if you want to specify one or more alternative input fields, or set a default value to be mapped to the target in the event that the input field is null.
-   1. **Alternate input fields**. Enter one or more fields, separated by spaces. If any of the input fields you entered above don't exist in a message, or is null, the value of the first alternative field that exists in the message and isn’t null will be mapped to the Cloud SIEM attribute you’ll specify later in this procedure.
+   1. **Alternate input fields**. Enter one or more fields, separated by spaces. If any of the input fields you entered above do not exist in a message, or is null, the value of the first alternative field that exists in the message and isn’t null will be mapped to the Cloud SIEM attribute you’ll specify later in this procedure.
    1. **Default value**. Enter the value you want to write to the Cloud SIEM attribute in the event that neither the input field or any alternative fields with non-null values exist in the message.
 1. **Output Field**. Select an output field. This is the Record attribute whose value you wish to populate.
 

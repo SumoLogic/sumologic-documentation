@@ -73,7 +73,7 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 | parse regex "access[\s-]group\s[\(\"]?(?<acl>[^\s\"\)]+)" nodrop
 | parse regex "(?<src_ip>\d{1,3}\.\d{1,3}.\d{1,3}.\d{1,3})\s+(?<vendor_action>\S+)\s+(?:url|URL)\s+(?<dest_ip>\d{1,3}\.\d{1,3}.\d{1,3}.\d{1,3})\s*:\s*(?<url>\S*)" nodrop
 | parse regex "threat-level\s*:\s*(?<vendor_severity>[^\s,]+)[\s,]+category\s*:\s*(?<vendor_category>[^\s,]+)" nodrop
-| parse regex "(?<action>[Aa]uthentication [Ss]ucceeded|[Aa]uthorization [Pp]ermitted|authentication Successful|passed authentication|Login permitted|Authentication failed|Authorization denied|Can't find authorization|Authentication Failed|authentication Rejected|credentials rejected|Authentication:Dropping|login warning|login failed|failed authentication|[Cc]onnection denied|Deny inbound|Deny|Terminating|action locally|Unable to Pre-allocate|denied\s[tcp|udp|icmp]+|access denied|access requested|access permitted|limit exceeded|Dropped|Dropping|[B|b]uilt|[pP]ermitted|whitelisted|Pre-allocated|Rebuilt|redirected|discarded)" nodrop
+| parse regex "(?<action>[Aa]uthentication [Ss]ucceeded|[Aa]uthorization [Pp]ermitted|authentication Successful|passed authentication|Login permitted|Authentication failed|Authorization denied|cannot find authorization|Authentication Failed|authentication Rejected|credentials rejected|Authentication:Dropping|login warning|login failed|failed authentication|[Cc]onnection denied|Deny inbound|Deny|Terminating|action locally|Unable to Pre-allocate|denied\s[tcp|udp|icmp]+|access denied|access requested|access permitted|limit exceeded|Dropped|Dropping|[B|b]uilt|[pP]ermitted|whitelisted|Pre-allocated|Rebuilt|redirected|discarded)" nodrop
 | parse regex "(?<action>Teardown\s[A-Z]{3,4})\sconnection" nodrop
 | parse regex "%ASA-\d-\d+: (?<msg>.+)" nodrop
 | parse regex "\sconnection (?<session_id>\d+)" nodrop
@@ -99,9 +99,9 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 
 ## Installing the Cisco ASA app  
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Cisco ASA dashboards
 

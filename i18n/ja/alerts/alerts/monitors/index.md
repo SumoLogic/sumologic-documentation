@@ -29,7 +29,7 @@ See details on how [Scheduled Searches are different](/docs/alerts/difference-fr
 ## Limitations
 
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
-* Monitors only support the [Continuous data tier](/docs/manage/partitions-data-tiers/data-tiers.md).
+* Monitors only support the [Continuous data tier](/docs/manage/partitions/data-tiers).
 * An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
 * [Search templates](../../search/get-started-with-search/build-search/search-templates.md) are not supported.
@@ -107,7 +107,7 @@ At the top of the page, you can:
 
 ### Quick menu
 
-The quick menu allows you to make changes to the Monitor without opening the Details pane. Find and hover your mouse over a Monitor in the Monitors table. A three-dot icon appears on the right of the row. Click the three-dot icon to view a menu with all of the options available in the [Details pane](#details-pane).
+The quick menu allows you to make changes to the Monitor without opening the Details pane. Find and hover your mouse over a Monitor in the Monitors table. A three-dot kebab icon appears on the right of the row. Click the three-dot kebab icon to view a menu with all of the options available in the [Details pane](#details-pane).
 
 ![quick menu](/img/monitors/quick-menu-monitors.png)
 
@@ -161,7 +161,7 @@ You can configure Sumo Logic Monitors using [Terraform modules](https://github.c
     ![outlier detection method.png](/img/monitors/outlier-detection-method.png)
 
     * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.  
-    * An **outlier** is an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency.  
+    * An **outlier** is an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that do not have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency.  
 
 1. Provide a **Query**. A Log Monitor can have one query up to 4,000 characters long. Metric Monitors can specify up to six queries. When providing multiple metrics queries use the letter labels to reference a query row, see [joined metrics queries](../../metrics/metrics-queries/metrics-explorer.md) for details. The Monitor will automatically deduce the query row to use for the trigger. 
 
@@ -377,7 +377,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
     Metric Monitors have an option to send notifications either as a group or separately. **Group Notifications** define whether you want single notifications per time series that match the Monitor query or you want group notifications where you receive a single notification for the entire Monitor. Log Monitors always group notifications.
 
-   1. The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/manage/connections-integrations) for details.  Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](/docs/alerts/monitors/alert-variables) for a table of the available variables.
+   1. The **Connection Type** specifies the notification channel where you want to get notified, such as an email or webhook. See [Connections](/docs/alerts/webhook-connections) for details.  Monitor notifications support variables to reference its configuration settings or your raw data. See [alert variables](/docs/alerts/monitors/alert-variables) for a table of the available variables.
 
       * **Email**: Provide 1-100 recipient email addresses. You can customize the email subject and body.
       * **Webhook**: By default, the payload defined on the Connection is used. You can customize your payload for each notification if needed.

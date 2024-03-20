@@ -12,7 +12,7 @@ Live Tail mimics the output of the command line command `tail -f` with a solid 
 You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors.
 
 :::note
-Data ingested from Amazon S3 can't be tailed because of restrictions from Amazon.
+Data ingested from Amazon S3 cannot be tailed because of restrictions from Amazon.
 :::
 
 You can use the following metadata fields in a Live Tail session:
@@ -38,7 +38,7 @@ There is also a [Live Tail Command Line Interface](live-tail-cli.md) (CLI). Thi
 * You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors.
 * A Live Tail session expires after one hour of inactivity to give your system the best performance possible. If your Live Tail session expires, you can restart it at any time.
 * If you navigate away from the Live Tail tab, your session will run for five more minutes and then time out.
-* There is a message limit of about 1000 messages per second. Keyword filters don't affect the message rate.
+* There is a message limit of about 1000 messages per second. Keyword filters do not affect the message rate.
 * There currently is a limit of 10 concurrent Live Tail sessions per organization.
 * There is a limit of four Live Tail sessions per user.
 * There is a limit of two Live Tail "pop out" windows per user.
@@ -71,7 +71,7 @@ The **Run** button changes to **Running**, and log messages fill the screen.
 ### On the Search page
 
 1. On the **Search** page, in the search box, enter a valid query for a Source Category, Source Host, Source Name, Source, or Collector with filters, if desired. (Live Tail will take everything before the first pipe, but search operators are not supported.)
-1. Click the three-dot icon and click **Live Tail** from the provided options.    
+1. Click the three-dot kebab icon and click **Live Tail** from the provided options.    
 
     ![live tail option png](/img/search/livetail/About-Live-Tail/live-tail-option.png)
 

@@ -15,13 +15,13 @@ The second type of file is an action definition file, which is used to define a 
 
 The following diagram shows the integration file hierarchy:
 
-<img src={useBaseUrl('img/cse/integration-framework-container.png')} alt="Integraton framework container" width="700"/>
+<img src={useBaseUrl('img/cse/integration-framework-container.png')} style={{border:'1px solid gray'}} alt="Integraton framework container" width="700"/>
 
 Defining integrations at the action level allows users have greater flexibility in customizing existing integrations and sharing new actions with other users. For example, you may choose to extend the existing RSA NetWitness integration to include an additional action which retrieves all network connections for a given host. Once you create this new action, you can easily add it to the existing RSA Netwitness integration by uploading the new integration action file.
 
 You can also share this new action and use it to extend the functionality of the integration for others. The following diagram shows action file portability:
 
-<img src={useBaseUrl('img/cse/integration-framework-file-portability.png')} alt="Integration framework file portability" width="700"/>
+<img src={useBaseUrl('img/cse/integration-framework-file-portability.png')} style={{border:'1px solid gray'}} alt="Integration framework file portability" width="700"/>
 
 ## Integration framework file formats
 
@@ -172,7 +172,7 @@ And you must add it into the action `kwargs`:
 parser.add_argument('--host', help='host , REQUIRED', required=True, action=EnvDefault)
 ```
 
-Otherwise, if you don't need extra utilities provided by `ArgumentParser` for validation, you can simply use:
+Otherwise, if you do not need extra utilities provided by `ArgumentParser` for validation, you can simply use:
 
 ```
 host = os.environ.get("host", "localhost")
@@ -208,11 +208,11 @@ value : cvss'
 
 The following image shows the table view:
 
-<img src={useBaseUrl('img/cse/integration-framework-action-result.png')} alt="Action result" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-action-result.png')} style={{border:'1px solid gray'}} alt="Action result" width="600"/>
 
 The JSON view will display the entire output of the integration action in JSON format:
 
-<img src={useBaseUrl('img/cse/integration-framework-action-result-2.png')} alt="Action result output" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-action-result-2.png')} style={{border:'1px solid gray'}} alt="Action result output" width="600"/>
 
 Following is the setting for a link type:
 
@@ -222,7 +222,7 @@ value : 'cvss'
 type : 'link'
 ```
 
-<img src={useBaseUrl('img/cse/integration-framework-show-details.png')} alt="Show details" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-show-details.png')} style={{border:'1px solid gray'}} alt="Show details" width="600"/>
 
 ### Added more output type for action
 
@@ -262,11 +262,11 @@ src_doc: 'rawOutput'
 
 The following image shows output from the code example:
 
-<img src={useBaseUrl('img/cse/integration-framework-browser-market-share.png')} alt="Browser market share" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-browser-market-share.png')} style={{border:'1px solid gray'}} alt="Browser market share" width="600"/>
 
 The `image_base64_png(jpg)` field provides the result path where to get base64 png or jpg image, for example:
 
-<img src={useBaseUrl('img/cse/integration-framework-show-details-2.png')} alt="Result path" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-show-details-2.png')} style={{border:'1px solid gray'}} alt="Result path" width="600"/>
 
 ## Working with integrations
 
@@ -276,11 +276,11 @@ All integrations are configured by navigating to **Integrations** in the UI.
 
 To add a new integration, click on the **+** icon on the **Integrations** page.
 
-<img src={useBaseUrl('img/cse/integration-framework-definition.png')} alt="Add integration" width="800"/>
+<img src={useBaseUrl('img/cse/integration-framework-definition.png')} style={{border:'1px solid gray'}} alt="Add integration" width="800"/>
 
 The **New Integration** window allows you to upload an integration definition file by clicking **Select File**. Once you define the integration definition file, click **Save** to add the new integration.
 
-<img src={useBaseUrl('img/cse/integration-framework-new-integration.png')} alt="New integration" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-new-integration.png')} style={{border:'1px solid gray'}} alt="New integration" width="600"/>
 
 To edit an existing integration by uploading a new integration definition file , click on the **Edit** button. To export the integration definition file for the selected integration, click the **Export** icon.
 
@@ -290,21 +290,21 @@ To add a new action, select the appropriate integration from the integrations li
 
 The **New Action** window allows you to upload an action definition file by clicking **Select File**, and lets you select the kind of action.
 
-<img src={useBaseUrl('img/cse/integration-framework-upload.png')} alt="Upload" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-upload.png')} style={{border:'1px solid gray'}} alt="Upload" width="600"/>
 
 Once the action definition file has been selected, click **Save** to add the new action.
 
 Existing actions may be edited by clicking the **Upload** button below the action name to upload a new action definition file, or by clicking the **Edit** button below the action name to open a text editor and edit the action directly.
 
-<img src={useBaseUrl('img/cse/integration-framework-action-editor.png')} alt="Action editor" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-action-editor.png')} style={{border:'1px solid gray'}} alt="Action editor" width="600"/>
 
 To test an action, click on the **Test Action** button below the action name.
 
-<img src={useBaseUrl('img/cse/integration-framework-add-integration.png')} alt="Add integration" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-add-integration.png')} style={{border:'1px solid gray'}} alt="Add integration" width="600"/>
 
 Enter the required parameters and click **Test Action**.
 
-<img src={useBaseUrl('img/cse/integration-framework-test-action.png')} alt="Test action" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-test-action.png')} style={{border:'1px solid gray'}} alt="Test action" width="600"/>
 
 To export an action, click on the **Export** button below the action name.
 
@@ -555,11 +555,11 @@ output:
 ```
 And if you use that output into `textarea` as placeholder:
 
-<img src={useBaseUrl('img/cse/integration-framework-app-d-image-1.png')} alt="Textarea" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-d-image-1.png')} style={{border:'1px solid gray'}} alt="Textarea" width="600"/>
 
 You will get a print HTML of aggregated elements
 
-<img src={useBaseUrl('img/cse/integration-framework-app-d-image-2.png')} alt="HTML of aggregated elements" width="500"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-d-image-2.png')} style={{border:'1px solid gray'}} alt="HTML of aggregated elements" width="500"/>
 
 ## Pipe functions in YAML output
 
@@ -572,11 +572,11 @@ output:
   - path : '[].guid | join(,)'
 ```
 
-<img src={useBaseUrl('img/cse/integration-framework-app-3-image-1.png')} alt="Join separator pipe function" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-3-image-1.png')} style={{border:'1px solid gray'}} alt="Join separator pipe function" width="600"/>
 
 And so the next action will run one time with a string created join array element with `separator` specified:
 
-<img src={useBaseUrl('img/cse/integration-framework-app-e-image-2.png')} alt="Separator specified" width="700"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-e-image-2.png')} style={{border:'1px solid gray'}} alt="Separator specified" width="700"/>
 
 Pipe function `unique()`:
 ```
@@ -584,8 +584,8 @@ output:
   - path : '[].tags.[] | unique()'
 ```
 
-<img src={useBaseUrl('img/cse/integration-framework-app-e-image-3.png')} alt="Unique pipe function" width="600"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-e-image-3.png')} style={{border:'1px solid gray'}} alt="Unique pipe function" width="600"/>
 
 The array will be populated with not duplicated element:
 
-<img src={useBaseUrl('img/cse/integration-framework-app-e-image-4.png')} alt="Pip function specified" width="800"/>
+<img src={useBaseUrl('img/cse/integration-framework-app-e-image-4.png')} style={{border:'1px solid gray'}} alt="Pip function specified" width="800"/>

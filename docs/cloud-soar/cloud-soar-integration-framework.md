@@ -258,7 +258,7 @@ And you must add it into the action `kwargs`:
 parser.add_argument('--host', help='host , REQUIRED', required=True, action=EnvDefault)
 ```
 
-Otherwise, if you don't need extra utilities provided by `ArgumentParser` for validation, you can simply use:
+Otherwise, if you do not need extra utilities provided by `ArgumentParser` for validation, you can simply use:
 
 ```
 host = os.environ.get("host", "localhost")
@@ -1575,7 +1575,7 @@ fields:
     required: true
 ```
 
-Now you can perform a `POST` request to the [Cloud SOAR API](/docs/cloud-soar/cloud-soar-apis/) `/webhook` resource with a raw payload:
+Now you can perform a `POST` request to the [Cloud SOAR API](/docs/api/cloud-soar/) `/webhook` resource with a raw payload:
 ```json
 {
   "title": "test",

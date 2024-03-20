@@ -4,13 +4,13 @@ title: Installed Collector Configuration
 description: Learn how to install and configure Collectors to gather data to send to Sumo Logic, and read about deployment options and volume limitations.
 ---
 
-An *Installed Collector* is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service.
+An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service.
 
 As the name implies, an Installed Collector is installed in your environment, as opposed to a Hosted Collector, which resides on the Sumo service. After installing a Collector, you add Sources, to which the Collector connects to obtain data to send to the Sumo service. 
 
 A Sumo Source is an object configured for a specific Collector that sends data to Sumo Logic. There are a number of Source types that work with Installed Collectors. For a list of all Sources supported by Installed Collectors, see [Sources for Installed Collectors](/docs/send-data/installed-collectors/sources).
 
-See [how to choose a collector](/docs/send-data/choose-collector-source) for guidance on when to use a single or multiple Installed Collectors.
+See [How to choose a collector](/docs/send-data/choose-collector-source) for guidance on when to use a single or multiple Installed Collectors.
 
 :::note
 The maximum number of Collectors allowed per organization is 10,000.
@@ -31,8 +31,8 @@ import Iframe from 'react-iframe';
 
 ## CPU usage guidelines
 
-:::tip system requirements
-For details on supported operating systems and hardware restrictions, see [Installed Collector requirements](/docs/get-started/system-requirements/#installed-collector-requirements).
+:::info system requirements
+For details on supported operating systems and hardware restrictions, see [Installed Collector Requirements](/docs/get-started/system-requirements/#installed-collector-requirements).
 :::
 
 An Installed Collector will use all CPU processing resources available on a machine to collect your data. We have benchmarked CPU performance based on the number of [Local File Sources](/docs/send-data/installed-collectors/sources/local-file-source) running on an Installed Collector and the size of log messages ingested. The default allocated memory of 128 MB of Java heap space was used.
@@ -106,7 +106,6 @@ Sumo provides multiple methods for installing a Collector:
 * Binary package, for Linux. The binary package can also be used on MacOS.
 
 For details on Collector installation, see [Install a Collector on Linux](linux.md), [Install a Collector on MacOS](macos.md), and [Install a Collector on Windows](windows.md).
- 
 
 After a Collector is up and running, you can change some Installed Collector configuration settings by editing `user.properties` and restarting the collector. For more information, see [user.properties parameters](collector-installation-reference/user-properties.md).
 
