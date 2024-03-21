@@ -30,7 +30,7 @@ With index aliasing, you can create an alias to point to one or more system inde
 In addition to `sumologic_default`, we have several other Sumo Logic-defined system indexes. As a shortcut, rather than prefacing `sumologic_` when referencing system indexes in a search, you can alias these indexes by typing an underscore at the beginning. For example, `sumologic_default` and `_default` will return the same results. 
 
 :::warning Leading Underscore Reserved for System Index Alias in User-Created Indexes
-When creating your own indexes (user-created, non-system indexes), you cannot lead with an underscore (`_`). This is reserved only for aliasing system indexes.
+When creating your own indexes (user-created, non-system indexes), you cannot lead with an underscore (`_`). This is reserved only for system indexes.
 :::
 
 :::warning
