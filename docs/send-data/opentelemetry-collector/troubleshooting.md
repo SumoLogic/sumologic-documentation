@@ -122,6 +122,44 @@ Get-EventLog -LogName Application -Newest 100 -Source OtelcolSumo | Select-Objec
 </TabItem>
 </Tabs>
 
+#### Sending the collector's logs to Sumo Logic
+
+If desired, you can change the collector's logging level and have the collector's logs be sent to Sumo Logic for analysis and troubleshooting. To do this you need add the following to your collector's configuration (located in `/etc/otelcol-sumo/conf.d`):
+1. Create a new logging file in the `/var/log` directory. For example: `/var/log/otelcol.log`. Make sure this file has read and write permissions for the collector.
+2. Add the `telemetry` service to the collector config, and set the logging `level` (default = INFO) and `output_paths` parameters accordingly. See example config below.
+3. Add a fileog receiver to read from the output_paths that you specified previously (this is the where the collectors log files are written, i.e `/var/log/otelcol.log`).
+4. Make sure that you update your service pipelines to include this reciever so you can send them to Sumo Logic.
+   
+See the example configuration below, which sets the log level to `DEBUG`, the log output path to `/var/log/otelcol.log`, and has a filelog receiver to read the logs:
+```yaml
+receivers:
+  filelog/collector_files:
+    include:
+      - /var/log/otelcol.log
+    include_file_name: false
+    include_file_path_resolved: true
+    operators:
+    - type: move
+      from: attributes["log.file.path_resolved"]
+      to: resource["_sourceName"]
+
+service:
+  telemetry:
+    logs:
+      level: DEBUG
+      output_paths: /var/log/otelcol.log
+  pipelines:
+    logs:
+      receivers:
+        - filelog/collector_files
+      exporters:
+        - sumologic
+```
+
+Doing this will allow you to search the collectors logs in Sumo Logic by performing a log search similar to the following:
+```
+_collector="<collector name>" and _sourceName="/var/log/otelcol.log"
+```
 
 ### Accessing the collector's metrics
 
@@ -142,6 +180,48 @@ service:
       address: ":8889"
 ```
 
+#### Sending the collector's metrics to Sumo Logic
+
+If desired, you can send the collector's metrics to Sumo Logic for analysis and troubleshooting. To do this you need add the following to your collector's configuration (located in `/etc/otelcol-sumo/conf.d`):
+1. Add the `telemetry` service to the collector config, and set the metric `level` (default = basic) and `address` parameters accordingly. See example config below.
+2. Add a prometheus receiver to scrape the collectors metrics.
+3. Make sure that you update your service pipelines to include this reciever so you can send them to Sumo Logic.
+   
+See the example configuration below, which sets the metrics level to `detailed` and has a prometheus receiver to scrape them:
+```yaml
+receivers:
+  prometheus:
+    trim_metric_suffixes: true
+    use_start_time_metric: true
+    start_time_metric_regex: .*
+    config:
+      scrape_configs:
+        - job_name: 'otel-collector'
+          scrape_interval: 5s
+          static_configs:
+            - targets: ['<internal IP of instance>:8888']
+
+service:
+  telemetry:
+    metrics:
+      level: detailed
+      address: 0.0.0.0:8888
+  pipelines:
+    metrics:
+      receivers:
+        - prometheus
+      exporters:
+        - sumologic
+```
+
+Doing this will allow you to search the collectors metrics in Sumo Logic by performing a metrics search similar to the following:
+```
+_collector="<collector name>"  _sourcename="otc metric input"
+```
+
+:::note
+You can find more information on customizing the collector's telemetry in the [Configuration](https://opentelemetry.io/docs/collector/configuration/#telemetry) section of the OpenTelemetry Documentation.
+:::
 
 
 ## Known Issues
