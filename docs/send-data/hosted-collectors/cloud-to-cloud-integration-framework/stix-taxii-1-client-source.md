@@ -27,7 +27,7 @@ This source only supports STIX/TAXII 1.1. Sumo Logic recommends using our [STIX/
 
 ## Data collected
 
-This source collects [threat intelligence indicators](/docs/platform-services/threat-intelligence-indicators/) from a vendor's STIX/TAXII 1.1 endpoints. This means the specific endpoints we collect data from are the endpoints defined in the [TAXII standard](https://oasis-open.github.io/cti-documentation/taxii/intro). Vendor APIs must follow the standard. The source will collect all indicators from the TAXII server when it runs for the first time and it will check for updates once an hour. This one-hour polling interval can be adjusted in the source configuration.
+This source collects [threat intelligence indicators](/docs/platform-services/threat-intelligence/threat-intelligence-indicators) from a vendor's STIX/TAXII 1.1 endpoints. This means the specific endpoints we collect data from are the endpoints defined in the [TAXII standard](https://oasis-open.github.io/cti-documentation/taxii/intro). Vendor APIs must follow the standard. The source will collect all indicators from the TAXII server when it runs for the first time and it will check for updates once an hour. This one-hour polling interval can be adjusted in the source configuration.
 
 ## Setup
 

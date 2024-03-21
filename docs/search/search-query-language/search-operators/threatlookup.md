@@ -4,7 +4,7 @@ title: threatlookup Search Operator
 sidebar_label: threatlookup
 ---
 
-The `threatlookup` search operator allows you to search logs for matches in [threat intelligence indicators](/docs/platform-services/threat-intelligence-indicators/), providing security analytics to help you to detect threats in your environment. 
+The `threatlookup` search operator allows you to search logs for matches in [threat intelligence indicators](/docs/platform-services/threat-intelligence/threat-intelligence-indicators/), providing security analytics to help you to detect threats in your environment. 
 
 :::note
 You can also use the [`threatip`](/docs/search/search-query-language/search-operators/threatip/) search operator to search CrowdStrike's threat intelligence data based on IP addresses. 

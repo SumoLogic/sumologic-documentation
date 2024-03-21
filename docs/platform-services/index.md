@@ -12,14 +12,14 @@ Platform services are services that are available to use across the entire Sumo 
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/platform-services/threat-intelligence-indicators"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Threat Intelligence Indicators</h4></a>
-  <p>Learn how to use indicators from threat intelligence sources.</p>
+  <a href="/docs/platform-services/automation-service"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Automation Service</h4></a>
+  <p>Learn how to use the Automation Service to automate actions.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/platform-services/automation-service"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Automation Service</h4></a>
-  <p>Learn how to use the Automation Service to automate actions.</p>
+  <a href="/docs/platform-services/threat-intelligence"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Threat Intelligence</h4></a>
+  <p>Learn about Sumo Logic's threat intelligence capabilities.</p>
   </div>
 </div>
 </div>

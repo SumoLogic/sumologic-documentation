@@ -86,7 +86,7 @@ _index=sumologic_system_events _sourceCategory=dataForwarding
 | Security Policy: [Support Account Access](/docs/manage/security/enable-support-account) | `supportAccount` |
 | [Service Allowlist](/docs/manage/security/create-allowlist-ip-cidr-addresses) | `serviceAllowlist` |
 | [Support Account](/docs/manage/security/enable-support-account) | `supportAccount` |
-| [Threat Intelligence](/docs/platform-services/threat-intelligence-indicators/) | `threatIntelligence` |
+| [Threat Intelligence](/docs/platform-services/threat-intelligence/) | `threatIntelligence` |
 | [Tracing Ingest](/docs/apm/traces/tracing-ingest) | `tracingIngest` |
 | [Transformation Rules](/docs/metrics/metrics-transformation-rules) | `transformationRules` |
 | [Users](/docs/manage/users-roles) | `users` |

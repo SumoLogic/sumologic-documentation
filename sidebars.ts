@@ -2835,7 +2835,6 @@ integrations: [
       collapsed: false,
       link: {type: 'doc', id: 'platform-services/index'},
       items: [
-        'platform-services/threat-intelligence-indicators',
         {
           type: 'category',
           label: 'Automation Service',
@@ -2872,6 +2871,21 @@ integrations: [
             'platform-services/automation-service/automation-service-audit-logging',
             'platform-services/automation-service/automation-service-bridge',
             'platform-services/automation-service/automation-service-integration-framework',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Threat Intelligence',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'platform-services/threat-intelligence/index'},
+          items: [
+            'platform-services/threat-intelligence/about-threat-intelligence',
+            'platform-services/threat-intelligence/threat-intelligence-indicators',
+            'platform-services/threat-intelligence/find-threats',
+            'platform-services/threat-intelligence/threat-indicators-in-cloud-siem',
+            'platform-services/threat-intelligence/upload-formats',
+            'platform-services/threat-intelligence/crowdstrike-threat-intelligence',
           ],
         },
       ],
