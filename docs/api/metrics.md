@@ -228,7 +228,7 @@ The result will be a JSON document containing results (or an error) for each que
   <tr>
    <td>desiredQuantizationInSecs</td>
    <td>int</td>
-   <td>Original user-supplied desired granularity of temporal <a href="/docs/metrics/metric-charts/interacting-metric-charts#Adjust_the_quantization_interval">quantization</a> (if supplied).</td>
+   <td>Original user-supplied desired granularity of temporal quantization (if supplied).</td>
   </tr>
   <tr>
    <td>actualQuantizationInSecs</td>

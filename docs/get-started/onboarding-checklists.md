@@ -64,7 +64,7 @@ Once you have created search queries, you can visualize your data using charts, 
 Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo, see [Overview of Metrics in Sumo](/docs/metrics/introduction). Metrics-related features for analysts include:
 
 * [Metric queries](/docs/metrics/metrics-queries). You can query your metrics from a metric query tab. For information about the operators you can use in metric queries, see [Metric Operators](/docs/metrics/metrics-operators). 
-* [Metric charts](/docs/metrics/metric-charts). You can create line charts, area charts, and single value charts.
+* Metric charts. You can create [map charts](/docs/metrics/metrics-queries/map-charts), [heat maps](/docs/metrics/metrics-queries/heat-map), and [funnel charts](/docs/metrics/metrics-queries/funnel-chart).
 
 ### Sumo Logic Apps
 

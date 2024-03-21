@@ -13,7 +13,7 @@ import ApiIntro from '../reuse/api-intro.md';
 
 <img src={useBaseUrl('img/icons/metrics.png')} alt="Thumbnail icon" width="40"/>
 
-Use Metrics Search Management APIs to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization. For more information, see [Sharing Metric Charts](/docs/metrics/metric-charts/interacting-metric-charts/).
+Use Metrics Search Management APIs to save metrics searches in your content library, organize them in a folder hierarchy, and share useful queries with users in your organization. 
 
 <ApiIntro/>
 
