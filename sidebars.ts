@@ -699,7 +699,6 @@ module.exports = {
             'manage/users-roles/roles/role-capabilities',
             'manage/users-roles/roles/construct-search-filter-for-role',
             'manage/users-roles/roles/add-remove-users-role',
-            'manage/users-roles/roles/rbac-for-indexes'
           ]
         },
         {
@@ -849,7 +848,6 @@ module.exports = {
             'manage/security/audit-indexes/audit-index',
             'manage/security/audit-indexes/audit-event-index',
             'manage/security/audit-indexes/search-audit-index',
-            'manage/security/audit-indexes/audit-index-access',
           ]
         },
         'manage/security/create-allowlist-ip-cidr-addresses',
@@ -2819,7 +2817,6 @@ integrations: [
       items: [
         'manage/manage-subscription/beta-opt-in',
         'get-started/sumo-logic-ui-new',
-        'manage/users-roles/roles/rbac-for-indexes',
       ],
     },
   ],
