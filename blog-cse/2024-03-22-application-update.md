@@ -1,5 +1,5 @@
 ---
-title: March 21, 2024 - Application Update
+title: March 22, 2024 - Application Update
 keywords:
   - cloud siem
   - MITRE
