@@ -1,6 +1,6 @@
 ---
 id: cloudquery-source
-title: CloudQuery Source
+title: CloudQuery Source (Beta)
 sidebar_label: CloudQuery
 tags:
   - cloud-to-cloud
@@ -13,6 +13,12 @@ import ExampleJSON from '/files/c2c/cloudquery/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/cloudquery/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/cloudquery/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 <img src={useBaseUrl('img/send-data/cloudquery-logo.png')} alt="cloudquery-icon" width="70" />
 
