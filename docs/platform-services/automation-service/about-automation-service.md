@@ -14,15 +14,27 @@ To use the Automation Service, execute playbooks to run actions in a workflow. A
 ## Where you can run automations
 
 You can use the Automation Service to run automations for the following:
-* **Cloud SIEM**. Use the [Automation Service with Cloud SIEM](/docs/cse/automation/about-automation-service-and-cloud-siem) to create notifications and add enrichments for Insights and Entities, speeding the time to respond to security incidents.
+* **Cloud SIEM**. Use the [Automation Service with Cloud SIEM](/docs/cse/automation/about-automation-service-and-cloud-siem) to respond to security incidents.
+* **Monitors**. Use [automated playbooks in monitors](/docs/alerts/monitors/use-playbooks-with-monitors) to run workflows in response to alerts. 
+
+## Differences compared to Cloud SOAR
+
+The Automation Service is a subset of automation capabilities adapted from [Cloud SOAR Automation](/docs/cloud-soar/automation/) that is available to the entire Sumo Logic log analytics platform. The Automation Service only has Cloud SOAR’s playbook-related features, including App Central and the Automation Bridge. Like the Cloud SOAR action types, the Automation Service action types can perform automated responses to events, including run containment actions and manual user interaction steps. 
+
+The Automation Service differs from Cloud SOAR in the following ways:
+* The Automation Service does not include the incident and case management features from Cloud SOAR.
+* The Automation Service does not support daemon and trigger action types. The Automation Service can only use triggers built into Cloud SIEM and the Log Analytics platform. 
+* Playbooks, integrations, and actions in the Automation Service may differ from those in Cloud SOAR automation. 
+
+For more information, see [Cloud SOAR Compared to the Automation Service](/docs/cloud-soar/compared-to-automation-service/).
 
 ## Automation Service UI
 
 The Automation Service UI is composed of the following tabs:
-* [**App Central**](/docs/platform-services/automation-service/automation-service-app-central). Displays a central repository of integrations and playbooks you can install to your environment.<br/><img src={useBaseUrl('img/platform-services/app-central-main-screen.png')} alt="App Central screen" width="800"/> 
-* [**Playbook**](/docs/platform-services/automation-service/automation-service-playbooks). Shows playbooks, which are workflows you can run to perform automations. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} alt="Playbook screen" width="800"/>
-* [**Integration**](/docs/platform-services/automation-service/automation-service-integrations.md). Lists integrations with Sumo Logic and third-party vendors that provide actions used in playbooks. <br/><img src={useBaseUrl('img/platform-services/integrations-main-screen.png')} alt="Integrations screen" width="800"/>
-* [**Bridge**](/docs/platform-services/automation-service/automation-service-bridge.md). Shows connections between on-premises servers and the Sumo Logic cloud. A bridge allows you to create a custom integration in your own system and use it to for automation. <br/><img src={useBaseUrl('img/platform-services/bridge-main-screen.png')} alt="Bridge screen" width="800"/>
+* [**App Central**](/docs/platform-services/automation-service/automation-service-app-central). Displays a central repository of integrations and playbooks you can install to your environment.<br/><img src={useBaseUrl('img/platform-services/app-central-main-screen.png')} style={{border:'1px solid gray'}} alt="App Central screen" width="800"/> 
+* [**Playbook**](/docs/platform-services/automation-service/automation-service-playbooks). Shows playbooks, which are workflows you can run to perform automations. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} style={{border:'1px solid gray'}} alt="Playbook screen" width="800"/>
+* [**Integration**](/docs/platform-services/automation-service/automation-service-integrations.md). Lists integrations with Sumo Logic and third-party vendors that provide actions used in playbooks. <br/><img src={useBaseUrl('img/platform-services/integrations-main-screen.png')} style={{border:'1px solid gray'}} alt="Integrations screen" width="800"/>
+* [**Bridge**](/docs/platform-services/automation-service/automation-service-bridge.md). Shows connections between on-premises servers and the Sumo Logic cloud. A bridge allows you to create a custom integration in your own system and use it to for automation. <br/><img src={useBaseUrl('img/platform-services/bridge-main-screen.png')} style={{border:'1px solid gray'}} alt="Bridge screen" width="800"/>
 
 ## Access the Automation Service
 
@@ -31,18 +43,17 @@ Before you can access the Automation Service, you must first [configure role cap
 :::
 
 ### From the Sumo Logic screen
+
 1. Go to the main menu.
-1. Click **Automation**. <br/><img src={useBaseUrl('img/cse/automation-menu-in-nav-bar.png')} alt="Automation menu option in the nav bar" width="200"/> 
-   :::note
-   The **Automation** option appears in the main menu only if you have Cloud SIEM installed. If you also have Cloud SOAR installed, a **Cloud SOAR** option appears instead, since all automation services are provided by Cloud SOAR when it installed in conjunction with Cloud SIEM.
-   :::
-1. The Automation Service screen opens on the **Playbook** tab. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} alt="Playbook screen" width="800"/>
+1. Click **Automation**. <br/><img src={useBaseUrl('img/platform-services/automation-menu-in-nav-bar-main.png')} alt="Automation menu option in the nav bar" style={{border: '1px solid gray'}} width="250"/> 
+1. The Automation Service screen opens on the **Playbook** tab. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} alt="Playbook screen" style={{border: '1px solid gray'}} width="800"/>
 
 ### From Cloud SIEM
+
 1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
-1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} alt="Automation menu option" width="150"/><br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} alt="Automations list" width="800"/>
-1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} alt="Manage Playbooks menu option" width="400"/>
-1. The Automation Service screen opens on the **Playbook** tab. <br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} alt="Automation Playbook list" width="800"/>
+1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} style={{border:'1px solid gray'}} alt="Automation menu option" width="150"/><br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} style={{border:'1px solid gray'}} alt="Automations list" width="800"/>
+1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} style={{border:'1px solid gray'}} alt="Manage Playbooks menu option" width="400"/>
+1. The Automation Service screen opens on the **Playbook** tab. <br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} style={{border:'1px solid gray'}} alt="Automation Playbook list" width="800"/>
 
 ## Prerequisites
 
@@ -74,10 +85,14 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 To use [integrations](/docs/platform-services/automation-service/automation-service-integrations), you must configure the connection for their resources. 
 1. Click **Integrations** in the left navigation bar.
 1. Select the integration whose resource you want to configure the connection for. 
-1. Hover over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} alt="Edit a resource" width="800"/> 
-1. Enter the connection configuration needed by the resource. (Find the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) for configuration instructions.)<br/>What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. For example, in the following screen enter the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} alt="Edit a resource" width="400"/> 
+1. Hover over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="800"/> 
+1. Enter the connection configuration needed by the resource. (Find the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) for configuration instructions.)<br/>What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. For example, in the following screen enter the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="400"/> 
 1. Click **Save** to save the configuration. 
 
 ## Actions limit
 
 To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 200 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/platform-services/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.
+
+import ActionsLimitQuery from '../../reuse/actions-limit-query.md';
+
+<ActionsLimitQuery/>

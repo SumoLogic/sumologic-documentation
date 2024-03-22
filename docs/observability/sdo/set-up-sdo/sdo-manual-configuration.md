@@ -7,7 +7,7 @@ description: Learn how to set up the Software Development Optimization (SDO) Sol
 
 These instructions help you prepare and set up the Software Development Optimization (SDO) Solution manually, without using Terraform. You will manually configure collection and install apps for tool integration, create field extraction rules (FERs) for each supported tool, and install the SDO app.
 
-## Before you begin
+## Prerequisites
 Before setting up the SDO solution, you need to complete the following tasks:
 
 * Ensure that you have permissions to configure software and platforms used in your DevOps toolchain that will emit data to Sumo using webhooks (for example, Jira, GitHub, GitLab, Bitbucket, CircleCI, PagerDuty, Opsgenie, and so on).

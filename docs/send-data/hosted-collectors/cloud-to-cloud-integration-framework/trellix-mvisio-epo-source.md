@@ -41,7 +41,6 @@ The Trellix mVision ePO source requires you to provide a Client ID, Client Secre
     1. Click **Request** for IAM Client type approval.<br/><img src={useBaseUrl('img/send-data/credential-configuration.png')} alt="credential-configuration" style={{border: '1px solid gray'}} width="600" />
     1. Once your IAM Client type is approved, generate the **Client ID** and **Client Secret**. <br/><img src={useBaseUrl('img/send-data/generate.png')} alt="generate" style={{border: '1px solid gray'}} width="600" />
 
-
 ### Source configuration
 
 When you create a Trellix mVision ePO Source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
@@ -60,6 +59,12 @@ To configure a Trellix mVision ePO Source, follow the steps below:
 1. Enter the **API Key** for authorization collected from the Trellix platform.
 1. (Optional) The **Polling Interval** is set for 5 minutes by default. You can adjust it based on your needs. This sets how often the Source checks for new data.
 1. When you are finished configuring the Source, click **Save**.
+
+## Metadata field
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemParser` | `/Parsers/System/Trellix/Trellix MVision EPO` | Set when **Forward To SIEM** is checked. |
 
 ## JSON schema
 

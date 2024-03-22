@@ -93,7 +93,7 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
     :::
 1. Go to the **Review + create** tab, and then click **Create**.<br/><img src={useBaseUrl('/img/send-data/Azure_Blob_Storage_Custom_Deployment.png')} alt="Azure_Blob_Storage_Custom_Deploymente" width="400"/>
 1. Verify that the deployment was successful by looking at **Notifications** at the top right corner of the Azure Portal.<br/> ![notification-success.png](/img/send-data/notification-success.png)
-1. (Optional) In the same window, click **Go to resource group** to verify that all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/Azure_Blob_all-resources.png')} alt="Azure_Blob_all-resources" width="800"/>
+1. (Optional) In the same window, click **Go to resource group** to verify that all resources were successfully created, such as shown in the following example: <br/><img src={useBaseUrl('/img/send-data/Azure_Blob_all-resources.png')} alt="Azure_Blob_all-resources" style={{border:"1px solid gray"}} width="800"/>
 1. Go to **Storage accounts** and search for **sumobrlogs**, then select **sumobrlogs\<*random-string*\\>**. <br/><img src={useBaseUrl('/img/send-data/storage-accounts.png')} alt="storage-accounts" width="800"/>
 1. In the **Data Storage** menu, do the following:
     1. Click **Tables**.
@@ -187,7 +187,7 @@ To create an event grid subscription, do the following:
    * **Resource**. Select the Storage Account you configured, from where you want to ingest logs.
 
     :::note
-    If you don't see your configured Storage Account in the dropdown menu, make sure you met the requirements in [Requirements](#requirements) section.
+    If you do not see your configured Storage Account in the dropdown menu, make sure you met the requirements in [Requirements](#requirements) section.
     :::
 
 1. Specify the following details for Event Types:

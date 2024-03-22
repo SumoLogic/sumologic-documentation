@@ -62,7 +62,7 @@ The **sec_signal** partition is automatically generated, and its contents are re
 
 ## About the Security Record Details view
 
-When you query Cloud SIEM Records or Signalsin a Sumo Logic log search tab, the contents of each Record or Signal are presented in a field named **Security Record Details**. The **Security Record Details** is somewhat unique in that it can't be referenced in a query itself. It is a read-only field. Note however, that you can add subfields of the **Security Record Details** field as separate columns in the field browser. You can see an example of doing that in [Save a query with predefined display fields](#save-a-query-with-predefined-display-fields) below. And like any other field, you can hide the **Security Record Details** field, if desired.
+When you query Cloud SIEM Records or Signalsin a Sumo Logic log search tab, the contents of each Record or Signal are presented in a field named **Security Record Details**. The **Security Record Details** is somewhat unique in that it cannot be referenced in a query itself. It is a read-only field. Note however, that you can add subfields of the **Security Record Details** field as separate columns in the field browser. You can see an example of doing that in [Save a query with predefined display fields](#save-a-query-with-predefined-display-fields) below. And like any other field, you can hide the **Security Record Details** field, if desired.
 
 <img src={useBaseUrl('img/cse/security-record-details.png')} alt="Security records details" width="600"/>
 
@@ -88,9 +88,11 @@ To open a log search tab in Sumo Logic, click **+ New** and select **Log Search*
 
 ## Search all Records or Signals in a partition 
 
-To return all the Records or Signals in a partition, all you need to include in your query is the partition name. For example, to search all Records in the `sec_record_network` partition, choose a time range, enter this query, and click **Start**:
+To return all the Records or Signals in a partition, all you need to include in your query is the partition name. For example, to search all Records in the `sec_record_network` partition, choose a time range, enter the query below, and then click **Start**:
 
-`_index=sec_record_network`
+```sql
+_index=sec_record_network
+```
 
 <img src={useBaseUrl('img/cse/record-search-results.png')} alt="Record search results" width="800"/>
 
@@ -111,12 +113,12 @@ This query adds the `objectType` (which contains the Record type) and the `user_
 _index = sec_record_audit
 | fields objectType, user_username
 ```
-<img src={useBaseUrl('img/cse/fields-added.png')} alt="Fields added" width="800"/> 
+<img src={useBaseUrl('img/cse/fields-added.png')} alt="Fields added" width="800"/>
 
 **To save a search**
 
-1. To save the query for future use, choose **Save As** from the three-dot more options menu in the search bar.<br/><img src={useBaseUrl('img/cse/save-as.png')} alt="Save as log search" width="800"/> 
-2. On the **Save Item** popup, name the query, choose a folder location, and then click **Save**.<br/><img src={useBaseUrl('img/cse/save.png')} alt="Save" width="400"/> 
+1. To save the query for future use, choose **Save As** from the three-dot kebab menu in the search bar.<br/><img src={useBaseUrl('img/cse/save-as.png')} alt="Save as log search" width="800"/>
+2. On the **Save Item** popup, name the query, choose a folder location, and then click **Save**.<br/><img src={useBaseUrl('img/cse/save.png')} alt="Save" width="400"/>
 
 ## Search multiple partitions
 
@@ -178,4 +180,4 @@ _index=sec_record_authentication
     ```
     _index = sec_record_* srcDevice_ip=*
     ```  
-* The partitions that contain Cloud SIEM Records and Signals are stored in a dedicated security data tier. You can’t access data in the security indexes and data in other data tiers (Continuous, Frequent, or Infrequent) in the same query.
+* The partitions that contain Cloud SIEM Records and Signals are stored in a dedicated security data tier. You can’t access data in the security indexes and data in other data tiers (Continuous, Frequent, or Infrequent) and flex in the same query.

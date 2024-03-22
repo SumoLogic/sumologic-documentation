@@ -9,6 +9,7 @@
 // Fonts!
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "api-override.css";
 
 @font-face {
   font-family: 'Material Icons';
@@ -260,11 +261,12 @@ html[data-theme='light'] {
   content: 'Start free trial';
   border: 1px solid #2aa1e6;
   color: #FFF;
-  border-radius: 3px;
-  padding: 3px 8px;
-  font-size: 12px;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 14px;
   display: inline-flex;
   background: #2aa1e6;
+  margin-right: -20px;
 }
 
 .header-trial::after {
@@ -276,8 +278,12 @@ html[data-theme='light'] {
   background: transparent;
   border: 1px solid #2aa1e6;
   color: #FFF;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 14px;
   display: inline-flex;
   background: #2aa1e6;
+  margin-right: -20px;
 }
 
 //Contact Support nav button
@@ -290,9 +296,9 @@ html[data-theme='light'] {
   background: transparent;
   border: 1px solid #000;
   color: var(--ifm-navbar-link-color);
-  border-radius: 3px;
-  padding: 3px 8px;
-  font-size: 12px;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 14px;
   display: inline-flex;
 }
 
@@ -305,7 +311,9 @@ html[data-theme='light'] {
   background: transparent;
   border: 1px solid #E5F4FA;
   color: var(--ifm-navbar-link-color);
-  border-radius: 3px;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 14px;
   display: inline-flex;
 }
 
@@ -1085,7 +1093,6 @@ html[data-theme='dark'] .node polygon {
 }
 
 html[data-theme='dark'] .card:hover {
-  border-top: 4px solid var(--ds-blue-700);
   transition: none;
 }
 

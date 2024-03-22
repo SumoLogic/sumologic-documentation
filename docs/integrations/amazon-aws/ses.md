@@ -93,7 +93,7 @@ Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and rece
 ```
 
 
-## Collecting Logs for the Amazon SES App
+## Collecting logs for the Amazon SES app
 
 This section provides instructions for collecting CloudTrail Event logs and SES Notifications Via SNS.
 
@@ -182,7 +182,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 
 13. Set any of the following under **Advanced**:
   * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-    * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+    * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
     * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.
 * **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
     * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
@@ -230,34 +230,17 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 SES sends notifications to SNS in a JSON format. Any notification sent through SNS is by default wrapped into a JSON message. This then creates a nested JSON that is a nearly unreadable message. To prevent the problem of nested JSON messages, we highly recommend configuring SNS to use [raw message ](http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html)delivery option.
 :::
 
+## Installing the Amazon SES app
 
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Installing the Amazon SES App
+<AppInstall2/>
 
-Now that you have set up collection for Amazon SES, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+## Viewing Amazon SES dashboards​
 
-To install the app:
-1. From the **App Catalog**, search for and select the app. You can click **Preview Dashboards** to verify that you have the app you need.
-2. To install the app, click **Add to Library** and complete the following fields.
-    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app.
-    2. **Data Source**. Select either of these options for **SES CloudTrail Log Source**, and **SES Notification Log Source**.
-        * Choose **Source Category**, and select a source category from the list.
-            * For SES CloudTrail Logs, provide sourceCategory as **AWS/CloudTrail**
-            * For SES Notification Logs, provide sourceCategory as **AWS/SES/Notifications**
-        * **Choose Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`).
-3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library] for information on working with the library in the new UI.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-
-## Viewing Amazon SES Dashboards
-
-This section provides examples of the Amazon SES App dashboards, along with descriptions of the features and functions.
-
+<ViewDashboards/>
 
 ### CloudTrail Events Overview
 

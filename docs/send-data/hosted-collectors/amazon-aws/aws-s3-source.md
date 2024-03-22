@@ -106,7 +106,9 @@ import Iframe from 'react-iframe';
 
     ![img](/img/send-data/S3_Bucket.png)
 
-1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a multiple wildcard. Do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details.
+1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a multiple wildcard. Do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details. 
+
+   Following is an example of a managed S3 bucket's name and path expression entered in the dialog. Together they comprise an S3 bucket data path. For more information, see [S3 Bucket Data Path](https://docs.umbrella.com/deployment-umbrella/docs/cisco-managed-s3-bucket#s3-bucket-data-path) in the Cisco documentation. <br/><img src={useBaseUrl('img/send-data/bucket-name-and-path-expression.png')} alt="<your image description>" style={{border: '1px solid gray'}} width="600" />
 1. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
 
    * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”.
@@ -189,7 +191,7 @@ The following steps use the Amazon SNS Console. You may instead use AWS CloudFo
 
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
 
-     * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be     determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+     * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be     determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
      * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference for more information.
 
    * **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:

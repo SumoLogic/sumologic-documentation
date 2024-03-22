@@ -57,6 +57,12 @@ To configure a JumpCloud Directory Insights source:
 1. In **Service**, select the type of logs to collect. This allows you to limit the response to just the data you want.
 1. When you are finished configuring the Source, click **Save**.
 
+## Metadata fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemParser` | `/Parsers/System/JumpCloud/JumpCloud Directory Insights` | Set when **Forward To SIEM** is checked. |
+
 ## JSON schema
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to Configure Sources](/docs/send-data/use-json-configure-sources) for details.
