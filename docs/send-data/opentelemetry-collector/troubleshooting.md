@@ -127,7 +127,7 @@ Get-EventLog -LogName Application -Newest 100 -Source OtelcolSumo | Select-Objec
 If desired, you can change the collector's logging level and have the collector's logs be sent to Sumo Logic for analysis and troubleshooting. To do this you need add the following to your collector's configuration (located in `/etc/otelcol-sumo/conf.d`):
 1. Create a new logging file in the `/var/log` directory. For example: `/var/log/otelcol.log`. Make sure this file has read and write permissions for the collector.
 2. Add the `telemetry` service to the collector config, and set the logging `level` (default = INFO) and `output_paths` parameters accordingly. See example config below.
-3. Add a fileog receiver to read from the output_paths that you specified previously (this is the where the collectors log files are written, i.e `/var/log/otelcol.log`).
+3. Add a fileog receiver to read from the output_paths that you've specified previously (i.e., `/var/log/otelcol.log`). This is the where the collectors log files are written.
 4. Make sure that you update your service pipelines to include this receiver so you can send them to Sumo Logic.
    
 See the example configuration below, which sets the log level to `DEBUG`, the log output path to `/var/log/otelcol.log`, and has a filelog receiver to read the logs:
