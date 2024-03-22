@@ -6,7 +6,7 @@ tags: [ ]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian-oppsgenie.png')} alt="criminal-ip" width="90"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/atlassian.png')} alt="criminal-ip" width="90"/>
 
 ***Version: 1.0  
 Updated: Mar 22, 2024***
