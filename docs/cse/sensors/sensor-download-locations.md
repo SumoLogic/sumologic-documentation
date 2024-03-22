@@ -4,8 +4,11 @@ title: Sensor Download Locations
 description: The Cloud SIEM Network sensor can be downloaded from a static URL that is specific to your Cloud SIEM deployment.
 ---
 
+:::caution End-of-Life
+This article describes using the Cloud SIEM Network Sensor. The Network Sensor has reached end of life and is no longer supported. Instead, use Zeek. For more information, see [Ingest Zeek Logs](/docs/cse/sensors/ingest-zeek-logs/). 
+:::
 
-The Cloud SIEM Network sensor can be downloaded from a static URL that is specific to your Cloud SIEM deployment. Each Sumo Logic deployment has URLs used to download sensor software. If you are not sure which endpoint to use, see How can I determine which endpoint I should use?
+The Cloud SIEM Network Sensor can be downloaded from a static URL that is specific to your Cloud SIEM deployment. Each Sumo Logic deployment has URLs used to download sensor software. If you are not sure which endpoint to use, see How can I determine which endpoint I should use?
 
 ## Installing the Network sensor
 

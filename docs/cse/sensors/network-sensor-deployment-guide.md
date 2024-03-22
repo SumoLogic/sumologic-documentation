@@ -7,6 +7,10 @@ description: Learn about Network Sensor deployment planning, standard sensor pla
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+:::caution End-of-Life
+This article describes using the Cloud SIEM Network Sensor. The Network Sensor has reached end of life and is no longer supported. Instead, use Zeek. For more information, see [Ingest Zeek Logs](/docs/cse/sensors/ingest-zeek-logs/). 
+:::
+
 This section has instructions for deploying the Cloud SIEM Network Sensor. It covers deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands. 
 
 ## Network Sensor overview
