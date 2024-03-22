@@ -127,7 +127,7 @@ MITRE ATT&CK coverage events are recorded in the Audit Event Index. To query for
 _index=sumologic_system_events _sourceCategory=cseMitreAttackCoverage
 ```
 
-For more information about how to query for audit log events, see [Cloud SIEM Audit Logging](https://help.sumologic.com/docs/cse/administration/cse-audit-logging/)
+For more information about how to query for audit log events, see [Cloud SIEM Audit Logging](/docs/cse/administration/cse-audit-logging/)
 
 ## MITRE ATT&CK coverage APIs
 
