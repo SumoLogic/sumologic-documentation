@@ -1,0 +1,23 @@
+{
+    "api.version": "v1",
+    "source": {
+        "config": {
+            "name": "CloudQuery AWS Inventory",
+            "accessKeyId": "************",
+            "secretAccessKey": "***************************",
+            "limitToRegions": [
+                "us-east-1",
+                "us-east-2"
+            ],
+            "awsServices": [
+                "ECS",
+                "EC2"
+            ],
+            "pollInterval": 24
+        },
+        "schemaRef": {
+            "type": "CloudQuery AWS Inventory"
+        },
+        "sourceType": "Universal"
+    }
+}
