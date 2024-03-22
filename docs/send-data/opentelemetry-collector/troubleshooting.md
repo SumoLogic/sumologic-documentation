@@ -185,7 +185,7 @@ service:
 If desired, you can send the collector's metrics to Sumo Logic for analysis and troubleshooting. To do this you need add the following to your collector's configuration (located in `/etc/otelcol-sumo/conf.d`):
 1. Add the `telemetry` service to the collector config, and set the metric `level` (default = basic) and `address` parameters accordingly. See example config below.
 2. Add a prometheus receiver to scrape the collectors metrics.
-3. Make sure that you update your service pipelines to include this reciever so you can send them to Sumo Logic.
+3. Make sure that you update your service pipelines to include this receiver so you can send them to Sumo Logic.
    
 See the example configuration below, which sets the metrics level to `detailed` and has a prometheus receiver to scrape them:
 ```yaml
