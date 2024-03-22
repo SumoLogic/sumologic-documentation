@@ -220,7 +220,7 @@ _collector="<collector name>"  _sourcename="otc metric input"
 ```
 
 :::note
-You can find more information on customizing the collector's telemetry in the [Configuration](https://opentelemetry.io/docs/collector/configuration/#telemetry) section of the OpenTelemetry Documentation.
+You can find more information on customizing the collector's telemetry in the OpenTelemetry Documentation [Configuration](https://opentelemetry.io/docs/collector/configuration/#telemetry) section.
 :::
 
 
