@@ -88,7 +88,13 @@ If there are two different versions between the integration installed and that i
 
 ### Certified integrations
 
-Certified integrations are those that are provided by Sumo Logic. After you download an integration from App Central, you will see it in the Integrations section designated by a **Certified Integration** check mark.<br/><img src={useBaseUrl('img/cloud-soar/integration-certified.png')} alt="Certified integration" width="400"/>
+Certified integrations are those that are provided by Sumo Logic. 
+
+:::note
+Only certified integrations can be executed in the cloud, while custom integrations must be executed through the Automation Bridge. For more information, see [Cloud or Bridge execution](#cloud-or-bridge-execution). 
+:::
+
+After you download an integration from App Central, you will see it in the Integrations section designated by a **Certified Integration** check mark.<br/><img src={useBaseUrl('img/cloud-soar/integration-certified.png')} alt="Certified integration" width="400"/>
 
 After you select the integration resource and click the **View Code** button, the certified integration code is set to read-only mode. The certified integrations code can’t be edited using the Cloud SOAR internal IDE. This is also true for the actions available for that integration.<br/><img src={useBaseUrl('img/cloud-soar/integration-certified-2.png')} alt="Certified integration message in resource code" width="600"/>
 
