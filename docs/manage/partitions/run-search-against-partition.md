@@ -29,13 +29,15 @@ With index aliasing, you can create an alias to point to one or more system inde
 
 In addition to `sumologic_default`, we have several other Sumo Logic-defined system indexes. As a shortcut, rather than prefacing `sumologic_` when referencing system indexes in a search, you can alias these indexes by typing an underscore at the beginning. For example, `sumologic_default` and `_default` will return the same results. 
 
+If your query scans both system and customer indexes starting with underscore (`_`) then results for the query will be from customer indexes and system indexes would be ignored in results
+
 :::warning Leading Underscore Reserved for System Index Alias in User-Created Indexes
 When creating your own indexes (user-created, non-system indexes), you cannot lead with an underscore (`_`). This is reserved only for system indexes.
 :::
 
-:::warning
-System security indexes such as [Cloud SIEM](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo#partitions-for-cse-records) indexes, [Audit Index](/docs/manage/security/audit-indexes/audit-index/) indexes, and [Root Cause Explorer](/docs/observability/root-cause-explorer) do not start with `sumologic_`. <!-- cross-reference this in security docs --> For all other Sumo Logic-created indexes, aliasing is permitted.
-:::
+### Limitations
+
+Aliasing is not permitted for Sumo Logic system security indexes ([Cloud SIEM](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo#partitions-for-cse-records), [Audit Index](/docs/manage/security/audit-indexes/audit-index/), and [Root Cause Explorer](/docs/observability/root-cause-explorer)). These indexes do not start with `sumologic_` and therefore cannot be aliased. <!-- cross-reference this in security docs --> For all other Sumo Logic-created indexes, aliasing is permitted.
 
 ### Using index aliases
 
