@@ -2770,7 +2770,6 @@ integrations: [
         'api/content-permissions',
         'api/content-management',
         'api/dashboard',
-        'api/dashboard-data',
         'api/dynamic-parsing',
         'api/field-extraction-rules',
         'api/field-management',
