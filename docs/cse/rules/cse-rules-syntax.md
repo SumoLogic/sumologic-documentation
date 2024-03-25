@@ -626,7 +626,7 @@ The following expression returns "10.10.1.0":
 
 ### hasThreatMatch
 
-The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to [threat intelligence indicators](/docs/platform-services/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function). It can also match values in [Custom threat intelligence sources in Cloud SIEM](/docs/platform-services/threat-intelligence/threat-indicators-in-cloud-siem/#custom-threat-intelligence-sources-in-cloud-siem). 
+The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to [threat intelligence indicators](/docs/platform-services/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function). It can also match values in [Custom threat intelligence sources in Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). 
 
 **Syntax**
 

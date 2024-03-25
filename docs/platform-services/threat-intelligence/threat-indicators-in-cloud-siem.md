@@ -43,8 +43,10 @@ Since different sources can report different reputations, each source has a repu
 
 <img src={useBaseUrl('img/platform-services/threat-indicators-in-cloud-siem-ui.png')} alt="Threat indicators in the Cloud SIEM UI" style={{border: '1px solid gray'}} width="400" />
 
+<!-- Put this back once we support cat with the threatlookup search operator. 
 ## Custom threat intelligence sources in Cloud SIEM
 
 You can no longer [create custom threat intelligence sources using Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). You should use the Threat Intelligence tab, a collector, or the API to create sources. 
 
 If you have custom sources in Cloud SIEM, they will continue to be honored until the feature is deprecated at a future time. If you have indicators in Cloud SIEM that you want to continue using past deprecation, we recommend you re-ingest them from the source that you originally used to place the custom sources in Cloud SIEM. Once ingested, the indicators will appear in the [Threat Intelligence tab](/docs/platform-services/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab) and be available for use in both Cloud SIEM as well as the Sumo Logic Log Analytics Platform. 
+-->
