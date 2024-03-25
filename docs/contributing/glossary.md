@@ -326,6 +326,5 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 ## W
 
-**[Webhook](/docs/integrations/webhooks/)**. A webhook is an HTTP callback: an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to third-party applications that accept incoming webhooks. You can configure a custom webhook, or use preconfigured webhooks for a number of apps, including Slack, Datadog, and so on.
 
 **[`where` operator](/docs/search/search-query-language/search-operators/where)**. A conditional operator that can precede or follow another operator. Example combinations include "where x matches y", "where x in (a, b, c)", "where x not in (a, b, c)" and "where a > 1 and b / 4 &lt; sqrt(x)".
