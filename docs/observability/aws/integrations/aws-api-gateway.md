@@ -7,7 +7,7 @@ description: The AWS API Gateway ULM app provides insights into API calls, inclu
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-[Amazon API Gateway](https://aws.amazon.com/api-gateway/) sservice allows you to create RESTful APIs, HTTP APIs, and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
+[Amazon API Gateway](https://aws.amazon.com/api-gateway/) service allows you to create RESTful APIs, HTTP APIs, and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 
 The Sumo Logic AWS API Gateway app provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
 ## Log and metrics types 
@@ -167,17 +167,17 @@ import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
 ### Overview
 
-The **AWS API Gateway - Overview** dashboards provides insights into API Gateway performance throughout your infrastructure, including API calls, latency, client and server-side errors, connect and message count, data processed, API cache hits, and back-end cache misses.
+The **AWS API Gateway - Overview** dashboards provide insights into API Gateway performance throughout your infrastructure, including API calls, latency, client and server-side errors, connect and message count, data processed, API cache hits, and back-end cache misses.
 
 There are three overview dashboards: **AWS API Gateway - Overview (REST API)**, **AWS API Gateway - Overview (HTTP API)**, and **AWS API Gateway - Overview (WebSocket API)**.
 
 Use these dashboards to:
 
 * Get a high-level overview of your API Gateway infrastructure.
-* Compare API requests made today, yesterday, and last week to identify any abnormal deviations in load
+* Compare API requests made today, yesterday, and last week to identify any abnormal deviations in load.
 * Get quick statistics on the number of requests and frequently used APIs.
 * Monitor the number of client-side and server-side errors processed by API Gateway instances.
-* Monitor relative, backend, and overall API responsiveness
+* Monitor relative, backend, and overall API responsiveness.
 * Monitor API cache hits and misses by API Gateway across your infrastructure to optimize cache capacities and achieve desired performance.
 
 #### AWS API Gateway - Overview (REST API)
@@ -195,7 +195,7 @@ Use these dashboards to:
 ### Access Logs
 
 Access logs contains information about who has accessed your API and how the caller accessed the API. 
-To populate the dashboards, you must explicitly [enable access logs](#collect-access-logs-for-aws-api-gateway).
+To populate the dashboards, you must explicitly [enable access logs](/docs/integrations/amazon-aws/api-gateway/#collect-access-logs-for-aws-api-gateway).
 
 #### AWS API Gateway - Access Logs - Overview
 
@@ -227,18 +227,18 @@ The **AWS API Gateway - Audit Events** dashboard provides detailed audit insight
 
 Use these dashboards to:
 
-* Monitor all API Gateway-related audit logs available via CloudTrail events
-* Monitor incoming user activity locations for both successful and failed events to ensure the activity matches with expectations
-* Monitor successful and failed API Gateway events, users and user agents / fail activities, and failure reasons
-* Monitor requests coming in from known malicious IP addresses detected via [Sumo Logic Threat Intel](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ)
+* Monitor all API Gateway-related audit logs available via CloudTrail events.
+* Monitor incoming user activity locations for both successful and failed events to ensure the activity matches with expectations.
+* Monitor successful and failed API Gateway events, users and user agents / fail activities, and failure reasons.
+* Monitor requests coming in from known malicious IP addresses detected via [Sumo Logic Threat Intel](/docs/integrations/security-threat-detection/threat-intel-quick-analysis).
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/6.-AWS-API-Gateway-Audit-Events.png' alt="Audit Events" />
 
 ### Latency and Cache
 
-The **AWS API Gateway - Latency, Cache** dashboards provides insights into API Gateway performance including API requests, latency, integration latency, and its statistics, API cache hits, and back-end cache misses.
+The **AWS API Gateway - Latency, Cache** dashboards provide insights into API Gateway performance including API requests, latency, integration latency, and its statistics, API cache hits, and back-end cache misses.
 
-Cache related panels will populate for apis which have [cache enabled](#enable-cache-metrics).
+Cache related panels will populate for apis which have [cache enabled](/docs/integrations/amazon-aws/api-gateway/#enable-cache-metrics).
 
 There are two dashboards related to latency and cache: **AWS API Gateway - Latency, Cache (REST API)** and **AWS API Gateway - Latency (HTTP and WebSocket API)**.
 
@@ -259,7 +259,7 @@ Use these dashboards to:
 
 ### Errors
 
-The **AWS API Gateway - Errors** dashboards provides insights into API Gateway HTTP 4xx and 5xx code errors throughout your infrastructure, including API requests, client errors, integration errors, execution errors, client-side errors, and server-side errors.
+The **AWS API Gateway - Errors** dashboards provide insights into API Gateway HTTP 4xx and 5xx code errors throughout your infrastructure, including API requests, client errors, integration errors, execution errors, client-side errors, and server-side errors.
 
 There are two dashboards related to errors: **AWS API Gateway - Errors (REST API)** and **AWS API Gateway - Errors (HTTP and WebSocket API)**.
 
@@ -280,9 +280,9 @@ Use these dashboards to:
 
 ### Enhanced Monitoring
 
-The **AWS API Gateway - Enhanced Monitoring** dashboards provides detailed insights into API Gateway performance throughout your infrastructure, including the number and types of API calls, API resources, cache hits, and misses, latency averages, data processed, and errors by HTTP method, resource and stage.
+The **AWS API Gateway - Enhanced Monitoring** dashboards provide detailed insights into API Gateway performance throughout your infrastructure, including the number and types of API calls, API resources, cache hits, and misses, latency averages, data processed, and errors by HTTP method, resource and stage.
 
-To populate the dashboards, you must explicitly [enable detailed CloudWatch metrics](#enable-enhanced-metrics).
+To populate the dashboards, you must explicitly [enable detailed CloudWatch metrics](/docs/integrations/amazon-aws/api-gateway/#enable-enhanced-metrics).
 
 There are three dashboards related to enhanced monitoring: **AWS API Gateway - Enhanced Monitoring (REST API)**, **AWS API Gateway - Enhanced Monitoring (HTTP API)**, and **AWS API Gateway - Enhanced Monitoring (WebSocket API)**.
 
