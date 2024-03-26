@@ -9,6 +9,23 @@ This section provides details on the available versions of the AWS Observability
 
 To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Selecting a stack template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for more information.
 
+## v2.8.0, 26-Mar-2023
+
+AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.8.0/sumologic_observability.master.template.yaml`
+
+AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates](https://github.com/SumoLogic/sumologic-solution-templates).
+
+New Features:
+* RDS app - Added support to analyze RDS PostgreSQL cloudwatch logs.
+* New monitors added for RDS PostgreSQL, RDS MySQL, DynamoDB, EC2, Lambda, API Gateway
+* Added new dashboards for HTTP and Websocket API which covers use cases based on cloudwatch logs and metrics including enhanced metrics.
+* Added support for API Gateway access logs for all three types of APIs - REST, HTTP and WebSocket API.
+
+Enhancements / Updates:
+* Optimized time to Install AWS observability solution with cloudformation template.
+* AccountID tag removed from AWS CloudWatch Metrics sources.
+* Migrated from legacy CrowdStrike threatIntel lookup operator to new  Threat Intel operator.
+
 ## v2.7.0, 25-Oct-2023
 
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.7.0/sumologic_observability.master.template.yaml`
