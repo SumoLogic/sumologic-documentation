@@ -228,6 +228,7 @@ The [AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/de
   <tr>
    <td>Field Extraction Rule   </td>
    <td>AwsObservabilityAlbAccessLogsFER<br/>
+AwsObservabilityApiGatewayAccessLogsFER<br/>
 AwsObservabilityApiGatewayCloudTrailLogsFER<br/>
 AwsObservabilityDynamoDBCloudTrailLogsFER<br/>
 AwsObservabilityEC2CloudTrailLogsFER<br/>
@@ -247,6 +248,7 @@ AwsObservabilitySQSCloudTrailLogsFER </td>
   </tr>
   <tr>
    <td>Metric Rules </td>
+   <td>AwsObservabilityApiGatewayApiNameMetricsEntityRule<br/>
    <td>AwsObservabilityRDSClusterMetricsEntityRule<br/>
 AwsObservabilityRDSInstanceMetricsEntityRule<br/>
 AwsObservabilityNLBMetricsEntityRule   </td>
