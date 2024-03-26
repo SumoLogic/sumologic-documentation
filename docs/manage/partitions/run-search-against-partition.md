@@ -33,7 +33,7 @@ In addition to `sumologic_default`, we have several other Sumo Logic-defined sys
 When creating your own indexes (user-created, non-system indexes), you cannot lead with an underscore (`_`). This is reserved only for system indexes.
 :::
 
-If your search query scans both your own indexes and Sumo Logic indexes starting with an underscore (`_`), you'll only see your own indexes in the results. System indexes would be ignored, and you'd see an error stating: `System indexes with alias names have been excluded from the results of the query`. 
+If your search query scans both your own indexes and Sumo Logic indexes starting with an underscore (`_`), you'll only see your own indexes in the results. System indexes would be ignored, and you'd see a warning stating: `System indexes with alias names have been excluded from the results of the query`. 
 
 ### Limitations
 
