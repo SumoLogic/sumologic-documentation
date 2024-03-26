@@ -1,3 +1,7 @@
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 After successfully executing the above command, Sumo Logic will start receiving data from your host machine.
 
 Click **Next**. This will install the app (dashboards and monitors) to your Sumo Logic Org.
