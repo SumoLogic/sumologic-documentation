@@ -1,7 +1,6 @@
 ---
 title: March 26, 2024 - Application Update
 keywords:
-  - sumo logic
   - cloud soar
   - automation service
 tags: [cloud soar release notes, automation service, application update]
