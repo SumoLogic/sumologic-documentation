@@ -12,9 +12,9 @@ sidebar_label: Intro to Sumo Logic Copilot
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Copilot is an AI-based assistant that helps you get answers quickly from your logs. It allows you to ask questions in plain English, and provides search suggestions, all without your having to write a log query. 
+Copilot is an AI-based assistant that helps you get answers quickly from your logs. It allows you to ask questions in plain English and provides search suggestions, all without your having to write a log query. 
 
-To start using Copilot, click the Copilot <img src={useBaseUrl('img/search/copilot/copilot-logo.png')} alt="Copilot logo" width="25" /> tab at the top of the Sumo Logic page:  
+To start using Sumo Logic Copilot, click the Copilot tab at the top of the Sumo Logic main page:  
 <img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
 
 ## Copilot UI
@@ -23,35 +23,46 @@ To start using Copilot, click the Copilot <img src={useBaseUrl('img/search/copil
 
 <img src={useBaseUrl('img/search/copilot/copilot-initial-screen.png')} alt="Copilot initial screen" style={{border: '1px solid gray'}} width="800" />
 
-1. **Select Source Category**. Select the source of the log messages you want to search. 
-1. **Ask Something...** Type a search that you want to perform. 
-1. **Suggestions**. Choose from the provided suggestions. For example, under **Explore**, select ideas for searching.
-1. **Time range**. The time range of the search. The default is the last 24 hours.
-1. **Run search**. Executes the search. 
-1. **New Conversation**. Start a new search.
+1. **Select Source Category**. Select the source of the log messages you want to investigate. 
+1. **Ask Something...** Type a phrase to initiate an investigation. 
+1. **Suggestions**. Choose from the listed ideas for investigation. 
+1. **Time range**. The time range to use for the investigation. The default is the last 24 hours.
+1. **Execute**. Launches the investigation. 
+1. **New Conversation**. Start a new investigation.
 
-### During a search
+### During an investigation
 
 <img src={useBaseUrl('img/search/copilot/copilot-during-search.png')} alt="Copilot during a search" style={{border: '1px solid gray'}} width="800" />
 
-1. **Search summary**. The search summarized in plain text.
-1. **Show Log Query / Hide Log Query**. Show the log query resulting from the text summary, or hide it from view.
-1. **Open in Log Search**. Open the log query in a separate Log Search window. This allows you to save the search and perform all actions available for log searches.
-1. **Select chart**. Select the chart style to visualize search results.
+1. **Summary**. The current investigation summarized in plain text. ("Failed translation" appears here if the statement in the **Ask Something** field can't be translated into a query.)
+1. **Show Log Query / Hide Log Query**. Show the current investigation as a log query, or hide the query.
+1. **Open in Log Search**. Open the current investigation in a separate Log Search window. This allows you to save the search and perform all other actions available for log searches.
+1. **Select chart**. Select the chart style to visualize results.
 1. **Suggestions**:
-   * **Refine**. Suggested search refinements.
-   * **Explore**. New ideas for searching.
+   * **Refine**. Suggested refinements to your existing investigation.
+   * **Explore**. New ideas for investigation.
 
 ## Best practices
 
-This section outlines techniques to extract the most relevant responses from Copilot.
+For the best results, choose one of the following strategies.
 
-* Start from a prebuilt suggestion and edit it. 
-* Progressive refinement. Start from a simple prompt, verify the query translation and refine it gradually. For example:
-   1. Initial prompt (pre-built suggestion) Count of logs grouped by type
-   1. Refinement 1: Count of logs grouped by type, reason, kind, name
-   1. Refinement 2: Count of logs grouped by type, reason, kind, name. Filter logs where reason is FailedScheduling. 
-   1. Refinement 3: Count of logs grouped by type, reason, kind, name. Filter logs where reason is FailedScheduling. 
-   1. Refinement 4: Count of logs grouped by type, reason, kind, name. Filter logs where reason is FailedScheduling.Filter logs that contain redis-cluster in name. Sort the results by count.
-* Express your chain of thought to the AI. To assist with progressive refinement, break up the prompt into smaller problems that the AI can answer more accurately. 
-* Watch the **Refine** section on the page, if the system is able to anticipate refinements you have in mind. If so, click on the refinements rather than typing the next prompt.
+* **Explore**
+
+    Select a prebuilt suggestion in the **Explore** section, click **Show Log Query**, and edit the query. 
+
+* **Refine**
+
+    Watch the **Refine** section. If Copilot is able to list refinements useful for your investigation, select one rather than type a new prompt.
+
+* **Ask Something**
+
+    Type your question into the **Ask Something** field, but keep it very specific. Broad questions do not return good results. When your question is framed as a query about a small, well-defined problem, Copilot answers more accurately.
+
+* **Progressive refinement**
+
+    Start from a simple prompt, verify the query translation, and refine it gradually. For example:
+       1. Initial prompt: "Count of logs grouped by type".
+       1. Refinement: Count of logs grouped by type, reason, kind, name.
+       1. Next refinement: Count of logs grouped by type, reason, kind, name. Filter logs where reason is FailedScheduling. 
+       1. Further refinement: Count of logs grouped by type, reason, kind, name. Filter logs where reason is FailedScheduling.Filter logs that contain redis-cluster in name. Sort the results by count.
+
