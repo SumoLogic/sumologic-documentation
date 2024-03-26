@@ -249,7 +249,7 @@ AwsObservabilitySQSCloudTrailLogsFER </td>
   <tr>
    <td>Metric Rules </td>
    <td>AwsObservabilityApiGatewayApiNameMetricsEntityRule<br/>
-   <td>AwsObservabilityRDSClusterMetricsEntityRule<br/>
+   AwsObservabilityRDSClusterMetricsEntityRule<br/>
 AwsObservabilityRDSInstanceMetricsEntityRule<br/>
 AwsObservabilityNLBMetricsEntityRule   </td>
   </tr>
