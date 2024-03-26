@@ -1,3 +1,7 @@
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 1. Copy the yaml file into your Chef cookbook files directory `files/<downloaded_yaml_file>`.
 2. Use a Chef file resource in a recipe to manage it.
     `

@@ -1,3 +1,7 @@
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 You can create multiple SAML configurations in Sumo. To create an additional SAML configuration, click the plus (**+**) icon to create a new configuration. Enter the settings for the new configuration, as described the previous section.
 
 ![saml-config-list.png](/img/security/saml-config-list.png) 
