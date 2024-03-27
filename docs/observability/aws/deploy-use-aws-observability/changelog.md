@@ -24,7 +24,6 @@ New Features:
 Enhancements / Updates:
 * Optimized time to Install AWS observability solution with cloudformation template.
 * AccountID tag removed from AWS CloudWatch Metrics sources.
-* Migrated from legacy CrowdStrike threatIntel lookup operator to new  Threat Intel operator.
 
 ## v2.7.0, 25-Oct-2023
 

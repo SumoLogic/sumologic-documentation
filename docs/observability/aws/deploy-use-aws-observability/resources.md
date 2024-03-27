@@ -308,6 +308,7 @@ cloudwatch-metrics-&#60;AWS::Region&#62;-SNS </td>
    <td>Fields   </td>
    <td>account<br/>
 accountid<br/>
+apiid<br/>
 apiname<br/>
 cacheclusterid<br/>
 clustername<br/>
