@@ -180,7 +180,7 @@ The [AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/de
   <tr>
    <td>Alerts   </td>
    <td>AWS Observability &#60;Version&#62; &#60;Date and Time of Installation&#62;   </td>
-   <td>#TODO  </td>
+   <td>AWS Observability &#60;Version&#62; &#60;Date and Time of Installation&#62;   </td>
   </tr>
   <tr>
    <td>Hosted Collector   </td>
@@ -203,12 +203,25 @@ AwsObservabilityLambdaCloudWatchLogsFER<br/>
 AwsObservabilityRdsCloudTrailLogsFER<br/>
 AwsObservabilitySNSCloudTrailLogsFER<br/>
 AwsObservabilitySQSCloudTrailLogsFER </td>
-<td>#TODO  </td>
+   <td>AwsObservabilityAlbAccessLogsFER<br/>
+AwsObservabilityApiGatewayAccessLogsFER<br/>
+AwsObservabilityApiGatewayCloudTrailLogsFER<br/>
+AwsObservabilityDynamoDBCloudTrailLogsFER<br/>
+AwsObservabilityEC2CloudTrailLogsFER<br/>
+AwsObservabilityECSCloudTrailLogsFER<br/>
+AwsObservabilityElastiCacheCloudTrailLogsFER<br/>
+AwsObservabilityElbAccessLogsFER<br/>
+AwsObservabilityFieldExtractionRule<br/>
+AwsObservabilityGenericCloudWatchLogsFER<br/>
+AwsObservabilityLambdaCloudWatchLogsFER<br/>
+AwsObservabilityRdsCloudTrailLogsFER<br/>
+AwsObservabilitySNSCloudTrailLogsFER<br/>
+AwsObservabilitySQSCloudTrailLogsFER </td>
   </tr>
   <tr>
    <td>Explorer View </td>
    <td>AWS Observability </td>
-   <td>#TODO  </td>
+   <td>AWS Observability </td>
   </tr>
   <tr>
    <td>Metric Rules </td>
@@ -216,7 +229,10 @@ AwsObservabilitySQSCloudTrailLogsFER </td>
 AwsObservabilityRDSClusterMetricsEntityRule<br/>
 AwsObservabilityRDSInstanceMetricsEntityRule<br/>
 AwsObservabilityNLBMetricsEntityRule   </td>
-<td>#TODO  </td>
+   <td>AwsObservabilityApiGatewayApiNameMetricsEntityRule<br/>
+AwsObservabilityRDSClusterMetricsEntityRule<br/>
+AwsObservabilityRDSInstanceMetricsEntityRule<br/>
+AwsObservabilityNLBMetricsEntityRule   </td>
   </tr>
   <tr>
    <td>CloudTrail source </td>
@@ -277,7 +293,7 @@ cloudwatch-metrics-&#60;AWS::Region&#62;-SNS </td>
   <tr>
    <td>S3 Bucket Name   </td>
    <td>aws-observability-logs-&#60;StackID&#62;   </td>
-   <td>#TODO  </td>
+   <td>aws-observability-logs-&#60;StackID&#62;   </td>
   </tr>
   <tr>
    <td>Fields   </td>
@@ -300,7 +316,25 @@ region<br/>
 tablename<br/>
 topicname<br/>
 queuename</td>
-  <td>#TODO  </td>
+   <td>account<br/>
+accountid<br/>
+apiid<br/>
+apiname<br/>
+cacheclusterid<br/>
+clustername<br/>
+dbclusteridentifier<br/>
+dbidentifier<br/>
+dbinstanceidentifier<br/>
+functionname<br/>
+instanceid<br/>
+loadbalancer<br/>
+loadbalancername<br/>
+namespace<br/>
+networkloadbalancer<br/>
+region<br/>
+tablename<br/>
+topicname<br/>
+queuename</td>
   </tr>
 </table>
 
