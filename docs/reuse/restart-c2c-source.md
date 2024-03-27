@@ -1,3 +1,7 @@
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 If your Source encounters ThirdPartyConfig errors, you can restart it from either the Sumo Logic UI or Sumo Logic API.
 
 #### UI

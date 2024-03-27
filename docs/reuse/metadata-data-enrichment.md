@@ -1,3 +1,7 @@
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 Metadata is typically from your system or environment, and adds context about what or where the data came from and any associated services or apps. Logs and metrics use metadata that can be customized to anything you need.
 
 **Log metadata**

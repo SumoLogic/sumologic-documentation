@@ -1,3 +1,7 @@
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 Ingest Time FERs have the following limitations:
 
 * There is a limit of 50 Ingest Time rules and 200 fields. Fields created as log metadata and from Ingest Time rules share the same quota of 200 fields. You can manage your fields on the Fields page.
