@@ -14,7 +14,7 @@ The example below shows the estimate of how much Flex data will be scanned for a
 
 When you click on the session ID under the histogram, a popup with more detailed information appears. Here you can see the Flex data scanned for a query in the scope.<br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/scan-details.png')} alt="scan-details" style={{border:'1px solid gray'}} width="500" />
 
-If there is no pay-as-search tier scanned, a warning message will be displayed in the **Scan Estimates** popup.<br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/no-scan-data.png')} alt="scan-details" style={{border:'1px solid gray'}} width="400" />
+If there is no pay-per-search data scanned, a warning message will be displayed in the **Scan Estimates** popup.<br/><img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/no-scan-data.png')} alt="scan-details" style={{border:'1px solid gray'}} width="400" />
 
 ## Monitors
 
