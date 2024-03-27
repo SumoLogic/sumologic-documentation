@@ -88,8 +88,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | awsId | String | Yes | `null` | The AWS access ID that you want to use to authenticate collection requests.  |  |
 | awsKey | String | Yes | `null` | The AWS secret key that you want to use to authenticate collection requests. |  |
-| adminRoleArn | String | Yes | `null` | ARN of an admin account |  |
-| memberRoleName | String | Yes | `null` | Role name that CloudQuery should use to assume a role in the member account from the admin account |  |
+| adminRoleArn | String | Yes | `null` | ARN of an admin account. |  |
+| memberRoleName | String | Yes | `null` | Role name that CloudQuery should use to assume a role in the member account from the admin account. |  |
 | limitToRegions | Array | Yes |  | List of regions for which the data has to be fetched. |  |
 | limitToServices | Array | Yes |  | List of services for which the data has to be fetched. |  |
 | pollingInterval | Integer | No | 12 | This sets how often the Source checks for data. |  |
