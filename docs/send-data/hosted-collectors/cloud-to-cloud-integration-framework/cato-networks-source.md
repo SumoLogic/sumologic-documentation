@@ -81,6 +81,12 @@ To configure a Cato Networks Source:
    - If **Audit Events** is selected, the integration will fetch audit data.
 1. When you are finished configuring the Source, click **Save**.
 
+## Metadata fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemParser` | `/Parsers/System/Cato Networks/Cato Networks` | Set when **Forward To SIEM** is checked. |
+
 ## JSON Configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
