@@ -671,7 +671,7 @@ module.exports = {
           items: [
             'manage/partitions/flex/create-edit-partition-flex',
             'manage/partitions/flex/view-partition-details-flex',
-            //'manage/partitions/flex/estimate-and-actual-scan-data',
+            'manage/partitions/flex/estimate-scan-data',
             'manage/partitions/flex/flex-pricing-faq',
           ]
         },
@@ -2770,7 +2770,6 @@ integrations: [
         'api/content-permissions',
         'api/content-management',
         'api/dashboard',
-        'api/dashboard-data',
         'api/dynamic-parsing',
         'api/field-extraction-rules',
         'api/field-management',

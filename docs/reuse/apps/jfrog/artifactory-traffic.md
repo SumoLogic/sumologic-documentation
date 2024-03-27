@@ -1,3 +1,7 @@
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 **Overall Traffic by Geolocation.** Uses a geo lookup operation to display overall traffic by IP address on a map of the world for the last 24 hours.
 
 **Download Traffic by Geolocation.** Uses a geo lookup operation to display download traffic by IP address on a map of the world for the last 24 hours.
