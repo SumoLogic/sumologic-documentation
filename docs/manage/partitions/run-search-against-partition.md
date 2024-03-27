@@ -35,10 +35,6 @@ When creating your own indexes (user-created, non-system indexes), you cannot le
 
 If your search query scans both your own indexes and Sumo Logic indexes starting with an underscore (`_`), you'll only see your own indexes in the results. System indexes would be ignored, and you'd see a warning stating: `System indexes with alias names have been excluded from the results of the query`. 
 
-### Limitations
-
-Aliasing is not permitted for Sumo Logic system security indexes ([Cloud SIEM](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo#partitions-for-cse-records), [Audit Index](/docs/manage/security/audit-indexes/audit-index/), and [Root Cause Explorer](/docs/observability/root-cause-explorer)). These indexes do not start with `sumologic_` and therefore cannot be aliased. <!-- cross-reference this in security docs --> For all other Sumo Logic-created indexes, aliasing is permitted.
-
 ### Using index aliases
 
 Here are some examples where index aliasing is used in wildcard queries.
