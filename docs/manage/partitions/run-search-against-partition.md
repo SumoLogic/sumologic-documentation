@@ -43,7 +43,7 @@ Aliasing is not permitted for Sumo Logic system security indexes ([Cloud SIEM](/
 
 Here are some examples where index aliasing is used in wildcard queries.
 
-`_index=*volume*` This query will reference all type of indexes (system indexes as well as user-created).
+`_index=*volume*` This query will reference all types of indexes (system indexes as well as user-created).
 
 `_index=_vol*`. This query will reference indexes such as `sumologic_volume`.
 
