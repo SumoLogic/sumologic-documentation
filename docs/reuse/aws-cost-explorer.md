@@ -1,3 +1,7 @@
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 To configure an AWS Cost Explorer Source:
 
 1. On the **Manage Data** > **Collection** > **Collection**.
