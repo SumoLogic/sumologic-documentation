@@ -25,7 +25,7 @@ _index=sumologic_default
 
 ## Index aliasing
 
-With index aliasing, you can use an alias to point to one or more system indexes such as [`sumologic_default`](/docs/manage/partitions/run-search-against-partition/#search-the-default-partition) in the source expression of your search query. Both the operator part and results of query will consist of actual index names.
+With index aliasing, you can use an alias to point to one or more system indexes such as [`sumologic_default`](/docs/manage/partitions/run-search-against-partition/#search-the-default-partition) in the source expression of your search query. Both the operator part and results of your query will consist of actual index names.
 
 In addition to `sumologic_default`, we have several other Sumo Logic-defined system indexes. As a shortcut, rather than prefacing `sumologic_` when referencing system indexes in a search, you can alias these indexes by typing an underscore at the beginning. For example, `sumologic_default` and `_default` will return the same results. 
 
