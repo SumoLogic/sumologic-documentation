@@ -160,70 +160,32 @@ The metadata tags are applied to Sumo Logic Sources.
   </tr>
 </table>
 
-### Terraform
-
-[Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform) execution creates the following resources in Sumo Logic.
-
-<table>
-  <tr>
-   <td>Resource   </td>
-   <td>Name   </td>
-  </tr>
-  <tr>
-   <td>CloudTrail Logs Source </td>
-   <td>CloudTrail Logs &#60;AWS Region&#62; </td>
-  </tr>
-  <tr>
-   <td>Application Load Balancer - Access Logs Source   </td>
-   <td>Elb Logs &#60;AWS Region&#62;   </td>
-  </tr>
-  <tr>
-   <td>Metrics - AWS CloudWatch Metric Source   </td>
-   <td>CloudWatch Metrics &#60;AWS Region&#62; &#60;AWS Service name&#62;   </td>
-  </tr>
-  <tr>
-   <td>Metrics - Kinesis Firehose for Metrics Source   </td>
-   <td>CloudWatch Metrics &#60;AWS Region&#62;   </td>
-  </tr>
-  <tr>
-   <td>CloudWatch Logs - Lambda Log forwarder Source   </td>
-   <td>CloudWatch Logs &#60;AWS Region&#62;   </td>
-  </tr>
-  <tr>
-   <td>CloudWatch Logs - Kinesis Firehose for Logs Source   </td>
-   <td>CloudWatch Logs &#60;AWS Region&#62;   </td>
-  </tr>
-  <tr>
-   <td>Inventory Source   </td>
-   <td>AWS Inventory &#60;AWS Region&#62;   </td>
-  </tr>
-  <tr>
-   <td>Xray Source   </td>
-   <td>AWS Xray &#60;AWS Region&#62;   </td>
-  </tr>
-</table>
 
 
-### AWS CloudFormation
+### Resources
 
-The [AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) template execution creates the following resources in Sumo Logic.
+The [AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/deploy-with-aws-cloudformation) and [Terraform](/docs/observability/aws/deploy-use-aws-observability/deploy-with-terraform) template execution creates the following resources in Sumo Logic.
 
 <table>
   <tr>
    <td>Resource   </td>
-   <td>Name   </td>
+   <td>CF Name   </td>
+   <td>TF Name   </td>
   </tr>
   <tr>
    <td>App folder   </td>
    <td>AWS Observability-&#60;Version&#62; &#60;Date of installation&#62;   </td>
+   <td>#TODO  </td>
   </tr>
   <tr>
    <td>Alerts   </td>
    <td>AWS Observability &#60;Version&#62; &#60;Date and Time of Installation&#62;   </td>
+   <td>#TODO  </td>
   </tr>
   <tr>
    <td>Hosted Collector   </td>
    <td>aws-observability-&#60;AccountAlias&#62;-&#60;AccountID&#62;   </td>
+   <td>#TODO  </td>
   </tr>
   <tr>
    <td>Field Extraction Rule   </td>
@@ -241,29 +203,35 @@ AwsObservabilityLambdaCloudWatchLogsFER<br/>
 AwsObservabilityRdsCloudTrailLogsFER<br/>
 AwsObservabilitySNSCloudTrailLogsFER<br/>
 AwsObservabilitySQSCloudTrailLogsFER </td>
+<td>#TODO  </td>
   </tr>
   <tr>
    <td>Explorer View </td>
    <td>AWS Observability </td>
+   <td>#TODO  </td>
   </tr>
   <tr>
    <td>Metric Rules </td>
    <td>AwsObservabilityApiGatewayApiNameMetricsEntityRule<br/>
-   AwsObservabilityRDSClusterMetricsEntityRule<br/>
+AwsObservabilityRDSClusterMetricsEntityRule<br/>
 AwsObservabilityRDSInstanceMetricsEntityRule<br/>
 AwsObservabilityNLBMetricsEntityRule   </td>
+<td>#TODO  </td>
   </tr>
   <tr>
    <td>CloudTrail source </td>
    <td>cloudtrail-logs-&#60;AWS::Region&#62; </td>
+   <td>CloudTrail Logs &#60;AWS Region&#62;  </td>
   </tr>
   <tr>
    <td>CloudWatch logs (HTTP) source   </td>
    <td>cloudwatch-logs-&#60;AWS::Region&#62;   </td>
+   <td>#TODO  </td>
   </tr>
   <tr>
    <td>Kinesis Firehose for Metrics   </td>
    <td>cloudwatch-metrics-&#60;AWS::Region&#62;   </td>
+   <td>CloudWatch Metrics &#60;AWS Region&#62;  </td>
   </tr>
   <tr>
    <td>CloudWatch Metrics source   </td>
@@ -279,30 +247,37 @@ cloudwatch-metrics-&#60;AWS::Region&#62;-NetworkELB<br/>
 cloudwatch-metrics-&#60;AWS::Region&#62;-ElastiCache<br/>
 cloudwatch-metrics-&#60;AWS::Region&#62;-SQS<br/>
 cloudwatch-metrics-&#60;AWS::Region&#62;-SNS </td>
+  <td>CloudWatch Metrics &#60;AWS Region&#62; &#60;AWS Service name&#62;  </td>
   </tr>
   <tr>
    <td>Amazon S3 Alb log source</td>
    <td>alb-logs-&#60;AWS::Region&#62; </td>
+   <td>#TODO  </td>
   </tr>
   <tr>
    <td>Amazon S3 Classic Load Balancer log source </td>
    <td>classic-lb-logs-&#60;AWS::Region&#62;   </td>
+   <td>#TODO  </td>
   </tr>
   <tr>
    <td>Kinesis Firehose for Logs </td>
    <td>kinesis-firehose-cloudwatch-logs-&#60;AWS::Region&#62; </td>
+   <td>#TODO  </td>
   </tr>
   <tr>
    <td>Inventory Source </td>
    <td>inventory-&#60;AWS::Region&#62; </td>
+   <td>AWS Inventory &#60;AWS Region&#62;  </td>
   </tr>
   <tr>
    <td>XRay Source   </td>
    <td>xray-&#60;AWS::Region&#62;   </td>
+   <td>AWS Xray &#60;AWS Region&#62;  </td>
   </tr>
   <tr>
    <td>S3 Bucket Name   </td>
    <td>aws-observability-logs-&#60;StackID&#62;   </td>
+   <td>#TODO  </td>
   </tr>
   <tr>
    <td>Fields   </td>
@@ -325,6 +300,7 @@ region<br/>
 tablename<br/>
 topicname<br/>
 queuename</td>
+  <td>#TODO  </td>
   </tr>
 </table>
 
