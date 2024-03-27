@@ -1,3 +1,7 @@
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 The **Scope** supports the option to assign ingest budgets to your log data by either:
 
 * A Field that is enabled in the [Fields](/docs/manage/fields) table.
