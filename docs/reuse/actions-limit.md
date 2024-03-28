@@ -1,5 +1,1 @@
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 By default, the actions limit is set to 200 per hour to prevent abuse of system resources or runaway processes. For more information, see [Actions limit](https://help.sumologic.com/docs/platform-services/automation-service/about-automation-service/#actions-limit).
