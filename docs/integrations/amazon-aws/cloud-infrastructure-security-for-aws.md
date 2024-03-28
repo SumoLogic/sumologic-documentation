@@ -9,7 +9,7 @@ import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="Cloud Infrastructure Security for AWS logo" width="70"/>
 
-Cloud Infrastructure Security for AWS provides a unified view of threats, misconfigurations, and threats in your AWS infrastructure spanning multiple AWS accounts and regions. The solution leverages native AWS tools and telemetry to accelerate cloud security outcomes.
+Cloud Infrastructure Security for AWS provides a unified view of risks, misconfigurations, and active threats in your AWS infrastructure spanning multiple AWS accounts and regions. The solution leverages native AWS tools and telemetry to accelerate cloud security outcomes.
 
 Key features of the solution include:
 * **Risk overview**. See a summary of all resources that pose risks, and get an action plan for addressing the most important areas of concern.
