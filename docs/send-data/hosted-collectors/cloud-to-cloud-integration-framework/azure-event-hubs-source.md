@@ -14,7 +14,7 @@ import TerraformExample from '!!raw-loader!/files/c2c/azure-event-hubs/example.t
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::note
-Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection method has a supported throughput limit of 1MB/S (86GB/day) for a named Event Hub egress rate. We recommend using the [Azure Functions model](/docs/integrations/microsoft-azure/arm-integration-faq/#event-hub-faqs) if you require higher throughput.
+Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection method has a supported throughput limit of 1MB/S (86GB/day) for a named Event Hub egress rate. We recommend using the [Azure Event Hubs Source for Logs ](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/) if you require higher throughput.
 :::
 
 <img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>

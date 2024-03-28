@@ -73,12 +73,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/dashboard"><img src={useBaseUrl('img/icons/dashboards.png')} alt="Thumbnail icon" width="50"/><h4>Dashboards V2</h4></a>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/api/dashboard-data"><img src={useBaseUrl('img/icons/dashboards.png')} alt="Thumbnail icon" width="50"/><h4>Dashboards V1 (Beta)</h4></a>
+  <a href="/docs/api/dashboard"><img src={useBaseUrl('img/icons/dashboards.png')} alt="Thumbnail icon" width="50"/><h4>Dashboards Management</h4></a>
   </div>
 </div>
 <div className="box smallbox card">

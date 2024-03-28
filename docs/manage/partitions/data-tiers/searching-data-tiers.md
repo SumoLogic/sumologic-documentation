@@ -79,7 +79,7 @@ In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t a
 When you enter a query that will run against the Infrequent Tier (`_dataTier=Infrequent` or `_dataTier=All`), Sumo Logic estimates and displays the amount of data in the Infrequent tier that will be scanned in order to return the search results.
 
 :::note
-If there is no pay-as-search tier scanned, a warning message will be displayed in the **Scan Estimates** popup.
+If there is no pay-per-search data scanned, a warning message will be displayed in the **Scan Estimates** popup.
 :::
 
 The screenshot below shows the estimate of how much Infrequent data will be scanned for a query that uses  `_dataTier=All` in the scope.<br/><img src={useBaseUrl('/img/partitions-data-tiers/CrossTier-Query-Start-Estimated-Scan.png')} alt="CrossTier-Query-Start-Estimated-Scan" style={{border:'1px solid gray'}} width="800" />

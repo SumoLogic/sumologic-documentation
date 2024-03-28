@@ -18,7 +18,8 @@ The MITRE ATT&CK Coverage page shows the [MITRE ATT&CK](https://attack.mitre.org
 To determine your coverage, MITRE ATT&CK Coverage collects data from rules that have fired in the last 180 days. 
 
 :::note
-To view the MITRE ATT&CK Coverage page, you must be assigned the [**View Rules** role capability](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem-enterprise). 
+* To view the MITRE ATT&CK Coverage page, you must be assigned the [**View Rules** role capability](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem-enterprise). 
+* To run APIs to get information on coverage, see [MITRE ATT&CK coverage APIs](#mitre-attck-coverage-apis).
 :::
 
 Watch this micro lesson to learn about MITRE ATT&CK Coverage.
@@ -126,4 +127,12 @@ MITRE ATT&CK coverage events are recorded in the Audit Event Index. To query for
 _index=sumologic_system_events _sourceCategory=cseMitreAttackCoverage
 ```
 
-For more information about how to query for audit log events, see [Cloud SIEM Audit Logging](https://help.sumologic.com/docs/cse/administration/cse-audit-logging/)
+For more information about how to query for audit log events, see [Cloud SIEM Audit Logging](/docs/cse/administration/cse-audit-logging/)
+
+## MITRE ATT&CK coverage APIs
+
+You can use the following Cloud SIEM APIs to obtain information about your MITRE ATT&CK coverage:
+* [MitreTaggedRules](https://api.sumologic.com/docs/sec/#operation/MitreTaggedRules). Get a list of Mitre ATT&CK tagged rules. 
+* [MitreAttackCoverageExportJson](https://api.sumologic.com/docs/sec/#operation/MitreAttackCoverageExportJson). Get a JSON representation of the Mitre ATT&CK coverage.
+
+To find the Cloud SIEM API documentation for your endpoint, see [Cloud SIEM APIs](/docs/api/cloud-siem-enterprise/).
