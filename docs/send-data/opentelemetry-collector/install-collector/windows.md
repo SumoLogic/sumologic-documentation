@@ -183,4 +183,7 @@ crypto/internal/backend.init.0()
         crypto/internal/backend/cng_windows.go:34 +0x85
 ```
 
-This means you are running the Sumo Otelcol FIPS binary in a non-FIPS environment. The FIPS binary is built using the `requirefips` mode, which causes the collector to only work in a FIPS-compliant environment and fail to start otherwise. See [documentation](https://github.com/microsoft/go/blob/microsoft/main/eng/doc/fips/README.md#build-option-to-require-fips-mode).
+This means you are running the Sumo Otelcol FIPS binary in a non-FIPS environment. The FIPS binary is built using the `requirefips` mode, which causes the collector to only work in a FIPS-compliant environment and fail to start otherwise. To verify if your instance is in FIPS mode follow steps below
+
+1. Open up your registry editor and navigate to HKLM\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy\Enabled.
+2. If the Enabled value is 0 then FIPS is not enabled. If the Enabled value is 1 then FIPS is enabled. See [documentation](https://github.com/microsoft/go/blob/microsoft/main/eng/doc/fips/README.md#build-option-to-require-fips-mode).
