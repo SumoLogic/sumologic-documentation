@@ -1,7 +1,3 @@
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 1. Place the file into your Ansible playbook files directory.
 2. Run the Ansible playbook using:
     ```

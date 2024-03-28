@@ -1,7 +1,3 @@
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 :::note
 If you want to use an existing OpenTelemetry Collector, you can skip this step by selecting the **Use an existing Collector** option.
 :::

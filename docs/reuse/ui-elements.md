@@ -1,7 +1,3 @@
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 | Icon | Tab Name | Definition |
 | :-- | :-- | :-- |
 | ![icon-recents.png](/img/content-sharing/icon-recents.png) | Recents | Access recent content:<ul><li>Content you’ve recently accessed.</li><li>Content recently shared with you.</li></ul> |
