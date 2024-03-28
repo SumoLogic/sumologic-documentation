@@ -1497,6 +1497,7 @@ module.exports = {
     'metrics/metric-rules-editor',
     'metrics/metrics-transformation-rules',
     'metrics/logs-to-metrics',
+    'metrics/metrics-dpm',
     'metrics/kubernetes-metrics',
     {
       type: 'category',
