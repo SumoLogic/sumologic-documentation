@@ -17,12 +17,12 @@ AWS Observability Solution (Terraform-based) repo: [sumologic-solution-templates
 
 New Features:
 * RDS app - Added support to analyze RDS PostgreSQL cloudwatch logs.
-* New monitors added for RDS PostgreSQL, RDS MySQL, DynamoDB, EC2, Lambda, API Gateway.
+* New monitors added for RDS PostgreSQL, RDS MySQL, DynamoDB, EC2, Lambda, and API Gateway.
 * Added new dashboards for HTTP and Websocket API which covers use cases based on cloudwatch logs and metrics including enhanced metrics.
-* Added support for API Gateway access logs for all three types of APIs - REST, HTTP and WebSocket API.
+* Added support for API Gateway access logs for all three types of APIs - REST, HTTP, and WebSocket API.
 
-Enhancements / Updates:
-* Optimized time to Install AWS observability solution with cloudformation template.
+Updates:
+* Optimized time to install AWS observability solution with cloudformation template.
 * AccountID tag removed from AWS CloudWatch Metrics sources.
 
 ## v2.7.0, 25-Oct-2023
