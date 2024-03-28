@@ -17,7 +17,7 @@ This topic describes how to use the parse anchor UI tool to add parsing to a que
 
 ## Options
 
-* The `nodrop` option forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md). 
+* The `nodrop` option forces results to also include messages that do not match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md). 
 * The `field=fieldname` option allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md). 
 
 ## Rules

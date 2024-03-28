@@ -14,10 +14,10 @@ This table lists where, and for how long, different types of Cloud SIEM data are
 
 | Data | Location   | Retention  |
 | :-- | :-- | :-- |
-| Raw logs | Raw logs reside in your Default Partition in Sumo Logic | The retention period defined for your Default Partition. This period is [customer-configurable](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention).  |
+| Raw logs | Raw logs reside in your Default Partition in Sumo Logic | The retention period defined for your Default Partition. This period is [customer-configurable](/docs/manage/partitions/manage-indexes-variable-retention).  |
 | Records | Records (normalized logs) are stored in the partitions whose names begin with the string `sec_records`. There is one partition for each Record type. <br/><br/>There is no additional charge for storage of Records.| 90 days |
 | Signals     | Stored in the `sec_signal` partition.<br/><br/>There is no additional charge for storage of Signals.   | 2 years  |   
-| Insights    | The `sumologic_system_events` partition contains Insights and Insight-related events that result from system actions. <br/> The `sumologic_audit_events` partition contains Insights and Insight-related events that result from user actions. <br/><br/>There is a charge for storage of Insight-related data in the audit indexes. Note however the volume of data is typically very low compared to log ingestion levels. | By default, these partitions have a retention period of 30 days.  This period is [customer-configurable](/docs/manage/partitions-data-tiers/manage-indexes-variable-retention). |
+| Insights    | The `sumologic_system_events` partition contains Insights and Insight-related events that result from system actions. <br/> The `sumologic_audit_events` partition contains Insights and Insight-related events that result from user actions. <br/><br/>There is a charge for storage of Insight-related data in the audit indexes. Note however the volume of data is typically very low compared to log ingestion levels. | By default, these partitions have a retention period of 30 days.  This period is [customer-configurable](/docs/manage/partitions/manage-indexes-variable-retention). |
 
 
 ### Cloud SIEM  

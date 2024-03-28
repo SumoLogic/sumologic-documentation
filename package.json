@@ -46,7 +46,7 @@
     "docusaurus-plugin-sass": "^0.2.1",
     "docusaurus2-dotenv": "^1.4.0",
     "file-loader": "^6.2.0",
-    "follow-redirects": "^1.15.4",
+    "follow-redirects": "^1.15.6",
     "glob-parent": "^5.1.2",
     "got": "^12.5.2",
     "infima": "0.2.0-alpha.42",

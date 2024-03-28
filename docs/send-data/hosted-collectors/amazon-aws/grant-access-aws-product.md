@@ -143,7 +143,7 @@ It may take a few minutes after creating a role for it for authentication with A
 Although not recommended, you can configure your source to authenticate with AWS at the IAM user level. 
 
 :::note
-Sumo Logic supports IAM user-level access to support GovCloud and China users who can't provide Sumo Logic access using a cross-account role. For other environments Sumo Logic recommends role-level access.
+Sumo Logic supports IAM user-level access to support GovCloud and China users who cannot provide Sumo Logic access using a cross-account role. For other environments Sumo Logic recommends role-level access.
 :::
 
 If you're creating a new user for this purpose, see the instructions below. If you want to use an existing IAM user, you can simply update the role with the appropriate policy from [Policies](#policies) below.
@@ -229,7 +229,7 @@ Replace the `your_bucketname` placeholders in the `Resource` section of the JSON
 
 :::important
 * All of the Action parameters shown above are required. Make sure to include both of the Amazon Resource Name (ARN) statements in the **Resource** section of the policy. Both statements are required to allow full access to the bucket contents and the bucket itself.
-* If your S3 bucket is versioned, configure the S3 source to use the versioned APIs as well, and make sure  your policy has `GetObjectVersion` and `ListBucketVersions` permissions. If the S3 bucket is not versioned, you don't need these permissions and you should configure the S3 source to not use versioned APIs.  
+* If your S3 bucket is versioned, configure the S3 source to use the versioned APIs as well, and make sure  your policy has `GetObjectVersion` and `ListBucketVersions` permissions. If the S3 bucket is not versioned, you do not need these permissions and you should configure the S3 source to not use versioned APIs.  
 :::
 
 #### AWS CloudWatch Source Policy 

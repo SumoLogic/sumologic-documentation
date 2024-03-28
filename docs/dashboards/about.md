@@ -57,7 +57,7 @@ The following table shows the availability of features for Dashboard.
 
 ## Restricted Operators in Dashboard
 
-The following operators can't be used with Dashboard:
+The following operators cannot be used with Dashboard:
 
 * Details
 * LogReduce
@@ -80,7 +80,7 @@ Live mode restrictions do not apply to Dashboard. 
   
 ## Rules
 
-* Auto Refresh applies to the whole dashboard, you can't configure it by panel.
+* Auto Refresh applies to the whole dashboard, you cannot configure it by panel.
 * If there are two or more queries in a panel, the refresh interval for the panel is set to the maximum supported interval.
 * If the requested refresh interval is not possible, you'll get an error message indicating the actual refresh rate is slower than requested. This can be due to one of the following reasons:
    * The time range is too long to refresh at this rate. Reduce the time range to allow a faster refresh interval.

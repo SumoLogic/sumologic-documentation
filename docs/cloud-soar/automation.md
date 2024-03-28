@@ -27,11 +27,16 @@ For a complete list of integrations and their documentation, see [Integrations i
 1. **Playbooks**. Click to view [playbooks](#playbook) in App Central that are available to install.
 1. **Integrations**. Click to view [integrations](#integrations) in App Central that are available to install.
 1. **Search**. Search for integrations or playbooks to install.
-1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization.
-   :::note
-   By default, the actions limit is set to 200 per hour to prevent abuse of system resources or runaway processes. All actions running in the cloud or via the bridge are included in this limit.
-   :::
+1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization. By default, the actions limit is set to 200 per hour. For more information, see [Actions limit](#actions-limit).
 1. **Install**. Click to install an integration or install a playbook. Once an integration is installed, the text changes to **Installed**. If an update of the integration is available, the text changes to **Update**.
+
+#### Actions limit
+
+To prevent abuse of system resources or runaway processes, Cloud SOAR limits the number of playbook actions your organization can execute to 200 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.
+
+import ActionsLimitQuery from '../reuse/actions-limit-query.md';
+
+<ActionsLimitQuery/>
 
 
 ### Install an integration from App Central
@@ -56,7 +61,7 @@ Following is an example of integration code after updating the integration:<br/>
 
 ### Update integrations to include all available actions
 
-The purpose of this section is to provide you the information you need to update your integrations to include all types of actions that should be present in that integration, for example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Central to make sure you don't have any integrations without useful actions.
+The purpose of this section is to provide you the information you need to update your integrations to include all types of actions that should be present in that integration, for example, Containment, Custom, Scheduled, and so on. It's a good idea to update every integration installed from App Central to make sure you do not have any integrations without useful actions.
 
 Update integrations in App Central using keywords in the bottom left corner of the integration:
 * **UPDATE**. Appears on the installed integrations if there is a new version of that integration and with a new YAML configuration file. <br/><img src={useBaseUrl('img/cloud-soar/new-integration-update.png')} alt="Update" width="300"/>
@@ -83,7 +88,13 @@ If there are two different versions between the integration installed and that i
 
 ### Certified integrations
 
-Certified integrations are those that are provided by Sumo Logic. After you download an integration from App Central, you will see it in the Integrations section designated by a **Certified Integration** check mark.<br/><img src={useBaseUrl('img/cloud-soar/integration-certified.png')} alt="Certified integration" width="400"/>
+Certified integrations are those that are provided by Sumo Logic. 
+
+:::note
+Only certified integrations can be executed in the cloud, while custom integrations must be executed through the Automation Bridge. For more information, see [Cloud or Bridge execution](#cloud-or-bridge-execution). 
+:::
+
+After you download an integration from App Central, you will see it in the Integrations section designated by a **Certified Integration** check mark.<br/><img src={useBaseUrl('img/cloud-soar/integration-certified.png')} alt="Certified integration" width="400"/>
 
 After you select the integration resource and click the **View Code** button, the certified integration code is set to read-only mode. The certified integrations code can’t be edited using the Cloud SOAR internal IDE. This is also true for the actions available for that integration.<br/><img src={useBaseUrl('img/cloud-soar/integration-certified-2.png')} alt="Certified integration message in resource code" width="600"/>
 

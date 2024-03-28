@@ -37,10 +37,6 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **Column**. When referring to a column in a Dashboard, the term is not capitalized unless it's the only word in a line of UI (for example, in the Add to Dashboard dialog box "Column" is capitalized). The word "column" doesn't appear in the main Dashboard UI.
 
-**Continuous intelligence**. Continuous intelligence is not a proper
-noun. Initial cap for “continuous” only applies when it starts a sentence.
-
-**Continuous Intelligence Platform&#8482;**. Continuous Intelligence Platform&#8482; is a designated company tagline and a proper noun. Always title case and include the trademark symbol on first mention in a doc.
 
 
 ## D
@@ -69,7 +65,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Email**. Email is one word, lowercase. Do not use a hyphen, such as "e-mail". Do not capitalize if it is not at the beginning of a sentence.  
 
-**Em dash**. We don't use this often, but if you need to use it, insert the em dash symbol (—), don't use a double hyphen (–).
+**Em dash**. We do not use this often, but if you need to use it, insert the em dash symbol (—), do not use a double hyphen (–).
 
 **Exclamation points !**. Use exclamation points only in warnings and greetings. Let your text convey the enthusiasm or importance of the statement. Don't make the reader wait until the exclamation point to find out the text is significant.
 
@@ -91,7 +87,7 @@ If we are not clear on its usage, the term shouldn’t be used at all: Don't use
 
 **Home Page**. Persistent tab, which services the Jiro and Hibachi projects by helping users get started and discover content more easily.
 
-**Hosted Collectors**. Hosted Collectors don't require installation or activation, nor do they have physical requirements, since they're hosted in HTTP Source, an endpoint for receiving a file (or a batch of files) uploaded via a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Sources as you'd like to a single Hosted Collector.
+**Hosted Collectors**. Hosted Collectors do not require installation or activation, nor do they have physical requirements, since they're hosted in HTTP Source, an endpoint for receiving a file (or a batch of files) uploaded via a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Sources as you'd like to a single Hosted Collector.
 
 
 ## I

@@ -145,7 +145,7 @@ To modify the JSON of a chart, do the following:<br/><img src={useBaseUrl('/img/
 
 ### Values in chart
 
-To view values inside the chart so you don't have to hover on the chart:<br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/data-in-chart.png')} style={{border: '1px solid gray'}} alt="data in chart" width="700"/>
+To view values inside the chart so you do not have to hover on the chart:<br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/data-in-chart.png')} style={{border: '1px solid gray'}} alt="data in chart" width="700"/>
 
 use the following JSON:
 
@@ -201,7 +201,7 @@ use the following JSON:
 
 ### Outside values
 
-To place values outside the chart so you don't have to hover on the chart:<br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/outside-chart-values.png')} style={{border: '1px solid gray'}} alt="outside chart values" width="700"/>
+To place values outside the chart so you do not have to hover on the chart:<br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/outside-chart-values.png')} style={{border: '1px solid gray'}} alt="outside chart values" width="700"/>
 
 use the following JSON:
 

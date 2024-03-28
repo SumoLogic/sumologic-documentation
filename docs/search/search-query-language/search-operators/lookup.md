@@ -4,7 +4,7 @@ title: lookup Search Operator
 sidebar_label: lookup
 ---
 
-The `lookup` operator can return one or more fields from a lookup table hosted by Sumo Logic and add the fields to the log messages returned by your query. You create a lookup table using the lookup UI or the <a href="https://api.sumologic.com/docs/#tag/lookupManagement">Lookup API</a>. You can populate a lookup table by uploading a CSV file using the Lookup API, or by using the [`save` operator](/docs/search/search-query-language/search-operators/save) to save the results of a log query. 
+The `lookup` operator can return one or more fields from a lookup table hosted by Sumo Logic and add the fields to the log messages returned by your query. You create a lookup table using the lookup UI or the [Lookup API](/docs/api/lookup-tables). You can populate a lookup table by uploading a CSV file using the Lookup API, or by using the [`save` operator](/docs/search/search-query-language/search-operators/save) to save the results of a log query. 
 
 For information about lookup tables, see [Create and Manage Lookup Tables](/docs/search/lookup-tables/create-lookup-table.md).
 
@@ -23,7 +23,7 @@ This section describes requirements and limitations for the `lookup` operator an
 These requirements apply to lookup tables that you upload in CSV format:
  
 * The CSV file must contain a header line.
-* The header line can't use special characters. Any leading or trailing spaces in the header line will be trimmed.  
+* The header line cannot use special characters. Any leading or trailing spaces in the header line will be trimmed.  
 
 For example:
 

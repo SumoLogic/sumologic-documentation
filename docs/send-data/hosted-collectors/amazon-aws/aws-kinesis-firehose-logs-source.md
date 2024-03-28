@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 An AWS Kinesis Firehose for Logs Source allows you to ingest CloudWatch logs or any other logs streamed and delivered via Amazon Kinesis Data Firehose.
 
-Amazon Kinesis Data Firehose is an AWS service that can reliably load streaming data into any analytics platform, such as Sumo Logic. It is a fully managed service that automatically scales to match the throughput of data and requires no ongoing administration. With Kinesis Data Firehose, you don't need to write applications or manage resources. You configure your AWS service logs like VPC flow logs to send logs to AWS CloudWatch that can then stream logs to Kinesis Data Firehose which automatically delivers the logs to your Sumo Logic account. This eliminates the need for creating separate log processors or forwarders such as AWS Lambda functions, that are limited by time out, concurrency, and memory limits.
+Amazon Kinesis Data Firehose is an AWS service that can reliably load streaming data into any analytics platform, such as Sumo Logic. It is a fully managed service that automatically scales to match the throughput of data and requires no ongoing administration. With Kinesis Data Firehose, you do not need to write applications or manage resources. You configure your AWS service logs like VPC flow logs to send logs to AWS CloudWatch that can then stream logs to Kinesis Data Firehose which automatically delivers the logs to your Sumo Logic account. This eliminates the need for creating separate log processors or forwarders such as AWS Lambda functions, that are limited by time out, concurrency, and memory limits.
 
 The following diagram shows the flow of data with an AWS Kinesis Firehose for Logs Source:
 
@@ -63,7 +63,7 @@ To create an AWS Kinesis Firehose for Logs Source:
 
     **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
 
-   * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo completely disregard any time zone information present in logs by forcing a time zone. Whichever option you choose, it's important to set the proper time zone. If the time zone of logs can't be determined, Sumo assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+   * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo completely disregard any time zone information present in logs by forcing a time zone. Whichever option you choose, it's important to set the proper time zone. If the time zone of logs cannot be determined, Sumo assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format.** By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference for more information.
 
     **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs) for details on multiline processing and its options. Use this option if you're working with multiline messages (for example, log4J messages or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log).
@@ -110,7 +110,7 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 
 1. Log in to the [AWS Management Console](https://s3.console.aws.amazon.com/).
 2. Under **Management Tools**, select CloudWatch, then click **Logs** in the left- hand navigation menu.
-3. To select the CloudWatch Log Group that you want to stream to Sumo Logic, click **Actions** > **Subscription Filters** > **Create Kinesis Firehose subscription filter**.
+3. To select the CloudWatch Log Group that you want to stream to Sumo Logic, click **Actions** > **Subscription Filters** > **Create Amazon Data Firehose subscription filter**.
 4. In the Create Kinesis Firehose subscription filter page, go to the **Choose Destination** section and select the Current account. Then select the Kinesis Firehose delivery stream that was created in the above steps.
 5. Under **Grant permissions**, select the existing role that was created in the above steps that grants CloudWatch Logs permission to put data into your Kinesis Data Firehose delivery stream. If you used the Cloudformation template, then the role name will contain the cloudformation name followed by `-KinesisLogsRole-`.
 6. In the **Configure log format and filters** section, select a Log format and enter a Subscription filter pattern (Optional) and Subscription filter name.
@@ -122,7 +122,7 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 
 :::note
 With above configuration sample log with ```raw``` format will be ingested into sumo logic for Amazon RDS cloudWatch logs for postgreSQL.
-```json 
+```json
 2024-01-13 11:02:19 UTC::@:[561]:LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB
 ```
 :::

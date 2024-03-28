@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This topic has instructions for configuring Cloud SIEM Actions.
 
 :::warning
-Cloud SIEM Actions are deprecated. Instead, use the Automation Service. For more information, see [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
+In the future, Cloud SIEM Actions will be deprecated because comparable behavior is available in the Automation Service. Although Cloud SIEM Actions are still supported, we recommend you use the Automation Service to perform actions. For more information, see [Migrate from legacy actions and enrichments to the Automation Service](/docs/cse/automation/automations-in-cloud-siem/#migrate-from-legacy-actions-and-enrichments-to-the-automation-service).
 :::
 
 ## About Cloud SIEM Actions
@@ -141,7 +141,7 @@ in Cloud SIEM.
 
 1. **URL**. The URL to send the POST to.
    :::note
-   The allowed destination ports for the HTTP Post are: *80*, *8080*, *443*, *8443*, and *8000*. You can specify the port in the URL, but if the default port on the destination server is an allowable port, you don't need to.
+   The allowed destination ports for the HTTP Post are: *80*, *8080*, *443*, *8443*, and *8000*. You can specify the port in the URL, but if the default port on the destination server is an allowable port, you do not need to.
    :::
 1. **Username**. The username to use to access the URL.
 1. **Password**. The password to use to access the URL.

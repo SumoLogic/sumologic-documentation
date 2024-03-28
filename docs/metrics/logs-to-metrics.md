@@ -22,7 +22,7 @@ This section describes best practices and limitations that apply to Logs-to-Metr
 
 Aggregation operators and timeslicing are not supported in the parse expression for a Logs-to-Metrics rule.
 
-### Role search filters don't apply to Logs-to-Metrics rules
+### Role search filters do not apply to Logs-to-Metrics rules
 
 Only users with the admin role or with a role that provides the **Manage Logs-to-Metrics** capability can create Logs-to-Metrics rules. The role search filter of the user that creates a Logs-to-Metrics rule is not applied to the results of returned by the rule. For this reason, it is a best practice to be judicious in granting the **Manage Logs-to-Metrics** capability.
 
@@ -80,7 +80,7 @@ Not all Sumo parsing operators are supported. For more information, see [Create 
 
 ### Scheduled views and indexes are not supported
 
-You can't use a scheduled view or an index in the scope of a Logs-to-Metrics rule. In other words, you shouldn't use a log search scope that includes `_view` or `_index`. 
+You cannot use a scheduled view or an index in the scope of a Logs-to-Metrics rule. In other words, you shouldn't use a log search scope that includes `_view` or `_index`. 
 
 ### Using Logs-to-Metrics in the frequent or infrequent tier
 

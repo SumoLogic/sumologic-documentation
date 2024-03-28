@@ -63,7 +63,7 @@ script:
             if err_msg is not None:
                 # raise an in case we proved wrong API key
                 raise Exception(str(err_msg))
-        # just exit in case we don't have any error, and we don't have any issue
+        # just exit in case we do not have any error, and we do not have any issue
         exit(0)
     except Exception as e:
         # write an Exception
