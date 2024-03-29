@@ -175,17 +175,17 @@ The [AWS CloudFormation](/docs/observability/aws/deploy-use-aws-observability/de
   <tr>
    <td>App folder   </td>
    <td>AWS Observability-&#60;Version&#62; &#60;Date of installation&#62;   </td>
-   <td>#TODO  </td>
+   <td>AWS Observability Apps  </td>
   </tr>
   <tr>
    <td>Alerts   </td>
    <td>AWS Observability &#60;Version&#62; &#60;Date and Time of Installation&#62;   </td>
-   <td>AWS Observability &#60;Version&#62; &#60;Date and Time of Installation&#62;   </td>
+   <td>AWS Observability Monitors   </td>
   </tr>
   <tr>
    <td>Hosted Collector   </td>
    <td>aws-observability-&#60;AccountAlias&#62;-&#60;AccountID&#62;   </td>
-   <td>#TODO  </td>
+   <td>aws-observability-&#60;AccountAlias&#62;-&#60;AccountID&#62; </td>
   </tr>
   <tr>
    <td>Field Extraction Rule   </td>
@@ -237,17 +237,17 @@ AwsObservabilityNLBMetricsEntityRule   </td>
   <tr>
    <td>CloudTrail source </td>
    <td>cloudtrail-logs-&#60;AWS::Region&#62; </td>
-   <td>CloudTrail Logs &#60;AWS Region&#62;  </td>
+   <td>CloudTrail Logs &#60;AWS::Region&#62;  </td>
   </tr>
   <tr>
    <td>CloudWatch logs (HTTP) source   </td>
    <td>cloudwatch-logs-&#60;AWS::Region&#62;   </td>
-   <td>#TODO  </td>
+   <td>CloudWatch Logs &#60;AWS::Region&#62;  </td>
   </tr>
   <tr>
    <td>Kinesis Firehose for Metrics   </td>
    <td>cloudwatch-metrics-&#60;AWS::Region&#62;   </td>
-   <td>CloudWatch Metrics &#60;AWS Region&#62;  </td>
+   <td>CloudWatch Metrics &#60;AWS::Region&#62;  </td>
   </tr>
   <tr>
    <td>CloudWatch Metrics source   </td>
@@ -263,37 +263,37 @@ cloudwatch-metrics-&#60;AWS::Region&#62;-NetworkELB<br/>
 cloudwatch-metrics-&#60;AWS::Region&#62;-ElastiCache<br/>
 cloudwatch-metrics-&#60;AWS::Region&#62;-SQS<br/>
 cloudwatch-metrics-&#60;AWS::Region&#62;-SNS </td>
-  <td>CloudWatch Metrics &#60;AWS Region&#62; &#60;AWS Service name&#62;  </td>
+  <td>CloudWatch Metrics &#60;AWS::Region&#62; &#60;AWS Service name&#62;  </td>
   </tr>
   <tr>
    <td>Amazon S3 Alb log source</td>
    <td>alb-logs-&#60;AWS::Region&#62; </td>
-   <td>#TODO  </td>
+   <td>Elb Logs &#60;AWS::Region&#62;  </td>
   </tr>
   <tr>
    <td>Amazon S3 Classic Load Balancer log source </td>
-   <td>classic-lb-logs-&#60;AWS::Region&#62;   </td>
-   <td>#TODO  </td>
+   <td>classic-lb-logs-&#60;AWS::Region&#62;  </td>
+   <td>Classic lb Logs &#60;AWS::Region&#62;  </td>
   </tr>
   <tr>
    <td>Kinesis Firehose for Logs </td>
    <td>kinesis-firehose-cloudwatch-logs-&#60;AWS::Region&#62; </td>
-   <td>#TODO  </td>
+   <td>CloudWatch Logs &#60;AWS::Region&#62; </td>
   </tr>
   <tr>
    <td>Inventory Source </td>
    <td>inventory-&#60;AWS::Region&#62; </td>
-   <td>AWS Inventory &#60;AWS Region&#62;  </td>
+   <td>AWS Inventory &#60;AWS::Region&#62;  </td>
   </tr>
   <tr>
    <td>XRay Source   </td>
    <td>xray-&#60;AWS::Region&#62;   </td>
-   <td>AWS Xray &#60;AWS Region&#62;  </td>
+   <td>AWS Xray &#60;AWS::Region&#62;  </td>
   </tr>
   <tr>
    <td>S3 Bucket Name   </td>
-   <td>aws-observability-logs-&#60;StackID&#62;   </td>
-   <td>aws-observability-logs-&#60;StackID&#62;   </td>
+   <td>aws-observability-logs-&#60;UniqueKey&#62;   </td>
+   <td>aws-observability-logs-&#60;UniqueKey&#62;   </td>
   </tr>
   <tr>
    <td>Fields   </td>
