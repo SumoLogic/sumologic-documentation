@@ -33,20 +33,24 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 ### Vendor configuration
 
 :::note
-* Only [Service Accounts](https://asana.com/guide/help/premium/service-accounts) in Enterprise Domains can access audit log API endpoints.
-* Your Service account's Personal Access Token (PAT) is required.
-:::
+
+- Only [Asana service accounts](https://asana.com/guide/help/premium/service-accounts) in certain pricing tiers can access audit log events.
+- Asana's [audit log events documentation](https://developers.asana.com/docs/audit-log-events) has the latest information on the required pricing tiers.
+  :::
 
 Follow the below steps to get the required fields for user configuration:
 
-1. Log in to your [Asana Enterprise Account](https://app.asana.com/admin).<br/> <img src={useBaseUrl('img/send-data/asana_login.png')} style={{border:'1px solid gray'}} alt="asana-login" width="400" />
+1. Log in to your [Asana admin console](https://app.asana.com/admin).<br/> <img src={useBaseUrl('img/send-data/asana_login.png')} style={{border:'1px solid gray'}} alt="asana-login" width="400" />
 1. After logging in, click the **Apps** tab from with your admin console.
 1. Click **Service accounts**.
 1. Click the **Add service account** button.
 1. Refer to the below image for the same:<br/> <img src={useBaseUrl('img/send-data/add_service_account.png')} style={{border:'1px solid gray'}} alt="add_service_account" width="800" />
-1. Copy the Personal Access Token (PAT) from here for further use.<br/> <img src={useBaseUrl('img/send-data/pat.png')} style={{border:'1px solid gray'}} alt="pat" width="400" />
-1. Click **Save changes** to save the PAT token for your service account.
-1. Inspect the URL and parse the workspace ID of your service account.<br/> <img src={useBaseUrl('img/send-data/workspace_id.png')} style={{border:'1px solid gray'}} alt="workspace_id" width="700" />
+1. Give the service account a name.
+1. Under **Permissions scopes**, choose **Scoped permissions**, and tick the **Audit logs** box.
+   <br/> <img src={useBaseUrl('img/send-data/asana-service-account-create.png')} style={{border:'1px solid gray'}} alt="service account" width="400" />
+1. Click **Save changes** and copy the service account token from here for later use.
+   <br/> <img src={useBaseUrl('img/send-data/asana-token-copy.png')} style={{border:'1px solid gray'}} alt="service account" width="400" />
+1. Inspect the URL in your browser and parse the ID of your Asana workspace.<br/> <img src={useBaseUrl('img/send-data/workspace_id.png')} style={{border:'1px solid gray'}} alt="workspace_id" width="700" />
 
 ### Source configuration
 
