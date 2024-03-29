@@ -14,7 +14,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Copilot is an AI-based assistant that helps you get answers quickly from your logs. It allows you to ask questions in plain English and provides search suggestions, all without your having to write a log query. 
 
-To start using Sumo Logic Copilot, click the Copilot tab at the top of the Sumo Logic main page:  
+## Access Copilot
+
+To start using Sumo Logic Copilot, click the Copilot tab at the top of the Sumo Logic main page.
+
 <img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
 
 ## Copilot UI
@@ -66,3 +69,6 @@ For the best results, choose one of the following strategies.
        1. Next refinement: Count of logs grouped by type, reason, kind, name. Filter logs where reason is FailedScheduling. 
        1. Further refinement: Count of logs grouped by type, reason, kind, name. Filter logs where reason is FailedScheduling.Filter logs that contain redis-cluster in name. Sort the results by count.
 
+## Restrictions
+
+Copilot supports querying JSON logs only. You cannot use Copilot to query unstructured data, metrics, or traces.
