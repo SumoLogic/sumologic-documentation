@@ -32,7 +32,7 @@ About Observability and how it's different from monitoring. The video also expla
 
 Modern applications are increasingly complex, as they leverage distributed technologies, cloud infrastructure, and container and orchestration tools. In addition, the connections between microservices, orchestrators, and underlying cloud resources is also growing in complexity. This complexity leads to situations where unforeseen events, unknown unknowns in terms of risk, are more prevalent and come with mysterious behaviors and failure modes.  This can cause major issues in your overall incident remediation workflow, which can be broken down into three steps. 
 
-* **Monitor** critical indicators of reliability such as errors or latency. Sometimes these unknown unknown types errors don't directly impact the metrics that you are tracking, which makes monitoring the issues more difficult.  
+* **Monitor** critical indicators of reliability such as errors or latency. Sometimes these unknown unknown types errors do not directly impact the metrics that you are tracking, which makes monitoring the issues more difficult.  
 
 * **Diagnose** or isolate services or resources that might be the immediate cause of reliability issues. These unknown unknowns could impact systems in obscure ways. For example, the culprit service’s metrics might look alright, but a downstream service that consumes this service might have abnormal metrics, which could  lead an SRE down the wrong path. There is no tribal knowledge that can help guide the SRE in the right direction. 
 

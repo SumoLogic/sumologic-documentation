@@ -800,7 +800,7 @@ In order to learn more about filtering out data please see [the doc about filter
 Some common Kubernetes resource attributes can be set globally for all resources managed by the Helm Chart. Due to Helm's limitations, they need to be separately set for subchart resources. This section lists the relevant attributes and configuration values.
 
 :::note
-Each subchart can be independently configured. To make sure you don't miss anything you want to change, make sure to check their documentation. Links to documentations of subcharts can be found [here][subcharts-docs].
+Each subchart can be independently configured. To make sure you do not miss anything you want to change, make sure to check their documentation. Links to documentations of subcharts can be found [here][subcharts-docs].
 :::
 
 [subcharts-docs]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/helm/sumologic/README.md#configuration

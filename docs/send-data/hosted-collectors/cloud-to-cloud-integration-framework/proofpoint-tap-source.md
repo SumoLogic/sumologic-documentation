@@ -42,11 +42,8 @@ The maximum data retention period for Proofpoint TAP is 7 days, as mentioned in 
 
 The integration must be configured with a service credential (`Service Principal`) and API secret key. The service principal and secret are used to authenticate to the SIEM API. 
 
-To generate TAP service credentials:
 1. Log in to the [TAP dashboard](https://threatinsight.proofpoint.com/auth/new).
-1. Navigate to **Settings > Connected Applications**.
-1. Click **Create New Credential**.
-1. Name the new credential set and click **Generate**.
+1. Generate TAP service credentials. For directions, see the [Proofpoint TAP documentation](https://ptr-docs.proofpoint.com/ptr-guides/integrations-files/ptr-tap/#generate-tap-service-credentials).
 1. Copy the Service Principal and Secret and save them for later use in [Source configuration](#source-configuration) below. 
 
 #### Copy log options

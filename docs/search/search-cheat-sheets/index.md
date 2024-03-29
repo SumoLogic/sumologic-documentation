@@ -1,7 +1,7 @@
 ---
 slug: /search/search-cheat-sheets
-title: Search Cheat Sheets
-description: Cheat sheets provide examples of useful search queries for different use cases.
+title: Log Search Cheat Sheets
+description: Cheat sheets provide examples of useful log search queries for different use cases.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -30,7 +30,7 @@ Use cheat sheets as a quick reference guide or get up to speed quickly with our 
 <div className="box smallbox card">
   <div className="container">
   <a href="/docs/search/search-cheat-sheets/iis-search-examples"><img src={useBaseUrl('img/icons/general/bookmark.png')} alt="icon" width="35"/><h4>IIS Search Query examples</h4></a>
-  <p>View examples of useful IIS search queries for different use cases.</p>
+  <p>View examples of useful IIS search queries for various use cases.</p>
   </div>
 </div>
 </div>

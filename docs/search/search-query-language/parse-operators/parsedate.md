@@ -19,7 +19,7 @@ To convert an epoch timestamp to a human-readable format, use the [`formatDate`
 
 * `strDate` must start with the characters to match with the `dateFormat` pattern. For example, "3/4/2005 other" but not "other 3/4/2005".
 * `dateFormat` is a pattern string, such as "MM/dd/yyyy HH:mm:ss a". A full list of the supported patterns can be found on [Java's simpledateformat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) documentation.
-* If you don't supply `timeZone`, the operator defaults to the time zone set in your [preferences](../../../get-started/account-settings-preferences.md). For a list of `timeZone` codes, see the [List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+* If you do not supply `timeZone`, the operator defaults to the time zone set in your [preferences](../../../get-started/account-settings-preferences.md). For a list of `timeZone` codes, see the [List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 ## Examples
 

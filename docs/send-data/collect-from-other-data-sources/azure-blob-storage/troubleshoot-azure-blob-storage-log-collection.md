@@ -6,7 +6,7 @@ description: Follow these steps to learn why log data is not flowing into Sumo f
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If logs don't start flowing into Sumo Logic after you perform the [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md) procedure, see the troubleshooting tips below.
+If logs do not start flowing into Sumo Logic after you perform the [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md) procedure, see the troubleshooting tips below.
 
 ## Error while deploying the ARM template
 

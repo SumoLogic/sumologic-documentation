@@ -147,7 +147,7 @@ or Criticality for one or more Entities.
    * **Remove**. Select his option to remove one or more tags from the Entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select multiple tags to remove. If a selected Entity doesn't have the specified tags, no change will be made to the Entity. 
    * **Replace**. Select this option to remove all of the tags currently assigned to the Entity and add one or more specified tags. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. 
     :::important
-    When you use the **Replace** option, be sure to specify new tags. If you don't, the existing tags will still be removed.
+    When you use the **Replace** option, be sure to specify new tags. If you do not, the existing tags will still be removed.
     :::
 3. As you select tags, they’ll appear in the update popup. <br/><img src={useBaseUrl('img/cse/tags-to-add.png')} alt="Add tags to Entities" width="400"/>
 4. When you are done selecting tags, click **Update Entity Tags**.

@@ -18,7 +18,7 @@ limit #
 
 ## Rules
 
-* The limit operator supports requests for up to 10,000 results. You can't use "limit 10001" or more.
+* The limit operator supports requests for up to 10,000 results. You cannot use "limit 10001" or more.
 
 ## Examples
 

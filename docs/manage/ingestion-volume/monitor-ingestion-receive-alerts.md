@@ -215,7 +215,7 @@ _index=sumologic_volume sizeInBytes _sourceCategory="collector_volume"
 
 You can run a similar query across Sources, sourceHosts, sourceNames, source categories, or views, by changing the entry for `"collector_volume"` in the search scope keyword line to:`"source_volume"` for Sources, `"sourcehost_volume"`for sourceHosts, `"sourcename_volume"` for sourceNames, `"sourceCategory_volume"` for sourceCategories, or `"view_volume"` for views. 
 
-If you don't want the results of the query across Sources or source categories to be called "collector", you can replace all three instances of "collector" with a different field name.
+If you do not want the results of the query across Sources or source categories to be called "collector", you can replace all three instances of "collector" with a different field name.
 
 #### Scheduling
 
@@ -241,7 +241,7 @@ After completing the setup steps, you'll need to create a monitor. 
 This alert is automatically generated when your account has entered a throttled state (induced by metrics or logs) in the last 15 minutes. The alert runs every 15 minutes and covers a 15-minute period.
 
 :::note
-All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](../partitions-data-tiers/data-tiers.md).
+All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions/data-tiers/).
 :::
 
 #### Setup
