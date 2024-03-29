@@ -1,7 +1,3 @@
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 Refer to [Getting Started](/docs/api/getting-started) for Sumo Logic API Authentication, Endpoints, and Security.
 
 Our APIs are built with [OpenAPI](https://www.openapis.org/). You can generate client libraries in several languages and explore automated testing.

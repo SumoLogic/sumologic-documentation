@@ -1,5 +1,1 @@
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 If you set **Collection should begin** to a collection time that overlaps with data that was previously ingested on a source, it may result in duplicated data to be ingested into Sumo Logic.

@@ -1190,12 +1190,6 @@ To add release notes with images:
 For repeatable content (like an identical section that appears in several docs), you can save a lot of time by creating one instance of that content in the `/docs/reuse` folder and then import that snippet to other docs.
 
 1. Create a new markdown file and save it to the [`/docs/reuse`](https://github.com/SumoLogic/sumologic-documentation/tree/main/docs/reuse) folder.
-1. Add the noindex tag at the top  of the file (lines 1-3).
-   ```bash
-   <head>
-     <meta name="robots" content="noindex" />
-   </head>
-   ```
 1. Import that content to another doc by adding this snippet (substitute the file path and object name with your own).
    ```bash
    import RestartC2C from '../reuse/restart-c2c-source.md';

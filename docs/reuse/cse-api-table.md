@@ -1,7 +1,3 @@
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 | Deployment | Documentation URL                                         |
 |:-----------|:----------------------------------------------------------|
 | AU         | https://api.au.sumologic.com/docs/sec/  |

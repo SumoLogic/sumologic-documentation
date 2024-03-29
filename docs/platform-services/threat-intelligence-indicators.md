@@ -58,7 +58,7 @@ Here is the typical workflow to set up and use threat intelligence indicators:
 
 1. A system administrator sets up services to automatically [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators). For example, install a collector such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and set up services to obtain indicators from Federal, vendor, and open services. Then ingest them using the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs. You can manually add more indicators as needed, such as your own private indicators, using the [Threat Intelligence tab](#add-indicators-in-the-threat-intelligence-tab) or the APIs.
 1. Analysts use the threat indicators data for such things as saved searches, dashboards, [manual searches](#find-threats-with-log-queries), [Cloud SIEM rules](#find-threats-using-cloud-siem-rules), and [Cloud SIEM UI](#view-threat-indicators-in-the-cloud-siem-ui).
-1. A system administrator occasionally checks to see why a connector isn’t ingesting data, or to see how much storage all the indicators are using. They may [run threatlookup with the cat search operator](#find-threats-with-log-queries) to explore their indicators and then [delete some old or irrelevant data](#delete-threat-intelligence-indicators).
+1. A system administrator occasionally checks to see why a connector isn’t ingesting data, or to see how much storage all the indicators are using. They may [delete some old or irrelevant data](#delete-threat-intelligence-indicators).
 
 ## Threat Intelligence tab
 
@@ -229,26 +229,6 @@ _index=sec_record*
 | count by _timeslice
 ```
 
-#### Run threatlookup with the cat search operator
-
-You can run the `threatlookup` search operator with the [cat search operator](/docs/search/search-query-language/search-operators/cat/) by using the `sumo://threat-intel` path. This lets you search the entire store of threat intelligence indicators, or just a portion. For example:
-```
-cat sumo://threat-intel  | where _threatlookup.indicator = "192.0.2.0"
-```
-```
-cat sumo://threat-intel  | where _threatlookup.source = "FreeTAXII" and _threatlookup.indicator = "192.0.2.0"
-```
-
-In the cat output, timestamp fields (like `valid_until`) will appear as integers. You can use the `formatDate()` function to convert them back to timestamps. For example:
-
-```
-cat sumo://threat-intel | formatDate(toLong(_threatlookup.valid_until), "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", "UTC") as valid_until
-```
-
-:::note
-You cannot use the cat search operator with the `s_crowdstrike` source.
-:::
-
 ## Threat indicators in Cloud SIEM
 
 Threat indicators can be used in Cloud SIEM to find possible threats. 
@@ -308,12 +288,6 @@ Note that if the mapping produces a threat indicator level of **Malicious**, but
 Since different sources can report different reputations, each source has a reputation icon on its row in the Cloud SIEM UI. In the following example, the indicator from the Unit 42 source returned a reputation of Malicious, hence the red icon. The link to the right would open a log search window showing the matching indicators in detail.
 
 <img src={useBaseUrl('img/platform-services/threat-indicators-in-cloud-siem-ui.png')} alt="Threat indicators in the Cloud SIEM UI" style={{border: '1px solid gray'}} width="400" />
-
-### Custom threat intelligence sources in Cloud SIEM
-
-You should no longer [create custom threat intelligence sources using Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). You should use the Threat Intelligence tab, a collector, or the API to [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators). If you have custom sources in Cloud SIEM, they will continue to be honored until the feature is deprecated at a future time.
-
-If you have indicators in Cloud SIEM that you want to continue using past deprecation, you must re-ingest them from the source that you originally used to place the custom sources in Cloud SIEM. Once ingested, the indicators will appear in the [Threat Intelligence tab](#threat-intelligence-tab) and be available for use in both Cloud SIEM as well as the Sumo Logic Log Analytics Platform. 
 
 ## Audit logging for threat intelligence
 

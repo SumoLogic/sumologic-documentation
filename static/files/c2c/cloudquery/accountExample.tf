@@ -5,18 +5,19 @@ resource "sumologic_cloud_to_cloud_source" "cloudquery_source" {
   }
   config = jsonencode({
             "name": "CloudQuery AWS Inventory",
-            "accessKeyId": "************",
-            "secretAccessKey": "***************************",
+            "configType": "account",
             "limitToRegions": [
                 "us-east-1",
                 "us-east-2"
             ],
-            "awsServices": [
-                "ECS",
-                "EC2"
+            "limitToServices": [
+                "ec2",
+                "s3"
             ],
-            "pollInterval": 24
-  })
+            "pollingInterval": 12,
+            "awsId": "************",
+            "awsKey": "***************************"
+        })
 }
 resource "sumologic_collector" "collector" {
   name        = "my-collector"
