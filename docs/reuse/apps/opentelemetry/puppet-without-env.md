@@ -1,7 +1,3 @@
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 1. Place the file into your Puppet module files directory `modules/install_otel_collector/files/<downloaded_yaml>`.
 2. Use a Puppet file resource to manage it.
     ```
