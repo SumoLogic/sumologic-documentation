@@ -1,7 +1,3 @@
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 For Linux systems with **ACL Support**, the otelcol install process should have created the ACL grants necessary for the otelcol system user to access default log locations. You can verify the active ACL grants using the `getfacl` command. Install the ACL in your Linux environment, if not installed.
 
 The required ACL may not be supported for some rare cases, for example, Linux OS Distro, which is officially not supported by Sumo Logic. In this case, you can run the following command to explicitly grant the permissions.

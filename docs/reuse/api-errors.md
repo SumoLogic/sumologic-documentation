@@ -1,7 +1,3 @@
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 The APIs return operation failures with a description and error code, including the following generic errors that apply to all APIs:
 
 | Code | Error    | Description      |
