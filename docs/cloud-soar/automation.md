@@ -152,7 +152,7 @@ Watch this micro lesson to learn how to create custom playbooks.
 
 ### Configure a new playbook
 
-1. Click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation**. <br/>A list of any previously created Playbooks will be displayed on the left side of the page. 
+1. Click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation**. A list of any previously created Playbooks will be displayed on the left side of the page. 
 1. At the top of the screen next to **Playbook**, click **+** to add a new playbook. <br/>A new configuration box will be displayed. 
 1. Name your new playbook, select the **Type** to associate with it, and click **Create**. 
 1. Once the new playbook has been saved, it will be displayed on the left side of the screen. To begin to configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen. 
