@@ -88,7 +88,13 @@ If there are two different versions between the integration installed and that i
 
 ### Certified integrations
 
-Certified integrations are those that are provided by Sumo Logic. After you download an integration from App Central, you will see it in the Integrations section designated by a **Certified Integration** check mark.<br/><img src={useBaseUrl('img/cloud-soar/integration-certified.png')} alt="Certified integration" width="400"/>
+Certified integrations are those that are provided by Sumo Logic. 
+
+:::note
+Only certified integrations can be executed in the cloud, while custom integrations must be executed through the Automation Bridge. For more information, see [Cloud or Bridge execution](#cloud-or-bridge-execution). 
+:::
+
+After you download an integration from App Central, you will see it in the Integrations section designated by a **Certified Integration** check mark.<br/><img src={useBaseUrl('img/cloud-soar/integration-certified.png')} alt="Certified integration" width="400"/>
 
 After you select the integration resource and click the **View Code** button, the certified integration code is set to read-only mode. The certified integrations code can’t be edited using the Cloud SOAR internal IDE. This is also true for the actions available for that integration.<br/><img src={useBaseUrl('img/cloud-soar/integration-certified-2.png')} alt="Certified integration message in resource code" width="600"/>
 
@@ -146,30 +152,21 @@ Watch this micro lesson to learn how to create custom playbooks.
 
 ### Configure a new playbook
 
-To configure a new Playbook, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation**.
+1. Click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation**. A list of any previously created Playbooks will be displayed on the left side of the page. 
+1. At the top of the screen next to **Playbook**, click **+** to add a new playbook. <br/>A new configuration box will be displayed. 
+1. Name your new playbook, select the **Type** to associate with it, and click **Create**. 
+1. Once the new playbook has been saved, it will be displayed on the left side of the screen. To begin to configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen. 
+1. Opening the playbook will present a black screen with a **Start** node, and an **End** node. These nodes dictate the beginning and the end of the playbook's automation sequence. They can be dragged and dropped anywhere on the screen to allow for multiple integrations and conditional statements to be executed.<br/><img src={useBaseUrl('img/cloud-soar/image72.png')} alt="Empty playbook" width="800"/>
+1. To begin to add the first node within the new playbook, hover your mouse over the **Start** node and click the **+** button that appears. <br/><img src={useBaseUrl('img/cloud-soar/image73.png')} alt="New playbook" width="800"/> <br/>The Add Node dialog is displayed. <br/><img src={useBaseUrl('img/cloud-soar/add-node-dialog.png')} alt="Add node dialog" width="500"/>
+1. Click one of the following types to add a node to the playbook:
+    * [**Action**](#action): Automatically take specific actions such as enriching data or taking containment steps when an Incident Template is matched.
+    * [**Task**](#task): Assign a task to an Cloud SOAR user.
+    * [**Condition**](#condition): Use conditional statements to define what actions should be taken in response to previous input/output feeds.
+    * [**User Choice**](#user-choice): Pause automatic processing to allow for manual intervention.
+    * [**Filter**](#filter): Filter results from the preceding action. (You can only add a filter node after an action node.)
+    * **Playbook**: Call other playbooks in response to conditional statements or user choice actions.
 
-A list of any previously created Playbooks will be displayed on the left side of the page. Click **+** to add a new playbook.
-
-A new configuration box will be displayed. Name your new playbook, select the **Incident Type** to associate with it, and click save to continue. [Learn more](#custom-fields).
-
-Once the new playbook has been saved, it will be displayed on the left side of the screen. To begin to configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen.
-
-<img src={useBaseUrl('img/cloud-soar/image72.png')} alt="Empty playbook" width="800"/>
-
-Opening the playbook will present a black screen with a **Start** node, and an **End** node. These nodes dictate the beginning and the end of the playbook's automation sequence. They can be dragged and dropped anywhere on the screen to allow for multiple integrations and conditional statements to be executed.
-
-To begin to add the first node within the new playbook, click the **+** on the **Start** node.
-
-<img src={useBaseUrl('img/cloud-soar/image73.png')} alt="New playbook" width="800"/>
-
-The playbook configuration page is displayed. It gives you the ability to choose from the following options:
-* **Action**: Automatically take specific actions such as enriching data or taking containment steps when an Incident Template is matched.
-* **Task**: Assign a task to an Cloud SOAR user.
-* **Condition**: Use conditional statements to define what actions should be taken in response to previous input/output feeds.
-* **User Choice**: Pause automatic processing to allow for manual intervention.
-* **Playbook**: Call other R3 Playbooks in response to conditional statements and/or user choice actions.
-
-### Action
+#### Action
 
 Select **Action** from the node types.
 
@@ -206,7 +203,7 @@ The newly added node will now be visible in playbook configuration screen. To ad
 <img src={useBaseUrl('img/cloud-soar/image78.png')} alt="Node menu" width="600"/>
 
 
-### Task
+#### Task
 
 From the node selection menu, choose **Task**. A new configuration screen will be displayed. Title the new task and add any description if desired. The next dropdown lists are **Authorizer** and **Owner** fields. The **Authorizer** field is the user who is assigning the task, and the **Owner** field is the user who will be assigned the task to complete. When the task has been developed, click **Create**.
 
@@ -214,7 +211,7 @@ From the node selection menu, choose **Task**. A new configuration screen will b
 
 For playbook entities which support user-defined text input, such as email notifications, help desk ticket creation and task creation, variable placeholders may be added to the user defined text which will be replaced with incident variables at run time. These variable placeholders may be added by clicking on the <img src={useBaseUrl('img/cloud-soar/image80.png')} alt="Placeholder icon" width="25"/> icon. To add a variable placeholder, begin typing in the newly inserted placeholder box and Cloud SOAR will display a list of available options which match. For example, typing **incident**. will display a list of all the valid incident fields which may be added as variable placeholders.
 
-### Condition
+#### Condition
 
 From the node's menu, choose **Condition**. A new configuration screen will be displayed which will enable a user to define a conditional statement to be met before the next node type can be executed. Under **Condition 1,** click on **Select a value** to define the first condition.
 
@@ -259,7 +256,7 @@ This new node represents a decision tree in which both results, success or failu
 
 <img src={useBaseUrl('img/cloud-soar/image88.png')} alt="Nodes List" width="600"/>
 
-### User Choice
+#### User Choice
 
 From the node's menu, select **User Choice**. The User Choice option allows for the system to pose a question to the incident owner. Based off of the analysis the incident owner performs on the previous information
 gathered, they will be presented a choice to take an automated action such as blocking an IP at the firewall or Quarantining an end-user workstation from the network.
@@ -269,6 +266,15 @@ gathered, they will be presented a choice to take an automated action such as bl
 <img src={useBaseUrl('img/cloud-soar/image90.png')} alt="Response" width="800"/>
 
 Define the question to be answered and the authorizer of the user choice selection and click ****Create**** to finalize.
+
+#### Filter
+
+A filter node filters results from the preceding action based on the condition you write. You can only add a filter node after an action node. For example, let's suppose that the action feeding into the filter has 10 results, but you want to filter out all but the best two results. You can write a condition in the filter to do the filtering.
+
+1. Hover your mouse over an action node and click the **+** button. <br/><img src={useBaseUrl('img/cloud-soar/add-node-button.png')} alt="Add node button" style={{border:'1px solid gray'}} width="200"/> <br/>The available nodes are displayed. <br/><img src={useBaseUrl('img/cloud-soar/add-filter-node.png')} alt="Add filter node" style={{border:'1px solid gray'}} width="500"/>
+1. Click **Filter**. The filter node configuration dialog displays. <br/><img src={useBaseUrl('img/cloud-soar/configure-filter-node.png')} alt="Configure filter node conditions" style={{border:'1px solid gray'}} width="500"/>
+1. Configure the conditions you want to use for filtering. These are similar to the conditions you can configure on the [condition node](#condition).
+1. Click **Create**.
 
 ### Playbook execution
 

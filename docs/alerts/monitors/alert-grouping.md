@@ -157,3 +157,5 @@ For example, let's say that you configured a monitor to generate one alert per c
 #### What fields are not allowed for Alert Grouping?
 
 Fields with very high cardinality such as `_blockid`, `_raw`, `_messagetime`, `_receipttime`, and `_messageid` are not allowed for Alert Grouping.
+
+Fields from aggregate operators such as [`_count`](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent/#count), [`_avg`](/docs/search/search-query-language/group-aggregate-operators/avg), and [`_sum`](/docs/search/search-query-language/group-aggregate-operators/sum) are not allowed.
