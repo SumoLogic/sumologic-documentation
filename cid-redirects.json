@@ -1485,7 +1485,7 @@
   "/cid/0100": "/docs/manage/security/installation-tokens",
   "/cid/0020": "/docs/manage/health-events",
   "/cid/0020001": "/docs/platform-services/threat-intelligence/upload-formats",
-  "/docs/platform-services/threat-intelligence-indicators": "/docs/platform-services/threat-intelligence/threat-intelligence-indicators",
+  "/docs/platform-services/threat-intelligence-indicators": "/docs/platform-services/threat-intelligence",
   "/cid/20002": "/docs/search/search-query-language/search-operators/threatlookup",
   "/cid/0020003": "/docs/platform-services/threat-intelligence",
   "/cid/0523": "/docs/manage/manage-subscription/upgrade-sumo-logic-credits-account",
