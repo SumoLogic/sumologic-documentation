@@ -48,7 +48,7 @@ There are two versions of ingest budgets:
 ## Migrating V1 budgets to V2
 
 * You can edit an existing **V1** budget by providing a **scope** to change it to a **V2** budget that is metadata-based.
-* V2 budgets are manageable with the Ingest Budget Management API **V2**.
+* V2 budgets are manageable with the [Ingest Budget Management **V2** API](/docs/api/ingest-budget-v2).
 * V1 budgets will be deprecated on September 16, 2024.
 
 
