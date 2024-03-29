@@ -89,6 +89,20 @@ _index=sec_record*
 | timeslice 1h
 | count by _timeslice
 ```
+### Format timestamp results
+
+Timestamps for the following response fields return results as an integer in Unix time (also known as *epoch time*):
+* `_threatlookup.imported`
+* `_threatlookup.valid_from`
+* `_threatlookup.valid_until`
+* `_threatlookup.updated`
+ 
+If you use these response fields in your log search, to convert the timestamp results to a readable output, you must format it in the search itself. For example:
+
+```
+| formatDate(_threatlookup.valid_until, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'") as valid_until
+```
+
 <!-- Add this back once we have support for the cat search operator.
 #### Run threatlookup with the cat search operator
 
