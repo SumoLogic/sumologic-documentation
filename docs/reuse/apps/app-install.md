@@ -1,7 +1,3 @@
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 To install the app:
 
 1. From the Sumo Logic navigation, select **App Catalog**.
