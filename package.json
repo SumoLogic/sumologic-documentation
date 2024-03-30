@@ -16,10 +16,10 @@
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.23.7",
     "@braintree/sanitize-url": "^6.0.1",
-    "@docusaurus/core": "^3.2.0",
+    "@docusaurus/core": "3.2.0",
     "@docusaurus/cssnano-preset": "3.2.0",
     "@docusaurus/plugin-client-redirects": "3.2.0",
-    "@docusaurus/plugin-content-blog": "^3.2.0",
+    "@docusaurus/plugin-content-blog": "3.2.0",
     "@docusaurus/plugin-debug": "3.2.0",
     "@docusaurus/plugin-google-analytics": "3.2.0",
     "@docusaurus/plugin-google-gtag": "3.2.0",
