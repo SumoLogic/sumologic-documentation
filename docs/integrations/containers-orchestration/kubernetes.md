@@ -81,6 +81,8 @@ The Deployment Guide has information on advanced configurations, best practices,
 
 ## Installing the Kubernetes app
 
+### Method A: Installing app via command line using helm chart
+
 Now that you have set up the collection for Kubernetes app, install the Sumo Logic App for Kubernetes to use the pre-configured Kubernetes dashboards that provide visibility into your Kubernetes environment.
 
 To install the app, do the following:
@@ -95,6 +97,9 @@ To install the app, do the following:
    :::
 6. (Optional) On the next configuration step, titled **Preview & Done**, click the blue **Explore Dashboards** button or **Open Dashboards in Library** to check out your Kubernetes dashboards. Here, you'll also be given the options to add another cluster, configure Kubernetes monitors, or manage your collectors.
 
+### Method B: Importing a JSON file
+
+If you want to just update the dashboards, you can [download](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/kubernetes_application_plane_helm_chartv4.json) and import the json in your personal folder, see [Import and Export Content in the library](/docs/get-started/library/#import-and-export-content-in-the-library). This json is compatible with [helm chart v4.x](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main?tab=readme-ov-file#supported-versions).
 
 ## Installing Kubernetes Monitors
 
