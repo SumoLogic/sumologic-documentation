@@ -368,7 +368,7 @@ The following illustration is a graphical representation of the process for coll
 
 ### Configuring Log Collection
 
-To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](/docs/integrations/amazon-aws/cloudtrail#Collect-logs-for-the-AWS-CloudTrail-App).
+To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app).
 
 
 ## Installing the GI for AWS CloudTrail SecOps App

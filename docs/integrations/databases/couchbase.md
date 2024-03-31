@@ -178,7 +178,7 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
      * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
      * `db_system: “couchbase”` - This value identifies the database system.
      See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
-   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app) here.
    4. Verify logs in Sumo Logic.
 2. **Collecting Couchbase Logs from a Log File on Kubernetes (optional)**.
    1. Determine the location of the Couchbase log file on Kubernetes. This can be determined from the config file /opt/couchbase/etc/couchbase/static_config squid.conf for your Couchbase cluster along with the mounts on the Couchbase pods.

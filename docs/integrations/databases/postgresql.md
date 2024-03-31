@@ -212,7 +212,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQ
    2. **Do not modify these values**, as it will cause the Sumo Logic apps to not function correctly.
       * `component: “database”`. This value is used by Sumo Logic apps to identify application components.
       * `db_system: “postgresql”`. This value identifies the database system.
-3. Collecting Logs written to Standard output (recommended). The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying the Sumo Logic Kubernetes Collection, please see[ this page](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+3. Collecting Logs written to Standard output (recommended). The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying the Sumo Logic Kubernetes Collection, please see[ this page](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app).
 4. Collect PostgreSQL logs written to log files (optional). If your PostgreSQL service is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to stdout. To do this:
    1. Determine the location of the PostgreSQL log file on Kubernetes.
    2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).

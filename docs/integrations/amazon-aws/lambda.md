@@ -184,7 +184,7 @@ Namespace for **Amazon Lambda** Service is **AWS/Lambda**.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" />
 
-Continue with the process of [enabling Provisioned Concurrency configurations](#Enable_Provisioned_Concurrency_configurations_for_Lambda_functions) for Lambda functions, as necessary.
+Continue with the process of [enabling Provisioned Concurrency configurations](#enable-provisioned-concurrency-configurations-for-lambda-functions) for Lambda functions, as necessary.
 
 
 ### Enable Provisioned Concurrency configurations for Lambda functions
