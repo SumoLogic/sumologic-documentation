@@ -414,7 +414,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
    3. Click **Add**
    4. Click Import to import monitors from the JSON above.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kafka folder under Monitors to configure them. See [this](/docs/alerts/monitors) document to enable monitors. To send notifications to teams or connections, see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kafka folder under Monitors to configure them. See [this](/docs/alerts/monitors) document to enable monitors. To send notifications to teams or connections, see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors/create-monitor).
 
 ### Method B: Using a Terraform script
 
@@ -475,7 +475,7 @@ email_notifications = [
    1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Kafka/` and run terraform init. This will initialize Terraform and will download the required components.
    2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
    3. Run `terraform apply`.
-7. **Post Installation.** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of[ this document](/docs/alerts/monitors#add-a-monitor).
+7. **Post Installation.** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of[ this document](/docs/alerts/monitors/create-monitor).
 
 
 ## Installing the Kafka App

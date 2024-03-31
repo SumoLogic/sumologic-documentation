@@ -157,7 +157,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “PostgreSQ
        * In the tags sections `[inputs.postgresql_extensible.tags]`
         * `component= “database”`. This value is used by Sumo Logic apps to identify application components.
         * `db_system= “postgresql”`. This value identifies the database system.
-   * For more information on configuring the PostgreSQL input plugin for Telegraf, see [this doc](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/postgresql_extensible/README.md). For more information on all other Telegraf related global parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf).
+   * For more information on configuring the PostgreSQL input plugin for Telegraf, see [this doc](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/postgresql_extensible/README.md). For more information on all other Telegraf related global parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf).
 3. Once this has been done, the Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the annotations defined in the previous step. Verify metrics are flowing into Sumo Logic by running the following metrics query.
   ```sql
   component="database" and db_system="postgresql"
@@ -422,7 +422,7 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
 3. Click **Add**:
 4. Click Import to import monitors from the JSON above.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the PostgreSQL folder under Monitors to configure them. See [this](/docs/alerts/monitors) document to enable monitors, to configure each monitor, to send notification to teams or connections please see the instructions detailed in step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the PostgreSQL folder under Monitors to configure them. See [this](/docs/alerts/monitors) document to enable monitors, to configure each monitor, to send notification to teams or connections please see the instructions detailed in step 4 of this [document](/docs/alerts/monitors/create-monitor).
 
 ### Method B: Using a Terraform script
 
@@ -490,7 +490,7 @@ email_notifications = [
    1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**postgresql**/ and run `terraform init`. This will initialize Terraform and will download the required components.
    2. Run **`terraform plan`** to view the monitors which will be created/modified by Terraform.
    3. Run **`terraform apply`**.
-7. Post Installation. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [this document](/docs/alerts/monitors#Add-a-monitor).
+7. Post Installation. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [this document](/docs/alerts/monitors/create-monitor).
 
 ## Installing the PostgreSQL app
 

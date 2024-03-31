@@ -176,7 +176,7 @@ annotations:
      * `proxy_system: “haproxy”` - Identifies the proxy system.
     :::
 
-   For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 3. Kubernetes collection will start collecting metrics from the pods having the labels and annotations defined in the previous step.
 4. Verify metrics in Sumo Logic.
 
@@ -203,7 +203,7 @@ This section explains the steps to collect HAProxy logs from a Kubernetes enviro
     * `proxy_system: “haproxy”`. This value identifies the proxy system.
    :::
 
-   For all other parameters see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   For all other parameters see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 3. Collecting HAProxy Logs from a Log File (Optional). Follow the steps below to capture HAProxy logs from a log file on Kubernetes.
   1. Determine the location of the HAProxy log file on Kubernetes. This can be determined from the HAProxy.conf for your HAProxy cluster along with the mounts on the HAProxy pods.
   2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
@@ -455,7 +455,7 @@ However, if you would like to restrict these alerts to specific clusters or envi
 
 ### Method 2: Use a Terraform script
 
-1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
+1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see [Access Keys](/docs/manage/security/access-keys#create-your-access-key_on_Preferences_page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 3. Download the Sumo Logic Terraform package for HAProxy monitors. The alerts package is available in the [Sumo Logic GitHub repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration. After extracting the package, navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/haproxy/ directory. Edit the haproxy.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
@@ -583,7 +583,7 @@ Use this dashboard to:
 The **HAProxy - Threat Inte**l dashboard provides an at-a-glance view of threats to HAProxy servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
-* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ) threat feed.
+* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq) threat feed.
 
 <img src={useBaseUrl('img/integrations/web-servers/HAProxy-Threat-Analysis.png')} alt="test" />
 

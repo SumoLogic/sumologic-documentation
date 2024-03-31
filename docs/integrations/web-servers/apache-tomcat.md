@@ -227,7 +227,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
           * In the tags section, which is `[inputs.jolokia2_agent.tags]`
               * `component: “webserver”` - This value is used by Sumo Logic apps to identify application components.
               * `webserver_system: “tomcat”` - This value identifies the web server system.
-    * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+    * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 1. Verify metrics in Sumo Logic.
 
@@ -250,7 +250,7 @@ This section explains the steps to collect Apache Tomcat logs from a Kubernetes 
    * **Do not modify** additional values set by this configuration as they will cause the Sumo Logic apps to not function correctly.
      * `component: “webserver”` - This value is used by Sumo Logic apps to identify application components.
      * `webserver_system: “tomcat”` - This value identifies the webserver system.
-   * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) .
 1. Verify logs in Sumo Logic.
 
@@ -625,7 +625,7 @@ Custom filter examples:
 
 Step 1: Generate a Sumo Logic access key and ID
 
-Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
+Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys#create-your-access-key_on_Preferences_page).
 
 Step 2: Download and install Terraform
 
@@ -863,7 +863,7 @@ The **Apache Tomcat - Garbage Collector** dashboard provides information on the 
 The **Apache Tomcat  - Threat Intel** dashboard provides an at-a-glance view of threats to Apache Tomcat servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
-* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ) threat feed.
+* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq) threat feed.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Threat-Intel.png')} alt="test" />
 

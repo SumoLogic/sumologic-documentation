@@ -151,7 +151,7 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
     * **Do not modify the following values** as they will cause the Sumo Logic apps to not function correctly.
       * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
       * `db_system: “elasticsearch”`- This value identifies the database system.
-    * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+    * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
    3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
    4. Verify logs in Sumo Logic.
 2. **(Optional) Collecting Elasticsearch Logs from a Log File**. Follow the steps below to capture Elasticsearch logs from a log file on Kubernetes.
@@ -251,7 +251,7 @@ This section explains the steps to collect Elasticsearch metrics from a Kubernet
      * In the tags section   `[inputs.elasticsearch.tags]`
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: “elasticsearch”` - This value identifies the database system.
-     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic.
 
@@ -389,7 +389,7 @@ To install these monitors, you must have the **Manage Monitors** role capability
 
 ### Method 2: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/security/access-keys#Create-an-access-key-on-Preferences-page).
+1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys#Create-an-access-key-on-Preferences-page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 3. Download the Sumo Logic Terraform package for Elasticsearch monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Elasticsearch). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration. After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/Elasticsearch/` directory.

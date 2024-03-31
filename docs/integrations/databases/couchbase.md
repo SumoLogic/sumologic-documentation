@@ -141,7 +141,7 @@ annotations:
     * `telegraf.influxdata.com/inputs`.- In the tags section (`[inputs.couchbase.tags]`):
       * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
       * `db_system: “couchbase”` - This value identifies the database system.
-  * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+  * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic.
 
@@ -177,7 +177,7 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
     * **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly.
      * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
      * `db_system: “couchbase”` - This value identifies the database system.
-     See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+     See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
    3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
    4. Verify logs in Sumo Logic.
 2. **Collecting Couchbase Logs from a Log File on Kubernetes (optional)**.
@@ -404,7 +404,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 3. Go to Manage Data > Alerts > Monitors.
 4. Click **Add**:
 5. Click Import and then copy-paste the above JSON to import monitors.
-6.The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Couchbase folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Step 4](#Step-4) of this [document](/docs/alerts/monitors#add-a-monitor).
+6.The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Couchbase folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Step 4](#Step-4) of this [document](/docs/alerts/monitors/create-monitor).
 
 ### Method B: Using a Terraform script method
 
@@ -470,7 +470,7 @@ email_notifications = [
 7. **Install the Alerts**. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Couchbase/` and run `terraform init`. This will initialize Terraform and will download the required components.
 8. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
 9. Run `terraform apply`.
-10. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor). There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
+10. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor). There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
 ## Installing the Couchbase app

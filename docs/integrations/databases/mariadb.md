@@ -152,7 +152,7 @@ annotations:
       * In the tags section (`[inputs.mysql.tags]`):
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: “mariadb”` - This value identifies the database system.
-     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic.
 
@@ -178,7 +178,7 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
      * **Do not modify the following values** as it will cause the Sumo Logic apps to not function correctly.
        * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
        * `db_system: “mariadb”` - This value identifies the database system.
-     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
    3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
    4. Verify logs in Sumo Logic.
 2. **(Optional) Collecting MariaDB Logs from a Log File**. Follow the steps below to capture MariaDB logs from a log file on Kubernetes.
@@ -451,7 +451,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 3. Go to Manage Data > Alerts > Monitors.
 4. Click **Add**.
 5. Click Import and then copy-paste the above JSON to import monitors.
-6. The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MariaDB folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Add a Monitor](/docs/alerts/monitors#add-a-monitor).
+6. The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MariaDB folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Add a Monitor](/docs/alerts/monitors/create-monitor).
 
 ### Method B: Using a Terraform script
 
@@ -512,7 +512,7 @@ email_notifications = [
 6. **Install the Alerts**. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**MariaDB** and run `terraform init`. This will initialize Terraform and will download the required components.
     1. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
     2. Run `terraform apply`.
-7. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+7. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 
 ## Installing the MariaDB app
 

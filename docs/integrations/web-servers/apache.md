@@ -226,7 +226,7 @@ annotations:
       * `component: “webserver”`: Used by Sumo Logic apps to identify application components.
       * `webserver_system: “apache”`: Identifies the webserver system.
    :::     
-   * For more information on other parameters and properties that you can configure in the Telegraf agent globally, see [Configuring_Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf).
+   * For more information on other parameters and properties that you can configure in the Telegraf agent globally, see [Configuring_Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf).
    * For more information on configuring the Apache input plugin for Telegraf, see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache).
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the configuration and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic by running the following metrics query:
@@ -256,7 +256,7 @@ This section explains the steps to collect Apache logs from a Kubernetes environ
    * `component: “webserver”`: This value is used by Sumo Logic apps to identify application components.
    * `webserver_system: “apache”`: This value identifies the webserver system.
    :::
-   * For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   * For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
    3. Make sure that the Apache pods are running and annotations are applied by using the command:
    ```xml
    kubectl describe pod <apache_pod_name>
@@ -460,7 +460,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 4. Click **Add**.
 5. Click **Import** and then copy paste the above JSON to import monitors. Name will be the folder name.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Apache folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Apache folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors/create-monitor).
 
 
 ### Method B: Using a Terraform script
@@ -542,7 +542,7 @@ To install the app, do the following:
    * **Folder Name** You can retain the existing name, or enter a name of your choice for the app.
 5. Click **Next**.
 
-For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#installing-apps-to-your-library).
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

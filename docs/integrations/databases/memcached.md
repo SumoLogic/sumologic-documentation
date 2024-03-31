@@ -162,7 +162,7 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Memcached
      * In the tags section, `[inputs.memcached.tags]`:
         * `component: “database”`. This value is used by Sumo Logic apps to identify application components.
         * `db_system: “memcached”`. This value identifies the database system.
-  * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+  * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic.
 
@@ -197,7 +197,7 @@ This section explains the steps to collect Memcached logs from a Kubernetes envi
     * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
       * `component: “database”`. This value is used by Sumo Logic apps to identify application components.
       * `db_system: “memcached”`. This value identifies the database system.
-      * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+      * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
    3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [ visit here](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
    4. Verify logs in Sumo Logic.
 2. **Collecting Memcached Logs from a Log File (Optional)**. If your Memcached chart/pod is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to standard out. To do this:
@@ -381,7 +381,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability. For instructions, see  [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
+1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability. For instructions, see  [Access Keys](/docs/manage/security/access-keys#create-your-access-key_on_Preferences_page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install.
 3. Download the Sumo Logic Terraform package for Memcached monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Memcached). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration. After extracting the package, navigate to the  `terraform-sumologic-sumo-logic-monitor/monitor_packages/Memcached/` directory.

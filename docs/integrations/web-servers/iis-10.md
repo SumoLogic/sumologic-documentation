@@ -493,7 +493,7 @@ By default, the monitors are configured in a monitor **folder** called **IIS**, 
     1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/IIS/` and run `terraform init`. This will initialize Terraform and will download the required components.
     2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
     3. Run `terraform apply`.
-7. Post Installation: If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+7. Post Installation: If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 
 There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
 

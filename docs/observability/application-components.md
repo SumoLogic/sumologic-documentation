@@ -84,7 +84,7 @@ If you want to deploy in the Admin Recommended folder, you may need [Content Adm
 ---
 **Parameter**: `sumologic_access_id`<br/>
 **Required**: Yes <br/>
-**Description**: Your Sumo Logic Access ID. See <a href="/docs/manage/security/access-keys#Create_an_access_key">Create an access key</a> for more information.
+**Description**: Your Sumo Logic Access ID. See <a href="/docs/manage/security/access-keys#create-your-access-key">Create an access key</a> for more information.
 
 ---
 **Parameter**: `sumologic_access_key`<br/>

@@ -113,7 +113,7 @@ For details on the individual alerts, see [Kubernetes Alerts](/docs/observabilit
 5. Click **Import** to import monitors from the JSON above.
 
 :::note
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kubernetes folder under  Monitors  to configure them. See this document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kubernetes folder under  Monitors  to configure them. See this document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 :::
 
 ### Method B: Using a Terraform script
@@ -165,7 +165,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
    1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/` and run `terraform init`. This will initialize Terraform and will download the required components.
    1. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
    1. Run `terraform apply`.
-1. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. See Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+1. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. See Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 
 :::note
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts).

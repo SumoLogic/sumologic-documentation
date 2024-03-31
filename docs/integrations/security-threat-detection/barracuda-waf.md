@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Barracuda Web Application Firewall protects your web, mobile and API applications from being compromised, prevents data breaches, ensure protection from web attacks, provide control access and authentication.
 
-The Barracuda WAF App analyzes traffic flowing through the Barracuda WAF and provides pre-configured dashboards that allow you to monitor WAF traffic as well to analyze various types of attacks detected both by Barracuda and Sumo Logic’s own [Threat Intelligence database](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ#What_is_the_CrowdStrike_Integration_for_Sumo_Logic.3F).
+The Barracuda WAF App analyzes traffic flowing through the Barracuda WAF and provides pre-configured dashboards that allow you to monitor WAF traffic as well to analyze various types of attacks detected both by Barracuda and Sumo Logic’s own [Threat Intelligence database](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq#What_is_the_CrowdStrike_Integration_for_Sumo_Logic.3F).
 
 
 ## Log types
