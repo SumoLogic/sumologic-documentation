@@ -439,7 +439,7 @@ This section has instructions for installing the Sumo app and Alerts for Redis U
 
 Sumo Logic has provided out-of-the-box alerting capabilities available via [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Redis database cluster is available and performing as expected. These monitors fire alerts (notifications) on top of preset thresholds on metrics data using industry best practices and recommendations.
 
-For details on the individual monitors, please see [Alerts](#Redis-Alerts).
+For details on the individual monitors, please see [Alerts](#redis-alerts).
 
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing them via a JSON or via a Terraform script.
@@ -464,7 +464,7 @@ Monitors are disabled by default. Once you have installed the alerts via this me
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using[ these](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page) instructions. Please identify which deployment your Sumo Logic account is in,[ using](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) this link.
+1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using[ these](/docs/manage/security/access-keys#from-the-preferences-page) instructions. Please identify which deployment your Sumo Logic account is in,[ using](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) this link.
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for Redis alerts. The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/redis). You can either download it via the “git clone” command or as a zip file.
 4. Monitor Configuration. After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**redis**/

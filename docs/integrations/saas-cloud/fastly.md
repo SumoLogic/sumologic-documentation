@@ -373,8 +373,8 @@ To install the app:
 2. To install the app, click **Add to Library**. The Add Fastly to Library popup appears.
 3. Supply the following information.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    2. **Log data source for Request Logs**. Enter the source category that you assigned to the HTTP Source for request logs when you performed the procedure in [Collect Logs for Fastly](#Collect-Logs-for-Fastly).
-    3. **Log data source for Debug Logs.** Enter the source category that you assigned to the HTTP Source for debug logs when you performed the procedure in [Collect Logs for Fastly](#Collect-Logs-for-Fastly).
+    2. **Log data source for Request Logs**. Enter the source category that you assigned to the HTTP Source for request logs when you performed the procedure in [Collect Logs for Fastly](#collecting-logs-for-fastly).
+    3. **Log data source for Debug Logs.** Enter the source category that you assigned to the HTTP Source for debug logs when you performed the procedure in [Collect Logs for Fastly](#collecting-logs-for-fastly).
     4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 

@@ -241,7 +241,7 @@ This section explains how to collect logs from MongoDB Atlas for mongo version 6
 
 Sumo Logic provides a solution which pulls logs and metrics from MongoDB Atlas with API calls. You can configure the log types to be collected, and the logs and metrics are then forwarded to Sumo Logic’s HTTP endpoint.
 
-By default, the collection starts from the current date and time, but this setting is also configurable. For more information, see the [Advanced Configuration](#Advanced-Configuration) options.
+By default, the collection starts from the current date and time, but this setting is also configurable. For more information, see the [Advanced Configuration](#advanced-configuration) options.
 
 ### Step 1: Acquire Authentication Info from MongoDB Atlas Portal
 

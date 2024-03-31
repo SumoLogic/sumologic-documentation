@@ -412,7 +412,7 @@ At this point, ActiveMQ metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for ActiveMQ running on a non-kubernetes environment for the Sumo Logic App for ActiveMQ.
 
-By default, ActiveMQ logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+By default, ActiveMQ logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#installed-collector-requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect ActiveMQ logs and follow the instructions below to set up log collection:
 
@@ -457,7 +457,7 @@ At this point, ActiveMQ logs should start flowing into Sumo Logic.
 
 ## Installing ActiveMQ Monitors
 
-This section and below contain instructions for installing Sumo Logic Monitors for ActiveMQ, the app, and descriptions of each of the app dashboards. These instructions assume you have already set up the collection as described in the [Collect Logs and Metrics for the ActiveMQ](#Collecting-Logs-and-Metrics-for-ActiveMQ) App page.
+This section and below contain instructions for installing Sumo Logic Monitors for ActiveMQ, the app, and descriptions of each of the app dashboards. These instructions assume you have already set up the collection as described in [Collect Logs and Metrics for the ActiveMQ](#collecting-logs-and-metrics-for-activemq).
 
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
@@ -484,7 +484,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method 2: Install the alerts using a Terraform script
 
-1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). To find out which deployment your Sumo Logic account is in, see [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#from-the-preferences-page). To find out which deployment your Sumo Logic account is in, see [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for ActiveMQ alerts: The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/ActiveMQ). You can either download it through the “git clone” command or as a zip file.
 4. Alert Configuration: After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/ActiveMQ/`.

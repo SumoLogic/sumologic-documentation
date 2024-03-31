@@ -15,7 +15,7 @@ The Windows Performance app provides insight into your system's operation and ev
 
 The Windows Performance app assumes events are coming from Windows Performance sources.
 
-**Also, you need to configure an additional custom query for each Source.** For details, see [Collect Logs for Windows Performance App](#Collect-Logs-for-the-Windows-Performance-App).
+**Also, you'll need to configure an additional custom query for each Source.** For details, see [Collect Logs for Windows Performance App](#collecting-logs-for-the-windows-performance-app).
 
 ### Sample log messages
 

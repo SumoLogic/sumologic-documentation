@@ -291,7 +291,7 @@ At this point, Varnish metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Varnish running on a non-Kubernetes environment for the Sumo Logic app for Varnish.
 
-By default, Varnish logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+By default, Varnish logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#installed-collector-requirements).
 
 
 1. **Configure logging in Varnish**. Varnish supports logging via the following methods: local text log files. For details please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/). For the dashboards to work properly, please set the below specified log format as explained [here](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1):
@@ -329,7 +329,7 @@ At this point, Varnish logs should start flowing into Sumo Logic.
 
 ## Installing Varnish Monitors
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a Varnish cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Varnish Alerts](#Varnish-Alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a Varnish cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Varnish Alerts](#varnish-alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 

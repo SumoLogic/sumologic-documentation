@@ -145,7 +145,7 @@ Operation prices write operation $0.05 per 10000 requests => * 3 million = 15$
 
 ### How do I troubleshoot an Event Hub Integration?
 
-For detailed information, see the [Troubleshooting log collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Troubleshooting_log_collection) section of the Collect logs for Azure Monitor page. This includes testing the function using **Sample** [Logs](https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json) & [Metrics](https://s3.amazonaws.com/appdev-cloudformation-templates/metrics_fixtures.json).
+For detailed information, see the [Troubleshooting log collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#troubleshooting-log-collection) section of the Collect logs for Azure Monitor page. This includes testing the function using **Sample** [Logs](https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json) & [Metrics](https://s3.amazonaws.com/appdev-cloudformation-templates/metrics_fixtures.json).
 
 
 ### Where can I find historic logs for the Azure function?
@@ -169,7 +169,7 @@ Follow the instructions in the Microsoft Azure documentation for [Enabling Appli
 
 1. Under the **Function app edit mode** section, change the edit mode in **Function App Settings**. You can now edit the function.
 2. Enter context.log(“debug statements”) and save.
-3. Run using sample logs, as described in [Troubleshooting log collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Troubleshooting_log_collection).
+3. Run using sample logs, as described in [Troubleshooting log collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#troubleshooting-log-collection).
 
 ### How do I deploy the ARM template in Azure Gov cloud?
 

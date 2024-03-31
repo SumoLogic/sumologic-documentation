@@ -415,7 +415,7 @@ At this point, Telegraf should start collecting the SQL Server metrics and forwa
 
 ## Installing Microsoft SQL Server Monitors
 
-This section provides instructions for installing the Microsoft SQL Server App, as well as examples of each of the App dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for the Microsoft SQL Server](#Collect-Logs-for-the-Microsoft-SQL-Server-App) App page.
+This section provides instructions for installing the Microsoft SQL Server App, as well as examples of each of the App dashboards. These instructions assume you have already set up collection as described in [Collecting Logs and Metrics for the Microsoft SQL Server](#collecting-logs-and-metrics-for-the-microsoft-sql-server-app).
 
 
 ### Pre-Packaged Alerts
@@ -451,7 +451,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 **Step 1: Generate a Sumo Logic access key and ID**
 
-Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this [ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#from-the-preferences-page). Please identify which deployment your Sumo Logic account is in, using this [ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 **Step 2: [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**
 

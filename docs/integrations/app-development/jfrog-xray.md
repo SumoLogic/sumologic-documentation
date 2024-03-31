@@ -20,7 +20,7 @@ The Sumo Logic app for JFrog Xray and collection are tested on JFrog Xray 2.9.0 
 The JFrog Xray app uses the following log types:
 
 * JFrog Xray logs. JFrog Xray logs are in JSON format. For more information, see JFrog Xray [Webhook payload](https://www.jfrog.com/confluence/display/XRAY/Policies#Policies-WebhookPayload).
-* Artifactory logs. For more information, see [Collect Logs for Artifactory.](/docs/integrations/app-development/jfrog-artifactory#Collect-Logs-for-Artifactory)
+* Artifactory logs. For more information, see [Collect Logs for Artifactory](/docs/integrations/app-development/jfrog-artifactory#collecting-logs-1).
 * Kubernetes logs. For more information, see [Collect Logs for Kubernetes.](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app)
 
 
@@ -109,7 +109,7 @@ Collect the following details:
 
 We recommend collecting data from JFrog Artifactory so as to investigate sources of vulnerable artifacts and who is using them. This is done by correlating Xray logs with Artifactory logs.
 
-To do so, follow the instructions in [Collect Logs for Artifactory](/docs/integrations/app-development/jfrog-artifactory#Collect-Logs-for-Artifactory).
+To do so, follow the instructions in [Collect Logs for Artifactory](/docs/integrations/app-development/jfrog-artifactory#collecting-logs-1).
 
 
 ### Step 3: Collect Kubernetes logs

@@ -290,7 +290,7 @@ query_vCenter.pl -s [vcenterserver] -f output.txt
 #target vCenter Server in your environment.
 ```
 
-In the standard output, you should see the query time range and the number of events collected. The events themselves are stored inside the **output.txt** file. If you're prompted to enter a username or password, it means that the credentials for the target vCenter Server are not set properly. By default, the first time **query_vCenter** is called, events from the past 24 hours are collected. If you want to collect events older than the past 24 hours, see [Collect Historical Events](#Collecting_Historical_Events).
+In the standard output, you should see the query time range and the number of events collected. The events themselves are stored inside the **output.txt** file. If you're prompted to enter a username or password, it means that the credentials for the target vCenter Server are not set properly. By default, the first time **query_vCenter** is called, events from the past 24 hours are collected. If you want to collect events older than the past 24 hours, see [Collect Historical Events](#collect-historical-events).
 
 Because the above information is logged into /var/log/message for cron jobs, it's a good idea to monitor /var/log/messages to make sure the collection CRON jobs work well.
 
@@ -318,7 +318,7 @@ vi-admin@vma1:~> export SCRIPT_PATH=/var/log/vmware
 ./query_vCenter.pl --server 192.168.23.242 --target vmahost:1514 --bT 2012-10-08T00:17:00.00Z
 ```
 
-Once this command completes successfully, you can begin to pick up ongoing events by setting up the CRON job as described in step 2 of [Collecting Event Messages](#Collecting_Event_Messages).
+Once this command completes successfully, you can begin to pick up ongoing events by setting up the CRON job as described in step 2 of [Collecting Event Messages](#collecting-event-messages).
 
 
 ## Segmenting Performance Collection
