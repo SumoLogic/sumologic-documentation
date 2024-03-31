@@ -105,7 +105,7 @@ The following Cloud SIEM rules refer to this Match List:
 The following Cloud SIEM rules refer to this Match List:
 
 * PowerShell Remote Administration
-* PSEXEC Admin Tool Detection
+* PsExec Admin Tool Detection
 * SMB write to admin hidden share
 
 ### admin_username
@@ -117,6 +117,8 @@ The following Cloud SIEM rules refer to this Match List:
 The following Cloud SIEM rules refer to this Match List:
 
 * Lateral Movement Using the Windows Hidden Admin Share
+* Outlier in Data Outbound Per Day by Admin or Sensitive Device
+* Outlier in Data Outbound Per Hour by Admin or Sensitive Device
 
 ### Alibaba_admin_ips
 
@@ -372,7 +374,10 @@ The following Cloud SIEM rules refer to this Match List:
 * Domain Password Attack
 * First Seen Anonymous Logon Change Activity to Domain Controller
 * Interactive Logon to Domain Controller
+* Outlier in Data Outbound Per Day by Admin or Sensitive Device
+* Outlier in Data Outbound Per Hour by Admin or Sensitive Device
 * Password Attack
+* Spike in Login Failures from a User
 * Successful Brute Force
 * Suspicious DC Logon
 
@@ -566,6 +571,18 @@ The following Cloud SIEM rules refer to this Match List:
 
 * Spike in URL Length from IP Address
 
+### known_docker_images
+
+The following Cloud SIEM rules refer to this Match List:
+
+* Unrecognized Container Image
+
+### known_windows_processes
+
+The following Cloud SIEM rules refer to this Match List:
+
+* Fake Windows Processes
+
 ### lan_scanner_exception_ips
 
 **Target column:** IP Address (`Ip`)
@@ -636,6 +653,12 @@ The following Cloud SIEM rules refer to this Match List:
 The following Cloud SIEM rules refer to this Match List:
 
 * Okta Admin App Accessed
+
+### OneLogin_Untrusted_Location
+
+The following Cloud SIEM rules refer to this Match List:
+
+* OneLogin - API Credentials - Key Used from Untrusted Location
 
 ### palo_alto_sinkhole_ips
 
@@ -778,6 +801,7 @@ The following Cloud SIEM rules refer to this Match List:
 * Threat Intel Match - IP Address
 * Threat Intel - Matched Domain Name
 * Threat Intel - Device IP Matched Threat Intel Domain Name
+* Threat Intel - Device IP Matched Threat Intel URL
 
 ### scanner_targets
 
@@ -855,6 +879,8 @@ The following Cloud SIEM rules refer to this Match List:
 * Threat Intel - Inbound Traffic Context
 * Threat Intel - Matched File Hash
 * Threat Intel - Matched Domain Name
+* Threat Intel - Device IP Matched Threat Intel Domain Name
+* Threat Intel - Device IP Matched Threat Intel URL
 
 ### unauthorized_external_media
 
@@ -902,6 +928,7 @@ The following Cloud SIEM rules refer to this Match List:
 * Threat Intel Match - IP Address
 * Threat Intel - Matched Domain Name
 * Threat Intel - Device IP Matched Threat Intel Domain Name
+* Threat Intel - Device IP Matched Threat Intel URL
 
 ### verified_hostnames
 
@@ -928,6 +955,7 @@ The following Cloud SIEM rules refer to this Match List:
 * Threat Intel Match - IP Address
 * Threat Intel - Matched Domain Name
 * Threat Intel - Device IP Matched Threat Intel Domain Name
+* Threat Intel - Device IP Matched Threat Intel URL
 * Web Request to Punycode Domain
 
 ### verified_ips
@@ -943,6 +971,7 @@ The following Cloud SIEM rules refer to this Match List:
 * Threat Intel Match - IP Address
 * Threat Intel - Matched Domain Name
 * Threat Intel - Device IP Matched Threat Intel Domain Name
+* Threat Intel - Device IP Matched Threat Intel URL
 * Web Request to IP Address
 
 ### verified_uri_ips
