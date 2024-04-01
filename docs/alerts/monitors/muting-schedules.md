@@ -43,4 +43,4 @@ Optionally, you can apply a Muting Schedule to an entire alert group, rather tha
 Once you've set up an alert group and a Muting Schedule, here's how how to link them together:
 
 1. Go to **Manage Data** > **Monitoring** > **Monitors** and select the alert group variable you want to mute. In this example, we'll choose `region`.<br/><img src={useBaseUrl('img/alerts/mute-sched-alert-groups1.png')} alt="mute-sched-alert-groups1.png" width="500"/>
-1. Under **(1) Trigger Conditions**, find the alert group you want to use. In this example, we've set up the condition so that if the `region` is `us-east-1`, alerts will be muted every third Saturday.<br/><img src={useBaseUrl('img/alerts/mute-sched-alert-groups2.png')} alt="mute-sched-alert-groups2.png" width="500" />
+1. Under **(1) Trigger Conditions**, find the alert group you want to use. In this example, we've set up the condition so that if the `region` is `us-east-1`, alerts will be muted every third Saturday.<br/><img src={useBaseUrl('img/alerts/mute-sched-alert-groups2.png')} alt="mute-sched-alert-groups2.png" style={{border: '1px solid gray'}} width="500" />
