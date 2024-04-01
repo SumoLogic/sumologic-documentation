@@ -36,11 +36,11 @@ To confirm that your Muting Schedule has been applied successfully:
 
 <img src={useBaseUrl('img/alerts/mute-sched2.png')} alt="mute schedule" />
 
-## Set a Muting schedule for an alert group
+## Set a Muting Schedule for an alert group
 
-Optionally, you can apply a muting schedule to an entire alert group, rather than selecting individual monitors. This can save you significant time by allowing you to bundle together monitors as an alert group, then bundle together alert groups that you want to mute on a schedule.
+Optionally, you can apply a Muting Schedule to an entire alert group, rather than selecting individual monitors. This can save you significant time by allowing you to bundle together monitors as an alert group, then bundle together alert groups that you want to mute on a schedule.
 
-Once you've set up an alert group and a muting schedule, here's how how to link them together:
+Once you've set up an alert group and a Muting Schedule, here's how how to link them together:
 
 1. Go to **Manage Data** > **Monitoring** > **Monitors** and select the alert group variable you want to mute. In this example, we'll choose `region`.<br/><img src={useBaseUrl('img/alerts/mute-sched-alert-groups1.png')} alt="mute-sched-alert-groups1.png" width="500"/>
 1. Under **(1) Trigger Conditions**, find the alert group you want to use. In this example, we've set up the condition so that if the `region` is `us-east-1`, alerts will be muted every third Saturday.<br/><img src={useBaseUrl('img/alerts/mute-sched-alert-groups2.png')} alt="mute-sched-alert-groups2.png" width="500" />
