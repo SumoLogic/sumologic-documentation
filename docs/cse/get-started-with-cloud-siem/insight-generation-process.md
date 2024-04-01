@@ -111,8 +111,6 @@ If Signal A fires on Entity X at hour 0 and continues to fire once every 30 minu
 
 Signal B fires on Entity Y fires at hour 0, and doesn’t fire again until hour 13. The Signal that fired at hour 13 will not be suppressed, and will be analyzed by the Insight engine.  
 
-Signals that are suppressed appear in the Cloud SIEM UI as “suppressed”. Suppressed Signals are displayed in the Cloud SIEM UI for 90 days.
-
 :::note
 Prototype Signals, which are are not included in Insights, are not suppressed.
 :::

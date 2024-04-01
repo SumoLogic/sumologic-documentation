@@ -122,7 +122,7 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 
 :::note
 With above configuration sample log with ```raw``` format will be ingested into sumo logic for Amazon RDS cloudWatch logs for postgreSQL.
-```json 
+```json
 2024-01-13 11:02:19 UTC::@:[561]:LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB
 ```
 :::

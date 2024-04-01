@@ -36,6 +36,10 @@ To schedule a dashboard email report, do the following:
    * **Subject.** Enter a subject for the email.
    * **Message.** Enter the body of the email.
 
+:::note
+Scheduled reports are allowed to run for a maximum of five minutes. Any panel that has not completed running its queries at this time will have partial or empty data in the panel with an error message in the report.
+:::
+
 ### Limitations
 
 * You can schedule only one export per dashboard.

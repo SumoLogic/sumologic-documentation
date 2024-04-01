@@ -152,7 +152,7 @@ The screenshot below shows the **Entities** tab **list** view for an Insight.
 
 In this view, the primary Entity is always displayed first. (This is the Entity common to each of the Signals in the Insight). Below the primary Entity all of the related Entities are listed.
 
-The related Entities fall into two categories. The category, sometimes referred to as _involved Entities_, are those Entities that aren't the primary Entity but are listed in one or more Records in the Signal(s) in the Insight. So, for example, while the primary Entity for an insight could be a username, a Record in one of the Signals in that Insight could also include an IP address. That address would be included in this list.
+The related Entities fall into two categories. The first category, sometimes referred to as _involved Entities_, are those Entities that aren't the primary Entity but are listed in one or more Records in the Signal(s) in the Insight. So, for example, while the primary Entity for an insight could be a username, a Record in one of the Signals in that Insight could also include an IP address. That address would be included in this list.
 
 Other Entities could be included due to _detected Entity relationships_. For each Entity in the Insight — including the primary Entity and other involved Entities — Cloud SIEM searches for other Entities that seem to be related (across all Records, not just that Insight's). This search is run across a time range that corresponds to the span of time during which there was activity on the Insight. So, for example, if the first Record in an Insight was created at 8 AM on Wednesday and the last Record at 10 PM on Friday, Cloud SIEM might detect that the IP address listed in the Insight was associated with a specific hostname (in another record) at that point. 
 
@@ -218,7 +218,7 @@ Each node in the graph represents a single Entity and will include an icon repre
 
 When you select an Entity, it will be highlighted in blue **(5)** and the Entity details pane will appear on the right.
 
-As on the list view, the involved Entities will be connected with dashed lines **(6)** and Entities with detected relationships will be connected with solid lines **(7)**. 
+As on the list view, the Entities that appear on the same Signal (also known as *involved* Entities) will be connected with dashed lines **(6)**. Entities with a *detected* relationship will be connected with solid lines **(7)**. A *detected relationship* is when a relationship is detected between Entities (for example, when an IP and hostname appear in a record together, but not necessarily in the insight being viewed).
 
 If you hover over an Entity, it and all connections to it will be highlighted in blue **(8)** and if its value is not fully visible by default, the full value will be displayed.
 
