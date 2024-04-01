@@ -42,6 +42,9 @@ Alert Grouping works for both Logs and Metrics Monitors.
 
 The input field has an auto-completion dropdown that allows you to select all the applicable fields from your query.
 
+## Set a Muting schedule for an alert group
+
+Optionally, you can apply a muting schedule to your alert group. [Learn more](/docs/alerts/monitors/muting-schedules/#set-a-muting-schedule-for-an-alert-group).
 
 ## Use Cases
 
@@ -125,7 +128,6 @@ This alert can be useful if you suspect that one of your collectors has stopped 
    | fields total_mbytes, collector
    ```
 * **Group Condition**: `collector` <br/><img src={useBaseUrl('img/monitors/Suggested-Monitors.png')} alt="alert-grouping" style={{border: '1px solid gray'}} width="800" />
-
 
 ## FAQ
 
