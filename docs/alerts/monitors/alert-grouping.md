@@ -42,9 +42,9 @@ Alert Grouping works for both Logs and Metrics Monitors.
 
 The input field has an auto-completion dropdown that allows you to select all the applicable fields from your query.
 
-## Set a Muting schedule for an alert group
+## Set a Muting Schedule for an alert group
 
-Optionally, you can apply a muting schedule to your alert group. [Learn more](/docs/alerts/monitors/muting-schedules/#set-a-muting-schedule-for-an-alert-group).
+Optionally, you can apply a Muting Schedule to your alert group. [Learn more](/docs/alerts/monitors/muting-schedules/#set-a-muting-schedule-for-an-alert-group).
 
 ## Use Cases
 
