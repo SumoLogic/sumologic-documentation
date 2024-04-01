@@ -39,6 +39,9 @@ What makes Next-Gen different from Classic apps?
 * Upon app installation, content is installed into a shared **Installed Apps** folder that's visible to your entire org, making it easier to locate and upgrade, when needed.
 * Installed app content is immutable, which ensure that any apps upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
 
+
+#### How to install Next-Gen Apps
+
 import AppInstall from '../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
