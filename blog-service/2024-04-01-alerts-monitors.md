@@ -10,4 +10,4 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-You can now optionally apply an alert Muting Schedule to your alert group. This saves time by allowing you to select an alert group (a bundled set of alerts) to associate with your Muting Schedule rather than selecting individual monitors. [Learn more](/docs/alerts/monitors/muting-schedules/#set-a-muting-schedule-for-an-alert-group).
+You can now optionally apply a Muting Schedule to your alert group. This saves time by allowing you to select an alert group (a bundled set of alerts) to associate with your Muting Schedule rather than selecting individual monitors. [Learn more](/docs/alerts/monitors/muting-schedules/#set-a-muting-schedule-for-an-alert-group).
