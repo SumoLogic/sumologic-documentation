@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="Thumbnail icon" width="50"/>
 
-The Ingest Budget Management API **V2** allows you to manage metadata-based [ingest budgets](/docs/manage/ingestion-volume/ingest-budgets) (with a scope) from HTTP endpoints.
+The Ingest Budget Management V2 APIs allow you to manage metadata-based [ingest budgets](/docs/manage/ingestion-volume/ingest-budgets) (with a scope) from HTTP endpoints.
 
-See [V1 API](/docs/api/ingest-budget-v1) for management of ingest budgets with a Field Value.
+You can use [V1 APIs](/docs/api/ingest-budget-v1) to manage ingest budgets with a Field Value.
 
-To manage ingest budgets, you must have the **Manage Ingest Budgets** [role capability](/docs/manage/users-roles/roles/role-capabilities). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them. For more information, see [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets).
+To manage ingest budgets, you must have the **Manage Ingest Budgets** [role capability](/docs/manage/users-roles/roles/role-capabilities). Enabling this will automatically enable the **Manage Collectors** capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them. For more information, see [Ingest Budgets](/docs/manage/ingestion-volume/ingest-budgets).
 
 | Account Type | Account Level          |
 |:--------------|:--------------|
@@ -36,3 +36,7 @@ import ApiIntro from '../reuse/api-intro.md';
 | JP         | https://api.jp.sumologic.com/docs/#tag/ingestBudgetManagementV2  |
 | US1        | https://api.sumologic.com/docs/#tag/ingestBudgetManagementV2     |
 | US2        | https://api.us2.sumologic.com/docs/#tag/ingestBudgetManagementV2 |
+
+:::note
+[V1 budgets](/docs/api/ingest-budget-v1) will be deprecated September 16, 2024.
+:::
