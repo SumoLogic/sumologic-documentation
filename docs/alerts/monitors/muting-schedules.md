@@ -26,6 +26,8 @@ To set a muting schedule:
 1. Define your **Scope**, where you associate one or more monitors with this schedule.
 1. Add a **Name** and optionally, a **Description**.
 
+### Validate Muting Schedule
+
 To confirm that your Muting Schedule has been applied successfully:
 1. Go to your **Manage Data** > **Monitoring** > **Monitors** tab.
 1. Find your monitor in the list and check the **Status** column, where you should see the muted indicator.
@@ -33,3 +35,11 @@ To confirm that your Muting Schedule has been applied successfully:
 <img src={useBaseUrl('img/alerts/mute-sched1.png')} alt="mute schedule" />
 
 <img src={useBaseUrl('img/alerts/mute-sched2.png')} alt="mute schedule" />
+
+## Set a Muting Schedule for an Alert group
+
+You can also apply a muting schedule to an entire alert group, rather than selecting individual monitors. This can save you significant time by allowing you to bundle together monitors as an alert group, then bundle together alert groups that you want to mute on a schedule.
+
+To do this:
+1. Go to **Manage Data** > **Monitoring** > **Monitors** and select the alert group you want to
+1. Under **(1) Trigger Conditions**, find the alert group....
