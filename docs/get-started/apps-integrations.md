@@ -50,6 +50,8 @@ import AppInstall from '../reuse/apps/app-install-v2.md';
 
 All of our existing Classic apps will be converted to Next-Gen. In the meantime, our Classic apps will remain available to you within the Application Catalog.
 
+#### How to install Classic Apps
+
 import ClassicAppInstall from '../reuse/apps/app-install.md';
 
 <ClassicAppInstall/>
