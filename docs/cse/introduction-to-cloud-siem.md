@@ -129,7 +129,7 @@ Cloud SIEM can help with every step of the threat investigation process. Cloud S
 
 Once you choose an Insight, you can dig through all the raw logs and Signals to conduct deep-dive investigations and even proactive threat hunts. You can organize your thoughts, make hypotheses, and take notes about your investigation in the comments of each Insight. This will share your ideas with your SOC teammates and help you keep track of your investigation.
 
-You can also take certain [actions](/docs/cse/administration/create-cse-actions) directly from the Insight. You can email teammates, create JIRA tickets, execute playbooks, and many other custom actions with the Actions button.
+You can also take certain [actions](/docs/cse/administration/create-cse-actions) directly from the Insight. You can email teammates, create Jira tickets, execute playbooks, and many other custom actions with the Actions button.
 
 Finally, you can [update the Insight](/docs/cse/administration/manage-custom-insight-resolutions#about-insight-resolutions). You can mark it as “in progress” or “closed”. When you close it, you can mark it as “resolved”, “false positive”, “duplicate”, or “no action”. Updating the status correctly will help the Cloud SIEM Insight engine produce more accurate Insights for your org in the future.
 
@@ -173,7 +173,7 @@ In addition to the context actions available in the Cloud SIEM UI, there are man
 
 In Cloud SIEM, there are several different actions you can take on each Insight. You can comment on the Insight, or close it or assign a status to it. When you close an Insight, Cloud SIEM uses the resolution information to reduce false positives and duplicates further. Assigning a status to the Insight lets you keep working on it, and keep track of your progress.
 
-You can also assign the Insight to yourself or to a colleague, and use the Actions button to alert colleagues, create JIRA tickets, send Slack messages, execute playbooks, or use other APIs. This Actions button is customizable, but can only be configured by admins. If you need a custom Action, ask your Admin or Sumo account rep for help creating one.
+You can also assign the Insight to yourself or to a colleague, and use the Actions button to alert colleagues, create Jira tickets, send Slack messages, execute playbooks, or use other APIs. This Actions button is customizable, but can only be configured by admins. If you need a custom Action, ask your Admin or Sumo account rep for help creating one.
 
 ### Using the MITRE ATT&CK matrix
 

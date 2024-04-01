@@ -300,7 +300,7 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
 * The `infer` operator is not intended for use outside of Sumo Logic Global Intelligence apps.
 * Install the [Sumo Logic Audit app](/docs/integrations/sumo-apps/audit) to monitor the health of scheduled searches. The following two dashboards of the Audit app will help look into details for scheduled searches:
    * [User Activity - Scheduled Searches](/docs/integrations/sumo-apps/audit#user-activity---scheduled-search)
-   * [Scheduled Searches - Triggered Summary](/docs/integrations/sumo-apps/audit#scheduled-search-triggered-summary)
+   * [Scheduled Searches - Triggered Summary](/docs/integrations/sumo-apps/audit#scheduled-search---triggered-summary)
 
 </details>
 

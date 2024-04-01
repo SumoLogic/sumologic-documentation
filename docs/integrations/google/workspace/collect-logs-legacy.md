@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
 
 :::note legacy
-For the newer method of collecting logs from Google Workspace Alert Center, configure a [Google Alert Workspace Alert Center Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter.md).
+For the newer method of collecting logs from Google Workspace Alert Center, configure a [Google Alert Workspace Alert Center Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter).
 :::
 
 This section explains how to collect logs from Google Workspace Alert Center and ingest them into Sumo Logic for use with the Google Workspace App predefined dashboards and searches.

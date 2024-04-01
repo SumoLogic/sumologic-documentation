@@ -210,7 +210,7 @@ Perform the following tasks to create actions to run in Cloud SIEM.
 
 #### Create Cloud SIEM actions
 
-You can create actions in Cloud SIEM to issue notifications when certain events occur. For example, you can create an action that sends information about an Insight to another system, either automatically when the Insight is created, or on-demand from the Insight's **Actions** menu. You can also create actions for other use cases, such as integrations with tools (for example, JIRA, Slack, etc.), or to send an email to analysts when they are assigned Insights.
+You can create actions in Cloud SIEM to issue notifications when certain events occur. For example, you can create an action that sends information about an Insight to another system, either automatically when the Insight is created, or on-demand from the Insight's **Actions** menu. You can also create actions for other use cases, such as integrations with tools (for example, Jira, Slack, etc.), or to send an email to analysts when they are assigned Insights.
 
 See: [Create Cloud SIEM Actions](/docs/cse/administration/create-cse-actions/)
 

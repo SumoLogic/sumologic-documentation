@@ -133,7 +133,7 @@ When you configure the Sumo Logic endpoint in Fastly:
 
   </details>
 
-3. **Collector URL**. Enter the URL for the HTTP source you created in [Step 1](#Step_1:_Configure_collector_and_source) above.
+3. **Collector URL**. Enter the URL for the HTTP source you created in [Step 1](#step-1-configure-collector-and-source) above.
 4. Click **Advanced options**.
 5. By default the log line format is set to **Classic**. Change it to **Blank.**
 6. Click the **Create** button to create the new logging endpoint.

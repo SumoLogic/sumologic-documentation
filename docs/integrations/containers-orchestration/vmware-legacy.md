@@ -178,13 +178,11 @@ A Sumo Logic [Syslog Source](/docs/send-data/installed-collectors/sources/syslog
 1. On the vMA, create a directory to hold all Sumo Logic scripts, found under [Sumo Logic Scripts for VMware](/docs/integrations/containers-orchestration/vmware-legacy). Name the directory **/var/log/vmware** or something similar.
 2. Download the Sumo Logic VMware scripts using the **vSphere5.0.gz** and **vSphere5.5.gz** links on [this](/docs/integrations/containers-orchestration/vmware-legacy) page, then put them in the directory you just created.
 3. We will assume the user account running the Sumo Logic vmware scripts  is the "vi-admin" user. This user account should not be a "root" user and should have full read write execute permissions to the directories where the **vSphere5.0.gz** and **vSphere5.5.gz** files are extracted. In the absence of adequate permissions, unexpected script errors will occur.
-4. Edit the **cron_vcenter_events.sh** script by changing the `SCRIPT_PATH` variable to reflect the absolute path where the script resides.
-
-If you have multiple vCenter servers, create a new line for each one. Make sure you add the credential for each server (as described in [Install vMA](#Step_1:_Install_vMA)).
-5. Test running the **query_vCenter.pl** script (that queries the vCenter Server for events) as described in [Troubleshooting and Manual Testing](#Troubleshooting_and_Manual_Testing). Use the following example command:
-```sql
-query_vCenter.pl -s [vcenterserver] -f output.txt
-```
+4. Edit the **cron_vcenter_events.sh** script by changing the `SCRIPT_PATH` variable to reflect the absolute path where the script resides. If you have multiple vCenter servers, create a new line for each one. Make sure you add the credential for each server (as described in [Install vMA](#install-the-vmware-legacy-app)).
+5. Test running the **query_vCenter.pl** script (that queries the vCenter Server for events) as described in [Troubleshooting and Manual Testing](#troubleshooting-and-manual-testing). Use the following example command:
+   ```sql
+   query_vCenter.pl -s [vcenterserver] -f output.txt
+   ```
 6. Create a cron job to periodically run the **cron_vcenter_events.sh** script at the interval you'd like.
 
 You'll need to have the `LD_LIBRARY_PATH` env variable in the crontab line. For example, to run the job every two minutes, you'd use something like:

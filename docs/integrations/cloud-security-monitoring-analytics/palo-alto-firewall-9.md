@@ -82,9 +82,9 @@ To create a server profile specifying  the log destination, do the following:
 4. In the **Syslog Server Profile** window, select the **Servers** tab and click **Add**.
 5. In the **Servers** window, specify the following information:
    * **Name**: `Sumo_CloudSyslog_EndPoint01`
-   * **Syslog Server**: URL from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+   * **Syslog Server**: URL from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source)
    * **Transport**: SSL
-   * **Port**: Port from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+   * **Port**: Port from [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source)
    * **Format**: IETF
    * **Facility**: LOG_USER
 6. In the **Syslog Server Profile** window, select the **Custom Log Format** tab, and use the following custom format for the following log type:
@@ -122,7 +122,7 @@ To verify the logs in Palo Alto Networks, do the following:
 
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
 2. Once the setup is done, log in to Sumo Logic.
-3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source), such as: `_sourceCategory = NW/PAN/V9`.
+3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#step-1-create-a-hosted-collector-and-cloud-syslog-source), such as: `_sourceCategory = NW/PAN/V9`.
 
 
 ## Installing the PAN Firewall 9 Security app
