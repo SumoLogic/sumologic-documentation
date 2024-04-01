@@ -1741,6 +1741,7 @@ module.exports = {
                 'observability/aws/integrations/amazon-elasticache',
                 'observability/aws/integrations/amazon-sns',
                 'observability/aws/integrations/amazon-sqs',
+                'observability/aws/integrations/global-intelligence-cloudtrail-devops',
               ],
             },
             'observability/aws/faq',

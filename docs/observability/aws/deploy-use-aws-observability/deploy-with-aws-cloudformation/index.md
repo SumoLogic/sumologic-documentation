@@ -35,8 +35,8 @@ AWS Observability integrates with Explore by populating metadata and only shows
 
 1. Sign in to the AWS Management console.
 1. Choose an option to invoke AWS CloudFormation Template:
-   * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.7.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
-   * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.7.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.<br/>
+   * Click [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.8.0/sumologic_observability.master.template.yaml) to invoke the latest Sumo Logic AWS CloudFormation template.
+   * Download the AWS Observability Solution template (S3 Link for cloudformation template): https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.8.0/sumologic_observability.master.template.yaml to invoke the latest Sumo Logic AWS CloudFormation template.<br/>
      :::note
      Download this or other versions of this template from [Changelog](../changelog.md). 
      :::
@@ -77,7 +77,7 @@ You should only install the AWS Observability apps and alerts the first time you
 
 | Prompt | Guideline |
 |:--|:--|
-| Install AWS Observability apps and alerts | <ul><li>**Yes** - This installs the following:<br/><ul><li>AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, Amazon DynamoDB, AWS ECS, Amazon ElastiCache, Amazon Classic Load Balancer, AWS NLB, Amazon SNS, and Amazon SQS.</li> <li>Alerts for the AWS Observability Solution.</li></ul> <br/>These apps will be installed in the Sumo Logic **AWS Observability Personal** folder, while the alerts will be installed in the Monitors folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
+| Install AWS Observability apps and alerts | <ul><li>**Yes** - This installs the following:<br/><ul><li>AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, Amazon DynamoDB, AWS ECS, Amazon ElastiCache, Amazon Classic Load Balancer, AWS NLB, Amazon SNS, Amazon SQS, and Global Intelligence for AWS CloudTrail DevOps.</li> <li>Alerts for the AWS Observability Solution.</li></ul> <br/>These apps will be installed in the Sumo Logic **AWS Observability Personal** folder, while the alerts will be installed in the Monitors folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
 
 ## Step 5: Sumo Logic AWS CloudWatch Metrics Sources
 

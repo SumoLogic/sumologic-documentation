@@ -89,4 +89,10 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to get operational insights into your Amazon SQS utilization.</p>
   </div>
 </div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/observability/aws/integrations/global-intelligence-cloudtrail-devops"><img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="icon" width="50"/><h4>Global Intelligence for AWS CloudTrail DevOps</h4></a>
+  <p>A guide to the Sumo Logic app for GI for AWS CloudTrail DevOps.</p>
+  </div>
+</div>
 </div>
