@@ -231,7 +231,7 @@ if (isEmpty(namespace),"unknown",namespace) as namespace
 
 ### Metrics rules
 
-Create the following metrics rule for the AWS API Gateway app, if not already created. To learn how to create a metrics rule, see [Metrics Rules Editor](/docs/metrics/metric-rules-editorr#create-a-metrics-rule).
+Create the following metrics rule for the AWS API Gateway app, if not already created. To learn how to create a metrics rule, see [Metrics Rules Editor](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
 
 ```sql
 Rule name: AwsObservabilityApiGatewayApiNameEntityRule
