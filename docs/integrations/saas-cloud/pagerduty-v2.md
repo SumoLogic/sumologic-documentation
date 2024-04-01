@@ -65,7 +65,7 @@ Using PagerDuty with Webhooks V2, you receive HTTP callbacks when incident event
 To create a PagerDuty V2 Webhook, do the following:
 1. Log in to your PagerDuty account.
 2. Use the following instructions to create a Webhook V2: [https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-](https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-), entering the  [HTTP Source Address URL](#Configure-HTTP-Source) as the **Endpoint URL** in **Step 6**.
-3. Continue with [installing the Sumo Logic App for PagerDuty V2](#Install-the-PagerDuty-V2-App).
+3. Continue with [Installing the Sumo Logic App for PagerDuty V2](#installing-the-pagerduty-v2-app).
 
 
 ## Installing the PagerDuty V2 App

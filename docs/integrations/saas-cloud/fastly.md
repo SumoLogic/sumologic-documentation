@@ -142,9 +142,9 @@ When you configure the Sumo Logic endpoint in Fastly:
 
 ### Step 3: Collect WAF Request logs
 
-If you have Fastly's Web Application Firewall (WAF), perform these steps to update the configuration of the endpoint you created in [Step 2](#Step_2._Configure_endpoint_for_CDN_logs) above. You are updating the endpoint to receive WAF Request logs as well as CDN logs.
+If you have Fastly's Web Application Firewall (WAF), perform these steps to update the configuration of the endpoint you created in [Step 2](#step-2-configure-endpoint-in-fastly-for-cdn-logs) above. You are updating the endpoint to receive WAF Request logs as well as CDN logs.
 
-1. Use the JSON object below into the Log format field instead of the one specified in [Configure endpoint in Fastly for CDN logs](#Step_2._Configure_endpoint_in_Fastly_for_CDN_logs).
+1. Use the JSON object below into the Log format field instead of the one specified in [Configure endpoint in Fastly for CDN logs](#step-2-configure-endpoint-in-fastly-for-cdn-logs).
 
   <details>
 <summary>Click to expand snippet</summary>
@@ -301,7 +301,7 @@ If you have Fastly's Web Application Firewall (WAF), perform these steps to upda
 If you have Fastly's Web Application Firewall (WAF), perform these steps to add a second logging endpoint in Fastly and configure it to send WAF request logs to Sumo Logic.
 
 1. Configure another [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for debug logs and set its source category. For example, fastly/debug. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
-2. Create another logging endpoint in Fastly following the instructions [Step 2](#Step_2._Configure_Sumo_logging_endpoint_in_Fastly), but enter the JSON below in the **Log format** field.
+2. Create another logging endpoint in Fastly following the instructions [Step 2](#step-2-configure-endpoint-in-fastly-for-cdn-logs), but enter the JSON below in the **Log format** field.
 
   <details>
 <summary>Click to expand snippet</summary>
