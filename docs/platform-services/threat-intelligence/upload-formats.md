@@ -21,7 +21,7 @@ Normalized JSON format is a standardized method to present JSON data. You can us
 
 Following is an example threat indicator file in normalized JSON format. (For another example, see the [uploadNormalizedIndicators API](https://api.sumologic.com/docs/#operation/uploadNormalizedIndicators)).
 
-```
+```json
 {
  "indicators": [
    {
