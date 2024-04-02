@@ -27,7 +27,7 @@ Cloud SIEM supports TAXII 1.x and TAXII 2.x. 
 
 1. Configure the [TAXII 1 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-1-client-source/) or [TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source/), depending on which you want to use.
 1. The [ingested threat intelligence indicators](/docs/platform-services/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators) appear on the [Threat Intelligence tab](/docs/platform-services/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab). To access the Threat Intelligence tab, go to **Manage Data** > **Logs** > **Threat Intelligence**.
-1. Use the `hasThreatMatch` Cloud SIEM rules language function to search incoming Records for matches to threat intelligence indicators. When matches are found, they appear on Records in Cloud SIEM. For more information, see [hasThreatMatch](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch).
+1. Use the `hasThreatMatch` Cloud SIEM rules language function to search incoming Records for matches to threat intelligence indicators. When matches are found, they appear on Records in Cloud SIEM. For more information, see [`hasThreatMatch`](/docs/cse/rules/cse-rules-syntax/#hasthreatmatch).
 
 ## Leveraging indicators in rules
 
