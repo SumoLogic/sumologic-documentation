@@ -17,6 +17,15 @@ To search a particular partition, specify the `_index` metadata field with the n
 You can only use `_index` in the keyword search expression that scopes the search, in other words, before the first pipe (`|`) in the search.
 :::
 
+## Filter and search a partition
+
+Filter the partition depending on the type of partition using the dropdown provided above the table. Accordingly, you can view the total storage details for the selected partition type. You can select between two type of partitions:
+
+- **User-Defined Partitions**. Type of partitions which are created by the user.
+- **System Partitions**. Type of partitions which are created from sumo to optimize the performance of the query.
+
+<img src={useBaseUrl('img/partitions-data-tiers/filter-and-search-a-partition.png')} alt="filter-and-search-a-partition" style={{border:'1px solid gray'}} width="800"/>
+
 ## Search the default partition
 Data that you ingest that is not directed to a partition will go to the default partition, named `sumologic_default`. The default partition is the first partition listed on the **Partitions** page. To run a search against the default partition, include this in the scope of your search:
 ```
