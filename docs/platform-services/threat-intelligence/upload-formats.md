@@ -258,7 +258,7 @@ Following is an example threat indicator file in STIX 2.1 JSON format if you're 
 
 As shown in the following example, if uploading via the API you must add the `source` attribute outside of the indicators object, since the source is not part of the STIX standard. You must also include an `indicators` array field. (For another example for uploading via the API, see the [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)).
 
-```
+```json
 {
  "source": "FreeTAXII",
  "indicators": [
