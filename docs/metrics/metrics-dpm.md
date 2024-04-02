@@ -7,11 +7,11 @@ description: Metrics Data Ingestion allows you to view metrics ingest volumes ac
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-You can view your data volume for metrics by navigating to **Administration > Account > Metrics Data Ingestion**. The screen provides a granular breakdown of your metrics ingestion and credits used. You can track DPM consumption by individual metric names, or by specific dimensions like cluster, host, source, and so on. With this data, you can see which sources and metrics contribute most to your credit consumption, and take necessary actions. 
+You can view your data volume for metrics by navigating to **Administration > Account > Metrics Data Ingestion**. The screen provides a granular breakdown of your metrics ingestion and credits used. You can track consumption by individual metric names, or by specific dimensions and sources. With this data, you can see which sources and metrics contribute most to your credit consumption, and take necessary action. 
 
-Data volume for metrics is measured in data points per minute (DPM). A data point is an individual piece of data. The total number of data points being sent in a given time can give you a good idea of where the load is heaviest. For example, let's say you want to find out how much data is being sent to metrics from a certain source, host, or source category. You can look at the actual number of individual data points per minute being sent from these to determine whether they are consuming too much metrics bandwidth. Knowing the DPM for these and other kinds of data allows you to monitor your consumption rates.
+Understanding the volume of metrics that you are ingesting is important because when you exceed the credit limit, data is cached on the host and the source is throttled, reducing query performance and accuracy. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics/).
 
-Understanding the volume of metrics that you are ingesting is important because when you exceed the DPM limit, data is cached on the host and the source is throttled, reducing query performance and accuracy. For more information, see [Data Limits for Metrics](/docs/metrics/manage-metric-volume/data-limits-for-metrics/).
+Data volume for metrics is often measured in data points per minute (DPM). A data point is an individual piece of data. The total number of data points being sent in a given time can give you a good idea of where the load is heaviest. For example, let's say you want to find out how much data is being sent to metrics from a certain source, host, or source category. You can look at the actual number of individual data points per minute being sent from these to determine whether they are consuming too much metrics bandwidth. Knowing the DPM for these and other kinds of data allows you to monitor your consumption rates.
 
 While you can also see metrics ingestion breakdown in the [**Metrics** dashboard](/docs/integrations/sumo-apps/data-volume/#metrics) of the Data Volume app, the dashboard only shows volume usage at a source category or source host level. Use the Metrics Data Ingestion screen to get more detailed information.
 
@@ -29,7 +29,7 @@ Navigate to **Administration > Account > Metrics Data Ingestion**.
 1. **Ingest Trend for** `<date>`. The trend for ingest for the current day, broken down by hour. 
 1. **Total Ingest Data Points (1 hr)**. The total number of data points ingested during the previous hour. The green up arrow indicates the total is higher than the previous hour, and a red down arrow indicates the total is lower than the previous hour. This lets you see at a glance whether volume rates are rising or falling.
 1. **Ingest DPM (1 hr)**. The data points per minute (DPM) ingested during the previous hour.
-1. **Ingest DPM (yesterday)**.  The average number of data points per minute (DPM) ingested yesterday. 
+1. **Ingest DPM (yesterday)**.  The average number of data points per minute (DPM) ingested during the previous day. 
 1. **Total Ingest Data Points (yesterday)**. The total number of data points ingested during the previous day.
 1. **Historical Trend**. The ingest trends over the last day or week. 
 1. **Top 100 Data Points/min by Metric**. The top metrics that have the highest data points ingested. Click a specific metric on the diagram to see a breakdown of ingest for that metric.  

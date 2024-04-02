@@ -61,8 +61,8 @@ Metrics are an effective tool for monitoring, troubleshooting, and identifying t
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/metrics/metrics-dpm"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Metrics DPM</h4></a>
-  <p>View data points per minute (DPM) ingest volumes to see information about the sources sending metrics data.</p>
+  <a href="/docs/metrics/metrics-dpm"><img src={useBaseUrl('img/icons/metrics.png')} alt="icon" width="40"/><h4>Metrics Data Ingestion</h4></a>
+  <p>View detailed information about your metrics data consumption.</p>
   </div>
 </div>
 <div className="box smallbox9 card">
