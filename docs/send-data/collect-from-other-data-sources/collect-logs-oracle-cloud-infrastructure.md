@@ -315,6 +315,82 @@ The fn init command will generate a folder called SumoLogicfn with three files i
 
 ### Create a Service Connector for Reading Logs from Logging and Triggering the Function
 
+1. In the Oracle Cloud Console, click the navigation menu, and select **Solution and Platform**. Select **Service Connectors** under the **Logging** menu.
+2. Click **Create Connector**, and from the Source drop-down list, select **Logging** and from the **Functions** drop-down list, select **Target**.
+3. On **Configure Source Connection**, select your compartment name, your **LogGroupForBucketActivity** log group, and your **logForBucketActivity** logs.
+4. If you want to use audit logs, click **+Another log**, choose your compartment and add **_Audit** for Log Group.
+5. If prompted to create a policy for writing to Functions, click **Create**.
+
+:::note
+The Service Connector is now set up and will trigger the function to ingest logs into Sumo Logic every time it finds logs in the Logging service.
+:::
+
+6. You can now visualize your logs in Sumo Logic.
+
+
+
+### Monitor the Function
+
+This section shows how you can use a simple email alert to monitor the status of your solution.
+
+For more details, see [Overview of Functions]<https://docs.oracle.com/en-us/iaas/Content/Functions/Concepts/functionsoverview.htm>.
+
+
+##### Create a Topic and a Subscription for the Notification Service
+
+1. In the Oracle Cloud Console, from the navigation menu in the upper-left corner, select **Application Integration**, and then select **Notifications**.
+2. Click **Create Topic** and create a topic with the name **my_function_status**.
+3. Choose your topic, click **Create Subscription** and use the following example:
+   * **Protocol**: Email and add create a subscription with your email.
+4. The subscription will be created in “Pending” status. You will receive a confirmation email and will need to click the link in the email to confirm your email address.
+
+
+##### Check Metrics and Create an Alarm Definition from Metrics
+
+1. From the navigation menu in the upper-left corner, select **Developer Services**, and then select **Functions**.
+2. Choose the application and the function that you want to monitor.
+3. From the Metrics page, go to the **Functions Errors** chart, click **Options**, and then click **Create an Alarm on this Query**.
+4. Add a name and under **Notification**, select **Destination service** as the notification service, select **your_compartment**, and then select **Topic** as my_function_status.
+
+
+### Monitor the Status Service Connector Hub
+
+This section shows how you can use a simple email alert to monitor the status of your Service Connector Hub (SCH).
+
+For more details, refer to [Service Connector Hub Overview]<https://docs.oracle.com/en-us/iaas/Content/connector-hub/overview.htm>.
+
+
+##### Create a Topic and a Subscription for the Notification Service
+
+1. In the Oracle Cloud Console, from the navigation menu in the upper-left corner, select **Application Integration**, and then select **Notifications**.
+2. Click **Create Topic** and create a topic with the name **my_sch_status**.
+3. Choose your topic, click **Create Subscription** and use the following example:
+   * **Protocol**: Email and add create a subscription with your email.
+4. The subscription will be created in “Pending” status. You will receive a confirmation email and will need to click the link in the email to confirm your email address.
+
+
+##### Check Metrics and Create an Alarm Definition from Metrics
+
+1. From the navigation menu in the upper-left corner, select **Developer Services**, and then select **Service Connectors**.
+2. Choose the connector that you want to monitor and from the **Resources** list in the left navigation panel, select **Metrics**.
+3. From the metrics chart that you want to add the alarm to, for example, “Service Connector Hub Errors”, click **Options** and **Create an Alarm on this Query**.
+4. Add a name and under **Notification**, select **Destination service** as the notification service, select **your_compartment**, and then select **Topic** as my_sch_status.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
