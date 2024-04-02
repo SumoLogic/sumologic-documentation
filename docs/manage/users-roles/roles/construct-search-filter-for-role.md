@@ -56,8 +56,8 @@ The explanations of the behavior of each example filter assume that no other rol
 * Role filters cannot include vertical pipes (`|`).
 * Role filters apply to log searches, not metric searches.
 * The [_dataTier](/docs/manage/partitions/data-tiers/searching-data-tiers/) search modifier is not supported in role filters.
-* If one or more of your FERs override the out-of-the-box metadata tags you use in your search filters for a role, Live Tail can still provide access to data outside of the scope intended in your search filter. You should either avoid overriding out-of-the-box metadata tags in your FERs or avoid overridden tags in your search filters.
-* Using a field or Field Extraction Rule (FER) in a role filter is not supported. It will cause errors for any search run by a user in the role where the field is not valid. For example, if an FER created a field `foo`, adding the `foo=bar` scope to a role will break any search for a user where this field is not valid. This most often causes errors where users search a view where the field is not a valid schema field in that view.
+* If one or more of your Field Extraction Rules (FERs) override the out-of-the-box metadata tags you use in your search filters for a role, Live Tail can still provide access to data outside of the scope intended in your search filter. You should either avoid overriding out-of-the-box metadata tags in your FERs or avoid overridden tags in your search filters.
+* Using a field or FERs in a role filter is not supported. It will cause errors for any search run by a user in the role where the field is not valid. For example, if an FER created a field `foo`, adding the `foo=bar` scope to a role will break any search for a user where this field is not valid. This most often causes errors where users search a view where the field is not a valid schema field in that view.
 
 For limitations related to the use of Scheduled Views or Partitions in a search filter, refer to [Partitions](/docs/manage/partitions/#limitations) and [Scheduled Views](/docs/manage/scheduled-views).
 
