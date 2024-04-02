@@ -81,4 +81,4 @@ By default, expired indicators are retained for 180 days. To change the retentio
 When you change the retention period, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](/docs/platform-services/threat-intelligence/about-threat-intelligence/#audit-logging-for-threat-intelligence).
 :::
 
-You do not have to wait until indicators reach the end of their retention period in order to delete them. You can [use the Threat Intelligence tab to delete indicators](#delete-threat-intelligence-indicators), as well as use the APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
+You do not have to wait until indicators reach the end of their retention period in order to delete them. You can [use the **Threat Intelligence** tab to delete indicators](#delete-threat-intelligence-indicators), as well as use the APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource.
