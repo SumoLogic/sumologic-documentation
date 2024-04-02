@@ -51,7 +51,7 @@ The explanations of the behavior of each example filter assume that no other rol
 
 #### Search filter limitations
 
-* Role filters should include only keyword expressions or or built-in metadata field expressions using these fields: `_sourcecategory`, `_collector`, `_source`, `_sourcename`, `_sourcehost`.
+* Role filters should include only keyword expressions or built-in metadata field expressions using these fields: `_sourcecategory`, `_collector`, `_source`, `_sourcename`, `_sourcehost`.
 * Using `_index` or `_view` in a role filter scope is not supported.
 * Role filters cannot include vertical pipes (`|`).
 * Role filters apply to log searches, not metric searches.
