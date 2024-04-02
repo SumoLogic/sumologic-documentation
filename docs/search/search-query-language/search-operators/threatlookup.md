@@ -97,7 +97,7 @@ Timestamps for the following response fields return results as an integer becaus
 * `_threatlookup.valid_until`
 * `_threatlookup.updated`
  
-To convert the timestamp results to a readable output, you must format it in the search itself with `formatDate`. For example:
+To convert the timestamp results to a readable output, you must format it in the search itself with [`formatDate`](/docs/search/search-query-language/search-operators/formatdate). For example:
 
 ```
 _index=sec_record*
