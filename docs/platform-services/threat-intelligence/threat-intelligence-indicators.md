@@ -55,8 +55,8 @@ When you add indicators, the event is recorded in the Audit Event Index. See [Au
 
 1. In Sumo Logic, go to **Manage Data > Logs > Threat Intelligence**.
 1. Select a source in the list of sources. Details of the source appear in a sidebar.
-1. Click **Delete Indicators**. The following dialog appears. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
-1. Select indicators to delete from the source:
+1. Click **Delete Indicators**. 
+1. When the following dialog appears, select which indicators you'd like to delete from the source:<br/><img src={useBaseUrl('img/platform-services/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
    * **Delete all indicators**. Remove all indicators from the source.
    * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the indicators.
 1. Click **Delete**.
