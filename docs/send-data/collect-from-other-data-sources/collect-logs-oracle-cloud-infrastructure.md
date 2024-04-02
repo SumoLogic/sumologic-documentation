@@ -274,10 +274,8 @@ The fn init command will generate a folder called SumoLogicfn with three files i
     if __name__ == "__main__":
         # local_test_mode('test_data/test.json')
         local_test_mode('test_data/test-list.json')
-    ```
-    
-<details>
-
+    ``` 
+</details>
 
 11. Open func.yaml and replace the content of the file with the following code.
 <details>
@@ -293,9 +291,7 @@ The fn init command will generate a folder called SumoLogicfn with three files i
     memory: 256
     timeout: 300
     ```
- 
-<details>
-
+</details>
 
 12. Open requirements.txt and replace the content of the file with the following code.
 <details>
@@ -305,8 +301,7 @@ The fn init command will generate a folder called SumoLogicfn with three files i
     requests==2.31.0
     fdk==0.1.50
     ```
- 
-<details>
+</details>
 
 
 13. Deploy your function.
