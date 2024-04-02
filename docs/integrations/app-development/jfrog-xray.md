@@ -162,7 +162,7 @@ To deploy the Sumo Logic JFrog xray SAM Application, do the following:
 If you have multiple JFrog Xray instances from which you want to collect logs and send to Sumo Logic, perform the following task.
 
 To configure collection for multiple JFrog Xray instances, do the following:
-1. [Deploy the SAM application](#Deploy+a+SAM+application) with configuration for a new project.
+1. [Deploy the SAM application](#step-5-set-up-a-collection-method-for-jfrog-xray) with configuration for a new project.
 2. After the deployment is complete, change the database name by adding environment variable (**DBNAME**) in [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html).
 
 </details>
