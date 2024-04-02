@@ -15,12 +15,6 @@ import MyComponentSource from '!!raw-loader!/files/c2c/taxii-2/example.json';
 import TerraformExample from '!!raw-loader!/files/c2c/taxii-2/example.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 [STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients. This Sumo Logic source supports collecting indicators from STIX/TAXII 2.0 and 2.1 versions. The legacy STIX/TAXII 1.x versions are not supported with this source.
 
 :::note
@@ -29,7 +23,7 @@ This source is available in all deployments, including the [Fed deployment](/doc
 
 ## Data collected
 
-This source collects [threat intelligence indicators](/docs/platform-services/threat-intelligence-indicators/) from a vendor's STIX/TAXII 2.x endpoints. This means the specific endpoints we collect data from are the endpoints defined in the [TAXII standard](https://oasis-open.github.io/cti-documentation/taxii/intro). Vendor APIs must follow the standard. The source will collect all indicators from the TAXII server when it runs for the first time and it will check for updates once an hour. This one-hour polling interval can be adjusted in the source configuration.
+This source collects [threat intelligence indicators](/docs/platform-services/threat-intelligence/threat-intelligence-indicators) from a vendor's STIX/TAXII 2.x endpoints. This means the specific endpoints we collect data from are the endpoints defined in the [TAXII standard](https://oasis-open.github.io/cti-documentation/taxii/intro). Vendor APIs must follow the standard. The source will collect all indicators from the TAXII server when it runs for the first time and it will check for updates once an hour. This one-hour polling interval can be adjusted in the source configuration.
 
 ## Setup
 
