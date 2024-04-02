@@ -39,7 +39,7 @@ To search logs that contain correlations to threat intelligence indicators, you 
    * [uploadCsvIndicators API](https://api.sumologic.com/docs/#operation/uploadCsvIndicators)
    * [uploadStixIndicators API](https://api.sumologic.com/docs/#operation/uploadStixIndicators)
 
-See [Upload formats](/docs/platform-services/threat-intelligence/upload-formats/) for the format to use when uploading indicators using the Threat Intelligence tab or APIs.
+See [Upload formats](/docs/platform-services/threat-intelligence/upload-formats/) for the format to use when uploading indicators using the **Threat Intelligence** tab or APIs.
 
 :::note
 * The limit of the number of indicators that can be uploaded in one API call is 100.
