@@ -369,7 +369,16 @@ import FilterDashboards from '../../reuse/filter-dashboards.md';
 
 <FilterDashboards/>
 
-### Risk Overview dashboard
+### Recommended investigations workflow
+
+To most efficiently use the solution to address security concerns, we recommend using the dashboards in the following workflow:
+1. Look at the [Risk Overview](#risk-overview) dashboard to get an overall picture of the security posture of your environment. Pivot or browse to other dashboards to see details in each area.
+1. Look at activity displayed in the [Active Threats](#active-threats-dashboards) dashboards to find issues that need immediate attention.
+1. View the [Security Control Failures](#security-control-failures-dashboard) dashboard to find areas that are identified as failing to meet compliance requirements, and therefore possibly pose a security risk.
+1. Review the [Suspicious Activity](#suspicious-activity-dashboards) dashboards to uncover suspicious activity that may need investigation.
+1. Pivot into the [Risk Overview](#risk-overview) dashboard for specific resources that have issues to see any related activity. Review the action plan presented at the bottom of the dashboard to work through the items identified as needing attention.
+
+### Risk Overview
 
 The **Risk Overview** dashboard provides a summary of all resources that pose risks in a single dashboard that rolls up the findings from other dashboards. It also shows AWS API events by time, and has an **Action Plan** panel so you can access resources that need attention.
 
@@ -379,7 +388,7 @@ You can also use this dashboard to show details of a single resource. See [View 
 
 #### View resource risk details
 
-You can click a resource on any dashboard to view details about its risk in the [Risk Overview](#risk-overview-dashboard) dashboard:
+You can click a resource on any dashboard to view details about its risk in the [Risk Overview](#risk-overview) dashboard:
 1. Click a resource in a dashboard. A summary of that resource’s data appears in a panel.
 1. In the panel under **Linked Dashboards**, select **Risk Overview**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-linked-dashboard.png')} alt="Linked dashboard" width="600"/>
 1. The selected resource’s data appears in the **Risk Overview** dashboard, broken down by the types of data collected. This lets you see at a glance all the different risks presented by the resource. Note at the top of the dashboard that the filters specify the resource.
@@ -400,16 +409,55 @@ The **Active Threats: AWS Resources** dashboard shows threats identified in AWS 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-resources.png')} alt="Active Threats: AWS APIs dashboard" width="600"/>
 
-### Security Control Failures dashboard
+#### The Active Threats: AWS Storage 
 
-The **Security Control Failures** dashboard shows resources that need to be addressed because they are vulnerable as reported by AWS Security Hub. It shows findings by resource, trend, type, and category. By default, the `compliance_status` filter at the top of the dashboard is set to **FAILED** to show resources that fail compliance. Set the `risk.calculated_level` filter to **high** or **critical** to see the most important failures.
+The  **Active Threats: AWS Storage** dashboard provides threat counts related to AWS S3 buckets. It shows threats count and trend, and threats by resource, actor, and geo location.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-storage.png')} alt="Active Threats: AWS Storage dashboard" width="600"/>
+
+### Infrastructure Overview
+
+The **Infrastructure Overview** dashboard helps you identify all accounts, services, and resources within your cloud environment. Gain deep visibility into your cloud infrastructure to understand how many cloud resources are running and their configurations.
+
+:::note
+This dashboard is in preview. If you see panels empty and would like to know more about the feature, reach out to your Sumo Logic Account Executive. 
+:::
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-infrastructure-overview.png')} alt="Infrastructure Overview dashboard" width="600"/>
+
+### Security Control Failures dashboards
+
+The Security Control Failures dashboards identify misconfigurations in your environment that may leave you vulnerable to attackers.
+
+#### Security Control Failure - AWS Findings
+
+The **Security Control Failure - AWS Findings** dashboard shows resources that need to be addressed because they are vulnerable as reported by AWS Security Hub. It shows findings by resource, trend, type, and category. By default, the `compliance_status` filter at the top of the dashboard is set to **FAILED** to show resources that fail compliance. Set the `risk.calculated_level` filter to **high** or **critical** to see the most important failures.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures.png')} alt="Security Control Failures dashboard" width="600"/>
+
+#### Security Control Failures Investigation
+
+The **Security Control Failures Investigation** dashboard provides a detailed view for the **Security Control Failures Overview** dashboard and helps you navigate and prioritize the most important misconfigurations in your environment. 
+
+:::note
+This dashboard is in preview. If you see panels empty and would like to know more about the feature, reach out to your Sumo Logic Account Executive. 
+:::
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures-investigation.png')} alt="Security Control Failures Investigation dashboard" width="600"/>
+
+#### Security Control Failures Overview
+
+The **Security Control Failures Overview** dashboard shows you misconfigurations in your environment that may leave you vulnerable to attackers. These checks are run natively by Sumo Logic to find blind spots in your AWS infrastructure. 
+
+:::note
+This dashboard is in preview. If you see panels empty and would like to know more about the feature, reach out to your Sumo Logic Account Executive.
+::: 
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures-overview.png')} alt="Security Control Failures Overview dashboard" width="600"/>
 
 ### Suspicious Activity dashboards
 
 The Suspicious Activity dashboards show data on events identified by anomaly detection that indicate out-of-the ordinary patterns that may require attention. Review these dashboards to see activity identified in configurations, Identity and Access Management (IAM), networks, users, and on the Web. It prioritizes activity by z-score threshold, labeled `risk.calculated_level`, which measures how unusual it is.
-
 
 #### Suspicious Config and IAM Activity
 
@@ -437,11 +485,3 @@ The **Suspicious Web Activity** dashboard shows suspicious activity on the Web. 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-suspicious-web-activity.png')} alt="Suspicious Web Activity dashboard" width="600"/>
 
-## Recommended investigations workflow
-
-To most efficiently use the solution to address security concerns, we recommend the following workflow:
-1. Look at the [Risk Overview](#risk-overview-dashboard) dashboard to get an overall picture of the security posture of your environment. Pivot or browse to other dashboards to see details in each area.
-1. Look at activity displayed in the [Active Threats](#active-threats-dashboards) dashboards to find issues that need immediate attention.
-1. View the [Security Control Failures](#security-control-failures-dashboard) dashboard to find areas that are identified as failing to meet compliance requirements, and therefore possibly pose a security risk.
-1. Review the [Suspicious Activity](#suspicious-activity-dashboards) dashboards to uncover suspicious activity that may need investigation.
-1. Pivot into the [Risk Overview](#risk-overview-dashboard) dashboard for specific resources that have issues to see any related activity. Review the action plan presented at the bottom of the dashboard to work through the items identified as needing attention.
