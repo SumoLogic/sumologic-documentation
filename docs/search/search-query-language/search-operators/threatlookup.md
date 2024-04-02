@@ -77,7 +77,7 @@ _index=sec_record*
 ```
 ```
 _index=sec_record*
-| threatlookup  source="s_CrowdStrike" dstDevice_ip, srcDevice_ip
+| threatlookup source="s_CrowdStrike" dstDevice_ip, srcDevice_ip
 | where _threatlookup.confidence > 50
 | timeslice 1h
 | count by _timeslice
