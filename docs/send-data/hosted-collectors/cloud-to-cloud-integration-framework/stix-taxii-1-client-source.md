@@ -17,9 +17,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients. This Sumo Logic source supports collecting indicators from STIX/TAXII 1.x. 
 
-:::note
-This source is available in all deployments, including the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 :::sumo[Best Practice]
 This source only supports STIX/TAXII 1.x. Sumo Logic recommends using our [STIX/TAXII 2.x source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source/) instead as it is the current version of STIX/TAXII.

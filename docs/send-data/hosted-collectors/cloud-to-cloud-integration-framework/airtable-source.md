@@ -18,9 +18,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Airtable API integration ingests audit logs periodically from the Airtable app platform into the Sumo Logic environment for storing and analyzing data.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
