@@ -9,6 +9,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Threat intelligence is information that helps you prevent or mitigate cyber attacks. 
 
+See the following articles to learn about Sumo Logic's threat intelligence capabilities.
+
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
