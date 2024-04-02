@@ -7,7 +7,7 @@ description: Learn how to format upload files containing threat intelligence ind
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Use the following formats for threat intelligence indicator files when you [add indicators in the Threat Intelligence tab](/docs/platform-services/threat-intelligence/threat-intelligence-indicators/#add-indicators-in-the-threat-intelligence-tab) or when you use the upload APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource:
+Use the following formats for threat intelligence indicator files when you [add indicators in the **Threat Intelligence** tab](/docs/platform-services/threat-intelligence/threat-intelligence-indicators/#add-indicators-in-the-threat-intelligence-tab) or when you use the upload APIs in the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) API resource:
 
 * [Normalized JSON format](#normalized-json-format)
 * [CSV format](#csv-format)
