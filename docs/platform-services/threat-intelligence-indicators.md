@@ -634,4 +634,3 @@ The following attributes are required:
           * `suricata`. Specifies the [SURICATA](https://suricata-ids.org/) language.
           * `yara`. Specifies the [YARA](https://virustotal.github.io/yara/) language.
        * **valid_from** (string [date-time]). Beginning time this indicator is valid. Timestamp in UTC in RFC3339 format. For example, `2023-03-21T12:00:00.000Z`.
-
