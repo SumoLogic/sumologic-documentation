@@ -93,6 +93,7 @@ The fn init command will generate a folder called SumoLogicfn with three files i
 <details>
 <summary>func.py code</summary>
     ```python
+ 
     #
     # oci-sumologic 1.0
     #
@@ -281,6 +282,7 @@ The fn init command will generate a folder called SumoLogicfn with three files i
 <details>
 <summary>func.yaml code</summary>
     ```yaml
+ 
     schema_version: 20180708
     name: oci-sumologic
     version: 0.0.1
@@ -297,6 +299,7 @@ The fn init command will generate a folder called SumoLogicfn with three files i
 <details>
 <summary>requirements.txt code</summary>
     ```txt
+ 
     oci==2.102.0
     requests==2.31.0
     fdk==0.1.50
