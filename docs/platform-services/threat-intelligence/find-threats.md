@@ -19,7 +19,7 @@ _index=sec_record*
 | count by _timeslice
 ```
 
-For more information, see [threatlookup search operator](/docs/search/search-query-language/search-operators/threatlookup/). 
+For more information, see [`threatlookup` search operator](/docs/search/search-query-language/search-operators/threatlookup/). 
 
 <!-- Add this back once we have support for the cat search operator.
 You can also [run threatlookup with the cat search operator](/docs/search/search-query-language/search-operators/threatlookup/#run-threatlookup-with-the-cat-search-operator) to search the entire store of threat intelligence indicators.
