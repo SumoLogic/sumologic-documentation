@@ -30,7 +30,7 @@ The default storage limit is 5 million total indicators (not including any indic
 
 ## Add indicators in the Threat Intelligence tab
 
-To add threat intelligence indicators in the Threat Intelligence tab, you must upload files containing the indicators in a format that can be consumed by Sumo Logic.
+To add threat intelligence indicators in the **Threat Intelligence** tab, you must upload files containing the indicators in a format that can be consumed by Sumo Logic.
 
 :::tip
 You can also add threat intelligence indicators using the API or a collector. See [Ingest threat intelligence indicators](/docs/platform-services/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators).
