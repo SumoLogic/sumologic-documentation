@@ -123,6 +123,6 @@ cat sumo://threat-intel | formatDate(toLong(_threatlookup.valid_until), "yyyy-MM
 ```
 
 :::note
-You cannot use the cat search operator with the `s_crowdstrike` source.
+You cannot use the cat search operator with the `s_CrowdStrike` source.
 :::
 -->
