@@ -579,6 +579,8 @@ The following Cloud SIEM rules refer to this Match List:
 
 ### known_windows_processes
 
+**Target column:** Hostname (`Hostname`)
+
 The following Cloud SIEM rules refer to this Match List:
 
 * Fake Windows Processes
@@ -655,6 +657,8 @@ The following Cloud SIEM rules refer to this Match List:
 * Okta Admin App Accessed
 
 ### OneLogin_Untrusted_Location
+
+**Target column:** Source IP Address (`SrcIp`)
 
 The following Cloud SIEM rules refer to this Match List:
 
