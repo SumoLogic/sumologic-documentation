@@ -8,7 +8,7 @@ description: Learn about CrowdStrike threat intelligence indicators.
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
-Sumo Logic provides a CrowdStrike threat intelligence indicator source out-of-the-box. You can see it in the [Threat Intelligence tab](/docs/platform-services/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab) as "CrowdStrike provided by Sumo Logic (s_CrowdStrike)". This source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name.
+Sumo Logic provides a CrowdStrike threat intelligence indicator source out-of-the-box. You can see it in the [**Threat Intelligence** tab](/docs/platform-services/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab) as "CrowdStrike provided by Sumo Logic (s_CrowdStrike)". This source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name.
 
 ## CrowdStrike mapping
 
