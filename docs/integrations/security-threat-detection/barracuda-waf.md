@@ -71,7 +71,7 @@ Cloud syslog collection supports Barracuda Firmware version 9.2.1 or later. You 
 This section shows you how to configure a source for log collection. In this task you specify the Source Category metadata field, which is a fundamental building block for organizing and labeling sources.
 
 To configure a source, do the following:
-1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#configure-a-cloudsyslogsource). and configure the following Source fields:
     1. **Name**. (Required) Enter a name. The description is optional.
     2. **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/barracuda/waf**. For more information, see [Best Practices](/docs/send-data/best-practices).
 2. In the Advanced section, specify the following configurations:

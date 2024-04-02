@@ -19,7 +19,7 @@ This app has been validated on Linux(Ubuntu 20.04.2 LTS) and  Windows (Microsoft
 
 We use the Telegraf agent for Host and Process metrics collection. Telegraf runs on the same system and uses the input plugins to obtain host and process metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic.
 
-The following input plugins are used by Sumo Logic
+The following input plugins are used by Sumo Logic:
 
 For Linux:
 * [net](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/net/README.md)
@@ -63,7 +63,7 @@ This section provides instructions for configuring metrics collection for the Su
         * URL - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
         * **Do not modify** the following values set by this Telegraf configuration as it will cause the Sumo Logic app to not function correctly.
            * data_format = “carbon2” In the output plugins section, which is `[[outputs.sumologic]]`, This indicates that metrics should be sent in the carbon2 format to Sumo Logic.
-        * For other optional parameters refer to [the respective plugin](#input-plugins)documentation for configuring the input plugins for Telegraf.
+        * For other optional parameters refer to the respective plugin documentation [listed here](#collecting-metrics-for-host-and-processes) for configuring the input plugins for Telegraf.
         * For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent) for more parameters that can be configured in the Telegraf agent globally.
 
 Once you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
@@ -154,7 +154,7 @@ Example: For defining multiple patterns for multiple processes you can use the p
 * If the telegraf conf changes are not reflecting, make sure to restart Telegraf using the command
     * Windows: `./telegraf.exe --service restart`
     * Linux: `sudo service telegraf restart`
-* If certain metrics are not coming you may have to run the telegraf agent as root. Check [the respective plugin](#input+plugins) documentation for more information.
+* If certain metrics are not coming you may have to run the telegraf agent as root. Check the respective plugin documentation [listed here](#collecting-metrics-for-host-and-processes) for more information.
 
 ## Sample queries
 
@@ -194,7 +194,7 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
 3. Click Add.
 4. Click Import to import monitors from the JSON above.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Host and Process Metrics folder under Monitors to configure them. See [this](/docs/alerts/monitors) document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in [Alert Configuration](#Alert_Configuration) of this [document](/docs/alerts/monitors/create-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Host and Process Metrics folder under Monitors to configure them. See [this](/docs/alerts/monitors/settings) document to enable monitors, to configure each monitor, to send notifications to teams or connections, see the instructions detailed in [Create a Monitor](/docs/alerts/monitors/create-monitor).
 
 
 ### Method B: Using a Terraform script

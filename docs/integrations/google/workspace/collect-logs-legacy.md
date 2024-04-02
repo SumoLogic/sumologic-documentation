@@ -134,7 +134,7 @@ Follow the step 2 and step 3 under “Set up the Alert Center API” [docs](http
 
 To configure GCP Collection for Google Workspace Alert Center, use the **Client ID** for the service account copied in Step 6 [here](#google-cloud-platform-gcp-collection).
 
-If you're using the [Configure Script-Based Collection for Google Workspace Alert Center](#configure-script-based-collection-for-google-workspace-alert-center) use the **Client ID** present in the JSON generated after adding the key in the service account.
+If you're using the [Configure Script-Based Collection for Google Workspace Alert Center](#using-script-based-collection) use the **Client ID** present in the JSON generated after adding the key in the service account.
 
 To configure Google Workspace Alert Center:
 1. Go to your G Suite domain's Admin console (see instructions on [signing in to your Admin console](https://support.google.com/a/answer/182076)), go to **Security > Access and data control > API Controls**.<br/><img src={useBaseUrl('img/integrations/google/gw.png')} alt="google workspace" width="200"/>
@@ -254,7 +254,7 @@ The _sumologic-_gsuite_alertcenter_ script is compatible with python 3.7 and pyt
 
 #### Prerequisites
 
-* This task assumes you have successfully added a **Hosted Collector** and **HTTP source**, as described in [Configure Collection for Google Workspace Alert Center](#Configure_Collection_for_Google_Workspace_Alert_Center).
+* This task assumes you have successfully added a **Hosted Collector** and **HTTP source**, as described in [Configure Collection for Google Workspace Alert Center](#configure-collection-for-google-workspace-alert-center).
 * The following tasks assume you are logged in to the user account with which you will install the collector. If you are not, use the following command to switch to that account:
 ```bash
 sudo su <user_name>

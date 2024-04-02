@@ -532,7 +532,7 @@ To install these monitors, you must have the **Manage Monitors** role capability
 
 Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if a Cassandra cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Cassandra Alerts](#cassandra-alerts).
 
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
 
 ### Method A: Importing a JSON file
 

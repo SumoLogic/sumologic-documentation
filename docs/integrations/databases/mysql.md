@@ -209,7 +209,7 @@ Ensure that you are monitoring your Kubernetes clusters with the Telegraf operat
 
 This configures metrics collection from Kubernetes.
 
-1. Add the following annotations to your MySQL pods, and make the edits described [below](#metric-annotations):
+1. Add the following annotations to your MySQL pods, and make the edits described below:
 ```sql
 primary:
   podAnnotations:
@@ -285,10 +285,10 @@ Pivoting to Tracing data from Entity Inspector is possible only for “MySQL add
 
 This section explains the steps to collect MySQL logs from a Kubernetes environment.
 
-1. Follow the steps in [Method A](#Option_A:_Collect_MySQL_logs_written_to_standard_output) or [Method B](#Option_B:_Collect_MySQL_logs_written_to_log_files), depending on whether your logs are being written to standard output or to log files.
+1. Follow the steps in Method A or Method B, depending on whether your logs are being written to standard output or to log files.
 
 <details>
-<summary>Method 1: Collect MySQL logs written to standard output</summary>
+<summary>Method A: Collect MySQL logs written to standard output</summary>
 
 If your MySQL Helm chart/pod is writing the logs to standard output, follow these steps:
 
@@ -412,7 +412,7 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
   interval = "60s"
   flush_interval = "60s"
 ```
-6. Follow the instructions in [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) below to configure the settings in the `.conf` file.
+6. Follow the instructions in the **Setting values in telegraf.conf** step below to configure the settings in the `.conf` file.
 7. After updating the `telegraf.conf` file, start or reload the telegraf service using the [instructions](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service) in Telegraf documentation.
 8. At this point, MySQL metrics should start flowing into Sumo Logic.
 9. **Setting values in telegraf.conf**. Make the following updates to `telegraf.conf`.
@@ -493,7 +493,7 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
       * `environment = <Environment_Name>`, such as dev, qa, or prod.
       * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
       * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
-      The values of `db_cluster` and `environment` should match those configured in the [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) above.
+      The values of `db_cluster` and `environment` should match those configured in the **Setting values in telegraf.conf** step above.
       :::note
       `db_cluster_address` and `db_cluster_port` should reflect the exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for `net.peer.name` and `net.peer.port` metadata fields).
 
@@ -532,7 +532,7 @@ At this point, MySQL error logs should start flowing into Sumo Logic.
         * `environment = <Environment_Name>`, such as dev, qa, or prod.
         * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
         * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
-       The values of `db_cluster` and `environment` should match those configured in the [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) above.
+       The values of `db_cluster` and `environment` should match those configured in the **Setting values in telegraf.conf** step above.
        :::note
        `db_cluster_address` and `db_cluster_port` should reflect exact configuration of DB client configuration in your application, especially if you instrument it with OT tracing. The values of these fields should match exactly the connection string used by the database client (reported as values for net.peer.name and net.peer.port metadata fields).
 
@@ -568,7 +568,7 @@ To install these monitors, you must have the **Manage Monitors** role capability
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
 
 ### Method A: Install Monitors by importing a JSON file
 

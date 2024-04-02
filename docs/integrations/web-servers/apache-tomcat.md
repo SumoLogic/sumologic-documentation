@@ -601,7 +601,7 @@ To install these monitors, you must have the **Manage Monitors** role capability
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
-Use this dashboard to:mits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
+Use this dashboard to:mits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
 
 ### Method A: Importing a JSON file
 

@@ -403,8 +403,8 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
    3. For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=couchbase-1` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
 3. Go to Manage Data > Alerts > Monitors.
 4. Click **Add**:
-5. Click Import and then copy-paste the above JSON to import monitors.
-6.The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Couchbase folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Step 4](#Step-4) of this [document](/docs/alerts/monitors/create-monitor).
+5. Click **Import** and then copy-paste the above JSON to import monitors.
+6. The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Couchbase folder under **Monitors** to configure them. See [Monitor Settings](/docs/alerts/monitors/settings) to learn how to enable monitors to send notifications to teams or connections. See the instructions detailed in [Create a Monitor](/docs/alerts/monitors/create-monitor).
 
 ### Method B: Using a Terraform script method
 

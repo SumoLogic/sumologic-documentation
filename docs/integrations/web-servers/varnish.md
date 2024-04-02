@@ -333,7 +333,7 @@ Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monito
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
-There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
 
 You can install monitors by importing a JSON file or using a Terraform script.
 

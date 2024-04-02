@@ -372,7 +372,7 @@ At this point, Elasticsearch logs should start flowing into Sumo Logic.
 
 Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Elasticsearch cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Elasticsearch Alerts](#elasticsearch-alerts).
 
-To install these monitors, you must have the **Manage Monitors** role capability. You can install monitors by importing a JSON file or using a Terraform script. There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
+To install these monitors, you must have the **Manage Monitors** role capability. You can install monitors by importing a JSON file or using a Terraform script. There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
 
 ### Method 1: Importing a JSON file
 

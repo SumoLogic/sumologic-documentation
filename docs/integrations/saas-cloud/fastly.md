@@ -51,7 +51,7 @@ In this step, you configure a collector and source to receive Fastly logs.
 
 In this step you add Sumo Logic as a logging endpoint for Fastly services, and configure it to receive CDN logs. The process is described in [Adding Sumo Logic as a logging endpoint](https://docs.fastly.com/guides/streaming-logs/log-streaming-sumologic#adding-sumo-logic-as-a-logging-endpoint) in Fastly help.
 
-If you want to collect CDN and Request WAF logs, see [Collect WAF Request logs](#Step_3:_Collect_WAF_Request_logs) below.
+If you want to collect CDN and Request WAF logs, see [Collect WAF Request logs](#step-3-collect-waf-request-logs) below.
 
 Ensure that the data is sent to Sumo Logic in [Log format version 2](https://docs.fastly.com/guides/streaming-logs/custom-log-formats#upgrading-endpoints-to-use-version-2-log-format). To check the format, see **Determine which log file format you are using** in Fastly help. Note, however, that all new logging endpoints use the version 2 custom log format by default.
 

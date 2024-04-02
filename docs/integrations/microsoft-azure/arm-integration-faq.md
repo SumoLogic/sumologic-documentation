@@ -200,7 +200,7 @@ FileOffsetMap is a table created in Azure Table Storage that is used for interna
 
 ### How does the collection mechanism work?
 
-For a summary of how various components are stitched together in the pipeline, see the [Monitoring data flow](/docs/send-data/collect-from-other-data-sources/azure-blob-storage#Monitoring_data_flow) section of the Azure Blog Storage page.
+For a summary of how various components are stitched together in the pipeline, see the [Monitoring data flow](/docs/send-data/collect-from-other-data-sources/azure-blob-storage#monitoring-data-flow) section of the Azure Blog Storage page.
 
 
 ### How do I scale the function?
@@ -227,7 +227,7 @@ _sourceCategory = azure_logs | json auto | parse field=resource_id  "/NETWORKSEC
 as nsg_name | concat('azure_logs/", nsg_name) as _sourceCategory
 ```
 
-Another approach is to modify the function to send source category in headers. For more information, see [How do I route logs to different source categories based on log content?”](#how-do-i-route-logs-to-different-source-categories-based-on-log)
+Another approach is to modify the function to send source category in headers. For more information, see [How do I route logs to different source categories based on log content?](#how-do-i-route-logs-to-different-source-categories-based-on-log-content)
 
 
 ### How do I filter events by container name?
