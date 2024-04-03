@@ -51,7 +51,7 @@ The list of metrics collected can be found [here](/docs/integrations/containers-
 
 ## Collecting Logs and Metrics for Strimzi Kafka Pods
 
-Collection architecture is similar to Kafka and described [here](/docs/integrations/containers-orchestration/strimzi-kafka/#configure-collection-for-kafka).
+Collection architecture is similar to Kafka and described [here](/docs/integrations/containers-orchestration/strimzi-kafka/#collecting-logs-and-metrics-for-strimzi-kafka-pods).
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Strimzi Kafka.
 

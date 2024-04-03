@@ -51,7 +51,7 @@ In this step, you configure a collector and source to receive Fastly logs.
 
 In this step you add Sumo Logic as a logging endpoint for Fastly services, and configure it to receive CDN logs. The process is described in [Adding Sumo Logic as a logging endpoint](https://docs.fastly.com/guides/streaming-logs/log-streaming-sumologic#adding-sumo-logic-as-a-logging-endpoint) in Fastly help.
 
-If you want to collect CDN and Request WAF logs, see [Collect WAF Request logs](#Step_3:_Collect_WAF_Request_logs) below.
+If you want to collect CDN and Request WAF logs, see [Collect WAF Request logs](#step-3-collect-waf-request-logs) below.
 
 Ensure that the data is sent to Sumo Logic in [Log format version 2](https://docs.fastly.com/guides/streaming-logs/custom-log-formats#upgrading-endpoints-to-use-version-2-log-format). To check the format, see **Determine which log file format you are using** in Fastly help. Note, however, that all new logging endpoints use the version 2 custom log format by default.
 
@@ -133,7 +133,7 @@ When you configure the Sumo Logic endpoint in Fastly:
 
   </details>
 
-3. **Collector URL**. Enter the URL for the HTTP source you created in [Step 1](#Step_1:_Configure_collector_and_source) above.
+3. **Collector URL**. Enter the URL for the HTTP source you created in [Step 1](#step-1-configure-collector-and-source) above.
 4. Click **Advanced options**.
 5. By default the log line format is set to **Classic**. Change it to **Blank.**
 6. Click the **Create** button to create the new logging endpoint.
@@ -142,9 +142,9 @@ When you configure the Sumo Logic endpoint in Fastly:
 
 ### Step 3: Collect WAF Request logs
 
-If you have Fastly's Web Application Firewall (WAF), perform these steps to update the configuration of the endpoint you created in [Step 2](#Step_2._Configure_endpoint_for_CDN_logs) above. You are updating the endpoint to receive WAF Request logs as well as CDN logs.
+If you have Fastly's Web Application Firewall (WAF), perform these steps to update the configuration of the endpoint you created in [Step 2](#step-2-configure-endpoint-in-fastly-for-cdn-logs) above. You are updating the endpoint to receive WAF Request logs as well as CDN logs.
 
-1. Use the JSON object below into the Log format field instead of the one specified in [Configure endpoint in Fastly for CDN logs](#Step_2._Configure_endpoint_in_Fastly_for_CDN_logs).
+1. Use the JSON object below into the Log format field instead of the one specified in [Configure endpoint in Fastly for CDN logs](#step-2-configure-endpoint-in-fastly-for-cdn-logs).
 
   <details>
 <summary>Click to expand snippet</summary>
@@ -301,7 +301,7 @@ If you have Fastly's Web Application Firewall (WAF), perform these steps to upda
 If you have Fastly's Web Application Firewall (WAF), perform these steps to add a second logging endpoint in Fastly and configure it to send WAF request logs to Sumo Logic.
 
 1. Configure another [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics) for debug logs and set its source category. For example, fastly/debug. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
-2. Create another logging endpoint in Fastly following the instructions [Step 2](#Step_2._Configure_Sumo_logging_endpoint_in_Fastly), but enter the JSON below in the **Log format** field.
+2. Create another logging endpoint in Fastly following the instructions [Step 2](#step-2-configure-endpoint-in-fastly-for-cdn-logs), but enter the JSON below in the **Log format** field.
 
   <details>
 <summary>Click to expand snippet</summary>
@@ -373,8 +373,8 @@ To install the app:
 2. To install the app, click **Add to Library**. The Add Fastly to Library popup appears.
 3. Supply the following information.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    2. **Log data source for Request Logs**. Enter the source category that you assigned to the HTTP Source for request logs when you performed the procedure in [Collect Logs for Fastly](#Collect-Logs-for-Fastly).
-    3. **Log data source for Debug Logs.** Enter the source category that you assigned to the HTTP Source for debug logs when you performed the procedure in [Collect Logs for Fastly](#Collect-Logs-for-Fastly).
+    2. **Log data source for Request Logs**. Enter the source category that you assigned to the HTTP Source for request logs when you performed the procedure in [Collect Logs for Fastly](#collecting-logs-for-fastly).
+    3. **Log data source for Debug Logs.** Enter the source category that you assigned to the HTTP Source for debug logs when you performed the procedure in [Collect Logs for Fastly](#collecting-logs-for-fastly).
     4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 

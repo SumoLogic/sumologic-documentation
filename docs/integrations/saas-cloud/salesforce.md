@@ -103,12 +103,12 @@ In this section, we will configure a collection of EventLogFiles and audit logs 
 
 These instructions have been tested on Unix, and also work for Windows. For Windows however, you may need to install third-party tools to handle tar.gz files. This process includes the following tasks, which must be performed in the order in which they are presented:
 
-1. [Set Salesforce permissions](#Step_1:_Set_Salesforce_user_permissions).
-2. [Install the collector and download the SumoJanus package](#Step_2:_Install_the_collector_and_download_the_SumoJanus_package).
-3. [Deploy the SumoJanus packages](#Step_3:_Deploy_the_SumoJanus_package).
-4. [Configure the SFDC bundle](#Step_4:_Configure_the_SFDC_Bundle).
-5. [Configure the JRE path](#Step_5:_Configure_the_JRE_path).
-6. [Authenticate with Salesforce](#Step_6:_Authenticate_with_Salesforce).
+1. [Set Salesforce permissions](#step-1-set-salesforce-user-permissions-deprecated).
+2. [Install the collector and download the SumoJanus package](#step-2-install-the-collector-and-download-the-sumojanus-package-deprecated).
+3. [Deploy the SumoJanus packages](#step-3-deploy-the-sumojanus-package-deprecated).
+4. [Configure the SFDC bundle](#step-4-configure-the-sfdc-bundle-deprecated).
+5. [Configure the JRE path](#step-5-configure-the-jre-path-deprecated).
+6. [Authenticate with Salesforce](#step-6-authenticate-with-salesforce-deprecated).
 7. [Configure a script source](#step-7-configure-a-script-source-deprecated).
 
 
@@ -155,7 +155,7 @@ This section provides steps for a new SumoJanus installation.
   1. Back up `conf/sumologic.properties` and the data folder.
   2. Set up a [New SumoJanus installation](#New_SumoJanus_installation)
   3. Migrate the backed up `conf/sumologic.properties` and data folder to the new Janus folder
-  4. Modify the paths in [Step 7](#Step_7._Configure_a_script_source) below to point to the new folder.
+  4. Modify the paths in [Step 7](##step-7-configure-a-script-source-deprecated) below to point to the new folder.
 
 
 #### Step 4: Configure the SFDC Bundle (DEPRECATED)
@@ -177,7 +177,7 @@ This section only applies for a new SumoJanus installation.
     1. `url` — Point to your Salesforce URL. For example: `https://na25.salesforce.com`
     2. `sandbox` — If you are is using a sandbox environment, set the property to `true`. It is set to` false` by default.
     3. `start_time` — If you don’t specify `start_time`, logs will be collected from two days in the past.
-    4. `interval` — Controls whether you collect daily or hourly logs. Note that later in this procedure, in  [Step 7: Configure a script source](#Step_7:_Configure_a_script_source), the setting you specify for Frequency, should correspond to the `interval` setting.
+    4. `interval` — Controls whether you collect daily or hourly logs. Note that later in this procedure, in  [Step 7: Configure a script source](#step-7-configure-a-script-source-deprecated), the setting you specify for Frequency, should correspond to the `interval` setting.
 
 In the file `conf/sumologic.properties`, the following properties are supported.
 
@@ -264,7 +264,7 @@ To authenticate the installation, do the following:
 2. Run the following command under the unzipped `sumojanus-salesforce` folder:
     * On Unix-like systems: `bin/SumoJanus_SF.bash -s`
     * On Windows: `bin\SumoJanus_SF.bat -s`
-3. A browser will open (if it doesn't, see [If your browser does not open](#If_your_browser_does_not_open), below):
+3. A browser will open (if it doesn't, see [If your browser does not open](#if-your-browser-doesnt-open), below):
     * If your browser has already authenticated with Salesforce, a message will display saying that access has been granted.
     * Otherwise, you will see the Salesforce login. Supply your credentials (with the required permissions) to grant access.
 4. You will then see the following message, which says that the token file has been created:
@@ -295,7 +295,7 @@ Invoke-WebRequest 'the above url' -Method Get
 
 If everything was successful, you should see the message `“Thank you for granting access for SumoLogic SalesforceCollector”` somewhere in the return value. If you see an error regarding an expired authorization code instead, make sure you finish this step within 30 seconds of the previous step as noted above.
 
-You should see a confirmation that the token file has been created, similar to the one shown in [Step 4](#Step_4._Configure_the_SFDC_Bundle) above.
+You should see a confirmation that the token file has been created, similar to the one shown in [Step 4](#step-4-configure-the-sfdc-bundle-deprecated) above.
 
 If the curl command returns the message `Empty reply from server`, it is likely that the single quotes around `the_above_url` are missing.
 
@@ -345,14 +345,14 @@ Your path may be different, depending on where you deployed SumoJanus. Salesforc
     3. **Timezone**: Select "UTC".
     4. **Timestamp Format:** `yyyy-MM-dd'T'HH:mm:ss.SSS`
     5. **Timestamp Locator:** `TIMESTAMP_DERIVED\":\"([^\"]+)\"`
-    6. Download and deploy the SumoJanus package, as described in [Step 2](#Step_2:_Install_the_collector_and_download_the_SumoJanus_package) and [Step 3](#Step_3:_Deploy_the_SumoJanus_package).
-    7.  Configure the JRE path, as described in [Step 5](#Step_5:_Configure_the_JRE_path).
+    6. Download and deploy the SumoJanus package, as described in [Step 2](#step-2-install-the-collector-and-download-the-sumojanus-package-deprecated) and [Step 3](#step-3-deploy-the-sumojanus-package-deprecated).
+    7.  Configure the JRE path, as described in [Step 5](#step-5-configure-the-jre-path-deprecated).
     8. From the previous sumojanus folder, copy these files into the corresponding subfolders of the new **sumojanus-salesforce** folder:
         1. `conf/sumologic.properties`
         2. `data/salesforce.token`
         3. `data/sf_readfiles.dat`
-    9. Test your configuration, as described in [Step 6](#Step_6:_Authenticate_with_Salesforce).
-    10. From the SumoLogic UI, identify the script source created in [Step 7](#Step_7._Configure_a_script_source) and modify the path to the script and the working directory so they point to the respective newly created directories.
+    9. Test your configuration, as described in [Step 6](#step-6-authenticate-with-salesforce-deprecated).
+    10. From the SumoLogic UI, identify the script source created in [Step 7](##step-7-configure-a-script-source-deprecated) and modify the path to the script and the working directory so they point to the respective newly created directories.
 
 ## Installing the Salesforce app
 

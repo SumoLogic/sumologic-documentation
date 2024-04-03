@@ -51,7 +51,7 @@ The following table shows the availability of features for Dashboard.
 | Colors by Value Range  | Supported |
 | Export to PDF/PNG/JSON File | [Supported](/docs/dashboards/export-dashboard-new/) |
 | Scheduled Dashboard Report | [Supported](/docs/dashboards/scheduled-report/) |
-| Link Dashboard to Explore | [Supported](/docs/dashboards/link-dashboards/#link-a-dashboard-new-to-explore) |
+| Link Dashboard to Explore | [Supported](/docs/dashboards/link-dashboards/#link-a-custom-dashboard-to-your-stack-in-explore) |
 | Locate Deviations in a Time Series |[Supported](/docs/dashboards/locate-deviations-time-series/) |
 | Longer Time Range Queries | [Supported](/docs/dashboards/set-custom-time-ranges/) |
 
@@ -77,7 +77,7 @@ Live mode restrictions do not apply to Dashboard. 
 * Dashboard chart properties are not retained when viewed from the Search page.
 * Chart properties are not retained when a chart is added to a Dashboard from the Search page.
 * Dashboard queries cannot return more than 1440 data points.
-  
+
 ## Rules
 
 * Auto Refresh applies to the whole dashboard, you cannot configure it by panel.

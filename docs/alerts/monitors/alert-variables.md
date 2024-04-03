@@ -37,7 +37,7 @@ Variables must be enclosed by double curly brackets (`{{ }}`). Unresolved variab
 | `{{SourceURL}}` | The URL to the configuration or status page of the monitor in Sumo Logic. | &#9989;| &#10060; |
 | `{{AlertResponseUrl}}` | When your Monitor is triggered it will generate a URL and provide it as the value of this variable where you can use it to open Alert Response. | &#9989;| &#10060; |
 | `{{AlertName}}` | Name of the Alert that will be displayed on the Alert page.  | &#9989;| &#9989;|
-| `{{Playbook}}` | Allows you to access the [playbook content](/docs/alerts/monitors#metrics-trigger-types) that was configured as part of the initial monitor setup. | &#9989;| &#9989;|
+| `{{Playbook}}` | Allows you to access the [playbook content](/docs/alerts/monitors/create-monitor#trigger-type) that was configured as part of the initial monitor setup. | &#9989;| &#9989;|
 
 ## Examples
 
