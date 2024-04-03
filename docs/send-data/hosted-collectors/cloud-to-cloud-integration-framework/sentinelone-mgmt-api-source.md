@@ -17,9 +17,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The SentinelOne Mgmt API Source collects data from the SentinelOne Management Console. It securely stores the required authentication, scheduling, and state tracking information.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
