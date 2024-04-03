@@ -168,7 +168,7 @@ Select the ingest budget you want to assign to the Collector and click **Save**.
 
 ### Use Collector API
 
-To assign a Collector to an ingest budget you need to get and update the Collector's configuration file. The following steps can be referenced in the [Collector Management API document for a PUT request](/docs/api/collector-management#Collector-API-Methods-and-Examples "Collector API Methods and Examples").
+To assign a Collector to an ingest budget you need to get and update the Collector's configuration file. The following steps can be referenced in the [Collector Management API document for a PUT request](/docs/api/collector-management/collector-api-methods-examples).
 
 First make a GET request to get the Collector's JSON configuration:
 

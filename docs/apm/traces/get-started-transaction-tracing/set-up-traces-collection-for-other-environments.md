@@ -42,9 +42,9 @@ Create new [OTLP/HTTP source](/docs/send-data/hosted-collectors/http-source/otlp
 
 Use the sample [gateway configuration template available at GitHub](https://github.com/SumoLogic/opentelemetry-collector-contrib/blob/main/examples/non-kubernetes/gateway-configuration-template.yaml) and apply the following changes:
 
-* ENDPOINT_URL needs to be replaced with the value retrieved in [Step 1](#step-1---generating-tracing-endpoint-url), point 5.
+* ENDPOINT_URL needs to be replaced with the value retrieved in [Step 1](#step-1---generating-otlphttp-endpoint).
 
-Please save the file as `config.yaml`. This file name will be used in next step. If you use a different filename, make note of that name.
+Save the file as `config.yaml`. This file name will be used in next step. If you use a different filename, make note of that name.
 
 ### Step 3 - Prepare the OpenTelemetry Collector binaries and run them
 

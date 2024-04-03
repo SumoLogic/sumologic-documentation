@@ -34,7 +34,7 @@ The following table lists data types and some of the popular sources that produc
 | Custom App Code | <ul><li>Java</li><li>[Log4J](/docs/send-data/collect-from-other-data-sources/sumo-logic-open-source-projects.md)</li><li>Log4J 2</li><li>Microsoft .NET</li><li>Rails</li></ul> |
 | Open Source | <ul><li>Apache</li><li>[Apache Tomcat](/docs/integrations/web-servers/apache-tomcat)</li><li>Hadoop</li><li>Lucene</li></ul> |
 | Middleware | <ul><li>JBoss</li><li>Oracle WebLogic</li><li>webMethods</li><li>WebSphere</li></ul> |
-| Databases	 | <ul><li>IBM DB2</li><li>[MySQL](/docs/integrations/databases/mysql)</li><li>[Microsoft SQL Server](/docs/integrations/microsoft-azure/sql-server#Collecting-Logs-for-the-Microsoft-SQL-Server-App)</li><li>Oracle</li></ul> |
+| Databases	 | <ul><li>IBM DB2</li><li>[MySQL](/docs/integrations/databases/mysql)</li><li>[Microsoft SQL Server](/docs/integrations/microsoft-azure/sql-server#collecting-logs-and-metrics-for-the-microsoft-sql-server-app)</li><li>Oracle</li></ul> |
 | Server / OS | <ul><li>HP UX</li><li>[Linux](/docs/integrations/hosts-operating-systems/linux)</li><li>Mac</li><li>Red Hat</li><li>Ubuntu</li><li>Windows</li></ul> |
 | Virtual | <ul><li>Citrix</li><li>Microsoft Hyper-V</li><li>VMware</li></ul> |
 | Network | <ul><li>[Cisco ASA](/docs/integrations/security-threat-detection/cisco-asa)</li><li>[Palo Alto Networks](/docs/integrations/security-threat-detection/palo-alto-networks-6)</li><li>McAfee</li><li>Symantec</li></ul> |

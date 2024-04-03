@@ -38,7 +38,7 @@ If these commands do not work or are very slow, read the error messages and chec
 
 If your results show a connection failure, it can be a firewall issue.
 
-* Check your firewall settings to verify that connectivity is allowed for collection endpoints. Refer to [Sumo Logic Endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for firewall-related suggestions.
+* Check your firewall settings to verify that connectivity is allowed for collection endpoints. Refer to [Sumo Logic Endpoints](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for firewall-related suggestions.
 * For Windows firewalls, you can create an outbound rule to allow outbound Collector connections, and try again.
 
 These are instructions for a Windows 2008r2 system for your convenience. If you are installing on another version of Windows, follow the instructions for that version.

@@ -53,7 +53,7 @@ Use the [Collector Management API](/docs/api/collector-management) to assign an 
 |:--|:--|:--|:--|:--|:--|
 | fields | JSON Object | No |   |  JSON map of key-value fields (metadata) to apply to the Collector. To assign an ingest budget use the field _budget with its Field Value.<br/><br/>For example, if you have a budget with a Field Value of Dev_20GB, you would add:<br/>`fields=_budget=Dev_20GB`  | Modifiable |
 
-The following steps can be referenced in the [Collector Management API document for a PUT request](/docs/api/collector-management#Collector-API-Methods-and-Examples "Collector API Methods and Examples"). If you are not sure what URL endpoint to use see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
+The following steps can be referenced in the [Collector Management API document for a PUT request](/docs/api/collector-management/collector-api-methods-examples). If you are not sure what URL endpoint to use see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
 
 First make a GET request to get the Collector's JSON configuration:
 

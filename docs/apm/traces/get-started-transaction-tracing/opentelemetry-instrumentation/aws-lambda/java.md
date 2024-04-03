@@ -32,7 +32,7 @@ You'll need the following:
 
 1. Navigate to the **Layers** section and click **Add a layer**.
 
-1. In the **Choose a layer** menu, select **Specify an ARN** and paste the ARN ID for your Lambda function AWS Region. Reference the [amd64](#amd64-architecture) and [arm64](#arm64-architecture) tables for the ARN ID.  
+1. In the **Choose a layer** menu, select **Specify an ARN** and paste the ARN ID for your Lambda function AWS Region. Reference the [amd64](#sumo-logic-distro-lambda-layers-for-aws-region---amd64-x86_64-architecture) and [arm64](#sumo-logic-distro-lambda-layers-for-aws-region---arm64-arm-architecture) tables for the ARN ID.  
 
     <img src={useBaseUrl('img/traces/lambda-java1.png')} alt="Choose a layer" style={{border: '1px solid gray'}} width="800" />
 

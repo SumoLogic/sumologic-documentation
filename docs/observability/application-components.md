@@ -49,7 +49,7 @@ The Terraform script performs the following actions:
    * Manage connections
    * Manage Content
 If you want to deploy in the Admin Recommended folder, you may need [Content Admin](/docs/manage/content-sharing/admin-mode) role.
-1. Using these [instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. To identify which deployment your Sumo Logic account is using, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. Using these [instructions](/docs/manage/security/access-keys#from-the-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. To identify which deployment your Sumo Logic account is using, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 1. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 
@@ -84,7 +84,7 @@ If you want to deploy in the Admin Recommended folder, you may need [Content Adm
 ---
 **Parameter**: `sumologic_access_id`<br/>
 **Required**: Yes <br/>
-**Description**: Your Sumo Logic Access ID. See <a href="/docs/manage/security/access-keys#Create_an_access_key">Create an access key</a> for more information.
+**Description**: Your Sumo Logic Access ID. See <a href="/docs/manage/security/access-keys#create-your-access-key">Create an access key</a> for more information.
 
 ---
 **Parameter**: `sumologic_access_key`<br/>
