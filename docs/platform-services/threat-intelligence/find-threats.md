@@ -11,7 +11,7 @@ Once you [ingest threat intelligence indicators](/docs/platform-services/threat-
 
 The `threatlookup` operator allows you to search logs for matches in threat intelligence indicators. For example, use the following query to find logs in all `sec_record*` indexes with a `srcDevice_ip` attribute correlated to a threat indicator with a high confidence level (greater than `50`): 
 
- ```
+```
 _index=sec_record*
 | threatlookup srcDevice_ip
 | where _threatlookup.confidence > 50
