@@ -19,9 +19,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Armis API is a device security platform that discover devices, tracks behavior, detects threats, and takes action to protect your business.
 The Source integration ingests alert and device data from the Armis platform.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
