@@ -382,7 +382,7 @@ Shows details of non-domain users' accesses, uploads, downloads, and views.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-SharePoint-SharedContentNon-DomainsActivities.png')} alt="Microsoft Office 365 dashboards" />
 
-To see your data in this dashboard, open the queries of each panel and add your domain in the queries as mentioned [here](#Installing-the-Microsoft-Office-365-App).
+To see your data in this dashboard, open the queries of each panel and add your domain in the queries as mentioned [here](#installing-the-microsoft-office-365-app).
 
 
 **Top 10 Users Sharing Outside Domain**. See the top 10 users sharing content outside the domain in a table chart including details on user ID and frequency for the last seven days.
