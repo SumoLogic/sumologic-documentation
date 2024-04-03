@@ -50,7 +50,11 @@ Feel free to reach out to the Docs Team to discuss. We're happy to work with you
 
 ### Step 1: Fork the repository
 
-1. [Fork](https://help.github.com/articles/fork-a-repo/) the [Sumo Docs repository](https://github.com/SumoLogic/sumologic-documentation). Remember to [sync your fork](https://help.github.com/articles/syncing-a-fork/) and update branches as needed.
+1. Fork the [Sumo Docs repository](https://github.com/SumoLogic/sumologic-documentation). Remember to sync your fork and update branches as needed.
+   :::tip GitHub tips
+   * [How to fork a repo](https://help.github.com/articles/fork-a-repo/)
+   * [How to sync your fork with branches](https://help.github.com/articles/syncing-a-fork/)
+   :::
 1. Review our [README](https://github.com/SumoLogic/sumologic-documentation#readme) documentation guidelines.
 1. Create a new branch from your forked repo using a name that best describes the work or references a GitHub issue number. For example: `<your initials>-apps-gitlab`.
 
