@@ -11,9 +11,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.0  
 Updated: April 4, 2024***
 
-The Druva is a service designed primarily to respond to Ransomware attacks, identified by detecting anomalies and suspicious behavior for data protected across data sources including data center and endpoints.
-## Actions
+ Druva is a service designed primarily to respond to ransomware attacks, identified by detecting anomalies and suspicious behavior for data protected across data sources including data centers and endpoints.
 
+## Actions
 
 * **Delete Quarantine Range** *(Containment)* - Deletes the quarantine range for an infected resource. When you delete a quarantine range, all the snapshots on the resource are again available for restore and download.
 * **Delete Snapshot** *(Containment)* - Delete an infected snapshot using the snapshot ID.
@@ -24,8 +24,6 @@ The Druva is a service designed primarily to respond to Ransomware attacks, iden
 * **List Users** *(Enrichment)* - Returns the list of users in Druva inSync with their details.
 * **Quarantine Snapshots Resource** *(Containment)* - Quarantine all snapshots, or snapshots within a date range on a resource.
  Users and administrators cannot restore or download data from the quarantined snapshots.
-
-
 
 ## Change Log
 
