@@ -1,6 +1,6 @@
 ---
 slug: /platform-services/threat-intelligence/about-threat-intelligence
-title: About Threat Intelligence
+title: About Sumo Logic Threat Intelligence
 sidebar_label: About 
 description: Introduction to Sumo Logic's threat intelligence capabilities.
 ---
@@ -64,9 +64,9 @@ See [Upload formats](/docs/platform-services/threat-intelligence/upload-formats/
 
 Here is the typical workflow to set up and use threat intelligence indicators:
 
-1. A system administrator sets up services to automatically [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators). For example, install a collector such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and set up services to obtain indicators from Federal, vendor, and open services. Then ingest them using the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs. You can manually add more indicators as needed, such as your own private indicators, using the [**Threat Intelligence** tab](/docs/platform-services/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab) or the APIs.
+1. A system administrator sets up services to automatically [ingest threat intelligence indicators](#ingest-threat-intelligence-indicators) and add them to the threat intelligence data store. For example, install a collector such as the [STIX/TAXII 2 Client Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source), and set up the collector to obtain indicators from Federal, vendor, or open services. Ingested indicators appear on the [**Threat Intelligence** tab](/docs/platform-services/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab). You can manually add more indicators as needed, such as your own private indicators, using the **Threat Intelligence** tab or the [Threat Intel Ingest Management](https://api.sumologic.com/docs/#tag/threatIntelIngest) APIs.
 1. Analysts use the threat indicators data for such things as saved searches, dashboards, [manual searches](/docs/platform-services/threat-intelligence/find-threats/), [Cloud SIEM rules](/docs/platform-services/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function), and [Cloud SIEM UI](/docs/platform-services/threat-intelligence/threat-indicators-in-cloud-siem/#view-threat-indicators-in-the-cloud-siem-ui).
-1. A system administrator occasionally checks to see why a connector isn’t ingesting data, or to see how much storage all the indicators are using. They may <!--[run threatlookup with the cat search operator](/docs/search/search-query-language/search-operators/threatlookup/#run-threatlookup-with-the-cat-search-operator) to--> examine their indicators and then [delete some old or irrelevant data](/docs/platform-services/threat-intelligence/threat-intelligence-indicators/#delete-threat-intelligence-indicators).
+1. A system administrator occasionally checks to see why a connector isn’t ingesting data, or to see how much storage all the indicators are using. They may <!--[run threatlookup with the cat search operator](/docs/search/search-query-language/search-operators/threatlookup/#run-threatlookup-with-the-cat-search-operator) to--> examine their indicators, and then if needed, [delete indicators](/docs/platform-services/threat-intelligence/threat-intelligence-indicators/#delete-threat-intelligence-indicators).
 
 ## Audit logging for threat intelligence
 

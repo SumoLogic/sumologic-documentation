@@ -7,10 +7,13 @@ description: Learn how to add and manage indicators from threat intelligence sou
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+The **Threat Intelligence** tab shows the indicators that have been added to your threat intelligence data store. Use this tab to add and manage your threat intelligence indicators. You can add indicators from a number of sources, including TAXII, ThreatQ, iDefense, and many others. Threat intelligence indicators imported to Sumo Logic not only integrate with your existing core Sumo Logic deployment, but also Cloud SIEM and Cloud SOAR. 
+
+:::tip
+You can also add threat intelligence indicators using a collector or the API. See [Ingest threat intelligence indicators](/docs/platform-services/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators).
+:::
 
 ## Threat Intelligence tab
-
-Use the **Threat Intelligence** tab to add and manage threat intelligence indicators. You can add threat intelligence indicators from a number of sources, including CrowdStrike, TAXII, ThreatQ, iDefense, and many others. And threat intelligence indicators imported to Sumo Logic not only integrate with your existing core Sumo Logic deployment, but also Cloud SIEM and Cloud SOAR. 
 
 To access the **Threat Intelligence** tab, go to **Manage Data > Logs > Threat Intelligence**.
 
@@ -32,10 +35,6 @@ The default storage limit is 5 million total indicators (not including any indic
 
 To add threat intelligence indicators in the **Threat Intelligence** tab, you must upload files containing the indicators in a format that can be consumed by Sumo Logic.
 
-:::tip
-You can also add threat intelligence indicators using the API or a collector. See [Ingest threat intelligence indicators](/docs/platform-services/threat-intelligence/about-threat-intelligence/#ingest-threat-intelligence-indicators).
-:::
-
 1. In Sumo Logic, go to **Manage Data > Logs > Threat Intelligence**.
 1. Click **Add Indicators**. The dialog displays. <br/><img src={useBaseUrl('img/platform-services/threat-intelligence-add-indicators.png')} alt="Add threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
 1. Select the format of the file to be uploaded:
@@ -55,11 +54,11 @@ When you add indicators, the event is recorded in the Audit Event Index. See [Au
 
 1. In Sumo Logic, go to **Manage Data > Logs > Threat Intelligence**.
 1. Select a source in the list of sources. Details of the source appear in a sidebar.
-1. Click **Delete Indicators**. 
-1. When the following dialog appears, select which indicators you'd like to delete from the source:<br/><img src={useBaseUrl('img/platform-services/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
+1. Click the **Delete Indicators** button. 
+<!-- 1. When the following dialog appears, select which indicators you'd like to delete from the source:<br/><img src={useBaseUrl('img/platform-services/threat-intelligence-delete-indicators.png')} alt="Delete threat intelligence indicators" style={{border: '1px solid gray'}} width="500" />
    * **Delete all indicators**. Remove all indicators from the source.
-   * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the indicators.
-1. Click **Delete**.
+   * **Delete indicators matching the expression**. Enter the attribute and value to match. For example, if you want to delete indicators with certain "valid until" dates from **Sumo normalized JSON** files, for an attribute enter `validUntil` and for a value enter a date. The attributes and values you enter must match attributes and values in the indicators. -->
+1. Click **Delete** on the **Delete Indicators** dialog.
 
 :::note
 When you remove indicators, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](/docs/platform-services/threat-intelligence/about-threat-intelligence/#audit-logging-for-threat-intelligence).
