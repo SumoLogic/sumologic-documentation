@@ -11,4 +11,4 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-New - We're happy to introduce you to new partitions page enhancement, which allows you to filter the partitions based on the type of partitions - **User-Defined Partitions** and **System Partitions**. [Learn more](/docs/manage/partitions/run-search-against-partition/#filter-and-search-a-partition).
+We're happy to introduce a new partitions page enhancement which allows you to filter the partitions based on the type of partitions, either **User-Defined Partitions** or **System Partitions**. [Learn more](/docs/manage/partitions/run-search-against-partition/#filter-and-search-a-partition).
