@@ -15,7 +15,7 @@ Oracle Cloud supports the export of OCI Service logs, Audit logs, Application lo
 This section shows you how to set up a Hosted Collector and specify a Sumo Logic Source.
 
 
-<img src={useBaseUrl('img/send-data/OCI_Sumo.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="50" />
+<img src={useBaseUrl('img/send-data/OCI_Sumo.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="1800" />
 
 
 ### Configure a Hosted Collector & HTTP Source
