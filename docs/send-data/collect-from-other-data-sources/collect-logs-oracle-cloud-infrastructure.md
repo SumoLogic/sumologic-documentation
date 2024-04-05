@@ -5,6 +5,8 @@ sidebar_label: Oracle Cloud Infrastructure
 description: How to collect logs from Oracle Cloud Infrastructure.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Oracle Cloud supports the export of OCI Service logs, Audit logs, Application logs and Security logs to Sumo Logic.
 
 
@@ -13,7 +15,7 @@ Oracle Cloud supports the export of OCI Service logs, Audit logs, Application lo
 This section shows you how to set up a Hosted Collector and specify a Sumo Logic Source.
 
 
-IMAGE of setup
+<img src={useBaseUrl('img/send-data/OCI_Sumo.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="50" />
 
 
 ### Configure a Hosted Collector & HTTP Source
