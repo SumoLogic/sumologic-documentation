@@ -65,18 +65,17 @@ Now every time a object is uploaded to the **BucketForSumoLogic** bucket, a log 
     ```sh
     fn update context oracle.compartment-id <compartment-id>
     ```
-7. Update the context with the location of the registry you want to use. Replace iad with the three-digit region code for your region.
+7. Update the context with the location of the registry you want to use. Replace **iad** with the three-digit region code for your region.
     ```sh
     fn update context registry iad.ocir.io/<tenancy_name>/[YOUR-OCIR-REPO]
     ```
-8. Assuming you have created the Auth Token already, log in to the registry using the Auth Token as your password.
+8. Assuming you have created the Auth Token already, log in to the registry using the Auth Token as your password. Replace **iad** with the three-digit region code for your region.
     ```sh
     docker login iad.ocir.io
     ```
-  * Replace **iad** with the three-digit region code for your region.
-  * You are prompted for the following information:
-      * Username: \<tenancyname>/\<username>
-      * Password: Create a password
+    * You are prompted for the following information:
+        * Username: \<tenancyname>/\<username>
+        * Password: Create a password
 
 :::note
 If you are using Oracle Identity Cloud Service, your username is \<tenancyname>/oracleidentitycloudservice/\<username>.
