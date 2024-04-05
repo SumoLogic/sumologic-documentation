@@ -13,7 +13,7 @@ To safeguard content in your organization's Sumo Logic account perform the foll
 A user designated as Account Owner cannot be deleted. To transfer ownership, the account owner must do this on the **Account** page. For more information, see [Cloud Flex Legacy Accounts](/docs/manage/manage-subscription/cloud-flex-legacy-accounts) or [Sumo Logic Credits Accounts](/docs/manage/manage-subscription/sumo-logic-credits-accounts), depending on your Sumo Logic packaging.
 
 :::note
-If the account owner leaves your organization and you cannot transfer the account ownership, please [submit a support ticket](https://support.sumologic.com/hc/en-us) to transfer the account ownership.
+If the account owner leaves your organization and you cannot transfer the account ownership, please [submit a support ticket](https://support.sumologic.com/support/s) to transfer the account ownership.
 :::
 
 ## Check for allowlisted IP addresses
