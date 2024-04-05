@@ -77,15 +77,15 @@ Now every time a object is uploaded to the **BucketForSumoLogic** bucket, a log 
     * You are prompted for the following information:
         * Username: \<tenancyname>/\<username>
         * Password: Create a password
+    * Verify your setup by listing applications in the compartment.
+      ```sh
+      fn list apps
+      ```
 
 :::note
 If you are using Oracle Identity Cloud Service, your username is \<tenancyname>/oracleidentitycloudservice/\<username>.
 :::
 
-     * Verify your setup by listing applications in the compartment.
-      ```sh
-      fn list apps
-      ```
 9. Generate a ‘hello-world’ boilerplate function.
     ```sh
     fn init --runtime python sumologicfn
