@@ -24,10 +24,10 @@ This section shows you how to set up a Hosted Collector and specify a Sumo Logic
 
 You can set up any logs as input for the Service Connector Hub and ingest them into Sumo Logic. For this tutorial, we will capture Oracle Cloud Infrastructure (OCI) generated logs for write-events to an arbitrary bucket of your choice.
 
-1. In the Oracle Cloud Console, click the navigation menu, select Logging, and then select Log Groups.
-2. To create a log group, click Create Log Group.
-3. Select your compartment, add LogGroupForBucketActivity for the name and add a description. Click Create.
-4. Select Logs from the Logging menu. You will see a screen similar to below.
+1. In the Oracle Cloud Console, click the navigation menu, select **Logging**, and then select **Log Groups**.
+2. To create a log group, click **Create Log Group**.
+3. Select your compartment, add **LogGroupForBucketActivity** for the name and add a description. Click **Create**.
+4. Select **Logs** from the **Logging** menu. You will see a screen similar to below.
 
 <img src={useBaseUrl('img/send-data/OCI_Logging.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="1800" />
 
@@ -99,7 +99,6 @@ The fn init command will generate a folder called SumoLogicfn with three files i
 <details>
 <summary>func.py code</summary>
     ```python
- 
     #
     # oci-sumologic 1.0
     #
@@ -115,14 +114,9 @@ The fn init command will generate a folder called SumoLogicfn with three files i
     from fdk import response
     
     
-    # Function banner giving configuration, payload details
-    banner = "oci function : {} / event payload bytes : {} / sending to sumologic: {} / batch size: {} / logging level: {}"
-    
     # Sumologic environment variables (set in OCI Application Configuration)
     sumologic_endpoint = os.getenv('SUMOLOGIC_ENDPOINT', 'not-configured')
     max_records_per_post = int(os.getenv('MAX_RECORDS_PER_POST', '1000'))
-    is_sending = eval(os.getenv('SEND_TO_SUMOLOGIC', "True"))
-    send_as_multiline = eval(os.getenv('SEND_AS_MULT_LINE', "True"))
     
     # Enable if the function will be processing events or logs passing through OCI Streaming
     is_oci_streaming_conversion_enabled = eval(os.getenv('OCI_STREAMING_CONVERSION_ENABLED', "True"))
@@ -148,7 +142,8 @@ The fn init command will generate a folder called SumoLogicfn with three files i
         try:
     
             log_body = data.getvalue()
-            logging.info(banner.format(ctx.FnName(), len(log_body), is_sending, max_records_per_post, logging_level))
+            banner = "{} / event payload bytes: {} / batch size: {} / logging level: {}"
+            logging.info(banner.format(ctx.FnName(), len(log_body), max_records_per_post, logging_level))
     
             if is_oci_streaming_conversion_enabled:
                 log_body = convert_oci_streaming_format(log_body)
@@ -194,7 +189,7 @@ The fn init command will generate a folder called SumoLogicfn with three files i
                     batches.append(batch)
     
             for batch in batches:
-                if len(batch) == 0 or is_sending is False:
+                if len(batch) == 0:
                     continue
     
                 post_response = session.post(sumologic_endpoint, data=serialize(batch), headers=http_headers)
@@ -211,18 +206,14 @@ The fn init command will generate a folder called SumoLogicfn with three files i
     
     def serialize(batch):
         """
-        Serialize the event payload as either multiline or JSON array.
+        Serialize the event payload per Sumo Logic HTTP Source contract
         """
     
-        if send_as_multiline is True:
-            converted = ''
-            for record in batch:
-                json_string = json.dumps(record)
-                converted += json_string + '\n'
-            return converted
-    
-        else:
-            return json.dumps(batch)
+        converted = ''
+        for record in batch:
+            json_string = json.dumps(record)
+            converted += json_string + '\n'
+        return converted
     
     
     def convert_oci_streaming_format(body_bytes: bytes):
