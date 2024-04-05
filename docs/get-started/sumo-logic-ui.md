@@ -216,7 +216,7 @@ Whenever you have a question, there are a number of ways in which you can get 
    * [Collector](/release-notes-collector)
 * Search documentation
 * Visit the **Learn Page** in the Sumo Logic UI
-* Post a question on the [**Sumo Logic Community**](https://support.sumologic.com/hc/en-us/community/topics)
+* Post a question on the [**Sumo Logic Community**](https://support.sumologic.com/support/s/topiccatalog)
 * Contact [**Support**](https://support.sumologic.com/)
 * Try our **Customer Slack** channel
 

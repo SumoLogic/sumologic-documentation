@@ -166,5 +166,5 @@ Watch this tutorial to learn how to use the App Catalog.
 <br/>
 
 :::tip
-To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Apps and Integrations Forum](https://support.sumologic.com/hc/en-us/community/topics/200263058-Applications-and-Integrations). ​
+To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Apps and Integrations Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTCGWA2/applications?tabset-cabe3=2). ​
 :::

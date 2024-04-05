@@ -100,5 +100,5 @@ Here's a step-by-step tutorial about creating Sumo Logic queries.
 :::
 
 :::sumo
-For a collection of customer-created search queries and their use cases, see the [Community Query Library](https://support.sumologic.com/hc/en-us/community/topics/200396738-Query-Library).
+For a collection of customer-created search queries and their use cases, see the [Community Query Library](https://support.sumologic.com/support/s/topiccatalog).
 :::
