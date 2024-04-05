@@ -120,7 +120,7 @@ Don't just learn it - master it! Get recognized as a Sumo Logic expert by comple
 ## More Resources
 
 :::sumo Need help?
-Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/hc/en-us).
+Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/support/s).
 :::
 
 * [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source/)

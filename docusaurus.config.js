@@ -468,7 +468,7 @@ module.exports = {
             items: [
               {
                 label: 'Contact Support',
-                href: 'https://support.sumologic.com/hc/en-us',
+                href: 'https://support.sumologic.com/support/s',
               },
               {
                 label: 'Sumo Dojo Slack',
@@ -476,7 +476,7 @@ module.exports = {
               },
               {
                 label: 'Community',
-                href: 'https://support.sumologic.com/hc/en-us/community/topics',
+                href: 'https://support.sumologic.com/support/s/community/topics',
               },
             ],
             title: 'Help',
