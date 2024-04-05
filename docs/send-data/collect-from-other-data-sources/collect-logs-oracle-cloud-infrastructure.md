@@ -7,9 +7,9 @@ description: How to collect logs from Oracle Cloud Infrastructure.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Oracle Cloud supports the export of OCI Service logs, Audit logs, Application logs and Security logs to Sumo Logic. The solution architecture at a high level is as shown below:
+Oracle Cloud supports the export of Oracle Cloud Infrastructure (OCI) Service logs, Audit logs, Application logs and Security logs to Sumo Logic. The solution architecture at a high level is as shown below:
 
-<img src={useBaseUrl('img/send-data/oci-sumo.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="1800" />
+<img src={useBaseUrl('img/send-data/oci-sumo.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="800" />
 
 
 ### Configure a Hosted Collector and HTTP Source
@@ -22,7 +22,7 @@ This section shows you how to set up a Hosted Collector and specify a Sumo Logic
 
 ### Configure the logs you want to capture in OCI
 
-You can set up any logs as input for the Service Connector Hub and ingest them into Sumo Logic. For this tutorial, we will capture Oracle Cloud Infrastructure (OCI) generated logs for write-events to an arbitrary bucket of your choice.
+You can set up any logs as input for the Service Connector Hub and ingest them into Sumo Logic. For this tutorial, we will capture OCI-generated logs for write-events to an arbitrary bucket of your choice.
 
 1. In the Oracle Cloud Console, click the navigation menu, select **Logging**, and then select **Log Groups**.
 2. To create a log group, click **Create Log Group**.
@@ -31,21 +31,19 @@ You can set up any logs as input for the Service Connector Hub and ingest them i
 5. Click Enable service log and enter the following information:
    * **Service**. Select **Object Storage**.
    * **Resource**. Choose an arbitrary bucket (for example, **BucketForSumoLogic**) that you would like observed with the logs.
-   * **Log Category**. Select **Write Access Events**
+   * **Log Category**. Select **Write Access Events**.
    * **Log Name**. Enter a name for your log, for example, **logForBucketActivity**.
-   * **Log Group**. Select the **LogGroupForBucketActivity** log group for the log that you just created in the previous step.
-6. Click **Enable Log**.<br/><img src={useBaseUrl('img/send-data/oci-resource-log.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="800" />
+   * **Log Group**. Select the **LogGroupForBucketActivity** log group for the log that you just created in the previous step.<br/><img src={useBaseUrl('img/send-data/oci-resource-log.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="800" />
+6. When you're done, click **Enable Log**.
 
-:::note
 Now, every time a object is uploaded to the **BucketForSumoLogic** bucket, a log entry will be added to the **logForBucketActivity** log.
-:::
 
 
-### Configure an Oracle Function for Sending Logs to Sumo Logic
+### Configure an Oracle Function for sending logs to Sumo Logic
 
 1. In the Oracle Cloud Console, click the navigation menu and select **Solution and Platform**. Go to the **Developer Services** menu and select **Functions**.
-2. Click **Create Application** and enter a name, for example, `sumologicFnApp`.<br/><img src={useBaseUrl('img/send-data/oci-application.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="800" />
-3. Once you create the application, click your application name and select **Getting Started** from the **Resources** menu.
+2. Click **Create Application** and enter a name, for example, **sumologicFnApp**.<br/><img src={useBaseUrl('img/send-data/oci-application.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="800" />
+3. Once you create the application, click your application name, go to the **Resources** menu, and select **Getting Started**.
 4. Launch Cloud Shell.
 5. Use the context for your region.
     ```sh
@@ -67,7 +65,7 @@ Now, every time a object is uploaded to the **BucketForSumoLogic** bucket, a log
     * You are prompted for the following information:
         * **Username**. \<tenancyname>/\<username>
             * If you are using Oracle Identity Cloud Service, your username is \<tenancyname>/oracleidentitycloudservice/\<username>.
-        * **Password**. Create a password
+        * **Password**. Create a password.
     * Verify your setup by listing applications in the compartment.
       ```sh
       fn list apps
@@ -77,7 +75,7 @@ Now, every time a object is uploaded to the **BucketForSumoLogic** bucket, a log
     fn init --runtime python sumologicfn
     ```
    :::note
-   The fn init command will generate a folder called SumoLogicfn with three files inside: func.py, func.yaml, and requirements.txt.
+   The `fn init` command will generate a folder called sumologicfn with three files inside: func.py, func.yaml, and requirements.txt.
    :::
 10. Open func.py and replace the content of the file with the following code.
 <details>
@@ -264,7 +262,6 @@ For information about the format of the logs generated by the Oracle Cloud Infra
 :::
 
 </details>
-
 11. Open func.yaml and replace the content of the file with the following code.
 <details>
 <summary>func.yaml code</summary>
@@ -295,27 +292,27 @@ For information about the format of the logs generated by the Oracle Cloud Infra
     ```sh
     fn -v deploy --app sumologicFnApp --no-bump
     ```
-14. Create the following environment variable configuration(s) in the Oracle console for the function
-    * Endpoint
+14. Create the following environment variable configuration(s) in the Oracle console for the function.
+    * **Endpoint**
        * **Key**. SUMOLOGIC_ENDPOINT.
        * **Value**. \<Sumologic_HTTP_Endpoint>.
        * **Default**. not-configured.
        * **Purpose**. HTTP endpoint to send logs to Sumo.
-    * Max Records (optional)
+    * **Max Records** (optional)
        * **Key**. MAX_RECORDS_PER_POST.
        * **Default**. 1000.
        * **Purpose**. Maximum records to send for each POST. i.e, a batch size.
-    *  loremgging Level
+    *  **loremgging Level**
        * **Key**. LOGGING_LEVEL.
        * **Default**. INFO.
        * **Purpose**. Controls function logging outputs. Choices: INFO, WARN, CRITICAL, ERROR, DEBUG.
 
 
-### Create a Service Connector for Reading Logs from Logging and Triggering the Function
+### Create a Service Connector for reading logs from Logging and Triggering the OCI Function
 
-1. In the Oracle Cloud Console, click the navigation menu, and select **Solution and Platform**. Select **Service Connectors** under the **Logging** menu.
+1. In the Oracle Cloud Console, click the navigation menu, and select **Solution and Platform**. Go to the **Logging** menu and select **Service Connectors**.
 2. Click **Create Connector**, and from the Source drop-down list, select **Logging** and from the **Functions** drop-down list, select **Target**.
-3. On **Configure Source Connection**, select your compartment name, your **LogGroupForBucketActivity** log group, and your **logForBucketActivity** logs.
+3. Under the **Configure source connection** section, select your **Compartment Name**, your **LogGroupForBucketActivity** for **Log Group**, and **logForBucketActivity** for **Logs**.
 4. If you want to use audit logs, click **+Another log**, choose your compartment and add **_Audit** for Log Group.<br/><img src={useBaseUrl('img/send-data/oci-service-connector.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="1800" />
 5. If prompted to create a policy for writing to Functions, click **Create**.
    :::note
@@ -324,7 +321,7 @@ For information about the format of the logs generated by the Oracle Cloud Infra
 6. You can now visualize your logs in Sumo Logic.
 
 
-### Monitor the Function
+### Monitor the OCI Function
 
 This section shows how you can use a simple email alert to monitor the status of your solution.
 
@@ -335,9 +332,9 @@ For more details, see [Overview of Functions](https://docs.oracle.com/en-us/iaas
 
 1. In the Oracle Cloud Console, from the navigation menu in the upper-left corner, select **Application Integration**, and then select **Notifications**.
 2. Click **Create Topic** and create a topic with the name **my_function_status**.
-3. Choose your topic, click **Create Subscription** and use the following example:
+3. Choose your topic, click **Create Subscription**, and use the following example:
    * **Protocol**. Email and add create a subscription with your email.
-4. The subscription will be created in “Pending” status. You will receive a confirmation email and will need to click the link in the email to confirm your email address.
+4. The subscription will be created in "Pending" status. You will receive a confirmation email and will need to click the link in the email to confirm your email address.
 
 
 ##### Check Metrics and Create an Alarm Definition from Metrics
