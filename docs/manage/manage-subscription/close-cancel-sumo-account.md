@@ -26,9 +26,9 @@ To delete a Sumo Logic organization and close the account:
 The Sumo Logic Organization, all users and data are deleted. This cannot be undone.
 
 :::note
-If you have a self service trial account, at the end of the trial, typically 30 days, if you do not upgrade to a paid subscription, your account converts to a free plan. 
+If you have a self service trial account, at the end of the trial, typically 30 days, if you do not upgrade to a paid subscription, your account converts to a free plan.
 :::
 
 ## Cancel a Sumo Logic licensed account
 
-To cancel your organization's paid Sumo Logic account, open a ticket with [Sumo Logic Support](https://support.sumologic.com/support/s/requests/new), and we will process your request in a timely manner.
+To cancel your organization's paid Sumo Logic account, open a ticket with [Sumo Logic Support](https://support.sumologic.com/support/s), and we will process your request in a timely manner.

@@ -476,7 +476,7 @@ module.exports = {
               },
               {
                 label: 'Community',
-                href: 'https://support.sumologic.com/support/s/community/topics',
+                href: 'https://support.sumologic.com/support/s/topiccatalog',
               },
             ],
             title: 'Help',
