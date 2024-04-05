@@ -43,7 +43,7 @@ You can set up any logs as input for the Service Connector Hub and ingest them i
 
 
 :::note
-Now every time a object is uploaded to the **BucketForSumoLogic** bucket,a log entry will be added to the **logForBucketActivity** log.
+Now every time a object is uploaded to the **BucketForSumoLogic** bucket, a log entry will be added to the **logForBucketActivity** log.
 :::
 
 
