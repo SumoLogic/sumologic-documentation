@@ -22,6 +22,8 @@ This section shows you how to set up a Hosted Collector and specify a Sumo Logic
 
 ### Configure the Logs You Want to Capture in OCI
 
+You can set up any logs as input for the Service Connector Hub and ingest them into Sumo Logic. For this tutorial, we will capture Oracle Cloud Infrastructure (OCI) generated logs for write-events to an arbitrary bucket of your choice.
+
 1. In the Oracle Cloud Console, click the navigation menu, select Logging, and then select Log Groups.
 2. To create a log group, click Create Log Group.
 3. Select your compartment, add LogGroupForBucketActivity for the name and add a description. Click Create.
