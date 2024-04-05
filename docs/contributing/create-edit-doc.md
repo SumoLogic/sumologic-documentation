@@ -71,25 +71,13 @@ This will fork and submit changes to the Docs Team for review.
 1. Review our [README](https://github.com/SumoLogic/sumologic-documentation#readme) documentation guidelines.
 1. Create a new branch from your forked repo using a name that best describes the work or references a GitHub issue number. For example, if you wanted to submit a PR to edit our Elasticsearch app doc, you'd write something like: `<your initials>-apps-elasticsearch`.
 
+import Tools from '../reuse/contributing/tools.md';
+
+<Tools/>
+
 ### Step 2: Edit your doc
 
 In your new branch, edit the doc markdown file. See our [Style Guide](/docs/contributing/style-guide) to learn how to style content, add code snippets, import multimedia, and more. Doc body text content is written in GitHub-flavored markdown, with some customizations.
-
-:::tip Recommended authoring tools
-
-<details>
-<summary>If you're new to GitHub and/or writing Markdown, we recommend using the following apps (click to expand):</summary>
-
-* [GitHub Desktop](https://desktop.github.com/). Easy-to-use interface to update your local machine clone, create branches, push to GitHub, and more.
-* [VS Code](https://code.visualstudio.com/). Development application to open the repo, edit and create files, and preview pages as you write. We recommend the following extensions:
-   * Markdown All in One
-   * Markdown Preview GitHub Styling
-   * Markdown Preview Enhanced
-   * Markdown Preview Mermaid Support and Mermaid Markdown Syntax Highlighting for charts and graphs
-* [iTerm2](https://iterm2.com/). Terminal application for macOS. You can also install [Oh My Zsh](https://ohmyz.sh/) for theming.
-
-</details>
-:::
 
 ### Step 3: Preview your changes
 
@@ -111,6 +99,8 @@ import ForkRepo from '../reuse/contributing/fork-repo.md';
 
 <ForkRepo/>
 
+<Tools/>
+
 ### Step 2: Create a doc file
 
 Our docs are GitHub-flavored markdown files containing content like bulleted instructions, screenshots, tables, interactive code samples, and more.
@@ -125,18 +115,6 @@ Our docs are GitHub-flavored markdown files containing content like bulleted ins
 In your Integrated Development Environment (IDE), compose the body of your document.
 
 Refer to our [Style Guide](/docs/contributing/style-guide) for instructions on crafting and styling content, including adding code snippets, importing multimedia, and more. The body text of your document is written in GitHub-flavored markdown, with some customizations.
-
-#### Recommended authoring tools
-
-If you're new to GitHub and/or writing Markdown, we recommend using the following apps:
-
-* [VS Code](https://code.visualstudio.com/). Development application to open the repo, edit and create files, and preview pages as you write. We recommend the following extensions:
-   * Markdown All in One
-   * Markdown Preview GitHub Styling
-   * Markdown Preview Enhanced
-   * Markdown Preview Mermaid Support and Mermaid Markdown Syntax Highlighting for charts and graphs
-* [GitHub Desktop](https://desktop.github.com/). Easy-to-use interface to update your local machine clone, create branches, push to GitHub, and more.
-* [iTerm2](https://iterm2.com/). Terminal application for macOS. You can also install [Oh My Zsh](https://ohmyz.sh/) for theming.
 
 ### Step 4: Add doc to the navigation menu
 
