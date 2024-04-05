@@ -45,8 +45,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'contributing/index'},
       items: [
-        'contributing/edit-doc',
-        'contributing/create-doc',
+        'contributing/create-edit-doc',
         'contributing/remove-doc',
         'contributing/style-guide',
         'contributing/glossary',
