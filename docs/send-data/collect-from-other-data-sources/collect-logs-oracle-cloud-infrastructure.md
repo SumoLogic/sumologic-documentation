@@ -71,7 +71,7 @@ Now every time a object is uploaded to the **BucketForSumoLogic** bucket,a log e
     ```
   * Replace **iad** with the three-digit region code for your region.
   * You are prompted for the following information:
-      * Username: <tenancyname>/<username>
+      * Username: \<tenancyname>/\<username>
       * Password: Create a password
 
 :::note
