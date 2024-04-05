@@ -99,6 +99,7 @@ The fn init command will generate a folder called SumoLogicfn with three files i
 <details>
 <summary>func.py code</summary>
     ```python
+ 
     #
     # oci-sumologic 1.0
     #
