@@ -22,7 +22,7 @@ You can only use `_index` in the keyword search expression that scopes the searc
 Filter the partition depending on the type of partition using the dropdown provided above the table. Accordingly, you can view the overall allocated storage details with the percentage of storage used for the selected partition type. You can select between two type of partitions:
 
 - **User-Defined Partitions**. Type of partitions which are created by the user.
-- **System Partitions**. Type of partitions which are created from sumo to optimize the performance of the query.
+- **System Partitions**. Type of partitions which are created from Sumo Logic to optimize the performance of the query.
 
 <img src={useBaseUrl('img/partitions-data-tiers/filter-and-search-a-partition.png')} alt="filter-and-search-a-partition" style={{border:'1px solid gray'}} width="800"/>
 
