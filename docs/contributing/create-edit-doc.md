@@ -7,7 +7,7 @@ description: Learn how to create or edit a doc, write content in markdown, and s
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Iframe from 'react-iframe';
 
-Here's a high-level overview of how to create a new Sumo Logic doc.
+Discovered an error in a document? Learn how to submit a fix, along with a comprehensive guide on creating or editing a Sumo Logic document.
 
 ## Prerequisites
 
