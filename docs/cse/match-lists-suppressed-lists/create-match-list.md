@@ -15,7 +15,7 @@ Match Lists are lists of important indicators and identifiers configured by a Cl
 Here’s a use case for using a Match List to define an allow list:  Vulnerability scanners often set off false alarms in security data, as they intentionally mimic the behavior of an attacker. Given that this behavior is safe and expected, you don’t want scanner activities to fire a rule. That’s what a match list is for. You can create a Match List called “vuln_scanners” that contains the IP addresses of your scanners.
 
 :::tip
-There’s no reason you can’t use a Match List to define “deny lists” of items. However, Cloud SIEM’s Threat Intel feature is designed for exactly that purpose. Most of the time, but not always, you should use Threat Intel lists for negative indicators. For more information, see [Match Lists or Threat Intel: which to use?](#match-list-or-threat-intel-which-to-use).
+There’s no reason you can’t use a Match List to define “deny lists” of items. However, Cloud SIEM’s Threat Intel feature is designed for exactly that purpose. Most of the time, but not always, you should use Threat Intel lists for negative indicators. For more information, see [Match Lists or Threat Intel: which to use?](#match-listor-threat-intel-which-to-use).
 :::
 
 Here’s an example of a Match List in the Cloud SIEM UI, at **Content > Match Lists**. It is a list of trusted domains.  
@@ -139,9 +139,9 @@ Sumo Logic recommends the following conventions and best practices for using M
 
 ### Use Match Lists
 
-Use the Match List feature early on to get the most value from Cloud SIEM. This feature allows you to prevent rules from firing as a result of devices and activity in your environment that you know are benign. This optimizes the detection process by reducing noise in results, and helps reduce alert overload and analysis fatigue. 
+Use the Match List feature early on to get the most value from Cloud SIEM. This feature allows you to prevent rules from firing as a result of devices and activity in your environment that you know are benign. This optimizes the detection process by reducing noise in results, and helps reduce alert overload and analysis fatigue.
 
-Match Lists are not your only option for creating allowlists or denylists. For Entities, use [schema key tags](/docs/cse/match-lists-suppressed-lists/standard-match-lists) rather than Match Lists. And to suppress Signals altogether, use [Suppressed Lists](/docs/cse/match-lists-suppressed-lists/suppressed-lists). 
+Match Lists are not your only option for creating allowlists or denylists. For Entities, use [schema key tags](/docs/cse/match-lists-suppressed-lists/standard-match-lists) rather than Match Lists. And to suppress Signals altogether, use [Suppressed Lists](/docs/cse/match-lists-suppressed-lists/suppressed-lists).
 
 ### Choose appropriate Target Column
 
