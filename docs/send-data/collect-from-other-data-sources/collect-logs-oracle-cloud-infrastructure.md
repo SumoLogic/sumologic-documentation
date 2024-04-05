@@ -7,18 +7,14 @@ description: How to collect logs from Oracle Cloud Infrastructure.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Oracle Cloud supports the export of OCI Service logs, Audit logs, Application logs and Security logs to Sumo Logic.
-
-
-## Collecting logs for Cloudflare
-
-This section shows you how to set up a Hosted Collector and specify a Sumo Logic Source.
-
+Oracle Cloud supports the export of OCI Service logs, Audit logs, Application logs and Security logs to Sumo Logic. The solution architecture at a high level is as shown below:
 
 <img src={useBaseUrl('img/send-data/OCI_Sumo.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="1800" />
 
 
 ### Configure a Hosted Collector & HTTP Source
+
+This section shows you how to set up a Hosted Collector and specify a Sumo Logic Source.
 
 1. Configure a Hosted Collector or skip to the next step if you are using an existing hosted collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Configure an HTTP Logs and Metrics Source under the hosted collector. For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the HTTP Source URL.
@@ -31,7 +27,7 @@ This section shows you how to set up a Hosted Collector and specify a Sumo Logic
 3. Select your compartment, add LogGroupForBucketActivity for the name and add a description. Click Create.
 4. Select Logs from the Logging menu. You will see a screen similar to below.
 
-IMAGE
+<img src={useBaseUrl('img/send-data/OCI_Logging.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="1800" />
 
 5. Click Enable service log and enter the following information:
   * Service: Select **Object Storage**
@@ -40,6 +36,9 @@ IMAGE
   * Log Name: Enter a name for your log, for example, **logForBucketActivity**.
   * Log Group: Select the **LogGroupForBucketActivity** log group for the log that you just created in the previous step
 6. Click **Enable Log**
+
+<img src={useBaseUrl('img/send-data/OCI_Resource_Log.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="1800" />
+
 
 :::note
 Now every time a object is uploaded to the **BucketForSumoLogic** bucket,a log entry will be added to the **logForBucketActivity** log.
@@ -50,6 +49,9 @@ Now every time a object is uploaded to the **BucketForSumoLogic** bucket,a log e
 
 1. In the Oracle Cloud Console, click the navigation menu and select **Solution and Platform**. Select **Functions** under the **Developer Services** menu.
 2. Click **Create Application** and enter a name, for example, **SumoLogicFnApp**.
+
+<img src={useBaseUrl('img/send-data/OCI_Application.png')} alt="OCI to Sumo" style={{border: '1px solid gray'}} width="1800" />
+
 3. Once you create the application, click your application name and select **Getting Started** from the **Resources** menu.
 4. Launch Cloud Shell.
 5. Use the context for your region.
