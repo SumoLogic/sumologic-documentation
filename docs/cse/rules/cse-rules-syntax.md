@@ -644,7 +644,7 @@ Parameters:
 
 * `hasThreatMatch([srcDevice_ip, dstDevice_ip], confidence > 50)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50 AND source="FreeTAXII")`
-* `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" confidence > 50 AND))`
+* `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" AND confidence > 50))`
 * `hasThreatMatch([srcDevice_ip, dstDevice_ip], confidence > 50, expired_indicators)`
 
 #### Best practice
