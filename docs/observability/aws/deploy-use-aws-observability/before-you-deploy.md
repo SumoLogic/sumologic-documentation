@@ -32,7 +32,7 @@ This page describes prerequisites and guidelines for deploying Sumo Logic’s AW
 * The AWS Observability solution comes with pre-packaged alerts in the form of Sumo Logic Monitors. To understand more about their capabilities please visit the Monitors page.
 * For AWS services exporting to Cloudwatch Logs, make sure logs are exported to log groups
   * RDS - Enable publishing of logs to cloudwatch by following [instructions](/docs/integrations/amazon-aws/rds/#collect-amazon-rds-cloudwatch-logs).
-  * API Gateway - Enable Access Logs for each respective API by following instructions in Step 3 of [Collect access logs for AWS API Gateway](](/docs/integrations/amazon-aws/api-gateway/#collect-access-logs-for-aws-api-gateway)). Make sure you have the following prefix `/aws/apigateway/<apiid>/<stagename>` while creating log group.
+  * API Gateway - Enable Access Logs for each respective API by following instructions in Step 3 of [Collect access logs for AWS API Gateway](/docs/integrations/amazon-aws/api-gateway/#collect-access-logs-for-aws-api-gateway). Make sure you have the following prefix `/aws/apigateway/<apiid>/<stagename>` while creating log group.
   * AWS Lambda - If you are exporting logs to your custom log group, make sure you have the following prefix `/aws/lambda/<function name>` while creating log group.
 * The AWS Solution does not enable detailed or enhanced metrics collection by default
   * ECS - Enable enhanced metric for respective cluster, refer [docs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-ECS-cluster.html).
