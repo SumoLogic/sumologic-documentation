@@ -642,13 +642,36 @@ Parameters:
 
 **Examples**
 
-* `hasThreatMatch([srcDevice_ip])`
-* `hasThreatMatch([srcDevice_ip, dstDevice_ip])`
-* `hasThreatMatch([srcDevice_ip], confidence > 50)`
+* `hasThreatMatch([srcDevice_ip, dstDevice_ip], confidence > 50)`
 * `hasThreatMatch([srcDevice_ip], confidence > 50 AND source="FreeTAXII")`
 * `hasThreatMatch([srcDevice_ip], source="s1" OR (source="s2" confidence > 50 AND))`
-* `hasThreatMatch([srcDevice_ip], expired_indicators)`
-* `hasThreatMatch([srcDevice_ip], confidence > 50, all_indicators)`
+* `hasThreatMatch([srcDevice_ip, dstDevice_ip], confidence > 50, expired_indicators)`
+
+#### Best practice
+
+As a best practice, always include filtering to narrow your search to just the types desired (that is, `type=`). This will ensure that your search results are not overly broad.
+
+For example:
+* `hasThreatMatch([dstDevice_ip], confidence > 1 AND (type ='ipv4-addr:value' OR type='ipv6-addr:value'))` 
+* `hasThreatMatch([file_hash_imphash,file_hash_md5,file_hash_pehash,file_hash_ssdeep,file_hash_sha1,file_hash_sha256], confidence > 1 AND type = 'file:hashes')` 
+* `hasThreatMatch([device_hostname, srcDevice_hostname, dstDevice_hostname, http_hostname, http_referrerHostname, bro_ssl_serverName, bro_ntlm_domainame, bro_ssl_serverName_rootDomain, dns_queryDomain, dns_replyDomain, fromUser_authDomain, http_referrerDomain, http_url_rootDomain, http_url_fqdn], confidence > 1 AND (type='domain-name:value' OR type='url'))` 
+* `hasThreatMatch([http_url], confidence > 1 AND type='url')` 
+* `hasThreatMatch([srcDevice_ip], confidence > 1 AND (type ='ipv4-addr:value' OR type='ipv6-addr:value'))`
+
+Following are the standard indicator types you can filter on:
+* `domain-name:value`. Domain name. 
+* `email-addr:value`. Email address. 
+* `file:hashes`. File hash. 
+* `file:name`. File name. 
+* `ipv4-addr:value`. IPv4 IP address. 
+* `ipv6-addr:value`. IPv6 IP address. 
+* `mac-addr:value`. Mac address name. 
+* `process:name`. Process name. 
+* `url:value`. URL. 
+* `user-account:user-id`. User ID. 
+* `user-account:login`. Login name. 
+
+For more information about indicator types, see [Upload Formats for Threat Intelligence Indicators](/docs/platform-services/threat-intelligence/upload-formats).
 
 ### haversine
 
