@@ -241,7 +241,7 @@ This section explains how to collect logs from MongoDB Atlas for mongo version 6
 
 Sumo Logic provides a solution which pulls logs and metrics from MongoDB Atlas with API calls. You can configure the log types to be collected, and the logs and metrics are then forwarded to Sumo Logic’s HTTP endpoint.
 
-By default, the collection starts from the current date and time, but this setting is also configurable. For more information, see the [Advanced Configuration](#Advanced-Configuration) options.
+By default, the collection starts from the current date and time, but this setting is also configurable. For more information, see the [Advanced Configuration](#advanced-configuration) options.
 
 ### Step 1: Acquire Authentication Info from MongoDB Atlas Portal
 
@@ -366,30 +366,30 @@ This task makes the following assumptions:
 	     pip3 install sumologic-mongodb-atlas
 	     ```
 3. Create a `mongodbatlas.yaml` configuration file in the home directory and fill in the parameters as shown in the following example.
-```bash title="mongodbatlas.yaml"
-SumoLogic:
-  HTTP_LOGS_ENDPOINT: <Paste the HTTP Logs source URL from step 2.>
-  HTTP_METRICS_ENDPOINT: <Paste the HTTP Metrics source URL from step 2.>
+   ```bash title="mongodbatlas.yaml"
+   SumoLogic:
+     HTTP_LOGS_ENDPOINT: <Paste the HTTP Logs source URL from step 2.>
+     HTTP_METRICS_ENDPOINT: <Paste the HTTP Metrics source URL from step 2.>
 
-MongoDBAtlas:
-  ORGANIZATION_ID: <Paste the Organization ID from step 1.>
-  PROJECT_ID: <Paste the Project ID from step 1.>
-  PRIVATE_API_KEY: <Paste the Private Key from step 1.>
-  PUBLIC_API_KEY: <Paste the Public Key from step 1.>
-```
+   MongoDBAtlas:
+     ORGANIZATION_ID: <Paste the Organization ID from step 1.>
+     PROJECT_ID: <Paste the Project ID from step 1.>
+     PRIVATE_API_KEY: <Paste the Private Key from step 1.>
+     PUBLIC_API_KEY: <Paste the Public Key from step 1.>
+   ```
 4. Create a cron job to run the collector every 5 minutes, (use the `crontab -e` option). Do one of the following:
    * **For Python 2**, add the following line to your crontab:
-   ```bash
-   */5 * * * *  /usr/bin/python -m sumomongodbatlascollector.main > /dev/null 2>&1
-   ```
+     ```bash
+     */5 * * * *  /usr/bin/python -m sumomongodbatlascollector.main > /dev/null 2>&1
+     ```
    * **For Python 3**, add the following line to your crontab:
-   ```bash
-   */5 * * * *  /usr/bin/python3 -m sumomongodbatlascollector.main > /dev/null 2>&1
-   ```
+     ```bash
+     */5 * * * *  /usr/bin/python3 -m sumomongodbatlascollector.main > /dev/null 2>&1
+     ```
 5. Configuring collection for multiple projects (assuming you are already collecting Atlas data for one project). This task requires that you do the following:
    * Stop the collection of OrgEvents in the second SAM app deployment because these events are global and are already captured by first collector.
    * Change the `DBNAME` so that state (keys) maintained (bookkeeping) in the database (key value store) are not in conflict.
-	 * [Configure the script on a Linux machine](#Configure_the_script_on_a_Linux_machine), then go to your configuration file.
+	 * Configure the script on a Linux machine, then go to your configuration file.
 	 * Change the `DB_NAME` and comment out `EVENTS_ORG` as shown in the following example.
     ```
     SumoLogic:
@@ -459,7 +459,10 @@ MongoDBAtlas:
     Collection:
       DBNAME: "newmongodbatlas"
     ```
-Example execution of second yaml file: `/usr/bin/python3 -m sumomongodbatlascollector.main <path-of-second-yaml-file>`
+
+```sh title="Example execution of second yaml file"
+/usr/bin/python3 -m sumomongodbatlascollector.main <path-of-second-yaml-file>
+```
 
 ### Step 4: Configure Webhooks for Alerts Collection
 

@@ -8,8 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/virustotal.png')} alt="virustotal" width="100"/>
 
-***Version: 1.10  
-Updated: Mar 4, 2024***
+***Version: 1.11  
+Updated: April 4, 2024***
 
 Perform threat intelligence evidence gathering with VirusTotal.
 
@@ -26,6 +26,7 @@ Perform threat intelligence evidence gathering with VirusTotal.
 * **URL Reputation** (*Enrichment*) - Gather reputation information for multiple URLs.
 * **File Scan** **V2** (*Enrichment*) - Acquire information about a specific file without saving the report.
 * **URL Scan V2** (*Enrichment*) - Obtain information about a particular URL without storing the report.
+* **Search VirusTotal** (*Enrichment*) - Search for File Hash, URL, Domain, IP address and comments by tags.
 
 ## Category
 
@@ -56,3 +57,5 @@ Threat Intelligence-Reputation
     + Removed leading/trailing spaces
 * July 25, 2023 (v1.8) - Updated Integration Resource Fields
 * March 4, 2024 (v1.10) - Updated code for compatibility with Python 3.12
+* April 4, 2024 (v1.11) New action added:
+    + Search VirusTotal

@@ -6,7 +6,7 @@ tags:
   - cloud-to-cloud
   - stix
   - taxii
-description: Learn how to set up a STIX/TAXII 1.1 client to collect threat intelligence indicators into the Sumo Logic environment.
+description: Learn how to set up a STIX/TAXII 1.x client to collect threat intelligence indicators into the Sumo Logic environment.
 ---
 
 import CodeBlock from '@theme/CodeBlock';
@@ -21,29 +21,29 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-[STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients. This Sumo Logic source supports collecting indicators from STIX/TAXII 1.1. 
+[STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients. This Sumo Logic source supports collecting indicators from STIX/TAXII 1.x. 
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 :::sumo[Best Practice]
-This source only supports STIX/TAXII 1.1. Sumo Logic recommends using our [STIX/TAXII 2.x source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source/) instead as it is the current version of STIX/TAXII.
+This source only supports STIX/TAXII 1.x. Sumo Logic recommends using our [STIX/TAXII 2.x source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/stix-taxii-2-client-source/) instead as it is the current version of STIX/TAXII.
 :::
 
 ## Data collected
 
-This source collects [threat intelligence indicators](/docs/platform-services/threat-intelligence-indicators/) from a vendor's STIX/TAXII 1.1 endpoints. This means the specific endpoints we collect data from are the endpoints defined in the [TAXII standard](https://oasis-open.github.io/cti-documentation/taxii/intro). Vendor APIs must follow the standard. The source will collect all indicators from the TAXII server when it runs for the first time and it will check for updates once an hour. This one-hour polling interval can be adjusted in the source configuration.
+This source collects [threat intelligence indicators](/docs/platform-services/threat-intelligence-indicators/) from a vendor's STIX/TAXII 1.x endpoints. This means the specific endpoints we collect data from are the endpoints defined in the [TAXII standard](https://oasis-open.github.io/cti-documentation/taxii/intro). Vendor APIs must follow the standard. The source will collect all indicators from the TAXII server when it runs for the first time and it will check for updates once an hour. This one-hour polling interval can be adjusted in the source configuration.
 
 ## Setup
 
 ### Vendor configuration
 
 :::note
-The threat intel vendor must follow the STIX/TAXII 1.1 standards.
+The threat intel vendor must follow the STIX/TAXII 1.x standards.
 :::
 
-1. Identify a vendor who uses the STIX/TAXII 1.1 standard for sharing threat intelligence indicators.
+1. Identify a vendor who uses the STIX/TAXII 1.x standard for sharing threat intelligence indicators.
 1. Follow their documentation to obtain the following information:
    * The TAXII Discovery URL
    * Your authentication credentials if required
