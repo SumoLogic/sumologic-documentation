@@ -58,3 +58,6 @@ The log level of a log line is stored under the `_loglevel` field. You can overr
 
 <img src={useBaseUrl('img/search/get-started-search/search-page/add-field-extraction-rule.png')} alt="Add field extraction rule" width="400"/>
 
+:::note
+ Log level detection is for qualitative purposes only and will not be perfect. So it is not recommended to use the `_loglevel` field for routing data to different data tiers based on its value.
+:::

@@ -10,7 +10,7 @@ searches and provide troubleshooting tips. 
 
 ## Does Sumo Logic let me get alerts from a specific static IP address?
 
-Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
+Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/support/s).
 
 :::note
 The [Test Connection feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
@@ -100,7 +100,7 @@ See also, [What Happens When a Scheduled Search is Suspended?](#what-happens-whe
 
 ### What else can I do? 
 
-For assistance with Scheduled Search issues, contact [Sumo Logic Support](https://support.sumologic.com/hc/en-us). 
+For assistance with Scheduled Search issues, contact [Sumo Logic Support](https://support.sumologic.com/support/s). 
 
 
 ## How to Prevent your Scheduled Search from Timing Out
@@ -236,4 +236,4 @@ If you would like to reactivate the Scheduled Search immediately without waitin
 
 #### What else can I do?
 
-For assistance with Scheduled Search issues, contact [Sumo Logic Support](https://support.sumologic.com/hc/en-us). 
+For assistance with Scheduled Search issues, contact [Sumo Logic Support](https://support.sumologic.com/support/s). 

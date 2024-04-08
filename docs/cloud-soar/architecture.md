@@ -28,6 +28,8 @@ Cloud SOAR design and architecture follows Cybersecurity Industry standards and 
 
 Cloud SOAR offers a patent-pending Automated Responder Knowledge (DF-ARK) module which applies machine learning to historical responses and threats. It recommends relevant Playbooks, paths of action to expedite the process, and responses to manage and mitigate similar incidents with better response time.
 
+Cloud SOAR provides static egress for Cloud executions. IP addresses can be entered into the allowlist. For a list of Cloud SOAR addresses by region, contact [Support](https://support.sumologic.com/support/s/).
+
 <img src={useBaseUrl('img/cloud-soar/image3.png')} alt="architecture" style={{border: '1px solid gray'}} width="800"/>
 
 ## Automation Bridge
