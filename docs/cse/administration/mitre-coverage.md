@@ -50,7 +50,7 @@ To open the MITRE ATT&CK Coverage page, select **Content > MITRE ATT&CK Coverage
 1. [**Cloud SIEM Rules**](#cloud-siem-rules). Click to filter on standard Cloud SIEM rules. 
 1. [**User Rules**](#user-rules). Click to filter on rules created by your organization.
 1. [**Coverage**](#coverage). Click to filter on coverage provided (high to none).
-1. [**Filter text in tiles**](#filter-text-in-tiles). Determine what to show in tiles on the page.
+1. [**Visual Settings**](#visual-settings). Determine how tiles look on the page.
 1. **Technique Coverage**. The number of techniques covered. Note that it is impossible to get 100% coverage, because some techniques are undetectable by their very nature.
 1. **Sub-Technique Coverage**. The number of sub-techniques covered.
 1. **Coverage Type**. Key to the colors indicating coverage:
@@ -83,6 +83,21 @@ Select the following for details:
 * **Sub-Techniques**. See the sub-techniques for that technique.
 * **Rules**. See a list of all the rules that contribute to coverage for the technique. Click a rule in the list to open the rule.
 
+### Visual Settings
+
+Click this button <img src={useBaseUrl('img/cse/mitre-visual-settings-button.png')} alt="Visual settings button" style={{border: '1px solid gray'}} width="30"/> to launch the **Visual Settings** dialog. 
+
+<img src={useBaseUrl('img/cse/mitre-visual-settings.png')} alt="Visual settings" style={{border: '1px solid gray'}} width="300"/>
+
+Use the following to configure visual settings:
+* **Tile Details**
+   * **Show Rule Count**. Show the number of rules covering the technique.
+   * **Show Technique ID**. Show the ID of the technique in the tile.
+   * **Show Technique Name**. Show the name of the technique in the tile.
+   * **Show Filtered**. Show only techniques that are filtered.
+* **Tile Colors**. Click the colored box to the left of **High**, **Medium**, **Low**, or **None** to select a new color to apply.<br/><img src={useBaseUrl('img/cse/mitre-color-palette.png')} alt="Color palette" style={{border: '1px solid gray'}} width="300"/>
+* **Reset to Default**. Reset visuals to the default settings.
+
 ## Filters
 
 <img src={useBaseUrl('img/cse/mitre-filters.png')} alt="MITRE ATT&CK filters" style={{border: '1px solid gray'}} width="800"/>
@@ -93,7 +108,6 @@ Select filters to narrow your search:
 * [**Cloud SIEM Rules**](#cloud-siem-rules)
 * [**User Rules**](#user-rules)
 * [**Coverage**](#coverage)
-* [**Filter text in tiles**](#filter-text-in-tiles)
 
 ### MITRE TTP
 
@@ -129,7 +143,7 @@ Use the **Cloud SIEM Rules** filter to filter on standard Cloud SIEM rules. For 
 
 <img src={useBaseUrl('img/cse/mitre-cloud-siem-rules.png')} alt="Cloud SIEM Rules filter" style={{border: '1px solid gray'}} width="350"/>
 
-To search Cloud SIEM rules:
+Use the following settings to filter Cloud SIEM rules:
 * **Search**. Search for rules by name.
 * **Enabled** / **Disabled**. Every rule has a toggle that lets you enable or disable it: <br/><img src={useBaseUrl('img/cse/mitre-enabled-rule-toggle.png')} alt="Enabled rule toggle" style={{border: '1px solid gray'}} width="100"/>   <img src={useBaseUrl('img/cse/mitre-disabled-rule-toggle.png')} alt="Disabled rule filter" style={{border: '1px solid gray'}} width="100"/> <br/>Use this filter to see only those rules that are enabled, disabled, or both.
 * **Production**. See rules actively used in production.
@@ -141,7 +155,7 @@ Use the **User Rules** filter to filter on rules created by your organization.
 
 <img src={useBaseUrl('img/cse/mitre-user-rules.png')} alt="User Rules filter" style={{border: '1px solid gray'}} width="350"/>
 
-To search user rules:
+Use the following settings to filter user rules:
 * **Search**. Search for rules by name.
 * **Enabled** / **Disabled**. Every rule has a toggle that lets you enable or disable it: <br/><img src={useBaseUrl('img/cse/mitre-enabled-rule-toggle.png')} alt="Enabled rule toggle" style={{border: '1px solid gray'}} width="100"/>   <img src={useBaseUrl('img/cse/mitre-disabled-rule-toggle.png')} alt="Disabled rule filter" style={{border: '1px solid gray'}} width="100"/> <br/>Use this filter to see only those rules that are enabled, disabled, or both.
 * **Production**. See rules actively used in production.
@@ -159,18 +173,6 @@ Select the values to filter:
 * **Low**. 1-3 rules
 * **None**. No rules
 * **Not detectable**. Not detectable by a SIEM
-
-### Filter text in tiles
-
-Use this filter to determine what to show in tiles on the page. 
-
-<img src={useBaseUrl('img/cse/mitre-filter-text-in-tiles.png')} alt="Filter text in tiles" style={{border: '1px solid gray'}} width="150"/>
-
-Select from the following list:
-* **Show Rule Count**. Shows the number of rules covering the technique.
-* **Show Technique ID**. Shows the technique ID.
-* **Show Technique Name**. Shows the name of the technique.
-* **Show Filtered**. Shows only techniques that are filtered.
 
 ## Audit logging for MITRE ATT&CK coverage
 
