@@ -44,7 +44,7 @@ Watch the following micro lesson to learn about Cloud Infrastructure Security fo
 Use of [CloudQuery](https://www.cloudquery.io/) logs with Cloud Infrastructure Security is in preview. To participate in the preview, reach out to your Sumo Logic Account Executive.
 
 To use CloudQuery with Cloud Infrastructure Security: 
-1. Select the CloudQuery source when you [install Cloud Infrastructure Security](#install-from-the-app-catalog).
+1. Install the CloudQuery source in section 8.1 of the Cloud Formation Template when you [install Cloud Infrastructure Security](#install-from-the-app-catalog).
 1. After installation, you can view information in the following dashboards that are populated with data from the CloudQuery source: 
     * [Infrastructure Overview](#infrastructure-overview)
     * [Security Control Failures Investigation](#security-control-failures-investigation)
