@@ -44,9 +44,8 @@ Watch the following micro lesson to learn about Cloud Infrastructure Security fo
 Use of [CloudQuery](https://www.cloudquery.io/) logs with Cloud Infrastructure Security is in preview. To participate in the preview, reach out to your Sumo Logic Account Executive.
 
 To use CloudQuery with Cloud Infrastructure Security: 
-1. Configure the [CloudQuery source](https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source/). 
-2. Select the CloudQuery source when you [install Cloud Infrastructure Security](#install-from-the-app-catalog).
-3. After installation, you can view information in the following dashboards that are populated with data from the CloudQuery source: 
+1. Select the CloudQuery source when you [install Cloud Infrastructure Security](#install-from-the-app-catalog).
+1. After installation, you can view information in the following dashboards that are populated with data from the CloudQuery source: 
     * [Infrastructure Overview](#infrastructure-overview)
     * [Security Control Failures Investigation](#security-control-failures-investigation)
     * [Security Control Failures Overview](#security-control-failures-overview)
@@ -240,6 +239,8 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
 
        <details>
        <summary>GuardDuty</summary>
+
+       In this section, you configure Amazon GuardDuty. If fields are missing, or you need to change them, do the following:
        * **4.1 GuardDuty service configuration**
           * **GuardDuty Regions**. The regions from which GuardDuty Data should be sent.
        * **4.2 GuardDuty Sumo log source configuration**
@@ -251,7 +252,9 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
 
        <details>
        <summary>CloudTrail</summary>
-       * **5.1 CloudTrail service configuration**. 
+       
+       In this section, you configure AWS CloudTrail. If fields are missing, or you need to change them, do the following:
+       * **5.1 CloudTrail service configuration** 
           * **CloudTrail Regions**. The region from which CloudTrail Data should be sent. 
              :::note
              If you have multiple regions, on the AWS side [configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html) to deliver log files from the regions to a single S3 bucket for a single account, and use that S3 bucket in **5.3 CloudTrail S3 bucket configuration** below.
@@ -268,6 +271,8 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
 
        <details>
        <summary>Security Hub</summary>
+
+       In this section, you configure AWS Security Hub. If fields are missing, or you need to change them, do the following:
        * **6.1 Security Hub Service Configuration**. 
           * **Security Hub Regions**. The regions from which Security Hub data should be sent.
        * **6.2 Security Hub Sumo Log Source configuration**.
@@ -277,6 +282,8 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
 
        <details>
        <summary>WAF</summary>
+
+       In this section, you configure the AWS Web Application Firewall (WAF). If fields are missing, or you need to change them, do the following:
        * **7.1 AWS Firewall Manager Policy Regions Configuration**.
           * **AWS WAF Policy Regions**. The region from which AWS WAF data should be sent. 
              :::note
@@ -295,6 +302,8 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
 
        <details>
        <summary>Network Firewall</summary>
+
+       In this section, you configure AWS Network Firewall. If fields are missing, or you need to change them, do the following:
        * **7.3 Firewall Manager Details - S3 Source Network Firewall Configuration**.
           * **Create Sumo Logic Amazon S3 Logs Source for Network Firewall**.  **Yes** is the default. Select **No** if you already have a source.
           * **Sumo Logic Amazon S3 Logs Source Category Name for Network Firewall**. The source category name to be created. If you selected **No** in the previous field, enter an existing source category name. 
@@ -306,6 +315,23 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
           * **Network Firewall Delivery Bucket Prefix**. The Network Firewall Log Delivery S3 bucket prefix.
           * **Name of existing S3 Bucket which contains the Network Firewall Logs**. If you selected **Yes** in the preceding field in this section for creating an S3 bucket, leave this blank. If you selected **No** in the preceding field for creating an S3 bucket, provide an existing S3 Bucket name which contains Network Firewall Logs. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-7a.png')} alt="Firewall configuration" style={{border: '1px solid gray'}} width="700"/>
        </details>
+
+              <details>
+       <summary>CloudQuery</summary>
+
+       In this section, you have the choice to create a [CloudQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source/) in Sumo Logic. If fields are missing, or you need to change them, do the following:
+       * **8.1 Configure CloudQuery C2C Source**
+          * **Setup CloudQuery Source at Org Level**. Select **Yes** to set up the CloudQuery source in the Sumo Logic platform at the organization level, which collects the data of multiple AWS services.
+          * **CloudQuery logs source category name**. The source category name to be created (for example, `aws/cis/cloudquery/logs`).
+          * **AWS Access Key**. Enter your AWS access key. Retrieve this from your AWS account. (See [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).)
+          * **AWS Secret Key**. Enter your AWS secret key. Retrieve this from your AWS account. (See [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).)
+          * **AWS Role ARN**. Enter the AWS Role ARN of the admin account. (See [CloudQuery documentation](https://www.cloudquery.io/blog/deploying-cloudquery-into-aws-org).)
+          * **AWS Member Role Name**. Enter AWS Member Role name created in all org accounts. (See [CloudQuery documentation](https://www.cloudquery.io/blog/deploying-cloudquery-into-aws-org).)
+          * **CloudQuery Regions**. Select the AWS regions to collect data from in a comma-separated list. The source will collect data from *all* regions by default, or you can enter the list of required AWS regions as follows: `eu-north-1,eu-west-3,eu-west-2,eu-west-1,ap-northeast-2,ap-northeast-1,sa-east-1,ca-central-1,ap-southeast-1,ap-southeast-2,eu-central-1,us-east-1,us-east-2,us-west-1,us-west-2`.
+          * **CloudQuery Services**. Select the AWS services to collect data from in a comma-separated list. The source will collect data from *all* regions by default, or you can enter the list of required AWS services as follows: `apigateway,ecs,ec2,lambda,autoscaling,s3,elb,rds,dynamodb,elasticache,redshift,sns,sqs,cloudfront,elasticbeanstalk,eks,accessanalyzer,account,acm,backup,cloudtrail,cloudwatch,codebuild,config,directconnect,dms,ecr,efs,elasticsearch,emr,guardduty,iam,kms,lightsail,route53,sagemaker,secretsmanager,securityhub,ssm,waf,wafv2`.
+          * **How Frequently to Poll AWS Service(s)**. Set how frequently to poll AWS Services inventory in hours. The default is **12**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-cloud-query-config.png')} alt="CloudQuery configuration" style={{border: '1px solid gray'}} width="700"/>
+       </details>
+
 
 1. Under **Permissions**, in **IAM role - optional**, choose the IAM role for CloudFormation to use for all operations performed on the stack. The role must have permissions to set up the necessary Lambdas, S3 buckets, Kenesis streams, and other objects needed in the CloudFormation template, as well as access to the appropriate logs. If your AWS role does not have the necessary permissions, see the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html) for information on configuring a policy to provide permissions. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions.png')} alt="Create Stack button" style={{border: '1px solid gray'}} width="700"/>
 1. Under **Capabilities and transforms**, select the acknowledgement boxes.
