@@ -42,7 +42,7 @@ The collector will always perform some level of work, whether it is scanning the
 The CPU Target value can be set in three ways:
 
 1. Update the **CPU Target** value by editing the collector under **Manage Data** > **Collection** > **Collection**.
-1. Update the collector configuration via the [Collector Management API](/docs/api/collector-management#Collector-API-Methods-and-Examples).  
+1. Update the collector configuration via the [Collector Management API](/docs/api/collector-management/collector-api-methods-examples).  
 1. Either supply the **targetCPU** parameter to the [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties.md) file or **-VtargetCPU** [command line argument](/docs/send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) during the initial installation and registration of the collector.
 
 ## How do you know targeting is applied?

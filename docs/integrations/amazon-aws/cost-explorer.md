@@ -51,7 +51,7 @@ account={{account}} region CostUsd CostType StartDate EndDate MetricType Granula
 
 ## Create a AWS Cost Explorer Collector Source
 
-When you create an AWS Cost Explorer collector Source, you add it to an existing Sumo Logic hosted collector. Before creating the Source, you'll need to add a Field-in-Field Schema, Field Extraction Rules, and [identify or create the hosted collector you want to use](/docs/send-data/hosted-collectors#Create-a-Hosted-Collector).
+When you create an AWS Cost Explorer collector Source, you add it to an existing Sumo Logic hosted collector. Before creating the Source, you'll need to add a Field-in-Field Schema, Field Extraction Rules, and [identify or create the hosted collector you want to use](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 ## Field-in-Field Schema
 

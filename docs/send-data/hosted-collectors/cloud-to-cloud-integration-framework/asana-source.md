@@ -18,9 +18,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Asana Audit Logs API Integration ingests events from [Asana Audit Logs API](https://developers.asana.com/reference/audit-log-api). Asana can help you to break down large work into manageable tasks. It's a comprehensive work management tool that allows you to track project and task progress, share files, comments, and notes, and keep track of deadlines.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 

@@ -29,7 +29,7 @@ Sumo Logic tests the service on several browsers to ensure a consistent experie
 * Single core, 512MB RAM
 * 8GB disk space
 
-[Configure Limits for Collector Caching](/docs/send-data/collector-faq#configure-limits-collector-caching) to adjust the required disk space.
+[Configure Limits for Collector Caching](/docs/send-data/collector-faq/#configure-limits-for-collector-caching) to adjust the required disk space.
 
 ### Memory guidelines
 

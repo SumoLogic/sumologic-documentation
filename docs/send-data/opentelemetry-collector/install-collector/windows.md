@@ -122,6 +122,18 @@ HTTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
 HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
 ```
 
+You can do it using the following Powershell command:
+
+```powershell
+Set-ItemProperty `
+    -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\OtelcolSumo' `
+    -Name Environment `
+    -Type MultiString `
+    -Value "FTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>",
+    "HTTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>",
+    "HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>"
+```
+
 To exclude a specific domain or IP address from using the proxy, you can add it to the `NO_PROXY` environment variable. For example, to exclude the domain `sumologic.com` from using the proxy, you can add the following line:
 
 ```text

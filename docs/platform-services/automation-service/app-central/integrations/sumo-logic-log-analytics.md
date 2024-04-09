@@ -1,30 +1,30 @@
 ---
-title: Sumo Logic
+title: Sumo Logic Log Analytics
 description: ''
 tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-log-analytics" width="100"/>
 
-***Version: 1.22  
-Updated: Mar 4, 2024***
+***Version: 1.23  
+Updated: Apr 5, 2024***
 
 Integration with Sumo Logic platform for logs, metrics, and monitors.
 
 ## Actions
 
-* **Search Sumo Logic** (*Enrichment*) - Query data from Sumo Logic.
-* **Search Sumo Logic Daemon** *(Daemon)* - Automatically search the Sumo Logic with given query.
-* **Aggregates Sumo Logic Daemon** *(Daemon)* - Automatically pull Aggregates of Sumo Logic with given query.
-* **Search Metrics** *(Enrichment)* - Query Metrics from Sumo Logic.
+* **Search Sumo Logic** (*Enrichment*) - Query data from Sumo Logic Log Analytics.
+* **Search Sumo Logic Daemon** *(Daemon)* - Automatically search the Sumo Logic Log Analytics with given query.
+* **Aggregates Sumo Logic Daemon** *(Daemon)* - Automatically pull Aggregates of Sumo Logic Log Analytics with given query.
+* **Search Metrics** *(Enrichment)* - Query Metrics from Sumo Logic Log Analytics.
 * **Search Output Mapping** *(Enrichment)* - Parsing the output of a **Search Sumo Logic** action.
 * **Resolve Alert** *(Notification)* - Resolve Alert.
 
-## Sumo Logic configuration
+## Sumo Logic Log Analytics configuration
 
-1. To configure the Sumo Logic, log in to the application, expand the user info from the bottom left menu and click **Preferences**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-1.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="300"/>
+1. To configure the Sumo Logic Log Analytics, log in to the application, expand the user info from the bottom left menu and click **Preferences**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-1.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="300"/>
 1. From the preferences screen, in the section **My Access Keys**, click on **Add Access Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="600"/>
 1. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="500"/>
 1. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
@@ -33,7 +33,7 @@ Integration with Sumo Logic platform for logs, metrics, and monitors.
    :::
 1. Click **Done** after you copy the Access ID and Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-4.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="500"/>
 
-## Sumo Logic in Automation Service and Cloud SOAR
+## Sumo Logic Log Analytics in Automation Service and Cloud SOAR
 
 1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-5.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="400"/>
 1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-6.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="400"/>
@@ -96,3 +96,9 @@ Integration with Sumo Logic platform for logs, metrics, and monitors.
 * November 28, 2023 (v1.20)
     + Updated **Search Sumo Logic** Action (Added Table View as an output for use in notes/tasks)
 * March 4, 2024 (v1.22) - Updated code for compatibility with Python 3.12
+* April 5, 2024 (v1.23)
+    + The integration formerly known as "Sumo Logic" has been renamed to "Sumo Logic Log Analytics"
+    + Added a new field *API Rate Limit Sleep* to the Integration resource (If API rate limit exceeded, wait for 1 second and then attempt a retry, with a maximum wait time of 10)
+    + Search Sumo Logic Action updated:
+        - If the Aggregates field is selected, the action will fetch only aggregates. If the Aggregates field is not selected, it will fetch only messages.
+        - Added a new field *Escape Backslashes* if selected it will Escape all Backslashes in Query

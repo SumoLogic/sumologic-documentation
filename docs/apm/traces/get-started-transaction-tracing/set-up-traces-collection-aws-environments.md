@@ -25,8 +25,8 @@ AWS provides a few alternative scenarios for setting up the Collector. Document
 ### Amazon Elastic Container Service (ECS)
 
 In the case of ECS, there are two possible deployment configurations. Sumo Logic Distro can be installed on the cluster of [EC2](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/getting-started-ecs-ec2.html)
-instances ([Scenario 1 below](#scenario-1-aws-opentelemetry-collector-installation-on-ecs-ec2)) or ran on [AWS Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html)
-([Scenario 2 below](#scenario-2-aws-opentelemetry-collector-installation-on-ecs-fargate)).
+instances ([Scenario 1 below](#scenario-1-sumo-logic-distribution-for-opentelemetry-collector-installation-on-ecs-ec2)) or ran on [AWS Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html)
+([Scenario 2 below](#scenario-2-sumo-logic-distribution-for-opentelemetry-collector-installation-on-ecs-fargate)).
 
 The installation and configuration are just a few steps, described below.
 

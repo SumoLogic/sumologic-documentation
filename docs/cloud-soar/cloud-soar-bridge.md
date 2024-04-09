@@ -141,7 +141,7 @@ With bridge ALIAS, it is possible to distinguish which integration resources wil
 
 ### Automation bridge update
 
-For Ubuntu and CentOS/RedHat, the update process works as the installation process. Follow the same steps described in [Automation bridge installation](#automation-bridge-installation) above.
+For Ubuntu and CentOS/RedHat, the update process works as the installation process. Follow the same steps described in [Automation bridge installation](#automation-installation) above.
 
 :::note
 If you are not using the SIEM:

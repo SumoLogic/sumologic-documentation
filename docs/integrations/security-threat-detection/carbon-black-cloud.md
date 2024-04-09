@@ -100,7 +100,7 @@ import CollBegin from '../../reuse/collection-should-begin-note.md';
 
 #### S3 Source for alert logs
 
-Follow the steps in [S3 Source for event logs](#S3-Source-for-event-logs) above to create another S3 source that will collect alert logs from the S3 bucket. When creating the source, assign it its own source category value, and set the **Path Expression** to: `alerts/*`
+Follow the steps in [S3 Source for event logs](#s3-source-for-event-logs) above to create another S3 source that will collect alert logs from the S3 bucket. When creating the source, assign it its own source category value, and set the **Path Expression** to: `alerts/*`
 
 ### Step 3: Configure Carbon Black Cloud to send alert and event logs to S3
 

@@ -12,7 +12,7 @@ Setting a **Muting Schedule** allows you to pause alert notifications from monit
 * **Off-Business Hours**. If your monitors reflect performance thresholds that are only applicable during business hours, such monitors might generate false alarms during off-business hours.
 
 ## Prerequisites
-Make sure you've enabled the [**View Muting Schedules** and **Manage Muting Schedules**](/docs/manage/users-roles/roles/role-capabilities/#alerts) user permissions, which allow you to define and edit a muting schedule.
+Make sure you've enabled the [**View Muting Schedules** and **Manage Muting Schedules**](/docs/manage/users-roles/roles/role-capabilities/#alerting) user permissions, which allow you to define and edit a muting schedule.
 
 If fine-grained permissions are enabled for your account, you'll need the **Manage Muting Schedules** and **Admin Monitors** capabilities. If not enabled, you'll need the **Manage Muting Schedules** and **Manage Monitors** capabilities.
 

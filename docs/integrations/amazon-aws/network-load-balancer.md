@@ -41,7 +41,7 @@ Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**netw
 
 ### Metric Rules
 
-Create the following Metric Rule for the AWS/NetworkELB namespace if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metric-rule).
+Create the following Metric Rule for the AWS/NetworkELB namespace if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
 
 ```sql title="Rule 1*"
 Rule name: AwsObservabilityNLBMetricsAddonEntityRule

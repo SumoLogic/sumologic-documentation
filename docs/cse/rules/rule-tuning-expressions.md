@@ -48,7 +48,7 @@ import Iframe from 'react-iframe'; 
 
 ## Writing a tuning expression
 
-Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and Cloud SIEM [rules language](/docs/cse/rules/cse-rules-syntax) functions. For more information, see [About rule expressions](/docs/cse/rules/about-cse-rules#About_rule_expressions).
+Writing a tuning expression is just like writing a rule expression. A tuning expression can use metadata, record fields, and Cloud SIEM [rules language](/docs/cse/rules/cse-rules-syntax) functions. For more information, see [About rule expressions](/docs/cse/rules/about-cse-rules#about-rule-expressions).
 
 ## Example tuning expression
 
@@ -66,7 +66,7 @@ Here’s what the example tuning expression looks like in the Cloud SIEM UI.
     <br/><img src={useBaseUrl('img/cse/annotated-expression.png')} alt="Annotated expression" width="800"/>
 1. **Name**. Enter a name for the tuning expression. 
 1. **Description**. Enter a description of the tuning expression.
-1. In the **Tune [selected|all] Rules** section: 
+1. In the **Tune [selected|all] Rules** section:
    * To apply the expression to all rules, choose **all**.
    * To apply the expression to some but not all rules, choose **selected**. In the **Type to add a rule area**, enter a search string that matches Rule names or Rule IDs. To search by Rule name, you can enter a string that the Rule name contains. To search by Rule ID, you can enter the complete ID, or a subset of the ID, starting with the leading character.  The name and ID of rules that match will appear on the page..
 1. In the **To \[include|exclude\]... area**:
