@@ -8,8 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-cloud-siem" width="100"/>
 
-***Version: 1.12  
-Updated: Apr 5, 2024***
+***Version: 1.13  
+Updated: Apr 8, 2024***
 
 Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic Cloud SIEM integration.
 
@@ -64,7 +64,7 @@ Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic
 1. Populate the resource fields as indicated.
     * **Label**. The name of the resource.
     * **Sumo Logic API URL**. URL to the API of the Cloud SIEM instance `https://api.sumologic.com`.
-    * **Sumo Logic CSE URL**. URL to the CSE instance `https://service.sumologic.com/sec`.
+    * **Sumo Logic Cloud SIEM URL**. URL to the Cloud SIEM instance `https://service.sumologic.com/sec`.
     * **Access ID**. The access ID that you copied earlier.
     * **Access Key**. The access key that you copied earlier.
 1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-8.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
@@ -121,3 +121,4 @@ SIEM
         - Custom Field Internal Name (This field is only used within the Close Insight Trigger as a custom Field for Insight ID in Cloud SOAR, for Example: opt_1)
         - Resolution Status (This field is only used within the Close Insight Trigger as a resolution reason for closing the Insight, for Example: Resolved)
         - Closure Comments (This field is only used within the Close Insight Trigger as a closure comment for Insight)
+* April 8, 2024 (v1.13) - Update the resource field name from "Sumo Logic CSE URL" to "Sumo Logic Cloud SIEM URL"

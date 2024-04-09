@@ -40,13 +40,14 @@ To generate an API token:
 1. Sign in to the SentinelOne Management Console with Admin user credentials.
 1. In the Management Console, click **Settings**.
 1. In the **Settings** view, click **Users**.
-1. Click **New User**.
-1. Enter the information for the new console user.
+1. Click **Service Users**.
+1. Click **Actions** dropdown and select **Create New Service User**.
+1. Enter the information for the new service user.
 1. In **Role**, select **Admin**.
 1. Click **Save**.
 1. Log in to the SentinelOne Management Console with the credentials of the new user.
 1. Navigate to **Settings > Users**.
-1. Select the newly added console user.
+1. Select the newly added service user.
 1. Click **Options**.
 1. Click **Generate API token**.
 1. Copy or download this API Token.
