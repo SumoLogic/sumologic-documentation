@@ -56,8 +56,10 @@ To search logs that contain correlations to threat intelligence indicators, you 
 See [Upload formats](/docs/platform-services/threat-intelligence/upload-formats/) for the format to use when uploading indicators using the **Threat Intelligence** tab or APIs.
 
 :::note
+* Sumo Logic's threat intelligence data store only ingests simple threat indicators, not complex indicators that outline a series of steps or entities that make up an attack. Nor does it ingest actors, malware, or other object types. 
 * The limit of the number of indicators that can be uploaded in one API call is 100.
 * When you add indicators, the event is recorded in the Audit Event Index. See [Audit logging for threat intelligence](#audit-logging-for-threat-intelligence).
+
 :::
 
 ## Typical workflow
