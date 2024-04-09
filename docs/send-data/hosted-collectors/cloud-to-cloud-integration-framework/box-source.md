@@ -18,9 +18,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Box API integration ingests events from the [Get Events API](https://developer.box.com/reference/get-events/). It securely stores the required authentication, scheduling, and state tracking information.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
@@ -40,7 +40,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 ### Source configuration
 
-When you create a Box Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors#Create_a_Hosted_Collector).
+When you create a Box Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a Box Source:
 1. In Sumo Logic, navigate to **Manage Data > Collection** and open the **Collection** tab.

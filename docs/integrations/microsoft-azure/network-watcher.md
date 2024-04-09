@@ -121,7 +121,7 @@ To deploy the ARM template-based Blob Storage collection, refer to step 3 of [Co
 
 In this step, you enable NSG flow logs with the Azure portal.
 
-* Follow the steps detailed in the [Microsoft Azure Network Watcher documentation](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal#enable-nsg-flow-log) to enable the flow logs to point to the storage account you configured in [Configure Azure Storage Account](#Configure_Azure_Storage_Account) section.
+* Follow the steps detailed in the [Microsoft Azure Network Watcher documentation](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal#enable-nsg-flow-log) to enable the flow logs to point to the storage account you configured in the [Configure Azure Storage Account](#step-1-configure-azure-storage-account) section.
 
 ### Troubleshooting
 

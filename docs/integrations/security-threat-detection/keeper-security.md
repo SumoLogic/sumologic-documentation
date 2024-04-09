@@ -47,7 +47,7 @@ To send Keeper logs to Sumo Logic, do the following:
 2. Select the **External Logging** tab.
 3. Click the Sumo Logic **Setup** button.
 4. In the Sync Settings dialog, enter the **HTTP Source Address** from [step 4](#HTTP-Source-Address) of the previous task.
-5. Continue with [verifying logging](#Step_4:_Verify_logging).
+5. Continue with [verifying logging](#step-4-verify-logging).
 
 
 ### Step 4: Verify logging

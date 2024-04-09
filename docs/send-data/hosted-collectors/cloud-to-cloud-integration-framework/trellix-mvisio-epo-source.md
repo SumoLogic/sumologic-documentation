@@ -19,9 +19,9 @@ Trellix is a cybersecurity company that provides cloud-based security solutions 
 
 mVision ePO is a key component of the Trellix security management platform, which provides unified management of endpoint, network, and data security. This can reduce incident response time, strengthen protection, simplify and automate risk and security management, and provide end-to-end network visibility and security.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 

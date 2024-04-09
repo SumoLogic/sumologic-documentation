@@ -21,7 +21,7 @@ In the steps below, you’ll configure a Sumo Logic [scheduled search](/docs/ale
 
 ## Before you start
 
-Identify your source of inventory data and review the [Cloud SIEM inventory schema](#cse-inventory-schema) below. The schema identifies the attributes supported for the two different Cloud SIEM inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
+Identify your source of inventory data and review the [Cloud SIEM inventory schema](#cloud-siem-inventory-schema) below. The schema identifies the attributes supported for the two different Cloud SIEM inventory types: user and computer. For each attribute in the user or host schema, identify the field from your inventory source that maps to the schema attribute. You’ll use this mapping when you set up a Webhook in [Step 2](#step-2-create-a-webhook-connection) below.
 
 
 ## Limitations
@@ -62,7 +62,7 @@ In this step, you create a webhook that points to the HTTP source.
 
 ## Step 3: Create search query
 
-In this step, you create a log query that extracts inventory-related fields from your inventory source. Refer to [Cloud SIEM inventory schema](#cse-inventory-schema) for the inventory attributes that are supported for host and user objects.
+In this step, you create a log query that extracts inventory-related fields from your inventory source. Refer to [Cloud SIEM inventory schema](#cloud-siem-inventory-schema) for the inventory attributes that are supported for host and user objects.
 
 
 ## Step 4: Create a Scheduled Search

@@ -40,7 +40,7 @@ To collect logs for Zscaler Private Access, perform these steps, detailed in the
 To collect logs for ZPA, do the following in Sumo Logic:
 
 1. Configure a [Hosted Collector](/docs/send-data/hosted-collectors).
-2. Perform the steps in[ Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+2. Perform the steps in[ Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/cloud-syslog-source#configure-a-cloudsyslogsource). and configure the following Source fields:
     * **Name**. (Required) A name is required. Description is optional.
     * **Source Category**. (Required) [Provide a realistic Source Category example for this data type]. The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).
 3. In the Advanced section, specify the following configurations:

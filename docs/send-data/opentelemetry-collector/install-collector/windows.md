@@ -122,6 +122,18 @@ HTTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
 HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>
 ```
 
+You can do it using the following Powershell command:
+
+```powershell
+Set-ItemProperty `
+    -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\OtelcolSumo' `
+    -Name Environment `
+    -Type MultiString `
+    -Value "FTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>",
+    "HTTP_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>",
+    "HTTPS_PROXY=<PROXY-ADDRESS>:<PROXY-PORT>"
+```
+
 To exclude a specific domain or IP address from using the proxy, you can add it to the `NO_PROXY` environment variable. For example, to exclude the domain `sumologic.com` from using the proxy, you can add the following line:
 
 ```text
@@ -183,4 +195,8 @@ crypto/internal/backend.init.0()
         crypto/internal/backend/cng_windows.go:34 +0x85
 ```
 
-This means you are running the Sumo Otelcol FIPS binary in a non-FIPS environment. The FIPS binary is built using the `requirefips` mode, which causes the collector to only work in a FIPS-compliant environment and fail to start otherwise. See [documentation](https://github.com/microsoft/go/blob/microsoft/main/eng/doc/fips/README.md#build-option-to-require-fips-mode).
+This means you are running the Sumo Logic Otelcol FIPS binary in a non-FIPS environment. The FIPS binary is built using the `requirefips` mode, which means that the collector only works in a FIPS-compliant environment and will fail to start otherwise.
+
+To verify if your instance is in FIPS mode, open your registry editor and navigate to **HKLM\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy\Enabled**.
+* If the Enabled value is `1`, then FIPS is enabled successfully.
+* If the Enabled value is `0`, this means FIPS is not enabled. See the [Build option to require FIPS mode](https://github.com/microsoft/go/blob/microsoft/main/eng/doc/fips/README.md#build-option-to-require-fips-mode) documentation to enable it.

@@ -108,7 +108,7 @@ Once you reach the limit of 200 active searches, attempting an additional search
 
 This limit applies only to Search Job API searches, and does not take into account searches run from the Sumo UI, scheduled searches, or dashboard panel searches that are running at the same time. If the search job is not kept alive by API requests every 20-30 seconds, it is canceled.
 
-You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Manual deletion of searches helps maintain a low count of active searches, of reaching the Search Job API throttling limit. See [Deleting a search job](#deleting-a-search-job) for details.
+You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Manual deletion of searches helps maintain a low count of active searches, of reaching the Search Job API throttling limit. See [Deleting a search job](#delete-a-search-job) for details.
 
 ## Process flow
 
@@ -931,6 +931,8 @@ https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80
 
 </details>
 
+</details>
+
 ## Bash this Search Job
 
 You can use the following script to exercise the API.
@@ -1005,4 +1007,4 @@ JOB_ID=$(echo $RESULT | sed 's/^.*"id":"\(.*\)".*$/\1/')
 echo Search job deleted, id: $JOB_ID
 ```
 
-</details>
+

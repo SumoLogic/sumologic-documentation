@@ -103,11 +103,9 @@ Opening an incident from any section of Cloud SOAR will display the Incident Det
 <img src={useBaseUrl('img/cloud-soar/image148.png')} alt="Incident VIP section" style={{border: '1px solid gray'}} width="300"/>
 
 
-The Incident VIP Section displays high-level details about a specific incident. You can also take actions such as
-add additional investigators or close the incident from this section. To view all available actions, click the vertical ellipsis to the left of the cogwheel. You can change the owner of the incident, change the folder where the incident is housed, export the Incident details via PDF, DOC, or [Custom Report](#custom-reports), and clone or permanently delete the incident.
+The Incident VIP Section displays high-level details about a specific incident. You can also take actions such as add additional investigators or close the incident from this section. To view all available actions, click the vertical ellipsis to the left of the cogwheel. You can change the owner of the incident, change the folder where the incident is housed, export the Incident details via PDF, DOC, or [custom report](/docs/cloud-soar/legacy/legacy-cloud-soar-main-menu/#custom-reports), and clone or permanently delete the incident.
 
-To customize the details displayed in the Incident VIP Section, click the cogwheel at the top-right of the section. A new screen will be presented which will allow for adding and deleting of incident detail fields. To
-add a new field, you will click on the **+** sign next to the field to be added. Once all the desired fields are added, they can easily be rearranged in the desired order by dragging and dropping into place. To remove a field, simply click the **x** next to the field to be removed. Once all the details have been added and are in place, click **Apply**.
+To customize the details displayed in the Incident VIP Section, click the cogwheel at the top-right of the section. A new screen will be presented which will allow for adding and deleting of incident detail fields. To add a new field, you will click on the **+** sign next to the field to be added. Once all the desired fields are added, they can easily be rearranged in the desired order by dragging and dropping into place. To remove a field, simply click the **x** next to the field to be removed. Once all the details have been added and are in place, click **Apply**.
 
 ### Incident Properties
 
