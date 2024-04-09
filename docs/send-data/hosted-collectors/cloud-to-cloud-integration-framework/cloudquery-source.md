@@ -61,8 +61,8 @@ To configure a CloudQuery Source:
 1. Select the configuration type from the given two options: Account Level and Organization Level.
 1. **AWS Access Key ID**. Enter the Access Key ID collected from the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 1. **AWS Secret Access Key**. Enter the Secret Access Key collected from the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
-1. **Admin Role ARN (Organization Level only)**. Enter the full ARN of the Admin Role collected from the CloudQuery AWS role deployment steps.
-1. **Member Role Name (Organization Level only)**. Enter the member role name collected from the CloudQuery AWS role deployment steps.
+1. **Admin Role ARN (Organization Level only)**. Enter the full ARN of the Admin Role collected from the [CloudQuery AWS role deployment](https://www.cloudquery.io/blog/deploying-cloudquery-into-aws-org) steps.
+1. **Member Role Name (Organization Level only)**. Enter the member role name collected from the [CloudQuery AWS role deployment](https://www.cloudquery.io/blog/deploying-cloudquery-into-aws-org) steps.
 1. **Regions**. Identify and enter your Region based on your Base URL.
 1. **Services**. Enter the type of service from which the data needs to be collected.
 1. By default, **Polling Interval** is set to 12 hours.
