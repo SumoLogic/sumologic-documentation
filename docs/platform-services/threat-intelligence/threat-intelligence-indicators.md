@@ -27,8 +27,8 @@ To access the **Threat Intelligence** tab, go to **Manage Data > Logs > Threat I
 1. **Indicators**. The number of threat intelligence indicators included in the file. 
 
 :::note
-* The "CrowdStrike provided by Sumo Logic (s_CrowdStrike)" source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name. For more information, see [CrowdStrike Threat Intelligence source](/docs/platform-services/threat-intelligence/crowdstrike-threat-intelligence/).
-The default storage limit is 5 million total indicators (not including any indicators provided by Sumo Logic such as the s_CrowdStrike source).
+* The "CrowdStrike provided by Sumo Logic (s_CrowdStrike)" source is a default source and cannot be changed or deleted. When performing searches against this source, use "s_CrowdStrike" as the source name. For more information, see [CrowdStrike Threat Intelligence](/docs/platform-services/threat-intelligence/crowdstrike-threat-intelligence/).
+* The default storage limit is 5 million total indicators (not including any indicators provided by Sumo Logic such as the s_CrowdStrike source).
 :::
 
 ## Add indicators in the Threat Intelligence tab
