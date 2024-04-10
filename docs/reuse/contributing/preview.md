@@ -6,4 +6,4 @@ Before proceeding, you'll need to preview your changes.
 
 This constructs and deploys a local version of the Sumo Logic Docusaurus site. Our site relies on Docusaurus, a static site generator. It creates your site as basic static HTML, JavaScript, and CSS files.
 
-We exclusively use Yarn for all installations and builds. Avoid using NPM commands for package installations or updates.
+We exclusively use [Yarn](https://classic.yarnpkg.com/en/) for all installations and builds. Avoid using NPM commands for package installations or updates.
