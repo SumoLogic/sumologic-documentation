@@ -990,7 +990,7 @@ Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/ma
 * To add a specific page, you include the directory path and topic id from the frontmatter. For example, this page is `contributing/style-guide`.
 * To add a section within a section, use a category section with page links in it (see below example).
 * To add an index for a section, create an index.md page in the folder. Give it a `slug: name` where the name is the folder for the entire section like contribution-guide. In the category, use a link line with the folder name and index for example: `link: {type: 'doc', id: 'contributing/index'},`.
-* To add a new page, make note of the file path and id. For example, this document is located in the folder `contributing` with an id of `create-document`. When adding this file to the sidebar, it would be added to the `contributing/create-document`.
+* To add a new page, make note of the file path and id. For example, this document is located in the folder `contributing` with an id of `create-document`. When adding this file to the sidebar, it would be added to the `contributing/create-edit-doc`.
    <details>
    <summary>Example: add <code>contribution/create-document</code> to sidebars.ts</summary>
 
@@ -1004,7 +1004,7 @@ Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/ma
          collapsed: false,
          link: {type: 'doc', id: 'contributing/index'},
          items: [
-           'contributing/create-document',
+           'contributing/create-edit-doc',
            'contributing/build-deploy',
            'contributing/translations',
            {
