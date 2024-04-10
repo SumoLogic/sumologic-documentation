@@ -13,7 +13,7 @@ import Iframe from 'react-iframe';
 With a single Hosted Collector, you can create and configure Sources to collect data from any number of Sources, for example:
 
 * Cloud-to-Cloud collection from AWS, Azure, Google Cloud Platform, and more SaaS tools
-* Send data directly to Sumo endpoint using your custom collection method
+* Send data directly to a Sumo endpoint using your custom collection method
 
 Data collection flow for S3 buckets and HTTP requests:<br/>![team built hosted diagram.png](/img/send-data/team-built-hosted-diagram.png)
 
