@@ -320,7 +320,9 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
               <details>
        <summary>CloudQuery</summary>
 
-       In this section, you have the choice to create a [CloudQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source/) in Sumo Logic. If fields are missing, or you need to change them, do the following:
+       In this section, you have the choice to create a [CloudQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source/) in Sumo Logic. (This functionality is in [preview](#cloudquery-preview). If would like to know more about the feature, reach out to your Sumo Logic Account Executive.) 
+       
+       If fields are missing, or you need to change them, do the following:
        * **8.1 Configure CloudQuery C2C Source**
           * **Setup CloudQuery Source at Org Level**. Select **Yes** to set up the CloudQuery source in the Sumo Logic platform at the organization level, which collects the data of multiple AWS services.
           * **CloudQuery logs source category name**. The source category name to be created (for example, `aws/cis/cloudquery/logs`).
@@ -480,16 +482,6 @@ The **Security Control Failures - AWS Security Hub** dashboard shows resources t
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures.png')} alt="Security Control Failures - AWS Security Hub dashboard" width="600"/>
 
-#### Security Control Failures Investigation
-
-The **Security Control Failures Investigation** dashboard provides a detailed view for the [**Security Control Failures Overview**](#security-control-failures-overview) dashboard and helps you navigate and prioritize the most important misconfigurations in your environment. 
-
-:::note
-This dashboard is in [preview](#cloudquery-preview). If you see only empty panels in the dashboard and would like to know more about the feature, reach out to your Sumo Logic Account Executive. 
-:::
-
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures-investigation.png')} alt="Security Control Failures Investigation dashboard" width="600"/>
-
 #### Security Control Failures Overview
 
 The **Security Control Failures Overview** dashboard shows you misconfigurations in your environment that may leave you vulnerable to attackers. These checks are run natively by Sumo Logic to find blind spots in your AWS infrastructure. 
@@ -499,6 +491,16 @@ This dashboard is in [preview](#cloudquery-preview). If you see only empty panel
 ::: 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures-overview.png')} alt="Security Control Failures Overview dashboard" width="600"/>
+
+#### Security Control Failures Investigation
+
+The **Security Control Failures Investigation** dashboard provides a detailed view for the [**Security Control Failures Overview**](#security-control-failures-overview) dashboard and helps you navigate and prioritize the most important misconfigurations in your environment. 
+
+:::note
+This dashboard is in [preview](#cloudquery-preview). If you see only empty panels in the dashboard and would like to know more about the feature, reach out to your Sumo Logic Account Executive. 
+:::
+
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures-investigation.png')} alt="Security Control Failures Investigation dashboard" width="600"/>
 
 ### Suspicious Activity dashboards
 
