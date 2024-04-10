@@ -26,10 +26,13 @@ The following event types are available to collect:
 * infrastructure
 * network
 * page
+* connection
+* incident
+* endpoint
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
@@ -50,7 +53,7 @@ To obtain a Netskope REST API v2 auth token, do the following:
 
 1. Log in to Netskope as the Tenant Admin.
 1. Go to the API portion of the Netskope, **Settings** > **Tools** > **Rest API v2**.
-1. Click "New Token", provide the token name and expiration duration, then add the following endpoints with READ privilege: `/api/v2/events/dataexport/events/alert`, `/api/v2/events/dataexport/events/page`, `/api/v2/events/dataexport/events/infrastructure`, `/api/v2/events/dataexport/events/application`, `/api/v2/events/dataexport/events/network`, `/api/v2/events/dataexport/events/audit`, and `/api/v2/events/data/alert`
+1. Click "New Token", provide the token name and expiration duration, then add the following endpoints with READ privilege, depending on the events that you want to collect from: `/api/v2/events/dataexport/events/alert`, `/api/v2/events/dataexport/events/page`, `/api/v2/events/dataexport/events/infrastructure`, `/api/v2/events/dataexport/events/application`, `/api/v2/events/dataexport/events/network`, `/api/v2/events/dataexport/events/audit`, `/api/v2/events/dataexport/events/connection`, `/api/v2/events/dataexport/events/incident`, `/api/v2/events/dataexport/events/endpoint`, and `/api/v2/events/data/alert`.
 1. Copy the token in the next dialog box and save it somewhere as it won't be visible after.
 
 #### Netskope REST API v1 (Deprecated)
@@ -86,7 +89,7 @@ To configure a Netskope Source:
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
 1. Enter your Netskope customer specific **Tenant ID**. Do not provide the entire URL, just the Tenant ID.
 1. Enter the Netskope **API Token** you want to use to authenticate requests.
-1. **Event Types** (Optional). By default, all event types are collected. You can specify certain event types to collect. Click in the text area to view and select from the following options, **All**, **Page**, **Application**, **Infrastructure**, **Audit**, and **Network**. Alerts are always collected. The **All** option indicates you want Page, Application, Infrastructure, and Audit event types collected. If this field is empty all event types are collected.
+1. **Event Types** (Optional). By default, all event types are collected. You can specify certain event types to collect. Make sure to have the corresponding token privileges to the event types. If this field is empty, all event types are collected. Be aware that if you want to collect all event types, and a new event type is added in the future, your token might need to be updated accordingly.
 1. When you are finished configuring the Source, click **Submit**.
 
 ## Metadata fields
@@ -118,7 +121,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
 | tenantID | String | Yes | `null` | Netskope customer specific Tenant ID. Do not provide the entire URL, just the Tenant ID. |  |
 | apiToken | String | Yes | `null` | The Netskope API Token you want to use to authenticate requests. |  |
-| eventTypes | Array of Strings | No | all | Defines the types of events to collect. Accepted values are all, page, application, infrastructure, audit, and network. Alerts are always collected. |  |
+| eventTypes | Array of Strings | No | all | Defines the types of events to collect. Accepted values are page, application, infrastructure, audit, network, connection, incident, endpoint. Alerts are always collected. |  |
 
 ### JSON example
 

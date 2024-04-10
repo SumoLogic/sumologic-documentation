@@ -1,17 +1,17 @@
 ---
-title: Sumo Logic CSE
+title: Sumo Logic Cloud SIEM
 description: ''
 tags: [ ]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic-cse.png')} alt="sumo-logic-cse" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-cloud-siem" width="100"/>
 
-***Version: 1.11  
-Updated: Mar 4, 2024***
+***Version: 1.13  
+Updated: Apr 8, 2024***
 
-Utilize CSE entities to correlate Signals and Insights through Sumo Logic CSE integration.
+Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic Cloud SIEM integration.
 
 ## Actions
 
@@ -42,16 +42,20 @@ Utilize CSE entities to correlate Signals and Insights through Sumo Logic CSE in
 * **Update Insight** *(Notification)* - Update the insight Assignee, Status, Severity, and Tags.
 * **Update Insight Status** *(Enrichment)* - Update the insight status.
 * **Update Insight Tag Trigger** *(Trigger)* - Trigger action that is executed whenever an Incident is edited.
+* **Get Match List** (*Enrichment*) - Get a Match List.
+* **List Match List Items** (*Enrichment*) - Get a list of Match List Items.
+* **List Match List** (*Enrichment*) - Get the list of Match Lists.
+* **Sumo Logic Match List Items Daemon** *(Daemon)* - Automatically pull a list of Match List Items.
 
-## Sumo Logic CSE configuration
+## Sumo Logic Cloud SIEM configuration
 
-1. To configure the Sumo Logic CSE, log into the application, expand the user info from the bottom left menu and click **Preferences**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-1.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="300"/>
+1. To configure the Sumo Logic Cloud SIEM, log into the application, expand the user info from the bottom left menu and click **Preferences**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-1.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="300"/>
 1. From the preferences screen, in the section **My Access Keys**, click on **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="600"/>
 1. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
 1. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
 1. Click **Done** after you copy the Access ID and Access Key.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-4.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
 
-## Sumo Logic CSE in Automation Service and Cloud SOAR
+## Sumo Logic Cloud SIEM in Automation Service and Cloud SOAR
 
 1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-5.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="300"/>
 1. In the Automation section, on the left menu, click **Integrations**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-6.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="300"/>
@@ -59,8 +63,8 @@ Utilize CSE entities to correlate Signals and Insights through Sumo Logic CSE in
 1. The integration details will appear. Click on the **"+"** button to add new Resource. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-7.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="500"/>
 1. Populate the resource fields as indicated.
     * **Label**. The name of the resource.
-    * **Sumo Logic API URL**. URL to the API of the CSE instance `https://api.sumologic.com`.
-    * **Sumo Logic CSE URL**. URL to the CSE instance `https://service.sumologic.com/sec`.
+    * **Sumo Logic API URL**. URL to the API of the Cloud SIEM instance `https://api.sumologic.com`.
+    * **Sumo Logic Cloud SIEM URL**. URL to the Cloud SIEM instance `https://service.sumologic.com/sec`.
     * **Access ID**. The access ID that you copied earlier.
     * **Access Key**. The access key that you copied earlier.
 1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-cse/sumo-logic-cse-8.png')} style={{border:'1px solid gray'}} alt="sumo-logic-cse" width="400"/>
@@ -105,3 +109,16 @@ SIEM
 * February 7, 2024 (v1.10)
     * Fixed issue in the "Add Comment To Insight" action where line breaks in the "Insight Comment" field were removed upon submission
 * March 4, 2024 (v1.11) - Updated code for compatibility with Python 3.12
+* April 5, 2024 (v1.12)
+    + The integration formerly known as "Sumo Logic CSE" has been renamed to "Sumo Logic Cloud SIEM"
+    + Added a new field *API Rate Limit Sleep* to the Integration resource (If API rate limit exceeded, wait for 1 second and then attempt a retry, with a maximum wait time of 10)
+    * New Actions added:
+        - Get Match List
+        - List Match List Items
+        - List Match List
+        - Sumo Logic Match List Items Daemon
+    * For *Close Insight Trigger* added three fields in Integration resource:
+        - Custom Field Internal Name (This field is only used within the Close Insight Trigger as a custom Field for Insight ID in Cloud SOAR, for Example: opt_1)
+        - Resolution Status (This field is only used within the Close Insight Trigger as a resolution reason for closing the Insight, for Example: Resolved)
+        - Closure Comments (This field is only used within the Close Insight Trigger as a closure comment for Insight)
+* April 8, 2024 (v1.13) - Update the resource field name from "Sumo Logic CSE URL" to "Sumo Logic Cloud SIEM URL"

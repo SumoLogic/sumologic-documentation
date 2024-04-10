@@ -183,7 +183,7 @@ annotations:
       * In the tags section [inputs.exec.tags]:
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: “oracle”` - This value identifies the database system.
-   * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 
@@ -226,9 +226,9 @@ Pivoting to Tracing data from Entity Inspector is possible only for “Oracle ad
 * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
 * `db_system: “oracle”` - This value identifies the database system.
 
-For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
-1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app) here.
 1. Verify logs in Sumo Logic.
 1. **(Optional) Collecting Oracle Logs from a Log File**. Follow the steps below to capture Oracle logs from a log file on Kubernetes.
 1. Determine the location of the Oracle log file on Kubernetes. This can be determined from the Oracle.conf for your Oracle cluster along with the mounts on the Oracle pods.
@@ -495,11 +495,11 @@ Custom filter examples:
 5. Click **Add**.
 6. Click Import and then copy-paste the above JSON to import monitors.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Oracle folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Oracle folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors/create-monitor).
 
 ### Method B: Using a Terraform script
 
-1. **Generate a Sumo Logic access key and ID**. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+1. **Generate a Sumo Logic access key and ID**. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#from-the-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**.
 3. **Download the Sumo Logic Terraform package for Oracle alerts**. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Oracle). You can either download it through the “git clone” command or as a zip file.
 4. **Alert Configuration**. After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/Oracle/**. Edit the **Oracle.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
@@ -557,7 +557,7 @@ email_notifications = [
     1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Oracle/` and run `terraform init`. This will initialize Terraform and will download the required components.
     2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
     3. Run `terraform apply`.
-7. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+7. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 
 There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
 

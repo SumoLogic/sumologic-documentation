@@ -235,8 +235,8 @@ account=* region=* dbidentifier=* namespace=aws/rds _sourceHost=/aws/rds*general
 ```sql title="Slow Queries (CloudWatch log based)"
 account=* region=* namespace=aws/rds _sourceHost=/aws/rds*postgresql dbidentifier=* duration
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
-| parse field=message "* * *:*(*):*@*:[*]:*:*" as date,time,time_zone,host,thread_id,user,database,processid,severity,msg 
-| parse regex field=msg "duration: (?<execution_time_ms>[\S]+) ms  (?<query>.+)" 
+| parse field=message "* * *:*(*):*@*:[*]:*:*" as date,time,time_zone,host,thread_id,user,database,processid,severity,msg
+| parse regex field=msg "duration: (?<execution_time_ms>[\S]+) ms  (?<query>.+)"
 | where database matches "{{database}}" and user matches "{{user}}" and host matches "{{host}}"
 | number (execution_time_ms)
 | where execution_time_ms > {{slow_query_latency_ms}}
@@ -246,10 +246,10 @@ account=* region=* namespace=aws/rds _sourceHost=/aws/rds*postgresql dbidentifie
 ```sql title="Failed Authentications (CloudWatch log based)"
 account=* region=* namespace=aws/rds _sourceHost=/aws/rds*postgresql dbidentifier=* "authentication failed"
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
-| parse field=message "* * *:*(*):*@*:[*]:*:*" as date,time,time_zone,host,thread_id,user,database,processid,severity,msg 
+| parse field=message "* * *:*(*):*@*:[*]:*:*" as date,time,time_zone,host,thread_id,user,database,processid,severity,msg
 | where user matches "{{user}}" and database matches "{{database}}" and host matches "{{host}}"
 | where msg matches "*authentication failed*"
-| count as %"Count" 
+| count as %"Count"
 ```
 
 ## Collecting Logs and Metrics for the Amazon RDS app
@@ -310,7 +310,7 @@ Make sure you enable the following parameters before collecting the Amazon RDS C
    - `log_duration`
    - `log_min_duration_statement` to a value (in milliseconds) over which statement will be logged for any query taking more time then give value.
 :::note
-We recommend not to set `log_statement` to any value other then none(default value). Since it will interfere with slow query logs and ingestion will increase significantly.
+We recommend not to set `log_statement` to any value other than none (default value), since it will slow query logs and ingestion will increase significantly.
 :::
 
 Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. You can choose either of them to collect logs:
@@ -385,25 +385,25 @@ Applied at: Ingest Time
 Scope (Specific Data):
 account=* region=* (_sourceHost=/aws/* or _sourceHost=API*Gateway*Execution*Logs*)
 Parse Expression:
-if (isEmpty(namespace),"unknown",namespace) as namespace 
-| if (_sourceHost matches "/aws/lambda/*", "aws/lambda", namespace) as namespace 
-| if (_sourceHost matches "/aws/rds/*", "aws/rds", namespace) as namespace 
-| if (_sourceHost matches "/aws/ecs/containerinsights/*", "aws/ecs", namespace) as namespace 
-| if (_sourceHost matches "/aws/kinesisfirehose/*", "aws/firehose", namespace) as namespace 
-| if (_sourceHost matches "/aws/apigateway/*", "aws/apigateway", namespace) as namespace 
-| if (_sourceHost matches "API-Gateway-Execution-Logs*", "aws/apigateway", namespace) as namespace 
-| parse field=_sourceHost "/aws/lambda/*" as functionname nodrop | tolowercase(functionname) as functionname 
-| parse field=_sourceHost "/aws/rds/*/*/" as f1, dbidentifier nodrop 
+if (isEmpty(namespace),"unknown",namespace) as namespace
+| if (_sourceHost matches "/aws/lambda/*", "aws/lambda", namespace) as namespace
+| if (_sourceHost matches "/aws/rds/*", "aws/rds", namespace) as namespace
+| if (_sourceHost matches "/aws/ecs/containerinsights/*", "aws/ecs", namespace) as namespace
+| if (_sourceHost matches "/aws/kinesisfirehose/*", "aws/firehose", namespace) as namespace
+| if (_sourceHost matches "/aws/apigateway/*", "aws/apigateway", namespace) as namespace
+| if (_sourceHost matches "API-Gateway-Execution-Logs*", "aws/apigateway", namespace) as namespace
+| parse field=_sourceHost "/aws/lambda/*" as functionname nodrop | tolowercase(functionname) as functionname
+| parse field=_sourceHost "/aws/rds/*/*/" as f1, dbidentifier nodrop
 | parse field=_sourceHost "/aws/apigateway/*/*" as apiid, stage nodrop
 | parse field=_sourceHost "API-Gateway-Execution-Logs_*/*" as apiid, stage nodrop
 | apiid as apiName
-| tolowercase(dbidentifier) as dbidentifier 
+| tolowercase(dbidentifier) as dbidentifier
 | fields namespace, functionname, dbidentifier, apiid, apiName
 ```
 
 ### Metric Rules
 
-Create the following two Metric Rules for the aws/rds namespace if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metric-rule).
+Create the following two Metric Rules for the aws/rds namespace if not already created. Learn how to create a Metrics Rule [here](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
 
 ```sql title="Rule 1"
 Rule name: AwsObservabilityRDSClusterMetricsEntityRule
@@ -605,7 +605,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MySQL-Logs-General-Log-Analysis.png')} alt="Amazon RDS dashboard" />
 
-### 12. Amazon RDS - PostgreSQL Logs - Overview 
+### 12. Amazon RDS - PostgreSQL Logs - Overview
 
 The **Amazon RDS - PostgreSQL Logs - Overview** dashboard provides a high level analysis of database activity with details on errors, slow logs, and authentication using RDS CloudWatch logs.
 
@@ -613,7 +613,7 @@ Use this dashboard to:
 * Identify successful or failed authentication count and geo location.
 * Obtain log severity distribution and trend.
 * Obtain user activity and query execution by database.
-* Obtain slow queries count and distribution based on user, command type, and host. 
+* Obtain slow queries count and distribution based on user, command type, and host.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Overview.png')} alt="Amazon RDS dashboard" />
 
@@ -633,20 +633,20 @@ Use this dashboard to:
 
 The **Amazon RDS - PostgreSQL Logs - Slow Query Overview** dashboard provides an overview of the slow query logs. AWS RDS will report slow logs with statement taking more than threshold value given through `log_min_duration_statement`. This dashboard can be filtered with different values for query execution time through `slow_query_latency_ms`.
 
-Use this dashboard to: 
+Use this dashboard to:
 * Obtain count of slow queries and unique slow queries.
 * Identify number of Slow queries by user,host and command type along with slow queries over time by user and database.
 * Monitor average execution time by SQL command.
 * Obtain unique slow queries along with execution time, analysing minimum, maximum, average, and many more.
 * Obtain time comparison between number of slow queries and their execution time over 1 day or 1 week.
-  
+
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Slow-Query-Overview.png')} alt="Amazon RDS dashboard" />
 
 ### 15. Amazon RDS - PostgreSQL Logs - Slow Query Details
 
 The **Amazon RDS - PostgreSQL Logs - Slow Query Details** dashboard provides details on slow log query. Also, this dashboards displays the distribution of slow queries along with parameters like database and query type.
 
-Use this dashboard to: 
+Use this dashboard to:
 * Monitor the distribution of number of slow queries on command type and database.
 * Obtain the frequently fired slow queries.
 * Monitor the recent DML, DDL, and TCL statement which lead to slow queries.
@@ -657,7 +657,7 @@ Use this dashboard to:
 
 The **Amazon RDS - PostgreSQL Logs - Security** dashboard provides details with respect to login failures and threat intel along with activity by default user.
 
-Use this dashboard to: 
+Use this dashboard to:
 * Obtain failed and successful authentication's count and geo location.
 * Monitor failed authentication details by user, host, and database over time.
 * Monitor database shut down and system up events.
@@ -667,9 +667,9 @@ Use this dashboard to:
 
 ### 17. Amazon RDS - PostgreSQL Logs - Query Execution Time
 
-The **Amazon RDS - PostgreSQL Logs - Query Execution Time** dashboard provides details around the time its taking to execute queries on your PostgreSQL instance. 
+The **Amazon RDS - PostgreSQL Logs - Query Execution Time** dashboard provides details around the time its taking to execute queries on your PostgreSQL instance.
 
-Use this dashboard to: 
+Use this dashboard to:
 * Obtain number of queries executed and average query execution time by database.
 * Monitor time comparison for number of queries executed and query execution time.
 

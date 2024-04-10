@@ -18,9 +18,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Google Cloud’s BigQuery is a fully managed enterprise data warehouse that helps you to manage and analyze your data, which also provides built-in features such as ML, geospatial analysis, and business intelligence. The Google BigQuery integration gets data from a [Google BigQuery](https://cloud.google.com/bigquery) table via a provided query.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 

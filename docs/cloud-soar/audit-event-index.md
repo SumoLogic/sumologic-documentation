@@ -32,21 +32,21 @@ Select the documentation link for your deployment:
 
 <!--
 // Add FED as soon as available
-| FED | https://service.fed.sumologic.com/audit/docs/csoar | 
+| FED | https://service.fed.sumologic.com/audit/docs/csoar |
 -->
 
 ## Search the Audit Event Index
 
-Searching the Audit Event Index is the same as running a normal search against your ingested data. 
-You specify the `_index` metadata field with one of these values: 
+Searching the Audit Event Index is the same as running a normal search against your ingested data.
+You specify the `_index` metadata field with one of these values:
 
 * `sumologic_audit_events`. This index contains user action events, which are events that were triggered by a user action, either from the UI or an API.
 * `sumologic_system_events`. This index contains system action events, which are events that were triggered by Sumo Logic. For example, this index contains Automation Actions start events, rules triggered, and so on.
 
 ## Cloud SOAR audited events
 
-This Audit Event Index has detailed JSON logs for the following features. 
-To search for audit events for a specific feature, use the metadata field `_sourceCategory` with its corresponding value. 
+This Audit Event Index has detailed JSON logs for the following features.
+To search for audit events for a specific feature, use the metadata field `_sourceCategory` with its corresponding value.
 
 For Cloud SOAR events, every `_sourceCategory` related to a feature has the prefix `oar`. So to limit the events returned to Cloud SOAR only, you can use:
 
@@ -90,7 +90,7 @@ The table below shows the `_sourceCategory` that is assigned to event logs by Cl
 | [Notification](/docs/cloud-soar/global-functions-menu/#notifications)  | `oarNotifications`|
 | [Playbook Execution](/docs/cloud-soar/automation/#playbook-execution)  | `oarPlaybookExecutions`   |
 | [Playbook Revision](/docs/cloud-soar/automation/#playbook-template)  | `oarPlaybookRevisions`    |
-| [Report](/docs/cloud-soar/incidents-triage/#incident-report) | `oarReports` |
+| [Report](/docs/cloud-soar/global-functions-menu/#incident-reports) | `oarReports` |
 | [Setting](/docs/cloud-soar/global-functions-menu/#settings) | `oarSettings`  |
 | [Task](/docs/cloud-soar/incidents-triage/#tasks)  | `oarTasks`  |
 | [Triage](/docs/cloud-soar/incidents-triage/#triage)  | `oarTriage` |
@@ -172,8 +172,6 @@ Here is an example `PlaybookExecutionStarted` event log.
 }
 ```
 
-## Index retention period 
+## Index retention period
 
 By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Create and Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).  
-   
- 

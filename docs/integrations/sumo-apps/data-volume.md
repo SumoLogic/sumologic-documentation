@@ -35,51 +35,6 @@ import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md'
 
 <AppInstallNoDataSourceV1/>
 
-## Set up Burndown Rates for Consumables
-
-Burndown rate is the ratio for the number of Credits consumed per 1 GB of ingested data. This ratio is different for each tier. Similarly, Cloud SIEM ingest, Metrics and Tracing have their own burndown rates.
-
-
-<table>
-  <tr>
-   <td><strong>Credit Variable</strong></td>
-   <td><strong>Unit</strong></td>
-   <td><strong>Default Credits per Unit</strong></td>
-  </tr>
-  <tr>
-   <td>Cloud SIEM</td>
-   <td>1 GB</td>
-   <td>25</td>
-  </tr>
-  <tr>
-   <td>Logs - Continuous Analytics</td>
-   <td>1 GB</td>
-   <td>20</td>
-  </tr>
-  <tr>
-   <td>Logs - Frequent Analytics</td>
-   <td>1 GB</td>
-   <td>9</td>
-  </tr>
-  <tr>
-   <td>Metrics</td>
-   <td>1,000 DPM</td>
-   <td>3</td>
-  </tr>
-  <tr>
-   <td>Logs - Infrequent Ingest</td>
-   <td>1 GB</td>
-   <td>0.4</td>
-  </tr>
-  <tr>
-   <td>Tracing- Ingest</td>
-   <td>1 GB</td>
-   <td>14</td>
-  </tr>
-</table>
-
-The Data Volume App is set up to use these default burn down rates. However, these may vary for your Sumo Logic account based on your contract. Please confirm and change these default burn-down rates if necessary by working with your Sumo Logic Account Executive. This will ensure that the Credits dashboard will match the usage reported on the Accounts page.
-
 ## Viewing Data Volume Dashboards
 
 For each panel in a dashboard, you can perform the following actions:
@@ -166,15 +121,3 @@ Use this dashboard to:
 * Identify the top 5 source categories, source hosts, sources, and collectors by span count and billed bytes.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Tracing.png')} alt="Data volume dashboards" />
-
-
-### Credits
-
-The **Data Volume - Credits** Dashboard helps you understand how your credits are being used across Logs, Metrics, Traces, and data tiers.
-
-Use this dashboard to:
-
-* Identify the number of credits consumed and trends across Logs (by different tiers), Metrics, Tracing.
-* Determine the top sources based on their credit usage for Logs (by different tiers), Metrics, and Tracing.
-
-<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Credits.png')} alt="Data volume dashboards" />

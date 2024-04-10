@@ -159,7 +159,7 @@ paths = ["ThreadAllocatedMemoryEnabled", "ThreadAllocatedMemorySupported"]
   data_format = "prometheus"  
 ```
 
-* `interval`. This is the frequency to send data to Sumo Logic, in this example, we will send the metrics every 60 seconds. Please refer to [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+* `interval`. This is the frequency to send data to Sumo Logic, in this example, we will send the metrics every 60 seconds. Please refer to [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 * `urls`. The url to the Jolokia server. This can be a comma-separated list to connect to multiple Jolokia servers. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on configuring the Jolokia input plugin for Telegraf.
 * `url`. This is the HTTP source URL created in step 3. Refer [to this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on configuring the Sumo Logic Telegraf output plugin.
 * `data_format`. The format to use when sending data to Sumo Logic. Please refer [to this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on configuring the Sumo Logic Telegraf output plugin.

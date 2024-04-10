@@ -21,9 +21,9 @@ Workday is a cloud-based enterprise resource planning (ERP) system that enables 
 
 The Sumo Logic source integration for Workday facilitates retrieving sign-on logs and activity logs from the Workday API.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 

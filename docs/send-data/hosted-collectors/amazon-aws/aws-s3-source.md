@@ -67,6 +67,7 @@ Cisco Umbrella offers logging to a Cisco-managed S3 bucket. Collection from thes
 * S3 Event Notifications Integration is not supported.
 * Access must be provided with an Access ID and Key. Role-based access is not supported.
 * Use a prefix in the path expression so it doesn't point to the root directory.
+* Ensure that your path expression ends in `/*`. Otherwise, you will get a ListBucket error. For example: `s3://cisco-managed-us-east-1/PREFIX/*` 
 
 ## S3 Event Notifications Integration
 

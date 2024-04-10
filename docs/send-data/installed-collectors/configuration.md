@@ -178,7 +178,7 @@ Up to 4GB total disk space, including:
 * Up to 3GB for log data
 * Up to 1GB for metric data
 
-You can raise or lower the disk limits for Collector caching. For more information, see [Configure Limits for Collector Caching](/docs/send-data/collector-faq#configure-limits-collector-caching).
+You can raise or lower the disk limits for Collector caching. For more information, see [Configure Limits for Collector Caching](/docs/send-data/collector-faq/#configure-limits-for-collector-caching).
 
 #### Flushing mode
 
