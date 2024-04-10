@@ -50,7 +50,7 @@ After you make this change, you will not be able to edit the account owner.
 1. click **Change Account Owner**. <br/><img src={useBaseUrl('img/subscriptions/Change_account_owner_prompt.png')} alt="Change_account_owner_prompt.png" width="450"/>
 
 :::note
-If the account owner leaves your organization and you cannot transfer the account ownership, please [submit a support ticket](https://support.sumologic.com/hc/en-us) to transfer the account ownership.
+If the account owner leaves your organization and you cannot transfer the account ownership, please [submit a support ticket](https://support.sumologic.com/support/s) to transfer the account ownership.
 :::
 
 ## Delete an organization
