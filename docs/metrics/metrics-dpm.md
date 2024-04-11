@@ -46,7 +46,7 @@ Navigate to **Administration > Account > Metrics Data Ingestion**.
 
 ## Query the sumologic_volume index
 
-You can obtain the same information displayed in the Metrics Data Ingestion screen by querying the `sumologic_volume` index. Adjust the query as needed to perform custom analysis. Change the time range as needed (for example, to query for the last hour or 24 hours).
+You can obtain the same information displayed on the Metrics Data Ingestion screen by querying the `sumologic_volume` index. Adjust the query as needed to perform custom analysis. Change the time range as needed (for example, to query for the last hour or 24 hours).
 
 Following is an example query that lists the metric names that account for metrics data ingested arranged in descending order based on their DPM contribution. 
 
