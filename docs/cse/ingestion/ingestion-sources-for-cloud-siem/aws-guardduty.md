@@ -48,7 +48,7 @@ It’s also possible to configure individual sources to forward to Cloud SIEM, a
     1. Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
     1. Specify **Timestamp locator** as `.\*"updatedAt":"(.\*)".\*`<br/><img src={useBaseUrl('img/cse/timestamp-format.png')} alt="Timestamp format" width="500"/>
 13. Click **Save**.
-14. Make a note of the **HTTP Source URL** that is displayed. You’ll supply it in [Step 2](#step-2-deploy-sumo-logic-guardduty-events-processor) below.
+14. Make a note of the **HTTP Source URL** that is displayed. You’ll supply it in [Step 2](#step-2deploy-sumo-logic-guardduty-events-processor) below.
 
 ## Step 2: Deploy Sumo Logic GuardDuty events processor
 

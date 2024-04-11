@@ -11,7 +11,7 @@ Template variables are a feature of Dashboard that allow you to analyze specifi
 
 This feature requires two parts to work:
 
-1. You [created a template variable](#create-a-template-variable).
+1. You [created a template variable](#createa-template-variable).
 1. You [added the template variable to your query](#how-to-use-a-logs-variable-in-a-query).
 
 ## Limitations

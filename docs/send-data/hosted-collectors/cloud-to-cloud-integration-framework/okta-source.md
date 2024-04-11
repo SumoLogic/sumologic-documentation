@@ -19,9 +19,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Okta Source provides a secure endpoint to receive event data from the Okta [System Log API](https://developer.okta.com/docs/reference/api/system-log/), [Users API](https://developer.okta.com/docs/reference/api/users/), and [User's Group API](https://developer.okta.com/docs/reference/api/users/#get-user-s-groups).
 It securely stores the required authentication, scheduling, and state tracking information.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 

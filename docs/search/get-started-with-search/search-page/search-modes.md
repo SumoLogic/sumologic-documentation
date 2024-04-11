@@ -6,7 +6,7 @@ description: Learn about the new search modes of our Log Search page.
 
 Sumo Logic Log Search offers two search modes to build your searches, Advanced and Basic.
 
-* **Basic Mode** gives you a structured query builder that writes a simple log query. This mode is designed for new users that are not familiar with Sumo Logic search features and query language. We recommend taking [Certification Courses](/docs/get-started/faq#certification-faq) and reading the [Getting Started](/docs/get-started) content before moving to advanced mode.
+* **Basic Mode** gives you a structured query builder that writes a simple log query. This mode is designed for new users that are not familiar with Sumo Logic search features and query language. We recommend taking [Certification Courses](/docs/get-started/training-certification-faq) and reading the [Getting Started](/docs/get-started) content before moving to advanced mode.
 * **Advanced Mode** has the original query text box and supports all of our search query language and features.
 
 For details on all other Log Search page features, see [How to use the search page](/docs/search/get-started-with-search/search-page).
