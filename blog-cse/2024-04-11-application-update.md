@@ -23,7 +23,7 @@ We're excited to announce multiple enhancements to our MITRE ATT&amp;CK Threat C
 * **All Community Activity** - This view now defaults to show only the vendor and product logs that are being sent to Cloud SIEM from your data sources. This gives you a better comparison between what your theoretical and historical coverage shows and what other customers of Cloud SIEM using those same log sources are seeing. You can still change the filter to display other (or all) log sources.
 * **Customizable Colors** - You can now customize the tile colors to your own scheme. <br/><img src={useBaseUrl('img/release-notes/cse/mitre-attack-explorer-custom-colors.jpg')} alt="Custom MITRE ATT&amp;CK Explorer Color Palette"/>
 
-For full details, see the [MITRE ATT&amp;CK Explorer documentation](/docs/cse/administration/mitre-coverage/).
+For full details, see the [MITRE ATT&amp;CK Coverage documentation](/docs/cse/administration/mitre-coverage/).
 
 ### New UI Themes for Cloud SIEM
 
