@@ -40,4 +40,4 @@ Note that the setting currently only affects Cloud SIEM and the Automation Servi
 
 ### Bug fixes
 
-* Sometimes Terraform would time out waiting for match lists to be updated.
+* Terraform no longer times out while waiting for match lists to be updated.
