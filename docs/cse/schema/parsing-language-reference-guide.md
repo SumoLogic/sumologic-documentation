@@ -305,9 +305,14 @@ If `<read_field>` from the [CASE_SWITCH](#case_switch) attribute equals `matched
 
 **Example**
 
-Assume an incoming message that contains a ‘severity’ field that stores severity as one of three words: high, medium and low. But we want to store a normalized severity value as an integer ranging from 0 to 9. We might use a CASE_SWITCH statement paired with a list of CASE statements to perform the mapping.
+Assume an incoming message that contains a ‘severity’ field that stores severity as one of three words: high, medium and low. But we want to store a normalized severity value as an integer ranging from 0 to 9. We might use a `CASE_SWITCH` statement paired with a list of `CASE` statements to perform the mapping.
 
-`CASE_SWITCH:normalized_severity = severity CASE:High = 9 CASE:Medium = 4 CASE:Low = 0`
+```
+CASE_SWITCH:normalized_severity = severity 
+CASE:High = 9 
+CASE:Medium = 4 
+CASE:Low = 0
+```
 
 ### CASE_SWITCH
 

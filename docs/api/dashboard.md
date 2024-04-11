@@ -1,7 +1,7 @@
 ---
 id: dashboard
-title: Dashboard Management APIs V2
-sidebar_label: Dashboards V2
+title: Dashboard Management APIs
+sidebar_label: Dashboard Management
 description: Dashboard Management APIs allow you to create, retrieve, update, and delete dashboards
 hide_table_of_contents: true
 ---
@@ -21,7 +21,7 @@ import ApiIntro from '../reuse/api-intro.md';
 |AU        |https://api.au.sumologic.com/docs/#tag/dashboardManagement   |
 |CA        |https://api.ca.sumologic.com/docs/#tag/dashboardManagement   |
 |DE        |https://api.de.sumologic.com/docs/#tag/dashboardManagement   |
-|EU        |(https://api.eu.sumologic.com/docs/#tag/dashboardManagement  |
+|EU        |https://api.eu.sumologic.com/docs/#tag/dashboardManagement  |
 |FED       |https://api.fed.sumologic.com/docs/#tag/dashboardManagement  |
 |IN        |https://api.in.sumologic.com/docs/#tag/dashboardManagement   |
 |JP        |https://api.jp.sumologic.com/docs/#tag/dashboardManagement   |

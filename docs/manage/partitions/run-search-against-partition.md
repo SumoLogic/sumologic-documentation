@@ -23,6 +23,28 @@ Data that you ingest that is not directed to a partition will go to the default 
 _index=sumologic_default
 ```
 
+## Index aliasing
+
+With index aliasing, you can use an alias to point to one or more system indexes such as [`sumologic_default`](/docs/manage/partitions/run-search-against-partition/#search-the-default-partition) in the source expression of your search query. Both the operator part and results of your query will consist of actual index names.
+
+In addition to `sumologic_default`, we have several other Sumo Logic-defined system indexes. As a shortcut, rather than prefacing `sumologic_` when referencing system indexes in a search, you can alias these indexes by typing an underscore at the beginning. For example, `sumologic_default` and `_default` will return the same results. 
+
+:::warning Leading Underscore Reserved for System Index Alias in User-Created Indexes
+When creating your own indexes (user-created, non-system indexes), you cannot lead with an underscore (`_`). This is reserved only for system indexes.
+:::
+
+If your search query scans both your own indexes and Sumo Logic indexes starting with an underscore (`_`), you'll only see your own indexes in the results. System indexes would be ignored, and you'd see a warning stating: `System indexes with alias names have been excluded from the results of the query`. 
+
+### Using index aliases
+
+Here are some examples where index aliasing is used in wildcard queries.
+
+`_index=*volume*` This query will reference all types of indexes (system indexes as well as user-created).
+
+`_index=_vol*`. This query will reference indexes such as `sumologic_volume`.
+
+`_index=_*`. This will show all Sumo Logic-defined system indexes would show in search results.
+
 ## Run a search against a partition from the Partitions page
 
 1. Go to **Manage Data > Logs > Partitions**.

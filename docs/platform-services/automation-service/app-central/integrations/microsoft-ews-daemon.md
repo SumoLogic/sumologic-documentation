@@ -8,8 +8,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/microsoft-ews-daemon.png')} alt="microsoft-defender-atp" width="100"/>
 
-***Version: 2.3  
-Updated: Mar 4, 2024***
+***Version: 2.4  
+Updated: Mar 21, 2024***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -135,3 +135,4 @@ Email Gateway
 * March 10, 2022 - Logo
 * October 6, 2023 (v2.2) - Integration Updated
 * March 4, 2024 (v2.3) - Updated code for compatibility with Python 3.12
+* March 21, 2024 (v2.4) - Resolved an issue related to the Email Body

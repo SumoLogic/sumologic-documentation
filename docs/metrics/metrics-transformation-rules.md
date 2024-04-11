@@ -5,6 +5,8 @@ sidebar_label: Metrics Transformation Rules
 description: Metrics transformation rules allow you control how long raw metrics are retained.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Metrics transformation rules allow you control how long raw metrics are retained. You can also aggregate metrics at collection time and specify a separate retention period for the aggregated metrics.
 
 Metrics transformation rules are useful when:
@@ -33,8 +35,8 @@ Metrics transformation rules are useful when:
 ## Create a Metrics Transformation Rule
 
 1. Navigate to **Manage Data > Metrics > Metrics Transformation Rules**. 
-1. Click **Add**. <br/>  ![add-button.png](/img/metrics/add-button.png)
-1. The **Add a Rule** pane appears.   <br/>  ![add-a-rule-empty.png](/img/metrics/add-a-rule-empty.png)
+1. Click **Add**. <br/><img src={useBaseUrl('img/metrics/add-button.png')} alt="Add button" style={{border: '1px solid gray'}} width="600" />
+1. The **Add a Rule** pane appears. <br/><img src={useBaseUrl('img/metrics/add-a-rule-empty.png')} alt="Add a metrics transformation rule" style={{border: '1px solid gray'}} width="400" />
 1. **Name**. A name for the metrics transformation rule.
 1. **Selector.** The selector that matches the metrics to which you
     want to apply the transformation rule. (The scope of a metric query.)
@@ -88,7 +90,7 @@ All metrics that match the selector `environment=dev` will be stored for 15 days
 
 You can use a transformation rule to aggregate high cardinality data from ephemeral sources into higher-level metrics that you want to analyze over time. Container metrics are an example of such data. Containers are ephemeral, created and destroyed as appropriate, resulting in a high volume of short-lived time series. More often than not, container-level metrics are not useful over the long term. However, container metrics that are aggregated at the service or deployment level can be very useful for longer term trend analysis. 
 
-![add-a-rule.png](/img/metrics/add-a-rule.png)
+<img src={useBaseUrl('img/metrics/add-a-rule.png')} alt="Add a metrics transformation rule with aggregation" style={{border: '1px solid gray'}} width="400" />
 
 Here’s what the rule does:
 

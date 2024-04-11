@@ -49,6 +49,10 @@ Learn more about [Alert Variables](/docs/alerts/monitors/alert-variables).
 
 After a monitor is deleted, corresponding alerts do not remain useful so they are deleted as well. 
 
+## Are Alerts retained forever?
+
+A resolved alert is auto-deleted after 30 days of its creation.
+
 ## Where are the Log Fluctuation and Dimensional Explanation Cards for metrics-based Alerts?
 
 Log Fluctuation and Dimensional Explanation cards work on Log data only. They are not applicable for Metrics-based alerts and therefore will not show up.

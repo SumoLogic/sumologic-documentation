@@ -43,7 +43,7 @@ For the Federal environments, a different set of Static IPs is available for eac
 
 ## Integrations
 
-The topics below are the available integrations. In Sumo Logic these are called Sources. Check out the Sources we have available in beta. 
+The topics below are the available integrations. In Sumo Logic these are called Sources. Check out the Sources we have available in beta.
 
 ## Versions
 

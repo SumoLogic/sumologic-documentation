@@ -66,7 +66,7 @@ difference is where you do the tagging. 
 1. Select **Rules** from the **Content** menu.
 1. Navigate to a custom rule.
 1. The UI for tagging is at the bottom of the **Then Create a Signal** area of the **Rule Editor**.
-1. To add a tag, follow the instructions in [Add a schema key tag](#apply-a-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag). <br/><img src={useBaseUrl('img/cse/tag-a-rule.png')} alt="Tag a rule" width="400"/>
+1. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag). <br/><img src={useBaseUrl('img/cse/tag-a-rule.png')} alt="Tag a rule" width="400"/>
 
 ### UI for tagging an Entity
 
@@ -82,14 +82,14 @@ Note that in addition to tags that you manually assign to an Insight, an Insight
 1. Click the **Insight** tab at the top of the Cloud SIEM UI.
 1. Navigate to the Insight to which you want to attach a tag.
 1. The UI for tagging is at the bottom of the **Details** pane.
-1. To add a tag, follow the instructions in [Add a schema key tag](#apply-a-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/tag-an-insight.png')} alt="Tag an Insight" width="350"/>
+1. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/tag-an-insight.png')} alt="Tag an Insight" width="350"/>
 
 ### UI for tagging a custom Insight
 
 1. Select **Custom Insights** from the Content menu.
 1. Navigate to a custom Insight.
 1. The UI for tagging is at the bottom of the **Then Create a Signal** area of the Insight Editor.
-1. To add a tag, follow the instructions in [Add a schema key tag](#apply-a-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Tag a Custom Insight" width="350"/>
+1. To add a tag, follow the instructions in [Add a schema key tag](#applya-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).<br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Tag a Custom Insight" width="350"/>
 
 ## Apply a schema key tag
 
@@ -112,15 +112,15 @@ Note that in addition to tags that you manually assign to an Insight, an Insight
 ### Search Insights, Signals, or Entities by tag
 
 1. Click in the search area and then click the funnel icon.<br/><img src={useBaseUrl('img/cse/funnel-icon.png')} alt="Funnel icon" width="800"/>
-1. Select **Insights**, **Signals**, or **Entities** from the **Sources** list.<br/><img src={useBaseUrl('img/cse/sources.png')} alt="Sources" width="400"/> 
-1. Select **Tags** from the **Fields** list.<br/><img src={useBaseUrl('img/cse/tags-field.png')} alt="Tags field" width="400"/> 
+1. Select **Insights**, **Signals**, or **Entities** from the **Sources** list.<br/><img src={useBaseUrl('img/cse/sources.png')} alt="Sources" width="400"/>
+1. Select **Tags** from the **Fields** list.<br/><img src={useBaseUrl('img/cse/tags-field.png')} alt="Tags field" width="400"/>
 1. Choose **contain** or **do not contain** from the **Operators** list.<br/><img src={useBaseUrl('img/cse/operators.png')} alt="Operators" width="400"/>
 1. Select a tag from either the **Schema Keys** or **Keyword Tags** list. If you select a tag from the **Schema Keys** list, you are prompted to select a value, and items that match are listed. If you select a tag from the **Keywords list**, items that match are listed.
 
 ### Search Rules by tag
 
 1. Select **Rules** from the **Content** menu.
-1. Click in the **Filters** area and select **Tags** from the **Fields** list.<br/><img src={useBaseUrl('img/cse/search-rules-by-tag.png')} alt="Search rules by tag" width="800"/> 
+1. Click in the **Filters** area and select **Tags** from the **Fields** list.<br/><img src={useBaseUrl('img/cse/search-rules-by-tag.png')} alt="Search rules by tag" width="800"/>
 1. Choose **contain** or **do not contain** from the **Operators** list.<br/><img src={useBaseUrl('img/cse/operators.png')} alt="Operators" width="400"/>  
 1. Select a tag from either the **Schema Keys** or **Keyword Tags** list. If you select a tag from the **Schema Keys** list, you are prompted to select a value, and items that match are listed. If you select a tag from the **Keywords Tags** list, items that match are listed. Note that if an item has a Mitre-related tag, an icon appears next to it. Click the icon to view a Mitre page on the Tactic or Technique.
 

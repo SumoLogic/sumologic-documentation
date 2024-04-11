@@ -22,7 +22,7 @@ The right side of the HUD contains a list of recent Insight activity. The card a
 
 See the sections below for more details on each element of the HUD.
 
-<img src={useBaseUrl('img/cse/hud.png')} alt="Head-up display" width="900"/>
+<img src={useBaseUrl('img/cse/hud.png')} alt="Head-up display" style={{border: '1px solid gray'}} width="900"/>
 
 ## 1. Search bar 
 
