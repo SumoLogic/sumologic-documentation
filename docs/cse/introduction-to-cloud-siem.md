@@ -32,22 +32,20 @@ To access Cloud SIEM, click **Cloud SIEM** in the Sumo Logic navigation menu.
 
 Cloud SIEM must be enabled by Sumo Logic before it is accessible to users in your organization. For more information, see [Onboarding Checklist for Cloud SIEM Administrators](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/).
 
-### Heads Up Display
-
-The main screen you see when you access Cloud SIEM is the Heads Up Display, a single pane of information about your environment. In the center you see a radar showing insights in the center, surrounded by the signals and records used to generate the insights. On the left is summary information, and on the right is recent activity. Use this screen as the starting place for your investigations, focusing on insights as the most valuable place to start. 
-
-For more information, see [Cloud SIEM Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/).
-
 ### Theme
 
-You can view the Cloud SIEM user interface in a dark theme or a light theme. 
-
-To select a theme: 
+You can view the Cloud SIEM user interface in a dark theme or a light theme:
 1. Click your user name in the main Sumo Logic navigation menu.
 1. Select **Preferences**.
 1. Scroll down to **Theme** and select **Dark theme** or **Light theme**.
 
 For more information, see [Setting Account Preferences and Credentials](/docs/get-started/account-settings-preferences).
+
+### Heads Up Display
+
+The first screen you see when you access Cloud SIEM is the Heads Up Display, a single pane of information about your environment. In the center you see a radar showing insights in the center, surrounded by the signals and records used to generate the insights. On the left is summary information, and on the right is recent activity. Use this screen as the starting place for your investigations, focusing on insights as the most valuable place to start. 
+
+For more information, see [Cloud SIEM Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/).
 
 ## Getting your data into Cloud SIEM
 
