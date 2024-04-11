@@ -15,7 +15,7 @@ authors:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-### MITRE ATT&amp;CK&reg; Explorer Enhancements
+### MITRE ATT&amp;CK&reg; Coverage Enhancements
 
 We're excited to announce multiple enhancements to our MITRE ATT&amp;CK Threat Coverage Explorer.
 
