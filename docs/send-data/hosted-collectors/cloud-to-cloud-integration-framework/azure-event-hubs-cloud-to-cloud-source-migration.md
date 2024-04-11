@@ -14,9 +14,9 @@ Cloud-to-Cloud sources have several advantages, including:
 * Less overhead of maintenance and upgrades, since cloud-to-cloud sources are upgraded automatically for bug fixes.
 * Lesser cost since the old collection method is used to create multiple resources such as storage accounts, application insights, and azure functions in your account while cloud-to-cloud sources are hosted in sumo logic infra. On the other hand, a cloud-to-cloud event hub source requires you to create only an event hub in your Azure account.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Step 1. Choose a migration strategy
 
@@ -61,7 +61,7 @@ After completing the above steps, you will have **Azure Event Hubs Namespace**, 
 
 ## Step 3. Create event hub cloud-to-cloud sources
 
-For each of the event hubs present in your namespace, you need to create a cloud-to-cloud source. For more information, see [Creating Azure Event Hub Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#create-an-azure-event-hubssource) section.
+For each of the event hubs present in your namespace, you need to create a cloud-to-cloud source. For more information, see [Creating Azure Event Hub Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#vendor-configuration) section.
 
 :::note
 We recommend giving the same source category so that your custom dashboards or apps require no changes. You can verify whether the data comes from your source using `1_source metadata`.

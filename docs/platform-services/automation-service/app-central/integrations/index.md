@@ -13,7 +13,7 @@ Please refer to the individual integration documentation for detailed informatio
 Some integrations are tailor-made for Cloud SOAR and are indicated as such within their respective documentation entries. These integrations only appear in the [Cloud SOAR App Central](/docs/cloud-soar/automation/#app-central).
 :::
 
-## Integrations (325)
+## Integrations (326)
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

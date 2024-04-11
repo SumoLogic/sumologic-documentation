@@ -213,9 +213,9 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
     **Note the SNS Topic ARN**, as you'll need it to set the subscription.
 
 5. Whenever the SNS topic referred to in the previous step receives SES notification, forward the received notification to registered subscribers of that SNS topic. Now, subscribe Sumo Logic endpoint as subscriber. Create a Subscription to the SNS Topic you just created, specifying the following:
-    * Topic ARN—from the [Step 4](#TopicARN).
+    * Topic ARN — from Step 4.
     * Protocol — **HTTPS**
-    * EndPoint — Sumo source Endpoint URL you noted in [Step 3](#EndpointURL).
+    * EndPoint — Sumo source Endpoint URL you noted in Step 3.
 6. After a subscription is created, Amazon SNS sends a [subscription confirmation ](http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm)message to the Sumo source endpoint. Do the following:
     * Go to the Sumo search box and execute the following:
      ```
