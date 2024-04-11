@@ -470,7 +470,7 @@ The **Infrastructure Overview** dashboard helps you identify all accounts, servi
 This dashboard is in [preview](#cloudquery-preview). If you see only empty panels in the dashboard and would like to know more about the feature, reach out to your Sumo Logic Account Executive. 
 :::
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-infrastructure-overview.png')} alt="Infrastructure Overview dashboard" width="600"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-infrastructure-overview.png')} alt="Infrastructure Overview dashboard" style={{border: '1px solid gray'}} width="600"/>
 
 ### Security Control Failures dashboards
 
