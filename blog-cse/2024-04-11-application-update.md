@@ -18,7 +18,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 We're excited to announce multiple enhancements to our MITRE ATT&amp;CK Threat Coverage Explorer.
 
-* **Rules Filtering** - You can now easily filter the coverage visualization based on rules, including rules you've created and out-of-the-box rules, as well as enabled, disabled, production and prototype rules. 
+* **Rules Filtering** - You can now easily filter the coverage visualization based on rules, including out-of-the-box and user-created rules, as well as enabled, disabled, production and prototype rules. 
 * **All Community Activity** - This view now defaults to show only the vendor and product logs that are being sent to Cloud SIEM from your data sources. This gives you a better comparison between what your theoretical and historical coverage shows and what other customers of Cloud SIEM using those same log sources are seeing. You can still change the filter to display other (or all) log sources.
 * **Customizable Colors** - You can now customize the tile colors to your own scheme.
 
