@@ -320,7 +320,7 @@ You can install Cloud Infrastructure Security for AWS from the App Catalog to us
               <details>
        <summary>CloudQuery</summary>
 
-       In this section, you have the choice to create a [CloudQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source/) in Sumo Logic. (This functionality is in [preview](#cloudquery-preview). If would like to know more about the feature, reach out to your Sumo Logic Account Executive.) 
+       In this section, you have the choice to create a [CloudQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source) in Sumo Logic. (This functionality is in [preview](#cloudquery-preview). If you would like to know more about the feature, reach out to your Sumo Logic Account Executive.) 
        
        If fields are missing, or you need to change them, do the following:
        * **8.1 Configure CloudQuery C2C Source**
