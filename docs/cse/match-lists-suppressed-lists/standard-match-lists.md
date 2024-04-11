@@ -571,20 +571,6 @@ The following Cloud SIEM rules refer to this Match List:
 
 * Spike in URL Length from IP Address
 
-### known_docker_images
-
-The following Cloud SIEM rules refer to this Match List:
-
-* Unrecognized Container Image
-
-### known_windows_processes
-
-**Target column:** Hostname (`Hostname`)
-
-The following Cloud SIEM rules refer to this Match List:
-
-* Fake Windows Processes
-
 ### lan_scanner_exception_ips
 
 **Target column:** IP Address (`Ip`)
@@ -655,14 +641,6 @@ The following Cloud SIEM rules refer to this Match List:
 The following Cloud SIEM rules refer to this Match List:
 
 * Okta Admin App Accessed
-
-### OneLogin_Untrusted_Location
-
-**Target column:** Source IP Address (`SrcIp`)
-
-The following Cloud SIEM rules refer to this Match List:
-
-* OneLogin - API Credentials - Key Used from Untrusted Location
 
 ### palo_alto_sinkhole_ips
 
