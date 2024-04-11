@@ -18,12 +18,9 @@ Cloud SOAR must be enabled by Sumo Logic before it is accessible to users in you
 
 ### Theme
 
-You can view the Cloud SOAR user interface in a dark theme or a light theme:
-1. Click your user name in the main Sumo Logic navigation menu.
-1. Select **Preferences**.
-1. Scroll down to **Theme** and select **Dark theme** or **Light theme**.
+import Theme from '../reuse/theme.md';
 
-For more information, see [Setting Account Preferences and Credentials](/docs/get-started/account-settings-preferences).
+<Theme/>
 
 ### Learn the UI
 

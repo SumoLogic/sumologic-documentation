@@ -38,12 +38,9 @@ The Automation Service UI is composed of the following tabs:
 
 ### Theme
 
-You can view the Automation Service user interface in a dark theme or a light theme:
-1. Click your user name in the main Sumo Logic navigation menu.
-1. Select **Preferences**.
-1. Scroll down to **Theme** and select **Dark theme** or **Light theme**.
+import Theme from '../../reuse/theme.md';
 
-For more information, see [Setting Account Preferences and Credentials](/docs/get-started/account-settings-preferences).
+<Theme/>
 
 ## Access the Automation Service
 
