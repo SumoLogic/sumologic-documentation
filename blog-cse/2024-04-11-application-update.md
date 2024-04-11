@@ -19,7 +19,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 We're excited to announce multiple enhancements to our MITRE ATT&amp;CK Threat Coverage Explorer.
 
-* **Rules Filtering** - You can now easily filter the coverage visualization based on rules, including out-of-the-box and user-created rules, as well as enabled, disabled, production and prototype rules. 
+* **Rules Filtering** - You can now easily filter the coverage visualization based on rules, including out-of-the-box and user-created rules, as well as enabled, disabled, production and prototype rules.
 * **All Community Activity** - This view now defaults to show only the vendor and product logs that are being sent to Cloud SIEM from your data sources. This gives you a better comparison between what your theoretical and historical coverage shows and what other customers of Cloud SIEM using those same log sources are seeing. You can still change the filter to display other (or all) log sources.
 * **Customizable Colors** - You can now customize the tile colors to your own scheme.
 
@@ -35,7 +35,7 @@ We are also excited to announce that Cloud SIEM now supports two different UI th
 
 The theme is set per user, and can be changed on the Sumo Logic user preferences page:
 
-<img src={useBaseUrl('img/release-notes/cse/theme-setting.jpg')} alt="Option to change UI theme"/>
+<img src={useBaseUrl('img/release-notes/cse/theme-setting.png')} alt="Option to change UI theme"/>
 
 Note that the setting currently only affects Cloud SIEM and the Automation Service, but in the future this setting will also affect other pages in the Sumo Logic UI.
 
