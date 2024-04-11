@@ -7,8 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/smtp-v3.png')} alt="smtp-v3" width="100"/>
 
-***Version: 3.1  
-Updated: Oct 06, 2023***
+***Version: 3.2  
+Updated: Mar 18, 2024***
 
 :::sumo Cloud SOAR
 This integration is only for Cloud SOAR.
@@ -28,3 +28,4 @@ Email Gateway
 
 * June 20, 2022 - First upload
 * October 6, 2023 (v3.1) - Integration Updated
+* March 18, 2024 (v3.2) - Send Email action updated

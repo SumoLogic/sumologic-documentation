@@ -7,6 +7,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Flex pricing delivers a new financial model for log management, in which your businesses can centralize, store, and analyze all application, infrastructure, and security data in one place. This drives collaboration and velocity while delivering a reliable  and secure digital experience.
 
+:::sumo important
+Search modifier `datatier` is not supported for any Flex query.
+:::
+
+## Feature support 
+
 | Feature support | Flex Pricing |
 | :-- | :-- | 
 | Centralized, secure, multi-tenant cloud-native platform | ![check](/img/reuse/check.png) |
@@ -25,6 +31,10 @@ Flex pricing delivers a new financial model for log management, in which your bu
 | Scheduled Views | ![check](/img/reuse/check.png) |
 | API Queries |  ![check](/img/reuse/check.png) |
 
+## Guides
+
+In this section, we'll introduce the following concepts:
+
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
@@ -42,6 +52,12 @@ Flex pricing delivers a new financial model for log management, in which your bu
   <div className="container">
   <a href="/docs/manage/partitions/flex/view-partition-details-flex"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>View Details About a Partition</h4></a>
   <p> Learn how to view details about a Sumo Logic partition.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/manage/partitions/flex/estimate-scan-data"><img src={useBaseUrl('img/icons/logs.png')} alt="icon" width="40"/><h4>Estimate Scan Data</h4></a>
+  <p> Learn about the estimate scan data for Flex pricing.</p>
   </div>
 </div>
 <div className="box smallbox card">

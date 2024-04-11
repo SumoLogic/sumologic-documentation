@@ -9,7 +9,7 @@ import Iframe from 'react-iframe';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-logo.png')} alt="Cloud Infrastructure Security for AWS logo" width="70"/>
 
-Cloud Infrastructure Security for AWS provides a unified view of threats, misconfigurations, and threats in your AWS infrastructure spanning multiple AWS accounts and regions. The solution leverages native AWS tools and telemetry to accelerate cloud security outcomes.
+Cloud Infrastructure Security for AWS provides a unified view of risks, misconfigurations, and active threats in your AWS infrastructure spanning multiple AWS accounts and regions. The solution leverages native AWS tools and telemetry to accelerate cloud security outcomes.
 
 Key features of the solution include:
 * **Risk overview**. See a summary of all resources that pose risks, and get an action plan for addressing the most important areas of concern.
@@ -122,6 +122,7 @@ This section describes prerequisites and guidelines for deploying Sumo Logic’s
 
 #### Prerequisites
 
+* **AWS Organizations**. You must be using [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html).
 * **AWS data**. You must have access to data from the following AWS products, since Cloud Infrastructure Security for AWS uses data from these sources in its dashboards:
    * [Amazon CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-getting-started.html)
    * [Amazon GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html)

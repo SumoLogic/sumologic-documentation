@@ -9,8 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Creating a partition enhances search performance by narrowing down the search scope to a smaller subset of messages. Use the Partitions page to set up and manage partitions. To access the Partitions page, go to **Manage Data** > **Logs** > **Partitions**.
 
-![partitions-page.png](/img/partitions-data-tiers/partitions-page.png)
-
 A partition stores your data in an index separate from the rest of your account's data so you can [optimize searches](../../search/optimize-search-performance.md), [manage variable retention](manage-indexes-variable-retention.md), and specify certain [data to forward to S3](../data-forwarding/amazon-s3-bucket.md).
 
 :::note
@@ -44,11 +42,6 @@ You define the data that will reside in a partition by defining a routing expres
 ## Limitations 
 
 * There is a limit of 50 partitions per account. (This excludes [decommissioned partitions](decommission-partition.md).)
-* You can make the following edits to an existing partition:
-   * You can change the routing expression, unless the partition is decommissioned.
-* You cannot make the following changes to a partition: 
-   * You can’t change or reuse a partition name.
-   * You can’t change the data tier the partition resides in.
 * Partitions cannot be deleted, although you can [decommission](decommission-partition.md) them. This is because a partition may include log messages that aren’t stored anywhere else, so if it’s deleted, messages will be lost. If you no longer need a partition, you can decommission it.
 * Partition names cannot start with `sumologic_` or an underscore `_`.
 * Partition routing rule length cannot exceed 2048 characters.
