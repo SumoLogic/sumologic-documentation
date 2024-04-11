@@ -36,6 +36,15 @@ The Automation Service UI is composed of the following tabs:
 * [**Integration**](/docs/platform-services/automation-service/automation-service-integrations.md). Lists integrations with Sumo Logic and third-party vendors that provide actions used in playbooks. <br/><img src={useBaseUrl('img/platform-services/integrations-main-screen.png')} style={{border:'1px solid gray'}} alt="Integrations screen" width="800"/>
 * [**Bridge**](/docs/platform-services/automation-service/automation-service-bridge.md). Shows connections between on-premises servers and the Sumo Logic cloud. A bridge allows you to create a custom integration in your own system and use it to for automation. <br/><img src={useBaseUrl('img/platform-services/bridge-main-screen.png')} style={{border:'1px solid gray'}} alt="Bridge screen" width="800"/>
 
+### Theme
+
+You can view the Automation Service user interface in a dark theme or a light theme:
+1. Click your user name in the main Sumo Logic navigation menu.
+1. Select **Preferences**.
+1. Scroll down to **Theme** and select **Dark theme** or **Light theme**.
+
+For more information, see [Setting Account Preferences and Credentials](/docs/get-started/account-settings-preferences).
+
 ## Access the Automation Service
 
 :::info
