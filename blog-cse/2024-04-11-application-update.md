@@ -2,8 +2,9 @@
 title: April 11, 2024 - Application Update
 keywords:
   - cloud siem
-  - MITRE
-  - UI theme
+  - mitre
+  - light mode
+  - dark mode
 tags: [application update]
 image: https://help.sumologic.com/img/sumo-square.png
 hide_table_of_contents: true
