@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can review and update your account settings and login credentials at any time in your user **Preferences**. The **Preferences** page contains settings that apply to your account only and do not affect other users in your organization.
 
-To access preferences, click your user name in the navigation menu and select **Preferences**.
+To access preferences, click your user name in the Sumo Logic navigation menu and select **Preferences**.
 
 <img src={useBaseUrl('img/get-started/preference-settings.png')} alt="Preferences" style={{border: '1px solid gray'}} width="600" />
 
