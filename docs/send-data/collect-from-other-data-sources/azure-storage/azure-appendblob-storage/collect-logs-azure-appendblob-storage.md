@@ -1,6 +1,6 @@
 ---
-id: collect-logs-azure-blob-storage
-title: Collect Logs from Azure Blob Storage
+id: collect-logs-azure-appendblob-storage
+title: Collect Logs from Azure Append Blob Storage
 sidebar_label: Collecting Logs
 description: Configure a pipeline to ship logs from the Azure Blob Storage to an HTTP source on a hosted collector in Sumo Logic.
 ---

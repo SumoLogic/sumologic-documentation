@@ -1,6 +1,6 @@
 ---
-id: troubleshoot-azure-blob-storage-log-collection
-title: Troubleshoot Azure Blob Storage Log Collection
+id: troubleshoot-azure-appendblob-storage-log-collection
+title: Troubleshoot Azure Append Blob Storage Log Collection
 sidebar_label: Troubleshooting
 description: Follow these steps to learn why log data is not flowing into Sumo from Azure Blob Storage.
 ---
