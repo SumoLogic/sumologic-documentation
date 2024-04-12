@@ -21,9 +21,9 @@ By using the Cortex XDR Source Integration, you can easily access and analyze da
 
 The Cortex XDR Source Integration is a valuable Source for security teams that want to enhance their threat detection capabilities and streamline their incident response process. It helps you to effectively monitor your security posture, identify threats in real-time, and respond quickly to potential attacks.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 

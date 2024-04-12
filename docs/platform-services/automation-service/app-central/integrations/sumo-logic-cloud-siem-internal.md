@@ -1,16 +1,16 @@
 ---
-title: CSE Tools
+title: Sumo Logic Cloud SIEM Internal
 description: ''
 tags: []
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cse-tools.png')} alt="cse-tools" width="100"/>
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/sumo-logic.png')} alt="sumo-logic-cloud-siem-internal" width="100"/>
 
-***Version: 1.14  
-Updated: Nov 24, 2023***
+***Version: 1.15  
+Updated: Apr 5, 2024***
 
-Utilize CSE entities to correlate Signals and Insights through Sumo Logic CSE integration.
+Utilize Cloud SIEM entities to correlate Signals and Insights through Sumo Logic system calls
 
 ## Actions
 
@@ -39,6 +39,8 @@ Utilize CSE entities to correlate Signals and Insights through Sumo Logic CSE in
 
 * September 20, 2023 - First Upload
 * October 13, 2023 (v1.13)
-	+ Added new action: Insight Output Mapping
+    + Added new action: Insight Output Mapping
 * November 24, 2023 (v1.14)
-	+ Extended output mapping for Get Signal action
+    + Extended output mapping for Get Signal action
+* April 5, 2024 (v1.15)
+    + The integration formerly known as "CSE Tools" has been renamed to "Sumo Logic Cloud SIEM Internal"

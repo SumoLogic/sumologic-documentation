@@ -31,16 +31,11 @@ The log format is described in [AWS ELB Access Log Collection](http://docs.aws.a
 
 ## Prerequisites
 
-Follow the [Before you begin](#Before-you-begin) section and then use the in-product instructions in Sumo Logic to set up the app. For information on collecting unified logs and metrics for AWS Elastic Load Balancing - Classic, see [AWS Elastic Load Balancing ULM - Classic](/docs/integrations/amazon-aws/classic-load-balancer.md).
+Follow the below section, and then use the in-product instructions in Sumo Logic to set up the app. For information on collecting unified logs and metrics for AWS Elastic Load Balancing - Classic, see [AWS Elastic Load Balancing ULM - Classic](/docs/integrations/amazon-aws/classic-load-balancer).
 
-
-### Prerequisites
-
-Enable Elastic Load Balancing logging in your AWS account and configure a Sumo Logic ELB Source, using [these instructions](/docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source).
-
-If you have more than one environment that generates Elastic Load Balancing data (such as ops, dev, and so on), you’ll need to configure a separate S3 Source for each environment. This means that you’ll have the three App Dashboards for each environment. To avoid confusion, and in order to identify which environment is generating data, you should name each S3 Source with the environment's name. For example, you might name Sources as ELB-prod, ELB-dev, ELB-test, and so on.
-
-Finally, make copies of each Panel in the Elastic Load Balancing Dashboards, and modify the search logic in each Panel so that you select the appropriate source for each environment. For example, for a production environment, you will add the string `_source=ELB-production` to the beginning of each search. If you have three environments then you will have three copies of the application for each of them (nine dashboards in total).
+1. Enable Elastic Load Balancing logging in your AWS account and configure a Sumo Logic ELB Source using [these instructions](/docs/send-data/hosted-collectors/amazon-aws/aws-elastic-load-balancing-source).
+1. If you have more than one environment that generates Elastic Load Balancing data (such as ops, dev, and so on), you’ll need to configure a separate S3 Source for each environment. This means that you’ll have the three App Dashboards for each environment. To avoid confusion, and in order to identify which environment is generating data, you should name each S3 Source with the environment's name. For example, you might name Sources as ELB-prod, ELB-dev, ELB-test, and so on.
+1. Finally, make copies of each Panel in the Elastic Load Balancing Dashboards, and modify the search logic in each Panel so that you select the appropriate source for each environment. For example, for a production environment, you will add the string `_source=ELB-production` to the beginning of each search. If you have three environments then you will have three copies of the application for each of them (nine dashboards in total).
 
 
 ## Collecting Logs for the AWS Elastic Load Balancing - Classic App

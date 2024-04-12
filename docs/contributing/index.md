@@ -66,6 +66,6 @@ To submit a general Sumo Logic feature request, go to our [Community](/docs/get-
 
 Need to get in touch? You can find us at:
 * [Sumo Dojo Slack](https://sumodojo.slack.com)
-* [Sumo Logic Support](https://support.sumologic.com/support/s/contactsupport)
+* [Sumo Logic Support](https://support.sumologic.com/support/s)
 * [Sumo Logic Community](https://sumologic.my.site.com/support/s/)
 :::

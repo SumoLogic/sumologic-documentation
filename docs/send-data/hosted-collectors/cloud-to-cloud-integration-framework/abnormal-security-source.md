@@ -19,9 +19,9 @@ Abnormal Security is a behavioral AI-based email security platform that learns t
 
 The Abnormal Security integration ingests threat data and case data identified by the abnormal threat log and cases using the [Abnormal Security API](https://app.swaggerhub.com/apis-docs/abnormal-security/abx/1.4.1).
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 

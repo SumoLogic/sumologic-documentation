@@ -445,4 +445,4 @@ import JfrogNon from '../../reuse/apps/jfrog/artifactory-noncached.md';
 
 For more information about JFrog Artifactory, see [Using Node.js npm with Artifactory via the API and CLI (Sumo Logic DevOps blog)](https://www.sumologic.com/blog/using-node-js-npm-with-jfrog-artifactory-via-the-api-and-cli/).
 
-For questions or help regarding the integration, see the [JFrog Artifactory documentation](https://jfrog.com/help/r/jfrog-platform-administration-documentation/sumo-logic) or contact [Sumo Logic Support](https://support.sumologic.com/hc/en-us).
+For questions or help regarding the integration, see the [JFrog Artifactory documentation](https://jfrog.com/help/r/jfrog-platform-administration-documentation/sumo-logic) or contact [Sumo Logic Support](https://support.sumologic.com/support/s).

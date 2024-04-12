@@ -29,7 +29,7 @@ By clicking on any data point on the chart, you can view the side panel's **Enti
 
 
 :::note
-Tracing metrics retention has [default metrics retention](/docs/apm/traces/view-and-investigate-traces/#time-range).
+Tracing metrics retention has [default metrics retention](/docs/apm/traces/view-and-investigate-traces#set-time-range).
 :::
 
 ## Installing the Tracing App (Optional)

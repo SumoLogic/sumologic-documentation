@@ -125,11 +125,11 @@ The [timeline](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui#signal
 
 The [entities within each Signal](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui#entities-tab) can help point to who, what, or where the event occurred. An entity might point to the IP address of a hacked device, the location of the adversary, the location of the database that leaked, the owner of a website or domain, or some other piece of the puzzle.
 
-Cloud SIEM can help with every step of the threat investigation process. Cloud SIEM automatically detects and monitors potential threats by analyzing millions of records and distilling them into a handful of Insights with a low false positive rate. You can choose Insights from the home page of Cloud SIEM in the [Insight Radar](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display#insight-radar), under the [Insight Activity pane](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display#insight-activity), or from the [Insights panel](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/).
+Cloud SIEM can help with every step of the threat investigation process. Cloud SIEM automatically detects and monitors potential threats by analyzing millions of records and distilling them into a handful of Insights with a low false positive rate. You can choose Insights from the home page of Cloud SIEM in the [Insight Radar](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display#8-insight-radar), under the [Insight Activity pane](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display#9-recent-activity), or from the [Insights panel](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/).
 
 Once you choose an Insight, you can dig through all the raw logs and Signals to conduct deep-dive investigations and even proactive threat hunts. You can organize your thoughts, make hypotheses, and take notes about your investigation in the comments of each Insight. This will share your ideas with your SOC teammates and help you keep track of your investigation.
 
-You can also take certain [actions](/docs/cse/administration/create-cse-actions) directly from the Insight. You can email teammates, create JIRA tickets, execute playbooks, and many other custom actions with the Actions button.
+You can also take certain [actions](/docs/cse/administration/create-cse-actions) directly from the Insight. You can email teammates, create Jira tickets, execute playbooks, and many other custom actions with the Actions button.
 
 Finally, you can [update the Insight](/docs/cse/administration/manage-custom-insight-resolutions#about-insight-resolutions). You can mark it as “in progress” or “closed”. When you close it, you can mark it as “resolved”, “false positive”, “duplicate”, or “no action”. Updating the status correctly will help the Cloud SIEM Insight engine produce more accurate Insights for your org in the future.
 
@@ -173,7 +173,7 @@ In addition to the context actions available in the Cloud SIEM UI, there are man
 
 In Cloud SIEM, there are several different actions you can take on each Insight. You can comment on the Insight, or close it or assign a status to it. When you close an Insight, Cloud SIEM uses the resolution information to reduce false positives and duplicates further. Assigning a status to the Insight lets you keep working on it, and keep track of your progress.
 
-You can also assign the Insight to yourself or to a colleague, and use the Actions button to alert colleagues, create JIRA tickets, send Slack messages, execute playbooks, or use other APIs. This Actions button is customizable, but can only be configured by admins. If you need a custom Action, ask your Admin or Sumo account rep for help creating one.
+You can also assign the Insight to yourself or to a colleague, and use the Actions button to alert colleagues, create Jira tickets, send Slack messages, execute playbooks, or use other APIs. This Actions button is customizable, but can only be configured by admins. If you need a custom Action, ask your Admin or Sumo account rep for help creating one.
 
 ### Using the MITRE ATT&CK matrix
 

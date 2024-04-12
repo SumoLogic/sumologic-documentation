@@ -1,6 +1,6 @@
 ---
 id: ms-azure-event-hubs-source
-title: Azure Event Hubs Source for Logs 
+title: Azure Event Hubs Source for Logs
 description: The Azure Event Hubs Source for Logs provides a secure endpoint to receive data from Azure Event Hubs.
 ---
 
@@ -48,7 +48,7 @@ The Event Hub doesn't have to be in the same subscription as the resource sendin
     * Shared Access Policies can be set up for the entire namespace. These policies can be used to access/manage all hubs in the namespace. A policy for the namespace is created by default: `RootManageSharedAccessKey`. In this example, Event Hub Instance is set to `my-hub`.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep5.png')} alt="azure event hub" />
 4. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) with the Listen claim to the newly created Event Hub Instance. In this example, Event Hub Instance is set to `SumoCollectionPolicy`.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep6.png')} alt="azure event hub" /><br/><img src={useBaseUrl('img/send-data/AzureEventHubstep7.png')} alt="azure event hub" /><br/><img src={useBaseUrl('img/send-data/AzureEventHubstep8.png')} alt="azure event hub" />
 5. Copy the **Shared access policies** Key. Copy the **Primary key** associated with this policy.<br/><img src={useBaseUrl('img/send-data/AzureEventHubstep9.png')} alt="azure event hub" />
-6. When [configuring the Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#create-an-azure-event-hubs-source) in Sumo Logic, our input fields might be:
+6. When [configuring the Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#vendor-configuration) in Sumo Logic, our input fields might be:
 
   | Field | Value |
   |:---|:---|

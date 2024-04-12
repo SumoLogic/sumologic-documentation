@@ -73,7 +73,7 @@ In this section, we'll introduce the following concepts:
 <br/>
 
 :::note
-To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Search & Query Forum](https://support.sumologic.com/hc/en-us/community/topics).
+To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Search & Query Forum](https://support.sumologic.com/support/s/).
 :::
 
 ## Partitions and Views

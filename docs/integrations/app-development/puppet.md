@@ -183,7 +183,7 @@ Puppet Master only runs on Linux.
 
 ### Step 3: Configure local file source for Puppet Server logs
 
-In this step, you add a local file source to the installed collector you created in [Step 2](#Step_2:_Install_collector_on_Puppet_Master). The local file source will receive Puppet Server logs.  
+In this step, you add a local file source to the installed collector you created in [Step 2](#step-2-install-collector-on-puppet-master). The local file source will receive Puppet Server logs.  
 
 Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), with these additional instructions:
 
@@ -333,7 +333,7 @@ Puppet logs and reports should start flowing into Sumo Logic.
 
 If you encounter problems:
 
-* Review [Script source prerequisites](#Script_source_prerequisites).
+* Review [Script source prerequisites](#script-source-prerequisites).
 * Review the contents of the log file that the script creates in the configured working directory.
 
 ## Installing the Puppet app

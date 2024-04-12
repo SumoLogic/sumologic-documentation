@@ -27,9 +27,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The CloudQuery integration is used to pull inventory from the AWS APIs and transform them into the CloudQuery schema and send it to Sumo Logic.
 
-:::note
-This source is available in the [Fed deployment](https://hub.cloudquery.io/plugins/source/cloudquery/aws/v22.19.2/docs).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
@@ -59,10 +59,10 @@ To configure a CloudQuery Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
 1. Select the configuration type from the given two options: Account Level and Organization Level.
-1. **AWS Access Key ID**. Enter the Access Key ID collected from the [AWS Management Console](#vendor-configuration).
-1. **AWS Secret Access Key**. Enter the Secret Access Key collected from the [AWS Management Console](#vendor-configuration).
-1. **Admin Role ARN (Organization Level only)**. Enter the full ARN of the Admin Role collected from the CloudQuery AWS role deployment steps.
-1. **Member Role Name (Organization Level only)**. Enter the member role name collected from the CloudQuery AWS role deployment steps.
+1. **AWS Access Key ID**. Enter the Access Key ID collected from the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+1. **AWS Secret Access Key**. Enter the Secret Access Key collected from the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+1. **Admin Role ARN (Organization Level only)**. Enter the full ARN of the Admin Role collected from the [CloudQuery AWS role deployment](https://www.cloudquery.io/blog/deploying-cloudquery-into-aws-org) steps.
+1. **Member Role Name (Organization Level only)**. Enter the member role name collected from the [CloudQuery AWS role deployment](https://www.cloudquery.io/blog/deploying-cloudquery-into-aws-org) steps.
 1. **Regions**. Identify and enter your Region based on your Base URL.
 1. **Services**. Enter the type of service from which the data needs to be collected.
 1. By default, **Polling Interval** is set to 12 hours.

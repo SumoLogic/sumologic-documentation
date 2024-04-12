@@ -96,7 +96,7 @@ A metric query consists of a metric, one or more filters and optionally, one or
 
 #### Metric
 
-When you create a metric query in the Metrics Explorer, the first thing you do is select a metric. When you click in the **Metrics** field, a list of metrics appears. 
+When you [create a metric query](/docs/metrics/metrics-queries/metrics-explorer/#create-a-metric-query) in the Metrics Explorer, the first thing you do is select a metric. When you click in the **Metrics** field, a list of metrics appears. 
 
 #### Filters  
 
@@ -113,7 +113,7 @@ For more information, see [Metrics Operators](/docs/metrics/metrics-operators).
 
 ## Creating a query
 
-For instructions on how to create a metric query, see [Metrics Explorer](../metrics-queries/metrics-explorer.md). 
+For instructions on how to create a metric query, see [Metrics Explorer](../metrics-queries/metrics-explorer.md#create-a-metric-query). 
 
 ### Metricmonitors
 
