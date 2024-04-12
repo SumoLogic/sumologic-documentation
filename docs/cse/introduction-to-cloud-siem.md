@@ -24,6 +24,26 @@ Watch the following micro lesson to learn how to get started using Cloud SIEM fo
 
 import Iframe from 'react-iframe'; 
 
+## Cloud SIEM user interface
+
+### Access Cloud SIEM
+
+To access Cloud SIEM, click **Cloud SIEM** in the Sumo Logic navigation menu. 
+
+Cloud SIEM must be enabled by Sumo Logic before it is accessible to users in your organization. For more information, see [Onboarding Checklist for Cloud SIEM Administrators](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/).
+
+### Theme
+
+import Theme from '../reuse/dark-light-theme.md';
+
+<Theme/>
+
+### Heads Up Display
+
+The first screen you see when you access Cloud SIEM is the Heads Up Display, a single pane of information about your environment. In the center, you'll see a radar showing insights, surrounded by the signals and records used to generate the insights. On the left is summary information, and on the right is recent activity. Use this screen as the starting place for your investigations, focusing on insights as the most valuable place to start.
+
+For more information, see [Cloud SIEM Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/).
+
 ## Getting your data into Cloud SIEM
 
 Cloud SIEM automatically normalizes, enriches, and correlates all your data across multiple data sources into actionable security Insights. As shown below, the process starts when logs from data sources enter a collector, then flow through an ingestion process that generates messages. The messages are parsed, mapped to normalized values, and enriched with additional data before becoming records.

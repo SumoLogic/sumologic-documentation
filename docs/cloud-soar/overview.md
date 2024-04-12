@@ -8,6 +8,27 @@ Cloud SOAR fully automates triage, investigation, and remediation of threats for
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+## Cloud SOAR user interface
+
+### Access Cloud SOAR
+
+To access Cloud SOAR, click **Cloud SOAR** in the Sumo Logic navigation menu. 
+
+Cloud SOAR must be enabled by Sumo Logic before it is accessible to users in your organization. If you would like to use Cloud SOAR in your organization, contact your Sumo Logic account representative.
+
+### Theme
+
+import Theme from '../reuse/dark-light-theme.md';
+
+<Theme/>
+
+### Learn the UI
+
+To learn about the Cloud SOAR user interface, see:
+* [Cloud SOAR Main Menu](/docs/cloud-soar/main-menu/)
+* [Cloud SOAR Global Functions Menu](/docs/cloud-soar/global-functions-menu/)
+* [Cloud SOAR Incident Management and Triage](/docs/cloud-soar/incidents-triage/)
+
 ## Why Cloud SOAR?
 
 Cloud SOAR is a modern security operations technology platform that empowers MSSPs, SOCs, and security teams by providing collaborative and automated real-time incident management and threat response. Make quick and insightful decisions during security response with workflow automation.
@@ -27,7 +48,7 @@ Cloud SOAR is a modern security operations technology platform that empowers MSS
 * **Close the skill gap**
 <br/>Automated workflow processes help analysts function at an optimal level and reduce the skills gap that exists from the lack of qualified cybersecurity professionals.
 * **Comprehensive security portfolio**
-<br/>Cloud SOAR comprises both the Automation Service, which allows our Cloud SIEM to leverage the power of automated playbooks, and the full Cloud SOAR. Cloud SOAR combines automation with case management, among many other capabilities aimed at helping your organization modernize security operations.
+<br/>Cloud SOAR comprises both the Automation Service, which allows Sumo Logic to leverage the power of automated playbooks, and the full Cloud SOAR. Cloud SOAR combines automation with case management, among many other capabilities aimed at helping your organization modernize security operations.
 
 ## Cloud SOAR highlights
 
