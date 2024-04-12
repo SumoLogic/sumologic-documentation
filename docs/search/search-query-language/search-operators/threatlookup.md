@@ -105,7 +105,8 @@ _index=sec_record*
 | formatDate(_threatlookup.valid_until, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'") as valid_until
 ```
 
-<!-- Add this back once we have support for the cat search operator.
+<!-- For threat intel. Add this back once we have support for the cat search operator:
+
 #### Run threatlookup with the cat search operator
 
 You can run the `threatlookup` search operator with the [`cat` search operator](/docs/search/search-query-language/search-operators/cat/) by using the `sumo://threat-intel` path. This lets you search the entire store of threat intelligence indicators, or just a portion. For example:

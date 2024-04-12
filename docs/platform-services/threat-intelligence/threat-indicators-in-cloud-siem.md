@@ -43,7 +43,8 @@ Since different sources can report different reputations, each source has a repu
 
 <img src={useBaseUrl('img/platform-services/threat-indicators-in-cloud-siem-ui.png')} alt="Threat indicators in the Cloud SIEM UI" style={{border: '1px solid gray'}} width="400" />
 
-<!-- Put this back once we support cat with the threatlookup search operator. 
+<!-- For threat intel. Put this back once we support cat with the threatlookup search operator:
+ 
 ## Custom threat intelligence sources in Cloud SIEM
 
 You can no longer [create custom threat intelligence sources using Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). You should use the **Threat Intelligence** tab, a collector, or the API to create sources. 
