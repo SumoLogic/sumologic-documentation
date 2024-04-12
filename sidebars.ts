@@ -491,14 +491,34 @@ module.exports = {
             'send-data/collect-from-other-data-sources/deploy-collectors-aws-opsworks',
             {
               type: 'category',
-              label: 'Azure Blob Storage',
+              label: 'Azure Storage',
               collapsible: true,
               collapsed: true,
-              link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/index'},
+              link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-storage' },
               items: [
-                'send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage',
-                'send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-azure-blob-storage-log-collection',
-              ],
+                {
+                  type: 'category',
+                  label: 'Azure Blob Storage',
+                  collapsible: true,
+                  collapsed: true,
+                  link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/index' },
+                  items: [
+                    'send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs-azure-blob-storage',
+                    'send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/troubleshoot-azure-blob-storage-log-collection',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Azure Append Blob Storage',
+                  collapsible: true,
+                  collapsed: true,
+                  link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-storage/azure-appendblob-storage/index' },
+                  items: [
+                    'send-data/collect-from-other-data-sources/azure-storage/azure-appendblob-storage/collect-logs-azure-appendblob-storage',
+                    'send-data/collect-from-other-data-sources/azure-storage/azure-appendblob-storage/troubleshoot-azure-appendblob-storage-log-collection',
+                  ],
+                },
+              ]
             },
             {
               type: 'category',
