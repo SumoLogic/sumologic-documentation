@@ -141,7 +141,7 @@ Select to show the user interface in a **Dark theme** or **Light theme**.
 This setting only applies to the user interface in the [Automation Service](/docs/platform-services/automation-service/), [Cloud SIEM](/docs/cse/), and [Cloud SOAR](/docs/cloud-soar/).
 
 :::note
-You can also set a dark them or light theme for dashboards. See  [Dark Theme](/docs/dashboards/about/#dark-theme) in *About Dashboard*.
+You can also set a dark them or light theme for dashboards. See [Dark Theme](/docs/dashboards/about/#dark-theme).
 :::
 
 ### Query Editing
