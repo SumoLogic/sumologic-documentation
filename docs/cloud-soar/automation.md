@@ -269,7 +269,11 @@ Define the question to be answered and the authorizer of the user choice selecti
 
 #### Filter
 
-A filter node filters results from the preceding action based on the condition you write. You can only add a filter node after an action node. For example, let's suppose that the action feeding into the filter has 10 results, but you want to filter out all but the best two results. You can write a condition in the filter to do the filtering.
+A filter node filters results from the preceding action based on the condition you write. You can only add a filter node after an action node. 
+
+For example:
+* The action node feeding into the filter has 10 results, but you want to filter out all but the best two results. You can write a condition in the filter to do the filtering. 
+* You want to pass specific output to another action node. Define the output in the filter, and define the corresponding input in the receiving action node. You could also use a filter like this to pass input to a nested playbook.
 
 1. Hover your mouse over an action node and click the **+** button. <br/><img src={useBaseUrl('img/cloud-soar/add-node-button.png')} alt="Add node button" style={{border:'1px solid gray'}} width="200"/> <br/>The available nodes are displayed. <br/><img src={useBaseUrl('img/cloud-soar/add-filter-node.png')} alt="Add filter node" style={{border:'1px solid gray'}} width="500"/>
 1. Click **Filter**. The filter node configuration dialog displays. <br/><img src={useBaseUrl('img/cloud-soar/configure-filter-node.png')} alt="Configure filter node conditions" style={{border:'1px solid gray'}} width="500"/>
