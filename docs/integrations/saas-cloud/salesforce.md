@@ -86,7 +86,7 @@ Before you begin setting up log collection, review the required prerequisites an
 
 ## Set up collection
 
-To set up [Cloud-to-Cloud Integration Salesforce Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source) for the Salesforce app, follow the instructions provided. These instructions will guide you through the process of creating a source using the Salesforce Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Salesforce app is properly integrated and configured to collect and analyze your Salesforce data.
+To set up collection, follow the instructions in [Salesforce Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source). These instructions will guide you through the process of creating a source using the Salesforce Source category, which you will need to use when installing the app. By following these steps, you can ensure that your Salesforce app is properly integrated and configured to collect and analyze your Salesforce data.
 
 ## Installing the Salesforce app
 
