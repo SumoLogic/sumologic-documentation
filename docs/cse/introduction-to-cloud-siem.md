@@ -34,7 +34,7 @@ Cloud SIEM must be enabled by Sumo Logic before it is accessible to users in you
 
 ### Theme
 
-import Theme from '../reuse/theme.md';
+import Theme from '../reuse/dark-light-theme.md';
 
 <Theme/>
 

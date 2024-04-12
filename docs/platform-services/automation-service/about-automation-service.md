@@ -38,7 +38,7 @@ The Automation Service UI is composed of the following tabs:
 
 ### Theme
 
-import Theme from '../../reuse/theme.md';
+import Theme from '../../reuse/dark-light-theme.md';
 
 <Theme/>
 
