@@ -494,7 +494,7 @@ module.exports = {
               label: 'Azure Storage',
               collapsible: true,
               collapsed: true,
-              link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-storage' },
+              link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-storage/index' },
               items: [
                 {
                   type: 'category',
@@ -503,8 +503,7 @@ module.exports = {
                   collapsed: true,
                   link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/index' },
                   items: [
-                    'send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs-azure-blob-storage',
-                    'send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/troubleshoot-azure-blob-storage-log-collection',
+                    'send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs-azure-blob-storage'
                   ],
                 },
                 {
@@ -514,10 +513,9 @@ module.exports = {
                   collapsed: true,
                   link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-storage/azure-appendblob-storage/index' },
                   items: [
-                    'send-data/collect-from-other-data-sources/azure-storage/azure-appendblob-storage/collect-logs-azure-appendblob-storage',
-                    'send-data/collect-from-other-data-sources/azure-storage/azure-appendblob-storage/troubleshoot-azure-appendblob-storage-log-collection',
-                  ],
+                    'send-data/collect-from-other-data-sources/azure-storage/azure-appendblob-storage/collect-logs-azure-appendblob-storage'],
                 },
+                'send-data/collect-from-other-data-sources/azure-storage/troubleshoot-azure-storage-log-collection',
               ]
             },
             {
