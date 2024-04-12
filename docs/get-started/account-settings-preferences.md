@@ -20,34 +20,27 @@ Under **My Profile**, the following information is displayed:
 * **Password** -The password you entered when activating your account. You can reset your password.
 * **Roles** - The Sumo Logic roles assigned to your user account.
 
-### Change Email Address
+### Change Email address
 
 As a Sumo Logic user, you can change your own email address as necessary.
 
-1. In the Sumo Logic left nav, click on your name.
-1. Go to the **Preferences** page.
-1. Under **My Profile**, next to your **Username**, click **Change Email Address**.<br/>![Change email](/img/get-started/change-email.png)
-1. In the **Change Email Address** dialog, your current email address is displayed.
-1. Enter your **New Email**.
-1. Enter your **Current Password** for your Sumo Logic Account.
-1. Click **Submit**.
-1. The **Email Address Changed** dialog appears. An email with an activation link is sent to your new email address. Click the link in the email within seven days to complete your email address change, or this link will expire.
+1. In the Sumo Logic left nav, click on your name, then select **Preferences**.
+1. Under the **My Profile** section, click **Change Email**.<br/>![Change email](/img/get-started/change-email.png)
+1. In the **Change Email Address** dialog, enter your new email address, and then follow the verification steps.
 
 ### Change Password
 
 To change your password:
 
-1. In Sumo Logic, click on your name.
-1. Go to the **Preferences** page.
-1. Under **My Profile**, click **Change Password**.<br/>![Change email](/img/get-started/change-password.png)
-1. Enter your current password, and then enter the new password twice to verify it.<br/>  ![Change Password](/img/get-started/change-password2.png)
-1. Click **OK** to finish resetting your password.
+1. In the Sumo Logic left nav, click on your name, then select **Preferences**.
+1. Under the **My Profile** section, click **Change Password**.<br/>![Change email](/img/get-started/change-password.png)
+1. In the **Change Password** dialog, enter a new password, and then follow the verification steps.
 
 ### Forgot Password
 
 Forgot your password? You can reset it from the login screen.
 
-<img src={useBaseUrl('img/get-started/reset-password.png')} alt="reset-password" width="450"/>
+<img src={useBaseUrl('img/get-started/reset-password.png')} alt="reset-password" style={{border: '1px solid gray'}} width="450"/>
 
 :::info For Administrators
 [Learn more](/docs/get-started/onboarding-checklists/#users-roles-and-security) about managing users/roles and more Administrator settings.
@@ -55,20 +48,24 @@ Forgot your password? You can reset it from the login screen.
 
 ## My Security Settings
 
+:::info For Administrators only
+This section is visible to Administrators only.
+:::
+
 You can enable 2-Step Verification and view backup codes here.
 
-To set up 2-Step Verification, you will need to install a Time-based One-Time Password (TOTP) application which will automatically generate an authentication code that changes after a certain period of time.
+To set up 2-Step Verification, you will need to install a Time-Based One-Time Password (TOTP) application, which will automatically generate an authentication code that changes after a certain period of time.
 
 1. Download one of the following apps:
-    - For Android, iOS and Blackberry: [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)
-    - For Android and iOS: [Duo Mobile](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile)
-    - For Windows Phone: [Authenticator](https://www.microsoft.com/en-us/store/p/authenticator/9wzdncrfj3rj)
+    - For Android, iOS and Blackberry. [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en).
+    - For Android and iOS. [Duo Mobile](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile).
+    - For Windows Phone. [Authenticator](https://www.microsoft.com/en-us/store/p/authenticator/9wzdncrfj3rj).
 1. Scan the QR code displayed on your screen with your TOTP App.
 1. After the TOTP App is configured, enter two consecutive authentication codes.
 
 ## My Access Keys
 
-Users with a role that grants the **Create Access Keys** capability can create and manage their own Access Keys. For more information, see [Access Keys](/docs/manage/security/access-keys).
+In Sumo Logic, you'll need an access key to register new Collectors and use Sumo Logic APIs. If you have a role that grants the **Create Access Keys** capability, you can create and manage your own Access Keys. For more information, see [Access Keys](/docs/manage/security/access-keys).
 
 ## My Preferences
 
@@ -84,7 +81,7 @@ This option overrides the timezone set in your web browser, and affects all hour
 
 This setting is enabled by default. To not show the timezone offset in displayed timestamps, deselect this checkbox.
 
-### Date Format
+### Date format
 
 Select from the following international date format options:
 * Use the browser's default date format.
@@ -96,7 +93,7 @@ Select from the following international date format options:
 If you change the date format option, it will affect your saved searches in the Library. Any saved searches that use absolute dates for their time range must be modified to use the new date format. Scheduled searches will continue to run properly. You would need to modify the date format only if you rescheduled the search.
 :::
 
-### Web session timeout
+### Web session Timeout
 
 Choose an option to set the length of time before your Sumo Logic session times out. Options include 5 minutes to 7 days. For information on web session timeouts and Multi-account Access, see [Multi-account Access].
 
@@ -134,6 +131,6 @@ Select one of the following options:
 
 If you have changed any settings, click **Save**.
 
-### Alerts List and Alert Notifications
+### Alert Notifications and Alerts List
 
-See [Alert Notification Preferences](/docs/alerts/monitors/alert-response/#notification-preferences).
+See [Notification Preferences](/docs/alerts/monitors/alert-response/#notification-preferences).
