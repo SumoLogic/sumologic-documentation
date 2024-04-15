@@ -495,6 +495,24 @@ Mandatory fields are
 }
 ```
 
+Additional fields:
+```
+{
+  "fields": {
+    "description": "string",
+    "additional_info": "string",
+    "starttime": "ISO-8601 datetime string", 
+    "incident_kind": <ID incident kind>,
+    "incident_category": <ID incident category>,
+    "status": <ID incident status>,
+    "restriction": <ID incident restriction>
+  }
+}
+```
+
+ISO-8601 datetime string:
+<img src={useBaseUrl('img/cloud-soar/iso_parser.png')} alt="iso-8601" style={{border: '1px solid black'}} width="600"/>
+
 For more information on additional fields, please refer to the API documentation <img src={useBaseUrl('img/cloud-soar/api_documentation.png')} alt="api documentation" style={{border: '1px solid black'}} width="600"/>
 
 
