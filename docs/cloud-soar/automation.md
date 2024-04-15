@@ -382,6 +382,35 @@ Once the user has created this new action, it can easily be added to the existin
 
 See [Integration Framework](#integration-framework) for more details on utilizing the integration framework within Cloud SOAR.
 
+### Configure Log Analytics Platform (LAP) to work with Full CSOAR
+
+With LAP Monitoring -> Connections you can configure a webhook connection allows you to send an alert from a scheduled search to Sumo Logic Cloud SOAR.
+
+To create a webhook connection from Sumo Logic to Cloud SOAR:
+
+<img src={useBaseUrl('img/cloud-soar/CSOAR-connection1.png')} alt="New connection" style={{border: '1px solid black'}} width="600"/> 
+
+In Sumo Logic, go to Manage Data > Monitoring > Connections.
+- Click + Add and choose Cloud SOAR as the connection type.
+- Enter a Name and give an optional Description to the connection.
+- URL is [Sumo Logic Endpoints by Deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security)/csoar/v3/incidents/ ```i.e. https://api.us2.sumologic.com/api/csoar/v3/incidents/```
+- Authorization Header is Basic Access described here  [Sumo Logic Basic Access](/docs/api/getting-started#basic-access-base64-encoded)
+- Click Save, after save the Templates dropdown shows a list of all incident templates, by name, configured in your Cloud SOAR environment.
+- The default Payload synchronizes with the selected template and the associated template_id field is automatically defined in the default payload. A template_id is required in the payload in order to configure the connection. For details on variables you can use as parameters within your JSON object, see Webhook Payload Variables.
+- Click Save.
+
+Mandatory fields are 
+```
+{
+  "template_id": <Template ID>,
+  "fields": {
+    "incidentid": "Incident Id"
+  }
+}
+```
+
+For more information on additional fields, please refer to the API documentation <img src={useBaseUrl('img/cloud-soar/api_documentation.png')} alt="api documentation" style={{border: '1px solid black'}} width="600"/>
+
 ### Configure Slack for Cloud SOAR
 
 With the Cloud SOAR Slack integration, teams can remain connected, organize conversations,  and quickly find what is needed to get the work done. 
