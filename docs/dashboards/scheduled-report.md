@@ -12,7 +12,7 @@ The **Scheduled Report** feature enables you to receive an emailed copy of a das
 You can distribute the dashboard to folks in your Sumo organization who do not have access to the platform, enabling better information sharing. It is also useful for compliance management, as it automatically captures and archives the state of the dashboard.
 
 :::info
-If a PDF export fails, an error email will be sent to your email ID.
+If a .pdf and/or .png export fails, an error email will be sent to your email ID.
 :::
 
 ## Create a Scheduled Report
@@ -37,10 +37,14 @@ To schedule a dashboard email report, do the following:
    * **Message.** Enter the body of the email.
 
 :::note
+Scheduled reports are allowed to run for a maximum of five minutes. Any panel that has not completed running its queries at this time will have partial or empty data in the panel with an error message in the report.
+:::
+
+### Limitations
+
 * You can schedule only one export per dashboard.
 * Altering the queries or template variables will not update the scheduled report.
 * You can enter up to 20 email addresses to which you want to send the dashboard.
-:::
 
 ## Edit a Scheduled Report
 

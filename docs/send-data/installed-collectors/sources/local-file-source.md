@@ -42,7 +42,7 @@ When the Sumo collector accesses a log file to read its content, the collector o
 ## Configure a Local File Source
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
-1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose** Add **Source from the pop-up menu.
+1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose **Add Source** from the pop-up menu.
 
     ![img](/img/send-data/add-source.png)    
 1. Select **Local File** for the Source type.
@@ -92,11 +92,11 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
 1. Set any of the following options under **Advanced**:
 
-   * **Denylist.** Enter the path for files to exclude from the Source collection. Wildcard syntax is allowed when specifying unwanted files. For example, if you are collecting` /var/log/*.log` but don’t want to collect `unwanted*.log`, then specify `/var/log/unwanted*.log`. You can also exclude subdirectories, for example, if you are collecting` /var/log/**/*.log` but do not want to collect anything from `/var/log/unwanted `directory, specify `/var/log/unwanted`. You don't need to denylist compressed files that end with the file extensions tar, bz2, gz, z, zip, jar, war, 7z, rar, exe, dll, xz, or /var/log/(lastlog\|btmp\|wtmp) binary files. Sumo Logic, automatically excludes these compressed file extensions when collecting data.  tar.gz files are supported
+   * **Denylist.** Enter the path for files to exclude from the Source collection. Wildcard syntax is allowed when specifying unwanted files. For example, if you are collecting` /var/log/*.log` but don’t want to collect `unwanted*.log`, then specify `/var/log/unwanted*.log`. You can also exclude subdirectories, for example, if you are collecting` /var/log/**/*.log` but do not want to collect anything from `/var/log/unwanted `directory, specify `/var/log/unwanted`. You do not need to denylist compressed files that end with the file extensions tar, bz2, gz, z, zip, jar, war, 7z, rar, exe, dll, xz, or /var/log/(lastlog\|btmp\|wtmp) binary files. Sumo Logic, automatically excludes these compressed file extensions when collecting data.  tar.gz files are supported
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone.** There are two options for Time Zone.
      * You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message.
-     * Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+     * Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference for more information.
    * **Encoding.** UTF-8 is the default, but you can choose another encoding format from the menu.
    * **Enable Multiline Processing.** See [Collecting Multiline Logs](/docs/send-data/reference-information/collect-multiline-logs.md) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:

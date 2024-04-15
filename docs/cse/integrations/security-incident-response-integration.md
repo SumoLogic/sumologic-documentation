@@ -34,9 +34,9 @@ Your Cloud SIEM role must allow you to use API keys and to retrieve and modify I
 
 ## Step 1: Copy your API credentials
 
-In this step, you make a copy of your API credentials, which you'll need to supply when you install the SIR-Cloud SIEM integration in [Step 5](#step-5-install-the-sir-cse-integration) below. 
+In this step, you make a copy of your API credentials, which you'll need to supply when you install the SIR-Cloud SIEM integration in [Step 5](#step-5-install-the-sir-cloud-siem-integration) below. 
 
-You’ll need to supply a Sumo Logic Access ID and Access Key. If necessary, you can create those on your **Preferences** page in the Sumo Logic UI. For more information, see [Create an access key on Preferences page](/docs/manage/security/access-keys#create-an-access-keyon-preferences-page).
+You’ll need to supply a Sumo Logic Access ID and Access Key. If necessary, you can create those on your **Preferences** page in the Sumo Logic UI. For more information, see [Create an access key on Preferences page](/docs/manage/security/access-keys#from-the-preferences-page).
 
 ## Step 2: Install ServiceNow plugins
 

@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The [Azure Relay](https://learn.microsoft.com/en-us/azure/azure-relay/relay-what-is-it) service enables you to securely expose services that run in your corporate network to the public cloud. This integration helps in monitoring  everything that happens with operations and actions that are conducted against your Azure Relay namespace by using the API, or through language SDK.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Relay, you can collect the following logs and metrics:
 
-* **Diagnostic Logs**. To know more about the different resource log category types and schemas collected for Azure Relay, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-relay/diagnostic-logs).
+* **Diagnostic Logs**. To learn more about the different resource log category types and schemas collected for Azure Relay, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-relay/diagnostic-logs).
 * **Azure Relay Metrics**. These metrics are available in [Microsoft.Relay/namespaces](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-relay-namespaces-metrics) namespace.
 For more information on supported metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-relay/relay-metrics-azure-monitor).
 

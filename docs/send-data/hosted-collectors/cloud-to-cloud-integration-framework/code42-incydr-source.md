@@ -19,9 +19,9 @@ The Code42 Incydr is an insider risk management solution that allows you to dete
 
 Code42 Incydr source is used to analyze and fetch file events, alerts and audit logs from the Code42 Incydr API and send it to Sumo Logic.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
@@ -62,6 +62,12 @@ To configure a Code42 Incydr Source:
 1. In **Client ID**, enter the Client ID you generated from the Code42 Incydr platform.
 1. In **Secret Key**, enter the Secret Key you generated from the Code42 Incydr platform.
 1. In **Data Collection**, select the type of source from which you want to collect the data from. This allows you to limit the response to just the data you want.
+
+## Metadata fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemParser` | `/Parsers/System/Code42/Code42 Incydr` | Set when **Forward To SIEM** is checked. |
 
 ## JSON schema
 

@@ -4,11 +4,9 @@ title: Metrics Charts (Classic)
 description: You can visualize metrics data in Sumo Logic.
 ---
 
-:::info legacy solution
-This topic pertains to our Classic Metrics UI (Legacy).
+import ClassicMetricsNote from '../../reuse/classic-metrics-deprecation.md';
 
-For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metrics-queries/metrics-explorer.md).
-:::
+<ClassicMetricsNote/>
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 

@@ -62,9 +62,9 @@ For example, this query would set the following parameters:
 
 ## Rules
 
-* The outlier operator must appear after a group by aggregator, such as count, min, max, or sum.
+* The outlier operator must appear after a group by aggregator, such as `count`, `min`, `max`, or `sum`.
 * The original target field must be numeric.
-* A [timeslice](timeslice.md) is required.
+* A [`timeslice`](timeslice.md) is required.
 
 ## Limitations
 

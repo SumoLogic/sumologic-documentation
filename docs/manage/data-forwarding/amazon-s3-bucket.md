@@ -12,7 +12,7 @@ This topic has instructions for forwarding data from Sumo Logic to an S3 bucket.
 Data forwarding is not currently supported for data assigned to the Infrequent Tier. 
 :::
 
-You can forward log data from a [Partition](/docs/manage/partitions-data-tiers) or [Scheduled View](/docs/manage/scheduled-views) to an S3 bucket. Only new data is forwarded from a Partition once it is set to forward data. 
+You can forward log data from a [Partition](/docs/manage/partitions) or [Scheduled View](/docs/manage/scheduled-views) to an S3 bucket. Only new data is forwarded from a Partition once it is set to forward data. 
 
 After data forwarding is configured, you should start to see file objects posted within your configured bucket. If your Scheduled View conducts aggregation, which is a best practice, your aggregate fields are automatically appended to the forwarded objects.
 
@@ -64,6 +64,8 @@ These file objects will contain the messages received as well as the system met
 * Aggregate fields are always present after the system or built-in fields.
 
 ### Example
+
+When forwarding data from Sumo Logic, the system will write structured logs that include the original message being forwarded, as well as additional metadata and quotation marks as seen in a structured JSON file.
 
 **Metadata fields**
 

@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Batch](https://learn.microsoft.com/en-us/azure/batch/) runs large-scale parallel and high-performance computing (HPC) batch jobs efficiently in Azure. This integration helps in monitoring health of the nodes; creation, update, and deletion events of individual Batch resources, such as a pool or task; and tracking the state (start/fail/complete) of jobs and tasks.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Batch, you can collect the following logs and metrics:
 

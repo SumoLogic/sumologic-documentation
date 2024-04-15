@@ -15,7 +15,7 @@ Match Lists are lists of important indicators and identifiers configured by a Cl
 Here’s a use case for using a Match List to define an allow list:  Vulnerability scanners often set off false alarms in security data, as they intentionally mimic the behavior of an attacker. Given that this behavior is safe and expected, you don’t want scanner activities to fire a rule. That’s what a match list is for. You can create a Match List called “vuln_scanners” that contains the IP addresses of your scanners.
 
 :::tip
-There’s no reason you can’t use a Match List to define “deny lists” of items. However, Cloud SIEM’s Threat Intel feature is designed for exactly that purpose. Most of the time, but not always, you should use Threat Intel lists for negative indicators. For more information, see [Match Lists or Threat Intel: which to use?](#match-list-or-threat-intel-which-to-use).
+There’s no reason you can’t use a Match List to define “deny lists” of items. However, Cloud SIEM’s Threat Intel feature is designed for exactly that purpose. Most of the time, but not always, you should use Threat Intel lists for negative indicators. For more information, see [Match Lists or Threat Intel: which to use?](#match-listor-threat-intel-which-to-use).
 :::
 
 Here’s an example of a Match List in the Cloud SIEM UI, at **Content > Match Lists**. It is a list of trusted domains.  
@@ -86,9 +86,9 @@ You can also create and manage Match Lists with Cloud SIEM's REST [API](/docs/cs
     1. **Description**. Enter a description for the list. Descriptions for standard Match Lists can be found in [Standard Match Lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists#standard-match-lists).
     1. **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire.
     1. **Target Column**. The type of message field to which items on the list should be compared. The **Target Column** for standard Match Lists can be found in [Standard Match Lists](/docs/cse/match-lists-suppressed-lists/standard-match-lists#standard-match-lists). <br/>
-     :::note
-     Once you create a Match List, it's not possible to change its **Target Column**.
-     :::
+        :::note
+        Once you create a Match List, it's not possible to change its **Target Column**.
+        :::
     1. Click **Create**.<br/><img src={useBaseUrl('img/cse/new-match-list.png')} alt="New match list" width="400"/>
 1. The Match List now appears on the **Match Lists** page. <br/><img src={useBaseUrl('img/cse/match-list-added.png')} alt="Match list added" width="800"/>
 1. Click the name of the Match List to open it.
@@ -139,9 +139,9 @@ Sumo Logic recommends the following conventions and best practices for using M
 
 ### Use Match Lists
 
-Use the Match List feature early on to get the most value from Cloud SIEM. This feature allows you to prevent rules from firing as a result of devices and activity in your environment that you know are benign. This optimizes the detection process by reducing noise in results, and helps reduce alert overload and analysis fatigue. 
+Use the Match List feature early on to get the most value from Cloud SIEM. This feature allows you to prevent rules from firing as a result of devices and activity in your environment that you know are benign. This optimizes the detection process by reducing noise in results, and helps reduce alert overload and analysis fatigue.
 
-Match Lists are not your only option for creating allowlists or denylists. For Entities, use [schema key tags](/docs/cse/match-lists-suppressed-lists/standard-match-lists) rather than Match Lists. And to suppress Signals altogether, use [Suppressed Lists](/docs/cse/match-lists-suppressed-lists/suppressed-lists). 
+Match Lists are not your only option for creating allowlists or denylists. For Entities, use [schema key tags](/docs/cse/match-lists-suppressed-lists/standard-match-lists) rather than Match Lists. And to suppress Signals altogether, use [Suppressed Lists](/docs/cse/match-lists-suppressed-lists/suppressed-lists).
 
 ### Choose appropriate Target Column
 

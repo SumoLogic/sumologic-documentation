@@ -52,6 +52,6 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 
     ![user-options-menu.png](/img/users-roles/user-options-menu.png)
 
-1. Select the row for the user you want to edit and choose **Edit** from the three-dot options menu.
+1. Select the row for the user you want to edit and choose **Edit** from the three-dot kebab options menu.
 1. An edit pane appears on the right side of the page. For information about edit options, see [Create a user](#create-a-user) above.
 1. After editing the user, click **Save**.

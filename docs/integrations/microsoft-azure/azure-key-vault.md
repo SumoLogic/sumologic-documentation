@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Key Vault](https://learn.microsoft.com/en-us/azure/iot-hub/iot-concepts-and-iot-hub) is a managed service hosted in the cloud that acts as a central message hub for communication between an IoT application and its attached devices. This integration helps in comprehensive monitoring of your key vaults requests, performance, failures, and latency.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Key Vault, you can collect the following logs and metrics:
 
-* **Resource logs**. To know more about the different resource log category types and schemas collected for Azure Key Vault, refer to [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#resource-logs).
+* **Resource logs**. To learn more about the different resource log category types and schemas collected for Azure Key Vault, refer to [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#resource-logs).
 * **Key Vault Metrics**. These metrics are available in [Microsoft.KeyVault/vaults](https://learn.microsoft.com/en-gb/azure/azure-monitor/essentials/metrics-supported#microsoftkeyvaultvaults) namespace.
 * **Managed HSM Metrics**. These metrics are available in [Microsoft.KeyVault/managedhsms](https://learn.microsoft.com/en-gb/azure/azure-monitor/essentials/resource-logs-categories#microsoftkeyvaultmanagedhsms) namespace.
 

@@ -18,7 +18,7 @@ The hub has the following pages:
 * **Explore Intelligent Benchmark Dashboards**. Provides you access to our global benchmark dashboards to help you compare your AWS environment with Sumo benchmarks and identify issues.
 * **Invite your teammates**. Allows you to quickly add other users to your Sumo Logic account. 
 
- <img src={useBaseUrl('img/observability/aws_observability_hub_page.jpg')} alt="AWS Observability Hub" style={{border: '1px solid black'}} width="800" />
+ <img src={useBaseUrl('img/observability/aws_observability_hub_page.jpg')} alt="AWS Observability Hub" style={{border: '1px solid gray'}} width="800" />
 
 The AWS Observability Solution feature is available in the following account plans.
 

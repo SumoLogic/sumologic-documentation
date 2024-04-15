@@ -16,16 +16,16 @@ The Sumo Logic App for Host Metrics (EC2) allows you to collect your EC2 instanc
 
 ## Metrics Types  
 
-Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source#Collected_Metrics).
+Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/installed-collectors/sources/host-metrics-source#collected-metrics).
 
-* [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics#CPU-Metrics)
-* [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics#Memory-Metrics)
-* [TCP Metrics](/docs/integrations/hosts-operating-systems/host-metrics#TCP-Metrics)
+* [CPU Metrics](/docs/integrations/hosts-operating-systems/host-metrics#cpu-metrics)
+* [Memory Metrics](/docs/integrations/hosts-operating-systems/host-metrics#memory-metrics)
+* [TCP Metrics](/docs/integrations/hosts-operating-systems/host-metrics#tcp-metrics)
 * [Networking Metrics](/docs/integrations/hosts-operating-systems/host-metrics#networking-metrics)
 * [Disk Metrics](/docs/integrations/hosts-operating-systems/host-metrics#disk-metrics)
 
 
-### Sample Query  
+### Sample queries  
 
 ```sql title="Average CPU Utilization"
 _sourceCategory=Labs/AWS/Host/Metrics metric=CPU_Total account=* region=* namespace=aws/ec2 instanceid=* | avg
@@ -187,7 +187,7 @@ Use this dashboard to:
 
 ### AWS EC2 - Network (Host OS Metrics)
 
-The** AWS EC2 - Network (Host OS Metrics)** dashboard provides insights into EC2 network performance per instance across your infrastructure, including metrics for the average number of packets in and out, packet rate in and out, and byte rate in and out.
+The **AWS EC2 - Network (Host OS Metrics)** dashboard provides insights into EC2 network performance per instance across your infrastructure, including metrics for the average number of packets in and out, packet rate in and out, and byte rate in and out.
 
 Use this dashboard to:
 * Quickly identify if traffic sent and received rates for an EC2 instance is potentially causing a production issue.

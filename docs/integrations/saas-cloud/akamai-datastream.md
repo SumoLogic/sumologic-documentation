@@ -17,7 +17,7 @@ Akamai DataStream app provides pre-built queries that allow you to analyze your 
 
 This App uses Akamai Source to collect [DataStream 2 Logs](https://techdocs.akamai.com/datastream2/docs/log-format-1#sample-log-lines) for Akamai DataStream.
 
-### Sample log message
+### Sample log messages
 
 ```json title="DataStream 2"
 {
@@ -71,7 +71,7 @@ This App uses Akamai Source to collect [DataStream 2 Logs](https://techdocs.akam
 }
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 _sourceCategory="akamai"
@@ -86,9 +86,9 @@ Follow the instructions for setting up [Integration for Akamai DataStream 2](htt
 
 Now that you have configured Akamai DataStream 2 logs, install the Sumo Logic App for Akamai DataStream to take advantage of the pre-configured searches and dashboards.
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Akamai DataStream dashboards​
 

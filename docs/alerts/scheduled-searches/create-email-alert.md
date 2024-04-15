@@ -28,7 +28,7 @@ Before creating an email alert, you'll first need to [create a scheduled search]
     * **Result Set.**
     * **Histogram.**
     * **Results as a CSV attachment.** The maximum CSV file size allowed is 5 MB or 1,000 results. 
-1. Click **Save** to add the search to the **Library**.** The columns in an alert email are alphabetically ordered. To set the column order in the email alert, you can use the [fields](/docs/search/search-query-language/search-operators/fields) operator in your query.
+1. Click **Save** to add the search to the **Library**. The columns in an alert email are alphabetically ordered. To set the column order in the email alert, you can use the [fields](/docs/search/search-query-language/search-operators/fields) operator in your query.
 
 ## Rules
 

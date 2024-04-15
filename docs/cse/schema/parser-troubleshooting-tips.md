@@ -19,7 +19,7 @@ For general information on the parsing engine and syntax, see the [Parser Editor
 
     `/Parsers/System/Microsoft/Windows-XML`
 
-    The ingest guide for a data source will include the path to the correct parser. You can also determine the path to a parser on the **Logs > Parsers** page in the Sumo Logic UI: navigate to the parser, and then choose **Copy Path** from the three-dot more options menu.    
+    The ingest guide for a data source will include the path to the correct parser. You can also determine the path to a parser on the **Logs > Parsers** page in the Sumo Logic UI: navigate to the parser, and then choose **Copy Path** from the three-dot kebab menu.    
 3. Check for Field Extraction Rules, [Sumo Logic Ingest Mappings](/docs/cse/ingestion/sumo-logic-ingest-mapping), or [Local Configurations](/docs/cse/schema/parser-editor#create-a-local-configuration-for-a-system-parser) related to the parser that is presenting issues.
 
     * Field Extraction Rules can alter message contents in such a way that the parser works when you're testing it in the Parser Editor against messages returned by a Sumo Logic log search, but not when it receives logs from the Sumo Logic source that collected the logs. Replicating the logic of the FER in a Local Configuration in the parser usually solves this problem. 

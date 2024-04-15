@@ -20,9 +20,9 @@ JumpCloud's open directory platform unifies your technology stack across identit
 
 JumpCloud Directory Insights Source is used to collect Directory Insights Events from the JumpCloud platform using the REST API and send it to Sumo Logic.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
@@ -56,6 +56,12 @@ To configure a JumpCloud Directory Insights source:
 1. In **Organization ID**, enter the Organization ID you generated from the JumpCloud Directory Insights platform.
 1. In **Service**, select the type of logs to collect. This allows you to limit the response to just the data you want.
 1. When you are finished configuring the Source, click **Save**.
+
+## Metadata fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemParser` | `/Parsers/System/JumpCloud/JumpCloud Directory Insights` | Set when **Forward To SIEM** is checked. |
 
 ## JSON schema
 

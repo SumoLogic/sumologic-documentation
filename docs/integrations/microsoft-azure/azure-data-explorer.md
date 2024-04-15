@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Data Explorer](https://learn.microsoft.com/en-gb/azure/data-explorer/data-explorer-overview) is a fully managed, high-performance, and big data analytics platform that is easy to analyze high volumes of data in near real time. This integration helps in monitoring the usage, health, and performance of the Azure Data Explorer cluster resources.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Data Explorer, you can collect the following logs and metrics:
 

@@ -1,9 +1,9 @@
 ---
 id: folder-management
 title: Folder Management APIs
-sidebar_label: Folder Management
+sidebar_label: Folders
 hide_table_of_contents: true
-description: Use HTTP endpoints to manage folders in the Library.
+description: Use Folder Management APIs to manage folders in your Library.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

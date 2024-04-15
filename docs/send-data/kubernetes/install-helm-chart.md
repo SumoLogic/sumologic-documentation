@@ -13,9 +13,9 @@ This page describes how to install the Sumo Logic Kubernetes Helm Chart.
 
 ### Helm
 
-The Sumo Logic Kubernetes Collection solution is packaged as a Helm Chart. See the [official documentation][install_helm] for installation instructions for the Helm binary.
+The Sumo Logic Kubernetes Collection solution is packaged as a Helm Chart. See the [official Helm documentation](https://helm.sh/docs/intro/install/) for installation instructions for the Helm binary.
 
-### Add Helm Chart repository
+### Helm Chart repository
 
 Before installing the chart, you need to add the `sumologic` Helm repository:
 
@@ -24,19 +24,19 @@ helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collect
 helm repo update
 ```
 
-### Sumo Logic Account
+### Sumo Logic account
 
-If you don’t already have a Sumo account, you can create one by clicking the Free Trial button on https://www.sumologic.com/.
+If you don’t already have a Sumo Logic account, you can [Start a free trial](https://www.sumologic.com/sign-up).
 
-The following are required to set up Sumo Logic's Kubernetes collection.
+The following are required to set up and deploy the Sumo Logic Kubernetes collection.
 
-- An [Access ID and Access Key](/docs/manage/security/access-keys/) with
-  [Manage Collectors](/docs/manage/users-roles/roles/role-capabilities#data-management) capability.
-- Please review our [minimum requirements](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/README.md#minimum-requirements) and [support matrix](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/README.md#support-matrix)
+- Review our [minimum requirements](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/README.md#minimum-requirements) and [support matrix](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/README.md#support-matrix)
+- An [Access ID and Access Key](/docs/manage/security/access-keys/) with the following [Data Management role capabilities](/docs/manage/users-roles/roles/role-capabilities#data-management): Manage Collectors and Manage Fields.
+   :::note
+   The Manage Monitors and Manage Content capabilities are required to install the built-in monitors and dashboards, which are recommended and enabled by default.
+   :::
 
 To get an idea of the resources this chart will require to run on your cluster, you can reference our [performance doc](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/performance.md).
-
-[install_helm]: https://helm.sh/docs/intro/install/
 
 ## Installation steps
 
@@ -46,8 +46,7 @@ The Helm chart installation requires two parameter overrides:
 
 - `sumologic.accessId` - Sumo [Access ID](/docs/manage/security/access-keys/).
 - `sumologic.accessKey` - Sumo [Access key](/docs/manage/security/access-keys/).
-- `sumologic.clusterName` - An identifier for your Kubernetes cluster. This is the name you will see for the cluster in Sumo Logic. Set a
-  different value for each cluster you install the Helm Chart in.
+- `sumologic.clusterName` - An identifier for your Kubernetes cluster. This is the name you will see for the cluster in Sumo Logic. Set a different value for each cluster you install the Helm Chart in.
 
 ### Prepare minimal configuration
 
@@ -100,7 +99,7 @@ More configuration examples (i.e. OpenShift) can found seen in [this document](h
 
 ## Viewing Data In Sumo Logic
 
-Once you have completed installation, you can [install the Kubernetes App and view the dashboards][sumo-k8s-app-dashboards] or [open a new Explore tab] in Sumo Logic. If you do not see data in Sumo Logic, you can review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md).
+Once you have completed installation, you can [install the Kubernetes App and view the dashboards][sumo-k8s-app-dashboards] or [open a new Explore tab] in Sumo Logic. If you do not see data in Sumo Logic, you can review our [troubleshooting guide](/docs/send-data/kubernetes/troubleshoot-collection).
 
 <img src={useBaseUrl('img/kubernetes/K8s_Cluster_Overview.png')} />
 
@@ -127,7 +126,7 @@ We documented some common customizations below:
 ### Overriding names of resources
 
 If you want to override the names of the resources created by the chart, see
-[Overriding chart resource names with `fullnameOverride`](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/best-practices.md#overriding-chart-resource-names-with-fullnameoverride).
+[Overriding chart resource names with `fullnameOverride`](/docs/send-data/kubernetes/best-practices#overriding-chart-resource-names-with-fullnameoverride).
 
 ### Using a custom container registry
 
@@ -146,7 +145,7 @@ An alternative would be to host Sumo Logic container images in one's container r
 
 ### Using FIPS compliant OpenTelemetry Collector
 
-Refer to the [FIPS compliant binaries](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/security-best-practices.md#fips-compliant-binaries) section in the [Advanced Configuration / Security Best Practices](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/security-best-practices.md) document.
+Refer to the [FIPS compliant binaries](security-best-practices.md#fips-compliant-binaries) section in the [Advanced Configuration / Security Best Practices](security-best-practices.md) document.
 
 ### Proxy
 
@@ -157,17 +156,13 @@ If you are installing the collection in a cluster that requires proxying outboun
 
 Refer to [Collecting Container Logs document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-container-logs.md#collecting-container-logs)
 
-### Collecting application metrics
+### Collecting metrics
 
-Refer to [Collecting Application Metrics document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-application-metrics.md#collecting-application-metrics)
-
-### Collecting Kubernetes metrics
-
-Refer to [Collecting Kubernetes Metrics document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-kubernetes-metrics.md#collecting-kubernetes-metrics)
+Refer to [Collecting Metrics](/docs/send-data/kubernetes/collecting-metrics/).
 
 ### Collecting Kubernetes events
 
-Refer to [Collecting Kubernetes Events document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/collecting-kubernetes-events.md#collecting-kubernetes-events)
+Refer to [Collecting Kubernetes Events document](/docs/send-data/kubernetes/collecting-events/)
 
 ## Upgrading Sumo Logic Collection
 
@@ -233,7 +228,7 @@ and the associated hosted collector can be deleted in the Sumo Logic UI.
 
 ## Troubleshooting Installation
 
-See the [Troubleshooting document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/troubleshoot-collection.md#troubleshooting-installation).
+See the [Troubleshooting document](/docs/send-data/kubernetes/troubleshoot-collection#troubleshooting-installation).
 
 ## Installing in OpenShift platform
 
@@ -265,12 +260,12 @@ tailing-sidecar-operator:
 **Notice:** Prometheus Operator is deployed by default on OpenShift platform, you may either limit scope for Prometheus Operator installed
 with Sumo Logic Kubernetes Collection using `kube-prometheus-stack.prometheusOperator.namespaces.additional` parameter in `user-values.yaml`
 or exclude namespaces for Prometheus Operator installed with Sumo Logic Kubernetes Collection using
-`kube-prometheus-stack.prometheusOperator.denyNamespaces` in `user-values.yaml`. For details see
+`kube-prometheus-stack.prometheusOperator.denyNamespaces` in `user-values.yaml`. For details, see
 [Prometheus document](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/prometheus.md#prometheus-operator-in-the-cluster)
 
 ## Non-helm installation
 
-If you don't want to use Helm to manage the installation, please use `helm template` to generate Kubernetes templates and apply them using
+If you do not want to use Helm to manage the installation, please use `helm template` to generate Kubernetes templates and apply them using
 Kubectl.
 
 > **Warning:** > Before upgrade, please delete the old jobs:

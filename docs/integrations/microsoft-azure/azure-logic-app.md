@@ -10,12 +10,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Logic App](https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview) is a cloud platform where you can create and run automated workflows with little to no code. This integration helps in monitoring logic app workflow's run status, trigger history, run history, and performance. It also helps in tracking successful delivery or receipt, errors, and properties for business-to-business (B2B) messages.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Logic App, you can collect the following logs and metrics:
 
-* **Workflow runtime diagnostic events**. To know more about the different resource log category types and schemas collected for Azure Logic App, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#resource-logs).
-* **Integration Account track events**. To know more about the different tracking schemas for integration accounts, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/logic-apps/tracking-schemas-as2-x12-custom).
+* **Workflow runtime diagnostic events**. To learn more about the different resource log category types and schemas collected for Azure Logic App, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/key-vault/general/monitor-key-vault-reference#resource-logs).
+* **Integration Account track events**. To learn more about the different tracking schemas for integration accounts, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/logic-apps/tracking-schemas-as2-x12-custom).
 * **Logic App Workflow Metrics**. These metrics are available in [Microsoft.Logic/Workflows](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-logic-workflows-metrics) namespace.
 * **Integration Account Metrics**. These metrics are available in [Microsoft.Logic/IntegrationServiceEnvironments](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-logic-integrationserviceenvironments-metrics) namespace.
 

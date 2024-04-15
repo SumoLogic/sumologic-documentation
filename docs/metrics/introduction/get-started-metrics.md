@@ -49,7 +49,7 @@ If you already have an Installed Collector, upgrade the Collector to start inges
 
 **Ingest Host Metrics by Installing a Collector through the Setup Wizard**
 
-If you don't have any installed metrics Sources, you can install one easily by using the Setup Wizard.
+If you do not have any installed metrics Sources, you can install one easily by using the Setup Wizard.
 
 <Iframe url="https://www.youtube.com/embed/QBTI6phfAKI"
         width="854px"

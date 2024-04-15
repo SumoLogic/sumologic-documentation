@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS Client VPN is a managed client-based VPN service that enables you to securely access your AWS resources and resources in your on-premises network. With Client VPN, you can access your resources from any location using an OpenVPN-based VPN client. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com//vpn/latest/clientvpn-admin/what-is.html).
 
-## Log and Metric types
+## Log and metric types
 * [CloudWatch Metrics](https://docs.aws.amazon.com//vpn/latest/clientvpn-admin/monitoring-cloudwatch.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com//vpn/latest/clientvpn-admin/monitoring-cloudtrail.html)
 

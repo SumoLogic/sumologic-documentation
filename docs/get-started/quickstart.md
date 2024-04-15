@@ -20,7 +20,7 @@ What you'll learn:
 * Monitor and troubleshoot your environment
 * Share your findings with your team
 
-## Before you begin
+## Prerequisites
 
 You'll need a Sumo Logic account. Sign up for a free trial [here](/docs/get-started/sign-up).
 
@@ -39,9 +39,9 @@ OpenTelemetry is our preferred collector unless you're configuring security data
 1. Log in to Sumo Logic.
 1. Go to **App Catalog** and click the app you'd like to install.
 1. Click the **Add a New Collector** option during app installation.
-  :::note
-  Only V2 apps have the **Add a New Collector** option.
-  :::
+   :::note
+   Only V2 apps have the **Add a New Collector** option.
+   :::
 1. After you've installed the collector, you'll be prompted with instructions to set up the source.
 
 #### Installed and Hosted Collector
@@ -112,7 +112,7 @@ From the Sumo Logic Home page, click the **Learn** tab to access:
 - Getting Started tutorials
 - Sumo docs, support, community, and training
 
-![Welcome Learn](/img/get-started/Welcome_learn.png)
+<img src={useBaseUrl('img/get-started/Welcome_learn.png')} alt="Learn tab" style={{border: '1px solid gray'}} width="800" />
 
 Don't just learn it - master it! Get recognized as a Sumo Logic expert by completing the courses in the [Sumo Logic Certification Program](/docs/get-started/training-certification-faq/#what-certifications-does-sumo-logic-offer). We’re happy to help you get certified right from the product.
 
@@ -120,12 +120,12 @@ Don't just learn it - master it! Get recognized as a Sumo Logic expert by comple
 ## More Resources
 
 :::sumo Need help?
-Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/hc/en-us).
+Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or [submit a support ticket](https://support.sumologic.com/support/s).
 :::
 
 * [Choosing a Sumo Logic Collector and Source](/docs/send-data/choose-collector-source/)
 * [Kubernetes Quickstart](/docs/observability/kubernetes/quickstart). Get up and running with the Sumo Logic Kubernetes solution in minutes.
-* [Traces Quickstart](/docs/apm/traces#quickstart). This guide demonstrates how to measure application microservice performance.
+* [Traces Quickstart](/docs/apm/traces/quickstart). This guide demonstrates how to measure application microservice performance.
 * [Ingest Budgets Quickstart](/docs/manage/ingestion-volume/ingest-budgets/quickstart). Learn how to create and use Ingest Budgets.
 
 See more quickstart tutorials in the [Sumo Logic Training Portal](/docs/get-started/training-certification-faq/#how-do-i-access-the-training-portal).

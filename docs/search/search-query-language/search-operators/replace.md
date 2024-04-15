@@ -51,7 +51,7 @@ If the `<replaceString>` needs to include the dollar sign (`$`), it needs to be 
 
 ### Replace unique IDs in URLs with a regex
 
-If you have a URL and would like to see the number of times it was visited, but don't want to aggregate with unique IDs, you can replace the IDs with an empty string. Take the following URL, where in this example it belongs to a field named `url`:
+If you have a URL and would like to see the number of times it was visited, but do not want to aggregate with unique IDs, you can replace the IDs with an empty string. Take the following URL, where in this example it belongs to a field named `url`:
 
 `http://somewebsite.com/flight/12345678/certification`
 
@@ -143,7 +143,7 @@ For example, in multiple strings, to replace all number 5's with number 7's, and
 The same field name, `field` in the above example, needs to be passed to subsequent replace operations. You can change the field name (alias) in the last replace operation.
 :::
 
-In this example, we set the initial event_id to match the event_code, and then do the replace operation on the event_id. This way, the event_id is always set with the match, and then the replaced value is passed back into the field with any subsequent operations that don't match.
+In this example, we set the initial event_id to match the event_code, and then do the replace operation on the event_id. This way, the event_id is always set with the match, and then the replaced value is passed back into the field with any subsequent operations that do not match.
 
 ```sql
 _sourceName=Application

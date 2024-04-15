@@ -372,7 +372,7 @@ This guide has documentation for all of the apps that Sumo provides for Microsof
     </div>
     <div className="box smallbox card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/365.png')} alt="Thumbnail icon" width="50"/>
+      <img src={useBaseUrl('img/integrations/microsoft-azure/365.png')} alt="Thumbnail icon" width="40"/>
       <h4><a href="/docs/integrations/microsoft-azure/office-365">Microsoft Office Audit 365</a></h4>
       <p>A guide to the Sumo Logic app for Microsoft Office Audit 365.</p>
       </div>

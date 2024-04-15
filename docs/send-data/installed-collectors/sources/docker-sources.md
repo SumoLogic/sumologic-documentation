@@ -19,6 +19,7 @@ You can add the following types of Docker Sources to an Installed Collector on L
 
 :::note
 There are alternative methods for collecting Docker logs and metrics. See [Docker Collection Methods](../../collect-from-other-data-sources/docker-collection-methods.md) for more information.
+:::
 
 ## Notes regarding Docker Sources
 
@@ -87,13 +88,10 @@ There are alternative methods for collecting Docker logs and metrics. See [Dock
 1. In Sumo select **Manage Data** > **Collection** > **Collection**.
 1. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 1. Select **Docker Stats.** The following Docker Stats page appears. There are two possible content types available, select **Metrics** to collect data as metrics, or select **Logs** (JSON) to collect data as JSON logs.
-
-:::note
-To collect metrics for the Docker ULM App, select **Metrics** as the Content Type.
-:::
-
-![docker-stats.png](/img/send-data/docker-stats.png)
-
+   :::note
+   To collect metrics for the Docker ULM App, select **Metrics** as the Content Type.
+   :::
+   ![docker-stats.png](/img/send-data/docker-stats.png)
 1. Configure the source fields:
 
    * **Name.** (Required)

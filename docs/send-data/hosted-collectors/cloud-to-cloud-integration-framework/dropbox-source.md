@@ -35,7 +35,7 @@ You'll need a Dropbox App Key, App Secret, and Access Code to provide to Sumo Lo
 
 1. Sign in to your [Dropbox Business Account](https://www.dropbox.com/login).
 1. Create a new app in the [App Console](https://www.dropbox.com/developers/apps).
-1. Open the new app and click **Permissions** and enable **events.read** in **Team Scopes **of the app and then click **Submit**.
+1. Open the new app and click **Permissions** and enable **events.read** in **Team Scopes** of the app and then click **Submit**.
 1. Copy the provided **App Key** and **App Secret** values, you'll provide these to the Sumo Logic Dropbox Source and are needed in the next step.
 1. Replace **APP_KEY** with your App Key in the following URL.
     ```
@@ -49,7 +49,7 @@ When you create a Dropbox source, you add it to a Hosted Collector. Before crea
 
 To configure a Dropbox source:
 
-1. In Sumo Logic, navigate to** Manage Data > Collection** and open the **Collection** tab. 
+1. In Sumo Logic, navigate to **Manage Data > Collection** and open the **Collection** tab. 
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Dropbox**.
 1. Enter a **Name** for the Source. The **description** is optional.

@@ -99,7 +99,7 @@ The severity of each Signal is also shown. Cloud SIEM generated an Insight for e
 
 ### Redundant Signal suppression
 
-Under certain circumstances, Cloud SIEM suppresses Signals to preventgeneration of multiple, virtually identical Insights. A few unique Signals firing numerous times for the same entity in a short period of time could cause the entity’s Activity Score to climb, resulting in an Insight. At that point, the Entity’s Activity score is reset, and the cycle could repeat, leading to several Insights in succession on the same entity that contain a very similar or identical set of unique Signals. 
+Under certain circumstances, Cloud SIEM suppresses Signals to prevent generation of multiple, virtually identical Insights. A few unique Signals firing numerous times for the same entity in a short period of time could cause the entity’s Activity Score to climb, resulting in an Insight. At that point, the Entity’s Activity score is reset, and the cycle could repeat, leading to several Insights in succession on the same entity that contain a very similar or identical set of unique Signals. 
 
 This makes Insight triage less than ideal for the analyst since they're getting multiple Insights for the same sets of Signals. Cloud SIEM prevents this by suppressing Signals that have the same name and are on the same Entity during a 12 hour time window, or up to 72 hours if Signals for the Signal-Entity combination are firing continuously.   
 
@@ -110,8 +110,6 @@ If Signal A fires on Entity X at hour 0 and continues to fire once every 30 minu
 **Example 2**
 
 Signal B fires on Entity Y fires at hour 0, and doesn’t fire again until hour 13. The Signal that fired at hour 13 will not be suppressed, and will be analyzed by the Insight engine.  
-
-Signals that are suppressed appear in the Cloud SIEM UI as “suppressed”. Suppressed Signals are displayed in the Cloud SIEM UI for 90 days.
 
 :::note
 Prototype Signals, which are are not included in Insights, are not suppressed.

@@ -62,7 +62,7 @@ Follow these steps to configure IdP-initiated login. After this procedure, you c
 
 1. Go to **Administration** > **Security** > **SAML**.
 1. Select an existing configuration, or click the plus (**+**) icon to create a new configuration. <br/>![saml-config-list.png](/img/security/saml-config-list.png) 
-1. The **Add Configuration** page appears.<br/><img src={useBaseUrl('img/security/saml-add-configuration.png')} alt="Add configuration" style={{border: '1px solid black'}} width="600" />
+1. The **Add Configuration** page appears.<br/><img src={useBaseUrl('img/security/saml-add-configuration.png')} alt="Add configuration" style={{border: '1px solid gray'}} width="600" />
 1. **Configuration Name**. Enter a name to identify the SSO policy (or another name used internally to describe the policy).
 1. **Debug Mode**. Select this option if you'd like to view additional details if an error occurs when a user attempts to authenticate. For more information, see [View SAML Debug Information](view-saml-debug-information.md).
 1. **Issuer**. Enter the unique URL assigned to your organization by the SAML IdP. <br/>ADFS example: `http://adfs.myserver.tld/adfs/services/trust`
@@ -80,7 +80,7 @@ Follow these steps to configure IdP-initiated login. After this procedure, you c
 
 ## Review SAML configuration
 
-1. To view the details of your configuration, select it from the **Configuration List**. The right side of the page displays the configuration details. For any SAML configuration, you'll see an **Assertion Consumer** URL. If you configure SP-initiated login, you'll also see an **Entity ID**. <br/><img src={useBaseUrl('img/security/config-list.png')} alt="Configuration list" style={{border: '1px solid black'}} width="800" />
+1. To view the details of your configuration, select it from the **Configuration List**. The right side of the page displays the configuration details. For any SAML configuration, you'll see an **Assertion Consumer** URL. If you configure SP-initiated login, you'll also see an **Entity ID**. <br/><img src={useBaseUrl('img/security/config-list.png')} alt="Configuration list" style={{border: '1px solid gray'}} width="800" />
 1. Click **View Metadata XML** to see the metadata XML file for the configuration. You can also use this button to [export the metadata XML](/docs/manage/security/saml/set-up-saml/#export-metadata-xml).
 1. Click the pencil icon to modify the configuration settings. Otherwise, click **X** to close the dialog box. 
 
@@ -155,7 +155,7 @@ Sometimes, you may have a need to download the metadata XML from one of your SAM
 
 Click the **Download Metadata XML** button while you [review a SAML configuration](#review-saml-configuration) to download the XML as a file named `metadata.xml`.
 
-<img src={useBaseUrl('img/security/download-metadata-xml-button.png')} alt="View Metadata XML button" style={{border: '1px solid black'}} width="400" />
+<img src={useBaseUrl('img/security/download-metadata-xml-button.png')} alt="View Metadata XML button" style={{border: '1px solid gray'}} width="400" />
 
 ### Download metadata XML with the API
 

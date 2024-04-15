@@ -23,7 +23,7 @@ Open the [Alert List](alert-response.md) to view all of the triggered alerts fr
 At the top of the page, you can:
 * **Search Monitors**. Use the search field to filter Monitors by name and status. For example, you can view all Monitors that are currently triggered in the system by clicking the **Status: All Triggered**. <br/><img src={useBaseUrl('img/monitors/search-monitors-input.png')} alt="search monitors input" width="175"/>
 * **Add** > **New Folder**. Create a folder to organize your Monitors.
-* **Add** > **New Monitor**. Create a [new Monitor](#add-a-monitor).
+* **Add** > **New Monitor**. Create a [new Monitor](/docs/alerts/monitors/create-monitor).
 * **Add** > **Import**. Import Monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#details-pane) of the original monitor.<br/><img src={useBaseUrl('img/monitors/Add-monitors-page.png')} alt="Add monitors page" width="115"/>
 
 :::important
@@ -32,7 +32,7 @@ The **Import** function is provided for you to transfer data immediately. The Su
 
 ## Quick menu
 
-The quick menu allows you to make changes to the Monitor without opening the Details pane. Find and hover your mouse over a Monitor in the Monitors table. A three-dot icon appears on the right of the row. Click the three-dot icon to view a menu with all of the options available in the [Details pane](#details-pane).<br/>![quick menu](/img/monitors/quick-menu-monitors.png)
+The quick menu allows you to make changes to the Monitor without opening the Details pane. Find and hover your mouse over a Monitor in the Monitors table. A three-dot kebab icon appears on the right of the row. Click the three-dot kebab icon to view a menu with all of the options available in the [Details pane](#details-pane).<br/>![quick menu](/img/monitors/quick-menu-monitors.png)
 
 ## Details pane
 

@@ -5,29 +5,27 @@ sidebar_label: Deploy with Terraform
 description: Learn how to deploy AWS Observability Solution using Terraform.
 ---
 
-
 These instructions help you deploy our AWS Observability Solution using a Terraform script. 
 
-To set up the AWS Observability solution using Terraform, complete the following steps:
-
-* Step 1: [Set up the Terraform environment](#step-1-set-up-the-terraform-environment)
-* Step 2: [Configure the Terraform script](#step-2-configure-the-terraform-script)
-* Step 3: [Determine which AWS Account/Regions to Deploy](#step-3-determine-which-aws-accountregions-to-deploy) with a choice of 3 options
-* Step 4: [Configure Providers in the main.tf file](#step-4-configure-providers-in-the-maintf-file)
-* Step 5: [Override Default Parameter Values](#step-5-override-default-parameter-values)
-* Step 6: [Deploy the AWS Observability Solution](#step-6-deploy-the-aws-observability-solution)
+To set up the AWS Observability solution using Terraform, complete the following steps described in this documentation.
 
 Additional parameter overrides are available in an appendix section for [Source](#override-source-parameters) and [App Content](#override-app-content-parameters).
 
+## Prerequisites
+
 :::note
-If you have already set up the solution with CloudFormation in the past and want to move to Terraform, we recommend you follow the below instructions:
+
+<details>
+<summary>
+If you've previously set up our AWS Observability Solution with CloudFormation and want to move to Terraform, we recommend following these instructions (click to expand).
+</summary>
 
 1. Start with an existing AWS account and region combination (preferably a non-production dev/test account), delete the AWS Observability CloudFormation stack associated with it, then on-board that account-region combination using Terraform scripts.
 1. Once you confirm that the solution has been deployed successfully, you can then repeat the process for additional AWS accounts and regions.
 1. By default, the **AWS Observability Apps** folder will be available in the personal library and will be shared with the Sumo org of the user that the Sumo Logic access keys belong to.
-:::
+</details>
 
-## Before you start 
+:::
 
 For this setup, complete the following:
 
@@ -36,7 +34,7 @@ For this setup, complete the following:
 1. To use multiple AWS accounts, [configure AWS account profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html) for each AWS account you want to deploy the AWS Observability solution. The [AWS account profile names](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) you create will be used in [Step 3: Determine which AWS Account/Regions to Deploy](#step-3-determine-which-aws-accountregions-to-deploy).
 1. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-### About the Solution script
+## AWS Observability Solution script
 
 The AWS Observability solution script is organized into the following groups of files and folders:
 
@@ -95,7 +93,7 @@ Before you run the Terraform script, perform the following actions on a server m
     Note that templates located at [sumologic-solution-templates/aws-observability-terraform](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) directory contain references to files from the [sumologic-solution-templates/aws-observability] (https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability) directory.
     :::
 1. Configure the following mandatory parameters in the **main.auto.tfvars** file.
-   * `sumologic_environment`: This input specifies the Sumo Logic deployment that you want to use. Refer to the [Sumo Logic Deployment](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) guide for a list of available deployments. Possible values include `au`, `ca`, `de`, `eu`, `jp`, `us2`, `in`, `fed`, or `us1`.
+   * `sumologic_environment`: This input specifies the Sumo Logic deployment that you want to use. Refer to the [Sumo Logic Deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) guide for a list of available deployments. Possible values include `au`, `ca`, `de`, `eu`, `jp`, `us2`, `in`, `fed`, or `us1`.
    * `sumologic_access_id`: This input specifies the Sumo Logic access ID that you want to use. For more information on how to obtain an access ID, refer to the [Access Keys](/docs/manage/security/access-keys) documentation.
    * `sumologic_access_key`: [Sumo Logic Access Key](/docs/manage/security/access-keys) is used for Sumo Logic API calls.
    * `sumologic_organization_id`: [Sumo Logic Organization ID](../../../get-started/account-settings-preferences.md) You can find your org on the Preferences page in the Sumo Logic UI. For more information, see [Preferences Page](../../../get-started/account-settings-preferences.md). Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources.
@@ -542,7 +540,7 @@ Deploy the AWS Observability Solution using the Sumo Logic Terraform Script.
 Navigate to the directory **sumologic-solution-templates/aws-observability-terraform** and execute the following commands:
 
 :::note
-Before you run these commands, make sure you have configured your AWS profiles on your system as mentioned in the [Before You Start](#before-you-start) section.
+Before you run these commands, make sure you have configured your AWS profiles on your system as mentioned in the [Prerequisites](#prerequisites).
 :::
 
 ```terminal
@@ -654,7 +652,7 @@ Options available are:
 * "Kinesis Firehose Metrics Source" (Recommended). Creates a Sumo Logic AWS Kinesis Firehose for Metrics Source. This new source has cost and performance benefits over the CloudWatch Metrics Source and is therefore recommended.
 * "None". Skips the Installation of both the Sumo Logic Metric Sources.
 
-**Default Value: **
+**Default Value:**
 
 ```bash
 "Kinesis Firehose Metrics Source"
@@ -1596,13 +1594,13 @@ Verify you configured [Sumo Logic provider](https://github.com/SumoLogic/sumolog
 #### Solution
 Delete existing hierarchy and a create new one:<br/>
 1. Get Hierarchy-id list of existing hierarchies and keep it noted.<br/>
-  ```sql
-  curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
-  ```
+   ```sql
+   curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X GET https://<apiendpoint>/api/v1/entities/hierarchies
+   ```
 1. Delete the existing Hierarchy. Learn [more](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for apiendpoint.<br/>
-  ```sql
-  curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X DELETE https://<apiendpoint>/api/v1/entities/hierarchies/<hierarchyid>`
-  ```
+   ```sql
+   curl -s -H 'Content-Type: application/json' --user <accessid>:<accesskey> -X DELETE https://<apiendpoint>/api/v1/entities/hierarchies/<hierarchyid>`
+   ```
 
 ### Cannot import name 'SumoLogic' from 'sumologic'
 #### Error Message

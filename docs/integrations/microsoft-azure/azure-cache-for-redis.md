@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Cache for Redis](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-overview) provides an in-memory data store based on the Redis software. It offers both the Redis open-source (OSS Redis) and a commercial product from Redis Inc. (Redis Enterprise) as a managed service. This integration helps in tracking cache performance (miss rate, latency, read and write rate) and monitor resource usage (CPU, used memory, server load, and connections) of your instances.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Cache for Redis, you can collect the following logs and metrics:
 
-* **Connection logs**. These logs contains information about the connections to the cache for security and diagnostic purposes. To know more about the [limitations of connection logging](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-monitor-diagnostic-settings?tabs=basic-standard-premium#prerequisiteslimitations-of-connection-logging) and [schemas](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-monitor-diagnostic-settings?tabs=basic-standard-premium#contents-of-the-connection-logs) collected for Azure Cache for Redis, refer to the Azure documentation.
+* **Connection logs**. These logs contains information about the connections to the cache for security and diagnostic purposes. To learn more about the [limitations of connection logging](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-monitor-diagnostic-settings?tabs=basic-standard-premium#prerequisiteslimitations-of-connection-logging) and [schemas](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-monitor-diagnostic-settings?tabs=basic-standard-premium#contents-of-the-connection-logs) collected for Azure Cache for Redis, refer to the Azure documentation.
 * **Cache Metrics**. These metrics are available in [Microsoft.Cache/redis](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-cache-redis-metrics) and [Microsoft.Cache/redisEnterprise](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-cache-redisenterprise-metrics) namespace. For more information on supported metrics, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/cache-how-to-monitor#list-of-metrics).
 
 ## Setup

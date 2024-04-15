@@ -50,14 +50,14 @@ If you're just getting started with GitHub Events, see the Sumo Logic DevOps blo
 :::
 
 
-## Log Types
+## Log types
 
 The Sumo Logic App for GitHub gathers statistics and events from the GitHub Remote API on each host.
 
 First, configure a Collector and Source in Sumo Logic, then configure a GitHub Webhook using the HTTP Source Address created in Sumo Logic.
 
 
-### Sample Log Messages
+### Sample log messages
 
 GitHub sends all fields in the payload, documented according to [Event Type](https://developer.github.com/v3/activity/events/types/).
 
@@ -88,7 +88,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Commits Over Time"
 "commits" "https://api.github.com/repos"
@@ -191,7 +191,7 @@ Use this dashboard to:
 
 ### Branch Overview
 
-The **GitHub - Branch Overview **dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
+The **GitHub - Branch Overview** dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
 
 Use this dashboard to:
 
@@ -226,7 +226,7 @@ Use this dashboard to:
 
 ### Security
 
-The **GitHub - Security **dashboard provides detailed information on the security events and repositories.
+The **GitHub - Security** dashboard provides detailed information on the security events and repositories.
 
 Use this dashboard to:
 * Manage users.

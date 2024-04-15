@@ -81,9 +81,9 @@ To create a webhook:
       "X-S4-SourceSystem": "SumoLogic"
     }
     ```
-  :::note
-  Do not update the `X-S4-...` fields, otherwise recovery notifications will not be generated.
-  :::
+     :::note
+     Do not update the `X-S4-...` fields, otherwise recovery notifications will not be generated.
+     :::
 1. To test the connection, click **Test Alert**. If successful, you'll see a `201 OK` response message.
 1. Click **Save**.
 

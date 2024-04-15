@@ -65,7 +65,7 @@ Format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z' \
 Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_id"`
 
 
-## Sample Log Messages
+## Sample log messages
 
 ```json title="Example 1"
 {
@@ -108,7 +108,7 @@ Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_
 
 
 
-## Sample Queries
+## Sample queries
 
 ```sql title="Logins by Client per Day"
 _collector="productionappauth0Logs_Collector"
@@ -159,7 +159,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 **Top 10 Source IPs by Failed Login.** Displays a table chart with a list of ten source IP addresses causing the most failed logins, including IP and count, for the last 24 hours.
 
-**Top 10 User Agents. **Displays the top ten most popular user agents in a pie chart from all connections for the last seven days.
+**Top 10 User Agents.** Displays the top ten most popular user agents in a pie chart from all connections for the last seven days.
 
 **Top 10 Operating Systems.** Shows the top ten most popular operating systems based on user agent in a pie chart for the last seven days.
 
@@ -175,10 +175,10 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 **Connection Types per Hour.** Provides a line chart on a timeline of the connection types used for the past seven days.
 
-**Client Version Usage. **Displays a line chart on a timeline of the Auth0 library version being used by all clients for the past seven days. This is useful to detect outdated clients, as well as to track upgrades.
+**Client Version Usage.** Displays a line chart on a timeline of the Auth0 library version being used by all clients for the past seven days. This is useful to detect outdated clients, as well as to track upgrades.
 
 **Top 10 Clients.** Shows a table chart that lists the ten most popular clients, including client name and count for the past 24 hours.
 
-**Top 10 Recent Errors. **Provides a table chart with a list of the ten most frequent errors, including details on client name, connection, description and count for the last 24 hours. This is useful for discovering and troubleshooting operational issues.
+**Top 10 Recent Errors.** Provides a table chart with a list of the ten most frequent errors, including details on client name, connection, description and count for the last 24 hours. This is useful for discovering and troubleshooting operational issues.
 
 <img src={useBaseUrl('img/integrations/saml/auth0-app-overview-dashboard-mapbox.png')} alt="Auth0 app-overview-dashboard-mapbox" />

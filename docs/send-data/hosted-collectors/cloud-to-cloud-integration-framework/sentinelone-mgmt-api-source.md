@@ -17,9 +17,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The SentinelOne Mgmt API Source collects data from the SentinelOne Management Console. It securely stores the required authentication, scheduling, and state tracking information.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
@@ -40,13 +40,14 @@ To generate an API token:
 1. Sign in to the SentinelOne Management Console with Admin user credentials.
 1. In the Management Console, click **Settings**.
 1. In the **Settings** view, click **Users**.
-1. Click **New User**.
-1. Enter the information for the new console user.
+1. Click **Service Users**.
+1. Click **Actions** dropdown and select **Create New Service User**.
+1. Enter the information for the new service user.
 1. In **Role**, select **Admin**.
 1. Click **Save**.
 1. Log in to the SentinelOne Management Console with the credentials of the new user.
 1. Navigate to **Settings > Users**.
-1. Select the newly added console user.
+1. Select the newly added service user.
 1. Click **Options**.
 1. Click **Generate API token**.
 1. Copy or download this API Token.
@@ -62,11 +63,11 @@ To configure a SentinelOne Mgmt API Source:
 1. Search for and select **SentinelOne Mgmt API**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM. 
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM.
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
-1. **Base URL**. Provide your SentinelOne Management URL. It's in this format: `https:/\<your_management_ur\>`.
+1. **Base URL**. Provide your SentinelOne Management URL. It's in this format: `https://<your_management_url>`.
 1. **API Token**. Provide the API Token you got from the SentinelOne Management Console. See Authentication above for details.
 1. **Supported APIs to collect**. Select one or more of the available APIs: **activities**, **agents**, and **threats**.
 1. When you are finished configuring the Source, click **Submit**.

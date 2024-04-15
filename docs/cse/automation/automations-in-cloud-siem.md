@@ -6,13 +6,12 @@ description: Learn how automations run playbooks to add enrichments and create n
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import ActionsLimit from '../../reuse/actions-limit.md';
 
 Cloud SIEM automations run playbooks in the [Automation Service](/docs/platform-services/automation-service/) to add enrichments and create notifications for either Insights or Entities. You can set automations to run automatically when Insights are created or closed, or you can run them manually.
 
 :::note
-import ActionLimit from '../../reuse/action-limits.md';
-
-<ActionLimit/>
+<ActionsLimit/>
 :::
 
 ## Overview: Configure an automation
@@ -47,6 +46,7 @@ Now that you have the names of the actions you want to use, you can add them to 
 1. Click **Create**. The node is added to the playbook.
 1. Repeat to add more actions to the playbook. If desired, add conditions.
 1. Click **Save** to save your changes.
+1. To [test the playbook](/docs/platform-services/automation-service/automation-service-playbooks/#test-a-playbook), click the kebab button in the upper-right of the UI and select **Run Test**. 
 1. When you're ready to let the playbook be used in automations, click **Publish**.
 
 ### Step 3: Add the playbook to an automation
@@ -77,9 +77,7 @@ If you configured the automation to [run manually](#run-an-automation-manually),
    1. Select an option under **Entity Automation**.
 
    :::note
-   import ActionLimit from '../../reuse/action-limits.md';
-
-   <ActionLimit/>
+   <ActionsLimit/>
    :::
 
 ## View automations
@@ -195,7 +193,7 @@ You can switch to the graphical view by clicking **Graph** in the upper-right co
 
 ## Migrate from legacy actions and enrichments to the Automation Service
 
-[Cloud SIEM Actions](/docs/cse/administration/create-cse-actions/) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/) are deprecated because comparable behavior is now available in the Automation Service. To continue using the same functionality found in the legacy actions and enrichments, [use installed playbooks](#use-installed-playbooks) in the Automation Service, or [replace the legacy actions and enrichments](#replace-legacy-actions-and-enrichments) by adding the corresponding actions to playbooks you create in the Automation Service.
+In the future, [Cloud SIEM Actions](/docs/cse/administration/create-cse-actions/) and the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/) will be deprecated because comparable behavior is available in the Automation Service. To continue using the same functionality found in the legacy actions and enrichments, [use installed playbooks](#use-installed-playbooks) in the Automation Service, or [replace the legacy actions and enrichments](#replace-legacy-actions-and-enrichments) by adding the corresponding actions to playbooks you create in the Automation Service.
 
 Migrating to the Automation Service has many benefits over using legacy actions and enrichments. With the Automation Service, you can:
 * Run actions in playbooks rather than singly.

@@ -14,7 +14,7 @@ The CIS AWS Foundations Benchmark is a set of security configuration best practi
 
 The Sumo Logic for CIS AWS Foundations Benchmark App maps to Section 3 (Monitoring) of the [CIS AWS Benchmarks Foundation ](https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf)recommendations. Using the pre-configured alerts and dashboards, customers are able to alert on and gain operational visibility into their AWS security posture.
 
-## Log Types
+## Log types
 
 The Sumo Logic App for CIS AWS Foundations Benchmark uses [CloudTrail](/docs/integrations/amazon-aws/cloudtrail.md) logs. For details on the specifics of which attributes are used, refer to Section 3 (Monitoring) of the [CIS AWS Benchmarks Foundation](https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf).
 
@@ -26,7 +26,7 @@ The Sumo Logic App for CIS AWS Foundations Benchmark uses [CloudTrail](/docs/int
 The CIS AWS Foundation Benchmark App ingests [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail.md) data. To collect logs for the CIS AWS Foundation Benchmark App, perform the following steps:
 
 1. Add a Sumo Logic [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) to your Sumo Logic Org.
-2. Configure an [AWS CloudTrail Source](/docs/integrations/amazon-aws/cloudtrail#Collect-logs-for-the-AWS-CloudTrail-App).
+2. Configure an [AWS CloudTrail Source](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app).
 3. Set your `_sourceCategory` (example: `aws/cloudtrail`).
 
 
@@ -58,7 +58,7 @@ This Change Control Dashboard includes filters that you can use in Interactive M
 
 **Route Table Changes.** Shows the count of Route Table changes done by each user for the last 24 hours.
 
-**Network ACL Changes. **Shows the count of Network ACL changes done by each user for the last 24 hours.
+**Network ACL Changes.** Shows the count of Network ACL changes done by each user for the last 24 hours.
 
 **Security Group Changes.** Shows the count of Security Group changes done by each user for the last 24 hours.
 

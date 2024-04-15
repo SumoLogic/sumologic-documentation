@@ -18,7 +18,7 @@ The Sumo Logic App for Akamai Cloud Monitor assumes Akamai formatted logs, which
 For information about Akamai Cloud Monitor log formats, contact [Akamai Support](https://www.akamai.com/us/en/support/) and request the document “Akamai Log Delivery User Guide.” Refer to “Appendix A: Log Formats and Examples."
 
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -135,7 +135,7 @@ In Sumo Logic, create a new [Hosted Collector](/docs/send-data/hosted-collectors
 1. Configure an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 2. Configure the Source Fields as follows:
     1. **Name.** Required. For example, use Akamai.
-    2. **Source Category.** Required. For example, use akamai_cloud_monitor. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/best-practices).)
+    2. **Source Category.** Required. For example, use akamai_cloud_monitor. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see [Best Practices](/docs/send-data/best-practices).)
 3. Configure the **Advanced** section:
     1. Check **Extract timestamp information from log file entries**.
     2. **Timezone.** Use time zone from log file. If none is present, use UTC.
@@ -170,8 +170,8 @@ Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automati
 1. In Sumo Logic, go to **Manage Data > Logs > Field Extractions** and click **Add**.
 2. Configure the following fields:
     * **Rule Name.** Required (for example, Akamai Cloud Monitor).
-    * **Scope. **Use the Source Category you created for your HTTP Source (for example, akamai_cloud_monitor).
-    * **Parse Expression. **Select the template **Akamai Cloud Monitor** and click **Use Template**. The full parse statement is below.
+    * **Scope.** Use the Source Category you created for your HTTP Source (for example, akamai_cloud_monitor).
+    * **Parse Expression.** Select the template **Akamai Cloud Monitor** and click **Use Template**. The full parse statement is below.
 3. Click **Add**.
 
 ```sql title="FER for Akamai Cloud Monitor"
@@ -183,9 +183,9 @@ parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\
 
 Now that you have configured Akamai logs, install the Sumo Logic App for Akamai Cloud Monitor to take advantage of the pre-configured searches and dashboards to analyze your Akamai data.
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Akamai Cloud Monitor dashboards
 

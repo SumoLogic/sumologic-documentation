@@ -2,7 +2,7 @@
 id: rabbitmq-opentelemetry
 title: RabbitMQ - OpenTelemetry Collector
 sidebar_label: RabbitMQ - OTel Collector
-description: Learn about the Sumo Logic OpenTelemetry App for RabbitMQ.
+description: Learn about the Sumo Logic OpenTelemetry app for RabbitMQ.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -36,7 +36,27 @@ Follow the instructions to set up log collection:
   log.file.level = debug
   ```
 
-Once the logs are configured to be written to a local file, follow the below steps to configure collection in Sumo.
+Once the logs are configured to be written to a local file, follow the below steps to configure collection in Sumo Logic.
+
+import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+
+<LogsCollectionPrereqisites/>
+
+For Windows systems, log files which are collected should be accessible by the SYSTEM group. Use the following set of PowerShell commands if the SYSTEM group does not have access.
+
+```
+$NewAcl = Get-Acl -Path "<PATH_TO_LOG_FILE>"
+# Set properties
+$identity = "NT AUTHORITY\SYSTEM"
+$fileSystemRights = "ReadAndExecute"
+$type = "Allow"
+# Create new rule
+$fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
+$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+# Apply new rule
+$NewAcl.SetAccessRule($fileSystemAccessRule)
+Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
+```
 
 ## Collection configuration and app installation
 
@@ -50,7 +70,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Collector.png' style={{border:'1px solid black'}} alt="Collector" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-Collector.png' style={{border:'1px solid gray'}} alt="Collector" />
 
 ### Step 2: Configure integration
 
@@ -58,9 +78,9 @@ In this step, we will be configuring the yaml file required for RabbitMQ Collect
 
 The files are typically located in `/var/log/rabbitmq/rabbit@<hostname>.log`. You can add any custom fields which you want to tag along with the data ingested in sumo. Click on the **Download YAML File** button to get the yaml file.
 
-<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-YAML.png' style={{border:'1px solid black'}} alt="YAML" />
+<img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/RabbitMq-OpenTelemetry/RabbitMQ-YAML.png' style={{border:'1px solid gray'}} alt="YAML" />
 
-### Step 3: Send logs to Sumo
+### Step 3: Send logs to Sumo Logic
 
 import LogsIntro from '../../../reuse/apps/opentelemetry/send-logs-intro.md';
 
@@ -134,7 +154,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
 
 <LogsOutro/>
 
-## Sample Log Messages
+## Sample log messages
 
 Here's a sample log message you'd find in Non-Kubernetes environments.
 
@@ -142,7 +162,7 @@ Here's a sample log message you'd find in Non-Kubernetes environments.
 2023-01-16 05:53:44.858 [info] <0.44.0> Application cowboy exited with reason: stopped
 ```
 
-## Sample Queries
+## Sample queries
 
 This sample Query is from the **RabbitMQ - Logs dashboard** > **Events** by Severity panel.
 

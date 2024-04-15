@@ -225,7 +225,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 ### Overview (CloudWatch Metrics)
 
-The **AWS EC2 Overview (CloudWatch Metrics) **dashboard provides at-a-glance information about a EC2 CPU, instance disk store, network and EBS volume usage along with EC2 instance health status.
+The **AWS EC2 Overview (CloudWatch Metrics)** dashboard provides at-a-glance information about a EC2 CPU, instance disk store, network and EBS volume usage along with EC2 instance health status.
 
 Use this dashboard to:
 
@@ -268,7 +268,7 @@ Use this dashboard to:
 
 ### CPU (CloudWatch Metrics)
 
-The **AWS EC2 CPU (CloudWatch Metrics) **dashboard provides detailed information about EC2 CPU usage like CPU utilization and CPU credits for burstable performance instances.
+The **AWS EC2 CPU (CloudWatch Metrics)** dashboard provides detailed information about EC2 CPU usage like CPU utilization and CPU credits for burstable performance instances.
 
 Use this dashboard to:
 * Monitor Average CPU utilization over time for EC2.

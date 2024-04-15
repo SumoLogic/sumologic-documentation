@@ -5,9 +5,9 @@ sidebar_label: Interact with Metrics Charts
 description: Instructions on how to interact with metric charts, and how to set options on the query and legend tabs of the metric query page.
 ---
 
-:::note
-This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metrics-queries/metrics-explorer.md).
-:::
+import ClassicMetricsNote from '../../reuse/classic-metrics-deprecation.md';
+
+<ClassicMetricsNote/>
 
 Learn how you can interact with metric charts and use the options on the Query and Legend tab of the metric query page. 
 

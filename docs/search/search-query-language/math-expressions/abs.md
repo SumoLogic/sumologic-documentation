@@ -16,7 +16,7 @@ abs(<x>) as <field>
 
 ## Rules
 
-The function can't be nested.
+The function cannot be nested.
 
 ## Example
 

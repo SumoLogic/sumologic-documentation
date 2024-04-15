@@ -14,7 +14,7 @@ import TerraformExample from '!!raw-loader!/files/c2c/azure-event-hubs/example.t
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 :::note
-Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection method has a supported throughput limit of 1MB/S (86GB/day) for a named Event Hub egress rate. We recommend using the [Azure Functions model](/docs/integrations/microsoft-azure/arm-integration-faq/#event-hub-faqs) if you require higher throughput.
+Collecting data from Azure Event Hubs using this Cloud-to-Cloud collection method has a supported throughput limit of 1MB/S (86GB/day) for a named Event Hub egress rate. We recommend using the [Azure Event Hubs Source for Logs ](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/) if you require higher throughput.
 :::
 
 <img src={useBaseUrl('img/send-data/azure-event-hub.svg')} alt="icon" width="40"/>
@@ -25,9 +25,9 @@ This cloud-to-cloud Azure Event Hubs Source provides a secure endpoint to receiv
 See [Migrating from Azure Function-Based Collection to Event Hub Cloud-to-Cloud Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-cloud-to-cloud-source-migration).
 :::
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
@@ -55,7 +55,7 @@ The Event Hub doesn't have to be in the same subscription as the resource sendin
     In this example, Event Hub Instance is set to **SumoCollectionPolicy**.
 1. Copy the Shared Access Policy Key.<br/>  ![AzureEventHubstep9.png](/img/send-data/AzureEventHubstep9.png)
     Copy the Primary/Secondary key associated with this policy.
-1. When [configuring the Azure Event Hubs Source](#create-an-azure-event-hubs-source) in Sumo Logic, our input fields might be:
+1. When [configuring the Azure Event Hubs Source](#vendor-configuration) in Sumo Logic, our input fields might be:
 
   | Field | Value  |
   |:----------------------------|:----------------------|
@@ -91,7 +91,7 @@ To configure an Azure Event Hubs Source:
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule.
 1. **Advanced Options for Logs**.
    * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
+   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs cannot be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/reference-information/time-reference) for more information.        
 1. When you are finished configuring the Source, click **Submit**.
 

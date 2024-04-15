@@ -7,7 +7,7 @@ sidebar_label: count, count_distinct, count_frequent
 
 Aggregating (group-by) functions are used in conjunction with the group operator and a field name.
 
-Only the word **by** is required to represent the group operator. The count function is also an operator in its own right, and therefore can be used with or without the word **by**.
+Only the word `by` is required to represent the group operator. The count function is also an operator in its own right, and therefore can be used with or without the word `by`.
 
 ## count
 
@@ -51,7 +51,7 @@ The same example above with an alias field name, `countOfPort`, and an addition
 | sort by countOfPort
 ```
 
-When you want to count more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the `_count` fields.
+When you want to count more than one field, you must create an alias using the [`as` operator](/docs/search/search-query-language/search-operators/as) to rename the `_count` fields.
 
 ## count_distinct
 
@@ -95,7 +95,7 @@ So for example, if the true count of distinct items is 1,000, the result returne
 
 The error parameter value is important to making the `count_distinct` function return results quickly and in a scalable way.
 
-Also, note that when you want to count the distinct occurrences of more than one field, you must create an alias using the [as operator](/docs/search/search-query-language/search-operators/as) to rename the _count_distinct fields. See this example:
+Also, note that when you want to count the distinct occurrences of more than one field, you must create an alias using the [`as` operator](/docs/search/search-query-language/search-operators/as) to rename the `_count_distinct` fields. See this example:
 
 ```sql
 _sourceCategory=PaloAltoNetworks
@@ -104,11 +104,11 @@ _sourceCategory=PaloAltoNetworks
 
 ## count_frequent
 
-The count_frequent function can be used in cases where you want to identify the most common values for aggregations with over 10,000 distinct groups. This query returns the highest-count 10,000 results in sorted order. The resulting count field is called `_approxcount` because it is only an *estimate* of the true count; the estimate may be incorrect, but can only be over (it will never be under).
+The `count_frequent` function can be used in cases where you want to identify the most common values for aggregations with over 10,000 distinct groups. This query returns the highest-count 10,000 results in sorted order. The resulting count field is called `_approxcount` because it is only an *estimate* of the true count; the estimate may be incorrect, but can only be over (it will never be under).
 
-The count_frequent function is followed immediately by one or more field names.
+The `count_frequent` function is followed immediately by one or more field names.
 
-You can use the count_frequent operator in Dashboard queries, but the number of results returned is limited to the top 100 most frequent results. All results are available when the search is run on the **Search** page, but only the top 100 are displayed in the Panel.
+You can use the `count_frequent` operator in Dashboard queries, but the number of results returned is limited to the top 100 most frequent results. All results are available when the search is run on the **Search** page, but only the top 100 are displayed in the Panel.
 
 ### Syntax
 
@@ -119,8 +119,8 @@ count_frequent <field>[, <field2>, field3, ...]
 ### Rules
 
 * Creates field named `_approxcount`
-* Cannot be used with other aggregating functions like `sum` or `avg`.
-* Sort is built into the query and defaults to a most-to-least order.
+* Cannot be used with other aggregating functions like `sum` or `avg`
+* Sort is built into the query and defaults to a most-to-least order
 
 ### Example
 

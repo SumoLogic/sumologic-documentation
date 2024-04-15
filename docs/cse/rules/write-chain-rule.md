@@ -6,6 +6,7 @@ description: Learn how to write a Chain rule.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import CseRule from '../../reuse/cse-rule-description-links.md';
 
 This topic has information about Chain rules and how to create them in the Cloud SIEM UI.
 
@@ -66,11 +67,9 @@ If you use the Test Rule feature on a rule that has one or more [Rule Tuning Exp
 1. **On Entity**. Define the Entity field — for example, an IP address, hostname, and so on — in the Record that the resulting Signal should be associated with. (In Cloud SIEM, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
 1. **with the summary.** Enter a brief summary describing what causes the Rule to create a Signal.
 1. **with the description**. Enter a description for the Signal. The Signal description should be a good indication of what the rule looks for.
-:::note
-import CseRule from '../../reuse/cse-rule-description-links.md';
-
-<CseRule/>
-:::
+   :::note
+   <CseRule/>
+   :::
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest).
 1. **with tags**. If desired, you can add metadata tags to your rule. Tags are useful for adding context to items like Rules, Insights, Signals, Entities. You can also search for and filter items by tag. For more information, see [Using Tags with Insights, Signals, Entities, and Rules](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules).
 

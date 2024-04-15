@@ -28,13 +28,13 @@ Example:
 
 ## Log types
 
-### Sample log message
+### Sample log messages
 
 ```json
 Your json message goes here
 ```
 
-### Sample query
+### Sample queries
 
 ```sql
 Your query goes here
@@ -76,9 +76,9 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 ## Viewing Split dashboards
 
-import ViewDash from '../../reuse/apps/view-dashboards.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-<ViewDash/>
+<ViewDashboards/>
 
 ### Dashboard 1 (example: Overview)
 

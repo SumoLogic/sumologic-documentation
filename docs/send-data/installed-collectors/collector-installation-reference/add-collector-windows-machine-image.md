@@ -59,10 +59,10 @@ Download the appropriate collector from the **Manage Data > Collection > Collec
    * `-q` starts the installer in quiet mode (no UI)
    * `-VskipRegistration=true` to skip collector registration during installation
    * `-Vephemeral=true` to [set the collector as ephemeral](set-collector-as-ephemeral.md) (will be removed after 12 hours offline)
-   * `-Vsumo.accessid\<access_i\>` to specify access id generated above  
-   * `-Vsumo.accesskey\<access_ke\>` to specify access key generated above  
-   * `-Vsources\<filepat\>` to specify the path to your source JSON file created above
-   * (Optional) `-dir` to install into a non-standard installation directory. By default, Windows will install in **C:\\Program Files\\Sumo Logic Collector**.
+   * `--Vsumo.accessid=<access_id>` to specify access id generated above  
+   * `-Vsumo.accesskey=<access_key>` to specify access key generated above  
+   * `-Vsources=<filepath>` to specify the path to your source JSON file created above
+   * (Optional) `-dir` to install into a non-standard installation directory. By default, Windows will install in `C:\Program Files\Sumo Logic Collector`.
 
     Example:
 

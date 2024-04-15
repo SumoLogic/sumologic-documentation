@@ -63,7 +63,7 @@ In this section, we'll introduce the following concepts:
 
 ## What Data Do I Have?
 
-It can be hard to create a search query if you don't know what data you have in your Sumo Logic environment. 
+It can be hard to create a search query if you do not know what data you have in your Sumo Logic environment. 
 
 You can use the following simple queries to identify possible values for your existing Source Categories, Source Names, and Source Hosts. You can also approximate data volume for each of the possible values using these queries.
 
@@ -81,10 +81,10 @@ For Source Names: `* | count_frequent(_sourceName)`
 
 The more specific the query, the more efficiently it will run, as unnecessary messages are quickly thrown out of the mix. For example, the following two queries will generate the same result:
 
-* `* | parse regex "uid=(\<userI\>\d+)"`
-* `"uid=" | parse regex "uid=(\<userI\>\d+)"`
+* `* | parse regex "uid=(?<userId>\d+)"`
+* `"uid=" | parse regex "uid=(?<userId>\d+)"`
 
-The second query will return the results more efficiently because the first query includes "`*`", which prompts Sumo Logic to comb through all messages for the given time range.
+The second query will return the results more efficiently because the first query includes `"*"`, which prompts Sumo Logic to comb through all messages for the given time range.
 
 ### Use Field Extraction Rules
 

@@ -5,9 +5,9 @@ sidebar_label: Log Overlay
 description: Learn how metrics visualizations can provide a clear status of your environment.
 ---
 
-:::note
-This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metrics-queries/metrics-explorer.md).
-:::
+import ClassicMetricsNote from '../../reuse/classic-metrics-deprecation.md';
+
+<ClassicMetricsNote/>
 
 Metrics visualizations give you a clear picture of what is happening in your environment. By adding log overlays to your metrics visualizations, you can investigate why behavior is occurring and what corrective action might be called for. Log overlays help you correlate the performance shown in your metrics visualizations with logged events that could be responsible for changes in behavior. 
 

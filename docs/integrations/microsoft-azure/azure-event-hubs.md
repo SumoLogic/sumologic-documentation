@@ -8,13 +8,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-event-hubs.png')} alt="Thumbnail icon" width="50"/>
 
-[Azure Event Hubs]((https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about) is a modern big data streaming platform and event ingestion service that can seamlessly integrate with other Azure and Microsoft services, such as Stream Analytics, Power BI, and Event Grid, along with outside services like Apache Spark. This integration helps in monitoring data plane access operations (such as send or receive events), tracking performance metrics like consumer lag, consumer and publisher throughput and active connections in your Event Hub.
+[Azure Event Hubs](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-about) is a modern big data streaming platform and event ingestion service that can seamlessly integrate with other Azure and Microsoft services, such as Stream Analytics, Power BI, and Event Grid, along with outside services like Apache Spark. This integration helps in monitoring data plane access operations (such as send or receive events), tracking performance metrics like consumer lag, consumer and publisher throughput and active connections in your Event Hub.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Event Hubs, you can collect the following logs and metrics:
 
-* **Resource logs**. To know more about the different resource log category types and schemas collected for Azure Event Hubs, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/event-hubs/monitor-event-hubs-reference#resource-logs).
+* **Resource logs**. To learn more about the different resource log category types and schemas collected for Azure Event Hubs, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/event-hubs/monitor-event-hubs-reference#resource-logs).
 :::info
 Some log types are only available in premium and dedicated tiers.
 :::

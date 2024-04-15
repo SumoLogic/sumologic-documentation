@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Cloud Tasks is a fully managed service that allows you to manage the execution, dispatch, and delivery of a large number of distributed tasks. For more details, refer to the [GCP documentation](https://cloud.google.com/tasks/docs/dual-overview).
 
-## Log and Metric types
+## Log and metric types
 
 * [Google Cloud Metrics](https://cloud.google.com/monitoring/api/metrics_gcp)
 * [Platform Logs](https://docs.aws.amazon.com/appflow/latest/userguide/monitoring-cloudwatch.html)

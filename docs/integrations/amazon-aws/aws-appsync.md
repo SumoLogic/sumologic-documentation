@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS AppSync enables developers to connect their applications and services to data and events with secure, serverless and high-performing GraphQL and Pub/Sub APIs. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/appsync/latest/devguide/what-is-appsync.html).
 
-## Log and Metric types
+## Log and metric types
 
 * [CloudWatch Metrics](https://docs.aws.amazon.com/appsync/latest/devguide/monitoring.html#cw-metrics)
 * [CloudWatch Logs](https://docs.aws.amazon.com/appsync/latest/devguide/monitoring.html#cwl)

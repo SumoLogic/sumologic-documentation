@@ -5,9 +5,9 @@ sidebar_label: Choose a Quantization Interval
 description: Why you might want to change the quantization interval when running a metric query.
 ---
 
-:::note
-This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metrics-queries/metrics-explorer.md).
-:::
+import ClassicMetricsNote from '../../reuse/classic-metrics-deprecation.md';
+
+<ClassicMetricsNote/>
 
 In metric visualizations, rather than charting individual data points, Sumo presents the aggregated value of the data points received during an interval. We call this process [*quantization*](../introduction/metric-quantization.md).
 

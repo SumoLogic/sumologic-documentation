@@ -5,9 +5,9 @@ sidebar_label: Line and Area Metrics Charts
 description: How to tailor line charts and area charts for metrics queries.
 ---
 
-:::note
-This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metrics-queries/metrics-explorer.md).
-:::
+import ClassicMetricsNote from '../../reuse/classic-metrics-deprecation.md';
+
+<ClassicMetricsNote/>
 
 This section has instructions for configuring the look and feel of line and area charts. 
 

@@ -1,13 +1,13 @@
 ---
 id: sumo-logic-opentelemetry-vs-opentelemetry-upstream-relationship
 title: Sumo Logic OpenTelemetry vs OpenTelemetry Upstream Relationship
-sidebar_label: Sumo Logic OpenTelemetry vs OpenTelemetry Upstream Relationship
+sidebar_label: Sumo Logic OTel vs OTel Upstream Relationship
 description: Learn about Sumo Logic OpenTelemetry vs OpenTelemetry Upstream Relationship
 ---
 
-This document explains the purpose of the Sumo Logic Distribution for OpenTelemetry Collector, why we offer an alternative distribution of the OpenTelemetry Collector, and our approach to versioning and handling breaking changes.
+This document explains the purpose of the Sumo Logic Distribution for OpenTelemetry Collector, why we offer an alternative distribution of the OpenTelemetry (OTel) Collector, and our approach to versioning and handling breaking changes.
 
-The Sumo Logic Distribution for OpenTelemetry Collector is the OpenTelemetry Collector with addition of Sumo Logic specific changes. It's a custom build of the OpenTelemetry collector that's optimized for interacting with Sumo Logic’s API. It supports everything the standard collector does, but has some additional extensions for Sumo Logic.
+The Sumo Logic Distribution for OpenTelemetry Collector is our custom build of the open-source standard OpenTelemetry Collector. Our build supports everything the standard collector does, and includes Sumo-specific changes and extensions that are optimized for interacting with Sumo Logic’s API.
 
 Our aim is to extend and not to replace the OpenTelemetry Collector. Releasing our own distribution allows us to:
 
@@ -18,7 +18,6 @@ Our aim is to extend and not to replace the OpenTelemetry Collector. Releasing o
 * Provide various installation methods
 * Quickly respond to customer needs
 * Offer use case oriented documentation
-
 
 We work closely with the OpenTelemetry community in order to improve overall experience by:
 * Attending SIG meetings

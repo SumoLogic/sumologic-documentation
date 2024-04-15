@@ -20,7 +20,7 @@ Sumo Logic provides a serverless solution for creating a CloudWatch events rule 
 
 Findings from AWS services (AWS Security Hub) are delivered to CloudWatch Events as events in near real time. The Lambda function parses those events and sends them to an S3 bucket. Sumo Logic then collects the findings data using an S3 bucket source on a Sumo Logic hosted collector. The Lambda function setup is defined using Serverless Application Model (SAM) specifications and is published in AWS Serverless Application Repository.
 
-You don't have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub App collector](/docs/integrations/amazon-aws/inspector/#step-2-deploy-an-aws-security-hub-app-collector).
+You do not have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub App collector](/docs/integrations/amazon-aws/inspector/#step-2-deploy-an-aws-security-hub-app-collector).
 
 
 ### Step 1: Add a hosted collector and Amazon S3 source
@@ -54,7 +54,7 @@ To deploy an AWS Security Hub App collector:
 6. Scroll to the bottom of the window and click **Deploy**.
 
 
-### Sample Log Message
+### Sample log messages
 
 ```json title="AWS Security Hub log"
 {
@@ -95,7 +95,7 @@ To deploy an AWS Security Hub App collector:
 ```
 
 
-### Sample Query
+### Sample queries
 
 ```sql title="Findings by resource type and severity query"
 (_sourceCategory="securityhub_findings" OR _sourceCategory="Labs/AWS/SecurityHub")

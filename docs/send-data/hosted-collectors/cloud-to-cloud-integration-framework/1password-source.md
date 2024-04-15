@@ -18,9 +18,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The 1Password Source provides a secure endpoint to receive sign-in attempts, item usage, and audit events from the [1Password Event API](https://support.1password.com/events-api-reference/). It securely stores the required authentication, scheduling, and state tracking information.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
@@ -71,7 +71,7 @@ You'll need a <a id="APIToken"></a> 1Password API token and your customer-specif
 | `_siemVendor` | `1Password` | Set when **Forward To SIEM** is checked. |
 | `_siemProduct` | `1Password` | Set when **Forward To SIEM** is checked. |
 | `_siemFormat` | `JSON` | Set when **Forward To SIEM** is checked. |
-| `_siemEventID` | `SignIn API -> signin-{{category}}` or `Item Usage API -> item_usage-{{action}}` | Set when **Forward To SIEM** is checked and specific to the API collected. |
+| `_siemParser` | `/Parsers/System/1Password/1Password` | Set when **Forward To SIEM** is checked. |
 
 ## JSON schema
 

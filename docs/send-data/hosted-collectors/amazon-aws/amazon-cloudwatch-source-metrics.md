@@ -35,7 +35,7 @@ Tag filtering is only supported for user-defined AWS tags, not for AWS-generated
 
 Here’s how tag filtering works:
 
-* If you don't specify a tag filter for a namespace, the source will collect all metrics for the namespace.
+* If you do not specify a tag filter for a namespace, the source will collect all metrics for the namespace.
 * If you specify a single `tag = value` pair for a namespace, the source will collect metrics from resources with that tag value.  
 * If you specify multiple values for a specific tag for a namespace, as shown below, the filters are OR’ed. For example, with the following setting, the source will collect metrics from resources in the AWS/DynamoDB namespace whose `owner` tag is *either* “Veronica” or “Bryan”.   
 

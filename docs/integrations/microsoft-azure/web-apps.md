@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Azure Web Apps app allows you to collect Azure web server and application diagnostics logs and monitor the health of your Azure Web Apps environment. This app provides preconfigured dashboards that allow you to monitor server operation, traffic requests, and response times.
 
-For more information on Azure Web Apps, see [https://azure.microsoft.com/en-us/se...p-service/web/](https://azure.microsoft.com/en-us/services/app-service/web/).
+For more information, see [Azure Web Apps](https://azure.microsoft.com/en-us/services/app-service/web/).
 
 ## Log types
 
@@ -19,7 +19,7 @@ The Azure Web Apps app supports:
 * **Web Server Logging.** Information about HTTP transactions using the [W3C extended log file format](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx). This is useful when determining overall site metrics such as the number of requests handled or how many requests are from a specific IP address.
 * **Application Diagnostics Logs.** Application diagnostics allows you to capture information produced by a web application. ASP.NET applications can use the [System.Diagnostics.Trace](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx) class to log information to the application diagnostics log.
 
-### Sample log message
+### Sample log messages
 
 ```json
 2017-09-25 23:27:36 eShopCart GET / X-ARR-LOG-ID=9b3056e8-21d5-43f7-8fd7-4aec6b29525e
@@ -29,7 +29,7 @@ The Azure Web Apps app supports:
 eShopCart.azurewebsites.net 200 0 0 3098 1008 1000
 ```
 
-### Sample Query
+### Sample queries
 
 ```sql title="Traffic over time outlier"
 _sourceCategory=Azure/Web-app
@@ -41,10 +41,10 @@ _sourceCategory=Azure/Web-app
 
 ## Collecting Logs for Azure Web Apps
 
-In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub. 
+In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
 1. Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
-    - [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended) 
+    - [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended)
     - Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection)
 
     When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/WebApps/Logs`.
@@ -57,7 +57,7 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
     1. **Event bub namespace.** If you have chosen Method 1 (Azure Event Hubs Source) for collecting logs, select the **EventHubNamespace** created manually, or else if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template.
     1. **Event hub name (optional).** If you have chosen Method 1 (Azure Event Hub Source) for collecting logs, select the event hub name, which you created manually, or if you have chosen Method 2 (Collect logs from Azure monitor using Azure functions), then select **insights-operational-logs**.
     1. Select **RootManageSharedAccessKey** from **Select Event hub policy name** dropdown.
-    1. Select the checkbox for log types under **Categories** which you want to ingest.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-web-apps.png')} style={{border: '1px solid black'}} alt="diagnostic-setting-web-apps" width="800"/>
+    1. Select the checkbox for log types under **Categories** which you want to ingest.<br/> <img src={useBaseUrl('img/integrations/microsoft-azure/diagnostic-setting-web-apps.png')} style={{border: '1px solid gray'}} alt="diagnostic-setting-web-apps" width="800"/>
     1. Click **Save**.
 
 ## Collecting Metrics for Azure Web Apps (Optional)

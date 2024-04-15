@@ -21,9 +21,9 @@ By using the Cortex XDR Source Integration, you can easily access and analyze da
 
 The Cortex XDR Source Integration is a valuable Source for security teams that want to enhance their threat detection capabilities and streamline their incident response process. It helps you to effectively monitor your security posture, identify threats in real-time, and respond quickly to potential attacks.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
@@ -47,9 +47,9 @@ To authenticate to the Cortex XDR APIs, follow the steps below:
 1. In the **Configurations** panel, navigate to the **Integrations** option and select **API keys**.<br/> <img src={useBaseUrl('img/send-data/cortex-select-api-key.png')} alt="cortex-select-api-key.png" width="600" />
 1. Click <img src={useBaseUrl('img/send-data/cortex-new-key-button.png')} alt="cortex-new-key-button.png" width="100" /> button to add a new API key.
 1. You will be directed to a page to generate the key. Fill in the required information, then click **Save**.<img src={useBaseUrl('img/send-data/generate-api-key.png')} alt="generate-api-key.png" width="400" />
- :::important
- Make sure to assign the API key the **Standard** security level.
- :::
+    :::important
+    Make sure to assign the API key the **Standard** security level.
+    :::
 1. Copy <img src={useBaseUrl('img/send-data/copy-button.png')} alt="copy-button.png" width="30" /> the generated API key and save it to your personal folder for later use when creating the Cortex XDR source. <br/> <img src={useBaseUrl('img/send-data/cortex-api-key-generated.png')} alt="cortex-api-key-generated.png" width="400" />
 1. Click **Close** to exit the API keys configuration panel.
 

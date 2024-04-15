@@ -9,6 +9,10 @@ import Iframe from 'react-iframe';
 
 In this section, we'll walk you through Sumo Logic Kubernetes Solution setup (data collection and app/dashboard installation) to monitoring, managing, and troubleshooting your Kubernetes environment. Our solution provides an easy way to visualize your Kubernetes logs, metrics, traces, and more.
 
+:::tip
+See the [Sumo Logic Kubernetes Collection Deployment Guide](/docs/send-data/kubernetes/helm-chart-overview.md) for information on advanced configurations, best practices, performance, troubleshooting, and upgrading to our latest version.
+:::
+
 <div className="box-wrapper">
 <div className="box smallbox card">
   <div className="container">
@@ -50,7 +54,7 @@ In this section, we'll walk you through Sumo Logic Kubernetes Solution setup (da
     <div className="box smallbox card">
       <div className="container">
       <a href="/docs/metrics/kubernetes-metrics"><img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="40"/><h4>Kubernetes Metrics</h4></a>
-      <p>Learn which Kubernetes metrics are collected when you deploy our [sumologic-kubernetes-collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/installation.md).</p>
+      <p>Learn which Kubernetes metrics are collected when you deploy our [sumologic-kubernetes-collection](/docs/send-data/kubernetes/install-helm-chart).</p>
       </div>
     </div>
     <div className="box smallbox card">

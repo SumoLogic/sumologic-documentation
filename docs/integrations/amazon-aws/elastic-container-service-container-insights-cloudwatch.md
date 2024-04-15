@@ -164,7 +164,7 @@ To set up collection for traces:
 1. Create a HTTP Traces source by referring to the [docs](/docs/apm/traces/get-started-transaction-tracing/http-traces-source).
 2. Install OpenTelemetry Collector by referring to the [docs](/docs/apm/traces/get-started-transaction-tracing/set-up-traces-collection-aws-environments). 
 
-### Sample log message
+### Sample log messages
 
 <details>
 <summary>Click to expand.</summary>

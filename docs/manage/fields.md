@@ -166,7 +166,7 @@ See [how to upload logs to an HTTP Source](/docs/send-data/hosted-collectors/htt
 Your fields need to be in a comma separated list of key-value pairs. For example, a cURL command posting data with custom fields would look like:
 
 ```bash
-curl -v -X POST -H 'X-Sumo-Fields:environment=dev,cluster=k8s' -T /file.txt\<HTTP endpoin\>
+curl -v -X POST -H 'X-Sumo-Fields:environment=dev,cluster=k8s' -T /file.txt <HTTP endpoint>
 ```
 
 #### Extended HTTP Metadata Collection
@@ -178,7 +178,7 @@ When creating or editing your HTTP Source that will receive log data add the fie
 With this field set on your Source, headers are processed as metadata fields. For example, a cURL command posting data with custom fields would look like:
 
 ```bash
-curl -v -X POST -H 'environment: dev' -H 'cluster: k8s' -T /file.txt\<HTTP endpoin\>
+curl -v -X POST -H 'environment: dev' -H 'cluster: k8s' -T /file.txt <HTTP endpoint>
 ```
 
 #### Reserved headers
@@ -199,7 +199,7 @@ Fields can be used in the following ways:
 
 * Log [Search page](/docs/search). Use the key-value pair as a keyword search expression (before the first pipe, \| ).
 * [Role Based Access Control](/docs/manage/users-roles/roles) (RBAC). Fields can be used in role search filters to control access to data.
-* [Partitions](/docs/manage/partitions-data-tiers), [Scheduled Views](/docs/manage/scheduled-views), and [Field Extraction Rules](/docs/manage/field-extractions). Fields can be used in the scope of Partitions, Scheduled Views, and Field Extraction Rules.
+* [Partitions](/docs/manage/partitions), [Scheduled Views](/docs/manage/scheduled-views), and [Field Extraction Rules](/docs/manage/field-extractions). Fields can be used in the scope of Partitions, Scheduled Views, and Field Extraction Rules.
 
 :::note
 Fields cannot be used with [Live Tail](/docs/search/live-tail).

@@ -1,7 +1,7 @@
 ---
 id: policies-management
 title: Policies Management APIs
-sidebar_label: Policies Management
+sidebar_label: Policies
 description: Use HTTP endpoints to manage your account's security policies.
 hide_table_of_contents: true
 ---

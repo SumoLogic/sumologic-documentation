@@ -34,11 +34,11 @@ Following are the tags which will be created as part of the Docker app installat
 
 This section provides instructions for configuring metrics and log collection for the Sumo Logic app for Docker.
 
-### Metric collection
+#### Metric collection
 
-Metrics are collected through the [Docker Stats Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/dockerstatsreceiver/README.md) of OpenTelemetry.
+Metrics are collected through the [Docker Stats Receiver](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/dockerstatsreceiver/README.md) of OpenTelemetry. This requires Docker API version 1.22+ and only Linux is supported.
 
-### Log collection
+#### Log collection
 
 To collect the Docker container event logs, the following command needs to be executed on the host machine and needs to be kept running, for monitoring all the Docker container-related events. The following command also needs a JSON file path where these container events can be dumped.
 
@@ -59,7 +59,7 @@ import SetupColl from '../../../reuse/apps/opentelemetry/set-up-collector.md';
 
 <SetupColl/>
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-collector.png')} style={{border:'1px solid black'}} alt="Docker-collector"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-collector.png')} style={{border:'1px solid gray'}} alt="Docker-collector"/>
 
 ### Step 2: Configure integration
 
@@ -72,7 +72,7 @@ You can add any custom fields which you want to tag along with the data ingested
 
 Click on the **Download YAML File** button to get the yaml file.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-YAML.png')} style={{border:'1px solid black'}} alt="Docker-YAML"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/Docker-YAML.png')} style={{border:'1px solid gray'}} alt="Docker-YAML"/>
 
 ### Step 3: Send logs to Sumo
 
@@ -188,7 +188,7 @@ import LogsOutro from '../../../reuse/apps/opentelemetry/send-logs-outro.md';
   "count":28
 }
 ```
-## Sample Query
+## Sample queries
 
 ### Log query
 

@@ -16,17 +16,9 @@ Before you can use the Enterprise Search Audit App, an administrator must first 
 
 ## Installing the Enterprise Search Audit App
 
-Your administrator must enable Search Audit from Administration > Security > Policies before you can install this app.
+import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
 
-To install the app:
-1. From App Catalog, search for the Enterprise Search Audit app.
-2. Click Enterprise Search Audit.
-3. Click Add to Library, this will open a window. Within the window click on Advanced and choose a location to install the app.
-
-
-1. Choose a location for Enterprise Search Audit in your Personal folder.
-2. Click Add to Library. A dialog will confirm the app is installed successfully.
-
+<AppInstallNoDataSourceV1/>
 
 ## Enterprise Search Audit App Dashboards
 This page has information about the pre-built dashboards for the Enterprise Search Audit App and a description of each of the app dashboards.

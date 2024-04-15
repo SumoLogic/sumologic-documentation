@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Notification Hubs](https://learn.microsoft.com/en-us/azure/notification-hubs/notification-hubs-push-notification-overview) provide an easy-to-use and scaled-out push engine that enables you to send notifications to any platform (iOS, Android, Windows, etc.) from any back-end (cloud or on-premises). This integration helps in monitoring the operations and actions that are conducted against your Azure Notification Hubs namespace.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Notification Hubs, you can collect the following logs:
 

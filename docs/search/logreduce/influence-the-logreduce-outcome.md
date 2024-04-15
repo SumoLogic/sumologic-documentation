@@ -7,7 +7,7 @@ description: You can influence the algorithm by editing a signature to make the 
 
 The algorithm used for the LogReduce&reg; operator uses fuzzy logic and soft matching to group messages with similar structures and common repeated text strings into **Signatures**, providing a quick investigative view, or snapshot, for the keywords or time range provided. LogReduce data is based on the data available to the algorithm during the time range of your search.
 
-In some cases, this data sampling produces results that don't meet the needs of your organization. You can see more granular results by [splitting a signature](#splitting-a-signature). In addition, you can promote or demote a signature to help Sumo Logic understand what data is the most relevant to you.
+In some cases, this data sampling produces results that do not meet the needs of your organization. You can see more granular results by [splitting a signature](#splitting-a-signature). In addition, you can promote or demote a signature to help Sumo Logic understand what data is the most relevant to you.
 
 The following icons allow you to change the results of a LogReduce report:
 

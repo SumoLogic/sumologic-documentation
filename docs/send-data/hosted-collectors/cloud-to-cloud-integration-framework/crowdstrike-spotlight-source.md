@@ -22,9 +22,9 @@ The source will fetch complete vulnerability instance data that has been updated
 The CrowdStrike API documentation is not public and can only be accessed by partners or customers.
 :::
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
@@ -48,12 +48,12 @@ The **API security token** is used to authenticate with CrowdStrike Spotlight AP
 
 To get the **CrowdStrike API Client**, follow the steps below:
 1. Access the [CrowdStrike Spotlight Platform](https://falcon.crowdstrike.com/login/).
-1. Sign in using your email address and password. After you've completed the two-factor authentication, you'll be directed to the application dashboard.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-login-screen.png')} style={{border: '1px solid black'}} alt="crowdstrike-spotlight-login-screen.png" width="600" />
-1. From the CrowdStrike Spotlight console, select the **Support and resources** option from the menu.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-support-and-resources.png')} style={{border: '1px solid black'}} alt="<crowdstrike-fspotlight-support-and-resources.png>" width="600" />
-1. In the **Resources and tools** section, select the **API clients and keys** option. You can then view existing clients or add new API clients from there.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-api-key-client.png')} style={{border: '1px solid black'}} alt="<crowdstrike-spotlight-api-key-client.png>" width="600" />
-1. Click **Add new API client**. You will be prompted to give a descriptive name and select the appropriate API scopes.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-new-client.png')} style={{border: '1px solid black'}} alt="<crowdstrike-spotlight-new-client.png>" width="600" />
+1. Sign in using your email address and password. After you've completed the two-factor authentication, you'll be directed to the application dashboard.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-login-screen.png')} style={{border: '1px solid gray'}} alt="crowdstrike-spotlight-login-screen.png" width="600" />
+1. From the CrowdStrike Spotlight console, select the **Support and resources** option from the menu.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-support-and-resources.png')} style={{border: '1px solid gray'}} alt="<crowdstrike-fspotlight-support-and-resources.png>" width="600" />
+1. In the **Resources and tools** section, select the **API clients and keys** option. You can then view existing clients or add new API clients from there.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-api-key-client.png')} style={{border: '1px solid gray'}} alt="<crowdstrike-spotlight-api-key-client.png>" width="600" />
+1. Click **Add new API client**. You will be prompted to give a descriptive name and select the appropriate API scopes.<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-new-client.png')} style={{border: '1px solid gray'}} alt="<crowdstrike-spotlight-new-client.png>" width="600" />
 1. Provide a proper name and description and select the **spotlight-vulnerabilities:read** scope. Click on `ADD` to complete the process.
-1. After you click on `ADD` a dialogue box will appear with the **Client ID**, **Client Secret** and **Base URL**. Copy and save the Client Id, Client Secret and Base URL to a folder location because you will need them when creating the [CrowdStrike Spotlight source](#set-up-crowdstrike-spotlight-source).<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-copy-creds.png')} style={{border: '1px solid black'}} alt="<crowdstrike-spotlight-copy-creds.png>" width="600" />
+1. After you click on `ADD` a dialogue box will appear with the **Client ID**, **Client Secret** and **Base URL**. Copy and save the Client Id, Client Secret and Base URL to a folder location because you will need them when creating the [CrowdStrike Spotlight source](#set-up-crowdstrike-spotlight-source).<br/><img src={useBaseUrl('img/send-data/crowdstrike-fdr-host-inventory-copy-creds.png')} style={{border: '1px solid gray'}} alt="<crowdstrike-spotlight-copy-creds.png>" width="600" />
 
 #### Region
 

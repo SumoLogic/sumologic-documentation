@@ -2,7 +2,6 @@
 id: setup
 title: Get Started with Sumo Logic
 sidebar_label: Get Started with Sumo Logic 🚀
-hide_table_of_contents: false 
 ---
 
 <head>

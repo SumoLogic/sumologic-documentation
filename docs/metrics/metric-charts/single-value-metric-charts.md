@@ -5,9 +5,9 @@ sidebar_label: Single Value Charts
 description: Learn how to create and tailor a single value metric chart.
 ---
 
-:::note
-This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](../metrics-queries/metrics-explorer.md).
-:::
+import ClassicMetricsNote from '../../reuse/classic-metrics-deprecation.md';
+
+<ClassicMetricsNote/>
 
 A single value metric chart is useful for summarizing a time series in a single value, and making that value stand out at a glance. For example, you might want to a dashboard panel that displays the current CPU utilization in a cluster, the maximum network latency, or the average error count over the last 15 minutes. Here’s an example of a single value chart: 
 

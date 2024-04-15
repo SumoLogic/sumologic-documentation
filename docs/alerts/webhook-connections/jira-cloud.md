@@ -34,7 +34,7 @@ In Sumo Logic, Scheduled Searches and Monitors send alerts to other tools via we
 ## Create a Webhook Connection
 
 :::note
-You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities) to create webhook connections.
 :::
 
 1. Go to **Manage Data** > **Monitoring** > **Connections**.

@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/api-management-key-concepts) is a hybrid multicloud management platform for APIs across all environments. As a platform-as-a-service, API Management supports the complete API lifecycle. This integration provides near real-time visibility into the state and health of your APIs with rich information about API Management operations that are important for auditing.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure API Management, you can collect the following logs and metrics:
 
-* **Resource logs**. To know more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/gateway-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
+* **Resource logs**. To learn more about the resource log schema for Azure API Management, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/gateway-log-schema-reference). The Consumption tier doesn't support the collection of resource logs.
 * **Platform Metrics for Azure API Management**. These metrics are available in [Microsoft.ApiManagement/service](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-apimanagement-service-metrics) namespace.
 
 ## Setup

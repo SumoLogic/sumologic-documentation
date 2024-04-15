@@ -38,7 +38,7 @@ All information used by the model is anonymized and no customer-confidential inf
 The score is on a scale of 0 to 100. A higher score indicates higher confidence that the Insight is actionable. If the model does not have enough information, it will not make a prediction and no score will be listed (you’ll see either “No prediction” or “N/A”).
 
 ## Prerequisites for using Global Confidence scores
-The only prerequisite for taking full advantage of Confidence scores is to make sure your content is available to Sumo Logic’s machine learning model. If you don't close Insights with an appropriate resolution, the model won’t be able to consider your content and may not be able to generate Global Confidence scores for your Insights. To take full advantage of this feature, make sure you close your Insights as False Positive or Resolved.
+The only prerequisite for taking full advantage of Confidence scores is to make sure your content is available to Sumo Logic’s machine learning model. If you do not close Insights with an appropriate resolution, the model won’t be able to consider your content and may not be able to generate Global Confidence scores for your Insights. To take full advantage of this feature, make sure you close your Insights as False Positive or Resolved.
 
 ## Using Global Confidence scores
 The Global Confidence score is a valuable data point to consider when prioritizing which Insights to triage first.

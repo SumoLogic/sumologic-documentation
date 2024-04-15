@@ -18,7 +18,7 @@ set. The results indicate what entities correlate with the event you are inter
 
 The following table shows the fields that are returned in results.
 
-| _explanation | _relevance | _test_coverage | _control_coverage |
+| `_explanation` | `_relevance` | `_test_coverage` | `_control_coverage` |
 | :-- | :-- | :-- | :-- |
 | The fields and respective values from the comparison. | The probability that the explanation occurs in the event-of-interest data set.<br/><br/>Values are 0 to 1. | The percentage of data in the event-of-interest set that has the explanation.<br/><br/>The link opens a new search that drills down to these logs based on the related explanation. | The percentage of control data in the event-of-interest set that has the explanation.<br/><br/>The link opens a new search that drills down to these logs based on the related explanation. |
 
@@ -75,7 +75,7 @@ __sourceCategory=stream 
 
 ### Access denied
 
-Having seen that there are a lot of "AccessDenied" errors, in the example below, we want to explain which combinations of eventName, userName, or AWS service ("invokedBy") might be responsible for errorCode having a value of "AccessDenied" by comparing logs with AccessDenied errors against logs with other errorCodes. Values from userNames or invokedBys might be candidates for further investigation. 
+Having seen that there are a lot of `AccessDenied` errors, in the example below, we want to explain which combinations of `eventName`, `userName`, or AWS service (`invokedBy`) might be responsible for errorCode having a value of `AccessDenied` by comparing logs with `AccessDenied` errors against logs with other `errorCode`s. Values from `userName`s or `invokedBy`s might be candidates for further investigation. 
 
 ```sql
 _sourceCategory= *cloudtrail* errorCode
@@ -92,10 +92,9 @@ _sourceCategory= *cloudtrail* errorCode
 
 ### Kubernetes
 
-After using [LogReduce Values to explore your event logs based on specific keys](logreduce-values.md) you can use LogExplain to analyze the frequency of events.
+After using [LogReduce Values to explore your event logs based on specific keys](logreduce-values.md), you can use LogExplain to analyze the frequency of events.
 
-If a cluster of logs has `reason="FailedScheduling" ` indicating the Kubernetes scheduler is unable to find nodes that can satisfy requirements for the requested pods; You can use LogExplain to understand which pods and the reason they are unable to find a node to
-run in.
+If a cluster of logs has `reason="FailedScheduling"` indicating the Kubernetes scheduler is unable to find nodes that can satisfy requirements for the requested pods, you can use `logexplain` to understand which pods and the reason they are unable to find a node to run in.
 
 ```sql
 _sourceCategory="nite-primary-eks/events"
@@ -106,7 +105,7 @@ _sourceCategory="nite-primary-eks/events"
 
 ### AWS CloudTrail
 
-After using [LogReduce Values to explore your event logs based on specific keys](logreduce-values.md) you can use LogExplain to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that don't contain these errors.
+After using [LogReduce Values to explore your event logs based on specific keys](logreduce-values.md) you can use LogExplain to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that do not contain these errors.
 
 ```sql
 _sourceCategory=*cloudtrail*
@@ -135,7 +134,7 @@ As a SecOps user, I want to detect compromised user credentials for Windows mach
 
 SecOps Insight: A hacked credential will display a remote login pattern (eventdata_logontype = 10) where a given user logs into more machines than they usually do, based on eventid = 4624 (login successful). I want to baseline 14 days of remote access activity and detect outliers in the most recent 24 hours.
 
-**Approach 1: Time Compare** 
+#### Approach 1: Time Compare
 
 The time compare query attempts to enumerate all machine-to-user combinations over the past 24 hours and compares the average daily logins for each pair of machine and user. As `compare` only supports up to 8 sequential slices, the data has to be sliced into 2 day intervals with 7 epochs, to create 14 days of data.
 
@@ -153,7 +152,7 @@ compare with timeshift 2d 7 avg
 
 In an example dataset, this requires you to examine 150 machine-user combinations based on the percentage increase in activity and 773 rows in the worst case.
 
-**Approach 2: The equivalent query with LogExplain**
+#### Approach 2: The equivalent query with LogExplain
 
 ```sql
 _sourceCategory=OS*Windows* eventid=4624 eventdata_logontype=10
@@ -161,6 +160,6 @@ _sourceCategory=OS*Windows* eventid=4624 eventdata_logontype=10
 | logexplain (now() - _messagetime\< 86400000) on eventdata_workstationname, eventdata_targetusername
 ```
 
-In an example dataset, this requires you to examine just 4 results, versus 773 in the worst case for time compare. The machines were not reported as significant in the `logexplain` algorithm, as they appeared at relatively the same frequency in both the baseline and comparison logs. Subjectively, the 4 users identified by `logexplain` were among the 150 results in the `time compare ` query, sorted by percent increase in activity, so we believe our accuracy was at least as good as `time compare` with fewer results for the user to examine.
+In an example dataset, this requires you to examine just 4 results, versus 773 in the worst case for time compare. The machines were not reported as significant in the `logexplain` algorithm, as they appeared at relatively the same frequency in both the baseline and comparison logs. Subjectively, the 4 users identified by `logexplain` were among the 150 results in the `time compare` query, sorted by percent increase in activity, so we believe our accuracy was at least as good as `time compare` with fewer results for the user to examine.
 
 One important difference for `logexplain` is that it is able to detectusers who were very active 14 days ago but are no longer or less active recently. This is important as hackers may have left the network by the time Sec Ops chooses to run any of these queries. Time compare on the other hand, if sorted based on percent increase of activity, will force the user to examine all 773 user-machine combinations to get the full picture.

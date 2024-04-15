@@ -7,7 +7,7 @@ description: Learn how to set up the Software Development Optimization (SDO) Sol
 
 These instructions help you prepare and set up the Software Development Optimization (SDO) Solution manually, without using Terraform. You will manually configure collection and install apps for tool integration, create field extraction rules (FERs) for each supported tool, and install the SDO app.
 
-## Before you begin
+## Prerequisites
 Before setting up the SDO solution, you need to complete the following tasks:
 
 * Ensure that you have permissions to configure software and platforms used in your DevOps toolchain that will emit data to Sumo using webhooks (for example, Jira, GitHub, GitLab, Bitbucket, CircleCI, PagerDuty, Opsgenie, and so on).
@@ -74,11 +74,11 @@ Complete the configuration for the build and deploy tool you use.
 
 ### Jenkins for build and deploy
 
-1. Install the latest Jenkins Plugin as described [here](/docs/integrations/app-development/jenkins#Collecting-Logs-and-Metrics-for-Jenkins).
+1. Install the latest Jenkins Plugin as described [here](/docs/integrations/app-development/jenkins#collecting-logs-and-metrics-for-jenkins).
 1. Access the Sumo Logic Platform and navigate to **Manage Data** > **Collection** page.
 1. Search for *Software Development Optimization* Collector.
 1. Under this Collector, click on **Show URL** for the source **Jenkins.** Make a note of this **URL** and **Source Category,** you will use these to configure the Jenkins Plugin :
-    * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin,](/docs/integrations/app-development/jenkins#Collecting-Logs-and-Metrics-for-Jenkins) and optionally [Optional - Advance Configuration](/docs/integrations/app-development/jenkins#Collecting-Logs-and-Metrics-for-Jenkins) to configure the Jenkins Sumo Logic plugin.
+    * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin,](/docs/integrations/app-development/jenkins#collecting-logs-and-metrics-for-jenkins) and optionally [Optional - Advance Configuration](/docs/integrations/app-development/jenkins#collecting-logs-and-metrics-for-jenkins) to configure the Jenkins Sumo Logic plugin.
     * **Build**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Build Events to Sumo Logic.
     * **Deploy**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Deploy Events to Sumo Logic.
 

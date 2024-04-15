@@ -38,7 +38,7 @@ This feature is available in the following account plans.
 | Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
 
 
-## Log Types  
+## Log types  
 
 Global Intelligence for AWS CloudTrail App uses AWS CloudTrail logs.
 
@@ -299,12 +299,12 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
 * For links to the CloudTrail events in the Action Plan dashboard watchlists to work, please make sure to set your Sumo Logic Region Code by clicking on the dashboard filter icon.
 * The `infer` operator is not intended for use outside of Sumo Logic Global Intelligence apps.
 * Install the [Sumo Logic Audit app](/docs/integrations/sumo-apps/audit) to monitor the health of scheduled searches. The following two dashboards of the Audit app will help look into details for scheduled searches:
-   * [User Activity - Scheduled Searches](/docs/integrations/sumo-apps/audit#user-activity-scheduled-search)
-   * [Scheduled Searches - Triggered Summary](/docs/integrations/sumo-apps/audit#scheduled-search-triggered-summary)
+   * [User Activity - Scheduled Searches](/docs/integrations/sumo-apps/audit#user-activity---scheduled-search)
+   * [Scheduled Searches - Triggered Summary](/docs/integrations/sumo-apps/audit#scheduled-search---triggered-summary)
 
 </details>
 
-### Sample Log Message
+### Sample log messages
 
 ```json
 {
@@ -337,7 +337,7 @@ This application relies on 45 Scheduled Searches that Save to two different Inde
 }
 ```
 
-### Sample Query
+### Sample queries
 
 The following sample query is from the **Unique AWS Resource Types** panel of **Dashboard 01: Attack Surface Benchmark**.
 ```sql
@@ -368,7 +368,7 @@ The following illustration is a graphical representation of the process for coll
 
 ### Configuring Log Collection
 
-To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](/docs/integrations/amazon-aws/cloudtrail#Collect-logs-for-the-AWS-CloudTrail-App).
+To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app).
 
 
 ## Installing the GI for AWS CloudTrail SecOps App

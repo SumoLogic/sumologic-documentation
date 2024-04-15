@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Analysis Services](https://learn.microsoft.com/en-us/azure/analysis-services/analysis-services-overview) is a fully managed platform as a service (PaaS) that provides enterprise-grade data models in the cloud. This integration monitors server performance and tracks server events like start, stop, pause, restart, and delete.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Analysis Services, you can collect the following logs and metrics:
 

@@ -114,7 +114,7 @@ https://endpoint9.collection.us2.sumologic.com</td>
 
 ### No VPC Peering
 
-If the VPC is in the same [AWS region as your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security), you don't need to set up VPC peering. Navigate to **Actions**, then select **Modify private DNS name**.
+If the VPC is in the same [AWS region as your deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security), you do not need to set up VPC peering. Navigate to **Actions**, then select **Modify private DNS name**.
 
 ![Endpoint](/img/beta/endpoints.png)
 

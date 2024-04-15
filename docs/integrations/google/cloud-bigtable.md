@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Bigtable is a fully managed wide-column and key-value NoSQL database service for large analytical and operational workloads. For more details, refer to the [GCP documentation](https://cloud.google.com/bigtable/docs/overview).
 
-## Log and Metric types
+## Log and metric types
 
 * [Google Cloud Metrics](https://cloud.google.com/monitoring/api/metrics_gcp)
 * [Platform Logs](https://docs.aws.amazon.com/appflow/latest/userguide/monitoring-cloudwatch.html)

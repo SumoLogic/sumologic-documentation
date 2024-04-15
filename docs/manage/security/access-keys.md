@@ -42,18 +42,16 @@ To create your own access keys:
 
 1. In Sumo Logic, click your name in the left-nav and open the **Preferences** page.
 1. In the **My Access Keys** section, click **+ Add Access Key**.<img src={useBaseUrl('/img/security/access-key-preferences-page-2.png')} alt="Add Access Key" width="800"/>
-1. The **Create a Sumo Logic Access Key** window appears.
-<img src={useBaseUrl('/img/security/create-access-key.png')} alt="Create an Access Key" width="600"/>
+1. The **Create a Sumo Logic Access Key** window appears. <br/><img src={useBaseUrl('/img/security/create-access-key.png')} alt="Create an Access Key" width="600"/>
 1. Enter a name for the access key in the **Name** field. If you don’t want to create an allowlist of domains from which the access key can be used to access Sumo APIs, go to step 7 below.
 1. (Optional) In this step, you can define one or more domains that may use the access key to access Sumo APIs.
-  :::note
-  Enter a domain in the **Allowlisted CORS Domains** field and click **Add**. Enter the domains in the [Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) format described in Mozilla help. The URL pattern must include the HTTPS protocol and a domain name, a port is optional.
-  :::
-  <img src={useBaseUrl('/img/security/create-access-key-2.png')} alt="Add a domain for an access key" width="600"/>
+    :::note
+    Enter a domain in the **Allowlisted CORS Domains** field and click **Add**. Enter the domains in the [Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) format described in Mozilla help. The URL pattern must include the HTTPS protocol and a domain name, a port is optional.
+    :::
+    <img src={useBaseUrl('/img/security/create-access-key-2.png')} alt="Add a domain for an access key" width="600"/>
 1. The window updates, and displays the domain you added.Repeat steps 5 and 6 to add additional domains to the allowlist.
 1. Click **Create Key** to generate the key. 
-1. The window displays the generated Access ID and Access Key. Copy both before clicking **Done**. After you press **Done**, you will not be able to recover the Access ID and Access Key.
-<img src={useBaseUrl('/img/security/generated-access-key.png')} alt="Access key successfully created" width="600"/>
+1. The window displays the generated Access ID and Access Key. Copy both before clicking **Done**. After you press **Done**, you will not be able to recover the Access ID and Access Key. <br/><img src={useBaseUrl('/img/security/generated-access-key.png')} alt="Access key successfully created" width="600"/>
 
 ### CORS support
 
@@ -66,7 +64,7 @@ Whether Sumo accepts or rejects an API request depends on whether it contains an
 Sumo rejects:
 
 * Requests with an ORIGIN header but the allowlist is empty.
-* Requests with an ORIGIN header that don't match any entry in the allowlist.
+* Requests with an ORIGIN header that do not match any entry in the allowlist.
 
 When Sumo rejects a request, it issues an httpErrorCode 403 error. The error key is "forbidden" and the error message is: `The request origin is not allowlisted to use this access key`.
 
@@ -97,24 +95,23 @@ When you mouse over an access key on the **Preferences** page, several controls 
 
 ### Access Keys Deactivation policy
 
-To enhance the security of your account, Sumo Logic will by default automatically deactivate any Access Keys that haven’t been used for over 30 days. Deactivating Access Keys that have gone unused ensures that forgotten keys cannot be later used to access your account. 
+To enhance the security of your account, Sumo Logic will by default automatically deactivate any Access Keys that haven’t been used for over 30 days. Deactivating Access Keys that have gone unused ensures that forgotten keys cannot be later used to access your account.
 
-An administrator can adjust the limit to the number of days an Access Key can go unused before being automatically deactivated. To configure this option, you must be a Sumo Logic Administrator or have the **Manage organization settings** role capability. 
+An administrator can adjust the limit to the number of days an Access Key can go unused before being automatically deactivated. To configure this option, you must be a Sumo Logic Administrator or have the **Manage organization settings** role capability.
 
 To configure the Access Keys Deactivation policy:
 1. Go to **Administration > Security > Policies**.
-2. Locate the **Access Keys Deactivation** policy setting. 
+2. Locate the **Access Keys Deactivation** policy setting.
 3. Select a value in the **No. of Days** field.<br/><img src={useBaseUrl('img/security/access-keys-deactivation.png')} alt="Access Keys Deactivation" width="600"/>
 
 
 ## Manage all users’ access keys on Access Keys page
 
-If you have the [**Manage Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities#security), you can manage access keys created by other Sumo Logic users in your organization: you can edit, deactivate, and delete any access key. You can use the **Access Keys** page to create and edit your own access keys. 
+If you have the [**Manage Access Keys** role capability](/docs/manage/users-roles/roles/role-capabilities#security), you can manage access keys created by other Sumo Logic users in your organization: you can edit, deactivate, and delete any access key. You can use the **Access Keys** page to create and edit your own access keys.
 
 ### Generate an access key 
 
-1. Go to **Administration** > **Security** > **Access Keys**.
-<img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Add Access Key" width="800"/>
+1. Go to **Administration** > **Security** > **Access Keys**. <br/><img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Add Access Key" width="800"/>
 1. At the top right of the table, click **+ Add Access Key**.
 1. Follow the steps to create your own access keys [from the Preferences page](#from-the-preferences-page) above, starting with step 3.
 
@@ -122,7 +119,7 @@ If you have the [**Manage Access Keys** role capability](/docs/manage/users-role
 
 The **Security** > **Access Keys** page lists all access keys in your account. 
 
-When you mouse over an access key, a three-dot more options menu appears, with three options.
+When you mouse over an access key, a three-dot kebab menu appears, with three options.
 <img src={useBaseUrl('img/security/access-key-three-dot.png')} alt="Edit access key" width="800"/>
 
 * **Edit**. Opens up an **Edit Access Key** window where you can modify the allowlist for the access key.

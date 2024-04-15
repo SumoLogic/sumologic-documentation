@@ -64,7 +64,7 @@ Configuring log and metric collection for the Elasticsearch app includes the fol
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic before configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following Fields in Sumo Logic before configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -121,7 +121,7 @@ In the logs pipeline, Sumo Logic Distribution for OpenTelemetry Collector collec
 Follow the below instructions to set up the logs and metric collection:
 
 :::note prerequisites
-It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/v3-migration-doc.md).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](/docs/send-data/kubernetes).
 :::
 
 #### Configure Logs Collection
@@ -139,8 +139,8 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
     db_cluster_port = `ENV_TO_BE_CHANGED`
     ```
    2. Enter in values for the following parameters (marked `ENV_TO_BE_CHANGED` above):
-    * `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example, dev, prod, or QA. While this value is optional we highly recommend setting it.
-    * `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
+    * `environment`. This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example, dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `db_cluster`. Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
     * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
     * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 
@@ -151,8 +151,8 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
     * **Do not modify the following values** as they will cause the Sumo Logic apps to not function correctly.
       * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
       * `db_system: “elasticsearch”`- This value identifies the database system.
-    * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
-   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+    * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app).
    4. Verify logs in Sumo Logic.
 2. **(Optional) Collecting Elasticsearch Logs from a Log File**. Follow the steps below to capture Elasticsearch logs from a log file on Kubernetes.
    1. Determine the location of the Elasticsearch log file on Kubernetes. This can be determined from the log4j.properties for your Elasticsearch cluster along with the mounts on the Elasticsearch pods.
@@ -225,12 +225,12 @@ This section explains the steps to collect Elasticsearch metrics from a Kubernet
     db_cluster_port = `ENV_TO_BE_CHANGED`
 ```
 3. Enter in values for the following parameters (marked ENV_TO_BE_CHANGED above):
-   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Elasticsearch Input plugin. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Elasticsearch input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+   * `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf Elasticsearch Input plugin. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Elasticsearch input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
    * In the input plugins section, that is `[[inputs.elasticsearch]]`:
       * `servers` - The URL to the Elasticsearch server. This can be a comma-separated list to connect to multiple Elasticsearch servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Elasticsearch input plugin for Telegraf.
    * In the tags section, which is `[inputs.elasticsearch]`
-     * `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
-     * `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
+     * `environment`. This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
+     * `db_cluster`. Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
      * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
      * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
 
@@ -243,15 +243,15 @@ This section explains the steps to collect Elasticsearch metrics from a Kubernet
 
      Pivoting to Tracing data from Entity Inspector is possible only for “Elasticsearch address” Entities.
      :::
-   * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
-     * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-     * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-     * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+   * **Do not modify the following values** as it will cause the Sumo Logic app to not function correctly.
+     * `telegraf.influxdata.com/class: sumologic-prometheus`. This instructs the Telegraf operator what output to use. This should not be changed.
+     * `prometheus.io/scrape: "true"`. This ensures our Prometheus will scrape the metrics.
+     * `prometheus.io/port: "9273"`. This tells prometheus what ports to scrape on. This should not be changed.
      * `telegraf.influxdata.com/inputs`
      * In the tags section   `[inputs.elasticsearch.tags]`
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: “elasticsearch”` - This value identifies the database system.
-     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 5. Verify metrics in Sumo Logic.
 
@@ -265,7 +265,7 @@ This section provides instructions for configuring logs and metrics collection f
 
 #### Configure Metrics Collection
 
-1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[Create a Hosted Collector](/docs/send-data/hosted-collectors#create-a-hosted-collector) section of the Sumo Logic documentation.
+1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector) section of the Sumo Logic documentation.
 2. Configure an HTTP Logs and Metrics Source. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/hosted-collectors/http-source/logs-metrics). Make a note of the **HTTP Source URL**.
 3. **Install Telegraf**. Use the [ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [elasticsearch input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/elasticsearch) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify **telegraf.conf** and copy and paste the text below:
@@ -295,8 +295,8 @@ This section provides instructions for configuring logs and metrics collection f
   * In the input plugins section, that is `[[inputs.elasticsearch]]`:
      * `servers` - The URL to the elasticsearch server. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/elasticsearch) for more information on additional parameters for configuring the Elasticsearch input plugin for Telegraf.
      * In the tags section (`[inputs.Elasticsearch.tags]`):
-        * `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
-        * `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment`. This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
+        * `db_cluster`. Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
         * `db_cluster_address` - Enter the cluster hostname or ip address that is used by the application to connect to the database. It could also be the load balancer or proxy endpoint.
         * `db_cluster_port` - Enter the database port. If not provided, a default port will be used.
         :::note
@@ -322,7 +322,7 @@ At this point, Elasticsearch metrics should start flowing into Sumo Logic.
 
 #### Configure Logs Collection
 
-This section provides instructions for configuring log collection for Sumo Logic app for Elasticsearch, running on a non-Kubernetes environment. By default, Elasticsearch logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see [this page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+This section provides instructions for configuring log collection for Sumo Logic app for Elasticsearch, running on a non-Kubernetes environment. By default, Elasticsearch logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/installed-collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see [this page](/docs/get-started/system-requirements#installed-collector-requirements).
 
 1. **Configure logging in Elasticsearch**. Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set loglevel to one of:
    * `debug`: a lot of information, useful for development/testing
@@ -337,7 +337,7 @@ This section provides instructions for configuring log collection for Sumo Logic
    * **Description.** (Optional)
    * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in `/var/log/elasticsearch/elasticsearch-<clustername>.log`. If you're using a customized path, check the Elasticsearch.conf file for this information.
    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
-   * **Source Category.** Enter any string to tag the output collected from this Source, such as **elasticsearch/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/best-practices).)
+   * **Source Category.** Enter any string to tag the output collected from this Source, such as **elasticsearch/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/best-practices).)
    * **Fields. Set the following fields:**
       * `component = database`
       * `db_system = elasticsearch`
@@ -370,9 +370,9 @@ At this point, Elasticsearch logs should start flowing into Sumo Logic.
 
 ## Installing Elasticsearch Monitors
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Elasticsearch cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Elasticsearch Alerts](#Elasticsearch-Alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Elasticsearch cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Elasticsearch Alerts](#elasticsearch-alerts).
 
-To install these monitors, you must have the **Manage Monitors** role capability. You can install monitors by importing a JSON file or using a Terraform script. There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
+To install these monitors, you must have the **Manage Monitors** role capability. You can install monitors by importing a JSON file or using a Terraform script. There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors/create-monitor) for details.
 
 ### Method 1: Importing a JSON file
 
@@ -384,21 +384,21 @@ To install these monitors, you must have the **Manage Monitors** role capability
 3. Go to **Manage Data > Alerts > Monitors**.
 4. Click **Add**.
 5. Click **Import**.
-6. On the** Import Content popup**, enter **Elasticsearch** in the Name field, paste in the JSON into the popup, and click **Import**.
+6. On the **Import Content popup**, enter **Elasticsearch** in the Name field, paste in the JSON into the popup, and click **Import**.
 7. The monitors are created in a **Elasticsearch** folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 ### Method 2: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/security/access-keys#Create-an-access-key-on-Preferences-page).
+1. Generate a Sumo Logic access key and ID for a user that has the **Manage Monitors** role capability. For instructions, see [Access Keys](/docs/manage/security/access-keys#from-the-preferences-page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
-3. Download the Sumo Logic Terraform package for Elasticsearch monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Elasticsearch). You can either download it using the git clone command or as a zip file.
-4. Alert Configuration. After extracting the package, navigate to the  `terraform-sumologic-sumo-logic-monitor/monitor_packages/Elasticsearch/` directory.
+3. Download the Sumo Logic Terraform package for Elasticsearch monitors. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Elasticsearch). You can either download it using the git clone command or as a zip file.
+4. Alert Configuration. After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/Elasticsearch/` directory.
    * Edit the `Elasticsearch.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-   ```bash
-   access_id   = "<SUMOLOGIC ACCESS ID>"
-   access_key  = "<SUMOLOGIC ACCESS KEY>"
-   environment = "<SUMOLOGIC DEPLOYMENT>"
-   ```
+    ```bash
+    access_id   = "<SUMOLOGIC ACCESS ID>"
+    access_key  = "<SUMOLOGIC ACCESS KEY>"
+    environment = "<SUMOLOGIC DEPLOYMENT>"
+    ```
    * The Terraform script installs the alerts without any scope filters. If you would like to restrict the alerts to specific clusters or environments, update the `elasticsearch_data_source` variable. For example:
      * To configure alerts for a specific cluster, set `elasticsearch_data_source` to something like `db_cluster=elasticsearch.prod.01`
      * To configure alerts for all clusters in an environment, set `elasticsearch_data_source` to something like `environment=prod`
@@ -439,7 +439,7 @@ email_notifications = [
   ]
 ```
 6. Installation.
-   1. Navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/Elasticsearch/ directory and run terraform init. This will initialize Terraform and download the required components.
+   1. Navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/Elasticsearch/` directory and run terraform init. This will initialize Terraform and download the required components.
    2. Run `terraform plan` to view the monitors that Terraform will create or modify.
    3. Run `terraform apply`.
 

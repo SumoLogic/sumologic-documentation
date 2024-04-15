@@ -37,15 +37,15 @@ Without adequate permissions (read/write/execute) for the directories in which t
 1. Download and install the Nagini module from vRealize Operations Manager. It can be found at `"https://<vrops-server>/suite-api"`. Visit the page and download the Python client (Nagini) at the bottom of the page. Install the Nagini module by following the readme included in the package. Nagini requires the python [requests](https://pypi.org/project/requests/) package. The Sumo Logic solution has been tested on the Nagini version 2.0 and requests version 2.6 and 2.24.
 1. Verify that the user account that will be running the Sumo Logic vRops scripts has full read/write/execute permissions for the directories in which the collection scripts will be extracted. [sumo-vsphere-ulm.zip](https://s3.amazonaws.com/appdevstore/VMWare/sumo-vsphere-ulm.zip)
 
-  :::important
-  Without adequate permissions (read/write/execute) for the directories in which the  scripts reside, unexpected script errors will occur.
-  :::
+   :::important
+   Without adequate permissions (read/write/execute) for the directories in which the  scripts reside, unexpected script errors will occur.
+   :::
 
 1. Edit the **cron_vrops_metrics.sh** script, changing the `SCRIPT_PATH` variable to reflect the **absolute path** where the script resides.
 
-:::note
-If you have multiple vRops servers, create a new line for each one.
-:::
+   :::note
+   If you have multiple vRops servers, create a new line for each one.
+   :::
 
 ## Step 2: Download and install the Collector
 
@@ -100,22 +100,20 @@ The number of threads can be controlled using a property `THREADSIZE_POOL` in th
 
 To collect performance metrics, do the following:
 
-1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source.md). Make sure that the Content-Type is set to Carbon1.
-
-  ![VMware.png](/img/send-data/VMware.png)
+1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/installed-collectors/sources/streaming-metrics-source.md). Make sure that the Content-Type is set to Carbon1. <br/>![VMware.png](/img/send-data/VMware.png)
 
 1. Edit the properties in the bundled config.json properties file, as necessary.
 1. Go to the directory for the Sumo Logic scripts, and run the **sumologic-vrops-metric-collection.py** script—which queries the vRops Server for metrics—from that location with the following command:
 
-  ```bash
-  python3 sumologic-vrops-metric-collection.py -u [vrops_username] -p [vrops_password] -s [vrops server] -t [target server] -to [target port]
-  ```
+   ```bash
+   python3 sumologic-vrops-metric-collection.py -u [vrops_username] -p [vrops_password] -s [vrops server] -t [target server] -to [target port]
+   ```
 
   **Example 1:** Using metrics streaming source and specific log directory with a specific log file prefix.
 
-  ```
-  # python3 $SCRIPT_PATH/sumologic-vrops-metric-collection.py -s 192.168.124.29 -t sumologic_host -to sumologic_host_port -u vropsadmin -p vropsadmin -l /var/log/vmware/log/metrics
-  ```
+   ```
+   # python3 $SCRIPT_PATH/sumologic-vrops-metric-collection.py -s 192.168.124.29 -t sumologic_host -to sumologic_host_port -u vropsadmin -p vropsadmin -l /var/log/vmware/log/metrics
+   ```
 
   **Example 2:** Using specific log directory with a specific log file prefix and encrypted Password.
 
@@ -153,7 +151,7 @@ Sample CRON job to periodically run the **cron_vrops_metrics.sh** script every 1
 
 The scripts support symmetric authenticated cryptography—also known as secret key authentication—using the python Fernet implementation.  
 
-To utilize encryption**, generate a key from the python command line:
+To utilize encryption, generate a key from the python command line:
 
 ```
 >>> from cryptography.fernet import Fernet

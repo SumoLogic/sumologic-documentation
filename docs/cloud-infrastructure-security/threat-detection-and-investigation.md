@@ -70,8 +70,8 @@ After you build the dashboard to find and monitor security events, we'll show yo
 
 We are going to create a dashboard to look at our security activity in several different ways.  In this step you will query CloudTrail logs to create a Top 10 User Activity list, turn it into a bar chart, and add it to your dashboard.  
 
-1. From the Sumo Logic interface, click on the **+ New** button and select the **Dashboard (New)** option.<br/><img src={useBaseUrl('img/csa/create-new-dashboard.png')} alt="Create new dashboard" style={{border: '1px solid black'}} width="200"/>
-1. Select a **Time Series** panel.<br/><img src={useBaseUrl('img/csa/time-series-panel.png')} alt="Time series panel" style={{border: '1px solid black'}} width="600"/>
+1. From the Sumo Logic interface, click on the **+ New** button and select the **Dashboard (New)** option.<br/><img src={useBaseUrl('img/csa/create-new-dashboard.png')} alt="Create new dashboard" style={{border: '1px solid gray'}} width="200"/>
+1. Select a **Time Series** panel.<br/><img src={useBaseUrl('img/csa/time-series-panel.png')} alt="Time series panel" style={{border: '1px solid gray'}} width="600"/>
 1. Create a CloudTrail query to identify bad actors.  
    1. Copy or type the following query to the query window. (In the query, replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
      ```
@@ -85,19 +85,19 @@ We are going to create a dashboard to look at our security activity in several d
      | transpose row actor column event_type
      ```
      <br/>Notice how this query searches AWS CloudTrail logs to extract the user, event, IP addresses, and event names as metadata using a parse json command, so you can use the extracted values to monitor user activity.
-   1. In the upper right, change the time frame for the query to be for the last 24 hours.<br/><img src={useBaseUrl('img/csa/24-hours.png')} alt="Twenty-four hours" style={{border: '1px solid black'}} width="300"/>
+   1. In the upper right, change the time frame for the query to be for the last 24 hours.<br/><img src={useBaseUrl('img/csa/24-hours.png')} alt="Twenty-four hours" style={{border: '1px solid gray'}} width="300"/>
    1. Press Enter or click the magnifying glass icon to run the search.
-1. In the **Panel Settings** area, change the chart type to **Bar**.<br/><img src={useBaseUrl('img/csa/bar-chart-setting.png')} alt="Bar chart setting" style={{border: '1px solid black'}} width="800"/>
-1. In the upper left corner of your bar chart, change the panel title to **Top 10 User Activity**.<br/><img src={useBaseUrl('img/csa/top-10-user-activity-panel.png')} alt="Rename dashboard panel" style={{border: '1px solid black'}} width="400"/>
-1. Click the **Add to Dashboard** button in the top right corner. The dashboard displays the panel you created.<br/><img src={useBaseUrl('img/csa/example-dashboard.png')} alt="Example dashboard" style={{border: '1px solid black'}} width="800"/>
+1. In the **Panel Settings** area, change the chart type to **Bar**.<br/><img src={useBaseUrl('img/csa/bar-chart-setting.png')} alt="Bar chart setting" style={{border: '1px solid gray'}} width="800"/>
+1. In the upper left corner of your bar chart, change the panel title to **Top 10 User Activity**.<br/><img src={useBaseUrl('img/csa/top-10-user-activity-panel.png')} alt="Rename dashboard panel" style={{border: '1px solid gray'}} width="400"/>
+1. Click the **Add to Dashboard** button in the top right corner. The dashboard displays the panel you created.<br/><img src={useBaseUrl('img/csa/example-dashboard.png')} alt="Example dashboard" style={{border: '1px solid gray'}} width="800"/>
 
 ### Step 2: Create dashboard template variables
 
 You can add more flexibility to your queries and dashboard outputs by using template variables.
 1. In the upper right corner of the dashboard, change the time range to 24 hours.
-1. Click on the filter icon to display the template variable bar.<br/><img src={useBaseUrl('img/csa/filter-icon.png')} alt="Filter icon" style={{border: '1px solid black'}} width="200"/>
-1. In the template variable bar, select **Create a Template Variable**.<br/><img src={useBaseUrl('img/csa/create-template-variable.png')} alt="Create a template variable" style={{border: '1px solid black'}} width="800"/>
-1. In this panel for the **Variable Name** enter **event_type** and for the **Variable Type**, select **Logs Search**.<br/><img src={useBaseUrl('img/csa/create-template-variable-dialog.png')} alt="Create a template variable dialog" style={{border: '1px solid black'}} width="800"/>
+1. Click on the filter icon to display the template variable bar.<br/><img src={useBaseUrl('img/csa/filter-icon.png')} alt="Filter icon" style={{border: '1px solid gray'}} width="200"/>
+1. In the template variable bar, select **Create a Template Variable**.<br/><img src={useBaseUrl('img/csa/create-template-variable.png')} alt="Create a template variable" style={{border: '1px solid gray'}} width="800"/>
+1. In this panel for the **Variable Name** enter **event_type** and for the **Variable Type**, select **Logs Search**.<br/><img src={useBaseUrl('img/csa/create-template-variable-dialog.png')} alt="Create a template variable dialog" style={{border: '1px solid gray'}} width="800"/>
 1. For the query paste the following. (In the query, replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
    ```
    _sourceCategory=Labs/AWS/CloudTrail
@@ -106,7 +106,7 @@ You can add more flexibility to your queries and dashboard outputs by using temp
    | fields - _count
    ```
 1. Under the **Key** field, select **event_type**. Notice that the right side of the panel populates with the values created by the query.
-1. Make sure the **Include the option to select all values (*)** selector is active.<br/><img src={useBaseUrl('img/csa/create-variable-1.png')} alt="Query in the create template variable dialog" style={{border: '1px solid black'}} width="800"/>
+1. Make sure the **Include the option to select all values (*)** selector is active.<br/><img src={useBaseUrl('img/csa/create-variable-1.png')} alt="Query in the create template variable dialog" style={{border: '1px solid gray'}} width="800"/>
 1. Click the **Create Template Variable** on the lower right.  A variable selector called **event_type** is now visible on the dashboard bar.
 1. Create another variable called **actor**. Use the following to create the elements that are needed for this template variable.
    * Variable Name: actor
@@ -120,9 +120,9 @@ You can add more flexibility to your queries and dashboard outputs by using temp
       ```
    * Key: actor
    * Include the option to select all values (*): Yes
-1. Your results look like something like this. <br/><img src={useBaseUrl('img/csa/create-variable-2.png')} alt="Create another template variable" style={{border: '1px solid black'}} width="800"/>
+1. Your results look like something like this. <br/><img src={useBaseUrl('img/csa/create-variable-2.png')} alt="Create another template variable" style={{border: '1px solid gray'}} width="800"/>
 1. Click the **Create Template Variable** button.
-1. In the upper left of the dashboard, rename your dashboard to **Cloud Security Dashboard**. <br/><img src={useBaseUrl('img/csa/rename-to-cloud-security-dashboard.png')} alt="Rename to Cloud Security Dashboard" style={{border: '1px solid black'}} width="400"/><br/>We now want to modify our query to take advantage of the variables we have created. This will require us to add a "where" clause and reference the parameter by its name.
+1. In the upper left of the dashboard, rename your dashboard to **Cloud Security Dashboard**. <br/><img src={useBaseUrl('img/csa/rename-to-cloud-security-dashboard.png')} alt="Rename to Cloud Security Dashboard" style={{border: '1px solid gray'}} width="400"/><br/>We now want to modify our query to take advantage of the variables we have created. This will require us to add a "where" clause and reference the parameter by its name.
 1. Click on the three vertical dots in the upper right corner of the **Top 10 User Activity** panel.
 1. Select the **Edit** option so you can modify your query.
 1. We want to filter by event_type in our panel, but allow the dashboard viewer options to pick the event type. Add a new line to the query by pressing Shift + Enter and type or copy the following code:
@@ -130,8 +130,8 @@ You can add more flexibility to your queries and dashboard outputs by using temp
    | where event_type matches "{{event_type}}"
    | where actor matches "{{actor}}"
    ```
- Your query should now look something like this:<br/><img src={useBaseUrl('img/csa/new-query.png')} alt="Revised query" style={{border: '1px solid black'}} width="400"/>
- 1. Click the **Update Dashboard** button. <br/>You can test these changes by selecting different **event_types** and **actors** from the template fields in the dashboard bar. As you select different values you will see the dashboard panel change automatically. Select the ** * ** option as a variable to see all options.  When you are done testing, ensure both **event_type** and **actor** template variables are set to * before continuing.
+    Your query should now look something like this:<br/><img src={useBaseUrl('img/csa/new-query.png')} alt="Revised query" style={{border: '1px solid gray'}} width="400"/>
+ 1. Click the **Update Dashboard** button. <br/>You can test these changes by selecting different **event_types** and **actors** from the template fields in the dashboard bar. As you select different values you will see the dashboard panel change automatically. Select the * option as a variable to see all options.  When you are done testing, ensure both **event_type** and **actor** template variables are set to * before continuing.
 
 ### Step 3: Monitor geolocation of console logins
 
@@ -145,7 +145,7 @@ As another example, let's say one of your employees logged in from both Canada a
 
 We want to see where our users are logging in from around the globe. So, in this step, we are going to create a query to get the IP address and use the Lookup function to get the latitude and longitude of where that IP address is located.
 
-1. Click **Add Panel** and then **Map**.<br/><img src={useBaseUrl('img/csa/add-map-panel.png')} alt="Add a map panel" style={{border: '1px solid black'}} width="300"/>
+1. Click **Add Panel** and then **Map**.<br/><img src={useBaseUrl('img/csa/add-map-panel.png')} alt="Add a map panel" style={{border: '1px solid gray'}} width="300"/>
 1. Copy or type this code to the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
     ```
     _sourceCategory=Labs/AWS/CloudTrail
@@ -161,7 +161,7 @@ We want to see where our users are logging in from around the globe. So, in this
     | count by actor,src_ip,latitude,longitude,country_name,event_type
    ```
 1. Click the magnifying glass icon to perform a search. If results do not display, select a longer time frame.
-1. Name the panel **Geo Location of Console Logins**.<br/><img src={useBaseUrl('img/csa/geo-location-panel.png')} alt="Geo location panel" style={{border: '1px solid black'}} width="800"/>
+1. Name the panel **Geo Location of Console Logins**.<br/><img src={useBaseUrl('img/csa/geo-location-panel.png')} alt="Geo location panel" style={{border: '1px solid gray'}} width="800"/>
 1. Click the **Add to Dashboard** button.
     :::note
     You can change the values of the dashboard template variables you created in the earlier step, and see the effect on your dashboard panels.
@@ -171,7 +171,7 @@ We want to see where our users are logging in from around the globe. So, in this
 
 Now we want to see if users are failing to log in, which either might be an indication of users forgetting their passwords, or someone else trying to log in using stolen user credentials.
 
-1. Click **Add Panel** and then **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid black'}} width="300"/>
+1. Click **Add Panel** and then **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid gray'}} width="300"/>
 1. Copy or type this code to the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
     ```
     _sourceCategory=Labs/AWS/CloudTrail
@@ -194,7 +194,7 @@ Now we want to see if users are failing to log in, which either might be an indi
 1. Rename this panel **Top 10 Number of Failed Login Attempts**.
 1. Click the **Add to Dashboard** button.
 
-Your dashboard should now look something like this:<br/><img src={useBaseUrl('img/csa/dashboard-with-failed-login-attempts-dashboard.png')} alt="Dashboard with failed login attempts panel" style={{border: '1px solid black'}} width="800"/>
+Your dashboard should now look something like this:<br/><img src={useBaseUrl('img/csa/dashboard-with-failed-login-attempts-dashboard.png')} alt="Dashboard with failed login attempts panel" style={{border: '1px solid gray'}} width="800"/>
 
 ### Step 5: Detect brute force attacks
 
@@ -202,7 +202,7 @@ In the previous steps, we showed you how to build a dashboard to detect and moni
 
 In this step, we'll show you how to detect brute force attacks. Brute force attacks are generally noted by a user failing to login a number of times, and then logging in successfully. Let's write a query to look for this and display the results.
 
-1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid black'}} width="300"/>
+1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid gray'}} width="300"/>
 1. Type or paste the following code into the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
      ```
      _sourceCategory=Labs/AWS/CloudTrail
@@ -226,13 +226,13 @@ In this step, we'll show you how to detect brute force attacks. Brute force atta
 1. Rename this panel **Account Compromise Detection From Brute Force Attack**.
 1. Click the **Add to Dashboard** button.  
 
-If there have been brute force attacks during the queried time frame, your the new panel might look like this:<br/><img src={useBaseUrl('img/csa/brute-force-attack-panel.png')} alt="Brute force attack panel" style={{border: '1px solid black'}} width="800"/>
+If there have been brute force attacks during the queried time frame, your the new panel might look like this:<br/><img src={useBaseUrl('img/csa/brute-force-attack-panel.png')} alt="Brute force attack panel" style={{border: '1px solid gray'}} width="800"/>
 
 ### Step 6: Detect landspeed violations
 
 A "landspeed violation" occurs when a user logs in from an IP address and then logs in a short time later from a different IP address where the location is a significant distance from the first location. An example would be if someone logged in from New York City USA, and then 4 hours later logged in using the same IP address from Amsterdam in the Netherlands. It’s impossible to get from New York City to Amsterdam in 4 hours, thus it is an example of a landspeed violation that could indicate stolen or compromised credentials.
 
-1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid black'}} width="300"/>
+1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid gray'}} width="300"/>
 1. Type or paste the following code into the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
      ```
      _sourceCategory=Labs/AWS/CloudTrail
@@ -283,7 +283,7 @@ A "landspeed violation" occurs when a user logs in from an IP address and then l
 
 We need a way to see if any of the IP addresses we have logged are known threats or have been tied to malicious activity. Sumo Logic has a partnership with [CrowdStrike](https://www.crowdstrike.com), which allows us to look up IP addresses, email addresses, URLs, and other entities to see if they are known by CrowdStrike.
 
-1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid black'}} width="300"/>
+1. Click **Add Panel** and **Time Series**.<br/><img src={useBaseUrl('img/csa/add-time-series-panel.png')} alt="Add a time series panel" style={{border: '1px solid gray'}} width="300"/>
 1. Type or paste the following code into the query window. (Replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
      ```
      _sourceCategory=Labs/AWS/CloudTrail

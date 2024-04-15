@@ -1,7 +1,7 @@
 ---
 id: partition-management
-title: Partition Management APIs
-sidebar_label: Partition Management
+title: Partitions Management APIs
+sidebar_label: Partitions
 description: Use HTTP endpoints to manage Partitions.
 hide_table_of_contents: true
 ---
@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/data-overage.png')} alt="Thumbnail icon" width="50"/>
 
-The Partition Management API allows you to improve search performance by searching over a smaller number of messages. For more information, see [Manage Partitions](https://help.sumologic.com/?cid=5231).
+The Partitions Management API allows you to improve search performance by searching over a smaller number of messages. For more information, see [Manage Partitions](https://help.sumologic.com/?cid=5231).
 
 import ApiIntro from '../reuse/api-intro.md';
 

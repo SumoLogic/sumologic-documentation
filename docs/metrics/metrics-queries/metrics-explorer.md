@@ -21,7 +21,7 @@ If your query supports basic mode, you can freely move between basic and advance
 
 ## Switch between Basic and Advanced Mode
 
-When you open a new Metrics tab, it is displayed in Basic Mode. You can switch to Advanced Mode by clicking the three-dot icon, and selecting **Advanced Mode**. When you are in Advanced Mode, you can switch back to Basic Mode from the same options menu.
+When you open a new Metrics tab, it is displayed in Basic Mode. You can switch to Advanced Mode by clicking the three-dot kebab icon, and selecting **Advanced Mode**. When you are in Advanced Mode, you can switch back to Basic Mode from the same options menu.
 
 If you use the Advanced Mode to build complex metrics, you can convert it to Basic Mode by selecting the option. If the query cannot support basic mode, you receive a message informing you "Your query cannot be switched to Basic Mode."
 
@@ -36,15 +36,15 @@ When converted, the filters convert allowing you to select and modify, make diff
 
 ## Switch to the Classic metrics UI
 
-:::info Classic Metrics Deprecation
-In late 2023, we're deprecating Classic Metrics and Classic Dashboards in favor of our newer [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer) interface. No action is required on your part.
-:::
+import ClassicMetricsNote from '../../reuse/classic-metrics-deprecation.md';
 
-If you prefer to use the Classic metrics UI, you can switch to it, and switch back the Metrics Explorer interface at any point. To switch to Classic metrics, click the three-dot icon near the upper right corner of the page and click **Switch to Classic Metrics**. 
+<ClassicMetricsNote/>
+
+If you prefer to use the Classic metrics UI, you can switch to it, and switch back the Metrics Explorer interface at any point. To switch to Classic metrics, click the three-dot kebab icon near the upper right corner of the page and click **Switch to Classic Metrics**. 
 
 Not all of the features available in the Metrics Explorer are found in the Classic UI.
 
-You'll be asked to confirm your choice. Click **Switch to Classic UI** to proceed. After you switch to the Classic UI, you can return to the Metrics Explorer UI by clicking the three-dot icon again, and selecting **Switch to New Metrics**. While you are in the Classic UI, new metric tabs you open will display the Classic UI.
+You'll be asked to confirm your choice. Click **Switch to Classic UI** to proceed. After you switch to the Classic UI, you can return to the Metrics Explorer UI by clicking the three-dot kebab icon again, and selecting **Switch to New Metrics**. While you are in the Classic UI, new metric tabs you open will display the Classic UI.
 
 ![switch-to-classic.png](/img/metrics/confirm-switch-to-classic.png)
 
@@ -103,7 +103,7 @@ You can add or remove a column from the Time Series table using the checkbox nex
 
 ### Context menu
 
-When you mouse over a cell in the Time SeriesEC2 table, a three-dot icon appears. Click it to display a context menu.
+When you mouse over a cell in the Time SeriesEC2 table, a three-dot kebab icon appears. Click it to display a context menu.
 
 The context menu is available in both Basic and Advanced mode.
 
@@ -137,7 +137,7 @@ Every query run by a user is saved in query history (both incorrect and correct 
 When you select a query from the list, it is updated for a query row where you opened query history dropdown. Selected queries from list are adjusted to current query editor mode selected by the user. For example, if you are in Basic mode and the query was run before in advanced mode, the Metrics interface  will adjust to Basic mode.
 
 :::note
-If the query editor mode can't be adjusted, it is changed to advanced mode so that it can handle query from history. It is possible to run queries which were used with parameters/template variables.
+If the query editor mode cannot be adjusted, it is changed to advanced mode so that it can handle query from history. It is possible to run queries which were used with parameters/template variables.
 :::
 
 ## Create a metric query
@@ -215,7 +215,7 @@ You can perform basic math operations (+, -, \*, /) on two or more metrics queri
 
 ![pre-join.png](/img/metrics/pre-join.png)
 
-To join the queries, add a third query row, and then switch to Advanced mode, by choosing **Advanced Mode** from the three-dot menu in that row.
+To join the queries, add a third query row, and then switch to Advanced mode, by choosing **Advanced Mode** from the three-dot kebab menu in that row.
 
 ![advanced.png](/img/metrics/advanced.png)
 
@@ -270,10 +270,6 @@ To add a metric chart to a dashboard, click the **Add to Dashboard** button in t
 
 Below are some FAQs about the Metrics Explorer.
 
-### What happens to the current metrics tab when the new Metrics Explorer comes out?
-
-The Metrics Explorer replaces the Classic metrics UI. If you’re not ready to switch to the Metrics Explorer, you continue to use the Classic UI until you are. The option for switching between Classic metrics and Metrics Explorer is on the three-dot menu at the top right of the page, next to the **Add to Dashboard** button.
-
 ### What value does Metrics Explorer provide?
 
 The Metrics Explorer gives you more visualization types and makes your metrics easier to  discover. Metrics Explorer provides the same visualizations available in Dashboards (New), from tables and category charts, to time series charts and honeycomb visualizations. The Metrics Explorer has richer and more comprehensive autocomplete support, providing suggestions for even very high cardinality queries. The structured query builder approach also makes the metrics experience friendlier to infrequent and inexperienced metrics users.
@@ -281,10 +277,6 @@ The Metrics Explorer gives you more visualization types and makes your metrics e
 ### Can I put logs and metrics on the same panel in the Metrics Explorer?
 
 Yes you can. The experience is consistent with the Dashboards (New) experience and has the same features.
-
-### I loved the ability to overlay log-based events and metrics on the classic metrics page. When will you be bringing that back?
-
-Event overlay support is planned for a future release of Metrics Explorer.
 
 ### How does autocomplete when searching metrics work?
 

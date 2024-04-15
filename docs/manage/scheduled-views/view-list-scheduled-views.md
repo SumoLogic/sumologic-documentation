@@ -31,6 +31,6 @@ You must have a role that grants you the View Scheduled Views [role capability
     * **Lag Time**. If the scheduled view is not up-to-date, **Lag Time** contains the actual lag time. For more information, see [Scheduled View Lag Time](scheduled-view-lag-time.md).
     * **Query**. The query that returns that data to be written to the scheduled view.
     * **Data Forwarding**. If the scheduled view is configured to forward data to an S3 bucket, the name of the [data forwarding](../data-forwarding/amazon-s3-bucket.md) destination.  
-    * **Created by** and **Modified by**. The user that created the view, and the user that most recently modified the view. <br/><img src={useBaseUrl('/img/scheduled-views/sched-view-details.png')} style={{border: '1px solid black'}} alt="sched-view-details" width="400"/>
+    * **Created by** and **Modified by**. The user that created the view, and the user that most recently modified the view. <br/><img src={useBaseUrl('/img/scheduled-views/sched-view-details.png')} style={{border: '1px solid gray'}} alt="sched-view-details" width="400"/>
 
 

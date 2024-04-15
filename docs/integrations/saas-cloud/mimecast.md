@@ -20,7 +20,7 @@ Key features of the Mimecast app include:
 
 The app uses Mimecast Source to collect [SIEM](https://integrations.mimecast.com/documentation/tutorials/understanding-siem-logs/) and [DLP](https://integrations.mimecast.com/documentation/endpoint-reference/logs-and-statistics/get-dlp-logs/) logs from Mimecast platform.
 
-## Sample log message
+## Sample log messages
 
 <details>
 <summary>View Sample Log Message</summary>
@@ -68,7 +68,7 @@ The app uses Mimecast Source to collect [SIEM](https://integrations.mimecast.com
 ```
 </details>
 
-## Sample Query
+## Sample queries
 
 <details>
 <summary>View Sample Queries</summary>

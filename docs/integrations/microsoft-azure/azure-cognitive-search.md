@@ -10,11 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Cognitive Search](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search) is a cloud search service that gives developers infrastructure, APIs, and tools for building a rich search experience over private, heterogeneous content in web, mobile, and enterprise applications. This integration helps in analyzing the performance and availability of your search service.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Cognitive Search, you can collect the following logs and metrics:
 
-* **Resource logs**. These logs contains information about query and indexing operations. To know more about the different resource log category types and schemas collected for Azure Cognitive Search, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/search/monitor-azure-cognitive-search-data-reference#schemas).
+* **Resource logs**. These logs contains information about query and indexing operations. To learn more about the different resource log category types and schemas collected for Azure Cognitive Search, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/search/monitor-azure-cognitive-search-data-reference#schemas).
 * **Platform Metrics for Azure Cognitive Search**. These metrics are available in [Microsoft.Search/searchServices](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-search-searchservices-metrics) namespace.
 For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/search/monitor-azure-cognitive-search-data-reference#metrics).
 

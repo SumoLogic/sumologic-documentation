@@ -28,7 +28,7 @@ Collectors using version 19.245-4 and later do not allow Script Actions to run 
 
 Create the script and save it to a folder on the host with the Installed Collector where you will set up the Script Action. Then set the shell script as an executable file:
 
-`chmod +x\<nameOfFil\>.sh`
+`chmod +x <nameOfFile>.sh`
 
 ## Step 3. Set up Script Action
 

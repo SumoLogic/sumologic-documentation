@@ -14,7 +14,7 @@ Akamai Security Events App allows you to visualize security events generated on 
 
 The Akamai Security Events App uses security events generated on the Akamai platform by leveraging the [V1 SIEM API](https://developer.akamai.com/api/cloud_security/siem/v1.html) and Sumo Logic’s [Akamai SIEM API Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source).
 
-### Sample log message
+### Sample log messages
 
 ```json
 {
@@ -64,7 +64,7 @@ The Akamai Security Events App uses security events generated on the Akamai plat
 }
 ```
 
-## Sample query  
+## Sample queries  
 
 ```sql
 _sourceCategory=<akamai-foo>
@@ -79,7 +79,7 @@ _sourceCategory=<akamai-foo>
 
 To begin collecting logs for the Sumo app for Akamai Security Events:
 
-1. Create an Akamai SIEM API Source as described [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source#create-an%C2%A0akamai-siem-api%C2%A0source)
+1. Create an Akamai SIEM API Source as described [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source/#source-configuration).
 2. Enable both Parsing options while creating the Akamai SIEM API Source. Parsing options:
    * Decode httpMessage fields
    * Duplicate Events once for each rule associated with the event
@@ -89,9 +89,9 @@ To begin collecting logs for the Sumo app for Akamai Security Events:
 
 This section has instructions for installing the Sumo Logic app for Akamai Security Events.
 
-import AppInstall from '../../reuse/apps/app-install-v2.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Akamai Security Events dashboards
 

@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The [Azure Backup](https://learn.microsoft.com/en-us/azure/backup/backup-overview) service provides simple, secure, and cost-effective solutions to back up your data and recover it from the Microsoft Azure cloud. This integration helps you in getting rich insights on your backups across your entire backup estate.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Backup, you can collect the following logs and metrics:
 
@@ -21,7 +21,7 @@ For Azure Backup, you can collect the following logs and metrics:
   * AddonAzureBackupPolicy
   * AddonAzureBackupStorage
 
-To know more about the schemas differences for Recovery Services vaults and Backup vaults and different fields collected, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/backup/backup-azure-reports-data-model).
+To learn more about the schemas differences for Recovery Services vaults and Backup vaults and different fields collected, refer to [Azure documentation](https://learn.microsoft.com/en-us/azure/backup/backup-azure-reports-data-model).
 
 * **Health Metrics**. These metrics are available in [Microsoft.RecoveryServices/Vaults](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-recoveryservices-vaults-metrics) and [Microsoft.DataProtection/BackupVaults](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-dataprotection-backupvaults-metrics) namespace.
 

@@ -4,6 +4,8 @@ title: Add a Saved Search to Favorites
 description: You can mark a saved search as a favorite on the Search page so it appears in the Library on the Favorites tab.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 On the Search page, you can mark a saved search as a favorite by clicking the star icon. When you save a search as a favorite, it will appear in the Library on the Favorites tab.
 
 :::important
@@ -19,8 +21,6 @@ Mark a saved search as a favorite:
     * Run a new search and save it.
     * Run a saved search from the **Library**.
 
-1. Click the three-dot icon and click **Favorite** from the provided options.   
-
-    ![favorite saved ](/img/search/get-started-search/search-page/favorite-saved.png)  
+1. Click the three-dot kebab icon and click **Favorite** from the provided options.<br/><img src={useBaseUrl('img/search/get-started-search/search-page/favorite-saved.png')} alt="expanded-json-message" width="250"/>   
 
     The saved search will now appear in the **Library** on the **Favorites** tab.

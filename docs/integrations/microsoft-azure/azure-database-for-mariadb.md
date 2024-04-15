@@ -10,12 +10,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Azure Database for MariaDB](https://learn.microsoft.com/en-us/azure/mariadb/overview) is a relational database service in the Microsoft cloud based on the MariaDB community edition. This integration helps in identifying slow queries, tracking database-level activity, including connection, administration, data definition language (DDL), and data manipulation language (DML) events.
 
-## Log and Metric types
+## Log and metric types
 
 For Azure Database for MariaDB, you can collect the following logs and metrics:
 
-* **Audit logs**. To know more about the different fields collected for Azure Database for MariaDB, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/mariadb/concepts-server-logs#diagnostic-logs).
-* **Slow Query logs**. To know more about the different log types and schemas collected for Azure Database for MySQL, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/mysql/flexible-server/concepts-slow-query-logs#access-slow-query-logs).
+* **Audit logs**. To learn more about the different fields collected for Azure Database for MariaDB, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/mariadb/concepts-server-logs#diagnostic-logs).
+* **Slow Query logs**. To learn more about the different log types and schemas collected for Azure Database for MySQL, refer to the [Azure documentation](https://learn.microsoft.com/en-gb/azure/mysql/flexible-server/concepts-slow-query-logs#access-slow-query-logs).
 * **Platform Metrics for Azure Database for MariaDB**. These metrics are available in [Microsoft.DBforMariaDB/servers](https://learn.microsoft.com/en-us/azure/azure-monitor/reference/supported-metrics/microsoft-dbformariadb-servers-metrics) namespace. For more information on supported metrics and dimensions, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/mariadb/concepts-monitoring#metrics).
 
 ## Setup

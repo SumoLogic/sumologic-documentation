@@ -7,15 +7,15 @@ description: The Sumo Logic App for Microsoft Office 365 ingests Microsoft Offic
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/365.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/365.png')} alt="thumbnail icon" width="50"/>
 
 The Microsoft Office 365 App ingests Microsoft Office 365 Audit logs for Azure Active Directory, Exchange, and SharePoint. Preconfigured Dashboards allow you to monitor and analyze your complete Office 365 system for administrator and user activity.
 
-## Log Types
+## Log types
 
 For information on Microsoft APIs and message types, see Microsoft Office 365 Audit Source.
 
-### Sample Log Messages
+### Sample log messages
 
 ```json
 {  
@@ -75,7 +75,7 @@ For information on Microsoft APIs and message types, see Microsoft Office 365 Au
   }
 ```
 
-### Sample Queries
+### Sample queries
 
 ```sql title="SharePoint Operations"
 _sourceCategory=O365* CreationTime Workload ("\"Workload\":\"SharePoint\"" or "\"Workload\":\"OneDrive\"")
@@ -112,11 +112,12 @@ To collect logs for the Microsoft Office 365 App, do the following:
 For complete details, see [Microsoft Office 365 Audit Source](/docs/send-data/hosted-collectors/microsoft-source/ms-office-audit-source.md).
 
 We recommend the following Source Category naming convention:
-* **Azure AD:** O365/Azure
-* **Exchange: **O365/Exchange
-* **SharePoint: **O365/SharePoint
-* **General:** O365/SharePoint
-* **DLP**: O365/DLP
+
+* **Azure AD.** O365/Azure
+* **Exchange.** O365/Exchange
+* **SharePoint.** O365/SharePoint
+* **General.** O365/General
+* **DLP.** O365/DLP
 
 
 ## Installing the Microsoft Office 365 App
@@ -126,7 +127,10 @@ Now that you have configured Office 365, install the Sumo Logic App for Microsof
 To install the app:
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/apps-integrations#install-apps-from-the-library).
+2. Select the version of the service you're using and click **Add to Library**.
+:::note
+Version selection is not available for all apps.
+:::
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
     2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter `_sourceCategory=O365/*`.
@@ -153,15 +157,15 @@ Shows details of Office 365 successful and failed activities, and SharePoint, Ex
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365Overview.png')} alt="Microsoft Office 365 dashboards" />
 
-**Successful Activity by Workload. **Compare your overall Office 365 workload activity by service as an area chart on a timeline for the last 24 hours.
+**Successful Activity by Workload.** Compare your overall Office 365 workload activity by service as an area chart on a timeline for the last 24 hours.
 
-**Failed Activity by Workload. **See any failed activity by Office 365 workload as a column chart on a timeline for the last three days.
+**Failed Activity by Workload.** See any failed activity by Office 365 workload as a column chart on a timeline for the last three days.
 
-**SharePoint Operations. **See the number of all SharePoint operations by name  as a line chart for the last 24 hours.
+**SharePoint Operations.** See the number of all SharePoint operations by name  as a line chart for the last 24 hours.
 
-**Exchange Operations. **See the Exchange operations activity by name and count on a stacked bar chart for the last 24 hours.
+**Exchange Operations.** See the Exchange operations activity by name and count on a stacked bar chart for the last 24 hours.
 
-**Azure AD Operations Trends. **See the Azure AD operations activity by action and count as a stacked column chart on a timeline for the last 24 hours.
+**Azure AD Operations Trends.** See the Azure AD operations activity by action and count as a stacked column chart on a timeline for the last 24 hours.
 
 
 ### General
@@ -378,7 +382,7 @@ Shows details of non-domain users' accesses, uploads, downloads, and views.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Office365-SharePoint-SharedContentNon-DomainsActivities.png')} alt="Microsoft Office 365 dashboards" />
 
-To see your data in this dashboard, open the queries of each panel and add your domain in the queries as mentioned [here](#Installing-the-Microsoft-Office-365-App).
+To see your data in this dashboard, open the queries of each panel and add your domain in the queries as mentioned [here](#installing-the-microsoft-office-365-app).
 
 
 **Top 10 Users Sharing Outside Domain**. See the top 10 users sharing content outside the domain in a table chart including details on user ID and frequency for the last seven days.

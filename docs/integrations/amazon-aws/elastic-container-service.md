@@ -19,7 +19,7 @@ The app collects ECS logs and metrics for:
    * All Amazon ECS actions are logged by CloudTrail and documented in the [Amazon Elastic Container Service API Reference](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_Operations.html).
 
 
-### Sample log message
+### Sample log messages
 
 <details>
 <summary>Click to expand</summary>
@@ -275,7 +275,7 @@ The app collects ECS logs and metrics for:
 
 </details>
 
-### Sample query
+### Sample queries
 
 ```sql title="Deleted Resources Over Time"
 _sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInstance or DeregisterTaskDefinition or StopTask) and !(InternalFailure)
@@ -367,7 +367,7 @@ Panels include:
 ### CPU and Memory Reservation - Cluster
 
 Definitions:
-* **CPU Reservation. **The percentage of CPU units that are reserved by running tasks/services in the cluster.
+* **CPU Reservation.** The percentage of CPU units that are reserved by running tasks/services in the cluster.
 * **Memory Reservation.** The percentage of memory that is reserved by running tasks/services in the cluster.
 
 For more information, see [http://docs.aws.amazon.com/AmazonECS...ce_utilization](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-metrics.html#service_utilization)
@@ -417,9 +417,9 @@ Panels include:
 
 
 ### Events
-**Events by Type. **Displays events by type in a table chart including details on event name and count for the last 24 hours.
+**Events by Type.** Displays events by type in a table chart including details on event name and count for the last 24 hours.
 
-**ECS Events Over Time. **Shows ECS events over time in a line chart on a timeline for the last 24 hours.
+**ECS Events Over Time.** Shows ECS events over time in a line chart on a timeline for the last 24 hours.
 
 **Location of Events.** Performs a geo lookup operation and displays the location of ECS events on a map of the world for the last 24 hours.
 
@@ -427,7 +427,7 @@ Panels include:
 
 **Deleted Resources.** Displays details about deleted resources in a column chart for the last 24 hours.
 
-**Resource Creation Over Time. **Shows information on resources created in a column chart for the last 24 hours.
+**Resource Creation Over Time.** Shows information on resources created in a column chart for the last 24 hours.
 
 **Deleted Resources Over Time.** Displays deleted resources in a column chart for the last 24 hours.
 

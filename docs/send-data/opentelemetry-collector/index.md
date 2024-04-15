@@ -6,17 +6,15 @@ description: OpenTelemetry Collector provides a unified and flexible solution fo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Sumo Logic OpenTelemetry (OTel) Collector is our next-generation collector, built on OpenTelemetry, that provides a single unified agent to send logs, metrics, traces, and metadata for Observability to Sumo Logic. This can help simplify and streamline the performance and behavior monitoring and understanding the performance and behavior of complex distributed systems, making it easier to identify and diagnose issues and improve overall system reliability and efficiency.
+The Sumo Logic OpenTelemetry (OTel) Collector is our next-generation collector, built on OpenTelemetry, that provides a single unified agent to send logs, metrics, traces, and metadata for Observability to Sumo Logic. This can help simplify and streamline the performance and behavior monitoring of complex distributed systems, making it easier to identify and diagnose issues and improve overall system reliability and efficiency.
 
 What makes the Sumo Logic OTel Collector unique is its flexibility and scalability. It can be easily deployed as a containerized application on any cloud platform, and it supports a wide range of data sources, including AWS CloudWatch, Prometheus, and Jaeger. This means that organizations can use the collector to gain deeper visibility into their distributed systems, no matter where they are hosted.
 
 Once the data is collected, the Sumo Logic platform provides powerful analytics capabilities, enabling users to gain insights into their applications and systems, troubleshoot issues, and optimize their operations. With its user-friendly interface and powerful features, the Sumo Logic OTel Collector is an ideal choice for organizations looking to gain a deeper understanding of their distributed systems and improve their overall performance and reliability.
 
-In this section, we'll introduce the following concepts:
+## Guides
 
-:::tip Quickstart
-Get up and running quickly with our [OpenTelemetry Quickstart Guide](/docs/send-data/opentelemetry-collector/quickstart).
-:::
+In this section, we'll introduce the following concepts:
 
 <div className="box-wrapper" >
   <div className="box smallbox card">
@@ -31,7 +29,7 @@ Get up and running quickly with our [OpenTelemetry Quickstart Guide](/docs/send-
         <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="25"/>
         <h4>Data Source and Configurations</h4>
       </a>
-      <p>Learn how to collect logs, metrics, and tracing data, as well as how to add configurations for the OpenTelemetry collector.</p>
+      <p>Collect logs, metrics, and tracing data, as well as how to add configurations for the OpenTelemetry collector.</p>
     </div>
   </div>
       <div className="box smallbox card">
@@ -40,13 +38,13 @@ Get up and running quickly with our [OpenTelemetry Quickstart Guide](/docs/send-
         <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="25"/>
         <h4>Auto Discovery</h4>
       </a>
-      <p>Learn how to enable Auto Discovery to detect services that are installed on the server on which the collector is running.</p>
+      <p>Enable Auto Discovery to detect services that are installed on the server on which the collector is running.</p>
     </div>
   </div>
   <div className="box smallbox card">
     <div className="container">
-    <a href="/docs/send-data/opentelemetry-collector/performance-benchmarks"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/><h4>Performance Benchmarks</h4></a>
-    <p>Learn about collecting data to establish performance benchmarks.</p>
+    <a href="/docs/send-data/opentelemetry-collector/performance-benchmarks"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="25"/><h4>Performance Benchmarks</h4></a>
+    <p>Collect data to establish performance benchmarks.</p>
     </div>
 </div>
 <div className="box smallbox card">
@@ -55,7 +53,7 @@ Get up and running quickly with our [OpenTelemetry Quickstart Guide](/docs/send-
       <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="25" />
       <h4>String Hashing and Masking</h4>
     </a>
-    <p>Learn how to perform string hashing and masking operations using the Transform Processor and OTTL in OpenTelemetry.</p>
+    <p>Perform string hashing and masking operations using the Transform Processor and OTTL in OpenTelemetry.</p>
   </div>
 </div>
   <div className="box smallbox card">
@@ -66,7 +64,7 @@ Get up and running quickly with our [OpenTelemetry Quickstart Guide](/docs/send-
   </div>
   <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/opentelemetry-collector/faq"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/><h4>FAQ</h4></a>
+  <a href="/docs/send-data/opentelemetry-collector/faq"><img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="25"/><h4>FAQ</h4></a>
     <p>Find answers to frequently asked questions about the OpenTelemetry collector.</p>
     </div>
   </div>
@@ -77,3 +75,8 @@ Get up and running quickly with our [OpenTelemetry Quickstart Guide](/docs/send-
     </div>
   </div>
 </div>
+
+## More information
+
+* [Sumo Logic Guide to OpenTelemetry](https://www.sumologic.com/guides/opentelemetry). Learn about the powerful observability tool OpenTelemetry and what it can provide for your business.
+* [OpenTelemetry Tutorials](https://www.sumologic.com/blog/common-opentelemetry-demo-application/). Learn how to use the common OpenTelemetry demo application with Sumo Logic.

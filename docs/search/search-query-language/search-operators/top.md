@@ -7,7 +7,7 @@ sidebar_label: top
 Use the `top` operator with the [`sort`](/docs/search/search-query-language/search-operators/sort) operator to reduce the number of sorted results returned.
 
 :::tip
-We recommend you instead use the [`topk`](/docs/search/search-query-language/search-operators/topk) operator so you can take advantage of its additional functionality.
+We recommend you use the [`topk`](/docs/search/search-query-language/search-operators/topk) operator instead so you can take advantage of its additional functionality.
 :::
 
 ## Syntax

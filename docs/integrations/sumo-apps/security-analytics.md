@@ -25,9 +25,9 @@ This data is collected from your Collectors and Sources for instant analysis of 
 
 <img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics_SecurityOperations_Dashboard.png')} alt="test" />
 
-**Network Incidents.** Displays the number of incidents detected over the last 24 hours in a single value chart. Click the chart to drill down to the **Network Overview Dashboard **for more information.
+**Network Incidents.** Displays the number of incidents detected over the last 24 hours in a single value chart. Click the chart to drill down to the **Network Overview Dashboard** for more information.
 
-**Vulnerability.** Provides the incident count by severity High or Critical for the past 24 hours in a single value chart. Click the chart to drill down to the **Vulnerabilities on Endpoints **Dashboard for more information.
+**Vulnerability.** Provides the incident count by severity High or Critical for the past 24 hours in a single value chart. Click the chart to drill down to the **Vulnerabilities on Endpoints** Dashboard for more information.
 
 **System Incidents.** Shows the number of system incidents over the last 24 hours in a single value chart. Click the chart to drill down to the **System and Change** Dashboard for more information.
 
@@ -145,7 +145,7 @@ This data is collected from your Collectors and Sources for instant analysis of 
 
 ## Using the Sumo Logic App for Security Analytics
 
-This App is available for Sumo Logic Enterprise accounts only, and requires a paid Professional Services contract to install and configure. You may upgrade your account at any time. If you'd like more information on this App, please request it by clicking the [Request](/docs/integrations/sumo-apps/Security-Analytics#Using-the-Sumo-Logic-App-for-Security-Analytics) button in the Apps section of the Library, or contact your Sumo Logic sales representative at sales@sumologic.com.
+This App is available for Sumo Logic Enterprise accounts only, and requires a paid Professional Services contract to install and configure. You may upgrade your account at any time. If you'd like more information on this App, please request it by clicking the [Request](/docs/integrations/sumo-apps/security-analytics/#using-the-sumo-logic-app-for-security-analytics) button in the Apps section of the Library, or contact your Sumo Logic sales representative at sales@sumologic.com.
 
 
 The Sumo Logic app for Security Analytics provides Dashboards that allow you to easily see and manage your system's status, including a security operations overview, network, system and change, user monitoring, and vulnerabilities on endpoints. This data is collected from your Collectors and Sources, and Sumo Logic Anomaly Detection is applied to it, for instant analysis of any events.
@@ -159,7 +159,7 @@ In the Security Analytics App, on the Network Status Dashboard, the Incident Cou
 
 **To see incident details in the Messages tab:**
 
-1. Click the **Incidents for Review Panel **to open the query in the Search page.
+1. Click the **Incidents for Review Panel** to open the query in the Search page.
 2. Click the **Messages** tab.
 3. More details for the incident are included in the Message field.
 

@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s) including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards helps you monitor database errors, slow queries, audit sql queries and generic activities.
 
-## Log and Metrics types  
+## Log and metrics types  
 
 The Amazon RDS app uses the following logs and metrics:
 * [RDS CloudWatch Instance Level Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-metrics.html#rds-cw-metrics-instance), [RDS CloudWatch Aurora Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.AuroraMySQL.Monitoring.Metrics.html), and [Amazon CloudWatch metrics for Performance Insights](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.Cloudwatch.html).
@@ -110,7 +110,7 @@ The Amazon RDS app uses the following logs and metrics:
 ```
 </details>
 
-### Sample Database CloudWatch logs
+### Sample CloudWatch log messages
 
 <details>
 <summary>Click to expand</summary>
@@ -222,6 +222,10 @@ account=* region=* dbidentifier=* namespace=aws/rds _sourceHost=/aws/rds*general
 
 ## Viewing the RDS dashboards  
 
+import FilterDashboards from '../../../reuse/filter-dashboards.md';
+
+<FilterDashboards/>
+
 We highly recommend you view these dashboards in the [Explore View](/docs/observability/aws/deploy-use-aws-observability/view-dashboards) of the AWS Observability solution.
 
 ### 1. Amazon RDS Overview
@@ -233,7 +237,7 @@ Use this dashboard to:
 * Quickly identify problems in resource utilization.
 * Monitor databases performance insights such as relative CPU load, non-CPU load, and overall database load.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview.png')} alt="Amazon RDS dashboard" style={{border: '1px solid black'}} />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview.png')} alt="Amazon RDS dashboard" style={{border: '1px solid gray'}} />
 
 ### 2. Amazon RDS CloudTrail Audit Events
 

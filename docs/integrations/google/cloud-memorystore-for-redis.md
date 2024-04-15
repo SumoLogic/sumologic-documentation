@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Memorystore for Redis is a fully managed service that is powered by the Redis in-memory data store, to build application caches that provide sub-millisecond data access. For more details, refer to the [GCP documentation](https://cloud.google.com/memorystore/docs/redis/redis-overview).
 
-## Log and Metric types
+## Log and metric types
 
 * [Google Cloud Metrics](https://cloud.google.com/monitoring/api/metrics_gcp)
 * [Platform Logs](https://docs.aws.amazon.com/appflow/latest/userguide/monitoring-cloudwatch.html)

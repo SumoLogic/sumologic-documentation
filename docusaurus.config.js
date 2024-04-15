@@ -235,6 +235,12 @@ module.exports = {
       },
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
+    announcementBar: {
+      id: 'announcementBar',
+      content: `RSAC 2024 is almost here. It’s game on for AI-driven DevSecOps! Meet us at booth #6271 on May 6–9.  👉 <a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/forms/d/e/1FAIpQLSeCdX9T4-ksh_LhCAu7_C1SG3WDnjTgoV1Tgy8VoxwAankcQw/viewform"> Book a meeting</a>.`,
+      backgroundColor: '#2f0f3d',
+      textColor: '#fff',
+    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -263,6 +269,7 @@ module.exports = {
       additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, 'bash', 'diff', 'json'],
     },
       navbar: {
+        hideOnScroll: true,
         logo: {
           alt: 'Sumo Logic logo',
           srcDark: 'img/sumo-logo.svg',
@@ -457,7 +464,7 @@ module.exports = {
                 href: 'https://www.sumologic.com/events/',
               },
               {
-                label: 'Request Demo',
+                label: 'Request a Demo',
                 href: 'https://www.sumologic.com/request-demo',
               },
             ],
@@ -466,8 +473,8 @@ module.exports = {
           {
             items: [
               {
-                label: 'Support',
-                href: 'https://support.sumologic.com/hc/en-us',
+                label: 'Contact Support',
+                href: 'https://support.sumologic.com/support/s',
               },
               {
                 label: 'Sumo Dojo Slack',
@@ -475,10 +482,10 @@ module.exports = {
               },
               {
                 label: 'Community',
-                href: 'https://support.sumologic.com/hc/en-us/community/topics',
+                href: 'https://support.sumologic.com/support/s/topiccatalog',
               },
             ],
-            title: 'Contact Us',
+            title: 'Help',
           },
           {
             items: [
@@ -496,6 +503,23 @@ module.exports = {
               },
             ],
             title: 'Open Source',
+          },
+          {
+            items: [
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/@sumologic/videos',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/sumo-logic',
+              },
+              {
+                label: 'X (Twitter)',
+                href: 'https://twitter.com/SumoLogic',
+              },
+            ],
+            title: 'Social',
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} by Sumo Logic, Inc.`,

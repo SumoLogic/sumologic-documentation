@@ -24,7 +24,7 @@ For more information on the incident messages supported in Webhooks V2, see the 
 For examples of incident.trigger, incident.acknowledge, incident.resolve, and incident.assign log messages, see the [PagerDuty Webhooks V2 Examples](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview#examples) page.
 
 
-### Sample Query
+### Sample queries
 
 The following Top Altering Services query is shown on the PagerDuty V2 - Overview dashboard.
 
@@ -52,8 +52,8 @@ An **HTTP Source** is an endpoint for receiving log and metric data uploaded to 
 
 To configure Hosted Collector and HTTP Source, do the following:
 1. Log in to Sumo Logic.
-2. Follow the instruction for configuring a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
-3. Follow the instruction for configuring an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
+2. Follow the instructions for configuring a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+3. Follow the instructions for configuring an [HTTP Source](/docs/send-data/hosted-collectors/http-source/logs-metrics).
 
 Make sure to save the **HTTP Source Address URL**. You will be asked for this **Endpoint URL** when you configure the PagerDuty Webhook in the following procedure.
 
@@ -64,8 +64,8 @@ Using PagerDuty with Webhooks V2, you receive HTTP callbacks when incident event
 
 To create a PagerDuty V2 Webhook, do the following:
 1. Log in to your PagerDuty account.
-2. Use the following instructions to create a Webhook V2: [https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-](https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-), entering the  [HTTP Source Address URL](#Configure-HTTP-Source) as the **Endpoint URL** in **Step 6**.
-3. Continue with [installing the Sumo Logic App for PagerDuty V2](#Install-the-PagerDuty-V2-App).
+2. Use the following instructions to create a Webhook V2: [https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-](https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-), entering the HTTP Source Address URL as the **Endpoint URL** in **Step 6**.
+3. Continue with [Installing the Sumo Logic App for PagerDuty V2](#installing-the-pagerduty-v2-app).
 
 
 ## Installing the PagerDuty V2 App
@@ -86,7 +86,7 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 ### Overview
 
-**PagerDuty V2 - Overview Dashboard **provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
+**PagerDuty V2 - Overview Dashboard** provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
 
 Use this dashboard to:
 * Review the services, incidents and policies that are causing the most alerts.

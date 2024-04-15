@@ -19,7 +19,7 @@ Learn how [Monitors differ from Scheduled Searches](/docs/alerts/difference-from
 
 ## Prerequisites
 
-To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities). [Learn more](/docs/alerts/monitors/settings/#monitors-folder-permissions) about controlling permissions at the monitor or folder level.
+To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities). [Learn more](/docs/alerts/monitors/settings/#folder-permissions) about controlling permissions at the monitor or folder level.
 
 ## Rules
 
@@ -125,7 +125,7 @@ Custom variables used inside the Action Payload.
 
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
 * [LogReduce](/docs/search/logreduce/logreduce-operator) / [LogCompare](../../search/logcompare.md) operators are not supported in Monitors. If your query contains these operators, you will not be able to create the monitor.  
-* Monitors only support the [Continuous data tier](/docs/manage/partitions-data-tiers/data-tiers).
+* Monitors only support the [Continuous data tier](/docs/manage/partitions/data-tiers).
 * An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
 * [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
 * [Search templates](../../search/get-started-with-search/build-search/search-templates.md) are not supported.

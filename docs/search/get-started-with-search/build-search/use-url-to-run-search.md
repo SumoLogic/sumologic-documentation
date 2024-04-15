@@ -16,12 +16,9 @@ https://<endpoint>/ui/#/search/create?query=<urlEncodedQuery>&parameters=<param1
 * `<urlEncodedQuery>` is the text of your log search query in URL encoded format.
 * `<param1:value1,param2:value2,param3=value3,...,paramN=valueN>` is the query parameter part of a templatized query and the corresponding value for the query parameter.
 * `<start>` is the start of your log query time range, the value can be either:
-
     * in milliseconds since epoch.
     * a [relative time range expression](/docs/search/get-started-with-search/search-basics/time-range-expressions).
-
 * `<end>` is the end of your log query time range, the value can be either:
-
     * in milliseconds since epoch.
     * a [relative time range expression](/docs/search/get-started-with-search/search-basics/time-range-expressions). You can omit the `<end>` value and the current time (`now`) is assumed.
 

@@ -68,9 +68,9 @@ Follow these instructions to create an Entity Group based on Entity name or whet
     * **File**
 1. **Match Condition**. Select one of the following match types:
     * **Prefix**. After you select this option, a **Prefix** field appears. Enter a string that matches the leading characters of the names of the Entities you want to include in the group.
-    * **Suffix**. After you select this option, a **Suffix **field appears. Enter a string that matches the trailing characters of the names of the Entities you want to include in the group.
-    * **IP Address Range.** After you select this option, an **IP Address Range **field appears. Enter a CIDR block of IP addresses.
-    * **Sensor Zone**. This field is present if you selected _IP Address _as the **Entity Type **above. Optionally, select a **Sensor Zone** from the pulldown.
+    * **Suffix**. After you select this option, a **Suffix** field appears. Enter a string that matches the trailing characters of the names of the Entities you want to include in the group.
+    * **IP Address Range.** After you select this option, an **IP Address Range** field appears. Enter a CIDR block of IP addresses.
+    * **Sensor Zone**. This field is present if you selected _IP Address _as the **Entity Type** above. Optionally, select a **Sensor Zone** from the pulldown.
     :::note
     If you select a [Sensor Zone](/docs/cse/administration/using-sensor-zones), the IP addresses assigned to the Entity Group will be limited to addresses that are within the specified **IP Address Range** and also have been assigned the selected Sensor Zone.
     :::
@@ -98,7 +98,7 @@ Follow these instructions to create an Entity Group that corresponds to a group 
    :::note
    **Value** refers to a normalized attribute. The name of the raw attribute varies depending on the inventory source. And if you are entering a value for a group, keep in mind that just as not all inventory sources provide user or computer data, not all inventory sources have an attribute that gets mapped to groups. For information about how attributes are normalized from inventory sources, see [Inventory Sources and Data](/docs/cse/administration/inventory-sources-and-data).
    :::
-1. **Dynamic Schema Tags**. Select if you'd like to apply a [custom tag schema](/docs/cse/administration/create-a-custom-tag-schema) to the Entities in the group. If you select this option, the **Value** field changes to *****, indicating the value will be automatically generated from the custom tag schema. 
+1. **Dynamic Schema Tags**. Select if you'd like to apply a [custom tag schema](/docs/cse/administration/create-a-custom-tag-schema) to the Entities in the group. If you select this option, the **Value** field changes to *, indicating the value will be automatically generated from the custom tag schema. 
 1. **Tag Schema**. Select the tag schema to use for the Entity group.
 1. **Tags**. Select any tags you’d like to apply to Entities in the group. If you previously selected **Dynamic Schema Tags**, the phrase **(in addition to dynamic)** appears, indicating that the tags you select here will be added to the automatically-generated schema tags.
 1. **Criticality**. If desired, select a Criticality.

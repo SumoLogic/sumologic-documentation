@@ -139,4 +139,4 @@ one delimiter to use when extracting.
     * | keyvalue field=<field> regex "<regex>" [keys]
     ```
 
-* **nodrop** forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)
+* **nodrop** forces results to also include messages that do not match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)

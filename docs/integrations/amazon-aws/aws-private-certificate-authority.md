@@ -18,7 +18,7 @@ AWS Private CA operations can be accessed from the AWS Management Console, using
 
 For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html).
 
-## Log and Metric types
+## Log and metric types
 
 * [CloudWatch Metrics](https://docs.aws.amazon.com/privateca/latest/userguide/PcaCloudWatch.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/privateca/latest/userguide/PcaCtIntro.html)

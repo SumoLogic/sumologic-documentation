@@ -1,6 +1,6 @@
 ---
 id: source-info
-title: Cloud to Cloud Info
+title: Cloud-to-Cloud Info
 slug: /c2c/info
 tags:
   - cloud-to-cloud

@@ -14,7 +14,7 @@ There are two fields operator modes:
 To specify the [order of returned fields](#ordering-fields) you must use the fields operator last, at the end of your query.
 
 :::note
-Fields are not returned in the specified order in Search Job API and Webhook results.
+Fields are not returned in the specified order in [Search Job API](/docs/api/search-job/) and Webhook results.
 :::
 
 ## Allowlist

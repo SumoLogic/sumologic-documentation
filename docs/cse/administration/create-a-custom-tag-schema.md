@@ -31,7 +31,7 @@ For more information about tags in Cloud SIEM, see [Using Tags with Insights, Si
         available for. You can select one or more of the following:
         * **Custom Insight**
         * **Rule**
-        * **Entity** The options don't include **Signal** or **Insight**. Signals and Insights inherit tag values from the rule(s) or Custom Insight definition that triggered the Signal or Insight and involved Entities.
+        * **Entity** The options do not include **Signal** or **Insight**. Signals and Insights inherit tag values from the rule(s) or Custom Insight definition that triggered the Signal or Insight and involved Entities.
     1. **Allow Custom Values**. Check this box to allow users to add additional allowable values to the tag schema. Otherwise, when applying the tag users may only select one of the values you define in the **Value Options** section below.
     1. **Value Options**. If **Allow Custom Values** is not checked, you must define at least one value for the tag:
         * **Value**. Enter an allowable value for the tag.

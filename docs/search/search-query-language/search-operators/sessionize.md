@@ -4,7 +4,7 @@ title: sessionize Search Operator
 sidebar_label: sessionize
 ---
 
-The `sessionize` operator allows you to use an extracted value from one log message (generated from one system) to find correlating values in log messages from other systems. After you run `sessionize`, these related events are displayed on the same page. The thread of logs woven together is called a <i>session</i>.
+The `sessionize` operator allows you to use an extracted value from one log message (generated from one system) to find correlating values in log messages from other systems. After you run `sessionize`, these related events are displayed on the same page. The thread of logs woven together is called a _session_.
 
 Depending on your use case, you'd also use the [join](join.md) operator, which may be more appropriate and easier to use.
 
@@ -15,7 +15,7 @@ For example, let's say we have the value of a userRequestId, which entered a dis
 Each system generated log messages, so we know that at some point a failure occurred. We know the userRequestID value from the log files from the Service machine, and we know the serviceSessionId, streamRequestId, and configSessionId. Using **sessionize**, we can weave together these disparate logs to identify where the failure occurred.
 
 :::note
-Queries using sessionize can't be added to a Dashboard.
+Queries using `sessionize` cannot be added to a Dashboard.
 :::
 
 ## Syntax
@@ -32,7 +32,7 @@ Where *anchor pattern* is like a parse anchor expression, except that it can inc
 * Each anchor expression can be used to extract one or more variables from a matching log.
 * You can use the extracted variable to join with a second log message containing that variable using a $variableName notation. Alternatively, logs matching an anchor expression will be inner joined on parsed fields in common with "partial sessions" which have matched the previous anchor expressions. Note that this means if you parse out a field which you expect to take on different values across logs within a single session, you must give that field a unique name in each anchor expression or the inner join will fail.
 
-After using the [Trace](trace.md) operator to find related sessions, you can use the sessionize operator to refine the results.
+After using the [`trace`](trace.md) operator to find related sessions, you can use the sessionize operator to refine the results.
 
 ## Example
 

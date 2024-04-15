@@ -54,7 +54,7 @@ To configure a Script Source:
 
     See details below on the behavior of unfinished script executions related to its frequency.
 
-1. If you'd like to [set a timeout for your script](#when-should-i-set-a-timeout-for-my-script), select **Specify a timeout for your command**. If you don't need a timeout, or if you're running a script once daily, we recommend that you leave this option deselected. 
+1. If you'd like to [set a timeout for your script](#when-should-i-set-a-timeout-for-my-script), select **Specify a timeout for your command**. If you do not need a timeout, or if you're running a script once daily, we recommend that you leave this option deselected. 
 1. For **Command**, select or type a custom command you're going to use.
 
    * To provide a custom command use the delete or backspace key to clear out the selection, then type your command. The command must be in the format: `/path/to/command;file extension` Provide a path and an extension separated by a semicolon (`;`). For example, a Python command:  `/bin/python;py`

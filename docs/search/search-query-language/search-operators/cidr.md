@@ -79,7 +79,7 @@ You may find the [isValidIP](/docs/search/search-query-language/search-operators
 
 ### Examples
 
-To review events from a specific network segment:
+#### Review events from a specific network segment
 
 1. Search for the events. For example, let's say we'd like to review firewall logs:
     ```
@@ -98,7 +98,7 @@ To review events from a specific network segment:
     ... | count by ip_address
     ```
 
-To review events not from a specific network segment:
+#### Review events not from a specific network segment
 
 1. Search for the events. For example, let's say we'd like to review firewall logs:  
    ```

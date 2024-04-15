@@ -40,4 +40,4 @@ This returns the following results.
 
 ![Today](/img/search/searchquerylanguage/search-operators/Today.png)
 
-For more examples, see [formatDate](formatdate.md) operator.
+For more examples, see [`formatDate`](formatdate.md) operator.

@@ -40,7 +40,7 @@ To set up a Real-Time Alert:
 * A maximum of 120 emails are sent per day per Real-Time Alert.
 * Aggregate real-time scheduled searches evaluate the first 1,000 results per search. For Example, if the scheduled search is supposed to return more than 1,000 results, reduce the scope of the search.
 * Non-Aggregate real-time scheduled searches evaluate the first 100 results per search. For Example, if the scheduled search is supposed to return more than 100 results, either convert it to aggregate scheduled search or reduce the scope of the search.
-* The [`_dataTier`](/docs/manage/partitions-data-tiers/data-tiers) search modifier is not supported in Real-Time Alert searches.
+* The [`_dataTier`](/docs/manage/partitions/data-tiers) search modifier is not supported in Real-Time Alert searches.
 
 ### Notification Results
 

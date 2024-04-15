@@ -31,7 +31,7 @@ When you rename or add a panel to a dashboard it is automatically saved in your
 
 ## Create a Dashboard
 
-There are two ways to create a **Dashboard** - using the **+ New** button or by creating it directly from your Search and Metrics pages.
+There are two ways to create a **Dashboard**, use the **+ New** button or by create it directly from your Search and Metrics pages.
 
 To create a Dashboard with the **+ New** button, do the following. Panels and customized charts will be added in later steps.
 
@@ -44,7 +44,7 @@ Now that you have created a new Dashboard, you can populate it with panels tha
 
 To add a panel to a new Dashboard, do the following:
 
-1. Select a panel type by clicking the corresponding icon.<br/> ![panel types.png](/img/dashboards-new/create-dashboard-new/panel-types.png)
+1. Select a panel type by clicking the corresponding icon.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/panel-types.png')} alt="panel types" style={{border: '1px solid gray'}} width="600" />
 1. You are prompted to provide a query.
 
 See [Choosing a panel type](/docs/dashboards/panels) for details.
@@ -59,24 +59,17 @@ Enter your aggregate [search query](/docs/search/search-query-language/group-agg
 
 * Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list. 
 * By default, the query builder is set to **Logs**. 
-* Joining log queries in a separate query is not supported.
-
-![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
+* Joining log queries in a separate query is not supported.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Add-log-query.png')} alt="Add log query" style={{border: '1px solid gray'}} width="800" />
 
 ### Metrics Query
 
 Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries](/docs/metrics/metrics-queries) to ensure successful results. By default, the query builder is set to **Logs**.
 
-![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Metrics-selection-for-query-builder.png)
-
 To create a metrics query utilize the [Metrics Explorer](../metrics/metrics-queries/metrics-explorer.md).
 
 ### Multiple Query
 
-To add another query to a panel click the plus **+** icon on the last query row. Each query is assigned a letter for reference.
-
-![add query.png](/img/dashboards-new/create-dashboard-new/add-query.png)
-
+To add another query to a panel click the plus **+** icon on the last query row. Each query is assigned a letter for reference.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/add-query.png')} alt="add query" style={{border: '1px solid gray'}} width="800" />
 
 ## Modify Chart
 
@@ -84,9 +77,7 @@ You can customize a chart on a dashboard panel in a variety of ways. To include�
 
 ## Add to Dashboard
 
-Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.  
-
-![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)
+Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.  <br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png')} alt="Add to Dashboard button" style={{border: '1px solid gray'}} width="300" />
 
 That's it, start using your Dashboard.  
 
@@ -95,23 +86,23 @@ That's it, start using your Dashboard.
 You can delete a panel that you no longer need.
 
 1. Go to the Dashboard in Sumo Logic that has the panel you want to delete.
-1. Hover the cursor over the **Details** icon to display the pop-up menu.<br/>  ![details option.png](/img/dashboards-new/panels/delete-panel/details-option.png)
-1. Select **Delete**.<br/>    ![delete a panel.png](/img/dashboards-new/panels/delete-panel/delete-a-panel.png)
+1. Hover the cursor over the **Details** icon to display the pop-up menu.<br/><img src={useBaseUrl('/img/dashboards-new/panels/delete-panel/details-option.png')} alt="details option" style={{border: '1px solid gray'}} width="700" />
+1. Select **Delete**.<br/><img src={useBaseUrl('/img/dashboards-new/panels/delete-panel/delete-a-panel.png')} alt="delete a panel" style={{border: '1px solid gray'}} width="700" />
 
 ## Log Search page
 
 To create a Dashboard from the [Log Search page](/docs/search):
 
-1. From the Log Search page click the **Add to Dashboard** button on the Aggregates tab after running your aggregate query you want to add to a Dashboard panel. <br/>    ![Add to dashboard new logs.png](/img/dashboards-new/create-dashboard-new/Add-to-dashboard-new-logs.png)
-1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you will have an option to select **Create New Dashboard** with your name. Select that option.<br/>   ![Enter dashboard new name logs.png](/img/dashboards-new/create-dashboard-new/Enter-dashboard-new-name-logs.png)
-1. In the updated window toggle the **Create as Dashboard** option. <br/>   ![Create new dashboard new from search page.png](/img/dashboards-new/create-dashboard-new/Create-new-dashboard-new-from-search-page.png)
+1. From the Log Search page click the **Add to Dashboard** button on the Aggregates tab after running your aggregate query you want to add to a Dashboard panel.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Add-to-dashboard-new-logs.png')} alt="Add to dashboard new logs" style={{border: '1px solid gray'}} width="700" />
+1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you will have an option to select **Create New Dashboard** with your name. Select that option.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Enter-dashboard-new-name-logs.png')} alt="Enter dashboard new name logs" style={{border: '1px solid gray'}} width="400" />
+1. In the updated window toggle the **Create as Dashboard** option.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Create-new-dashboard-new-from-search-page.png')} alt="Create new dashboard new from search page" style={{border: '1px solid gray'}} width="400" />
 1. Click **Add** and your new Dashboard is created.
 
 ## Metrics page
 
 To create a Dashboard from the [Metrics page](/docs/metrics/metrics-queries):
 
-1. From the Metrics page click the **Add to Dashboard** button on the [Metrics Explorer](../metrics/metrics-queries/metrics-explorer.md). <br/>    ![metrics explorer add to dashboard.png](/img/dashboards-new/create-dashboard-new/metrics-explorer-add-to-dashboard.png)
-1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you will have an option to select **Create New Dashboard** with your name. Select that option.  <br/>   ![Enter dashboard new name logs.png](/img/dashboards-new/create-dashboard-new/Enter-dashboard-new-name-logs.png)
-1. In the updated window toggle the **Create as Dashboard** option. <br/>    ![Create new dashboard new from search page.png](/img/dashboards-new/create-dashboard-new/Create-new-dashboard-new-from-search-page.png)
+1. From the Metrics page click the **Add to Dashboard** button on the [Metrics Explorer](../metrics/metrics-queries/metrics-explorer.md).<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/metrics-explorer-add-to-dashboard.png')} alt="metrics explorer add to dashboard" style={{border: '1px solid gray'}} width="800" />
+1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you will have an option to select **Create New Dashboard** with your name. Select that option.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Enter-dashboard-new-name-logs.png')} alt="Enter dashboard new name logs" style={{border: '1px solid gray'}} width="400" />
+1. In the updated window toggle the **Create as Dashboard** option.<br/><img src={useBaseUrl('/img/dashboards-new/create-dashboard-new/Create-new-dashboard-new-from-search-page.png')} alt="Create new dashboard new from search page" style={{border: '1px solid gray'}} width="400" />
 1. Click **Add** and your new Dashboard is created.

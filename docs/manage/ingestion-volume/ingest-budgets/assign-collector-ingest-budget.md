@@ -41,7 +41,7 @@ Select the ingest budget you want to assign to the Collector and click **Save**.
 
 ### Limited role capability
 
-If you do not have the **Manage Ingest Budgets** [role capability](../../users-roles/roles/role-capabilities.md) but have the **Manage Collectors** capability on its own you can assign a Collector to an Ingest Budget by manually adding the field **`_budget`** with the **Field Value** from the desired Ingest Budget into the [Fields](/docs/manage/fields.md) property. For example, if you have a budget with a Field Value of **Dev_20GB**, you would add: 
+If you do not have the **Manage Ingest Budgets** [role capability](../../users-roles/roles/role-capabilities.md) but have the **Manage Collectors** capability on its own you can assign a Collector to an Ingest Budget by manually adding the field **`_budget`** with the **Field Value** from the desired Ingest Budget into the [Fields](/docs/manage/fields) property. For example, if you have a budget with a Field Value of **Dev_20GB**, you would add: 
 
 ![Manual budget field.png](/img/ingestion-volume/Manual-budget-field.png)
 
@@ -53,7 +53,7 @@ Use the [Collector Management API](/docs/api/collector-management) to assign an 
 |:--|:--|:--|:--|:--|:--|
 | fields | JSON Object | No |   |  JSON map of key-value fields (metadata) to apply to the Collector. To assign an ingest budget use the field _budget with its Field Value.<br/><br/>For example, if you have a budget with a Field Value of Dev_20GB, you would add:<br/>`fields=_budget=Dev_20GB`  | Modifiable |
 
-The following steps can be referenced in the [Collector Management API document for a PUT request](/docs/api/collector-management#Collector-API-Methods-and-Examples "Collector API Methods and Examples"). If you are not sure what URL endpoint to use see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
+The following steps can be referenced in the [Collector Management API document for a PUT request](/docs/api/collector-management/collector-api-methods-examples). If you are not sure what URL endpoint to use see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security "Sumo Logic Endpoints and Firewall Security").
 
 First make a GET request to get the Collector's JSON configuration:
 

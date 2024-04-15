@@ -5,9 +5,9 @@ sidebar_label: Metrics Outliers
 description: The metrics outlier feature allows you to identify metrics data points that are outside the range of expected values.
 ---
 
-:::note
-This topic pertains to our Classic Metrics UI (Legacy). For information about the Metrics Explorer UI, which replaces the Classic Metrics UI, see [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer).
-:::
+import ClassicMetricsNote from '../../reuse/classic-metrics-deprecation.md';
+
+<ClassicMetricsNote/>
 
 The metrics outlier feature allows you to identify metrics data points that are outside the range of expected values. You can use outliers to pinpoint unusual behavior in your metrics visualizations and track the behavior over time.  Flexible controls are available for you to decide how unexpected a value must be to be labeled an outlier and the number and type of outliers to display.
 

@@ -93,7 +93,7 @@ Sumo Logic will never decrease the quantization interval that you specify. We’
 
 #### How Sumo chooses rollup table and quantization interval
 
-If you don't specify a rollup type in your query, Sumo Logic will run the query using the `avg` rollup.
+If you do not specify a rollup type in your query, Sumo Logic will run the query using the `avg` rollup.
 
 The table below shows how Sumo Logic selects a quantization interval based on query time range, in the case that you do not specify those options explicitly using the `quantize` operator.
 

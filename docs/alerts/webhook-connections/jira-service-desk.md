@@ -37,7 +37,7 @@ In Sumo Logic, Scheduled Searches and Monitors send alerts to other tools via we
 You need the **Manage connections** [role capability](/docs/manage/users-roles/roles/role-capabilities.md) to create webhook connections.
 :::
 
-1. Go to **Manage Data** > **Monitoring** > Connections**.
+1. Go to **Manage Data** > **Monitoring > Connections**.
 1. On the **Connections** page click the **+** icon at the top-right of the table.
 1. Select the **Jira** option. In the **Create Jira Connection** dialog, fill out connection information.<br/> ![Jira webhook button.png](/img/connection-and-integration/Jira-webhook-button.png)
 1. Enter a **Name** for the Connection.  

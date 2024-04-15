@@ -43,7 +43,7 @@ AWS Lambda automatically monitors functions on your behalf, reporting [AWS Lambd
 
 The Sumo Logic App for AWS Lambda provide insights into the Lambda Functions invocations, IteratorAge for stream-based invocations, Errors, Dead Letter Errors, Concurrent Executions, Unreserved Concurrent Executions, Duration, Throttles by Function and Time based Comparison.
 
-### Sample Log Messages
+### Sample log messages
 This section provides sample Amazon CloudWatch Log and CloudTrail Lambda Data Events log messages.
 
 ```json title="Amazon CloudWatch Log"
@@ -100,7 +100,7 @@ This section provides sample Amazon CloudWatch Log and CloudTrail Lambda Data Ev
 ```
 
 
-### Sample Queries
+### Sample queries
 
 ```sql title="Requests by Function Versions (Based on CloudWatch logs)"
 account={{account}} region={{region}} Namespace={{namespace}}
@@ -184,7 +184,7 @@ Namespace for **Amazon Lambda** Service is **AWS/Lambda**.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" />
 
-Continue with the process of [enabling Provisioned Concurrency configurations](#Enable_Provisioned_Concurrency_configurations_for_Lambda_functions) for Lambda functions, as necessary.
+Continue with the process of [enabling Provisioned Concurrency configurations](#enable-provisioned-concurrency-configurations-for-lambda-functions) for Lambda functions, as necessary.
 
 
 ### Enable Provisioned Concurrency configurations for Lambda functions
@@ -286,15 +286,13 @@ Enter a parse expression to create an “account” field that maps to the alias
 ```yml
 Rule Name: AwsObservabilityLambdaCloudWatchLogsFER
 Applied at: Ingest Time
-Scope (Specific Data): _sourceHost=/aws/lambda/*
+Scope (Specific Data): account=* region* _sourceHost=/aws/lambda/*
 Parse Expression:
 | parse field=_sourceHost "/aws/lambda/*" as functionname
 | tolowercase(functionname) as functionname
 | "aws/lambda" as namespace
 | fields functionname, namespace
 ```
-
-
 
 ## Installing the AWS Lambda App
 
@@ -304,7 +302,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing AWS Lambda Dashboards
+## Viewing AWS Lambda dashboards
 
 Here are some of the measurements and calculations underlying the information presented in dashboard panels.
 
@@ -361,7 +359,7 @@ Use this dashboard to:
 
 ### Error Analysis
 
-The** AWS Lambda - Error Analysis** dashboard provides insights on errors and warnings in your AWS Lambda functions.
+The **AWS Lambda - Error Analysis** dashboard provides insights on errors and warnings in your AWS Lambda functions.
 
 Use this dashboard to:
 * Quickly identify the top errors and warnings across a Lambda function and its version.
@@ -375,7 +373,7 @@ Use this dashboard to:
 
 ### Resource Usage
 
-**AWS Lambda - Resource Usage **dashboard provides insights on recent AWS Lambda request details, memory usage trends, function duration, and compute usage.
+**AWS Lambda - Resource Usage** dashboard provides insights on recent AWS Lambda request details, memory usage trends, function duration, and compute usage.
 
 Use this dashboard to:
 * Monitor the memory usage pattern of a Lambda function during its execution.
@@ -387,7 +385,7 @@ Use this dashboard to:
 
 ### Performance Trends
 
-**AWS Lambda - Performance Trends **dashboard displays log data analytics to provide insights on memory usage, function duration, recent request details, and compute usage.
+**AWS Lambda - Performance Trends** dashboard displays log data analytics to provide insights on memory usage, function duration, recent request details, and compute usage.
 
 Use this dashboard to:
 * Monitor concurrent executions of an AWS Lambda function and understand trends over time.
@@ -400,7 +398,7 @@ Use this dashboard to:
 
 ### Threat Intel
 
-**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
+**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
 Use this dashboard to:
 * Identify known malicious IPs that are access your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward

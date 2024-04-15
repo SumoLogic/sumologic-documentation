@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS Ground Station is a fully managed service that enables you to control satellite communications, process satellite data, and scale your satellite operations. This means that you no longer have to build or manage your own ground station infrastructure. AWS Ground Station enables you to focus on innovating and rapidly experimenting with new applications that ingest satellite data and dynamically scale your server and storage use, rather than spend resources on operating and maintaining your own ground stations. For more details, refer to the [AWS documentation](https://docs.aws.amazon.com/ground-station/latest/ug/what-is-aws-ground-station.html).
 
-## Log and Metric types
+## Log and metric types
 * [CloudWatch Metrics](https://docs.aws.amazon.com/ground-station/latest/ug/metrics.html)
 * [CloudTrail Logs](https://docs.aws.amazon.com/ground-station/latest/ug/logging-using-cloudtrail.html)
 
