@@ -29,8 +29,8 @@ Navigate to **Administration > Account > Metrics Data Ingestion**.
 1. **Ingest Trend for** `<date>`. The trend for ingest for the current day, broken down by hour. 
 1. **Total Ingest Data Points (1 hr)**. The total number of data points ingested during the previous hour. The green up arrow indicates the total is higher than the previous hour, and a red down arrow indicates the total is lower than the previous hour. This lets you see at a glance whether volume rates are rising or falling.
 1. **Ingest DPM (1 hr)**. The data points per minute (DPM) ingested during the previous hour.
-1. **Ingest DPM (yesterday)**.  The average number of data points per minute (DPM) ingested during the previous day. 
-1. **Total Ingest Data Points (yesterday)**. The total number of data points ingested during the previous day.
+1. **Ingest DPM (yesterday)**.  The average number of data points per minute (DPM) ingested during the previous 24 hours. 
+1. **Total Ingest Data Points (yesterday)**. The total number of data points ingested during the previous 24 hours.
 1. **Historical Trend**. The ingest trends over the last day or week. 
 1. **Top 100 Data Points/min by Metric**. The top metrics that have the highest data points ingested. Click a specific metric on the diagram to see a breakdown of ingest for that metric.  
 1. **Top 100 Data Points/min by Dimension**. The top data points per minute by dimension. Click a dimension on the diagram to see a breakdown of ingest.
