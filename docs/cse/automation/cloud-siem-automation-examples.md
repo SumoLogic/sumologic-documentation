@@ -327,7 +327,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
 1. Add an enrichment action to the playbook:
    1. Hover your mouse over the **IP reputation V3** node and click the **Add Node** button (**+** icon).
    1. Select **Action**.
-   1. In the **Add node** dialog, for **Integration**, select **CSE Tools**.
+   1. In the **Add node** dialog, for **Integration**, select **Sumo Logic Cloud SIEM Internal**.
    1. For **Type**, select **Notification**.
    1. For **Action**, select **Add Insight Enrichment**.
    1. To the right of the **Insight ID** field click the gear icon.
