@@ -54,7 +54,7 @@ Get your [installation token](/docs/manage/security/installation-tokens) if you 
 Run the following command in the same PowerShell window, replacing `<TOKEN>` with your token from previous step:
 
 ```sh
-Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://raw.githubusercontent.com/SumoLogic/sumologic-otel-collector/main/scripts/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>" -Tags @{"host.group" = "default"; "deployment.environment" = "default"}
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; $uri = "https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.ps1"; $path="${env:TEMP}\install.ps1"; (New-Object System.Net.WebClient).DownloadFile($uri, $path); . $path -InstallationToken "<TOKEN>" -Tags @{"host.group" = "default"; "deployment.environment" = "default"}
 ```
 
 The script is going to perform the following operations:
