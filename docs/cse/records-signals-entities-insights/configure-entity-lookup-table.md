@@ -36,7 +36,7 @@ An Entity Lookup Table defines two sets of values: a lookup value to look for in
 
 Entity Lookup Tables are based on Sumo Logic’s Lookup Tables feature. Here is an example of a **Host ID to Normalized Hostname** Lookup Table in the Sumo Logic Library:
 
-<img src={useBaseUrl('img/cse/example-table.png')} alt="Example Entity lookup table" width="800"/>
+<img src={useBaseUrl('img/cse/example-table.png')} alt="Example Entity lookup table" style={{border: '1px solid gray'}} width="800"/>
 
 ## Limitations
 
@@ -65,7 +65,7 @@ After you’ve created your Entity Lookup Table in the Sumo Logic Library, you c
 1. Click the gear icon in the Cloud SIEM UI, and choose **Normalization**, under **Entities**.
 1. On the **Entity Normalization** page, click **Lookup Tables**.
 1. Click **Create** on the **Lookup Tables** tab.
-1. The **Existing Lookup Table** popup appears.<br/><img src={useBaseUrl('img/cse/existing-lookup-table.png')} alt="Existing Lookup Table" width="800"/>  
+1. The **Existing Lookup Table** popup appears.<br/><img src={useBaseUrl('img/cse/existing-lookup-table.png')} alt="Existing Lookup Table" style={{border: '1px solid gray'}} width="800"/>  
 1. **Type**. Choose the type of normalization you want to set up.
    * **Host ID to Normalized Hostname**. Maps unique host IDs to recognizable hostnames.
    * **User ID to Normalized Username**. Maps unique user IDs to recognizable usernames.
@@ -73,5 +73,5 @@ After you’ve created your Entity Lookup Table in the Sumo Logic Library, you c
 1. **Lookup Column Name**. Enter the name of the Lookup Table column that contains the primary key for the table.
 1. **Substitution Column Name**. Enter the name of the Lookup Table column that contains the value you want to substitute for the lookup column.
 1. **Source Category**. (Optional) If you enter a source category, the lookup substitution will only be applied to Records that are tagged with that source category.
-1. **Table Path**. Enter the path to the existing Lookup Table in the Sumo Logic Library. For example: `/Library/Admin Recommended/NormalizedHostNames` You can copy the path to the Lookup Table in the Sumo Logic Library. Hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/tree-dot.png')} alt="three-dot" width="800"/>
+1. **Table Path**. Enter the path to the existing Lookup Table in the Sumo Logic Library. For example: `/Library/Admin Recommended/NormalizedHostNames` You can copy the path to the [Lookup Table](docs/search/lookup-tables/create-lookup-table) in the Sumo Logic Library. Hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot kebab menu.<br/><img src={useBaseUrl('img/cse/tree-dot.png')} alt="three-dot" style={{border: '1px solid gray'}} width="800"/>
 1. Click **Create**.     
