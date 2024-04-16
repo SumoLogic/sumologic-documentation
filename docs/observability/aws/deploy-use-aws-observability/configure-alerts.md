@@ -34,8 +34,8 @@ Sumo Logic provides the following out-of-the-box alerts:
 | Amazon RDS - Low Aurora Buffer Cache Hit Ratio | This alert fires when the average RDS Aurora buffer cache hit ratio within a 5 minute interval is low (&#60;&#61; 50%). This indicates that a lower percentage of requests were served by the buffer cache, which could further indicate a degradation in application performance. | &#60;&#61; 50 | > 50 |
 | Amazon RDS MySQL - Excessive Slow Query Detected | This alert fires when we detect the average time to execute a query is more than 5 seconds over a 10 minutes. | &#62;&#61;1 | &#60;1 |
 | Amazon RDS MySQL - High Authentication Failure | This alert fires when we detect more then 10 authentication failure over a 5-minute time period. | &#62;10 | &#60;&#61;10 |
-| Amazon RDS PostgreSQL - High Authentication Failure | This alert fires when we detect more then 10 authentication failure over a 5-minute time period. | &#62;10 | &#60;&#61;10 |
-| Amazon RDS PostgreSQL - High Errors	| This alert fires when we detect Postgres logs show high rate (>10) of error/fatal logs over a 5-minute time period. | &#62;10 | &#60;&#61;10 |
+| Amazon RDS PostgreSQL - High Authentication Failure | This alert fires when we detect more than 10 authentication failure in Postgres logs over a 5 minute time-period | &#62;10 | &#60;&#61;10 |
+| Amazon RDS PostgreSQL - High Errors	| This alert fires when we detect high number (>10) of error/fatal logs in Postgres logs over a 5 minutes time period. | &#62;10 | &#60;&#61;10 |
 | Amazon RDS PostgreSQL - Statement Timeout | This alert fires when we detect Postgres logs show statement timeouts. | &#62;0 | &#60;&#61;0 |
 | Amazon RDS PostgreSQL - Excessive Slow Query Detected | This alert fires when we detect the average time to execute a query is more than 5 seconds over a 10 minutes. | &#62;&#61;1 | &#60;1 |
 | Amazon RDS - Low Free Storage | This alert fires when the average free storage space of a RDS instance is low (< 512MB) for an interval of 15 minutes. | &#60;512 | &#62;&#61;512 |
