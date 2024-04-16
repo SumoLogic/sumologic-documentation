@@ -287,13 +287,13 @@ This means that you've installed the collector before the installation script wa
 To uninstall, use an older version of the installation script:
 
 ```shell
-sudo curl -L https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.80.0-sumo-0/install.sh | sudo -E bash -s -- --uninstall --purge --yes
+sudo curl -L https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- --uninstall --purge --yes
 ```
 
 The output should be similar to this:
 
 ```console
-$ sudo curl -L https://github.com/SumoLogic/sumologic-otel-collector/releases/download/v0.80.0-sumo-0/install.sh | sudo -E bash -s -- --uninstall --purge --yes
+$ sudo curl -L https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- --uninstall --purge --yes
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
