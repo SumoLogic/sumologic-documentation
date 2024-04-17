@@ -36,6 +36,6 @@ In this step, you configure an Google Workspace Apps Audit Source to collect Goo
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon, and select **Log Mappings** under **Incoming Data**. <br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/> 
-1. On the **Log Mappings** page search for "Google Workspace" and check under **Record Volume**. <br/><img src={useBaseUrl('img/cse/gsuite-record-volume.png')} alt="GSuite record volume" width="600"/>
-1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Google Workspace security records.<br/><img src={useBaseUrl('img/cse/gsuite-search.png')} alt="GSuite search" width="400"/>
+1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**.
+1. On the **Log Mappings** page search for "Google Workspace" and check under **Record Volume**. <br/><img src={useBaseUrl('img/cse/gsuite-record-volume.png')} alt="GSuite record volume" style={{border: '1px solid gray'}} width="600"/>
+1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Google Workspace security records.<br/><img src={useBaseUrl('img/cse/gsuite-search.png')} alt="GSuite search" style={{border: '1px solid gray'}} width="400"/>

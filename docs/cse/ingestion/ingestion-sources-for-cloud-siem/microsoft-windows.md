@@ -21,7 +21,7 @@ In this step, you configure a Local Windows Event Log Source to collect Microsof
 1. Download the appropriate collector for your operating system.
 1. Install the collector. For instructions for your preferred operating system and method of installation, see [Installed Collectors](/docs/send-data/installed-collectors).
 1. Once the collector is installed, confirm it is available on the **Collection** page and select **Edit**.
-1. The **Edit Collector** popup appears. <br/><img src={useBaseUrl('img/cse/edit-collector.png')} alt="Edit collector" width="500"/>
+1. The **Edit Collector** popup appears. <br/><img src={useBaseUrl('img/cse/edit-collector.png')} alt="Edit collector" style={{border: '1px solid gray'}} width="500"/>
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
@@ -38,7 +38,7 @@ In this step, you configure a Local Windows Event Log Source to collect Microsof
 1. Navigate to the Installed Collector where you want to create the source.
 1. Click **Add Source** next to the Installed Collector.
 1. Select **Windows Event Log**. 
-1. The page refreshes.<br/><img src={useBaseUrl('img/cse/windows-event-source.png')} alt="Windows event source" width="500"/>
+1. The page refreshes.<br/><img src={useBaseUrl('img/cse/windows-event-source.png')} alt="Windows event source" style={{border: '1px solid gray'}} width="500"/>
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Source Host**. (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost`.
@@ -60,6 +60,6 @@ In this step, you configure a Local Windows Event Log Source to collect Microsof
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>  
-1. On the **Log Mappings** page search for "Windows" and check under **Record Volume.** <br/><img src={useBaseUrl('img/cse/windows-record-volume.png')} alt="Windows record volume" width="600"/>
-1. For a more granular look at the incoming records, you can also use search the Sumo Logic platform for Windows security records. <br/><img src={useBaseUrl('img/cse/windows-search.png')} alt="Windows search" width="400"/>
+1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**. 
+1. On the **Log Mappings** page search for "Windows" and check under **Record Volume.** <br/><img src={useBaseUrl('img/cse/windows-record-volume.png')} alt="Windows record volume" style={{border: '1px solid gray'}} width="600"/>
+1. For a more granular look at the incoming records, you can also use search the Sumo Logic platform for Windows security records. <br/><img src={useBaseUrl('img/cse/windows-search.png')} alt="Windows search" style={{border: '1px solid gray'}} width="400"/>

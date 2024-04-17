@@ -29,10 +29,10 @@ Cloud SIEM supports TAXII v1.1 and v1.2. 
 
 ## Configure the integration
 
-1. Click the **Content menu** and select **Threat Intelligence**.
-1. On the **Threat Intelligence** page, click **Add Source**. <br/><img src={useBaseUrl('img/cse/threat-intel-page.png')} alt="Add Source" width="800"/>
-1. On the **Add New Source** popup, click **TAXII Feed**. <br/><img src={useBaseUrl('img/cse/taxii-feed-option.png')} alt="TAXII Feed option" width="600"/>
-1. The **Add Source** page appears. <br/><img src={useBaseUrl('img/cse/add-new-source.png')} alt="Add new source" width="600"/>
+1. Click **Content** in the top menu and select **Threat Intelligence**.
+1. On the **Threat Intelligence** page, click **Add Source**. <br/><img src={useBaseUrl('img/cse/threat-intel-page.png')} alt="Add Source" style={{border: '1px solid gray'}} width="800"/>
+1. On the **Add New Source** popup, click **TAXII Feed**. <br/><img src={useBaseUrl('img/cse/taxii-feed-option.png')} alt="TAXII Feed option" style={{border: '1px solid gray'}} width="600"/>
+1. The **Add Source** page appears. <br/><img src={useBaseUrl('img/cse/add-new-source.png')} alt="Add new source" style={{border: '1px solid gray'}} width="600"/>
 1. **Name**. Enter a name for the feed.
 1. **Description**. Enter a description of the feed.
 1. **URL**. Enter the URL for the feed provider’s TAXII discovery service endpoint.
