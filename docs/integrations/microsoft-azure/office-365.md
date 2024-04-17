@@ -124,32 +124,11 @@ We recommend the following Source Category naming convention:
 
 Now that you have configured Office 365, install the Sumo Logic App for Microsoft Office 365 to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-To install the app:
+{@import ../../reuse/apps/app-install-v2.md}
 
-1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-:::note
-Version selection is not available for all apps.
-:::
-3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter `_sourceCategory=O365/*`.
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+## Viewing Microsoft Office 365 dashboards
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
-
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-To see your data in the panels of Office 365 - SharePoint - Shared Content Non-Domain Activities dashboard, open the queries of each panel.
-
-Add your domain in all the queries in the highlighted section as shown below. Click **Update Dashboard** to save the queries. You will now see your data in the Panels.
-
-
-## Viewing Office 365 Dashboards
-
-The Sumo Logic App for Microsoft Office 365 provides insights for Azure Active Directory, Exchange, and SharePoint. The pre-configured dashboards allow you to monitor the failures, successes, and other operations in Office 365 system.
-
+{@import ../../reuse/apps/view-dashboards.md}
 
 ### Overview
 
