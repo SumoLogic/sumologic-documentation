@@ -242,7 +242,7 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. To the right of the **Raw JSON** field, click the gear icon.
     1. Click **IP Reputation**.
     1. Select **output.raw**.
-    1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-advanced-add-insight-enrichment-node.png')} alt="Add Insight Enrichment node" width="500"/>  
+    1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-advanced-add-insight-enrichment-node.png')} alt="Add Insight Enrichment node" style={{border: '1px solid gray'}} width="500"/>  
     1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
     1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
