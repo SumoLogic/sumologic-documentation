@@ -127,11 +127,15 @@ This section explains how to collect logs from Microsoft Graph Identity Protecti
 
 ## Installing the Microsoft Graph Identity Protection App
 
-{@import ../../reuse/apps/app-install-v2.md}
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
+
+<AppInstall2/>
 
 ## Viewing Microsoft Graph Identity Protection dashboards
 
-{@import ../../reuse/apps/view-dashboards.md}
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Risk Detections
 
