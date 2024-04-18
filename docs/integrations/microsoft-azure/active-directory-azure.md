@@ -21,7 +21,7 @@ Only global administrators, security administrators, security readers, and repor
 
 The Sumo Logic app for Azure Active Directory presents information about activity in Azure Active Directory, including role management, user management, group management, directory management, and application management.
 
-## Collect Logs for the Azure Active Directory app
+## Collect logs for the Azure Active Directory app
 
 Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
 
@@ -49,11 +49,15 @@ While exporting logs for an Azure Active Directory app, do the following:
 
 Now that you have set up collection for the Azure Active Directory, install the Sumo Logic app to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Azure Active Directory Dashboards
+## Viewing Azure Active Directory dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 
