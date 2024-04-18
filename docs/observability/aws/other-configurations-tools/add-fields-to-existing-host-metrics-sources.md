@@ -30,7 +30,7 @@ To deploy the CloudFormation template:
 
 1. Sign on to the AWS Management console.
 
-1. Invoke the CloudFormation yaml template using [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.8.0/hostmetricsfields/host_metrics_add_fields.template.yaml).
+1. Invoke the CloudFormation YAML template using [this URL](https://console.aws.amazon.com/cloudformation/home#/stacks/quickcreate?templateURL=https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.8.0/hostmetricsfields/host_metrics_add_fields.template.yaml).
 
 1. Select the AWS Region where you want to deploy the CloudFormation Template.
 
