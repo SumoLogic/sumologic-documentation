@@ -17,11 +17,6 @@ There are many ways to contribute to Sumo Docs, beyond writing code. Here's how 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/contributing/edit-doc"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Submit a Doc Fix</h4></a>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/contributing/create-editdoc"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Create or Edit a New Doc</h4></a>
   </div>
 </div>
