@@ -53,7 +53,7 @@ Managing Access Keys (how to).
 
 ### From the Access Keys page
 
-Adminstrators can create access keys under **Administration** > **Security** > **Access Keys** as an alternative to doing it from the [Preferences page](#from-the-preferences-page).
+Administrators can create access keys under **Administration** > **Security** > **Access Keys** as an alternative to doing it from the [Preferences page](#from-the-preferences-page).
 
 1. At the top right of the table, click **+ Add Access Key**. <br/><img src={useBaseUrl('/img/security/access-key-security-page.png')} alt="Add Access Key" width="700"/>
 1. Follow the steps from [the previous section](#from-the-preferences-page), starting with step 3.
