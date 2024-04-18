@@ -1241,7 +1241,7 @@ auto_enable_logs_subscription="New"
 
 ```json
 {
- "filter": "lambda|rds"
+ "filter": "apigateway|lambda|rds"
 }
 ```
 
