@@ -106,13 +106,77 @@ Use the **Configuration** menu to access:
 
 ### Cloud SIEM menus for new UI
 
+#### Sidebar menu
+
+Click **Cloud SIEM** in the main Sumo Logic menu to open the sidebar menu. <br/><img src={useBaseUrl('img/cse/cloud-siem-sidebar-menu.png')} alt="Cloud SIEM sidebar menu" style={{border: '1px solid gray'}} width="400"/>
+
+Use the sidebar menu to access:
+* **Search Cloud SIEM**
+* **Security Events**
+    * **SIEM Overview**
+    * **Insights**
+    * **Signals**
+    * **Entities**
+    * **Records**
+* **Security Detection**
+    * **Rules**
+    * **Rule Tuning**
+    * **Threat Intelligence**
+    * **Match List**
+    * **File Analysis**
+    * **Custom Insights**
+    * **Network Blocks**
+    * **Suppressed Lists**
+    * **MITRE ATT&CK Coverage**
+
 #### Top menu
 
-This menu appears at the top of the screen:
+This menu appears at the top of the screen:<br/><img src={useBaseUrl('img/cse/sumo-logic-top-menu-bar-new.png')} alt="Top menu bar" style={{border: '1px solid gray'}} width="400"/>
+
+Use the top menu to access:
+* <img src={useBaseUrl('img/cse/go-to-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="60"/> [**Go To...**](#go-to-menu) Launch Sumo Logic features, including for Cloud SIEM.
+* <img src={useBaseUrl('img/cse/help-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="30"/> **Help**. Access links to documentation, support, community, release notes, and system status.
+* <img src={useBaseUrl('img/cse/app-catalog-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="30"/> **App Catalog**. Open the [App Catalog](/docs/integrations/).
+* <img src={useBaseUrl('img/cse/configuration-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="30"/> [**Configuration**](#configuration-menu-1). Configure Sumo Logic features, including for Cloud SIEM.
+* <img src={useBaseUrl('img/cse/administration-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="30"/> **Administration**. Access Sumo Logic administration settings, such as for for [account](/docs/manage/), [users and roles](/docs/manage/users-roles/), and [account security](/docs/manage/security/).
+* <img src={useBaseUrl('img/cse/profile-icon-new.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="30"/> **Profile**. View your notification and [preference](/docs/get-started/account-settings-preferences/) settings.
+
+#### Go To... menu
+
+The **Go To...** menu allows you to launch Sumo Logic features, including for Cloud SIEM. To access this menu, click <img src={useBaseUrl('img/cse/go-to-icon.png')} alt="Configuration menu icon" style={{border: '1px solid gray'}} width="50"/> on the [top menu](#top-menu-1). <br/><img src={useBaseUrl('img/cse/go-to-menu.png')} alt="Go To menu bar" style={{border: '1px solid gray'}} width="500"/>
+
+Use the **Go To...** menu to access these Cloud SIEM features:
+* **Actions**.
+* **Context Actions**.
+* **Criticality**.
+* **Custom Insights**.
+* **Custom Types**.
+* **Enrichment**.
+* **Entities**.
+* **File Analysis**. 
+* **Ingest Mappings**.
+* **Insight Detection**.
+* **Insight Resolutions**.
+* **Insight Statuses**.
+* **Insights**.
+* **Log Mappings**.
+* **Match Lists**.
+* **MITRE ATT&CK Coverage**.
+* **Network Blocks**.
+* **Normalization**.
+* **Records**.
+* **Rule Tuning**.
+* **Rules**.
+* **Search Cloud SIEM**.
+* **SIEM Overview**.
+* **Signals**.
+* **Suppressed Lists**.
+* **Tag Schemas**.
+* **Threat Intelligence**.
 
 #### Configuration menu
 
-The **Configuration** menu allows you to configure Sumo Logic elements, including Cloud SIEM. To access this menu, click <img src={useBaseUrl('img/cse/cloud-siem-configuration-menu-icon-new.png')} alt="Configuration menu icon" style={{border: '1px solid gray'}} width="30"/> on the [top menu](#top-menu-1). Scroll down the menu to see Cloud SIEM configuration options. <br/><img src={useBaseUrl('img/cse/cloud-siem-configuration-menu-new.png')} alt="Configuration menu" style={{border: '1px solid gray'}} width="150"/>
+The **Configuration** menu allows you to configure Sumo Logic features, including for Cloud SIEM. To access this menu, click <img src={useBaseUrl('img/cse/cloud-siem-configuration-menu-icon-new.png')} alt="Configuration menu icon" style={{border: '1px solid gray'}} width="30"/> on the [top menu](#top-menu-1). Scroll down the menu to see Cloud SIEM configuration options.<br/><img src={useBaseUrl('img/cse/cloud-siem-configuration-menu-new.png')} alt="Configuration menu" style={{border: '1px solid gray'}} width="150"/>
 
 Use the **Configuration** menu to access: 
 
