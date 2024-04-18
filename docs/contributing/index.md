@@ -61,11 +61,3 @@ You can submit a Sumo Docs feature request [here](https://github.com/SumoLogic/s
 To submit a general Sumo Logic feature request, go to our [Community](/docs/get-started/help#community) page.
 
 :::
-
-:::info contact us
-
-Need to get in touch? You can find us at:
-* [Sumo Dojo Slack](https://sumodojo.slack.com)
-* [Sumo Logic Support](https://support.sumologic.com/support/s)
-* [Sumo Logic Community](https://sumologic.my.site.com/support/s/)
-:::
