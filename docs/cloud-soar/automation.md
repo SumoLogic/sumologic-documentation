@@ -269,7 +269,11 @@ Define the question to be answered and the authorizer of the user choice selecti
 
 #### Filter
 
-A filter node filters results from the preceding action based on the condition you write. You can only add a filter node after an action node. For example, let's suppose that the action feeding into the filter has 10 results, but you want to filter out all but the best two results. You can write a condition in the filter to do the filtering.
+A filter node filters results from the preceding action based on the condition you write. You can only add a filter node after an action node. 
+
+For example:
+* The action node feeding into the filter has 10 results, but you want to filter out all but the best two results. You can write a condition in the filter to do the filtering. 
+* You want to pass specific output to another action node. Define the output in the filter, and define the corresponding input in the receiving action node. You could also use a filter like this to pass input to a nested playbook.
 
 1. Hover your mouse over an action node and click the **+** button. <br/><img src={useBaseUrl('img/cloud-soar/add-node-button.png')} alt="Add node button" style={{border:'1px solid gray'}} width="200"/> <br/>The available nodes are displayed. <br/><img src={useBaseUrl('img/cloud-soar/add-filter-node.png')} alt="Add filter node" style={{border:'1px solid gray'}} width="500"/>
 1. Click **Filter**. The filter node configuration dialog displays. <br/><img src={useBaseUrl('img/cloud-soar/configure-filter-node.png')} alt="Configure filter node conditions" style={{border:'1px solid gray'}} width="500"/>
@@ -463,6 +467,50 @@ You can build basic integrations without having to provide custom YAML files.
    1. Give the resource a **Label** and enter the connection configuration needed by the resource. What you enter is specific to the integration you're adding the resource for. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-resource.png')} alt="Example integration" width="400"/>
    1. Click **Save**. The new integration is complete.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration-2.png')} alt="Example integration" width="600"/>
 1. To test the new action, click on the action, then click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Example integration" width="400"/>
+
+### Configure a webhook for Cloud SOAR
+
+You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-soar/) to allow you to send an alert from a scheduled search to Sumo Logic Cloud SOAR.
+
+1. In Sumo Logic, go to **Manage Data > Monitoring > Connections**.
+1. Click **+** and choose **Cloud SOAR** as the connection type. The **Create Cloud SOAR Connection** dialog is displayed.<br/><img src={useBaseUrl('img/cloud-soar/CSOAR-connection1.png')} alt="New connection" style={{border: '1px solid black'}} width="600"/> 
+1. Enter a **Name** and give an optional **Description** to the connection.
+1. The **URL** field shows your [Sumo Logic API endpoint](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) followed by `/csoar/v3/incidents/`. For example, `https://api.us2.sumologic.com/api/csoar/v3/incidents/`
+1. In **Authorization Header**, enter your basic authentication access information for the header. For example, `Basic <base64 encode <accessId>:<accessKey>>`. For more information, see [Basic Access (Base64 encoded)](/docs/api/getting-started#basic-access-base64-encoded).
+1. Click **Save**. After save, the **Templates** dropdown shows a list of all incident templates by name configured in your Cloud SOAR environment. 
+1. Select a **Template**. 
+1. The default payload synchronizes with the selected template, and the **Alert Payload** field shows the associated `template_id` field automatically defined in the default payload. A `template_id` is required in the payload in order to configure the connection:
+
+    ```
+    {
+      "template_id": <Template ID>,
+     "fields": {
+        "incidentid": "Incident Id"
+      }
+    }
+    ```
+    
+    You can add additional variables. For example:
+
+    ```
+    {
+      "fields": {
+        "description": "string",
+        "additional_info": "string",
+        "starttime": "ISO-8601 datetime string", 
+        "incident_kind": <ID incident kind>,
+        "incident_category": <ID incident category>,
+        "status": <ID incident status>,
+        "restriction": <ID incident restriction>
+      }
+    }
+    ```
+    :::note
+    * For details on variables you can use as parameters within your JSON object, see [Configure Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables). 
+    * For information on additional fields, please refer to the [Cloud SOAR APIs](https://help.sumologic.com/docs/api/cloud-soar/) documentation. 
+    * The preceding example shows an `ISO-8601 datetime string`. For information about how to configure it, see [parser documentation](https://dateutil.readthedocs.io/en/stable/parser.html#dateutil.parser.isoparse).
+    :::
+1. Click **Save**.
 
 ### Cloud or Bridge execution
 

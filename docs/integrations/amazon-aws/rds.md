@@ -310,7 +310,7 @@ Make sure you enable the following parameters before collecting the Amazon RDS C
    - `log_duration`
    - `log_min_duration_statement` to a value (in milliseconds) over which statement will be logged for any query taking more time then give value.
 :::note
-We recommend not to set `log_statement` to any value other then none(default value). Since it will interfere with slow query logs and ingestion will increase significantly.
+We recommend not to set `log_statement` to any value other than none (default value), since it will slow query logs and ingestion will increase significantly.
 :::
 
 Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. You can choose either of them to collect logs:

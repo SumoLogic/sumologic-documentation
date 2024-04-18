@@ -942,6 +942,7 @@ module.exports = {
           items: [
             'alerts/webhook-connections/set-up-webhook-connections',
             'alerts/webhook-connections/aws-lambda',
+            'alerts/webhook-connections/cloud-soar',
             'alerts/webhook-connections/datadog',
             'alerts/webhook-connections/jira-cloud',
             'alerts/webhook-connections/jira-server',
@@ -969,7 +970,6 @@ module.exports = {
             'alerts/webhook-connections/slack',
             'alerts/webhook-connections/schedule-searches-webhook-connections',
             'alerts/webhook-connections/audit-index',
-            'alerts/webhook-connections/cloud-soar',
           ]
         },
       ],

@@ -50,15 +50,15 @@ The following example shows how to add an enrichment to an Insight using the “
 1. Add an enrichment action to the playbook:
    1. Hover your mouse over the **IP reputation V3** node and click the **Add Node** button (**+** icon).
    1. Select **Action**.
-   1. In the **Add node** dialog, for **Integration**, select **CSE Tools**.
+   1. In the **Add node** dialog, for **Integration**, select **Sumo Logic Cloud SIEM Internal**.
    1. For **Type**, select **Notification**.
    1. For **Action**, select **Add Insight Enrichment**.
    1. To the right of the **Insight ID** field, click the gear icon.
    1. Click [**Playbook inputs**](#playbook-inputs) and select **input.readableId**.
-   1. In the **Enrichment name** field, enter **VirusTotal IP reputation**.
+   1. In the **Enrichment name** field, type **VirusTotal IP reputation**.
    1. To the right of the **Raw JSON** field, click the gear icon.
    1. Click **IP reputation V3** and select **output.raw**.
-   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-insight-enrichmeent-node.png')} alt="Add node for Insight enrichment" width="500"/>
+   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-insight-enrichment-node.png')} alt="Add node for Insight enrichment" style={{border: '1px solid gray'}} width="500"/>
    1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
    1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
@@ -232,7 +232,7 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. Hover your mouse over the new **IP Reputation** node.
     1. Click the **Add Node** button (**+** icon) at the bottom of the **IP Reputation** node.
     1. In the **Add node** dialog, click **Action**.
-    1. In the **Integration** field, select **CSE Tools**.
+    1. In the **Integration** field, select **Sumo Logic Cloud SIEM Internal**.
     1. In the **Type** field, select **Notification**.
     1. In the **Action** field, select **Add Insight Enrichment**.
     1. To the right of the **Insight ID** field, click the gear icon.
@@ -242,7 +242,7 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. To the right of the **Raw JSON** field, click the gear icon.
     1. Click **IP Reputation**.
     1. Select **output.raw**.
-    1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-insight-enrichment-node.png')} alt="Add Insight Enrichment node" width="500"/>  
+    1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-advanced-add-insight-enrichment-node.png')} alt="Add Insight Enrichment node" style={{border: '1px solid gray'}} width="500"/>  
     1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release. The playbook is complete.
 1. Save the playbook:
     1. Click the **Save** button (floppy disk icon) at the bottom of the playbook view.
@@ -327,15 +327,15 @@ The following example pulls together elements of the [Simple example](#simple-ex
 1. Add an enrichment action to the playbook:
    1. Hover your mouse over the **IP reputation V3** node and click the **Add Node** button (**+** icon).
    1. Select **Action**.
-   1. In the **Add node** dialog, for **Integration**, select **CSE Tools**.
+   1. In the **Add node** dialog, for **Integration**, select **Sumo Logic Cloud SIEM Internal**.
    1. For **Type**, select **Notification**.
    1. For **Action**, select **Add Insight Enrichment**.
    1. To the right of the **Insight ID** field click the gear icon.
    1. Click [**Playbook inputs**](#playbook-inputs) and select **input.readableId**.
-   1. In the **Enrichment name** field enter **VirusTotal IP reputation**.
+   1. In the **Enrichment name** field type **VirusTotal IP reputation**.
    1. To the right of the **Raw JSON** field click the gear icon.
    1. Click **IP reputation V3** and select **output.raw**.
-   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-insight-enrichmeent-node.png')} alt="Add node for Insight enrichment" width="500"/>
+   1. Click **Create**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-insight-enrichment-node.png')} alt="Add node for Insight enrichment" style={{border: '1px solid gray'}} width="500"/>
    1. Click and hold on the right semicircle of the new **Add Insight Enrichment** node and drag to the semicircle of the **END** node and release.
 1. Add a condition to validate IP addresses:
     1. Click the **Add Node** button (**+** icon) on the **Add Insight Enrichment** node.
