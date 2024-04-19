@@ -1,5 +1,5 @@
 ---
-id: minute-volume
+slug: /manage/ingestion-volume/ingest-budgets/minute-volume
 title: Minute Volume
 description: Use Ingest Budgets Minute Volume to control data ingestion to minute granularity.
 ---
