@@ -17,10 +17,10 @@ To do so, you simply configure a ThreatQ source in Cloud SIEM. You supply the in
 
 ## Configure a ThreatQ source
 
-1. In the Cloud SIEM UI, select **Threat Intelligence** from the **Content** menu. <br/><img src={useBaseUrl('img/cse/threat-intel-icon.png')} alt="Threat Intelligence menu" width="800"/>
-1. On the **Threat Intelligence** page, click **Add Source**. <br/><img src={useBaseUrl('img/cse/threatq-add-source-icon.png')} alt="Add Source" width="800"/>
-1. On the **Add New Source** page, click **Create** in the ThreatQ tile. <br/><img src={useBaseUrl('img/cse/threatq-create-icon.png')} alt="ThreatQ create icon" width="800"/>
-1. The **Add New Source** page updates. <br/><img src={useBaseUrl('img/cse/threatq-add-source.png')} alt="ThreatQ Add New Source" width="800"/>
+1. In the top menu click **Content** and then select **Threat Intelligence**. 
+1. On the **Threat Intelligence** page, click **Add Source**. <br/><img src={useBaseUrl('img/cse/threatq-add-source-icon.png')} alt="Add Source" style={{border: '1px solid gray'}} width="800"/>
+1. On the **Add New Source** page, click **Create** in the ThreatQ tile. <br/><img src={useBaseUrl('img/cse/threatq-create-icon.png')} alt="ThreatQ create icon" style={{border: '1px solid gray'}} width="800"/>
+1. The **Add New Source** page updates. <br/><img src={useBaseUrl('img/cse/threatq-add-source.png')} alt="ThreatQ Add New Source" style={{border: '1px solid gray'}} width="800"/>
 1. **Name**. Enter a name for the source.
 1. **Description**. (Optional) Enter a description of the source.
 1. **Enabled**. By default, the new source will be enabled. Use the slider if you want to disable it.
