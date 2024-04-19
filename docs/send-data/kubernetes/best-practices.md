@@ -1002,3 +1002,106 @@ sumologic:
     ## See https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md for more information.
     addFipsSuffix: false
 ```
+
+## Use only Docker Hub registry
+
+If for some reason you can use only DockerHub as docker registry, we are suggesting to use the following configuration:
+
+```yaml
+sumologic:
+  setup:
+    job:
+      image:
+        repository: docker.io/sumologic/kubernetes-setup
+      initContainerImage:
+        repository: docker.io/busybox
+  otelcolImage:
+    repository: docker.io/sumologic/sumologic-otel-collector
+falco:
+  image:
+    registry: docker.io
+  extra:
+    initContainers:
+      ## Add initContainer to wait until kernel-devel is installed on host
+      - name: init-falco
+        image: docker.io/busybox:1.36.0
+        command:
+          - "sh"
+          - "-c"
+          - |
+            while [ -f /host/etc/redhat-release ] && [ -z "$(ls /host/usr/src/kernels)" ] ; do
+            echo "waiting for kernel headers to be installed"
+            sleep 3
+            done
+        volumeMounts:
+          - mountPath: /host/usr
+            name: usr-fs
+            readOnly: true
+          - mountPath: /host/etc
+            name: etc-fs
+            readOnly: true
+  driver:
+    loader:
+      initContainer:
+        image:
+          registry: docker.io
+otellogs:
+  daemonset:
+    initContainers:
+      changeowner:
+        image:
+          repository: docker.io/busybox
+opentelemetry-operator:
+  instrumentation:
+    dotnet:
+      repository: docker.io/otel/autoinstrumentation-dotnet
+    java:
+      repository: docker.io/otel/autoinstrumentation-java
+    python:
+      repository: docker.io/otel/autoinstrumentation-python
+    nodejs:
+      repository: docker.io/otel/autoinstrumentation-nodejs
+  instrumentationJobImage:
+    image:
+      repository: docker.io/sumologic/kubernetes-tools-kubectl
+  manager:
+    collectorImage:
+      repository: docker.io/sumologic/sumologic-otel-collector
+    image:
+      repository: docker.io/otel/opentelemetry-operator
+  kubeRBACProxy:
+    image:
+      repository: docker.io/bitnami/kube-rbac-proxy
+      # Ensure the tag is the same like in Sumo Logic Kubernetes Collection Chart, but without `v` prefix
+      tag: 0.15.0
+tailing-sidecar-operator:
+  kubeRbacProxy:
+    image:
+      repository: docker.io/bitnami/kube-rbac-proxy
+      # Ensure the tag is the same like in Sumo Logic Kubernetes Collection Chart, but without `v` prefix
+      tag: 0.11.0
+  operator:
+    image:
+      repository: docker.io/sumologic/tailing-sidecar-operator
+  sidecar:
+    image:
+      repository: docker.io/sumologic/tailing-sidecar
+telegraf-operator:
+  image:
+    # Ensure the image tag is the same like in Sumo Logic Kubernetes Collection Chart
+    sidecarImage: docker.io/library/telegraf:1.21.2
+    # There is no recommended Docker Hub image for Telegraf Operator
+    # repository: 
+kube-prometheus-stack:
+  prometheus-node-exporter:
+    image:
+      repository: docker.io/prom/node-exporter
+  kube-state-metrics:
+    image:
+      repository: docker.io/bitnami/kube-state-metrics
+      # Ensure the tag is the same like in Sumo Logic Kubernetes Collection Chart, but without `v` prefix
+      tag: 2.7.0
+```
+
+Not all of the images are maintained by Sumo Logic and not all the vendors provides their images on Docker Hub.
+We suggest the most similar images but we do not guarantee that they will work exactly the same, but they should.
