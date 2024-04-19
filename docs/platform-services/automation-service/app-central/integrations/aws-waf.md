@@ -21,7 +21,7 @@ AWS WAF is a web application firewall that helps protect web applications from a
 * **Delete Regex Pattern Set** (*Containment*) - Deletes the specified RegexPatternSet.
 * **Delete Rule Group** (*Containment*) - Deletes the specified RuleGroup.
 * **Get IP Set** (*Enrichment*) - Retrieves the specified IPSet.
-* **Get Managed Rule Set** (*Enrichment*) - Retrieves the specified managed rule set..
+* **Get Managed Rule Set** (*Enrichment*) - Retrieves the specified managed rule set.
 * **Get Rule Group** (*Enrichment*) - Retrieves the specified RuleGroup.
 * **Get Web ACL** (*Enrichment*) - Retrieves the specified WebACL.
 * **List Available Managed Rule Groups** (*Enrichment*) - Retrieves a list of managed rule groups that are available for you to use.
