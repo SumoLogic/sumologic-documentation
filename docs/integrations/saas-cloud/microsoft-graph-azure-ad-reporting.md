@@ -297,17 +297,15 @@ Follow the instructions for setting up [Microsoft Graph Azure AD Reporting](/doc
 
 This section has instructions for installing the Microsoft Graph Azure AD Reporting app for Sumo Logic.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Microsoft Graph Azure AD Reporting dashboards​​
+## Viewing Microsoft Graph Azure AD Reporting dashboards
 
-* All dashboards have a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
- You can use filters to drill down and examine the data on a granular level. Filters include client country, client device type, client IP, client request host, client request URI, client request user agent, edge response status, origin IP, and origin response status.
-
-* Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+<ViewDashboards/>
 
 ### Microsoft Graph Azure AD Reporting - Audits
 
