@@ -24,15 +24,93 @@ Watch the following micro lesson to learn how to get started using Cloud SIEM fo
 
 import Iframe from 'react-iframe'; 
 
+## Cloud SIEM user interface
+
+### Access Cloud SIEM
+
+To access Cloud SIEM, click **Cloud SIEM** in the Sumo Logic navigation menu. 
+
+Cloud SIEM must be enabled by Sumo Logic before it is accessible to users in your organization. For more information, see [Onboarding Checklist for Cloud SIEM Administrators](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/).
+
+### Theme
+
+import Theme from '../reuse/dark-light-theme.md';
+
+<Theme/>
+
+### Heads Up Display
+
+The first screen you see when you access Cloud SIEM is the Heads Up Display, a single pane of information about your environment. In the center, you'll see a radar showing insights, surrounded by the signals and records used to generate the insights. On the left is summary information, and on the right is recent activity. Use this screen as the starting place for your investigations, focusing on insights as the most valuable place to start.
+
+For more information, see [Cloud SIEM Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/).
+
+### Cloud SIEM menus
+
+#### Top menu
+
+This menu appears at the top of the Cloud SIEM screen: <br/><img src={useBaseUrl('img/cse/cloud-siem-menu.png')} alt="Top menu bar" style={{border: '1px solid gray'}} width="800"/>
+
+Use the top menu to access:
+* <img src={useBaseUrl('img/cse/cloud-siem-insights-icon.png')} alt="Insights menu icon" style={{border: '1px solid gray'}} width="30"/> [**Insights**](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/). View Insights, clusters of events that require investigation. An insight is created when a high level of suspicious activity is detected for a single entity, such as a user, IP address, host, or domain.
+* <img src={useBaseUrl('img/cse/cloud-siem-signals-icon.png')} alt="Signals menu icon" style={{border: '1px solid gray'}} width="30"/> [**Signals**](/docs/cse/records-signals-entities-insights/view-records-signal/). View Signals, indicators for events of interest that fire when rule conditions are met.
+* <img src={useBaseUrl('img/cse/cloud-siem-entities-icon.png')} alt="Entities menu icon" style={{border: '1px solid gray'}} width="30"/> [**Entities**](/docs/cse/records-signals-entities-insights/view-manage-entities/). View Entities, unique actors encountered in incoming messages, such as a user, IP address, or host.
+* <img src={useBaseUrl('img/cse/cloud-siem-records-icon.png')} alt="Records menu icon" style={{border: '1px solid gray'}} width="30"/> [**Records**](/docs/cse/records-signals-entities-insights/view-records-signal/). View Records, collections of normalized data created from a message.
+* <img src={useBaseUrl('img/cse/cloud-siem-content-icon.png')} alt="Content menu icon" style={{border: '1px solid gray'}} width="30"/> [**Content**](/docs/cse/introduction-to-cloud-siem/#content-menu). Create Cloud SIEM content, such as rules.
+* <img src={useBaseUrl('img/cse/cloud-siem-configuration-menu-icon.png')} alt="Configuration menu icon" style={{border: '1px solid gray'}} width="30"/> [**Configuration**](/docs/cse/introduction-to-cloud-siem/#configuration-menu). Configure Cloud SIEM.
+* <img src={useBaseUrl('img/cse/cloud-siem-help-icon.png')} alt="Help menu icon" style={{border: '1px solid gray'}} width="30"/> **Help**. Access feature guides, documentation, release notes, and system status.
+* <img src={useBaseUrl('img/cse/cloud-siem-switch-apps-icon.png')} alt="Switch Apps menu icon" style={{border: '1px solid gray'}} width="30"/> **Switch Apps**. Access the Sumo Logic [Log Analytics Platform](/docs/get-started/sumo-logic-ui/) or [Cloud SOAR](/docs/cloud-soar/) (if enabled in your organization).
+* <img src={useBaseUrl('img/cse/cloud-siem-profile-icon.png')} alt="Profile menu icon" style={{border: '1px solid gray'}} width="30"/> **Profile**. View your Cloud SIEM username and time zone.
+
+#### Content menu
+
+The **Content** menu allows you to create elements to customize Cloud SIEM. To access the menu, click **Content** on the [top menu](#top-menu). <br/><img src={useBaseUrl('img/cse/cloud-siem-content-menu.png')} alt="Content menu" style={{border: '1px solid gray'}} width="300"/>
+
+Use the **Content** menu to access:
+* [**Rules**](/docs/cse/rules/). Manage rules, sets of logic that create signals based on information in incoming records.
+* [**Rule Tuning**](/docs/cse/rules/rule-tuning-expressions/). Manage rule tuning expressions, which are extensions to rules.
+* [**Threat Intelligence**](/docs/cse/administration/create-custom-threat-intel-source/). Manage sources of threat intelligence indicators, individual data points about threats that are gathered from external sources. 
+* [**Match List**](/docs/cse/match-lists-suppressed-lists/create-match-list/). Manage match lists, lists of important indicators and identifiers that you want to be addressed by rules.
+* [**File Analysis**](/docs/cse/rules/import-yara-rules/). Manage sources for YARA rules.
+* [**Custom Insights**](/docs/cse/records-signals-entities-insights/configure-custom-insight/). Manage custom Insights, methods to generate Insights on some basis other than Entity Activity Scores.
+* [**Network Blocks**](/docs/cse/administration/create-use-network-blocks/). Manage network blocks, groups of IP addresses that you can use in rules.
+* [**Suppressed Lists**](/docs/cse/match-lists-suppressed-lists/suppressed-lists/). Manage suppressed lists, lists of indicators that can suppress Signal generation.
+* [**MITRE ATT&CK Coverage**](/docs/cse/administration/mitre-coverage/). View the MITRE ATT&CK Threat Coverage Explorer, a screen that shows the MITRE ATT&CK adversary tactics, techniques, and procedures that are covered by rules in your system.
+
+#### Configuration menu
+
+The **Configuration** menu allows you to configure Cloud SIEM. To access this menu, click <img src={useBaseUrl('img/cse/cloud-siem-configuration-menu-icon.png')} alt="Configuration menu icon" style={{border: '1px solid gray'}} width="30"/> on the [top menu](#top-menu).
+
+<img src={useBaseUrl('img/cse/cloud-siem-configuration-menu.png')} alt="Configuration menu" style={{border: '1px solid gray'}} width="500"/>
+
+Use the **Configuration** menu to access:
+* **Incoming Data**
+   * [**Log Mappings**](/docs/cse/schema/create-structured-log-mapping/). Manage log mappings, maps that tell Cloud SIEM how to build a Record from the key-value pairs extracted from messages.
+* **Entities**
+   * [**Groups**](/docs/cse/records-signals-entities-insights/create-an-entity-group/). Manage groupings of Entities that can be used in rules. 
+   * [**Normalization**](/docs/cse/schema/username-and-hostname-normalization/). Manage normalizing usernames and hostnames in Records during the parsing and mapping process.  
+   * [**Custom Types**](/docs/cse/records-signals-entities-insights/create-custom-entity-type/). Manage custom types to more precisely categorize entities.
+   * [**Criticality**](/docs/cse/records-signals-entities-insights/entity-criticality/). Adjust the severity of Signals for specific Entities based on some risk factor or other consideration.
+* **Workflow**
+   * [**Detection**](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/). Set the Insight detection threshold. 
+   * [**Statuses**](/docs/cse/administration/manage-custom-insight-statuses/). Manage custom Insight statuses.
+   * [**Resolutions**](/docs/cse/administration/manage-custom-insight-resolutions/). Manage custom Insight resolutions.
+   * [**Tag Schemas**](/docs/cse/administration/create-a-custom-tag-schema/). Manage schemas for tags, metadata you can attach to Insights, Signals, Entities, and Rules. 
+* **Integrations**
+   * [**Sumo Logic**](/docs/cse/ingestion/sumo-logic-ingest-mapping/). Configure mapping of message fields to Record attributes. 
+   * [**Context Actions**](/docs/cse/administration/create-cse-context-actions/). Create actions that a Cloud SIEM analyst can use to query an external system for information about an Entity, IOC, or data encountered in a Record. 
+   * [**Actions**](/docs/cse/administration/create-cse-actions/). Create actions to issue a notification to another service when certain events occur in Cloud SIEM.
+   * [**Enrichment**](/docs/cse/integrations/enrichments-and-indicators/). Manage elements that enrich data in Cloud SIEM.
+   * [**Automation**](/docs/cse/automation/). Create smart actions that trigger automatically when certain events occur in Cloud SIEM.
+
 ## Getting your data into Cloud SIEM
 
 Cloud SIEM automatically normalizes, enriches, and correlates all your data across multiple data sources into actionable security Insights. As shown below, the process starts when logs from data sources enter a collector, then flow through an ingestion process that generates messages. The messages are parsed, mapped to normalized values, and enriched with additional data before becoming records.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-insight-generation-process-1.png')} alt="Records creation" width="800"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-insight-generation-process-1.png')} alt="Records creation" style={{border: '1px solid gray'}} width="800"/>
 
 When records enter Cloud SIEM, rules analyze Entities on the records to produce Signals. The Signals are correlated, and if an Entity's activity score is 12 or more in a two-week period, [an Insight is generated](/docs/cse/get-started-with-cloud-siem/insight-generation-process/) for that Entity.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-insight-generation-process-2.png')} alt="Insights creation" width="725"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-insight-generation-process-2.png')} alt="Insights creation" style={{border: '1px solid gray'}} width="725"/>
 
 :::tip
 For definitions of many of these terms, see the [Glossary](/docs/contributing/glossary).
@@ -42,7 +120,7 @@ Because Cloud SIEM designed for larger data volumes, most organizations need to 
 
 If you already use the Sumo Logic core platform, you’re probably familiar with the data pipeline:
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-data-pipeline.png')} alt="Data pipeline" width="700"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-data-pipeline.png')} alt="Data pipeline" style={{border: '1px solid gray'}} width="700"/>
 
 1. **Data collection**. To use Sumo Logic, first you must set up either an installed collector or a hosted collector and add a source. You can also set up source categories and other metadata, which helps you search and analyze the data you collect.
 2. **Search and analyze**. Once data is in Sumo Logic, you can write queries to search and correlate events in real-time from the analytics platform UI. Or, you might configure the collector to forward data to Cloud SIEM, and let it do all the correlation work for you.
@@ -56,7 +134,7 @@ Before you can start investigating threats, you need data. As a data analyst, th
 
 Your company collects and [ingests](/docs/cse/ingestion/) millions of log messages into Sumo Logic. Typically, you can use these messages right away in many Sumo Logic apps. To use them in Cloud SIEM, however, your admin must enable [data forwarding](/docs/manage/data-forwarding/). Your admin may also need to [create log mappings](/docs/cse/schema/create-structured-log-mapping/), [field extraction rules](/docs/manage/field-extractions/create-field-extraction-rule/), or complete other preprocessing steps to extract the right data.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-data-collection.png')} alt="Data collection" width="600"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-data-collection.png')} alt="Data collection" style={{border: '1px solid gray'}} width="600"/>
 
 As a data analyst, you should periodically examine the data that’s being ingested by Sumo Logic and Cloud SIEM. After you’ve been using Cloud SIEM for a while, you may want to fine-tune it to fit your organization’s needs. If you discover that you’re ingesting too much or too little data to do threat hunting, you can work with your admin to find that balance.
 
@@ -70,7 +148,7 @@ So, what’s the balance between too much and too little data? It depends. Work 
 
 Before Cloud SIEM can generate security Insights, your log messages must go through a little processing first. First, Cloud SIEM processes the messages into Records. Each Record contains the information from a message, which is parsed into key-value pairs, mapped to a Cloud SIEM schema, and enriched with other data.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-messages-to-records.png')} alt="Messages generate records" width="500"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-messages-to-records.png')} alt="Messages generate records" style={{border: '1px solid gray'}} width="500"/>
 
 Let’s follow a simple log message down this pipeline:
 ```
@@ -90,7 +168,7 @@ A Signal is an individual security event. The entity in a Signal is something li
 
 Cloud SIEM typically processes thousands or millions of records and boils them down into hundreds of Signals.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-records-signals-insights.png')} alt="Records, signals, and insights" width="400"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-records-signals-insights.png')} alt="Records, signals, and insights" style={{border: '1px solid gray'}} width="400"/>
 
 On the Cloud SIEM main page, you'll see a panel similar to this one. In this case, 199 thousand records have been ingested and processed into just 51 Signals. Some Signals could be false alarms, but many are worth investigating anyway. But, 51 is still way too many for the average SOC analyst to sift through every day. So, how do you know which Signals to pay attention to first?
 
@@ -104,7 +182,7 @@ Threat investigation is reactive while threat hunting is proactive. Typically, t
 
 Threat investigation is an iterative process, much like troubleshooting. In both threat investigation and troubleshooting, you first monitor your systems. Once an anomaly is detected, you can make a hypothesis about how it happened and diagnose the problem. As you dig deeper, you may revise this initial hypothesis and find more clues about why or how the attack or error happened. You can then take action to resolve the issue.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-incident-response-process.png')} alt="Incident response process" width="600"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-incident-response-process.png')} alt="Incident response process" style={{border: '1px solid gray'}} width="600"/>
 
 Cloud SIEM acts as your first line of defense, monitoring your system. Cloud SIEM’s threat intelligence and correlation algorithms organize related potential security events into Insights. When you get alerted to an Insight, it’s up to you to diagnose the problem and take action.
 
@@ -125,11 +203,11 @@ The [timeline](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui#signal
 
 The [entities within each Signal](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui#entities-tab) can help point to who, what, or where the event occurred. An entity might point to the IP address of a hacked device, the location of the adversary, the location of the database that leaked, the owner of a website or domain, or some other piece of the puzzle.
 
-Cloud SIEM can help with every step of the threat investigation process. Cloud SIEM automatically detects and monitors potential threats by analyzing millions of records and distilling them into a handful of Insights with a low false positive rate. You can choose Insights from the home page of Cloud SIEM in the [Insight Radar](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display#insight-radar), under the [Insight Activity pane](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display#insight-activity), or from the [Insights panel](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/).
+Cloud SIEM can help with every step of the threat investigation process. Cloud SIEM automatically detects and monitors potential threats by analyzing millions of records and distilling them into a handful of Insights with a low false positive rate. You can choose Insights from the home page of Cloud SIEM in the [Insight Radar](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display#8-insight-radar), under the [Insight Activity pane](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display#9-recent-activity), or from the [Insights panel](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/).
 
 Once you choose an Insight, you can dig through all the raw logs and Signals to conduct deep-dive investigations and even proactive threat hunts. You can organize your thoughts, make hypotheses, and take notes about your investigation in the comments of each Insight. This will share your ideas with your SOC teammates and help you keep track of your investigation.
 
-You can also take certain [actions](/docs/cse/administration/create-cse-actions) directly from the Insight. You can email teammates, create JIRA tickets, execute playbooks, and many other custom actions with the Actions button.
+You can also take certain [actions](/docs/cse/administration/create-cse-actions) directly from the Insight. You can email teammates, create Jira tickets, execute playbooks, and many other custom actions with the Actions button.
 
 Finally, you can [update the Insight](/docs/cse/administration/manage-custom-insight-resolutions#about-insight-resolutions). You can mark it as “in progress” or “closed”. When you close it, you can mark it as “resolved”, “false positive”, “duplicate”, or “no action”. Updating the status correctly will help the Cloud SIEM Insight engine produce more accurate Insights for your org in the future.
 
@@ -145,17 +223,17 @@ However, sometimes you may want to investigate deeper, to really understand what
 
 The Signals tab lists all the Signals created by rules that have been triggered in your system in the last 14 days, by default. Signals provide summaries of potential security threats. Remember, not all Signals are security incidents. After all, there are legitimate reasons why someone might be logged in to two different devices at the same time, or why there have been several failed password attempts on an account.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-signals.png')} alt="Signals" width="500"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-signals.png')} alt="Signals" style={{border: '1px solid gray'}} width="500"/>
 
 When you click into a Signal, you’ll have the option to see the full details of the record that triggered it. This includes information like the IP address, geolocation, threat level, and other information that can aid you in your investigation.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-signals-details.png')} alt="Signals details" width="500"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-signals-details.png')} alt="Signals details" style={{border: '1px solid gray'}} width="500"/>
 
 #### Entities
 
 The Entities tab lists all the entities that your rules have detected in the last 14 days, by default. Each entity has an Activity Score associated with it. The activity score is the sum of all the severity scores of all the unique signals associated with that entity. When an entity’s activity score reaches at least 12, an Insight is created. If you have several entities with relatively high activity scores, they might be a good starting point for a threat hunt.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-entities.png')} alt="Entities" width="500"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-entities.png')} alt="Entities" style={{border: '1px solid gray'}} width="500"/>
 
 ### Bring it back to Sumo Logic search
 
@@ -173,7 +251,7 @@ In addition to the context actions available in the Cloud SIEM UI, there are man
 
 In Cloud SIEM, there are several different actions you can take on each Insight. You can comment on the Insight, or close it or assign a status to it. When you close an Insight, Cloud SIEM uses the resolution information to reduce false positives and duplicates further. Assigning a status to the Insight lets you keep working on it, and keep track of your progress.
 
-You can also assign the Insight to yourself or to a colleague, and use the Actions button to alert colleagues, create JIRA tickets, send Slack messages, execute playbooks, or use other APIs. This Actions button is customizable, but can only be configured by admins. If you need a custom Action, ask your Admin or Sumo account rep for help creating one.
+You can also assign the Insight to yourself or to a colleague, and use the Actions button to alert colleagues, create Jira tickets, send Slack messages, execute playbooks, or use other APIs. This Actions button is customizable, but can only be configured by admins. If you need a custom Action, ask your Admin or Sumo account rep for help creating one.
 
 ### Using the MITRE ATT&CK matrix
 
@@ -193,7 +271,7 @@ Once you’ve completed a few investigations, you may want to add or modify the 
 
 [Rules](/docs/cse/rules/about-cse-rules/) are one of the most important pieces of Cloud SIEM’s threat detection engine. All the records that are ingested in Cloud SIEM are compared to every rule in Cloud SIEM. If there’s a match, an entity is extracted and a Signal is created. Those entities are tracked and may correlate with other Signals to create an Insight, which is where most threat investigations begin.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-records-to-signals.png')} alt="Records to signals" width="400"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-records-to-signals.png')} alt="Records to signals" style={{border: '1px solid gray'}} width="400"/>
 
 You don’t have to write rules from scratch. The Sumo Logic content team creates and maintains hundreds of [out-of-the box rules](/docs/cse/rules/cse-built-in-rules/), to get you started. These rules are updated frequently, often every few days. You can check out the most recent updates in the [Cloud SIEM release notes page](/release-notes-cse/).
 
@@ -225,7 +303,7 @@ So, if you want an Insight to be created with the default settings, you’d have
 
 You can have a large number of low-severity score Signals that won’t create an Insight. Or, you can have a small number of high-severity score Signals that will create an Insight. Keep this in mind when you’re configuring the severity scores of your custom rules.
 
-<img src={useBaseUrl('img/cse/intro-cloud-siem-signals-to-insights.png')} alt="Signals to insights" width="450"/>
+<img src={useBaseUrl('img/cse/intro-cloud-siem-signals-to-insights.png')} alt="Signals to insights" style={{border: '1px solid gray'}} width="450"/>
 
 But what if you want to be alerted right away when a certain rule is triggered?
 

@@ -81,6 +81,8 @@ The Deployment Guide has information on advanced configurations, best practices,
 
 ## Installing the Kubernetes app
 
+### Method A: Installing app via command line using helm chart
+
 Now that you have set up the collection for Kubernetes app, install the Sumo Logic App for Kubernetes to use the pre-configured Kubernetes dashboards that provide visibility into your Kubernetes environment.
 
 To install the app, do the following:
@@ -95,6 +97,9 @@ To install the app, do the following:
    :::
 6. (Optional) On the next configuration step, titled **Preview & Done**, click the blue **Explore Dashboards** button or **Open Dashboards in Library** to check out your Kubernetes dashboards. Here, you'll also be given the options to add another cluster, configure Kubernetes monitors, or manage your collectors.
 
+### Method B: Importing a JSON file
+
+If you want to just update the dashboards, you can [download](https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/kubernetes_application_plane_helm_chartv4.json) and import the json in your personal folder, see [Import and Export Content in the library](/docs/get-started/library/#import-and-export-content-in-the-library). This json is compatible with [helm chart v4.x](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main?tab=readme-ov-file#supported-versions).
 
 ## Installing Kubernetes Monitors
 
@@ -113,7 +118,7 @@ For details on the individual alerts, see [Kubernetes Alerts](/docs/observabilit
 5. Click **Import** to import monitors from the JSON above.
 
 :::note
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kubernetes folder under  Monitors  to configure them. See this document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kubernetes folder under  Monitors  to configure them. See this document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 :::
 
 ### Method B: Using a Terraform script
@@ -165,7 +170,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
    1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/` and run `terraform init`. This will initialize Terraform and will download the required components.
    1. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
    1. Run `terraform apply`.
-1. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. See Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+1. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. See Step 4 of [this document](/docs/alerts/monitors/create-monitor).
 
 :::note
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts).

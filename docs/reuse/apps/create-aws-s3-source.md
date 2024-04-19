@@ -117,7 +117,7 @@ You can use this [community-supported script](https://github.com/SumoLogic/sumol
 
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
 2. On the Collection page navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 10.C when creating your subscription.
-3. Complete steps 10.B through 10.E for [configuring SNS Notifications](#Configure-SNS-Notifications).
+3. Complete steps 10.B through 10.E for [configuring SNS Notifications](#configure-sns-notifications).
 
 
 #### Troubleshoot S3 Event Notifications
@@ -127,7 +127,7 @@ You can use this [community-supported script](https://github.com/SumoLogic/sumol
 Steps to troubleshoot:
 
 1. Refresh the Source’s page to view the latest status of the subscription in the SNS Subscription section by clicking **Cancel** then **Edit** on the Source in the Collection tab.
-2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10.E](#Configure-SNS-Notifications).
+2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10.E](#configure-sns-notifications).
 3. If you didn’t use CloudFormation, check that the SNS topic has a confirmed subscription to the URL in AWS console. A "Pending Confirmation" state likely means that you entered the wrong URL while creating the subscription.
 
 **In the Sumo Logic UI, under 'Log File Discovery', there is a green check with the message 'Sumo Logic has received an AWS validation request at this endpoint', but still high latencies.**

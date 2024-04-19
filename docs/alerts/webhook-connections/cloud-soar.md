@@ -25,3 +25,5 @@ To create a webhook connection from Sumo Logic to Cloud SOAR:
 1. The **Templates** dropdown shows a list of all incident templates, by name, configured in your Cloud SOAR environment.
 1. The default **Payload** synchronizes with the selected template and the associated `template_id` field is automatically defined in the default payload. A `template_id` is required in the payload in order to configure the connection. For details on variables you can use as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
 1. Click **Save**.
+
+For more detailed instructions, see [Configure a webhook for Cloud SOAR](/docs/cloud-soar/automation/#configure-a-webhook-for-cloud-soar).

@@ -42,6 +42,9 @@ Alert Grouping works for both Logs and Metrics Monitors.
 
 The input field has an auto-completion dropdown that allows you to select all the applicable fields from your query.
 
+## Set a Muting Schedule for an alert group
+
+Optionally, you can apply a Muting Schedule to your alert group. [Learn more](/docs/alerts/monitors/muting-schedules/#set-a-muting-schedule-for-an-alert-group).
 
 ## Use Cases
 
@@ -126,7 +129,6 @@ This alert can be useful if you suspect that one of your collectors has stopped 
    ```
 * **Group Condition**: `collector` <br/><img src={useBaseUrl('img/monitors/Suggested-Monitors.png')} alt="alert-grouping" style={{border: '1px solid gray'}} width="800" />
 
-
 ## FAQ
 
 #### How many fields can be selected under "One alert per [group]"?
@@ -157,3 +159,5 @@ For example, let's say that you configured a monitor to generate one alert per c
 #### What fields are not allowed for Alert Grouping?
 
 Fields with very high cardinality such as `_blockid`, `_raw`, `_messagetime`, `_receipttime`, and `_messageid` are not allowed for Alert Grouping.
+
+Fields from aggregate operators such as [`_count`](/docs/search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent/#count), [`_avg`](/docs/search/search-query-language/group-aggregate-operators/avg), and [`_sum`](/docs/search/search-query-language/group-aggregate-operators/sum) are not allowed.

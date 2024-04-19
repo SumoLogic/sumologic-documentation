@@ -14,7 +14,7 @@ Google Compute Engine is an Infrastructure as a Service (IaaS) component of Goog
 
 ## Log and metrics types
 
-The Sumo Logic app for Google Cloud Functions uses the following logs and metrics:
+The Sumo Logic app for Google Cloud Compute Engine uses the following logs and metrics:
 
 * [Google Cloud Audit Logs for Compute Engine](https://cloud.google.com/compute/docs/logging/audit-logging) - These logs provide information about Compute Engine API calls and operations.
 * [Compute Engine Platform Logs](https://cloud.google.com/logging/docs/api/platform-logs#compute_engine)
@@ -95,7 +95,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 ### Configure a Pub/Sub Topic for GCP
 
-You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on [Collect Logs for Google App Engine](/docs/integrations/google/app-engine#01Collect-Logs-for-the-Google-App-Engine-App).
+You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on [Collect Logs for Google App Engine](/docs/integrations/google/app-engine#collecting-logs-for-the-google-app-engine-app).
 
 1. Create a Pub/Sub Topic in GCP. Refer to the [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
 1. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
@@ -140,7 +140,7 @@ By default, GCP logs are stored within Cloud Logging, but you can configure Log 
 For metrics collection in Sumo Logic, use the [GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source).
 
 1. Setup the [Google Service Account](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
-1. [Setup a GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source select **Functions** as the service from dropdown to get the Google cloud function metrics.
+1. [Set up a GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source, select **Compute Engine** as the service from the dropdown to get the Google Cloud Compute Engine metrics.
 
 ## Installing the Google Compute Engine app
 

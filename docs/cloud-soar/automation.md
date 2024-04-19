@@ -152,30 +152,21 @@ Watch this micro lesson to learn how to create custom playbooks.
 
 ### Configure a new playbook
 
-To configure a new Playbook, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation**.
+1. Click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation**. A list of any previously created Playbooks will be displayed on the left side of the page. 
+1. At the top of the screen next to **Playbook**, click **+** to add a new playbook. <br/>A new configuration box will be displayed. 
+1. Name your new playbook, select the **Type** to associate with it, and click **Create**. 
+1. Once the new playbook has been saved, it will be displayed on the left side of the screen. To begin to configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen. 
+1. Opening the playbook will present a black screen with a **Start** node, and an **End** node. These nodes dictate the beginning and the end of the playbook's automation sequence. They can be dragged and dropped anywhere on the screen to allow for multiple integrations and conditional statements to be executed.<br/><img src={useBaseUrl('img/cloud-soar/image72.png')} alt="Empty playbook" width="800"/>
+1. To begin to add the first node within the new playbook, hover your mouse over the **Start** node and click the **+** button that appears. <br/><img src={useBaseUrl('img/cloud-soar/image73.png')} alt="New playbook" width="800"/> <br/>The Add Node dialog is displayed. <br/><img src={useBaseUrl('img/cloud-soar/add-node-dialog.png')} alt="Add node dialog" width="500"/>
+1. Click one of the following types to add a node to the playbook:
+    * [**Action**](#action): Automatically take specific actions such as enriching data or taking containment steps when an Incident Template is matched.
+    * [**Task**](#task): Assign a task to an Cloud SOAR user.
+    * [**Condition**](#condition): Use conditional statements to define what actions should be taken in response to previous input/output feeds.
+    * [**User Choice**](#user-choice): Pause automatic processing to allow for manual intervention.
+    * [**Filter**](#filter): Filter results from the preceding action. (You can only add a filter node after an action node.)
+    * **Playbook**: Call other playbooks in response to conditional statements or user choice actions.
 
-A list of any previously created Playbooks will be displayed on the left side of the page. Click **+** to add a new playbook.
-
-A new configuration box will be displayed. Name your new playbook, select the **Incident Type** to associate with it, and click save to continue. [Learn more](#custom-fields).
-
-Once the new playbook has been saved, it will be displayed on the left side of the screen. To begin to configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen.
-
-<img src={useBaseUrl('img/cloud-soar/image72.png')} alt="Empty playbook" width="800"/>
-
-Opening the playbook will present a black screen with a **Start** node, and an **End** node. These nodes dictate the beginning and the end of the playbook's automation sequence. They can be dragged and dropped anywhere on the screen to allow for multiple integrations and conditional statements to be executed.
-
-To begin to add the first node within the new playbook, click the **+** on the **Start** node.
-
-<img src={useBaseUrl('img/cloud-soar/image73.png')} alt="New playbook" width="800"/>
-
-The playbook configuration page is displayed. It gives you the ability to choose from the following options:
-* **Action**: Automatically take specific actions such as enriching data or taking containment steps when an Incident Template is matched.
-* **Task**: Assign a task to an Cloud SOAR user.
-* **Condition**: Use conditional statements to define what actions should be taken in response to previous input/output feeds.
-* **User Choice**: Pause automatic processing to allow for manual intervention.
-* **Playbook**: Call other R3 Playbooks in response to conditional statements and/or user choice actions.
-
-### Action
+#### Action
 
 Select **Action** from the node types.
 
@@ -212,7 +203,7 @@ The newly added node will now be visible in playbook configuration screen. To ad
 <img src={useBaseUrl('img/cloud-soar/image78.png')} alt="Node menu" width="600"/>
 
 
-### Task
+#### Task
 
 From the node selection menu, choose **Task**. A new configuration screen will be displayed. Title the new task and add any description if desired. The next dropdown lists are **Authorizer** and **Owner** fields. The **Authorizer** field is the user who is assigning the task, and the **Owner** field is the user who will be assigned the task to complete. When the task has been developed, click **Create**.
 
@@ -220,7 +211,7 @@ From the node selection menu, choose **Task**. A new configuration screen will b
 
 For playbook entities which support user-defined text input, such as email notifications, help desk ticket creation and task creation, variable placeholders may be added to the user defined text which will be replaced with incident variables at run time. These variable placeholders may be added by clicking on the <img src={useBaseUrl('img/cloud-soar/image80.png')} alt="Placeholder icon" width="25"/> icon. To add a variable placeholder, begin typing in the newly inserted placeholder box and Cloud SOAR will display a list of available options which match. For example, typing **incident**. will display a list of all the valid incident fields which may be added as variable placeholders.
 
-### Condition
+#### Condition
 
 From the node's menu, choose **Condition**. A new configuration screen will be displayed which will enable a user to define a conditional statement to be met before the next node type can be executed. Under **Condition 1,** click on **Select a value** to define the first condition.
 
@@ -265,7 +256,7 @@ This new node represents a decision tree in which both results, success or failu
 
 <img src={useBaseUrl('img/cloud-soar/image88.png')} alt="Nodes List" width="600"/>
 
-### User Choice
+#### User Choice
 
 From the node's menu, select **User Choice**. The User Choice option allows for the system to pose a question to the incident owner. Based off of the analysis the incident owner performs on the previous information
 gathered, they will be presented a choice to take an automated action such as blocking an IP at the firewall or Quarantining an end-user workstation from the network.
@@ -275,6 +266,19 @@ gathered, they will be presented a choice to take an automated action such as bl
 <img src={useBaseUrl('img/cloud-soar/image90.png')} alt="Response" width="800"/>
 
 Define the question to be answered and the authorizer of the user choice selection and click ****Create**** to finalize.
+
+#### Filter
+
+A filter node filters results from the preceding action based on the condition you write. You can only add a filter node after an action node. 
+
+For example:
+* The action node feeding into the filter has 10 results, but you want to filter out all but the best two results. You can write a condition in the filter to do the filtering. 
+* You want to pass specific output to another action node. Define the output in the filter, and define the corresponding input in the receiving action node. You could also use a filter like this to pass input to a nested playbook.
+
+1. Hover your mouse over an action node and click the **+** button. <br/><img src={useBaseUrl('img/cloud-soar/add-node-button.png')} alt="Add node button" style={{border:'1px solid gray'}} width="200"/> <br/>The available nodes are displayed. <br/><img src={useBaseUrl('img/cloud-soar/add-filter-node.png')} alt="Add filter node" style={{border:'1px solid gray'}} width="500"/>
+1. Click **Filter**. The filter node configuration dialog displays. <br/><img src={useBaseUrl('img/cloud-soar/configure-filter-node.png')} alt="Configure filter node conditions" style={{border:'1px solid gray'}} width="500"/>
+1. Configure the conditions you want to use for filtering. These are similar to the conditions you can configure on the [condition node](#condition).
+1. Click **Create**.
 
 ### Playbook execution
 
@@ -464,6 +468,50 @@ You can build basic integrations without having to provide custom YAML files.
    1. Click **Save**. The new integration is complete.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-completed-integration-2.png')} alt="Example integration" width="600"/>
 1. To test the new action, click on the action, then click **Test Action** in the dialog that displays.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-test-action.png')} alt="Example integration" width="400"/>
 
+### Configure a webhook for Cloud SOAR
+
+You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-soar/) to allow you to send an alert from a scheduled search to Sumo Logic Cloud SOAR.
+
+1. In Sumo Logic, go to **Manage Data > Monitoring > Connections**.
+1. Click **+** and choose **Cloud SOAR** as the connection type. The **Create Cloud SOAR Connection** dialog is displayed.<br/><img src={useBaseUrl('img/cloud-soar/CSOAR-connection1.png')} alt="New connection" style={{border: '1px solid black'}} width="600"/> 
+1. Enter a **Name** and give an optional **Description** to the connection.
+1. The **URL** field shows your [Sumo Logic API endpoint](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) followed by `/csoar/v3/incidents/`. For example, `https://api.us2.sumologic.com/api/csoar/v3/incidents/`
+1. In **Authorization Header**, enter your basic authentication access information for the header. For example, `Basic <base64 encode <accessId>:<accessKey>>`. For more information, see [Basic Access (Base64 encoded)](/docs/api/getting-started#basic-access-base64-encoded).
+1. Click **Save**. After save, the **Templates** dropdown shows a list of all incident templates by name configured in your Cloud SOAR environment. 
+1. Select a **Template**. 
+1. The default payload synchronizes with the selected template, and the **Alert Payload** field shows the associated `template_id` field automatically defined in the default payload. A `template_id` is required in the payload in order to configure the connection:
+
+    ```
+    {
+      "template_id": <Template ID>,
+     "fields": {
+        "incidentid": "Incident Id"
+      }
+    }
+    ```
+    
+    You can add additional variables. For example:
+
+    ```
+    {
+      "fields": {
+        "description": "string",
+        "additional_info": "string",
+        "starttime": "ISO-8601 datetime string", 
+        "incident_kind": <ID incident kind>,
+        "incident_category": <ID incident category>,
+        "status": <ID incident status>,
+        "restriction": <ID incident restriction>
+      }
+    }
+    ```
+    :::note
+    * For details on variables you can use as parameters within your JSON object, see [Configure Webhook Payload Variables](/docs/alerts/webhook-connections/set-up-webhook-connections/#configure-webhook-payload-variables). 
+    * For information on additional fields, please refer to the [Cloud SOAR APIs](https://help.sumologic.com/docs/api/cloud-soar/) documentation. 
+    * The preceding example shows an `ISO-8601 datetime string`. For information about how to configure it, see [parser documentation](https://dateutil.readthedocs.io/en/stable/parser.html#dateutil.parser.isoparse).
+    :::
+1. Click **Save**.
+
 ### Cloud or Bridge execution
 
 You can set integrations, and their related action execution, to be executed in the cloud or through the Bridge. Only certified integrations can be executed in the cloud, while custom integrations must be executed through the [Bridge](/docs/cloud-soar/cloud-soar-bridge/).
@@ -560,7 +608,7 @@ If your new resources are configured correctly, and Instant Messaging displays a
 
 ### Use the Slack app in User Choice
 
- If you have configured Slack as described in [Configure Slack for Cloud SOAR](#configure-slack-for-cloud-soar---delivery-2), you can set a playbook’s [User Choice](/docs/cloud-soar/automation/#user-choice) to be answered by Slack.
+ If you have configured Slack as described in [Configure Slack for Cloud SOAR](#configure-slack-for-cloud-soar), you can set a playbook’s [User Choice](/docs/cloud-soar/automation/#user-choice) to be answered by Slack.
 
 1. Run a playbook with a User Choice action. The following example shows a simple playbook with two available answers: **Close Incident** and **Investigate**. Notice that the option **Answer By Slack** is enabled.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-playbook.png')} alt="Playbook with user choices" width="600"/>
 <br/>In this case, the Authorizer set is just a user. If a group is chosen, a message will be sent directly from the CSOAR Bot to every available user. If a user is not selected, and the playbook is inside an incident, the message will be sent within the relevant channel in the Slack workspace, and all the users within it will be authorized to choose one of the User Choice available options.

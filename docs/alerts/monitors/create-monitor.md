@@ -43,7 +43,7 @@ To create a monitor from the [Metrics Explorer](/docs/metrics/metrics-queries/me
 
 1. Open the Metrics Explorer page and enter the metrics query to create a monitor from it.
 1. In the **Threshold** section, define the critical and warning thresholds for your metrics query.<br/> <img src={useBaseUrl('img/monitors/metrics-explorer-view.png')} alt="metrics-explorer-view" width="800"/>
-1. Click the **Create a Monitor** button located at the top right of the page.<br/> <img src={useBaseUrl('img/monitors/create-monitor.png')} alt="create-monitor" width="400"/>
+1. Click the kebab button at the end of the query field and select **Create a Monitor**.<br/> <img src={useBaseUrl('img/monitors/create-monitor.png')} alt="create-monitor" width="400"/>
 1. The Monitor Editor will open with prefilled data based on the threshold values set on the Metrics page.<br/> <img src={useBaseUrl('img/monitors/new-monitor-window.png')} alt="create-monitor" width="600"/>
 1. In the **Trigger Type** section of the monitor editor, enable the checkbox that corresponds to the threshold value that you want to use (either "Critical", "Warning", or both).
 1. The threshold values will be the same as defined in the Metrics page for both Critical and Warning thresholds.

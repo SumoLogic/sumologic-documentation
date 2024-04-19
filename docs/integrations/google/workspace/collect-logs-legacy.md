@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/send-data/Google_Workspace_Logo.svg')} alt="thumbnail icon" width="150"/>
 
 :::note legacy
-For the newer method of collecting logs from Google Workspace Alert Center, configure a [Google Alert Workspace Alert Center Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter.md).
+For the newer method of collecting logs from Google Workspace Alert Center, configure a [Google Alert Workspace Alert Center Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-alertcenter).
 :::
 
 This section explains how to collect logs from Google Workspace Alert Center and ingest them into Sumo Logic for use with the Google Workspace App predefined dashboards and searches.
@@ -119,7 +119,7 @@ To configure Google Workspace Alert Center collection in your GCP environment, d
   sh sumo_gsuite_alerts_collector_deploy.sh
   ```
 5. In the command prompt, enter `N` for the following question: `Allow unauthenticated invocations of new function`.
-6. Copy the **Client ID** displayed at the end of the script output. You will use the Client Name field when you [configure Google Workspace Alert Center to allow client API access](#configure-google-workspace-alert-center-to-allow-client-api-acce) in the following task.
+6. Copy the **Client ID** displayed at the end of the script output. You will use the Client Name field when you [configure Google Workspace Alert Center to allow client API access](#configure-google-workspace-alert-center-to-allow-client-api-access) in the following task.
 7. Go to the Cloud Datastore page of the project, with the Project ID you configured in the previous steps of this procedure, and create a database instance with the **Cloud Firestore in Datastore Mode** option. For more information, refer to the [Google Cloud Datastore documentation](https://cloud.google.com/datastore/docs/quickstart).<br/><img src={useBaseUrl('img/integrations/google/GSuite_AlertCenter_DatastoreMode.png')} alt="google workspace" />
 
 :::note
@@ -132,9 +132,9 @@ This section explains how to configure Google Workspace Alert Center to allow AP
 
 Follow the step 2 and step 3 under “Set up the Alert Center API” [docs](https://developers.google.com/admin-sdk/alertcenter/guides/prerequisites) to enable alert center API and grant domain-wide access to the application.
 
-To configure GCP Collection for Google Workspace Alert Center, use the **Client ID** for the service account copied in Step 6 [here](#google-cloud-platform-gcp-collection).
+To configure GCP Collection for Google Workspace Alert Center, use the **Client ID** for the service account copied in Step 6 [here](#using-gcp-collection).
 
-If you're using the [Configure Script-Based Collection for Google Workspace Alert Center](#configure-script-based-collection-for-google-workspace-alert-center) use the **Client ID** present in the JSON generated after adding the key in the service account.
+If you're using the [Configure Script-Based Collection for Google Workspace Alert Center](#using-script-based-collection) use the **Client ID** present in the JSON generated after adding the key in the service account.
 
 To configure Google Workspace Alert Center:
 1. Go to your G Suite domain's Admin console (see instructions on [signing in to your Admin console](https://support.google.com/a/answer/182076)), go to **Security > Access and data control > API Controls**.<br/><img src={useBaseUrl('img/integrations/google/gw.png')} alt="google workspace" width="200"/>
@@ -254,7 +254,7 @@ The _sumologic-_gsuite_alertcenter_ script is compatible with python 3.7 and pyt
 
 #### Prerequisites
 
-* This task assumes you have successfully added a **Hosted Collector** and **HTTP source**, as described in [Configure Collection for Google Workspace Alert Center](#Configure_Collection_for_Google_Workspace_Alert_Center).
+* This task assumes you have successfully added a **Hosted Collector** and **HTTP source**, as described in [Configure Collection for Google Workspace Alert Center](#configure-collection-for-google-workspace-alert-center).
 * The following tasks assume you are logged in to the user account with which you will install the collector. If you are not, use the following command to switch to that account:
 ```bash
 sudo su <user_name>

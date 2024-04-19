@@ -11,6 +11,10 @@ This page describes Sumo Logic's Data Tiers feature.
 For related information, see [Data Tiers FAQs](data-tiers-faqs.md).
 :::
 
+:::info
+Data tier is only applicable for logs and not for metrics and trace data.
+:::
+
 Modern enterprises collect and analyze vast amounts of data for a variety of use cases. Sumo Logic customers use ingested data to monitor operations, troubleshoot problems, to understand and better serve customers, to ensure security, and more. 
 
 Some use cases require “high touch” data that you need to monitor and analyze continuously or frequently. For example, you need to constantly monitor production applications, troubleshoot issues, and understand your security posture. These use cases require continuous access to data like production web server and application logs; error and warning logs; and compliance and security assurance data.
