@@ -93,27 +93,13 @@ If no results are returned even for longer time ranges, it means you do not have
 
 ## Installing the Infrequent Data Tier App
 
-Complete the following instructions to install the Sumo Logic Infrequent Data Tier App.
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
-:::note required step
-Before installing the Infrequent Data Tier App, you need to enable the [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index), which is currently in beta. Please reach out to your account executive or Sumo Logic support to get the Search Audit index enabled.
-:::
-
-import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
-
-<AppInstallNoDataSourceV1/>
+<AppInstallNoDataSourceV2/>
 
 ## Viewing Infrequent Data Tier dashboards
 
-**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-
-**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
-<img src={useBaseUrl('img/integrations/sumo-apps/IDT_Panel_Filter.png')} alt="test" />
-
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Data Scanned Overview
 

@@ -31,16 +31,13 @@ A message confirms that the feature is enabled.
 
 ## Installing the Data Volume app
 
-import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
-<AppInstallNoDataSourceV1/>
+<AppInstallNoDataSourceV2/>
 
-## Viewing Data Volume Dashboards
+## Viewing Data Volume dashboards
 
-For each panel in a dashboard, you can perform the following actions:
-* To display details for the panel time range, hover over the text in the top right corner.
-* To zoom into a panel for more information, click the magnifying glass icon in the header.
-
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Overview
 

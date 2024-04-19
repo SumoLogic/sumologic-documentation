@@ -18,14 +18,13 @@ The Sumo Logic Audit App uses Sumo Logic audit index events to present informati
 
 ## Installing the Sumo Logic Audit App
 
-import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
-<AppInstallNoDataSourceV1/>
+<AppInstallNoDataSourceV2/>
 
 ## Viewing Sumo Logic Audit dashboards
 
-This section describes each of the dashboards in the Audit app.
-
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Account Management Overview
 

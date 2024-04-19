@@ -36,19 +36,13 @@ Audit data is not backfilled to any time before Enterprise Audit was installed. 
 
 ## Installing Enterprise Audit Apps
 
-import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
-<AppInstallNoDataSourceV1/>
+<AppInstallNoDataSourceV2/>
 
 ## Viewing Enterprise Audit App Dashboards
 
-Each dashboard has a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-You can use filters to drill down and examine the data on a granular level.
-
-Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
-<img src={useBaseUrl('img/integrations/sumo-apps/EA_Dashboard_filter.png')} alt="test" />
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Enterprise Audit - Collector and Data Forwarding Management App
 

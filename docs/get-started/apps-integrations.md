@@ -188,31 +188,15 @@ The Log Analysis QuickStart app, created for new users of Sumo Logic, includes s
 
 Whether you're new to log management or plan to migrate from other products, the Log Analysis QuickStart app will bring you up to speed with the Sumo Logic search, visualization, and analytics capabilities.
 
-### Installation
+## Installing the Log Analysis QuickStart app
 
-To install the app:
+import AppInstallNoDataSourceV2 from '../reuse/apps/app-install-index-apps-v2.md';
 
-1. From **App Catalog**, search for and select the **Log Analysis QuickStart** app.
-1. Click **Add Integration**.<br/><img src={useBaseUrl('/img/get-started/library/log-quickstart-analysis.png')} alt="log-quickstart-analysis" style={{border:'1px solid gray'}} width="500" />
-1. Select from **Source Category** values. Choose an existing `_sourceCategory` present in your account used for your Sumo Logic data.
-    :::info
-    If you do not select the correct `_sourceCategory`, data will not be loaded into the app. If you do not know which `_sourceCategory` to select, ask your administrator who configured the Source.
-    :::
-1. Leave the app in the default folder location (**Personal** folder in your **Library**) or choose a different location. You can also click **New Folder** to add it to a new folder.
-1. Click **Next**. A dialog will confirm the app is installed successfully.
+<AppInstallNoDataSourceV2/>
 
-### Visits Dashboard
+## Viewing Log Analysis QuickStart dashboards
 
-The Visits Dashboard displays identifying information about external and internal visitors across you deployment, including email addresses visitors are using.
-
-<img src={useBaseUrl('/img/get-started/library/log-analysis-qs-visits.png')} alt="log_analysis_app_visits" style={{border:'1px solid gray'}} width="800" />
-
-* **Geo Location of All Users.** Uses a geolocation search to display the locations of IP addresses used by visitors.
-* **Frequent IP Addresses.** Shows a list of the most frequently used IP addresses by visitors.
-* **Logins Over Time.** Displays the successful and failed logins over the past three hours.
-* **Frequent Email Addresses.** Displays the most frequently used email addresses.
-* **Sessions.** Monitor errors across all sessions in your deployment.
-* **Observed IP Addresses by Type.** Displays IP addresses used by internal and external visitors.
+import ViewDashboards from '../reuse/apps/view-dashboards.md';
 
 ### Keywords and Metadata
 
