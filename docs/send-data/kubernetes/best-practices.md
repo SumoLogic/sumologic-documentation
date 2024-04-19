@@ -1103,5 +1103,9 @@ kube-prometheus-stack:
       tag: 2.7.0
 ```
 
+:::note
+
 Not all of the images are maintained by Sumo Logic and not all the vendors provides their images on Docker Hub.
 We suggest the most similar images but we do not guarantee that they will work exactly the same, but they should.
+
+:::
