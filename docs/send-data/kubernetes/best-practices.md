@@ -1003,7 +1003,7 @@ sumologic:
     addFipsSuffix: false
 ```
 
-## Use only Docker Hub registry
+## Use containers only from Docker Hub registry
 
 If for some reason you can use only DockerHub as docker registry, we are suggesting to use the following configuration:
 
