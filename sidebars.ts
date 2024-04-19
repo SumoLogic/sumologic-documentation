@@ -807,9 +807,25 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/index'},
           items: [
-            'manage/ingestion-volume/ingest-budgets/assign-collector-ingest-budget',
-            'manage/ingestion-volume/ingest-budgets/quickstart',
-          ]
+          {
+            type: 'category',
+            label: 'Daily Volume',
+            collapsible: true,
+            collapsed: true,
+            link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/daily-volume/index'},
+            items: [
+              'manage/ingestion-volume/ingest-budgets/daily-volume/assign-collector-ingest-budget',
+              'manage/ingestion-volume/ingest-budgets/daily-volume/quickstart',
+            ]
+          },
+          {
+            type: 'category',
+            label: 'Minute Volume',
+            collapsible: true,
+            collapsed: true,
+            link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/minute-volume/index'},
+          },
+        ]
         },
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
       ]
