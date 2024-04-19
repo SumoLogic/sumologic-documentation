@@ -21,7 +21,7 @@ When you set up a log mapping, you supply the following information:  
 
 ## Step 1: Choose mapping type and name the mapping
 
-1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**.
+1. In the top menu click **Configuration**, and then under **Incoming Data** select **Log Mappings**.
 1. Click **Create** in the upper right side of the **Log Mappings** page.<br/><img src={useBaseUrl('img/cse/log-mappings.png')} alt="Log mappings page" style={{border: '1px solid gray'}} width="800"/>
 1. Click the **Structured Mapping** tile on the **Create a Mapping** page. <br/><img src={useBaseUrl('img/cse/select-mapping-type.png')} alt="Structured mapping" style={{border: '1px solid gray'}} width="800"/>
 1. On the **New Mapping** page, enter a name for the mapping.<br/><img src={useBaseUrl('img/cse/new-mapping-page.png')} alt="New mapping page" style={{border: '1px solid gray'}} width="800"/>

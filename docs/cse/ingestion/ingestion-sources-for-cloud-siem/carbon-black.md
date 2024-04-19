@@ -75,6 +75,6 @@ In this step you configure Carbon Black Cloud to send log messages to an S3 buck
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM.
 
-1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**.
+1. In the top menu click **Configuration**, and then and under **Incoming Data** select **Log Mappings**.
 2. On the **Log Mappings** page search for Carbon Black Cloud and check under **Record Volume**.<br/> <img src={useBaseUrl('img/cse/carbon-black-records.png')} alt="carbon-black-records" style={{border: '1px solid gray'}} width="700" />
 3. For a more granular look at the incoming Records, you can also search Sumo Logic for Carbon Black Cloud Records.<br/> <img src={useBaseUrl('img/cse/carbon-black-search.png')} alt="carbon-black-search" style={{border: '1px solid gray'}} width="500" />

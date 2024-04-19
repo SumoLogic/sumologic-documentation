@@ -60,6 +60,6 @@ To configure Cisco ASA logging, follow the instructions in the [ASA Syslog Conf
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**.
+1. In the top menu click **Configuration**, and then and under **Incoming Data** select **Log Mappings**.
 1. On the **Log Mappings** page search for "Cisco ASA" and check under **Record Volume.** A list of mappers for Cisco ASA Syslog will appear and you can see if logs are coming in.<br/><img src={useBaseUrl('img/cse/cisco-asa-record-volume.png')} alt="Cisco ASA record volume" style={{border: '1px solid gray'}} width="500"/>
 1. For a more granular look at the incoming Records, you can also use search the Sumo Logic platform for Cisco ASA security records.<br/><img src={useBaseUrl('img/cse/cisco-asa-search.png')} alt="Cisco ASA search" style={{border: '1px solid gray'}} width="400"/>

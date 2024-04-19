@@ -53,6 +53,6 @@ In this step you configure Azure Activity Log to send log messages to the Sumo L
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**. 
+1. In the top menu click **Configuration**, and then under **Incoming Data** select **Log Mappings**. 
 1. On the **Log Mappings** page search for "Azure" and check under **Record Volume**.<br/><img src={useBaseUrl('img/cse/azure-activity-log-record-volume.png')} alt="Azure activity log record volume" style={{border: '1px solid gray'}} width="600"/>
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Azure security records. <br/><img src={useBaseUrl('img/cse/azure-activity-log-search.png')} alt="Azure activity log search" style={{border: '1px solid gray'}} width="400"/> 

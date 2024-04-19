@@ -60,6 +60,6 @@ In this step, you configure ZScaler NSS to send log messages to the Sumo Logic 
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**.
+1. In the top menu click **Configuration**, and then under **Incoming Data** select **Log Mappings**.
 1. On the **Log Mappings** page search for "Nanolog Streaming Service" and check under **Record Volume.** <br/><img src={useBaseUrl('img/cse/zscaler-nss-record-volume.png')} alt="Zscaler record volume" style={{border: '1px solid gray'}} width="600"/>   
 1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for ZScaler NSS security Records. <br/><img src={useBaseUrl('img/cse/zscaler-nss-search.png')} alt="Zscaler NSS search" style={{border: '1px solid gray'}} width="400"/>

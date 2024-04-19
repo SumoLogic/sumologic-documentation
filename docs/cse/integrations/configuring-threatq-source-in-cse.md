@@ -17,7 +17,7 @@ To do so, you simply configure a ThreatQ source in Cloud SIEM. You supply the in
 
 ## Configure a ThreatQ source
 
-1. Click **Content** in the top menu and select **Threat Intelligence**. 
+1. In the top menu click **Content** and then select **Threat Intelligence**. 
 1. On the **Threat Intelligence** page, click **Add Source**. <br/><img src={useBaseUrl('img/cse/threatq-add-source-icon.png')} alt="Add Source" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Add New Source** page, click **Create** in the ThreatQ tile. <br/><img src={useBaseUrl('img/cse/threatq-create-icon.png')} alt="ThreatQ create icon" style={{border: '1px solid gray'}} width="800"/>
 1. The **Add New Source** page updates. <br/><img src={useBaseUrl('img/cse/threatq-add-source.png')} alt="ThreatQ Add New Source" style={{border: '1px solid gray'}} width="800"/>

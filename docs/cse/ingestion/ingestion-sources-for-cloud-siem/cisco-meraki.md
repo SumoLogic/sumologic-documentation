@@ -60,6 +60,6 @@ Configure logging for Cisco Meraki as described in [Syslog Server Overview and
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**.
+1. In the top menu click **Configuration**, and then and under **Incoming Data** select **Log Mappings**.
 1. On the **Log Mappings** page search for "Cisco Meraki" and check under **Record Volume.** A list of mappers for Cisco Meraki will appear and you can see if logs are coming in.<br/><img src={useBaseUrl('img/cse/cisco-meraki-record-volume.png')} alt="Cisco Meraki record volume" style={{border: '1px solid gray'}} width="500"/>
 1. For a more granular look at the incoming Records, you can also use search the Sumo Logic platform for Cisco Meraki security records.<br/><img src={useBaseUrl('img/cse/cisco-meraki-search.png')} alt="Cisco Meraki search" style={{border: '1px solid gray'}} width="400"/>

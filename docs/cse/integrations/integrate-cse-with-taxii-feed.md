@@ -29,7 +29,7 @@ Cloud SIEM supports TAXII v1.1 and v1.2. 
 
 ## Configure the integration
 
-1. Click **Content** in the top menu and select **Threat Intelligence**.
+1. In the top menu click **Content** and then select **Threat Intelligence**.
 1. On the **Threat Intelligence** page, click **Add Source**. <br/><img src={useBaseUrl('img/cse/threat-intel-page.png')} alt="Add Source" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Add New Source** popup, click **TAXII Feed**. <br/><img src={useBaseUrl('img/cse/taxii-feed-option.png')} alt="TAXII Feed option" style={{border: '1px solid gray'}} width="600"/>
 1. The **Add Source** page appears. <br/><img src={useBaseUrl('img/cse/add-new-source.png')} alt="Add new source" style={{border: '1px solid gray'}} width="600"/>

@@ -70,6 +70,6 @@ It’s also possible to configure individual sources to forward to Cloud SIEM, a
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**.
+1. In the top menu click **Configuration**, and then under **Incoming Data** select **Log Mappings**.
 1. On the **Log Mappings** page search for "AWS VPC Flow" and check under **Record Volume**. 
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for AWS VPC Flow security records.

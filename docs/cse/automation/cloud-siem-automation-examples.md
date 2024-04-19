@@ -19,7 +19,7 @@ Following are examples that show you how to create Cloud SIEM automations using 
 The following example shows how to add an enrichment to an Insight using the “IP Reputation V3” action from VirusTotal.
 
 1. Edit the VirusTotal OIF resource:
-   1. Click **Configuration** in the top menu, and under **Integrations** select **Automation**.
+   1. In the top menu click **Configuration**, and then under **Integrations** select **Automation**.
    1. From the Automation screen, click **Manage Playbooks**. This opens the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui).
    1. Click **Integrations** in the navigation menu.
    1. Select **VirusTotal OIF**.
@@ -65,7 +65,7 @@ The following example shows how to add an enrichment to an Insight using the “
    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-an-enrichment-playbook.png')} alt="Simple playbook for Insight enrichment" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation to run the playbook:
    1. Return to the main Cloud SIEM screen.
-   1. Click **Configuration** in the top menu, and under **Integrations** select **Automation**.
+   1. In the top menu click **Configuration**, and then under **Integrations** select **Automation**.
    1. At the top of the automations screen, click **New Automation**.
    1. For **Playbook**, select the playbook you created in the previous steps.
    1. For **Expects attributes for**, select **Insight**.
@@ -92,7 +92,7 @@ Depending on the action, you may need to select a playbook input. The playbook i
 The following example shows how to configure a notification that sends an email upon completion of an action to perform a log search in Sumo Logic core platform.
 
 1. Edit the Sumo Logic resource:
-   1. Click **Configuration** in the top menu, and under **Integrations** select **Automation**.
+   1. In the top menu click **Configuration**, and then under **Integrations** select **Automation**.
    1. From the Automation screen, click **Manage Playbooks**. This opens the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui).
    1. Click **Integrations** in the navigation menu.
    1. Select **Sumo Logic**.
@@ -140,7 +140,7 @@ The following example shows how to configure a notification that sends an email 
    1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/configure-a-notification-playbook.png')} alt="Playbook for notification" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation to run the playbook:
    1. Return to the main Cloud SIEM screen.
-   1. Click **Configuration** in the top menu, and under **Integrations** select **Automation**.
+   1. In the top menu click **Configuration**, and then under **Integrations** select **Automation**.
    1. At the top of the automations screen, click **New Automation**.
    1. For **Playbook**, select the playbook you created in the previous steps.
    1. For **Expects attributes for**, select **Insight**.
@@ -169,7 +169,7 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. Log in.
     1. Go to your [account settings](https://www.ipqualityscore.com/user/settings) and  copy the **API Key**. You will use this key later.
 1. Create a new IP Quality Score integration:
-    1. Click **Configuration** in the top menu, and under **Integrations** select **Automation**.
+    1. In the top menu click **Configuration**, and then under **Integrations** select **Automation**.
     1. From the Automation screen, click **Manage Playbooks**. This opens the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui).
     1. Click **Integrations** in the navigation menu.
     1. Click the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cse/automation-examples-add-integration-button.png')} alt="Add integration button" style={{border: '1px solid gray'}} width="400"/>
@@ -245,7 +245,7 @@ The action uses [IP Quality Score](https://www.ipqualityscore.com/) to gather IP
     1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/custom-integration-insight-enrichment.png')} alt="Custom playbook for Insight enrichment" style={{border: '1px solid gray'}} width="700"/>
 1. Create an automation to run the playbook:
     1. Return to the main Cloud SIEM screen.
-    1. Click **Configuration** in the top menu, and under **Integrations** select **Automation**.
+    1. In the top menu click **Configuration**, and then under **Integrations** select **Automation**.
     1. At the top of the automations screen, click **New Automation**.
     1. For **Playbook**, select the playbook you created in the previous steps.
     1. For **Expects attributes for**, select **Insight**.
@@ -278,7 +278,7 @@ The resulting playbook should look like this:<br/><img src={useBaseUrl('img/cse/
 The following example pulls together elements of the [Simple example](#simple-example-configure-an-enrichment) and [Intermediate example](#intermediate-example-configure-a-notification) above. The resulting playbook runs an enrichment using VirusTotal, performs a Sumo Logic search, and sends an email notification.
 
 1. Edit the VirusTotal OIF resource:
-   1. Click **Configuration** in the top menu, and under **Integrations** select **Automation**.
+   1. In the top menu click **Configuration**, and then under **Integrations** select **Automation**.
    1. From the Automation screen, click **Manage Playbooks**. This opens the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui).
    1. Click **Integrations** in the navigation menu.
    1. Select **VirusTotal OIF**.
@@ -287,7 +287,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
    1. Enter the **API Key**. See the [VirusTotal documentation](https://support.virustotal.com/hc/en-us/articles/115002100149-API) to learn how to obtain the API key. If you do not already have a VirusTotal account, you need to create one to get an API key.
    1. Click **Save**.<br/><img src={useBaseUrl('img/cse/automation-examples-virus-total-edit-resource.png')} alt="Edit resource" style={{border: '1px solid gray'}} width="400"/>
 1. Edit the Sumo Logic resource:
-   1. Click **Configuration** in the top menu, and under **Integrations** select **Automation**.
+   1. In the top menu click **Configuration**, and then under **Integrations** select **Automation**.
    1. From the Automation screen, click **Manage Playbooks**. This opens the [Automation Service UI](/docs/platform-services/automation-service/about-automation-service/#automation-service-ui).
    1. Click **Integrations** in the navigation menu.
    1. Select **Sumo Logic**.
@@ -371,7 +371,7 @@ The following example pulls together elements of the [Simple example](#simple-ex
     1. Click the **Publish** button (clipboard icon) at the bottom of the playbook view. The playbook should look like this:<br/><img src={useBaseUrl('img/cse/automation-example-playbook-4.png')} alt="Complex playbook" style={{border: '1px solid gray'}} width="800"/> 
 1. Create an automation to run the playbook:
    1. Return to the main Cloud SIEM screen.
-   1. Click **Configuration** in the top menu, and under **Integrations** select **Automation**.
+   1. In the top menu click **Configuration**, and then under **Integrations** select **Automation**.
    1. For **Playbook**, select the playbook you created in the previous steps.
    1. For **Expects attributes for**, select **Insight**.
    1. For **Executes when**, select **Manually Done**.

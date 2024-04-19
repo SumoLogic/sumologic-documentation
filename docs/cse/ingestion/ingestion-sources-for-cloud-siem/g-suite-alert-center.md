@@ -48,6 +48,6 @@ In this step, you configure an HTTP Source to collect G Suite Alert Center log m
 ## Step 2: Verify ingestion
 
 1. In this step, you verify that your logs are successfully making it into Cloud SIEM. 
-1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**.
+1. In the top menu click **Configuration**, and then under **Incoming Data** select **Log Mappings**.
 1. On the Log Mappings page search for "G Suite Alert Center" and check under **Record Volume**. <br/><img src={useBaseUrl('img/cse/gsuite-record-volume.png')} alt="GSuite record volume" style={{border: '1px solid gray'}} width="600"/>
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for G Suite Alert Center security records. <br/><img src={useBaseUrl('img/cse/gsuite-search.png')} alt="GSuite search" style={{border: '1px solid gray'}} width="400"/> 

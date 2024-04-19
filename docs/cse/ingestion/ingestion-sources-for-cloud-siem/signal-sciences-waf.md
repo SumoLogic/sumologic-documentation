@@ -57,7 +57,7 @@ For more information on Generic Webhooks refer to the [Generic Webhooks](https:/
 
 In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the source category assigned to your source or collector you configured in [Step 1](#step-1-configurecollection). The mapping tells Cloud SIEM the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
-1. Click **Configuration** in the top menu, and under **Integrations** select **Sumo Logic**.  
+1. In the top menu click **Configuration**, and then under **Integrations** select **Sumo Logic**.  
 1. On the **Sumo Logic Ingest Mappings** page, click **Create**.
 1. On the **Create Sumo Logic Mapping** popup:
     * **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configure-collection). 
@@ -71,7 +71,7 @@ In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the so
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**.
+1. In the top menu click **Configuration**, and then under **Incoming Data** select **Log Mappings**.
 1. On the **Log Mappings** page search for "Signal Sciences" and check under **Record Volume**. <br/><img src={useBaseUrl('img/cse/signal-sciences-record-volume.png')} alt="Signal Sciences record volume" style={{border: '1px solid gray'}} width="600"/>
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Signal Sciences WAF security records.  
      

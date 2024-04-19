@@ -62,6 +62,6 @@ While the linked document only focuses on unexpected reboot logs, the process fo
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**.
+1. In the top menu click **Configuration**, and then under **Incoming Data** select **Log Mappings**.
 1. On the **Log Mappings** page search for "Kemp" and check under **Record Volume**, a list of mappers for Kemp will appear and you can see if logs are coming in. <br/><img src={useBaseUrl('img/cse/kemp-reocrd-volume.png')} alt="Kemp record volume" style={{border: '1px solid gray'}} width="700"/>
 1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for Kemp security records. <br/><img src={useBaseUrl('img/cse/kemp-search.png')} alt="Kemp search" style={{border: '1px solid gray'}} width="400"/>

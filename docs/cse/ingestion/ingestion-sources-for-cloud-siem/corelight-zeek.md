@@ -62,7 +62,7 @@ In this step you configure Zeek to send log messages to the Sumo Logic platform.
 
 In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the source category assigned to your source or collector you configured in [Step 1](#step-1-configure-collection). The mapping tells Cloud SIEM the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
-1. Click **Configuration** in the top menu, and under **Integrations** select **Sumo Logic** .
+1. In the top menu click **Configuration**, and then and under **Integrations** select **Sumo Logic** .
 1. On the **Sumo Logic Ingest Mappings** page, click **Create**.<br/><img src={useBaseUrl('img/cse/ingest-mappipngs.png')} alt="Sumo Logic ingest mappings" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Create Sumo Logic Mapping** popup:
     1. **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configure-collection). 
@@ -74,6 +74,6 @@ In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the so
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**.
+1. In the top menu click **Configuration**, and then under **Incoming Data** select **Log Mappings**.
 1. On the **Log Mappings** page search for "Zeek" and check under **Record Volume.** <br/><img src={useBaseUrl('img/cse/corelight-record-volume.png')} alt="Corelight record volume" style={{border: '1px solid gray'}} width="600"/>
 1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for Corelight Zeek security records.<br/><img src={useBaseUrl('img/cse/corelight-search.png')} alt="Corelight search" style={{border: '1px solid gray'}} width="400"/>

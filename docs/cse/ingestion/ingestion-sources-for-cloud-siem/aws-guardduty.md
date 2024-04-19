@@ -75,6 +75,6 @@ In this step, you deploy the events processor. This will create the AWS resource
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**.
+1. In the top menu click **Configuration**, and then and under **Incoming Data** select **Log Mappings**.
 1. On the **Log Mappings** page search for "GuardDuty" and check under **Record Volume**.<br/><img src={useBaseUrl('img/cse/guardduty-record-volume.png')} alt="GuardDuty record volume" style={{border: '1px solid gray'}} width="600"/>
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for GuardDuty security records..<br/><img src={useBaseUrl('img/cse/guardduty-search.png')} alt="GuardDuty search" style={{border: '1px solid gray'}} width="400"/>

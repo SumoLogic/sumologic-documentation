@@ -63,6 +63,6 @@ Follow the Nginx [instructions](https://docs.nginx.com/nginx/admin-guide/monito
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click **Configuration** in the top menu, and under **Incoming Data** select **Log Mappings**. 
+1. In the top menu click **Configuration**, and then under **Incoming Data** select **Log Mappings**. 
 1. On the **Log Mappings** page search for "Nginx" and check under **Record Volume**, a list of mappers for Nginx will appear and you can see if logs are coming in.<br/><img src={useBaseUrl('img/cse/nginx-record-volume.png')} alt="Nginix record volume" style={{border: '1px solid gray'}} width="600"/>
 1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for Nginx security records. <br/><img src={useBaseUrl('img/cse/nginx-search.png')} alt="Nginix search" style={{border: '1px solid gray'}} width="400"/> 

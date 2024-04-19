@@ -72,7 +72,7 @@ The notification sent by a Rule Action contains the name of the rule and the re
 
 ## Create an Action
 
-1. Click **Configuration** in the top menu, and under **Integrations** select **Actions**. 
+1. In the top menu click **Configuration**, and then under **Integrations** select **Actions**. 
 1. On the **Actions** page, click **Create**.
 1. The **Create Action** popup appears. <br/><img src={useBaseUrl('img/cse/create-action-empty.png')} alt="Create Action dialog" style={{border: '1px solid gray'}} width="500" />
 1. **Name**. Enter a name that communicates what the Action does.
