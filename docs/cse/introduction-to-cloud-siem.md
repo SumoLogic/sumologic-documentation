@@ -72,7 +72,7 @@ Use the **Content** menu to access:
 * [**Rules**](/docs/cse/rules/). Manage rules, sets of logic that create signals based on information in incoming records.
 * [**Rule Tuning**](/docs/cse/rules/rule-tuning-expressions/). Manage rule tuning expressions, which are extensions to rules.
 * [**Threat Intelligence**](/docs/cse/administration/create-custom-threat-intel-source/). Manage sources of threat intelligence indicators, individual data points about threats that are gathered from external sources. 
-* [**Match List**](/docs/cse/match-lists-suppressed-lists/create-match-list/). Manage match lists, lists of important indicators and identifiers that you want to be addressed by rules.
+* [**Match Lists**](/docs/cse/match-lists-suppressed-lists/create-match-list/). Manage match lists, lists of important indicators and identifiers that you want to be addressed by rules.
 * [**File Analysis**](/docs/cse/rules/import-yara-rules/). Manage sources for YARA rules.
 * [**Custom Insights**](/docs/cse/records-signals-entities-insights/configure-custom-insight/). Manage custom Insights, methods to generate Insights on some basis other than Entity Activity Scores.
 * [**Network Blocks**](/docs/cse/administration/create-use-network-blocks/). Manage network blocks, groups of IP addresses that you can use in rules.
@@ -110,9 +110,9 @@ Use the **Configuration** menu to access:
 Click **Cloud SIEM** in the main Sumo Logic menu to open the sidebar menu. <br/><img src={useBaseUrl('img/cse/cloud-siem-sidebar-menu.png')} alt="Cloud SIEM sidebar menu" style={{border: '1px solid gray'}} width="400"/>
 
 Use the sidebar menu to access:
-* **Search Cloud SIEM**
+* **Search Cloud SIEM**. Search for [Insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/), [Signals](/docs/cse/records-signals-entities-insights/view-records-signal/), [Entities](/docs/cse/records-signals-entities-insights/view-manage-entities/), and [Records](/docs/cse/records-signals-entities-insights/view-records-signal/). When you click in the search bar, you’re prompted to select one of those types. Once you select a type, you're presented with a list of fields to filter on. 
 * **Security Events**
-    * **SIEM Overview**
+    * [**SIEM Overview**](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/). View the Cloud SIEM Heads Up Display. 
     * [**Insights**](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/). View Insights, clusters of events that require investigation. An insight is created when a high level of suspicious activity is detected for a single entity, such as a user, IP address, host, or domain.
     * [**Signals**](/docs/cse/records-signals-entities-insights/view-records-signal/). View Signals, indicators for events of interest that fire when rule conditions are met.
     * [**Entities**](/docs/cse/records-signals-entities-insights/view-manage-entities/). View Entities, unique actors encountered in incoming messages, such as a user, IP address, or host.
@@ -130,52 +130,52 @@ Use the sidebar menu to access:
 
 #### Top menu
 
-This menu appears at the top of the screen:<br/><img src={useBaseUrl('img/cse/sumo-logic-top-menu-bar-new.png')} alt="Top menu bar" style={{border: '1px solid gray'}} width="400"/>
+This menu appears at the top of the screen:<br/><img src={useBaseUrl('img/get-started/sumo-logic-top-menu-bar-new.png')} alt="Top menu bar" style={{border: '1px solid gray'}} width="400"/>
 
 Use the top menu to access:
-* <img src={useBaseUrl('img/cse/go-to-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="60"/> [**Go To...**](#go-to-menu) Launch Sumo Logic features, including for Cloud SIEM.
-* <img src={useBaseUrl('img/cse/help-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="30"/> **Help**. Access links to documentation, support, community, release notes, and system status.
-* <img src={useBaseUrl('img/cse/app-catalog-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="30"/> **App Catalog**. Open the [App Catalog](/docs/integrations/).
-* <img src={useBaseUrl('img/cse/configuration-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="30"/> [**Configuration**](#configuration-menu-1). Configure Sumo Logic features, including for Cloud SIEM.
-* <img src={useBaseUrl('img/cse/administration-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="30"/> **Administration**. Access Sumo Logic administration settings, such as for for [account](/docs/manage/), [users and roles](/docs/manage/users-roles/), and [account security](/docs/manage/security/).
-* <img src={useBaseUrl('img/cse/profile-icon-new.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="30"/> **Profile**. View your notification and [preference](/docs/get-started/account-settings-preferences/) settings.
+* <img src={useBaseUrl('img/get-started/go-to-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="60"/> [**Go To...**](#go-to-menu) Launch Sumo Logic features, including for Cloud SIEM.
+* <img src={useBaseUrl('img/get-started/help-icon.png')} alt="Help icon" style={{border: '1px solid gray'}} width="30"/> **Help**. Access links to documentation, support, community, release notes, and system status.
+* <img src={useBaseUrl('img/get-started/app-catalog-icon.png')} alt="App Catalog icon" style={{border: '1px solid gray'}} width="30"/> [**App Catalog**](/docs/integrations/). Open the App Catalog.
+* <img src={useBaseUrl('img/get-started/configuration-icon.png')} alt="Configuration icon" style={{border: '1px solid gray'}} width="30"/> [**Configuration**](#configuration-menu-1). Configure Sumo Logic features, including for Cloud SIEM.
+* <img src={useBaseUrl('img/get-started/administration-icon.png')} alt="Administration icon" style={{border: '1px solid gray'}} width="30"/> **Administration**. Access Sumo Logic administration settings, such as for for [account](/docs/manage/), [users and roles](/docs/manage/users-roles/), and [account security](/docs/manage/security/).
+* <img src={useBaseUrl('img/get-started/profile-icon-new.png')} alt="Profile icon" style={{border: '1px solid gray'}} width="30"/> **Profile**. View your notification and [preference](/docs/get-started/account-settings-preferences/) settings.
 
 #### Go To... menu
 
-The **Go To...** menu allows you to launch Sumo Logic features, including for Cloud SIEM. To access this menu, click <img src={useBaseUrl('img/cse/go-to-icon.png')} alt="Configuration menu icon" style={{border: '1px solid gray'}} width="50"/> on the [top menu](#top-menu-1). <br/><img src={useBaseUrl('img/cse/go-to-menu.png')} alt="Go To menu bar" style={{border: '1px solid gray'}} width="500"/>
+The **Go To...** menu allows you to launch Sumo Logic features, including for Cloud SIEM. To access this menu, click <img src={useBaseUrl('img/get-started/go-to-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="50"/> on the [top menu](#top-menu-1). <br/><img src={useBaseUrl('img/get-started/go-to-menu.png')} alt="Go To menu bar" style={{border: '1px solid gray'}} width="500"/>
 
 Use the **Go To...** menu to access these Cloud SIEM features:
-* **Actions**.
-* **Context Actions**.
-* **Criticality**.
-* **Custom Insights**.
-* **Custom Types**.
-* **Enrichment**.
-* **Entities**.
-* **File Analysis**. 
-* **Ingest Mappings**.
-* **Insight Detection**.
-* **Insight Resolutions**.
-* **Insight Statuses**.
-* **Insights**.
-* **Log Mappings**.
-* **Match Lists**.
-* **MITRE ATT&CK Coverage**.
-* **Network Blocks**.
-* **Normalization**.
-* **Records**.
-* **Rule Tuning**.
-* **Rules**.
-* **Search Cloud SIEM**.
-* **SIEM Overview**.
-* **Signals**.
-* **Suppressed Lists**.
-* **Tag Schemas**.
-* **Threat Intelligence**.
+* [**Actions**](/docs/cse/administration/create-cse-actions/). Create actions to issue a notification to another service when certain events occur in Cloud SIEM.
+* [**Context Actions**](/docs/cse/administration/create-cse-context-actions/). Create actions that a Cloud SIEM analyst can use to query an external system for information about an Entity, IOC, or data encountered in a Record.
+* [**Criticality**](/docs/cse/records-signals-entities-insights/entity-criticality/). Adjust the severity of Signals for specific Entities based on some risk factor or other consideration.
+* [**Custom Insights**](/docs/cse/records-signals-entities-insights/configure-custom-insight/). Manage custom Insights, methods to generate Insights on some basis other than Entity Activity Scores.
+* [**Custom Types**](/docs/cse/records-signals-entities-insights/create-custom-entity-type/). Manage custom types to more precisely categorize entities.
+* [**Enrichment**](/docs/cse/integrations/enrichments-and-indicators/). Manage elements that enrich data in Cloud SIEM.
+* [**Entities**](/docs/cse/records-signals-entities-insights/view-manage-entities/). View Entities, unique actors encountered in incoming messages, such as a user, IP address, or host.
+* [**File Analysis**](/docs/cse/rules/import-yara-rules/). Manage sources for YARA rules. 
+* [**Ingest Mappings**](/docs/cse/ingestion/sumo-logic-ingest-mapping/#quick-reference-to-configuring-ingest-mappings). Manage the mapping for data ingestion from a data source to Cloud SIEM.
+* [**Insight Detection**](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/). Set the Insight detection threshold.
+* [**Insight Resolutions**](/docs/cse/administration/manage-custom-insight-resolutions/). Manage custom Insight resolutions.
+* [**Insight Statuses**](/docs/cse/administration/manage-custom-insight-statuses/). Manage custom Insight statuses.
+* [**Insights**](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/). View Insights, clusters of events that require investigation. An insight is created when a high level of suspicious activity is detected for a single entity, such as a user, IP address, host, or domain.
+* [**Log Mappings**](/docs/cse/schema/create-structured-log-mapping/). Manage log mappings, maps that tell Cloud SIEM how to build a Record from the key-value pairs extracted from messages.
+* [**Match Lists**](/docs/cse/match-lists-suppressed-lists/create-match-list/). Manage match lists, lists of important indicators and identifiers that you want to be addressed by rules.
+* [**MITRE ATT&CK Coverage**](/docs/cse/administration/mitre-coverage/). View the MITRE ATT&CK Threat Coverage Explorer, a screen that shows the MITRE ATT&CK adversary tactics, techniques, and procedures that are covered by rules in your system.
+* [**Network Blocks**](/docs/cse/administration/create-use-network-blocks/). Manage network blocks, groups of IP addresses that you can use in rules.
+* [**Normalization**](/docs/cse/schema/username-and-hostname-normalization/). Manage normalizing usernames and hostnames in Records during the parsing and mapping process. 
+* [**Records**](/docs/cse/records-signals-entities-insights/view-records-signal/). View Records, collections of normalized data created from a message.
+* [**Rule Tuning**](/docs/cse/rules/rule-tuning-expressions/). Manage rule tuning expressions, which are extensions to rules.
+* [**Rules**](/docs/cse/rules/). Manage rules, sets of logic that create signals based on information in incoming records.
+* **Search Cloud SIEM**. Search for [Insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/), [Signals](/docs/cse/records-signals-entities-insights/view-records-signal/), [Entities](/docs/cse/records-signals-entities-insights/view-manage-entities/), and [Records](/docs/cse/records-signals-entities-insights/view-records-signal/). When you click in the search bar, you’re prompted to select one of those types. Once you select a type, you're presented with a list of fields to filter on.
+* [**SIEM Overview**](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/). View the Cloud SIEM Heads Up Display.
+* [**Signals**](/docs/cse/records-signals-entities-insights/view-records-signal/). View Signals, indicators for events of interest that fire when rule conditions are met.
+* [**Suppressed Lists**](/docs/cse/match-lists-suppressed-lists/suppressed-lists/). Manage suppressed lists, lists of indicators that can suppress Signal generation.
+* [**Tag Schemas**](/docs/cse/administration/create-a-custom-tag-schema/). Manage schemas for tags, metadata you can attach to Insights, Signals, Entities, and Rules.
+* [**Threat Intelligence**](/docs/cse/administration/create-custom-threat-intel-source/). Manage sources of threat intelligence indicators, individual data points about threats that are gathered from external sources.
 
 #### Configuration menu
 
-The **Configuration** menu allows you to configure Sumo Logic features, including for Cloud SIEM. To access this menu, click <img src={useBaseUrl('img/cse/cloud-siem-configuration-menu-icon-new.png')} alt="Configuration menu icon" style={{border: '1px solid gray'}} width="30"/> on the [top menu](#top-menu-1). Scroll down the menu to see Cloud SIEM configuration options.<br/><img src={useBaseUrl('img/cse/cloud-siem-configuration-menu-new.png')} alt="Configuration menu" style={{border: '1px solid gray'}} width="150"/>
+The **Configuration** menu allows you to configure Sumo Logic features, including for Cloud SIEM. To access this menu, click <img src={useBaseUrl('img/get-started/configuration-icon.png')} alt="Configuration icon" style={{border: '1px solid gray'}} width="30"/> on the [top menu](#top-menu-1). Scroll down the menu to see Cloud SIEM configuration options.<br/><img src={useBaseUrl('img/cse/cloud-siem-configuration-menu-new.png')} alt="Configuration menu" style={{border: '1px solid gray'}} width="150"/>
 
 Use the **Configuration** menu to access: 
 
@@ -194,7 +194,7 @@ Use the **Configuration** menu to access:
 * **Cloud SIEM Workflow**
     * [**Insight Detection**](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/). Set the Insight detection threshold. 
     * [**Insight Statuses**](/docs/cse/administration/manage-custom-insight-statuses/). Manage custom Insight statuses.
-    * **Insight Resolutions**
+    * [**Insight Resolutions**](/docs/cse/administration/manage-custom-insight-resolutions/). Manage custom Insight resolutions.
     * [**Tag Schemas**](/docs/cse/administration/create-a-custom-tag-schema/). Manage schemas for tags, metadata you can attach to Insights, Signals, Entities, and Rules. 
 
 ## Getting your data into Cloud SIEM
