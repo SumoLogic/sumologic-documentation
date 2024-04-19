@@ -44,11 +44,10 @@ The first screen you see when you access Cloud SIEM is the Heads Up Display, a s
 
 For more information, see [Cloud SIEM Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/).
 
-<!-- Kanso
-## Cloud SIEM menus
--->
 
-### Cloud SIEM menus <!--for classic UI-->
+## Cloud SIEM menus
+
+### Cloud SIEM menus for classic UI
 
 #### Top menu
 
@@ -114,20 +113,20 @@ Use the sidebar menu to access:
 * **Search Cloud SIEM**
 * **Security Events**
     * **SIEM Overview**
-    * **Insights**
-    * **Signals**
-    * **Entities**
-    * **Records**
+    * [**Insights**](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/). View Insights, clusters of events that require investigation. An insight is created when a high level of suspicious activity is detected for a single entity, such as a user, IP address, host, or domain.
+    * [**Signals**](/docs/cse/records-signals-entities-insights/view-records-signal/). View Signals, indicators for events of interest that fire when rule conditions are met.
+    * [**Entities**](/docs/cse/records-signals-entities-insights/view-manage-entities/). View Entities, unique actors encountered in incoming messages, such as a user, IP address, or host.
+    * [**Records**](/docs/cse/records-signals-entities-insights/view-records-signal/). View Records, collections of normalized data created from a message.
 * **Security Detection**
-    * **Rules**
-    * **Rule Tuning**
-    * **Threat Intelligence**
-    * **Match List**
-    * **File Analysis**
-    * **Custom Insights**
-    * **Network Blocks**
-    * **Suppressed Lists**
-    * **MITRE ATT&CK Coverage**
+    * [**Rules**](/docs/cse/rules/). Manage rules, sets of logic that create signals based on information in incoming records.
+    * [**Rule Tuning**](/docs/cse/rules/rule-tuning-expressions/). Manage rule tuning expressions, which are extensions to rules.
+    * [**Threat Intelligence**](/docs/cse/administration/create-custom-threat-intel-source/). Manage sources of threat intelligence indicators, individual data points about threats that are gathered from external sources.
+    * [**Match List**](/docs/cse/match-lists-suppressed-lists/create-match-list/). Manage match lists, lists of important indicators and identifiers that you want to be addressed by rules.
+    * [**File Analysis**](/docs/cse/rules/import-yara-rules/). Manage sources for YARA rules.
+    * [**Custom Insights**](/docs/cse/records-signals-entities-insights/configure-custom-insight/). Manage custom Insights, methods to generate Insights on some basis other than Entity Activity Scores.
+    * [**Network Blocks**](/docs/cse/administration/create-use-network-blocks/). Manage network blocks, groups of IP addresses that you can use in rules
+    * [**Suppressed Lists**](/docs/cse/match-lists-suppressed-lists/suppressed-lists/). Manage suppressed lists, lists of indicators that can suppress Signal generation.
+    * [**MITRE ATT&CK Coverage**](/docs/cse/administration/mitre-coverage/). View the MITRE ATT&CK Threat Coverage Explorer, a screen that shows the MITRE ATT&CK adversary tactics, techniques, and procedures that are covered by rules in your system.
 
 #### Top menu
 
