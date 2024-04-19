@@ -26,18 +26,13 @@ Under **My Profile**, the following information is displayed:
 * **Organization ID**. Your Sumo Logic org ID.
 * **Roles** - The Sumo Logic [roles](/docs/manage/users-roles/roles/add-remove-users-role/) assigned to your user account.
 
-### Change email address
+### Change Email address
 
 As a Sumo Logic user, you can change your own email address as necessary.
 
-1. In the Sumo Logic navigation menu, click your name.
-1. Select **Preferences**.
-1. Under **My Profile**, click **Change Email**.
-1. In the **Change Email Address** dialog, your current email address is displayed.
-1. Enter **Your New Email**.
-1. Enter the **Password** for your Sumo Logic Account.
-1. Click **Submit**.
-1. The **Email Address Changed** dialog appears. An email with an activation link is sent to your new email address. Click the link in the email within seven days to complete your email address change, or this link will expire.
+1. In the Sumo Logic left nav, click on your name, then select **Preferences**.
+1. Under the **My Profile** section, click **Change Email**.<br/>![Change email](/img/get-started/change-email.png)
+1. In the **Change Email Address** dialog, enter your new email address, and then follow the verification steps.
 
 ### Change password
 
@@ -63,18 +58,18 @@ Forgot your password? You can reset it from the login screen.
 
 You can enable 2-Step Verification and view backup codes here. This section displays only if an administrator has made 2-Step Verification required for your organization. See [2-Step Verification for Administrators](/docs/manage/security/2-step-verification-admins/).
 
-To set up 2-Step Verification, you will need to install a Time-based One-Time Password (TOTP) application which will automatically generate an authentication code that changes after a certain period of time.
+To set up 2-Step Verification, you will need to install a Time-Based One-Time Password (TOTP) application, which will automatically generate an authentication code that changes after a certain period of time.
 
 1. Download one of the following apps:
-    - For Android, iOS and Blackberry: [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)
-    - For Android and iOS: [Duo Mobile](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile)
-    - For Windows Phone: [Authenticator](https://www.microsoft.com/en-us/store/p/authenticator/9wzdncrfj3rj)
+    - For Android, iOS and Blackberry. [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en).
+    - For Android and iOS. [Duo Mobile](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile).
+    - For Windows Phone. [Authenticator](https://www.microsoft.com/en-us/store/p/authenticator/9wzdncrfj3rj).
 1. Scan the QR code displayed on your screen with your TOTP App.
 1. After the TOTP App is configured, enter two consecutive authentication codes.
 
 ## My Access Keys
 
-Users with a role that grants the **Create Access Keys** capability can create and manage their own Access Keys. For more information, see [Access Keys](/docs/manage/security/access-keys).
+In Sumo Logic, you'll need an access key to register new Collectors and use Sumo Logic APIs. If you have a role that grants the **Create Access Keys** capability, you can create and manage your own Access Keys. For more information, see [Access Keys](/docs/manage/security/access-keys).
 
 ## My Preferences
 
@@ -102,13 +97,13 @@ Select from the following international date format options:
 If you change the date format option, it will affect your saved searches in the Library. Any saved searches that use absolute dates for their time range must be modified to use the new date format. Scheduled searches will continue to run properly. You would need to modify the date format only if you rescheduled the search.
 :::
 
-### Web Session Timeout
+### Web session Timeout
 
 Choose an option to set the length of time before your Sumo Logic session times out. Options include 5 minutes to 7 days. For information on web session timeouts and Multi-account Access, see [Multi-account Access].
 
 ### Receive email notifications whenever content is shared with you
 
-Receive an email when [content is shared with you in Sumo Logic](/docs/manage/content-sharing/), such as log searches, metric searches, dashboards, and folders. 
+Receive an email when [content is shared with you in Sumo Logic](/docs/manage/content-sharing/), such as log searches, metric searches, dashboards, and folders.
 
 ### Enable keyboard shortcuts
 
@@ -155,4 +150,3 @@ If you have changed any settings, click **Save**.
 ### Alert Notifications and Alerts List
 
 See [Notification Preferences](/docs/alerts/monitors/alert-response/#notification-preferences).
-
