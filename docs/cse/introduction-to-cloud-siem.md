@@ -153,7 +153,7 @@ Use the **Go To...** menu to access these Cloud SIEM features:
 * [**Enrichment**](/docs/cse/integrations/enrichments-and-indicators/). Manage elements that enrich data in Cloud SIEM.
 * [**Entities**](/docs/cse/records-signals-entities-insights/view-manage-entities/). View Entities, unique actors encountered in incoming messages, such as a user, IP address, or host.
 * [**File Analysis**](/docs/cse/rules/import-yara-rules/). Manage sources for YARA rules. 
-* [**Ingest Mappings**](/docs/cse/ingestion/sumo-logic-ingest-mapping/#quick-reference-to-configuring-ingest-mappings). Manage the mapping for data ingestion from a data source to Cloud SIEM.
+* [**Ingest Mappings**](/docs/cse/ingestion/sumo-logic-ingest-mapping/). Manage the mapping for data ingestion from a data source to Cloud SIEM.
 * [**Insight Detection**](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/). Set the Insight detection threshold.
 * [**Insight Resolutions**](/docs/cse/administration/manage-custom-insight-resolutions/). Manage custom Insight resolutions.
 * [**Insight Statuses**](/docs/cse/administration/manage-custom-insight-statuses/). Manage custom Insight statuses.
@@ -180,7 +180,7 @@ The **Configuration** menu allows you to configure Sumo Logic features, includin
 Use the **Configuration** menu to access: 
 
 * **Cloud SIEM Integrations**
-    * [**Ingest Mappings**](/docs/cse/ingestion/sumo-logic-ingest-mapping/#quick-reference-to-configuring-ingest-mappings). Manage the mapping for data ingestion from a data source to Cloud SIEM.
+    * [**Ingest Mappings**](/docs/cse/ingestion/sumo-logic-ingest-mapping/). Manage the mapping for data ingestion from a data source to Cloud SIEM.
     * [**Log Mappings**](/docs/cse/schema/create-structured-log-mapping/). Manage log mappings, maps that tell Cloud SIEM how to build a Record from the key-value pairs extracted from messages.
     * [**Context Actions**](/docs/cse/administration/create-cse-context-actions/). Create actions that a Cloud SIEM analyst can use to query an external system for information about an Entity, IOC, or data encountered in a Record. 
     * [**Actions**](/docs/cse/administration/create-cse-actions/). Create actions to issue a notification to another service when certain events occur in Cloud SIEM.
