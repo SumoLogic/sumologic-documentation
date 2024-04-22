@@ -21,9 +21,9 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 
 * There is a limit of 100 ingest budgets.
 * Bytes are calculated in base 2 (binary format, 1024 based).
-* Ingest Budgets do not affect [throttling](../log-ingestion.md). 
+* Ingest Budgets do not affect [throttling](/docs/manage/ingestion-volume/log-ingestion). 
 * [Traces](/docs/apm/traces) are not calculated and are not supported.
-* Ingest budgets require the **Manage Ingest Budgets** [role capability](../../users-roles/roles/role-capabilities.md).
+* Ingest budgets require the **Manage Ingest Budgets** [role capability](/docs/manage/users-roles/roles/role-capabilities).
 * Fields assigned with Field Extraction Rules are not supported in the **scope** of an Ingest Budget.
 * **`_budget`** is a reserved keyword used by legacy ingest budgets, do not use this reserved field when creating a new V2 ingest budget.
 * Data is not automatically recovered or ingested later once the capacity tracking is reset.
@@ -243,7 +243,7 @@ Next reset: 2020-09-19T00:00:00.000 -0700
 
 #### Audit Index queries
 
-You can schedule the following searches to get alerts when needed, see [scheduled searches](../../../alerts/scheduled-searches/schedule-search.md) for details.
+You can schedule the following searches to get alerts when needed, see [scheduled searches](/docs/manage/alerts/scheduled-searches/schedule-search) for details.
 
 Search for when approaching usage capacity (≥ 85%):
 
