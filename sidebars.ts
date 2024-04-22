@@ -824,6 +824,9 @@ module.exports = {
             collapsible: true,
             collapsed: true,
             link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/minute-volume/index'},
+            items: [
+              'manage/ingestion-volume/ingest-budgets/minute-volume/index',
+            ]
           },
         ]
         },

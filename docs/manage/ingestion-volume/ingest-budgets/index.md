@@ -3,6 +3,7 @@ slug: /manage/ingestion-volume/ingest-budgets
 title: Ingest Budgets
 description: Control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors or safe guard against throttling with minute granularity.
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This section describes how to set up Ingest budgets to control your ingestion better for daily volume or safe guard against throttling with minute granularity.
 
