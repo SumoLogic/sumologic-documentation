@@ -79,7 +79,8 @@
   "/Start-Here/09Customize-Your-Sumo-Logic-Experience/Preferences-Page": "/docs/get-started/account-settings-preferences",
   "/Start-Here/02Getting-Started/Glossary": "/docs/contributing/glossary",
   "/01Start-Here/02Getting-Started/Glossary": "/docs/contributing/glossary",
-  "/docs/contributing/create-document": "/docs/contributing/create-doc",
+  "/docs/contributing/create-document": "/docs/contributing/create-edit-doc",
+  "/docs/contributing/edit-doc": "/docs/contributing/create-edit-doc",
   "/docs/contributing/markdown-cheat-sheet": "/docs/contributing/style-guide",
   "/03Send-Data": "/docs/send-data",
   "/03Send-Data/01-Design-Your-Deployment": "/docs/send-data/choose-collector-source",
@@ -3883,4 +3884,4 @@
   "/docs/manage/partitions-data-tiers/searching-data-tiers": "/docs/manage/partitions/data-tiers/searching-data-tiers",
   "/docs/manage/partitions-data-tiers/flex-pricing/estimate-and-actual-scan-data": "/docs/manage/partitions/flex/estimate-scan-data",
   "/docs/manage/partitions/flex/estimate-and-actual-scan-data": "/docs/manage/partitions/flex/estimate-scan-data"
-} 
+}

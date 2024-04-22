@@ -17,7 +17,7 @@ The Azure Audit app uses the following log:
 
 * [Azure Activity Log](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log?tabs=powershell)
 
-## Collecting Logs for the Azure Audit app from Event Hub
+## Collecting logs for the Azure Audit app from Event Hub
 
 In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub. 
 
@@ -43,13 +43,15 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
 
 Now that you have set up collection from the Azure Activity Log (previously known as Azure Audit logs), install the Azure Audit app to use the preconfigured searches and dashboards that provide insight into your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Azure Audit Dashboards
+## Viewing Azure Audit dashboards
 
-The predefined Dashboards on Azure Audit allow you to instantly monitor the activities and events. All the dashboards in the app, except the Azure Audit - Active Directory dashboard, support logs from both Event Hub and Insight API.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

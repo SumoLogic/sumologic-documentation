@@ -19,11 +19,11 @@ With multi-account access, user sign-in is governed by the strictest setting acr
 
 To implement 2-Step Verification: 
 
-1. By default, 2-Step Verification is optional, but an administrator can make it required for an organization.  See [2-Step Verification for Administrators](2-step-verification-admins.md).
+1. By default, 2-Step Verification is optional, but an administrator can make it required for an organization. See [2-Step Verification for Administrators](2-step-verification-admins.md).
 1. Users configure 2-Step Verification for their individual accounts. See [2-Step Verification for Users](2-step-verification-users.md).
 
 The following Time-based One-Time Password (TOTP) apps have been tested to work with 2-Step Verification (any [RFC 6238](https://tools.ietf.org/html/rfc6238) compatible app should work):
 
-* For Android, IOS and Blackberry: [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)
-* For Android and IOS: [Duo Mobile](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile)
-* For Windows Phone: [Authenticator](https://www.microsoft.com/en-us/store/p/authenticator/9wzdncrfj3rj)
+* For Android, IOS and Blackberry. [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en).
+* For Android and IOS. [Duo Mobile](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile).
+* For Windows Phone. [Authenticator](https://www.microsoft.com/en-us/store/p/authenticator/9wzdncrfj3rj).

@@ -63,7 +63,7 @@ _sourceCategory="security/flowlogs"
 | sort _count
 ```
 
-## Collecting Logs for the Azure Network Watcher app
+## Collecting logs for the Azure Network Watcher app
 
 This document provides instructions for configuring the collection of NSG Flow Logs for the Azure Network Watcher App.
 
@@ -131,13 +131,15 @@ If logs do not start flowing into Sumo Logic after you perform the configuration
 
 Now that you have configured Azure Network Watcher, install the Sumo Logic app for Azure Network Watcher to take advantage of the preconfigured searches and dashboards to analyze your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Azure Network Watcher dashboards
 
-All dashboards include filters that you can use in Interactive Mode for further analysis of your data.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

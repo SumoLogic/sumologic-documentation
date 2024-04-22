@@ -8,6 +8,42 @@ Cloud SOAR fully automates triage, investigation, and remediation of threats for
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+## Cloud SOAR user interface
+
+### Access Cloud SOAR
+
+To access Cloud SOAR, click **Cloud SOAR** in the Sumo Logic navigation menu. 
+
+Cloud SOAR must be enabled by Sumo Logic before it is accessible to users in your organization. If you would like to use Cloud SOAR in your organization, contact your Sumo Logic account representative.
+
+### Theme
+
+import Theme from '../reuse/dark-light-theme.md';
+
+<Theme/>
+
+### Cloud SOAR menus
+
+#### Top menu
+
+This menu appears at the top of the Cloud SOAR screen: <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-top-menu.png')} alt="Top menu bar" style={{border: '1px solid gray'}} width="600"/>
+
+Use the top menu to access:
+* [**Incidents**](/docs/cloud-soar/main-menu/#incidents). Manage security incidents that require investigation and action. 
+* [**Entities**](/docs/cloud-soar/main-menu/#entities). Manage entities identified across incidents. 
+* <img src={useBaseUrl('img/cloud-soar/cloud-soar-support-icon.png')} alt="Support menu icon" style={{border: '1px solid gray'}} width="25"/> **Support**. Access help, including documentation and support contact information.
+* <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> [**Settings**](#settings-menu). Configure Cloud SOAR settings.
+
+#### Settings menu
+
+The **Settings** menu allows you to configure Cloud SOAR settings. To access the menu, click <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> on the [top menu](#top-menu). <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-menu.png')} alt="Settings menu" style={{border: '1px solid gray'}} width="150"/>
+
+Use the **Settings** menu to access:
+* [**Automation**](/docs/cloud-soar/automation/). Configure Cloud SOAR's automation and orchestration features.
+* [**Settings**](/docs/cloud-soar/global-functions-menu/#general-settings). Configure Cloud SOAR settings.
+* [**Report**](/docs/cloud-soar/global-functions-menu/#report). Configure reports. 
+
+
 ## Why Cloud SOAR?
 
 Cloud SOAR is a modern security operations technology platform that empowers MSSPs, SOCs, and security teams by providing collaborative and automated real-time incident management and threat response. Make quick and insightful decisions during security response with workflow automation.
@@ -27,7 +63,7 @@ Cloud SOAR is a modern security operations technology platform that empowers MSS
 * **Close the skill gap**
 <br/>Automated workflow processes help analysts function at an optimal level and reduce the skills gap that exists from the lack of qualified cybersecurity professionals.
 * **Comprehensive security portfolio**
-<br/>Cloud SOAR comprises both the Automation Service, which allows our Cloud SIEM to leverage the power of automated playbooks, and the full Cloud SOAR. Cloud SOAR combines automation with case management, among many other capabilities aimed at helping your organization modernize security operations.
+<br/>Cloud SOAR comprises both the Automation Service, which allows Sumo Logic to leverage the power of automated playbooks, and the full Cloud SOAR. Cloud SOAR combines automation with case management, among many other capabilities aimed at helping your organization modernize security operations.
 
 ## Cloud SOAR highlights
 

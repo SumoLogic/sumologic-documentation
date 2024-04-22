@@ -21,14 +21,13 @@ There are two ways you can define a Custom Insight. You can specify that the Ins
 * One or more selected rules fire a Signal.
 * Signals whose name matches a specified wildcard expression are fired. 
 
-Which method should you use? The difference is whether you’re going to create an Insight based on the name of the rule that fired the Signal, or based on the name of the Signal that was fired. Typically, Signals that a rule generates have the same name as the rule. That is not the case with Cloud SIEM’s normalized rules. That’s because normalized rules, for example [Normalized Threat rules](/docs/cse/rules/normalized-threat-rules/), are written to work with multiple data sources. The names of the Signals that a normalized rule fires vary by data source. So, if you want your
-Custom Insight configuration to generate Insights for Signals fired by normalized rules, you should base it on Signal names, rather than rule names.
+Which method should you use? The difference is whether you’re going to create an Insight based on the name of the rule that fired the Signal, or based on the name of the Signal that was fired. Typically, Signals that a rule generates have the same name as the rule. That is not the case with Cloud SIEM’s normalized rules. That’s because normalized rules, for example [Normalized Threat rules](/docs/cse/rules/normalized-threat-rules/), are written to work with multiple data sources. The names of the Signals that a normalized rule fires vary by data source. So, if you want your Custom Insight configuration to generate Insights for Signals fired by normalized rules, you should base it on Signal names, rather than rule names.
 
 When the conditions of a Custom Insight configuration are met during the currently configured [detection window](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/), an Insight will be generated for each Entity involved. In other words, if each of the Signals in a Custom Insight configuration fired on a different Entity, an Insight will be created on each of those Entities. The generated Insights will include not only the Signals that it fired on, but also any related Signals. 
 
 This example Custom Insight configuration will generate an Insight as a result of the **Mimecast - Message with Virus Detections from IP** rule firing a Signal. 
 
-<img src={useBaseUrl('img/cse/custom-insight-example.png')} alt="Custom Insight example" width="800"/>  
+<img src={useBaseUrl('img/cse/custom-insight-example.png')} alt="Custom Insight example" style={{border: '1px solid gray'}} width="800"/>  
 
  
 ## Create a Custom Insight
@@ -37,7 +36,7 @@ To create a Custom Insight:
 
 1. Choose **Custom Insights** on the **Content** menu.
 2. Click **Create** on the [**Custom Insights**](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) page.<br/><img src={useBaseUrl('img/cse/custom-insights-page.png')} alt="Custom Insights page" width="800"/> 
-3. The **Configure the Custom Insight** popup appears. <br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Configure an Insight" width="600"/>
+3. The **Configure the Custom Insight** popup appears. <br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Configure an Insight" style={{border: '1px solid gray'}} width="600"/>
 4. In the **Name** field, enter a name for the Custom Insight.
 5. If you want the Custom Insight to be generated based on one or more rules firing Signals, jump to step 6, below. Otherwise: 
    1. Leave the **When Signals are created from the following...** clause set to **Signal names**.
@@ -64,6 +63,6 @@ To create a Custom Insight:
     1. If desired, you can enter a minimum Signal severity value for other Insight severity levels. For example, you could configure a minimum Signal severity of 4 as the threshold for an Insight severity level of Medium. If you do define multiple thresholds, we honor them from highest to lowest. For example, with the following configuration:
        * If the highest Signal severity was at least 7, severity is Critical.
        * If the highest Signal severity was at least 5, severity is Medium.  
-       * If the highest signal severity was at least 3, severity is Low.  <br/><img src={useBaseUrl('img/cse/example-dynamic.png')} alt="Example dynamic severity" width="300"/>
+       * If the highest signal severity was at least 3, severity is Low.  <br/><img src={useBaseUrl('img/cse/example-dynamic.png')} alt="Example dynamic severity" style={{border: '1px solid gray'}} width="300"/>
 11. If desired, select [Tags](/docs/cse/records-signals-entities-insights/tags-insights-signals-entities-rules/) that you want assigned to the Custom Insight. 
 12. Click **Submit** to save your Custom Insight configuration.
