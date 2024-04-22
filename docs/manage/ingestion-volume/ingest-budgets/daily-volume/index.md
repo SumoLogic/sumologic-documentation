@@ -243,7 +243,7 @@ Next reset: 2020-09-19T00:00:00.000 -0700
 
 #### Audit Index queries
 
-You can schedule the following searches to get alerts when needed, see [scheduled searches](/docs/manage/alerts/scheduled-searches/schedule-search) for details.
+You can schedule the following searches to get alerts when needed, see [scheduled searches](/docs/alerts/scheduled-searches/schedule-search/) for details.
 
 Search for when approaching usage capacity (≥ 85%):
 
