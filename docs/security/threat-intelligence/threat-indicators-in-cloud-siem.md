@@ -1,5 +1,5 @@
 ---
-slug: /platform-services/threat-intelligence/threat-indicators-in-cloud-siem
+slug: /security/threat-intelligence/threat-indicators-in-cloud-siem
 title: Threat Intelligence Indicators in Cloud SIEM
 sidebar_label: Indicators in Cloud SIEM
 description: Learn how to use threat intelligence indicators in Cloud SIEM.
@@ -41,7 +41,7 @@ Note that if the mapping produces a threat indicator level of **Malicious**, but
 
 Since different sources can report different reputations, each source has a reputation icon on its row in the Cloud SIEM UI. In the following example, the indicator from the Palo Alto Networks Unit 42 source returned a reputation of Malicious, hence the red icon. The link to the right would open a log search window showing the matching indicators in detail.
 
-<img src={useBaseUrl('img/platform-services/threat-indicators-in-cloud-siem-ui.png')} alt="Threat indicators in the Cloud SIEM UI" style={{border: '1px solid gray'}} width="400" />
+<img src={useBaseUrl('img/security/threat-indicators-in-cloud-siem-ui.png')} alt="Threat indicators in the Cloud SIEM UI" style={{border: '1px solid gray'}} width="400" />
 
 <!-- For threat intel. Put this back once we support cat with the threatlookup search operator:
  
@@ -49,5 +49,5 @@ Since different sources can report different reputations, each source has a repu
 
 You can no longer [create custom threat intelligence sources using Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). You should use the **Threat Intelligence** tab, a collector, or the API to create sources. 
 
-If you have custom sources in Cloud SIEM, they will continue to be honored until the feature is deprecated at a future time. If you have indicators in Cloud SIEM that you want to continue using past deprecation, we recommend you re-ingest them from the source that you originally used to place the custom sources in Cloud SIEM. Once ingested, the indicators will appear in the [**Threat Intelligence** tab](/docs/platform-services/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab) and be available for use in both Cloud SIEM as well as the Sumo Logic Log Analytics Platform. 
+If you have custom sources in Cloud SIEM, they will continue to be honored until the feature is deprecated at a future time. If you have indicators in Cloud SIEM that you want to continue using past deprecation, we recommend you re-ingest them from the source that you originally used to place the custom sources in Cloud SIEM. Once ingested, the indicators will appear in the [**Threat Intelligence** tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab) and be available for use in both Cloud SIEM as well as the Sumo Logic Log Analytics Platform. 
 -->

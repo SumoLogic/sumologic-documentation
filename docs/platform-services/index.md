@@ -18,7 +18,7 @@ Platform services are services that are available to use across the entire Sumo 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/platform-services/threat-intelligence"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Threat Intelligence</h4></a>
+  <a href="/docs/security/threat-intelligence"><img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="40"/><h4>Threat Intelligence</h4></a>
   <p>Learn about Sumo Logic's threat intelligence capabilities.</p>
   </div>
 </div>

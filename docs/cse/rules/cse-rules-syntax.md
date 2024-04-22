@@ -626,7 +626,7 @@ The following expression returns "10.10.1.0":
 
 ### hasThreatMatch
 
-The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to [threat intelligence indicators](/docs/platform-services/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function). It can also match values in [Custom threat intelligence sources in Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). 
+The `hasThreatMatch` Cloud SIEM rules function searches incoming Records in Cloud SIEM for matches to [threat intelligence indicators](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#hasthreatmatch-cloud-siem-rules-language-function). It can also match values in [Custom threat intelligence sources in Cloud SIEM](/docs/cse/administration/create-custom-threat-intel-source/). 
 
 **Syntax**
 
@@ -671,7 +671,7 @@ Following are the standard indicator types you can filter on:
 * `user-account:user-id`. User ID. 
 * `user-account:login`. Login name. 
 
-For more information about indicator types, see [Upload Formats for Threat Intelligence Indicators](/docs/platform-services/threat-intelligence/upload-formats).
+For more information about indicator types, see [Upload Formats for Threat Intelligence Indicators](/docs/security/threat-intelligence/upload-formats).
 
 ### haversine
 

@@ -11,7 +11,7 @@ import ApiIntro from '../reuse/api-intro.md';
 
 <img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="60"/>
 
-The [Threat Intel Ingest Management](/docs/platform-services/threat-intelligence) API allows you to:
+The [Threat Intel Ingest Management](/docs/security/threat-intelligence) API allows you to:
 
 * Upload STIX 2.x threat intel indicators
 * View storage status of threat intel ingest service

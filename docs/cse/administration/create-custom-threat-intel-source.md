@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <!-- For threat intel. Put this back once we support cat with the threatlookup search operator:
 
 :::info
-This article describes functionality in Cloud SIEM that will be deprecated at a future time. **You can no longer add custom intelligence sources in Cloud SIEM**. To create new sources, use our new threat intelligence indicators framework. For more information, see [Custom threat intelligence sources in Cloud SIEM](/docs/platform-services/threat-intelligence/threat-indicators-in-cloud-siem/#custom-threat-intelligence-sources-in-cloud-siem).
+This article describes functionality in Cloud SIEM that will be deprecated at a future time. **You can no longer add custom intelligence sources in Cloud SIEM**. To create new sources, use our new threat intelligence indicators framework. For more information, see [Custom threat intelligence sources in Cloud SIEM](/docs/security/threat-intelligence/threat-indicators-in-cloud-siem/#custom-threat-intelligence-sources-in-cloud-siem).
 :::
 -->
 

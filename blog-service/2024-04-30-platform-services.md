@@ -18,6 +18,6 @@ Threat intelligence indicators are individual data points about threats that are
 
 To see threat intelligence indicators, go to **Manage Data > Logs > Threat Intelligence**. Once you ingest indicators and they appear on the **Threat Intelligence** tab, you can use them to search logs for threats. 
 
-[Learn more](/docs/platform-services/threat-intelligence/).
+[Learn more](/docs/security/threat-intelligence/).
 
-<img src={useBaseUrl('img/platform-services/threat-intelligence-tab-example.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
+<img src={useBaseUrl('img/security/threat-intelligence-tab-example.png')} alt="Threat Intelligence tab" style={{border: '1px solid gray'}} width="800" />
