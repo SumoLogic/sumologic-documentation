@@ -37,7 +37,7 @@ _sourceCategory=*gcp* logName reference resource "\"type\":\"gce_subnetwork\"" "
 ```
 
 
-## Collecting Logs for the Google Cloud Firewall App
+## Collecting logs for the Google Cloud Firewall app
 
 This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google Cloud Firewall App.
 
@@ -154,14 +154,17 @@ The section provides instructions for installing the Google Cloud Firewall App, 
 
 Now that you have set up log collection, you can install the Google Cloud Firewall App to access the pre-configured Searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Google Cloud Firewall Dashboards
+## Viewing Google Cloud Firewall dashboards
 
 This section provides examples of the Google Cloud Firewall App accompanied with descriptions.
 
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

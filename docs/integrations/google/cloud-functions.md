@@ -2,14 +2,14 @@
 id: cloud-functions
 title: Google Cloud Functions
 sidebar_label: Google Cloud Functions
-description: The Google Cloud Functions App enables you monitor your usage of Google Cloud Functions. The App preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures.
+description: The Google Cloud Functions app enables you monitor your usage of Google Cloud Functions. The preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/google/functions.png')} alt="thumbnail icon" width="50"/>
 
-The Google Cloud Functions App enables you to monitor your usage of Google Cloud Functions. The App preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures with help of audit logs and metrics.
+The Google Cloud Functions app enables you to monitor your usage of Google Cloud Functions. The preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures with help of audit logs and metrics.
 
 ## Log and metric types
 
@@ -38,9 +38,9 @@ _sourceCategory=*gcp* logName textPayload "\"type\":\"cloud_function\"" "\"textP
 cloud.provider=gcp project_id=* region=* cloud.platform=gcp_cloudfunctions function_name=* metric=function/execution_count statistic=average !status=ok | sum
 ```
 
-## Collecting logs for the Google Cloud Functions App
+## Collecting logs for the Google Cloud Functions app
 
-This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for configuring log collection for the Google Cloud Functions App.
+This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for configuring log collection for the Google Cloud Functions app.
 
 ### Collection Process for GCP Services
 
@@ -140,17 +140,17 @@ For metric collection in Sumo Logic use [GCP Metric source](https://help.sumolog
 
 ## Installing the Google Cloud Functions app
 
-Now that you have set up collection for Google Cloud Functions, install the Sumo Logic App to access the pre-configured searches and dashboards.
+Now that you have set up collection for Google Cloud Functions, install the Sumo Logic app to access the pre-configured searches and dashboards.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Google Cloud Functions dashboards
 
-import FilterDashboards from '../../reuse/filter-dashboards.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-<FilterDashboards/>
+<ViewDashboards/>
 
 ### Performance Overview
 
