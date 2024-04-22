@@ -41,6 +41,6 @@ In this step, you configure an Microsoft 365 Audit Source to collect Microsoft 3
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.<br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/> 
-1. On the **Log Mappings** page search for Office 365 and check under **Record Volume**.<br/><img src={useBaseUrl('img/cse/office-365-audit-record-volume.png')} alt="Office 365 audit record volume" width="600"/> 
-1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Office 365 security records. <br/><img src={useBaseUrl('img/cse/office-365-audit-search.png')} alt="Office 365 audit search" width="400"/>  
+1. In the top menu click **Configuration**, and then under **Incoming Data** select **Log Mappings**.
+1. On the **Log Mappings** page search for Office 365 and check under **Record Volume**.<br/><img src={useBaseUrl('img/cse/office-365-audit-record-volume.png')} alt="Office 365 audit record volume" style={{border: '1px solid gray'}} width="600"/> 
+1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Office 365 security records. <br/><img src={useBaseUrl('img/cse/office-365-audit-search.png')} alt="Office 365 audit search" style={{border: '1px solid gray'}} width="400"/>  
