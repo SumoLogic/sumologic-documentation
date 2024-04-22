@@ -1,7 +1,7 @@
 ---
 id: symantec-proxy-secure-gateway-blue-coat-proxy
 title: Symantec Proxy Secure Gateway (Blue Coat Proxy) - Cloud SIEM
-sidebar_label: Symantec Proxy Secure Gateway
+sidebar_label: Symantec Proxy Secure Gateway - Blue Coat Proxy
 description: Learn how to configure a Syslog source to collect and send Symantec Proxy Secure Gateway (ProxySG) log messages to Sumo Logic to be ingested by Cloud SIEM.
 ---
 
@@ -30,7 +30,7 @@ In this step, you configure a Syslog Source to collect ProxySG log messages. You
 1. Download the appropriate collector for your operating system.
 1. Install the collector. Instructions for your preferred operating system and method of installation are available on the [Installed Collectors](/docs/send-data/installed-collectors) page.
 1. Once the collector is installed, confirm it is available on the **Collection** page and select **Edit**.
-1. The **Edit Collector popup** appears.<br/><img src={useBaseUrl('img/cse/edit-collector.png')} alt="Edit collector" width="500"/>
+1. The **Edit Collector popup** appears.<br/><img src={useBaseUrl('img/cse/edit-collector.png')} alt="Edit collector" style={{border: '1px solid gray'}} width="500"/>
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
@@ -48,7 +48,7 @@ In this step, you configure a Syslog Source to collect ProxySG log messages. You
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 
-1. The page refreshes. <br/><img src={useBaseUrl('img/cse/syslog-source.png')} alt="Syslog source" width="500"/>
+1. The page refreshes. <br/><img src={useBaseUrl('img/cse/syslog-source.png')} alt="Syslog source" style={{border: '1px solid gray'}} width="500"/>
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Protocol**. Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see [Choosing TCP or UDP](/docs/send-data/installed-collectors/sources/syslog-source#choosing-tcp-or-udp) on the *Syslog Source* page.
@@ -67,6 +67,6 @@ In this step, you configure ProxySG to forward access logs to the the Syslog S
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. Click the gear icon at the top of the Cloud SIEM UI, and select **Log Mappings** under **Incoming Data**. <br/><img src={useBaseUrl('img/cse/log-mappings-link.png')} alt="Log Mappings link" width="400"/>
+1. In the top menu click **Configuration**, and then under **Incoming Data** select **Log Mappings**.
 1. On the **Log Mappings** page search for "ProxySG" and check under **Record Volume.** A list of mappers for ProxySG will appear and you can see if logs are coming in.<br/><img src={useBaseUrl('img/cse/proxysg-record-volume.png')} alt="ProxySG record volume" width="600"/>
-1. For a more granular look at the incoming Records, you can also search Sumo Logic for ProxySG Records. <br/><img src={useBaseUrl('img/cse/proxysg-search.png')} alt="ProxySG search" width="500"/> 
+1. For a more granular look at the incoming Records, you can also search Sumo Logic for ProxySG Records. <br/><img src={useBaseUrl('img/cse/proxysg-search.png')} alt="ProxySG search" style={{border: '1px solid gray'}} width="500"/> 

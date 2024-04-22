@@ -34,7 +34,7 @@ _sourceCategory=fastly waf denyRules reqHost | parse "\"denyRules\":\"*\"" as de
 ```
 
 
-## Collecting Logs for Fastly
+## Collecting logs for Fastly
 
 This section has instructions for setting up log collection for the Fastly app.  
 
@@ -57,7 +57,7 @@ Ensure that the data is sent to Sumo Logic in [Log format version 2](https://doc
 
 When you configure the Sumo Logic endpoint in Fastly:
 1. **Name**. Enter a name for the connection. For example, “Prod Fastly”.
-2. **Log format**. Use this format string, which generates the necessary JSON output:
+2. **Log format**. Enter the [Fastly log variables](https://docs.fastly.com/en/guides/useful-variables-to-log). Use this format string, which generates the necessary JSON output. 
 
   <details>
 <summary>Click to expand snippet</summary>
@@ -108,10 +108,10 @@ When you configure the Sumo Logic endpoint in Fastly:
  "response_last_modified":"%{cstr_escape(resp.http.Last-Modified)}V",
  "response_tsv":"%{cstr_escape(resp.http.TSV)}V",
  "geo_datacenter":"%{server.datacenter}V",
- "geo_city":"%{geoip.city}V",
- "geo_country_code":"%{geoip.country_code}V",
- "geo_continent_code":"%{geoip.continent_code}V",
- "geo_region":"%{geoip.region}V",
+ "geo_city":"%{client.geo.city}V",
+ "geo_country_code":"%{client.geo.country_code}V",
+ "geo_continent_code":"%{client.geo.continent_code}V",
+ "geo_region":"%{client.geo.region}V",
  "req_header_size":%{req.header_bytes_read}V,
  "req_body_size":%{req.body_bytes_read}V,
  "resp_header_size":%{resp.header_bytes_written}V,
@@ -217,10 +217,10 @@ If you have Fastly's Web Application Firewall (WAF), perform these steps to upda
 	"response_last_modified":"%{cstr_escape(resp.http.Last-Modified)}V",
 	"response_tsv":"%{cstr_escape(resp.http.TSV)}V",
 	"geo_datacenter":"%{server.datacenter}V",
-	"geo_city":"%{geoip.city}V",
-	"geo_country_code":"%{geoip.country_code}V",
-	"geo_continent_code":"%{geoip.continent_code}V",
-	"geo_region":"%{geoip.region}V",
+	"geo_city":"%{client.geo.city}V",
+	"geo_country_code":"%{client.geo.country_code}V",
+	"geo_continent_code":"%{client.geo.continent_code}V",
+	"geo_region":"%{client.geo.region}V",
 	"req_header_size":"%"{
 		"req.header_bytes_read"
 	}"V",
@@ -320,10 +320,10 @@ If you have Fastly's Web Application Firewall (WAF), perform these steps to add 
 	"request_accept_content":"%{cstr_escape(req.http.Accept)}V",
 	"cache_status":"%{regsub(fastly_info.state, \"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE|NONE)).*\", \"\\2\\3\")}V",
 	"geo_datacenter":"%{server.datacenter}V",
-	"geo_city":"%{geoip.city}V",
-	"geo_country_code":"%{geoip.country_code}V",
-	"geo_continent_code":"%{geoip.continent_code}V",
-	"geo_region":"%{geoip.region}V",
+	"geo_city":"%{client.geo.city}V",
+	"geo_country_code":"%{client.geo.country_code}V",
+	"geo_continent_code":"%{client.geo.continent_code}V",
+	"geo_region":"%{client.geo.region}V",
 	"request_id":"%{req.http.x-request-id}V",
 	"waf_logged":"%{waf.logged}V",
 	"waf_block":"%{waf.blocked}V",
@@ -361,28 +361,17 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 
 
 
-## Installing the Fastly App
+## Installing the Fastly app
 
-Now that you have configured Fastly, install the Sumo Logic App for Fastly to take advantage of the preconfigured searches and dashboards to analyze your data.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+<AppInstall2/>
 
-To install the app:
+## Viewing Fastly dashboards
 
-1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library**. The Add Fastly to Library popup appears.
-3. Supply the following information.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    2. **Log data source for Request Logs**. Enter the source category that you assigned to the HTTP Source for request logs when you performed the procedure in [Collect Logs for Fastly](#collecting-logs-for-fastly).
-    3. **Log data source for Debug Logs.** Enter the source category that you assigned to the HTTP Source for debug logs when you performed the procedure in [Collect Logs for Fastly](#collecting-logs-for-fastly).
-    4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-
-## Dashboards
-
-There are four dashboards for Fastly that you can configure to accommodate your individual reporting needs.
-
+<ViewDashboards/>
 
 ### CDN - Overview
 
