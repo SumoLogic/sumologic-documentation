@@ -65,7 +65,7 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 <AppInstallNoDataSourceV2/>
 
-## View Cloud SIEM Dashboards
+## View Cloud SIEM dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
