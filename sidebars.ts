@@ -807,6 +807,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/index'},
           items: [
+            'manage/ingestion-volume/ingest-budgets/minute-volume',
           {
             type: 'category',
             label: 'Daily Volume',
@@ -816,16 +817,6 @@ module.exports = {
             items: [
               'manage/ingestion-volume/ingest-budgets/daily-volume/assign-collector-ingest-budget',
               'manage/ingestion-volume/ingest-budgets/daily-volume/quickstart',
-            ]
-          },
-          {
-            type: 'category',
-            label: 'Minute Volume',
-            collapsible: true,
-            collapsed: true,
-            link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/minute-volume'},
-            items: [
-              'manage/ingestion-volume/ingest-budgets/minute-volume',
             ]
           },
         ]
