@@ -20,14 +20,14 @@ If you create a Match List for which none of the existing Target Column options 
 
 To see the custom columns that have been defined in your environment:
 
-1. Select **Match Lists** from the **Content** menu. <br/><img src={useBaseUrl('img/cse/select-match-lists-page.png')} alt="Select match lists" width="800"/>
+1. Click **Content** from the top menu and select **Match Lists**. 
 1. On the **Match Lists** page, click **Custom Columns**.<br/><img src={useBaseUrl('img/cse/match-lists.png')} alt="Match lists" width="800"/>
-1. The **Custom Columns** page lists the custom columns that have been defined in your environment. <br/><img src={useBaseUrl('img/cse/custom-columns.png')} alt="Custom columns" width="800"/>
+1. The **Custom Columns** page lists the custom columns that have been defined in your environment. <br/><img src={useBaseUrl('img/cse/custom-columns.png')} alt="Custom columns" style={{border: '1px solid gray'}} width="800"/>
 
 ## Create a Custom Column
 
 1. On the **Custom Columns** page, click **Create**.
-1. The **Create Match List Column** popup appears. <br/><img src={useBaseUrl('img/cse/create-column.png')} alt="Create column" width="400"/>
+1. The **Create Match List Column** popup appears. <br/><img src={useBaseUrl('img/cse/create-column.png')} alt="Create column" style={{border: '1px solid gray'}} width="400"/>
 1. **Name**. Enter a name for the custom column.
 1. **Fields**. Click the chevron icon to display a selector list of Cloud SIEM attributes. You can select multiple attributes. If multiple attributes are selected, the match list will match if the list item value matches a Record value for any of the custom column attributes. Click the icon next to Show field guide to view more information, such as data type, about attributes. 
 1. Click **Create** to add the new column.
@@ -47,4 +47,4 @@ To see the custom columns that have been defined in your environment:
 
 Follow the instructions in the [Create a Match List](/docs/cse/match-lists-suppressed-lists/create-match-list), and select the desired column in the **Custom** section of the **Target Column** selector list.
 
-<img src={useBaseUrl('img/cse//target-column-selector.png')} alt="Target column selector" width="400"/>
+<img src={useBaseUrl('img/cse//target-column-selector.png')} alt="Target column selector" style={{border: '1px solid gray'}} width="400"/>
