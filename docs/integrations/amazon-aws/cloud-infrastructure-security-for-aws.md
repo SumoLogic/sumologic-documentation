@@ -212,7 +212,7 @@ In the **Check AWS Role Permission** section, you can ensure the user performing
 
 1. Follow the steps provided in the **Check AWS Role Permission** section of the screen:
     1. Create and attach a policy to your user as described in the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-create-and-attach-iam-policy.html).
-    1. Click the JSON file link and add to your your policy the permissions contained in file.
+    1. Click the JSON file link and add to your policy the permissions contained in the file.
 1. Click **Check AWS Role Permission**. This launches a CloudFormation Template that will verify your user has the correct permissions.
 1. Sign in the [AWS Console](https://console.aws.amazon.com/console/). After you sign in, the following screen is displayed. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions-cft.png')} alt="Create permissions stack" style={{border: '1px solid gray'}} width="700"/>
 1. In **Stack Name**, enter a name for the stack. The stack name can include letters (A-Z and a-z), numbers (0-9), and dashes (-).
