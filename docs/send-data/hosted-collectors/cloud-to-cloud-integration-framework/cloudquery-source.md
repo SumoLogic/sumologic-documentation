@@ -8,12 +8,6 @@ tags:
 description: Learn how to collect inventory from the AWS APIs and transform them into the CloudQuery schema and send it to Sumo Logic.
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
 import CodeBlock from '@theme/CodeBlock';
 import AccountExampleJSON from '/files/c2c/cloudquery/accountExample.json';
 import OrgExampleJSON from '/files/c2c/cloudquery/orgExample.json';
