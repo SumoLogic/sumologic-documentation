@@ -87,7 +87,7 @@ To search for ingest budgets that are currently enforced to stop collecting data
 _index=sumologic_audit_events minuteVolume stopCollecting
 ```
 
-## Setup Minute Volume Ingest Budgets
+## Set up Minute Volume ingest budgets
 
 1. Identify sources which are not critical data sources where stricter data controls can be added to prevent your organization from being throttled.
 1. Identify `_sourceCategory` or any other identifier for the sources.
