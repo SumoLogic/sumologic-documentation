@@ -18,7 +18,7 @@ In the future, Cloud SIEM Actions will be deprecated because comparable behavior
 You can use Cloud SIEM Actions to issue a notification to another service when certain events occur in Cloud SIEM. The supported Action types are:
 
 * AWS Simple Notification Service (SNS)
-* Demisto (Corex XSOAR)
+* Demisto (Cortex XSOAR)
 * Email
 * HTTP POST v2
 * Microsoft Teams
@@ -55,7 +55,7 @@ What gets sent to the target system depends on the Action type. For some types�
 * The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to. In the example below, the “Initial Access” tactic is shown.
 * A link to the Insight in Cloud SIEM. <br/><img src={useBaseUrl('img/cse/received-email.png')} alt="Received email.png" width="600" />
 
-For the other Action types—AWS Simple Notification Service (SNS), Demisto (Corex XSOAR), HTTP POST v2, and Slack Webhook—the notification includes the Insight itself in JSON format, and in some cases Signals or Records, depending on how you configure the Action.
+For the other Action types—AWS Simple Notification Service (SNS), Demisto (Cortex XSOAR), HTTP POST v2, and Slack Webhook—the notification includes the Insight itself in JSON format, and in some cases Signals or Records, depending on how you configure the Action.
 
 ## Sensor Actions
 You can configure an Action to send a notification when any Network Sensor goes offline.
@@ -78,7 +78,7 @@ The notification sent by a Rule Action contains the name of the rule and the re
 1. **Name**. Enter a name that communicates what the Action does.
 1. **Type**. Choose one of the following options, and follow the instructions for that Action type to complete creating your Action.
     * [AWS Simple Notification Service](#aws-simple-notification-service-sns)
-    * [Demisto](#demistocorex-xsoar)
+    * [Demisto](#demistocortex-xsoar)
     * [Email](#email)
     * [HTTP POST v2](#http-post-v2)
     * [Microsoft Teams](#microsoft-teams)
@@ -105,7 +105,7 @@ You can configure the action to authenticate with SNS using your AWS Access Key 
 1. **Region**. Enter the AWS region for the SNS topic. 
 1. Click **Create**.  <br/><img src={useBaseUrl('img/cse/sns.png')} alt="AWS simple notification service action" style={{border: '1px solid gray'}} width="500" />
 
-### Demisto (Corex XSOAR)
+### Demisto (Cortex XSOAR)
 
 When you run this Action type for an Insight, Cloud SIEM sends the full Insight in JSON format to Demisto.
 
