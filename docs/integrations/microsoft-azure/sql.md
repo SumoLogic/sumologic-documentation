@@ -128,13 +128,15 @@ In this step, you configure a pipeline for shipping metrics from Azure Monitor t
 
 This section provides instructions on how to install the Azure SQL app, and shows examples of each of the preconfigured dashboards you can use to analyze your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing the Azure SQL dashboards
 
-This section describes the dashboards in the Sumo Logic app for Azure SQL.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

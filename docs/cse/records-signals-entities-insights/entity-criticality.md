@@ -30,9 +30,9 @@ You can configure both the detection window and the threshold Activity Score for
 
 ## Define a Criticality
 
-1. Click the gear icon, and select **Criticalities** under **Entities**.
-1. On the **Criticalities** page, click **Create**. <br/><img src={useBaseUrl('img/cse/Criticalities.png')} alt="Entity criticality" width="800"/>
-1. The **Create Entity Criticality** popup appears.<br/><img src={useBaseUrl('img/cse/criticality-popup.png')} alt="Entity criticality" width="400"/>
+1. In the top menu, click **Configuration** and select **Criticalities** under **Entities**.
+1. On the **Criticalities** page, click **Create**. <br/><img src={useBaseUrl('img/cse/Criticalities.png')} alt="Entity criticality" style={{border: '1px solid gray'}} width="800"/>
+1. The **Create Entity Criticality** popup appears.<br/><img src={useBaseUrl('img/cse/criticality-popup.png')} alt="Entity criticality" style={{border: '1px solid gray'}} width="400"/>
 2. **Name**. Enter a name. 
 3. **Severity Expression**. Enter a formula for adjusting a severity value. You can use a plus sign (+), minus sign (-), an asterisk (\*), or a forward slash (/). Enter the formula in this format:   `severity+2 `
 4. Click **Create** to save the Criticality.
@@ -41,7 +41,7 @@ You can configure both the detection window and the threshold Activity Score for
 
 You can associate a Criticality with one or more Entities. 
 
-1. Click **Entities** at the top of the Cloud SIEM UI.<br/><br/><img src={useBaseUrl('img/cse/entities-icon.png')} alt="Entities icon" width="800"/>
+1. Click **Entities** in the top menu the Cloud SIEM UI.
 1. Navigate to the Entity you want to assign a Criticality and click on it to display the **Entity Details** page. 
-2. On the **Entity Details** page, click the **Criticality** field to display a list of Criticalities. <br/><img src={useBaseUrl('img/cse/entity-details-criticality.png')} alt="Entity criticality details" width="400"/>
+2. On the **Entity Details** page, click the **Criticality** field to display a list of Criticalities. <br/><img src={useBaseUrl('img/cse/entity-details-criticality.png')} alt="Entity criticality details" style={{border: '1px solid gray'}} width="400"/>
 3. Click a Criticality to apply it to the Entity.
