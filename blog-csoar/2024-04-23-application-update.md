@@ -28,4 +28,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 #### Cloud SOAR
 * Incident: Fixed issue with war room large content loading.
-* Api documentation updated.
+* API documentation updated.
