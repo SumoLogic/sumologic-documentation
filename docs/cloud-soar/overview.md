@@ -47,16 +47,28 @@ Use the **Settings** menu to access:
 
 ### Cloud SOAR menus for new UI
 
-#### Sidebar menu
+#### Cloud SOAR sidebar menu
 
 Click **Cloud SOAR** in the main Sumo Logic menu to open the sidebar menu.<br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-sidebar-menu.png')} alt="Cloud SOAR sidebar menu" style={{border: '1px solid gray'}} width="350"/> 
 
-Use the sidebar menu to access:
+Use the **Cloud SOAR** sidebar menu to access:
 * [**SecOps & Dashboard**](/docs/cloud-soar/main-menu/#home). Open the home screen of Cloud SOAR.
 * [**Incidents**](/docs/cloud-soar/main-menu/#incidents). Manage security incidents that require investigation and action. 
 * [**Triage**](/docs/cloud-soar/incidents-triage/#triage). Triage events which may be unverified or have a low confidence level before they are converted to incidents.
 * [**Entities**](/docs/cloud-soar/main-menu/#entities). Manage entities identified across incidents. 
 * [**Report**](/docs/cloud-soar/global-functions-menu/#report). Configure reports.  
+
+#### Automation sidebar menu
+
+Click **Automation** in the main Sumo Logic menu to open the sidebar menu.<br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-automation-sidebar-menu.png')} alt="Cloud SOAR sidebar menu" style={{border: '1px solid gray'}} width="350"/> 
+
+Use the **Automation** sidebar menu to access:
+* [**App Central**](/docs/cloud-soar/automation/#app-central). Add new integrations and playbooks to your environment.
+* [**Playbooks**](/docs/cloud-soar/automation/#playbook). Create playbooks to run automated actions.
+* [**Template**](/docs/cloud-soar/automation/#incident-templates). Create incident templates.
+* [**Integrations**](/docs/cloud-soar/automation/#integrations). Manage integrations with vendors. 
+* [**Rules**](/docs/cloud-soar/automation/#rules). Create automation rules.
+* [**Bridge**](/docs/cloud-soar/cloud-soar-bridge/). Configure a bridge to run custom actions or integrations.
 
 #### Top menu
 
