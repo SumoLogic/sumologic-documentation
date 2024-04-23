@@ -21,9 +21,11 @@ The Proofpoint On Demand (PoD) Source collects data from the Proofpoint On Dem
 This Source requires you to be licensed for Proofpoint On Demand’s Remote Syslog feature. Please reach out to Proofpoint for more information.
 
 The Proofpoint PoD API is not public; you'll need to request details on the API from Proofpoint.
-
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
+
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 

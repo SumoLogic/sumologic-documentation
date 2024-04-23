@@ -13,7 +13,7 @@ The focus of GuardDuty is on protecting AWS accounts, workloads, and data with i
 
 ## Collecting Logs
 
-See [Collecting Logs for the Amazon GuardDuty App](/docs/integrations/amazon-aws/guardduty#Collect-Logs-for-the-Amazon-GuardDuty-App).
+See [Collecting Logs for the Amazon GuardDuty App](/docs/integrations/amazon-aws/guardduty#collecting-logs-for-the-amazon-guardduty-app).
 
 ## Installing the Amazon GuardDuty Cloud Security Monitoring and Analytics App
 

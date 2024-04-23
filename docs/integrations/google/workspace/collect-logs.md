@@ -22,7 +22,7 @@ This procedure explains how to collect logs from Google Workspace and ingest the
 
 This section provides instructions for configuring log collection for Google Workspace with Audit Source.
 
-[Google Workspace](#configure-collection-for-google-workspace-audit-source): Monitors and analyzes the activity across all the Google Workspace Apps in one place. You can configure collection for each Google App for which you want to analyze events:
+[Google Workspace](#configure-collection-for-google-workspace-apps-audit-source): Monitors and analyzes the activity across all the Google Workspace Apps in one place. You can configure collection for each Google App for which you want to analyze events:
     * Google Admin
     * Google Drive
     * Google Login
@@ -80,7 +80,7 @@ Configure a [Hosted Collector](/docs/send-data/hosted-collectors/configure-hoste
 
 ### Configure Google Workspace Apps Audit Sources  
 
-When you have set up a Hosted Collector and have your credentials ready, you're all set to configure the Sources. Perform the steps below for each Google Workspace App you want to monitor.  Before you configure the Sources, choose one of the source category strategies described in [About Source Configuration](#About_Source_Configuration), above.
+When you have set up a Hosted Collector and have your credentials ready, you're all set to configure the Sources. Perform the steps below for each Google Workspace App you want to monitor.  Before you configure the Sources, choose one of the source category strategies described in [About Source Configuration](#about-source-configuration) above.
 
 :::note
 We recommend that you use the same single Source Category for each Google Workspace Apps Audit Source. For example, **google_apps**.

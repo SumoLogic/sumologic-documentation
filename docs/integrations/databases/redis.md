@@ -184,7 +184,7 @@ Ensure that you are monitoring your Kubernetes clusters with the Telegraf operat
         * In the tags section, that is `[inputs.redis.tags]`
         * `component: "database"`. This value is used by Sumo Logic apps to identify application components.
         * `db_system: "redis"`. This value identifies the database system.
-   * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
    * For more information on configuring the Redis input plugin for Telegraf, see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis).
 3. Once this has been done, the Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 4. Verify metrics in Sumo Logic by running the following metrics query:
@@ -224,8 +224,8 @@ This section explains the steps to collect Redis logs from a Kubernetes environm
      * **Do not modify these values** as they will cause the Sumo Logic apps to not function correctly.
        * `component: “database”`. This value is used by Sumo Logic apps to identify application components.
        * `db_system: “redis”`. This value identifies the database system.
-     * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
-   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, see [this page](/docs/integrations/containers-orchestration/kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+     * For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#configuring-telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, see [this page](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app).
 2. Collect Redis logs written to log files (Optional). If your Redis helm chart/pod is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to standard out. To do this:
    1. Determine the location of the Redis log file on Kubernetes. This can be determined from the redis.conf for your Redis cluster along with the mounts on the Redis pods.
    2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
@@ -439,7 +439,7 @@ This section has instructions for installing the Sumo app and Alerts for Redis U
 
 Sumo Logic has provided out-of-the-box alerting capabilities available via [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Redis database cluster is available and performing as expected. These monitors fire alerts (notifications) on top of preset thresholds on metrics data using industry best practices and recommendations.
 
-For details on the individual monitors, please see [Alerts](#Redis-Alerts).
+For details on the individual monitors, please see [Alerts](#redis-alerts).
 
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing them via a JSON or via a Terraform script.
@@ -459,12 +459,12 @@ There are limits for how many alerts can be enabled - please see the [Alerts FAQ
 4. Click Import to import monitors from the JSON above.
 
 :::note
-Monitors are disabled by default. Once you have installed the alerts via this method, navigate to the Redis folder under **Monitors** to configure them. See [this](/docs/alerts/monitors#Disable_and_enable_a_monitor) document to enable monitors. To send notifications to teams or connections please see the instructions detailed in Step 4 of[ this document](/docs/alerts/monitors#add-a-monitor).
+Monitors are disabled by default. Once you have installed the alerts via this method, navigate to the Redis folder under **Monitors** to configure them. See [Monitor Settings](/docs/alerts/monitors/settings/#edit-disable-more-actions) to enable monitors. To send notifications to teams or connections, see the instructions detailed in Step 4 of [Create a Monitor](/docs/alerts/monitors/create-monitor).
 :::
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using[ these](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page) instructions. Please identify which deployment your Sumo Logic account is in,[ using](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) this link.
+1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using[ these](/docs/manage/security/access-keys#from-the-preferences-page) instructions. Please identify which deployment your Sumo Logic account is in,[ using](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) this link.
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for Redis alerts. The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/redis). You can either download it via the “git clone” command or as a zip file.
 4. Monitor Configuration. After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**redis**/
@@ -526,7 +526,7 @@ email_notifications = [
    2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
    3. Run `terraform apply`.
 
-7. Post Installation. If you haven’t enabled alerts and/or configured notifications via the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Add a Monitor](/docs/alerts/monitors#add-a-monitor).
+7. Post Installation. If you haven’t enabled alerts and/or configured notifications via the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Add a Monitor](/docs/alerts/monitors/create-monitor).
 
 
 ## Installing the Redis app

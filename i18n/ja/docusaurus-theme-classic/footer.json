@@ -21,7 +21,7 @@
   },
   "link.item.label.Help Center": {
     "message": "Help Center",
-    "description": "The label of footer link with label=Help Center linking to https://support.sumologic.com/hc/en-us"
+    "description": "The label of footer link with label=Help Center linking to https://support.sumologic.com/support/s"
   },
   "link.item.label.DevOps Glossary": {
     "message": "DevOps Glossary",
@@ -37,7 +37,7 @@
   },
   "link.item.label.Community": {
     "message": "Community",
-    "description": "The label of footer link with label=Community linking to https://support.sumologic.com/hc/en-us/community/topics"
+    "description": "The label of footer link with label=Community linking to https://support.sumologic.com/support/s/topiccatalog"
   },
   "link.item.label.Events & Webinars": {
     "message": "Events & Webinars",
@@ -68,7 +68,7 @@
     "description": "The label of footer link with label=Sumo Dojo Slack linking to https://sumodojo.slack.com/"
   },
   "copyright": {
-    "message": "Copyright © 2022, Sumo Logic Inc. | Built with Docusaurus.",
+    "message": "Copyright © 2024, Sumo Logic Inc. | Built with Docusaurus.",
     "description": "The footer copyright"
   }
 }

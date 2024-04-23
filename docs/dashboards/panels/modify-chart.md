@@ -100,7 +100,7 @@ To change chart axes displays, do the following:
    * **Unit**. How the data measurement is expressed. You have variousunits of measurements to select from. 
    * **Decimals**. Sets the precision of units displayed. Select the number of decimals to show with a unit, up to 9.
 
-    The **Right Y-Axis** has the same options as the **Left Y-Axis**. If you have created a [Display Override](#override-dashboard-displays) and set the **YAxisType** property to **Right Y-Axis** for a query you will have the option to modify the **Right Y-Axis** here.<br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/display-override-right-y-axis.png')} style={{border: '1px solid gray'}} alt="display override right y-axis" width="400"/>
+    The **Right Y-Axis** has the same options as the **Left Y-Axis**. If you have created a [Display Override](#overridedashboard-displays) and set the **YAxisType** property to **Right Y-Axis** for a query you will have the option to modify the **Right Y-Axis** here.<br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/display-override-right-y-axis.png')} style={{border: '1px solid gray'}} alt="display override right y-axis" width="400"/>
 
     To display the right Y-axis you need to select the **show axis** checkbox.<br/><img src={useBaseUrl('/img/dashboards-new/panels/modify-chart/show-right-y-axis.png')} style={{border: '1px solid gray'}} alt="show right y-axis" width="400"/>
 
