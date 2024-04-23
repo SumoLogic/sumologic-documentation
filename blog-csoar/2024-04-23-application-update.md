@@ -23,7 +23,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   * Fixed output fields containing a value of numerical "0" logged blanks instead of the actual number.
 * Playbooks: 
   * Fixed playbook condition logic with AND, OR operators.
-  * Fixed textarea and regex parsing when html tags are enabled.
+  * Fixed textarea and regex parsing when HTML tags are enabled.
   * Fixed issue related to multiple playbook revisions and user choice execution.
 
 #### Cloud SOAR
