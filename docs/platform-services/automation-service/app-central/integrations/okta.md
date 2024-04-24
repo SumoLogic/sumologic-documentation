@@ -20,7 +20,7 @@ Interact with Okta users, groups, and system logging information.
 * **Add User To Group** _(Containment)_ - Adds a user to a specific group.
 * **Create Group** _(Containment)_ - Creates a new group.
 * **Create Network Zone** _(Containment)_ - Creates a new network zone.
-* **Create User** _(Containment)_ - Creates a new user account
+* **Create User** _(Containment)_ - Creates a new user account.
 * **Deactivate Network Zone** _(Containment)_ - Deactivates a network zone.
 * **Deactivate User** _(Containment)_ - Deactivates a user’s account.
 * **Delete Network Zone** _(Containment)_ - Deletes network zone.
