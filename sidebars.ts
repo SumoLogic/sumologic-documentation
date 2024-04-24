@@ -1057,6 +1057,7 @@ module.exports = {
     collapsed: false,
     link: {type: 'doc', id: 'search/index'},
     items: [
+      'search/copilot'
     {
       type: 'category',
       label: 'Get Started with Search',
