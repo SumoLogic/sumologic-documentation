@@ -1,0 +1,74 @@
+{
+  "link.title.LEARN": {
+    "message": "LEARN",
+    "description": "The title of the footer links column with title=LEARN in the footer"
+  },
+  "link.title.Sumo Community": {
+    "message": "Sumo Community",
+    "description": "The title of the footer links column with title=Sumo Community in the footer"
+  },
+  "link.title.Open Source": {
+    "message": "Open Source",
+    "description": "The title of the footer links column with title=Open Source in the footer"
+  },
+  "link.item.label.Training & Certifications": {
+    "message": "Training & Certifications",
+    "description": "The label of footer link with label=Training & Certifications linking to https://www.sumologic.com/learn/training/"
+  },
+  "link.item.label.Doc Contributions": {
+    "message": "Doc Contributions",
+    "description": "The label of footer link with label=Doc Contributions linking to /docs/contributing"
+  },
+  "link.item.label.Help Center": {
+    "message": "Help Center",
+    "description": "The label of footer link with label=Help Center linking to https://support.sumologic.com/support/s"
+  },
+  "link.item.label.DevOps Glossary": {
+    "message": "DevOps Glossary",
+    "description": "The label of footer link with label=DevOps Glossary linking to https://www.sumologic.com/glossary/"
+  },
+  "link.item.label.Request Demo": {
+    "message": "Request Demo",
+    "description": "The label of footer link with label=Request Demo linking to https://www.sumologic.com/request-demo/"
+  },
+  "link.item.label.About Us": {
+    "message": "About Us",
+    "description": "The label of footer link with label=About Us linking to https://www.sumologic.com/company/about-us/"
+  },
+  "link.item.label.Community": {
+    "message": "Community",
+    "description": "The label of footer link with label=Community linking to https://support.sumologic.com/support/s/topiccatalog"
+  },
+  "link.item.label.Events & Webinars": {
+    "message": "Events & Webinars",
+    "description": "The label of footer link with label=Events & Webinars linking to https://www.sumologic.com/events/"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/SumoLogic"
+  },
+  "link.item.label.YouTube": {
+    "message": "YouTube",
+    "description": "The label of footer link with label=YouTube linking to https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw"
+  },
+  "link.item.label.Documentation GitHub": {
+    "message": "Documentation GitHub",
+    "description": "The label of footer link with label=Documentation GitHub linking to https://github.com/SumoLogic/sumologic-documentation"
+  },
+  "link.item.label.Sumo Logic GitHub": {
+    "message": "Sumo Logic GitHub",
+    "description": "The label of footer link with label=Sumo Logic GitHub linking to https://github.com/SumoLogic"
+  },
+  "link.item.label.GitHub Labs Projects": {
+    "message": "GitHub Labs Projects",
+    "description": "The label of footer link with label=GitHub Labs Projects linking to https://github.com/SumoLogic-Labs"
+  },
+  "link.item.label.Sumo Dojo Slack": {
+    "message": "Sumo Dojo Slack",
+    "description": "The label of footer link with label=Sumo Dojo Slack linking to https://sumodojo.slack.com/"
+  },
+  "copyright": {
+    "message": "Copyright © 2024, Sumo Logic Inc. | Built with Docusaurus.",
+    "description": "The footer copyright"
+  }
+}
