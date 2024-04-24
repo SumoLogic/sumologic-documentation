@@ -9,6 +9,7 @@ description: Use include and exclude processing rules to specify what kind of da
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can use include and exclude processing rules to specify what data is sent to Sumo Logic using OpenTelemetry Collector. Internally these will use [filter processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/filterprocessor) to get the data filtered. 
 

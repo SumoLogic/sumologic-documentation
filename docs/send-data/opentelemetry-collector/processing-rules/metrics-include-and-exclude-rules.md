@@ -9,6 +9,8 @@ description: You can use metrics processing rules to specify what metrics are se
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 You can use include and exclude processing rules to specify what metrics is sent to Sumo Logic using OpenTelemetry Collector. Internally these will use [filter processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/filterprocessor) to get the metrics filtered. 
 
 * An exclude rule functions as a denylist filter where all data is sent except matching data to Sumo Logic.
