@@ -10,7 +10,7 @@ on:
 
 jobs:
     build-and-deploy:
-      runs-on: ubuntu-20.04
+      runs-on: ubuntu-latest
       env:
           CI: true
           NODE_ENV: production
