@@ -58,7 +58,7 @@ The following AWS Lambda environment variables are supported in both the Lambda 
 | `SOURCE_HOST_OVERRIDE` | (Optional) You can use this variable to override the `_sourceHost` configured for the HTTP Source. |
 | `SOURCE_NAME_OVERRIDE` | (Optional) You can use this variable to override the `_sourceName` configured for the HTTP Source. |
 
-If you are configuring log collection for VPC flow logs, see the Environment variables for VPC flow log collection section on Collect Amazon VPC Flow Logs from CloudWatch using CloudFormation.
+If you are configuring log collection for VPC flow logs, see [Collect Amazon VPC Flow Logs from CloudWatch using CloudFormation](/docs/integrations/cloud-security-monitoring-analytics/amazon-vpc-flow#collect-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation).
 
 Define variables in the `Environment` section of the CloudFormation template.
 
@@ -186,7 +186,7 @@ If you do not want the `SumoCWSpilloverAlarm` alarm to be created, remove the de
 After few minutes you will see `CREATE_COMPLETE` in the Status column.
 
 :::note
-This solution only ingests log messages to Sumo Logic. If you want to include log levels (such as INFO, DEBUG, etc.) to Sumo Logic, find and update the regex in [Lambda code](https://github.com/SumoLogic/sumologic-aws-lambda/blob/main/cloudwatchlogs-with-dlq/cloudwatchlogs_lambda.js#L14) deployed in your AWS account with 
+This solution only ingests log messages to Sumo Logic. If you want to include log levels (such as INFO, DEBUG, etc.) to Sumo Logic, find and update the regex in [Lambda code](https://github.com/SumoLogic/sumologic-aws-lambda/blob/main/cloudwatchlogs-with-dlq/cloudwatchlogs_lambda.js#L14) deployed in your AWS account with
 <br/>`var consoleFormatRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z\s(\w+?-\w+?-\w+?-\w+?-\w+)\s/;`
 :::
 
@@ -230,8 +230,8 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 1. (Optional) In the **Test Pattern** section, select the log data to test, then click **Test pattern**. If test results look fine, then click **Start Streaming**.<br/><img src={useBaseUrl('img/send-data/test-pattern.png')} style={{border: '1px solid gray'}} alt="test-pattern" width="700"/>
 
 :::note
-Sample CloudWatch log ingested for Amazon RDS PostgreSQL using Lambda log forwarder with ```IncludeLogGroupInfo``` set to ```false``` . 
-```json 
+Sample CloudWatch log ingested for Amazon RDS PostgreSQL using Lambda log forwarder with ```IncludeLogGroupInfo``` set to ```false``` .
+```json
 {
     "timestamp":1705908605000,
     "message":"2024-01-22 07:30:05 UTC::@:[561]:LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB"

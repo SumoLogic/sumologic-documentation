@@ -141,7 +141,7 @@ request_id
 
 This section provides instructions for configuring log collection from Acquia and sending those logs to Sumo Logic for monitoring and analysis in the Acquia App predefined dashboards and searches.
 
-Sumo Logic enables you to collect logs from Acquia, with the ability to configure the log types to be collected. The logs are then forwarded to a Sumo Logic [Cloud Syslog Source](#Configuring-a-cloud-syslog-source).
+Sumo Logic enables you to collect logs from Acquia, with the ability to configure the log types to be collected. The logs are then forwarded to a Sumo Logic [Cloud Syslog Source](#configuring-a-cloud-syslog-source).
 
 
 ### Step 1: Configure a collector
@@ -174,7 +174,7 @@ This task shows you how to configure a cloud syslog source for Acquia log collec
 
 #### Prerequisites
 
-It's helpful to know the options you'll need to set before starting a procedure. When you're [configuring a cloud syslog source](/#Configuring_a_cloud_syslog_source), be sure to specify the following configurations:
+It's helpful to know the options you'll need to set before starting a procedure. When you're [configuring a cloud syslog source](#configuring-a-cloud-syslog-source), be sure to specify the following configurations:
 
 * Source:
   * **Name**. (Required) A name is required, the Description is optional.

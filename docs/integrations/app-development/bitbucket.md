@@ -120,7 +120,7 @@ In this step, you configure a Hosted Collector to receive Webhook Events from Bi
 3. From the links on the **Settings** page, click the **Webhooks** link.
 4. Click the **Add Webhook** button to create a Webhook for the repository. The **Add New Webhook** page appears.<br/><img src={useBaseUrl('img/integrations/app-development/Collect_Log_BB.png')} alt="Bitbucket" />
 5. Enter a **Title** with a short description.
-6. Enter Sumo Logic Http source **URL**, you configured this in [Configure Hosted Collector to Receive Bitbucket events](#Configure_Hosted_Collector_to_Receive_Bitbucket_events).
+6. Enter Sumo Logic Http source **URL**, you configured this in [Configure Hosted Collector to Receive Bitbucket events](#step-1-configure-hosted-collector-to-receive-bitbucket-events).
 7. Click on **Status** to make it **Active**.
 8. **Triggers** - Click on Choose from a full list of triggers, and choose all triggers under Repository, Issue and Pull Request.
 9. Click **Save**

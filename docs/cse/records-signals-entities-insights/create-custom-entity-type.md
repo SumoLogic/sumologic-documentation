@@ -21,9 +21,9 @@ Just as for Entities of built-in types listed above—IP addresses, MAC addresse
 
 To create a custom Entity type:
 
-1. Click the gear menu and choose **Custom Types** from the **Entities** column.<br/><img src={useBaseUrl('img/cse/custom-types-option.png')} alt="Custom types option" width="800"/>
-1. Click **Create** on the **Custom Entity Types** page. <br/><img src={useBaseUrl('img/cse/custom-types-page.png')} alt="Custom Entity types page" width="800"/>
-2. The **Create Custom Entity Type** popup appears. <br/><img src={useBaseUrl('img/cse/create-custom-entity-type.png')} alt="Create custom Entity type" width="500"/>
+1. In the top menu, click **Configuration** and choose **Custom Types** from the **Entities** column.
+1. Click **Create** on the **Custom Entity Types** page. <br/><img src={useBaseUrl('img/cse/custom-types-page.png')} alt="Custom Entity types page" style={{border: '1px solid gray'}} width="800"/>
+2. The **Create Custom Entity Type** popup appears. <br/><img src={useBaseUrl('img/cse/create-custom-entity-type.png')} alt="Create custom Entity type" style={{border: '1px solid gray'}} width="500"/>
 3. **Name**. Enter a meaningful name for the custom Entity type. The name can include alphanumeric characters and spaces. The name you enter will appear as the **Name** of the custom Entity type on the **Custom Entity Type** page. 
 4. **Identifier**. Enter a unique identifier for the custom Entity type. The Identifier can include lowercase alphanumeric characters. The Identifier of the Entity type doesn’t appear in the Cloud SIEM UI, but is used by the Cloud SIEM backend.
     :::note

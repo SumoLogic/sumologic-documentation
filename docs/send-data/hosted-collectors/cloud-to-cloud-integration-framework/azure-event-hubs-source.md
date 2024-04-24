@@ -55,7 +55,7 @@ The Event Hub doesn't have to be in the same subscription as the resource sendin
     In this example, Event Hub Instance is set to **SumoCollectionPolicy**.
 1. Copy the Shared Access Policy Key.<br/>  ![AzureEventHubstep9.png](/img/send-data/AzureEventHubstep9.png)
     Copy the Primary/Secondary key associated with this policy.
-1. When [configuring the Azure Event Hubs Source](#create-an-azure-event-hubs-source) in Sumo Logic, our input fields might be:
+1. When [configuring the Azure Event Hubs Source](#vendor-configuration) in Sumo Logic, our input fields might be:
 
   | Field | Value  |
   |:----------------------------|:----------------------|
