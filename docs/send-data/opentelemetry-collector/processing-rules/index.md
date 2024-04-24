@@ -33,3 +33,22 @@ You can create one or more processing rules for a Source Template, combining the
 When a Source has multiple rules they are processed in the following order: includes, excludes, masks.   
 
 Exclude rules take priority over include rules. Include rules are processed first, however, if an exclude rule matches data that matched the include rule filter, the data is excluded.
+
+## Guide contents
+
+In this section, we'll introduce the following concepts:
+
+<div className="box-wrapper" >
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/opentelemetry-collector/processing-rules/include-and-exclude-rules-otel"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Include and Exclude Rules for OpenTelemetry </h4></a>
+  <p>Use include and exclude processing rules to specify what kind of data is sent to Sumo Logic using OpenTelemetry Collector.</p>
+  </div>
+</div>
+<div className="box smallbox card">
+  <div className="container">
+  <a href="/docs/send-data/opentelemetry-collector/processing-rules/metrics-include-and-exclude-rules-otel"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Metrics Include and Exclude Rules for OpenTelemetry</h4></a>
+  <p>Use metrics processing rules to specify what metrics are sent to Sumo Logic using OpenTelemetry Collector.</p>
+  </div>
+</div>
+</div>
