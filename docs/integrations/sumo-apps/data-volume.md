@@ -39,6 +39,8 @@ import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
+<ViewDashboards/>
+
 ### Overview
 
 The **Data Volume - Overview** dashboard helps you understand your ingest in terms of Logs (by Tiers), Metrics, and Tracing capabilities.
