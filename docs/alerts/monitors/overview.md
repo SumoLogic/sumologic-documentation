@@ -19,7 +19,7 @@ Learn how [Monitors differ from Scheduled Searches](/docs/alerts/difference-from
 
 ## Prerequisites
 
-To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities). [Learn more](/docs/alerts/monitors/settings/#monitors-folder-permissions) about controlling permissions at the monitor or folder level.
+To manage and/or view monitors, you'll need the **Manage** and **View Monitors** [role capabilities](/docs/manage/users-roles/roles/role-capabilities). [Learn more](/docs/alerts/monitors/settings/#folder-permissions) about controlling permissions at the monitor or folder level.
 
 ## Rules
 

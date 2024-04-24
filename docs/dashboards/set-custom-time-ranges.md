@@ -10,7 +10,7 @@ This page has information about changing the time range for a dashboard and its 
 
 A dashboard has a preset default time range. Often, the dashboard time range applies to all of the panels in the dashboards. Sometimes, individual panels may have a different time range than the dashboard time range. You can change the time range for a dashboard and for individual panels—the options for doing so are described in [Set time range](#set-time-range), below.
 
-After changing the time range for a dashboard or panel, you can set the new range as the default time range. If you do, the default time range you’ve set will persist, even after you close and reopen the dashboard. For more information, see [Set default time range](#set-default-time-range).
+After changing the time range for a dashboard or panel, you can set the new range as the default time range. If you do, the default time range you’ve set will persist, even after you close and reopen the dashboard. For more information, see [Set default time range](#set-default-time-ranges).
 
 ## Set time range
 

@@ -90,7 +90,7 @@ These instructions assume that the Security Administrator, System Auditor, and R
 
 Sumo Logic collects logs from Workday via a script that calls the Workday APIs. As part of the script configuration, you need to first configure log types that need to be collected, and these logs are then forwarded to Sumo Logic’s HTTPS source.
 
-By default, the collection starts from the current date and time, but this setting is also configurable. For more information, see the [Advanced Configuration](#advanced-configuration) options.
+By default, the collection starts from the current date and time, but this setting is also configurable.
 
 ### Recommended Deployment Process
 

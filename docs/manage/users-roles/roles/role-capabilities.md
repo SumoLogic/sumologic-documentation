@@ -92,8 +92,8 @@ Following are the capabilities you can assign when you [create roles](create-ma
 | Playbooks Access | View [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
 | Playbooks Configure | Create and edit [playbooks](/docs/platform-services/automation-service/automation-service-playbooks/). |
 | Bridge Monitoring Access | Monitor [Bridge](/docs/platform-services/automation-service/automation-service-bridge/) operations. |
-| Observability Access | [Access automation](/docs/platform-services/automation-service/about-automation-service/#where-you-can-run-automations) in the Sumo Logic SaaS Log Analytics Platform. | 
-| Observability Configure | Create and edit automation in the Sumo Logic SaaS Log Analytics Platform. | 
+| Observability Access | [Access automation](/docs/platform-services/automation-service/about-automation-service/#where-you-can-run-automations) in the Sumo Logic SaaS Log Analytics Platform. |
+| Observability Configure | Create and edit automation in the Sumo Logic SaaS Log Analytics Platform. |
 
 ## Alerting
 
@@ -101,9 +101,9 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 
 | Capability | Description |
 | :-- | :-- |
-| View Monitors	| If [Monitors folder permissions](/docs/alerts/monitors/settings#monitors-folder-permissions) are enabled for your org, users with this capability can view folders on the [Monitors](/docs/alerts/monitors) page to which they've been granted View access, and the Monitors contained in those folders.|
-| Manage Monitors	| Users with this capability can create new folders and [Monitors](/docs/alerts/monitors), and grant other roles permissions to the folders they create. If [Monitors folder permissions](/docs/alerts/monitors/settings#monitors-folder-permissions) are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.|
-| Admin Monitors	| If [Monitors folder permissions](/docs/alerts/monitors/settings#monitors-folder-permissions) are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the Monitors page. This is similar to the Content Administrator capability of the Content Library.|
+| View Monitors	| If [Monitors folder permissions](/docs/alerts/monitors/settings/#folder-permissions) are enabled for your org, users with this capability can view folders on the [Monitors](/docs/alerts/monitors) page to which they've been granted View access, and the Monitors contained in those folders.|
+| Manage Monitors	| Users with this capability can create new folders and [Monitors](/docs/alerts/monitors), and grant other roles permissions to the folders they create. If [Monitors folder permissions](/docs/alerts/monitors/settings/#folder-permissions) are enabled for your org, users with this capability can also create, edit, delete, update and grant permissions to folders to which another user has granted them those permissions.|
+| Admin Monitors	| If [Monitors folder permissions](/docs/alerts/monitors/settings/#folder-permissions) are enabled for your org, users with this capability have full access (Create, Edit, Delete, Update, and grant permissions) to ALL folders and monitors on the Monitors page. This is similar to the Content Administrator capability of the Content Library.|
 | View Alerts	| View alerts on the [Alert page](/docs/alerts/monitors/alert-response#alert-page).|
 | View Muting Schedules	| Required for viewing the [Muting Schedules](/docs/alerts/monitors/muting-schedules) page and schedule definitions.|
 | Manage Muting Schedules	| Required for creating, editing, and deleting Muting Schedules.|
@@ -138,7 +138,7 @@ Folder-level permissions are available if your org has fine-grained Monitor perm
 [Cloud SOAR](/docs/cloud-soar/) capabilities appear in the Roles UI only if Cloud SOAR has been enabled for your account.
 
 :::info
-This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`, see [Legacy Cloud SOAR role capabilities](#legacy-cloud-soar-role-capabilities) below. 
+This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`, see [Legacy Cloud SOAR role capabilities](#legacy-cloud-soar-role-capabilities) below.
 :::
 
 | Capability category | Capability | Description |
@@ -196,11 +196,11 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 ### Legacy Cloud SOAR role capabilities
 
 :::info
-This section only applies to organizations having a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`. 
+This section only applies to organizations having a legacy Cloud SOAR instance URL matching the pattern `*.soar.sumologic.com`.
 :::
 
 | Capability | Description |
-| :-- | :-- | 
+| :-- | :-- |
 | View Cloud SOAR | Users with a role that grants this capability will see a **Cloud SOAR** link in the left-nav bar of the Sumo Logic UI. |
 | Settings General | Access Cloud SOAR settings. |
 | Configure | Configure Cloud SOAR. |

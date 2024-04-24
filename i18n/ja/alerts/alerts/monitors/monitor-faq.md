@@ -57,7 +57,7 @@ Yes, you can use [Alert Variables](/docs/alerts/monitors/alert-variables) to ref
 
 ## Does Sumo Logic let me get alerts from a specific static IP address that I can allowlist?
 
-Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
+Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/support/s).
 
 :::note
 The [**Test Connection** feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections)does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
