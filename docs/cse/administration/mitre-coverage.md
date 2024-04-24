@@ -1,8 +1,8 @@
 ---
 id: mitre-coverage
-title: MITRE ATT&CK Coverage
+title: MITRE ATT&CK Threat Coverage Explorer
 sidebar_label: MITRE ATT&CK Coverage
-description: MITRE ATT&CK Coverage shows the adversary tactics, techniques, and procedures covered by rules based on your data sources.  
+description: The MITRE ATT&CK Threat Coverage Explorer shows the adversary tactics, techniques, and procedures covered by rules based on your data sources.  
 keywords:
   - MITRE ATT&CK
   - tactics
@@ -13,16 +13,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import Iframe from 'react-iframe';
 
-The MITRE ATT&CK Coverage page shows the [MITRE ATT&CK](https://attack.mitre.org/) adversary tactics, techniques, and procedures (TTP) from the [Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/) that are covered by rules in your system. Not only can you filter on specific techniques to see how well you are covered for each, but you can filter on vendors and products that provide your data sources so you can see the coverage they give you. Adding or removing products from the list allows you to evaluate the effectiveness of your data sources.
+The MITRE ATT&CK Threat Coverage Explorer shows the [MITRE ATT&CK](https://attack.mitre.org/) adversary tactics, techniques, and procedures (TTP) from the [Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/) that are covered by rules in your system. Not only can you filter on specific techniques to see how well you are covered for each, but you can filter on vendors and products that provide your data sources so you can see the coverage they give you. Adding or removing products from the list allows you to evaluate the effectiveness of your data sources.
 
-Coverage data is updated on the page once a day. To determine your coverage, MITRE ATT&CK Coverage collects data from rules that have fired in the last 180 days. 
+Coverage data is updated on the page once a day. To determine your coverage, the MITRE ATT&CK Threat Coverage Explorer collects data from rules that have fired in the last 180 days. 
 
 :::note
-* To view the MITRE ATT&CK Coverage page, you must be assigned the [**View Rules** role capability](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem). 
+* To view the MITRE ATT&CK Threat Coverage Explorer, you must be assigned the [**View Rules** role capability](/docs/manage/users-roles/roles/role-capabilities/#cloud-siem). 
 * To run APIs to get information on coverage, see [MITRE ATT&CK coverage APIs](#mitre-attck-coverage-apis).
 :::
 
-Watch this micro lesson to learn about MITRE ATT&CK Coverage.
+Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer.
 
 <Iframe url="https://www.youtube.com/embed/O1SmpbL4gos?rel=0"
      width="854px"
@@ -35,9 +35,9 @@ Watch this micro lesson to learn about MITRE ATT&CK Coverage.
      allowfullscreen
      />
 
-## MITRE ATT&CK Coverage page
+## MITRE ATT&CK Threat Coverage Explorer
 
-To open the MITRE ATT&CK Coverage page, select **Content > MITRE ATT&CK Coverage**.
+To open the MITRE ATT&CK Threat Coverage Explorer, select **Content** in the top menu and select **MITRE ATT&CK Coverage**.
 
 <img src={useBaseUrl('img/cse/mitre-coverage-page.png')} alt="MITRE Coverage page" style={{border: '1px solid gray'}} width="900"/>
 

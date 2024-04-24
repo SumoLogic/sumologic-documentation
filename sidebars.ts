@@ -45,8 +45,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'contributing/index'},
       items: [
-        'contributing/edit-doc',
-        'contributing/create-doc',
+        'contributing/create-edit-doc',
         'contributing/remove-doc',
         'contributing/style-guide',
         'contributing/glossary',
@@ -826,9 +825,19 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/index'},
           items: [
-            'manage/ingestion-volume/ingest-budgets/assign-collector-ingest-budget',
-            'manage/ingestion-volume/ingest-budgets/quickstart',
-          ]
+            'manage/ingestion-volume/ingest-budgets/minute-volume',
+          {
+            type: 'category',
+            label: 'Daily Volume',
+            collapsible: true,
+            collapsed: true,
+            link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/daily-volume/index'},
+            items: [
+              'manage/ingestion-volume/ingest-budgets/daily-volume/assign-collector-ingest-budget',
+              'manage/ingestion-volume/ingest-budgets/daily-volume/quickstart',
+            ]
+          },
+        ]
         },
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
       ]
@@ -961,6 +970,7 @@ module.exports = {
           items: [
             'alerts/webhook-connections/set-up-webhook-connections',
             'alerts/webhook-connections/aws-lambda',
+            'alerts/webhook-connections/cloud-soar',
             'alerts/webhook-connections/datadog',
             'alerts/webhook-connections/jira-cloud',
             'alerts/webhook-connections/jira-server',
@@ -988,7 +998,6 @@ module.exports = {
             'alerts/webhook-connections/slack',
             'alerts/webhook-connections/schedule-searches-webhook-connections',
             'alerts/webhook-connections/audit-index',
-            'alerts/webhook-connections/cloud-soar',
           ]
         },
       ],
