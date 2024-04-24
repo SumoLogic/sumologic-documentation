@@ -10,7 +10,7 @@ on:
 
 jobs:
     build-and-deploy:
-      runs-on: ubuntu-20.04
+      runs-on: ubuntu-latest
       env:
           CI: true
           NODE_ENV: production
@@ -19,7 +19,7 @@ jobs:
         - name: Set up Node.js
           uses: actions/setup-node@v3
           with:
-            node-version: '21.7.1'
+            node-version: '20.x'
             cache: 'yarn'
         - name: Docusaurus Webpack cache
           uses: actions/cache@v3
