@@ -85,7 +85,7 @@ You’ll be offered the option to push the Playbook to selected tenants, as desi
 
 <img src={useBaseUrl('img/cloud-soar/save-to-tenants.png')} alt="save-to-tenants" style={{border: '1px solid gray'}} />
 
-For more information, see [Playbook](/docs/cloud-soar/global-functions-menu#playbook).
+For more information, see [Playbook](/docs/cloud-soar/automation/#playbook).
 
 ## Custom Fields
 
@@ -101,4 +101,4 @@ When you mouse over the icons, you’ll see **Synchronized** and **Push Field**.
 
 <img src={useBaseUrl('img/cloud-soar/synchronized.png')} alt="synchronized" style={{border: '1px solid gray'}} />
 
-For more information about Custom Fields, see [Customization](/docs/cloud-soar/global-functions-menu#customization).
+For more information about Custom Fields, see [Customization](/docs/cloud-soar/overview/#custom-fields).
