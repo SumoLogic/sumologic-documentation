@@ -1128,6 +1128,7 @@
   "/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Keeper_Security": "/docs/integrations/partner-ecosystem-apps",
   "/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Keeper_Security/Collect_Logs_for_Keeper_Security": "/docs/integrations/partner-ecosystem-apps/",
   "/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Keeper_Security/Install_the_Keeper_Security_App_and_view_the_Dashboards": "/docs/integrations/partner-ecosystem-apps/",
+  "/docs/integrations/security-threat-detection/keeper-security": "/docs/integrations/partner-ecosystem-apps/",
   "/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Netskope": "/docs/integrations/security-threat-detection/netskope",
   "/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Netskope/Collect_logs_for_Netskope": "/docs/integrations/security-threat-detection/netskope",
   "/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Netskope/Install_the_Netskope_App_and_view_the_Dashboards": "/docs/integrations/security-threat-detection/netskope",
