@@ -23,14 +23,14 @@ Sumo Logic Copilot is an AI-based assistant that streamlines log analysis insigh
 
 In this document, you'll learn the recommended Copilot workflow as well as best practices.
 
+
+
 :::sumo Watch a Demo
 
 <details>
 <summary>Click here to watch a step-by-step video investigation using Copilot.</summary>
 
 Let's say we have AWS CloudTrail logs being ingested into Sumo Logic we receive an alert related to AWS CloudTrail access keys being leaked outside the organization. We'll use Copilot to investigate.
-
-<!-- replace with Micro Lesson once it's published-->
 
 <Iframe url="/img/search/copilot/rsa-copilot-demo.mp4"
         width="854px"
@@ -53,6 +53,7 @@ Let's say we have AWS CloudTrail logs being ingested into Sumo Logic we receive 
 1. We conclude that the access key was used to modify permissions, providing the attacker with a potential network entry point. Remediation would involve disabling the key, blocking the source IP, and further log analysis.
 </details>
 :::
+
 
 ## Step 1: Open Copilot
 
