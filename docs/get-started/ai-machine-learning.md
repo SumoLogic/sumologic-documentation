@@ -23,8 +23,8 @@ Sumo Logic provides observability into your technology stack by analyzing the mi
 
 ### Log Search
 
-* Copilot. An in-product AI-based assistant that allows you to obtain insights quickly from logs. You can interact with Copilot using plain English queries and utilize search suggestions for result refinement.
-* [LogReduce&reg;](/docs/search/logreduce). Utilizes AI-driven algorithms to cluster log messages based on string and pattern similarity. LogReduce employs fuzzy logic to group similar messages into signatures, enabling quick assessment of activity patterns. Users can refine results based on their preferences, [teaching LogReduce](influence-the-logreduce-outcome.md) for more specific outcomes.
+* Copilot. <!--link tk-->An in-product AI-based assistant that allows you to obtain insights quickly from logs. You can interact with Copilot using plain English queries and utilize search suggestions for result refinement.
+* [LogReduce&reg;](/docs/search/logreduce). Utilizes AI-driven algorithms to cluster log messages based on string and pattern similarity. LogReduce employs fuzzy logic to group similar messages into signatures, enabling quick assessment of activity patterns. Users can refine results based on their preferences, [teaching LogReduce](/docs/search/logreduce/influence-the-logreduce-outcome) for more specific outcomes.
 
 
 ### Alerts
