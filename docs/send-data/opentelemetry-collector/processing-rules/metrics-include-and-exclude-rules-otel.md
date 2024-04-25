@@ -53,3 +53,10 @@ If you need to filter by metrics name and dimension, then you can select this op
 For example, when collecting host metrics, you can filter network metrics for a specific device and direction by giving metric name regex as `network`, and in the dimension table key value pair you can specify `device=lo` and `direction=transmit`.
 
 <img src={useBaseUrl('img/send-data/opentelemetry-collector/processingrule-include-metricnameanddimension.png')} alt="collector-installation-completion-page" style={{border:'1px solid gray'}} width="700" />
+
+## Rules and Limitations
+
+* Your rule must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax).
+* Exclude rules take priority over include rules. Include rules are processed first, however, if an exclude rule matches data that matched the include rule filter, the data is excluded.
+* If two or more rules are listed, the assumed Boolean operator is OR.
+* If data needs to get filtered for single dimension key which can have multiple possible values then we can use a `|` operator. For example if we need to monitor cpu metrics for only cpu0 and cpu1 then we can form the dimension value expression as `cpu0|cpu1`.
