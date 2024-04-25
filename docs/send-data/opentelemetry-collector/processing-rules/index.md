@@ -25,6 +25,7 @@ Processing Rules for metrics collection support the following rule types:
 ## Limitations
 
 * Regular expressions must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax).
+* Processing Rules are tested with maximum of 20 rules.
 
 ## How do processing rules work together?
 
