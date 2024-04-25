@@ -126,13 +126,23 @@ To configure forwarding for syslog IDS/IPS events, do the following:
 
 For more information on configuring log forwarding from Cisco Meraki, see the [Cisco Meraki documentation](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Server_Overview_and_Configuration).
 
-
-
 ## Installing the Cisco Meraki app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Cisco Meraki app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Cisco Meraki app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Cisco Meraki dashboards​
 

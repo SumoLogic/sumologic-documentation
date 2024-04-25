@@ -148,12 +148,23 @@ Sample policy: Be sure to use the proper permission level.
 21. A successfully configured trigger will have a success message and appear similar to the trigger below.
 22. You are done for the first Lambda code! You can follow the same steps to configure **Lambda for Halo_metrics_to_SumoLogic**.
 
-
 ## Installing the CloudPassage Halo app
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the CloudPassage Halo app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the CloudPassage Halo app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing CloudPassage Halo dashboards​
 

@@ -196,13 +196,25 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 
 
 
-## Installing the Google Cloud VPC App
+## Installing the Google Cloud VPC app
 
 Now that you have set up collection for Google Cloud VPC, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Google Cloud VPC app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Google Cloud VPC app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Google Cloud VPC dashboards
 

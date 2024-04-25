@@ -313,6 +313,18 @@ import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 The Script Source is available for Linux or Windows environments with Java Runtime Environments.
 
+## Upgrading the Box app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Box app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Viewing Box dashboards
 
 import ViewDashboards from '../../reuse/apps/view-dashboards.md';

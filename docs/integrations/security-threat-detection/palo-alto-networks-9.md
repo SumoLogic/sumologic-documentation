@@ -169,8 +169,6 @@ To verify the logs in Palo Alto Networks, do the following:
    _sourceCategory = NW/PAN/V9
    ```
 
-
-
 ## Install the Palo Alto Networks 9 app
 
 This section provides instructions for installing the Palo Alto Networks 9 app, along with examples of each of the dashboards that provide visual insights into your data.
@@ -178,6 +176,18 @@ This section provides instructions for installing the Palo Alto Networks 9 app, 
 import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
 <AppInstall2/>
+
+## Upgrading the Palo Alto Networks 9 app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Palo Alto Networks 9 app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Palo Alto Networks 9 dashboards​
 
