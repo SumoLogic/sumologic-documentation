@@ -148,6 +148,10 @@ To configure a Duo Source:
 
 [Download example](/files/c2c/slack/example.tf)
 
+## Limitation 
+
+For web API, this source supports a maximum of 16,000 activate Slack channels. Archived Slack channels are not included. Exceeding this active channel limit may cause the source to return a FIRST-PARTY-GENERIC error type.
+
 ## Troubleshoot
 
 Collecting real-time Slack messages from Slack channels and understanding the C2C polling interval is a common question. 
