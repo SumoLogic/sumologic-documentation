@@ -46,6 +46,18 @@ import AppInstall from '../reuse/apps/app-install-v2.md';
 
 <AppInstall/>
 
+#### How to upgrade Next-Gen Apps
+
+import AppUpdate from '../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+#### How to uninstall Next-Gen Apps
+
+import AppUninstall from '../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ### Classic Apps (Legacy)
 
 All of our existing Classic apps will be converted to Next-Gen. In the meantime, our Classic apps will remain available to you within the Application Catalog.
