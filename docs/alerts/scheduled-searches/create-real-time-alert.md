@@ -5,14 +5,17 @@ sidebar_label: Create a Real-Time Alert
 description: Set up Real-Time Alerts to learn of error conditions right when they occur.
 ---
 
+:::danger Solution Deprecated
+Effective May 15, 2024, Real-Time Scheduled Searches have been deprecated and you can no longer create them. Real-Time Scheduled Searches created before that date will continue to function until May 15, 2025. We encourage you instead to [create a monitor](/docs/alerts/monitors/create-monitor) and set it to execute near-real-time searches (e.g., 15m intervals). [Learn more](/docs/alerts/scheduled-searches/deprecation).
+:::
+
 Real-Time Alerts are scheduled searches that run nearly continuously. That means that you're informed in real time when error conditions exist.
 
-When an alert condition is satisfied Sumo Logic triggers the selected alert type. Sumo Logic examines ingested data in a rolling window using the Time Range you define. Any time a new result is found, another email is sent.
+When an alert condition is satisfied, Sumo Logic triggers the selected alert type. Sumo Logic examines ingested data in a rolling window using the Time Range you define. Any time a new result is found, another email is sent.
 
 ## When to Use
 
-Only use real-time schedules when you know your data is ingested within a few minutes of its creation. The [receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time) should be within a few minutes of your log's [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata). See
-how to [troubleshoot timestamp discrepancies](/docs/send-data/collector-faq#troubleshooting-time-discrepancies).
+Only use real-time schedules when you know your data is ingested within a few minutes of its creation. The [receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time) should be within a few minutes of your log's [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata). See how to [troubleshoot timestamp discrepancies](/docs/send-data/collector-faq#troubleshooting-time-discrepancies).
 
 Real-Time Alerts are not duplicated, which means that if a specific raw log message has triggered an alert once already, that same log message will not trigger an alert a second time.
 
