@@ -11,7 +11,7 @@ Effective May 15, 2024, Real-Time Scheduled Searches have been deprecated and yo
 
 Real-Time Alerts are scheduled searches that run nearly continuously. That means that you're informed in real time when error conditions exist.
 
-When an alert condition is satisfied, Sumo Logic triggers the selected alert type. Sumo Logic examines ingested data in a rolling window using the Time Range you define. Any time a new result is found, another email is sent.
+When an alert condition is satisfied Sumo Logic triggers the selected alert type. Sumo Logic examines ingested data in a rolling window using the Time Range you define. Any time a new result is found, another email is sent.
 
 ## When to Use
 
