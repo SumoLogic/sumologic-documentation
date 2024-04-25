@@ -48,7 +48,7 @@ In this section, we'll introduce the following concepts:
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/opentelemetry-collector/processing-rules/metrics-include-and-exclude-rules-otel"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Metrics Include and Exclude Rules for OpenTelemetry</h4></a>
+  <a href="/docs/send-data/opentelemetry-collector/processing-rules/metrics-include-and-exclude-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Metrics Include and Exclude Rules for OpenTelemetry</h4></a>
   <p>Use metrics processing rules to specify what metrics are sent to Sumo Logic using OpenTelemetry Collector.</p>
   </div>
 </div>
