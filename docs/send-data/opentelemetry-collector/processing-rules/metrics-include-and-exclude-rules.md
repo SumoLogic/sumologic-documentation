@@ -1,5 +1,5 @@
 ---
-id: metrics-include-and-exclude-rules-otel
+id: metrics-include-and-exclude-rules
 title: Metrics Include and Exclude Rules for OpenTelemetry (Beta)
 description: You can use metrics processing rules to specify what metrics are sent to Sumo Logic using OpenTelemetry Collector.
 ---
