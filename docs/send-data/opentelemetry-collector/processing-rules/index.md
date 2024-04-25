@@ -1,6 +1,6 @@
 ---
 title: Processing Rules for OpenTelemetry (Beta)
-description: Use Sumo Logic processing rules for opentelemetry agent with OTRM source template
+description: Use Sumo Logic processing rules for an OpenTelemetry agent with an OpenTelemetry remote management (OTRM) source template.
 ---
 <head>
   <meta name="robots" content="noindex" />
@@ -10,23 +10,23 @@ description: Use Sumo Logic processing rules for opentelemetry agent with OTRM s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Processing rules can be used with OpenTelemetry collector for different source template in OTRM (Open telemetry remote management). These processing rules can filter and can mask the data sent to Sumo Logic from a OpenTelemtry collector which is remotely managed by Sumo Logic. The rules affect only the data sent to Sumo Logic; logs and metrics on your end remain intact and unchanged. Data filtered by a OpenTelemetry collector using Processing Rules does not count towards your daily data volume quota.
+Processing rules can be used with OpenTelemetry Collector for different source templates in OTRM (OpenTelemetry remote management). These processing rules can filter and can mask the data sent to Sumo Logic from OpenTelemetry Collector which is remotely managed by Sumo Logic. The rules affect only the data sent to Sumo Logic; logs and metrics on your end remain intact and unchanged. Data filtered by OpenTelemetry Collector using processing rules does not count towards your daily data volume quota.
 
-**Processing Rules for Logs Collection** support the following rule types:
+Processing rules for logs collection support the following rule types:
 
-* [Exclude messages that match](include-and-exclude-rules-otel.md). Remove messages that you do not want to send to Sumo Logic at all ("denylist" filter). These messages are skipped by OpenTelemetry Collector and are not uploaded to Sumo Logic.
-* [Include messages that match](include-and-exclude-rules-otel.md). Send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of rule can be useful, for example, if you only want to include only messages coming from a firewall.
+* [Exclude messages that match](/docs/send-data/opentelemetry-collector/processing-rules/include-and-exclude-rules-otel.md). Remove messages that you do not want to send to Sumo Logic at all ("denylist" filter). These messages are skipped by OpenTelemetry Collector and are not uploaded to Sumo Logic.
+* [Include messages that match](/docs/send-data/opentelemetry-collector/processing-rules/include-and-exclude-rules-otel.md). Send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of rule can be useful, for example, if you only want to include messages coming from a firewall.
 
-**Processing Rules for Metrics Collection** support the following rule types:
+Processing Rules for metrics collection support the following rule types:
 
-* [Exclude metrics that match](metrics-include-and-exclude-rules-otel.md). Remove metrics that you do not want to send to Sumo Logic at all ("denylist" filter).
-* [Include metrics that match](metrics-include-and-exclude-rules-otel.md). Send only selected metrics to your Sumo Logic account (an "allowlist" filter). 
+* [Exclude metrics that match](/docs/send-data/opentelemetry-collector/processing-rules/metrics-include-and-exclude-rules-otel.md). Remove metrics that you do not want to send to Sumo Logic at all ("denylist" filter).
+* [Include metrics that match](/docs/send-data/opentelemetry-collector/processing-rules/metrics-include-and-exclude-rules-otel.md). Send only selected metrics to your Sumo Logic account (an "allowlist" filter). 
 
 ## Limitations
 
 * Regular expressions must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax).
 
-## How do Processing Rules Work Together?
+## How do processing rules work together?
 
 You can create one or more processing rules for a Source Template, combining the different types of filters to generate the exact data set you want sent to Sumo Logic.  
 

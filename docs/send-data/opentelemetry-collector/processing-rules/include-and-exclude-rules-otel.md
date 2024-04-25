@@ -1,6 +1,6 @@
 ---
 id: include-and-exclude-rules-otel
-title: Include and Exclude Rules OpenTelemetry (Beta)
+title: Include and Exclude Rules for OpenTelemetry (Beta)
 description: Use include and exclude processing rules to specify what kind of data is sent to Sumo Logic using OpenTelemetry Collector.
 ---
 <head>
@@ -21,8 +21,7 @@ As a best practice, specify these rules to match the lesser volume of data.
 * If you want to **collect the majority of data** from a source template, provide **exclude** rules to match (filter out) the lesser volume of data.
 * If you want to **collect a small set of data** from a source template, provide **include** rules to match (filter in) the lesser volume of data.
 
-For example, to include only messages coming from a Windows Event log with id 8015,
-you can add a Logs Filter to source template and select the "Type" of the filter as "Include message that match" and can use the following filter regular expression:
+For example, to include only messages coming from a Windows Event log with ID `8015`, you can add a Logs Filter to the source template and select the **Type** of the filter as "Include message that match", and can use the following filter regular expression:
 
 ```
 .*"id":8015.*
@@ -30,12 +29,12 @@ you can add a Logs Filter to source template and select the "Type" of the filter
 
 <img src={useBaseUrl('img/send-data/opentelemetry-collector/processingrule-include-logs.png')} alt="collector-installation-completion-page" style={{border:'1px solid gray'}} width="700" />
 
-## Rules and Limitations
+## Rules and limitations
 
 When writing regular expression rules, you must follow these rules:
 
 * Your rule must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax).
-* If your rule matches **only a section**, of the log line the full log line will be matched.
-* For **single line messages**, its not mandatory to prefix and suffix the regex expression with .\*
-* Exclude rules take priority over include rules. Include rules are processed first, however, if an exclude rule matches data that matched the include rule filter, the data is excluded.
-* If two or more rules are listed, the assumed Boolean operator is OR.
+* If your rule matches *only a section* of the log line, the full log line will be matched.
+* For *single line messages*, it is not mandatory to prefix and suffix the regex expression with `.\*`.
+* Exclude rules take priority over include rules. Include rules are processed first. However, if an exclude rule matches data that matched the include rule filter, the data is excluded.
+* If two or more rules are listed, the assumed Boolean operator is `OR`.
