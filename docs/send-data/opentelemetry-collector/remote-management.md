@@ -6,33 +6,25 @@ sidebar_label: Remote Management
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-This feature is in Beta. To participate, contact your Sumo Logic account executive.
-
-The Sumo Logic Distribution for OpenTelemetry Collector supports remote management of data collection configuration. You can set up data collection configuration from the Sumo UI and push the configuration to one or more collectors.  
+The Sumo Logic Distribution for OpenTelemetry Collector facilitates remote management of data collection configurations, enabling seamless setup from the Sumo UI and deployment to one or more collectors.
 
 ## Remote Management features
 
 ### Collector tags
 
-With OpenTelemetry (OTel) remote management, you can tag your [Installed Collectors](/docs/send-data/installed-collectors) and use those tags to categorize and group them. These tags are enriched in your data, so you can use them in your dashboards and searches as well.
+Utilize OpenTelemetry (OTel) remote management to tag your [Installed Collectors](/docs/send-data/installed-collectors), facilitating categorization and grouping. These tags enrich your data, enabling their usage in dashboards and searches.
 
 ### Source templates
 
-With remote management, data configuration setup for OTel collectors is done using Source templates. This is an extension of our existing [Installed Collector Source](/docs/send-data/installed-collectors/sources) template, with the addition of this new capability to be attached to multiple collectors.
+With remote management, data configuration setup for OTel collectors is done using Source templates. This feature extends our existing [Installed Collector Source](/docs/send-data/installed-collectors/sources) template, allowing attachment to multiple collectors.
 
-You can use collector tags to group your collectors, as described in the previous section, and associate the Source template to these groups of collectors. This reduces redundancy in your data collection setup. This additional step for Source template is called *Collector Linking*.
+Utilize collector tags for grouping collectors, and associate Source templates to these collector groups, reducing redundancy in data collection setup. This process, termed *Collector Linking*, streamlines configuration management.
 
 ## How it works
 
 To get started with using this feature, we will provide a scenario that can be replicated in your environment.
 
-Goal: *As a user, I have 50 Linux servers where I'm running Apache servers and would like to monitor the Apache error logs from all these servers.*
+Scenario: As a user, you aim to monitor Apache error logs from 50 Linux servers running Apache servers.
 
 ### Step 1: Collector installation
 
