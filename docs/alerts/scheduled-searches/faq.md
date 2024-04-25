@@ -10,7 +10,7 @@ searches and provide troubleshooting tips. 
 
 ## Does Sumo Logic let me get alerts from a specific static IP address?
 
-Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
+Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/support/s).
 
 :::note
 The [Test Connection feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections) does not use the same static IP addresses that send notifications, it uses different temporary IP addresses.
@@ -78,7 +78,7 @@ Failures could be related to the Scheduled Search query. Check the following pos
 * In queries that use [lookup](/docs/search/search-query-language/search-operators/lookup-classic) files, the lookup file could be empty. This would cause the Scheduled Search to fail because Sumo Logic downloads the lookup file prior to executing the query. 
 * Other query-specific factors could be at play. To test if the failure can be reproduced, run the Scheduled Search query. 
 * To make sure your query is written correctly, see [Write Efficient Search Queries](/docs/search/get-started-with-search/build-search). 
-* You may be able to optimize your query performance using [Partitions](/docs/manage/partitions-data-tiers) or [Scheduled Views](/docs/manage/scheduled-views).  
+* You may be able to optimize your query performance using [Partitions](/docs/manage/partitions) or [Scheduled Views](/docs/manage/scheduled-views).  
 * Taking too long to complete. See [How to Prevent Your Scheduled Search from Timing Out](#how-to-prevent-your-scheduled-search-from-timing-out). 
 
 ### Sumo Logic Backend Issues
@@ -100,7 +100,7 @@ See also, [What Happens When a Scheduled Search is Suspended?](#what-happens-whe
 
 ### What else can I do? 
 
-For assistance with Scheduled Search issues, contact [Sumo Logic Support](https://support.sumologic.com/hc/en-us). 
+For assistance with Scheduled Search issues, contact [Sumo Logic Support](https://support.sumologic.com/support/s). 
 
 
 ## How to Prevent your Scheduled Search from Timing Out
@@ -236,4 +236,4 @@ If you would like to reactivate the Scheduled Search immediately without waitin
 
 #### What else can I do?
 
-For assistance with Scheduled Search issues, contact [Sumo Logic Support](https://support.sumologic.com/hc/en-us). 
+For assistance with Scheduled Search issues, contact [Sumo Logic Support](https://support.sumologic.com/support/s). 

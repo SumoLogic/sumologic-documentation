@@ -199,7 +199,7 @@ Fields can be used in the following ways:
 
 * Log [Search page](/docs/search). Use the key-value pair as a keyword search expression (before the first pipe, \| ).
 * [Role Based Access Control](/docs/manage/users-roles/roles) (RBAC). Fields can be used in role search filters to control access to data.
-* [Partitions](/docs/manage/partitions-data-tiers), [Scheduled Views](/docs/manage/scheduled-views), and [Field Extraction Rules](/docs/manage/field-extractions). Fields can be used in the scope of Partitions, Scheduled Views, and Field Extraction Rules.
+* [Partitions](/docs/manage/partitions), [Scheduled Views](/docs/manage/scheduled-views), and [Field Extraction Rules](/docs/manage/field-extractions). Fields can be used in the scope of Partitions, Scheduled Views, and Field Extraction Rules.
 
 :::note
 Fields cannot be used with [Live Tail](/docs/search/live-tail).

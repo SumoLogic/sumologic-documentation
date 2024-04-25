@@ -3,12 +3,13 @@ title: Zscaler
 description: ''
 tags: [ ]
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zscaler.png')} alt="axonius" width="80"/>
 
-**Version: 1.3  
-Updated: Feb 20, 2024**
+**Version: 1.6  
+Updated: Mar 20, 2024**
 
 Zscaler Internet Access is a cloud native [security service edge (SSE)](https://www.zscaler.com/solutions/zscaler-security-service-edge) solution that builds on a [decade of secure web gateway leadership](https://www.zscaler.com/gartner-magic-quadrant-secure-web-gateways-2020). Offered as a scalable SaaS platform from the world’s largest security cloud, it replaces legacy network security solutions to stop advanced attacks and prevent data loss with a comprehensive zero trust approach.
 
@@ -43,3 +44,4 @@ Security gateway
     + Added missing incident Artifacts
 * June 15, 2023 (v1.2) - Updated the integration with Environmental Variables
 * February 20, 2024 (v1.3) - Fixed an issue that prevented some actions from being executed
+* March 20, 2024 (v1.6) - Added new field in "Add URL To Category" and "Remove URL From Category" actions to use with custom URL categories

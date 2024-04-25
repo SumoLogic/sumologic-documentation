@@ -53,7 +53,7 @@ to `srcDevice_ip`. 
 
 When you write a rule, you select one or more *On Entity* attributes in the **Then Create a Signal** area of the **Rules Editor**. Here is an example of an existing rule that has two On Entity attributes: `srcDevice_ip` and `dstDevice_ip`.
 
-<img src={useBaseUrl('img/cse/on-entity-example.png')} alt="On Entity example" width="300"/>
+<img src={useBaseUrl('img/cse/on-entity-example.png')} alt="On Entity example" style={{border: '1px solid gray'}} width="300"/>
 
 ## Entities are created when rules fire
 
@@ -61,13 +61,13 @@ Cloud SIEM creates an Entity when a Rule generates a Signal, unless the Entity a
 
 The **Signals** page shows the Entity associated with each Signal.
 
-<img src={useBaseUrl('img/cse/signal-llist.png')} alt="Signals" width="800"/>
+<img src={useBaseUrl('img/cse/signal-list.png')} alt="Signals" style={{border: '1px solid gray'}} width="800"/>
 
 ## Viewing entities in Cloud SIEM UI
 
 You can view the entities that have been extracted from messages on the **Entities** page in the Cloud SIEM UI.
 
-<img src={useBaseUrl('img/cse/entity-list-page.png')} alt="Entities page" width="800"/>
+<img src={useBaseUrl('img/cse/entity-list-page.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
 
 Note that the screenshot above shows an *Activity Score* for each entity. The following section explains what an Activity Score is and how it relates to the Insight creation process.
 
@@ -95,11 +95,11 @@ In the screenshot below, the **Details** pane on the left shows that the Insight
 
 The severity of each Signal is also shown. Cloud SIEM generated an Insight for entity “192.168.1.1” because the cumulative severity of Signals fired for that entity within a two week period exceeds the threshold Activity Score.
 
-<img src={useBaseUrl('img/cse/insight.png')} alt="Insight" width="800"/>
+<img src={useBaseUrl('img/cse/insight.png')} alt="Insight" style={{border: '1px solid gray'}} width="800"/>
 
 ### Redundant Signal suppression
 
-Under certain circumstances, Cloud SIEM suppresses Signals to preventgeneration of multiple, virtually identical Insights. A few unique Signals firing numerous times for the same entity in a short period of time could cause the entity’s Activity Score to climb, resulting in an Insight. At that point, the Entity’s Activity score is reset, and the cycle could repeat, leading to several Insights in succession on the same entity that contain a very similar or identical set of unique Signals. 
+Under certain circumstances, Cloud SIEM suppresses Signals to prevent generation of multiple, virtually identical Insights. A few unique Signals firing numerous times for the same entity in a short period of time could cause the entity’s Activity Score to climb, resulting in an Insight. At that point, the Entity’s Activity score is reset, and the cycle could repeat, leading to several Insights in succession on the same entity that contain a very similar or identical set of unique Signals. 
 
 This makes Insight triage less than ideal for the analyst since they're getting multiple Insights for the same sets of Signals. Cloud SIEM prevents this by suppressing Signals that have the same name and are on the same Entity during a 12 hour time window, or up to 72 hours if Signals for the Signal-Entity combination are firing continuously.   
 
@@ -110,8 +110,6 @@ If Signal A fires on Entity X at hour 0 and continues to fire once every 30 minu
 **Example 2**
 
 Signal B fires on Entity Y fires at hour 0, and doesn’t fire again until hour 13. The Signal that fired at hour 13 will not be suppressed, and will be analyzed by the Insight engine.  
-
-Signals that are suppressed appear in the Cloud SIEM UI as “suppressed”. Suppressed Signals are displayed in the Cloud SIEM UI for 90 days.
 
 :::note
 Prototype Signals, which are are not included in Insights, are not suppressed.

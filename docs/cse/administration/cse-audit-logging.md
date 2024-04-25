@@ -126,8 +126,7 @@ area and provide details of the event.
 
 To search the Audit Event Index for logs that describe Cloud SIEM events:
 
-1. Open a search tab in the Sumo Logic UI by clicking **+ New** and choosing **Log Search**.  
-   <img src={useBaseUrl('img/cse/new-log-search.png')} alt="new-log-search.png" />
+1. Start a [log search](/docs/search/get-started-with-search/search-basics/about-search-basics/). 
 2. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:  
     ```sql
     _index=sumologic_system_events
@@ -139,10 +138,10 @@ To search the Audit Event Index for logs that describe Cloud SIEM events:
 
 ## Example event log
 
-Here is an example `InsightCreated` event log.<br/><img src={useBaseUrl('img/cse/example-event.png')}  alt="example.png" />
+Here is an example `InsightCreated` event log.<br/><img src={useBaseUrl('img/cse/example-event.png')}  alt="example.png" style={{border: '1px solid gray'}} width="600" />
 
 ## Index retention period 
 
-By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Create and Edit a Partition](/docs/manage/partitions-data-tiers/create-edit-partition).  
+By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Create and Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).  
    
  

@@ -45,8 +45,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'contributing/index'},
       items: [
-        'contributing/edit-doc',
-        'contributing/create-doc',
+        'contributing/create-edit-doc',
         'contributing/remove-doc',
         'contributing/style-guide',
         'contributing/glossary',
@@ -271,6 +270,7 @@ module.exports = {
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions',
+                //'send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/code42-incydr-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source',
                 'send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source',
@@ -506,6 +506,7 @@ module.exports = {
               collapsed: true,
               link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-monitoring/index'},
               items: [
+                'send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source',
                 'send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor',
                 'send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor',
               ],
@@ -643,30 +644,41 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Partitions and Data Tiers',
+      label: 'Partitions',
       collapsible: true,
       collapsed: true,
-      link: {type: 'doc', id: 'manage/partitions-data-tiers/index'},
+      link: {type: 'doc', id: 'manage/partitions/index'},
       items: [
+        {
+          type: 'category',
+          label: 'Data Tiers',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/partitions/data-tiers/index'},
+          items: [
+            'manage/partitions/data-tiers/create-edit-partition',
+            'manage/partitions/data-tiers/view-partition-details',
+            'manage/partitions/data-tiers/data-tiers-faqs',
+            'manage/partitions/data-tiers/searching-data-tiers',
+          ]
+        },
         {
           type: 'category',
           label: 'Flex Pricing',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'manage/partitions-data-tiers/flex-pricing/index'},
+          link: {type: 'doc', id: 'manage/partitions/flex/index'},
           items: [
-            'manage/partitions-data-tiers/flex-pricing/estimate-and-actual-scan-data',
+            'manage/partitions/flex/create-edit-partition-flex',
+            'manage/partitions/flex/view-partition-details-flex',
+            'manage/partitions/flex/estimate-scan-data',
+            'manage/partitions/flex/flex-pricing-faq',
           ]
         },
-        'manage/partitions-data-tiers/create-edit-partition',
-        'manage/partitions-data-tiers/view-partition-details',
-        'manage/partitions-data-tiers/run-search-against-partition',
-        'manage/partitions-data-tiers/edit-data-forwarding-destinations-partition',
-        'manage/partitions-data-tiers/manage-indexes-variable-retention',
-        'manage/partitions-data-tiers/decommission-partition',
-        'manage/partitions-data-tiers/data-tiers',
-        'manage/partitions-data-tiers/data-tiers-faqs',
-        'manage/partitions-data-tiers/searching-data-tiers',
+        'manage/partitions/run-search-against-partition',
+        'manage/partitions/edit-data-forwarding-destinations-partition',
+        'manage/partitions/manage-indexes-variable-retention',
+        'manage/partitions/decommission-partition',
       ]
     },
     {
@@ -795,9 +807,19 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/index'},
           items: [
-            'manage/ingestion-volume/ingest-budgets/assign-collector-ingest-budget',
-            'manage/ingestion-volume/ingest-budgets/quickstart',
-          ]
+            'manage/ingestion-volume/ingest-budgets/minute-volume',
+          {
+            type: 'category',
+            label: 'Daily Volume',
+            collapsible: true,
+            collapsed: true,
+            link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/daily-volume/index'},
+            items: [
+              'manage/ingestion-volume/ingest-budgets/daily-volume/assign-collector-ingest-budget',
+              'manage/ingestion-volume/ingest-budgets/daily-volume/quickstart',
+            ]
+          },
+        ]
         },
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
       ]
@@ -930,6 +952,7 @@ module.exports = {
           items: [
             'alerts/webhook-connections/set-up-webhook-connections',
             'alerts/webhook-connections/aws-lambda',
+            'alerts/webhook-connections/cloud-soar',
             'alerts/webhook-connections/datadog',
             'alerts/webhook-connections/jira-cloud',
             'alerts/webhook-connections/jira-server',
@@ -957,7 +980,6 @@ module.exports = {
             'alerts/webhook-connections/slack',
             'alerts/webhook-connections/schedule-searches-webhook-connections',
             'alerts/webhook-connections/audit-index',
-            'alerts/webhook-connections/cloud-soar',
           ]
         },
       ],
@@ -2758,7 +2780,6 @@ integrations: [
         'api/content-permissions',
         'api/content-management',
         'api/dashboard',
-        'api/dashboard-data',
         'api/dynamic-parsing',
         'api/field-extraction-rules',
         'api/field-management',

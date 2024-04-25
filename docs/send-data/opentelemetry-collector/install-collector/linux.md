@@ -60,11 +60,11 @@ You can run the script in two ways:
 
 * By piping `curl` straight into `bash`:
    ```bash
-   curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default"
+   curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default"
    ```
 * By first downloading the script, inspecting its contents for security, and then running it:
    ```bash
-   curl -Lso install-otelcol-sumo.sh https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh
+   curl -Lso install-otelcol-sumo.sh https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh
    sudo -E bash ./install-otelcol-sumo.sh
    ```
 
@@ -317,7 +317,7 @@ Service need to be restarted in order to apply the changes.
 To install FIPS compliant binary, you should add `--fips` switch to installation command, so it will look like the following:
 
 ```bash
-curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | SUMOLOGIC_INSTALLATION_TOKEN="TOKEN" sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" --fips && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
+curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | SUMOLOGIC_INSTALLATION_TOKEN="TOKEN" sudo -E bash -s -- --tag "host.group=default" --tag "deployment.environment=default" --fips && sudo otelcol-sumo --config=/etc/otelcol-sumo/sumologic.yaml --config "glob:/etc/otelcol-sumo/conf.d/*.yaml"
 ```
 
 Refer to [BoringCrypto and FIPS compliance](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/fips.md) in our repository for more details.
@@ -331,13 +331,13 @@ The recommended way to uninstall the OpenTelemetry Collector depends on how you 
 If you installed the Collector with the install script, you can this command to uninstall the Collector:
 
 ```bash
-curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y
+curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- -u -y
 ```
 
 You can also use flag `-p` to remove all existing configurations as well:
 
 ```bash
-curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
+curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
 ```
 
 ### Manual step-by-step Uninstall
@@ -359,7 +359,7 @@ First, you have to upgrade the Collector's version. The way you should do it, de
 Running install script will simply upgrade collector to the latest version:
 
 ```bash
-curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo bash
+curl -Ls https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo bash
 ```
 
 :::note

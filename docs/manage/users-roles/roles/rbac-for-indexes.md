@@ -8,7 +8,7 @@ description: Index access search filtering allows you to use rule permissions to
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), you can restrict access to data in logs using advanced search filters, and you can also restrict access to the [indexes](/docs/manage/partitions-data-tiers/) you specify. This ensures that users only see the data they are supposed to.
+When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role), you can restrict access to data in logs using advanced search filters, and you can also restrict access to the [indexes](/docs/manage/partitions/) you specify. This ensures that users only see the data they are supposed to.
 
 Follow this process to restrict access using advanced filters and indexes:
 
@@ -24,7 +24,7 @@ When you [create a role](/docs/manage/users-roles/roles/create-manage-roles#crea
 1. Go to **Administration > Users and Roles > Roles**.
 1. Click **+ Add Role** on the upper right side of the page. The **Create New Role** pane displays.<br/><img src={useBaseUrl('img/users-roles/create-new-role-index-based-boxed.png')} alt="Create a new role" style={{border: '1px solid gray'}} width="400"/>
 1. Select one of the following to create a filter that allows access to only the logs that match the defined conditions. You can create only one filter for each.
-   * **Log Analytics data filter**. This filter applies to all the [partitions](/docs/manage/partitions-data-tiers/run-search-against-partition/) and [Live Tail](/docs/search/live-tail/).
+   * **Log Analytics data filter**. This filter applies to all the [partitions](/docs/manage/partitions/run-search-against-partition/) and [Live Tail](/docs/search/live-tail/).
    * **Audit data filter**. This filter applies to all the logs in [Audit Indexes](/docs/manage/security/audit-indexes/audit-index/) and [Live Tail](/docs/search/live-tail/). For example, you could include filters for `sumologic_audit_events`, `sumologic_search_events`, `sumologic_search_usage_per_query`, or `sumologic_system_events`, to name a few.
    * **Security data filter**. This filter applies on all logs in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo#partitions-for-cse-records).
 1. Enter search criteria in the box provided. For examples, see [Understanding search filters](/docs/manage/users-roles/roles/construct-search-filter-for-role#understanding-search-filters).<br/><img src={useBaseUrl('img/users-roles/advanced-filter.png')} alt="Advanced filter" style={{border: '1px solid gray'}} width="400"/>
@@ -39,7 +39,7 @@ Keep in mind that these are examples only, and you must adapt them for use in yo
 
 ## Configure index access
 
-An index filter allows or denies access to [search indexes](/docs/manage/partitions-data-tiers/).
+An index filter allows or denies access to [search indexes](/docs/manage/partitions/).
 
 1. [Create a role](/docs/manage/users-roles/roles/create-manage-roles#create-a-role).
 1. In the **Create New Role** pane, navigate to **Index Access**.

@@ -82,7 +82,7 @@ The Google Cloud IAM App uses [Google Cloud Audit Logs](https://cloud.google.com
 
 
 
-### Query Sample
+### Query sample
 
 **Added roles over time**
 
@@ -99,7 +99,7 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 | transpose row _timeslice column role
 ```
 
-## Collecting Logs for the Google Cloud IAM App
+## Collecting logs for the Google Cloud IAM app
 
 This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google Cloud IAM App.
 
@@ -155,7 +155,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 ### Configure a Pub/Sub Topic for GCP
 
-You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on [Collect Logs for Google App Engine](/docs/integrations/google/app-engine#01Collect-Logs-for-the-Google-App-Engine-App).
+You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on [Collect Logs for Google App Engine](/docs/integrations/google/app-engine#collecting-logs-for-the-google-app-engine-app).
 
 1. Create a Pub/Sub Topic in GCP. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
 2. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
@@ -194,21 +194,21 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 
 
 
-## Installing the Google Cloud IAM App
+## Installing the Google Cloud IAM app
 
 This section provides instructions for installing the Google Cloud IAM App, and examples of each of the App dashboards.
 
 Now that you have set up collection for Google Cloud IAM, you can install the Sumo Logic App for easy access to the pre-configured searches and dashboards.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Google Cloud IAM Dashboards
+## Viewing Google Cloud IAM dashboards
 
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-You can use the pre-configured searches and dashboards for visibility into your environment for real-time performance analytics and an analysis of overall usage.
-
+<ViewDashboards/>
 
 ### Overview
 

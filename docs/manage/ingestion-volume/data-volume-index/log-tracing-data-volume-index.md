@@ -74,6 +74,12 @@ For example, a single message for the "Collector" volume data may look similar t
 {"field":"epd_dat_a_cluster","dataTier":"Continuous","sizeInBytes":2163905,"count":2157},...]
 ```
 
+For example, a single message for the "Collector" volume data may look similar to the following flex data, with field, dataTier, sizeInBytes, and count values for those five minutes.
+
+```
+{"field": "part_a","dataTier": "Flex","sizeInBytes": 13754115,"count": 10255}
+```
+
 ## Examples
 
 **Volume for Each Category**
@@ -274,4 +280,4 @@ The suggested time range for this query is 7 days. Timeslices can always be redu
 
 ### Index retention period
 
-By default, the retention period of the Data Volume index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_volume`. For more information, see [Edit a Partition](/docs/manage/partitions-data-tiers/create-edit-partition).
+By default, the retention period of the Data Volume index is the same as the retention period of your Default Partition. You can change the retention period by editing the partition that contains the index, `sumologic_volume`. For more information, see [Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).

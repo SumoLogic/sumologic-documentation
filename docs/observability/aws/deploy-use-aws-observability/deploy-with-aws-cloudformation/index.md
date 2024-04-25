@@ -55,7 +55,7 @@ The below tables displays the response for each text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
-| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, in, fed or us1. See [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for more information on Sumo Logic deployments. |
+| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, in, fed or us1. See [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for more information on Sumo Logic deployments. |
 | Sumo Logic Access ID | Sumo Logic Access ID. See [Create an access key](/docs/manage/security/access-keys.md) for more information. |
 | Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
 | Sumo Logic Organization ID | You can find your org on the Preferences page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. |
@@ -136,7 +136,11 @@ The below tables displays the response for the text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
-| Select the Sumo Logic Root Cause Explorer Source | <ul><li>**Inventory Source** - Creates a Sumo Logic Inventory Source used by Root Cause Explorer.</li><li>**X-Ray Source** - Creates a Sumo Logic AWS X-Ray Source that collects X-Ray Trace Metrics from your AWS account.</li><li>**Both** - Install both Inventory and Xray sources.</li><li>**None** - Skips installation of both sources.</li></ul> |
+| Select the Sumo Logic Root Cause Explorer Source | <ul><li>**Inventory Source** - Creates a Sumo Logic Inventory Source used by Root Cause Explorer. The AWS Inventory Source collects the inventory of AWS resources in your AWS account, such as EC2 and RDS instances, including all metadata and tags applied to those resources. We use this data to construct a topology of resources, such as which resource talks to or depends upon which other resources, and so on.</li><li>**X-Ray Source** - Creates a Sumo Logic AWS X-Ray Source used by Root Cause Explorer. The AWS X-Ray source collects the AWS X-Ray service graph, as well as service-level metrics such as latency, throughput, and error rate. The service graph allows us to figure out which service depends on which other services.</li><li>**Both** - Install both Inventory and Xray sources.</li><li>**None** - Skips installation of both sources.</li></ul> |
+
+:::important
+The AWS Inventory Source and AWS X-Ray Source are usable only by the Root Cause Explorer and are not exposed anywhere else in the Sumo Logic SaaS Log Analytics Platform. For more information, see [Root Cause Explorer](/docs/observability/root-cause-explorer/). 
+:::
 
 ## Step 10: Sumo Logic AWS ELB Classic Log Source
 

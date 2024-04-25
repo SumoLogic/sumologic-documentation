@@ -56,4 +56,4 @@ If you would like to reactivate the Scheduled Search immediately without waitin
 
 ### What else can I do?
 
-For assistance with Scheduled Search issues, contact [Sumo Logic Support](https://support.sumologic.com/hc/en-us). 
+For assistance with Scheduled Search issues, contact [Sumo Logic Support](https://support.sumologic.com/support/s). 

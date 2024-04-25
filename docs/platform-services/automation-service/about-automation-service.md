@@ -17,6 +17,17 @@ You can use the Automation Service to run automations for the following:
 * **Cloud SIEM**. Use the [Automation Service with Cloud SIEM](/docs/cse/automation/about-automation-service-and-cloud-siem) to respond to security incidents.
 * **Monitors**. Use [automated playbooks in monitors](/docs/alerts/monitors/use-playbooks-with-monitors) to run workflows in response to alerts. 
 
+## Differences compared to Cloud SOAR
+
+The Automation Service is a subset of automation capabilities adapted from [Cloud SOAR Automation](/docs/cloud-soar/automation/) that is available to the entire Sumo Logic log analytics platform. The Automation Service only has Cloud SOAR’s playbook-related features, including App Central and the Automation Bridge. Like the Cloud SOAR action types, the Automation Service action types can perform automated responses to events, including run containment actions and manual user interaction steps. 
+
+The Automation Service differs from Cloud SOAR in the following ways:
+* The Automation Service does not include the incident and case management features from Cloud SOAR.
+* The Automation Service does not support daemon and trigger action types. The Automation Service can only use triggers built into Cloud SIEM and the Log Analytics platform. 
+* Playbooks, integrations, and actions in the Automation Service may differ from those in Cloud SOAR automation. 
+
+For more information, see [Cloud SOAR Compared to the Automation Service](/docs/cloud-soar/compared-to-automation-service/).
+
 ## Automation Service UI
 
 The Automation Service UI is composed of the following tabs:
@@ -24,6 +35,12 @@ The Automation Service UI is composed of the following tabs:
 * [**Playbook**](/docs/platform-services/automation-service/automation-service-playbooks). Shows playbooks, which are workflows you can run to perform automations. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} style={{border:'1px solid gray'}} alt="Playbook screen" width="800"/>
 * [**Integration**](/docs/platform-services/automation-service/automation-service-integrations.md). Lists integrations with Sumo Logic and third-party vendors that provide actions used in playbooks. <br/><img src={useBaseUrl('img/platform-services/integrations-main-screen.png')} style={{border:'1px solid gray'}} alt="Integrations screen" width="800"/>
 * [**Bridge**](/docs/platform-services/automation-service/automation-service-bridge.md). Shows connections between on-premises servers and the Sumo Logic cloud. A bridge allows you to create a custom integration in your own system and use it to for automation. <br/><img src={useBaseUrl('img/platform-services/bridge-main-screen.png')} style={{border:'1px solid gray'}} alt="Bridge screen" width="800"/>
+
+### Theme
+
+import Theme from '../../reuse/dark-light-theme.md';
+
+<Theme/>
 
 ## Access the Automation Service
 
@@ -39,8 +56,7 @@ Before you can access the Automation Service, you must first [configure role cap
 
 ### From Cloud SIEM
 
-1. Click the **Configuration** button (gear icon) at the top of the Cloud SIEM UI.
-1. Under **Integrations**, select **Automation**.<br/><img src={useBaseUrl('img/cse/automations-config-menu.png')} style={{border:'1px solid gray'}} alt="Automation menu option" width="150"/><br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} style={{border:'1px solid gray'}} alt="Automations list" width="800"/>
+1. In the top menu click **Configuration**, and then under **Integrations** select **Automation**.<br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} style={{border:'1px solid gray'}} alt="Automations list" width="800"/>
 1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} style={{border:'1px solid gray'}} alt="Manage Playbooks menu option" width="400"/>
 1. The Automation Service screen opens on the **Playbook** tab. <br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} style={{border:'1px solid gray'}} alt="Automation Playbook list" width="800"/>
 
@@ -81,3 +97,7 @@ To use [integrations](/docs/platform-services/automation-service/automation-serv
 ## Actions limit
 
 To prevent abuse of system resources or runaway processes, the Automation Service limits the number of playbook actions your organization can execute to 200 per hour by default. To see how many actions your organization has used in the current hour, see the **Current hour actions count** in the [App Central UI](/docs/platform-services/automation-service/automation-service-app-central/#app-central-ui). All actions running in the cloud or via the bridge are included in this limit.
+
+import ActionsLimitQuery from '../../reuse/actions-limit-query.md';
+
+<ActionsLimitQuery/>

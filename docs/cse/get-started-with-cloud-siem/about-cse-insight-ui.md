@@ -23,11 +23,11 @@ Cloud SIEM displays Insights and the Signals attached to them in the Cloud SIEM 
 
 This screenshot shows the **Insights** page in List view. 
 
-<img src={useBaseUrl('img/cse/insights-page.png')} alt="Insights page" width="800"/>
+<img src={useBaseUrl('img/cse/insights-page.png')} alt="Insights page" style={{border: '1px solid gray'}} width="800"/>
 
 Here’s one row from the List view. The numbered definitions below correspond to the labels in the screenshot.
 
-<img src={useBaseUrl('img/cse/insight-summary.png')} alt="Insight summary" width="800"/>
+<img src={useBaseUrl('img/cse/insight-summary.png')} alt="Insight summary" style={{border: '1px solid gray'}} width="800"/>
 
 1. **Creation date and time**. When the Insight was created.
 1. **Detection time**. The time between when the first event happened (when the first Record in the Insight occurred) and when the Insight was generated. (This differs from "dwell time", which is the time between when the first Record and the last Record occurred in an Insight.)
@@ -53,7 +53,7 @@ The information displayed in the board view is similar to the information in the
 
 You can switch back to the list view by clicking the **Show List** icon, near the top right corner of the Cloud SIEM UI.
 
-<img src={useBaseUrl('img/cse/board.png')} alt="Board view" width="800"/>
+<img src={useBaseUrl('img/cse/board.png')} alt="Board view" style={{border: '1px solid gray'}} width="800"/>
 
 ### Filtering Insights 
 
@@ -80,7 +80,7 @@ From the HUD screen, list view, or board view, click an Insight's name to see it
 
 The left pane of the Insight details page displays detailed information about the selected Insight. Some of the information that appears is the same as what’s in the row for an Insight on the **Insights** page, and is described in [List view,](#list-view) above. The additional information that appears in the details pane is defined below.
 
-<img src={useBaseUrl('img/cse/insight-details.png')} alt="Insight details" width="300"/>
+<img src={useBaseUrl('img/cse/insight-details.png')} alt="Insight details" style={{border: '1px solid gray'}} width="300"/>
 
 1. **Actions.** The [Insight Actions](/docs/cse/administration/create-cse-actions#insight-actions) defined in your environment.
 1. **Close Insight.** Use this option to close an Insight. When you click this option, you’re prompted to select an Insight resolution.
@@ -104,7 +104,7 @@ The left pane of the Insight details page displays detailed information about th
 
 At the top of the Insight details page, you’ll see a Signal timeline that visualizes the Insight’s attached Signals, which are the Signals that caused the Insight to be created, and any Signals that have been manually added to the Insight.
 
-<img src={useBaseUrl('img/cse/top-bit.png')} alt="Signal visualization" width="800"/>
+<img src={useBaseUrl('img/cse/top-bit.png')} alt="Signal visualization" style={{border: '1px solid gray'}} width="800"/>
 
 1. **Signals**. The Signals link allows you to switch back to the Signals view from the Enrichments view, described below. 
 1. **Enrichments**. Click this tab to view any enrichments that have been added to the Insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
@@ -127,7 +127,7 @@ At the top of the Insight details page, you’ll see a Signal timeline that visu
 
 Below the Signal timeline, you’ll see a list of Signals. By default, only attached Signals are displayed.  
 
-<img src={useBaseUrl('img/cse/signal-list-area.png')} alt="Signal list area" width="600"/>
+<img src={useBaseUrl('img/cse/signal-list-area.png')} alt="Signal list area" style={{border: '1px solid gray'}} width="600"/>
 
 1. **Remove** button. Removes multiple Signals selected with the checkbox. You cannot select all Signals for removal. If you do, the **Remove** button is disabled and this message appears when you hover over it with your mouse: **Bulk removal of Signals is disabled as a minimum of 1 Signal must be attached to the Insight. Deselect 1 or more Signals to enable bulk removal.**
 1. **Checkbox**. Click to select multiple Signals for removal. 
@@ -148,11 +148,11 @@ The **Entities** tab includes two views, the **list** view and the **graph** vie
 
 The screenshot below shows the **Entities** tab **list** view for an Insight.
 
-<img src={useBaseUrl('img/cse/related-entities.jpg')} alt="Related Entities" width="800"/>
+<img src={useBaseUrl('img/cse/related-entities.jpg')} alt="Related Entities" style={{border: '1px solid gray'}} width="800"/>
 
 In this view, the primary Entity is always displayed first. (This is the Entity common to each of the Signals in the Insight). Below the primary Entity all of the related Entities are listed.
 
-The related Entities fall into two categories. The category, sometimes referred to as _involved Entities_, are those Entities that aren't the primary Entity but are listed in one or more Records in the Signal(s) in the Insight. So, for example, while the primary Entity for an insight could be a username, a Record in one of the Signals in that Insight could also include an IP address. That address would be included in this list.
+The related Entities fall into two categories. The first category, sometimes referred to as _involved Entities_, are those Entities that aren't the primary Entity but are listed in one or more Records in the Signal(s) in the Insight. So, for example, while the primary Entity for an insight could be a username, a Record in one of the Signals in that Insight could also include an IP address. That address would be included in this list.
 
 Other Entities could be included due to _detected Entity relationships_. For each Entity in the Insight — including the primary Entity and other involved Entities — Cloud SIEM searches for other Entities that seem to be related (across all Records, not just that Insight's). This search is run across a time range that corresponds to the span of time during which there was activity on the Insight. So, for example, if the first Record in an Insight was created at 8 AM on Wednesday and the last Record at 10 PM on Friday, Cloud SIEM might detect that the IP address listed in the Insight was associated with a specific hostname (in another record) at that point. 
 
@@ -198,7 +198,7 @@ The card for an Entity displays any [tags](/docs/cse/records-signals-entities-in
 
 The screenshot below shows the **Entities** tab **graph** view for an Insight.
 
-<img src={useBaseUrl('img/cse/related-entity-graph.jpg')} alt="Related Entities graph" width="800"/>
+<img src={useBaseUrl('img/cse/related-entity-graph.jpg')} alt="Related Entities graph" style={{border: '1px solid gray'}} width="800"/>
 
 By default, this view shows the same entities that are displayed on the list view. However, the system will look for additional relationships outside of the Insight during the detection window to aid in deeper investigation.
 
@@ -218,7 +218,7 @@ Each node in the graph represents a single Entity and will include an icon repre
 
 When you select an Entity, it will be highlighted in blue **(5)** and the Entity details pane will appear on the right.
 
-As on the list view, the involved Entities will be connected with dashed lines **(6)** and Entities with detected relationships will be connected with solid lines **(7)**. 
+As on the list view, the Entities that appear on the same Signal (also known as *involved* Entities) will be connected with dashed lines **(6)**. Entities with a *detected* relationship will be connected with solid lines **(7)**. A *detected relationship* is when a relationship is detected between Entities (for example, when an IP and hostname appear in a record together, but not necessarily in the insight being viewed).
 
 If you hover over an Entity, it and all connections to it will be highlighted in blue **(8)** and if its value is not fully visible by default, the full value will be displayed.
 

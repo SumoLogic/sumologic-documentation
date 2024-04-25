@@ -11,6 +11,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic apps give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you. In this doc, you'll learn how to install apps from the **App Catalog** to your Library and how to manage them in multiple environments.
 
+<img src={useBaseUrl('img/get-started/library/App-Catalog.png')} alt="app catalog" style={{border:'1px solid gray'}} width="800"/>
+
 Sumo Logic apps address these common use cases:
 
 * **Increase availability and performance.** Sumo Logic enables issues to be identified before they impact the application and customer. Precise, proactive analytics quickly uncover hidden root causes across all layers of the application and infrastructure stack.
@@ -37,9 +39,22 @@ What makes Next-Gen different from Classic apps?
 * Upon app installation, content is installed into a shared **Installed Apps** folder that's visible to your entire org, making it easier to locate and upgrade, when needed.
 * Installed app content is immutable, which ensure that any apps upgrades do not overwrite any customizations you may apply. If you wish to customize the content, you'll need to first make a custom copy of the content.
 
+
+#### How to install Next-Gen Apps
+
+import AppInstall from '../reuse/apps/app-install-v2.md';
+
+<AppInstall/>
+
 ### Classic Apps (Legacy)
 
 All of our existing Classic apps will be converted to Next-Gen. In the meantime, our Classic apps will remain available to you within the Application Catalog.
+
+#### How to install Classic Apps
+
+import ClassicAppInstall from '../reuse/apps/app-install.md';
+
+<ClassicAppInstall/>
 
 ## Prerequisites
 
@@ -54,13 +69,7 @@ Certain apps have specific installation requirements. Be sure to check the instr
 Applications can be installed only by users with a Sumo Logic Professional or a Sumo Logic Enterprise account. Organizations with a Sumo Logic Free account currently cannot use Sumo Logic apps.
 :::
 
-## Installing apps to your Library
-
-import AppInstall from '../reuse/apps/app-install.md';
-
-<AppInstall/>
-
-## Install apps in multiple environments
+## Install classic apps in multiple environments
 
 If you have multiple environments generating data that you want to monitor using Sumo Logic apps — for example, environments for production, development, and testing — you’ll need to perform the following steps in each environment:
 

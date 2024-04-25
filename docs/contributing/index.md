@@ -17,12 +17,7 @@ There are many ways to contribute to Sumo Docs, beyond writing code. Here's how 
 <div className="box-wrapper" markdown="1">
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/contributing/edit-doc"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Submit a Doc Fix</h4></a>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/contributing/create-doc"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Create a New Doc</h4></a>
+  <a href="/docs/contributing/create-edit-doc"><img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="35"/><h4>Create or Edit a New Doc</h4></a>
   </div>
 </div>
 <div className="box smallbox card">
@@ -60,12 +55,4 @@ You can submit a Sumo Docs feature request [here](https://github.com/SumoLogic/s
 
 To submit a general Sumo Logic feature request, go to our [Community](/docs/get-started/help#community) page.
 
-:::
-
-:::info contact us
-
-Need to get in touch? You can find us at:
-* [Sumo Dojo Slack](https://sumodojo.slack.com)
-* [Sumo Logic Support](https://support.sumologic.com/support/s/contactsupport)
-* [Sumo Logic Community](https://sumologic.my.site.com/support/s/)
 :::

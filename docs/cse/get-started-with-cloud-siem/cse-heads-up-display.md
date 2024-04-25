@@ -22,34 +22,16 @@ The right side of the HUD contains a list of recent Insight activity. The card a
 
 See the sections below for more details on each element of the HUD.
 
-<img src={useBaseUrl('img/cse/hud.png')} alt="Head-up display" width="900"/>
+<img src={useBaseUrl('img/cse/hud.png')} alt="Heads up display" style={{border: '1px solid gray'}} style={{border: '1px solid gray'}} width="900"/>
 
-## 1. Search bar 
 
-The search bar is where you search for Insights, Signals, Entities, and Records. When you click in the search bar, you’re prompted to select one of those types. Once you select a type, you're presented with a list of fields to filter on. 
-
-## 2. Tabs
-
-The **Insights**, **Signals**, **Entities**, **Records** tabs open pages that display those types in a list view. The **Content** tab provides dropdown access to pages for viewing and managing content items, including rules, threat intel, match lists, suppressed lists, and so on.
-
-## 3. Command center
-
-The command center contains four icons. 
-
-| Icon | Description |
-|:--|:--|
-| <img src={useBaseUrl('img/cse/gear.png')} alt="Gear icon" width="50"/> | **Configuration**. Click this icon to see a menu of Cloud SIEM configuration options that you can use to manage incoming data, Entities, users and roles, integrations, and so on. |
-| <img src={useBaseUrl('img/cse/help.png')} alt="Help icon" width="50"/> | **Help**. Click this icon to access Cloud SIEM help, API documentation, release announcements, and service status. |
-| <img src={useBaseUrl('img/cse/switch-apps.png')} alt="Help icon" width="50"/> | **Switch Apps**. Click this icon to open the Sumo Logic platform UI in a new tab. |
-| <img src={useBaseUrl('img/cse/profile.png')} alt="Profile icon" width="50"/> | **Profile**. Click this icon to open your Cloud SIEM user profile. Your profile is where you can manage your password, browser timezone, security options, and email notifications. |
-
-## 4. System Metrics
+## 1. Records / Signals / Insights
 
 This section shows the count of Records ingested, Signals fired, and Insights generated during the currently selected time range, along with the percentage change compared to the previous time period. For example, if the currently selected time range is 24 hours, the percentage change is compared to the counts for the 24 hours previous to that.
 
 The default time range is 24 hours. You can change the time range using the dropdown to the right of the currently selected time range; the options range from 4 hours to 7 days. When you change the time range, the counts and metrics in the left and middle columns of the HUD update accordingly.
 
-## 5. Insight Metrics 
+## 2. Insight Metrics 
 
 The **Insight Metrics** section displays the following metrics for the currently selected time range:
 
@@ -59,15 +41,15 @@ The **Insight Metrics** section displays the following metrics for the currently
 
 If you use an [HTTP POST V2 Action](/docs/cse/administration/create-cse-actions/) to send Insights to the Sumo Logic platform or another system, the Insight metrics are included in the Insight JSON object. The fields are `timeToDetection`, `timeToResponse` , and `timeToRemediation`. 
 
-## 6. Insights by Status 
+## 3. Insights by Status 
 
 The **Insights by Status** section provides a quick view of what analysts are working on. The counts are a breakdown by current status of the Insights created during the currently selected time range. To create new statuses, see [Managing Custom Insight Statuses](/docs/cse/administration/manage-custom-insight-statuses/).
 
-## 7. Insights created and closed
+## 4. Insights created and closed
 
 This section contains a stacked bar chart that shows the count of Insights opened and closed over time during the time range. When you hover over a bar, you’ll see the breakdown.
 
-## 8. Insight Radar
+## 5. Insight Radar
 
 In the middle of the display is the *Insight Radar*, the HUD’s key feature. The radar visualizes the volume of Records, Signals, and Insights over time in a bulls eye-like view. Like the panels on the left side of the HUD, the radar updates when you select a different time range. The radar automatically refreshes every 60 seconds.
 
@@ -79,7 +61,7 @@ Within the blue ring is another ring that contains light blue bars, each of whic
 
 The third ring contains triangles, each of which represents one or more Insights. As you hover over an interval, the count of Insights that fired is displayed. If you click a triangle, the Insights page appears, and displays the corresponding Insights.
 
-## 9. Recent Activity
+## 6. Recent Activity
 
 The Recent Activity pane shows recently created Insights and recent Insight activity.
 

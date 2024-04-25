@@ -185,7 +185,7 @@ This type of alert isn't suitable for ephemeral environments and can send false 
 
 #### Setup
 
-**Prerequisite**. All collectors must be sending data **before** you set this alert. This alert will trigger if *any* collectors do not send data in the specified time range. If you want to identify collectors that are not ingesting for a long time or have not ingested at all, you can use the [Collector API](/docs/api/collector-management#Collector-API-Methods-and-Examples "Collector API Methods and Examples")
+**Prerequisite**. All collectors must be sending data **before** you set this alert. This alert will trigger if *any* collectors do not send data in the specified time range. If you want to identify collectors that are not ingesting for a long time or have not ingested at all, you can use the [Collector API](/docs/api/collector-management/collector-api-methods-examples)
 attributes `alive` and `LastSeenAlive`.
 
 1. Enable the Data Volume Index.  See [Enable and Manage the Data Volume Index](/docs/manage/ingestion-volume/data-volume-index) for instructions.
@@ -241,7 +241,7 @@ After completing the setup steps, you'll need to create a monitor. 
 This alert is automatically generated when your account has entered a throttled state (induced by metrics or logs) in the last 15 minutes. The alert runs every 15 minutes and covers a 15-minute period.
 
 :::note
-All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](../partitions-data-tiers/data-tiers.md).
+All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions/data-tiers/).
 :::
 
 #### Setup

@@ -16,7 +16,7 @@ Also, keep the following things in mind when you're creating Scheduled View quer
 * **Avoid using queries that are likely to change.** A key benefit of using Scheduled Views is that they can index historical data, allowing you to identify long-term trends. If a query changes, you may lose some of the historical perspective.
 * **Keep the query flexible.** Using a flexible query, like `_sourceCategory=*Apache*` so that metadata changes do not break the query.
 * **Consider using fields with more general values (fields with less specificity).** For example, you'd want to use "country" and "city" fields instead of "latitude" and "longitude".
-* **Use Partitions.** [Partitions](/docs/manage/partitions-data-tiers) allow you to reduce your query time even more. 
+* **Use Partitions.** [Partitions](/docs/manage/partitions) allow you to reduce your query time even more. 
 * **Access historical data.** Your Scheduled View can go as far back as your retention period.
 * **Use more groups.** Plan for flexibility by including more groups. However, test your Scheduled View definition to understand how much additional data that extra groups will create.
 

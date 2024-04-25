@@ -51,7 +51,7 @@ See [Add nodes to a playbook](/docs/platform-services/automation-service/automat
 
 ## Add nodes to a playbook
 
-You can add nodes to a playbook when you either create a new playbook, or edit an existing playbook. To add a node to a playbook, click on the **+** in the **Start** node of the playbook. A *node* is a step in a playbook. Nodes run in the order they are placed in a playbook. When all nodes run without error, the playbook is considered to have executed successfully.
+You can add nodes to a playbook when you either create a new playbook, or edit an existing playbook. To add a node to a playbook, hover your mouse over an existing node, such as the **Start** node, and click on the **+** button that appears on the node. A *node* is a step in a playbook. Nodes run in the order they are placed in a playbook. When all nodes run without error, the playbook is considered to have executed successfully.
 
 See the following sections to learn how to add the following node types:
    * [**Action**](#add-an-action-node-to-a-playbook). Automatically take specific actions such as enriching data or taking containment steps.
@@ -59,7 +59,7 @@ See the following sections to learn how to add the following node types:
    * [**Playbook**](#add-a-playbook-node-to-a-playbook). Call other playbooks in response to conditional statements.
    * [**Task**](#add-a-task-node-to-a-playbook). Assign a task to an individual.
    * [**User Choice**](#add-a-user-choice-node-to-a-playbook). Pause playbook execution until a user selects an option.
-
+   * [**Filter**](#add-a-filter-node-to-a-playbook). Filter results from the preceding action.
 
 ### Add an action node to a playbook
 
@@ -74,7 +74,7 @@ Before you can add action nodes to a playbook, you must [configure the connectio
 :::
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
-1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
+1. Hover your mouse over an existing node, such as the **Start** node, and click on the **+** button that appears.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
 1. The **Add node** page displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>
 1. Select **Action**. The action node configuration screen displays.<br/><img src={useBaseUrl('img/cse/automations-add-action-node-1.png')} style={{border:'1px solid gray'}} alt="Add action node" width="600"/>  
 1. Give a **Node name** that identifies the action being taken.
@@ -106,7 +106,7 @@ For examples of adding conditions to playbooks, see the [Cloud SIEM automation e
 :::
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
-1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
+1. Hover your mouse over an existing node and click on the **+** button that appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/add-node-button.png')} style={{border:'1px solid gray'}} alt="Add node button" width="200"/><br/>
 1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>   
 1. Select **Condition**. The condition node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-condition-node.png')} alt="Add condition node" style={{border:'1px solid gray'}} width="500"/>
 1. Click **Create**. The empty condition appears on the playbook.
@@ -127,7 +127,7 @@ condition.
 Define a task to assign to an individual, such as a security analyst.
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
-1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
+1. Hover your mouse over an existing node and click on the **+** button that appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/add-node-button.png')} style={{border:'1px solid gray'}} alt="Add node button" width="200"/><br/>
 1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>   
 1. Select **Task**. The task node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-task-node.png')} style={{border:'1px solid gray'}} alt="Add task node" width="500"/>
 1. Give the node a **Title** that will display in the playbook.
@@ -154,7 +154,7 @@ If a user has an action marked as **Waiting Owner**, they must perform the steps
 When a user choice node is encountered, the execution will pause until a user selects an option. For example, after enrichment, a user could be asked whether to proceed with a containment action or to perform additional enrichment first. When a playbook is paused at a user choice node, the status of that playbook will say **Waiting user interaction**.
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
-1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
+1. Hover your mouse over an existing node and click on the **+** button that appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/add-node-button.png')} style={{border:'1px solid gray'}} alt="Add node button" width="200"/><br/>
 1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>   
 1. Select **User Choice**. The user choice node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-user-choice-node.png')} alt="Add user choice node" style={{border:'1px solid gray'}} width="500"/>
 1. Type a **Question** for the user. The answers they can choose from are provided by the **Answers** field.<br/>If desired, you can click the variable icon <img src={useBaseUrl('img/cse/automations-placeholder-icon.png')} style={{border:'1px solid gray'}} alt="Placeholder icon" width="20"/> and click in the resulting box to display a list of variables you can add to the description, such as for Cloud SOAR [**Incident**](/docs/cloud-soar/incidents-triage/), [**Incident Artifacts**](/docs/cloud-soar/incidents-triage/#incident-artifacts), and [**Triage**](/docs/cloud-soar/incidents-triage/#triage).
@@ -172,11 +172,21 @@ Following is an example of a user choice node. Note the the node branches to the
 Define a playbook to run inside another playbook. For example, you may want to call another playbook in response to a [condition](#add-a-condition-node-to-a-playbook) statement.
 
 1. Either [create a new playbook](#create-a-new-playbook) as described above, or edit an existing playbook.
-1. Click the **+** on the **Start** node.<br/><img src={useBaseUrl('img/cse/automations-start-node.png')} style={{border:'1px solid gray'}} alt="Start node" width="100"/><br/>
+1. Hover your mouse over an existing node and click on the **+** button that appears. <br/><img src={useBaseUrl('img/platform-services/automation-service/add-node-button.png')} style={{border:'1px solid gray'}} alt="Add node button" width="200"/><br/>
 1. The **Add node** dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-node.png')} style={{border:'1px solid gray'}} alt="Add node" width="400"/>   
 1. Select **Playbook**. The playbook node configuration dialog displays.<br/><img src={useBaseUrl('img/cse/automations-add-playbook-node.png')} alt="Add playbook node" style={{border:'1px solid gray'}} width="500"/>
 1. In the **Playbook** drop-down menu, select the playbook to run.
 1. Click **Create**. 
+
+### Add a filter node to a playbook
+
+A filter node filters results from the preceding action based on the condition you write. You can only add a filter node after an action node. For example, let's suppose that the action feeding into the filter has 10 results, but you want to filter out all but the best two results. You can write a condition in the filter to do the filtering.
+
+1. [Add an action node](#add-an-action-node-to-a-playbook). 
+1. Hover your mouse over an action node and click the **+** button. The available nodes are displayed. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-add-filter-node.png')} alt="Add filter node" style={{border:'1px solid gray'}} width="500"/>
+1. Click **Filter**. The filter node configuration dialog displays. <br/><img src={useBaseUrl('img/platform-services/automation-service/automations-add-filter-node-conditions.png')} alt="Add filter node conditions" style={{border:'1px solid gray'}} width="500"/>
+1. Configure the conditions you want to use for filtering. 
+1. Click **Create**.
 
 ## Test a playbook
 

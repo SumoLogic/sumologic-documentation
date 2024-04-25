@@ -15,7 +15,7 @@ Even with these methods, you need to ensure you are following our [best practice
 
 ## Index-based methods
 
-* [**Partitions**](/docs/manage/partitions-data-tiers) route unstructured data into an index (see also: [How to Optimize Your Search with Partitions](/docs/search/optimize-search-partitions))
+* [**Partitions**](/docs/manage/partitions) route unstructured data into an index (see also: [How to Optimize Your Search with Partitions](/docs/search/optimize-search-partitions))
 * [**Scheduled Views**](/docs/manage/scheduled-views) pre-aggregate data and then index it
 
 ## Metadata methods

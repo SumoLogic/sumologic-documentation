@@ -46,7 +46,7 @@ Querying the index returns results only if the index is enabled.
 
 ## Index retention period
 
-By default, the retention period of the Search Audit index is the same as the retention period of your Default partition. You can change the retention period by editing the partition that contains the index, `sumologic_search_usage_per_query`. For more information, see [Edit a Partition](/docs/manage/partitions-data-tiers/create-edit-partition).
+By default, the retention period of the Search Audit index is the same as the retention period of your Default partition. You can change the retention period by editing the partition that contains the index, `sumologic_search_usage_per_query`. For more information, see [Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).
 
 ## Log Search Audit Index message fields
 
@@ -55,7 +55,7 @@ The following table provides details on the fields returned by the index:
 | Field  | Description |
 |:--|:--|
 | `time` | The time when the audit log was generated. |
-| `analytics_tier` | The data tier associated with the audit message. Learn more about [Data Tiers](/docs/manage/partitions-data-tiers/data-tiers). |
+| `analytics_tier` | The data tier associated with the audit message. Learn more about [Data Tiers](/docs/manage/partitions/data-tiers). |
 | `content_identifier` | The ID of the content item that triggered the search query. |
 | `content_name` | The name of the content item that triggered the search query. |
 | `data_retreived_bytes` | Amount of data retrieved by the search query. This represents the approximate size of messages that match the source expression of the query and are retrieved from scanning. |

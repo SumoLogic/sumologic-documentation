@@ -21,9 +21,9 @@ The Druva source provides the ability to analyze and fetch event logs from the *
 This integration accesses the Druva inSync API to retrieve audit events. API documents can be found
 [here](https://developer.druva.com/docs/event-apis).
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 

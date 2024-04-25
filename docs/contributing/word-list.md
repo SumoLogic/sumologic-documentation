@@ -37,10 +37,6 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **Column**. When referring to a column in a Dashboard, the term is not capitalized unless it's the only word in a line of UI (for example, in the Add to Dashboard dialog box "Column" is capitalized). The word "column" doesn't appear in the main Dashboard UI.
 
-**Continuous intelligence**. Continuous intelligence is not a proper
-noun. Initial cap for “continuous” only applies when it starts a sentence.
-
-**Continuous Intelligence Platform&#8482;**. Continuous Intelligence Platform&#8482; is a designated company tagline and a proper noun. Always title case and include the trademark symbol on first mention in a doc.
 
 
 ## D
