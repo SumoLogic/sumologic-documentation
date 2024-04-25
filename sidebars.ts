@@ -31,6 +31,7 @@ module.exports = {
         'get-started/library',
         'get-started/sumo-logic-ui',
         'get-started/system-requirements',
+        'get-started/ai-machine-learning',
         'get-started/keyboard-shortcuts',
         'get-started/training-certification-faq',
         'get-started/help',
@@ -2830,22 +2831,6 @@ integrations: [
         'manage/manage-subscription/beta-opt-in',
         'get-started/sumo-logic-ui-new',
         'manage/users-roles/roles/rbac-for-indexes',
-      ],
-    },
-  ],
-  ai: [
-    {
-      type: 'category',
-      label: 'AI and Machine Learning',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'ai/index'},
-      items: [
-        'alerts/monitors/use-playbooks-with-monitors',
-        'search/logreduce/index',
-        // Splunk-to-Sumo conversion migration tool
-        // Smart Alerts
-        // Ask Sumo tool
       ],
     },
   ],
