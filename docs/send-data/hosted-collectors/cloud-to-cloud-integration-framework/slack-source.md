@@ -150,7 +150,7 @@ To configure a Duo Source:
 
 ## Limitation 
 
-For web API, this source supports a maximum of 16,000 activate Slack channels. Archived Slack channels are not included. Exceeding this active channel limit may cause the source to return a FIRST-PARTY-GENERIC error type.
+While ingesting web events, this source supports a maximum of 16,000 active Slack channels, exceeding this limit may cause the source to return a `FIRST-PARTY-GENERIC` error type. Archived Slack channels are not supported while ingesting the web events using Web API.
 
 ## Troubleshoot
 
