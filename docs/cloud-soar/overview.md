@@ -112,17 +112,14 @@ Choose from hundreds of out-of-the-box actions and playbooks or ask the Sumo Log
 
 ## Settings
 
-The **Settings** section contains several Cloud SOAR administrative functions. To access, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) <br/><img src={useBaseUrl('img/cloud-soar/automation.png')} alt="Automation" style={{border: '1px solid gray'}} width="600"/>
-
-<img src={useBaseUrl('img/cloud-soar/image17.png')} alt="Settings menu" style={{border: '1px solid gray'}} width="300"/>                    
-
-
 The following sections detail the various setup and configuration options for the Cloud SOAR platform. Although initial configuration can be performed in any order, the following sections are ordered in the suggested order for initial configuration.
 
 
-### General Settings
+### General settings
 
-The following options can be configured under General Settings:
+To access General settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/> in the top right and select **Settings**.
+
+The following sections describe available settings.
 
 #### System
 - Display Notification __ Number of seconds
