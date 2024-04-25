@@ -1,5 +1,5 @@
 ---
-id: collect-logs-azure-blob-storage
+id: collect-logs
 title: Collect Logs from Azure Blob Storage
 sidebar_label: Collecting Logs
 description: Configure a pipeline to ship logs from the Azure Blob Storage to an HTTP source on a hosted collector in Sumo Logic.
@@ -108,15 +108,15 @@ This section describes how to push logs from a network security group into Azure
 * Login to the Azure Portal.
 * Click **Network security groups > Select a network security group**.
 * Click on **NSG flow logs** when you see it under **Monitoring**, and click **Create**.
-* Click on **Select resource** and choose a NSG that is present in the same region as the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs-azure-blob-storage#step-1-configure-azure-storage-account">Step 1</a>.
-* Under **Subscription > Storage Accounts**, select the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs-azure-blob-storage#step-1-configure-azure-storage-account">Step 1</a>.
+* Click on **Select resource** and choose a NSG that is present in the same region as the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs#step-1-configure-azure-storage-account">Step 1</a>.
+* Under **Subscription > Storage Accounts**, select the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs#step-1-configure-azure-storage-account">Step 1</a>.
 * Specify the **Retention (days)** and click **Review + create**. <br/><img src={useBaseUrl('/img/send-data/review+create.png')} alt="review+create" width="700"/>
 * Review the configuration of the flow log and click **Create**. <br/><img src={useBaseUrl('/img/send-data/review-configuration.png')} alt="review-configuration" width="600"/>
 
 </details>
 
 :::tip
-If logs from Azure Blob Storage do not start to flow into Sumo Logic, see the [Troubleshoot Azure Blob Storage Log Collection](troubleshoot-azure-blob-storage-log-collection.md).
+If logs from Azure Blob Storage do not start to flow into Sumo Logic, see the [Troubleshoot Azure Storage Log Collection](/docs/send-data/collect-from-other-data-sources/azure-storage/troubleshoot-log-collection).
 :::
 
 ## Ingesting from Multiple Storage Accounts (Optional)

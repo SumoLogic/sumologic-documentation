@@ -1,12 +1,13 @@
 ---
-id: troubleshoot-azure-storage-log-collection
+id: troubleshoot-log-collection
 title: Troubleshoot Azure Storage Log Collection
 sidebar_label: Troubleshooting
 description: Follow these steps to learn why log data is not flowing into Sumo from Azure Blob Storage.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-If logs do not start flowing into Sumo Logic after you perform the [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md) procedure, see the troubleshooting tips below.
+If logs do not start flowing into Sumo Logic after you perform the [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs) procedure, see the troubleshooting tips below.
 
 ## Error while deploying the ARM template
 
@@ -59,9 +60,9 @@ For common deployment errors, refer to [Troubleshoot common Azure deployment err
 
 ## Verify configurations
 
-Make sure that the resources you created in the [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md) procedure were successfully created.
+Make sure that the resources you created in the [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs) procedure were successfully created.
 
-1. Go to Resource groups, and select the resource group you created or selected in [Step 3. Configure Azure resources using ARM Template](collect-logs-azure-blob-storage.md) of the "Collect Logs from Azure Blob Storage" page. You should see resources you created:
+1. Go to Resource groups, and select the resource group you created or selected in [Configure Azure resources using ARM Template](/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs#step-3-configure-azure-resources-using-arm-template). You should see resources you created:
    * Two App Service plans. 
    * Three App Services.
    * A Service Bus Namespace.

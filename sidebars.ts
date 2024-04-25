@@ -502,7 +502,7 @@ module.exports = {
                   collapsed: true,
                   link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/index' },
                   items: [
-                    'send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs-azure-blob-storage'
+                    'send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs'
                   ],
                 },
                 {
@@ -512,9 +512,9 @@ module.exports = {
                   collapsed: true,
                   link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-storage/azure-appendblob-storage/index' },
                   items: [
-                    'send-data/collect-from-other-data-sources/azure-storage/azure-appendblob-storage/collect-logs-azure-appendblob-storage'],
+                    'send-data/collect-from-other-data-sources/azure-storage/azure-appendblob-storage/collect-logs'],
                 },
-                'send-data/collect-from-other-data-sources/azure-storage/troubleshoot-azure-storage-log-collection',
+                'send-data/collect-from-other-data-sources/azure-storage/troubleshoot-log-collection',
               ]
             },
             {
