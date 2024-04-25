@@ -56,7 +56,7 @@ This **Tenants** tab allows you to select the tenants for which the widget will 
 
 <img src={useBaseUrl('img/cloud-soar/edit-widget-tenants.png')} alt="edit-widget-tenants" style={{border: '1px solid gray'}} />
 
-For more information about Cloud SOAR dashboards, see [Dashboards](/docs/cloud-soar/main-menu#dashboards).
+For more information about Cloud SOAR dashboards, see [Dashboards](/docs/cloud-soar/incidents-triage/#dashboards).
 
 ## Nodes Management
 
