@@ -14,7 +14,7 @@ This solution is good for monitoring Azure services that do not support exportin
 This solution is for newly created blobs only (not for existing blobs). 
 :::
 
-For step-by-step instructions for configuring the Azure-Sumo pipeline, see [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md).
+For step-by-step instructions for configuring the Azure-Sumo pipeline, see [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs).
 
 Watch this tutorial for an overview of collecting logs from Azure Blob Storage.
 
@@ -97,4 +97,4 @@ It is assumed that:
   * If the file is .log, log lines are sent to Sumo Logic as is.  
 :::
 
-For instructions, see [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md).
+For instructions, see [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs).

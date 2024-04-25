@@ -116,7 +116,7 @@ This section describes how to push logs from a network security group into Azure
 </details>
 
 :::tip
-If logs from Azure Blob Storage do not start to flow into Sumo Logic, see the [Troubleshoot Azure Blob Storage Log Collection](troubleshoot-azure-blob-storage-log-collection.md).
+If logs from Azure Blob Storage do not start to flow into Sumo Logic, see the [Troubleshoot Azure Blob Storage Log Collection](/docs/send-data/collect-from-other-data-sources/azure-storage/troubleshoot-log-collection).
 :::
 
 ## Ingesting from Multiple Storage Accounts (Optional)
