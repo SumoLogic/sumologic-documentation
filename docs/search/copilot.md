@@ -12,52 +12,60 @@ sidebar_label: Copilot
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic Copilot is an AI-based assistant that helps you get insights quickly from your logs. It allows you to ask questions in plain English and provides search suggestions, all without your having to write a log query.
+Sumo Logic Copilot is an AI-based assistant that streamlines log analysis insights by allowing you to ask questions in plain English and provides search suggestions, all without your having to write a log query.
 
-## Access Copilot
+Sumo Logic Copilot is an AI-based assistant designed to streamline log analysis by offering insights and suggestions in natural language.
 
-To start using Sumo Logic Copilot, go to the Sumo Logic home page and click the **Copilot** tab.
+In this document, you'll learn the recommended Copilot workflow as well as best practices.
+
+## Step 1: Access Copilot
+
+To start using Copilot, navigate to the **Copilot** tab on the Sumo Logic home page.
 
 <img src={useBaseUrl('img/search/copilot/copilot-tab.png')} alt="Copilot tab" style={{border: '1px solid gray'}} width="250" />
 
-## Quickstart/Use case
+## Step 2: Select a source category
 
-In this exercise, we'll run a search for Kubernetes event logs.
+Click **Select Source Category** and select the data source of the log messages you want to investigate. This field is also called the source expression box. In this example, we've chosen from the Sumo Logic Labs Docker Enterprise Edition source.
 
-1. In the source expression box, choose `dat/events` (and what does that mean?). Leave the "Ask Something" field blank.
-1. Under the **Suggestions** section, which contains suggested prompts, click **Count of logs/records grouped by type**. After this, you'll see **Count of logs/records grouped by type** populate in the "Ask Something" field.
-1. Refine the queried time period by clicking (?) dropdown and selecting ??
-1. Switch from table to pie chart view.
-1. Under the **Suggestions** section, click **Count of logs/records grouped by type, reason, kind, name** to refine your search further.
-1. Click the **Open in Log Search** icon (insert pic), which carries your query from Copilot to a Log Search, allowing you to utilize all of our search functionality to continue investigating.
+## Step 3: Execute a prompt
 
-## Copilot UI
+AI prompts require careful precision for optimal performance. Rather than manually inputting a query, we recommend using the [**Suggestions** prompt ideas](#suggestions-recommended), which have been proven effective through extensive testing.
 
-### Initial screen
+### Suggestions (recommended)
 
-<img src={useBaseUrl('img/search/copilot/copilot-initial-screen.png')} alt="Copilot initial screen" style={{border: '1px solid gray'}} width="800" />
+Under **Suggestions** > **Explore**, click on any of the suggested prompts to refine your investigation. You'll then see that prompt populate in the **Ask Something...** field. You can use these natural language query prompt ideas to launch and/or refine investigations.
 
-1. **Select Source Category**. Select the source of the log messages you want to investigate.
-1. **Ask Something...** Type a phrase to initiate an investigation.
-1. **Suggestions**. Choose from the listed natural language query ideas to launch or refine your investigation.
-   :::tip
-   As a timesaver, we strongly recommend using these prompts (by clicking on them) instead of manually inputting queries. AI prompts often require precision for optimal performance, and these prompts have been proven effective through extensive testing.
-   :::
-1. **Time range**. The time range to use for the investigation. The default is the last 24 hours.
-1. **Execute**. Launches the investigation.
-1. **New Conversation**. Start a new investigation.
+### Manual entry
 
-### During an investigation
+In the **Ask Something...** field, enter a natural language query prompt similar to the ones under **Suggestions** > **Explore**.
 
-<img src={useBaseUrl('img/search/copilot/copilot-during-search.png')} alt="Copilot during a search" style={{border: '1px solid gray'}} width="800" />
+## Step 4: Refine your investigation (optional)
 
-1. **Summary**. The current investigation summarized in plain text. ("Failed translation" appears here if the statement in the **Ask Something** field can't be translated into a query.)
-1. **Show Log Query / Hide Log Query**. Show the current investigation as a log query, or hide the query.
-1. **Open in Log Search**. Open the current investigation in a separate Log Search window. This allows you to save the search and perform all other actions available for log searches.
-1. **Select chart**. Select the chart style to visualize results.
-1. **Suggestions**:
-   * **Refine**. Suggested refinements to your existing investigation.
-   * **Explore**. New ideas for investigation.
+After executing a prompt, you'll see the current investigation summarized in plain text.
+:::note
+If the statement in the **Ask Something** field can't be translated into a query, this field will say "Failed translation".
+:::
+
+Optionally, follow any of the below steps to refine your search.
+
+* Click **Show Log Query** or **Hide Log Query** to show the current investigation as a log query, or hide the query.
+* Click **Suggestions** > **Refine** to apply suggested refinements to your existing investigation.
+* Under **Suggestions** > **Explore**, you'll find new ideas for investigation.
+* Edit your search query code:
+   1. Click the code editor field and edit your search. Not familiar with Sumo Logic query language? See [Search Query Language](/docs/search/search-query-language) to learn more.
+   1. Click the **Play** icon.
+* Select your preferred chart type, such as **Table**, **Bar**, **Column**, or **Line** view, to visualize your results<br/><img src={useBaseUrl('img/search/copilot/chart-types.png')} alt="Copilot chart types" style={{border: '1px solid gray'}} width="300" />
+* Select your desired time range. The default value is last 24 hours.
+   1. Click the clock icon and select a new time range from the dropdown.<br/><img src={useBaseUrl('img/search/copilot/time-period.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="400" />
+   1. Click the search button.<br/><img src={useBaseUrl('img/search/copilot/search-button.png')} alt="Copilot search button" style={{border: '1px solid gray'}} width="300" />
+
+## Step 5: Open in Log Search
+
+Click the **Open in Log Search** icon (insert pic), which will copy your query from Copilot over to a new Log Search, allowing you to utilize all of Sumo's search functionality to continue investigating and save the search.
+
+To clear your search criteria and start a new investigation, click the **New Conversation** icon.<br/><img src={useBaseUrl('img/search/copilot/new-conversation.png')} alt="Copilot new conversation" style={{border: '1px solid gray'}} width="300" />
+
 
 ## Best practices
 
@@ -65,8 +73,8 @@ For the best results, choose one of the following strategies.
 
 * **Explore**. Select a prebuilt suggestion in the **Explore** section, click **Show Log Query**, and edit the query.
 * **Refine**. Watch the **Refine** section. If Copilot is able to list refinements useful for your investigation, such as time comparisons, click on the refinements rather than manually typing a new prompt.
-* **Ask Something**. Type your question into the **Ask Something** field, but keep it very specific. Broad questions do not return good results. When your question is framed as a query about a small, well-defined problem, Copilot answers more accurately.
-* Log Query field. For log formats that mix JSON and non-JSON, add `{` to the source expression to trigger Suggestions.<img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="250" />
+* **Ask Something**. When manually entering a query into the **Ask Something** field, be very specific. Broad questions do not return good results. When your question is framed as a query about a small, well-defined problem, Copilot answers more accurately.
+* Log Query field. For log formats that mix JSON and non-JSON, add `{` to the source expression to trigger Suggestions.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
 * **Progressive refinement**. Start from a simple prompt, verify the query translation, and refine it gradually. For example:
    1. Initial prompt. "Count of logs grouped by type".
    1. Refinement. Count of logs grouped by type, reason, kind, name.
@@ -76,10 +84,12 @@ For the best results, choose one of the following strategies.
    Express your chain of thought to the AI by breaking up the prompt into smaller problems that the AI can answer more accurately.
    :::
 
-## Restrictions
+## Limitations
 
 Copilot supports querying JSON logs only. You cannot use Copilot to query unstructured data, metrics, or traces.
 
 ## Feedback
 
-We want your feedback! Let us know what you think by clicking the thumbs up or thumbs down icon, then entering more information, if desired.
+We want your feedback! Let us know what you think by clicking the thumbs up or thumbs down icon. Optionally, you can also enter more context and information.
+
+<img src={useBaseUrl('img/search/copilot/feedback-thumbs.png')} alt="Copilot feedback icons" style={{border: '1px solid gray'}} width="250" />
