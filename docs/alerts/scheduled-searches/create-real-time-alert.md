@@ -15,7 +15,7 @@ When an alert condition is satisfied Sumo Logic triggers the selected alert ty
 
 ## When to Use
 
-Only use real-time schedules when you know your data is ingested within a few minutes of its creation. The [receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time) should be within a few minutes of your log's [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata). See
+Only use real-time schedules when you know your data is ingested within a few minutes of its creation. The [receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time) should be within a few minutes of your log's [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata). See
 how to [troubleshoot timestamp discrepancies](/docs/send-data/collector-faq#troubleshooting-time-discrepancies).
 
 Real-Time Alerts are not duplicated, which means that if a specific raw log message has triggered an alert once already, that same log message will not trigger an alert a second time.
