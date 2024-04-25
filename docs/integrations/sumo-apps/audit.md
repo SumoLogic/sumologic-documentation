@@ -22,6 +22,18 @@ import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md'
 
 <AppInstallNoDataSourceV1/>
 
+## Upgrading the Sumo Logic Audit app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Sumo Logic Audit app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Viewing Sumo Logic Audit dashboards
 
 This section describes each of the dashboards in the Audit app.

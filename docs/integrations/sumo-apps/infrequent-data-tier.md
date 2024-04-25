@@ -103,6 +103,18 @@ import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md'
 
 <AppInstallNoDataSourceV1/>
 
+## Upgrading the Infrequent Data Tier app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Infrequent Data Tier app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
 ## Viewing Infrequent Data Tier dashboards
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.

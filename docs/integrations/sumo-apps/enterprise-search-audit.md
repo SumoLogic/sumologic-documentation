@@ -14,13 +14,26 @@ The Enterprise Search Audit App provides immediate visibility into your account'
 Before you can use the Enterprise Search Audit App, an administrator must first enable the feature. For more information, see Enable and Manage the Search Audit Index.
 
 
-## Installing the Enterprise Search Audit App
+## Installing the Enterprise Search Audit app
 
 import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
 
 <AppInstallNoDataSourceV1/>
 
-## Enterprise Search Audit App Dashboards
+## Upgrading the Enterprise Search Audit app (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Enterprise Search Audit app (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
+
+## Enterprise Search Audit App dashboards
+
 This page has information about the pre-built dashboards for the Enterprise Search Audit App and a description of each of the app dashboards.
 
 

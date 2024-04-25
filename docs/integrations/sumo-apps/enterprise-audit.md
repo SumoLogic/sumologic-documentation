@@ -34,11 +34,23 @@ Enterprise Audit Apps utilize predefined searches and Dashboards that provide vi
 
 Audit data is not backfilled to any time before Enterprise Audit was installed. The Audit Event Index is enabled by default.
 
-## Installing Enterprise Audit Apps
+## Installing Enterprise Audit apps
 
 import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
 
 <AppInstallNoDataSourceV1/>
+
+## Upgrading the Enterprise Audit apps (Optional)
+
+import AppUpdate from '../../reuse/apps/app-update.md';
+
+<AppUpdate/>
+
+## Uninstalling the Enterprise Audit apps (Optional)
+
+import AppUninstall from '../../reuse/apps/app-uninstall.md';
+
+<AppUninstall/>
 
 ## Viewing Enterprise Audit App Dashboards
 
