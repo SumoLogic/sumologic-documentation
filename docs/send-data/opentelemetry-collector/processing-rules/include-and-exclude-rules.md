@@ -1,8 +1,9 @@
 ---
-id: include-and-exclude-rules-otel
+id: include-and-exclude-rules
 title: Include and Exclude Rules for OpenTelemetry (Beta)
 description: Use include and exclude processing rules to specify what kind of data is sent to Sumo Logic using OpenTelemetry Collector.
 ---
+
 <head>
   <meta name="robots" content="noindex" />
 </head>
