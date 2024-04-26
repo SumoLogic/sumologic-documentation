@@ -72,7 +72,7 @@ Click **Select Source Category** and select the data source of the log messages 
 
 Under **Suggestions** > **Explore**, click on any of the prebuilt suggested prompts to start your investigation. For example:
 
-<img src={useBaseUrl('img/search/copilot/suggestions-explore.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
+<img src={useBaseUrl('img/search/copilot/explore.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
 ### Manual entry
 
