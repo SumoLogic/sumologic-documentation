@@ -2506,7 +2506,7 @@
   "/cid/9004": "/docs/integrations/microsoft-azure/active-directory-json",
   "/cid/9006": "/docs/cse/ingestion/ingestion-sources-for-cloud-siem/aws-network-firewall",
   "/cid/9008": "/docs/alerts/webhook-connections/new-relic",
-  "/cid/10333": "/docs/send-data/opentelemetry-collector/processing-rules",
+  "/cid/10333": "/docs/send-data/opentelemetry-collector/remote-management/processing-rules",
   "/cid/9010": "/docs/send-data/opentelemetry-collector",
   "/cid/9011": "/docs/send-data/opentelemetry-collector/install-collector/linux",
   "/cid/9012": "/docs/send-data/opentelemetry-collector/install-collector/macos",
