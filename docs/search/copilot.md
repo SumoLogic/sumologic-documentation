@@ -70,7 +70,7 @@ Click **Select Source Category** and select the data source of the log messages 
 
 ### Suggestions (recommended)
 
-Under **Suggestions** > **Explore**, click on any of the prebuilt suggested prompts to refine your investigation. For example:
+Under **Suggestions** > **Explore**, click on any of the prebuilt suggested prompts to start your investigation. For example:
 
 <img src={useBaseUrl('img/search/copilot/suggestions-explore.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
@@ -85,7 +85,7 @@ In the **Ask Something...** field, enter a natural language query prompt similar
 You'll need to be very specific. Broad questions do not return good results. When your question is framed as a query about a small, well-defined problem, Copilot answers more accurately.
 
 :::note
-If the statement in the **Ask Something** field can't be translated into a query, this field will say "Failed translation".
+If the statement in the **Ask Something...** field can't be translated into a query, this field will say "Failed translation".
 :::
 
 ## Step 4: Refine your investigation
