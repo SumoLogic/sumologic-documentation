@@ -322,7 +322,7 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
    10. Click **Save**.
    11. Save the given URL of the source for next step.
 2. [Create Stack](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#cloudformation-template) in AWS console with given CloudFormation Template.
-3. Create a log group in CloudWatch Logs by referring to [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html). (Make sure to have log group name convention as `/aws/apigateway/<apiid>/<stagename>`)
+3. Create a log group in CloudWatch Logs by referring to the [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html). Make sure to set your log group name convention as `/aws/apigateway/<apiid>/<stagename>`.
 4. Follow the below steps to enable access logs for each respective API type:
    :::note
    Make sure to remove `:*` from the end while adding Access log destination ARN.
