@@ -327,7 +327,7 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
    :::note
    Make sure to remove remove :* from the end while adding Access log destination ARN.
    :::
-   * Enable Access logs for REST APIs by referring to [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html) and  when you specify the `Log format` field use the below JSON.
+   * Enable Access logs for REST APIs by referring to [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-using-console) and  when you specify the `Log format` field use the below JSON.
 
       <img src={useBaseUrl('img/integrations/amazon-aws/Access_Logging_REST_API.png')} alt="AWS API Gateway" style={{border: '1px solid gray'}} width="800" />
 
