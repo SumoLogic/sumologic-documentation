@@ -1,22 +1,10 @@
 ---
 id: minute-volume
-title: Minute Volume (Beta)
+title: Minute Volume
 description: Use Ingest Budgets Minute Volume to control data ingestion to minute granularity.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<!-- IMPORTANT: When this doc goes from Beta to GA, integrate this content with /docs/manage/ingestion-volume/ingest-budgets/index.md, where there's significant overlapping content. -->
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
-
-:::note
-This feature is in Beta. To participate, contact your Sumo Logic account executive.
-:::
 
 Ingest Budgets Minute Volume lets you control data ingestion to minute granularity. This granular control in data ingestion protects against Ingestion surges and spikes, thus safeguarding your account against throttling.
 
@@ -33,12 +21,16 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 * Avoid creating multiple ingest budgets with the same scope. In such a scenario, Ingest budgets whose capacity is reached first is executed.
 * In the scope, do not wrap values in quotes, unless the value explicitly has quotes. For example, if you want to assign the scope with `_collector` and the name of the Collector is `CloudTrail`, you would assign the scope as `_collector=CloudTrail` instead of `_collector="CloudTrail"`.
 
-
 ## Budget assignment​
 
-import BudgetAssn from '../../../reuse/budget-assignment.md';
+The **Scope** supports the option to assign ingest budgets to your log data by either:
 
-<BudgetAssn/>
+* A Field that is enabled in the [Fields](/docs/manage/fields) table.
+* One of the following built-in metadata fields: `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, or `_sourceName`.
+
+The value supports a single wildcard, such as `_sourceCategory=prod*payment`.
+
+For example, a **Scope** expression like `_sourceCategory=/dev/catalog/*` implies that all incoming logs ingested into Sumo Logic with a matching `_sourceCategory` will fall under the scope of the given budget.
 
 ## Source-type behavior​
 
@@ -95,7 +87,7 @@ To search for ingest budgets that are currently enforced to stop collecting data
 _index=sumologic_audit_events minuteVolume stopCollecting
 ```
 
-## Beta Playbook
+## Set up Minute Volume ingest budgets
 
 1. Identify sources which are not critical data sources where stricter data controls can be added to prevent your organization from being throttled.
 1. Identify `_sourceCategory` or any other identifier for the sources.
