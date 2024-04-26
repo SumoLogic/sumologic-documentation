@@ -42,7 +42,8 @@ In this document, you'll learn the recommended Copilot workflow as well as best 
         allowfullscreen
         />
 
-Scenario: We receive a Sumo Logic alert about AWS CloudTrail access keys being leaked outside our organization and use Copilot to investigate.
+
+In the scenario depicted in the video (NOTE: video has no sound), we leverage Copilot to investigate a security issue, AWS CloudTrail access keys being leaked outside the organization.
 
 1. First, we select the data source for AWS CloudTrail audit logs.
 1. Launch our log investigation by clicking the AI-suggested insight `Count logs by eventname`, which translates the insight to a log query and renders results.
@@ -62,7 +63,7 @@ To start using Copilot, navigate to the **Copilot** tab on the Sumo Logic home p
 
 ## Step 2: Select a source category
 
-Click **Select Source Category** and select the data source of the log messages you want to investigate. This field is also called the source expression box.
+Click **Select Source Category** - the source expression box - and type/select the data source of the log messages you want to investigate.
 
 <img src={useBaseUrl('img/search/copilot/source-category.png')} alt="Copilot source category" style={{border: '1px solid gray'}} width="600" />
 
