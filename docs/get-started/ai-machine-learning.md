@@ -2,17 +2,22 @@
 id: ai-machine-learning
 title: Sumo Logic AI and Machine Learning Features
 sidebar_label: AI and Machine Learning
-description: Leverage Sumo Logic's automated machine learning and AI capabilities (mention features here) to (business value).
-tags: [ai, artificial intelligence, machine learning, ml, llm]
+description: Leverage Sumo Logic AI- and ML-backed features to resolve issues and reduce MTTR.
+keywords:
+   - artificial intelligence
+   - ai
+   - machine learning
+   - ml
+   - llm
+   - mttr
+tags: [ai]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Sumo Logic offers a robust platform for IT DevSecOps teams, leveraging artificial intelligence (AI), machine learning (ML), and pattern recognition to enhance security management processes. By implementing our machine learning capabilities, you can get real-time security monitoring security management support for your cloud services, streamline incident response processes, and mitigate risks effectively. Our suite of observability and security features empowers developers to proactively monitor and safeguard your technology stack against evolving threats.
+In this document, you'll learn about Sumo Logic features that leverage artificial intelligence (AI), machine learning (ML), and pattern recognition to support cloud security management, mitigate risks, reduce manual workloads for your team, and streamline incident response and resolution.
 
-<!--Today's machine learning software applications are becoming increasingly sophisticated in their approach, along with the ways they can be integrated with other functionalities. Machine learning is also frequently seen as a value-added feature for software products across industry verticals, including finance, healthcare and IT. IT security professionals are increasingly relying on machine learning applications to facilitate real-time security monitoring of increasingly large and disparate IT infrastructure networks.
-
-The implementation of machine learning technology to support the security management of cloud services can reduce manual workloads for your team and streamline your incident response process. Sumo Logic uses machine learning and pattern recognition to analyze the millions of log files created by your technology stack, detect anomalies and outlier data, and report security issues in a timely fashion with fewer false positives.-->
+These alerting, security, and remediation features go beyond visual analytics. They are tools that accelerate issue resolution, reduce mean time to respond (MTTR), and empower you to proactively monitor and safeguard your technology stack against evolving threats.
 
 <img src={useBaseUrl('img/get-started/ai-diagram.png')} alt="ai-diagram.png" />
 
@@ -23,33 +28,52 @@ Sumo Logic provides observability into your technology stack by analyzing the mi
 
 ### Log Search
 
-* Copilot. <!--link tk-->An in-product AI-based assistant that allows you to obtain insights quickly from logs. You can interact with Copilot using plain English queries and utilize search suggestions for result refinement.
+* Copilot. <!--link - /docs/search/copilot - not published yet-->An in-product AI-based assistant that allows you to obtain insights quickly from logs. You can interact with Copilot using plain English queries and utilize search suggestions for result refinement.
 * [LogReduce&reg;](/docs/search/logreduce). Utilizes AI-driven algorithms to cluster log messages based on string and pattern similarity. LogReduce employs fuzzy logic to group similar messages into signatures, enabling quick assessment of activity patterns. Users can refine results based on their preferences, [teaching LogReduce](/docs/search/logreduce/influence-the-logreduce-outcome) for more specific outcomes.
 
 
 ### Alerts
 
-* [Anomaly Detection](/docs/alerts/monitors/create-monitor/#select-monitor-type-and-detection-method). Applies ML techniques to detect anomalies and identify suspicious activity. When you create a monitor using this method, it establishes a baseline for normal signal behavior, leveraging historical data to minimize false positives. Key features include:
+#### Anomaly Detection
+
+[Anomaly Detection](/docs/alerts/monitors/create-monitor/#select-monitor-type-and-detection-method) applies ML techniques to detect anomalies and identify suspicious activity. When you create a monitor using this method, it establishes a baseline for normal signal behavior, leveraging historical data to minimize false positives. Key features include:
   - Detection of seasonality in log signals (hourly, daily, weekly).
   - Auto-tuned anomaly detection for minimal user input.
   - Extensible detector framework allowing you to specify additional context for anomaly detection.
-  - Associate anomaly response with a monitor by creating a playbook, as described below.
-* [Automated Playbooks](/docs/alerts/monitors/use-playbooks-with-monitors). Set up a predefined set of actions and conditional statements that respond to an events like security incidents by running an automated workflow. Configuration is easy - browse our 500+ existing playbooks in the Automation Service App Central, then choose and/or customize it.
-   :::note
-   Must be used in conjunction with our [Automation Service](/docs/platform-services/automation-service).
-   :::
+  - Associate anomaly response with a monitor by creating an Automated Playbook.
+
+
+AI-driven alerting overcomes monitoring limitations through:
+
+* **Model-driven anomaly detection**. Utilizing historical data, ML models establish accurate baselines, eliminating guesswork and noise in alerts.
+* **AutoML**. The system self-tunes, including seasonality detection, minimizing user intervention for a simpler experience.
+* **User context**. Users set alert sensitivity and incident thresholds, adding context to anomaly detection to mitigate noise.
+* **One-click playbook assignment**. Monitors seamlessly link to Automation Service playbooks, expediting response without manual intervention.
+* **Auto-diagnosis and recovery**. Sumo Logic Automation Service automates diagnosis and resolution, closing the loop from alert to recovery.
+
+#### Automated Playbooks
+
+:::note prerequisites
+Must be used in conjunction with our [Automation Service](/docs/platform-services/automation-service).
+:::
+
+[Automated Playbooks](/docs/alerts/monitors/use-playbooks-with-monitors) let you set up a predefined set of actions and conditional statements that respond to an events like security incidents by running an automated workflow. Configuration is easy - browse our 500+ existing playbooks in the Automation Service App Central, then choose and/or customize it.
 
 ### Apps
 
 Sumo Logic offers integrations with various AI-driven platforms to analyze large volumes of data, including:
 
 * [Google Cloud Vertex AI](/docs/integrations/google/cloud-vertex-ai)
-* [OpenAI ChatGPT](/docs/platform-services/automation-service/app-central/integrations/openai-chatgpt/)
+* [OpenAI ChatGPT](/docs/platform-services/automation-service/app-central/integrations/openai-chatgpt)
 * [Vectra AI](/docs/platform-services/automation-service/app-central/integrations/vectra)
 * [Microsoft Sentinel](/docs/platform-services/automation-service/app-central/integrations/microsoft-sentinel)
 * [Darktrace](/docs/platform-services/automation-service/app-central/integrations/darktrace)
-* [Criminal IP](docs/platform-services/automation-service/app-central/integrations/criminal-ip.md)
+* [Criminal IP](/docs/platform-services/automation-service/app-central/integrations/criminal-ip)
 * [Arcanna](/docs/platform-services/automation-service/app-central/integrations/arcanna)
+
+### Root Cause Explorer
+
+<!-- need more info-->
 
 ## Security
 
