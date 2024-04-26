@@ -3864,6 +3864,8 @@
   "/docs/send-data/collect-from-other-data-sources/kubernetes": "/docs/send-data/kubernetes",
   "/docs/cloud-soar/mssp": "/docs/cloud-soar/legacy/legacy-cloud-soar-mssp",
   "/docs/cloud-soar/cloud-soar-delivery-2": "/release-notes-csoar/2024/02/06/application-update",
+  "/docs/cloud-soar/global-functions-menu": "/docs/cloud-soar/overview/",
+  "/docs/cloud-soar/main-menu": "/docs/cloud-soar/incidents-triage",
   "/docs/manage/partitions-data-tiers/create-edit-partition": "/docs/manage/partitions/data-tiers/create-edit-partition/",
   "/docs/manage/partitions-data-tiers/view-partition-details": "/docs/manage/partitions/data-tiers/view-partition-details",
   "/docs/manage/partitions-data-tiers/run-search-against-partition": "/docs/manage/partitions/run-search-against-partition",
