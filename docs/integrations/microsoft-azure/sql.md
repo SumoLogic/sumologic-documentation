@@ -93,7 +93,7 @@ In this step, you configure a pipeline for shipping logs from [Azure Monitor](ht
 
 1. Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
 
-	- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended)
+	- [Azure Event Hubs Source](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/#setup) (Recommended)
 	- Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection)
 
 	When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DB/SQL/Logs`.
