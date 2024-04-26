@@ -229,3 +229,9 @@ These steps can help identify the problem:
     ```
     2017-05-07 17:20:08,293 -0500 [Thread-2875] ERROR com.sumologic.scala.collector.input.syslog.EventInput - Received event: Exception. server com.sumologic.scala.collector.input.syslog.TCPSyslogServer@45424f69, socketAddress /172.21.36.28:60097 java.net.SocketTimeoutException: Read timed out
     ```
+
+## Error messages
+
+For Syslog sources, the Installed Collector sends a heartbeat at regular intervals and marks collector health as healthy or unhealthy.
+
+Errors, if any, are reported in `collector.out.log` log file.
