@@ -70,7 +70,7 @@ Click **Select Source Category** and select the data source of the log messages 
 
 ### Suggestions (recommended)
 
-Under **Suggestions** > **Explore**, click on any of the suggested prompts to refine your investigation. For example:<br/><img src={useBaseUrl('img/search/copilot/suggestions-explore.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
+Under **Suggestions** > **Explore**, click on any of the suggested prompts to start your investigation. For example:<br/><img src={useBaseUrl('img/search/copilot/suggestions-explore.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
 ### Manual entry
 
