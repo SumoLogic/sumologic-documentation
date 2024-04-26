@@ -70,7 +70,9 @@ Click **Select Source Category** and select the data source of the log messages 
 
 ### Suggestions (recommended)
 
-Under **Suggestions** > **Explore**, click on any of the suggested prompts to refine your investigation. For example:<br/><img src={useBaseUrl('img/search/copilot/suggestions-explore.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
+Under **Suggestions** > **Explore**, click on any of the prebuilt suggested prompts to refine your investigation. For example:
+
+<img src={useBaseUrl('img/search/copilot/suggestions-explore.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
 ### Manual entry
 
@@ -91,18 +93,6 @@ If the statement in the **Ask Something** field can't be translated into a query
 After executing a prompt, you'll see your current investigation summarized in plain text in the **Ask Something...** field. You can use these natural language query prompt ideas to launch and/or refine investigations.
 
 Optionally, follow any of the below steps to refine your search.
-
-### Show/Hide Log Query
-
-Click **Show Log Query** or **Hide Log Query** to show the current investigation as a log query, or hide the query.
-
-<img src={useBaseUrl('img/search/copilot/show-hide-query.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
-
-### Explore
-
-Click any of the **Suggestions** > **Explore** prebuilt suggestions to apply them to your investigation.
-
-<img src={useBaseUrl('img/search/copilot/explore.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
 
 ### Refine
 
@@ -125,17 +115,18 @@ Express your chain of thought to the AI by breaking up the prompt into smaller p
 
 ### Edit query code
 
-:::warning Limitations
-Copilot supports querying JSON logs only. You cannot use Copilot to query unstructured data, metrics, or traces.
-:::
-
 If needed, you can edit your log search query code.
 
+1. Click **Show Log Query** to show the current investigation as a log query.<br/><img src={useBaseUrl('img/search/copilot/show-hide-query.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
 1. Click in the code editor field and edit your search. Not familiar with Sumo Logic query language? See [Search Query Language](/docs/search/search-query-language) to learn more.<br/><img src={useBaseUrl('img/search/copilot/code-editor.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
    :::note JSON formatting
    If your log query contains a mix JSON and non-JSON formatting, add `{` to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
    :::
 1. When you're done, click the **Play** icon.<br/><img src={useBaseUrl('img/search/copilot/play.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
+
+:::warning Limitations
+Copilot supports querying JSON logs only. You cannot use Copilot to query unstructured data, metrics, or traces.
+:::
 
 ### Chart type
 
