@@ -1,4 +1,5 @@
 ---
+slug: /send-data/opentelemetry-collector/remote-management/processing-rules
 title: Processing Rules for OpenTelemetry (Beta)
 description: Use Sumo Logic processing rules for an OpenTelemetry agent with an OpenTelemetry remote management (OTRM) source template.
 ---
@@ -14,13 +15,13 @@ Processing rules can be used with OpenTelemetry Collector for different source t
 
 Processing rules for logs collection support the following rule types:
 
-* [Exclude messages that match](/docs/send-data/opentelemetry-collector/processing-rules/include-and-exclude-rules.md). Remove messages that you do not want to send to Sumo Logic at all ("denylist" filter). These messages are skipped by OpenTelemetry Collector and are not uploaded to Sumo Logic.
-* [Include messages that match](/docs/send-data/opentelemetry-collector/processing-rules/include-and-exclude-rules.md). Send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of rule can be useful, for example, if you only want to include messages coming from a firewall.
+* [Exclude messages that match](include-and-exclude-rules.md). Remove messages that you do not want to send to Sumo Logic at all ("denylist" filter). These messages are skipped by OpenTelemetry Collector and are not uploaded to Sumo Logic.
+* [Include messages that match](include-and-exclude-rules.md). Send only the data you'd like in your Sumo Logic account (an "allowlist" filter). This type of rule can be useful, for example, if you only want to include messages coming from a firewall.
 
 Processing Rules for metrics collection support the following rule types:
 
-* [Exclude metrics that match](/docs/send-data/opentelemetry-collector/processing-rules/metrics-include-and-exclude-rules.md). Remove metrics that you do not want to send to Sumo Logic at all ("denylist" filter).
-* [Include metrics that match](/docs/send-data/opentelemetry-collector/processing-rules/metrics-include-and-exclude-rules.md). Send only selected metrics to your Sumo Logic account (an "allowlist" filter). 
+* [Exclude metrics that match](metrics-include-and-exclude-rules.md). Remove metrics that you do not want to send to Sumo Logic at all ("denylist" filter).
+* [Include metrics that match](metrics-include-and-exclude-rules.md). Send only selected metrics to your Sumo Logic account (an "allowlist" filter). 
 
 ## Limitations
 
@@ -42,13 +43,13 @@ In this section, we'll introduce the following concepts:
 <div className="box-wrapper" >
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/opentelemetry-collector/processing-rules/include-and-exclude-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Include and Exclude Rules for OpenTelemetry </h4></a>
+  <a href="/docs/send-data/opentelemetry-collector/remote-management/processing-rules/include-and-exclude-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Include and Exclude Rules for OpenTelemetry </h4></a>
   <p>Use include and exclude processing rules to specify what kind of data is sent to Sumo Logic using OpenTelemetry Collector.</p>
   </div>
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/send-data/opentelemetry-collector/processing-rules/metrics-include-and-exclude-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Metrics Include and Exclude Rules for OpenTelemetry</h4></a>
+  <a href="/docs/send-data/opentelemetry-collector/remote-management/processing-rules/metrics-include-and-exclude-rules"><img src={useBaseUrl('img/icons/operations/rules.png')} alt="icon" width="40"/><h4>Metrics Include and Exclude Rules for OpenTelemetry</h4></a>
   <p>Use metrics processing rules to specify what metrics are sent to Sumo Logic using OpenTelemetry Collector.</p>
   </div>
 </div>
