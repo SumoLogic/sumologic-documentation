@@ -12,7 +12,7 @@ The Sumo Logic Distribution for OpenTelemetry Collector facilitates remote manag
 
 ### Collector tags
 
-Utilize OpenTelemetry (OTel) remote management to tag your [Installed Collectors](/docs/send-data/installed-collectors), facilitating categorization and grouping. These tags enrich your data, enabling their usage in dashboards and searches.
+With OpenTelemetry (OTel) remote management, you can tag your [OpenTelemetry Collectors](/docs/send-data/opentelemetry-collector) and use those tags to categorize and group them. These tags are enriched in your data, so you can use them in your dashboards and searches as well.
 
 ### Source templates
 
