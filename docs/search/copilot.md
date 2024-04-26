@@ -1,6 +1,6 @@
 ---
 id: copilot
-title: Sumo Logic Copilot
+title: Sumo Logic Copilot - Feature Preview
 sidebar_label: Copilot 🤖
 keywords:
   - copilot
@@ -17,13 +17,13 @@ keywords:
 import Iframe from 'react-iframe';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
+:::info
+This is a Preview release. To learn more, contact your Sumo Logic account executive.
+:::
 
 Sumo Logic Copilot is an AI-based assistant that streamlines log analysis insights by allowing you to ask questions in plain English and provides search suggestions, all without your having to write a log query.
 
 In this document, you'll learn the recommended Copilot workflow as well as best practices.
-
-:::sumo Watch a Demo
 
 <details>
 <summary>Click here to watch a step-by-step video investigation using Copilot.</summary>
@@ -53,8 +53,6 @@ Scenario: We receive a Sumo Logic alert about AWS CloudTrail access keys being l
 1. Focus on a specific access key, `ABCDEFGOYCM3PIKNOVRA`, noting `PutRolePolicy` events indicating permission elevation. Multiple AWS accounts are impacted.
 1. We conclude that the access key was used to modify permissions, providing the attacker with a potential network entry point. Remediation would involve disabling the key, blocking the source IP, and further log analysis.
 </details>
-:::
-
 
 ## Step 1: Open Copilot
 
