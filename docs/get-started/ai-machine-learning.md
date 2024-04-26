@@ -29,7 +29,10 @@ Sumo Logic provides observability into your technology stack by analyzing the mi
 ### Log Search
 
 * Copilot. <!--link - /docs/search/copilot - not published yet-->An in-product AI-based assistant that allows you to obtain insights quickly from logs. You can interact with Copilot using plain English queries and utilize search suggestions for result refinement.
-* [LogReduce&reg;](/docs/search/logreduce). Utilizes AI-driven algorithms to cluster log messages based on string and pattern similarity. LogReduce employs fuzzy logic to group similar messages into signatures, enabling quick assessment of activity patterns. Users can refine results based on their preferences, [teaching LogReduce](/docs/search/logreduce/influence-the-logreduce-outcome) for more specific outcomes.
+* [LogReduce&reg;](/docs/search/logreduce). Utilizes AI-driven algorithms to cluster log messages based on string and pattern similarity. Boil down thousands of log lines into easy to understand patterns with LogReduce® and LogCompare. Separate the signal from the noise and detect anomalous behavior with Outlier Detection. LogReduce employs fuzzy logic to group similar messages into signatures, enabling quick assessment of activity patterns. You can refine results based on your preferences, [teaching LogReduce](/docs/search/logreduce/influence-the-logreduce-outcome) for more specific outcomes.
+* LogCompare. Identify and predict anomalies in real time with outlier detection, and uncover root-causes using LogCompare pattern analysis.
+
+
 
 
 ### Alerts
@@ -41,7 +44,6 @@ Sumo Logic provides observability into your technology stack by analyzing the mi
   - Auto-tuned anomaly detection for minimal user input.
   - Extensible detector framework allowing you to specify additional context for anomaly detection.
   - Associate anomaly response with a monitor by creating an Automated Playbook.
-
 
 AI-driven alerting overcomes monitoring limitations through:
 
@@ -73,6 +75,8 @@ Sumo Logic offers integrations with various AI-driven platforms to analyze large
 
 ### Root Cause Explorer
 
+Accelerates troubleshooting by surfacing events of interest correlated with application incidents. [Learn more](/docs/observability/root-cause-explorer)
+
 <!-- need more info-->
 
 ## Security
@@ -94,7 +98,10 @@ Our Global Intelligence Service apps provide security teams with valuable real-t
 
 ## More information
 
-* [Sumo Logic Blog | Machine learning overview](https://www.sumologic.com/glossary/machine-learning/)
+* [What are the differences between artificial intelligence, machine learning, deep learning and generative AI?](https://www.sumologic.com/blog/machine-learning-deep-learning)
+* [Understanding artificial intelligence for log analytics](https://www.sumologic.com/guides/machine-data-analytics)
+* [DevSecOps in an AI world requires disruptive log economics](https://www.sumologic.com/blog/devsecops-ai-disruptive-log-economics)
+* [Generative AI: The latest example of systems of insight](https://www.sumologic.com/blog/generative-ai-latest-example-systems-of-insight)
 <!--
 -bashyam's blog about how we trained our AI
 -Flex Pricing? The more log data ingested, the sharper your analytics and ML/AI insights become. By eliminating ingest limitations and empowering an ML/AI-driven single source of truth for analytics, Flex enables DevOps and DevSecOps teams to troubleshoot faster, accelerate release velocity, and ensure reliable, secure digital experiences.
