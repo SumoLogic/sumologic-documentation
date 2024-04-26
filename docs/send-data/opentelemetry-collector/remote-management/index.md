@@ -1,5 +1,5 @@
 ---
-id: remote-management
+slug: /send-data/opentelemetry-collector/remote-management
 title: OpenTelemetry Remote Management
 sidebar_label: Remote Management
 ---
