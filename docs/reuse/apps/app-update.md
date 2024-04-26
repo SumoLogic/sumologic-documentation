@@ -1,3 +1,7 @@
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
 To update the app, do the following:
 
 1. From the Sumo Logic navigation, select **App Catalog**.
