@@ -83,7 +83,7 @@ In the **Ask Something...** field, enter a natural language query prompt similar
 You'll need to be very specific. Broad questions do not return good results. When your question is framed as a query about a small, well-defined problem, Copilot answers more accurately.
 
 :::note
-If the statement in the **Ask Something** field can't be translated into a query, this field will say "Failed translation".
+If the statement in the **Ask Something...** field can't be translated into a query, this field will say "Failed translation".
 :::
 
 ## Step 4: Refine your investigation
