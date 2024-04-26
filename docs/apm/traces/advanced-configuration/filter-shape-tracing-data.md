@@ -104,17 +104,17 @@ service:
       exporters: ...
 ```
 
-By default, cascading filter waits for 30 seconds before making the decision and can hold up to 100000 traces in memory (if available). This parameters can be fine-tuned using `decision_wait` and `num_traces` configuration options. More details on the usage is available at [`cascadingfilterprocessor`](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/cascadingfilterprocessor) page. For examples, see:
+By default, the cascading filter waits for 30 seconds before making the decision and can hold up to 100000 traces in memory (if available). This parameter can be fine-tuned using `decision_wait` and `num_traces` configuration options. More details on the usage are available at the [`cascadingfilterprocessor`](https://github.com/SumoLogic/sumologic-otel-collector/tree/main/pkg/processor/cascadingfilterprocessor) page. For examples, see:
 
-* Kubernetes collection (single traces-sampler pod) [custom-values-cascading-filter.yaml](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/examples/instrumentation/custom-values-cascading-filter.yaml)
-* Non-Kubernetes collection [sampler-configuration-template-with-cascading-filter.yaml](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/otelcolconfigs/sampler_configuration_template.yaml)
+* Kubernetes collection (single traces-sampler pod): [custom-values-cascading-filter.yaml](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/examples/instrumentation/custom-values-cascading-filter.yaml)
+* Non-Kubernetes collection: [sampler-configuration-template-with-cascading-filter.yaml](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/otelcolconfigs/sampler_configuration_template.yaml)
 
-## Multiple instances of Cascading Filter
+## Multiple instances of cascading filter
 
-In case of multiple deployments sharing single configuration map(k8s) or file of the traces-sampler (cascading_filter instances), environment variable called `SUMO_COLLECTOR_INSTANCES` or `collector_instances` option should be used to scale down properly spans_per_second global and policy limits. `SUMO_COLLECTOR_INSTANCES` should be positive integer corresponding to the number of collectors with configured cascadingfilters e.g. `SUMO_COLLECTOR_INSTANCES=5`. As a result configured spans_per_second limit will be divided by 5 for global and policy limits.
+In case of multiple deployments sharing a single configuration map (k8s) or file of the traces-sampler (`cascading_filter` instances), an environment variable called `SUMO_COLLECTOR_INSTANCES` or `collector_instances` option should be used to scale down properly the `spans_per_second` global and policy limits. `SUMO_COLLECTOR_INSTANCES` should be a positive integer corresponding to the number of collectors with configured cascading filters, for example, `SUMO_COLLECTOR_INSTANCES=5`. As a result, configured the `spans_per_second` limit will be divided by 5 for global and policy limits.
 
-* Kubernetes collection (multiple traces-sampler pods) [multiple-cascading-filter-sampler-instances.yaml](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/examples/instrumentation/multiple-cascading-filter-sampler-instances.yaml)
-* Non-Kubernetes collection [sampler-configuration-multiple-instances-template.yaml](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/otelcolconfigs/sampler_configuration_multiple_instances_template.yaml)
+* Kubernetes collection (multiple traces-sampler pods): [multiple-cascading-filter-sampler-instances.yaml](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/examples/instrumentation/multiple-cascading-filter-sampler-instances.yaml)
+* Non-Kubernetes collection: [sampler-configuration-multiple-instances-template.yaml](https://github.com/SumoLogic/sumologic-otel-collector/blob/main/examples/otelcolconfigs/sampler_configuration_multiple_instances_template.yaml)
 
 ## Resource sizing guide
 
