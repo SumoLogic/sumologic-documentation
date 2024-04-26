@@ -232,6 +232,6 @@ These steps can help identify the problem:
 
 ## Error messages
 
-For Syslog sources, the Installed Collector sends a heartbeat at regular intervals and marks collector health as healthy or unhealthy.
+For Syslog source, the installed collector sends a heartbeat at regular intervals and marks the collector health as healthy or unhealthy.
 
 Errors, if any, are reported in `collector.out.log` log file.
