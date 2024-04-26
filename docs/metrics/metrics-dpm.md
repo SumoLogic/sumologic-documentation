@@ -26,7 +26,7 @@ Navigate to **Administration > Account > Metrics Data Ingestion**.
  <img src={useBaseUrl('img/metrics/metrics-dpm.png')} alt="Metrics Data Ingestion screen" style={{border: '1px solid gray'}} width="800" />
 
 1. **Date and time**. Select a time to see the metrics gathered for the previous hour. 
-1. **Ingest Trend for** `<date>`. The trend for ingest for the current day, broken down by hour. If you hover your mouse over a gray bar, it displays **Ingest data for this period is not available yet** to indicate that data has not be collected and analyzed yet for that time period. There can be a delay of several hours before data is available. 
+1. **Ingest Trend for** `<date>`. The trend for ingest for the current day, broken down by hour. If you hover your mouse over a gray bar, it displays **Ingest data for this period is not available yet** to indicate that data has not been collected and analyzed yet for that time period. There can be a delay of several hours before data is available. 
 1. **Total Ingest Data Points (1 hr)**. The total number of data points ingested during the previous hour. The green up arrow indicates the total is higher than the previous hour, and a red down arrow indicates the total is lower than the previous hour. This lets you see at a glance whether volume rates are rising or falling.
 1. **Ingest DPM (1 hr)**. The data points per minute (DPM) ingested during the previous hour.
 1. **Ingest DPM (yesterday)**.  The average number of data points per minute (DPM) ingested during the previous 24 hours. 
