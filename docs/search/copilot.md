@@ -23,18 +23,17 @@ Sumo Logic Copilot is an AI-based assistant that streamlines log analysis insigh
 
 In this document, you'll learn the recommended Copilot workflow as well as best practices.
 
-
-
 :::sumo Watch a Demo
 
 <details>
 <summary>Click here to watch a step-by-step video investigation using Copilot.</summary>
 
-Let's say we have AWS CloudTrail logs being ingested into Sumo Logic we receive an alert related to AWS CloudTrail access keys being leaked outside the organization. We'll use Copilot to investigate.
+<!-- add micro lesson video when published-->
 
-<Iframe url="/img/search/copilot/rsa-copilot-demo.mp4"
+<Iframe url="https://player.vimeo.com/video/939372059?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
         width="854px"
         height="480px"
+        title="Copilot Demo"
         id="myId"
         className="video-container"
         display="initial"
@@ -43,7 +42,9 @@ Let's say we have AWS CloudTrail logs being ingested into Sumo Logic we receive 
         allowfullscreen
         />
 
-1. First, we select the data source for AWS audit logs.
+Scenario: We receive a Sumo Logic alert about AWS CloudTrail access keys being leaked outside our organization and use Copilot to investigate.
+
+1. First, we select the data source for AWS CloudTrail audit logs.
 1. Launch our log investigation by clicking the AI-suggested insight `Count logs by eventname`, which translates the insight to a log query and renders results.
 1. Refine query by applying the suggestion `Count logs by eventname, access key and sourceIp`.
 1. Filter for Create and Authorize events, as attackers often create new resources during a breach. We find an anomaly with `AuthoritySecurityGroupIngress` events.
