@@ -109,7 +109,7 @@ Use the **Configuration** menu to access:
 
 Click **Cloud SIEM** in the main Sumo Logic menu to open the sidebar menu. <br/><img src={useBaseUrl('img/cse/cloud-siem-sidebar-menu.png')} alt="Cloud SIEM sidebar menu" style={{border: '1px solid gray'}} width="400"/>
 
-Use the sidebar menu to access:
+Use the **Cloud SIEM** sidebar menu to access:
 * **Search Cloud SIEM**. Search for [Insights](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/), [Signals](/docs/cse/records-signals-entities-insights/view-records-signal/), [Entities](/docs/cse/records-signals-entities-insights/view-manage-entities/), and [Records](/docs/cse/records-signals-entities-insights/view-records-signal/). When you click in the search bar, you’re prompted to select one of those types. Once you select a type, you're presented with a list of fields to filter on. 
 * **Security Events**
     * [**SIEM Overview**](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/). View the Cloud SIEM Heads Up Display. 
