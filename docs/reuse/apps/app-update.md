@@ -12,5 +12,3 @@ To update the app, do the following:
         1. Click **Next**. You will be redirected to the **Preview & Done** section.
 
 Your upgraded app will be installed in the **Installed Apps** folder and dashboard panels will start to fill automatically.
-
-Each panel slowly fills with data matching the time range query and received since the panel was created. Results will not immediately be available, updating with full graphs and charts over time.
