@@ -115,7 +115,7 @@ Note that in addition to tags that you manually assign to an Insight, an Insight
 
 ### Search Insights, Signals, or Entities by tag
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu, click in the Cloud SIEM search area and then click the funnel icon.
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Near the top of the screen, click in the Cloud SIEM search area and then click the funnel icon.
 <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic Menu select **Cloud SIEM > Search Cloud SIEM**, and click the funnel icon. You can also click the **Go To...** menu at the top of the screen and select **Search Cloud SIEM**. <br/><img src={useBaseUrl('img/cse/funnel-icon.png')} alt="Funnel icon" width="400"/>
 1. Select **Insights**, **Signals**, or **Entities** from the **Sources** list.<br/><img src={useBaseUrl('img/cse/sources.png')} alt="Sources" style={{border: '1px solid gray'}} width="300"/>
 1. Select **Tags** from the **Fields** list.<br/><img src={useBaseUrl('img/cse/tags-field.png')} alt="Tags field" style={{border: '1px solid gray'}} width="500"/>

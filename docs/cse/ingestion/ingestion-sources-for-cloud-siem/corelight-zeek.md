@@ -22,7 +22,8 @@ In this step, you configure a Syslog Source to collect Corelight Zeek log messag
 
 ### Configure an Installed Collector
 
-1. In the Sumo Logic platform, select **Manage Data** > **Collection** > **Collection**.
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Manage Data** > **Collection** > **Collection**.
+<br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu click **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Click **Add Collector**.
 1. Click **Installed Collector**.
 1. The **Add Installed Collector** popup appears.
@@ -41,7 +42,8 @@ In this step, you configure a Syslog Source to collect Corelight Zeek log messag
 
 ### Configure a Syslog Source
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Manage Data** > **Collection** > **Collection**.
+<br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu click **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
 1. Navigate to the Installed Collector where you want to create the source.
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 
@@ -62,7 +64,8 @@ In this step you configure Zeek to send log messages to the Sumo Logic platform.
 
 In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the source category assigned to your source or collector you configured in [Step 1](#step-1-configure-collection). The mapping tells Cloud SIEM the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
-1. In the top menu click **Configuration**, and then and under **Integrations** select **Sumo Logic** .
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu click **Configuration**, and then and under **Integrations** select **Sumo Logic**.
+<br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu click **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**. 
 1. On the **Sumo Logic Ingest Mappings** page, click **Create**.<br/><img src={useBaseUrl('img/cse/ingest-mappipngs.png')} alt="Sumo Logic ingest mappings" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Create Sumo Logic Mapping** popup:
     1. **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configure-collection). 
@@ -74,6 +77,7 @@ In this step, you configure a Sumo Logic Ingest Mapping in Cloud SIEM for the so
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM. 
 
-1. In the top menu click **Configuration**, and then under **Incoming Data** select **Log Mappings**.
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu click **Configuration**, and then under **Incoming Data** select **Log Mappings**.
+<br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu click **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**. 
 1. On the **Log Mappings** page search for "Zeek" and check under **Record Volume.** <br/><img src={useBaseUrl('img/cse/corelight-record-volume.png')} alt="Corelight record volume" style={{border: '1px solid gray'}} width="600"/>
 1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for Corelight Zeek security records.<br/><img src={useBaseUrl('img/cse/corelight-search.png')} alt="Corelight search" style={{border: '1px solid gray'}} width="400"/>

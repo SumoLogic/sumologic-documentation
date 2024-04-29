@@ -45,11 +45,9 @@ The first screen you see when you access Cloud SIEM is the Heads Up Display, a s
 For more information, see [Cloud SIEM Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/).
 
 
-### Cloud SIEM menus
+## Cloud SIEM menus
 
-<!-- Kanso. Remove comment tags at GA. Make "Cloud SIEM menus" an H2.
 ### Classic UI
--->
 
 #### Top menu
 
@@ -104,8 +102,6 @@ Use the **Configuration** menu to access:
    * [**Actions**](/docs/cse/administration/create-cse-actions/). Create actions to issue a notification to another service when certain events occur in Cloud SIEM.
    * [**Enrichment**](/docs/cse/integrations/enrichments-and-indicators/). Manage elements that enrich data in Cloud SIEM.
    * [**Automation**](/docs/cse/automation/). Create smart actions that trigger automatically when certain events occur in Cloud SIEM.
-
-<!-- Kanso. Remove comment tags at GA.
 
 ### New UI
 
@@ -200,7 +196,6 @@ Use the **Configuration** menu to access:
     * [**Insight Statuses**](/docs/cse/administration/manage-custom-insight-statuses/). Manage custom Insight statuses.
     * [**Insight Resolutions**](/docs/cse/administration/manage-custom-insight-resolutions/). Manage custom Insight resolutions.
     * [**Tag Schemas**](/docs/cse/administration/create-a-custom-tag-schema/). Manage schemas for tags, metadata you can attach to Insights, Signals, Entities, and Rules. 
--->
 
 ## Getting your data into Cloud SIEM
 
