@@ -29,8 +29,8 @@ Real-Time Scheduled Searches that were created up till **May 15, 2024** will con
 
 Before **May 15, 2025**, please migrate any Real-Time Scheduled Searches to either Monitors or reduce its frequency to the minimum frequency of 15m.
 
-### Can I imported a scheduled search into a monitor?
+### Can I import a scheduled search into a monitor?
 
-No. Because the JSON formatting of Scheduled Searches diffs from monitors, you'll need to create a monitor manually from the Search UI for your real-time use cases.
+No. Because the JSON formatting of Scheduled Searches differs from monitors, you'll need to create a monitor manually from the Search UI for your real-time use cases.
 
 If you have any questions, please reach out to your account team or open a [Support ticket](https://support.sumologic.com/support/s/).
