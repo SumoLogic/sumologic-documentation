@@ -22,9 +22,11 @@ import Theme from '../reuse/dark-light-theme.md';
 
 <Theme/>
 
-## Cloud SOAR menus
+### Cloud SOAR menus
 
-### Cloud SOAR menus for classic UI
+<!-- Kanso. Remove comment tags at GA. Make "Cloud SOAR menus" an H2.
+### Classic UI
+-->
 
 #### Top menu
 
@@ -45,7 +47,8 @@ Use the **Settings** menu to access:
 * [**Settings**](/docs/cloud-soar/overview/#settings). Configure Cloud SOAR settings.
 * [**Report**](/docs/cloud-soar/incidents-triage/#report). Configure reports. 
 
-### Cloud SOAR menus for new UI
+<!-- Kanso. Remove comment tags at GA.
+### New UI
 
 #### Cloud SOAR sidebar menu
 
@@ -117,6 +120,7 @@ Use the **Administration** menu to access:
 * [**General**](#general-settings). Configure general Cloud SOAR settings.
 * [**Notifications**](#notifications). Configure notifications to Cloud SOAR users as well as other external users. 
 * [**Groups**](#groups). Create a group of users and assign a role to all the users in the group.
+-->
 
 ## Why Cloud SOAR?
 

@@ -45,9 +45,11 @@ The first screen you see when you access Cloud SIEM is the Heads Up Display, a s
 For more information, see [Cloud SIEM Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/).
 
 
-## Cloud SIEM menus
+### Cloud SIEM menus
 
-### Cloud SIEM menus for classic UI
+<!-- Kanso. Remove comment tags at GA. Make "Cloud SIEM menus" an H2.
+### Classic UI
+-->
 
 #### Top menu
 
@@ -103,7 +105,9 @@ Use the **Configuration** menu to access:
    * [**Enrichment**](/docs/cse/integrations/enrichments-and-indicators/). Manage elements that enrich data in Cloud SIEM.
    * [**Automation**](/docs/cse/automation/). Create smart actions that trigger automatically when certain events occur in Cloud SIEM.
 
-### Cloud SIEM menus for new UI
+<!-- Kanso. Remove comment tags at GA.
+
+### New UI
 
 #### Sidebar menu
 
@@ -133,7 +137,7 @@ Use the **Cloud SIEM** sidebar menu to access:
 This menu appears at the top of the screen:<br/><img src={useBaseUrl('img/get-started/sumo-logic-top-menu-bar-new.png')} alt="Top menu bar" style={{border: '1px solid gray'}} width="400"/>
 
 Use the top menu to access:
-* <img src={useBaseUrl('img/get-started/go-to-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="60"/> [**Go To...**](#go-to-menu) Launch Sumo Logic features, including for Cloud SIEM.
+* <a href="#go-to-menu"><img src={useBaseUrl('img/get-started/go-to-icon.png')} alt="Go To icon" style={{border: '1px solid gray'}} width="60"/> **Go To...**</a> Launch Sumo Logic features, including for Cloud SIEM.
 * <img src={useBaseUrl('img/get-started/help-icon.png')} alt="Help icon" style={{border: '1px solid gray'}} width="30"/> **Help**. Access links to documentation, support, community, release notes, and system status.
 * <img src={useBaseUrl('img/get-started/app-catalog-icon.png')} alt="App Catalog icon" style={{border: '1px solid gray'}} width="30"/> [**App Catalog**](/docs/integrations/). Open the App Catalog.
 * <img src={useBaseUrl('img/get-started/configuration-icon.png')} alt="Configuration icon" style={{border: '1px solid gray'}} width="30"/> [**Configuration**](#configuration-menu-1). Configure Sumo Logic features, including for Cloud SIEM.
@@ -175,7 +179,7 @@ Use the **Go To...** menu to access these Cloud SIEM features:
 
 #### Configuration menu
 
-The **Configuration** menu allows you to configure Sumo Logic features, including for Cloud SIEM. To access this menu, click <img src={useBaseUrl('img/get-started/configuration-icon.png')} alt="Configuration icon" style={{border: '1px solid gray'}} width="30"/> on the [top menu](#top-menu-1). Scroll down the menu to see Cloud SIEM configuration options.<br/><img src={useBaseUrl('img/cse/cloud-siem-configuration-menu-new.png')} alt="Configuration menu" style={{border: '1px solid gray'}} width="150"/>
+The **Configuration** menu allows you to configure Sumo Logic features, including for Cloud SIEM. To access this menu, click the configuration icon <img src={useBaseUrl('img/get-started/configuration-icon.png')} alt="Configuration icon" style={{border: '1px solid gray'}} width="30"/> on the [top menu](#top-menu-1). Scroll down the menu to see Cloud SIEM configuration options.<br/><img src={useBaseUrl('img/cse/cloud-siem-configuration-menu-new.png')} alt="Configuration menu" style={{border: '1px solid gray'}} width="150"/>
 
 Use the **Configuration** menu to access: 
 
@@ -196,6 +200,7 @@ Use the **Configuration** menu to access:
     * [**Insight Statuses**](/docs/cse/administration/manage-custom-insight-statuses/). Manage custom Insight statuses.
     * [**Insight Resolutions**](/docs/cse/administration/manage-custom-insight-resolutions/). Manage custom Insight resolutions.
     * [**Tag Schemas**](/docs/cse/administration/create-a-custom-tag-schema/). Manage schemas for tags, metadata you can attach to Insights, Signals, Entities, and Rules. 
+-->
 
 ## Getting your data into Cloud SIEM
 
