@@ -24,7 +24,7 @@ import Theme from '../reuse/dark-light-theme.md';
 
 ## Cloud SOAR menus
 
-### Cloud SOAR menus for classic UI
+### Classic UI
 
 #### Top menu
 
