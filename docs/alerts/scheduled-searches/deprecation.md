@@ -3,10 +3,6 @@ id: deprecation
 title: Deprecation of Real-Time Scheduled Searches
 ---
 
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
 As part of our ongoing evaluation of the Sumo Logic service, we have decided to deprecate [Real-Time Scheduled Searches](/docs/alerts/scheduled-searches/create-real-time-alert). In particular, we will remove the option to create new Real-Time Scheduled Searches on **May 15, 2024**. Existing Real-Time Scheduled Searches will continue to function until **May 15, 2025**. We believe many use cases for Real-Time Scheduled Searches can be met by [Monitors](/docs/alerts/monitors/overview). Any remaining use cases can be met by executing these searches at 15m intervals. These options are discussed below.
 
 In 2020, Sumo Logic released Monitors, which provided a new framework to trigger alerts on both metrics and log data in real time and send notifications. Real-Time Scheduled Searches provided a much more limited version of this functionality, but has continued to exist in the Sumo Logic Platform.
