@@ -47,7 +47,7 @@ For more information, see [Cloud SIEM Heads Up Display](/docs/cse/get-started-wi
 
 ## Cloud SIEM menus
 
-### Cloud SIEM menus for classic UI
+### Classic UI
 
 #### Top menu
 
