@@ -23,7 +23,7 @@ The Sumo Logic app for Azure Active Directory presents information about activit
 
 ## Prerequisites
 
-* An Azure subscription must be associated (attached) to AAD. For more information, see this [Azure Active Directory documentation](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory).
+* An Azure subscription must be associated (attached) to AAD. For more information, see the [Azure Active Directory documentation](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory).
 * To export Azure Activity logs to reports, be sure you have met the [Azure Active Directory requirements](https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-activity-logs-azure-monitor).
 
 ## Collect logs for the Azure Active Directory app
