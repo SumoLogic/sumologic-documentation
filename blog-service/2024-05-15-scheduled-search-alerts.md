@@ -11,7 +11,7 @@ authors:
     image_url: /img/release-notes/rss-orange.png
 ---
 
-Effective **May 15, 2024**, Real-Time Scheduled Searches have been deprecated and you can no longer create them. Real-Time Scheduled Searches created before that date will continue to function until **May 15, 2025**.
+As part of our ongoing evaluation of the Sumo Logic service, we have decided to deprecate [Real-Time Scheduled Searches](/docs/alerts/scheduled-searches/create-real-time-alert). In particular, we will remove the option to create new Real-Time Scheduled Searches on May 15, 2024. Existing Real-Time Scheduled Searches will continue to function until May 15, 2025. We believe many use cases for Real-Time Scheduled Searches can be met by [Monitors](/docs/alerts/monitors/overview). Any remaining use cases can be met by executing these searches at 15m intervals.
 
 We encourage you instead to [create a monitor](/docs/alerts/monitors/create-monitor) and set it to execute near-real-time searches (lowest available duration is 15m intervals).
 
