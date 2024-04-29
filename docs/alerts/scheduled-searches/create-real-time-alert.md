@@ -6,7 +6,7 @@ description: Set up Real-Time Alerts to learn of error conditions right when the
 ---
 
 :::warning Solution Deprecated
-Effective May 15, 2024, Real-Time Scheduled Searches have been deprecated and you can no longer create them. Real-Time Scheduled Searches created before that date will continue to function until May 15, 2025. We encourage you instead to [create a monitor](/docs/alerts/monitors/create-monitor) and set it to execute near-real-time searches (e.g., 15m intervals). [Learn more](/docs/alerts/scheduled-searches/deprecation).
+Effective May 15, 2024, Real-Time Scheduled Searches have been deprecated and you will no longer be able to create them. Real-Time Scheduled Searches created before that date will continue to function until May 15, 2025. We encourage you instead to [create a monitor](/docs/alerts/monitors/create-monitor) for use cases that require Real-Time Alerting. [Learn more](/docs/alerts/scheduled-searches/deprecation).
 :::
 
 Real-Time Alerts are scheduled searches that run nearly continuously. That means that you're informed in real time when error conditions exist.
