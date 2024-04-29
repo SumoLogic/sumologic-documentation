@@ -103,7 +103,7 @@ Use the **Configuration** menu to access:
    * [**Enrichment**](/docs/cse/integrations/enrichments-and-indicators/). Manage elements that enrich data in Cloud SIEM.
    * [**Automation**](/docs/cse/automation/). Create smart actions that trigger automatically when certain events occur in Cloud SIEM.
 
-### Cloud SIEM menus for new UI
+### New UI
 
 #### Sidebar menu
 
