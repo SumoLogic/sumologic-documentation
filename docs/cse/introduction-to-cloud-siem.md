@@ -27,8 +27,8 @@ import Iframe from 'react-iframe'; 
 ## Cloud SIEM user interface
 
 ### Access Cloud SIEM
-
-To access Cloud SIEM, click **Cloud SIEM** in the Sumo Logic navigation menu. 
+ 
+To access Cloud SIEM, in the main Sumo Logic menu select **Cloud SIEM**.  <br/><img src={useBaseUrl('img/cse/cse-option-in-left-nav.png')} alt="Cloud SIEM menu option" style={{border: '1px solid gray'}} width="150"/>
 
 Cloud SIEM must be enabled by Sumo Logic before it is accessible to users in your organization. For more information, see [Onboarding Checklist for Cloud SIEM Administrators](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/).
 

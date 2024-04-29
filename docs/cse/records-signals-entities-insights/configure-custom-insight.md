@@ -34,8 +34,9 @@ This example Custom Insight configuration will generate an Insight as a result o
 
 To create a Custom Insight:
 
-1. Choose **Custom Insights** on the **Content** menu.
-2. Click **Create** on the [**Custom Insights**](/docs/cse/get-started-with-cloud-siem/about-cse-insight-ui/) page.<br/><img src={useBaseUrl('img/cse/custom-insights-page.png')} alt="Custom Insights page" width="800"/> 
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu, click **Content** and select **Custom Insights**.
+<br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Custom Insights**. You can also click the **Go To...** menu at the top of the screen and select **Custom Insights**. 
+2. Click **Create** on the **Custom Insights** page.<br/><img src={useBaseUrl('img/cse/custom-insights-page.png')} alt="Custom Insights page" width="800"/> 
 3. The **Configure the Custom Insight** popup appears. <br/><img src={useBaseUrl('img/cse/custom-insight.png')} alt="Configure an Insight" style={{border: '1px solid gray'}} width="600"/>
 4. In the **Name** field, enter a name for the Custom Insight.
 5. If you want the Custom Insight to be generated based on one or more rules firing Signals, jump to step 6, below. Otherwise: 
@@ -55,9 +56,9 @@ To create a Custom Insight:
 9. For severity, you can choose between a constant severity, or a dynamic severity that is based on the severity of the Signals that trigger the Insight. If you want to configure dynamic severity, skip to the next step. To configure constant severity, select one of: Low, Medium, High, or Critical. 
 10. To configure dynamic severity for the custom Insight:
     1. Choose **dynamic** severity.
-      :::note
-      You can define dynamic severity for record fields on [Match rules](/docs/cse/rules/write-match-rule#configure-then-create-a-signal-settings) and [Aggregation rules](/docs/cse/rules/write-aggregation-rule/#configure-then-create-a-signal-settings). 
-      :::
+          :::note
+          You can define dynamic severity for record fields on [Match rules](/docs/cse/rules/write-match-rule#configure-then-create-a-signal-settings) and [Aggregation rules](/docs/cse/rules/write-aggregation-rule/#configure-then-create-a-signal-settings). 
+          :::
     1. Select a default severity, one of **Low**, **Medium**, **High**, or **Critical**. 
     1. **Minimum Signal Severity** and **Insight Severity**. Enter a minimum Signal severity and associated Insight severity value. For example, if you enter 8 and select high, if any Signal in the Insight has a severity of 8 or higher, the custom Insight will have High severity. 
     1. If desired, you can enter a minimum Signal severity value for other Insight severity levels. For example, you could configure a minimum Signal severity of 4 as the threshold for an Insight severity level of Medium. If you do define multiple thresholds, we honor them from highest to lowest. For example, with the following configuration:
