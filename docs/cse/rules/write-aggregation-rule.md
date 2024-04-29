@@ -59,9 +59,7 @@ import Iframe from 'react-iframe'; 
 1. On the **Create a Rule** page, click **Create** in the **Aggregation** card.
 1. In the rules editor:
    1. **Name**. At the top of the Rules Editor, enter a name for the rule. Signals fired by the rule will have the same name as the rule.
-   1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.  
-
-<img src={useBaseUrl('img/cse/aggregation-rule.png')} alt="Aggregation rule" style={{border: '1px solid gray'}} width="600"/>
+   1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.  <br/><img src={useBaseUrl('img/cse/aggregation-rule.png')} alt="Aggregation rule" style={{border: '1px solid gray'}} width="600"/>
 
 ### Configure “If Triggered” settings
 
@@ -69,7 +67,7 @@ On the left side of the Rules Editor, in the **If Triggered** section, you confi
 1. **When Records matching the expression**. Enter one or more boolean expressions to filter the Records you want to apply the rule to. For example: `!isNull(http_response_statusCode)`
 1. Click **Test Rule Expression** to test it against existing Records in Cloud SIEM. The **If Triggered** section expands, and Cloud SIEM searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
 1. **grouped by**. Specify the Record field or fields by which aggregation results will be grouped. Note that when you define the **On Entity** field for the rule (in [Configure “Then Create a Signal” settings](#configure-then-create-a-signal-settings) below), the field you choose will automatically appear here. If you want to aggregate on other fields, you can select them from the selector list.
-1. **Within**. Select the length of time across which the rule is applied. The options range from 5 minutes to 5 days.
+1. **within...**. Select the length of time across which the rule is applied. The options range from 5 minutes to 5 days.
 1. **have aggregations**. To define an aggregation:
    1. **Name**. Give the aggregation a brief, meaningful name. You’ll reference the aggregation by its name in the trigger condition for the rule.
    1. **Function**. Select an aggregation function: `avg`, `count`, `count_distinct`, `first`, `last`, `max`, `min`, or `sum`.

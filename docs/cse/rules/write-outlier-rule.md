@@ -34,7 +34,7 @@ When you create the rule, you can set the amount of time Cloud SIEM analyzes dat
 
 After the baseline period completes, Cloud SIEM tracks aggregates of count, sum, min, max, and averages of Record values, and creates a Signal when deviations from the mean occurs. For example, for the [spike in failed logins from a user](#use-case-for-a-spike-in-failed-logins-from-a-user) use case, Cloud SIEM builds a baseline model of counts of authentication failures that are associated with a user over time, and creates a Signal when outlier behavior is detected:
 
-<img src={useBaseUrl('img/cse/outlier-signal-example.png')} alt="Outlier signal example" width="600"/>
+<img src={useBaseUrl('img/cse/outlier-signal-example.png')} alt="Outlier signal example" style={{border: '1px solid gray'}} width="600"/>
 
 After your rule starts generating Signals, evaluate them to determine if they truly represent outliers of concern, and adjust the rule settings as needed. For example, if too many Signals are being generated, the baseline model is too sensitive, and you need to set the model sensitivity threshold higher on the rule; if too few Signals are generated, set the threshold lower. Among other things, also evaluate if the Signals from outliers are generating enough Insights. To [generate an Insight](/docs/cse/get-started-with-cloud-siem/insight-generation-process/), by default the combined severity scores of Signals need to be 12 or higher. Change the severity level in the Outlier rule to ensure that it is high enough to generate enough Signals to trigger Insights for investigation.
 
@@ -63,7 +63,7 @@ import Iframe from 'react-iframe'; 
 
 The screenshot below shows an Outlier rule in the Cloud SIEM rules editor. For an explanation of the configuration options, see [Configure an Outlier rule](#configure-an-outlier-rule), below.
 
-<img src={useBaseUrl('img/cse/outlier-rule.png')} alt="Example Outlier Rule Definition"/>
+<img src={useBaseUrl('img/cse/outlier-rule.png')} alt="Example Outlier Rule Definition" style={{border: '1px solid gray'}} width="800" />
 
 
 ## Create an Outlier rule
@@ -72,7 +72,7 @@ The screenshot below shows an Outlier rule in the Cloud SIEM rules editor. For a
 1. On the **Create a Rule** page, click **Create** in the **Outlier** card.
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.
-   1. **Enabled**. By default, the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it. <br/><img src={useBaseUrl('img/cse/empty-outlier-rule.png')} alt="Outlier rule" width="600"/>
+   1. **Enabled**. By default, the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it. <br/><img src={useBaseUrl('img/cse/empty-outlier-rule.png')} alt="Outlier rule" style={{border: '1px solid gray'}} width="600"/>
 
 ### Configure "If Triggered" settings
 
@@ -80,6 +80,11 @@ The settings in the **If Triggered** section are divided into two subsections, o
 
 **Baseline Configuration**
 1. **For the records matching the expression**. Enter an expression that matches the Records that you want to rule to apply to.
+1. Click **Test Rule Expression** to test it against existing Records in Cloud SIEM. The **If Triggered** section expands, and Cloud SIEM searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
+1. Select **Add Tuning Expression** if you want to add a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions) to the rule.
+    :::note
+    If you use **Test Rule Expression** on a rule that has one or more rule tuning expressions, you can test it without the tuning expressions, or with selected tuning expressions.
+    :::
 1. **build a daily/hourly baseline**. Select the time window for building the baseline. It can either be a daily or hourly baseline.
 1. **for the entity(ies)**. Select one or more Record fields for which you want baselines built. Selecting multiple fields will build a distinct baseline for a combination of entities.
 1. Set the baseline and retention settings:
@@ -90,7 +95,7 @@ The settings in the **If Triggered** section are divided into two subsections, o
    :::
 
 **Outlier Model Configuration**
-1. **Detect an outlier for**. Select the aggregate function that applies to the field in the matched Records to build a normal behavior baseline on.
+1. **Detect an outlier for the**. Select the aggregate function that applies to the field in the matched Records to build a normal behavior baseline on.
 1. **of the record field**. Select one or more Record fields to build a baseline on and detect an Outlier Signal.
 1. **Advanced Expression** (optional). When selected, disables the **of the record field** selector and allows defining Record fields within the field window. For the expression, you can use the syntax described in [Cloud SIEM Rules Syntax](/docs/cse/rules/cse-rules-syntax/). <br/>For example, in the out-of-the-box **Spike in PowerShell Command Line Length From Host** outlier rule, the **Advanced Expression** field is set to `length(commandLine)` to calculate when you see very long command lines out of the ordinary. 
 1. **Model Sensitivity Threshold** (1-5). Select the sensitivity of the model defined above. This is the number of standard deviations from the mean that the outlier model should consider for creating a Signal. Lower threshold corresponds to a more sensitive model resulting in more Signals.
@@ -100,37 +105,16 @@ The settings in the **If Triggered** section are divided into two subsections, o
 
 1. Click **Show Advanced** if you want the rule to [override global Signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/#override-global-signal-suppression).
 1. **On Entity**. Select the Entity field—for example, an IP address, MAC address, hostname, and so on—in the Record that the resulting Signal should be associated with. (In Cloud SIEM, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
-1. **using the name**. Define the name for Signals fired by the rule. You can enter text, and include Record fields from the custom token list. Including Record field values in the Signal name can make it more meaningful.
+1. **with the name**. Define the name for Signals fired by the rule. You can enter text, and include Record fields from the custom token list. Including Record field values in the Signal name can make it more meaningful.
     :::note
     For extracted fields, you can specify a token for an extracted field using the format `{{fields["<field_name>"]}}`.
     :::
-1. **with the summary**. Enter a brief summary describing what causes the Rule to create a Signal.
 1. **with the description**. Define the description for the Signal the same way you did the Signal name, using text and Record fields. The Signal description should be a good indication of what the rule looks for.
    :::note
    <CseRule/>
    :::
-1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity:
-   * **Constant**. Every Signal that the rule fires will have the same severity,
-   * **Dynamic**. Severity is based on the value of a field in the Record.
-1. **Configure constant severity**. Choose **Constant**, and select a severity level. Then, proceed to Step 8. <br/><img src={useBaseUrl('img/cse/constant-severity.png')} alt="constant-severity.png" width="325"/>
-1. **Configure dynamic severity**.
-   1. Choose **Dynamic**.
-   1. The severity area updates. <br/><img src={useBaseUrl('img/cse/dyamic-severity-field.png')} alt="dyamic-severity-field.png" width="450"/>
-   1. **severity of**. Use the pulldown to select a default severity value.
-   1. **for the record field**. Use the down arrows to display a list of fields, and select one.  The dynamic severity will be based on the value of (or existence of) that field in the Record that matched the rule expression.
-   1. The **Add More Mappings** option appears. <br/><img src={useBaseUrl('img/cse/add-more-mappings.png')} alt="add more mappings" width="450"/>
-   1. **Click Add More Mappings**. (Optional) You can define additional mappings if desired. If you don’t, the severity value will be the value of the Record field you selected above.
-   1. The **if the value is** option appears.<br/><img src={useBaseUrl('img/cse/if-the-value-is.png')} alt="if-the-value-is.png" width="450"/>
-   1. Select one of the following options:
-      * **equal to**. The Record field’s value must exactly match the string or numeric value you supply. For example "equal to 4" will match "4" and “4.0” but not “4.01”.
-      * **less than**. The Record field’s value must be less than the numeric value you supply. The match is not inclusive. For example "less than 5" will match “4.9” but not “5”.
-      * **greater than**. The Record field’s value must be greater than the numeric value you supply. The match is not inclusive. For example "greater than “5" will match “5.1”, but not “5”.
-      * **between**. The Record field’s value must be between the two numeric values you supply. The match is inclusive. For example, "Between 5 and 10" will match “5”, “7”, or “10”, but not “10.1”.
-      * **not in the record**. Will match when the attribute is found in the Record. For example, if the selected field is `broirc_value`, and that field is not present in a Record, the rule will match. If `broirc_value` exists but is null or empty, the rule will not match.
-   1. You can define additional conditions, as desired. To define an additional condition, repeat the steps above, starting with **Add More Mappings**.
-   :::note
-   The conditions you define will be processed in the order you define them. Once a match occurs, processing stops–remaining conditions are ignored.
-   :::
+1. **using the summary**. Enter a brief summary describing what causes the Rule to create a Signal.
+1. **and a constant severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). Every Signal that the rule fires will have the same severity.
 1. **with tags**. If desired, you can add metadata tags to your rule. Tags are useful for adding context to items like Rules, Insights, Signals, Entities. You can also search for and filter items by tag. Tags you set here will be automatically set on any Signals created from this rule, and inherited by any insights generated from those signals.
 
 ## When the baseline is reset for an Outlier rule

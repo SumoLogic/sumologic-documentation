@@ -39,8 +39,7 @@ import Iframe from 'react-iframe'; 
 1. On the **Create a Rule** page, click **Create** in the Chain card. 
 1. In the rules editor:
    1. **Name.** Enter a name for the rule. Signals fired by the rule will have this name.
-   1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.
-   <br/><img src={useBaseUrl('img/cse/chain.png')} alt="Chain rule" width="600"/>
+   1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it. <br/><img src={useBaseUrl('img/cse/chain.png')} alt="Chain rule" style={{border: '1px solid gray'}} width="600"/>
 
 ### Configure “If Triggered” settings
 
@@ -50,6 +49,7 @@ import Iframe from 'react-iframe'; 
 1. **in ... order.** Choose either:
       * **any** if matches can occur in any order.
       * **exact** if matches must occur in the same order as you have ordered the rule expressions. If you choose this option, you can only have two rule expressions.
+1. **within...**. Select the duration within which the rule expression must evaluate to “true” more than the number of times specified in **When at least n Record matches expression** for the rule to fire a Signal.
 1. Select **Add Tuning Expression** if you want to add a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions) to the rule.
     :::note
     If you use **Test Rule Expression** on a rule that has one or more rule tuning expressions, you can test it without the tuning expressions, or with selected tuning expressions.
