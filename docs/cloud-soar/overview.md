@@ -45,7 +45,7 @@ Use the **Settings** menu to access:
 * [**Settings**](/docs/cloud-soar/overview/#settings). Configure Cloud SOAR settings.
 * [**Report**](/docs/cloud-soar/incidents-triage/#report). Configure reports. 
 
-### Cloud SOAR menus for new UI
+### New UI
 
 #### Cloud SOAR sidebar menu
 
