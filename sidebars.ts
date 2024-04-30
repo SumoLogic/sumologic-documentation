@@ -807,9 +807,19 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/index'},
           items: [
-            'manage/ingestion-volume/ingest-budgets/assign-collector-ingest-budget',
-            'manage/ingestion-volume/ingest-budgets/quickstart',
-          ]
+            'manage/ingestion-volume/ingest-budgets/minute-volume',
+          {
+            type: 'category',
+            label: 'Daily Volume',
+            collapsible: true,
+            collapsed: true,
+            link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/daily-volume/index'},
+            items: [
+              'manage/ingestion-volume/ingest-budgets/daily-volume/assign-collector-ingest-budget',
+              'manage/ingestion-volume/ingest-budgets/daily-volume/quickstart',
+            ]
+          },
+        ]
         },
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
       ]
@@ -2319,7 +2329,6 @@ integrations: [
           'integrations/security-threat-detection/evident-security-platform',
           'integrations/security-threat-detection/f5-big-ip-ltm',
           'integrations/security-threat-detection/imperva-incapsula',
-          'integrations/security-threat-detection/keeper-security',
           'integrations/security-threat-detection/netskope-legacy-collection',
           'integrations/security-threat-detection/netskope',
           'integrations/security-threat-detection/observable-networks',
@@ -2695,8 +2704,6 @@ integrations: [
         'cloud-soar/overview',
         'cloud-soar/architecture',
         'cloud-soar/compared-to-automation-service',
-        'cloud-soar/global-functions-menu',
-        'cloud-soar/main-menu',
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
         'cloud-soar/cloud-soar-bridge',
