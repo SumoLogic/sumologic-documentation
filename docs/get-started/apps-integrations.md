@@ -190,13 +190,15 @@ Whether you're new to log management or plan to migrate from other products, the
 
 ## Installing the Log Analysis QuickStart app
 
-import AppInstall from '../reuse/apps/app-install-v2.md';
+import AppInstallV2 from '../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstallV2/>
 
 ## Viewing Log Analysis QuickStart dashboards
 
 import ViewDashboards from '../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Keywords and Metadata
 
@@ -224,7 +226,9 @@ The Panels in the Collector and Source Monitoring Dashboard help you keep an eye
 
 ## Viewing Log Analysis QuickStart dashboards
 
-import ViewDashboards from '../reuse/apps/view-dashboards.md';
+import ViewDashboards2 from '../reuse/apps/view-dashboards.md';
+
+<ViewDashboards2/>
 
 ### Keywords and Metadata
 
