@@ -21,9 +21,8 @@ For more information about tags in Cloud SIEM, see [Using Tags with Insights, Si
 
 ## Define a custom tag schema
 
-1. In the top menu click **Configuration**, and then under **Workflow** select **Tag Schemas**.
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Workflow** select **Tag Schemas**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Workflow** select **Tag Schemas**. You can also click the **Go To...** menu at the top of the screen and select **Tag Schemas**. 
 1. On the **Tag Schemas** page, click **Create**. <br/><img src={useBaseUrl('img/cse/tag-schemas-page.png')} alt="Tag schemas page" style={{border: '1px solid gray'}} width="800"/>
-
 1. The **Tag Schema** popup appears. The screenshot below shows a previously configured tag schema.  <br/><img src={useBaseUrl('img/cse/tag-schema-filled-in.png')} alt="Tag schema" style={{border: '1px solid gray'}} width="800"/>
     1. **Key**. Enter an identifier for the tag you’re defining. It won’t appear in the UI for assigning tags to a content item, unless you leave the **Label** field blank.
     1. **Label**. Enter a label for the tag. If you supply a label, that’s what will appear in the UI for assigning tags to a content item.
