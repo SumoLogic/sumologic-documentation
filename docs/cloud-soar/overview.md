@@ -22,11 +22,9 @@ import Theme from '../reuse/dark-light-theme.md';
 
 <Theme/>
 
-### Cloud SOAR menus
+## Cloud SOAR menus
 
-<!-- Kanso. Remove comment tags at GA. Make "Cloud SOAR menus" an H2.
 ### Classic UI
--->
 
 #### Top menu
 
@@ -47,7 +45,6 @@ Use the **Settings** menu to access:
 * [**Settings**](/docs/cloud-soar/overview/#settings). Configure Cloud SOAR settings.
 * [**Report**](/docs/cloud-soar/incidents-triage/#report). Configure reports. 
 
-<!-- Kanso. Remove comment tags at GA.
 ### New UI
 
 #### Cloud SOAR sidebar menu
@@ -120,7 +117,6 @@ Use the **Administration** menu to access:
 * [**General**](#general-settings). Configure general Cloud SOAR settings.
 * [**Notifications**](#notifications). Configure notifications to Cloud SOAR users as well as other external users. 
 * [**Groups**](#groups). Create a group of users and assign a role to all the users in the group.
--->
 
 ## Why Cloud SOAR?
 
@@ -195,7 +191,10 @@ The following sections detail the various setup and configuration options for th
 
 ### General settings
 
-To access General settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/> in the top right and select **Settings**.
+
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access General settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**.
+
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access General settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General Settings**. You can also click the **Go To...** menu at the top of the screen and select **General**. 
 
 The following sections describe available settings.
 
@@ -277,7 +276,7 @@ Access to a specific incident with restricted privileges needs to be granted to 
 
 ##### Create a group
 
-1. In the upper-right corner of the Cloud SOAR UI, click the cog icon <img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" style={{border: '1px solid gray'}} width="20"/> and select  **Automation**.
+1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Administration**, and then under **Cloud SOAR Settings** select **Groups**. You can also click the **Go To...** menu at the top of the screen and select **Groups**. 
 1. On the left navigation bar, select **User Management** > **Groups**. The **Groups** dialog is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-groups.png')} alt="Groups dialog" style={{border: '1px solid gray'}} width="700"/>
 1. Click the **+** icon next to **Groups**. The **Add Groups** dialog is displayed. <br/><img src={useBaseUrl('img/cloud-soar/cloud-soar-add-group.png')} alt="Add Group dialog" style={{border: '1px solid gray'}} width="600"/>
 1. In **Name** enter a name for the group.
