@@ -48,6 +48,9 @@ For more information, see [Cloud SIEM Heads Up Display](/docs/cse/get-started-wi
 ## Cloud SIEM menus
 
 ### Classic UI
+<!-- Kanso. Remove comment tags at GA. Make "Cloud SIEM menus" an H2.
+### Classic UI
+-->
 
 #### Top menu
 
