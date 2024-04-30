@@ -222,8 +222,6 @@ The Panels in the Collector and Source Monitoring Dashboard help you keep an eye
 * **Issues by Source.** Shows the number of log messages that contain error, exception, or failure terms by each Collector's Source.
 * **Collector Issue Monitoring.** Displays warnings generated over time for each Collector in your deployment.
 
-<AppInstallNoDataSourceV2/>
-
 ## Viewing Log Analysis QuickStart dashboards
 
 import ViewDashboards2 from '../reuse/apps/view-dashboards.md';
