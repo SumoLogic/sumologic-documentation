@@ -25,6 +25,7 @@ To create or edit a Partition, you must be an account Administrator or have th
 1. Click **+ Add Partition**.
 1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/partitions-data-tiers/create-new-partition-flex.png')} alt="create-new-partition-flex.png"  style={{border:'1px solid gray'}} width="300"/>
 1. **Name**. Enter a name for the Partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores (`_`). However, a Partition name cannot start with `sumologic_` or an underscore `_`.
+1. (Optional) **Include this partition in default scope**. This checkbox is already selected. Deselect this checkbox if you need to exclude this partition as the defualt scope in your search.
 1. **Routing Expression**. Enter a [keyword search expression](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the Partition, using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) or [custom metadata fields](/docs/manage/fields). 
 1. **Retention Period**. Enter the number of days you wish to retain the data in the Partition, or click **Apply the retention period of sumologic_default**.
 1. **Compliance data**. Click the **Mark as compliance data** to not change the routing expression and the retention period for partitions.
@@ -34,7 +35,6 @@ To create or edit a Partition, you must be an account Administrator or have th
 
 * To learn how to run a search against a Partition, see [Run a Search Against a Partition](/docs/manage/partitions/run-search-against-partition) and [Optimize Your Search with Partitions](/docs/search/optimize-search-partitions.md).
 * To learn about data retention periods and how to modify them, see [Manage Indexes with Variable Retention](/docs/manage/partitions/manage-indexes-variable-retention).
-
 
 ### Best practices for optimum performance
 
@@ -66,7 +66,8 @@ You can make some changes to an existing partition:  
   By default, Sumo Logic internal partitions like `sumologic_audit_events`, `sumologic_volume`, and so on, have the same retention period as the Default Continuous Index. You can change the retention period for any of these internal partitions as desired.
   :::
 * You can change the data forwarding configuration.
-* You cannot change the name of partition, routing expression, or reuse a partition name.  
+* You cannot change the name of partition, routing expression, or reuse a partition name.
+* You cannot edit the audit index partition to include in the default scope. 
 * Security partitions can’t be edited. Sumo Logic stores Cloud SIEM Records in seven partitions, one for each [Cloud SIEM Record type](/docs/cse/schema/cse-record-types). The names of the Sumo Logic partitions that contain Cloud SIEM Records begin with the string `sec_record_`. If you have a role that grants you the **View Partitions** capability, you can view the security partitions in the Sumo Logic UI. Note, however, that no user can edit or remove a security partition.
 
 ### How to edit a partition
@@ -75,6 +76,7 @@ You can make some changes to an existing partition:  
 1. Click the row with the partition you want to edit.
 1. The partition details are displayed on the right side of the page.
 1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane-flex.png')} alt="edit-partition-pane-flex.png"  style={{border:'1px solid gray'}} width="300"/>
+1. **Include this partition in default scope**. Select/deselct the checkbox to include/exclude this partition as the defualt scope in your search.
 1. **Retention Period**. Enter the number of days you wish to retain the data in the partition, or click **Apply the retention period of the Default Continuous Index**.
 1. **Data Forwarding**. You can configure Data Forwarding, or if Data Forwarding is already configured, modify the configuration. For more information, see [Data Forwarding](/docs/manage/data-forwarding).
 
