@@ -208,7 +208,7 @@ This Dashboard provides several ways to monitor your logs based on the metadata 
 * **Issues in Top Categories.** This Panel shows the top 10 source categories by number of log messages that contain error, exception, or failure terms.
 * **Issues in Top 10 Hosts.** Displays the top 10 hosts by number of log messages that contain error, exception, or failure terms.
 * **Issues in Top 10 Files.** Shows the top 10 files by number of log messages that contain error, exception, or failure terms.
-* **Issues by Category.** This Panel shows the number of log messages that contain error, exception, or failure terms by Source Category over time.
+* **Issues by Category.** This panel displays the number of log messages that contain error, exception, or failure terms by Source Category over time.
 * **Issues by Host.** Displays the number of log messages that contain time out, error, exceptions, and failures broken down by Source Host over time.
 * **Issues by File Name.** Displays the number of log messages that contain error, exception, or failure terms issues by log file name over time.
 
