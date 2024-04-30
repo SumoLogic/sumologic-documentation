@@ -19,8 +19,7 @@ In this step, you configure an AWS S3 Source to collect Carbon Black Cloud log m
 
 #### Configure a hosted collector
 
-1. [**Classic UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Manage Data** > **Collection** > **Collection**.
-<br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu click **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+1. [**Classic UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 2. Click **Add Collector**.
 3. Click **Hosted Collector.**
 4. The **Add Hosted Collector** popup appears.<br/><img src={useBaseUrl('img/cse/add-hosted-collector.png')} alt="add-hosted-collector" style={{border: '1px solid gray'}} width="500" />
@@ -44,8 +43,7 @@ The bucket you designate for Carbon Black Cloud data must be exclusively used fo
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
 2. [Enable logging in AWS](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html) using the Amazon Console.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. [**Classic UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Manage Data** > **Collection** > **Collection**.
-<br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu click **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. 
+4. [**Classic UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.
 5. Navigate to the Hosted Collector where you want to create the source.
 6. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 7. Select **Amazon S3**.
@@ -77,7 +75,6 @@ In this step you configure Carbon Black Cloud to send log messages to an S3 buck
 
 In this step, you verify that your logs are successfully making it into Cloud SIEM.
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu click **Configuration**, and then under **Incoming Data** select **Log Mappings**.
-<br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu click **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**. 
+1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Incoming Data** select **Log Mappings**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Log Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Log Mappings**. 
 2. On the **Log Mappings** page search for Carbon Black Cloud and check under **Record Volume**.<br/> <img src={useBaseUrl('img/cse/carbon-black-records.png')} alt="carbon-black-records" style={{border: '1px solid gray'}} width="700" />
 3. For a more granular look at the incoming Records, you can also search Sumo Logic for Carbon Black Cloud Records.<br/> <img src={useBaseUrl('img/cse/carbon-black-search.png')} alt="carbon-black-search" style={{border: '1px solid gray'}} width="500" />
