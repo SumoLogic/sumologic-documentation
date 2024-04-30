@@ -87,7 +87,6 @@ On the left side of the Rules Editor, in the **If Triggered** section, you confi
 
 On the right side of the Rules Editor, in the **Then Create a Signal** section, you configure details of the Signals that your rule will fire. 
 
-1. Click **Show Advanced** if you want the rule to [override global Signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/#override-global-signal-suppression).
 1. **On Entity**. Use the pull-down list to select one or more Entity fields, for example, an IP address, MAC address, hostname, and so on. When the rule is triggered, it will fire a Signal on each of the Entity fields you select.  
 1. **using the name**. Enter the name of the rule, which can be used to name the Signal generated.  
 1. **with the summary**. Enter a brief summary describing what causes the Rule to create a Signal.

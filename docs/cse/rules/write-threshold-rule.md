@@ -62,7 +62,6 @@ import Iframe from 'react-iframe'; 
 When you're configuring a Threshold and Chain rule, you do not supply a Signal name; a Signal fired by those rule types has the same name as the rule that fired it.
 :::
 
-1. Click **Show Advanced** if you want the rule to [override global Signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/#override-global-signal-suppression).
 1. **On Entity**. Select the Entity field—for example, an IP address, MAC address, hostname, and so on—in the Record that the resulting Signal should be associated with. (In Cloud SIEM, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
 1. **with the summary**. Enter a brief summary describing what causes the Rule to create a Signal.
 1. **with the description**. Define the description for the Signal. You can use text and Record fields. The Signal description should be a good indication of what the rule looks for.
