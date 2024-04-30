@@ -135,7 +135,7 @@ To enable Cloud SIEM to successfully process the log, we need to create the foll
 Perform these steps for each of the FERs.
 
 1. [**Classic UI**](/docs/get-started/sumo-logic-ui/). In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**.
-<br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu click **Configuration**, and then under **Logs** select **Field Extration Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. 
+<br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu click **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**. 
 1. Click **Add Rule**.
 1. In the **Add Field Extraction Rule** pane:
    1. **Rule Name**. Enter a meaningful name for the rule.
