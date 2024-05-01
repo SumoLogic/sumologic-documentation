@@ -25,7 +25,7 @@ By default, Signals are automatically suppressed for 72 hours. You can change th
 
 ### Override global Signal suppression
 
-You can override the [global Signal suppression](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) in any rule. This allows the rule to generate Signals in a shorter time frame than the 72 hour default. This can be helpful, for example, when you want the rule to generate Signals for time-sensitive issues that can't wait for 72 hours before generating a Signal.<br/><img src={useBaseUrl('img/cse/override-global-signal-suppression.png')} alt="Override Global Signal Suppression" style={{border: '1px solid gray'}} width="500"/>
+You can override the [global Signal suppression](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) in any rule. This allows the rule to generate Signals in a shorter time frame than the 72-hour default. This can be helpful, for example, when you want the rule to generate Signals for time-sensitive issues that cannot wait for 72 hours before generating a Signal.<br/><img src={useBaseUrl('img/cse/override-global-signal-suppression.png')} alt="Override Global Signal Suppression" style={{border: '1px solid gray'}} width="500"/>
 
 To override global Signal suppression in a rule:
 1. Create or edit a [rule](/docs/cse/rules/).
