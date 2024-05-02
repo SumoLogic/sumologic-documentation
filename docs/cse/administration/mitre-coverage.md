@@ -37,7 +37,7 @@ Watch this micro lesson to learn about the MITRE ATT&CK Threat Coverage Explorer
 
 ## MITRE ATT&CK Threat Coverage Explorer
 
-[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To open the MITRE ATT&CK Threat Coverage Explorer, in the top menu select **Content > MITRE ATT&CK Coverage**.
+[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To open the MITRE ATT&CK Threat Coverage Explorer, in the top menu select **Content > MITRE ATT&CK Coverage**.<br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To open the MITRE ATT&CK Threat Coverage Explorer, in the main Sumo Logic menu select **Cloud SIEM > MITRE ATT&CK Coverage**. You can also click the **Go To...** menu at the top of the screen and select **MITRE ATT&CK Coverage**. 
 
 [**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To open the MITRE ATT&CK Threat Coverage Explorer, in the main Sumo Logic menu select **Cloud SIEM > MITRE ATT&CK Coverage**. You can also click the **Go To...** menu at the top of the screen and select **MITRE ATT&CK Coverage**. 
 
