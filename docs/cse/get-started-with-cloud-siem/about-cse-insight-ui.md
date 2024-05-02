@@ -11,7 +11,7 @@ This topic describes the Cloud SIEM UI for working with Insights. 
 
 ## Insights list page
 
-[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To open the Insights page, click **Insights** at the top of the screen.
+[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To open the Insights page, click **Insights** at the top of the screen. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To open the Insights page, in the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.
 
 [**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To open the Insights page, in the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.
 
