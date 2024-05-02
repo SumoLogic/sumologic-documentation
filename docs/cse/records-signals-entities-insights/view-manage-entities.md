@@ -54,7 +54,7 @@ When a Signal is fired, if an Entity doesn’t already exist in Cloud SIEM for t
 
 ## About the Entities list page
 
-[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To view Entities, click **Entities** at the top of the screen.
+[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To view Entities, click **Entities** at the top of the screen. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Entities, in the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.
 [**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Entities, in the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
 
 Here’s a screenshot of the Entities page.
