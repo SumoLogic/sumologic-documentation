@@ -10,7 +10,7 @@ Cloud SIEM uses rules to evaluate incoming records, and when the conditions of 
  
 ## View record details
 
-[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To view Signals, click **Signals** at the top of the screen.
+[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To view Signals, click **Signals** at the top of the screen. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Signals, in the main Sumo Logic menu select **Cloud SIEM > Signals**. You can also click the **Go To...** menu at the top of the screen and select **Signals**.
 
 [**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Signals, in the main Sumo Logic menu select **Cloud SIEM > Signals**. You can also click the **Go To...** menu at the top of the screen and select **Signals**. 
 
