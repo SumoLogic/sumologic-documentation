@@ -24,10 +24,10 @@ The Windows app, which is based on the Windows event log format, consists of pre
 
 Following are the [fields](/docs/manage/fields/) which will be created as part of Windows app install if not already present. 
 
-- **`sumo.datasource`**. Has a fixed value of **windows**.
-- **`deployment.environment`**. This is a collector level field and is user configured(at the time of collector installation). Through this windows host cluster is identified by the environment where it resides. For example: dev, prod, or qa.
-- **`host.group`**. This is a collector level field and is user configured(at the time of collector installation). Through this windows host group is identified.
-- **`host.name`**. This is tagged through resourcedetection processor. It hold the value of the host name where otel collector is installed. 
+- **`sumo.datasource`**. Has a fixed value of `windows`.
+- **`deployment.environment`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the Windows host cluster is identified by the environment where it resides. For example: `dev`, `prod`, or `qa`.
+- **`host.group`**. This is a collector level field and is user configured (at the time of collector installation). Through this, the Windows host group is identified.
+- **`host.name`**. This is tagged through the `resourcedetection` processor. It holds the value of the host name where the OTel collector is installed. 
 
 ## Log types
 
