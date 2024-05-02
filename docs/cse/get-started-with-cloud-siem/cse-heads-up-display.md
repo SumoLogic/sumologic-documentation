@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This topic describes Cloud SIEM *Heads Up Display (HUD)*, the landing page for the Cloud SIEM UI. The HUD provides an at-a-glance overview of Insight status and activity.
 
 [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To access the HUD, in the main Sumo Logic menu select **Cloud SIEM**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To access the HUD, in the main Sumo Logic menu select **Cloud SIEM > SIEM Overview**. You can also click **Go To...** at the top of the screen and select **SIEM Overview**.
-
 [**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To access the HUD, in the main Sumo Logic menu select **Cloud SIEM > SIEM Overview**. You can also click **Go To...** at the top of the screen and select **SIEM Overview**.
 
 :::note
