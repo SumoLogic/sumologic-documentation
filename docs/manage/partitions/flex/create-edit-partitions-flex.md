@@ -66,8 +66,8 @@ You can make some changes to an existing partition:  
   By default, Sumo Logic internal partitions like `sumologic_audit_events`, `sumologic_volume`, and so on, have the same retention period as the Default Continuous Index. You can change the retention period for any of these internal partitions as desired.
   :::
 * You can change the data forwarding configuration.
-* You cannot change the name of partition, routing expression, or reuse a partition name.
-* You cannot edit the audit index partition to include in the default scope. 
+* You cannot change the name of a partition, the routing expression, or reuse a partition name.
+* You cannot edit the audit index partition to include it in the default scope. 
 * Security partitions can’t be edited. Sumo Logic stores Cloud SIEM Records in seven partitions, one for each [Cloud SIEM Record type](/docs/cse/schema/cse-record-types). The names of the Sumo Logic partitions that contain Cloud SIEM Records begin with the string `sec_record_`. If you have a role that grants you the **View Partitions** capability, you can view the security partitions in the Sumo Logic UI. Note, however, that no user can edit or remove a security partition.
 
 ### How to edit a partition
