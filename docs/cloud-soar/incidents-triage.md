@@ -281,7 +281,9 @@ The final step in manual incident creation is to add an investigator or a group 
 
 ### Custom Fields
 
-[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access custom fields, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and in the left select **Customization > Fields**. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). To access custom fields, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access custom fields, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Settings**, and in the left select **Customization > Fields**.
+
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access custom fields, in the top menu select **Configuration**, and then under **Cloud SOAR Configurations** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. 
 
 <img src={useBaseUrl('img/cloud-soar/image46.png')} alt="Fields Configuration Settings" style={{border: '1px solid gray'}} width="800"/>
 

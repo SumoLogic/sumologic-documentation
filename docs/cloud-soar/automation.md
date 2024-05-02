@@ -10,13 +10,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The **Automation** section contains the configuration tools for Cloud SOAR's automation and orchestration features. These tools include Cloud SOAR's Open Integration Framework (OIF), automation rules sets, and playbook editor as well as incoming event details.
 
-[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access Automation, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). To access Automation, in the main Sumo Logic menu select **Automation**. 
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access Automation, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**. 
+
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access Automation, in the main Sumo Logic menu select **Automation**. 
 
 ## App Central
 
 App Central allows you to unlock the full Cloud SOAR potential. From this section, you can search and add new integrations, new playbooks, and even complete use cases with all the components needed (automation rules, integrations and playbooks) in one place.
 
-[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access App Central, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **App Central** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). To access App Central, in the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**. 
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access App Central, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **App Central** in the left nav bar.
+
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access App Central, in the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**. 
 
 ### App Central UI
 
@@ -134,7 +138,9 @@ A **Playbook** is a predefined set of actions or tasks to respond to a certain e
 
 Playbooks are automated workflows which can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
 
-[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access playbooks, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Playbooks** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). To access playbooks, in the main Sumo Logic menu select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**. 
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access playbooks, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Playbooks** in the left nav bar.
+
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access playbooks, in the main Sumo Logic menu select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**. 
 
 Watch this micro lesson to learn how to create custom playbooks.
 
@@ -368,7 +374,9 @@ Cloud SOAR can ingest, parse, and process incident data from email, syslog and b
 
 Cloud SOAR's orchestration and automation capabilities are achieved through its unidirectional and bidirectional integrations with the industry's leading network and security vendors. 
 
-[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access integrations, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). To access integrations, in the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. 
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access integrations, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. 
+
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access integrations, in the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. 
 
 <img src={useBaseUrl('img/cloud-soar/image62.png')} alt="Integrations" width="800"/>
 

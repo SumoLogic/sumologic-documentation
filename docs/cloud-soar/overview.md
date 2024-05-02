@@ -191,7 +191,9 @@ The following sections detail the various setup and configuration options for th
 
 ### General settings
 
-[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access General settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). To access General settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General Settings**. You can also click the **Go To...** menu at the top of the screen and select **General**. 
+[**Classic UI**](/docs/cloud-soar/overview#classic-ui). To access General settings, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**. 
+
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access General settings, in the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General Settings**. You can also click the **Go To...** menu at the top of the screen and select **General**. 
 
 The following sections describe available settings.
 
