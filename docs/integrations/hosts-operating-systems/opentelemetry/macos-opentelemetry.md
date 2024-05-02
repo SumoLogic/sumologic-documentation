@@ -26,6 +26,9 @@ The OpenTelemetry collector runs on the macOS machine, and uses the [Host Metric
 Following are the [fields](/docs/manage/fields/) which will be created as part of the macOS app install, if not already present. 
 
 - **`sumo.datasource`** - Has fixed value of **mac**.
+- **`deployment.environment`**. This is a collector level field and is user configured(at the time of collector installation).Through this mac host cluster is identified by the environment where it resides. For example: dev, prod or qa.
+- **`host.group`**. This is a collector level field and is user configured(at the time of collector installation).Through this mac host cluster is identified.
+- **`host.name`**. This is tagged through resourcedetection processor. It hold the value of the host name where otel collector is installed.
 
 ## Collection configuration and app installation
 
