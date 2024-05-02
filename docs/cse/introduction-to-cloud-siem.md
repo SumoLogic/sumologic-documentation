@@ -47,10 +47,12 @@ For more information, see [Cloud SIEM Heads Up Display](/docs/cse/get-started-wi
 
 ## Cloud SIEM menus
 
+<!--Kanso
+Kanso-->
+
 ### Classic UI
-<!-- Kanso. Remove comment tags at GA. Make "Cloud SIEM menus" an H2.
-### Classic UI
--->
+
+The classic UI is the traditional way to navigate in Sumo Logic. For more information, see [Tour the Classic Sumo Logic UI](/docs/get-started/sumo-logic-ui).
 
 #### Top menu
 
@@ -107,6 +109,8 @@ Use the **Configuration** menu to access:
    * [**Automation**](/docs/cse/automation/). Create smart actions that trigger automatically when certain events occur in Cloud SIEM.
 
 ### New UI
+
+The new UI provides a streamlined way to navigate in Sumo Logic. For more information, see [Tour the New Sumo Logic UI](/docs/get-started/sumo-logic-ui-new).
 
 #### Sidebar menu
 
