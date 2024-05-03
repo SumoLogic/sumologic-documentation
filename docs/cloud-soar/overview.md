@@ -22,9 +22,13 @@ import Theme from '../reuse/dark-light-theme.md';
 
 <Theme/>
 
-## Cloud SOAR menus
+### Cloud SOAR menus
 
+<!--Kanso 
 ### Classic UI
+
+The classic UI is the traditional way to navigate in Sumo Logic. For more information, see [Tour the Classic Sumo Logic UI](/docs/get-started/sumo-logic-ui).
+ Kanso-->
 
 #### Top menu
 
@@ -45,7 +49,10 @@ Use the **Settings** menu to access:
 * [**Settings**](/docs/cloud-soar/overview/#settings). Configure Cloud SOAR settings.
 * [**Report**](/docs/cloud-soar/incidents-triage/#report). Configure reports. 
 
+<!--Kanso 
 ### New UI
+
+The new UI provides a streamlined way to navigate in Sumo Logic. For more information, see [Tour the New Sumo Logic UI](/docs/get-started/sumo-logic-ui-new).
 
 #### Cloud SOAR sidebar menu
 
@@ -117,7 +124,8 @@ Use the **Administration** menu to access:
 * [**General**](#general-settings). Configure general Cloud SOAR settings.
 * [**Notifications**](#notifications). Configure notifications to Cloud SOAR users as well as other external users. 
 * [**Groups**](#groups). Create a group of users and assign a role to all the users in the group.
-
+ Kanso-->
+ 
 ## Why Cloud SOAR?
 
 Cloud SOAR is a modern security operations technology platform that empowers MSSPs, SOCs, and security teams by providing collaborative and automated real-time incident management and threat response. Make quick and insightful decisions during security response with workflow automation.
