@@ -10,16 +10,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 With Sumo Logic Flex, you gain an efficient and centralized log analytics framework capable of managing enterprise-wide cloud-scale log ingestion without cost concerns. It aligns cost to business value and overcomes today’s ever-growing data challenge by only charging customers for data storage and analytics executed. This revolutionary new consumption model provides customers with a scalable and efficient log analytics architecture that grows to manage enterprise-wide and cloud-scale log ingestion without the risk of runaway costs.
 
-:::sumo availability
-
-Sumo Logic Flex app is only available for Enterprise Suite - Flex customers.
-
-| Account Type | Account Level |
-|:--|:--|
-| Flex Credits | Enterprise Suite - Flex |
-
-:::
-
 ## Log types
 
 - [Log and Tracing Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/)
@@ -175,6 +165,14 @@ _index=sumologic_volume
 For more examples, refer to [Log and Tracing Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/).
 
 ## Installing the Flex app
+
+Flex app will be pre-installed for all the Flex users. 
+
+1. Navigate to **App Catalog > Installed Apps** to find the installed Flex app. 
+1. Click the **Flex** app tile.
+1. Go to **What's Included > Dashboards: View content in Library** to preview the dashboards.
+
+If you do not have the Flex app installed, follow the below steps.
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
