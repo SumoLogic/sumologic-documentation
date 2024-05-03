@@ -10,11 +10,25 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 With Sumo Logic Flex, you gain an efficient and centralized log analytics framework capable of managing enterprise-wide cloud-scale log ingestion without cost concerns. It aligns cost to business value and overcomes today’s ever-growing data challenge by only charging customers for data storage and analytics executed. This revolutionary new consumption model provides customers with a scalable and efficient log analytics architecture that grows to manage enterprise-wide and cloud-scale log ingestion without the risk of runaway costs.
 
+:::sumo availability
+
+Sumo Logic Flex app is only available for Enterprise Suite - Flex customers.
+
+| Account Type | Account Level |
+|:--|:--|
+| Flex Credits | Enterprise Suite - Flex |
+
+:::
+
 ## Log types
 
 - [Log and Tracing Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/)
 - [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/)
 - [Log Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#log-search-audit-index-message-fields)
+
+:::info
+By default, [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#log-search-audit-index-message-fields) is enabled to collect the data for Flex app.
+:::
 
 ### Log samples
 
@@ -159,38 +173,6 @@ _index=sumologic_volume
 | fields %"GB/Day"
 ```
 For more examples, refer to [Log and Tracing Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/).
-
-## Collecting logs for Flex app
-
-### Prerequisites
-
-:::sumo availability
-
-Sumo Logic Flex app is only available for Enterprise Suite - Flex customers.
-
-| Account Type | Account Level |
-|:--|:--|
-| Flex Credits | Enterprise Suite - Flex |
-
-:::
-
-To collect data for Flex app, you need to enable [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/#enable-the-data-volume-index) and [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index).
-
-You can verify if you already have the Data Volume Index enabled by querying:
-
-```
-_index=sumologic_volume
-```
-
-If no results are returned even for longer time ranges, it means you do not have the Data Volume Index enabled.
-
-You can verify if you already have the Search Audit Index enabled by querying:
-
-```sql
-_index=sumologic_search_usage_per_query
-```
-
-If no results are returned even for longer time ranges, it means you do not have Search Audit index enabled.
 
 ## Installing the Flex app
 
