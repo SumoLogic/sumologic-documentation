@@ -58,7 +58,7 @@ Here’s what the example tuning expression looks like in the Cloud SIEM UI.
 
 ## Create a tuning expression
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Content > Rule Tuning**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**.
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Rule Tuning**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rule Tuning**. You can also click the **Go To...** menu at the top of the screen and select **Rule Tuning**. Kanso-->
 1. On the **Rule Tuning** page, click **Create**.
     <br/><img src={useBaseUrl('img/cse/rule-tuning-page.png')} alt="Rule tuning page" style={{border: '1px solid gray'}} width="800"/>
 1. The **New Rule Tuning Expression** page appears.

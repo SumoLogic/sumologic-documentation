@@ -10,10 +10,10 @@ Cloud SIEM uses rules to evaluate incoming records, and when the conditions of 
  
 ## View record details
 
-[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To view Signals, click **Signals** at the top of the screen. 
-
+<!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> To view Signals, click **Signals** at the top of the screen. 
+<!--Kanso 
 [**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Signals, in the main Sumo Logic menu select **Cloud SIEM > Signals**. You can also click the **Go To...** menu at the top of the screen and select **Signals**.
-
+ Kanso-->
 When you view the details page for a signal that was triggered by a threshold, aggregation, or chain rule, you’ll see a section that displays records that matched the rules conditions. These records will continue to be associated with the signal as long as the signal is available. 
 
 Click the plus sign (+) for a record to view its details. Click the **Timestamp** button to sort records by their timestamp.

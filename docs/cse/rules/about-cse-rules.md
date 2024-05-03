@@ -9,10 +9,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A Cloud SIEM rule is logic that fires based on information in incoming Records. When a rule fires, it creates a Signal.
 
-[**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). To view Rules, in the top menu select **Content > Rules**. 
-
+<!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> To view Rules, in the top menu select **Content > Rules**. 
+<!--Kanso 
 [**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Rules, in the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
-
+ Kanso-->
 :::tip
 For a complete list of out-of-the-box rules, see [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
 :::

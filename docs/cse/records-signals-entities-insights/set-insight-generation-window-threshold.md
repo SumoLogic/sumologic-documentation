@@ -13,8 +13,8 @@ By default, the detection window is 14 days, and the threshold Activity Score i
 
 To change the Insight generation settings:
 
-1. [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). In the top menu select **Configuration**, and then under **Workflow** select **Detection**. <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu click **Configuration**, and then under **Cloud SIEM Workflow** select **Insight Detection**. You can also click the **Go To...** menu at the top of the screen and select **Insight Detection**. 
-<br/><br/>Your current detection settings are displayed on the Insight Detection page.<br/><img src={useBaseUrl('img/cse/detection-threshold-popup.png')} alt="Detection threshold settings" style={{border: '1px solid gray'}} width="600"/>
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Workflow** select **Detection**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu click **Configuration**, and then under **Cloud SIEM Workflow** select **Insight Detection**. You can also click the **Go To...** menu at the top of the screen and select **Insight Detection**.  Kanso-->
+<br/>Your current detection settings are displayed on the Insight Detection page.<br/><img src={useBaseUrl('img/cse/detection-threshold-popup.png')} alt="Detection threshold settings" style={{border: '1px solid gray'}} width="600"/>
 1. Enter values for **Detection Threshold** and **Signal Suppression**:
      *  **Standard Threshold**
          * **Detection Window (Days)**. Enter the duration, in days, during which an Entity's Activity Score must reach the threshold to result in an Insight being generated for the Entity. 
