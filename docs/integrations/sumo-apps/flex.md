@@ -16,6 +16,10 @@ With Sumo Logic Flex, you gain an efficient and centralized log analytics framew
 - [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/)
 - [Log Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#log-search-audit-index-message-fields)
 
+:::info
+By default, [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#log-search-audit-index-message-fields) are enabled to collect data for the Flex app.
+:::
+
 ### Log samples
 
 <details>
@@ -160,39 +164,15 @@ _index=sumologic_volume
 ```
 For more examples, refer to [Log and Tracing Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Metrics Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/metrics-data-volume-index/).
 
-## Collecting logs for Flex app
-
-### Prerequisites
-
-:::sumo availability
-
-Sumo Logic Flex app is only available for Enterprise Suite - Flex customers.
-
-| Account Type | Account Level |
-|:--|:--|
-| Flex Credits | Enterprise Suite - Flex |
-
-:::
-
-To collect data for Flex app, you need to enable [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/#enable-the-data-volume-index) and [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index).
-
-You can verify if you already have the Data Volume Index enabled by querying:
-
-```
-_index=sumologic_volume
-```
-
-If no results are returned even for longer time ranges, it means you do not have the Data Volume Index enabled.
-
-You can verify if you already have the Search Audit Index enabled by querying:
-
-```sql
-_index=sumologic_search_usage_per_query
-```
-
-If no results are returned even for longer time ranges, it means you do not have Search Audit index enabled.
-
 ## Installing the Flex app
+
+Flex app will be pre-installed for all the Flex users. 
+
+1. Navigate to **App Catalog > Installed Apps** to find the installed Flex app. 
+1. Click the **Flex** app tile.
+1. Go to **What's Included > Dashboards: View content in Library** to preview the dashboards.
+
+If you do not have the Flex app installed, follow the below steps.
 
 import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
