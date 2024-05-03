@@ -2637,7 +2637,7 @@
   "/cid/21037": "/docs/integrations/google/cloud-vpn",
   "/cid/21038": "/docs/integrations/containers-orchestration/vmware-tanzu-application-service",
   "/cid/10999": "/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source",
-  "/cid/11000": "docs/alerts/monitors/automation-payload-variables",
+  "/cid/11000": "/docs/alerts/monitors/automation-payload-variables",
   "/Cloud_SIEM_Enterprise": "/docs/cse",
   "/Cloud_SIEM_Enterprise/Administration": "/docs/cse/administration",
   "/Cloud_SIEM_Enterprise/Administration/Cloud_SIEM_Enterprise_Feature_Update_(2022)": "/docs/cse/administration",
