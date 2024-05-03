@@ -17,7 +17,7 @@ With Sumo Logic Flex, you gain an efficient and centralized log analytics framew
 - [Log Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#log-search-audit-index-message-fields)
 
 :::info
-By default, [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#log-search-audit-index-message-fields) is enabled to collect data for the Flex app.
+By default, [Data Volume Index](/docs/manage/ingestion-volume/data-volume-index/log-tracing-data-volume-index/) and [Search Audit Index](/docs/manage/security/audit-indexes/search-audit-index/#log-search-audit-index-message-fields) are enabled to collect data for the Flex app.
 :::
 
 ### Log samples
