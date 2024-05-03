@@ -45,14 +45,13 @@ The first screen you see when you access Cloud SIEM is the Heads Up Display, a s
 For more information, see [Cloud SIEM Heads Up Display](/docs/cse/get-started-with-cloud-siem/cse-heads-up-display/).
 
 
-## Cloud SIEM menus
+### Cloud SIEM menus
 
-<!--Kanso
-Kanso-->
-
+<!--Kanso 
 ### Classic UI
 
 The classic UI is the traditional way to navigate in Sumo Logic. For more information, see [Tour the Classic Sumo Logic UI](/docs/get-started/sumo-logic-ui).
+ Kanso-->
 
 #### Top menu
 
@@ -108,6 +107,7 @@ Use the **Configuration** menu to access:
    * [**Enrichment**](/docs/cse/integrations/enrichments-and-indicators/). Manage elements that enrich data in Cloud SIEM.
    * [**Automation**](/docs/cse/automation/). Create smart actions that trigger automatically when certain events occur in Cloud SIEM.
 
+<!--Kanso 
 ### New UI
 
 The new UI provides a streamlined way to navigate in Sumo Logic. For more information, see [Tour the New Sumo Logic UI](/docs/get-started/sumo-logic-ui-new).
@@ -203,6 +203,7 @@ Use the **Configuration** menu to access:
     * [**Insight Statuses**](/docs/cse/administration/manage-custom-insight-statuses/). Manage custom Insight statuses.
     * [**Insight Resolutions**](/docs/cse/administration/manage-custom-insight-resolutions/). Manage custom Insight resolutions.
     * [**Tag Schemas**](/docs/cse/administration/create-a-custom-tag-schema/). Manage schemas for tags, metadata you can attach to Insights, Signals, Entities, and Rules. 
+ Kanso-->
 
 ## Getting your data into Cloud SIEM
 
