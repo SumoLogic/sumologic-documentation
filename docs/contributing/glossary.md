@@ -180,8 +180,6 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[LogCompare](/docs/search/logcompare)**. LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns.
 
-**[Log overlay](/docs/metrics/metric-charts/log-overlay-analyze-metrics-visualizations)**. A Sumo Logic feature you can use to run a log query on the metric query page and visualize the count of matching log messages on the metric chart.
-
 **[LogReduce](/docs/search/logreduce)**. LogReduce uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
 
 **[Logs-to-Metrics](/docs/metrics/logs-to-metrics)**. A Sumo Logic feature you can use to extract or create metrics from log data. You can extract metrics that are embedded in logs, or count logs as a metric.
@@ -224,7 +222,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Organization](/docs/manage/manage-subscription/manage-org-settings/)**. In Sumo Logic, org, or organization, refers to your company’s Sumo Logic account (not an individual user’s account).
 
-**[Outlier](/docs/search/search-query-language/search-operators/outlier/)**. Outliers are log data or metric values in a sequence that seem unexpected, and might indicate an operational or performance issue. In Sumo Logic, you can use the outlier operator to identify outliers in log data. In addition, Sumo Logic has a [metric outlier](/docs/metrics/metric-charts/metrics-outliers) feature that identifies metric data points that are outside the range of expected values.
+**Outlier**. Outliers are log data or metric values in a sequence that seem unexpected, and might indicate an operational or performance issue. In Sumo Logic, you can use the [outlier operator](/docs/search/search-query-language/search-operators/outlier) to identify outliers in log data. In addition, Sumo Logic has a [metrics outlier](/docs/metrics/metrics-operators/outlier/) operator that identifies metric data points that are outside the range of expected values.
 
 
 
