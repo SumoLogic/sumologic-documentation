@@ -84,8 +84,9 @@ Log in to Sumo Logic and create a new [installation token](/docs/manage/security
 ## Automation installation
 
 ### Ubuntu
-
-1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the **?** icon in the top right. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**. <!-- As of May 1, 2024, there is no option to install a bridge in the new UI. -->
+<!--Kanso 
+ Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the **?** icon in the top right. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**. Kanso--> <!-- There is no option to install a bridge in the new UI. --> 
 1. Click the **UBUNTU** button.
 1. Click **Download** to download the `automation-bridge-X.X.deb` file.
 1. Copy the file to the bridge virtual machine. You can use SCP - see example below:
@@ -99,7 +100,7 @@ Log in to Sumo Logic and create a new [installation token](/docs/manage/security
 
 ### CentOS/RedHat
 
-1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the **?** icon in the top right. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**. <!-- As of May 1, 2024, there is no option to install a bridge in the new UI. -->
+1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the **?** icon in the top right. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.  Kanso--> <!-- There is no option to install a bridge in the new UI. -->
 1. In the **Automation Bridge** box, click **CENTOS/REDHAT**.
 1. Click **Download** to download the `automation-bridge-X.X.rpm` file.
 1. Copy the file to the bridge virtual machine (You can use SCP, see example below).
@@ -179,7 +180,7 @@ ps faux |grep automation-bridge
 This is an example of running `automation-bridge`:<br/><img src={useBaseUrl('img/cloud-soar/automations-bridge-example-output.png')} alt="Example of running automation-bridge" width="800"/>
 
 On the SOAR instance, a list of live bridge agents will be displayed along with their status:
-1. [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Bridge** in the left nav bar. <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**.
+1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Bridge** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu, select **Automation > Bridge**. You can also click the **Go To...** menu at the top of the screen and select **Bridge**. Kanso-->
 1. Verify that the bridge is installed and operational.
 
 ### Configuring the automation bridge for CyberArk
