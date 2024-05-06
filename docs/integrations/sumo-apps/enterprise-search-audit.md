@@ -15,15 +15,9 @@ Before you can use the Enterprise Search Audit App, an administrator must first 
 
 ## Installing the Enterprise Search Audit app
 
-## Installing the Enterprise Search Audit app
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
 <AppInstallNoDataSourceV2/>
-
-## Viewing Enterprise Search Audit dashboards
-
-import ViewDashboards from '../../reuse/apps/view-dashboards.md';
-
-## Enterprise Search Audit App
 
 ## Upgrading the Enterprise Search Audit app (Optional)
 
@@ -37,10 +31,14 @@ import AppUninstall from '../../reuse/apps/app-uninstall.md';
 
 <AppUninstall/>
 
-## Enterprise Search Audit App dashboards
+
+## Viewing Enterprise Search Audit App dashboards
 
 This page has information about the pre-built dashboards for the Enterprise Search Audit App and a description of each of the app dashboards.
 
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Enterprise Search Audit - Search Overview
 
