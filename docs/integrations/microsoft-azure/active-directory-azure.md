@@ -28,12 +28,9 @@ The Sumo Logic app for Azure Active Directory presents information about activit
 
 ## Collect logs for the Azure Active Directory app
 
-Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
+To set up the logs collection in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 
-- [Azure Event Hubs Source](//docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/#setup) (Recommended)
-- Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection)
-
-When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AAD/Logs`.
+When you configure the event hubs source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/AAD/Logs`.
 
 ### Export Azure Active Directory logs to Event Hub
 
