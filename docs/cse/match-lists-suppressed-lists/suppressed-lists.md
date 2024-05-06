@@ -78,7 +78,7 @@ A Suppressed List can contain up to 50,000 items.
 
 Perform the steps below to create a Suppressed List and add an indicator to it using the Cloud SIEM UI.
 
-1. Click **Content** from the top menu and select **Suppressed Lists**.
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Suppressed Lists**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Suppressed Lists**. You can also click the **Go To...** menu at the top of the screen and select **Suppressed Lists**.  Kanso-->
 1. Click **Create**. <br/><img src={useBaseUrl('img/cse/suppressed-lists.png')} alt="Create a suppressed list" style={{border: '1px solid gray'}} width="800"/>
 1. On the **New Suppressed List** popup, enter the following:
    1. **Name**. Name of the Suppressed List.
