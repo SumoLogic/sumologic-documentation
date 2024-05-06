@@ -51,7 +51,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
-1. To set up the Azure Event Hubs cloud-to-cloud source in Sumo Logic portal, refer to our [Azure Event Hubs source documentation](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+1. To set up the Azure Event Hubs in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 2. To create the Diagnostic settings in Azure portal, refer to the Azure documentation for [Recovery Service Vaults](https://learn.microsoft.com/en-us/azure/backup/configure-reports?tabs=recovery-services-vaults#2-configure-diagnostics-settings-for-your-vaults) and [Backup Vaults](https://learn.microsoft.com/en-us/azure/backup/configure-reports?tabs=backup-vaults#2-configure-diagnostics-settings-for-your-vaults) respectively. Perform below steps for each Azure Backup Vault that you want to monitor.
    * Choose `Stream to an event hub` as the destination.
    * Select the following events for respective vault type:
@@ -60,12 +60,6 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    * Use the Event hub namespace and Event hub name configured in previous step in destination details section. You can use the default policy `RootManageSharedAccessKey` as the policy name.
 
 ## Troubleshooting
-
-### Azure Event Hubs Source
-
-Common error types are described [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#error-types).
-
-You can try [restarting](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#restarting-your-source) the source for `ThirdPartyConfig` errors.
 
 ### HTTP Logs and Metrics Source used by Azure Functions
 

@@ -43,7 +43,7 @@ In this section, you will configure a pipeline for shipping metrics from Azure M
 
 In this section, you will configure a pipeline for shipping diagnostic logs from Azure Monitor to an Event Hub.
 
-1. To set up the Azure Event Hubs source in Sumo Logic portal, refer to our [Azure Event Hubs documentation](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
+1. To set up the Azure Event Hubs source in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 2. To create the Diagnostic settings in Azure portal, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-use-azure-monitor#resource-logs). Perform below steps for each Azure API Management service that you want to monitor.
    1. Choose `Stream to an event hub` as the destination.
    1. Select `allLogs`.
@@ -52,12 +52,6 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
 4. To log API Management events using [log-to-eventhub](https://learn.microsoft.com/en-us/azure/api-management/log-to-eventhub-policy) policy, refer to the [Azure documentation](https://learn.microsoft.com/en-us/azure/api-management/api-management-howto-log-event-hubs?tabs=arm).
 
 ## Troubleshooting
-
-### Azure Event Hubs Source
-
-Common error types are described [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#error-types).
-
-You can try [restarting](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#restarting-your-source) the source for `ThirdPartyConfig` errors.
 
 ### HTTP Logs and Metrics Source used by Azure Functions
 
