@@ -574,7 +574,7 @@ The following sections describe the valid hook values to use in a trigger defini
 
 ##### Entities hooks
 
-Following are the hooks for [entities](/docs/cloud-soar/main-menu/#entities) (observables) events that run when objects are created:
+Following are the hooks for [entities](/docs/cloud-soar/incidents-triage/#entities) (observables) events that run when objects are created:
 * `addObservableArtifact`. When an artifact entity is created.
 * `addObservableDomain`. When a domain entity is created.
 * `addObservableIp`. When an IP address entity is created.

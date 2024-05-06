@@ -91,12 +91,6 @@ Sumo Logic provides a variety of apps for security products and platforms, from 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/keeper-security"><img src={useBaseUrl('img/integrations/security-threat-detection/keeper.png')} alt="thumbnail icon" width="125"/><h4>Keeper Security</h4></a>
-  <p>A guide to the Sumo Logic app for Keeper Security.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/integrations/security-threat-detection/netskope-legacy-collection"><img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/><h4>Netskope Legacy Collection</h4></a>
   <p>A guide to the Sumo Logic app for Netskope Legacy Collection.</p>
   </div>

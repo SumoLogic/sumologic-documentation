@@ -54,7 +54,10 @@ When a Signal is fired, if an Entity doesn’t already exist in Cloud SIEM for t
 
 ## About the Entities list page
 
-To view the **Entities** page, click **Entities** in the top menu of the Cloud SIEM UI.
+<!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> To view Entities, click **Entities** at the top of the screen. 
+<!--Kanso 
+[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Entities, in the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**. 
+Kanso-->
 
 Here’s a screenshot of the Entities page.
 
@@ -129,7 +132,7 @@ or Criticality for one or more Entities.
 
 ### Update Entities from the UI
 
-1. Click **Entities** at the top of the Cloud SIEM UI.
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> Click **Entities** at the top of the screen. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu select **Cloud SIEM > Entities**. You can also click the **Go To...** menu at the top of the screen and select **Entities**.  Kanso-->
 1. Note that there is a checkbox at the left end of each Entity row, and one above the Entities list. <br/><img src={useBaseUrl('img/cse/entities-page.png')} alt="Entities page" style={{border: '1px solid gray'}} width="800"/>
 1. Click the top checkbox to select all of the Entities on the page, or click the checkbox next to each Entity you want to update. <br/><br/><img src={useBaseUrl('img/cse/update-options.png')} alt="Update options" style={{border: '1px solid gray'}} width="800"/> 
 1. Note that once you select an Entity, three options appear at the top of the Entities list. See the instructions for each option below:

@@ -9,7 +9,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A Cloud SIEM rule is logic that fires based on information in incoming Records. When a rule fires, it creates a Signal.
 
+<!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> To view Rules, in the top menu select **Content > Rules**. 
+<!--Kanso 
+[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To view Rules, in the main Sumo Logic menu select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. 
+ Kanso-->
+:::tip
 For a complete list of out-of-the-box rules, see [Rules](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/rules/README.md) in the [Cloud SIEM Content Catalog](https://github.com/SumoLogic/cloud-siem-content-catalog/blob/master/README.md).
+:::
 
 Watch this micro lesson to learn more about rules.
 
@@ -112,7 +118,7 @@ This section describes what [Match Lists](/docs/cse/match-lists-suppressed-lists
 
 Match Lists are lists of important indicators and identifiers, typically configured by a Cloud SIEM analyst. Match Lists are often used to define allowlists of entities, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for Records that contain one of a certain set of IP addresses. 
 
-Here’s an example of a Match List in the Cloud SIEM UI, at **Content > Match Lists**. 
+Here’s an example of a Match List in the Cloud SIEM UI. 
 
 <img src={useBaseUrl('img/cse/example-match-list.png')} alt="Example match list" width="800"/>
 
