@@ -80,7 +80,7 @@ Each audit event log has common keys that categorize it to a product area and pr
 
 To search the Audit Event Index for logs that describe Automation Service events:
 
-1. Open a search tab in the Sumo Logic UI by clicking **+ New** and choosing **Log Search**. <br/><img src={useBaseUrl('/img/search/get-started-search/search-basics/new-log-search-UI-buttons.png')} alt="New log search" width="400"/>
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> Click the **+ New** button at the top of the screen and select **Log Search**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  Kanso-->
 1. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:
     ```sql
     (_index=sumologic_system_events or _index=sumologic_audit_events) _sourceCategory=oar*
