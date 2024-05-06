@@ -626,10 +626,11 @@ You can manage Slack communication channels directly by creating/editing various
 
 ## Rules
 
+Automation rules allow specific data to be parsed from the incoming data sources and then acted upon automatically or through manual actions. You can establish any daemonized integration rules to define what occurs when data is received from each of these sources. 
+
 ### Creating a rule
 
-Select **Automation Rules** page follows the same format as
-all customizable Cloud SOAR features, click **+** to create a new automation ruleset:
+Select **Automation Rules** page follows the same format as all customizable Cloud SOAR features, click **+** to create a new automation ruleset:
 
 <img src={useBaseUrl('img/cloud-soar/image95.png')} alt="Add automation rule"  width="400"/>
 
