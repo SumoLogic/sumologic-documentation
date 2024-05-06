@@ -66,10 +66,4 @@ In this section, we'll introduce the following concepts:
   <p>Learn how to share a saved or unsaved metric query.</p>
   </div>
 </div>
-<div className="box smallbox card">
-<div className="container">
-  <a href="/docs/metrics/metrics-queries/metrics-queries-classic"><img src={useBaseUrl('img/icons/operations/queries.png')} alt="icon" width="40"/><h4>Metrics - Classic (Legacy)</h4></a>
-  <p>Learn how to construct metrics queries and provides examples.</p>
-  </div>
-</div>
 </div>

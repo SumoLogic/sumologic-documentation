@@ -922,6 +922,7 @@ module.exports = {
             'alerts/monitors/muting-schedules',
             'manage/ingestion-volume/monitor-ingestion-receive-alerts',
             'alerts/monitors/use-playbooks-with-monitors',
+            'alerts/monitors/automation-payload-variables'
           ],
         },
         {
@@ -1453,7 +1454,6 @@ module.exports = {
         'metrics/metrics-queries/aggregation-tips',
         'metrics/metrics-queries/metric-query-error-messages',
         'metrics/metrics-queries/share-metric-query',
-        'metrics/metrics-queries/metrics-queries-classic',
       ],
     },
     {
@@ -1507,23 +1507,6 @@ module.exports = {
     'metrics/metrics-transformation-rules',
     'metrics/logs-to-metrics',
     'metrics/kubernetes-metrics',
-    {
-      type: 'category',
-      label: 'Metrics Charts (Classic)',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'metrics/metric-charts/index'},
-      items: [
-        'metrics/metric-charts/create-metrics-visualization',
-        'metrics/metric-charts/line-area-metric-charts',
-        'metrics/metric-charts/single-value-metric-charts',
-        'metrics/metric-charts/interacting-metric-charts',
-        'metrics/metric-charts/quantization-interval-chart',
-        'metrics/metric-charts/metrics-outliers',
-        'metrics/metric-charts/add-metrics-visualization-to-dashboard',
-        'metrics/metric-charts/log-overlay-analyze-metrics-visualizations',
-       ],
-     },
    ],
   },
 ],

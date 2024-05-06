@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 An **outlier** is a data point that is outside the range of expected values. This page shows you how to locate deviations beyond thresholds in a time series. 
 
 :::note
-Currently, the feature is only available for logs queries. For information on outliers in metrics queries, see the [Metrics Outliers](/docs/metrics/metric-charts/metrics-outliers) page.
+Currently, the feature is only available for logs queries. 
 :::
 
 ## Graphing log queries to find outliers

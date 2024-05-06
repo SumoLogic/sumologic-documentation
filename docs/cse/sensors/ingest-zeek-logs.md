@@ -81,7 +81,7 @@ With this method, you use Corelight’s [json-streaming-logs](https://github.com
 
 After installing the `json-streaming-logs` package, follow these instructions to set up the Sumo Logic mapping.
 
-1. In the top menu click **Configuration**, and then under **Integrations** select **Sumo Logic** .
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Integrations** select **Sumo Logic** . <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Ingest Mappings**. You can also click the **Go To...** menu at the top of the screen and select **Ingest Mappings**.  Kanso-->
 1. On the **Sumo Logic Ingest Mappings** page, click **Create**.<br/><img src={useBaseUrl('img/cse/ingest-mappings.png')} alt="Ingest mappings" style={{border: '1px solid gray'}} width="800"/>
 1. On the **Create Sumo Logic Mapping** page:
    1. **Source Category**. Enter the Source Category value you assigned to the Source you configured above in [Configure a Sumo Logic Source](#configure-a-sumo-logic-source).
@@ -133,7 +133,7 @@ To enable Cloud SIEM to successfully process the log, we need to create the foll
 
 Perform these steps for each of the FERs.
 
-1. In the Sumo Logic UI, go to **Manage Data > Logs > Field Extraction Rules**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Field Extraction Rules**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Field Extraction Rules**. You can also click the **Go To...** menu at the top of the screen and select **Field Extraction Rules**.  Kanso-->
 1. Click **Add Rule**.
 1. In the **Add Field Extraction Rule** pane:
    1. **Rule Name**. Enter a meaningful name for the rule.
