@@ -1,5 +1,5 @@
 ---
-id: remote-management
+slug: /send-data/opentelemetry-collector/remote-management
 title: OpenTelemetry Remote Management
 sidebar_label: Remote Management
 ---
@@ -20,7 +20,7 @@ The Sumo Logic Distribution for OpenTelemetry Collector supports remote manageme
 
 ### Collector tags
 
-With OpenTelemetry (OTel) remote management, you can tag your [Installed Collectors](/docs/send-data/installed-collectors) and use those tags to categorize and group them. These tags are enriched in your data, so you can use them in your dashboards and searches as well.
+With OpenTelemetry (OTel) remote management, you can tag your [OpenTelemetry Collectors](/docs/send-data/opentelemetry-collector) and use those tags to categorize and group them. These tags are enriched in your data, so you can use them in your dashboards and searches as well.
 
 ### Source templates
 
