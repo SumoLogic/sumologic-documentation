@@ -33,7 +33,7 @@ Watch this micro lesson to learn about Sumo Logic's threat intelligence features
 
 To view and manage threat intelligence indicators on the [Threat Intelligence tab](/docs/security/threat-intelligence/threat-intelligence-indicators/#threat-intelligence-tab), you must have the correct [role capabilities](/docs/manage/users-roles/roles/role-capabilities/#threat-intel). 
 
-1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/).Kanso-->  In the main Sumo Logic menu, select **Administration > Users and Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**.  Kanso-->
 1. Click the **Roles** tab.
 1. Click **Add Role** to create a new role. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 Add the following capabilities:
