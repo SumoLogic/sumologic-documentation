@@ -129,7 +129,7 @@ Before you can perform the audit, collect logs, and install the app for the vers
 
 To perform the audit:
 
-1. In the left navigation pane, click your **Personal** folder, then expand the PCI Compliance app folder.
+1. In the left navigation pane, click your **Library** folder, then expand the PCI Compliance app folder.
 1. Open the **PCI Compliance For Palo Alto Networks - PCI Req 02, 04 - Insecure Data In Transit** dashboard.
 1. Find the **Insecure Allowed Traffic by Target Port and Involved Host** panel. 
 1. In the top right corner, click the three-dot kebab button and select **Open in Log Search**.
@@ -161,7 +161,7 @@ The root account generally has unrestricted access to resources in an account. A
 
 To use Cloud Infrastructure Security to start an audit of AWS root for compliance, perform these steps:
 
-1. Near the top of the Sumo Logic UI, click **+ New > Log search** to open a new Sumo Logic search.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Log Search**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  Kanso-->
 1. Make sure you’re in Advanced Mode. If you’re in Basic Mode, click the three-dot icon on the right side of the query builder, then select **Advanced Mode**.
 1. Copy and paste this query into the query builder. (In the query, replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
  ```
