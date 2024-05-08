@@ -22,7 +22,7 @@ Searching the Audit Event Index is the same as running a normal search against y
 
 ## Automation Service audited events
 
-To search for audit events for a specific feature, use the metadata field `_sourceCategory` with its corresponding value.
+To search for audit events for a specific feature, use the metadata field `_sourceCategory` with its corresponding value. 
 
 For Automation Service (and Cloud SOAR) events, every `_sourceCategory` related to a feature has the prefix `oar`. To limit the events returned to the Automation Service and Cloud SOAR, you can use:
 
