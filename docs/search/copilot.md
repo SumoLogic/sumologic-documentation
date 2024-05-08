@@ -43,7 +43,7 @@ In this document, you'll learn the recommended Copilot workflow as well as best 
         />
 
 
-In the scenario depicted in the video (NOTE: video has no sound), we leverage Copilot to investigate a security issue, AWS CloudTrail access keys being leaked outside the organization.
+In the scenario depicted in the video, we leverage Copilot to investigate a security issue: AWS CloudTrail access keys being leaked outside an organization. Here's a recap:
 
 1. First, we select the data source for AWS CloudTrail audit logs.
 1. Launch our log investigation by clicking the AI-suggested insight `Count logs by eventname`, which translates the insight to a log query and renders results.
