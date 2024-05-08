@@ -917,11 +917,12 @@ module.exports = {
             'alerts/monitors/monitor-faq',
             'alerts/monitors/alert-variables',
             'alerts/monitors/alert-response',
-            'alerts/monitors/alert-grouping',
             'alerts/monitors/alert-response-faq',
+            'alerts/monitors/alert-grouping',
             'alerts/monitors/muting-schedules',
             'manage/ingestion-volume/monitor-ingestion-receive-alerts',
             'alerts/monitors/use-playbooks-with-monitors',
+            'alerts/monitors/automation-payload-variables'
           ],
         },
         {

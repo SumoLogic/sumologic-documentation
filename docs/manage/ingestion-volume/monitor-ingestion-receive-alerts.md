@@ -202,7 +202,8 @@ attributes `alive` and `LastSeenAlive`.
 
 ```
 _index=sumologic_volume sizeInBytes _sourceCategory="collector_volume"
-| parse regex "\"(?<collector>[^\"]+)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
+| parse regex "\"(?<collector>[^\"]+)\"\:(?<volumeInfo>.*)" multi
+| json field=volumeInfo "sizeInBytes", "extractedAndCollectedFieldsSize", "count"
 | first(_messagetime) as MostRecent, sum(bytes) as TotalVolumeBytes by collector
 | formatDate(fromMillis(MostRecent),"yyyy/MM/dd HH:mm:ss") as MostRecentTime
 | toMillis(queryEndTime()) as currentTime

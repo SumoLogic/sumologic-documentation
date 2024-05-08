@@ -123,7 +123,13 @@ SLO data is retained for 800 days. It is retained separately, regardless of unde
 
 ## Accessing SLOs
 
-In Sumo Logic, select **Manage Data** > **Monitoring**, then select the **SLO** tab, where you can view, search, and add SLOs. Use folders to collect, package, and manage SLOs with ease, moving SLOs as needed.
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access SLOs, in the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**. 
+
+<!--Kanso 
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access SLOs, in the main Sumo Logic menu select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**. 
+ Kanso-->
+
+In the SLO screen, you can view, search, and add SLOs. Use folders to collect, package, and manage SLOs with ease, moving SLOs as needed.
 
 To locate an SLO, use the search that returns a list of SLOs based on the name and description.
 

@@ -40,7 +40,7 @@ Work with Professional Services to perform the tasks in the following sections t
 
 Cloud SIEM must be enabled by Sumo Logic before it is accessible. Once enabled, you will see a link labeled Cloud SIEM on the left side of the Sumo Logic navigation list.
 
-<img src={useBaseUrl('img/cse/cse-option-in-left-nav.png')} alt="Cloud SIEM menu option" width="300"/>
+<img src={useBaseUrl('img/cse/cse-option-in-left-nav.png')} alt="Cloud SIEM menu option" style={{border: '1px solid gray'}} width="150"/>
 
 To further set up your instance, you may consider setting up a custom sub-domain. You can also enable Support Access if you would like Sumo Logic Support to be able to access your environment for assistance.
 
