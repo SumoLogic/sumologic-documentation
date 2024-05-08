@@ -51,7 +51,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | Parameter | Type | Required | Description | Access |
 |:---|:---|:---|:---|:---|
 | config | JSON object | Yes | It contains the configuration parameter for the source |  |
-| schemaRef | JSON object | Yes | Use {“type”: CloudQuery Azure Inventory } | Not modifiable |
+| schemaRef | JSON object | Yes | `{"type":"CloudQuery Azure Inventory"}` | Not modifiable |
 | sourceType | string | Yes | Use universal for CloudQuery Azure Inventory | Not modifiable |
 
 
