@@ -17,6 +17,7 @@ description: Learn how to collect inventory from the Azure APIs using CloudQuery
 
 import CodeBlock from '@theme/CodeBlock';
 import ExampleJSON from '/files/c2c/cloudquery-azure-plugin/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/cloudquery-azure-plugin/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/cloudquery-logo.png')} alt="cloudquery-icon" width="70" />
@@ -75,7 +76,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 If the subscription ID is not specified, it will use all visible subscriptions.
 :::
 
-<CodeBlock language="json">{ExampleJSON}</CodeBlock>
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
 [Download example](/files/c2c/cloudquery-azure-plugin/example.json)
 
