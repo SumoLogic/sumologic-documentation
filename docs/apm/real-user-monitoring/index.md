@@ -46,7 +46,12 @@ See Real User Monitoring in action.
 |:--|:--|
 | Credits | Enterprise Operations and Enterprise Suite. Essentials get up to 5 GB a day. |
 
-To confirm that your Sumo Logic service package has been upgraded to include Traces and Real User Monitoring, click the **+New** button and you'll see **Traces** in the dropdown.<br/><img src={useBaseUrl('/img/traces/traces-menu-option.png')} alt="traces menu option" width="275"/>
+Access Traces to confirm that your Sumo Logic service package has been upgraded to include Traces and Real User Monitoring.
+
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access Traces, click the **+ New** button at the top of the screen and select **Traces**. 
+<!--Kanso 
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access Traces, in the main Sumo Logic menu select **Application Monitoring > Transaction Traces**. You can also click the **Go To...** menu at the top of the screen and select **Transaction Traces**. 
+ Kanso-->
 
 ## Guides
 
