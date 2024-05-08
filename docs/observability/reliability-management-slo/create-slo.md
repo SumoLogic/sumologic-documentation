@@ -31,7 +31,7 @@ The following table lists the available options for an SLO:
 ## Create an SLO (General)
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Monitoring > SLOs**. <!--Kanso 
-<br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.  Kanso-->
+<br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Monitoring > SLOs**. You can also click the **Go To...** menu at the top of the screen and select **SLOs**.  Kanso-->
 2. Click **Add** > **New SLO**. Optionally, you can also:
    * Create folders to manage your SLOs.
    * Import an SLO. <br/>To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](/docs/get-started/library#import-content) for complete details.
