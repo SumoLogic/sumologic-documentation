@@ -29,72 +29,47 @@ import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
 
 <FedDeploymentNote/>
 
-## Data collected
 
-| Polling Interval | Data |
-| :--- | :--- |
-| 12 hours |  [Data service table data](https://hub.cloudquery.io/plugins/source/cloudquery/aws/v22.19.2/docs) |
+## About Vendor
 
-## Setup
+CloudQuery is an open source CSPM vendor that allows the customer to analyze different vendors (for example, AWS, GCP, Azure) to see possible vulnerabilities.
 
-### Vendor configuration
+## Data sources
 
-**Account Level**. The integration must be configured with the Access Key ID and Secret Access Key. Refer to the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for guidance to create the Access Key ID and Secret Access Key.
+The Azure Cloud inventory has the following list of tables supported:
+https://hub.cloudquery.io/plugins/source/cloudquery/azure/latest/tables.
 
-**Organization Level**. The integration must be configured with the Access Key ID, Secret Access Key, Admin Role ARN, and Member Role Name. Refer to the [CloudQuery documentation](https://www.cloudquery.io/blog/deploying-cloudquery-into-aws-org) for guidance to create the Admin Role ARN and Member Role Name.
+Based on the services, we will collect data from the tables as mentioned above.
 
-### Source configuration
 
-When you create an CloudQuery source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+## User configuration
 
-To configure a CloudQuery Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
-1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **CloudQuery**.
-1. Enter a **Name** for the source. The description is optional.
-1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. Select the configuration type from the given two options: Account Level and Organization Level.
-1. **AWS Access Key ID**. Enter the Access Key ID collected from the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
-1. **AWS Secret Access Key**. Enter the Secret Access Key collected from the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
-1. **Admin Role ARN (Organization Level only)**. Enter the full ARN of the Admin Role collected from the [CloudQuery AWS role deployment](https://www.cloudquery.io/blog/deploying-cloudquery-into-aws-org) steps.
-1. **Member Role Name (Organization Level only)**. Enter the member role name collected from the [CloudQuery AWS role deployment](https://www.cloudquery.io/blog/deploying-cloudquery-into-aws-org) steps.
-1. **Regions**. Identify and enter your Region based on your Base URL.
-1. **Services**. Enter the type of service from which the data needs to be collected.
-1. By default, **Polling Interval** is set to 12 hours.
-1. When you are finished configuring the Source, click **Save**.
-
-## JSON schema
+### JSON configuration
 
 Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [Use JSON to configure Sources](/docs/send-data/use-json-configure-sources) for details. 
 
-| Parameter | Type | Value | Required | Description |
-|:--|:--|:--|:--|:--|
-| schemaRef | JSON Object  | `{"type":"CloudQuery"}` | Yes | Define the specific schema type. |
-| sourceType | String | `"Universal"` | Yes | Type of source. |
-| config | JSON Object | [Configuration object](#configuration-object) | Yes | Source type specific values. |
+| Parameter | Type | Required | Description | Access |
+|:---|:---|:---|:---|:---|
+| config | JSON object | Yes | It contains the configuration parameter for the source |  |
+| schemaRef | JSON object | Yes | Use {“type”: CloudQuery Azure Inventory } | Not modifiable |
+| sourceType | string | Yes | Use universal for CloudQuery Azure Inventory | Not modifiable |
 
-### Configuration Object
 
-| Parameter | Type | Required | Default | Description | Example |
-|:--|:--|:--|:--|:--|:--|
-| name | String | Yes | `null` | Type a desired name of the source. The name must be unique per Collector. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_source`. | `"mySource"` |
-| description | String | No | `null` | Type a description of the source. | `"Testing source"`
-| category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
-| fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| awsId | String | Yes | `null` | The AWS access ID that you want to use to authenticate collection requests.  |  |
-| awsKey | String | Yes | `null` | The AWS secret key that you want to use to authenticate collection requests. |  |
-| adminRoleArn | String | Yes | `null` | ARN of an admin account. |  |
-| memberRoleName | String | Yes | `null` | Role name that CloudQuery should use to assume a role in the member account from the admin account. |  |
-| limitToRegions | Array | Yes |  | List of regions for which the data has to be fetched. |  |
-| limitToServices | Array | Yes |  | List of services for which the data has to be fetched. |  |
-| pollingInterval | Integer | No | 12 | This sets how often the Source checks for data. |  |
+### Configuration parameters
 
-### JSON example
+| Parameter | Type | Required | Default | Description | Access |
+|:---|:---|:---|:---|:---|:---|
+| name | string | No |  | Type the desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field _source. | Modifiable |
+| description | string | No |  | Type a description of the Source. | Modifiable |
+| clientId | string | Yes |  | It’s a unique identifier assigned to an application that is registered with Azure AD | Modifiable |
+| clientSecret | string | Yes |  | It’s a secure password that an application uses to authenticate with Azure services | Modifiable |
+| tenantId | string | Yes |  | It’s a unique identifier assigned that represents a specific instance of Azure AD | Modifiable |
+| subscriptionId | array | No |  | It’s a unique identifier that ties Azure services to an Azure account | Modifiable |
+| services | array | Yes |  | List of services for which the data has to be fetched. Available Options: compute, storage | Modifiable |
+| pollingInterval | string | Yes | 12h | The time interval after the source will check for new data | Modifiable |
 
-#### Config example
+
+## Config JSON example
 
 :::note
 If the subscription ID is not specified, it will use all visible subscriptions.
