@@ -45,8 +45,7 @@ To customize the visual appearance of the graph, do the following:
     * **Line Type**. Boundary line of the outlier region.
     * **Fill Opacity**. Denseness of the fill color in the outlier region.
     * **Line Thickness**. Thickness of the line bordering the outlier region.
-    * **Marker Color**. Color of the marker for an outlier peak value.
-<br/><img src={useBaseUrl('/img/dashboards-new/locate-deviations/Outlier_Visual_Settings.png')} alt="Outlier_Visual_Settings.png" style={{border: '1px solid gray'}} width="300" />
+    * **Marker Color**. Color of the marker for an outlier peak value. <br/><img src={useBaseUrl('/img/dashboards-new/locate-deviations/Outlier_Visual_Settings.png')} alt="Outlier_Visual_Settings.png" style={{border: '1px solid gray'}} width="300" />
 1. In the upper right corner, click **Add to Dashboard**.<br/><img src={useBaseUrl('/img/dashboards-new/locate-deviations/AddPanel_Add_to_Dashboard.png')} alt="AddPanel_Add_to_Dashboard.png" style={{border: '1px solid gray'}} width="300" />
 
 <br/>The panel appears on your dashboard.<br/><img src={useBaseUrl('/img/dashboards-new/locate-deviations/Outlier_Panel_on_Dashboard.png')} alt="Outlier_Panel_on_Dashboard" style={{border: '1px solid gray'}} width="700" />
