@@ -178,7 +178,7 @@ To resolve this:
 
 1. Go to **Setup\>Administration\>Users\>Profile**.
 1. Edit specific Profile which is assigned to the user
-1. Go to: **Administrative Permissions** and enable / disable **View Setup and Configuration**. **View Setup and Configuration** should be enabled for access to SetupAuditTrail.
+1. Go to **Administrative Permissions** and enable / disable **View Setup and Configuration**. **View Setup and Configuration** should be enabled for access to SetupAuditTrail.
 
 :::note
 If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
