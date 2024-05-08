@@ -73,10 +73,10 @@ For example, a single message for the "Collector" volume data may look similar t
 {"field":"epd_pr_inf","dataTier":"Infrequent","sizeInBytes":2204671,"extractedAndCollectedFieldsSize":1426875,"count":8864}
 ```
 
-For example, a single message for the "Collector" volume data may look similar to the following flex data, with `field`, `dataTier`, `sizeInBytes`,` and count` values for those five minutes.
+For example, a single message for the "Collector" volume data may look similar to the following flex data, with `field`, `dataTier`, `sizeInBytes`, `extractedAndCollectedFieldsSize`, and `count` values for those five minutes.
 
 ```
-{"field": "part_a","dataTier": "Flex","sizeInBytes": 13754115,"count": 10255}
+{"field": "part_a","dataTier":"Flex","sizeInBytes":13754115,"extractedAndCollectedFieldsSize":6835091,"count":10255}
 ```
 
 ## Examples
