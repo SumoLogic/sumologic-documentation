@@ -32,9 +32,8 @@ Sumo Logic [Explore](/docs/dashboards/explore-view) is an out-of-the-box view t
 
 To navigate and analyze your Kubernetes environment, do the following:
 
-1. Log in to Sumo Logic and click **+ New** on the top menu bar.
-1. From the dropdown menu, choose **Explore**. 
-1. At the top of the navigation panel, click **Explore By** to expand the menu and make a selection for the top level hierarchy. The contents of your selection appear below.<br/>![Explore_By_Options.png](/img/kubernetes/Explore_By_Options.png)
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Infrastructure Monitoring > Kubernetes**. You can also click the **Go To...** menu at the top of the screen and select **Kubernetes**.  Kanso-->
+1. In the upper-left corner of the screen, select the Kubernetes view you want from the dropdown menu.
 1. Click the arrow to the left of a content name to expand and view its contents.<br/> ![Explore_cluster_contents.png](/img/kubernetes/Explore_cluster_contents.png)
 1. Dead entities are shown faded:<br/> ![faded entityexplore.png](/img/kubernetes/faded-entity-explore.png)
 1. Drill down into the clusters to view the pods and containers. The data for your selection is displayed in the panels of the dashboard on the right.<br/> ![Explore_Drill-Down.png](/img/kubernetes/Explore_Drill-Down.png)
@@ -163,8 +162,7 @@ The following task shows you how to create a custom field for a collector. In 
 
 To add a custom field to a collector, do the following:
 
-1. From the main Sumo Logic page, select **Manage Data > Collection** in the left menu bar.<br/>  ![K8s_Key-value-pair_Collection-option.png](/img/kubernetes/K8s_Key-value-pair_Collection-option.png)
-1. Click **Collection** at the top left of the window to view a list of available data collectors.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**.  Kanso-->
 1. Select the collector to which you want to add a custom key-value pair. In this example, we've selected the Falco collector.<br/> ![MM_Collection_Select_Collector.png](/img/kubernetes/MM_Collection_Select_Collector.png)<br/>
     The Edit Collector dialog appears.
 1. Click **Add Field**.<br/>  ![MM_Add-Field.png](/img/kubernetes/MM_Add-Field.png)
@@ -181,8 +179,8 @@ In this section, you'll learn how to use metadata to search by components of t
 
 To use metadata to view Kubernetes components and display Kubernetes label results, do the following:
 
-1. On the Home page, click **+New** to open a query.<br/>  ![MWT_New+.png](/img/kubernetes/MWT_New.png)
-1. Select **Log Search**, and then indicate the metadata namespace. In this example, we entered `namespace=sumologic`.<br/>  ![MWT_namespace=sumologic.png](/img/kubernetes/MWT_namespace.png)
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Log Search**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Logs > Log Search**. You can also click the **Go To...** menu at the top of the screen and select **Log Search**.  Kanso-->
+1. Indicate the metadata namespace. In this example, we entered `namespace=sumologic`.<br/>  ![MWT_namespace=sumologic.png](/img/kubernetes/MWT_namespace.png)
 1. Click **Start** to run the query, then under Hidden Fields on the Messages tab, click **namespace** to display the metadata for that Kubernetes component. Notice that the namespace field moves Hidden Fields to Display Fields.<br/>  ![MWT_namespace_Display_Fields.png](/img/kubernetes/MWT_namespace_Display_Fields.png)
 1. To view metadata for a key-value pair, enter the key-value pair in the query text field. In our example, we wanted to view the metadata for the prometheus container and entered `container=prometheus`.
 1. Then we expanded the search range by changing the time interval from the last 15 minutes to the **Last 60 minutes**.

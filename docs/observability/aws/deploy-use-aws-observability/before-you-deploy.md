@@ -111,15 +111,15 @@ This step is not necessary if you already have an Installed Collector and Host M
 
 Perform these steps for each EC2 host.
 
-1. Set up an Installed Collector. For instructions, see Installed Collectors.
-1. Add a Host Metrics Source to the Installed Collector. For instructions, see Manually Configure a Host Metrics Source. In the **Fields** portion of the configuration::
-1. Add a field named `account`, and set it to your AWS account alias.
-1. Add a field `Namespace` named and set it to `AWS/EC2`. 
-1. Set the **Scan Interval** (the frequency at which the Source is scanned) to 1 minute. 
-
-:::note
-A default Scan Interval of 1 minute is recommended. You can set it to a higher or lower interval as needed. Faster intervals may result in increased consumption cost.
-:::
+1. Set up an Installed Collector. For instructions, see [Installed Collectors](/docs/send-data/installed-collectors/).
+1. Add a Host Metrics Source to the Installed Collector. For instructions, see [Manually Configure a Host Metrics Source](/docs/send-data/installed-collectors/sources/host-metrics-source/#manuallyconfigure-a-host-metrics-source). 
+1. In the **Fields** portion of the configuration:
+   1. Add a field named `account`, and set it to your AWS account alias.
+   1. Add a field `Namespace` named and set it to `AWS/EC2`. 
+   1. Set the **Scan Interval** (the frequency at which the Source is scanned) to 1 minute. 
+    :::note
+     A default Scan Interval of 1 minute is recommended. You can set it to a higher or lower interval as needed. Faster intervals may result in increased consumption cost.
+     :::
 
 To automate the above, see [Add Fields to Existing Host Metrics Sources](../other-configurations-tools/add-fields-to-existing-host-metrics-sources.md). 
 
