@@ -57,7 +57,7 @@ The Consumer Key and Consumer Secret API tokens from Salesforce are required to
      *  Provide the **Callback URL**.
      *  Select OAuth Scope. Access and manage your data (API).  
      *  Under API (Enable OAuth Settings), select **Enable Client Credentials Flow**.
-     *  When you understand the security risks, accept the warning(if prompted).
+     *  When you understand the security risks, accept the warning (if prompted).
      *  Select **Save** and then **Continue**.
      *  After this step, you will get your Consumer Key ("client_id") and Consumer Secret ("client_secret") which you will use to configure the Salesforce source.
      *  Find your connected app, click **Manage**. [Reference](https://help.salesforce.com/s/articleView?id=sf.connected_app_client_credentials_setup.htm&type=5)
