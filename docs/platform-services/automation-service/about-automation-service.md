@@ -50,23 +50,21 @@ Before you can access the Automation Service, you must first [configure role cap
 
 ### From the Sumo Logic screen
 
-1. Go to the main menu.
-1. Click **Automation**. <br/><img src={useBaseUrl('img/platform-services/automation-menu-in-nav-bar-main.png')} alt="Automation menu option in the nav bar" style={{border: '1px solid gray'}} width="250"/> 
-1. The Automation Service screen opens on the **Playbook** tab. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} alt="Playbook screen" style={{border: '1px solid gray'}} width="800"/>
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Automation**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  Kanso-->
+1. The **Playbook** screen is displayed. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} alt="Playbook screen" style={{border: '1px solid gray'}} width="800"/>
 
 ### From Cloud SIEM
 
-1. In the top menu click **Configuration**, and then under **Integrations** select **Automation**.<br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} style={{border:'1px solid gray'}} alt="Automations list" width="800"/>
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the Cloud SIEM top menu select **Configuration**, and then under **Integrations** select **Automation**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Automation**. You can also click the **Go To...** menu at the top of the screen and select **Automation**.  Kanso--> <br/>The list of available automations appears. Each automation runs a playbook.<br/><img src={useBaseUrl('img/cse/automations-automations-list.png')} style={{border:'1px solid gray'}} alt="Automations list" width="800"/>
 1. At the top of the screen, click **Manage Playbooks**.<br/><img src={useBaseUrl('img/cse/automations-manage-playbooks.png')} style={{border:'1px solid gray'}} alt="Manage Playbooks menu option" width="400"/>
-1. The Automation Service screen opens on the **Playbook** tab. <br/><img src={useBaseUrl('img/cse/automations-playbook-list.png')} style={{border:'1px solid gray'}} alt="Automation Playbook list" width="800"/>
+1. The Automation Service screen opens on the **Playbook** tab. <br/><img src={useBaseUrl('img/platform-services/playbook-main-screen.png')} alt="Playbook screen" style={{border: '1px solid gray'}} width="800"/>
 
 ## Prerequisites
 
 ### Configure role capabilities
 
 Access to the Automation Service is controlled by [role capabilities](/docs/manage/users-roles/roles/role-capabilities) in the Sumo Logic platform. To get access to the Automation Service:
-1. In the left navigation bar of Sumo Logic, select **Administration > Users and Roles**.
-1. Click the **Roles** tab. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Administration > Users and Roles** and select the **Roles** tab. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**.  Kanso-->
 1. Click **Add Role** to create a new role for users of the Automation Service. Alternatively, you can select an existing role in the **Roles** tab and click **Edit**.
 1. Add the following capabilities:
    * **Automation Service**
@@ -88,7 +86,7 @@ Access to the Automation Service is controlled by [role capabilities](/docs/mana
 ### Configure the connection for an integration resource
 
 To use [integrations](/docs/platform-services/automation-service/automation-service-integrations), you must configure the connection for their resources. 
-1. Click **Integrations** in the left navigation bar.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Automation** and then select **Integrations** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  Kanso-->
 1. Select the integration whose resource you want to configure the connection for. 
 1. Hover over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cse/automations-edit-resource.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="800"/> 
 1. Enter the connection configuration needed by the resource. (Find the integration in [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations/) for configuration instructions.)<br/>What you enter is specific to the resource you're using. Each resource's configuration screen may be different, but in most cases, you will need information such as IP addresses, API tokens, usernames, and passwords for the application you're integrating with. For example, in the following screen enter the **API URL** and **API Key**. <br/><img src={useBaseUrl('img/cse/automations-edit-resource-2.png')} style={{border:'1px solid gray'}} alt="Edit a resource" width="400"/> 
