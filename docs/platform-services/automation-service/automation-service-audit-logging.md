@@ -15,14 +15,14 @@ Audit logging for the Automation Service uses the same logging as Cloud SOAR, si
 
 ## Search the Audit Event Index
 
-Searching the Audit Event Index is the same as running a normal search against your ingested data. You specify the `_index` metadata field with one of these values: 
+Searching the Audit Event Index is the same as running a normal search against your ingested data. You specify the `_index` metadata field with one of these values:
 
 * `sumologic_audit_events`. This index contains user action events, which are events that were triggered by a user action, either from the UI or an API.
 * `sumologic_system_events`. This index contains system action events, which are events that were triggered by Sumo Logic. For example, this index contains Automation Actions start events, rules triggered, and so on.
 
 ## Automation Service audited events
 
-To search for audit events for a specific feature, use the metadata field `_sourceCategory` with its corresponding value. 
+To search for audit events for a specific feature, use the metadata field `_sourceCategory` with its corresponding value.
 
 For Automation Service (and Cloud SOAR) events, every `_sourceCategory` related to a feature has the prefix `oar`. To limit the events returned to the Automation Service and Cloud SOAR, you can use:
 
@@ -80,7 +80,7 @@ Each audit event log has common keys that categorize it to a product area and pr
 
 To search the Audit Event Index for logs that describe Automation Service events:
 
-1. Open a search tab in the Sumo Logic UI by clicking **+ New** and choosing **Log Search**. <br/><img src={useBaseUrl('/img/search/get-started-search/search-basics/new-log-search-UI-buttons.png')} alt="New log search" width="400"/>
+1. Start a [log search](/docs/search/get-started-with-search/search-basics/about-search-basics/).
 1. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:
     ```sql
     (_index=sumologic_system_events or _index=sumologic_audit_events) _sourceCategory=oar*
@@ -126,8 +126,6 @@ Here is an example `PlaybookExecutionStarted` event log.
 }
 ```
 
-## Index retention period 
+## Index retention period
 
 By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see [Create and Edit a Partition](/docs/manage/partitions/data-tiers/create-edit-partition).  
-   
- 
