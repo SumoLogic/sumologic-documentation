@@ -30,8 +30,7 @@ import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
 
 ### Polling Interval and Salesforce API Rate Limits
 
-During each polling interval, the Salesforce Source will make a Rest API request to Salesforce. Your Salesforce instance will limit the number of calls that can be made based on an API [Requests limit](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm), which is based on your subscription plan. The Salesforce API uses paging
-and a [maximum of 2,000 rows](https://help.salesforce.com/articleView?id=000332074&type=1&mode=1) are returned at a time.
+During each polling interval, the Salesforce Source will make a Rest API request to Salesforce. Your Salesforce instance will limit the number of calls that can be made based on an API [Requests limit](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm), which is based on your subscription plan. The Salesforce API uses paging and a [maximum of 2,000 rows](https://help.salesforce.com/articleView?id=000332074&type=1&mode=1) are returned at a time.
 
 ## Setup
 
