@@ -1014,9 +1014,13 @@ sumologic:
       image:
         repository: docker.io/sumologic/kubernetes-setup
       initContainerImage:
-        repository: docker.io/busybox
+        repository: docker.io/sumologic/busybox
   otelcolImage:
     repository: docker.io/sumologic/sumologic-otel-collector
+  metrics:
+    remoteWriteProxy:
+      image:
+        repository: docker.io/sumologic/nginx-unprivileged
 falco:
   image:
     registry: docker.io
@@ -1024,7 +1028,7 @@ falco:
     initContainers:
       ## Add initContainer to wait until kernel-devel is installed on host
       - name: init-falco
-        image: docker.io/busybox:1.36.0
+        image: docker.io/sumologic:1.36.0
         command:
           - "sh"
           - "-c"
@@ -1050,17 +1054,17 @@ otellogs:
     initContainers:
       changeowner:
         image:
-          repository: docker.io/busybox
+          repository: docker.io/sumologic/busybox
 opentelemetry-operator:
   instrumentation:
     dotnet:
-      repository: docker.io/otel/autoinstrumentation-dotnet
+      repository: docker.io/sumologic/autoinstrumentation-dotnet
     java:
-      repository: docker.io/otel/autoinstrumentation-java
+      repository: docker.io/sumologic/autoinstrumentation-java
     python:
-      repository: docker.io/otel/autoinstrumentation-python
+      repository: docker.io/sumologic/autoinstrumentation-python
     nodejs:
-      repository: docker.io/otel/autoinstrumentation-nodejs
+      repository: docker.io/sumologic/autoinstrumentation-nodejs
   instrumentationJobImage:
     image:
       repository: docker.io/sumologic/kubernetes-tools-kubectl
@@ -1068,18 +1072,17 @@ opentelemetry-operator:
     collectorImage:
       repository: docker.io/sumologic/sumologic-otel-collector
     image:
-      repository: docker.io/otel/opentelemetry-operator
+      repository: docker.io/sumologic/opentelemetry-operator
   kubeRBACProxy:
     image:
-      repository: docker.io/bitnami/kube-rbac-proxy
-      # Ensure the tag is the same like in Sumo Logic Kubernetes Collection Chart, but without `v` prefix
-      tag: 0.15.0
+      repository: docker.io/sumologic/kube-rbac-proxy
+  testFramework:
+    image:
+      repository: docker.io/sumologic/busybox
 tailing-sidecar-operator:
   kubeRbacProxy:
     image:
-      repository: docker.io/bitnami/kube-rbac-proxy
-      # Ensure the tag is the same like in Sumo Logic Kubernetes Collection Chart, but without `v` prefix
-      tag: 0.11.0
+      repository: docker.io/sumologic/kube-rbac-proxy
   operator:
     image:
       repository: docker.io/sumologic/tailing-sidecar-operator
@@ -1089,23 +1092,28 @@ tailing-sidecar-operator:
 telegraf-operator:
   image:
     # Ensure the image tag is the same like in Sumo Logic Kubernetes Collection Chart
-    sidecarImage: docker.io/library/telegraf:1.21.2
-    # There is no recommended Docker Hub image for Telegraf Operator
-    # repository: 
+    sidecarImage: docker.io/sumologic/telegraf:1.21.2
+    repository: docker.io/sumologic/telegraf-operator
 kube-prometheus-stack:
   prometheus-node-exporter:
     image:
-      repository: docker.io/prom/node-exporter
+      repository: docker.io/sumologic/node-exporter
   kube-state-metrics:
     image:
-      repository: docker.io/bitnami/kube-state-metrics
-      # Ensure the tag is the same like in Sumo Logic Kubernetes Collection Chart, but without `v` prefix
-      tag: 2.7.0
+      repository: docker.io/sumologic/kube-state-metrics
+  prometheusOperator:
+    image:
+      repository: docker.io/sumologic/prometheus-operator
+  prometheus:
+    prometheusSpec:
+      image:
+        repository: docker.io/sumologic/prometheus
+pvcCleaner:
+  job:
+    image:
+      repository: docker.io/sumologic/kubernetes-tools-kubectl
+debug:
+  sumologicMock:
+    image:
+      repository: docker.io/sumologic/sumologic-mock
 ```
-
-:::note
-
-Not all of the images are maintained by Sumo Logic and not all the vendors provides their images on Docker Hub.
-We suggest the most similar images but we do not guarantee that they will work exactly the same, but they should.
-
-:::
