@@ -20,16 +20,14 @@ import ExampleJSON from '/files/c2c/cloudquery-azure-plugin/example.json';
 import MyComponentSource from '!!raw-loader!/files/c2c/cloudquery-azure-plugin/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/send-data/cloudquery-logo.png')} alt="cloudquery-icon" width="70" />
+<img src={useBaseUrl('img/send-data/cloudquery-logo.png')} alt="cloudquery-icon" width="40" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-logo.png')} alt="azure-icon" width="40" />
 
-<!-- add Azure logo after https://github.com/SumoLogic/sumologic-documentation/pull/4055 published -->
-
-The CloudQuery integration is used to pull inventory from the Azure APIs using CloudQuery SDK and send it to Sumo Logic.
+You can use the CloudQuery integration to pull inventory from Azure APIs using CloudQuery SDK and send it to Sumo Logic.
 
 import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
 
 <FedDeploymentNote/>
-
 
 ## About Vendor
 
@@ -41,7 +39,6 @@ The Azure Cloud inventory has the following list of tables supported:
 https://hub.cloudquery.io/plugins/source/cloudquery/azure/latest/tables.
 
 Based on the services, we will collect data from the tables as mentioned above.
-
 
 ## User configuration
 
@@ -69,7 +66,6 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | services | array | Yes |  | List of services for which the data has to be fetched. Available Options: compute, storage | Modifiable |
 | pollingInterval | string | Yes | 12h | The time interval after the source will check for new data | Modifiable |
 
-
 ## Config JSON example
 
 :::note
@@ -79,10 +75,6 @@ If the subscription ID is not specified, it will use all visible subscriptions.
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
 [Download example](/files/c2c/cloudquery-azure-plugin/example.json)
-
-## Limitations
-
-N/A
 
 ## FAQ
 
