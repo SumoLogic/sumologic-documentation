@@ -1,12 +1,10 @@
 ---
 slug: /integrations/security-threat-detection
 title: Security and Threat Detection
-description: Learn about Sumo apps for Security and Threat Detection.
+description: Learn how to use Sumo Logic apps for Security and Threat Detection.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<img src={useBaseUrl('img/icons/security/detect-insider-threats.png')} alt="thumbnail icon" width="45"/>
 
 Sumo Logic provides a variety of apps for security products and platforms, from firewalls and endpoint protection to security automation and orchestration. This guide has documentation for those apps.  
 
@@ -87,12 +85,6 @@ Sumo Logic provides a variety of apps for security products and platforms, from 
   <div className="container">
   <a href="/docs/integrations/security-threat-detection/imperva-incapsula"><img src={useBaseUrl('img/integrations/security-threat-detection/imperva.png')} alt="thumbnail icon" width="70"/><h4>Imperva Incapsula</h4></a>
   <p>A guide to the Sumo Logic app for Imperva Incapsula.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/integrations/security-threat-detection/keeper-security"><img src={useBaseUrl('img/integrations/security-threat-detection/keeper.png')} alt="thumbnail icon" width="125"/><h4>Keeper Security</h4></a>
-  <p>A guide to the Sumo Logic app for Keeper Security.</p>
   </div>
 </div>
 <div className="box smallbox card">

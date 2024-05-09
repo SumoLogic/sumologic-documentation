@@ -28,22 +28,8 @@ Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuiti
 
 To open Explore and AWS Observability View, go to [AWS Observibility tab](/docs/observability/aws) in the home page or do the following:
 
-1. Sign in to Sumo Logic and click **+ New** on the top menu bar.
-1. From the dropdown menu, choose **Explore**. 
-
-    ![Explorer.png](/img/observability/Explorer.png)
-
-    The Explore navigation panel appears on the left.
-
-1. Click the **Explore By** arrow and select **AWS Observability** from
-    the dropdown menu.
-
-    ![OS_Explore_By_menu.png](/img/observability/OS_Explore_By_menu.png)
-
-    An expandable list of your AWS environment hierarchy appears in the
-    Explore panel.
-
-    ![OS_AWS_Observability_Hierarchy_collapsed.png](/img/observability/OS_AWS_Observability_Hierarchy_collapsed.png)
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. Then click the **Explore By** arrow and select **AWS Observability** from the dropdown menu. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Infrastructure Monitoring > AWS Observability**. You can also click the **Go To...** menu at the top of the screen and select **AWS Observability**.  Kanso-->
+1. In the navigation panel, make a selection for the hierarchy to view. The contents of your selection appear below.
 
 ## Navigate the AWS Observability Hierarchy
 
@@ -79,7 +65,7 @@ For details, see [Drill down to discover root causes](../../../dashboards/drill-
 
 ## Troubleshooting with the AWS Observability Root Cause Explorer Dashboards
 
-To troubleshoot production incidents using Root Cause Explorer, please follow the instructions in [the Root Cause Explorer documentation.](/docs/observability/root-cause-explorer.md). 
+To troubleshoot production incidents using Root Cause Explorer, follow the instructions in [the Root Cause Explorer documentation](/docs/observability/root-cause-explorer.md). 
 
 ## Viewing AWS Observability Solution Dashboards
 

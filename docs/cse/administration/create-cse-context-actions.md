@@ -57,7 +57,7 @@ import Iframe from 'react-iframe'; 
 
 ## Configure a Context Action
 
-1. In the top menu click **Configuration**, and then under **Integrations** select **Context Actions**.
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Configuration**, and then under **Integrations** select **Context Actions**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the top menu select **Configuration**, and then under **Cloud SIEM Integrations** select **Context Actions**. You can also click the **Go To...** menu at the top of the screen and select **Context Actions**.  Kanso-->
 1. On the **Context Actions** page click **Create**.
 1. This annotated screenshot shows a previously configured Context Action in edit mode.  <br/><img src={useBaseUrl('img/cse/configured-action.png')} alt="Configure action" style={{border: '1px solid gray'}} width="500"/>
     1. Name. Enter a name for the Context Action. 

@@ -33,18 +33,6 @@ If your Cloud SOAR instance URL matches the pattern `*.soar.sumologic.com`, this
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/cloud-soar/global-functions-menu"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="icon" width="40"/><h4>Global Functions Menu</h4></a>
-  <p>Cloud SOAR configuration and administrative options.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/cloud-soar/main-menu"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="icon" width="40"/><h4>Main Menu</h4></a>
-  <p>Cloud SOAR operational functions.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/cloud-soar/incidents-triage"><img src={useBaseUrl('img/icons/security/soar-2-color-icon.png')} alt="icon" width="40"/><h4>Incidents and Triage</h4></a>
   <p>Customize your Cloud SOAR Incident data display.</p>
   </div>
