@@ -48,23 +48,23 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Description | Access |
 |:---|:---|:---|:---|:---|
-| config | JSON object | Yes | It contains the configuration parameter for the source |  |
+| config | JSON object | Yes | It contains the configuration parameter for the source. |  |
 | schemaRef | JSON object | Yes | `{"type":"CloudQuery Azure Inventory"}` | Not modifiable |
-| sourceType | string | Yes | Use universal for CloudQuery Azure Inventory | Not modifiable |
+| sourceType | string | Yes | Use universal for CloudQuery Azure Inventory. | Not modifiable |
 
 
 ### Configuration parameters
 
 | Parameter | Type | Required | Default | Description | Access |
 |:---|:---|:---|:---|:---|:---|
-| name | string | No |  | Type the desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field _source. | Modifiable |
+| name | string | No |  | Type the desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | Modifiable |
 | description | string | No |  | Type a description of the Source. | Modifiable |
-| clientId | string | Yes |  | It’s a unique identifier assigned to an application that is registered with Azure AD | Modifiable |
-| clientSecret | string | Yes |  | It’s a secure password that an application uses to authenticate with Azure services | Modifiable |
-| tenantId | string | Yes |  | It’s a unique identifier assigned that represents a specific instance of Azure AD | Modifiable |
-| subscriptionId | array | No |  | It’s a unique identifier that ties Azure services to an Azure account | Modifiable |
-| services | array | Yes |  | List of services for which the data has to be fetched. Available Options: compute, storage | Modifiable |
-| pollingInterval | string | Yes | 12h | The time interval after the source will check for new data | Modifiable |
+| clientId | string | Yes |  | It’s a unique identifier assigned to an application that is registered with Azure AD. | Modifiable |
+| clientSecret | string | Yes |  | It’s a secure password that an application uses to authenticate with Azure services. | Modifiable |
+| tenantId | string | Yes |  | It’s a unique identifier assigned that represents a specific instance of Azure AD. | Modifiable |
+| subscriptionId | array | No |  | It’s a unique identifier that ties Azure services to an Azure account. | Modifiable |
+| services | array | Yes |  | List of services for which the data has to be fetched. Available Options: compute, storage. | Modifiable |
+| pollingInterval | string | Yes | 12h | The time interval after the source will check for new data. | Modifiable |
 
 ## Config JSON example
 
