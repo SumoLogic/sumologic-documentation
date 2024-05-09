@@ -10,22 +10,24 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The **Automation** section contains the configuration tools for Cloud SOAR's automation and orchestration features. These tools include Cloud SOAR's Open Integration Framework (OIF), automation rules sets, and playbook editor as well as incoming event details.
 
-To access this section, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation**.
-
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access Automation, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Automation**. 
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access Automation, in the main Sumo Logic menu select **Automation**. 
+ Kanso-->
 ## App Central
 
 App Central allows you to unlock the full Cloud SOAR potential. From this section, you can search and add new integrations, new playbooks, and even complete use cases with all the components needed (automation rules, integrations and playbooks) in one place.
 
-While browsing available integrations, you can check the details and all the actions available and install it.
-
-For a complete list of integrations and their documentation, see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations).
-
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access App Central, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **App Central** in the left nav bar.
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access App Central, in the main Sumo Logic menu select **Automation > App Central**. You can also click the **Go To...** menu at the top of the screen and select **App Central**. 
+ Kanso-->
 ### App Central UI
 
 <img src={useBaseUrl('img/cloud-soar/appcentral.png')} alt="App Central" style={{border: '1px solid gray'}} width="800"/>
 
 1. **Playbooks**. Click to view [playbooks](#playbook) in App Central that are available to install.
-1. **Integrations**. Click to view [integrations](#integrations) in App Central that are available to install.
+1. **Integrations**. Click to view [integrations](#integrations) in App Central that are available to install. While browsing available integrations, you can check the details and install it. For a complete list of integrations and their documentation, see [Integrations in App Central](/docs/platform-services/automation-service/app-central/integrations).
 1. **Search**. Search for integrations or playbooks to install.
 1. **Current hour actions count**. Shows how many playbook actions have been executed in the current hour in your organization. By default, the actions limit is set to 200 per hour. For more information, see [Actions limit](#actions-limit).
 1. **Install**. Click to install an integration or install a playbook. Once an integration is installed, the text changes to **Installed**. If an update of the integration is available, the text changes to **Update**.
@@ -123,7 +125,6 @@ If you create a custom integration that you would like to make available for oth
 The integration should be for a commercial product for which no integration exists in App Central, or be a general purpose integration. Sumo Logic will not add integrations to App Central that can only be used by one customer. 
 
 1. Ask your Sumo Logic account representative to engage the Professional Services team. The Professional Services team member will guide you through the process of submitting an integration for publication in App Central. 
-1. Select **Automation** from the gear icon in the upper-right corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-automation-menu.png')} alt="Access Automation" width="150"/>
 1. Select **Integrations** from the navigation menu at the left of the screen.
 1. Select your custom integration.
 1. Hover the mouse over your custom integration and click the **Export** button that appears to the right. This exports the integration's YAML files to a tar.gz archive file.<br/><img src={useBaseUrl('img/cloud-soar/export-button.png')} alt="Export button" width="100"/>
@@ -137,6 +138,10 @@ A **Playbook** is a predefined set of actions or tasks to respond to a certain e
 
 Playbooks are automated workflows which can be configured to execute automatically without user intervention, acting on information from the incident, or can be executed in interactive mode, where user input is required to authorize predefined actions.
 
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access playbooks, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Playbooks** in the left nav bar.
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access playbooks, in the main Sumo Logic menu select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**. 
+ Kanso-->
 Watch this micro lesson to learn how to create custom playbooks.
 
 <Iframe url="https://www.youtube.com/embed/pcDm71wGyGs?rel=0"
@@ -152,7 +157,7 @@ Watch this micro lesson to learn how to create custom playbooks.
 
 ### Configure a new playbook
 
-1. Click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation**. A list of any previously created Playbooks will be displayed on the left side of the page. 
+1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Playbooks** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  Kanso-->
 1. At the top of the screen next to **Playbook**, click **+** to add a new playbook. <br/>A new configuration box will be displayed. 
 1. Name your new playbook, select the **Type** to associate with it, and click **Create**. 
 1. Once the new playbook has been saved, it will be displayed on the left side of the screen. To begin to configure the new playbook, select it from the list and click the **Edit** button at the bottom of the screen. 
@@ -348,47 +353,31 @@ Incident templates define the way in which incidents will be created for a speci
 
 ### Create a new template
 
-To create a new template, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation > Incident Templates**.
-
-<img src={useBaseUrl('img/cloud-soar/image91.png')} alt="Add template" width="800"/>
-
-From the Incident Templates page, you'll find all previously created templates on the left-side of the screen. To add a new Incident Template, click **+** to proceed.
-
-<img src={useBaseUrl('img/cloud-soar/image92.png')} alt="New Incident Template" width="400"/>
-
-A new configuration box is displayed. As seen in our previous configurations, you will need to name your template. Make sure it is something easily identifiable and related to the activity it is developed for. The next section is asking for a **Category**. This field, as well as all other fields within the Cloud SOAR platform, can be customized to fit the user's environment (see [Custom Fields](#custom-fields)).
-
-In our example, we're building an Incident Template for a DLP incident. The category we chose is titled **Data Theft** but can be called anything in which we choose to identify it as. Users also have the option to add **Tags** which can be used to further categorize of define the incident, and can be used when searching for or correlating events. Once our template is named and categorized, click **Next** to continue.
-
-Under the **Incident** tab administrators may define any incident parameters they wish to set by default when an incident is creating using the template. This often includes parameters such as type, kind and severity. All variables marked with an asterisk (*) are required to complete the Incident Template (see [**Custom Fields**](#custom-fields) to adjust the fields requirements). As mentioned earlier, all fields are customizable via the **Custom Fields** section. Once all required variables have been defined, click **Next** to continue.
-
-<img src={useBaseUrl('img/cloud-soar/image93.png')} alt="Create incident template" width="400"/>
-
-The remaining tabs in the Incident Template dialogue are as follows:
-- **Incident details**: To set up details for a specific incident type.
-- **Description**: Free text area to describe details of the template.
-- **Playbook**: Playbook which should be automatically assigned to an incident. For each playbook, user can choose to have the Playbook automatically execute immediately upon incident creation or assigned and wait for manual execution.
-- **Investigators**: Investigators who should be automatically assigned to the incident.
-- **Notes**: Notes which should be created for the incident.
-
-### Custom Fields
-
-**Custom Fields** allows administrators to edit existing fields as well as add new fields for almost every section of Cloud SOAR. All Cloud SOAR sections which permit custom fields are displayed on the left-hand side of the page. Clicking on any one of these sections will display all current fields for that section on the right-hand side of the page. Any existing field may be edited, to include changing the name or adding list values. The only attribute which cannot be changed is the type of the field, such as text or date. New fields may also be added from this page.
-
-The **Integrations** section allows administrators to configure bidirectional integrations with third-party technologies, as well as view the supported actions for each integration. In addition, this section allows administrators to manage custom scripts, which can be written in Python, Perl, PowerShell or Bash.
+1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Incident templates** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Template**. You can also click the **Go To...** menu at the top of the screen and select **Template**.  Kanso-->
+1. From the Incident Templates page, you'll find all previously created templates on the left-side of the screen. To add a new Incident Template, click **+** to proceed.<br/><img src={useBaseUrl('img/cloud-soar/image91.png')} alt="Add template" width="800"/>
+1. A new configuration box is displayed. <br/><img src={useBaseUrl('img/cloud-soar/image92.png')} alt="New Incident Template" width="400"/>
+1. As seen in our previous configurations, you will need to name your template. Make sure it is something easily identifiable and related to the activity it is developed for. The next section is asking for a **Category**. This field, as well as all other fields within the Cloud SOAR platform, can be customized to fit the user's environment (see [Custom Fields](#custom-fields)).
+1. In our example, we're building an Incident Template for a DLP incident. The category we chose is titled **Data Theft** but can be called anything in which we choose to identify it as. Users also have the option to add **Tags** which can be used to further categorize of define the incident, and can be used when searching for or correlating events. Once our template is named and categorized, click **Next** to continue.
+1. Under the **Incident** tab administrators may define any incident parameters they wish to set by default when an incident is creating using the template. This often includes parameters such as type, kind and severity. All variables marked with an asterisk (*) are required to complete the Incident Template (see [**Custom Fields**](#custom-fields) to adjust the fields requirements). As mentioned earlier, all fields are customizable via the **Custom Fields** section. Once all required variables have been defined, click **Next** to continue. <br/><img src={useBaseUrl('img/cloud-soar/image93.png')} alt="Create incident template" width="400"/>
+    <br/>The remaining tabs in the Incident Template dialogue are as follows:
+    - **Incident details**: To set up details for a specific incident type.
+    - **Description**: Free text area to describe details of the template.
+    - **Playbook**: Playbook which should be automatically assigned to an incident. For each playbook, user can choose to have the Playbook automatically execute immediately upon incident creation or assigned and wait for manual execution.
+    - **Investigators**: Investigators who should be automatically assigned to the incident.
+    - **Notes**: Notes which should be created for the incident.
 
 ### Creating incidents from automation rules
 
-Cloud SOAR can ingest, parse, and process incident data from email, syslog and bidirectional integrations. For Cloud SOAR to begin processing incident data from these sources, the **Automation Rules** features need to be configured.
-
-To access, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation** > __Rules__.
-
-<img src={useBaseUrl('img/cloud-soar/image94.png')} alt="Automation menu" width="200"/>
+Cloud SOAR can ingest, parse, and process incident data from email, syslog and bidirectional integrations. For Cloud SOAR to begin processing incident data from these sources, the [**Automation Rules**](#rules) features need to be configured.
 
 ## Integrations
 
-Cloud SOAR's orchestration and automation capabilities are achieved through its unidirectional and bidirectional integrations with the industry's leading network and security vendors. To configure, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" width="20"/>) > **Automation** > **Integrations**.
+Cloud SOAR's orchestration and automation capabilities are achieved through its unidirectional and bidirectional integrations with the industry's leading network and security vendors. 
 
+<!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> To access integrations, click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. 
+<!--Kanso 
+[**New UI**](/docs/cloud-soar/overview#new-ui). To access integrations, in the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**. 
+ Kanso-->
 <img src={useBaseUrl('img/cloud-soar/image62.png')} alt="Integrations" width="800"/>
 
 A list of available integrations within the organization can be found to the left-side of the screen. To begin to configure, click on a product to continue.
@@ -441,8 +430,7 @@ See [Integration Framework](#integration-framework) for more details on utilizin
 
 You can build basic integrations without having to provide custom YAML files.
 
-1. Click the gear icon in the upper-right corner and select **Automation**. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-automation-menu.png')} alt="Access Automation" width="150"/>
-1. Select **Integrations** from the navigation menu at the left of the screen.
+1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  Kanso-->
 1. Select the **+** icon at the top of the screen to the left of **Integrations**.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-add-integration-button.png')} alt="Add Integration button" width="300"/>
 1. Fill out the **New Integration** dialog:
    1. Upload a **Logo** for your integration.
@@ -472,7 +460,7 @@ You can build basic integrations without having to provide custom YAML files.
 
 You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-soar/) to allow you to send an alert from a scheduled search to Sumo Logic Cloud SOAR.
 
-1. In Sumo Logic, go to **Manage Data > Monitoring > Connections**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. Kanso-->
 1. Click **+** and choose **Cloud SOAR** as the connection type. The **Create Cloud SOAR Connection** dialog is displayed.<br/><img src={useBaseUrl('img/cloud-soar/CSOAR-connection1.png')} alt="New connection" style={{border: '1px solid black'}} width="600"/> 
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. The **URL** field shows your [Sumo Logic API endpoint](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) followed by `/csoar/v3/incidents/`. For example, `https://api.us2.sumologic.com/api/csoar/v3/incidents/`
@@ -516,8 +504,7 @@ You can configure a [webhook connection](/docs/alerts/webhook-connections/cloud-
 
 You can set integrations, and their related action execution, to be executed in the cloud or through the Bridge. Only certified integrations can be executed in the cloud, while custom integrations must be executed through the [Bridge](/docs/cloud-soar/cloud-soar-bridge/).
 
-1. Select **Automation** from the gear icon in the upper-right corner of the UI. <br/><img src={useBaseUrl('img/cloud-soar/delivery-2-automation-menu.png')} alt="Access Automation" width="150"/>
-1. Select **Integrations** from the navigation menu at the left of the screen.
+1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  Kanso-->
 1. Select an integration.
 1. Hover your mouse over the resource name and click the **Edit** button that appears.<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-resource-button.png')} alt="Resource edit button" width="600"/>
 1. In the **Edit resource** dialog, click the **Automation engine** field to select **Cloud execution** (for certified integrations only) or select a Bridge option (for custom integrations).<br/><img src={useBaseUrl('img/cloud-soar/delivery-2-edit-resource-cloud-execution.png')} alt="Automation engine field" width="400"/>
@@ -575,21 +562,16 @@ After you create a Slack app, you must add the appropriate permissions for use w
       * `chat:write`. Post messages in approved channels and conversations.
 1. Verify that scopes are set up correctly:
    * Here are the Bot Token scopes after configuration:<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-scopes-bot-token-1-delivery2.png')} alt="Bot token 1" style={{border: '1px solid gray'}} width="500"/>
-1. Place your instance URL in the **Interactivity & Shortcuts** page.
-<br/><img src={useBaseUrl('img/cloud-soar/integrations-interactivity-delivery2.png')} alt="Interactivity" style={{border: '1px solid gray'}} width="600"/>
-1. Click **Install to Workspace** to make the app available for use.
-<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-install-to-workspace.png')} alt="Install the app" width="600"/>
-1. Installation generates a Bot User OAuth Token and a Signing Secret. Copy the tokens and keep them in a secure location for use in the next step.
-<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-oauth-token.png')} alt="Bot Oauth token" style={{border: '1px solid gray'}} width="600"/>
-<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-signing-secret.png')} alt="Signing Secret" style={{border: '1px solid gray'}} width="600"/>
+1. Place your instance URL in the **Interactivity & Shortcuts** page. <br/><img src={useBaseUrl('img/cloud-soar/integrations-interactivity-delivery2.png')} alt="Interactivity" style={{border: '1px solid gray'}} width="600"/>
+1. Click **Install to Workspace** to make the app available for use.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-install-to-workspace.png')} alt="Install the app" width="600"/>
+1. Installation generates a Bot User OAuth Token and a Signing Secret. Copy the tokens and keep them in a secure location for use in the next step. <br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-oauth-token.png')} alt="Bot Oauth token" style={{border: '1px solid gray'}} width="600"/> <br/><img src={useBaseUrl('img/cloud-soar/integration-slack-signing-secret.png')} alt="Signing Secret" style={{border: '1px solid gray'}} width="600"/>
 
 ### Step 3: Configure the Slack integration in Cloud SOAR
 
 Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth Token and Signing Secret you saved in the previous step. These tokens will give the Slack integration the permissions it needs to perform the tasks in the scopes you set up.
 
 1. Add resources for the tokens:
-   1. In Cloud SOAR, click the gear icon and select **Automation**.<br/><img src={useBaseUrl('img/cloud-soar/integration-automation-menu-delivery2.png')} alt="Automation option" width="300"/>
-   1. Click **Integrations**.
+   1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Integrations** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Integrations**. You can also click the **Go To...** menu at the top of the screen and select **Integrations**.  Kanso-->
    1. Select the Slack integration. The integration's resources appear.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-in-list.png')} alt="Select the Slack integration" width="800"/>
    1. Click **+** to add a new Resource.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-resources.png')} alt="Add a resource" width="600"/>
    1. Name the resource "Bot User OAuth Access Token".
@@ -597,14 +579,14 @@ Now you must configure the Slack integration in Cloud SOAR to use the Bot OAuth 
    1. Copy the Bot Oauth Token you saved from the Slack API setup and paste it Into the **Bot/User OAuth Token** field.
    1. Once you have filled in all the required fields, click **Save**.
    1. Click **TEST SAVED SETTINGS** to verify configuration.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-bot-user-2.png')} alt="Bot resource" width="400"/>
-1. In Cloud SOAR, at the top of the screen click the gear icon and select **Settings**.<br/><img src={useBaseUrl('img/cloud-soar/integration-settings-menu-delivery2.png')} alt="Settings option" width="300"/>
-1. Click **General**.
-1. Open **Instant Messaging**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-instant-messaging-delivery2.png')} alt="Successful configuration" width="600"/>
-1. For **Integration** select Slack.
-1. Paste your previously saved Bot User OAuth Access Token to the **Bot OAuth** field.
-1. Paste your previously saved Signing Secret to the **Signing Secret for verify requests** field. If configuration is successful, **Workspace** displays "Success".
+1. Configure instant messaging:
+    1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right and select **Settings**. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the top menu select **Administration**, and then under **Cloud SOAR Settings** select **General Settings**. You can also click the **Go To...** menu at the top of the screen and select **General**. Kanso-->
+    1. Scroll down and open **Instant Messaging**.<br/><img src={useBaseUrl('img/cloud-soar/integration-slack-instant-messaging-delivery2.png')} alt="Successful configuration" width="600"/>
+    1. For **Integration** select Slack.
+    1. Paste your previously saved Bot User OAuth Access Token to the **Bot OAuth** field.
+    1. Paste your previously saved Signing Secret to the **Signing Secret for verify requests** field. If configuration is successful, **Workspace** displays "Success".
 
-If your new resources are configured correctly, and Instant Messaging displays a "Success" message for the configured workspace, you can [Use the Slack app in User Choice](#use-the-slack-app-in-user-choice).
+    If your new resources are configured correctly, and Instant Messaging displays a "Success" message for the configured workspace, you can [Use the Slack app in User Choice](#use-the-slack-app-in-user-choice).
 
 ### Use the Slack app in User Choice
 
@@ -630,25 +612,16 @@ Automation rules allow specific data to be parsed from the incoming data sources
 
 ### Creating a rule
 
-Select **Automation Rules** page follows the same format as all customizable Cloud SOAR features, click **+** to create a new automation ruleset:
-
-<img src={useBaseUrl('img/cloud-soar/image95.png')} alt="Add automation rule"  width="400"/>
-
-
-Select a name for the rule, then select the daemon to use with this new rule and the resource and fill all the remain parameters.
-
-In the detail section of the rule you can define filters to be used in the rule and the action to be performed.
-
-The **Action Type** dropdown will contain the specific actions Cloud SOAR can take when the specified activity is observed. Users have the option to take the following actions:
-
-- **Create incident from template**. Specify what [incident template](#incident-templates) to use, the incident owner, and incident ID format. This is the most common action.
-- **Close incident**. Allows for the automatic closure of a known false positive incident
-- **Update incident**. Updates a field in an existing incident based on parameters from the parsed message
-- **Change incident status**. Change the incident status based on parameters from the parsed message
-- **Set task progress**. Set task progress based on parameters from the parsed message
-- **Close task**. Close a task based on parameters from the parsed message
-- **Add to Triage**. Create a new triage event based on parameters from the parsed message
-
-To add a new mapping setting, click on the plus button near Mapping if enable for that action.
-
-<img src={useBaseUrl('img/cloud-soar/image103.png')} alt="Add action"  width="400"/>
+1. <!--Kanso [**Classic UI**](/docs/cloud-soar/overview#classic-ui). Kanso--> Click the gear icon <img src={useBaseUrl('img/cloud-soar/cloud-soar-settings-icon.png')} alt="Settings menu icon" style={{border: '1px solid gray'}} width="25"/> in the top right, select **Automation**, and then select **Rules** in the left nav bar. <!--Kanso <br/>[**New UI**](/docs/cloud-soar/overview#new-ui). In the main Sumo Logic menu select **Automation > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**.  Kanso-->
+1. Click **+** to the left of **Rules**. 
+1. Select a name for the rule, then select the daemon to use with this new rule and the resource and fill all the remain parameters. <br/><img src={useBaseUrl('img/cloud-soar/image95.png')} alt="Add automation rule"  width="400"/>
+1. In the detail section of the rule you can define filters to be used in the rule and the action to be performed.
+1. The **Action Type** dropdown will contain the specific actions Cloud SOAR can take when the specified activity is observed. Users have the option to take the following actions:
+    - **Create incident from template**. Specify what [incident template](#incident-templates) to use, the incident owner, and incident ID format. This is the most common action.
+    - **Close incident**. Allows for the automatic closure of a known false positive incident
+    - **Update incident**. Updates a field in an existing incident based on parameters from the parsed message
+    - **Change incident status**. Change the incident status based on parameters from the parsed message
+    - **Set task progress**. Set task progress based on parameters from the parsed message
+    - **Close task**. Close a task based on parameters from the parsed message
+    - **Add to Triage**. Create a new triage event based on parameters from the parsed message
+1.To add a new mapping setting, click on the plus button near Mapping if enable for that action. <br/><img src={useBaseUrl('img/cloud-soar/image103.png')} alt="Add action"  width="400"/>
