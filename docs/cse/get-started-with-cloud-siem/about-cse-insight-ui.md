@@ -11,8 +11,10 @@ This topic describes the Cloud SIEM UI for working with Insights. 
 
 ## Insights list page
 
-To open the **Insights** page, click the icon to the right of the search bar at the top of the Cloud SIEM UI.
-
+<!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> To open the Insights page, click **Insights** at the top of the screen. 
+<!--Kanso 
+[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). To open the Insights page, in the main Sumo Logic menu select **Cloud SIEM > Insights**. You can also click **Go To...** at the top of the screen and select **Insights**.
+ Kanso-->
 By default, the **Insights** page presents all Insights whose status is not “Closed”, in descending order by event time in a list view. If you’d like to see Insights organized by their status, click the **Show Board** icon near the top right corner of the page. For information about the board view, see [Board view](#board-view).
 
 :::note
@@ -23,11 +25,11 @@ Cloud SIEM displays Insights and the Signals attached to them in the Cloud SIEM 
 
 This screenshot shows the **Insights** page in List view. 
 
-<img src={useBaseUrl('img/cse/insights-page.png')} alt="Insights page" width="800"/>
+<img src={useBaseUrl('img/cse/insights-page.png')} alt="Insights page" style={{border: '1px solid gray'}} width="800"/>
 
 Here’s one row from the List view. The numbered definitions below correspond to the labels in the screenshot.
 
-<img src={useBaseUrl('img/cse/insight-summary.png')} alt="Insight summary" width="800"/>
+<img src={useBaseUrl('img/cse/insight-summary.png')} alt="Insight summary" style={{border: '1px solid gray'}} width="800"/>
 
 1. **Creation date and time**. When the Insight was created.
 1. **Detection time**. The time between when the first event happened (when the first Record in the Insight occurred) and when the Insight was generated. (This differs from "dwell time", which is the time between when the first Record and the last Record occurred in an Insight.)
@@ -53,7 +55,7 @@ The information displayed in the board view is similar to the information in the
 
 You can switch back to the list view by clicking the **Show List** icon, near the top right corner of the Cloud SIEM UI.
 
-<img src={useBaseUrl('img/cse/board.png')} alt="Board view" width="800"/>
+<img src={useBaseUrl('img/cse/board.png')} alt="Board view" style={{border: '1px solid gray'}} width="800"/>
 
 ### Filtering Insights 
 
@@ -80,7 +82,7 @@ From the HUD screen, list view, or board view, click an Insight's name to see it
 
 The left pane of the Insight details page displays detailed information about the selected Insight. Some of the information that appears is the same as what’s in the row for an Insight on the **Insights** page, and is described in [List view,](#list-view) above. The additional information that appears in the details pane is defined below.
 
-<img src={useBaseUrl('img/cse/insight-details.png')} alt="Insight details" width="300"/>
+<img src={useBaseUrl('img/cse/insight-details.png')} alt="Insight details" style={{border: '1px solid gray'}} width="300"/>
 
 1. **Actions.** The [Insight Actions](/docs/cse/administration/create-cse-actions#insight-actions) defined in your environment.
 1. **Close Insight.** Use this option to close an Insight. When you click this option, you’re prompted to select an Insight resolution.
@@ -104,7 +106,7 @@ The left pane of the Insight details page displays detailed information about th
 
 At the top of the Insight details page, you’ll see a Signal timeline that visualizes the Insight’s attached Signals, which are the Signals that caused the Insight to be created, and any Signals that have been manually added to the Insight.
 
-<img src={useBaseUrl('img/cse/top-bit.png')} alt="Signal visualization" width="800"/>
+<img src={useBaseUrl('img/cse/top-bit.png')} alt="Signal visualization" style={{border: '1px solid gray'}} width="800"/>
 
 1. **Signals**. The Signals link allows you to switch back to the Signals view from the Enrichments view, described below. 
 1. **Enrichments**. Click this tab to view any enrichments that have been added to the Insight, including the output of the [Insight Enrichment Server](/docs/cse/integrations/insight-enrichment-server/).
@@ -127,7 +129,7 @@ At the top of the Insight details page, you’ll see a Signal timeline that visu
 
 Below the Signal timeline, you’ll see a list of Signals. By default, only attached Signals are displayed.  
 
-<img src={useBaseUrl('img/cse/signal-list-area.png')} alt="Signal list area" width="600"/>
+<img src={useBaseUrl('img/cse/signal-list-area.png')} alt="Signal list area" style={{border: '1px solid gray'}} width="600"/>
 
 1. **Remove** button. Removes multiple Signals selected with the checkbox. You cannot select all Signals for removal. If you do, the **Remove** button is disabled and this message appears when you hover over it with your mouse: **Bulk removal of Signals is disabled as a minimum of 1 Signal must be attached to the Insight. Deselect 1 or more Signals to enable bulk removal.**
 1. **Checkbox**. Click to select multiple Signals for removal. 
@@ -148,7 +150,7 @@ The **Entities** tab includes two views, the **list** view and the **graph** vie
 
 The screenshot below shows the **Entities** tab **list** view for an Insight.
 
-<img src={useBaseUrl('img/cse/related-entities.jpg')} alt="Related Entities" width="800"/>
+<img src={useBaseUrl('img/cse/related-entities.jpg')} alt="Related Entities" style={{border: '1px solid gray'}} width="800"/>
 
 In this view, the primary Entity is always displayed first. (This is the Entity common to each of the Signals in the Insight). Below the primary Entity all of the related Entities are listed.
 
@@ -198,7 +200,7 @@ The card for an Entity displays any [tags](/docs/cse/records-signals-entities-in
 
 The screenshot below shows the **Entities** tab **graph** view for an Insight.
 
-<img src={useBaseUrl('img/cse/related-entity-graph.jpg')} alt="Related Entities graph" width="800"/>
+<img src={useBaseUrl('img/cse/related-entity-graph.jpg')} alt="Related Entities graph" style={{border: '1px solid gray'}} width="800"/>
 
 By default, this view shows the same entities that are displayed on the list view. However, the system will look for additional relationships outside of the Insight during the detection window to aid in deeper investigation.
 

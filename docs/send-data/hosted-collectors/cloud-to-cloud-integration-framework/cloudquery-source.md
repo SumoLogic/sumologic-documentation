@@ -1,12 +1,18 @@
 ---
 id: cloudquery-source
-title: CloudQuery Source (Beta)
+title: CloudQuery Source
 sidebar_label: CloudQuery
 tags:
   - cloud-to-cloud
   - cloudquery
 description: Learn how to collect inventory from the AWS APIs and transform them into the CloudQuery schema and send it to Sumo Logic.
 ---
+
+<head>
+  <meta name="robots" content="noindex" />
+</head>
+
+<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 import CodeBlock from '@theme/CodeBlock';
 import AccountExampleJSON from '/files/c2c/cloudquery/accountExample.json';
@@ -16,12 +22,6 @@ import OrgComponentSource from '!!raw-loader!/files/c2c/cloudquery/orgExample.js
 import AccountTFExample from '!!raw-loader!/files/c2c/cloudquery/accountExample.tf';
 import OrgTFExample from '!!raw-loader!/files/c2c/cloudquery/orgExample.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<head>
-  <meta name="robots" content="noindex" />
-</head>
-
-<p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 <img src={useBaseUrl('img/send-data/cloudquery-logo.png')} alt="cloudquery-icon" width="70" />
 

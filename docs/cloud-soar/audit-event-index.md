@@ -74,28 +74,28 @@ The table below shows the `_sourceCategory` that is assigned to event logs by Cl
 | [Automation Action](/docs/cloud-soar/automation/#action) | `oarAutomationActions`  |
 | [Automation Daemon/Rules](/docs/cloud-soar/automation/#rules)  | `oarDaemons`  |
 | [Custom Field](/docs/cloud-soar/incidents-triage/#custom-fields) | `oarCustomFields`  |
-| [Dashboard](/docs/cloud-soar/main-menu/#dashboards)  | `oarDashboards` |
+| [Dashboard](/docs/cloud-soar/incidents-triage/#dashboards)  | `oarDashboards` |
 | Email | `oarEmails`  |
-| [Entity](/docs/cloud-soar/main-menu/#entities)  | `oarEntities` |
+| [Entity](/docs/cloud-soar/incidents-triage/#entities)  | `oarEntities` |
 | [Folder](/docs/cloud-soar/incidents-triage/#incident-vip-section)  | `oarFolders`  |
-| [Group](/docs/cloud-soar/global-functions-menu/#groups)  | `oarGroups` |
+| [Group](/docs/cloud-soar/overview/#groups)  | `oarGroups` |
 | [Incident](/docs/cloud-soar/incidents-triage)  | `oarIncidents`   |
 | [Incident Artifact](/docs/cloud-soar/incidents-triage/#incident-artifacts) | `oarIncidentArtifacts`    |
-| [Incident Attachment](/docs/cloud-soar/main-menu/#attachments)  | `oarIncidentAttachments`  |
+| [Incident Attachment](/docs/cloud-soar/incidents-triage/#attachments)  | `oarIncidentAttachments`  |
 | [Incident Investigator](/docs/cloud-soar/incidents-triage) | `oarIncidentInvestigators`  |
 | [Incident Note](/docs/cloud-soar/incidents-triage/#notes)  | `oarIncidentNotes`  |
 | [Incident Template](/docs/cloud-soar/automation/#incident-templates)  | `oarIncidentTemplates`    |
 | [Integration](/docs/cloud-soar/automation/#integrations)   | `oarIntegrations`  |
 | [Integration Resource](/docs/cloud-soar/automation/#integrations)   | `oarIntegrationResources` |
-| [Notification](/docs/cloud-soar/global-functions-menu/#notifications)  | `oarNotifications`|
+| [Notification](/docs/cloud-soar/overview/#notifications)  | `oarNotifications`|
 | [Playbook Execution](/docs/cloud-soar/automation/#playbook-execution)  | `oarPlaybookExecutions`   |
 | [Playbook Revision](/docs/cloud-soar/automation/#playbook-template)  | `oarPlaybookRevisions`    |
-| [Report](/docs/cloud-soar/global-functions-menu/#incident-reports) | `oarReports` |
-| [Setting](/docs/cloud-soar/global-functions-menu/#settings) | `oarSettings`  |
+| [Report](/docs/cloud-soar/incidents-triage/#report) | `oarReports` |
+| [Setting](/docs/cloud-soar/overview/#settings) | `oarSettings`  |
 | [Task](/docs/cloud-soar/incidents-triage/#tasks)  | `oarTasks`  |
 | [Triage](/docs/cloud-soar/incidents-triage/#triage)  | `oarTriage` |
 | [Triage Attachment](/docs/cloud-soar/incidents-triage/#triage)  | `oarTriageAttachments`  |
-| [Widget](/docs/cloud-soar/main-menu/#custom-reports)  | `oarWidgets`  |
+| [Widget](/docs/cloud-soar/incidents-triage/#create-widgets)  | `oarWidgets`  |
 
 ## _sourceName and _sourceHost assignment
 
@@ -126,7 +126,7 @@ area and provide details of the event.
 
 To search the Audit Event Index for logs that describe Cloud SOAR events:
 
-1. Open a search tab in the Sumo Logic UI by clicking **+ New** and choosing **Log Search**. <br/><img src={useBaseUrl('/img/search/get-started-search/search-basics/new-log-search-UI-buttons.png')} alt="New log search" width="400"/>
+1. Start a [log search](/docs/search/get-started-with-search/search-basics/about-search-basics/). 
 1. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:
     ```sql
     (_index=sumologic_system_events or _index=sumologic_audit_events) _sourceCategory=oar*

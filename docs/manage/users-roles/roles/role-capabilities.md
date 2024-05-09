@@ -158,7 +158,7 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | Triage | Edit | Create, edit,and delete triage events. |
 | Triage | Bulk physical delete | Perform bulk deletion of triage events. |
 | Folders | Edit | Create, edit, and delete folders. |
-| Attachments | Access | Access all [attachments](/docs/cloud-soar/main-menu/#attachments). |
+| Attachments | Access | Access all [attachments](/docs/cloud-soar/incidents-triage/#attachments). |
 | Attachments | Edit | Create, edit, and delete attachments. |
 | Incident Playbook | Access | Access all [incident playbooks](/docs/cloud-soar/incidents-triage/#playbooks). |
 | Incident Playbook | Edit | Create, edit, and delete incident playbooks. |
@@ -166,14 +166,14 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | Note | Access | Access all [notes](/docs/cloud-soar/incidents-triage/#notes). |
 | Note | Edit | Create, edit, and delete notes. |
 | War Room | Use | Be able to use the [War Room](/docs/cloud-soar/incidents-triage/#war-room).  |
-| Settings General | Configure | Configure [settings](/docs/cloud-soar/global-functions-menu/#settings). |
-| User Management | Groups | Manage [groups](/docs/cloud-soar/global-functions-menu/#groups). |
-| Notification | Configure | Configure [notifications](/docs/cloud-soar/global-functions-menu/#notifications). |
-| Customization | Logo | Customize the [logo](/docs/cloud-soar/global-functions-menu/#logo). |
-| Customization | Fields | Customize [fields](/docs/cloud-soar/global-functions-menu/#custom-fields). |
+| Settings General | Configure | Configure [settings](/docs/cloud-soar/overview/#general-settings). |
+| User Management | Groups | Manage [groups](/docs/cloud-soar/overview/#groups). |
+| Notification | Configure | Configure [notifications](/docs/cloud-soar/overview/#notifications). |
+| Customization | Logo | Customize the [logo](/docs/cloud-soar/overview/#logo). |
+| Customization | Fields | Customize [fields](/docs/cloud-soar/overview/#custom-fields). |
 | Customization | Incident Labels | Customize incident labels. |
 | Customization | Triage | Customize triage. |
-| Audit and Information | License Information | View license [audit and information](/docs/cloud-soar/global-functions-menu/#audit-and-information). |
+| Audit and Information | License Information | View license [audit and information](/docs/cloud-soar/legacy/legacy-cloud-soar-global-functions-menu/#audit-and-information). |
 | Audit and Information | Audit Trail | View audit trail information. |
 | Audit and Information | Configure Audit Trail | Configure audit trail information. |
 | API | Use | Use [APIs](/docs/api/cloud-soar/). |
@@ -184,14 +184,14 @@ This section is for our Cloud SOAR SaaS version. If you have a legacy Cloud SOAR
 | Incident Templates | Configure | Configure templates. |
 | Automation Rules | Access | Access automation [rules](/docs/cloud-soar/automation/#rules). |
 | Automation Rules | Configure | Configure automation rules. |
-| Entities | Access | Access all [entities](/docs/cloud-soar/main-menu/#entities). |
+| Entities | Access | Access all [entities](/docs/cloud-soar/incidents-triage/#entities). |
 | Entities | Manage | Manage entities. |
 | Entities | Bulk Physical Delete | Perform bulk deletion of entities. |
-| Report | Access | Access your [reports](/docs/cloud-soar/main-menu/#custom-reports). |
+| Report | Access | Access your [reports](/docs/cloud-soar/incidents-triage/#report). |
 | Report | Access all | Access all reports. |
-| Dashboard | Access | Access your [dashboards](/docs/cloud-soar/main-menu/#dashboards). |
+| Dashboard | Access | Access your [dashboards](/docs/cloud-soar/incidents-triage/#dashboards). |
 | Dashboard | Access all | Access all dashboards. |
-| Widgets | Use all | Use all [widgets](/docs/cloud-soar/main-menu/#create-widgets). |
+| Widgets | Use all | Use all [widgets](/docs/cloud-soar/incidents-triage/#create-widgets). |
 
 ### Legacy Cloud SOAR role capabilities
 
