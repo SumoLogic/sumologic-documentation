@@ -20,7 +20,7 @@ Users with the Analyst role have a single capability: View Collectors. Its role 
 
 To create a role:
 
-1. Go to **Administration** > **Users and Roles** > **Roles**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
 1. Click **+ Add Role** on the upper right side of the page.
 1. The **Create New Role** pane appears on the right side of the page.<br/><img src={useBaseUrl('img/users-roles/create-new-role.png')} alt="Create a new role" style={{border: '1px solid gray'}} width="400"/>
 1. **Name**. Enter a name for the role. 
@@ -56,14 +56,14 @@ Keep in mind that these are examples only, and you must adapt them for use in yo
 
 ### Test a role with Search Filter and Index Access defined
 
-1. Go to **Administration** > **Users and Roles** > **Roles**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso--> 
 1. Select a role with **Search Filter** and/or **Index Access** defined. 
 1. Click **Emulate log search**. The search will be emulated for the filtering defined in the role. (In the example below, an index access filter is defined.)<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-index-based.png')} alt="Emulate log search for index filter" style={{border: '1px solid black'}} width="400"/>
 1. Enter your search parameters in the log search emulation window. The search will return only what is allowed by filtering defined in the role.<br/><img src={useBaseUrl('img/users-roles/emulate-log-search-window.png')} alt="Emulate log search window" style={{border: '1px solid black'}} width="800"/>
 
 ## Add a user to a role
 
-1. Go to **Administration** > **Users and Roles** > **Roles**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
 1. Navigate to the role and click the number in the **Users** column.<br/><img src={useBaseUrl('img/users-roles/user-in-role-count.png')} alt="User in role count" style={{border: '1px solid black'}} width="800"/>
 1. A list of users currently assigned to the role appears.<br/><img src={useBaseUrl('img/users-roles/users-assigned-to-role.png')} alt="Users assigned to role" width="350"/>
 1. Click the **Assign Users** field. A list of users that are not currently assigned to the role appears. Click a user’s name to add the user to the role. 
@@ -76,7 +76,7 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 
 ## Remove a user from a role
 
-1. Go to **Administration** > **Users and Roles **\> **Roles**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
 1. Navigate to the role and click the number in the **Users** column.<br/><img src={useBaseUrl('img/users-roles/role-list.png')} alt="Role list" style={{border: '1px solid black'}} width="800"/>
 1. A list of users currently assigned to the role appears. 
 1. Navigate to the user you want to remove from the role, and click the trash can icon in that row.<br/><img src={useBaseUrl('img/users-roles/delete-user-from-role.png')} alt="Remove user from a role" width="350"/>
@@ -88,14 +88,14 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 
 ## See which users are assigned to a role
 
-1. Go to **Administration** > **Users and Roles** > **Roles**.<br/><img src={useBaseUrl('img/users-roles/user-in-role-count.png')} alt="Count of users in a role" style={{border: '1px solid black'}} width="800"/>
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso--><br/><img src={useBaseUrl('img/users-roles/user-in-role-count.png')} alt="Count of users in a role" style={{border: '1px solid black'}} width="800"/>
 1. Navigate to the role and click the number in the **Users** column to see a list of users assigned to the role.
 
 ## Edit a role
 
 To edit a role:
 
-1. Go to **Administration** > **Users and Roles** > **Roles**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
 1. Click the row for the role you want to edit.
 1. The current configuration of the role appears in a pane on the right side of the page.
 1. Click **Edit** at the top of the right side of the page.
@@ -108,7 +108,7 @@ You can only delete a role to which no users are assigned. Before deleting a rol
 
 To delete a role:
 
-1. Go to **Administration** > **Users and Roles** > **Roles**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
 1. Click the row for the role you want to delete.
 1. The current configuration of the role appears in a pane on the right side of the page.
 1. Click **Delete** at the top of the right side of the page.
