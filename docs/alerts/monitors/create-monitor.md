@@ -77,7 +77,7 @@ The first step when you create a new monitor is to set the trigger conditions.
 ### Provide a query (logs and metrics only)
 
 1. Provide a query if you are creating a log or metrics monitor type.
-   * Logs Monitors can have one query up to 4,000 characters long.
+   * Logs Monitors can have one query up to 15,000 characters long.
    * Metrics Monitors can have up to six queries. When providing multiple metrics queries, use the letter labels to reference a query row. The Monitor will automatically detect the query that triggers your alert, and will mark that row with a notification bell icon. See [joined metrics queries](../../metrics/metrics-queries/metrics-explorer.md) for details.<br/> ![metrics-monitor-query-row](/img/monitors/metrics-monitor-query-row.png)
 1. If you're using the **Outlier** or **Anomaly** detection method, you'll need to select the **Direction** you want to track (Up, Down, or Both). <br/><img src={useBaseUrl('img/monitors/outlier-detection-input.png')} alt="Outlier detection direction" width="300"/> <br/><img src={useBaseUrl('img/monitors/anomaly-detection-input.png')} alt="Anomaly detection direction" width="300"/>
     * **Up.** Only get alerted if there is an abnormal *increase* in the tracked key indicator. 

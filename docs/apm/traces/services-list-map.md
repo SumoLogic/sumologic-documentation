@@ -8,9 +8,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/traces/servicemap.png')} alt="icon" width="45"/>
 
-To open the Services List and Map, click **+ New** > **Services**.
-
-<img src={useBaseUrl('img/traces/open-service-map.png')} alt="open servicemap" width="400"/>
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access Services, click the **+ New** button at the top of the screen and select **Services**. 
+<!--Kanso 
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access Services, in the main Sumo Logic menu select **Application Monitoring > Services**. You can also click the **Go To...** menu at the top of the screen and select **Services**. 
+ Kanso-->
 
 ## Services List view
 
@@ -101,7 +102,7 @@ An anomaly is a spike in latency and errors or a dip in requests. Here's how to
 
 <img src={useBaseUrl('img/traces/services-list-map-auto-detection-settings.png')} style={{border: '1px solid gray'}} alt="auto service anomaly settings" width="400" />
 
-The standard [metric outlier operator](/docs/metrics/metric-charts/metrics-outliers) is used to detect this. You can adjust the sensitivity and **Learning window** of the outlier detection in the settings to make the logic more or less dependent on occasional spikes. 
+The standard [metric outlier operator](/docs/metrics/metrics-operators/outlier/) is used to detect this. You can adjust the sensitivity and **Learning window** of the outlier detection in the settings to make the logic more or less dependent on occasional spikes. 
 
 ### Manual
 Manual anomaly detection allows you to specify different detection settings for each KPI. Click the toggle switch to manually enable or disable each KPI highlight as desired.
@@ -120,7 +121,7 @@ The **Services Map** and **Services List** panels, available out of the box, ena
 
 To add a Services panel to your Dashboard:
 
-1. Open an existing Dashboard or create a new Dashboard (**+New** > **Dashboard New**).
+1. Open an existing Dashboard or create a new Dashboard. <br/><!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Dashboard**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  Kanso-->
 1. On an existing Dashboard, click **Add Panel** > **Services**, or, on a new Dashboard, click **Services**.<br/><img src={useBaseUrl('img/traces/add-servicemap.png')} style={{border: '1px solid gray'}} alt="add-servicemap" width="800"/>
 1. When the panel configuration page opens, go to the **Visual Settings** > **Chart Type**, dropdown and select **Table** (Services List) or **Graph** (Services Map). <br/> <img src={useBaseUrl('img/traces/create-servicemap.png')} style={{border: '1px solid gray'}} alt="create-servicemap" width="500"/>
 1. (Optional) Select from the dropdown menus to filter by the following:<br/> <img src={useBaseUrl('img/traces/filter-servicemap.png')} style={{border: '1px solid gray'}} alt="filter-servicemap" width="800"/> 
