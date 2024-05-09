@@ -1005,7 +1005,7 @@ sumologic:
 
 ## Use containers only from Docker Hub registry
 
-If for some reason you can use only DockerHub as docker registry, we are suggesting to use the following configuration:
+If DockerHub is the only available Docker registry option, we recommend the following configuration:
 
 ```yaml
 sumologic:
