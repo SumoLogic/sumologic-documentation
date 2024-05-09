@@ -36,7 +36,7 @@ CloudQuery is an open source CSPM vendor that allows the customer to analyze dif
 ## Data sources
 
 The Azure Cloud inventory has the following list of tables supported:
-https://hub.cloudquery.io/plugins/source/cloudquery/azure/latest/tables.
+https://hub.cloudquery.io/plugins/source/cloudquery/azure/v13.0.0/tables.
 
 Based on the services, we will collect data from the tables as mentioned above.
 
