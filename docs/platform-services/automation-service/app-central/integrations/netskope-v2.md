@@ -38,8 +38,7 @@ When finished, click **OK**. After being created, tokens can be managed by click
 
 ## Netskope V2 in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-5.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="400"/> 
-1. In the Automation section, on the left menu, click **Integrations**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-6.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="400"/> 
+1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/netskope-v2/netskope-v2-7.png')} style={{border:'1px solid gray'}} alt="netskope-v2" width="800"/> 
 1. Populate all the required fields (\*) and then click **SAVE**.

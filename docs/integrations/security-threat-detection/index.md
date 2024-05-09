@@ -1,12 +1,10 @@
 ---
 slug: /integrations/security-threat-detection
 title: Security and Threat Detection
-description: Learn about Sumo apps for Security and Threat Detection.
+description: Learn how to use Sumo Logic apps for Security and Threat Detection.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<img src={useBaseUrl('img/icons/security/detect-insider-threats.png')} alt="thumbnail icon" width="45"/>
 
 Sumo Logic provides a variety of apps for security products and platforms, from firewalls and endpoint protection to security automation and orchestration. This guide has documentation for those apps.  
 

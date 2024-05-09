@@ -1,14 +1,11 @@
 ---
 slug: /integrations/amazon-aws
 title: Amazon and AWS
-sidebar_label: Amazon and AWS
-description: Sumo Logic apps for Amazon and AWS.
+description: Learn how to use Sumo Logic apps for Amazon and AWS.
 tags: [amazon, aws]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Thumbnail icon" width="75"/>
 
 This guide has documentation for all of the apps that Sumo provides for Amazon and AWS. See also: [AWS Observability Solution](/docs/observability/aws).
 
@@ -406,4 +403,3 @@ This guide has documentation for all of the apps that Sumo provides for Amazon a
     </div>    
   </div>
 </div>
-

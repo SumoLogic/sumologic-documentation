@@ -57,7 +57,7 @@ Watch this micro lesson to learn more about ARK.
 
 #### Enable ARK
 
-To enable ARK, click the cog icon (<img src={useBaseUrl('img/cloud-soar/cog.png')} alt="cog menu" style={{border: '1px solid gray'}} width="20"/>) > **Settings** > **ARK** and make sure you have it set to **ON**.
+To enable ARK, click the cog icon, then **Settings** > **ARK** and make sure you have it set to **ON**.
 
 From this page, it’s possible to configure also other ARK Settings such as the Neighbor incidents considered for each recommendation and an age relevance threshold. Those two parameters will allow you to tune the incidents that the Machine Learning algorithm will consider.
 
