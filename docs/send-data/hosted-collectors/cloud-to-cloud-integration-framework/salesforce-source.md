@@ -53,17 +53,16 @@ The Consumer Key and Consumer Secret API tokens from Salesforce are required to
      * **API Name**. It defaults to a version of the app name without spaces. Keep the default value. 
      * **Contact Email**. Enter your email id.   
    * API (Enable OAuth Settings)   
-     *  Make sure **Enable OAuth Settings** is checked.
-     *  Provide the **Callback URL**.
-     *  Select OAuth Scope. Access and manage your data (API).  
-     *  Under API (Enable OAuth Settings), select **Enable Client Credentials Flow**.
-     *  When you understand the security risks, accept the warning (if prompted).
-     *  Select **Save** and then **Continue**.
-     *  After this step, you will get your Consumer Key ("client_id") and Consumer Secret ("client_secret") which you will use to configure the Salesforce source.
-     *  Find your connected app, click **Manage**. [Reference](https://help.salesforce.com/s/articleView?id=sf.connected_app_client_credentials_setup.htm&type=5)
-     *  Under Client Credentials Flow, for Run As, click **Search Button**, and find the user that you want to assign the client credentials flow. (For Enterprise Edition orgs, we recommend that you select an execution user who has the API Only User permission.)
-     *  Save your changes.
-
+     * Make sure **Enable OAuth Settings** is checked.
+     * Provide the **Callback URL**.
+     * Select **OAuth Scope**. Access and manage your data (API).  
+     * Under API (**Enable OAuth Settings**), select **Enable Client Credentials Flow**.
+     * When you understand the security risks, accept the warning (if prompted).
+     * Select **Save** and then **Continue**.
+     * After this step, you will get your Consumer Key ("client_id") and Consumer Secret ("client_secret"), which you will use to configure the Salesforce source.
+     * Find your connected app, click **Manage** ([learn more](https://help.salesforce.com/s/articleView?id=sf.connected_app_client_credentials_setup.htm&type=5)).
+     * Under **Client Credentials Flow**, for **Run As**, click **Search Button**, and find the user that you want to assign the client credentials flow. (For Enterprise Edition orgs, we recommend that you select an execution user who has the API Only User permission.)
+     * Save your changes.
 
 ### Source configuration
 
@@ -190,25 +189,25 @@ To resolve this:
 
 1. Provide the correct "SignOn Url". 
 
-**Error**: `{"error":"invalid_client_id","error_description":"client identifier invalid"}`   This is due to incorrect source configuration.
+**Error**: `{"error":"invalid_client_id","error_description":"client identifier invalid"}`. This is due to incorrect source configuration.
 
 To resolve this:
 
 1. Provide the correct “Client ID”.
 
-**Error**: `{"error":"invalid_client","error_description":"invalid client credentials"}`   This is due to incorrect source configuration.
+**Error**: `{"error":"invalid_client","error_description":"invalid client credentials"}`. This is due to incorrect source configuration.
 
 To resolve this:
 
 1. Provide the correct “Client Secret”. 
 
-**Error**: `{"error":"unknown_error","error_description":"retry your request"}`   This is due to an invalid SignOn Url.
+**Error**: `{"error":"unknown_error","error_description":"retry your request"}`. This is due to an invalid SignOn Url.
 
 To resolve this:
 
 1. Change it from login.salesforce.com to `<instanceURL>.salesforce.com`
 
-**Error**: MoreMemoryRequired: Available: 100 FileSize: 200.Please create a support ticket.
+**Error**: MoreMemoryRequired: Available: 100 FileSize: 200. Please create a support ticket.
 
 To resolve this:
 
