@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The page talks about viewing information about the data forwarding configured for your organization.
 
-1. Go to **Manage Data** > **Logs** > **Data Forwarding**.<br/><img src={useBaseUrl('/img/data-forwarding/data_forwarding.png')} alt="Data_Forwarding" width="1000"/>
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Data Forwarding**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Data Forwarding**. You can also click the **Go To...** menu at the top of the screen and select **Data Forwarding**. Kanso--><br/><img src={useBaseUrl('/img/data-forwarding/data_forwarding.png')} alt="Data_Forwarding" width="1000"/>
     * **Status**. Indicates whether the data forwarding is currently Active or Inactive.
     * **Destination Name**. The name used to identify the destination.
     * **Data Sources**. Indicates the number of indexes (Partition or Scheduled View) the destination is linked to.
