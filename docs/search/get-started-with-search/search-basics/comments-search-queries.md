@@ -4,7 +4,7 @@ title: Comments in Search Queries
 description: You can add comments to a search query, or even comment out lines of your search query using comment formatting.
 ---
 
-
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 On the **Search** page, you can add comments and comment out lines of
 your query using comment formatting, as follows:
@@ -35,8 +35,4 @@ The following is a multi-line comment.
 
 ## Pro Tip: Sumo Logic App Queries as Examples
 
-Sumo Logic Apps are a great resource of example search queries. You can review and even [run searches from Sumo Logic Apps](/docs/get-started/apps-integrations#run-searches-from-sumo-logic-apps) without installing them. To view available Sumo Logic Apps, click the **Library** icon.
-
-![library icon.png](/img/reuse/library-icon.png)
-
-at the top of the UI (**Library > Apps** in the classic UI). You can also [copy content from the Library](/docs/get-started/library), and use it as a starting point to create your own queries. When you do that, you can comment out the aggregation lines of the query and replace them with your own. You can also delete them of course, but commenting them out instead would make them available for reference later.
+Sumo Logic Apps are a great resource of example search queries. You can review and even [run searches from Sumo Logic Apps](/docs/get-started/apps-integrations#run-searches-from-sumo-logic-apps) without installing them. To view available Sumo Logic Apps, click the **Library** icon <img src={useBaseUrl('img/reuse/library-icon.png')} alt="Library icon" style={{border: '1px solid gray'}} width="30" /> at the top of the UI (**Library > Apps** in the classic UI). You can also [copy content from the Library](/docs/get-started/library), and use it as a starting point to create your own queries. When you do that, you can comment out the aggregation lines of the query and replace them with your own. You can also delete them of course, but commenting them out instead would make them available for reference later.
