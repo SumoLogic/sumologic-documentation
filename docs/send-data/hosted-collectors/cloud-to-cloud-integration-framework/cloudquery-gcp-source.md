@@ -17,56 +17,44 @@ description: Learn how to collect inventory from the GCP APIs using CloudQuery P
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 import CodeBlock from '@theme/CodeBlock';
-import Example from '/files/c2c/cloudquery-gcp/example.json';
-import Example from '!!raw-loader!/files/c2c/cloudquery-gcp/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Example from '/files/c2c/cloudquery-gcp/example.json';
+import MyComponentSource from '!!raw-loader!/files/c2c/cloudquery-gcp/example.json';
 
 <img src={useBaseUrl('img/send-data/cloudquery-logo.png')} alt="cloudquery-icon" width="70" /><img src={useBaseUrl('img/integrations/google/google-logo.png')} alt="Thumbnail icon" width="40"/>
 
-The CloudQuery integration is used to pull inventory from the AWS APIs and transform them into the CloudQuery schema and send it to Sumo Logic.
+The goal of this C2C integration is to pull inventory from various Google Cloud Platform (GCP) APIs via the CloudQuery GCP plugin, transform them into the CloudQuery schema, and send it to Sumo Logic.
 
 import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
 
 <FedDeploymentNote/>
 
-<!--
 ## Data collected
 
 | Polling Interval | Data |
 | :--- | :--- |
-| 12 hours |  [Data service table data](https://hub.cloudquery.io/plugins/source/cloudquery/aws/v22.19.2/docs) |
+| 12 hours |  [Data service table data](https://github.com/cloudquery/cloudquery/blob/plugins-source-gcp-v10.0.0/plugins/source/gcp/resources/plugin/tables.go) |
 
 ## Setup
 
-### Vendor configuration
+### Authentication
 
-**Account Level**. The integration must be configured with the Access Key ID and Secret Access Key. Refer to the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for guidance to create the Access Key ID and Secret Access Key.
+The GCP plugin authenticates using your Application Default Credentials.
 
-**Organization Level**. The integration must be configured with the Access Key ID, Secret Access Key, Admin Role ARN, and Member Role Name. Refer to the [CloudQuery documentation](https://www.cloudquery.io/blog/deploying-cloudquery-into-aws-org) for guidance to create the Admin Role ARN and Member Role Name.
+We will use the credentials JSON file to authenticate with GCP.
+The user will provide the credential JSON file as a string, we will create the <filename>.json file in a secure environment and will set the environment variable GOOGLE_APPLICATION_CREDENTIALS as the key with the file path as the value.
 
-### Source configuration
+```
+GOOGLE_APPLICATION_CREDENTIALS: <cred file path>
+```
 
-When you create an CloudQuery source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+The user will provide the list of services and the integration will fetch all the tables supported by CloudQuery plugin(v12.4.0) for each specified service under the specific project and organization(if specified).
 
-To configure a CloudQuery Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
-1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Search for and select **CloudQuery**.
-1. Enter a **Name** for the source. The description is optional.
-1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. (Optional) **Fields**. Click the **+Add** button to define the fields you want to associate. Each field needs a name (key) and value.
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo Logic that does not exist in the Fields schema it is ignored, known as dropped.
-1. Select the configuration type from the given two options: Account Level and Organization Level.
-1. **AWS Access Key ID**. Enter the Access Key ID collected from the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
-1. **AWS Secret Access Key**. Enter the Secret Access Key collected from the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
-1. **Admin Role ARN (Organization Level only)**. Enter the full ARN of the Admin Role collected from the [CloudQuery AWS role deployment](https://www.cloudquery.io/blog/deploying-cloudquery-into-aws-org) steps.
-1. **Member Role Name (Organization Level only)**. Enter the member role name collected from the [CloudQuery AWS role deployment](https://www.cloudquery.io/blog/deploying-cloudquery-into-aws-org) steps.
-1. **Regions**. Identify and enter your Region based on your Base URL.
-1. **Services**. Enter the type of service from which the data needs to be collected.
-1. By default, **Polling Interval** is set to 12 hours.
-1. When you are finished configuring the Source, click **Save**.
--->
+The CloudQuery GCP plugin contains the PluginAutoGeneratedTables() function in which we need to specify the required services with the table name to fetch the table schema for an individual service.
+After getting the table schema, we will use the Sync function to populate the table data for that specific project.
+
+Cloudquery GCP Source plugin version: v12.4.0
+Cloudquery GCP git source code version: v0.10.2-pre.0.0.20231122092836-a61fa0d83d1a
 
 ## JSON schema
 
@@ -92,7 +80,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### JSON example
 
-<CodeBlock language="json">{Example}</CodeBlock>
+<CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
 [Download example](/files/c2c/cloudquery-gcp/example.json)
 
