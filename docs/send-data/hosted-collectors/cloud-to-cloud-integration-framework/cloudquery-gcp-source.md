@@ -17,8 +17,8 @@ description: Learn how to collect inventory from the GCP APIs using CloudQuery P
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
 import CodeBlock from '@theme/CodeBlock';
-import AccountExampleJSON from '/files/c2c/cloudquery/example.json';
-import OrgTFExample from '!!raw-loader!/files/c2c/cloudquery/example.tf';
+import Example from '/files/c2c/cloudquery-gcp/example.json';
+import Example from '!!raw-loader!/files/c2c/cloudquery-gcp/example.json';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/send-data/cloudquery-logo.png')} alt="cloudquery-icon" width="70" /><img src={useBaseUrl('img/integrations/google/google-logo.png')} alt="Thumbnail icon" width="40"/>
