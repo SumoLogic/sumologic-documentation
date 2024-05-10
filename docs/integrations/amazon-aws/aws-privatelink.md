@@ -19,6 +19,7 @@ Following sources are supported for AWS PrivateLink:
 
 - **Installed Collector sources**. Data collected on Installed collectors deployed on customer VPC and sent to the Sumo Logic.
 - **HTTPs sources**. Data sent by the applications hosted in customers VPC and sent over to Sumologic using [HTTP Logs and Metrics Source](/docs/send-data/hosted-collectors/http-source/logs-metrics/) and Kinesis Firehose Source for Logs and Metrics.
+- **OTLP Source**. An [OTLP/HTTP Source](https://help.sumologic.com/docs/send-data/hosted-collectors/http-source/otlp/) is an endpoint for receiving OTLP-formatted Logs and Metrics from OpenTelemetry colletors using [OTLP exporter](https://github.com/open-telemetry/opentelemetry-collector/tree/v0.99.0/exporter/otlphttpexporter#otlphttp-exporter). 
 
 The following sources are not supported for AWS PrivateLink: 
 
@@ -26,7 +27,6 @@ The following sources are not supported for AWS PrivateLink:
 - AWS S3
 - AWS Cloudwatch source
 - Sumo Logic OpenTelemtry Distro
-- OTLP sources
 - RUM sources
 
 ## Enable PrivateLink for ALB
