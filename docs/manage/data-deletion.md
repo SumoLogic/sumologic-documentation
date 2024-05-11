@@ -1,7 +1,7 @@
 ---
 id: data-deletion
 title: Data Deletion
-description: Learn how to define and manage the assignment of metadata to your logs.
+description: Learn how to independently and efficiently control or remove your sensitive data from Sumo Logic.
 ---
 
 <head>
@@ -47,5 +47,3 @@ Auditing of the following activities:
 -New Data Deletion Rule Addition, Deletion, Edit
 -Number of Logs that have been masked/redacted/deleted.
 -Daily Summary of Statistics, indicating number of queries matching each rule to make it easy for Admins to understand which rule still has data that is being hit.-->
-
-I've also noticed that the UI labeling is inconsistent: Data Deletion, Logs Deletion Request, 
