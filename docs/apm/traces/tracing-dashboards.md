@@ -7,15 +7,15 @@ description: Explore and create Tracing dashboards, install apps, and more.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Out-of-the-box dashboards are available as three Explore hierarchies. You can access them in the **Explore By** dropdown menu.
+To access APM hierarchies:
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Application Monitoring > Applications**. You can also click the **Go To...** menu at the top of the screen and select **Applications**.  Kanso-->
+1. In the upper-left corner of the screen, select an **APM:** hierarchy from the dropdown menu. An expandable list of your hierarchy appears in the panel.
 
-The **APM: Application View** groups services into higher-level applications based on the `application=[app-name]` custom tag that you may add to your tracing data if you want to leverage it fully. Without the tag, all services will belong to a "default" application. The fourth and last level of the hierarchy shows the top 50 most active operations executed on the service. See [Working with Span attributes](/docs/apm/traces/advanced-configuration/working-with-span-attributes) to learn how to customize your span attributes and set up application name.
+Out-of-the-box dashboards are available as three hierarchies. 
 
-The **APM: Service View** takes a contrary approach, displaying services by top level and breaking down their health by application. This view can be useful for shared services that support more than one application. The fourth level shows the top 50 most active operations performed on the selected service and application.
-
-The **APM: Environment View** displays environments at the top level and breaks down application health by environment (such as `prod` or `dev`), with up to 10 values of **deployment.environment** tag. This view can be useful for understanding the top-down hierarchy of applications and services in a particular environment. The fourth level shows the top 50 most active operations executed on the environment, application, and service. <br/><img src={useBaseUrl('img/traces/Service-Dashboards-from-traces.png')} alt="Service Dashboards from traces" width="350"/>
-
-Services must be active within the last 15 minutes to appear on the list. Recent inactivity will result in a grayed-out list entry.
+* The **APM: Application View** groups services into higher-level applications based on the `application=[app-name]` custom tag that you may add to your tracing data if you want to leverage it fully. Without the tag, all services will belong to a "default" application. The fourth and last level of the hierarchy shows the top 50 most active operations executed on the service. See [Working with Span attributes](/docs/apm/traces/advanced-configuration/working-with-span-attributes) to learn how to customize your span attributes and set up application name.
+* The **APM: Service View** takes a contrary approach, displaying services by top level and breaking down their health by application. This view can be useful for shared services that support more than one application. The fourth level shows the top 50 most active operations performed on the selected service and application.
+* The **APM: Environment View** displays environments at the top level and breaks down application health by environment (such as `prod` or `dev`), with up to 10 values of **deployment.environment** tag. This view can be useful for understanding the top-down hierarchy of applications and services in a particular environment. The fourth level shows the top 50 most active operations executed on the environment, application, and service. <br/><img src={useBaseUrl('img/traces/Service-Dashboards-from-traces.png')} alt="Service Dashboards from traces" width="350"/> <br/>Services must be active within the last 15 minutes to appear on the list. Recent inactivity will result in a grayed-out list entry.
 
 Each dashboard is a fully customizable set of panels based on automatically generated metrics using tracing data as input. You can get insight into microservice health by looking at stats from:
 
