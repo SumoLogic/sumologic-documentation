@@ -1,14 +1,12 @@
 ---
 slug: /integrations/web-servers
 title: Web Servers
+description: Learn how to use Sumo Logic apps for web servers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/web-servers/web-servers.png')} alt="Thumbnail icon" width="45"/>
-
 This guide has documentation for Sumo apps for web servers.
-
 
 <div className="box-wrapper">
 <div className="box smallbox card">
