@@ -2557,6 +2557,7 @@
   "/cid/19901": "/docs/metrics/metrics-operators/topk",
   "/cid/19902": "/docs/metrics/metrics-operators/where",
   "/cid/15631": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/citrix-cloud-source",
+  "/cid/15632": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-azure-plugin-source",
   "/cid/14323": "/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/docusign-source",
   "/cid/14326": "/docs/integrations/global-intelligence/kubernetes-devops",
   "/cid/30001": "/docs/integrations/microsoft-azure/azure-batch",
