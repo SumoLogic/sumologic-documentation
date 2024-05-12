@@ -27,7 +27,7 @@ import Iframe from 'react-iframe';
 
 <p><a href="/docs/beta"><span className="beta">Closed Beta</span></a></p>
 
-This page provides an overview of Sumo Logic **New UI**, currently in beta (slated for general availability in late 2024).
+This page provides an overview of the Sumo Logic **New UI**, currently in beta and slated for general availability in late 2024.
 
 <Iframe url="https://www.youtube.com/embed/shtEqnPL-sc?si=sR26VYLt9NnqqghL?rel=0"
         width="854px"
@@ -40,21 +40,29 @@ This page provides an overview of Sumo Logic **New UI**, currently in beta (slat
         allowfullscreen
         />
 
+
+## Benefits
+
+With the New UI, you can expect:
+
+* Unified experience across Operational and Security analytics products
+* Accelerated performance, reduced load time, and enhanced caching
+* Stateful URLs to preserve page states upon re-login
+* Use-case-based navigation for streamlined feature discovery
+
+[Learn more](/release-notes-service/2024/02/23/ui/)
+
 ## Prerequisites
 
-You'll need request access by contacting your Sumo Logic sales representative.
+As this is a Closed Beta, you'll need obtain access by contacting your Sumo Logic sales representative.
 
 ## Getting to the New UI
 
-Once you're logged in to Sumo Logic, go to the left navigation panel and click **Switch to New UI**.
+Once you're logged in to Sumo Logic, go to the left navigation (nav) panel and click **Switch to New UI**.
 
 <img src={useBaseUrl('img/get-started/switch-new-ui.png')} alt="switch-new-ui.png" width="250"/>
 
-## Using the left navigation panel
-
-From the left-side navigation (nav) panel, you can access your dashboards library as well as our main functions and features, such as Log Search, Metrics, Infrastructure Monitoring, Application Monitoring, Cloud SIEM Enterprise, and Cloud SOAR.
-
-### Home
+## Home
 
 When you first log in, you'll land on the Sumo Logic **Home** page > **Home** tab, which provides an at-a-glance view of the following:
 
@@ -62,6 +70,10 @@ When you first log in, you'll land on the Sumo Logic **Home** page > **Home** ta
 * Recently Run Searches
 * Recommended Dashboards 
 * Pinned Searches<br/><img src={useBaseUrl('img/get-started/dashboard-searches.png')} alt="dashboard-searches.png" />
+
+## Using the left navigation panel
+
+In the left nav panel, you can access all of our features, such as Log Search, Metrics, Infrastructure Monitoring, Application Monitoring, Cloud SIEM, and more. You'll also find your dashboards library here.
 
 ### Access dashboards and searches
 
@@ -235,9 +247,9 @@ You do not have to stop there either. You can take the next step and become Sumo
 This guide offers responses to frequently asked questions regarding the Sumo Logic UI redesign project, which involves transitioning from the current Classic UI to the upcoming New UI.
 
 <details>
-<summary><strong>Q:</strong> What's being launched?</summary>
+<summary><strong>Q:</strong> What is being launched?</summary>
 
-We are excited to introduce the Sumo Logic Unified Experience, also known as Project Kanso, inspired by the Japanese principle of simplicity and clutter elimination. This initiative integrates the capabilities of our Log Analytics, Cloud SIEM, and Cloud SOAR into a unified navigation system. Alongside this integration, we have implemented several user interface enhancements to make all Sumo Logic features more accessible and user-friendly.
+We are excited to introduce the Sumo Logic Unified Experience, internally known as Project Kanso, inspired by the Japanese principle of simplicity and clutter elimination. This initiative integrates the capabilities of our Log Analytics, Cloud SIEM, and Cloud SOAR into a unified navigation system. Alongside this integration, we have implemented several user interface enhancements to make all Sumo Logic features more accessible and user-friendly.
 </details>
 
 
@@ -253,19 +265,18 @@ In-app tabs present performance and usability challenges since they all operate 
 
 
 <details>
-<summary><strong>Q:</strong> What changes have been implemented and how do they enhance my Sumo experience?</summary>
+<summary><strong>Q:</strong> What changes have been implemented that enhance my Sumo experience?</summary>
 
 * **Unified Navigation**. You'll now notice a uniform navigation system across Log Analytics, Cloud SIEM, and Cloud SOAR products, ensuring a consistent experience for Sumo Logic users engaged in both observability and security use cases.
-* **Improved Product Discoverability**. The left navigation bar now organizes product features in a solution-centric manner, emphasizing key use cases like infrastructure monitoring, application monitoring, log analysis, security monitoring, and analytics. This reorganization aims to facilitate easier access to Sumo Logic's product features.
+* **Improved Product Discoverability**. The left nav panel now organizes product features in a solution-centric manner, emphasizing key use cases like infrastructure monitoring, application monitoring, log analysis, security monitoring, and analytics. This reorganization aims to facilitate easier access to Sumo Logic's product features.
 * **Enhanced Browsing Experience and Accelerated Performance**. In-app tabs will be replaced with native browser tabs, significantly improving _First Contentful Paint_ (FCP) and _Time to Interactive_ (TTI) metrics. With this change, you'll experience faster page load times and ability to organize tabs the way you are used to with other applications.
 * **Stateful URLs**. Most of the page URLs will now be stateful, allowing you to easily share content with your team members. Any changes made in the UI will be reflected in the URL parameters, making it simple for you to copy and share URLs. Additionally, this feature enables users to navigate back to previous states effortlessly by using the browser.
 </details>
 
-
 <details>
-<summary><strong>Q:</strong> I have some concerns regarding unfamiliar experiences and potential issues arising from them. How is Sumo Logic addressing these concerns to ensure a seamless transition?</summary>
+<summary><strong>Q:</strong> What if I encounter issues due to unfamiliar UI experiences?</summary>
 
-Understanding the challenges that come with change, we are confident that the **New UI** will offer our customers a notably enhanced, faster, and more seamlessly integrated experience. To facilitate a smooth transition, we have taken the following steps:
+Understanding the challenges that come with change, we are confident that the **New UI** will offer you a notably enhanced, faster, and more seamlessly integrated experience. To facilitate a seamless transition, we have taken the following steps:
 
 * **Dogfooding**. We at Sumo Logic are the biggest customer of our own platform. Through extensive dogfooding, we've gained a deep understanding of workflows and addressed any issues that arose.
 * **Beta Testing**. We're conducting extensive beta testing with a large group of our customers. This allows us to gather feedback and address any pain points that may have been overlooked. If you'd like to participate, reach out to your Sumo Logic account executive.
@@ -274,18 +285,22 @@ Understanding the challenges that come with change, we are confident that the **
 
 
 <details>
-<summary><strong>Q:</strong> I like that all Sumo Logic tabs are grouped together in one browser tab. With this change, will I have an excessive amount of Sumo Logic tabs in my browser?</summary>
+<summary><strong>Q:</strong> With all Sumo Logic tabs being grouped together in one browser tab, how can I prevent an excessive amount of tabs in my browser? </summary>
 
-We're aware that the removal of in-app tabs may be the most significant change in our user workflow. We've received feedback from users, both positive and negative, regarding our tabs. While some users appreciate the convenience of having all the tabs within the app, others have questioned why we're trying to reinvent the tabs.
+We understand that the removal of in-app tabs in the New UI is a significant change in our user workflow, eliciting mixed feedback. While some users appreciate the convenience of consolidated tabs within the app, others question the need for this change. Addressing performance concerns, consolidating tabs aims to reduce browser clutter, albeit potentially complicating session management. For users who prefer centralized Sumo Logic tabs, we recommend utilizing [tab grouping functionality](#customize-your-environment-withtabs) for a seamless experience.
 
-Having in-app tabs has caused performance issues, which has been a complaint about the Sumo Logic UI. On one hand, consolidating all the tabs together reduces the number of browser tabs, but on the other hand, it can make it difficult to manage multiple sessions.
+| Classic UI | New UI |
+|:---|:---|
+| In-house tabs solution. Always trying to keep up with browser tab improvements. | Utilizes browser’s native tab capability like tab grouping and coloring. |
+| User needs to learn new way of organizing tabs. Multiple Sumo instances is difficult. | User utilizes what they already know. Multiple Sumo instances is easier. |
+| Performance degrades over long usage because user is using one browser tab. | Memory usage is distributed over different tabs. |
+| Tab switches reloads the tab. | Tab switches won’t reload the tab. This will accelerate time to load, which is especially useful for data-rich features like Dashboards. |
 
-If you prefer having all Sumo Logic tabs in one place - without getting mixed with other browser tabs - we suggest utilizing the [tab grouping functionality](#customize-your-environment-withtabs) offered by most browsers. By adding your Sumo Logic tab to a tab group, any new tabs opened within the Sumo Logic platform will automatically open in the same tab group. You can also collapse the tab group to reclaim valuable real estate in the browser's tab bar.
 </details>
 
 
 <details>
-<summary><strong>Q:</strong> Will the New UI continue the functionality of remembering the tabs I had opened in my previous session, similar to the Classic UI?</summary>
+<summary><strong>Q:</strong> Will the New UI retain the Classic UI feature of remembering previously opened tabs from my previous session?</summary>
 
 After analyzing tab usage data, we've found that a minimal portion of previously opened tabs are actively utilized by our users. Consequently, the Sumo Logic UI often remains cluttered with multiple unused tabs. With the introduction of the **New UI** experience, if you fail to close browser tabs from previous sessions, they will automatically reload upon login.
 
@@ -314,14 +329,6 @@ You have the flexibility to opt out whenever you choose. Just go to left navigat
 If you enter the **New UI** URL in your browser, it will still direct you to the **New UI**. We have implemented a translation from the **Classic UI** to the **New UI**, but not the other way around.
 </details>
 
-
-<details>
-<summary><strong>Q:</strong> When is Sumo Logic planning to remove access to the Classic UI?</summary>
-
-Our goal is to turn off access to the Classic UI at the end of 2024. However, this timeline is subject to our successful beta testing.
-</details>
-
-
 <details>
 <summary><strong>Q:</strong> Will there be any limitations on capabilities during the beta phase?</summary>
 
@@ -334,6 +341,12 @@ Additionally, there are a few functionalities that are still in the process of b
 * **Rich Tooltip in Navigation**. Similar to the Classic UI, future releases of the New UI will include rich tooltips when hovering over navigation content items, providing details such as owner and data access level.
 * **URL Parameters**. URL parameters have been added to most pages to maintain page state. Currently, queries in the URL are plain text. We are working on compressing and encoding them. If your query exceeds ~10000 characters, you may encounter a "URI Too Large" error. In such cases, we recommend switching back to the old UI.
 * **Content Admin Mode**. Recents and favorites will not load in content admin mode. We are actively enhancing the user experience for recents and favorites in this mode.
+</details>
+
+<details>
+<summary><strong>Q:</strong> When will Sumo Logic remove access to the Classic UI?</summary>
+
+Our goal is to turn off access to the Classic UI at the end of 2024. However, this timeline is subject to our successful beta testing.
 </details>
 
 ## Get support
