@@ -46,10 +46,3 @@ In this section, you will configure a pipeline for shipping diagnostic logs from
    1. Choose Event Hub as the `Resource type`.
    1. Select the Event Hub's `Subscription` name, `Resource group` name, and `Resource` name for the destination resource.
 
-### Troubleshooting
-
-### Azure Event Hubs Source
-
-Common error types are described [here](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#error-types).
-
-You can try [restarting](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/#restarting-your-source) the source for `ThirdPartyConfig` errors.

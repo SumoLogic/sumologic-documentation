@@ -27,8 +27,8 @@ import Iframe from 'react-iframe'; 
 ## Cloud SIEM user interface
 
 ### Access Cloud SIEM
-
-To access Cloud SIEM, click **Cloud SIEM** in the Sumo Logic navigation menu. 
+ 
+To access Cloud SIEM, in the main Sumo Logic menu select **Cloud SIEM**.  <br/><img src={useBaseUrl('img/cse/cse-option-in-left-nav.png')} alt="Cloud SIEM menu option" style={{border: '1px solid gray'}} width="150"/>
 
 Cloud SIEM must be enabled by Sumo Logic before it is accessible to users in your organization. For more information, see [Onboarding Checklist for Cloud SIEM Administrators](/docs/cse/get-started-with-cloud-siem/onboarding-checklist-cse/).
 
@@ -47,9 +47,11 @@ For more information, see [Cloud SIEM Heads Up Display](/docs/cse/get-started-wi
 
 ### Cloud SIEM menus
 
-<!-- Kanso. Remove comment tags at GA. Make "Cloud SIEM menus" an H2.
+<!--Kanso 
 ### Classic UI
--->
+
+The classic UI is the traditional way to navigate in Sumo Logic. For more information, see [Tour the Classic Sumo Logic UI](/docs/get-started/sumo-logic-ui).
+ Kanso-->
 
 #### Top menu
 
@@ -105,9 +107,10 @@ Use the **Configuration** menu to access:
    * [**Enrichment**](/docs/cse/integrations/enrichments-and-indicators/). Manage elements that enrich data in Cloud SIEM.
    * [**Automation**](/docs/cse/automation/). Create smart actions that trigger automatically when certain events occur in Cloud SIEM.
 
-<!-- Kanso. Remove comment tags at GA.
-
+<!--Kanso 
 ### New UI
+
+The new UI provides a streamlined way to navigate in Sumo Logic. For more information, see [Tour the New Sumo Logic UI](/docs/get-started/sumo-logic-ui-new).
 
 #### Sidebar menu
 
@@ -200,7 +203,7 @@ Use the **Configuration** menu to access:
     * [**Insight Statuses**](/docs/cse/administration/manage-custom-insight-statuses/). Manage custom Insight statuses.
     * [**Insight Resolutions**](/docs/cse/administration/manage-custom-insight-resolutions/). Manage custom Insight resolutions.
     * [**Tag Schemas**](/docs/cse/administration/create-a-custom-tag-schema/). Manage schemas for tags, metadata you can attach to Insights, Signals, Entities, and Rules. 
--->
+ Kanso-->
 
 ## Getting your data into Cloud SIEM
 
