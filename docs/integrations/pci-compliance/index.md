@@ -1,7 +1,6 @@
 ---
 slug: /integrations/pci-compliance
 title: PCI Compliance
-sidebar_label: PCI Compliance
 description: With the Sumo Logic apps for PCI Compliance, you can meet evolving PCI requirements without the data hassle or the burden of self-policing.
 ---
 

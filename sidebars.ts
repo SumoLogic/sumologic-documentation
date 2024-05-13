@@ -2785,7 +2785,6 @@ integrations: [
         'api/health-events',
         'api/ingest-budget-v2',
         'api/ingest-budget-v1',
-        'api/logs-data-forwarding',
         'api/log-search-estimated-usage',
         'api/log-searches',
         'api/logs-data-forwarding',
