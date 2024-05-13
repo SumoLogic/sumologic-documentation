@@ -45,8 +45,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'contributing/index'},
       items: [
-        'contributing/edit-doc',
-        'contributing/create-doc',
+        'contributing/create-edit-doc',
         'contributing/remove-doc',
         'contributing/style-guide',
         'contributing/glossary',
@@ -807,9 +806,19 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/index'},
           items: [
-            'manage/ingestion-volume/ingest-budgets/assign-collector-ingest-budget',
-            'manage/ingestion-volume/ingest-budgets/quickstart',
-          ]
+            'manage/ingestion-volume/ingest-budgets/minute-volume',
+          {
+            type: 'category',
+            label: 'Daily Volume',
+            collapsible: true,
+            collapsed: true,
+            link: {type: 'doc', id: 'manage/ingestion-volume/ingest-budgets/daily-volume/index'},
+            items: [
+              'manage/ingestion-volume/ingest-budgets/daily-volume/assign-collector-ingest-budget',
+              'manage/ingestion-volume/ingest-budgets/daily-volume/quickstart',
+            ]
+          },
+        ]
         },
         'manage/ingestion-volume/monitor-ingestion-receive-alerts',
       ]
@@ -906,11 +915,12 @@ module.exports = {
             'alerts/monitors/monitor-faq',
             'alerts/monitors/alert-variables',
             'alerts/monitors/alert-response',
-            'alerts/monitors/alert-grouping',
             'alerts/monitors/alert-response-faq',
+            'alerts/monitors/alert-grouping',
             'alerts/monitors/muting-schedules',
             'manage/ingestion-volume/monitor-ingestion-receive-alerts',
             'alerts/monitors/use-playbooks-with-monitors',
+            'alerts/monitors/automation-payload-variables'
           ],
         },
         {
@@ -941,6 +951,7 @@ module.exports = {
           items: [
             'alerts/webhook-connections/set-up-webhook-connections',
             'alerts/webhook-connections/aws-lambda',
+            'alerts/webhook-connections/cloud-soar',
             'alerts/webhook-connections/datadog',
             'alerts/webhook-connections/jira-cloud',
             'alerts/webhook-connections/jira-server',
@@ -968,7 +979,6 @@ module.exports = {
             'alerts/webhook-connections/slack',
             'alerts/webhook-connections/schedule-searches-webhook-connections',
             'alerts/webhook-connections/audit-index',
-            'alerts/webhook-connections/cloud-soar',
           ]
         },
       ],
@@ -1442,7 +1452,6 @@ module.exports = {
         'metrics/metrics-queries/aggregation-tips',
         'metrics/metrics-queries/metric-query-error-messages',
         'metrics/metrics-queries/share-metric-query',
-        'metrics/metrics-queries/metrics-queries-classic',
       ],
     },
     {
@@ -1496,23 +1505,6 @@ module.exports = {
     'metrics/metrics-transformation-rules',
     'metrics/logs-to-metrics',
     'metrics/kubernetes-metrics',
-    {
-      type: 'category',
-      label: 'Metrics Charts (Classic)',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'metrics/metric-charts/index'},
-      items: [
-        'metrics/metric-charts/create-metrics-visualization',
-        'metrics/metric-charts/line-area-metric-charts',
-        'metrics/metric-charts/single-value-metric-charts',
-        'metrics/metric-charts/interacting-metric-charts',
-        'metrics/metric-charts/quantization-interval-chart',
-        'metrics/metric-charts/metrics-outliers',
-        'metrics/metric-charts/add-metrics-visualization-to-dashboard',
-        'metrics/metric-charts/log-overlay-analyze-metrics-visualizations',
-       ],
-     },
    ],
   },
 ],
@@ -2336,7 +2328,6 @@ integrations: [
           'integrations/security-threat-detection/evident-security-platform',
           'integrations/security-threat-detection/f5-big-ip-ltm',
           'integrations/security-threat-detection/imperva-incapsula',
-          'integrations/security-threat-detection/keeper-security',
           'integrations/security-threat-detection/netskope-legacy-collection',
           'integrations/security-threat-detection/netskope',
           'integrations/security-threat-detection/observable-networks',
@@ -2712,8 +2703,6 @@ integrations: [
         'cloud-soar/overview',
         'cloud-soar/architecture',
         'cloud-soar/compared-to-automation-service',
-        'cloud-soar/global-functions-menu',
-        'cloud-soar/main-menu',
         'cloud-soar/incidents-triage',
         'cloud-soar/automation',
         'cloud-soar/cloud-soar-bridge',
@@ -2776,7 +2765,6 @@ integrations: [
         'api/health-events',
         'api/ingest-budget-v2',
         'api/ingest-budget-v1',
-        'api/logs-data-forwarding',
         'api/log-search-estimated-usage',
         'api/log-searches',
         'api/logs-data-forwarding',

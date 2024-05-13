@@ -14,7 +14,7 @@ Google Compute Engine is an Infrastructure as a Service (IaaS) component of Goog
 
 ## Log and metrics types
 
-The Sumo Logic app for Google Cloud Functions uses the following logs and metrics:
+The Sumo Logic app for Google Cloud Compute Engine uses the following logs and metrics:
 
 * [Google Cloud Audit Logs for Compute Engine](https://cloud.google.com/compute/docs/logging/audit-logging) - These logs provide information about Compute Engine API calls and operations.
 * [Compute Engine Platform Logs](https://cloud.google.com/logging/docs/api/platform-logs#compute_engine)
@@ -140,21 +140,21 @@ By default, GCP logs are stored within Cloud Logging, but you can configure Log 
 For metrics collection in Sumo Logic, use the [GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source).
 
 1. Setup the [Google Service Account](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
-1. [Setup a GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source select **Functions** as the service from dropdown to get the Google cloud function metrics.
+1. [Set up a GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source, select **Compute Engine** as the service from the dropdown to get the Google Cloud Compute Engine metrics.
 
 ## Installing the Google Compute Engine app
 
 Now that you have set up collection for Google Compute Engine, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Google Compute Engine dashboards
 
-import FilterDashboards from '../../reuse/filter-dashboards.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-<FilterDashboards/>
+<ViewDashboards/>
 
 ### Audit Logs
 

@@ -82,7 +82,7 @@ The Google Cloud IAM App uses [Google Cloud Audit Logs](https://cloud.google.com
 
 
 
-### Query Sample
+### Query sample
 
 **Added roles over time**
 
@@ -99,7 +99,7 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 | transpose row _timeslice column role
 ```
 
-## Collecting Logs for the Google Cloud IAM App
+## Collecting logs for the Google Cloud IAM app
 
 This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google Cloud IAM App.
 
@@ -194,21 +194,21 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 
 
 
-## Installing the Google Cloud IAM App
+## Installing the Google Cloud IAM app
 
 This section provides instructions for installing the Google Cloud IAM App, and examples of each of the App dashboards.
 
 Now that you have set up collection for Google Cloud IAM, you can install the Sumo Logic App for easy access to the pre-configured searches and dashboards.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Google Cloud IAM Dashboards
+## Viewing Google Cloud IAM dashboards
 
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-You can use the pre-configured searches and dashboards for visibility into your environment for real-time performance analytics and an analysis of overall usage.
-
+<ViewDashboards/>
 
 ### Overview
 
