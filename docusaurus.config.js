@@ -127,7 +127,6 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
-    'react-iframe',
     ['@docusaurus/plugin-content-docs',
       {
         id: 'community',
