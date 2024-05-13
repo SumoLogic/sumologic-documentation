@@ -92,7 +92,7 @@ For more information, see [About Metrics Rules](/docs/metrics/metric-rules-edito
 [**New UI**](/docs/get-started/sumo-logic-ui-new/). To access Metrics Explorer, in the main Sumo Logic menu select **Metrics > Metrics Search**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Search**. 
  Kanso-->
 
-In the screenshot below, the Metrics Explorer show the results of two queries.
+In the screenshot below, the Metrics Explorer shows the results of two queries.
 
 ![two-queries.png](/img/metrics/two-queries.png)
 
