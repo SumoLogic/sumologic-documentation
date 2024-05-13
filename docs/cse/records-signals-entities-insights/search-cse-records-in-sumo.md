@@ -64,15 +64,15 @@ The **sec_signal** partition is automatically generated, and its contents are re
 
 When you query Cloud SIEM Records or Signalsin a Sumo Logic log search tab, the contents of each Record or Signal are presented in a field named **Security Record Details**. The **Security Record Details** is somewhat unique in that it cannot be referenced in a query itself. It is a read-only field. Note however, that you can add subfields of the **Security Record Details** field as separate columns in the field browser. You can see an example of doing that in [Save a query with predefined display fields](#save-a-query-with-predefined-display-fields) below. And like any other field, you can hide the **Security Record Details** field, if desired.
 
-<img src={useBaseUrl('img/cse/security-record-details.png')} alt="Security records details" width="600"/>
+<img src={useBaseUrl('img/cse/security-record-details.png')} alt="Security records details" style={{border: '1px solid gray'}} width="600"/>
 
 
 ## Search Records or from the Partitions page
 
 If you have the **View Partitions** role capability, you can search Cloud SIEM partitions from the **Partitions** page in the Sumo Logic UI.
 
-1. Go to **Manage Data > Logs > Partitions**.
-1. The partitions that contain Cloud SIEM Records begin with the string "sec_record".<br/><img src={useBaseUrl('img/cse/security-partitions.png')} alt="Security partitions" width="800"/>  
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso--> 
+1. The partitions that contain Cloud SIEM Records begin with the string "sec_record".<br/><img src={useBaseUrl('img/cse/security-partitions.png')} alt="Security partitions" style={{border: '1px solid gray'}} width="800"/>  
 2. To search for all content in the partition, click the icon that appears next to a Partition name when you hover over a row.  
 3. A log search tab opens with a query, like `_index=PartitionName`, that returns all of the logs created within the currently selected time range, 15 minutes by default. For a description of the results, see [Search all Records in a partition](#search-all-record-partitions), below.
 
@@ -82,9 +82,7 @@ To  search a Sumo Logic partition, you specify the name of the partition using
 
 ## Open a log search tab
 
-To open a log search tab in Sumo Logic, click **+ New** and select **Log Search**.
-
-<img src={useBaseUrl('img/cse/open-log-search.png')} alt="Open log search" width="800"/>
+To open a log search tab in Sumo Logic, click **+ New** at the top of the page and select **Log Search**.
 
 ## Search all Records or Signals in a partition 
 
@@ -94,7 +92,7 @@ To return all the Records or Signals in a partition, all you need to include in 
 _index=sec_record_network
 ```
 
-<img src={useBaseUrl('img/cse/record-search-results.png')} alt="Record search results" width="800"/>
+<img src={useBaseUrl('img/cse/record-search-results.png')} alt="Record search results" style={{border: '1px solid gray'}} width="800"/>
 
 Note that:
 
@@ -113,12 +111,12 @@ This query adds the `objectType` (which contains the Record type) and the `user_
 _index = sec_record_audit
 | fields objectType, user_username
 ```
-<img src={useBaseUrl('img/cse/fields-added.png')} alt="Fields added" width="800"/>
+<img src={useBaseUrl('img/cse/fields-added.png')} alt="Fields added" style={{border: '1px solid gray'}} width="800"/>
 
 **To save a search**
 
-1. To save the query for future use, choose **Save As** from the three-dot kebab menu in the search bar.<br/><img src={useBaseUrl('img/cse/save-as.png')} alt="Save as log search" width="800"/>
-2. On the **Save Item** popup, name the query, choose a folder location, and then click **Save**.<br/><img src={useBaseUrl('img/cse/save.png')} alt="Save" width="400"/>
+1. To save the query for future use, choose **Save As** from the three-dot kebab menu in the search bar.<br/><img src={useBaseUrl('img/cse/save-as.png')} alt="Save as log search" style={{border: '1px solid gray'}} width="800"/>
+2. On the **Save Item** popup, name the query, choose a folder location, and then click **Save**.<br/><img src={useBaseUrl('img/cse/save.png')} alt="Save" style={{border: '1px solid gray'}} width="400"/>
 
 ## Search multiple partitions
 
@@ -164,7 +162,7 @@ You can search Cloud SIEM fields by keyword, for example:
 
 The **Security Record Details** field contains a JSON object with all of the fields from the underlying Record or Signal. Some of the data is nested in one or more sub-objects, like the `fields` object for Record., shown expanded in the screenshot below. The fields object contains the contents of the [fields](/docs/cse/schema/schema-attributes) field in the underlying Record, which is all of the unnormalized data from the original log message before it was normalized to the Cloud SIEM schema.
 
-<img src={useBaseUrl('img/cse/nested-fields.png')} alt="Nested fields" width="800"/>
+<img src={useBaseUrl('img/cse/nested-fields.png')} alt="Nested fields" style={{border: '1px solid gray'}} width="800"/>
 
 You can access the contents of nested attributes, like `fields` in the example below, using a `where` clause:  
 
@@ -172,7 +170,7 @@ You can access the contents of nested attributes, like `fields` in the example b
 _index=sec_record_authentication
 | where %"fields.application" = "test_app"
 ```
-<img src={useBaseUrl('img/cse/extracted-field.png')} alt="Extracted field" width="800"/>
+<img src={useBaseUrl('img/cse/extracted-field.png')} alt="Extracted field" style={{border: '1px solid gray'}} width="800"/>
 
 ## Security index search limitations
 
