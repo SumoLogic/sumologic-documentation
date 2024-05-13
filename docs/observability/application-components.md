@@ -73,7 +73,7 @@ The Terraform script performs the following actions:
    terraform init
    ```
 
-This will install the required Terraform providers, including [Null](https://www.terraform.io/docs/providers/sumologic/index.html), [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [Time Provider](https://registry.terraform.io/providers/hashicorp/time/latest/docs), [Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs).
+This will install the required Terraform providers, including [Null](https://www.terraform.io/docs/providers/sumologic/index.html), [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [Time Provider](https://registry.terraform.io/providers/hashicorp/time/latest/docs), and [Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs).
 
 By default, all other parameters are set up to automatically collect logs, metrics, install apps and monitors. If you need to configure or override additional parameters, you can do so in the [main.auto.tfvars file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.tf).
 
