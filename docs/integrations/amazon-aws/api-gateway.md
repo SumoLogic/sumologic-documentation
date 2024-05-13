@@ -213,28 +213,28 @@ Applied at: Ingest Time
 Scope (Specific Data):
 account=* region=* (_sourceHost=/aws/* or _sourceHost=API*Gateway*Execution*Logs*)
 Parse Expression:
-if (isEmpty(namespace),"unknown",namespace) as namespace 
-| if (_sourceHost matches "/aws/lambda/*", "aws/lambda", namespace) as namespace 
-| if (_sourceHost matches "/aws/rds/*", "aws/rds", namespace) as namespace 
-| if (_sourceHost matches "/aws/ecs/containerinsights/*", "aws/ecs", namespace) as namespace 
-| if (_sourceHost matches "/aws/kinesisfirehose/*", "aws/firehose", namespace) as namespace 
-| if (_sourceHost matches "/aws/apigateway/*", "aws/apigateway", namespace) as namespace 
-| if (_sourceHost matches "API-Gateway-Execution-Logs*", "aws/apigateway", namespace) as namespace 
-| parse field=_sourceHost "/aws/lambda/*" as functionname nodrop | tolowercase(functionname) as functionname 
-| parse field=_sourceHost "/aws/rds/*/*/" as f1, dbidentifier nodrop 
+if (isEmpty(namespace),"unknown",namespace) as namespace
+| if (_sourceHost matches "/aws/lambda/*", "aws/lambda", namespace) as namespace
+| if (_sourceHost matches "/aws/rds/*", "aws/rds", namespace) as namespace
+| if (_sourceHost matches "/aws/ecs/containerinsights/*", "aws/ecs", namespace) as namespace
+| if (_sourceHost matches "/aws/kinesisfirehose/*", "aws/firehose", namespace) as namespace
+| if (_sourceHost matches "/aws/apigateway/*", "aws/apigateway", namespace) as namespace
+| if (_sourceHost matches "API-Gateway-Execution-Logs*", "aws/apigateway", namespace) as namespace
+| parse field=_sourceHost "/aws/lambda/*" as functionname nodrop | tolowercase(functionname) as functionname
+| parse field=_sourceHost "/aws/rds/*/*/" as f1, dbidentifier nodrop
 | parse field=_sourceHost "/aws/apigateway/*/*" as apiid, stage nodrop
 | parse field=_sourceHost "API-Gateway-Execution-Logs_*/*" as apiid, stage nodrop
 | apiid as apiName
-| tolowercase(dbidentifier) as dbidentifier 
+| tolowercase(dbidentifier) as dbidentifier
 | fields namespace, functionname, dbidentifier, apiid, apiName
 ```
 
 ### Metrics rules
 
-Create the following metrics rule for the AWS API Gateway app, if not already created. To learn how to create a metrics rule, see [Metrics Rules Editor](/docs/metrics/metric-rules-editor#create-a-metric-rule).
+Create the following metrics rule for the AWS API Gateway app, if not already created. To learn how to create a metrics rule, see [Metrics Rules Editor](/docs/metrics/metric-rules-editor#create-a-metrics-rule).
 
 ```sql
-Rule name: AwsObservabilityApiGatewayApiNameEntityRule
+Rule name: AwsObservabilityApiGatewayApiNameMetricsEntityRule
 Metric match expression: Namespace=AWS/ApiGateway apiid=*
 Variable name: apiname
 Tag sequence: $apiid._1
@@ -322,9 +322,13 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
    10. Click **Save**.
    11. Save the given URL of the source for next step.
 2. [Create Stack](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#cloudformation-template) in AWS console with given CloudFormation Template.
-3. Follow below steps for enabling access logs for each respective API type:
-   * Enable Access logs for REST APIs by referring to [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-logging-to-kinesis.html#set-up-kinesis-access-logging-using-console) and  when you specify the `Log format` field use the below JSON.
-      
+3. Create a log group in CloudWatch Logs by referring to the [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html). Make sure to set your log group name convention as `/aws/apigateway/<apiid>/<stagename>`.
+4. Follow the below steps to enable access logs for each respective API type:
+   :::note
+   Make sure to remove `:*` from the end while adding Access log destination ARN.
+   :::
+   * Enable Access logs for REST APIs by referring to the [AWS documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-logging.html#set-up-access-logging-using-console). When you specify the `Log format` field, use the below JSON.
+
       <img src={useBaseUrl('img/integrations/amazon-aws/Access_Logging_REST_API.png')} alt="AWS API Gateway" style={{border: '1px solid gray'}} width="800" />
 
    ```json title="JSON Log Format for REST API"
@@ -515,7 +519,7 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
    }
    ```
 
-4. To Export logs, refer to [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group).
+5. To Export logs, refer to [Manually subscribe AWS Kinesis Firehose stream to an existing CloudWatch Log Group](/docs/send-data/hosted-collectors/amazon-aws/aws-kinesis-firehose-logs-source/#manually-subscribeaws-kinesis-firehose-stream-to-an-existing-cloudwatch-log-group).
 
 ### Collect AWS API Gateway CloudTrail logs
 
@@ -599,7 +603,7 @@ Use these dashboards to:
 
 ### Access Logs
 
-Access logs contains information about who has accessed your API and how the caller accessed the API. 
+Access logs contains information about who has accessed your API and how the caller accessed the API.
 To populate the dashboards, you must explicitly [enable access logs](#collect-access-logs-for-aws-api-gateway).
 
 #### AWS API Gateway - Access Logs - Overview
@@ -635,7 +639,7 @@ Use these dashboards to:
 * Monitor all API Gateway-related audit logs available via CloudTrail events
 * Monitor incoming user activity locations for both successful and failed events to ensure the activity matches with expectations
 * Monitor successful and failed API Gateway events, users and user agents / fail activities, and failure reasons
-* Monitor requests coming in from known malicious IP addresses detected via [Sumo Logic Threat Intel](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ)
+* Monitor requests coming in from known malicious IP addresses detected via [Sumo Logic Threat Intel](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq)
 
 <img src='https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-API-Gateway/6.-AWS-API-Gateway-Audit-Events.png' alt="Audit Events" />
 

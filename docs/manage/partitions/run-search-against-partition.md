@@ -17,11 +17,42 @@ To search a particular partition, specify the `_index` metadata field with the n
 You can only use `_index` in the keyword search expression that scopes the search, in other words, before the first pipe (`|`) in the search.
 :::
 
+## Filter and search a partition
+
+You'll need to filter the partition, depending on the type of partition using the dropdown provided above the table. Accordingly, you can view the overall allocated storage details with the percentage of storage used for the selected partition type. You can select between two type of partitions:
+
+- **User-Defined Partitions**. Type of partitions which are created by the user.
+- **System Partitions**. Type of partitions which are created from Sumo Logic to optimize the performance of the query.
+
+<img src={useBaseUrl('img/partitions-data-tiers/filter-and-search-a-partition.png')} alt="filter-and-search-a-partition" style={{border:'1px solid gray'}} width="800"/>
+
 ## Search the default partition
 Data that you ingest that is not directed to a partition will go to the default partition, named `sumologic_default`. The default partition is the first partition listed on the **Partitions** page. To run a search against the default partition, include this in the scope of your search:
 ```
 _index=sumologic_default
 ```
+
+## Index aliasing
+
+With index aliasing, you can use an alias to point to one or more system indexes such as [`sumologic_default`](/docs/manage/partitions/run-search-against-partition/#search-the-default-partition) in the source expression of your search query. Both the operator part and results of your query will consist of actual index names.
+
+In addition to `sumologic_default`, we have several other Sumo Logic-defined system indexes. As a shortcut, rather than prefacing `sumologic_` when referencing system indexes in a search, you can alias these indexes by typing an underscore at the beginning. For example, `sumologic_default` and `_default` will return the same results. 
+
+:::warning Leading Underscore Reserved for System Index Alias in User-Created Indexes
+When creating your own indexes (user-created, non-system indexes), you cannot lead with an underscore (`_`). This is reserved only for system indexes.
+:::
+
+If your search query scans both your own indexes and Sumo Logic indexes starting with an underscore (`_`), you'll only see your own indexes in the results. System indexes would be ignored, and you'd see a warning stating: `System indexes with alias names have been excluded from the results of the query`. 
+
+### Using index aliases
+
+Here are some examples where index aliasing is used in wildcard queries.
+
+`_index=*volume*` This query will reference all types of indexes (system indexes as well as user-created).
+
+`_index=_vol*`. This query will reference indexes such as `sumologic_volume`.
+
+`_index=_*`. This will show all Sumo Logic-defined system indexes would show in search results.
 
 ## Run a search against a partition from the Partitions page
 

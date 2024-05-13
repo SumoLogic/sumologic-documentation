@@ -31,61 +31,15 @@ A message confirms that the feature is enabled.
 
 ## Installing the Data Volume app
 
-import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
-<AppInstallNoDataSourceV1/>
+<AppInstallNoDataSourceV2/>
 
-## Set up Burndown Rates for Consumables
+## Viewing Data Volume dashboards
 
-Burndown rate is the ratio for the number of Credits consumed per 1 GB of ingested data. This ratio is different for each tier. Similarly, Cloud SIEM ingest, Metrics and Tracing have their own burndown rates.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-
-<table>
-  <tr>
-   <td><strong>Credit Variable</strong></td>
-   <td><strong>Unit</strong></td>
-   <td><strong>Default Credits per Unit</strong></td>
-  </tr>
-  <tr>
-   <td>Cloud SIEM</td>
-   <td>1 GB</td>
-   <td>25</td>
-  </tr>
-  <tr>
-   <td>Logs - Continuous Analytics</td>
-   <td>1 GB</td>
-   <td>20</td>
-  </tr>
-  <tr>
-   <td>Logs - Frequent Analytics</td>
-   <td>1 GB</td>
-   <td>9</td>
-  </tr>
-  <tr>
-   <td>Metrics</td>
-   <td>1,000 DPM</td>
-   <td>3</td>
-  </tr>
-  <tr>
-   <td>Logs - Infrequent Ingest</td>
-   <td>1 GB</td>
-   <td>0.4</td>
-  </tr>
-  <tr>
-   <td>Tracing- Ingest</td>
-   <td>1 GB</td>
-   <td>14</td>
-  </tr>
-</table>
-
-The Data Volume App is set up to use these default burn down rates. However, these may vary for your Sumo Logic account based on your contract. Please confirm and change these default burn-down rates if necessary by working with your Sumo Logic Account Executive. This will ensure that the Credits dashboard will match the usage reported on the Accounts page.
-
-## Viewing Data Volume Dashboards
-
-For each panel in a dashboard, you can perform the following actions:
-* To display details for the panel time range, hover over the text in the top right corner.
-* To zoom into a panel for more information, click the magnifying glass icon in the header.
-
+<ViewDashboards/>
 
 ### Overview
 
@@ -107,7 +61,7 @@ Use this dashboard to:
 * Determine the log data for default index and top non-default indexes.
 * Compare current ingestion to capacity and review any overages. You must configure the “Daily_Log_Ingest_Capacity” variable based on your Account Subscription. If you have  Credit based plan, please check with your account executive to determine these values for your account. Otherwise, see **Administration > Account > Account Overview** to get your capacity values.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Logs-by-Metadata-Fields.png')} alt="Data volume dashboards" />
+<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Logs.png')} alt="Data volume dashboards" />
 
 
 ### Data Volume Logs by Metadata Fields
@@ -118,7 +72,7 @@ Use this dashboard to:
 * Identify the top 5 sources categories, source hosts, and collectors by ingest volume
 * Examine ingestion trends over time
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Overview.png')} alt="Data volume dashboards" />
+<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Logs-by-Metadata-Fields.png')} alt="Data volume dashboards" />
 
 
 ### Metrics
@@ -166,15 +120,3 @@ Use this dashboard to:
 * Identify the top 5 source categories, source hosts, sources, and collectors by span count and billed bytes.
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Tracing.png')} alt="Data volume dashboards" />
-
-
-### Credits
-
-The **Data Volume - Credits** Dashboard helps you understand how your credits are being used across Logs, Metrics, Traces, and data tiers.
-
-Use this dashboard to:
-
-* Identify the number of credits consumed and trends across Logs (by different tiers), Metrics, Tracing.
-* Determine the top sources based on their credit usage for Logs (by different tiers), Metrics, and Tracing.
-
-<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Credits.png')} alt="Data volume dashboards" />

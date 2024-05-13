@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Use the Sumo Logic Application Programming Interfaces (APIs) to interact with our platform and access resources and data programmatically from third-party scripts and apps.
 
 :::sumo Get Help
-To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/hc/en-us/community/topics/200263058-Applications-and-Integrations) and [Sumo Dojo](http://slack.sumologic.com/).
+To connect with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic API and Apps Forum](https://support.sumologic.com/support/s/topic/0TO6Q000000gTC8WAM/apis?tabset-cabe3=2) and [Sumo Dojo](http://slack.sumologic.com/).
 :::
 
 <div className="box-wrapper" markdown="1">
@@ -73,12 +73,7 @@ To connect with other Sumo Logic users, post feedback, or ask a question, visit 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/api/dashboard"><img src={useBaseUrl('img/icons/dashboards.png')} alt="Thumbnail icon" width="50"/><h4>Dashboards V2</h4></a>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/api/dashboard-data"><img src={useBaseUrl('img/icons/dashboards.png')} alt="Thumbnail icon" width="50"/><h4>Dashboards V1 (Beta)</h4></a>
+  <a href="/docs/api/dashboard"><img src={useBaseUrl('img/icons/dashboards.png')} alt="Thumbnail icon" width="50"/><h4>Dashboards Management</h4></a>
   </div>
 </div>
 <div className="box smallbox card">

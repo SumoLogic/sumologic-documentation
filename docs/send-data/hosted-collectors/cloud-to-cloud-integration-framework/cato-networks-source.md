@@ -17,9 +17,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Cato Networks is a cloud-native, global SD-WAN provider that delivers a secure, optimized, and agile global network for businesses of all sizes. Cato's cloud-based platform converges multiple network and security functions into a unified solution that includes SD-WAN, network security, cloud security, and secure access service edge (SASE) capabilities.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
@@ -80,6 +80,12 @@ To configure a Cato Networks Source:
    - If **Security Events** is selected, the integration will fetch security data.
    - If **Audit Events** is selected, the integration will fetch audit data.
 1. When you are finished configuring the Source, click **Save**.
+
+## Metadata fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemParser` | `/Parsers/System/Cato Networks/Cato Networks` | Set when **Forward To SIEM** is checked. |
 
 ## JSON Configuration
 

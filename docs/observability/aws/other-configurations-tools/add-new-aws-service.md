@@ -5,6 +5,8 @@ sidebar_label: Add a New AWS Service
 description: Learn how to add a new dashboard to the Hierarchy.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The AWS Observability view in Explore provides a unified view of your AWS Services within Sumo Logic from multiple AWS accounts. It shows a hierarchy across AWS accounts, regions, namespaces, and entities to present an intuitive navigation flow.
 
 By default, the AWS Observability view supports the following services: AWS EC2, AWS API Gateway, AWS Lambda, AWS RDS, Amazon DynamoDB, and AWS Application ELB. The purpose of this document is to guide you towards adding any dashboards you may have built for additional services to the AWS Observability hierarchy.
@@ -191,7 +193,7 @@ Once you are done with the above steps, the AWS service will be added to the AWS
 1. Select AWS Observability from the dropdown.
 1. You should be able to see the new service in the hierarchy represented by namespace/entity.
 
-![Validate_hierarchy.png](/img/observability/Validate_hierarchy.png)
+<img src={useBaseUrl('img/observability/Validate_hierarchy.png')} alt="Validate hierarchy" style={{border: '1px solid gray'}} width="400" />
 
 
 ## Step 2. Enrich Log Data
@@ -202,7 +204,7 @@ Logs from AWS services are collected into Sumo Logic via Amazon S3, AWS Elastic 
 
 Add account field by adding fields to your log source as shown below:
 
-![Step8.png](/img/observability/Step8.png)
+<img src={useBaseUrl('img/observability/Step8.png')} alt="Add account field" style={{border: '1px solid gray'}} width="500" />
 
 ### Add the **namespace** and **region** metadata tags to log data using Field Extraction Rule
 
