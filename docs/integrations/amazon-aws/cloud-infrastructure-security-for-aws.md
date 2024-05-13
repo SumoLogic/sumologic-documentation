@@ -356,7 +356,6 @@ In this step, you perform the steps needed to deploy the Cloud Infrastructure Se
           * **Name of existing S3 Bucket which contains the Network Firewall Logs**. If you selected **Yes** in the preceding field in this section for creating an S3 bucket, leave this blank. If you selected **No** in the preceding field for creating an S3 bucket, provide an existing S3 Bucket name which contains Network Firewall Logs. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-7a.png')} alt="Firewall configuration" style={{border: '1px solid gray'}} width="700"/>
        </details>
 
-       <!--
        <details>
        <summary>CloudQuery</summary>
 
@@ -374,7 +373,6 @@ In this step, you perform the steps needed to deploy the Cloud Infrastructure Se
           * **CloudQuery Services**. Select the AWS services to collect data from in a comma-separated list. The source will collect data from *all* regions by default, or you can enter the list of required AWS services as follows: `apigateway,ecs,ec2,lambda,autoscaling,s3,elb,rds,dynamodb,elasticache,redshift,sns,sqs,cloudfront,elasticbeanstalk,eks,accessanalyzer,account,acm,backup,cloudtrail,cloudwatch,codebuild,config,directconnect,dms,ecr,efs,elasticsearch,emr,guardduty,iam,kms,lightsail,route53,sagemaker,secretsmanager,securityhub,ssm,waf,wafv2`.
           * **How Frequently to Poll AWS Service(s)**. Set how frequently to poll AWS Services inventory in hours. The default is **12**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-cloud-query-config.png')} alt="CloudQuery configuration" style={{border: '1px solid gray'}} width="700"/>
        </details>
-       -->
 
 1. Under **Permissions**, in **IAM role - optional**, choose the IAM role for CloudFormation to use for all operations performed on the stack. The role must have permissions to set up the necessary Lambdas, S3 buckets, Kenesis streams, and other objects needed in the CloudFormation template, as well as access to the appropriate logs. If your AWS role does not have the necessary permissions, see [Step 2: Check AWS role permission](#step-2-check-aws-role-permission). <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions.png')} alt="Create Stack button" style={{border: '1px solid gray'}} width="700"/>
 1. Under **Capabilities and transforms**, select the acknowledgement boxes.
@@ -503,7 +501,6 @@ The  **Active Threats: AWS Storage** dashboard provides threat counts related to
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-storage.png')} alt="Active Threats: AWS Storage dashboard" style={{border: '1px solid gray'}} width="600"/>
 
-<!--
 ### Cloud SIEM Insights Overview
 
 The **Cloud SIEM Insights Overview** dashboard runs advanced threat detection (Cloud SIEM Insights) on your AWS data so that you can get early detection of  attacks and protect against evolving threats. This dashboard is only available if you use [Cloud SIEM](/docs/cse/). 
@@ -519,16 +516,7 @@ This dashboard is in [preview](#cloudquery-preview). To see data in this dashboa
 :::
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-infrastructure-overview.png')} alt="Infrastructure Overview dashboard" style={{border: '1px solid gray'}} width="600"/>
--->
 
-<!-- Remove the following section for the CloudQuery preview release -->
-### Security Control Failures dashboard
-
-The **Security Control Failures** dashboard shows resources that need to be addressed because they are vulnerable as reported by AWS Security Hub. It shows findings by resource, trend, type, and category. By default, the `compliance_status` filter at the top of the dashboard is set to **FAILED** to show resources that fail compliance. Set the `risk.calculated_level` filter to **high** or **critical** to see the most important failures.
-
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures.png')} alt="Security Control Failures - AWS Security Hub dashboard" style={{border: '1px solid gray'}} width="600"/>
-
-<!--
 ### Security Control Failures dashboards
 
 The Security Control Failures dashboards identify misconfigurations in your environment that may leave you vulnerable to attackers.
@@ -558,7 +546,6 @@ This dashboard is in [preview](#cloudquery-preview). To see data in this dashboa
 :::
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures-investigation.png')} alt="Security Control Failures Investigation dashboard" style={{border: '1px solid gray'}} width="600"/>
--->
 
 ### Suspicious Activity dashboards
 
