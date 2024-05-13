@@ -2,8 +2,8 @@
 id: snowflake-sql-api-source
 title: Snowflake SQL API Source
 sidebar_label: Snowflake SQL API
-tags:
-  - cloud-to-cloud
+keywords:
+  - snowflake
   - snowflake-sql-api
 description: Learn how to collect metrics from Snowflake SQL aggregation queries.
 ---

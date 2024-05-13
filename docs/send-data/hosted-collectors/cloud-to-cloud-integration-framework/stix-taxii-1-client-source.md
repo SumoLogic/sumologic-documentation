@@ -2,7 +2,7 @@
 id: stix-taxii-1-client-source
 title: STIX/TAXII 1 Client Source
 sidebar_label: STIX/TAXII 1 Client
-tags:
+kwywords:
   - cloud-to-cloud
   - stix
   - taxii
@@ -21,7 +21,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-[STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients. This Sumo Logic source supports collecting indicators from STIX/TAXII 1.x. 
+[STIX/TAXII](https://oasis-open.github.io/cti-documentation/) are two standards used together to exchange threat intelligence information between systems. STIX defines the format and structure of the data. TAXII defines how the API endpoints are served and accessed by clients. This Sumo Logic source supports collecting indicators from STIX/TAXII 1.x.
 
 import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
 
@@ -69,7 +69,7 @@ To configure a TAXII 1 Client Source:
    * **HTTP Basic Auth User**. The threat intel API username
    * **HTTP Basic Auth Password**. The threat intel API password
 1. **Other Settings**:
-    1. (Optional) **Polling Interval**. Set how frequently to poll for new or updated indicators. It must be between 5 minutes and 48 hours. 
+    1. (Optional) **Polling Interval**. Set how frequently to poll for new or updated indicators. It must be between 5 minutes and 48 hours.
 1. When you are finished configuring the Source, click **Save**.
 
 ## JSON Configuration
