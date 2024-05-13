@@ -54,7 +54,7 @@ With the New UI, you can expect:
 
 ## Prerequisites
 
-As this is a Closed Beta, you'll need obtain access by contacting your Sumo Logic sales representative.
+As this is a Closed Beta, you'll need to obtain access by contacting your Sumo Logic sales representative.
 
 ## Getting to the New UI
 
