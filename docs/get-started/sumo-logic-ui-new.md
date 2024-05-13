@@ -294,7 +294,7 @@ We understand that the removal of in-app tabs in the New UI is a significant cha
 | In-house tabs solution. Always trying to keep up with browser tab improvements. | Utilizes browser’s native tab capability like tab grouping and coloring. |
 | User needs to learn new way of organizing tabs. Multiple Sumo instances is difficult. | User utilizes what they already know. Multiple Sumo instances is easier. |
 | Performance degrades over long usage because user is using one browser tab. | Memory usage is distributed over different tabs. |
-| Tab switches reloads the tab. | Tab switches won’t reload the tab. This will accelerate time to load, which is especially useful for data-rich features like Dashboards. |
+| Tab switches reload the tab. | Tab switches won’t reload the tab. This will accelerate time to load, which is especially useful for data-rich features like Dashboards. |
 
 </details>
 
