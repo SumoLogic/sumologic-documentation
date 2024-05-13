@@ -25,7 +25,7 @@ Assigning an Ingest Budget to a Collector is only relevant for V1 Ingest Budgets
 
 ## Collection page
 
-On the **Manage Data** > **Collection** > **[Collection page](/docs/send-data/collection)** when editing an existing Collector or creating a new Hosted Collector there is an option, **Assign to a Budget**, that allows you to assign an ingest budget to a Collector.
+On the [Collection page](/docs/send-data/collection) when editing an existing Collector or creating a new Hosted Collector there is an option, **Assign to a Budget**, that allows you to assign an ingest budget to a Collector.
 
 ![assign to a budget dropdown option.png](/img/ingestion-volume/assign-budget-dropdown-option.png)
 

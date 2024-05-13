@@ -9,7 +9,7 @@ This section has instructions for added users to a role, and removing users from
 
 ### Add a user to a role
 
-1. Go to **Administration** > **Users and Roles** > **Roles**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
 1. Navigate to the role and click the number in the **Users** column.
 
     ![user-in-role-count.png](/img/users-roles/user-in-role-count.png)
@@ -28,7 +28,7 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 
 ### Remove a user from a role
 
-1. Go to **Administration** > **Users and Roles** > **Roles**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
 1. Navigate to the role and click the number in the **Users** column.
 
     ![role-list.png](/img/users-roles/role-list.png)
