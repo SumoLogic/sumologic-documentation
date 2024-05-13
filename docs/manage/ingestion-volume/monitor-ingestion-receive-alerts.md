@@ -43,7 +43,8 @@ You must update all of the indicated fields for the search to save successfully
 
 ```
 _index=sumologic_volume and sizeInBytes and _sourceCategory="sourcename_volume"
-| parse regex "\"(?<sourcename>[^\"]*)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
+| parse regex "\"(?<sourcename>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "sizeInBytes", "count" as bytes, count
 | timeslice 1d
 | bytes/1024/1024/1024 as gbytes
 | sum(gbytes) as gbytes by _timeslice
@@ -108,7 +109,8 @@ You must update the indicated field for the search to be successfully saved.
 ```
 _index=sumologic_volume sizeInBytes
 | where _sourceCategory="collector_volume"
-| parse regex "\"(?<collector>[^\"]+)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
+| parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "sizeInBytes", "count" as bytes, count
 | bytes/1024/1024/1024 as gbytes
 | timeslice 1d
 | sum(gbytes) as gbytes by _timeslice
@@ -153,7 +155,8 @@ This hourly alert is generated when both of the following occur:
 
 ```
 _index=sumologic_volume sizeInBytes _sourceCategory="sourcecategory_volume"
-| parse regex "\"(?<sourcecategory>[^\"]+)\"\:\{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
+| parse regex "\"(?<sourcecategory>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "sizeInBytes", "count" as bytes, count
 | timeslice 1h
 | bytes/1024/1024/1024 as gbytes
 | sum(gbytes) as gbytes by sourcecategory, _timeslice
@@ -204,8 +207,8 @@ attributes `alive` and `LastSeenAlive`.
 
 ```
 _index=sumologic_volume sizeInBytes _sourceCategory="collector_volume"
-| parse regex "\"(?<collector>[^\"]+)\"\:(?<volumeInfo>.*)" multi
-| json field=volumeInfo "sizeInBytes", "extractedAndCollectedFieldsSize", "count"
+| parse regex "\"(?<collector>[^\"]*)\"\:(?<data>\{[^\}]*\})" multi
+| json field=data "sizeInBytes", "count" as bytes, count
 | first(_messagetime) as MostRecent, sum(bytes) as TotalVolumeBytes by collector
 | formatDate(fromMillis(MostRecent),"yyyy/MM/dd HH:mm:ss") as MostRecentTime
 | toMillis(queryEndTime()) as currentTime
