@@ -45,10 +45,10 @@ This page provides an overview of the Sumo Logic **New UI**, currently in beta a
 
 With the New UI, you can expect:
 
-* Unified experience across Operational and Security analytics products
-* Accelerated performance, reduced load time, and enhanced caching
-* Stateful URLs to preserve page states upon re-login
-* Use-case-based navigation for streamlined feature discovery
+* Unified experience across Operational and Security analytics products.
+* Accelerated performance, reduced load time, and enhanced caching.
+* Stateful URLs to preserve page states upon re-login.
+* Use-case-based navigation for streamlined feature discovery.
 
 [Learn more](/release-notes-service/2024/02/23/ui/)
 
