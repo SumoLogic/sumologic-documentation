@@ -38,6 +38,10 @@ Slack offers a [Message Builder](https://api.slack.com/docs/messages/builder) wh
 
 These examples are provided as a reference on Slack's supported Webhook payloads. Refer to Slack for further details on what their service supports and how to build payloads.
 
+:::info
+You can use `blocks` as an alternative to `attachments`. However, our default payload still uses `attachments`.
+:::
+
 ### Send Scheduled Search results
 
 Here is an example JSON payload to send most of the available Webhook variables including `ResultsJson`.
@@ -85,8 +89,8 @@ The underlined portion is the token that is needed for the Slack configuration. 
 
 ```json
 {
-"text": "{{Name}} ran over {{TriggerTimeRange}} at {{TriggerTime}}",
-"username": "Sumo Logic Alert"
+  "text": "{{Name}} ran over {{TriggerTimeRange}} at {{TriggerTime}}",
+  "username": "Sumo Logic Alert"
 }
 ```
 
@@ -94,28 +98,28 @@ Here is an example JSON payload using Slack's **attachments** parameter:
 
 ```json
 {
-     "attachments": [
-         {
-             "pretext": "Sumo Logic Alert: *{{Name}}*",
-             "fields": [
-                 {
-                     "title": "Description",
-                     "value": "{{Description}}"
-                 },
-                 {
-                     "title": "Query",
-                     "value": "<{{QueryUrl}}|{{Query}}>"
-                 },
-                 {
-                     "title": "Time Range",
-                     "value": "{{TriggerTimeRange}}"
-                 }
-             ],
-             "mrkdwn_in": ["text", "pretext"],
-             "color": "#29A1E6"
-         }
-     ]
- }
+  "attachments": [
+    {
+      "pretext": "Sumo Logic Alert: *{{Name}}*",
+      "fields": [
+        {
+          "title": "Description",
+          "value": "{{Description}}"
+        },
+        {
+          "title": "Query",
+          "value": "<{{QueryUrl}}|{{Query}}>"
+        },
+        {
+          "title": "Time Range",
+          "value": "{{TriggerTimeRange}}"
+        }
+      ],
+      "mrkdwn_in": ["text", "pretext"],
+      "color": "#29A1E6"
+    }
+  ]
+}
 ```
 
 ## Create an alert
