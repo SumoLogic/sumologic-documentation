@@ -16,7 +16,8 @@ Data volume for metrics is often measured in data points per minute (DPM). A dat
 While you can also see metrics ingestion breakdown in the [**Metrics** dashboard](/docs/integrations/sumo-apps/data-volume/#metrics) of the Data Volume app, the dashboard only shows volume usage at a source category or source host level. Use the Metrics Data Ingestion screen to get more detailed information.
 
 :::note
-To see data volume, you'll need to enable [Audit Index](/docs/manage/security/audit-indexes/audit-index).
+* To see data volume, you'll need to enable [Audit Index](/docs/manage/security/audit-indexes/audit-index).
+* How far back in time you can view data is determined by your organization’s retention period for Audit Index. For more information, see [Index Retention Period](/docs/manage/security/audit-indexes/audit-index/#index-retention-period).
 :::
  
 ## View Metrics Data Ingestion
