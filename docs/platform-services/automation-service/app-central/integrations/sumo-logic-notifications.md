@@ -19,7 +19,7 @@ Integration with Sumo Logic platform for monitors and Slack Notification.
 
 ## Sumo Logic Notifications configuration
 
-1. To configure the Sumo Logic, log into the application, expand the user info from the bottom left menu and click **Preferences**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-1.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="300"/>
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**.  Kanso-->
 1. From the preferences screen, in the section **My Access Keys**, click **Add Access Key**. <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-2.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="600"/>
 1. Populate the name and click **Create Key**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-3.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
 1. Copy the **Access ID** and **Access Key** and store them (temporally) into a text editor.
@@ -30,8 +30,7 @@ Integration with Sumo Logic platform for monitors and Slack Notification.
 
 ## Sumo Logic Notifications in Automation Service and Cloud SOAR
 
-1. To configure the integration, log into the application, expand the configuration menu in the top right corner by hovering over the gear icon and click **Automation**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-5.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
-1. In the Automation section, on the left menu, click **Integrations**.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-6.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
+1. Access integrations in the [Automation Service](/docs/platform-services/automation-service/automation-service-integrations/#view-integrations) or [Cloud SOAR](/docs/cloud-soar/automation).
 1. After the list of the integrations appears, search/look for the integration and click on the row.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic-notifications/sumo-logic-notifications-7.png')} style={{border:'1px solid gray'}} alt="sumo-logic-notifications" width="400"/>
 1. Populate all the required fields (\*) and then click Save.

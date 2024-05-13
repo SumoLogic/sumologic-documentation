@@ -61,7 +61,7 @@ Use this dashboard to:
 * Determine the log data for default index and top non-default indexes.
 * Compare current ingestion to capacity and review any overages. You must configure the “Daily_Log_Ingest_Capacity” variable based on your Account Subscription. If you have  Credit based plan, please check with your account executive to determine these values for your account. Otherwise, see **Administration > Account > Account Overview** to get your capacity values.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Logs-by-Metadata-Fields.png')} alt="Data volume dashboards" />
+<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Logs.png')} alt="Data volume dashboards" />
 
 
 ### Data Volume Logs by Metadata Fields
@@ -72,7 +72,7 @@ Use this dashboard to:
 * Identify the top 5 sources categories, source hosts, and collectors by ingest volume
 * Examine ingestion trends over time
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Overview.png')} alt="Data volume dashboards" />
+<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Logs-by-Metadata-Fields.png')} alt="Data volume dashboards" />
 
 
 ### Metrics
