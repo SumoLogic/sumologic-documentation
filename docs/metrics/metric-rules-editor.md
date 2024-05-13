@@ -42,10 +42,10 @@ You use the metrics rules editor to build a metrics rule. On the **Metrics Rule
 
 The subsections that follow describe the information shown in the columns on the **Metrics Rules** page.
 
-<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  To access the **Metrics Rules** page, in the main Sumo Logic menu select **Manage Data > Metrics > Metrics Rules**. 
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  To access the **Metrics Rules** page, go to the main Sumo Logic menu and select **Manage Data > Metrics > Metrics Rules**. 
 
 <!--Kanso 
-[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the **Metrics Rules** page, in the top menu select **Configuration** and then under **Metrics** select **Metrics Rules**. You can also click the **Go To...** menu at the top of the screen and select **Metrics Rules**. 
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the **Metrics Rules** page, go to the top menu and select **Configuration**, and then under **Metrics**, select **Metrics Rules**. Alternatively, you can click the **Go To...** menu at the top of the screen and select **Metrics Rules**. 
  Kanso-->
 
 ### Metrics match expression
