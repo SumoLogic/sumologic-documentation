@@ -2,7 +2,7 @@
 id: stix-taxii-1-client-source
 title: STIX/TAXII 1 Client Source
 sidebar_label: STIX/TAXII 1 Client
-kwywords:
+keywords:
   - cloud-to-cloud
   - stix
   - taxii
