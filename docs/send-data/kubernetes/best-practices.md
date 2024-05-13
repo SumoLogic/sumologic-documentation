@@ -277,6 +277,7 @@ falco:
 ## Overriding metadata using annotations
 
 You can use [Kubernetes annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) to override some metadata and settings per pod or per namespace.
+
 Pod annotations take precedence over namespace annotations.
 
 - `sumologic.com/sourceCategory` overrides the value of the `sumologic.logs.container.sourceCategory` property
@@ -284,7 +285,7 @@ Pod annotations take precedence over namespace annotations.
 - `sumologic.com/sourceCategoryReplaceDash` overrides the value of the `sumologic.logs.container.sourceCategoryReplaceDash` property
 - `sumologic.com/sourceName` overrides the value of the `sumologic.logs.container.sourceName` property
 
-For example using pod annotations:
+The following example uses pod annotations:
 
 ```yaml
 apiVersion: v1
@@ -312,7 +313,7 @@ spec:
             - containerPort: 80
 ```
 
-For example using namespace annotations:
+The following example uses namespace annotations:
 
 ```yaml
 apiVersion: v1
@@ -366,7 +367,7 @@ The `sumologic.com/sourceCategoryReplaceDash` annotation with value `-` prevents
 You can use the `sumologic.com/exclude` [annotation](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) to exclude data from Sumo. This data is sent to the metadata enrichment service, but not to Sumo.
 You can exclude data per pod using pod annotations or per namespace using namespace annotations but pod annotations take precedence over namespace annotations.
 
-For example using pod annotations:
+The following example uses pod annotations:
 
 ```yaml
 apiVersion: v1
@@ -392,7 +393,7 @@ spec:
             - containerPort: 80
 ```
 
-For example using namespace annotations:
+The following example uses namespace annotations:
 
 ```yaml
 apiVersion: v1
