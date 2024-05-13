@@ -365,7 +365,7 @@ The `sumologic.com/sourceCategoryReplaceDash` annotation with value `-` prevents
 ### Excluding data using annotations
 
 You can use the `sumologic.com/exclude` [annotation](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) to exclude data from Sumo. This data is sent to the metadata enrichment service, but not to Sumo.
-You can exclude data per pod using pod annotations or per namespace using namespace annotations but pod annotations take precedence over namespace annotations.
+You can exclude data per pod using pod annotations or per namespace using namespace annotations. However, pod annotations take precedence over namespace annotations.
 
 The following example uses pod annotations:
 
