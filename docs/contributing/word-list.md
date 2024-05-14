@@ -27,7 +27,7 @@ This word list provides an alphabetized list of commonly used terms at Sumo Logi
 
 **Check box**. Check box is two words. Don't use checkbox.
 
-**Classic UI**. Use this term to distinguish the old UI.
+**Classic UI**. Use this term to clarify you're talking about the legacy UI.
 
 **Click**. You click a UI element. Do not use "click on".
 
