@@ -9,29 +9,27 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 You can save, share, and manage Searches, Dashboards, Apps, and other Sumo Logic content in the Library. The Library also allows you to launch searches and Dashboards with a single click—speeding up access to the searches you find yourself running consistently. Additionally, you can use the content that others in your organization have already developed to continually discover new insights in your data.
 
-Open the **Library** page to expose additional search options and to organize and manage Library contents.
+Open the **Library** page to expose additional search options and to organize and manage Library contents. 
 
-To open the **Library** page, click the **Library** (folder) icon at the top of the UI.
-
-![search select](/img/get-started/library/library-select.png)
-
-You'll see two **View as** options:
-
-* **Me**. See your own saved searches and dashboards.
-* **Content Administrator**. Available if you have a Sumo role that grants you "Manage Content" capability, this option turns off your personal content in the Library and allows you to see the entire Sumo file tree. In this mode you can migrate content from one location to another, as well as highlight important content in the Admin Recommended folder. For more information, see Admin Mode.
-
-Once you've made your choice of what you want to see, you can enter a string in the **Search** bar to display matching search results.
-
-![search select](/img/get-started/library/library-preview.png)
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. Kanso-->
+1. You'll see two **View as** options:
+    * **Me**. See your own saved searches and dashboards.
+    * **Content Administrator**. Available if you have a Sumo role that grants you "Manage Content" capability, this option turns off your personal content in the Library and allows you to see the entire Sumo file tree. In this mode you can migrate content from one location to another, as well as highlight important content in the Admin Recommended folder. For more information, see Admin Mode. <br/>  <img src={useBaseUrl('img/get-started/view-as.png')} alt="View As" style={{border: '1px solid gray'}} width="200" />
+1. Once you've made your choice of what you want to see, you can enter a string in the **Search** bar to display matching search results. <br/>![search select](/img/get-started/library/library-preview.png)
 
 ## Explore the Library
 
-To open the **Library** page, click the **Library** icon at the top of the UI: <img src={useBaseUrl('img/reuse/library-icon.png')} alt="Library icon" style={{border: '1px solid gray'}} width="30" />
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. Kanso-->
+1. Select **Personal** to select your own saved searches and dashboards or **Org** to select those shared by others in your organization.
+1. Search for items:
+   * Enter a search string to display matching search results.<br/>![search-string.png](/img/get-started/library/search-string.png)  
+   * Narrow your search by selecting an option for **Created by** or **Shared with**. As you make your selections, the constructed query is entered into the search field and additional options are presented. <br/>![create-by](/img/get-started/library/create-by.png)  
+   * Select a **Quick Search** option to perform a quick search for log searches, folders, or Dashboards.  As you make your selections, the query you have constructed is entered into the search field. <br/> ![quick-search](/img/get-started/library/quick-search.png)
 
-* Select **Personal** to select your own saved searches and dashboards or **Org** to select those shared by others in your organization.
-* Enter a search string to display matching search results.<br/>![search-string.png](/img/get-started/library/search-string.png)  
-* Narrow your search by selecting an option for **Created by** or **Shared with**. As you make your selections, the constructed query is entered into the search field and additional options are presented. <br/>![create-by](/img/get-started/library/create-by.png)  
-* Select a **Quick Search** option to perform a quick search for log searches, folders, or Dashboards.  As you make your selections, the query you have constructed is entered into the search field. <br/> ![quick-search](/img/get-started/library/quick-search.png)
+The left nav also includes shortcuts to other convenient features:
+* Click **Recent** to list all currently running searches and any searches performed over the last three hours. Pinned Searches are also listed.
+* Click **Favorites** to list searches and Dashboards that you've marked as favorites to keep handy. To add an item to Favorites, hover over the item in the left nav and click the star, which changes to solid which. Click again to unfavorite. 
+
 
 ## Organize the Library
 
@@ -61,34 +59,13 @@ Do any of the following from the information panel in the Library:
 
 You can add folders and subfolders to the Library in order to organize your content for easy access or to share content.
 
-In the **Library**, your **Personal** folder is the root folder for all your saved content. Any time you save a search, a dashboard, or install an app, it is automatically saved here in a flat folder structure, ordered alphabetically.
-
-The left nav gives quick access to all the items in the library. Click an item to open it.
-
-![access item](/img/get-started/library/access-item.png)
-
-Select **Personal** to show your own saved searches and dashboards.
-
-<img src={useBaseUrl('img/get-started/library/personal-tab.png')} alt="personal-tab.png" width="250"/>
-
-Select **Shared With** to show the searches and dashboards shared with others in your organization.
-
-![shared-with](/img/get-started/library/shared-with.png)
-
-The left nav also includes shortcut tabs.
-
-![shortcuts](/img/get-started/library/shortcuts.png)
-
-* Click the **Folder** icon to list all items in the library, and use the **Search** field as needed to narrow your search in the library.
-* Click the **Recent** icon to list all currently running searches and any searches performed over the last three hours. Pinned Searches are also listed.
-* Click the **Favorites** icon to list searches and Dashboards that you've marked as favorites to keep handy. To add an item to Favorites, hover over the item in the left nav and click the star, which changes to solid which. Click again to unfavorite. <br/>![favorite](/img/get-started/library/favorite.png)
-
+In the **Library**, your **Personal** folder is the root folder for all your saved content. Any time you save a search, a dashboard, or install an app, it is automatically saved here in a flat folder structure, ordered alphabetically. <br/><img src={useBaseUrl('img/get-started/library/personal-folder.png')} alt="Personal folder" style={{border: '1px solid gray'}} width="800"/>
 
 ## Add Folders
 
 To add a folder to the Library:
 
-1. Click the **Library** icon at the top of the UI: <img src={useBaseUrl('img/reuse/library-icon.png')} alt="Library icon" style={{border: '1px solid gray'}} width="30" />
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. Kanso-->
 1. Click **New Folder**. <br/>![folder](/img/get-started/library/AddFolder2.png)
 1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. <br/>![folder](/img/get-started/library/AddFolder.png)
 1. The new folder is added to the folder list in alphabetical order.
@@ -136,9 +113,9 @@ There is a limit of 20 favorite items per user.
 
 ### Mark content as favorite
 
-1. Go to the **Library.**
-1. Click the star icon to the left of your search, Dashboard, app, or folder. <br/> ![StarredFolders.png](/img/get-started/library/StarredFolders.png)
-1. The star darkens, and the item now appears on the **Favorites (star)** tab. <br/>![favoritestab.png](/img/get-started/library/favoritestab.png)
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. Kanso-->
+1. Hover your mouse over an item in the library, and click the star icon that appears. <br/> ![StarredFolders.png](/img/get-started/library/StarredFolders.png)
+1. The star darkens, and the item now appears in **Favorites**.
 
 ### Perform actions on favorites
 
