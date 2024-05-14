@@ -39,8 +39,7 @@ For more information, see [View automated playbooks for an alert](#view-automate
 
 ### From the main navigation menu
 
-1. Go to the main menu.
-1. Click **Automation**. <br/><img src={useBaseUrl('img/platform-services/automation-menu-in-nav-bar-main.png')} alt="Automation menu option in the nav bar" style={{border: '1px solid gray'}} width="250"/> 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Automation**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Automation > Playbooks**. You can also click the **Go To...** menu at the top of the screen and select **Playbooks**.  Kanso-->
 1. The Automation Service screen opens on the **Playbook** tab. 
 
 For more information, see [About the Automation Service](/docs/platform-services/automation-service/about-automation-service/). 
