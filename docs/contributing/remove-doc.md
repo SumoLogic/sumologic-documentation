@@ -1,16 +1,19 @@
 ---
 id: remove-doc
-title: Delete a Doc
+title: Delete Documentation
 description: Learn how to properly remove a Sumo Logic doc.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::danger
-Deleting a doc results a 404 error. Follow the below instructions to learn how to create a 301 redirect.
-:::
+Deleting a doc will result in a 404 error. The solution is to create a 301 redirect. Follow the instructions below.
+
+<details>
+<summary>Why is this important?</summary>
 
 When you delete a doc, you're also deleting a URL. The old URL, when visited, will return a `404 - Page Not Found` error, which is not the customer experience we want. Additionally, this damages our SEO.
+
+</details>
 
 To keep our docs site healthy, follow these steps.
 
@@ -24,7 +27,7 @@ import DocPrereq from '../reuse/doc-prerequisites.md';
 
 As an example, let's say we have two existing docs called **Nginx app** and **Nginx (Legacy) app**, and we need to deprecate the legacy version.
 
-1. In your GitHub authoring tool (like Atom or VS Code), open our [cid-redirects.json file](https://github.com/SumoLogic/sumologic-documentation/blob/main/cid-redirects.json), which contains all 301 redirects.
+1. In your GitHub authoring tool (like VS Code), open our [cid-redirects.json file](https://github.com/SumoLogic/sumologic-documentation/blob/main/cid-redirects.json), which contains all 301 redirects.
 1. Add a redirect from the *legacy URL* you're removing to the *new URL* that contains the equivalent content.
   ```
   "/docs/integrations/web-servers/nginx-legacy": "/docs/integrations/web-servers/nginx",

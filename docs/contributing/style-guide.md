@@ -34,7 +34,7 @@ Helpful blogs on tech writing:
 * [Feathers](https://ffeathers.wordpress.com/). Blog for technical and fiction writing.
 * [I'd rather be writing](https://idratherbewriting.com/). Guides and thoughts on tech writing process and content.
 
-The Sumo Logic Docs team will review submissions, provide suggested edits, add new content into the navigation, and answer any questions you have.
+The Documentation team will review submissions, provide suggested edits, add new content into the navigation, and answer any questions you have.
 
 :::tip
 To create a new doc quickly, use a template. You can copy and paste the file, add your content, and submit a PR.
@@ -47,10 +47,18 @@ To create a new doc quickly, use a template. You can copy and paste the file, ad
 * We are clear, genuine, and trustworthy. We understand that our customers entrust us with their vital data and never make light about our commitment to data access and security.
 * The reader should feel confident and informed. We should strive to engage our customers, and show them where to get additional assistance when needed.
 * Describe Sumo Logic in a professional and truthful manner. Avoid generic, unsubstantial adjectives like "very" or phrases like "we're the best". Instead, illustrate these points by letting our product speak for itself.
-* Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face.
+* Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face. Use the sort of words that you would use in a face-to-face conversation.
+* Don’t use words just because they sound better. Avoid jargon and choose short, simple words over long and complicated ones.
 * Instructional content and blog posts should be written at approximately the 8th-grade reading level, particularly in introductory sections, for readability and SEO. You can test your content [here](http://www.writingtester.com).
+* Our brand guideline is to always refer to “Sumo Logic”, rather than Sumo. To be more conversational, it is also fine to say “we”.
+* Use “org” instead of “organization”, as it sounds more conversational and is the term more commonly used by our customers.
+* Use “need to” instead of “have to” or “must”. “Have to” and “must” can sound harsh and unfriendly.
+* Be judicious in use of “always” and “never”. Sometimes it’s appropriate to say “always” or “never”. Keep in mind though that “always” can imply a result that is not guaranteed, and “never” may very well not be the case — the exception makes the rule.
+* When linking to other Sumo Logic documentation, use the phrase "Learn more" on its own or after the end of a sentence.
 * When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you are recommended to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Please use a different email or contact Sumo Logic for assistance."
 * We have a sense of humor! Conveying that we do serious work, but we do not take ourselves too seriously, makes Sumo Logic feel likable.
+
+
 
 ### Active Voice
 
@@ -58,21 +66,38 @@ When writing instructions, use the active voice whenever possible. For example, 
 
 This gives a call to action for the reader or user to effectively get something done. It also reduces word count and keeps instructions clear.
 
-| Active &#9989; | Not Active &#10060; | Why? |
-| :-- | :-- | :-- |
-| Add a resource... | You can add a resource... | They know they can do a thing. Clearly state to do the thing. |
-| Build the query using the following... | Please build the query using the following... | We need them to complete a task. No need for please. |
-| To add a new collector:<br/>1. Access Sumo Logic and find the... | 1. When you need to add a new collector, access Sumo Logic and find the... | Introduce your instructions with the goal, then dive into the instructions. This is called a stem, and it helps focus the task and keeps you active. |
 
-<!--
 <div class="no-box">
-&#10060; You can add a resource...
+You can add a resource...
 </div>
-(They know they can do a thing. Clearly state to do the thing.)
+
 <div class="yes-box">
-&#9989; Add a resource...
+Please build the query using the following...
 </div>
--->
+
+> <small>💡 Explanation: They know they can do a thing. Clearly state to do the thing.</small>
+
+---
+<div class="no-box">
+Build the query using the following...
+</div>
+
+<div class="yes-box">
+Add a resource...
+</div>
+
+> <small>💡 Explanation: We need them to complete a task. No need for please.</small>
+
+---
+<div class="no-box">
+1. When you need to add a new collector, access Sumo Logic and find the...
+</div>
+
+<div class="yes-box">
+1. To add a new collector:<br/>1. Access Sumo Logic and find the...
+</div>
+
+> <small>💡 Explanation: Introduce your instructions with the goal, then dive into the instructions. This is called a stem, and it helps focus the task and keeps you active.</small>
 
 ### Inclusive language
 
@@ -492,6 +517,17 @@ Using contractions contributes to our goals of striking a conversational, friend
 It's okay to use common contractions like “I'm”, “they're”, and “you’ll”. Spell out all negative contractions (for example: use "cannot", not "cannot"), as they can be easily mistaken for the opposite meaning.
 
 Avoid less common contractions, like “should’ve”, or “it’ll”.
+
+## Dates
+
+* Use the month’s full name (September). If space is a concern, use 3-letter abbreviations (Sep).
+* Avoid writing dates numerically (7-25-17) and ordinal indicators (1st, 2nd, 3rd, 4th). Use the 12-hour clock unless the user has specified otherwise, followed by am or pm in lowercase letters without a space.
+* When including a time zone, append the time zone’s abbreviation after the “am” or “pm”, separated by a space.
+* To show a time range, use an en dash and include the “am” or “pm” after both times.
+
+:::note
+The notation used in the UI time range editor is an exception to some of these rules.
+:::
 
 ## Downloadable files
 
@@ -950,6 +986,10 @@ Markdown is a simple, text-based format you can write using text editors, IDEs, 
 
 A Markdown file has a filename and extension of .md. We recommend keeping the filename short. It does not affect the canonical link.
 
+## Measurements
+
+For storage and memory sizes (MB, GB), the unit of measurement should be uppercase. For dimensions and weights, the unit of measurement should be lowercase (cm, lb). Do not separate the number and the unit with a space.
+
 ## Metadata (Frontmatter)
 
 Markdown documents have metadata (e.g., title, description, and search keywords) at the top called [frontmatter](https://jekyllrb.com/docs/front-matter/). Every page should have an `id` used for sidebar navigation.
@@ -1105,6 +1145,13 @@ Our [`sidebars.ts`](https://github.com/SumoLogic/sumologic-documentation/blob/ma
    ```
    </details>
 
+## Numbers
+
+* Use numerals, rather than spelling the number out. For example, “2” instead of “two”.
+* Use commas for numbers that are 4 or 5 digits in length, for example, 1,000 or 99,999.
+* For numbers 100,000 and higher, use “K”, “M”, and “B” to indicate thousands, millions, or billions.
+* Use an en-dash without a space on either side for number ranges.
+
 ## Patents and trademarks
 
 Protecting our patents and trademarks is important to do correctly. We do not want to expose the company to a loss of trademark or patent just because we didn't list it correctly.
@@ -1124,9 +1171,25 @@ Never use Sumo Logic in the plural or possessive form.
 
 Punctuation is placed outside of quotation marks, British English style. For everything else (dates, times, spelling), we use American English style.
 
+### Colons
+Colons are used to introduce lists or to separate titles from subtitles. Only include the colon if the introduction isn’t a complete sentence.
+
 ### Commas
 
 We use the Oxford (serial) comma. For example, use "I had eggs, toast, and orange juice", not "I had [eggs, toast and orange juice](https://www.verbicidemagazine.com/wp-content/uploads/2012/01/why-i-still-use-the-oxford-comma.jpg)".
+
+### Exclamation Points
+
+Use exclamation points to express excitement or encourage the user. Don't use them for errors, warnings, or confirmation of basic actions as they are usually unnecessary and can distract from important details.
+
+### Ellipses and Truncation
+
+Use ellipses for truncation. Don’t use ellipses for placeholders or trailing off a sentence unless it is getting cut off. When truncating, think about which part of the string is most essential for the user. This may require truncating in the beginning, middle, or end of a string.
+
+### Periods
+
+In the UI, avoid periods for single sentences on their own. Whenever there are two or more sentences, use periods at the end of each sentence. Separate sentences by one space, not two.
+
 
 
 ## Release Notes

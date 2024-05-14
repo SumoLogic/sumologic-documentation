@@ -1497,22 +1497,26 @@ html[data-theme='dark'] .featureImage {
   line-height: 26pt;
 }
 
-
-
 .yes-box {
   background-color: #91CF91;
   color: #212121;
   border-left: 8px solid #12863a;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 0px;
+  padding-bottom: 0.5px;
+  padding-top: 15px;
   margin: 10px;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .no-box {
   background-color: #E59FA1;
   color: #000000;
   border-left: 8px solid #e60e0e;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 0px;
+  padding-bottom: 0.5px;
+  padding-top: 15px;
   margin: 10px;
-  border-radius: 4px;
+  border-radius: 3px;
 }
