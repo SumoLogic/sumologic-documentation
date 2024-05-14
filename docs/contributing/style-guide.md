@@ -47,25 +47,21 @@ To create a new doc quickly, use a template. You can copy and paste the file, ad
 * We are clear, genuine, and trustworthy. We understand that our customers entrust us with their vital data and never make light about our commitment to data access and security.
 * The reader should feel confident and informed. We should strive to engage our customers, and show them where to get additional assistance when needed.
 * Describe Sumo Logic in a professional and truthful manner. Avoid generic, unsubstantial adjectives like "very" or phrases like "we're the best". Instead, illustrate these points by letting our product speak for itself.
-* Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face. Use the sort of words that you would use in a face-to-face conversation.
-* Don’t use words just because they sound better. Avoid jargon and choose short, simple words over long and complicated ones.
+* Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone, using the sort of words that you would use in a face-to-face conversation. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face.
+* Address the reader as "you", as you would in conversation. For example, instead of saying, "The user must provide his or her API key" or "One must provide their API key", say, "You'll need to provide your API key".
 * Instructional content and blog posts should be written at approximately the 8th-grade reading level, particularly in introductory sections, for readability and SEO. You can test your content [here](http://www.writingtester.com).
 * Our brand guideline is to always refer to “Sumo Logic”, rather than Sumo. To be more conversational, it is also fine to say “we”.
 * Use “org” instead of “organization”, as it sounds more conversational and is the term more commonly used by our customers.
 * Use “need to” instead of “have to” or “must”. “Have to” and “must” can sound harsh and unfriendly.
 * Be judicious in use of “always” and “never”. Sometimes it’s appropriate to say “always” or “never”. Keep in mind though that “always” can imply a result that is not guaranteed, and “never” may very well not be the case — the exception makes the rule.
-* When linking to other Sumo Logic documentation, use the phrase "Learn more" on its own or after the end of a sentence.
 * When explaining a process or procedure, clarity is critical. Edit words that distract or confuse. Put yourself into the reader's shoes and think about what actions you are recommended to them when an error message is displayed, rather than merely stating what went wrong. Example: "Could not create the user." vs "This email is already registered in the system. Please use a different email or contact Sumo Logic for assistance."
 * We have a sense of humor! Conveying that we do serious work, but we do not take ourselves too seriously, makes Sumo Logic feel likable.
-
-
 
 ### Active Voice
 
 When writing instructions, use the active voice whenever possible. For example, "Sumo Logic ingests multiple streams of data", not "Multiple streams of data are ingested by Sumo Logic".
 
 This gives a call to action for the reader or user to effectively get something done. It also reduces word count and keeps instructions clear.
-
 
 <div class="no-box">
 You can add a resource...
@@ -105,7 +101,7 @@ By writing inclusively and using culturally neutral language, our words resonate
 
 * Do not use idioms, slang, expressions, or terminology only understood by a specific region or group.
 * Avoid overly technical jargon.
-* Address the reader as "you", as you would in conversation. For example, instead of saying, "The user must provide his or her API key" or "One must provide their API key", say, "You'll need to provide your API key".
+* Don’t use words just because they sound better. Choose short, simple words over long and complicated ones.
 * Unless you're referring to a specific person, do not use gender pronouns (he/she).
 * Use culturally neutral terms to replace terms with negative connotations. For example:
 <div class="container-boxes">
@@ -946,6 +942,16 @@ Ensure parallel grammatical structure - that is, start each bullet with the same
 When linking to Sumo Logic docs, use relative file paths. For external links, use absolute URL paths.
 
 Whenever possible, use link text that’s relevant - such as the page title - rather than just "click here". If the link title is too long, you can either edit the title or summarize the content in a few words.
+
+When linking to other Sumo Logic documentation, use the phrase "Learn more" on its own or after the end of a sentence.
+
+<div class="no-box">
+[Find out how](/docs/send-data/collection/processing-rules/create-processing-rule) to add a processing rule to filter messages.
+</div>
+
+<div class="yes-box">
+Add a processing rule to filter messages. [Learn more](/docs/send-data/collection/processing-rules/create-processing-rule).
+</div>
 
 #### Linking to other headers in the same file
 
