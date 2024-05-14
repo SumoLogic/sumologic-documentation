@@ -4,7 +4,7 @@ title: Create a Processing Rule
 description: Use processing rules to filter and forward data sent from a source to Sumo Logic.
 ---
 
-This document describes how to create a Processing Rule.
+This document describes how to create a processing rule.
 
 You can add a processing rule to an existing Source or create one when you configure a new Source.
 
