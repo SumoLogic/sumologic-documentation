@@ -42,7 +42,7 @@ Before you begin, perform the steps in [Offboard a User.](offboard-user.md) The
 Use caution when deleting a user. This action cannot be undone.
 :::
 
-1. Go to **Administration** > **Users and Roles** > **Users**.  
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. Kanso--> 
 
     ![user-options-menu.png](/img/users-roles/users-page.png)
 
@@ -59,7 +59,7 @@ Use caution when deleting a user. This action cannot be undone.
 Use caution when deleting a user. This action cannot be undone.
 :::
 
-1. Go to  **Administration** > **Users and Roles** > **Users**.  
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. Kanso-->  
 
     ![users-page-2.png](/img/users-roles/users-page-2.png)
 
