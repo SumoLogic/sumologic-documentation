@@ -1,8 +1,8 @@
 ---
 id: ai-machine-learning
-title: Sumo Logic AI and Machine Learning Features
-sidebar_label: AI and Machine Learning
-description: Leverage Sumo Logic AI- and ML-backed features to resolve issues and reduce MTTR.
+title: Sumo Logic AI and Machine Learning-Backed Features
+sidebar_label: AI and ML
+description: Leverage Sumo Logic AI- and ML-backed features to set up alerts, resolve issues, and reduce MTTR.
 keywords:
    - artificial intelligence
    - ai
@@ -10,7 +10,7 @@ keywords:
    - ml
    - llm
    - mttr
-tags: [ai]
+tags: [ai, ml, artificial intelligence, machine learning]
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -19,7 +19,17 @@ In this document, you'll learn about Sumo Logic features that leverage artificia
 
 These alerting, security, and remediation features go beyond visual analytics. They are tools that accelerate issue resolution, reduce mean time to respond (MTTR), and empower you to proactively monitor and safeguard your technology stack against evolving threats.
 
+<details>
+<summary>What's the difference?</summary>
+* Artificial intelligence
+* Machine learning
+* Pattern recognition
+
+</details>
+
+<!-- Remove OR ask brand to create a cleaner, branded version
 <img src={useBaseUrl('img/get-started/ai-diagram.png')} alt="ai-diagram.png" />
+-->
 
 ## Observability
 
@@ -28,12 +38,9 @@ Sumo Logic provides observability into your technology stack by analyzing the mi
 
 ### Log Search
 
-* Copilot. <!--link - /docs/search/copilot - not published yet-->An in-product AI-based assistant that allows you to obtain insights quickly from logs. You can interact with Copilot using plain English queries and utilize search suggestions for result refinement.
-* [LogReduce&reg;](/docs/search/logreduce). Utilizes AI-driven algorithms to cluster log messages based on string and pattern similarity. Boil down thousands of log lines into easy to understand patterns with LogReduce® and LogCompare. Separate the signal from the noise and detect anomalous behavior with Outlier Detection. LogReduce employs fuzzy logic to group similar messages into signatures, enabling quick assessment of activity patterns. You can refine results based on your preferences, [teaching LogReduce](/docs/search/logreduce/influence-the-logreduce-outcome) for more specific outcomes.
-* LogCompare. Identify and predict anomalies in real time with outlier detection, and uncover root-causes using LogCompare pattern analysis.
-
-
-
+* [Copilot](/docs/search/copilot). An in-product AI-based assistant that allows you to obtain insights quickly from logs. You can interact with Copilot using plain English queries and utilize search suggestions for result refinement.
+* [LogReduce&reg;](/docs/search/logreduce). Utilizes AI-driven algorithms to cluster log messages based on string similarity, and boils down thousands of log lines into easy-to-understand patterns. Separate the signal from the noise and detect anomalous behavior with Outlier Detection. LogReduce employs fuzzy logic to group similar messages into signatures, enabling quick assessment of activity patterns. You can refine results based on your preferences, [teaching LogReduce](/docs/search/logreduce/influence-the-logreduce-outcome) for more specific outcomes.
+* [LogCompare](/docs/search/logcompare). Identify and predict anomalies in real time with outlier detection, and uncover root-causes using LogCompare pattern analysis.
 
 ### Alerts
 
@@ -43,7 +50,7 @@ Sumo Logic provides observability into your technology stack by analyzing the mi
   - Detection of seasonality in log signals (hourly, daily, weekly).
   - Auto-tuned anomaly detection for minimal user input.
   - Extensible detector framework allowing you to specify additional context for anomaly detection.
-  - Associate anomaly response with a monitor by creating an Automated Playbook.
+  - Associate anomaly response with a monitor by automating a playbook.
 
 AI-driven alerting overcomes monitoring limitations through:
 
@@ -53,13 +60,9 @@ AI-driven alerting overcomes monitoring limitations through:
 * **One-click playbook assignment**. Monitors seamlessly link to Automation Service playbooks, expediting response without manual intervention.
 * **Auto-diagnosis and recovery**. Sumo Logic Automation Service automates diagnosis and resolution, closing the loop from alert to recovery.
 
-#### Automated Playbooks
+#### Automated playbooks
 
-:::note prerequisites
-Must be used in conjunction with our [Automation Service](/docs/platform-services/automation-service).
-:::
-
-[Automated Playbooks](/docs/alerts/monitors/use-playbooks-with-monitors) let you set up a predefined set of actions and conditional statements that respond to an events like security incidents by running an automated workflow. Configuration is easy - browse our 500+ existing playbooks in the Automation Service App Central, then choose and/or customize it.
+With our [Automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors), you can set up a predefined set of actions and conditional statements that respond to an events like security incidents by running an automated workflow. Configuration is easy - browse our 500+ existing playbooks in the Automation Service App Central, then choose and/or customize it.
 
 ### Apps
 
@@ -73,11 +76,11 @@ Sumo Logic offers integrations with various AI-driven platforms to analyze large
 * [Criminal IP](/docs/platform-services/automation-service/app-central/integrations/criminal-ip)
 * [Arcanna](/docs/platform-services/automation-service/app-central/integrations/arcanna)
 
+<!-- Removed - not in Kanso
 ### Root Cause Explorer
 
 Accelerates troubleshooting by surfacing events of interest correlated with application incidents. [Learn more](/docs/observability/root-cause-explorer)
-
-<!-- need more info-->
+-->
 
 ## Security
 
