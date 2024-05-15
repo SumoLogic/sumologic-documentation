@@ -38,7 +38,9 @@ Sumo Logic provides observability into your technology stack by analyzing the mi
 
 ### Log Search
 
-* [Copilot](/docs/search/copilot). An in-product AI-based assistant that allows you to obtain insights quickly from logs. You can interact with Copilot using plain English queries and utilize search suggestions for result refinement.
+* [Copilot](/docs/search/copilot). Our in-product AI-based assistant that transforms log analysis by enabling users to quickly obtain actionable insights. Through plain English queries and automatic log query generation, Copilot simplifies the investigation process, allowing even users without extensive log analysis expertise to pinpoint anomalies and potential threats efficiently.
+
+With Copilot, users can effortlessly investigate complex issues without writing intricate log queries manually. Its intuitive interface guides users through each step of the investigation, refining queries based on AI prompts and feedback. This streamlined approach accelerates the identification of security threats, empowering users to make informed decisions rapidly and proactively detect potential risks.
 * [LogReduce&reg;](/docs/search/logreduce). Utilizes AI-driven algorithms to cluster log messages based on string similarity, and boils down thousands of log lines into easy-to-understand patterns. Separate the signal from the noise and detect anomalous behavior with Outlier Detection. LogReduce employs fuzzy logic to group similar messages into signatures, enabling quick assessment of activity patterns. You can refine results based on your preferences, [teaching LogReduce](/docs/search/logreduce/influence-the-logreduce-outcome) for more specific outcomes.
 * [LogCompare](/docs/search/logcompare). Identify and predict anomalies in real time with outlier detection, and uncover root-causes using LogCompare pattern analysis.
 
