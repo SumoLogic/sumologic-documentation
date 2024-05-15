@@ -46,19 +46,7 @@ Sumo Logic provides observability into your technology stack by analyzing the mi
 
 #### Anomaly Detection
 
-[Anomaly Detection](/docs/alerts/monitors/create-monitor/#select-monitor-type-and-detection-method) applies ML techniques to detect anomalies and identify suspicious activity. When you create a monitor using this method, it establishes a baseline for normal signal behavior, leveraging historical data to minimize false positives. Key features include:
-  - Detection of seasonality in log signals (hourly, daily, weekly).
-  - Auto-tuned anomaly detection for minimal user input.
-  - Extensible detector framework allowing you to specify additional context for anomaly detection.
-  - Associate anomaly response with a monitor by automating a playbook.
-
-AI-driven alerting overcomes monitoring limitations through:
-
-* **Model-driven anomaly detection**. Utilizing historical data, ML models establish accurate baselines, eliminating guesswork and noise in alerts.
-* **AutoML**. The system self-tunes, including seasonality detection, minimizing user intervention for a simpler experience.
-* **User context**. Users set alert sensitivity and incident thresholds, adding context to anomaly detection to mitigate noise.
-* **One-click playbook assignment**. Monitors seamlessly link to Automation Service playbooks, expediting response without manual intervention.
-* **Auto-diagnosis and recovery**. Sumo Logic Automation Service automates diagnosis and resolution, closing the loop from alert to recovery.
+[Anomaly Detection](/docs/alerts/monitors/create-monitor/#select-monitor-type-and-detection-method), powered by machine learning, efficiently flags suspicious activities by establishing baseline behavior and minimizing false positives. It also automatically fine-tunes anomaly detection with minimal user input, and you can associate it with a playbook to link anomaly responses with monitors, streamlining incident response.
 
 #### Automated playbooks
 
