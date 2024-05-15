@@ -94,9 +94,7 @@ Sumo Logic's Cloud SIEM leverages AI-driven rules for security management, inclu
 
 ### Global Intelligence
 
-Our Global Intelligence Service apps provide security teams with valuable real-time security intelligence to scale detection, prioritization, investigation, and workflow to prevent potentially harmful service configurations that could lead to a costly data breach.
-
-* [Global Intelligence Service](/docs/integrations/global-intelligence)
+Our Global Intelligence Service apps provide security teams with valuable real-time security intelligence to scale detection, prioritization, investigation, and workflow to prevent potentially harmful service configurations that could lead to a costly data breach. [Learn more](/docs/integrations/global-intelligence).
 
 
 ## More information
