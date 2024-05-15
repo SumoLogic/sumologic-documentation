@@ -133,10 +133,10 @@ By default, GCP logs are stored within Cloud Logging, but you can configure Log 
 
 ## Collecting metrics for the Google Cloud Functions app
 
-For metric collection in Sumo Logic use [GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
+For metric collection in Sumo Logic use [GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/).
 
-1. Setup the [Google Service Account](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
-1. [Setup a GCP Metric source](https://help.sumologic.com/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source select **Functions** as the service from dropdown to get the Google cloud function metrics.
+1. Setup the [Google Service Account](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#google-service-account).
+1. [Setup a GCP Metric source](/docs/send-data/hosted-collectors/google-source/gcp-metrics-source/#set-up-a-gcp-metrics-source) in Sumo Logic. While setting up the source select **Functions** as the service from dropdown to get the Google cloud function metrics.
 
 ## Installing the Google Cloud Functions app
 

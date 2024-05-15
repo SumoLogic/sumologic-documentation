@@ -27,7 +27,7 @@ Example: The Microsoft Graph Security API Source provides a secure endpoint to c
 \Depending on the availability in the Fed, add the below note.\
 
 :::note
-This source is **not** yet available in the [Fed deployment](https://help.sumologic.com/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
+This source is **not** yet available in the [Fed deployment](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security).
 :::
 
 ## Data collected
@@ -55,13 +55,13 @@ Example: You'll need a Dropbox App Key, App Secret, and Access Code to provide t
 
 \Insert steps to configure the Source in the Vendor UI\
 
-Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#vendor-configuration
+Example: [Vendor configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#vendor-configuration)
 
 ### Source configuration
 
 \Insert steps to configure the Source in the Sumo Logic UI\
 
-Example: https://help.sumologic.com/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#source-configuration
+Example: [Source configuration](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source/#source-configuration)
 
 ## Metadata fields
 
