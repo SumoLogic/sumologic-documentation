@@ -62,7 +62,7 @@ AI-driven alerting overcomes monitoring limitations through:
 
 #### Automated playbooks
 
-With our [Automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors), you can set up a predefined set of actions and conditional statements that respond to an events like security incidents by running an automated workflow. Configuration is easy - browse our 500+ existing playbooks in the Automation Service App Central, then choose and/or customize it.
+With [Automated playbooks](/docs/alerts/monitors/use-playbooks-with-monitors), you can set up a predefined set of actions and conditional statements that respond to an events like security incidents proactively by running an automated workflow without manual intervention. Configuration is easy - browse our 500+ existing playbooks in the Automation Service App Central, then choose and/or customize it. You can access playbooks when creating a monitor, viewing an alert, or directly from the Automation Service.
 
 ### Apps
 
