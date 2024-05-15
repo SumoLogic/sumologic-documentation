@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 With the Sumo Logic apps for PCI Compliance, you can meet evolving PCI requirements without the data hassle or the burden of self-policing.
 
-* **Simplify audits**. Easily meet your audit requirements with scheduled and ad-hoc log searches.
+* **Simplify audits**. Easily meet your audit requirements with scheduled and ad hoc log searches.
 * **Maintain compliance**. Rapidly discover and visualize data patterns to demonstrate PCI requirements.
 * **Monitor in real-time**. Proactively monitor all infrastructures in real-time for indicators of security breaches.
 

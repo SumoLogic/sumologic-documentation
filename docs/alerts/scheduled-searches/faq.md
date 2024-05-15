@@ -173,7 +173,7 @@ Regards,
 The Sumo Logic Team
 ```
 
-Sumo Logic implements an email quota allowing 100 emails to be sent per day per scheduled search. The purpose of this limit is set to prevent service.sumologic.com from spamming an inbox. This is documented in [Scheduled Searches](/docs/alerts/scheduled-searches/receive-email-alerts). 
+Sumo Logic implements an email quota allowing 100 emails to be sent per day per scheduled search. The purpose of this limit is set to prevent service.sumologic.com from spamming an inbox. This is documented in [Scheduled Search Email Alerts](/docs/alerts/scheduled-searches/create-email-alert). 
 
 The above quota assumes that no more than 5 Alert emails will be triggered per hour or an alert every 12 minutes on average. Sumo Logic expects that Alerts are used as an exception and it is unlikely to find email Alerts being sent at a rate higher than 5 emails per hour.
 

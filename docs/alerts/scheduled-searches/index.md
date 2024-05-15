@@ -1,13 +1,12 @@
 ---
 slug: /alerts/scheduled-searches
 title: Scheduled Searches
-sidebar_label: Scheduled Searches
 description: You can schedule log searches to send alerts.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Scheduled searches are standard saved searches that are executed on a schedule you set. Once [configured](schedule-search.md), scheduled searches run continuously, making them a great tool for continuously monitoring your stack.
+A _Scheduled Search_ is a standard [Log Search](/docs/search) that you save and execute to run on a schedule. Once configured, scheduled searches run continuously, making them a great tool for continuously monitoring your stack.
 
 <div className="box-wrapper">
 <div className="box smallbox card">
@@ -36,20 +35,8 @@ Scheduled searches are standard saved searches that are executed on a schedule y
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/alerts/scheduled-searches/receive-email-alerts"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="icon" width="40"/><h4>Receive Email Alerts from Scheduled sources</h4></a>
-  <p>Learn how to set up and receive email alerts about scheduled searches.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/alerts/scheduled-searches/generate-cse-signals"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="icon" width="40"/><h4>Generate Cloud SIEM Signals With a Scheduled Search</h4></a>
   <p>Learn how to create a scheduled search that will trigger a Cloud SIEM Signal.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/alerts/scheduled-searches/run-search-from-alert-email"><img src={useBaseUrl('img/icons/general/calendar.png')} alt="icon" width="40"/><h4>Run a Search from an Alert Email</h4></a>
-  <p>Learn how to receive an email created by an email alert in a scheduled search.</p>
   </div>
 </div>
 <div className="box smallbox card">
