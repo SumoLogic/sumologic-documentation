@@ -97,7 +97,21 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 [Download example](/files/c2c/cloudquery-gcp/example.tf)
 
-## Error handling
+## Troubleshooting
+
+### Warning message
+
+#### Message
+
+```
+transport: received unexpected content-type \"text/html; charset=UTF-8
+```
+
+#### Solution
+
+If you come across this warning message while fetching service data for the configured source then please contact CloudQuery or GCP team.
+
+### Error handling
 
 For the SDK, if the response code is `401` or `403`, this is config error. You'll need to quit the integration.
 
