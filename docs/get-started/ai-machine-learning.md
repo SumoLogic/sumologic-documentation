@@ -17,17 +17,23 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 In this document, you'll learn about Sumo Logic features that leverage artificial intelligence (AI), machine learning (ML), and pattern recognition to support cloud security management, mitigate risks, reduce manual workloads for your team, and streamline incident response and resolution.
 
-These alerting, security, and remediation features go beyond visual analytics. They are tools that accelerate issue resolution, reduce mean time to respond (MTTR), and empower you to proactively monitor and safeguard your technology stack against evolving threats.
 
 <details>
 <summary>What's the difference?</summary>
-* Artificial intelligence
-* Machine learning
-* Pattern recognition
+
+AI encompasses machines that mimic human-like intelligence, leveraging algorithms to compute tasks efficiently. It includes machine learning and deep learning.
+
+ML, a subset of AI, involves training machines to learn from data without explicit programming, improving performance over time. Within ML, there are various types: supervised learning, unsupervised learning, semi-supervised learning, and reinforcement learning, each suited for different problem settings such as classification, regression, and clustering.
+
+Deep learning, another subset of AI, employs artificial neural networks with multiple layers to process data, excelling in tasks like image recognition and natural language understanding. Generative AI, closely related to deep learning, produces new data resembling training data, often utilizing large language models like GPT.
+
+Pattern learning is fundamental to machine learning and deep learning, where algorithms discern patterns in data to make predictions or classifications, enabling advancements in various fields through data-driven decision-making.
 
 </details>
 
-<!-- Remove OR ask brand to create a cleaner, branded version
+Our alerting, security, and remediation features go beyond visual analytics. They are tools that accelerate issue resolution, reduce mean time to respond (MTTR), and empower you to proactively monitor and safeguard your technology stack against evolving threats.
+
+<!-- Remove or ask brand to create a cleaner, branded version
 <img src={useBaseUrl('img/get-started/ai-diagram.png')} alt="ai-diagram.png" />
 -->
 
@@ -37,7 +43,6 @@ Sumo Logic provides observability into your technology stack by analyzing the mi
 
 
 ### Log Search
-
 
 #### Copilot
 
