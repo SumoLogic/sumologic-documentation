@@ -24,7 +24,7 @@ Before creating an email alert, you'll first need to [create a scheduled search]
      * **Fewer than.** Choose if you want to be notified only if the search results include fewer than that number of messages or groups you set in the text box.
      * **Fewer than or equal to.** Choose if you want to be notified only if the search results include fewer than or equal to that number of messages or groups you set in the text box.
 1. Under **Alert Type**, select **Email**.
-1. **Send email on failure to search owner.** Selecting this option will send an email notification to the search owner if the Scheduled Search fails to run. To troubleshoot a failed Scheduled Search, see [Why Would a Scheduled Search Fail](/docs/alerts/scheduled-searches/faq#why-would-a-scheduled-search-fail) and [What Happens When a Scheduled Search Is Suspended](/docs/alerts/scheduled-searches/faq#what-happens-when-a-scheduled-search-is-suspended).
+1. **Send email on failure to search owner.** Selecting this option will send an email notification to the search owner if the Scheduled Search fails to run. To troubleshoot a failed Scheduled Search, see [Why would a Scheduled Search fail?](/docs/alerts/scheduled-searches/faq#why-would-a-scheduled-search-fail) and [What Happens when a Scheduled Search is Suspended?](/docs/alerts/scheduled-searches/faq#what-happens-when-a-scheduled-search-is-suspended).
 1. **Recipients**. Enter the recipients of your scheduled search email. Separate multiple email addresses with commas.
 1. **Email Subject.** Provide a subject for the email. You can use alert variables to customize the subject of your email.
 1. **Include in email.** Select the features you want to include in your email results:
@@ -83,11 +83,11 @@ If you're a new user and someone has forwarded you an alert email, the links to 
 
 ### Real-time alerts
 
-:::note
-Not available to Sumo Logic Free accounts.
+:::warning Solution Deprecated
+Effective May 15, 2024, Real-Time Scheduled Searches have been deprecated and you will no longer be able to create them. Real-Time Scheduled Searches created before that date will continue to function until May 15, 2025. We encourage you instead to [create a monitor](/docs/alerts/monitors/create-monitor) for use cases that require Real-Time Alerting. [Learn more](/docs/alerts/scheduled-searches/deprecation).
 :::
 
-Real Time Alerts continuously monitor your Sumo Logic deployment, and return alert emails whenever conditions are met. You can learn more in [Create a Real Time Alert](create-real-time-alert.md).
+Real-Time Alerts continuously monitor your Sumo Logic deployment, and return alert emails whenever conditions are met. You can learn more in [Create a Real Time Alert](create-real-time-alert.md).
 
 Scheduled searches run according to the time zone of an individual's computer and browser, not according to the time zone of logs.
 
