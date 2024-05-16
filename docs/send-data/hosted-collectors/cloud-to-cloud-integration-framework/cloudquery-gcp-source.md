@@ -109,7 +109,7 @@ transport: received unexpected content-type \"text/html; charset=UTF-8
 
 #### Solution
 
-If you come across this warning message while fetching service data for the configured source then please contact CloudQuery or GCP team.
+If you come across this warning message while fetching service data for the configured source, then contact the CloudQuery or GCP team.
 
 ### Error handling
 
