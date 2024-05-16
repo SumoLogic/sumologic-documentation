@@ -108,7 +108,7 @@ The Scheduled Search Email Alert template includes the following details:
 * **Search String.** The search query of the saved search. 
 * **Time Range.** The time range that the saved search is set to use. 
 * **Run Frequency.** The frequency that the saved search is set to run. 
-* **Notification Threshold.** This is the alert condition that the saved search is set to use.
+* **Notification Threshold.** The alert condition that the saved search is set to use.
 * **Run At.** The time that the saved search has run.  
 * **Scheduled By.** The name and email of the person who scheduled the saved search to run. 
 * **Message Distribution.** Displays the message distribution of the saved search results in a column chart histogram on a timeline. Click to **View results in Sumo Logic**. 
