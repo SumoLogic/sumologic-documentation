@@ -48,7 +48,7 @@ To download the user credentials JSON file by using the gcloud CLI, refer to the
 
 ### Source configuration
 
-When you create an CloudQuery GCP source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
+When you create a CloudQuery GCP source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a CloudQuery GCP Source:
 1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
