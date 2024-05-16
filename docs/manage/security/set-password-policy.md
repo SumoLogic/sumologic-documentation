@@ -4,7 +4,7 @@ title: Set the Password Policy
 description: The Search Audit Index is populated with log messages and the message contains search usage and activities for your account.
 ---
 
-Account admins with the Manage Password Policy capability can set the account's password policy on the **Administration** > **Security** > **Password Policy**.
+Account admins with the Manage Password Policy capability can set the account's password policy on the Password Policy page.
 
 For details on password policies and Multi-account Access, see [Multi-account Access](../users-roles/users/multi-account-access.md). 
 
@@ -14,7 +14,7 @@ Admins with Manage Password Policy capability can make changes at any time for u
 
 To change the password policy:
 
-1. Go to **Administration** > **Security** > **Password Policy**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Password Policy**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**. Kanso-->
 2. Change any of the following:
 
     ![Set_Passwod_Policy.png](/img/security/Set_Passwod_Policy.png)

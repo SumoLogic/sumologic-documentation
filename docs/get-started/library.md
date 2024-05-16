@@ -26,9 +26,7 @@ Once you've made your choice of what you want to see, you can enter a string in 
 
 ## Explore the Library
 
-To open the **Library** page, click the **Library** icon at the top of the UI.
-
-![library icon](/img/reuse/library-icon.png)
+To open the **Library** page, click the **Library** icon at the top of the UI: <img src={useBaseUrl('img/reuse/library-icon.png')} alt="Library icon" style={{border: '1px solid gray'}} width="30" />
 
 * Select **Personal** to select your own saved searches and dashboards or **Org** to select those shared by others in your organization.
 * Enter a search string to display matching search results.<br/>![search-string.png](/img/get-started/library/search-string.png)  
@@ -90,7 +88,7 @@ The left nav also includes shortcut tabs.
 
 To add a folder to the Library:
 
-1. Click the **Library** icon ![library icon.png](/img/reuse/library-icon.png) at the top of the UI.
+1. Click the **Library** icon at the top of the UI: <img src={useBaseUrl('img/reuse/library-icon.png')} alt="Library icon" style={{border: '1px solid gray'}} width="30" />
 1. Click **New Folder**. <br/>![folder](/img/get-started/library/AddFolder2.png)
 1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. <br/>![folder](/img/get-started/library/AddFolder.png)
 1. The new folder is added to the folder list in alphabetical order.

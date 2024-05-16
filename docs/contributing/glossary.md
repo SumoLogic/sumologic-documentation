@@ -4,7 +4,7 @@ title: Glossary
 description: This glossary provides an alphabetized list of technical term definitions used in Sumo Logic.
 ---
 
-This glossary defines Sumo Logic terms that you are likely to encounter when you read our documentation. It does not provide common industry terms unless those terms also represent Sumo Logic features. 
+This glossary defines Sumo Logic terms that you are likely to encounter when you read our documentation. It does not provide common industry terms unless those terms also represent Sumo Logic features.
 
 If you're looking for usage guidance, see [Word List](/docs/contributing/word-list).
 
@@ -34,7 +34,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[Autocomplete](/docs/search/get-started-with-search/search-basics/search-autocomplete)**. On the Search page of the Sumo Logic user interface, the search autocomplete dropdown dialog offers suggestions to make query writing easier. Suggestions include simple logic that offers common default queries, keywords, metadata terms, and search operators. The autocomplete dialog also includes links to Help topics for more information.
 
-**[Automation Service](/docs/cse/automation/about-automation-service-and-cloud-siem)**. In Cloud SIEM, a service that automatically runs tasks such as sending notifications or adding data to records when security incidents occur. 
+**[Automation Service](/docs/cse/automation/about-automation-service-and-cloud-siem)**. In Cloud SIEM, a service that automatically runs tasks such as sending notifications or adding data to records when security incidents occur.
 
 
 ## B
@@ -277,7 +277,7 @@ We also maintain a [DevOps and Security Glossary](https://www.sumologic.com/glos
 
 **[SAML](/docs/manage/security/saml)**. Sumo Logic supports self-provisioning of Security Assertion Markup Language (SAML) to enable Single Sign-On (SSO). In addition to basic SAML configuration, you can choose optional on-demand user creation (via SAML 2.0 assertions), and designate custom log in and/or log out portals.
 
-**[Scheduled Search](/docs/alerts/scheduled-searches/schedule-search)**. When you save a log search, you can add a schedule to run it on a periodic basis, and configure an alert that will issue a notification every time the search runs, or when a condition you specify is met.
+**[Scheduled Search](/docs/alerts/scheduled-searches/schedule-search)**. When you save a log search, you can schedule it to run it on a periodic basis, and configure an alert that will issue a notification every time the search runs, or when a condition you specify is met.
 
 **[Scheduled View](/docs/manage/scheduled-views)**. A Scheduled View is a pre-aggregated index of a subset of data. After building a Scheduled View, you'll be able to run queries against that data set. Because the data is pre-aggregated, meaning that query you'll use to create a Scheduled View contains an aggregate function, search results return much quicker. Additionally, queries run against a Scheduled View cannot time out. Queries that run against Views can be used in scheduled searches, Dashboards, and in ad hoc searches.
 

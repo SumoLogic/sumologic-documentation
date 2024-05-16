@@ -47,33 +47,35 @@ The Terraform script performs the following actions:
    * View Collectors
    * Manage Fields
    * Manage connections
-   * Manage Content
-If you want to deploy in the Admin Recommended folder, you may need [Content Admin](/docs/manage/content-sharing/admin-mode) role.
+   * Manage Content<br/>
+   If you want to deploy in the Admin Recommended folder, you may need the [Content Admin](/docs/manage/content-sharing/admin-mode) role.
 1. Using these [instructions](/docs/manage/security/access-keys#from-the-preferences-page), generate an access key and access ID for a user with the Manage Monitors role capability in Sumo Logic. To identify which deployment your Sumo Logic account is using, see [Sumo Logic Endpoints by Deployment and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 1. Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 
 ### Set up your Terraform environment
 
-1. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later. To check the installed Terraform version, run the following command:
- ```bash
- terraform --version
- ```
+1. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later. To check your installed Terraform version, run the following command:
+   ```bash
+   terraform --version
+   ```
 2. Install the latest version of [curl](https://curl.haxx.se/download.html).
 3. Install the latest version of the [jq command-line JSON parser](https://github.com/stedolan/jq/wiki/Installation). This is required for running the fields.sh batch file.
 
 ### Configure your Terraform script
 
 1. Clone the following Sumo Logic repository:
- ```bash
- git clone https://github.com/SumoLogic/sumologic-solution-templates
- ```
+   ```bash
+   git clone https://github.com/SumoLogic/sumologic-solution-templates
+   ```
 1. Initialize the Terraform working directory by navigating to the directory [sumologic-solution-templates/app-components](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/application-components) and then running:
-  ```bash
-  terraform init
-  ```
-  This will install the required Terraform providers, including [Null](https://www.terraform.io/docs/providers/sumologic/index.html), [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [Time Provider](https://registry.terraform.io/providers/hashicorp/time/latest/docs), [Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs).
-1. By default, all other parameters are set up to automatically collect logs, metrics, install apps and monitors. If you need to override parameters, you can configure or override additional parameters in the [ main.auto.tfvars file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.tf).
+   ```bash
+   terraform init
+   ```
+
+This will install the required Terraform providers, including [Null](https://www.terraform.io/docs/providers/sumologic/index.html), [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [Time Provider](https://registry.terraform.io/providers/hashicorp/time/latest/docs), and [Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs).
+
+By default, all other parameters are set up to automatically collect logs and metrics, and install apps and monitors. If you need to configure or override additional parameters, you can do so in the [main.auto.tfvars file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/aws-observability-terraform/main.tf).
 
 ### Configure Required Parameters
 
@@ -258,12 +260,9 @@ This section shows how to use Explore and navigate Application Components hierar
 
 ### Navigate Application Components View
 
-Explore is an out-of-the-box Sumo Logic navigation tool that provides an intuitive visual representation of your environment.
-
-To open Explore and Application Components View:
-1. Log in to Sumo Logic and click **+ New** on the top menu bar.
-1. From the dropdown menu, choose **Explore**. The Explore navigation panel appears on the left.
-1. Click the **Explore By** arrow and select **Application Components View** from the dropdown menu. An expandable list of your AWS environment hierarchy appears in the Explore panel.
+To open the Application Components View:
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Explore**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Application Monitoring > Applications**. You can also click the **Go To...** menu at the top of the screen and select **Applications**.  Kanso-->
+1. In the upper-left corner of the screen, select **Application Components View** from the dropdown menu. An expandable list of your AWS environment hierarchy appears in the Explore panel.
 1. With the Application Components view selected in Explore, select an environment to view a list of its components.
 **Application Components - Environments Overview** appears on the right. This dashboard provides insights into the CRUD activities and monitor errors of each of the components in that environment.
 1. Similarly from the expanded environment select a component.
