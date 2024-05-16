@@ -44,7 +44,7 @@ import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
 
 ### Vendor configuration
 
-Download the user credentials JSON file by using the gcloud CLI, refer to the [Google Cloud Documentation](https://cloud.google.com/docs/authentication/application-default-credentials#personal).
+To download the user credentials JSON file by using the gcloud CLI, refer to the [Google Cloud documentation](https://cloud.google.com/docs/authentication/application-default-credentials#personal).
 
 ### Source configuration
 
