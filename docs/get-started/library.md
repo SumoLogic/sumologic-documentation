@@ -11,7 +11,7 @@ You can save, share, and manage Searches, Dashboards, Apps, and other Sumo Logic
 
 Open the **Library** page to expose additional search options and to organize and manage Library contents. 
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. You can also click the **Go To...** menu at the top of the screen and select **Library**. Kanso-->
 1. You'll see two **View as** options:
     * **Me**. See your own saved searches and dashboards.
     * **Content Administrator**. Available if you have a Sumo role that grants you "Manage Content" capability, this option turns off your personal content in the Library and allows you to see the entire Sumo file tree. In this mode you can migrate content from one location to another, as well as highlight important content in the Admin Recommended folder. For more information, see Admin Mode. <br/>  <img src={useBaseUrl('img/get-started/view-as.png')} alt="View As" style={{border: '1px solid gray'}} width="200" />
@@ -19,7 +19,7 @@ Open the **Library** page to expose additional search options and to organize an
 
 ## Explore the Library
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. You can also click the **Go To...** menu at the top of the screen and select **Library**. Kanso-->
 1. Select **Personal** to select your own saved searches and dashboards or **Org** to select those shared by others in your organization.
 1. Search for items:
    * Enter a search string to display matching search results.<br/>![search-string.png](/img/get-started/library/search-string.png)  
@@ -39,7 +39,7 @@ The path to the current Library folder is shown near the top of the Library page
 
 ![setup-wizard-search](/img/get-started/library/setup-wizard-search.png)
 
-To create a new folder, click **New Folder**, enter the folder name and an optional description, and click **Add**.
+To create a new folder, click **Add New > New Folder**, enter the folder name and an optional description, and click **Add**.
 
 To get information on items in the library, click an item in the Library to open an information panel. If you click a folder in the Library, information about the folder is shown in the information panel. Double-click the folder to list the items that it contains.
 
@@ -61,15 +61,6 @@ You can add folders and subfolders to the Library in order to organize your cont
 
 In the **Library**, your **Personal** folder is the root folder for all your saved content. Any time you save a search, a dashboard, or install an app, it is automatically saved here in a flat folder structure, ordered alphabetically. <br/><img src={useBaseUrl('img/get-started/library/personal-folder.png')} alt="Personal folder" style={{border: '1px solid gray'}} width="800"/>
 
-## Add Folders
-
-To add a folder to the Library:
-
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. Kanso-->
-1. Click **New Folder**. <br/>![folder](/img/get-started/library/AddFolder2.png)
-1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. <br/>![folder](/img/get-started/library/AddFolder.png)
-1. The new folder is added to the folder list in alphabetical order.
-
 ## Move Content in Personal Folders
 
 You can organize your saved content into subfolders in your Personal Folder.
@@ -83,29 +74,37 @@ You can organize your saved content into subfolders in your Personal Folder.
 
 When your content is moved, you’ll need to click the new folder location to view its contents in the list on the right.
 
+## Add Folders
 
-## Add Subfolders
+To add a folder to the Library:
 
-1. Create a subfolder by clicking **New Folder** in your Personal folder.<br/>  ![sub folder](/img/get-started/library/AddNewSubFolder.png)
-1. In the **Add Folder** dialog, enter **My Apps**, and click **Add**. The new subfolder is added to the folder list.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. You can also click the **Go To...** menu at the top of the screen and select **Library**. Kanso-->
+1. Click **Add New > New Folder**. 
+1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. <br/>![folder](/img/get-started/library/AddFolder.png)
+1. The new folder is added to the folder list in alphabetical order.
 
-## Share Subfolders
+### Add Subfolders
 
-If want to share the apps you have installed in order to share them with your organization, you can share your entire **MyApps** folder. This way, any app that you install in the future to this subfolder would be automatically published and shared with your team.
+1. Create a subfolder by clicking **Add New > New Folder** in your Personal folder.
+1. In the **Add Folder** dialog, enter a folder name, for example **My Apps**, and click **Add**. The new subfolder is added to the folder list.
+
+### Share Subfolders
+
+If want to share the apps you have installed in order to share them with your organization, you can share your entire **My Apps** folder that you created in the previous section. This way, any app that you install in the future to this subfolder would be automatically published and shared with your team.
 
 To publish a subfolder:
 
-1. Select **MyApps**, click the details icon.
+1. Select **My Apps**, click the details icon.
 1. Click **Share**.
 1. The **Share Folder** dialog appears. Choose **Your organization** to share with. Anyone in your org will be able to see this folder.
-1. Click **Save**. The **MyApps** folder is added to the **Org** folder, in a subfolder labeled with your name. Now everyone in your organization can access your published content.
+1. Click **Save**. The **My Apps** folder is added to the **Org** folder, in a subfolder labeled with your name. Now everyone in your organization can access your published content.
 
 In the future, any Apps that you install in this published folder will be automatically published. If you want to create a folder hierarchy, create the desired hierarchical subfolders and publish the topmost folder. All subfolders will be published with the parent folder.
 
 
 ## Favorites
 
-Keep track of content you use regularly with Favorites, or content that you want to keep handy. Just click the star icon for your saved search, dashboard, installed app, or folder, and it will be saved to the **Favorites** tab in the left nav for easy access.
+Keep track of content you use regularly with Favorites, or content that you want to keep handy. Just click the star icon for your saved search, dashboard, installed app, or folder, and it will be saved to **Favorites** in the left nav for easy access.
 
 You can also [favorite saved searches](/docs/search/get-started-with-search/search-page/add-saved-search-to-favorites) from the **Search** page, and favorite Dashboards from the **Dashboards** page.
 
@@ -113,25 +112,14 @@ There is a limit of 20 favorite items per user.
 
 ### Mark content as favorite
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. You can also click the **Go To...** menu at the top of the screen and select **Library**. Kanso-->
 1. Hover your mouse over an item in the library, and click the star icon that appears. <br/> ![StarredFolders.png](/img/get-started/library/StarredFolders.png)
 1. The star darkens, and the item now appears in **Favorites**.
 
-### Perform actions on favorites
-
-If you own the content  you can perform the following actions on folders in your favorites:  
-
-![OwnerOptions.png](/img/get-started/library/OwnerOptions.png)
-
-If the content was created by another user and published, you can perform the following actions:  
-
-![NonOwneroptions.png](/img/get-started/library/NonOwneroptions.png)
-
 ### Unfavorite content
 
-1. Go to **Library > Favorites**.
-1. De-select the star icon to the left of your search, dashboard, app, or folder.
-1. A dialog displays showing that you unfavorited the item, and the item is removed from the **Favorites** folder.
+1. Go to **Favorites** in the left nav.
+1. Hover your mouse over an item and click the star that appears to the right. The item is removed from the **Favorites** folder.
 
 
 ## Search the Library
@@ -168,16 +156,16 @@ the following prefixes:
 
 ### Search content in the Library
 
-1. In Sumo Logic, go to the **Library**.
-1. Select the **Personal** or **Org** tab.
-1. In the search field at the top of the right-hand panel, enter your text. You can use any of the following:
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> At the top of the screen, select the **Library** (folder) icon. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Library**. You can also click the **Go To...** menu at the top of the screen and select **Library**. Kanso-->
+1. Click in the search field and select what you want to search for. <br/> <img src={useBaseUrl('img/get-started/library/SearchSuggestions.png')} alt="Search suggestions" style={{border: '1px solid gray'}} width="200" />
+1. Enter your text. You can use any of the following:
    * Keyword
    * Wildcard (\*)
-   * **Personal tab only:** Content type prefix (with one or more keywords, if desired).<br/>  ![Search](/img/get-started/library/SearchSuggestions.png) <br/>Search results are displayed.<br/>![Search results](/img/get-started/library/search-results.png)
+   * **Personal tab only:** Content type prefix (with one or more keywords, if desired).
 
 ### Recent searches
 
-When you run a search in Sumo Logic, that search and its results are saved automatically in the Library under the Recent tab. This is useful in case you lose your browser session, accidentally close the Search tab, log out, or just want to refer to a search you performed recently.
+When you run a search in Sumo Logic, that search and its results are saved automatically in **Recent** in the left nav. This is useful in case you lose your browser session, accidentally close the Search tab, log out, or just want to refer to a search you performed recently.
 
 Recent Searches that are still running are paused after 15 minutes. If not reopened or restarted, the search is deleted after three hours.
 
@@ -238,7 +226,7 @@ To rename a pinned search:
 To remove a search from the pinned search List:
 
 1. Hover over the search, then click the three-dot kebab menu icon to the right of the name.
-1. Click **Unpin**.  <br/> ![unpin.png](/img/get-started/library/unpin.png)
+1. Click **Unpin**. 
 1. In the **Confirm** dialog, click **OK**.
 
 The search is removed from the list of Pinned Searches.

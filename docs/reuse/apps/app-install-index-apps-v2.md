@@ -1,6 +1,6 @@
 To install the app:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **App Catalog**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select **App Catalog** Kanso-->
+1. Select **App Catalog**.
 1. In the **Search Apps** field, search for and then select your app.
 1. Optionally, you can scroll down to preview the dashboards included with the app. Then, click **Install App** (sometimes this button says **Add Integration**).
 1. Click **Next**.
