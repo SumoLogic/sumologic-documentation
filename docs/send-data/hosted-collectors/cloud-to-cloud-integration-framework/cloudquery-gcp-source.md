@@ -113,7 +113,7 @@ If you come across this warning message while fetching service data for the conf
 
 ### Error handling
 
-For the SDK, if the response code is `401` or `403`, this is config error. You'll need to quit the integration.
+For the SDK, if the response code is `401` or `403`, it indicates a config error. You'll need to quit the integration.
 
 For any other error returned by CloudQuery, we will set ErrorGeneric as an error in C2C. Integration will not stop its execution.
 
