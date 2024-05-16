@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ***Version: 1.0  
 Updated: May 16, 2024***
 
-Cyberint offers to proactively monitoring and positively impacting external risk exposure and mitigation.
+Cyberint offers to proactively monitor and positively impact external risk exposure and mitigation.
 
 ## Actions
 
