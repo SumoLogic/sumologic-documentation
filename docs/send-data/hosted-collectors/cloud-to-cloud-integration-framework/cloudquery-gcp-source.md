@@ -7,7 +7,7 @@ tags:
   - cloudquery
   - gcp
   - google cloud platform
-description: Learn how to collect inventory from the GCP APIs using CloudQuery Plugin SDK and send it to Sumo Logic.
+description: Learn how to collect inventory from GCP APIs using the CloudQuery Plugin SDK and send it to Sumo Logic.
 ---
 
 <head>
