@@ -6,7 +6,7 @@ description: Learn how to save and schedule a log search to run at a regularly s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This document outlines the process of creating a Scheduled Search, which is essentially a saved [Log Search](/docs/search) that you set to run at specified intervals and configure with [alerts](#alert-types).
+This article outlines the process of creating a Scheduled Search, which is essentially a saved [Log Search](/docs/search) that you set to run at specified intervals and configure with [alerts](#alert-types).
 
 To run a Scheduled Search using receipt time, save the search with receipt time enabled.
 
