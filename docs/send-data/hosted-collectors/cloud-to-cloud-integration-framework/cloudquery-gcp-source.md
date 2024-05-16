@@ -69,9 +69,9 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Description |
 |:---|:---|:---|:---|
-| config | JSON Object | Yes | Contains the configuration parameters for the source |
-| schemaRef | JSON Object | Yes | Use `{“type”: “CloudQuery GCP Inventory”}` |
-| sourceType | String | Yes | Use “Universal” for CloudQuery GCP source Inventory |
+| config | JSON Object | Yes | Contains the configuration parameters for the source. |
+| schemaRef | JSON Object | Yes | Use `{“type”: “CloudQuery GCP Inventory”}.` |
+| sourceType | String | Yes | Use “Universal” for CloudQuery GCP source Inventory. |
 
 ### Configuration object
 
