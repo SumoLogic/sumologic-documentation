@@ -17,7 +17,7 @@ Cyberint offers to proactively monitoring and positively impacting external risk
 
 * **Close Alerts** *(Containment)* - Closes an alert by Alert ID.
 * **Get Alert Details** *(Enrichment)* - Retrieves a single alert by Alert ID.
-* *Search Alerts** *(Enrichment)* - Returns a list of alerts based on the search criteria.
+* **Search Alerts** *(Enrichment)* - Returns a list of alerts based on the search criteria.
 * **Update Alerts** *(Containment)* - Updates the status of an alert by Alert ID.
 
 ## Change Log
