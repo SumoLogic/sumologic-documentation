@@ -107,18 +107,6 @@ Sumo Logic provides a variety of apps for security products and platforms, from 
 </div>
 <div className="box smallbox card">
   <div className="container">
-  <a href="/docs/integrations/security-threat-detection/palo-alto-networks-6"><img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="100"/><h4>Palo Alto Networks 6</h4></a>
-  <p>A guide to the Sumo Logic app for Palo Alto Networks 6.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
-  <a href="/docs/integrations/security-threat-detection/palo-alto-networks-8"><img src={useBaseUrl('img/integrations/security-threat-detection/pan8.png')} alt="thumbnail icon" width="100"/><h4>Palo Alto Networks 8</h4></a>
-  <p>A guide to the Sumo Logic app for Palo Alto Networks 8.</p>
-  </div>
-</div>
-<div className="box smallbox card">
-  <div className="container">
   <a href="/docs/integrations/security-threat-detection/palo-alto-networks-9"><img src={useBaseUrl('img/integrations/security-threat-detection/pan9.png')} alt="thumbnail icon" width="60"/><h4>Palo Alto Networks 9</h4></a>
   <p>A guide to the Sumo Logic app for Palo Alto Networks 9.</p>
   </div>

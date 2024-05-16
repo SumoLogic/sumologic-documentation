@@ -389,13 +389,6 @@ This guide has documentation for all of the apps that Sumo Logic provides for Mi
     </div>
     <div className="box smallbox card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/microsoft-azure/pci-icon_2.png')} alt="Thumbnail icon" width="65"/>
-      <h4><a href="/docs/integrations/microsoft-azure/windows-legacy-pci-compliance">PCI Compliance for Windows Legacy</a></h4>
-      <p>A guide to the Sumo Logic app for PCI Compliance for Windows Legacy.</p>
-      </div>
-    </div>
-    <div className="box smallbox card">
-      <div className="container">
       <img src={useBaseUrl('img/integrations/microsoft-azure/pci-icon_2.png')} alt="Thumbnail icon" width="75"/>
       <h4><a href="/docs/integrations/microsoft-azure/windows-json-pci-compliance">PCI Compliance for Windows JSON</a></h4>
       <p>A guide to the Sumo Logic app for PCI Compliance for Windows JSON.</p>
