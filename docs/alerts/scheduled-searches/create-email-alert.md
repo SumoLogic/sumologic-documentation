@@ -68,7 +68,7 @@ You can be very specific with the alert condition — you can even set an exact 
 
 #### Run a search from an alert email
 
-You can run a search directly from an Alert Email. When you receive an email created by an Email Alert in a Scheduled Search, only the first 25 results are displayed. (We do not want to flood your email with hundreds of thousands of search results.)
+You can run a search directly from an alert email. When you receive an email created by an email alert in a Scheduled Search, only the first 25 results are displayed. (We do not want to flood your email with hundreds of thousands of search results.)
 
 Do either of the following:
 * To make changes to the search query before you run it again, click the saved search title link, next to **Saved Search**. This will open the query in the Sumo Logic search page. 
