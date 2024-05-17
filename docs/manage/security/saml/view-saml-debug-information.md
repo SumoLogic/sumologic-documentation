@@ -5,7 +5,11 @@ description: Learn how to use Debug Mode to troubleshoot SAML issues.
 ---
 
 
-When you select the Debug Mode option for SAML  (**Administration > Security > SAML**), whenever an error occurs a debug page displays.
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the SAML page, in the main Sumo Logic menu select **Administration > Security > SAML**. <!--Kanso 
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the SAML page, in the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. 
+ Kanso-->
+
+When you select the Debug Mode option for SAML, whenever an error occurs a debug page displays. 
 
 ![img](/img/security/saml-config-debug.png)  
 

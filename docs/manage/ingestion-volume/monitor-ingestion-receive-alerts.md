@@ -100,7 +100,9 @@ You must update the indicated field for the search to be successfully saved.
    ```sql
    X as daily_plan_size
    ```
-   The correct value is on the Account page. Click on your name in the left nav and go to **Administration** > **Account** > **Account Overview**. For example, the daily plan size in the following figure is 100.<br/> ![Account](/img/ingestion-volume/account-overview.png)
+   The correct value is on the Account page. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Account > Account Overview**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account** select **Account Overview**. You can also click the **Go To...** menu at the top of the screen and select **Account Overview**. 
+ Kanso--><br/>For example, the daily plan size in the following figure is 100.<br/> ![Account](/img/ingestion-volume/account-overview.png)
 
 #### Query
 

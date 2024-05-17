@@ -21,6 +21,7 @@ Users with the Analyst role have a single capability: View Collectors. Its role 
 To create a role:
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
 1. Click **+ Add Role** on the upper right side of the page.
 1. The **Create New Role** pane appears on the right side of the page.<br/><img src={useBaseUrl('img/users-roles/create-new-role.png')} alt="Create a new role" style={{border: '1px solid gray'}} width="400"/>
 1. **Name**. Enter a name for the role. 
