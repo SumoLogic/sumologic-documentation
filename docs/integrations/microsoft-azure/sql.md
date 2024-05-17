@@ -91,12 +91,9 @@ This section has instructions for collecting logs and metrics for the Azure SQL 
 
 In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub.
 
-1. Sumo Logic supports several methods for collecting logs from Event Hub. You can choose any of them to collect logs.
+1. To set up the logs collection in Sumo Logic, refer to [Azure Event Hubs Source for Logs](/docs/send-data/collect-from-other-data-sources/azure-monitoring/ms-azure-event-hubs-source/).
 
-	- [Azure Event Hubs Source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source/) (Recommended)
-	- Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor using Azure Functions](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor/#configure-log-collection)
-
-	When you configure the event hubs source or HTTP source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DB/SQL/Logs`.
+	 When you configure the event hubs source, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: `Azure/DB/SQL/Logs`.
 
 2. Push logs from Azure Monitor to Event Hub. Various Azure Services connect to Azure Monitor to send monitoring data to an Event Hub. For more information, see [Azure Monitor: Send monitoring data to an event hub](https://azure.microsoft.com/en-us/blog/azure-monitor-send-monitoring-data-to-an-event-hub/) and How do I set up [Azure platform monitoring data to be streamed to an event hub?](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs#how-do-i-set-up-azure-platform-monitoring-data-to-be-streamed-to-an-event-hub) in Azure help.
 	1. Sign in to [Azure Portal](https://portal.azure.com/).
@@ -128,13 +125,15 @@ In this step, you configure a pipeline for shipping metrics from Azure Monitor t
 
 This section provides instructions on how to install the Azure SQL app, and shows examples of each of the preconfigured dashboards you can use to analyze your data.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing the Azure SQL dashboards
 
-This section describes the dashboards in the Sumo Logic app for Azure SQL.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

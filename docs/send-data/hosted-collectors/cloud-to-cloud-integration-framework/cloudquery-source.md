@@ -17,6 +17,7 @@ import AccountTFExample from '!!raw-loader!/files/c2c/cloudquery/accountExample.
 import OrgTFExample from '!!raw-loader!/files/c2c/cloudquery/orgExample.tf';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+
 <head>
   <meta name="robots" content="noindex" />
 </head>

@@ -2,7 +2,7 @@
 id: stix-taxii-2-client-source
 title: STIX/TAXII 2 Client Source
 sidebar_label: STIX/TAXII 2 Client
-tags:
+keywords:
   - cloud-to-cloud
   - stix
   - taxii
@@ -67,7 +67,7 @@ To configure a TAXII 2 Client Source:
       * The location where to use the key, such as the HTTP header key name (for example, `Authorization`).
       * The API key.
       * The API key prefix (optional).
-   * **Bearer**. Provide the bearer auth token. 
+   * **Bearer**. Provide the bearer auth token.
    * **None**. Select if no authorization is needed.
 1. **STIX/TAXII Configuration**:
     1. **Version**. Select the STIX/TAXII version the vendor is using (2.0 or 2.1).
@@ -77,7 +77,7 @@ To configure a TAXII 2 Client Source:
     1. **Collection Id(s)**. Enter the collection IDs for TAXII (optional).
 1. **Other Settings**:
     1. (Optional) **Set Indicators Limit Per Page**. Set the maximum number of indicators to return per page. The default is 99.
-    1. (Optional) **Polling Interval**. Set how frequently to poll for new or updated indicators. It must be between 5 minutes and 48 hours. 
+    1. (Optional) **Polling Interval**. Set how frequently to poll for new or updated indicators. It must be between 5 minutes and 48 hours.
 1. When you are finished configuring the Source, click **Save**.
 
 ## JSON Configuration

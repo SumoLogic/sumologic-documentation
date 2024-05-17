@@ -13,7 +13,7 @@ Users that do not authenticate to Sumo Logic using a username and password are r
 
 To verify your email:
 
-1. Go to **Help** > **Community** (or **Support**).
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Help**, and then select either **Support** or **Community**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Help**, and then select either **Support** or **Community**.  Kanso-->
 1. You will be prompted to verify your email. Click **Send Verification Email**.
 
     ![multi-account](/img/users-roles/multi_account_third_party_verify.png)
@@ -33,7 +33,7 @@ If you have not yet activated your account, if you try to access a link in the H
 
 To activate your account:
 
-1. Go to **Help** > **Community** (or **Support**).
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Help**, and then select either **Support** or **Community**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Help**, and then select either **Support** or **Community**.  Kanso-->
 1. You will be prompted to activate your account. Click **Send Activation Email**.
 
     ![activate user ui prompt.png](/img/users-roles/activate-user-ui-prompt.png)

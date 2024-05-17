@@ -19,19 +19,24 @@ Opposed to [Access Keys](access-keys.md), you can embed your Installation Tokens
 
 ## Manage Installation Tokens
 
-Installation Tokens in your account are manageable at **Administration** > **Security** > **Installation Tokens**.
+Installation Tokens in your account are manageable on the Installation Tokens page.
+
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Installation Tokens page, in the main Sumo Logic menu select **Administration > Security > Installation Tokens**. 
+<!--Kanso 
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Installation Tokens page, in the top menu select **Administration**, and then under **Account Security Settings** select **Installation Tokens**. You can also click the **Go To...** menu at the top of the screen and select **Installation Tokens**. 
+ Kanso-->
 
 Managing Installation Tokens requires the **Manage Tokens** role capability.
 
 ![Installation Tokens UI table.png](/img/security/installation-tokens/installation-tokens-table.png)
 
-The **Administration > Security > Installation Tokens** page displays the following information: 
+The Installation Tokens page displays the following information: 
 
 * **Status** shows a green checkmark ![green checkmark.png](/img/security/installation-tokens/green-checkmark.png) to indicate if the Installation Token is active and available for use or an exclamation mark in a red circle ![red circle white exclamation.png](/img/security/installation-tokens/red-circle-white-exclamation.png) to indicate if the Installation Token is deactivated and not available for use.
 * **Token Name** is the name of the Installation Token, these must be unique.
 * **Description** shows the optional description of the Installation Token.
 
-On the **Administration** > **Security** > **Installation Tokens** page, you can:
+On the Installation Tokens page, you can:
 
 * Click **+ Add Token** to add Installation Tokens.
 * Search Installation Tokens

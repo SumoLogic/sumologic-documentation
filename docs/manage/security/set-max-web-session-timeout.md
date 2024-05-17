@@ -15,7 +15,7 @@ When you change the maximum timeout:
 
 To configure a maximum web session timeout for users in your org:
 
-1. Go to **Administration** > **Security** > **Policies**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Policies**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Policies**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**. Kanso-->
 
     ![set-session-timeout.png](/img/security/set-session-timeout.png)
 

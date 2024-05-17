@@ -12,7 +12,7 @@ Configuring 2-Step Verification policy requires the role capability to [set up a
 
 To configure the 2-Step Verification policy for your organization:
 
-1. Go to **Administration** > **Security** > **Password Policy**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Password Policy**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Password Policy**. You can also click the **Go To...** menu at the top of the screen and select **Password Policy**. Kanso-->
 1. By default, 2-Step Verification is optional. Select **Required** if you want all users in the organization to authenticate using 2-Step Verification.
 
     ![2-Step Verification](/img/security/password-policy1.png)
@@ -23,7 +23,7 @@ To configure the 2-Step Verification policy for your organization:
 
 An administrator with the [role capability](../users-roles/roles/role-capabilities.md) to manage users and roles can perform the following 2-Step Verification management functions for an organization.
 
-**View 2-Step Verification status**. The **2SV** column on the **Administration** > **Users and Roles** > **Users** page shows a green check mark if 2-Step Verification is enabled for a user.
+**View 2-Step Verification status**. The **2SV** column on the **Users** page shows a green check mark if 2-Step Verification is enabled for a user.
 
 ![MFA manage users](/img/security/2sv.png)
 
@@ -31,7 +31,7 @@ An administrator with the [role capability](../users-roles/roles/role-capabiliti
 
 **Disable 2-Step Verification for a user**. An administrator can disable 2-Step Verification for a user in case they’ve lost access to their 2-Step Verification token. This action resets the user account to pre-2-Step Verification state. If the 2-Step Verification policy is required, the user will be forced to configure 2-Step  perification when next signing in. 
 
-1. Go to **Administration** > **Users and Roles** > **Users**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Users and Roles > Users**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Users**. You can also click the **Go To...** menu at the top of the screen and select **Users**. Kanso-->
 1. Click the **More Actions** icon for the user and select **Disable 2-Step Verification**.
 
     ![Disable 2SV](/img/security/user-more-actions.png)

@@ -29,7 +29,7 @@ _sourceCategory=*gcp* logName resource "type":"bigquery_resource"
 ```
 
 
-## Collecting Logs for the Google BigQuery App
+## Collecting logs for the Google BigQuery app
 
 This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google BigQuery App.
 
@@ -123,18 +123,19 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
    5. Click **Create Sync**.
 
 
-## Installing the Google BigQuery App
+## Installing the Google BigQuery app
 
 Now that you have set up log collection, you can install the Google BigQuery App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
-## Viewing Google BigQuery Dashboards
+## Viewing Google BigQuery dashboards
 
-The Google BigQuery App comes with pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
+<ViewDashboards/>
 
 ### Overview
 
