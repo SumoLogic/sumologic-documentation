@@ -1241,7 +1241,7 @@ auto_enable_logs_subscription="New"
 
 ```json
 {
- "filter": "lambda|rds"
+ "filter": "apigateway|lambda|rds"
 }
 ```
 
@@ -1456,7 +1456,7 @@ If the AWS IAM role is created outside of the module, the value can be decreased
 wait_for_seconds = 180
 ```
 
-## Override App Content Parameters
+### Override App Content Parameters
 
 As needed, override the app content parameters to configure how the AWS Observability app dashboards and alerts are installed in your Sumo Logic account. Enter the overrides in the **sumologic-solution-templates/aws-observability-terraform/main.tf**
 file. 

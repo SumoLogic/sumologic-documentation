@@ -92,7 +92,7 @@ It’s assumed that you are using the latest helm chart version if not please up
 
 ## Installing Nginx Ingress Monitors
 
-After [setting up collection](/docs/integrations/web-servers/nginx-legacy), you can proceed to installing the Nginx Ingress monitors, app, and view examples of each of dashboard.
+After [setting up collection](/docs/integrations/web-servers/nginx), you can proceed to installing the Nginx Ingress monitors, app, and view examples of each of dashboard.
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 

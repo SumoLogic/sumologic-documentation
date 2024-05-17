@@ -4,10 +4,13 @@ title: Script Action
 description: A Script Action receives data uploads that are triggered by a scheduled search.
 ---
 
+:::note
+You'll need the [View Collectors role capability](/docs/manage/users-roles/roles/role-capabilities) to set a Script Action alert.
+:::
 
 A Script Action passes the results of a scheduled search to a script or program that runs on a machine with an Installed Collector. The results are temporarily saved to the filesystem in JSON format at:
 
-```
+```json
 <sumologic_collector_installation_path>/<collector_id>-
 <MM>-<dd>-<HH>-<mm>-<ss>-<sequence_id>
 ```
