@@ -276,14 +276,16 @@ falco:
 
 ## Overriding metadata using annotations
 
-You can use [Kubernetes annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) to override some metadata and settings per pod.
+You can use [Kubernetes annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) to override some metadata and settings per pod or per namespace.
+
+Pod annotations take precedence over namespace annotations.
 
 - `sumologic.com/sourceCategory` overrides the value of the `sumologic.logs.container.sourceCategory` property
 - `sumologic.com/sourceCategoryPrefix` overrides the value of the `sumologic.logs.container.sourceCategoryPrefix` property
 - `sumologic.com/sourceCategoryReplaceDash` overrides the value of the `sumologic.logs.container.sourceCategoryReplaceDash` property
 - `sumologic.com/sourceName` overrides the value of the `sumologic.logs.container.sourceName` property
 
-For example:
+The following example uses pod annotations:
 
 ```yaml
 apiVersion: v1
@@ -309,6 +311,21 @@ spec:
           image: nginx
           ports:
             - containerPort: 80
+```
+
+The following example uses namespace annotations:
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    sumologic.com/sourceCategory: "namespaceSourceCategory"
+    sumologic.com/sourceCategoryPrefix: "namespace-Source-Category-Prefix"
+    sumologic.com/sourceCategoryReplaceDash: "#"
+    sumologic.com/sourceHost: "namespaceSourceHost"
+    sumologic.com/sourceName: "namespaceSourceName"
+  name: my-namespace
 ```
 
 ### Overriding source category with pod annotations
@@ -348,6 +365,9 @@ The `sumologic.com/sourceCategoryReplaceDash` annotation with value `-` prevents
 ### Excluding data using annotations
 
 You can use the `sumologic.com/exclude` [annotation](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/) to exclude data from Sumo. This data is sent to the metadata enrichment service, but not to Sumo.
+You can exclude data per pod using pod annotations or per namespace using namespace annotations. However, pod annotations take precedence over namespace annotations.
+
+The following example uses pod annotations:
 
 ```yaml
 apiVersion: v1
@@ -371,6 +391,17 @@ spec:
           image: nginx
           ports:
             - containerPort: 80
+```
+
+The following example uses namespace annotations:
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    sumologic.com/exclude: "true"
+  name: my-namespace
 ```
 
 #### Including subsets of excluded data

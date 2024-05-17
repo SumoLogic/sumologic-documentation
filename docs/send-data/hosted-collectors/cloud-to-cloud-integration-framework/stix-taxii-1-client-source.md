@@ -2,7 +2,7 @@
 id: stix-taxii-1-client-source
 title: STIX/TAXII 1 Client Source
 sidebar_label: STIX/TAXII 1 Client
-tags:
+keywords:
   - cloud-to-cloud
   - stix
   - taxii
@@ -63,7 +63,7 @@ To configure a TAXII 1 Client Source:
    * **HTTP Basic Auth User**. The threat intel API username
    * **HTTP Basic Auth Password**. The threat intel API password
 1. **Other Settings**:
-    1. (Optional) **Polling Interval**. Set how frequently to poll for new or updated indicators. It must be between 5 minutes and 48 hours. 
+    1. (Optional) **Polling Interval**. Set how frequently to poll for new or updated indicators. It must be between 5 minutes and 48 hours.
 1. When you are finished configuring the Source, click **Save**.
 
 ## JSON Configuration

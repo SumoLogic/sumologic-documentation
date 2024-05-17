@@ -61,16 +61,19 @@ The following is an example Slack payload with the variable:
 }
 ```
 
-## Alert list
+## Alerts list
 
-The Alert list shows all of your Alerts from Monitors triggered within the past seven days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time.
+The Alerts list shows all of your Alerts from Monitors triggered within the past seven days. By default, the list is sorted by status (showing **Active** on top, followed by **Resolved**), and then chronologically by creation time.
 
-To open the Alert list, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/>
+<!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> To access the Alerts list, click the bell icon in the top menu. <br/> <img src={useBaseUrl('img/alerts/alert-list-page-bell-border.png')} alt="alert-list-page-bell-border" width="300"/> 
+<!--Kanso 
+[**New UI**](/docs/get-started/sumo-logic-ui-new/). To access the Alerts list, in the main Sumo Logic menu select **Alerts**. You can also click the **Go To...** menu at the top of the screen and select **Alerts**. 
+ Kanso-->
 
 To filter or sort by category (e.g., **Name**, **Severity**, **Status**), you can use the search bar or click on a column header.<br/>![search alert list.png](/img/monitors/search-alert-list.png)
 
 :::info Limitations
-The Alert list displays up to 1,000 alerts.
+The Alerts list displays up to 1,000 alerts.
 :::
 
 ### Resolve Alerts
@@ -85,7 +88,7 @@ For example, when you open an alert response page in Metrics Explorer, you can s
 
 To view the Alert Response chart in Metrics Explorer, follow the steps below:
 
-1. Navigate to the **Alert lists** and select the alert for which you want to view the corresponding metrics and threshold values.
+1. Navigate to the [Alerts list](#alerts-list) and select the alert for which you want to view the corresponding metrics and threshold values.
 1. Open the **Alert Response Page**.
 1. Click the **View in Metrics Explorer** button for that alert. You can click on either of the two buttons, and they both function the same way.
 1. The Metrics Explorer view will open with the graph of the metric associated with the alert.
@@ -102,7 +105,7 @@ Note that the same threshold translating functionality supports to [Creating Mon
 
 ## Alert Page
 
-The Alert Page is where you can view granular details about an individual alert. To get to an Alert page, click on any row from your Alert list.
+The Alert Page is where you can view granular details about an individual alert. To get to an Alert page, click on any row from your Alerts list.
 
 An Alert provides curated information to on-calls in order for them to troubleshoot issues more quickly. It provides two different types of information to help get to the root cause of the issue quickly.
 * **Alert Details**. Overview of the alert that was triggered to help you understand the issue and its potential impact. 
@@ -315,10 +318,10 @@ To cancel an inherited subscription, you'll need to remove the subscription from
 
 Alert notification preferences give you granular control over specific monitor activity you want to follow.<br/><img src={useBaseUrl('img/alerts/alert-preferences.png')} alt="alert-list-page-bell-border" width="400"/>
 
-1. From the left nav, click on your username > **Preferences**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**. Kanso-->
 2. Click on any of the following checkboxes to enable your desired preferences:
-   * **Display Alert Badge**: the bell icon is displayed in the top nav
-	 * **Notify about only subscribed monitors**: the bell icon will only push notifications for monitors you're subscribed to
-	 * **Enable "Active alerts only" as default filter**: your Alert list, by default, will only display alerts with an Active status (excludes Resolved ones)<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" />
-	 * **Enable "My subscriptions" as default filter**: your Alert list, by default, will only display alerts you're subscribed to<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" />
+   * **Display alert badge when my subscribed monitors are triggered**: the bell icon is displayed in the top nav
+   * **Notify about only subscribed monitors**: the bell icon will only push notifications for monitors you're subscribed to
+   * **Enable "Active alerts only" as default filter**: your Alerts list, by default, will only display alerts with an Active status (excludes Resolved ones)<br/> <img src={useBaseUrl('img/alerts/filter-active.png')} alt="alert-preferences" />
+   * **Enable "My subscriptions" as default filter**: your Alerts list, by default, will only display alerts you're subscribed to<br/> <img src={useBaseUrl('img/alerts/filter-subscribe.png')} alt="alert-preferences" />
 3. Click **Save** when you're done.
