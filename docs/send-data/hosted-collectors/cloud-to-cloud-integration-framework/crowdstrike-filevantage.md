@@ -120,3 +120,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 <CodeBlock language="json">{TerraformExample}</CodeBlock>
 
 [Download example](/files/c2c/crowdstrike-filevantage/example.tf)
+
+### Limitation
+
+This source supports a maximum of 65000 resourceIDs. Exceeding this resourceIDs limit may cause the source to return a FIRST-PARTY-GENERIC error type.
