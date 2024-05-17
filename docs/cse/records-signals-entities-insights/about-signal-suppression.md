@@ -23,6 +23,18 @@ By default, Signals are automatically suppressed for 72 hours. You can change th
 
 <img src={useBaseUrl('img/cse/detection-threshold-global-signal-suppression.png')} alt="Detection threshold settings" style={{border: '1px solid gray'}} width="500"/>
 
+### Override global Signal suppression
+
+You can override the [global Signal suppression](/docs/cse/records-signals-entities-insights/set-insight-generation-window-threshold/) in any rule. This allows the rule to generate Signals in a shorter time frame than the 72-hour default. This can be helpful, for example, when you want the rule to generate Signals for time-sensitive issues that cannot wait for 72 hours before generating a Signal.<br/><img src={useBaseUrl('img/cse/override-global-signal-suppression.png')} alt="Override Global Signal Suppression" style={{border: '1px solid gray'}} width="500"/>
+
+To override global Signal suppression in a rule:
+1. Create or edit a [rule](/docs/cse/rules/).
+1. Click **Show Advanced** on the **Then Create a Signal** tab.
+1. Select the **Override Global Signal Suppression** check box.
+1. Enter the hours and/or minutes to suppress Signal generation.
+
+For certain rule types (Threshold, Chain, or Aggregation), the minimum valid value you can enter is determined by the time value in the **If Triggered** tab. <br/><img src={useBaseUrl('img/cse/override-global-signal-suppression-grouped-by.png')} alt="Minimum valid value" style={{border: '1px solid gray'}} width="600"/>
+
 ## Suppress by Entity
 
 You can suppress an Entity on its [details page](/docs/cse/records-signals-entities-insights/view-manage-entities#about-the-entities-details-page) in the Cloud SIEM UI using the suppression slider. 
