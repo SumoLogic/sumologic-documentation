@@ -9,7 +9,7 @@ This section provides details on the available versions of the AWS Observability
 
 To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Selecting a stack template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for more information.
 
-## v2.8.0, 26-Mar-2023
+## v2.8.0, 17-May-2023
 
 AWS Observability Solution (S3 Link for CloudFormation template): `https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.8.0/sumologic_observability.master.template.yaml`
 
@@ -24,6 +24,9 @@ New Features:
 Updates:
 * Optimized time to install AWS observability solution with cloudformation template.
 * AccountID tag removed from AWS CloudWatch Metrics sources.
+* CVE fixes associated with Sumologic terraform provider and terraform integration module (update >= 2.28.3, < 3.0.0).
+* Updated Terraform integration module to AWS terraform provider version 5.x.
+* Existing source URL of Classic Load Balancer is integrated with CloudFormation (CF) Solution.
 
 ## v2.7.0, 25-Oct-2023
 
