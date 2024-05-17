@@ -123,4 +123,4 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 ### Limitation
 
-This source supports a maximum of 65000 resourceIDs. Exceeding this resourceIDs limit may cause the source to return a FIRST-PARTY-GENERIC error type.
+- This source supports a maximum of 65000 resourceIDs. Exceeding this resourceIDs limit may cause the source to return a `FIRST-PARTY-GENERIC` error type.
