@@ -1,15 +1,18 @@
 ---
 id: create-real-time-alert
-title: Create a Real-Time Alert
-sidebar_label: Create a Real-Time Alert
-description: Set up Real-Time Alerts to learn of error conditions right when they occur.
+title: Create a Scheduled Search Real-Time Alert
+description: Set up Real-Time Alerts to get notified of error conditions right when they occur.
 ---
+
+:::warning Solution Deprecated
+Effective May 15, 2024, Real-Time Scheduled Searches have been deprecated and you will no longer be able to create them. Real-Time Scheduled Searches created before that date will continue to function until May 15, 2025. We encourage you instead to [create a monitor](/docs/alerts/monitors/create-monitor) for use cases that require Real-Time Alerting. [Learn more](/docs/alerts/scheduled-searches/deprecation).
+:::
 
 Real-Time Alerts are scheduled searches that run nearly continuously. That means that you're informed in real time when error conditions exist.
 
 When an alert condition is satisfied Sumo Logic triggers the selected alert type. Sumo Logic examines ingested data in a rolling window using the Time Range you define. Any time a new result is found, another email is sent.
 
-## When to Use
+## When to use
 
 Only use real-time schedules when you know your data is ingested within a few minutes of its creation. The [receipt time](/docs/search/get-started-with-search/build-search/use-receipt-time) should be within a few minutes of your log's [message time](/docs/search/get-started-with-search/search-basics/built-in-metadata). See
 how to [troubleshoot timestamp discrepancies](/docs/send-data/collector-faq#troubleshooting-time-discrepancies).

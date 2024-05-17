@@ -574,7 +574,7 @@ The following sections describe the valid hook values to use in a trigger defini
 
 ##### Entities hooks
 
-Following are the hooks for [entities](/docs/cloud-soar/main-menu/#entities) (observables) events that run when objects are created:
+Following are the hooks for [entities](/docs/cloud-soar/incidents-triage/#entities) (observables) events that run when objects are created:
 * `addObservableArtifact`. When an artifact entity is created.
 * `addObservableDomain`. When a domain entity is created.
 * `addObservableIp`. When an IP address entity is created.
@@ -644,7 +644,7 @@ opt_11: <value>
 
 Following are hooks for [incident](/docs/cloud-soar/incidents-triage/) events:
 * `closeIncident`. When incident is closed. Param passed to script `incidentsBeforeUpdate` and  `incidentsAfterUpdate`.
-* `incidentCustomAction`. Custom trigger. Param passed to script `text`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
+* `incidentCustomAction`. Custom trigger. Param passed to script `text` and `incidentsDetail`. For more information, see  [Trigger incidentCustomAction and taskCustomAction](/docs/cloud-soar/cloud-soar-integration-framework/#trigger-incidentcustomaction-and-taskcustomaction).
 * `newIncident`. When incident is created. Param passed to script `incidentsDetail`.
 * `updateIncident`. When incident is updated. Param passed to script `incidentsBeforeUpdate` and `incidentsAfterUpdate`.
 

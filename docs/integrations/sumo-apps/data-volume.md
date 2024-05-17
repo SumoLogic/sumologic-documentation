@@ -31,16 +31,15 @@ A message confirms that the feature is enabled.
 
 ## Installing the Data Volume app
 
-import AppInstallNoDataSourceV1 from '../../reuse/apps/app-install-sumo-apps.md';
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
-<AppInstallNoDataSourceV1/>
+<AppInstallNoDataSourceV2/>
 
-## Viewing Data Volume Dashboards
+## Viewing Data Volume dashboards
 
-For each panel in a dashboard, you can perform the following actions:
-* To display details for the panel time range, hover over the text in the top right corner.
-* To zoom into a panel for more information, click the magnifying glass icon in the header.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
+<ViewDashboards/>
 
 ### Overview
 
@@ -62,7 +61,7 @@ Use this dashboard to:
 * Determine the log data for default index and top non-default indexes.
 * Compare current ingestion to capacity and review any overages. You must configure the “Daily_Log_Ingest_Capacity” variable based on your Account Subscription. If you have  Credit based plan, please check with your account executive to determine these values for your account. Otherwise, see **Administration > Account > Account Overview** to get your capacity values.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Logs-by-Metadata-Fields.png')} alt="Data volume dashboards" />
+<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Logs.png')} alt="Data volume dashboards" />
 
 
 ### Data Volume Logs by Metadata Fields
@@ -73,7 +72,7 @@ Use this dashboard to:
 * Identify the top 5 sources categories, source hosts, and collectors by ingest volume
 * Examine ingestion trends over time
 
-<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Overview.png')} alt="Data volume dashboards" />
+<img src={useBaseUrl('img/integrations/sumo-apps/Data-Volume-Logs-by-Metadata-Fields.png')} alt="Data volume dashboards" />
 
 
 ### Metrics

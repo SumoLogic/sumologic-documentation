@@ -33,41 +33,36 @@ import Iframe from 'react-iframe'; 
 
 ## Create a Threshold rule
 
-1. Choose **Rules** from the Content menu.
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Rules**. <!--Kanso <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Rules**. You can also click the **Go To...** menu at the top of the screen and select **Rules**. Kanso-->
 1. On the **Create a Rule** page, click **Create** in the **Threshold** card. 
 1. In the rules editor:
    1. **Name**. Enter a name for the rule.
-   1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.  <br/><img src={useBaseUrl('img/cse/threshold.png')} alt="Threshold rule" width="600"/>
+   1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.  <br/><img src={useBaseUrl('img/cse/threshold.png')} alt="Threshold rule" style={{border: '1px solid gray'}} width="600"/>
 
-## Configure “If Triggered” settings
+### Configure “If Triggered” settings
 
-1. **When the expression**. Enter the rule expression, a boolean expression that when “true”, causes the rule to fire.
+1. **When a Record matches the expression**. Enter the rule expression, a boolean expression that when “true”, causes the rule to fire.
     :::note
     You can expand the field template guide, which contains a list of all the fields that Cloud SIEM can normalize to v3 of the Cloud SIEM Schema. Note that the existence of a field in the guide doesn't mean that your ingested Records necessarily include that field.
     :::
-1. **matches *n* Record**. Select how many Records must match the rule expression during the interval you specify below, in the **within** option.
-1. **within**. Select the duration within which the rule expression must evaluate to “true” more than the number of times specified in **matches n Record** for the rule to fire a Signal.
-1. **Show advanced**. Click this link, in the upper right corner of the **If Triggered** area, to display advanced options. When you checkmark an advanced option, the **If Triggered** area refreshes, displaying additional fields. <br/><img src={useBaseUrl('img/cse/advanced-threshold.png')} alt="Advanced section of threshold rule" width="400"/>
-1. **Count only distinct values for a field.** Configure this option if you only want to count the number of Records that contain  distinct values of a particular Record field, instead of just counting Records that match your rule expression. Use the **for field** dropdown list to select the desired field. 
-1. **group by one or more fields.** By default, a threshold rule implicitly groups by the entity field you’ll select below when configuring the **Then Create a Signal** options. You can select additional “group by” fields with the **matches grouped by** option, so that a Signal is only created if the count for the group is above the threshold count specified above. 
+1. Click **Test Rule Expression** to test it against existing Records in Cloud SIEM. The **If Triggered** section expands, and Cloud SIEM searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message. If no matches were returned, try changing the time range.
+1. **matches at least *n* Record**. Select how many Records must match the rule expression during the interval you specify below, in the **within** option.
+1. **within...**. Select the duration within which the rule expression must evaluate to “true” more than the number of times specified in **matches at least n Record** for the rule to fire a Signal.
+1. Select **Add Tuning Expression** if you want to add a [rule tuning expression](/docs/cse/rules/rule-tuning-expressions) to the rule.
+    :::note
+    If you use **Test Rule Expression** on a rule that has one or more rule tuning expressions, you can test it without the tuning expressions, or with selected tuning expressions.
+    :::
+1. **Show advanced**. Click this link at the top of the **If Triggered** tab to display advanced options. When you select these options, the **If Triggered** area refreshes, displaying additional fields. <br/><img src={useBaseUrl('img/cse/advanced-threshold.png')} alt="Advanced section of threshold rule" style={{border: '1px solid gray'}} width="400"/>
+    1. **Count only distinct values for a field.** Configure this option if you only want to count the number of Records that contain  distinct values of a particular Record field, instead of just counting Records that match your rule expression. Use the **for field** dropdown list to select the desired field. 
+    1. **Group by one or more fields.** By default, a threshold rule implicitly groups by the entity field you’ll select below when configuring the **Then Create a Signal** options. You can select additional “group by” fields with the **matches grouped by** option, so that a Signal is only created if the count for the group is above the threshold count specified above. 
 
-## Test your rule expression
-After creating a rule expression, you can test it against existing Records in Cloud SIEM.
-
-1. Click **Test Rule** above the rule expression.
-1. The **If Triggered** section expands, and Cloud SIEM searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message.
-1. If no matches were returned, try changing the time range.
-
-:::note
-If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](/docs/cse/rules/rule-tuning-expressions), you can test it without the tuning expressions, or with selected tuning expressions.
-:::
-
-## Configure “Then Create a Signal” settings
+### Configure “Then Create a Signal” settings
 
 :::note
 When you're configuring a Threshold and Chain rule, you do not supply a Signal name; a Signal fired by those rule types has the same name as the rule that fired it.
 :::
 
+1. Click **Show Advanced** if you want the rule to [override global Signal suppression](/docs/cse/records-signals-entities-insights/about-signal-suppression/#override-global-signal-suppression).
 1. **On Entity**. Select the Entity field—for example, an IP address, MAC address, hostname, and so on—in the Record that the resulting Signal should be associated with. (In Cloud SIEM, an Insight is a set of Signals with the same Entity field.) Select a value from the pull-down list. 
 1. **with the summary**. Enter a brief summary describing what causes the Rule to create a Signal.
 1. **with the description**. Define the description for the Signal. You can use text and Record fields. The Signal description should be a good indication of what the rule looks for.

@@ -17,6 +17,15 @@ To search a particular partition, specify the `_index` metadata field with the n
 You can only use `_index` in the keyword search expression that scopes the search, in other words, before the first pipe (`|`) in the search.
 :::
 
+## Filter and search a partition
+
+You'll need to filter the partition, depending on the type of partition using the dropdown provided above the table. Accordingly, you can view the overall allocated storage details with the percentage of storage used for the selected partition type. You can select between two type of partitions:
+
+- **User-Defined Partitions**. Type of partitions which are created by the user.
+- **System Partitions**. Type of partitions which are created from Sumo Logic to optimize the performance of the query.
+
+<img src={useBaseUrl('img/partitions-data-tiers/filter-and-search-a-partition.png')} alt="filter-and-search-a-partition" style={{border:'1px solid gray'}} width="800"/>
+
 ## Search the default partition
 Data that you ingest that is not directed to a partition will go to the default partition, named `sumologic_default`. The default partition is the first partition listed on the **Partitions** page. To run a search against the default partition, include this in the scope of your search:
 ```
@@ -47,7 +56,7 @@ Here are some examples where index aliasing is used in wildcard queries.
 
 ## Run a search against a partition from the Partitions page
 
-1. Go to **Manage Data > Logs > Partitions**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
 1. Do one of the following:
     * Click the **Search Icon** to the right of the partition name. This launches a search on just the data indexed in the partition.<br/><img src={useBaseUrl('img/partitions-data-tiers/partitions-page-search-icon.png')} alt="icon" />    
     * Select a partition from the table and click the **Search Icon** to the right of the routing expression. This launches a search that runs the expression against the partition, as well as any other logs that match the query. This means that you can capture search results on all data, not just the data indexed in the partition.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane-search-icon.png')} alt="edit-partition-pane-search-icon" width="300"/>    

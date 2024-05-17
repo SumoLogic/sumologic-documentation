@@ -56,7 +56,7 @@ Sumo Logic collects logs, metrics, and events including AWS EC2 Host Metrics, Cl
 * **Region**. This is the AWS region, for example, us-east-1, us-west-2, and so on.
 * **Entity**. This represents either the AWS resource name or id depending on the AWS service being monitored.
 
-This new metadata can also be used in ad-hoc logs and metrics searches.
+This new metadata can also be used in ad hoc logs and metrics searches.
 
 <img src={useBaseUrl('/img/observability/AWS_Observability_Collection.png')} alt="AWS_Observability_Collection"/>
 

@@ -126,8 +126,7 @@ area and provide details of the event.
 
 To search the Audit Event Index for logs that describe Cloud SIEM events:
 
-1. Open a search tab in the Sumo Logic UI by clicking **+ New** and choosing **Log Search**.  
-   <img src={useBaseUrl('img/cse/new-log-search.png')} alt="new-log-search.png" />
+1. Start a [log search](/docs/search/get-started-with-search/search-basics/about-search-basics/). 
 2. In the search tab, enter a search using `_index` to specify the partition you want to search, and other metadata or fields to further scope your search. For example:  
     ```sql
     _index=sumologic_system_events
@@ -139,7 +138,7 @@ To search the Audit Event Index for logs that describe Cloud SIEM events:
 
 ## Example event log
 
-Here is an example `InsightCreated` event log.<br/><img src={useBaseUrl('img/cse/example-event.png')}  alt="example.png" />
+Here is an example `InsightCreated` event log.<br/><img src={useBaseUrl('img/cse/example-event.png')}  alt="example.png" style={{border: '1px solid gray'}} width="600" />
 
 ## Index retention period 
 
