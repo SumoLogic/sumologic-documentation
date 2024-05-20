@@ -1,6 +1,6 @@
 ---
 id: data-deletion
-title: Data Deletion
+title: Data Deletion Requests
 description: Learn how to independently and efficiently control or remove your sensitive data from Sumo Logic.
 ---
 
@@ -12,37 +12,44 @@ description: Learn how to independently and efficiently control or remove your s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Users can face critical challenges when inadvertently ingesting sensitive data into Sumo Logic, necessitating swift and accurate deletion procedures. Common causes include misconfigurations, developer oversight, or third-party data containing sensitive information. The urgency stems from potential compliance violations, financial repercussions, and the risk of data exposure within their organization.
+The Data Deletion feature allows you to request the removal of ingested data from Sumo Logic, which can be particularly useful for sensitive or inadvertently ingested data.
 
-With Data Deletion, you're empowered to independently and efficiently control or remove sensitive or inadvertently ingested data without having to contact Sumo Logic support.
+Accidental ingestion of sensitive data due to misconfigurations, developer errors, or third-party sources can pose significant compliance and security risks. This feature provides a swift and accurate solution to mitigate such risks.
 
-Key features include user-friendly deletion capabilities, support for multiple datasets and time ranges, customizable filters, and robust auditing mechanisms.
+Key Features:
+
+- User-friendly data deletion
+- Support for multiple datasets and time ranges
+- Customizable filters
+- Robust auditing mechanisms
+
 
 ## Create a Data Deletion Request
 
-### From a Log Search
-
-1. Open a log search.
-1. Type in a log search query, and run search.
-1. Click the cog icon next to Expand, then select **Raise Logs Deletion Request**.
-1. Enter a name and reason for your deletion request, then click **Raise Request**. This sends your request to a Sumo Logic CSM for approval.
-1. To verify creation, go to **Logs** > **Deletion Requests**. Here, you'll find a list of Deletion Requests, along with the Status (Waiting for Approval, Running, Complete) and ID for each item.
-1. Approval process ?
-
-:::warning limitations
-Auto-refresh is not available yet. You'll have to manually refresh the page to update the **Status**.
-:::
 
 ### From the Logs tab
 
-1. Go to **Logs** > **Deletion Requests**.
+1. Go to **Manage Data** > **Logs** > **Deletion Requests**.
 1. Click **+ Raise Logs Deletion Request**.
+1. Fill out the **Name**, **Reason**, and **Filter Expression** fields.
+1. Select the **Time Range** when the data was ingested.
+1. When you're done, click **Save**.
+
+Next, your request will go to a Sumo Logic Customer Support Manager (CSM) for review.
+
+To check on your request status, go to **Manage Data** > **Logs** > **Deletion Requests**. Here, you'll find a list of Deletion Requests, along with the Status and ID for each item.
+
+### From a Log Search
+
+1. From any **Log Search**, click the cog icon next to **Expand/Collapse**, then select **Raise Logs Deletion Request**.
+1. Enter a **Name** and **Reason** for your deletion request, then click **Raise Request**.
+
 
 ## Cancel a Data Deletion Request
 
 1. Click the **Cancel Request** button.
 
-<!-- is this available?
+<!-- is this available now?
 Auditing of the following activities:
 -New Data Deletion Rule Addition, Deletion, Edit
 -Number of Logs that have been masked/redacted/deleted.
