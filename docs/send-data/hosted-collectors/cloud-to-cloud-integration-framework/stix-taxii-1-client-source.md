@@ -65,6 +65,7 @@ To configure a TAXII 1 Client Source:
 1. (Optional) **Sumo Logic Threat Intel Source ID**. Provide your own threat intelligence source ID. This is useful for organizing multiple sources.
 1. **STIX/TAXII Configuration**:
    * **Discovery URL**. Enter the TAXII Discovery URL provided by the vendor (optional).
+1. **Collection Names**. Enter the collections to fetch, using the poll URL.
 1. **Authentication**. This source only supports basic HTTP authentication. Check **Use Basic Auth** to enable it.
    * **HTTP Basic Auth User**. The threat intel API username
    * **HTTP Basic Auth Password**. The threat intel API password
@@ -95,6 +96,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | useBasicAuth| Boolean | No | `false`|Enforces basic HTTP authentication|
 | http_user | String | No | `null` | HTTP basic authentication username |  |
 | http_password | String | No | `null` | HTTP basic authentication password |  |
+| collectionNames | Array | No | `Empty` | Used to get collections using the poll URL. |  |
+| pollingInterval | String | Yes |  | How frequently to poll for messages from the threat intel provider. |  |
 
 ### JSON example
 
