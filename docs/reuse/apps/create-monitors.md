@@ -12,4 +12,4 @@ From your App Catalog:
 1. Enter **Folder Name**. Folder Description is optional.
         :::tip
         Using app version in the folder name will be helpful to determine the versioning for future updates.
-1. Click **Create**, once the folder is created click on **Save**.
+1. Click **Create**. Once the folder is created, click on **Save**.
