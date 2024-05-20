@@ -2,8 +2,7 @@
 id: cloudquery-azure-plugin-source
 title: CloudQuery Azure Plugin Source
 sidebar_label: CloudQuery
-tags:
-  - cloud-to-cloud
+keywords:
   - cloudquery
   - azure
 description: Learn how to collect inventory from the Azure APIs using CloudQuery SDK and send it to Sumo Logic.

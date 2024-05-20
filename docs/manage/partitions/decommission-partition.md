@@ -12,7 +12,7 @@ Should you no longer require a partition, you have the option to decommission it
 
 To decommission a partition:
 
-1. Go to  **Manage Data** > **Logs** > **Partitions**. <br/>  ![partitions-page.png](/img/partitions-data-tiers/partitions-page.png)
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso--> <br/>  ![partitions-page.png](/img/partitions-data-tiers/partitions-page.png)
 1. Click the row for the partition you want to decommission.  
 1. The partition details appear on the right side of the page.<br/>  ![decommision-button.png](/img/partitions-data-tiers/decommision-button.png)
 1. Click **Decommission**.

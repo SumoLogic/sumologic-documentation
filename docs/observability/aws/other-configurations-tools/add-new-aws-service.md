@@ -16,17 +16,13 @@ By default, the AWS Observability view supports the following services: AWS EC2,
 Before you can add dashboards for a new service to the AWS Observability
 hierarchy: 
 
-1. The AWS Observability solution must have already been installed for at least one supported service
-1. You need to collect metrics for your service via a Sumo Logic AWS CloudWatch metrics source for an AWS account that is already being monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
-1. You need to create at least one Sumo Logic dashboard based on CloudWatch metrics and log data to monitor the operations of the AWS Service in question.
+* The AWS Observability solution must have already been installed for at least one supported service.
+* You need to collect metrics for your service via a Sumo Logic AWS CloudWatch metrics source for an AWS account that is already being monitored by the AWS Observability solution. We recommend creating a new AWS CloudWatch metrics source for the service you want to monitor as opposed to using an existing source for performance reasons.
+* You need to create at least one Sumo Logic dashboard based on CloudWatch metrics and log data to monitor the operations of the AWS Service in question.
 
 ## Add a new service to the AWS Observability View
 
 As dashboards can be created based on both logs and metrics data, in this section, we identify how to add dashboards based on both data types to the AWS Observability Explore views. 
-
-* [Step 1. Enrich Metrics Data](#step-1-enrich-metrics-data)
-* [Step 2. Enrich Log Data](#step-2-enrich-log-data)
-* [Step 3. Modify dashboards](#step-3-modify-dashboards)
 
 ## Step 1. Enrich Metrics Data 
 
@@ -36,13 +32,11 @@ The Account field is already a part of CloudWatch metrics sources that were conf
 
 This can be done by following the steps below:
 
-1. Log in to your Go to Sumo Logic account
-1. In the AWS Observability solution, identify the account alias for the AWS account you have configured that is running the service you want to monitor
-1. Edit the CloudWatch Metrics source for the AWS service you wish to add to the AWS Observability solution
-1. Add **Account** field as by adding a field as shown in the screenshot below:
-  ![Step1.png](/img/observability/Step1.png)
-1. To confirm if the account tag is indeed added as metadata, go to your Sumo Logic AWS CloudWatch Metric source and check the metrics data.
-  ![Step1.1.png](/img/observability/Step1-1.png)
+1. Go to **App Catalog**, then search for and select **AWS Observability**.
+1. In the AWS Observability solution, identify the account alias for the AWS account you have configured that is running the service you want to monitor.
+1. Edit the CloudWatch Metrics source for the AWS service you wish to add to the AWS Observability solution.
+1. Add **Account** field as by adding a field as shown in the screenshot below.<br/>![Step1.png](/img/observability/Step1.png)
+1. To confirm if the account tag is indeed added as metadata, go to your Sumo Logic AWS CloudWatch Metric source and check the metrics data.<br/>![Step1.1.png](/img/observability/Step1-1.png)
 
 ### Validate the namespace and region metadata tags 
 
@@ -51,8 +45,8 @@ The `namespace` and `region` tags are generally present in AWS CloudWatch metric
 For the desired AWS Service, go to your Sumo Logic AWS CloudWatch Metric
 source and check the metric data.
 
-1. Go to Sumo Logic account
-1. Open a metrics tab and run a query to get metrics data for the AWS Service you wish to add to AWS Observability
+1. Log in to your Sumo Logic account.
+1. Open a **Metrics** tab and run a query to get metrics data for the AWS Service you wish to add to AWS Observability.
 1. Check the data in the Legend tab and ensure **namespace** and **region** metadata tags are present. If these are not present, you will not be able to add this service to the AWS Observability solution.<br/> ![Step2.png](/img/observability/Step2.png)
 
 ### Identify the AWS Resource Name field
@@ -72,15 +66,14 @@ For Example, If we wish to monitor **AWS/SQS** service, then
 
 Once all the tags are checked and identified in the metrics, we can
 update the existing hierarchy to show the new AWS Service. Follow the
-steps below to update the existing hierarchy :
+steps below to update the existing hierarchy.
 
-:::note
-In the code samples in the following steps:
-- **ACCESS_ID** and **ACCESS_KEY**. Replace with your Sumo Logic access ID and access key.
-- **SUMOLOGIC_URL**. Replace with the [API Endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your deployment.
-- **ID**. Replace with the hierarchy ID as present in the JSON output from Step 1 below.
-- **JSON_CONTENT_AFTER_UPDATE**. Replace with the JSON updated with new AWS service after Step 2 below.
-:::
+Replace these variables with your own in the code samples in this section:
+- `ACCESS_ID` and `ACCESS_KEY`. Replace with your Sumo Logic access ID and access key.
+- `SUMOLOGIC_URL`. Replace with the [API Endpoint URL](/docs/api/getting-started/#sumo-logic-endpoints-by-deployment-and-firewall-security) for your deployment.
+- `ID`. Replace with the hierarchy ID as present in the JSON output from Step 1 below.
+- `JSON_CONTENT_AFTER_UPDATE`. Replace with the JSON updated with new AWS service after Step 2 below.
+
 
 1. Run the below curl command to get the existing AWS Observability hierarchy.
    ```bash
@@ -189,7 +182,7 @@ In the code samples in the following steps:
 
 Once you are done with the above steps, the AWS service will be added to the AWS Observability view hierarchy. To validate this:
 
-1. Go To Explorer in your Sumo Logic account.
+1. Go to Explorer in your Sumo Logic account.
 1. Select AWS Observability from the dropdown.
 1. You should be able to see the new service in the hierarchy represented by namespace/entity.
 
@@ -210,7 +203,7 @@ Add account field by adding fields to your log source as shown below:
 
 To enrich the logs data with namespace, region, and aws resource name, we will create a Field Extraction Rule that will add metadata to the logs.
 
-We will take AWS/SQS as an example. For SQS, we selected QueueName as our resource name in metrics data. We will create below FER to extract region, namespace, and queuename from CloudTrail logs.
+We will take AWS/SQS as an example. For SQS, we selected QueueName as our resource name in metrics data. We will create below FER to extract `region`, `namespace`, and `queuename` from CloudTrail logs.
 
 **Name: AwsObservabilitySqsFieldExtractionRule**
 
@@ -245,10 +238,10 @@ To add any dashboard to the hierarchy, perform the below steps:
 1. Go to your dashboard in the Sumo Logic account. 
 1. Select **Create Stack Linking** as per the below screenshot.<br/> ![Step5.png](/img/observability/Step5.png)
 1. In the pop-up, add the fields shown below to make it part of AWS Observability in the hierarchy.
-  * account: `*`
-  * region: `*`
-  * namespace: `<namespace of aws service>` Example for SQS Service provide value as aws/sqs
-  * AWS Resource name: * For example, if you were to use SQS, the Key here will be `“queuename”`
+   * account: `*`
+   * region: `*`
+   * namespace: `<namespace of aws service>` Example for SQS Service provide value as aws/sqs
+   * AWS Resource name: * For example, if you were to use SQS, the Key here will be `“queuename”`
   :::note
   The number of keys added decides the dashboards placement in Hierarchy. For example, if you add **account** and **region** in stack linking, dashboards will be present at the **region** level in the hierarchy.  
   :::
@@ -268,7 +261,7 @@ You can add template variables to dashboards to better filter your data in the A
 Follow the steps to add variables to the dashboards:
 
 1. Go to the dashboard.
-1. Click **+** button near the ”Create a template variable” text.
+1. Click **+** button near the **Create a template variable** text.
 1. Add a template variable as shown below:<br/>![Step6.1.png](/img/observability/Step6-1.png)
 
 Refer to this document for further details on how to use filters with template variables.

@@ -2,10 +2,6 @@
 id: config-based-source
 title: Config Based Source
 sidebar_label: Config Based Source
-tags:
-  - cloud-to-cloud
-  - config
-  - based
 description: Learn how to set up a Config Based C2C to collect data into the Sumo Logic environment.
 ---
 
@@ -53,7 +49,7 @@ If you are unable to configure the source to support your vendor API, you can ei
 
 When you create an Config Based Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **Config Based**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -168,7 +164,7 @@ Select this authentication option if the vendor API does not require any form of
   |:-----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
   | Window Size      | This is the maximum size of the window between the start and end timestamp. The default is `5m` and we recommend leaving this setting unless there is a specific reason to adjust it. The source has 512MB of memory and processing data from the vendor API in small window sizes is ideal to work within the memory limits. Larger windows can be used if you need to make fewer API calls to the vendor and the data volume is low. The smallest window size is `1m` and the largest is `24h`. You must keep this setting less than or equal to your polling interval. |
   | Initial Lookback | This setting determines how far back from current time to start the window when the source is created. Adjusting this after source creation will not have an affect. This value must be greater than or equal to the `window size` and no further back than `31d`. The default value is `24h`.                                                                                                                                                                                                                                                                            |
-  | Max Lookback | This will determine how far back the window is allowed and should be set based on the vendors data retention policy. If the source encounters a repetitive error causing the window to not move forward for a period of time, the window will not be allowed to stagnate past this configured time. The default is `31d` and we recommend leaving the default unless the vendor specifically states their data retention policy. You can configure this setting between the `window size` and `365d`. 
+  | Max Lookback | This will determine how far back the window is allowed and should be set based on the vendors data retention policy. If the source encounters a repetitive error causing the window to not move forward for a period of time, the window will not be allowed to stagnate past this configured time. The default is `31d` and we recommend leaving the default unless the vendor specifically states their data retention policy. You can configure this setting between the `window size` and `365d`.
   </div>
 </details>
 <details>

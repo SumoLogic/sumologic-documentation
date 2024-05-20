@@ -18,8 +18,7 @@ The IP is generally your host IP address. But if your request is coming through 
 
 ## Enable allowlist for login and APIs
 
-1. Go to **Administration > Security**.
-1. Select the **Service Allowlist Settings** tab.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Service AllowList Settings**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**. Kanso-->
 1. Under **Service Allowlist Settings**, select the **Enable Login / API Allowlist** check box.
 
     ![service-allow-list-1.png](/img/security/service-allow-list-1.png)
@@ -30,8 +29,7 @@ The IP is generally your host IP address. But if your request is coming through 
 
 ## Enable dashboard allowlist
 
-1. Go to **Administration > Security**.
-1. Select the **Service Allowlist Settings** tab.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Service AllowList Settings**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**. Kanso-->
 1. Under **Service Allowlist Settings**, select the **Enable Dashboard Allowlist** check box.
 
     ![service-allow-list-2.png](/img/security/service-allow-list-2.png)
@@ -42,8 +40,7 @@ vClick **Save**.
 
 ### Disable allowlist settings
 
-1. Go to **Administration > Security**.
-1. Select the **Service Allowlist Settings** tab.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > Service AllowList Settings**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **Service AllowList Settings**. You can also click the **Go To...** menu at the top of the screen and select **Service AllowList Settings**. Kanso-->
 1. Under **Service Allowlist Settings**, deselect **Enable Login / API Allowlist** or **Enable Dashboard Allowlist** or both options.
 1. Click **Save**. You will be prompted to confirm that you want to disable your allowlist settings.
 1. Click **OK**.

@@ -21,7 +21,7 @@ To create or edit a Partition, you must be an account Administrator or have th
  
 ## Create a Partition
 
-1. In the Sumo Logic left navigation bar, go to **Manage Data > Logs**, then select the **Partitions** tab.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
 1. Click **+ Add Partition**.
 1. The **Create New Partition** pane appears.<br/><img src={useBaseUrl('img/partitions-data-tiers/create-new-partition-flex.png')} alt="create-new-partition-flex.png"  style={{border:'1px solid gray'}} width="300"/>
 1. **Name**. Enter a name for the Partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores (`_`). However, a Partition name cannot start with `sumologic_` or an underscore `_`.
@@ -71,7 +71,7 @@ You can make some changes to an existing partition:  
 
 ### How to edit a partition
 
-1. In the Sumo Logic left navigation bar, go to **Manage Data** > **Logs**, then select the **Partitions** tab.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Manage Data > Logs > Partitions**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Partitions**. You can also click the **Go To...** menu at the top of the screen and select **Partitions**. Kanso-->
 1. Click the row with the partition you want to edit.
 1. The partition details are displayed on the right side of the page.
 1. Click **Edit** to open the pane for editing.<br/><img src={useBaseUrl('img/partitions-data-tiers/edit-partition-pane-flex.png')} alt="edit-partition-pane-flex.png"  style={{border:'1px solid gray'}} width="300"/>
