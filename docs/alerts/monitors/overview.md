@@ -9,8 +9,6 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="45"/>
-
 Monitors track your metrics and logs data in real time and send notifications when noteworthy changes happen in your production applications.
 
 :::note
