@@ -96,7 +96,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | useBasicAuth| Boolean | No | `false`|Enforces basic HTTP authentication|
 | http_user | String | No | `null` | HTTP basic authentication username |  |
 | http_password | String | No | `null` | HTTP basic authentication password |  |
-| collectionNames | Array | No | `Empty` | The collectionNames is used to get collections using the poll URL. |  |
+| collectionNames | Array | No | `Empty` | Used to get collections using the poll URL. |  |
 | pollingInterval | String | Yes |  | How frequently to poll for messages from the threat intel provider. |  |
 
 ### JSON example
