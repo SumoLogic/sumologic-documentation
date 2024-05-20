@@ -25,10 +25,17 @@ Follow the steps in this topic to install or uninstall a collector on Windows.�
 
 ## Download
 
-Download the Collector in either of the following ways:
+Download the Collector in either of the following ways.
 
-* In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. Click **Add Collector** > **Installed Collector** and then click the link for the Collector to begin the download.
-* Open a browser and enter the static URL for your Sumo deployment. See how to determine which endpoint to use if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
+### Via installation
+    1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
+    1. Click **Add Collector**.
+    1. Click **Installed Collector**.
+    1. Click the link for the Collector to begin the download.
+
+### Via browser
+
+Open a browser and enter the static URL for your Sumo deployment. See [Which endpoint should I use?](/docs/api/getting-started/#which-endpoint-should-i-should-use) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
 
 ## Install Collector
 
@@ -134,7 +141,7 @@ Uninstalling a Sumo Logic installed Collector requires the following steps:
 
 ### Remove the Collector from Sumo Logic
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. Find the Collector you want to remove, and click **Delete**.
 1. When the Confirm dialog displays, click **OK**.
 
