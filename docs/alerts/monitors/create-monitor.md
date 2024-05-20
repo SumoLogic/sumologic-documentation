@@ -33,7 +33,7 @@ This topic shows you how to create a monitor.
 
 1. In the **App Catalog > Search Apps** field, search for and then select your app.
 1. Navigate to **What's Included** tab and scroll down to the **Monitors** section.
-1. Click **Create** against the pre-configured monitors.
+1. Click **Create** next to the pre-configured monitors.
 
 #### From your Log Search
 
