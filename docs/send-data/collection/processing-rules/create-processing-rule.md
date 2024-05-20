@@ -8,7 +8,8 @@ This document describes how to create a processing rule.
 
 You can add a processing rule to an existing Source or create one when you configure a new Source.
 
-1. To create a processing rule for an existing Source, go to **Manage Data** > **Collection** > **Collection** and click **Edit** next to a Source. When configuring your new or existing Source, click the **\+ Add Filter** or **\+ Add** **Action** text in the **Processing Rules** section.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
+1. Click **Edit** next to a Source. When configuring your new or existing Source, click the **\+ Add Filter** or **\+ Add** **Action** text in the **Processing Rules** section.
    * A filter is either an allowlist or denylist rule.
    * An action is either a hash or mask rule.<br/>![processing rules](/img/collector/processing-rules/create-a-processing-rule/processing-rules.png)
 1. Once clicked, the configuration options are displayed.<br/> ![generic processing rules UI with added options.png](/img/collector/processing-rules/create-a-processing-rule/generic_processing_rules_UI_with_added_options.png)
