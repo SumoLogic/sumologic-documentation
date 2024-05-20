@@ -1,5 +1,5 @@
 ---
-id: apache-st
+id: apache
 title: Apache Source Template
 sidebar_label: Apache
 description: Learn about the Sumo Logic Apache source template for OpenTelemetry.
@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-<img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Thumbnail icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="45"/>
+<img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Thumbnail icon" width="100"/> <img src={useBaseUrl('img/send-data/otel-color.svg')} alt="Thumbnail icon" width="30"/>
 
 Apache source template creates OpenTelemetry config which can then be pushed to remotely managed OpenTelemetry collector. By creating this source template and pushing the config to appropriate OpenTelemetry agent you can ensure collection of logs and metrics of Apache to Sumo Logic.
 
@@ -53,7 +53,7 @@ Ensure that the otelcol has adequate permissions to access all log file paths. E
 sudo setfacl -R -m d:u:otelcol-sumo:r-x,u:otelcol-sumo:r-x,g:otelcol-sumo:r-x <PATH_TO_LOG_FILE>
 ```
 
-import LogsCollectionPrereqisites from '../../../reuse/apps/logs-collection-prereqisites.md';
+import LogsCollectionPrereqisites from '../../../../reuse/apps/logs-collection-prereqisites.md';
 
 <LogsCollectionPrereqisites/>
 
@@ -74,12 +74,17 @@ Set-Acl -Path "<PATH_TO_LOG_FILE>" -AclObject $NewAcl
 ```
 
 ## Source Template Configuration
+
 You can follow the below steps to setup remotely managed OpenTelemetry collector and push Source Template to it : 
 
 ### Step 1: Set up Remotely Managed Otel Collector
-<refer to doc for registering remotely managed collector >
+
+import CollectorInstallation from '../../../../reuse/apps/opentelemetry/collector-installation.md';
+
+<CollectorInstallation/>
 
 ### Step 2: Configuring Source Template
+
 In this step, you will configure the yaml required for Apache Collection.
 
 Below are the inputs required:
@@ -92,4 +97,7 @@ Below are the inputs required:
 You can add any custom fields which you want to tag along with the data ingested through the source template in Sumo.
 
 ### Step 3: Pushing Source Template to appropriate remotely managed collectors
-<refer to doc for filtering remotely managed collector to push ST config to>
+
+import DataConfiguration from '../../../../reuse/apps/opentelemetry/data-configuration.md';
+
+<DataConfiguration/>
