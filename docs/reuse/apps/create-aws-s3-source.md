@@ -31,7 +31,7 @@ You can adjust the configuration of when and how AWS handles communication attem
 
 These configuration instructions apply to log collection from all AWS Source types.
 
-1. In Sumo Logic select **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. On the **Collectors** page, click **Add Source** next to a Hosted Collector, either an existing Hosted Collector, or one you have created for this purpose.
 3. Select your AWS Source type.
 4. Enter a name for the new Source. A description is optional.
@@ -115,7 +115,7 @@ Each topic needs a separate filter (prefix/suffix) so that collection does not o
 
 You can use this [community-supported script](https://github.com/SumoLogic/sumologic-content/tree/c67b9b81c7828708eeda1970da23b29129cf52c4/Retired%20Content/Retired%20Sumo%20Tools/Event_Based_S3_Automation) to configure event-based object discovery on existing AWS Sources.
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. On the Collection page navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 10.C when creating your subscription.
 3. Complete steps 10.B through 10.E for [configuring SNS Notifications](#configure-sns-notifications).
 

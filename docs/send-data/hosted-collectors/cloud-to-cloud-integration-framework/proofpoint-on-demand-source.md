@@ -49,7 +49,7 @@ When you create a Proofpoint On Demand Source, you add it to a Hosted Collecto
 
 To configure a Proofpoint On Demand Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. On the Collectors page, click **Add Source** next to a Hosted Collector.
 3. Select **Proofpoint On Demand**.
 4. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
