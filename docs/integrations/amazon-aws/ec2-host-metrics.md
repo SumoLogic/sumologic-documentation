@@ -39,7 +39,9 @@ The Host Metrics (EC2) app relies upon an Installed Collector with a [Host Metri
 
 ### Field in Field Schema
 
-Log in to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the `instanceid` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. Search for the `instanceid` field. 
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields#manage-fields).
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Fields_schema.png')} alt="Fields-Schema" />
 

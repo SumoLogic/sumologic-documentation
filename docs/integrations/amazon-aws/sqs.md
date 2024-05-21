@@ -130,7 +130,9 @@ Namespace for **Amazon SQS** Service is **AWS/SQS**
 
 ## Field in Field Schema
 
-Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the `queuename` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. Search for the `queuename` field. 
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields/#manage-fields).
 
 ## Field Extraction Rule(s)
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule).
