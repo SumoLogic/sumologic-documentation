@@ -107,7 +107,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | base_url | String | Yes | `null` | The API base url for the region of your CrowdStrike account. |  |
 | client_id | String | Yes | `null` | The CrowdStrike Client ID you want to use to authenticate collection requests. |  |
 | client_secret | String | Yes |  `null`| The CrowdStrike Client Secret you want to use to authenticate collection requests. |  |
-| pollingInterval | String | No | 15m | This sets how often the Source checks for data. |  |
+| pollingInterval | String | No | 15m | This sets how often the Source checks for data. The polling interval value should be atleast one minute. |  |
 
 ### JSON example
 
@@ -124,4 +124,3 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 ### Limitation
 
 - This source supports a maximum of 65000 resourceIDs. Exceeding this resourceIDs limit may cause the source to return a `FIRST-PARTY-GENERIC` error type.
-- The polling interval value should be atleast one minute.
