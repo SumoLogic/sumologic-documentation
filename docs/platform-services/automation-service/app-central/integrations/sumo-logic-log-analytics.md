@@ -40,7 +40,7 @@ Integration with Sumo Logic platform for logs, metrics, and monitors.
 1. The integration details will appear. Click on the **"+"** button to add new Resource.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-7.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="400"/>
 1. Populate all the required fields (\*) and then click **SAVE**.
     * **Label**. The name of the resource.
-    * **Sumo Logic API URL**. URL to the API of the instance (more info on the URL here: [Sumo Logic APIs](/docs/api)).
+    * **Sumo Logic API URL**. URL to the API of the instance ([learn more](/docs/api)).
     * **Access ID**. The access ID that you copied earlier.
     * **Access Key**. The access key that you copied earlier.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-8.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="400"/>
 1. To make sure the resource is working, hover over the resource and then click the pencil icon that appears on the right.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/sumo-logic/sumo-logic-9.png')} style={{border:'1px solid gray'}} alt="sumo-logic" width="400"/>
