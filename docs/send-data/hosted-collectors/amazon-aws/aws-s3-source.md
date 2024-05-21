@@ -57,7 +57,7 @@ When you create an Amazon Source, you add it to a Hosted Collector. Before creat
     When you overwrite a file in S3, the file object gets a new version ID and as a result, Sumo Logic sees it as a new file and ingests all of it. If with each version you post to S3 you are simply adding to the end of the file, then this will lead to duplicate messages ingested, one message for each version of the file you created in S3.   
 * Duplicate logs are collected when changing the AWS versioned APIs setting from Yes to No and the S3 bucket has versioning enabled.
 * Glacier objects will not be collected and are ignored.
-* If you're using SNS you need to create a separate topic and subscription for each Source.
+* If you're using SNS you need to c reate a separate topic and subscription for each Source.
 
 ### Cisco Umbrella
 
