@@ -53,4 +53,4 @@ risky activity.
     * Added new Action: Get Events
     * Alerts Daemon Chronicle: Updated Output mappings
 * March 4, 2024 (v1.6) - Updated code for compatibility with Python 3.12
-* March 21, 2024 (v1.7) - Updated code for compatibility with Python 3.12
+* May 21, 2024 (v1.7) - Updated code for compatibility with Python 3.12
