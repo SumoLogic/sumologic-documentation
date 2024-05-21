@@ -27,7 +27,7 @@ If this is the first time you've deployed the AWS Observability Solution, read 
 
 The sections below describe the configuration prompts in the CloudFormation template and the information you need to supply. Before you start filling out the template, it’s a good idea to review each section to make sure you know which sections you want to fill out, and that you have the information you need to proceed.
 
-AWS Observability integrates with Explore by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics. For example, metrics for Lambda functions must be coming in for those entities to show in the Explore view. If you do not see Lambda functions, verify the CloudFormation stack is correctly configured including the AWS/Lambda namespace to collect metrics. 
+AWS Observability integrates with the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) by populating metadata and only shows entities with metrics coming in. If you do not see expected entities, make sure configurations are correct to collect and receive metrics. For example, metrics for Lambda functions must be coming in for those entities to show in the view. If you do not see Lambda functions, verify the CloudFormation stack is correctly configured including the AWS/Lambda namespace to collect metrics. 
 
 "AWS Observability Apps-\<Version\> \<Date of installation\>" folder of dashboards by default will be created in the personal library and will be shared with the Sumo org of the user that the Sumo Logic Access keys belong to.
 
@@ -67,7 +67,7 @@ The below tables displays the response for each text box in this section.
 
 | Prompt | Guideline |
 |:--|:--|
-| Alias for your AWS account | Enter an account alias for the AWS environment from which you are collecting data. This alias should be something that makes it easy for you to identify what this AWS account is being used for (for example, dev, prod, billing, and marketplace). This name will appear in the Sumo Logic Explorer View, metrics and logs can be queried via the “account field”.<br/>**Important:** Account Aliases should be alphanumeric and cannot include special characters such as “-, $, _” etc.<br/> Leave this blank If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts. |
+| Alias for your AWS account | Enter an account alias for the AWS environment from which you are collecting data. This alias should be something that makes it easy for you to identify what this AWS account is being used for (for example, dev, prod, billing, and marketplace). This name will appear in metrics and logs, and can be queried via the “account field”.<br/>**Important:** Account Aliases should be alphanumeric and cannot include special characters such as “-, $, _” etc.<br/> Leave this blank If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts. |
 | S3 URL of a CSV file that maps AWS Account IDs to an Account Alias | This parameter is applicable only If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts.<br/> The S3 URL of the CSV file should have public read access when deploying or updating the solution.<br/>Enter the S3 URL of a CSV file which contains the mapping of AWS Account IDs to an Account Alias in the following format:<br/>**accountid,alias**<br/>For example:<br/>**1234567,dev**<br/>**9876543,prod** |
 
 
