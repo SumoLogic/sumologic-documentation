@@ -29,6 +29,12 @@ This topic shows you how to create a monitor.
 1. From a Dashboard, hover your mouse over a panel, click the kebab icon, then **Open in Log Search**.
 1. From your log search view, click the kebab icon in the upper right corner, then **Create a Monitor**.
 
+#### From your App Catalog
+
+1. In the **App Catalog > Search Apps** field, search for and then select your app.
+1. Navigate to **What's Included** tab and scroll down to the **Monitors** section.
+1. Click **Create** next to the pre-configured monitors.
+
 #### From your Log Search
 
 Click the kebab icon in the upper right corner, then **Create a Monitor**.
