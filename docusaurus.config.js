@@ -127,6 +127,12 @@ module.exports = {
   ],
   plugins: [
     'docusaurus-plugin-sass',
+    ['@docusaurus/plugin-sitemap',
+      {
+        changefreq: 'weekly',
+        ignorePatterns: ['/docs/reuse/**'],
+      },
+    ],
     ['@docusaurus/plugin-content-docs',
       {
         id: 'community',
