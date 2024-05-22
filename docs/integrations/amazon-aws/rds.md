@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) is a managed database service, optimized to run in the cloud. The RDS Amazon Web Service (AWS) simplifies the setup, operation, and scaling of relational database instances for use in applications throughout your infrastructure.
 
-The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s) including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards helps you monitor database errors, slow queries, audit sql queries and generic activities. PostgreSQL logs dashboard help you to monitor database errors, slow queries, database security, and query execution timings.
+The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s) including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards helps you monitor database errors, slow queries, audit sql queries and generic activities. PostgreSQL logs dashboard help you to monitor database errors, slow queries, database security, and query execution timings. MSSQL Logs dashboards helps you monitor error logs, basic infrastructure details. 
 
 ## Log and metrics types  
 
@@ -19,7 +19,7 @@ The Amazon RDS app uses the following logs and metrics:
 * [Amazon RDS operations using AWS CloudTrail](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/logging-using-cloudtrail.html).
 * [Publishing RDS CloudWatch Logs, RDS Database logs for Aurora MySQL, RDS MySQL, MariaDB](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.MySQLDB.PublishtoCloudWatchLogs.html).
 * [Publishing RDS CloudWatch logs, RDS Database logs for Aurora PostgreSQL, RDS PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.PostgreSQL.html#USER_LogAccess.Concepts.PostgreSQL.PublishtoCloudWatchLogs)
-
+* [Publishing RDS CloudWatch logs, RDS Database logs for RDS MSSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.SQLServer.html#USER_LogAccess.SQLServer.PublishtoCloudWatchLogs)
 ### Sample CloudTrail log message
 
 <details>
@@ -312,6 +312,11 @@ Make sure you enable the following parameters before collecting the Amazon RDS C
 :::note
 We recommend not to set `log_statement` to any value other than none (default value), since it will slow query logs and ingestion will increase significantly.
 :::
+
+#### MSSQL
+- Amazon RDS [MSSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.SQLServer.html) supports [publishing the following MSSQL logs to CloudWatch](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.SQLServer.html#USER_LogAccess.SQLServer.PublishtoCloudWatchLogs):
+   - Agent 
+   - Error
 
 Sumo Logic supports several methods for collecting logs from Amazon CloudWatch. You can choose either of them to collect logs:
 
@@ -676,3 +681,25 @@ Use this dashboard to:
 * Monitor time comparison for number of queries executed and query execution time.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-PostgreSQL-Logs-Query-Execution-Time.png')} alt="Amazon RDS dashboard" />
+
+### 18. Amazon RDS - MSSQL Logs - Error Logs - Logon Analysis
+
+The **Amazon RDS - MSSQL Logs - Error Logs - Logon Analysis** dashboard provides details for error logs, including failed authentications, logon error. This dashboard relies on MSSQL error logs, which needs to be [enabled](#collect-amazon-rds-cloudwatch-logs) for Amazon MSSQL. To view the data on the panels you need to first ingest MSSQL logs into Sumo Logic.
+
+Use this dashboard to:
+* Identify the authentication failures along with reason for user, client host, and client location that are used to connect.
+* Detect logon errors along with their associated error codes, severity levels, and states.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Logon Analysis.png')} alt="Amazon RDS dashboard" />
+
+### 19. Amazon RDS - MSSQL Logs - Error Logs - Infrastructure Overview
+
+The **Amazon RDS - MSSQL Logs - Error Logs - Infrastructure Overview** dashboard provides details for hardware, authentications mode, collation, process, recent termination of SQL server and recent creation of databases. This dashboard relies on MSSQL error logs, which needs to be [enabled](#collect-amazon-rds-cloudwatch-logs) and ingested into Sumo Logic.
+
+Use this dashboard to:
+* Get a high-level overview of your MSSQL infrastructure like instance type, version.
+* Get configuration details such as authentication mode, collation settings and process details.
+* Monitors `DBCC CHECKDB` checks
+* Track recent terminations of SQL Server instances and monitor the creation of new databases.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Infrastructure-Overview.png')} alt="Amazon RDS dashboard" />
