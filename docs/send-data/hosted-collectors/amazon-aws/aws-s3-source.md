@@ -67,7 +67,7 @@ Cisco Umbrella offers logging to a Cisco-managed S3 bucket. Collection from thes
 * S3 Event Notifications Integration is not supported.
 * Access must be provided with an Access ID and Key. Role-based access is not supported.
 * Use a prefix in the path expression so it doesn't point to the root directory.
-* Ensure that your path expression ends in `/*`. Otherwise, you will get a ListBucket error. For example: `s3://cisco-managed-us-east-1/PREFIX/*` 
+* Ensure that your path expression ends in `/*`. Otherwise, you will get a ListBucket error. For example: `s3://cisco-managed-us-east-1/PREFIX/*`
 
 ## S3 Event Notifications Integration
 
@@ -99,7 +99,7 @@ import Iframe from 'react-iframe';
 1. Select **Amazon S3**.
 1. Enter a name for the new Source. A description is optional.
 1. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account. Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](collection-aws-govcloud.md) for details.
-1. **Use AWS versioned APIs**? Select **Yes** to collect from buckets where versioning is enabled. This uses the list-object-versions and get-object-version Amazon S3 APIs. Selecting **Yes** requires your credentials to have **ListObjectVersions** and **GetObjectVersion** permissions.
+1. **Use AWS versioned APIs**? Select **Yes** to collect from buckets where versioning is enabled. This uses the list-bucket-versions and get-object-version Amazon S3 APIs. Selecting **Yes** requires your credentials to have **ListBucketVersions** and **GetObjectVersion** permissions.
 
     ![versioned apis options.png](/img/send-data/versioned-apis-options.png)
 
@@ -107,7 +107,7 @@ import Iframe from 'react-iframe';
 
     ![img](/img/send-data/S3_Bucket.png)
 
-1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a multiple wildcard. Do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details. 
+1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use more than one wildcard (\*) in this string. Recursive path expressions use a multiple wildcard. Do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details.
 
    Following is an example of a managed S3 bucket's name and path expression entered in the dialog. Together they comprise an S3 bucket data path. For more information, see [S3 Bucket Data Path](https://docs.umbrella.com/deployment-umbrella/docs/cisco-managed-s3-bucket#s3-bucket-data-path) in the Cisco documentation. <br/><img src={useBaseUrl('img/send-data/bucket-name-and-path-expression.png')} alt="<your image description>" style={{border: '1px solid gray'}} width="600" />
 1. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
