@@ -25,7 +25,9 @@ This page has instructions for collecting logs and metrics for the Amazon ECS ap
 
 ## Creating Fields in Field Schema 
 
-Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the following fields: `account`, `namespace`, `region` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields).
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. Search for the following fields: `account`, `namespace`, `region` field. 
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields).
 
 ## Creating Field Extraction Rule(s)
 
@@ -84,7 +86,7 @@ To set up an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-a
 1. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html") in your AWS account. This will create an S3 bucket, if you so choose.
 2. Grant Sumo Logic access to the Amazon S3 bucket.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
+4. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 5. Navigate to the hosted collector you configured above and select **Add > Add Source**.
 6. Select AWS CloudTrail source.
 7. **Name.** Enter a name to display the new Source.
