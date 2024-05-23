@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) is a managed database service, optimized to run in the cloud. The RDS Amazon Web Service (AWS) simplifies the setup, operation, and scaling of relational database instances for use in applications throughout your infrastructure.
 
-The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s) including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards helps you monitor database errors, slow queries, audit sql queries and generic activities. PostgreSQL logs dashboard help you to monitor database errors, slow queries, database security, and query execution timings. MSSQL Logs dashboards helps you monitor error logs, basic infrastructure details. 
+The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS instance(s) or cluster(s) including CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. CloudTrail Audit dashboards help you monitor activities performed on your RDS infrastructure. MySQL Logs dashboards helps you monitor database errors, slow queries, audit sql queries and generic activities. PostgreSQL logs dashboard help you to monitor database errors, slow queries, database security, and query execution timings. MSSQL Logs dashboards helps you monitor error logs and basic infrastructure details. 
 
 ## Log and metrics types  
 
@@ -115,7 +115,7 @@ The Amazon RDS app uses the following logs and metrics:
 <details>
 <summary>Click to expand</summary>
 
-```json title="Recent Warning Events (Error Logs)"
+```json title="Recent Warning Events (Error Logs - MySQL)"
 {
    "timestamp":1682606169000,
    "message":"2023-04-27 14:36:09 14487 [Warning] Access denied for user 'dev'@'1.2.3.4' (using password: YES)",
@@ -124,7 +124,7 @@ The Amazon RDS app uses the following logs and metrics:
 }
 ```
 
-```json title="Top Slow Queries by Average Execution Time (SlowQuery Logs)"
+```json title="Top Slow Queries by Average Execution Time (SlowQuery Logs - MySQL)"
 {
    "timestamp":1682935054360,
    "message":"# Time: 2023-05-01T09:57:34.360484Z\n# User@Host: rdstopmgr[rdstopmgr] @ ip-10-1-0-158 [10.1.0.158]  Id:    16\n# Query_time: 0.006554  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1\nSET timestamp=1682935054;\nselect gtid_subtract('fb39aa1b-dd09-11ed-a14e-162ba7864699:1-642', 'fb39aa1b-dd09-11ed-a14e-162ba7864699:1-642');",
@@ -133,7 +133,7 @@ The Amazon RDS app uses the following logs and metrics:
 }
 ```
 
-```json title="DB Connections (Audit Logs)"
+```json title="DB Connections (Audit Logs - MySQL)"
 {
    "timestamp":1682935339000,
    "message":"20230501 10:02:19,ip-10-1-0-50,rdsadmin,localhost,7,585281,QUERY,,'select * from information_schema.rds_events_threads_waits_current where (type <> \\'BACKGROUND\\' or name = \\'thread/sql/slave_sql\\') and command <> \\'Sleep\\'',0,,",
@@ -141,7 +141,7 @@ The Amazon RDS app uses the following logs and metrics:
    "logGroup":"/aws/rds/instance/rds-dbinstance-1/audit"}
 ```
 
-```json title="Top Active Users (General Logs)"
+```json title="Top Active Users (General Logs - MySQL)"
 {
    "timestamp":1682935339000,
    "message":"20230501 10:02:19,ip-10-1-0-50,rdsadmin,localhost,7,585281,QUERY,,'select * from information_schema.rds_events_threads_waits_current where (type <> \\'BACKGROUND\\' or name = \\'thread/sql/slave_sql\\') and command <> \\'Sleep\\'',0,,",
@@ -150,15 +150,22 @@ The Amazon RDS app uses the following logs and metrics:
 }
 ```
 
-```json title ="Authentication Failure (PostgreSQL Log)"
+```json title="Slow Queries (PostgreSQL Logs)"
+{"timestamp":1705670443000,
+"message":"2024-01-19 13:20:43 UTC:223.233.86.169(31944):postgresql@postgres:[3075]:LOG:  duration: 2001.036 ms  statement: SELECT * from large_table"}
+```
+
+```json title="Authentication Failure (PostgreSQL Logs)"
 {"timestamp":1705859815000,
 "message":"2024-01-21 17:56:55 UTC:3.92.54.14(57164):postgresql@postgresql:[43627]:FATAL:  password authentication failed for user \"postgresql\""
 }
 ```
 
-```json title ="Slow Queries (PostgreSQL Log)"
-{"timestamp":1705670443000,
-"message":"2024-01-19 13:20:43 UTC:223.233.86.169(31944):postgresql@postgres:[3075]:LOG:  duration: 2001.036 ms  statement: SELECT * from large_table"}
+```json title="Authentication Failure (Error Logs - MSSQL)"
+{"timestamp":1716444593813,
+  "message":"2024-05-23 06:09:53.813 Logon       Login failed for user 'john'. Reason: Password did not match that for the login provided. [CLIENT: 213.252.232.134]",
+  "logStream":"mssql-database-1",
+  "logGroup":"/aws/rds/instance/mssql-database-1/error"}
 ```
 
 </details>
@@ -169,7 +176,7 @@ The Amazon RDS app uses the following logs and metrics:
 Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=* dbidentifier=* | avg by account, region, dbidentifier
 ```
 
-```sql title="Top 10 Error Codes (CloudTrail Log based)"
+```sql title="Top 10 Error Codes (MySQL CloudTrail Log based)"
 "\"eventsource\":\"rds.amazonaws.com\"" errorCode account=dev Namespace=aws/rds region=us-east-1
 | json "eventTime", "eventName", "eventSource", "awsRegion", "userAgent", "recipientAccountId", "userIdentity", "requestParameters", "responseElements", "errorCode", "errorMessage",  "requestID", "sourceIPAddress" as eventTime, event_name, event_source, Region, user_agent, accountId1, userIdentity, requestParameters, responseElements, error_code, error_message, requestID, src_ip nodrop
 | where event_source = "rds.amazonaws.com" and !isEmpty(error_code)
@@ -185,7 +192,7 @@ Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=
 | top 10 error_code by Frequency, error_code asc
 ```
 
-```sql title="Error Logs (CloudWatch log based)"
+```sql title="Error Logs (MySQL CloudWatch log based)"
 account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds*Error Warning
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse field=message "[*] *" as LogLevel, msgDetails
@@ -195,7 +202,7 @@ account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds*Error W
 | sort by _timeslice, msgDetails asc
 ```
 
-```sql title="SlowQuery Logs Logs (CloudWatch log based)"
+```sql title="SlowQuery Logs (MySQL CloudWatch log based)"
 account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds*SlowQuery "User@Host" "Query_time"
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse regex field=message "(?<query_block># User@Host:[\S\s]+?SET timestamp=\d+;[\S\s]+?;)" multi
@@ -209,7 +216,7 @@ account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds*SlowQue
 | avg(query_time) as avgTime, sum(query_time) as totalTime, min(query_time) as minTime, max(query_time) as maxTime, avg(rows_examined) as avgRowsExamined, avg(rows_sent) as avgRowsSent, avg(Lock_Time) as avgLockTime, count as frequency group by sql_cmd, user, ip_addr
 | sort by avgTime | limit 100
 ```
-```sql title="Audit Logs (CloudWatch log based)"
+```sql title="Audit Logs (MySQL CloudWatch log based)"
 account=* region=* dbidentifier=* namespace=aws/rds _sourceHost=/aws/rds*Audit CONNECT
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse field=message ",*,*,*,*,*,*,*,*,*" as instance, user, host, f1, f2, action, database, f3, f4 nodrop
@@ -218,7 +225,7 @@ account=* region=* dbidentifier=* namespace=aws/rds _sourceHost=/aws/rds*Audit C
 | count as eventCount
 ```
 
-```sql title="General Logs (CloudWatch log based)"
+```sql title="General Logs (MySQL CloudWatch log based)"
 account=* region=* dbidentifier=* namespace=aws/rds _sourceHost=/aws/rds*general Connect
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse regex field=message "\s*\d+\s+(?<cmdType>\S+)\s*(?<command>.*)"
@@ -232,7 +239,7 @@ account=* region=* dbidentifier=* namespace=aws/rds _sourceHost=/aws/rds*general
 | sort by count, user asc | limit 20
 ```
 
-```sql title="Slow Queries (CloudWatch log based)"
+```sql title="Slow Queries (PostgreSQL CloudWatch log based)"
 account=* region=* namespace=aws/rds _sourceHost=/aws/rds*postgresql dbidentifier=* duration
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse field=message "* * *:*(*):*@*:[*]:*:*" as date,time,time_zone,host,thread_id,user,database,processid,severity,msg
@@ -243,13 +250,24 @@ account=* region=* namespace=aws/rds _sourceHost=/aws/rds*postgresql dbidentifie
 | count
 ```
 
-```sql title="Failed Authentications (CloudWatch log based)"
+```sql title="Failed Authentications (PostgreSQL CloudWatch log based)"
 account=* region=* namespace=aws/rds _sourceHost=/aws/rds*postgresql dbidentifier=* "authentication failed"
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 | parse field=message "* * *:*(*):*@*:[*]:*:*" as date,time,time_zone,host,thread_id,user,database,processid,severity,msg
 | where user matches "{{user}}" and database matches "{{database}}" and host matches "{{host}}"
 | where msg matches "*authentication failed*"
 | count as %"Count"
+```
+
+```sql title="Failed Authentications (MSSQL CloudWatch log based)"
+account=* region=* namespace=aws/rds dbidentifier=* _sourceHost=/aws/rds/*Error Logon Login failed for user
+| json "message" nodrop | if (_raw matches "{*", message, _raw) as message
+| parse field=message "* Logon       Login failed for user '*'. Reason: * [CLIENT: *]" as time, user, reason, client_ip
+| where user != "rdsadmin" and !isEmpty(user) and user matches "*"
+| where !isEmpty(client_ip) and client_ip matches "*"
+| timeslice 1s
+| count as frequency by _timeslice, user, dbidentifier, reason, client_ip
+| sort by _timeslice
 ```
 
 ## Collecting Logs and Metrics for the Amazon RDS app
@@ -684,22 +702,22 @@ Use this dashboard to:
 
 ### 18. Amazon RDS - MSSQL Logs - Error Logs - Logon Analysis
 
-The **Amazon RDS - MSSQL Logs - Error Logs - Logon Analysis** dashboard provides details for error logs, including failed authentications, logon error. This dashboard relies on MSSQL error logs, which needs to be [enabled](#collect-amazon-rds-cloudwatch-logs) for Amazon MSSQL. To view the data on the panels you need to first ingest MSSQL logs into Sumo Logic.
+The **Amazon RDS - MSSQL Logs - Error Logs - Logon Analysis** dashboard provides information about the error logs, including failed authentications and logon errors. This dashboard relies on MSSQL error logs, which need to be [enabled](#collect-amazon-rds-cloudwatch-logs) for the Amazon MSSQL. You need to first ingest MSSQL logs into Sumo Logic to view data on the dashboard panels.
 
 Use this dashboard to:
-* Identify the authentication failures along with reason for user, client host, and client location that are used to connect.
-* Detect logon errors along with their associated error codes, severity levels, and states.
+* Identify the authentication failures along with reason for user and client location that are used to connect.
+* Detect logon errors, including error codes, severity levels, and states.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Logon Analysis.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Logon Analysis.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
 
 ### 19. Amazon RDS - MSSQL Logs - Error Logs - Infrastructure Overview
 
-The **Amazon RDS - MSSQL Logs - Error Logs - Infrastructure Overview** dashboard provides details for hardware, authentications mode, collation, process, recent termination of SQL server and recent creation of databases. This dashboard relies on MSSQL error logs, which needs to be [enabled](#collect-amazon-rds-cloudwatch-logs) and ingested into Sumo Logic.
+The **Amazon RDS - MSSQL Logs - Error Logs - Infrastructure Overview** dashboard provides about the hardware, authentication mode, collation, process, recent termination of SQL server, and recent creation of databases. This dashboard relies on MSSQL error logs, which need to be [enabled](#collect-amazon-rds-cloudwatch-logs) and ingested into Sumo Logic.
 
 Use this dashboard to:
-* Get a high-level overview of your MSSQL infrastructure like instance type, version.
-* Get configuration details such as authentication mode, collation settings and process details.
-* Monitors `DBCC CHECKDB` checks
+* Get a high-level overview of your MSSQL infrastructure like instance type and version.
+* Get configuration details such as authentication mode, collation settings, and process details.
+* Monitors `DBCC CHECKDB` checks.
 * Track recent terminations of SQL Server instances and monitor the creation of new databases.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Infrastructure-Overview.png')} alt="Amazon RDS dashboard" />
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-MSSQL-Logs-Error-Logs-Infrastructure-Overview.png')} style={{ border: '1px solid gray' }} alt="Amazon RDS dashboard" />
