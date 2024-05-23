@@ -20,13 +20,12 @@ Users with the Analyst role have a single capability: View Collectors. Its role 
 
 To create a role:
 
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
-1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
 1. Click **+ Add Role** on the upper right side of the page.
 1. The **Create New Role** pane appears on the right side of the page.<br/><img src={useBaseUrl('img/users-roles/create-new-role.png')} alt="Create a new role" style={{border: '1px solid gray'}} width="400"/>
 1. **Name**. Enter a name for the role. 
 1. **Description**. Enter a description of the role to help other Administrators understand the purpose or limitations of the role.
-1. **Search Filter**. Select one of the following to create a filter that allows access to only the logs that match the defined conditions. Only one is allowed for each. For examples, see [Search Filter and Index Access examples](#search-filter-and-index-access-examples) below. (For general guidance on creating search filters, see see [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role/).)
+1. **Search Filter**. Select one of the following to create a filter that allows access to only the logs that match the defined conditions. Only one is allowed for each. For examples, see [Search Filter and Index Access examples](#search-filter-and-index-access-examples) below. (For general guidance on creating search filters, see [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role/).)
    * **Log Analytics data filter**. This filter applies to all the [partitions](/docs/manage/partitions/run-search-against-partition/) and [LiveTail](/docs/search/live-tail/). 
    * **Audit data filter**. This filter applies to all the logs in [Audit Indexes](/docs/manage/security/audit-indexes/audit-index/) and [LiveTail](/docs/search/live-tail/). For example, you could include filters for `sumologic_audit_events`, `sumologic_search_events`, `sumologic_search_usage_per_query`, or `sumologic_system_events`, to name a few.
    * **Security data filter**. This filter applies on all logs in [Cloud SIEM security indexes](/docs/cse/records-signals-entities-insights/search-cse-records-in-sumo#partitions-for-cse-records).
@@ -54,6 +53,19 @@ Following are examples for using the **Search Filter** and **Index Access** sect
 * Let’s say you want to deny access to all error logs in log analytics, and deny access to all audit indexes. In this case, you will have to create two roles. For role 1, select **Log Analytics filter** and add `!error` to the filter. For role 2, select **Index Access > Deny few indexes** and select all audit indexes. Then assign both roles to users.
 
 Keep in mind that these are examples only, and you must adapt them for use in your environment. For general guidance on creating search filters, see [Construct a Search Filter for a Role](/docs/manage/users-roles/roles/construct-search-filter-for-role/).
+
+### Index Access behavior when a user has multiple roles
+
+A role can have one of the following Index Access settings:
+   * **All indexes**. Allows access to all indexes.
+   * **Allow few indexes**. Allows access to only the selected indexes. 
+   * **Deny few indexes**. Denies access to the selected indexes. 
+
+However, if a user is assigned multiple roles that each have different Index Access settings, following is how they are evaluated:
+* **All indexes** + **Allow few indexes**. Indexes in the "Allow few indexes" list are allowed, and all other indexes are allowed.
+* **All indexes** + **Deny few indexes**. Indexes in the deny list are denied, but all other indexes are allowed.
+* **Allow few indexes** + **Deny few indexes**. Indexes in the "Allow few indexes" list are allowed, indexes in the deny list are denied, and all other indexes are denied.
+* **All indexes** + **Deny few indexes** + **Allow few indexes**. Indexes in the "Allow few indexes" list are allowed, indexes in the deny list are denied, and the rest of the indexes are allowed.
 
 ### Test a role with Search Filter and Index Access defined
 
