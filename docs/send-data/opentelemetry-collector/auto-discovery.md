@@ -18,7 +18,7 @@ With the Sumo Logic OpenTelemetry collector Auto Discovery feature, you can dete
 Auto Discovery is enabled by default on all the OpenTelemetry collectors for the supported version. Below are the **Auto Discoverable Services** provided by Sumo Logic.
 - Apache
 - MySQL
-- Ngnix
+- Nginx
 - ElasticSearch
 - PostgreSQL
 - Redis
