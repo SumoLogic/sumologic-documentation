@@ -41,7 +41,7 @@ AWS Single Sign-On does not currently support sending assigned group names in a
 This section has instructions for configuring basic SAML in Sumo Logic.
 
 1. Open a new browser window and login to your Sumo Logic account. 
-1. Go to **Administration** > **Security** > **SAML**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > SAML**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. Kanso-->
 1. Click **Add Configuration**.   
 
     ![sumo-saml-config-list.png](/img/security/sumo-saml-config-list.png) 

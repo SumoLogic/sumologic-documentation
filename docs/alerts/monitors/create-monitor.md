@@ -21,13 +21,19 @@ This topic shows you how to create a monitor.
 
 #### From your Monitors page
 
-1. Go to the Monitors page by clicking **Manage Data** > **Monitoring** > **Monitors**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  In the main Sumo Logic menu, select **Manage Data > Monitoring > Monitors**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Monitoring > Monitors**. You can also click the **Go To...** menu at the top of the screen and select **Monitors**.  Kanso-->
 1. Click on the **Add** button > **New Monitor** to add a new Monitor. The **New Monitor** dialog box will appear.
 
 #### From your Dashboard
 
 1. From a Dashboard, hover your mouse over a panel, click the kebab icon, then **Open in Log Search**.
 1. From your log search view, click the kebab icon in the upper right corner, then **Create a Monitor**.
+
+#### From your App Catalog
+
+1. In the **App Catalog > Search Apps** field, search for and then select your app.
+1. Navigate to **What's Included** tab and scroll down to the **Monitors** section.
+1. Click **Create** next to the pre-configured monitors.
 
 #### From your Log Search
 
@@ -65,19 +71,24 @@ The first step when you create a new monitor is to set the trigger conditions.
 ### Select monitor type and detection method
 
 1. Select a **Monitor Type**: <br/><img src={useBaseUrl('img/monitors/trigger-conditions-monitor.png')} alt="Monitor types" width="250"/>
-   * **Logs**. Creates alerts based on a [log search](/docs/search/). 
+   * **Logs**. Creates alerts based on a [log search](/docs/search/).
    * **Metrics**. Creates alerts based on [metrics queries](/docs/metrics/metrics-queries/).
    * **SLO**. Creates alerts based on a [Service Level Objectives (SLO)](/docs/observability/reliability-management-slo/).
-1. Select a **Detection Method**. The methods available depend on whether you choose **Logs** or **Metrics** as the monitor type (there is no detection type for **SLO**): <br/><img src={useBaseUrl('img/monitors/monitor-detection-methods-for-logs.png')} alt="Logs detection methods" width="425"/> <br/><img src={useBaseUrl('img/monitors/monitor-detection-methods-for-metrics.png')} alt="Logs detection methods" width="425"/> 
+1. Select a **Detection Method**. The methods available depend on whether you choose **Logs** or **Metrics** as the monitor type (there is no detection type for **SLO**): <br/><img src={useBaseUrl('img/monitors/monitor-detection-methods-for-logs.png')} alt="Logs detection methods" width="425"/> <br/><img src={useBaseUrl('img/monitors/monitor-detection-methods-for-metrics.png')} alt="Logs detection methods" width="425"/>
    * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.
-   * **Anomaly** lets you uncover unusual behavior identified by anomaly detection. Sumo Logic applies machine learning techniques to detect anomalies and identify suspicious patterns of activity. It establishes baselines for normal behavior so you can receive alerts when deviations or unusual activities are detected. To automatically respond when an anomaly alert is triggered, see [Create an anomaly monitor that runs an automated playbook](/docs/alerts/monitors/use-playbooks-with-monitors/#create-an-anomaly-monitor-that-runs-an-automated-playbook).
+   * **Anomaly** lets you uncover unusual behavior identified by anomaly detection, which applies machine learning techniques to detect anomalies and identifies suspicious patterns of activity. It works by establishing baselines for normal behavior so you can receive alerts when deviations or unusual activities are detected. When you create a monitor using this method, it establishes a baseline for normal signal behavior, leveraging historical data to minimize false positives. AI-driven alerting overcomes monitoring limitations through:
+      * **Model-driven anomaly detection**. Utilizing historical data, ML models establish accurate baselines, eliminating guesswork and noise in alerts.
+      * **AutoML**. The system self-tunes, including seasonality detection, minimizing user intervention for a simpler experience.
+      * **User context**. Users set alert sensitivity and incident thresholds, adding context to anomaly detection to mitigate noise.
+      * **One-click playbook assignment**. Monitors seamlessly [link to Automation Service playbooks](/docs/alerts/monitors/use-playbooks-with-monitors/#create-an-anomaly-monitor-that-runs-an-automated-playbook), expediting response without manual intervention.
+      * **Auto-diagnosis and recovery**. Sumo Logic Automation Service automates diagnosis and resolution, closing the loop from alert to recovery.
    * **Outlier** lets you detect an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency. 
 1. If you chose the **Anomaly** detection method, choose **Use Outlier** if you want to trigger alerts on outlier direction rather than anomaly direction: <br/><img src={useBaseUrl('img/monitors/monitor-detector-types-for-anamoly.png')} alt="Use Outlier" width="600"/>
 
 ### Provide a query (logs and metrics only)
 
 1. Provide a query if you are creating a log or metrics monitor type.
-   * Logs Monitors can have one query up to 4,000 characters long.
+   * Logs Monitors can have one query up to 15,000 characters long.
    * Metrics Monitors can have up to six queries. When providing multiple metrics queries, use the letter labels to reference a query row. The Monitor will automatically detect the query that triggers your alert, and will mark that row with a notification bell icon. See [joined metrics queries](../../metrics/metrics-queries/metrics-explorer.md) for details.<br/> ![metrics-monitor-query-row](/img/monitors/metrics-monitor-query-row.png)
 1. If you're using the **Outlier** or **Anomaly** detection method, you'll need to select the **Direction** you want to track (Up, Down, or Both). <br/><img src={useBaseUrl('img/monitors/outlier-detection-input.png')} alt="Outlier detection direction" width="300"/> <br/><img src={useBaseUrl('img/monitors/anomaly-detection-input.png')} alt="Anomaly detection direction" width="300"/>
     * **Up.** Only get alerted if there is an abnormal *increase* in the tracked key indicator. 
@@ -95,7 +106,7 @@ Specify the **Trigger Type**. A Monitor can have one critical, warning, and mis
 
 #### Logs Trigger Types
 
-<img src={useBaseUrl('img/monitors/logs-monitors.png')} alt="icon" style={{border: '1px solid gray'}}  width="600"/> 
+<img src={useBaseUrl('img/monitors/logs-monitors.png')} alt="icon" style={{border: '1px solid gray'}}  width="600"/>
 
 Trigger alerts on:<br/>![trigger alerts on field.png](/img/monitors/trigger-alerts-field.png)
 
@@ -145,14 +156,14 @@ For Metrics monitors, you can choose to recover based on a single data point bel
 
 ##### Anomaly detection method
 
-**Logs Trigger Type: Critical** 
+**Logs Trigger Type: Critical**
 
  <img src={useBaseUrl('img/monitors/monitor-anomaly-logs.png')} alt="Monitor anomaly logs" style={{border: '1px solid gray'}} width="800" />
 
 | Parameter | Description |
 |:--|:--|
 |  Alert when anomaly count is at least ___ (max. ##) at any time within ___ | Enter the minimum number of anomalies to detect during the detection window before triggering an alert, and the duration of time to watch for anomalies (from 5 minutes to 24 hours). Ensure that the time period window is 5-10 times longer than the timeslice used in the log query. This setting helps you add context to anomaly detection. For example, if you know a particular signal is noisy, you may want to wait for a number of anomalous data points in the detection window before triggering an alert. If the time period is set to 5 minutes, and the minimum anomaly count is set to 1, then an alert is triggered if 1 anomaly appears within a 5-minute time period.   |
-| Show me fewer alerts --- more alerts | Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Select more alerts if you do not want to miss out on most anomalies. | 
+| Show me fewer alerts --- more alerts | Tune the number of anomalous data points detected per day compared to the predicted baseline for the detection window. Select more alerts if you do not want to miss out on most anomalies. |
 
 ##### Use Outlier with Anomaly detection
 
@@ -324,12 +335,12 @@ The fourth step when you create a new monitor is to add playbooks.
 
 <img src={useBaseUrl('img/monitors/new-monitor-playbook.png')} alt="Playbook" style={{border: '1px solid gray'}} width="800"/>
 
-In this step, you can add a **Playbook** to run in response to an alert. 
+In this step, you can add a **Playbook** to run in response to an alert.
 
 1. **Text Playbook**. Enter instructions for how to handle the alerts resulting from the monitor. This allows admins to codify tribal knowledge for an on-call so that they know what to do upon receiving an alert. Markdown is supported. For an example, see [Alert details](/docs/alerts/monitors/alert-response/#alert-details).
 1. **Automated Playbooks**. Select an existing playbook from the Automation Service to run when an alert is fired. For more information, see [Automated Playbooks in Monitors](/docs/alerts/monitors/use-playbooks-with-monitors/).
 1. **Add Playbook**. If desired, you can add more automated playbooks to run sequentially.
-1. Click **Manage Playbooks** to manage the automated playbooks in the Automation Service. 
+1. Click **Manage Playbooks** to manage the automated playbooks in the Automation Service.
 
 ## Step 5: Monitor details
 
@@ -341,7 +352,7 @@ Monitor details" style={{border: '1px solid gray'}} width="800"/>
 1. Enter a **Monitor Name** and the **Location** where you want to save it.
 1. (Optional) Add one or more **Tags**. [Learn more here](/docs/alerts/monitors/settings#tags).
 1. (Optional) Add a **Description**.
-1. When you're done creating the monitor, click **Save**. 
+1. When you're done creating the monitor, click **Save**.
 
 ## Other Configurations
 

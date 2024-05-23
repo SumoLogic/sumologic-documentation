@@ -65,19 +65,18 @@ If the data volume index is not enabled, a search will not produce any results.
 
 The data volume index messages are JSON formatted messages that contain parent objects for each source data point, and child objects that detail the message size and count for each parent.
 
-For example, a single message for the "Collector" volume data may look similar to the following, with **field, dataTier, sizeinBytes,** and **count values** for those five minutes.
+For example, a single message for the "Collector" volume data may look similar to the following, with `field`, `dataTier`, `sizeinBytes`, `extractedAndCollectedFieldsSize`, and `count` values for those five minutes.
 
 ```
-[{"field":"rds_slow_query_logs","dataTier":"Continuous","sizeInBytes":284642723,"count":218177},
-{"field":"epd_dat_b_cluster","dataTier":"Continuous","sizeInBytes":556961,"count":1038},
-{"field":"aws-observability-collector","dataTier":"Continuous","sizeInBytes":117132,"count":92},
-{"field":"epd_dat_a_cluster","dataTier":"Continuous","sizeInBytes":2163905,"count":2157},...]
+{"field":"vibs_inf","dataTier":"Infrequent","sizeInBytes":10539077,"extractedAndCollectedFieldsSize":445829,"count":3092},
+{"field":"epd_dev_inf","dataTier":"Infrequent","sizeInBytes":39698534,"extractedAndCollectedFieldsSize":19835099,"count":130358},
+{"field":"epd_pr_inf","dataTier":"Infrequent","sizeInBytes":2204671,"extractedAndCollectedFieldsSize":1426875,"count":8864}
 ```
 
-For example, a single message for the "Collector" volume data may look similar to the following flex data, with field, dataTier, sizeInBytes, and count values for those five minutes.
+For example, a single message for the "Collector" volume data may look similar to the following flex data, with `field`, `dataTier`, `sizeInBytes`, `extractedAndCollectedFieldsSize`, and `count` values for those five minutes.
 
 ```
-{"field": "part_a","dataTier": "Flex","sizeInBytes": 13754115,"count": 10255}
+{"field": "part_a","dataTier":"Flex","sizeInBytes":13754115,"extractedAndCollectedFieldsSize":6835091,"count":10255}
 ```
 
 ## Examples

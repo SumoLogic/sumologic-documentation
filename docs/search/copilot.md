@@ -43,7 +43,7 @@ In this document, you'll learn the recommended Copilot workflow as well as best 
         />
 
 
-In the scenario depicted in the video (NOTE: video has no sound), we leverage Copilot to investigate a security issue, AWS CloudTrail access keys being leaked outside the organization.
+In the scenario depicted in the video, we leverage Copilot to investigate a security issue: AWS CloudTrail access keys being leaked outside an organization. Here's a recap:
 
 1. First, we select the data source for AWS CloudTrail audit logs.
 1. Launch our log investigation by clicking the AI-suggested insight `Count logs by eventname`, which translates the insight to a log query and renders results.
@@ -119,15 +119,22 @@ Express your chain of thought to the AI by breaking up the prompt into smaller p
 If needed, you can edit your log search query code.
 
 1. Click **Show Log Query** to show the current investigation as a log query.<br/><img src={useBaseUrl('img/search/copilot/show-hide-query.gif')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
-1. Click in the code editor field and edit your search. Not familiar with Sumo Logic query language? See [Search Query Language](/docs/search/search-query-language) to learn more.<br/><img src={useBaseUrl('img/search/copilot/code-editor.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
+1. Click in the code editor field and edit your search. Not familiar with Sumo Logic query language? See [Search Query Language](/docs/search/search-query-language) to learn more.<br/><img src={useBaseUrl('img/search/copilot/code-editor.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="600" />
    :::note JSON formatting
    If your log query contains a mix JSON and non-JSON formatting, add `{` to the source expression to trigger **Suggestions**.<br/><img src={useBaseUrl('img/search/copilot/copilot-json.png')} alt="Copilot JSON formatting" style={{border: '1px solid gray'}} width="350" />
    :::
-1. When you're done, click the **Play** icon.<br/><img src={useBaseUrl('img/search/copilot/play.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="700" />
+1. When you're done, click the **Play** icon.<br/><img src={useBaseUrl('img/search/copilot/play.png')} alt="Copilot time period" style={{border: '1px solid gray'}} width="500" />
 
-:::warning Limitations
-Copilot supports querying JSON logs only. You cannot use Copilot to query unstructured data, metrics, or traces.
-:::
+   :::warning Limitations
+   Copilot supports querying JSON logs only. You cannot use Copilot to query unstructured data, metrics, or traces. To get a list of `_sourceCategories` with JSON data, use the below query:
+   ```
+   _sourceCategory=* "{" "}"
+   | limit 10000 | logreduce keys noaggregate
+   | count by _sourceCategory, _schema
+   | where _schema != "unknown"
+   | sum(_count) by _sourceCategory
+   ```
+   :::
 
 ### Chart type
 
