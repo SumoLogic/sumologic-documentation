@@ -504,6 +504,127 @@ sumologic:
             manual_prefix_regexp: (\\{\".*|\\[?\\d{4}-\\d{1,2}-\\d{1,2}.\\d{2}:\\d{2}:\\d{2}.*)
 ```
 
+### Sending Data to Multiple Targets
+
+It is possible to send logs to multiple locations. This section describes the following cases:
+
+- send logs simultanously to Sumo Logic and other locations
+- send all logs to Sumo Logic and part of it to other locations
+- send logs selectively to multiple locations
+
+## Send Logs Simultanously to Sumo Logic and Other Locations
+
+In order to send data to Sumo Logic and other locations, `sumologic.logs.otelcol.extraExporters` should be used.
+
+With the following configuration data will be send to both Sumo Logic and AWS S3:
+
+```yaml
+sumologic:
+  logs:
+    otelcol:
+      extraExporters:
+        ## define `awss3/production` exporter
+        ## as no routing is defined, all data will go to this expoter in addition to the default one
+        awss3:
+          s3uploader:
+              region: 'eu-central-1'
+              s3_bucket: 'databucket'
+              s3_prefix: 'metric'
+              s3_partition: 'minute'
+metadata:
+  logs:
+    statefulset:
+      extraEnvVars:
+        # Set env variables for awss3 exporter
+        - name: AWS_ACCESS_KEY_ID
+          value: "< YOUR AWS ACCESS KEY >"
+        - name: AWS_SECRET_ACCESS_KEY
+          value: "< YOUR AWS SECRET ACCESS KEY >"
+```
+
+## Send All Logs to Sumo Logic and Part of it to Other Locations
+
+In case you want to send only part of logs to other location, you should use `sumologic.logs.otelcol.routing.table` in addition to `sumologic.logs.otelcol.extraExporters`.
+
+In the following example, all logs are going to be send to Sumo Logic, and in addition only logs from `production` namespace are going to be send to AWS S3.
+
+```yaml
+sumologic:
+  logs:
+    otelcol:
+      extraExporters:
+        ## define `awss3/production` exporter
+        awss3/production:
+          s3uploader:
+              region: 'eu-central-1'
+              s3_bucket: 'databucket'
+              s3_prefix: 'metric'
+              s3_partition: 'minute'
+      routing:
+        table:
+          ## send all logs from `production` namespace to `awss3/production` exporter
+          ## as `useDefaultExporters` is set to `true` (default), all logs will be send to `sumologic` as well
+          - exporter: awss3/production
+            statement: route() where resource.attributes["namespace"] == "production"
+metadata:
+  logs:
+    statefulset:
+      extraEnvVars:
+        # Set env variables for awss3 exporter
+        - name: AWS_ACCESS_KEY_ID
+          value: "< YOUR AWS ACCESS KEY >"
+        - name: AWS_SECRET_ACCESS_KEY
+          value: "< YOUR AWS SECRET ACCESS KEY >"
+```
+
+`sumologic.logs.otelcol.routing.table` is a list of maps, which consist of two keys `exporter` and `statement`.
+Logs are send to `exporter` when `statement` is met. `exporter` should be defined in `sumologic.logs.otelcol.extraExporters`
+or default `sumologic` may be used. `statement` has to be written in
+[Open Telemetry Transformation Language][ottl]
+
+:::note
+Remeber to use [attributes after translation to Sumo Logic Schema](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/sumologicprocessor#attribute-translation), for example `namespace` instead of `k8s.namespace.name`
+:::
+
+:::note
+If log matches multiple statements, it will be send to all corresponding exporters.
+For example, the following routing table will send logs from `production` namespace to `sumologic/production` and `awss3/production`:
+
+```yaml
+- exporter: awss3/production
+  statement: route() where resource.attributes["namespace"] == "production"
+- exporter: sumologic/production
+  statement: route() where resource.attributes["namespace"] == "production"
+```
+
+:::
+
+## Send Logs Selectively to Multiple Locations
+
+This scenario differs from the previous ones by not sending all logs to Sumo Logic. If you want to send some data to Sumo Logic and some (the same or other) data to other locations, you need to disable default exporters. Set `sumologic.logs.otelcol.useDefaultExporters` to `false` and then set `sumologic.logs.otelcol.routing.fallbackExporters` to a list of exporters which are going to be used for the logs which do not match any of the routing table statements.
+
+In the following example, logs from `production` namespace are going to be send to production Sumo Logic exporter and all remaining logs will be send to default Sumo Logic exporter:
+
+```yaml
+sumologic:
+  logs:
+    otelcol:
+      ## useDefaultExporters set to false to stop sending all logs to default exporters
+      useDefaultExporters: false
+      ## use sumologic as fallbackExporter, which means it will get all data which do not match any statement
+      fallbackExporters:
+        - sumologic
+      extraExporters:
+        ## define `sumologic/production` exporter
+        sumologic/production:
+          endpoint: http://my-production-sumologic-otlp-source
+      routing:
+        table:
+          ## send all logs from `production` namespace to `sumologic/production` exporter
+          - exporter: sumologic/production
+            statement: route() where resource.attributes["namespace"] == "production"
+```
+
 [configuration]: https://github.com/SumoLogic/sumologic-otel-collector/blob/main/docs/configuration.md
 [values]: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/helm/sumologic/values.yaml
 [source_name]: /docs/send-data/reference-information/metadata-naming-conventions.md#Source_Name
@@ -516,3 +637,4 @@ sumologic:
 [mapping]: /docs/send-data/opentelemetry-collector/data-source-configurations/mapping-records-resources.md
 [otlp_source]: /docs/send-data/hosted-collectors/http-source/otlp.md
 [http_source]: /docs/send-data/hosted-collectors/http-source/logs-metrics/index.md
+[ottl]: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/routingprocessor/README.md#tech-preview-opentelemetry-transformation-language-statements-as-routing-conditions
