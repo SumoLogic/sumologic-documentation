@@ -611,14 +611,14 @@ sumologic:
     otelcol:
       ## useDefaultExporters set to false to stop sending all logs to default exporters
       useDefaultExporters: false
-      ## use sumologic as fallbackExporter, which means it will get all data which do not match any statement
-      fallbackExporters:
-        - sumologic
       extraExporters:
         ## define `sumologic/production` exporter
         sumologic/production:
           endpoint: http://my-production-sumologic-otlp-source
       routing:
+        ## use sumologic as fallbackExporter, which means it will get all data which do not match any statement
+        fallbackExporters:
+          - sumologic
         table:
           ## send all logs from `production` namespace to `sumologic/production` exporter
           - exporter: sumologic/production
