@@ -508,11 +508,11 @@ sumologic:
 
 It is possible to send logs to multiple locations. This section describes the following cases:
 
-- send logs simultanously to Sumo Logic and other locations
+- send logs simultaneously to Sumo Logic and other locations
 - send all logs to Sumo Logic and part of it to other locations
 - send logs selectively to multiple locations
 
-## Send Logs Simultanously to Sumo Logic and Other Locations
+## Send Logs Simultaneously to Sumo Logic and Other Locations
 
 In order to send data to Sumo Logic and other locations, `sumologic.logs.otelcol.extraExporters` should be used.
 
@@ -583,7 +583,7 @@ or default `sumologic` may be used. `statement` has to be written in
 [Open Telemetry Transformation Language][ottl]
 
 :::note
-Remeber to use [attributes after translation to Sumo Logic Schema](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/sumologicprocessor#attribute-translation), for example `namespace` instead of `k8s.namespace.name`
+Remember to use [attributes after translation to Sumo Logic Schema](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/sumologicprocessor#attribute-translation), for example `namespace` instead of `k8s.namespace.name`
 :::
 
 :::note
