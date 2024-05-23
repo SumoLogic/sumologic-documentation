@@ -36,10 +36,6 @@ Charts will appear in **New Visualization** style by default. If you prefer to u
 
 <img src={useBaseUrl('img/search/get-started-search/search-basics/switch-to-classic-visualizations.png')} alt="switch-to-classic-visualizations" style={{border:'1px solid black'}} width="400" />
 
-:::tip
-If you choose **Classic Visualization**, your selection will be remembered, and any further searches in the same or new tab will always render with the classic visualization.
-:::
-
 ## FAQ
 
 ### Why are the chart options not available?
