@@ -19,8 +19,7 @@ If your organization requires 2-Step Verification, you will be guided through th
 
 1. In Sumo Logic, set up 2-Step Verification for your account.
 
-   1. Click **your name** in the left nav.  
-   1. Click **Preferences**.
+   1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**. Kanso-->
    1. Click **Enable 2-Step Verification**.
    1. Open the TOTP app and scan the QR code that you see on the screen. If you are unable to scan the code, you can enter the code displayed below the QR code manually.    
 
@@ -54,7 +53,7 @@ After signing in to Sumo Logic, you can disable 2-Step Verification if it is opt
 
 To disable 2-Step Verification:
 
-1. Click **your name** in the left nav, then go to **Preferences**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**. Kanso-->
 1. Click **Disable 2-Step Verification**.
 1. Enter your Sumo Logic password.
 1. Click **Save**.
@@ -74,7 +73,7 @@ You can change the device used for 2-Step Verification from within your account.
 
 To change your device for 2-Step Verification:
 
-1. Click **your name** in the left nav, then click **Preferences**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select your username and then **Preferences**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu, select your username and then **Preferences**. Kanso-->
 1. Click **Change Device** under **My Security Settings**.
 1. Open your TOTP app on the new device and scan the QR code that you see on the screen. If you are unable to scan the code, you can enter the code displayed below the QR code manually.
 

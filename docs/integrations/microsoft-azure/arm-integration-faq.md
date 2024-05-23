@@ -7,7 +7,7 @@ description: This guide provides answers to frequently asked questions about int
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/azure-faq.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-logo.png')} alt="thumbnail icon" width="50"/>
 
 This guide provides answers to frequently asked questions (FAQ) about integrating Azure into an enterprise environment using ARM (Azure Resource Manager) architecture.
 

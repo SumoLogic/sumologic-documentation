@@ -10,7 +10,7 @@ RUM metrics are automatically generated for you from browser traces. They provid
 
 Metrics are collected for user actions representing document loads, which means actual retrieval and execution of web documents in the browser as well as XHR calls and route changes. Measurements include W3C navigation timings, XHR delays, Core Web Vitals KPIs, longtask events (delays) and others.
 
-For ad-hoc queries, you can find these metrics in [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer.md) by querying for:
+For ad hoc queries, you can find these metrics in [Metrics Explorer](/docs/metrics/metrics-queries/metrics-explorer.md) by querying for:
 ```sql
 _contenttype=rummetricfromtrace
 ```

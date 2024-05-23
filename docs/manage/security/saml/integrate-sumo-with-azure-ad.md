@@ -69,7 +69,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
 
 ### Configure SAML in Sumo Logic
 
-1. Go to **Administration > Security > SAML**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > SAML**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. Kanso-->
 1. Select an existing configuration, or click **Add Configuration** to create a new configuration.
 
     ![add-configuration.png](/img/security/add-configuration.png)

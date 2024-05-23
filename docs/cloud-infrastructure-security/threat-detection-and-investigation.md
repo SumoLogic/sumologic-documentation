@@ -70,7 +70,7 @@ After you build the dashboard to find and monitor security events, we'll show yo
 
 We are going to create a dashboard to look at our security activity in several different ways.  In this step you will query CloudTrail logs to create a Top 10 User Activity list, turn it into a bar chart, and add it to your dashboard.  
 
-1. From the Sumo Logic interface, click on the **+ New** button and select the **Dashboard (New)** option.<br/><img src={useBaseUrl('img/csa/create-new-dashboard.png')} alt="Create new dashboard" style={{border: '1px solid gray'}} width="200"/>
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso-->  Click the **+ New** button at the top of the screen and select **Dashboard**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the main Sumo Logic menu, select **Dashboards > New Dashboard**. You can also click the **Go To...** menu at the top of the screen and select **New Dashboard**.  Kanso--> 
 1. Select a **Time Series** panel.<br/><img src={useBaseUrl('img/csa/time-series-panel.png')} alt="Time series panel" style={{border: '1px solid gray'}} width="600"/>
 1. Create a CloudTrail query to identify bad actors.  
    1. Copy or type the following query to the query window. (In the query, replace `Labs/AWS/CloudTrail` with a valid source category for AWS CloudTrail logs in your environment.)
@@ -122,7 +122,7 @@ You can add more flexibility to your queries and dashboard outputs by using temp
    * Include the option to select all values (*): Yes
 1. Your results look like something like this. <br/><img src={useBaseUrl('img/csa/create-variable-2.png')} alt="Create another template variable" style={{border: '1px solid gray'}} width="800"/>
 1. Click the **Create Template Variable** button.
-1. In the upper left of the dashboard, rename your dashboard to **Cloud Security Dashboard**. <br/><img src={useBaseUrl('img/csa/rename-to-cloud-security-dashboard.png')} alt="Rename to Cloud Security Dashboard" style={{border: '1px solid gray'}} width="400"/><br/>We now want to modify our query to take advantage of the variables we have created. This will require us to add a "where" clause and reference the parameter by its name.
+1. In the upper left of the dashboard, rename your dashboard to **Cloud Security Dashboard**. <br/>We now want to modify our query to take advantage of the variables we have created. This will require us to add a "where" clause and reference the parameter by its name.
 1. Click on the three vertical dots in the upper right corner of the **Top 10 User Activity** panel.
 1. Select the **Edit** option so you can modify your query.
 1. We want to filter by event_type in our panel, but allow the dashboard viewer options to pick the event type. Add a new line to the query by pressing Shift + Enter and type or copy the following code:

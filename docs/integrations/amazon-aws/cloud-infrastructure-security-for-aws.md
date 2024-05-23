@@ -19,7 +19,7 @@ Key features of the solution include:
 
 Entities presented in the dashboards are normalized from log sources into [AWS Elastic Common Schema (ECS)](https://www.elastic.co/guide/en/ecs/master/ecs-reference.html), to provide seamless pivots between dashboards during threat investigations.
 
-Use Sumo Logic’s [monitoring](/docs/alerts/monitors/) to receive alerts from the solution. To see monitors for the solution, go to **Manage Data > Monitoring** and open the **Cloud Infrastructure Security for AWS** folder.
+Use Sumo Logic’s [monitoring](/docs/alerts/monitors/) to receive alerts from the solution. To see monitors for the solution, go to the [**Monitors**](/docs/alerts/monitors/settings/) page and open the **Cloud Infrastructure Security for AWS** folder.
 
 :::note
 * After initial installation, data collection may be delayed.
@@ -356,11 +356,10 @@ In this step, you perform the steps needed to deploy the Cloud Infrastructure Se
           * **Name of existing S3 Bucket which contains the Network Firewall Logs**. If you selected **Yes** in the preceding field in this section for creating an S3 bucket, leave this blank. If you selected **No** in the preceding field for creating an S3 bucket, provide an existing S3 Bucket name which contains Network Firewall Logs. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-param-7a.png')} alt="Firewall configuration" style={{border: '1px solid gray'}} width="700"/>
        </details>
 
-       <!--
        <details>
        <summary>CloudQuery</summary>
 
-       In this section, you have the choice to create a [CloudQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source) in Sumo Logic. (This functionality is in [preview](#cloudquery-preview). If you would like to know more about the feature, reach out to your Sumo Logic Account Executive.) 
+       In this section, you have the choice to create a [CloudQuery source](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/cloudquery-source) in Sumo Logic. (This functionality is in [preview](/release-notes-service/2024/05/13/apps/). If you would like to know more about the feature, reach out to your Sumo Logic Account Executive.) 
        
        If fields are missing, or you need to change them, do the following:
        * **8.1 Configure CloudQuery C2C Source**
@@ -374,7 +373,6 @@ In this step, you perform the steps needed to deploy the Cloud Infrastructure Se
           * **CloudQuery Services**. Select the AWS services to collect data from in a comma-separated list. The source will collect data from *all* regions by default, or you can enter the list of required AWS services as follows: `apigateway,ecs,ec2,lambda,autoscaling,s3,elb,rds,dynamodb,elasticache,redshift,sns,sqs,cloudfront,elasticbeanstalk,eks,accessanalyzer,account,acm,backup,cloudtrail,cloudwatch,codebuild,config,directconnect,dms,ecr,efs,elasticsearch,emr,guardduty,iam,kms,lightsail,route53,sagemaker,secretsmanager,securityhub,ssm,waf,wafv2`.
           * **How Frequently to Poll AWS Service(s)**. Set how frequently to poll AWS Services inventory in hours. The default is **12**. <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-cloud-query-config.png')} alt="CloudQuery configuration" style={{border: '1px solid gray'}} width="700"/>
        </details>
-       -->
 
 1. Under **Permissions**, in **IAM role - optional**, choose the IAM role for CloudFormation to use for all operations performed on the stack. The role must have permissions to set up the necessary Lambdas, S3 buckets, Kenesis streams, and other objects needed in the CloudFormation template, as well as access to the appropriate logs. If your AWS role does not have the necessary permissions, see [Step 2: Check AWS role permission](#step-2-check-aws-role-permission). <br/><img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-permissions.png')} alt="Create Stack button" style={{border: '1px solid gray'}} width="700"/>
 1. Under **Capabilities and transforms**, select the acknowledgement boxes.
@@ -503,7 +501,6 @@ The  **Active Threats: AWS Storage** dashboard provides threat counts related to
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-active-threats-aws-storage.png')} alt="Active Threats: AWS Storage dashboard" style={{border: '1px solid gray'}} width="600"/>
 
-<!--
 ### Cloud SIEM Insights Overview
 
 The **Cloud SIEM Insights Overview** dashboard runs advanced threat detection (Cloud SIEM Insights) on your AWS data so that you can get early detection of  attacks and protect against evolving threats. This dashboard is only available if you use [Cloud SIEM](/docs/cse/). 
@@ -515,20 +512,11 @@ The **Cloud SIEM Insights Overview** dashboard runs advanced threat detection (C
 The **Infrastructure Overview** dashboard helps you identify all accounts, services, and resources within your cloud environment. It helps you get deep visibility into your cloud infrastructure to understand how many cloud resources are running and their configurations.
 
 :::note
-This dashboard is in [preview](#cloudquery-preview). To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws). If you see only empty panels in the dashboard and would like to know more about the feature, reach out to your Sumo Logic Account Executive. 
+This dashboard is in [preview](/release-notes-service/2024/05/13/apps/). To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws). If you see only empty panels in the dashboard and would like to know more about the feature, reach out to your Sumo Logic Account Executive. 
 :::
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-infrastructure-overview.png')} alt="Infrastructure Overview dashboard" style={{border: '1px solid gray'}} width="600"/>
--->
 
-<!-- Remove the following section for the CloudQuery preview release -->
-### Security Control Failures dashboard
-
-The **Security Control Failures** dashboard shows resources that need to be addressed because they are vulnerable as reported by AWS Security Hub. It shows findings by resource, trend, type, and category. By default, the `compliance_status` filter at the top of the dashboard is set to **FAILED** to show resources that fail compliance. Set the `risk.calculated_level` filter to **high** or **critical** to see the most important failures.
-
-<img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures.png')} alt="Security Control Failures - AWS Security Hub dashboard" style={{border: '1px solid gray'}} width="600"/>
-
-<!--
 ### Security Control Failures dashboards
 
 The Security Control Failures dashboards identify misconfigurations in your environment that may leave you vulnerable to attackers.
@@ -544,7 +532,7 @@ The **Security Control Failures - AWS Security Hub** dashboard shows resources t
 The **Security Control Failures Overview** dashboard shows you misconfigurations in your environment that may leave you vulnerable to attackers. These checks are run natively by Sumo Logic to find blind spots in your AWS infrastructure. 
 
 :::note
-This dashboard is in [preview](#cloudquery-preview). To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws). If you see only empty panels in the dashboard and would like to know more about the feature, reach out to your Sumo Logic Account Executive.
+This dashboard is in [preview](/release-notes-service/2024/05/13/apps/). To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws). If you see only empty panels in the dashboard and would like to know more about the feature, reach out to your Sumo Logic Account Executive.
 ::: 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures-overview.png')} alt="Security Control Failures Overview dashboard" style={{border: '1px solid gray'}} width="600"/>
@@ -554,11 +542,10 @@ This dashboard is in [preview](#cloudquery-preview). To see data in this dashboa
 The **Security Control Failures Investigation** dashboard provides a detailed view for the [**Security Control Failures Overview**](#security-control-failures-overview) dashboard and helps you navigate and prioritize the most important misconfigurations in your environment. 
 
 :::note
-This dashboard is in [preview](#cloudquery-preview). To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws). If you see only empty panels in the dashboard and would like to know more about the feature, reach out to your Sumo Logic Account Executive. 
+This dashboard is in [preview](/release-notes-service/2024/05/13/apps/). To see data in this dashboard, you must install the CloudQuery source in section 8.1 of the CloudFormation Template when you [deploy the solution](#step-3-deploy-aws). If you see only empty panels in the dashboard and would like to know more about the feature, reach out to your Sumo Logic Account Executive. 
 :::
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cis-for-aws-security-control-failures-investigation.png')} alt="Security Control Failures Investigation dashboard" style={{border: '1px solid gray'}} width="600"/>
--->
 
 ### Suspicious Activity dashboards
 
