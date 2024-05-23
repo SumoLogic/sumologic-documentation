@@ -1,7 +1,7 @@
 ---
 id: add-fields-to-existing-host-metrics-sources
 title: Add Fields to Existing Host Metrics Sources
-description: Learn how to update the AWS Observability Explore hierarchy, updating existing host metric sources to work with AWS Observability, and how to use the solution with Control Tower accounts.
+description: Learn how to update the AWS Observability view hierarchy, updating existing host metric sources to work with AWS Observability, and how to use the solution with Control Tower accounts.
 ---
 
 The AWS Observability Solution uses EC2 Host metrics collected using Sumo Logic Host Metrics Source which is a part of Sumo Logic installed collector.
@@ -60,7 +60,7 @@ This section provides a listing of configuration prompts for the CloudFormation 
 
 | Prompt | Guideline |
 |:--|:--|
-| Alias for your AWS account | Enter a name for the AWS environment from which you are collecting data. This name will appear in the Sumo Logic Explorer View, metrics, and logs.<br/>Do not include special characters in the alias. |
+| Alias for your AWS account | Enter a name for the AWS environment from which you are collecting data. This name will appear in metrics and logs.<br/>Do not include special characters in the alias. |
 | Force Update the Stack | Increment the value in case you want to force update the stack. |
 
 ## Update the Stack

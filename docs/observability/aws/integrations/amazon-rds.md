@@ -259,7 +259,7 @@ import FilterDashboards from '../../../reuse/filter-dashboards.md';
 
 <FilterDashboards/>
 
-We highly recommend you view these dashboards in the [Explore View](/docs/observability/aws/deploy-use-aws-observability/view-dashboards) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability) of the AWS Observability solution.
 
 ### 1. Amazon RDS - Overview
 
