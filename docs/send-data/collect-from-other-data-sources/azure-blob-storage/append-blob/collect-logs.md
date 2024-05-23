@@ -1,11 +1,10 @@
 ---
 id: collect-logs
-title: Collect Logs from Azure Append Blob Storage
+title: Collect Logs from Azure Blob Storage (append blobs)
 sidebar_label: Collecting Logs
 description: Configure a pipeline to ship logs from the Azure Blob Storage to an HTTP source on a hosted collector in Sumo Logic.
 ---
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Iframe from 'react-iframe';
 
 :::info
 This section has instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. 
@@ -18,26 +17,13 @@ This section has instructions for configuring a pipeline for shipping logs avail
 * This solution supports only log files from Blob storage that have file extensions of .csv, .json, .blob, or .log. 
 * You also need to have Microsoft Authorization/role Assignments/write permissions, so they should be a "User Access Administrator" or "Owner".
 
-Watch this tutorial to learn how to collect logs from Azure Blob Storage.
-
-<Iframe url="https://www.youtube.com/embed/186K2d-FFoc?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
 ## Functional overview
 
 1. You configure the Azure service to export logs to a container in a storage account created for that purpose.
 1. The ARM template creates an Event Grid subscription with the storage container as publisher and the event hub (created by the Sumo-provided ARM) as subscriber. Event Grid routes block blob creation events to event hub.
 1. Event Hub streams the events to the TaskProducer Azure function, which creates tasks (a JSON object that specifies start and end byte, container name, blob path) and pushes those tasks to the service bus task queue.
 1. The TaskConsumer Azure function, which is triggered when the service bus receives a new task, reads the block blob, from start byte to stop byte, and sends that data to Sumo. 
-1. The set up also includes failure handling mechanism. For more information about the solution strategy, see [Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage).
+1. The set up also includes failure handling mechanism. For more information about the solution strategy, see [Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob).
 
 ## Step 1. Configure Azure storage account 
 
@@ -108,8 +94,8 @@ This section describes how to push logs from a network security group into Azure
 * Login to the Azure Portal.
 * Click **Network security groups > Select a network security group**.
 * Click on **NSG flow logs** when you see it under **Monitoring**, and click **Create**.
-* Click on **Select resource** and choose a NSG that is present in the same region as the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs#step-1-configure-azure-storage-account">Step 1</a>.
-* Under **Subscription > Storage Accounts**, select the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs#step-1-configure-azure-storage-account">Step 1</a>.
+* Click on **Select resource** and choose a NSG that is present in the same region as the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs#step-1-configure-azure-storage-account">Step 1</a>.
+* Under **Subscription > Storage Accounts**, select the storage account configured in <a href="/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs#step-1-configure-azure-storage-account">Step 1</a>.
 * Specify the **Retention (days)** and click **Review + create**. <br/><img src={useBaseUrl('/img/send-data/review+create.png')} alt="review+create" width="700"/>
 * Review the configuration of the flow log and click **Create**. <br/><img src={useBaseUrl('/img/send-data/review-configuration.png')} alt="review-configuration" width="600"/>
 

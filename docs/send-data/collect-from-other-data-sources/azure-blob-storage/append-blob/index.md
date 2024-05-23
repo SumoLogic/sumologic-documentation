@@ -1,12 +1,10 @@
 ---
-slug: /send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage
-title: Azure Blob Storage
+slug: /send-data/collect-from-other-data-sources/azure-blob-storage/append-blob
+title: Azure Blob Storage (append blobs)
 description: This Sumo integration provides a event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic.
 ---
 
-import Iframe from 'react-iframe';
-
-Logs and metrics for most Azure services can be exported to Azure Storage Account as block blobs. This page describes a Sumo integration that provides an event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic. 
+Logs and metrics for most Azure services can be exported to Azure Storage Account as append blobs. This page describes a Sumo integration that provides an event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic. 
 
 This solution is good for monitoring Azure services that do not support exporting logs to Azure Monitor, for example, Azure Web Apps and Azure Storage Accounts.
 
@@ -14,20 +12,7 @@ This solution is good for monitoring Azure services that do not support exportin
 This solution is for newly created blobs only (not for existing blobs). 
 :::
 
-For step-by-step instructions for configuring the Azure-Sumo pipeline, see [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs).
-
-Watch this tutorial for an overview of collecting logs from Azure Blob Storage.
-
-<Iframe url="https://www.youtube.com/embed/_-N3QGxrn9k?rel=0"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
+For step-by-step instructions for configuring the Azure-Sumo pipeline, see [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs).
 
 ## Azure information resources
 
@@ -97,4 +82,4 @@ It is assumed that:
   * If the file is .log, log lines are sent to Sumo Logic as is.  
 :::
 
-For instructions, see [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs).
+For instructions, see [Collect Logs from Azure Blob Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs).

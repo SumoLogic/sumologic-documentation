@@ -490,31 +490,31 @@ module.exports = {
             'send-data/collect-from-other-data-sources/deploy-collectors-aws-opsworks',
             {
               type: 'category',
-              label: 'Azure Storage',
+              label: 'Azure Blob Storage',
               collapsible: true,
               collapsed: true,
-              link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-storage/index' },
+              link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/index' },
               items: [
                 {
                   type: 'category',
-                  label: 'Azure Blob Storage',
+                  label: 'Block Blob',
                   collapsible: true,
                   collapsed: true,
-                  link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/index' },
+                  link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/index' },
                   items: [
-                    'send-data/collect-from-other-data-sources/azure-storage/azure-blob-storage/collect-logs'
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/block-blob/collect-logs'
                   ],
                 },
                 {
                   type: 'category',
-                  label: 'Azure Append Blob Storage',
+                  label: 'Append Blobs',
                   collapsible: true,
                   collapsed: true,
-                  link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-storage/azure-appendblob-storage/index' },
+                  link: { type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/index' },
                   items: [
-                    'send-data/collect-from-other-data-sources/azure-storage/azure-appendblob-storage/collect-logs'],
+                    'send-data/collect-from-other-data-sources/azure-blob-storage/append-blob/collect-logs'],
                 },
-                'send-data/collect-from-other-data-sources/azure-storage/troubleshoot-log-collection',
+                'send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-log-collection',
               ]
             },
             {
