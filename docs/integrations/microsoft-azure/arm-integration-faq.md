@@ -46,16 +46,10 @@ The Sumo Logic app has been tested on v0.10.40, the oldest supported version. Th
 
 ### How do I route logs to different source categories based on log content?
 
-To answer this question, we have to address Event Hub and Blob Storage separately.
-
-For Event Hub, do the following:
-1. Go to **SumoAzureLogsFunction** created by the ARM template.
-2. Enable **Edit Mode** and edit the **setSourceCategory** function to set the source category. You can also use an if condition to set a different source category for a different message.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_EventHub_Logs.png')} alt="Azure ARM FAQs" />
-
 For Blob Storage, do the following:
+
 1. Go to the **BlockTaskConsumer** function created by the ARM template.
 2. Enable Edit Mode and edit the **getsourceCategory** function to set the source category based on the metadata (`url`, `containerName`, `blobName`, `storageName`, `resourceGroupName`, `subscriptionId`) present in **serviceBusTask**.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_BlobStorage_Logs.png')} alt="Azure ARM FAQs" />
-
 
 ### How do I view Azure function logs?
 
@@ -66,12 +60,23 @@ Go to the function and click the **Logs** tab to view real time logs, as shown i
 
 ### How do I export Azure function logs?
 
-To export Azure function logs, do the following:
-1. Install [Azure Storage Explorer](https://azure.microsoft.com/en-in/features/storage-explorer/) from [here](https://docs.microsoft.com/en-us/azure/vs-azure-tools-storage-explorer-relnotes).
-2. Click **Export**.
+All the Azure Function are enabled with application insights. To export Azure function logs, do the following:
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_Export-logs.png')} alt="Azure ARM FAQs" />
-
+1. Navigate to your **Azure Function** app from **App Catalog**.
+1. Go to **Monitoring > Logs**, and run the below query.
+    ```sql
+    union isfuzzy=true
+    availabilityResults,
+    requests,
+    exceptions,
+    pageViews,
+    traces,
+    customEvents,
+    dependencies
+    | order by timestamp desc
+    | take 100
+    ```
+1. Click the **Export** button to export the logs.
 
 ## Event Hub FAQs
 
@@ -142,20 +147,9 @@ Operation prices write operation $0.05 per 10000 requests => * 3 million = 15$
 
 **Total = 47.5$**
 
-
 ### How do I troubleshoot an Event Hub Integration?
 
 For detailed information, see the [Troubleshooting log collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#troubleshooting-log-collection) section of the Collect logs for Azure Monitor page. This includes testing the function using **Sample** [Logs](https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json) & [Metrics](https://s3.amazonaws.com/appdev-cloudformation-templates/metrics_fixtures.json).
-
-
-### Where can I find historic logs for the Azure function?
-
-1. Install [Azure Storage Explorer](https://azure.microsoft.com/en-in/features/storage-explorer/).
-1. Log in using your Azure Account credentials. Built-in logging uses the storage account specified by the connection string in the AzureWebJobsDashboard app setting.
-1. Go to **functionname > Tables > AzureWebJobsHostLogs**. The ones with the "I" partition key are invocation logs, as shown in the previous example.
-
-<img src={useBaseUrl('img/integrations/microsoft-azure/Azure_function_historic_logs.png')} alt="Azure ARM FAQs" />
-
 
 ### What can I do if a function is timing out?
 
