@@ -257,7 +257,7 @@ Sumo Logic supports collecting metrics using two source types:
 Namespace for **AWS API Gateway** Service is **AWS/ApiGateway**.
 :::
 
-For **Metadata**, add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account” field.
+For **Metadata**, add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). Metrics can be queried via the “account” field.
 
 #### Enable cache metrics
 
@@ -314,7 +314,7 @@ Call the [UpdateStage](https://docs.aws.amazon.com/apigatewayv2/latest/api-refer
    3. **Enable S3 Replay**. Do not check this option.
    4. **Source Category**. Enter `aws/apigateway/accesslogs`.
    5. **Fields**. Add below fields in it:
-      1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the `account` field.
+      1. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). Logs can be queried via the `account` field.
       2. Add **region** and **accountid** fields and assign their respective values.
    6. **Enable Timestamp Parsing**. Select the **Extract timestamp information from log file entries** check box.
    7. **Time Zone**. Select **Use time zone from log file. If none is detected use**, and select **Use Collector Default** from the dropdown.
@@ -533,7 +533,7 @@ To configure a CloudTrail Source, perform these steps:
 1. [Grant Sumo Logic access](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product) to an Amazon S3 bucket.
 2. [Create a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html). For more information on what events are logged, refer to the [API Gateway API calls documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/cloudtrail.html).
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic. While configuring the source, add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the `account` field.
+4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic. While configuring the source, add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the [AWS Observability view](/docs/dashboards/explore-view/#aws-observability). Logs can be queried via the `account` field.
 
    <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Fields.png')} alt="Fields" style={{border: '1px solid gray'}} width="400" />
 

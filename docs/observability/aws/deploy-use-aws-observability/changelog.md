@@ -198,7 +198,7 @@ Bug Fixes:
 CloudFormation YAML URL: https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/sumologic_observability.master.template.yaml
 
 Updates:
-* Updated the AWS Explore hierarchy and all dashboards to use entity model.
+* Updated the AWS Observability view hierarchy and all dashboards to use entity model.
 * Added new FERs and fields to support the entity model.
 
 ## v1.0.0, 31-Aug-2020
