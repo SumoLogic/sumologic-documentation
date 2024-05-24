@@ -42,7 +42,7 @@ Estimate the scan for different types of log-based SLOs:
 
 - **Request-Based SLOs**. For request-based SLOs, data is scanned once per minute and stored in SLO storage (separate from logs storage). Any late-arriving data is accounted for in a corrective fashion and appended to the SLO storage.
 
-- **Window-Based SLOs**: For window-based SLOs, data is scanned multiple times per minute. Due to technical reasons, late-arriving data cannot be accounted for, unlike request-based SLOs. Because of this, the SLO results are stored in SLO storage with some delay (typically 1 hour). To display up-to-date SLI values across our various SLO dashboards, we need to scan the last 1 hour of data multiple times from our logs storage.
+- **Window-Based SLOs**. For window-based SLOs, data is scanned multiple times per minute. Due to technical reasons, late-arriving data cannot be accounted for, unlike request-based SLOs. Because of this, the SLO results are stored in SLO storage with some delay (typically 1 hour). To display up-to-date SLI values across our various SLO dashboards, we need to scan the last 1 hour of data multiple times from our logs storage.
 
 <img src={useBaseUrl('/img/partitions-data-tiers/flex-pricing/scan-estimates-slo.png')} alt="scan-estimates-slo" style={{border:'1px solid gray'}} width="600" />
 
