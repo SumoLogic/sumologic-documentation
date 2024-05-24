@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/icons/operations/data-overage.png')} alt="Thumbnail icon" width="50"/>
 
-The Partitions Management API allows you to improve search performance by searching over a smaller number of messages. For more information, see [Manage Partitions](https://help.sumologic.com/?cid=5231).
+The Partitions Management API allows you to improve search performance by searching over a smaller number of messages. For more information, see [Partitions](/docs/manage/partitions/).
 
 import ApiIntro from '../reuse/api-intro.md';
 

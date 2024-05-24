@@ -54,7 +54,7 @@ The threat intel vendor must follow the STIX/TAXII 1.x standards.
 When you create an TAXII 1 Client Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector and Source](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a TAXII 1 Client Source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso--> 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **TAXII 1 Client**.
 1. Enter a **Name** for the Source. The description is optional.
@@ -65,6 +65,7 @@ To configure a TAXII 1 Client Source:
 1. (Optional) **Sumo Logic Threat Intel Source ID**. Provide your own threat intelligence source ID. This is useful for organizing multiple sources.
 1. **STIX/TAXII Configuration**:
    * **Discovery URL**. Enter the TAXII Discovery URL provided by the vendor (optional).
+1. **Collection Names**. Enter the collections to fetch, using the poll URL.
 1. **Authentication**. This source only supports basic HTTP authentication. Check **Use Basic Auth** to enable it.
    * **HTTP Basic Auth User**. The threat intel API username
    * **HTTP Basic Auth Password**. The threat intel API password
@@ -95,6 +96,8 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 | useBasicAuth| Boolean | No | `false`|Enforces basic HTTP authentication|
 | http_user | String | No | `null` | HTTP basic authentication username |  |
 | http_password | String | No | `null` | HTTP basic authentication password |  |
+| collectionNames | Array | No | `Empty` | Used to get collections using the poll URL. |  |
+| pollingInterval | String | Yes |  | How frequently to poll for messages from the threat intel provider. |  |
 
 ### JSON example
 
