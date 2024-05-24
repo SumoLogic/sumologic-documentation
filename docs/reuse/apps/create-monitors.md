@@ -8,7 +8,7 @@ From your App Catalog:
 1. Scroll down to **Monitor Details**.
 1. Under **Location** click on **New Folder**.
         :::note
-        By default, monitor will be saved in the root folder. So to make the maintence easier, create a new folder in the location of your choice.
+        By default, monitor will be saved in the root folder. So to make the maintenance easier, create a new folder in the location of your choice.
 1. Enter **Folder Name**. Folder Description is optional.
         :::tip
         Using app version in the folder name will be helpful to determine the versioning for future updates.
