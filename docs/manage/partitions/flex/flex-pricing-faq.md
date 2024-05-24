@@ -76,3 +76,14 @@ We recommend you configure partitions to have less than 5 TB per day flowing int
 
 * Reduces the cost of each query.
 * Results in faster queries, since less data has to be scanned.  
+
+## How to optimize the query using default scope?
+
+Default scope allows you to include or exclude the partitions in the search query, helping you to optimize the search cost. For example, consider if a query needs to run through 10 partitions which consumes about 10 GB of search data, narrowing the search query using the default scope can reduce the time and cost. You can achieve this by selecting the **Include this partition in default scope** checkbox when creating the partition. Let's say, out of 10 partitions you excluded two partitions, now, when you run the query without any `_index`, the search will only consider the included partitions, reducing the amount of data scanned and lowering the cost.
+
+When partitions are marked as included and `_index` is not referred to in the query, all the included partitions will be considered for the search query by default. Default scope can also come to use when `AND` or `OR` conditions are referred to in the query with `_index`. For example, consider you have three partitions namely, Partition A (Excluded), Partition B (Included), and Partition C (Included). Below are some scenarios:
+
+- When you run the query without referring to `_index`, only Partition B and Partition C will be considered for the query. 
+- When you run a query referring to `_index=Partition A`, only Partition A will be considered for the query. 
+- When you run the query, `_index=Partition A OR _index=Partition B`, only Partition A and Partition B will be considered for the query. 
+- When you run the query, `_index=Partition A OR error`, Partition A, Partition B, and Partition C will be considered for the query. 
