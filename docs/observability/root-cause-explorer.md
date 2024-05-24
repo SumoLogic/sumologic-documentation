@@ -10,8 +10,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/observability/rootcause.png')} alt="rootcause.png" width="50"/>
 
 <!--Kanso 
-:::note
-Root Cause Explorer is deprecated. It is available only in the [Classic UI](/docs/get-started/sumo-logic-ui/). We recommend using other [Observability](/docs/observability/) tools instead.
+:::warning
+Root Cause Explorer has been deprecated. It is available only in the [Classic UI](/docs/get-started/sumo-logic-ui/). We recommend using other [Observability](/docs/observability/) tools instead.
 :::
  Kanso-->
 
