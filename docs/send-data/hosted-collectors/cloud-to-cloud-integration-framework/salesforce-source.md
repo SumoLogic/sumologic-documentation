@@ -18,9 +18,9 @@ import CollBegin from '../../../reuse/collection-should-begin-note.md';
 
 The Salesforce Source provides a secure endpoint to receive event data from the Salesforce through its [Rest API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm). The source securely stores the required authentication, scheduling, and state tracking information.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
@@ -30,8 +30,7 @@ This source is available in the [Fed deployment](/docs/api/getting-started#sumo-
 
 ### Polling Interval and Salesforce API Rate Limits
 
-During each polling interval, the Salesforce Source will make a Rest API request to Salesforce. Your Salesforce instance will limit the number of calls that can be made based on an API [Requests limit*,*](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm) which is based on your subscription plan. The Salesforce API uses paging
-and a [maximum of 2,000 rows](https://help.salesforce.com/articleView?id=000332074&type=1&mode=1) are returned at a time.
+During each polling interval, the Salesforce Source will make a Rest API request to Salesforce. Your Salesforce instance will limit the number of calls that can be made based on an API [Requests limit](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm), which is based on your subscription plan. The Salesforce API uses paging and a [maximum of 2,000 rows](https://help.salesforce.com/articleView?id=000332074&type=1&mode=1) are returned at a time.
 
 ## Setup
 
@@ -39,7 +38,7 @@ and a [maximum of 2,000 rows](https://help.salesforce.com/articleView?id=0003320
 
 The Consumer Key and Consumer Secret API tokens from Salesforce are required to configure this source. 
 
-1. The Salesforce Event Monitoring add-on is required to obtain all of the data presented in the app dashboards.  The add-on enables access to all event types in the Salesforce EventLogFile, the LoginEvent object, Transaction Security, and the Event Monitoring Analytics App. For more information, see [Get Started with Event Monitoring](https://trailhead.salesforce.com/en/modules/event_monitoring/units/event_monitoring_intro) and [Enable Event Monitoring](https://help.salesforce.com/articleView?id=Enabling-Event-Monitoring&language=en_US&type=1).
+1. The Salesforce Event Monitoring add-on is required to obtain all of the data presented in the app dashboards. The add-on enables access to all event types in the Salesforce EventLogFile, the LoginEvent object, Transaction Security, and the Event Monitoring Analytics App. For more information, see [Get Started with Event Monitoring](https://trailhead.salesforce.com/en/modules/event_monitoring/units/event_monitoring_intro) and [Enable Event Monitoring](https://help.salesforce.com/articleView?id=Enabling-Event-Monitoring&language=en_US&type=1).
 1. Create a dedicated user and profile for the integration as referred to in [Create User Profiles](https://help.salesforce.com/s/articleView?id=sf.emergency_response_admin_userprofiles.htm&type=5) and [Add a Single User](https://help.salesforce.com/s/articleView?id=sf.adding_new_users.htm&type=5) sections of the Salesforce Documentation.
 1. Go to the profile created in Step 1 and provide the following permissions required by the source:
    * Under the **Administrative Permissions** page, select **API Enabled** and **Password Never Expires, View All Users, View Setup and Configuration**  
@@ -54,14 +53,16 @@ The Consumer Key and Consumer Secret API tokens from Salesforce are required to
      * **API Name**. It defaults to a version of the app name without spaces. Keep the default value. 
      * **Contact Email**. Enter your email id.   
    * API (Enable OAuth Settings)   
-     *  Make sure **Enable OAuth Settings** is checked.
-     *  Provide the **Callback URL**.
-     *  Select OAuth Scope. Access and manage your data (API)    
-     *  Select **Save** and then **Continue.**
-     *  After this step, you will get your Consumer Key ("client_id") and Consumer Secret ("client_secret") which you will use to configure the Salesforce source.
-1. Ensure that you have your Salesforce user token (aka security token) handy as it will be used while configuring the Source.
-   * In case, you don’t remember your user token, you can reset it. For more details see the [Reset Your Security Token](https://help.salesforce.com/articleView?id=user_security_token.htm&type=5) document.
-   * When a user resets their password, a new security token is sent automatically to their email address.
+     * Make sure **Enable OAuth Settings** is checked.
+     * Provide the **Callback URL**.
+     * Select **OAuth Scope**. Access and manage your data (API).  
+     * Under API (**Enable OAuth Settings**), select **Enable Client Credentials Flow**.
+     * When you understand the security risks, accept the warning (if prompted).
+     * Select **Save** and then **Continue**.
+     * After this step, you will get your Consumer Key ("client_id") and Consumer Secret ("client_secret"), which you will use to configure the Salesforce source.
+     * Find your connected app, click **Manage** ([learn more](https://help.salesforce.com/s/articleView?id=sf.connected_app_client_credentials_setup.htm&type=5)).
+     * Under **Client Credentials Flow**, for **Run As**, click **Search Button**, and find the user that you want to assign the client credentials flow. (For Enterprise Edition orgs, we recommend that you select an execution user who has the API Only User permission.)
+     * Save your changes.
 
 ### Source configuration
 
@@ -69,7 +70,7 @@ When you create a Salesforce Source, you add it to a Hosted Collector. Before 
 
 To configure a Salesforce Source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collectors page, click **Add Source** next to a HostedCollector.
 1. Select **Salesforce**.
 1. Enter a **Name** for the Source in the Sumo Logic console. The description is optional.
@@ -79,11 +80,8 @@ To configure a Salesforce Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 1. **SignOn URL.** Enter your Sign on URL, e.g.  https://login.salesforce.com/services/oauth2/token.
-1. **User Name.** Enter the username that you used to login to Salesforce.
-1. **Password.** Enter the password associated with the above username.
 1. **Client ID.** Enter the Consumer Key of the ConnectedApp. 
 1. **Client Secret.** Enter the Consumer Secret of the ConnectedApp. 
-1. **User Token**: Enter the user token.  
 1. **Build In Memory Lookup.** Keep this checked. This will resolve IDs to human-readable names.
 1. **Collection Should begin.** Select the time range for how far back you want this source to start collecting data from Salesforce. Options available are: Now, 24 hours ago.
     :::note
@@ -117,15 +115,12 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 | description | String | No | `null` | Type a description of the source. | `"Testing source"`
 | category | String | No | `null` | Type a category of the source. This value is assigned to the [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field `_sourceCategory`. See [best practices](/docs/send-data/best-practices) for details. | `"mySource/test"`
 | fields | JSON Object | No | `null` | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM.|`{"_siemForward": false, "fieldA": "valueA"}` |
-| password | String | Yes | `null` | Type the Salesforce login password for the username. |  |
-| username | String | Yes | `null` | Type the Salesforce login username. |  |
 | start_time | String | No | Now | Type the collection start time. Available options are Now, 24 Hours ago, 2 Days ago, 3 Days ago, 4 Days ago, 5 Days ago. |  |
-| client_id | String | True |`null` | Type in Consumer Key of the ConnectedApp. |  |
-| client_secret | String | True | `null` | Type in Consumer Secret of the ConnectedApp. |  |
-| user_token | String | True |`null`  | Type in the  Salesforce user token. |  |
+| client_id | String | True |`null` | Type in Consumer Key of the Connected App. |  |
+| client_secret | String | True | `null` | Type in Consumer Secret of the Connected App. |  |
 | inmemory_lookup | Boolean | False | True | Set to true to enable inmemory lookup or to false to disable it.|  |
 
-### JSON example:
+### JSON example
 
 <CodeBlock language="json">{MyComponentSource}</CodeBlock>
 
@@ -145,7 +140,7 @@ After you configure your Source, you should check the status of the source in th
 
 The following section details how you can resolve various errors: 
 
-**Error:** Object type 'Document' is not supported
+**Error**: Object type 'Document' is not supported
 
 To resolve this: 
 
@@ -153,7 +148,7 @@ To resolve this: 
 1. Under **Standard Object Permissions** \> **Documents** select **Read** permission click on the **Save** button. 
 1. Now assign this profile to the user, whose credentials you have configured as part of the Salesforce Source.
 
-**Error** : Object type 'Report' is not supported
+**Error**: Object type 'Report' is not supported
 
 To resolve this:
 
@@ -161,16 +156,16 @@ To resolve this:
 1. Edit specific Profile which is assigned to the user
 1. Go to: **General User Permissions** and enable / disable **Run Reports**. **Run Reports** should be enabled for access to REPORT
 
-**Error** : Object type 'EventLogFile' is not supported
+**Error**: Object type 'EventLogFile' is not supported
 
 To resolve this:
 
 1. Go to **Setup\>Administration\>Users\>Permission Sets**.
-1. Create New Permission Set and assign to user or Edit specific Permission Set which is assigned to user
-1. At the bottom click **System Permissions**
-1. Check **API Enabled**
-1. Check **View Event Log Files**
-1. Save it
+1. Create New Permission Set and assign to user or Edit specific Permission Set which is assigned to user.
+1. At the bottom click **System Permissions**.
+1. Check **API Enabled**.
+1. Check **View Event Log Files**.
+1. Save it.
 
 :::note
 If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
@@ -182,49 +177,43 @@ To resolve this:
 
 1. Go to **Setup\>Administration\>Users\>Profile**.
 1. Edit specific Profile which is assigned to the user
-1. Go to: **Administrative Permissions** and enable / disable **View Setup and Configuration**. **View Setup and Configuration** should be enabled for access to SetupAuditTrail
+1. Go to **Administrative Permissions** and enable / disable **View Setup and Configuration**. **View Setup and Configuration** should be enabled for access to SetupAuditTrail.
 
 :::note
 If the error still occurs after following the above instructions, contact the Salesforce Support Team. The root cause is likely a licensing issue, which requires their help to resolve.
 :::
 
-**Error** : Token Endpoint must match the format `"https://<hostname>/services/oauth2/token"`. This is due to incorrect source configuration.
+**Error**: Token Endpoint must match the format `"https://<hostname>/services/oauth2/token"`. This is due to incorrect source configuration.
 
 To resolve this:
 
 1. Provide the correct "SignOn Url". 
 
-**Error** : `{"error":"invalid_grant","error_description":"authentication failure"}`   This is due to incorrect source configuration.
-
-To resolve this:
-
-1. Provide the correct “User Name”, Password, “User Token”.
-
-**Error** : `{"error":"invalid_client_id","error_description":"client identifier invalid"}`   This is due to incorrect source configuration.
+**Error**: `{"error":"invalid_client_id","error_description":"client identifier invalid"}`. This is due to incorrect source configuration.
 
 To resolve this:
 
 1. Provide the correct “Client ID”.
 
-**Error** : `{"error":"invalid_client","error_description":"invalid client credentials"}`   This is due to incorrect source configuration.
+**Error**: `{"error":"invalid_client","error_description":"invalid client credentials"}`. This is due to incorrect source configuration.
 
 To resolve this:
 
-1. Provide the correct “Client Secret” 
+1. Provide the correct “Client Secret”. 
 
-**Error** : `{"error":"unknown_error","error_description":"retry your request"}`   This is due to an invalid SignOn Url.
+**Error**: `{"error":"unknown_error","error_description":"retry your request"}`. This is due to an invalid SignOn Url.
 
 To resolve this:
 
 1. Change it from login.salesforce.com to `<instanceURL>.salesforce.com`
 
-**Error** : MoreMemoryRequired: Available: 100 FileSize: 200.Please create a support ticket.
+**Error**: MoreMemoryRequired: Available: 100 FileSize: 200. Please create a support ticket.
 
 To resolve this:
 
 1. Please create a support ticket with sumo logic to increase the memory for your container.
 
-**Error:** Inconsistencies in `DASHBOARD_ID_DERIVED_LOOKUP` Field Values
+**Error**: Inconsistencies in `DASHBOARD_ID_DERIVED_LOOKUP` Field Values
 
 You might see that in certain logs, the `DASHBOARD_ID_DERIVED_LOOKUP` field has value, but in other logs, it's completely empty. This could be because of a problem with permissions.
 

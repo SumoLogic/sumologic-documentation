@@ -2,29 +2,29 @@
 id: crowdstrike-falcon-endpoint-protection
 title: CrowdStrike Falcon Endpoint Protection
 sidebar_label: CrowdStrike Falcon Endpoint Protection
-description: The CrowdStrike Falcon Endpoint Protection App provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform.
+description: The CrowdStrike Falcon Endpoint Protection app provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="85"/>
 
-The CrowdStrike Falcon Endpoint Protection App provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform. The app allows you to analyze indicators of compromise (IOCs) by affected users, tactic, technique, and objective, and identify hosts on your network with the highest malware detections. The dashboards in this app help identify threats and incidents, from which you can drill down to investigate further.
+The CrowdStrike Falcon Endpoint Protection app provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform. The app allows you to analyze indicators of compromise (IOCs) by affected users, tactic, technique, and objective, and identify hosts on your network with the highest malware detections. The dashboards in this app help identify threats and incidents, from which you can drill down to investigate further.
 
 The [CrowdStrike Falcon Endpoint Protection Platform](https://www.crowdstrike.com/endpoint-security-products/falcon-platform/) is a cloud-native framework that protects endpoints to stop breaches and improve performance with the robust power of the cloud combined with an intelligent, lightweight endpoint agent.
 
-This version of the CrowdStrike Falcon Endpoint Protection App and its collection process has been tested with SIEM Connector Version 2.1.0+001-siem-release-2.1.0.
+This version of the CrowdStrike Falcon Endpoint Protection app and its collection process has been tested with SIEM Connector Version 2.1.0+001-siem-release-2.1.0.
 
 ## Log types
 
-The CrowdStrike Falcon Endpoint Protection App uses the following log types:
+The CrowdStrike Falcon Endpoint Protection app uses the following log types:
 * Detection Event
 * Authentication Event
 * Detection Status Update Event
 
 For more information on Events, please refer to the CrowdStrike Falcon Endpoint Protection [Streaming API Event Dictionary](https://falcon.crowdstrike.com/support/documentation/62/streaming-api-event-dictionary).
 
-### Sample Logs
+### Sample logs
 
 For more information on Events, please refer to [Streaming API Event Dictionary](https://falcon.crowdstrike.com/support/documentation/62/streaming-api-event-dictionary).
 
@@ -182,18 +182,20 @@ _sourceCategory=*Crowdstrike*  UserActivityAuditEvent
 ```
 
 
-## Collecting Logs for the CrowdStrike App
+## Collecting Logs for the CrowdStrike app
 
 This section shows you how to configure log collection from CrowdStrike Falcon Endpoint Protection and have them sent to Sumo Logic. CrowdStrike Falcon Endpoint Protection provides endpoint detection and response, next-gen antivirus, and threat intelligence services through the cloud. Multiple security functions are consolidated into a single lightweight agent, for visibility across using central security analytics with Sumo Logic.
 
 :::warning
-To collect logs from CrowdStrike Falcon Endpoint Protection, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud-to-Cloud Integration for Crowdstrike](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) to create the source and use the same source category while installing the app.
+The sections below are deprecated for non-FedRAMP Sumo Logic deployments.
 
-The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you're using the Sumo Logic FedRamp deployment, use the sections below to configure the collection for this app.
+If you're using the Sumo Logic FedRAMP deployment, use the sections below to configure the collection for this app.
+
+If you are not using the Sumo Logic FedRAMP deployment, use the [Cloud-to-Cloud Integration for Crowdstrike](/docs/send-data/hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source) to collect logs from CrowdStrike Falcon Endpoint Protection. This allows you to create the source and use the same source category while installing the app.
 :::
 
 
-### Collection process overview (DEPRECATED)  
+### Collection process overview
 
 SIEMs (Security Information and Event Management) are used to gather data from a variety of security products to detect, investigate, correlate, and remediate security threats. The [Falcon SIEM Connector](https://www.crowdstrike.com/resources/data-sheets/falcon-connector/) provides a fast and efficient way to optimize collection across an extensive number of endpoints.
 
@@ -204,12 +206,12 @@ Sumo Logic recommends installing the SIEM Connector and Sumo Logic Collector on 
 To set up log collection for CrowdStrike Falcon, you'll download, install, and configure the CrowdStrike SIEM Connector to send data to Sumo Logic, through performing the following tasks.
 
 
-#### Data collection flow (DEPRECATED)
+#### Data collection flow
 
 The following graphic illustrates the Sumo Logic collection of CrowdStrike streaming API events using a SIEM Connector.
 
 
-### Before you begin (DEPRECATED)
+### Prerequisites
 
 It is important that you complete the following tasks before you start to configure log collection for CrowdStrike Falcon:
 
@@ -217,7 +219,7 @@ It is important that you complete the following tasks before you start to config
 * [Contact CrowdStrike support](https://supportportal.crowdstrike.com/) to enable the streaming APIs in your environment. You must do this before using the SIEM connector.
 
 
-### Step 1. Download and install CrowdStrike SIEM Connector on a host machine (DEPRECATED)
+### Step 1. Download and install CrowdStrike SIEM Connector on a host machine
 
 You perform this procedure from the Falcon console. You must have permission to be able to download and install from Falcon to complete this task.
 
@@ -230,7 +232,7 @@ To install a CrowdStrike SIEM Connector on a host machine, do the following:
 * **Ubuntu**: `sudo dpkg -i <installer package>`
 
 
-### Step 2. Configure CrowdStrike SIEM Connector (DEPRECATED)
+### Step 2. Configure CrowdStrike SIEM Connector
 
 This SIEM connector will stream events data from CrowdStrike Falcon Cloud in JSON format into a local file (output). The default location of the **output** file is `/var/log/crowdstrike/falconhoseclient/output`.
 
@@ -258,9 +260,9 @@ To configure CrowdStrike SIEM Connector, do the following:
      * **Ubuntu 16.4:** `sudo systemctl start cs.falconhoseclientd.service`
 
 
-### Step 3. Set up a Sumo Logic installed collector and local file source (DEPRECATED)
+### Step 3. Set up a Sumo Logic installed collector and local file source
 
-You setup a Sumo Logic installed collector on the same host as the SIEM Connector. Then, set up a local file source on the installed collector to read the output file from [Step 2](#Step_2._Configure_CrowdStrike_SIEM_Connector) and send CrowdStrike Falcon Events to Sumo Logic.
+You setup a Sumo Logic installed collector on the same host as the SIEM Connector. Then, set up a local file source on the installed collector to read the output file from [Step 2](#step-2-configure-crowdstrike-siem-connector) and send CrowdStrike Falcon Events to Sumo Logic.
 
 To set up an installed collector and local file source, do the following:
 
@@ -276,24 +278,17 @@ To set up an installed collector and local file source, do the following:
 For more information about the CrowdStrike Falcon SIEM Connector, see the CrowdStrike documentation, or contact CrowdStrike Customer Support at [info@crowdstrike.com](mailto:info@crowdstrike.com).
 :::
 
-## Installing the CrowdStrike Falcon Endpoint Protection App
+## Installing the CrowdStrike Falcon Endpoint Protection app
 
-This section provides instructions for installing the Sumo App for CrowdStrike Falcon Endpoint Protection, as well as examples for each of the app dashboards.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<AppInstall2/>
 
-<AppInstall/>
+## Viewing CrowdStrike Falcon Endpoint Protection dashboards​
 
-## Viewing CrowdStrike Falcon Dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-:::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards/filter-template-variables.md).
-:::
-
-### Parsers/FERs Folder
-
-The app includes a "Parsers/FERs" folder that has pre-built searches to help in your investigations. These searches parse out commonly used fields for audit activity, detection summary, incident summary and remote response session events.
-
+<ViewDashboards/>
 
 ### Overview  
 

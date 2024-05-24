@@ -20,9 +20,9 @@ JumpCloud's open directory platform unifies your technology stack across identit
 
 JumpCloud Directory Insights Source is used to collect Directory Insights Events from the JumpCloud platform using the REST API and send it to Sumo Logic.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
@@ -44,7 +44,7 @@ The JumpCloud Directory Insights source requires you to provide the **API Key** 
 When you create a JumpCloud Directory Insights source, you add it to a Hosted Collector. Before creating the source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 To configure a JumpCloud Directory Insights source:
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
 1. Search for and select **JumpCloud Directory Insights**.
 1. Enter a **Name** for the source. The description is optional.
@@ -56,6 +56,12 @@ To configure a JumpCloud Directory Insights source:
 1. In **Organization ID**, enter the Organization ID you generated from the JumpCloud Directory Insights platform.
 1. In **Service**, select the type of logs to collect. This allows you to limit the response to just the data you want.
 1. When you are finished configuring the Source, click **Save**.
+
+## Metadata fields
+
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| `_siemParser` | `/Parsers/System/JumpCloud/JumpCloud Directory Insights` | Set when **Forward To SIEM** is checked. |
 
 ## JSON schema
 

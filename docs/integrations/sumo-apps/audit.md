@@ -1,36 +1,36 @@
 ---
 id: audit
-title: Sumo Logic Audit App
+title: Sumo Logic Audit app
 sidebar_label: Audit
-description: The Audit App uses Sumo audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account.
+description: The Audit app uses Sumo audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/sumo-apps/Audit_Img.png')} alt="Thumbnail icon" width="75"/>
 
-The Sumo Logic Audit App uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. The app uses predefined searches and Dashboards that provide visibility into your environment.
+The Sumo Logic Audit app uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. The app uses predefined searches and Dashboards that provide visibility into your environment.
 
 :::info caution
 * Make sure that the Sumo auditing is enabled. If it is not, an administrator must enable it before you install the Audit app. For instructions, see [Enable and Manage Auditing](/docs/manage/security/audit-indexes/audit-index.md).  
 * Data is provided from the time the Sumo Auditing is enabled. Audit data is not backfilled to any time before the feature was enabled.
 :::
 
-## Installing the Sumo Logic Audit App
+## Installing the Sumo Logic Audit app
 
-Install the Sumo Logic Audit app to use our dashboards that give you an overview of your Sumo Logic account's audit events, including user login activity, admin activity, and details on scheduled searches.
+import AppInstallNoDataSourceV2 from '../../reuse/apps/app-install-index-apps-v2.md';
 
-To install the app, do the following:
-1. In the **App Catalog, **search for "Audit**"** and select the **Audit** app.
-4. Click **Add to Library**.<br/><img src={useBaseUrl('img/integrations/sumo-apps/audit-app-catalog.png')} alt="test" />
-3. To save the app to a new folder in your personal folder, click **+ New Folder** and select a name and location for your folder.
-4. Click **Add to Library** to install the app. A confirmation dialog will appear and then you can start viewing your  dashboards.
+<AppInstallNoDataSourceV2/>
 
+## Create monitors for the Sumo Logic Audit app
 
-## Viewing Sumo Logic Audit Dashboards
+import CreateMonitors from '../../reuse/apps/create-monitors.md';
 
-This section describes each of the dashboards in the Audit app.
+<CreateMonitors/>
 
+## Viewing Sumo Logic Audit dashboards
+
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
 ### Account Management Overview
 

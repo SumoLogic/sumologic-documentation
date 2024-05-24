@@ -7,8 +7,6 @@ tags: [traces, trace, tracing]
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/traces/traces.png')} alt="icon" width="50"/>
-
 Monitoring apps and microservices with Sumo Logic Traces provides transactional intelligence for distributed workflows, by combining telemetry from traces, logs, and metrics in the context of real-time automatically tracked application topology.
 
 This guide provides information to work with your tracing data.

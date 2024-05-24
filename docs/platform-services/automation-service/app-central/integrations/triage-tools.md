@@ -3,32 +3,33 @@ title: Triage Tools
 description: ''
 tags: [cloud soar integrations]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/triage-tools.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/triage-tools.png')} alt="urlscan.io" width="100"/>
 
-Version: 1.1  
-Updated: Nov 07, 2023
+***Version: 1.1  
+Updated: Nov 07, 2023***
 
 :::sumo Cloud SOAR
-This integration is for Cloud SOAR only
+This integration is only for Cloud SOAR.
 :::
 
 Set of scripts to perform actions within Cloud SOAR.
 
 ## Actions
 
-* **Add Attachment to Triage** *(Custom)* - Add attachment to existing triage event
-* **Convert Triage to Incident** *(Custom)* - Convert triage event to incident
-* **Discard Triage Event** *(Custom)* - Discard triage event
-* **Get Attachment Data** *(Enrichment)* - Retrieve base64 content of an attachment
-* **Grab or Reassign Triage Event** *(Custom)* - Grabs or reassign triage event
-* **List Triage Attachments** *(Enrichment)* - Retrieve a list with triage attachments
-* **List Triage Columns** *(Enrichment)* - Retrieve a list of columns to use in search
-* **List Triage Events** *(Enrichment)* - Retrieve a list with triage events
-* **List Users** *(Enrichment)* - Retrieve a list of users
-* **Query Triage Events** *(Enrichment)* - Query triage events by columns
-* **Update Triage Field** *(Custom)* - Update/edit triage event field
-* **Update Triage Fields** *(Custom)* - Update/edit multiple triage event fields
+* **Add Attachment to Triage** *(Custom)* - Add attachment to existing triage event.
+* **Convert Triage to Incident** *(Custom)* - Convert triage event to incident.
+* **Discard Triage Event** *(Custom)* - Discard triage event.
+* **Get Attachment Data** *(Enrichment)* - Retrieve base64 content of an attachment.
+* **Grab or Reassign Triage Event** *(Custom)* - Grabs or reassign triage event.
+* **List Triage Attachments** *(Enrichment)* - Retrieve a list with triage attachments.
+* **List Triage Columns** *(Enrichment)* - Retrieve a list of columns to use in search.
+* **List Triage Events** *(Enrichment)* - Retrieve a list with triage events.
+* **List Users** *(Enrichment)* - Retrieve a list of users.
+* **Query Triage Events** *(Enrichment)* - Query triage events by columns.
+* **Update Triage Field** *(Custom)* - Update/edit triage event field.
+* **Update Triage Fields** *(Custom)* - Update/edit multiple triage event fields.
 
 ## Category
 

@@ -23,9 +23,9 @@ In this quickstart, you'll run our OpenTelemetry collector directly on the machi
 
 We'll show a simple example of running a single collector, on a single machine, collecting a single metric. But of course, in the real world, you'll be dealing with hundreds or thousands of machines, each with as many metrics, and you'll be collecting much more nuanced information than simple system memory load.
 
-## Before you begin
+## Prerequisites
 
-* You'll need a Sumo Logic account. If you don't have one, [start a free trial](/docs/get-started/sign-up/#sign-up-through-sumo-logic).
+* You'll need a Sumo Logic account. If you do not have one, [start a free trial](/docs/get-started/sign-up/#sign-up-through-sumo-logic).
 * Review [What's the difference between OpenTelemetry and the Sumo Logic Distribution for OpenTelemetry?](/docs/send-data/opentelemetry-collector/troubleshooting/#whats-the-difference-between-opentelemetry-and-the-sumo-logic-distribution-for-opentelemetry)
 
 
@@ -62,7 +62,7 @@ We've created a one-step installation script to make it easier to install the co
    ```
 1. Next, run the install script. You’ll need to use `sudo` here, so ensure you run this from an account with admin privileges.
    ```bash
-   curl -s https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- --installation-token "${SUMOLOGIC_INSTALL_TOKEN}"
+   curl -s https://github.com/SumoLogic/sumologic-otel-collector-packaging/releases/latest/download/install.sh | sudo -E bash -s -- --installation-token "${SUMOLOGIC_INSTALL_TOKEN}"
    ```
 1. After running the install script, you should see the following files installed:
    - `/usr/local/bin/otelcol-sumo`. The collector executable. This should be on your `PATH`.
@@ -83,18 +83,18 @@ receivers:
     scrapers:
       memory:
 
-  exporters:
-    logging:
-      loglevel: debug
+exporters:
+  debug:
+    verbosity: detailed
 
-  service:
-    pipelines:
-      metrics:
-        receivers:
-          - hostmetrics
-        exporters:
-          - sumologic
-          - logging
+service:
+  pipelines:
+    metrics:
+      receivers:
+        - hostmetrics
+      exporters:
+        - sumologic
+        - debug
 ```
 
 <details>
@@ -132,7 +132,7 @@ At this point, the collector should be running and sending memory stats data int
 
 Then after that, every 5 seconds you should see a line like:
 
-`[...] MetricsExporter {"kind": "exporter", "data_type": "metrics", "name": "logging", "#metrics": 1} [...]`
+`[...] MetricsExporter {"kind": "exporter", "data_type": "metrics", "name": "debug", "#metrics": 1} [...]`
 
 If you see that kind of output, the collector has successfully set up a connection to Sumo Logic and is sending memory stats metrics as expected. Great! Now let’s go find those in Sumo.
 

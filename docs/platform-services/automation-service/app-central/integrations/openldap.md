@@ -3,17 +3,18 @@ title: OpenLDAP
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/openldap.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/openldap.png')} alt="openldap" width="100"/>
 
-Version: 1.1  
-Updated: Sep 28, 2023
+***Version: 1.1  
+Updated: Sep 28, 2023***
 
 OpenLDAP Software is an open-source implementation of the Lightweight Directory Access Protocol. This integration allows users to browse, and look up data that appears on an LDAP Server.
 
 ## Actions
 
-* **Get Users Info**(*Enrichment*) - Gather users info
+* **Get Users Info** (*Enrichment*) - Gather users info.
 
 ## External Libraries
 

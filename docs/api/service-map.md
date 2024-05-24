@@ -2,7 +2,7 @@
 id: service-map
 title: Service Map APIs
 sidebar_label: Service Map
-description: The Service Map API allows you to fetch a graph representation of the Service Map.
+description: Service Map APIs allow you to fetch a graph representation of the Service Map.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

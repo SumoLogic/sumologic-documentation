@@ -3,21 +3,22 @@ title: Cisco Umbrella Investigate
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/cisco-umbrella-investigate.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-umbrella-investigate.png')} alt="cisco-umbrella-investigate" width="70"/>
 
-Version: 1.4  
-Updated: Jun 23, 2023
+***Version: 1.4  
+Updated: Jun 23, 2023***
 
 Gather enrichment data on incident observables using Cisco Umbrella Investigate.
 
 ## Actions
 
-* **Domain Reputation** (*Enrichment*) - Get the domain status (safe, malicious, or not classified) and the domain’s categories from Cisco Umbrella Investigate for the specified domain
-* **IP Reputation** (*Enrichment*) - List any malicious domains from Cisco Umbrella Investigate associated with the specified IP
-* **Domain Whois** (*Enrichment*) - Get Whois information from Cisco Umbrella Investigate for the specified domain
-* **Email Whois** (*Enrichment*) - List any domains registered using the specified email address from Cisco Umbrella Investigate
-* **IP Reputation V2** (*Enrichment*) - List malicious domains from Cisco Umbrella Investigate associated with the specified IP v2
+* **Domain Reputation** (*Enrichment*) - Get the domain status (safe, malicious, or not classified) and the domain’s categories from Cisco Umbrella Investigate for the specified domain.
+* **IP Reputation** (*Enrichment*) - List any malicious domains from Cisco Umbrella Investigate associated with the specified IP.
+* **Domain Whois** (*Enrichment*) - Get Whois information from Cisco Umbrella Investigate for the specified domain.
+* **Email Whois** (*Enrichment*) - List any domains registered using the specified email address from Cisco Umbrella Investigate.
+* **IP Reputation V2** (*Enrichment*) - List malicious domains from Cisco Umbrella Investigate associated with the specified IP v2.
 
 ## Category
 

@@ -20,7 +20,7 @@ To share a link to a search:
 1. (Optional) After the search results are complete, in the **Aggregates** tab, select a chart type to display the data visually. 
 1. Click the share icon on the top right of the search page,<br/><img src={useBaseUrl('img/search/get-started-search/search-basics/share-search-icon.png')} alt="share icon" width="300"/>  
 
-    or click the three-dot icon and click **Share**.<br/><img src={useBaseUrl('img/search/get-started-search/search-basics/share-from-menu.png')} alt="icon" width="250"/>  
+    or click the three-dot kebab icon and click **Share**.<br/><img src={useBaseUrl('img/search/get-started-search/search-basics/share-from-menu.png')} alt="icon" width="250"/>  
 
 1. Do one of the following:
 

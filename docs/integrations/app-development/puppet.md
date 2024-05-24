@@ -2,7 +2,7 @@
 id: puppet
 title: Puppet - Classic Collector
 sidebar_label: Puppet
-description: The Sumo Logic App for Puppet helps you monitor Puppet metrics and events.
+description: The Sumo Logic app for Puppet helps you monitor Puppet metrics and events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/app-development/puppet.png')} alt="Thumbnail icon" width="50"/>
 
-Puppet is a software configuration management tool. Puppet can provision infrastructure and enforce desired configurations across new and existing servers. The Sumo Logic App for Puppet helps you monitor Puppet metrics and events, which means that you can easily:
+Puppet is a software configuration management tool. Puppet can provision infrastructure and enforce desired configurations across new and existing servers. The Sumo Logic app for Puppet helps you monitor Puppet metrics and events, which means that you can easily:
 
 * Determine when Puppet runs occurred.
 * Track service and applying times for each run.
@@ -20,13 +20,13 @@ Puppet is a software configuration management tool. Puppet can provision infrast
 
 ## Log types
 
-Sumo’s Puppet Logs source and Puppet Reports source use an installed collector to gather the following data from Puppet:
+Sumo Logic’s Puppet Logs source and Puppet Reports source use an installed collector to gather the following data from Puppet:
 
 * Puppet Server logs. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
 * Puppet Server Access logs. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
 * Puppet Reports. Puppet generates reports in YAML format. SumoLogic supports report format 10. This is the format of reports output by Puppet versions 5.5.3 and newer. It is backward compatible with report format 9 (in Puppet versions 5.5.0 to 5.5.2). For more information about the puppet reports, see [Puppet Reports](https://puppet.com/docs/puppet/5.5/format_report.html).
 
-### Puppet Reports
+### Puppet reports
 
 Puppet reports are in YAML format. They must be converted to JSON prior to ingestion to Sumo.
 
@@ -129,6 +129,11 @@ metrics:
 				[
 					"failed",
 					"\"Fail",
+				]
+			]
+		}
+	}
+}
 ```
 
 </TabItem>
@@ -157,9 +162,9 @@ _sourceCategory=prod/web/puppet/reports
 | fields failed_res_pct
 ```
 
-## Collecting Logs for Puppet
+## Collecting logs for Puppet
 
-Learn how to collect Puppet logs, reports, and events for the Sumo App for Puppet.
+Learn how to collect Puppet logs, reports, and events for the Sumo app for Puppet.
 
 The sections below provide instructions for installing a collector on a Puppet Master host, setting up Sumo Puppet sources (server, access and reports logs), and installing the Sumo app for Puppet. With this configuration you can collect Puppet logs, events, and reports, and visualize resource performance and puppet runs data in the dashboards provided by the app.
 
@@ -178,7 +183,7 @@ Puppet Master only runs on Linux.
 
 ### Step 3: Configure local file source for Puppet Server logs
 
-In this step, you add a local file source to the installed collector you created in [Step 2](#Step_2:_Install_collector_on_Puppet_Master). The local file source will receive Puppet Server logs.  
+In this step, you add a local file source to the installed collector you created in [Step 2](#step-2-install-collector-on-puppet-master). The local file source will receive Puppet Server logs.  
 
 Follow the steps on [Local File Source](/docs/send-data/installed-collectors/sources/local-file-source), with these additional instructions:
 
@@ -220,7 +225,7 @@ For more information, see [Script Source](/docs/send-data/installed-collectors/s
 
 The script requires Ruby on the host machine.
 
-1. In the Sumo web app, select **Manage Data** > **Collection** > **Collection**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 2. Navigate to the collector you installed on the Puppet Master host, and select **Add > Add Source**.
 3. Select **Script**. New Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/send-data/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. (Required).
@@ -328,20 +333,20 @@ Puppet logs and reports should start flowing into Sumo Logic.
 
 If you encounter problems:
 
-* Review [Script source prerequisites](#Script_source_prerequisites).
+* Review [Script source prerequisites](#script-source-prerequisites).
 * Review the contents of the log file that the script creates in the configured working directory.
 
+## Installing the Puppet app
 
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-## Installing the Puppet App
+<AppInstall2/>
 
-Now that you have set up collection for Puppet, install the Sumo Logic App for Puppet to use the preconfigured searches and Dashboards that provide insight into your data.
+## Viewing Puppet dashboards​
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
 
-<AppInstall/>
-
-## Viewing Puppet App Dashboards
+<ViewDashboards/>
 
 ### Overview
 

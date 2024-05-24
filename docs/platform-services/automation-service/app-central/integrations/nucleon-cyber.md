@@ -3,19 +3,20 @@ title: Nucleon Cyber
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/nucleon-cyber.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/nucleon-cyber.png')} alt="nucleon-cyber" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Nucleon Cyber framework for threat intelligence - perform in-depth analysis, verification, and reporting of threat actors, attacks, and malware.
 
 ## Actions
 
-* **Active Threats Feed** *(Enrichment)* - Returns Active Threats data
-* **Search Hash** *(Enrichment)* - Returns hash information and details about files and threats
-* **Search IP** *(Enrichment)* - Search by IP
+* **Active Threats Feed** *(Enrichment)* - Returns Active Threats data.
+* **Search Hash** *(Enrichment)* - Returns hash information and details about files and threats.
+* **Search IP** *(Enrichment)* - Search by IP.
 
 ## Change Log
 

@@ -14,7 +14,7 @@ For non-aggregate queries, the Field Browser is useful for narrowing results on
 
 The Field Browser displays the number of values for each field returned in a search. It works in real time, so you can fine tune the fields you want to view or hide. After setting the fields to display, save your preferences so that the correct fields are always displayed in your searches. The preferences are saved just for your user account and don’t change the way data is displayed in other user accounts.
 
-In addition to the fields found in your logs, the Field Browser shows **Time** (for message time), **Receipt Time** (for the receipt time), and **Message** (for raw log messages). No [drill-down searches](search-from-field-browser.md) can be run on these fields because they don't contain number or string data that can be searched on.
+In addition to the fields found in your logs, the Field Browser shows **Time** (for message time), **Receipt Time** (for the receipt time), and **Message** (for raw log messages). No [drill-down searches](search-from-field-browser.md) can be run on these fields because they do not contain number or string data that can be searched on.
 
 ![FB_Field-Browser_Display-Fields.png](/img/search/get-started-search/search-page/FB-Field-Browser-Display-Fields.png)
 

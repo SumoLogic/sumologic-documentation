@@ -60,7 +60,7 @@ Yes, you can use [Alert Variables](/docs/alerts/monitors/alert-variables) to ref
 
 ## Does Sumo Logic let me get alerts from a specific static IP address that I can allowlist?
 
-Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/hc/en-us).
+Yes, Sumo Logic provides webhook notifications through static IP addresses. You can allowlist those IP addresses to receive notifications directly from Sumo Logic. For a list of our allowlist addresses, contact [Support](https://support.sumologic.com/support/s).
 
 :::note
 The [Test Connection feature for webhooks](/docs/alerts/webhook-connections/set-up-webhook-connections) does not use the same static IP addresses that send notifications. It uses different temporary IP addresses.
@@ -70,7 +70,7 @@ The [Test Connection feature for webhooks](/docs/alerts/webhook-connections/se
 
 One reason could be that the user who created the monitor was deleted. You can check the **Created By** value on the Monitors page. If it has `<User Unknown>`, you will need to re-create the monitor.  <br/>![user unknown monitors.png](/img/monitors/user-unknown-monitors.png)
 
-You can quickly **Duplicate** the monitor by hovering over it on the Monitors page and clicking the three-dot icon:<br/>![more actions menu for monitors.png](/img/monitors/more-actions-menu-for-monitors.png)  
+You can quickly **Duplicate** the monitor by hovering over it on the Monitors page and clicking the three-dot kebab icon:<br/>![more actions menu for monitors.png](/img/monitors/more-actions-menu-for-monitors.png)  
 
 then selecting **Duplicate**. If your monitor still doesn't work, we recommend contacting [Sumo Logic support](https://support.sumologic.com/). 
 

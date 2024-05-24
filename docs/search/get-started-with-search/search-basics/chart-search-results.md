@@ -19,7 +19,7 @@ Follow the below instructions to chart aggregate the results:
 1. From a search, run an aggregate query.
 1. From the **Aggregates** tab, click a graph button on the **Aggregates** tab.
 
-<img src={useBaseUrl('img/search/get-started-search/search-basics/aggregates.png')} alt="aggregates" style={{border:'1px solid black'}} width="800" />
+<img src={useBaseUrl('img/search/get-started-search/search-basics/aggregates.png')} alt="aggregates" style={{border:'1px solid gray'}} width="800" />
 
 For this example, you can see a bar chart, but you can pick from any of the available charting options, see [Chart Panel Types](/docs/dashboards/panels) for details.
 
@@ -34,13 +34,13 @@ The **New Visualization** feature enables the new chart visualizations for your 
 
 Charts will appear in **New Visualization** style by default. If you prefer to use the **Classic Visualization** UI, click the **Classic Visualizations** button, then in the popup window, click **Switch to Classic Visualizations** to proceed.  
 
-<img src={useBaseUrl('img/search/get-started-search/search-basics/switch-to-classic-visualizations.png')} alt="switch-to-classic-visualizations" style={{border:'1px solid black'}} width="400" />
+<img src={useBaseUrl('img/search/get-started-search/search-basics/switch-to-classic-visualizations.png')} alt="switch-to-classic-visualizations" style={{border:'1px solid gray'}} width="400" />
 
 ## FAQ
 
 ### Why are the chart options not available?
 
-Your data may be a string data type instead of a number. Most aggregate operators will cast your data to a number, operators like `first` and `last` don't. You can cast your data to a number if needed using the `num` operator.
+Your data may be a string data type instead of a number. Most aggregate operators will cast your data to a number, operators like `first` and `last` do not. You can cast your data to a number if needed using the `num` operator.
 
 Example:
 

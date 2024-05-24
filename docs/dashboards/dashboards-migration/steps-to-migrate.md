@@ -30,7 +30,7 @@ The bulk migration feature is an extension to the dashboard migration feature th
   Choosing more than 50 dashboards will disable the **Migrate Dashboards** button.
   :::
 2. A dialog box appears. Click **Migrate to Dashboard** as shown.<br/><img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/Bulk+Migration/Screenshot-2.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
-3. The bottom right corner shows real-time information on the migration process.<br/><img src={useBaseUrl('https://sumologic-app-data.s3.amazonaws.com/Bulk+Migration/Screenshot-3.png')} style={{border: '1px solid gray'}} alt="dashboard" width="600"/>
+3. The bottom right corner shows real-time information on the migration process.
 4. The following information is populated once the migration is complete.
     * Summary of the process.
     * Hovering on the error (if any) shows the error information in the tooltip.

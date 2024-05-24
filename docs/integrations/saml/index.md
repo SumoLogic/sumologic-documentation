@@ -1,15 +1,12 @@
 ---
 slug: /integrations/saml
-title: Sumo Logic Apps for SAML Providers
-sidebar_label: SAML
-description: Learn about Sumo apps for SAML.
+title: SAML
+description: Learn how to use Sumo Logic apps for SAML providers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saml/saml.png')} alt="Thumbnail icon" width="50"/>
-
-Learn about Sumo apps for SAML.
+Learn how to use Sumo Logic apps for SAML.
 
 <div className="box-wrapper">
 <div className="box smallbox card">

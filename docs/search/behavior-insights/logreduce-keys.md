@@ -41,7 +41,7 @@ Results can be returned in two ways:
 
 ## Limitations
 
-* When not specifying a field with the `field=` option, don't parse any fields. If you parse any fields, they'll be excluded from the schema in your results. 
+* When not specifying a field with the `field=` option, do not parse any fields. If you parse any fields, they'll be excluded from the schema in your results. 
 * A maximum of 100 keys are automatically parsed.
 * Keys in arrays are not supported.
 * The [Time Compare](../time-compare.md) button will not work on LogReduce Keys results, you need to manually input the [`compare` operator](/docs/search/search-query-language/search-operators/compare) instead.

@@ -30,7 +30,7 @@ _sourceCategory= aws/cf | parse "*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*\t*" as
 
 ## Collecting Logs for the Amazon CloudFront app
 
-### Before you begin
+### Prerequisites
 
 Before you install the Amazon CloudFront app, complete the following tasks:
 
@@ -38,7 +38,7 @@ Before you install the Amazon CloudFront app, complete the following tasks:
 2. Confirm that access logs are being delivered to the Amazon S3 bucket.
 3. [Grant Sumo Logic Access to the Amazon S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product).
 
-Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-account.md) at any time.
+Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-cloud-flex-legacy-account) at any time.
 
 ### Add an AWS Source
 
@@ -62,13 +62,15 @@ You could use this Boundary Regex:
 
 Now that you have set up collection for CloudFront, install the Sumo Logic app for Amazon CloudFront to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-import AppInstall from '../../reuse/apps/app-install.md';
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-<AppInstall/>
+<AppInstall2/>
 
 ## Viewing Amazon CloudFront dashboards
 
-Amazon CloudFront is a content delivery network (CDN) that allows an easy way for companies to distribute content to end-users with low latency and high data transfer speeds. The Sumo Logic application for Amazon CloudFront provides analytics on visitor information, rates and statistics, content being served, and other metrics. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Overview
 

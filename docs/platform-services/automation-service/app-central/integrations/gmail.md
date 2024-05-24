@@ -3,107 +3,78 @@ title: Gmail
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/google.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/google.png')} alt="google" width="80"/>
 
-Version: 1.4  
-Updated: Oct 26, 2023
+**Version: 1.4  
+Updated: Oct 26, 2023**
 
-Interact with filters, mail messages and attachments in Google Mail.
+Interact with filters, mail messages, and attachments in Google Mail.
 
 ## Actions
 
 * **Add Filter** (*Containment*) - Creates a filter. Note: you can only create a maximum of 1,000 filters.
-* **Authorize DO NOT USE IN PLAYBOOK** (*Enrichment*) - Authorize access to Gmail. This should only be run once and not from Playbook
-* **Confirm DO NOT USE IN PLAYBOOK** (*Enrichment*) - Confirm access to Gmail. This should only be run once and not from Playbook
-* **Delete Filter** (*Containment*) - Immediately and permanently deletes the specified filter
-* **Delete Mail** *(Containment)* - Immediately and permanently deletes the specified message. This operation cannot be undone
-* **Get Attachment** (*Enrichment*) - Gets the specified message attachment
-* **Get Mail** (*Enrichment*) - Gets the specified message
-* **Get Thread** (*Enrichment*) - Gets the specified thread
-* **Gmail Daemon** (*Daemon*) - Automatically retrieve all unread messages in the inbox and mark them as read
-* **List Filters** (*Enrichment*) - Lists the message filters of a Gmail user
-* **List Labels** (*Enrichment*) - Lists all labels in the user's mailbox
-* **Move Mail** (*Enrichment*) - Modifies the labels on the specified message
-* **Search Engine** (*Enrichment*) - Search all items using the specified query
-* **Search Mail** (*Enrichment*) - Lists the messages in the user's mailbox
-* **Send Email \*** (*Notification*) - Sends the specified message
-* **Send Email V2** (*Notification*) - Sends the specified message without any attachments
+* **Authorize DO NOT USE IN PLAYBOOK** (*Enrichment*) - Authorize access to Gmail. This should only be run once and not from Playbook.
+* **Confirm DO NOT USE IN PLAYBOOK** (*Enrichment*) - Confirm access to Gmail. This should only be run once and not from Playbook.
+* **Delete Filter** (*Containment*) - Immediately and permanently deletes the specified filter.
+* **Delete Mail** *(Containment)* - Immediately and permanently deletes the specified message. This operation cannot be undone.
+* **Get Attachment** (*Enrichment*) - Gets the specified message attachment.
+* **Get Mail** (*Enrichment*) - Gets the specified message.
+* **Get Thread** (*Enrichment*) - Gets the specified thread.
+* **Gmail Daemon** (*Daemon*) - Automatically retrieve all unread messages in the inbox and mark them as read.
+* **List Filters** (*Enrichment*) - Lists the message filters of a Gmail user.
+* **List Labels** (*Enrichment*) - Lists all labels in the user's mailbox.
+* **Move Mail** (*Enrichment*) - Modifies the labels on the specified message.
+* **Search Engine** (*Enrichment*) - Search all items using the specified query.
+* **Search Mail** (*Enrichment*) - Lists the messages in the user's mailbox.
+* **Send Email \*** (*Notification*) - Sends the specified message.
+* **Send Email V2** (*Notification*) - Sends the specified message without any attachments.
 
 \* Only available for Cloud SOAR
 
-## Gmail Configuration
+## Gmail configuration
 
-1) Create a new Project in the Developer Console [https://console.developers.google.com/](https://console.developers.google.com/)
-
-2) In the APIs & Services section, navigate to Credentials and select Create Credentials: [https://console.cloud.google.com/apis/api](https://console.cloud.google.com/apis/api)
-
+1) Create a new Project in the D[eveloper Console](https://console.developers.google.com/).
+2) In the APIs & Services section, navigate to Credentials and select Create Credentials: [https://console.cloud.google.com/apis/api](https://console.cloud.google.com/apis/api).
 3) Select OAuth Client ID as the credential type and set the following inputs:
-
-* Application Type: Web Application
-* Authorized redirect URIs > Add URI: 'http://localhost/'
-* Note: Will only be used to generate a refresh token.
-
-4) Copy the resulting Client ID and Client Secret Key values, as these will be used later.
-
- ![](/img/platform-services/automation-service/app-central/integrations/gmail/gmail-2.png)
-
+	* **Application Type**. Web Application.
+	* **Authorized redirect URIs > Add URI**. 'http://localhost/'.
+		:::note
+		Will only be used to generate a refresh token.
+		:::
+4) Copy the resulting Client ID and Client Secret Key values, as these will be used later.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/gmail/gmail-2.png')} style={{border:'1px solid gray'}} alt="gmail" width="400"/>
 5) Navigate to the OAuth Consent Screen section and set the following inputs:
-
-* App Name
-* User Support Email: Set to an email that you have access to.
-* Developer Contact Information: Set to an email that you have access to.
-
+	* App Name
+	* User Support Email: Set to an email that you have access to.
+	* Developer Contact Information: Set to an email that you have access to.
 6) The following Scopes are needed:
+	* 'https://mail.google.com'
+	* 'https://www.googleapis.com/auth/gmail.modify'
+	* 'https://www.googleapis.com/auth/gmail.readonly'
+	* 'https://www.googleapis.com/auth/admin.directory.user'
+	* 'https://www.googleapis.com/auth/gmail.compose'
+	* 'https://www.googleapis.com/auth/gmail.send'
+	* 'https://www.googleapis.com/auth/gmail.settings.basic'
+	* 'https://www.googleapis.com/auth/gmail.settings.sharing'
 
-* 'https://mail.google.com'
-* 'https://www.googleapis.com/auth/gmail.modify'
-* 'https://www.googleapis.com/auth/gmail.readonly'
-* 'https://www.googleapis.com/auth/admin.directory.user'
-* 'https://www.googleapis.com/auth/gmail.compose'
-* 'https://www.googleapis.com/auth/gmail.send'
-* 'https://www.googleapis.com/auth/gmail.settings.basic'
-* 'https://www.googleapis.com/auth/gmail.settings.sharing'
-
-7) In Cloud SOAR, navigate to Settings > Integrations > Gmail, add a new Resource and provide the following inputs:
-
-* Client ID (generated in step 4)
-* Client Secret Key (generated in step 4)
-
-8) Save and close the Resource
-
-9) Click and execute the **Authorize DO NOT USE IN PLAYBOOK** action. If successful, a URL will be returned.
-
-![](/img/platform-services/automation-service/app-central/integrations/gmail/gmail-3.png)   
- 
-
+7) In Cloud SOAR, navigate to **Settings > Integrations > Gmail**, add a new Resource and provide the following inputs:
+	* Client ID (generated in step 4)
+	* Client Secret Key (generated in step 4)
+8) Save and close the Resource.
+9) Click and execute the **Authorize DO NOT USE IN PLAYBOOK** action. If successful, a URL will be returned.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/gmail/gmail-3.png')} style={{border:'1px solid gray'}} alt="gmail" width="400"/> 
 10) Open a new browser tab, and navigate to the URL generated in the previous step.
-
 11) Provide consent for this developer project to access the Gmail API.   
- 
-
 12) The response to this consent flow is the localhost redirect specified earlier. Copy this URL.
-
 13) Within this URL, copy the code nested in this URL: 
-
-'http://localhost/?code=4/0AbUR2VXXXXFe8kuMTUE4Dkxts4J8mo3\_BkZKxXAcdzXXXXtd9lrjai00pEuG0YXWtWjimg&scope=https://mail.google.com/%20https://www.googleapis.com/auth/gmail.settings.basic'
-
-![](/img/platform-services/automation-service/app-central/integrations/gmail/gmail-4.png)
-
-14) In Cloud SOAR, click and run the **Confirm DO NOT USE IN PLAYBOOK** action, providing the code generated above in the Code input.
-
- ![](/img/platform-services/automation-service/app-central/integrations/gmail/gmail-5.png)
-
-15) This will return a JSON result with a "**credentials**" key. Copy the value of this key, which is a base64-encoded string JSON credential we will use in the next and final step.
-
-![](/img/platform-services/automation-service/app-central/integrations/gmail/gmail-6.png)   
- 
-
+	```
+	http://localhost/?code=4/0AbUR2VXXXXFe8kuMTUE4Dkxts4J8mo3\_BkZKxXAcdzXXXXtd9lrjai00pEuG0YXWtWjimg&scope=https://mail.google.com/%20https://www.googleapis.com/auth/gmail.settings.basic
+	```
+	<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/gmail/gmail-4.png')} style={{border:'1px solid gray'}} alt="gmail" width="600"/>
+14) In Cloud SOAR, click and run the **Confirm DO NOT USE IN PLAYBOOK** action, providing the code generated above in the Code input.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/gmail/gmail-5.png')} style={{border:'1px solid gray'}} alt="gmail" width="600"/>
+15) This will return a JSON result with a "**credentials**" key. Copy the value of this key, which is a base64-encoded string JSON credential we will use in the next and final step.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/gmail/gmail-6.png')} style={{border:'1px solid gray'}} alt="gmail" width="600"/>
 16) Paste the base64 string in the "**Credentials**" field of the Integration Resource created in step 7. Save and close the resource window.
-
-17) You can test that the integration credentials are working by running the "**Get Labels**" action (no inputs are needed). If successful, it will return a JSON result of mail labels.
-
- ![](/img/platform-services/automation-service/app-central/integrations/gmail/gmail-7.png)
+17) You can test that the integration credentials are working by running the "**Get Labels**" action (no inputs are needed). If successful, it will return a JSON result of mail labels.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/gmail/gmail-7.png')} style={{border:'1px solid gray'}} alt="gmail" width="600"/>
 
 ## External Libraries
 

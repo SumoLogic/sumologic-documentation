@@ -13,4 +13,4 @@ Sumo Logic collects logs, events, metrics, and security data using the [Sumo Log
 
 Reference the [K8s Quickstart guide](/docs/observability/kubernetes/quickstart.md) for instructions on how to setup collection, install the relevant dashboards and alerts, in order to start monitoring your Kubernetes environment.
 
-See the [Sumo Logic Kubernetes Collection Deployment Guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/README.md#documentation) for information on advanced configurations, best practices, performance, troubleshooting, and upgrading to our latest version.
+See the [Sumo Logic Kubernetes Collection Deployment Guide](/docs/send-data/kubernetes/helm-chart-overview.md) for information on advanced configurations, best practices, performance, troubleshooting, and upgrading to our latest version.

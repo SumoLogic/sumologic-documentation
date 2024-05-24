@@ -3,21 +3,22 @@ title: Mitre Matrix
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/mitre-matrix.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/mitre-matrix.png')} alt="mitre-matrix" width="100"/>
 
-Version: 2.2  
-Updated: Jul 18, 2023
+***Version: 2.2  
+Updated: Jul 18, 2023***
 
 MITRE is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations. 
 
 ## Actions
 
-* **Get Techniques** *(Enrichment)* - Get a specific technique details by identifier
-* **Get Tactics** *(Enrichment)* - Get a specific Tactic details by identifier
-* **Get Associated Intrusions** *(Enrichment)* - Get a specific malware details by identifier
-* **Get Mitigations** *(Enrichment)* - Get mitigations details by identifier
-* **Retrieve Tactics And Techniques From CSE Insight** *(Enrichment)* - Get Tactics And Techniques From CSE Insight Tags
+* **Get Techniques** *(Enrichment)* - Get a specific technique details by identifier.
+* **Get Tactics** *(Enrichment)* - Get a specific Tactic details by identifier.
+* **Get Associated Intrusions** *(Enrichment)* - Get a specific malware details by identifier.
+* **Get Mitigations** *(Enrichment)* - Get mitigations details by identifier.
+* **Retrieve Tactics And Techniques From CSE Insight** *(Enrichment)* - Get Tactics And Techniques From CSE Insight Tags.
 
 ## External Libraries
 

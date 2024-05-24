@@ -3,26 +3,27 @@ title: Cisco ISE
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/cisco-ise.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/cisco-ise.png')} alt="cisco-ise" width="70"/>
 
-Version: 1.6  
-Updated: Sep 19, 2023
+***Version: 1.6  
+Updated: Sep 19, 2023***
 
 Utilize Cisco ISE session, policy, and security group information during an investigation.
 
 ## Actions
 
-* **Get Sessions** (*Enrichment*) - Gather session information from Cisco ISE
-* **List Policies** (*Enrichment*) - List all available ISE policies
-* **List Security Groups** (*Enrichment*) - List all available security groups
-* **Get Policies Endpoints** (*Enrichment*) - Gather endpoint policies
-* **Apply Policy** (*Containment*) - Create a new policy
-* **Clear Policy** (*Containment*) - Remove an existing policy
-* **Get Endpoints** (*Enrichment* ) - List all available endpoints
-* **Get Endpoint Identity Groups** (*Enrichment* ) - List all available endpoint identity groups
-* **Get Internal Users** (*Enrichment* ) - List all available internal user
-* **Deployment Info** (*Enrichment* ) - To check if ISE primary node is up or not
+* **Get Sessions** (*Enrichment*) - Gather session information from Cisco ISE.
+* **List Policies** (*Enrichment*) - List all available ISE policies.
+* **List Security Groups** (*Enrichment*) - List all available security groups.
+* **Get Policies Endpoints** (*Enrichment*) - Gather endpoint policies.
+* **Apply Policy** (*Containment*) - Create a new policy.
+* **Clear Policy** (*Containment*) - Remove an existing policy.
+* **Get Endpoints** (*Enrichment* ) - List all available endpoints.
+* **Get Endpoint Identity Groups** (*Enrichment* ) - List all available endpoint identity groups.
+* **Get Internal Users** (*Enrichment* ) - List all available internal user.
+* **Deployment Info** (*Enrichment* ) - To check if ISE primary node is up or not.
 
 ## Cisco ISE Configuration
 
@@ -32,22 +33,18 @@ Cisco ISE is configured in a way that you'll need to specify the resource togeth
 
 Therefore, the first requirement is to enable ERS from the ISE admin UI. 
 
-1. Go to Administration -> Settings -> ERS Settings. 
-
-1. Check the 'Enable ERS for Read/Write' radio button as shown in the screenshot below. <br/>![](/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-1.png) 
-
+1. Go to **Administration > Settings > ERS Settings**. 
+1. Check the **Enable ERS for Read/Write** radio button as shown in the screenshot below.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-1.png')} style={{border:'1px solid gray'}} alt="cisco-ise" width="800"/>
 1. The following ISE Administrator Groups allow REST API access: 
    * SuperAdmin Read/Write
    * ERSAdmin Read/Write
-   * ERSOperator Read Only <br/>![](/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-2.png)
-
+   * ERSOperator Read Only <br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-2.png')} style={{border:'1px solid gray'}} alt="cisco-ise" width="800"/>
    To perform Get Sessions action, the users must be assigned to one of the following Admin Groups:   
       * Super Admin
       * System Admin
       * MnT Admin
-
-   So you have to use both Admins Groups together to use all the actions inside CSOAR. <br/>![](/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-3.png)
-
+   So you have to use both Admins Groups together to use all the actions inside CSOAR.<br/><img src={useBaseUrl('/img/platform-services/automation-service/app-central/integrations/cisco-ise/cisco-ise-3.png')} style={{border:'1px solid gray'}} alt="cisco-ise" width="800"/>
+   
 ## Change Log
 
 * September 3, 2019 - First upload

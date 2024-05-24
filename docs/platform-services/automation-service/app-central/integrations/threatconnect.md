@@ -3,18 +3,19 @@ title: ThreatConnect
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/threatconnect.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/threatconnect.png')} alt="threatminer" width="100"/>
 
-Version: 1.1  
-Updated: Jul 03, 2023
+***Version: 1.1  
+Updated: Jul 03, 2023***
 
 Utilize ThreatConnect intelligence data during incident investigations.
 
 ## Actions
 
-* **Search Intelligence** (*Enrichment) -* Search ThreatConnect data for information matching the specified query
-* **Update Intelligence** (*Notification*) - Update ThreatConnect intelligence data
+* **Search Intelligence** (*Enrichment*) - Search ThreatConnect data for information matching the specified query.
+* **Update Intelligence** (*Notification*) - Update ThreatConnect intelligence data.
 
 ## Change Log
 

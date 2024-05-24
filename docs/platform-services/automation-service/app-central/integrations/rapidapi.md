@@ -3,20 +3,21 @@ title: RapidAPI
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/rapidapi.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/rapidapi.png')} alt="rapidapi" width="90"/>
 
-Version: 1.1  
-Updated: Jul 07, 2023
+***Version: 1.1  
+Updated: Jul 07, 2023***
 
 RapidAPI is an API Hub that enables developers and enterprises to find, connect to, and manage thousands of APIs.
 
 ## Actions
 
-* **Ipregistry Single IP Address Lookup** *(Enrichment)* - Get Single IP Address Lookup
-* **FraudSentinel IP Reputation** *(Enrichment) -* Get IP reputation
-* **Neutrino API IP Blocklist** *(Enrichment)* - Detect potentially malicious or dangerous IP addresses
-* **Email Checker Email Verifier** *(Enrichment)* - Validate email addresses in real-time. Make sure a mailbox really exist
+* **Ipregistry Single IP Address Lookup** *(Enrichment)* - Get Single IP Address Lookup.
+* **FraudSentinel IP Reputation** *(Enrichment)* - Get IP reputation.
+* **Neutrino API IP Blocklist** *(Enrichment)* - Detect potentially malicious or dangerous IP addresses.
+* **Email Checker Email Verifier** *(Enrichment)* - Validate email addresses in real-time. Make sure a mailbox really exist.
 
 ## Change Log
 

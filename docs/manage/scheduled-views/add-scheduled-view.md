@@ -10,7 +10,7 @@ To create a Scheduled View you must be an admin or have the Manage Scheduled V
 
 For Scheduled View query requirements, see [Scheduled Views Best Practices and Examples](scheduled-views-best-practices.md). 
 
-1. In Sumo Logic, go to **Manage Data** > **Logs** > **Scheduled Views**.<br/> ![scheduled-view-page.png](/img/scheduled-views/scheduled-view-page.png)
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Scheduled Views**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Scheduled Views**. You can also click the **Go To...** menu at the top of the screen and select **Scheduled Views**. Kanso--><br/> ![scheduled-view-page.png](/img/scheduled-views/scheduled-view-page.png)
 1. Click **+ Add Scheduled View**.<br/> ![add view.png](/img/scheduled-views/add-view.png)
 1. **Scheduled View name**. Enter a name for the view. You'll use this name in queries to search the view, so use a name that's descriptive and easy to remember. Names can contain alphanumeric characters; underscores (`_`) are the only special characters allowed. View names can only have (A-Z, a-z, 0-9), $, and _ after the first letter.
 1. **Query.** Enter the full query that encompasses the data you'd like indexed in the view. Parse operators and most search operators are supported in views.
@@ -19,7 +19,7 @@ For Scheduled View query requirements, see [Scheduled Views Best Practices and E
     :::note limitation
     You cannot select a start date older than 365 days.
     :::
-1. **Retention Period.** Either enter a retention period for the data in the index, in days, or click **Apply the retention period of Default Partition**. For more information, see [Manage Indexes with Variable Retention](../partitions-data-tiers/manage-indexes-variable-retention.md).
+1. **Retention Period.** Either enter a retention period for the data in the index, in days, or click **Apply the retention period of Default Partition**. For more information, see [Manage Indexes with Variable Retention](../partitions/manage-indexes-variable-retention.md).
 1. **Data Forwarding.** (Optional). Choose **Enable Data Forwarding** to [forward data from Sumo to Amazon S3](../data-forwarding/amazon-s3-bucket.md). The results from the Scheduled View are forwarded to S3. Raw logs are sent if the view query does not use an aggregate operator. If the view query performs an aggregation, aggregate results are sent. See [File Format](../data-forwarding/amazon-s3-bucket.md) for details on how the file objects are structured.
 1. Click **Save**.
 

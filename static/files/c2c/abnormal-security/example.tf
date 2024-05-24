@@ -7,7 +7,11 @@ resource "sumologic_cloud_to_cloud_source" "Abnormal Security" {
             "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZABC",
             "accessToken": "ABCDEFGH",
             "description": "ABCDEFGHIJKLMNOPQRSTUV",
-            "category": "ABCDEFGHIJKLMNOPQRSTUVWX"
+            "category": "ABCDEFGHIJKLMNOPQRSTUVWX",
+            "dataCollection": [
+              "cases",
+	      "threats"
+          ]
         },
   )
 }

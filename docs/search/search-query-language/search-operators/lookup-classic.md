@@ -35,7 +35,7 @@ Where:
 ## Rules
 
 * The size limit for the CSV file is 8MB.
-* If using an HTTPS resource, the file must be downloaded within 10 seconds. If the file can't be downloaded in 10 seconds, it is probably too large.
+* If using an HTTPS resource, the file must be downloaded within 10 seconds. If the file cannot be downloaded in 10 seconds, it is probably too large.
 * Your `joinColumn-x` need to be of the same data type and are case sensitive. If your search result's field consists of integer data then the field in your external lookup table must also be integer data. You can cast data to a string or numeric value, see [Casting Data to a Number or String](/docs/search/search-query-language/search-operators/manually-cast-data-string-number).
 * If looking up a [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field you need to either [rename the field](as.md) using the `as` option in the lookup operation or [filter null values](/docs/search/search-query-language/search-operators/isnull-isempty-isblank#isnullstring) immediately after the lookup operation.
 
@@ -44,7 +44,7 @@ Where:
 Sumo Logic supports HTTPS-hosted lookup CSV files with the following restrictions:
 
 * The CSV file must contain a header line.
-* The header line can't use special characters.
+* The header line cannot use special characters.
 * Fields that contain special characters, such as commas, must be enclosed in quotes. Wrapping all fields in your CSV file is worthwhile, though, as it would prevent any upload issues that might occur, should special characters be introduced in the future.
 * No spaces are allowed between quotes and values. For example:  
     ```

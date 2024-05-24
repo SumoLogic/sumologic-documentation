@@ -61,19 +61,19 @@ In the case that the two or more Network Blocks overlap, Cloud SIEM uses the sma
 
 When Cloud SIEM looks for the Network Block address `10.128.0.1`, it will return the more-specific block, "WebServer IPs".
 
-<img src={useBaseUrl('img/cse/overlapping-network-blocks.png')} alt="Overlapping network blocks" width="400"/>
+<img src={useBaseUrl('img/cse/overlapping-network-blocks.png')} alt="Overlapping network blocks" style={{border: '1px solid gray'}} width="400"/>
 
 ## Create a Network Block manually
 
 Follow these instructions to create a Network Block using the Cloud SIEM UI. For information about creating multiple Network Blocks by file upload, see [Upload a CSV file of Network Blocks](#upload-a-csv-file-of-network-blocks).
 
-1. Choose **Network Blocks** from the Content menu. <br/><img src={useBaseUrl('img/cse/content-network-blocks.png')} alt="Select Network Blocks" width="800"/>
+1. <!--Kanso [**Classic UI**](/docs/cse/introduction-to-cloud-siem/#classic-ui). Kanso--> In the top menu select **Content > Network Blocks**. <!--Kanso  <br/>[**New UI**](/docs/cse/introduction-to-cloud-siem/#new-ui). In the main Sumo Logic menu, select **Cloud SIEM > Network Blocks**. You can also click the **Go To...** menu at the top of the screen and select **Network Blocks**. Kanso-->
 1. On the **Create Network Block** popup:
     1. **Address Block**. Enter a CIDR block that identifies a contiguous range of IP addresses.
     1. **Label**. Enter a meaningful name for the Network Block.
     1. **Internal**. Leave the toggle switched to the right (green) if you want to mark IP addresses that match the network block as Internal. This allows you to filter on the IP addresses in rule expressions, as described below in [Using enrichment fields](#using-enrichment-fields), below.
-    1. **Suppress Signals**. Leave the toggle switched to the left (red) if you don't want to suppress Signals on IP addresses in the Network Block. Otherwise, switch the toggle to the right (green).
-    1. Click **Create**. <br/><img src={useBaseUrl('img/cse/create-network-block.png')} alt="Create network block" width="400"/>
+    1. **Suppress Signals**. Leave the toggle switched to the left (red) if you do not want to suppress Signals on IP addresses in the Network Block. Otherwise, switch the toggle to the right (green).
+    1. Click **Create**. <br/><img src={useBaseUrl('img/cse/create-network-block.png')} alt="Create network block" style={{border: '1px solid gray'}} width="400"/>
 
 ## Upload a CSV file of Network Blocks
 
@@ -123,7 +123,7 @@ The screenshot below shows a Record that contains several Network Block-related 
 * `dstDevice_ip_isInternal` and `srcDevice_ip_isInternal` indicate that the `dstDevice_ip` and `srcDevice_ip` are both in Network Blocks that are marked Internal.
 * `srcDevice_ip_location` indicates that `srcDevice_ip` is in the “test_internal” Network Block.
 
-<img src={useBaseUrl('img/cse/record.png')} alt="Records" width="600"/>
+<img src={useBaseUrl('img/cse/record.png')} alt="Records" style={{border: '1px solid gray'}} width="600"/>
 
 ## Using enrichment fields
 

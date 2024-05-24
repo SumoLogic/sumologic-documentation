@@ -3,22 +3,23 @@ title: FireEye Central Management (CM)
 description: ''
 tags: []
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/fireeye-central-management-cm.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/fireeye-central-management-cm.png')} alt="fireeye-central-management-cm" width="100"/>
 
-Version: 1.1  
-Updated: Jul 06, 2023
+***Version: 1.1  
+Updated: Jul 06, 2023***
 
 Centralized device and intelligence management to correlate data across attack vectors.
 
 ## Actions
 
-* **Get Alert Info** (*Enrichment*) - Query FireEye CM for alert details
-* **Get ATI Details** (*Enrichment*) - Query FireEye Advanced Threat Intelligence for intelligence data
-* **Get Event Info** (*Enrichment*) - Get information from previously generated event
-* **Add Snort Rule** (*Containment*) - Add a new Snort rule
-* **Add YARA Rule** (*Containment*) - Add a new YARA rule
-* **Acknowledge Alert** (*Containment*) - Notate previously generated alert
+* **Get Alert Info** (*Enrichment*) - Query FireEye CM for alert details.
+* **Get ATI Details** (*Enrichment*) - Query FireEye Advanced Threat Intelligence for intelligence data.
+* **Get Event Info** (*Enrichment*) - Get information from previously generated event.
+* **Add Snort Rule** (*Containment*) - Add a new Snort rule.
+* **Add YARA Rule** (*Containment*) - Add a new YARA rule.
+* **Acknowledge Alert** (*Containment*) - Notate previously generated alert.
 
 ## Change Log
 

@@ -18,9 +18,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Google Workspace User Inventory source collects a list of users from the Google Workspace [Users API](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users/list). It securely stores the required authentication, scheduling, and state tracking information.
 
-:::note
-This source is available in the [Fed deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
+import FedDeploymentNote from '../../../reuse/fed-deployment-note.md';
+
+<FedDeploymentNote/>
 
 ## Data collected
 
@@ -58,7 +58,7 @@ To add domain-wide delegation to your service account using the client ID or Key
 1. Under **Domain-wide delegation**, find your service account's **Client ID**. Click ![Copy](/img/send-data/copy-button.png) to copy the client ID value to your clipboard.<br/><img src={useBaseUrl('img/send-data/domain-delegation.png')} alt="domain-delegation.png" width="600" />
 1. If you have super administrator access to the relevant Google Workspace account, click **View Google Workspace Admin Console**, then sign in using a super administrator user account and continue following the steps in the section below.
  :::note
- If you don't have super administrator access to the relevant Google Workspace account, contact a super administrator for that account and send them your service account's Client ID and list of OAuth Scopes so they can complete the following steps in the Admin console.
+ If you do not have super administrator access to the relevant Google Workspace account, contact a super administrator for that account and send them your service account's Client ID and list of OAuth Scopes so they can complete the following steps in the Admin console.
  :::
 
 #### Adding OAuth Scope
@@ -91,7 +91,7 @@ When you create a Google User Inventory source, you add it to a Hosted Collector
 
 To configure a Google Workspace User Inventory source:
 
-1. In Sumo Logic, select **Manage Data** > **Collection** > **Collection**. 
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Collection > Collection**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the Sumo Logic top menu select **Configuration**, and then under **Data Collection** select **Collection**. You can also click the **Go To...** menu at the top of the screen and select **Collection**. Kanso-->
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
 1. Select **Google Workspace: User Inventory**.
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.

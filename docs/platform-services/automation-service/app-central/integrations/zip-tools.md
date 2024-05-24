@@ -3,21 +3,22 @@ title: ZIP Tools
 description: ''
 tags: [cloud soar integrations]
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-![](/img/platform-services/automation-service/app-central/logos/zip-tools.png)
+<img src={useBaseUrl('/img/platform-services/automation-service/app-central/logos/zip-tools.png')} alt="axonius" width="70"/>
 
-Version: 1.2  
-Updated: Nov 09, 2023
+***Version: 1.2  
+Updated: Nov 09, 2023***
 
 :::sumo Cloud SOAR
-This integration is for Cloud SOAR only
+This integration is only for Cloud SOAR.
 :::
 
 ZIP Tools is used to work with archives, in particular to extract and save the CSV files they contain.
 
 ## Actions
 
-* **Unzip File** (*Custom) -* Extract from archive and save all CSV files as incident attachments
+* **Unzip File** (*Custom*) - Extract from archive and save all CSV files as incident attachments.
 
 ## Change Log
 

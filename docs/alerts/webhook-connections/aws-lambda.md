@@ -69,7 +69,7 @@ You need the **Manage connections** [role capability](/docs/manage/users-roles
 
 Configure the webhook connection to trigger the AWS Lambda function.
 
-1. Go to **Manage Data** > **Monitoring** > **Connections**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Monitoring > Connections**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Monitoring** select **Connections**. You can also click the **Go To...** menu at the top of the screen and select **Connections**. Kanso-->
 1. On the **Connections** page, click **Add**.
 1. Click **AWS Lambda**.
 1. In the **Create Connection** dialog, enter:
@@ -84,5 +84,5 @@ Configure the webhook connection to trigger the AWS Lambda function.
     * (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
     * **Alert Payload.** Under Alert Payload, which allows you to customize the alert notification, enter a JSON object accepted by your Lambda function. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md). 
     * **Recovery Payload.** Under Recovery Payload, which allows you to customize the recovery notification, enter a JSON object accepted by your Lambda function. 
-1. Click **Test Alert or Test Recovery**. If the connection is made to your Lambda function successfully, you will see a 200 OK response message.
+1. Click **Test Alert or Test Recovery**. If the connection is made to your Lambda function successfully, you will see a `200 OK` response message.
 1. Click **Save**.

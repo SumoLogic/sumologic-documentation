@@ -148,7 +148,7 @@ Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch.
 - **Lambda Log Forwarder**. Configure a collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo Logic provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/) or configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function/).<br/>
 
 * While configuring the cloudwatch log source, following Fields can be added in the source:
-    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the **account** field.
+    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the **account** field.
     * Add a **region** field and assign it the value of the respective AWS region where the Lambda function exists.
     * Add an **accountId** field and assign it the value of the respective AWS account ID that is being used.
 
@@ -163,7 +163,7 @@ To configure a CloudTrail Source, perform these steps:
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 4. Add an [AWS CloudTrail Source](/docs/send-data/hosted-collectors/amazon-aws/aws-cloudtrail-source.md) to Sumo Logic.
 5. While configuring the cloud trail log source, the following field can be added to the source:
-    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+    * Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. Logs can be queried via the “account field”.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Fields.png')} alt="Fields" />
 
@@ -180,11 +180,11 @@ Sumo Logic supports collecting metrics using two source types:
 Namespace for **Amazon Lambda** Service is **AWS/Lambda**.
 :::
 
-* **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. The **account** field allows you to query metrics.
+* **Metadata**. Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. The **account** field allows you to query metrics.
 
 <img src={useBaseUrl('https://sumologic-app-data-v2.s3.amazonaws.com/dashboards/AWS-Lambda/Metadata.png')} alt="Metadata" />
 
-Continue with the process of [enabling Provisioned Concurrency configurations](#Enable_Provisioned_Concurrency_configurations_for_Lambda_functions) for Lambda functions, as necessary.
+Continue with the process of [enabling Provisioned Concurrency configurations](#enable-provisioned-concurrency-configurations-for-lambda-functions) for Lambda functions, as necessary.
 
 
 ### Enable Provisioned Concurrency configurations for Lambda functions
@@ -230,7 +230,9 @@ These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metri
 
 ### Field in Field Schema
 
-Log in to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**functionname**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Manage Data > Logs > Fields**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Configuration**, and then under **Logs** select **Fields**. You can also click the **Go To...** menu at the top of the screen and select **Fields**. Kanso-->
+1. Search for the “**functionname**” field. 
+1. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
 ### Field Extraction Rule(s)
@@ -286,15 +288,13 @@ Enter a parse expression to create an “account” field that maps to the alias
 ```yml
 Rule Name: AwsObservabilityLambdaCloudWatchLogsFER
 Applied at: Ingest Time
-Scope (Specific Data): _sourceHost=/aws/lambda/*
+Scope (Specific Data): account=* region* _sourceHost=/aws/lambda/*
 Parse Expression:
 | parse field=_sourceHost "/aws/lambda/*" as functionname
 | tolowercase(functionname) as functionname
 | "aws/lambda" as namespace
 | fields functionname, namespace
 ```
-
-
 
 ## Installing the AWS Lambda App
 
@@ -304,7 +304,7 @@ import AppInstall from '../../reuse/apps/app-install.md';
 
 <AppInstall/>
 
-## Viewing AWS Lambda Dashboards
+## Viewing AWS Lambda dashboards
 
 Here are some of the measurements and calculations underlying the information presented in dashboard panels.
 
@@ -400,7 +400,7 @@ Use this dashboard to:
 
 ### Threat Intel
 
-**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
+**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#threat-intel-faq). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
 Use this dashboard to:
 * Identify known malicious IPs that are access your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward

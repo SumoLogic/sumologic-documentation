@@ -14,7 +14,7 @@ Key features and benefits of the Cisco Meraki - C2C app include:
 
 - **Comprehensive Organization Insights**. Gain valuable insights into your organizational configuration and operations, including API adoption, configuration template usage, and product distribution. Stay updated on the overall organization landscape and monitor key metrics for efficient management and optimization.
 - **Real-time Security Monitoring**. Monitor network security in real-time with insights on security events, blocked events, threat severity, and infected hosts. Identify potential threats, track attack origins and targets, and take proactive measures to enhance network security.
-- **Event Analysis and Trend Identification**. Analyze network events based on type, client associations, and SSIDs. Identify event patterns and trends to understand network activity and potential security risks. 
+- **Event Analysis and Trend Identification**. Analyze network events based on type, client associations, and SSIDs. Identify event patterns and trends to understand network activity and potential security risks.
 - **Client and SSID Monitoring**. Monitor your client activity and their association with specific SSIDs. Identify your client's geographical distribution to assess potential risks associated with the specific locations and keep track of your client's behaviour and network usage for effective management.
 - **Air Marshal Security Overview**. Provide wireless intrusion detection and prevention by monitoring security status and identifying potential vulnerabilities in the network.
 - **Enhanced Security Measures**. Monitor blocked connections, file scans, and malicious files to ensure a secure network environment. Prioritize your security efforts by identifying top clients and destinations based on security events and take proactive steps to protect the network and mitigate potential threats.
@@ -78,13 +78,15 @@ To set up data ingestion for the Cisco Meraki - C2C app, follow the instructions
 
 ## Installing the Cisco Meraki - C2C app
 
-This section provides instructions on how to install the Cisco Meraki - C2C app, as well as examples of each of the dashboards. The App pre-configured searches and dashboards provide easy-to-access visual insights into your data.
+import AppInstall2 from '../../reuse/apps/app-install-v2.md';
 
-import AppInstall from '../../reuse/apps/app-install.md';
+<AppInstall2/>
 
-<AppInstall/>
+## Viewing Cisco Meraki - C2C dashboards​
 
-## Viewing Cisco Meraki - C2C dashboards
+import ViewDashboards from '../../reuse/apps/view-dashboards.md';
+
+<ViewDashboards/>
 
 ### Organization Overview
 

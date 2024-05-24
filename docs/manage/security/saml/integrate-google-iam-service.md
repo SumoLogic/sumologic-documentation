@@ -49,7 +49,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
 ### Configure Sumo Logic SAML
 
-1. In the Sumo web app, go to **Administration > Security > SAML**.
+1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu, select **Administration > Security > SAML**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Account Security Settings** select **SAML**. You can also click the **Go To...** menu at the top of the screen and select **SAML**. Kanso-->
 1. Click **+ Add Configuration** to create a new configuration.
 
     ![add-config-icon.png](/img/security/add-config-icon.png)

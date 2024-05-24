@@ -28,7 +28,7 @@ You can create the parameter via AWS CLI or via Console.
 
 If you're using the AWS CLI, run the below command:
 
-```json
+```
 aws ssm put-parameter --region us-east-1 --cli-input-json '{
   "Name": "SUMO_ENDPOINT",
   "Value": \<Paste the endpoint of the HTTP source created in step >",
@@ -65,7 +65,7 @@ Sumo Logic provides a CloudFormation template to make setup easier. Download th
 
 ## Step 4: Tailor the CloudFormation template
 
-For instructions, follow [Step 3](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-3-tailor-the-cloudformation-template) in the Collect CloudWatch Logs using a CloudFormation Template page. 
+For instructions, follow [Step 3](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-3-tailor-the-cloudformation-template) in the Collect CloudWatch Logs using a CloudFormation Template page.
 
 ## Step 5: Create a stack on the AWS CloudFormation console​
 
@@ -114,4 +114,4 @@ For instructions, follow [Step 5](/docs/send-data/collect-from-other-data-source
 
 ## Step 7: Subscribe SumoCWLogsLambda to CloudWatch Log Groups
 
-For instructions, follow [Step 6](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-6-subscribesumocwlogslambda-to-cloudwatch-log-groups) in the Collect CloudWatch Logs using a CloudFormation Template page. 
+For instructions, follow [Step 6](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-cloudformation-template/#step-6-subscribesumocwlogslambda-to-cloudwatch-log-groups) in the Collect CloudWatch Logs using a CloudFormation Template page.

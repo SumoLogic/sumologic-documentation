@@ -49,7 +49,7 @@ If you already have an Installed Collector, upgrade the Collector to start inges
 
 **Ingest Host Metrics by Installing a Collector through the Setup Wizard**
 
-If you don't have any installed metrics Sources, you can install one easily by using the Setup Wizard.
+If you do not have any installed metrics Sources, you can install one easily by using the Setup Wizard.
 
 <Iframe url="https://www.youtube.com/embed/QBTI6phfAKI"
         width="854px"
@@ -71,7 +71,7 @@ Other metrics Source options are also available:
 
 After you set up a Source, metrics data is ingested automatically and available for query and visualization.
 
-To get started quickly after installing your Collector and Sources, you can install the Host Metrics App with preconfigured searches and Dashboards, to analyze your metrics data. Watch this video to see how to set up a Host Metrics query and visualization, and see [Create a Metrics Query and Visualization](../metric-charts/create-metrics-visualization.md) for full instructions.
+To get started quickly after installing your Collector and Sources, you can install the Host Metrics App with preconfigured searches and Dashboards, to analyze your metrics data. Watch this video to see how to set up a Host Metrics query and visualization.
 
 **Querying Your Host Metrics**
 
@@ -88,7 +88,7 @@ To get started quickly after installing your Collector and Sources, you can inst
 
 ## 3. Add your data to a Dashboard
 
-You can add a metrics visualization as a Panel in an existing Dashboard, or create a new Dashboard containing a metrics Panel. Watch this video to see how easy it is to add a metrics Panel to a Dashboard, and see [Add a Metrics Visualization to a Dashboard](../metric-charts/add-metrics-visualization-to-dashboard.md) for full instructions.
+You can add a metrics visualization as a Panel in an existing Dashboard, or create a new Dashboard containing a metrics Panel. Watch this video to see how easy it is to add a metrics Panel to a Dashboard.
 
 **Creating Metrics Dashboards**
 
