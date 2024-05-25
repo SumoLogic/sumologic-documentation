@@ -53,6 +53,19 @@ An index filter allows or denies access to [search indexes](/docs/manage/partiti
 
 For example, let’s say you want to deny access to partition and security indexes. In our example environment, the `accessLogs` and `authenticationLogs` indexes give access to partitions, and the “sec_*” indexes give access to security information. To deny access to these indexes, click **Deny few indexes** and select those indexes.
 
+### Index Access behavior when a user has multiple roles
+
+A role can have one of the following Index Access settings:
+   * **All indexes**. Allows access to all indexes.
+   * **Allow few indexes**. Allows access to only the selected indexes. 
+   * **Deny few indexes**. Denies access to the selected indexes. 
+
+However, if a user is assigned multiple roles that each have different Index Access settings, following is how they are evaluated:
+* **All indexes** + **Allow few indexes**. Indexes in the "Allow few indexes" list are allowed, and all other indexes are allowed.
+* **All indexes** + **Deny few indexes**. Indexes in the deny list are denied, but all other indexes are allowed.
+* **Allow few indexes** + **Deny few indexes**. Indexes in the "Allow few indexes" list are allowed, indexes in the deny list are denied, and all other indexes are denied.
+* **All indexes** + **Deny few indexes** + **Allow few indexes**. Indexes in the "Allow few indexes" list are allowed, indexes in the deny list are denied, and the rest of the indexes are allowed.
+
 ## Test search filters
 
 1. <!--Kanso [**Classic UI**](/docs/get-started/sumo-logic-ui/). Kanso--> In the main Sumo Logic menu select **Administration > Users and Roles > Roles**. <!--Kanso <br/>[**New UI**](/docs/get-started/sumo-logic-ui-new/). In the top menu select **Administration**, and then under **Users and Roles** select **Roles**. You can also click the **Go To...** menu at the top of the screen and select **Roles**. Kanso-->
