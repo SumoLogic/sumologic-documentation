@@ -29,6 +29,7 @@ In this document, you'll learn the recommended Copilot workflow as well as best 
 <summary>Click here to watch a step-by-step video investigation using Copilot.</summary>
 
 <!-- add micro lesson video when published-->
+<!-- replace with https://www.youtube.com/watch?v=QrRvN2Bg4NY ? -->
 
 <Iframe url="https://player.vimeo.com/video/939372059?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
         width="854px"
